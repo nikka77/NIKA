@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>NIKA — Explore. Joue. Vis.</title>
+<link rel="stylesheet" href="https://unpkg.com/@fontsource/bebas-neue@5.0.8/index.css">
+<link rel="stylesheet" href="https://unpkg.com/@fontsource/exo-2@5.0.8/index.css">
+<link rel="stylesheet" href="https://unpkg.com/@fontsource/outfit@5.0.8/index.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+:root{
+  --bg:#050C17;--bg2:#09152A;--bg3:#0E1F3A;
+  --sand:#F0E8D4;
+  --az:#0094D4;--az2:#00C2FF;
+  --gold:#D4A017;--gold2:#F0C040;
+  --coral:#D44B24;--teal:#0EA878;--purple:#7B5CF0;
+  --amber:#E07038;--slate:#5A88B0;--sea:#0868A0;
+  --td:#EBE5D6;--td2:#7A90A8;--td3:#3A5068;
+  --tl:#0E1F3A;--tl2:#3A5870;
+  --bd:rgba(255,255,255,0.07);--bd2:rgba(255,255,255,0.14);
+  --fn:'Bebas Neue','Arial Black',sans-serif;
+  --fe:'Exo 2','Arial Black',sans-serif;
+  --fo:'Outfit',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--td);font-family:var(--fo);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}
+ul{list-style:none}
+
+/* LOADER */
+#loader{position:fixed;inset:0;z-index:9999;background:#020810;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .7s ease,visibility .7s ease}
+#loader.hide{opacity:0;visibility:hidden;pointer-events:none}
+#lbg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,148,212,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,148,212,0.04) 1px,transparent 1px);background-size:48px 48px}
+#radar{width:190px;height:190px;margin-bottom:1.6rem}
+#radar svg{width:100%;height:100%}
+.rdot{transition:opacity .25s}
+#lstatus{font-family:var(--fo);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#2A5068;min-height:18px;text-align:center;margin-bottom:.8rem;transition:color .3s}
+#lstatus.ok{color:var(--az2)}
+#llogo{font-family:var(--fn);font-size:56px;letter-spacing:.12em;color:var(--td);opacity:0;transform:scale(.88);transition:opacity .6s ease,transform .6s ease}
+#llogo.show{opacity:1;transform:scale(1)}
+#lbar{width:160px;height:2px;background:rgba(0,148,212,0.12);border-radius:1px;margin-top:.7rem;overflow:hidden}
+#lbarfill{height:100%;width:0;background:linear-gradient(90deg,var(--az),var(--az2));border-radius:1px;transition:width .08s linear}
+
+/* FLOAT MAP */
+#fmap{position:fixed;bottom:1.5rem;right:1.5rem;z-index:400;width:50px;height:50px;border-radius:50%;background:var(--az);box-shadow:0 0 0 3px rgba(0,148,212,0.2),0 4px 16px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;font-size:20px;transition:transform .2s,box-shadow .2s;cursor:pointer}
+#fmap:hover{transform:scale(1.1);box-shadow:0 0 0 6px rgba(0,148,212,0.2),0 8px 24px rgba(0,0,0,.5)}
+#fmap::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid var(--az);animation:fping 2.5s ease-out infinite}
+@keyframes fping{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.9);opacity:0}}
+
+/* MAP OVERLAY */
+#moverlay{position:fixed;inset:0;z-index:500;background:var(--bg);transform:translateY(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
+#moverlay.open{transform:translateY(0)}
+#movh{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.4rem;border-bottom:1px solid var(--bd);background:var(--bg2);flex-shrink:0}
+#movtitle{font-family:var(--fn);font-size:22px;letter-spacing:.08em}
+#movcls{width:34px;height:34px;border-radius:50%;border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--td2);transition:all .2s}
+#movcls:hover{border-color:var(--az);color:var(--az)}
+#movfilters{display:flex;gap:6px;padding:.65rem 1.4rem;border-bottom:1px solid var(--bd);background:var(--bg2);overflow-x:auto;flex-shrink:0;scrollbar-width:none}
+#movfilters::-webkit-scrollbar{display:none}
+.mfbtn{font-family:var(--fo);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 13px;border-radius:20px;border:1px solid var(--bd2);color:var(--td2);white-space:nowrap;transition:all .2s}
+.mfbtn:hover,.mfbtn.on{background:rgba(0,148,212,0.1);border-color:var(--az);color:var(--az)}
+#movmap{flex:1;min-height:0;position:relative}
+#movmap .leaflet-container{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:300;background:rgba(5,12,23,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd);padding:0 1.4rem;display:flex;align-items:center;justify-content:space-between;height:54px}
+.nlogo{font-family:var(--fn);font-size:24px;letter-spacing:.12em;display:flex;align-items:center;gap:7px}
+.ndot{width:6px;height:6px;border-radius:50%;background:var(--az2);box-shadow:0 0 8px var(--az2);animation:ndp 2s ease-in-out infinite}
+@keyframes ndp{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.nlinks{display:flex}
+.nlinks a{font-family:var(--fo);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--td2);padding:0 10px;height:54px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:all .2s}
+.nlinks a:hover{color:var(--td);border-bottom-color:var(--az)}
+.nright{display:flex;gap:7px;align-items:center}
+.nbtn{font-family:var(--fo);font-size:11px;font-weight:700;letter-spacing:.04em;padding:6px 14px;border-radius:3px;transition:all .2s}
+.nbtn-o{border:1px solid var(--bd2);color:var(--td2)}
+.nbtn-o:hover{border-color:var(--az);color:var(--az)}
+.nbtn-f{background:var(--az);color:#fff}
+.nbtn-f:hover{background:var(--az2)}
+.nmapbtn{width:32px;height:32px;border-radius:50%;border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--td2);transition:all .2s}
+.nmapbtn:hover{border-color:var(--az);color:var(--az)}
+.nburger{display:none;flex-direction:column;justify-content:center;gap:4px;padding:6px;width:34px;height:34px;border-radius:3px;transition:background .2s}
+.nburger:hover{background:rgba(255,255,255,0.06)}
+.nburger span{display:block;width:18px;height:2px;background:var(--td2);border-radius:1px;transition:all .3s;transform-origin:center}
+.nburger.open span:nth-child(1){transform:rotate(45deg) translate(3px,4px)}
+.nburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nburger.open span:nth-child(3){transform:rotate(-45deg) translate(3px,-4px)}
+#mobnav{position:fixed;top:54px;left:0;right:0;z-index:290;background:var(--bg2);border-bottom:1px solid var(--bd);transform:translateY(-8px);opacity:0;transition:transform .28s ease,opacity .28s ease;pointer-events:none}
+#mobnav.open{transform:translateY(0);opacity:1;pointer-events:all}
+.mobnavlink{font-family:var(--fo);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--td2);padding:.95rem 1.4rem;border-bottom:1px solid var(--bd);display:block;transition:color .2s,background .2s}
+.mobnavlink:hover{color:var(--td);background:rgba(255,255,255,0.03)}
+.mobnavbtns{display:flex;gap:10px;padding:1rem 1.4rem}
+.mobnavbtn{flex:1;padding:10px;border-radius:3px;font-family:var(--fo);font-size:12px;font-weight:700;text-align:center;transition:all .2s}
+.mobnavbtn-o{border:1px solid var(--bd2);color:var(--td2)}
+.mobnavbtn-f{background:var(--az);color:#fff}
+@media(max-width:768px){.nlinks,.nbtn-o{display:none}.nburger{display:flex}}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 1.4rem 4rem;overflow:hidden}
+.hbg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,148,212,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,148,212,0.07) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(ellipse 80% 60% at 50% 100%,black,transparent 65%)}
+.hglow{position:absolute;bottom:-20%;left:50%;transform:translateX(-50%);width:80vw;max-width:560px;height:280px;pointer-events:none;background:radial-gradient(ellipse,rgba(0,148,212,0.13) 0%,transparent 70%)}
+.joyboy{position:absolute;right:-3%;bottom:0;width:min(260px,38vw);opacity:.055;pointer-events:none;z-index:0}
+.hcontent{position:relative;z-index:1;max-width:700px;width:100%}
+.heyebrow{font-family:var(--fo);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--az);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:9px;opacity:0;animation:hin .6s ease .2s forwards}
+.heyebrow::before,.heyebrow::after{content:'';display:block;width:24px;height:1px;background:var(--az);opacity:.5}
+.htitle{font-family:var(--fe);font-size:clamp(38px,10vw,88px);font-weight:900;font-style:italic;letter-spacing:.02em;line-height:.9;color:var(--td);text-transform:uppercase;margin-bottom:.5rem;opacity:0;animation:hin .7s ease .4s forwards}
+.htitle .az{color:var(--az)}
+.hsub{font-family:var(--fo);font-size:clamp(13px,3vw,16px);color:var(--td2);line-height:1.65;max-width:480px;margin:.8rem auto 1.4rem;opacity:0;animation:hin .7s ease .6s forwards}
+/* SEARCH */
+.hsearch{position:relative;max-width:520px;margin:0 auto 1.6rem;opacity:0;animation:hin .7s ease .7s forwards}
+.hsearch-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--bd2);border-radius:40px;padding:13px 50px 13px 20px;font-family:var(--fo);font-size:14px;color:var(--td);outline:none;transition:border-color .2s,background .2s}
+.hsearch-input::placeholder{color:var(--td3)}
+.hsearch-input:focus{border-color:var(--az);background:rgba(0,148,212,0.06)}
+.hsearch-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:var(--az);display:flex;align-items:center;justify-content:center;font-size:15px;transition:background .2s}
+.hsearch-btn:hover{background:var(--az2)}
+.hctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;opacity:0;animation:hin .7s ease .85s forwards}
+.hbtnp{font-family:var(--fe);font-size:13px;font-weight:800;font-style:italic;letter-spacing:.06em;text-transform:uppercase;padding:13px 30px;border-radius:3px;background:var(--az);color:#fff;box-shadow:0 0 28px rgba(0,148,212,0.3);transition:all .25s}
+.hbtnp:hover{background:var(--az2);transform:translateY(-2px)}
+.hbtns{font-family:var(--fe);font-size:13px;font-weight:800;font-style:italic;letter-spacing:.06em;text-transform:uppercase;padding:13px 30px;border-radius:3px;border:1px solid var(--bd2);color:var(--td);transition:all .25s}
+.hbtns:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+/* LIVE PULSE */
+.hpulse{margin-top:1.4rem;display:flex;align-items:center;justify-content:center;gap:10px;opacity:0;animation:hin .7s ease 1s forwards;flex-wrap:wrap}
+.hpulse-dot{width:7px;height:7px;border-radius:50%;background:#22DD88;box-shadow:0 0 8px #22DD88;animation:pdot 1.8s ease-in-out infinite;flex-shrink:0}
+@keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.hpulse-txt{font-family:var(--fo);font-size:12px;color:var(--td3)}
+.hpulse-txt strong{color:var(--td2);font-weight:600}
+.hxpteaser{margin-top:.7rem;font-family:var(--fo);font-size:11px;color:var(--td3);letter-spacing:.04em;display:flex;align-items:center;justify-content:center;gap:8px;opacity:0;animation:hin .7s ease 1.1s forwards}
+.hxpbar{width:70px;height:3px;background:var(--bd2);border-radius:2px;overflow:hidden}
+.hxpfill{height:100%;width:32%;background:var(--gold);border-radius:2px;animation:xpbr 3s ease-in-out infinite}
+@keyframes xpbr{0%,100%{width:32%}50%{width:42%}}
+.hscroll{position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;font-family:var(--fo);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--td3);opacity:0;animation:hin .7s ease 1.3s forwards,sbounc 3s ease-in-out 1.3s infinite}
+.hscline{width:1px;height:32px;background:linear-gradient(var(--az),transparent)}
+@keyframes hin{to{opacity:1;transform:none}}
+@keyframes sbounc{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(5px)}}
+
+/* STATS */
+.statsbar{background:var(--sand);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(0,0,0,0.06);position:relative}
+.sand-grain::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.4;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E")}
+.sitem{padding:1.4rem 1rem;text-align:center;border-right:1px solid rgba(0,0,0,0.08)}
+.sitem:last-child{border-right:none}
+.snum{font-family:var(--fe);font-size:34px;font-weight:900;font-style:italic;color:var(--bg3);display:block;line-height:1}
+.snum em{color:var(--az);font-style:normal}
+.slbl{font-family:var(--fo);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tl2);margin-top:3px;display:block}
+@media(max-width:480px){.statsbar{grid-template-columns:repeat(2,1fr)}.sitem:nth-child(2){border-right:none}}
+
+/* SHARED */
+.sec{padding:5rem 1.4rem;max-width:1100px;margin:0 auto}
+.stag{font-family:var(--fo);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--td3);margin-bottom:.6rem;display:flex;align-items:center;gap:7px}
+.stag::before{content:'';display:block;width:14px;height:1px;background:currentColor}
+.stag.l{color:var(--tl2)}.stag.l::before{background:var(--tl2)}
+.stitle{font-family:var(--fe);font-size:clamp(32px,6.5vw,62px);font-weight:900;font-style:italic;letter-spacing:.02em;line-height:.95;text-transform:uppercase;color:var(--td);margin-bottom:.7rem}
+.stitle.l{color:var(--tl)}
+.sdesc{font-family:var(--fo);font-size:14px;color:var(--td2);line-height:1.7;max-width:480px}
+.sdesc.l{color:var(--tl2)}
+
+/* TOKEN (moved up) */
+.tokwrap{background:var(--bg2);border-top:1px solid var(--bd);padding:5rem 1.4rem;background-image:radial-gradient(ellipse 50% 60% at 80% 50%,rgba(212,160,23,0.05) 0%,transparent 60%)}
+.tokin{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+@media(max-width:700px){.tokin{grid-template-columns:1fr}}
+.tokringwrap{display:flex;justify-content:center;align-items:center;height:220px}
+.tokring{width:160px;height:160px;border-radius:50%;border:1.5px solid rgba(212,160,23,0.22);display:flex;align-items:center;justify-content:center;position:relative;animation:tspin 18s linear infinite}
+.tokring::before{content:'';position:absolute;inset:-16px;border-radius:50%;border:1px solid rgba(212,160,23,0.09)}
+.tokring::after{content:'';position:absolute;inset:-32px;border-radius:50%;border:1px dashed rgba(212,160,23,0.05)}
+@keyframes tspin{to{transform:rotate(360deg)}}
+.tokcore{width:106px;height:106px;border-radius:50%;background:radial-gradient(circle,rgba(212,160,23,0.13) 0%,rgba(5,12,23,.95) 70%);border:1px solid rgba(212,160,23,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:tspin 18s linear infinite reverse}
+.tokcorel{font-family:var(--fn);font-size:26px;letter-spacing:.1em;color:var(--gold2)}
+.tokcores{font-family:var(--fo);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.7}
+.tokdot{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--gold2);box-shadow:0 0 7px var(--gold2);top:50%;left:0;transform:translate(-50%,-50%)}
+.tokfeats{list-style:none;display:flex;flex-direction:column;gap:9px;margin:1.2rem 0}
+.tf{display:flex;align-items:flex-start;gap:11px;padding:11px 13px;border-radius:4px;background:rgba(255,255,255,0.02);border:1px solid var(--bd)}
+.tfico{width:28px;height:28px;border-radius:3px;background:rgba(212,160,23,0.07);border:1px solid rgba(212,160,23,0.14);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.tft{font-family:var(--fo);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--td);margin-bottom:2px}
+.tfd{font-family:var(--fo);font-size:11px;color:var(--td2);line-height:1.5}
+
+/* FLASH DEALS */
+.flashwrap{background:var(--bg);border-top:1px solid var(--bd);padding:1.2rem 0}
+.flashin{max-width:1100px;margin:0 auto;padding:0 1.4rem;display:flex;align-items:center;gap:1rem}
+.flash-tag{font-family:var(--fe);font-size:14px;font-weight:900;font-style:italic;color:var(--gold2);white-space:nowrap;letter-spacing:.04em;display:flex;align-items:center;gap:6px;flex-shrink:0}
+.flash-strip{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1;padding:4px 0}
+.flash-strip::-webkit-scrollbar{display:none}
+.flash-card{flex-shrink:0;background:var(--bg3);border:1px solid var(--bd2);border-radius:6px;padding:8px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:border-color .2s}
+.flash-card:hover{border-color:var(--gold)}
+.fc-ico{font-size:14px}
+.fc-text{font-family:var(--fo);font-size:12px;color:var(--td);white-space:nowrap}
+.fc-timer{font-family:var(--fe);font-size:13px;font-weight:700;font-style:italic;color:var(--gold2);white-space:nowrap;letter-spacing:.04em}
+.flash-sep{width:1px;height:16px;background:var(--bd2);flex-shrink:0}
+
+/* ONBOARDING */
+.onbwrap{background:var(--sand);border-top:1px solid rgba(0,0,0,0.06);padding:4rem 1.4rem;position:relative}
+.onbwrap.sand-grain{}
+.onbin{max-width:1100px;margin:0 auto}
+.onb-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,0,0,0.07);margin-top:1.8rem;border-radius:6px;overflow:hidden}
+@media(max-width:640px){.onb-steps{grid-template-columns:repeat(2,1fr)}}
+.onb-step{background:var(--sand);padding:1.4rem 1.1rem;position:relative}
+.onb-n{font-family:var(--fe);font-size:40px;font-weight:900;font-style:italic;color:rgba(14,31,58,0.07);line-height:1;margin-bottom:.2rem}
+.onb-icon{font-size:22px;margin-bottom:.5rem;display:block}
+.onb-title{font-family:var(--fe);font-size:15px;font-weight:800;font-style:italic;color:var(--tl);margin-bottom:.25rem}
+.onb-desc{font-family:var(--fo);font-size:12px;color:var(--tl2);line-height:1.5}
+.onb-arrow{position:absolute;right:-8px;top:50%;transform:translateY(-50%);color:rgba(0,0,0,0.18);font-size:16px;z-index:1}
+@media(max-width:640px){.onb-arrow{display:none}}
+
+/* 3D CAROUSEL */
+.domwrap{background:var(--bg2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:5rem 0 4rem;overflow:hidden}
+.domhead{padding:0 1.4rem 2rem;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem}
+.carrwrap{
+  position:relative;
+  height:420px;
+  /* 3D perspective on container */
+  perspective:1400px;
+  perspective-origin:50% 40%;
+  /* Soft edge fade */
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,black 7%,black 93%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,black 7%,black 93%,transparent 100%);
+}
+@media(max-width:600px){.carrwrap{height:480px}}
+.carr-track{position:relative;width:100%;height:100%}
+/* 3D card base */
+.dcard{
+  position:absolute;
+  left:50%;top:20px;
+  background:var(--bg3);border:1px solid var(--bd);
+  border-radius:8px;padding:1.8rem 1.5rem;
+  cursor:pointer;
+  transition:transform .52s cubic-bezier(.35,.01,.25,1),opacity .52s ease,box-shadow .52s ease,border-color .35s ease;
+  overflow:hidden;
+  /* width set by JS */
+}
+.dcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--dc,var(--az));opacity:.75}
+.dcard::after{content:'';position:absolute;bottom:-15px;right:-15px;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,var(--dc,var(--az)) 0%,transparent 70%);opacity:.05;transition:opacity .4s}
+.dcard.active{border-color:var(--dc,var(--az))}
+.dcard.active::after{opacity:.15}
+/* Per-domain glow */
+.d-alim.active{box-shadow:0 0 0 1px rgba(212,160,23,.45),0 20px 50px rgba(0,0,0,.5),0 0 40px rgba(212,160,23,.07)}
+.d-auto.active{box-shadow:0 0 0 1px rgba(0,148,212,.45),0 20px 50px rgba(0,0,0,.5),0 0 40px rgba(0,148,212,.07)}
+.d-serv.active{box-shadow:0 0 0 1px rgba(14,168,120,.45),0 20px 50px rgba(0,0,0,.5),0 0 40px rgba(14,168,120,.07)}
+.d-comp.active{box-shadow:0 0 0 1px rgba(123,92,240,.45),0 20px 50px rgba(0,0,0,.5),0 0 40px rgba(123,92,240,.07)}
+.d-secu.active{box-shadow:0 0 0 1px rgba(212,75,36,.45),0 20px 50px rgba(0,0,0,.5),0 0 40px rgba(212,75,36,.07)}
+.d-stay.active{box-shadow:0 0 0 1px rgba(224,112,56,.45),0 20px 50px rgba(0,0,0,.5),0 0 40px rgba(224,112,56,.07)}
+.d-azur.active{box-shadow:0 0 0 1px rgba(8,104,160,.45),0 20px 50px rgba(0,0,0,.5),0 0 40px rgba(8,104,160,.07)}
+.d-rent.active{box-shadow:0 0 0 1px rgba(90,136,176,.45),0 20px 50px rgba(0,0,0,.5),0 0 40px rgba(90,136,176,.07)}
+.d-news.active{box-shadow:0 0 0 1px rgba(90,136,176,.35),0 20px 50px rgba(0,0,0,.5)}
+/* Content visibility: side cards show compact, active shows full */
+.dcard.side .dcdesc,
+.dcard.side .dctags,
+.dcard.side .dccta{display:none}
+.dcard.side .dcname{font-size:22px;margin-bottom:0}
+/* Card content */
+.dcicon{font-size:28px;margin-bottom:.8rem;display:block}
+.dcnum{font-family:var(--fo);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--dc,var(--az));opacity:.55;margin-bottom:.15rem}
+.dcname{font-family:var(--fe);font-size:clamp(26px,4vw,40px);font-weight:900;font-style:italic;letter-spacing:.03em;color:var(--td);line-height:1;margin-bottom:.6rem;transition:font-size .3s}
+.dcdesc{font-family:var(--fo);font-size:13px;color:var(--td2);line-height:1.6;margin-bottom:1.2rem}
+.dctags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1.3rem}
+.dctag{font-family:var(--fo);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:2px;border:1px solid var(--bd);color:var(--td3)}
+.dccta{font-family:var(--fe);font-size:12px;font-weight:700;font-style:italic;letter-spacing:.08em;text-transform:uppercase;color:var(--dc,var(--az));display:flex;align-items:center;gap:5px;transition:gap .2s}
+.dcard.active:hover .dccta{gap:9px}
+.dccta::after{content:'→'}
+.dcard-affil{position:absolute;top:10px;right:10px;font-family:var(--fo);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:20px;background:rgba(212,160,23,0.12);color:var(--gold);border:1px solid rgba(212,160,23,0.2)}
+/* carousel nav */
+.cdots{display:flex;justify-content:center;gap:6px;margin-top:1.6rem}
+.cdot{width:18px;height:3px;border-radius:2px;background:var(--bd2);cursor:pointer;transition:all .3s}
+.cdot.on{background:var(--az);width:26px}
+.carrows{display:flex;gap:7px}
+.carrbtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--bd2);color:var(--td2);display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .2s}
+.carrbtn:hover{border-color:var(--az);color:var(--az)}
+/* domain color vars */
+.d-alim{--dc:#D4A017}.d-auto{--dc:#0094D4}.d-serv{--dc:#0EA878}
+.d-comp{--dc:#7B5CF0}.d-secu{--dc:#D44B24}.d-stay{--dc:#E07038}
+.d-azur{--dc:#0868A0}.d-rent{--dc:#5A88B0}.d-news{--dc:#5A88B0}
+
+/* MAP */
+.mapsec{background:var(--bg);border-top:1px solid var(--bd);padding:5rem 0 0}
+.mapsecin{padding:0 1.4rem 2rem;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem}
+#landmap{width:100%;height:420px;border-top:1px solid var(--bd)}
+@media(max-width:600px){#landmap{height:280px}}
+/* DARK MAP via CSS invert */
+#landmap .leaflet-tile-pane,
+#movmap .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.85) saturate(1.3) contrast(.92)}
+.mapopenbtn{font-family:var(--fe);font-size:12px;font-weight:700;font-style:italic;letter-spacing:.08em;text-transform:uppercase;padding:9px 20px;border-radius:3px;border:1px solid var(--az);color:var(--az);transition:all .2s}
+.mapopenbtn:hover{background:var(--az);color:#fff}
+#map-status{font-family:var(--fo);font-size:11px;color:var(--td3);padding:.5rem 1.4rem;text-align:center}
+
+/* GAMIFICATION */
+.gamiwrap{background:var(--bg2);border-top:1px solid var(--bd);padding:5rem 1.4rem}
+.gamiin{max-width:1100px;margin:0 auto}
+.gamigrid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+@media(max-width:640px){.gamigrid{grid-template-columns:1fr}}
+.gamiblock{background:var(--bg3);border:1px solid var(--bd);border-radius:6px;padding:1.5rem}
+/* XP */
+.xpheader{display:flex;align-items:center;gap:12px;margin-bottom:1.1rem}
+.xpbadge{width:50px;height:50px;border-radius:9px;flex-shrink:0;background:linear-gradient(135deg,rgba(212,160,23,0.15),rgba(212,160,23,0.04));border:1px solid rgba(212,160,23,0.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}
+.xpbadge-num{font-family:var(--fn);font-size:20px;letter-spacing:.04em;color:var(--gold2);line-height:1}
+.xpbadge-lbl{font-family:var(--fo);font-size:7px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.8}
+.xpname{font-family:var(--fe);font-size:21px;font-weight:900;font-style:italic;color:var(--gold2);line-height:1}
+.xpnumlbl{font-family:var(--fo);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--td3);margin-top:1px}
+.xppts{font-family:var(--fo);font-size:12px;color:var(--td2);margin-top:2px}
+.xpbarwrap{background:var(--bd);border-radius:3px;height:7px;overflow:hidden;margin-bottom:.35rem}
+.xpbarfill{height:100%;width:62%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:3px;animation:xpbr 3s ease-in-out infinite}
+.xpbarlbl{font-family:var(--fo);font-size:10px;color:var(--td3);display:flex;justify-content:space-between;margin-bottom:.9rem}
+.xpnext{padding:.65rem;border-radius:4px;background:rgba(212,160,23,0.04);border:1px solid rgba(212,160,23,0.1);display:flex;align-items:flex-start;gap:9px;margin-bottom:1rem}
+.xpnext-icon{font-size:16px;flex-shrink:0}
+.xpnext-text{font-family:var(--fo);font-size:11px;color:var(--td3);line-height:1.4}
+.xpnext-text strong{color:var(--gold);font-weight:600}
+.xpactions{display:flex;flex-wrap:wrap;gap:5px}
+.xpact{font-family:var(--fo);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:rgba(212,160,23,0.04);border:1px solid rgba(212,160,23,0.11);color:var(--td3)}
+.xpact span{color:var(--gold);margin-right:3px}
+/* Leaderboard */
+.lbtitle{font-family:var(--fe);font-size:15px;font-weight:800;font-style:italic;color:var(--td);margin-bottom:1rem;letter-spacing:.04em}
+.lbitem{display:flex;align-items:center;gap:10px;padding:.6rem 0;border-bottom:1px solid var(--bd)}
+.lbitem:last-child{border-bottom:none}
+.lbrank{font-family:var(--fe);font-size:16px;font-weight:900;font-style:italic;color:var(--td3);width:18px;text-align:center}
+.lbrank.g{color:var(--gold2)}.lbrank.s{color:#A0B8C8}.lbrank.b{color:#C08050}
+.lbav{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fn);font-size:12px;flex-shrink:0}
+.lbinfo{flex:1}
+.lbn{font-family:var(--fo);font-size:13px;font-weight:600;color:var(--td)}
+.lbl{font-family:var(--fo);font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--td3);margin-top:1px}
+.lbxp{font-family:var(--fe);font-size:13px;font-weight:700;font-style:italic;color:var(--gold)}
+.lbfooter{margin-top:1rem;text-align:center;font-family:var(--fo);font-size:11px;color:var(--td3)}
+.lbfooter a{color:var(--az);text-decoration:underline;text-decoration-color:rgba(0,148,212,0.3)}
+.gamicounters{display:flex;gap:8px;margin-top:1.2rem;flex-wrap:wrap}
+.gctr{flex:1;min-width:90px;background:var(--bg3);border:1px solid var(--bd);border-radius:4px;padding:.8rem;text-align:center}
+.gcnum{font-family:var(--fe);font-size:24px;font-weight:900;font-style:italic;color:var(--az2);display:block}
+.gclbl{font-family:var(--fo);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--td3);margin-top:2px}
+/* QUÊTES */
+.questblock{grid-column:1/-1;background:var(--bg3);border:1px solid var(--bd);border-radius:6px;padding:1.5rem}
+.qheader{display:flex;align-items:center;gap:12px;margin-bottom:1.2rem}
+.qicon{font-size:24px}
+.qtitleblock{}
+.qtitle{font-family:var(--fe);font-size:18px;font-weight:900;font-style:italic;color:var(--td);letter-spacing:.04em}
+.qsub{font-family:var(--fo);font-size:11px;color:var(--td3);margin-top:2px}
+.qreset{margin-left:auto;font-family:var(--fo);font-size:11px;color:var(--td3);background:var(--bd);padding:4px 10px;border-radius:20px}
+.quest-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:600px){.quest-list{grid-template-columns:1fr}}
+.qi{background:rgba(255,255,255,0.02);border:1px solid var(--bd);border-radius:5px;padding:12px}
+.qi-top{display:flex;align-items:center;gap:8px;margin-bottom:.5rem}
+.qi-icon{font-size:18px}
+.qi-name{font-family:var(--fo);font-size:12px;font-weight:700;color:var(--td)}
+.qi-reward{margin-left:auto;font-family:var(--fe);font-size:12px;font-weight:700;font-style:italic;color:var(--gold2)}
+.qi-desc{font-family:var(--fo);font-size:11px;color:var(--td3);line-height:1.4;margin-bottom:.7rem}
+.qi-bar-wrap{background:var(--bd);border-radius:2px;height:4px;overflow:hidden;margin-bottom:.4rem}
+.qi-bar{height:100%;border-radius:2px;background:var(--az)}
+.qi-prog{font-family:var(--fo);font-size:10px;color:var(--td3)}
+
+/* NEWS TEASER */
+.newsteaser{background:var(--sand);border-top:1px solid rgba(0,0,0,0.06);padding:4rem 1.4rem;position:relative}
+.newsteaserin{max-width:1100px;margin:0 auto}
+.news-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:1.6rem}
+@media(max-width:640px){.news-mini-grid{grid-template-columns:1fr}}
+.news-mini{background:#fff;border-radius:5px;border:1px solid rgba(0,0,0,0.06);padding:1.1rem;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.news-mini:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.07)}
+.ncat{font-family:var(--fo);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:2px 9px;border-radius:2px;display:inline-block;margin-bottom:.6rem}
+.nc-au{background:rgba(0,148,212,0.08);color:#005A96}
+.nc-fo{background:rgba(212,160,23,0.1);color:#704800}
+.nc-lo{background:rgba(14,168,120,0.08);color:#085A38}
+.ntitle-mini{font-family:var(--fe);font-size:15px;font-weight:800;font-style:italic;color:var(--tl);line-height:1.2;margin-bottom:.4rem}
+.nmeta-mini{font-family:var(--fo);font-size:10px;color:#8AAABB;display:flex;align-items:center;gap:5px}
+.nmdot{width:3px;height:3px;border-radius:50%;background:#C0D0D8}
+.news-teaser-footer{display:flex;justify-content:space-between;align-items:center;margin-top:1.4rem;flex-wrap:wrap;gap:8px}
+.ncta{font-family:var(--fe);font-size:12px;font-weight:700;font-style:italic;letter-spacing:.07em;text-transform:uppercase;padding:8px 18px;border-radius:3px;transition:all .2s}
+.ncta-s{border:1px solid rgba(0,0,0,0.14);color:var(--tl2)}
+.ncta-s:hover{border-color:var(--tl);color:var(--tl)}
+.ncta-p{background:var(--bg3);color:var(--sand)}
+.ncta-p:hover{background:var(--bg2)}
+
+/* CTA / ACCESS */
+.ctawrap{background:var(--sand);border-top:1px solid rgba(0,0,0,0.06);padding:5rem 1.4rem;text-align:center;position:relative}
+.ctain{max-width:560px;margin:0 auto}
+.access-badge{display:inline-flex;align-items:center;gap:6px;margin-bottom:1rem;padding:5px 14px;border-radius:20px;background:rgba(14,31,58,0.06);border:1px solid rgba(14,31,58,0.1);font-family:var(--fo);font-size:11px;font-weight:600;letter-spacing:.05em;color:var(--tl2)}
+.access-dot{width:6px;height:6px;border-radius:50%;background:#22DD88;box-shadow:0 0 6px #22DD88}
+.ctatitle{font-family:var(--fe);font-size:clamp(28px,7vw,56px);font-weight:900;font-style:italic;text-transform:uppercase;color:var(--tl);line-height:.95;margin-bottom:.8rem}
+.ctatitle span{color:var(--az)}
+.ctasub{font-family:var(--fo);font-size:14px;color:var(--tl2);line-height:1.7;margin-bottom:1.6rem}
+/* Access form */
+.access-form{display:flex;flex-direction:column;gap:10px;max-width:400px;margin:0 auto 1rem}
+.access-input{background:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:6px;padding:12px 16px;font-family:var(--fo);font-size:14px;color:var(--tl);outline:none;transition:border-color .2s}
+.access-input::placeholder{color:#A0B8C8}
+.access-input:focus{border-color:var(--az)}
+.access-select{background:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:6px;padding:12px 16px;font-family:var(--fo);font-size:14px;color:var(--tl);outline:none;appearance:none;cursor:pointer}
+.access-submit{font-family:var(--fe);font-size:14px;font-weight:800;font-style:italic;letter-spacing:.06em;text-transform:uppercase;padding:14px 30px;border-radius:3px;background:var(--bg3);color:var(--sand);transition:all .2s}
+.access-submit:hover{background:var(--bg2)}
+.access-note{font-family:var(--fo);font-size:11px;color:rgba(58,88,112,0.6);margin-top:.5rem}
+
+/* FOOTER */
+footer{background:var(--bg);border-top:1px solid var(--bd);padding:3.5rem 1.4rem 2rem}
+.footin{max-width:1100px;margin:0 auto}
+.footrow{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+@media(max-width:768px){.footrow{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footrow{grid-template-columns:1fr}}
+.footbrand{}
+.footlogo{font-family:var(--fn);font-size:28px;letter-spacing:.1em;color:var(--td2);margin-bottom:.7rem}
+.footpitch{font-family:var(--fo);font-size:12px;color:var(--td3);line-height:1.6;max-width:220px;margin-bottom:1rem}
+.foot-social{display:flex;gap:8px}
+.fsoc{width:30px;height:30px;border-radius:50%;border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--td3);transition:all .2s}
+.fsoc:hover{border-color:var(--td2);color:var(--td2)}
+.footcol h4{font-family:var(--fo);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--td3);margin-bottom:.9rem}
+.footcol-links{display:flex;flex-direction:column;gap:.5rem}
+.footcol-links a{font-family:var(--fo);font-size:12px;color:var(--td3);transition:color .2s}
+.footcol-links a:hover{color:var(--td2)}
+.footbottom{border-top:1px solid var(--bd);padding-top:1.4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.footcopy{font-family:var(--fo);font-size:10px;color:var(--td3)}
+.footlegal{display:flex;gap:1.2rem;flex-wrap:wrap}
+.footlegal a{font-family:var(--fo);font-size:10px;color:var(--td3);transition:color .2s}
+.footlegal a:hover{color:var(--td2)}
+
+/* FADE IN */
+.fi{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.fi.fv{opacity:1;transform:none}
+.fi1{transition-delay:.1s}.fi2{transition-delay:.2s}.fi3{transition-delay:.3s}.fi4{transition-delay:.4s}
+
+/* LEAFLET OVERRIDE */
+.leaflet-container{background:#0a1520!important}
+.leaflet-popup-content-wrapper{background:var(--bg3)!important;border:1px solid var(--bd2)!important;border-radius:5px!important;box-shadow:0 8px 24px rgba(0,0,0,.5)!important}
+.leaflet-popup-tip{background:var(--bg3)!important}
+.leaflet-popup-content{font-family:var(--fo)!important;color:var(--td)!important;margin:10px 12px!important;font-size:12px!important}
+.leaflet-popup-content strong{font-family:var(--fe);font-style:italic;font-size:14px;color:var(--td);display:block;margin-bottom:2px}
+.leaflet-popup-content span{color:var(--td2);font-size:11px}
+.leaflet-popup-close-button{color:var(--td2)!important}
+.nmark{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;border:2px solid rgba(255,255,255,0.15);box-shadow:0 2px 8px rgba(0,0,0,0.5);cursor:pointer;transition:transform .2s}
+.nmark:hover{transform:scale(1.15)}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div id="lbg"></div>
+  <div id="radar">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(0,148,212,0.15)" stroke-width="1"/>
+      <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(0,148,212,0.12)" stroke-width="1"/>
+      <circle cx="100" cy="100" r="30" fill="none" stroke="rgba(0,148,212,0.1)" stroke-width="1"/>
+      <line x1="100" y1="8" x2="100" y2="192" stroke="rgba(0,148,212,0.08)" stroke-width="1"/>
+      <line x1="8" y1="100" x2="192" y2="100" stroke="rgba(0,148,212,0.08)" stroke-width="1"/>
+      <line id="rsweep" x1="100" y1="100" x2="190" y2="100" stroke="rgba(0,194,255,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+      <path id="rglow" d="M100,100 L190,100 A90,90 0 0,0 190,100 Z" fill="rgba(0,148,212,0.05)"/>
+      <circle class="rdot" id="rd1" cx="145" cy="75" r="3.5" fill="#00C2FF" opacity="0"/>
+      <circle class="rdot" id="rd2" cx="80" cy="130" r="3" fill="#D4A017" opacity="0"/>
+      <circle class="rdot" id="rd3" cx="125" cy="140" r="4" fill="#0EA878" opacity="0"/>
+      <circle class="rdot" id="rd4" cx="60" cy="85" r="3" fill="#E07038" opacity="0"/>
+      <circle class="rdot" id="rd5" cx="155" cy="115" r="3.5" fill="#7B5CF0" opacity="0"/>
+    </svg>
+  </div>
+  <div id="lstatus">INITIALISATION...</div>
+  <div id="llogo">NIKA</div>
+  <div id="lbar"><div id="lbarfill"></div></div>
+</div>
+
+<!-- FLOAT MAP -->
+<button id="fmap" onclick="openMap()" title="Carte">🗺️</button>
+
+<!-- MAP OVERLAY -->
+<div id="moverlay">
+  <div id="movh">
+    <div id="movtitle">NIKA · CARTE MONDIALE</div>
+    <button id="movcls" onclick="closeMap()">✕</button>
+  </div>
+  <div id="movfilters">
+    <button class="mfbtn on" onclick="filterMap(this,'all')">Tout</button>
+    <button class="mfbtn" onclick="filterMap(this,'food')">🍽️ Food</button>
+    <button class="mfbtn" onclick="filterMap(this,'auto')">🚗 Auto</button>
+    <button class="mfbtn" onclick="filterMap(this,'stay')">🏡 Stay</button>
+    <button class="mfbtn" onclick="filterMap(this,'azur')">🛥️ Azur</button>
+    <button class="mfbtn" onclick="filterMap(this,'serv')">🔧 Services</button>
+    <button class="mfbtn" onclick="filterMap(this,'secu')">🔒 Sécu</button>
+  </div>
+  <div id="movmap"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nlogo">NIKA <span class="ndot"></span></a>
+  <ul class="nlinks">
+    <li><a href="#domaines">Domaines</a></li>
+    <li><a href="#carte">Carte</a></li>
+    <li><a href="#news-teaser">News</a></li>
+    <li><a href="#access">Accès</a></li>
+  </ul>
+  <div class="nright">
+    <button class="nmapbtn" onclick="openMap()">🗺️</button>
+    <button class="nbtn nbtn-o">Connexion</button>
+    <button class="nbtn nbtn-f">S'inscrire</button>
+    <button class="nburger" id="nburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="mobnav">
+  <a href="#domaines" class="mobnavlink" onclick="closeNav()">Domaines</a>
+  <a href="#carte" class="mobnavlink" onclick="closeNav()">Carte</a>
+  <a href="#news-teaser" class="mobnavlink" onclick="closeNav()">News</a>
+  <a href="#access" class="mobnavlink" onclick="closeNav()">Rejoindre</a>
+  <div class="mobnavbtns">
+    <button class="mobnavbtn mobnavbtn-o">Connexion</button>
+    <button class="mobnavbtn mobnavbtn-f">S'inscrire</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hbg"></div><div class="hglow"></div>
+  <svg class="joyboy" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" color="var(--td)" aria-hidden="true">
+    <line x1="12" y1="18" x2="128" y2="188" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+    <line x1="110" y1="30" x2="44" y2="172" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="78" cy="36" r="20"/><ellipse cx="64" cy="20" rx="13" ry="17" transform="rotate(-18 64 20)"/>
+    <ellipse cx="78" cy="12" rx="11" ry="16"/><ellipse cx="93" cy="20" rx="12" ry="16" transform="rotate(18 93 20)"/>
+    <ellipse cx="74" cy="80" rx="13" ry="26" transform="rotate(-5 74 80)"/>
+    <ellipse cx="47" cy="68" rx="7" ry="21" transform="rotate(-42 47 68)"/>
+    <ellipse cx="104" cy="80" rx="6" ry="19" transform="rotate(32 104 80)"/>
+    <ellipse cx="58" cy="130" rx="7" ry="25" transform="rotate(-14 58 130)"/>
+    <ellipse cx="86" cy="132" rx="7" ry="23" transform="rotate(18 86 132)"/>
+  </svg>
+  <div class="hcontent">
+    <p class="heyebrow">Explore · Joue · Vis</p>
+    <h1 class="htitle">Tout ce qui<br>bouge sur la<br><span class="az">Côte d'Azur</span></h1>
+    <p class="hsub">Restaurants, dépanneurs, logements insolites dans le monde entier, bateaux, services locaux — tout ce qui compte, au même endroit.</p>
+    <div class="hsearch">
+      <input class="hsearch-input" type="text" id="searchinput" placeholder="Restaurant, logement insolite, dépannage...">
+      <button class="hsearch-btn" onclick="doSearch()">🔍</button>
+    </div>
+    <div class="hctas">
+      <button class="hbtnp" onclick="document.getElementById('domaines').scrollIntoView({behavior:'smooth'})">Explorer les domaines</button>
+      <button class="hbtns" onclick="openMap()">Carte live →</button>
+    </div>
+    <div class="hpulse">
+      <div class="hpulse-dot"></div>
+      <span class="hpulse-txt"><strong id="livecount">23</strong> personnes sur NIKA en ce moment</span>
+      <span style="color:var(--td3);font-size:11px">·</span>
+      <span class="hpulse-txt"><strong>4</strong> nouveaux POIs aujourd'hui</span>
+    </div>
+    <div class="hxpteaser">
+      <span>Inscris-toi · Gagne de l'XP · Monte en niveau</span>
+      <div class="hxpbar"><div class="hxpfill"></div></div>
+    </div>
+  </div>
+  <div class="hscroll"><span>Défiler</span><div class="hscline"></div></div>
+</header>
+
+<!-- STATS -->
+<div class="statsbar sand-grain">
+  <div class="sitem"><span class="snum" data-t="312"><em>0</em></span><span class="slbl">Commerces</span></div>
+  <div class="sitem"><span class="snum" data-t="186"><em>0</em></span><span class="slbl">Hébergements</span></div>
+  <div class="sitem"><span class="snum" data-t="9"><em>0</em></span><span class="slbl">Domaines</span></div>
+  <div class="sitem"><span class="snum" data-t="48"><em>0</em></span><span class="slbl">Pros vérifiés</span></div>
+</div>
+
+<!-- TOKEN (moved up) -->
+<div class="tokwrap">
+  <div class="tokin sec fi">
+    <div class="fi fi1">
+      <p class="stag">Économie NIKA</p>
+      <h2 class="stitle">La monnaie <span style="color:var(--gold2)">NIKA</span></h2>
+      <p class="sdesc">Pas une crypto — une monnaie de plateforme intégrée. Achetez des crédits, stackez pour des avantages exclusifs dans l'écosystème.</p>
+      <ul class="tokfeats">
+        <li class="tf"><div class="tfico">💳</div><div><div class="tft">Achat simple</div><div class="tfd">Wallet lié à ton profil. Achat via carte bancaire, sans friction.</div></div></li>
+        <li class="tf"><div class="tfico">🔒</div><div><div class="tft">Staking & avantages</div><div class="tfd">X NIKA stackés = location sans caution, VTC prioritaire, accès early.</div></div></li>
+        <li class="tf"><div class="tfico">⛓️</div><div><div class="tft">ERC-20 · Base network</div><div class="tfd">Crédits centralisés phase 1 → migration on-chain transparente phase 2.</div></div></li>
+      </ul>
+      <button class="hbtnp" style="background:var(--gold);box-shadow:0 0 28px rgba(212,160,23,0.18)">En savoir plus sur $NIKA</button>
+    </div>
+    <div class="tokringwrap fi fi3">
+      <div class="tokring">
+        <div class="tokdot"></div>
+        <div class="tokcore"><div class="tokcorel">NIKA</div><div class="tokcores">Token</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FLASH DEALS -->
+<div class="flashwrap">
+  <div class="flashin">
+    <div class="flash-tag">⚡ Flash</div>
+    <div class="flash-strip">
+      <div class="flash-card"><span class="fc-ico">🍕</span><span class="fc-text">Pizza 8€ · Chez Marco</span><span class="flash-sep"></span><span class="fc-timer" data-s="5400">1h 30m</span></div>
+      <div class="flash-card"><span class="fc-ico">🚗</span><span class="fc-text">Lavage offert · AutoNice</span><span class="flash-sep"></span><span class="fc-timer" data-s="2700">45m</span></div>
+      <div class="flash-card"><span class="fc-ico">🛥️</span><span class="fc-text">-20% bateau · Azur Marine</span><span class="flash-sep"></span><span class="fc-timer" data-s="10800">3h 00m</span></div>
+      <div class="flash-card"><span class="fc-ico">☕</span><span class="fc-text">Café offert · Blend Café</span><span class="flash-sep"></span><span class="fc-timer" data-s="1800">30m</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ONBOARDING -->
+<div class="onbwrap sand-grain">
+  <div class="onbin fi">
+    <p class="stag l">Comment ça marche</p>
+    <h2 class="stitle l">En 4 étapes</h2>
+    <div class="onb-steps">
+      <div class="onb-step"><div class="onb-n">01</div><span class="onb-icon">👤</span><div class="onb-title">Crée ton profil</div><div class="onb-desc">Inscription en 1 min, wallet NIKA automatiquement créé.</div><div class="onb-arrow">›</div></div>
+      <div class="onb-step"><div class="onb-n">02</div><span class="onb-icon">🗺️</span><div class="onb-title">Explore la carte</div><div class="onb-desc">Tous les spots de Nice en temps réel. Filtre par domaine.</div><div class="onb-arrow">›</div></div>
+      <div class="onb-step"><div class="onb-n">03</div><span class="onb-icon">⚡</span><div class="onb-title">Gagne de l'XP</div><div class="onb-desc">Avis, commande, POI créé, news validée — tout compte.</div><div class="onb-arrow">›</div></div>
+      <div class="onb-step"><div class="onb-n">04</div><span class="onb-icon">🔓</span><div class="onb-title">Débloque des avantages</div><div class="onb-desc">Niveaux NIKA, token, caution waiver, offres exclusives.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3D CAROUSEL -->
+<div id="domaines" class="domwrap">
+  <div class="domhead fi">
+    <div>
+      <p class="stag">9 Modules</p>
+      <h2 class="stitle">Nos domaines</h2>
+      <p class="sdesc">De l'alimentation aux logements insolites dans le monde entier — un écosystème complet pour la vraie vie.</p>
+    </div>
+    <div class="carrows">
+      <button class="carrbtn" onclick="carPrev()" id="carrbtn-prev">←</button>
+      <button class="carrbtn" onclick="carNext()" id="carrbtn-next">→</button>
+    </div>
+  </div>
+  <div class="carrwrap" id="carrwrap">
+    <div class="carr-track" id="cartrack">
+      <div class="dcard d-alim" data-idx="0" onclick="carGoTo(0)">
+        <span class="dcicon">🍽️</span><div class="dcnum">01 / Alimentation</div>
+        <div class="dcname">FOOD</div>
+        <p class="dcdesc">Restaurants, brunchs, cafés, food trucks et boulangeries. Commande en ligne, stock en temps réel. Deux types de vendeurs : commerce fixe et mobile.</p>
+        <div class="dctags"><span class="dctag">Commerce fixe</span><span class="dctag">Mobile</span><span class="dctag">Livraison</span><span class="dctag">Stock live</span></div>
+        <div class="dccta">Explorer</div>
+      </div>
+      <div class="dcard d-auto" data-idx="1" onclick="carGoTo(1)">
+        <span class="dcicon">🚗</span><div class="dcnum">02 / Automobile & VTC</div>
+        <div class="dcname">AUTO</div>
+        <p class="dcdesc">Dépannage Uber-like, carburant, lavage, mécanique mobile, location + VTC avec chauffeurs de confiance vérifiés NIKA. API plaque immat FR intégrée.</p>
+        <div class="dctags"><span class="dctag">Dépannage</span><span class="dctag">VTC</span><span class="dctag">Location</span><span class="dctag">API immat</span></div>
+        <div class="dccta">Explorer</div>
+      </div>
+      <div class="dcard d-stay" data-idx="2" onclick="carGoTo(2)">
+        <span class="dcard-affil">Affiliation</span>
+        <span class="dcicon">🏡</span><div class="dcnum">03 / Logement insolite</div>
+        <div class="dcname">STAY</div>
+        <p class="dcdesc">Les hébergements les plus insolites du monde entier. Maison flottante, avion reconverti, cabane dans les arbres, sous-marin, fusée, grotte. Curatés, thématiques, affiliés.</p>
+        <div class="dctags"><span class="dctag">Mondial</span><span class="dctag">Insolite</span><span class="dctag">Thématique</span><span class="dctag">Luxe</span></div>
+        <div class="dccta">Explorer</div>
+      </div>
+      <div class="dcard d-azur" data-idx="3" onclick="carGoTo(3)">
+        <span class="dcicon">🛥️</span><div class="dcnum">04 / Mer & Bateaux</div>
+        <div class="dcname">AZUR</div>
+        <p class="dcdesc">Location de bateaux avec ou sans skipper, jetski, parcours flottant, BBQ à bord, chicha, fruits. Services nautiques complets sur la Méditerranée.</p>
+        <div class="dctags"><span class="dctag">Location bateaux</span><span class="dctag">Skipper</span><span class="dctag">Jetski</span><span class="dctag">Services</span></div>
+        <div class="dccta">Explorer</div>
+      </div>
+      <div class="dcard d-rent" data-idx="4" onclick="carGoTo(4)">
+        <span class="dcicon">📦</span><div class="dcnum">05 / Location matériel</div>
+        <div class="dcname">RENT</div>
+        <p class="dcdesc">Parasols, transats, batterie EcoFlow, scooter sous-marin + bombonne O₂ + compresseur, mini-bateau, plateforme flottante, matériel de nettoyage professionnel.</p>
+        <div class="dctags"><span class="dctag">Plage</span><span class="dctag">Nautique</span><span class="dctag">Outdoor</span><span class="dctag">Pro</span></div>
+        <div class="dccta">Explorer</div>
+      </div>
+      <div class="dcard d-serv" data-idx="5" onclick="carGoTo(5)">
+        <span class="dcicon">🔧</span><div class="dcnum">06 / Services</div>
+        <div class="dcname">SERV</div>
+        <p class="dcdesc">Tous les prestataires locaux. Réservation, notation et suivi de mission. Module évolutif selon les acteurs de la Côte d'Azur.</p>
+        <div class="dctags"><span class="dctag">Réservation</span><span class="dctag">Notation</span><span class="dctag">Suivi</span></div>
+        <div class="dccta">Explorer</div>
+      </div>
+      <div class="dcard d-comp" data-idx="6" onclick="carGoTo(6)">
+        <span class="dcicon">📚</span><div class="dcnum">07 / Compétences</div>
+        <div class="dcname">LEARN</div>
+        <p class="dcdesc">Formateurs et ateliers locaux. Cours pratiques, masterclass, compétences terrain sur la Côte d'Azur.</p>
+        <div class="dctags"><span class="dctag">Formateurs</span><span class="dctag">Ateliers</span><span class="dctag">Cours</span></div>
+        <div class="dccta">Explorer</div>
+      </div>
+      <div class="dcard d-secu" data-idx="7" onclick="carGoTo(7)">
+        <span class="dcicon">🔒</span><div class="dcnum">08 / Sécurité</div>
+        <div class="dcname">SEC</div>
+        <p class="dcdesc">Serruriers, alarmes, gardiennage. Les pros de la sécurité de Nice et la Côte en intervention rapide, vérifiés NIKA.</p>
+        <div class="dctags"><span class="dctag">Urgence</span><span class="dctag">Serrurerie</span><span class="dctag">Alarme</span></div>
+        <div class="dccta">Explorer</div>
+      </div>
+      <div class="dcard d-news" data-idx="8" onclick="carGoTo(8)">
+        <span class="dcicon">📡</span><div class="dcnum">09 / Actualités</div>
+        <div class="dcname">NEWS</div>
+        <p class="dcdesc">Infos locales indépendantes + publications communauté NIKA. Modération IA avant publication, vote communautaire, sources vérifiées.</p>
+        <div class="dctags"><span class="dctag">Local</span><span class="dctag">Indépendant</span><span class="dctag">IA modération</span></div>
+        <div class="dccta">Explorer</div>
+      </div>
+    </div>
+  </div>
+  <div class="cdots" id="cdots">
+    <div class="cdot" onclick="carGoTo(0)"></div>
+    <div class="cdot" onclick="carGoTo(1)"></div>
+    <div class="cdot" onclick="carGoTo(2)"></div>
+    <div class="cdot" onclick="carGoTo(3)"></div>
+    <div class="cdot" onclick="carGoTo(4)"></div>
+    <div class="cdot" onclick="carGoTo(5)"></div>
+    <div class="cdot" onclick="carGoTo(6)"></div>
+    <div class="cdot" onclick="carGoTo(7)"></div>
+    <div class="cdot" onclick="carGoTo(8)"></div>
+  </div>
+</div>
+
+<!-- MAP -->
+<div id="carte" class="mapsec">
+  <div class="mapsecin">
+    <div class="fi">
+      <p class="stag">Géolocalisé</p>
+      <h2 class="stitle">Explore la carte</h2>
+      <p class="sdesc">Tous les pros, hébergements et POIs sur Nice. Filtre par domaine, crée des points d'intérêt, calcule un itinéraire.</p>
+    </div>
+    <button class="mapopenbtn fi fi2" onclick="openMap()">Plein écran ↗</button>
+  </div>
+  <div id="map-status"></div>
+  <div id="landmap"></div>
+</div>
+
+<!-- GAMIFICATION -->
+<div class="gamiwrap">
+  <div class="gamiin">
+    <div class="fi">
+      <p class="stag">Progression</p>
+      <h2 class="stitle">Gagne de l'XP</h2>
+      <p class="sdesc">Chaque action rapporte de l'expérience. Monte en niveau, débloque des avantages, accède aux défis hebdomadaires.</p>
+    </div>
+    <div class="gamigrid">
+      <!-- XP -->
+      <div class="gamiblock fi fi1">
+        <div class="xpheader">
+          <div class="xpbadge"><div class="xpbadge-num">3</div><div class="xpbadge-lbl">niveau</div></div>
+          <div><div class="xpname">Local</div><div class="xpnumlbl">Niveau 3 · 1 240 XP</div><div class="xppts">Prochain : <strong style="color:var(--gold)">Connecté</strong></div></div>
+        </div>
+        <div class="xpbarwrap"><div class="xpbarfill"></div></div>
+        <div class="xpbarlbl"><span>Local · Niv.3</span><span>760 XP → Connecté</span></div>
+        <div class="xpnext"><div class="xpnext-icon">🔓</div><div class="xpnext-text">À Niv.4 <strong>Connecté</strong> : badge de confiance + offres pros exclusives + -10% sur les Flash Deals.</div></div>
+        <div class="xpactions">
+          <div class="xpact"><span>+50</span>Avis</div><div class="xpact"><span>+80</span>POI créé</div>
+          <div class="xpact"><span>+30</span>Commande</div><div class="xpact"><span>+100</span>News validée</div>
+          <div class="xpact"><span>+20</span>Daily</div><div class="xpact"><span>+150</span>Invitation</div>
+        </div>
+      </div>
+      <!-- LEADERBOARD -->
+      <div class="gamiblock fi fi2">
+        <div class="lbtitle">Top joueurs du mois</div>
+        <div class="lbitem"><div class="lbrank g">1</div><div class="lbav" style="background:rgba(212,160,23,0.12);color:var(--gold2)">MR</div><div class="lbinfo"><div class="lbn">Marco_R06</div><div class="lbl">Légende · Niv.12</div></div><div class="lbxp">8 420 xp</div></div>
+        <div class="lbitem"><div class="lbrank s">2</div><div class="lbav" style="background:rgba(0,148,212,0.1);color:var(--az2)">SL</div><div class="lbinfo"><div class="lbn">Sofia_Lm</div><div class="lbl">Insider · Niv.9</div></div><div class="lbxp">6 180 xp</div></div>
+        <div class="lbitem"><div class="lbrank b">3</div><div class="lbav" style="background:rgba(14,168,120,0.1);color:var(--teal)">AK</div><div class="lbinfo"><div class="lbn">Akira_06</div><div class="lbl">Connaisseur · Niv.8</div></div><div class="lbxp">4 950 xp</div></div>
+        <div class="lbfooter"><a href="#">Rejoindre le classement →</a></div>
+        <div class="gamicounters">
+          <div class="gctr"><span class="gcnum" data-t="14">0</span><span class="gclbl">POIs / semaine</span></div>
+          <div class="gctr"><span class="gcnum" data-t="89">0</span><span class="gclbl">News publiées</span></div>
+          <div class="gctr"><span class="gcnum" data-t="231">0</span><span class="gclbl">Avis laissés</span></div>
+        </div>
+      </div>
+      <!-- QUÊTES -->
+      <div class="questblock fi fi3">
+        <div class="qheader">
+          <div class="qicon">⚔️</div>
+          <div class="qtitleblock"><div class="qtitle">NIKA Challenges — Semaine #3</div><div class="qsub">Défis hebdomadaires · Bonus XP garantis</div></div>
+          <div class="qreset">Reset dans 4j 12h</div>
+        </div>
+        <div class="quest-list">
+          <div class="qi">
+            <div class="qi-top"><span class="qi-icon">🍽️</span><span class="qi-name">Découvreur food</span><span class="qi-reward">+150 XP</span></div>
+            <div class="qi-desc">Commande dans un restaurant où tu n'es jamais allé sur NIKA.</div>
+            <div class="qi-bar-wrap"><div class="qi-bar" style="width:0%"></div></div>
+            <div class="qi-prog">0/1 · Non commencé</div>
+          </div>
+          <div class="qi">
+            <div class="qi-top"><span class="qi-icon">🗺️</span><span class="qi-name">Cartographe</span><span class="qi-reward">+200 XP</span></div>
+            <div class="qi-desc">Crée 2 nouveaux POIs validés sur la carte NIKA.</div>
+            <div class="qi-bar-wrap"><div class="qi-bar" style="width:50%;background:var(--gold)"></div></div>
+            <div class="qi-prog">1/2 · En cours</div>
+          </div>
+          <div class="qi">
+            <div class="qi-top"><span class="qi-icon">📡</span><span class="qi-name">Reporter local</span><span class="qi-reward">+120 XP</span></div>
+            <div class="qi-desc">Publie une news locale qui passe la modération IA.</div>
+            <div class="qi-bar-wrap"><div class="qi-bar" style="width:100%;background:var(--teal)"></div></div>
+            <div class="qi-prog">✓ Complété</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS TEASER -->
+<div id="news-teaser" class="newsteaser sand-grain">
+  <div class="newsteaserin">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem" class="fi">
+      <div><p class="stag l">Domaine 09</p><h2 class="stitle l">Dernières news</h2><p class="sdesc l">Journalistes indépendants + communauté NIKA. IA modère avant publication.</p></div>
+    </div>
+    <div class="news-mini-grid">
+      <div class="news-mini fi fi1"><span class="ncat nc-au">Automobile</span><div class="ntitle-mini">ZFE Nice : ce qui change pour les automobilistes dès 2026</div><div class="nmeta-mini"><span>Il y a 2h</span><span class="nmdot"></span><span>⬆ 47</span></div></div>
+      <div class="news-mini fi fi2"><span class="ncat nc-fo">Alimentation</span><div class="ntitle-mini">Marché de la Libération fête ses 80 ans ce week-end</div><div class="nmeta-mini"><span>Il y a 5h</span><span class="nmdot"></span><span>⬆ 23</span></div></div>
+      <div class="news-mini fi fi3"><span class="ncat nc-lo">Local</span><div class="ntitle-mini">Nouveau POI créé : terrain de basket rénové à l'Ariane</div><div class="nmeta-mini"><span>Il y a 1j</span><span class="nmdot"></span><span>⬆ 12</span></div></div>
+    </div>
+    <div class="news-teaser-footer">
+      <button class="ncta ncta-s">Toutes les news →</button>
+      <button class="ncta ncta-p">+ Publier une info</button>
+    </div>
+  </div>
+</div>
+
+<!-- ACCESS CTA -->
+<div id="access" class="ctawrap sand-grain">
+  <div class="ctain fi">
+    <div class="access-badge"><div class="access-dot"></div>Bêta fermée · Nice · Accès limité</div>
+    <h2 class="ctatitle">Rejoindre<br><span>la liste d'accès</span></h2>
+    <p class="ctasub">NIKA est en phase bêta sur Nice. Premiers inscrits : accès prioritaire, XP de lancement x2 et statut Fondateur permanent.</p>
+    <div class="access-form">
+      <input class="access-input" type="text" placeholder="Ton prénom">
+      <input class="access-input" type="email" placeholder="Ton email">
+      <select class="access-select">
+        <option value="">Je suis...</option>
+        <option value="user">Un utilisateur</option>
+        <option value="pro">Un professionnel / commerce</option>
+        <option value="host">Un hôte / loueur</option>
+        <option value="vtc">Un chauffeur VTC</option>
+      </select>
+      <button class="access-submit" onclick="submitAccess()">Demander l'accès →</button>
+    </div>
+    <div class="access-note">En soumettant, tu acceptes les <a href="#" style="color:var(--tl)">CGU NIKA</a> incluant la clause de plateforme intermédiaire.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footin">
+    <div class="footrow">
+      <div class="footbrand">
+        <div class="footlogo">NIKA</div>
+        <p class="footpitch">Le companion app de la vraie vie. Nice d'abord, le monde ensuite.</p>
+        <div class="foot-social">
+          <a href="#" class="fsoc">𝕏</a>
+          <a href="#" class="fsoc">📸</a>
+          <a href="#" class="fsoc">💼</a>
+        </div>
+      </div>
+      <div class="footcol">
+        <h4>Domaines</h4>
+        <div class="footcol-links">
+          <a href="#">🍽️ Alimentation</a>
+          <a href="#">🚗 Auto & VTC</a>
+          <a href="#">🏡 Logement insolite</a>
+          <a href="#">🛥️ Mer & Bateaux</a>
+          <a href="#">📦 Location matériel</a>
+          <a href="#">🔧 Services</a>
+          <a href="#">📚 Compétences</a>
+          <a href="#">🔒 Sécurité</a>
+          <a href="#">📡 News</a>
+        </div>
+      </div>
+      <div class="footcol">
+        <h4>Plateforme</h4>
+        <div class="footcol-links">
+          <a href="#">Carte interactive</a>
+          <a href="#">Token $NIKA</a>
+          <a href="#">Comment ça marche</a>
+          <a href="#">Devenir partenaire</a>
+          <a href="#">Référencer mon commerce</a>
+          <a href="#">Import Google Maps</a>
+          <a href="#">Flash Deals</a>
+        </div>
+      </div>
+      <div class="footcol">
+        <h4>À propos</h4>
+        <div class="footcol-links">
+          <a href="#">Notre histoire</a>
+          <a href="#">Presse</a>
+          <a href="#">Contact</a>
+          <a href="#">Support</a>
+          <a href="#">Blog / SEO</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter / X</a>
+        </div>
+      </div>
+    </div>
+    <div class="footbottom">
+      <span class="footcopy">© 2025 NIKA — Tous droits réservés. NIKA est une plateforme intermédiaire.</span>
+      <div class="footlegal">
+        <a href="#">Mentions légales</a>
+        <a href="#">CGU</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Cookies</a>
+        <a href="#">Affiliés</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+/* ===== LOADER ===== */
+(function(){
+  var prog=0,bar=document.getElementById('lbarfill'),
+      status=document.getElementById('lstatus'),logo=document.getElementById('llogo'),loader=document.getElementById('loader');
+  var msgs=['DÉTECTION LOCALISATION...','NICE, CÔTE D\'AZUR','CHARGEMENT 9 DOMAINES...','CONNEXION RÉSEAU NIKA...','NIKA ONLINE ✓'];
+  [380,480,580,700,880].forEach(function(f,i){
+    try{var ctx=new(window.AudioContext||window.webkitAudioContext)();var o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,ctx.currentTime+i*0.32);g.gain.linearRampToValueAtTime(0.2,ctx.currentTime+i*0.32+0.04);g.gain.linearRampToValueAtTime(0,ctx.currentTime+i*0.32+0.18);o.start(ctx.currentTime+i*0.32);o.stop(ctx.currentTime+i*0.32+0.22);}catch(e){}
+  });
+  var sweep=document.getElementById('rsweep'),glow=document.getElementById('rglow'),angle=0,start=null;
+  function animR(ts){if(!start)start=ts;angle=((ts-start)/20)%360;var r=angle*Math.PI/180;sweep.setAttribute('x2',100+90*Math.cos(r));sweep.setAttribute('y2',100+90*Math.sin(r));var r0=(angle-40)*Math.PI/180;glow.setAttribute('d','M100,100 L'+(100+90*Math.cos(r0))+','+(100+90*Math.sin(r0))+' A90,90 0 0,1 '+(100+90*Math.cos(r))+','+(100+90*Math.sin(r))+' Z');if(prog<100)requestAnimationFrame(animR);}
+  requestAnimationFrame(animR);
+  var pi=setInterval(function(){prog=Math.min(prog+1.6,100);bar.style.width=prog+'%';if(prog>=100)clearInterval(pi);},40);
+  msgs.forEach(function(m,i){setTimeout(function(){status.textContent=m;if(i===4){status.classList.add('ok');logo.classList.add('show');}},i===0?0:i*480+300);});
+  ['rd1','rd2','rd3','rd4','rd5'].forEach(function(id,i){setTimeout(function(){var el=document.getElementById(id);if(el)el.style.opacity='1';},400+i*300);});
+  setTimeout(function(){loader.classList.add('hide');},2800);
+})();
+
+/* ===== FADE IN ===== */
+var fiObs=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('fv');fiObs.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.fi').forEach(function(el){fiObs.observe(el);});
+
+/* ===== COUNT-UP ===== */
+var sObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;e.target.querySelectorAll('[data-t]').forEach(function(el){var tgt=parseInt(el.dataset.t),cur=0,step=tgt/(1200/16),em=el.querySelector('em')||el;var tmr=setInterval(function(){cur=Math.min(cur+step,tgt);em.textContent=Math.floor(cur);if(cur>=tgt)clearInterval(tmr);},16);});sObs.unobserve(e.target);});},{threshold:0.5});
+document.querySelectorAll('.statsbar,.gamiin').forEach(function(el){sObs.observe(el);});
+
+/* ===== LIVE PULSE ===== */
+var lc=document.getElementById('livecount'),lbase=18;
+if(lc)setInterval(function(){lbase=Math.max(12,Math.min(38,lbase+Math.floor(Math.random()*5)-2));lc.textContent=lbase;},4500);
+
+/* ===== FLASH DEALS TIMERS ===== */
+document.querySelectorAll('.fc-timer[data-s]').forEach(function(el){
+  var secs=parseInt(el.dataset.s);
+  setInterval(function(){if(secs<=0){el.textContent='Expiré';return;}secs--;var h=Math.floor(secs/3600),m=Math.floor((secs%3600)/60),s=secs%60;el.textContent=(h>0?h+'h ':'')+String(m).padStart(2,'0')+'m '+String(s).padStart(2,'0')+'s';},1000);
+});
+
+/* ===== NAV ===== */
+function toggleNav(){document.getElementById('nburger').classList.toggle('open');document.getElementById('mobnav').classList.toggle('open');}
+function closeNav(){document.getElementById('nburger').classList.remove('open');document.getElementById('mobnav').classList.remove('open');}
+
+/* ===== SEARCH ===== */
+function doSearch(){var v=document.getElementById('searchinput').value.trim();if(v)alert('Recherche NIKA: "'+v+'" — fonctionnalité complète en v1 avec Supabase.');}
+
+/* ===== ACCESS FORM ===== */
+function submitAccess(){alert('Demande enregistrée ! Tu seras contacté(e) lors du lancement bêta à Nice.');}
+
+/* ===== 3D CAROUSEL ===== */
+var carIdx=0,carCards=null,carTotal=9,isDrag=false,startX=0,curX=0;
+
+function initCarousel(){
+  carCards=document.querySelectorAll('.dcard');
+  var track=document.getElementById('cartrack');
+  track.addEventListener('touchstart',function(e){isDrag=true;startX=e.touches[0].clientX;curX=startX;},{passive:true});
+  track.addEventListener('touchmove',function(e){if(isDrag)curX=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',function(){if(!isDrag)return;isDrag=false;var d=curX-startX;if(d<-45)carNext();else if(d>45)carPrev();});
+  /* Keyboard nav */
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')carNext();if(e.key==='ArrowLeft')carPrev();});
+  updateCarousel3D();
+}
+
+function updateCarousel3D(){
+  if(!carCards)return;
+  var vw=window.innerWidth;
+  var cwa; /* center width */
+  if(vw>900)cwa=Math.min(430,Math.floor(vw*0.40));
+  else if(vw>600)cwa=Math.floor(vw*0.58);
+  else cwa=Math.floor(vw*0.78);
+  var hc=cwa/2;
+
+  carCards.forEach(function(card,i){
+    card.style.width=cwa+'px';
+    var diff=i-carIdx;
+    var t,op,zi;
+    if(diff===0){
+      t='translateX(-'+hc+'px) rotateY(0deg)';
+      op=1;zi=10;
+      card.classList.add('active');card.classList.remove('side');
+    } else if(diff===1){
+      t='translateX('+(hc*0.55)+'px) rotateY(-42deg) translateZ(-55px)';
+      op=0.55;zi=7;
+      card.classList.remove('active');card.classList.add('side');
+    } else if(diff===-1){
+      t='translateX(-'+(hc*2.55)+'px) rotateY(42deg) translateZ(-55px)';
+      op=0.55;zi=7;
+      card.classList.remove('active');card.classList.add('side');
+    } else if(diff===2){
+      t='translateX('+(hc*1.3)+'px) rotateY(-62deg) translateZ(-150px)';
+      op=0.18;zi=4;
+      card.classList.remove('active');card.classList.add('side');
+    } else if(diff===-2){
+      t='translateX(-'+(hc*3.3)+'px) rotateY(62deg) translateZ(-150px)';
+      op=0.18;zi=4;
+      card.classList.remove('active');card.classList.add('side');
+    } else {
+      t='translateX(-'+hc+'px) rotateY(0deg) translateZ(-500px)';
+      op=0;zi=1;
+      card.classList.remove('active');card.classList.add('side');
+    }
+    card.style.transform=t;
+    card.style.opacity=op;
+    card.style.zIndex=zi;
+    card.style.pointerEvents=zi>=7?'all':'none';
+  });
+
+  /* Adjust container height to active card */
+  requestAnimationFrame(function(){
+    var ac=carCards[carIdx];
+    var wrap=document.getElementById('carrwrap');
+    var h=ac?Math.max(350,ac.offsetHeight+40):400;
+    wrap.style.height=h+'px';
+  });
+
+  document.querySelectorAll('.cdot').forEach(function(d,i){d.classList.toggle('on',i===carIdx);});
+}
+
+function carGoTo(i){carIdx=Math.max(0,Math.min(i,carTotal-1));updateCarousel3D();}
+function carNext(){carGoTo(carIdx+1);}
+function carPrev(){carGoTo(carIdx-1);}
+window.addEventListener('resize',function(){if(carCards)updateCarousel3D();});
+
+/* ===== MAP — FIXED ===== */
+/*
+ * FIX: Use OpenStreetMap tiles (always available, no CORS issues).
+ * Dark effect via CSS filter: invert + hue-rotate.
+ * Init immediately on DOMContentLoaded, not lazy.
+ */
+var landMap=null,overlayMap=null,allMarkers=[],overlayMarkers=[];
+var POIS=[
+  {lat:43.6968,lng:7.2752,cat:'food',icon:'🍽️',col:'#D4A017',name:'Chez Marcel',desc:'Restaurant · Vieux-Nice'},
+  {lat:43.6955,lng:7.2715,cat:'food',icon:'🍽️',col:'#D4A017',name:'Le Brunch Azuréen',desc:'Brunch · Cours Saleya'},
+  {lat:43.7002,lng:7.2688,cat:'food',icon:'🥐',col:'#D4A017',name:'Boulangerie du Port',desc:'Boulangerie · Place Garibaldi'},
+  {lat:43.7085,lng:7.2620,cat:'auto',icon:'🔧',col:'#0094D4',name:'AutoNice',desc:'Garage · Jean Médecin'},
+  {lat:43.6620,lng:7.2050,cat:'auto',icon:'🚗',col:'#0094D4',name:'Dépannage Express',desc:'Dépannage 24/7 · Aéroport'},
+  {lat:43.7142,lng:7.2495,cat:'auto',icon:'🚖',col:'#0094D4',name:'NIKA VTC',desc:'Chauffeur vérifié · Gare SNCF'},
+  {lat:43.7050,lng:7.2750,cat:'serv',icon:'🔧',col:'#0EA878',name:'HandyNice',desc:'Services à domicile'},
+  {lat:43.7110,lng:7.2580,cat:'serv',icon:'🌿',col:'#0EA878',name:'CleanHome 06',desc:'Ménage pro · Centre ville'},
+  {lat:43.7030,lng:7.2660,cat:'secu',icon:'🔒',col:'#D44B24',name:'Serrurier Nice 24h',desc:'Serrurerie urgence'},
+  {lat:43.6860,lng:7.2680,cat:'stay',icon:'🏡',col:'#E07038',name:'La Maison Flottante',desc:'Logement insolite · Baie des Anges'},
+  {lat:43.7200,lng:7.2380,cat:'stay',icon:'✈️',col:'#E07038',name:'L\'Avion Reconverti',desc:'Hébergement · Aéroport'},
+  {lat:43.6750,lng:7.2900,cat:'stay',icon:'🌿',col:'#E07038',name:'Cabane dans les Pins',desc:'Éco-logement · Cap Ferrat'},
+  {lat:43.6800,lng:7.2600,cat:'azur',icon:'🛥️',col:'#0868A0',name:'Azur Marine',desc:'Location bateaux · Port de Nice'},
+  {lat:43.6780,lng:7.2550,cat:'azur',icon:'🤿',col:'#0868A0',name:'NiceWater Sports',desc:'Jetski · Parcours flottant'},
+  {lat:43.6990,lng:7.2820,cat:'rent',icon:'📦',col:'#5A88B0',name:'NIKA Rent',desc:'Parasols · EcoFlow · Scooters sous-marin'},
+];
+
+function makeIcon(p){
+  return L.divIcon({className:'',html:'<div class="nmark" style="background:'+p.col+'25;border-color:'+p.col+'60">'+p.icon+'</div>',iconSize:[26,26],iconAnchor:[13,13]});
+}
+function addPois(map,arr){
+  POIS.forEach(function(p){
+    var m=L.marker([p.lat,p.lng],{icon:makeIcon(p)}).addTo(map);
+    m.bindPopup('<strong>'+p.name+'</strong><br><span>'+p.desc+'</span>');
+    m._cat=p.cat;arr.push(m);
+  });
+}
+
+/* Use OSM tiles — reliable everywhere */
+function osmLayer(){
+  return L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    subdomains:'abc',maxZoom:19,
+    attribution:'© OpenStreetMap'
+  });
+}
+
+function initLandMap(){
+  if(landMap)return;
+  var container=document.getElementById('landmap');
+  if(!container)return;
+  try{
+    landMap=L.map('landmap',{zoomControl:true,attributionControl:false,scrollWheelZoom:false,tap:false});
+    osmLayer().addTo(landMap);
+    landMap.setView([43.7102,7.2620],13);
+    addPois(landMap,allMarkers);
+    setTimeout(function(){if(landMap)landMap.invalidateSize();},300);
+    document.getElementById('map-status').style.display='none';
+  }catch(err){
+    document.getElementById('map-status').textContent='Carte non disponible hors connexion.';
+  }
+}
+
+function initOverlayMap(){
+  if(overlayMap)return;
+  try{
+    overlayMap=L.map('movmap',{zoomControl:true,attributionControl:false,tap:false});
+    osmLayer().addTo(overlayMap);
+    overlayMap.setView([43.7102,7.2620],14);
+    addPois(overlayMap,overlayMarkers);
+  }catch(err){}
+}
+
+function openMap(){
+  document.getElementById('moverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  setTimeout(function(){
+    initOverlayMap();
+    requestAnimationFrame(function(){requestAnimationFrame(function(){if(overlayMap)overlayMap.invalidateSize();});});
+  },420);
+}
+function closeMap(){document.getElementById('moverlay').classList.remove('open');document.body.style.overflow='';}
+
+function filterMap(btn,cat){
+  document.querySelectorAll('.mfbtn').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');
+  overlayMarkers.forEach(function(m){if(cat==='all'||m._cat===cat)m.addTo(overlayMap);else overlayMap.removeLayer(m);});
+}
+
+/* Init map after page fully loaded */
+window.addEventListener('load',function(){
+  setTimeout(initLandMap,400);
+  setTimeout(initCarousel,200);
+});
+</script>
+</body>
+</html>

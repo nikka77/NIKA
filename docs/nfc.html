@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NIKA — 20 Items NFC</title>
+<link rel="stylesheet" href="https://unpkg.com/@fontsource/bebas-neue@5.0.8/index.css">
+<link rel="stylesheet" href="https://unpkg.com/@fontsource/exo-2@5.0.8/index.css">
+<link rel="stylesheet" href="https://unpkg.com/@fontsource/outfit@5.0.8/index.css">
+<style>
+:root {
+  --bg: #060E1C; --bg2: #0A1628; --bg3: #0F1F38;
+  --sand: #F0E8D4;
+  --az: #0094D4; --az2: #00C2FF;
+  --gold: #D4A017; --gold2: #F0C040;
+  --td: #EBE5D6; --td2: #7A90A8; --td3: #3A5068;
+  --fn: 'Bebas Neue', sans-serif;
+  --fe: 'Exo 2', sans-serif;
+  --fo: 'Outfit', system-ui, sans-serif;
+  --bd: rgba(255,255,255,0.07);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--td);
+  font-family: var(--fo);
+  padding: 2.5rem 1.5rem;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+.header-eyebrow {
+  font-family: var(--fo); font-size: 10px; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--az); margin-bottom: .7rem;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.header-eyebrow::before, .header-eyebrow::after {
+  content: ''; display: block; width: 30px; height: 1px;
+  background: var(--az); opacity: .4;
+}
+.header-title {
+  font-family: var(--fn); font-size: clamp(38px, 8vw, 72px);
+  letter-spacing: .08em; color: var(--td); margin-bottom: .4rem;
+}
+.header-sub {
+  font-family: var(--fe); font-size: 14px; font-weight: 400;
+  font-style: italic; color: var(--td2); letter-spacing: .06em;
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 1rem; padding: 5px 14px;
+  border-radius: 20px; border: 1px solid var(--bd);
+  font-family: var(--fo); font-size: 11px; font-weight: 600;
+  letter-spacing: .05em; color: var(--td3);
+}
+.hb-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold2); box-shadow: 0 0 6px var(--gold2); }
+
+/* LEGEND */
+.legend {
+  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+  margin-bottom: 2.5rem;
+}
+.leg-item {
+  font-family: var(--fo); font-size: 10px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08); color: var(--td3);
+  display: flex; align-items: center; gap: 5px;
+}
+.leg-dot { width: 7px; height: 7px; border-radius: 50%; }
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover { background: var(--bg3); border-color: rgba(255,255,255,0.14); }
+.card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: var(--c, var(--az));
+  opacity: .7;
+}
+.card::after {
+  content: ''; position: absolute;
+  bottom: -10px; right: -10px;
+  width: 70px; height: 70px; border-radius: 50%;
+  background: radial-gradient(circle, var(--c, var(--az)) 0%, transparent 70%);
+  opacity: .05;
+}
+.card:hover::after { opacity: .1; }
+
+/* TOP ROW */
+.card-top {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 12px;
+  margin-bottom: 1rem;
+}
+.card-icon-wrap {
+  width: 48px; height: 48px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--bd);
+}
+.card-meta { flex: 1; }
+.card-num {
+  font-family: var(--fo); font-size: 9px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--c, var(--az)); opacity: .6; margin-bottom: 2px;
+}
+.card-name {
+  font-family: var(--fe); font-size: 20px; font-weight: 900;
+  font-style: italic; letter-spacing: .04em;
+  color: var(--td); line-height: 1;
+}
+.card-owner {
+  font-family: var(--fo); font-size: 10px; font-weight: 600;
+  letter-spacing: .07em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--bd);
+  color: var(--td3); white-space: nowrap;
+}
+
+/* FORM */
+.card-form {
+  display: flex; gap: 8px; margin-bottom: .8rem; flex-wrap: wrap;
+}
+.form-tag {
+  font-family: var(--fo); font-size: 10px; font-weight: 600;
+  letter-spacing: .04em; padding: 3px 9px; border-radius: 3px;
+  display: flex; align-items: center; gap: 4px;
+}
+.ft-shape {
+  background: rgba(255,255,255,0.04); border: 1px solid var(--bd);
+  color: var(--td3);
+}
+.ft-color {
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--td2); font-weight: 700;
+}
+
+/* UTILITY */
+.card-utility {
+  font-family: var(--fo); font-size: 12px;
+  color: var(--td2); line-height: 1.6;
+  margin-bottom: .9rem;
+  padding: .7rem; border-radius: 4px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--bd);
+}
+.card-utility strong { color: var(--td); font-weight: 600; }
+
+/* TRIGGER */
+.card-trigger {
+  display: flex; align-items: center; gap: 7px;
+  font-family: var(--fo); font-size: 11px;
+  color: var(--c, var(--az));
+  letter-spacing: .04em;
+}
+.ct-icon { font-size: 13px; flex-shrink: 0; }
+.ct-url {
+  font-family: 'Courier New', monospace; font-size: 10px;
+  color: var(--td3); margin-left: auto;
+  background: rgba(0,0,0,0.3); padding: 2px 7px; border-radius: 3px;
+}
+
+/* FOOTER */
+.footer-note {
+  max-width: 1160px; margin: 2.5rem auto 0;
+  padding: 1.5rem;
+  background: var(--bg2); border: 1px solid var(--bd);
+  border-radius: 4px;
+}
+.fn-title {
+  font-family: var(--fe); font-size: 16px; font-weight: 900;
+  font-style: italic; color: var(--td); margin-bottom: .7rem; letter-spacing: .04em;
+}
+.fn-body {
+  font-family: var(--fo); font-size: 12px; color: var(--td2); line-height: 1.7;
+}
+.fn-spec {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px; margin-top: 1rem;
+}
+.spec-item {
+  background: var(--bg3); border: 1px solid var(--bd);
+  border-radius: 4px; padding: .7rem .9rem;
+}
+.spec-label {
+  font-family: var(--fo); font-size: 9px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--td3); margin-bottom: 3px;
+}
+.spec-val {
+  font-family: var(--fe); font-size: 14px; font-weight: 700;
+  font-style: italic; color: var(--gold2);
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <p class="header-eyebrow">Phygital · NFC · 3D Print</p>
+  <h1 class="header-title">NIKA NFC</h1>
+  <p class="header-sub">20 Items à imprimer — Chaque token est un portail vers l'écosystème NIKA</p>
+  <div class="header-badge">
+    <span class="hb-dot"></span>
+    Bambu Lab FDM · Cavité NFC 25×25mm · Dos Joy Boy universel
+  </div>
+</div>
+
+<div class="legend">
+  <div class="leg-item"><span class="leg-dot" style="background:#0094D4"></span>Pro remet au client</div>
+  <div class="leg-item"><span class="leg-dot" style="background:#F0C040"></span>Client garde sur lui</div>
+  <div class="leg-item"><span class="leg-dot" style="background:#0EA878"></span>Affiché chez le pro</div>
+  <div class="leg-item"><span class="leg-dot" style="background:#D44B24"></span>NIKA émet</div>
+  <div class="leg-item"><span class="leg-dot" style="background:#E07038"></span>Lié à un lieu</div>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="footer-note">
+  <div class="fn-title">Spécifications techniques d'impression</div>
+  <p class="fn-body">
+    Chaque item partage le même dos universel (PILE) : silhouette Joy Boy + "NIKA" en Bebas Neue + cavité 25×25mm pour la puce NFC.
+    La face (FACE) est unique à chaque item — forme iconique reconnaissable immédiatement.
+    L'URL encodée dans la puce suit le pattern <code style="background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:3px;font-size:11px">nika.fr/nfc/[SLUG]/[ID_UNIQUE]</code>
+    où ID_UNIQUE identifie le pro ou l'utilisateur lié à ce token précis.
+  </p>
+  <div class="fn-spec">
+    <div class="spec-item"><div class="spec-label">Diamètre standard</div><div class="spec-val">30–40 mm</div></div>
+    <div class="spec-item"><div class="spec-label">Cavité NFC</div><div class="spec-val">25 × 25 mm</div></div>
+    <div class="spec-item"><div class="spec-label">Épaisseur</div><div class="spec-val">4–6 mm</div></div>
+    <div class="spec-item"><div class="spec-label">Matière</div><div class="spec-val">PLA / PETG</div></div>
+    <div class="spec-item"><div class="spec-label">Chip NFC</div><div class="spec-val">NTAG213 / 215</div></div>
+    <div class="spec-item"><div class="spec-label">Finition</div><div class="spec-val">Bi-color AMS</div></div>
+  </div>
+</div>
+
+<script>
+const ITEMS = [
+  {
+    n: '01', name: 'DÉPANNEUR', icon: '🔑', color: '#0094D4',
+    shape: 'Badge hexagonal — pneu crevé ou clé de voiture miniature',
+    colorHint: 'Navy + orange fluo', owner: 'Client garde dans la boîte à gants',
+    utility: `<strong>10 dépanneurs certifiés NIKA</strong> avec accord commercial.
+      Tap = liste triée par distance + ETA estimé + bouton appel direct.
+      Affiche le tarif négocié NIKA vs tarif standard.`,
+    trigger: 'Liste dépanneurs + géoloc + appel',
+    url: 'nika.fr/nfc/depanneur'
+  },
+  {
+    n: '02', name: 'VTC', icon: '🚖', color: '#0094D4',
+    shape: 'Petite voiture profilée ou carte format CB premium',
+    colorHint: 'Noir mat + liseré doré', owner: 'Pro remet au client fidèle',
+    utility: `<strong>Token personnel du chauffeur.</strong> ID unique = profil de CE chauffeur précis.
+      Tap = son profil, disponibilité live, réservation directe, tarif habituel mémorisé.
+      Le client n'a plus besoin de l'app — il tape et c'est son chauffeur.`,
+    trigger: 'Profil chauffeur + réservation directe',
+    url: 'nika.fr/nfc/vtc/[id_chauffeur]'
+  },
+  {
+    n: '03', name: 'FIDÉLITÉ', icon: '⭐', color: '#D4A017',
+    shape: 'Médaille ronde à l\'effigie du restaurant (face personnalisable)',
+    colorHint: 'Couleur du resto + or', owner: 'Pro remet au client régulier',
+    utility: `<strong>Programme tampon digital lié à un restaurant précis.</strong>
+      Tap = solde tampons, prochain avantage, offre du jour réservée.
+      Le 10ème repas offert se valide par simple tap en caisse.
+      Remplace toutes les cartes papier.`,
+    trigger: 'Solde fidélité + offre du jour',
+    url: 'nika.fr/nfc/fidelite/[id_resto]/[id_client]'
+  },
+  {
+    n: '04', name: 'CAUTION-FREE', icon: '🔓', color: '#F0C040',
+    shape: 'Cadenas ouvert stylisé — 35mm',
+    colorHint: 'Or + noir', owner: 'NIKA émet à l\'utilisateur qualifié',
+    utility: `<strong>Preuve de staking NIKA.</strong> Attestation instantanée que l'utilisateur
+      a stacké assez de $NIKA pour louer sans caution.
+      Tap = vérification on-chain en temps réel, montant stacké, durée restante.
+      Le loueur (voiture, bateau, matériel) scan et valide en 2 secondes.`,
+    trigger: 'Vérification staking + montant',
+    url: 'nika.fr/nfc/caution-free/[id_user]'
+  },
+  {
+    n: '05', name: 'SKIPPER', icon: '⚓', color: '#0868A0',
+    shape: 'Gouvernail miniature — ø40mm, profondeur 8mm',
+    colorHint: 'Bleu marine + blanc', owner: 'Pro remet à ses clients récurrents',
+    utility: `<strong>Token personnel d\'un skipper certifié NIKA.</strong>
+      Tap = profil du skipper, disponibilités calendrier, galerie de sorties,
+      réservation directe pour la prochaine sortie, avis des anciens clients.
+      Le client l'emporte chez lui et repense aux bonnes sorties.`,
+    trigger: 'Profil skipper + calendrier',
+    url: 'nika.fr/nfc/skipper/[id_skipper]'
+  },
+  {
+    n: '06', name: 'BEACH CLUB', icon: '🏖️', color: '#E07038',
+    shape: 'Bouée de sauvetage miniature ou transat stylisé',
+    colorHint: 'Orange sable + blanc', owner: 'Affiché à la plage / remis aux habitués',
+    utility: `<strong>Service plage privée ou indépendant.</strong>
+      Tap = commander parasol + transat, boissons livrées sur place,
+      snacks, glaces, masques et tuba, crème solaire.
+      La commande se géolocalise automatiquement sur la plage.`,
+    trigger: 'Commande plage + géoloc',
+    url: 'nika.fr/nfc/beach/[id_plage]'
+  },
+  {
+    n: '07', name: 'SERRURIER', icon: '🗝️', color: '#D44B24',
+    shape: 'Clé ancienne stylisée — forme reconnaissable immédiatement',
+    colorHint: 'Rouge urgence + noir', owner: 'Client garde chez lui (sur le frigo)',
+    utility: `<strong>3 serruriers certifiés NIKA en urgence.</strong>
+      Tap = disponibilité live, ETA, estimation tarifaire transparente.
+      Certification NIKA = tarif encadré, pas d'arnaque.
+      Historique des interventions visible.`,
+    trigger: 'Serruriers dispo + tarif estimé',
+    url: 'nika.fr/nfc/serrurier'
+  },
+  {
+    n: '08', name: 'NIKA PASS', icon: '🎖️', color: '#F0C040',
+    shape: 'Médaillon rond type monnaie — face profil utilisateur',
+    colorHint: 'Or + navy profond', owner: 'NIKA émet à chaque membre',
+    utility: `<strong>Identité digitale complète de l\'utilisateur.</strong>
+      Tap = profil public, niveau XP, badges débloqués, carte des lieux visités,
+      crédits NIKA disponibles, historique de commandes.
+      Peut être partagé entre amis pour montrer son niveau.`,
+    trigger: 'Profil complet + achievements',
+    url: 'nika.fr/nfc/pass/[id_user]'
+  },
+  {
+    n: '09', name: 'FOOD TRUCK', icon: '🚚', color: '#D4A017',
+    shape: 'Camion cube miniature — 40mm de long',
+    colorHint: 'Couleur du truck + jaune/or', owner: 'Affiché sur le truck ou en avance',
+    utility: `<strong>Suivi live du food truck.</strong>
+      Tap = position GPS actuelle, heure d'ouverture prévue,
+      menu du jour avec stock restant, commande à l'avance.
+      Notification push quand le truck est à moins d'1km.`,
+    trigger: 'Position live + menu + commande',
+    url: 'nika.fr/nfc/foodtruck/[id_truck]'
+  },
+  {
+    n: '10', name: 'WELLNESS', icon: '🌸', color: '#7B5CF0',
+    shape: 'Cristal hexagonal / fleur de lotus stylisée',
+    colorHint: 'Violet lavande + or rose', owner: 'Pro remet à ses clients',
+    utility: `<strong>Prestataires bien-être certifiés NIKA.</strong>
+      Massage, yoga, sophrologie, méditation.
+      Tap = profil du praticien, créneaux dispo,
+      lieu (domicile / cabinet / plage), tarif NIKA.`,
+    trigger: 'Profil praticien + réservation',
+    url: 'nika.fr/nfc/wellness/[id_pro]'
+  },
+  {
+    n: '11', name: 'AQUA DIVE', icon: '🤿', color: '#0868A0',
+    shape: 'Scooter sous-marin miniature — forme hydrodynamique',
+    colorHint: 'Bleu profond + cyan', owner: 'Remis à la réservation',
+    utility: `<strong>Location scooter sous-marin + équipement O₂.</strong>
+      Tap = disponibilités, formules (1h/demi-journée/journée),
+      conditions météo mer, niveau requis, accompagnateur NIKA.
+      Le token sert aussi de bon de réservation validé en caisse.`,
+    trigger: 'Réservation aqua + conditions mer',
+    url: 'nika.fr/nfc/aqua/[id_spot]'
+  },
+  {
+    n: '12', name: 'BOULANGERIE', icon: '🥐', color: '#D4A017',
+    shape: 'Baguette miniature ou croissant 3D — 45mm',
+    colorHint: 'Beige doré + marron', owner: 'Affiché en caisse',
+    utility: `<strong>Commande boulangerie à retirer.</strong>
+      Tap = viennoiseries disponibles ce matin + stock restant,
+      réservation créneau de retrait, commande petit-déjeuner
+      pour le lendemain dès la veille. Notification "votre commande est prête".`,
+    trigger: 'Stock viennoiseries + réservation',
+    url: 'nika.fr/nfc/boulangerie/[id_boulangerie]'
+  },
+  {
+    n: '13', name: 'STAY INSOLITE', icon: '🏡', color: '#E07038',
+    shape: 'Maison originale miniature — toit décalé, formes géométriques',
+    colorHint: 'Terracotta + sable', owner: 'Remis par l\'hôte à l\'arrivée',
+    utility: `<strong>Catalogue logements insolites mondiaux affiliés.</strong>
+      Tap = hébergements thématiques par destination ou thème (avion, sous-marin,
+      maison flottante, cabane, grotte…), lien affilié Airbnb/Booking,
+      guide d\'arrivée du logement, contact hôte direct.`,
+    trigger: 'Catalogue Stay + thèmes',
+    url: 'nika.fr/nfc/stay'
+  },
+  {
+    n: '14', name: 'ARTISAN', icon: '🔨', color: '#0EA878',
+    shape: 'Outil combo stylisé — clé + marteau fondus ensemble',
+    colorHint: 'Vert acier + anthracite', owner: 'Client garde chez lui',
+    utility: `<strong>Artisans locaux certifiés NIKA.</strong>
+      Plombier, électricien, peintre, carreleur, menuisier.
+      Tap = disponibilité live, délai d\'intervention, devis rapide.
+      Certification NIKA = assurance RC vérifiée + avis clients réels.`,
+    trigger: 'Artisans dispos + devis',
+    url: 'nika.fr/nfc/artisan'
+  },
+  {
+    n: '15', name: 'WATER TAXI', icon: '⛵', color: '#0868A0',
+    shape: 'Petit bateau de ligne miniature — proue pointue',
+    colorHint: 'Bleu azur + blanc', owner: 'Affiché aux embarcadères',
+    utility: `<strong>Navette maritime Côte d\'Azur.</strong>
+      Nice ↔ Antibes ↔ Cannes ↔ Monaco ↔ Îles de Lérins.
+      Tap = prochain départ dans les 2h, réservation place,
+      tarif NIKA vs tarif classique, météo maritime.`,
+    trigger: 'Horaires + réservation navette',
+    url: 'nika.fr/nfc/watertaxi/[id_ligne]'
+  },
+  {
+    n: '16', name: 'COACH SPORT', icon: '💪', color: '#0EA878',
+    shape: 'Haltère miniature ou silhouette sportive — 35mm',
+    colorHint: 'Vert énergie + noir', owner: 'Pro remet à ses clients',
+    utility: `<strong>Coach sportif certifié NIKA.</strong>
+      Plage, salle, domicile, bateau.
+      Tap = profil du coach, prochain créneau dispo, programme de la semaine,
+      suivi performances personnalisé, lien paiement séance.`,
+    trigger: 'Profil coach + créneaux',
+    url: 'nika.fr/nfc/coach/[id_coach]'
+  },
+  {
+    n: '17', name: 'LEGACY', icon: '👑', color: '#F0C040',
+    shape: 'Médaille de fondateur — relief détaillé, ø45mm, prestige maximum',
+    colorHint: 'Or massif + noir profond', owner: 'NIKA émet — tirage très limité',
+    utility: `<strong>Statut Fondateur permanent NIKA.</strong>
+      Tap = profil Légende, tous avantages à vie, accès DAO $NIKA,
+      droit de vote sur les nouvelles fonctionnalités,
+      historique complet depuis le jour 1, badge Fondateur non-transférable.
+      <strong>Édition numérotée.</strong>`,
+    trigger: 'Profil Fondateur + accès DAO',
+    url: 'nika.fr/nfc/legacy/[id_fondateur]'
+  },
+  {
+    n: '18', name: 'SOMMELIER', icon: '🍷', color: '#7B5CF0',
+    shape: 'Coupe de vin élégante ou bouteille stylisée — 40mm',
+    colorHint: 'Bordeaux + or', owner: 'Affiché chez les cavistes partenaires',
+    utility: `<strong>Caves et sommeliers locaux certifiés.</strong>
+      Tap = sélection du jour, accords mets/vins par ia,
+      livraison à domicile ou au bateau, service sommelier à domicile
+      pour événements, devis traiteur vin.`,
+    trigger: 'Cave + sélection + livraison',
+    url: 'nika.fr/nfc/sommelier/[id_cave]'
+  },
+  {
+    n: '19', name: 'CONCIERGE', icon: '🛎️', color: '#0094D4',
+    shape: 'Cloche d\'hôtel miniature — ø30mm, forme reconnaissable',
+    colorHint: 'Or + bleu nuit', owner: 'NIKA émet aux membres premium',
+    utility: `<strong>Service conciergerie NIKA.</strong>
+      Tap = commissionnaire disponible maintenant pour : courses livrées,
+      relais colis, démarches administratives, réservations de dernière minute,
+      pressing express, achats spéciaux. Tarification à la mission.`,
+    trigger: 'Conciergerie + mission + tarif',
+    url: 'nika.fr/nfc/concierge/[id_user]'
+  },
+  {
+    n: '20', name: 'BBQ BOARD', icon: '🍖', color: '#D44B24',
+    shape: 'Mini-barbecue ou plateau de service — formes généreuses',
+    colorHint: 'Rouge braise + noir', owner: 'Remis à la réservation bateau/événement',
+    utility: `<strong>Service traiteur BBQ pour bateaux et événements.</strong>
+      Tap = formules disponibles (plateau fruits de mer, grillade, chicha, fruits frais),
+      réservation pour la sortie en mer, livraison au quai,
+      validation de la commande passée. Intégré au module AZUR.`,
+    trigger: 'Formules BBQ + réservation livraison',
+    url: 'nika.fr/nfc/bbq/[id_traiteur]'
+  }
+];
+
+const DOMAIN_COLORS = {
+  '#0094D4': 'AUTO / VTC',
+  '#D4A017': 'FOOD',
+  '#F0C040': 'NIKA Core',
+  '#0868A0': 'AZUR / Mer',
+  '#D44B24': 'SÉCU / Urgent',
+  '#E07038': 'STAY',
+  '#0EA878': 'SERVICES',
+  '#7B5CF0': 'WELLNESS / LEARN',
+};
+
+function hexToRgba(hex, a) {
+  const r = parseInt(hex.slice(1,3),16);
+  const g = parseInt(hex.slice(3,5),16);
+  const b = parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${a})`;
+}
+
+const grid = document.getElementById('grid');
+ITEMS.forEach(item => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.style.setProperty('--c', item.color);
+  card.innerHTML = `
+    <div class="card-top">
+      <div class="card-icon-wrap" style="background:${hexToRgba(item.color,0.08)};border-color:${hexToRgba(item.color,0.2)}">${item.icon}</div>
+      <div class="card-meta">
+        <div class="card-num">${item.n} — ${DOMAIN_COLORS[item.color] || ''}</div>
+        <div class="card-name">${item.name}</div>
+      </div>
+      <div class="card-owner">${item.owner}</div>
+    </div>
+    <div class="card-form">
+      <div class="form-tag ft-shape">📐 ${item.shape}</div>
+      <div class="form-tag ft-color" style="background:${hexToRgba(item.color,0.08)};color:${item.color};border-color:${hexToRgba(item.color,0.25)}">🎨 ${item.colorHint}</div>
+    </div>
+    <div class="card-utility">${item.utility}</div>
+    <div class="card-trigger">
+      <span class="ct-icon">📲</span>
+      <span>${item.trigger}</span>
+      <span class="ct-url">${item.url}</span>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+</script>
+</body>
+</html>

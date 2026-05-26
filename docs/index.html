@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NIKA — Aperçu du projet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo+2:ital,wght@0,400;0,700;1,900&family=Outfit:wght@400;600&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#050C17;--bg2:#0A1628;--bg3:#0F1E35;
+    --az:#0094D4;--az2:#00C2FF;--gold:#D4A017;--gold2:#F0C040;
+    --td:#EBE5D4;--td2:#8AACBC;--td3:#4A6880;--bd:rgba(255,255,255,0.07);
+    --fe:'Exo 2',sans-serif;--fo:'Outfit',sans-serif;--fn:'Bebas Neue',sans-serif;
+  }
+  html{background:var(--bg);color:var(--td);font-family:var(--fo)}
+  body{min-height:100vh;display:flex;flex-direction:column}
+
+  /* NAV */
+  nav{padding:1.2rem 2rem;display:flex;align-items:center;gap:1rem;border-bottom:1px solid var(--bd);position:sticky;top:0;background:rgba(5,12,23,.92);backdrop-filter:blur(12px);z-index:10}
+  .logo{font-family:var(--fn);font-size:28px;letter-spacing:.1em;color:var(--td)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--az);box-shadow:0 0 8px var(--az)}
+  .badge{font-family:var(--fo);font-size:11px;font-weight:600;letter-spacing:.06em;padding:3px 10px;border-radius:20px;background:rgba(0,148,212,.12);color:var(--az);border:1px solid rgba(0,148,212,.25)}
+
+  /* HERO */
+  .hero{padding:5rem 2rem 4rem;text-align:center;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(0,148,212,.07) 0%,transparent 60%)}
+  .eyebrow{font-family:var(--fo);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--td3);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:8px}
+  .eyebrow::before,.eyebrow::after{content:'';display:block;height:1px;width:30px;background:currentColor}
+  h1{font-family:var(--fn);font-size:clamp(56px,12vw,110px);letter-spacing:.04em;line-height:.9;color:var(--td);margin-bottom:1rem}
+  h1 span{color:var(--az)}
+  .subtitle{font-family:var(--fo);font-size:16px;color:var(--td2);max-width:520px;margin:0 auto 2.5rem;line-height:1.7}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:3rem}
+  .chip{font-family:var(--fo);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:5px 14px;border-radius:20px;border:1px solid var(--bd);color:var(--td3)}
+
+  /* CARDS */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;padding:0 2rem 5rem;max-width:1100px;margin:0 auto;width:100%}
+  .card{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s;display:flex;flex-direction:column}
+  .card:hover{border-color:rgba(0,148,212,.4);transform:translateY(-3px)}
+  .card-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:56px;background:var(--bg3);position:relative;overflow:hidden}
+  .card-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,var(--bg2));pointer-events:none}
+  .card-tag{position:absolute;bottom:12px;left:12px;font-family:var(--fo);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:2px;z-index:1}
+  .card-body{padding:1.4rem;flex:1;display:flex;flex-direction:column;gap:.5rem}
+  .card-title{font-family:var(--fe);font-size:20px;font-weight:900;font-style:italic;color:var(--td);line-height:1.1}
+  .card-desc{font-family:var(--fo);font-size:13px;color:var(--td2);line-height:1.6;flex:1}
+  .card-cta{font-family:var(--fe);font-size:12px;font-weight:700;font-style:italic;letter-spacing:.06em;text-transform:uppercase;color:var(--az);margin-top:.4rem;display:flex;align-items:center;gap:4px}
+  .card-cta::after{content:'→'}
+
+  /* STACK */
+  .stack{padding:4rem 2rem;max-width:1100px;margin:0 auto;width:100%}
+  .section-title{font-family:var(--fn);font-size:clamp(32px,5vw,52px);letter-spacing:.04em;color:var(--td);margin-bottom:2rem}
+  .stack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+  .stack-item{background:var(--bg2);border:1px solid var(--bd);border-radius:6px;padding:1rem;display:flex;align-items:center;gap:10px}
+  .stack-icon{font-size:20px;flex-shrink:0}
+  .stack-name{font-family:var(--fo);font-size:13px;font-weight:600;color:var(--td)}
+  .stack-ver{font-family:var(--fo);font-size:10px;color:var(--td3)}
+
+  /* FOOTER */
+  footer{margin-top:auto;padding:2rem;text-align:center;font-family:var(--fo);font-size:12px;color:var(--td3);border-top:1px solid var(--bd)}
+  footer a{color:var(--az);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">NIKA</div>
+  <div class="dot"></div>
+  <span class="badge">GitHub Pages Preview</span>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">Super-app · Côte d'Azur · Nice</div>
+  <h1>NI<span>KA</span></h1>
+  <p class="subtitle">
+    Explore. Joue. Vis.<br>
+    L'écosystème complet de la vie sur la Côte d'Azur — 9 domaines, tokens NFC phygitaux, gamification XP, carte live.
+  </p>
+  <div class="chips">
+    <span class="chip">Next.js 16</span>
+    <span class="chip">Supabase</span>
+    <span class="chip">Stripe</span>
+    <span class="chip">Claude AI</span>
+    <span class="chip">Twilio SMS</span>
+    <span class="chip">Leaflet</span>
+    <span class="chip">NFC phygital</span>
+    <span class="chip">TypeScript</span>
+  </div>
+</div>
+
+<div class="cards">
+
+  <a href="prototype.html" class="card">
+    <div class="card-thumb" style="background:linear-gradient(135deg,#050C17,#0F1E35)">
+      🎨
+      <span class="card-tag" style="background:rgba(0,148,212,.15);color:#0094D4;border:1px solid rgba(0,148,212,.3)">Prototype UI</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">NIKA v5 — Prototype complet</div>
+      <div class="card-desc">Design system complet : hero, carousel 3D domaines, carte Leaflet dark mode, gamification XP, Flash Deals, token ring animé, section news.</div>
+      <div class="card-cta">Voir le prototype</div>
+    </div>
+  </a>
+
+  <a href="nfc.html" class="card">
+    <div class="card-thumb" style="background:linear-gradient(135deg,#0A1628,#050C17)">
+      📲
+      <span class="card-tag" style="background:rgba(212,160,23,.12);color:#D4A017;border:1px solid rgba(212,160,23,.25)">NFC Phygital</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">20 Tokens NFC NIKA</div>
+      <div class="card-desc">Catalogue complet des 20 tokens NFC NIKA : VTC, skipper, dépanneur, passe membre, fidélité, coach, wellness… Chaque token = un portail unique.</div>
+      <div class="card-cta">Explorer les tokens</div>
+    </div>
+  </a>
+
+  <a href="landing.html" class="card">
+    <div class="card-thumb" style="background:linear-gradient(135deg,#050C17,#0A1628)">
+      🚀
+      <span class="card-tag" style="background:rgba(14,168,120,.1);color:#0EA878;border:1px solid rgba(14,168,120,.2)">Landing</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Page de lancement</div>
+      <div class="card-desc">Landing page NIKA pour le lancement bêta sur Nice : waitlist, présentation des domaines, onboarding en 4 étapes.</div>
+      <div class="card-cta">Voir la landing</div>
+    </div>
+  </a>
+
+  <a href="https://github.com/nikka77/NIKA" class="card">
+    <div class="card-thumb" style="background:linear-gradient(135deg,#0F1E35,#0A1628)">
+      ⚡
+      <span class="card-tag" style="background:rgba(0,148,212,.1);color:#0094D4;border:1px solid rgba(0,148,212,.2)">Source code</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Next.js App — Code source</div>
+      <div class="card-desc">51 fichiers · 7 000+ lignes · TypeScript strict · 0 erreur build. Pages, API routes, composants, schema Supabase, design system.</div>
+      <div class="card-cta" style="color:#F0C040">Voir sur GitHub</div>
+    </div>
+  </a>
+
+</div>
+
+<div class="stack">
+  <div class="section-title">Stack technique</div>
+  <div class="stack-grid">
+    <div class="stack-item"><span class="stack-icon">▲</span><div><div class="stack-name">Next.js</div><div class="stack-ver">16.2.6 — App Router</div></div></div>
+    <div class="stack-item"><span class="stack-icon">🗃️</span><div><div class="stack-name">Supabase</div><div class="stack-ver">PostgreSQL + Auth + RLS</div></div></div>
+    <div class="stack-item"><span class="stack-icon">💳</span><div><div class="stack-name">Stripe</div><div class="stack-ver">Checkout + Webhooks</div></div></div>
+    <div class="stack-item"><span class="stack-icon">🤖</span><div><div class="stack-name">Claude AI</div><div class="stack-ver">claude-sonnet-4-5</div></div></div>
+    <div class="stack-item"><span class="stack-icon">📱</span><div><div class="stack-name">Twilio</div><div class="stack-ver">SMS Webhook</div></div></div>
+    <div class="stack-item"><span class="stack-icon">🗺️</span><div><div class="stack-name">Leaflet</div><div class="stack-ver">Dark mode + POIs</div></div></div>
+    <div class="stack-item"><span class="stack-icon">⚛️</span><div><div class="stack-name">Zustand</div><div class="stack-ver">Global state</div></div></div>
+    <div class="stack-item"><span class="stack-icon">🎨</span><div><div class="stack-name">Tailwind CSS</div><div class="stack-ver">+ CSS Variables</div></div></div>
+    <div class="stack-item"><span class="stack-icon">📲</span><div><div class="stack-name">NFC NTAG</div><div class="stack-ver">20 tokens phygitaux</div></div></div>
+    <div class="stack-item"><span class="stack-icon">🔷</span><div><div class="stack-name">TypeScript</div><div class="stack-ver">Strict — 0 erreur</div></div></div>
+  </div>
+</div>
+
+<footer>
+  Projet NIKA · Nice, Côte d'Azur ·
+  <a href="https://github.com/nikka77/NIKA">github.com/nikka77/NIKA</a>
+</footer>
+
+</body>
+</html>
