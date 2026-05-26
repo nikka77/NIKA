@@ -9,10 +9,12 @@ export default function MapSection() {
 
   useEffect(() => {
     let mapInstance: unknown = null;
+    let mounted = true;
     const container = mapRef.current;
     if (!container) return;
 
     import('leaflet').then((mod) => {
+      if (!mounted) return;
       const L = mod.default || mod;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -47,6 +49,7 @@ export default function MapSection() {
     });
 
     return () => {
+      mounted = false;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       if (mapInstance) (mapInstance as any).remove();
     };
