@@ -1,0 +1,150 @@
+@import '@fontsource/bebas-neue/index.css';
+@import '@fontsource/exo-2/index.css';
+@import '@fontsource/outfit/index.css';
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #050C17;
+  --bg2: #09152A;
+  --bg3: #0E1F3A;
+  --sand: #F0E8D4;
+  --az: #0094D4;
+  --az2: #00C2FF;
+  --gold: #D4A017;
+  --gold2: #F0C040;
+  --coral: #D44B24;
+  --teal: #0EA878;
+  --purple: #7B5CF0;
+  --amber: #E07038;
+  --sea: #0868A0;
+  --slate: #5A88B0;
+  --td: #EBE5D6;
+  --td2: #7A90A8;
+  --td3: #3A5068;
+  --tl: #0E1F3A;
+  --tl2: #3A5870;
+  --bd: rgba(255, 255, 255, 0.07);
+  --bd2: rgba(255, 255, 255, 0.14);
+  --fn: 'Bebas Neue', 'Arial Black', sans-serif;
+  --fe: 'Exo 2', 'Arial Black', sans-serif;
+  --fo: 'Outfit', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--td);
+  font-family: var(--fo);
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; }
+ul { list-style: none; }
+
+/* ===== LEAFLET DARK MAP ===== */
+.leaflet-container { background: #0a1520 !important; }
+.leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.85) saturate(1.3) contrast(0.92);
+}
+.leaflet-popup-content-wrapper {
+  background: var(--bg3) !important;
+  border: 1px solid var(--bd2) !important;
+  border-radius: 5px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.5) !important;
+}
+.leaflet-popup-tip { background: var(--bg3) !important; }
+.leaflet-popup-content {
+  font-family: var(--fo) !important;
+  color: var(--td) !important;
+  margin: 10px 12px !important;
+  font-size: 12px !important;
+}
+.leaflet-popup-content strong {
+  font-family: var(--fe);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--td);
+  display: block;
+  margin-bottom: 2px;
+}
+.leaflet-popup-content span { color: var(--td2); font-size: 11px; }
+.leaflet-popup-close-button { color: var(--td2) !important; }
+
+/* ===== SCROLL SCROLLBAR ===== */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--bd2); border-radius: 2px; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes hin {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes pdot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+@keyframes ndp {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.5); }
+}
+@keyframes fping {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+@keyframes tspin { to { transform: rotate(360deg); } }
+@keyframes xpbr {
+  0%, 100% { width: 32%; }
+  50% { width: 42%; }
+}
+
+/* ===== FADE-IN ON SCROLL ===== */
+.fi {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fi.fv { opacity: 1; transform: none; }
+.fi1 { transition-delay: 0.1s; }
+.fi2 { transition-delay: 0.2s; }
+.fi3 { transition-delay: 0.3s; }
+.fi4 { transition-delay: 0.4s; }
+
+/* ===== FLASH TIMER ===== */
+.flash-timer-expired { color: var(--coral) !important; }
+
+/* ===== MAP MARKER ===== */
+.nmark {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  border: 2px solid rgba(255,255,255,0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.nmark:hover { transform: scale(1.15); }
+
+/* ===== SAND GRAIN ===== */
+.sand-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}

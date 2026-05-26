@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "NIKA Next.js Dev",
+      "runtimeExecutable": "/usr/bin/env",
+      "runtimeArgs": ["-S", "PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin", "/opt/homebrew/bin/node", "node_modules/next/dist/bin/next", "dev", "--webpack"],
+      "port": 3000
+    }
+  ]
+}

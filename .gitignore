@@ -1,0 +1,17 @@
+# deps
+node_modules/
+
+# Next.js build
+.next/
+out/
+
+# env
+.env
+.env.local
+.env*.local
+
+# OS
+.DS_Store
+
+# debug
+npm-debug.log*
