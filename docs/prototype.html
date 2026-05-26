@@ -892,9 +892,16 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:3.5rem 1.4rem
   setTimeout(function(){loader.classList.add('hide');},2800);
 })();
 
-/* ===== FADE IN ===== */
-var fiObs=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('fv');fiObs.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.fi').forEach(function(el){fiObs.observe(el);});
+/* ===== FADE IN — scroll-based (IntersectionObserver unreliable on GitHub Pages) ===== */
+function revealOnScroll(){
+  document.querySelectorAll('.fi:not(.fv)').forEach(function(el){
+    var rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight-30)el.classList.add('fv');
+  });
+}
+window.addEventListener('scroll',revealOnScroll,{passive:true});
+window.addEventListener('load',function(){setTimeout(revealOnScroll,100);});
+revealOnScroll();
 
 /* ===== COUNT-UP ===== */
 var sObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;e.target.querySelectorAll('[data-t]').forEach(function(el){var tgt=parseInt(el.dataset.t),cur=0,step=tgt/(1200/16),em=el.querySelector('em')||el;var tmr=setInterval(function(){cur=Math.min(cur+step,tgt);em.textContent=Math.floor(cur);if(cur>=tgt)clearInterval(tmr);},16);});sObs.unobserve(e.target);});},{threshold:0.5});
@@ -1080,10 +1087,21 @@ function filterMap(btn,cat){
   overlayMarkers.forEach(function(m){if(cat==='all'||m._cat===cat)m.addTo(overlayMap);else overlayMap.removeLayer(m);});
 }
 
-/* Init map after page fully loaded */
+/* Init carousel first — map lazy-init on scroll to avoid renderer freeze */
+function checkMapInit(){
+  if(landMap)return;
+  var container=document.getElementById('landmap');
+  if(!container)return;
+  var rect=container.getBoundingClientRect();
+  if(rect.top<window.innerHeight+200){
+    initLandMap();
+    window.removeEventListener('scroll',checkMapInit);
+  }
+}
+window.addEventListener('scroll',checkMapInit,{passive:true});
 window.addEventListener('load',function(){
-  setTimeout(initLandMap,400);
   setTimeout(initCarousel,200);
+  setTimeout(checkMapInit,600);
 });
 </script>
 </body>
