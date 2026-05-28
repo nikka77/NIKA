@@ -139,6 +139,15 @@ ul { list-style: none; }
 }
 .nmark:hover { transform: scale(1.15); }
 
+/* ===== NEWS CARD HOVER ===== */
+.news-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.news-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+}
+
 /* ===== SAND GRAIN ===== */
 .sand-grain::after {
   content: '';

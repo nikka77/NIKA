@@ -23,6 +23,13 @@ export default function MapSection() {
         iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
         shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
       });
+      // Clear any stale Leaflet instance on this container (HMR safety)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      if ((container as any)._leaflet_id) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (container as any)._leaflet_id = undefined;
+        container.innerHTML = '';
+      }
       const map = L.map(container, { zoomControl: true, scrollWheelZoom: false }).setView([43.7102, 7.262], 14);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 

@@ -33,10 +33,7 @@ export default function NewsTeaser() {
           className="max-md:grid-cols-1">
           {NEWS.map(({ cat, catStyle, title, time, votes }, i) => (
             <FadeIn key={cat} delay={i * 0.1}>
-              <div style={{ background: '#fff', borderRadius: 5, border: '1px solid rgba(0,0,0,0.06)', padding: '1.1rem', cursor: 'pointer', transition: 'transform 0.2s, box-shadow 0.2s' }}
-                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)'; (e.currentTarget as HTMLDivElement).style.boxShadow = '0 6px 18px rgba(0,0,0,0.07)'; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = ''; (e.currentTarget as HTMLDivElement).style.boxShadow = ''; }}
-              >
+              <div className="news-card" style={{ background: '#fff', borderRadius: 5, border: '1px solid rgba(0,0,0,0.06)', padding: '1.1rem', cursor: 'pointer' }}>
                 <span style={{ fontFamily: 'var(--fo)', fontSize: 9, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '2px 9px', borderRadius: 2, display: 'inline-block', marginBottom: '0.6rem', ...catStyle }}>
                   {cat}
                 </span>
