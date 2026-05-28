@@ -1,0 +1,81 @@
+'use client';
+import { useState } from 'react';
+
+export default function ContactPage() {
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+
+  async function submit(e: React.FormEvent) {
+    e.preventDefault();
+    setSending(true);
+    await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    });
+    setSent(true);
+    setSending(false);
+  }
+
+  if (sent) return (
+    <main style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+      <div style={{ textAlign: 'center', maxWidth: 400 }}>
+        <div style={{ fontSize: 56, marginBottom: '1rem' }}>✅</div>
+        <h1 style={{ fontFamily: 'var(--fe)', fontSize: 28, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: '0.5rem' }}>Message envoyé !</h1>
+        <p style={{ fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td2)' }}>Nous vous répondons sous 24h.</p>
+      </div>
+    </main>
+  );
+
+  return (
+    <main style={{ padding: '3rem 1.4rem 5rem', maxWidth: 640, margin: '0 auto' }}>
+      <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(28px,4vw,48px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.95, marginBottom: '0.5rem' }}>
+        Contact
+      </h1>
+      <p style={{ fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td2)', marginBottom: '2.5rem', lineHeight: 1.6 }}>
+        Une question, un partenariat, un problème technique ? Écrivez-nous.
+      </p>
+
+      <form onSubmit={submit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }} className="max-sm:grid-cols-1">
+          <input value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} placeholder="Votre nom *" required style={inputStyle} />
+          <input type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} placeholder="Email *" required style={inputStyle} />
+        </div>
+        <select value={form.subject} onChange={e => setForm(f => ({ ...f, subject: e.target.value }))} required style={inputStyle}>
+          <option value="">Sujet *</option>
+          <option value="support">Support technique</option>
+          <option value="pro">Inscription professionnelle</option>
+          <option value="partenariat">Partenariat</option>
+          <option value="signalement">Signalement</option>
+          <option value="rgpd">Demande RGPD</option>
+          <option value="autre">Autre</option>
+        </select>
+        <textarea value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} placeholder="Votre message *" rows={5} required style={{ ...inputStyle, resize: 'vertical' }} />
+        <button type="submit" disabled={sending} style={{ padding: '13px', borderRadius: 6, background: 'var(--az)', color: '#fff', fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 800, fontStyle: 'italic', letterSpacing: '0.06em', textTransform: 'uppercase', cursor: 'pointer', opacity: sending ? 0.7 : 1 }}>
+          {sending ? 'Envoi...' : 'Envoyer le message'}
+        </button>
+      </form>
+
+      <div style={{ marginTop: '3rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }} className="max-sm:grid-cols-1">
+        {[
+          { icon: '📧', label: 'Email', value: 'support@nika.app' },
+          { icon: '📍', label: 'Localisation', value: 'Nice, Côte d\'Azur' },
+        ].map(({ icon, label, value }) => (
+          <div key={label} style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '1.2rem', textAlign: 'center' }}>
+            <div style={{ fontSize: 24, marginBottom: '0.4rem' }}>{icon}</div>
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.2rem' }}>{label}</div>
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)', fontWeight: 600 }}>{value}</div>
+          </div>
+        ))}
+      </div>
+    </main>
+  );
+}
+
+const inputStyle: React.CSSProperties = {
+  width: '100%', background: 'rgba(255,255,255,0.04)',
+  border: '1px solid var(--bd2)', borderRadius: 6,
+  padding: '11px 14px', fontFamily: 'var(--fo)',
+  fontSize: 13, color: 'var(--td)', outline: 'none',
+};
