@@ -477,8 +477,8 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:3.5rem 1.4rem
   </ul>
   <div class="nright">
     <button class="nmapbtn" onclick="openMap()">🗺️</button>
-    <button class="nbtn nbtn-o">Connexion</button>
-    <button class="nbtn nbtn-f">S'inscrire</button>
+    <button class="nbtn nbtn-o" onclick="showAuth('login')">Connexion</button>
+    <button class="nbtn nbtn-f" onclick="showAuth('register')">S'inscrire</button>
     <button class="nburger" id="nburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -488,8 +488,8 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:3.5rem 1.4rem
   <a href="#news-teaser" class="mobnavlink" onclick="closeNav()">News</a>
   <a href="#access" class="mobnavlink" onclick="closeNav()">Rejoindre</a>
   <div class="mobnavbtns">
-    <button class="mobnavbtn mobnavbtn-o">Connexion</button>
-    <button class="mobnavbtn mobnavbtn-f">S'inscrire</button>
+    <button class="mobnavbtn mobnavbtn-o" onclick="closeNav();showAuth('login')">Connexion</button>
+    <button class="mobnavbtn mobnavbtn-f" onclick="closeNav();showAuth('register')">S'inscrire</button>
   </div>
 </div>
 
@@ -606,21 +606,21 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:3.5rem 1.4rem
   </div>
   <div class="carrwrap" id="carrwrap">
     <div class="carr-track" id="cartrack">
-      <div class="dcard d-alim" data-idx="0" onclick="carGoTo(0)">
+      <div class="dcard d-alim" data-idx="0" onclick="event.target.closest('.dccta')?showDomain('food'):carGoTo(0)">
         <span class="dcicon">🍽️</span><div class="dcnum">01 / Alimentation</div>
         <div class="dcname">FOOD</div>
         <p class="dcdesc">Restaurants, brunchs, cafés, food trucks et boulangeries. Commande en ligne, stock en temps réel. Deux types de vendeurs : commerce fixe et mobile.</p>
         <div class="dctags"><span class="dctag">Commerce fixe</span><span class="dctag">Mobile</span><span class="dctag">Livraison</span><span class="dctag">Stock live</span></div>
         <div class="dccta">Explorer</div>
       </div>
-      <div class="dcard d-auto" data-idx="1" onclick="carGoTo(1)">
+      <div class="dcard d-auto" data-idx="1" onclick="event.target.closest('.dccta')?showDomain('auto'):carGoTo(1)">
         <span class="dcicon">🚗</span><div class="dcnum">02 / Automobile & VTC</div>
         <div class="dcname">AUTO</div>
         <p class="dcdesc">Dépannage Uber-like, carburant, lavage, mécanique mobile, location + VTC avec chauffeurs de confiance vérifiés NIKA. API plaque immat FR intégrée.</p>
         <div class="dctags"><span class="dctag">Dépannage</span><span class="dctag">VTC</span><span class="dctag">Location</span><span class="dctag">API immat</span></div>
         <div class="dccta">Explorer</div>
       </div>
-      <div class="dcard d-stay" data-idx="2" onclick="carGoTo(2)">
+      <div class="dcard d-stay" data-idx="2" onclick="event.target.closest('.dccta')?showDomain('stay'):carGoTo(2)">
         <span class="dcard-affil">Affiliation</span>
         <span class="dcicon">🏡</span><div class="dcnum">03 / Logement insolite</div>
         <div class="dcname">STAY</div>
@@ -628,42 +628,42 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:3.5rem 1.4rem
         <div class="dctags"><span class="dctag">Mondial</span><span class="dctag">Insolite</span><span class="dctag">Thématique</span><span class="dctag">Luxe</span></div>
         <div class="dccta">Explorer</div>
       </div>
-      <div class="dcard d-azur" data-idx="3" onclick="carGoTo(3)">
+      <div class="dcard d-azur" data-idx="3" onclick="event.target.closest('.dccta')?showDomain('azur'):carGoTo(3)">
         <span class="dcicon">🛥️</span><div class="dcnum">04 / Mer & Bateaux</div>
         <div class="dcname">AZUR</div>
         <p class="dcdesc">Location de bateaux avec ou sans skipper, jetski, parcours flottant, BBQ à bord, chicha, fruits. Services nautiques complets sur la Méditerranée.</p>
         <div class="dctags"><span class="dctag">Location bateaux</span><span class="dctag">Skipper</span><span class="dctag">Jetski</span><span class="dctag">Services</span></div>
         <div class="dccta">Explorer</div>
       </div>
-      <div class="dcard d-rent" data-idx="4" onclick="carGoTo(4)">
+      <div class="dcard d-rent" data-idx="4" onclick="event.target.closest('.dccta')?showDomain('rent'):carGoTo(4)">
         <span class="dcicon">📦</span><div class="dcnum">05 / Location matériel</div>
         <div class="dcname">RENT</div>
         <p class="dcdesc">Parasols, transats, batterie EcoFlow, scooter sous-marin + bombonne O₂ + compresseur, mini-bateau, plateforme flottante, matériel de nettoyage professionnel.</p>
         <div class="dctags"><span class="dctag">Plage</span><span class="dctag">Nautique</span><span class="dctag">Outdoor</span><span class="dctag">Pro</span></div>
         <div class="dccta">Explorer</div>
       </div>
-      <div class="dcard d-serv" data-idx="5" onclick="carGoTo(5)">
+      <div class="dcard d-serv" data-idx="5" onclick="event.target.closest('.dccta')?showDomain('serv'):carGoTo(5)">
         <span class="dcicon">🔧</span><div class="dcnum">06 / Services</div>
         <div class="dcname">SERV</div>
         <p class="dcdesc">Tous les prestataires locaux. Réservation, notation et suivi de mission. Module évolutif selon les acteurs de la Côte d'Azur.</p>
         <div class="dctags"><span class="dctag">Réservation</span><span class="dctag">Notation</span><span class="dctag">Suivi</span></div>
         <div class="dccta">Explorer</div>
       </div>
-      <div class="dcard d-comp" data-idx="6" onclick="carGoTo(6)">
+      <div class="dcard d-comp" data-idx="6" onclick="event.target.closest('.dccta')?showDomain('learn'):carGoTo(6)">
         <span class="dcicon">📚</span><div class="dcnum">07 / Compétences</div>
         <div class="dcname">LEARN</div>
         <p class="dcdesc">Formateurs et ateliers locaux. Cours pratiques, masterclass, compétences terrain sur la Côte d'Azur.</p>
         <div class="dctags"><span class="dctag">Formateurs</span><span class="dctag">Ateliers</span><span class="dctag">Cours</span></div>
         <div class="dccta">Explorer</div>
       </div>
-      <div class="dcard d-secu" data-idx="7" onclick="carGoTo(7)">
+      <div class="dcard d-secu" data-idx="7" onclick="event.target.closest('.dccta')?showDomain('sec'):carGoTo(7)">
         <span class="dcicon">🔒</span><div class="dcnum">08 / Sécurité</div>
         <div class="dcname">SEC</div>
         <p class="dcdesc">Serruriers, alarmes, gardiennage. Les pros de la sécurité de Nice et la Côte en intervention rapide, vérifiés NIKA.</p>
         <div class="dctags"><span class="dctag">Urgence</span><span class="dctag">Serrurerie</span><span class="dctag">Alarme</span></div>
         <div class="dccta">Explorer</div>
       </div>
-      <div class="dcard d-news" data-idx="8" onclick="carGoTo(8)">
+      <div class="dcard d-news" data-idx="8" onclick="event.target.closest('.dccta')?showDomain('news'):carGoTo(8)">
         <span class="dcicon">📡</span><div class="dcnum">09 / Actualités</div>
         <div class="dcname">NEWS</div>
         <p class="dcdesc">Infos locales indépendantes + publications communauté NIKA. Modération IA avant publication, vote communautaire, sources vérifiées.</p>
@@ -780,8 +780,8 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:3.5rem 1.4rem
       <div class="news-mini fi fi3"><span class="ncat nc-lo">Local</span><div class="ntitle-mini">Nouveau POI créé : terrain de basket rénové à l'Ariane</div><div class="nmeta-mini"><span>Il y a 1j</span><span class="nmdot"></span><span>⬆ 12</span></div></div>
     </div>
     <div class="news-teaser-footer">
-      <button class="ncta ncta-s">Toutes les news →</button>
-      <button class="ncta ncta-p">+ Publier une info</button>
+      <button class="ncta ncta-s" onclick="showDomain('news')">Toutes les news →</button>
+      <button class="ncta ncta-p" onclick="showAuth('register')">+ Publier une info</button>
     </div>
   </div>
 </div>
@@ -824,15 +824,15 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:3.5rem 1.4rem
       <div class="footcol">
         <h4>Domaines</h4>
         <div class="footcol-links">
-          <a href="#">🍽️ Alimentation</a>
-          <a href="#">🚗 Auto & VTC</a>
-          <a href="#">🏡 Logement insolite</a>
-          <a href="#">🛥️ Mer & Bateaux</a>
-          <a href="#">📦 Location matériel</a>
-          <a href="#">🔧 Services</a>
-          <a href="#">📚 Compétences</a>
-          <a href="#">🔒 Sécurité</a>
-          <a href="#">📡 News</a>
+          <a href="#" onclick="showDomain('food');return false">🍽️ Alimentation</a>
+          <a href="#" onclick="showDomain('auto');return false">🚗 Auto & VTC</a>
+          <a href="#" onclick="showDomain('stay');return false">🏡 Logement insolite</a>
+          <a href="#" onclick="showDomain('azur');return false">🛥️ Mer & Bateaux</a>
+          <a href="#" onclick="showDomain('rent');return false">📦 Location matériel</a>
+          <a href="#" onclick="showDomain('serv');return false">🔧 Services</a>
+          <a href="#" onclick="showDomain('learn');return false">📚 Compétences</a>
+          <a href="#" onclick="showDomain('sec');return false">🔒 Sécurité</a>
+          <a href="#" onclick="showDomain('news');return false">📡 News</a>
         </div>
       </div>
       <div class="footcol">
@@ -872,6 +872,44 @@ footer{background:var(--bg);border-top:1px solid var(--bd);padding:3.5rem 1.4rem
     </div>
   </div>
 </footer>
+
+<!-- AUTH MODAL -->
+<div id="authmodal" style="position:fixed;inset:0;z-index:600;background:rgba(5,12,23,0.92);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s" onclick="if(event.target===this)closeAuth()">
+  <div style="background:var(--bg2);border:1px solid var(--bd2);border-radius:8px;padding:2.5rem;width:100%;max-width:380px;margin:1rem;position:relative">
+    <button onclick="closeAuth()" style="position:absolute;top:1rem;right:1rem;width:28px;height:28px;border-radius:50%;border:1px solid var(--bd2);color:var(--td2);font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s">✕</button>
+    <div style="font-family:var(--fn);font-size:28px;letter-spacing:.1em;margin-bottom:.4rem" id="auth-title">CONNEXION</div>
+    <p style="font-family:var(--fo);font-size:12px;color:var(--td2);margin-bottom:1.8rem" id="auth-sub">Accède à ton espace NIKA</p>
+    <div id="auth-fields-login">
+      <input type="email" placeholder="Email" style="width:100%;background:var(--bg3);border:1px solid var(--bd2);border-radius:4px;padding:11px 14px;font-family:var(--fo);font-size:13px;color:var(--td);margin-bottom:10px;outline:none;display:block">
+      <input type="password" placeholder="Mot de passe" style="width:100%;background:var(--bg3);border:1px solid var(--bd2);border-radius:4px;padding:11px 14px;font-family:var(--fo);font-size:13px;color:var(--td);margin-bottom:16px;outline:none;display:block">
+    </div>
+    <div id="auth-fields-register" style="display:none">
+      <input type="text" placeholder="Prénom" style="width:100%;background:var(--bg3);border:1px solid var(--bd2);border-radius:4px;padding:11px 14px;font-family:var(--fo);font-size:13px;color:var(--td);margin-bottom:10px;outline:none;display:block">
+      <input type="email" placeholder="Email" style="width:100%;background:var(--bg3);border:1px solid var(--bd2);border-radius:4px;padding:11px 14px;font-family:var(--fo);font-size:13px;color:var(--td);margin-bottom:10px;outline:none;display:block">
+      <input type="password" placeholder="Mot de passe" style="width:100%;background:var(--bg3);border:1px solid var(--bd2);border-radius:4px;padding:11px 14px;font-family:var(--fo);font-size:13px;color:var(--td);margin-bottom:16px;outline:none;display:block">
+    </div>
+    <button onclick="submitAuth()" style="width:100%;background:var(--az);color:#fff;padding:12px;border-radius:4px;font-family:var(--fo);font-size:13px;font-weight:700;margin-bottom:1rem;display:block" id="auth-submit">Se connecter</button>
+    <div style="text-align:center;font-family:var(--fo);font-size:12px;color:var(--td2)">
+      <span id="auth-toggle-text">Pas encore de compte ?</span>
+      <button onclick="toggleAuthMode()" style="color:var(--az);font-size:12px;font-family:var(--fo);margin-left:4px" id="auth-toggle-btn">S'inscrire</button>
+    </div>
+  </div>
+</div>
+
+<!-- DOMAIN OVERLAY -->
+<div id="doverlay" style="position:fixed;inset:0;z-index:500;background:var(--bg);transform:translateY(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow:hidden">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.4rem;border-bottom:1px solid var(--bd);background:var(--bg2);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span id="d-icon" style="font-size:22px">🍽️</span>
+      <div>
+        <div style="font-family:var(--fn);font-size:20px;letter-spacing:.08em" id="d-name">FOOD</div>
+        <div style="font-family:var(--fo);font-size:11px;color:var(--td2)" id="d-label">Alimentation</div>
+      </div>
+    </div>
+    <button onclick="closeDomain()" style="width:34px;height:34px;border-radius:50%;border:1px solid var(--bd2);color:var(--td2);font-size:17px;display:flex;align-items:center;justify-content:center;transition:all .2s">✕</button>
+  </div>
+  <div id="d-content" style="flex:1;overflow-y:auto;padding:2rem 1.4rem;max-width:960px;width:100%;margin:0 auto;box-sizing:border-box"></div>
+</div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
@@ -1103,6 +1141,121 @@ window.addEventListener('load',function(){
   setTimeout(initCarousel,200);
   setTimeout(checkMapInit,600);
 });
+
+/* ===== AUTH MODAL ===== */
+var authMode='login';
+function showAuth(mode){
+  authMode=mode||'login';
+  setAuthMode(authMode);
+  var modal=document.getElementById('authmodal');
+  modal.style.opacity='1';modal.style.visibility='visible';
+  document.body.style.overflow='hidden';
+}
+function closeAuth(){
+  var modal=document.getElementById('authmodal');
+  modal.style.opacity='0';modal.style.visibility='hidden';
+  if(!document.getElementById('doverlay').style.transform.includes('0'))
+    document.body.style.overflow='';
+}
+function setAuthMode(m){
+  authMode=m;
+  var isLogin=m==='login';
+  document.getElementById('auth-title').textContent=isLogin?'CONNEXION':'INSCRIPTION';
+  document.getElementById('auth-sub').textContent=isLogin?'Accède à ton espace NIKA':'Rejoins la communauté NIKA';
+  document.getElementById('auth-fields-login').style.display=isLogin?'block':'none';
+  document.getElementById('auth-fields-register').style.display=isLogin?'none':'block';
+  document.getElementById('auth-submit').textContent=isLogin?'Se connecter':'Créer mon compte';
+  document.getElementById('auth-toggle-text').textContent=isLogin?'Pas encore de compte ?':'Déjà un compte ?';
+  document.getElementById('auth-toggle-btn').textContent=isLogin?'S\'inscrire':'Se connecter';
+}
+function toggleAuthMode(){setAuthMode(authMode==='login'?'register':'login');}
+function submitAuth(){
+  alert(authMode==='login'?'Connexion simulée — fonctionnalité complète en v1 avec Supabase.':'Inscription simulée ! Bienvenue sur NIKA. (v1 avec Supabase)');
+  closeAuth();
+}
+
+/* ===== DOMAIN OVERLAY ===== */
+var DOMAIN_DATA={
+  food:{icon:'🍽️',name:'FOOD',label:'Alimentation',color:'#D4A017',
+    items:[{icon:'🍕',name:'Chez Marco',sub:'Restaurant · Vieux-Nice',badge:'Flash Deal',rating:'4.8'},
+           {icon:'☕',name:'Blend Café',sub:'Brunch · Jean Médecin',badge:'Nouveau',rating:'4.6'},
+           {icon:'🥐',name:'Boulangerie du Port',sub:'Boulangerie · Garibaldi',badge:'',rating:'4.9'},
+           {icon:'🌮',name:'Tacos Azur',sub:'Fast-food · Libération',badge:'',rating:'4.3'}]},
+  auto:{icon:'🚗',name:'AUTO',label:'Auto & VTC',color:'#0094D4',
+    items:[{icon:'🔧',name:'AutoNice',sub:'Garage · Jean Médecin',badge:'Vérifié NIKA',rating:'4.7'},
+           {icon:'🚘',name:'Dépannage Express',sub:'24h/24 · Aéroport',badge:'Urgence',rating:'4.9'},
+           {icon:'🚖',name:'NIKA VTC',sub:'Chauffeur · Gare SNCF',badge:'Pro NIKA',rating:'5.0'},
+           {icon:'🚿',name:'WashNice',sub:'Lavage auto · Promenade',badge:'',rating:'4.4'}]},
+  stay:{icon:'🏡',name:'STAY',label:'Logement insolite',color:'#E07038',
+    items:[{icon:'⛵',name:'La Maison Flottante',sub:'Baie des Anges · 2 pers.',badge:'Top NIKA',rating:'4.9'},
+           {icon:'✈️',name:"L'Avion Reconverti",sub:'Aéroport · 4 pers.',badge:'Insolite',rating:'4.8'},
+           {icon:'🌿',name:'Cabane dans les Pins',sub:'Cap Ferrat · 2 pers.',badge:'',rating:'4.7'},
+           {icon:'🏔️',name:'Suite Rocher',sub:'Èze Village · 2 pers.',badge:'',rating:'4.6'}]},
+  azur:{icon:'🛥️',name:'AZUR',label:'Mer & Bateaux',color:'#0868A0',
+    items:[{icon:'🛥️',name:'Azur Marine',sub:'Location bateaux · Port de Nice',badge:'Top',rating:'4.9'},
+           {icon:'🤿',name:'NiceWater Sports',sub:'Jetski · Parcours flottant',badge:'',rating:'4.7'},
+           {icon:'⛵',name:"Voile Côte d'Azur",sub:'Skipper inclus · Cannes',badge:'Nouveau',rating:'4.8'},
+           {icon:'🏄',name:'Surf School 06',sub:'Cours · Cagnes-sur-Mer',badge:'',rating:'4.5'}]},
+  rent:{icon:'📦',name:'RENT',label:'Location matériel',color:'#5A88B0',
+    items:[{icon:'☂️',name:'Parasol & Transat',sub:'6€/jour · Promenade',badge:'',rating:'4.5'},
+           {icon:'⚡',name:'EcoFlow Delta Pro',sub:'38€/jour · Batterie 2kWh',badge:'',rating:'4.8'},
+           {icon:'🛵',name:'Scooter sous-marin',sub:'45€/h · Port de Nice',badge:'Exclusif',rating:'4.9'},
+           {icon:'🚤',name:'Mini-bateau',sub:'80€/demi-journée',badge:'',rating:'4.6'}]},
+  serv:{icon:'🔧',name:'SERV',label:'Services',color:'#0EA878',
+    items:[{icon:'🏠',name:'HandyNice',sub:'Services à domicile',badge:'Vérifié',rating:'4.7'},
+           {icon:'🌿',name:'CleanHome 06',sub:'Ménage pro · Centre',badge:'',rating:'4.8'},
+           {icon:'💻',name:'TechNice',sub:'Dépannage informatique',badge:'',rating:'4.6'},
+           {icon:'🌸',name:'Jardinage Azur',sub:'Entretien jardins',badge:'',rating:'4.5'}]},
+  learn:{icon:'📚',name:'LEARN',label:'Compétences',color:'#7B5CF0',
+    items:[{icon:'📷',name:'Atelier Photo',sub:'Vieux-Nice · 2h',badge:'',rating:'4.9'},
+           {icon:'🎸',name:'Cours de Guitare',sub:'Domicile · 1h',badge:'',rating:'4.8'},
+           {icon:'🏄',name:'Surf & Yoga',sub:'Cagnes · Week-end',badge:'Nouveau',rating:'4.7'},
+           {icon:'🍳',name:'Masterclass Cuisine',sub:'Nice · 3h · Max 8',badge:'',rating:'5.0'}]},
+  sec:{icon:'🔒',name:'SEC',label:'Sécurité',color:'#D44B24',
+    items:[{icon:'🔑',name:'Serrurier Nice 24h',sub:'Urgence · ETA 20min',badge:'URGENCE',rating:'4.9'},
+           {icon:'🚨',name:"Alarme Côte d'Azur",sub:'Installation & surveillance',badge:'Vérifié',rating:'4.7'},
+           {icon:'👮',name:'Gardiennage NIKA',sub:'Événementiel · Pro',badge:'',rating:'4.8'},
+           {icon:'📹',name:'Vidéosurveillance',sub:'Installation rapide',badge:'',rating:'4.6'}]},
+  news:{icon:'📡',name:'NEWS',label:'Actualités locales',color:'#0094D4',
+    items:[{icon:'🚗',name:'ZFE Nice 2026',sub:'Automobile · Il y a 2h · ⬆ 47',badge:'Tendance',rating:''},
+           {icon:'🛒',name:'Marché Libération 80 ans',sub:'Local · Il y a 5h · ⬆ 23',badge:'',rating:''},
+           {icon:'🏀',name:'Terrain basket rénové Ariane',sub:'Local · Il y a 1j · ⬆ 12',badge:'',rating:''},
+           {icon:'🎉',name:'Festival du Cinéma Nice',sub:'Culture · Il y a 3h · ⬆ 34',badge:'Nouveau',rating:''}]}
+};
+
+function showDomain(slug){
+  var d=DOMAIN_DATA[slug];if(!d)return;
+  document.getElementById('d-icon').textContent=d.icon;
+  document.getElementById('d-name').textContent=d.name;
+  document.getElementById('d-label').textContent=d.label;
+  var isNews=slug==='news';
+  document.getElementById('d-content').innerHTML=
+    '<p style="font-family:var(--fo);font-size:11px;color:var(--td3);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.6rem">'+d.label+' — Prototype NIKA v0.1</p>'+
+    '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px">'+
+    d.items.map(function(it){
+      var badgeHtml=it.badge?'<span style="font-size:10px;padding:2px 8px;border-radius:10px;background:'+d.color+'25;color:'+d.color+';font-family:var(--fo);font-weight:700;letter-spacing:.04em">'+it.badge+'</span>':'';
+      var ratingHtml=it.rating?'<span style="color:var(--gold2);font-size:11px;font-family:var(--fo)">★ '+it.rating+'</span>':'';
+      var metaHtml=(ratingHtml||badgeHtml)?'<div style="display:flex;align-items:center;gap:6px;margin-bottom:.8rem">'+ratingHtml+badgeHtml+'</div>':'';
+      var btnLabel=isNews?'Lire →':'Commander / Réserver';
+      var btnColor=isNews?'var(--az)':d.color;
+      return '<div style="background:var(--bg3);border:1px solid var(--bd2);border-radius:6px;padding:1.2rem;cursor:pointer;transition:border-color .2s" onmouseenter="this.style.borderColor=\''+d.color+'\'" onmouseleave="this.style.borderColor=\'rgba(255,255,255,.14)\'">'
+        +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:.8rem">'
+        +'<span style="font-size:26px">'+it.icon+'</span>'
+        +'<div><div style="font-family:var(--fe);font-size:14px;font-style:italic;color:var(--td)">'+it.name+'</div>'
+        +'<div style="font-family:var(--fo);font-size:11px;color:var(--td2);margin-top:2px">'+it.sub+'</div></div></div>'
+        +metaHtml
+        +'<button style="width:100%;padding:8px;background:'+btnColor+';color:#fff;border-radius:3px;font-family:var(--fo);font-size:11px;font-weight:700" onclick="alert(\'Disponible en v1 avec Supabase.\')">'+btnLabel+'</button>'
+        +'</div>';
+    }).join('')
+    +'</div>'
+    +'<p style="margin-top:2rem;text-align:center;font-family:var(--fo);font-size:12px;color:var(--td2)">Contenu complet disponible en v1 · <a href="#" onclick="closeDomain();return false" style="color:var(--az)">← Retour</a></p>';
+  document.getElementById('doverlay').style.transform='translateY(0)';
+  document.body.style.overflow='hidden';
+}
+function closeDomain(){
+  document.getElementById('doverlay').style.transform='translateY(100%)';
+  document.body.style.overflow='';
+}
 </script>
 </body>
 </html>
