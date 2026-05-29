@@ -44,7 +44,7 @@ export default async function SecPage() {
       </div>
 
       {/* Services */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.7rem', marginBottom: '3rem' }} className="max-sm:grid-cols-2">
+      <div style={{ gap: '0.7rem', marginBottom: '3rem' }} className="g-3 max-sm:grid-cols-2">
         {SEC_SERVICES.map(s => (
           <div key={s.slug} style={{ background: 'var(--bg2)', border: '1px solid rgba(212,75,36,0.12)', borderRadius: 10, padding: '1.2rem', textAlign: 'center' }}>
             <div style={{ fontSize: 28, marginBottom: '0.4rem' }}>{s.icon}</div>

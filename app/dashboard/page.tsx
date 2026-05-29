@@ -53,7 +53,7 @@ export default async function DashboardPage() {
       </div>
 
       {/* XP + stats row */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '3rem' }} className="max-md:grid-cols-1">
+      <div style={{ gap: '1rem', marginBottom: '3rem' }} className="g-3 max-md:grid-cols-1">
         {/* XP card */}
         <div style={{ background: 'var(--bg2)', border: '1px solid var(--az)22', borderRadius: 10, padding: '1.5rem', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'var(--az)' }} />
@@ -126,7 +126,7 @@ export default async function DashboardPage() {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }} className="max-md:grid-cols-1">
+      <div style={{ gap: '2rem' }} className="g-2 max-md:grid-cols-1">
         {/* Recent orders */}
         <div>
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 22, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1rem' }}>
@@ -199,7 +199,7 @@ export default async function DashboardPage() {
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 22, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1rem' }}>
             Flash Deals actifs
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+          <div style={{ gap: '1rem' }} className="g-4 max-md:grid-cols-2 max-sm:grid-cols-1">
             {deals.map((deal: { id: string; title: string; pros: { business_name: string } | null; discount_type: string; discount_value: number; expires_at: string }) => (
               <div key={deal.id} style={{ background: 'var(--bg2)', border: '1px solid var(--gold)33', borderRadius: 8, padding: '1.2rem', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'var(--gold)' }} />

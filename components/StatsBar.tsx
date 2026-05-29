@@ -62,9 +62,8 @@ function StatItem({ target, label, last }: { target: number; label: string; last
 
 export default function StatsBar() {
   return (
-    <div className="sand-grain" style={{
+    <div className="sand-grain g-4 max-sm:grid-cols-2" style={{
       background: 'var(--sand)',
-      display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
       borderTop: '1px solid rgba(0,0,0,0.06)',
       position: 'relative',
     }}>

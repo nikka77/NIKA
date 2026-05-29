@@ -40,7 +40,7 @@ export default async function FoodPage() {
       </div>
 
       {/* Categories */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.7rem', marginBottom: '3rem' }} className="max-sm:grid-cols-2">
+      <div style={{ gap: '0.7rem', marginBottom: '3rem' }} className="g-4 max-sm:grid-cols-2">
         {FOOD_CATS.map(cat => (
           <Link key={cat.slug} href={`/food?cat=${cat.slug}`} style={{ background: 'var(--bg2)', border: '1px solid rgba(212,160,23,0.15)', borderRadius: 10, padding: '1.1rem', textAlign: 'center', textDecoration: 'none' }}>
             <div style={{ fontSize: 26, marginBottom: '0.4rem' }}>{cat.icon}</div>
@@ -55,7 +55,7 @@ export default async function FoodPage() {
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 26, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1.2rem' }}>
             ⚡ Flash Deals
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+          <div style={{ gap: '1rem' }} className="g-3 max-md:grid-cols-2 max-sm:grid-cols-1">
             {deals.map((deal: { id: string; title: string; discount_type: string; discount_value: number; expires_at: string; pros: { id: string; business_name: string } | null }) => {
               const disc = deal.discount_type === 'percent' ? `-${deal.discount_value}%` : deal.discount_type === 'fixed' ? `-${deal.discount_value}€` : 'OFFERT';
               return (

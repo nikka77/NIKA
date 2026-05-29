@@ -35,7 +35,7 @@ export default async function LearnPage() {
         <p style={{ fontFamily: 'var(--fo)', fontSize: 15, color: 'var(--td2)', maxWidth: 500, lineHeight: 1.6 }}>Cours, coaching, ateliers — apprenez avec les meilleurs de la Côte d&apos;Azur.</p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.7rem', marginBottom: '3rem' }} className="max-sm:grid-cols-2">
+      <div style={{ gap: '0.7rem', marginBottom: '3rem' }} className="g-4 max-sm:grid-cols-2">
         {LEARN_CATS.map(c => (
           <div key={c.slug} style={{ background: 'var(--bg2)', border: '1px solid rgba(123,92,240,0.15)', borderRadius: 10, padding: '1.1rem', textAlign: 'center' }}>
             <div style={{ fontSize: 26, marginBottom: '0.4rem' }}>{c.icon}</div>
@@ -47,7 +47,7 @@ export default async function LearnPage() {
       {listings && listings.length > 0 && (
         <div style={{ marginBottom: '3rem' }}>
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 26, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1.2rem' }}>Cours disponibles</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+          <div style={{ gap: '1rem' }} className="g-3 max-md:grid-cols-2 max-sm:grid-cols-1">
             {(listings as { id: string; title: string; description?: string; price?: number; pros: { id: string; business_name: string } | null }[]).map((item) => (
               <Link key={item.id} href={item.pros ? `/pro/${item.pros.id}` : '/learn'} style={{ background: 'var(--bg2)', border: '1px solid rgba(123,92,240,0.15)', borderRadius: 10, padding: '1.3rem', textDecoration: 'none' }}>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 14, fontWeight: 700, color: 'var(--td)', marginBottom: '0.3rem' }}>{item.title}</div>

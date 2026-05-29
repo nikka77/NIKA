@@ -29,7 +29,7 @@ export default async function ServPage() {
         <p style={{ fontFamily: 'var(--fo)', fontSize: 15, color: 'var(--td2)', maxWidth: 500, lineHeight: 1.6 }}>Services à domicile et artisans de confiance sur la Côte d&apos;Azur.</p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.7rem', marginBottom: '3rem' }} className="max-sm:grid-cols-2">
+      <div style={{ gap: '0.7rem', marginBottom: '3rem' }} className="g-4 max-sm:grid-cols-2">
         {SERV_CATS.map(c => (
           <div key={c.slug} style={{ background: 'var(--bg2)', border: '1px solid rgba(14,168,120,0.15)', borderRadius: 10, padding: '1.1rem', textAlign: 'center' }}>
             <div style={{ fontSize: 26, marginBottom: '0.4rem' }}>{c.icon}</div>

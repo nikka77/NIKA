@@ -72,8 +72,8 @@ export default function StayPage() {
         <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '2rem' }}>
           Par thème
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1rem' }}
-          className="max-md:grid-cols-2 max-sm:grid-cols-2">
+        <div style={{ gap: '1rem' }}
+          className="g-4 max-md:grid-cols-2">
           {THEMES.map(({ slug, icon, name, count }) => (
             <Link key={slug} href={`/stay/theme/${slug}`} style={{ background: 'var(--bg2)', border: '1px solid rgba(224,112,56,0.15)', borderRadius: 8, padding: '1.5rem 1rem', textAlign: 'center', textDecoration: 'none', transition: 'all 0.2s', display: 'block' }}>
               <div style={{ fontSize: 36, marginBottom: '0.6rem' }}>{icon}</div>
@@ -90,8 +90,8 @@ export default function StayPage() {
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '2rem' }}>
             Par destination
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem' }}
-            className="max-md:grid-cols-2 max-sm:grid-cols-1">
+          <div style={{ gap: '1rem' }}
+            className="g-3 max-md:grid-cols-2 max-sm:grid-cols-1">
             {DESTINATIONS.map(({ slug, country, icon, name }) => (
               <Link key={slug} href={`/stay/${country}/${slug}`} style={{ background: 'var(--bg3)', border: '1px solid var(--bd)', borderRadius: 8, padding: '1.4rem', display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none', transition: 'border-color 0.2s' }}>
                 <span style={{ fontSize: 28 }}>{icon}</span>

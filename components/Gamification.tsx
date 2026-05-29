@@ -37,8 +37,8 @@ export default function Gamification() {
           </p>
         </FadeIn>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '2rem' }}
-          className="max-md:grid-cols-1">
+        <div style={{ gap: '1.5rem', marginTop: '2rem' }}
+          className="g-2 max-md:grid-cols-1">
 
           {/* XP Block */}
           <FadeIn delay={0.1}>
@@ -126,8 +126,8 @@ export default function Gamification() {
                   Reset dans 4j 12h
                 </div>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}
-                className="max-sm:grid-cols-1">
+              <div style={{ gap: 10 }}
+                className="g-3 max-sm:grid-cols-1">
                 {QUESTS.map(({ icon, name, reward, desc, progress, done }) => (
                   <div key={name} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--bd)', borderRadius: 5, padding: 12 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: '0.5rem' }}>

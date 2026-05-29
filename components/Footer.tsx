@@ -31,8 +31,8 @@ export default function Footer() {
   return (
     <footer style={{ background: 'var(--bg)', borderTop: '1px solid var(--bd)', padding: '3.5rem 1.4rem 2rem' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr', gap: '2.5rem', marginBottom: '2.5rem' }}
-          className="max-md:grid-cols-2 max-sm:grid-cols-1">
+        <div style={{ gap: '2.5rem', marginBottom: '2.5rem' }}
+          className="g-footer max-md:grid-cols-2 max-sm:grid-cols-1">
           <div>
             <div style={{ fontFamily: 'var(--fn)', fontSize: 28, letterSpacing: '0.1em', color: 'var(--td2)', marginBottom: '0.7rem' }}>
               NIKA
@@ -69,9 +69,9 @@ export default function Footer() {
           </span>
           <div style={{ display: 'flex', gap: '1.2rem', flexWrap: 'wrap' }}>
             {[
-              { href: '/legal', label: 'Mentions légales' },
+              { href: '/mentions-legales', label: 'Mentions légales' },
               { href: '/cgu', label: 'CGU' },
-              { href: '/privacy', label: 'Confidentialité' },
+              { href: '/confidentialite', label: 'Confidentialité' },
               { href: '/cookies', label: 'Cookies' },
               { href: '/affilies', label: 'Affiliés' },
             ].map(({ href, label }) => (

@@ -29,8 +29,8 @@ export default function NewsTeaser() {
           </div>
         </FadeIn>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}
-          className="max-md:grid-cols-1">
+        <div style={{ gap: 10 }}
+          className="g-3 max-md:grid-cols-1">
           {NEWS.map(({ cat, catStyle, title, time, votes }, i) => (
             <FadeIn key={cat} delay={i * 0.1}>
               <div className="news-card" style={{ background: '#fff', borderRadius: 5, border: '1px solid rgba(0,0,0,0.06)', padding: '1.1rem', cursor: 'pointer' }}>

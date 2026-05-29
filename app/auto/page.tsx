@@ -52,8 +52,8 @@ export default async function AutoPage() {
         <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '2rem' }}>
           Services disponibles
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}
-          className="max-md:grid-cols-2 max-sm:grid-cols-1">
+        <div style={{ gap: '1.5rem' }}
+          className="g-3 max-md:grid-cols-2 max-sm:grid-cols-1">
           {services.map(({ icon, title, desc, color }) => (
             <div key={title} style={{ background: 'var(--bg2)', border: `1px solid ${color}22`, borderRadius: 8, padding: '1.5rem', position: 'relative', overflow: 'hidden', cursor: 'pointer', transition: 'border-color 0.2s' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: color, opacity: 0.75 }} />
@@ -71,8 +71,8 @@ export default async function AutoPage() {
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '2rem' }}>
             Pros certifiés NIKA
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}
-            className="max-sm:grid-cols-1">
+          <div style={{ gap: '1rem' }}
+            className="g-2 max-sm:grid-cols-1">
             {pros.map((pro) => (
               <div key={pro.id} style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 8, padding: '1.5rem', cursor: 'pointer' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.8rem' }}>

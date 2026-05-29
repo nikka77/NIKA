@@ -7,8 +7,8 @@ export default function TokenSection() {
       padding: '5rem 1.4rem',
       backgroundImage: 'radial-gradient(ellipse 50% 60% at 80% 50%,rgba(212,160,23,0.05) 0%,transparent 60%)',
     }}>
-      <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}
-        className="max-md:grid-cols-1">
+      <div style={{ maxWidth: 1100, margin: '0 auto', gap: '3rem', alignItems: 'center' }}
+        className="g-2 max-md:grid-cols-1">
 
         <FadeIn>
           <p style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: '0.6rem', display: 'flex', alignItems: 'center', gap: 7 }}>

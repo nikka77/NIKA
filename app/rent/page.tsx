@@ -39,7 +39,7 @@ export default async function RentPage() {
       </div>
 
       {/* Categories */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.7rem', marginBottom: '3rem' }} className="max-sm:grid-cols-2">
+      <div style={{ gap: '0.7rem', marginBottom: '3rem' }} className="g-3 max-sm:grid-cols-2">
         {RENT_CATS.map(c => (
           <Link key={c.slug} href={`/rent?cat=${c.slug}`} style={{ background: 'var(--bg2)', border: '1px solid rgba(90,136,176,0.15)', borderRadius: 10, padding: '1.1rem', textAlign: 'center', textDecoration: 'none' }}>
             <div style={{ fontSize: 26, marginBottom: '0.4rem' }}>{c.icon}</div>
@@ -52,7 +52,7 @@ export default async function RentPage() {
       {listings && listings.length > 0 ? (
         <div style={{ marginBottom: '3rem' }}>
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 26, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1.2rem' }}>Articles disponibles</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+          <div style={{ gap: '1rem' }} className="g-3 max-md:grid-cols-2 max-sm:grid-cols-1">
             {listings.map((item: { id: string; title: string; description?: string; price?: number; pros: { id: string; business_name: string; verified: boolean } | null }) => (
               <Link key={item.id} href={`/rent/${item.id}`} style={{ background: 'var(--bg2)', border: '1px solid rgba(90,136,176,0.2)', borderRadius: 10, padding: '1.3rem', textDecoration: 'none' }}>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 14, fontWeight: 700, color: 'var(--td)', marginBottom: '0.3rem' }}>{item.title}</div>

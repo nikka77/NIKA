@@ -137,7 +137,7 @@ export default async function StayThemePage({ params }: Props) {
 
       <div style={{ padding: '3rem 1.4rem', maxWidth: 1100, margin: '0 auto' }}>
         {hasDB ? (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+          <div style={{ gap: '1.5rem' }} className="g-3 max-md:grid-cols-2 max-sm:grid-cols-1">
             {dbListings.map((l) => (
               <div key={l.id} style={{ background: 'var(--bg2)', border: '1px solid rgba(224,112,56,0.15)', borderRadius: 8, overflow: 'hidden' }}>
                 <div style={{ height: 160, background: 'var(--bg3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 40 }}>{t.icon}</div>
@@ -158,7 +158,7 @@ export default async function StayThemePage({ params }: Props) {
             <p style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: '1.6rem' }}>
               Sélection curatée NIKA · {curated.length} hébergements
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.2rem' }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+            <div style={{ gap: '1.2rem' }} className="g-3 max-md:grid-cols-2 max-sm:grid-cols-1">
               {curated.map((l, i) => (
                 <div key={i} className="stay-card" style={{ background: 'var(--bg2)', border: '1px solid rgba(224,112,56,0.12)', borderRadius: 8, overflow: 'hidden', transition: 'border-color 0.2s' }}>
                   <div style={{ height: 140, background: 'linear-gradient(135deg, #0E1F3A, #162840)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 44, borderBottom: '1px solid var(--bd)' }}>

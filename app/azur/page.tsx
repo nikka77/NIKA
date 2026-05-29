@@ -40,7 +40,7 @@ export default async function AzurPage() {
       </div>
 
       {/* Services grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.8rem', marginBottom: '3rem' }} className="max-sm:grid-cols-2">
+      <div style={{ gap: '0.8rem', marginBottom: '3rem' }} className="g-3 max-sm:grid-cols-2">
         {AZUR_SERVICES.map(s => (
           <Link key={s.slug} href={`/azur/services?type=${s.slug}`} style={{ background: 'var(--bg2)', border: '1px solid rgba(8,104,160,0.2)', borderRadius: 12, padding: '1.5rem', textDecoration: 'none', textAlign: 'center' }}>
             <div style={{ fontSize: 32, marginBottom: '0.5rem' }}>{s.icon}</div>
@@ -54,7 +54,7 @@ export default async function AzurPage() {
       {listings && listings.length > 0 && (
         <div style={{ marginBottom: '3rem' }}>
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 26, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1.2rem' }}>Disponible maintenant</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+          <div style={{ gap: '1rem' }} className="g-3 max-md:grid-cols-2 max-sm:grid-cols-1">
             {listings.map((item: { id: string; title: string; description?: string; price?: number; pros: { id: string; business_name: string } | null }) => (
               <Link key={item.id} href={item.pros ? `/azur/bateau/${item.pros.id}` : '/azur'} style={{ background: 'var(--bg2)', border: '1px solid rgba(8,104,160,0.2)', borderRadius: 10, padding: '1.3rem', textDecoration: 'none' }}>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 14, fontWeight: 700, color: 'var(--td)', marginBottom: '0.3rem' }}>{item.title}</div>

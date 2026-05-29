@@ -148,33 +148,33 @@ ul { list-style: none; }
   box-shadow: 0 6px 18px rgba(0,0,0,0.07);
 }
 
+/* ===== RESPONSIVE GRID CLASSES ===== */
+.g-2 { display: grid; grid-template-columns: repeat(2, 1fr); }
+.g-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
+.g-4 { display: grid; grid-template-columns: repeat(4, 1fr); }
+.g-footer { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+
+@media (max-width: 768px) {
+  .max-md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr) !important; }
+  .max-md\:grid-cols-1 { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 640px) {
+  .max-sm\:grid-cols-2 { grid-template-columns: repeat(2, 1fr) !important; }
+  .max-sm\:grid-cols-1 { grid-template-columns: 1fr !important; }
+}
+
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
-  /* Typography scale down */
   body { font-size: 14px; }
-
-  /* Sections padding */
   section, [id] { padding-left: 1rem !important; padding-right: 1rem !important; }
-
-  /* Grids → 1 col on mobile */
-  .max-sm\:grid-cols-1 { grid-template-columns: 1fr !important; }
-  .max-md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr) !important; }
-
-  /* Nav overflow */
   nav ul { display: none !important; }
-
-  /* Hero padding */
   .hero { padding: 4rem 1rem 3rem !important; }
 }
 
 @media (max-width: 480px) {
-  .max-sm\:grid-cols-1 { grid-template-columns: 1fr !important; }
-  .max-md\:grid-cols-2 { grid-template-columns: 1fr !important; }
-  /* Inputs full width */
   input, textarea, select { width: 100% !important; }
 }
 
-/* Domain grid on mobile */
 @media (max-width: 600px) {
   .max-sm\:h-64 { height: 16rem !important; }
 }
