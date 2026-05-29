@@ -28,6 +28,7 @@ export default function Nav() {
     { href: '/auto', label: 'AUTO' },
     { href: '/stay', label: 'STAY' },
     { href: '/azur', label: 'AZUR' },
+    { href: '/niko', label: 'NIKO ⚡', highlight: true },
   ];
 
   return (
@@ -53,18 +54,18 @@ export default function Nav() {
 
         {/* Desktop links */}
         <ul style={{ display: 'flex' }} className="max-md:hidden">
-          {NAV_LINKS.map(({ href, label }) => (
+          {NAV_LINKS.map(({ href, label, highlight }) => (
             <li key={href}>
               <Link href={href} style={{
                 fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700,
                 letterSpacing: '0.06em', textTransform: 'uppercase',
-                color: 'var(--td2)', padding: '0 10px', height: 54,
+                color: highlight ? 'var(--az2)' : 'var(--td2)',
+                padding: '0 10px', height: 54,
                 display: 'flex', alignItems: 'center',
-                borderBottom: '2px solid transparent',
+                borderBottom: highlight ? '2px solid var(--az2)' : '2px solid transparent',
                 transition: 'all 0.2s',
               }}
-                onMouseEnter={e => { (e.target as HTMLElement).style.color = 'var(--td)'; (e.target as HTMLElement).style.borderBottomColor = 'var(--az)'; }}
-                onMouseLeave={e => { (e.target as HTMLElement).style.color = 'var(--td2)'; (e.target as HTMLElement).style.borderBottomColor = 'transparent'; }}
+                className="nav-link"
               >
                 {label}
               </Link>
@@ -186,11 +187,12 @@ export default function Nav() {
         transition: 'transform 0.28s ease, opacity 0.28s ease',
         pointerEvents: mobileOpen ? 'all' : 'none',
       }}>
-        {NAV_LINKS.map(({ href, label }) => (
+        {NAV_LINKS.map(({ href, label, highlight }) => (
           <Link key={href} href={href} onClick={() => setMobileOpen(false)} style={{
             fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700,
             letterSpacing: '0.08em', textTransform: 'uppercase',
-            color: 'var(--td2)', padding: '0.95rem 1.4rem',
+            color: highlight ? 'var(--az2)' : 'var(--td2)',
+            padding: '0.95rem 1.4rem',
             borderBottom: '1px solid var(--bd)', display: 'block',
             transition: 'color 0.2s',
           }}>
