@@ -5,9 +5,9 @@ import type { FlashDeal } from '@/lib/types';
 
 const DEMO_DEALS: FlashDeal[] = [
   { id: '1', pro_id: '', title: 'Pizza 8€ · Chez Marco', discount_type: 'fixed', discount_value: 8, expires_at: new Date(Date.now() + 5400000).toISOString(), active: true, created_at: '' },
-  { id: '2', pro_id: '', title: 'Lavage offert · AutoNice', discount_type: 'free_item', discount_value: 0, expires_at: new Date(Date.now() + 2700000).toISOString(), active: true, created_at: '' },
+  { id: '2', pro_id: '', title: 'Lavage offert · AutoNice', discount_type: 'free', discount_value: 0, expires_at: new Date(Date.now() + 2700000).toISOString(), active: true, created_at: '' },
   { id: '3', pro_id: '', title: '-20% bateau · Azur Marine', discount_type: 'percent', discount_value: 20, expires_at: new Date(Date.now() + 10800000).toISOString(), active: true, created_at: '' },
-  { id: '4', pro_id: '', title: 'Café offert · Blend Café', discount_type: 'free_item', discount_value: 0, expires_at: new Date(Date.now() + 1800000).toISOString(), active: true, created_at: '' },
+  { id: '4', pro_id: '', title: 'Café offert · Blend Café', discount_type: 'free', discount_value: 0, expires_at: new Date(Date.now() + 1800000).toISOString(), active: true, created_at: '' },
 ];
 
 const ICONS: Record<string, string> = {

@@ -2,7 +2,11 @@ import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'SEC — NIKA' };
+export const metadata: Metadata = {
+  title: 'SEC — Sécurité & Serrurerie Côte d\'Azur | NIKA',
+  description: 'Serruriers 24h/24, gardiennage, alarmes et protection VIP sur Nice, Antibes et Cannes. Professionnels certifiés NIKA. Intervention rapide garantie.',
+  keywords: ['serrurier nice 24h', 'gardiennage côte d\'azur', 'alarme nice', 'sécurité antibes', 'serrurerie cannes'],
+};
 
 const SEC_SERVICES = [
   { slug: 'gardiennage', label: 'Gardiennage', icon: '👮', desc: 'Agents de sécurité' },

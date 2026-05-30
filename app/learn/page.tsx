@@ -2,7 +2,11 @@ import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'LEARN — NIKA' };
+export const metadata: Metadata = {
+  title: 'LEARN — Cours & Coaching Côte d\'Azur | NIKA',
+  description: 'Formateurs locaux, cours de surf, langues, musique, sport et masterclass sur Nice, Antibes et Cannes. Apprenez avec les meilleurs de la Côte d\'Azur.',
+  keywords: ['cours surf nice', 'coach sport côte d\'azur', 'cours langue nice', 'formateur antibes', 'masterclass cannes'],
+};
 
 const LEARN_CATS = [
   { slug: 'sport', label: 'Sport & Fitness', icon: '💪' },

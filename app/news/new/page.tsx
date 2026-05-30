@@ -17,36 +17,38 @@ export default function NewNewsPage() {
     e.preventDefault();
     if (!user) { alert('Connecte-toi pour publier une news.'); return; }
     setLoading(true);
-
-    // Claude AI moderation
-    const modRes = await fetch('/api/news/moderate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, content }),
-    });
-    const modData = await modRes.json();
-    setResult(modData);
-
-    if (modData.approved) {
-      const supabase = createClient();
-      if (!supabase) { setLoading(false); return; }
-      await supabase.from('news').insert({
-        author_id: user.id,
-        title,
-        content,
-        category: modData.category || 'general',
-        ai_moderated: true,
-        ai_reformulation: modData.reformulation,
-        published: true,
-        source_url: sourceUrl || null,
-      });
-      // Award XP
-      await fetch('/api/xp', {
+    try {
+      const modRes = await fetch('/api/news/moderate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId: user.id, action: 'NEWS_PUBLISHED' }),
+        body: JSON.stringify({ title, content }),
       });
-      setTimeout(() => router.push('/news'), 2000);
+      if (!modRes.ok) throw new Error('Modération indisponible');
+      const modData = await modRes.json();
+      setResult(modData);
+
+      if (modData.approved) {
+        const supabase = createClient();
+        if (!supabase) { setLoading(false); return; }
+        await supabase.from('news').insert({
+          author_id: user.id,
+          title,
+          content,
+          category: modData.category || 'general',
+          ai_moderated: true,
+          ai_reformulation: modData.reformulation,
+          published: true,
+          source_url: sourceUrl || null,
+        });
+        await fetch('/api/xp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId: user.id, action: 'NEWS_PUBLISHED' }),
+        }).catch(() => null);
+        setTimeout(() => router.push('/news'), 2000);
+      }
+    } catch {
+      setResult({ approved: false, reason: 'Erreur de connexion — réessaie dans un instant.' });
     }
     setLoading(false);
   }

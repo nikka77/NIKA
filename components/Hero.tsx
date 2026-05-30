@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useMapStore } from '@/lib/store';
 
@@ -33,7 +34,10 @@ export default function Hero() {
   const { openMap } = useMapStore();
 
   function doSearch() {
-    if (query.trim()) router.push(`/search?q=${encodeURIComponent(query)}`);
+    const q = query.trim();
+    if (!q) return;
+    // Route vers NIKO avec la query pré-remplie
+    router.push(`/niko?q=${encodeURIComponent(q)}`);
   }
 
   return (
@@ -128,20 +132,21 @@ export default function Hero() {
 
         {/* CTAs */}
         <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap', animation: 'hin 0.7s ease 0.85s both' }}>
-          <button
-            onClick={() => document.getElementById('domaines')?.scrollIntoView({ behavior: 'smooth' })}
+          <Link
+            href="/niko"
             style={{
               fontFamily: 'var(--fe)', fontSize: 13, fontWeight: 800, fontStyle: 'italic',
               letterSpacing: '0.06em', textTransform: 'uppercase',
               padding: '13px 30px', borderRadius: 3,
               background: 'var(--az)', color: '#fff',
-              boxShadow: '0 0 28px rgba(0,148,212,0.3)', transition: 'all 0.25s',
+              boxShadow: '0 0 28px rgba(0,148,212,0.3)',
+              display: 'inline-flex', alignItems: 'center', gap: 7,
             }}
           >
-            Explorer les domaines
-          </button>
+            NIKO ⚡ Commander
+          </Link>
           <button
-            onClick={openMap}
+            onClick={() => document.getElementById('domaines')?.scrollIntoView({ behavior: 'smooth' })}
             style={{
               fontFamily: 'var(--fe)', fontSize: 13, fontWeight: 800, fontStyle: 'italic',
               letterSpacing: '0.06em', textTransform: 'uppercase',
@@ -149,7 +154,18 @@ export default function Hero() {
               border: '1px solid var(--bd2)', color: 'var(--td)', transition: 'all 0.25s',
             }}
           >
-            Carte live →
+            Explorer →
+          </button>
+          <button
+            onClick={openMap}
+            style={{
+              fontFamily: 'var(--fe)', fontSize: 13, fontWeight: 800, fontStyle: 'italic',
+              letterSpacing: '0.06em', textTransform: 'uppercase',
+              padding: '13px 30px', borderRadius: 3,
+              border: '1px solid var(--bd2)', color: 'var(--td2)', transition: 'all 0.25s',
+            }}
+          >
+            🗺️ Carte live
           </button>
         </div>
 

@@ -1,7 +1,11 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { NextRequest } from 'next/server';
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+if (!process.env.ANTHROPIC_API_KEY) {
+  console.warn('[NIKO] ANTHROPIC_API_KEY manquant — ajoute-le dans .env.local');
+}
+
+const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY ?? '' });
 
 const SYSTEM_PROMPT = `Tu es NIKO, l'assistant NIKA sur la Côte d'Azur.
 NIKA est une plateforme locale qui connecte les habitants et visiteurs de Nice, Antibes et Cannes avec des chauffeurs VTC, livreurs, runners et restaurants partenaires.
@@ -62,6 +66,12 @@ SIMULATION (Mode prototype)
 En phase prototype, tu simules les confirmations de manière réaliste. Tu génères des ETAs plausibles (chauffeur à X minutes), des prix cohérents, et des noms de chauffeurs fictifs mais crédibles. Tu précises à la fin des simulations : "(Simulation NIKO v0.1 — intégration Supabase en cours)"`;
 
 export async function POST(req: NextRequest) {
+  if (!process.env.ANTHROPIC_API_KEY) {
+    return new Response(
+      JSON.stringify({ error: 'NIKO non configuré — ANTHROPIC_API_KEY manquant' }),
+      { status: 503 }
+    );
+  }
   try {
     const { messages } = await req.json();
     if (!messages || !Array.isArray(messages)) {

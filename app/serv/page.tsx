@@ -2,7 +2,11 @@ import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'SERV — NIKA' };
+export const metadata: Metadata = {
+  title: 'SERV — Services à Domicile Côte d\'Azur | NIKA',
+  description: 'Plombiers, électriciens, serruriers, déménageurs et artisans certifiés sur Nice, Antibes et Cannes. Réservation rapide, notation communauté.',
+  keywords: ['plombier nice', 'électricien côte d\'azur', 'serrurier antibes', 'déménagement cannes', 'artisan nice'],
+};
 
 const SERV_CATS = [
   { slug: 'plomberie', label: 'Plomberie', icon: '🚿' },

@@ -1,5 +1,6 @@
 'use client';
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -19,9 +20,10 @@ const QUICK_REPLIES: Record<string, string[]> = {
   track: ['Ma dernière commande', 'Mon chauffeur', 'Annuler'],
 };
 
-export default function NikoPage() {
+function NikoChat() {
+  const searchParams = useSearchParams();
   const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState(searchParams.get('q') || '');
   const [loading, setLoading] = useState(false);
   const [started, setStarted] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -221,5 +223,13 @@ export default function NikoPage() {
         </p>
       </div>
     </main>
+  );
+}
+
+export default function NikoPage() {
+  return (
+    <Suspense fallback={null}>
+      <NikoChat />
+    </Suspense>
   );
 }
