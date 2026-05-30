@@ -7,11 +7,11 @@ import MapOverlay, { FloatMapBtn } from '@/components/MapOverlay';
 
 export const metadata: Metadata = {
   title: 'NIKA — Explore. Joue. Vis. | Côte d\'Azur',
-  description: 'Restaurants, dépanneurs, logements insolites, bateaux, services locaux — tout ce qui compte sur la Côte d\'Azur, au même endroit.',
-  keywords: ['Nice', 'Côte d\'Azur', 'logement insolite', 'VTC', 'dépannage', 'bateau'],
+  description: 'La super-app de la Côte d\'Azur : VTC, restaurants, logements insolites, bateaux, services locaux et agent IA NIKO. Nice, Antibes, Cannes.',
+  keywords: ['nice app', 'côte d\'azur app', 'vtc nice', 'logement insolite nice', 'bateau cannes', 'super-app méditerranée'],
   openGraph: {
-    title: 'NIKA — Explore. Joue. Vis.',
-    description: 'Le companion app de la vraie vie sur la Côte d\'Azur.',
+    title: 'NIKA — La super-app de la Côte d\'Azur',
+    description: 'VTC, food, logements insolites, bateaux. L\'essentiel de la Côte d\'Azur en une seule app.',
     type: 'website',
   },
 };

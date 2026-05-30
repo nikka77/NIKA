@@ -2,7 +2,11 @@ import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'FOOD — NIKA' };
+export const metadata: Metadata = {
+  title: 'FOOD — Restaurants & Livraison Côte d\'Azur | NIKA',
+  description: 'Restaurants, pizzerias, boulangeries, food trucks et sushis sur Nice, Antibes et Cannes. Commande, Flash Deals et livraison via NIKA.',
+  keywords: ['restaurant nice', 'livraison nice', 'food truck côte d\'azur', 'pizzeria antibes', 'sushi cannes'],
+};
 
 const FOOD_CATS = [
   { slug: 'restaurant', label: 'Restaurants', icon: '🍽️' },

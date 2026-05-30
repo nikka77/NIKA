@@ -2,7 +2,11 @@ import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'RENT — NIKA' };
+export const metadata: Metadata = {
+  title: 'RENT — Location de Matériel Côte d\'Azur | NIKA',
+  description: 'Location de vélos, scooters, matériel de surf, camping et équipement photo sur la Côte d\'Azur. Disponible immédiatement sans agence.',
+  keywords: ['location vélo nice', 'location scooter côte d\'azur', 'location matériel sport antibes'],
+};
 
 const RENT_CATS = [
   { slug: 'sport', label: 'Sport & Loisirs', icon: '⛷️' },

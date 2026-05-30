@@ -2,7 +2,11 @@ import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'AZUR — NIKA' };
+export const metadata: Metadata = {
+  title: 'AZUR — Location Bateaux & Mer Côte d\'Azur | NIKA',
+  description: 'Location de bateaux, skippers, water taxi, plongée et beach clubs sur la Méditerranée. Réservez votre journée en mer depuis Nice, Cannes ou Antibes.',
+  keywords: ['location bateau nice', 'skipper côte d\'azur', 'water taxi cannes', 'plongée méditerranée', 'beach club nice'],
+};
 
 const AZUR_SERVICES = [
   { slug: 'bateau', label: 'Location bateaux', icon: '🛥️', desc: 'Sorties en mer' },
