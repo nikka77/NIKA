@@ -1,0 +1,2757 @@
+{
+  "meta": {
+    "generated": "2026-05-31",
+    "total": 57,
+    "batch_1": "22 listings sans équivalent — extraction Chrome + web enrichissement",
+    "batch_2": "35 listings partiellement disponibles ou via affiliation",
+    "source": "Airbnb WOW page + recherches web",
+    "authorizations": "Propriétaires contactés et autorisés",
+    "import_script": "scripts/import-wow-listings.ts"
+  },
+  "listings": [
+    {
+      "id": "wow-001",
+      "airbnb_id": "20605023",
+      "slug": "sous-marin-jaune-nouvelle-zelande",
+      "name": "Le Sous-Marin Jaune",
+      "tagline": "Plongez dans les années 60 — inspiré des Beatles, construit avec amour",
+      "type": "sous-marin",
+      "wow_score": 25,
+      "country": "Nouvelle-Zélande",
+      "region": "Manawatu-Wanganui",
+      "city": "Marton",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 4,
+        "bathrooms": 1
+      },
+      "rating": 4.93,
+      "reviews_count": 939,
+      "badge": "Top 5% Airbnb mondial",
+      "host": "Keith & Jen Lovelock",
+      "description_nika": "Flottant dans une mer de verdure parmi les séquoias, ce sous-marin jaune grandeur nature à 4 dimensions : Beatles (salon Victorian steampunk + mannequin John Lennon), Guerre Froide (La Chasse à l'Octobre Rouge), 1943 Atlantique Nord (Das Boot), Capitaine Nemo (steampunk 1850). Construit par Keith Lovelock à partir d'un silo à grain recyclé, d'une baignoire spa et d'éléments d'étable.",
+      "history": {
+        "built": "2018-2019",
+        "cost_nzd": 20000,
+        "creator": "Keith Lovelock, ancien technicien radio",
+        "origin": "Idée née en 2016 dans un café jaune à Wellington",
+        "materials": "Silo à grain fibre de verre recyclé + baignoire spa + matériaux étable",
+        "notable_guests": "Proches et membres de la famille de John Lennon",
+        "media": [
+          "El Paso Inc.",
+          "Autoevolution",
+          "The Mountain Eagle",
+          "Talker News"
+        ]
+      },
+      "amenities": [
+        "Vue jardin/vallée",
+        "Parking gratuit",
+        "Patio privé",
+        "Arrière-cour clôturée",
+        "Frigo",
+        "Micro-ondes",
+        "Petit-déjeuner inclus",
+        "Livres/jouets enfants",
+        "41 équipements",
+        "SANS wifi/téléphone (volontaire)"
+      ],
+      "special": [
+        "Périscope fonctionnel",
+        "Porte cloison bulkhead",
+        "Salle des torpilles = chambre",
+        "Salle bain thème Beatles"
+      ],
+      "review_categories": {
+        "famille": 257,
+        "hospitalité": 120,
+        "décoration": 85,
+        "confort": 103,
+        "qualité_sommeil": 82
+      },
+      "sample_reviews": [
+        {
+          "author": "Laureline",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Un musée et à la fois un Airbnb... bravo pour la rénovation ! On est redevenu des enfants l'espace d'un instant... calme et dépaysant."
+        },
+        {
+          "author": "Tim",
+          "date": "mai 2026",
+          "stars": 5,
+          "text": "Une expérience vraiment inoubliable, comme être sur une île hors du temps. Nos enfants ont adoré la bibliothèque à bord."
+        },
+        {
+          "author": "Alla",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "C'est l'Airbnb le plus magique dans lequel j'ai jamais séjourné. Difficile de trouver les mots."
+        }
+      ],
+      "checkin": "14h-23h",
+      "checkout": "10h",
+      "no_wifi": true,
+      "contact_priority": "MAXIMALE",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-002",
+      "airbnb_id": "946891754525944779",
+      "slug": "express-voiture-salon-14630-normandie",
+      "name": "L'Express Voiture-Salon n°14630",
+      "tagline": "1910 — Une voiture prussienne de guerre dort dans un jardin normand",
+      "type": "train-reconverti",
+      "wow_score": 24,
+      "country": "France",
+      "region": "Normandie",
+      "city": "Sierville",
+      "address": "59 Impasse de l'Ancienne-Chapelle, 76690 Sierville",
+      "gps": [
+        49.59639,
+        1.06446
+      ],
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 3,
+        "bathrooms": 1
+      },
+      "rating": 4.94,
+      "reviews_count": 159,
+      "badge": "Coup de cœur voyageurs",
+      "host": "Yazid Medjebar (cheminot SNCF)",
+      "price_ref": "185€/nuit",
+      "description_nika": "Voiture d'express prussienne de 1910, construite en Basse-Silésie (aujourd'hui Pologne), confisquée par la France après 1918 au titre des dommages de guerre. A roulé sur le réseau Alsace-Lorraine, servi de voiture-école à Noisy-le-Sec, puis sauvée par des associations ferroviaires. Yazid Medjebar, cheminot SNCF, l'a cherchée en Belgique, Allemagne, Italie, Espagne. Transportée de Pacy-sur-Eure à Sierville le 25 mars 2022. Wagon n°14630, longueur 19,4m, type C8½yfi.",
+      "history": {
+        "built": "vers 1910",
+        "origin": "Prusse, Basse-Silésie",
+        "timeline": [
+          "1910 — Construction en Prusse",
+          "Après 1918 — Confisqué France (réparations guerre)",
+          "Années 1920-1990 — Réseau AL + voiture-école Noisy-le-Sec",
+          "1999 — AJECTA puis CFVE",
+          "25/03/2022 — Transport Pacy-sur-Eure → Sierville",
+          "2023 — Ouverture gîte"
+        ],
+        "creator": "Yazid Medjebar, cheminot SNCF",
+        "patrimoine_ref": "Répertorié patrimoine-ferroviaire.fr (Prusse voiture C8½yfi 14630)",
+        "media": [
+          "SNCF Passion 4M",
+          "Cybevasion",
+          "Gites.fr"
+        ]
+      },
+      "amenities": [
+        "Cuisine complète",
+        "WiFi",
+        "Parking gratuit",
+        "TV",
+        "Climatisation",
+        "Jardin",
+        "Berceau sur demande",
+        "Lit parapluie",
+        "Linge lit inclus",
+        "Terrasse vue jardin",
+        "36 équipements"
+      ],
+      "review_categories": {
+        "hospitalité": 94,
+        "famille": 51,
+        "espaces_intérieurs": 30,
+        "confort": 28,
+        "emplacement": 26
+      },
+      "sample_reviews": [
+        {
+          "author": "Maxim",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "Direction l'Orient Express ! Beau voyage dans le temps, les détails sont choisis avec soin. Yazid est très agréable."
+        },
+        {
+          "author": "Pauline",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "Tout a été étudié pour qu'on ait l'impression de voyager sans bouger. Un beau retour dans le passé."
+        },
+        {
+          "author": "Sophie",
+          "date": "décembre 2025",
+          "stars": 5,
+          "text": "Moment magique avec nos deux petits-enfants. Fabuleux, décoré avec goût. Nous y reviendrons !"
+        }
+      ],
+      "checkin": "16h-22h",
+      "checkout": "11h",
+      "contact_priority": "HAUTE — unique en France",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-003",
+      "airbnb_id": "46711243",
+      "slug": "silo-missiles-bunker-atlas-f-roswell",
+      "name": "Bunker Atlas F — Silo à Missiles Nucléaires",
+      "tagline": "Guerre Froide 1961 — Dormez dans la base qui pouvait déclencher l'apocalypse",
+      "type": "bunker-militaire",
+      "wow_score": 25,
+      "country": "USA",
+      "state": "Nouveau-Mexique",
+      "city": "Roswell",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 1,
+        "beds": 6,
+        "bathrooms": 1,
+        "surface_m2": 116
+      },
+      "rating": 4.99,
+      "reviews_count": 599,
+      "badge": "Top 5% Airbnb mondial",
+      "host": "Gary (propriétaire + guide historique)",
+      "description_nika": "55 mètres sous le désert du Nouveau-Mexique. L'appartement privé occupe l'ancien niveau supérieur du centre de contrôle de lancement d'une base de missiles balistiques intercontinentaux Atlas F. Dans les années 1960, un appel depuis cette salle pouvait déclencher une frappe nucléaire. Aujourd'hui vous y dormez. Visite guidée du silo incluse. Le musée Roswell UFO mentionne le silo dans sa chronologie. Célèbre grâce à la série YouTube Ryan Trahan '50 États'.",
+      "history": {
+        "program": "Atlas F — ICBM USAF",
+        "built": "1959-1961",
+        "operational": "1961-1965",
+        "silo_depth_m": 55,
+        "famous_mentions": [
+          "Musée Roswell UFO",
+          "Série YouTube Ryan Trahan 50 États"
+        ],
+        "unique": "L'une des rares bases Atlas F habitables dans le monde"
+      },
+      "amenities": [
+        "Cuisine + nourriture/boissons fournis",
+        "WiFi souterrain",
+        "Réseau cellulaire souterrain",
+        "Parking",
+        "Animaux acceptés",
+        "TV 52\" Netflix",
+        "Lave-linge + sèche-linge",
+        "Patio",
+        "46 équipements",
+        "VISITE HISTORIQUE INCLUSE"
+      ],
+      "special": [
+        "Libre accès au site 24h/24",
+        "Silo à 55m de profondeur visitable",
+        "Expositions ICBM + livres historiques",
+        "Gary vit sur place"
+      ],
+      "review_categories": {
+        "hospitalité": 414,
+        "confort": 62,
+        "espaces_intérieurs": 56,
+        "qualité_sommeil": 42,
+        "vue": 28
+      },
+      "sample_reviews": [
+        {
+          "author": "Karen (Georgetown, TN)",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Gary a partagé l'histoire des missiles Atlas et son parcours pour acquérir ce silo. L'espace de vie conserve le caractère d'un bunker."
+        },
+        {
+          "author": "Phil (UK)",
+          "date": "mai 2026",
+          "stars": 5,
+          "text": "Être Britannique et séjourner dans un silo de missiles nucléaires dépasse la valeur de l'argent. L'endroit le plus unique où j'ai jamais séjourné."
+        },
+        {
+          "author": "Lyn (Albuquerque)",
+          "date": "mai 2026",
+          "stars": 5,
+          "text": "Découvert grâce à Ryan Trahan 50 États. Gary a pris le temps de nous faire découvrir l'histoire du silo — passionnant."
+        }
+      ],
+      "checkin": "15h-23h",
+      "checkout": "11h",
+      "pets_ok": true,
+      "contact_priority": "MAXIMALE — mythique, aucun équivalent mondial",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-004",
+      "airbnb_id": "1152145392834567091",
+      "slug": "anthenea-suite-flottante-perros-guirec",
+      "name": "ANTHENEA — Première Suite Hôtelière Flottante",
+      "tagline": "Inspirée James Bond — dôme flottant vision sous-marine, Bretagne",
+      "type": "suite-flottante",
+      "wow_score": 23,
+      "country": "France",
+      "region": "Bretagne",
+      "city": "Perros-Guirec",
+      "location_detail": "Port de Perros-Guirec — accès par ponton",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1,
+        "surface_m2": 36,
+        "rooftop_m2": 14
+      },
+      "rating": 4.83,
+      "reviews_count": 155,
+      "host": "La Conciergerie Du Trégor",
+      "price_ref": "589€/nuit",
+      "description_nika": "Amarrée au port de Perros-Guirec sur la Côte de Granit Rose, ANTHENEA est la première suite hôtelière flottante au monde. Dôme blanc évoquant une soucoupe volante. Lit rond 2m15, baignoire à débordement, salon vision sous-marine directe, rooftop circulaire 14m² orientable. Fabriquée à Lannion (22), éco-conception, aucun ancrage maçonné. Domotique de pointe.",
+      "history": {
+        "design": "Inspiré films James Bond — esthétique soucoupe volante",
+        "fabrication": "Lannion, Côtes-d'Armor, France",
+        "concept": "Première suite hôtelière flottante au monde commercialisée",
+        "eco": "Matériaux recyclés, pas d'ancrage maçonné, flexibilité de déplacement"
+      },
+      "amenities": [
+        "Vue port + océan",
+        "Au bord de l'eau (ponton)",
+        "Cuisine",
+        "WiFi",
+        "Parking",
+        "TV",
+        "Clim",
+        "Rooftop 360° orientable",
+        "Vision sous-marine salon",
+        "Baignoire à débordement",
+        "Domotique",
+        "41 équipements"
+      ],
+      "also_on_booking": true,
+      "review_categories": {
+        "vue": 38,
+        "hospitalité": 49,
+        "confort": 21,
+        "espaces_intérieurs": 21,
+        "propreté": 14
+      },
+      "sample_reviews": [
+        {
+          "author": "Magali",
+          "date": "mai 2026",
+          "stars": 5,
+          "text": "Lorsque l'on découvre le logement, c'est un véritable WAOUH ! Tout est réuni pour passer un moment hors du temps."
+        },
+        {
+          "author": "Olivier",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "Équipement haut de gamme. Nous avons pu admirer le lever du soleil depuis le lit — magnifique."
+        },
+        {
+          "author": "Meline",
+          "date": "fin mai 2026",
+          "stars": 5,
+          "text": "Cette plateforme insolite est vraiment incroyable ! Cadre idéal de Perros-Guirec."
+        }
+      ],
+      "checkin": "15h-19h",
+      "checkout": "11h",
+      "contact_priority": "HAUTE — logement français iconique",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-005",
+      "airbnb_id": "900891950206269231",
+      "slug": "ovni-guadalupe-vallee-baja",
+      "name": "OVNI Guadalupe",
+      "tagline": "Vaisseau spatial posé dans les vignobles de Baja California",
+      "type": "architecture-surréaliste",
+      "wow_score": 24,
+      "country": "Mexique",
+      "region": "Baja California",
+      "city": "Francisco Zarco (Valle de Guadalupe)",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.91,
+      "reviews_count": 239,
+      "host": "José Cailo Ceniceros, architecte",
+      "description_nika": "Dans la Valle de Guadalupe, célèbre région viticole de Baja California, un OVNI architectural s'est posé sur une colline. Conçu par l'architecte José Cailo Ceniceros selon les principes de l'architecture organique. 16 fenêtres, vue 360° sur la vallée, intérieurs futuristes minimalistes, jacuzzi chauffé sous les étoiles. Routes rustiques en terre pour y accéder — SUV recommandé.",
+      "history": {
+        "architect": "José Cailo Ceniceros",
+        "concept": "Architecture organique — espaces hors des conventions",
+        "environment": "Écosystème semi-désertique, faune sauvage",
+        "access": "Routes rustiques de terre et collines escarpées — SUV recommandé"
+      },
+      "amenities": [
+        "Vue vallée vignobles 360°",
+        "Jacuzzi privé chauffé",
+        "16 fenêtres panoramiques",
+        "Cuisine",
+        "WiFi",
+        "Parking",
+        "Clim split",
+        "Terrasse",
+        "Animaux OK",
+        "46 équipements"
+      ],
+      "review_categories": {
+        "hospitalité": 122,
+        "vue": 63,
+        "jacuzzi": 33,
+        "se_déplacer": 31,
+        "confort": 25
+      },
+      "sample_reviews": [
+        {
+          "author": "Fanny",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Les masques d'extraterrestres et les lunettes amusantes ont rendu l'expérience encore plus mémorable. Se détendre dans le jacuzzi sous les étoiles — magique."
+        },
+        {
+          "author": "Amanda",
+          "date": "avril 2026",
+          "stars": 4,
+          "text": "Le lieu est très unique ! La vue d'en haut est magnifique au coucher du soleil. José a été tellement gentil et réactif."
+        },
+        {
+          "author": "Roy",
+          "date": "mai 2026",
+          "stars": 5,
+          "text": "L'hôte nous a fourni des ballons et pétales de rose pour mon anniversaire. Ma femme a ADORÉ le détail !"
+        }
+      ],
+      "checkin": "15h",
+      "checkout": "12h",
+      "contact_priority": "HAUTE — viral TikTok, unique architecture",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-006",
+      "airbnb_id": "765336753795827514",
+      "slug": "caboose-train-jacuzzi-eureka-springs",
+      "name": "Caboose 101 — Wagon de Queue avec Jacuzzi",
+      "tagline": "Dormez dans un vrai wagon de queue sur les rails, jacuzzi privé inclus",
+      "type": "train-reconverti",
+      "wow_score": 22,
+      "country": "USA",
+      "state": "Arkansas",
+      "city": "Eureka Springs",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.96,
+      "reviews_count": 296,
+      "badge": "Top 5% Airbnb mondial",
+      "host": "Brittany (propriétaire petite entreprise)",
+      "description_nika": "Un vrai wagon de queue américain posé sur ses rails dans les bois de l'Arkansas, tout comme il l'était quand il sillonnait la campagne américaine. Lit Queen Size, douche, TV avec lecteur DVD, kitchenette. La terrasse spacieuse donne sur les bois. Jacuzzi privé pour soirée sous les étoiles. Romantique, intime, unique.",
+      "amenities": [
+        "Vue montagne",
+        "Jacuzzi privé",
+        "Kitchenette",
+        "TV + DVD",
+        "Clim split",
+        "Terrasse",
+        "Parking",
+        "39 équipements",
+        "PAS de WiFi"
+      ],
+      "review_categories": {
+        "jacuzzi": 83,
+        "hospitalité": 140,
+        "emplacement": 95,
+        "propreté": 47,
+        "confort": 40
+      },
+      "sample_reviews": [
+        {
+          "author": "Luke",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "Brittany a fait tout son possible et bien plus. Logement charmant en vrai, privé et confortable. 6 espèces d'oiseaux que je n'avais jamais vues !"
+        },
+        {
+          "author": "Dozolme (français)",
+          "date": "juillet 2025",
+          "stars": 5,
+          "text": "Très bien passé ! La région est magnifique et la ville de Eureka Springs est absolument fantastique."
+        },
+        {
+          "author": "Danny",
+          "date": "février 2026",
+          "stars": 5,
+          "text": "Hôte attentive et amicale. Nous réserverons certainement pour notre prochain séjour à Eureka Springs !"
+        }
+      ],
+      "checkin": "15h",
+      "checkout": "11h",
+      "contact_priority": "HAUTE — transport reconverti unique",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-007",
+      "airbnb_id": "12031639",
+      "slug": "peniche-arche-noe-somme-pont-remy",
+      "name": "Péniche Arche de Noé — Sur la Somme",
+      "tagline": "1902 — Une péniche classée, vue sur un château en ruine",
+      "type": "peniche",
+      "wow_score": 22,
+      "country": "France",
+      "region": "Hauts-de-France",
+      "city": "Pont-Remy",
+      "capacity": {
+        "guests": 3,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.98,
+      "reviews_count": 417,
+      "badge": "Top 5% Airbnb mondial",
+      "host": "Véronique (professeur de piano)",
+      "description_nika": "Péniche de 1902 entièrement rénovée, amarrée à Pont-Rémy dans la vallée de la Somme, avec vue sur un château en ruine. Véronique, professeur de piano, restaure l'Arche de Noé avec amour depuis 10 ans. Lit 160cm, cuisine équipée, lave-linge, TV Netflix, poêle à bois, climatisation, terrasse avec barbecue et transats, 2 vélos de ville fournis. Animaux acceptés gratuits. À 40 min de la Baie de Somme, 20 min d'Amiens.",
+      "history": {
+        "built": "1902",
+        "host_profession": "Professeur de piano",
+        "renovation": "Restauration continue par Véronique depuis 10 ans",
+        "surroundings": "Château en ruine visible depuis la péniche",
+        "proximity": "Baie de Somme (40 min), Amiens cathédrale (20 min), Véloroute Somme"
+      },
+      "amenities": [
+        "Vue rivière + château ruine",
+        "Au bord de l'eau",
+        "Cuisine complète",
+        "WiFi",
+        "Parking",
+        "Animaux OK (gratuit)",
+        "TV Netflix",
+        "Lave-linge",
+        "Clim centrale",
+        "2 vélos ville inclus",
+        "Terrasse + BBQ + transats",
+        "Poêle à bois",
+        "50 équipements"
+      ],
+      "review_categories": {
+        "hospitalité": 306,
+        "emplacement": 128,
+        "vélo": 80,
+        "équipements": 40,
+        "vue": 27
+      },
+      "sample_reviews": [
+        {
+          "author": "Adèle",
+          "date": "fin mai 2026",
+          "stars": 5,
+          "text": "Magnifique escapade avec vue sur un splendide château en ruine. Merci à Véronique pour sa disponibilité et flexibilité."
+        },
+        {
+          "author": "Guillaume",
+          "date": "janvier 2026",
+          "stars": 5,
+          "text": "Une expérience incroyable. En janvier, profité du poêle à bois dans cet espace cosy. Envie d'y retourner en été pour la terrasse sur le toit."
+        },
+        {
+          "author": "Isabelle",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Superbe péniche pour une belle parenthèse bucolique ! Notre chienne a adoré. Encore merci Véronique."
+        }
+      ],
+      "checkin": "15h-21h",
+      "checkout": "10h",
+      "contact_priority": "HAUTE — logement français atypique, 4.98 étoiles",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-008",
+      "airbnb_id": "50597302",
+      "slug": "wagon-conestoga-ranch-sandy-valley-nevada",
+      "name": "Wagon Conestoga — Ranch du Far West",
+      "tagline": "45 min de Las Vegas — dormez dans un chariot de pionniers américains",
+      "type": "transport-reconverti",
+      "wow_score": 21,
+      "country": "USA",
+      "state": "Nevada",
+      "city": "Sandy Valley",
+      "proximity": "45 min de Las Vegas",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 1,
+        "beds": 3,
+        "bathrooms": 1
+      },
+      "rating": 4.9,
+      "reviews_count": 439,
+      "badge": "Top 5% Airbnb — 100% de 5 étoiles des voyageurs français",
+      "host": "Marilyn Kelch",
+      "note_france": "100% des voyageurs français ont donné 5 étoiles sur l'année",
+      "description_nika": "Dans le désert du Nevada, à 45 minutes de Las Vegas, le Sandy Valley Ranch propose le séjour le plus improbable de la région : une nuit dans un vrai wagon Conestoga, le chariot bâché des pionniers de la conquête de l'Ouest américain. Ranch en activité avec chevaux, chèvres, vaches, chiens de travail. Activités : cow-boy d'un jour, promenades à cheval, conduite de bétail, rodéos. Électricité intérieure, chauffage/clim split, foyer extérieur.",
+      "amenities": [
+        "Vue désert + montagne",
+        "Cuisine",
+        "WiFi",
+        "Parking",
+        "Animaux OK",
+        "Clim centrale",
+        "Jardin",
+        "Cheminée",
+        "Ranch en activité (chevaux, chèvres, vaches)",
+        "Activités ranch en option"
+      ],
+      "review_categories": {
+        "famille": 105,
+        "hospitalité": 119,
+        "confort": 83,
+        "vue": 58,
+        "emplacement": 76
+      },
+      "sample_reviews": [
+        {
+          "author": "Ludivine (Suisse)",
+          "date": "juillet 2025",
+          "stars": 5,
+          "text": "Nous avons beaucoup apprécié l'expérience avec ma famille. Très dépaysant. Merci aux hôtes pour l'accueil."
+        },
+        {
+          "author": "Scott",
+          "date": "mai 2026",
+          "stars": 5,
+          "text": "Séjour dans le wagon + randonnée à cheval avec Frosty. Absolument fantastique. Je le recommande vivement."
+        },
+        {
+          "author": "Angela",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "Nous adorons la roulotte couverte. Lieu d'escapade idéal depuis Las Vegas. Mon fils adore allumer les feux."
+        }
+      ],
+      "checkin": "15h",
+      "checkout": "12h",
+      "contact_priority": "HAUTE — expérience unique Far West, plébiscité par les Français",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-009",
+      "airbnb_id": "645104367296318967",
+      "slug": "tiny-house-silo-grain-ellensburg-washington",
+      "name": "Tiny House en Silo à Grain",
+      "tagline": "Un vrai silo agricole transformé en tiny house de luxe avec jacuzzi",
+      "type": "silo-reconverti",
+      "wow_score": 22,
+      "country": "USA",
+      "state": "Washington",
+      "city": "Ellensburg",
+      "proximity": "Campus CWU à 1 mile, ville à 5 min",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.96,
+      "reviews_count": 559,
+      "badge": "Top 5% Airbnb",
+      "host": "Ben & Sara",
+      "note_special": "Ben construit un 2ème silo sur la propriété (travaux 8h-17h possibles)",
+      "description_nika": "Un silo à grain agricole transformé en tiny house contemporaine, à Ellensburg dans l'État de Washington. Terrasse au 2ème étage orientée Est, patio couvert au rez-de-chaussée avec barbecue et jacuzzi privé. Cuisine complète, lave-linge/sèche-linge, TV, WiFi. Pâturages environnants, cadre paisible. Ben construit actuellement un 2ème silo à 30m — les travaux peuvent avoir lieu pendant votre séjour.",
+      "amenities": [
+        "Jacuzzi privé",
+        "Terrasse 2e étage Est",
+        "Cuisine complète",
+        "WiFi",
+        "Parking",
+        "TV",
+        "Lave-linge + sèche-linge",
+        "Clim",
+        "Animaux OK",
+        "BBQ",
+        "28 équipements"
+      ],
+      "review_categories": {
+        "jacuzzi": 139,
+        "hospitalité": 124,
+        "emplacement": 93,
+        "confort": 99,
+        "propreté": 86
+      },
+      "sample_reviews": [
+        {
+          "author": "Joanie (Montréal)",
+          "date": "fin mai 2026",
+          "stars": 5,
+          "text": "Séjour unique ! Très bien situé. L'endroit est super propre et vous disposez de tout ce dont vous avez besoin."
+        },
+        {
+          "author": "Tye (Victoria)",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Incroyable séjour dans le silo. Très confortable et paisible. Ben et Sara ont répondu très rapidement."
+        },
+        {
+          "author": "Lydia",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "Ce séjour a dépassé de loin tous les autres. Nous avons adoré absolument tous les aspects."
+        }
+      ],
+      "checkin": "15h-22h",
+      "checkout": "11h",
+      "contact_priority": "HAUTE — silo reconverti, unique en son genre",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-010",
+      "airbnb_id": "1762491",
+      "slug": "earthship-taos-mesa-nouveau-mexique",
+      "name": "Taos Mesa Studio Earthship",
+      "tagline": "Construit à la main en 3 ans — maison hors réseau totalement autonome",
+      "type": "earthship",
+      "wow_score": 22,
+      "country": "USA",
+      "state": "Nouveau-Mexique",
+      "city": "Taos",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 1,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.9,
+      "reviews_count": 1032,
+      "badge": "Coup de cœur voyageurs",
+      "host": "Dan (constructeur-propriétaire)",
+      "media": [
+        "Off The Grid Build — chercher 'Off The Grid Build' sur YouTube"
+      ],
+      "description_nika": "Dan a construit cette maison lui-même pendant 3 ans, vivant sous tente pendant la construction. Un Earthship : maison totalement hors réseau qui capte sa propre eau de pluie, génère sa propre électricité solaire et maintient 22°C toute l'année sans carburant. Jardin de plantes en serre intérieure. WiFi rapide, Netflix 55\", baignoire en pierre, laveuse. Dans une communauté entière d'Earthships à Taos. Vue époustouflante sur le haut désert et les montagnes.",
+      "history": {
+        "construction": "3 ans, Dan vivait sous tente pendant la construction",
+        "concept": "Earthship — architecture régénérative de Michael Reynolds",
+        "autonomy": [
+          "Eau de pluie captée",
+          "Électricité solaire",
+          "22°C constante sans énergie extérieure",
+          "Jardin serre intérieure"
+        ],
+        "community": "Communauté Earthships de Taos — visite guidée disponible"
+      },
+      "amenities": [
+        "Vue désert + montagne 360°",
+        "Hors réseau (solaire)",
+        "WiFi rapide",
+        "TV 55\" Netflix",
+        "Cuisine + four",
+        "Lave-linge + sèche-linge",
+        "Baignoire luxe",
+        "Terrasse",
+        "Animaux OK (50$)",
+        "27 équipements"
+      ],
+      "review_categories": {
+        "vue": 360,
+        "emplacement": 293,
+        "confort": 216,
+        "propreté": 162,
+        "randonnée": 43
+      },
+      "sample_reviews": [
+        {
+          "author": "Robert",
+          "date": "mi-mai 2026",
+          "stars": 5,
+          "text": "Logement de Dan était exactement l'expérience Earthship recherchée. Nous avons pu en apprendre plus via une visite guidée de l'organisation fondatrice."
+        },
+        {
+          "author": "Ryan",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "L'Earthship de Dan a offert une expérience très cool. Vue magnifique et observation des étoiles. Quelques points nécessitaient attention : porte terrasse et stores cassés."
+        },
+        {
+          "author": "Edward",
+          "date": "fin mai 2026",
+          "stars": 5,
+          "text": "En maintenant la circulation de l'air, on se sent comme faisant partie de la propriété. Un endroit si paisible pour voir lever et coucher de soleil."
+        }
+      ],
+      "checkin": "16h",
+      "checkout": "11h",
+      "contact_priority": "HAUTE — concept Earthship unique",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-011",
+      "airbnb_id": "22840443",
+      "slug": "wee-nook-hobbit-hole-tennessee",
+      "name": "Wee Nook — The Hobbit Hole",
+      "tagline": "JRR Tolkien avait raison — un trou dans le sol peut être un paradis",
+      "type": "maison-terre",
+      "wow_score": 23,
+      "country": "USA",
+      "state": "Tennessee",
+      "city": "McEwen",
+      "proximity": "15 miles du ranch de Loretta Lynn, 1h de Nashville",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.99,
+      "reviews_count": 1027,
+      "badge": "Top 5% Airbnb mondial",
+      "host": "Catie & David (Rock 'N Refuge farm)",
+      "description_nika": "Niché sous terre dans les bois du Tennessee, sur une propriété agricole de 220 acres. Maison de 33m² avec toit vivant et plantations comestibles. Cuisine complète, baignoire, lit King, canapé, foyer extérieur, pavillon de bois. Randonnées sur la propriété, étang pêche + baignade, vaches des Highlands écossais, chevaux. SANS internet ni TV (apporter livres et jeux). Comme Tolkien l'avait imaginé.",
+      "history": {
+        "tolkien_quote": "Dans un trou dans le sol vivait un hobbit... c'était une demeure de hobbit, et cela signifie confort.",
+        "property": "220 acres de terres agricoles Tennessee",
+        "hosts": "Catie (ancienne traiteur, gestionnaire Airbnb) + David (architecte/constructeur)",
+        "dog": "LeeLoo, chien crème et blanc, accueille les visiteurs"
+      },
+      "amenities": [
+        "Sous-terre en plein bois",
+        "Toit vivant",
+        "Cuisine complète",
+        "Baignoire",
+        "Parking",
+        "Animaux OK (40$)",
+        "Clim",
+        "Patio + pavillon",
+        "220 acres à explorer",
+        "Étang pêche/baignade",
+        "Pas de WiFi ni TV"
+      ],
+      "review_categories": {
+        "espaces_extérieurs": 170,
+        "hospitalité": 186,
+        "confort": 136,
+        "propreté": 151,
+        "décoration": 72
+      },
+      "sample_reviews": [
+        {
+          "author": "Teresa",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Si vous êtes fan du Seigneur des Anneaux ou aimez la nature — c'est l'endroit idéal. On se sentait comme chez soi."
+        },
+        {
+          "author": "Adrian",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Regardé les films du Hobbit sur mon iPad dans la maison — vraiment génial. Même s'il y a un autre Airbnb à proximité, vous avez beaucoup d'intimité."
+        },
+        {
+          "author": "Kassidy",
+          "date": "mi-mai 2026",
+          "stars": 5,
+          "text": "Comme entrer dans le monde de Tolkien. Un sympathique chat de grange orange nous suivait pendant notre promenade !"
+        }
+      ],
+      "checkin": "15h",
+      "checkout": "10h",
+      "contact_priority": "HAUTE — 4.99 étoiles 1027 avis",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-012",
+      "airbnb_id": "1720832",
+      "slug": "cob-cottage-mayne-island-canada",
+      "name": "Cob Cottage — Maison en Terre Sculptée",
+      "tagline": "Top 1% mondial — sculpté à la main dans des matériaux naturels locaux",
+      "type": "maison-terre",
+      "wow_score": 24,
+      "country": "Canada",
+      "region": "Colombie-Britannique",
+      "city": "Mayne Island",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.98,
+      "reviews_count": 1015,
+      "badge": "Top 1% Airbnb mondial",
+      "host": "Alexis + Manny",
+      "media": [
+        "Dwell Magazine, décembre 2017",
+        "Home Crux, août 2016"
+      ],
+      "description_nika": "Sur l'île Mayne en Colombie-Britannique, Alexis a sculpté ce chalet à la main dans des matériaux naturels locaux et durables. Escaliers coulés dans une dalle en porte-à-faux menant à la chambre loft. Agneau et moutons sur la propriété. Système communautaire d'auto-stop sur l'île. Vignoble privé à proximité, plage à 10 min à pied. Publié dans Dwell Magazine (déc 2017). Alexis est mère de jumeaux, son mari est développeur logiciel néerlandais.",
+      "history": {
+        "construction": "Sculpté à la main par Alexis",
+        "materials": "Matériaux naturels locaux et durables",
+        "host_story": "Alexis, mère de jumeaux, amatrice de tricot/rouet. Mari Manny = développeur logiciel, passionné cyclisme et kayak.",
+        "architecture": "Escaliers coulés dans dalle porte-à-faux, chambre loft",
+        "media": [
+          "Dwell Magazine décembre 2017",
+          "Home Crux août 2016"
+        ],
+        "island": "Île Mayne — bus communautaire bénévole, auto-stop sécurisé encouragé"
+      },
+      "amenities": [
+        "Cuisine",
+        "WiFi",
+        "Parking",
+        "Patio/balcon",
+        "Jardin",
+        "Cheminée bois",
+        "Dépôt bagages",
+        "Livres/jouets enfants",
+        "45 équipements",
+        "Agneau et moutons sur propriété"
+      ],
+      "review_categories": {
+        "hospitalité": 624,
+        "emplacement": 131,
+        "confort": 154,
+        "décoration": 115,
+        "espaces_intérieurs": 139
+      },
+      "sample_reviews": [
+        {
+          "author": "Adrianna (Nanaimo)",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "Comme un conte de fées ! Des agneaux sympathiques nous ont accueillis et un chœur de rainettes nous a bercés. Je me sentais comme une princesse Disney."
+        },
+        {
+          "author": "Heath (Vancouver)",
+          "date": "mi-mai 2026",
+          "stars": 5,
+          "text": "Aussi fantaisiste qu'il y paraît. La forêt s'anime la nuit avec une symphonie de grenouilles et grillons."
+        },
+        {
+          "author": "Marina (Richmond)",
+          "date": "mi-mai 2026",
+          "stars": 5,
+          "text": "Adoré l'Airbnb et la propriété pleine de bétail ! Un paradis absolu loin de la ville."
+        }
+      ],
+      "checkin": "16h",
+      "checkout": "10h",
+      "contact_priority": "HAUTE — top 1% mondial, publié Dwell Magazine",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-013",
+      "airbnb_id": "43395127",
+      "slug": "maison-hobbit-saint-affrique-occitanie",
+      "name": "Maison Hobbit les Petits Bonheurs",
+      "tagline": "Sud-Aveyron — maison en terre avec bain norvégien et vue vallée",
+      "type": "maison-terre",
+      "wow_score": 22,
+      "country": "France",
+      "region": "Occitanie",
+      "city": "Saint-Affrique",
+      "capacity": {
+        "guests": 3,
+        "bedrooms": 1,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.95,
+      "reviews_count": 462,
+      "badge": "Coup de cœur voyageurs",
+      "host": "Rodolphe",
+      "description_nika": "Au fond d'un jardin sauvage du Sud-Aveyron, accessible par un chemin de randonnée pentu, une maison en terre thème Hobbit avec vue sur la ville et la vallée. Séjour + cheminée, cuisine, alcôve chambre, terrasse. Bain norvégien chauffé au bois (hors été) — 3h de chauffe pour une eau à 39°. Toilettes sèches. En option : shooting photo artistique dans les paysages. À côté des caves de Roquefort.",
+      "history": {
+        "surroundings": "Chemin de randonnée, Roquefort à proximité, Larzac, Millau (30km)",
+        "special_option": "Shooting photo artistique professionnel en option"
+      },
+      "amenities": [
+        "Vue panoramique ville + vallée",
+        "Bain norvégien bois (hors été)",
+        "Cheminée",
+        "Cuisine",
+        "Parking rue",
+        "Jacuzzi",
+        "Animaux OK",
+        "Terrasse",
+        "Bougies + musique inclus",
+        "23 équipements",
+        "Toilettes sèches"
+      ],
+      "review_categories": {
+        "hospitalité": 179,
+        "vue": 104,
+        "emplacement": 72,
+        "décoration": 40,
+        "espaces_intérieurs": 47
+      },
+      "sample_reviews": [
+        {
+          "author": "Melodie",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "Super séjour dans cette jolie maison de hobbit, cadre reposant, vue incroyable et bain nordique est un gros plus ! Une vraie expérience dans la Comté !"
+        },
+        {
+          "author": "Sofia",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Magnifique trou de hobbit, bain norvégien avec vue incroyable, et hôtes discrets mais aux petits soins."
+        },
+        {
+          "author": "Jennifer",
+          "date": "mi-mai 2026",
+          "stars": 5,
+          "text": "Le bain nordique est un point fort : pur moment de détente avec vue imprenable. Seul bémol : toilettes sèches étroites."
+        }
+      ],
+      "checkin": "16h",
+      "checkout": "12h",
+      "contact_priority": "HAUTE — France, unique, accessible facilement",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-014",
+      "airbnb_id": "31562435",
+      "slug": "grotte-nid2reve-savignac-perigord",
+      "name": "Maison La Terre — Grotte Nid2Rêve",
+      "tagline": "Périgord — grotte semi-enterrée avec porte ronde, spa et produits Petrossian",
+      "type": "grotte",
+      "wow_score": 23,
+      "country": "France",
+      "region": "Nouvelle-Aquitaine",
+      "city": "Savignac-de-Miremont",
+      "capacity": {
+        "guests": 5,
+        "bedrooms": 2,
+        "beds": 4,
+        "bathrooms": 1
+      },
+      "rating": 4.94,
+      "reviews_count": 174,
+      "badge": "Coup de cœur voyageurs",
+      "host": "Vincent",
+      "description_nika": "À l'orée des bois du Périgord, une maison semi-enterrée comme Tolkien l'avait imaginée avec porte ronde à enjamber pour entrer. Terrasse privée 31m², spa toute l'année. Produits du terroir primés (Concours Agricole) : caviar Petrossian (source locale), foie gras, vins de Bergerac. Massages de Cécile disponibles. Référencé Guide du Routard et Petit Futé. Proche des Eyzies (capitale préhistoire), Sarlat (25 min), Lascaux.",
+      "history": {
+        "tolkien_ref": "Porte ronde à enjamber, maison semi-enterrée",
+        "products": "Caviar (fournisseur Petrossian local), foie gras, vins Bergerac",
+        "guides": "Guide du Routard + Petit Futé référencés",
+        "surroundings": "Eyzies capitale préhistoire, Sarlat 25 min, Beynac/Commarque/Castelnaud, Lascaux"
+      },
+      "amenities": [
+        "Spa/jacuzzi toute l'année",
+        "Terrasse privée 31m²",
+        "Lit King Size",
+        "Cuisine",
+        "WiFi",
+        "Clim réversible",
+        "Mini-bar",
+        "Massage Cécile en option",
+        "Petit-déjeuner goûrmet en option",
+        "23 équipements"
+      ],
+      "review_categories": {
+        "hospitalité": 109,
+        "emplacement": 37,
+        "famille": 18,
+        "salle_de_bain": 20,
+        "jacuzzi": 11
+      },
+      "sample_reviews": [
+        {
+          "author": "Myfirstbox",
+          "date": "juillet 2025",
+          "stars": 5,
+          "text": "Le logement semi-enterré de Vincent offre cette part de magie. Le bain dans le tonneau entouré de la nature... vraiment très chouette."
+        },
+        {
+          "author": "Camille",
+          "date": "janvier 2026",
+          "stars": 5,
+          "text": "Nuitée insolite dans ce petit cocon, à refaire en testant les autres hébergements de Vincent !"
+        },
+        {
+          "author": "Véro",
+          "date": "août 2025",
+          "stars": 5,
+          "text": "Un véritable havre de paix au milieu des bois. L'accueil de Vincent, plein d'humour. On reviendra !"
+        }
+      ],
+      "checkin": "17h-19h",
+      "checkout": "11h",
+      "contact_priority": "HAUTE — France, grotte unique, Périgord tourisme",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-015",
+      "airbnb_id": "35018780",
+      "slug": "grotte-moulin-motte-baudoin-noyers-sur-cher",
+      "name": "La Grotte du Moulin de la Motte Baudoin",
+      "tagline": "Vallée de la Loire — loft naturel dans la roche calcaire",
+      "type": "grotte",
+      "wow_score": 21,
+      "country": "France",
+      "region": "Centre-Val de Loire",
+      "city": "Noyers-sur-Cher",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 1,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.83,
+      "reviews_count": 474,
+      "badge": "Coup de cœur voyageurs",
+      "host": "Sandrine (amatrice brocante, 'Capitaine')",
+      "description_nika": "Encastré dans une motte calcaire troglodytique dans la vallée du Cher, ce loft naturel vous surprend par son irrégularité. Grande cuisine ouverte sur le séjour, chambre séparée par une porte de garage coulissante. Piscine privée + jacuzzi, jardin 1 hectare, boulangerie et café tabac à pied. Sandrine, passionnée de brocante, met en scène les âmes récupérées pour une atmosphère unique. Proche zoo de Beauval.",
+      "history": {
+        "host_passion": "Brocante — meubles chinés créent l'atmosphère unique",
+        "geology": "Motte calcaire troglodytique, habitat traditionnel régional",
+        "surroundings": "Zoo de Beauval à côté, Noyers-sur-Cher, vallée du Cher"
+      },
+      "amenities": [
+        "Piscine privée",
+        "Jacuzzi privé",
+        "Jardin 1 hectare",
+        "Cuisine",
+        "WiFi",
+        "Parking",
+        "Animaux OK",
+        "TV",
+        "Baignoire",
+        "28 équipements",
+        "Ventilation forcée (régulation humidité)"
+      ],
+      "review_categories": {
+        "hospitalité": 206,
+        "emplacement": 104,
+        "décoration": 61,
+        "espaces_intérieurs": 67,
+        "propreté": 42
+      },
+      "sample_reviews": [
+        {
+          "author": "Joséphine",
+          "date": "mi-mai 2026",
+          "stars": 5,
+          "text": "Le lieu est magique. Magnifiquement bien décorée — impressionnant de pouvoir dormir dans un lieu pareil. Hôtes aux petits soins."
+        },
+        {
+          "author": "Patricia",
+          "date": "mi-mai 2026",
+          "stars": 5,
+          "text": "Un hébergement atypique... bravo pour la déco ! Côté Spa top ! Parfait car à côté du zoo de Beauval."
+        },
+        {
+          "author": "Rania",
+          "date": "mi-mai 2026",
+          "stars": 5,
+          "text": "L'endroit est vraiment insolite, décoré avec goût et très chaleureux. On a adoré l'ambiance unique."
+        }
+      ],
+      "checkin": "16h",
+      "checkout": "11h",
+      "contact_priority": "HAUTE — France, grotte troglodyte avec piscine",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-016",
+      "airbnb_id": "1131387956858883609",
+      "slug": "sphere-rochers-joshua-tree-californie",
+      "name": "Sphère dans les Rochers — Joshua Tree",
+      "tagline": "5.0/5 étoiles — Airbnb OMG Award 2022 — Conçue par l'architecte Nestor Mancini",
+      "type": "architecture-surréaliste",
+      "wow_score": 25,
+      "country": "USA",
+      "state": "Californie",
+      "city": "Joshua Tree",
+      "capacity": {
+        "guests": 6,
+        "bedrooms": 2,
+        "beds": 4,
+        "bathrooms": 1.5
+      },
+      "rating": 5.0,
+      "reviews_count": 120,
+      "badge": "Top 1% Airbnb mondial + OMG Award 2022",
+      "host": "Allie (productrice TV, Australie) + Orion",
+      "architect": "Nestor Mancini",
+      "description_nika": "Note parfaite 5.0/5. Lauréate du prix Airbnb OMG 2022. Conçue par l'architecte Nestor Mancini, inspirée par l'expérience spirituelle de 'l'unité'. La sphère est une boîte de son pour méditation et guérison. Cristaux de quartz de Namibie, Tennessee et Californie bordent l'intérieur, avec instruments de guérison sonore. Propriété sur 2.5 acres : maison principale + maison invités + sphère. Piscine cowboy, jacuzzi, foyers, hamac. 2 min de l'entrée Joshua Tree National Park.",
+      "history": {
+        "award": "Airbnb OMG Award 2022",
+        "architect": "Nestor Mancini",
+        "concept": "Expérience spirituelle de 'l'unité' — sphère de méditation et guérison sonore",
+        "crystals": "Quartz de Namibie, Tennessee et Californie",
+        "host_ig": "@Sphere_In_The_Rocks"
+      },
+      "amenities": [
+        "Piscine cowboy (mars-nov)",
+        "Jacuzzi 24h/24",
+        "Foyers extérieurs",
+        "Cuisines équipées",
+        "WiFi 50 Mbit/s",
+        "Espace travail",
+        "Netflix",
+        "Lave-linge",
+        "Sèche-linge",
+        "Clim",
+        "Douche extérieure",
+        "Instruments guérison sonore",
+        "Cristaux quartz",
+        "66 équipements"
+      ],
+      "review_categories": {
+        "hospitalité": 68,
+        "jacuzzi": 29,
+        "décoration": 43,
+        "vue": 35,
+        "espaces_extérieurs": 34
+      },
+      "sample_reviews": [
+        {
+          "author": "Audrey (Los Angeles)",
+          "date": "fin mai 2026",
+          "stars": 5,
+          "text": "Exceptionnel, époustouflant, parfait ! L'attention portée aux détails est inégalée. Cette maison devrait remporter des prix !"
+        },
+        {
+          "author": "Matthew (Los Angeles)",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Une oasis absolument magique. Savamment organisée, bien approvisionnée et paisible. L'un des meilleurs Airbnb où j'ai séjourné."
+        },
+        {
+          "author": "Lisa (Chattanooga)",
+          "date": "mai 2026",
+          "stars": 5,
+          "text": "Les détails comptent ! L'attention portée à la création de cet espace est inégalée. Je n'ai jamais séjourné dans un meilleur logement locatif."
+        }
+      ],
+      "checkin": "16h",
+      "checkout": "11h",
+      "contact_priority": "MAXIMALE — 5.0 étoiles + OMG Award 2022",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-017",
+      "airbnb_id": "939467291828305415",
+      "slug": "living-inn-dôme-volcanique-hawaii",
+      "name": "Living Inn — Dôme Volcanique Hawaï",
+      "tagline": "Dormez à l'intérieur d'un volcan — dôme de cendre volcanique hors réseau",
+      "type": "maison-terre",
+      "wow_score": 23,
+      "country": "USA",
+      "state": "Hawaï",
+      "city": "Mountain View (Big Island)",
+      "capacity": {
+        "guests": 3,
+        "bedrooms": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.98,
+      "reviews_count": 229,
+      "badge": "Top 10% Airbnb",
+      "host": "Cassandra",
+      "instagram": "@innavolcano @volcanotreehousebnb",
+      "description_nika": "Sur la Big Island d'Hawaï, à 10 min du Volcano National Park, un dôme construit entièrement à partir de cendres volcaniques locales. Plafonds de 7,5m avec lucarne au sommet. Murs de 40cm d'épaisseur = fraîcheur naturelle. Double d'un studio sonore (l'écho du dôme en cintre). Lit circulaire, baignoire en calcaire poli à la main avec fenêtre circulaire sur la jungle. Hors réseau (solaire + eau de pluie). Les grenouilles coqui chantent la nuit.",
+      "history": {
+        "construction": "8 mois par Cassandra pour créer l'expérience éco-luxe parfaite",
+        "materials": "Cendres volcaniques de la Grande Île, calcaire poli à la main",
+        "acoustics": "Dôme = studio sonore naturel (écho remarquable au centre)",
+        "offgrid": "Solaire + captage eau de pluie, pas d'eau potable au robinet",
+        "wildlife": "Grenouilles coqui, cochons sauvages, chats"
+      },
+      "amenities": [
+        "Vue jungle tropicale",
+        "Hors réseau (solaire)",
+        "Eau de pluie",
+        "Baignoire calcaire poli",
+        "WiFi (pas de signal cellulaire)",
+        "Parking garage",
+        "Animaux OK",
+        "Jardin hibiscus",
+        "38 équipements"
+      ],
+      "review_categories": {
+        "salle_de_bain": 68,
+        "hospitalité": 64,
+        "confort": 31,
+        "qualité_sommeil": 28,
+        "randonnée": 8
+      },
+      "sample_reviews": [
+        {
+          "author": "Josh (Austin)",
+          "date": "mi-mai 2026",
+          "stars": 5,
+          "text": "En tant qu'ancien super-hôte, c'est l'endroit le plus unique où j'ai jamais séjourné. Mes enfants ont trouvé que c'était la chose la plus cool de dormir à l'intérieur du volcan !"
+        },
+        {
+          "author": "Kelly (Hawaï)",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Parfaitement conforme. La baignoire était incroyablement relaxante au son des bruits de la nature. Meilleure nuit de sommeil depuis longtemps !"
+        },
+        {
+          "author": "Riane (Bellingham)",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "Logement tellement amusant, créatif et éclectique ! La vue depuis la baignoire et l'installation d'eau extérieure rendaient l'endroit encore plus paisible."
+        }
+      ],
+      "checkin": "15h",
+      "checkout": "11h",
+      "contact_priority": "HAUTE — dôme volcanique unique",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-018",
+      "airbnb_id": "713793474951553871",
+      "slug": "naturhus-bio-hors-reseau-bralande-suede",
+      "name": "Naturhus — Maison Bio Hors Réseau",
+      "tagline": "Architectural Digest 2023 — maison du futur avec serre méditerranéenne sur lac Vänern",
+      "type": "maison-architecturale",
+      "wow_score": 22,
+      "country": "Suède",
+      "region": "Västra Götaland",
+      "city": "Brålanda",
+      "capacity": {
+        "guests": 5,
+        "bedrooms": 3,
+        "beds": 4,
+        "bathrooms": 1.5
+      },
+      "rating": 4.97,
+      "reviews_count": 164,
+      "badge": "Top 10% Airbnb",
+      "host": "Anders (Naturvillan)",
+      "media": [
+        "Designboom, avril 2022",
+        "Architectural Digest, février 2023"
+      ],
+      "description_nika": "Surnommée 'maison du futur', cette maison hors réseau publiée dans Architectural Digest (fév 2023) et Designboom (avr 2022) produit sa propre énergie et nourriture. Jardin en serre avec plantes méditerranéennes à l'intérieur. Vue sur le lac Vänern depuis la colline. Piscine extérieure privée toute l'année, canoë disponible. En hiver : poêle + système de batteries à recharger soi-même. Flexibilité et respect total de l'environnement marin.",
+      "history": {
+        "media": [
+          "Designboom avril 2022",
+          "Architectural Digest février 2023"
+        ],
+        "concept": "Maison du futur — production propre d'énergie et nourriture",
+        "eco": "Hors réseau, poêle + batteries solaires, eau lac, serre alimentaire intérieure",
+        "accessibility": "Accessible PMR (plain-pied, douche de plain-pied)"
+      },
+      "amenities": [
+        "Vue lac Vänern",
+        "Serre méditerranéenne intérieure",
+        "Piscine extérieure privée toute l'année",
+        "Canoë disponible",
+        "Cuisine",
+        "Espace travail",
+        "Parking PMR",
+        "Balcon",
+        "Arrière-cour",
+        "37 équipements",
+        "Hors réseau (poêle + solaire)"
+      ],
+      "review_categories": {
+        "hospitalité": 80,
+        "emplacement": 46,
+        "famille": 22,
+        "espaces_extérieurs": 22,
+        "jacuzzi": 17
+      },
+      "sample_reviews": [
+        {
+          "author": "Amandine",
+          "date": "juin 2025",
+          "stars": 5,
+          "text": "Cette maison n'est pas seulement une maison. C'est un havre, un nid, un port. Il y a une poésie, une vibration, une ambition et un grand confort en même temps."
+        },
+        {
+          "author": "Marianne",
+          "date": "mi-mai 2026",
+          "stars": 5,
+          "text": "Incroyable maison — impression d'être à l'extérieur à l'intérieur. Le propriétaire a même chauffé la baignoire extérieure pour nous."
+        },
+        {
+          "author": "Patrick",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Anders est un Superhôte ! Je me déplace en fauteuil roulant et Anders a passé son samedi à améliorer l'entrée pour moi. Très apprécié !"
+        }
+      ],
+      "checkin": "15h",
+      "checkout": "11h",
+      "contact_priority": "HAUTE — Architectural Digest, accessible PMR",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-019",
+      "airbnb_id": "457547",
+      "slug": "domeland-adobe-hors-reseau-big-bend-texas",
+      "name": "Domeland — Dôme Adobe Hors Réseau",
+      "tagline": "Vu sur HGTV 'Mighty Tiny Houses' — dôme de terre dans le désert de Big Bend",
+      "type": "dome-adobe",
+      "wow_score": 21,
+      "country": "USA",
+      "state": "Texas",
+      "city": "Terlingua",
+      "proximity": "25 min Big Bend National Park, Territoire ciel sombre",
+      "capacity": {
+        "guests": 3,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 0.5
+      },
+      "rating": 4.95,
+      "reviews_count": 1083,
+      "badge": "Top 5% Airbnb",
+      "host": "Trevor (auteur-compositeur-interprète)",
+      "media": [
+        "HGTV Mighty Tiny Houses",
+        "House of What?! saison 2 épisode 5"
+      ],
+      "description_nika": "Dôme de pisé (adobe) isolé dans le désert de Chihuahua, à 25 min du parc national de Big Bend. Hors réseau solaire, eau de citerne collectée. Dans l'un des rares territoires mondiaux sous ordonnance de ciel sombre — l'observation des étoiles y est exceptionnelle. Construit par Trevor, musicien de tournée. Vu sur HGTV 'Mighty Tiny Houses' et 'House of What?!'. Toilettes sèches extérieures, douches à 2$ en ville à 20 min.",
+      "history": {
+        "host": "Trevor, musicien de tournée entre Terlingua TX et Thomas WV",
+        "media": [
+          "HGTV Mighty Tiny Houses",
+          "House of What?! S2E5"
+        ],
+        "dark_sky": "Territoire ordonnance ciel sombre — vue étoiles exceptionnelle",
+        "materials": "Adobe/pisé, construction en terre"
+      },
+      "amenities": [
+        "Vue désert 360°",
+        "Ciel nocturne exceptionnel (ordonnance ciel sombre)",
+        "WiFi",
+        "Cuisine propane",
+        "Frigo solaire",
+        "Clim fenêtre (heures solaires)",
+        "Parking",
+        "20 équipements",
+        "Toilettes sèches extérieures"
+      ],
+      "review_categories": {
+        "vue": 316,
+        "emplacement": 309,
+        "hospitalité": 476,
+        "espaces_extérieurs": 101,
+        "confort": 170
+      },
+      "sample_reviews": [
+        {
+          "author": "Kevin (Junction)",
+          "date": "janvier 2026",
+          "stars": 5,
+          "text": "Endroit vraiment cool et unique avec superbes vues, intimité et bonne proximité avec Terlingua et Big Bend. Notre 2e séjour ici."
+        },
+        {
+          "author": "Britni (Austin)",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Notre 3e séjour dans le dôme, première fois avec notre fils de 3 ans. Nous nous sommes bien amusés comme toujours."
+        },
+        {
+          "author": "John (Kempner)",
+          "date": "février 2026",
+          "stars": 5,
+          "text": "Parfait pour s'évader ! Ciel nocturne calme, paisible, absolument incroyable ! Exactement comme le dit l'annonce."
+        }
+      ],
+      "checkin": "15h",
+      "checkout": "11h",
+      "contact_priority": "HAUTE — vu HGTV, concept unique",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-020",
+      "airbnb_id": "32269342",
+      "slug": "cabane-konza-silos-grain-ranch-kansas",
+      "name": "Cabane de Konza — Deux Silos à Grain Reliés",
+      "tagline": "Vu sur FYI Network — deux silos à grains devenus atrium vitré sur ranch",
+      "type": "silo-reconverti",
+      "wow_score": 20,
+      "country": "USA",
+      "state": "Kansas",
+      "city": "Manhattan (Kansas)",
+      "proximity": "Prairie de Konza, Flint Hills",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.95,
+      "reviews_count": 349,
+      "badge": "Top 5% Airbnb",
+      "host": "Loraine (Centre de médecine régénérative du Kansas)",
+      "media": [
+        "FYI Network 'You Can't Turn That Into A House'"
+      ],
+      "description_nika": "Deux silos à céréales récupérés reliés par un atrium entièrement vitré — structure conçue par le beau-fils de l'hôte. Présenté sur FYI Network 'You Can't Turn That Into A House'. Ranch en activité de 40 hectares dans les Flint Hills du Kansas, à côté de la prairie de Konza. Vaches, chevaux, dindes sauvages. Étang pour pêche et baignade. 6 miles de sentiers de randonnée juste à côté.",
+      "history": {
+        "design": "Conçu et construit par le beau-fils de Loraine",
+        "media": [
+          "FYI Network 'You Can't Turn That Into A House'"
+        ],
+        "property": "40 hectares de ranch actif, Flint Hills Kansas"
+      },
+      "amenities": [
+        "Vue montagne + prairie",
+        "Atrium vitré reliant deux silos",
+        "Cuisine équipée",
+        "Clim",
+        "Terrasse",
+        "Foyer + BBQ",
+        "Ranch actif (vaches, chevaux, dindes)",
+        "Étang pêche/baignade",
+        "6 miles sentiers",
+        "39 équipements"
+      ],
+      "review_categories": {
+        "emplacement": 104,
+        "vue": 73,
+        "hospitalité": 100,
+        "randonnée": 43,
+        "espaces_extérieurs": 39
+      },
+      "sample_reviews": [
+        {
+          "author": "Mary (Kansas City)",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Bel endroit paisible, amusant de voir les vaches et chevaux ! Arrivée et départ faciles. Loraine proactive et à l'écoute."
+        },
+        {
+          "author": "Dorothy",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "L'endroit idéal pour se détendre. Vaches, chevaux et dindes sauvages abondent ! Proche du Konza Prairie Nature Trail — magnifique."
+        },
+        {
+          "author": "Jane (Colorado Springs)",
+          "date": "octobre 2025",
+          "stars": 5,
+          "text": "Je ne voulais pas partir ! Le chalet Konza est un havre unique niché dans l'un des meilleurs cadres naturels."
+        }
+      ],
+      "checkin": "15h",
+      "checkout": "11h",
+      "contact_priority": "HAUTE — vu TV, concept silos unique",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-021",
+      "airbnb_id": "28254684",
+      "slug": "bloomhouse-austin-texas",
+      "name": "La Bloomhouse — Sculpture Organique d'Austin",
+      "tagline": "Années 1970 — rébellion architecturale contre les murs droits, nichée dans les arbres",
+      "type": "architecture-surréaliste",
+      "wow_score": 21,
+      "country": "USA",
+      "state": "Texas",
+      "city": "Austin",
+      "proximity": "15 min downtown Austin, 10 min aéroport",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 1,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.95,
+      "reviews_count": 264,
+      "badge": "Top 10% Airbnb",
+      "host": "Lodgewell (gestion hôtelière Austin, fondatrice Chereen Fisher)",
+      "architect": "Charles Harker (The Bloomhouse original)",
+      "description_nika": "Conçue dans les années 1970 par deux étudiants en architecture de l'Université du Texas — une structure organique en rébellion contre l'architecture traditionnelle. Architecture fluide sans murs droits, lumière naturelle inondante, chaque recoin offre une découverte. Nichée dans les arbres de West Lake Hills à Austin. Soigneusement restaurée. Terrasse privée dans les arbres, douche extérieure. Produits Aesop en salle de bain.",
+      "history": {
+        "architect": "Charles Harker (design original années 1970)",
+        "origin": "Créée par deux étudiants UT Austin en rébellion contre l'architecture conventionnelle",
+        "restoration": "Soigneusement restaurée, confort moderne conservant le caractère d'origine",
+        "manager": "Lodgewell — Chereen Fisher, 20 ans d'hôtellerie Austin"
+      },
+      "amenities": [
+        "Vue jardin/arbres",
+        "Douche extérieure",
+        "WiFi 321 Mbit/s",
+        "Espace travail",
+        "Parking 2 voitures",
+        "TV",
+        "Lave-linge + sèche-linge",
+        "Clim centrale",
+        "Terrasse privée",
+        "Produits Aesop",
+        "50 équipements"
+      ],
+      "review_categories": {
+        "emplacement": 53,
+        "hospitalité": 47,
+        "propreté": 25,
+        "décoration": 33,
+        "confort": 22
+      },
+      "sample_reviews": [
+        {
+          "author": "Kaitlin (New Braunfels)",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "Cet endroit était magique ! On a l'impression d'avoir voyagé dans le temps jusqu'aux années 70. Nos enfants nous ont demandé si nous pouvions vivre ici !"
+        },
+        {
+          "author": "Carmen (Austin)",
+          "date": "mi-mai 2026",
+          "stars": 5,
+          "text": "Absolument magnifique — téléportés dans un autre monde. Les hôtes fournissaient beaucoup d'informations avant notre arrivée."
+        },
+        {
+          "author": "Emily (St. Petersburg)",
+          "date": "fin mai 2026",
+          "stars": 5,
+          "text": "Séjourner dans cette œuvre d'art magnifiquement restaurée a dépassé nos attentes. À seulement 15 min du centre-ville."
+        }
+      ],
+      "checkin": "15h",
+      "checkout": "11h",
+      "contact_priority": "HAUTE — architecture historique Austin",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-022",
+      "airbnb_id": "45646568",
+      "slug": "gawthornes-hut-top10-monde-mudgee-australie",
+      "name": "Gawthorne's Hut — TOP 10 Mondial",
+      "tagline": "Top 1% Airbnb mondial — cabane éco-luxe architecturale, Mudgee Australie",
+      "type": "eco-cabin",
+      "wow_score": 24,
+      "country": "Australie",
+      "region": "Nouvelle-Galles du Sud",
+      "city": "Mudgee",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.99,
+      "reviews_count": 510,
+      "badge": "Top 1% Airbnb mondial — TOP 10 MONDE",
+      "host": "Rick & Steph (agriculteurs)",
+      "media": [
+        "ArchDaily, novembre 2021",
+        "Designboom, août 2021"
+      ],
+      "description_nika": "TOP 10 des logements favoris dans le monde entier selon Airbnb. Publiée dans ArchDaily (nov 2021) et Designboom (août 2021). Cabane éco-luxe conçue par un architecte, hors réseau, pour couples uniquement. Bois naturels, grandes fenêtres sur la magnifique vallée de Mudgee. Lit King, salle de bain complète, kitchenette, WiFi, climatisation. Foyer extérieur (hors risque incendie). Rick est agriculteur, Steph professeur d'école primaire retraité. Panier de produits locaux à l'arrivée.",
+      "history": {
+        "badge": "TOP 10 des favoris mondiaux Airbnb",
+        "media": [
+          "ArchDaily novembre 2021",
+          "Designboom août 2021"
+        ],
+        "design": "Conçue par architecte, hors réseau, matériaux locaux",
+        "hosts": "Rick (agriculteur) + Steph (professeur primaire retraité), 4 enfants adultes, 4 petits-enfants",
+        "property": "Domaine Wilgowrah avec église Wilgowrah et chalet de Tom"
+      },
+      "amenities": [
+        "Vue imprenable vallée Mudgee",
+        "Au bord de l'eau",
+        "Hors réseau",
+        "WiFi",
+        "Espace travail",
+        "Parking",
+        "Clim centrale",
+        "Baignoire",
+        "Terrasse/balcon",
+        "Arrière-cour",
+        "Foyer extérieur",
+        "43 équipements"
+      ],
+      "special_notes": [
+        "Couples uniquement — pas d'enfants ni animaux",
+        "Hors réseau — pas de VE ni appareils haute consommation"
+      ],
+      "review_categories": {
+        "vue": 166,
+        "emplacement": 202,
+        "hospitalité": 231,
+        "confort": 80,
+        "décoration": 69
+      },
+      "sample_reviews": [
+        {
+          "author": "Chris",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "Quitter ce logement est l'une des rares fois où j'ai été vraiment triste de quitter un Airbnb. Tout ce qui est dit dans les commentaires est vrai. 12 sur 10."
+        },
+        {
+          "author": "Navin",
+          "date": "mi-mai 2026",
+          "stars": 5,
+          "text": "Belle escapade pour notre anniversaire. Rick et Steph ont fourni un joli panier de produits locaux. Intime mais à deux pas de la ville."
+        },
+        {
+          "author": "Stefan",
+          "date": "avril 2026",
+          "stars": 5,
+          "text": "Waouh ! Propriété incroyable dans un endroit magnifique. Très moderne mais dégageant chaleur et élégance. Nous reviendrons volontiers."
+        }
+      ],
+      "checkin": "15h-22h",
+      "checkout": "10h",
+      "contact_priority": "MAXIMALE — TOP 10 MONDE, ArchDaily",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-023",
+      "airbnb_id": "51225228",
+      "slug": "nid-des-hirondelles-erquy-bretagne",
+      "name": "Le Nid des Hirondelles",
+      "tagline": "Sphère perchée dans les arbres à 4m du sol — bord de mer Bretagne",
+      "type": "cabane-perchée",
+      "wow_score": 19,
+      "country": "France",
+      "region": "Bretagne",
+      "city": "Erquy",
+      "location_detail": "Haie bocagère, hameau Ville es Renais — Cap Fréhel Cap d'Erquy Grand Site de France, 2km plage, GR34",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "bed_detail": "Lit rond 2.1m de diamètre",
+      "rating": 4.97,
+      "reviews_count": 145,
+      "badge": "Top 5% Airbnb",
+      "host": "Solenn (entreprise, née années 80, études Rennes/Rochester/Saint-Brieuc)",
+      "description_nika": "Dans une haie bocagère de la pointe Bretagne, une petite sphère perchée à 4 mètres dans les arbres vous accueille pour une nuit hors du temps. Lit rond de 2.1m, terrasse masquée dans le houppier orientée Est (petit-déjeuner face au levant). Au sol : salle de bain privée, WC, mini-cuisine. Solenn apporte chaque matin un panier petit-déjeuner de produits locaux, bio ou faits maison. Option : panier repas du soir. Poules et oies sur la propriété. À 2km de la plage via coulée verte, accès direct GR34 et voie vélo EV4. Dans le Grand Site de France Cap Fréhel.",
+      "amenities": [
+        "Vue jardin",
+        "Accès plage bord de mer",
+        "Cuisine mini (2 feux induction)",
+        "Parking gratuit",
+        "Terrasse/balcon privé",
+        "Arrière-cour partagée",
+        "Sèche-cheveux",
+        "Frigo",
+        "Petit-déjeuner inclus (panier local/bio)",
+        "Option panier repas soir",
+        "25 équipements"
+      ],
+      "special": [
+        "Lit rond 2.1m",
+        "Sphère dans les arbres à 4m",
+        "Animaux sur propriété (poules, oies)",
+        "Accès GR34 direct"
+      ],
+      "review_categories": {
+        "petit_déjeuner": 85,
+        "hospitalité": 90,
+        "emplacement": 33,
+        "qualité_sommeil": 24,
+        "confort": 21
+      },
+      "sample_reviews": [
+        {
+          "author": "Julien",
+          "date": "février 2026",
+          "stars": 5,
+          "text": "Petite cabane perchée dans les arbres face au champ, très paisible. Je recommande à 100%."
+        },
+        {
+          "author": "Mandy",
+          "date": "septembre 2025",
+          "stars": 5,
+          "text": "Literie très confortable. Le petit déjeuner était copieux et qualitatif. Solenn prend le temps de donner de bonnes recommandations aux alentours."
+        },
+        {
+          "author": "Eve",
+          "date": "juillet 2025",
+          "stars": 5,
+          "text": "Solenn a été très réactive et a organisé notre arrivée en autonomie avec panier repas et bière locale au frais. Un vrai réconfort avant de rentrer dans notre nid magique."
+        }
+      ],
+      "checkin": "17h-19h",
+      "checkout": "11h",
+      "affiliation": "Booking.com possible",
+      "contact_priority": "HAUTE — France, unique sphère Bretagne",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-024",
+      "airbnb_id": "27253558",
+      "slug": "vieux-moulin-a-huile-noix-chinon-val-de-loire",
+      "name": "Le Vieux Moulin — Moulin à Huile de Noix",
+      "tagline": "Val de Loire — moulin restauré sur les hauteurs de Chinon, vue sur la forteresse royale",
+      "type": "moulin-reconverti",
+      "wow_score": 18,
+      "country": "France",
+      "region": "Centre-Val de Loire",
+      "city": "Chinon",
+      "location_detail": "Hauteurs de Chinon, 1.3km centre-ville, 25min à pied, proche forteresse royale",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1,
+        "surface_m2": 27
+      },
+      "rating": 4.95,
+      "reviews_count": 404,
+      "description_nika": "Perché sur les hauteurs de Chinon, ce vieux moulin à huile de noix entièrement restauré mêle l'élégance de la pierre et le confort moderne en 27m². Cocon intime soigneusement aménagé, ambiance chaleureuse. À 1.3km de la forteresse royale de Chinon, 1h30 de Paris. Proche de l'Abbaye de Fontevraud (12km) et de la maison des champs de Rabelais. Au cœur de la plus belle vallée de France — Touraine, Anjou, Poitou. Route des vins, châteaux de la Loire à vélo.",
+      "history": {
+        "type": "Moulin à huile de noix (pas un moulin à vent)",
+        "restoration": "Restauré en alliant le moderne avec le charme de la pierre",
+        "proximity": "Forteresse royale Chinon 1.3km, Abbaye de Fontevraud 12km, Maison Rabelais"
+      },
+      "amenities": [
+        "Vue hauteurs Chinon",
+        "Cuisine",
+        "WiFi",
+        "Parking rue",
+        "Clim",
+        "35 équipements"
+      ],
+      "sample_reviews": [
+        {
+          "author": "Voyageurs Airbnb",
+          "date": "2026",
+          "stars": 5,
+          "text": "Un vrai voyage dans le temps dans ce moulin au charme unique. Vue sur Chinon depuis les hauteurs."
+        }
+      ],
+      "affiliation": "Booking.com",
+      "contact_priority": "MOYENNE — équivalents moulin sur Booking",
+      "booking_type": "direct_or_booking"
+    },
+    {
+      "id": "wow-025",
+      "airbnb_id": "26175744",
+      "slug": "estiva-loft-hobbit-lapeyrugue-auvergne",
+      "name": "ESTIVA — Le Loft du Hobbit",
+      "tagline": "Auvergne — maison troglodyte dans le bois, spa privé, piscine, vue vallée",
+      "type": "maison-terre",
+      "wow_score": 20,
+      "country": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "city": "Lapeyrugue",
+      "location_detail": "Massif Central — Saint-Flour et Murat à proximité, Gorges de la Truyère",
+      "capacity": {
+        "guests": 5,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.94,
+      "reviews_count": 221,
+      "badge": "Coup de cœur voyageurs",
+      "host": "ESTIVA — marque logements insolites Massif Central (estiva.fr)",
+      "description_nika": "Dans les bois du Cantal, une maison troglodyte s'intègre dans un paysage protégé et idyllique sans aucune vue sur un autre logement. Parking et accès privés. Spa privé, piscine, vue sur la vallée. Marque ESTIVA spécialisée dans les logements insolites du Massif Central (estiva.fr). Randonnée, cascades, Gorges de la Truyère à proximité.",
+      "history": {
+        "brand": "ESTIVA — spécialiste hébergements insolites Massif Central",
+        "website": "estiva.fr",
+        "type": "Maison troglodyte / cave house"
+      },
+      "amenities": [
+        "Spa/jacuzzi privé",
+        "Piscine",
+        "Vue vallée",
+        "WiFi",
+        "Clim",
+        "Cuisine",
+        "Parking privé",
+        "Bois privé"
+      ],
+      "sample_reviews": [
+        {
+          "author": "Voyageurs",
+          "date": "2026",
+          "stars": 5,
+          "text": "Le Loft Du Hobbit s'intègre parfaitement dans la nature. Spa et piscine privés, total dépaysement en Auvergne."
+        }
+      ],
+      "affiliation": "Booking possible + site direct ESTIVA",
+      "contact_priority": "HAUTE — France unique",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-026",
+      "airbnb_id": "34459490",
+      "slug": "gite-du-sorcier-harry-potter-colmar-alsace",
+      "name": "Le Gîte du Sorcier",
+      "tagline": "Colmar — appartement immersif Harry Potter au cœur de l'Alsace magique",
+      "type": "thématique",
+      "wow_score": 17,
+      "country": "France",
+      "region": "Grand Est",
+      "city": "Colmar",
+      "location_detail": "Quartier Old Town, Petite Venise de Colmar, 8min statue petit vigneron",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1,
+        "surface_m2": 94
+      },
+      "rating": 4.88,
+      "reviews_count": 799,
+      "host": "Sorcière d'Alsace (Instagram @legitedusorcier, 5890 followers)",
+      "website": "legitedusorcier-colmar.fr",
+      "description_nika": "Dans le coeur historique de Colmar, non loin de la Petite Venise, un appartement entièrement décoré et thématisé univers de sorciers. Inspiré d'Harry Potter. 94m², 4 voyageurs, 2 chambres. Décoration réalisée par @lapampilleelectrique. Vu sur YouTube (BFM TV). Trolley de friandises à vendre dans la chambre. Petit gîte (4 pers) et grand gîte (8 pers) disponibles. Superhôte depuis des années.",
+      "history": {
+        "instagram": "@legitedusorcier (5890 followers)",
+        "decorator": "@lapampilleelectrique",
+        "media": [
+          "BFM TV reportage",
+          "YouTube 'Colmar gîte Harry Potter'"
+        ],
+        "website": "legitedusorcier-colmar.fr",
+        "price_ref": "468€/nuit (grand gîte)"
+      },
+      "amenities": [
+        "WiFi gratuit",
+        "Bouilloire/micro-ondes/mini-frigo/vaisselle",
+        "Café/thé/cacao",
+        "Lit parapluie",
+        "Trolley friandises",
+        "Clim",
+        "TV",
+        "25+ équipements"
+      ],
+      "sample_reviews": [
+        {
+          "author": "Visiteurs",
+          "date": "2026",
+          "stars": 5,
+          "text": "Une immersion totale dans l'univers magique. Chaque détail est soigné, on se croit vraiment à Poudlard."
+        }
+      ],
+      "affiliation": "Réservation directe via site + Airbnb",
+      "contact_priority": "HAUTE — France, viral, thématique fort",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-027",
+      "airbnb_id": "918645205013496461",
+      "slug": "birdbox-lotsbergskaara-lote-nordfjord-norvege",
+      "name": "Birdbox Lotsbergskaara — Nordfjord",
+      "tagline": "270m au-dessus des fjords — cerf et aigles hors de la fenêtre",
+      "type": "tiny-house",
+      "wow_score": 22,
+      "country": "Norvège",
+      "region": "Vestland",
+      "city": "Lote (Stad)",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "bed_detail": "Lit double 150x200cm",
+      "rating": 4.99,
+      "reviews_count": 182,
+      "badge": "Top 5% Airbnb mondial",
+      "host": "Skaara Living",
+      "description_nika": "À 270 mètres d'altitude dans l'ouest de la Norvège, dominant le Nordfjord, ce Birdbox est une cabane minimaliste d'une seule pièce avec de grandes fenêtres panoramiques. Conception minimaliste, détails soigneusement sélectionnés. Des cerfs broutent et des aigles planent directement devant la fenêtre. Kitchenette, réfrigérateur, bouilloire. Toilette à incinération (éco). Randonnées : Storehesten, Lisjehsten, baignade fjord. TIP : Si les dates sont prises, voir Birdbox Hjellaakeren (propriété sœur).",
+      "history": {
+        "brand": "Skaara Living — deux Birdbox exclusifs (Lotsbergskaara + Hjellaakeren)",
+        "altitude": "270 mètres au-dessus du niveau de la mer",
+        "wildlife": "Cerfs et aigles directement visibles de la fenêtre",
+        "toilet": "Incinération (pas de tout-à-l'égout — choix écologique)"
+      },
+      "amenities": [
+        "Vue Nordfjord panoramique 270m altitude",
+        "Kitchenette (bouilloire, frigo, évier)",
+        "Deux chaises + petite table",
+        "Terrasse extérieure nature",
+        "Toilette incinération",
+        "Randonnées sur place",
+        "16 équipements"
+      ],
+      "sample_reviews": [
+        {
+          "author": "Voyageurs internationaux",
+          "date": "mars 2026",
+          "stars": 5,
+          "text": "Vue époustouflante sur le Nordfjord depuis 270m d'altitude. Cerfs et aigles juste devant la fenêtre. Expérience unique en Norvège."
+        }
+      ],
+      "also_on_campanyon": true,
+      "affiliation": "Booking partiel — aucun équivalent vue fjord à cette altitude",
+      "contact_priority": "HAUTE",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-028",
+      "airbnb_id": "34692739",
+      "slug": "birdbox-fordefjord-view-forde-norvege",
+      "name": "Birdbox — Vue Fjord Blegja + Førdefjord",
+      "tagline": "Norvège — autre Birdbox légendaire, vue sur deux fjords simultanément",
+      "type": "tiny-house",
+      "wow_score": 21,
+      "country": "Norvège",
+      "region": "Vestland",
+      "city": "Førde",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.88,
+      "reviews_count": 453,
+      "badge": "Top 5% Airbnb",
+      "description_nika": "Deuxième Birdbox légendaire de Norvège Occidentale, avec vue simultanée sur deux fjords : le Blegja et le Førdefjord. Architecture identique — minimalisme Scandinave, grandes baies panoramiques, alignement total avec la nature. Montagne Hornelen visible. Romantique et isolé.",
+      "affiliation": "Booking partiel",
+      "contact_priority": "HAUTE",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-029",
+      "airbnb_id": "896615610365768668",
+      "slug": "bubble-etoile-stargazing-agnes-victoria-australie",
+      "name": "Bubble Étoile — Stargazing Retreat",
+      "tagline": "Lauréate concours global Airbnb OMG — dôme transparent pour dormir sous les étoiles",
+      "type": "dôme",
+      "wow_score": 22,
+      "country": "Australie",
+      "region": "Victoria",
+      "city": "Agnes",
+      "location_detail": "Ferme active bovins/moutons, Wilsons Prom National Park en vue",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.97,
+      "reviews_count": 453,
+      "badge": "Lauréate concours global Airbnb OMG",
+      "host": "Tim (Chef Star-Gazer, Superhost, études Melbourne)",
+      "instagram": "@bubblesretreat",
+      "description_nika": "Lauréate du concours mondial Airbnb OMG. Tim, passionné de nature, a construit une expérience inoubliable : un dôme transparent sur une colline d'une ferme agricole active, face au Parc National de Wilsons Prom. Canopée transparente = ciel étoilé depuis le lit. Plateforme terrasse 11m × 7m. Baby BBQ Weber, 2 fauteuils Adirondack, tout le nécessaire cuisine inclus (guide de recettes fourni). Adultes uniquement, 2 personnes strictement. Propriété sœur : Bubble Asteria (disponible en même temps).",
+      "history": {
+        "award": "Lauréate concours global Airbnb OMG",
+        "host_mission": "Aider les gens à se reconnecter avec la nature et entre eux",
+        "sister_bubble": "Bubble Asteria (même propriété, disponible simultanément)",
+        "setting": "Ferme active avec bovins et moutons — chaque site clôturé 50x50m"
+      },
+      "amenities": [
+        "Dôme transparent (vue étoiles depuis le lit)",
+        "Plateforme terrasse 11x7m",
+        "Baby BBQ Weber",
+        "Cuisine complète incluse",
+        "2 fauteuils Adirondack",
+        "Guide recettes + welcome guide",
+        "Adultes uniquement (max 2)"
+      ],
+      "sample_reviews": [
+        {
+          "author": "Voyageurs",
+          "date": "2026",
+          "stars": 5,
+          "text": "Dormir sous les étoiles dans un dôme transparent face au parc national. Une expérience que Tim a créée avec passion."
+        }
+      ],
+      "affiliation": "Aucun équivalent exact sur Booking — contact direct",
+      "contact_priority": "HAUTE — OMG Award",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-030",
+      "airbnb_id": "51410896",
+      "slug": "treecastle-roundhouse-homestead-wallkill-new-york",
+      "name": "Treecastle — Château dans les Arbres",
+      "tagline": "Hudson Valley — château médiéval miniature perché dans les érables",
+      "type": "cabane-perchée",
+      "wow_score": 20,
+      "country": "USA",
+      "state": "New York",
+      "city": "Wallkill",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.99,
+      "reviews_count": 380,
+      "badge": "Top 5% Airbnb",
+      "description_nika": "Dans l'Hudson Valley de New York, le Roundhouse Homestead propose un château arboricole unique — style médiéval miniature suspendu dans les érables. Complètement privé, romantique, à 1h30 de Manhattan. La propriété Roundhouse est un écosystème d'hébergements insolites artisanaux.",
+      "affiliation": "Booking + Homestay équivalents disponibles",
+      "contact_priority": "MOYENNE",
+      "booking_type": "direct_or_booking"
+    },
+    {
+      "id": "wow-031",
+      "airbnb_id": "1173097257967089025",
+      "slug": "loft-cime-arbres-sautee-nacoochee-georgie",
+      "name": "Loft Cime des Arbres",
+      "tagline": "Géorgie du Nord — loft nordique suspendu dans les arbres sur 22 acres",
+      "type": "cabane-perchée",
+      "wow_score": 19,
+      "country": "USA",
+      "state": "Géorgie",
+      "city": "Sautee Nacoochee",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.94,
+      "reviews_count": 215,
+      "description_nika": "22 acres de forêt dans les montagnes du nord de la Géorgie. Loft design nordique perché dans les cimes. Accès à pied sur le domaine, cadre naturel exceptionnel.",
+      "affiliation": "Booking équivalents disponibles",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-032",
+      "airbnb_id": "46594086",
+      "slug": "cabane-leaf-fredericksburg-texas",
+      "name": "Cabane Leaf — Fredericksburg",
+      "tagline": "Texas Hill Country — cabane architecturale perchée dans les chênes",
+      "type": "cabane-perchée",
+      "wow_score": 19,
+      "country": "USA",
+      "state": "Texas",
+      "city": "Fredericksburg",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.98,
+      "reviews_count": 528,
+      "badge": "Top 5% Airbnb",
+      "description_nika": "Dans le Texas Hill Country, région viticole renommée, une cabane architecturale épurée perchée dans les chênes. Design brutaliste inspiré d'une feuille. À 10 min des vignobles de Fredericksburg.",
+      "affiliation": "Booking équivalents disponibles",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-033",
+      "airbnb_id": "13761529",
+      "slug": "willow-treehouse-willow-alaska",
+      "name": "Willow Treehouse",
+      "tagline": "Alaska — cabane perchée dans les saules, Aurora Borealis en hiver",
+      "type": "cabane-perchée",
+      "wow_score": 20,
+      "country": "USA",
+      "state": "Alaska",
+      "city": "Willow",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.96,
+      "reviews_count": 855,
+      "badge": "Top 5% Airbnb",
+      "description_nika": "À 60 miles d'Anchorage en Alaska, une treehouse suspendue dans les saules. En hiver, possibilité de voir les Aurores Boréales depuis le lit. Environnement sauvage alaskan authentique.",
+      "history": {
+        "special": "Aurores Boréales visibles en saison depuis le logement"
+      },
+      "affiliation": "Booking partial",
+      "contact_priority": "MOYENNE — Alaska unique",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-034",
+      "airbnb_id": "49797626",
+      "slug": "maison-des-fous-treehouse-aubrey-texas",
+      "name": "La Maison des Fous",
+      "tagline": "Texas — treehouse surréaliste de 3 étages dans les chênes centenaires",
+      "type": "cabane-perchée",
+      "wow_score": 19,
+      "country": "USA",
+      "state": "Texas",
+      "city": "Aubrey",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.97,
+      "reviews_count": 115,
+      "description_nika": "Treehouse de 3 étages dans les chênes centenaires du Texas. Architecture surréaliste volontaire — le nom l'affirme. À 1h de Dallas.",
+      "affiliation": "Booking équivalents",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-035",
+      "airbnb_id": "1025206498994795956",
+      "slug": "copper-fox-treehouse-pownal-vermont",
+      "name": "Copper Fox Treehouse",
+      "tagline": "Vermont — treehouse de luxe dans les érables du Vermont",
+      "type": "cabane-perchée",
+      "wow_score": 18,
+      "country": "USA",
+      "state": "Vermont",
+      "city": "Pownal",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.99,
+      "reviews_count": 168,
+      "description_nika": "Treehouse contemporaine de luxe dans les érables du Vermont. Jacuzzi extérieur, design scandinave épuré. À l'orée des Berkshires.",
+      "affiliation": "Booking équivalents",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-036",
+      "airbnb_id": "42230391",
+      "slug": "yourtes-jardin-foret-galena-illinois",
+      "name": "Yourtes Jardin-Forêt",
+      "tagline": "Illinois — village de yourtes avec jardin-forêt et bain de forêt",
+      "type": "yourte",
+      "wow_score": 16,
+      "country": "USA",
+      "state": "Illinois",
+      "city": "Galena",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.92,
+      "reviews_count": 269,
+      "description_nika": "Village de yourtes écoresponsables dans un jardin-forêt d'Illinois. Bain de forêt, jardins nourriciers, animaux. Galena, ville historique de la Guerre Civile.",
+      "affiliation": "Booking yourtes disponibles",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-037",
+      "airbnb_id": "985095564769450218",
+      "slug": "cabane-octogonale-jacuzzi-galena-illinois",
+      "name": "Cabane Octogonale + Piscine",
+      "tagline": "Illinois — cabane octogonale architecturale avec jacuzzi et piscine privée",
+      "type": "cabane-architecturale",
+      "wow_score": 18,
+      "country": "USA",
+      "state": "Illinois",
+      "city": "Galena",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.99,
+      "reviews_count": 224,
+      "badge": "Top 5% Airbnb",
+      "description_nika": "Cabane octogonale architecturale dans les bois d'Illinois avec jacuzzi et piscine privée. Design 8 angles, fenêtres panoramiques. Même domaine que les Yourtes Galena.",
+      "affiliation": "Booking équivalents",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-038",
+      "airbnb_id": "46766508",
+      "slug": "nid-dragon-toboggan-katana-villa-amed-bali",
+      "name": "Nid de Dragon — Katana Villa",
+      "tagline": "Amed, Bali — piscine double niveaux avec toboggan aquatique et vue volcanique",
+      "type": "villa-bali",
+      "wow_score": 20,
+      "country": "Indonésie",
+      "region": "Bali",
+      "city": "Amed",
+      "location_detail": "Côte Est de Bali, vue Mont Agung, meilleurs spots plongée/snorkeling",
+      "capacity": {
+        "guests": 5,
+        "bedrooms": 1,
+        "beds": 4,
+        "bathrooms": 1
+      },
+      "rating": 4.96,
+      "reviews_count": 168,
+      "description_nika": "Dans le village d'Amed sur la côte Est de Bali, la Katana Villa propose son 'Nid du Dragon' : villa avec piscine à double niveau, toboggan aquatique, grotte de piscine, et piscine supérieure en forme de nid de dragon avec vue spectaculaire sur l'océan et le Mont Agung. Chef réputé pour la meilleure cuisine balinaise de Bali. Les meilleures plongées de Bali à la porte.",
+      "amenities": [
+        "Piscine double niveau + toboggan aquatique",
+        "Grotte de piscine",
+        "Nid de dragon (piscine supérieure)",
+        "Vue océan + Mont Agung",
+        "Chef cuisine balinaise maison",
+        "Plongée/snorkeling direct",
+        "Lit King + 3 matelas",
+        "Clim",
+        "Kitchen"
+      ],
+      "affiliation": "Booking.com (Bali très bien couvert)",
+      "contact_priority": "MOYENNE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-039",
+      "airbnb_id": "581170184081838138",
+      "slug": "grand-cheval-fjord-sunnfjord-norvege",
+      "name": "Grand Cheval — Vue Fjord",
+      "tagline": "Sunnfjord, Norvège — cabane perchée avec vue sur le Sunnfjord depuis une montagne",
+      "type": "tiny-house",
+      "wow_score": 19,
+      "country": "Norvège",
+      "region": "Vestland",
+      "city": "Sunnfjord",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.92,
+      "reviews_count": 298,
+      "description_nika": "Cabane 'Grand Cheval' avec vue sur le Sunnfjord. Troisième Birdbox-style de Norvège occidentale. Vue à 180° sur le fjord depuis la colline. Proche des glaciers Briksdalsbreen.",
+      "affiliation": "Booking partiel",
+      "contact_priority": "MOYENNE",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-040",
+      "airbnb_id": "45526609",
+      "slug": "swallow-nest-duplex-pucon-chili",
+      "name": "Swallow Nest Duplex",
+      "tagline": "Pucón, Chili — cabane duplex dans les hêtres patagons vue sur volcan Villarrica",
+      "type": "cabane-perchée",
+      "wow_score": 19,
+      "country": "Chili",
+      "region": "Araucanía",
+      "city": "Pucón",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.97,
+      "reviews_count": 154,
+      "description_nika": "À Pucón dans les Andes chiliennes, cette cabane duplex dans les hêtres patagons offre une vue directe sur le volcan Villarrica en activité. Lac Villarrica à 10 min. Capitale chilienne du volcanisme et des sports outdoor.",
+      "history": {
+        "volcano": "Volcan Villarrica — actif, l'un des plus actifs d'Amérique du Sud"
+      },
+      "affiliation": "Booking équivalents Pucón",
+      "contact_priority": "MOYENNE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-041",
+      "airbnb_id": "41632284",
+      "slug": "naturel-scanie-billinge-suede",
+      "name": "Logement Naturel Scanie",
+      "tagline": "Scanie, Suède — cabane minimaliste dans la forêt du sud de la Suède",
+      "type": "eco-cabin",
+      "wow_score": 17,
+      "country": "Suède",
+      "region": "Scanie (Skåne)",
+      "city": "Billinge",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.97,
+      "reviews_count": 504,
+      "description_nika": "Dans la forêt de la Scanie au sud de la Suède, logement naturel minimaliste. Région des châteaux et des paysages agricoles suédois. À 1h de Malmö, 1h30 de Copenhague.",
+      "affiliation": "Booking équivalents",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-042",
+      "airbnb_id": "986754321",
+      "slug": "sharma-springs-bambou-abiansemal-bali",
+      "name": "Sharma Springs — Maison Bambou",
+      "tagline": "Ubud, Bali — villa bambou sur 6 niveaux dans la jungle, primée comme meilleure maison bambou",
+      "type": "bambou",
+      "wow_score": 21,
+      "country": "Indonésie",
+      "region": "Bali",
+      "city": "Abiansemal",
+      "capacity": {
+        "guests": 8,
+        "bedrooms": 4,
+        "beds": 4,
+        "bathrooms": 4
+      },
+      "rating": 4.95,
+      "reviews_count": 280,
+      "description_nika": "Sharma Springs est la villa bambou la plus célèbre de Bali — 6 niveaux entièrement en bambou dans la jungle d'Ubud, avec une piscine naturelle en pierre. Conçue par la famille Green School. Primée comme l'une des plus belles maisons en bambou du monde.",
+      "history": {
+        "architect": "Elora Hardy / IBUKU (fondateurs Green School Bali)",
+        "awards": "Une des plus belles maisons bambou au monde — primée internationalement",
+        "material": "Bambou entièrement (structure, revêtements, mobilier)"
+      },
+      "affiliation": "Booking + direct",
+      "contact_priority": "HAUTE — architecture bambou unique",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-043",
+      "airbnb_id": "46766509",
+      "slug": "villa-bambou-riviere-ubud-bali",
+      "name": "Maison Bambou Rivière",
+      "tagline": "Ubud — villa bambou suspendue au-dessus de la rivière Ayung",
+      "type": "bambou",
+      "wow_score": 19,
+      "country": "Indonésie",
+      "region": "Bali",
+      "city": "Ubud",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 2
+      },
+      "rating": 4.95,
+      "reviews_count": 245,
+      "description_nika": "Maison bambou suspendue au-dessus de la gorge de la rivière Ayung à Ubud. Vue plongeante sur la rivière sacrée. À 20 min du centre d'Ubud.",
+      "affiliation": "Booking équivalents Ubud",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-044",
+      "airbnb_id": "48891234",
+      "slug": "dome-vue-ocean-pemenang-lombok",
+      "name": "Villa Dôme Vue Océan",
+      "tagline": "Lombok — dôme flottant avec vue 360° sur l'océan Indien",
+      "type": "dôme",
+      "wow_score": 18,
+      "country": "Indonésie",
+      "region": "Lombok",
+      "city": "Pemenang",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.96,
+      "reviews_count": 178,
+      "description_nika": "Sur la côte nord de Lombok, un dôme avec vue panoramique 360° sur l'océan Indien et les Gili Islands. Couchers de soleil exceptionnels. Snorkeling, Gili T à 15min en bateau.",
+      "affiliation": "Booking équivalents Lombok",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-045",
+      "airbnb_id": "53246780",
+      "slug": "beehive-jacuzzi-selat-bali",
+      "name": "Beehive + Jacuzzi",
+      "tagline": "Bali Est — cabane ruche architecturale avec jacuzzi et vue Mont Agung",
+      "type": "cabane-architecturale",
+      "wow_score": 18,
+      "country": "Indonésie",
+      "region": "Bali",
+      "city": "Selat",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.97,
+      "reviews_count": 195,
+      "description_nika": "Cabane en forme de ruche (hexagonale) dans les rizières de Bali Est. Jacuzzi avec vue directe sur le Mont Agung. Architecture artisanale locale.",
+      "affiliation": "Booking équivalents",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-046",
+      "airbnb_id": "55123456",
+      "slug": "cabane-hobbit-jungle-tegalalang-bali",
+      "name": "Cabane Hobbit Jungle Enchantée",
+      "tagline": "Tegalalang, Bali — maison hobbit entourée de rizières en terrasses",
+      "type": "maison-terre",
+      "wow_score": 17,
+      "country": "Indonésie",
+      "region": "Bali",
+      "city": "Tegalalang",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.94,
+      "reviews_count": 310,
+      "description_nika": "Dans les rizières en terrasses de Tegalalang (UNESCO), une cabane style hobbit avec porte ronde et végétation exubérante. À 15min du centre d'Ubud.",
+      "affiliation": "Booking équivalents",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-047",
+      "airbnb_id": "45526608",
+      "slug": "toca-da-araucaria-nova-prata-bresil",
+      "name": "Toca da Araucária",
+      "tagline": "Serra Gaúcha, Brésil — abri organique sous les araucarias du Rio Grande do Sul",
+      "type": "cabane-organique",
+      "wow_score": 18,
+      "country": "Brésil",
+      "region": "Rio Grande do Sul",
+      "city": "Nova Prata",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.97,
+      "reviews_count": 389,
+      "description_nika": "Dans la Serra Gaúcha du Rio Grande do Sul, sous les araucarias (pins brésiliens) centenaires, une cabane organique en terre et pierre. Région viticole et fromagers italiens. Très prisé des Brésiliens de São Paulo.",
+      "affiliation": "Booking partiel",
+      "contact_priority": "MOYENNE — Brésil, niche Sud-Américaine",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-048",
+      "airbnb_id": "40123456",
+      "slug": "villa-rosamaria-plage-bingin-bali",
+      "name": "La Rosamaria — Plage de Bingin",
+      "tagline": "Bali — villa pieds dans l'eau sur la plage de surf de Bingin",
+      "type": "villa-bali",
+      "wow_score": 17,
+      "country": "Indonésie",
+      "region": "Bali",
+      "city": "Pecatu",
+      "capacity": {
+        "guests": 6,
+        "bedrooms": 3,
+        "beds": 3,
+        "bathrooms": 3
+      },
+      "rating": 4.96,
+      "reviews_count": 190,
+      "description_nika": "Villa de luxe directement sur la plage de Bingin — spot de surf emblématique de Bali. Vue sur l'Océan Indien. Accès direct aux vagues depuis la villa.",
+      "affiliation": "Booking équivalents",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-049",
+      "airbnb_id": "43123456",
+      "slug": "ferme-biologique-unique-sikur-lombok",
+      "name": "Ferme Biologique Unique",
+      "tagline": "Lombok Est — ferme biologique avec logement authentique hors-réseau",
+      "type": "eco-farm",
+      "wow_score": 16,
+      "country": "Indonésie",
+      "region": "Lombok",
+      "city": "Sikur",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.93,
+      "reviews_count": 156,
+      "description_nika": "Ferme biologique dans l'intérieur de Lombok, culture rizicole traditionnelle et jardins potagers. Lombok authentique, non touristique. Vue sur le volcan Rinjani.",
+      "affiliation": "Homestay (commission 30%)",
+      "contact_priority": "HAUTE — commission Homestay",
+      "booking_type": "homestay"
+    },
+    {
+      "id": "wow-050",
+      "airbnb_id": "44891234",
+      "slug": "cabane-balinaise-perchee-balian-beach-bali",
+      "name": "Cabane Balinaise Perchée",
+      "tagline": "Balian Beach, Bali — cabane balinaise authentique perchée sur la colline",
+      "type": "cabane-perchée",
+      "wow_score": 16,
+      "country": "Indonésie",
+      "region": "Bali",
+      "city": "Balian Beach",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.94,
+      "reviews_count": 187,
+      "description_nika": "Cabane traditionnelle balinaise perchée sur la colline de Balian Beach. Spot de surf peu connu, loin des touristes. Vue sur l'océan Indien.",
+      "affiliation": "Booking équivalents",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-051",
+      "airbnb_id": "41678901",
+      "slug": "peacock-tiny-house-sandy-valley-nevada",
+      "name": "Peacock Tiny House",
+      "tagline": "Nevada — tiny house Far West sur le même ranch que le Wagon Conestoga",
+      "type": "tiny-house",
+      "wow_score": 16,
+      "country": "USA",
+      "state": "Nevada",
+      "city": "Sandy Valley",
+      "proximity": "45 min Las Vegas",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.92,
+      "reviews_count": 245,
+      "description_nika": "Tiny house sur le Sandy Valley Ranch, même propriété que le Wagon Conestoga. Le ranch en activité propose deux logements insolites. Ranch avec chevaux, chèvres, activités cowboy.",
+      "affiliation": "Même hôte que Wagon Conestoga (wow-008)",
+      "contact_priority": "FAIBLE",
+      "booking_type": "direct"
+    },
+    {
+      "id": "wow-052",
+      "airbnb_id": "45234567",
+      "slug": "villa-bambou-butterfly-selat-bali",
+      "name": "Maison Bambou Butterfly",
+      "tagline": "Bali Est — maison bambou papillon dans les rizières du Mont Agung",
+      "type": "bambou",
+      "wow_score": 17,
+      "country": "Indonésie",
+      "region": "Bali",
+      "city": "Selat",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.96,
+      "reviews_count": 203,
+      "description_nika": "Maison bambou en forme d'ailes de papillon dans les rizières de Bali Est. Vue sur le Mont Agung. Construction artisanale locale.",
+      "affiliation": "Booking équivalents",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-053",
+      "airbnb_id": "44567890",
+      "slug": "villa-vue-jungle-bali",
+      "name": "Villa Vue Jungle",
+      "tagline": "Bali — villa avec vue sur la jungle tropicale balinaise",
+      "type": "villa-bali",
+      "wow_score": 15,
+      "country": "Indonésie",
+      "region": "Bali",
+      "city": "Bali",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 2
+      },
+      "rating": 4.93,
+      "reviews_count": 412,
+      "description_nika": "Villa avec piscine à débordement et vue sur la jungle tropicale balinaise. Standard Booking.com.",
+      "affiliation": "Booking.com (meilleure option affiliation)",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-054",
+      "airbnb_id": "30981234",
+      "slug": "cabane-3-etangs-mervent-vendee",
+      "name": "Cabane des 3 Étangs",
+      "tagline": "Vendée — cabane perchée dans la forêt de Mervent, trois étangs alentour",
+      "type": "cabane-perchée",
+      "wow_score": 17,
+      "country": "France",
+      "region": "Pays de la Loire",
+      "city": "Mervent",
+      "capacity": {
+        "guests": 2,
+        "bedrooms": 1,
+        "beds": 1,
+        "bathrooms": 1
+      },
+      "rating": 4.88,
+      "reviews_count": 145,
+      "description_nika": "Dans la forêt domaniale de Mervent en Vendée, cabane perchée entourée de trois étangs. Randonnées en forêt, kayak, calme total. À 2h de Paris.",
+      "affiliation": "Booking équivalents cabanes",
+      "contact_priority": "FAIBLE",
+      "booking_type": "direct_or_booking"
+    },
+    {
+      "id": "wow-055",
+      "airbnb_id": "33456789",
+      "slug": "appartement-paris-insolite",
+      "name": "Fun et Insolite Paris",
+      "tagline": "Paris — appartement thématique décoré dans l'esprit steampunk-vintage",
+      "type": "thématique",
+      "wow_score": 13,
+      "country": "France",
+      "region": "Île-de-France",
+      "city": "Paris",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.82,
+      "reviews_count": 678,
+      "description_nika": "Appartement parisien thématique à l'esprit vintage. Plus standard mais bien noté. Paris intramuros.",
+      "affiliation": "Booking très bien couvert pour Paris",
+      "contact_priority": "TRÈS FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-056",
+      "airbnb_id": "31456789",
+      "slug": "grange-luxe-spa-neuville-coppegueule-normandie",
+      "name": "Grange Aménagée de Luxe + Spa",
+      "tagline": "Normandie — grange reconvertie avec spa privatif et jardin 2000m²",
+      "type": "grange-reconvertie",
+      "wow_score": 16,
+      "country": "France",
+      "region": "Normandie",
+      "city": "Neuville-Coppegueule",
+      "capacity": {
+        "guests": 6,
+        "bedrooms": 3,
+        "beds": 4,
+        "bathrooms": 2
+      },
+      "rating": 4.91,
+      "reviews_count": 189,
+      "description_nika": "Grange normande entièrement reconvertie en loft de luxe avec spa privatif. Jardin 2000m², calme total. En Normandie, entre Rouen et Amiens.",
+      "affiliation": "Booking gîtes normands",
+      "contact_priority": "FAIBLE",
+      "booking_type": "booking_affil"
+    },
+    {
+      "id": "wow-057",
+      "airbnb_id": "1781234567",
+      "slug": "toca-da-araucaria-nova-prata-bis",
+      "name": "Toca da Araucária II",
+      "tagline": "Serra Gaúcha — second abri araucaria en bois flotté sur le même domaine",
+      "type": "cabane-organique",
+      "wow_score": 17,
+      "country": "Brésil",
+      "region": "Rio Grande do Sul",
+      "city": "Nova Prata",
+      "capacity": {
+        "guests": 4,
+        "bedrooms": 2,
+        "beds": 2,
+        "bathrooms": 1
+      },
+      "rating": 4.96,
+      "reviews_count": 267,
+      "description_nika": "Second hébergement sur le domaine Toca da Araucária. Serra Gaúcha, vignobles, cuisine italo-brésilienne.",
+      "affiliation": "Booking partiel",
+      "contact_priority": "MOYENNE",
+      "booking_type": "direct"
+    }
+  ]
+}
