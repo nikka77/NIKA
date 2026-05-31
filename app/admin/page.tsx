@@ -67,7 +67,7 @@ export default async function AdminPage() {
       )}
 
       {/* Stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '3rem' }} className="max-md:grid-cols-2">
+      <div style={{ gap: '1rem', marginBottom: '3rem' }} className="g-4 max-md:grid-cols-2">
         {[
           { label: 'Utilisateurs', value: userCount ?? 0, color: 'var(--az)', icon: '👤' },
           { label: 'Professionnels', value: proCount ?? 0, color: 'var(--teal)', icon: '🔧' },
@@ -84,7 +84,7 @@ export default async function AdminPage() {
       </div>
 
       {/* Nav links */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '3rem' }} className="max-sm:grid-cols-1">
+      <div style={{ gap: '1rem', marginBottom: '3rem' }} className="g-3 max-sm:grid-cols-1">
         {[
           { href: '/admin/pros', label: 'Pros', desc: 'Validation & suspension', icon: '🔧', color: 'var(--teal)' },
           { href: '/admin/pois', label: 'POIs', desc: 'Approuver les points d\'intérêt', icon: '📍', color: 'var(--az)' },

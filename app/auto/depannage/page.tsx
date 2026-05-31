@@ -57,7 +57,7 @@ export default async function DepannagePage() {
         <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(28px,4vw,48px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '2rem' }}>
           On gère tout
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+        <div style={{ gap: '1rem' }} className="g-3 max-md:grid-cols-2 max-sm:grid-cols-1">
           {urgenceServices.map(({ icon, title, desc, eta, color }) => (
             <div key={title} style={{ background: 'var(--bg2)', border: `1px solid ${color}25`, borderRadius: 10, padding: '1.5rem', position: 'relative', overflow: 'hidden', cursor: 'pointer', transition: 'border-color 0.2s' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: color }} />
@@ -78,7 +78,7 @@ export default async function DepannagePage() {
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '2rem' }}>
             Dépanneurs disponibles
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }} className="max-sm:grid-cols-1">
+          <div style={{ gap: '1rem' }} className="g-2 max-sm:grid-cols-1">
             {pros.map((pro: { id: string; business_name: string; verified: boolean; rating: number; review_count: number; description?: string; phone?: string; address?: string }) => (
               <Link key={pro.id} href={`/pro/${pro.id}`} style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '1.5rem', transition: 'border-color 0.2s' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.7rem' }}>

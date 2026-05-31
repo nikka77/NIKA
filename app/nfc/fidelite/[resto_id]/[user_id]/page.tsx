@@ -29,7 +29,7 @@ export default async function FidelitePage({ params }: Props) {
           <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,5vw,36px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 1, marginBottom: '0.3rem' }}>
             Carte de fidélité
           </h1>
-          <div style={{ fontFamily: 'var(--fn)', fontSize: 20, color: 'var(--gold2)', marginBottom: '0.4rem' }}>
+          <div style={{ fontFamily: 'var(--fe)', fontSize: 20, fontStyle: 'italic', color: 'var(--gold2)', marginBottom: '0.4rem' }}>
             {pro?.business_name || 'Commerce NIKA'}
           </div>
           {pro?.description && (
@@ -46,7 +46,7 @@ export default async function FidelitePage({ params }: Props) {
               <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td2)' }}>{profile.level_name}</div>
             </div>
             <div style={{ textAlign: 'right' }}>
-              <div style={{ fontFamily: 'var(--fn)', fontSize: 28, color: 'var(--az)', lineHeight: 1 }}>{profile.nika_credits}</div>
+              <div style={{ fontFamily: 'var(--fe)', fontSize: 28, fontStyle: 'italic', color: 'var(--az)', lineHeight: 1 }}>{profile.nika_credits}</div>
               <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>crédits NIKA</div>
             </div>
           </div>
@@ -57,7 +57,7 @@ export default async function FidelitePage({ params }: Props) {
           <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: '1rem', textAlign: 'center' }}>
             {tampons} / 10 tampons
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 10, marginBottom: '1.2rem' }}>
+          <div style={{ gap: 10, marginBottom: '1.2rem' }} className="g-5">
             {Array.from({ length: 10 }).map((_, i) => (
               <div key={i} style={{ aspectRatio: '1', borderRadius: '50%', background: i < tampons ? 'var(--gold)' : 'var(--bg3)', border: `2px solid ${i < tampons ? 'var(--gold2)' : 'var(--bd2)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, transition: 'all 0.3s' }}>
                 {i < tampons ? '⭐' : ''}

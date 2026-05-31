@@ -24,7 +24,7 @@ export default async function SecPage() {
     : { data: [] };
 
   return (
-    <main style={{ padding: '3rem 1.4rem 5rem', maxWidth: 1100, margin: '0 auto' }}>
+    <main style={{ padding: 'clamp(2rem,5vw,3rem) 1.4rem clamp(3rem,7vw,5rem)', maxWidth: 1100, margin: '0 auto' }}>
       {/* Hero — SEC has dark/serious vibe */}
       <div style={{ marginBottom: '3rem' }}>
         <p style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#D44B24', marginBottom: '0.4rem' }}>🔒 Domaine 08</p>

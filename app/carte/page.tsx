@@ -1,24 +1,17 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { DOMAINS } from '@/lib/constants';
-
-type POI = {
-  id: string;
-  name: string;
-  lat: number;
-  lng: number;
-  category: string;
-  description?: string;
-  upvotes: number;
-};
+import { createClient } from '@/lib/supabase/client';
 
 export default function CartePage() {
   const mapRef = useRef<HTMLDivElement>(null);
   const [activeFilter, setActiveFilter] = useState('all');
-  const [selectedPoi, setSelectedPoi] = useState<POI | null>(null);
   const [showAddForm, setShowAddForm] = useState(false);
   const [newPoi, setNewPoi] = useState({ name: '', category: 'general', description: '' });
-  const [mapInstance, setMapInstance] = useState<unknown>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitMsg, setSubmitMsg] = useState('');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const mapRef2 = useRef<any>(null);
 
   useEffect(() => {
     let map: unknown = null;
@@ -56,6 +49,8 @@ export default function CartePage() {
       const colors: Record<string, string> = { food: '#D4A017', auto: '#0094D4', azur: '#0868A0', sec: '#D44B24', stay: '#E07038', serv: '#0EA878', learn: '#7B5CF0', rent: '#5A88B0', general: '#5A88B0' };
       const icons: Record<string, string> = { food: '🍽️', auto: '🚗', azur: '🛥️', sec: '🔒', stay: '🏡', serv: '🔧', learn: '📚', rent: '📦', general: '📍' };
 
+      function esc(s: string) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+
       demoPois.forEach(poi => {
         const color = colors[poi.category] || '#5A88B0';
         const icon = icons[poi.category] || '📍';
@@ -65,11 +60,11 @@ export default function CartePage() {
           iconSize: [30, 30], iconAnchor: [15, 15],
         });
         L.marker([poi.lat, poi.lng], { icon: divIcon }).addTo(m)
-          .bindPopup(`<strong style="font-family:sans-serif;font-size:13px">${poi.name}</strong><br><span style="font-size:11px;color:#888">${poi.description || ''}</span><br><span style="font-size:10px;color:#0094D4">▲ ${poi.upvotes}</span>`);
+          .bindPopup(`<strong style="font-family:sans-serif;font-size:13px">${esc(poi.name)}</strong><br><span style="font-size:11px;color:#888">${esc(poi.description || '')}</span><br><span style="font-size:10px;color:#0094D4">▲ ${poi.upvotes}</span>`);
       });
 
       map = m;
-      setMapInstance(m);
+      mapRef2.current = m;
     });
 
     return () => {
@@ -78,6 +73,33 @@ export default function CartePage() {
       if (map) (map as any).remove();
     };
   }, []);
+
+  async function handleAddPoi() {
+    if (!newPoi.name.trim()) return;
+    setSubmitting(true);
+    setSubmitMsg('');
+    try {
+      const supabase = createClient();
+      const center = mapRef2.current?.getCenter?.() || { lat: 43.7102, lng: 7.262 };
+      if (supabase) {
+        await supabase.from('pois').insert({
+          name: newPoi.name.trim(),
+          category: newPoi.category,
+          description: newPoi.description.trim() || null,
+          lat: center.lat,
+          lng: center.lng,
+          upvotes: 0,
+          source: 'user',
+        });
+      }
+      setSubmitMsg('POI soumis ! +80 XP en attente de validation.');
+      setNewPoi({ name: '', category: 'general', description: '' });
+      setTimeout(() => { setShowAddForm(false); setSubmitMsg(''); }, 2500);
+    } catch {
+      setSubmitMsg('Erreur — réessaie dans un instant.');
+    }
+    setSubmitting(false);
+  }
 
   return (
     <div style={{ height: 'calc(100vh - 54px)', display: 'flex', flexDirection: 'column', background: 'var(--bg)' }}>
@@ -123,8 +145,9 @@ export default function CartePage() {
               {DOMAINS.map(d => <option key={d.slug} value={d.slug}>{d.icon} {d.label}</option>)}
             </select>
             <textarea value={newPoi.description} onChange={e => setNewPoi(n => ({ ...n, description: e.target.value }))} placeholder="Description (optionnel)" rows={2} style={{ ...inputStyle, resize: 'none' }} />
-            <button style={{ padding: '12px', borderRadius: 6, background: 'var(--teal)', color: '#fff', fontFamily: 'var(--fe)', fontSize: 14, fontStyle: 'italic', fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', cursor: 'pointer' }}>
-              Soumettre (+80 XP)
+            {submitMsg && <p style={{ fontFamily: 'var(--fo)', fontSize: 12, color: submitMsg.includes('Erreur') ? 'var(--coral)' : 'var(--teal)', textAlign: 'center' }}>{submitMsg}</p>}
+            <button onClick={handleAddPoi} disabled={submitting || !newPoi.name.trim()} style={{ padding: '12px', borderRadius: 6, background: 'var(--teal)', color: '#fff', fontFamily: 'var(--fe)', fontSize: 14, fontStyle: 'italic', fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', cursor: submitting ? 'default' : 'pointer', opacity: (submitting || !newPoi.name.trim()) ? 0.6 : 1 }}>
+              {submitting ? 'Envoi...' : 'Soumettre (+80 XP)'}
             </button>
           </div>
         </div>

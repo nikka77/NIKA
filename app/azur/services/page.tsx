@@ -17,7 +17,7 @@ export default async function AzurServicesPage() {
         Services Nautiques
       </h1>
       {pros && pros.length > 0 ? (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }} className="max-sm:grid-cols-1">
+        <div style={{ gap: '1rem' }} className="g-2 max-sm:grid-cols-1">
           {pros.map((pro: { id: string; business_name: string; description?: string; rating: number; verified: boolean }) => (
             <Link key={pro.id} href={`/azur/bateau/${pro.id}`} style={{ background: 'var(--bg2)', border: '1px solid rgba(8,104,160,0.2)', borderRadius: 10, padding: '1.4rem', textDecoration: 'none' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: '0.4rem' }}>

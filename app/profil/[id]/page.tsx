@@ -75,7 +75,7 @@ export default async function ProfilePage({ params }: Props) {
       </div>
 
       {/* Stats row */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '3rem' }} className="max-sm:grid-cols-2">
+      <div style={{ gap: '1rem', marginBottom: '3rem' }} className="g-4 max-sm:grid-cols-2">
         {[
           { label: 'XP total', value: profile.xp.toLocaleString(), color: 'var(--az)' },
           { label: 'POIs créés', value: pois?.length ?? 0, color: 'var(--teal)' },
@@ -95,7 +95,7 @@ export default async function ProfilePage({ params }: Props) {
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 26, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1.2rem' }}>
             POIs créés
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.8rem' }} className="max-sm:grid-cols-1">
+          <div style={{ gap: '0.8rem' }} className="g-3 max-sm:grid-cols-1">
             {pois.map((poi: { id: string; name: string; category: string; description?: string; upvotes: number }) => (
               <div key={poi.id} style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ fontFamily: 'var(--fe)', fontSize: 15, fontWeight: 700, fontStyle: 'italic', color: 'var(--td)', marginBottom: '0.3rem' }}>{poi.name}</div>

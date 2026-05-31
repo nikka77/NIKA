@@ -18,25 +18,27 @@ export default function ProListingsPage() {
   const [listings, setListings] = useState<Listing[]>([]);
   const [loading, setLoading] = useState(true);
   const [proId, setProId] = useState<string | null>(null);
+  const [proDomain, setProDomain] = useState<string>('general');
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({ title: '', description: '', price: '', stock: '' });
   const [saving, setSaving] = useState(false);
   const user = useAuthStore(s => s.user);
 
   useEffect(() => {
-    if (user) loadListings();
+    if (!user) return;
+    async function loadListings() {
+      const supabase = createClient();
+      if (!supabase || !user) return;
+      const { data: pro } = await supabase.from('pros').select('id, domain').eq('user_id', user.id).single();
+      if (!pro) { setLoading(false); return; }
+      setProId(pro.id);
+      setProDomain(pro.domain || 'general');
+      const { data } = await supabase.from('listings').select('*').eq('pro_id', pro.id).order('created_at', { ascending: false });
+      setListings(data || []);
+      setLoading(false);
+    }
+    loadListings();
   }, [user]);
-
-  async function loadListings() {
-    const supabase = createClient();
-    if (!supabase || !user) return;
-    const { data: pro } = await supabase.from('pros').select('id').eq('user_id', user.id).single();
-    if (!pro) { setLoading(false); return; }
-    setProId(pro.id);
-    const { data } = await supabase.from('listings').select('*').eq('pro_id', pro.id).order('created_at', { ascending: false });
-    setListings(data || []);
-    setLoading(false);
-  }
 
   async function addListing(e: React.FormEvent) {
     e.preventDefault();
@@ -46,7 +48,7 @@ export default function ProListingsPage() {
     if (!supabase) { setSaving(false); return; }
     const { data } = await supabase.from('listings').insert({
       pro_id: proId,
-      domain: 'auto',
+      domain: proDomain,
       title: form.title,
       description: form.description || null,
       price: form.price ? parseFloat(form.price) : null,

@@ -61,7 +61,7 @@ export default async function AzurBateauPage({ params }: Props) {
           Nos prestations
         </h2>
         {listings && listings.length > 0 ? (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.8rem' }} className="max-sm:grid-cols-1">
+          <div style={{ gap: '0.8rem' }} className="g-2 max-sm:grid-cols-1">
             {listings.map((item: { id: string; title: string; description?: string; price?: number }) => (
               <div key={item.id} style={{ background: 'var(--bg2)', border: '1px solid rgba(8,104,160,0.2)', borderRadius: 10, padding: '1.3rem' }}>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 15, fontWeight: 600, color: 'var(--td)', marginBottom: '0.3rem' }}>{item.title}</div>

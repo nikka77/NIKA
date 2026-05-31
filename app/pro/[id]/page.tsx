@@ -112,7 +112,7 @@ export default async function ProProfilePage({ params }: Props) {
             <h2 style={{ fontFamily: 'var(--fe)', fontSize: 28, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1.2rem' }}>
               Services & Produits
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+            <div style={{ gap: '1rem' }} className="g-3 max-md:grid-cols-2 max-sm:grid-cols-1">
               {listings.map((listing: { id: string; title: string; description?: string; price?: number; currency: string; stock?: number }) => (
                 <div key={listing.id} style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <div style={{ fontFamily: 'var(--fe)', fontSize: 18, fontWeight: 900, fontStyle: 'italic', color: 'var(--td)', lineHeight: 1.1 }}>{listing.title}</div>

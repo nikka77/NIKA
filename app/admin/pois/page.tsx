@@ -64,7 +64,7 @@ export default function AdminPoisPage() {
           Aucun POI dans cette catégorie.
         </div>
       ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }} className="max-md:grid-cols-1">
+        <div style={{ gap: '1rem' }} className="g-2 max-md:grid-cols-1">
           {pois.map(poi => {
             const color = catColors[poi.category] || '#5A88B0';
             const isLoading = actionLoading === poi.id;

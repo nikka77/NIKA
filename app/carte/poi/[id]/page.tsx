@@ -60,7 +60,7 @@ export default async function POIDetailPage({ params }: Props) {
         </div>
       )}
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
+      <div style={{ gap: '1rem', marginBottom: '2rem' }} className="g-2 max-sm:grid-cols-1">
         <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 8, padding: '1.2rem' }}>
           <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: '0.4rem' }}>Coordonnées</div>
           <div style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td)' }}>{poi.lat.toFixed(5)}, {poi.lng.toFixed(5)}</div>

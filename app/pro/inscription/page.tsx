@@ -84,7 +84,7 @@ function ProInscriptionForm() {
             Mon domaine
           </h1>
           <p style={{ fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td2)', marginBottom: '2rem' }}>Choisis le domaine qui correspond à ton activité principale.</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: '2rem' }}>
+          <div style={{ gap: 10, marginBottom: '2rem' }} className="g-3 max-sm:grid-cols-1">
             {DOMAINS.map(d => (
               <button key={d.slug} type="button" onClick={() => setDomain(d.slug)} style={{ padding: '1rem 8px', borderRadius: 8, textAlign: 'center', border: `1px solid ${domain === d.slug ? d.color : 'var(--bd2)'}`, background: domain === d.slug ? `${d.color}15` : 'transparent', cursor: 'pointer', transition: 'all 0.2s' }}>
                 <div style={{ fontSize: 24, marginBottom: 4 }}>{d.icon}</div>

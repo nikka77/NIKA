@@ -25,7 +25,7 @@ export default async function AutoPage() {
   return (
     <main>
       {/* Hero */}
-      <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--bd)', padding: '5rem 1.4rem 4rem' }}>
+      <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--bd)', padding: 'clamp(3rem,8vw,5rem) 1.4rem clamp(2rem,5vw,4rem)' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <p style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#0094D4', marginBottom: '0.6rem' }}>
             02 / Automobile & VTC
@@ -48,7 +48,7 @@ export default async function AutoPage() {
       </div>
 
       {/* Services grid */}
-      <div style={{ padding: '4rem 1.4rem', maxWidth: 1100, margin: '0 auto' }}>
+      <div style={{ padding: 'clamp(2rem,5vw,4rem) 1.4rem', maxWidth: 1100, margin: '0 auto' }}>
         <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '2rem' }}>
           Services disponibles
         </h2>
@@ -67,7 +67,7 @@ export default async function AutoPage() {
 
       {/* Pros listings */}
       {pros && pros.length > 0 && (
-        <div style={{ padding: '0 1.4rem 4rem', maxWidth: 1100, margin: '0 auto' }}>
+        <div style={{ padding: '0 1.4rem clamp(2rem,5vw,4rem)', maxWidth: 1100, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '2rem' }}>
             Pros certifiés NIKA
           </h2>
@@ -105,7 +105,7 @@ export default async function AutoPage() {
       )}
 
       {/* Devenir pro */}
-      <div style={{ background: 'var(--bg2)', borderTop: '1px solid var(--bd)', padding: '4rem 1.4rem', textAlign: 'center' }}>
+      <div style={{ background: 'var(--bg2)', borderTop: '1px solid var(--bd)', padding: 'clamp(2rem,5vw,4rem) 1.4rem', textAlign: 'center' }}>
         <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1rem' }}>
           Tu es un pro de l&apos;automobile ?
         </h2>

@@ -72,7 +72,7 @@ export default async function WalletPage() {
         <h2 style={{ fontFamily: 'var(--fe)', fontSize: 24, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1rem' }}>
           Recharge rapide
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }} className="max-sm:grid-cols-1">
+        <div style={{ gap: '1rem' }} className="g-3 max-sm:grid-cols-1">
           {packs.map(({ credits, price, bonus, popular }) => (
             <Link key={credits} href={`/wallet/acheter?pack=${credits}`} style={{ background: popular ? 'rgba(212,160,23,0.08)' : 'var(--bg2)', border: `1px solid ${popular ? 'var(--gold)' : 'var(--bd)'}`, borderRadius: 10, padding: '1.5rem', position: 'relative', overflow: 'hidden', textAlign: 'center', transition: 'border-color 0.2s' }}>
               {popular && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'var(--gold)' }} />}

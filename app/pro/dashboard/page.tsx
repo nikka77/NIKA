@@ -50,7 +50,7 @@ export default async function ProDashboardPage() {
       </div>
 
       {/* Stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '3rem' }} className="max-md:grid-cols-2">
+      <div style={{ gap: '1rem', marginBottom: '3rem' }} className="g-4 max-md:grid-cols-2">
         {[
           { label: 'Listings actifs', value: listingCount ?? 0, color: domainColor, icon: '📦' },
           { label: 'Commandes totales', value: orderCount ?? 0, color: 'var(--teal)', icon: '🛒' },
@@ -81,7 +81,7 @@ export default async function ProDashboardPage() {
         ))}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }} className="max-md:grid-cols-1">
+      <div style={{ gap: '2rem' }} className="g-2 max-md:grid-cols-1">
         {/* Recent orders */}
         <div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>

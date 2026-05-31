@@ -23,7 +23,7 @@ export default async function NewsPage() {
 
   return (
     <main>
-      <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--bd)', padding: '5rem 1.4rem 3rem' }}>
+      <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--bd)', padding: 'clamp(3rem,8vw,5rem) 1.4rem clamp(2rem,5vw,3rem)' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
             <p style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--slate)', marginBottom: '0.6rem' }}>09 / Actualités</p>

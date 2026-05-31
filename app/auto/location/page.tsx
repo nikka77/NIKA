@@ -45,7 +45,7 @@ export default async function LocationPage() {
         <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,4vw,40px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '2rem' }}>
           Catégories
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '0.8rem', marginBottom: '3rem' }} className="max-md:grid-cols-3 max-sm:grid-cols-2">
+        <div style={{ gap: '0.8rem', marginBottom: '3rem' }} className="g-6 max-md:grid-cols-3 max-sm:grid-cols-2">
           {categories.map(({ icon, label, desc, color }) => (
             <button key={label} style={{ background: 'var(--bg2)', border: `1px solid ${color}25`, borderRadius: 10, padding: '1.2rem 0.8rem', textAlign: 'center', cursor: 'pointer', transition: 'border-color 0.2s' }}>
               <div style={{ fontSize: 28, marginBottom: '0.5rem' }}>{icon}</div>
@@ -60,7 +60,7 @@ export default async function LocationPage() {
             <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,4vw,40px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '2rem' }}>
               Véhicules disponibles
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+            <div style={{ gap: '1rem' }} className="g-3 max-md:grid-cols-2 max-sm:grid-cols-1">
               {vehicles.map((v: { id: string; title: string; description?: string; price?: number; currency: string; pros: { business_name: string; phone?: string; verified: boolean; rating: number } | null }) => (
                 <div key={v.id} style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <div style={{ fontFamily: 'var(--fe)', fontSize: 18, fontWeight: 900, fontStyle: 'italic', color: 'var(--td)' }}>{v.title}</div>

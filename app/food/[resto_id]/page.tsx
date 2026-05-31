@@ -60,7 +60,7 @@ export default async function FoodRestoPage({ params }: Props) {
       {deals && deals.length > 0 && (
         <div style={{ marginBottom: '2rem' }}>
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 22, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '0.8rem' }}>⚡ Offres du moment</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.8rem' }} className="max-sm:grid-cols-1">
+          <div style={{ gap: '0.8rem' }} className="g-2 max-sm:grid-cols-1">
             {deals.map((deal: { id: string; title: string; description?: string; discount_type: string; discount_value: number; expires_at: string }) => {
               const disc = deal.discount_type === 'percent' ? `-${deal.discount_value}%` : deal.discount_type === 'fixed' ? `-${deal.discount_value}€` : 'OFFERT';
               return (

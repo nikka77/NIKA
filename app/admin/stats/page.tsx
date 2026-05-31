@@ -66,7 +66,7 @@ export default async function AdminStatsPage() {
         Statistiques globales
       </h1>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '2rem' }} className="max-md:grid-cols-2">
+      <div style={{ gap: '1rem', marginBottom: '2rem' }} className="g-4 max-md:grid-cols-2">
         {stats.map(({ label, value, sub, color, icon }) => (
           <div key={label} style={{ background: 'var(--bg2)', border: `1px solid ${color}22`, borderRadius: 10, padding: '1.5rem', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: color }} />

@@ -92,7 +92,7 @@ export default function ProFlashDealsPage() {
           <h3 style={{ fontFamily: 'var(--fe)', fontSize: 18, fontStyle: 'italic', color: 'var(--gold)' }}>Nouveau Flash Deal</h3>
           <input value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} placeholder="Ex: Pizza Margherita -30% *" required style={inputStyle} />
           <textarea value={form.description} onChange={e => setForm(f => ({ ...f, description: e.target.value }))} placeholder="Description (optionnel)" rows={2} style={{ ...inputStyle, resize: 'none' }} />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.8rem' }}>
+          <div style={{ gap: '0.8rem' }} className="g-3 max-sm:grid-cols-1">
             <select value={form.discount_type} onChange={e => setForm(f => ({ ...f, discount_type: e.target.value }))} style={inputStyle}>
               <option value="percent">Pourcentage (%)</option>
               <option value="fixed">Montant fixe (€)</option>
@@ -124,13 +124,13 @@ export default function ProFlashDealsPage() {
           <p style={{ fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td3)' }}>Aucun Flash Deal. Crée une offre limitée pour attirer des clients !</p>
         </div>
       ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }} className="max-sm:grid-cols-1">
+        <div style={{ gap: '1rem' }} className="g-2 max-sm:grid-cols-1">
           {deals.map(deal => {
             const expired = new Date(deal.expires_at) < new Date();
             return (
               <div key={deal.id} style={{ background: 'var(--bg2)', border: `1px solid ${deal.active && !expired ? 'rgba(212,160,23,0.3)' : 'var(--bd)'}`, borderRadius: 10, padding: '1.4rem', position: 'relative', overflow: 'hidden' }}>
                 {deal.active && !expired && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'var(--gold)' }} />}
-                <div style={{ fontFamily: 'var(--fn)', fontSize: 36, color: deal.active && !expired ? 'var(--gold2)' : 'var(--td3)', marginBottom: '0.3rem' }}>
+                <div style={{ fontFamily: 'var(--fe)', fontSize: 36, fontStyle: 'italic', color: deal.active && !expired ? 'var(--gold2)' : 'var(--td3)', marginBottom: '0.3rem' }}>
                   {discountLabel(deal.discount_type, deal.discount_value)}
                 </div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 14, fontWeight: 600, color: 'var(--td)', marginBottom: '0.2rem' }}>{deal.title}</div>

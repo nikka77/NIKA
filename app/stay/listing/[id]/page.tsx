@@ -1,6 +1,22 @@
 import { createClient } from '@/lib/supabase/server';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { tpAffilLink } from '@/lib/travelpayouts';
+
+const SENTIMENT_COLOR: Record<string, string> = {
+  positif: 'var(--teal)',
+  negatif: 'var(--coral)',
+  mitige: '#E07038',
+  neutre: 'var(--td3)',
+};
+
+const SENTIMENT_LABEL: Record<string, string> = {
+  positif: '★ Positif',
+  negatif: '✗ Négatif',
+  mitige: '~ Mitigé',
+  neutre: '· Neutre',
+};
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -22,11 +38,35 @@ export default async function StayListingPage({ params }: Props) {
   const meta = listing.metadata as Record<string, unknown> || {};
   const images = listing.images as string[] || [];
   const isAffil = !!listing.affil_url;
+  const affiliUrl = isAffil ? tpAffilLink(listing.affil_url as string) : null;
+
+  // Fetch reviews and stats
+  const [{ data: reviews }, { data: stats }] = await Promise.all([
+    supabase
+      .from('stay_reviews')
+      .select('id, author_name, rating, review_date, sentiment, summary, highlights, score_nika')
+      .eq('listing_id', id)
+      .eq('analysis_status', 'done')
+      .order('review_date', { ascending: false })
+      .limit(5),
+    supabase
+      .from('stay_stats')
+      .select('review_count, avg_rating, avg_nika_score, sentiment_distribution')
+      .eq('listing_id', id)
+      .single(),
+  ]);
+
+  const reviewList = (reviews ?? []) as {
+    id: string; author_name: string; rating: number | null;
+    review_date: string; sentiment: string; summary: string;
+    highlights: string[]; score_nika: number;
+  }[];
+  const statsData = stats as { review_count: number; avg_rating: number; avg_nika_score: number; sentiment_distribution: Record<string, number> } | null;
 
   return (
     <main style={{ padding: '0 0 5rem' }}>
       {/* Hero image / placeholder */}
-      <div style={{ width: '100%', height: 420, background: `linear-gradient(135deg, var(--bg2), var(--bg3))`, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', marginBottom: '0' }}>
+      <div style={{ width: '100%', height: 'clamp(200px,45vw,420px)', background: `linear-gradient(135deg, var(--bg2), var(--bg3))`, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', marginBottom: '0' }}>
         {images.length > 0 ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={images[0]} alt={listing.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -41,8 +81,8 @@ export default async function StayListingPage({ params }: Props) {
         )}
       </div>
 
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '2.5rem 1.4rem 0' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: '3rem', alignItems: 'start' }} className="max-md:grid-cols-1">
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(1.5rem,4vw,2.5rem) 1.4rem 0' }}>
+        <div style={{ gap: '3rem' }} className="g-listing max-md:grid-cols-1">
           {/* Left */}
           <div>
             <p style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#E07038', marginBottom: '0.5rem' }}>
@@ -80,7 +120,7 @@ export default async function StayListingPage({ params }: Props) {
                 <h2 style={{ fontFamily: 'var(--fe)', fontSize: 22, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1rem' }}>
                   Ce qui rend ce lieu unique
                 </h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.6rem' }}>
+                <div style={{ gap: '0.6rem' }} className="g-2 max-sm:grid-cols-1">
                   {(meta.features as string[]).map((f, i) => (
                     <div key={i} style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)', display: 'flex', alignItems: 'center', gap: 8 }}>
                       <span style={{ color: '#E07038', flexShrink: 0 }}>✓</span> {f}
@@ -95,26 +135,26 @@ export default async function StayListingPage({ params }: Props) {
           <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd2)', borderRadius: 12, padding: '1.8rem', position: 'sticky', top: 70 }}>
             {listing.price && (
               <div style={{ marginBottom: '1.2rem' }}>
-                <div style={{ fontFamily: 'var(--fn)', fontSize: 38, color: '#E07038', lineHeight: 1 }}>
+                <div style={{ fontFamily: 'var(--fe)', fontSize: 38, color: '#E07038', lineHeight: 1 }}>
                   {listing.price}{listing.currency === 'EUR' ? '€' : listing.currency}
                 </div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)', marginTop: 4 }}>par nuit</div>
               </div>
             )}
 
-            {isAffil ? (
+            {affiliUrl ? (
               <>
-                <a href={listing.affil_url as string} target="_blank" rel="noopener noreferrer" style={{ display: 'block', width: '100%', padding: '14px', borderRadius: 6, background: '#E07038', color: '#fff', fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 800, fontStyle: 'italic', letterSpacing: '0.06em', textTransform: 'uppercase', textAlign: 'center', boxShadow: '0 0 28px rgba(224,112,56,0.3)', marginBottom: '0.8rem' }}>
-                  Réserver via Airbnb →
+                <a href={affiliUrl} target="_blank" rel="noopener noreferrer sponsored" style={{ display: 'block', width: '100%', padding: '14px', borderRadius: 6, background: '#E07038', color: '#fff', fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 800, fontStyle: 'italic', letterSpacing: '0.06em', textTransform: 'uppercase', textAlign: 'center', boxShadow: '0 0 28px rgba(224,112,56,0.3)', marginBottom: '0.8rem' }}>
+                  Vérifier les disponibilités →
                 </a>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', textAlign: 'center', lineHeight: 1.5 }}>
-                  Lien affilié — vous serez redirigé vers Airbnb/Booking pour finaliser.
+                  Via Travelpayouts · Booking.com · Expedia · Hotels.com
                 </div>
               </>
             ) : (
-              <button style={{ width: '100%', padding: '14px', borderRadius: 6, background: '#E07038', color: '#fff', fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 800, fontStyle: 'italic', letterSpacing: '0.06em', textTransform: 'uppercase', boxShadow: '0 0 28px rgba(224,112,56,0.3)', cursor: 'pointer' }}>
-                Réserver →
-              </button>
+              <Link href={`/contact?logement=${encodeURIComponent(listing.title)}&lieu=${encodeURIComponent(listing.pros?.address || '')}`} style={{ display: 'block', width: '100%', padding: '14px', borderRadius: 6, background: 'var(--teal)', color: '#fff', fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 800, fontStyle: 'italic', letterSpacing: '0.06em', textTransform: 'uppercase', textAlign: 'center', boxShadow: '0 0 28px rgba(14,168,120,0.25)', marginBottom: '0.8rem', textDecoration: 'none' }}>
+                Réserver via NIKA →
+              </Link>
             )}
 
             {listing.pros?.phone && (
@@ -126,6 +166,110 @@ export default async function StayListingPage({ params }: Props) {
             <div style={{ marginTop: '1.2rem', padding: '0.8rem', background: 'rgba(224,112,56,0.04)', border: '1px solid rgba(224,112,56,0.12)', borderRadius: 8, fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', lineHeight: 1.6 }}>
               +30 XP à chaque réservation via NIKA
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── AVIS SECTION ──────────────────────────────────────────────── */}
+      <div style={{ maxWidth: 900, margin: '3rem auto 0', padding: '0 1.4rem' }}>
+        <div style={{ borderTop: '1px solid var(--bd)', paddingTop: '2.5rem' }}>
+
+          {/* Reviews header + stats */}
+          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: 16 }}>
+            <div>
+              <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(20px,3vw,30px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', margin: 0 }}>
+                Avis clients
+              </h2>
+              {statsData && statsData.review_count > 0 && (
+                <div style={{ display: 'flex', gap: 16, marginTop: 8, flexWrap: 'wrap' }}>
+                  <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td2)' }}>
+                    <strong style={{ fontFamily: 'var(--fe)', fontSize: 18, fontStyle: 'italic', color: 'var(--gold2)' }}>
+                      {statsData.avg_rating > 0 ? statsData.avg_rating.toFixed(1) : '—'}
+                    </strong>
+                    {statsData.avg_rating > 0 && <span style={{ color: 'var(--td3)' }}> ⭐</span>}
+                  </span>
+                  {statsData.avg_nika_score > 0 && (
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td2)' }}>
+                      NIKA <strong style={{ fontFamily: 'var(--fe)', fontSize: 18, fontStyle: 'italic', color: 'var(--az2)' }}>{statsData.avg_nika_score.toFixed(1)}</strong>/25
+                    </span>
+                  )}
+                  <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)' }}>
+                    {statsData.review_count} avis
+                  </span>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Review list */}
+          {reviewList.length === 0 ? (
+            <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '2rem', textAlign: 'center', marginBottom: '2rem' }}>
+              <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)', margin: 0 }}>
+                Aucun avis pour le moment. Soyez le premier !
+              </p>
+            </div>
+          ) : (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', marginBottom: '2rem' }}>
+              {reviewList.map(review => (
+                <div key={review.id} style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 8, padding: '1.1rem 1.2rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6, flexWrap: 'wrap', gap: 8 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+                      <span style={{ fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700, color: 'var(--td)' }}>{review.author_name}</span>
+                      {review.rating && (
+                        <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--gold2)' }}>⭐ {review.rating}</span>
+                      )}
+                      {review.sentiment && (
+                        <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, padding: '2px 7px', borderRadius: 20, background: `${SENTIMENT_COLOR[review.sentiment]}18`, border: `1px solid ${SENTIMENT_COLOR[review.sentiment]}40`, color: SENTIMENT_COLOR[review.sentiment] }}>
+                          {SENTIMENT_LABEL[review.sentiment] ?? review.sentiment}
+                        </span>
+                      )}
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                      {review.score_nika > 0 && (
+                        <span style={{ fontFamily: 'var(--fe)', fontSize: 14, fontStyle: 'italic', color: 'var(--az2)' }}>
+                          {review.score_nika.toFixed(1)}/25
+                        </span>
+                      )}
+                      <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>
+                        {new Date(review.review_date).toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' })}
+                      </span>
+                    </div>
+                  </div>
+                  {review.summary && (
+                    <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)', lineHeight: 1.6, margin: 0 }}>
+                      {review.summary}
+                    </p>
+                  )}
+                  {review.highlights && review.highlights.length > 0 && (
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 8 }}>
+                      {review.highlights.slice(0, 3).map((h, i) => (
+                        <span key={i} style={{ fontFamily: 'var(--fo)', fontSize: 10, padding: '2px 8px', borderRadius: 20, background: 'rgba(14,168,120,0.08)', border: '1px solid rgba(14,168,120,0.2)', color: 'var(--teal)' }}>
+                          {h}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Submit review CTA */}
+          <div style={{ background: 'linear-gradient(135deg, var(--bg2), var(--bg3))', border: '1px solid var(--bd2)', borderRadius: 10, padding: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}>
+            <div>
+              <div style={{ fontFamily: 'var(--fe)', fontSize: 16, fontWeight: 900, fontStyle: 'italic', color: 'var(--td)', marginBottom: 4 }}>
+                Vous avez séjourné ici ?
+              </div>
+              <div style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)' }}>
+                Votre avis est analysé par IA et aide d&apos;autres voyageurs NIKA.
+              </div>
+            </div>
+            <Link
+              href={`/contact?logement=${encodeURIComponent(listing.title)}&lieu=${encodeURIComponent(listing.pros?.address || '')}&type=avis`}
+              style={{ fontFamily: 'var(--fe)', fontSize: 13, fontWeight: 900, fontStyle: 'italic', letterSpacing: '0.06em', textTransform: 'uppercase', padding: '10px 20px', borderRadius: 6, background: 'var(--az)', color: '#fff', textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 0 20px rgba(0,148,212,0.2)' }}
+            >
+              Laisser un avis →
+            </Link>
           </div>
         </div>
       </div>

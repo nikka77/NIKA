@@ -22,8 +22,8 @@ export default function Onboarding() {
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(32px,6.5vw,62px)', fontWeight: 900, fontStyle: 'italic', letterSpacing: '0.02em', lineHeight: 0.95, textTransform: 'uppercase', color: 'var(--tl)', marginBottom: '0.7rem' }}>
             En 4 étapes
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 1, background: 'rgba(0,0,0,0.07)', marginTop: '1.8rem', borderRadius: 6, overflow: 'hidden' }}
-            className="max-md:grid-cols-2">
+          <div style={{ gap: 1, background: 'rgba(0,0,0,0.07)', marginTop: '1.8rem', borderRadius: 6, overflow: 'hidden' }}
+            className="g-4 max-md:grid-cols-2">
             {STEPS.map((step, i) => (
               <div key={i} style={{ background: 'var(--sand)', padding: '1.4rem 1.1rem', position: 'relative' }}>
                 <div style={{ fontFamily: 'var(--fe)', fontSize: 40, fontWeight: 900, fontStyle: 'italic', color: 'rgba(14,31,58,0.07)', lineHeight: 1, marginBottom: '0.2rem' }}>

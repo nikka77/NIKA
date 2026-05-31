@@ -32,7 +32,7 @@ export default function CommentCaMarchePage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: '1.8rem' }}>
           <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--az)', background: 'rgba(0,148,212,0.08)', border: '1px solid rgba(0,148,212,0.2)', borderRadius: 20, padding: '4px 12px' }}>Pour les clients</div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+        <div style={{ gap: '1rem' }} className="g-4 max-md:grid-cols-2 max-sm:grid-cols-1">
           {STEPS_CLIENT.map(step => (
             <div key={step.n} style={{ background: 'var(--bg2)', border: '1px solid rgba(0,148,212,0.15)', borderRadius: 12, padding: '1.6rem', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'var(--az)' }} />
@@ -50,7 +50,7 @@ export default function CommentCaMarchePage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: '1.8rem' }}>
           <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', background: 'rgba(212,160,23,0.08)', border: '1px solid rgba(212,160,23,0.2)', borderRadius: 20, padding: '4px 12px' }}>Pour les professionnels</div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }} className="max-md:grid-cols-2 max-sm:grid-cols-1">
+        <div style={{ gap: '1rem' }} className="g-4 max-md:grid-cols-2 max-sm:grid-cols-1">
           {STEPS_PRO.map(step => (
             <div key={step.n} style={{ background: 'var(--bg2)', border: '1px solid rgba(212,160,23,0.15)', borderRadius: 12, padding: '1.6rem', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'var(--gold)' }} />
@@ -66,7 +66,7 @@ export default function CommentCaMarchePage() {
       {/* Features */}
       <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 14, padding: '2rem', marginBottom: '3rem' }}>
         <h2 style={{ fontFamily: 'var(--fe)', fontSize: 24, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1.5rem' }}>Ce qui rend NIKA unique</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.2rem' }} className="max-sm:grid-cols-1">
+        <div style={{ gap: '1.2rem' }} className="g-3 max-sm:grid-cols-1">
           {[
             { icon: '📱', title: 'Gestion par SMS', desc: 'Les pros mettent à jour leur profil par SMS — sans app, sans PC.' },
             { icon: '⚡', title: 'Flash Deals', desc: 'Offres limitées en temps réel. Jusqu\'à -50% chez les pros locaux.' },

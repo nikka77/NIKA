@@ -48,7 +48,7 @@ export default async function ProStatsPage() {
       </h1>
 
       {/* Revenue */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2.5rem' }} className="max-sm:grid-cols-1">
+      <div style={{ gap: '1rem', marginBottom: '2.5rem' }} className="g-3 max-sm:grid-cols-1">
         {[
           { label: 'CA total', value: `${revenue.toFixed(0)}€`, color: 'var(--teal)', icon: '💰' },
           { label: 'CA ce mois', value: `${revenueMonth.toFixed(0)}€`, color: 'var(--az)', icon: '📅' },
@@ -66,7 +66,7 @@ export default async function ProStatsPage() {
       {/* Orders breakdown */}
       <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '1.5rem', marginBottom: '2rem' }}>
         <h2 style={{ fontFamily: 'var(--fe)', fontSize: 20, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1.2rem' }}>Commandes par statut</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.8rem' }} className="max-sm:grid-cols-2">
+        <div style={{ gap: '0.8rem' }} className="g-4 max-sm:grid-cols-2">
           {(Object.entries(ordersByStatus) as [string, number][]).map(([status, count]) => (
             <div key={status} style={{ textAlign: 'center', padding: '1rem', borderRadius: 8, background: `${statusColor[status]}08`, border: `1px solid ${statusColor[status]}20` }}>
               <div style={{ fontFamily: 'var(--fn)', fontSize: 32, color: statusColor[status], lineHeight: 1, marginBottom: '0.3rem' }}>{count}</div>
