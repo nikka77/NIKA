@@ -1,7 +1,20 @@
 import type { Metadata } from 'next';
+import fs from 'fs';
+import path from 'path';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import wowData from '@/data/wow_listings.json';
+
+function getSlugImages(slug: string): { cover?: string; gallery: string[] } {
+  const dir = path.join(process.cwd(), 'public', 'images', 'wow', slug);
+  if (!fs.existsSync(dir)) return { gallery: [] };
+  const files = fs.readdirSync(dir).sort();
+  const cover = files.includes('cover.jpg') ? `/images/wow/${slug}/cover.jpg` : undefined;
+  const gallery = files
+    .filter(f => f.startsWith('gallery-'))
+    .map(f => `/images/wow/${slug}/${f}`);
+  return { cover, gallery };
+}
 
 type WowListing = typeof wowData.listings[0];
 type Props = { params: Promise<{ slug: string }> };
@@ -88,17 +101,30 @@ export default async function StaySlugPage({ params }: Props) {
   const alsoOnBooking = (l as unknown as { also_on_booking?: boolean }).also_on_booking;
   const isDirect = l.booking_type === 'direct' || l.booking_type === 'direct_or_booking';
   const isAffil = l.booking_type === 'booking_affil';
+  const { cover, gallery } = getSlugImages(slug);
 
   return (
     <main style={{ paddingBottom: '4rem' }}>
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <div style={{ background: 'linear-gradient(135deg, #060F1E 0%, #0A1A30 60%, #071A12 100%)', padding: 'clamp(3rem,8vw,5rem) 1.4rem clamp(2rem,5vw,3.5rem)', borderBottom: '1px solid var(--bd)', position: 'relative', overflow: 'hidden' }}>
-        {/* Background icon */}
-        <div style={{ position: 'absolute', right: '5%', top: '50%', transform: 'translateY(-50%)', fontSize: 180, opacity: 0.04, pointerEvents: 'none', userSelect: 'none' }}>
-          {icon}
-        </div>
+      <div style={{ position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--bd)' }}>
+        {/* Background — photo or gradient */}
+        {cover ? (
+          <>
+            <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${cover})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(6,9,20,0.88) 0%,rgba(6,9,20,0.70) 60%,rgba(6,9,20,0.55) 100%)' }} />
+          </>
+        ) : (
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, #060F1E 0%, #0A1A30 60%, #071A12 100%)' }} />
+        )}
 
-        <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative' }}>
+        {/* Background icon (decorative, only when no photo) */}
+        {!cover && (
+          <div style={{ position: 'absolute', right: '5%', top: '50%', transform: 'translateY(-50%)', fontSize: 180, opacity: 0.04, pointerEvents: 'none', userSelect: 'none' }}>
+            {icon}
+          </div>
+        )}
+
+        <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative', padding: 'clamp(3rem,8vw,5rem) 1.4rem clamp(2rem,5vw,3.5rem)' }}>
           {/* Breadcrumb */}
           <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginBottom: '1.2rem', flexWrap: 'wrap' }}>
             <Link href="/stay" style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--td3)' }}>STAY</Link>
@@ -148,6 +174,28 @@ export default async function StaySlugPage({ params }: Props) {
           </div>
         </div>
       </div>
+
+      {/* ── GALERIE PHOTOS ───────────────────────────────────────────── */}
+      {gallery.length > 0 && (
+        <div style={{ borderBottom: '1px solid var(--bd)', background: 'var(--bg)' }}>
+          <div style={{
+            display: 'flex', gap: 4, overflowX: 'auto', padding: '4px 0',
+            scrollbarWidth: 'none',
+          }}>
+            {gallery.map((src, i) => (
+              <div key={i} style={{ flexShrink: 0, height: 220, width: 320, overflow: 'hidden' }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={src}
+                  alt={`${l.name} — photo ${i + 1}`}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* ── CONTENT + BOOKING SIDEBAR ────────────────────────────────── */}
       <div style={{ maxWidth: 900, margin: '3rem auto 0', padding: '0 1.4rem' }}>

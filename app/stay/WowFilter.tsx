@@ -12,6 +12,7 @@ interface Listing {
   rating: number;
   booking_type: string;
   price_per_night?: number;
+  coverImage?: string;
 }
 
 interface FilterTab {
@@ -119,10 +120,17 @@ export default function WowFilter({ listings }: { listings: Listing[] }) {
               style={{
                 textDecoration: 'none', display: 'flex', flexDirection: 'column',
                 background: 'var(--bg2)', border: `1px solid ${isDirect ? 'rgba(14,168,120,0.13)' : 'var(--bd)'}`,
-                borderRadius: 10, padding: '1rem 1.1rem', gap: 7,
+                borderRadius: 10, overflow: 'hidden', gap: 0,
                 animationDelay: `${(i % PAGE_SIZE) * 0.03}s`,
               }}
             >
+              {l.coverImage && (
+                <div style={{ height: 130, overflow: 'hidden', flexShrink: 0 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={l.coverImage} alt={l.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+                </div>
+              )}
+              <div style={{ padding: '1rem 1.1rem', display: 'flex', flexDirection: 'column', gap: 7, flex: 1 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <span style={{ fontSize: 24, lineHeight: 1 }}>{icon}</span>
                 <div style={{ display: 'flex', gap: 4, alignItems: 'center', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
@@ -158,6 +166,7 @@ export default function WowFilter({ listings }: { listings: Listing[] }) {
                 <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: isDirect ? 'var(--teal)' : '#E07038' }}>
                   {isDirect ? 'Via NIKA →' : 'Voir →'}
                 </span>
+              </div>
               </div>
             </Link>
           );

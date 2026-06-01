@@ -12,6 +12,7 @@ export interface HeroSlide {
   rating: number;
   booking_type: string;
   tagline: string;
+  coverImage?: string;
 }
 
 const BG_BY_TYPE: Record<string, { bg: string; accent: string }> = {
@@ -69,8 +70,15 @@ export default function HeroSlideshow({ slides }: { slides: HeroSlide[] }) {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Background */}
-      <div style={{ position: 'absolute', inset: 0, background: theme.bg, transition: 'background 0.6s ease' }} />
+      {/* Background — photo when available, gradient otherwise */}
+      {slide.coverImage ? (
+        <>
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${slide.coverImage})`, backgroundSize: 'cover', backgroundPosition: 'center', transition: 'opacity 0.6s ease' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(6,9,20,0.82) 0%,rgba(6,9,20,0.65) 60%,rgba(6,9,20,0.50) 100%)' }} />
+        </>
+      ) : (
+        <div style={{ position: 'absolute', inset: 0, background: theme.bg, transition: 'background 0.6s ease' }} />
+      )}
 
       {/* Grid texture */}
       <div style={{

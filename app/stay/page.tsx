@@ -1,10 +1,17 @@
 import type { Metadata } from 'next';
+import fs from 'fs';
+import path from 'path';
 import Link from 'next/link';
 import TravelpayoutsSearch from '@/components/TravelpayoutsSearch';
 import HeroSlideshow from './HeroSlideshow';
 import WowFilter from './WowFilter';
 import wowData from '@/data/wow_listings.json';
 import type { HeroSlide } from './HeroSlideshow';
+
+function getCoverImage(slug: string): string | undefined {
+  const rel = path.join('public', 'images', 'wow', slug, 'cover.jpg');
+  return fs.existsSync(path.join(process.cwd(), rel)) ? `/images/wow/${slug}/cover.jpg` : undefined;
+}
 
 export const metadata: Metadata = {
   title: 'Logement Insolite Monde entier — NIKA STAY',
@@ -37,6 +44,7 @@ const heroSlides: HeroSlide[] = wowData.listings
     rating: l.rating,
     booking_type: l.booking_type,
     tagline: ((l as unknown as { description_nika?: string }).description_nika ?? '').slice(0, 120) + '…',
+    coverImage: getCoverImage(l.slug),
   }));
 
 // Full listing list for filter section
@@ -49,6 +57,7 @@ const listings = wowData.listings.map(l => ({
   wow_score: l.wow_score,
   rating: l.rating,
   booking_type: l.booking_type,
+  coverImage: getCoverImage(l.slug),
 }));
 
 export default function StayPage() {
