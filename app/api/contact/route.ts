@@ -8,8 +8,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
   }
   const admin = createAdminClient();
-  if (admin) {
-    await admin.from('contact_messages').insert({ name, email, subject, message });
-  }
+  if (!admin) return NextResponse.json({ error: 'Service unavailable' }, { status: 503 });
+  const { error } = await admin.from('contact_messages').insert({ name, email, subject, message });
+  if (error) return NextResponse.json({ error: 'Failed to save message' }, { status: 500 });
   return NextResponse.json({ ok: true });
 }
