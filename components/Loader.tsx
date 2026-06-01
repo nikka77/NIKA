@@ -1,13 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 
-const MSGS = [
-  "DÉTECTION LOCALISATION...",
-  "NICE, CÔTE D'AZUR",
-  "CHARGEMENT 9 DOMAINES...",
-  "CONNEXION RÉSEAU NIKA...",
-  "NIKA ONLINE ✓",
-];
+const MSGS = ["CHARGEMENT NIKA...", "CÔTE D'AZUR", "NIKA ONLINE ✓"];
 
 export default function Loader() {
   const [status, setStatus] = useState(MSGS[0]);
@@ -21,6 +15,13 @@ export default function Loader() {
   const startRef = useRef<number | null>(null);
 
   useEffect(() => {
+    // Skip intro on repeat visits within the same session
+    if (sessionStorage.getItem('nika_loaded')) {
+      setHidden(true);
+      return;
+    }
+    sessionStorage.setItem('nika_loaded', '1');
+
     // Radar sweep animation
     function animR(ts: number) {
       if (!startRef.current) startRef.current = ts;
@@ -41,26 +42,26 @@ export default function Loader() {
     }
     rafRef.current = requestAnimationFrame(animR);
 
-    // Progress bar
+    // Progress bar — 1200ms total
     let prog = 0;
     const pi = setInterval(() => {
-      prog = Math.min(prog + 1.6, 100);
+      prog = Math.min(prog + 4, 100);
       setProgress(prog);
       if (prog >= 100) clearInterval(pi);
     }, 40);
 
-    // Status messages
+    // Status messages compressed to 1200ms
     MSGS.forEach((m, i) => {
       setTimeout(() => {
         setStatus(m);
-        if (i === 4) setLogoVisible(true);
-      }, i === 0 ? 0 : i * 480 + 300);
+        if (i === 2) setLogoVisible(true);
+      }, i * 320);
     });
 
     // Radar dots
-    [400, 700, 1000, 1300, 1600].forEach((delay, i) => {
+    [120, 250, 380, 520, 660].forEach((delay, i) => {
       setTimeout(() => {
-        setDotOpacities((prev) => {
+        setDotOpacities(prev => {
           const next = [...prev];
           next[i] = 1;
           return next;
@@ -68,11 +69,11 @@ export default function Loader() {
       }, delay);
     });
 
-    // Hide loader
+    // Hide at 1200ms
     const hideTimer = setTimeout(() => {
       setHidden(true);
       cancelAnimationFrame(rafRef.current);
-    }, 2800);
+    }, 1200);
 
     return () => {
       clearInterval(pi);
@@ -142,7 +143,7 @@ export default function Loader() {
         color: '#EBE5D6',
         opacity: logoVisible ? 1 : 0,
         transform: logoVisible ? 'scale(1)' : 'scale(0.88)',
-        transition: 'opacity 0.6s ease, transform 0.6s ease',
+        transition: 'opacity 0.4s ease, transform 0.4s ease',
       }}>
         NIKA
       </div>
@@ -155,7 +156,7 @@ export default function Loader() {
         <div style={{
           height: '100%', width: `${progress}%`,
           background: 'linear-gradient(90deg,#0094D4,#00C2FF)',
-          borderRadius: 1, transition: 'width 0.08s linear',
+          borderRadius: 1, transition: 'width 0.04s linear',
         }} />
       </div>
     </div>

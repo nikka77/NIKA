@@ -1,9 +1,9 @@
 import FadeIn from './FadeIn';
 
 const LEADERBOARD = [
-  { rank: 1, initials: 'MR', name: 'Marco_R06',  level: 'Légende · Niv.12',      xp: '8 420 xp', bg: 'rgba(212,160,23,0.12)', color: 'var(--gold2)', rankClass: 'g' },
-  { rank: 2, initials: 'SL', name: 'Sofia_Lm',   level: 'Insider · Niv.9',       xp: '6 180 xp', bg: 'rgba(0,148,212,0.1)',   color: 'var(--az2)',   rankClass: 's' },
-  { rank: 3, initials: 'AK', name: 'Akira_06',   level: 'Connaisseur · Niv.8',   xp: '4 950 xp', bg: 'rgba(14,168,120,0.1)', color: 'var(--teal)',  rankClass: 'b' },
+  { rank: 1, initials: '?', name: 'Sois le premier',        level: 'Inscris-toi · Rejoins la compétition', xp: '— xp', bg: 'rgba(212,160,23,0.12)', color: 'var(--gold2)', rankClass: 'g' },
+  { rank: 2, initials: '?', name: 'Gagne de l\'XP',         level: 'Avis · POIs · News · Commandes',       xp: '— xp', bg: 'rgba(0,148,212,0.1)',   color: 'var(--az2)',   rankClass: 's' },
+  { rank: 3, initials: '?', name: 'Classement actif bientôt', level: 'Défis hebdomadaires en cours',       xp: '— xp', bg: 'rgba(14,168,120,0.1)', color: 'var(--teal)',  rankClass: 'b' },
 ];
 
 const RANK_COLORS: Record<string, string> = { g: 'var(--gold2)', s: '#A0B8C8', b: '#C08050' };

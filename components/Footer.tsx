@@ -40,17 +40,8 @@ export default function Footer() {
             <p style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)', lineHeight: 1.6, maxWidth: 220, marginBottom: '1rem' }}>
               Le companion app de la vraie vie. Nice d&apos;abord, le monde ensuite.
             </p>
-            <div style={{ display: 'flex', gap: 8 }}>
-              {['𝕏', '📸', '💼'].map((icon, i) => (
-                <a key={i} href="#" style={{
-                  width: 30, height: 30, borderRadius: '50%',
-                  border: '1px solid var(--bd2)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 13, color: 'var(--td3)', transition: 'all 0.2s',
-                }}>
-                  {icon}
-                </a>
-              ))}
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>
+              Nice · Antibes · Cannes
             </div>
           </div>
 
