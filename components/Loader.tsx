@@ -7,7 +7,9 @@ export default function Loader() {
   const [status, setStatus] = useState(MSGS[0]);
   const [logoVisible, setLogoVisible] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(() =>
+    typeof window !== 'undefined' && !!sessionStorage.getItem('nika_loaded')
+  );
   const [dotOpacities, setDotOpacities] = useState([0, 0, 0, 0, 0]);
   const sweepRef = useRef<SVGLineElement>(null);
   const glowRef = useRef<SVGPathElement>(null);
