@@ -46,6 +46,36 @@ const ICON_BY_TYPE: Record<string, string> = {
 
 const PAGE_SIZE = 12;
 
+// Optimal crop position per type so the subject is well-framed
+const CARD_OBJECT_POS: Record<string, string> = {
+  'sous-marin':               '50% 50%',
+  'train-reconverti':         '50% 55%',
+  'transport-reconverti':     '50% 55%',
+  'bunker-militaire':         '50% 35%',
+  'suite-flottante':          '50% 45%',
+  'architecture-surréaliste': '50% 38%',
+  'silo-reconverti':          '50% 40%',
+  'maison-terre':             '50% 50%',
+  'earthship':                '50% 48%',
+  'grotte':                   '50% 45%',
+  'dome-adobe':               '50% 42%',
+  'eco-cabin':                '50% 42%',
+  'maison-architecturale':    '50% 45%',
+  'cabane-perchée':           '50% 38%',
+  'cabane-architecturale':    '50% 40%',
+  'cabane-organique':         '50% 42%',
+  'tiny-house':               '50% 45%',
+  'bambou':                   '50% 40%',
+  'villa-bali':               '50% 35%',
+  'dôme':                     '50% 42%',
+  'yourte':                   '50% 40%',
+  'moulin-reconverti':        '50% 50%',
+  'eco-farm':                 '50% 45%',
+  'grange-reconvertie':       '50% 45%',
+  'thématique':               '50% 40%',
+  'peniche':                  '50% 50%',
+};
+
 export default function WowFilter({ listings }: { listings: Listing[] }) {
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
@@ -125,9 +155,17 @@ export default function WowFilter({ listings }: { listings: Listing[] }) {
               }}
             >
               {l.coverImage && (
-                <div style={{ height: 130, overflow: 'hidden', flexShrink: 0 }}>
+                <div style={{ height: 185, overflow: 'hidden', flexShrink: 0 }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={l.coverImage} alt={l.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+                  <img
+                    src={l.coverImage}
+                    alt={l.name}
+                    style={{
+                      width: '100%', height: '100%', objectFit: 'cover', display: 'block',
+                      objectPosition: CARD_OBJECT_POS[l.type] ?? '50% 40%',
+                    }}
+                    loading="lazy"
+                  />
                 </div>
               )}
               <div style={{ padding: '1rem 1.1rem', display: 'flex', flexDirection: 'column', gap: 7, flex: 1 }}>
@@ -160,9 +198,16 @@ export default function WowFilter({ listings }: { listings: Listing[] }) {
                 📍 {l.city}, {l.country}
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 6, borderTop: '1px solid var(--bd)' }}>
-                {l.rating > 0 ? (
-                  <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--gold2)' }}>⭐ {l.rating}</span>
-                ) : <span />}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                  {l.rating > 0 && (
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--gold2)' }}>⭐ {l.rating}</span>
+                  )}
+                  {(l.price_per_night ?? 0) > 0 && (
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>
+                      dès <strong style={{ fontFamily: 'var(--fe)', fontSize: 13, fontStyle: 'italic', color: '#E07038' }}>{l.price_per_night}€</strong>/nuit
+                    </span>
+                  )}
+                </div>
                 <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: isDirect ? 'var(--teal)' : '#E07038' }}>
                   {isDirect ? 'Via NIKA →' : 'Voir →'}
                 </span>

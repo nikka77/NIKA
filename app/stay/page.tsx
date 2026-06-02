@@ -93,13 +93,13 @@ export const metadata: Metadata = {
 
 // WOW Exclusifs — 7 thèmes (grue-industrielle retirée : listing non importé)
 const WOW_EXCLUSIFS = [
-  { slug: 'silo-bunker',              icon: '☢️',  name: 'Bunker & Silo',        badge: '5/5', desc: 'Silos à missiles déclassifiés, bunkers WWII', from: 195, direct: true  },
-  { slug: 'sous-marin',               icon: '🤿',  name: 'Sous-Marin',           badge: '5/5', desc: 'Le Sous-Marin Jaune des Beatles · Nouvelle-Zélande', from: 380, direct: true  },
-  { slug: 'maison-hobbit',            icon: '🌿',  name: 'Maison Hobbit',        badge: '4/5', desc: 'Cob cottages sculptés · Earthships hors réseau', from: 145, direct: true  },
-  { slug: 'tour-observation',         icon: '🦅',  name: 'Tour & Birdbox',       badge: '4/5', desc: "Birdbox fjords · Gawthorne's Hut Top 10 Monde", from: 380, direct: true  },
+  { slug: 'silo-bunker',              icon: '☢️',  name: 'Bunker & Silo',        badge: '5/5', desc: 'Silos à missiles déclassifiés, bunkers WWII', from: 165, direct: true  },
+  { slug: 'sous-marin',               icon: '🤿',  name: 'Sous-Marin',           badge: '5/5', desc: 'Le Sous-Marin Jaune des Beatles · Nouvelle-Zélande', from: 280, direct: true  },
+  { slug: 'maison-hobbit',            icon: '🌿',  name: 'Maison Hobbit',        badge: '4/5', desc: 'Cob cottages sculptés · Earthships hors réseau', from: 120, direct: true  },
+  { slug: 'tour-observation',         icon: '🦅',  name: 'Tour & Birdbox',       badge: '4/5', desc: "Birdbox fjords · Gawthorne's Hut Top 10 Monde", from: 155, direct: true  },
   { slug: 'bulle-transparente',       icon: '🫧',  name: 'Bulle & Dôme',        badge: '3/5', desc: 'Dômes transparents sous les étoiles',          from: 290, direct: true  },
   { slug: 'architecture-surrealiste', icon: '🌀',  name: 'Architecture insolite',badge: '4/5', desc: 'OVNI · Sphère dans les rochers · Bloomhouse',  from: 285, direct: true  },
-  { slug: 'maison-terre',             icon: '🧱',  name: 'Maison en Terre',      badge: '4/5', desc: 'Grottes France · Earthship Taos · Naturhus',   from: 120, direct: true  },
+  { slug: 'maison-terre',             icon: '🧱',  name: 'Maison en Terre',      badge: '4/5', desc: 'Grottes France · Earthship Taos · Naturhus',   from: 130, direct: true  },
 ];
 
 // Coups de cœur NIKA — hero slideshow
@@ -137,6 +137,7 @@ const listings = wowData.listings.map(l => ({
   wow_score: l.wow_score,
   rating: l.rating,
   booking_type: l.booking_type,
+  price_per_night: (l as unknown as { price_per_night?: number }).price_per_night ?? 0,
   coverImage: getCardImage(l.slug),
 }));
 
@@ -152,9 +153,9 @@ export default function StayPage() {
           <div style={{ display: 'flex', gap: 28, flexWrap: 'wrap' }}>
             {[
               { val: '41', label: 'Logements WOW' },
-              { val: '11', label: 'Pays' },
-              { val: '37', label: 'Résa directes' },
-              { val: '4.93', label: 'Note moyenne' },
+              { val: '10', label: 'Pays' },
+              { val: '32', label: 'Résa directes' },
+              { val: '4.95', label: 'Note moyenne' },
             ].map(({ val, label }) => (
               <div key={label}>
                 <div style={{ fontFamily: 'var(--fe)', fontSize: 26, fontWeight: 900, fontStyle: 'italic', color: '#E07038', lineHeight: 1 }}>{val}</div>
