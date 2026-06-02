@@ -54,7 +54,7 @@ const CARD_IMAGE_OVERRIDE: Record<string, string | null> = {
   'gite-du-sorcier-harry-potter-colmar-alsace':  'gallery-01',  // cover = citrouilles → chambre Slytherin (thème = le produit)
   'domeland-adobe-hors-reseau-big-bend-texas':   null,           // cover = intérieur chambre AC, pas de photo extérieure
   'tiny-house-silo-grain-ellensburg-washington': null,           // cover = jacuzzi dans cour, pas de photo extérieure
-  'estiva-loft-hobbit-lapeyrugue-auvergne':      null,           // cover = collage basse qualité
+  'estiva-loft-hobbit-lapeyrugue-auvergne':      'gallery-05',  // cover = collage → façade hobbit de nuit illuminée
   // Meilleures photos disponibles en galerie
   'living-inn-dôme-volcanique-hawaii':           'gallery-02',  // cover = intérieur bain → dômes volcaniques extérieur
   'maison-hobbit-saint-affrique-occitanie':      'gallery-01',  // cover = terrasse → façade hobbit avec fenêtre ronde

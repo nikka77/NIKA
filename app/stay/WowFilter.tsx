@@ -46,6 +46,14 @@ const ICON_BY_TYPE: Record<string, string> = {
 
 const PAGE_SIZE = 12;
 
+// Per-slug overrides quand le cadrage par type ne suffit pas
+const CARD_OBJECT_POS_SLUG: Record<string, string> = {
+  'ovni-guadalupe-vallee-baja':             '50% 72%',  // UFO nuit — montrer corps vert + hublots + sol
+  'bloomhouse-austin-texas':               '50% 35%',  // façade blanche — centrer le bâtiment
+  'birdbox-fordefjord-view-forde-norvege': '50% 50%',  // box sur la colline
+  'gawthornes-hut-top10-monde-mudgee-australie': '50% 42%',
+};
+
 // Optimal crop position per type so the subject is well-framed
 const CARD_OBJECT_POS: Record<string, string> = {
   'sous-marin':               '50% 50%',
@@ -162,7 +170,7 @@ export default function WowFilter({ listings }: { listings: Listing[] }) {
                     alt={l.name}
                     style={{
                       width: '100%', height: '100%', objectFit: 'cover', display: 'block',
-                      objectPosition: CARD_OBJECT_POS[l.type] ?? '50% 40%',
+                      objectPosition: CARD_OBJECT_POS_SLUG[l.slug] ?? CARD_OBJECT_POS[l.type] ?? '50% 40%',
                     }}
                     loading="lazy"
                   />

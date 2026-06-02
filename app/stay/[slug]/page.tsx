@@ -5,11 +5,38 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import wowData from '@/data/wow_listings.json';
 
+// Covers incorrectes — utiliser une gallery ou null (pas d'image)
+const COVER_OVERRIDE: Record<string, string | null> = {
+  'anthenea-suite-flottante-perros-guirec':       null,          // cartoon Airbnb
+  'silo-missiles-bunker-atlas-f-roswell':         'gallery-01',  // photo de soirée
+  'sphere-rochers-joshua-tree-californie':        'gallery-02',  // intérieur salon
+  'tiny-house-silo-grain-ellensburg-washington':  null,          // jacuzzi cour clôturée
+  'domeland-adobe-hors-reseau-big-bend-texas':    null,          // chambre + clim
+  'estiva-loft-hobbit-lapeyrugue-auvergne':       'gallery-05',  // façade hobbit de nuit
+  'gite-du-sorcier-harry-potter-colmar-alsace':   'gallery-01',  // citrouilles → chambre Slytherin
+  'nid-dragon-toboggan-katana-villa-amed-bali':   'gallery-01',  // coucher de soleil flou → dragon+montagne
+  'ovni-guadalupe-vallee-baja':                   'gallery-01',  // nuit étoilée → UFO crépuscule+vallée
+  'living-inn-dôme-volcanique-hawaii':            'gallery-02',  // intérieur bain → dômes extérieur
+  'maison-hobbit-saint-affrique-occitanie':       'gallery-01',  // terrasse → façade hobbit
+};
+
 function getSlugImages(slug: string): { cover?: string; gallery: string[] } {
   const dir = path.join(process.cwd(), 'public', 'images', 'wow', slug);
   if (!fs.existsSync(dir)) return { gallery: [] };
   const files = fs.readdirSync(dir).sort();
-  const cover = files.includes('cover.jpg') ? `/images/wow/${slug}/cover.jpg` : undefined;
+
+  let cover: string | undefined;
+  if (slug in COVER_OVERRIDE) {
+    const ov = COVER_OVERRIDE[slug];
+    if (ov !== null) {
+      const ovPath = path.join(dir, `${ov}.jpg`);
+      cover = fs.existsSync(ovPath) ? `/images/wow/${slug}/${ov}.jpg` : undefined;
+    }
+    // null → pas de cover (gradient)
+  } else {
+    cover = files.includes('cover.jpg') ? `/images/wow/${slug}/cover.jpg` : undefined;
+  }
+
   const gallery = files
     .filter(f => f.startsWith('gallery-'))
     .map(f => `/images/wow/${slug}/${f}`);
