@@ -11,7 +11,7 @@ import type { HeroSlide } from './HeroSlideshow';
 // Use gallery-XX instead of cover.jpg when cover is wrong or gallery has better composition
 const HERO_IMAGE_OVERRIDE: Record<string, string> = {
   'ovni-guadalupe-vallee-baja':              'gallery-01',  // cover=nuit étoilée, gallery-01=UFO crépuscule + vallée (MEILLEUR)
-  'living-inn-dôme-volcanique-hawaii':       'gallery-02',  // cover=intérieur bain, gallery-02=dômes volcaniques extérieur spectaculaire
+  'living-inn-dome-volcanique-hawaii':       'gallery-02',  // cover=intérieur bain, gallery-02=dômes volcaniques extérieur spectaculaire
   'maison-hobbit-saint-affrique-occitanie':  'gallery-01',  // cover=terrasse sans maison, gallery-01=façade hobbit+fenêtre ronde+bac
 };
 
@@ -38,7 +38,7 @@ const HERO_OBJECT_POS: Record<string, string> = {
   'naturhus-bio-hors-reseau-bralande-suede':          '50% 50%',
   'bloomhouse-austin-texas':                          '50% 40%',
   'maison-hobbit-saint-affrique-occitanie':           '50% 55%',
-  'living-inn-dôme-volcanique-hawaii':               '50% 45%',
+  'living-inn-dome-volcanique-hawaii':               '50% 45%',
   'grotte-nid2reve-savignac-perigord':               '50% 55%',
   'caboose-train-jacuzzi-eureka-springs':            '50% 40%',
   'birdbox-lotsbergskaara-lote-nordfjord-norvege':   '50% 48%',
@@ -56,7 +56,7 @@ const CARD_IMAGE_OVERRIDE: Record<string, string | null> = {
   'tiny-house-silo-grain-ellensburg-washington': null,           // cover = jacuzzi dans cour, pas de photo extérieure
   'estiva-loft-hobbit-lapeyrugue-auvergne':      'gallery-05',  // cover = collage → façade hobbit de nuit illuminée
   // Meilleures photos disponibles en galerie
-  'living-inn-dôme-volcanique-hawaii':           'gallery-02',  // cover = intérieur bain → dômes volcaniques extérieur
+  'living-inn-dome-volcanique-hawaii':           'gallery-02',  // cover = intérieur bain → dômes volcaniques extérieur
   'maison-hobbit-saint-affrique-occitanie':      'gallery-01',  // cover = terrasse → façade hobbit avec fenêtre ronde
   'nid-dragon-toboggan-katana-villa-amed-bali':  'gallery-01',  // cover = coucher de soleil sombre → dragon statue + montagne Bali
 };

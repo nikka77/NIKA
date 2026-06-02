@@ -16,7 +16,7 @@ const COVER_OVERRIDE: Record<string, string | null> = {
   'gite-du-sorcier-harry-potter-colmar-alsace':   'gallery-01',  // citrouilles → chambre Slytherin
   'nid-dragon-toboggan-katana-villa-amed-bali':   'gallery-01',  // coucher de soleil flou → dragon+montagne
   'ovni-guadalupe-vallee-baja':                   'gallery-01',  // nuit étoilée → UFO crépuscule+vallée
-  'living-inn-dôme-volcanique-hawaii':            'gallery-02',  // intérieur bain → dômes extérieur
+  'living-inn-dome-volcanique-hawaii':            'gallery-02',  // intérieur bain → dômes extérieur
   'maison-hobbit-saint-affrique-occitanie':       'gallery-01',  // terrasse → façade hobbit
 };
 
