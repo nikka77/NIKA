@@ -13,6 +13,7 @@ export interface HeroSlide {
   booking_type: string;
   tagline: string;
   coverImage?: string;
+  objectPosition?: string;
 }
 
 const BG_BY_TYPE: Record<string, { bg: string; accent: string }> = {
@@ -66,15 +67,22 @@ export default function HeroSlideshow({ slides }: { slides: HeroSlide[] }) {
 
   return (
     <div
-      style={{ position: 'relative', minHeight: 520, overflow: 'hidden' }}
+      style={{ position: 'relative', minHeight: 600, overflow: 'hidden' }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
       {/* Background — photo when available, gradient otherwise */}
       {slide.coverImage ? (
         <>
-          <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${slide.coverImage})`, backgroundSize: 'cover', backgroundPosition: 'center', transition: 'opacity 0.6s ease' }} />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(6,9,20,0.82) 0%,rgba(6,9,20,0.65) 60%,rgba(6,9,20,0.50) 100%)' }} />
+          <div style={{
+            position: 'absolute', inset: 0,
+            backgroundImage: `url(${slide.coverImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: slide.objectPosition ?? '50% 40%',
+            transition: 'opacity 0.6s ease',
+          }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg,rgba(4,8,18,0.88) 0%,rgba(4,8,18,0.60) 50%,rgba(4,8,18,0.35) 100%)' }} />
+          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '45%', background: 'linear-gradient(to top,rgba(4,8,18,0.75) 0%,transparent 100%)', pointerEvents: 'none' }} />
         </>
       ) : (
         <div style={{ position: 'absolute', inset: 0, background: theme.bg, transition: 'background 0.6s ease' }} />
@@ -100,7 +108,7 @@ export default function HeroSlideshow({ slides }: { slides: HeroSlide[] }) {
         position: 'relative', zIndex: 1,
         maxWidth: 1100, margin: '0 auto',
         padding: 'clamp(4rem,8vw,6rem) 1.4rem clamp(4rem,7vw,5.5rem)',
-        minHeight: 520, display: 'flex', flexDirection: 'column', justifyContent: 'center',
+        minHeight: 600, display: 'flex', flexDirection: 'column', justifyContent: 'center',
         opacity: animating ? 0 : 1,
         transform: animating ? 'translateY(10px)' : 'translateY(0)',
         transition: 'opacity 0.35s ease, transform 0.35s ease',
