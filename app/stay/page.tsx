@@ -15,13 +15,11 @@ const HERO_IMAGE_OVERRIDE: Record<string, string> = {
   'maison-hobbit-saint-affrique-occitanie':  'gallery-01',  // cover=terrasse sans maison, gallery-01=façade hobbit+fenêtre ronde+bac
 };
 
-// Skip these from hero slideshow — cover.jpg is wrong (party photo, cartoon, intérieur non ambiancé)
+// Skip these from hero slideshow — cover est mauvaise et pas d'override disponible
 const HERO_SKIP = new Set([
-  'silo-missiles-bunker-atlas-f-roswell',          // cover = photo de soirée couple
-  'sphere-rochers-joshua-tree-californie',          // cover = intérieur salon
-  'anthenea-suite-flottante-perros-guirec',         // cover = cartoon Airbnb
-  'tiny-house-silo-grain-ellensburg-washington',   // cover = jacuzzi dans cour clôturée, pas de photo extérieure
-  'earthship-taos-mesa-nouveau-mexique',            // cover = intérieur serre (meilleur en card qu'en hero plein écran)
+  'silo-missiles-bunker-atlas-f-roswell',    // cover = photo de soirée couple
+  'sphere-rochers-joshua-tree-californie',   // cover = intérieur salon
+  'earthship-taos-mesa-nouveau-mexique',     // cover = intérieur serre (meilleur en card qu'en hero plein écran)
 ]);
 
 // Per-slug background-position for optimal subject framing
@@ -45,44 +43,45 @@ const HERO_OBJECT_POS: Record<string, string> = {
   'peniche-arche-noe-somme-pont-remy':               '50% 45%',
 };
 
-// For WowFilter cards: use gallery image when cover.jpg is wrong, or null to hide image
+// For WowFilter cards: use gallery image when cover is wrong
 const CARD_IMAGE_OVERRIDE: Record<string, string | null> = {
-  // Covers complètement faux (photo de soirée, cartoon, intérieur banal)
   'silo-missiles-bunker-atlas-f-roswell':        'gallery-01',  // cover = photo de soirée couple
-  'anthenea-suite-flottante-perros-guirec':       null,           // cover = cartoon Airbnb
   'sphere-rochers-joshua-tree-californie':        'gallery-02',  // cover = intérieur salon → extérieur sphère
-  'gite-du-sorcier-harry-potter-colmar-alsace':  'gallery-01',  // cover = citrouilles → chambre Slytherin (thème = le produit)
-  'domeland-adobe-hors-reseau-big-bend-texas':   null,           // cover = intérieur chambre AC, pas de photo extérieure
-  'tiny-house-silo-grain-ellensburg-washington': null,           // cover = jacuzzi dans cour, pas de photo extérieure
+  'gite-du-sorcier-harry-potter-colmar-alsace':  'gallery-01',  // cover = citrouilles → chambre Slytherin
   'estiva-loft-hobbit-lapeyrugue-auvergne':      'gallery-05',  // cover = collage → façade hobbit de nuit illuminée
-  // Meilleures photos disponibles en galerie
   'living-inn-dome-volcanique-hawaii':           'gallery-02',  // cover = intérieur bain → dômes volcaniques extérieur
   'maison-hobbit-saint-affrique-occitanie':      'gallery-01',  // cover = terrasse → façade hobbit avec fenêtre ronde
   'nid-dragon-toboggan-katana-villa-amed-bali':  'gallery-01',  // cover = coucher de soleil sombre → dragon statue + montagne Bali
 };
 
 function getCoverImage(slug: string): string | undefined {
-  const rel = path.join('public', 'images', 'wow', slug, 'cover.jpg');
-  return fs.existsSync(path.join(process.cwd(), rel)) ? `/images/wow/${slug}/cover.jpg` : undefined;
+  for (const ext of ['jpg', 'jpeg', 'png']) {
+    const rel = path.join('public', 'images', 'wow', slug, `cover.${ext}`);
+    if (fs.existsSync(path.join(process.cwd(), rel))) return `/images/wow/${slug}/cover.${ext}`;
+  }
+  return undefined;
+}
+
+function findImageFile(slug: string, base: string): string | undefined {
+  for (const ext of ['jpg', 'jpeg', 'png']) {
+    const rel = path.join('public', 'images', 'wow', slug, `${base}.${ext}`);
+    if (fs.existsSync(path.join(process.cwd(), rel))) return `/images/wow/${slug}/${base}.${ext}`;
+  }
+  return undefined;
 }
 
 function getCardImage(slug: string): string | undefined {
   if (slug in CARD_IMAGE_OVERRIDE) {
     const override = CARD_IMAGE_OVERRIDE[slug];
     if (override === null) return undefined;
-    const rel = path.join('public', 'images', 'wow', slug, `${override}.jpg`);
-    if (fs.existsSync(path.join(process.cwd(), rel))) return `/images/wow/${slug}/${override}.jpg`;
-    return undefined;
+    return findImageFile(slug, override);
   }
   return getCoverImage(slug);
 }
 
 function getHeroImage(slug: string): string | undefined {
-  const filename = HERO_IMAGE_OVERRIDE[slug] ? `${HERO_IMAGE_OVERRIDE[slug]}.jpg` : 'cover.jpg';
-  const rel = path.join('public', 'images', 'wow', slug, filename);
-  if (fs.existsSync(path.join(process.cwd(), rel))) return `/images/wow/${slug}/${filename}`;
-  // Fallback to cover.jpg
-  return getCoverImage(slug);
+  const base = HERO_IMAGE_OVERRIDE[slug] ?? 'cover';
+  return findImageFile(slug, base) ?? getCoverImage(slug);
 }
 
 export const metadata: Metadata = {

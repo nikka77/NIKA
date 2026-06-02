@@ -7,11 +7,8 @@ import wowData from '@/data/wow_listings.json';
 
 // Covers incorrectes — utiliser une gallery ou null (pas d'image)
 const COVER_OVERRIDE: Record<string, string | null> = {
-  'anthenea-suite-flottante-perros-guirec':       null,          // cartoon Airbnb
   'silo-missiles-bunker-atlas-f-roswell':         'gallery-01',  // photo de soirée
   'sphere-rochers-joshua-tree-californie':        'gallery-02',  // intérieur salon
-  'tiny-house-silo-grain-ellensburg-washington':  null,          // jacuzzi cour clôturée
-  'domeland-adobe-hors-reseau-big-bend-texas':    null,          // chambre + clim
   'estiva-loft-hobbit-lapeyrugue-auvergne':       'gallery-05',  // façade hobbit de nuit
   'gite-du-sorcier-harry-potter-colmar-alsace':   'gallery-01',  // citrouilles → chambre Slytherin
   'nid-dragon-toboggan-katana-villa-amed-bali':   'gallery-01',  // coucher de soleil flou → dragon+montagne
@@ -19,6 +16,15 @@ const COVER_OVERRIDE: Record<string, string | null> = {
   'living-inn-dome-volcanique-hawaii':            'gallery-02',  // intérieur bain → dômes extérieur
   'maison-hobbit-saint-affrique-occitanie':       'gallery-01',  // terrasse → façade hobbit
 };
+
+const IMG_EXTS = ['jpg', 'jpeg', 'png'] as const;
+
+function findFile(dir: string, base: string): string | undefined {
+  for (const ext of IMG_EXTS) {
+    if (fs.existsSync(path.join(dir, `${base}.${ext}`))) return `${base}.${ext}`;
+  }
+  return undefined;
+}
 
 function getSlugImages(slug: string): { cover?: string; gallery: string[] } {
   const dir = path.join(process.cwd(), 'public', 'images', 'wow', slug);
@@ -29,12 +35,13 @@ function getSlugImages(slug: string): { cover?: string; gallery: string[] } {
   if (slug in COVER_OVERRIDE) {
     const ov = COVER_OVERRIDE[slug];
     if (ov !== null) {
-      const ovPath = path.join(dir, `${ov}.jpg`);
-      cover = fs.existsSync(ovPath) ? `/images/wow/${slug}/${ov}.jpg` : undefined;
+      const file = findFile(dir, ov);
+      if (file) cover = `/images/wow/${slug}/${file}`;
     }
     // null → pas de cover (gradient)
   } else {
-    cover = files.includes('cover.jpg') ? `/images/wow/${slug}/cover.jpg` : undefined;
+    const file = findFile(dir, 'cover');
+    if (file) cover = `/images/wow/${slug}/${file}`;
   }
 
   const gallery = files
