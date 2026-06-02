@@ -8,14 +8,86 @@ import WowFilter from './WowFilter';
 import wowData from '@/data/wow_listings.json';
 import type { HeroSlide } from './HeroSlideshow';
 
+// Use gallery-XX instead of cover.jpg when cover is wrong or gallery has better composition
+const HERO_IMAGE_OVERRIDE: Record<string, string> = {
+  'ovni-guadalupe-vallee-baja':              'gallery-01',  // cover=nuit étoilée, gallery-01=UFO crépuscule + vallée (MEILLEUR)
+  'living-inn-dôme-volcanique-hawaii':       'gallery-02',  // cover=intérieur bain, gallery-02=dômes volcaniques extérieur spectaculaire
+  'maison-hobbit-saint-affrique-occitanie':  'gallery-01',  // cover=terrasse sans maison, gallery-01=façade hobbit+fenêtre ronde+bac
+};
+
+// Skip these from hero slideshow — cover.jpg is wrong (party photo, cartoon, intérieur non ambiancé)
+const HERO_SKIP = new Set([
+  'silo-missiles-bunker-atlas-f-roswell',          // cover = photo de soirée couple
+  'sphere-rochers-joshua-tree-californie',          // cover = intérieur salon
+  'anthenea-suite-flottante-perros-guirec',         // cover = cartoon Airbnb
+  'tiny-house-silo-grain-ellensburg-washington',   // cover = jacuzzi dans cour clôturée, pas de photo extérieure
+  'earthship-taos-mesa-nouveau-mexique',            // cover = intérieur serre (meilleur en card qu'en hero plein écran)
+]);
+
+// Per-slug background-position for optimal subject framing
+const HERO_OBJECT_POS: Record<string, string> = {
+  'ovni-guadalupe-vallee-baja':                       '50% 40%',
+  'bubble-etoile-stargazing-agnes-victoria-australie':'50% 45%',
+  'birdbox-fordefjord-view-forde-norvege':            '50% 50%',
+  'grand-cheval-fjord-sunnfjord-norvege':             '50% 50%',
+  'wee-nook-hobbit-hole-tennessee':                   '50% 55%',
+  'cob-cottage-mayne-island-canada':                  '50% 50%',
+  'sous-marin-jaune-nouvelle-zelande':                '50% 55%',
+  'gawthornes-hut-top10-monde-mudgee-australie':      '50% 45%',
+  'express-voiture-salon-14630-normandie':            '50% 55%',
+  'naturhus-bio-hors-reseau-bralande-suede':          '50% 50%',
+  'bloomhouse-austin-texas':                          '50% 40%',
+  'maison-hobbit-saint-affrique-occitanie':           '50% 55%',
+  'living-inn-dôme-volcanique-hawaii':               '50% 45%',
+  'grotte-nid2reve-savignac-perigord':               '50% 55%',
+  'caboose-train-jacuzzi-eureka-springs':            '50% 40%',
+  'birdbox-lotsbergskaara-lote-nordfjord-norvege':   '50% 48%',
+  'peniche-arche-noe-somme-pont-remy':               '50% 45%',
+};
+
+// For WowFilter cards: use gallery image when cover.jpg is wrong, or null to hide image
+const CARD_IMAGE_OVERRIDE: Record<string, string | null> = {
+  // Covers complètement faux (photo de soirée, cartoon, intérieur banal)
+  'silo-missiles-bunker-atlas-f-roswell':        'gallery-01',  // cover = photo de soirée couple
+  'anthenea-suite-flottante-perros-guirec':       null,           // cover = cartoon Airbnb
+  'sphere-rochers-joshua-tree-californie':        'gallery-02',  // cover = intérieur salon → extérieur sphère
+  'gite-du-sorcier-harry-potter-colmar-alsace':  'gallery-01',  // cover = citrouilles → chambre Slytherin (thème = le produit)
+  'domeland-adobe-hors-reseau-big-bend-texas':   null,           // cover = intérieur chambre AC, pas de photo extérieure
+  'tiny-house-silo-grain-ellensburg-washington': null,           // cover = jacuzzi dans cour, pas de photo extérieure
+  'estiva-loft-hobbit-lapeyrugue-auvergne':      null,           // cover = collage basse qualité
+  // Meilleures photos disponibles en galerie
+  'living-inn-dôme-volcanique-hawaii':           'gallery-02',  // cover = intérieur bain → dômes volcaniques extérieur
+  'maison-hobbit-saint-affrique-occitanie':      'gallery-01',  // cover = terrasse → façade hobbit avec fenêtre ronde
+  'nid-dragon-toboggan-katana-villa-amed-bali':  'gallery-01',  // cover = coucher de soleil sombre → dragon statue + montagne Bali
+};
+
 function getCoverImage(slug: string): string | undefined {
   const rel = path.join('public', 'images', 'wow', slug, 'cover.jpg');
   return fs.existsSync(path.join(process.cwd(), rel)) ? `/images/wow/${slug}/cover.jpg` : undefined;
 }
 
+function getCardImage(slug: string): string | undefined {
+  if (slug in CARD_IMAGE_OVERRIDE) {
+    const override = CARD_IMAGE_OVERRIDE[slug];
+    if (override === null) return undefined;
+    const rel = path.join('public', 'images', 'wow', slug, `${override}.jpg`);
+    if (fs.existsSync(path.join(process.cwd(), rel))) return `/images/wow/${slug}/${override}.jpg`;
+    return undefined;
+  }
+  return getCoverImage(slug);
+}
+
+function getHeroImage(slug: string): string | undefined {
+  const filename = HERO_IMAGE_OVERRIDE[slug] ? `${HERO_IMAGE_OVERRIDE[slug]}.jpg` : 'cover.jpg';
+  const rel = path.join('public', 'images', 'wow', slug, filename);
+  if (fs.existsSync(path.join(process.cwd(), rel))) return `/images/wow/${slug}/${filename}`;
+  // Fallback to cover.jpg
+  return getCoverImage(slug);
+}
+
 export const metadata: Metadata = {
   title: 'Logement Insolite Monde entier — NIKA STAY',
-  description: 'Bunkers, sous-marins, maisons hobbit, bulles transparentes, chambres sous-marines. Les hébergements WOW les plus rares du monde.',
+  description: 'Bunkers, sous-marins, maisons hobbit, bulles transparentes, chambres sous-marines. 41 hébergements WOW sélectionnés par NIKA.',
   keywords: ['logement insolite', 'maison bulle location', 'chambre sous-marine', 'dormir dans un bunker', 'maison hobbit location', 'hébergement insolite monde'],
 };
 
@@ -30,10 +102,16 @@ const WOW_EXCLUSIFS = [
   { slug: 'maison-terre',             icon: '🧱',  name: 'Maison en Terre',      badge: '4/5', desc: 'Grottes France · Earthship Taos · Naturhus',   from: 120, direct: true  },
 ];
 
-// Coups de cœur NIKA — top listings for hero slideshow (wow_score ≥ 24, sorted desc)
+// Coups de cœur NIKA — hero slideshow
+// Seuil 22 pour inclure bubble/birdbox/hobbit. OVNI passe en premier (meilleure image).
+// Listings avec mauvaises covers (photo de soirée, cartoon, intérieur) sont exclus.
 const heroSlides: HeroSlide[] = wowData.listings
-  .filter(l => l.wow_score >= 24)
-  .sort((a, b) => b.wow_score - a.wow_score)
+  .filter(l => l.wow_score >= 22 && !HERO_SKIP.has(l.slug))
+  .sort((a, b) => {
+    if (a.slug === 'ovni-guadalupe-vallee-baja') return -1;
+    if (b.slug === 'ovni-guadalupe-vallee-baja') return 1;
+    return b.wow_score - a.wow_score;
+  })
   .map(l => ({
     slug: l.slug,
     name: l.name,
@@ -44,10 +122,12 @@ const heroSlides: HeroSlide[] = wowData.listings
     rating: l.rating,
     booking_type: l.booking_type,
     tagline: ((l as unknown as { description_nika?: string }).description_nika ?? '').slice(0, 120) + '…',
-    coverImage: getCoverImage(l.slug),
-  }));
+    coverImage: getHeroImage(l.slug),
+    objectPosition: HERO_OBJECT_POS[l.slug],
+  }))
+  .filter(s => !!s.coverImage);
 
-// Full listing list for filter section
+// Full listing list for filter section — use getCardImage to handle bad covers
 const listings = wowData.listings.map(l => ({
   slug: l.slug,
   name: l.name,
@@ -57,7 +137,7 @@ const listings = wowData.listings.map(l => ({
   wow_score: l.wow_score,
   rating: l.rating,
   booking_type: l.booking_type,
-  coverImage: getCoverImage(l.slug),
+  coverImage: getCardImage(l.slug),
 }));
 
 export default function StayPage() {
@@ -71,7 +151,7 @@ export default function StayPage() {
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', gap: '2rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', gap: 28, flexWrap: 'wrap' }}>
             {[
-              { val: '57', label: 'Logements WOW' },
+              { val: '41', label: 'Logements WOW' },
               { val: '11', label: 'Pays' },
               { val: '37', label: 'Résa directes' },
               { val: '4.93', label: 'Note moyenne' },
@@ -156,7 +236,7 @@ export default function StayPage() {
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: '1.6rem', flexWrap: 'wrap' }}>
             <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', margin: 0 }}>
-              Les 57 WOW
+              Les 41 WOW
             </h2>
             <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 600, color: 'var(--td3)' }}>
               sélection complète · cliquez sur un filtre
