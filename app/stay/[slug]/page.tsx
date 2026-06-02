@@ -276,7 +276,7 @@ export default async function StaySlugPage({ params }: Props) {
                         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                           <span style={{ fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700, color: 'var(--td)' }}>{rev.author}</span>
                           <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--gold2)' }}>
-                            {'⭐'.repeat(rev.stars)}
+                            {'⭐'.repeat((rev as { stars?: number; rating?: number }).stars ?? (rev as { stars?: number; rating?: number }).rating ?? 5)}
                           </span>
                         </div>
                         <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>{rev.date}</span>
