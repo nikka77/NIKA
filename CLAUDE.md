@@ -5,6 +5,10 @@ NIKA est une super-app Côte d'Azur (Next.js 16 + Supabase + Tailwind).
 9 domaines : FOOD, AUTO, STAY, AZUR, RENT, SERV, LEARN, SEC, NEWS.
 Agent IA NIKO pour VTC/livraison/courses (Claude API streaming).
 
+## Carte du projet (graphify)
+
+Avant de lire des fichiers, consulte d'abord `graphify-out/GRAPH_REPORT.md` pour comprendre la structure et n'ouvrir que le strict nécessaire. Pour mettre à jour la carte après des changements : `node scripts/graphify.mjs --update`.
+
 ## Skills à consulter avant chaque tâche
 - **Design** → `.claude/skills/NIKA_DESIGN.md` (CSS variables, fonts, grilles, conventions visuelles)
 - **Architecture Next.js** → `.claude/skills/NIKA_NEXT.md` (Server vs Client, patterns RSC, SEO)

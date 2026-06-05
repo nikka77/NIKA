@@ -16,3 +16,8 @@ out/
 # debug
 npm-debug.log*
 .vercel
+
+# graphify (généré localement)
+graphify-out/
+nika_images_corrected.sh
+nika_patch_*.sh
