@@ -1,16 +1,14 @@
-/**
- * scripts/scrape-availability.js
+// ──────────────────────────────────────────────
+// scripts/scrape-availability.js
  *
  * Récupère les disponibilités Airbnb via les feeds iCal publics.
  * Aucune dépendance navigateur — simple fetch HTTP.
  *
  * INSTALL :
  *   npm install @supabase/supabase-js node-fetch
- *
- * CRON (crontab -e) :
+// CRON (crontab -e) :
  *   0 * /6 * * * cd /home/ubuntu/NIKA && node scripts/scrape-availability.js >> /var/log/nika-calendar.log 2>&1
- *
- * USAGE :
+// USAGE :
  *   node scripts/scrape-availability.js
  *   node scripts/scrape-availability.js --slug=sous-marin-jaune-nouvelle-zelande
  *   node scripts/scrape-availability.js --months=6
