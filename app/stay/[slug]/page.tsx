@@ -19,9 +19,10 @@ const COVER_OVERRIDE: Record<string, string | null> = {
 
 const IMG_EXTS = ['jpg', 'jpeg', 'png'] as const;
 
-function findFile(dir: string, base: string): string | undefined {
+// Cherche dans la liste déjà lue (évite les fs.existsSync dynamiques → warnings Turbopack)
+function findInList(files: string[], base: string): string | undefined {
   for (const ext of IMG_EXTS) {
-    if (fs.existsSync(path.join(dir, `${base}.${ext}`))) return `${base}.${ext}`;
+    if (files.includes(`${base}.${ext}`)) return `${base}.${ext}`;
   }
   return undefined;
 }
@@ -35,12 +36,12 @@ function getSlugImages(slug: string): { cover?: string; gallery: string[] } {
   if (slug in COVER_OVERRIDE) {
     const ov = COVER_OVERRIDE[slug];
     if (ov !== null) {
-      const file = findFile(dir, ov);
+      const file = findInList(files, ov);
       if (file) cover = `/images/wow/${slug}/${file}`;
     }
     // null → pas de cover (gradient)
   } else {
-    const file = findFile(dir, 'cover');
+    const file = findInList(files, 'cover');
     if (file) cover = `/images/wow/${slug}/${file}`;
   }
 
