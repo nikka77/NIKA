@@ -5,6 +5,7 @@ import Link from 'next/link';
 import TravelpayoutsSearch from '@/components/TravelpayoutsSearch';
 import HeroSlideshow from './HeroSlideshow';
 import WowFilter from './WowFilter';
+import SmartSearch from '@/components/stay/SmartSearch';
 import wowData from '@/data/wow_listings.json';
 import type { HeroSlide } from './HeroSlideshow';
 
@@ -168,6 +169,21 @@ export default function StayPage() {
             ))}
             <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 20, background: 'rgba(14,168,120,0.08)', border: '1px solid rgba(14,168,120,0.25)', color: 'var(--teal)' }}>Réservation directe</span>
           </div>
+        </div>
+      </div>
+
+      {/* ── SMART SEARCH ─────────────────────────────────────────────── */}
+      <div style={{ padding: 'clamp(1.5rem,3vw,2rem) 1.4rem', background: 'var(--bg)', borderBottom: '1px solid var(--bd)' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={{ marginBottom: '1rem' }}>
+            <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(18px,2.5vw,26px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', margin: '0 0 4px' }}>
+              Trouver mes dates
+            </h2>
+            <p style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)', margin: 0 }}>
+              Recherche les logements ayant N nuits consécutives disponibles
+            </p>
+          </div>
+          <SmartSearch />
         </div>
       </div>
 

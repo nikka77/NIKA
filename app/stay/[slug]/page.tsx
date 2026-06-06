@@ -4,6 +4,7 @@ import path from 'path';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import wowData from '@/data/wow_listings.json';
+import AvailabilityCalendar from '@/components/stay/AvailabilityCalendar';
 
 // Covers incorrectes — utiliser une gallery ou null (pas d'image)
 const COVER_OVERRIDE: Record<string, string | null> = {
@@ -438,6 +439,14 @@ export default async function StaySlugPage({ params }: Props) {
                 ? 'Logement sélectionné et vérifié par NIKA · WOW score ' + l.wow_score + '/25'
                 : '+30 XP à chaque réservation via NIKA · Analyse IA de vos avis incluse'}
             </div>
+
+            {(l as unknown as Record<string, string>).airbnb_id && (
+              <AvailabilityCalendar
+                slug={l.slug}
+                airbnbId={(l as unknown as Record<string, string>).airbnb_id}
+                className="cal-mt"
+              />
+            )}
           </div>
         </div>
       </div>
