@@ -94,6 +94,10 @@ function toSupabaseRow(listing: WowListing) {
     status:       'pending', // Passer à 'active' après validation
     featured:     listing.wow_score >= 23,
 
+    // Image cover (chemin local /images/wow/{slug}/cover.jpg)
+    cover_image:  `/images/wow/${listing.slug}/cover.jpg`,
+    rating:       listing.rating,
+
     // Source
     source:       'airbnb_wow',
     source_id:    listing.airbnb_id,
