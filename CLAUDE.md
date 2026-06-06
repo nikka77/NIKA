@@ -5,6 +5,29 @@ NIKA est une super-app Côte d'Azur (Next.js 16 + Supabase + Tailwind).
 9 domaines : FOOD, AUTO, STAY, AZUR, RENT, SERV, LEARN, SEC, NEWS.
 Agent IA NIKO pour VTC/livraison/courses (Claude API streaming).
 
+## SELF-LEARNING
+
+### Protocole obligatoire
+
+1. **Début de chaque session** — lire `tasks/lessons.md` en entier avant de toucher au code.
+2. **Appliquer chaque règle** listée dans `tasks/lessons.md` avant d'écrire ou modifier quoi que ce soit.
+3. **Après chaque correction de Dan** — ajouter immédiatement une entrée dans `tasks/lessons.md` au format :
+
+```
+| YYYY-MM-DD | Ce qui s'est mal passé | Règle à suivre la prochaine fois |
+```
+
+### Quand ajouter une entrée
+
+- Dan corrige une erreur de code, de design ou de comportement
+- Une approche a été rejetée ou refaite
+- Un bug a persisté après un premier fix
+- Une convention a été rappelée (ex : variables CSS, grid classes)
+
+### Principe
+
+Chaque correction ne doit arriver qu'une seule fois. Si la même erreur se répète, c'est un échec du système.
+
 ## Carte du projet (graphify)
 
 Avant de lire des fichiers, consulte d'abord `graphify-out/GRAPH_REPORT.md` pour comprendre la structure et n'ouvrir que le strict nécessaire. Pour mettre à jour la carte après des changements : `node scripts/graphify.mjs --update`.
