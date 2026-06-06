@@ -20,10 +20,7 @@ jobs:
           node-version: '22'
 
       - name: Install scraper dependencies
-        run: npm install playwright @supabase/supabase-js
-
-      - name: Install Playwright Chromium
-        run: npx playwright install chromium --with-deps
+        run: npm install @supabase/supabase-js
 
       - name: Run availability scraper
         env:
