@@ -96,7 +96,7 @@ export default function ProListingsPage() {
           <h3 style={{ fontFamily: 'var(--fe)', fontSize: 18, fontStyle: 'italic', color: 'var(--teal)' }}>Nouveau listing</h3>
           <input value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} placeholder="Nom du service / produit *" required style={inputStyle} />
           <textarea value={form.description} onChange={e => setForm(f => ({ ...f, description: e.target.value }))} placeholder="Description (optionnel)" rows={3} style={{ ...inputStyle, resize: 'vertical' }} />
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
+          <div className="g-2" style={{ gap: '0.8rem' }}>
             <input type="number" value={form.price} onChange={e => setForm(f => ({ ...f, price: e.target.value }))} placeholder="Prix (€)" min="0" step="0.01" style={inputStyle} />
             <input type="number" value={form.stock} onChange={e => setForm(f => ({ ...f, stock: e.target.value }))} placeholder="Stock (optionnel)" min="0" style={inputStyle} />
           </div>
