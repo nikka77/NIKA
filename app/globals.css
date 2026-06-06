@@ -307,6 +307,29 @@ ul { list-style: none; }
 .ss-card-meta { font-family: var(--fo); font-size: 11px; color: var(--td3); margin: 0; }
 .ss-card-nights { font-family: var(--fo); font-size: 11px; color: var(--az2); margin: 0; }
 
+/* ===== RIVIERA ===== */
+.riv-card { background: var(--bg2); border: 1px solid var(--bd); border-radius: 14px; overflow: hidden; transition: border-color 0.2s, transform 0.2s; text-decoration: none; display: block; }
+.riv-card:hover { border-color: var(--az); transform: translateY(-2px); }
+.riv-avatar { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--az) 0%, var(--az2) 100%); display: flex; align-items: center; justify-content: center; font-family: var(--fe); font-size: 22px; font-style: italic; color: #fff; flex-shrink: 0; }
+.riv-chip { display: inline-flex; align-items: center; gap: 4px; padding: 5px 12px; border-radius: 20px; background: rgba(0,148,212,0.1); border: 1px solid rgba(0,148,212,0.2); color: var(--az2); font-family: var(--fo); font-size: 12px; font-weight: 500; }
+.riv-verified { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 20px; background: rgba(14,168,120,0.1); border: 1px solid rgba(14,168,120,0.25); color: var(--teal); font-family: var(--fo); font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+.riv-pack { background: var(--bg3); border: 2px solid transparent; border-radius: 12px; padding: 1.2rem; cursor: pointer; transition: border-color 0.2s, background 0.2s; text-align: left; width: 100%; }
+.riv-pack.active { border-color: #0ea5e9; background: rgba(14,165,233,0.07); }
+.riv-pack:hover:not(.active) { border-color: rgba(14,165,233,0.3); }
+.riv-opt-row { display: flex; align-items: flex-start; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--bd); }
+.riv-opt-row:last-child { border-bottom: none; }
+.riv-pay-btn { flex: 1; padding: 12px 8px; border-radius: 8px; border: 2px solid var(--bd2); background: transparent; color: var(--td2); font-family: var(--fo); font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.riv-pay-btn.active { border-color: #0ea5e9; background: rgba(14,165,233,0.1); color: #38bdf8; }
+.riv-gallery { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.riv-gallery::-webkit-scrollbar { height: 4px; }
+.riv-gallery::-webkit-scrollbar-thumb { background: var(--td3); border-radius: 2px; }
+.riv-gallery-item { scroll-snap-align: start; }
+.g-providers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+@media (max-width: 900px) { .g-providers { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .g-providers { grid-template-columns: 1fr; } }
+.riv-modal-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(5,12,23,0.92); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; padding: 1rem; }
+.riv-modal { background: var(--bg2); border: 1px solid var(--bd2); border-radius: 20px; padding: 2rem; width: 100%; max-width: 480px; max-height: 90vh; overflow-y: auto; }
+
 /* ===== SAND GRAIN ===== */
 .sand-grain::after {
   content: '';
