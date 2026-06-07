@@ -24,8 +24,13 @@ export default function Loader() {
     }
     sessionStorage.setItem('nika_loaded', '1');
 
+    // active flag: set to false on cleanup so no setState fires after unmount
+    let active = true;
+    const timers: ReturnType<typeof setTimeout>[] = [];
+
     // Radar sweep animation
     function animR(ts: number) {
+      if (!active) return;
       if (!startRef.current) startRef.current = ts;
       const angle = ((ts - startRef.current) / 20) % 360;
       const r = (angle * Math.PI) / 180;
@@ -47,6 +52,7 @@ export default function Loader() {
     // Progress bar — 1200ms total
     let prog = 0;
     const pi = setInterval(() => {
+      if (!active) return;
       prog = Math.min(prog + 4, 100);
       setProgress(prog);
       if (prog >= 100) clearInterval(pi);
@@ -54,32 +60,37 @@ export default function Loader() {
 
     // Status messages compressed to 1200ms
     MSGS.forEach((m, i) => {
-      setTimeout(() => {
+      timers.push(setTimeout(() => {
+        if (!active) return;
         setStatus(m);
         if (i === 2) setLogoVisible(true);
-      }, i * 320);
+      }, i * 320));
     });
 
     // Radar dots
     [120, 250, 380, 520, 660].forEach((delay, i) => {
-      setTimeout(() => {
+      timers.push(setTimeout(() => {
+        if (!active) return;
         setDotOpacities(prev => {
           const next = [...prev];
           next[i] = 1;
           return next;
         });
-      }, delay);
+      }, delay));
     });
 
     // Hide at 1200ms
     const hideTimer = setTimeout(() => {
+      if (!active) return;
       setHidden(true);
       cancelAnimationFrame(rafRef.current);
     }, 1200);
+    timers.push(hideTimer);
 
     return () => {
+      active = false;
       clearInterval(pi);
-      clearTimeout(hideTimer);
+      timers.forEach(clearTimeout);
       cancelAnimationFrame(rafRef.current);
     };
   }, []);

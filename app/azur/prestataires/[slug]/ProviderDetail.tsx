@@ -1,5 +1,5 @@
 'use client'
-// app/riviera/prestataires/[slug]/ProviderDetail.tsx
+// app/azur/prestataires/[slug]/ProviderDetail.tsx
 
 import { useState, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'

@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${l.name} — ${l.city}, ${l.country} · NIKA STAY`,
-    description: l.description_nika.slice(0, 160),
+    description: (l.description_nika ?? '').slice(0, 160),
     keywords: [
       l.type.replace(/-/g, ' '),
       `logement insolite ${l.country.toLowerCase()}`,
@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ],
     openGraph: {
       title: `${l.name} — ${l.tagline}`,
-      description: l.description_nika.slice(0, 200),
+      description: (l.description_nika ?? '').slice(0, 200),
       type: 'website',
     },
   };
@@ -106,7 +106,7 @@ const TYPE_ICONS: Record<string, string> = {
   'tiny-house': '🏡',
   'bambou': '🎋',
   'villa-bali': '🌴',
-  'dôme': '🔵',
+  'dôme': '🫧',
   'yourte': '⛺',
   'moulin-reconverti': '⚙️',
   'eco-farm': '🌾',
@@ -115,6 +115,28 @@ const TYPE_ICONS: Record<string, string> = {
   'cabane-architecturale': '🏗️',
   'cabane-organique': '🍄',
 };
+
+// Per-slug hero background-position for optimal subject framing
+const HERO_OBJECT_POS: Record<string, string> = {
+  'ovni-guadalupe-vallee-baja':                       '50% 72%',
+  'living-inn-dome-volcanique-hawaii':                '50% 45%',
+  'maison-hobbit-saint-affrique-occitanie':           '50% 55%',
+  'bubble-etoile-stargazing-agnes-victoria-australie':'50% 45%',
+  'birdbox-fordefjord-view-forde-norvege':            '50% 50%',
+  'grand-cheval-fjord-sunnfjord-norvege':             '50% 50%',
+  'wee-nook-hobbit-hole-tennessee':                   '50% 55%',
+  'cob-cottage-mayne-island-canada':                  '50% 50%',
+  'sous-marin-jaune-nouvelle-zelande':                '50% 55%',
+  'gawthornes-hut-top10-monde-mudgee-australie':      '50% 45%',
+  'express-voiture-salon-14630-normandie':            '50% 55%',
+  'naturhus-bio-hors-reseau-bralande-suede':          '50% 50%',
+  'bloomhouse-austin-texas':                          '50% 40%',
+  'grotte-nid2reve-savignac-perigord':                '50% 55%',
+  'caboose-train-jacuzzi-eureka-springs':             '50% 40%',
+  'birdbox-lotsbergskaara-lote-nordfjord-norvege':    '50% 48%',
+  'peniche-arche-noe-somme-pont-remy':                '50% 45%',
+  'silo-missiles-bunker-atlas-f-roswell':             '50% 35%',
+}
 
 const PRIORITY_COLOR: Record<string, string> = {
   'MAXIMALE': 'var(--coral)',
@@ -146,7 +168,7 @@ export default async function StaySlugPage({ params }: Props) {
         {/* Background — photo or gradient */}
         {cover ? (
           <>
-            <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${cover})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+            <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${cover})`, backgroundSize: 'cover', backgroundPosition: HERO_OBJECT_POS[slug] ?? 'center' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(6,9,20,0.88) 0%,rgba(6,9,20,0.70) 60%,rgba(6,9,20,0.55) 100%)' }} />
           </>
         ) : (

@@ -2,6 +2,8 @@ import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'FOOD — Restaurants & Livraison Côte d\'Azur | NIKA',
   description: 'Restaurants, pizzerias, boulangeries, food trucks et sushis sur Nice, Antibes et Cannes. Commande, Flash Deals et livraison via NIKA.',
@@ -21,6 +23,22 @@ const FOOD_CATS = [
 
 export default async function FoodPage() {
   const supabase = await createClient();
+
+  // NIKKA Food — prestataires de nuit
+  const { data: foodProviders } = supabase
+    ? await supabase.from('food_providers').select('id, slug, name, description, city, opens_at, closes_at').eq('active', true)
+    : { data: [] };
+
+  const today = new Date().toISOString().split('T')[0];
+  const providerIds = (foodProviders || []).map((p: { id: string }) => p.id);
+  const { data: tonightSessions } = providerIds.length > 0 && supabase
+    ? await supabase.from('food_sessions').select('provider_id, status').eq('date', today).in('provider_id', providerIds)
+    : { data: [] };
+
+  const sessionByProvider: Record<string, string> = {};
+  for (const s of (tonightSessions || [])) {
+    sessionByProvider[(s as { provider_id: string; status: string }).provider_id] = (s as { provider_id: string; status: string }).status;
+  }
 
   const { data: pros } = supabase
     ? await supabase.from('pros').select('id, business_name, description, address, rating, rating_count, verified').eq('domain', 'food').eq('active', true).order('rating', { ascending: false }).limit(20)
@@ -52,6 +70,68 @@ export default async function FoodPage() {
           </Link>
         ))}
       </div>
+
+      {/* NIKKA Food de nuit */}
+      {foodProviders && foodProviders.length > 0 && (
+        <div style={{ marginBottom: '3rem' }}>
+          <h2 style={{ fontFamily: 'var(--fe)', fontSize: 26, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '0.4rem' }}>
+            🌙 Food de nuit
+          </h2>
+          <p style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)', marginBottom: '1.2rem' }}>
+            Livraison le soir — Nice et alentours
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+            {(foodProviders as { id: string; slug: string; name: string; description?: string; city?: string; opens_at?: string; closes_at?: string }[]).map(provider => {
+              const status = sessionByProvider[provider.id] as 'open' | 'closed' | 'sold_out' | undefined;
+              const isOpen = status === 'open';
+              const isSoldOut = status === 'sold_out';
+              return (
+                <Link
+                  key={provider.slug}
+                  href={`/food/${provider.slug}`}
+                  style={{
+                    background: 'var(--food-dark)',
+                    borderRadius: 14,
+                    padding: '1.2rem 1.4rem',
+                    textDecoration: 'none',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'flex-start',
+                    gap: '1rem',
+                    flexWrap: 'wrap',
+                    border: isOpen ? '1px solid rgba(216,90,48,0.4)' : '1px solid rgba(255,255,255,0.08)',
+                  }}
+                >
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontFamily: 'var(--fn)', fontSize: 22, color: '#fff', letterSpacing: '0.04em', marginBottom: '0.3rem' }}>
+                      {provider.name}
+                    </div>
+                    {provider.description && (
+                      <div style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'rgba(255,255,255,0.65)', marginBottom: '0.5rem', lineHeight: 1.4 }}>
+                        {provider.description}
+                      </div>
+                    )}
+                    <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
+                      {provider.city && <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'rgba(255,255,255,0.45)' }}>📍 {provider.city}</span>}
+                      {provider.opens_at && provider.closes_at && (
+                        <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'rgba(255,255,255,0.45)' }}>
+                          🕐 {provider.opens_at.slice(0, 5)} – {provider.closes_at.slice(0, 5)}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8, flexShrink: 0 }}>
+                    <span className={`food-status-pill ${isOpen ? 'open' : isSoldOut ? 'sold_out' : 'closed'}`}>
+                      {isOpen ? '🟢 Ouvert' : isSoldOut ? '🔴 Épuisé' : '⚫ Fermé'}
+                    </span>
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'rgba(255,255,255,0.4)' }}>Voir le menu →</span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Flash Deals */}
       {deals && deals.length > 0 && (

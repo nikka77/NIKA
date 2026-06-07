@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
-import LoaderClient from '@/components/LoaderClient';
 import MapOverlay, { FloatMapBtn } from '@/components/MapOverlay';
 
 export const metadata: Metadata = {
@@ -20,7 +19,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" style={{ scrollBehavior: 'smooth' }}>
       <body>
-        <LoaderClient />
         <Nav />
         {children}
         <Footer />

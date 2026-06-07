@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 
 export interface HeroSlide {
@@ -42,12 +42,16 @@ export default function HeroSlideshow({ slides }: { slides: HeroSlide[] }) {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const [animating, setAnimating] = useState(false);
+  const animTimerRef = useRef<ReturnType<typeof setTimeout>>();
+
+  useEffect(() => () => clearTimeout(animTimerRef.current), []);
 
   const goTo = useCallback((idx: number) => {
     if (animating) return;
     setAnimating(true);
     setCurrent(idx);
-    setTimeout(() => setAnimating(false), 380);
+    clearTimeout(animTimerRef.current);
+    animTimerRef.current = setTimeout(() => setAnimating(false), 380);
   }, [animating]);
 
   const next = useCallback(() => goTo((current + 1) % slides.length), [current, goTo, slides.length]);
