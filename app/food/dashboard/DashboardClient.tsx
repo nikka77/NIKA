@@ -1,8 +1,9 @@
 'use client'
 // app/food/dashboard/DashboardClient.tsx
-import { useState } from 'react'
+import { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
+import { openSession, closeSession } from './actions'
 
 type Status = 'open' | 'closed' | 'sold_out' | null
 
@@ -17,52 +18,27 @@ type Props = {
 export default function DashboardClient({ providerId, sessionId: initId, sessionStatus: initStatus, revenue, orderCount }: Props) {
   const [sessionId, setSessionId] = useState(initId)
   const [status, setStatus] = useState(initStatus)
-  const [loading, setLoading] = useState(false)
+  const [isPending, startTransition] = useTransition()
+  const [error, setError] = useState<string | null>(null)
   const router = useRouter()
 
-  const toggle = async () => {
-    setLoading(true)
-    const supabase = createClient()
-    if (!supabase) { setLoading(false); return }
-
-    try {
-      if (!sessionId) {
-        // Vérifier si session existe déjà (race)
-        const today = new Date().toISOString().split('T')[0]
-        const { data: existing } = await supabase
-          .from('food_sessions')
-          .select('id, status')
-          .eq('provider_id', providerId)
-          .eq('date', today)
-          .maybeSingle()
-
-        if (existing) {
-          setSessionId(existing.id)
-          if (existing.status !== 'open') {
-            await supabase.from('food_sessions').update({ status: 'open', closed_at: null }).eq('id', existing.id)
-            setStatus('open')
-          } else {
-            setStatus(existing.status as Status)
-          }
-        } else {
-          const { data } = await supabase
-            .from('food_sessions')
-            .insert({ provider_id: providerId, date: today, status: 'open' })
-            .select('id')
-            .single()
-          if (data) { setSessionId(data.id); setStatus('open') }
-        }
-      } else if (status === 'open') {
-        await supabase.from('food_sessions').update({ status: 'closed', closed_at: new Date().toISOString() }).eq('id', sessionId)
-        setStatus('closed')
-      } else {
-        await supabase.from('food_sessions').update({ status: 'open', closed_at: null }).eq('id', sessionId)
+  const toggle = () => {
+    setError(null)
+    startTransition(async () => {
+      if (!sessionId || status !== 'open') {
+        // Ouvrir / rouvrir
+        const { error: err, sessionId: newId } = await openSession(providerId)
+        if (err) { setError(err); return }
+        if (newId) setSessionId(newId)
         setStatus('open')
+      } else {
+        // Fermer
+        const { error: err } = await closeSession(sessionId)
+        if (err) { setError(err); return }
+        setStatus('closed')
       }
-    } finally {
-      setLoading(false)
       router.refresh()
-    }
+    })
   }
 
   const logout = async () => {
@@ -87,8 +63,8 @@ export default function DashboardClient({ providerId, sessionId: initId, session
         </button>
       </div>
 
-      {/* Statut unifié + CA */}
       <div style={{ padding: '0.8rem 1.2rem 0' }}>
+        {/* Statut unifié + CA */}
         <div style={{
           background: 'var(--bg2)', border: '1px solid var(--bd)',
           borderRadius: 14, padding: '1.2rem',
@@ -105,11 +81,9 @@ export default function DashboardClient({ providerId, sessionId: initId, session
               border: `1px solid ${isOpen ? '#16a34a' : isSoldOut ? '#dc2626' : '#444'}`,
               borderRadius: 99, padding: '6px 14px',
             }}>
-              {isOpen && (
-                <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#16a34a', display: 'inline-block', animation: 'pulse 2s infinite' }} />
-              )}
+              {isOpen && <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#16a34a', display: 'inline-block', animation: 'pulse 2s infinite' }} />}
               <span style={{ fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700, color: isOpen ? '#16a34a' : isSoldOut ? '#dc2626' : '#888' }}>
-                {isOpen ? 'Ouvert ce soir' : isSoldOut ? 'Épuisé — sold out' : 'Fermé'}
+                {isOpen ? 'Ouvert ce soir' : isSoldOut ? 'Sold out' : !sessionId ? 'Pas de session' : 'Fermé'}
               </span>
             </div>
           </div>
@@ -124,29 +98,30 @@ export default function DashboardClient({ providerId, sessionId: initId, session
           </div>
         </div>
 
+        {/* Erreur */}
+        {error && (
+          <div style={{ fontFamily: 'var(--fo)', fontSize: 12, color: '#f87171', padding: '0.6rem 0', textAlign: 'center' }}>
+            ✗ {error}
+          </div>
+        )}
+
         {/* Toggle bouton */}
         {!isSoldOut && (
           <button
             onClick={toggle}
-            disabled={loading}
+            disabled={isPending}
             style={{
               marginTop: 10, width: '100%',
               fontFamily: 'var(--fo)', fontSize: 14, fontWeight: 700,
               padding: '13px', borderRadius: 12,
-              background: isOpen ? '#dc2626' : 'var(--food-brand)',
+              background: isOpen ? '#dc2626' : '#16a34a',
               color: '#fff', border: 'none',
-              cursor: loading ? 'wait' : 'pointer',
-              opacity: loading ? 0.7 : 1,
+              cursor: isPending ? 'wait' : 'pointer',
+              opacity: isPending ? 0.7 : 1,
               transition: 'background 0.2s',
             }}
           >
-            {loading
-              ? '…'
-              : !sessionId
-                ? '🟢 Ouvrir la boutique ce soir'
-                : isOpen
-                  ? '🔴 Fermer la boutique'
-                  : '🟢 Rouvrir la boutique'}
+            {isPending ? '…' : !sessionId ? '🟢 Ouvrir la boutique' : isOpen ? '🔴 Fermer la boutique' : '🟢 Rouvrir la boutique'}
           </button>
         )}
       </div>

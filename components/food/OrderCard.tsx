@@ -1,7 +1,7 @@
 'use client'
 // components/food/OrderCard.tsx
-import { useState } from 'react'
-import { createClient } from '@/lib/supabase/client'
+import { useState, useTransition } from 'react'
+import { updateOrderStatus, cancelOrder } from '@/app/food/dashboard/actions'
 
 type OrderStatus = 'pending' | 'confirmed' | 'preparing' | 'delivering' | 'delivered' | 'cancelled'
 
@@ -25,112 +25,184 @@ type Props = {
   onStatusChange?: (id: string, status: OrderStatus) => void
 }
 
-const STATUS_NEXT: Partial<Record<OrderStatus, { label: string; next: OrderStatus }>> = {
-  pending:    { label: '✅ Confirmer',       next: 'confirmed'  },
-  confirmed:  { label: '🍳 En préparation',  next: 'preparing'  },
-  preparing:  { label: '🛵 En livraison',    next: 'delivering' },
-  delivering: { label: '🎉 Marquer livré',   next: 'delivered'  },
+const STATUS_NEXT: Partial<Record<OrderStatus, { label: string; next: OrderStatus; color: string }>> = {
+  pending:    { label: '✅ Confirmer',       next: 'confirmed',  color: '#16a34a' },
+  confirmed:  { label: '🍳 En préparation',  next: 'preparing',  color: '#2563eb' },
+  preparing:  { label: '🛵 Envoyer livreur', next: 'delivering', color: '#d97706' },
+  delivering: { label: '🎉 Marquer livré',   next: 'delivered',  color: '#7c3aed' },
+}
+
+const STATUS_DISPLAY: Record<OrderStatus, { label: string; color: string; bg: string }> = {
+  pending:    { label: 'En attente',   color: '#EF9F27', bg: 'rgba(239,159,39,0.12)' },
+  confirmed:  { label: 'Confirmée',   color: '#34d399', bg: 'rgba(52,211,153,0.12)' },
+  preparing:  { label: 'En prép.',    color: '#60a5fa', bg: 'rgba(96,165,250,0.12)' },
+  delivering: { label: 'En livraison',color: '#a78bfa', bg: 'rgba(167,139,250,0.12)' },
+  delivered:  { label: 'Livrée',      color: '#6b7280', bg: 'rgba(107,114,128,0.1)' },
+  cancelled:  { label: 'Annulée',     color: '#f87171', bg: 'rgba(248,113,113,0.1)' },
 }
 
 export default function OrderCard({ order, onStatusChange }: Props) {
   const [status, setStatus] = useState<OrderStatus>(order.status)
-  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [isPending, startTransition] = useTransition()
 
-  const advance = async () => {
+  const advance = () => {
     const next = STATUS_NEXT[status]
     if (!next) return
-    setLoading(true)
-    const supabase = createClient()
-    if (supabase) {
-      await supabase.from('food_orders').update({ status: next.next }).eq('id', order.id)
-    }
-    setStatus(next.next)
-    onStatusChange?.(order.id, next.next)
-    setLoading(false)
+    setError(null)
+    startTransition(async () => {
+      const { error: err } = await updateOrderStatus(order.id, next.next)
+      if (err) {
+        setError('Erreur: ' + err)
+      } else {
+        setStatus(next.next)
+        onStatusChange?.(order.id, next.next)
+      }
+    })
   }
 
-  const cancel = async () => {
+  const doCancel = () => {
     if (!confirm('Annuler cette commande ?')) return
-    setLoading(true)
-    const supabase = createClient()
-    if (supabase) {
-      await supabase.from('food_orders').update({ status: 'cancelled' }).eq('id', order.id)
-    }
-    setStatus('cancelled')
-    onStatusChange?.(order.id, 'cancelled')
-    setLoading(false)
+    setError(null)
+    startTransition(async () => {
+      const { error: err } = await cancelOrder(order.id)
+      if (err) {
+        setError('Erreur: ' + err)
+      } else {
+        setStatus('cancelled')
+        onStatusChange?.(order.id, 'cancelled')
+      }
+    })
   }
 
   const subtotal = order.items.reduce((s, i) => s + i.quantity * i.unit_price, 0)
   const fee = order.delivery_fee ?? 2
   const total = order.total ?? subtotal + fee
+  const disp = STATUS_DISPLAY[status]
+  const nextAction = STATUS_NEXT[status]
+
+  // Temps écoulé depuis la commande
+  const elapsed = Math.round((Date.now() - new Date(order.created_at).getTime()) / 60000)
 
   return (
-    <div className={`food-order-card${status === 'delivering' ? ' food-order-card--delivering' : status === 'preparing' ? ' food-order-card--preparing' : ''}`}>
-      <div className="food-order-header">
+    <div style={{
+      background: 'var(--bg2)',
+      border: `1px solid ${disp.bg}`,
+      borderLeft: `3px solid ${disp.color}`,
+      borderRadius: 14,
+      overflow: 'hidden',
+    }}>
+      {/* Header */}
+      <div style={{
+        display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start',
+        padding: '0.9rem 1.1rem 0.6rem', gap: 8,
+      }}>
         <div>
-          <div className="food-order-customer">{order.customer_name}</div>
+          <div style={{ fontFamily: 'var(--fo)', fontSize: 15, fontWeight: 700, color: 'var(--td)', marginBottom: 3 }}>
+            {order.customer_name}
+          </div>
           {order.customer_phone && (
-            <a href={`tel:${order.customer_phone}`} className="food-order-phone">
+            <a href={`tel:${order.customer_phone}`} style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--food-brand)', textDecoration: 'none', display: 'block', marginBottom: 2 }}>
               📞 {order.customer_phone}
             </a>
           )}
           {order.delivery_address && (
-            <div className="food-order-addr">📍 {order.delivery_address}</div>
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)' }}>
+              📍 {order.delivery_address}
+            </div>
           )}
         </div>
-        <div className="food-order-meta">
-          <span className={`food-status-badge food-status-badge--${status}`}>{status}</span>
+        <div style={{ textAlign: 'right', flexShrink: 0 }}>
+          <span style={{
+            display: 'inline-block', padding: '3px 10px', borderRadius: 99,
+            background: disp.bg, color: disp.color,
+            fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700,
+            marginBottom: 4,
+          }}>
+            {disp.label}
+          </span>
+          <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>
+            il y a {elapsed < 1 ? '<1' : elapsed} min
+          </div>
           {order.scheduled_time && (
-            <div className="food-order-time">🕐 {order.scheduled_time.slice(0, 5)}</div>
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: '#EF9F27', marginTop: 2 }}>
+              🕐 {order.scheduled_time.slice(0, 5)}
+            </div>
           )}
-          <div className="food-order-time">
-            {new Date(order.created_at).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+        </div>
+      </div>
+
+      {/* Items */}
+      <div style={{ padding: '0 1.1rem 0.8rem', borderTop: '1px solid var(--bd)' }}>
+        <div style={{ paddingTop: '0.7rem' }}>
+          {order.items.map((item, i) => (
+            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)', padding: '2px 0' }}>
+              <span>{item.emoji} {item.quantity}× {item.name}</span>
+              <span>{(item.quantity * item.unit_price).toFixed(2)} €</span>
+            </div>
+          ))}
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)', paddingTop: 4, borderTop: '1px solid var(--bd)', marginTop: 4 }}>
+            <span>Livraison</span>
+            <span>{fee.toFixed(2)} €</span>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--fo)', fontSize: 15, fontWeight: 700, color: 'var(--food-brand)', paddingTop: 4 }}>
+            <span>Total</span>
+            <span>{total.toFixed(2)} €</span>
           </div>
         </div>
       </div>
 
-      <div className="food-order-items">
-        {order.items.map((item, i) => (
-          <div key={i} className="food-order-line">
-            <span>{item.emoji} {item.quantity}× {item.name}</span>
-            <span>{(item.quantity * item.unit_price).toFixed(2)} €</span>
-          </div>
-        ))}
-        <div className="food-order-line food-order-line--fee">
-          <span>Livraison</span>
-          <span>{fee.toFixed(2)} €</span>
+      {/* Notes + payment */}
+      {(order.notes || order.payment_method) && (
+        <div style={{ padding: '0.5rem 1.1rem', background: 'rgba(255,255,255,0.02)', borderTop: '1px solid var(--bd)' }}>
+          {order.payment_method && (
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', marginBottom: order.notes ? 3 : 0 }}>
+              💳 {order.payment_method}
+            </div>
+          )}
+          {order.notes && (
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: '#EF9F27' }}>📝 {order.notes}</div>
+          )}
         </div>
-        <div className="food-order-line food-order-line--total">
-          <span>Total</span>
-          <span>{total.toFixed(2)} €</span>
-        </div>
-      </div>
-
-      {order.payment_method && (
-        <div className="food-order-payment">💳 {order.payment_method}</div>
-      )}
-      {order.notes && (
-        <div className="food-order-notes">📝 {order.notes}</div>
       )}
 
+      {/* Error */}
+      {error && (
+        <div style={{ padding: '0.5rem 1.1rem', fontFamily: 'var(--fo)', fontSize: 12, color: '#f87171', background: 'rgba(248,113,113,0.08)' }}>
+          {error}
+        </div>
+      )}
+
+      {/* Actions */}
       {status !== 'delivered' && status !== 'cancelled' && (
-        <div className="food-order-actions">
-          {STATUS_NEXT[status] && (
+        <div style={{ display: 'flex', gap: 8, padding: '0.8rem 1.1rem', borderTop: '1px solid var(--bd)' }}>
+          {nextAction && (
             <button
-              className="food-action-btn food-action-btn--primary"
               onClick={advance}
-              disabled={loading}
+              disabled={isPending}
+              style={{
+                flex: 1, padding: '10px', borderRadius: 10,
+                background: nextAction.color, color: '#fff',
+                fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700,
+                border: 'none', cursor: isPending ? 'wait' : 'pointer',
+                opacity: isPending ? 0.7 : 1,
+              }}
             >
-              {loading ? '…' : STATUS_NEXT[status]!.label}
+              {isPending ? '…' : nextAction.label}
             </button>
           )}
           <button
-            className="food-action-btn food-action-btn--danger"
-            onClick={cancel}
-            disabled={loading}
+            onClick={doCancel}
+            disabled={isPending}
+            style={{
+              padding: '10px 14px', borderRadius: 10,
+              background: 'transparent', color: '#f87171',
+              fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700,
+              border: '1px solid rgba(248,113,113,0.3)',
+              cursor: isPending ? 'wait' : 'pointer',
+            }}
           >
-            ✕ Annuler
+            ✕
           </button>
         </div>
       )}
