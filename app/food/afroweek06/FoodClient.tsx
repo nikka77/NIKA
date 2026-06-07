@@ -24,15 +24,16 @@ type Props = {
 }
 
 type Cart = Record<string, number>
-type Tab = 'main' | 'side' | 'drink'
+type Tab = 'all' | 'main' | 'side' | 'drink'
 
 const TAB_LABELS: Record<Tab, string> = {
+  all:   'Tout',
   main:  'Plats',
   side:  'Accomp.',
   drink: 'Boissons',
 }
 
-const CAT_LABEL_FULL: Record<Tab, string> = {
+const CAT_LABEL_FULL: Record<string, string> = {
   main:  '⭐ Les incontournables',
   side:  'Accompagnements',
   drink: 'Boissons',
@@ -52,7 +53,7 @@ export default function FoodClient({ provider, sessionId, sessionStatus, items }
     Object.fromEntries(items.map(i => [i.id, i.remaining_stock]))
   )
   const [liveStatus, setLiveStatus] = useState(sessionStatus)
-  const [activeTab, setActiveTab] = useState<Tab>('main')
+  const [activeTab, setActiveTab] = useState<Tab>('all')
 
   // Restore cart
   useEffect(() => {
@@ -120,11 +121,11 @@ export default function FoodClient({ provider, sessionId, sessionStatus, items }
   const isOpen = liveStatus === 'open'
 
   const itemsWithStock = items.map(i => ({ ...i, remaining_stock: stocks[i.id] ?? 0 }))
-  const tabItems = itemsWithStock.filter(i => i.category === activeTab)
+  const tabItems = activeTab === 'all' ? itemsWithStock : itemsWithStock.filter(i => i.category === activeTab)
 
-  const availableTabs = (['main', 'side', 'drink'] as Tab[]).filter(t =>
+  const availableTabs: Tab[] = ['all', ...(['main', 'side', 'drink'] as const).filter(t =>
     items.some(i => i.category === t)
-  )
+  )]
 
   return (
     <>
@@ -293,29 +294,61 @@ export default function FoodClient({ provider, sessionId, sessionStatus, items }
         background: '#111',
         minHeight: '40vh',
       }}>
-        <div style={{
-          fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700,
-          color: '#555', textTransform: 'uppercase', letterSpacing: '0.08em',
-          padding: '8px 0 8px',
-        }}>
-          {CAT_LABEL_FULL[activeTab]}
-        </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {tabItems.length === 0 ? (
-            <div style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)', padding: '2rem', textAlign: 'center' }}>
-              Aucun article dans cette catégorie.
+        {activeTab === 'all' ? (
+          /* Affichage groupé par catégorie */
+          (['main', 'side', 'drink'] as const).map(cat => {
+            const catItems = tabItems.filter(i => i.category === cat)
+            if (catItems.length === 0) return null
+            return (
+              <div key={cat} style={{ marginBottom: '1.2rem' }}>
+                <div style={{
+                  fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700,
+                  color: '#555', textTransform: 'uppercase', letterSpacing: '0.08em',
+                  padding: '8px 0 8px',
+                }}>
+                  {CAT_LABEL_FULL[cat]}
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  {catItems.map(item => (
+                    <DishCard
+                      key={item.id}
+                      item={item}
+                      qty={cart[item.id] ?? 0}
+                      onAdd={() => isOpen && add(item.id)}
+                      onRemove={() => remove(item.id)}
+                    />
+                  ))}
+                </div>
+              </div>
+            )
+          })
+        ) : (
+          /* Affichage par onglet simple */
+          <>
+            <div style={{
+              fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700,
+              color: '#555', textTransform: 'uppercase', letterSpacing: '0.08em',
+              padding: '8px 0 8px',
+            }}>
+              {CAT_LABEL_FULL[activeTab]}
             </div>
-          ) : tabItems.map(item => (
-            <DishCard
-              key={item.id}
-              item={item}
-              qty={cart[item.id] ?? 0}
-              onAdd={() => isOpen && add(item.id)}
-              onRemove={() => remove(item.id)}
-            />
-          ))}
-        </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {tabItems.length === 0 ? (
+                <div style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)', padding: '2rem', textAlign: 'center' }}>
+                  Aucun article dans cette catégorie.
+                </div>
+              ) : tabItems.map(item => (
+                <DishCard
+                  key={item.id}
+                  item={item}
+                  qty={cart[item.id] ?? 0}
+                  onAdd={() => isOpen && add(item.id)}
+                  onRemove={() => remove(item.id)}
+                />
+              ))}
+            </div>
+          </>
+        )}
       </main>
 
       {isOpen && (
