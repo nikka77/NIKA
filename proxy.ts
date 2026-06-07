@@ -13,6 +13,10 @@ const PROTECTED = [
 ];
 const AUTH_ONLY = ['/connexion', '/inscription'];
 
+// Routes food dashboard protégées par login prestataire
+const FOOD_DASHBOARD_PROTECTED = '/food/dashboard';
+const FOOD_DASHBOARD_LOGIN = '/food/dashboard/login';
+
 export async function proxy(request: NextRequest) {
   const response = NextResponse.next({ request });
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -40,6 +44,14 @@ export async function proxy(request: NextRequest) {
   if (session && AUTH_ONLY.some(p => path === p)) {
     return NextResponse.redirect(new URL('/dashboard', request.url));
   }
+
+  // Protection food dashboard (sauf page login)
+  if (path.startsWith(FOOD_DASHBOARD_PROTECTED) && path !== FOOD_DASHBOARD_LOGIN && !path.startsWith(FOOD_DASHBOARD_LOGIN + '/')) {
+    if (!session) {
+      return NextResponse.redirect(new URL(FOOD_DASHBOARD_LOGIN, request.url));
+    }
+  }
+
   return response;
 }
 
@@ -54,5 +66,6 @@ export const config = {
     '/pro/stats/:path*',
     '/connexion',
     '/inscription',
+    '/food/dashboard/:path*',
   ],
 };
