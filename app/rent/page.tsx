@@ -34,7 +34,7 @@ export default async function RentPage() {
       {/* Hero */}
       <div style={{ marginBottom: '3rem' }}>
         <p style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#5A88B0', marginBottom: '0.4rem' }}>📦 Domaine 05</p>
-        <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(40px,7vw,72px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.9, marginBottom: '0.8rem' }}>
+        <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(44px,8vw,96px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.9, marginBottom: '0.8rem' }}>
           RENT
         </h1>
         <p style={{ fontFamily: 'var(--fo)', fontSize: 15, color: 'var(--td2)', maxWidth: 500, lineHeight: 1.6 }}>

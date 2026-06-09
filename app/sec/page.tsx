@@ -28,7 +28,7 @@ export default async function SecPage() {
       {/* Hero — SEC has dark/serious vibe */}
       <div style={{ marginBottom: '3rem' }}>
         <p style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#D44B24', marginBottom: '0.4rem' }}>🔒 Domaine 08</p>
-        <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(40px,7vw,72px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.9, marginBottom: '0.8rem' }}>SEC</h1>
+        <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(44px,8vw,96px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.9, marginBottom: '0.8rem' }}>SEC</h1>
         <p style={{ fontFamily: 'var(--fo)', fontSize: 15, color: 'var(--td2)', maxWidth: 500, lineHeight: 1.6 }}>
           Sécurité, serrurerie, gardiennage — des professionnels certifiés sur la Côte d&apos;Azur.
         </p>

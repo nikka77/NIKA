@@ -4,7 +4,10 @@ import { getLevelFromXP, LEVELS, DOMAINS } from '@/lib/constants';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'Dashboard — NIKA' };
+export const metadata: Metadata = {
+  title: 'Dashboard — NIKA',
+  description: 'Votre espace personnel NIKA : niveau, XP, commandes en cours, crédits et progression sur la Côte d\'Azur.',
+};
 
 export default async function DashboardPage() {
   const supabase = await createClient();

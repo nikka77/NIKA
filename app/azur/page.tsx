@@ -81,7 +81,7 @@ export default async function AzurPage() {
 
           <h1 style={{
             fontFamily: 'var(--fe)',
-            fontSize: 'clamp(42px,8vw,96px)',
+            fontSize: 'clamp(44px,8vw,96px)',
             fontWeight: 900, fontStyle: 'italic',
             textTransform: 'uppercase', color: 'var(--td)',
             lineHeight: 0.88, marginBottom: '1.2rem',

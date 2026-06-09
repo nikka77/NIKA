@@ -27,7 +27,7 @@ export default async function NewsPage() {
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
             <p style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--slate)', marginBottom: '0.6rem' }}>09 / Actualités</p>
-            <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(48px,8vw,96px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.9 }}>NEWS</h1>
+            <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(44px,8vw,96px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.9 }}>NEWS</h1>
             <p style={{ fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td2)', marginTop: '0.8rem' }}>
               Infos locales indépendantes. Modération IA avant publication. Vote communauté.
             </p>

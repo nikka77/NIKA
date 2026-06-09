@@ -15,6 +15,14 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['@anthropic-ai/sdk', '@supabase/supabase-js', '@supabase/ssr'],
   },
+  async redirects() {
+    return [
+      { source: '/riviera', destination: '/azur', permanent: true },
+      { source: '/riviera/:path*', destination: '/azur/:path*', permanent: true },
+      { source: '/azur/services', destination: '/azur', permanent: true },
+      { source: '/azur/bateau/:id', destination: '/azur', permanent: true },
+    ];
+  },
 };
 
 module.exports = nextConfig;

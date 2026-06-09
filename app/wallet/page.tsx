@@ -4,7 +4,10 @@ import { getLevelFromXP } from '@/lib/constants';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'Wallet NIKA — Mes crédits' };
+export const metadata: Metadata = {
+  title: 'Wallet NIKA — Mes crédits',
+  description: 'Gérez vos crédits NIKA : solde, historique de transactions et achat de packs pour profiter de tous les services Côte d\'Azur.',
+};
 
 export default async function WalletPage() {
   const supabase = await createClient();

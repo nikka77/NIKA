@@ -3,11 +3,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useMapStore, useAuthStore } from '@/lib/store';
 import { createClient } from '@/lib/supabase/client';
+import { DOMAINS } from '@/lib/constants';
 import { useRouter } from 'next/navigation';
 import AuthModal from './AuthModal';
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [domainsOpen, setDomainsOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'login' | 'register' | null>(null);
   const { openMap } = useMapStore();
   const user = useAuthStore(s => s.user);
@@ -22,7 +24,6 @@ export default function Nav() {
   }
 
   const NAV_LINKS = [
-    { href: '/#domaines', label: 'Domaines' },
     { href: '/carte', label: 'Carte' },
     { href: '/food', label: 'FOOD' },
     { href: '/auto', label: 'AUTO' },
@@ -30,6 +31,16 @@ export default function Nav() {
     { href: '/azur', label: 'AZUR' },
     { href: '/niko', label: 'NIKO ⚡', highlight: true },
   ];
+
+  const linkStyle = (highlight?: boolean): React.CSSProperties => ({
+    fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700,
+    letterSpacing: '0.06em', textTransform: 'uppercase',
+    color: highlight ? 'var(--az2)' : 'var(--td2)',
+    padding: '0 10px', height: 54,
+    display: 'flex', alignItems: 'center',
+    borderBottom: highlight ? '2px solid var(--az2)' : '2px solid transparent',
+    transition: 'all 0.2s',
+  });
 
   return (
     <>
@@ -53,20 +64,50 @@ export default function Nav() {
         </Link>
 
         {/* Desktop links */}
-        <ul style={{ display: 'flex' }} className="max-md:hidden">
+        <ul style={{ display: 'flex', alignItems: 'center' }} className="max-md:hidden">
+          {/* Dropdown : les 9 domaines */}
+          <li
+            style={{ position: 'relative' }}
+            onMouseEnter={() => setDomainsOpen(true)}
+            onMouseLeave={() => setDomainsOpen(false)}
+          >
+            <button
+              onClick={() => setDomainsOpen(o => !o)}
+              className="nav-link"
+              style={{ ...linkStyle(), background: 'none', border: 'none', borderBottom: '2px solid transparent', cursor: 'pointer', gap: 5 }}
+            >
+              Domaines
+              <span style={{ fontSize: 8, transform: domainsOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>▼</span>
+            </button>
+            {domainsOpen && (
+              <div style={{
+                position: 'absolute', top: 54, left: 0, width: 400,
+                background: 'var(--bg2)', border: '1px solid var(--bd)',
+                borderRadius: 12, padding: '0.6rem',
+                boxShadow: '0 14px 36px rgba(0,0,0,0.5)',
+              }}>
+                <div className="g-2" style={{ gap: 4 }}>
+                  {DOMAINS.map(d => (
+                    <Link
+                      key={d.slug}
+                      href={`/${d.slug}`}
+                      className="nav-drop-item"
+                      onClick={() => setDomainsOpen(false)}
+                    >
+                      <span style={{ fontSize: 18, lineHeight: 1 }}>{d.icon}</span>
+                      <span style={{ minWidth: 0 }}>
+                        <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', color: d.color }}>{d.label}</span>
+                        <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{d.desc}</span>
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </li>
           {NAV_LINKS.map(({ href, label, highlight }) => (
             <li key={href}>
-              <Link href={href} style={{
-                fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700,
-                letterSpacing: '0.06em', textTransform: 'uppercase',
-                color: highlight ? 'var(--az2)' : 'var(--td2)',
-                padding: '0 10px', height: 54,
-                display: 'flex', alignItems: 'center',
-                borderBottom: highlight ? '2px solid var(--az2)' : '2px solid transparent',
-                transition: 'all 0.2s',
-              }}
-                className="nav-link"
-              >
+              <Link href={href} style={linkStyle(highlight)} className="nav-link">
                 {label}
               </Link>
             </li>
@@ -187,7 +228,23 @@ export default function Nav() {
         transition: 'transform 0.28s ease, opacity 0.28s ease',
         pointerEvents: mobileOpen ? 'all' : 'none',
       }}>
-        {NAV_LINKS.map(({ href, label, highlight }) => (
+        {/* Grille des 9 domaines */}
+        <div style={{ padding: '0.9rem 1.4rem', borderBottom: '1px solid var(--bd)' }}>
+          <div className="g-3" style={{ gap: 6 }}>
+            {DOMAINS.map(d => (
+              <Link key={d.slug} href={`/${d.slug}`} onClick={() => setMobileOpen(false)} style={{
+                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3,
+                padding: '0.65rem 0.3rem', borderRadius: 8,
+                background: 'var(--bg3)', border: '1px solid var(--bd)',
+                textDecoration: 'none',
+              }}>
+                <span style={{ fontSize: 16, lineHeight: 1 }}>{d.icon}</span>
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', color: 'var(--td2)' }}>{d.label}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+        {NAV_LINKS.filter(l => !DOMAINS.some(d => `/${d.slug}` === l.href)).map(({ href, label, highlight }) => (
           <Link key={href} href={href} onClick={() => setMobileOpen(false)} style={{
             fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700,
             letterSpacing: '0.08em', textTransform: 'uppercase',

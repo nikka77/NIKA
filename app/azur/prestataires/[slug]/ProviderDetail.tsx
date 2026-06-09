@@ -469,7 +469,7 @@ export default function ProviderDetail({
               ⚓ À bord, tout est inclus
               <span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 400, color: 'var(--td3)', fontStyle: 'normal' }}>Venez les mains dans les poches</span>
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))', gap: '0.8rem' }}>
+            <div className="g-fill-80" style={{ gap: '0.8rem' }}>
               {inclus.map(item => (
                 <div key={item} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, padding: '10px 6px', borderRadius: 10, background: 'rgba(255,255,255,0.03)' }}>
                   <div style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1 }} dangerouslySetInnerHTML={{ __html: INCLUS_ICONS[item] || DEFAULT_ICON }} />
@@ -557,7 +557,7 @@ export default function ProviderDetail({
         {options.length > 0 && section(
           <>
             {sectionTitle('Options à la carte')}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
+            <div className="g-2" style={{ gap: '0.8rem' }}>
               {options.map(opt => {
                 const checked = selectedOptions.has(opt.key)
                 const imgSrc  = OPTION_IMAGES[opt.key] || OPTION_IMAGES['bbq']
