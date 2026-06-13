@@ -202,6 +202,16 @@ ul { list-style: none; }
   filter: drop-shadow(0 3px 5px rgba(0,0,0,0.4));
 }
 
+/* ===== BANNIÈRE DÉFILANTE — inclus à bord ===== */
+.marquee { overflow: hidden; width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.marquee-track { display: flex; width: max-content; animation: marquee-scroll 26s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; flex-shrink: 0; padding: 0 16px; min-width: 64px; }
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; flex-wrap: wrap; justify-content: center; } }
+
 /* ===== Coin NIKA — rotation continue ===== */
 @keyframes coinspin { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
 .nika-coin { animation: coinspin 7s linear infinite; filter: drop-shadow(0 10px 32px rgba(212,160,23,0.4)); }

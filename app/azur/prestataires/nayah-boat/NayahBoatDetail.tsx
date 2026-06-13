@@ -315,13 +315,15 @@ export default function NayahBoatDetail({
         <div style={{ maxWidth:720, margin:'0 auto' }}>
           <h2 style={{ fontFamily:'var(--fe)', fontSize:20, fontWeight:700, color:GOLD, margin:'0 0 0.2rem' }}>⚓ À bord, tout est inclus</h2>
           <p style={{ fontFamily:'var(--fo)', fontSize:12, color:'rgba(255,255,255,0.45)', marginBottom:'1.2rem' }}>Venez les mains dans les poches</p>
-          <div className="nb-inclus">
-            {INCLUS_ITEMS.map(item => (
-              <div key={item.label} style={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:'0.35rem', padding:'0.75rem 0.5rem', textAlign:'center', background:`rgba(201,168,76,0.05)`, border:`1px solid ${GOLD}25`, borderRadius:10 }}>
-                <span style={{ fontSize:22 }}>{item.emoji}</span>
-                <span style={{ fontFamily:'var(--fo)', fontSize:10, fontWeight:600, color:'rgba(255,255,255,0.7)', lineHeight:1.3 }}>{item.label}</span>
-              </div>
-            ))}
+          <div className="marquee">
+            <div className="marquee-track">
+              {[...INCLUS_ITEMS, ...INCLUS_ITEMS].map((item, i) => (
+                <div key={i} className="marquee-item">
+                  <span style={{ fontSize:26 }}>{item.emoji}</span>
+                  <span style={{ fontFamily:'var(--fo)', fontSize:10, fontWeight:600, color:'rgba(255,255,255,0.7)', lineHeight:1.3, whiteSpace:'nowrap' }}>{item.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

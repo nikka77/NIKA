@@ -469,13 +469,15 @@ export default function ProviderDetail({
               ⚓ À bord, tout est inclus
               <span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 400, color: 'var(--td3)', fontStyle: 'normal' }}>Venez les mains dans les poches</span>
             </h2>
-            <div className="g-fill-80" style={{ gap: '0.8rem' }}>
-              {inclus.map(item => (
-                <div key={item} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, padding: '10px 6px', borderRadius: 10, background: 'rgba(255,255,255,0.03)' }}>
-                  <div style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1 }} dangerouslySetInnerHTML={{ __html: INCLUS_ICONS[item] || DEFAULT_ICON }} />
-                  <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', textAlign: 'center', lineHeight: 1.3 }}>{item}</span>
-                </div>
-              ))}
+            <div className="marquee">
+              <div className="marquee-track">
+                {[...inclus, ...inclus].map((item, i) => (
+                  <div key={i} className="marquee-item">
+                    <div style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1 }} dangerouslySetInnerHTML={{ __html: INCLUS_ICONS[item] || DEFAULT_ICON }} />
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', textAlign: 'center', lineHeight: 1.3, whiteSpace: 'nowrap' }}>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         )}
