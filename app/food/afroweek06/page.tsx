@@ -34,7 +34,7 @@ export default async function Afroweek06Page() {
   const { data: items } = supabase
     ? await supabase
         .from('food_items')
-        .select('id, name, description, price, category, emoji')
+        .select('id, slug, name, description, price, category, emoji')
         .eq('provider_id', provider.id)
         .eq('active', true)
         .order('category')

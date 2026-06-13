@@ -21,3 +21,6 @@ npm-debug.log*
 graphify-out/
 nika_images_corrected.sh
 nika_patch_*.sh
+
+# Build Next.js (hors sync iCloud)
+.next.nosync/

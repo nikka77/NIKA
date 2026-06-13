@@ -4,7 +4,7 @@
     {
       "name": "NIKA Next.js Dev",
       "runtimeExecutable": "/usr/bin/env",
-      "runtimeArgs": ["-S", "PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin", "/opt/homebrew/bin/node", "node_modules/next/dist/bin/next", "dev", "--webpack"],
+      "runtimeArgs": ["-S", "PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin", "/opt/homebrew/bin/node", "node_modules/next/dist/bin/next", "dev"],
       "port": 3000
     }
   ]

@@ -40,6 +40,7 @@ Avant de lire des fichiers, consulte d'abord `graphify-out/GRAPH_REPORT.md` pour
 - **Domaines** → `.claude/skills/NIKA_DOMAINS.md` (règles métier, monétisation, gamification)
 - **STAY WOW** → `.claude/skills/NIKA_STAY_WOW.md` (inventaire logements extraordinaires, scoring WOW, SEO insolite, stratégie affiliation/direct)
 - **Reviews & Tracking** → `.claude/skills/NIKA_REVIEWS_TRACKING.md` (système avis IA, issues tracking, NIKA Score)
+- **Vidéo IA** → `.claude/skills/HIGGSFIELD_SEEDANCE.md` (génération vidéo Higgsfield/Seedance, prompts par domaine, formats stories/hero)
 
 ## Règles absolues
 

@@ -58,7 +58,7 @@ export default function FlashDeals() {
     if (!supabase) return;
     supabase
       .from('flash_deals')
-      .select('*, pro:pros(business_name)')
+      .select('*')
       .eq('active', true)
       .gt('expires_at', new Date().toISOString())
       .order('expires_at')

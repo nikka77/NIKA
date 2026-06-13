@@ -8,6 +8,8 @@ import DailySpecialBanner from '@/components/food/rakomoria/DailySpecialBanner'
 import MangaMenuSection, { type FoodItem as MangaItem } from '@/components/food/rakomoria/MangaMenuSection'
 import BundleQtySelector from '@/components/food/rakomoria/BundleQtySelector'
 import ZoneSelector, { type DeliveryZone } from '@/components/food/rakomoria/ZoneSelector'
+import Spin360 from '@/components/Spin360'
+import { visual } from '@/lib/visuals'
 
 // ─── Constantes métier ────────────────────────────────────────────────────────
 
@@ -217,14 +219,13 @@ export default function RakoClient({ provider, sessionId, sessionStatus, items }
           </div>
         )}
 
-        <div style={{
-          width: 58, height: 58, borderRadius: 10,
-          background: '#1a3a1a', border: '1px solid #2d5a2d',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: 24, flexShrink: 0,
-        }}>
-          {item.emoji || '🍽️'}
-        </div>
+        <Spin360
+          emoji={item.emoji || '🍽️'}
+          alt={item.name}
+          accent="#F5C518"
+          size={58}
+          {...visual('food/rakomoria', item.slug)}
+        />
 
         <div style={{ flex: 1 }}>
           <div style={{ fontFamily: 'var(--fo)', fontSize: 14, fontWeight: 700, color: outOfStock ? '#555' : '#fff', marginBottom: 2 }}>
@@ -244,7 +245,7 @@ export default function RakoClient({ provider, sessionId, sessionStatus, items }
             ) : (
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <button onClick={() => remove(item.id)} disabled={qty === 0} style={{
-                  width: 26, height: 26, borderRadius: '50%',
+                  width: 36, height: 36, borderRadius: '50%',
                   border: '1px solid #F5C51860', background: 'transparent',
                   color: '#F5C518', fontSize: 16, cursor: qty === 0 ? 'default' : 'pointer',
                   opacity: qty === 0 ? 0.35 : 1,
@@ -254,7 +255,7 @@ export default function RakoClient({ provider, sessionId, sessionStatus, items }
                   {qty}
                 </span>
                 <button onClick={() => isOpen && add(item.id)} disabled={qty >= item.remaining_stock || !isOpen} style={{
-                  width: 26, height: 26, borderRadius: '50%',
+                  width: 36, height: 36, borderRadius: '50%',
                   background: qty >= item.remaining_stock ? 'transparent' : '#F5C518',
                   border: `1px solid ${qty >= item.remaining_stock ? '#555' : '#F5C518'}`,
                   color: '#0D0D0D', fontSize: 16, fontWeight: 700,
@@ -425,6 +426,7 @@ export default function RakoClient({ provider, sessionId, sessionStatus, items }
                 <BundleQtySelector
                   key={item.id}
                   itemId={item.id}
+                  slug={item.slug}
                   name={item.name}
                   emoji={item.emoji}
                   description={item.description}

@@ -6,6 +6,8 @@ import { createClient } from '@/lib/supabase/client';
 import { DOMAINS } from '@/lib/constants';
 import { useRouter } from 'next/navigation';
 import AuthModal from './AuthModal';
+import Spin360 from './Spin360';
+import { visual } from '@/lib/visuals';
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -94,7 +96,7 @@ export default function Nav() {
                       className="nav-drop-item"
                       onClick={() => setDomainsOpen(false)}
                     >
-                      <span style={{ fontSize: 18, lineHeight: 1 }}>{d.icon}</span>
+                      <Spin360 emoji={d.icon} alt={d.label} accent={d.color} size={34} {...visual('domains', d.slug)} />
                       <span style={{ minWidth: 0 }}>
                         <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', color: d.color }}>{d.label}</span>
                         <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{d.desc}</span>
@@ -238,7 +240,7 @@ export default function Nav() {
                 background: 'var(--bg3)', border: '1px solid var(--bd)',
                 textDecoration: 'none',
               }}>
-                <span style={{ fontSize: 16, lineHeight: 1 }}>{d.icon}</span>
+                <Spin360 emoji={d.icon} alt={d.label} accent={d.color} size={40} {...visual('domains', d.slug)} />
                 <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', color: 'var(--td2)' }}>{d.label}</span>
               </Link>
             ))}

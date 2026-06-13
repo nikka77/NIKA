@@ -1,11 +1,14 @@
 'use client'
 // components/food/rakomoria/BundleQtySelector.tsx
 // Gestion des quantités par lots pour Triangles (×2) et Samboussa (×5 / ×10)
+import Spin360 from '@/components/Spin360'
+import { visual } from '@/lib/visuals'
 
 type BundleOption = { qty: number; price: number; label: string }
 
 type Props = {
   itemId: string
+  slug?: string
   name: string
   emoji?: string
   description?: string
@@ -18,7 +21,7 @@ type Props = {
 }
 
 export default function BundleQtySelector({
-  itemId, name, emoji, description,
+  itemId, slug, name, emoji, description,
   bundleOptions, cart, onAdd, onRemove, remainingStock, isOpen
 }: Props) {
   const outOfStock = remainingStock === 0
@@ -32,14 +35,7 @@ export default function BundleQtySelector({
     }}>
       {/* Header */}
       <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>
-        <div style={{
-          width: 52, height: 52, borderRadius: 10,
-          background: '#1A4D1A', border: '1px solid #F5C51840',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: 24, flexShrink: 0,
-        }}>
-          {emoji || '🥟'}
-        </div>
+        <Spin360 emoji={emoji || '🥟'} alt={name} accent="#F5C518" size={52} {...visual('food/rakomoria', slug ?? '')} />
         <div>
           <div style={{ fontFamily: 'var(--fo)', fontSize: 14, fontWeight: 700, color: '#fff', marginBottom: 3 }}>
             {name}
@@ -82,7 +78,7 @@ export default function BundleQtySelector({
                     onClick={() => onRemove(itemId, opt.qty)}
                     disabled={currentQty === 0}
                     style={{
-                      width: 24, height: 24, borderRadius: '50%',
+                      width: 36, height: 36, borderRadius: '50%',
                       border: '1px solid #F5C51860', background: 'transparent',
                       color: '#F5C518', fontSize: 15,
                       cursor: currentQty === 0 ? 'default' : 'pointer',
@@ -97,7 +93,7 @@ export default function BundleQtySelector({
                     onClick={() => isOpen && onAdd(itemId, opt.qty, opt.price)}
                     disabled={!isOpen}
                     style={{
-                      width: 24, height: 24, borderRadius: '50%',
+                      width: 36, height: 36, borderRadius: '50%',
                       background: '#F5C518', border: '1px solid #F5C518',
                       color: '#0D0D0D', fontSize: 15, fontWeight: 700,
                       cursor: isOpen ? 'pointer' : 'default',

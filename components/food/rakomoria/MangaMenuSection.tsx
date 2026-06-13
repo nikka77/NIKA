@@ -1,5 +1,7 @@
 'use client'
 // components/food/rakomoria/MangaMenuSection.tsx — section jeudi/vendredi/samedi
+import Spin360 from '@/components/Spin360'
+import { visual } from '@/lib/visuals'
 
 export type FoodItem = {
   id: string
@@ -74,16 +76,8 @@ export default function MangaMenuSection({ items, cart, onAdd, onRemove, isOpen 
               borderTop: i === 0 ? 'none' : '1px solid #1a0030',
               opacity: outOfStock ? 0.5 : 1,
             }}>
-              {/* Emoji */}
-              <div style={{
-                width: 48, height: 48, borderRadius: 9,
-                background: 'linear-gradient(135deg, #1A0030, #2D0050)',
-                border: '1px solid #5a00aa40',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: 22, flexShrink: 0,
-              }}>
-                {item.emoji || '🔥'}
-              </div>
+              {/* Visuel */}
+              <Spin360 emoji={item.emoji || '🔥'} alt={item.name} accent="#a855f7" size={48} {...visual('food/rakomoria', item.slug)} />
 
               {/* Info */}
               <div style={{ flex: 1, minWidth: 0 }}>
@@ -111,7 +105,7 @@ export default function MangaMenuSection({ items, cart, onAdd, onRemove, isOpen 
               ) : (
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <button onClick={() => onRemove(item.id)} disabled={qty === 0} style={{
-                    width: 26, height: 26, borderRadius: '50%',
+                    width: 36, height: 36, borderRadius: '50%',
                     border: '1px solid #F5C51860', background: 'transparent',
                     color: '#F5C518', fontSize: 16, cursor: qty === 0 ? 'default' : 'pointer',
                     opacity: qty === 0 ? 0.3 : 1,
@@ -124,7 +118,7 @@ export default function MangaMenuSection({ items, cart, onAdd, onRemove, isOpen 
                     onClick={() => isOpen && onAdd(item.id)}
                     disabled={qty >= item.remaining_stock || !isOpen}
                     style={{
-                      width: 26, height: 26, borderRadius: '50%',
+                      width: 36, height: 36, borderRadius: '50%',
                       background: qty >= item.remaining_stock ? 'transparent' : 'linear-gradient(135deg, #F5C518, #ff6600)',
                       border: '1px solid #F5C51860', color: '#0D0D0D', fontSize: 16,
                       cursor: qty >= item.remaining_stock ? 'default' : 'pointer',

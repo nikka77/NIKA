@@ -13,11 +13,12 @@ const DOMAIN_LINKS = [
 ];
 
 const PLATFORM_LINKS = [
-  { href: '/#carte',    label: 'Carte interactive' },
-  { href: '/#token',    label: 'Token $NIKA' },
-  { href: '/#onboarding', label: 'Comment ça marche' },
+  { href: '/carte',     label: 'Carte interactive' },
+  { href: '/leaderboard', label: 'Classement' },
+  { href: '/comment-ca-marche', label: 'Comment ça marche' },
   { href: '/pro',       label: 'Devenir partenaire' },
-  { href: '/pro/register', label: 'Référencer mon commerce' },
+  { href: '/pro/inscription', label: 'Référencer mon commerce' },
+  { href: '/niko',      label: 'NIKO — Agent IA' },
 ];
 
 const ABOUT_LINKS = [
@@ -56,7 +57,7 @@ export default function Footer() {
           alignItems: 'center', flexWrap: 'wrap', gap: '0.8rem',
         }}>
           <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>
-            © 2025 NIKA — Tous droits réservés. NIKA est une plateforme intermédiaire.
+            © 2026 NIKA — Tous droits réservés. NIKA est une plateforme intermédiaire.
           </span>
           <div style={{ display: 'flex', gap: '1.2rem', flexWrap: 'wrap' }}>
             {[

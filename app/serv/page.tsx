@@ -1,12 +1,16 @@
 import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import Spin360 from '@/components/Spin360';
+import { visual } from '@/lib/visuals';
 
 export const metadata: Metadata = {
   title: 'SERV — Services à Domicile Côte d\'Azur | NIKA',
   description: 'Plombiers, électriciens, serruriers, déménageurs et artisans certifiés sur Nice, Antibes et Cannes. Réservation rapide, notation communauté.',
   keywords: ['plombier nice', 'électricien côte d\'azur', 'serrurier antibes', 'déménagement cannes', 'artisan nice'],
 };
+
+const ACCENT = '#0EA878';
 
 const SERV_CATS = [
   { slug: 'plomberie', label: 'Plomberie', icon: '🚿' },
@@ -26,53 +30,182 @@ export default async function ServPage() {
     : { data: [] };
 
   return (
-    <main style={{ padding: 'clamp(2rem,5vw,3rem) 1.4rem clamp(3rem,7vw,5rem)', maxWidth: 1100, margin: '0 auto' }}>
-      <div style={{ marginBottom: '3rem' }}>
-        <p style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#0EA878', marginBottom: '0.4rem' }}>🔧 Domaine 06</p>
-        <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(44px,8vw,96px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.9, marginBottom: '0.8rem' }}>SERV</h1>
-        <p style={{ fontFamily: 'var(--fo)', fontSize: 15, color: 'var(--td2)', maxWidth: 500, lineHeight: 1.6 }}>Services à domicile et artisans de confiance sur la Côte d&apos;Azur.</p>
-      </div>
+    <main>
+      {/* ── HERO ──────────────────────────────────────────────── */}
+      <div style={{
+        background: 'linear-gradient(180deg, #051712 0%, #08231B 60%, var(--bg) 100%)',
+        borderBottom: '1px solid var(--bd)',
+        padding: 'clamp(3rem,7vw,5.5rem) 1.4rem',
+        position: 'relative', overflow: 'hidden',
+      }}>
+        <div style={{
+          position: 'absolute', right: '-4%', top: '50%',
+          transform: 'translateY(-50%) rotate(12deg)',
+          fontSize: 300, opacity: 0.03,
+          userSelect: 'none', pointerEvents: 'none', lineHeight: 1,
+        }}>
+          🔧
+        </div>
 
-      <div style={{ gap: '0.7rem', marginBottom: '3rem' }} className="g-4 max-sm:grid-cols-2">
-        {SERV_CATS.map(c => (
-          <div key={c.slug} style={{ background: 'var(--bg2)', border: '1px solid rgba(14,168,120,0.15)', borderRadius: 10, padding: '1.1rem', textAlign: 'center' }}>
-            <div style={{ fontSize: 26, marginBottom: '0.4rem' }}>{c.icon}</div>
-            <div style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 600, color: 'var(--td2)' }}>{c.label}</div>
+        <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative' }}>
+          <div style={{
+            fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700,
+            letterSpacing: '0.14em', textTransform: 'uppercase',
+            color: ACCENT, marginBottom: '1rem',
+          }}>
+            🔧 NIKA SERV — Domaine 06
           </div>
-        ))}
+
+          <h1 style={{
+            fontFamily: 'var(--fe)',
+            fontSize: 'clamp(44px,8vw,96px)',
+            fontWeight: 900, fontStyle: 'italic',
+            textTransform: 'uppercase', color: 'var(--td)',
+            lineHeight: 0.88, marginBottom: '1.2rem',
+          }}>
+            Des pros qui<br />
+            <span style={{ color: ACCENT }}>répondent</span>
+          </h1>
+
+          <p style={{
+            fontFamily: 'var(--fo)',
+            fontSize: 'clamp(14px,1.5vw,16px)',
+            color: 'var(--td2)', maxWidth: 480, lineHeight: 1.7,
+            marginBottom: '1.8rem',
+          }}>
+            Plomberie, électricité, ménage, déménagement — des artisans
+            notés par la communauté, de Nice à Cannes.
+          </p>
+
+          <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
+            <a href="#artisans" style={{
+              fontFamily: 'var(--fe)', fontSize: 15, fontWeight: 800, fontStyle: 'italic',
+              letterSpacing: '0.04em', textTransform: 'uppercase',
+              padding: '12px 26px', borderRadius: 3,
+              background: ACCENT, color: '#fff', textDecoration: 'none',
+            }}>
+              Trouver un artisan →
+            </a>
+            <Link href="/pro/inscription?type=serv" style={{
+              fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700,
+              padding: '12px 22px', borderRadius: 3,
+              border: '1px solid var(--bd2)', color: 'var(--td2)', textDecoration: 'none',
+            }}>
+              Inscrire mon activité
+            </Link>
+          </div>
+        </div>
       </div>
 
-      {pros && pros.length > 0 ? (
-        <div>
-          <h2 style={{ fontFamily: 'var(--fe)', fontSize: 26, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1.2rem' }}>Prestataires</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-            {pros.map((pro: { id: string; business_name: string; description?: string; address?: string; rating: number; rating_count: number; verified: boolean; phone?: string }) => (
-              <Link key={pro.id} href={`/pro/${pro.id}`} style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '1.4rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', textDecoration: 'none', flexWrap: 'wrap' }}>
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: '0.3rem' }}>
-                    <span style={{ fontFamily: 'var(--fe)', fontSize: 18, fontStyle: 'italic', color: 'var(--td)', fontWeight: 700 }}>{pro.business_name}</span>
-                    {pro.verified && <span style={{ fontFamily: 'var(--fo)', fontSize: 9, fontWeight: 700, color: 'var(--teal)', background: 'rgba(14,168,120,0.1)', border: '1px solid rgba(14,168,120,0.2)', borderRadius: 10, padding: '2px 7px' }}>✓</span>}
-                  </div>
-                  {pro.description && <div style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td2)' }}>{pro.description.slice(0, 90)}…</div>}
-                  {pro.address && <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', marginTop: '0.2rem' }}>📍 {pro.address}</div>}
+      {/* ── STATS BAR ─────────────────────────────────────────── */}
+      <div style={{ borderBottom: '1px solid var(--bd)', padding: '0.9rem 1.4rem' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', gap: '2.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
+          {[
+            { v: '08', l: 'Métiers' },
+            { v: '⭐', l: 'Notés communauté' },
+            { v: '24h', l: 'Réponse rapide' },
+          ].map(stat => (
+            <div key={stat.l}>
+              <div style={{ fontFamily: 'var(--fn)', fontSize: 20, color: ACCENT, lineHeight: 1 }}>
+                {stat.v}
+              </div>
+              <div style={{ fontFamily: 'var(--fo)', fontSize: 9, color: 'var(--td3)', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: 2 }}>
+                {stat.l}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── CONTENU ───────────────────────────────────────────── */}
+      <div id="artisans" style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(2rem,4vw,3rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
+
+        {/* Métiers */}
+        <div style={{ marginBottom: '3rem' }}>
+          <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,3.5vw,40px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.92, marginBottom: '0.4rem' }}>
+            Métiers
+          </h2>
+          <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)', marginBottom: '1.5rem' }}>
+            De la fuite d&apos;eau au jardin à tailler
+          </p>
+          <div style={{ gap: '0.7rem' }} className="g-4 max-sm:grid-cols-2">
+            {SERV_CATS.map(c => (
+              <div key={c.slug} className="dom-card" style={{
+                background: 'var(--bg2)', border: '1px solid rgba(14,168,120,0.15)',
+                borderRadius: 10, padding: '1.1rem', textAlign: 'center',
+                ['--dc' as string]: ACCENT,
+              }}>
+                <div style={{ marginBottom: '0.4rem' }}>
+                  <Spin360 emoji={c.icon} alt={c.label} accent={ACCENT} size={52} {...visual('serv/cats', c.slug)} />
                 </div>
-                <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                  {pro.rating > 0 && <div style={{ fontFamily: 'var(--fe)', fontSize: 17, fontStyle: 'italic', color: 'var(--gold2)', marginBottom: '0.3rem' }}>⭐ {pro.rating.toFixed(1)}</div>}
-                  {pro.phone && <a href={`tel:${pro.phone}`} onClick={e => e.stopPropagation()} style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: 'var(--teal)', textDecoration: 'none' }}>📞 Appeler</a>}
-                </div>
-              </Link>
+                <div style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 600, color: 'var(--td2)' }}>{c.label}</div>
+              </div>
             ))}
           </div>
         </div>
-      ) : (
-        <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '4rem', textAlign: 'center' }}>
-          <div style={{ fontSize: 48, marginBottom: '1rem' }}>🔧</div>
-          <p style={{ fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td3)', marginBottom: '1.5rem' }}>Les artisans arrivent sur NIKA.</p>
-          <Link href="/pro/inscription?type=serv" style={{ fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700, color: 'var(--teal)', border: '1px solid rgba(14,168,120,0.3)', padding: '10px 20px', borderRadius: 6 }}>
+
+        {/* Prestataires */}
+        {pros && pros.length > 0 ? (
+          <div style={{ marginBottom: '3rem' }}>
+            <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,3.5vw,40px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1.2rem' }}>Prestataires</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              {pros.map((pro: { id: string; business_name: string; description?: string; address?: string; rating: number; rating_count: number; verified: boolean; phone?: string }) => (
+                <div key={pro.id} className="dom-card" style={{
+                  background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10,
+                  padding: '1.4rem', display: 'flex', justifyContent: 'space-between',
+                  alignItems: 'center', gap: '1rem', flexWrap: 'wrap',
+                  ['--dc' as string]: ACCENT,
+                }}>
+                  <Link href={`/pro/${pro.id}`} style={{ flex: 1, minWidth: 220, textDecoration: 'none' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: '0.3rem' }}>
+                      <span style={{ fontFamily: 'var(--fe)', fontSize: 18, fontStyle: 'italic', color: 'var(--td)', fontWeight: 700 }}>{pro.business_name}</span>
+                      {pro.verified && <span style={{ fontFamily: 'var(--fo)', fontSize: 9, fontWeight: 700, color: 'var(--teal)', background: 'rgba(14,168,120,0.1)', border: '1px solid rgba(14,168,120,0.2)', borderRadius: 10, padding: '2px 7px' }}>✓</span>}
+                    </div>
+                    {pro.description && <div style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td2)' }}>{pro.description.slice(0, 90)}…</div>}
+                    {pro.address && <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', marginTop: '0.2rem' }}>📍 {pro.address}</div>}
+                  </Link>
+                  <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                    {pro.rating > 0 && <div style={{ fontFamily: 'var(--fe)', fontSize: 17, fontStyle: 'italic', color: 'var(--gold2)', marginBottom: '0.3rem' }}>⭐ {pro.rating.toFixed(1)}</div>}
+                    {pro.phone && <a href={`tel:${pro.phone}`} style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: ACCENT, textDecoration: 'none' }}>📞 Appeler</a>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div style={{ background: 'var(--bg2)', border: '1px dashed rgba(14,168,120,0.3)', borderRadius: 12, padding: '3.5rem 2rem', textAlign: 'center', marginBottom: '3rem' }}>
+            <div style={{ fontSize: 44, marginBottom: '0.8rem' }}>🔧</div>
+            <p style={{ fontFamily: 'var(--fe)', fontSize: 18, fontStyle: 'italic', fontWeight: 700, color: 'var(--td)', marginBottom: '0.4rem' }}>Les artisans arrivent</p>
+            <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)' }}>Les premiers profils sont en cours de vérification.</p>
+          </div>
+        )}
+
+        {/* CTA pro */}
+        <div style={{
+          borderRadius: 16, padding: 'clamp(1.8rem,4vw,2.6rem)',
+          background: 'linear-gradient(135deg, rgba(14,168,120,0.14), rgba(14,168,120,0.04))',
+          border: '1px solid rgba(14,168,120,0.25)',
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          flexWrap: 'wrap', gap: '1.2rem',
+        }}>
+          <div>
+            <div style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(20px,2.5vw,26px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '0.3rem' }}>
+              Artisan sur la Côte ?
+            </div>
+            <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)', margin: 0 }}>
+              Des clients près de chez vous, une réputation qui se construit avis après avis.
+            </p>
+          </div>
+          <Link href="/pro/inscription?type=serv" style={{
+            fontFamily: 'var(--fe)', fontSize: 15, fontWeight: 800, fontStyle: 'italic',
+            letterSpacing: '0.04em', textTransform: 'uppercase',
+            padding: '13px 28px', borderRadius: 3, flexShrink: 0,
+            background: ACCENT, color: '#fff', textDecoration: 'none',
+          }}>
             Inscrire mon activité →
           </Link>
         </div>
-      )}
+      </div>
     </main>
   );
 }

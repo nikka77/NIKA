@@ -45,17 +45,13 @@ export default function TokenSection() {
           </button>
         </FadeIn>
 
-        {/* Token ring */}
+        {/* Coin NIKA 3D */}
         <FadeIn delay={0.3}>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 220 }}>
-            <div style={{ width: 160, height: 160, borderRadius: '50%', border: '1.5px solid rgba(212,160,23,0.22)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', animation: 'tspin 18s linear infinite' }}>
-              <div style={{ position: 'absolute', inset: -16, borderRadius: '50%', border: '1px solid rgba(212,160,23,0.09)' }} />
-              <div style={{ position: 'absolute', inset: -32, borderRadius: '50%', border: '1px dashed rgba(212,160,23,0.05)' }} />
-              <div style={{ position: 'absolute', width: 7, height: 7, borderRadius: '50%', background: 'var(--gold2)', boxShadow: '0 0 7px var(--gold2)', top: '50%', left: 0, transform: 'translate(-50%,-50%)' }} />
-              <div style={{ width: 106, height: 106, borderRadius: '50%', background: 'radial-gradient(circle,rgba(212,160,23,0.13) 0%,rgba(5,12,23,.95) 70%)', border: '1px solid rgba(212,160,23,0.3)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', animation: 'tspin 18s linear infinite reverse' }}>
-                <div style={{ fontFamily: 'var(--fn)', fontSize: 26, letterSpacing: '0.1em', color: 'var(--gold2)' }}>NIKA</div>
-                <div style={{ fontFamily: 'var(--fo)', fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)', opacity: 0.7 }}>Token</div>
-              </div>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 240, perspective: 900 }}>
+            <div style={{ position: 'relative' }}>
+              <div style={{ position: 'absolute', inset: -40, borderRadius: '50%', background: 'radial-gradient(circle, rgba(212,160,23,0.18) 0%, transparent 65%)' }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/token/nika-coin.webp" alt="Coin NIKA — monnaie de plateforme" width={190} height={190} className="nika-coin" style={{ position: 'relative', display: 'block' }} />
             </div>
           </div>
         </FadeIn>

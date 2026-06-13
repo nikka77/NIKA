@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
+  // .nosync : exclut le dossier de build de la sync iCloud Drive
+  // (iCloud corrompt le cache Turbopack — manifests supprimés en plein write)
+  distDir: '.next.nosync',
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: '*.supabase.co' },

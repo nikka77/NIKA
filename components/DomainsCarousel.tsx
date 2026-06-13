@@ -2,6 +2,8 @@
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import FadeIn from './FadeIn';
+import Spin360 from './Spin360';
+import { visual } from '@/lib/visuals';
 
 const DOMAINS = [
   { slug: 'food',  icon: '🍽️', num: '01 / Alimentation',    name: 'FOOD',  color: '#D4A017', affil: false,
@@ -33,8 +35,8 @@ const DOMAINS = [
     tags: ['Local', 'Indépendant', 'IA modération'] },
 ];
 
-const CARD_W = 340;
-const CARD_GAP = 20;
+const CARD_W = 300;
+const CARD_GAP = 18;
 
 export default function DomainsCarousel() {
   const [active, setActive] = useState(0);
@@ -109,7 +111,9 @@ export default function DomainsCarousel() {
                   </div>
                 )}
 
-                <span style={{ fontSize: 28, marginBottom: '0.8rem', display: 'block' }}>{d.icon}</span>
+                <div style={{ marginBottom: '0.8rem' }}>
+                  <Spin360 emoji={d.icon} alt={d.name} accent={d.color} size={58} {...visual('domains', d.slug)} />
+                </div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: d.color, opacity: 0.55, marginBottom: '0.15rem' }}>
                   {d.num}
                 </div>

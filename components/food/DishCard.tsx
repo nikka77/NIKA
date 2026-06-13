@@ -1,8 +1,11 @@
 'use client'
 // components/food/DishCard.tsx
+import Spin360 from '@/components/Spin360'
+import { visual } from '@/lib/visuals'
 
 export type FoodItem = {
   id: string
+  slug?: string
   name: string
   description?: string
   price: number
@@ -47,18 +50,12 @@ export default function DishCard({ item, qty, onAdd, onRemove }: Props) {
       border: `1px solid ${outOfStock ? '#2a2a2a' : CATEGORY_BORDER[item.category] ?? '#2a2a2a'}`,
       opacity: outOfStock ? 0.55 : 1,
     }}>
-      {/* Emoji block */}
-      <div style={{
-        width: 60, height: 60, borderRadius: 10,
-        background: '#2a2a2a',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontSize: 26, flexShrink: 0,
-        position: 'relative',
-      }}>
-        {item.emoji || '🍽️'}
+      {/* Visual block */}
+      <div style={{ position: 'relative', flexShrink: 0 }}>
+        <Spin360 emoji={item.emoji || '🍽️'} alt={item.name} accent="#D85A30" size={60} {...visual('food/afroweek06', item.slug ?? '')} />
         {isFeatured && !outOfStock && (
           <span style={{
-            position: 'absolute', top: -4, right: -4,
+            position: 'absolute', top: -4, right: -4, zIndex: 2,
             background: '#D85A30', color: '#fff',
             fontSize: 9, fontWeight: 700,
             padding: '2px 5px', borderRadius: 99,
@@ -115,7 +112,7 @@ export default function DishCard({ item, qty, onAdd, onRemove }: Props) {
                 disabled={qty === 0}
                 aria-label="Retirer"
                 style={{
-                  width: 26, height: 26, borderRadius: '50%',
+                  width: 36, height: 36, borderRadius: '50%',
                   border: '1px solid #D85A30',
                   background: 'transparent', color: '#D85A30',
                   fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -138,7 +135,7 @@ export default function DishCard({ item, qty, onAdd, onRemove }: Props) {
                 disabled={qty >= item.remaining_stock}
                 aria-label="Ajouter"
                 style={{
-                  width: 26, height: 26, borderRadius: '50%',
+                  width: 36, height: 36, borderRadius: '50%',
                   background: qty >= item.remaining_stock ? 'transparent' : '#D85A30',
                   border: `1px solid ${qty >= item.remaining_stock ? '#555' : '#D85A30'}`,
                   color: '#fff', fontSize: 16,
