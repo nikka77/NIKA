@@ -22,6 +22,21 @@ const GENERATED = new Set<string>([
   'food/rakomoria/chicken-burger', 'food/rakomoria/tasty-croust', 'food/rakomoria/triangle',
   'food/rakomoria/wrakos', 'food/rakomoria/samboussa', 'food/rakomoria/jus-tamarin',
   'food/rakomoria/jus-gingembre',
+  // Catégories FOOD
+  'food/cats/restaurant', 'food/cats/fastfood', 'food/cats/pizzeria', 'food/cats/boulangerie',
+  'food/cats/sushi', 'food/cats/vegan', 'food/cats/foodtruck', 'food/cats/cave',
+  // Catégories RENT
+  'rent/cats/sport', 'rent/cats/bricolage', 'rent/cats/photo', 'rent/cats/camping',
+  'rent/cats/materiel', 'rent/cats/vehicule',
+  // Catégories SERV
+  'serv/cats/plomberie', 'serv/cats/electricite', 'serv/cats/menage', 'serv/cats/jardinage',
+  'serv/cats/demenagement', 'serv/cats/informatique', 'serv/cats/serrurerie', 'serv/cats/peinture',
+  // Catégories LEARN
+  'learn/cats/sport', 'learn/cats/langue', 'learn/cats/musique', 'learn/cats/cuisine',
+  'learn/cats/code', 'learn/cats/art', 'learn/cats/surf', 'learn/cats/yoga',
+  // Catégories SEC
+  'sec/cats/gardiennage', 'sec/cats/serrurerie', 'sec/cats/alarme', 'sec/cats/coffre',
+  'sec/cats/protection', 'sec/cats/cybersecu',
   // Plats afroweek06
   'food/afroweek06/thieboudienne', 'food/afroweek06/poulet-yassa', 'food/afroweek06/mafe',
   'food/afroweek06/vermicelles', 'food/afroweek06/thieboli-yapp', 'food/afroweek06/pastels',

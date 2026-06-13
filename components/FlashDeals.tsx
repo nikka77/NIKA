@@ -75,7 +75,7 @@ export default function FlashDeals() {
         }}>
           ⚡ Flash
         </div>
-        <div style={{ display: 'flex', gap: 8, overflowX: 'auto', flex: 1, padding: '4px 0' }}>
+        <div style={{ display: 'flex', gap: 8, overflowX: 'auto', flex: 1, minWidth: 0, padding: '4px 0' }}>
           {deals.map((deal) => (
             <div key={deal.id} style={{
               flexShrink: 0, background: 'var(--bg3)',

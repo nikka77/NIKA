@@ -352,8 +352,10 @@ export default function NayahBoatDetail({
                   <div style={{ position:'absolute', top:8, right:8, background:'rgba(0,0,0,0.6)', backdropFilter:'blur(4px)', borderRadius:20, padding:'3px 9px', fontFamily:'var(--fo)', fontSize:10, fontWeight:700, color:'white' }}>
                     👥 {b.capacite} pers.
                   </div>
-                  <div style={{ position:'absolute', bottom:8, left:10, fontFamily:'var(--fo)', fontSize:12, fontWeight:700, color:'white', lineHeight:1.2, textShadow:'0 1px 4px rgba(0,0,0,0.8)' }}>{b.nom}</div>
-                  <div style={{ position:'absolute', bottom:8, right:10, fontFamily:'var(--fn)', fontSize:13, color:GOLD, fontWeight:700, textShadow:'0 1px 4px rgba(0,0,0,0.8)' }}>dès {pMin}€</div>
+                  <div style={{ position:'absolute', bottom:0, left:0, right:0, padding:'8px 10px', display:'flex', alignItems:'flex-end', justifyContent:'space-between', gap:6 }}>
+                    <span style={{ fontFamily:'var(--fo)', fontSize:12, fontWeight:700, color:'white', lineHeight:1.2, textShadow:'0 1px 4px rgba(0,0,0,0.8)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', flex:1, minWidth:0 }}>{b.nom}</span>
+                    <span style={{ fontFamily:'var(--fn)', fontSize:13, color:GOLD, fontWeight:700, textShadow:'0 1px 4px rgba(0,0,0,0.8)', flexShrink:0 }}>dès {pMin}€</span>
+                  </div>
                 </button>
               )
             })}
