@@ -127,14 +127,14 @@ function getPackKey(p: Pack): string {
 // ─── Image maps ───────────────────────────────────────────────────────────────
 
 const HERO_IMAGES: Record<string, string> = {
-  'rentboat-06': 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1600&q=80',
+  'rentboat-06': '/images/azur/hero/rentboat-06.webp',
   'nayah-boat':  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80',
 }
 
 const PACK_IMAGES: Record<string, string> = {
-  'journee':        'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',
-  'afterwork':      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-  'feu_artifices':  'https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?w=800&q=80',
+  'journee':        '/images/azur/packs/journee.webp',
+  'afterwork':      '/images/azur/packs/afterwork.webp',
+  'feu_artifices':  '/images/azur/packs/feu_artifices.webp',
   'coucher_soleil': 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
   'demi_journee':   'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',
   'journee_nayah':  'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80',
@@ -149,12 +149,12 @@ const PACK_OVERLAYS: Record<string, string> = {
 }
 
 const OPTION_IMAGES: Record<string, string> = {
-  'bbq':        'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80',
-  'seabob':     'https://images.unsplash.com/photo-1559825481-12a05cc00344?w=400&q=80',
-  'jetski':     'https://images.unsplash.com/photo-1516815231560-8f41ec531527?w=400&q=80',
-  'plateforme': 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80',
-  'piscine':    'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&q=80',
-  'fruits':     'https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=400&q=80',
+  'bbq':        '/images/azur/options/bbq.webp',
+  'seabob':     '/images/azur/options/seabob.webp',
+  'jetski':     '/images/azur/options/jetski.webp',
+  'plateforme': '/images/azur/options/plateforme.webp',
+  'piscine':    '/images/azur/options/piscine.webp',
+  'fruits':     '/images/azur/options/fruits.webp',
 }
 
 // ─── SVG Icônes inclus ────────────────────────────────────────────────────────
