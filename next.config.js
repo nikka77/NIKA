@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  // .nosync : exclut le dossier de build de la sync iCloud Drive
-  // (iCloud corrompt le cache Turbopack — manifests supprimés en plein write)
-  distDir: '.next.nosync',
+  // .nosync : exclut le dossier de build de la sync iCloud Drive en LOCAL
+  // (iCloud corrompt le cache Turbopack — manifests supprimés en plein write).
+  // Sur Vercel (env VERCEL=1), garder ".next" car le builder l'attend en dur.
+  distDir: process.env.VERCEL ? '.next' : '.next.nosync',
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: '*.supabase.co' },
