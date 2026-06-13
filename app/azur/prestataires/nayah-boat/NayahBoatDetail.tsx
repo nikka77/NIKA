@@ -105,26 +105,26 @@ const REPAS_DEFAULT: RepasData[] = [
 ]
 
 const BATEAU_IMAGES: Record<string, string> = {
-  'pacific_craft':      'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=400&q=80',
-  'Pacific Craft 5.70': 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=400&q=80',
-  'flyer_6':            'https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=400&q=80',
-  'Flyer 6.5':          'https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=400&q=80',
-  'tempest_700':        'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
-  'Tempest 700':        'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80',
-  'qs_675':             'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',
-  'Quicksilver 675':    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',
-  'cc_715':             'https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=400&q=80',
-  'Cap Camarat 715':    'https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=400&q=80',
-  'leader_805':         'https://images.unsplash.com/photo-1541956064527-e7b2d8ef3e5c?w=400&q=80',
-  'Leader 805':         'https://images.unsplash.com/photo-1541956064527-e7b2d8ef3e5c?w=400&q=80',
+  'pacific_craft':      '/images/azur/boats/pacific_craft.webp',
+  'Pacific Craft 5.70': '/images/azur/boats/pacific_craft.webp',
+  'flyer_6':            '/images/azur/boats/flyer_6.webp',
+  'Flyer 6.5':          '/images/azur/boats/flyer_6.webp',
+  'tempest_700':        '/images/azur/boats/tempest_700.webp',
+  'Tempest 700':        '/images/azur/boats/tempest_700.webp',
+  'qs_675':             '/images/azur/boats/qs_675.webp',
+  'Quicksilver 675':    '/images/azur/boats/qs_675.webp',
+  'cc_715':             '/images/azur/boats/cc_715.webp',
+  'Cap Camarat 715':    '/images/azur/boats/cc_715.webp',
+  'leader_805':         '/images/azur/boats/leader_805.webp',
+  'Leader 805':         '/images/azur/boats/leader_805.webp',
 }
 
 const REPAS_IMAGES: Record<string, string> = {
-  bbq:         'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80',
-  burger:      'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80',
-  charcuterie: 'https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&q=80',
-  mini_sales:  'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80',
-  bento_cake:  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',
+  bbq:         '/images/azur/repas/bbq.webp',
+  burger:      '/images/azur/repas/burger.webp',
+  charcuterie: '/images/azur/repas/charcuterie.webp',
+  mini_sales:  '/images/azur/repas/mini_sales.webp',
+  bento_cake:  '/images/azur/repas/bento_cake.webp',
 }
 
 const REPAS_DETAIL: Record<string, string> = {
@@ -459,7 +459,7 @@ export default function NayahBoatDetail({
             {/* Seabob */}
             <div style={{ borderRadius:14, overflow:'hidden', background:'var(--bg2)', border:`2px solid ${seabobOn ? GOLD : 'var(--bd)'}`, transition:'border-color 0.15s' }}>
               <div style={{ height:150, overflow:'hidden', position:'relative' }}>
-                <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=80" alt="Seabob" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+                <img src="/images/azur/options/seabob.webp" alt="Seabob" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
                 <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 60%)' }} />
                 <div style={{ position:'absolute', top:8, right:8, background:GOLD, color:GOLD_TEXT, fontFamily:'var(--fo)', fontSize:9, fontWeight:700, borderRadius:10, padding:'2px 8px' }}>✨ Nouveau</div>
               </div>
@@ -477,7 +477,7 @@ export default function NayahBoatDetail({
             {/* Jet Ski */}
             <div style={{ borderRadius:14, overflow:'hidden', background:'var(--bg2)', border:`2px solid ${jetskiOn ? GOLD : 'var(--bd)'}`, transition:'border-color 0.15s' }}>
               <div style={{ height:150, overflow:'hidden', position:'relative' }}>
-                <img src="https://images.unsplash.com/photo-1544551763-8ac1f2c18e5c?w=600&q=80" alt="Jet Ski" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+                <img src="/images/azur/options/jetski.webp" alt="Jet Ski" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
                 <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 60%)' }} />
               </div>
               <div style={{ padding:'0.9rem' }}>
