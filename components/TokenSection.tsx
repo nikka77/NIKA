@@ -47,11 +47,15 @@ export default function TokenSection() {
 
         {/* Coin NIKA 3D */}
         <FadeIn delay={0.3}>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 240, perspective: 900 }}>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 240, perspective: 1000 }}>
             <div style={{ position: 'relative' }}>
               <div style={{ position: 'absolute', inset: -40, borderRadius: '50%', background: 'radial-gradient(circle, rgba(212,160,23,0.18) 0%, transparent 65%)' }} />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/token/nika-coin.webp" alt="Coin NIKA — monnaie de plateforme" width={190} height={190} className="nika-coin" style={{ position: 'relative', display: 'block' }} />
+              <div className="coin3d">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/token/nika-coin.webp" alt="Coin NIKA — monnaie de plateforme" className="coin3d-face coin3d-front" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/token/nika-coin.webp" alt="" aria-hidden className="coin3d-face coin3d-back" />
+              </div>
             </div>
           </div>
         </FadeIn>

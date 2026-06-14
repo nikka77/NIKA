@@ -242,6 +242,17 @@ ul { list-style: none; }
 /* ===== Coin NIKA — rotation continue ===== */
 @keyframes coinspin { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
 .nika-coin { animation: coinspin 7s linear infinite; filter: drop-shadow(0 10px 32px rgba(212,160,23,0.4)); }
+
+/* Coin $NIKA — vraie pièce 3D double-face : 2 faces dos-à-dos avec
+   backface-visibility → jamais de face miroir, transition propre au passage
+   sur la tranche (comme une vraie pièce qui tourne). */
+.coin3d { position: relative; width: 190px; height: 190px; transform-style: preserve-3d; animation: coin3d-spin 6.5s linear infinite; will-change: transform; }
+.coin3d-face { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; backface-visibility: hidden; -webkit-backface-visibility: hidden; filter: drop-shadow(0 14px 30px rgba(212,160,23,0.40)); }
+.coin3d-back { transform: rotateY(180deg); }
+/* axe légèrement incliné (vue 3/4 du dessus) = plus dynamique qu'un spin plat-face */
+@keyframes coin3d-spin { from { transform: rotateX(12deg) rotateY(0deg); } to { transform: rotateX(12deg) rotateY(360deg); } }
+@media (max-width: 520px) { .coin3d { width: 158px; height: 158px; } }
+@media (prefers-reduced-motion: reduce) { .coin3d { animation: none; } }
 @keyframes nikofloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @keyframes cd-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes cd-pop { from { opacity: 0; transform: translateY(8px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
