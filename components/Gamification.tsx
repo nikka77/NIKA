@@ -1,5 +1,8 @@
 import FadeIn from './FadeIn';
 import { levelBadge } from '@/lib/constants';
+import { visual } from '@/lib/visuals';
+
+const RANK_MEDAL: Record<number, string> = { 1: 'or', 2: 'argent', 3: 'bronze' };
 
 const LEADERBOARD = [
   { rank: 1, initials: '?', name: 'Sois le premier',        level: 'Inscris-toi · Rejoins la compétition', xp: '— xp', bg: 'rgba(212,160,23,0.12)', color: 'var(--gold2)', rankClass: 'g' },
@@ -85,7 +88,11 @@ export default function Gamification() {
               </div>
               {LEADERBOARD.map(({ rank, initials, name, level, xp, bg, color, rankClass }) => (
                 <div key={rank} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '0.6rem 0', borderBottom: '1px solid var(--bd)' }}>
-                  <div style={{ fontFamily: 'var(--fe)', fontSize: 16, fontWeight: 900, fontStyle: 'italic', color: RANK_COLORS[rankClass], width: 18, textAlign: 'center' }}>{rank}</div>
+                  {RANK_MEDAL[rank] ? (
+                    <img src={visual('ranks', RANK_MEDAL[rank]).poster} alt={`${rank}e`} width={26} height={26} style={{ width: 26, height: 26, objectFit: 'contain', flexShrink: 0, filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))' }} />
+                  ) : (
+                    <div style={{ fontFamily: 'var(--fe)', fontSize: 16, fontWeight: 900, fontStyle: 'italic', color: RANK_COLORS[rankClass], width: 18, textAlign: 'center' }}>{rank}</div>
+                  )}
                   <div style={{ width: 32, height: 32, borderRadius: '50%', background: bg, color, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--fn)', fontSize: 12, flexShrink: 0 }}>{initials}</div>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 600, color: 'var(--td)' }}>{name}</div>

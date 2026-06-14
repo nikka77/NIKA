@@ -3,6 +3,7 @@
 import type { Metadata } from 'next'
 import { createAdminClient } from '@/lib/supabase/admin'
 import ProviderCard from '@/components/azur/ProviderCard'
+import DomainHero from '@/components/DomainHero'
 
 export const metadata: Metadata = {
   title: 'NIKA Azur — Expériences Côte d\'Azur',
@@ -60,15 +61,7 @@ export default async function AzurPage() {
         padding: 'clamp(3rem,7vw,5.5rem) 1.4rem',
         position: 'relative', overflow: 'hidden',
       }}>
-        {/* Motif marin décoratif */}
-        <div style={{
-          position: 'absolute', right: '-5%', top: '50%',
-          transform: 'translateY(-50%)',
-          fontSize: 320, opacity: 0.025,
-          userSelect: 'none', pointerEvents: 'none', lineHeight: 1,
-        }}>
-          ⛵
-        </div>
+        <DomainHero slug="azur" />
 
         <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative' }}>
           <div style={{

@@ -1,6 +1,10 @@
 'use client';
 import { useState, useRef, useEffect, useCallback, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { visual } from '@/lib/visuals';
+
+const NIKO_IDLE = visual('niko', 'niko-idle').poster;
+const NIKO_ACTIVE = visual('niko', 'niko-active').poster;
 
 interface Message {
   role: 'user' | 'assistant';
@@ -113,7 +117,9 @@ function NikoChatInner() {
       {/* Header */}
       <div style={{ flexShrink: 0, padding: '1rem 1.4rem', borderBottom: '1px solid var(--bd)', background: 'var(--bg2)', display: 'flex', alignItems: 'center', gap: 12 }}>
         <div style={{ position: 'relative', flexShrink: 0 }}>
-          <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'linear-gradient(135deg, var(--az), #0056A0)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--fn)', fontSize: 18, letterSpacing: '0.06em', color: '#fff' }}>N</div>
+          {NIKO_IDLE
+            ? <img src={loading ? NIKO_ACTIVE : NIKO_IDLE} alt="NIKO" width={40} height={40} style={{ width: 40, height: 40, objectFit: 'contain', filter: 'drop-shadow(0 2px 10px rgba(0,148,212,0.35))' }} />
+            : <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'linear-gradient(135deg, var(--az), #0056A0)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--fn)', fontSize: 18, letterSpacing: '0.06em', color: '#fff' }}>N</div>}
           <div style={{ position: 'absolute', bottom: 1, right: 1, width: 10, height: 10, borderRadius: '50%', background: 'var(--teal)', border: '2px solid var(--bg2)' }} />
         </div>
         <div>
@@ -134,7 +140,9 @@ function NikoChatInner() {
         {!started && (
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, gap: '1.8rem', padding: '2rem 0' }}>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ width: 72, height: 72, borderRadius: '50%', background: 'linear-gradient(135deg, var(--az), #0056A0)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--fn)', fontSize: 32, letterSpacing: '0.06em', color: '#fff', margin: '0 auto 1rem', boxShadow: '0 0 32px rgba(0,148,212,0.25)' }}>N</div>
+              {NIKO_IDLE
+                ? <img src={NIKO_IDLE} alt="NIKO" width={96} height={96} style={{ width: 96, height: 96, objectFit: 'contain', margin: '0 auto 1rem', display: 'block', filter: 'drop-shadow(0 6px 32px rgba(0,148,212,0.35))', animation: 'nikofloat 4s ease-in-out infinite' }} />
+                : <div style={{ width: 72, height: 72, borderRadius: '50%', background: 'linear-gradient(135deg, var(--az), #0056A0)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--fn)', fontSize: 32, letterSpacing: '0.06em', color: '#fff', margin: '0 auto 1rem', boxShadow: '0 0 32px rgba(0,148,212,0.25)' }}>N</div>}
               <h1 style={{ fontFamily: 'var(--fn)', fontSize: 'clamp(36px,7vw,64px)', letterSpacing: '0.12em', color: 'var(--td)', marginBottom: '0.4rem' }}>NIKO</h1>
               <p style={{ fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td2)', lineHeight: 1.6, maxWidth: 320 }}>
                 Transport, livraison, courses — dis-moi ce dont tu as besoin.
@@ -153,7 +161,9 @@ function NikoChatInner() {
         {messages.map((msg, i) => (
           <div key={i} style={{ display: 'flex', flexDirection: msg.role === 'user' ? 'row-reverse' : 'row', gap: 10, alignItems: 'flex-end' }}>
             {msg.role === 'assistant' && (
-              <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'linear-gradient(135deg, var(--az), #0056A0)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--fn)', fontSize: 12, color: '#fff', flexShrink: 0 }}>N</div>
+              NIKO_IDLE
+                ? <img src={loading && i === messages.length - 1 ? NIKO_ACTIVE : NIKO_IDLE} alt="NIKO" width={28} height={28} style={{ width: 28, height: 28, objectFit: 'contain', flexShrink: 0 }} />
+                : <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'linear-gradient(135deg, var(--az), #0056A0)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--fn)', fontSize: 12, color: '#fff', flexShrink: 0 }}>N</div>
             )}
             <div style={{
               maxWidth: '75%',

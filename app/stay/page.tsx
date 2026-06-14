@@ -6,6 +6,7 @@ import TravelpayoutsSearch from '@/components/TravelpayoutsSearch';
 import HeroSlideshow from './HeroSlideshow';
 import WowFilter from './WowFilter';
 import SmartSearch from '@/components/stay/SmartSearch';
+import { visual } from '@/lib/visuals';
 import wowData from '@/data/wow_listings.json';
 import type { HeroSlide } from './HeroSlideshow';
 
@@ -222,7 +223,9 @@ export default function StayPage() {
                 <div style={{ height: 2, background: direct ? 'linear-gradient(90deg,var(--teal),transparent)' : 'linear-gradient(90deg,#E07038,transparent)' }} />
                 <div style={{ padding: '1rem 1rem 0.7rem', flex: 1, display: 'flex', flexDirection: 'column', gap: 6 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                    <span style={{ fontSize: 28, lineHeight: 1 }}>{icon}</span>
+                    {visual('stay/themes', slug).poster
+                      ? <img src={visual('stay/themes', slug).poster} alt={name} width={48} height={48} style={{ width: 48, height: 48, objectFit: 'contain', marginTop: -4, filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.45))' }} />
+                      : <span style={{ fontSize: 28, lineHeight: 1 }}>{icon}</span>}
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 3 }}>
                       {direct && (
                         <span style={{ fontFamily: 'var(--fo)', fontSize: 8, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--teal)', background: 'rgba(14,168,120,0.12)', border: '1px solid rgba(14,168,120,0.28)', borderRadius: 20, padding: '2px 6px' }}>

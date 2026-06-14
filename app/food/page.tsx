@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import Spin360 from '@/components/Spin360';
+import DomainHero from '@/components/DomainHero';
 import { visual } from '@/lib/visuals';
 
 export const dynamic = 'force-dynamic';
@@ -63,14 +64,7 @@ export default async function FoodPage() {
         padding: 'clamp(3rem,7vw,5.5rem) 1.4rem',
         position: 'relative', overflow: 'hidden',
       }}>
-        <div style={{
-          position: 'absolute', right: '-4%', top: '50%',
-          transform: 'translateY(-50%) rotate(-6deg)',
-          fontSize: 300, opacity: 0.03,
-          userSelect: 'none', pointerEvents: 'none', lineHeight: 1,
-        }}>
-          🍽️
-        </div>
+        <DomainHero slug="food" />
 
         <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative' }}>
           <div style={{

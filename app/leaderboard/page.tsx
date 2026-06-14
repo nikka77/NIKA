@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/server';
 import { levelBadge } from '@/lib/constants';
+import { visual } from '@/lib/visuals';
+
+const RANK_MEDAL: Record<number, string> = { 1: 'or', 2: 'argent', 3: 'bronze' };
 
 export const metadata: Metadata = {
   title: 'Classement NIKA — Top joueurs',
@@ -67,7 +70,11 @@ export default async function LeaderboardPage() {
             const style = RANK_STYLE[rank] ?? { color: 'var(--td2)', bg: 'var(--bg3)' };
             return (
               <div key={u.username} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '0.8rem 0', borderBottom: '1px solid var(--bd)' }}>
-                <div style={{ fontFamily: 'var(--fe)', fontSize: 18, fontWeight: 900, fontStyle: 'italic', color: style.color, width: 24, textAlign: 'center', flexShrink: 0 }}>{rank}</div>
+                {RANK_MEDAL[rank] ? (
+                  <img src={visual('ranks', RANK_MEDAL[rank]).poster} alt={`${rank}e`} width={30} height={30} style={{ width: 30, height: 30, objectFit: 'contain', flexShrink: 0, filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))' }} />
+                ) : (
+                  <div style={{ fontFamily: 'var(--fe)', fontSize: 18, fontWeight: 900, fontStyle: 'italic', color: style.color, width: 30, textAlign: 'center', flexShrink: 0 }}>{rank}</div>
+                )}
                 <div style={{ width: 38, height: 38, borderRadius: '50%', background: style.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--fn)', fontSize: 16, color: style.color, flexShrink: 0, overflow: 'hidden' }}>
                   {u.username.slice(0, 1).toUpperCase()}
                 </div>
@@ -95,7 +102,11 @@ export default async function LeaderboardPage() {
             const style = RANK_STYLE[n]!;
             return (
               <div key={n} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '0.8rem 0', borderBottom: '1px solid var(--bd)' }}>
-                <div style={{ fontFamily: 'var(--fe)', fontSize: 18, fontWeight: 900, fontStyle: 'italic', color: style.color, width: 24, textAlign: 'center', flexShrink: 0 }}>{n}</div>
+                {RANK_MEDAL[n] ? (
+                  <img src={visual('ranks', RANK_MEDAL[n]).poster} alt={`${n}e`} width={30} height={30} style={{ width: 30, height: 30, objectFit: 'contain', flexShrink: 0, filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))' }} />
+                ) : (
+                  <div style={{ fontFamily: 'var(--fe)', fontSize: 18, fontWeight: 900, fontStyle: 'italic', color: style.color, width: 30, textAlign: 'center', flexShrink: 0 }}>{n}</div>
+                )}
                 <div style={{ width: 38, height: 38, borderRadius: '50%', background: style.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--fn)', fontSize: 16, color: style.color, flexShrink: 0 }}>?</div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 600, color: 'var(--td)' }}>{title}</div>

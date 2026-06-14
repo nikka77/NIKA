@@ -46,6 +46,17 @@ const GENERATED = new Set<string>([
   'nfc/beach', 'nfc/serrurier', 'nfc/pass', 'nfc/foodtruck', 'nfc/wellness',
   'nfc/aqua', 'nfc/boulangerie', 'nfc/stay', 'nfc/artisan', 'nfc/watertaxi',
   'nfc/coach', 'nfc/legacy', 'nfc/sommelier', 'nfc/concierge', 'nfc/bbq',
+  // Médailles classement (podium top 3)
+  'ranks/or', 'ranks/argent', 'ranks/bronze',
+  // Icônes thèmes STAY (logements insolites)
+  'stay/themes/silo-bunker', 'stay/themes/sous-marin', 'stay/themes/maison-hobbit',
+  'stay/themes/tour-observation', 'stay/themes/bulle-transparente',
+  'stay/themes/architecture-surrealiste', 'stay/themes/maison-terre',
+  // Avatar agent NIKO (idle / active)
+  'niko/niko-idle', 'niko/niko-active',
+  // Héros cinématiques par domaine (fonds de section)
+  'heroes/food', 'heroes/auto', 'heroes/stay', 'heroes/azur', 'heroes/rent',
+  'heroes/serv', 'heroes/learn', 'heroes/sec', 'heroes/news',
 ]);
 
 // Sous-ensemble disposant EN PLUS d'un loop 360° (.webm). Ajouter quand la vidéo existe.

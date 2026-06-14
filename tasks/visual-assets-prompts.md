@@ -232,6 +232,8 @@ isolated on transparent background (alpha), 4K, PNG with transparency, no text, 
 
 ## J. Héros de section par domaine (9 + 3 sous-pages AUTO)  → `public/images/heroes/`
 
+> ✅ **9 héros FAITS** (2026-06-14) — `public/images/heroes/{food,auto,stay,azur,rent,serv,learn,sec,news}.webp` (nano_banana 21:9, sans removebg). Composant `components/DomainHero.tsx` (image plein cadre + double scrim lisibilité) câblé sur les 8 pages domaine (le filigrane emoji est supprimé). STAY garde son `HeroSlideshow` (asset dispo si besoin). Sous-pages AUTO : à faire.
+
 Fond cinématique derrière le titre (remplace le gradient + emoji filigrane). BASE_HERO + sujet. Format 21:9.
 
 | slug | Sujet |
@@ -319,6 +321,8 @@ BASE_CARD + emblème embossé selon le service, edge-light = couleur de la carte
 
 ## N. Icônes thèmes STAY (21)  → `public/images/stay/themes/`
 
+> ✅ **7 thèmes FAITS** (2026-06-14) — seuls 7 thèmes (`WOW_EXCLUSIFS` dans `app/stay/page.tsx`) sont réellement affichés, pas 21. Générés : silo-bunker, sous-marin, maison-hobbit, tour-observation, bulle-transparente, architecture-surrealiste, maison-terre. `public/images/stay/themes/<slug>.webp` (z_image + removebg), câblés sur les cartes WOW. Les 14 autres thèmes de la liste n'ont pas de page → non générés.
+
 BASE_ICON + sujet (petite scène 3D stylisée du logement insolite). Accent ambré #E07038.
 
 | slug | Sujet |
@@ -348,6 +352,8 @@ BASE_ICON + sujet (petite scène 3D stylisée du logement insolite). Accent ambr
 ---
 
 ## O. NIKO — avatar de l'agent IA  → `public/images/niko/`
+
+> ✅ **FAIT** (2026-06-14) — `public/images/niko/{niko-idle,niko-active}.webp` (z_image mascotte robot cyan + removebg). Câblé sur `app/niko/NikoChat.tsx` : header (40px, active si `loading`), idle hero (96px, anim `nikofloat`), avatar message (active sur le message en cours). Médailles classement `ranks/{or,argent,bronze}.webp` aussi faites → leaderboard top 3 + Gamification accueil.
 
 ```
 BASE_ICON + "a friendly futuristic AI assistant orb mascot, glowing cyan-to-blue
