@@ -1,8 +1,9 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import MapOverlay, { FloatMapBtn } from '@/components/MapOverlay';
+import BottomNav from '@/components/BottomNav';
 
 export const metadata: Metadata = {
   title: 'NIKA — Explore. Joue. Vis. | Côte d\'Azur',
@@ -13,6 +14,15 @@ export const metadata: Metadata = {
     description: 'VTC, food, logements insolites, bateaux. L\'essentiel de la Côte d\'Azur en une seule app.',
     type: 'website',
   },
+  manifest: '/manifest.json',
+  appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: 'NIKA' },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#050C17',
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -24,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <MapOverlay />
         <FloatMapBtn />
+        <BottomNav />
       </body>
     </html>
   );

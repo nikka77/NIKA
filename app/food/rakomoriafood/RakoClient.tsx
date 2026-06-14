@@ -466,10 +466,10 @@ export default function RakoClient({ provider, sessionId, sessionStatus, items }
 
       {/* ===== CART BAR ===== */}
       {isOpen && cartItemCount > 0 && (
-        <div style={{
+        <div className="page-action-bar" style={{
           position: 'fixed', bottom: 0, left: 0, right: 0,
           background: '#1A4D1A', borderTop: '1px solid #2d7a2d',
-          padding: '0.9rem 1.4rem', zIndex: 50,
+          padding: '0.9rem 1.4rem', zIndex: 360,
         }}>
           {/* Zone selector compact */}
           <div style={{ display: 'flex', gap: 6, marginBottom: 10, overflowX: 'auto', scrollbarWidth: 'none' }}>

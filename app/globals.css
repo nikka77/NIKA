@@ -202,6 +202,33 @@ ul { list-style: none; }
   filter: drop-shadow(0 3px 5px rgba(0,0,0,0.4));
 }
 
+/* ===== BOTTOM NAV MOBILE (app-feel) ===== */
+.bottom-nav {
+  display: none;
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 350;
+  background: rgba(5,12,23,0.94); backdrop-filter: blur(14px);
+  border-top: 1px solid var(--bd);
+  padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+  justify-content: space-around; align-items: stretch;
+}
+.bn-item {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 3px; min-height: 52px; background: none; border: none; cursor: pointer;
+  color: var(--td3); text-decoration: none; transition: color 0.15s;
+  padding: 4px 0;
+}
+.bn-item[data-active="true"] { color: var(--az2); }
+.bn-item:active { color: var(--az2); }
+.bn-icon { display: flex; }
+.bn-label { font-family: var(--fo); font-size: 9.5px; font-weight: 600; letter-spacing: 0.03em; }
+@media (max-width: 767px) {
+  .bottom-nav { display: flex; }
+  body { padding-bottom: 64px; }
+  .float-map-btn { display: none !important; }
+  /* barres d'action contextuelles passent AU-DESSUS de la bottom-nav */
+  .page-action-bar, .riv-sticky-bar { bottom: 64px !important; }
+}
+
 /* ===== BANNIÈRE DÉFILANTE — inclus à bord ===== */
 .marquee { overflow: hidden; width: 100%;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
@@ -332,7 +359,7 @@ ul { list-style: none; }
 .ss-field { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 180px; }
 .ss-field label { font-family: var(--fo); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--td3); }
 .nights-stepper { display: flex; align-items: center; gap: 0; border: 1px solid var(--bd2); border-radius: 8px; overflow: hidden; }
-.nights-stepper button { background: var(--bg3); border: none; color: var(--td); font-size: 16px; padding: 8px 14px; cursor: pointer; transition: background 0.15s; }
+.nights-stepper button { background: var(--bg3); border: none; color: var(--td); font-size: 18px; min-width: 44px; min-height: 44px; padding: 0 16px; cursor: pointer; transition: background 0.15s; }
 .nights-stepper button:hover { background: var(--az); color: #fff; }
 .nights-stepper span { flex: 1; text-align: center; font-family: var(--fo); font-size: 14px; font-weight: 600; color: var(--td); padding: 8px; background: var(--bg3); }
 .date-inputs { display: flex; align-items: center; gap: 8px; }

@@ -143,16 +143,16 @@ export default function AvailabilityCalendar({ slug, airbnbId, className = '' }:
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
         <button onClick={goPrevMonth} style={{
           background: 'transparent', border: '1px solid rgba(255,255,255,0.1)',
-          color: 'var(--sand)', borderRadius: 8, padding: '4px 10px', cursor: 'pointer',
-          fontSize: 16
+          color: 'var(--sand)', borderRadius: 8, cursor: 'pointer',
+          fontSize: 18, minWidth: 44, minHeight: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
         }}>‹</button>
         <div style={{ flex: 1, textAlign: 'center', color: 'var(--sand)', fontSize: 14, fontWeight: 600 }}>
           {MONTHS_FR[viewMonth.month]} {viewMonth.year}
         </div>
         <button onClick={goNextMonth} style={{
           background: 'transparent', border: '1px solid rgba(255,255,255,0.1)',
-          color: 'var(--sand)', borderRadius: 8, padding: '4px 10px', cursor: 'pointer',
-          fontSize: 16
+          color: 'var(--sand)', borderRadius: 8, cursor: 'pointer',
+          fontSize: 18, minWidth: 44, minHeight: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
         }}>›</button>
       </div>
 

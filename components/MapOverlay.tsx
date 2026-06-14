@@ -159,6 +159,7 @@ export function FloatMapBtn() {
   return (
     <button
       onClick={openMap}
+      className="float-map-btn"
       style={{
         position: 'fixed', bottom: '1.5rem', right: '1.5rem', zIndex: 400,
         width: 50, height: 50, borderRadius: '50%',

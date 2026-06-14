@@ -201,7 +201,7 @@ export default function Nav() {
             onClick={() => setMobileOpen(!mobileOpen)}
             style={{
               display: 'flex', flexDirection: 'column', justifyContent: 'center',
-              gap: 4, padding: 6, width: 34, height: 34, borderRadius: 3,
+              gap: 4, padding: 6, width: 40, height: 40, borderRadius: 4,
             }}
           >
             {[0, 1, 2].map(i => (
