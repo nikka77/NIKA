@@ -253,6 +253,8 @@ Fond cinématique derrière le titre (remplace le gradient + emoji filigrane). B
 
 ## K. Gamification — 10 badges de niveau + 3 médailles  → `public/images/levels/` · `public/images/ranks/`
 
+> ✅ **10 badges niveaux FAITS** (2026-06-14) — `public/images/levels/{1-inconnu…10-legende}.webp`, champ `badge` sur `LEVELS` + helper `levelBadge(name)` dans `lib/constants.ts`. Câblés : dashboard (carte XP), leaderboard (ligne joueur), accueil (`Gamification.tsx`). Médailles classement `ranks/` (or/argent/bronze) : à faire.
+
 BASE_BADGE + sujet. Progression de matière (pierre → diamant). Format 1:1, transparent.
 
 | niveau | nom | Sujet (matière + emblème) |
@@ -285,6 +287,8 @@ render, slowly catching light — built for a seamless 360° spin
 ---
 
 ## M. Cartes phygitales NFC (20)  → `public/images/nfc/`
+
+> ✅ **20 cartes FAITES** (2026-06-14) — `public/images/nfc/<slug>.webp`, z_image fond gris clair + removebg. Manifest `lib/visuals.ts` (`nfc/<slug>`). Câblées sur `app/nfc/[slug]/page.tsx` et `app/nfc/[slug]/[id]/page.tsx` (carte flottante + glow couleur, fallback emoji). NB : éviter "medal/coin" dans le prompt (→ forme ronde), forcer "flat rectangular card".
 
 BASE_CARD + emblème embossé selon le service, edge-light = couleur de la carte. Format 3:2.
 

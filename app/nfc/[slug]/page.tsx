@@ -1,4 +1,5 @@
 import { NFC_ITEMS } from '@/lib/constants';
+import { visual } from '@/lib/visuals';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -33,20 +34,32 @@ export default async function NFCSlugPage({ params }: Props) {
     );
   }
 
+  const card = visual('nfc', item.slug).poster;
+
   return (
     <main style={{ minHeight: '100svh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
       <div style={{ maxWidth: 480, width: '100%', textAlign: 'center' }}>
-        {/* Token visual */}
-        <div style={{
-          width: 120, height: 120, borderRadius: '50%',
-          background: `radial-gradient(circle, ${item.color}22 0%, transparent 70%)`,
-          border: `2px solid ${item.color}44`,
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: 52, margin: '0 auto 1.5rem',
-          boxShadow: `0 0 40px ${item.color}22`,
-        }}>
-          {item.icon}
-        </div>
+        {/* Token visual — carte phygitale détourée (fallback emoji) */}
+        {card ? (
+          <div style={{
+            position: 'relative', width: 'min(320px,80vw)', margin: '0 auto 1.5rem',
+            background: `radial-gradient(ellipse at center, ${item.color}26 0%, transparent 68%)`,
+          }}>
+            <img src={card} alt={`Carte NIKA ${item.name}`}
+              style={{ width: '100%', height: 'auto', display: 'block', filter: `drop-shadow(0 18px 36px rgba(0,0,0,0.55)) drop-shadow(0 0 28px ${item.color}33)` }} />
+          </div>
+        ) : (
+          <div style={{
+            width: 120, height: 120, borderRadius: '50%',
+            background: `radial-gradient(circle, ${item.color}22 0%, transparent 70%)`,
+            border: `2px solid ${item.color}44`,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            fontSize: 52, margin: '0 auto 1.5rem',
+            boxShadow: `0 0 40px ${item.color}22`,
+          }}>
+            {item.icon}
+          </div>
+        )}
 
         <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: item.color, marginBottom: '0.5rem' }}>
           NIKA NFC · {item.n}

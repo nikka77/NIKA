@@ -16,16 +16,16 @@ export const XP_ACTIONS = {
 } as const;
 
 export const LEVELS = [
-  { n: 1,  name: 'Inconnu',      minXP: 0 },
-  { n: 2,  name: 'Curieux',      minXP: 200 },
-  { n: 3,  name: 'Local',        minXP: 600 },
-  { n: 4,  name: 'Connecté',     minXP: 1500 },
-  { n: 5,  name: 'Ancré',        minXP: 3000 },
-  { n: 6,  name: 'Régulier',     minXP: 6000 },
-  { n: 7,  name: 'Habitué',      minXP: 11000 },
-  { n: 8,  name: 'Connaisseur',  minXP: 20000 },
-  { n: 9,  name: 'Insider',      minXP: 35000 },
-  { n: 10, name: 'Légende',      minXP: 60000 },
+  { n: 1,  name: 'Inconnu',      minXP: 0,     badge: '/images/levels/1-inconnu.webp' },
+  { n: 2,  name: 'Curieux',      minXP: 200,   badge: '/images/levels/2-curieux.webp' },
+  { n: 3,  name: 'Local',        minXP: 600,   badge: '/images/levels/3-local.webp' },
+  { n: 4,  name: 'Connecté',     minXP: 1500,  badge: '/images/levels/4-connecte.webp' },
+  { n: 5,  name: 'Ancré',        minXP: 3000,  badge: '/images/levels/5-ancre.webp' },
+  { n: 6,  name: 'Régulier',     minXP: 6000,  badge: '/images/levels/6-regulier.webp' },
+  { n: 7,  name: 'Habitué',      minXP: 11000, badge: '/images/levels/7-habitue.webp' },
+  { n: 8,  name: 'Connaisseur',  minXP: 20000, badge: '/images/levels/8-connaisseur.webp' },
+  { n: 9,  name: 'Insider',      minXP: 35000, badge: '/images/levels/9-insider.webp' },
+  { n: 10, name: 'Légende',      minXP: 60000, badge: '/images/levels/10-legende.webp' },
 ] as const;
 
 export function getLevelFromXP(xp: number) {
@@ -33,6 +33,11 @@ export function getLevelFromXP(xp: number) {
     if (xp >= LEVELS[i].minXP) return LEVELS[i];
   }
   return LEVELS[0];
+}
+
+/** Badge médaille d'un niveau, identifié par son nom (ex. "Local"). */
+export function levelBadge(name: string): string | undefined {
+  return LEVELS.find(l => l.name === name)?.badge;
 }
 
 export const DOMAINS = [

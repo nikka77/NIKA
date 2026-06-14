@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server';
 import { NFC_ITEMS } from '@/lib/constants';
+import { visual } from '@/lib/visuals';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -35,23 +36,34 @@ export default async function NFCPage({ params }: Props) {
   }
 
   const color = item?.color || '#0094D4';
+  const card = item ? visual('nfc', item.slug).poster : undefined;
 
   return (
     <main style={{ minHeight: '100svh', background: 'var(--bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
       <div style={{ maxWidth: 480, width: '100%', textAlign: 'center' }}>
-        {/* Animated ring */}
-        <div style={{
-          width: 140, height: 140, borderRadius: '50%',
-          background: `radial-gradient(circle, ${color}22 0%, transparent 70%)`,
-          border: `2px solid ${color}55`,
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: 60, margin: '0 auto 1.5rem',
-          boxShadow: `0 0 60px ${color}22, 0 0 120px ${color}11`,
-          animation: 'tspin 12s linear infinite',
-          position: 'relative',
-        }}>
-          {item?.icon || '📲'}
-        </div>
+        {/* Carte phygitale détourée (fallback anneau animé) */}
+        {card ? (
+          <div style={{
+            position: 'relative', width: 'min(340px,82vw)', margin: '0 auto 1.5rem',
+            background: `radial-gradient(ellipse at center, ${color}2e 0%, transparent 68%)`,
+          }}>
+            <img src={card} alt={`Carte NIKA ${item?.name}`}
+              style={{ width: '100%', height: 'auto', display: 'block', filter: `drop-shadow(0 18px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 32px ${color}3a)` }} />
+          </div>
+        ) : (
+          <div style={{
+            width: 140, height: 140, borderRadius: '50%',
+            background: `radial-gradient(circle, ${color}22 0%, transparent 70%)`,
+            border: `2px solid ${color}55`,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            fontSize: 60, margin: '0 auto 1.5rem',
+            boxShadow: `0 0 60px ${color}22, 0 0 120px ${color}11`,
+            animation: 'tspin 12s linear infinite',
+            position: 'relative',
+          }}>
+            {item?.icon || '📲'}
+          </div>
+        )}
 
         {/* Header */}
         <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color, marginBottom: '0.4rem' }}>

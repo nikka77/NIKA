@@ -1,4 +1,5 @@
 import FadeIn from './FadeIn';
+import { levelBadge } from '@/lib/constants';
 
 const LEADERBOARD = [
   { rank: 1, initials: '?', name: 'Sois le premier',        level: 'Inscris-toi · Rejoins la compétition', xp: '— xp', bg: 'rgba(212,160,23,0.12)', color: 'var(--gold2)', rankClass: 'g' },
@@ -44,10 +45,8 @@ export default function Gamification() {
           <FadeIn delay={0.1}>
             <div style={{ background: 'var(--bg3)', border: '1px solid var(--bd)', borderRadius: 6, padding: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: '1.1rem' }}>
-                <div style={{ width: 50, height: 50, borderRadius: 9, flexShrink: 0, background: 'linear-gradient(135deg,rgba(212,160,23,0.15),rgba(212,160,23,0.04))', border: '1px solid rgba(212,160,23,0.28)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
-                  <div style={{ fontFamily: 'var(--fn)', fontSize: 20, letterSpacing: '0.04em', color: 'var(--gold2)', lineHeight: 1 }}>3</div>
-                  <div style={{ fontFamily: 'var(--fo)', fontSize: 7, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--gold)', opacity: 0.8 }}>niveau</div>
-                </div>
+                <img src={levelBadge('Local')} alt="Niveau 3 — Local" width={56} height={56}
+                  style={{ width: 56, height: 56, flexShrink: 0, objectFit: 'contain', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.4))' }} />
                 <div>
                   <div style={{ fontFamily: 'var(--fe)', fontSize: 21, fontWeight: 900, fontStyle: 'italic', color: 'var(--gold2)', lineHeight: 1 }}>Local</div>
                   <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--td3)', marginTop: 1 }}>Niveau 3 · 1 240 XP</div>

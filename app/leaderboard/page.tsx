@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/server';
+import { levelBadge } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Classement NIKA — Top joueurs',
@@ -74,8 +75,13 @@ export default async function LeaderboardPage() {
                   <div style={{ fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 600, color: 'var(--td)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     @{u.username}
                   </div>
-                  <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--td3)', marginTop: 2 }}>
-                    {u.level_name}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginTop: 2 }}>
+                    {levelBadge(u.level_name) && (
+                      <img src={levelBadge(u.level_name)} alt="" width={18} height={18} style={{ width: 18, height: 18, objectFit: 'contain', flexShrink: 0 }} />
+                    )}
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--td3)' }}>
+                      {u.level_name}
+                    </span>
                   </div>
                 </div>
                 <div style={{ fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 700, fontStyle: 'italic', color: 'var(--gold)', flexShrink: 0 }}>

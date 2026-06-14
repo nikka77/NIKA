@@ -60,6 +60,10 @@ export default async function DashboardPage() {
         {/* XP card */}
         <div style={{ background: 'var(--bg2)', border: '1px solid var(--az)22', borderRadius: 10, padding: '1.5rem', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'var(--az)' }} />
+          {level.badge && (
+            <img src={level.badge} alt={`Niveau ${level.n} — ${level.name}`} width={66} height={66}
+              style={{ position: 'absolute', top: 14, right: 14, width: 66, height: 66, objectFit: 'contain', filter: 'drop-shadow(0 4px 14px rgba(0,0,0,0.45))' }} />
+          )}
           <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--az)', marginBottom: '0.4rem' }}>
             Niveau {level.n} — {level.name}
           </div>

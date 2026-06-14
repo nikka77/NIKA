@@ -41,6 +41,11 @@ const GENERATED = new Set<string>([
   'food/afroweek06/thieboudienne', 'food/afroweek06/poulet-yassa', 'food/afroweek06/mafe',
   'food/afroweek06/vermicelles', 'food/afroweek06/thieboli-yapp', 'food/afroweek06/pastels',
   'food/afroweek06/bissap',
+  // Cartes phygitales NFC (20)
+  'nfc/depanneur', 'nfc/vtc', 'nfc/fidelite', 'nfc/caution-free', 'nfc/skipper',
+  'nfc/beach', 'nfc/serrurier', 'nfc/pass', 'nfc/foodtruck', 'nfc/wellness',
+  'nfc/aqua', 'nfc/boulangerie', 'nfc/stay', 'nfc/artisan', 'nfc/watertaxi',
+  'nfc/coach', 'nfc/legacy', 'nfc/sommelier', 'nfc/concierge', 'nfc/bbq',
 ]);
 
 // Sous-ensemble disposant EN PLUS d'un loop 360° (.webm). Ajouter quand la vidéo existe.
