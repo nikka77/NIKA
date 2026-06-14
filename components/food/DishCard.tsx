@@ -40,7 +40,7 @@ export default function DishCard({ item, qty, onAdd, onRemove }: Props) {
   const isFeatured = item.featured || item.category === 'main'
 
   return (
-    <div style={{
+    <div className="food-dish-card" style={{
       background: CATEGORY_BG[item.category] ?? '#1c1c1c',
       borderRadius: 14,
       padding: '12px',
