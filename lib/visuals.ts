@@ -66,6 +66,12 @@ const VIDEOS_360 = new Set<string>([
   // 'token/nika-coin',
 ]);
 
+// Sous-ensemble disposant EN PLUS d'un loop vidéo ambiant (.mp4, joué au scroll
+// via <ScrollVideo>). Fichier attendu : public/images/<groupe>/<slug>.mp4
+const LOOP_VIDEOS = new Set<string>([
+  'heroes/home', 'heroes/food', 'heroes/azur', 'heroes/auto',
+]);
+
 export interface VisualAsset {
   poster?: string;
   video?: string;
@@ -77,5 +83,6 @@ export function visual(group: string, slug: string): VisualAsset {
   if (!GENERATED.has(key)) return {};
   const asset: VisualAsset = { poster: `${ASSET_BASE}/${group}/${slug}.webp` };
   if (VIDEOS_360.has(key)) asset.video = `${ASSET_BASE}/${group}/${slug}-360.webm`;
+  else if (LOOP_VIDEOS.has(key)) asset.video = `${ASSET_BASE}/${group}/${slug}.mp4`;
   return asset;
 }

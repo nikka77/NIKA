@@ -3,16 +3,16 @@
 // du titre. Retombe sur rien (le gradient de la section reste visible) si l'asset
 // n'existe pas encore dans lib/visuals.ts.
 import { visual } from '@/lib/visuals';
+import ScrollVideo from '@/components/ScrollVideo';
 
 export default function DomainHero({ slug }: { slug: string }) {
-  const bg = visual('heroes', slug).poster;
-  if (!bg) return null;
+  const asset = visual('heroes', slug);
+  if (!asset.poster) return null;
   return (
     <>
-      <img
-        src={bg}
-        alt=""
-        aria-hidden
+      <ScrollVideo
+        poster={asset.poster}
+        video={asset.video}
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.5, zIndex: 0 }}
       />
       <div

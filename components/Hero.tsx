@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useMapStore } from '@/lib/store';
 import { visual } from '@/lib/visuals';
+import ScrollVideo from '@/components/ScrollVideo';
 
-const HERO_BG = visual('heroes', 'home').poster;
+const HOME = visual('heroes', 'home');
 const NIKO_ICON = visual('niko', 'niko-idle').poster;
 
 const JOY_BOY_SVG = (
@@ -52,10 +53,10 @@ export default function Hero() {
       textAlign: 'center', padding: '6rem 1.4rem 4rem',
       overflow: 'hidden',
     }}>
-      {/* Fond cinématique Côte d'Azur + scrim lisibilité */}
-      {HERO_BG && (
+      {/* Fond cinématique Côte d'Azur (vidéo au scroll, fallback image) + scrim */}
+      {HOME.poster && (
         <>
-          <img src={HERO_BG} alt="" aria-hidden style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.42, zIndex: 0 }} />
+          <ScrollVideo poster={HOME.poster} video={HOME.video} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.42, zIndex: 0 }} />
           <div aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 0, background: 'linear-gradient(180deg, var(--bg) 0%, rgba(5,12,23,0.5) 22%, rgba(5,12,23,0.68) 50%, rgba(5,12,23,0.55) 78%, var(--bg) 100%)' }} />
         </>
       )}
