@@ -9,6 +9,8 @@ import MapSection from '@/components/MapSection';
 import Gamification from '@/components/Gamification';
 import NewsTeaser from '@/components/NewsTeaser';
 import AccessCTA from '@/components/AccessCTA';
+import LiveActivity from '@/components/LiveActivity';
+import FadeIn from '@/components/FadeIn';
 
 export const metadata: Metadata = {
   title: 'NIKA — La super-app de la Côte d\'Azur',
@@ -20,15 +22,16 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <LiveActivity />
       <StatsBar />
-      <TokenSection />
-      <FlashDeals />
-      <Onboarding />
-      <DomainsCarousel />
-      <MapSection />
+      <FadeIn><TokenSection /></FadeIn>
+      <FadeIn><FlashDeals /></FadeIn>
+      <FadeIn><Onboarding /></FadeIn>
+      <FadeIn><DomainsCarousel /></FadeIn>
+      <FadeIn><MapSection /></FadeIn>
       <Gamification />
-      <NewsTeaser />
-      <AccessCTA />
+      <FadeIn><NewsTeaser /></FadeIn>
+      <FadeIn><AccessCTA /></FadeIn>
     </main>
   );
 }

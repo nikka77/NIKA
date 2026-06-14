@@ -4,6 +4,7 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import MapOverlay, { FloatMapBtn } from '@/components/MapOverlay';
 import BottomNav from '@/components/BottomNav';
+import ScrollProgress from '@/components/ScrollProgress';
 
 export const metadata: Metadata = {
   title: 'NIKA — Explore. Joue. Vis. | Côte d\'Azur',
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" style={{ scrollBehavior: 'smooth' }}>
       <body>
+        <ScrollProgress />
         <Nav />
         {children}
         <Footer />

@@ -10,7 +10,8 @@ export default function FadeIn({ children, delay = 0, className = '' }: { childr
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          // Révèle si visible OU déjà dépassé (saut/anchor instantané par-dessus)
+          if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
             el.classList.add('fv');
             obs.unobserve(el);
           }
