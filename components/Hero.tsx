@@ -3,6 +3,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useMapStore } from '@/lib/store';
+import { visual } from '@/lib/visuals';
+
+const HERO_BG = visual('heroes', 'home').poster;
+const NIKO_ICON = visual('niko', 'niko-idle').poster;
 
 const JOY_BOY_SVG = (
   <svg
@@ -48,6 +52,14 @@ export default function Hero() {
       textAlign: 'center', padding: '6rem 1.4rem 4rem',
       overflow: 'hidden',
     }}>
+      {/* Fond cinématique Côte d'Azur + scrim lisibilité */}
+      {HERO_BG && (
+        <>
+          <img src={HERO_BG} alt="" aria-hidden style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.42, zIndex: 0 }} />
+          <div aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 0, background: 'linear-gradient(180deg, var(--bg) 0%, rgba(5,12,23,0.5) 22%, rgba(5,12,23,0.68) 50%, rgba(5,12,23,0.55) 78%, var(--bg) 100%)' }} />
+        </>
+      )}
+
       {/* Grid bg */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
@@ -123,10 +135,10 @@ export default function Hero() {
               width: 36, height: 36, borderRadius: '50%',
               background: 'var(--az)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: 15,
             }}
+            aria-label="Rechercher"
           >
-            🔍
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
           </button>
         </div>
 
@@ -143,7 +155,8 @@ export default function Hero() {
               display: 'inline-flex', alignItems: 'center', gap: 7,
             }}
           >
-            NIKO ⚡ Commander
+            {NIKO_ICON && <img src={NIKO_ICON} alt="" aria-hidden width={22} height={22} style={{ width: 22, height: 22, objectFit: 'contain', filter: 'drop-shadow(0 1px 4px rgba(0,0,0,0.4))' }} />}
+            NIKO Commander
           </Link>
           <button
             onClick={() => document.getElementById('domaines')?.scrollIntoView({ behavior: 'smooth' })}
@@ -163,9 +176,11 @@ export default function Hero() {
               letterSpacing: '0.06em', textTransform: 'uppercase',
               padding: '13px 30px', borderRadius: 3,
               border: '1px solid var(--bd2)', color: 'var(--td2)', transition: 'all 0.25s',
+              display: 'inline-flex', alignItems: 'center', gap: 8,
             }}
           >
-            🗺️ Carte live
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s-6.5-5.6-6.5-10.5A6.5 6.5 0 0 1 12 4a6.5 6.5 0 0 1 6.5 6.5C18.5 15.4 12 21 12 21Z" /><circle cx="12" cy="10.5" r="2.3" /></svg>
+            Carte live
           </button>
         </div>
 

@@ -57,6 +57,8 @@ const GENERATED = new Set<string>([
   // Héros cinématiques par domaine (fonds de section)
   'heroes/food', 'heroes/auto', 'heroes/stay', 'heroes/azur', 'heroes/rent',
   'heroes/serv', 'heroes/learn', 'heroes/sec', 'heroes/news',
+  // Héros page d'accueil (Côte d'Azur)
+  'heroes/home',
 ]);
 
 // Sous-ensemble disposant EN PLUS d'un loop 360° (.webm). Ajouter quand la vidéo existe.
