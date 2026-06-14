@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { useAuthStore } from '@/lib/store';
+import ConfirmDialog from '@/components/ConfirmDialog';
 import Link from 'next/link';
 
 type Listing = {
@@ -22,6 +23,8 @@ export default function ProListingsPage() {
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({ title: '', description: '', price: '', stock: '' });
   const [saving, setSaving] = useState(false);
+  const [delId, setDelId] = useState<string | null>(null);
+  const [deleting, setDeleting] = useState(false);
   const user = useAuthStore(s => s.user);
 
   useEffect(() => {
@@ -69,12 +72,16 @@ export default function ProListingsPage() {
     setListings(l => l.map(li => li.id === id ? { ...li, available: !available } : li));
   }
 
-  async function deleteListing(id: string) {
-    if (!confirm('Supprimer ce listing ?')) return;
+  async function confirmDelete() {
+    if (!delId) return;
+    setDeleting(true);
     const supabase = createClient();
-    if (!supabase) return;
-    await supabase.from('listings').delete().eq('id', id);
-    setListings(l => l.filter(li => li.id !== id));
+    if (supabase) {
+      await supabase.from('listings').delete().eq('id', delId);
+      setListings(l => l.filter(li => li.id !== delId));
+    }
+    setDeleting(false);
+    setDelId(null);
   }
 
   return (
@@ -132,7 +139,7 @@ export default function ProListingsPage() {
                 <button onClick={() => toggleAvailable(l.id, l.available)} style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, padding: '6px 12px', borderRadius: 6, background: l.available ? 'rgba(14,168,120,0.1)' : 'rgba(90,136,176,0.1)', border: `1px solid ${l.available ? 'rgba(14,168,120,0.3)' : 'rgba(90,136,176,0.3)'}`, color: l.available ? 'var(--teal)' : 'var(--slate)', cursor: 'pointer' }}>
                   {l.available ? 'Disponible' : 'Indispo'}
                 </button>
-                <button onClick={() => deleteListing(l.id)} style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, padding: '6px 12px', borderRadius: 6, background: 'rgba(212,75,36,0.08)', border: '1px solid rgba(212,75,36,0.2)', color: 'var(--coral)', cursor: 'pointer' }}>
+                <button onClick={() => setDelId(l.id)} style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, padding: '6px 12px', borderRadius: 6, background: 'rgba(212,75,36,0.08)', border: '1px solid rgba(212,75,36,0.2)', color: 'var(--coral)', cursor: 'pointer' }}>
                   Sup.
                 </button>
               </div>
@@ -140,6 +147,17 @@ export default function ProListingsPage() {
           ))}
         </div>
       )}
+
+      <ConfirmDialog
+        open={!!delId}
+        title="Supprimer ce listing ?"
+        message="Cette action est définitive et retire le listing de ton catalogue."
+        confirmLabel="Supprimer"
+        danger
+        busy={deleting}
+        onConfirm={confirmDelete}
+        onClose={() => setDelId(null)}
+      />
     </main>
   );
 }

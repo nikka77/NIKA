@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { useAuthStore } from '@/lib/store';
 import { DOMAINS } from '@/lib/constants';
+import { PromptDialog } from '@/components/ConfirmDialog';
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -16,14 +17,18 @@ function ProInscriptionForm() {
   const [loading, setLoading] = useState(false);
   const [gmbLoading, setGmbLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [gmbOpen, setGmbOpen] = useState(false);
+  const [gmbUrl, setGmbUrl] = useState('');
+  const [authErr, setAuthErr] = useState('');
   const user = useAuthStore(s => s.user);
   const router = useRouter();
 
   const selectedDomain = DOMAINS.find(d => d.slug === domain) || DOMAINS[0];
 
-  async function importGMB() {
-    const url = prompt('Colle ton lien Google Maps (ex: https://maps.google.com/?cid=...)');
+  async function runImportGMB() {
+    const url = gmbUrl.trim();
     if (!url) return;
+    setGmbOpen(false);
     setGmbLoading(true);
     try {
       const res = await fetch(`/api/gmb?url=${encodeURIComponent(url)}`);
@@ -32,11 +37,12 @@ function ProInscriptionForm() {
         setForm(f => ({ ...f, business_name: data.name, address: data.formatted_address || f.address, google_place_id: data.place_id || f.google_place_id }));
       }
     } catch {}
+    setGmbUrl('');
     setGmbLoading(false);
   }
 
   async function handleSubmit() {
-    if (!user) { alert('Connecte-toi pour créer ton profil pro.'); return; }
+    if (!user) { setAuthErr('Connecte-toi pour créer ton profil pro.'); return; }
     setLoading(true);
     const supabase = createClient();
     if (!supabase) { setLoading(false); return; }
@@ -140,7 +146,7 @@ function ProInscriptionForm() {
             Google Maps
           </h1>
           <p style={{ fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td2)', marginBottom: '2rem' }}>Importe tes infos depuis Google My Business en 1 clic (optionnel).</p>
-          <button onClick={importGMB} disabled={gmbLoading} style={{ width: '100%', padding: '14px 16px', borderRadius: 8, border: '1px solid rgba(0,148,212,0.3)', background: 'rgba(0,148,212,0.06)', fontFamily: 'var(--fo)', fontSize: 14, fontWeight: 600, color: 'var(--az)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginBottom: '2rem', cursor: 'pointer' }}>
+          <button onClick={() => setGmbOpen(true)} disabled={gmbLoading} style={{ width: '100%', padding: '14px 16px', borderRadius: 8, border: '1px solid rgba(0,148,212,0.3)', background: 'rgba(0,148,212,0.06)', fontFamily: 'var(--fo)', fontSize: 14, fontWeight: 600, color: 'var(--az)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginBottom: '2rem', cursor: 'pointer' }}>
             🗺️ {gmbLoading ? 'Import en cours...' : 'Importer depuis Google My Business'}
           </button>
           {form.google_place_id && (
@@ -196,8 +202,25 @@ function ProInscriptionForm() {
               {loading ? 'Envoi...' : !user ? 'Connecte-toi pour continuer' : 'Soumettre mon profil pro →'}
             </button>
           </div>
+          {authErr && (
+            <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--coral)', marginTop: '1rem', textAlign: 'center' }}>{authErr}</p>
+          )}
         </>
       )}
+
+      <PromptDialog
+        open={gmbOpen}
+        title="Importer depuis Google Maps"
+        message="Colle le lien Google Maps de ton établissement pour préremplir tes infos."
+        value={gmbUrl}
+        onChange={setGmbUrl}
+        placeholder="https://maps.google.com/?cid=..."
+        inputType="url"
+        confirmLabel="Importer"
+        busy={gmbLoading}
+        onConfirm={runImportGMB}
+        onClose={() => setGmbOpen(false)}
+      />
     </main>
   );
 }

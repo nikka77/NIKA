@@ -2,6 +2,7 @@
 // components/food/OrderCard.tsx
 import { useState, useTransition } from 'react'
 import { updateOrderStatus, cancelOrder } from '@/app/food/dashboard/actions'
+import ConfirmDialog from '@/components/ConfirmDialog'
 
 type OrderStatus = 'pending' | 'confirmed' | 'preparing' | 'delivering' | 'delivered' | 'cancelled'
 
@@ -44,6 +45,7 @@ const STATUS_DISPLAY: Record<OrderStatus, { label: string; color: string; bg: st
 export default function OrderCard({ order, onStatusChange }: Props) {
   const [status, setStatus] = useState<OrderStatus>(order.status)
   const [error, setError] = useState<string | null>(null)
+  const [confirmOpen, setConfirmOpen] = useState(false)
   const [isPending, startTransition] = useTransition()
 
   const advance = () => {
@@ -61,8 +63,8 @@ export default function OrderCard({ order, onStatusChange }: Props) {
     })
   }
 
-  const doCancel = () => {
-    if (!confirm('Annuler cette commande ?')) return
+  const runCancel = () => {
+    setConfirmOpen(false)
     setError(null)
     startTransition(async () => {
       const { error: err } = await cancelOrder(order.id)
@@ -192,7 +194,7 @@ export default function OrderCard({ order, onStatusChange }: Props) {
             </button>
           )}
           <button
-            onClick={doCancel}
+            onClick={() => setConfirmOpen(true)}
             disabled={isPending}
             style={{
               padding: '10px 14px', borderRadius: 10,
@@ -206,6 +208,18 @@ export default function OrderCard({ order, onStatusChange }: Props) {
           </button>
         </div>
       )}
+
+      <ConfirmDialog
+        open={confirmOpen}
+        title="Annuler cette commande ?"
+        message={`Commande de ${order.customer_name} · ${total.toFixed(2)} €. Le client sera notifié.`}
+        confirmLabel="Annuler la commande"
+        cancelLabel="Retour"
+        danger
+        busy={isPending}
+        onConfirm={runCancel}
+        onClose={() => setConfirmOpen(false)}
+      />
     </div>
   )
 }

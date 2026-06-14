@@ -243,6 +243,8 @@ ul { list-style: none; }
 @keyframes coinspin { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
 .nika-coin { animation: coinspin 7s linear infinite; filter: drop-shadow(0 10px 32px rgba(212,160,23,0.4)); }
 @keyframes nikofloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes cd-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes cd-pop { from { opacity: 0; transform: translateY(8px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @media (prefers-reduced-motion: reduce) { .nika-coin { animation: none; } }
 .spin360:hover .spin360-emoji { transform: rotateY(360deg); }
 @media (prefers-reduced-motion: reduce) {

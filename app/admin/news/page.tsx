@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { useAuthStore } from '@/lib/store';
+import ConfirmDialog from '@/components/ConfirmDialog';
 import Link from 'next/link';
 
 type Article = { id: string; title: string; content: string; upvotes: number; created_at: string; status?: string; users: { username: string } | null };
@@ -13,6 +14,8 @@ export default function AdminNewsPage() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<'all' | 'pending' | 'approved'>('all');
+  const [delId, setDelId] = useState<string | null>(null);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     if (!user) { router.push('/connexion'); return; }
@@ -31,10 +34,13 @@ export default function AdminNewsPage() {
     setArticles(a => a.filter(x => x.id !== id));
   }
 
-  async function deleteArticle(id: string) {
-    if (!confirm('Supprimer cet article ?')) return;
-    await fetch(`/api/admin/news/${id}`, { method: 'DELETE' });
-    setArticles(a => a.filter(x => x.id !== id));
+  async function confirmDeleteArticle() {
+    if (!delId) return;
+    setDeleting(true);
+    await fetch(`/api/admin/news/${delId}`, { method: 'DELETE' });
+    setArticles(a => a.filter(x => x.id !== delId));
+    setDeleting(false);
+    setDelId(null);
   }
 
   return (
@@ -75,7 +81,7 @@ export default function AdminNewsPage() {
                       ✓ Approuver
                     </button>
                   )}
-                  <button onClick={() => deleteArticle(a.id)} style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, padding: '6px 12px', borderRadius: 6, background: 'rgba(212,75,36,0.08)', border: '1px solid rgba(212,75,36,0.2)', color: 'var(--coral)', cursor: 'pointer' }}>
+                  <button onClick={() => setDelId(a.id)} style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, padding: '6px 12px', borderRadius: 6, background: 'rgba(212,75,36,0.08)', border: '1px solid rgba(212,75,36,0.2)', color: 'var(--coral)', cursor: 'pointer' }}>
                     Supprimer
                   </button>
                   <Link href={`/news/${a.id}`} target="_blank" style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, padding: '6px 12px', borderRadius: 6, background: 'rgba(90,136,176,0.08)', border: '1px solid rgba(90,136,176,0.2)', color: '#5A88B0', textDecoration: 'none' }}>
@@ -90,6 +96,17 @@ export default function AdminNewsPage() {
           ))}
         </div>
       )}
+
+      <ConfirmDialog
+        open={!!delId}
+        title="Supprimer cet article ?"
+        message="L'article sera définitivement retiré du fil d'actualités."
+        confirmLabel="Supprimer"
+        danger
+        busy={deleting}
+        onConfirm={confirmDeleteArticle}
+        onClose={() => setDelId(null)}
+      />
     </main>
   );
 }

@@ -15,7 +15,7 @@ export default function NewNewsPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!user) { alert('Connecte-toi pour publier une news.'); return; }
+    if (!user) { setResult({ approved: false, reason: 'Connecte-toi pour publier une news.' }); return; }
     setLoading(true);
     try {
       const modRes = await fetch('/api/news/moderate', {

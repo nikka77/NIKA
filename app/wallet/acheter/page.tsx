@@ -15,21 +15,28 @@ function AcheterForm() {
   const initialPack = parseInt(searchParams.get('pack') || '500');
   const [selected, setSelected] = useState(initialPack);
   const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState('');
   const user = useAuthStore(s => s.user);
 
   const pack = PACKS.find(p => p.id === selected) || PACKS[1];
 
   async function handleBuy() {
-    if (!user) { alert('Connecte-toi pour acheter des crédits.'); return; }
+    if (!user) { setErr('Connecte-toi pour acheter des crédits.'); return; }
+    setErr('');
     setLoading(true);
-    const res = await fetch('/api/stripe/credits', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ credits: pack.credits + (pack.bonus || 0), amount: Math.round(pack.price * 100) }),
-    });
-    const data = await res.json();
-    if (data.url) window.location.href = data.url;
-    else { alert('Erreur lors de la création du paiement.'); setLoading(false); }
+    try {
+      const res = await fetch('/api/stripe/credits', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ credits: pack.credits + (pack.bonus || 0), amount: Math.round(pack.price * 100) }),
+      });
+      const data = await res.json();
+      if (data.url) { window.location.href = data.url; return; }
+      setErr('Erreur lors de la création du paiement. Réessaie dans un instant.');
+    } catch {
+      setErr('Connexion impossible. Vérifie ta connexion et réessaie.');
+    }
+    setLoading(false);
   }
 
   return (
@@ -73,6 +80,12 @@ function AcheterForm() {
             </button>
           ))}
         </div>
+
+        {err && (
+          <div style={{ padding: '0.8rem 1rem', borderRadius: 8, background: 'rgba(212,75,36,0.08)', border: '1px solid rgba(212,75,36,0.25)', fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--coral)', marginBottom: '1rem' }}>
+            {err}
+          </div>
+        )}
 
         {/* Stripe button */}
         <button
