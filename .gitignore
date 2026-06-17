@@ -24,3 +24,9 @@ nika_patch_*.sh
 
 # Build Next.js (hors sync iCloud)
 .next.nosync/
+
+# Données de dispo générées par scripts/scrape-availability.js
+data/availability.json
+
+# Artefacts du navigateur Playwright MCP
+.playwright-mcp/
