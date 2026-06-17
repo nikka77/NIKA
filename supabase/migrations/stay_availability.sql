@@ -29,15 +29,6 @@ CREATE POLICY "Service role write"
   ON stay_availability FOR ALL
   USING (auth.role() = 'service_role');
 
--- Vue pratique : prochains 90 jours disponibles par listing
-CREATE OR REPLACE VIEW stay_next_available AS
-SELECT
-  slug,
-  airbnb_id,
-  array_agg(date ORDER BY date) FILTER (WHERE available = true) AS available_dates,
-  count(*) FILTER (WHERE available = true) AS available_count,
-  max(fetched_at) AS last_sync
-FROM stay_availability
-WHERE date >= CURRENT_DATE
-  AND date <= CURRENT_DATE + INTERVAL '90 days'
-GROUP BY slug, airbnb_id;
+-- (vue stay_next_available retirée — inutilisée ; la route /api/calendar/[slug]
+--  interroge directement la table, et la recherche par dates passe par le RPC
+--  find_available_stays.)

@@ -50,12 +50,7 @@ function parseCalendarJson(j) {
   for (const m of months) {
     for (const d of (m.days || [])) {
       if (!d.calendarDate) continue
-      const price = d.price?.localPrice?.amount ?? d.price?.localPriceFormatted ?? null
-      out[d.calendarDate] = {
-        available: !!d.available,
-        minNights: d.minNights ?? null,
-        price: typeof price === 'number' ? price : null,
-      }
+      out[d.calendarDate] = { available: !!d.available, minNights: d.minNights ?? null }
     }
   }
   return out
@@ -84,14 +79,14 @@ async function readDomMonths(page) {
     Object.assign(flat, await read())
   }
   const out = {}
-  for (const [date, available] of Object.entries(flat)) out[date] = { available, minNights: null, price: null }
+  for (const [date, available] of Object.entries(flat)) out[date] = { available, minNights: null }
   return out
 }
 
-// enrichit available avec minNights/prix issus du GraphQL si on a pu l'intercepter
+// enrichit minNights depuis le GraphQL si on a pu l'intercepter (best-effort)
 function enrich(days, gql) {
   for (const [date, d] of Object.entries(gql)) {
-    if (days[date]) { days[date].minNights = d.minNights; days[date].price = d.price }
+    if (days[date]) days[date].minNights = d.minNights
   }
 }
 
@@ -128,8 +123,7 @@ async function writeSupabase(supabase, listing, days) {
   const fetchedAt = new Date().toISOString()
   const rows = Object.entries(days).map(([date, d]) => ({
     slug: listing.slug, airbnb_id: listing.airbnb_id, date,
-    available: d.available, min_nights: d.minNights, price_native: d.price,
-    currency: d.price != null ? 'EUR' : null, fetched_at: fetchedAt,
+    available: d.available, min_nights: d.minNights, fetched_at: fetchedAt,
   }))
   for (let i = 0; i < rows.length; i += 500) {
     const { error } = await supabase.from('stay_availability').upsert(rows.slice(i, i + 500), { onConflict: 'slug,date' })

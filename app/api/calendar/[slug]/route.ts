@@ -24,7 +24,7 @@ export async function GET(request: NextRequest, { params }: Props) {
 
   const { data, error } = await supabase
     .from('stay_availability')
-    .select('date, available, min_nights, price_native, currency, fetched_at')
+    .select('date, available, min_nights, fetched_at')
     .eq('slug', slug)
     .gte('date', today.toISOString().split('T')[0])
     .lte('date', endDate.toISOString().split('T')[0])
@@ -56,7 +56,6 @@ export async function GET(request: NextRequest, { params }: Props) {
     available_dates: available,
     unavailable_dates: unavailable,
     min_nights: data.find(d => d.available)?.min_nights || null,
-    currency: data.find(d => d.price_native)?.currency || null,
     last_sync: lastSync,
     sync_minutes_ago: minutesAgo,
     total_days: data.length,
