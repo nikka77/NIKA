@@ -162,7 +162,8 @@ ul { list-style: none; }
 
 /* ===== MOBILE-FIRST : repli automatique des grilles (app-ready) ===== */
 @media (max-width: 768px) {
-  .g-4, .g-5, .g-6, .g-7 { grid-template-columns: repeat(2, 1fr); }
+  .g-4, .g-5, .g-6 { grid-template-columns: repeat(2, 1fr); }
+  /* .g-7 reste à 7 colonnes (calendrier : une semaine = 7 jours) */
   .g-footer { grid-template-columns: repeat(2, 1fr); }
   .g-listing { grid-template-columns: 1fr; gap: 1.5rem; }
 }
