@@ -605,6 +605,32 @@ ul { list-style: none; }
 .food-dash-title { font-family: var(--fn); font-size: 32px; color: #fff; letter-spacing: 0.06em; }
 .food-dash-sub { font-family: var(--fo); font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
 
+/* ===== HERO Stories — barre de bulles-domaines (scrollbar masquée) ===== */
+.hero-domabar { scrollbar-width: none; -ms-overflow-style: none; }
+.hero-domabar::-webkit-scrollbar { display: none; }
+
+/* ===== HERO refonte — carte vivante + NIKO ===== */
+.hero-grid { display: grid; grid-template-columns: 1fr; column-gap: 2.5rem; row-gap: 15px;
+  grid-template-areas: "pill" "title" "map" "sub" "search" "cta" "pulse"; }
+.hero-map { grid-area: map; position: relative; width: 100%; height: clamp(280px, 44vh, 360px); }
+@media (min-width: 768px) {
+  .hero-grid { grid-template-columns: 1.06fr 0.94fr; align-items: center; row-gap: 14px;
+    grid-template-areas: "pill map" "title map" "sub map" "search map" "cta map" "pulse map"; }
+  .hero-map { height: 100%; min-height: 400px; }
+}
+.hero-scroll { display: none; }
+@media (min-width: 768px) { .hero-scroll { display: flex; } }
+.hero-niko-bubble { display: none; }
+@media (min-width: 768px) { .hero-niko-bubble { display: block; } }
+.hero-pin:focus-within .hero-pin-label { opacity: 1 !important; }
+@media (hover: hover) and (pointer: fine) {
+  .hero-pin:hover { z-index: 20; }
+  .hero-pin:hover .hero-pin-label { opacity: 1 !important; }
+  .hero-chip:hover { border-color: var(--az); color: var(--td); background: rgba(0,148,212,0.08); }
+  .hero-cta-primary:hover { box-shadow: 0 0 36px rgba(0,148,212,0.45); transform: translateY(-1px); }
+  .hero-cta-ghost:hover { border-color: var(--az); color: var(--az); }
+}
+
 /* ===== SAND GRAIN ===== */
 .sand-grain::after {
   content: '';

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import Hero from '@/components/Hero';
-import StatsBar from '@/components/StatsBar';
+import Hero from '@/components/home/Hero';
 import TokenSection from '@/components/TokenSection';
 import FlashDeals from '@/components/FlashDeals';
 import Onboarding from '@/components/Onboarding';
@@ -23,7 +22,6 @@ export default function Home() {
     <main>
       <Hero />
       <LiveActivity />
-      <StatsBar />
       <FadeIn><TokenSection /></FadeIn>
       <FadeIn><FlashDeals /></FadeIn>
       <FadeIn><Onboarding /></FadeIn>
