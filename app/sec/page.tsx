@@ -147,9 +147,9 @@ export default async function SecPage() {
           </p>
           <div style={{ gap: '0.7rem' }} className="g-3 max-sm:grid-cols-2">
             {SEC_SERVICES.map(s => (
-              <div key={s.slug} className="dom-card" style={{
+              <a key={s.slug} href="#services" className="dom-card" style={{
                 background: 'var(--bg2)', border: '1px solid rgba(212,75,36,0.12)',
-                borderRadius: 10, padding: '1.2rem', textAlign: 'center',
+                borderRadius: 10, padding: '1.2rem', textAlign: 'center', textDecoration: 'none',
                 ['--dc' as string]: ACCENT,
               }}>
                 <div style={{ marginBottom: '0.4rem' }}>
@@ -157,7 +157,7 @@ export default async function SecPage() {
                 </div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700, color: 'var(--td)', marginBottom: '0.2rem' }}>{s.label}</div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>{s.desc}</div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

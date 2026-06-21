@@ -127,8 +127,10 @@ export default async function RentPage() {
             Du week-end paddle au chantier du dimanche
           </p>
           <div style={{ gap: '0.7rem' }} className="g-3 max-sm:grid-cols-2">
+            {/* TODO(filtre cat.) : vrai filtrage quand les listings porteront un champ `category`.
+                En attendant, on scrolle honnêtement vers le catalogue (pas de lien mort ?cat=). */}
             {RENT_CATS.map(c => (
-              <Link key={c.slug} href={`/rent?cat=${c.slug}`} className="dom-card" style={{
+              <a key={c.slug} href="#catalogue" className="dom-card" style={{
                 background: 'var(--bg2)', border: '1px solid rgba(90,136,176,0.15)',
                 borderRadius: 10, padding: '1.2rem', textAlign: 'center', textDecoration: 'none',
                 ['--dc' as string]: ACCENT,
@@ -138,7 +140,7 @@ export default async function RentPage() {
                 </div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700, color: 'var(--td)', marginBottom: '0.2rem' }}>{c.label}</div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>{c.desc}</div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

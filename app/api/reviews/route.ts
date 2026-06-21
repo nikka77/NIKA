@@ -5,25 +5,35 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
+    // Endpoint payant (analyse Claude) → réservé aux membres connectés + bornes d'entrée.
+    const supabase = await createClient();
+    if (!supabase) return NextResponse.json({ error: 'DB indisponible' }, { status: 503 });
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return NextResponse.json({ error: 'Non authentifié' }, { status: 401 });
+
+    const body = await req.json().catch(() => ({}));
     const { listing_id, author_name, rating, text, source = 'direct', review_date } = body;
 
     if (!listing_id || !text || rating === undefined) {
       return NextResponse.json({ error: 'listing_id, text et rating requis' }, { status: 400 });
     }
-
-    const supabase = await createClient();
-    if (!supabase) return NextResponse.json({ error: 'DB indisponible' }, { status: 503 });
+    if (String(text).length > 5000 || (author_name && String(author_name).length > 120)) {
+      return NextResponse.json({ error: 'Entrée trop longue' }, { status: 413 });
+    }
+    const numRating = Number(rating);
+    if (!Number.isFinite(numRating) || numRating < 0 || numRating > 5) {
+      return NextResponse.json({ error: 'Note invalide (0–5)' }, { status: 400 });
+    }
 
     // Fetch listing context for better analysis
     const { data: listing } = await supabase
       .from('stay_listings')
-      .select('title, theme, description')
+      .select('name, type, description')
       .eq('id', listing_id)
       .single();
 
     const listingContext = listing
-      ? `${listing.title} (thème: ${listing.theme}) — ${listing.description ?? ''}`
+      ? `${listing.name} (type: ${listing.type}) — ${listing.description ?? ''}`
       : undefined;
 
     // 1. Save raw review immediately

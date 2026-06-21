@@ -44,6 +44,19 @@ export default async function LeaderboardPage() {
 
   const hasData = !!topUsers?.length;
 
+  // Stats réelles (plus de chiffres en dur). POIs sur 7 jours glissants.
+  const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString();
+  const counts = await Promise.all([
+    supabase?.from('pois').select('*', { count: 'exact', head: true }).gte('created_at', weekAgo),
+    supabase?.from('news').select('*', { count: 'exact', head: true }).eq('published', true),
+    supabase?.from('stay_reviews').select('*', { count: 'exact', head: true }),
+  ]);
+  const liveStats = [
+    { n: counts[0]?.count ?? 0, l: 'POIs / semaine' },
+    { n: counts[1]?.count ?? 0, l: 'News publiées' },
+    { n: counts[2]?.count ?? 0, l: 'Avis laissés' },
+  ];
+
   return (
     <main style={{ padding: 'clamp(3rem,7vw,5rem) 1.4rem clamp(3rem,7vw,5rem)', maxWidth: 760, margin: '0 auto' }}>
       {/* Header */}
@@ -120,7 +133,7 @@ export default async function LeaderboardPage() {
 
         {/* Stats bar */}
         <div style={{ display: 'flex', gap: 8, marginTop: '1.2rem', flexWrap: 'wrap' }}>
-          {[{ n: 14, l: 'POIs / semaine' }, { n: 89, l: 'News publiées' }, { n: 231, l: 'Avis laissés' }].map(({ n, l }) => (
+          {liveStats.map(({ n, l }) => (
             <div key={l} style={{ flex: 1, minWidth: 90, background: 'var(--bg3)', border: '1px solid var(--bd)', borderRadius: 6, padding: '0.8rem', textAlign: 'center' }}>
               <span style={{ fontFamily: 'var(--fe)', fontSize: 24, fontWeight: 900, fontStyle: 'italic', color: 'var(--az2)', display: 'block' }}>{n}</span>
               <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--td3)' }}>{l}</span>

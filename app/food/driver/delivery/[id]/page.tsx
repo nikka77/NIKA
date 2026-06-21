@@ -19,6 +19,8 @@ type DeliveryData = {
     customer_name: string
     delivery_address: string | null
     customer_phone: string | null
+    delivery_lat: number | null
+    delivery_lng: number | null
   } | null
 }
 
@@ -42,16 +44,10 @@ export default function DriverDeliveryPage({ params }: Props) {
 
     params.then(async ({ id: dId }) => {
       setDeliveryId(dId)
-      const supabase = createClient()
-      if (!supabase) { setLoading(false); return }
-
-      const { data } = await supabase
-        .from('food_deliveries')
-        .select('id, status, eta_seconds, driver_id, food_orders(id, customer_name, delivery_address, customer_phone)')
-        .eq('id', dId)
-        .single()
-
-      setDelivery(data as unknown as DeliveryData)
+      // Lecture via route admin (les PII ne sont plus lisibles en anon).
+      const res = await fetch(`/api/food/delivery/${dId}`)
+      const json = await res.json().catch(() => ({}))
+      setDelivery(res.ok ? (json.delivery as DeliveryData) : null)
       setLoading(false)
     })
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -140,8 +136,8 @@ export default function DriverDeliveryPage({ params }: Props) {
             <DriverMap
               driverId={driverId}
               deliveryId={deliveryId}
-              clientLat={43.7102}
-              clientLng={7.2620}
+              clientLat={order?.delivery_lat ?? 43.7102}
+              clientLng={order?.delivery_lng ?? 7.2620}
               clientAddress={order?.delivery_address ?? undefined}
             />
             <p style={{

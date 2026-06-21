@@ -6,8 +6,8 @@ import { useRouter } from 'next/navigation'
 
 interface Listing {
   id: string
-  title: string
-  theme?: string | null
+  name: string
+  type?: string | null
 }
 
 interface ImportResult {
@@ -81,7 +81,7 @@ export default function ImportClient({ listings }: { listings: Listing[] }) {
           }}
         >
           {listings.map(l => (
-            <option key={l.id} value={l.id}>{l.title}{l.theme ? ` · ${l.theme}` : ''}</option>
+            <option key={l.id} value={l.id}>{l.name}{l.type ? ` · ${l.type}` : ''}</option>
           ))}
         </select>
       </div>

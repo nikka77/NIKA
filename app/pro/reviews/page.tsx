@@ -55,7 +55,7 @@ export default async function ProReviewsPage() {
   // Fetch all STAY listings for this pro
   const { data: listings } = await supabase
     .from('stay_listings')
-    .select('id, title, theme')
+    .select('id, name, type')
     .eq('pro_id', pro.id);
 
   const listingIds = (listings ?? []).map((l: { id: string }) => l.id);
@@ -105,7 +105,7 @@ export default async function ProReviewsPage() {
   const openIssues = issues.filter(i => i.status === 'open');
   const highIssues = openIssues.filter(i => i.severity === 'high');
 
-  const listingMap = new Map((listings ?? []).map((l: { id: string; title: string; theme: string }) => [l.id, l]));
+  const listingMap = new Map((listings ?? []).map((l: { id: string; name: string; type: string }) => [l.id, l]));
   const statsMap = new Map(stats.map(s => [s.listing_id, s]));
 
   const totalReviews = stats.reduce((s, st) => s + (st.review_count ?? 0), 0);
@@ -158,15 +158,15 @@ export default async function ProReviewsPage() {
             Par logement
           </h2>
           <div style={{ gap: '0.8rem' }} className="g-3 max-md:grid-cols-1">
-            {(listings as { id: string; title: string; theme: string }[]).map(listing => {
+            {(listings as { id: string; name: string; type: string }[]).map(listing => {
               const st = statsMap.get(listing.id);
               return (
                 <div key={listing.id} style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '1.2rem' }}>
                   <div style={{ fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 900, fontStyle: 'italic', color: 'var(--td)', marginBottom: 6 }}>
-                    {listing.title}
+                    {listing.name}
                   </div>
                   <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                    {listing.theme}
+                    {listing.type}
                   </div>
                   {st ? (
                     <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
@@ -231,7 +231,7 @@ export default async function ProReviewsPage() {
                       </span>
                       {listing && (
                         <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', fontStyle: 'italic' }}>
-                          — {listing.title}
+                          — {listing.name}
                         </span>
                       )}
                     </div>
@@ -293,7 +293,7 @@ export default async function ProReviewsPage() {
                       )}
                       {listing && (
                         <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', fontStyle: 'italic' }}>
-                          {listing.title}
+                          {listing.name}
                         </span>
                       )}
                     </div>

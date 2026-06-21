@@ -124,16 +124,16 @@ export default async function ServPage() {
           </p>
           <div style={{ gap: '0.7rem' }} className="g-4 max-sm:grid-cols-2">
             {SERV_CATS.map(c => (
-              <div key={c.slug} className="dom-card" style={{
+              <a key={c.slug} href="#artisans" className="dom-card" style={{
                 background: 'var(--bg2)', border: '1px solid rgba(14,168,120,0.15)',
-                borderRadius: 10, padding: '1.1rem', textAlign: 'center',
+                borderRadius: 10, padding: '1.1rem', textAlign: 'center', textDecoration: 'none',
                 ['--dc' as string]: ACCENT,
               }}>
                 <div style={{ marginBottom: '0.4rem' }}>
                   <Spin360 emoji={c.icon} alt={c.label} accent={ACCENT} size={52} {...visual('serv/cats', c.slug)} />
                 </div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 600, color: 'var(--td2)' }}>{c.label}</div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

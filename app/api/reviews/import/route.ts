@@ -101,12 +101,12 @@ export async function POST(req: NextRequest) {
     // Get listing context once
     const { data: listing } = await supabase
       .from('stay_listings')
-      .select('title, theme, description')
+      .select('name, type, description')
       .eq('id', listingId)
       .single();
 
     const listingContext = listing
-      ? `${listing.title} (thème: ${listing.theme}) — ${listing.description ?? ''}`
+      ? `${listing.name} (type: ${listing.type}) — ${listing.description ?? ''}`
       : undefined;
 
     let imported = 0;

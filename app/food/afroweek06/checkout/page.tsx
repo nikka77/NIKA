@@ -104,6 +104,20 @@ export default function CheckoutPage() {
       return
     }
 
+    // Géocodage best-effort de l'adresse (BAN — gratuit, sans clé, adresses FR)
+    // pour afficher la vraie position sur la carte de suivi. Échec → coords nulles.
+    let deliveryLat: number | null = null
+    let deliveryLng: number | null = null
+    try {
+      const geoRes = await fetch(`https://api-adresse.data.gouv.fr/search/?q=${encodeURIComponent(address.trim())}&limit=1`)
+      if (geoRes.ok) {
+        const coords = (await geoRes.json())?.features?.[0]?.geometry?.coordinates
+        if (Array.isArray(coords) && coords.length === 2) {
+          deliveryLng = coords[0]; deliveryLat = coords[1] // GeoJSON = [lng, lat]
+        }
+      }
+    } catch { /* best-effort */ }
+
     const { data: order, error: orderErr } = await supabase
       .from('food_orders')
       .insert({
@@ -112,6 +126,8 @@ export default function CheckoutPage() {
         customer_name:    name.trim(),
         customer_phone:   phone.trim(),
         delivery_address: address.trim(),
+        delivery_lat:     deliveryLat,
+        delivery_lng:     deliveryLng,
         scheduled_time:   slot === 'ASAP' ? null : slot,
         payment_method:   payment,
         total,

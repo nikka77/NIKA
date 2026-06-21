@@ -1,5 +1,8 @@
 // app/food/afroweek06/track/[orderId]/page.tsx
-import { createClient } from '@/lib/supabase/server'
+// Lecture via le client admin (service-role) : la commande (qui contient des PII —
+// nom, téléphone, adresse) est accessible par son UUID (jeton non devinable du lien
+// de suivi), sans exposer food_orders en lecture anonyme. Voir nika_food_pii.sql.
+import { createAdminClient } from '@/lib/supabase/admin'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -35,6 +38,8 @@ type Order = {
   status: string
   customer_name: string
   delivery_address: string | null
+  delivery_lat: number | null
+  delivery_lng: number | null
   scheduled_time: string | null
   total: number | null
   food_order_items: OrderItem[]
@@ -42,12 +47,12 @@ type Order = {
 
 export default async function TrackOrderPage({ params }: Props) {
   const { orderId } = await params
-  const supabase = await createClient()
+  const supabase = createAdminClient()
 
   const { data: order } = supabase
     ? await supabase
         .from('food_orders')
-        .select('id, status, customer_name, delivery_address, scheduled_time, total, food_order_items(quantity, unit_price, food_items(name, emoji))')
+        .select('id, status, customer_name, delivery_address, delivery_lat, delivery_lng, scheduled_time, total, food_order_items(quantity, unit_price, food_items(name, emoji))')
         .eq('id', orderId)
         .single()
     : { data: null }
@@ -115,6 +120,8 @@ export default async function TrackOrderPage({ params }: Props) {
             initialDriverLat={(delivery.food_drivers as unknown as { current_lat: number | null } | null)?.current_lat ?? null}
             initialDriverLng={(delivery.food_drivers as unknown as { current_lng: number | null } | null)?.current_lng ?? null}
             clientAddress={typedOrder.delivery_address}
+            clientLat={typedOrder.delivery_lat}
+            clientLng={typedOrder.delivery_lng}
           />
         </div>
       )}

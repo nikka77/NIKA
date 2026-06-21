@@ -14,13 +14,19 @@ type Props = {
   initialDriverLat: number | null
   initialDriverLng: number | null
   clientAddress: string | null
+  clientLat: number | null
+  clientLng: number | null
 }
+
+// Repli centre Nice si l'adresse n'a pas pu être géocodée à la commande.
+const NICE_LAT = 43.7102
+const NICE_LNG = 7.2620
 
 export default function TrackDeliverySection({
   deliveryId, driverId, driverName,
   initialStatus, initialEta,
   initialDriverLat, initialDriverLng,
-  clientAddress,
+  clientAddress, clientLat, clientLng,
 }: Props) {
   const hasDriver = !!driverId
   const hasPosition = initialDriverLat != null && initialDriverLng != null
@@ -54,8 +60,8 @@ export default function TrackDeliverySection({
           <DriverMap
             driverId={driverId}
             deliveryId={deliveryId}
-            clientLat={43.7102}
-            clientLng={7.2620}
+            clientLat={clientLat ?? NICE_LAT}
+            clientLng={clientLng ?? NICE_LNG}
             clientAddress={clientAddress ?? undefined}
             initialDriverLat={hasPosition ? initialDriverLat : undefined}
             initialDriverLng={hasPosition ? initialDriverLng : undefined}

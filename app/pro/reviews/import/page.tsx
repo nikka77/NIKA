@@ -27,9 +27,9 @@ export default async function ImportReviewsPage() {
 
   const { data: listings } = await supabase
     .from('stay_listings')
-    .select('id, title, theme')
+    .select('id, name, type')
     .eq('pro_id', pro.id)
-    .order('title')
+    .order('name')
 
   return (
     <main style={{ padding: '3rem 1.4rem 5rem', maxWidth: 720, margin: '0 auto' }}>
