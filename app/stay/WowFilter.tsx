@@ -123,8 +123,8 @@ export default function WowFilter({ listings }: { listings: Listing[] }) {
                 flexShrink: 0,
                 fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700,
                 padding: '7px 14px', borderRadius: 20,
-                background: isActive ? '#E07038' : 'rgba(255,255,255,0.04)',
-                border: isActive ? '1px solid #E07038' : '1px solid var(--bd2)',
+                background: isActive ? 'var(--amber)' : 'rgba(255,255,255,0.04)',
+                border: isActive ? '1px solid var(--amber)' : '1px solid var(--bd2)',
                 color: isActive ? '#fff' : 'var(--td2)',
                 cursor: 'pointer', transition: 'all 0.15s ease',
                 display: 'flex', alignItems: 'center', gap: 5,
@@ -182,7 +182,7 @@ export default function WowFilter({ listings }: { listings: Listing[] }) {
                 <div style={{ display: 'flex', gap: 4, alignItems: 'center', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
                   <span style={{
                     fontFamily: 'var(--fe)', fontSize: 10, fontStyle: 'italic',
-                    color: '#E07038', background: 'rgba(224,112,56,0.08)',
+                    color: 'var(--amber)', background: 'rgba(224,112,56,0.08)',
                     border: '1px solid rgba(224,112,56,0.2)', borderRadius: 10, padding: '1px 7px',
                   }}>
                     WOW {l.wow_score}
@@ -212,11 +212,11 @@ export default function WowFilter({ listings }: { listings: Listing[] }) {
                   )}
                   {(l.price_per_night ?? 0) > 0 && (
                     <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>
-                      dès <strong style={{ fontFamily: 'var(--fe)', fontSize: 13, fontStyle: 'italic', color: '#E07038' }}>{l.price_per_night}€</strong>/nuit
+                      dès <strong style={{ fontFamily: 'var(--fe)', fontSize: 13, fontStyle: 'italic', color: 'var(--amber)' }}>{l.price_per_night}€</strong>/nuit
                     </span>
                   )}
                 </div>
-                <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: isDirect ? 'var(--teal)' : '#E07038' }}>
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: isDirect ? 'var(--teal)' : 'var(--amber)' }}>
                   {isDirect ? 'Via NIKA →' : 'Voir →'}
                 </span>
               </div>

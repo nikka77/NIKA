@@ -13,6 +13,7 @@ export default function DomainHero({ slug }: { slug: string }) {
       <ScrollVideo
         poster={asset.poster}
         video={asset.video}
+        className="kenburns"
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.5, zIndex: 0 }}
       />
       <div

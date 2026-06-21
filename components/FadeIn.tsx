@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, ReactNode } from 'react';
 
-export default function FadeIn({ children, delay = 0, className = '' }: { children: ReactNode; delay?: number; className?: string }) {
+export default function FadeIn({ children, delay = 0, className = '', bold = false }: { children: ReactNode; delay?: number; className?: string; bold?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function FadeIn({ children, delay = 0, className = '' }: { childr
   return (
     <div
       ref={ref}
-      className={`fi ${className}`}
+      className={`${bold ? 'fi-bold' : 'fi'} ${className}`}
       style={delay ? { transitionDelay: `${delay}s` } : {}}
     >
       {children}

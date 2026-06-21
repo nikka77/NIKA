@@ -302,6 +302,43 @@ ul { list-style: none; }
 /* ===== STAT « COUNT-UP » — voile pendant le comptage ===== */
 .countup { font-variant-numeric: tabular-nums; }
 
+/* ===== PUISSANCE MAX — motion bold (phase 2) ===================== */
+.page-enter { animation-duration: .42s; }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Reveal BOLD : montée ample + léger scale, easing « spring » doux.
+     (FadeIn bold). On garde .fi subtil pour la home déjà calibrée.) */
+  .fi-bold {
+    opacity: 0; transform: translateY(34px) scale(.975);
+    transition: opacity .72s cubic-bezier(.16,1,.3,1), transform .72s cubic-bezier(.16,1,.3,1);
+    will-change: opacity, transform;
+  }
+  .fi-bold.fv { opacity: 1; transform: none; }
+
+  /* Lift renforcé (CTA + cartes génériques) */
+  .lift:hover { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,0,0,0.42); }
+
+  /* Cartes domaine : lift + halo de couleur du domaine (--dc) */
+  .dom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.40), 0 0 26px -10px var(--dc, var(--az));
+  }
+
+  /* Cartes STAY / recherche / riviera / wow : ombre plus profonde */
+  .stay-card:hover, .ss-card:hover, .riv-card:hover {
+    transform: translateY(-5px); box-shadow: 0 16px 44px rgba(0,0,0,0.42);
+  }
+  .wow-card:hover { transform: translateY(-7px) scale(1.006); box-shadow: 0 22px 60px rgba(0,0,0,0.48); }
+
+  /* Ken Burns lent sur les héros de domaine (DomainHero) → fond vivant */
+  .kenburns { animation: kenburns 28s ease-in-out infinite alternate; will-change: transform; }
+  @keyframes kenburns {
+    from { transform: scale(1.03); }
+    to   { transform: scale(1.12) translate(-1.5%, -1.2%); }
+  }
+}
+@media (prefers-reduced-motion: reduce) { .kenburns { animation: none; } }
+
 
 @media (max-width: 768px) {
   .max-md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr) !important; }

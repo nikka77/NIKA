@@ -201,7 +201,7 @@ export default async function StayThemePage({ params }: Props) {
           </h1>
           <p style={{ fontFamily: 'var(--fo)', fontSize: 15, color: 'var(--td2)', lineHeight: 1.7, maxWidth: 520, marginBottom: '1rem' }}>{t.desc}</p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
-            <span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 20, background: 'rgba(224,112,56,0.1)', border: '1px solid rgba(224,112,56,0.3)', color: '#E07038' }}>
+            <span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 20, background: 'rgba(224,112,56,0.1)', border: '1px solid rgba(224,112,56,0.3)', color: 'var(--amber)' }}>
               {listings.length} logement{listings.length > 1 ? 's' : ''}
             </span>
             {hasDirect && (
@@ -227,7 +227,7 @@ export default async function StayThemePage({ params }: Props) {
               return (
                 <div key={l.slug} className="stay-card" style={{ background: isDirect ? 'rgba(14,168,120,0.03)' : 'var(--bg2)', border: `1px solid ${isDirect ? 'rgba(14,168,120,0.2)' : 'rgba(255,255,255,0.07)'}`, borderRadius: 10, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                   {/* Accent line */}
-                  <div style={{ height: 3, background: isDirect ? 'linear-gradient(90deg, var(--teal), transparent)' : 'linear-gradient(90deg, #E07038, transparent)', flexShrink: 0 }} />
+                  <div style={{ height: 3, background: isDirect ? 'linear-gradient(90deg, var(--teal), transparent)' : 'linear-gradient(90deg, var(--amber), transparent)', flexShrink: 0 }} />
 
                   {/* Header */}
                   <div style={{ padding: '1rem 1.2rem 0.8rem', background: isDirect ? 'linear-gradient(135deg,#071A12,#0D2519)' : 'linear-gradient(135deg,#0A1628,#0E1F3A)', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 }}>
@@ -267,7 +267,7 @@ export default async function StayThemePage({ params }: Props) {
                     )}
                     <div style={{ marginTop: 'auto', paddingTop: '0.8rem', borderTop: '1px solid var(--bd)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                       {l.price_ref ? (
-                        <span style={{ fontFamily: 'var(--fe)', fontSize: 16, fontWeight: 700, fontStyle: 'italic', color: '#E07038' }}>
+                        <span style={{ fontFamily: 'var(--fe)', fontSize: 16, fontWeight: 700, fontStyle: 'italic', color: 'var(--amber)' }}>
                           {l.price_ref}
                         </span>
                       ) : (

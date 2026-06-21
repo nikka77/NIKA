@@ -160,14 +160,14 @@ export default function StayPage() {
               { val: '4.95', label: 'Note moyenne' },
             ].map(({ val, label }) => (
               <div key={label}>
-                <div style={{ fontFamily: 'var(--fe)', fontSize: 26, fontWeight: 900, fontStyle: 'italic', color: '#E07038', lineHeight: 1 }}>{val}</div>
+                <div style={{ fontFamily: 'var(--fe)', fontSize: 26, fontWeight: 900, fontStyle: 'italic', color: 'var(--amber)', lineHeight: 1 }}>{val}</div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginTop: 2 }}>{label}</div>
               </div>
             ))}
           </div>
           <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
             {['Booking.com', 'Expedia', 'Airbnb'].map(p => (
-              <span key={p} style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 20, background: 'rgba(224,112,56,0.08)', border: '1px solid rgba(224,112,56,0.2)', color: '#E07038' }}>{p}</span>
+              <span key={p} style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 20, background: 'rgba(224,112,56,0.08)', border: '1px solid rgba(224,112,56,0.2)', color: 'var(--amber)' }}>{p}</span>
             ))}
             <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 20, background: 'rgba(14,168,120,0.08)', border: '1px solid rgba(14,168,120,0.25)', color: 'var(--teal)' }}>Réservation directe</span>
           </div>
@@ -196,7 +196,7 @@ export default function StayPage() {
             <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', margin: 0 }}>
               WOW Exclusifs
             </h2>
-            <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#E07038', background: 'rgba(224,112,56,0.1)', border: '1px solid rgba(224,112,56,0.3)', borderRadius: 20, padding: '3px 10px' }}>
+            <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--amber)', background: 'rgba(224,112,56,0.1)', border: '1px solid rgba(224,112,56,0.3)', borderRadius: 20, padding: '3px 10px' }}>
               7 thèmes
             </span>
           </div>
@@ -221,7 +221,7 @@ export default function StayPage() {
                   borderRadius: 10, overflow: 'hidden',
                 }}
               >
-                <div style={{ height: 2, background: direct ? 'linear-gradient(90deg,var(--teal),transparent)' : 'linear-gradient(90deg,#E07038,transparent)' }} />
+                <div style={{ height: 2, background: direct ? 'linear-gradient(90deg,var(--teal),transparent)' : 'linear-gradient(90deg,var(--amber),transparent)' }} />
                 <div style={{ padding: '1rem 1rem 0.7rem', flex: 1, display: 'flex', flexDirection: 'column', gap: 6 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     {visual('stay/themes', slug).poster
@@ -240,9 +240,9 @@ export default function StayPage() {
                   <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', lineHeight: 1.4, flex: 1 }}>{desc}</div>
                   <div style={{ paddingTop: 8, borderTop: '1px solid var(--bd)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>
-                      dès <strong style={{ fontFamily: 'var(--fe)', fontSize: 14, fontStyle: 'italic', color: '#E07038' }}>{from}€</strong>
+                      dès <strong style={{ fontFamily: 'var(--fe)', fontSize: 14, fontStyle: 'italic', color: 'var(--amber)' }}>{from}€</strong>
                     </span>
-                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: direct ? 'var(--teal)' : '#E07038' }}>→</span>
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: direct ? 'var(--teal)' : 'var(--amber)' }}>→</span>
                   </div>
                 </div>
               </Link>

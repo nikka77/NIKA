@@ -74,7 +74,7 @@ export default async function LeaderboardPage() {
       </p>
 
       {/* Top joueurs */}
-      <FadeIn>
+      <FadeIn bold>
       <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem' }}>
         <div style={{ fontFamily: 'var(--fe)', fontSize: 16, fontWeight: 800, fontStyle: 'italic', color: 'var(--td)', marginBottom: '1rem' }}>
           ⚔️ Top joueurs — {new Date().toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })}
@@ -147,7 +147,7 @@ export default async function LeaderboardPage() {
       </FadeIn>
 
       {/* XP actions */}
-      <FadeIn delay={0.08}>
+      <FadeIn bold delay={0.08}>
       <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '1.5rem', marginBottom: '2rem' }}>
         <div style={{ fontFamily: 'var(--fe)', fontSize: 16, fontWeight: 800, fontStyle: 'italic', color: 'var(--td)', marginBottom: '1rem' }}>Comment gagner de l&apos;XP</div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
@@ -161,7 +161,7 @@ export default async function LeaderboardPage() {
       </FadeIn>
 
       {/* CTA */}
-      <FadeIn delay={0.16}>
+      <FadeIn bold delay={0.16}>
       <div style={{ textAlign: 'center' }}>
         {!hasData && (
           <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)', marginBottom: '1rem' }}>

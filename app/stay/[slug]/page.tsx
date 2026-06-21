@@ -140,7 +140,7 @@ const HERO_OBJECT_POS: Record<string, string> = {
 
 const PRIORITY_COLOR: Record<string, string> = {
   'MAXIMALE': 'var(--coral)',
-  'HAUTE': '#E07038',
+  'HAUTE': 'var(--amber)',
 };
 
 function priorityColor(p: string) {
@@ -187,14 +187,14 @@ export default async function StaySlugPage({ params }: Props) {
           <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginBottom: '1.2rem', flexWrap: 'wrap' }}>
             <Link href="/stay" style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--td3)' }}>STAY</Link>
             <span style={{ color: 'var(--td3)', fontSize: 10 }}>/</span>
-            <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#E07038' }}>
+            <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--amber)' }}>
               {l.type.replace(/-/g, ' ')}
             </span>
           </div>
 
           {/* WOW Score badge */}
           <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: 'var(--fe)', fontSize: 11, fontWeight: 900, fontStyle: 'italic', padding: '3px 10px', borderRadius: 20, background: 'rgba(224,112,56,0.15)', border: '1px solid rgba(224,112,56,0.4)', color: '#E07038' }}>
+            <span style={{ fontFamily: 'var(--fe)', fontSize: 11, fontWeight: 900, fontStyle: 'italic', padding: '3px 10px', borderRadius: 20, background: 'rgba(224,112,56,0.15)', border: '1px solid rgba(224,112,56,0.4)', color: 'var(--amber)' }}>
               WOW {l.wow_score}/25
             </span>
             {l.badge && (
@@ -272,12 +272,12 @@ export default async function StaySlugPage({ params }: Props) {
                 <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(20px,3vw,30px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1.2rem' }}>
                   L&apos;histoire de ce lieu
                 </h2>
-                <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderLeft: '3px solid #E07038', borderRadius: 8, padding: '1.4rem 1.6rem', display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+                <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderLeft: '3px solid var(--amber)', borderRadius: 8, padding: '1.4rem 1.6rem', display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                   {Object.entries(history).map(([key, val]) => {
                     if (typeof val === 'string') {
                       return (
                         <div key={key} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                          <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#E07038', minWidth: 80, paddingTop: 2 }}>
+                          <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--amber)', minWidth: 80, paddingTop: 2 }}>
                             {key.replace(/_/g, ' ')}
                           </span>
                           <span style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)', lineHeight: 1.5 }}>{val}</span>
@@ -287,7 +287,7 @@ export default async function StaySlugPage({ params }: Props) {
                     if (Array.isArray(val)) {
                       return (
                         <div key={key} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                          <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#E07038', minWidth: 80, paddingTop: 2 }}>
+                          <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--amber)', minWidth: 80, paddingTop: 2 }}>
                             {key.replace(/_/g, ' ')}
                           </span>
                           <ul style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)', lineHeight: 1.6, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 4 }}>
@@ -371,10 +371,10 @@ export default async function StaySlugPage({ params }: Props) {
           {/* RIGHT — Booking card */}
           <div className="booking-sidebar" style={{ background: 'var(--bg2)', border: `1px solid ${isAffil ? 'rgba(224,112,56,0.2)' : 'rgba(14,168,120,0.2)'}`, borderRadius: 12, padding: '1.8rem', position: 'sticky', top: 70 }}>
             {/* Top accent */}
-            <div style={{ height: 3, background: isAffil ? 'linear-gradient(90deg, #E07038, transparent)' : 'linear-gradient(90deg, var(--teal), transparent)', borderRadius: 2, marginBottom: '1.4rem', marginLeft: '-1.8rem', marginRight: '-1.8rem', marginTop: '-1.8rem' }} />
+            <div style={{ height: 3, background: isAffil ? 'linear-gradient(90deg, var(--amber), transparent)' : 'linear-gradient(90deg, var(--teal), transparent)', borderRadius: 2, marginBottom: '1.4rem', marginLeft: '-1.8rem', marginRight: '-1.8rem', marginTop: '-1.8rem' }} />
 
             <div style={{ marginBottom: '1.2rem' }}>
-              <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', padding: '3px 10px', borderRadius: 20, background: isAffil ? 'rgba(224,112,56,0.1)' : 'rgba(14,168,120,0.12)', border: `1px solid ${isAffil ? 'rgba(224,112,56,0.3)' : 'rgba(14,168,120,0.3)'}`, color: isAffil ? '#E07038' : 'var(--teal)' }}>
+              <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', padding: '3px 10px', borderRadius: 20, background: isAffil ? 'rgba(224,112,56,0.1)' : 'rgba(14,168,120,0.12)', border: `1px solid ${isAffil ? 'rgba(224,112,56,0.3)' : 'rgba(14,168,120,0.3)'}`, color: isAffil ? 'var(--amber)' : 'var(--teal)' }}>
                 {isAffil ? 'Disponible sur Airbnb' : 'Réservation directe NIKA'}
               </span>
             </div>
@@ -413,7 +413,7 @@ export default async function StaySlugPage({ params }: Props) {
                   { val: l.capacity.bathrooms, label: 'SDB' },
                 ].map(({ val, label }) => (
                   <div key={label} style={{ textAlign: 'center', flex: 1, minWidth: 50 }}>
-                    <div style={{ fontFamily: 'var(--fe)', fontSize: 22, fontWeight: 900, fontStyle: 'italic', color: '#E07038', lineHeight: 1 }}>{val}</div>
+                    <div style={{ fontFamily: 'var(--fe)', fontSize: 22, fontWeight: 900, fontStyle: 'italic', color: 'var(--amber)', lineHeight: 1 }}>{val}</div>
                     <div style={{ fontFamily: 'var(--fo)', fontSize: 9, color: 'var(--td3)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 2 }}>{label}</div>
                   </div>
                 ))}

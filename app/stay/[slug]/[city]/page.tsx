@@ -106,11 +106,11 @@ export default async function StayCityPage({ params }: Props) {
             <Link href="/stay" style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--td3)', display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: '1.5rem', textDecoration: 'none' }}>
               ← NIKA STAY
             </Link>
-            <p style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#E07038', marginBottom: '0.6rem' }}>
+            <p style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--amber)', marginBottom: '0.6rem' }}>
               NIKA STAY · {slug.toUpperCase()}
             </p>
             <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(36px,6vw,72px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.95, marginBottom: '1rem' }}>
-              Logement insolite<br /><span style={{ color: '#E07038' }}>{cityLabel}</span>
+              Logement insolite<br /><span style={{ color: 'var(--amber)' }}>{cityLabel}</span>
             </h1>
             <p style={{ fontFamily: 'var(--fo)', fontSize: 15, color: 'var(--td2)', lineHeight: 1.7, maxWidth: 520 }}>
               Les hébergements les plus uniques à {cityLabel} : maison flottante, avion reconverti, cabane dans les arbres, sous-marin, grotte. Via Booking.com, Expedia & Travelpayouts.
@@ -126,8 +126,8 @@ export default async function StayCityPage({ params }: Props) {
                   <div style={{ height: 180, background: 'var(--bg3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 48 }}>🏡</div>
                   <div style={{ padding: '1.2rem' }}>
                     <div style={{ fontFamily: 'var(--fe)', fontSize: 18, fontWeight: 900, fontStyle: 'italic', color: 'var(--td)', marginBottom: '0.5rem' }}>{listing.title}</div>
-                    {listing.price && <span style={{ fontFamily: 'var(--fe)', fontSize: 18, fontWeight: 700, fontStyle: 'italic', color: '#E07038' }}>{listing.price}€ / nuit</span>}
-                    {listing.affil_url && <a href={tpAffilLink(listing.affil_url)} target="_blank" rel="noopener noreferrer sponsored" style={{ display: 'inline-block', marginTop: '0.8rem', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: '#fff', background: '#E07038', padding: '6px 14px', borderRadius: 4 }}>Réserver →</a>}
+                    {listing.price && <span style={{ fontFamily: 'var(--fe)', fontSize: 18, fontWeight: 700, fontStyle: 'italic', color: 'var(--amber)' }}>{listing.price}€ / nuit</span>}
+                    {listing.affil_url && <a href={tpAffilLink(listing.affil_url)} target="_blank" rel="noopener noreferrer sponsored" style={{ display: 'inline-block', marginTop: '0.8rem', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: '#fff', background: 'var(--amber)', padding: '6px 14px', borderRadius: 4 }}>Réserver →</a>}
                   </div>
                 </div>
               ))}
@@ -140,7 +140,7 @@ export default async function StayCityPage({ params }: Props) {
               <div style={{ gap: '1.2rem' }} className="g-3 max-md:grid-cols-2 max-sm:grid-cols-1">
                 {curated.map((l, i) => (
                   <div key={i} style={{ background: 'var(--bg2)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 10, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ height: 3, background: 'linear-gradient(90deg, #E07038, transparent)', flexShrink: 0 }} />
+                    <div style={{ height: 3, background: 'linear-gradient(90deg, var(--amber), transparent)', flexShrink: 0 }} />
                     <div style={{ padding: '1rem 1.2rem 0.8rem', background: 'linear-gradient(135deg, #0A1628 0%, #0E1F3A 100%)', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'flex-start', gap: 10, flexShrink: 0 }}>
                       <span style={{ fontSize: 34, lineHeight: 1, marginTop: 2 }}>{l.icon}</span>
                     </div>
@@ -148,8 +148,8 @@ export default async function StayCityPage({ params }: Props) {
                       <div style={{ fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 900, fontStyle: 'italic', color: 'var(--td)', marginBottom: '0.25rem', lineHeight: 1.25 }}>{l.title}</div>
                       <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', marginBottom: '0.5rem' }}>📍 {l.type} · {l.guests} pers.</div>
                       <div style={{ marginTop: 'auto', paddingTop: '0.8rem', borderTop: '1px solid var(--bd)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
-                        <span style={{ fontFamily: 'var(--fe)', fontSize: 18, fontWeight: 700, fontStyle: 'italic', color: '#E07038', lineHeight: 1 }}>{l.price}€<span style={{ fontSize: 10, fontWeight: 400, fontStyle: 'normal', color: 'var(--td3)', marginLeft: 2 }}>/nuit</span></span>
-                        <a href={tpAffilLink(l.url, cityLabel)} target="_blank" rel="noopener noreferrer sponsored" style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: '#fff', background: '#E07038', padding: '6px 12px', borderRadius: 5, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0 }}>Réserver →</a>
+                        <span style={{ fontFamily: 'var(--fe)', fontSize: 18, fontWeight: 700, fontStyle: 'italic', color: 'var(--amber)', lineHeight: 1 }}>{l.price}€<span style={{ fontSize: 10, fontWeight: 400, fontStyle: 'normal', color: 'var(--td3)', marginLeft: 2 }}>/nuit</span></span>
+                        <a href={tpAffilLink(l.url, cityLabel)} target="_blank" rel="noopener noreferrer sponsored" style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: '#fff', background: 'var(--amber)', padding: '6px 12px', borderRadius: 5, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0 }}>Réserver →</a>
                       </div>
                     </div>
                   </div>
@@ -157,7 +157,7 @@ export default async function StayCityPage({ params }: Props) {
               </div>
               <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
                 <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#E07038', display: 'inline-block' }} />
+                  <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--amber)', display: 'inline-block' }} />
                   Via Travelpayouts · Booking.com · Expedia · Hotels.com
                 </span>
               </div>

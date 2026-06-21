@@ -3,6 +3,8 @@ import { redirect } from 'next/navigation';
 import { getLevelFromXP, LEVELS, DOMAINS } from '@/lib/constants';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import FadeIn from '@/components/FadeIn';
+import CountUp from '@/components/ui/CountUp';
 
 export const metadata: Metadata = {
   title: 'Dashboard — NIKA',
@@ -56,6 +58,7 @@ export default async function DashboardPage() {
       </div>
 
       {/* XP + stats row */}
+      <FadeIn bold>
       <div style={{ gap: '1rem', marginBottom: '3rem' }} className="g-3 max-md:grid-cols-1">
         {/* XP card */}
         <div style={{ background: 'var(--bg2)', border: '1px solid var(--az)22', borderRadius: 10, padding: '1.5rem', position: 'relative', overflow: 'hidden' }}>
@@ -68,7 +71,7 @@ export default async function DashboardPage() {
             Niveau {level.n} — {level.name}
           </div>
           <div style={{ fontFamily: 'var(--fn)', fontSize: 40, color: 'var(--td)', lineHeight: 1, marginBottom: '0.5rem' }}>
-            {profile.xp.toLocaleString()} XP
+            <CountUp value={profile.xp} /> XP
           </div>
           {level.n < 10 && (
             <>
@@ -89,7 +92,7 @@ export default async function DashboardPage() {
             Crédits NIKA
           </div>
           <div style={{ fontFamily: 'var(--fn)', fontSize: 40, color: 'var(--td)', lineHeight: 1, marginBottom: '0.5rem' }}>
-            {profile.nika_credits.toLocaleString()}
+            <CountUp value={profile.nika_credits} />
           </div>
           <Link href="/wallet/acheter" style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 600, color: 'var(--gold)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>
             Recharger →
@@ -103,13 +106,14 @@ export default async function DashboardPage() {
             Commandes
           </div>
           <div style={{ fontFamily: 'var(--fn)', fontSize: 40, color: 'var(--td)', lineHeight: 1, marginBottom: '0.5rem' }}>
-            {orders?.length ?? 0}
+            <CountUp value={orders?.length ?? 0} />
           </div>
           <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>
             depuis la bêta
           </div>
         </div>
       </div>
+      </FadeIn>
 
       {/* Quick actions */}
       <div style={{ marginBottom: '3rem' }}>
@@ -133,6 +137,7 @@ export default async function DashboardPage() {
         </div>
       </div>
 
+      <FadeIn bold delay={0.08}>
       <div style={{ gap: '2rem' }} className="g-2 max-md:grid-cols-1">
         {/* Recent orders */}
         <div>
@@ -199,6 +204,7 @@ export default async function DashboardPage() {
           )}
         </div>
       </div>
+      </FadeIn>
 
       {/* Flash deals */}
       {deals && deals.length > 0 && (

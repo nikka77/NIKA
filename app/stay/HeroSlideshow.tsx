@@ -19,7 +19,7 @@ export interface HeroSlide {
 const BG_BY_TYPE: Record<string, { bg: string; accent: string }> = {
   'sous-marin':               { bg: 'linear-gradient(135deg,#030C1A 0%,#060F24 60%,#0A1A3A 100%)', accent: 'var(--az)' },
   'bunker-militaire':         { bg: 'linear-gradient(135deg,#060F12 0%,#071A12 60%,#0D2519 100%)', accent: 'var(--teal)' },
-  'architecture-surréaliste': { bg: 'linear-gradient(135deg,#1A0E06 0%,#221008 60%,#2E1A06 100%)', accent: '#E07038' },
+  'architecture-surréaliste': { bg: 'linear-gradient(135deg,#1A0E06 0%,#221008 60%,#2E1A06 100%)', accent: 'var(--amber)' },
   'train-reconverti':         { bg: 'linear-gradient(135deg,#150C06 0%,#1E1006 60%,#2A1808 100%)', accent: 'var(--gold2)' },
   'transport-reconverti':     { bg: 'linear-gradient(135deg,#150C06 0%,#1E1006 60%,#2A1808 100%)', accent: 'var(--gold2)' },
   'suite-flottante':          { bg: 'linear-gradient(135deg,#04121A 0%,#061824 60%,#082230 100%)', accent: 'var(--az)' },
@@ -66,7 +66,7 @@ export default function HeroSlideshow({ slides }: { slides: HeroSlide[] }) {
   if (!slides.length) return null;
   const slide = slides[current];
   const isDirect = slide.booking_type === 'direct' || slide.booking_type === 'direct_or_booking';
-  const theme = BG_BY_TYPE[slide.type] ?? { bg: 'linear-gradient(135deg,#060F1E,#0A1628)', accent: '#E07038' };
+  const theme = BG_BY_TYPE[slide.type] ?? { bg: 'linear-gradient(135deg,#060F1E,#0A1628)', accent: 'var(--amber)' };
   const icon = ICON_BY_TYPE[slide.type] ?? '🏡';
 
   return (
@@ -122,7 +122,7 @@ export default function HeroSlideshow({ slides }: { slides: HeroSlide[] }) {
           <span style={{ fontSize: 40, lineHeight: 1 }}>{icon}</span>
           <span style={{
             fontFamily: 'var(--fe)', fontSize: 11, fontStyle: 'italic',
-            color: '#E07038', background: 'rgba(224,112,56,0.12)',
+            color: 'var(--amber)', background: 'rgba(224,112,56,0.12)',
             border: '1px solid rgba(224,112,56,0.28)', borderRadius: 20, padding: '3px 10px',
           }}>
             WOW {slide.wow_score}/25
@@ -166,7 +166,7 @@ export default function HeroSlideshow({ slides }: { slides: HeroSlide[] }) {
             style={{
               fontFamily: 'var(--fe)', fontSize: 13, fontWeight: 900, fontStyle: 'italic',
               letterSpacing: '0.06em', textTransform: 'uppercase',
-              background: '#E07038', color: '#fff',
+              background: 'var(--amber)', color: '#fff',
               padding: '12px 24px', borderRadius: 4, textDecoration: 'none',
             }}
           >
@@ -209,7 +209,7 @@ export default function HeroSlideshow({ slides }: { slides: HeroSlide[] }) {
             style={{
               width: i === current ? 24 : 7, height: 7, borderRadius: 4,
               border: 'none', cursor: 'pointer', padding: 0,
-              background: i === current ? '#E07038' : 'rgba(255,255,255,0.2)',
+              background: i === current ? 'var(--amber)' : 'rgba(255,255,255,0.2)',
               transition: 'width 0.3s ease, background 0.3s ease',
             }}
           />
