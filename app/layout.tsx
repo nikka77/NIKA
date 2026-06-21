@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { Bebas_Neue, Exo_2, Outfit } from 'next/font/google';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
@@ -26,9 +27,14 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 };
 
+// next/font : auto-hébergé, préchargé, sans @import bloquant le rendu (cf. globals.css).
+const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'], variable: '--font-bebas', display: 'swap' });
+const exo2 = Exo_2({ subsets: ['latin'], variable: '--font-exo2', display: 'swap' });
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit', display: 'swap' });
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" style={{ scrollBehavior: 'smooth' }}>
+    <html lang="fr" className={`${bebas.variable} ${exo2.variable} ${outfit.variable}`} style={{ scrollBehavior: 'smooth' }}>
       <body>
         <ScrollProgress />
         <Nav />

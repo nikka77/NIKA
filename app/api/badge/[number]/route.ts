@@ -55,7 +55,9 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ numb
   return new Response(svg, {
     headers: {
       'Content-Type': 'image/svg+xml; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600',
+      // Badge déterministe par (number, tier, kyc) → immutable : la police embarquée
+      // (~21 Ko) ne transite qu'une fois par URL, puis cache CDN/navigateur.
+      'Cache-Control': 'public, max-age=31536000, immutable',
     },
   });
 }
