@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import RakoClient from './RakoClient'
 
 export const metadata: Metadata = {
-  title: '@rakomoriafood — Cuisine comorienne de nuit | NIKA Food',
+  title: 'RAKOMORIA FOOD — Cuisine comorienne de nuit | NIKA Food',
   description: 'RAKOMORIA FOOD — Cuisine comorienne 100% fait main, Halal, livraison de nuit à Nice. Du goût, du frais, du bonheur !',
 }
 

@@ -10,6 +10,7 @@ import NewsTeaser from '@/components/NewsTeaser';
 import AccessCTA from '@/components/AccessCTA';
 import LiveActivity from '@/components/LiveActivity';
 import FadeIn from '@/components/FadeIn';
+import { getFoodPros, getFeaturedEstablishments } from '@/lib/food';
 
 export const metadata: Metadata = {
   title: 'NIKA — La super-app de la Côte d\'Azur',
@@ -17,10 +18,12 @@ export const metadata: Metadata = {
   keywords: ['nice app', 'vtc nice', 'restaurant nice', 'logement insolite côte d\'azur', 'agent ia nice', 'super-app méditerranée'],
 };
 
-export default function Home() {
+export default async function Home() {
+  // Widget « accès rapide » du hero : enseignes mises en avant (sponsorisé / populaire / favori).
+  const [foodPros, nightPros] = await Promise.all([getFoodPros(), getFeaturedEstablishments()]);
   return (
     <main>
-      <Hero />
+      <Hero foodPros={foodPros} nightPros={nightPros} />
       <LiveActivity />
       <FadeIn><TokenSection /></FadeIn>
       <FadeIn><FlashDeals /></FadeIn>

@@ -265,10 +265,11 @@ export default function NayahBoatDetail({
 
       {/* ══ HERO ══════════════════════════════════════════════════════════ */}
       <div style={{ position:'relative', height:480, overflow:'hidden' }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80"
-          alt="Mer Côte d'Azur"
-          style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', objectPosition:'center 40%' }}
+          src="/images/azur/cards/nayah-bg.jpg"
+          alt=""
+          style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', objectPosition:'center' }}
         />
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(to bottom,rgba(10,22,40,.35) 0%,rgba(10,22,40,.65) 50%,rgba(10,22,40,.97) 100%)' }} />
         <div style={{ position:'absolute', bottom:0, left:0, right:0, height:3, background:`linear-gradient(90deg,transparent,${GOLD},transparent)` }} />
@@ -289,6 +290,8 @@ export default function NayahBoatDetail({
         }}>☪ Halal</div>
 
         <div style={{ position:'absolute', bottom:'2.5rem', left:0, right:0, padding:'0 1.4rem' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/azur/cards/nayah-logo.png" alt="Nayah Boat" width={74} height={74} style={{ width:74, height:74, objectFit:'contain', marginBottom:'0.7rem', filter:'drop-shadow(0 4px 16px rgba(0,0,0,0.55))' }} />
           <div style={{ display:'flex', gap:'0.6rem', marginBottom:'0.8rem', flexWrap:'wrap' }}>
             <div style={{ display:'inline-flex', alignItems:'center', gap:5, background:`rgba(201,168,76,0.1)`, border:`1px solid rgba(201,168,76,0.25)`, borderRadius:20, padding:'4px 12px', fontFamily:'var(--fo)', fontSize:11, fontWeight:700, color:GOLD, letterSpacing:'0.08em' }}>✦ Vérifié NIKA</div>
             {provider.rating && (

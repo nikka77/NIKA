@@ -275,7 +275,7 @@ export default function RakoClient({ provider, sessionId, sessionStatus, items }
     <>
       {/* ===== HERO ===== */}
       <div style={{
-        background: 'linear-gradient(135deg, #0D0D0D 0%, #0D1A0D 50%, #1A0D0D 100%)',
+        background: 'url(/images/food/nuit/rakomoria-bg.jpg) center/cover no-repeat',
         position: 'relative', overflow: 'hidden',
         borderBottom: '1px solid #1a3a1a',
       }}>
@@ -285,6 +285,9 @@ export default function RakoClient({ provider, sessionId, sessionStatus, items }
           <path d="M20 30 C0 50 10 70 40 60 C30 40 10 30 20 30Z" fill="#F5C518"/>
           <path d="M80 30 C100 50 90 70 60 60 C70 40 90 30 80 30Z" fill="#F5C518"/>
         </svg>
+
+        {/* Voile sombre au-dessus du motif fleuri (lisibilité) */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(5,12,8,0.82) 0%, rgba(5,12,8,0.6) 55%, rgba(5,12,8,0.92) 100%)', pointerEvents: 'none' }} />
 
         <div style={{ position: 'relative', padding: '1.4rem 1.4rem 1.2rem', maxWidth: 720, margin: '0 auto' }}>
           {/* Top */}

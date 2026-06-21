@@ -131,6 +131,11 @@ const HERO_IMAGES: Record<string, string> = {
   'nayah-boat':  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80',
 }
 
+const LOGO_IMAGES: Record<string, string> = {
+  'rentboat-06': '/images/azur/cards/rentboat-logo.png',
+  'nayah-boat':  '/images/azur/cards/nayah-logo.png',
+}
+
 const PACK_IMAGES: Record<string, string> = {
   'journee':        '/images/azur/packs/journee.webp',
   'afterwork':      '/images/azur/packs/afterwork.webp',
@@ -331,6 +336,7 @@ export default function ProviderDetail({
   const accentRgb = accent === '#c9a84c' ? '201,168,76' : '14,165,233'
 
   const heroUrl = provider.hero_image || HERO_IMAGES[provider.slug] || HERO_IMAGES['rentboat-06']
+  const logoUrl = LOGO_IMAGES[provider.slug]
 
   const [selectedPack,    setSelectedPack]    = useState(0)
   const [selectedOptions, setSelectedOptions] = useState<Set<string>>(new Set())
@@ -435,6 +441,10 @@ export default function ProviderDetail({
 
         {/* Bottom : rating + location + titre + tagline */}
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: 'clamp(1.2rem,3vw,1.8rem) clamp(1.2rem,4vw,2rem)' }}>
+          {logoUrl && (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img src={logoUrl} alt={provider.name} width={70} height={70} style={{ width: 70, height: 70, objectFit: 'contain', marginBottom: 10, filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.55))' }} />
+          )}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', marginBottom: 6 }}>
             {provider.rating != null && (
               <span style={{ fontFamily: 'var(--fo)', fontSize: 13, color: '#facc15', fontWeight: 600 }}>

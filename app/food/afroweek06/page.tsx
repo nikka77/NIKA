@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import FoodClient from './FoodClient'
 
 export const metadata: Metadata = {
-  title: '@afroweek06 — Cuisine sénégalaise à Nice | NIKA Food',
+  title: 'AFROWEEK — Cuisine sénégalaise à Nice | NIKA Food',
   description: 'Thiéboudienne, Poulet Yassa, Mafé — cuisine africaine authentique livrée le soir à Nice et alentours.',
 }
 

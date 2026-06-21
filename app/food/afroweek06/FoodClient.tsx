@@ -46,6 +46,7 @@ const STATUS_LABELS: Record<string, string> = {
 }
 
 const CART_KEY = 'nika-food-cart-afroweek06'
+const BRAND_NAME = 'AFROWEEK' // nom de marque affiché (la colonne DB `name` vaut le handle « @afroweek06 »)
 
 export default function FoodClient({ provider, sessionId, sessionStatus, items }: Props) {
   const [cart, setCart] = useState<Cart>({})
@@ -131,15 +132,14 @@ export default function FoodClient({ provider, sessionId, sessionStatus, items }
     <>
       {/* ===== HERO ===== */}
       <div style={{
-        background: '#8B2500',
+        background: 'url(/images/food/nuit/afroweek-bg.jpg) center/cover no-repeat, #8B2500',
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* Diagonal pattern overlay */}
+        {/* Voile sombre au-dessus du motif fleuri (lisibilité) */}
         <div style={{
           position: 'absolute', inset: 0,
-          backgroundImage: 'repeating-linear-gradient(45deg,rgba(255,255,255,0.03) 0,rgba(255,255,255,0.03) 1px,transparent 0,transparent 50%)',
-          backgroundSize: '20px 20px',
+          background: 'linear-gradient(180deg, rgba(18,8,3,0.82) 0%, rgba(18,8,3,0.6) 55%, rgba(18,8,3,0.92) 100%)',
           pointerEvents: 'none',
         }} />
 
@@ -180,7 +180,7 @@ export default function FoodClient({ provider, sessionId, sessionStatus, items }
             NIKKA FOOD · {provider.city?.toUpperCase() ?? 'NICE'}
           </div>
           <div style={{ fontFamily: 'var(--fn)', fontSize: 28, color: '#fff', letterSpacing: '0.03em', marginBottom: 4 }}>
-            {provider.name}
+            {BRAND_NAME}
           </div>
           {provider.description && (
             <div style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'rgba(255,255,255,0.7)', marginBottom: '0.9rem', lineHeight: 1.5 }}>

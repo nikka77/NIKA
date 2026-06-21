@@ -1,3 +1,6 @@
+export type BadgeTier = 'founder' | 'pioneer' | 'initie' | 'member';
+export type KycLevel = 0 | 1 | 2 | 3;
+
 export interface User {
   id: string;
   username: string;
@@ -10,6 +13,16 @@ export interface User {
   wallet_address?: string;
   is_pro: boolean;
   created_at: string;
+  // NIKA — numérotation séquentielle + badges HxH + KYC
+  number?: number;
+  badge_tier?: BadgeTier;
+  kyc_level?: KycLevel;
+  is_verified?: boolean;
+  verified_at?: string | null;
+  pro_domains?: string[];
+  city?: string | null;
+  bio?: string | null;
+  updated_at?: string;
 }
 
 export interface Pro {
