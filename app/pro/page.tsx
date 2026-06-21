@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DOMAINS } from '@/lib/constants';
+import { createClient } from '@/lib/supabase/server';
 
 export const metadata: Metadata = {
   title: 'Espace Partenaire — NIKA Pro',
@@ -47,7 +48,20 @@ const PLANS = [
   },
 ];
 
-export default function ProPage() {
+export default async function ProPage() {
+  // Stats réelles (plus de chiffres marketing inventés).
+  const supabase = await createClient();
+  const [proCount, verifiedCount] = await Promise.all([
+    supabase?.from('pros').select('*', { count: 'exact', head: true }).eq('active', true),
+    supabase?.from('pros').select('*', { count: 'exact', head: true }).eq('active', true).eq('verified', true),
+  ]);
+  const stats = [
+    { val: String(proCount?.count ?? 0), label: 'Commerces référencés' },
+    { val: String(verifiedCount?.count ?? 0), label: 'Pros vérifiés' },
+    { val: String(DOMAINS.length), label: 'Domaines actifs' },
+    { val: '< 5%', label: 'Commission' },
+  ];
+
   return (
     <main style={{ paddingBottom: '5rem' }}>
       {/* ── HERO ─────────────────────────────────────────────────── */}
@@ -88,12 +102,7 @@ export default function ProPage() {
       {/* ── STATS ─────────────────────────────────────────────────── */}
       <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--bd)', padding: '1.6rem 1.4rem' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'space-around' }}>
-          {[
-            { val: '312', label: 'Commerces référencés' },
-            { val: '48', label: 'Pros vérifiés' },
-            { val: '9', label: 'Domaines actifs' },
-            { val: '4.8★', label: 'Satisfaction partenaires' },
-          ].map(({ val, label }) => (
+          {stats.map(({ val, label }) => (
             <div key={label} style={{ textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--fe)', fontSize: 28, fontWeight: 900, fontStyle: 'italic', color: '#0094D4', lineHeight: 1 }}>{val}</div>
               <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginTop: 2 }}>{label}</div>
