@@ -2,77 +2,79 @@
 import { useEffect, useRef, useState } from 'react';
 import { DOMAINS } from '@/lib/constants';
 import { createClient } from '@/lib/supabase/client';
+import { MAP_STYLE, NICE, markerEl, escHtml } from '@/lib/map';
+import 'maplibre-gl/dist/maplibre-gl.css';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+const DEMO_POIS = [
+  { id: '1', name: 'Chez Marco', lat: 43.7102, lng: 7.2620, category: 'food', description: 'Flash Deal actif — Pasta -20%', upvotes: 12 },
+  { id: '2', name: 'AutoNice', lat: 43.7045, lng: 7.2586, category: 'auto', description: 'Dépanneur 24h/24', upvotes: 8 },
+  { id: '3', name: 'Azur Marine', lat: 43.6956, lng: 7.2753, category: 'azur', description: 'Bateaux & Skipper', upvotes: 23 },
+  { id: '4', name: 'Blend Café', lat: 43.7182, lng: 7.2694, category: 'food', description: 'Brunch & spécialités', upvotes: 17 },
+  { id: '5', name: 'Serrurier Nice', lat: 43.7089, lng: 7.2501, category: 'sec', description: 'Urgence · ETA 20min', upvotes: 5 },
+  { id: '6', name: 'Skipper Côte d\'Azur', lat: 43.7015, lng: 7.2710, category: 'azur', description: 'Navigation, excursions', upvotes: 31 },
+];
 
 export default function CartePage() {
   const mapRef = useRef<HTMLDivElement>(null);
+  const mapInstance = useRef<any>(null);
+  const markersRef = useRef<{ marker: any; cat: string }[]>([]);
+  const filterRef = useRef('all');
   const [activeFilter, setActiveFilter] = useState('all');
   const [showAddForm, setShowAddForm] = useState(false);
   const [newPoi, setNewPoi] = useState({ name: '', category: 'general', description: '' });
   const [submitting, setSubmitting] = useState(false);
   const [submitMsg, setSubmitMsg] = useState('');
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const mapRef2 = useRef<any>(null);
 
   useEffect(() => {
-    let map: unknown = null;
-    let mounted = true;
+    let cancelled = false;
     const container = mapRef.current;
     if (!container) return;
 
-    import('leaflet').then((mod) => {
-      if (!mounted) return;
-      const L = mod.default || mod;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      delete (L.Icon.Default.prototype as any)._getIconUrl;
-      L.Icon.Default.mergeOptions({
-        iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-        iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+    (async () => {
+      const maplibregl = (await import('maplibre-gl')).default;
+      if (cancelled || !container) return;
+
+      const map = new maplibregl.Map({
+        container, style: MAP_STYLE, center: NICE, zoom: 13.2,
+        attributionControl: { compact: true },
       });
+      map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
+      mapInstance.current = map;
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const m = L.map(container, { zoomControl: true, scrollWheelZoom: true } as any) as any;
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        subdomains: 'abc', maxZoom: 19, attribution: '© OpenStreetMap',
-      }).addTo(m);
-      m.setView([43.7102, 7.262], 14);
-
-      const demoPois = [
-        { id: '1', name: 'Chez Marco', lat: 43.7102, lng: 7.2620, category: 'food', description: 'Flash Deal actif — Pasta -20%', upvotes: 12 },
-        { id: '2', name: 'AutoNice', lat: 43.7045, lng: 7.2586, category: 'auto', description: 'Dépanneur 24h/24', upvotes: 8 },
-        { id: '3', name: 'Azur Marine', lat: 43.6956, lng: 7.2753, category: 'azur', description: 'Bateaux & Skipper', upvotes: 23 },
-        { id: '4', name: 'Blend Café', lat: 43.7182, lng: 7.2694, category: 'food', description: 'Brunch & spécialités', upvotes: 17 },
-        { id: '5', name: 'Serrurier Nice', lat: 43.7089, lng: 7.2501, category: 'sec', description: 'Urgence · ETA 20min', upvotes: 5 },
-        { id: '6', name: 'Skipper Côte d\'Azur', lat: 43.7015, lng: 7.2710, category: 'azur', description: 'Navigation, excursions', upvotes: 31 },
-      ];
-
-      const colors: Record<string, string> = { food: '#D4A017', auto: '#0094D4', azur: '#0868A0', sec: '#D44B24', stay: '#E07038', serv: '#0EA878', learn: '#7B5CF0', rent: '#5A88B0', general: '#5A88B0' };
-      const icons: Record<string, string> = { food: '🍽️', auto: '🚗', azur: '🛥️', sec: '🔒', stay: '🏡', serv: '🔧', learn: '📚', rent: '📦', general: '📍' };
-
-      function esc(s: string) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
-
-      demoPois.forEach(poi => {
-        const color = colors[poi.category] || '#5A88B0';
-        const icon = icons[poi.category] || '📍';
-        const divIcon = L.divIcon({
-          className: '',
-          html: `<div style="width:30px;height:30px;border-radius:50%;background:${color}20;border:2px solid ${color}66;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.4)">${icon}</div>`,
-          iconSize: [30, 30], iconAnchor: [15, 15],
+      map.on('load', () => {
+        if (cancelled) return;
+        DEMO_POIS.forEach(poi => {
+          const popup = new maplibregl.Popup({ offset: 20 }).setHTML(
+            `<strong>${escHtml(poi.name)}</strong>` +
+            `<span style="color:var(--td2)">${escHtml(poi.description || '')}</span>` +
+            `<div style="font-size:10px;color:var(--az2);margin-top:3px">▲ ${poi.upvotes}</div>`
+          );
+          const marker = new maplibregl.Marker({ element: markerEl(poi.category) })
+            .setLngLat([poi.lng, poi.lat]).setPopup(popup).addTo(map);
+          markersRef.current.push({ marker, cat: poi.category });
         });
-        L.marker([poi.lat, poi.lng], { icon: divIcon }).addTo(m)
-          .bindPopup(`<strong style="font-family:sans-serif;font-size:13px">${esc(poi.name)}</strong><br><span style="font-size:11px;color:#888">${esc(poi.description || '')}</span><br><span style="font-size:10px;color:#0094D4">▲ ${poi.upvotes}</span>`);
+        applyFilter(filterRef.current);
       });
-
-      map = m;
-      mapRef2.current = m;
-    });
+    })();
 
     return () => {
-      mounted = false;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      if (map) (map as any).remove();
+      cancelled = true;
+      markersRef.current = [];
+      if (mapInstance.current) { mapInstance.current.remove(); mapInstance.current = null; }
     };
   }, []);
+
+  function applyFilter(filter: string) {
+    markersRef.current.forEach(({ marker, cat }) => {
+      (marker.getElement() as HTMLElement).style.display =
+        (filter === 'all' || cat === filter) ? '' : 'none';
+    });
+  }
+
+  // Le filtre du bandeau masque/affiche réellement les POI (était inopérant avant).
+  useEffect(() => { filterRef.current = activeFilter; applyFilter(activeFilter); }, [activeFilter]);
 
   async function handleAddPoi() {
     if (!newPoi.name.trim()) return;
@@ -80,7 +82,7 @@ export default function CartePage() {
     setSubmitMsg('');
     try {
       const supabase = createClient();
-      const center = mapRef2.current?.getCenter?.() || { lat: 43.7102, lng: 7.262 };
+      const center = mapInstance.current?.getCenter?.() || { lat: 43.7102, lng: 7.262 };
       if (supabase) {
         await supabase.from('pois').insert({
           name: newPoi.name.trim(),
@@ -138,6 +140,7 @@ export default function CartePage() {
             <h3 style={{ fontFamily: 'var(--fe)', fontSize: 22, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)' }}>Ajouter un POI</h3>
             <button onClick={() => setShowAddForm(false)} style={{ width: 30, height: 30, borderRadius: '50%', border: '1px solid var(--bd2)', color: 'var(--td2)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>×</button>
           </div>
+          <p style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', marginBottom: '0.9rem' }}>Le POI sera placé au centre de la carte. Recentre la carte sur le lieu voulu.</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
             <input value={newPoi.name} onChange={e => setNewPoi(n => ({ ...n, name: e.target.value }))} placeholder="Nom du lieu" style={inputStyle} />
             <select value={newPoi.category} onChange={e => setNewPoi(n => ({ ...n, category: e.target.value }))} style={inputStyle}>

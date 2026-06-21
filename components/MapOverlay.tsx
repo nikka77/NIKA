@@ -1,6 +1,10 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { useMapStore } from '@/lib/store';
+import { MAP_STYLE, NICE, markerEl, escHtml } from '@/lib/map';
+import 'maplibre-gl/dist/maplibre-gl.css';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 const FILTER_BTNS = [
   { key: 'all',  label: 'Tout' },
@@ -22,73 +26,55 @@ const DEMO_POIS = [
   { lat: 43.7234, lng: 7.2788, cat: 'stay', name: 'Villa Insolite', desc: 'Maison flottante · 4 nuits min' },
 ];
 
-const CAT_COLORS: Record<string, string> = {
-  food: '#D4A017', auto: '#0094D4', azur: '#0868A0',
-  stay: '#E07038', serv: '#0EA878', secu: '#D44B24', news: '#5A88B0',
-};
-
 export default function MapOverlay() {
   const { isOpen, closeMap } = useMapStore();
   const mapRef = useRef<HTMLDivElement>(null);
-  const leafletRef = useRef<unknown>(null);
+  const mapInstance = useRef<any>(null);
   const [activeFilter, setActiveFilter] = useState('all');
-  const markersRef = useRef<unknown[]>([]);
+  const markersRef = useRef<{ marker: any; cat: string }[]>([]);
 
   useEffect(() => {
     if (!isOpen || !mapRef.current) return;
-    let L: typeof import('leaflet') | null = null;
-    let mapInstance: ReturnType<typeof import('leaflet').map> | null = null;
+    let cancelled = false;
+    const container = mapRef.current;
 
-    import('leaflet').then((mod) => {
-      L = mod.default || mod;
-      if (!mapRef.current) return;
+    (async () => {
+      const maplibregl = (await import('maplibre-gl')).default;
+      if (cancelled || !container) return;
 
-      // Fix default icon
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      delete (L.Icon.Default.prototype as any)._getIconUrl;
-      L.Icon.Default.mergeOptions({
-        iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-        iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+      const map = new maplibregl.Map({
+        container, style: MAP_STYLE, center: NICE, zoom: 13,
+        attributionControl: { compact: true },
       });
+      map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
+      mapInstance.current = map;
 
-      mapInstance = L.map(mapRef.current!).setView([43.7102, 7.262], 14);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap',
-      }).addTo(mapInstance);
-
-      leafletRef.current = mapInstance;
-
-      DEMO_POIS.forEach((poi) => {
-        const color = CAT_COLORS[poi.cat] || '#0094D4';
-        const icon = L!.divIcon({
-          className: '',
-          html: `<div class="nmark" style="background:${color}20;border-color:${color}40;font-size:13px">
-            ${poi.cat === 'food' ? '🍽️' : poi.cat === 'auto' ? '🚗' : poi.cat === 'azur' ? '🛥️' : poi.cat === 'stay' ? '🏡' : poi.cat === 'serv' ? '🔧' : '🔒'}
-          </div>`,
-          iconSize: [30, 30],
-          iconAnchor: [15, 15],
+      map.on('load', () => {
+        if (cancelled) return;
+        map.resize(); // le conteneur vient d'apparaître (slide-up)
+        DEMO_POIS.forEach((poi) => {
+          const popup = new maplibregl.Popup({ offset: 20 }).setHTML(
+            `<strong>${escHtml(poi.name)}</strong><span style="color:var(--td2)">${escHtml(poi.desc)}</span>`
+          );
+          const marker = new maplibregl.Marker({ element: markerEl(poi.cat) })
+            .setLngLat([poi.lng, poi.lat]).setPopup(popup).addTo(map);
+          markersRef.current.push({ marker, cat: poi.cat });
         });
-        const marker = L!.marker([poi.lat, poi.lng], { icon })
-          .addTo(mapInstance!)
-          .bindPopup(`<strong>${poi.name}</strong><span>${poi.desc}</span>`);
-        markersRef.current.push({ marker, cat: poi.cat });
       });
-    });
+    })();
 
     return () => {
-      if (mapInstance) mapInstance.remove();
+      cancelled = true;
       markersRef.current = [];
+      if (mapInstance.current) { mapInstance.current.remove(); mapInstance.current = null; }
     };
   }, [isOpen]);
 
   function handleFilter(key: string) {
     setActiveFilter(key);
-    // Filter markers visibility
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    markersRef.current.forEach((item: any) => {
-      const el = item.marker.getElement();
-      if (el) el.style.display = key === 'all' || item.cat === key ? '' : 'none';
+    markersRef.current.forEach(({ marker, cat }) => {
+      const el = marker.getElement() as HTMLElement;
+      if (el) el.style.display = key === 'all' || cat === key ? '' : 'none';
     });
   }
 

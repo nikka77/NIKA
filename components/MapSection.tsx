@@ -2,63 +2,56 @@
 import { useEffect, useRef } from 'react';
 import FadeIn from './FadeIn';
 import { useMapStore } from '@/lib/store';
+import { MAP_STYLE, NICE, markerEl, escHtml } from '@/lib/map';
+import 'maplibre-gl/dist/maplibre-gl.css';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+const POIS = [
+  { lat: 43.7102, lng: 7.2620, cat: 'food', name: 'Chez Marco', desc: 'Flash Deal actif' },
+  { lat: 43.7045, lng: 7.2586, cat: 'auto', name: 'AutoNice', desc: 'Dépanneur 24h/24' },
+  { lat: 43.6956, lng: 7.2753, cat: 'azur', name: 'Azur Marine', desc: 'Bateaux & Skipper' },
+  { lat: 43.7182, lng: 7.2694, cat: 'food', name: 'Blend Café', desc: 'Spécialité · Brunch' },
+  { lat: 43.7089, lng: 7.2501, cat: 'secu', name: 'Serrurier Nice', desc: 'Urgence · ETA 20min' },
+];
 
 export default function MapSection() {
   const mapRef = useRef<HTMLDivElement>(null);
+  const mapInstance = useRef<any>(null);
   const { openMap } = useMapStore();
 
   useEffect(() => {
-    let mapInstance: unknown = null;
-    let mounted = true;
+    let cancelled = false;
     const container = mapRef.current;
     if (!container) return;
 
-    import('leaflet').then((mod) => {
-      if (!mounted) return;
-      const L = mod.default || mod;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      delete (L.Icon.Default.prototype as any)._getIconUrl;
-      L.Icon.Default.mergeOptions({
-        iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-        iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+    (async () => {
+      const maplibregl = (await import('maplibre-gl')).default;
+      if (cancelled || !container) return;
+
+      const map = new maplibregl.Map({
+        container, style: MAP_STYLE, center: NICE, zoom: 12.6,
+        scrollZoom: false, attributionControl: { compact: true },
       });
-      // Clear any stale Leaflet instance on this container (HMR safety)
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      if ((container as any)._leaflet_id) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (container as any)._leaflet_id = undefined;
-        container.innerHTML = '';
-      }
-      const map = L.map(container, { zoomControl: true, scrollWheelZoom: false }).setView([43.7102, 7.262], 14);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+      map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+      mapInstance.current = map;
 
-      const pois = [
-        { lat: 43.7102, lng: 7.2620, cat: 'food', icon: '🍽️', name: 'Chez Marco', desc: 'Flash Deal actif' },
-        { lat: 43.7045, lng: 7.2586, cat: 'auto', icon: '🚗', name: 'AutoNice', desc: 'Dépanneur 24h/24' },
-        { lat: 43.6956, lng: 7.2753, cat: 'azur', icon: '🛥️', name: 'Azur Marine', desc: 'Bateaux & Skipper' },
-        { lat: 43.7182, lng: 7.2694, cat: 'food', icon: '☕', name: 'Blend Café', desc: 'Spécialité · Brunch' },
-        { lat: 43.7089, lng: 7.2501, cat: 'secu', icon: '🔒', name: 'Serrurier Nice', desc: 'Urgence · ETA 20min' },
-      ];
-      const colors: Record<string, string> = { food: '#D4A017', auto: '#0094D4', azur: '#0868A0', secu: '#D44B24' };
-
-      pois.forEach(p => {
-        const color = colors[p.cat] || '#0094D4';
-        const icon = L.divIcon({
-          className: '',
-          html: `<div class="nmark" style="background:${color}20;border-color:${color}55">${p.icon}</div>`,
-          iconSize: [30, 30], iconAnchor: [15, 15],
+      map.on('load', () => {
+        if (cancelled) return;
+        map.resize();
+        POIS.forEach(p => {
+          const popup = new maplibregl.Popup({ offset: 20 }).setHTML(
+            `<strong>${escHtml(p.name)}</strong><span style="color:var(--td2)">${escHtml(p.desc)}</span>`
+          );
+          new maplibregl.Marker({ element: markerEl(p.cat) })
+            .setLngLat([p.lng, p.lat]).setPopup(popup).addTo(map);
         });
-        L.marker([p.lat, p.lng], { icon }).addTo(map).bindPopup(`<strong>${p.name}</strong><span>${p.desc}</span>`);
       });
-
-      mapInstance = map;
-    });
+    })();
 
     return () => {
-      mounted = false;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      if (mapInstance) (mapInstance as any).remove();
+      cancelled = true;
+      if (mapInstance.current) { mapInstance.current.remove(); mapInstance.current = null; }
     };
   }, []);
 
