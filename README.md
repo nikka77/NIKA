@@ -2,24 +2,56 @@
 
 > **Explore. Joue. Vis.** L'écosystème complet de la vie sur la Côte d'Azur.
 
+[![App live](https://img.shields.io/badge/App-live%20sur%20Vercel-000?logo=vercel)](https://nika-murex.vercel.app)
 [![Next.js](https://img.shields.io/badge/Next.js-16.2.6-black?logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript)](https://www.typescriptlang.org)
 [![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?logo=supabase)](https://supabase.com)
 [![Stripe](https://img.shields.io/badge/Stripe-Payments-635BFF?logo=stripe)](https://stripe.com)
-[![Claude AI](https://img.shields.io/badge/Claude-claude--sonnet--4--5-D97706)](https://anthropic.com)
-[![GitHub Pages](https://img.shields.io/badge/Prototype-GitHub%20Pages-0094D4)](https://nikka77.github.io/NIKA)
+[![Claude AI](https://img.shields.io/badge/Claude-Sonnet%204.x-D97706)](https://anthropic.com)
 
 ---
 
 ## 🌐 Aperçu
 
-**[→ Voir les prototypes sur GitHub Pages](https://nikka77.github.io/NIKA)**
+**🚀 App en production → [nika-murex.vercel.app](https://nika-murex.vercel.app)**
+**🎛️ Vitrine du projet → [nikka77.github.io/NIKA](https://nikka77.github.io/NIKA)**
 
-| Prototype | Description |
-|-----------|-------------|
-| [NIKA v5 — UI complète](https://nikka77.github.io/NIKA/prototype.html) | Design system, carousel 3D, carte Leaflet, gamification XP |
+| Lien | Description |
+|------|-------------|
+| [App live](https://nika-murex.vercel.app) | L'app réelle (Next.js 16 + Supabase) déployée sur Vercel |
+| [Vitrine GitHub Pages](https://nikka77.github.io/NIKA) | Aperçu du projet : stack, features, métriques |
 | [20 Tokens NFC](https://nikka77.github.io/NIKA/nfc.html) | Catalogue des 20 tokens NFC phygitaux |
-| [Landing page](https://nikka77.github.io/NIKA/landing.html) | Page de lancement bêta Nice |
+| [Landing bêta](https://nikka77.github.io/NIKA/landing.html) | Page de lancement bêta Nice |
+
+> `prototype.html` redirige désormais vers l'app live (la maquette v5 d'origine reste dans l'historique git).
+
+---
+
+## ✨ Ce que fait NIKA
+
+- **🪪 Membres numérotés** — chaque inscrit reçoit un **numéro séquentiel permanent** (`#0`, `#1`…, style examen *Hunter × Hunter*), un **badge SVG** généré dynamiquement, un **palier** (`founder` < 10, `pioneer` < 100, `initie` < 1000, `member`) et des **niveaux KYC** récompensés en `$NIKKA`.
+- **🤖 Agent IA NIKO** — assistant Claude (streaming) pour VTC, livraison, courses & dépannage, multi-canal (chat, SMS).
+- **🍽️ FOOD & Food de nuit** — restaurants, livraison, enseignes de nuit (Rakomoria, Afroweek) + annuaire filtrable.
+- **⛵ AZUR / 🏝️ STAY** — locations de bateaux exclusives et logements insolites scorés « WOW ».
+- **🗺️ Carte live** — hero « NIKA Stories » (globe MapLibre → scènes) + carte interactive des POIs.
+- **🔧 Devis ARTISAN** — couche données de devis (dictée/photo → JSON via IA, validation pro, montant destiné à un escrow crypto).
+- **📲 NFC phygital** — 20 tokens NFC physiques, chacun un portail vers un service ou un profil.
+- **🎮 Gamification** — XP, niveaux, jeton `$NIKKA`.
+
+---
+
+## 🪪 Système membres (numéros + badges + KYC)
+
+| Élément | Détail |
+|---------|--------|
+| **Numéro** | Séquence Postgres `nika_number_seq` (démarre à 10). `#0`–`#9` réservés fondateurs. Permanent, public. |
+| **Badge** | SVG généré : `GET /api/badge/[number]?tier=&kyc=` — disque blanc, numéro Bebas Neue, pastille KYC. Composant `<NikaBadge />`. |
+| **Palier** | `founder` / `pioneer` / `initie` / `member` posé par trigger selon le numéro. |
+| **KYC** | Niveaux 0→3, récompenses `+50 / +100 / +200 $NIKKA` (`POST /api/kyc/complete`, autoritaire via service-role). |
+| **Inscription** | `/inscription` → révélation animée du numéro. `/profil` → identité, KYC, devenir pro, solde. |
+
+La ligne `users` est créée au signup par le trigger `handle_new_user` (robuste même sous confirmation email).
+Migrations : `supabase/schema.sql` (socle) puis `supabase/migrations/nika_users.sql`.
 
 ---
 
@@ -28,29 +60,35 @@
 ```
 NIKA/
 ├── app/
-│   ├── page.tsx                    # Homepage — 12 sections
-│   ├── auto/                       # Module AUTO (VTC, dépannage)
-│   ├── stay/[country]/[city]/      # STAY SEO (6 destinations)
-│   ├── stay/theme/[theme]/         # STAY thématique (8 thèmes)
-│   ├── news/                       # News locales + publication IA
+│   ├── page.tsx                    # Homepage (hero « NIKA Stories »)
+│   ├── inscription / connexion     # Auth + révélation du numéro membre
+│   ├── profil/                     # Profil membre (identité, KYC, pro, $NIKKA)
+│   ├── food/                       # FOOD + Food de nuit (afroweek06, rakomoriafood)
+│   ├── auto/ stay/ azur/ …         # Les 9 domaines
 │   ├── nfc/[slug]/[id]/            # Portails NFC personnalisés
-│   ├── pro/register/               # Inscription professionnel
+│   ├── pro/inscription/            # Onboarding professionnel
 │   └── api/
-│       ├── stripe/credits/         # Achat crédits NIKA
-│       ├── stripe/webhook/         # Webhook paiement
-│       ├── news/moderate/          # Modération Claude AI
-│       ├── sms/                    # Webhook Twilio SMS
-│       ├── xp/                     # Système XP
-│       └── gmb/                    # Import Google My Business
-├── components/                     # 17 composants React
+│       ├── badge/[number]/         # Badge SVG dynamique (HxH)
+│       ├── next-number/            # Prochain numéro (CTA « Rejoindre #N »)
+│       ├── kyc/complete/           # Récompenses KYC ($NIKKA)
+│       ├── profile/                # MAJ profil membre
+│       ├── stripe/{credits,webhook}/  # Paiements
+│       ├── news/moderate/  sms/  xp/  # Modération IA, SMS, XP
+├── components/
+│   ├── ui/NikaBadge.tsx            # Badge membre réutilisable
+│   ├── home/  food/  azur/  stay/  # Composants par domaine
 ├── lib/
-│   ├── constants.ts                # Domaines, niveaux XP, NFC items
-│   ├── types.ts                    # Interfaces TypeScript
-│   ├── store.ts                    # Zustand (map + auth)
-│   └── supabase/                   # Client browser + server
-├── supabase/schema.sql             # 10 tables + RLS + triggers
-└── docs/                           # GitHub Pages — prototypes HTML
+│   ├── constants.ts  types.ts  store.ts   # Domaines, types, Zustand
+│   ├── food.ts  night-themes.ts           # Données FOOD / enseignes de nuit
+│   ├── devis/                              # Couche devis ARTISAN (types + Zod + totaux)
+│   └── supabase/{client,server,admin}.ts  # Clients Supabase
+├── supabase/
+│   ├── schema.sql                  # Socle : users, pros, listings, orders… + RLS
+│   └── migrations/                 # nika_users.sql (membres), food, azur, stay…
+└── docs/                           # GitHub Pages (vitrine + NFC + landing)
 ```
+
+≈ **197 fichiers TS/TSX · 23 600+ lignes · 79 pages · 22 API routes · 14 migrations · 0 erreur build.**
 
 ---
 
@@ -58,12 +96,12 @@ NIKA/
 
 | # | Domaine | Description |
 |---|---------|-------------|
-| 01 | **FOOD** | Restaurants, food trucks, commande en ligne, stock live |
+| 01 | **FOOD** | Restaurants, food trucks, Food de nuit, commande en ligne, stock live |
 | 02 | **AUTO** | Dépannage Uber-like, VTC certifiés, lavage, mécanique mobile |
-| 03 | **STAY** | Hébergements insolites mondiaux — affiliation Airbnb & Booking |
+| 03 | **STAY** | Hébergements insolites — scoring « WOW », affiliation Airbnb & Booking |
 | 04 | **AZUR** | Bateaux, skipper, jetski, services nautiques |
 | 05 | **RENT** | Parasols, scooter sous-marin, EcoFlow, plateforme flottante |
-| 06 | **SERV** | Prestataires locaux — réservation, notation, suivi |
+| 06 | **SERV** | Prestataires & artisans locaux — devis, réservation, notation |
 | 07 | **LEARN** | Formateurs, ateliers, masterclass locaux |
 | 08 | **SEC** | Serruriers, alarmes, gardiennage — intervention rapide |
 | 09 | **NEWS** | Infos locales indépendantes — modération IA avant publication |
@@ -72,11 +110,9 @@ NIKA/
 
 ## 📲 NFC Phygital — 20 tokens
 
-Chaque token NFC (NTAG213/215) encode l'URL `nika.fr/nfc/[slug]/[id]`.
-Au scan → portail personnalisé avec CTA contextuels.
+Chaque token NFC (NTAG213/215) encode l'URL `/nfc/[slug]/[id]`. Au scan → portail personnalisé avec CTA contextuels.
 
 ```
-Tokens disponibles :
 VTC · Dépanneur · Skipper · Kiosk Food · Kiosk Auto
 Passe Membre · Fidélité · Coach Sportif · Wellness · Barista
 Table Restaurant · Livraison · Mécanique · Plage · Nautique
@@ -85,39 +121,19 @@ Table Restaurant · Livraison · Mécanique · Plage · Nautique
 
 ---
 
-## ⚡ Gamification XP
-
-| Action | XP |
-|--------|----|
-| Laisser un avis | +50 |
-| Créer un POI validé | +80 |
-| Passer une commande | +30 |
-| Publier une news validée | +100 |
-| Connexion quotidienne | +20 |
-| Inviter un ami | +150 |
-
-**10 niveaux** : Inconnu → Curieux → Local → Connecté → Initié → Insider → Expert → Connaisseur → Ambassadeur → Légende
-
----
-
 ## 🚀 Installation
 
 ```bash
-# 1. Cloner
 git clone https://github.com/nikka77/NIKA.git && cd NIKA
-
-# 2. Dépendances
 npm install
+cp .env.local.example .env.local      # → remplir les clés (voir ci-dessous)
 
-# 3. Variables d'environnement
-cp .env.local.example .env.local
-# → Remplir avec tes clés Supabase, Stripe, Claude, Twilio
+# Base de données — Supabase SQL Editor, dans l'ordre :
+#   1) supabase/schema.sql            (socle : users, pros, listings, orders…)
+#   2) supabase/migrations/nika_users.sql   (numéros + badges + KYC)
+#   3) les autres migrations selon les modules utilisés (food, azur, stay…)
 
-# 4. Base de données
-# Ouvrir Supabase Dashboard → SQL Editor → coller supabase/schema.sql
-
-# 5. Dev
-npm run dev
+npm run dev                           # http://localhost:3000
 ```
 
 ### Variables requises
@@ -126,51 +142,38 @@ npm run dev
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
-
 ANTHROPIC_API_KEY=
-
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
-
 TWILIO_ACCOUNT_SID=
 TWILIO_AUTH_TOKEN=
 TWILIO_PHONE_NUMBER=
-
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
 ---
 
-## 🗃️ Base de données Supabase
+## 🗃️ Base de données (Supabase)
 
-**10 tables** avec RLS activé sur toutes :
+Socle (`schema.sql`) — RLS activé partout :
 
-```sql
-users          -- Profils + XP + crédits NIKA
-pros           -- Professionnels vérifiés (9 domaines)
-listings       -- Hébergements STAY + stock FOOD
-orders         -- Commandes (déclenche XP via trigger)
-flash_deals    -- Offres flash avec expiration
-news           -- Articles modérés par IA
-pois           -- Points d'intérêt carte (déclenche XP)
-xp_transactions-- Historique XP
-credit_transactions -- Achats crédits Stripe
-waitlist       -- Liste d'accès bêta
 ```
+users  pros  listings  orders  flash_deals
+news   pois  xp_transactions  credit_transactions  waitlist
+```
+
+La table **`users`** est étendue par `nika_users.sql` : `number` (unique), `badge_tier`, `kyc_level`,
+`is_verified`, `pro_domains`, `city`, `bio` + triggers (`assign_badge_tier`, `handle_new_user`, `set_updated_at`)
+et la fonction `get_next_number()`. Modules domaines : tables `food_*`, `azur_*`, `stay_*`.
 
 ---
 
 ## 🤖 Intégrations IA
 
-### Modération news (Claude claude-sonnet-4-5)
-`POST /api/news/moderate` — Analyse contenu, reformule si nécessaire, catégorise, approuve/rejette.
-
-### Gestion pro par SMS (Twilio + Claude)
-`POST /api/sms` — Un pro envoie un SMS :
-- `"fermé ce soir"` → profil mis en pause
-- `"3 burgers restants"` → stock mis à jour
-- `"promo pizza 8€ 2h"` → Flash Deal créé automatiquement
+- **Agent NIKO** — Claude (Sonnet 4.x) en streaming pour les intentions VTC / livraison / courses / dépannage.
+- **Modération news** — `POST /api/news/moderate` : analyse, reformule, catégorise, approuve/rejette.
+- **Gestion pro par SMS** — `POST /api/sms` (Twilio + Claude) : `"fermé ce soir"` → pause ; `"3 burgers restants"` → stock ; `"promo pizza 8€ 2h"` → Flash Deal.
 
 ---
 
@@ -178,35 +181,32 @@ waitlist       -- Liste d'accès bêta
 
 | Couche | Technologie |
 |--------|-------------|
-| Framework | Next.js 16.2.6 (App Router, webpack) |
-| Language | TypeScript strict |
-| Base de données | Supabase (PostgreSQL + Auth + Storage + Realtime) |
+| Framework | Next.js 16.2.6 (App Router + Turbopack) |
+| Langage | TypeScript strict |
+| Base de données | Supabase (PostgreSQL + Auth + RLS + Realtime) |
 | Auth | Supabase SSR (`@supabase/ssr`) |
 | Paiement | Stripe Checkout + Webhooks |
-| IA | Anthropic Claude claude-sonnet-4-5 |
+| IA | Anthropic Claude (Sonnet 4.x) |
 | SMS | Twilio (webhook entrant) |
-| Carte | Leaflet.js (dark mode CSS invert) |
+| Carte / Globe | MapLibre GL (globe + carte) · Leaflet (POIs) |
+| Animations | Framer Motion 12 |
+| Validation | Zod 4 |
 | State | Zustand |
 | Style | Tailwind CSS + CSS Variables |
 | Fonts | Bebas Neue · Exo 2 · Outfit |
-| NFC | NTAG213/215 — URL `nika.fr/nfc/[slug]/[id]` |
+| NFC | NTAG213/215 — `/nfc/[slug]/[id]` |
+| Déploiement | Vercel (prod) · GitHub Pages (vitrine) |
 
 ---
 
-## 📁 Build
+## 📦 Build & déploiement
 
+```bash
+npm run build      # 0 erreur TypeScript · 79 pages générées
+npx vercel --prod  # déploiement production
 ```
-Route (app)                           Size
-┌ ○ /                                 —    Homepage (12 sections)
-├ ○ /auto                             —    Module AUTO
-├ ○ /news                             —    News locales
-├ ● /nfc/[slug]           (×20)       —    Portails NFC génériques
-├ ƒ /nfc/[slug]/[id]                  —    Portails NFC personnalisés
-├ ● /stay/[country]/[city] (×6)       —    SEO destinations
-└ ● /stay/theme/[theme]    (×8)       —    SEO thèmes insolites
 
-48 pages générées · 0 erreur TypeScript
-```
+L'app est **live sur Vercel** : [nika-murex.vercel.app](https://nika-murex.vercel.app).
 
 ---
 
