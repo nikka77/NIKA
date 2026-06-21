@@ -42,29 +42,24 @@ function CommandeInner() {
     setProfile(prof);
   }
 
+  const [error, setError] = useState<string | null>(null);
+
   async function placeOrder() {
     if (!item || !pro || !user) return;
     setPlacing(true);
-    const supabase = createClient();
-    if (!supabase) { setPlacing(false); return; }
-    const totalPrice = (item.price || 0) * qty;
-    const creditsToUse = payMode === 'credits' ? Math.min(profile?.nika_credits || 0, totalPrice * 10) : 0;
-    const cashAmount = payMode === 'credits' ? Math.max(0, totalPrice - creditsToUse / 10) : totalPrice;
-
-    await supabase.from('orders').insert({
-      user_id: user.id,
-      pro_id: pro.id,
-      listing_id: item.id,
-      status: 'pending',
-      amount: cashAmount,
-      nika_credits_used: creditsToUse,
-      notes: notes || null,
+    setError(null);
+    // Total + débit de crédits recalculés et appliqués côté serveur (jamais ici).
+    const res = await fetch('/api/food/order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ listingId: item.id, proId: pro.id, qty, payMode, notes }),
     });
-
-    if (creditsToUse > 0) {
-      await supabase.from('users').update({ nika_credits: (profile?.nika_credits || 0) - creditsToUse }).eq('id', user.id);
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      setError(data.error || 'Échec de la commande');
+      setPlacing(false);
+      return;
     }
-
     setDone(true);
     setPlacing(false);
   }
@@ -156,6 +151,12 @@ function CommandeInner() {
           <span style={{ color: '#D4A017' }}>{total.toFixed(2)}€</span>
         </div>
       </div>
+
+      {error && (
+        <div style={{ fontFamily: 'var(--fo)', fontSize: 12, color: '#ff6b6b', background: 'rgba(255,107,107,0.08)', border: '1px solid rgba(255,107,107,0.25)', borderRadius: 6, padding: '10px 14px', marginBottom: '0.8rem' }}>
+          {error}
+        </div>
+      )}
 
       <button onClick={placeOrder} disabled={placing} style={{ width: '100%', padding: '14px', borderRadius: 6, background: '#D4A017', color: '#050C17', fontFamily: 'var(--fe)', fontSize: 15, fontWeight: 800, fontStyle: 'italic', letterSpacing: '0.06em', textTransform: 'uppercase', cursor: 'pointer', opacity: placing ? 0.7 : 1 }}>
         {placing ? 'Envoi en cours...' : `Commander — ${total.toFixed(2)}€`}

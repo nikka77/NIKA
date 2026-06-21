@@ -1,6 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { createClient } from '@/lib/supabase/server';
 
 export async function GET(req: NextRequest) {
+  // Outil pro/admin : consomme le quota Google Places (clé serveur) → exige une session.
+  const supabase = await createClient();
+  if (!supabase) return NextResponse.json({ error: 'Service indisponible' }, { status: 503 });
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return NextResponse.json({ error: 'Non authentifié' }, { status: 401 });
+
   const url = req.nextUrl.searchParams.get('url');
   if (!url) return NextResponse.json({ error: 'URL requise' }, { status: 400 });
 

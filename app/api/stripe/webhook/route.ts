@@ -1,16 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { createClient } from '@supabase/supabase-js';
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: '2024-06-20' });
+import { createAdminClient } from '@/lib/supabase/admin';
 
 export async function POST(req: NextRequest) {
-  const sig = req.headers.get('stripe-signature')!;
+  const secret = process.env.STRIPE_SECRET_KEY;
+  const whSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  if (!secret || !whSecret) return NextResponse.json({ error: 'unconfigured' }, { status: 503 });
+
+  const sig = req.headers.get('stripe-signature');
+  if (!sig) return NextResponse.json({ error: 'no signature' }, { status: 400 });
   const body = await req.text();
 
+  const stripe = new Stripe(secret, { apiVersion: '2024-06-20' });
   let event: Stripe.Event;
   try {
-    event = stripe.webhooks.constructEvent(body, sig, process.env.STRIPE_WEBHOOK_SECRET!);
+    event = stripe.webhooks.constructEvent(body, sig, whSecret);
   } catch {
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
   }
@@ -18,28 +22,21 @@ export async function POST(req: NextRequest) {
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session;
     const { userId, credits } = session.metadata || {};
-    if (!userId || !credits) return NextResponse.json({ received: true });
-
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
-    );
-
-    const creditAmount = parseInt(credits);
-
-    // Log transaction
-    await supabase.from('credit_transactions').insert({
-      user_id: userId,
-      amount: creditAmount,
-      type: 'purchase',
-      stripe_payment_id: session.payment_intent as string,
-    });
-
-    // Add credits to user
-    const { data: user } = await supabase.from('users').select('nika_credits').eq('id', userId).single();
-    if (user) {
-      await supabase.from('users').update({ nika_credits: user.nika_credits + creditAmount }).eq('id', userId);
+    const creditAmount = parseInt(credits || '', 10);
+    const paymentId = (session.payment_intent as string) || session.id;
+    if (!userId || !Number.isFinite(creditAmount) || creditAmount <= 0) {
+      return NextResponse.json({ received: true });
     }
+
+    const admin = createAdminClient();
+    if (!admin) { console.error('[stripe] service-role indisponible'); return NextResponse.json({ received: true }); }
+
+    // Idempotent + atomique : la RPC insère la transaction (stripe_payment_id UNIQUE)
+    // et ne crédite qu'une seule fois (no-op si l'évènement est rejoué).
+    const { error } = await admin.rpc('grant_purchase_credits', {
+      p_user: userId, p_amount: creditAmount, p_payment_id: paymentId,
+    });
+    if (error) console.error('[stripe] grant_purchase_credits', error.message);
   }
 
   return NextResponse.json({ received: true });

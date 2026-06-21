@@ -73,9 +73,16 @@ export async function POST(req: NextRequest) {
     );
   }
   try {
-    const { messages } = await req.json();
-    if (!messages || !Array.isArray(messages)) {
-      return new Response(JSON.stringify({ error: 'messages required' }), { status: 400 });
+    const { messages } = await req.json().catch(() => ({}));
+    if (!Array.isArray(messages) || messages.length === 0 || messages.length > 40) {
+      return new Response(JSON.stringify({ error: 'messages invalides' }), { status: 400 });
+    }
+    // Borne le coût : rôles valides + contenu plafonné par message.
+    const safeMessages = messages
+      .filter((m: { role?: unknown; content?: unknown }) => m && typeof m.content === 'string' && (m.role === 'user' || m.role === 'assistant'))
+      .map((m: { role: string; content: string }) => ({ role: m.role as 'user' | 'assistant', content: m.content.slice(0, 4000) }));
+    if (safeMessages.length === 0) {
+      return new Response(JSON.stringify({ error: 'messages invalides' }), { status: 400 });
     }
 
     const encoder = new TextEncoder();
@@ -86,10 +93,7 @@ export async function POST(req: NextRequest) {
             model: 'claude-sonnet-4-6',
             max_tokens: 1024,
             system: SYSTEM_PROMPT,
-            messages: messages.map((m: { role: string; content: string }) => ({
-              role: m.role as 'user' | 'assistant',
-              content: m.content,
-            })),
+            messages: safeMessages,
           });
 
           for await (const chunk of anthropicStream) {
@@ -100,7 +104,8 @@ export async function POST(req: NextRequest) {
           controller.enqueue(encoder.encode('data: [DONE]\n\n'));
           controller.close();
         } catch (err) {
-          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: String(err) })}\n\n`));
+          console.error('[niko]', err);
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: 'Erreur NIKO, réessaie.' })}\n\n`));
           controller.close();
         }
       },

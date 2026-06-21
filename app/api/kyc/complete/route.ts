@@ -30,9 +30,11 @@ export async function POST(req: Request) {
   const patch: Record<string, unknown> = { kyc_level: level, nika_credits };
   if (level >= 2) { patch.is_verified = true; patch.verified_at = new Date().toISOString(); }
 
-  // Écriture autoritaire (service role si dispo, sinon session RLS).
-  const writer = createAdminClient() ?? supabase;
-  const { error } = await writer.from('users').update(patch).eq('id', user.id);
+  // Écriture STRICTEMENT autoritaire via service-role : les colonnes kyc/credits sont
+  // protégées par trigger côté DB ; jamais de repli sur la session client.
+  const admin = createAdminClient();
+  if (!admin) return Response.json({ error: 'Service de récompense indisponible' }, { status: 503 });
+  const { error } = await admin.from('users').update(patch).eq('id', user.id);
   if (error) return Response.json({ error: error.message }, { status: 500 });
 
   return Response.json({ ok: true, kyc_level: level, reward, nika_balance: nika_credits });

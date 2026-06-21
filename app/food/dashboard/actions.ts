@@ -1,11 +1,23 @@
 'use server'
-// app/food/dashboard/actions.ts — toutes les écritures du dashboard via admin client
+// app/food/dashboard/actions.ts — écritures du dashboard via admin client.
+// SÉCURITÉ : les Server Actions sont appelables par quiconque connaît leur id (extrait
+// du bundle) → chaque action exige une session authentifiée. NB : modèle mono-tenant
+// (afroweek06) ; pour du multi-tenant, ajouter food_providers.owner_id + vérif de propriété.
 import { createAdminClient } from '@/lib/supabase/admin'
+import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
+
+async function requireUser() {
+  const sb = await createClient()
+  if (!sb) return null
+  const { data: { user } } = await sb.auth.getUser()
+  return user
+}
 
 // ─── Stocks ──────────────────────────────────────────────────────────────────
 
 export async function updateStocks(updates: { id: string; remaining_stock: number }[]) {
+  if (!(await requireUser())) return { error: 'Non authentifié' }
   const supabase = createAdminClient()
   if (!supabase) return { error: 'Service indisponible' }
 
@@ -25,6 +37,10 @@ export async function updateStocks(updates: { id: string; remaining_stock: numbe
 // ─── Commandes ───────────────────────────────────────────────────────────────
 
 export async function updateOrderStatus(orderId: string, status: string) {
+  if (!(await requireUser())) return { error: 'Non authentifié' }
+  if (!['pending', 'confirmed', 'preparing', 'delivering', 'delivered', 'cancelled'].includes(status)) {
+    return { error: 'Statut invalide' }
+  }
   const supabase = createAdminClient()
   if (!supabase) return { error: 'Service indisponible' }
 
@@ -37,6 +53,7 @@ export async function updateOrderStatus(orderId: string, status: string) {
 }
 
 export async function cancelOrder(orderId: string) {
+  if (!(await requireUser())) return { error: 'Non authentifié' }
   const supabase = createAdminClient()
   if (!supabase) return { error: 'Service indisponible' }
 
@@ -51,6 +68,7 @@ export async function cancelOrder(orderId: string) {
 // ─── Session ─────────────────────────────────────────────────────────────────
 
 export async function openSession(providerId: string) {
+  if (!(await requireUser())) return { error: 'Non authentifié', sessionId: null }
   const supabase = createAdminClient()
   if (!supabase) return { error: 'Service indisponible', sessionId: null }
 
@@ -87,6 +105,7 @@ export async function openSession(providerId: string) {
 }
 
 export async function closeSession(sessionId: string) {
+  if (!(await requireUser())) return { error: 'Non authentifié' }
   const supabase = createAdminClient()
   if (!supabase) return { error: 'Service indisponible' }
 

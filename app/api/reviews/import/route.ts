@@ -70,6 +70,12 @@ function splitCsvLine(line: string): string[] {
 
 export async function POST(req: NextRequest) {
   try {
+    // Import en masse → 1 appel Claude par ligne. Réservé aux membres connectés + plafond de lignes.
+    const supabase = await createClient();
+    if (!supabase) return NextResponse.json({ error: 'DB indisponible' }, { status: 503 });
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return NextResponse.json({ error: 'Non authentifié' }, { status: 401 });
+
     const formData = await req.formData();
     const file = formData.get('file') as File | null;
     const listingId = formData.get('listing_id') as string | null;
@@ -88,9 +94,9 @@ export async function POST(req: NextRequest) {
     if (rows.length === 0) {
       return NextResponse.json({ error: 'Aucun avis trouvé dans le fichier' }, { status: 400 });
     }
-
-    const supabase = await createClient();
-    if (!supabase) return NextResponse.json({ error: 'DB indisponible' }, { status: 503 });
+    if (rows.length > 200) {
+      return NextResponse.json({ error: 'Trop de lignes (max 200 par import).' }, { status: 413 });
+    }
 
     // Get listing context once
     const { data: listing } = await supabase
