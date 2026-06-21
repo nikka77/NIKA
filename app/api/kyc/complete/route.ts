@@ -37,5 +37,5 @@ export async function POST(req: Request) {
   const { error } = await admin.from('users').update(patch).eq('id', user.id);
   if (error) return Response.json({ error: error.message }, { status: 500 });
 
-  return Response.json({ ok: true, kyc_level: level, reward, nika_balance: nika_credits });
+  return Response.json({ ok: true, kyc_level: level, reward, nika_credits });
 }

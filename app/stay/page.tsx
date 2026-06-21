@@ -25,8 +25,9 @@ const HERO_SKIP = new Set([
 ]);
 
 // Per-slug background-position for optimal subject framing
+// NB : doublon de la map dans stay/[slug]/page.tsx — à extraire en constante partagée.
 const HERO_OBJECT_POS: Record<string, string> = {
-  'ovni-guadalupe-vallee-baja':                       '50% 40%',
+  'ovni-guadalupe-vallee-baja':                       '50% 72%', // aligné sur la page détail (corps vert + hublots + sol)
   'bubble-etoile-stargazing-agnes-victoria-australie':'50% 45%',
   'birdbox-fordefjord-view-forde-norvege':            '50% 50%',
   'grand-cheval-fjord-sunnfjord-norvege':             '50% 50%',

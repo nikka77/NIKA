@@ -63,7 +63,7 @@ export default function ProfilPage() {
     const res = await fetch('/api/kyc/complete', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ level }) });
     const j = await res.json().catch(() => ({}));
     if (res.ok) {
-      setMe(m => (m ? { ...m, kyc_level: j.kyc_level as KycLevel, nika_credits: j.nika_balance, is_verified: level >= 2 ? true : m.is_verified } : m));
+      setMe(m => (m ? { ...m, kyc_level: j.kyc_level as KycLevel, nika_credits: j.nika_credits, is_verified: level >= 2 ? true : m.is_verified } : m));
       setKycMsg(`+${j.reward} $NIKKA 🎉`);
       setTimeout(() => setKycMsg(''), 2500);
     } else setKycMsg(j.error || 'Erreur');
