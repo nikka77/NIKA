@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { createClient } from '@/lib/supabase/server';
 import { levelBadge } from '@/lib/constants';
 import { visual } from '@/lib/visuals';
+import FadeIn from '@/components/FadeIn';
+import CountUp from '@/components/ui/CountUp';
 
 const RANK_MEDAL: Record<number, string> = { 1: 'or', 2: 'argent', 3: 'bronze' };
 
@@ -72,6 +74,7 @@ export default async function LeaderboardPage() {
       </p>
 
       {/* Top joueurs */}
+      <FadeIn>
       <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem' }}>
         <div style={{ fontFamily: 'var(--fe)', fontSize: 16, fontWeight: 800, fontStyle: 'italic', color: 'var(--td)', marginBottom: '1rem' }}>
           ⚔️ Top joueurs — {new Date().toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })}
@@ -97,7 +100,7 @@ export default async function LeaderboardPage() {
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginTop: 2 }}>
                     {levelBadge(u.level_name) && (
-                      <img src={levelBadge(u.level_name)} alt="" width={18} height={18} style={{ width: 18, height: 18, objectFit: 'contain', flexShrink: 0 }} />
+                      <img src={levelBadge(u.level_name)} alt={u.level_name} width={18} height={18} style={{ width: 18, height: 18, objectFit: 'contain', flexShrink: 0 }} />
                     )}
                     <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--td3)' }}>
                       {u.level_name}
@@ -135,14 +138,16 @@ export default async function LeaderboardPage() {
         <div style={{ display: 'flex', gap: 8, marginTop: '1.2rem', flexWrap: 'wrap' }}>
           {liveStats.map(({ n, l }) => (
             <div key={l} style={{ flex: 1, minWidth: 90, background: 'var(--bg3)', border: '1px solid var(--bd)', borderRadius: 6, padding: '0.8rem', textAlign: 'center' }}>
-              <span style={{ fontFamily: 'var(--fe)', fontSize: 24, fontWeight: 900, fontStyle: 'italic', color: 'var(--az2)', display: 'block' }}>{n}</span>
+              <span style={{ fontFamily: 'var(--fe)', fontSize: 24, fontWeight: 900, fontStyle: 'italic', color: 'var(--az2)', display: 'block' }}><CountUp value={n} /></span>
               <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--td3)' }}>{l}</span>
             </div>
           ))}
         </div>
       </div>
+      </FadeIn>
 
       {/* XP actions */}
+      <FadeIn delay={0.08}>
       <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '1.5rem', marginBottom: '2rem' }}>
         <div style={{ fontFamily: 'var(--fe)', fontSize: 16, fontWeight: 800, fontStyle: 'italic', color: 'var(--td)', marginBottom: '1rem' }}>Comment gagner de l&apos;XP</div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
@@ -153,18 +158,21 @@ export default async function LeaderboardPage() {
           ))}
         </div>
       </div>
+      </FadeIn>
 
       {/* CTA */}
+      <FadeIn delay={0.16}>
       <div style={{ textAlign: 'center' }}>
         {!hasData && (
           <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)', marginBottom: '1rem' }}>
             Le classement public sera activé avec la beta ouverte.
           </p>
         )}
-        <Link href="/inscription" style={{ fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 900, fontStyle: 'italic', padding: '0.7rem 2rem', borderRadius: 6, background: 'var(--az)', color: '#fff', textDecoration: 'none', display: 'inline-block' }}>
+        <Link href="/inscription" className="lift" style={{ fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 900, fontStyle: 'italic', padding: '0.7rem 2rem', borderRadius: 6, background: 'var(--az)', color: '#fff', textDecoration: 'none', display: 'inline-block' }}>
           Rejoindre NIKA →
         </Link>
       </div>
+      </FadeIn>
     </main>
   );
 }

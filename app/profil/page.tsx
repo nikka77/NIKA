@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { useAuthStore } from '@/lib/store';
 import NikaBadge from '@/components/ui/NikaBadge';
+import CountUp from '@/components/ui/CountUp';
 import type { User, BadgeTier, KycLevel } from '@/lib/types';
 
 const PRO_DOMAINS = [
@@ -107,7 +108,7 @@ export default function ProfilPage() {
           <div>
             <div style={sectionLabel}>Solde $NIKKA</div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-              <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 34, color: 'var(--gold2)' }}>{me.nika_credits ?? 0}</span>
+              <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 34, color: 'var(--gold2)' }}><CountUp value={me.nika_credits ?? 0} /></span>
               <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)' }}>$NIKKA</span>
             </div>
           </div>
