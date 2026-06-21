@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NIKA — Aperçu du projet</title>
+<meta name="description" content="NIKA — la super-app de la Côte d'Azur. 9 domaines, agent IA NIKO, membres numérotés (badges style HxH) + KYC, NFC phygital, gamification. Next.js 16 + Supabase, live sur Vercel." />
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo+2:ital,wght@0,400;0,700;1,900&family=Outfit:wght@400;600&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
@@ -16,27 +17,31 @@
   html{background:var(--bg);color:var(--td);font-family:var(--fo)}
   body{min-height:100vh;display:flex;flex-direction:column}
 
-  /* NAV */
   nav{padding:1.2rem 2rem;display:flex;align-items:center;gap:1rem;border-bottom:1px solid var(--bd);position:sticky;top:0;background:rgba(5,12,23,.92);backdrop-filter:blur(12px);z-index:10}
   .logo{font-family:var(--fn);font-size:28px;letter-spacing:.1em;color:var(--td)}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--az);box-shadow:0 0 8px var(--az)}
   .badge{font-family:var(--fo);font-size:11px;font-weight:600;letter-spacing:.06em;padding:3px 10px;border-radius:20px;background:rgba(0,148,212,.12);color:var(--az);border:1px solid rgba(0,148,212,.25)}
+  nav .spacer{flex:1}
+  .nav-live{font-family:var(--fo);font-size:12px;font-weight:700;padding:7px 16px;border-radius:4px;background:linear-gradient(90deg,var(--az),var(--az2));color:#fff;text-decoration:none}
 
-  /* HERO */
-  .hero{padding:5rem 2rem 4rem;text-align:center;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(0,148,212,.07) 0%,transparent 60%)}
+  .hero{padding:5rem 2rem 3.5rem;text-align:center;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(0,148,212,.07) 0%,transparent 60%)}
   .eyebrow{font-family:var(--fo);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--td3);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:8px}
   .eyebrow::before,.eyebrow::after{content:'';display:block;height:1px;width:30px;background:currentColor}
   h1{font-family:var(--fn);font-size:clamp(56px,12vw,110px);letter-spacing:.04em;line-height:.9;color:var(--td);margin-bottom:1rem}
   h1 span{color:var(--az)}
-  .subtitle{font-family:var(--fo);font-size:16px;color:var(--td2);max-width:520px;margin:0 auto 2.5rem;line-height:1.7}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:3rem}
+  .subtitle{font-family:var(--fo);font-size:16px;color:var(--td2);max-width:560px;margin:0 auto 2rem;line-height:1.7}
+  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+  .cta{font-family:var(--fe);font-size:14px;font-weight:800;font-style:italic;letter-spacing:.04em;text-transform:uppercase;padding:13px 28px;border-radius:4px;text-decoration:none}
+  .cta-primary{background:linear-gradient(90deg,var(--az),var(--az2));color:#fff;box-shadow:0 0 28px rgba(0,148,212,.3)}
+  .cta-ghost{border:1px solid var(--bd);color:var(--td2)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
   .chip{font-family:var(--fo);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:5px 14px;border-radius:20px;border:1px solid var(--bd);color:var(--td3)}
 
-  /* CARDS */
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;padding:0 2rem 5rem;max-width:1100px;margin:0 auto;width:100%}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;padding:0 2rem 4rem;max-width:1100px;margin:0 auto;width:100%}
   .card{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s;display:flex;flex-direction:column}
   .card:hover{border-color:rgba(0,148,212,.4);transform:translateY(-3px)}
-  .card-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:56px;background:var(--bg3);position:relative;overflow:hidden}
+  .card.feature{border-color:rgba(0,148,212,.35);box-shadow:0 0 30px rgba(0,148,212,.08)}
+  .card-thumb{height:170px;display:flex;align-items:center;justify-content:center;font-size:56px;background:var(--bg3);position:relative;overflow:hidden}
   .card-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,var(--bg2));pointer-events:none}
   .card-tag{position:absolute;bottom:12px;left:12px;font-family:var(--fo);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:2px;z-index:1}
   .card-body{padding:1.4rem;flex:1;display:flex;flex-direction:column;gap:.5rem}
@@ -45,16 +50,25 @@
   .card-cta{font-family:var(--fe);font-size:12px;font-weight:700;font-style:italic;letter-spacing:.06em;text-transform:uppercase;color:var(--az);margin-top:.4rem;display:flex;align-items:center;gap:4px}
   .card-cta::after{content:'→'}
 
-  /* STACK */
-  .stack{padding:4rem 2rem;max-width:1100px;margin:0 auto;width:100%}
-  .section-title{font-family:var(--fn);font-size:clamp(32px,5vw,52px);letter-spacing:.04em;color:var(--td);margin-bottom:2rem}
+  .features{padding:1rem 2rem 4rem;max-width:1100px;margin:0 auto;width:100%}
+  .section-title{font-family:var(--fn);font-size:clamp(32px,5vw,52px);letter-spacing:.04em;color:var(--td);margin-bottom:1.6rem}
+  .feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+  .feat{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:1.1rem 1.2rem}
+  .feat-h{font-family:var(--fe);font-size:14px;font-weight:800;font-style:italic;color:var(--td);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+  .feat-d{font-family:var(--fo);font-size:12px;color:var(--td2);line-height:1.55}
+
+  .stack{padding:2rem 2rem 4rem;max-width:1100px;margin:0 auto;width:100%}
   .stack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
   .stack-item{background:var(--bg2);border:1px solid var(--bd);border-radius:6px;padding:1rem;display:flex;align-items:center;gap:10px}
   .stack-icon{font-size:20px;flex-shrink:0}
   .stack-name{font-family:var(--fo);font-size:13px;font-weight:600;color:var(--td)}
   .stack-ver{font-family:var(--fo);font-size:10px;color:var(--td3)}
 
-  /* FOOTER */
+  .metrics{display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:center;padding:0 2rem 4rem}
+  .metric{text-align:center}
+  .metric-n{font-family:var(--fn);font-size:42px;color:var(--az2);line-height:1}
+  .metric-l{font-family:var(--fo);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--td3);margin-top:4px}
+
   footer{margin-top:auto;padding:2rem;text-align:center;font-family:var(--fo);font-size:12px;color:var(--td3);border-top:1px solid var(--bd)}
   footer a{color:var(--az);text-decoration:none}
 </style>
@@ -64,7 +78,9 @@
 <nav>
   <div class="logo">NIKA</div>
   <div class="dot"></div>
-  <span class="badge">GitHub Pages Preview</span>
+  <span class="badge">Aperçu du projet</span>
+  <div class="spacer"></div>
+  <a class="nav-live" href="https://nika-murex.vercel.app" target="_blank" rel="noopener">App live ↗</a>
 </nav>
 
 <div class="hero">
@@ -72,31 +88,45 @@
   <h1>NI<span>KA</span></h1>
   <p class="subtitle">
     Explore. Joue. Vis.<br>
-    L'écosystème complet de la vie sur la Côte d'Azur — 9 domaines, tokens NFC phygitaux, gamification XP, carte live.
+    La super-app de la Côte d'Azur : 9 domaines, agent IA <strong>NIKO</strong>, membres numérotés
+    (badges style examen <em>Hunter&nbsp;x&nbsp;Hunter</em>) + KYC tokenisé, NFC phygital, gamification XP et carte live.
   </p>
+  <div class="cta-row">
+    <a class="cta cta-primary" href="https://nika-murex.vercel.app" target="_blank" rel="noopener">Ouvrir l'app live →</a>
+    <a class="cta cta-ghost" href="https://github.com/nikka77/NIKA" target="_blank" rel="noopener">Code source GitHub</a>
+  </div>
   <div class="chips">
     <span class="chip">Next.js 16</span>
     <span class="chip">Supabase</span>
     <span class="chip">Stripe</span>
     <span class="chip">Claude AI</span>
-    <span class="chip">Twilio SMS</span>
-    <span class="chip">Leaflet</span>
+    <span class="chip">MapLibre GL</span>
+    <span class="chip">Framer Motion</span>
+    <span class="chip">Zod</span>
     <span class="chip">NFC phygital</span>
     <span class="chip">TypeScript</span>
   </div>
 </div>
 
+<div class="metrics">
+  <div class="metric"><div class="metric-n">9</div><div class="metric-l">Domaines</div></div>
+  <div class="metric"><div class="metric-n">79</div><div class="metric-l">Pages</div></div>
+  <div class="metric"><div class="metric-n">22</div><div class="metric-l">API routes</div></div>
+  <div class="metric"><div class="metric-n">23k+</div><div class="metric-l">Lignes TS</div></div>
+  <div class="metric"><div class="metric-n">0</div><div class="metric-l">Erreur build</div></div>
+</div>
+
 <div class="cards">
 
-  <a href="prototype.html" class="card">
-    <div class="card-thumb" style="background:linear-gradient(135deg,#050C17,#0F1E35)">
-      🎨
-      <span class="card-tag" style="background:rgba(0,148,212,.15);color:#0094D4;border:1px solid rgba(0,148,212,.3)">Prototype UI</span>
+  <a href="https://nika-murex.vercel.app" target="_blank" rel="noopener" class="card feature">
+    <div class="card-thumb" style="background:linear-gradient(135deg,#0094D4,#050C17)">
+      🌊
+      <span class="card-tag" style="background:rgba(0,194,255,.18);color:#00C2FF;border:1px solid rgba(0,194,255,.4)">App live · Vercel</span>
     </div>
     <div class="card-body">
-      <div class="card-title">NIKA v5 — Prototype complet</div>
-      <div class="card-desc">Design system complet : hero, carousel 3D domaines, carte Leaflet dark mode, gamification XP, Flash Deals, token ring animé, section news.</div>
-      <div class="card-cta">Voir le prototype</div>
+      <div class="card-title">NIKA — l'app en production</div>
+      <div class="card-desc">L'app réelle : hero « NIKA Stories » (globe → scènes), Food de nuit, AZUR bateaux, inscription avec numéro de membre + badge, profil &amp; KYC, agent NIKO. Next.js 16 + Supabase, déployée sur Vercel.</div>
+      <div class="card-cta">Ouvrir l'app</div>
     </div>
   </a>
 
@@ -107,7 +137,7 @@
     </div>
     <div class="card-body">
       <div class="card-title">20 Tokens NFC NIKA</div>
-      <div class="card-desc">Catalogue complet des 20 tokens NFC NIKA : VTC, skipper, dépanneur, passe membre, fidélité, coach, wellness… Chaque token = un portail unique.</div>
+      <div class="card-desc">Catalogue des 20 tokens NFC : VTC, skipper, dépanneur, passe membre, fidélité, coach, wellness… Chaque token = un portail unique vers l'app.</div>
       <div class="card-cta">Explorer les tokens</div>
     </div>
   </a>
@@ -119,34 +149,62 @@
     </div>
     <div class="card-body">
       <div class="card-title">Page de lancement</div>
-      <div class="card-desc">Landing page NIKA pour le lancement bêta sur Nice : waitlist, présentation des domaines, onboarding en 4 étapes.</div>
+      <div class="card-desc">Landing NIKA pour le lancement bêta sur Nice : waitlist, présentation des domaines, onboarding en 4 étapes.</div>
       <div class="card-cta">Voir la landing</div>
     </div>
   </a>
 
-  <a href="https://github.com/nikka77/NIKA" class="card">
+  <a href="prototype.html" class="card">
+    <div class="card-thumb" style="background:linear-gradient(135deg,#0F1E35,#0A1628)">
+      🎨
+      <span class="card-tag" style="background:rgba(0,148,212,.1);color:#0094D4;border:1px solid rgba(0,148,212,.2)">Prototype v5 (archive)</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Prototype UI — maquette d'origine</div>
+      <div class="card-desc">La maquette HTML statique de départ (NIKA v5). Conservée pour mémoire — l'app live ci-dessus est la version actuelle (redirige).</div>
+      <div class="card-cta">Voir / ouvrir l'app</div>
+    </div>
+  </a>
+
+  <a href="https://github.com/nikka77/NIKA" target="_blank" rel="noopener" class="card">
     <div class="card-thumb" style="background:linear-gradient(135deg,#0F1E35,#0A1628)">
       ⚡
       <span class="card-tag" style="background:rgba(0,148,212,.1);color:#0094D4;border:1px solid rgba(0,148,212,.2)">Source code</span>
     </div>
     <div class="card-body">
       <div class="card-title">Next.js App — Code source</div>
-      <div class="card-desc">51 fichiers · 7 000+ lignes · TypeScript strict · 0 erreur build. Pages, API routes, composants, schema Supabase, design system.</div>
+      <div class="card-desc">197 fichiers TS/TSX · 23 600+ lignes · TypeScript strict · 0 erreur build · 14 migrations Supabase · live sur Vercel.</div>
       <div class="card-cta" style="color:#F0C040">Voir sur GitHub</div>
     </div>
   </a>
 
 </div>
 
+<div class="features">
+  <div class="section-title">Ce que fait NIKA</div>
+  <div class="feat-grid">
+    <div class="feat"><div class="feat-h">🪪 Membres numérotés</div><div class="feat-d">Numéro séquentiel permanent (#0, #1…), badge SVG style examen Hunter x Hunter, niveaux KYC + récompenses $NIKKA.</div></div>
+    <div class="feat"><div class="feat-h">🤖 Agent IA NIKO</div><div class="feat-d">Assistant Claude pour VTC, livraison, courses & dépannage — multi-canal (chat, SMS).</div></div>
+    <div class="feat"><div class="feat-h">🍽️ Food &amp; Food de nuit</div><div class="feat-d">Restaurants, livraison, enseignes de nuit (Rakomoria, Afroweek) + annuaire filtrable.</div></div>
+    <div class="feat"><div class="feat-h">⛵ AZUR &amp; STAY</div><div class="feat-d">Locations de bateaux exclusives et logements insolites scorés « WOW ».</div></div>
+    <div class="feat"><div class="feat-h">🗺️ Carte live</div><div class="feat-d">Hero « NIKA Stories » (globe MapLibre → scènes) + carte interactive des POIs.</div></div>
+    <div class="feat"><div class="feat-h">🔧 Devis ARTISAN</div><div class="feat-d">Devis IA (dictée/photo → JSON), montant séquestré en escrow crypto, validation pro.</div></div>
+    <div class="feat"><div class="feat-h">📲 NFC phygital</div><div class="feat-d">20 tokens NFC physiques, chacun un portail vers un service ou un profil.</div></div>
+    <div class="feat"><div class="feat-h">🎮 Gamification</div><div class="feat-d">XP, niveaux, parcours &amp; défis, jeton $NIKKA — la vie locale devient un jeu.</div></div>
+  </div>
+</div>
+
 <div class="stack">
   <div class="section-title">Stack technique</div>
   <div class="stack-grid">
-    <div class="stack-item"><span class="stack-icon">▲</span><div><div class="stack-name">Next.js</div><div class="stack-ver">16.2.6 — App Router</div></div></div>
+    <div class="stack-item"><span class="stack-icon">▲</span><div><div class="stack-name">Next.js</div><div class="stack-ver">16.2.6 — App Router + Turbopack</div></div></div>
     <div class="stack-item"><span class="stack-icon">🗃️</span><div><div class="stack-name">Supabase</div><div class="stack-ver">PostgreSQL + Auth + RLS</div></div></div>
     <div class="stack-item"><span class="stack-icon">💳</span><div><div class="stack-name">Stripe</div><div class="stack-ver">Checkout + Webhooks</div></div></div>
-    <div class="stack-item"><span class="stack-icon">🤖</span><div><div class="stack-name">Claude AI</div><div class="stack-ver">claude-sonnet-4-5</div></div></div>
+    <div class="stack-item"><span class="stack-icon">🤖</span><div><div class="stack-name">Claude AI</div><div class="stack-ver">Sonnet 4.x — agent NIKO</div></div></div>
     <div class="stack-item"><span class="stack-icon">📱</span><div><div class="stack-name">Twilio</div><div class="stack-ver">SMS Webhook</div></div></div>
-    <div class="stack-item"><span class="stack-icon">🗺️</span><div><div class="stack-name">Leaflet</div><div class="stack-ver">Dark mode + POIs</div></div></div>
+    <div class="stack-item"><span class="stack-icon">🌍</span><div><div class="stack-name">MapLibre GL</div><div class="stack-ver">Globe + carte · Leaflet POIs</div></div></div>
+    <div class="stack-item"><span class="stack-icon">🎞️</span><div><div class="stack-name">Framer Motion</div><div class="stack-ver">12 — animations</div></div></div>
+    <div class="stack-item"><span class="stack-icon">🛡️</span><div><div class="stack-name">Zod</div><div class="stack-ver">4 — validation</div></div></div>
     <div class="stack-item"><span class="stack-icon">⚛️</span><div><div class="stack-name">Zustand</div><div class="stack-ver">Global state</div></div></div>
     <div class="stack-item"><span class="stack-icon">🎨</span><div><div class="stack-name">Tailwind CSS</div><div class="stack-ver">+ CSS Variables</div></div></div>
     <div class="stack-item"><span class="stack-icon">📲</span><div><div class="stack-name">NFC NTAG</div><div class="stack-ver">20 tokens phygitaux</div></div></div>
@@ -156,6 +214,7 @@
 
 <footer>
   Projet NIKA · Nice, Côte d'Azur ·
+  <a href="https://nika-murex.vercel.app">app live</a> ·
   <a href="https://github.com/nikka77/NIKA">github.com/nikka77/NIKA</a>
 </footer>
 
