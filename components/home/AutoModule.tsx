@@ -5,7 +5,7 @@
 //       de la catégorie (image en fond, sélectionnables). Dépannage : « express » animé + 6
 //       types de panne en boutons-visuels sélectionnables + lieu de livraison.
 //       « Mes véhicules » (localStorage) dans une icône discrète (garage).
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DRIVERS, TOWS, distKm, etaMin, type LngLat } from '@/lib/autoData';
@@ -254,7 +254,7 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
                       {vtcWhen === 'now' ? 'Taxi maintenant' : vtcWhen === 'schedule' ? 'Programmer' : 'Réserver au temps'}
                     </div>
                     <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td2)' }}>
-                      {vtcWhen === 'now' ? `Arrive à toi · ~${taxiEta} min` : vtcWhen === 'schedule' ? 'Choisis la date et l’heure' : `${hours} h à disposition`}
+                      {vtcWhen === 'now' ? `Arrive à toi · ~${taxiEta} min` : vtcWhen === 'schedule' ? (schedAt.slice(11, 16) ? `Programmé · ${schedAt.slice(8, 10)}/${schedAt.slice(5, 7)} à ${schedAt.slice(11, 16)}` : 'Choisis la date et l’heure') : `${hours} h à disposition`}
                     </div>
                   </div>
                   <div style={{ textAlign: 'right', flexShrink: 0 }}>
@@ -268,7 +268,7 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
               {/* Zone action intégrée — option éventuelle + bouton Commander (Maintenant / Programmer / Réserver) */}
               <div style={{ background: 'rgba(5,12,23,0.8)', borderTop: `1px solid ${AZ}33`, padding: 10, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {vtcWhen === 'schedule' && (
-                  <input type="datetime-local" value={schedAt} onChange={e => setSchedAt(e.target.value)} style={{ ...inp, width: '100%', colorScheme: 'dark' }} />
+                  <SchedulePicker value={schedAt} onChange={setSchedAt} />
                 )}
                 {vtcWhen === 'hours' && (
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14 }}>
@@ -399,5 +399,61 @@ function Metric({ label, value, accent }: { label: string; value: string; accent
 function Cta({ href, label, mt = 10 }: { href: string; label: string; mt?: number }) {
   return (
     <Link href={href} style={{ marginTop: mt, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, padding: '11px 12px', borderRadius: 12, background: AZ, color: '#fff', fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 12.5, letterSpacing: '0.04em', textTransform: 'uppercase', boxShadow: `0 6px 22px ${AZ}55` }}>{label}</Link>
+  );
+}
+
+// Sélecteur date+heure premium (inspiré 21st.dev) — remplace l'<input datetime-local> natif.
+// value = 'YYYY-MM-DDTHH:mm' (heure optionnelle). Puces jour + créneaux horaires, style NIKA.
+const schedLbl: React.CSSProperties = { fontFamily: 'var(--fo)', fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', margin: '0 2px 5px' };
+function SchedulePicker({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const [days, setDays] = useState<{ key: string; label: string; sub: string }[]>([]);
+  useEffect(() => {
+    const now = new Date();
+    setDays(Array.from({ length: 7 }, (_, i) => {
+      const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+      const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      const label = i === 0 ? 'Auj.' : i === 1 ? 'Demain' : d.toLocaleDateString('fr-FR', { weekday: 'short' }).replace('.', '');
+      const sub = d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' }).replace('.', '');
+      return { key, label, sub };
+    }));
+  }, []);
+  const times = useMemo(() => {
+    const t: string[] = [];
+    for (let h = 6; h <= 23; h++) for (const m of [0, 30]) t.push(`${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`);
+    return t;
+  }, []);
+  const day = value.slice(0, 10);
+  const time = value.slice(11, 16);
+  const set = (d: string, t: string) => onChange(d ? `${d}T${t}` : '');
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+      <div>
+        <div style={schedLbl}>Jour</div>
+        <div className="hero-domabar" style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 2 }}>
+          {days.map(d => {
+            const a = day === d.key;
+            return (
+              <button key={d.key} type="button" onClick={() => set(d.key, time)} aria-pressed={a}
+                style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1, minWidth: 50, padding: '6px 9px', borderRadius: 10, cursor: 'pointer', border: `1px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? `${AZ}1f` : 'rgba(255,255,255,0.04)', transition: 'all .15s' }}>
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: a ? AZ : 'var(--td)', textTransform: 'capitalize' }}>{d.label}</span>
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 8.5, color: a ? AZ : 'var(--td3)', textTransform: 'capitalize' }}>{d.sub}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+      <div>
+        <div style={schedLbl}>Heure</div>
+        <div className="hero-domabar" style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 2 }}>
+          {times.map(t => {
+            const a = time === t;
+            return (
+              <button key={t} type="button" onClick={() => set(day || days[0]?.key || '', t)} aria-pressed={a}
+                style={{ flexShrink: 0, padding: '7px 12px', borderRadius: 9, cursor: 'pointer', border: `1px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? `${AZ}1f` : 'rgba(255,255,255,0.04)', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: a ? 700 : 500, color: a ? AZ : 'var(--td2)', transition: 'all .15s' }}>{t}</button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
   );
 }
