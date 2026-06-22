@@ -1,10 +1,10 @@
 'use client';
 // components/home/Hero.tsx — Hero « NIKA Stories » (mobile-first).
-// FOND = carte MapLibre (minimap GTA, CARTO dark-nolabels) centrée sur la position GPS,
-// avec un repère « tu es ici ». Intro : globe sombre → plonge sur ta position (repli Nice
-// si GPS refusé). Le swipe entre domaines fait VOLER la carte vers le lieu du domaine
-// (Cours Saleya, baie…) ; le repère GPS reste visible. Bulles-domaines + recherche NIKO
-// en superposition. Respecte prefers-reduced-motion.
+// FOND = carte MapLibre (minimap GTA, CARTO dark-nolabels) centrée sur la position GPS.
+// Le repère pulsé SUR la carte EST le témoin GPS : rouge = inactif, ambre = localisation,
+// vert = position active (à la position exacte). Intro : globe sombre → plonge sur toi
+// (repli Nice si refusé/lent). Le swipe entre domaines fait VOLER la carte vers le lieu
+// du domaine ; chaque domaine (food…news) est une scène. Recherche NIKO en haut.
 import { useEffect, useRef, useState, useCallback, type CSSProperties } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -14,7 +14,6 @@ import { DOMAINS } from '@/lib/constants';
 import { MAP_STYLE, NICE } from '@/lib/map';
 import { useLocationStore } from '@/lib/store';
 import FoodModule, { type Pro as FoodPro } from '@/components/home/FoodModule';
-import GpsBeacon from '@/components/home/GpsBeacon';
 import type { NightEntry } from '@/lib/food';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
@@ -35,16 +34,30 @@ const SCENES: Scene[] = [
   { id: 'auto', domain: 'auto', place: 'Promenade des Anglais', services: ['VTC', 'Dépannage', 'Location'], center: [7.2620, 43.6952], zoom: 15 },
   { id: 'stay', domain: 'stay', place: 'Le Negresco', services: ['Logements insolites', 'Conciergerie', 'Direct hôtels'], center: [7.2585, 43.6948], zoom: 15.6 },
   { id: 'azur', domain: 'azur', place: 'Baie de Nice', services: ['Location bateaux', 'Skipper', 'Jetski'], center: [7.2780, 43.6900], zoom: 13.6 },
+  { id: 'rent', domain: 'rent', place: 'Nice — Gare', services: ['Vélos & sports', 'Bricolage', 'Photo/vidéo'], center: [7.2630, 43.7045], zoom: 14.6 },
+  { id: 'serv', domain: 'serv', place: 'Libération', services: ['Plomberie', 'Électricité', 'Ménage'], center: [7.2720, 43.7075], zoom: 14.8 },
+  { id: 'learn', domain: 'learn', place: 'Valrose', services: ['Cours', 'Coaching', 'Langues'], center: [7.2685, 43.7150], zoom: 14.8 },
+  { id: 'sec', domain: 'sec', place: 'Place Masséna', services: ['Serrurier', 'Gardiennage', 'Urgences'], center: [7.2700, 43.6975], zoom: 15 },
+  { id: 'news', domain: 'news', place: 'Vieux Nice', services: ['Local', 'Trafic', 'Sorties'], center: [7.2790, 43.6960], zoom: 15.2 },
 ];
 
-// Repère « tu es ici » (élément DOM du marqueur MapLibre)
-function youHereEl(): HTMLDivElement {
+const gpsColor = (status: string) =>
+  status === 'located' ? '#22DD88' : status === 'locating' ? '#F0C040' : '#D44B24';
+
+// Repère « tu es ici » = témoin GPS (couleur = statut). Élément DOM du marqueur MapLibre.
+function makeMarkerEl(): HTMLDivElement {
   const el = document.createElement('div');
   el.style.cssText = 'position:relative;width:20px;height:20px;pointer-events:none';
   el.innerHTML =
-    '<span class="gps-ping" style="position:absolute;inset:0;border-radius:50%;background:rgba(0,194,255,0.35)"></span>' +
-    '<span style="position:absolute;inset:5px;border-radius:50%;background:#00C2FF;border:2px solid #fff;box-shadow:0 0 12px rgba(0,194,255,0.9)"></span>';
+    '<span data-ping class="gps-ping" style="position:absolute;inset:0;border-radius:50%"></span>' +
+    '<span data-dot style="position:absolute;inset:5px;border-radius:50%;border:2px solid #fff"></span>';
   return el;
+}
+function paintMarker(el: HTMLElement, color: string) {
+  const ping = el.querySelector('[data-ping]') as HTMLElement | null;
+  const dot = el.querySelector('[data-dot]') as HTMLElement | null;
+  if (ping) ping.style.background = color + '59';
+  if (dot) { dot.style.background = color; dot.style.boxShadow = `0 0 12px ${color}`; }
 }
 
 export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; nightPros?: NightEntry[] }) {
@@ -52,12 +65,14 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
   const [query, setQuery] = useState('');
   const [stage, setStage] = useState<'globe' | 'rest'>('globe');
   const [index, setIndex] = useState(0);
+  const [mapReady, setMapReady] = useState(false);
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<{ map: any; maplibregl: any } | null>(null);
   const markerRef = useRef<any>(null);
   const arrivedRef = useRef(false);
 
   const coords = useLocationStore(s => s.coords);
+  const status = useLocationStore(s => s.status);
   const scene = SCENES[index];
 
   const doSearch = useCallback((q?: string) => {
@@ -70,8 +85,7 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
     setIndex(Math.max(0, Math.min(SCENES.length - 1, i)));
   }, []);
 
-  // Première descente (globe → scène 0 = ta position). Lit les coords FRAÎCHES du store
-  // (pas de closure périmée). Déclenchée par l'arrivée des coords OU le repli Nice.
+  // Première descente (globe → ta position). Lit les coords FRAÎCHES du store.
   const arrive = useCallback(() => {
     const h = mapRef.current;
     if (arrivedRef.current || !h) return;
@@ -83,7 +97,7 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
     setStage('rest');
   }, []);
 
-  // ── Init carte persistante : globe sombre en attente, puis plongée ──
+  // ── Init carte persistante : globe sombre → plongée ──
   useEffect(() => {
     const container = mapContainer.current;
     if (!container) { setStage('rest'); arrivedRef.current = true; return; }
@@ -91,7 +105,6 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
     let cancelled = false;
     let fallbackT: ReturnType<typeof setTimeout>;
 
-    // déclenche la géoloc tout de suite (store partagé avec GpsBeacon)
     if (useLocationStore.getState().status === 'idle') useLocationStore.getState().locate();
 
     (async () => {
@@ -103,11 +116,11 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
         interactive: false, attributionControl: { compact: true },
       });
       mapRef.current = { map, maplibregl };
-      map.on('style.load', () => { try { map.setProjection({ type: 'globe' }); } catch { /* projection non supportée */ } });
+      map.on('style.load', () => { try { map.setProjection({ type: 'globe' }); } catch { /* ok */ } });
+      map.on('load', () => { if (!cancelled) setMapReady(true); });
 
       if (reduced) { arrive(); return; }
       map.on('load', () => { if (!cancelled) map.easeTo({ zoom: 2.6, duration: 1500, essential: true }); });
-      // repli : si pas de position après 4.8s, on se pose sur Nice
       fallbackT = setTimeout(() => { if (!cancelled) arrive(); }, 4800);
     })();
 
@@ -119,20 +132,27 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
     };
   }, [arrive]);
 
-  // coords arrivées → repère « tu es ici » ; plongée dessus (ou recentrage si on est sur la scène 0)
+  // Repère = témoin GPS : position (coords ou repli Nice) + couleur selon le statut.
   useEffect(() => {
     const h = mapRef.current;
-    if (!h || !coords) return;
-    const ll: [number, number] = [coords.lng, coords.lat];
+    if (!h || !mapReady) return;
+    const ll: [number, number] = coords ? [coords.lng, coords.lat] : NICE;
+    const color = gpsColor(status);
     if (!markerRef.current) {
-      markerRef.current = new h.maplibregl.Marker({ element: youHereEl() }).setLngLat(ll).addTo(h.map);
+      const el = makeMarkerEl();
+      paintMarker(el, color);
+      markerRef.current = new h.maplibregl.Marker({ element: el }).setLngLat(ll).addTo(h.map);
     } else {
       markerRef.current.setLngLat(ll);
+      paintMarker(markerRef.current.getElement(), color);
     }
-    if (!arrivedRef.current) arrive();
-    else if (index === 0) h.map.flyTo({ center: ll, zoom: 15, duration: 1600, essential: true });
+    // si la position arrive après le repli, on plonge dessus (ou recentre sur la scène 0)
+    if (coords) {
+      if (!arrivedRef.current) arrive();
+      else if (index === 0) h.map.flyTo({ center: ll, zoom: 15, duration: 1600, essential: true });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [coords, arrive]);
+  }, [coords, status, mapReady, arrive]);
 
   // swipe / bulle → vol de la carte vers la scène (scène 0 = ta position)
   useEffect(() => {
@@ -149,7 +169,7 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
       <div ref={mapContainer} aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 0 }} />
 
       {/* Scrim — lisibilité du contenu par-dessus la carte */}
-      <div aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(5,12,23,0.55) 0%, rgba(5,12,23,0.06) 30%, rgba(5,12,23,0.30) 62%, rgba(5,12,23,0.92) 100%)' }} />
+      <div aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(5,12,23,0.62) 0%, rgba(5,12,23,0.10) 32%, rgba(5,12,23,0.22) 62%, rgba(5,12,23,0.85) 100%)' }} />
 
       {/* Couche swipe (capte le geste → change de domaine → vol de la carte) */}
       {stage === 'rest' && (
@@ -170,13 +190,20 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: stage === 'rest' ? 1 : 0 }} transition={{ duration: 0.7 }}
         style={{ position: 'relative', zIndex: 3, flex: 1, display: 'flex', flexDirection: 'column', pointerEvents: 'none' }}>
 
-        {/* Témoin GPS — juste sous le nav, au-dessus des bulles */}
-        <div style={{ padding: '1.4rem 0.8rem 0', display: 'flex', justifyContent: 'center', pointerEvents: 'auto' }}>
-          <GpsBeacon />
+        {/* Recherche NIKO — en haut (ancienne position du témoin GPS) */}
+        <div style={{ padding: '1.2rem 1.3rem 0.2rem', maxWidth: 520, width: '100%', margin: '0 auto', pointerEvents: 'auto' }}>
+          <div style={{ position: 'relative' }}>
+            <input value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && doSearch()}
+              placeholder="Demande à NIKO : pizza, bateau, dépannage…"
+              style={{ width: '100%', background: 'rgba(5,12,23,0.72)', border: '1px solid var(--bd2)', borderRadius: 40, padding: '14px 52px 14px 20px', fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td)', outline: 'none', backdropFilter: 'blur(8px)' }} />
+            <button onClick={() => doSearch()} aria-label="Rechercher" style={{ position: 'absolute', right: 6, top: '50%', transform: 'translateY(-50%)', width: 40, height: 40, borderRadius: '50%', background: 'var(--az)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 18px rgba(0,148,212,0.45)' }}>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+            </button>
+          </div>
         </div>
 
-        {/* Bulles-domaines (haut) */}
-        <div style={{ padding: '0.6rem 0.8rem 0', display: 'flex', justifyContent: 'center', pointerEvents: 'auto' }}>
+        {/* Bulles-domaines */}
+        <div style={{ padding: '0.5rem 0.8rem 0', display: 'flex', justifyContent: 'center', pointerEvents: 'auto' }}>
           <div className="hero-domabar" style={{ display: 'flex', gap: 9, overflowX: 'auto', maxWidth: '100%', padding: '4px 2px' }}>
             {DOMAINS.map(d => {
               const si = SCENES.findIndex(s => s.domain === d.slug);
@@ -196,7 +223,7 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
 
         <div style={{ flex: 1 }} />
 
-        {/* Scène : bulle info / module — centré verticalement */}
+        {/* Scène : bulle info / module (rien pour la scène 0 — le repère sur la carte suffit) */}
         <div style={{ padding: '0 1.3rem', textAlign: 'center', maxWidth: 600, width: '100%', margin: '0 auto', pointerEvents: 'auto' }}>
           <AnimatePresence mode="wait">
             <motion.div key={scene.id} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.45 }}>
@@ -216,35 +243,20 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
                   </div>
                   <Link href={`/${scene.domain}`} style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 12, letterSpacing: '0.05em', textTransform: 'uppercase', color: DOMAINS.find(d => d.slug === scene.domain)?.color, display: 'inline-flex', alignItems: 'center', gap: 5 }}>Explorer →</Link>
                 </div>
-              ) : (
-                <div style={{ display: 'inline-block', padding: '10px 16px', borderRadius: 16, background: 'rgba(5,12,23,0.6)', border: '1px solid var(--bd2)', backdropFilter: 'blur(8px)' }}>
-                  <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 16, letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--td)' }}>Tu es ici</span>
-                  <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', marginLeft: 8 }}>· swipe pour explorer</span>
-                </div>
-              )}
+              ) : null}
             </motion.div>
           </AnimatePresence>
         </div>
 
         <div style={{ flex: 1 }} />
 
-        {/* Bas : recherche NIKO + pagination */}
+        {/* Bas : pagination */}
         <div style={{ padding: '0 1.3rem 8.5rem', textAlign: 'center', maxWidth: 600, width: '100%', margin: '0 auto', pointerEvents: 'auto' }}>
-          <div style={{ position: 'relative', maxWidth: 480, margin: '0 auto 0.7rem' }}>
-            <input value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && doSearch()}
-              placeholder="Demande à NIKO : pizza, bateau, dépannage…"
-              style={{ width: '100%', background: 'rgba(5,12,23,0.7)', border: '1px solid var(--bd2)', borderRadius: 40, padding: '15px 54px 15px 20px', fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td)', outline: 'none', backdropFilter: 'blur(8px)' }} />
-            <button onClick={() => doSearch()} aria-label="Rechercher" style={{ position: 'absolute', right: 6, top: '50%', transform: 'translateY(-50%)', width: 42, height: 42, borderRadius: '50%', background: 'var(--az)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 18px rgba(0,148,212,0.45)' }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
-            </button>
-          </div>
-
-          {/* Indices pagination */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 4 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7, marginTop: 4, flexWrap: 'wrap' }}>
             {SCENES.map((s, i) => (
-              <button key={s.id} onClick={() => goTo(i)} aria-label={s.place} style={{ width: i === index ? 22 : 7, height: 7, borderRadius: 4, background: i === index ? 'var(--az)' : 'var(--bd2)', border: 'none', padding: 0, cursor: 'pointer', transition: 'all 0.3s' }} />
+              <button key={s.id} onClick={() => goTo(i)} aria-label={s.place} style={{ width: i === index ? 20 : 6, height: 6, borderRadius: 4, background: i === index ? 'var(--az)' : 'var(--bd2)', border: 'none', padding: 0, cursor: 'pointer', transition: 'all 0.3s' }} />
             ))}
-            <span style={{ marginLeft: 8, fontFamily: 'var(--fo)', fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--td3)' }}>‹ swipe ›</span>
+            <span style={{ marginLeft: 6, fontFamily: 'var(--fo)', fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--td3)' }}>‹ swipe ›</span>
           </div>
         </div>
       </motion.div>
