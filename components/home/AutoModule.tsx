@@ -46,6 +46,13 @@ const BREAKDOWNS = [
   { key: 'accident', img: '/images/auto/break-accident.webp', emoji: '🚨', label: 'Accident' },
 ];
 
+// Dépannage : où livrer le véhicule (visuel généré + repli emoji) — choix UNIQUE
+const DESTS = [
+  { key: 'atelier', img: '/images/auto/dest-atelier.webp', emoji: '🛠️', label: 'Atelier le plus proche' },
+  { key: 'stockage', img: '/images/auto/dest-stockage.webp', emoji: '🔒', label: 'Stockage sécurisé' },
+  { key: 'maison', img: '/images/auto/dest-maison.webp', emoji: '🏠', label: 'Chez moi' },
+];
+
 // Mes véhicules (localStorage)
 type Vehicle = { id: string; label: string; plate: string; type: string };
 const VKEY = 'nika-vehicles';
@@ -328,8 +335,8 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
                     style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, padding: '4px 2px 2px', borderRadius: 10, cursor: 'pointer', border: 'none', background: 'none', transition: 'all .15s' }}>
                     {/* encoche (case à cocher) — multi-sélection */}
                     <span aria-hidden style={{ position: 'absolute', top: 2, right: 6, width: 17, height: 17, borderRadius: 5, border: `1.5px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? AZ : 'transparent', color: '#fff', fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: a ? `0 0 8px ${AZ}77` : 'none', transition: 'all .15s' }}>{a ? '✓' : ''}</span>
-                    <span style={{ position: 'relative', width: '100%', height: 56, display: 'block', filter: a ? `drop-shadow(0 2px 11px ${AZ}88)` : 'none', opacity: a ? 1 : 0.9, transition: 'all .15s' }}>
-                      <CarBg img={b.img} emoji={b.emoji} h={56} fit="contain" />
+                    <span style={{ position: 'relative', width: 60, height: 60, borderRadius: 15, overflow: 'hidden', display: 'block', filter: a ? `drop-shadow(0 2px 12px ${AZ}88)` : 'none', opacity: a ? 1 : 0.92, transition: 'all .15s' }}>
+                      <CarBg img={b.img} emoji={b.emoji} h={60} fit="cover" />
                     </span>
                     <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: a ? 700 : 600, color: a ? AZ : 'var(--td2)', textAlign: 'center', lineHeight: 1.1 }}>{b.label}</span>
                   </button>
@@ -342,12 +349,19 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
               <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--fo)', fontSize: 11.5, color: dest ? 'var(--td)' : 'var(--td3)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{dest ? `Livrer à : ${dest.label}` : 'Livrer le véhicule (saisis le lieu ↑)'}</span>
               {dest && <button onClick={onClearDest} style={{ background: 'none', border: 'none', color: 'var(--td3)', fontFamily: 'var(--fo)', fontSize: 10.5, cursor: 'pointer', textDecoration: 'underline' }}>changer</button>}
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-              {['Atelier le plus proche', 'Stockage sécurisé', 'Chez moi'].map(d => {
-                const a = depDest === d;
+            <div className="g-3" style={{ gap: 7 }}>
+              {DESTS.map(d => {
+                const a = depDest === d.key;
                 return (
-                  <button key={d} onClick={() => setDepDest(a ? null : d)} aria-pressed={a}
-                    style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: a ? 700 : 400, color: a ? AZ : 'var(--td2)', padding: '4px 10px', borderRadius: 20, background: a ? `${AZ}1f` : 'rgba(255,255,255,0.06)', border: `1px solid ${a ? AZ : 'var(--bd)'}`, cursor: 'pointer', transition: 'all .15s' }}>{a ? `✓ ${d}` : d}</button>
+                  <button key={d.key} onClick={() => setDepDest(a ? null : d.key)} aria-pressed={a}
+                    style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, padding: '4px 2px 2px', borderRadius: 10, cursor: 'pointer', border: 'none', background: 'none', transition: 'all .15s' }}>
+                    {/* encoche — choix unique */}
+                    <span aria-hidden style={{ position: 'absolute', top: 1, right: 6, width: 15, height: 15, borderRadius: 5, border: `1.5px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? AZ : 'transparent', color: '#fff', fontSize: 9, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: a ? `0 0 8px ${AZ}77` : 'none', transition: 'all .15s' }}>{a ? '✓' : ''}</span>
+                    <span style={{ position: 'relative', width: 42, height: 42, borderRadius: 11, overflow: 'hidden', display: 'block', filter: a ? `drop-shadow(0 2px 9px ${AZ}88)` : 'none', opacity: a ? 1 : 0.9, transition: 'all .15s' }}>
+                      <CarBg img={d.img} emoji={d.emoji} h={42} fit="cover" />
+                    </span>
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 9, fontWeight: a ? 700 : 600, color: a ? AZ : 'var(--td2)', textAlign: 'center', lineHeight: 1.05 }}>{d.label}</span>
+                  </button>
                 );
               })}
             </div>
