@@ -105,7 +105,7 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
   const [form, setForm] = useState({ label: '', plate: '', type: 'car' });
   const [catIdx, setCatIdx] = useState(0);
   const [carIdx, setCarIdx] = useState(0);
-  const [breakdown, setBreakdown] = useState<string | null>(null);
+  const [breakdowns, setBreakdowns] = useState<string[]>([]);
   const [depDest, setDepDest] = useState<string | null>(null);
   const [vtcWhen, setVtcWhen] = useState<'now' | 'schedule' | 'hours'>('now');
   const [schedAt, setSchedAt] = useState('');
@@ -320,17 +320,18 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
             </div>
 
             <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', margin: '11px 2px 6px' }}>Quel est le problème ?</div>
-            <div className="g-3" style={{ gap: 7 }}>
+            <div className="g-3" style={{ gap: 8 }}>
               {BREAKDOWNS.map(b => {
-                const a = breakdown === b.key;
+                const a = breakdowns.includes(b.key);
                 return (
-                  <button key={b.key} onClick={() => setBreakdown(a ? null : b.key)} aria-pressed={a}
-                    style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, padding: '9px 4px 7px', borderRadius: 12, cursor: 'pointer', border: `1px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? `${AZ}1c` : 'rgba(255,255,255,0.05)', boxShadow: a ? `0 0 16px ${AZ}44` : 'none', transition: 'all .15s' }}>
-                    <span style={{ position: 'relative', width: '100%', height: 52, display: 'block' }}>
-                      <CarBg img={b.img} emoji={b.emoji} h={52} fit="contain" />
+                  <button key={b.key} onClick={() => setBreakdowns(s => s.includes(b.key) ? s.filter(k => k !== b.key) : [...s, b.key])} aria-pressed={a}
+                    style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, padding: '4px 2px 2px', borderRadius: 10, cursor: 'pointer', border: 'none', background: 'none', transition: 'all .15s' }}>
+                    {/* encoche (case à cocher) — multi-sélection */}
+                    <span aria-hidden style={{ position: 'absolute', top: 2, right: 6, width: 17, height: 17, borderRadius: 5, border: `1.5px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? AZ : 'transparent', color: '#fff', fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: a ? `0 0 8px ${AZ}77` : 'none', transition: 'all .15s' }}>{a ? '✓' : ''}</span>
+                    <span style={{ position: 'relative', width: '100%', height: 56, display: 'block', filter: a ? `drop-shadow(0 2px 11px ${AZ}88)` : 'none', opacity: a ? 1 : 0.9, transition: 'all .15s' }}>
+                      <CarBg img={b.img} emoji={b.emoji} h={56} fit="contain" />
                     </span>
-                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 600, color: a ? AZ : 'var(--td2)', textAlign: 'center', lineHeight: 1.1 }}>{b.label}</span>
-                    {a && <span style={{ position: 'absolute', top: 5, right: 5, width: 16, height: 16, borderRadius: '50%', background: AZ, color: '#fff', fontSize: 9.5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✓</span>}
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: a ? 700 : 600, color: a ? AZ : 'var(--td2)', textAlign: 'center', lineHeight: 1.1 }}>{b.label}</span>
                   </button>
                 );
               })}
@@ -350,7 +351,7 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
                 );
               })}
             </div>
-            <Cta href="/auto/depannage" label={breakdown ? `Dépannage · ${BREAKDOWNS.find(b => b.key === breakdown)?.label}` : 'Demander un dépannage'} />
+            <Cta href="/auto/depannage" label={breakdowns.length === 0 ? 'Demander un dépannage' : breakdowns.length === 1 ? `Dépannage · ${BREAKDOWNS.find(b => b.key === breakdowns[0])?.label}` : `Dépannage · ${breakdowns.length} problèmes`} />
           </div>
         )}
         </motion.div>
