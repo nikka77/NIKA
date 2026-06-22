@@ -86,6 +86,13 @@ ul { list-style: none; }
 .auto-budget::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #0094D4; box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer; }
 .auto-budget::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #0094D4; box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer; }
 
+/* ===== AUTO — Dépannage express animé ===== */
+@keyframes dep-beacon-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(212,75,36,0.55); } 50% { box-shadow: 0 0 0 7px rgba(212,75,36,0); } }
+.dep-beacon { animation: dep-beacon-pulse 1.5s ease-out infinite; }
+@keyframes dep-sweep { 0% { transform: translateX(-130%); } 100% { transform: translateX(240%); } }
+.dep-express::after { content: ''; position: absolute; top: 0; bottom: 0; left: 0; width: 38%; background: linear-gradient(90deg, transparent, rgba(255,140,90,0.16), transparent); animation: dep-sweep 2.6s ease-in-out infinite; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .dep-beacon, .dep-express::after { animation: none; } }
+
 /* ===== SCROLL SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg2); }

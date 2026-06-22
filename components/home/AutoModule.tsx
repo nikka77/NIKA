@@ -1,10 +1,10 @@
 'use client';
-// components/home/AutoModule.tsx — Module AUTO v3, intégré à la carte-héros.
-// VTC : pré-commande « taxi maintenant » (forfait, sans destination, ETA approx) OU récap
-//       course si une destination est saisie dans la barre. Location : « Louez maintenant »
-//       avec un slider BUDGET (citadine → hypercar) + carte véhicule. Dépannage : « express »
-//       (ETA dépanneuse) + choix du type de panne + lieu de livraison. « Mes véhicules »
-//       (localStorage) déplacé dans une icône discrète (garage) en haut à droite.
+// components/home/AutoModule.tsx — Module AUTO v4, intégré à la carte-héros.
+// VTC : Maintenant (taxi forfait) / Programmer (date-heure) / Réserver (x heures) + visuel taxi.
+//       Récap course si destination saisie dans la barre. Location : slider BUDGET → 4 véhicules
+//       de la catégorie (image en fond, sélectionnables). Dépannage : « express » animé + 6
+//       types de panne en boutons-visuels sélectionnables + lieu de livraison.
+//       « Mes véhicules » (localStorage) dans une icône discrète (garage).
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -13,6 +13,7 @@ import { DRIVERS, TOWS, distKm, etaMin, type LngLat } from '@/lib/autoData';
 const AZ = '#0094D4';
 export type AutoMode = 'vtc' | 'location' | 'depannage';
 const TAXI_FLAT = 10;
+const HOUR_RATE = 35;
 
 const MODES: { key: AutoMode; label: string; icon: string }[] = [
   { key: 'vtc', label: 'VTC', icon: '🚖' },
@@ -20,47 +21,58 @@ const MODES: { key: AutoMode; label: string; icon: string }[] = [
   { key: 'depannage', label: 'Dépannage', icon: '🔧' },
 ];
 
-// Catégories Location, du moins cher au plus cher (le slider budget les parcourt).
-type Cat = { key: string; name: string; ex: string; price: number; specs: string; img: string; emoji: string };
+// Location : catégories du - cher au + cher, chacune avec 4 véhicules (même tarif).
+type Car = { model: string; img: string };
+type Cat = { key: string; name: string; price: number; specs: string; emoji: string; cars: Car[] };
+const im = (slug: string, n: number) => `/images/auto/${slug}${n === 1 ? '' : '-' + n}.webp`;
+const mk = (slug: string, models: string[]): Car[] => models.map((model, i) => ({ model, img: im(slug, i + 1) }));
 const CATEGORIES: Cat[] = [
-  { key: 'citadine', name: 'Citadine', ex: 'Renault Clio', price: 39, specs: '5 places · agile', img: '/images/auto/citadine.webp', emoji: '🚗' },
-  { key: 'monospace', name: 'Monospace', ex: 'Citroën C4 SpaceTourer', price: 55, specs: '7 places · familial', img: '/images/auto/monospace.webp', emoji: '🚐' },
-  { key: 'berline', name: 'Berline', ex: 'BMW Série 3', price: 79, specs: '5 places · confort', img: '/images/auto/berline.webp', emoji: '🚘' },
-  { key: 'electrique', name: 'Électrique', ex: 'Tesla Model 3', price: 99, specs: '~500 km autonomie', img: '/images/auto/electrique.webp', emoji: '⚡' },
-  { key: 'sportive', name: 'Sportive', ex: 'Porsche 718 Cayman', price: 189, specs: '0-100 en 4,2 s', img: '/images/auto/sportive.webp', emoji: '🏎️' },
-  { key: 'supercar', name: 'Supercar', ex: 'Lamborghini Huracán', price: 490, specs: 'V10 · 640 ch', img: '/images/auto/supercar.webp', emoji: '🏎️' },
-  { key: 'hypercar', name: 'Hypercar', ex: 'Bugatti Chiron', price: 1290, specs: 'série très limitée', img: '/images/auto/hypercar.webp', emoji: '🏁' },
+  { key: 'citadine', name: 'Citadine', price: 39, specs: 'agile · ville', emoji: '🚗', cars: mk('citadine', ['Renault Clio', 'Peugeot 208', 'VW Polo', 'Toyota Yaris']) },
+  { key: 'monospace', name: 'Monospace', price: 55, specs: '7 places', emoji: '🚐', cars: mk('monospace', ['Citroën SpaceTourer', 'Renault Espace', 'VW Touran', 'Ford Galaxy']) },
+  { key: 'berline', name: 'Berline', price: 79, specs: 'confort', emoji: '🚘', cars: mk('berline', ['BMW Série 3', 'Audi A4', 'Mercedes C', 'Peugeot 508']) },
+  { key: 'electrique', name: 'Électrique', price: 99, specs: '~500 km', emoji: '⚡', cars: mk('electrique', ['Tesla Model 3', 'Hyundai Ioniq', 'Kia EV6', 'Renault Mégane E']) },
+  { key: 'sportive', name: 'Sportive', price: 189, specs: '0-100 < 5 s', emoji: '🏎️', cars: mk('sportive', ['Porsche 718', 'Audi TT RS', 'BMW M2', 'Alpine A110']) },
+  { key: 'supercar', name: 'Supercar', price: 490, specs: 'V8/V10', emoji: '🏎️', cars: mk('supercar', ['Lamborghini Huracán', 'Ferrari F8', 'McLaren GT', 'Audi R8']) },
+  { key: 'hypercar', name: 'Hypercar', price: 1290, specs: 'série limitée', emoji: '🏁', cars: mk('hypercar', ['Bugatti Chiron', 'Koenigsegg', 'Pagani Huayra', 'Rimac Nevera']) },
 ];
 
-// Types de panne (Dépannage sur place)
+// Dépannage : types de panne (visuel généré + repli emoji)
 const BREAKDOWNS = [
-  { key: 'batterie', icon: '🔋', label: 'Batterie' },
-  { key: 'essence', icon: '⛽', label: 'Panne sèche' },
-  { key: 'pneu', icon: '🛞', label: 'Pneu / roue' },
-  { key: 'moteur', icon: '🔧', label: 'Moteur' },
-  { key: 'cle', icon: '🔑', label: 'Clés' },
-  { key: 'accident', icon: '🚨', label: 'Accident' },
+  { key: 'batterie', img: '/images/auto/break-batterie.webp', emoji: '🔋', label: 'Batterie' },
+  { key: 'essence', img: '/images/auto/break-essence.webp', emoji: '⛽', label: 'Panne sèche' },
+  { key: 'pneu', img: '/images/auto/break-pneu.webp', emoji: '🛞', label: 'Pneu / roue' },
+  { key: 'moteur', img: '/images/auto/break-moteur.webp', emoji: '🔧', label: 'Moteur' },
+  { key: 'cle', img: '/images/auto/break-cle.webp', emoji: '🔑', label: 'Clés' },
+  { key: 'accident', img: '/images/auto/break-accident.webp', emoji: '🚨', label: 'Accident' },
 ];
 
 // Mes véhicules (localStorage)
 type Vehicle = { id: string; label: string; plate: string; type: string };
 const VKEY = 'nika-vehicles';
 const VTYPES = [
-  { key: 'car', icon: '🚗', label: 'Voiture' },
-  { key: 'moto', icon: '🏍️', label: 'Moto' },
-  { key: 'scooter', icon: '🛵', label: 'Scooter' },
-  { key: 'van', icon: '🚐', label: 'Utilitaire' },
+  { key: 'car', icon: '🚗', label: 'Voiture' }, { key: 'moto', icon: '🏍️', label: 'Moto' },
+  { key: 'scooter', icon: '🛵', label: 'Scooter' }, { key: 'van', icon: '🚐', label: 'Utilitaire' },
 ];
 const vicon = (t: string) => VTYPES.find(v => v.key === t)?.icon ?? '🚗';
 
 const NICE_LL: LngLat = { lng: 7.262, lat: 43.7102 };
-
 const card: React.CSSProperties = {
-  position: 'relative', maxWidth: 388, margin: '0 auto', background: 'rgba(5,12,23,0.76)', border: `1px solid ${AZ}55`,
+  position: 'relative', maxWidth: 392, margin: '0 auto', background: 'rgba(5,12,23,0.78)', border: `1px solid ${AZ}55`,
   borderRadius: 18, backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: 12,
-  textAlign: 'left', boxShadow: '0 14px 42px rgba(0,0,0,0.45)', maxHeight: '62vh', overflowY: 'auto',
+  textAlign: 'left', boxShadow: '0 14px 42px rgba(0,0,0,0.45)', maxHeight: '64vh', overflowY: 'auto',
 };
 const inp: React.CSSProperties = { background: 'rgba(255,255,255,0.05)', border: '1px solid var(--bd2)', borderRadius: 8, padding: '8px 10px', fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td)', outline: 'none' };
+// <img> de fond avec repli emoji (l'emoji est dessous, l'image le couvre si elle charge)
+function CarBg({ img, emoji, h }: { img: string; emoji: string; h: number }) {
+  return (
+    <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: h * 0.42 }}>
+      <span aria-hidden>{emoji}</span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={img} alt="" onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+    </div>
+  );
+}
 
 export type AutoModuleProps = {
   mode: AutoMode; onMode: (m: AutoMode) => void;
@@ -76,7 +88,11 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
   const [adding, setAdding] = useState(false);
   const [form, setForm] = useState({ label: '', plate: '', type: 'car' });
   const [catIdx, setCatIdx] = useState(0);
+  const [carIdx, setCarIdx] = useState(0);
   const [breakdown, setBreakdown] = useState<string | null>(null);
+  const [vtcWhen, setVtcWhen] = useState<'now' | 'schedule' | 'hours'>('now');
+  const [schedAt, setSchedAt] = useState('');
+  const [hours, setHours] = useState(3);
   const loaded = useRef(false);
 
   useEffect(() => {
@@ -88,8 +104,7 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
   const addVehicle = () => {
     if (!form.label.trim()) return;
     setVehicles(v => [...v, { id: `${Date.now()}`, label: form.label.trim(), plate: form.plate.trim().toUpperCase(), type: form.type }]);
-    setForm({ label: '', plate: '', type: 'car' });
-    setAdding(false);
+    setForm({ label: '', plate: '', type: 'car' }); setAdding(false);
   };
 
   const base = user ?? NICE_LL;
@@ -97,24 +112,22 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
   const taxiEta = etaMin(km0(DRIVERS[0].dx, DRIVERS[0].dy));
   const towEta = Math.min(...TOWS.map(t => etaMin(km0(t.dx, t.dy))));
   const cat = CATEGORIES[catIdx];
+  const selCar = cat.cars[Math.min(carIdx, cat.cars.length - 1)];
 
   return (
     <div className="hero-domabar" style={card}>
-      {/* En-tête : libellé + icône discrète « Mes véhicules » (garage) */}
+      {/* En-tête + icône discrète « Mes véhicules » */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
         <span style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
           <span style={{ width: 7, height: 7, borderRadius: '50%', background: AZ, boxShadow: `0 0 8px ${AZ}` }} />
           <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 15, letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--td)' }}>Auto</span>
         </span>
-        <button onClick={() => setGarage(g => !g)} aria-expanded={garage} aria-label="Mes véhicules"
-          title="Mes véhicules"
+        <button onClick={() => setGarage(g => !g)} aria-expanded={garage} aria-label="Mes véhicules" title="Mes véhicules"
           style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '5px 9px', borderRadius: 20, cursor: 'pointer', border: `1px solid ${garage ? AZ : 'var(--bd2)'}`, background: garage ? `${AZ}1c` : 'rgba(255,255,255,0.04)', color: garage ? AZ : 'var(--td2)', transition: 'all .18s' }}>
-          <span style={{ fontSize: 13 }}>🚗</span>
-          <span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700 }}>{vehicles.length}</span>
+          <span style={{ fontSize: 13 }}>🚗</span><span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700 }}>{vehicles.length}</span>
         </button>
       </div>
 
-      {/* Panneau garage (replié par défaut, derrière l'icône) */}
       <AnimatePresence initial={false}>
         {garage && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }} style={{ overflow: 'hidden' }}>
@@ -163,131 +176,157 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
         })}
       </div>
 
-      {/* Contenu par mode */}
       <AnimatePresence mode="wait">
-        <motion.div key={mode + (dest ? '-d' : '')} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }}>
+        <motion.div key={mode + (mode === 'vtc' && dest ? '-d' : mode === 'vtc' ? '-' + vtcWhen : '')} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.22 }}>
 
-          {/* ─────────── VTC ─────────── */}
-          {mode === 'vtc' && (dest && trip ? (
-            <div>
-              <div style={{ borderRadius: 12, border: `1px solid ${AZ}66`, background: `${AZ}14`, padding: '10px 12px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 6 }}>
-                  <span style={{ fontSize: 14 }}>📍</span>
-                  <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700, color: 'var(--td)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{dest.label}</span>
-                  <button onClick={onClearDest} style={{ background: 'none', border: 'none', color: 'var(--td3)', fontFamily: 'var(--fo)', fontSize: 10.5, cursor: 'pointer', textDecoration: 'underline' }}>changer</button>
-                </div>
-                <div style={{ display: 'flex', gap: 14 }}>
-                  <Metric label="Prise en charge" value={`${taxiEta} min`} />
-                  <Metric label="Trajet" value={`${trip.km.toFixed(1)} km · ${trip.eta} min`} />
-                  <Metric label="Estimation" value={`${trip.price.toFixed(1)} €`} accent />
-                </div>
+        {/* ─────────── VTC ─────────── */}
+        {mode === 'vtc' && (dest && trip ? (
+          <div>
+            <div style={{ borderRadius: 12, border: `1px solid ${AZ}66`, background: `${AZ}14`, padding: '10px 12px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 6 }}>
+                <span style={{ fontSize: 14 }}>📍</span>
+                <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700, color: 'var(--td)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{dest.label}</span>
+                <button onClick={onClearDest} style={{ background: 'none', border: 'none', color: 'var(--td3)', fontFamily: 'var(--fo)', fontSize: 10.5, cursor: 'pointer', textDecoration: 'underline' }}>changer</button>
               </div>
-              <Cta href={`/auto/vtc?to=${encodeURIComponent(dest.label)}`} label={`Commander · ${trip.price.toFixed(1)} €`} />
+              <div style={{ display: 'flex', gap: 14 }}>
+                <Metric label="Prise en charge" value={`${taxiEta} min`} />
+                <Metric label="Trajet" value={`${trip.km.toFixed(1)} km · ${trip.eta} min`} />
+                <Metric label="Estimation" value={`${trip.price.toFixed(1)} €`} accent />
+              </div>
             </div>
-          ) : (
-            // Pré-commande « taxi maintenant » — vient sans destination, forfait, ETA approx.
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 11, borderRadius: 14, border: `1px solid ${AZ}66`, background: `linear-gradient(135deg, ${AZ}1f, ${AZ}0a)`, padding: '13px 14px' }}>
-                <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 44, height: 44, borderRadius: '50%', background: `${AZ}26`, border: `1px solid ${AZ}66`, fontSize: 22, flexShrink: 0 }}>🚖</span>
+            <Cta href={`/auto/vtc?to=${encodeURIComponent(dest.label)}`} label={`Commander · ${trip.price.toFixed(1)} €`} />
+          </div>
+        ) : (
+          <div>
+            {/* Quand ? */}
+            <div style={{ display: 'flex', gap: 6, marginBottom: 9 }}>
+              {([['now', 'Maintenant'], ['schedule', 'Programmer'], ['hours', 'Réserver']] as const).map(([k, lbl]) => {
+                const a = vtcWhen === k;
+                return (
+                  <button key={k} onClick={() => setVtcWhen(k)} aria-pressed={a}
+                    style={{ flex: 1, padding: '7px 4px', borderRadius: 9, cursor: 'pointer', border: `1px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? `${AZ}1c` : 'transparent', color: a ? AZ : 'var(--td2)', fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, transition: 'all .15s' }}>{lbl}</button>
+                );
+              })}
+            </div>
+
+            {/* Carte taxi avec visuel en fond */}
+            <div style={{ position: 'relative', borderRadius: 14, overflow: 'hidden', border: `1px solid ${AZ}66`, minHeight: 92 }}>
+              <CarBg img="/images/auto/taxi.webp" emoji="🚖" h={92} />
+              <div aria-hidden style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(5,12,23,0.92) 30%, rgba(5,12,23,0.35) 100%)' }} />
+              <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 11, padding: '12px 14px' }}>
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 16, color: 'var(--td)', letterSpacing: '0.02em' }}>Taxi maintenant</div>
-                  <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>Arrive à toi · ~{taxiEta} min · sans destination</div>
+                  <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 16, color: 'var(--td)' }}>
+                    {vtcWhen === 'now' ? 'Taxi maintenant' : vtcWhen === 'schedule' ? 'Programmer' : 'Réserver au temps'}
+                  </div>
+                  <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td2)' }}>
+                    {vtcWhen === 'now' ? `Arrive à toi · ~${taxiEta} min` : vtcWhen === 'schedule' ? 'Choisis la date et l’heure' : `${hours} h à disposition`}
+                  </div>
                 </div>
                 <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                  <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 22, color: AZ, lineHeight: 1 }}>{TAXI_FLAT} €</div>
-                  <div style={{ fontFamily: 'var(--fo)', fontSize: 9, color: 'var(--td3)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>forfait</div>
-                </div>
-              </div>
-              <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', margin: '7px 2px 0' }}>Le compteur démarre à la prise en charge. Ou saisis ta destination dans la barre ↑ pour une estimation.</div>
-              <Cta href="/auto/vtc" label={`Commander un taxi · ${TAXI_FLAT} €`} />
-            </div>
-          ))}
-
-          {/* ─────────── LOCATION ─────────── */}
-          {mode === 'location' && (
-            <div>
-              <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 4 }}>
-                <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 15, color: 'var(--td)', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Louez maintenant</span>
-                <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)' }}>près de toi</span>
-              </div>
-
-              {/* Slider budget : du - cher au + cher */}
-              <div style={{ margin: '8px 0 4px' }}>
-                <input type="range" min={0} max={CATEGORIES.length - 1} step={1} value={catIdx}
-                  onChange={e => setCatIdx(Number(e.target.value))} aria-label="Budget"
-                  className="auto-budget" style={{ width: '100%' }} />
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--fo)', fontSize: 9, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', marginTop: 2 }}>
-                  <span>€ Citadine</span><span>Budget</span><span>Hypercar €€€</span>
-                </div>
-              </div>
-
-              {/* Carte véhicule (image i2i cohérente quand dispo, sinon emoji premium) */}
-              <AnimatePresence mode="wait">
-                <motion.div key={cat.key} initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -16 }} transition={{ duration: 0.22 }}
-                  style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid var(--bd2)', background: 'rgba(255,255,255,0.04)' }}>
-                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', background: `radial-gradient(120% 120% at 70% 20%, ${AZ}26, rgba(5,12,23,0.6))`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <span style={{ fontSize: 56, filter: 'drop-shadow(0 6px 14px rgba(0,0,0,0.5))' }}>{cat.emoji}</span>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={cat.img} alt={cat.ex} onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 21, color: AZ, lineHeight: 1 }}>
+                    {vtcWhen === 'hours' ? `${hours * HOUR_RATE} €` : `${TAXI_FLAT} €`}
                   </div>
-                  <div style={{ padding: '10px 12px' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 8 }}>
-                      <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 16, color: 'var(--td)', textTransform: 'uppercase' }}>{cat.name}</span>
-                      <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 17, color: AZ }}>{cat.price} €<span style={{ fontSize: 10, color: 'var(--td3)' }}>/j</span></span>
-                    </div>
-                    <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', marginTop: 1 }}>{cat.ex} · {cat.specs}</div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-              <Cta href={`/auto/location?cat=${cat.key}`} label={`Louer une ${cat.name.toLowerCase()} →`} />
-            </div>
-          )}
-
-          {/* ─────────── DÉPANNAGE ─────────── */}
-          {mode === 'depannage' && (
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 11, borderRadius: 14, border: '1px solid rgba(212,75,36,0.5)', background: 'linear-gradient(135deg, rgba(212,75,36,0.16), rgba(212,75,36,0.05))', padding: '11px 13px' }}>
-                <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: 'rgba(212,75,36,0.22)', border: '1px solid rgba(212,75,36,0.5)', fontSize: 19, flexShrink: 0 }}>🚨</span>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 15.5, color: 'var(--td)', textTransform: 'uppercase' }}>Dépannage express</div>
-                  <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>Dépanneuse en route · dès {towEta} min</div>
+                  <div style={{ fontFamily: 'var(--fo)', fontSize: 9, color: 'var(--td3)', textTransform: 'uppercase' }}>{vtcWhen === 'hours' ? `${HOUR_RATE} €/h` : 'forfait'}</div>
                 </div>
               </div>
-
-              <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', margin: '11px 2px 6px' }}>Quel est le problème ?</div>
-              <div className="g-3" style={{ gap: 6 }}>
-                {BREAKDOWNS.map(b => {
-                  const a = breakdown === b.key;
-                  return (
-                    <button key={b.key} onClick={() => setBreakdown(a ? null : b.key)} aria-pressed={a}
-                      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, padding: '9px 4px', borderRadius: 10, cursor: 'pointer', border: `1px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? `${AZ}1c` : 'rgba(255,255,255,0.04)', transition: 'all .15s' }}>
-                      <span style={{ fontSize: 17 }}>{b.icon}</span>
-                      <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 600, color: a ? AZ : 'var(--td2)', textAlign: 'center', lineHeight: 1.1 }}>{b.label}</span>
-                    </button>
-                  );
-                })}
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: 7, margin: '11px 2px 5px' }}>
-                <span style={{ fontSize: 13 }}>📍</span>
-                <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--fo)', fontSize: 11.5, color: dest ? 'var(--td)' : 'var(--td3)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                  {dest ? `Livrer à : ${dest.label}` : 'Livrer le véhicule (saisis le lieu ↑)'}
-                </span>
-                {dest && <button onClick={onClearDest} style={{ background: 'none', border: 'none', color: 'var(--td3)', fontFamily: 'var(--fo)', fontSize: 10.5, cursor: 'pointer', textDecoration: 'underline' }}>changer</button>}
-              </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-                {['Atelier le plus proche', 'Stockage sécurisé', 'Chez moi'].map(d => <span key={d} style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td2)', padding: '3px 9px', borderRadius: 20, background: 'rgba(255,255,255,0.06)', border: '1px solid var(--bd)' }}>{d}</span>)}
-              </div>
-              <Cta href="/auto/depannage" label={breakdown ? `Dépannage · ${BREAKDOWNS.find(b => b.key === breakdown)?.label}` : 'Demander un dépannage'} />
             </div>
-          )}
+
+            {/* Options selon le « quand » */}
+            {vtcWhen === 'schedule' && (
+              <input type="datetime-local" value={schedAt} onChange={e => setSchedAt(e.target.value)} style={{ ...inp, width: '100%', marginTop: 8, colorScheme: 'dark' }} />
+            )}
+            {vtcWhen === 'hours' && (
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14, marginTop: 8 }}>
+                <button onClick={() => setHours(h => Math.max(1, h - 1))} style={stepBtn}>−</button>
+                <span style={{ fontFamily: 'var(--fn)', fontSize: 24, color: 'var(--td)', minWidth: 54, textAlign: 'center' }}>{hours} h</span>
+                <button onClick={() => setHours(h => Math.min(12, h + 1))} style={stepBtn}>+</button>
+              </div>
+            )}
+            <Cta href="/auto/vtc" label={vtcWhen === 'now' ? `Commander un taxi · ${TAXI_FLAT} €` : vtcWhen === 'schedule' ? 'Programmer la course' : `Réserver ${hours} h · ${hours * HOUR_RATE} €`} />
+          </div>
+        ))}
+
+        {/* ─────────── LOCATION ─────────── */}
+        {mode === 'location' && (
+          <div>
+            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 4 }}>
+              <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 15, color: 'var(--td)', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Louez maintenant</span>
+              <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 16, color: AZ }}>{cat.price} €<span style={{ fontSize: 10, color: 'var(--td3)' }}>/j</span></span>
+            </div>
+            <div style={{ margin: '6px 0 2px' }}>
+              <input type="range" min={0} max={CATEGORIES.length - 1} step={1} value={catIdx}
+                onChange={e => { setCatIdx(Number(e.target.value)); setCarIdx(0); }} aria-label="Budget" className="auto-budget" style={{ width: '100%' }} />
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--fo)', fontSize: 9, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--td3)', marginTop: 2 }}>
+                <span>€ Citadine</span><span style={{ color: AZ, fontWeight: 700 }}>{cat.name}</span><span>Hypercar €€€</span>
+              </div>
+            </div>
+
+            {/* 4 véhicules de la catégorie (image en fond, sélectionnables) */}
+            <div className="hero-domabar" style={{ display: 'flex', gap: 8, overflowX: 'auto', padding: '8px 2px 4px', scrollSnapType: 'x mandatory' }}>
+              {cat.cars.map((c, i) => {
+                const a = i === carIdx;
+                return (
+                  <button key={c.model} onClick={() => setCarIdx(i)} aria-pressed={a}
+                    style={{ position: 'relative', flex: '0 0 auto', width: 150, height: 96, borderRadius: 12, overflow: 'hidden', cursor: 'pointer', scrollSnapAlign: 'start', border: `2px solid ${a ? AZ : 'transparent'}`, boxShadow: a ? `0 0 16px ${AZ}55` : 'none', background: 'rgba(255,255,255,0.04)', padding: 0, transition: 'all .18s' }}>
+                    <CarBg img={c.img} emoji={cat.emoji} h={96} />
+                    <div aria-hidden style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 40%, rgba(5,12,23,0.9) 100%)' }} />
+                    <span style={{ position: 'absolute', left: 8, right: 8, bottom: 7, textAlign: 'left', fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: '#fff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>{c.model}</span>
+                    {a && <span style={{ position: 'absolute', top: 6, right: 6, width: 18, height: 18, borderRadius: '50%', background: AZ, color: '#fff', fontSize: 11, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>✓</span>}
+                  </button>
+                );
+              })}
+            </div>
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)', margin: '4px 2px 0' }}>{selCar.model} · {cat.specs} · livraison ou retrait</div>
+            <Cta href={`/auto/location?cat=${cat.key}`} label={`Louer · ${selCar.model}`} />
+          </div>
+        )}
+
+        {/* ─────────── DÉPANNAGE ─────────── */}
+        {mode === 'depannage' && (
+          <div>
+            <div className="dep-express" style={{ position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', gap: 11, borderRadius: 14, border: '1px solid rgba(212,75,36,0.5)', background: 'linear-gradient(135deg, rgba(212,75,36,0.18), rgba(212,75,36,0.05))', padding: '11px 13px' }}>
+              <span className="dep-beacon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: 'rgba(212,75,36,0.24)', border: '1px solid rgba(212,75,36,0.55)', fontSize: 19, flexShrink: 0 }}>🚨</span>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 15.5, color: 'var(--td)', textTransform: 'uppercase' }}>Dépannage express</div>
+                <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td2)' }}>Dépanneuse en route · dès {towEta} min</div>
+              </div>
+            </div>
+
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', margin: '11px 2px 6px' }}>Quel est le problème ?</div>
+            <div className="g-3" style={{ gap: 6 }}>
+              {BREAKDOWNS.map(b => {
+                const a = breakdown === b.key;
+                return (
+                  <button key={b.key} onClick={() => setBreakdown(a ? null : b.key)} aria-pressed={a}
+                    style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, padding: '8px 4px', borderRadius: 10, cursor: 'pointer', border: `1px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? `${AZ}1c` : 'rgba(255,255,255,0.04)', boxShadow: a ? `0 0 14px ${AZ}40` : 'none', transition: 'all .15s' }}>
+                    <span style={{ position: 'relative', width: 34, height: 34, borderRadius: 8, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.05)' }}>
+                      <CarBg img={b.img} emoji={b.emoji} h={34} />
+                    </span>
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 600, color: a ? AZ : 'var(--td2)', textAlign: 'center', lineHeight: 1.1 }}>{b.label}</span>
+                    {a && <span style={{ position: 'absolute', top: 4, right: 4, width: 15, height: 15, borderRadius: '50%', background: AZ, color: '#fff', fontSize: 9, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✓</span>}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: 7, margin: '11px 2px 5px' }}>
+              <span style={{ fontSize: 13 }}>📍</span>
+              <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--fo)', fontSize: 11.5, color: dest ? 'var(--td)' : 'var(--td3)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{dest ? `Livrer à : ${dest.label}` : 'Livrer le véhicule (saisis le lieu ↑)'}</span>
+              {dest && <button onClick={onClearDest} style={{ background: 'none', border: 'none', color: 'var(--td3)', fontFamily: 'var(--fo)', fontSize: 10.5, cursor: 'pointer', textDecoration: 'underline' }}>changer</button>}
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+              {['Atelier le plus proche', 'Stockage sécurisé', 'Chez moi'].map(d => <span key={d} style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td2)', padding: '3px 9px', borderRadius: 20, background: 'rgba(255,255,255,0.06)', border: '1px solid var(--bd)' }}>{d}</span>)}
+            </div>
+            <Cta href="/auto/depannage" label={breakdown ? `Dépannage · ${BREAKDOWNS.find(b => b.key === breakdown)?.label}` : 'Demander un dépannage'} />
+          </div>
+        )}
         </motion.div>
       </AnimatePresence>
     </div>
   );
 }
 
+const stepBtn: React.CSSProperties = { width: 40, height: 40, borderRadius: 10, border: `1px solid ${AZ}66`, background: `${AZ}14`, color: AZ, fontSize: 22, cursor: 'pointer', lineHeight: 1 };
 function Metric({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
   return (
     <div>
