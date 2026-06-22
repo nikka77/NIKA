@@ -5,7 +5,7 @@
 // vert = position active (à la position exacte). Intro : globe sombre → plonge sur toi
 // (repli Nice si refusé/lent). Le swipe entre domaines fait VOLER la carte vers le lieu
 // du domaine ; chaque domaine (food…news) est une scène. Recherche NIKO en haut.
-import { useEffect, useRef, useState, useCallback, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, useCallback, type CSSProperties, type ReactNode } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -14,6 +14,8 @@ import { DOMAINS } from '@/lib/constants';
 import { MAP_STYLE, NICE } from '@/lib/map';
 import { useLocationStore } from '@/lib/store';
 import FoodModule, { type Pro as FoodPro } from '@/components/home/FoodModule';
+import AutoModule, { type AutoMode } from '@/components/home/AutoModule';
+import SmartSearch from '@/components/home/SmartSearch';
 import type { NightEntry } from '@/lib/food';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
@@ -66,6 +68,7 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
   const [stage, setStage] = useState<'globe' | 'rest'>('globe');
   const [index, setIndex] = useState(0);
   const [mapReady, setMapReady] = useState(false);
+  const [autoMode, setAutoMode] = useState<AutoMode>('vtc');
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<{ map: any; maplibregl: any } | null>(null);
   const markerRef = useRef<any>(null);
@@ -149,7 +152,7 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
     // si la position arrive après le repli, on plonge dessus (ou recentre sur la scène 0)
     if (coords) {
       if (!arrivedRef.current) arrive();
-      else if (index === 0) h.map.flyTo({ center: ll, zoom: 15, duration: 1600, essential: true });
+      else if (SCENES[index].id === 'accueil' || SCENES[index].domain === 'auto') h.map.flyTo({ center: ll, zoom: 15, duration: 1600, essential: true });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coords, status, mapReady, arrive]);
@@ -158,10 +161,22 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
   useEffect(() => {
     if (!arrivedRef.current || !mapRef.current) return;
     const c = useLocationStore.getState().coords;
-    const center: [number, number] = index === 0 && c ? [c.lng, c.lat] : SCENES[index].center;
-    const zoom = index === 0 ? 15 : SCENES[index].zoom;
+    // Accueil ET Auto recentrent sur TA position (services relatifs à où tu es).
+    const wantsUser = (SCENES[index].id === 'accueil' || SCENES[index].domain === 'auto') && !!c;
+    const center: [number, number] = wantsUser && c ? [c.lng, c.lat] : SCENES[index].center;
+    const zoom = wantsUser ? 15 : SCENES[index].zoom;
     mapRef.current.map.flyTo({ center, zoom, pitch: 0, bearing: 0, duration: 1900, curve: 1.4, essential: true });
   }, [index]);
+
+  // La barre du haut MORPHE selon le contexte (NIKO par défaut, ou le mode AUTO).
+  const isAuto = scene.domain === 'auto';
+  const searchCfg: { placeholders: string[]; icon?: ReactNode; onSubmit: () => void; label: string } = !isAuto
+    ? { placeholders: ['Demande à NIKO : pizza, bateau, dépannage…', "Un VTC pour l'aéroport ?", 'Une socca dans le Vieux-Nice ?', 'Un skipper à Villefranche ?'], onSubmit: () => doSearch(), label: 'Demander à NIKO' }
+    : autoMode === 'vtc'
+      ? { placeholders: ['Où vas-tu ?', 'Aéroport Nice T2', 'Gare de Nice-Ville', 'Place Masséna'], icon: <span style={{ fontSize: 16 }}>📍</span>, onSubmit: () => router.push(`/auto/vtc${query.trim() ? `?to=${encodeURIComponent(query.trim())}` : ''}`), label: 'Destination VTC' }
+      : autoMode === 'location'
+        ? { placeholders: ['Lieu de retrait ou type de véhicule', 'Citadine', 'Cabriolet', 'Utilitaire'], icon: <span style={{ fontSize: 16 }}>🔑</span>, onSubmit: () => router.push('/auto/location'), label: 'Location' }
+        : { placeholders: ['Lieu de livraison du véhicule', 'Atelier le plus proche', 'Chez moi'], icon: <span style={{ fontSize: 16 }}>🔧</span>, onSubmit: () => router.push('/auto/depannage'), label: 'Dépannage' };
 
   return (
     <header style={{ position: 'relative', minHeight: '100svh', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
@@ -190,16 +205,9 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: stage === 'rest' ? 1 : 0 }} transition={{ duration: 0.7 }}
         style={{ position: 'relative', zIndex: 3, flex: 1, display: 'flex', flexDirection: 'column', pointerEvents: 'none' }}>
 
-        {/* Recherche NIKO — en haut (ancienne position du témoin GPS) */}
+        {/* Recherche premium (morphe selon le contexte : NIKO / VTC / Location / Dépannage) */}
         <div style={{ padding: '1.2rem 1.3rem 0.2rem', maxWidth: 520, width: '100%', margin: '0 auto', pointerEvents: 'auto' }}>
-          <div style={{ position: 'relative' }}>
-            <input value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && doSearch()}
-              placeholder="Demande à NIKO : pizza, bateau, dépannage…"
-              style={{ width: '100%', background: 'rgba(5,12,23,0.72)', border: '1px solid var(--bd2)', borderRadius: 40, padding: '14px 52px 14px 20px', fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td)', outline: 'none', backdropFilter: 'blur(8px)' }} />
-            <button onClick={() => doSearch()} aria-label="Rechercher" style={{ position: 'absolute', right: 6, top: '50%', transform: 'translateY(-50%)', width: 40, height: 40, borderRadius: '50%', background: 'var(--az)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 18px rgba(0,148,212,0.45)' }}>
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
-            </button>
-          </div>
+          <SmartSearch value={query} onChange={setQuery} onSubmit={searchCfg.onSubmit} placeholders={searchCfg.placeholders} icon={searchCfg.icon} accent="#0094D4" submitLabel={searchCfg.label} />
         </div>
 
         {/* Bulles-domaines */}
@@ -229,6 +237,8 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
             <motion.div key={scene.id} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.45 }}>
               {scene.domain === 'food' ? (
                 <FoodModule pros={foodPros} nightPros={nightPros} place="Cours Saleya" />
+              ) : scene.domain === 'auto' ? (
+                <AutoModule mode={autoMode} onMode={setAutoMode} />
               ) : scene.domain ? (
                 <div style={{ display: 'inline-block', textAlign: 'left', padding: '12px 15px', borderRadius: 16, background: 'rgba(5,12,23,0.66)', border: `1px solid ${(DOMAINS.find(d => d.slug === scene.domain)?.color) || 'var(--bd2)'}`, backdropFilter: 'blur(8px)', maxWidth: 340 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 5 }}>
