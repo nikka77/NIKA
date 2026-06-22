@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { DRIVERS, TOWS, distKm, etaMin, type LngLat } from '@/lib/autoData';
 
 const AZ = '#0094D4';
+const OK = '#22DD88'; // vert « validé » — encoche de sélection dépannage
 export type AutoMode = 'vtc' | 'location' | 'depannage';
 const TAXI_FLAT = 10;
 const HOUR_RATE = 35;
@@ -95,6 +96,14 @@ function VideoBg({ src, poster, emoji, h }: { src: string; poster: string; emoji
       </video>
     </div>
   );
+}
+// Encoche de sélection : ✓ vert sur fond transparent (sélectionné) / anneau discret (non)
+function CheckMark({ on, size = 20 }: { on: boolean; size?: number }) {
+  if (on) return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={OK} strokeWidth={3.6} strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 2.5px rgba(0,0,0,0.9))' }}><path d="M20 6 9 17l-5-5" /></svg>
+  );
+  const r = Math.round(size * 0.72);
+  return <span aria-hidden style={{ display: 'block', width: r, height: r, borderRadius: '50%', border: '1.5px solid rgba(255,255,255,0.55)', background: 'rgba(5,12,23,0.35)', boxShadow: '0 1px 3px rgba(0,0,0,0.5)' }} />;
 }
 
 export type AutoModuleProps = {
@@ -326,45 +335,49 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
               </div>
             </div>
 
-            <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', margin: '11px 2px 6px' }}>Quel est le problème ?</div>
-            <div className="g-3" style={{ gap: 8 }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', margin: '12px 2px 8px' }}>
+              <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)' }}>Quel est le problème ?</span>
+              {breakdowns.length > 0 && <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 800, color: OK }}>{breakdowns.length} sélectionné{breakdowns.length > 1 ? 's' : ''}</span>}
+            </div>
+            <div className="g-3" style={{ gap: 9 }}>
               {BREAKDOWNS.map(b => {
                 const a = breakdowns.includes(b.key);
                 return (
                   <button key={b.key} onClick={() => setBreakdowns(s => s.includes(b.key) ? s.filter(k => k !== b.key) : [...s, b.key])} aria-pressed={a}
-                    style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, padding: '4px 2px 2px', borderRadius: 10, cursor: 'pointer', border: 'none', background: 'none', transition: 'all .15s' }}>
-                    {/* encoche (case à cocher) — multi-sélection */}
-                    <span aria-hidden style={{ position: 'absolute', top: 2, right: 6, width: 17, height: 17, borderRadius: 5, border: `1.5px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? AZ : 'transparent', color: '#fff', fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: a ? `0 0 8px ${AZ}77` : 'none', transition: 'all .15s' }}>{a ? '✓' : ''}</span>
-                    <span style={{ position: 'relative', width: 60, height: 60, borderRadius: 15, overflow: 'hidden', display: 'block', filter: a ? `drop-shadow(0 2px 12px ${AZ}88)` : 'none', opacity: a ? 1 : 0.92, transition: 'all .15s' }}>
-                      <CarBg img={b.img} emoji={b.emoji} h={60} fit="cover" />
+                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, padding: 0, cursor: 'pointer', border: 'none', background: 'none', transition: 'all .15s' }}>
+                    <span style={{ position: 'relative', width: 72, height: 72, borderRadius: 16, overflow: 'hidden', display: 'block', boxShadow: a ? `0 0 0 2px ${OK}, 0 4px 16px ${OK}55` : 'none', opacity: a ? 1 : 0.86, transition: 'all .15s' }}>
+                      <CarBg img={b.img} emoji={b.emoji} h={72} fit="cover" />
+                      <span style={{ position: 'absolute', top: 5, right: 5 }}><CheckMark on={a} size={22} /></span>
                     </span>
-                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: a ? 700 : 600, color: a ? AZ : 'var(--td2)', textAlign: 'center', lineHeight: 1.1 }}>{b.label}</span>
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: a ? 800 : 600, color: a ? OK : 'var(--td2)', textAlign: 'center', lineHeight: 1.1 }}>{b.label}</span>
                   </button>
                 );
               })}
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: 7, margin: '11px 2px 5px' }}>
-              <span style={{ fontSize: 13 }}>📍</span>
-              <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--fo)', fontSize: 11.5, color: dest ? 'var(--td)' : 'var(--td3)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{dest ? `Livrer à : ${dest.label}` : 'Livrer le véhicule (saisis le lieu ↑)'}</span>
-              {dest && <button onClick={onClearDest} style={{ background: 'none', border: 'none', color: 'var(--td3)', fontFamily: 'var(--fo)', fontSize: 10.5, cursor: 'pointer', textDecoration: 'underline' }}>changer</button>}
-            </div>
-            <div className="g-3" style={{ gap: 7 }}>
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', margin: '13px 2px 8px' }}>Où livrer le véhicule ?</div>
+            <div className="g-3" style={{ gap: 9 }}>
               {DESTS.map(d => {
                 const a = depDest === d.key;
                 return (
                   <button key={d.key} onClick={() => setDepDest(a ? null : d.key)} aria-pressed={a}
-                    style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, padding: '4px 2px 2px', borderRadius: 10, cursor: 'pointer', border: 'none', background: 'none', transition: 'all .15s' }}>
-                    {/* encoche — choix unique */}
-                    <span aria-hidden style={{ position: 'absolute', top: 1, right: 6, width: 15, height: 15, borderRadius: 5, border: `1.5px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? AZ : 'transparent', color: '#fff', fontSize: 9, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: a ? `0 0 8px ${AZ}77` : 'none', transition: 'all .15s' }}>{a ? '✓' : ''}</span>
-                    <span style={{ position: 'relative', width: 42, height: 42, borderRadius: 11, overflow: 'hidden', display: 'block', filter: a ? `drop-shadow(0 2px 9px ${AZ}88)` : 'none', opacity: a ? 1 : 0.9, transition: 'all .15s' }}>
-                      <CarBg img={d.img} emoji={d.emoji} h={42} fit="cover" />
+                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, padding: 0, cursor: 'pointer', border: 'none', background: 'none', transition: 'all .15s' }}>
+                    <span style={{ position: 'relative', width: 54, height: 54, borderRadius: 14, overflow: 'hidden', display: 'block', boxShadow: a ? `0 0 0 2px ${OK}, 0 3px 12px ${OK}55` : 'none', opacity: a ? 1 : 0.86, transition: 'all .15s' }}>
+                      <CarBg img={d.img} emoji={d.emoji} h={54} fit="cover" />
+                      <span style={{ position: 'absolute', top: 3, right: 3 }}><CheckMark on={a} size={17} /></span>
                     </span>
-                    <span style={{ fontFamily: 'var(--fo)', fontSize: 9, fontWeight: a ? 700 : 600, color: a ? AZ : 'var(--td2)', textAlign: 'center', lineHeight: 1.05 }}>{d.label}</span>
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: a ? 800 : 600, color: a ? OK : 'var(--td2)', textAlign: 'center', lineHeight: 1.05 }}>{d.label}</span>
                   </button>
                 );
               })}
             </div>
+            {dest && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 7, margin: '8px 2px 0' }}>
+                <span style={{ fontSize: 12 }}>📍</span>
+                <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>Adresse : {dest.label}</span>
+                <button onClick={onClearDest} style={{ background: 'none', border: 'none', color: 'var(--td3)', fontFamily: 'var(--fo)', fontSize: 10.5, cursor: 'pointer', textDecoration: 'underline' }}>changer</button>
+              </div>
+            )}
             <Cta href="/auto/depannage" label={breakdowns.length === 0 ? 'Demander un dépannage' : breakdowns.length === 1 ? `Dépannage · ${BREAKDOWNS.find(b => b.key === breakdowns[0])?.label}` : `Dépannage · ${breakdowns.length} problèmes`} />
           </div>
         )}
