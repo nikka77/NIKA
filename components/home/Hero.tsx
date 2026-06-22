@@ -226,7 +226,7 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
     items.forEach(it => {
       autoMarkersRef.current.push(new gl.Marker({ element: autoPinEl(autoMode, it.id === autoSel) }).setLngLat(offsetPos(base, it)).addTo(map));
     });
-    if (autoMode === 'vtc' && autoDest) {
+    if ((autoMode === 'vtc' || autoMode === 'depannage') && autoDest) {
       try {
         map.addSource('auto-route', { type: 'geojson', data: { type: 'Feature', geometry: { type: 'LineString', coordinates: [[base.lng, base.lat], [autoDest.lng, autoDest.lat]] }, properties: {} } });
         map.addLayer({ id: 'auto-route', type: 'line', source: 'auto-route', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#00C2FF', 'line-width': 3.5, 'line-dasharray': [1.4, 1], 'line-opacity': 0.92 } });
@@ -251,8 +251,8 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
     : autoMode === 'vtc'
       ? { placeholders: ['Où vas-tu ?', 'Aéroport Nice T2', 'Gare de Nice-Ville', 'Place Masséna'], icon: <span style={{ fontSize: 16 }}>📍</span>, onSubmit: () => geocodeDest(query), label: 'Destination VTC' }
       : autoMode === 'location'
-        ? { placeholders: ['Lieu de retrait ou type de véhicule', 'Citadine', 'Cabriolet', 'Utilitaire'], icon: <span style={{ fontSize: 16 }}>🔑</span>, onSubmit: () => router.push('/auto/location'), label: 'Location' }
-        : { placeholders: ['Lieu de livraison du véhicule', 'Atelier le plus proche', 'Chez moi'], icon: <span style={{ fontSize: 16 }}>🔧</span>, onSubmit: () => router.push('/auto/depannage'), label: 'Dépannage' };
+        ? { placeholders: ['Lieu de retrait du véhicule', 'Aéroport Nice T2', 'Gare de Nice-Ville', 'Mon adresse'], icon: <span style={{ fontSize: 16 }}>🔑</span>, onSubmit: () => geocodeDest(query), label: 'Lieu de retrait' }
+        : { placeholders: ['Lieu de livraison du véhicule', 'Atelier le plus proche', 'Chez moi'], icon: <span style={{ fontSize: 16 }}>🔧</span>, onSubmit: () => geocodeDest(query), label: 'Lieu de livraison' };
 
   return (
     <header style={{ position: 'relative', minHeight: '100svh', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
@@ -314,7 +314,7 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
               {scene.domain === 'food' ? (
                 <FoodModule pros={foodPros} nightPros={nightPros} place="Cours Saleya" />
               ) : scene.domain === 'auto' ? (
-                <AutoModule mode={autoMode} onMode={setAutoMode} user={coords} sel={autoSel} onSelect={setAutoSel}
+                <AutoModule mode={autoMode} onMode={setAutoMode} user={coords}
                   dest={autoDest ? { label: autoDest.label } : null} trip={trip} onClearDest={() => { setAutoDest(null); setQuery(''); }} />
               ) : scene.domain ? (
                 <div style={{ display: 'inline-block', textAlign: 'left', padding: '12px 15px', borderRadius: 16, background: 'rgba(5,12,23,0.66)', border: `1px solid ${(DOMAINS.find(d => d.slug === scene.domain)?.color) || 'var(--bd2)'}`, backdropFilter: 'blur(8px)', maxWidth: 340 }}>

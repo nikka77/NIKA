@@ -81,6 +81,11 @@ ul { list-style: none; }
 .maplibregl-ctrl-attrib { background: rgba(5,12,23,0.6) !important; font-size: 9px; }
 .maplibregl-ctrl-attrib a { color: var(--td2) !important; }
 
+/* ===== AUTO — slider budget (Location) ===== */
+.auto-budget { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 4px; background: linear-gradient(90deg, #0094D4, #00C2FF); outline: none; cursor: pointer; }
+.auto-budget::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #0094D4; box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer; }
+.auto-budget::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #0094D4; box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer; }
+
 /* ===== SCROLL SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg2); }
