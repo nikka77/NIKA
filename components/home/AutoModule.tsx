@@ -1,11 +1,13 @@
 'use client';
-// components/home/AutoModule.tsx — Module AUTO (réplique perso du module FOOD).
-// « Mes véhicules » repliable (CRUD localStorage) + sélecteur 3 modes
-// VTC (défaut) / Location / Dépannage, avec contenu + ETA par mode (données démo v1).
-// Le `mode` est contrôlé par le Hero (la barre de recherche du haut morphe avec lui).
+// components/home/AutoModule.tsx — Module AUTO v2, intégré à la carte-héros.
+// « Mes véhicules » repliable (localStorage) + 3 modes VTC / Location / Dépannage.
+// Les entités (chauffeurs, locations, dépanneurs) sont AUSSI des pins sur la carte
+// (gérés par le Hero) : taper une carte la sélectionne → son pin se surligne + recadrage.
+// VTC : quand une destination est saisie dans la barre, on affiche l'itinéraire estimé.
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { DRIVERS, RENTALS, TOWS, distKm, etaMin, type LngLat } from '@/lib/autoData';
 
 const AZ = '#0094D4';
 export type AutoMode = 'vtc' | 'location' | 'depannage';
@@ -15,20 +17,6 @@ const MODES: { key: AutoMode; label: string; icon: string }[] = [
   { key: 'location', label: 'Location', icon: '🔑' },
   { key: 'depannage', label: 'Dépannage', icon: '🔧' },
 ];
-
-// ── Données démo (v1 — brancher le vrai backend plus tard) ──
-const DRIVERS = [
-  { name: 'Karim', car: 'Tesla Model 3', eta: 4, rating: 4.9 },
-  { name: 'Sofia', car: 'Mercedes Classe E', eta: 7, rating: 4.8 },
-  { name: 'Yanis', car: 'Peugeot 508', eta: 9, rating: 4.7 },
-];
-const RENTALS = [
-  { company: 'Nice Auto Loc', model: 'Renault Clio', price: '39 €/j', mode: 'Livraison' },
-  { company: 'Riviera Rent', model: 'Fiat 500 cabrio', price: '59 €/j', mode: 'Retrait' },
-  { company: 'AzurCars', model: 'Tesla Model 3', price: '95 €/j', mode: 'Livraison' },
-];
-const DEPANNAGE_ETA = 18;
-const DEPANNAGE_DESTS = ['Livraison à un lieu', 'Réparation (atelier)', 'Stockage sécurisé'];
 
 // ── Mes véhicules (localStorage) ──
 type Vehicle = { id: string; label: string; plate: string; type: string };
@@ -41,14 +29,26 @@ const VTYPES: { key: string; icon: string; label: string }[] = [
 ];
 const vicon = (t: string) => VTYPES.find(v => v.key === t)?.icon ?? '🚗';
 
+const NICE_LL: LngLat = { lng: 7.262, lat: 43.7102 };
+
 const card: React.CSSProperties = {
-  maxWidth: 384, margin: '0 auto', background: 'rgba(5,12,23,0.72)', border: `1px solid ${AZ}55`,
-  borderRadius: 18, backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', padding: 12,
-  textAlign: 'left', boxShadow: '0 10px 30px rgba(0,0,0,0.35)', maxHeight: '58vh', overflowY: 'auto',
+  maxWidth: 384, margin: '0 auto', background: 'rgba(5,12,23,0.74)', border: `1px solid ${AZ}55`,
+  borderRadius: 18, backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: 12,
+  textAlign: 'left', boxShadow: '0 14px 40px rgba(0,0,0,0.42)', maxHeight: '60vh', overflowY: 'auto',
 };
 const chip: React.CSSProperties = { fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td2)', padding: '3px 9px', borderRadius: 20, background: 'rgba(255,255,255,0.06)', border: '1px solid var(--bd)' };
+const inp: React.CSSProperties = { background: 'rgba(255,255,255,0.05)', border: '1px solid var(--bd2)', borderRadius: 8, padding: '8px 10px', fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td)', outline: 'none' };
 
-export default function AutoModule({ mode, onMode }: { mode: AutoMode; onMode: (m: AutoMode) => void }) {
+export type AutoModuleProps = {
+  mode: AutoMode; onMode: (m: AutoMode) => void;
+  user: LngLat | null;
+  sel: string | null; onSelect: (id: string) => void;
+  dest: { label: string } | null;
+  trip: { km: number; eta: number; price: number } | null;
+  onClearDest: () => void;
+};
+
+export default function AutoModule({ mode, onMode, user, sel, onSelect, dest, trip, onClearDest }: AutoModuleProps) {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
   const [vopen, setVopen] = useState(false);
   const [adding, setAdding] = useState(false);
@@ -68,6 +68,11 @@ export default function AutoModule({ mode, onMode }: { mode: AutoMode; onMode: (
     setAdding(false);
   };
   const removeVehicle = (id: string) => setVehicles(v => v.filter(x => x.id !== id));
+
+  const base = user ?? NICE_LL;
+  const km = (dx: number, dy: number) => distKm(base.lng, base.lat, base.lng + dx, base.lat + dy);
+  const drivers = [...DRIVERS].map(d => ({ ...d, eta: etaMin(km(d.dx, d.dy)) })).sort((a, b) => a.eta - b.eta);
+  const tows = [...TOWS].map(t => ({ ...t, eta: etaMin(km(t.dx, t.dy)) })).sort((a, b) => a.eta - b.eta);
 
   return (
     <div className="hero-domabar" style={card}>
@@ -132,50 +137,66 @@ export default function AutoModule({ mode, onMode }: { mode: AutoMode; onMode: (
 
       {/* ── Contenu par mode ── */}
       <AnimatePresence mode="wait">
-        <motion.div key={mode} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }}>
-          {mode === 'vtc' && (
+        <motion.div key={mode + (dest ? '-trip' : '')} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }}>
+          {mode === 'vtc' && (dest && trip ? (
             <div>
-              <Row label={`Chauffeur le plus proche · ${DRIVERS[0].eta} min`} hint="Choisis ta destination dans la barre ↑" />
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 8 }}>
-                {DRIVERS.map(d => (
-                  <div key={d.name} style={{ display: 'flex', alignItems: 'center', gap: 9, padding: '7px 9px', borderRadius: 10, background: 'rgba(255,255,255,0.04)' }}>
-                    <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 30, height: 30, borderRadius: '50%', background: `${AZ}22`, border: `1px solid ${AZ}55`, fontSize: 14 }}>🚖</span>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: 'var(--td)' }}>{d.name} <span style={{ color: 'var(--gold)', fontWeight: 600 }}>★ {d.rating}</span></div>
-                      <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>{d.car}</div>
-                    </div>
-                    <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 13, color: AZ }}>{d.eta} min</span>
-                  </div>
-                ))}
+              {/* Récap course estimée */}
+              <div style={{ borderRadius: 12, border: `1px solid ${AZ}66`, background: `${AZ}14`, padding: '10px 12px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 6 }}>
+                  <span style={{ fontSize: 14 }}>📍</span>
+                  <span style={{ flex: 1, minWidth: 0, fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700, color: 'var(--td)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{dest.label}</span>
+                  <button onClick={onClearDest} style={{ background: 'none', border: 'none', color: 'var(--td3)', fontFamily: 'var(--fo)', fontSize: 10.5, cursor: 'pointer', textDecoration: 'underline' }}>changer</button>
+                </div>
+                <div style={{ display: 'flex', gap: 14 }}>
+                  <Metric label="Prise en charge" value={`${drivers[0].eta} min`} />
+                  <Metric label="Trajet" value={`${trip.km.toFixed(1)} km · ${trip.eta} min`} />
+                  <Metric label="Estimation" value={`${trip.price.toFixed(1)} €`} accent />
+                </div>
               </div>
-              <Cta href="/auto/vtc" label="Commander un VTC →" />
+              <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', margin: '7px 2px 0' }}>{drivers[0].name} · {drivers[0].car} · ★ {drivers[0].rating}</div>
+              <Cta href={`/auto/vtc?to=${encodeURIComponent(dest.label)}`} label={`Commander · ${trip.price.toFixed(1)} €`} />
             </div>
-          )}
+          ) : (
+            <div>
+              <Row label={`${drivers.length} chauffeurs autour de toi`} hint="Choisis ta destination dans la barre ↑" />
+              <List>
+                {drivers.map(d => (
+                  <Item key={d.id} active={sel === d.id} onClick={() => onSelect(d.id)} icon="🚖"
+                    title={<>{d.name} <span style={{ color: 'var(--gold)', fontWeight: 600 }}>★ {d.rating}</span></>}
+                    sub={d.car} right={`${d.eta} min`} />
+                ))}
+              </List>
+            </div>
+          ))}
 
           {mode === 'location' && (
             <div>
-              <Row label={`${RENTALS.length} véhicules disponibles près de toi`} />
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 8 }}>
-                {RENTALS.map(r => (
-                  <div key={r.company + r.model} style={{ display: 'flex', alignItems: 'center', gap: 9, padding: '7px 9px', borderRadius: 10, background: 'rgba(255,255,255,0.04)' }}>
-                    <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 30, height: 30, borderRadius: '50%', background: `${AZ}22`, border: `1px solid ${AZ}55`, fontSize: 14 }}>🔑</span>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: 'var(--td)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{r.model}</div>
-                      <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>{r.company} · {r.mode}</div>
-                    </div>
-                    <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 12.5, color: AZ }}>{r.price}</span>
-                  </div>
-                ))}
-              </div>
-              <Cta href="/auto/location" label="Voir les locations →" />
+              <Row label={`${RENTALS.length} véhicules dispo près de toi`} />
+              <List>
+                {RENTALS.map(r => {
+                  const d = km(r.dx, r.dy);
+                  return (
+                    <Item key={r.id} active={sel === r.id} onClick={() => onSelect(r.id)} icon="🔑"
+                      title={r.model} sub={`${r.company} · ${r.mode}`} right={r.price} rightSub={`${d.toFixed(1)} km`} />
+                  );
+                })}
+              </List>
+              <Cta href="/auto/location" label="Voir toutes les locations →" />
             </div>
           )}
 
           {mode === 'depannage' && (
             <div>
-              <Row label={`Dépanneur · ETA moyen ${DEPANNAGE_ETA} min`} hint="Où livrer ton véhicule ?" />
+              <Row label={`Dépanneur · dès ${tows[0].eta} min`} hint="Où livrer ton véhicule ?" />
+              <List>
+                {tows.map(t => (
+                  <Item key={t.id} active={sel === t.id} onClick={() => onSelect(t.id)} icon="🔧"
+                    title={<>{t.name} <span style={{ color: 'var(--gold)', fontWeight: 600 }}>★ {t.rating}</span></>}
+                    sub="Disponible 24/7" right={`${t.eta} min`} />
+                ))}
+              </List>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 8 }}>
-                {DEPANNAGE_DESTS.map(d => <span key={d} style={chip}>{d}</span>)}
+                {['Livraison à un lieu', 'Réparation (atelier)', 'Stockage sécurisé'].map(d => <span key={d} style={chip}>{d}</span>)}
               </div>
               <Cta href="/auto/depannage" label="Demander un dépannage →" />
             </div>
@@ -186,6 +207,14 @@ export default function AutoModule({ mode, onMode }: { mode: AutoMode; onMode: (
   );
 }
 
+function Metric({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
+  return (
+    <div>
+      <div style={{ fontFamily: 'var(--fo)', fontSize: 9, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)' }}>{label}</div>
+      <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 13.5, color: accent ? AZ : 'var(--td)', marginTop: 1 }}>{value}</div>
+    </div>
+  );
+}
 function Row({ label, hint }: { label: string; hint?: string }) {
   return (
     <div>
@@ -194,10 +223,27 @@ function Row({ label, hint }: { label: string; hint?: string }) {
     </div>
   );
 }
-function Cta({ href, label }: { href: string; label: string }) {
+function List({ children }: { children: React.ReactNode }) {
+  return <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 8 }}>{children}</div>;
+}
+function Item({ active, onClick, icon, title, sub, right, rightSub }: { active: boolean; onClick: () => void; icon: string; title: React.ReactNode; sub: string; right: string; rightSub?: string }) {
   return (
-    <Link href={href} style={{ marginTop: 9, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, padding: '9px 12px', borderRadius: 11, background: AZ, color: '#fff', fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 11.5, letterSpacing: '0.04em', textTransform: 'uppercase' }}>{label}</Link>
+    <button onClick={onClick} aria-pressed={active}
+      style={{ display: 'flex', alignItems: 'center', gap: 9, padding: '7px 9px', borderRadius: 10, cursor: 'pointer', textAlign: 'left', width: '100%', border: `1px solid ${active ? AZ : 'transparent'}`, background: active ? `${AZ}1c` : 'rgba(255,255,255,0.04)', boxShadow: active ? `0 0 14px ${AZ}3a` : 'none', transition: 'all .18s' }}>
+      <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 30, height: 30, borderRadius: '50%', background: `${AZ}22`, border: `1px solid ${AZ}55`, fontSize: 14, flexShrink: 0 }}>{icon}</span>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: 'var(--td)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{title}</div>
+        <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>{sub}</div>
+      </div>
+      <div style={{ textAlign: 'right', flexShrink: 0 }}>
+        <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 13, color: AZ }}>{right}</div>
+        {rightSub && <div style={{ fontFamily: 'var(--fo)', fontSize: 9, color: 'var(--td3)' }}>{rightSub}</div>}
+      </div>
+    </button>
   );
 }
-
-const inp: React.CSSProperties = { background: 'rgba(255,255,255,0.05)', border: '1px solid var(--bd2)', borderRadius: 8, padding: '8px 10px', fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td)', outline: 'none' };
+function Cta({ href, label }: { href: string; label: string }) {
+  return (
+    <Link href={href} style={{ marginTop: 9, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, padding: '10px 12px', borderRadius: 11, background: AZ, color: '#fff', fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 12, letterSpacing: '0.04em', textTransform: 'uppercase', boxShadow: `0 6px 20px ${AZ}55` }}>{label}</Link>
+  );
+}

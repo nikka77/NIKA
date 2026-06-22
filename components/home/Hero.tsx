@@ -16,10 +16,33 @@ import { useLocationStore } from '@/lib/store';
 import FoodModule, { type Pro as FoodPro } from '@/components/home/FoodModule';
 import AutoModule, { type AutoMode } from '@/components/home/AutoModule';
 import SmartSearch from '@/components/home/SmartSearch';
+import { DRIVERS, RENTALS, TOWS, offsetPos, distKm, etaMin, priceVtc } from '@/lib/autoData';
 import type { NightEntry } from '@/lib/food';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+// Pins AUTO sur la carte (chauffeurs / locations / dépanneurs) + destination VTC.
+function autoPinEl(mode: AutoMode, sel: boolean): HTMLDivElement {
+  const icon = mode === 'vtc' ? '🚖' : mode === 'location' ? '🔑' : '🔧';
+  const sz = sel ? 38 : 30;
+  const el = document.createElement('div');
+  el.style.cssText = `width:${sz}px;height:${sz}px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${sel ? 16 : 13}px;background:rgba(0,148,212,${sel ? 0.34 : 0.2});border:2px solid ${sel ? '#00C2FF' : '#0094D4'};box-shadow:0 2px 10px rgba(0,0,0,.5)${sel ? ',0 0 18px #00C2FF' : ''};transition:all .2s;pointer-events:none`;
+  el.textContent = icon;
+  return el;
+}
+function destPinEl(): HTMLDivElement {
+  const el = document.createElement('div');
+  el.style.cssText = 'width:26px;height:26px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#00C2FF;border:2px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.6);pointer-events:none;display:flex;align-items:center;justify-content:center';
+  el.innerHTML = '<span style="transform:rotate(45deg);font-size:11px">🏁</span>';
+  return el;
+}
+function fitTo(map: any, a: { lng: number; lat: number }, b: { lng: number; lat: number }) {
+  map.fitBounds(
+    [[Math.min(a.lng, b.lng), Math.min(a.lat, b.lat)], [Math.max(a.lng, b.lng), Math.max(a.lat, b.lat)]],
+    { padding: { top: 150, bottom: 300, left: 60, right: 60 }, duration: 1200, maxZoom: 16 },
+  );
+}
 
 type Scene = {
   id: string;
@@ -69,9 +92,12 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
   const [index, setIndex] = useState(0);
   const [mapReady, setMapReady] = useState(false);
   const [autoMode, setAutoMode] = useState<AutoMode>('vtc');
+  const [autoSel, setAutoSel] = useState<string | null>(null);
+  const [autoDest, setAutoDest] = useState<{ lng: number; lat: number; label: string } | null>(null);
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<{ map: any; maplibregl: any } | null>(null);
   const markerRef = useRef<any>(null);
+  const autoMarkersRef = useRef<any[]>([]);
   const arrivedRef = useRef(false);
 
   const coords = useLocationStore(s => s.coords);
@@ -168,12 +194,62 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
     mapRef.current.map.flyTo({ center, zoom, pitch: 0, bearing: 0, duration: 1900, curve: 1.4, essential: true });
   }, [index]);
 
+  // Géocodage de la destination VTC (BAN, gratuit, sans clé) depuis la barre.
+  const geocodeDest = useCallback(async (q: string) => {
+    const t = q.trim();
+    if (!t) { setAutoDest(null); return; }
+    try {
+      const r = await fetch(`https://api-adresse.data.gouv.fr/search/?q=${encodeURIComponent(t)}&limit=1&lat=43.70&lon=7.26`);
+      const f = (await r.json())?.features?.[0];
+      if (f?.geometry?.coordinates) setAutoDest({ lng: f.geometry.coordinates[0], lat: f.geometry.coordinates[1], label: f.properties?.label || t });
+    } catch { /* réseau */ }
+  }, []);
+
+  // Reset sélection/destination au changement de mode ou en quittant AUTO.
+  useEffect(() => { setAutoSel(null); if (autoMode !== 'vtc') setAutoDest(null); }, [autoMode]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { if (scene.domain !== 'auto') { setAutoSel(null); setAutoDest(null); } }, [index]);
+
+  // Pins AUTO sur la carte (chauffeurs/locations/dépanneurs) + destination + itinéraire VTC.
+  useEffect(() => {
+    const h = mapRef.current;
+    if (!h || !mapReady) return;
+    const map = h.map, gl = h.maplibregl;
+    autoMarkersRef.current.forEach(m => m.remove());
+    autoMarkersRef.current = [];
+    if (map.getLayer('auto-route')) map.removeLayer('auto-route');
+    if (map.getSource('auto-route')) map.removeSource('auto-route');
+    if (SCENES[index].domain !== 'auto') return;
+    const c = useLocationStore.getState().coords;
+    const base = c ? { lng: c.lng, lat: c.lat } : { lng: NICE[0], lat: NICE[1] };
+    const items: { id: string; dx: number; dy: number }[] = autoMode === 'vtc' ? DRIVERS : autoMode === 'location' ? RENTALS : TOWS;
+    items.forEach(it => {
+      autoMarkersRef.current.push(new gl.Marker({ element: autoPinEl(autoMode, it.id === autoSel) }).setLngLat(offsetPos(base, it)).addTo(map));
+    });
+    if (autoMode === 'vtc' && autoDest) {
+      try {
+        map.addSource('auto-route', { type: 'geojson', data: { type: 'Feature', geometry: { type: 'LineString', coordinates: [[base.lng, base.lat], [autoDest.lng, autoDest.lat]] }, properties: {} } });
+        map.addLayer({ id: 'auto-route', type: 'line', source: 'auto-route', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#00C2FF', 'line-width': 3.5, 'line-dasharray': [1.4, 1], 'line-opacity': 0.92 } });
+      } catch { /* style pas prêt */ }
+      autoMarkersRef.current.push(new gl.Marker({ element: destPinEl() }).setLngLat([autoDest.lng, autoDest.lat]).addTo(map));
+      fitTo(map, base, autoDest);
+    } else if (autoSel) {
+      const it = items.find(x => x.id === autoSel);
+      if (it) { const [lng, lat] = offsetPos(base, it); fitTo(map, base, { lng, lat }); }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index, autoMode, autoSel, autoDest, coords, mapReady]);
+
+  // Estimation de course VTC depuis la destination géocodée.
+  const tripBase = coords ? { lng: coords.lng, lat: coords.lat } : { lng: NICE[0], lat: NICE[1] };
+  const trip = autoDest ? (() => { const k = distKm(tripBase.lng, tripBase.lat, autoDest.lng, autoDest.lat); return { km: k, eta: etaMin(k), price: priceVtc(k) }; })() : null;
+
   // La barre du haut MORPHE selon le contexte (NIKO par défaut, ou le mode AUTO).
   const isAuto = scene.domain === 'auto';
   const searchCfg: { placeholders: string[]; icon?: ReactNode; onSubmit: () => void; label: string } = !isAuto
     ? { placeholders: ['Demande à NIKO : pizza, bateau, dépannage…', "Un VTC pour l'aéroport ?", 'Une socca dans le Vieux-Nice ?', 'Un skipper à Villefranche ?'], onSubmit: () => doSearch(), label: 'Demander à NIKO' }
     : autoMode === 'vtc'
-      ? { placeholders: ['Où vas-tu ?', 'Aéroport Nice T2', 'Gare de Nice-Ville', 'Place Masséna'], icon: <span style={{ fontSize: 16 }}>📍</span>, onSubmit: () => router.push(`/auto/vtc${query.trim() ? `?to=${encodeURIComponent(query.trim())}` : ''}`), label: 'Destination VTC' }
+      ? { placeholders: ['Où vas-tu ?', 'Aéroport Nice T2', 'Gare de Nice-Ville', 'Place Masséna'], icon: <span style={{ fontSize: 16 }}>📍</span>, onSubmit: () => geocodeDest(query), label: 'Destination VTC' }
       : autoMode === 'location'
         ? { placeholders: ['Lieu de retrait ou type de véhicule', 'Citadine', 'Cabriolet', 'Utilitaire'], icon: <span style={{ fontSize: 16 }}>🔑</span>, onSubmit: () => router.push('/auto/location'), label: 'Location' }
         : { placeholders: ['Lieu de livraison du véhicule', 'Atelier le plus proche', 'Chez moi'], icon: <span style={{ fontSize: 16 }}>🔧</span>, onSubmit: () => router.push('/auto/depannage'), label: 'Dépannage' };
@@ -238,7 +314,8 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
               {scene.domain === 'food' ? (
                 <FoodModule pros={foodPros} nightPros={nightPros} place="Cours Saleya" />
               ) : scene.domain === 'auto' ? (
-                <AutoModule mode={autoMode} onMode={setAutoMode} />
+                <AutoModule mode={autoMode} onMode={setAutoMode} user={coords} sel={autoSel} onSelect={setAutoSel}
+                  dest={autoDest ? { label: autoDest.label } : null} trip={trip} onClearDest={() => { setAutoDest(null); setQuery(''); }} />
               ) : scene.domain ? (
                 <div style={{ display: 'inline-block', textAlign: 'left', padding: '12px 15px', borderRadius: 16, background: 'rgba(5,12,23,0.66)', border: `1px solid ${(DOMAINS.find(d => d.slug === scene.domain)?.color) || 'var(--bd2)'}`, backdropFilter: 'blur(8px)', maxWidth: 340 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 5 }}>
