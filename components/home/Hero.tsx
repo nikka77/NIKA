@@ -1,67 +1,63 @@
 'use client';
 // components/home/Hero.tsx — Hero « NIKA Stories » (mobile-first).
-// Globe satellite MapLibre → zoom Nice → puis carrousel de SCÈNES-domaines
-// (rendus GTA-6 Seedream) navigable au SWIPE. Bulles-domaines (icône seule) en haut,
-// bulle info par scène, recherche NIKO persistante. Transition propre = crossfade +
-// léger drone-push (pas de coupure). Respecte prefers-reduced-motion.
+// FOND = carte MapLibre (minimap GTA, CARTO dark-nolabels) centrée sur la position GPS,
+// avec un repère « tu es ici ». Intro : globe sombre → plonge sur ta position (repli Nice
+// si GPS refusé). Le swipe entre domaines fait VOLER la carte vers le lieu du domaine
+// (Cours Saleya, baie…) ; le repère GPS reste visible. Bulles-domaines + recherche NIKO
+// en superposition. Respecte prefers-reduced-motion.
 import { useEffect, useRef, useState, useCallback, type CSSProperties } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { motion, AnimatePresence, type Variants } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { visual } from '@/lib/visuals';
 import { DOMAINS } from '@/lib/constants';
+import { MAP_STYLE, NICE } from '@/lib/map';
+import { useLocationStore } from '@/lib/store';
 import FoodModule, { type Pro as FoodPro } from '@/components/home/FoodModule';
 import GpsBeacon from '@/components/home/GpsBeacon';
 import type { NightEntry } from '@/lib/food';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 type Scene = {
   id: string;
-  domain?: string;            // slug domaine (scène-domaine) — sinon scène d'accueil
-  place: string;              // libellé lieu
-  image: string;
-  video?: string;             // fond animé (loop muet) — sinon image statique
-  title: string;
+  domain?: string;
+  place: string;
   services?: string[];
-  center: [number, number]; zoom: number; pitch: number; bearing: number; // flyTo globe (accueil)
-  origin: string;             // transform-origin du drone-push (point d'intérêt de la scène)
-  twinkle?: boolean;          // calque scintillement (guirlandes + étoiles) en CSS
+  center: [number, number]; zoom: number; // cible flyTo de la carte
 };
 
-// Scènes (placeholders pour les domaines non encore "mis en scène" — swap au fil de l'eau).
+// Scène 0 = TA position (center = coords GPS, repli Nice). Domaines = lieux fixes à Nice.
 const SCENES: Scene[] = [
-  { id: 'accueil', place: 'Promenade des Anglais', image: '/images/hero/nice-promenade.jpg', title: 'Bienvenue à Nice', center: [7.2620, 43.6952], zoom: 15.4, pitch: 62, bearing: -22, origin: '50% 55%' },
-  { id: 'food', domain: 'food', place: 'Cours Saleya', image: '/images/hero/nice-food.jpg', title: 'Manger niçois', services: ['Restos', 'Livraison', 'Food trucks'], center: [7.2756, 43.6959], zoom: 16, pitch: 60, bearing: 0, origin: '42% 60%' },
-  { id: 'auto', domain: 'auto', place: 'Promenade des Anglais', image: '/images/hero/nice-auto.jpg', title: 'Se déplacer', services: ['VTC', 'Dépannage', 'Location'], center: [7.2620, 43.6952], zoom: 15.4, pitch: 60, bearing: -22, origin: '50% 62%' },
-  { id: 'stay', domain: 'stay', place: 'Le Negresco', image: '/images/hero/nice-negresco.jpg', title: 'Dormir autrement', services: ['Logements insolites', 'Conciergerie', 'Direct hôtels'], center: [7.2585, 43.6948], zoom: 16.2, pitch: 60, bearing: 28, origin: '50% 34%', twinkle: true },
-  { id: 'azur', domain: 'azur', place: 'Baie de Nice', image: '/images/hero/nice-azur-boat.jpg', title: 'Prendre la mer', services: ['Location bateaux', 'Skipper', 'Jetski'], center: [7.2780, 43.6900], zoom: 13.5, pitch: 55, bearing: 0, origin: '50% 80%' },
+  { id: 'accueil', place: 'Autour de toi', center: NICE, zoom: 15 },
+  { id: 'food', domain: 'food', place: 'Cours Saleya', services: ['Restos', 'Livraison', 'Food trucks'], center: [7.2756, 43.6959], zoom: 15.5 },
+  { id: 'auto', domain: 'auto', place: 'Promenade des Anglais', services: ['VTC', 'Dépannage', 'Location'], center: [7.2620, 43.6952], zoom: 15 },
+  { id: 'stay', domain: 'stay', place: 'Le Negresco', services: ['Logements insolites', 'Conciergerie', 'Direct hôtels'], center: [7.2585, 43.6948], zoom: 15.6 },
+  { id: 'azur', domain: 'azur', place: 'Baie de Nice', services: ['Location bateaux', 'Skipper', 'Jetski'], center: [7.2780, 43.6900], zoom: 13.6 },
 ];
 
-// Transition « vol drone » directionnelle : on plonge dans la scène sortante (zoom vers
-// son point d'intérêt) et on émerge sur l'entrante. Le transform-origin (par scène) donne
-// la direction du vol ; x ajoute le sens du swipe.
-// Scintillement déterministe (mêmes valeurs SSR/CSR → pas de mismatch d'hydratation).
-const rnd = (n: number) => { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
-// Étoiles : haut du cadre (ciel).
-const STARS = Array.from({ length: 28 }, (_, i) => ({ x: rnd(i + 1) * 100, y: 2 + rnd(i + 50) * 36, s: 1 + rnd(i + 100) * 1.5, dur: 2.6 + rnd(i + 150) * 3.4, delay: rnd(i + 200) * 4 }));
-// Guirlandes : 3 bandes verticales le long des palmiers éclairés (gauche, centre, droite).
-const TWBANDS = [{ x0: 2, x1: 9, y0: 14, y1: 90 }, { x0: 28, x1: 47, y0: 52, y1: 96 }, { x0: 86, x1: 98, y0: 42, y1: 94 }];
-const LIGHTS = TWBANDS.flatMap((b, bi) => Array.from({ length: 16 }, (_, i) => { const k = bi * 40 + i; return { x: b.x0 + rnd(k + 7) * (b.x1 - b.x0), y: b.y0 + rnd(k + 17) * (b.y1 - b.y0), s: 1.4 + rnd(k + 27) * 1.7, dur: 1.5 + rnd(k + 37) * 2.4, delay: rnd(k + 47) * 3, warm: rnd(k + 57) > 0.65 }; }));
-
-const sceneVariants: Variants = {
-  enter: (d: number) => ({ opacity: 0, scale: 1.12, x: d * 18 }),
-  center: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1], opacity: { duration: 0.45 } } },
-  exit: (d: number) => ({ opacity: 0, scale: 1.18, x: -d * 18, transition: { duration: 0.5, ease: 'easeIn' } }),
-};
+// Repère « tu es ici » (élément DOM du marqueur MapLibre)
+function youHereEl(): HTMLDivElement {
+  const el = document.createElement('div');
+  el.style.cssText = 'position:relative;width:20px;height:20px;pointer-events:none';
+  el.innerHTML =
+    '<span class="gps-ping" style="position:absolute;inset:0;border-radius:50%;background:rgba(0,194,255,0.35)"></span>' +
+    '<span style="position:absolute;inset:5px;border-radius:50%;background:#00C2FF;border:2px solid #fff;box-shadow:0 0 12px rgba(0,194,255,0.9)"></span>';
+  return el;
+}
 
 export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; nightPros?: NightEntry[] }) {
   const router = useRouter();
   const [query, setQuery] = useState('');
   const [stage, setStage] = useState<'globe' | 'rest'>('globe');
   const [index, setIndex] = useState(0);
-  const [dir, setDir] = useState(1);
   const mapContainer = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<{ map: any; maplibregl: any } | null>(null);
+  const markerRef = useRef<any>(null);
+  const arrivedRef = useRef(false);
 
+  const coords = useLocationStore(s => s.coords);
   const scene = SCENES[index];
 
   const doSearch = useCallback((q?: string) => {
@@ -71,108 +67,102 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
   }, [query, router]);
 
   const goTo = useCallback((i: number) => {
-    const ni = Math.max(0, Math.min(SCENES.length - 1, i));
-    setDir(ni > index ? 1 : -1);
-    setIndex(ni);
-  }, [index]);
+    setIndex(Math.max(0, Math.min(SCENES.length - 1, i)));
+  }, []);
 
-  // Globe MapLibre → vol jusqu'à Nice (scène d'accueil) → carrousel
+  // Première descente (globe → scène 0 = ta position). Lit les coords FRAÎCHES du store
+  // (pas de closure périmée). Déclenchée par l'arrivée des coords OU le repli Nice.
+  const arrive = useCallback(() => {
+    const h = mapRef.current;
+    if (arrivedRef.current || !h) return;
+    arrivedRef.current = true;
+    const c = useLocationStore.getState().coords;
+    const center: [number, number] = c ? [c.lng, c.lat] : NICE;
+    const fly = () => h.map.flyTo({ center, zoom: 15, pitch: 0, bearing: 0, duration: 3400, curve: 1.5, essential: true });
+    if (h.map.isStyleLoaded?.()) fly(); else h.map.once('load', fly);
+    setStage('rest');
+  }, []);
+
+  // ── Init carte persistante : globe sombre en attente, puis plongée ──
   useEffect(() => {
     const container = mapContainer.current;
-    if (!container) { setStage('rest'); return; }
+    if (!container) { setStage('rest'); arrivedRef.current = true; return; }
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const home = SCENES[0];
-
-    type MiniMap = { remove: () => void; on: (e: string, cb: () => void) => void; flyTo: (o: object) => void; easeTo: (o: object) => void };
-    let map: MiniMap | null = null;
     let cancelled = false;
-    let tRest: ReturnType<typeof setTimeout>;
-    let tFly: ReturnType<typeof setTimeout>;
+    let fallbackT: ReturnType<typeof setTimeout>;
+
+    // déclenche la géoloc tout de suite (store partagé avec GpsBeacon)
+    if (useLocationStore.getState().status === 'idle') useLocationStore.getState().locate();
 
     (async () => {
       const maplibregl = (await import('maplibre-gl')).default;
       if (cancelled || !container) return;
-      map = new maplibregl.Map({
-        container,
-        style: {
-          version: 8,
-          projection: { type: 'globe' },
-          sky: { 'atmosphere-blend': ['interpolate', ['linear'], ['zoom'], 0, 1, 6, 1, 9, 0] },
-          sources: { sat: { type: 'raster', tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'], tileSize: 256, maxzoom: 19, attribution: '© Esri, Maxar' } },
-          layers: [{ id: 'bg', type: 'background', paint: { 'background-color': '#060d1a' } }, { id: 'sat', type: 'raster', source: 'sat', paint: { 'raster-fade-duration': 300 } }],
-        } as never,
-        center: home.center, zoom: reduced ? home.zoom : 1.5, pitch: reduced ? home.pitch : 0, bearing: 0,
+      const map = new maplibregl.Map({
+        container, style: MAP_STYLE,
+        center: NICE, zoom: reduced ? 14.5 : 1.6,
         interactive: false, attributionControl: { compact: true },
-      }) as unknown as MiniMap;
-
-      if (reduced) { setStage('rest'); return; }
-      map!.on('load', () => {
-        if (cancelled) return;
-        map!.easeTo({ zoom: 2.4, duration: 1300, essential: true });
-        tFly = setTimeout(() => { if (!cancelled) map!.flyTo({ center: home.center, zoom: home.zoom, pitch: home.pitch, bearing: home.bearing, duration: 3600, curve: 1.5, essential: true }); }, 1300);
       });
-      tRest = setTimeout(() => { if (!cancelled) setStage('rest'); }, 4500);
+      mapRef.current = { map, maplibregl };
+      map.on('style.load', () => { try { map.setProjection({ type: 'globe' }); } catch { /* projection non supportée */ } });
+
+      if (reduced) { arrive(); return; }
+      map.on('load', () => { if (!cancelled) map.easeTo({ zoom: 2.6, duration: 1500, essential: true }); });
+      // repli : si pas de position après 4.8s, on se pose sur Nice
+      fallbackT = setTimeout(() => { if (!cancelled) arrive(); }, 4800);
     })();
 
-    return () => { cancelled = true; clearTimeout(tRest); clearTimeout(tFly); if (map) map.remove(); };
-  }, []);
+    return () => {
+      cancelled = true;
+      clearTimeout(fallbackT);
+      if (markerRef.current) { markerRef.current.remove(); markerRef.current = null; }
+      if (mapRef.current?.map) { mapRef.current.map.remove(); mapRef.current = null; }
+    };
+  }, [arrive]);
+
+  // coords arrivées → repère « tu es ici » ; plongée dessus (ou recentrage si on est sur la scène 0)
+  useEffect(() => {
+    const h = mapRef.current;
+    if (!h || !coords) return;
+    const ll: [number, number] = [coords.lng, coords.lat];
+    if (!markerRef.current) {
+      markerRef.current = new h.maplibregl.Marker({ element: youHereEl() }).setLngLat(ll).addTo(h.map);
+    } else {
+      markerRef.current.setLngLat(ll);
+    }
+    if (!arrivedRef.current) arrive();
+    else if (index === 0) h.map.flyTo({ center: ll, zoom: 15, duration: 1600, essential: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [coords, arrive]);
+
+  // swipe / bulle → vol de la carte vers la scène (scène 0 = ta position)
+  useEffect(() => {
+    if (!arrivedRef.current || !mapRef.current) return;
+    const c = useLocationStore.getState().coords;
+    const center: [number, number] = index === 0 && c ? [c.lng, c.lat] : SCENES[index].center;
+    const zoom = index === 0 ? 15 : SCENES[index].zoom;
+    mapRef.current.map.flyTo({ center, zoom, pitch: 0, bearing: 0, duration: 1900, curve: 1.4, essential: true });
+  }, [index]);
 
   return (
     <header style={{ position: 'relative', minHeight: '100svh', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-      {/* Globe (intro) */}
+      {/* Carte (fond persistant) */}
       <div ref={mapContainer} aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 0 }} />
 
-      {/* Scènes (carrousel crossfade + drone-push) */}
-      {stage === 'rest' && (
-        <AnimatePresence initial={false} custom={dir}>
-          <motion.div key={scene.id} custom={dir} variants={sceneVariants} initial="enter" animate="center" exit="exit"
-            style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden', transformOrigin: scene.origin }}>
-            {scene.video ? (
-              <motion.video src={scene.video} poster={scene.image} autoPlay muted loop playsInline preload="auto"
-                animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 30, repeat: Infinity, ease: 'easeInOut' }}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            ) : (
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <motion.img src={scene.image} alt="" animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 30, repeat: Infinity, ease: 'easeInOut' }}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            )}
-            {scene.twinkle && (
-              <div aria-hidden style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-                {STARS.map((s, i) => (
-                  <span key={`st${i}`} className="hero-twinkle" style={{ position: 'absolute', left: `${s.x}%`, top: `${s.y}%`, width: s.s, height: s.s, borderRadius: '50%', background: 'rgba(255,255,255,0.95)', boxShadow: `0 0 ${s.s * 2.5}px rgba(255,255,255,0.7)`, animation: `heroTwinkle ${s.dur}s ease-in-out ${s.delay}s infinite` }} />
-                ))}
-                {/* Guirlandes en CSS uniquement si pas de vidéo (sinon double les lumières déjà allumées du clip). */}
-                {!scene.video && LIGHTS.map((l, i) => { const c = l.warm ? 'rgba(255,224,160,0.95)' : 'rgba(186,224,255,0.95)'; return (
-                  <span key={`lt${i}`} className="hero-twinkle" style={{ position: 'absolute', left: `${l.x}%`, top: `${l.y}%`, width: l.s, height: l.s, borderRadius: '50%', background: c, boxShadow: `0 0 ${l.s * 2.8}px ${c}`, animation: `heroTwinkle ${l.dur}s ease-in-out ${l.delay}s infinite` }} />
-                ); })}
-              </div>
-            )}
-          </motion.div>
-        </AnimatePresence>
-      )}
+      {/* Scrim — lisibilité du contenu par-dessus la carte */}
+      <div aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(5,12,23,0.55) 0%, rgba(5,12,23,0.06) 30%, rgba(5,12,23,0.30) 62%, rgba(5,12,23,0.92) 100%)' }} />
 
-      {/* Scrim */}
-      <div aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(5,12,23,0.55) 0%, rgba(5,12,23,0.10) 26%, rgba(5,12,23,0.30) 58%, rgba(5,12,23,0.92) 100%)' }} />
-
-      {/* Transition « through-the-light » : flash doré au changement de scène (rejoué via key=index) */}
-      {stage === 'rest' && (
-        <motion.div key={`bloom-${index}`} aria-hidden
-          initial={{ opacity: 0 }} animate={{ opacity: [0, 0.94, 0] }} transition={{ duration: 0.78, times: [0, 0.42, 1], ease: 'easeInOut' }}
-          style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', background: 'radial-gradient(circle at 50% 42%, rgba(255,248,231,0.98) 0%, rgba(255,216,150,0.9) 42%, rgba(255,188,110,0.6) 100%)' }} />
-      )}
-
-      {/* Couche swipe (capte le geste, laisse passer les clics du contenu au-dessus) */}
+      {/* Couche swipe (capte le geste → change de domaine → vol de la carte) */}
       {stage === 'rest' && (
         <motion.div drag="x" dragConstraints={{ left: 0, right: 0 }} dragElastic={0.16}
           onDragEnd={(_, info) => { if (info.offset.x < -55) goTo(index + 1); else if (info.offset.x > 55) goTo(index - 1); }}
           style={{ position: 'absolute', inset: 0, zIndex: 1 }} />
       )}
 
-      {/* Label intro */}
+      {/* Label intro (globe) */}
       {stage === 'globe' && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
           style={{ position: 'absolute', top: '46%', left: 0, right: 0, zIndex: 3, textAlign: 'center', fontFamily: 'var(--fo)', fontSize: 12, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.85)', textShadow: '0 2px 12px rgba(0,0,0,0.7)' }}>
-          Cap sur Nice…
+          Localisation…
         </motion.div>
       )}
 
@@ -206,7 +196,7 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
 
         <div style={{ flex: 1 }} />
 
-        {/* Scène : bulle info / module — centré verticalement (déplacé au centre) */}
+        {/* Scène : bulle info / module — centré verticalement */}
         <div style={{ padding: '0 1.3rem', textAlign: 'center', maxWidth: 600, width: '100%', margin: '0 auto', pointerEvents: 'auto' }}>
           <AnimatePresence mode="wait">
             <motion.div key={scene.id} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.45 }}>
@@ -226,16 +216,20 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
                   </div>
                   <Link href={`/${scene.domain}`} style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 12, letterSpacing: '0.05em', textTransform: 'uppercase', color: DOMAINS.find(d => d.slug === scene.domain)?.color, display: 'inline-flex', alignItems: 'center', gap: 5 }}>Explorer →</Link>
                 </div>
-              ) : null}
+              ) : (
+                <div style={{ display: 'inline-block', padding: '10px 16px', borderRadius: 16, background: 'rgba(5,12,23,0.6)', border: '1px solid var(--bd2)', backdropFilter: 'blur(8px)' }}>
+                  <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 16, letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--td)' }}>Tu es ici</span>
+                  <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', marginLeft: 8 }}>· swipe pour explorer</span>
+                </div>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
 
         <div style={{ flex: 1 }} />
 
-        {/* Bas : recherche NIKO + pagination — épinglé en bas (dégage la tab-bar fixe + le débord 100svh) */}
+        {/* Bas : recherche NIKO + pagination */}
         <div style={{ padding: '0 1.3rem 8.5rem', textAlign: 'center', maxWidth: 600, width: '100%', margin: '0 auto', pointerEvents: 'auto' }}>
-          {/* Recherche NIKO */}
           <div style={{ position: 'relative', maxWidth: 480, margin: '0 auto 0.7rem' }}>
             <input value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && doSearch()}
               placeholder="Demande à NIKO : pizza, bateau, dépannage…"
