@@ -63,13 +63,29 @@ const card: React.CSSProperties = {
 };
 const inp: React.CSSProperties = { background: 'rgba(255,255,255,0.05)', border: '1px solid var(--bd2)', borderRadius: 8, padding: '8px 10px', fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td)', outline: 'none' };
 // <img> de fond avec repli emoji (l'emoji est dessous, l'image le couvre si elle charge)
-function CarBg({ img, emoji, h }: { img: string; emoji: string; h: number }) {
+function CarBg({ img, emoji, h, fit = 'cover' }: { img: string; emoji: string; h: number; fit?: 'cover' | 'contain' }) {
   return (
     <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: h * 0.42 }}>
       <span aria-hidden>{emoji}</span>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={img} alt="" onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: fit }} />
+    </div>
+  );
+}
+// Fond VIDÉO en boucle (taxi en mouvement). Empilement de replis : emoji ← image (poster) ← vidéo.
+function VideoBg({ src, poster, emoji, h }: { src: string; poster: string; emoji: string; h: number }) {
+  return (
+    <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: h * 0.42 }}>
+      <span aria-hidden>{emoji}</span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={poster} alt="" aria-hidden onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+      <video autoPlay loop muted playsInline preload="auto" poster={poster} aria-hidden
+        onError={e => { (e.currentTarget as HTMLVideoElement).style.display = 'none'; }}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}>
+        <source src={src} type="video/mp4" />
+      </video>
     </div>
   );
 }
@@ -90,6 +106,7 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
   const [catIdx, setCatIdx] = useState(0);
   const [carIdx, setCarIdx] = useState(0);
   const [breakdown, setBreakdown] = useState<string | null>(null);
+  const [depDest, setDepDest] = useState<string | null>(null);
   const [vtcWhen, setVtcWhen] = useState<'now' | 'schedule' | 'hours'>('now');
   const [schedAt, setSchedAt] = useState('');
   const [hours, setHours] = useState(3);
@@ -193,8 +210,8 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
                 <Metric label="Trajet" value={`${trip.km.toFixed(1)} km · ${trip.eta} min`} />
                 <Metric label="Estimation" value={`${trip.price.toFixed(1)} €`} accent />
               </div>
+              <Cta href={`/auto/vtc?to=${encodeURIComponent(dest.label)}`} label={`Commander un taxi · ${trip.price.toFixed(1)} €`} mt={11} />
             </div>
-            <Cta href={`/auto/vtc?to=${encodeURIComponent(dest.label)}`} label={`Commander · ${trip.price.toFixed(1)} €`} />
           </div>
         ) : (
           <div>
@@ -209,40 +226,44 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
               })}
             </div>
 
-            {/* Carte taxi avec visuel en fond */}
-            <div style={{ position: 'relative', borderRadius: 14, overflow: 'hidden', border: `1px solid ${AZ}66`, minHeight: 92 }}>
-              <CarBg img="/images/auto/taxi.webp" emoji="🚖" h={92} />
-              <div aria-hidden style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(5,12,23,0.92) 30%, rgba(5,12,23,0.35) 100%)' }} />
-              <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 11, padding: '12px 14px' }}>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 16, color: 'var(--td)' }}>
-                    {vtcWhen === 'now' ? 'Taxi maintenant' : vtcWhen === 'schedule' ? 'Programmer' : 'Réserver au temps'}
+            {/* Carte taxi : vidéo taxi en boucle + action « Commander » intégrée */}
+            <div style={{ borderRadius: 14, overflow: 'hidden', border: `1px solid ${AZ}66` }}>
+              {/* Zone visuelle — vidéo du taxi en mouvement (repli image puis emoji) */}
+              <div style={{ position: 'relative', minHeight: 96 }}>
+                <VideoBg src="/videos/auto/taxi.mp4" poster="/images/auto/taxi.webp" emoji="🚖" h={96} />
+                <div aria-hidden style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(5,12,23,0.92) 28%, rgba(5,12,23,0.25) 100%)' }} />
+                <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 11, padding: '12px 14px' }}>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 16, color: 'var(--td)' }}>
+                      {vtcWhen === 'now' ? 'Taxi maintenant' : vtcWhen === 'schedule' ? 'Programmer' : 'Réserver au temps'}
+                    </div>
+                    <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td2)' }}>
+                      {vtcWhen === 'now' ? `Arrive à toi · ~${taxiEta} min` : vtcWhen === 'schedule' ? 'Choisis la date et l’heure' : `${hours} h à disposition`}
+                    </div>
                   </div>
-                  <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td2)' }}>
-                    {vtcWhen === 'now' ? `Arrive à toi · ~${taxiEta} min` : vtcWhen === 'schedule' ? 'Choisis la date et l’heure' : `${hours} h à disposition`}
+                  <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                    <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 21, color: AZ, lineHeight: 1 }}>
+                      {vtcWhen === 'hours' ? `${hours * HOUR_RATE} €` : `${TAXI_FLAT} €`}
+                    </div>
+                    <div style={{ fontFamily: 'var(--fo)', fontSize: 9, color: 'var(--td3)', textTransform: 'uppercase' }}>{vtcWhen === 'hours' ? `${HOUR_RATE} €/h` : 'forfait'}</div>
                   </div>
                 </div>
-                <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                  <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 21, color: AZ, lineHeight: 1 }}>
-                    {vtcWhen === 'hours' ? `${hours * HOUR_RATE} €` : `${TAXI_FLAT} €`}
+              </div>
+              {/* Zone action intégrée — option éventuelle + bouton Commander (Maintenant / Programmer / Réserver) */}
+              <div style={{ background: 'rgba(5,12,23,0.8)', borderTop: `1px solid ${AZ}33`, padding: 10, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {vtcWhen === 'schedule' && (
+                  <input type="datetime-local" value={schedAt} onChange={e => setSchedAt(e.target.value)} style={{ ...inp, width: '100%', colorScheme: 'dark' }} />
+                )}
+                {vtcWhen === 'hours' && (
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14 }}>
+                    <button onClick={() => setHours(h => Math.max(1, h - 1))} style={stepBtn}>−</button>
+                    <span style={{ fontFamily: 'var(--fn)', fontSize: 24, color: 'var(--td)', minWidth: 54, textAlign: 'center' }}>{hours} h</span>
+                    <button onClick={() => setHours(h => Math.min(12, h + 1))} style={stepBtn}>+</button>
                   </div>
-                  <div style={{ fontFamily: 'var(--fo)', fontSize: 9, color: 'var(--td3)', textTransform: 'uppercase' }}>{vtcWhen === 'hours' ? `${HOUR_RATE} €/h` : 'forfait'}</div>
-                </div>
+                )}
+                <Cta href="/auto/vtc" label={vtcWhen === 'now' ? `Commander un taxi · ${TAXI_FLAT} €` : vtcWhen === 'schedule' ? `Commander un taxi · programmer · ${TAXI_FLAT} €` : `Commander un taxi · ${hours} h · ${hours * HOUR_RATE} €`} mt={0} />
               </div>
             </div>
-
-            {/* Options selon le « quand » */}
-            {vtcWhen === 'schedule' && (
-              <input type="datetime-local" value={schedAt} onChange={e => setSchedAt(e.target.value)} style={{ ...inp, width: '100%', marginTop: 8, colorScheme: 'dark' }} />
-            )}
-            {vtcWhen === 'hours' && (
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14, marginTop: 8 }}>
-                <button onClick={() => setHours(h => Math.max(1, h - 1))} style={stepBtn}>−</button>
-                <span style={{ fontFamily: 'var(--fn)', fontSize: 24, color: 'var(--td)', minWidth: 54, textAlign: 'center' }}>{hours} h</span>
-                <button onClick={() => setHours(h => Math.min(12, h + 1))} style={stepBtn}>+</button>
-              </div>
-            )}
-            <Cta href="/auto/vtc" label={vtcWhen === 'now' ? `Commander un taxi · ${TAXI_FLAT} €` : vtcWhen === 'schedule' ? 'Programmer la course' : `Réserver ${hours} h · ${hours * HOUR_RATE} €`} />
           </div>
         ))}
 
@@ -261,17 +282,23 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
               </div>
             </div>
 
-            {/* 4 véhicules de la catégorie (image en fond, sélectionnables) */}
-            <div className="hero-domabar" style={{ display: 'flex', gap: 8, overflowX: 'auto', padding: '8px 2px 4px', scrollSnapType: 'x mandatory' }}>
+            {/* 4 véhicules de la catégorie — liste VERTICALE défilante (vignette + infos, sélectionnables) */}
+            <div className="hero-domabar" style={{ display: 'flex', flexDirection: 'column', gap: 7, maxHeight: 236, overflowY: 'auto', padding: '8px 2px 4px' }}>
               {cat.cars.map((c, i) => {
                 const a = i === carIdx;
                 return (
                   <button key={c.model} onClick={() => setCarIdx(i)} aria-pressed={a}
-                    style={{ position: 'relative', flex: '0 0 auto', width: 150, height: 96, borderRadius: 12, overflow: 'hidden', cursor: 'pointer', scrollSnapAlign: 'start', border: `2px solid ${a ? AZ : 'transparent'}`, boxShadow: a ? `0 0 16px ${AZ}55` : 'none', background: 'rgba(255,255,255,0.04)', padding: 0, transition: 'all .18s' }}>
-                    <CarBg img={c.img} emoji={cat.emoji} h={96} />
-                    <div aria-hidden style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 40%, rgba(5,12,23,0.9) 100%)' }} />
-                    <span style={{ position: 'absolute', left: 8, right: 8, bottom: 7, textAlign: 'left', fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: '#fff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>{c.model}</span>
-                    {a && <span style={{ position: 'absolute', top: 6, right: 6, width: 18, height: 18, borderRadius: '50%', background: AZ, color: '#fff', fontSize: 11, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>✓</span>}
+                    style={{ display: 'flex', alignItems: 'center', gap: 11, width: '100%', padding: 6, borderRadius: 12, cursor: 'pointer', border: `2px solid ${a ? AZ : 'var(--bd2)'}`, boxShadow: a ? `0 0 16px ${AZ}44` : 'none', background: a ? `${AZ}14` : 'rgba(255,255,255,0.04)', textAlign: 'left', transition: 'all .18s' }}>
+                    <span style={{ position: 'relative', flexShrink: 0, width: 116, height: 66, borderRadius: 9, overflow: 'hidden', background: 'rgba(255,255,255,0.04)' }}>
+                      <CarBg img={c.img} emoji={cat.emoji} h={66} />
+                    </span>
+                    <span style={{ flex: 1, minWidth: 0 }}>
+                      <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700, color: a ? AZ : 'var(--td)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.model}</span>
+                      <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)', marginTop: 2 }}>{cat.specs} · {cat.price} €/j</span>
+                    </span>
+                    {a
+                      ? <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: '50%', background: AZ, color: '#fff', fontSize: 12, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✓</span>
+                      : <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: '50%', border: '1px solid var(--bd2)' }} />}
                   </button>
                 );
               })}
@@ -293,17 +320,17 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
             </div>
 
             <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', margin: '11px 2px 6px' }}>Quel est le problème ?</div>
-            <div className="g-3" style={{ gap: 6 }}>
+            <div className="g-3" style={{ gap: 7 }}>
               {BREAKDOWNS.map(b => {
                 const a = breakdown === b.key;
                 return (
                   <button key={b.key} onClick={() => setBreakdown(a ? null : b.key)} aria-pressed={a}
-                    style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, padding: '8px 4px', borderRadius: 10, cursor: 'pointer', border: `1px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? `${AZ}1c` : 'rgba(255,255,255,0.04)', boxShadow: a ? `0 0 14px ${AZ}40` : 'none', transition: 'all .15s' }}>
-                    <span style={{ position: 'relative', width: 34, height: 34, borderRadius: 8, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.05)' }}>
-                      <CarBg img={b.img} emoji={b.emoji} h={34} />
+                    style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, padding: '9px 4px 7px', borderRadius: 12, cursor: 'pointer', border: `1px solid ${a ? AZ : 'var(--bd2)'}`, background: a ? `${AZ}1c` : 'rgba(255,255,255,0.05)', boxShadow: a ? `0 0 16px ${AZ}44` : 'none', transition: 'all .15s' }}>
+                    <span style={{ position: 'relative', width: '100%', height: 52, display: 'block' }}>
+                      <CarBg img={b.img} emoji={b.emoji} h={52} fit="contain" />
                     </span>
-                    <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 600, color: a ? AZ : 'var(--td2)', textAlign: 'center', lineHeight: 1.1 }}>{b.label}</span>
-                    {a && <span style={{ position: 'absolute', top: 4, right: 4, width: 15, height: 15, borderRadius: '50%', background: AZ, color: '#fff', fontSize: 9, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✓</span>}
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 600, color: a ? AZ : 'var(--td2)', textAlign: 'center', lineHeight: 1.1 }}>{b.label}</span>
+                    {a && <span style={{ position: 'absolute', top: 5, right: 5, width: 16, height: 16, borderRadius: '50%', background: AZ, color: '#fff', fontSize: 9.5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✓</span>}
                   </button>
                 );
               })}
@@ -315,7 +342,13 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
               {dest && <button onClick={onClearDest} style={{ background: 'none', border: 'none', color: 'var(--td3)', fontFamily: 'var(--fo)', fontSize: 10.5, cursor: 'pointer', textDecoration: 'underline' }}>changer</button>}
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-              {['Atelier le plus proche', 'Stockage sécurisé', 'Chez moi'].map(d => <span key={d} style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td2)', padding: '3px 9px', borderRadius: 20, background: 'rgba(255,255,255,0.06)', border: '1px solid var(--bd)' }}>{d}</span>)}
+              {['Atelier le plus proche', 'Stockage sécurisé', 'Chez moi'].map(d => {
+                const a = depDest === d;
+                return (
+                  <button key={d} onClick={() => setDepDest(a ? null : d)} aria-pressed={a}
+                    style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: a ? 700 : 400, color: a ? AZ : 'var(--td2)', padding: '4px 10px', borderRadius: 20, background: a ? `${AZ}1f` : 'rgba(255,255,255,0.06)', border: `1px solid ${a ? AZ : 'var(--bd)'}`, cursor: 'pointer', transition: 'all .15s' }}>{a ? `✓ ${d}` : d}</button>
+                );
+              })}
             </div>
             <Cta href="/auto/depannage" label={breakdown ? `Dépannage · ${BREAKDOWNS.find(b => b.key === breakdown)?.label}` : 'Demander un dépannage'} />
           </div>
@@ -335,8 +368,8 @@ function Metric({ label, value, accent }: { label: string; value: string; accent
     </div>
   );
 }
-function Cta({ href, label }: { href: string; label: string }) {
+function Cta({ href, label, mt = 10 }: { href: string; label: string; mt?: number }) {
   return (
-    <Link href={href} style={{ marginTop: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, padding: '11px 12px', borderRadius: 12, background: AZ, color: '#fff', fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 12.5, letterSpacing: '0.04em', textTransform: 'uppercase', boxShadow: `0 6px 22px ${AZ}55` }}>{label}</Link>
+    <Link href={href} style={{ marginTop: mt, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, padding: '11px 12px', borderRadius: 12, background: AZ, color: '#fff', fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 12.5, letterSpacing: '0.04em', textTransform: 'uppercase', boxShadow: `0 6px 22px ${AZ}55` }}>{label}</Link>
   );
 }
