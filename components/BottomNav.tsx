@@ -47,7 +47,11 @@ export default function BottomNav() {
                 return (
                   <Link key={d.slug} href={`/${d.slug}`} className="bn-dom" data-active={active} aria-label={d.label}
                     tabIndex={page === pi ? 0 : -1} style={active ? { color: d.color } : undefined}>
-                    <span className="bn-dom-ic" aria-hidden style={active ? { filter: `drop-shadow(0 0 7px ${d.color})` } : undefined}>{d.icon}</span>
+                    <span className="bn-dom-ic" aria-hidden style={active ? { filter: `drop-shadow(0 0 8px ${d.color})` } : undefined}>
+                      <span className="bn-emoji">{d.icon}</span>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={`/images/domains/${d.slug}.webp`} alt="" loading="lazy" decoding="async" onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
+                    </span>
                     <span className="bn-dom-label">{d.label}</span>
                   </Link>
                 );

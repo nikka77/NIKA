@@ -5,11 +5,10 @@
 // vert = position active (à la position exacte). Intro : globe sombre → plonge sur toi
 // (repli Nice si refusé/lent). Le swipe entre domaines fait VOLER la carte vers le lieu
 // du domaine ; chaque domaine (food…news) est une scène. Recherche NIKO en haut.
-import { useEffect, useRef, useState, useCallback, type CSSProperties, type ReactNode } from 'react';
+import { useEffect, useRef, useState, useCallback, type ReactNode } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { visual } from '@/lib/visuals';
 import { DOMAINS } from '@/lib/constants';
 import { MAP_STYLE, NICE } from '@/lib/map';
 import { useLocationStore } from '@/lib/store';
@@ -286,25 +285,8 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
           <SmartSearch value={query} onChange={setQuery} onSubmit={searchCfg.onSubmit} placeholders={searchCfg.placeholders} icon={searchCfg.icon} accent="#0094D4" submitLabel={searchCfg.label} />
         </div>
 
-        {/* Bulles-domaines */}
-        <div style={{ padding: '0.5rem 0.8rem 0', display: 'flex', justifyContent: 'center', pointerEvents: 'auto' }}>
-          <div className="hero-domabar" style={{ display: 'flex', gap: 9, overflowX: 'auto', maxWidth: '100%', padding: '4px 2px' }}>
-            {DOMAINS.map(d => {
-              const si = SCENES.findIndex(s => s.domain === d.slug);
-              const active = scene.domain === d.slug;
-              const icon = visual('domains', d.slug).poster;
-              const inner = (
-                <span className={`hero-bubble${active ? ' is-active' : ''}`} style={{ '--bub': d.color, width: 46, height: 46, borderRadius: '50%' } as CSSProperties}>
-                  {icon ? <img src={icon} alt={d.label} width={30} height={30} style={{ width: 30, height: 30, objectFit: 'contain', opacity: active ? 1 : 0.9, filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.45))' }} /> : <span style={{ fontSize: 18 }}>{d.icon}</span>}
-                </span>
-              );
-              return si >= 0
-                ? <button key={d.slug} onClick={() => goTo(si)} aria-label={d.label} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>{inner}</button>
-                : <Link key={d.slug} href={`/${d.slug}`} aria-label={d.label}>{inner}</Link>;
-            })}
-          </div>
-        </div>
-
+        {/* Bulles-domaines retirées : navigation domaines via la barre du bas (bulle).
+            Les scènes restent accessibles au SWIPE (couche drag) + points de pagination. */}
         <div style={{ flex: 1 }} />
 
         {/* Scène : bulle info / module (rien pour la scène 0 — le repère sur la carte suffit) */}

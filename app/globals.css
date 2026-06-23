@@ -236,8 +236,10 @@ ul { list-style: none; }
   color: var(--td3); text-decoration: none; transition: color 0.15s, transform 0.12s;
 }
 .bn-dom:active { transform: scale(0.94); }
-.bn-dom-ic { font-size: 21px; line-height: 1; transition: transform 0.18s; }
-.bn-dom[data-active="true"] .bn-dom-ic { transform: translateY(-2px) scale(1.1); }
+.bn-dom-ic { position: relative; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; transition: transform 0.18s; }
+.bn-dom-ic .bn-emoji { font-size: 19px; line-height: 1; }
+.bn-dom-ic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.bn-dom[data-active="true"] .bn-dom-ic { transform: translateY(-2px) scale(1.12); }
 .bn-dom-label { font-family: var(--fo); font-size: 9px; font-weight: 700; letter-spacing: 0.04em; }
 .bn-dots { display: flex; justify-content: center; gap: 6px; }
 .bn-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.25); border: none; padding: 0; cursor: pointer; transition: all 0.22s; }
