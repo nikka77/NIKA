@@ -1,69 +1,66 @@
 'use client';
-// components/BottomNav.tsx — barre de navigation mobile (app-feel)
-// Visible uniquement < 768px (CSS .bottom-nav). Icônes SVG (pas d'emoji).
+// components/BottomNav.tsx — barre mobile flottante « bulle » (verre dépoli, type Tinder).
+// Navigation par DOMAINES, paginée : page 1 = FOOD/AUTO/STAY/AZUR/RENT, page 2 = SERV/LEARN/SEC/NEWS.
+// Slide horizontal (swipe) + points indicateurs. Fixe, visible au scroll, sur toutes les pages (< 768px).
+// Les utilitaires (Accueil = logo, Carte = 🗺️, NIKO, Profil) restent dans le header.
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useMapStore } from '@/lib/store';
+import { useEffect, useRef, useState } from 'react';
+import { DOMAINS } from '@/lib/constants';
 
-const ICONS: Record<string, React.ReactNode> = {
-  home: (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V21h14V9.5" /></svg>
-  ),
-  explore: (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="m15.5 8.5-2 5-5 2 2-5z" /></svg>
-  ),
-  map: (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s-6.5-5.6-6.5-10.5A6.5 6.5 0 0 1 12 4a6.5 6.5 0 0 1 6.5 6.5C18.5 15.4 12 21 12 21Z" /><circle cx="12" cy="10.5" r="2.3" /></svg>
-  ),
-  niko: (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9Z" /></svg>
-  ),
-  account: (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="3.6" /><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6" /></svg>
-  ),
-};
-
-const ITEMS = [
-  { key: 'home', label: 'Accueil', href: '/' },
-  { key: 'explore', label: 'Explorer', href: '/#domaines' },
-  { key: 'map', label: 'Carte', action: 'map' as const },
-  { key: 'niko', label: 'NIKO', href: '/niko' },
-  { key: 'account', label: 'Profil', href: '/dashboard' },
-];
+const PAGES = [DOMAINS.slice(0, 5), DOMAINS.slice(5)]; // [food…rent], [serv…news]
 
 export default function BottomNav() {
   const pathname = usePathname();
-  const { openMap } = useMapStore();
+  const [page, setPage] = useState(0);
+  const startX = useRef<number | null>(null);
 
-  const isActive = (href?: string) => {
-    if (!href || href.includes('#')) return false; // les ancres ne sont pas des "pages"
-    if (href === '/') return pathname === '/';
-    return pathname === href || pathname.startsWith(href + '/');
+  const activeSlug = DOMAINS.find(d => pathname === `/${d.slug}` || pathname.startsWith(`/${d.slug}/`))?.slug;
+
+  // Aligner la page visible sur le domaine actif (ex. /sec → page 2).
+  useEffect(() => {
+    if (!activeSlug) return;
+    const idx = PAGES.findIndex(pg => pg.some(d => d.slug === activeSlug));
+    if (idx >= 0) setPage(idx);
+  }, [activeSlug]);
+
+  const onEnd = (x: number) => {
+    if (startX.current == null) return;
+    const dx = x - startX.current;
+    startX.current = null;
+    if (dx < -40) setPage(p => Math.min(PAGES.length - 1, p + 1));
+    else if (dx > 40) setPage(p => Math.max(0, p - 1));
   };
 
   return (
-    <nav className="bottom-nav" aria-label="Navigation principale mobile">
-      {ITEMS.map(item => {
-        const active = isActive(item.href);
-        const content = (
-          <>
-            <span className="bn-icon">{ICONS[item.key]}</span>
-            <span className="bn-label">{item.label}</span>
-          </>
-        );
-        if (item.action === 'map') {
-          return (
-            <button key={item.key} onClick={openMap} className="bn-item" aria-label={item.label}>
-              {content}
-            </button>
-          );
-        }
-        return (
-          <Link key={item.key} href={item.href!} className="bn-item" data-active={active} aria-label={item.label}>
-            {content}
-          </Link>
-        );
-      })}
+    <nav className="bottom-nav" aria-label="Navigation des domaines">
+      <div style={{ overflow: 'hidden', width: '100%' }}
+        onTouchStart={e => { startX.current = e.touches[0].clientX; }}
+        onTouchEnd={e => onEnd(e.changedTouches[0].clientX)}
+        onPointerDown={e => { if (e.pointerType === 'mouse') startX.current = e.clientX; }}
+        onPointerUp={e => { if (e.pointerType === 'mouse') onEnd(e.clientX); }}>
+        <div className="bn-track" style={{ transform: `translateX(-${page * 100}%)` }}>
+          {PAGES.map((pg, pi) => (
+            <div className="bn-page" key={pi}>
+              {pg.map(d => {
+                const active = d.slug === activeSlug;
+                return (
+                  <Link key={d.slug} href={`/${d.slug}`} className="bn-dom" data-active={active} aria-label={d.label}
+                    tabIndex={page === pi ? 0 : -1} style={active ? { color: d.color } : undefined}>
+                    <span className="bn-dom-ic" aria-hidden style={active ? { filter: `drop-shadow(0 0 7px ${d.color})` } : undefined}>{d.icon}</span>
+                    <span className="bn-dom-label">{d.label}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="bn-dots">
+        {PAGES.map((_, i) => (
+          <button key={i} className="bn-dot" data-on={page === i} aria-label={`Page ${i + 1} de domaines`} aria-pressed={page === i} onClick={() => setPage(i)} />
+        ))}
+      </div>
     </nav>
   );
 }
