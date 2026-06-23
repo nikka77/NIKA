@@ -23,20 +23,57 @@ const MODES: { key: AutoMode; label: string; icon: string }[] = [
   { key: 'depannage', label: 'Dépannage', icon: '🔧' },
 ];
 
-// Location : catégories du - au + cher, chacune 4 véhicules (même tarif) + specs (places / boîte / énergie).
-type Car = { model: string; img: string };
-type Cat = { key: string; name: string; price: number; specs: string; emoji: string; feat: string[]; cars: Car[] };
+// Location : 28 véhicules filtrables (type / places / puissance HP / énergie / boîte / prix-jour / livraison / dispo).
 const im = (slug: string, n: number) => `/images/auto/${slug}${n === 1 ? '' : '-' + n}.webp`;
-const mk = (slug: string, models: string[]): Car[] => models.map((model, i) => ({ model, img: im(slug, i + 1) }));
-const CATEGORIES: Cat[] = [
-  { key: 'citadine', name: 'Citadine', price: 39, specs: 'agile · ville', emoji: '🚗', feat: ['5 places', 'Boîte auto', 'Essence'], cars: mk('citadine', ['Renault Clio', 'Peugeot 208', 'VW Polo', 'Toyota Yaris']) },
-  { key: 'monospace', name: 'Monospace', price: 55, specs: '7 places', emoji: '🚐', feat: ['7 places', 'Boîte auto', 'Diesel'], cars: mk('monospace', ['Citroën SpaceTourer', 'Renault Espace', 'VW Touran', 'Ford Galaxy']) },
-  { key: 'berline', name: 'Berline', price: 79, specs: 'confort', emoji: '🚘', feat: ['5 places', 'Boîte auto', 'Hybride'], cars: mk('berline', ['BMW Série 3', 'Audi A4', 'Mercedes C', 'Peugeot 508']) },
-  { key: 'electrique', name: 'Électrique', price: 99, specs: '~500 km', emoji: '⚡', feat: ['5 places', '~500 km', '100% élec'], cars: mk('electrique', ['Tesla Model 3', 'Hyundai Ioniq', 'Kia EV6', 'Renault Mégane E']) },
-  { key: 'sportive', name: 'Sportive', price: 189, specs: '0-100 < 5 s', emoji: '🏎️', feat: ['2 places', '0-100 < 5 s', 'Sport'], cars: mk('sportive', ['Porsche 718', 'Audi TT RS', 'BMW M2', 'Alpine A110']) },
-  { key: 'supercar', name: 'Supercar', price: 490, specs: 'V8/V10', emoji: '🏎️', feat: ['2 places', 'V8 / V10', '+600 ch'], cars: mk('supercar', ['Lamborghini Huracán', 'Ferrari F8', 'McLaren GT', 'Audi R8']) },
-  { key: 'hypercar', name: 'Hypercar', price: 1290, specs: 'série limitée', emoji: '🏁', feat: ['2 places', 'Série limitée', '+1000 ch'], cars: mk('hypercar', ['Bugatti Chiron', 'Koenigsegg', 'Pagani Huayra', 'Rimac Nevera']) },
+type TypeDef = { key: string; label: string; emoji: string };
+const TYPES: TypeDef[] = [
+  { key: 'citadine', label: 'Citadine', emoji: '🚗' },
+  { key: 'monospace', label: 'Monospace', emoji: '🚐' },
+  { key: 'berline', label: 'Berline', emoji: '🚘' },
+  { key: 'electrique', label: 'Électrique', emoji: '⚡' },
+  { key: 'sportive', label: 'Sportive', emoji: '🏎️' },
+  { key: 'supercar', label: 'Supercar', emoji: '🏎️' },
+  { key: 'hypercar', label: 'Hypercar', emoji: '🏁' },
 ];
+const typeMeta = (k: string) => TYPES.find(t => t.key === k) ?? TYPES[0];
+const ENERGIES = ['Essence', 'Diesel', 'Hybride', 'Élec'];
+const GEARBOXES = ['Auto', 'Manuelle'];
+type Veh = { model: string; img: string; type: string; seats: number; hp: number; energy: string; gearbox: string; price: number; livr: boolean; dispo: boolean };
+const V = (type: string, i: number, model: string, seats: number, hp: number, energy: string, gearbox: string, price: number, livr = true, dispo = true): Veh =>
+  ({ model, img: im(type, i + 1), type, seats, hp, energy, gearbox, price, livr, dispo });
+const VEHICLES: Veh[] = [
+  V('citadine', 0, 'Renault Clio', 5, 90, 'Essence', 'Manuelle', 35),
+  V('citadine', 1, 'Peugeot 208', 5, 100, 'Essence', 'Auto', 39),
+  V('citadine', 2, 'VW Polo', 5, 95, 'Essence', 'Manuelle', 37, true, false),
+  V('citadine', 3, 'Toyota Yaris', 5, 116, 'Hybride', 'Auto', 42),
+  V('monospace', 0, 'Citroën SpaceTourer', 8, 145, 'Diesel', 'Auto', 59),
+  V('monospace', 1, 'Renault Espace', 7, 200, 'Hybride', 'Auto', 65),
+  V('monospace', 2, 'VW Touran', 7, 150, 'Diesel', 'Auto', 55, false),
+  V('monospace', 3, 'Ford Galaxy', 7, 190, 'Diesel', 'Auto', 57),
+  V('berline', 0, 'BMW Série 3', 5, 184, 'Hybride', 'Auto', 79),
+  V('berline', 1, 'Audi A4', 5, 204, 'Diesel', 'Auto', 82),
+  V('berline', 2, 'Mercedes C', 5, 204, 'Hybride', 'Auto', 85),
+  V('berline', 3, 'Peugeot 508', 5, 180, 'Hybride', 'Auto', 75),
+  V('electrique', 0, 'Tesla Model 3', 5, 283, 'Élec', 'Auto', 99),
+  V('electrique', 1, 'Hyundai Ioniq 5', 5, 225, 'Élec', 'Auto', 95),
+  V('electrique', 2, 'Kia EV6', 5, 229, 'Élec', 'Auto', 92),
+  V('electrique', 3, 'Renault Mégane E', 5, 220, 'Élec', 'Auto', 89),
+  V('sportive', 0, 'Porsche 718', 2, 300, 'Essence', 'Auto', 189),
+  V('sportive', 1, 'Audi TT RS', 2, 400, 'Essence', 'Auto', 179),
+  V('sportive', 2, 'BMW M2', 4, 460, 'Essence', 'Auto', 175),
+  V('sportive', 3, 'Alpine A110', 2, 252, 'Essence', 'Auto', 169),
+  V('supercar', 0, 'Lamborghini Huracán', 2, 640, 'Essence', 'Auto', 490, false),
+  V('supercar', 1, 'Ferrari F8', 2, 720, 'Essence', 'Auto', 520, false),
+  V('supercar', 2, 'McLaren GT', 2, 620, 'Essence', 'Auto', 470, false),
+  V('supercar', 3, 'Audi R8', 2, 570, 'Essence', 'Auto', 450),
+  V('hypercar', 0, 'Bugatti Chiron', 2, 1500, 'Essence', 'Auto', 1490, false, false),
+  V('hypercar', 1, 'Koenigsegg', 2, 1600, 'Essence', 'Auto', 1390, false, false),
+  V('hypercar', 2, 'Pagani Huayra', 2, 730, 'Essence', 'Auto', 1290, false, false),
+  V('hypercar', 3, 'Rimac Nevera', 2, 1914, 'Élec', 'Auto', 1450, false),
+];
+const PRICE_MIN = Math.min(...VEHICLES.map(v => v.price));
+const PRICE_MAX = Math.max(...VEHICLES.map(v => v.price));
+const HP_MAX = Math.max(...VEHICLES.map(v => v.hp));
 
 // Dépannage : types de panne (visuel généré + repli emoji)
 const BREAKDOWNS = [
@@ -79,7 +116,6 @@ const card: React.CSSProperties = {
 };
 const inp: React.CSSProperties = { background: 'rgba(255,255,255,0.05)', border: '1px solid var(--bd2)', borderRadius: 8, padding: '8px 10px', fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td)', outline: 'none' };
 const sectionLbl: React.CSSProperties = { fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td2)' };
-const chip: React.CSSProperties = { fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 600, color: 'var(--td2)', padding: '3px 8px', borderRadius: 20, background: 'rgba(255,255,255,0.05)', border: '1px solid var(--bd)' };
 
 // Entrée échelonnée des tuiles/lignes (sous le fondu de mode)
 const gridV = { hidden: {}, show: { transition: { staggerChildren: 0.04 } } };
@@ -158,8 +194,17 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
   const [garage, setGarage] = useState(false);
   const [adding, setAdding] = useState(false);
   const [form, setForm] = useState({ label: '', plate: '', type: 'car' });
-  const [catIdx, setCatIdx] = useState(0);
-  const [carIdx, setCarIdx] = useState(0);
+  const [types, setTypes] = useState<string[]>([]);
+  const [seatsMin, setSeatsMin] = useState(1);
+  const [hpMin, setHpMin] = useState(0);
+  const [priceMax, setPriceMax] = useState(PRICE_MAX);
+  const [energies, setEnergies] = useState<string[]>([]);
+  const [gearboxes, setGearboxes] = useState<string[]>([]);
+  const [fLivr, setFLivr] = useState(false);
+  const [fDispo, setFDispo] = useState(false);
+  const [sortBy, setSortBy] = useState<'price' | 'price-desc' | 'hp'>('price');
+  const [carSel, setCarSel] = useState<string | null>(null);
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [rentDays, setRentDays] = useState(3);
   const [breakdowns, setBreakdowns] = useState<string[]>([]);
   const [depDest, setDepDest] = useState<string | null>(null);
@@ -186,10 +231,21 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
   const drv = DRIVERS[0]; // chauffeur le plus proche (offset le + petit)
   const taxiEta = useMemo(() => etaMin(km0(drv.dx, drv.dy)), [base.lng, base.lat]); // eslint-disable-line react-hooks/exhaustive-deps
   const tow = useMemo(() => TOWS.map(t => ({ t, eta: etaMin(km0(t.dx, t.dy)) })).sort((a, b) => a.eta - b.eta)[0], [base.lng, base.lat]); // eslint-disable-line react-hooks/exhaustive-deps
-  const cat = CATEGORIES[catIdx];
-  const ci = Math.min(carIdx, cat.cars.length - 1);
-  const selCar = cat.cars[ci];
-  const rentTotal = cat.price * rentDays;
+  const results = useMemo(() => {
+    const r = VEHICLES.filter(v =>
+      (types.length === 0 || types.includes(v.type)) &&
+      v.seats >= seatsMin && v.hp >= hpMin && v.price <= priceMax &&
+      (energies.length === 0 || energies.includes(v.energy)) &&
+      (gearboxes.length === 0 || gearboxes.includes(v.gearbox)) &&
+      (!fLivr || v.livr) && (!fDispo || v.dispo));
+    r.sort((a, b) => sortBy === 'price' ? a.price - b.price : sortBy === 'price-desc' ? b.price - a.price : b.hp - a.hp);
+    return r;
+  }, [types, seatsMin, hpMin, priceMax, energies, gearboxes, fLivr, fDispo, sortBy]);
+  const selV = results.find(v => v.model === carSel) ?? results[0] ?? null;
+  const rentTotal = selV ? selV.price * rentDays : 0;
+  const activeCount = (seatsMin > 1 ? 1 : 0) + (hpMin > 0 ? 1 : 0) + (priceMax < PRICE_MAX ? 1 : 0) + (energies.length ? 1 : 0) + (gearboxes.length ? 1 : 0) + (fLivr ? 1 : 0) + (fDispo ? 1 : 0);
+  const resetAll = () => { setTypes([]); setSeatsMin(1); setHpMin(0); setPriceMax(PRICE_MAX); setEnergies([]); setGearboxes([]); setFLivr(false); setFDispo(false); };
+  const toggle = (arr: string[], set: (v: string[]) => void, k: string) => set(arr.includes(k) ? arr.filter(x => x !== k) : [...arr, k]);
   const schedDone = /T\d\d:\d\d$/.test(schedAt);
 
   return (
@@ -341,59 +397,122 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
         {/* ─────────── LOCATION ─────────── */}
         {mode === 'location' && (
           <div>
-            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 4 }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 8 }}>
               <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 15, color: 'var(--td)', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Louez maintenant</span>
-              <AnimatePresence mode="wait"><motion.span key={cat.key} initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 4 }} transition={{ duration: 0.18 }}><Price value={cat.price} suffix="/j" size={22} /></motion.span></AnimatePresence>
+              <span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 800, color: results.length ? OK : '#D44B24' }}>{results.length} véhicule{results.length > 1 ? 's' : ''}</span>
             </div>
-            <div style={{ margin: '6px 0 2px' }}>
-              <input type="range" min={0} max={CATEGORIES.length - 1} step={1} value={catIdx}
-                onChange={e => { setCatIdx(Number(e.target.value)); setCarIdx(0); }} aria-label="Budget"
-                aria-valuetext={`${cat.name} — ${cat.price} € par jour`} className="auto-budget" style={{ width: '100%' }} />
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--fo)', fontSize: 9, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--td2)', marginTop: 2 }}>
-                <span>€ Citadine</span><span style={{ color: AZ, fontWeight: 700 }}>{cat.name}</span><span>Hypercar €€€</span>
+
+            {/* TYPE — puces multi, toujours visibles, défilables */}
+            <div className="hero-domabar" style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 4 }}>
+              <Chip active={types.length === 0} onClick={() => setTypes([])} label="Tout" />
+              {TYPES.map(t => <Chip key={t.key} active={types.includes(t.key)} onClick={() => toggle(types, setTypes, t.key)} label={t.label} emoji={t.emoji} />)}
+            </div>
+
+            {/* Barre : bouton Filtres (déplie) + Tri */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 8 }}>
+              <button onClick={() => setFiltersOpen(o => !o)} aria-expanded={filtersOpen}
+                style={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: 6, padding: '7px 11px', borderRadius: 10, cursor: 'pointer', border: `1px solid ${activeCount || filtersOpen ? AZ : 'var(--bd2)'}`, background: activeCount || filtersOpen ? `${AZ}1c` : 'rgba(255,255,255,0.04)', color: activeCount || filtersOpen ? AZ : 'var(--td2)', fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700 }}>
+                <span aria-hidden>⚙</span> Filtres{activeCount ? ` · ${activeCount}` : ''}<span aria-hidden style={{ display: 'inline-block', transform: filtersOpen ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }}>▾</span>
+              </button>
+              <div className="hero-domabar" style={{ display: 'flex', gap: 5, overflowX: 'auto', flex: 1, justifyContent: 'flex-end' }}>
+                {([['price', 'Prix ↑'], ['price-desc', 'Prix ↓'], ['hp', 'Puissance']] as const).map(([k, l]) => (
+                  <button key={k} onClick={() => setSortBy(k)} aria-pressed={sortBy === k}
+                    style={{ flexShrink: 0, padding: '7px 10px', borderRadius: 10, cursor: 'pointer', border: `1px solid ${sortBy === k ? AZ : 'var(--bd2)'}`, background: sortBy === k ? `${AZ}1c` : 'transparent', color: sortBy === k ? AZ : 'var(--td2)', fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 600 }}>{l}</button>
+                ))}
               </div>
             </div>
 
-            {/* specs de la catégorie */}
-            <div style={{ display: 'flex', gap: 6, margin: '8px 2px 0' }}>
-              {cat.feat.map(f => <span key={f} style={chip}>{f}</span>)}
-            </div>
+            {/* Panneau de filtres dépliable */}
+            <AnimatePresence initial={false}>
+              {filtersOpen && (
+                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.22 }} style={{ overflow: 'hidden' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 11, padding: '11px 2px 4px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
+                        <span style={sectionLbl}>Places min</span>
+                        <button onClick={() => setSeatsMin(s => Math.max(1, s - 1))} aria-label="Moins une place" style={miniStep}>−</button>
+                        <span style={{ fontFamily: 'var(--fn)', fontSize: 19, color: 'var(--td)', minWidth: 22, textAlign: 'center' }}>{seatsMin}</span>
+                        <button onClick={() => setSeatsMin(s => Math.min(8, s + 1))} aria-label="Plus une place" style={miniStep}>+</button>
+                      </div>
+                      {(activeCount > 0 || types.length > 0) && <button onClick={resetAll} style={{ background: 'none', border: 'none', color: 'var(--td2)', fontFamily: 'var(--fo)', fontSize: 10.5, cursor: 'pointer', textDecoration: 'underline' }}>Réinitialiser</button>}
+                    </div>
+                    <div>
+                      <div style={sectionLbl}>Puissance min</div>
+                      <Gauge value={hpMin} max={HP_MAX} onChange={setHpMin} />
+                    </div>
+                    <div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 6 }}>
+                        <span style={sectionLbl}>Budget / jour</span>
+                        <span style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: priceMax < PRICE_MAX ? AZ : 'var(--td)' }}>{priceMax < PRICE_MAX ? `≤ ${priceMax} €` : 'illimité'}</span>
+                      </div>
+                      <input type="range" min={PRICE_MIN} max={PRICE_MAX} step={5} value={priceMax} onChange={e => setPriceMax(Number(e.target.value))} aria-label="Budget maximum par jour" aria-valuetext={`Jusqu'à ${priceMax} euros par jour`} className="auto-budget" style={{ width: '100%' }} />
+                    </div>
+                    <div>
+                      <div style={sectionLbl}>Énergie</div>
+                      <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 6 }}>
+                        {ENERGIES.map(en => <Chip key={en} small active={energies.includes(en)} onClick={() => toggle(energies, setEnergies, en)} label={en} />)}
+                      </div>
+                    </div>
+                    <div>
+                      <div style={sectionLbl}>Boîte</div>
+                      <div style={{ display: 'flex', gap: 6, marginTop: 6 }}>
+                        {GEARBOXES.map(g => <Chip key={g} small active={gearboxes.includes(g)} onClick={() => toggle(gearboxes, setGearboxes, g)} label={g} />)}
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', gap: 6 }}>
+                      <Toggle active={fLivr} onClick={() => setFLivr(v => !v)} label="Livraison gratuite" />
+                      <Toggle active={fDispo} onClick={() => setFDispo(v => !v)} label="Dispo maintenant" />
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-            {/* 4 véhicules — liste VERTICALE défilante (vignette + infos, sélection verte) */}
-            <motion.div variants={gridV} initial="hidden" animate="show" className="hero-domabar" style={{ display: 'flex', flexDirection: 'column', gap: 7, maxHeight: 214, overflowY: 'auto', padding: '8px 2px 4px' }}>
-              {cat.cars.map((c, i) => {
-                const a = i === ci;
+            {/* RÉSULTATS — liste verticale (tous les véhicules filtrés) */}
+            <motion.div key={results.map(v => v.model).join() + sortBy} variants={gridV} initial="hidden" animate="show" className="hero-domabar" style={{ display: 'flex', flexDirection: 'column', gap: 7, maxHeight: filtersOpen ? 180 : 300, overflowY: 'auto', padding: '10px 2px 4px', transition: 'max-height .25s' }}>
+              {results.length === 0 && (
+                <div style={{ textAlign: 'center', padding: '18px 0', fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td2)' }}>Aucun véhicule ne correspond.<br /><button onClick={resetAll} style={{ marginTop: 8, background: 'none', border: 'none', color: AZ, cursor: 'pointer', fontFamily: 'var(--fo)', fontSize: 11, textDecoration: 'underline' }}>Réinitialiser les filtres</button></div>
+              )}
+              {results.map(v => {
+                const a = selV?.model === v.model;
+                const tm = typeMeta(v.type);
                 return (
-                  <motion.button variants={itemV} key={c.model} onClick={() => setCarIdx(i)} aria-pressed={a}
+                  <motion.button variants={itemV} key={v.model} onClick={() => setCarSel(v.model)} aria-pressed={a}
                     style={{ display: 'flex', alignItems: 'center', gap: 11, width: '100%', padding: 6, borderRadius: 12, cursor: 'pointer', border: `2px solid ${a ? OK : 'var(--bd2)'}`, boxShadow: a ? `0 0 16px ${OK}44` : 'none', background: a ? `${OK}14` : 'rgba(255,255,255,0.04)', textAlign: 'left', transition: 'all .18s' }}>
-                    <span style={{ position: 'relative', flexShrink: 0, width: 112, height: 64, borderRadius: 9, overflow: 'hidden', background: 'rgba(255,255,255,0.04)' }}>
-                      <CarBg img={c.img} emoji={cat.emoji} h={64} />
-                      <span style={{ position: 'absolute', top: 4, right: 4 }}><CheckMark on={a} size={17} /></span>
+                    <span style={{ position: 'relative', flexShrink: 0, width: 104, height: 60, borderRadius: 9, overflow: 'hidden', background: 'rgba(255,255,255,0.04)' }}>
+                      <CarBg img={v.img} emoji={tm.emoji} h={60} />
+                      <span style={{ position: 'absolute', top: 4, right: 4 }}><CheckMark on={a} size={16} /></span>
                     </span>
                     <span style={{ flex: 1, minWidth: 0 }}>
-                      <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700, color: a ? OK : 'var(--td)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.model}</span>
-                      <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td2)', marginTop: 2 }}>{cat.specs} · {cat.price} €/j</span>
+                      <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700, color: a ? OK : 'var(--td)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{v.model}</span>
+                      <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td2)', marginTop: 2 }}>{tm.label} · {v.seats} pl · {v.hp} HP · {v.energy}</span>
                     </span>
+                    <span style={{ flexShrink: 0, textAlign: 'right' }}><Price value={v.price} suffix="/j" size={17} /></span>
                   </motion.button>
                 );
               })}
             </motion.div>
 
-            {/* Durée → total */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, margin: '8px 2px 0', padding: '8px 10px', borderRadius: 10, background: 'rgba(255,255,255,0.04)', border: '1px solid var(--bd2)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
-                <span style={sectionLbl}>Durée</span>
-                <button onClick={() => setRentDays(d => Math.max(1, d - 1))} aria-label="Moins un jour" style={miniStep}>−</button>
-                <span style={{ fontFamily: 'var(--fn)', fontSize: 19, color: 'var(--td)', minWidth: 40, textAlign: 'center' }}>{rentDays} j</span>
-                <button onClick={() => setRentDays(d => Math.min(30, d + 1))} aria-label="Plus un jour" style={miniStep}>+</button>
-              </div>
-              <div style={{ textAlign: 'right' }}>
-                <div style={{ fontFamily: 'var(--fo)', fontSize: 8.5, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td2)' }}>Total</div>
-                <Price value={rentTotal} suffix="€" size={22} />
-              </div>
-            </div>
-
-            <Cta href={`/auto/location?cat=${cat.key}&car=${encodeURIComponent(selCar.model)}&days=${rentDays}`} label={`Louer · ${selCar.model} · ${rentDays} j · ${rentTotal} €`} />
+            {/* Durée → total + CTA */}
+            {selV ? (
+              <>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, margin: '8px 2px 0', padding: '8px 10px', borderRadius: 10, background: 'rgba(255,255,255,0.04)', border: '1px solid var(--bd2)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
+                    <span style={sectionLbl}>Durée</span>
+                    <button onClick={() => setRentDays(d => Math.max(1, d - 1))} aria-label="Moins un jour" style={miniStep}>−</button>
+                    <span style={{ fontFamily: 'var(--fn)', fontSize: 19, color: 'var(--td)', minWidth: 40, textAlign: 'center' }}>{rentDays} j</span>
+                    <button onClick={() => setRentDays(d => Math.min(30, d + 1))} aria-label="Plus un jour" style={miniStep}>+</button>
+                  </div>
+                  <div style={{ textAlign: 'right' }}>
+                    <div style={{ fontFamily: 'var(--fo)', fontSize: 8.5, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td2)' }}>Total</div>
+                    <Price value={rentTotal} suffix="€" size={22} />
+                  </div>
+                </div>
+                <Cta href={`/auto/location?car=${encodeURIComponent(selV.model)}&days=${rentDays}`} label={`Louer · ${selV.model} · ${rentDays} j · ${rentTotal} €`} />
+              </>
+            ) : (
+              <Cta href="/auto/location" label="Élargis tes filtres" mt={10} disabled />
+            )}
             <Trust mode="location" />
           </div>
         )}
@@ -511,6 +630,60 @@ function Cta({ href, label, mt = 10, disabled = false }: { href: string; label: 
   const inner = <><span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{label}</span>{!disabled && <span aria-hidden style={{ fontSize: 14 }}>→</span>}</>;
   if (disabled) return <span aria-disabled="true" style={{ ...s, cursor: 'not-allowed' }}>{inner}</span>;
   return <Link href={href} style={s}>{inner}</Link>;
+}
+
+// Puce de filtre (multi). Sélectionnée = vert + ✓ ; sinon emoji optionnel.
+function Chip({ active, onClick, label, emoji, small }: { active: boolean; onClick: () => void; label: string; emoji?: string; small?: boolean }) {
+  return (
+    <button type="button" onClick={onClick} aria-pressed={active}
+      style={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: 5, padding: small ? '5px 10px' : '6px 11px', borderRadius: 20, cursor: 'pointer', border: `1px solid ${active ? OK : 'var(--bd2)'}`, background: active ? `${OK}1c` : 'rgba(255,255,255,0.04)', color: active ? OK : 'var(--td2)', fontFamily: 'var(--fo)', fontSize: 11, fontWeight: active ? 700 : 500, whiteSpace: 'nowrap', transition: 'all .15s' }}>
+      {active ? <span aria-hidden>✓</span> : emoji ? <span aria-hidden style={{ fontSize: 12 }}>{emoji}</span> : null}{label}
+    </button>
+  );
+}
+// Bascule de filtre (livraison / dispo)
+function Toggle({ active, onClick, label }: { active: boolean; onClick: () => void; label: string }) {
+  return (
+    <button type="button" onClick={onClick} aria-pressed={active}
+      style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, padding: '8px 6px', borderRadius: 10, cursor: 'pointer', border: `1px solid ${active ? OK : 'var(--bd2)'}`, background: active ? `${OK}1c` : 'rgba(255,255,255,0.04)', color: active ? OK : 'var(--td2)', fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: active ? 700 : 600, transition: 'all .15s' }}>
+      {active && <span aria-hidden>✓</span>}{label}
+    </button>
+  );
+}
+// Jauge de puissance type compteur (arc) — seuil HP minimum, glisser / clavier.
+function Gauge({ value, max, onChange }: { value: number; max: number; onChange: (v: number) => void }) {
+  const ref = useRef<SVGSVGElement>(null);
+  const W = 240, H = 116, cx = W / 2, cy = H - 12, R = 92;
+  const t = Math.max(0, Math.min(1, value / max));
+  const pt = (frac: number, r: number): [number, number] => { const a = Math.PI * (1 - frac); return [cx + r * Math.cos(a), cy - r * Math.sin(a)]; };
+  const [sx, sy] = pt(0, R), [ex, ey] = pt(1, R), [vx, vy] = pt(t, R);
+  const arc = (x1: number, y1: number, x2: number, y2: number) => `M ${x1.toFixed(1)} ${y1.toFixed(1)} A ${R} ${R} 0 0 1 ${x2.toFixed(1)} ${y2.toFixed(1)}`;
+  const setFromPointer = (clientX: number, clientY: number) => {
+    const svg = ref.current; if (!svg) return;
+    const r = svg.getBoundingClientRect();
+    const x = (clientX - r.left) * (W / r.width), y = (clientY - r.top) * (H / r.height);
+    let a = Math.atan2(cy - y, x - cx); a = Math.max(0, Math.min(Math.PI, a));
+    onChange(Math.round((1 - a / Math.PI) * max / 10) * 10);
+  };
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <svg ref={ref} viewBox={`0 0 ${W} ${H}`} width="100%" style={{ maxWidth: 240, touchAction: 'none', cursor: 'pointer', display: 'block' }}
+        role="slider" aria-valuemin={0} aria-valuemax={max} aria-valuenow={value} aria-label="Puissance minimum en chevaux" tabIndex={0}
+        onPointerDown={e => { (e.currentTarget as SVGSVGElement).setPointerCapture?.(e.pointerId); setFromPointer(e.clientX, e.clientY); }}
+        onPointerMove={e => { if (e.buttons === 1) setFromPointer(e.clientX, e.clientY); }}
+        onKeyDown={e => { if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { onChange(Math.max(0, value - 10)); e.preventDefault(); } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { onChange(Math.min(max, value + 10)); e.preventDefault(); } }}>
+        <path d={arc(sx, sy, ex, ey)} fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth={9} strokeLinecap="round" />
+        {t > 0.01 && <path d={arc(sx, sy, vx, vy)} fill="none" stroke={AZ} strokeWidth={9} strokeLinecap="round" />}
+        <line x1={cx} y1={cy} x2={vx} y2={vy} stroke={AZ} strokeWidth={3} strokeLinecap="round" />
+        <circle cx={cx} cy={cy} r={6} fill="#fff" stroke={AZ} strokeWidth={3} />
+        <circle cx={vx} cy={vy} r={7} fill="#fff" stroke={AZ} strokeWidth={3} />
+      </svg>
+      <div style={{ marginTop: -30, textAlign: 'center', pointerEvents: 'none' }}>
+        <div style={{ fontFamily: 'var(--fn)', fontSize: 26, color: 'var(--td)', lineHeight: 1 }}>{value === 0 ? 'Toutes' : `≥ ${value}`}</div>
+        <div style={{ fontFamily: 'var(--fo)', fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--td2)' }}>{value === 0 ? 'puissances' : 'HP min'}</div>
+      </div>
+    </div>
+  );
 }
 
 // Sélecteur date+heure premium (inspiré 21st.dev) — remplace l'<input datetime-local> natif.
