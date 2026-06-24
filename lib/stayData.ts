@@ -110,13 +110,13 @@ const W = (slug: string, name: string, type: WowType, place: string, score: numb
 export const EXPLORE: Wow[] = [
   W('sous-marin-jaune-nouvelle-zelande', 'Sous-marin jaune', 'sous-marin', 'Nouvelle-Zélande', 25, 280, 'cover.jpg'),
   W('express-voiture-salon-14630-normandie', 'L’Express Voiture-Salon', 'train-reconverti', 'Normandie · France', 24, 195, 'cover.jpg'),
-  W('ovni-guadalupe-vallee-baja', 'OVNI de Guadalupe', 'architecture-surréaliste', 'Mexique', 24, 285, 'cover.jpg'),
+  W('ovni-guadalupe-vallee-baja', 'OVNI de Guadalupe', 'architecture-surréaliste', 'Mexique', 24, 285, 'gallery-01.jpg'), // cover = nuit étoilée → UFO crépuscule (cf. /stay)
   W('anthenea-suite-flottante-perros-guirec', 'Anthénéa, suite flottante', 'suite-flottante', 'Perros-Guirec · France', 23, 380, 'cover.jpeg'),
-  W('silo-missiles-bunker-atlas-f-roswell', 'Silo à missiles Atlas F', 'bunker-militaire', 'Roswell · USA', 25, 320, 'cover.jpg'),
+  W('silo-missiles-bunker-atlas-f-roswell', 'Silo à missiles Atlas F', 'bunker-militaire', 'Roswell · USA', 25, 320, 'gallery-01.jpg'), // cover = photo de soirée couple → silo (cf. /stay)
   W('grotte-nid2reve-savignac-perigord', 'La Grotte de Nid2Rêve', 'grotte', 'Périgord · France', 23, 145, 'cover.jpg'),
   W('cob-cottage-mayne-island-canada', 'Cob Cottage sculpté main', 'maison-terre', 'Canada', 24, 240, 'cover.jpg'),
   W('birdbox-lotsbergskaara-lote-nordfjord-norvege', 'Birdbox sur le fjord', 'tiny-house', 'Nordfjord · Norvège', 22, 420, 'cover.jpg'),
-  W('maison-hobbit-saint-affrique-occitanie', 'Maison Hobbit', 'maison-terre', 'Occitanie · France', 22, 180, 'cover.jpg'),
+  W('maison-hobbit-saint-affrique-occitanie', 'Maison Hobbit', 'maison-terre', 'Occitanie · France', 22, 180, 'gallery-01.jpg'), // cover = terrasse → façade hobbit (cf. /stay)
   W('gawthornes-hut-top10-monde-mudgee-australie', 'Gawthorne’s Hut · top 10 monde', 'eco-cabin', 'Australie', 24, 390, 'cover.jpg'),
 ];
 

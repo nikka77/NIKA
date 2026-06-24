@@ -104,6 +104,28 @@ ul { list-style: none; }
 .stay-mod button:active, .stay-mod a[href]:active { transform: scale(0.96); }
 @media (prefers-reduced-motion: reduce) { .stay-mod button:active, .stay-mod a[href]:active { transform: none; } }
 
+/* ===== AZUR — slider budget + focus/press (scopé .azur-mod) ===== */
+.azur-budget { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 4px; background: linear-gradient(90deg, #0868A0, #1391C8); outline: none; cursor: pointer; }
+.azur-budget::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #0868A0; box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer; }
+.azur-budget::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #0868A0; box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer; }
+.azur-budget:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px rgba(8,104,160,0.55); }
+.azur-budget:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 4px rgba(8,104,160,0.55); }
+.azur-mod button:focus-visible, .azur-mod a[href]:focus-visible { outline: 2px solid #1391C8; outline-offset: 2px; border-radius: 10px; }
+.azur-mod button, .azur-mod a[href] { transition: transform .12s ease; }
+.azur-mod button:active, .azur-mod a[href]:active { transform: scale(0.96); }
+@media (prefers-reduced-motion: reduce) { .azur-mod button:active, .azur-mod a[href]:active { transform: none; } }
+
+/* ===== RENT — slider budget + focus/press (scopé .rent-mod) ===== */
+.rent-budget { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 4px; background: linear-gradient(90deg, #5A88B0, #7BA8CC); outline: none; cursor: pointer; }
+.rent-budget::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #5A88B0; box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer; }
+.rent-budget::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #5A88B0; box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer; }
+.rent-budget:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px rgba(90,136,176,0.55); }
+.rent-budget:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 4px rgba(90,136,176,0.55); }
+.rent-mod button:focus-visible, .rent-mod a[href]:focus-visible { outline: 2px solid #7BA8CC; outline-offset: 2px; border-radius: 10px; }
+.rent-mod button, .rent-mod a[href] { transition: transform .12s ease; }
+.rent-mod button:active, .rent-mod a[href]:active { transform: scale(0.96); }
+@media (prefers-reduced-motion: reduce) { .rent-mod button:active, .rent-mod a[href]:active { transform: none; } }
+
 /* ===== AUTO — Dépannage express animé ===== */
 @keyframes dep-beacon-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(212,75,36,0.55); } 50% { box-shadow: 0 0 0 7px rgba(212,75,36,0); } }
 .dep-beacon { animation: dep-beacon-pulse 1.5s ease-out infinite; }
