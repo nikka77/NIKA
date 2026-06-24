@@ -14,6 +14,7 @@ import { MAP_STYLE, NICE } from '@/lib/map';
 import { useLocationStore, useHeroNav } from '@/lib/store';
 import FoodModule, { type Pro as FoodPro } from '@/components/home/FoodModule';
 import AutoModule, { type AutoMode } from '@/components/home/AutoModule';
+import StayModule from '@/components/home/StayModule';
 import SmartSearch from '@/components/home/SmartSearch';
 import { DRIVERS, RENTALS, TOWS, offsetPos, distKm, etaMin, priceVtc } from '@/lib/autoData';
 import type { NightEntry } from '@/lib/food';
@@ -325,6 +326,8 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
               ) : scene.domain === 'auto' ? (
                 <AutoModule mode={autoMode} onMode={setAutoMode} user={coords}
                   dest={autoDest ? { label: autoDest.label } : null} trip={trip} onClearDest={() => { setAutoDest(null); setQuery(''); }} />
+              ) : scene.domain === 'stay' ? (
+                <StayModule />
               ) : scene.domain ? (
                 <div style={{ display: 'inline-block', textAlign: 'left', padding: '12px 15px', borderRadius: 16, background: 'rgba(5,12,23,0.66)', border: `1px solid ${(DOMAINS.find(d => d.slug === scene.domain)?.color) || 'var(--bd2)'}`, backdropFilter: 'blur(8px)', maxWidth: 340 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 5 }}>

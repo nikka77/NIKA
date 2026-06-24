@@ -93,6 +93,17 @@ ul { list-style: none; }
 .auto-mod button:active, .auto-mod a[href]:active { transform: scale(0.96); }
 @media (prefers-reduced-motion: reduce) { .auto-mod button:active, .auto-mod a[href]:active { transform: none; } }
 
+/* ===== STAY — slider budget terracotta + focus/press (scopé .stay-mod) ===== */
+.stay-budget { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 4px; background: linear-gradient(90deg, #E07038, #F2945E); outline: none; cursor: pointer; }
+.stay-budget::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #E07038; box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer; }
+.stay-budget::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #E07038; box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer; }
+.stay-budget:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px rgba(224,112,56,0.55); }
+.stay-budget:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 4px rgba(224,112,56,0.55); }
+.stay-mod button:focus-visible, .stay-mod a[href]:focus-visible { outline: 2px solid #E07038; outline-offset: 2px; border-radius: 10px; }
+.stay-mod button, .stay-mod a[href] { transition: transform .12s ease; }
+.stay-mod button:active, .stay-mod a[href]:active { transform: scale(0.96); }
+@media (prefers-reduced-motion: reduce) { .stay-mod button:active, .stay-mod a[href]:active { transform: none; } }
+
 /* ===== AUTO — Dépannage express animé ===== */
 @keyframes dep-beacon-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(212,75,36,0.55); } 50% { box-shadow: 0 0 0 7px rgba(212,75,36,0); } }
 .dep-beacon { animation: dep-beacon-pulse 1.5s ease-out infinite; }
