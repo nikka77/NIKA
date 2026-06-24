@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DOMAINS } from '@/lib/constants';
 import { MAP_STYLE, NICE } from '@/lib/map';
-import { useLocationStore } from '@/lib/store';
+import { useLocationStore, useHeroNav } from '@/lib/store';
 import FoodModule, { type Pro as FoodPro } from '@/components/home/FoodModule';
 import AutoModule, { type AutoMode } from '@/components/home/AutoModule';
 import SmartSearch from '@/components/home/SmartSearch';
@@ -192,6 +192,22 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
     const zoom = wantsUser ? 15 : SCENES[index].zoom;
     mapRef.current.map.flyTo({ center, zoom, pitch: 0, bearing: 0, duration: 1900, curve: 1.4, essential: true });
   }, [index]);
+
+  // ── Pont barre du bas ↔ hero ──
+  // Publier le domaine actif (la barre s'en sert : 1er tap = ouvre le module, 2e tap = page /domaine).
+  const setActiveDomain = useHeroNav(s => s.setActiveDomain);
+  useEffect(() => { setActiveDomain(SCENES[index].domain ?? null); }, [index, setActiveDomain]);
+  // Consommer une demande de la barre (ouvrir le module d'un domaine ; saute l'intro globe si besoin).
+  const pendingDomain = useHeroNav(s => s.pendingDomain);
+  const requestDomain = useHeroNav(s => s.requestDomain);
+  useEffect(() => {
+    if (!pendingDomain) return;
+    const i = SCENES.findIndex(s => s.domain === pendingDomain);
+    requestDomain(null);
+    if (i < 0) return;
+    if (!arrivedRef.current) { arrivedRef.current = true; setStage('rest'); }
+    goTo(i);
+  }, [pendingDomain, goTo, requestDomain]);
 
   // Géocodage de la destination VTC (BAN, gratuit, sans clé) depuis la barre.
   const geocodeDest = useCallback(async (q: string) => {

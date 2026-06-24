@@ -4,18 +4,33 @@
 // Slide horizontal (swipe) + points indicateurs. Fixe, visible au scroll, sur toutes les pages (< 768px).
 // Les utilitaires (Accueil = logo, Carte = 🗺️, NIKO, Profil) restent dans le header.
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { DOMAINS } from '@/lib/constants';
+import { useHeroNav } from '@/lib/store';
 
 const PAGES = [DOMAINS.slice(0, 5), DOMAINS.slice(5)]; // [food…rent], [serv…news]
 
 export default function BottomNav() {
   const pathname = usePathname();
+  const router = useRouter();
+  const heroActive = useHeroNav(s => s.activeDomain);
+  const requestDomain = useHeroNav(s => s.requestDomain);
   const [page, setPage] = useState(0);
   const startX = useRef<number | null>(null);
 
-  const activeSlug = DOMAINS.find(d => pathname === `/${d.slug}` || pathname.startsWith(`/${d.slug}/`))?.slug;
+  const onHome = pathname === '/';
+  const pageSlug = DOMAINS.find(d => pathname === `/${d.slug}` || pathname.startsWith(`/${d.slug}/`))?.slug;
+  // Sur l'accueil : « actif » = le module ouvert dans le hero. Ailleurs : la page courante.
+  const activeSlug = onHome ? heroActive : pageSlug;
+
+  // 1er tap = ouvrir le module dans le hero ; 2e tap (déjà actif) = aller sur la page /domaine.
+  const openDomain = (slug: string, e: React.MouseEvent) => {
+    if (onHome && heroActive === slug) return;   // 2e tap : laisser le <Link> naviguer vers /slug
+    e.preventDefault();
+    requestDomain(slug);
+    if (!onHome) router.push('/');                // depuis une autre page → accueil, le hero ouvre le module
+  };
 
   // Aligner la page visible sur le domaine actif (ex. /sec → page 2).
   useEffect(() => {
@@ -45,12 +60,12 @@ export default function BottomNav() {
               {pg.map(d => {
                 const active = d.slug === activeSlug;
                 return (
-                  <Link key={d.slug} href={`/${d.slug}`} className="bn-dom" data-active={active} aria-label={d.label}
+                  <Link key={d.slug} href={`/${d.slug}`} onClick={e => openDomain(d.slug, e)} className="bn-dom" data-active={active} aria-label={d.label}
                     tabIndex={page === pi ? 0 : -1} style={active ? { color: d.color } : undefined}>
                     <span className="bn-dom-ic" aria-hidden style={active ? { filter: `drop-shadow(0 0 8px ${d.color})` } : undefined}>
                       <span className="bn-emoji">{d.icon}</span>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={`/images/domains/${d.slug}.webp`} alt="" loading="lazy" decoding="async" onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
+                      <img src={`/images/domains/${d.slug}.webp`} alt="" loading="lazy" decoding="async" onError={e => { const img = e.currentTarget; img.style.display = 'none'; const em = img.parentElement?.querySelector('.bn-emoji') as HTMLElement | null; if (em) em.style.display = 'block'; }} />
                     </span>
                     <span className="bn-dom-label">{d.label}</span>
                   </Link>

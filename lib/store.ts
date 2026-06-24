@@ -14,6 +14,22 @@ export const useMapStore = create<MapStore>((set) => ({
   closeMap: () => set({ isOpen: false }),
 }));
 
+// ===== Pont barre du bas ↔ hero =====
+// La barre du bas (globale) pilote la scène/module du hero (accueil) ; le hero publie
+// le domaine actif. Sert au double-tap : 1er tap = ouvrir le module, 2e tap = page /domaine.
+interface HeroNav {
+  activeDomain: string | null;          // domaine affiché dans le hero (publié par le hero)
+  setActiveDomain: (d: string | null) => void;
+  pendingDomain: string | null;         // domaine demandé par la barre (consommé par le hero)
+  requestDomain: (d: string | null) => void;
+}
+export const useHeroNav = create<HeroNav>((set) => ({
+  activeDomain: null,
+  setActiveDomain: (d) => set({ activeDomain: d }),
+  pendingDomain: null,
+  requestDomain: (d) => set({ pendingDomain: d }),
+}));
+
 interface AuthStore {
   user: User | null;
   setUser: (user: User | null) => void;
