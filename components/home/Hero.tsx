@@ -209,6 +209,17 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
     goTo(i);
   }, [pendingDomain, goTo, requestDomain]);
 
+  // Recadrage carte quand elle devient prête sur un domaine (deep-link depuis une autre page).
+  useEffect(() => {
+    if (!mapReady || !mapRef.current || !arrivedRef.current || index === 0) return;
+    const c = useLocationStore.getState().coords;
+    const wantsUser = SCENES[index].domain === 'auto' && !!c;
+    const center: [number, number] = wantsUser && c ? [c.lng, c.lat] : SCENES[index].center;
+    const zoom = wantsUser ? 15 : SCENES[index].zoom;
+    mapRef.current.map.flyTo({ center, zoom, pitch: 0, bearing: 0, duration: 1500, curve: 1.4, essential: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mapReady]);
+
   // Géocodage de la destination VTC (BAN, gratuit, sans clé) depuis la barre.
   const geocodeDest = useCallback(async (q: string) => {
     const t = q.trim();
