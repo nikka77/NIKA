@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 
 const ACCENT = '#12B8CC';
 
-const TOOLS = [
+const TOOLS: { icon: string; label: string; desc: string; href?: string }[] = [
+  { icon: '🚚', label: 'Livraison', desc: 'Kit livreur, équipe, colis & avis express', href: '/tools/livraison' },
   { icon: '💱', label: 'Convertisseur', desc: 'Taux du jour, € ⇄ devises' },
   { icon: '🌊', label: 'Météo & marées', desc: 'Mer, vent et horaires de marée' },
   { icon: '🅿️', label: 'Parkings', desc: 'Places libres en temps réel' },
@@ -47,18 +48,27 @@ export default function ToolsPage() {
       {/* ── GRILLE D'OUTILS ── */}
       <section style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(2rem,5vw,3.5rem) 1.4rem 5rem' }}>
         <div className="g-3" style={{ gap: '1rem' }}>
-          {TOOLS.map(t => (
-            <div key={t.label} style={{
+          {TOOLS.map(t => {
+            const live = !!t.href;
+            const cardStyle: React.CSSProperties = {
               position: 'relative', display: 'flex', flexDirection: 'column', gap: '0.55rem',
-              padding: '1.25rem', borderRadius: 16, border: '1px solid var(--bd2)',
-              background: 'linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015))',
-            }}>
-              <span style={{ fontSize: 30 }} aria-hidden>{t.icon}</span>
-              <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: '1.15rem', textTransform: 'uppercase', letterSpacing: '0.02em', color: 'var(--td)' }}>{t.label}</span>
-              <span style={{ fontFamily: 'var(--fo)', fontSize: '0.85rem', color: 'var(--td2)', lineHeight: 1.4 }}>{t.desc}</span>
-              <span style={{ alignSelf: 'flex-start', marginTop: '0.35rem', fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: ACCENT, background: `${ACCENT}1c`, border: `1px solid ${ACCENT}55`, borderRadius: 20, padding: '3px 9px' }}>Bientôt</span>
-            </div>
-          ))}
+              padding: '1.25rem', borderRadius: 16,
+              border: `1px solid ${live ? ACCENT + '99' : 'var(--bd2)'}`,
+              background: live ? `linear-gradient(160deg, ${ACCENT}24, ${ACCENT}08)` : 'linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015))',
+              boxShadow: live ? `0 8px 28px ${ACCENT}22` : 'none', textDecoration: 'none',
+            };
+            const inner = (
+              <>
+                <span style={{ fontSize: 30 }} aria-hidden>{t.icon}</span>
+                <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: '1.15rem', textTransform: 'uppercase', letterSpacing: '0.02em', color: 'var(--td)' }}>{t.label}</span>
+                <span style={{ fontFamily: 'var(--fo)', fontSize: '0.85rem', color: 'var(--td2)', lineHeight: 1.4 }}>{t.desc}</span>
+                <span style={{ alignSelf: 'flex-start', marginTop: '0.35rem', fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: ACCENT, background: `${ACCENT}1c`, border: `1px solid ${ACCENT}55`, borderRadius: 20, padding: '3px 9px' }}>{live ? 'Ouvrir →' : 'Bientôt'}</span>
+              </>
+            );
+            return live
+              ? <Link key={t.label} href={t.href!} style={cardStyle}>{inner}</Link>
+              : <div key={t.label} style={cardStyle}>{inner}</div>;
+          })}
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
