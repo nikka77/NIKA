@@ -22,6 +22,19 @@ const LEARN_CATS = [
   { slug: 'art', label: 'Arts & Design', icon: '🎨' },
   { slug: 'surf', label: 'Surf & Mer', icon: '🏄' },
   { slug: 'yoga', label: 'Yoga & Bien-être', icon: '🧘' },
+  { slug: 'memoire', label: 'Mémoire', icon: '🧠' },
+  { slug: 'psychologie', label: 'Psychologie', icon: '🛋️' },
+  { slug: 'philosophie', label: 'Philosophie', icon: '🦉' },
+  { slug: 'animaux', label: 'Animaux', icon: '🐾' },
+  { slug: 'plantes', label: 'Plantes', icon: '🌱' },
+  { slug: 'ecriture', label: 'Écriture', icon: '✍️' },
+  { slug: 'photo', label: 'Photographie', icon: '📷' },
+  { slug: 'danse', label: 'Danse', icon: '💃' },
+  { slug: 'echecs', label: 'Échecs & jeux', icon: '♟️' },
+  { slug: 'sciences', label: 'Sciences', icon: '🔬' },
+  { slug: 'histoire', label: 'Histoire', icon: '🏛️' },
+  { slug: 'finance', label: 'Finances perso', icon: '💰' },
+  { slug: 'devperso', label: 'Dév. personnel', icon: '🌟' },
 ];
 
 export default async function LearnPage() {
