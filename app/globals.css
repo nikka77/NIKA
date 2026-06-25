@@ -126,6 +126,17 @@ ul { list-style: none; }
 .rent-mod button:active, .rent-mod a[href]:active { transform: scale(0.96); }
 @media (prefers-reduced-motion: reduce) { .rent-mod button:active, .rent-mod a[href]:active { transform: none; } }
 
+/* ===== SERV — slider budget + focus/press (scopé .serv-mod) ===== */
+.serv-budget { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 4px; background: linear-gradient(90deg, #0EA878, #22D89A); outline: none; cursor: pointer; }
+.serv-budget::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #0EA878; box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer; }
+.serv-budget::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid #0EA878; box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer; }
+.serv-budget:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px rgba(14,168,120,0.55); }
+.serv-budget:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 4px rgba(14,168,120,0.55); }
+.serv-mod button:focus-visible, .serv-mod a[href]:focus-visible { outline: 2px solid #22D89A; outline-offset: 2px; border-radius: 10px; }
+.serv-mod button, .serv-mod a[href] { transition: transform .12s ease; }
+.serv-mod button:active, .serv-mod a[href]:active { transform: scale(0.96); }
+@media (prefers-reduced-motion: reduce) { .serv-mod button:active, .serv-mod a[href]:active { transform: none; } }
+
 /* ===== AUTO — Dépannage express animé ===== */
 @keyframes dep-beacon-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(212,75,36,0.55); } 50% { box-shadow: 0 0 0 7px rgba(212,75,36,0); } }
 .dep-beacon { animation: dep-beacon-pulse 1.5s ease-out infinite; }

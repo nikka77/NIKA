@@ -17,6 +17,7 @@ import AutoModule, { type AutoMode } from '@/components/home/AutoModule';
 import StayModule from '@/components/home/StayModule';
 import AzurModule from '@/components/home/AzurModule';
 import RentModule from '@/components/home/RentModule';
+import ServModule from '@/components/home/ServModule';
 import SmartSearch from '@/components/home/SmartSearch';
 import { DRIVERS, RENTALS, TOWS, offsetPos, distKm, etaMin, priceVtc } from '@/lib/autoData';
 import type { NightEntry } from '@/lib/food';
@@ -334,6 +335,8 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
                 <AzurModule />
               ) : scene.domain === 'rent' ? (
                 <RentModule />
+              ) : scene.domain === 'serv' ? (
+                <ServModule />
               ) : scene.domain ? (
                 <div style={{ display: 'inline-block', textAlign: 'left', padding: '12px 15px', borderRadius: 16, background: 'rgba(5,12,23,0.66)', border: `1px solid ${(DOMAINS.find(d => d.slug === scene.domain)?.color) || 'var(--bd2)'}`, backdropFilter: 'blur(8px)', maxWidth: 340 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 5 }}>
