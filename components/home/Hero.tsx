@@ -67,6 +67,7 @@ const SCENES: Scene[] = [
   { id: 'learn', domain: 'learn', place: 'Valrose', services: ['Cours', 'Coaching', 'Langues'], center: [7.2685, 43.7150], zoom: 14.8 },
   { id: 'sec', domain: 'sec', place: 'Place Masséna', services: ['Serrurier', 'Gardiennage', 'Urgences'], center: [7.2700, 43.6975], zoom: 15 },
   { id: 'news', domain: 'news', place: 'Vieux Nice', services: ['Local', 'Trafic', 'Sorties'], center: [7.2790, 43.6960], zoom: 15.2 },
+  { id: 'tools', domain: 'tools', place: 'Partout sur la Côte', services: ['Convertisseur', 'Météo & marées', 'Parkings', 'Numéros utiles'], center: [7.2660, 43.7000], zoom: 14.4 },
 ];
 
 const gpsColor = (status: string) =>

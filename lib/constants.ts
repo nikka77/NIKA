@@ -50,6 +50,7 @@ export const DOMAINS = [
   { slug: 'learn', label: 'LEARN', icon: '📚', num: '07', color: '#7B5CF0', desc: 'Compétences' },
   { slug: 'sec',   label: 'SEC',   icon: '🔒', num: '08', color: '#D44B24', desc: 'Sécurité' },
   { slug: 'news',  label: 'NEWS',  icon: '📡', num: '09', color: '#5A88B0', desc: 'Actualités' },
+  { slug: 'tools', label: 'TOOLS', icon: '🧰', num: '10', color: '#12B8CC', desc: 'Outils pratiques' },
 ] as const;
 
 export type DomainSlug = typeof DOMAINS[number]['slug'];
