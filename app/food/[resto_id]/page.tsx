@@ -46,7 +46,7 @@ export default async function FoodRestoPage({ params }: Props) {
             {pro.address && <div style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)' }}>📍 {pro.address}</div>}
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flexShrink: 0 }}>
-            {pro.rating > 0 && <div style={{ fontFamily: 'var(--fe)', fontSize: 22, fontStyle: 'italic', color: 'var(--gold2)' }}>⭐ {pro.rating.toFixed(1)} <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)' }}>({pro.rating_count})</span></div>}
+            {pro.rating > 0 && <div style={{ fontFamily: 'var(--fe)', fontSize: 22, fontStyle: 'italic', color: 'var(--gold2)' }}>⭐ {pro.rating.toFixed(1)} <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)' }}>({pro.review_count})</span></div>}
             {pro.phone && (
               <a href={`tel:${pro.phone}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700, color: '#D4A017', border: '1px solid rgba(212,160,23,0.3)', padding: '8px 16px', borderRadius: 6, textDecoration: 'none' }}>
                 📞 Appeler

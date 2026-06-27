@@ -28,7 +28,7 @@ const SERV_CATS = [
 export default async function ServPage() {
   const supabase = await createClient();
   const { data: pros } = supabase
-    ? await supabase.from('pros').select('id, business_name, description, address, rating, rating_count, verified, phone').eq('domain', 'serv').eq('active', true).order('rating', { ascending: false }).limit(20)
+    ? await supabase.from('pros').select('id, business_name, description, address, rating, review_count, verified, phone').eq('domain', 'serv').eq('active', true).order('rating', { ascending: false }).limit(20)
     : { data: [] };
 
   return (
@@ -147,7 +147,7 @@ export default async function ServPage() {
           <div style={{ marginBottom: '3rem' }}>
             <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,3.5vw,40px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1.2rem' }}>Prestataires</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-              {pros.map((pro: { id: string; business_name: string; description?: string; address?: string; rating: number; rating_count: number; verified: boolean; phone?: string }) => (
+              {pros.map((pro: { id: string; business_name: string; description?: string; address?: string; rating: number; review_count: number; verified: boolean; phone?: string }) => (
                 <div key={pro.id} className="dom-card" style={{
                   background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10,
                   padding: '1.4rem', display: 'flex', justifyContent: 'space-between',

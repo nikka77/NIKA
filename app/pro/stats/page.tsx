@@ -12,7 +12,7 @@ export default async function ProStatsPage() {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect('/connexion');
 
-  const { data: pro } = await supabase.from('pros').select('id, business_name, rating, rating_count').eq('user_id', user.id).single();
+  const { data: pro } = await supabase.from('pros').select('id, business_name, rating, review_count').eq('user_id', user.id).single();
   if (!pro) redirect('/pro/inscription');
 
   const [{ data: orders }, { data: listings }, { data: reviews }] = await Promise.all([
@@ -99,7 +99,7 @@ export default async function ProStatsPage() {
       {/* Reviews */}
       <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, padding: '1.5rem' }}>
         <h2 style={{ fontFamily: 'var(--fe)', fontSize: 20, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', marginBottom: '1rem' }}>
-          Avis reçus {pro.rating_count > 0 && <span style={{ fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 400, fontStyle: 'normal', color: 'var(--td3)', textTransform: 'none', letterSpacing: 0 }}>({pro.rating_count})</span>}
+          Avis reçus {pro.review_count > 0 && <span style={{ fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 400, fontStyle: 'normal', color: 'var(--td3)', textTransform: 'none', letterSpacing: 0 }}>({pro.review_count})</span>}
         </h2>
         {reviews && reviews.length > 0 ? (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
