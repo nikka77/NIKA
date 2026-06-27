@@ -8,6 +8,7 @@ import WowFilter from './WowFilter';
 import SmartSearch from '@/components/stay/SmartSearch';
 import { visual } from '@/lib/visuals';
 import wowData from '@/data/wow_listings.json';
+import ReservationCta from '@/components/ReservationCta';
 import type { HeroSlide } from './HeroSlideshow';
 
 // Use gallery-XX instead of cover.jpg when cover is wrong or gallery has better composition
@@ -146,6 +147,7 @@ const listings = wowData.listings.map(l => ({
 export default function StayPage() {
   return (
     <main>
+      <ReservationCta domaine="stay" />
       {/* ── HERO DIAPORAMA — Coups de cœur NIKA ───────────────────────── */}
       <HeroSlideshow slides={heroSlides} />
 

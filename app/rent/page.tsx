@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import Spin360 from '@/components/Spin360';
 import DomainHero from '@/components/DomainHero';
+import ReservationCta from '@/components/ReservationCta';
 import { visual } from '@/lib/visuals';
 
 export const metadata: Metadata = {
@@ -36,6 +37,7 @@ export default async function RentPage() {
 
   return (
     <main>
+      <ReservationCta domaine="rent" />
       {/* ── HERO ──────────────────────────────────────────────── */}
       <div style={{
         background: 'linear-gradient(180deg, #07101E 0%, #0A1830 60%, var(--bg) 100%)',

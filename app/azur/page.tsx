@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { createAdminClient } from '@/lib/supabase/admin'
 import ProviderCard from '@/components/azur/ProviderCard'
 import DomainHero from '@/components/DomainHero'
+import ReservationCta from '@/components/ReservationCta'
 
 export const metadata: Metadata = {
   title: 'NIKA Azur — Expériences Côte d\'Azur',
@@ -54,6 +55,7 @@ export default async function AzurPage() {
 
   return (
     <main>
+      <ReservationCta domaine="azur" />
       {/* ── HERO ──────────────────────────────────────────────── */}
       <div style={{
         background: 'linear-gradient(180deg, #030C1A 0%, #060F22 60%, var(--bg) 100%)',
