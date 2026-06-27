@@ -18,6 +18,10 @@ import StayModule from '@/components/home/StayModule';
 import AzurModule from '@/components/home/AzurModule';
 import RentModule from '@/components/home/RentModule';
 import ServModule from '@/components/home/ServModule';
+import LearnModule from '@/components/home/LearnModule';
+import SecModule from '@/components/home/SecModule';
+import NewsModule from '@/components/home/NewsModule';
+import ToolsModule from '@/components/home/ToolsModule';
 import SmartSearch from '@/components/home/SmartSearch';
 import { DRIVERS, RENTALS, TOWS, offsetPos, distKm, etaMin, priceVtc } from '@/lib/autoData';
 import type { NightEntry } from '@/lib/food';
@@ -338,6 +342,14 @@ export default function Hero({ foodPros, nightPros }: { foodPros?: FoodPro[]; ni
                 <RentModule />
               ) : scene.domain === 'serv' ? (
                 <ServModule />
+              ) : scene.domain === 'learn' ? (
+                <LearnModule />
+              ) : scene.domain === 'sec' ? (
+                <SecModule />
+              ) : scene.domain === 'news' ? (
+                <NewsModule />
+              ) : scene.domain === 'tools' ? (
+                <ToolsModule />
               ) : scene.domain ? (
                 <div style={{ display: 'inline-block', textAlign: 'left', padding: '12px 15px', borderRadius: 16, background: 'rgba(5,12,23,0.66)', border: `1px solid ${(DOMAINS.find(d => d.slug === scene.domain)?.color) || 'var(--bd2)'}`, backdropFilter: 'blur(8px)', maxWidth: 340 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 5 }}>

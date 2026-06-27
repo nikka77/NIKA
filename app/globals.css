@@ -137,6 +137,15 @@ ul { list-style: none; }
 .serv-mod button:active, .serv-mod a[href]:active { transform: scale(0.96); }
 @media (prefers-reduced-motion: reduce) { .serv-mod button:active, .serv-mod a[href]:active { transform: none; } }
 
+/* ===== LEARN / SEC / NEWS / TOOLS — focus/press des modules hero ===== */
+.learn-mod button:focus-visible, .learn-mod a[href]:focus-visible { outline: 2px solid #9B7DF5; outline-offset: 2px; border-radius: 10px; }
+.sec-mod button:focus-visible, .sec-mod a[href]:focus-visible { outline: 2px solid #E8703A; outline-offset: 2px; border-radius: 10px; }
+.news-mod button:focus-visible, .news-mod a[href]:focus-visible { outline: 2px solid #7BA8CC; outline-offset: 2px; border-radius: 10px; }
+.tools-mod button:focus-visible, .tools-mod a[href]:focus-visible { outline: 2px solid #3AD7E6; outline-offset: 2px; border-radius: 10px; }
+.learn-mod button, .learn-mod a[href], .sec-mod button, .sec-mod a[href], .news-mod button, .news-mod a[href], .tools-mod button, .tools-mod a[href] { transition: transform .12s ease; }
+.learn-mod button:active, .learn-mod a[href]:active, .sec-mod button:active, .sec-mod a[href]:active, .news-mod button:active, .news-mod a[href]:active, .tools-mod button:active, .tools-mod a[href]:active { transform: scale(0.96); }
+@media (prefers-reduced-motion: reduce) { .learn-mod button:active, .sec-mod button:active, .news-mod button:active, .tools-mod button:active { transform: none; } }
+
 /* ===== AUTO — Dépannage express animé ===== */
 @keyframes dep-beacon-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(212,75,36,0.55); } 50% { box-shadow: 0 0 0 7px rgba(212,75,36,0); } }
 .dep-beacon { animation: dep-beacon-pulse 1.5s ease-out infinite; }
