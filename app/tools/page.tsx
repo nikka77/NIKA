@@ -11,10 +11,10 @@ const ACCENT = '#12B8CC';
 
 const TOOLS: { icon: string; label: string; desc: string; href?: string }[] = [
   { icon: '🚚', label: 'Livraison', desc: 'Kit livreur, équipe, colis & avis express', href: '/tools/livraison' },
-  { icon: '💱', label: 'Convertisseur', desc: 'Taux du jour, € ⇄ devises' },
-  { icon: '🌊', label: 'Météo & marées', desc: 'Mer, vent et horaires de marée' },
+  { icon: '💱', label: 'Convertisseur', desc: 'Taux du jour, € ⇄ devises', href: '/tools/convertisseur' },
+  { icon: '🌊', label: 'Météo & marées', desc: 'Mer, vent et horaires de marée', href: '/tools/meteo' },
   { icon: '🅿️', label: 'Parkings', desc: 'Places libres en temps réel' },
-  { icon: '🆘', label: 'Numéros utiles', desc: 'Urgences & services de la Côte' },
+  { icon: '🆘', label: 'Numéros utiles', desc: 'Urgences & services de la Côte', href: '/tools/numeros' },
   { icon: '🚦', label: 'Trafic A8', desc: 'État des routes en direct' },
   { icon: '🏖️', label: 'Qualité de l\'eau', desc: 'Baignade & Pavillon Bleu' },
   { icon: '☀️', label: 'UV & pollens', desc: 'L\'indice du jour, heure par heure' },
