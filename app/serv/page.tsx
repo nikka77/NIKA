@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Spin360 from '@/components/Spin360';
 import DomainHero from '@/components/DomainHero';
 import { visual } from '@/lib/visuals';
+import DevisRequest from './DevisRequest';
 
 export const metadata: Metadata = {
   title: 'SERV — Services à Domicile Côte d\'Azur | NIKA',
@@ -137,6 +138,9 @@ export default async function ServPage() {
             ))}
           </div>
         </div>
+
+        {/* Demande de devis (client → artisan) */}
+        {pros && pros.length > 0 && <DevisRequest pros={pros} />}
 
         {/* Prestataires */}
         {pros && pros.length > 0 ? (
