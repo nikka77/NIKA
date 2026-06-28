@@ -3,6 +3,7 @@
 // vit dans <CharacterDossier> sous la carte.
 import type { ReactNode } from 'react';
 import CardArt from './CardArt';
+import { CategoryIcon } from './NarutoIcons';
 import { RARITY_META, TYPE_META, type AkashaEntry } from '@/lib/akasha/types';
 
 const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
@@ -42,9 +43,6 @@ function AbilityBox({ icon, label, accent, children }: { icon: ReactNode; label:
   );
 }
 
-const dnaIcon =<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" aria-hidden><path d="M7 3c0 5 10 7 10 11S7 19 7 21M17 3c0 5-10 7-10 11s10 2 10 6" /></svg>;
-const swirlIcon = <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" aria-hidden><path d="M12 4a8 8 0 11-8 8 6 6 0 016-6 4 4 0 014 4 2 2 0 01-2 2" /></svg>;
-
 export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
   const a = entry.attributes as Record<string, unknown>;
   const rar = entry.rarity ? RARITY_META[entry.rarity] : null;
@@ -61,6 +59,11 @@ export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
   const jutsu = list(a.jutsu);
   const signature = list(a.signature);
   const gallery = list(a.gallery);
+  const galleryForms = gallery.map((url, i) => ({ label: ['Partie I', 'Partie II', 'Partie III'][i] ?? `Forme ${i + 1}`, url }));
+  const curatedForms = (Array.isArray(a.forms) ? (a.forms as { label?: string; url?: string }[]) : [])
+    .filter((f) => f && typeof f.url === 'string')
+    .map((f) => ({ label: f.label ?? 'Forme', url: f.url as string }));
+  const forms = [...galleryForms, ...curatedForms];
 
   return (
     <article
@@ -106,7 +109,7 @@ export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
           {/* ── Illustration + versions ── */}
           <div style={{ marginBottom: 12 }}>
             <CardArt
-              images={gallery.length ? gallery : entry.image_url ? [entry.image_url] : []}
+              forms={forms.length ? forms : entry.image_url ? [{ label: 'Forme', url: entry.image_url }] : []}
               name={entry.name}
               frame={frame}
               villageSlug={villageSlug}
@@ -129,12 +132,12 @@ export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
           {/* ── Encadrés capacités ── */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {kekkei.length > 0 && (
-              <AbilityBox icon={dnaIcon} label="Kekkei Genkai" accent="#D44B24">
+              <AbilityBox icon={<CategoryIcon name="kekkei" size={16} />} label="Kekkei Genkai" accent="#D44B24">
                 <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 700, fontSize: 14, color: 'var(--td)' }}>{kekkei.join(' · ')}</div>
               </AbilityBox>
             )}
             {(signature.length > 0 || jutsu.length > 0) && (
-              <AbilityBox icon={swirlIcon} label="Techniques signature" accent={frame}>
+              <AbilityBox icon={<CategoryIcon name="techniques" size={16} />} label="Techniques signature" accent={frame}>
                 <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 15, color: 'var(--td)', lineHeight: 1.2 }}>
                   {(signature.length > 0 ? signature : jutsu.slice(0, 1)).join(' · ')}
                 </div>

@@ -142,6 +142,23 @@ export function ClanCrest({ slug, name, size = 30 }: { slug?: string | null; nam
   );
 }
 
+// ─── Icônes de catégories (Higgsfield, détourées) ────────────────────
+const CAT_ICON: Record<string, string> = {
+  kekkei: '/images/akasha/cat/kekkei.webp',
+  techniques: '/images/akasha/cat/techniques.webp',
+  clan: '/images/akasha/cat/clan.webp',
+  classification: '/images/akasha/cat/classification.webp',
+  affiliations: '/images/akasha/cat/affiliations.webp',
+  fonctions: '/images/akasha/cat/fonctions.webp',
+  outils: '/images/akasha/cat/outils.webp',
+};
+export function CategoryIcon({ name, size = 18 }: { name: string; size?: number }) {
+  const src = CAT_ICON[name];
+  if (!src) return null;
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', flexShrink: 0 }} />;
+}
+
 // Libellés FR des liens de famille (API → français).
 export const FAMILY_LABELS: Record<string, string> = {
   father: 'Père', mother: 'Mère', son: 'Fils', daughter: 'Fille',

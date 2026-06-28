@@ -22,7 +22,7 @@ async function getJSON(path) {
 // village = slug du lieu ; clan/ranks/powers/skills/artifacts/beast = slugs cibles de relations.
 const CHARACTERS = [
   { key: 'Naruto Uzumaki', village: 'konohagakure', clan: 'uzumaki', ranks: ['hokage', 'jinchuriki'], powers: ['rasengan', 'shadow-clone', 'tailed-beast-ball'], beast: 'kurama', rarity: 'legendary',
-    role: 'Hokage, Jinchūriki', summary: "Orphelin turbulent devenu héros et Septième Hokage, hôte du renard Kurama." },
+    role: 'Hokage, Jinchūriki', forms: [{ label: 'Mode Kurama', img: '/images/akasha/naruto/naruto-kurama.webp' }], summary: "Orphelin turbulent devenu héros et Septième Hokage, hôte du renard Kurama." },
   { key: 'Sasuke Uchiha', village: 'konohagakure', clan: 'uchiha', powers: ['chidori', 'amaterasu', 'susanoo'], skills: ['sharingan', 'rinnegan'], artifacts: ['kusanagi'], rarity: 'legendary',
     role: 'Dernier vengeur Uchiha', summary: "Prodige du clan Uchiha, rival éternel de Naruto, hanté par la vengeance avant la rédemption." },
   { key: 'Sakura Haruno', village: 'konohagakure', powers: [], medical: true, rarity: 'rare',
@@ -193,6 +193,7 @@ async function main() {
       debut: api.debut?.manga || null,
       family: api.family && typeof api.family === 'object' ? Object.entries(api.family).map(([rel, name]) => ({ rel, name: String(name) })) : [],
       gallery: arr(api.images),
+      forms: (c.forms || []).map((f) => ({ label: f.label, url: f.img })),
     });
     add(entry(slug, 'character', c.key, c.summary, c.rarity, attributes, attributes.gallery?.[0] || null, c.summary));
 

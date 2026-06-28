@@ -2,7 +2,7 @@
 // components/akasha/CharacterDossier.tsx — dossier complet d'un personnage, en onglets (max d'infos rangé).
 import { useState, type ReactNode } from 'react';
 import Link from 'next/link';
-import { ChakraNatureIcon, familyLabel } from './NarutoIcons';
+import { ChakraNatureIcon, familyLabel, CategoryIcon } from './NarutoIcons';
 import EntityRelations from './EntityRelations';
 import type { AkashaEntryDetail } from '@/lib/akasha/types';
 
@@ -47,11 +47,11 @@ function Chips({ items, color }: { items: string[]; color: string }) {
   );
 }
 
-function Sec({ title, accent = ACCENT, children }: { title: string; accent?: string; children: ReactNode }) {
+function Sec({ title, accent = ACCENT, icon, children }: { title: string; accent?: string; icon?: string; children: ReactNode }) {
   return (
     <div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 8 }}>
-        <span style={{ width: 3, height: 12, borderRadius: 2, background: accent, flexShrink: 0 }} />
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+        {icon ? <CategoryIcon name={icon} size={20} /> : <span style={{ width: 3, height: 12, borderRadius: 2, background: accent, flexShrink: 0 }} />}
         <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--td3)' }}>{title}</span>
       </div>
       {children}
@@ -120,9 +120,9 @@ export default function CharacterDossier({ entry }: { entry: AkashaEntryDetail }
                 <Vital k="cal" label="Naissance" value={str(a.birthdate)} />
               </div>
             )}
-            {classification.length > 0 && <Sec title="Classification"><Chips items={classification} color="#7B5CF0" /></Sec>}
-            {affiliation.length > 0 && <Sec title="Affiliations" accent="#0EA878"><Chips items={affiliation} color="#0EA878" /></Sec>}
-            {occupation.length > 0 && <Sec title="Fonctions" accent="#0094D4"><Chips items={occupation} color="#0094D4" /></Sec>}
+            {classification.length > 0 && <Sec title="Classification" icon="classification"><Chips items={classification} color="#7B5CF0" /></Sec>}
+            {affiliation.length > 0 && <Sec title="Affiliations" accent="#0EA878" icon="affiliations"><Chips items={affiliation} color="#0EA878" /></Sec>}
+            {occupation.length > 0 && <Sec title="Fonctions" accent="#0094D4" icon="fonctions"><Chips items={occupation} color="#0094D4" /></Sec>}
           </>
         )}
 
@@ -135,13 +135,13 @@ export default function CharacterDossier({ entry }: { entry: AkashaEntryDetail }
                 </div>
               </Sec>
             )}
-            {kekkei.length > 0 && <Sec title="Kekkei Genkai" accent="#D44B24"><Chips items={kekkei} color="#D44B24" /></Sec>}
-            {jutsu.length > 0 && <Sec title={`Techniques · ${jutsu.length}`}><Chips items={jutsu} color={ACCENT} /></Sec>}
+            {kekkei.length > 0 && <Sec title="Kekkei Genkai" accent="#D44B24" icon="kekkei"><Chips items={kekkei} color="#D44B24" /></Sec>}
+            {jutsu.length > 0 && <Sec title={`Techniques · ${jutsu.length}`} icon="techniques"><Chips items={jutsu} color={ACCENT} /></Sec>}
           </>
         )}
 
         {active === 'arsenal' && tools.length > 0 && (
-          <Sec title="Outils & armes" accent="#D4A017"><Chips items={tools} color="#D4A017" /></Sec>
+          <Sec title="Outils & armes" accent="#D4A017" icon="outils"><Chips items={tools} color="#D4A017" /></Sec>
         )}
 
         {active === 'famille' && family.length > 0 && (

@@ -1,13 +1,12 @@
 'use client';
-// components/akasha/CardArt.tsx — fenêtre d'illustration + sélecteur de versions (arcs/transformations).
+// components/akasha/CardArt.tsx — fenêtre d'illustration + sélecteur de versions (arcs, transformations).
 import { useState } from 'react';
 import { ChakraNatureIcon, VillageEmblem, ClanCrest } from './NarutoIcons';
 
-const DEFAULT_LABELS = ['Partie I', 'Partie II', 'Forme 3', 'Forme 4', 'Forme 5'];
+export type CardForm = { label: string; url: string };
 
 export default function CardArt({
-  images,
-  labels,
+  forms,
   name,
   frame,
   villageSlug,
@@ -16,8 +15,7 @@ export default function CardArt({
   natures,
   fallbackIcon,
 }: {
-  images: string[];
-  labels?: string[];
+  forms: CardForm[];
   name: string;
   frame: string;
   villageSlug: string | null;
@@ -27,9 +25,7 @@ export default function CardArt({
   fallbackIcon: string;
 }) {
   const [sel, setSel] = useState(0);
-  const variants = images.length ? images : [];
-  const current = variants[sel] ?? variants[0] ?? null;
-  const labelFor = (i: number) => labels?.[i] ?? DEFAULT_LABELS[i] ?? `Forme ${i + 1}`;
+  const current = forms[sel]?.url ?? forms[0]?.url ?? null;
 
   return (
     <div>
@@ -58,9 +54,9 @@ export default function CardArt({
         )}
       </div>
 
-      {variants.length > 1 && (
+      {forms.length > 1 && (
         <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'center', marginTop: 9 }}>
-          {variants.map((_, i) => {
+          {forms.map((f, i) => {
             const on = i === sel;
             return (
               <button
@@ -75,7 +71,7 @@ export default function CardArt({
                   color: on ? frame : 'var(--td2)',
                 }}
               >
-                {labelFor(i)}
+                {f.label}
               </button>
             );
           })}
