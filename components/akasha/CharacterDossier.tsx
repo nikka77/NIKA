@@ -65,7 +65,7 @@ export default function CharacterDossier({ entry }: { entry: AkashaEntryDetail }
   const classification = list(a.classification);
   const kekkei = list(a.kekkeiGenkai);
   const jutsu = list(a.jutsu);
-  const animations = (Array.isArray(a.animations) ? (a.animations as { label: string; image: string; anim?: string }[]) : []).filter((x) => x && typeof x.image === 'string');
+  const animations = (Array.isArray(a.animations) ? (a.animations as { label: string; kind?: string; image?: string; base?: string; clones?: string; smoke?: string }[]) : []).filter((x) => x && (x.image || x.base));
   const tools = list(a.tools);
   const occupation = list(a.occupation);
   const affiliation = list(a.affiliation);
@@ -143,9 +143,20 @@ export default function CharacterDossier({ entry }: { entry: AkashaEntryDetail }
                 <div className="g-2" style={{ gap: 8 }}>
                   {animations.map((an, i) => (
                     <div key={i} style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid var(--bd)', background: 'var(--bg)' }}>
-                      <div style={{ aspectRatio: '1 / 1', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={an.image} alt={an.label} className={an.anim === 'spin' ? 'ak-anim-spin' : 'ak-anim-poof'} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <div style={{ position: 'relative', aspectRatio: '1 / 1', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                        {an.kind === 'clones' ? (
+                          <>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={an.base} alt={an.label} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={an.clones} alt="" aria-hidden className="ak-clones" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={an.smoke} alt="" aria-hidden className="ak-smoke" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', mixBlendMode: 'screen' }} />
+                          </>
+                        ) : (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={an.image} alt={an.label} className="ak-anim-spin" style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'screen' }} />
+                        )}
                       </div>
                       <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 600, color: 'var(--td2)', textAlign: 'center', padding: 6 }}>{an.label}</div>
                     </div>
