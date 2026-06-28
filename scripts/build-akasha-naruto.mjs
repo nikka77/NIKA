@@ -1,11 +1,14 @@
 // scripts/build-akasha-naruto.mjs — construit data/akasha-naruto.json pour le registre AKASHA.
 // Source : Dattebayo API (faits + images). Les RÉSUMÉS sont rédigés ici (originaux, FR),
 // jamais copiés de Narutopedia. Run : node scripts/build-akasha-naruto.mjs
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+// Image de référence (Narutopedia, via scripts/fetch-akasha-naruto-images.py) si présente.
+const refImg = (slug) =>
+  existsSync(join(ROOT, 'public/images/akasha/ref', `${slug}.webp`)) ? `/images/akasha/ref/${slug}.webp` : null;
 const API = 'https://dattebayo-api.onrender.com';
 const UA = 'Mozilla/5.0 (NIKA/akasha-build)';
 
@@ -150,13 +153,13 @@ async function main() {
   const slugs = new Set();
   const add = (e) => { entries.push(e); slugs.add(e.slug); };
 
-  // Entités rédigées
-  for (const [slug, name, region, summary, rarity] of PLACES) add(entry(slug, 'place', name, summary, rarity, { region }));
-  for (const [slug, name, element, summary, rarity] of POWERS) add(entry(slug, 'power', name, summary, rarity, { element }));
-  for (const [slug, name, discipline, summary, rarity] of SKILLS) add(entry(slug, 'skill', name, summary, rarity, { discipline }));
-  for (const [slug, name, material, summary, rarity] of ARTIFACTS) add(entry(slug, 'artifact', name, summary, rarity, { material }));
-  for (const [slug, name, sector, summary, rarity] of PROFESSIONS) add(entry(slug, 'profession', name, summary, rarity, { sector }));
-  for (const [slug, name, scope, summary, rarity] of STATUSES) add(entry(slug, 'status', name, summary, rarity, { scope }));
+  // Entités rédigées — image_url = référence Narutopedia locale si disponible.
+  for (const [slug, name, region, summary, rarity] of PLACES) add(entry(slug, 'place', name, summary, rarity, { region }, refImg(slug)));
+  for (const [slug, name, element, summary, rarity] of POWERS) add(entry(slug, 'power', name, summary, rarity, { element }, refImg(slug)));
+  for (const [slug, name, discipline, summary, rarity] of SKILLS) add(entry(slug, 'skill', name, summary, rarity, { discipline }, refImg(slug)));
+  for (const [slug, name, material, summary, rarity] of ARTIFACTS) add(entry(slug, 'artifact', name, summary, rarity, { material }, refImg(slug)));
+  for (const [slug, name, sector, summary, rarity] of PROFESSIONS) add(entry(slug, 'profession', name, summary, rarity, { sector }, refImg(slug)));
+  for (const [slug, name, scope, summary, rarity] of STATUSES) add(entry(slug, 'status', name, summary, rarity, { scope }, refImg(slug)));
 
   // Helpers attributs riches
   const arr = (x) => (Array.isArray(x) ? x.filter(Boolean) : x ? [x] : []);
