@@ -8,6 +8,7 @@ import EntityBadge from '@/components/akasha/EntityBadge';
 import EntityAttributes from '@/components/akasha/EntityAttributes';
 import EntityRelations from '@/components/akasha/EntityRelations';
 import Markdown from '@/components/akasha/Markdown';
+import CharacterCard from '@/components/akasha/CharacterCard';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -30,6 +31,26 @@ export default async function AkashaEntryPage({ params }: Props) {
   if (!entry) notFound();
 
   const m = TYPE_META[entry.type];
+
+  // Personnages → fiche « carte à jouer » (stat-block riche + emblèmes).
+  if (entry.type === 'character') {
+    return (
+      <main>
+        <div style={{ maxWidth: 560, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.2rem clamp(3rem,7vw,5rem)' }}>
+          <Link
+            href="/learn/akasha"
+            style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', textDecoration: 'none', display: 'inline-block', marginBottom: '1rem' }}
+          >
+            ← Registre AKASHA
+          </Link>
+          <CharacterCard entry={entry} />
+          <div style={{ marginTop: '2rem' }}>
+            <EntityRelations out={entry.relationsOut} incoming={entry.relationsIn} />
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main>
