@@ -1,0 +1,1330 @@
+{
+  "generatedFrom": "dattebayo-api",
+  "universe": "Naruto",
+  "entries": [
+    {
+      "slug": "konohagakure",
+      "type": "place",
+      "name": "Konohagakure",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le Village caché de la Feuille, foyer de l'équipe 7 et cœur du récit.",
+      "description": "Le Village caché de la Feuille, foyer de l'équipe 7 et cœur du récit.",
+      "image_url": null,
+      "attributes": {
+        "region": "Pays du Feu"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "sunagakure",
+      "type": "place",
+      "name": "Sunagakure",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le Village caché du Sable, niché dans le désert, dirigé par le Kazekage.",
+      "description": "Le Village caché du Sable, niché dans le désert, dirigé par le Kazekage.",
+      "image_url": null,
+      "attributes": {
+        "region": "Pays du Vent"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "kirigakure",
+      "type": "place",
+      "name": "Kirigakure",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le Village caché de la Brume, autrefois surnommé le « village sanglant ».",
+      "description": "Le Village caché de la Brume, autrefois surnommé le « village sanglant ».",
+      "image_url": null,
+      "attributes": {
+        "region": "Pays de l'Eau"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "iwagakure",
+      "type": "place",
+      "name": "Iwagakure",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le Village caché de la Roche, place forte montagneuse du Tsuchikage.",
+      "description": "Le Village caché de la Roche, place forte montagneuse du Tsuchikage.",
+      "image_url": null,
+      "attributes": {
+        "region": "Pays de la Terre"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "kumogakure",
+      "type": "place",
+      "name": "Kumogakure",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le Village caché des Nuages, perché en altitude, fief du Raikage.",
+      "description": "Le Village caché des Nuages, perché en altitude, fief du Raikage.",
+      "image_url": null,
+      "attributes": {
+        "region": "Pays de la Foudre"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "amegakure",
+      "type": "place",
+      "name": "Amegakure",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le Village caché de la Pluie, cité industrielle battue par les averses, berceau de l'Akatsuki.",
+      "description": "Le Village caché de la Pluie, cité industrielle battue par les averses, berceau de l'Akatsuki.",
+      "image_url": null,
+      "attributes": {
+        "region": "Pays de la Pluie"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "otogakure",
+      "type": "place",
+      "name": "Otogakure",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le Village caché du Son, fondé secrètement par Orochimaru pour ses expériences.",
+      "description": "Le Village caché du Son, fondé secrètement par Orochimaru pour ses expériences.",
+      "image_url": null,
+      "attributes": {
+        "region": "Pays du Son"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "rasengan",
+      "type": "power",
+      "name": "Rasengan",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Sphère tourbillonnante de chakra concentrée dans la paume, créée par Minato.",
+      "description": "Sphère tourbillonnante de chakra concentrée dans la paume, créée par Minato.",
+      "image_url": null,
+      "attributes": {
+        "element": "Chakra"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "chidori",
+      "type": "power",
+      "name": "Chidori",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Concentration de foudre dans la main pour un assaut perforant fulgurant.",
+      "description": "Concentration de foudre dans la main pour un assaut perforant fulgurant.",
+      "image_url": null,
+      "attributes": {
+        "element": "Foudre"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "amaterasu",
+      "type": "power",
+      "name": "Amaterasu",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Flammes noires inextinguibles déclenchées par le Mangekyō Sharingan.",
+      "description": "Flammes noires inextinguibles déclenchées par le Mangekyō Sharingan.",
+      "image_url": null,
+      "attributes": {
+        "element": "Feu noir"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "susanoo",
+      "type": "power",
+      "name": "Susanoo",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Avatar de chakra géant et cuirassé invoqué par les maîtres du Mangekyō Sharingan.",
+      "description": "Avatar de chakra géant et cuirassé invoqué par les maîtres du Mangekyō Sharingan.",
+      "image_url": null,
+      "attributes": {
+        "element": "Avatar"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "edo-tensei",
+      "type": "power",
+      "name": "Edo Tensei",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Technique interdite de réincarnation qui rappelle les morts au combat.",
+      "description": "Technique interdite de réincarnation qui rappelle les morts au combat.",
+      "image_url": null,
+      "attributes": {
+        "element": "Interdit"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "shadow-clone",
+      "type": "power",
+      "name": "Multiclonage",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Crée des clones tangibles et autonomes, signature de Naruto.",
+      "description": "Crée des clones tangibles et autonomes, signature de Naruto.",
+      "image_url": null,
+      "attributes": {
+        "element": "Chakra"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "flying-raijin",
+      "type": "power",
+      "name": "Hiraishin",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Téléportation instantanée vers un sceau marqué — l'« éclair jaune ».",
+      "description": "Téléportation instantanée vers un sceau marqué — l'« éclair jaune ».",
+      "image_url": null,
+      "attributes": {
+        "element": "Espace-temps"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "wood-release",
+      "type": "power",
+      "name": "Mokuton",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Libération du bois, fusion d'eau et de terre, propre à Hashirama.",
+      "description": "Libération du bois, fusion d'eau et de terre, propre à Hashirama.",
+      "image_url": null,
+      "attributes": {
+        "element": "Bois"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "tailed-beast-ball",
+      "type": "power",
+      "name": "Bijūdama",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Bombe de chakra condensée tirée par les Bijū et leurs hôtes.",
+      "description": "Bombe de chakra condensée tirée par les Bijū et leurs hôtes.",
+      "image_url": null,
+      "attributes": {
+        "element": "Chakra"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "sharingan",
+      "type": "skill",
+      "name": "Sharingan",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Œil qui copie les techniques et perçoit le moindre mouvement.",
+      "description": "Œil qui copie les techniques et perçoit le moindre mouvement.",
+      "image_url": null,
+      "attributes": {
+        "discipline": "Dōjutsu Uchiha"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "byakugan",
+      "type": "skill",
+      "name": "Byakugan",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Vision à 360° révélant le réseau de chakra de l'adversaire.",
+      "description": "Vision à 360° révélant le réseau de chakra de l'adversaire.",
+      "image_url": null,
+      "attributes": {
+        "discipline": "Dōjutsu Hyūga"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "rinnegan",
+      "type": "skill",
+      "name": "Rinnegan",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le plus vénéré des dōjutsu, maîtrise des six chemins et plus encore.",
+      "description": "Le plus vénéré des dōjutsu, maîtrise des six chemins et plus encore.",
+      "image_url": null,
+      "attributes": {
+        "discipline": "Dōjutsu légendaire"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "kusanagi",
+      "type": "artifact",
+      "name": "Sabre de Kusanagi",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Épée mythique d'une portée et d'un tranchant extraordinaires.",
+      "description": "Épée mythique d'une portée et d'un tranchant extraordinaires.",
+      "image_url": null,
+      "attributes": {
+        "material": "Lame spirituelle"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "gunbai",
+      "type": "artifact",
+      "name": "Gunbai",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Éventail de guerre indestructible capable de renvoyer les attaques.",
+      "description": "Éventail de guerre indestructible capable de renvoyer les attaques.",
+      "image_url": null,
+      "attributes": {
+        "material": "Éventail de guerre"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "samehada",
+      "type": "artifact",
+      "name": "Samehada",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "« Peau de requin » : lame vivante qui dévore le chakra, portée par Kisame.",
+      "description": "« Peau de requin » : lame vivante qui dévore le chakra, portée par Kisame.",
+      "image_url": null,
+      "attributes": {
+        "material": "Épée vivante"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "shinobi",
+      "type": "profession",
+      "name": "Shinobi",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Guerrier de l'ombre maniant chakra, armes et techniques au service de son village.",
+      "description": "Guerrier de l'ombre maniant chakra, armes et techniques au service de son village.",
+      "image_url": null,
+      "attributes": {
+        "sector": "Arts ninja"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "ninja-medical",
+      "type": "profession",
+      "name": "Ninja médical",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Spécialiste qui soigne par le chakra et maîtrise l'anatomie au combat.",
+      "description": "Spécialiste qui soigne par le chakra et maîtrise l'anatomie au combat.",
+      "image_url": null,
+      "attributes": {
+        "sector": "Médecine ninja"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "uchiha",
+      "type": "status",
+      "name": "Clan Uchiha",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Clan réputé pour le Sharingan et une intensité émotionnelle dévastatrice.",
+      "description": "Clan réputé pour le Sharingan et une intensité émotionnelle dévastatrice.",
+      "image_url": null,
+      "attributes": {
+        "scope": "Clan"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "senju",
+      "type": "status",
+      "name": "Clan Senju",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Clan des fondateurs, « clan aux mille techniques », rival historique des Uchiha.",
+      "description": "Clan des fondateurs, « clan aux mille techniques », rival historique des Uchiha.",
+      "image_url": null,
+      "attributes": {
+        "scope": "Clan"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "uzumaki",
+      "type": "status",
+      "name": "Clan Uzumaki",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Clan aux immenses réserves de chakra et maître du fūinjutsu (sceaux).",
+      "description": "Clan aux immenses réserves de chakra et maître du fūinjutsu (sceaux).",
+      "image_url": null,
+      "attributes": {
+        "scope": "Clan"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "hyuga",
+      "type": "status",
+      "name": "Clan Hyūga",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Clan noble porteur du Byakugan et du Poing Souple.",
+      "description": "Clan noble porteur du Byakugan et du Poing Souple.",
+      "image_url": null,
+      "attributes": {
+        "scope": "Clan"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "nara",
+      "type": "status",
+      "name": "Clan Nara",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Clan de stratèges manipulant les ombres et gardiens de cerfs.",
+      "description": "Clan de stratèges manipulant les ombres et gardiens de cerfs.",
+      "image_url": null,
+      "attributes": {
+        "scope": "Clan"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "hokage",
+      "type": "status",
+      "name": "Hokage",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le chef suprême et protecteur de Konohagakure.",
+      "description": "Le chef suprême et protecteur de Konohagakure.",
+      "image_url": null,
+      "attributes": {
+        "scope": "Titre"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "jinchuriki",
+      "type": "status",
+      "name": "Jinchūriki",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Humain en qui est scellé un Bijū, arme vivante autant que fardeau.",
+      "description": "Humain en qui est scellé un Bijū, arme vivante autant que fardeau.",
+      "image_url": null,
+      "attributes": {
+        "scope": "Statut"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "sannin",
+      "type": "status",
+      "name": "Sannin légendaires",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Titre des trois élèves d'exception d'Hiruzen : Jiraiya, Tsunade, Orochimaru.",
+      "description": "Titre des trois élèves d'exception d'Hiruzen : Jiraiya, Tsunade, Orochimaru.",
+      "image_url": null,
+      "attributes": {
+        "scope": "Titre"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "naruto-uzumaki",
+      "type": "character",
+      "name": "Naruto Uzumaki",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Orphelin turbulent devenu héros et Septième Hokage, hôte du renard Kurama.",
+      "description": "Orphelin turbulent devenu héros et Septième Hokage, hôte du renard Kurama.\n\n- **Village** : Konohagakure\n- **Clan** : Uzumaki\n- **Statut** : Hokage, Jinchūriki\n- **Techniques notables** : All Directions Shuriken, Baryon Mode, Big Ball Rasengan",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/d/d6/Naruto_Part_I.png",
+      "attributes": {
+        "role": "Hokage, Jinchūriki",
+        "affiliation": "Konohagakure",
+        "clan": "Uzumaki"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "sasuke-uchiha",
+      "type": "character",
+      "name": "Sasuke Uchiha",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Prodige du clan Uchiha, rival éternel de Naruto, hanté par la vengeance avant la rédemption.",
+      "description": "Prodige du clan Uchiha, rival éternel de Naruto, hanté par la vengeance avant la rédemption.\n\n- **Village** : Konohagakure\n- **Clan** : Uchiha\n- **Statut** : Dernier vengeur Uchiha\n- **Techniques notables** : Afterglow, Amaterasu, Amaterasu: Flame Wrapping Fire",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png",
+      "attributes": {
+        "role": "Dernier vengeur Uchiha",
+        "affiliation": "Konohagakure",
+        "clan": "Uchiha"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "sakura-haruno",
+      "type": "character",
+      "name": "Sakura Haruno",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Kunoichi de l'équipe 7, ninja médicale d'élite à la force colossale, élève de Tsunade.",
+      "description": "Kunoichi de l'équipe 7, ninja médicale d'élite à la force colossale, élève de Tsunade.\n\n- **Village** : Konohagakure\n- **Clan** : Uchiha\n- **Statut** : Kunoichi médicale\n- **Techniques notables** : Area Scanning Technique (Manga only), Chakra Enhanced Strength, Chakra Scalpel",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/6/64/Sakura_Part_1.png",
+      "attributes": {
+        "role": "Kunoichi médicale",
+        "affiliation": "Konohagakure",
+        "clan": "Uchiha"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "kakashi-hatake",
+      "type": "character",
+      "name": "Kakashi Hatake",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le « ninja copieur » au Sharingan, mentor de l'équipe 7 puis Sixième Hokage.",
+      "description": "Le « ninja copieur » au Sharingan, mentor de l'équipe 7 puis Sixième Hokage.\n\n- **Village** : Konohagakure\n- **Clan** : Hatake\n- **Statut** : Ninja copieur, Hokage\n- **Techniques notables** : Area Scanning Technique, Chidori, Demonic Illusion: Hell Viewing Technique",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/2/27/Kakashi_Hatake.png",
+      "attributes": {
+        "role": "Ninja copieur, Hokage",
+        "affiliation": "Konohagakure",
+        "clan": "Hatake"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "itachi-uchiha",
+      "type": "character",
+      "name": "Itachi Uchiha",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Génie Uchiha qui sacrifia tout — y compris sa réputation — pour protéger Konoha.",
+      "description": "Génie Uchiha qui sacrifia tout — y compris sa réputation — pour protéger Konoha.\n\n- **Village** : Konohagakure\n- **Clan** : Uchiha\n- **Statut** : Anbu, membre de l’Akatsuki\n- **Techniques notables** : Amaterasu, Chakra Suppression Technique (Novel only), Clone Great Explosion",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/b/bb/Itachi.png",
+      "attributes": {
+        "role": "Anbu, membre de l’Akatsuki",
+        "affiliation": "Konohagakure",
+        "clan": "Uchiha"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "madara-uchiha",
+      "type": "character",
+      "name": "Madara Uchiha",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Légende Uchiha et cofondateur de Konoha, devenu l'un de ses plus grands ennemis.",
+      "description": "Légende Uchiha et cofondateur de Konoha, devenu l'un de ses plus grands ennemis.\n\n- **Village** : Konohagakure\n- **Clan** : Uchiha\n- **Statut** : Cofondateur de Konoha\n- **Techniques notables** : Animal Path, Asura Path, Black Receiver",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/f/fd/Madara.png",
+      "attributes": {
+        "role": "Cofondateur de Konoha",
+        "affiliation": "Konohagakure",
+        "clan": "Uchiha"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "hashirama-senju",
+      "type": "character",
+      "name": "Hashirama Senju",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le « Dieu des shinobi », Premier Hokage et maître unique du Mokuton (libération du bois).",
+      "description": "Le « Dieu des shinobi », Premier Hokage et maître unique du Mokuton (libération du bois).\n\n- **Village** : Konohagakure\n- **Clan** : Senju\n- **Statut** : Premier Hokage\n- **Techniques notables** : Bringer-of-Darkness Technique (Manga only), Chakra Transfer Technique, Contract Seal (Anime only)",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/7/7e/Hashirama_Senju.png",
+      "attributes": {
+        "role": "Premier Hokage",
+        "affiliation": "Konohagakure",
+        "clan": "Senju"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "minato-namikaze",
+      "type": "character",
+      "name": "Minato Namikaze",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "L'« Éclair jaune de Konoha », Quatrième Hokage et père de Naruto, créateur du Rasengan.",
+      "description": "L'« Éclair jaune de Konoha », Quatrième Hokage et père de Naruto, créateur du Rasengan.\n\n- **Village** : Konohagakure\n- **Statut** : Quatrième Hokage\n- **Techniques notables** : Area Scanning Technique, Chakra Transfer Technique, Contract Seal",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/7/71/Minato_Namikaze.png",
+      "attributes": {
+        "role": "Quatrième Hokage",
+        "affiliation": "Konohagakure"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "jiraiya",
+      "type": "character",
+      "name": "Jiraiya",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "L'un des trois légendaires Sannin, ermite des crapauds et maître de Naruto.",
+      "description": "L'un des trois légendaires Sannin, ermite des crapauds et maître de Naruto.\n\n- **Village** : Konohagakure\n- **Statut** : Sannin, ermite\n- **Techniques notables** : Barrier: Canopy Method Formation, Barrier: Toad Gourd Prison, Big Ball Rasengan",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/2/21/Profile_Jiraiya.png",
+      "attributes": {
+        "role": "Sannin, ermite",
+        "affiliation": "Konohagakure"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "tsunade",
+      "type": "character",
+      "name": "Tsunade",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Sannin et Cinquième Hokage, la plus grande ninja médicale du monde shinobi.",
+      "description": "Sannin et Cinquième Hokage, la plus grande ninja médicale du monde shinobi.\n\n- **Village** : Konohagakure\n- **Clan** : Senju\n- **Statut** : Cinquième Hokage\n- **Techniques notables** : Body Pathway Derangement, Cell Activation Technique (Anime only), Chakra Enhanced Strength",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/b/b3/Tsunade_infobox2.png",
+      "attributes": {
+        "role": "Cinquième Hokage",
+        "affiliation": "Konohagakure",
+        "clan": "Senju"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "orochimaru",
+      "type": "character",
+      "name": "Orochimaru",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Sannin obsédé par l'immortalité et le savoir interdit, créateur d'Otogakure.",
+      "description": "Sannin obsédé par l'immortalité et le savoir interdit, créateur d'Otogakure.\n\n- **Village** : Konohagakure\n- **Statut** : Sannin renégat\n- **Techniques notables** : Binding Snake Glare Spell, Casualty Puppet (Anime only), Chakra Scalpel (Anime only)",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/1/14/Orochimaru_Infobox.png",
+      "attributes": {
+        "role": "Sannin renégat",
+        "affiliation": "Konohagakure"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "gaara",
+      "type": "character",
+      "name": "Gaara",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Ancien Jinchūriki de Shukaku devenu Cinquième Kazekage et symbole de rédemption.",
+      "description": "Ancien Jinchūriki de Shukaku devenu Cinquième Kazekage et symbole de rédemption.\n\n- **Village** : Sunagakure\n- **Clan** : Kazekage   (Novel only)\n- **Statut** : Cinquième Kazekage\n- **Techniques notables** : Air Sand Protective Wall, Armour of Sand, Concealed Sand Picture Cat",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/2/20/Gaara_in_Part_I.png",
+      "attributes": {
+        "role": "Cinquième Kazekage",
+        "affiliation": "Sunagakure",
+        "clan": "Kazekage   (Novel only)"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "rock-lee",
+      "type": "character",
+      "name": "Rock Lee",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Ninja incapable de ninjutsu qui compense par une maîtrise absolue du combat physique.",
+      "description": "Ninja incapable de ninjutsu qui compense par une maîtrise absolue du combat physique.\n\n- **Village** : Konohagakure\n- **Clan** : Lee   (Novel only)\n- **Statut** : Spécialiste du taijutsu\n- **Techniques notables** : Crane Wing Formation, Double Dynamic Entry, Drunken Fist",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/9/97/Rock_Lee_Part_I.png",
+      "attributes": {
+        "role": "Spécialiste du taijutsu",
+        "affiliation": "Konohagakure",
+        "clan": "Lee   (Novel only)"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "neji-hyuga",
+      "type": "character",
+      "name": "Neji Hyūga",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Génie de la branche secondaire du clan Hyūga, maître du Poing Souple et du Byakugan.",
+      "description": "Génie de la branche secondaire du clan Hyūga, maître du Poing Souple et du Byakugan.\n\n- **Village** : Konohagakure\n- **Clan** : Hyūga\n- **Statut** : Prodige Hyūga\n- **Techniques notables** : The Springtime of Youth wiki has an article about this topic:, Neji Hyūga",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/7/7e/Neji_Part_I.png",
+      "attributes": {
+        "role": "Prodige Hyūga",
+        "affiliation": "Konohagakure",
+        "clan": "Hyūga"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "hinata-hyuga",
+      "type": "character",
+      "name": "Hinata Hyūga",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Héritière timide puis vaillante du clan Hyūga, future épouse de Naruto.",
+      "description": "Héritière timide puis vaillante du clan Hyūga, future épouse de Naruto.\n\n- **Village** : Konohagakure\n- **Statut** : Héritière Hyūga\n- **Techniques notables** : Chakra Transfer Technique, Eight Trigrams Sixty-Four Palms, Eight Trigrams Thirty-Two Palms (Anime only)",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/9/97/Hinata.png",
+      "attributes": {
+        "role": "Héritière Hyūga",
+        "affiliation": "Konohagakure"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "shikamaru-nara",
+      "type": "character",
+      "name": "Shikamaru Nara",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le plus brillant stratège de sa génération, manipulateur des ombres du clan Nara.",
+      "description": "Le plus brillant stratège de sa génération, manipulateur des ombres du clan Nara.\n\n- **Village** : Konohagakure\n- **Clan** : Nara\n- **Statut** : Stratège\n- **Techniques notables** : Earth Release: Practice Brick Technique, Flying Swallow (Anime only), Formation Ino–Shika–Chō",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/4/44/Shikamaru_Part_I.png",
+      "attributes": {
+        "role": "Stratège",
+        "affiliation": "Konohagakure",
+        "clan": "Nara"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "obito-uchiha",
+      "type": "character",
+      "name": "Obito Uchiha",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Camarade de Kakashi cru mort, devenu le marionnettiste masqué derrière la guerre.",
+      "description": "Camarade de Kakashi cru mort, devenu le marionnettiste masqué derrière la guerre.\n\n- **Village** : Konohagakure\n- **Clan** : Uchiha\n- **Statut** : Membre masqué de l’Akatsuki\n- **Techniques notables** : Animal Path, Asura Path, Black Receiver",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/4/4a/Obito_Uchiha.png",
+      "attributes": {
+        "role": "Membre masqué de l’Akatsuki",
+        "affiliation": "Konohagakure",
+        "clan": "Uchiha"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "nagato",
+      "type": "character",
+      "name": "Nagato",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Porteur du Rinnegan et véritable « Pain », chef de l'Akatsuki en quête de paix par la douleur.",
+      "description": "Porteur du Rinnegan et véritable « Pain », chef de l'Akatsuki en quête de paix par la douleur.\n\n- **Village** : Amegakure\n- **Clan** : Uzumaki\n- **Statut** : Chef de l’Akatsuki (Pain)\n- **Techniques notables** : The Springtime of Youth wiki has an article about this topic:, Nagato, Pain",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/4/46/Nagato.png",
+      "attributes": {
+        "role": "Chef de l’Akatsuki (Pain)",
+        "affiliation": "Amegakure",
+        "clan": "Uzumaki"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "killer-b",
+      "type": "character",
+      "name": "Killer B",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Jinchūriki de Gyūki et bretteur hors pair de Kumo, qui rappe entre deux combats.",
+      "description": "Jinchūriki de Gyūki et bretteur hors pair de Kumo, qui rappe entre deux combats.\n\n- **Village** : Kumogakure\n- **Statut** : Jinchūriki, rappeur\n- **Techniques notables** : Acrobat, Cloud-Style Deception Beheading (Anime only), Continuous Tailed Beast Balls",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/6/63/Killer_B.png",
+      "attributes": {
+        "role": "Jinchūriki, rappeur",
+        "affiliation": "Kumogakure"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "might-guy",
+      "type": "character",
+      "name": "Might Guy",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Maître du taijutsu capable d'ouvrir les Huit Portes, rival autoproclamé de Kakashi.",
+      "description": "Maître du taijutsu capable d'ouvrir les Huit Portes, rival autoproclamé de Kakashi.\n\n- **Village** : Konohagakure\n- **Statut** : Maître du taijutsu\n- **Techniques notables** : Daytime Tiger, Double Dynamic Entry, Dynamic Action (Anime only)",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/3/31/Might_Guy.png",
+      "attributes": {
+        "role": "Maître du taijutsu",
+        "affiliation": "Konohagakure"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "kurama",
+      "type": "character",
+      "name": "Kurama (Bijū)",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le Démon-renard à Neuf Queues, le plus puissant des Bijū, scellé en Naruto.",
+      "description": "Le Démon-renard à Neuf Queues, le plus puissant des Bijū, scellé en Naruto.",
+      "image_url": null,
+      "attributes": {
+        "role": "Bête à queues (Bijū)",
+        "race": "Bijū"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "gyuki",
+      "type": "character",
+      "name": "Gyūki (Bijū)",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le Bijū à Huit Queues, mi-poulpe mi-taureau, partenaire de Killer B.",
+      "description": "Le Bijū à Huit Queues, mi-poulpe mi-taureau, partenaire de Killer B.",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/d/d7/Gyuki.png",
+      "attributes": {
+        "role": "Bête à queues (Bijū)",
+        "race": "Bijū"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "shukaku",
+      "type": "character",
+      "name": "Shukaku (Bijū)",
+      "is_fiction": true,
+      "universe": "Naruto",
+      "summary": "Le Bijū à Une Queue, tanuki de sable jadis scellé en Gaara.",
+      "description": "Le Bijū à Une Queue, tanuki de sable jadis scellé en Gaara.",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/9/99/Shukaku.png",
+      "attributes": {
+        "role": "Bête à queues (Bijū)",
+        "race": "Bijū"
+      },
+      "rarity": "rare"
+    }
+  ],
+  "relations": [
+    {
+      "from": "naruto-uzumaki",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "naruto-uzumaki",
+      "relation": "appartient",
+      "to": "uzumaki"
+    },
+    {
+      "from": "naruto-uzumaki",
+      "relation": "appartient",
+      "to": "hokage"
+    },
+    {
+      "from": "naruto-uzumaki",
+      "relation": "appartient",
+      "to": "jinchuriki"
+    },
+    {
+      "from": "naruto-uzumaki",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "naruto-uzumaki",
+      "relation": "maitrise",
+      "to": "rasengan"
+    },
+    {
+      "from": "naruto-uzumaki",
+      "relation": "maitrise",
+      "to": "shadow-clone"
+    },
+    {
+      "from": "naruto-uzumaki",
+      "relation": "maitrise",
+      "to": "tailed-beast-ball"
+    },
+    {
+      "from": "naruto-uzumaki",
+      "relation": "possede",
+      "to": "kurama"
+    },
+    {
+      "from": "sasuke-uchiha",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "sasuke-uchiha",
+      "relation": "appartient",
+      "to": "uchiha"
+    },
+    {
+      "from": "sasuke-uchiha",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "sasuke-uchiha",
+      "relation": "maitrise",
+      "to": "chidori"
+    },
+    {
+      "from": "sasuke-uchiha",
+      "relation": "maitrise",
+      "to": "amaterasu"
+    },
+    {
+      "from": "sasuke-uchiha",
+      "relation": "maitrise",
+      "to": "susanoo"
+    },
+    {
+      "from": "sasuke-uchiha",
+      "relation": "maitrise",
+      "to": "sharingan"
+    },
+    {
+      "from": "sasuke-uchiha",
+      "relation": "maitrise",
+      "to": "rinnegan"
+    },
+    {
+      "from": "sasuke-uchiha",
+      "relation": "possede",
+      "to": "kusanagi"
+    },
+    {
+      "from": "sakura-haruno",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "sakura-haruno",
+      "relation": "exerce",
+      "to": "ninja-medical"
+    },
+    {
+      "from": "sakura-haruno",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "kakashi-hatake",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "kakashi-hatake",
+      "relation": "appartient",
+      "to": "hokage"
+    },
+    {
+      "from": "kakashi-hatake",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "kakashi-hatake",
+      "relation": "maitrise",
+      "to": "chidori"
+    },
+    {
+      "from": "kakashi-hatake",
+      "relation": "maitrise",
+      "to": "sharingan"
+    },
+    {
+      "from": "itachi-uchiha",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "itachi-uchiha",
+      "relation": "appartient",
+      "to": "uchiha"
+    },
+    {
+      "from": "itachi-uchiha",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "itachi-uchiha",
+      "relation": "maitrise",
+      "to": "amaterasu"
+    },
+    {
+      "from": "itachi-uchiha",
+      "relation": "maitrise",
+      "to": "susanoo"
+    },
+    {
+      "from": "itachi-uchiha",
+      "relation": "maitrise",
+      "to": "sharingan"
+    },
+    {
+      "from": "madara-uchiha",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "madara-uchiha",
+      "relation": "appartient",
+      "to": "uchiha"
+    },
+    {
+      "from": "madara-uchiha",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "madara-uchiha",
+      "relation": "maitrise",
+      "to": "susanoo"
+    },
+    {
+      "from": "madara-uchiha",
+      "relation": "maitrise",
+      "to": "wood-release"
+    },
+    {
+      "from": "madara-uchiha",
+      "relation": "maitrise",
+      "to": "sharingan"
+    },
+    {
+      "from": "madara-uchiha",
+      "relation": "maitrise",
+      "to": "rinnegan"
+    },
+    {
+      "from": "madara-uchiha",
+      "relation": "possede",
+      "to": "gunbai"
+    },
+    {
+      "from": "hashirama-senju",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "hashirama-senju",
+      "relation": "appartient",
+      "to": "senju"
+    },
+    {
+      "from": "hashirama-senju",
+      "relation": "appartient",
+      "to": "hokage"
+    },
+    {
+      "from": "hashirama-senju",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "hashirama-senju",
+      "relation": "maitrise",
+      "to": "wood-release"
+    },
+    {
+      "from": "minato-namikaze",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "minato-namikaze",
+      "relation": "appartient",
+      "to": "hokage"
+    },
+    {
+      "from": "minato-namikaze",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "minato-namikaze",
+      "relation": "maitrise",
+      "to": "rasengan"
+    },
+    {
+      "from": "minato-namikaze",
+      "relation": "maitrise",
+      "to": "flying-raijin"
+    },
+    {
+      "from": "jiraiya",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "jiraiya",
+      "relation": "appartient",
+      "to": "sannin"
+    },
+    {
+      "from": "jiraiya",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "jiraiya",
+      "relation": "maitrise",
+      "to": "rasengan"
+    },
+    {
+      "from": "tsunade",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "tsunade",
+      "relation": "appartient",
+      "to": "senju"
+    },
+    {
+      "from": "tsunade",
+      "relation": "appartient",
+      "to": "hokage"
+    },
+    {
+      "from": "tsunade",
+      "relation": "appartient",
+      "to": "sannin"
+    },
+    {
+      "from": "tsunade",
+      "relation": "exerce",
+      "to": "ninja-medical"
+    },
+    {
+      "from": "tsunade",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "orochimaru",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "orochimaru",
+      "relation": "appartient",
+      "to": "sannin"
+    },
+    {
+      "from": "orochimaru",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "orochimaru",
+      "relation": "maitrise",
+      "to": "edo-tensei"
+    },
+    {
+      "from": "orochimaru",
+      "relation": "possede",
+      "to": "kusanagi"
+    },
+    {
+      "from": "gaara",
+      "relation": "habite",
+      "to": "sunagakure"
+    },
+    {
+      "from": "gaara",
+      "relation": "appartient",
+      "to": "jinchuriki"
+    },
+    {
+      "from": "gaara",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "gaara",
+      "relation": "possede",
+      "to": "shukaku"
+    },
+    {
+      "from": "rock-lee",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "rock-lee",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "neji-hyuga",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "neji-hyuga",
+      "relation": "appartient",
+      "to": "hyuga"
+    },
+    {
+      "from": "neji-hyuga",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "neji-hyuga",
+      "relation": "maitrise",
+      "to": "byakugan"
+    },
+    {
+      "from": "hinata-hyuga",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "hinata-hyuga",
+      "relation": "appartient",
+      "to": "hyuga"
+    },
+    {
+      "from": "hinata-hyuga",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "hinata-hyuga",
+      "relation": "maitrise",
+      "to": "byakugan"
+    },
+    {
+      "from": "shikamaru-nara",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "shikamaru-nara",
+      "relation": "appartient",
+      "to": "nara"
+    },
+    {
+      "from": "shikamaru-nara",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "obito-uchiha",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "obito-uchiha",
+      "relation": "appartient",
+      "to": "uchiha"
+    },
+    {
+      "from": "obito-uchiha",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "obito-uchiha",
+      "relation": "maitrise",
+      "to": "sharingan"
+    },
+    {
+      "from": "nagato",
+      "relation": "habite",
+      "to": "amegakure"
+    },
+    {
+      "from": "nagato",
+      "relation": "appartient",
+      "to": "uzumaki"
+    },
+    {
+      "from": "nagato",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "nagato",
+      "relation": "maitrise",
+      "to": "rinnegan"
+    },
+    {
+      "from": "killer-b",
+      "relation": "habite",
+      "to": "kumogakure"
+    },
+    {
+      "from": "killer-b",
+      "relation": "appartient",
+      "to": "jinchuriki"
+    },
+    {
+      "from": "killer-b",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "killer-b",
+      "relation": "possede",
+      "to": "gyuki"
+    },
+    {
+      "from": "might-guy",
+      "relation": "habite",
+      "to": "konohagakure"
+    },
+    {
+      "from": "might-guy",
+      "relation": "exerce",
+      "to": "shinobi"
+    },
+    {
+      "from": "naruto-uzumaki",
+      "relation": "rival",
+      "to": "sasuke-uchiha"
+    },
+    {
+      "from": "naruto-uzumaki",
+      "relation": "allie",
+      "to": "sakura-haruno"
+    },
+    {
+      "from": "naruto-uzumaki",
+      "relation": "allie",
+      "to": "kakashi-hatake"
+    },
+    {
+      "from": "sasuke-uchiha",
+      "relation": "allie",
+      "to": "sakura-haruno"
+    },
+    {
+      "from": "madara-uchiha",
+      "relation": "rival",
+      "to": "hashirama-senju"
+    },
+    {
+      "from": "might-guy",
+      "relation": "rival",
+      "to": "kakashi-hatake"
+    },
+    {
+      "from": "itachi-uchiha",
+      "relation": "allie",
+      "to": "sasuke-uchiha"
+    }
+  ]
+}
