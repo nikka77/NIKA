@@ -133,6 +133,23 @@ export default async function LearnPage() {
       {/* ── CONTENU ───────────────────────────────────────────── */}
       <div id="cours" style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(2rem,4vw,3rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
 
+        {/* AKASHA — registre universel */}
+        <Link href="/learn/akasha" className="dom-card akasha-card" style={{
+          display: 'flex', alignItems: 'center', gap: '1.1rem', flexWrap: 'wrap',
+          marginBottom: '2.5rem', textDecoration: 'none',
+          background: 'linear-gradient(120deg, rgba(123,92,240,0.16), rgba(123,92,240,0.04))',
+          border: '1px solid rgba(123,92,240,0.3)', borderRadius: 16, padding: '1.4rem 1.6rem',
+          ['--dc' as string]: ACCENT,
+        }}>
+          <div style={{ fontSize: 38, lineHeight: 1 }} aria-hidden>✦</div>
+          <div style={{ flex: 1, minWidth: 200 }}>
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: ACCENT, marginBottom: 4 }}>Nouveau · Registre</div>
+            <div style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(20px,3vw,28px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.95 }}>Akasha</div>
+            <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)', margin: '0.3rem 0 0' }}>Le registre de tout ce qui existe, réel ou imaginé — personnages, lieux, artefacts, pouvoirs…</p>
+          </div>
+          <span style={{ fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 800, fontStyle: 'italic', textTransform: 'uppercase', color: ACCENT, whiteSpace: 'nowrap' }}>Explorer →</span>
+        </Link>
+
         {/* Disciplines */}
         <div style={{ marginBottom: '3rem' }}>
           <h2 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(24px,3.5vw,40px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.92, marginBottom: '0.4rem' }}>
