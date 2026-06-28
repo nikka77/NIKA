@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { ChakraNatureIcon, VillageEmblem, ClanCrest } from './NarutoIcons';
 
-export type CardForm = { label: string; url: string };
+export type CardForm = { label: string; url: string; caption?: string };
 
 export default function CardArt({
   forms,
@@ -76,6 +76,9 @@ export default function CardArt({
             );
           })}
         </div>
+      )}
+      {forms[sel]?.caption && (
+        <div style={{ textAlign: 'center', marginTop: 8, fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', fontStyle: 'italic' }}>{forms[sel].caption}</div>
       )}
     </div>
   );

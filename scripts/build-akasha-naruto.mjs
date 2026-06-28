@@ -22,7 +22,15 @@ async function getJSON(path) {
 // village = slug du lieu ; clan/ranks/powers/skills/artifacts/beast = slugs cibles de relations.
 const CHARACTERS = [
   { key: 'Naruto Uzumaki', village: 'konohagakure', clan: 'uzumaki', ranks: ['hokage', 'jinchuriki'], powers: ['rasengan', 'shadow-clone', 'tailed-beast-ball'], beast: 'kurama', rarity: 'legendary',
-    role: 'Hokage, Jinchūriki', forms: [{ label: 'Mode Kurama', img: '/images/akasha/naruto/naruto-kurama.webp' }], summary: "Orphelin turbulent devenu héros et Septième Hokage, hôte du renard Kurama." },
+    role: 'Hokage, Jinchūriki', summary: "Orphelin turbulent devenu héros et Septième Hokage, hôte du renard Kurama.",
+    forms: [
+      { label: 'Partie I', g: 0, caption: '12 ans · Genin · Pays des Vagues & Examens Chūnin' },
+      { label: '1 Queue', img: '/images/akasha/naruto/naruto-1tail.webp', caption: '12 ans · Premier manteau de Kurama (déchaîné)' },
+      { label: 'Mode Sage', img: '/images/akasha/naruto/naruto-sage.webp', caption: '16 ans · Ermite du mont Myōboku' },
+      { label: 'Partie II', g: 1, caption: '16 ans · Guerre des ninjas' },
+      { label: 'Mode Kurama', img: '/images/akasha/naruto/naruto-kurama.webp', caption: '17 ans · Manteau de chakra complet' },
+      { label: 'Mode Baryon', img: '/images/akasha/naruto/naruto-baryon.webp', caption: 'Adulte · Forme ultime (Boruto)' },
+    ] },
   { key: 'Sasuke Uchiha', village: 'konohagakure', clan: 'uchiha', powers: ['chidori', 'amaterasu', 'susanoo'], skills: ['sharingan', 'rinnegan'], artifacts: ['kusanagi'], rarity: 'legendary',
     role: 'Dernier vengeur Uchiha', summary: "Prodige du clan Uchiha, rival éternel de Naruto, hanté par la vengeance avant la rédemption." },
   { key: 'Sakura Haruno', village: 'konohagakure', powers: [], medical: true, rarity: 'rare',
@@ -193,7 +201,7 @@ async function main() {
       debut: api.debut?.manga || null,
       family: api.family && typeof api.family === 'object' ? Object.entries(api.family).map(([rel, name]) => ({ rel, name: String(name) })) : [],
       gallery: arr(api.images),
-      forms: (c.forms || []).map((f) => ({ label: f.label, url: f.img })),
+      forms: (c.forms || []).map((f) => ({ label: f.label, url: f.g != null ? arr(api.images)[f.g] : f.img, caption: f.caption })).filter((f) => f.url),
     });
     add(entry(slug, 'character', c.key, c.summary, c.rarity, attributes, attributes.gallery?.[0] || null, c.summary));
 

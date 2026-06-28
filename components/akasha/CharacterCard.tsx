@@ -60,10 +60,10 @@ export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
   const signature = list(a.signature);
   const gallery = list(a.gallery);
   const galleryForms = gallery.map((url, i) => ({ label: ['Partie I', 'Partie II', 'Partie III'][i] ?? `Forme ${i + 1}`, url }));
-  const curatedForms = (Array.isArray(a.forms) ? (a.forms as { label?: string; url?: string }[]) : [])
+  const curatedForms = (Array.isArray(a.forms) ? (a.forms as { label?: string; url?: string; caption?: string }[]) : [])
     .filter((f) => f && typeof f.url === 'string')
-    .map((f) => ({ label: f.label ?? 'Forme', url: f.url as string }));
-  const forms = [...galleryForms, ...curatedForms];
+    .map((f) => ({ label: f.label ?? 'Forme', url: f.url as string, caption: f.caption }));
+  const forms = curatedForms.length ? curatedForms : galleryForms;
 
   return (
     <article
