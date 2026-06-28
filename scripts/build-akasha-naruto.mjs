@@ -1,7 +1,7 @@
 // scripts/build-akasha-naruto.mjs — construit data/akasha-naruto.json pour le registre AKASHA.
 // Source : Dattebayo API (faits + images). Les RÉSUMÉS sont rédigés ici (originaux, FR),
 // jamais copiés de Narutopedia. Run : node scripts/build-akasha-naruto.mjs
-import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -9,6 +9,20 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 // Image de référence (Narutopedia, via scripts/fetch-akasha-naruto-images.py) si présente.
 const refImg = (slug) =>
   existsSync(join(ROOT, 'public/images/akasha/ref', `${slug}.webp`)) ? `/images/akasha/ref/${slug}.webp` : null;
+
+// Faits canon SMW (scripts/fetch-akasha-naruto-facts.mjs) — corrige/enrichit les données API.
+let FACTS = {};
+try { FACTS = JSON.parse(readFileSync(join(ROOT, 'data', 'akasha-naruto-facts.json'), 'utf8')); } catch { /* optionnel */ }
+
+// Libellés FR courts (classification, affiliations, rangs). Défaut = original.
+const FR = {
+  Sage: 'Ermite (Sage)', 'Sensor Type': 'Type Capteur', 'Missing-nin': 'Déserteur (Nukenin)',
+  'Medical-nin': 'Ninja médical', Reincarnation: 'Réincarné', Orphan: 'Orphelin', Criminal: 'Criminel',
+  'S-rank': 'Rang S', 'Allied Shinobi Forces': 'Forces Shinobi Alliées', 'Mount Myōboku': 'Mont Myōboku',
+  'Team 7': 'Équipe 7', Genin: 'Genin', Chūnin: 'Chūnin', Jōnin: 'Jōnin', Kage: 'Kage',
+};
+const fr = (s) => FR[s] ?? s;
+const frList = (a) => (Array.isArray(a) ? a.map(fr) : []);
 const API = 'https://dattebayo-api.onrender.com';
 const UA = 'Mozilla/5.0 (NIKA/akasha-build)';
 
@@ -26,30 +40,57 @@ async function getJSON(path) {
 const CHARACTERS = [
   { key: 'Naruto Uzumaki', village: 'konohagakure', clan: 'uzumaki', ranks: ['hokage', 'jinchuriki'], powers: ['rasengan', 'shadow-clone', 'tailed-beast-ball'], beast: 'kurama', rarity: 'legendary',
     role: 'Hokage, Jinchūriki', summary: "Orphelin turbulent devenu héros et Septième Hokage, hôte du renard Kurama.",
+    kg: [],                       // clan Uzumaki = aucun kekkei genkai personnel (les natures exotiques viennent de Kurama)
+    nat: ['Wind Release', 'Yin–Yang Release'],
+    // Chaque forme = un instantané COHÉRENT calé sur les faits SMW (âge→taille→rang) et l'arc.
     forms: [
-      { label: 'Partie I', g: 0, caption: '12 ans · Genin · Pays des Vagues & Examens Chūnin' },
-      { label: '1 Queue', img: '/images/akasha/naruto/naruto-1tail.webp', caption: '12 ans · Premier manteau de Kurama (déchaîné)' },
-      { label: 'Mode Sage', img: '/images/akasha/naruto/naruto-sage.webp', caption: '16 ans · Ermite du mont Myōboku' },
-      { label: 'Partie II', g: 1, caption: '16 ans · Guerre des ninjas' },
-      { label: 'Mode Kurama', img: '/images/akasha/naruto/naruto-kurama.webp', caption: '17 ans · Manteau de chakra complet' },
-      { label: 'Mode Baryon', img: '/images/akasha/naruto/naruto-baryon.webp', caption: 'Adulte · Forme ultime (Boruto)' },
+      { label: 'Partie I', g: 0, age: '12 ans', height: '1,45 m', weight: '40 kg', rank: 'Genin',
+        classification: ['Jinchūriki'], natures: [], occupation: ['Genin · Équipe 7'], affiliation: ['Konohagakure', 'Équipe 7'],
+        signature: ['Multiclonage', 'Rasengan'], arc: 'Pays des Vagues · Examens Chūnin',
+        caption: '12 ans · Genin · Pays des Vagues & Examens Chūnin',
+        summary: "Genin turbulent de l'équipe 7. Il apprend le Multiclonage de l'ombre puis le Rasengan, et découvre son lien avec Kurama." },
+      { label: '1 Queue', img: '/images/akasha/naruto/naruto-1tail.webp', age: '12 ans', height: '1,45 m', rank: 'Genin',
+        classification: ['Jinchūriki'], natures: [], occupation: ['Genin · Équipe 7'], affiliation: ['Konohagakure'],
+        signature: ['Manteau de Kurama — 1 queue', 'Rasengan'], arc: 'Récupération de Sasuke',
+        caption: '12 ans · Premier manteau de Kurama (déchaîné)',
+        summary: "À la Vallée de la Fin contre Sasuke, la rage fait déborder le chakra de Kurama en un manteau à une queue." },
+      { label: 'Mode Sage', img: '/images/akasha/naruto/naruto-sage.webp', age: '16 ans', height: '1,66 m', weight: '51 kg', rank: 'Genin',
+        classification: ['Jinchūriki', 'Ermite (Sage)'], natures: ['Wind Release'], occupation: ['Ninja de Konoha'], affiliation: ['Konohagakure', 'Mont Myōboku'],
+        signature: ['Mode Ermite', 'Rasenshuriken', 'Rasengan'], arc: 'Assaut de Pain',
+        caption: '16 ans · Ermite du mont Myōboku · Assaut de Pain',
+        summary: "Formé par les crapauds, il maîtrise le senjutsu (Mode Ermite) et terrasse Pain avec le Rasenshuriken." },
+      { label: 'Partie II', g: 1, age: '16 ans', height: '1,66 m', weight: '51 kg', rank: 'Genin',
+        classification: ['Jinchūriki', 'Ermite (Sage)'], natures: ['Wind Release'], occupation: ['Ninja de Konoha'], affiliation: ['Konohagakure', 'Forces Shinobi Alliées'],
+        signature: ['Rasenshuriken', 'Multiclonage', 'Rasengan'], arc: 'Quatrième Guerre Shinobi',
+        caption: '16 ans · Guerre des ninjas',
+        summary: "Au sein des Forces Shinobi Alliées, il combine senjutsu et multiclonage pour mener la guerre." },
+      { label: 'Mode Kurama', img: '/images/akasha/naruto/naruto-kurama.webp', age: '17 ans', height: '1,80 m', weight: '51 kg', rank: 'Genin',
+        classification: ['Jinchūriki', 'Ermite (Sage)', 'Type Capteur'], natures: ['Wind Release'], occupation: ['Ninja de Konoha'], affiliation: ['Forces Shinobi Alliées'],
+        signature: ['Manteau de chakra de Kurama', 'Bijūdama', 'Rasenshuriken'], arc: 'Quatrième Guerre Shinobi',
+        caption: '17 ans · Manteau de chakra complet',
+        summary: "En symbiose avec Kurama, il revêt le manteau de chakra et tire des Bijūdama aux côtés de l'Alliance." },
+      { label: 'Mode Baryon', img: '/images/akasha/naruto/naruto-baryon.webp', age: 'Adulte', height: '1,80 m', rank: 'Kage',
+        classification: ['Jinchūriki', 'Hokage'], natures: ['Wind Release', 'Yin–Yang Release'], occupation: ['Septième Hokage'], affiliation: ['Konohagakure'],
+        signature: ['Mode Baryon', 'Bijūdama', 'Rasengan'], arc: 'Boruto',
+        caption: 'Adulte · Forme ultime (Boruto)',
+        summary: "Septième Hokage, il pousse la fusion avec Kurama jusqu'au Mode Baryon — ultime recours qui consume leur énergie vitale." },
     ],
     anims: [
       { label: 'Multiclonage', src: '/images/akasha/naruto/multiclonage-anim.webp' },
       { label: 'Fūma Shuriken', src: '/images/akasha/naruto/fuma-shuriken-anim.webp', blend: 'screen' },
     ] },
   { key: 'Sasuke Uchiha', village: 'konohagakure', clan: 'uchiha', powers: ['chidori', 'amaterasu', 'susanoo'], skills: ['sharingan', 'rinnegan'], artifacts: ['kusanagi'], rarity: 'legendary',
-    role: 'Dernier vengeur Uchiha', summary: "Prodige du clan Uchiha, rival éternel de Naruto, hanté par la vengeance avant la rédemption." },
+    role: 'Dernier vengeur Uchiha', kg: ['Sharingan', 'Rinnegan'], summary: "Prodige du clan Uchiha, rival éternel de Naruto, hanté par la vengeance avant la rédemption." },
   { key: 'Sakura Haruno', village: 'konohagakure', powers: [], medical: true, rarity: 'rare',
     role: 'Kunoichi médicale', summary: "Kunoichi de l'équipe 7, ninja médicale d'élite à la force colossale, élève de Tsunade." },
   { key: 'Kakashi Hatake', village: 'konohagakure', clan: 'hatake', ranks: ['hokage'], powers: ['chidori'], skills: ['sharingan'], rarity: 'epic',
     role: 'Ninja copieur, Hokage', summary: "Le « ninja copieur » au Sharingan, mentor de l'équipe 7 puis Sixième Hokage." },
   { key: 'Itachi Uchiha', village: 'konohagakure', clan: 'uchiha', powers: ['amaterasu', 'susanoo'], skills: ['sharingan'], rarity: 'epic',
-    role: 'Anbu, membre de l’Akatsuki', summary: "Génie Uchiha qui sacrifia tout — y compris sa réputation — pour protéger Konoha." },
+    role: 'Anbu, membre de l’Akatsuki', kg: ['Sharingan'], summary: "Génie Uchiha qui sacrifia tout — y compris sa réputation — pour protéger Konoha." },
   { key: 'Madara Uchiha', village: 'konohagakure', clan: 'uchiha', powers: ['susanoo', 'wood-release'], skills: ['sharingan', 'rinnegan'], artifacts: ['gunbai'], rarity: 'legendary',
-    role: 'Cofondateur de Konoha', summary: "Légende Uchiha et cofondateur de Konoha, devenu l'un de ses plus grands ennemis." },
+    role: 'Cofondateur de Konoha', kg: ['Sharingan', 'Rinnegan', 'Mokuton (Bois)'], summary: "Légende Uchiha et cofondateur de Konoha, devenu l'un de ses plus grands ennemis." },
   { key: 'Hashirama Senju', village: 'konohagakure', clan: 'senju', ranks: ['hokage'], powers: ['wood-release'], rarity: 'legendary',
-    role: 'Premier Hokage', summary: "Le « Dieu des shinobi », Premier Hokage et maître unique du Mokuton (libération du bois)." },
+    role: 'Premier Hokage', kg: ['Mokuton (Bois)'], summary: "Le « Dieu des shinobi », Premier Hokage et maître unique du Mokuton (libération du bois)." },
   { key: 'Minato Namikaze', village: 'konohagakure', ranks: ['hokage'], powers: ['rasengan', 'flying-raijin'], rarity: 'epic',
     role: 'Quatrième Hokage', summary: "L'« Éclair jaune de Konoha », Quatrième Hokage et père de Naruto, créateur du Rasengan." },
   { key: 'Jiraiya', village: 'konohagakure', ranks: ['sannin'], powers: ['rasengan'], rarity: 'epic',
@@ -59,19 +100,19 @@ const CHARACTERS = [
   { key: 'Orochimaru', village: 'konohagakure', ranks: ['sannin'], powers: ['edo-tensei'], artifacts: ['kusanagi'], rarity: 'epic',
     role: 'Sannin renégat', summary: "Sannin obsédé par l'immortalité et le savoir interdit, créateur d'Otogakure." },
   { key: 'Gaara', village: 'sunagakure', ranks: ['jinchuriki'], beast: 'shukaku', rarity: 'epic',
-    role: 'Cinquième Kazekage', summary: "Ancien Jinchūriki de Shukaku devenu Cinquième Kazekage et symbole de rédemption." },
+    role: 'Cinquième Kazekage', kg: ['Magnet (Jiton)'], summary: "Ancien Jinchūriki de Shukaku devenu Cinquième Kazekage et symbole de rédemption." },
   { key: 'Rock Lee', village: 'konohagakure', rarity: 'rare',
     role: 'Spécialiste du taijutsu', summary: "Ninja incapable de ninjutsu qui compense par une maîtrise absolue du combat physique." },
   { key: 'Neji Hyūga', village: 'konohagakure', clan: 'hyuga', skills: ['byakugan'], rarity: 'rare',
-    role: 'Prodige Hyūga', summary: "Génie de la branche secondaire du clan Hyūga, maître du Poing Souple et du Byakugan." },
+    role: 'Prodige Hyūga', kg: ['Byakugan'], summary: "Génie de la branche secondaire du clan Hyūga, maître du Poing Souple et du Byakugan." },
   { key: 'Hinata Hyūga', village: 'konohagakure', clan: 'hyuga', skills: ['byakugan'], rarity: 'rare',
-    role: 'Héritière Hyūga', summary: "Héritière timide puis vaillante du clan Hyūga, future épouse de Naruto." },
+    role: 'Héritière Hyūga', kg: ['Byakugan'], summary: "Héritière timide puis vaillante du clan Hyūga, future épouse de Naruto." },
   { key: 'Shikamaru Nara', village: 'konohagakure', clan: 'nara', rarity: 'rare',
     role: 'Stratège', summary: "Le plus brillant stratège de sa génération, manipulateur des ombres du clan Nara." },
   { key: 'Obito Uchiha', village: 'konohagakure', clan: 'uchiha', skills: ['sharingan'], rarity: 'epic',
-    role: 'Membre masqué de l’Akatsuki', summary: "Camarade de Kakashi cru mort, devenu le marionnettiste masqué derrière la guerre." },
+    role: 'Membre masqué de l’Akatsuki', kg: ['Sharingan'], summary: "Camarade de Kakashi cru mort, devenu le marionnettiste masqué derrière la guerre." },
   { key: 'Nagato', village: 'amegakure', clan: 'uzumaki', skills: ['rinnegan'], rarity: 'epic',
-    role: 'Chef de l’Akatsuki (Pain)', summary: "Porteur du Rinnegan et véritable « Pain », chef de l'Akatsuki en quête de paix par la douleur." },
+    role: 'Chef de l’Akatsuki (Pain)', kg: ['Rinnegan'], summary: "Porteur du Rinnegan et véritable « Pain », chef de l'Akatsuki en quête de paix par la douleur." },
   { key: 'Killer B', village: 'kumogakure', ranks: ['jinchuriki'], beast: 'gyuki', rarity: 'rare',
     role: 'Jinchūriki, rappeur', summary: "Jinchūriki de Gyūki et bretteur hors pair de Kumo, qui rappe entre deux combats." },
   { key: 'Might Guy', village: 'konohagakure', rarity: 'rare',
@@ -180,6 +221,7 @@ async function main() {
     const api = byName.get(c.key);
     if (!api) { console.warn('  ⚠ perso introuvable dans l\'API:', c.key); continue; }
     const slug = c.slug || slugify(c.key);
+    const facts = FACTS[slug];
     const p = api.personal || {};
     const villageName = PLACES.find((pl) => pl[0] === c.village)?.[1] ?? (arr(p.affiliation)[0] || null);
     const attributes = purge({
@@ -194,21 +236,34 @@ async function main() {
       weight: firstVal(p.weight),
       bloodType: firstVal(p.bloodType),
       birthdate: firstVal(p.birthdate),
-      classification: arr(p.classification).map(cleanNote),
+      // classification/affiliation : SMW Narutopedia (canon, FR) si dispo, sinon API.
+      classification: facts ? frList(facts.classification) : arr(p.classification).map(cleanNote),
       titles: arr(p.titles).map(cleanNote),
       occupation: arr(p.occupation).map(cleanNote),
-      kekkeiGenkai: arr(p.kekkeiGenkai).map(cleanNote),
-      natureType: arr(api.natureType).map(cleanNote),
+      // kekkei genkai = CURÉ (canon). Plus de dump API (corrige Naruto = Lava/Magnet/Boil).
+      kekkeiGenkai: c.kg ?? [],
+      // natures perso curées si fournies (ex. Naruto = Vent), sinon API (les icônes filtrent l'exotique).
+      natureType: c.nat ?? arr(api.natureType).map(cleanNote),
       tools: arr(api.tools).map(cleanNote).slice(0, 8),
       jutsu: arr(api.jutsu).map(cleanNote).slice(0, 12),
       signature: (c.powers || []).map((s) => POWERS.find((p) => p[0] === s)?.[1]).filter(Boolean),
       rank: pickRank(api.rank),
-      affiliation: arr(p.affiliation),
+      affiliation: facts ? frList(facts.affiliation) : arr(p.affiliation),
+      sourceUrl: facts?.sourceUrl ?? null, // attribution CC-BY-SA (Narutopedia)
       team: arr(p.team),
       debut: api.debut?.manga || null,
       family: api.family && typeof api.family === 'object' ? Object.entries(api.family).map(([rel, name]) => ({ rel, name: String(name) })) : [],
       gallery: arr(api.images),
-      forms: (c.forms || []).map((f) => ({ label: f.label, url: f.g != null ? arr(api.images)[f.g] : f.img, caption: f.caption })).filter((f) => f.url),
+      // forms = instantanés évolutifs : image + snapshot cohérent (âge, rang, natures, techniques…).
+      forms: (c.forms || []).map((f) => ({
+        label: f.label,
+        url: f.g != null ? arr(api.images)[f.g] : f.img,
+        caption: f.caption,
+        summary: f.summary,
+        age: f.age, height: f.height, weight: f.weight, rank: f.rank,
+        classification: f.classification, natures: f.natures, kekkeiGenkai: f.kg,
+        occupation: f.occupation, affiliation: f.affiliation, signature: f.signature, arc: f.arc,
+      })).filter((f) => f.url),
       animations: c.anims || [],
     });
     add(entry(slug, 'character', c.key, c.summary, c.rarity, attributes, attributes.gallery?.[0] || null, c.summary));

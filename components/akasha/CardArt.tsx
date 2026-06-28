@@ -1,12 +1,14 @@
 'use client';
 // components/akasha/CardArt.tsx — fenêtre d'illustration + sélecteur de versions (arcs, transformations).
-import { useState } from 'react';
+// Contrôlé : l'index de forme (sel) est porté par <CharacterCard> pour que TOUTE la carte évolue.
 import { ChakraNatureIcon, VillageEmblem, ClanCrest } from './NarutoIcons';
 
 export type CardForm = { label: string; url: string; caption?: string };
 
 export default function CardArt({
   forms,
+  sel,
+  onSelect,
   name,
   frame,
   villageSlug,
@@ -16,6 +18,8 @@ export default function CardArt({
   fallbackIcon,
 }: {
   forms: CardForm[];
+  sel: number;
+  onSelect: (i: number) => void;
   name: string;
   frame: string;
   villageSlug: string | null;
@@ -24,7 +28,6 @@ export default function CardArt({
   natures: string[];
   fallbackIcon: string;
 }) {
-  const [sel, setSel] = useState(0);
   const current = forms[sel]?.url ?? forms[0]?.url ?? null;
 
   return (
@@ -61,7 +64,8 @@ export default function CardArt({
             return (
               <button
                 key={i}
-                onClick={() => setSel(i)}
+                type="button"
+                onClick={() => onSelect(i)}
                 className="ak-var"
                 style={{
                   fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap',

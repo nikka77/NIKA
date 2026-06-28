@@ -1,7 +1,9 @@
+'use client';
 // components/akasha/CharacterCard.tsx — face « carte TCG » (style Pokémon) d'un personnage.
-// Cadre ornementé + fenêtre d'illustration dominante + encadrés de stats. Le détail complet
-// vit dans <CharacterDossier> sous la carte.
-import type { ReactNode } from 'react';
+// La carte est RÉACTIVE : sélectionner une forme (arc / transformation) fait évoluer
+// le bandeau, les vitals, les classifications, les techniques et le résumé en cohérence
+// avec ce moment de l'histoire. Le dossier complet vit dans <CharacterDossier> sous la carte.
+import { useState, type ReactNode } from 'react';
 import CardArt from './CardArt';
 import { CategoryIcon } from './NarutoIcons';
 import { RARITY_META, TYPE_META, type AkashaEntry } from '@/lib/akasha/types';
@@ -9,6 +11,14 @@ import { RARITY_META, TYPE_META, type AkashaEntry } from '@/lib/akasha/types';
 const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
 const list = (v: unknown): string[] =>
   Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string' && x.trim().length > 0) : str(v) ? [v as string] : [];
+
+/** Instantané d'une forme : image + stats cohérentes avec l'arc. Tous les champs hors url/label optionnels. */
+type Form = {
+  label: string; url: string; caption?: string; summary?: string;
+  age?: string; height?: string; weight?: string; rank?: string; arc?: string;
+  classification?: string[]; natures?: string[]; kekkeiGenkai?: string[];
+  occupation?: string[]; affiliation?: string[]; signature?: string[];
+};
 
 function Gem({ color, size = 14 }: { color: string; size?: number }) {
   return (
@@ -31,14 +41,23 @@ function Corner({ pos, color }: { pos: 'tl' | 'tr' | 'bl' | 'br'; color: string 
   return <span aria-hidden style={{ ...base, ...side }} />;
 }
 
-function AbilityBox({ icon, label, accent, children }: { icon: ReactNode; label: string; accent: string; children: ReactNode }) {
+function AbilityBox({ icon, label, children }: { icon: ReactNode; label: string; accent: string; children: ReactNode }) {
   return (
     <div style={{ background: 'rgba(5,12,23,0.55)', border: '1px solid var(--bd)', borderRadius: 10, padding: '9px 11px' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 6 }}>
-        <span style={{ display: 'inline-flex', width: 18, height: 18, alignItems: 'center', justifyContent: 'center', color: accent }}>{icon}</span>
+        <span style={{ display: 'inline-flex', width: 18, height: 18, alignItems: 'center', justifyContent: 'center' }}>{icon}</span>
         <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.09em', textTransform: 'uppercase', color: 'var(--td3)' }}>{label}</span>
       </div>
       {children}
+    </div>
+  );
+}
+
+function Stat({ label, value }: { label: string; value: string }) {
+  return (
+    <div style={{ flex: 1, minWidth: 0, textAlign: 'center', background: 'rgba(5,12,23,0.5)', border: '1px solid var(--bd)', borderRadius: 9, padding: '6px 4px' }}>
+      <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 15, color: 'var(--td)', lineHeight: 1.05, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{value}</div>
+      <div style={{ fontFamily: 'var(--fo)', fontSize: 8.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--td3)', marginTop: 2 }}>{label}</div>
     </div>
   );
 }
@@ -52,18 +71,32 @@ export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
   const villageSlug = str(a.villageSlug);
   const clanSlug = str(a.clanSlug);
   const clan = str(a.clan);
-  const rank = str(a.rank);
-  const natures = list(a.natureType);
-  const classification = list(a.classification);
-  const kekkei = list(a.kekkeiGenkai);
-  const jutsu = list(a.jutsu);
-  const signature = list(a.signature);
+  const baseNatures = list(a.natureType);
   const gallery = list(a.gallery);
-  const galleryForms = gallery.map((url, i) => ({ label: ['Partie I', 'Partie II', 'Partie III'][i] ?? `Forme ${i + 1}`, url }));
-  const curatedForms = (Array.isArray(a.forms) ? (a.forms as { label?: string; url?: string; caption?: string }[]) : [])
-    .filter((f) => f && typeof f.url === 'string')
-    .map((f) => ({ label: f.label ?? 'Forme', url: f.url as string, caption: f.caption }));
+  const galleryForms: Form[] = gallery.map((url, i) => ({ label: ['Partie I', 'Partie II', 'Partie III'][i] ?? `Forme ${i + 1}`, url }));
+  const curatedForms: Form[] = (Array.isArray(a.forms) ? (a.forms as Form[]) : [])
+    .filter((f) => f && typeof f.url === 'string');
   const forms = curatedForms.length ? curatedForms : galleryForms;
+
+  const [sel, setSel] = useState(0);
+  const f: Partial<Form> = forms[sel] ?? {};
+
+  // ── Valeurs ACTIVES (forme sélectionnée) avec repli sur la base ──
+  // Si le perso a des formes curées, les vitals viennent STRICTEMENT de la forme
+  // (sinon on retomberait sur la base — ex. le poids d'enfant affiché en Mode Baryon).
+  const hasCurated = curatedForms.length > 0;
+  const rank = f.rank ?? str(a.rank);
+  const classification = f.classification ?? list(a.classification);
+  const age = f.age ?? (hasCurated ? null : str(a.age) ? `${str(a.age)} ans` : null);
+  const height = f.height ?? (hasCurated ? null : str(a.height));
+  const weight = f.weight ?? (hasCurated ? null : str(a.weight));
+  const kekkei = f.kekkeiGenkai ?? list(a.kekkeiGenkai);
+  const jutsu = list(a.jutsu);
+  const signature = f.signature ?? list(a.signature);
+  const artNatures = f.natures ?? baseNatures;
+  const summary = f.summary ?? entry.summary ?? null;
+
+  const cardForms = forms.length ? forms : entry.image_url ? [{ label: 'Forme', url: entry.image_url }] : [];
 
   return (
     <article
@@ -106,30 +139,45 @@ export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
             </div>
           </div>
 
-          {/* ── Illustration + versions ── */}
+          {/* ── Illustration + sélecteur de formes ── */}
           <div style={{ marginBottom: 12 }}>
             <CardArt
-              forms={forms.length ? forms : entry.image_url ? [{ label: 'Forme', url: entry.image_url }] : []}
+              forms={cardForms}
+              sel={sel}
+              onSelect={setSel}
               name={entry.name}
               frame={frame}
               villageSlug={villageSlug}
               clanSlug={clanSlug}
               clan={clan}
-              natures={natures}
+              natures={artNatures}
               fallbackIcon={m.icon}
             />
           </div>
 
-          {/* ── Ligne type / espèce ── */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 7, flexWrap: 'wrap', margin: '11px 0', fontFamily: 'var(--fo)', fontSize: 11.5 }}>
+          {/* ── Vitals évolutifs (changent selon la forme) ── */}
+          {(age || height || weight) && (
+            <div style={{ display: 'flex', gap: 6, marginBottom: 11 }}>
+              {age && <Stat label="Âge" value={age} />}
+              {height && <Stat label="Taille" value={height} />}
+              {weight && <Stat label="Poids" value={weight} />}
+            </div>
+          )}
+
+          {/* ── Ligne type / classification (active) ── */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 7, flexWrap: 'wrap', margin: '0 0 11px', fontFamily: 'var(--fo)', fontSize: 11.5 }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: m.color }}>
               <span aria-hidden>{m.icon}</span>{m.label}
             </span>
-            {classification[0] && <><span style={{ color: 'var(--bd2)' }}>·</span><span style={{ color: 'var(--td2)' }}>{classification[0]}</span></>}
-            {str(a.age) && <><span style={{ color: 'var(--bd2)' }}>·</span><span style={{ color: 'var(--td3)' }}>{str(a.age)} ans</span></>}
+            {classification.map((c, i) => (
+              <span key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: 7 }}>
+                <span style={{ color: 'var(--bd2)' }}>·</span>
+                <span style={{ color: 'var(--td2)' }}>{c}</span>
+              </span>
+            ))}
           </div>
 
-          {/* ── Encadrés capacités ── */}
+          {/* ── Encadrés capacités (actifs) ── */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {kekkei.length > 0 && (
               <AbilityBox icon={<CategoryIcon name="kekkei" size={16} />} label="Kekkei Genkai" accent="#D44B24">
@@ -150,10 +198,10 @@ export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
             )}
           </div>
 
-          {/* ── Texte d'ambiance ── */}
-          {entry.summary && (
+          {/* ── Texte d'ambiance (évolue avec la forme) ── */}
+          {summary && (
             <p style={{ fontFamily: 'var(--fo)', fontStyle: 'italic', fontSize: 12.5, color: 'var(--td2)', lineHeight: 1.55, margin: '11px 0 0', padding: '8px 10px', background: 'rgba(255,255,255,0.02)', borderLeft: `2px solid ${frame}`, borderRadius: '0 6px 6px 0' }}>
-              {entry.summary}
+              {summary}
             </p>
           )}
 

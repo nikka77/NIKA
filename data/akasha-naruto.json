@@ -473,8 +473,8 @@
         "birthdate": "October 10",
         "classification": [
           "Jinchūriki",
-          "Sage",
-          "Sensor Type"
+          "Ermite (Sage)",
+          "Type Capteur"
         ],
         "titles": [
           "うずまきナルトUzumakiNaruto",
@@ -491,22 +491,8 @@
           "Hokage",
           "Chūnin Exams Proctor"
         ],
-        "kekkeiGenkai": [
-          "Lava Release",
-          "Magnet Release",
-          "Boil Release"
-        ],
         "natureType": [
           "Wind Release",
-          "Lightning Release",
-          "Earth Release",
-          "Water Release",
-          "Fire Release",
-          "Lava Release",
-          "Magnet Release",
-          "Boil Release",
-          "Yin Release",
-          "Yang Release",
           "Yin–Yang Release"
         ],
         "tools": [
@@ -540,10 +526,11 @@
         ],
         "rank": "Kage",
         "affiliation": [
+          "Forces Shinobi Alliées",
           "Konohagakure",
-          "Mount Myōboku",
-          "Allied Shinobi Forces"
+          "Mont Myōboku"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Naruto_Uzumaki",
         "team": [
           "Team Kakashi",
           "Sasuke Recovery Team",
@@ -598,32 +585,171 @@
           {
             "label": "Partie I",
             "url": "https://static.wikia.nocookie.net/naruto/images/d/d6/Naruto_Part_I.png",
-            "caption": "12 ans · Genin · Pays des Vagues & Examens Chūnin"
+            "caption": "12 ans · Genin · Pays des Vagues & Examens Chūnin",
+            "summary": "Genin turbulent de l'équipe 7. Il apprend le Multiclonage de l'ombre puis le Rasengan, et découvre son lien avec Kurama.",
+            "age": "12 ans",
+            "height": "1,45 m",
+            "weight": "40 kg",
+            "rank": "Genin",
+            "classification": [
+              "Jinchūriki"
+            ],
+            "natures": [],
+            "occupation": [
+              "Genin · Équipe 7"
+            ],
+            "affiliation": [
+              "Konohagakure",
+              "Équipe 7"
+            ],
+            "signature": [
+              "Multiclonage",
+              "Rasengan"
+            ],
+            "arc": "Pays des Vagues · Examens Chūnin"
           },
           {
             "label": "1 Queue",
             "url": "/images/akasha/naruto/naruto-1tail.webp",
-            "caption": "12 ans · Premier manteau de Kurama (déchaîné)"
+            "caption": "12 ans · Premier manteau de Kurama (déchaîné)",
+            "summary": "À la Vallée de la Fin contre Sasuke, la rage fait déborder le chakra de Kurama en un manteau à une queue.",
+            "age": "12 ans",
+            "height": "1,45 m",
+            "rank": "Genin",
+            "classification": [
+              "Jinchūriki"
+            ],
+            "natures": [],
+            "occupation": [
+              "Genin · Équipe 7"
+            ],
+            "affiliation": [
+              "Konohagakure"
+            ],
+            "signature": [
+              "Manteau de Kurama — 1 queue",
+              "Rasengan"
+            ],
+            "arc": "Récupération de Sasuke"
           },
           {
             "label": "Mode Sage",
             "url": "/images/akasha/naruto/naruto-sage.webp",
-            "caption": "16 ans · Ermite du mont Myōboku"
+            "caption": "16 ans · Ermite du mont Myōboku · Assaut de Pain",
+            "summary": "Formé par les crapauds, il maîtrise le senjutsu (Mode Ermite) et terrasse Pain avec le Rasenshuriken.",
+            "age": "16 ans",
+            "height": "1,66 m",
+            "weight": "51 kg",
+            "rank": "Genin",
+            "classification": [
+              "Jinchūriki",
+              "Ermite (Sage)"
+            ],
+            "natures": [
+              "Wind Release"
+            ],
+            "occupation": [
+              "Ninja de Konoha"
+            ],
+            "affiliation": [
+              "Konohagakure",
+              "Mont Myōboku"
+            ],
+            "signature": [
+              "Mode Ermite",
+              "Rasenshuriken",
+              "Rasengan"
+            ],
+            "arc": "Assaut de Pain"
           },
           {
             "label": "Partie II",
             "url": "https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png",
-            "caption": "16 ans · Guerre des ninjas"
+            "caption": "16 ans · Guerre des ninjas",
+            "summary": "Au sein des Forces Shinobi Alliées, il combine senjutsu et multiclonage pour mener la guerre.",
+            "age": "16 ans",
+            "height": "1,66 m",
+            "weight": "51 kg",
+            "rank": "Genin",
+            "classification": [
+              "Jinchūriki",
+              "Ermite (Sage)"
+            ],
+            "natures": [
+              "Wind Release"
+            ],
+            "occupation": [
+              "Ninja de Konoha"
+            ],
+            "affiliation": [
+              "Konohagakure",
+              "Forces Shinobi Alliées"
+            ],
+            "signature": [
+              "Rasenshuriken",
+              "Multiclonage",
+              "Rasengan"
+            ],
+            "arc": "Quatrième Guerre Shinobi"
           },
           {
             "label": "Mode Kurama",
             "url": "/images/akasha/naruto/naruto-kurama.webp",
-            "caption": "17 ans · Manteau de chakra complet"
+            "caption": "17 ans · Manteau de chakra complet",
+            "summary": "En symbiose avec Kurama, il revêt le manteau de chakra et tire des Bijūdama aux côtés de l'Alliance.",
+            "age": "17 ans",
+            "height": "1,80 m",
+            "weight": "51 kg",
+            "rank": "Genin",
+            "classification": [
+              "Jinchūriki",
+              "Ermite (Sage)",
+              "Type Capteur"
+            ],
+            "natures": [
+              "Wind Release"
+            ],
+            "occupation": [
+              "Ninja de Konoha"
+            ],
+            "affiliation": [
+              "Forces Shinobi Alliées"
+            ],
+            "signature": [
+              "Manteau de chakra de Kurama",
+              "Bijūdama",
+              "Rasenshuriken"
+            ],
+            "arc": "Quatrième Guerre Shinobi"
           },
           {
             "label": "Mode Baryon",
             "url": "/images/akasha/naruto/naruto-baryon.webp",
-            "caption": "Adulte · Forme ultime (Boruto)"
+            "caption": "Adulte · Forme ultime (Boruto)",
+            "summary": "Septième Hokage, il pousse la fusion avec Kurama jusqu'au Mode Baryon — ultime recours qui consume leur énergie vitale.",
+            "age": "Adulte",
+            "height": "1,80 m",
+            "rank": "Kage",
+            "classification": [
+              "Jinchūriki",
+              "Hokage"
+            ],
+            "natures": [
+              "Wind Release",
+              "Yin–Yang Release"
+            ],
+            "occupation": [
+              "Septième Hokage"
+            ],
+            "affiliation": [
+              "Konohagakure"
+            ],
+            "signature": [
+              "Mode Baryon",
+              "Bijūdama",
+              "Rasengan"
+            ],
+            "arc": "Boruto"
           }
         ],
         "animations": [
@@ -662,7 +788,8 @@
         "bloodType": "AB",
         "birthdate": "July 23",
         "classification": [
-          "Missing-nin"
+          "Déserteur (Nukenin)",
+          "Type Capteur"
         ],
         "titles": [
           "うちはサスケUchihaSasuke",
@@ -675,7 +802,6 @@
         ],
         "kekkeiGenkai": [
           "Sharingan",
-          "Eternal Mangekyō Sharingan",
           "Rinnegan"
         ],
         "natureType": [
@@ -718,10 +844,11 @@
         "rank": "Genin",
         "affiliation": [
           "Konohagakure",
+          "Akatsuki",
           "Otogakure",
-          "Ryūchi Cave",
-          "Akatsuki"
+          "Ryūchi Cave"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Sasuke_Uchiha",
         "team": [
           "Team Kakashi",
           "Sound Four",
@@ -779,7 +906,7 @@
         "bloodType": "O",
         "birthdate": "March 28",
         "classification": [
-          "Medical-nin"
+          "Ninja médical"
         ],
         "occupation": [
           "Director of Konoha Children Mental Health Clinic",
@@ -817,10 +944,11 @@
         ],
         "rank": "Jōnin",
         "affiliation": [
+          "Forces Shinobi Alliées",
           "Konohagakure",
-          "Allied Shinobi Forces",
           "Shikkotsu Forest"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Sakura_Haruno",
         "team": [
           "Team Kakashi",
           "Konoha 11  (Anime only)",
@@ -897,10 +1025,6 @@
           "Hokage",
           "Genin Exams Proctor"
         ],
-        "kekkeiGenkai": [
-          "Sharingan",
-          "Mangekyō Sharingan"
-        ],
         "natureType": [
           "Lightning Release",
           "Earth Release",
@@ -939,10 +1063,11 @@
         ],
         "rank": "Kage",
         "affiliation": [
+          "Forces Shinobi Alliées",
           "Konohagakure",
-          "Root  (Anime only)",
-          "Allied Shinobi Forces"
+          "Root"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Kakashi_Hatake",
         "team": [
           "Team Minato",
           "Team Ro  (Anime only)",
@@ -990,8 +1115,8 @@
         "bloodType": "AB",
         "birthdate": "June 9",
         "classification": [
-          "S-rank",
-          "Missing-nin"
+          "Rang S",
+          "Déserteur (Nukenin)"
         ],
         "titles": [
           "うちはイタチUchihaItachi",
@@ -1001,8 +1126,7 @@
           "Anbu Captain  (Former)"
         ],
         "kekkeiGenkai": [
-          "Sharingan",
-          "Mangekyō Sharingan"
+          "Sharingan"
         ],
         "natureType": [
           "Fire Release",
@@ -1041,6 +1165,7 @@
           "Konohagakure",
           "Akatsuki"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Itachi_Uchiha",
         "team": [
           "Team 2  (Anime and Novel only)",
           "Team Ro  (Anime only)"
@@ -1093,9 +1218,8 @@
         "birthdate": "December 24",
         "classification": [
           "Jinchūriki",
-          "Missing-nin",
-          "Sensor Type",
-          "Sage"
+          "Déserteur (Nukenin)",
+          "Type Capteur"
         ],
         "titles": [
           "うちはマダラUchihaMadara",
@@ -1109,10 +1233,8 @@
         ],
         "kekkeiGenkai": [
           "Sharingan",
-          "Eternal Mangekyō Sharingan",
           "Rinnegan",
-          "Wood Release",
-          "Storm Release"
+          "Mokuton (Bois)"
         ],
         "natureType": [
           "Fire Release",
@@ -1153,9 +1275,9 @@
           "Mokuton"
         ],
         "affiliation": [
-          "Konohagakure",
-          "Akatsuki"
+          "Konohagakure"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Madara_Uchiha",
         "debut": "Naruto Chapter #370",
         "family": [
           {
@@ -1194,7 +1316,7 @@
         "bloodType": "B",
         "birthdate": "October 23",
         "classification": [
-          "Sage"
+          "Ermite (Sage)"
         ],
         "titles": [
           "千手柱間SenjuHashirama",
@@ -1206,7 +1328,7 @@
           "Hokage"
         ],
         "kekkeiGenkai": [
-          "Wood Release"
+          "Mokuton (Bois)"
         ],
         "natureType": [
           "Wood Release",
@@ -1241,9 +1363,10 @@
         ],
         "rank": "Kage",
         "affiliation": [
-          "Konohagakure",
-          "Allied Shinobi Forces"
+          "Forces Shinobi Alliées",
+          "Konohagakure"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Hashirama_Senju",
         "debut": "Naruto Chapter #118",
         "family": [
           {
@@ -1295,8 +1418,8 @@
         "birthdate": "January 25",
         "classification": [
           "Jinchūriki",
-          "Sage",
-          "Sensor Type"
+          "Ermite (Sage)",
+          "Type Capteur"
         ],
         "titles": [
           "波風ミナトNamikazeMinato",
@@ -1338,10 +1461,11 @@
         ],
         "rank": "Kage",
         "affiliation": [
+          "Forces Shinobi Alliées",
           "Konohagakure",
-          "Mount Myōboku",
-          "Allied Shinobi Forces"
+          "Mont Myōboku"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Minato_Namikaze",
         "team": [
           "Team Jiraiya",
           "Team Minato"
@@ -1392,7 +1516,7 @@
         "bloodType": "B",
         "birthdate": "November 11",
         "classification": [
-          "Sage",
+          "Ermite (Sage)",
           "Sannin"
         ],
         "occupation": [
@@ -1432,8 +1556,9 @@
         "rank": "Jōnin",
         "affiliation": [
           "Konohagakure",
-          "Mount Myōboku"
+          "Mont Myōboku"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Jiraiya",
         "team": [
           "Team Hiruzen",
           "Ame Orphans",
@@ -1479,7 +1604,7 @@
         "bloodType": "B",
         "birthdate": "August 2",
         "classification": [
-          "Medical-nin",
+          "Ninja médical",
           "Sannin"
         ],
         "occupation": [
@@ -1515,10 +1640,11 @@
         ],
         "rank": "Kage",
         "affiliation": [
+          "Forces Shinobi Alliées",
           "Konohagakure",
-          "Shikkotsu Forest",
-          "Allied Shinobi Forces"
+          "Shikkotsu Forest"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Tsunade",
         "team": [
           "Team Hiruzen"
         ],
@@ -1576,19 +1702,13 @@
         "bloodType": "B",
         "birthdate": "October 27",
         "classification": [
-          "Missing-nin",
-          "S-rank",
+          "Déserteur (Nukenin)",
+          "Rang S",
           "Sannin"
         ],
         "occupation": [
           "Founder and Leader of Otogakure",
           "Scientist"
-        ],
-        "kekkeiGenkai": [
-          "Jūgo's Clan's Kekkei Genkai",
-          "Sakon and Ukon's Kekkei Genkai",
-          "Shikotsumyaku",
-          "Wood Release"
         ],
         "natureType": [
           "Wind Release",
@@ -1628,11 +1748,12 @@
         "rank": "Anbu",
         "affiliation": [
           "Konohagakure",
-          "Root",
           "Akatsuki",
+          "Root",
           "Otogakure",
           "Ryūchi Cave"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Orochimaru",
         "team": [
           "Team Hiruzen",
           "Team Orochimaru",
@@ -1674,7 +1795,7 @@
         "birthdate": "January 19",
         "classification": [
           "Jinchūriki",
-          "Sensor Type"
+          "Type Capteur"
         ],
         "occupation": [
           "Kazekage",
@@ -1682,7 +1803,7 @@
           "Commander of the Fourth Division"
         ],
         "kekkeiGenkai": [
-          "Magnet Release"
+          "Magnet (Jiton)"
         ],
         "natureType": [
           "Magnet Release",
@@ -1713,9 +1834,10 @@
         ],
         "rank": "Kage",
         "affiliation": [
-          "Sunagakure",
-          "Allied Shinobi Forces"
+          "Forces Shinobi Alliées",
+          "Sunagakure"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Gaara",
         "team": [
           "Three Sand Siblings",
           "Fourth Division"
@@ -1803,9 +1925,10 @@
         ],
         "rank": "Jōnin",
         "affiliation": [
-          "Konohagakure",
-          "Allied Shinobi Forces"
+          "Forces Shinobi Alliées",
+          "Konohagakure"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Rock_Lee",
         "team": [
           "Team Guy",
           "Konoha 11  (Anime only)",
@@ -1863,9 +1986,10 @@
         ],
         "rank": "Jōnin",
         "affiliation": [
-          "Konohagakure",
-          "Allied Shinobi Forces"
+          "Forces Shinobi Alliées",
+          "Konohagakure"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Neji_Hy%C5%ABga",
         "team": [
           "Team Guy",
           "Sasuke Recovery Team",
@@ -1954,9 +2078,10 @@
         ],
         "rank": "Chūnin",
         "affiliation": [
-          "Konohagakure",
-          "Allied Shinobi Forces"
+          "Forces Shinobi Alliées",
+          "Konohagakure"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Hinata_Hy%C5%ABga",
         "team": [
           "Team 8",
           "Konoha 11  (Anime only)",
@@ -2075,9 +2200,10 @@
         ],
         "rank": "Jōnin",
         "affiliation": [
-          "Konohagakure",
-          "Allied Shinobi Forces"
+          "Forces Shinobi Alliées",
+          "Konohagakure"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Shikamaru_Nara",
         "team": [
           "Team 10",
           "Sasuke Recovery Team",
@@ -2136,9 +2262,9 @@
         "classification": [
           "Jinchūriki",
           "Pseudo-Jinchūriki",
-          "Missing-nin",
-          "S-rank",
-          "Sensor Type"
+          "Déserteur (Nukenin)",
+          "Rang S",
+          "Type Capteur"
         ],
         "titles": [
           "うちはオビトUchihaObito",
@@ -2153,10 +2279,7 @@
           "Secret Leader of Kirigakure"
         ],
         "kekkeiGenkai": [
-          "Sharingan",
-          "Mangekyō Sharingan",
-          "Rinnegan",
-          "Wood Release"
+          "Sharingan"
         ],
         "natureType": [
           "Fire Release",
@@ -2196,6 +2319,7 @@
           "Akatsuki",
           "Kirigakure"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Obito_Uchiha",
         "team": [
           "Team Minato"
         ],
@@ -2235,8 +2359,8 @@
         "bloodType": "A",
         "birthdate": "September 19",
         "classification": [
-          "S-rank",
-          "Sensor Type"
+          "Rang S",
+          "Type Capteur"
         ],
         "occupation": [
           "Akatsuki Leader",
@@ -2258,9 +2382,10 @@
           "Nagato, Pain"
         ],
         "affiliation": [
-          "Amegakure",
-          "Akatsuki"
+          "Akatsuki",
+          "Amegakure"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Nagato",
         "team": [
           "Ame Orphans"
         ],
@@ -2336,9 +2461,10 @@
           "Sealing Technique: Octopus Hold"
         ],
         "affiliation": [
-          "Kumogakure",
-          "Allied Shinobi Forces"
+          "Forces Shinobi Alliées",
+          "Kumogakure"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Killer_B",
         "team": [
           "A–B Combo",
           "Kumo Council"
@@ -2413,9 +2539,10 @@
         ],
         "rank": "Jōnin",
         "affiliation": [
-          "Konohagakure",
-          "Allied Shinobi Forces"
+          "Forces Shinobi Alliées",
+          "Konohagakure"
         ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Might_Guy",
         "team": [
           "Team Chōza",
           "Team Guy",
