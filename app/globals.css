@@ -858,3 +858,27 @@ ul { list-style: none; }
   .ak-card:hover, .ak-conn-chip:hover { transform: none; }
   .ak-card:hover::after { animation: none; }
 }
+
+/* ── Effets carte : tilt 3D + foil holographique (par rareté) ── */
+.ak-fx-persp { perspective: 1100px; }
+.ak-fx-tilt {
+  position: relative; border-radius: 18px; will-change: transform;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transform-style: preserve-3d;
+  transition: transform 0.18s ease;
+}
+.ak-fx-foil {
+  position: absolute; inset: 0; z-index: 6; pointer-events: none; border-radius: 18px;
+  opacity: calc(var(--glow, 0) * var(--foilmax, 0.4));
+  background:
+    radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 42%),
+    conic-gradient(from 90deg at var(--gx, 50%) var(--gy, 50%), #ff5d8f, #f0c040, #0ea878, #0094d4, #7b5cf0, #ff5d8f);
+  background-blend-mode: overlay;
+  mix-blend-mode: color-dodge;
+  transition: opacity 0.3s ease;
+}
+.ak-art-img { transition: opacity 0.25s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .ak-fx-tilt { transform: none !important; transition: none; }
+  .ak-fx-foil { display: none; }
+}

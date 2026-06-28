@@ -62,6 +62,9 @@ const VILLAGES: Record<string, { kanji: string; color: string }> = {
   otogakure: { kanji: '音', color: '#7B5CF0' },
 };
 
+const VILLAGE_IMG: Record<string, string> = { konohagakure: '/images/akasha/emblems/konoha.webp' };
+const CLAN_IMG: Record<string, string> = { uzumaki: '/images/akasha/emblems/uzumaki.webp' };
+
 function KonohaLeaf({ size, color }: { size: number; color: string }) {
   return (
     <svg viewBox="0 0 24 24" width={Math.round(size * 0.62)} height={Math.round(size * 0.62)} aria-hidden>
@@ -73,6 +76,11 @@ function KonohaLeaf({ size, color }: { size: number; color: string }) {
 }
 
 export function VillageEmblem({ slug, size = 30 }: { slug?: string | null; size?: number }) {
+  const img = slug ? VILLAGE_IMG[slug] : null;
+  if (img) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img src={img} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
+  }
   const v = slug ? VILLAGES[slug] : null;
   if (!v) return null;
   return (
@@ -111,6 +119,10 @@ function UchihaFan({ size }: { size: number }) {
 
 export function ClanCrest({ slug, name, size = 30 }: { slug?: string | null; name?: string | null; size?: number }) {
   const s = (slug ?? '').toLowerCase();
+  if (CLAN_IMG[s]) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img src={CLAN_IMG[s]} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
+  }
   if (s === 'uzumaki') return <UzumakiSwirl size={size} />;
   if (s === 'uchiha') return <UchihaFan size={size} />;
   if (!slug && !name) return null;

@@ -2,7 +2,7 @@
 // Cadre ornementé + fenêtre d'illustration dominante + encadrés de stats. Le détail complet
 // vit dans <CharacterDossier> sous la carte.
 import type { ReactNode } from 'react';
-import { ChakraNatureIcon, VillageEmblem, ClanCrest } from './NarutoIcons';
+import CardArt from './CardArt';
 import { RARITY_META, TYPE_META, type AkashaEntry } from '@/lib/akasha/types';
 
 const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
@@ -60,6 +60,7 @@ export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
   const kekkei = list(a.kekkeiGenkai);
   const jutsu = list(a.jutsu);
   const signature = list(a.signature);
+  const gallery = list(a.gallery);
 
   return (
     <article
@@ -102,26 +103,18 @@ export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
             </div>
           </div>
 
-          {/* ── Fenêtre d'illustration ── */}
-          <div style={{ position: 'relative', borderRadius: 11, overflow: 'hidden', border: `2px solid ${frame}aa`, aspectRatio: '1 / 1', background: `linear-gradient(135deg, ${frame}33, ${frame}0A)`, boxShadow: 'inset 0 0 36px rgba(0,0,0,0.6)' }}>
-            {entry.image_url ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={entry.image_url} alt={entry.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />
-            ) : (
-              <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 70, opacity: 0.5 }} aria-hidden>{m.icon}</div>
-            )}
-            <div aria-hidden style={{ position: 'absolute', inset: 0, background: 'radial-gradient(130% 80% at 50% 0%, transparent 50%, rgba(5,12,23,0.6) 100%)' }} />
-            {/* emblèmes village + clan */}
-            <div style={{ position: 'absolute', top: 8, right: 8, display: 'flex', gap: 6 }}>
-              <VillageEmblem slug={villageSlug} size={34} />
-              <ClanCrest slug={clanSlug} name={clan} size={34} />
-            </div>
-            {/* natures de chakra */}
-            {natures.length > 0 && (
-              <div style={{ position: 'absolute', bottom: 8, left: 8, right: 8, display: 'flex', gap: 5, flexWrap: 'wrap' }}>
-                {natures.map((n, i) => <ChakraNatureIcon key={i} nature={n} size={24} />)}
-              </div>
-            )}
+          {/* ── Illustration + versions ── */}
+          <div style={{ marginBottom: 12 }}>
+            <CardArt
+              images={gallery.length ? gallery : entry.image_url ? [entry.image_url] : []}
+              name={entry.name}
+              frame={frame}
+              villageSlug={villageSlug}
+              clanSlug={clanSlug}
+              clan={clan}
+              natures={natures}
+              fallbackIcon={m.icon}
+            />
           </div>
 
           {/* ── Ligne type / espèce ── */}
