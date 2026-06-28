@@ -32,8 +32,8 @@ const CHARACTERS = [
       { label: 'Mode Baryon', img: '/images/akasha/naruto/naruto-baryon.webp', caption: 'Adulte · Forme ultime (Boruto)' },
     ],
     anims: [
-      { label: 'Multiclonage', kind: 'clones', base: '/images/akasha/naruto/naruto-mudra.webp', clones: '/images/akasha/naruto/naruto-multiclonage.webp', smoke: '/images/akasha/naruto/smoke.webp' },
-      { label: 'Fūma Shuriken', kind: 'spin', image: '/images/akasha/naruto/fuma-shuriken.webp' },
+      { label: 'Multiclonage', src: '/images/akasha/naruto/multiclonage-anim.webp' },
+      { label: 'Fūma Shuriken', src: '/images/akasha/naruto/fuma-shuriken-anim.webp', blend: 'screen' },
     ] },
   { key: 'Sasuke Uchiha', village: 'konohagakure', clan: 'uchiha', powers: ['chidori', 'amaterasu', 'susanoo'], skills: ['sharingan', 'rinnegan'], artifacts: ['kusanagi'], rarity: 'legendary',
     role: 'Dernier vengeur Uchiha', summary: "Prodige du clan Uchiha, rival éternel de Naruto, hanté par la vengeance avant la rédemption." },

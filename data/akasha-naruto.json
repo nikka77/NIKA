@@ -629,15 +629,12 @@
         "animations": [
           {
             "label": "Multiclonage",
-            "kind": "clones",
-            "base": "/images/akasha/naruto/naruto-mudra.webp",
-            "clones": "/images/akasha/naruto/naruto-multiclonage.webp",
-            "smoke": "/images/akasha/naruto/smoke.webp"
+            "src": "/images/akasha/naruto/multiclonage-anim.webp"
           },
           {
             "label": "Fūma Shuriken",
-            "kind": "spin",
-            "image": "/images/akasha/naruto/fuma-shuriken.webp"
+            "src": "/images/akasha/naruto/fuma-shuriken-anim.webp",
+            "blend": "screen"
           }
         ]
       },
