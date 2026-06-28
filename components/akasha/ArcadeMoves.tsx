@@ -17,6 +17,9 @@ const TYPE_COLOR: Record<string, string> = {
 
 const scanlines = 'repeating-linear-gradient(0deg, rgba(0,0,0,0.32) 0px, rgba(0,0,0,0.32) 1px, transparent 2px, transparent 3px)';
 const MONO = 'ui-monospace, "SFMono-Regular", Menlo, monospace';
+// Les sprites sont régénérés sous le MÊME nom de fichier → on casse le cache navigateur/CDN
+// à chaque itération (bump à incrémenter quand on régénère les anims).
+const ASSET_V = 'v3';
 
 function Cmd({ command }: { command: string }) {
   return (
@@ -39,7 +42,7 @@ function MoveCard({ m, tile }: { m: Move; tile: number }) {
       {/* écran sprite */}
       <div style={{ position: 'relative', aspectRatio: '1 / 1', background: 'radial-gradient(120% 90% at 50% 25%, rgba(123,92,240,0.16), rgba(5,7,18,0.9))', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={m.anim} alt={m.label} width={tile} height={tile}
+        <img src={`${m.anim}?${ASSET_V}`} alt={m.label} width={tile} height={tile}
           style={{ width: '88%', height: '88%', objectFit: 'contain', imageRendering: 'pixelated', filter: `drop-shadow(0 3px 6px ${color}66)` }} />
         <div aria-hidden style={{ position: 'absolute', inset: 0, background: scanlines, mixBlendMode: 'multiply', pointerEvents: 'none' }} />
         <span style={{ position: 'absolute', top: 5, left: 5, fontFamily: MONO, fontSize: 8.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color, background: 'rgba(5,7,18,0.7)', border: `1px solid ${color}66`, borderRadius: 3, padding: '1px 5px' }}>{m.type}</span>

@@ -46,6 +46,32 @@ def keybg(im):
     return im
 
 
+def clean_specks(im, min_area):
+    """Supprime les petits îlots isolés (bavures d'une pose voisine sur les bords)
+    en gardant les gros composants (corps, orbe, shuriken, clones)."""
+    w, h = im.size
+    px = im.load()
+    seen = bytearray(w * h)
+    for sy in range(h):
+        for sx in range(w):
+            if px[sx, sy][3] > 24 and not seen[sy * w + sx]:
+                stack = [(sx, sy)]
+                seen[sy * w + sx] = 1
+                comp = []
+                while stack:
+                    x, y = stack.pop()
+                    comp.append((x, y))
+                    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                        nx, ny = x + dx, y + dy
+                        if 0 <= nx < w and 0 <= ny < h and not seen[ny * w + nx] and px[nx, ny][3] > 24:
+                            seen[ny * w + nx] = 1
+                            stack.append((nx, ny))
+                if len(comp) < min_area:
+                    for x, y in comp:
+                        px[x, y] = (0, 0, 0, 0)
+    return im
+
+
 def feet(cell):
     """(centre X des pieds, base Y) à partir des 8% inférieurs du contenu détouré."""
     bb = cell.getbbox()
@@ -72,7 +98,7 @@ def slice_strip(path):
         sc = cell.resize((max(1, round(cell.width * s)), max(1, round(cell.height * s))), Image.NEAREST)
         tile = Image.new('RGBA', (TILE, TILE), (0, 0, 0, 0))
         tile.alpha_composite(sc, (ax - round(fc * s), ay - round(fb * s)))  # pieds plantés à (ax, ay)
-        frames.append(tile)
+        frames.append(clean_specks(tile, 340))  # vire les bavures isolées des cases voisines
     return frames
 
 
