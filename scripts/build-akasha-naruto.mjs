@@ -186,6 +186,7 @@ async function main() {
       natureType: arr(api.natureType).map(cleanNote),
       tools: arr(api.tools).map(cleanNote).slice(0, 8),
       jutsu: arr(api.jutsu).map(cleanNote).slice(0, 12),
+      signature: (c.powers || []).map((s) => POWERS.find((p) => p[0] === s)?.[1]).filter(Boolean),
       rank: pickRank(api.rank),
       affiliation: arr(p.affiliation),
       team: arr(p.team),

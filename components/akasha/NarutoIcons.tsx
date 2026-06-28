@@ -62,6 +62,16 @@ const VILLAGES: Record<string, { kanji: string; color: string }> = {
   otogakure: { kanji: '音', color: '#7B5CF0' },
 };
 
+function KonohaLeaf({ size, color }: { size: number; color: string }) {
+  return (
+    <svg viewBox="0 0 24 24" width={Math.round(size * 0.62)} height={Math.round(size * 0.62)} aria-hidden>
+      <path d="M12 2.5c-3.4 3.4-5.2 7-5.2 10.2A5.2 5.2 0 0012 18a5.2 5.2 0 005.2-5.3c0-3.2-1.8-6.8-5.2-10.2z" fill={color} />
+      <path d="M12 7.5v8.5" stroke="#050C17" strokeWidth="1.3" strokeLinecap="round" opacity="0.55" />
+      <path d="M12 16c-1.7 0-3-1.1-3-2.6" fill="none" stroke="#050C17" strokeWidth="1.3" strokeLinecap="round" opacity="0.55" />
+    </svg>
+  );
+}
+
 export function VillageEmblem({ slug, size = 30 }: { slug?: string | null; size?: number }) {
   const v = slug ? VILLAGES[slug] : null;
   if (!v) return null;
@@ -75,7 +85,7 @@ export function VillageEmblem({ slug, size = 30 }: { slug?: string | null; size?
         fontWeight: 700, lineHeight: 1, flexShrink: 0,
       }}
     >
-      {v.kanji}
+      {slug === 'konohagakure' ? <KonohaLeaf size={size} color={v.color} /> : v.kanji}
     </span>
   );
 }

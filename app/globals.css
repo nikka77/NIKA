@@ -839,21 +839,22 @@ ul { list-style: none; }
     linear-gradient(180deg, rgba(5,12,23,0.42), rgba(5,12,23,0.72)),
     url('/images/akasha/cosmic-card.webp') center / cover no-repeat;
 }
-.ak-tcard::after {
-  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 5; border-radius: 20px;
-  background: linear-gradient(115deg, transparent 32%, rgba(255,255,255,0.06) 46%, rgba(123,92,240,0.05) 52%, transparent 64%);
+.ak-card::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 5; border-radius: 18px;
+  background: linear-gradient(115deg, transparent 32%, rgba(255,255,255,0.07) 46%, rgba(123,92,240,0.06) 52%, transparent 64%);
   background-size: 220% 220%; background-position: 50% 50%; mix-blend-mode: screen;
 }
-.ak-tcard { transition: transform 0.28s ease, box-shadow 0.28s ease; }
-.ak-conn-chip { transition: transform 0.15s ease, border-color 0.2s ease; }
+.ak-card { transition: transform 0.28s ease, box-shadow 0.28s ease; }
+.ak-conn-chip, .ak-dtab { transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease; }
 @keyframes akHolo { from { background-position: -20% 0; } to { background-position: 120% 0; } }
 @media (hover: hover) and (pointer: fine) {
-  .ak-tcard:hover { transform: translateY(-4px); }
-  .ak-tcard:hover::after { animation: akHolo 0.9s ease; }
+  .ak-card:hover { transform: translateY(-4px); }
+  .ak-card:hover::after { animation: akHolo 0.9s ease; }
   .ak-conn-chip:hover { transform: translateY(-2px); border-color: var(--dc); }
+  .ak-dtab:hover { border-color: var(--purple); color: var(--purple); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .ak-tcard, .ak-conn-chip { transition: none; }
-  .ak-tcard:hover, .ak-conn-chip:hover { transform: none; }
-  .ak-tcard:hover::after { animation: none; }
+  .ak-card, .ak-conn-chip, .ak-dtab { transition: none; }
+  .ak-card:hover, .ak-conn-chip:hover { transform: none; }
+  .ak-card:hover::after { animation: none; }
 }
