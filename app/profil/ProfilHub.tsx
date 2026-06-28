@@ -217,6 +217,7 @@ export default function ProfilHub({ profile, orders, xpTx, creditTx, pois }: Pro
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
             <button onClick={savePro} style={cta}>{me.is_pro ? 'Mettre à jour' : 'Proposer mes services'}</button>
             {me.is_pro && <Link href="/pro/dashboard" style={{ ...miniCta }}>Espace pro →</Link>}
+            {(me.is_pro || proDraft.includes('auto')) && <Link href="/pro/vtc" style={miniCta}>🚖 Espace chauffeur VTC →</Link>}
             {msg && <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--az2)' }}>{msg}</span>}
           </div>
         </section>
