@@ -3,7 +3,7 @@
 // La carte est RÉACTIVE : sélectionner une forme (arc / transformation) fait évoluer
 // le bandeau, les vitals, les classifications, les techniques et le résumé en cohérence
 // avec ce moment de l'histoire. Le dossier complet vit dans <CharacterDossier> sous la carte.
-import { useState, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import CardArt from './CardArt';
 import { CategoryIcon } from './NarutoIcons';
 import { RARITY_META, TYPE_META, type AkashaEntry } from '@/lib/akasha/types';
@@ -62,7 +62,7 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
-export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
+export default function CharacterCard({ entry, sel, onSelect }: { entry: AkashaEntry; sel: number; onSelect: (i: number) => void }) {
   const a = entry.attributes as Record<string, unknown>;
   const rar = entry.rarity ? RARITY_META[entry.rarity] : null;
   const frame = rar?.color ?? '#5A88B0';
@@ -78,7 +78,6 @@ export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
     .filter((f) => f && typeof f.url === 'string');
   const forms = curatedForms.length ? curatedForms : galleryForms;
 
-  const [sel, setSel] = useState(0);
   const f: Partial<Form> = forms[sel] ?? {};
 
   // ── Valeurs ACTIVES (forme sélectionnée) avec repli sur la base ──
@@ -144,7 +143,7 @@ export default function CharacterCard({ entry }: { entry: AkashaEntry }) {
             <CardArt
               forms={cardForms}
               sel={sel}
-              onSelect={setSel}
+              onSelect={onSelect}
               name={entry.name}
               frame={frame}
               villageSlug={villageSlug}

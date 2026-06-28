@@ -8,9 +8,7 @@ import EntityBadge from '@/components/akasha/EntityBadge';
 import EntityAttributes from '@/components/akasha/EntityAttributes';
 import EntityRelations from '@/components/akasha/EntityRelations';
 import Markdown from '@/components/akasha/Markdown';
-import CharacterCard from '@/components/akasha/CharacterCard';
-import CharacterDossier from '@/components/akasha/CharacterDossier';
-import CardFx from '@/components/akasha/CardFx';
+import CharacterView from '@/components/akasha/CharacterView';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -34,10 +32,8 @@ export default async function AkashaEntryPage({ params }: Props) {
 
   const m = TYPE_META[entry.type];
 
-  // Personnages → fiche « carte à jouer » (stat-block riche + emblèmes).
+  // Personnages → fiche « carte à jouer » réactive (carte + dossier évoluent par forme).
   if (entry.type === 'character') {
-    const frameChar = entry.rarity ? RARITY_META[entry.rarity].color : '#5A88B0';
-    const foilmaxChar = entry.rarity === 'legendary' ? 0.6 : entry.rarity === 'epic' ? 0.48 : entry.rarity === 'rare' ? 0.38 : 0.26;
     return (
       <main>
         <div style={{ maxWidth: 470, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.2rem clamp(3rem,7vw,5rem)' }}>
@@ -47,12 +43,7 @@ export default async function AkashaEntryPage({ params }: Props) {
           >
             ← Registre AKASHA
           </Link>
-          <CardFx color={frameChar} foilmax={foilmaxChar}>
-            <CharacterCard entry={entry} />
-          </CardFx>
-          <div style={{ marginTop: '1.6rem' }}>
-            <CharacterDossier entry={entry} />
-          </div>
+          <CharacterView entry={entry} />
         </div>
       </main>
     );

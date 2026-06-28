@@ -59,18 +59,28 @@ function Sec({ title, accent = ACCENT, icon, children }: { title: string; accent
   );
 }
 
-export default function CharacterDossier({ entry }: { entry: AkashaEntryDetail }) {
+export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntryDetail; sel?: number }) {
   const a = entry.attributes as Record<string, unknown>;
-  const natures = list(a.natureType);
-  const classification = list(a.classification);
-  const kekkei = list(a.kekkeiGenkai);
+  // Forme active : le dossier évolue avec la carte (même index `sel`).
+  const forms = (Array.isArray(a.forms) ? (a.forms as Record<string, unknown>[]) : []).filter((x) => x && typeof x.url === 'string');
+  const f = (forms[sel] ?? {}) as Record<string, unknown>;
+  const hasCurated = forms.length > 0;
+  const pick = (fv: unknown, base: unknown): string[] => (fv !== undefined ? list(fv) : list(base));
+  const fstr = (fv: unknown, base: unknown): string | null => (typeof fv === 'string' && fv.trim() ? fv.trim() : hasCurated ? null : str(base));
+
+  const natures = pick(f.natures, a.natureType);
+  const classification = pick(f.classification, a.classification);
+  const kekkei = pick(f.kekkeiGenkai, a.kekkeiGenkai);
   const jutsu = list(a.jutsu);
   const animations = (Array.isArray(a.animations) ? (a.animations as { label: string; src: string; blend?: string }[]) : []).filter((x) => x && typeof x.src === 'string');
   const tools = list(a.tools);
-  const occupation = list(a.occupation);
-  const affiliation = list(a.affiliation);
+  const occupation = pick(f.occupation, a.occupation);
+  const affiliation = pick(f.affiliation, a.affiliation);
   const family = familyList(a.family);
-  const vitals = [str(a.age), str(a.height), str(a.weight), str(a.bloodType), str(a.sex), str(a.birthdate)].some(Boolean);
+  const ageV = fstr(f.age, a.age);
+  const heightV = fstr(f.height, a.height);
+  const weightV = fstr(f.weight, a.weight);
+  const vitals = [ageV, heightV, weightV, str(a.bloodType), str(a.sex), str(a.birthdate)].some(Boolean);
 
   const tabs = [
     { key: 'identite', label: 'Identité', show: vitals || classification.length || affiliation.length || occupation.length },
@@ -113,9 +123,9 @@ export default function CharacterDossier({ entry }: { entry: AkashaEntryDetail }
           <>
             {vitals && (
               <div className="g-3 max-sm:grid-cols-3" style={{ gap: 7 }}>
-                <Vital k="age" label="Âge" value={str(a.age)} />
-                <Vital k="height" label="Taille" value={str(a.height)} />
-                <Vital k="weight" label="Poids" value={str(a.weight)} />
+                <Vital k="age" label="Âge" value={ageV} />
+                <Vital k="height" label="Taille" value={heightV} />
+                <Vital k="weight" label="Poids" value={weightV} />
                 <Vital k="blood" label="Sang" value={str(a.bloodType)} />
                 <Vital k="sex" label="Sexe" value={str(a.sex) === 'Male' ? 'Homme' : str(a.sex) === 'Female' ? 'Femme' : str(a.sex)} />
                 <Vital k="cal" label="Naissance" value={str(a.birthdate)} />
