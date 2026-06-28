@@ -9,28 +9,28 @@
         "chakra": 30, "damage": 70, "command": "↓ ↘ → + P",
         "anim": "/images/akasha/arcade/naruto/rasengan.webp",
         "sheet": "/images/akasha/arcade/naruto/rasengan-sheet.png",
-        "frames": 8, "fps": 10
+        "frames": 4, "fps": 10
       },
       {
         "id": "rasenshuriken", "label": "Rasenshuriken", "type": "Ninjutsu", "element": "Vent",
         "chakra": 60, "damage": 95, "command": "↓ ↘ → ↘ ↓ + P",
         "anim": "/images/akasha/arcade/naruto/rasenshuriken.webp",
         "sheet": "/images/akasha/arcade/naruto/rasenshuriken-sheet.png",
-        "frames": 8, "fps": 10
+        "frames": 4, "fps": 10
       },
       {
         "id": "multiclonage", "label": "Multiclonage", "type": "Ninjutsu", "element": "Chakra",
         "chakra": 25, "damage": 40, "command": "→ ↓ ↘ + K",
         "anim": "/images/akasha/arcade/naruto/multiclonage.webp",
         "sheet": "/images/akasha/arcade/naruto/multiclonage-sheet.png",
-        "frames": 8, "fps": 9
+        "frames": 4, "fps": 9
       },
       {
         "id": "bijudama", "label": "Bijūdama", "type": "Bijū", "element": "Chakra",
         "chakra": 100, "damage": 130, "command": "↓ ↓ + P + K",
         "anim": "/images/akasha/arcade/naruto/bijudama.webp",
         "sheet": "/images/akasha/arcade/naruto/bijudama-sheet.png",
-        "frames": 8, "fps": 10
+        "frames": 4, "fps": 10
       }
     ]
   }

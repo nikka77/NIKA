@@ -1,102 +1,76 @@
 #!/usr/bin/env python3
 # scripts/build-akasha-arcade.py
-# ARCADE rétro 2D — transforme les sprites sources (Higgsfield i2i 16-bit) en :
-#   • <id>.webp        : animation bouclée (idle « charge » : bob + pulsation de l'aura) pour la carte
-#   • <id>-sheet.png   : sprite-sheet horizontale (frames côte à côte) prête pour un futur mini-jeu
-# Les sprites restent PURS (pas de scanlines baked) — le panneau ArcadeMoves ajoute la CRT en CSS.
+# ARCADE rétro 2D — v2 : à partir d'une STRIP de 4 poses (généré en une seule image Higgsfield,
+# donc perso parfaitement cohérent : garde → charge → tir → contre-coup), produit :
+#   • <id>.webp        : animation bouclée (vraies poses d'attaque, timing punchy) pour la carte
+#   • <id>-sheet.png   : sprite-sheet normalisée (4 frames carrées) prête pour un mini-jeu
+# Le fond plat est détouré (color-key des coins). Scanlines/CRT ajoutés en CSS (sprites purs).
 #
-# Source attendue : public/images/akasha/arcade/naruto/src/<id>.png
+# Source attendue : public/images/akasha/arcade/naruto/src/<id>-strip.png  (4 cases en ligne)
 # Run : python3 scripts/build-akasha-arcade.py
-import os, math
+import os
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = os.path.join(ROOT, 'public', 'images', 'akasha', 'arcade', 'naruto')
 SRC = os.path.join(BASE, 'src')
-TILE = 160
-FRAMES = 8
+TILE = 256
+NFRAMES = 4
+# timing par frame (ms) : garde courte, charge, GROS temps sur le tir, contre-coup
+DUR = [220, 170, 380, 260]
+MOVES = ['rasengan', 'rasenshuriken', 'multiclonage', 'bijudama']
 
-# id -> mode d'animation : 'idle' (aura qui pulse + léger bob) ou 'reveal' (apparition fondue, clones)
-MOVES = [('rasengan', 'idle'), ('rasenshuriken', 'idle'), ('bijudama', 'idle'), ('multiclonage', 'reveal')]
 
-
-def pixelate(path):
-    """Charge la source, détoure le fond plat (color-key) et la réduit en pixel-art net (TILE)."""
-    im = Image.open(path).convert('RGBA')
-    im = im.resize((TILE, TILE), Image.NEAREST)
+def keybg(im):
+    """Détoure le fond plat : color-key sur la couleur moyenne des coins."""
     px = im.load()
-    cor = [im.getpixel((1, 1)), im.getpixel((TILE - 2, 1)), im.getpixel((1, TILE - 2)), im.getpixel((TILE - 2, TILE - 2))]
-    cr = sum(c[0] for c in cor) // 4
-    cg = sum(c[1] for c in cor) // 4
-    cb = sum(c[2] for c in cor) // 4
-    for y in range(TILE):
-        for x in range(TILE):
+    w, h = im.size
+    cor = [im.getpixel((1, 1)), im.getpixel((w - 2, 1)), im.getpixel((1, h - 2)), im.getpixel((w - 2, h - 2))]
+    cor = [c for c in cor if c[3] > 0] or [(58, 67, 88, 255)]
+    cr = sum(c[0] for c in cor) // len(cor)
+    cg = sum(c[1] for c in cor) // len(cor)
+    cb = sum(c[2] for c in cor) // len(cor)
+    for y in range(h):
+        for x in range(w):
             r, g, b, a = px[x, y]
-            if abs(r - cr) + abs(g - cg) + abs(b - cb) < 64:
+            if a and abs(r - cr) + abs(g - cg) + abs(b - cb) < 60:
                 px[x, y] = (r, g, b, 0)
     return im
 
 
-def glow_frame(base, pulse):
-    """Renforce les pixels lumineux (aura/chakra) selon `pulse` (0..1)."""
-    g = base.copy()
-    gp = g.load()
-    for y in range(TILE):
-        for x in range(TILE):
-            r, gr, b, a = gp[x, y]
-            if a == 0:
-                continue
-            lum = 0.299 * r + 0.587 * gr + 0.114 * b
-            if lum > 150:
-                k = 1 + 0.45 * pulse
-                gp[x, y] = (min(255, int(r * k)), min(255, int(gr * k)), min(255, int(b * k)), a)
-    return g
-
-
-def build_idle(base):
+def slice_strip(path):
+    im = Image.open(path).convert('RGBA')
+    w, h = im.size
+    fw = w // NFRAMES
     frames = []
-    for i in range(FRAMES):
-        t = i / FRAMES
-        pulse = 0.5 + 0.5 * math.sin(2 * math.pi * t)
-        dy = round(2 * math.sin(2 * math.pi * t))
-        fr = Image.new('RGBA', (TILE, TILE), (0, 0, 0, 0))
-        fr.alpha_composite(glow_frame(base, pulse), (0, dy))
-        frames.append(fr)
-    return frames
-
-
-def build_reveal(base):
-    seq = [0.0, 0.45, 1.0, 1.0, 1.0, 1.0, 0.55, 0.12]  # alpha → clones qui apparaissent / disparaissent
-    frames = []
-    for al in seq:
-        fr = Image.new('RGBA', (TILE, TILE), (0, 0, 0, 0))
-        layer = base.copy()
-        layer.putalpha(layer.getchannel('A').point(lambda v: int(v * al)))
-        fr.alpha_composite(layer)
-        frames.append(fr)
+    for i in range(NFRAMES):
+        cell = im.crop((i * fw, 0, (i + 1) * fw, h))
+        # contain dans une tuile carrée (échelle uniforme → mouvement préservé entre frames)
+        s = min(TILE / cell.width, TILE / cell.height)
+        cell = cell.resize((max(1, round(cell.width * s)), max(1, round(cell.height * s))), Image.NEAREST)
+        tile = Image.new('RGBA', (TILE, TILE), (0, 0, 0, 0))
+        tile.alpha_composite(cell, ((TILE - cell.width) // 2, (TILE - cell.height) // 2))
+        frames.append(keybg(tile))
     return frames
 
 
 def main():
     done = []
-    for mid, mode in MOVES:
-        src = os.path.join(SRC, f'{mid}.png')
+    for mid in MOVES:
+        src = os.path.join(SRC, f'{mid}-strip.png')
         if not os.path.exists(src):
-            print(f'  ✗ {mid} : source manquante ({src})')
+            print(f'  ✗ {mid:14s} strip manquante ({src})')
             continue
-        base = pixelate(src)
-        frames = build_reveal(base) if mode == 'reveal' else build_idle(base)
-        # webp animé
+        frames = slice_strip(src)
         frames[0].save(os.path.join(BASE, f'{mid}.webp'), save_all=True, append_images=frames[1:],
-                       duration=110, loop=0, disposal=2)
-        # sprite-sheet horizontale (game-ready)
+                       duration=DUR[:len(frames)], loop=0, disposal=2)
         sheet = Image.new('RGBA', (TILE * len(frames), TILE), (0, 0, 0, 0))
         for i, fr in enumerate(frames):
             sheet.paste(fr, (i * TILE, 0))
         sheet.save(os.path.join(BASE, f'{mid}-sheet.png'))
         kb = os.path.getsize(os.path.join(BASE, f'{mid}.webp')) // 1024
         done.append(mid)
-        print(f'  ✓ {mid:14s} {len(frames)} frames · {kb}Ko webp · sheet {TILE * len(frames)}x{TILE}')
+        print(f'  ✓ {mid:14s} {len(frames)} poses · {kb}Ko webp · sheet {TILE * len(frames)}x{TILE}')
     print(f'\n{len(done)} techniques → {BASE}')
 
 
