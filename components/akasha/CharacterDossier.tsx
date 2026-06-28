@@ -4,6 +4,7 @@ import { useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { ChakraNatureIcon, familyLabel, CategoryIcon } from './NarutoIcons';
 import EntityRelations from './EntityRelations';
+import ArcadeMoves from './ArcadeMoves';
 import type { AkashaEntryDetail } from '@/lib/akasha/types';
 
 const ACCENT = '#7B5CF0';
@@ -72,7 +73,6 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
   const classification = pick(f.classification, a.classification);
   const kekkei = pick(f.kekkeiGenkai, a.kekkeiGenkai);
   const jutsu = list(a.jutsu);
-  const animations = (Array.isArray(a.animations) ? (a.animations as { label: string; src: string; blend?: string }[]) : []).filter((x) => x && typeof x.src === 'string');
   const tools = list(a.tools);
   const occupation = pick(f.occupation, a.occupation);
   const affiliation = pick(f.affiliation, a.affiliation);
@@ -148,21 +148,7 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
             )}
             {kekkei.length > 0 && <Sec title="Kekkei Genkai" accent="#D44B24" icon="kekkei"><Chips items={kekkei} color="#D44B24" /></Sec>}
             {jutsu.length > 0 && <Sec title={`Techniques · ${jutsu.length}`} icon="techniques"><Chips items={jutsu} color={ACCENT} /></Sec>}
-            {animations.length > 0 && (
-              <Sec title="Techniques animées" icon="techniques">
-                <div className="g-2" style={{ gap: 8 }}>
-                  {animations.map((an, i) => (
-                    <div key={i} style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid var(--bd)', background: 'var(--bg)' }}>
-                      <div style={{ aspectRatio: '1 / 1', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={an.src} alt={an.label} style={{ width: '100%', height: '100%', objectFit: an.blend ? 'contain' : 'cover', mixBlendMode: an.blend === 'screen' ? 'screen' : undefined }} />
-                      </div>
-                      <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 600, color: 'var(--td2)', textAlign: 'center', padding: 6 }}>{an.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </Sec>
-            )}
+            <ArcadeMoves slug={entry.slug} />
           </>
         )}
 

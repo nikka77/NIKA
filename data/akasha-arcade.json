@@ -1,0 +1,37 @@
+{
+  "_comment": "Manifeste ARCADE rétro 2D des techniques. Consommé par le panneau ArcadeMoves (affichage carte) ET prévu pour un futur mini-jeu jouable : chaque move porte sa sprite-sheet (sheet/frames/fps) + ses données de jeu (type, element, chakra, damage, command). Généré : sources Higgsfield i2i 16-bit → scripts/build-akasha-arcade.py.",
+  "naruto-uzumaki": {
+    "character": "Naruto Uzumaki",
+    "tile": 128,
+    "moves": [
+      {
+        "id": "rasengan", "label": "Rasengan", "type": "Ninjutsu", "element": "Chakra",
+        "chakra": 30, "damage": 70, "command": "↓ ↘ → + P",
+        "anim": "/images/akasha/arcade/naruto/rasengan.webp",
+        "sheet": "/images/akasha/arcade/naruto/rasengan-sheet.png",
+        "frames": 8, "fps": 10
+      },
+      {
+        "id": "rasenshuriken", "label": "Rasenshuriken", "type": "Ninjutsu", "element": "Vent",
+        "chakra": 60, "damage": 95, "command": "↓ ↘ → ↘ ↓ + P",
+        "anim": "/images/akasha/arcade/naruto/rasenshuriken.webp",
+        "sheet": "/images/akasha/arcade/naruto/rasenshuriken-sheet.png",
+        "frames": 8, "fps": 10
+      },
+      {
+        "id": "multiclonage", "label": "Multiclonage", "type": "Ninjutsu", "element": "Chakra",
+        "chakra": 25, "damage": 40, "command": "→ ↓ ↘ + K",
+        "anim": "/images/akasha/arcade/naruto/multiclonage.webp",
+        "sheet": "/images/akasha/arcade/naruto/multiclonage-sheet.png",
+        "frames": 8, "fps": 9
+      },
+      {
+        "id": "bijudama", "label": "Bijūdama", "type": "Bijū", "element": "Chakra",
+        "chakra": 100, "damage": 130, "command": "↓ ↓ + P + K",
+        "anim": "/images/akasha/arcade/naruto/bijudama.webp",
+        "sheet": "/images/akasha/arcade/naruto/bijudama-sheet.png",
+        "frames": 8, "fps": 10
+      }
+    ]
+  }
+}
