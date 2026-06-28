@@ -16,9 +16,17 @@ BASE = os.path.join(ROOT, 'public', 'images', 'akasha', 'arcade', 'naruto')
 SRC = os.path.join(BASE, 'src')
 TILE = 256
 NFRAMES = 4
-# timing par frame (ms) : garde courte, charge, GROS temps sur le tir, contre-coup
-DUR = [220, 170, 380, 260]
+# timing par frame (ms) : garde tenue (respiration/reset pour une boucle propre), charge
+# rapide, GROS temps sur le tir, contre-coup.
+DUR = [460, 150, 430, 240]
 MOVES = ['rasengan', 'rasenshuriken', 'multiclonage', 'bijudama']
+
+
+# Ancrage : les pieds sont plantés à ce point sur chaque tuile (X décalé à gauche pour
+# laisser la place à l'attaque qui part vers la droite ; base un peu au-dessus du bas).
+ANCHOR_X = 0.40
+ANCHOR_Y = 0.94
+FIT_H = 0.86  # le perso occupe ~86% de la hauteur de tuile
 
 
 def keybg(im):
@@ -38,19 +46,33 @@ def keybg(im):
     return im
 
 
+def feet(cell):
+    """(centre X des pieds, base Y) à partir des 8% inférieurs du contenu détouré."""
+    bb = cell.getbbox()
+    if not bb:
+        return cell.width // 2, cell.height - 1, 0
+    l, t, r, b = bb
+    px = cell.load()
+    xs = [x for y in range(max(t, b - max(4, int((b - t) * 0.08))), b) for x in range(l, r) if px[x, y][3] > 0]
+    fc = (min(xs) + max(xs)) // 2 if xs else (l + r) // 2
+    return fc, b, (b - t)
+
+
 def slice_strip(path):
     im = Image.open(path).convert('RGBA')
     w, h = im.size
     fw = w // NFRAMES
+    cells = [keybg(im.crop((i * fw, 0, (i + 1) * fw, h))) for i in range(NFRAMES)]
+    meta = [feet(c) for c in cells]
+    maxh = max((m[2] for m in meta), default=h) or h
+    s = (TILE * FIT_H) / maxh                          # échelle UNIFORME → tailles cohérentes
+    ax, ay = round(TILE * ANCHOR_X), round(TILE * ANCHOR_Y)
     frames = []
-    for i in range(NFRAMES):
-        cell = im.crop((i * fw, 0, (i + 1) * fw, h))
-        # contain dans une tuile carrée (échelle uniforme → mouvement préservé entre frames)
-        s = min(TILE / cell.width, TILE / cell.height)
-        cell = cell.resize((max(1, round(cell.width * s)), max(1, round(cell.height * s))), Image.NEAREST)
+    for cell, (fc, fb, _) in zip(cells, meta):
+        sc = cell.resize((max(1, round(cell.width * s)), max(1, round(cell.height * s))), Image.NEAREST)
         tile = Image.new('RGBA', (TILE, TILE), (0, 0, 0, 0))
-        tile.alpha_composite(cell, ((TILE - cell.width) // 2, (TILE - cell.height) // 2))
-        frames.append(keybg(tile))
+        tile.alpha_composite(sc, (ax - round(fc * s), ay - round(fb * s)))  # pieds plantés à (ax, ay)
+        frames.append(tile)
     return frames
 
 
