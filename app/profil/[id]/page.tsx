@@ -74,12 +74,11 @@ export default async function ProfilePage({ params }: Props) {
         </div>
       </div>
 
-      {/* Stats row */}
-      <div style={{ gap: '1rem', marginBottom: '3rem' }} className="g-4 max-sm:grid-cols-2">
+      {/* Stats row — profil PUBLIC : aucune donnée privée (pas de crédits/KYC/email) */}
+      <div style={{ gap: '1rem', marginBottom: '3rem' }} className="g-3 max-sm:grid-cols-3">
         {[
           { label: 'XP total', value: profile.xp.toLocaleString(), color: 'var(--az)' },
-          { label: 'POIs créés', value: pois?.length ?? 0, color: 'var(--teal)' },
-          { label: 'Crédits', value: profile.nika_credits, color: 'var(--gold)' },
+          { label: 'Spots créés', value: pois?.length ?? 0, color: 'var(--teal)' },
           { label: 'Membre depuis', value: new Date(profile.created_at).getFullYear(), color: 'var(--td3)' },
         ].map(({ label, value, color }) => (
           <div key={label} style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 8, padding: '1.2rem', textAlign: 'center' }}>
