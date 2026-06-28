@@ -14,10 +14,11 @@ export const characterAttrs = z
   .object({
     role: z.string().optional(),
     race: z.string().optional(),
-    affiliation: z.string().optional(),
+    // string (univers simples) OU tableau (données enrichies, ex. Naruto)
+    affiliation: z.union([z.string(), z.array(z.string())]).optional(),
     alignment: z.string().optional(),
   })
-  .catchall(z.unknown());
+  .catchall(z.unknown()); // tolère les attributs riches (vitals, natureType, family, gallery…)
 
 export const placeAttrs = z
   .object({

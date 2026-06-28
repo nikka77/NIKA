@@ -146,32 +146,61 @@ async function main() {
   for (const [slug, name, sector, summary, rarity] of PROFESSIONS) add(entry(slug, 'profession', name, summary, rarity, { sector }));
   for (const [slug, name, scope, summary, rarity] of STATUSES) add(entry(slug, 'status', name, summary, rarity, { scope }));
 
-  // Personnages
+  // Helpers attributs riches
+  const arr = (x) => (Array.isArray(x) ? x.filter(Boolean) : x ? [x] : []);
+  const firstVal = (x) => (x && typeof x === 'object' && !Array.isArray(x) ? Object.values(x)[0] : x) || null;
+  const cleanNote = (s) => String(s).replace(/\s*\((?:Affinity|Anime only|Manga only|Movie only|Game only|Novel only|Anime|Manga)\)/gi, '').trim();
+  const RANK_ORDER = ['Academy Student', 'Genin', 'Chūnin', 'Jōnin', 'Anbu', 'Sannin', 'Kage'];
+  const pickRank = (rank) => {
+    const nr = rank?.ninjaRank;
+    const vals = nr ? (typeof nr === 'object' ? Object.values(nr) : [nr]) : [];
+    let best = null, bi = -1;
+    for (const v of vals) { const i = RANK_ORDER.indexOf(cleanNote(v)); if (i > bi) { bi = i; best = cleanNote(v); } }
+    return best || (vals[0] ? cleanNote(vals[0]) : null);
+  };
+  const purge = (o) => { for (const k of Object.keys(o)) { const v = o[k]; if (v == null || v === '' || (Array.isArray(v) && v.length === 0)) delete o[k]; } return o; };
+
+  // Personnages — attributs riches (stat-block « carte »)
   for (const c of CHARACTERS) {
     const api = byName.get(c.key);
     if (!api) { console.warn('  ⚠ perso introuvable dans l\'API:', c.key); continue; }
     const slug = c.slug || slugify(c.key);
-    const img = Array.isArray(api.images) && api.images[0] ? api.images[0] : null;
-    const villageName = PLACES.find((p) => p[0] === c.village)?.[1] ?? null;
-    const jutsu = (api.jutsu || []).slice(0, 3).join(', ');
-    const attributes = { role: c.role };
-    if (villageName) attributes.affiliation = villageName;
-    if (api.personal?.clan && typeof api.personal.clan === 'string') attributes.clan = api.personal.clan;
-    const facts = [
-      villageName && `- **Village** : ${villageName}`,
-      attributes.clan && `- **Clan** : ${attributes.clan}`,
-      c.role && `- **Statut** : ${c.role}`,
-      jutsu && `- **Techniques notables** : ${jutsu}`,
-    ].filter(Boolean).join('\n');
-    const description = `${c.summary}\n\n${facts}`;
-    add(entry(slug, 'character', c.key, c.summary, c.rarity, attributes, img, description));
+    const p = api.personal || {};
+    const villageName = PLACES.find((pl) => pl[0] === c.village)?.[1] ?? (arr(p.affiliation)[0] || null);
+    const attributes = purge({
+      role: c.role,
+      clan: typeof p.clan === 'string' ? p.clan : arr(p.clan)[0] || null,
+      clanSlug: c.clan || null,
+      village: villageName,
+      villageSlug: c.village || null,
+      sex: firstVal(p.sex),
+      age: firstVal(p.age),
+      height: firstVal(p.height),
+      weight: firstVal(p.weight),
+      bloodType: firstVal(p.bloodType),
+      birthdate: firstVal(p.birthdate),
+      classification: arr(p.classification).map(cleanNote),
+      titles: arr(p.titles).map(cleanNote),
+      occupation: arr(p.occupation).map(cleanNote),
+      kekkeiGenkai: arr(p.kekkeiGenkai).map(cleanNote),
+      natureType: arr(api.natureType).map(cleanNote),
+      tools: arr(api.tools).map(cleanNote).slice(0, 8),
+      jutsu: arr(api.jutsu).map(cleanNote).slice(0, 12),
+      rank: pickRank(api.rank),
+      affiliation: arr(p.affiliation),
+      team: arr(p.team),
+      debut: api.debut?.manga || null,
+      family: api.family && typeof api.family === 'object' ? Object.entries(api.family).map(([rel, name]) => ({ rel, name: String(name) })) : [],
+      gallery: arr(api.images),
+    });
+    add(entry(slug, 'character', c.key, c.summary, c.rarity, attributes, attributes.gallery?.[0] || null, c.summary));
 
     if (c.village) relations.push([slug, 'habite', c.village]);
     if (c.clan) relations.push([slug, 'appartient', c.clan]);
     for (const r of c.ranks || []) relations.push([slug, 'appartient', r]);
     relations.push([slug, 'exerce', c.medical ? 'ninja-medical' : 'shinobi']);
-    if (c.medical && c.village) relations.push([slug, 'exerce', 'shinobi']);
-    for (const p of c.powers || []) relations.push([slug, 'maitrise', p]);
+    if (c.medical) relations.push([slug, 'exerce', 'shinobi']);
+    for (const pw of c.powers || []) relations.push([slug, 'maitrise', pw]);
     for (const s of c.skills || []) relations.push([slug, 'maitrise', s]);
     for (const a of c.artifacts || []) relations.push([slug, 'possede', a]);
     if (c.beast) relations.push([slug, 'possede', c.beast]);
@@ -180,8 +209,15 @@ async function main() {
   // Tailed beasts (personnages)
   for (const b of BEASTS) {
     const api = tbByName.get(b.key);
-    const img = api && Array.isArray(api.images) && api.images[0] ? api.images[0] : null;
-    add(entry(b.slug, 'character', `${b.key} (Bijū)`, b.summary, b.rarity, { role: 'Bête à queues (Bijū)', race: 'Bijū' }, img));
+    const p = api?.personal || {};
+    const attributes = purge({
+      role: 'Bête à queues (Bijū)', race: 'Bijū',
+      classification: arr(p.classification).map(cleanNote),
+      natureType: arr(api?.natureType).map(cleanNote),
+      jutsu: arr(api?.jutsu).map(cleanNote).slice(0, 8),
+      gallery: arr(api?.images),
+    });
+    add(entry(b.slug, 'character', `${b.key} (Bijū)`, b.summary, b.rarity, attributes, attributes.gallery?.[0] || null));
   }
 
   // Relations manuelles (rivalités / alliances)
@@ -211,6 +247,12 @@ async function main() {
     seen.add(k);
     return true;
   });
+
+  // Liens famille → slug si le membre est dans le registre.
+  for (const e of entries) {
+    const fam = e.attributes?.family;
+    if (Array.isArray(fam)) for (const f of fam) { const s = slugify(f.name); if (slugs.has(s)) f.slug = s; }
+  }
 
   mkdirSync(join(ROOT, 'data'), { recursive: true });
   const out = { generatedFrom: 'dattebayo-api', universe: 'Naruto', entries, relations: dedup };

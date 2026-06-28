@@ -457,12 +457,138 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Orphelin turbulent devenu héros et Septième Hokage, hôte du renard Kurama.",
-      "description": "Orphelin turbulent devenu héros et Septième Hokage, hôte du renard Kurama.\n\n- **Village** : Konohagakure\n- **Clan** : Uzumaki\n- **Statut** : Hokage, Jinchūriki\n- **Techniques notables** : All Directions Shuriken, Baryon Mode, Big Ball Rasengan",
+      "description": "Orphelin turbulent devenu héros et Septième Hokage, hôte du renard Kurama.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/d/d6/Naruto_Part_I.png",
       "attributes": {
         "role": "Hokage, Jinchūriki",
-        "affiliation": "Konohagakure",
-        "clan": "Uzumaki"
+        "clan": "Uzumaki",
+        "clanSlug": "uzumaki",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "age": "12–13",
+        "height": "145.3cm - 147.5cm",
+        "weight": "40.1kg - 40.6kg",
+        "bloodType": "B",
+        "birthdate": "October 10",
+        "classification": [
+          "Jinchūriki",
+          "Sage",
+          "Sensor Type"
+        ],
+        "titles": [
+          "うずまきナルトUzumakiNaruto",
+          "the-off,NumberOneUnpredictable,NoisyNinja(目立ちたがり屋で意外性no.1のドタバタ忍者,MedachitagariyaDeIgaiseiNanbāWanNoDotabataNinja,EnglishTv:NumberOneHyperactive,KnuckleheadNinja)",
+          "childOfTheProphecy(予言の子,YogenNoKo)",
+          "saviourOfThisWorld(この世の救世主,KonoYoNoKyūseishu)",
+          "heroOfTheHiddenLeaf(木ノ葉隠れの英雄,KonohagakureNoEiyū,LiterallyMeaning:HeroOfTheHiddenTreeLeaves)",
+          "boyOfMiracles(奇跡を起こす少年,KisekiOOkosuShōnen)",
+          "konoha'sOrangeHokage(木ノ葉のオレンジ火影,KonohaNoOrenjiHokage,LiterallyMeaning:TreeLeaves'OrangeFireShadow)",
+          "seventhHokage(七代目火影,NanadaimeHokage,LiterallyMeaning:SeventhFireShadow)",
+          "fox(狐,Kitsune)"
+        ],
+        "occupation": [
+          "Hokage",
+          "Chūnin Exams Proctor"
+        ],
+        "kekkeiGenkai": [
+          "Lava Release",
+          "Magnet Release",
+          "Boil Release"
+        ],
+        "natureType": [
+          "Wind Release",
+          "Lightning Release",
+          "Earth Release",
+          "Water Release",
+          "Fire Release",
+          "Lava Release",
+          "Magnet Release",
+          "Boil Release",
+          "Yin Release",
+          "Yang Release",
+          "Yin–Yang Release"
+        ],
+        "tools": [
+          "Absorbing Hand",
+          "Bō",
+          "Chakra Blade",
+          "Flying Thunder God Kunai",
+          "Fūma Shuriken",
+          "Hidden Kunai Mechanism",
+          "Konoha Chakra Blade",
+          "Sand"
+        ],
+        "jutsu": [
+          "All Directions Shuriken",
+          "Baryon Mode",
+          "Big Ball Rasengan",
+          "Big Ball Rasenshuriken",
+          "Big Ball Spiralling Serial Zone Spheres",
+          "Boil Release: Unrivalled Strength",
+          "Chakra Transfer Technique",
+          "Clone Body Blow",
+          "Clone Flying Arrow",
+          "Clone Spinning Heel Drop",
+          "Combination Transformation",
+          "Continuous Tailed Beast Balls"
+        ],
+        "rank": "Kage",
+        "affiliation": [
+          "Konohagakure",
+          "Mount Myōboku",
+          "Allied Shinobi Forces"
+        ],
+        "team": [
+          "Team Kakashi",
+          "Sasuke Recovery Team",
+          "Konoha 11  (Anime only)",
+          "Bikōchū Search Team  (Anime only)",
+          "Kaima Capture Team  (Anime only)",
+          "Star Guard Team  (Anime only)",
+          "Peddlers Escort Team  (Anime only)",
+          "Kazekage Rescue Team",
+          "Team One  (Anime only)",
+          "Eight Man Squad",
+          "Hanabi Rescue Team  (Movie only)"
+        ],
+        "debut": "Naruto Chapter #1",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Minato Namikaze",
+            "slug": "minato-namikaze"
+          },
+          {
+            "rel": "mother",
+            "name": "Kushina Uzumaki"
+          },
+          {
+            "rel": "son",
+            "name": "Boruto Uzumaki"
+          },
+          {
+            "rel": "daughter",
+            "name": "Himawari Uzumaki"
+          },
+          {
+            "rel": "wife",
+            "name": "Hinata Uzumaki"
+          },
+          {
+            "rel": "adoptive son",
+            "name": "Kawaki"
+          },
+          {
+            "rel": "godfather",
+            "name": "Jiraiya",
+            "slug": "jiraiya"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/d/d6/Naruto_Part_I.png",
+          "https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png"
+        ]
       },
       "rarity": "legendary"
     },
@@ -473,12 +599,109 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Prodige du clan Uchiha, rival éternel de Naruto, hanté par la vengeance avant la rédemption.",
-      "description": "Prodige du clan Uchiha, rival éternel de Naruto, hanté par la vengeance avant la rédemption.\n\n- **Village** : Konohagakure\n- **Clan** : Uchiha\n- **Statut** : Dernier vengeur Uchiha\n- **Techniques notables** : Afterglow, Amaterasu, Amaterasu: Flame Wrapping Fire",
+      "description": "Prodige du clan Uchiha, rival éternel de Naruto, hanté par la vengeance avant la rédemption.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png",
       "attributes": {
         "role": "Dernier vengeur Uchiha",
-        "affiliation": "Konohagakure",
-        "clan": "Uchiha"
+        "clan": "Uchiha",
+        "clanSlug": "uchiha",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "age": "12–13",
+        "height": "150.8cm - 153.2cm",
+        "weight": "42.2kg - 43.5kg",
+        "bloodType": "AB",
+        "birthdate": "July 23",
+        "classification": [
+          "Missing-nin"
+        ],
+        "titles": [
+          "うちはサスケUchihaSasuke",
+          "childOfTheProphecy(予言の子,YogenNoKo)",
+          "sasukeOfTheSharingan(写輪眼のサスケ,SharinganNoSasuke)",
+          "supportingKage(支う影,Sasaukage,LiterallyMeaning:SupportingShadow)"
+        ],
+        "occupation": [
+          "Head of the Uchiha Clan"
+        ],
+        "kekkeiGenkai": [
+          "Sharingan",
+          "Eternal Mangekyō Sharingan",
+          "Rinnegan"
+        ],
+        "natureType": [
+          "Lightning Release  (Affinity; Anime only)",
+          "Fire Release",
+          "Wind Release",
+          "Earth Release",
+          "Water Release",
+          "Yin Release"
+        ],
+        "tools": [
+          "Bow & Arrow",
+          "Fūma Shuriken",
+          "Katar",
+          "Kusari",
+          "Mind Awakening Pill",
+          "Scalpel",
+          "Sword",
+          "Sword of Kusanagi"
+        ],
+        "jutsu": [
+          "Afterglow",
+          "Amaterasu",
+          "Amaterasu: Flame Wrapping Fire",
+          "Amenotejikara",
+          "Animal Path",
+          "Area Scanning Technique",
+          "Asura Path",
+          "Banshō Ten'in",
+          "Binding Snake Glare Spell",
+          "Blaze Release: Honoikazuchi",
+          "Blaze Release: Kagutsuchi",
+          "Blaze Release: Susanoo Kagutsuchi"
+        ],
+        "rank": "Genin",
+        "affiliation": [
+          "Konohagakure",
+          "Otogakure",
+          "Ryūchi Cave",
+          "Akatsuki"
+        ],
+        "team": [
+          "Team Kakashi",
+          "Sound Four",
+          "Taka"
+        ],
+        "debut": "Naruto Chapter #3",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Fugaku Uchiha"
+          },
+          {
+            "rel": "mother",
+            "name": "Mikoto Uchiha"
+          },
+          {
+            "rel": "brother",
+            "name": "Itachi Uchiha",
+            "slug": "itachi-uchiha"
+          },
+          {
+            "rel": "daughter",
+            "name": "Sarada Uchiha"
+          },
+          {
+            "rel": "wife",
+            "name": "Sakura Uchiha"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png",
+          "https://static.wikia.nocookie.net/naruto/images/1/13/Sasuke_Part_2.png"
+        ]
       },
       "rarity": "legendary"
     },
@@ -489,12 +712,98 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Kunoichi de l'équipe 7, ninja médicale d'élite à la force colossale, élève de Tsunade.",
-      "description": "Kunoichi de l'équipe 7, ninja médicale d'élite à la force colossale, élève de Tsunade.\n\n- **Village** : Konohagakure\n- **Clan** : Uchiha\n- **Statut** : Kunoichi médicale\n- **Techniques notables** : Area Scanning Technique (Manga only), Chakra Enhanced Strength, Chakra Scalpel",
+      "description": "Kunoichi de l'équipe 7, ninja médicale d'élite à la force colossale, élève de Tsunade.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/6/64/Sakura_Part_1.png",
       "attributes": {
         "role": "Kunoichi médicale",
-        "affiliation": "Konohagakure",
-        "clan": "Uchiha"
+        "clan": "Uchiha",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Female",
+        "age": "12–13",
+        "height": "148.5cm - 150.1cm",
+        "weight": "35.4kg - 35.9kg",
+        "bloodType": "O",
+        "birthdate": "March 28",
+        "classification": [
+          "Medical-nin"
+        ],
+        "occupation": [
+          "Director of Konoha Children Mental Health Clinic",
+          "Head of Konoha Medical Department"
+        ],
+        "natureType": [
+          "Earth Release",
+          "Water Release",
+          "Fire Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "tools": [
+          "Antidote",
+          "Konoha Chakra Blade",
+          "Lightning Barrel",
+          "Military Rations Pill",
+          "Poison",
+          "Senbon",
+          "Tantō"
+        ],
+        "jutsu": [
+          "Area Scanning Technique",
+          "Chakra Enhanced Strength",
+          "Chakra Scalpel",
+          "Chakra Transfer Technique",
+          "Cherry Blossom Impact",
+          "Creation Rebirth",
+          "Delicate Illness Extraction Technique",
+          "Four-Corner Sealing Barrier",
+          "Healing Resuscitation Regeneration Technique",
+          "Healing Technique",
+          "Katsuyu: Immense Network Healing",
+          "Mystical Palm Technique"
+        ],
+        "rank": "Jōnin",
+        "affiliation": [
+          "Konohagakure",
+          "Allied Shinobi Forces",
+          "Shikkotsu Forest"
+        ],
+        "team": [
+          "Team Kakashi",
+          "Konoha 11  (Anime only)",
+          "Team Asuma  (Anime only)",
+          "Kazekage Rescue Team",
+          "Eight Man Squad",
+          "Team Three  (Anime only)",
+          "Third Division",
+          "Hanabi Rescue Team  (Movie only)",
+          "Ino–Saku–Sai  (Novel only)",
+          "Medic Corps"
+        ],
+        "debut": "Naruto Chapter #3",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Kizashi Haruno"
+          },
+          {
+            "rel": "mother",
+            "name": "Mebuki Haruno"
+          },
+          {
+            "rel": "daughter",
+            "name": "Sarada Uchiha"
+          },
+          {
+            "rel": "husband",
+            "name": "Sasuke Uchiha",
+            "slug": "sasuke-uchiha"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/6/64/Sakura_Part_1.png",
+          "https://static.wikia.nocookie.net/naruto/images/b/ba/Sakurap2.png"
+        ]
       },
       "rarity": "rare"
     },
@@ -505,12 +814,101 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Le « ninja copieur » au Sharingan, mentor de l'équipe 7 puis Sixième Hokage.",
-      "description": "Le « ninja copieur » au Sharingan, mentor de l'équipe 7 puis Sixième Hokage.\n\n- **Village** : Konohagakure\n- **Clan** : Hatake\n- **Statut** : Ninja copieur, Hokage\n- **Techniques notables** : Area Scanning Technique, Chidori, Demonic Illusion: Hell Viewing Technique",
+      "description": "Le « ninja copieur » au Sharingan, mentor de l'équipe 7 puis Sixième Hokage.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/2/27/Kakashi_Hatake.png",
       "attributes": {
         "role": "Ninja copieur, Hokage",
-        "affiliation": "Konohagakure",
-        "clan": "Hatake"
+        "clan": "Hatake",
+        "clanSlug": "hatake",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "age": "26–27",
+        "height": "181cm",
+        "weight": "67.5kg",
+        "bloodType": "O",
+        "birthdate": "September 15",
+        "titles": [
+          "はたけカカシHatakeKakashi",
+          "copyNinjaKakashi(コピー忍者のカカシ,KopīNinjaNoKakashi)",
+          "kakashiOfTheSharingan(写輪眼のカカシ,SharinganNoKakashi,LiterallyMeaning:KakashiOfTheCopyWheelEye)",
+          "heroOfTheSharingan(写輪眼の英雄,SharinganNoEiyū,LiterallyMeaning:HeroOfTheCopyWheelEye)",
+          "cold-bloodedKakashi(冷血カカシ,ReiketsuKakashi)",
+          "friend-killerKakashi(仲間殺しのカカシ,NakamagoroshiNoKakashi)",
+          "sixthHokage(六代目火影,RokudaimeHokage,LiterallyMeaning:SixthFireShadow)",
+          "sukea(スケア)"
+        ],
+        "occupation": [
+          "Anbu Captain  (Former)",
+          "Third Division Commander of the Allied Shinobi Forces",
+          "Hokage",
+          "Genin Exams Proctor"
+        ],
+        "kekkeiGenkai": [
+          "Sharingan",
+          "Mangekyō Sharingan"
+        ],
+        "natureType": [
+          "Lightning Release",
+          "Earth Release",
+          "Water Release",
+          "Fire Release",
+          "Wind Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "tools": [
+          "Bow & Arrow",
+          "Chakra-Suppressing Seal",
+          "Flying Thunder God Kunai",
+          "Kubikiribōchō",
+          "Kusarigama",
+          "Lightning Barrel",
+          "Makibishi",
+          "Sword"
+        ],
+        "jutsu": [
+          "Area Scanning Technique",
+          "Chidori",
+          "Demonic Illusion: Hell Viewing Technique",
+          "Earth Release: Double Suicide Decapitation Technique",
+          "Earth Release: Earth Wave Technique",
+          "Earth Release: Earth-Style Wall",
+          "Earth Release: Hiding Like a Mole Technique",
+          "Earth Release: Multiple Earth-Style Wall",
+          "Earth Release: Rending Drill Fang",
+          "Eight Gates",
+          "Evil Sealing Method",
+          "Eye Mind Reading"
+        ],
+        "rank": "Kage",
+        "affiliation": [
+          "Konohagakure",
+          "Root  (Anime only)",
+          "Allied Shinobi Forces"
+        ],
+        "team": [
+          "Team Minato",
+          "Team Ro  (Anime only)",
+          "Team Kakashi",
+          "Kazekage Rescue Team",
+          "Team Asuma  (Temporarily)",
+          "Team One  (Anime only)",
+          "Team 8  (Temporarily)",
+          "Eight Man Squad",
+          "Third Division"
+        ],
+        "debut": "Naruto Chapter #3",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Sakumo Hatake"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/2/27/Kakashi_Hatake.png",
+          "https://static.wikia.nocookie.net/naruto/images/2/25/Kakashi_Part_III.png"
+        ]
       },
       "rarity": "epic"
     },
@@ -521,12 +919,95 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Génie Uchiha qui sacrifia tout — y compris sa réputation — pour protéger Konoha.",
-      "description": "Génie Uchiha qui sacrifia tout — y compris sa réputation — pour protéger Konoha.\n\n- **Village** : Konohagakure\n- **Clan** : Uchiha\n- **Statut** : Anbu, membre de l’Akatsuki\n- **Techniques notables** : Amaterasu, Chakra Suppression Technique (Novel only), Clone Great Explosion",
+      "description": "Génie Uchiha qui sacrifia tout — y compris sa réputation — pour protéger Konoha.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/b/bb/Itachi.png",
       "attributes": {
         "role": "Anbu, membre de l’Akatsuki",
-        "affiliation": "Konohagakure",
-        "clan": "Uchiha"
+        "clan": "Uchiha",
+        "clanSlug": "uchiha",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "age": "17–18",
+        "height": "175.2cm",
+        "weight": "57.1kg",
+        "bloodType": "AB",
+        "birthdate": "June 9",
+        "classification": [
+          "S-rank",
+          "Missing-nin"
+        ],
+        "titles": [
+          "うちはイタチUchihaItachi",
+          "itachiOfTheSharingan(写輪眼のイタチ,SharinganNoItachi,LiterallyMeaning:ItachiOfTheCopyWheelEye)clanKillerItachi(一族殺しのイタチ,IchizokugoroshiNoItachi)"
+        ],
+        "occupation": [
+          "Anbu Captain  (Former)"
+        ],
+        "kekkeiGenkai": [
+          "Sharingan",
+          "Mangekyō Sharingan"
+        ],
+        "natureType": [
+          "Fire Release",
+          "Wind Release",
+          "Water Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "tools": [
+          "Military Rations Pill",
+          "Sword",
+          "Sword of Totsuka",
+          "Tantō",
+          "Yata Mirror"
+        ],
+        "jutsu": [
+          "Amaterasu",
+          "Chakra Suppression Technique",
+          "Clone Great Explosion",
+          "Crow Clone Technique",
+          "Demonic Illusion: Mirage Crow",
+          "Demonic Illusion: Mirror Heaven and Earth Change",
+          "Demonic Illusion: Shackling Stakes Technique",
+          "Early Sacrifice",
+          "Ephemeral",
+          "Fire Release: Great Fireball Technique",
+          "Fire Release: Phoenix Sage Fire Technique",
+          "Fire Release: Phoenix Sage Flower Nail Crimson"
+        ],
+        "rank": "Anbu",
+        "affiliation": [
+          "Konohagakure",
+          "Akatsuki"
+        ],
+        "team": [
+          "Team 2  (Anime and Novel only)",
+          "Team Ro  (Anime only)"
+        ],
+        "debut": "Naruto Chapter #139",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Fugaku Uchiha"
+          },
+          {
+            "rel": "mother",
+            "name": "Mikoto Uchiha"
+          },
+          {
+            "rel": "brother",
+            "name": "Sasuke Uchiha",
+            "slug": "sasuke-uchiha"
+          },
+          {
+            "rel": "niece",
+            "name": "Sarada Uchiha"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/b/bb/Itachi.png"
+        ]
       },
       "rarity": "epic"
     },
@@ -537,12 +1018,94 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Légende Uchiha et cofondateur de Konoha, devenu l'un de ses plus grands ennemis.",
-      "description": "Légende Uchiha et cofondateur de Konoha, devenu l'un de ses plus grands ennemis.\n\n- **Village** : Konohagakure\n- **Clan** : Uchiha\n- **Statut** : Cofondateur de Konoha\n- **Techniques notables** : Animal Path, Asura Path, Black Receiver",
+      "description": "Légende Uchiha et cofondateur de Konoha, devenu l'un de ses plus grands ennemis.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/f/fd/Madara.png",
       "attributes": {
         "role": "Cofondateur de Konoha",
-        "affiliation": "Konohagakure",
-        "clan": "Uchiha"
+        "clan": "Uchiha",
+        "clanSlug": "uchiha",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "height": "179cm",
+        "weight": "71.3kg",
+        "bloodType": "O",
+        "birthdate": "December 24",
+        "classification": [
+          "Jinchūriki",
+          "Missing-nin",
+          "Sensor Type",
+          "Sage"
+        ],
+        "titles": [
+          "うちはマダラUchihaMadara",
+          "secondSixPaths(二人目の六道,FutarimeNoRikudō)",
+          "saviourOfThisWorld(この世の救世主,KonoYoNoKyūseishu)",
+          "ghostOfTheUchiha(うちはの亡霊,UchihaNoBōrei)"
+        ],
+        "occupation": [
+          "Co-founder of Konohagakure",
+          "Head of the Uchiha clan  (Former)"
+        ],
+        "kekkeiGenkai": [
+          "Sharingan",
+          "Eternal Mangekyō Sharingan",
+          "Rinnegan",
+          "Wood Release",
+          "Storm Release"
+        ],
+        "natureType": [
+          "Fire Release",
+          "Wind Release",
+          "Lightning Release",
+          "Earth Release",
+          "Water Release",
+          "Wood Release",
+          "Storm Release",
+          "Yin Release",
+          "Yang Release",
+          "Yin–Yang Release"
+        ],
+        "tools": [
+          "Fūma Shuriken",
+          "Gunbai",
+          "Kama",
+          "Spear",
+          "Sword",
+          "Tantō"
+        ],
+        "jutsu": [
+          "Animal Path",
+          "Asura Path",
+          "Black Receiver",
+          "Blocking Technique Absorption Seal",
+          "Chibaku Tensei",
+          "Demonic Statue Chains",
+          "Deva Path",
+          "Evil Disturbance Waltz",
+          "Fire Release: Dragon Flame Release Song Technique",
+          "Fire Release: Great Fire Annihilation",
+          "Fire Release: Great Fire Destruction",
+          "Fire Release: Great Fireball Technique"
+        ],
+        "affiliation": [
+          "Konohagakure",
+          "Akatsuki"
+        ],
+        "debut": "Naruto Chapter #370",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Tajima Uchiha"
+          },
+          {
+            "rel": "brother",
+            "name": "Izuna Uchiha"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/f/fd/Madara.png"
+        ]
       },
       "rarity": "legendary"
     },
@@ -553,12 +1116,94 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Le « Dieu des shinobi », Premier Hokage et maître unique du Mokuton (libération du bois).",
-      "description": "Le « Dieu des shinobi », Premier Hokage et maître unique du Mokuton (libération du bois).\n\n- **Village** : Konohagakure\n- **Clan** : Senju\n- **Statut** : Premier Hokage\n- **Techniques notables** : Bringer-of-Darkness Technique (Manga only), Chakra Transfer Technique, Contract Seal (Anime only)",
+      "description": "Le « Dieu des shinobi », Premier Hokage et maître unique du Mokuton (libération du bois).",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/7/7e/Hashirama_Senju.png",
       "attributes": {
         "role": "Premier Hokage",
-        "affiliation": "Konohagakure",
-        "clan": "Senju"
+        "clan": "Senju",
+        "clanSlug": "senju",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "height": "185.1cm",
+        "weight": "74kg",
+        "bloodType": "B",
+        "birthdate": "October 23",
+        "classification": [
+          "Sage"
+        ],
+        "titles": [
+          "千手柱間SenjuHashirama",
+          "firstHokage(初代火影,ShodaiHokage)",
+          "godOfShinobi(忍の神,ShinobiNoKami,EnglishTv:TheSupremeShinobi)"
+        ],
+        "occupation": [
+          "Head of the Senju clan",
+          "Hokage"
+        ],
+        "kekkeiGenkai": [
+          "Wood Release"
+        ],
+        "natureType": [
+          "Wood Release",
+          "Earth Release",
+          "Water Release",
+          "Fire Release",
+          "Wind Release",
+          "Lightning Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "tools": [
+          "First Hokage's Necklace",
+          "Sword"
+        ],
+        "jutsu": [
+          "Bringer-of-Darkness Technique",
+          "Chakra Transfer Technique",
+          "Contract Seal",
+          "Four Red Yang Formation",
+          "Hokage-Style Sixty-Year-Old Technique — Kakuan Entering Society with Bliss-Bringing Hands",
+          "Regeneration Ability",
+          "Sage Art Wood Release: True Several Thousand Hands",
+          "Sage Art: Gate of the Great God",
+          "Sage Mode",
+          "Summoning Technique",
+          "Summoning: Quintuple Rashōmon",
+          "Summoning: Rashōmon"
+        ],
+        "rank": "Kage",
+        "affiliation": [
+          "Konohagakure",
+          "Allied Shinobi Forces"
+        ],
+        "debut": "Naruto Chapter #118",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Butsuma Senju"
+          },
+          {
+            "rel": "brother",
+            "name": "Tobirama Senju"
+          },
+          {
+            "rel": "wife",
+            "name": "Mito Uzumaki"
+          },
+          {
+            "rel": "granddaughter",
+            "name": "Tsunade",
+            "slug": "tsunade"
+          },
+          {
+            "rel": "grandson",
+            "name": "Nawaki"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/7/7e/Hashirama_Senju.png"
+        ]
       },
       "rarity": "legendary"
     },
@@ -569,11 +1214,90 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "L'« Éclair jaune de Konoha », Quatrième Hokage et père de Naruto, créateur du Rasengan.",
-      "description": "L'« Éclair jaune de Konoha », Quatrième Hokage et père de Naruto, créateur du Rasengan.\n\n- **Village** : Konohagakure\n- **Statut** : Quatrième Hokage\n- **Techniques notables** : Area Scanning Technique, Chakra Transfer Technique, Contract Seal",
+      "description": "L'« Éclair jaune de Konoha », Quatrième Hokage et père de Naruto, créateur du Rasengan.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/7/71/Minato_Namikaze.png",
       "attributes": {
         "role": "Quatrième Hokage",
-        "affiliation": "Konohagakure"
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "age": "24",
+        "height": "179.2cm",
+        "weight": "66.1kg",
+        "bloodType": "B",
+        "birthdate": "January 25",
+        "classification": [
+          "Jinchūriki",
+          "Sage",
+          "Sensor Type"
+        ],
+        "titles": [
+          "波風ミナトNamikazeMinato",
+          "fourthHokage(四代目火影,YondaimeHokage)",
+          "konoha'sYellowFlash(木ノ葉の黄色い閃光,KonohaNoKiiroiSenkō,EnglishTv:YellowFlashOfTheLeaf)",
+          "childOfTheProphecy(予言の子,YogenNoKo)",
+          "saviourOfThisWorld(この世の救世主,KonoYoNoKyūseishu)"
+        ],
+        "occupation": [
+          "Hokage"
+        ],
+        "natureType": [
+          "Fire Release",
+          "Wind Release",
+          "Lightning Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "tools": [
+          "Flying Thunder God Kunai"
+        ],
+        "jutsu": [
+          "Area Scanning Technique",
+          "Chakra Transfer Technique",
+          "Contract Seal",
+          "Dead Demon Consuming Seal",
+          "Eight Trigrams Sealing Style",
+          "Flying Thunder Formation Technique",
+          "Flying Thunder God Mutually Instantaneous Revolving Technique",
+          "Flying Thunder God Slash",
+          "Flying Thunder God Technique",
+          "Flying Thunder God — Second Step",
+          "Flying Thunder God: Guiding Thunder",
+          "Four Red Yang Formation"
+        ],
+        "rank": "Kage",
+        "affiliation": [
+          "Konohagakure",
+          "Mount Myōboku",
+          "Allied Shinobi Forces"
+        ],
+        "team": [
+          "Team Jiraiya",
+          "Team Minato"
+        ],
+        "debut": "Naruto Chapter #239",
+        "family": [
+          {
+            "rel": "son",
+            "name": "Naruto Uzumaki",
+            "slug": "naruto-uzumaki"
+          },
+          {
+            "rel": "grandson",
+            "name": "Boruto Uzumaki"
+          },
+          {
+            "rel": "granddaughter",
+            "name": "Himawari Uzumaki"
+          },
+          {
+            "rel": "wife",
+            "name": "Kushina Uzumaki"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/7/71/Minato_Namikaze.png"
+        ]
       },
       "rarity": "epic"
     },
@@ -584,11 +1308,78 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "L'un des trois légendaires Sannin, ermite des crapauds et maître de Naruto.",
-      "description": "L'un des trois légendaires Sannin, ermite des crapauds et maître de Naruto.\n\n- **Village** : Konohagakure\n- **Statut** : Sannin, ermite\n- **Techniques notables** : Barrier: Canopy Method Formation, Barrier: Toad Gourd Prison, Big Ball Rasengan",
+      "description": "L'un des trois légendaires Sannin, ermite des crapauds et maître de Naruto.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/2/21/Profile_Jiraiya.png",
       "attributes": {
         "role": "Sannin, ermite",
-        "affiliation": "Konohagakure"
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "age": "50–51",
+        "height": "191.2cm",
+        "weight": "87.5kg",
+        "bloodType": "B",
+        "birthdate": "November 11",
+        "classification": [
+          "Sage",
+          "Sannin"
+        ],
+        "occupation": [
+          "Writer"
+        ],
+        "natureType": [
+          "Fire Release",
+          "Wind Release",
+          "Earth Release",
+          "Water Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "tools": [
+          "Chakra-Suppressing Seal",
+          "Fūma Shuriken",
+          "Hidden Kunai Mechanism",
+          "Stone Swords"
+        ],
+        "jutsu": [
+          "Barrier: Canopy Method Formation",
+          "Barrier: Toad Gourd Prison",
+          "Big Ball Rasengan",
+          "Earth Release: Earth-Style Wall",
+          "Earth Release: Swamp of the Underworld",
+          "Finger Carving Seal",
+          "Fire Release: Big Flame Bullet",
+          "Fire Release: Dragon Fire Technique",
+          "Fire Release: Fire Dragon Flame Bullet",
+          "Fire Release: Flame Bullet",
+          "Fire Release: Toad Oil Flame Bullet",
+          "Fire Sealing Method"
+        ],
+        "rank": "Jōnin",
+        "affiliation": [
+          "Konohagakure",
+          "Mount Myōboku"
+        ],
+        "team": [
+          "Team Hiruzen",
+          "Ame Orphans",
+          "Team Jiraiya"
+        ],
+        "debut": "Naruto Chapter #90",
+        "family": [
+          {
+            "rel": "clone",
+            "name": "Koji Kashin"
+          },
+          {
+            "rel": "godson",
+            "name": "Naruto Uzumaki",
+            "slug": "naruto-uzumaki"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/2/21/Profile_Jiraiya.png"
+        ]
       },
       "rarity": "epic"
     },
@@ -599,12 +1390,95 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Sannin et Cinquième Hokage, la plus grande ninja médicale du monde shinobi.",
-      "description": "Sannin et Cinquième Hokage, la plus grande ninja médicale du monde shinobi.\n\n- **Village** : Konohagakure\n- **Clan** : Senju\n- **Statut** : Cinquième Hokage\n- **Techniques notables** : Body Pathway Derangement, Cell Activation Technique (Anime only), Chakra Enhanced Strength",
+      "description": "Sannin et Cinquième Hokage, la plus grande ninja médicale du monde shinobi.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/b/b3/Tsunade_infobox2.png",
       "attributes": {
         "role": "Cinquième Hokage",
-        "affiliation": "Konohagakure",
-        "clan": "Senju"
+        "clan": "Senju",
+        "clanSlug": "senju",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Female",
+        "age": "51",
+        "height": "163.1cm",
+        "weight": "48.9kg",
+        "bloodType": "B",
+        "birthdate": "August 2",
+        "classification": [
+          "Medical-nin",
+          "Sannin"
+        ],
+        "occupation": [
+          "Hokage"
+        ],
+        "natureType": [
+          "Lightning Release",
+          "Earth Release",
+          "Water Release",
+          "Fire Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "tools": [
+          "Antidote",
+          "Mechanical Eight Trigrams Formation Drum",
+          "Ninja Info Cards",
+          "Poison"
+        ],
+        "jutsu": [
+          "Body Pathway Derangement",
+          "Cell Activation Technique",
+          "Chakra Enhanced Strength",
+          "Chakra Scalpel",
+          "Chakra Transfer Technique",
+          "Creation Rebirth",
+          "Five Elements Unseal",
+          "Four-Corner Sealing Barrier",
+          "Genjutsu Binding",
+          "Heavenly Foot of Pain",
+          "Heavenly Spear Foot",
+          "Katsuyu: Immense Network Healing"
+        ],
+        "rank": "Kage",
+        "affiliation": [
+          "Konohagakure",
+          "Shikkotsu Forest",
+          "Allied Shinobi Forces"
+        ],
+        "team": [
+          "Team Hiruzen"
+        ],
+        "debut": "Naruto Chapter #139",
+        "family": [
+          {
+            "rel": "great-grandfather",
+            "name": "Butsuma Senju"
+          },
+          {
+            "rel": "grandfather",
+            "name": "Hashirama Senju",
+            "slug": "hashirama-senju"
+          },
+          {
+            "rel": "granduncle",
+            "name": "Kawarama Senju"
+          },
+          {
+            "rel": "grandmother",
+            "name": "Mito Uzumaki"
+          },
+          {
+            "rel": "brother",
+            "name": "Nawaki"
+          },
+          {
+            "rel": "lover",
+            "name": "Dan Katō"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/b/b3/Tsunade_infobox2.png"
+        ]
       },
       "rarity": "epic"
     },
@@ -615,11 +1489,89 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Sannin obsédé par l'immortalité et le savoir interdit, créateur d'Otogakure.",
-      "description": "Sannin obsédé par l'immortalité et le savoir interdit, créateur d'Otogakure.\n\n- **Village** : Konohagakure\n- **Statut** : Sannin renégat\n- **Techniques notables** : Binding Snake Glare Spell, Casualty Puppet (Anime only), Chakra Scalpel (Anime only)",
+      "description": "Sannin obsédé par l'immortalité et le savoir interdit, créateur d'Otogakure.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/1/14/Orochimaru_Infobox.png",
       "attributes": {
         "role": "Sannin renégat",
-        "affiliation": "Konohagakure"
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "File:Gender Various.svg Various",
+        "age": "50–51",
+        "height": "179.4cm - 172cm",
+        "weight": "63.9kg - 57.3kg",
+        "bloodType": "B",
+        "birthdate": "October 27",
+        "classification": [
+          "Missing-nin",
+          "S-rank",
+          "Sannin"
+        ],
+        "occupation": [
+          "Founder and Leader of Otogakure",
+          "Scientist"
+        ],
+        "kekkeiGenkai": [
+          "Jūgo's Clan's Kekkei Genkai",
+          "Sakon and Ukon's Kekkei Genkai",
+          "Shikotsumyaku",
+          "Wood Release"
+        ],
+        "natureType": [
+          "Wind Release",
+          "Lightning Release",
+          "Earth Release",
+          "Water Release",
+          "Fire Release",
+          "Wood Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "tools": [
+          "Genjutsu Pill",
+          "Mind Awakening Pill",
+          "Poison",
+          "Shinigami Mask",
+          "Sword",
+          "Sword of Kusanagi"
+        ],
+        "jutsu": [
+          "Binding Snake Glare Spell",
+          "Casualty Puppet",
+          "Chakra Scalpel",
+          "Earth Release: Hiding Like a Mole Technique",
+          "Earth Release: Shadow Clone",
+          "Eight Branches Technique",
+          "Eight Trigrams Sealing Style",
+          "Five Elements Seal",
+          "Five Elements Unseal",
+          "Formation of Ten Thousand Snakes",
+          "Four Black Snakes Formation",
+          "Four Symbols Seal"
+        ],
+        "rank": "Anbu",
+        "affiliation": [
+          "Konohagakure",
+          "Root",
+          "Akatsuki",
+          "Otogakure",
+          "Ryūchi Cave"
+        ],
+        "team": [
+          "Team Hiruzen",
+          "Team Orochimaru",
+          "Team Dosu"
+        ],
+        "debut": "Naruto Chapter #45",
+        "family": [
+          {
+            "rel": "clone/son",
+            "name": "Mitsuki"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/1/14/Orochimaru_Infobox.png",
+          "https://static.wikia.nocookie.net/naruto/images/b/be/Orochimaru_Part_III.png"
+        ]
       },
       "rarity": "epic"
     },
@@ -630,12 +1582,102 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Ancien Jinchūriki de Shukaku devenu Cinquième Kazekage et symbole de rédemption.",
-      "description": "Ancien Jinchūriki de Shukaku devenu Cinquième Kazekage et symbole de rédemption.\n\n- **Village** : Sunagakure\n- **Clan** : Kazekage   (Novel only)\n- **Statut** : Cinquième Kazekage\n- **Techniques notables** : Air Sand Protective Wall, Armour of Sand, Concealed Sand Picture Cat",
+      "description": "Ancien Jinchūriki de Shukaku devenu Cinquième Kazekage et symbole de rédemption.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/2/20/Gaara_in_Part_I.png",
       "attributes": {
         "role": "Cinquième Kazekage",
-        "affiliation": "Sunagakure",
-        "clan": "Kazekage   (Novel only)"
+        "clan": "Kazekage   (Novel only)",
+        "village": "Sunagakure",
+        "villageSlug": "sunagakure",
+        "sex": "Male",
+        "age": "12–13",
+        "height": "146.1cm - 148.1cm",
+        "weight": "39kg - 40.2kg",
+        "bloodType": "AB",
+        "birthdate": "January 19",
+        "classification": [
+          "Jinchūriki",
+          "Sensor Type"
+        ],
+        "occupation": [
+          "Kazekage",
+          "Regimental Commander of the Allied Shinobi Forces",
+          "Commander of the Fourth Division"
+        ],
+        "kekkeiGenkai": [
+          "Magnet Release"
+        ],
+        "natureType": [
+          "Magnet Release",
+          "Wind Release",
+          "Earth Release",
+          "Lightning Release"
+        ],
+        "tools": [
+          "Gold Dust",
+          "Jōhyō",
+          "Sand",
+          "Sand Gourd",
+          "Sealing Tag"
+        ],
+        "jutsu": [
+          "Air Sand Protective Wall",
+          "Armour of Sand",
+          "Concealed Sand Picture Cat",
+          "Desert Layered Imperial Funeral Seal",
+          "Desert Suspension",
+          "Desert Wave",
+          "Desert: Hand",
+          "Exploding Sand Boulder",
+          "Feigning Sleep Technique",
+          "Monstrous Sand Arm",
+          "Prison Sand Burial",
+          "Quicksand Waterfall Flow"
+        ],
+        "rank": "Kage",
+        "affiliation": [
+          "Sunagakure",
+          "Allied Shinobi Forces"
+        ],
+        "team": [
+          "Three Sand Siblings",
+          "Fourth Division"
+        ],
+        "debut": "Naruto Chapter #35",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Rasa"
+          },
+          {
+            "rel": "mother",
+            "name": "Karura"
+          },
+          {
+            "rel": "brother",
+            "name": "Kankurō"
+          },
+          {
+            "rel": "sister",
+            "name": "Temari"
+          },
+          {
+            "rel": "nephew",
+            "name": "Shikadai Nara"
+          },
+          {
+            "rel": "uncle",
+            "name": "Yashamaru"
+          },
+          {
+            "rel": "adoptive son",
+            "name": "Shinki"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/2/20/Gaara_in_Part_I.png",
+          "https://static.wikia.nocookie.net/naruto/images/0/0f/Gaara_Part_II.png"
+        ]
       },
       "rarity": "epic"
     },
@@ -646,12 +1688,66 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Ninja incapable de ninjutsu qui compense par une maîtrise absolue du combat physique.",
-      "description": "Ninja incapable de ninjutsu qui compense par une maîtrise absolue du combat physique.\n\n- **Village** : Konohagakure\n- **Clan** : Lee   (Novel only)\n- **Statut** : Spécialiste du taijutsu\n- **Techniques notables** : Crane Wing Formation, Double Dynamic Entry, Drunken Fist",
+      "description": "Ninja incapable de ninjutsu qui compense par une maîtrise absolue du combat physique.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/9/97/Rock_Lee_Part_I.png",
       "attributes": {
         "role": "Spécialiste du taijutsu",
-        "affiliation": "Konohagakure",
-        "clan": "Lee   (Novel only)"
+        "clan": "Lee   (Novel only)",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "age": "13–14",
+        "height": "158.5cm - 162.1cm",
+        "weight": "46.6kg - 47.5kg",
+        "bloodType": "A",
+        "birthdate": "November 27",
+        "occupation": [
+          "Chūnin Exams Proctor"
+        ],
+        "tools": [
+          "Flying Thunder God Kunai",
+          "Military Rations Pill",
+          "Tonfa",
+          "Weights"
+        ],
+        "jutsu": [
+          "Crane Wing Formation",
+          "Double Dynamic Entry",
+          "Drunken Fist",
+          "Dynamic Entry",
+          "Eight Gates",
+          "Front Lotus",
+          "Front Lotus: Eight Trigrams Palms Revolving Heaven",
+          "Leaf Coiling Whirlwind",
+          "Leaf Drop",
+          "Leaf Flash Kick",
+          "Leaf Gale",
+          "Leaf Great Whirlwind"
+        ],
+        "rank": "Jōnin",
+        "affiliation": [
+          "Konohagakure",
+          "Allied Shinobi Forces"
+        ],
+        "team": [
+          "Team Guy",
+          "Konoha 11  (Anime only)",
+          "Star Guard Team  (Anime only)",
+          "Team Two  (Anime only)",
+          "Third Division",
+          "Suicide Corps  (Movie only)"
+        ],
+        "debut": "Naruto Chapter #36",
+        "family": [
+          {
+            "rel": "son",
+            "name": "Metal Lee"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/9/97/Rock_Lee_Part_I.png",
+          "https://static.wikia.nocookie.net/naruto/images/7/7d/Lee_timeskip.png"
+        ]
       },
       "rarity": "rare"
     },
@@ -662,12 +1758,72 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Génie de la branche secondaire du clan Hyūga, maître du Poing Souple et du Byakugan.",
-      "description": "Génie de la branche secondaire du clan Hyūga, maître du Poing Souple et du Byakugan.\n\n- **Village** : Konohagakure\n- **Clan** : Hyūga\n- **Statut** : Prodige Hyūga\n- **Techniques notables** : The Springtime of Youth wiki has an article about this topic:, Neji Hyūga",
+      "description": "Génie de la branche secondaire du clan Hyūga, maître du Poing Souple et du Byakugan.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/7/7e/Neji_Part_I.png",
       "attributes": {
         "role": "Prodige Hyūga",
-        "affiliation": "Konohagakure",
-        "clan": "Hyūga"
+        "clan": "Hyūga",
+        "clanSlug": "hyuga",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "age": "13–14",
+        "height": "159.2cm - 160.1cm",
+        "weight": "45.8kg - 46.8kg",
+        "bloodType": "O",
+        "birthdate": "July 3",
+        "kekkeiGenkai": [
+          "Byakugan"
+        ],
+        "natureType": [
+          "Fire Release",
+          "Earth Release",
+          "Water Release"
+        ],
+        "jutsu": [
+          "The Springtime of Youth wiki has an article about this topic:",
+          "Neji Hyūga"
+        ],
+        "rank": "Jōnin",
+        "affiliation": [
+          "Konohagakure",
+          "Allied Shinobi Forces"
+        ],
+        "team": [
+          "Team Guy",
+          "Sasuke Recovery Team",
+          "Konoha 11  (Anime only)",
+          "Star Guard Team  (Anime only)",
+          "Second Division"
+        ],
+        "debut": "Naruto Chapter #36",
+        "family": [
+          {
+            "rel": "grandfather",
+            "name": "Hyūga Elder"
+          },
+          {
+            "rel": "father",
+            "name": "Hizashi Hyūga"
+          },
+          {
+            "rel": "uncle",
+            "name": "Hiashi Hyūga"
+          },
+          {
+            "rel": "cousin",
+            "name": "Hinata Hyūga",
+            "slug": "hinata-hyuga"
+          },
+          {
+            "rel": "first cousin once removed",
+            "name": "Himawari Uzumaki"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/7/7e/Neji_Part_I.png",
+          "https://static.wikia.nocookie.net/naruto/images/a/a8/Neji_Part_II.png"
+        ]
       },
       "rarity": "rare"
     },
@@ -678,11 +1834,111 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Héritière timide puis vaillante du clan Hyūga, future épouse de Naruto.",
-      "description": "Héritière timide puis vaillante du clan Hyūga, future épouse de Naruto.\n\n- **Village** : Konohagakure\n- **Statut** : Héritière Hyūga\n- **Techniques notables** : Chakra Transfer Technique, Eight Trigrams Sixty-Four Palms, Eight Trigrams Thirty-Two Palms (Anime only)",
+      "description": "Héritière timide puis vaillante du clan Hyūga, future épouse de Naruto.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/9/97/Hinata.png",
       "attributes": {
         "role": "Héritière Hyūga",
-        "affiliation": "Konohagakure"
+        "clan": "Hyūga",
+        "clanSlug": "hyuga",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Female",
+        "age": "12–13",
+        "height": "147.3cm - 148.3cm",
+        "weight": "37.9kg - 38.2kg",
+        "bloodType": "A",
+        "birthdate": "December 27",
+        "occupation": [
+          "Heiress of the Hyūga Clan  (Former)"
+        ],
+        "kekkeiGenkai": [
+          "Byakugan"
+        ],
+        "natureType": [
+          "Fire Release",
+          "Lightning Release"
+        ],
+        "tools": [
+          "Hyūga Clan Secret Ointment"
+        ],
+        "jutsu": [
+          "Chakra Transfer Technique",
+          "Eight Trigrams Sixty-Four Palms",
+          "Eight Trigrams Thirty-Two Palms",
+          "Eight Trigrams Twin Lions Crumbling Attack",
+          "Eight Trigrams Vacuum Palm",
+          "Eight Trigrams Vacuum Wall Palm",
+          "Four-Corner Sealing Barrier",
+          "Gentle Fist",
+          "Gentle Step Spiralling Twin Lion Fists",
+          "Gentle Step Twin Lion Fists",
+          "Mystical Palm Technique",
+          "Palm Bottom"
+        ],
+        "rank": "Chūnin",
+        "affiliation": [
+          "Konohagakure",
+          "Allied Shinobi Forces"
+        ],
+        "team": [
+          "Team 8",
+          "Konoha 11  (Anime only)",
+          "Bikōchū Search Team  (Anime only)",
+          "Peddlers Escort Team  (Anime only)",
+          "Team Three  (Anime only)",
+          "Eight Man Squad",
+          "Second Division",
+          "Hanabi Rescue Team  (Movie only)"
+        ],
+        "debut": "Naruto Chapter #34",
+        "family": [
+          {
+            "rel": "grandfather",
+            "name": "Hyūga Elder"
+          },
+          {
+            "rel": "father",
+            "name": "Hiashi Hyūga"
+          },
+          {
+            "rel": "uncle",
+            "name": "Hizashi Hyūga"
+          },
+          {
+            "rel": "cousin",
+            "name": "Neji Hyūga",
+            "slug": "neji-hyuga"
+          },
+          {
+            "rel": "mother ",
+            "name": "Hinata and Hanabi's Mother"
+          },
+          {
+            "rel": "sister",
+            "name": "Hanabi Hyūga"
+          },
+          {
+            "rel": "son",
+            "name": "Boruto Uzumaki"
+          },
+          {
+            "rel": "daughter",
+            "name": "Himawari Uzumaki"
+          },
+          {
+            "rel": "husband",
+            "name": "Naruto Uzumaki",
+            "slug": "naruto-uzumaki"
+          },
+          {
+            "rel": "adoptive son",
+            "name": "Kawaki"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/9/97/Hinata.png",
+          "https://static.wikia.nocookie.net/naruto/images/7/79/Hinata_Part_II.png"
+        ]
       },
       "rarity": "rare"
     },
@@ -693,12 +1949,89 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Le plus brillant stratège de sa génération, manipulateur des ombres du clan Nara.",
-      "description": "Le plus brillant stratège de sa génération, manipulateur des ombres du clan Nara.\n\n- **Village** : Konohagakure\n- **Clan** : Nara\n- **Statut** : Stratège\n- **Techniques notables** : Earth Release: Practice Brick Technique, Flying Swallow (Anime only), Formation Ino–Shika–Chō",
+      "description": "Le plus brillant stratège de sa génération, manipulateur des ombres du clan Nara.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/4/44/Shikamaru_Part_I.png",
       "attributes": {
         "role": "Stratège",
-        "affiliation": "Konohagakure",
-        "clan": "Nara"
+        "clan": "Nara",
+        "clanSlug": "nara",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "age": "12–13",
+        "height": "150.8cm - 152.1cm",
+        "weight": "42kg - 42.9kg",
+        "bloodType": "AB",
+        "birthdate": "September 22",
+        "occupation": [
+          "Hokage's Chief Aide",
+          "Planner for the Shinobi Union",
+          "Proxy Commander of Fourth Division of the Allied Shinobi Forces",
+          "Chūnin Exam Proctor",
+          "Head of the Nara Clan"
+        ],
+        "natureType": [
+          "Fire Release",
+          "Earth Release",
+          "Yin Release"
+        ],
+        "tools": [
+          "Chakra Blade",
+          "Explosive Tag",
+          "Flash Bomb",
+          "Tantō",
+          "Wire Strings"
+        ],
+        "jutsu": [
+          "Earth Release: Practice Brick Technique",
+          "Flying Swallow",
+          "Formation Ino–Shika–Chō",
+          "Human Bullet Yo-Yo",
+          "Ninja Art: Bare-Handed Blade Block",
+          "Shadow Clone Technique",
+          "Shadow Clutch Technique",
+          "Shadow Gathering Technique",
+          "Shadow Imitation Shuriken Technique",
+          "Shadow Imitation Technique",
+          "Shadow Sewing Technique",
+          "Shadow–Neck Binding Technique"
+        ],
+        "rank": "Jōnin",
+        "affiliation": [
+          "Konohagakure",
+          "Allied Shinobi Forces"
+        ],
+        "team": [
+          "Team 10",
+          "Sasuke Recovery Team",
+          "Konoha 11  (Anime only)",
+          "Twenty Platoons",
+          "Fourth Division",
+          "Hanabi Rescue Team  (Movie only)"
+        ],
+        "debut": "Naruto Chapter #34",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Shikaku Nara"
+          },
+          {
+            "rel": "mother",
+            "name": "Yoshino Nara"
+          },
+          {
+            "rel": "son",
+            "name": "Shikadai Nara"
+          },
+          {
+            "rel": "wife",
+            "name": "Temari Nara"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/4/44/Shikamaru_Part_I.png",
+          "https://static.wikia.nocookie.net/naruto/images/9/9a/Shikamaru_Nara.png"
+        ]
       },
       "rarity": "rare"
     },
@@ -709,12 +2042,97 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Camarade de Kakashi cru mort, devenu le marionnettiste masqué derrière la guerre.",
-      "description": "Camarade de Kakashi cru mort, devenu le marionnettiste masqué derrière la guerre.\n\n- **Village** : Konohagakure\n- **Clan** : Uchiha\n- **Statut** : Membre masqué de l’Akatsuki\n- **Techniques notables** : Animal Path, Asura Path, Black Receiver",
+      "description": "Camarade de Kakashi cru mort, devenu le marionnettiste masqué derrière la guerre.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/4/4a/Obito_Uchiha.png",
       "attributes": {
         "role": "Membre masqué de l’Akatsuki",
-        "affiliation": "Konohagakure",
-        "clan": "Uchiha"
+        "clan": "Uchiha",
+        "clanSlug": "uchiha",
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "age": "13  (Kakashi Gaiden)",
+        "height": "154.2cm",
+        "weight": "44.5kg",
+        "bloodType": "O",
+        "birthdate": "February 10",
+        "classification": [
+          "Jinchūriki",
+          "Pseudo-Jinchūriki",
+          "Missing-nin",
+          "S-rank",
+          "Sensor Type"
+        ],
+        "titles": [
+          "うちはオビトUchihaObito",
+          "tobi(トビ)",
+          "madaraUchiha(うちはマダラ,UchihaMadara)",
+          "maskedMadara(仮面のマダラ,KamenNoMadara)",
+          "maskedMan(仮面の男,KamenNoOtoko)",
+          "saviour(救世主,Kyūseishu)"
+        ],
+        "occupation": [
+          "Leader of Akatsuki",
+          "Secret Leader of Kirigakure"
+        ],
+        "kekkeiGenkai": [
+          "Sharingan",
+          "Mangekyō Sharingan",
+          "Rinnegan",
+          "Wood Release"
+        ],
+        "natureType": [
+          "Fire Release",
+          "Wind Release",
+          "Lightning Release",
+          "Earth Release",
+          "Water Release",
+          "Wood Release",
+          "Yin Release",
+          "Yang Release",
+          "Yin–Yang Release"
+        ],
+        "tools": [
+          "Fūma Shuriken",
+          "Gunbai",
+          "Kusari",
+          "Sword",
+          "Sword of Nunoboko"
+        ],
+        "jutsu": [
+          "Animal Path",
+          "Asura Path",
+          "Black Receiver",
+          "Chakra Transfer Technique",
+          "Demonic Statue Chains",
+          "Deva Path",
+          "Earth Release: Hiding Like a Mole Technique",
+          "Explosive Landmines",
+          "Fire Release: Blast Wave Wild Dance",
+          "Fire Release: Great Fireball Technique",
+          "Fire Release: Phoenix Sage Fire Technique",
+          "Genjutsu: Sharingan"
+        ],
+        "rank": "Chūnin",
+        "affiliation": [
+          "Konohagakure",
+          "Akatsuki",
+          "Kirigakure"
+        ],
+        "team": [
+          "Team Minato"
+        ],
+        "debut": "Naruto Chapter #239",
+        "family": [
+          {
+            "rel": "grandmother ",
+            "name": "Obito's Grandmother"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/4/4a/Obito_Uchiha.png",
+          "https://static.wikia.nocookie.net/naruto/images/3/3c/Obito.png"
+        ]
       },
       "rarity": "epic"
     },
@@ -725,12 +2143,64 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Porteur du Rinnegan et véritable « Pain », chef de l'Akatsuki en quête de paix par la douleur.",
-      "description": "Porteur du Rinnegan et véritable « Pain », chef de l'Akatsuki en quête de paix par la douleur.\n\n- **Village** : Amegakure\n- **Clan** : Uzumaki\n- **Statut** : Chef de l’Akatsuki (Pain)\n- **Techniques notables** : The Springtime of Youth wiki has an article about this topic:, Nagato, Pain",
+      "description": "Porteur du Rinnegan et véritable « Pain », chef de l'Akatsuki en quête de paix par la douleur.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/4/46/Nagato.png",
       "attributes": {
         "role": "Chef de l’Akatsuki (Pain)",
-        "affiliation": "Amegakure",
-        "clan": "Uzumaki"
+        "clan": "Uzumaki",
+        "clanSlug": "uzumaki",
+        "village": "Amegakure",
+        "villageSlug": "amegakure",
+        "sex": "Male",
+        "age": "35",
+        "height": "175.5cm",
+        "weight": "40.1kg",
+        "bloodType": "A",
+        "birthdate": "September 19",
+        "classification": [
+          "S-rank",
+          "Sensor Type"
+        ],
+        "occupation": [
+          "Akatsuki Leader",
+          "Village Head"
+        ],
+        "kekkeiGenkai": [
+          "Rinnegan"
+        ],
+        "natureType": [
+          "Fire Release",
+          "Wind Release",
+          "Lightning Release",
+          "Earth Release",
+          "Water Release",
+          "Yang Release"
+        ],
+        "jutsu": [
+          "The Springtime of Youth wiki has an article about this topic:",
+          "Nagato, Pain"
+        ],
+        "affiliation": [
+          "Amegakure",
+          "Akatsuki"
+        ],
+        "team": [
+          "Ame Orphans"
+        ],
+        "debut": "Naruto Chapter #372",
+        "family": [
+          {
+            "rel": "mother",
+            "name": "Fusō"
+          },
+          {
+            "rel": "father",
+            "name": "Ise"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/4/46/Nagato.png"
+        ]
       },
       "rarity": "epic"
     },
@@ -741,11 +2211,80 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Jinchūriki de Gyūki et bretteur hors pair de Kumo, qui rappe entre deux combats.",
-      "description": "Jinchūriki de Gyūki et bretteur hors pair de Kumo, qui rappe entre deux combats.\n\n- **Village** : Kumogakure\n- **Statut** : Jinchūriki, rappeur\n- **Techniques notables** : Acrobat, Cloud-Style Deception Beheading (Anime only), Continuous Tailed Beast Balls",
+      "description": "Jinchūriki de Gyūki et bretteur hors pair de Kumo, qui rappe entre deux combats.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/6/63/Killer_B.png",
       "attributes": {
         "role": "Jinchūriki, rappeur",
-        "affiliation": "Kumogakure"
+        "village": "Kumogakure",
+        "villageSlug": "kumogakure",
+        "sex": "Male",
+        "age": "36",
+        "height": "192cm",
+        "weight": "87.1kg",
+        "bloodType": "B",
+        "birthdate": "May 15",
+        "classification": [
+          "Jinchūriki"
+        ],
+        "titles": [
+          "キラービーKirāBī",
+          "killerBee"
+        ],
+        "occupation": [
+          "Guardian of Kumogakure"
+        ],
+        "natureType": [
+          "Lightning Release",
+          "Water Release",
+          "Fire Release",
+          "Yang Release"
+        ],
+        "tools": [
+          "Chakra Cannon",
+          "Samehada",
+          "Supervibrato Lightning Release Swords"
+        ],
+        "jutsu": [
+          "Acrobat",
+          "Cloud-Style Deception Beheading",
+          "Continuous Tailed Beast Balls",
+          "Disturbance Taijutsu",
+          "Headbutt",
+          "Ink Clone Technique",
+          "Ink Creation",
+          "Lightning Release: Double Lariat",
+          "Lightning Release: Lariat",
+          "Octopus Leg Clone Technique",
+          "Reverse Mist Beheading",
+          "Sealing Technique: Octopus Hold"
+        ],
+        "affiliation": [
+          "Kumogakure",
+          "Allied Shinobi Forces"
+        ],
+        "team": [
+          "A–B Combo",
+          "Kumo Council"
+        ],
+        "debut": "Naruto Chapter #408",
+        "family": [
+          {
+            "rel": "adoptive father",
+            "name": "A"
+          },
+          {
+            "rel": "adoptive brother",
+            "name": "A"
+          },
+          {
+            "rel": "adoptive cousin",
+            "name": "Blue B"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/6/63/Killer_B.png",
+          "https://static.wikia.nocookie.net/naruto/images/3/30/Killer_B_Part_III.png"
+        ]
       },
       "rarity": "rare"
     },
@@ -756,11 +2295,66 @@
       "is_fiction": true,
       "universe": "Naruto",
       "summary": "Maître du taijutsu capable d'ouvrir les Huit Portes, rival autoproclamé de Kakashi.",
-      "description": "Maître du taijutsu capable d'ouvrir les Huit Portes, rival autoproclamé de Kakashi.\n\n- **Village** : Konohagakure\n- **Statut** : Maître du taijutsu\n- **Techniques notables** : Daytime Tiger, Double Dynamic Entry, Dynamic Action (Anime only)",
+      "description": "Maître du taijutsu capable d'ouvrir les Huit Portes, rival autoproclamé de Kakashi.",
       "image_url": "https://static.wikia.nocookie.net/naruto/images/3/31/Might_Guy.png",
       "attributes": {
         "role": "Maître du taijutsu",
-        "affiliation": "Konohagakure"
+        "village": "Konohagakure",
+        "villageSlug": "konohagakure",
+        "sex": "Male",
+        "age": "26–27",
+        "height": "184cm",
+        "weight": "76kg",
+        "bloodType": "B",
+        "birthdate": "January 1",
+        "occupation": [
+          "Academy Teacher"
+        ],
+        "natureType": [
+          "Fire Release",
+          "Lightning Release"
+        ],
+        "tools": [
+          "Bow & Arrow",
+          "Kusarigama",
+          "Nunchaku",
+          "Sōshūga"
+        ],
+        "jutsu": [
+          "Daytime Tiger",
+          "Double Dynamic Entry",
+          "Dynamic Action",
+          "Dynamic Entry",
+          "Eight Gates",
+          "Eight Gates Released Formation",
+          "Evening Elephant",
+          "Front Lotus",
+          "Intersection Method",
+          "Leaf Coiling Whirlwind",
+          "Leaf Coiling Wind",
+          "Leaf Drop"
+        ],
+        "rank": "Jōnin",
+        "affiliation": [
+          "Konohagakure",
+          "Allied Shinobi Forces"
+        ],
+        "team": [
+          "Team Chōza",
+          "Team Guy",
+          "Third Division"
+        ],
+        "debut": "Naruto Chapter #38",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Might Duy"
+          }
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/3/31/Might_Guy.png",
+          "https://static.wikia.nocookie.net/naruto/images/b/b3/Might_Guy_Part_III.png"
+        ]
       },
       "rarity": "rare"
     },
@@ -775,7 +2369,20 @@
       "image_url": null,
       "attributes": {
         "role": "Bête à queues (Bijū)",
-        "race": "Bijū"
+        "race": "Bijū",
+        "classification": [
+          "Tailed Beast",
+          "Sensor Type",
+          "Sage"
+        ],
+        "natureType": [
+          "Fire Release",
+          "Wind Release"
+        ],
+        "jutsu": [
+          "The Springtime of Youth wiki has an article about this topic:",
+          "Nine-Tails"
+        ]
       },
       "rarity": "legendary"
     },
@@ -790,7 +2397,17 @@
       "image_url": "https://static.wikia.nocookie.net/naruto/images/d/d7/Gyuki.png",
       "attributes": {
         "role": "Bête à queues (Bijū)",
-        "race": "Bijū"
+        "race": "Bijū",
+        "classification": [
+          "Tailed Beast"
+        ],
+        "jutsu": [
+          "The Springtime of Youth wiki has an article about this topic:",
+          "Eight-Tails"
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/d/d7/Gyuki.png"
+        ]
       },
       "rarity": "epic"
     },
@@ -805,7 +2422,28 @@
       "image_url": "https://static.wikia.nocookie.net/naruto/images/9/99/Shukaku.png",
       "attributes": {
         "role": "Bête à queues (Bijū)",
-        "race": "Bijū"
+        "race": "Bijū",
+        "classification": [
+          "Tailed Beast"
+        ],
+        "natureType": [
+          "Magnet Release",
+          "Wind Release",
+          "Earth Release"
+        ],
+        "jutsu": [
+          "Chakra Transfer Technique",
+          "Desert Layered Imperial Funeral Seal",
+          "Tailed Beast Ball",
+          "Tailed Beast Full Charge",
+          "Tailed Beast Shockwave",
+          "Tailed Beast Telepathy",
+          "Wind Release: Drilling Air Bullet",
+          "Wind Release: Sand Buckshot"
+        ],
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/9/99/Shukaku.png"
+        ]
       },
       "rarity": "rare"
     }
