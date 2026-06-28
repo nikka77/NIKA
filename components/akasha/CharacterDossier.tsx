@@ -65,7 +65,7 @@ export default function CharacterDossier({ entry }: { entry: AkashaEntryDetail }
   const classification = list(a.classification);
   const kekkei = list(a.kekkeiGenkai);
   const jutsu = list(a.jutsu);
-  const animations = (Array.isArray(a.animations) ? (a.animations as { label: string; video: string }[]) : []).filter((x) => x && typeof x.video === 'string');
+  const animations = (Array.isArray(a.animations) ? (a.animations as { label: string; image: string; anim?: string }[]) : []).filter((x) => x && typeof x.image === 'string');
   const tools = list(a.tools);
   const occupation = list(a.occupation);
   const affiliation = list(a.affiliation);
@@ -143,7 +143,10 @@ export default function CharacterDossier({ entry }: { entry: AkashaEntryDetail }
                 <div className="g-2" style={{ gap: 8 }}>
                   {animations.map((an, i) => (
                     <div key={i} style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid var(--bd)', background: 'var(--bg)' }}>
-                      <video src={an.video} autoPlay loop muted playsInline style={{ width: '100%', display: 'block', aspectRatio: '1 / 1', objectFit: 'cover' }} />
+                      <div style={{ aspectRatio: '1 / 1', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={an.image} alt={an.label} className={an.anim === 'spin' ? 'ak-anim-spin' : 'ak-anim-poof'} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      </div>
                       <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 600, color: 'var(--td2)', textAlign: 'center', padding: 6 }}>{an.label}</div>
                     </div>
                   ))}

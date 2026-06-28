@@ -882,3 +882,10 @@ ul { list-style: none; }
   .ak-fx-tilt { transform: none !important; transition: none; }
   .ak-fx-foil { display: none; }
 }
+
+/* ── Techniques animées (CSS — cohérent, léger) ── */
+@keyframes akSpin { from { transform: scale(0.82) rotate(0deg); } to { transform: scale(0.82) rotate(360deg); } }
+@keyframes akPoof { 0%, 100% { opacity: 0.6; transform: scale(0.96); } 50% { opacity: 1; transform: scale(1); } }
+.ak-anim-spin { animation: akSpin 3.6s linear infinite; transform-origin: 50% 50%; }
+.ak-anim-poof { animation: akPoof 2.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .ak-anim-spin, .ak-anim-poof { animation: none; transform: none; } }
