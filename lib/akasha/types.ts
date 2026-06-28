@@ -1,0 +1,144 @@
+// lib/akasha/types.ts — types & métadonnées du registre AKASHA (domaine LEARN).
+// Source de vérité : table akasha_entries (cf. supabase/migrations/akasha.sql).
+
+export const AKASHA_TYPES = [
+  'character',
+  'place',
+  'artifact',
+  'profession',
+  'status',
+  'power',
+  'skill',
+] as const;
+export type AkashaType = (typeof AKASHA_TYPES)[number];
+
+export const AKASHA_RARITIES = ['common', 'rare', 'epic', 'legendary'] as const;
+export type AkashaRarity = (typeof AKASHA_RARITIES)[number];
+
+/** Ligne brute de la table akasha_entries. */
+export interface AkashaEntry {
+  id: string;
+  slug: string;
+  type: AkashaType;
+  name: string;
+  is_fiction: boolean;
+  universe: string | null;
+  summary: string | null;
+  description: string | null;
+  image_url: string | null;
+  attributes: Record<string, unknown>;
+  rarity: AkashaRarity | null;
+  created_at: string;
+}
+
+/** Projection légère pour les cartes de la grille. */
+export type AkashaEntryCard = Pick<
+  AkashaEntry,
+  'id' | 'slug' | 'type' | 'name' | 'is_fiction' | 'universe' | 'summary' | 'image_url' | 'rarity'
+>;
+
+/** Cible résolue d'une relation (entité liée). */
+export interface RelationTarget {
+  slug: string;
+  name: string;
+  type: AkashaType;
+  image_url: string | null;
+}
+
+export interface ResolvedRelation {
+  id: string;
+  relation: string;
+  target: RelationTarget;
+}
+
+/** Fiche complète : entrée + relations sortantes/entrantes résolues. */
+export interface AkashaEntryDetail extends AkashaEntry {
+  relationsOut: ResolvedRelation[];
+  relationsIn: ResolvedRelation[];
+}
+
+// ─── Métadonnées d'affichage (FR) ────────────────────────────────────
+
+interface TypeMeta {
+  label: string;
+  plural: string;
+  icon: string;
+  /** Couleur d'accent (tokens NIKA existants) — palette « cosmique » par catégorie. */
+  color: string;
+}
+
+export const TYPE_META: Record<AkashaType, TypeMeta> = {
+  character:  { label: 'Personnage', plural: 'Personnages', icon: '👤', color: '#7B5CF0' },
+  place:      { label: 'Lieu',       plural: 'Lieux',       icon: '🗺️', color: '#0EA878' },
+  artifact:   { label: 'Artefact',   plural: 'Artefacts',   icon: '🗡️', color: '#D4A017' },
+  profession: { label: 'Métier',     plural: 'Métiers',     icon: '⚒️', color: '#0094D4' },
+  status:     { label: 'Statut',     plural: 'Statuts',     icon: '🎖️', color: '#E07038' },
+  power:      { label: 'Pouvoir',    plural: 'Pouvoirs',    icon: '⚡', color: '#D44B24' },
+  skill:      { label: 'Compétence', plural: 'Compétences', icon: '🌀', color: '#12B8CC' },
+};
+
+export const RARITY_META: Record<AkashaRarity, { label: string; color: string }> = {
+  common:    { label: 'Commun',     color: '#7A90A8' },
+  rare:      { label: 'Rare',       color: '#0094D4' },
+  epic:      { label: 'Épique',     color: '#7B5CF0' },
+  legendary: { label: 'Légendaire', color: '#D4A017' },
+};
+
+/** Libellés FR des relations connues (fallback : la chaîne brute). */
+export const RELATION_LABELS: Record<string, string> = {
+  possede: 'possède',
+  maitrise: 'maîtrise',
+  exerce: 'exerce',
+  habite: 'habite',
+  allie: 'allié de',
+  rival: 'rival de',
+  appartient: 'appartient à',
+};
+
+export function relationLabel(relation: string): string {
+  return RELATION_LABELS[relation] ?? relation.replace(/_/g, ' ');
+}
+
+/** Champs d'attributs affichés par type (clé jsonb → libellé FR), dans l'ordre. */
+export const ATTRIBUTE_FIELDS: Record<AkashaType, { key: string; label: string }[]> = {
+  character: [
+    { key: 'role', label: 'Rôle' },
+    { key: 'race', label: 'Espèce / Race' },
+    { key: 'affiliation', label: 'Affiliation' },
+    { key: 'alignment', label: 'Alignement' },
+  ],
+  place: [
+    { key: 'region', label: 'Région' },
+    { key: 'climate', label: 'Climat' },
+    { key: 'coordinates', label: 'Coordonnées' },
+  ],
+  artifact: [
+    { key: 'material', label: 'Matière' },
+    { key: 'origin', label: 'Origine' },
+    { key: 'power_level', label: 'Puissance' },
+  ],
+  profession: [
+    { key: 'sector', label: 'Secteur' },
+    { key: 'skills', label: 'Compétences clés' },
+  ],
+  status: [
+    { key: 'rank', label: 'Rang' },
+    { key: 'scope', label: 'Portée' },
+  ],
+  power: [
+    { key: 'range', label: 'Portée' },
+    { key: 'cost', label: 'Coût' },
+    { key: 'element', label: 'Élément' },
+  ],
+  skill: [
+    { key: 'discipline', label: 'Discipline' },
+    { key: 'level', label: 'Niveau' },
+  ],
+};
+
+/** Garde-fou : caste une string en AkashaType ou undefined. */
+export function asAkashaType(value: string | undefined | null): AkashaType | undefined {
+  return value && (AKASHA_TYPES as readonly string[]).includes(value)
+    ? (value as AkashaType)
+    : undefined;
+}
