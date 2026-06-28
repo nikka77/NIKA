@@ -1,43 +1,41 @@
 #!/usr/bin/env python3
 # scripts/build-akasha-arcade.py
-# ARCADE rétro 2D — v2 : à partir d'une STRIP de 4 poses (généré en une seule image Higgsfield,
-# donc perso parfaitement cohérent : garde → charge → tir → contre-coup), produit :
-#   • <id>.webp        : animation bouclée (vraies poses d'attaque, timing punchy) pour la carte
-#   • <id>-sheet.png   : sprite-sheet normalisée (4 frames carrées) prête pour un mini-jeu
-# Le fond plat est détouré (color-key des coins). Scanlines/CRT ajoutés en CSS (sprites purs).
+# ARCADE rétro 2D — v3 « channel loop » : UNE pose nette par technique (1 seule génération
+# Higgsfield = perso 100% cohérent, zéro morph, zéro bavure) + animation d'EFFET déterministe
+# (chakra qui tourne + pulse + léger bob), 12 frames fluides. Plus de cuts saccadés.
+#   • <id>.webp        : boucle fluide (affichage carte)
+#   • <id>-sheet.png   : sprite-sheet (12 frames) pour un futur mini-jeu
 #
-# Source attendue : public/images/akasha/arcade/naruto/src/<id>-strip.png  (4 cases en ligne)
+# Source : public/images/akasha/arcade/naruto/src/<id>.png  (pose unique nette)
 # Run : python3 scripts/build-akasha-arcade.py
-import os
-from PIL import Image
+import os, math
+from PIL import Image, ImageDraw
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = os.path.join(ROOT, 'public', 'images', 'akasha', 'arcade', 'naruto')
 SRC = os.path.join(BASE, 'src')
 TILE = 256
-NFRAMES = 4
-# timing par frame (ms) : garde tenue (respiration/reset pour une boucle propre), charge
-# rapide, GROS temps sur le tir, contre-coup.
-DUR = [460, 150, 430, 240]
-MOVES = ['rasengan', 'rasenshuriken', 'multiclonage', 'bijudama']
+N = 12
+DUR = 80
+FIT_H = 0.9
+ANCHOR_X, ANCHOR_Y = 0.5, 0.95
 
-
-# Ancrage : les pieds sont plantés à ce point sur chaque tuile (X décalé à gauche pour
-# laisser la place à l'attaque qui part vers la droite ; base un peu au-dessus du bas).
-ANCHOR_X = 0.40
-ANCHOR_Y = 0.94
-FIT_H = 0.86  # le perso occupe ~86% de la hauteur de tuile
+# masque de l'effet (chakra) par technique → (r,g,b)->bool ; couleur des étincelles
+def m_blue(r, g, b):   return b > 150 and b - r > 25
+def m_white(r, g, b):  return r > 200 and g > 200 and b > 200
+def m_purple(r, g, b): return b > 110 and r > 90 and g + 25 < r and g + 25 < b
+MOVES = [
+    ('rasengan', m_blue, (130, 205, 255)),
+    ('rasenshuriken', m_white, (235, 245, 255)),
+    ('bijudama', m_purple, (195, 120, 255)),
+    ('multiclonage', None, None),
+]
 
 
 def keybg(im):
-    """Détoure le fond plat : color-key sur la couleur moyenne des coins."""
-    px = im.load()
-    w, h = im.size
+    px = im.load(); w, h = im.size
     cor = [im.getpixel((1, 1)), im.getpixel((w - 2, 1)), im.getpixel((1, h - 2)), im.getpixel((w - 2, h - 2))]
-    cor = [c for c in cor if c[3] > 0] or [(58, 67, 88, 255)]
-    cr = sum(c[0] for c in cor) // len(cor)
-    cg = sum(c[1] for c in cor) // len(cor)
-    cb = sum(c[2] for c in cor) // len(cor)
+    cr = sum(c[0] for c in cor) // 4; cg = sum(c[1] for c in cor) // 4; cb = sum(c[2] for c in cor) // 4
     for y in range(h):
         for x in range(w):
             r, g, b, a = px[x, y]
@@ -47,78 +45,109 @@ def keybg(im):
 
 
 def clean_specks(im, min_area):
-    """Supprime les petits îlots isolés (bavures d'une pose voisine sur les bords)
-    en gardant les gros composants (corps, orbe, shuriken, clones)."""
-    w, h = im.size
-    px = im.load()
-    seen = bytearray(w * h)
+    w, h = im.size; px = im.load(); seen = bytearray(w * h)
     for sy in range(h):
         for sx in range(w):
             if px[sx, sy][3] > 24 and not seen[sy * w + sx]:
-                stack = [(sx, sy)]
-                seen[sy * w + sx] = 1
-                comp = []
-                while stack:
-                    x, y = stack.pop()
-                    comp.append((x, y))
+                st = [(sx, sy)]; seen[sy * w + sx] = 1; comp = []
+                while st:
+                    x, y = st.pop(); comp.append((x, y))
                     for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
                         nx, ny = x + dx, y + dy
                         if 0 <= nx < w and 0 <= ny < h and not seen[ny * w + nx] and px[nx, ny][3] > 24:
-                            seen[ny * w + nx] = 1
-                            stack.append((nx, ny))
+                            seen[ny * w + nx] = 1; st.append((nx, ny))
                 if len(comp) < min_area:
                     for x, y in comp:
                         px[x, y] = (0, 0, 0, 0)
     return im
 
 
-def feet(cell):
-    """(centre X des pieds, base Y) à partir des 8% inférieurs du contenu détouré."""
-    bb = cell.getbbox()
-    if not bb:
-        return cell.width // 2, cell.height - 1, 0
-    l, t, r, b = bb
-    px = cell.load()
-    xs = [x for y in range(max(t, b - max(4, int((b - t) * 0.08))), b) for x in range(l, r) if px[x, y][3] > 0]
-    fc = (min(xs) + max(xs)) // 2 if xs else (l + r) // 2
-    return fc, b, (b - t)
-
-
-def slice_strip(path):
+def base_tile(path):
+    """Pose unique → détourée, pixel net, pieds plantés, centrée dans une tuile carrée."""
     im = Image.open(path).convert('RGBA')
-    w, h = im.size
-    fw = w // NFRAMES
-    cells = [keybg(im.crop((i * fw, 0, (i + 1) * fw, h))) for i in range(NFRAMES)]
-    meta = [feet(c) for c in cells]
-    maxh = max((m[2] for m in meta), default=h) or h
-    s = (TILE * FIT_H) / maxh                          # échelle UNIFORME → tailles cohérentes
-    ax, ay = round(TILE * ANCHOR_X), round(TILE * ANCHOR_Y)
+    s0 = 480 / max(im.size)
+    im = keybg(im.resize((round(im.width * s0), round(im.height * s0)), Image.NEAREST))
+    bb = im.getbbox() or (0, 0, im.width, im.height)
+    content_h = bb[3] - bb[1]
+    s = (TILE * FIT_H) / content_h
+    sc = im.resize((max(1, round(im.width * s)), max(1, round(im.height * s))), Image.NEAREST)
+    # pieds = centre horizontal du bas du contenu
+    sb = (round(bb[0] * s), round(bb[1] * s), round(bb[2] * s), round(bb[3] * s))
+    fx = (sb[0] + sb[2]) // 2; fy = sb[3]
+    tile = Image.new('RGBA', (TILE, TILE), (0, 0, 0, 0))
+    tile.alpha_composite(sc, (round(TILE * ANCHOR_X) - fx, round(TILE * ANCHOR_Y) - fy))
+    return clean_specks(tile, 300)
+
+
+def effect_center(tile, mask):
+    px = tile.load(); xs = ys = n = 0
+    for y in range(TILE):
+        for x in range(TILE):
+            r, g, b, a = px[x, y]
+            if a > 30 and mask(r, g, b):
+                xs += x; ys += y; n += 1
+    if n < 30:
+        return None
+    cx, cy = xs / n, ys / n
+    # rayon ~ étendue
+    sp = 0
+    for y in range(TILE):
+        for x in range(TILE):
+            r, g, b, a = px[x, y]
+            if a > 30 and mask(r, g, b):
+                sp += (x - cx) ** 2 + (y - cy) ** 2
+    rad = max(10, min(60, (sp / n) ** 0.5 * 1.1))
+    return cx, cy, rad
+
+
+def animate(tile, mask, col):
+    oc = effect_center(tile, mask) if mask else None
     frames = []
-    for cell, (fc, fb, _) in zip(cells, meta):
-        sc = cell.resize((max(1, round(cell.width * s)), max(1, round(cell.height * s))), Image.NEAREST)
-        tile = Image.new('RGBA', (TILE, TILE), (0, 0, 0, 0))
-        tile.alpha_composite(sc, (ax - round(fc * s), ay - round(fb * s)))  # pieds plantés à (ax, ay)
-        frames.append(clean_specks(tile, 340))  # vire les bavures isolées des cases voisines
+    for i in range(N):
+        t = i / N; ang = 2 * math.pi * t
+        pulse = 0.5 + 0.5 * math.sin(ang)
+        dy = round(1.3 * math.sin(ang))
+        fr = Image.new('RGBA', (TILE, TILE), (0, 0, 0, 0))
+        # bob + pulsation des pixels d'effet (chakra qui « respire »)
+        if mask:
+            src = tile.copy(); sp = src.load()
+            k = 1 + 0.45 * pulse
+            for y in range(TILE):
+                for x in range(TILE):
+                    r, g, b, a = sp[x, y]
+                    if a and mask(r, g, b):
+                        sp[x, y] = (min(255, int(r * k)), min(255, int(g * k)), min(255, int(b * k)), a)
+            fr.alpha_composite(src, (0, dy))
+        else:
+            fr.alpha_composite(tile, (0, dy))
+        # étincelles qui tournent autour de l'orbe (vend la rotation du chakra)
+        if oc:
+            cx, cy, rad = oc; ov = Image.new('RGBA', (TILE, TILE), (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
+            for kk in range(6):
+                a2 = ang + kk * (math.pi / 3)
+                x = cx + rad * math.cos(a2); y = cy + dy + rad * math.sin(a2)
+                rr = 2.2 + 1.8 * (0.5 + 0.5 * math.sin(ang * 2 + kk))
+                d.ellipse([x - rr, y - rr, x + rr, y + rr], fill=(*col, 210))
+            fr.alpha_composite(ov)
+        frames.append(fr)
     return frames
 
 
 def main():
     done = []
-    for mid in MOVES:
-        src = os.path.join(SRC, f'{mid}-strip.png')
+    for mid, mask, col in MOVES:
+        src = os.path.join(SRC, f'{mid}.png')
         if not os.path.exists(src):
-            print(f'  ✗ {mid:14s} strip manquante ({src})')
-            continue
-        frames = slice_strip(src)
-        frames[0].save(os.path.join(BASE, f'{mid}.webp'), save_all=True, append_images=frames[1:],
-                       duration=DUR[:len(frames)], loop=0, disposal=2)
-        sheet = Image.new('RGBA', (TILE * len(frames), TILE), (0, 0, 0, 0))
+            print(f'  ✗ {mid:14s} source manquante'); continue
+        frames = animate(base_tile(src), mask, col)
+        frames[0].save(os.path.join(BASE, f'{mid}.webp'), save_all=True, append_images=frames[1:], duration=DUR, loop=0, disposal=2)
+        sheet = Image.new('RGBA', (TILE * N, TILE), (0, 0, 0, 0))
         for i, fr in enumerate(frames):
             sheet.paste(fr, (i * TILE, 0))
         sheet.save(os.path.join(BASE, f'{mid}-sheet.png'))
         kb = os.path.getsize(os.path.join(BASE, f'{mid}.webp')) // 1024
         done.append(mid)
-        print(f'  ✓ {mid:14s} {len(frames)} poses · {kb}Ko webp · sheet {TILE * len(frames)}x{TILE}')
+        print(f'  ✓ {mid:14s} {N} frames · {kb}Ko webp · orbe={"oui" if (mask) else "non"}')
     print(f'\n{len(done)} techniques → {BASE}')
 
 

@@ -19,7 +19,7 @@ const scanlines = 'repeating-linear-gradient(0deg, rgba(0,0,0,0.32) 0px, rgba(0,
 const MONO = 'ui-monospace, "SFMono-Regular", Menlo, monospace';
 // Les sprites sont régénérés sous le MÊME nom de fichier → on casse le cache navigateur/CDN
 // à chaque itération (bump à incrémenter quand on régénère les anims).
-const ASSET_V = 'v3';
+const ASSET_V = 'v4';
 
 function Cmd({ command }: { command: string }) {
   return (
