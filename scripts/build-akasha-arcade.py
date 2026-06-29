@@ -63,19 +63,16 @@ def clean_specks(im, min_area):
 
 
 def base_tile(path):
-    """Pose unique → détourée, pixel net, pieds plantés, centrée dans une tuile carrée."""
-    im = Image.open(path).convert('RGBA')
-    s0 = 480 / max(im.size)
-    im = keybg(im.resize((round(im.width * s0), round(im.height * s0)), Image.NEAREST))
-    bb = im.getbbox() or (0, 0, im.width, im.height)
-    content_h = bb[3] - bb[1]
-    s = (TILE * FIT_H) / content_h
-    sc = im.resize((max(1, round(im.width * s)), max(1, round(im.height * s))), Image.NEAREST)
-    # pieds = centre horizontal du bas du contenu
-    sb = (round(bb[0] * s), round(bb[1] * s), round(bb[2] * s), round(bb[3] * s))
-    fx = (sb[0] + sb[2]) // 2; fy = sb[3]
+    """Pose carrée (déjà composée) → détourée, pixel net, CENTRÉE (contain) dans la tuile.
+    On ne rogne rien : tout le perso + l'effet restent visibles (cadrage propre)."""
+    im = keybg(Image.open(path).convert('RGBA'))
+    bb = im.getbbox()
+    if bb:
+        im = im.crop(bb)
+    s = (TILE * 0.96) / max(im.size)
+    im = im.resize((max(1, round(im.width * s)), max(1, round(im.height * s))), Image.NEAREST)
     tile = Image.new('RGBA', (TILE, TILE), (0, 0, 0, 0))
-    tile.alpha_composite(sc, (round(TILE * ANCHOR_X) - fx, round(TILE * ANCHOR_Y) - fy))
+    tile.alpha_composite(im, ((TILE - im.width) // 2, (TILE - im.height) // 2))
     return clean_specks(tile, 300)
 
 
