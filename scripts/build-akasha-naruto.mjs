@@ -198,6 +198,26 @@ const STATUSES = [
   ['sannin', 'Sannin légendaires', 'Titre', "Titre des trois élèves d'exception d'Hiruzen : Jiraiya, Tsunade, Orochimaru.", 'epic'],
 ];
 
+// ─── Databook : sprite idle + stats /5 (8 axes) par mode de Naruto ────
+const IDLE_SLUG = {
+  'Partie I': 'partie-i', '1 Queue': '1-queue', 'Version 2': 'version-2', 'Partie II': 'partie-ii',
+  'Mode Ermite': 'mode-ermite', 'Chakra Kurama': 'chakra-kurama', 'Bijū Mode': 'biju-mode',
+  'Six Chemins': 'six-chemins', Hokage: 'hokage', 'Mode Baryon': 'mode-baryon',
+};
+// nin=Ninjutsu tai=Taijutsu gen=Genjutsu int=Intelligence for=Force vit=Vitesse end=Endurance sce=Sceaux
+const NARUTO_STATS = {
+  'Partie I':      { nin: 2,   tai: 1.5, gen: 1,   int: 1.5, for: 2,   vit: 2,   end: 3.5, sce: 2 },
+  '1 Queue':       { nin: 2.5, tai: 2.5, gen: 1,   int: 1,   for: 3.5, vit: 3,   end: 4,   sce: 1.5 },
+  'Version 2':     { nin: 3,   tai: 3.5, gen: 1,   int: 0.5, for: 4.5, vit: 4,   end: 4.5, sce: 1 },
+  'Partie II':     { nin: 3.5, tai: 3,   gen: 1,   int: 2.5, for: 3.5, vit: 3.5, end: 5,   sce: 3 },
+  'Mode Ermite':   { nin: 4.5, tai: 4,   gen: 1.5, int: 3,   for: 4.5, vit: 4,   end: 5,   sce: 3.5 },
+  'Chakra Kurama': { nin: 4.5, tai: 4,   gen: 1.5, int: 3,   for: 4.5, vit: 5,   end: 5,   sce: 3.5 },
+  'Bijū Mode':     { nin: 5,   tai: 4.5, gen: 2,   int: 3.5, for: 5,   vit: 5,   end: 5,   sce: 4 },
+  'Six Chemins':   { nin: 5,   tai: 5,   gen: 3,   int: 4,   for: 5,   vit: 5,   end: 5,   sce: 4.5 },
+  Hokage:          { nin: 5,   tai: 4.5, gen: 2.5, int: 4,   for: 4.5, vit: 4.5, end: 5,   sce: 4.5 },
+  'Mode Baryon':   { nin: 5,   tai: 5,   gen: 3,   int: 4,   for: 5,   vit: 5,   end: 5,   sce: 5 },
+};
+
 function entry(slug, type, name, summary, rarity, attributes, image_url, description) {
   return { slug, type, name, is_fiction: true, universe: 'Naruto', summary, description: description ?? summary, image_url: image_url ?? null, attributes, rarity };
 }
@@ -283,6 +303,8 @@ async function main() {
         age: f.age, height: f.height, weight: f.weight, rank: f.rank,
         classification: f.classification, natures: f.natures, kekkeiGenkai: f.kg,
         occupation: f.occupation, affiliation: f.affiliation, signature: f.signature, arc: f.arc,
+        idle: IDLE_SLUG[f.label] ? `/images/akasha/naruto/idle/${IDLE_SLUG[f.label]}.webp` : undefined,
+        stats: NARUTO_STATS[f.label],
       })).filter((f) => f.url),
       animations: c.anims || [],
     });

@@ -6,6 +6,7 @@
 import type { ReactNode } from 'react';
 import CardArt from './CardArt';
 import { CategoryIcon } from './NarutoIcons';
+import type { Stats } from './DatabookRadar';
 import { RARITY_META, TYPE_META, type AkashaEntry } from '@/lib/akasha/types';
 
 const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
@@ -18,6 +19,7 @@ type Form = {
   age?: string; height?: string; weight?: string; rank?: string; arc?: string;
   classification?: string[]; natures?: string[]; kekkeiGenkai?: string[];
   occupation?: string[]; affiliation?: string[]; signature?: string[];
+  idle?: string; stats?: Stats;
 };
 
 function Gem({ color, size = 14 }: { color: string; size?: number }) {
@@ -151,6 +153,8 @@ export default function CharacterCard({ entry, sel, onSelect }: { entry: AkashaE
               clan={clan}
               natures={artNatures}
               fallbackIcon={m.icon}
+              idle={f.idle ?? null}
+              stats={f.stats ?? null}
             />
           </div>
 
