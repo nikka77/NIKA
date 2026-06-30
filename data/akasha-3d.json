@@ -1,0 +1,9 @@
+{
+  "_comment": "Modèles 3D temps réel par personnage. GLB riggé + animé généré via Higgsfield (Meshy image_to_3d → texture → rig humanoïde → clip d'animation). Affiché par <Character3D> avec <model-viewer> auto-hébergé. Clé = slug de l'entité AKASHA.",
+  "naruto-uzumaki": {
+    "src": "/models/akasha/naruto-mv.glb",
+    "poster": "/models/akasha/naruto-poster.png",
+    "label": "Naruto Uzumaki",
+    "note": "Mesh multi-vues (face+dos), riggé 24 os — clip Rasengan, spirale Uzumaki au dos"
+  }
+}

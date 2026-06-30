@@ -1,0 +1,7 @@
+{
+  "_comment": "Moveset 2D jouable par personnage. Sprites générés par le Soul Higgsfield (identité verrouillée) puis détourés/recalés (scripts/build-akasha-moveset.py). Le mouvement (rebond, pas, saut, coups) est piloté par code dans <Moveset2D>. Frames standard attendues dans <dir> : idle, walk_a, walk_b, crouch, jump, punch, kick (.png). Clé = slug AKASHA.",
+  "naruto-uzumaki": {
+    "dir": "/images/akasha/moveset/naruto",
+    "label": "Naruto Uzumaki"
+  }
+}

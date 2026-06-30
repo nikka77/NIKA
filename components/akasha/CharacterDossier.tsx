@@ -4,8 +4,12 @@ import { useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { ChakraNatureIcon, familyLabel, CategoryIcon } from './NarutoIcons';
 import EntityRelations from './EntityRelations';
-import ArcadeMoves from './ArcadeMoves';
+import Moveset2D from './Moveset2D';
+import Character3D from './Character3D';
+import threeD from '@/data/akasha-3d.json';
 import type { AkashaEntryDetail } from '@/lib/akasha/types';
+
+type Model3D = { src: string; poster?: string; note?: string };
 
 const ACCENT = '#7B5CF0';
 
@@ -82,7 +86,11 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
   const weightV = fstr(f.weight, a.weight);
   const vitals = [ageV, heightV, weightV, str(a.bloodType), str(a.sex), str(a.birthdate)].some(Boolean);
 
+  const model3d = (threeD as unknown as Record<string, Model3D>)[entry.slug];
+
   const tabs = [
+    // 3D masquée pour l'instant (demande Dan) — remettre `show: !!model3d` pour la réactiver.
+    { key: 'modele3d', label: '⬢ 3D', show: false },
     { key: 'identite', label: 'Identité', show: vitals || classification.length || affiliation.length || occupation.length },
     { key: 'aptitudes', label: 'Aptitudes', show: natures.length || kekkei.length || jutsu.length },
     { key: 'arsenal', label: 'Arsenal', show: tools.length },
@@ -119,6 +127,10 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
       </div>
 
       <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 14, padding: 15, display: 'flex', flexDirection: 'column', gap: 16 }}>
+        {active === 'modele3d' && model3d && (
+          <Character3D src={model3d.src} poster={model3d.poster} note={model3d.note} accent={ACCENT} />
+        )}
+
         {active === 'identite' && (
           <>
             {vitals && (
@@ -148,7 +160,7 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
             )}
             {kekkei.length > 0 && <Sec title="Kekkei Genkai" accent="#D44B24" icon="kekkei"><Chips items={kekkei} color="#D44B24" /></Sec>}
             {jutsu.length > 0 && <Sec title={`Techniques · ${jutsu.length}`} icon="techniques"><Chips items={jutsu} color={ACCENT} /></Sec>}
-            <ArcadeMoves slug={entry.slug} />
+            <Moveset2D slug={entry.slug} />
           </>
         )}
 

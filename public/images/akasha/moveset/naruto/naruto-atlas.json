@@ -1,0 +1,92 @@
+{
+  "image": "naruto-sheet.png",
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "frames": [
+    "idle",
+    "walk_a",
+    "pass",
+    "walk_b",
+    "crouch",
+    "jump",
+    "punch_wind",
+    "punch2",
+    "punch_near",
+    "punch",
+    "kick_wind",
+    "kick"
+  ],
+  "frameIndex": {
+    "idle": 0,
+    "walk_a": 1,
+    "pass": 2,
+    "walk_b": 3,
+    "crouch": 4,
+    "jump": 5,
+    "punch_wind": 6,
+    "punch2": 7,
+    "punch_near": 8,
+    "punch": 9,
+    "kick_wind": 10,
+    "kick": 11
+  },
+  "animations": {
+    "idle": {
+      "frames": [
+        "idle"
+      ],
+      "fps": 4,
+      "loop": true
+    },
+    "walk": {
+      "frames": [
+        "walk_a",
+        "pass",
+        "walk_b",
+        "pass"
+      ],
+      "fps": 7,
+      "loop": true
+    },
+    "crouch": {
+      "frames": [
+        "crouch"
+      ],
+      "fps": 2,
+      "loop": true
+    },
+    "jump": {
+      "frames": [
+        "jump"
+      ],
+      "fps": 2,
+      "loop": false
+    },
+    "punch": {
+      "frames": [
+        "idle",
+        "punch_wind",
+        "punch2",
+        "punch_near",
+        "punch",
+        "punch_near",
+        "punch2",
+        "punch_wind",
+        "idle"
+      ],
+      "fps": 12,
+      "loop": true
+    },
+    "kick": {
+      "frames": [
+        "idle",
+        "kick_wind",
+        "kick",
+        "kick_wind",
+        "idle"
+      ],
+      "fps": 10,
+      "loop": true
+    }
+  }
+}
