@@ -13,6 +13,15 @@ type Model3D = { src: string; poster?: string; note?: string };
 
 const ACCENT = '#7B5CF0';
 
+// Aura de chakra selon la forme active (déclenche l'overlay dans le moveset). null = pas d'aura.
+const chakraAura = (label: string): string | null => {
+  const l = label.toLowerCase();
+  if (/six chemins|baryon|bij[uū]/.test(l)) return '#ffd24a'; // doré (Bijū / Six Chemins / Baryon)
+  if (/kurama/.test(l)) return '#ff9c1e';                      // orange chakra (Chakra Kurama)
+  if (/queue|version/.test(l)) return '#ff4d2a';              // manteau rouge (1 Queue / Version 2)
+  return null;                                                 // Partie I/II, Ermite, Hokage
+};
+
 const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
 const list = (v: unknown): string[] =>
   Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string' && x.trim().length > 0) : str(v) ? [v as string] : [];
@@ -81,6 +90,7 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
   const occupation = pick(f.occupation, a.occupation);
   const affiliation = pick(f.affiliation, a.affiliation);
   const family = familyList(a.family);
+  const titles = list(a.titles);
   const ageV = fstr(f.age, a.age);
   const heightV = fstr(f.height, a.height);
   const weightV = fstr(f.weight, a.weight);
@@ -91,7 +101,7 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
   const tabs = [
     // 3D masquée pour l'instant (demande Dan) — remettre `show: !!model3d` pour la réactiver.
     { key: 'modele3d', label: '⬢ 3D', show: false },
-    { key: 'identite', label: 'Identité', show: vitals || classification.length || affiliation.length || occupation.length },
+    { key: 'identite', label: 'Identité', show: vitals || classification.length || affiliation.length || occupation.length || titles.length },
     { key: 'aptitudes', label: 'Aptitudes', show: natures.length || kekkei.length || jutsu.length },
     { key: 'arsenal', label: 'Arsenal', show: tools.length },
     { key: 'famille', label: 'Famille', show: family.length },
@@ -146,6 +156,7 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
             {classification.length > 0 && <Sec title="Classification" icon="classification"><Chips items={classification} color="#7B5CF0" /></Sec>}
             {affiliation.length > 0 && <Sec title="Affiliations" accent="#0EA878" icon="affiliations"><Chips items={affiliation} color="#0EA878" /></Sec>}
             {occupation.length > 0 && <Sec title="Fonctions" accent="#0094D4" icon="fonctions"><Chips items={occupation} color="#0094D4" /></Sec>}
+            {titles.length > 0 && <Sec title="Surnoms" accent="#D4A017"><Chips items={titles} color="#D4A017" /></Sec>}
           </>
         )}
 
@@ -160,7 +171,7 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
             )}
             {kekkei.length > 0 && <Sec title="Kekkei Genkai" accent="#D44B24" icon="kekkei"><Chips items={kekkei} color="#D44B24" /></Sec>}
             {jutsu.length > 0 && <Sec title={`Techniques · ${jutsu.length}`} icon="techniques"><Chips items={jutsu} color={ACCENT} /></Sec>}
-            <Moveset2D slug={entry.slug} />
+            <Moveset2D slug={entry.slug} aura={chakraAura(str(f.label) ?? '')} />
           </>
         )}
 

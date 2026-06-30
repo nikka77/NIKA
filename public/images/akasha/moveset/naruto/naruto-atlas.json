@@ -4,31 +4,55 @@
   "frameHeight": 256,
   "frames": [
     "idle",
-    "walk_a",
-    "pass",
-    "walk_b",
+    "idle2",
+    "walk1",
+    "walk2",
+    "walk3",
+    "walk4",
+    "walk5",
+    "walk6",
+    "run1",
+    "run2",
+    "run3",
+    "run4",
+    "run5",
+    "run6",
     "crouch",
     "jump",
-    "punch_wind",
-    "punch2",
-    "punch_near",
-    "punch",
-    "kick_wind",
-    "kick"
+    "punch_a",
+    "punch_b",
+    "kick_a",
+    "kick_b",
+    "kick_c",
+    "guard",
+    "chakra",
+    "taunt"
   ],
   "frameIndex": {
     "idle": 0,
-    "walk_a": 1,
-    "pass": 2,
-    "walk_b": 3,
-    "crouch": 4,
-    "jump": 5,
-    "punch_wind": 6,
-    "punch2": 7,
-    "punch_near": 8,
-    "punch": 9,
-    "kick_wind": 10,
-    "kick": 11
+    "idle2": 1,
+    "walk1": 2,
+    "walk2": 3,
+    "walk3": 4,
+    "walk4": 5,
+    "walk5": 6,
+    "walk6": 7,
+    "run1": 8,
+    "run2": 9,
+    "run3": 10,
+    "run4": 11,
+    "run5": 12,
+    "run6": 13,
+    "crouch": 14,
+    "jump": 15,
+    "punch_a": 16,
+    "punch_b": 17,
+    "kick_a": 18,
+    "kick_b": 19,
+    "kick_c": 20,
+    "guard": 21,
+    "chakra": 22,
+    "taunt": 23
   },
   "animations": {
     "idle": {
@@ -40,12 +64,26 @@
     },
     "walk": {
       "frames": [
-        "walk_a",
-        "pass",
-        "walk_b",
-        "pass"
+        "walk1",
+        "walk2",
+        "walk3",
+        "walk4",
+        "walk5",
+        "walk6"
       ],
-      "fps": 7,
+      "fps": 10,
+      "loop": true
+    },
+    "run": {
+      "frames": [
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5",
+        "run6"
+      ],
+      "fps": 14,
       "loop": true
     },
     "crouch": {
@@ -65,13 +103,9 @@
     "punch": {
       "frames": [
         "idle",
-        "punch_wind",
-        "punch2",
-        "punch_near",
-        "punch",
-        "punch_near",
-        "punch2",
-        "punch_wind",
+        "punch_a",
+        "punch_b",
+        "punch_a",
         "idle"
       ],
       "fps": 12,
@@ -80,12 +114,40 @@
     "kick": {
       "frames": [
         "idle",
-        "kick_wind",
-        "kick",
-        "kick_wind",
+        "kick_a",
+        "kick_b",
+        "kick_c",
         "idle"
       ],
       "fps": 10,
+      "loop": true
+    },
+    "guard": {
+      "frames": [
+        "guard"
+      ],
+      "fps": 2,
+      "loop": true
+    },
+    "chakra": {
+      "frames": [
+        "chakra"
+      ],
+      "fps": 2,
+      "loop": true
+    },
+    "taunt": {
+      "frames": [
+        "taunt"
+      ],
+      "fps": 2,
+      "loop": false
+    },
+    "idle_break": {
+      "frames": [
+        "idle2"
+      ],
+      "fps": 2,
       "loop": true
     }
   }

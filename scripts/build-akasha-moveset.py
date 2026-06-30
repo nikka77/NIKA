@@ -11,16 +11,24 @@ from PIL import Image
 
 # ordre des frames dans la sprite-sheet + groupes d'animation (atlas game-ready,
 # = ce que produisait AutoSprite, mais fabriqué en local depuis nos frames Soul)
-SHEET_ORDER = ['idle', 'walk_a', 'pass', 'walk_b', 'crouch', 'jump', 'punch_wind', 'punch2', 'punch_near', 'punch', 'kick_wind', 'kick']
+SHEET_ORDER = ['idle', 'idle2', 'walk1', 'walk2', 'walk3', 'walk4', 'walk5', 'walk6', 'run1', 'run2', 'run3', 'run4', 'run5', 'run6', 'crouch', 'jump', 'punch_a', 'punch_b', 'kick_a', 'kick_b', 'kick_c', 'guard', 'chakra', 'taunt']
 ANIMS = {
     'idle': {'frames': ['idle'], 'fps': 4, 'loop': True},
-    'walk': {'frames': ['walk_a', 'pass', 'walk_b', 'pass'], 'fps': 7, 'loop': True},
+    # marche = CYCLE 6 temps (contact G · recoil G · passing G · contact D · recoil D · passing D), boucle
+    'walk': {'frames': ['walk1', 'walk2', 'walk3', 'walk4', 'walk5', 'walk6'], 'fps': 10, 'loop': True},
+    # course = CYCLE 6 temps (contact/push/vol × 2), plus rapide que la marche, penché en avant
+    'run': {'frames': ['run1', 'run2', 'run3', 'run4', 'run5', 'run6'], 'fps': 14, 'loop': True},
     'crouch': {'frames': ['crouch'], 'fps': 2, 'loop': True},
     'jump': {'frames': ['jump'], 'fps': 2, 'loop': False},
-    # poing = ping-pong 5 clés 1-2-3-4-5-4-3-2-1 : repos → armé → mi → quasi → tendu → …
-    'punch': {'frames': ['idle', 'punch_wind', 'punch2', 'punch_near', 'punch', 'punch_near', 'punch2', 'punch_wind', 'idle'], 'fps': 12, 'loop': True},
-    # pied = ping-pong 1-2-3-2-1 : repos → genou levé → jambe tendue → genou levé → repos
-    'kick': {'frames': ['idle', 'kick_wind', 'kick', 'kick_wind', 'idle'], 'fps': 10, 'loop': True},
+    # poing = 1-2-3-2-1 (aller-retour symétrique) : repos → armé → extension → armé → repos
+    'punch': {'frames': ['idle', 'punch_a', 'punch_b', 'punch_a', 'idle'], 'fps': 12, 'loop': True},
+    # pied = 1-2-3-4-1 (arc asymétrique) : repos → genou armé → extension → repli avant → repos
+    'kick': {'frames': ['idle', 'kick_a', 'kick_b', 'kick_c', 'idle'], 'fps': 10, 'loop': True},
+    # pack de vie (poses tenues / one-shot, animées par effets côté code)
+    'guard': {'frames': ['guard'], 'fps': 2, 'loop': True},
+    'chakra': {'frames': ['chakra'], 'fps': 2, 'loop': True},
+    'taunt': {'frames': ['taunt'], 'fps': 2, 'loop': False},
+    'idle_break': {'frames': ['idle2'], 'fps': 2, 'loop': True},
 }
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -30,7 +38,10 @@ TILE = 256
 PIXEL_TILE = 84       # taille des frames pixel-art (perso ~chunky 16-bit) ; upscalé en CSS (pixelated)
 PALETTE_COLORS = 28   # palette rétro COMMUNE à toutes les frames (couleurs stables = pas de scintillement)
 # poses "debout" mises à la MÊME hauteur écran (on EXCLUT crouch/jump qui sont compacts)
-STANDING = {'idle', 'walk_a', 'walk_b', 'pass', 'punch', 'punch2', 'punch_wind', 'punch_near', 'kick', 'kick_wind'}
+STANDING = {'idle', 'idle2', 'guard', 'chakra', 'taunt', 'walk1', 'walk2', 'walk3', 'walk4', 'walk5', 'walk6', 'punch_a', 'punch_b', 'kick_a', 'kick_b', 'kick_c'}
+# course = poses PENCHÉES → on NE normalise PAS par boîte (sinon le corps grandit sur les frames penchées) :
+# échelle COMMUNE = celle de la marche (même corps, la hauteur de silhouette varie avec l'inclinaison).
+RUN = {'run1', 'run2', 'run3', 'run4', 'run5', 'run6'}
 
 
 def keybg(im, thr=66):
@@ -169,6 +180,14 @@ def main():
     TARGET = TILE * 0.92
     st = [TARGET / heights[k] for k in heights if k in STANDING] or [TARGET / h for h in heights.values()]
     avg_scale = sum(st) / len(st)
+    # crouch/jump (poses compactes, HORS STANDING) → recalés à l'ÉCHELLE DE L'IDLE (même génération/caméra),
+    # PAS la moyenne : sinon des frames d'une autre échelle source (walk/chakra ~2100px vs idle ~1076px)
+    # polluent la moyenne et rapetissent le saut (bug « le saut rend le perso plus petit »).
+    ref_scale = (TARGET / heights['idle']) if 'idle' in heights else avg_scale
+    # course : échelle COMMUNE = moyenne des échelles de la MARCHE (même corps que la marche,
+    # la silhouette reste plus courte sur les poses penchées — pas de "grossissement" par boîte).
+    wsc = [TARGET / heights[k] for k in heights if k.startswith('walk')]
+    run_scale = (sum(wsc) / len(wsc)) if wsc else avg_scale
     # Source = VRAIS sprites 16-bit (générés par nano_banana_pro, style carte) → on garde les
     # gros pixels : recalage NEAREST + échelle commune + pieds au sol. PAS de pixelize (le
     # downscale d'images lisses rendait moche). Détourage + plus grande composante (cf. detoure()).
@@ -178,7 +197,7 @@ def main():
         b = bb.get(mid)
         if not b:
             continue
-        s = (TARGET / heights[mid]) if mid in STANDING else avg_scale
+        s = (TARGET / heights[mid]) if mid in STANDING else run_scale if mid in RUN else ref_scale
         crop = im.crop(b)
         nw = max(1, round(crop.width * s)); nh = max(1, round(crop.height * s))
         crop = crop.resize((nw, nh), Image.NEAREST)
