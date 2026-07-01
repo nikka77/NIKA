@@ -42,6 +42,10 @@ const CHARACTERS = [
     role: 'Hokage, Jinchūriki', summary: "Orphelin turbulent devenu héros et Septième Hokage, hôte du renard Kurama.",
     kg: [],                       // clan Uzumaki = aucun kekkei genkai personnel (les natures exotiques viennent de Kurama)
     nat: ['Wind Release', 'Yin–Yang Release'],
+    // techniques signature en tête de liste (le reste — 94 au total — suit dans l'ordre API)
+    jutsuPriority: ['Rasengan', 'Shadow Clone Technique', 'Multiple Shadow Clone Technique', 'Sage Mode',
+      'Six Paths Sage Mode', 'Tailed Beast Ball', 'Wind Release: Rasenshuriken', 'Nine-Tails Chakra Mode',
+      'Baryon Mode', 'Sexy Technique', 'One Thousand Years of Death', 'Summoning Technique (Toad)'],
     // Chaque forme = un instantané COHÉRENT calé sur les faits SMW (âge→taille→rang) et l'arc.
     forms: [
       { label: 'Partie I', g: 0, age: '12 ans', height: '1,45 m', weight: '40 kg', rank: 'Genin',
@@ -75,7 +79,7 @@ const CHARACTERS = [
         caption: '17 ans · Mode Chakra de Kurama',
         summary: "Réconcilié avec Kurama, il revêt un manteau de chakra doré marqué de sceaux : vitesse et puissance décuplées." },
       { label: 'Bijū Mode', img: '/images/akasha/naruto/naruto-biju.webp', age: '17 ans', height: '1,80 m', rank: 'Genin',
-        classification: ['Jinchūriki', 'Type Capteur'], natures: ['Wind Release'], occupation: ['Ninja de Konoha'], affiliation: ['Forces Shinobi Alliées'],
+        classification: ['Jinchūriki', 'Ermite (Sage)', 'Type Capteur'], natures: ['Wind Release'], occupation: ['Ninja de Konoha'], affiliation: ['Forces Shinobi Alliées'],
         signature: ['Avatar de Kurama', 'Bijūdama', 'Rasenshuriken'], arc: 'Quatrième Guerre Shinobi',
         caption: '17 ans · Bijū Mode — avatar de Kurama',
         summary: "En pleine symbiose, Naruto matérialise l'avatar complet de Kurama, colossale silhouette de chakra, et déchaîne des Bijūdama." },
@@ -85,7 +89,9 @@ const CHARACTERS = [
         caption: '17 ans · Mode Ermite des Six Chemins',
         summary: "Doté du chakra d'Hagoromo, il accède au Mode Ermite des Six Chemins : vol, boules cherche-vérité et puissance divine pour sceller Kaguya." },
       { label: 'Hokage', img: '/images/akasha/naruto/naruto-hokage.webp', age: 'Adulte', height: '1,80 m', rank: 'Kage',
-        classification: ['Hokage'], natures: ['Wind Release', 'Yin–Yang Release'], occupation: ['Septième Hokage'], affiliation: ['Konohagakure'],
+        // Jinchūriki jusqu'au sacrifice de Kurama (Mode Baryon vs Isshiki) : cette forme couvre l'essentiel
+        // du mandat de Hokage, où Kurama est encore vivant → garder 'Jinchūriki' (cf. forme Mode Baryon).
+        classification: ['Jinchūriki', 'Hokage'], natures: ['Wind Release', 'Yin–Yang Release'], occupation: ['Septième Hokage'], affiliation: ['Konohagakure'],
         signature: ['Rasengan', 'Multiclonage'], arc: 'Boruto — Hokage',
         caption: 'Adulte · Septième Hokage',
         summary: "Devenu le Septième Hokage, il dirige et protège Konoha tout en formant la nouvelle génération de ninjas." },
@@ -255,6 +261,19 @@ async function main() {
     return best || (vals[0] ? cleanNote(vals[0]) : null);
   };
   const purge = (o) => { for (const k of Object.keys(o)) { const v = o[k]; if (v == null || v === '' || (Array.isArray(v) && v.length === 0)) delete o[k]; } return o; };
+  // Caps larges (garde-fou anti-bloat), PAS des troncatures de contenu : l'ancien slice(0,12)/slice(0,8)
+  // coupait sur l'ORDRE ALPHABÉTIQUE brut de l'API → pour Naruto (94 jutsu) ça amputait ses techniques
+  // signature (Rasengan, Shadow Clone Technique… toutes après "C") en ne gardant que des combos mineurs.
+  const JUTSU_CAP = 100, TOOLS_CAP = 20;
+  // priorité optionnelle par perso (c.jutsuPriority) : fait remonter les techniques signature en tête
+  // avant le reste (ordre API), pour un rendu utile même si le total dépasse le cap.
+  const orderJutsu = (list, priority) => {
+    if (!priority?.length) return list;
+    const set = new Set(list);
+    const head = priority.filter((p) => set.has(p));
+    const headSet = new Set(head);
+    return [...head, ...list.filter((j) => !headSet.has(j))];
+  };
 
   // Personnages — attributs riches (stat-block « carte »)
   for (const c of CHARACTERS) {
@@ -284,8 +303,8 @@ async function main() {
       kekkeiGenkai: c.kg ?? [],
       // natures perso curées si fournies (ex. Naruto = Vent), sinon API (les icônes filtrent l'exotique).
       natureType: c.nat ?? arr(api.natureType).map(cleanNote),
-      tools: arr(api.tools).map(cleanNote).slice(0, 8),
-      jutsu: arr(api.jutsu).map(cleanNote).slice(0, 12),
+      tools: arr(api.tools).map(cleanNote).slice(0, TOOLS_CAP),
+      jutsu: orderJutsu(arr(api.jutsu).map(cleanNote), c.jutsuPriority).slice(0, JUTSU_CAP),
       signature: (c.powers || []).map((s) => POWERS.find((p) => p[0] === s)?.[1]).filter(Boolean),
       rank: pickRank(api.rank),
       affiliation: facts ? frList(facts.affiliation) : arr(p.affiliation),
@@ -329,7 +348,7 @@ async function main() {
       role: 'Bête à queues (Bijū)', race: 'Bijū',
       classification: arr(p.classification).map(cleanNote),
       natureType: arr(api?.natureType).map(cleanNote),
-      jutsu: arr(api?.jutsu).map(cleanNote).slice(0, 8),
+      jutsu: arr(api?.jutsu).map(cleanNote).slice(0, JUTSU_CAP),
       gallery: arr(api?.images),
     });
     add(entry(b.slug, 'character', `${b.key} (Bijū)`, b.summary, b.rarity, attributes, attributes.gallery?.[0] || null));

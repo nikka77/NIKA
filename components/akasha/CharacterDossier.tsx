@@ -2,7 +2,7 @@
 // components/akasha/CharacterDossier.tsx — dossier complet d'un personnage, en onglets (max d'infos rangé).
 import { useState, type ReactNode } from 'react';
 import Link from 'next/link';
-import { ChakraNatureIcon, familyLabel, CategoryIcon } from './NarutoIcons';
+import { ChakraNatureIcon, familyLabel, CategoryIcon, ToolIcon } from './NarutoIcons';
 import EntityRelations from './EntityRelations';
 import Moveset2D from './Moveset2D';
 import Character3D from './Character3D';
@@ -56,6 +56,21 @@ function Chips({ items, color }: { items: string[]; color: string }) {
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
       {items.map((t, i) => (
         <span key={i} style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td2)', background: `${color}14`, border: `1px solid ${color}33`, borderRadius: 7, padding: '3px 9px' }}>{t}</span>
+      ))}
+    </div>
+  );
+}
+
+function ToolChips({ items, color }: { items: string[]; color: string }) {
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+      {items.map((t, i) => (
+        <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '5px 11px 5px 5px', background: `${color}0F`, border: `1px solid ${color}33`, borderRadius: 10 }}>
+          <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 28, height: 28, borderRadius: 8, background: `${color}1A`, flexShrink: 0 }}>
+            <ToolIcon name={t} size={20} />
+          </span>
+          <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td2)', fontWeight: 600 }}>{t}</span>
+        </div>
       ))}
     </div>
   );
@@ -176,7 +191,7 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
         )}
 
         {active === 'arsenal' && tools.length > 0 && (
-          <Sec title="Outils & armes" accent="#D4A017" icon="outils"><Chips items={tools} color="#D4A017" /></Sec>
+          <Sec title="Outils & armes" accent="#D4A017" icon="outils"><ToolChips items={tools} color="#D4A017" /></Sec>
         )}
 
         {active === 'famille' && family.length > 0 && (

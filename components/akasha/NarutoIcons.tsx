@@ -159,6 +159,25 @@ export function CategoryIcon({ name, size = 18 }: { name: string; size?: number 
   return <img src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', flexShrink: 0 }} />;
 }
 
+// ─── Icônes d'outils & armes (Higgsfield, style plat détouré + réf. Fandom) ──
+const foldAscii = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const TOOL_IMG: Record<string, string> = {
+  'absorbing hand': 'absorbing-hand',
+  'bo': 'bo',
+  'chakra blade': 'chakra-blade',
+  'flying thunder god kunai': 'flying-thunder-god-kunai',
+  'fuma shuriken': 'fuma-shuriken',
+  'hidden kunai mechanism': 'hidden-kunai-mechanism',
+  'konoha chakra blade': 'konoha-chakra-blade',
+  'sand': 'sand-tool',
+};
+export function ToolIcon({ name, size = 28 }: { name: string; size?: number }) {
+  const slug = TOOL_IMG[foldAscii(name.trim())];
+  const src = slug ? `/images/akasha/ref/${slug}.webp` : '/images/akasha/cat/outils.webp';
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', flexShrink: 0 }} />;
+}
+
 // Libellés FR des liens de famille (API → français).
 export const FAMILY_LABELS: Record<string, string> = {
   father: 'Père', mother: 'Mère', son: 'Fils', daughter: 'Fille',
