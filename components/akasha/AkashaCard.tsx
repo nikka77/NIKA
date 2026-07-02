@@ -1,7 +1,7 @@
 // components/akasha/AkashaCard.tsx — carte d'entité (grille du registre).
 import Link from 'next/link';
 import EntityBadge from './EntityBadge';
-import { TYPE_META, RARITY_META, type AkashaEntryCard } from '@/lib/akasha/types';
+import { TYPE_META, RARITY_META, universeMeta, type AkashaEntryCard } from '@/lib/akasha/types';
 
 export default function AkashaCard({ entry }: { entry: AkashaEntryCard }) {
   const m = TYPE_META[entry.type];
@@ -39,7 +39,7 @@ export default function AkashaCard({ entry }: { entry: AkashaEntryCard }) {
             src={entry.image_url}
             alt=""
             loading="lazy"
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
           />
         ) : (
           <span aria-hidden style={{ fontSize: 40, opacity: 0.5 }}>
@@ -79,7 +79,9 @@ export default function AkashaCard({ entry }: { entry: AkashaEntryCard }) {
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
           {entry.universe && (
-            <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>{entry.universe}</span>
+            <span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 600, color: universeMeta(entry.universe).color }}>
+              {universeMeta(entry.universe).emoji} {entry.universe}
+            </span>
           )}
           <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 600, color: entry.is_fiction ? m.color : 'var(--td3)' }}>
             {entry.is_fiction ? '✦ Fiction' : '◆ Réel'}

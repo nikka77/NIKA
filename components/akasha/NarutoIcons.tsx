@@ -162,6 +162,8 @@ export function CategoryIcon({ name, size = 18 }: { name: string; size?: number 
 // ─── Icônes d'outils & armes (Higgsfield, style plat détouré + réf. Fandom) ──
 const foldAscii = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 const TOOL_IMG: Record<string, string> = {
+  'kunai': 'kunai',
+  'shuriken': 'shuriken',
   'absorbing hand': 'absorbing-hand',
   'bo': 'bo',
   'chakra blade': 'chakra-blade',

@@ -46,6 +46,35 @@ const CHARACTERS = [
     jutsuPriority: ['Rasengan', 'Shadow Clone Technique', 'Multiple Shadow Clone Technique', 'Sage Mode',
       'Six Paths Sage Mode', 'Tailed Beast Ball', 'Wind Release: Rasenshuriken', 'Nine-Tails Chakra Mode',
       'Baryon Mode', 'Sexy Technique', 'One Thousand Years of Death', 'Summoning Technique (Toad)'],
+    // Surnoms curés en FR (l'API renvoie un dump kanji+romaji collé, illisible) — canon Narutopedia.
+    titles: ['Ninja hyperactif imprévisible n°1', "L'Enfant de la Prophétie", 'Le Sauveur de ce monde',
+      'Le Héros de Konoha', 'Le Garçon aux miracles', 'Le Hokage orange de Konoha', 'Septième Hokage', 'Le Renard'],
+    nindo: 'Je ne reviens jamais sur ma parole. C\'est ça, mon nindō : ma voie du ninja !',
+    nindoLabel: 'Nindō · sa voie du ninja',
+    // Arsenal CURÉ : l'API agrège des outils film/jeu/autres persos (Sable=Gaara, Pierre de Gelel=film,
+    // lames/mécanismes=autres ninjas). Naruto n'est pas un porteur d'armes → basiques + Fūma + Hiraishin emprunté.
+    tools: ['Kunai', 'Shuriken', 'Fūma Shuriken', 'Flying Thunder God Kunai'],
+    status: 'Vivant',
+    biju: 'Kurama', // l'API dump les 9 bijū (chakra reçu en guerre) → curé au bijū réel
+    squad: { name: 'Équipe 7 · Team Kakashi', members: [
+      { rel: 'Sensei', name: 'Kakashi Hatake', slug: 'kakashi-hatake' },
+      { rel: 'Coéquipier', name: 'Sasuke Uchiha', slug: 'sasuke-uchiha' },
+      { rel: 'Coéquipière', name: 'Sakura Haruno', slug: 'sakura-haruno' },
+    ] },
+    bio: "Orphelin dès sa naissance, Naruto porte en lui Kurama, le Démon-Renard à neuf queues scellé par son père le Quatrième Hokage. Rejeté et craint par le village, il masque sa solitude derrière des farces et un rêve tenace : devenir Hokage pour être enfin reconnu. Intégré à l'Équipe 7 sous Kakashi, il se lie à Sasuke et Sakura, apprend le Multiclonage puis le Rasengan, et se révèle aux Examens Chūnin. Après deux ans et demi d'entraînement avec Jiraiya, il maîtrise le Rasenshuriken, puis le Mode Ermite avec lequel il terrasse Pain et sauve Konoha. Durant la Quatrième Grande Guerre Shinobi, il se réconcilie avec Kurama, débloque le Mode Chakra puis le pouvoir des Six Chemins, et scelle Kaguya aux côtés de Sasuke. Devenu le Septième Hokage, il veille sur une ère de paix — jusqu'au Mode Baryon, ultime sacrifice contre Isshiki.",
+    personality: "Hyperactif, bruyant et impulsif, Naruto cache sous ses pitreries la blessure d'un enfant seul. Sa détermination ne faiblit jamais et son optimisme est contagieux. Son arme la plus puissante n'est pas le chakra mais les liens : il a le don de comprendre la douleur de ses ennemis et de les transformer en alliés — ce que Jiraiya appelait son « ninjutsu de la parole ».",
+    quotes: [
+      'Crois-le ! (Dattebayo !)',
+      'Quand on protège quelque chose de vraiment précieux… on devient vraiment fort.',
+      "Le vrai perdant, ce n'est pas celui qui échoue, c'est celui qui abandonne.",
+      "Je deviendrai Hokage, et tout le village devra reconnaître mon existence !",
+    ],
+    trivia: [
+      "« Naruto » désigne les tourbillons marins et le narutomaki, la garniture en spirale des ramen ; son prénom vient du héros du roman de Jiraiya.",
+      "Ses ramen préférés : le miso chāshū du restaurant Ichiraku.",
+      "Il est le premier Hokage à ne descendre d'aucun clan fondateur prestigieux.",
+      "Enfant, il ratait systématiquement le clonage à l'Académie — l'épreuve qu'il finit par réussir grâce au Multiclonage de l'ombre.",
+    ],
     // Chaque forme = un instantané COHÉRENT calé sur les faits SMW (âge→taille→rang) et l'arc.
     forms: [
       { label: 'Partie I', g: 0, age: '12 ans', height: '1,45 m', weight: '40 kg', rank: 'Genin',
@@ -58,16 +87,18 @@ const CHARACTERS = [
         signature: ['Manteau de Kurama — 1 queue', 'Rasengan'], arc: 'Récupération de Sasuke',
         caption: '12 ans · Premier manteau de Kurama (déchaîné)',
         summary: "À la Vallée de la Fin contre Sasuke, la rage fait déborder le chakra de Kurama en un manteau à une queue." },
-      { label: 'Version 2', img: '/images/akasha/naruto/naruto-v2.webp', age: '~15 ans', height: '1,66 m', weight: '51 kg', rank: 'Genin',
-        classification: ['Jinchūriki'], natures: [], occupation: ['Ninja de Konoha'], affiliation: ['Konohagakure'],
-        signature: ['Manteau de Kurama — 4 queues', 'Bombe de chakra'], arc: 'Pont Tenchi (vs Orochimaru)',
-        caption: '~15 ans · Version 2 — forme déchaînée (4 queues)',
-        summary: "Submergé par la rage face à Orochimaru, le chakra de Kurama atteint quatre queues : une forme bestiale et dévastatrice qui ronge son propre corps." },
-      { label: 'Partie II', g: 1, age: '16 ans', height: '1,66 m', weight: '51 kg', rank: 'Genin',
+      // Ordre chronologique : le RETOUR (Partie II, début Shippūden) précède la Version 2 (4 queues au
+      // Pont Tenchi, mission Sasuke/Sai qui vient APRÈS le retour). Retour ≈ 15 ans, Tenchi ≈ 15 ans.
+      { label: 'Partie II', g: 1, age: '15 ans', height: '1,66 m', weight: '51 kg', rank: 'Genin',
         classification: ['Jinchūriki'], natures: ['Wind Release'], occupation: ['Ninja de Konoha'], affiliation: ['Konohagakure'],
         signature: ['Rasenshuriken', 'Multiclonage', 'Rasengan'], arc: 'Shippūden — retour',
-        caption: '16 ans · Shippūden',
+        caption: '15 ans · Shippūden — retour',
         summary: "De retour après deux ans et demi d'entraînement avec Jiraiya, plus mûr et plus puissant ; il maîtrise le Rasenshuriken." },
+      { label: 'Version 2', img: '/images/akasha/naruto/naruto-v2.webp', age: '15 ans', height: '1,66 m', weight: '51 kg', rank: 'Genin',
+        classification: ['Jinchūriki'], natures: [], occupation: ['Ninja de Konoha'], affiliation: ['Konohagakure'],
+        signature: ['Manteau de Kurama — 4 queues', 'Bombe de chakra'], arc: 'Pont Tenchi (vs Orochimaru)',
+        caption: '15 ans · Version 2 — forme déchaînée (4 queues)',
+        summary: "Submergé par la rage face à Orochimaru, le chakra de Kurama atteint quatre queues : une forme bestiale et dévastatrice qui ronge son propre corps." },
       { label: 'Mode Ermite', img: '/images/akasha/naruto/naruto-sage.webp', age: '16 ans', height: '1,66 m', weight: '51 kg', rank: 'Genin',
         classification: ['Jinchūriki', 'Ermite (Sage)'], natures: ['Wind Release'], occupation: ['Ninja de Konoha'], affiliation: ['Konohagakure', 'Mont Myōboku'],
         signature: ['Mode Ermite', 'Rasenshuriken', 'Rasengan'], arc: 'Assaut de Pain',
@@ -163,6 +194,219 @@ const PLACES = [
   ['otogakure', 'Otogakure', 'Pays du Son', "Le Village caché du Son, fondé secrètement par Orochimaru pour ses expériences.", 'rare'],
 ];
 
+// Détails riches par entité (lieu OU artefact…) fusionnés dans attributes → page bespoke « carte
+// évolutive ». Les `eras[].img` non existantes retombent sur l'image de base via onError côté composant.
+const ENTITY_DETAILS = {
+  konohagakure: {
+    kanji: '木ノ葉隠れの里',
+    founded: "Fin de l'ère des Guerres Claniques",
+    founders: [{ name: 'Hashirama Senju', slug: 'hashirama-senju' }, { name: 'Madara Uchiha', slug: 'madara-uchiha' }],
+    symbol: 'La feuille',
+    motto: 'La Volonté du Feu',
+    quote: { text: 'Quand les feuilles dansent, le feu brûle. L\'ombre du feu illumine le village.', author: 'Hiruzen Sarutobi · 3ᵉ Hokage' },
+    leaderTitle: 'Septième Hokage',
+    leader: { name: 'Naruto Uzumaki', slug: 'naruto-uzumaki' },
+    population: "Plusieurs dizaines de milliers d'habitants",
+    villageRank: 'L\'un des Cinq Grands Villages',
+    status: 'Prospère',
+    bio: "Fondé à la fin de l'ère sanglante des Guerres Claniques par l'alliance du clan Senju de Hashirama et du clan Uchiha de Madara, Konohagakure fut le tout premier village caché — le modèle qu'imiteront les autres nations. Bâti dans le Pays du Feu et ceint d'une muraille circulaire, il érige la « Volonté du Feu » en credo : chaque génération protège la suivante comme une flamme que l'on transmet. Le village survivra à l'attaque de Kurama, au massacre du clan Uchiha, à la destruction totale infligée par Pain, puis à la Quatrième Grande Guerre Shinobi — pour renaître à chaque fois plus fort, et devenir sous le Septième Hokage une cité moderne et pacifiée.",
+    trivia: [
+      "« Konohagakure » signifie littéralement « caché parmi les feuilles ». Son symbole, la feuille, orne le bandeau frontal de tous ses ninjas.",
+      "Le Monument des Hokage sculpte le visage de chaque Hokage dans la falaise qui domine le village.",
+      "C'est le seul des Cinq Grands Villages à avoir été entièrement rasé — par Pain — puis reconstruit.",
+      "La « Volonté du Feu », transmise par Hashirama, est la conviction que le village tout entier est une famille.",
+    ],
+    eras: [
+      { label: 'Fondation', leader: 'Hashirama Senju · 1ᵉʳ Hokage', period: 'Ère des Guerres Claniques', event: 'Alliance Senju–Uchiha', threat: 'Rivalités claniques', img: '/images/akasha/places/konoha-fondation.webp',
+        summary: "Hashirama Senju et Madara Uchiha scellent la paix entre leurs clans rivaux et fondent le premier village caché. Hashirama en devient le Premier Hokage et lui insuffle la Volonté du Feu." },
+      { label: 'Nuit du Renard', leader: 'Minato Namikaze · 4ᵉ Hokage', period: '~12 ans avant la Partie I', event: 'Attaque de Kurama', threat: 'Le Renard à Neuf Queues', img: '/images/akasha/places/konoha-nuit-renard.webp',
+        summary: "Une nuit, Kurama le Démon-Renard est libéré et ravage le village. Le Quatrième Hokage Minato le scelle au prix de sa vie dans son fils nouveau-né, Naruto." },
+      { label: "Âge d'or", leader: 'Hiruzen Sarutobi · 3ᵉ Hokage', period: 'Partie I', event: 'Examens Chūnin', threat: 'Orochimaru', img: '/images/akasha/ref/konohagakure.webp',
+        summary: "Sous le Troisième Hokage Hiruzen, le village prospère en paix. C'est le Konoha de l'enfance de Naruto — celui des Examens Chūnin et de l'équipe 7." },
+      { label: 'Assaut de Pain', leader: 'Tsunade · 5ᵉ Hokage', period: 'Partie II', event: 'Shinra Tensei de Nagato', threat: 'Akatsuki', img: '/images/akasha/places/konoha-pain.webp',
+        summary: "Nagato, sous le nom de Pain, réduit le village en cratère d'un unique Shinra Tensei pour capturer Naruto. Ce dernier revient, le terrasse et retourne le chef de l'Akatsuki." },
+      { label: 'Ère moderne', leader: 'Naruto Uzumaki · 7ᵉ Hokage', period: 'Ère Boruto', event: 'Modernisation du village', threat: 'Organisation Kara', img: '/images/akasha/places/konoha-moderne.webp',
+        summary: "Reconstruit après la guerre, Konoha entre dans une ère de paix et de technologie sous le Septième Hokage Naruto : gratte-ciels, écrans et trains côtoient les traditions ninja." },
+    ],
+    hokage: [
+      { n: 'Iᵉʳ', name: 'Hashirama Senju', slug: 'hashirama-senju', note: 'Fondateur · maître du Mokuton' },
+      { n: 'IIᵉ', name: 'Tobirama Senju', note: "Créateur de l'Edo Tensei" },
+      { n: 'IIIᵉ', name: 'Hiruzen Sarutobi', note: '« Le Professeur »' },
+      { n: 'IVᵉ', name: 'Minato Namikaze', slug: 'minato-namikaze', note: "« L'Éclair Jaune »" },
+      { n: 'Vᵉ', name: 'Tsunade', slug: 'tsunade', note: 'Sannin · médecin légendaire' },
+      { n: 'VIᵉ', name: 'Kakashi Hatake', slug: 'kakashi-hatake', note: '« Le Ninja Copieur »' },
+      { n: 'VIIᵉ', name: 'Naruto Uzumaki', slug: 'naruto-uzumaki', note: 'Héros de la 4ᵉ Guerre' },
+    ],
+    clans: [
+      { name: 'Senju', slug: 'senju' }, { name: 'Uchiha', slug: 'uchiha' }, { name: 'Uzumaki', slug: 'uzumaki' },
+      { name: 'Hyūga', slug: 'hyuga' }, { name: 'Nara', slug: 'nara' },
+      { name: 'Akimichi' }, { name: 'Yamanaka' }, { name: 'Aburame' }, { name: 'Inuzuka' }, { name: 'Sarutobi' },
+    ],
+    landmarks: [
+      'Monument des Hokage', "Tour de l'Hokage", 'Académie des ninjas', 'Forêt de la Mort (terrain 44)',
+      'Ichiraku Ramen', "Terrain d'entraînement n°3", 'Hôpital de Konoha', 'Ancien quartier Uchiha',
+    ],
+  },
+  samehada: {
+    kanji: '鮫肌',
+    quote: { text: 'Samehada est capricieuse : elle ne se laisse porter que par celui qu\'elle a choisi.', author: 'Kisame Hoshigaki' },
+    origin: 'Kirigakure · Village de la Brume',
+    type: "L'une des Sept Épées des Sept Épéistes de la Brume",
+    material: 'Lame vivante et sentiente, couverte d\'écailles',
+    bearer: 'Kisame Hoshigaki',
+    status: 'Active',
+    bio: "Forgée pour les Sept Épéistes de la Brume, Samehada — « Peau de requin » — n'est pas une lame ordinaire : c'est une arme VIVANTE et sentiente, couverte d'écailles qui râpent la chair au lieu de la trancher et dévorent le chakra de l'ennemi. Portée d'abord par Fuguki Suikazan, elle passe à Kisame Hoshigaki, qui l'assassine pour la lui prendre : entre le monstre humain et l'épée gloutonne naît une symbiose parfaite. Kisame peut même fusionner avec elle pour absorber des océans de chakra. Mais Samehada reste libre de ses choix : face au chakra colossal de Killer B, l'hôte du Hachibi, elle trahit Kisame et se choisit un nouveau maître.",
+    trivia: [
+      "Samehada « râpe » au lieu de couper : ses écailles arrachent la chair et aspirent le chakra de la cible.",
+      "C'est une arme sentiente : elle ronronne, mord ses ennemis, et peut refuser ou changer de porteur.",
+      "Kisame et Samehada peuvent fusionner en une créature mi-homme mi-requin.",
+      "Elle fait partie des sept armes légendaires des Sept Épéistes de la Brume de Kirigakure.",
+    ],
+    abilities: ['Dévore le chakra', 'Écailles-rasoir (râpe, ne tranche pas)', 'Sentiente — choisit son maître', 'Fusion avec le porteur', 'Régénération', 'Détecte les grandes réserves de chakra'],
+    wielders: [
+      { name: 'Fuguki Suikazan', note: "Premier porteur connu · l'un des Sept Épéistes" },
+      { name: 'Kisame Hoshigaki', note: 'Le porteur légendaire · Akatsuki' },
+      { name: 'Killer B', note: 'Nouveau maître après la trahison' },
+    ],
+    eras: [
+      { label: 'Épée de la Brume', leader: 'Fuguki Suikazan', period: "Avant l'Akatsuki", event: "L'une des Sept Épées", threat: 'Enveloppée de bandages', img: '/images/akasha/artifacts/samehada-brume.webp',
+        summary: "Samehada compte parmi les sept armes légendaires des Épéistes de la Brume de Kirigakure. Elle est alors portée par Fuguki Suikazan." },
+      { label: 'Kisame', leader: 'Kisame Hoshigaki', period: 'Ère Akatsuki', event: 'Symbiose parfaite', threat: 'Dévore le chakra', img: '/images/akasha/ref/samehada.webp',
+        summary: "Kisame Hoshigaki tue Fuguki et s'empare de Samehada. Entre le monstre humain et l'épée gloutonne naît une symbiose parfaite ; ensemble ils traquent les jinchūriki pour l'Akatsuki." },
+      { label: 'Fusion', leader: 'Kisame Hoshigaki', period: "Combats de l'Akatsuki", event: 'Mode requin', threat: 'Absorption massive', img: '/images/akasha/artifacts/samehada-fusion.webp',
+        summary: "En pleine bataille, Kisame fusionne avec Samehada pour se muer en créature mi-homme mi-requin, capable d'absorber des océans de chakra." },
+      { label: 'La trahison', leader: 'Killer B', period: 'Quatrième Guerre', event: 'Change de maître', threat: 'Séduite par le Hachibi', img: '/images/akasha/artifacts/samehada-trahison.webp',
+        summary: "Face au chakra colossal de Killer B, l'hôte du Hachibi, la sentiente Samehada abandonne Kisame et se choisit un nouveau maître." },
+    ],
+  },
+  'ninja-medical': {
+    kanji: '医療忍者',
+    quote: { text: 'Un ninja médical ne meurt pas avant ses coéquipiers. C\'est la première règle.', author: 'Tsunade · 5ᵉ Hokage' },
+    rosterLabel: 'Praticiens',
+    facts: [
+      { label: 'Secteur', value: 'Médecine ninja' },
+      { label: 'Prérequis', value: "Contrôle du chakra d'une extrême précision" },
+      { label: 'Réformé par', value: "Tsunade, l'une des Trois Sannin" },
+      { label: 'Niveau ultime', value: 'Sceau de Byakugō' },
+      { label: 'Symbole', value: '医 — « médecine »' },
+    ],
+    bio: "Le ninjutsu médical est l'art de soigner par le chakra — refermer les plaies, réparer les organes, neutraliser les poisons — sans jamais cesser de combattre. Il exige un contrôle du chakra d'une précision absolue : la moindre erreur peut tuer le patient. Longtemps marginale, la discipline fut révolutionnée par Tsunade, l'une des Trois Sannin, qui imposa la présence d'un ninja médical dans chaque équipe et forma l'élite de sa génération — Shizune, puis Sakura Haruno. Au sommet de l'art, le Sceau de Byakugō permet de stocker des années de chakra pour une régénération quasi instantanée.",
+    trivia: [
+      "Première règle de Tsunade : un ninja médical doit rester en vie coûte que coûte — sans lui, toute l'équipe est condamnée.",
+      "Le symbole 医 (« médecine ») orne l'uniforme des medic-nin du corps médical de guerre.",
+      "Le Sceau de Byakugō, losange sur le front, concentre des années de chakra accumulé pour une régénération instantanée.",
+      "Peu de ninjas possèdent un contrôle du chakra assez fin pour opérer : c'est un talent rare et recherché.",
+    ],
+    abilities: ['Paume Mystique (soin)', 'Bistouri de chakra', 'Réanimation', 'Antidotes & poisons', 'Sceau de Byakugō (régénération)', 'Ninjutsu de Création (Katsuyu)', 'Diagnostic au chakra'],
+    eras: [
+      { label: 'Apprenti', leader: "Recrues de l'Académie", period: 'Formation', event: 'Contrôle du chakra', threat: 'Diagnostic précis', img: '/images/akasha/professions/medic-apprenti.webp',
+        summary: "Tout commence par un contrôle du chakra d'une finesse extrême : diagnostiquer, refermer une plaie légère, ne jamais nuire au patient." },
+      { label: 'Medic de terrain', leader: 'Corps médical', period: 'Missions & guerre', event: 'Paume Mystique', threat: 'Sang-froid au combat', img: '/images/akasha/professions/medic-terrain.webp',
+        summary: "Sur le champ de bataille, le medic-nin soigne sous le feu grâce à la Paume Mystique, réanime et maintient l'escouade en vie." },
+      { label: "Medic d'élite", leader: 'Sakura · Shizune', period: 'Maîtrise', event: 'Bistouri de chakra', threat: 'Anatomie parfaite', img: '/images/akasha/ref/ninja-medical.webp',
+        summary: "L'élite opère au chakra : bistouri de précision, antidotes, régénération cellulaire. Sakura et Shizune, formées par Tsunade, en sont les fers de lance." },
+      { label: 'Légendaire', leader: 'Tsunade · Sakura', period: "Sommet de l'art", event: 'Sceau de Byakugō', threat: 'Chakra colossal', img: '/images/akasha/professions/medic-legendaire.webp',
+        summary: "Au sommet, Tsunade débloque le Sceau de Byakugō — des années de chakra stockées pour une régénération quasi instantanée — et le transmet à sa disciple Sakura." },
+    ],
+  },
+  uchiha: {
+    kanji: 'うちは一族',
+    quote: { text: "L'amour trop profond des Uchiha engendre une haine tout aussi profonde.", author: 'Tobirama Senju · 2ᵉ Hokage' },
+    rosterLabel: 'Membres',
+    facts: [
+      { label: 'Kekkei Genkai', value: 'Sharingan — l\'œil qui copie et hypnotise' },
+      { label: 'Symbole', value: "L'éventail uchiwa (rouge & blanc)" },
+      { label: 'Ancêtre', value: 'Indra Ōtsutsuki, fils du Sage des Six Chemins' },
+      { label: 'Rival historique', value: 'Le clan Senju' },
+      { label: 'Village', value: 'Konohagakure' },
+    ],
+    bio: "Descendants d'Indra, le fils aîné du Sage des Six Chemins, les Uchiha sont un clan de génies au chakra dévastateur, définis par le Sharingan — l'œil rouge qui copie toute technique et lit les mouvements. Leur force est aussi leur malédiction : la « Volonté de la Haine » veut que la perte d'un être cher éveille en eux un pouvoir immense, le Mangekyō, au prix de leur âme. Cofondateurs de Konoha aux côtés des Senju, ils en furent peu à peu écartés puis surveillés, jusqu'au massacre orchestré par Itachi pour éviter un coup d'État. De ce sang ne restèrent que Sasuke, Itachi et quelques exilés — mais la lignée renaît avec Sasuke et sa fille Sarada.",
+    trivia: [
+      "Le Sharingan s'éveille sous le choc d'une émotion intense — le plus souvent la perte d'un proche.",
+      "Le nom du clan vient de l'« uchiwa », l'éventail de leur emblème, qui attisait aussi les flammes de leurs jutsu de Feu.",
+      "Le Mangekyō Sharingan rend peu à peu aveugle — sauf en greffant les yeux d'un frère (Mangekyō éternel).",
+      "Presque tous les Uchiha maîtrisent la Nature du Feu enfant : la Boule de Feu Suprême est leur rite de passage.",
+    ],
+    abilities: ['Sharingan', 'Mangekyō Sharingan', 'Amaterasu', 'Tsukuyomi', 'Susanoo', 'Izanagi & Izanami', 'Rinnegan (éveil ultime)', 'Nature du Feu'],
+    eras: [
+      { label: 'Origines', leader: 'Indra Ōtsutsuki', period: 'Âge des mythes', event: 'Naissance du clan', threat: 'Sharingan', img: '/images/akasha/status/uchiha-origines.webp',
+        summary: "Héritiers du chakra d'Indra, les Uchiha éveillent le Sharingan dans la douleur et deviennent les éternels rivaux du clan Senju." },
+      { label: 'Fondation de Konoha', leader: 'Madara Uchiha', period: 'Fondation du village', event: 'Alliance avec les Senju', threat: 'Mangekyō', img: '/images/akasha/status/uchiha-konoha.webp',
+        summary: "Madara et Hashirama Senju scellent la paix et fondent Konoha. Les Uchiha, guerriers d'élite, y prennent une place centrale — jusqu'au départ de Madara, méfiant." },
+      { label: 'Marginalisation', leader: 'Fugaku Uchiha', period: 'Avant la Partie I', event: 'Le clan sous surveillance', threat: 'Sharingan', img: '/images/akasha/status/uchiha-marginalisation.webp',
+        summary: "Soupçonnés depuis la défection de Madara et l'attaque de Kurama, les Uchiha sont relégués dans un quartier à l'écart et surveillés. La tension monte vers un coup d'État." },
+      { label: 'Le Massacre', leader: 'Itachi Uchiha', period: '~Partie I', event: 'Extermination du clan', threat: 'Tsukuyomi · Amaterasu', img: '/images/akasha/status/uchiha-massacre.webp',
+        summary: "Pour empêcher une guerre civile, Itachi extermine le clan en une nuit sur ordre de Konoha — n'épargnant que son petit frère Sasuke, à qui il lègue la vérité et la haine." },
+      { label: 'Renaissance', leader: 'Sasuke Uchiha', period: 'Ère Boruto', event: 'Réhabilitation du nom', threat: 'Rinnegan', img: '/images/akasha/status/uchiha-renaissance.webp',
+        summary: "Dernier héritier, Sasuke traverse la vengeance puis la rédemption, débloque le Rinnegan et réhabilite le nom Uchiha. Sa fille Sarada perpétue la lignée." },
+    ],
+  },
+  rasengan: {
+    kanji: '螺旋丸',
+    quote: { text: "Le Rasengan est l'héritage du Quatrième. Naruto… c'est à toi de l'achever.", author: 'Jiraiya' },
+    rosterLabel: 'Maîtres',
+    facts: [
+      { label: 'Créateur', value: 'Minato Namikaze, 4ᵉ Hokage' },
+      { label: 'Rang', value: 'A (base) → S (Rasenshuriken)' },
+      { label: 'Nature', value: 'Chakra pur · + Vent pour le Rasenshuriken' },
+      { label: 'Portée', value: 'Corps à corps → distance (Rasenshuriken)' },
+      { label: 'Particularité', value: 'Aucun signe requis — rotation dans la paume' },
+    ],
+    bio: "Le Rasengan est une sphère de chakra en rotation ultra-dense, formée dans la paume sans le moindre signe. Inventé par le Quatrième Hokage Minato en s'inspirant de la Bijūdama des démons à queues, il représentait un défi que son créateur n'eut pas le temps d'achever : y ajouter une nature élémentaire. Transmis par Jiraiya à Naruto, il devint la signature du jeune ninja, qui le déclina à l'infini grâce au Multiclonage. C'est Naruto qui accomplit finalement le rêve de son père en y injectant sa nature Vent — le Rasenshuriken, arme de destruction cellulaire de rang S. Fusionné au chakra de Kurama et des Six Chemins, le Rasengan atteignit une échelle proprement divine.",
+    trivia: [
+      "Minato mit trois ans à créer le Rasengan ; il rêvait d'y ajouter une nature élémentaire — ce que seul Naruto réussira.",
+      "Le Rasengan ne requiert AUCUN signe : toute sa difficulté tient dans la rotation et la compression du chakra dans la main.",
+      "Le Rasenshuriken fut d'abord si dangereux qu'il endommageait les propres cellules de Naruto à chaque usage.",
+      "Konohamaru, élève de Naruto, maîtrise lui aussi le Rasengan — la technique se transmet de génération en génération.",
+    ],
+    abilities: ['Rasengan (base)', 'Ōdama Rasengan (géant)', 'Rasengan multiple', 'Rasenshuriken', 'Rasengan tourbillonnant', 'Bijūdama Rasenshuriken', 'Rasengan des Six Chemins', 'Mini-Rasenshuriken'],
+    eras: [
+      { label: 'Création', leader: 'Minato Namikaze', period: '2 générations avant', event: 'Inspiré de la Bijūdama', threat: 'Rang A', img: '/images/akasha/powers/rasengan-creation.webp',
+        summary: "Le Quatrième Hokage Minato invente le Rasengan en observant la Bijūdama d'un Bijū : une sphère de chakra en rotation, sans nature. Il meurt avant d'avoir pu y ajouter un élément." },
+      { label: 'Rasengan', leader: 'Naruto (via Jiraiya)', period: 'Partie I', event: 'Les trois étapes', threat: 'Rang A', img: '/images/akasha/ref/rasengan.webp',
+        summary: "Jiraiya transmet la technique à Naruto en trois étapes — rotation, puissance, contrôle. La sphère broie tout ce qu'elle touche, sans aucun signe." },
+      { label: 'Ōdama & variantes', leader: 'Naruto Uzumaki', period: 'Partie I–II', event: 'Rasengan géant & multiclonage', threat: 'Rang A', img: '/images/akasha/powers/rasengan-odama.webp',
+        summary: "Grâce au Multiclonage, Naruto décline le Rasengan à l'infini : Ōdama (géant), Rasengan multiple, tourbillonnant… la puissance décuplée." },
+      { label: 'Rasenshuriken', leader: 'Naruto Uzumaki', period: 'Partie II', event: 'Ajout de la nature Vent', threat: 'Rang S', img: '/images/akasha/powers/rasengan-rasenshuriken.webp',
+        summary: "Naruto réussit ce que Minato n'avait pu : y injecter sa nature Vent. Le Rasenshuriken lacère l'ennemi au niveau cellulaire — d'abord à bout portant, puis lançable." },
+      { label: 'Six Chemins', leader: 'Naruto Uzumaki', period: '4ᵉ Guerre & au-delà', event: 'Bijūdama Rasenshuriken', threat: 'Rang S+', img: '/images/akasha/powers/rasengan-sixpaths.webp',
+        summary: "Au sommet, Naruto fusionne le Rasengan avec le chakra de Kurama et des Six Chemins : Bijūdama Rasenshuriken, versions colossales… une échelle divine." },
+    ],
+  },
+  sharingan: {
+    kanji: '写輪眼',
+    quote: { text: 'Face au Sharingan, ton corps te trahit avant même de bouger.', author: 'Kakashi Hatake' },
+    rosterLabel: 'Porteurs',
+    facts: [
+      { label: 'Discipline', value: 'Dōjutsu héréditaire du clan Uchiha' },
+      { label: 'Éveil', value: "Sous le choc d'une émotion intense" },
+      { label: 'Apparence', value: 'Iris rouge à tomoes noirs' },
+      { label: 'Évolution', value: '1 tomoe → 3 tomoes → Mangekyō → Rinnegan' },
+      { label: 'Faiblesse', value: 'Le Mangekyō rend peu à peu aveugle' },
+    ],
+    bio: "Le Sharingan — « œil copieur tournoyant » — est le dōjutsu héréditaire du clan Uchiha. Il s'éveille sous le choc d'une émotion violente et confère une perception surhumaine : lire les mouvements, percevoir le flux de chakra, copier presque toute technique et plonger l'ennemi dans une hypnose redoutable. À mesure qu'apparaissent ses trois tomoes, sa puissance grandit. La perte d'un être cher peut l'élever au Mangekyō Sharingan, qui débloque des pouvoirs dévastateurs — Amaterasu, Tsukuyomi, Susanoo — mais consume peu à peu la vue. En greffant les yeux d'un frère, on obtient le Mangekyō éternel, sans la cécité. Ultime palier, nourri du chakra du Sage des Six Chemins, l'œil se mue en Rinnegan.",
+    trivia: [
+      "Le Sharingan copie une technique en la « lisant » — mais ne peut reproduire un kekkei genkai ni ce qui dépasse le corps du porteur.",
+      "Chaque Mangekyō a un motif unique, propre à son porteur (l'œil d'Itachi, de Sasuke, de Kakashi/Obito…).",
+      "Kakashi, non-Uchiha, portait un Sharingan greffé par Obito — et débloqua même le Kamui.",
+      "Un œil arraché continue de fonctionner greffé sur un autre : Danzō en avait couvert tout un bras.",
+    ],
+    abilities: ['Copie de techniques', 'Prédiction des mouvements', 'Hypnose / Genjutsu', 'Amaterasu (flammes noires)', 'Tsukuyomi (illusion)', 'Susanoo (avatar)', 'Kamui (Obito · Kakashi)', 'Izanagi & Izanami'],
+    eras: [
+      { label: 'Sharingan (1 tomoe)', leader: 'Jeune Uchiha', period: 'Éveil', event: 'Premier choc émotionnel', threat: 'Perception accrue', img: '/images/akasha/skills/sharingan-1tomoe.webp',
+        summary: "L'œil s'ouvre sous le choc d'une émotion violente : un premier tomoe apparaît, aiguisant déjà la perception et la lecture des mouvements." },
+      { label: 'Sharingan complet', leader: 'Sasuke · Itachi', period: 'Maîtrise', event: "Maturité de l'œil (3 tomoes)", threat: 'Copie & hypnose', img: '/images/akasha/ref/sharingan.webp',
+        summary: "Avec ses trois tomoes, le Sharingan atteint sa plénitude : il copie presque toute technique, anticipe chaque geste et hypnotise l'adversaire." },
+      { label: 'Mangekyō', leader: 'Itachi · Sasuke', period: 'La perte', event: "Mort d'un être cher", threat: 'Amaterasu · Tsukuyomi · Susanoo', img: '/images/akasha/skills/sharingan-mangekyo.webp',
+        summary: "Le deuil élève l'œil au Mangekyō Sharingan : Amaterasu, Tsukuyomi, Susanoo… des pouvoirs dévastateurs, au prix d'une cécité progressive." },
+      { label: 'Mangekyō éternel', leader: 'Madara · Sasuke', period: 'Transplantation', event: "Greffe des yeux d'un frère", threat: 'Puissance sans cécité', img: '/images/akasha/skills/sharingan-eternel.webp',
+        summary: "En fusionnant ses yeux avec ceux d'un frère, l'Uchiha obtient le Mangekyō éternel : toute la puissance du Mangekyō, sans en perdre la vue." },
+      { label: 'Rinnegan', leader: 'Sasuke · Madara', period: 'Éveil ultime', event: 'Chakra du Sage des Six Chemins', threat: 'Les Six Voies', img: '/images/akasha/skills/sharingan-rinnegan.webp',
+        summary: "Nourri du chakra d'Hagoromo, le Sharingan transcende sa forme et devient Rinnegan : l'œil violet aux anneaux, maître des Six Voies." },
+    ],
+  },
+};
+
 const POWERS = [
   ['rasengan', 'Rasengan', 'Chakra', "Sphère tourbillonnante de chakra concentrée dans la paume, créée par Minato.", 'epic'],
   ['chidori', 'Chidori', 'Foudre', "Concentration de foudre dans la main pour un assaut perforant fulgurant.", 'epic'],
@@ -238,20 +482,55 @@ async function main() {
   const entries = [];
   const relations = [];
   const slugs = new Set();
+  // Relations croisées entre entités NON-perso (maillage des pages évolutives entre elles).
+  relations.push(['sharingan', 'appartient', 'uchiha']);      // le dōjutsu est le kekkei genkai du clan
+  relations.push(['samehada', 'appartient', 'kirigakure']);   // l'épée des Sept Épéistes de la Brume
   const add = (e) => { entries.push(e); slugs.add(e.slug); };
 
   // Entités rédigées — image_url = référence Narutopedia locale si disponible.
-  for (const [slug, name, region, summary, rarity] of PLACES) add(entry(slug, 'place', name, summary, rarity, { region }, refImg(slug)));
-  for (const [slug, name, element, summary, rarity] of POWERS) add(entry(slug, 'power', name, summary, rarity, { element }, refImg(slug)));
-  for (const [slug, name, discipline, summary, rarity] of SKILLS) add(entry(slug, 'skill', name, summary, rarity, { discipline }, refImg(slug)));
-  for (const [slug, name, material, summary, rarity] of ARTIFACTS) add(entry(slug, 'artifact', name, summary, rarity, { material }, refImg(slug)));
-  for (const [slug, name, sector, summary, rarity] of PROFESSIONS) add(entry(slug, 'profession', name, summary, rarity, { sector }, refImg(slug)));
-  for (const [slug, name, scope, summary, rarity] of STATUSES) add(entry(slug, 'status', name, summary, rarity, { scope }, refImg(slug)));
+  for (const [slug, name, region, summary, rarity] of PLACES) add(entry(slug, 'place', name, summary, rarity, { region, ...(ENTITY_DETAILS[slug] || {}) }, refImg(slug)));
+  for (const [slug, name, element, summary, rarity] of POWERS) add(entry(slug, 'power', name, summary, rarity, { element, ...(ENTITY_DETAILS[slug] || {}) }, refImg(slug)));
+  for (const [slug, name, discipline, summary, rarity] of SKILLS) add(entry(slug, 'skill', name, summary, rarity, { discipline, ...(ENTITY_DETAILS[slug] || {}) }, refImg(slug)));
+  for (const [slug, name, material, summary, rarity] of ARTIFACTS) add(entry(slug, 'artifact', name, summary, rarity, { material, ...(ENTITY_DETAILS[slug] || {}) }, refImg(slug)));
+  for (const [slug, name, sector, summary, rarity] of PROFESSIONS) add(entry(slug, 'profession', name, summary, rarity, { sector, ...(ENTITY_DETAILS[slug] || {}) }, refImg(slug)));
+  for (const [slug, name, scope, summary, rarity] of STATUSES) add(entry(slug, 'status', name, summary, rarity, { scope, ...(ENTITY_DETAILS[slug] || {}) }, refImg(slug)));
 
   // Helpers attributs riches
   const arr = (x) => (Array.isArray(x) ? x.filter(Boolean) : x ? [x] : []);
   const firstVal = (x) => (x && typeof x === 'object' && !Array.isArray(x) ? Object.values(x)[0] : x) || null;
   const cleanNote = (s) => String(s).replace(/\s*\((?:Affinity|Anime only|Manga only|Movie only|Game only|Novel only|Anime|Manga)\)/gi, '').trim();
+  // Surnoms non curés : l'API colle nom-camelCase + kanji/romaji entre parenthèses → on retire la
+  // parenthèse (kanji illisible) et on dé-colle le CamelCase, faute de traduction FR (fallback hygiène).
+  const cleanTitle = (s) =>
+    String(s).replace(/\s*\(.*$/s, '').replace(/([a-z])([A-Z])/g, '$1 $2').replace(/\s+/g, ' ').trim();
+  // Dates de naissance : l'API renvoie « October 10 » (anglais) → « 10 octobre » (FR).
+  const FR_MONTHS = { january: 'janvier', february: 'février', march: 'mars', april: 'avril', may: 'mai', june: 'juin', july: 'juillet', august: 'août', september: 'septembre', october: 'octobre', november: 'novembre', december: 'décembre' };
+  const frDate = (s) => {
+    if (!s) return s;
+    const m = String(s).trim().match(/^([A-Za-z]+)\.?\s+(\d{1,2})$/);
+    const mon = m && FR_MONTHS[m[1].toLowerCase()];
+    return mon ? `${parseInt(m[2], 10)} ${mon}` : s;
+  };
+  // Début (parution) : « Naruto Chapter #1 » → « Naruto — chapitre 1 ».
+  const frDebut = (s) =>
+    s ? String(s).replace(/\s*Chapter\s*#?\s*/i, ' — chapitre ').replace(/\s*Episode\s*#?\s*/i, ' — épisode ').trim() : s;
+  // Apparitions complètes (manga/anime/roman/film/jeu/OVA) — localise chapitre/épisode, garde les titres.
+  const frDebutAll = (deb) => {
+    if (!deb || typeof deb !== 'object') return null;
+    const o = {};
+    for (const [k, src] of [['manga', deb.manga], ['anime', deb.anime], ['novel', deb.novel], ['movie', deb.movie], ['game', deb.game], ['ova', deb.ova]]) {
+      if (src) o[k] = k === 'manga' || k === 'anime' ? frDebut(String(src)) : String(src);
+    }
+    return Object.keys(o).length ? o : null;
+  };
+  // Doubleurs : retire les notes entre parenthèses (« (Sexy Technique) »…), dédoublonne, garde le principal.
+  const vaClean = (list) => arr(list).map((s) => String(s).replace(/\s*\(.*$/, '').trim()).filter(Boolean).filter((v, i, a) => a.indexOf(v) === i);
+  const cleanVA = (va) => {
+    if (!va || typeof va !== 'object') return null;
+    const jp = vaClean(va.japanese).slice(0, 3);
+    const en = vaClean(va.english).slice(0, 3);
+    return jp.length || en.length ? { jp, en } : null;
+  };
   const RANK_ORDER = ['Academy Student', 'Genin', 'Chūnin', 'Jōnin', 'Anbu', 'Sannin', 'Kage'];
   const pickRank = (rank) => {
     const nr = rank?.ninjaRank;
@@ -294,23 +573,35 @@ async function main() {
       height: firstVal(p.height),
       weight: firstVal(p.weight),
       bloodType: firstVal(p.bloodType),
-      birthdate: firstVal(p.birthdate),
+      birthdate: frDate(firstVal(p.birthdate)),
       // classification/affiliation : SMW Narutopedia (canon, FR) si dispo, sinon API.
       classification: facts ? frList(facts.classification) : arr(p.classification).map(cleanNote),
-      titles: arr(p.titles).map(cleanNote),
+      titles: c.titles ?? arr(p.titles).map(cleanTitle),
+      nindo: c.nindo || null,
+      nindoLabel: c.nindoLabel || null,
       occupation: arr(p.occupation).map(cleanNote),
       // kekkei genkai = CURÉ (canon). Plus de dump API (corrige Naruto = Lava/Magnet/Boil).
       kekkeiGenkai: c.kg ?? [],
       // natures perso curées si fournies (ex. Naruto = Vent), sinon API (les icônes filtrent l'exotique).
       natureType: c.nat ?? arr(api.natureType).map(cleanNote),
-      tools: arr(api.tools).map(cleanNote).slice(0, TOOLS_CAP),
+      tools: c.tools ?? arr(api.tools).map(cleanNote).slice(0, TOOLS_CAP),
       jutsu: orderJutsu(arr(api.jutsu).map(cleanNote), c.jutsuPriority).slice(0, JUTSU_CAP),
       signature: (c.powers || []).map((s) => POWERS.find((p) => p[0] === s)?.[1]).filter(Boolean),
       rank: pickRank(api.rank),
       affiliation: facts ? frList(facts.affiliation) : arr(p.affiliation),
       sourceUrl: facts?.sourceUrl ?? null, // attribution CC-BY-SA (Narutopedia)
       team: arr(p.team),
-      debut: api.debut?.manga || null,
+      debut: frDebut(api.debut?.manga) || null,
+      // Champs enrichis surfacés (génériques, tous persos) + contenu curé FR (par perso via c.*)
+      tailedBeast: c.biju || null, // curé (l'API dump les 9 bijū pour Naruto) ; défaut null si non curé
+      voiceActors: cleanVA(api.voiceActors),
+      debutAll: frDebutAll(api.debut),
+      status: c.status || null,
+      squad: c.squad || null,
+      bio: c.bio || null,
+      personality: c.personality || null,
+      quotes: c.quotes || [],
+      trivia: c.trivia || [],
       family: api.family && typeof api.family === 'object' ? Object.entries(api.family).map(([rel, name]) => ({ rel, name: String(name) })) : [],
       gallery: arr(api.images),
       // forms = instantanés évolutifs : image + snapshot cohérent (âge, rang, natures, techniques…).

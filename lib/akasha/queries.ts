@@ -15,6 +15,7 @@ const CARD_COLS = 'id, slug, type, name, is_fiction, universe, summary, image_ur
 
 export interface ListEntriesParams {
   type?: AkashaType;
+  universe?: string;
   search?: string;
   page?: number;
 }
@@ -27,9 +28,9 @@ export interface ListEntriesResult {
   totalPages: number;
 }
 
-/** Liste filtrée (type, recherche plein-texte sur nom/univers/résumé) + paginée. */
+/** Liste filtrée (type, univers, recherche plein-texte sur nom/univers/résumé) + paginée. */
 export async function listEntries(
-  { type, search, page = 1 }: ListEntriesParams = {},
+  { type, universe, search, page = 1 }: ListEntriesParams = {},
 ): Promise<ListEntriesResult> {
   const pageSize = PAGE_SIZE;
   const current = Math.max(1, Math.floor(page) || 1);
@@ -48,6 +49,7 @@ export async function listEntries(
     .range(from, to);
 
   if (type) query = query.eq('type', type);
+  if (universe) query = query.eq('universe', universe);
 
   if (search) {
     // Neutralise les caractères qui casseraient la syntaxe `.or(...)` de PostgREST.
@@ -114,4 +116,18 @@ export async function getEntryBySlug(slug: string): Promise<AkashaEntryDetail | 
     relationsOut: normalizeRelations(outRows),
     relationsIn: normalizeRelations(inRows),
   };
+}
+
+/** Compte d'entrées par univers (pour le hub du registre). ~150 lignes → un select léger suffit. */
+export async function listUniverseCounts(): Promise<{ universe: string; count: number }[]> {
+  const supabase = await createClient();
+  if (!supabase) return [];
+
+  const { data } = await supabase.from('akasha_entries').select('universe').limit(2000);
+  const counts = new Map<string, number>();
+  for (const row of (data as { universe: string | null }[] | null) ?? []) {
+    const u = row.universe?.trim();
+    if (u) counts.set(u, (counts.get(u) ?? 0) + 1);
+  }
+  return Array.from(counts.entries()).map(([universe, count]) => ({ universe, count }));
 }

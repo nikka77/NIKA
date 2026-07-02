@@ -882,9 +882,13 @@ ul { list-style: none; }
   transition: opacity 0.3s ease;
 }
 .ak-art-img { transition: opacity 0.25s ease; }
+/* fondu au changement d'ère/forme : l'<img> est re-montée (key=src) → l'animation rejoue à chaque swap */
+.ak-era-img { animation: akEraFade 0.5s ease; }
+@keyframes akEraFade { from { opacity: 0; transform: scale(1.025); } to { opacity: 1; transform: scale(1); } }
 @media (prefers-reduced-motion: reduce) {
   .ak-fx-tilt { transform: none !important; transition: none; }
   .ak-fx-foil { display: none; }
+  .ak-era-img { animation: none; }
 }
 
 /* ── Techniques animées : animation bouclée embarquée dans le WebP (déterministe) ── */

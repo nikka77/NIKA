@@ -6,18 +6,45 @@ import { useState } from 'react';
 import CardFx from './CardFx';
 import CharacterCard from './CharacterCard';
 import CharacterDossier from './CharacterDossier';
+import CardActions from './CardActions';
+import ArcFrieze from './ArcFrieze';
 import { RARITY_META, type AkashaEntryDetail } from '@/lib/akasha/types';
 
 export default function CharacterView({ entry }: { entry: AkashaEntryDetail }) {
   const [sel, setSel] = useState(0);
   const frame = entry.rarity ? RARITY_META[entry.rarity].color : '#5A88B0';
   const foilmax = entry.rarity === 'legendary' ? 0.6 : entry.rarity === 'epic' ? 0.48 : entry.rarity === 'rare' ? 0.38 : 0.26;
+  const nindo = typeof (entry.attributes as Record<string, unknown>).nindo === 'string'
+    ? ((entry.attributes as Record<string, unknown>).nindo as string)
+    : null;
+  // Libellé du credo piloté par la data (Naruto = « Nindō · sa voie du ninja », défaut multi-univers = « Credo »).
+  const nindoLabel = typeof (entry.attributes as Record<string, unknown>).nindoLabel === 'string'
+    ? ((entry.attributes as Record<string, unknown>).nindoLabel as string)
+    : 'Credo';
+  const forms = (Array.isArray((entry.attributes as Record<string, unknown>).forms)
+    ? ((entry.attributes as Record<string, unknown>).forms as Record<string, unknown>[])
+    : []
+  ).filter((f) => f && typeof f.url === 'string');
 
   return (
     <>
+      {/* Frise chronologique horizontale — remplace le sélecteur d'onglets ET l'onglet Parcours */}
+      {forms.length > 1 && <ArcFrieze forms={forms} sel={sel} onSelect={setSel} color={frame} />}
+
       <CardFx color={frame} foilmax={foilmax}>
         <CharacterCard entry={entry} sel={sel} onSelect={setSel} />
       </CardFx>
+
+      <CardActions slug={entry.slug} name={entry.name} img={entry.image_url ?? undefined} color={frame} />
+
+      {nindo && (
+        <div style={{ marginTop: '1.4rem', position: 'relative', padding: '0.95rem 1.05rem 0.9rem 2.5rem', borderRadius: 14, background: `linear-gradient(135deg, ${frame}1F, ${frame}0A)`, border: `1px solid ${frame}45`, overflow: 'hidden' }}>
+          <span aria-hidden style={{ position: 'absolute', left: 11, top: -2, fontFamily: 'var(--fe)', fontSize: 52, lineHeight: 1, color: `${frame}66`, fontStyle: 'italic', fontWeight: 900 }}>“</span>
+          <p style={{ margin: 0, fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 700, fontSize: 'clamp(15px,3.6vw,18px)', lineHeight: 1.4, color: 'var(--td)' }}>{nindo}</p>
+          <div style={{ marginTop: 6, fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: frame }}>{nindoLabel}</div>
+        </div>
+      )}
+
       <div style={{ marginTop: '1.6rem' }}>
         <CharacterDossier entry={entry} sel={sel} />
       </div>

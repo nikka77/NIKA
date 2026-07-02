@@ -9,6 +9,7 @@ import EntityAttributes from '@/components/akasha/EntityAttributes';
 import EntityRelations from '@/components/akasha/EntityRelations';
 import Markdown from '@/components/akasha/Markdown';
 import CharacterView from '@/components/akasha/CharacterView';
+import PlaceView from '@/components/akasha/PlaceView';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -44,6 +45,23 @@ export default async function AkashaEntryPage({ params }: Props) {
             ← Registre AKASHA
           </Link>
           <CharacterView entry={entry} />
+        </div>
+      </main>
+    );
+  }
+
+  // Entités enrichies d'ères chronologiques (lieu, artefact…) → page bespoke « carte évolutive ».
+  if (Array.isArray((entry.attributes as Record<string, unknown>).eras) && ((entry.attributes as Record<string, unknown>).eras as unknown[]).length > 0) {
+    return (
+      <main>
+        <div style={{ maxWidth: 470, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.2rem clamp(3rem,7vw,5rem)' }}>
+          <Link
+            href="/learn/akasha"
+            style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', textDecoration: 'none', display: 'inline-block', marginBottom: '1rem' }}
+          >
+            ← Registre AKASHA
+          </Link>
+          <PlaceView entry={entry} />
         </div>
       </main>
     );

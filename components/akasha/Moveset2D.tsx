@@ -82,7 +82,7 @@ const HELD = new Set<string>(['left', 'right', 'down', 'guard', 'chakra', 'run']
 type Act = 'none' | 'punch' | 'kick' | 'jump' | 'taunt' | 'dash';
 type St = { action: Act; aT: number; posX: number; walkPhase: number; crouching: boolean; crouchT: number; label: string; combo: number; idleSince: number; airAtk: boolean; dashDir: number; struck: boolean; postHitT: number };
 
-export default function Moveset2D({ slug, aura = null }: { slug: string; aura?: string | null }) {
+export default function Moveset2D({ slug, aura = null, caption }: { slug: string; aura?: string | null; caption?: string }) {
   const cfg = (moveset as unknown as Record<string, Cfg>)[slug];
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const stageRef = useRef<HTMLDivElement | null>(null);
@@ -278,6 +278,9 @@ export default function Moveset2D({ slug, aura = null }: { slug: string; aura?: 
         <button type="button" aria-label={muted ? 'Activer le son' : 'Couper le son'} title={muted ? 'Son coupé' : 'Son actif'} style={iconBtn} onClick={toggleMute}>{muted ? '🔇' : '🔊'}</button>
         <button type="button" aria-label="Plein écran" title="Plein écran" style={iconBtn} onClick={toggleFull}>⛶</button>
       </div>
+      {caption && (
+        <div style={{ fontFamily: MONO, fontSize: 8.5, letterSpacing: '0.08em', color: 'var(--td3)', marginTop: -4, marginBottom: 8 }}>{caption}</div>
+      )}
 
       <div
         tabIndex={0} role="application" aria-label="Démo jouable Naruto — flèches bouger, J poing, K pied, G garde, C chakra, T provocation, double-tap pour foncer"

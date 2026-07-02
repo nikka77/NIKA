@@ -9,12 +9,13 @@ const AXES: { key: keyof Stats; label: string }[] = [
 ];
 const MAX = 5;
 
-export default function DatabookRadar({ stats, color = '#7B5CF0', size = 188 }: { stats: Stats; color?: string; size?: number }) {
+export default function DatabookRadar({ stats, color = '#7B5CF0', size = 188, compare, compareColor = '#E23B4E' }: { stats: Stats; color?: string; size?: number; compare?: Stats; compareColor?: string }) {
   const cx = size / 2, cy = size / 2, R = size * 0.33;
   const ang = (i: number) => -Math.PI / 2 + i * (Math.PI / 4);
   const pt = (i: number, r: number): [number, number] => [cx + Math.cos(ang(i)) * r, cy + Math.sin(ang(i)) * r];
   const poly = (r: (i: number) => number) => AXES.map((_, i) => pt(i, r(i)).map((n) => n.toFixed(1)).join(',')).join(' ');
   const data = poly((i) => (R * Math.max(0, Math.min(MAX, stats[AXES[i].key] ?? 0))) / MAX);
+  const cmp = compare ? poly((i) => (R * Math.max(0, Math.min(MAX, compare[AXES[i].key] ?? 0))) / MAX) : null;
   const total = AXES.reduce((s, a) => s + (stats[a.key] ?? 0), 0);
 
   return (
@@ -25,6 +26,8 @@ export default function DatabookRadar({ stats, color = '#7B5CF0', size = 188 }: 
       ))}
       {/* rayons */}
       {AXES.map((_, i) => { const [x, y] = pt(i, R); return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="rgba(255,255,255,0.10)" strokeWidth={1} />; })}
+      {/* polygone comparatif (rival) — tracé en pointillés SOUS le polygone principal */}
+      {cmp && <polygon points={cmp} fill={`${compareColor}20`} stroke={compareColor} strokeWidth={1.6} strokeDasharray="4 3" strokeLinejoin="round" />}
       {/* polygone de stats */}
       <polygon points={data} fill={`${color}3a`} stroke={color} strokeWidth={2} strokeLinejoin="round" />
       {AXES.map((a, i) => { const [x, y] = pt(i, (R * Math.max(0, Math.min(MAX, stats[a.key] ?? 0))) / MAX); return <circle key={i} cx={x} cy={y} r={2.2} fill={color} />; })}

@@ -12,7 +12,176 @@
       "description": "Le Village caché de la Feuille, foyer de l'équipe 7 et cœur du récit.",
       "image_url": "/images/akasha/ref/konohagakure.webp",
       "attributes": {
-        "region": "Pays du Feu"
+        "region": "Pays du Feu",
+        "kanji": "木ノ葉隠れの里",
+        "founded": "Fin de l'ère des Guerres Claniques",
+        "founders": [
+          {
+            "name": "Hashirama Senju",
+            "slug": "hashirama-senju"
+          },
+          {
+            "name": "Madara Uchiha",
+            "slug": "madara-uchiha"
+          }
+        ],
+        "symbol": "La feuille",
+        "motto": "La Volonté du Feu",
+        "quote": {
+          "text": "Quand les feuilles dansent, le feu brûle. L'ombre du feu illumine le village.",
+          "author": "Hiruzen Sarutobi · 3ᵉ Hokage"
+        },
+        "leaderTitle": "Septième Hokage",
+        "leader": {
+          "name": "Naruto Uzumaki",
+          "slug": "naruto-uzumaki"
+        },
+        "population": "Plusieurs dizaines de milliers d'habitants",
+        "villageRank": "L'un des Cinq Grands Villages",
+        "status": "Prospère",
+        "bio": "Fondé à la fin de l'ère sanglante des Guerres Claniques par l'alliance du clan Senju de Hashirama et du clan Uchiha de Madara, Konohagakure fut le tout premier village caché — le modèle qu'imiteront les autres nations. Bâti dans le Pays du Feu et ceint d'une muraille circulaire, il érige la « Volonté du Feu » en credo : chaque génération protège la suivante comme une flamme que l'on transmet. Le village survivra à l'attaque de Kurama, au massacre du clan Uchiha, à la destruction totale infligée par Pain, puis à la Quatrième Grande Guerre Shinobi — pour renaître à chaque fois plus fort, et devenir sous le Septième Hokage une cité moderne et pacifiée.",
+        "trivia": [
+          "« Konohagakure » signifie littéralement « caché parmi les feuilles ». Son symbole, la feuille, orne le bandeau frontal de tous ses ninjas.",
+          "Le Monument des Hokage sculpte le visage de chaque Hokage dans la falaise qui domine le village.",
+          "C'est le seul des Cinq Grands Villages à avoir été entièrement rasé — par Pain — puis reconstruit.",
+          "La « Volonté du Feu », transmise par Hashirama, est la conviction que le village tout entier est une famille."
+        ],
+        "eras": [
+          {
+            "label": "Fondation",
+            "leader": "Hashirama Senju · 1ᵉʳ Hokage",
+            "period": "Ère des Guerres Claniques",
+            "event": "Alliance Senju–Uchiha",
+            "threat": "Rivalités claniques",
+            "img": "/images/akasha/places/konoha-fondation.webp",
+            "summary": "Hashirama Senju et Madara Uchiha scellent la paix entre leurs clans rivaux et fondent le premier village caché. Hashirama en devient le Premier Hokage et lui insuffle la Volonté du Feu."
+          },
+          {
+            "label": "Nuit du Renard",
+            "leader": "Minato Namikaze · 4ᵉ Hokage",
+            "period": "~12 ans avant la Partie I",
+            "event": "Attaque de Kurama",
+            "threat": "Le Renard à Neuf Queues",
+            "img": "/images/akasha/places/konoha-nuit-renard.webp",
+            "summary": "Une nuit, Kurama le Démon-Renard est libéré et ravage le village. Le Quatrième Hokage Minato le scelle au prix de sa vie dans son fils nouveau-né, Naruto."
+          },
+          {
+            "label": "Âge d'or",
+            "leader": "Hiruzen Sarutobi · 3ᵉ Hokage",
+            "period": "Partie I",
+            "event": "Examens Chūnin",
+            "threat": "Orochimaru",
+            "img": "/images/akasha/ref/konohagakure.webp",
+            "summary": "Sous le Troisième Hokage Hiruzen, le village prospère en paix. C'est le Konoha de l'enfance de Naruto — celui des Examens Chūnin et de l'équipe 7."
+          },
+          {
+            "label": "Assaut de Pain",
+            "leader": "Tsunade · 5ᵉ Hokage",
+            "period": "Partie II",
+            "event": "Shinra Tensei de Nagato",
+            "threat": "Akatsuki",
+            "img": "/images/akasha/places/konoha-pain.webp",
+            "summary": "Nagato, sous le nom de Pain, réduit le village en cratère d'un unique Shinra Tensei pour capturer Naruto. Ce dernier revient, le terrasse et retourne le chef de l'Akatsuki."
+          },
+          {
+            "label": "Ère moderne",
+            "leader": "Naruto Uzumaki · 7ᵉ Hokage",
+            "period": "Ère Boruto",
+            "event": "Modernisation du village",
+            "threat": "Organisation Kara",
+            "img": "/images/akasha/places/konoha-moderne.webp",
+            "summary": "Reconstruit après la guerre, Konoha entre dans une ère de paix et de technologie sous le Septième Hokage Naruto : gratte-ciels, écrans et trains côtoient les traditions ninja."
+          }
+        ],
+        "hokage": [
+          {
+            "n": "Iᵉʳ",
+            "name": "Hashirama Senju",
+            "slug": "hashirama-senju",
+            "note": "Fondateur · maître du Mokuton"
+          },
+          {
+            "n": "IIᵉ",
+            "name": "Tobirama Senju",
+            "note": "Créateur de l'Edo Tensei"
+          },
+          {
+            "n": "IIIᵉ",
+            "name": "Hiruzen Sarutobi",
+            "note": "« Le Professeur »"
+          },
+          {
+            "n": "IVᵉ",
+            "name": "Minato Namikaze",
+            "slug": "minato-namikaze",
+            "note": "« L'Éclair Jaune »"
+          },
+          {
+            "n": "Vᵉ",
+            "name": "Tsunade",
+            "slug": "tsunade",
+            "note": "Sannin · médecin légendaire"
+          },
+          {
+            "n": "VIᵉ",
+            "name": "Kakashi Hatake",
+            "slug": "kakashi-hatake",
+            "note": "« Le Ninja Copieur »"
+          },
+          {
+            "n": "VIIᵉ",
+            "name": "Naruto Uzumaki",
+            "slug": "naruto-uzumaki",
+            "note": "Héros de la 4ᵉ Guerre"
+          }
+        ],
+        "clans": [
+          {
+            "name": "Senju",
+            "slug": "senju"
+          },
+          {
+            "name": "Uchiha",
+            "slug": "uchiha"
+          },
+          {
+            "name": "Uzumaki",
+            "slug": "uzumaki"
+          },
+          {
+            "name": "Hyūga",
+            "slug": "hyuga"
+          },
+          {
+            "name": "Nara",
+            "slug": "nara"
+          },
+          {
+            "name": "Akimichi"
+          },
+          {
+            "name": "Yamanaka"
+          },
+          {
+            "name": "Aburame"
+          },
+          {
+            "name": "Inuzuka"
+          },
+          {
+            "name": "Sarutobi"
+          }
+        ],
+        "landmarks": [
+          "Monument des Hokage",
+          "Tour de l'Hokage",
+          "Académie des ninjas",
+          "Forêt de la Mort (terrain 44)",
+          "Ichiraku Ramen",
+          "Terrain d'entraînement n°3",
+          "Hôpital de Konoha",
+          "Ancien quartier Uchiha"
+        ]
       },
       "rarity": "rare"
     },
@@ -110,7 +279,99 @@
       "description": "Sphère tourbillonnante de chakra concentrée dans la paume, créée par Minato.",
       "image_url": "/images/akasha/ref/rasengan.webp",
       "attributes": {
-        "element": "Chakra"
+        "element": "Chakra",
+        "kanji": "螺旋丸",
+        "quote": {
+          "text": "Le Rasengan est l'héritage du Quatrième. Naruto… c'est à toi de l'achever.",
+          "author": "Jiraiya"
+        },
+        "rosterLabel": "Maîtres",
+        "facts": [
+          {
+            "label": "Créateur",
+            "value": "Minato Namikaze, 4ᵉ Hokage"
+          },
+          {
+            "label": "Rang",
+            "value": "A (base) → S (Rasenshuriken)"
+          },
+          {
+            "label": "Nature",
+            "value": "Chakra pur · + Vent pour le Rasenshuriken"
+          },
+          {
+            "label": "Portée",
+            "value": "Corps à corps → distance (Rasenshuriken)"
+          },
+          {
+            "label": "Particularité",
+            "value": "Aucun signe requis — rotation dans la paume"
+          }
+        ],
+        "bio": "Le Rasengan est une sphère de chakra en rotation ultra-dense, formée dans la paume sans le moindre signe. Inventé par le Quatrième Hokage Minato en s'inspirant de la Bijūdama des démons à queues, il représentait un défi que son créateur n'eut pas le temps d'achever : y ajouter une nature élémentaire. Transmis par Jiraiya à Naruto, il devint la signature du jeune ninja, qui le déclina à l'infini grâce au Multiclonage. C'est Naruto qui accomplit finalement le rêve de son père en y injectant sa nature Vent — le Rasenshuriken, arme de destruction cellulaire de rang S. Fusionné au chakra de Kurama et des Six Chemins, le Rasengan atteignit une échelle proprement divine.",
+        "trivia": [
+          "Minato mit trois ans à créer le Rasengan ; il rêvait d'y ajouter une nature élémentaire — ce que seul Naruto réussira.",
+          "Le Rasengan ne requiert AUCUN signe : toute sa difficulté tient dans la rotation et la compression du chakra dans la main.",
+          "Le Rasenshuriken fut d'abord si dangereux qu'il endommageait les propres cellules de Naruto à chaque usage.",
+          "Konohamaru, élève de Naruto, maîtrise lui aussi le Rasengan — la technique se transmet de génération en génération."
+        ],
+        "abilities": [
+          "Rasengan (base)",
+          "Ōdama Rasengan (géant)",
+          "Rasengan multiple",
+          "Rasenshuriken",
+          "Rasengan tourbillonnant",
+          "Bijūdama Rasenshuriken",
+          "Rasengan des Six Chemins",
+          "Mini-Rasenshuriken"
+        ],
+        "eras": [
+          {
+            "label": "Création",
+            "leader": "Minato Namikaze",
+            "period": "2 générations avant",
+            "event": "Inspiré de la Bijūdama",
+            "threat": "Rang A",
+            "img": "/images/akasha/powers/rasengan-creation.webp",
+            "summary": "Le Quatrième Hokage Minato invente le Rasengan en observant la Bijūdama d'un Bijū : une sphère de chakra en rotation, sans nature. Il meurt avant d'avoir pu y ajouter un élément."
+          },
+          {
+            "label": "Rasengan",
+            "leader": "Naruto (via Jiraiya)",
+            "period": "Partie I",
+            "event": "Les trois étapes",
+            "threat": "Rang A",
+            "img": "/images/akasha/ref/rasengan.webp",
+            "summary": "Jiraiya transmet la technique à Naruto en trois étapes — rotation, puissance, contrôle. La sphère broie tout ce qu'elle touche, sans aucun signe."
+          },
+          {
+            "label": "Ōdama & variantes",
+            "leader": "Naruto Uzumaki",
+            "period": "Partie I–II",
+            "event": "Rasengan géant & multiclonage",
+            "threat": "Rang A",
+            "img": "/images/akasha/powers/rasengan-odama.webp",
+            "summary": "Grâce au Multiclonage, Naruto décline le Rasengan à l'infini : Ōdama (géant), Rasengan multiple, tourbillonnant… la puissance décuplée."
+          },
+          {
+            "label": "Rasenshuriken",
+            "leader": "Naruto Uzumaki",
+            "period": "Partie II",
+            "event": "Ajout de la nature Vent",
+            "threat": "Rang S",
+            "img": "/images/akasha/powers/rasengan-rasenshuriken.webp",
+            "summary": "Naruto réussit ce que Minato n'avait pu : y injecter sa nature Vent. Le Rasenshuriken lacère l'ennemi au niveau cellulaire — d'abord à bout portant, puis lançable."
+          },
+          {
+            "label": "Six Chemins",
+            "leader": "Naruto Uzumaki",
+            "period": "4ᵉ Guerre & au-delà",
+            "event": "Bijūdama Rasenshuriken",
+            "threat": "Rang S+",
+            "img": "/images/akasha/powers/rasengan-sixpaths.webp",
+            "summary": "Au sommet, Naruto fusionne le Rasengan avec le chakra de Kurama et des Six Chemins : Bijūdama Rasenshuriken, versions colossales… une échelle divine."
+          }
+        ]
       },
       "rarity": "epic"
     },
@@ -236,7 +497,99 @@
       "description": "Œil qui copie les techniques et perçoit le moindre mouvement.",
       "image_url": "/images/akasha/ref/sharingan.webp",
       "attributes": {
-        "discipline": "Dōjutsu Uchiha"
+        "discipline": "Dōjutsu Uchiha",
+        "kanji": "写輪眼",
+        "quote": {
+          "text": "Face au Sharingan, ton corps te trahit avant même de bouger.",
+          "author": "Kakashi Hatake"
+        },
+        "rosterLabel": "Porteurs",
+        "facts": [
+          {
+            "label": "Discipline",
+            "value": "Dōjutsu héréditaire du clan Uchiha"
+          },
+          {
+            "label": "Éveil",
+            "value": "Sous le choc d'une émotion intense"
+          },
+          {
+            "label": "Apparence",
+            "value": "Iris rouge à tomoes noirs"
+          },
+          {
+            "label": "Évolution",
+            "value": "1 tomoe → 3 tomoes → Mangekyō → Rinnegan"
+          },
+          {
+            "label": "Faiblesse",
+            "value": "Le Mangekyō rend peu à peu aveugle"
+          }
+        ],
+        "bio": "Le Sharingan — « œil copieur tournoyant » — est le dōjutsu héréditaire du clan Uchiha. Il s'éveille sous le choc d'une émotion violente et confère une perception surhumaine : lire les mouvements, percevoir le flux de chakra, copier presque toute technique et plonger l'ennemi dans une hypnose redoutable. À mesure qu'apparaissent ses trois tomoes, sa puissance grandit. La perte d'un être cher peut l'élever au Mangekyō Sharingan, qui débloque des pouvoirs dévastateurs — Amaterasu, Tsukuyomi, Susanoo — mais consume peu à peu la vue. En greffant les yeux d'un frère, on obtient le Mangekyō éternel, sans la cécité. Ultime palier, nourri du chakra du Sage des Six Chemins, l'œil se mue en Rinnegan.",
+        "trivia": [
+          "Le Sharingan copie une technique en la « lisant » — mais ne peut reproduire un kekkei genkai ni ce qui dépasse le corps du porteur.",
+          "Chaque Mangekyō a un motif unique, propre à son porteur (l'œil d'Itachi, de Sasuke, de Kakashi/Obito…).",
+          "Kakashi, non-Uchiha, portait un Sharingan greffé par Obito — et débloqua même le Kamui.",
+          "Un œil arraché continue de fonctionner greffé sur un autre : Danzō en avait couvert tout un bras."
+        ],
+        "abilities": [
+          "Copie de techniques",
+          "Prédiction des mouvements",
+          "Hypnose / Genjutsu",
+          "Amaterasu (flammes noires)",
+          "Tsukuyomi (illusion)",
+          "Susanoo (avatar)",
+          "Kamui (Obito · Kakashi)",
+          "Izanagi & Izanami"
+        ],
+        "eras": [
+          {
+            "label": "Sharingan (1 tomoe)",
+            "leader": "Jeune Uchiha",
+            "period": "Éveil",
+            "event": "Premier choc émotionnel",
+            "threat": "Perception accrue",
+            "img": "/images/akasha/skills/sharingan-1tomoe.webp",
+            "summary": "L'œil s'ouvre sous le choc d'une émotion violente : un premier tomoe apparaît, aiguisant déjà la perception et la lecture des mouvements."
+          },
+          {
+            "label": "Sharingan complet",
+            "leader": "Sasuke · Itachi",
+            "period": "Maîtrise",
+            "event": "Maturité de l'œil (3 tomoes)",
+            "threat": "Copie & hypnose",
+            "img": "/images/akasha/ref/sharingan.webp",
+            "summary": "Avec ses trois tomoes, le Sharingan atteint sa plénitude : il copie presque toute technique, anticipe chaque geste et hypnotise l'adversaire."
+          },
+          {
+            "label": "Mangekyō",
+            "leader": "Itachi · Sasuke",
+            "period": "La perte",
+            "event": "Mort d'un être cher",
+            "threat": "Amaterasu · Tsukuyomi · Susanoo",
+            "img": "/images/akasha/skills/sharingan-mangekyo.webp",
+            "summary": "Le deuil élève l'œil au Mangekyō Sharingan : Amaterasu, Tsukuyomi, Susanoo… des pouvoirs dévastateurs, au prix d'une cécité progressive."
+          },
+          {
+            "label": "Mangekyō éternel",
+            "leader": "Madara · Sasuke",
+            "period": "Transplantation",
+            "event": "Greffe des yeux d'un frère",
+            "threat": "Puissance sans cécité",
+            "img": "/images/akasha/skills/sharingan-eternel.webp",
+            "summary": "En fusionnant ses yeux avec ceux d'un frère, l'Uchiha obtient le Mangekyō éternel : toute la puissance du Mangekyō, sans en perdre la vue."
+          },
+          {
+            "label": "Rinnegan",
+            "leader": "Sasuke · Madara",
+            "period": "Éveil ultime",
+            "event": "Chakra du Sage des Six Chemins",
+            "threat": "Les Six Voies",
+            "img": "/images/akasha/skills/sharingan-rinnegan.webp",
+            "summary": "Nourri du chakra d'Hagoromo, le Sharingan transcende sa forme et devient Rinnegan : l'œil violet aux anneaux, maître des Six Voies."
+          }
+        ]
       },
       "rarity": "epic"
     },
@@ -306,7 +659,83 @@
       "description": "« Peau de requin » : lame vivante qui dévore le chakra, portée par Kisame.",
       "image_url": "/images/akasha/ref/samehada.webp",
       "attributes": {
-        "material": "Épée vivante"
+        "material": "Lame vivante et sentiente, couverte d'écailles",
+        "kanji": "鮫肌",
+        "quote": {
+          "text": "Samehada est capricieuse : elle ne se laisse porter que par celui qu'elle a choisi.",
+          "author": "Kisame Hoshigaki"
+        },
+        "origin": "Kirigakure · Village de la Brume",
+        "type": "L'une des Sept Épées des Sept Épéistes de la Brume",
+        "bearer": "Kisame Hoshigaki",
+        "status": "Active",
+        "bio": "Forgée pour les Sept Épéistes de la Brume, Samehada — « Peau de requin » — n'est pas une lame ordinaire : c'est une arme VIVANTE et sentiente, couverte d'écailles qui râpent la chair au lieu de la trancher et dévorent le chakra de l'ennemi. Portée d'abord par Fuguki Suikazan, elle passe à Kisame Hoshigaki, qui l'assassine pour la lui prendre : entre le monstre humain et l'épée gloutonne naît une symbiose parfaite. Kisame peut même fusionner avec elle pour absorber des océans de chakra. Mais Samehada reste libre de ses choix : face au chakra colossal de Killer B, l'hôte du Hachibi, elle trahit Kisame et se choisit un nouveau maître.",
+        "trivia": [
+          "Samehada « râpe » au lieu de couper : ses écailles arrachent la chair et aspirent le chakra de la cible.",
+          "C'est une arme sentiente : elle ronronne, mord ses ennemis, et peut refuser ou changer de porteur.",
+          "Kisame et Samehada peuvent fusionner en une créature mi-homme mi-requin.",
+          "Elle fait partie des sept armes légendaires des Sept Épéistes de la Brume de Kirigakure."
+        ],
+        "abilities": [
+          "Dévore le chakra",
+          "Écailles-rasoir (râpe, ne tranche pas)",
+          "Sentiente — choisit son maître",
+          "Fusion avec le porteur",
+          "Régénération",
+          "Détecte les grandes réserves de chakra"
+        ],
+        "wielders": [
+          {
+            "name": "Fuguki Suikazan",
+            "note": "Premier porteur connu · l'un des Sept Épéistes"
+          },
+          {
+            "name": "Kisame Hoshigaki",
+            "note": "Le porteur légendaire · Akatsuki"
+          },
+          {
+            "name": "Killer B",
+            "note": "Nouveau maître après la trahison"
+          }
+        ],
+        "eras": [
+          {
+            "label": "Épée de la Brume",
+            "leader": "Fuguki Suikazan",
+            "period": "Avant l'Akatsuki",
+            "event": "L'une des Sept Épées",
+            "threat": "Enveloppée de bandages",
+            "img": "/images/akasha/artifacts/samehada-brume.webp",
+            "summary": "Samehada compte parmi les sept armes légendaires des Épéistes de la Brume de Kirigakure. Elle est alors portée par Fuguki Suikazan."
+          },
+          {
+            "label": "Kisame",
+            "leader": "Kisame Hoshigaki",
+            "period": "Ère Akatsuki",
+            "event": "Symbiose parfaite",
+            "threat": "Dévore le chakra",
+            "img": "/images/akasha/ref/samehada.webp",
+            "summary": "Kisame Hoshigaki tue Fuguki et s'empare de Samehada. Entre le monstre humain et l'épée gloutonne naît une symbiose parfaite ; ensemble ils traquent les jinchūriki pour l'Akatsuki."
+          },
+          {
+            "label": "Fusion",
+            "leader": "Kisame Hoshigaki",
+            "period": "Combats de l'Akatsuki",
+            "event": "Mode requin",
+            "threat": "Absorption massive",
+            "img": "/images/akasha/artifacts/samehada-fusion.webp",
+            "summary": "En pleine bataille, Kisame fusionne avec Samehada pour se muer en créature mi-homme mi-requin, capable d'absorber des océans de chakra."
+          },
+          {
+            "label": "La trahison",
+            "leader": "Killer B",
+            "period": "Quatrième Guerre",
+            "event": "Change de maître",
+            "threat": "Séduite par le Hachibi",
+            "img": "/images/akasha/artifacts/samehada-trahison.webp",
+            "summary": "Face au chakra colossal de Killer B, l'hôte du Hachibi, la sentiente Samehada abandonne Kisame et se choisit un nouveau maître."
+          }
+        ]
       },
       "rarity": "epic"
     },
@@ -334,7 +763,89 @@
       "description": "Spécialiste qui soigne par le chakra et maîtrise l'anatomie au combat.",
       "image_url": "/images/akasha/ref/ninja-medical.webp",
       "attributes": {
-        "sector": "Médecine ninja"
+        "sector": "Médecine ninja",
+        "kanji": "医療忍者",
+        "quote": {
+          "text": "Un ninja médical ne meurt pas avant ses coéquipiers. C'est la première règle.",
+          "author": "Tsunade · 5ᵉ Hokage"
+        },
+        "rosterLabel": "Praticiens",
+        "facts": [
+          {
+            "label": "Secteur",
+            "value": "Médecine ninja"
+          },
+          {
+            "label": "Prérequis",
+            "value": "Contrôle du chakra d'une extrême précision"
+          },
+          {
+            "label": "Réformé par",
+            "value": "Tsunade, l'une des Trois Sannin"
+          },
+          {
+            "label": "Niveau ultime",
+            "value": "Sceau de Byakugō"
+          },
+          {
+            "label": "Symbole",
+            "value": "医 — « médecine »"
+          }
+        ],
+        "bio": "Le ninjutsu médical est l'art de soigner par le chakra — refermer les plaies, réparer les organes, neutraliser les poisons — sans jamais cesser de combattre. Il exige un contrôle du chakra d'une précision absolue : la moindre erreur peut tuer le patient. Longtemps marginale, la discipline fut révolutionnée par Tsunade, l'une des Trois Sannin, qui imposa la présence d'un ninja médical dans chaque équipe et forma l'élite de sa génération — Shizune, puis Sakura Haruno. Au sommet de l'art, le Sceau de Byakugō permet de stocker des années de chakra pour une régénération quasi instantanée.",
+        "trivia": [
+          "Première règle de Tsunade : un ninja médical doit rester en vie coûte que coûte — sans lui, toute l'équipe est condamnée.",
+          "Le symbole 医 (« médecine ») orne l'uniforme des medic-nin du corps médical de guerre.",
+          "Le Sceau de Byakugō, losange sur le front, concentre des années de chakra accumulé pour une régénération instantanée.",
+          "Peu de ninjas possèdent un contrôle du chakra assez fin pour opérer : c'est un talent rare et recherché."
+        ],
+        "abilities": [
+          "Paume Mystique (soin)",
+          "Bistouri de chakra",
+          "Réanimation",
+          "Antidotes & poisons",
+          "Sceau de Byakugō (régénération)",
+          "Ninjutsu de Création (Katsuyu)",
+          "Diagnostic au chakra"
+        ],
+        "eras": [
+          {
+            "label": "Apprenti",
+            "leader": "Recrues de l'Académie",
+            "period": "Formation",
+            "event": "Contrôle du chakra",
+            "threat": "Diagnostic précis",
+            "img": "/images/akasha/professions/medic-apprenti.webp",
+            "summary": "Tout commence par un contrôle du chakra d'une finesse extrême : diagnostiquer, refermer une plaie légère, ne jamais nuire au patient."
+          },
+          {
+            "label": "Medic de terrain",
+            "leader": "Corps médical",
+            "period": "Missions & guerre",
+            "event": "Paume Mystique",
+            "threat": "Sang-froid au combat",
+            "img": "/images/akasha/professions/medic-terrain.webp",
+            "summary": "Sur le champ de bataille, le medic-nin soigne sous le feu grâce à la Paume Mystique, réanime et maintient l'escouade en vie."
+          },
+          {
+            "label": "Medic d'élite",
+            "leader": "Sakura · Shizune",
+            "period": "Maîtrise",
+            "event": "Bistouri de chakra",
+            "threat": "Anatomie parfaite",
+            "img": "/images/akasha/ref/ninja-medical.webp",
+            "summary": "L'élite opère au chakra : bistouri de précision, antidotes, régénération cellulaire. Sakura et Shizune, formées par Tsunade, en sont les fers de lance."
+          },
+          {
+            "label": "Légendaire",
+            "leader": "Tsunade · Sakura",
+            "period": "Sommet de l'art",
+            "event": "Sceau de Byakugō",
+            "threat": "Chakra colossal",
+            "img": "/images/akasha/professions/medic-legendaire.webp",
+            "summary": "Au sommet, Tsunade débloque le Sceau de Byakugō — des années de chakra stockées pour une régénération quasi instantanée — et le transmet à sa disciple Sakura."
+          }
+        ]
       },
       "rarity": "rare"
     },
@@ -348,7 +859,99 @@
       "description": "Clan réputé pour le Sharingan et une intensité émotionnelle dévastatrice.",
       "image_url": "/images/akasha/ref/uchiha.webp",
       "attributes": {
-        "scope": "Clan"
+        "scope": "Clan",
+        "kanji": "うちは一族",
+        "quote": {
+          "text": "L'amour trop profond des Uchiha engendre une haine tout aussi profonde.",
+          "author": "Tobirama Senju · 2ᵉ Hokage"
+        },
+        "rosterLabel": "Membres",
+        "facts": [
+          {
+            "label": "Kekkei Genkai",
+            "value": "Sharingan — l'œil qui copie et hypnotise"
+          },
+          {
+            "label": "Symbole",
+            "value": "L'éventail uchiwa (rouge & blanc)"
+          },
+          {
+            "label": "Ancêtre",
+            "value": "Indra Ōtsutsuki, fils du Sage des Six Chemins"
+          },
+          {
+            "label": "Rival historique",
+            "value": "Le clan Senju"
+          },
+          {
+            "label": "Village",
+            "value": "Konohagakure"
+          }
+        ],
+        "bio": "Descendants d'Indra, le fils aîné du Sage des Six Chemins, les Uchiha sont un clan de génies au chakra dévastateur, définis par le Sharingan — l'œil rouge qui copie toute technique et lit les mouvements. Leur force est aussi leur malédiction : la « Volonté de la Haine » veut que la perte d'un être cher éveille en eux un pouvoir immense, le Mangekyō, au prix de leur âme. Cofondateurs de Konoha aux côtés des Senju, ils en furent peu à peu écartés puis surveillés, jusqu'au massacre orchestré par Itachi pour éviter un coup d'État. De ce sang ne restèrent que Sasuke, Itachi et quelques exilés — mais la lignée renaît avec Sasuke et sa fille Sarada.",
+        "trivia": [
+          "Le Sharingan s'éveille sous le choc d'une émotion intense — le plus souvent la perte d'un proche.",
+          "Le nom du clan vient de l'« uchiwa », l'éventail de leur emblème, qui attisait aussi les flammes de leurs jutsu de Feu.",
+          "Le Mangekyō Sharingan rend peu à peu aveugle — sauf en greffant les yeux d'un frère (Mangekyō éternel).",
+          "Presque tous les Uchiha maîtrisent la Nature du Feu enfant : la Boule de Feu Suprême est leur rite de passage."
+        ],
+        "abilities": [
+          "Sharingan",
+          "Mangekyō Sharingan",
+          "Amaterasu",
+          "Tsukuyomi",
+          "Susanoo",
+          "Izanagi & Izanami",
+          "Rinnegan (éveil ultime)",
+          "Nature du Feu"
+        ],
+        "eras": [
+          {
+            "label": "Origines",
+            "leader": "Indra Ōtsutsuki",
+            "period": "Âge des mythes",
+            "event": "Naissance du clan",
+            "threat": "Sharingan",
+            "img": "/images/akasha/status/uchiha-origines.webp",
+            "summary": "Héritiers du chakra d'Indra, les Uchiha éveillent le Sharingan dans la douleur et deviennent les éternels rivaux du clan Senju."
+          },
+          {
+            "label": "Fondation de Konoha",
+            "leader": "Madara Uchiha",
+            "period": "Fondation du village",
+            "event": "Alliance avec les Senju",
+            "threat": "Mangekyō",
+            "img": "/images/akasha/status/uchiha-konoha.webp",
+            "summary": "Madara et Hashirama Senju scellent la paix et fondent Konoha. Les Uchiha, guerriers d'élite, y prennent une place centrale — jusqu'au départ de Madara, méfiant."
+          },
+          {
+            "label": "Marginalisation",
+            "leader": "Fugaku Uchiha",
+            "period": "Avant la Partie I",
+            "event": "Le clan sous surveillance",
+            "threat": "Sharingan",
+            "img": "/images/akasha/status/uchiha-marginalisation.webp",
+            "summary": "Soupçonnés depuis la défection de Madara et l'attaque de Kurama, les Uchiha sont relégués dans un quartier à l'écart et surveillés. La tension monte vers un coup d'État."
+          },
+          {
+            "label": "Le Massacre",
+            "leader": "Itachi Uchiha",
+            "period": "~Partie I",
+            "event": "Extermination du clan",
+            "threat": "Tsukuyomi · Amaterasu",
+            "img": "/images/akasha/status/uchiha-massacre.webp",
+            "summary": "Pour empêcher une guerre civile, Itachi extermine le clan en une nuit sur ordre de Konoha — n'épargnant que son petit frère Sasuke, à qui il lègue la vérité et la haine."
+          },
+          {
+            "label": "Renaissance",
+            "leader": "Sasuke Uchiha",
+            "period": "Ère Boruto",
+            "event": "Réhabilitation du nom",
+            "threat": "Rinnegan",
+            "img": "/images/akasha/status/uchiha-renaissance.webp",
+            "summary": "Dernier héritier, Sasuke traverse la vengeance puis la rédemption, débloque le Rinnegan et réhabilite le nom Uchiha. Sa fille Sarada perpétue la lignée."
+          }
+        ]
       },
       "rarity": "epic"
     },
@@ -470,23 +1073,24 @@
         "height": "145.3cm - 147.5cm",
         "weight": "40.1kg - 40.6kg",
         "bloodType": "B",
-        "birthdate": "October 10",
+        "birthdate": "10 octobre",
         "classification": [
           "Jinchūriki",
           "Ermite (Sage)",
           "Type Capteur"
         ],
         "titles": [
-          "うずまきナルトUzumakiNaruto",
-          "the-off,NumberOneUnpredictable,NoisyNinja(目立ちたがり屋で意外性no.1のドタバタ忍者,MedachitagariyaDeIgaiseiNanbāWanNoDotabataNinja,EnglishTv:NumberOneHyperactive,KnuckleheadNinja)",
-          "childOfTheProphecy(予言の子,YogenNoKo)",
-          "saviourOfThisWorld(この世の救世主,KonoYoNoKyūseishu)",
-          "heroOfTheHiddenLeaf(木ノ葉隠れの英雄,KonohagakureNoEiyū,LiterallyMeaning:HeroOfTheHiddenTreeLeaves)",
-          "boyOfMiracles(奇跡を起こす少年,KisekiOOkosuShōnen)",
-          "konoha'sOrangeHokage(木ノ葉のオレンジ火影,KonohaNoOrenjiHokage,LiterallyMeaning:TreeLeaves'OrangeFireShadow)",
-          "seventhHokage(七代目火影,NanadaimeHokage,LiterallyMeaning:SeventhFireShadow)",
-          "fox(狐,Kitsune)"
+          "Ninja hyperactif imprévisible n°1",
+          "L'Enfant de la Prophétie",
+          "Le Sauveur de ce monde",
+          "Le Héros de Konoha",
+          "Le Garçon aux miracles",
+          "Le Hokage orange de Konoha",
+          "Septième Hokage",
+          "Le Renard"
         ],
+        "nindo": "Je ne reviens jamais sur ma parole. C'est ça, mon nindō : ma voie du ninja !",
+        "nindoLabel": "Nindō · sa voie du ninja",
         "occupation": [
           "Hokage",
           "Chūnin Exams Proctor"
@@ -496,15 +1100,10 @@
           "Yin–Yang Release"
         ],
         "tools": [
-          "Absorbing Hand",
-          "Bō",
-          "Chakra Blade",
-          "Flying Thunder God Kunai",
+          "Kunai",
+          "Shuriken",
           "Fūma Shuriken",
-          "Hidden Kunai Mechanism",
-          "Konoha Chakra Blade",
-          "Sand",
-          "Stone of Gelel"
+          "Flying Thunder God Kunai"
         ],
         "jutsu": [
           "Rasengan",
@@ -627,7 +1226,62 @@
           "Eight Man Squad",
           "Hanabi Rescue Team  (Movie only)"
         ],
-        "debut": "Naruto Chapter #1",
+        "debut": "Naruto — chapitre 1",
+        "tailedBeast": "Kurama",
+        "voiceActors": {
+          "jp": [
+            "Junko Takeuchi",
+            "Ema Kogure"
+          ],
+          "en": [
+            "Maile Flanagan",
+            "Stephanie Sheh",
+            "Jeannie Elias"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 1",
+          "anime": "Naruto — épisode 1",
+          "novel": "Naruto: Innocent Heart, Demonic Blood",
+          "movie": "Naruto the Movie: Ninja Clash in the Land of Snow",
+          "game": "Naruto: Konoha Ninpōchō",
+          "ova": "Find the Four-Leaf Red Clover!"
+        },
+        "status": "Vivant",
+        "squad": {
+          "name": "Équipe 7 · Team Kakashi",
+          "members": [
+            {
+              "rel": "Sensei",
+              "name": "Kakashi Hatake",
+              "slug": "kakashi-hatake"
+            },
+            {
+              "rel": "Coéquipier",
+              "name": "Sasuke Uchiha",
+              "slug": "sasuke-uchiha"
+            },
+            {
+              "rel": "Coéquipière",
+              "name": "Sakura Haruno",
+              "slug": "sakura-haruno"
+            }
+          ]
+        },
+        "bio": "Orphelin dès sa naissance, Naruto porte en lui Kurama, le Démon-Renard à neuf queues scellé par son père le Quatrième Hokage. Rejeté et craint par le village, il masque sa solitude derrière des farces et un rêve tenace : devenir Hokage pour être enfin reconnu. Intégré à l'Équipe 7 sous Kakashi, il se lie à Sasuke et Sakura, apprend le Multiclonage puis le Rasengan, et se révèle aux Examens Chūnin. Après deux ans et demi d'entraînement avec Jiraiya, il maîtrise le Rasenshuriken, puis le Mode Ermite avec lequel il terrasse Pain et sauve Konoha. Durant la Quatrième Grande Guerre Shinobi, il se réconcilie avec Kurama, débloque le Mode Chakra puis le pouvoir des Six Chemins, et scelle Kaguya aux côtés de Sasuke. Devenu le Septième Hokage, il veille sur une ère de paix — jusqu'au Mode Baryon, ultime sacrifice contre Isshiki.",
+        "personality": "Hyperactif, bruyant et impulsif, Naruto cache sous ses pitreries la blessure d'un enfant seul. Sa détermination ne faiblit jamais et son optimisme est contagieux. Son arme la plus puissante n'est pas le chakra mais les liens : il a le don de comprendre la douleur de ses ennemis et de les transformer en alliés — ce que Jiraiya appelait son « ninjutsu de la parole ».",
+        "quotes": [
+          "Crois-le ! (Dattebayo !)",
+          "Quand on protège quelque chose de vraiment précieux… on devient vraiment fort.",
+          "Le vrai perdant, ce n'est pas celui qui échoue, c'est celui qui abandonne.",
+          "Je deviendrai Hokage, et tout le village devra reconnaître mon existence !"
+        ],
+        "trivia": [
+          "« Naruto » désigne les tourbillons marins et le narutomaki, la garniture en spirale des ramen ; son prénom vient du héros du roman de Jiraiya.",
+          "Ses ramen préférés : le miso chāshū du restaurant Ichiraku.",
+          "Il est le premier Hokage à ne descendre d'aucun clan fondateur prestigieux.",
+          "Enfant, il ratait systématiquement le clonage à l'Académie — l'épreuve qu'il finit par réussir grâce au Multiclonage de l'ombre."
+        ],
         "family": [
           {
             "rel": "father",
@@ -739,47 +1393,11 @@
             }
           },
           {
-            "label": "Version 2",
-            "url": "/images/akasha/naruto/naruto-v2.webp",
-            "caption": "~15 ans · Version 2 — forme déchaînée (4 queues)",
-            "summary": "Submergé par la rage face à Orochimaru, le chakra de Kurama atteint quatre queues : une forme bestiale et dévastatrice qui ronge son propre corps.",
-            "age": "~15 ans",
-            "height": "1,66 m",
-            "weight": "51 kg",
-            "rank": "Genin",
-            "classification": [
-              "Jinchūriki"
-            ],
-            "natures": [],
-            "occupation": [
-              "Ninja de Konoha"
-            ],
-            "affiliation": [
-              "Konohagakure"
-            ],
-            "signature": [
-              "Manteau de Kurama — 4 queues",
-              "Bombe de chakra"
-            ],
-            "arc": "Pont Tenchi (vs Orochimaru)",
-            "idle": "/images/akasha/naruto/idle/version-2.webp",
-            "stats": {
-              "nin": 3,
-              "tai": 3.5,
-              "gen": 1,
-              "int": 0.5,
-              "for": 4.5,
-              "vit": 4,
-              "end": 4.5,
-              "sce": 1
-            }
-          },
-          {
             "label": "Partie II",
             "url": "https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png",
-            "caption": "16 ans · Shippūden",
+            "caption": "15 ans · Shippūden — retour",
             "summary": "De retour après deux ans et demi d'entraînement avec Jiraiya, plus mûr et plus puissant ; il maîtrise le Rasenshuriken.",
-            "age": "16 ans",
+            "age": "15 ans",
             "height": "1,66 m",
             "weight": "51 kg",
             "rank": "Genin",
@@ -811,6 +1429,42 @@
               "vit": 3.5,
               "end": 5,
               "sce": 3
+            }
+          },
+          {
+            "label": "Version 2",
+            "url": "/images/akasha/naruto/naruto-v2.webp",
+            "caption": "15 ans · Version 2 — forme déchaînée (4 queues)",
+            "summary": "Submergé par la rage face à Orochimaru, le chakra de Kurama atteint quatre queues : une forme bestiale et dévastatrice qui ronge son propre corps.",
+            "age": "15 ans",
+            "height": "1,66 m",
+            "weight": "51 kg",
+            "rank": "Genin",
+            "classification": [
+              "Jinchūriki"
+            ],
+            "natures": [],
+            "occupation": [
+              "Ninja de Konoha"
+            ],
+            "affiliation": [
+              "Konohagakure"
+            ],
+            "signature": [
+              "Manteau de Kurama — 4 queues",
+              "Bombe de chakra"
+            ],
+            "arc": "Pont Tenchi (vs Orochimaru)",
+            "idle": "/images/akasha/naruto/idle/version-2.webp",
+            "stats": {
+              "nin": 3,
+              "tai": 3.5,
+              "gen": 1,
+              "int": 0.5,
+              "for": 4.5,
+              "vit": 4,
+              "end": 4.5,
+              "sce": 1
             }
           },
           {
@@ -1089,16 +1743,16 @@
         "height": "150.8cm - 153.2cm",
         "weight": "42.2kg - 43.5kg",
         "bloodType": "AB",
-        "birthdate": "July 23",
+        "birthdate": "23 juillet",
         "classification": [
           "Déserteur (Nukenin)",
           "Type Capteur"
         ],
         "titles": [
-          "うちはサスケUchihaSasuke",
-          "childOfTheProphecy(予言の子,YogenNoKo)",
-          "sasukeOfTheSharingan(写輪眼のサスケ,SharinganNoSasuke)",
-          "supportingKage(支う影,Sasaukage,LiterallyMeaning:SupportingShadow)"
+          "うちはサスケUchiha Sasuke",
+          "child Of The Prophecy",
+          "sasuke Of The Sharingan",
+          "supporting Kage"
         ],
         "occupation": [
           "Head of the Uchiha Clan"
@@ -1221,7 +1875,25 @@
           "Sound Four",
           "Taka"
         ],
-        "debut": "Naruto Chapter #3",
+        "debut": "Naruto — chapitre 3",
+        "voiceActors": {
+          "jp": [
+            "Noriaki Sugiyama",
+            "Nao Tōyama"
+          ],
+          "en": [
+            "Yuri Lowenthal",
+            "Erica Mendez"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 3",
+          "anime": "Naruto — épisode 1",
+          "novel": "Naruto: Innocent Heart, Demonic Blood",
+          "movie": "Naruto the Movie: Ninja Clash in the Land of Snow",
+          "game": "Naruto: Konoha Ninpōchō",
+          "ova": "Find the Four-Leaf Red Clover!"
+        },
         "family": [
           {
             "rel": "father",
@@ -1271,7 +1943,7 @@
         "height": "148.5cm - 150.1cm",
         "weight": "35.4kg - 35.9kg",
         "bloodType": "O",
-        "birthdate": "March 28",
+        "birthdate": "28 mars",
         "classification": [
           "Ninja médical"
         ],
@@ -1335,7 +2007,23 @@
           "Ino–Saku–Sai  (Novel only)",
           "Medic Corps"
         ],
-        "debut": "Naruto Chapter #3",
+        "debut": "Naruto — chapitre 3",
+        "voiceActors": {
+          "jp": [
+            "Chie Nakamura"
+          ],
+          "en": [
+            "Kate Higgins"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 3",
+          "anime": "Naruto — épisode 1",
+          "novel": "Naruto: Innocent Heart, Demonic Blood",
+          "movie": "Naruto the Movie: Ninja Clash in the Land of Snow",
+          "game": "Naruto: Konoha Ninpōchō",
+          "ova": "Find the Four-Leaf Red Clover!"
+        },
         "family": [
           {
             "rel": "father",
@@ -1382,16 +2070,16 @@
         "height": "181cm",
         "weight": "67.5kg",
         "bloodType": "O",
-        "birthdate": "September 15",
+        "birthdate": "15 septembre",
         "titles": [
-          "はたけカカシHatakeKakashi",
-          "copyNinjaKakashi(コピー忍者のカカシ,KopīNinjaNoKakashi)",
-          "kakashiOfTheSharingan(写輪眼のカカシ,SharinganNoKakashi,LiterallyMeaning:KakashiOfTheCopyWheelEye)",
-          "heroOfTheSharingan(写輪眼の英雄,SharinganNoEiyū,LiterallyMeaning:HeroOfTheCopyWheelEye)",
-          "cold-bloodedKakashi(冷血カカシ,ReiketsuKakashi)",
-          "friend-killerKakashi(仲間殺しのカカシ,NakamagoroshiNoKakashi)",
-          "sixthHokage(六代目火影,RokudaimeHokage,LiterallyMeaning:SixthFireShadow)",
-          "sukea(スケア)"
+          "はたけカカシHatake Kakashi",
+          "copy Ninja Kakashi",
+          "kakashi Of The Sharingan",
+          "hero Of The Sharingan",
+          "cold-blooded Kakashi",
+          "friend-killer Kakashi",
+          "sixth Hokage",
+          "sukea"
         ],
         "occupation": [
           "Anbu Captain  (Former)",
@@ -1491,7 +2179,26 @@
           "Eight Man Squad",
           "Third Division"
         ],
-        "debut": "Naruto Chapter #3",
+        "debut": "Naruto — chapitre 3",
+        "voiceActors": {
+          "jp": [
+            "Kazuhiko Inoue",
+            "Mutsumi Tamura",
+            "Kenichi Suzumura"
+          ],
+          "en": [
+            "Dave Wittenberg",
+            "Xander Mobus"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 3",
+          "anime": "Naruto — épisode 3",
+          "novel": "Naruto: Innocent Heart, Demonic Blood",
+          "movie": "Naruto the Movie: Ninja Clash in the Land of Snow",
+          "game": "Naruto: Konoha Ninpōchō",
+          "ova": "Find the Four-Leaf Red Clover!"
+        },
         "family": [
           {
             "rel": "father",
@@ -1525,14 +2232,14 @@
         "height": "175.2cm",
         "weight": "57.1kg",
         "bloodType": "AB",
-        "birthdate": "June 9",
+        "birthdate": "9 juin",
         "classification": [
           "Rang S",
           "Déserteur (Nukenin)"
         ],
         "titles": [
-          "うちはイタチUchihaItachi",
-          "itachiOfTheSharingan(写輪眼のイタチ,SharinganNoItachi,LiterallyMeaning:ItachiOfTheCopyWheelEye)clanKillerItachi(一族殺しのイタチ,IchizokugoroshiNoItachi)"
+          "うちはイタチUchiha Itachi",
+          "itachi Of The Sharingan"
         ],
         "occupation": [
           "Anbu Captain  (Former)"
@@ -1596,7 +2303,26 @@
           "Team 2  (Anime and Novel only)",
           "Team Ro  (Anime only)"
         ],
-        "debut": "Naruto Chapter #139",
+        "debut": "Naruto — chapitre 139",
+        "voiceActors": {
+          "jp": [
+            "Hideo Ishikawa",
+            "Yuka Terasaki"
+          ],
+          "en": [
+            "Skip Stellrecht",
+            "Crispin Freeman",
+            "Doug Erholtz"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 139",
+          "anime": "Naruto — épisode 80",
+          "novel": "Akatsuki Hiden: Evil Flowers in Full Bloom",
+          "movie": "Road to Ninja: Naruto the Movie",
+          "game": "Naruto: Ultimate Ninja 2",
+          "ova": "Hidden Leaf Village Grand Sports Festival!"
+        },
         "family": [
           {
             "rel": "father",
@@ -1641,17 +2367,17 @@
         "height": "179cm",
         "weight": "71.3kg",
         "bloodType": "O",
-        "birthdate": "December 24",
+        "birthdate": "24 décembre",
         "classification": [
           "Jinchūriki",
           "Déserteur (Nukenin)",
           "Type Capteur"
         ],
         "titles": [
-          "うちはマダラUchihaMadara",
-          "secondSixPaths(二人目の六道,FutarimeNoRikudō)",
-          "saviourOfThisWorld(この世の救世主,KonoYoNoKyūseishu)",
-          "ghostOfTheUchiha(うちはの亡霊,UchihaNoBōrei)"
+          "うちはマダラUchiha Madara",
+          "second Six Paths",
+          "saviour Of This World",
+          "ghost Of The Uchiha"
         ],
         "occupation": [
           "Co-founder of Konohagakure",
@@ -1743,7 +2469,25 @@
           "Konohagakure"
         ],
         "sourceUrl": "https://naruto.fandom.com/wiki/Madara_Uchiha",
-        "debut": "Naruto Chapter #370",
+        "debut": "Naruto — chapitre 370",
+        "voiceActors": {
+          "jp": [
+            "Naoya Uchida",
+            "Gō Inoue"
+          ],
+          "en": [
+            "Neil Kaplan",
+            "Xander Mobus"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 370",
+          "anime": "Naruto Shippūden — épisode 130",
+          "novel": "Kakashi Hiden: Lightning in the Icy Sky  (Mentioned)",
+          "movie": "The Last: Naruto the Movie",
+          "game": "Naruto Shippūden: Ultimate Ninja Storm 2",
+          "ova": "Naruto Shippūden: UNSG anime cutscenes"
+        },
         "family": [
           {
             "rel": "father",
@@ -1779,14 +2523,14 @@
         "height": "185.1cm",
         "weight": "74kg",
         "bloodType": "B",
-        "birthdate": "October 23",
+        "birthdate": "23 octobre",
         "classification": [
           "Ermite (Sage)"
         ],
         "titles": [
-          "千手柱間SenjuHashirama",
-          "firstHokage(初代火影,ShodaiHokage)",
-          "godOfShinobi(忍の神,ShinobiNoKami,EnglishTv:TheSupremeShinobi)"
+          "千手柱間Senju Hashirama",
+          "first Hokage",
+          "god Of Shinobi"
         ],
         "occupation": [
           "Head of the Senju clan",
@@ -1842,7 +2586,26 @@
           "Konohagakure"
         ],
         "sourceUrl": "https://naruto.fandom.com/wiki/Hashirama_Senju",
-        "debut": "Naruto Chapter #118",
+        "debut": "Naruto — chapitre 118",
+        "voiceActors": {
+          "jp": [
+            "Takayuki Sugō",
+            "Yūki Tai"
+          ],
+          "en": [
+            "Jamieson Price",
+            "Peter Lurie",
+            "J.B. Blanc"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 118",
+          "anime": "Naruto — épisode 69",
+          "novel": "The Last: Naruto the Movie",
+          "movie": "The Last: Naruto the Movie",
+          "game": "Naruto: Ultimate Ninja",
+          "ova": "Naruto Shippūden: UNSG anime cutscenes"
+        },
         "family": [
           {
             "rel": "father",
@@ -1890,18 +2653,18 @@
         "height": "179.2cm",
         "weight": "66.1kg",
         "bloodType": "B",
-        "birthdate": "January 25",
+        "birthdate": "25 janvier",
         "classification": [
           "Jinchūriki",
           "Ermite (Sage)",
           "Type Capteur"
         ],
         "titles": [
-          "波風ミナトNamikazeMinato",
-          "fourthHokage(四代目火影,YondaimeHokage)",
-          "konoha'sYellowFlash(木ノ葉の黄色い閃光,KonohaNoKiiroiSenkō,EnglishTv:YellowFlashOfTheLeaf)",
-          "childOfTheProphecy(予言の子,YogenNoKo)",
-          "saviourOfThisWorld(この世の救世主,KonoYoNoKyūseishu)"
+          "波風ミナトNamikaze Minato",
+          "fourth Hokage",
+          "konoha's Yellow Flash",
+          "child Of The Prophecy",
+          "saviour Of This World"
         ],
         "occupation": [
           "Hokage"
@@ -1960,7 +2723,24 @@
           "Team Jiraiya",
           "Team Minato"
         ],
-        "debut": "Naruto Chapter #239",
+        "debut": "Naruto — chapitre 239",
+        "voiceActors": {
+          "jp": [
+            "Toshiyuki Morikawa",
+            "Miyu Irino"
+          ],
+          "en": [
+            "Tony Oliver"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 239",
+          "anime": "Naruto — épisode 1",
+          "novel": "Naruto: Innocent Heart, Demonic Blood",
+          "movie": "Naruto Shippūden the Movie: The Lost Tower",
+          "game": "Naruto: Konoha Ninpōchō",
+          "ova": "Hidden Leaf Village Grand Sports Festival!"
+        },
         "family": [
           {
             "rel": "son",
@@ -2004,7 +2784,7 @@
         "height": "191.2cm",
         "weight": "87.5kg",
         "bloodType": "B",
-        "birthdate": "November 11",
+        "birthdate": "11 novembre",
         "classification": [
           "Ermite (Sage)",
           "Sannin"
@@ -2078,7 +2858,25 @@
           "Ame Orphans",
           "Team Jiraiya"
         ],
-        "debut": "Naruto Chapter #90",
+        "debut": "Naruto — chapitre 90",
+        "voiceActors": {
+          "jp": [
+            "Hōchū Ōtsuka",
+            "Tōru Nara"
+          ],
+          "en": [
+            "David Lodge",
+            "Brad MacDonald",
+            "Richard Cansino"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 90",
+          "anime": "Naruto — épisode 52",
+          "movie": "Naruto the Movie: Ninja Clash in the Land of Snow",
+          "game": "Naruto: Ultimate Ninja 2",
+          "ova": "Finally a clash! Jōnin vs. Genin!! Indiscriminate Grand Melee Tournament Meeting!!"
+        },
         "family": [
           {
             "rel": "clone",
@@ -2116,7 +2914,7 @@
         "height": "163.1cm",
         "weight": "48.9kg",
         "bloodType": "B",
-        "birthdate": "August 2",
+        "birthdate": "2 août",
         "classification": [
           "Ninja médical",
           "Sannin"
@@ -2172,7 +2970,25 @@
         "team": [
           "Team Hiruzen"
         ],
-        "debut": "Naruto Chapter #139",
+        "debut": "Naruto — chapitre 139",
+        "voiceActors": {
+          "jp": [
+            "Masako Katsuki",
+            "Haruhi Terada"
+          ],
+          "en": [
+            "Debi Mae West",
+            "Mary Elizabeth McGlynn"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 139",
+          "anime": "Naruto — épisode 83",
+          "novel": "Kakashi Hiden: Lightning in the Icy Sky",
+          "movie": "Naruto Shippūden the Movie",
+          "game": "Naruto: Ultimate Ninja 2",
+          "ova": "Finally a clash! Jōnin vs. Genin!! Indiscriminate Grand Melee Tournament Meeting!!"
+        },
         "family": [
           {
             "rel": "great-grandfather",
@@ -2224,7 +3040,7 @@
         "height": "179.4cm - 172cm",
         "weight": "63.9kg - 57.3kg",
         "bloodType": "B",
-        "birthdate": "October 27",
+        "birthdate": "27 octobre",
         "classification": [
           "Déserteur (Nukenin)",
           "Rang S",
@@ -2318,7 +3134,27 @@
           "Team Orochimaru",
           "Team Dosu"
         ],
-        "debut": "Naruto Chapter #45",
+        "debut": "Naruto — chapitre 45",
+        "voiceActors": {
+          "jp": [
+            "Kujira",
+            "Yuriko Yamaguchi",
+            "Mayumi Yamaguchi"
+          ],
+          "en": [
+            "Steven Blum",
+            "Mary Elizabeth McGlynn",
+            "Crispin Freeman"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 45",
+          "anime": "Naruto — épisode 27",
+          "novel": "Sasuke Shinden: Book of Sunrise",
+          "movie": "Naruto Shippūden the Movie: Bonds",
+          "game": "Naruto: Ninja Council",
+          "ova": "Hidden Leaf Village Grand Sports Festival!"
+        },
         "family": [
           {
             "rel": "clone/son",
@@ -2351,7 +3187,7 @@
         "height": "146.1cm - 148.1cm",
         "weight": "39kg - 40.2kg",
         "bloodType": "AB",
-        "birthdate": "January 19",
+        "birthdate": "19 janvier",
         "classification": [
           "Jinchūriki",
           "Type Capteur"
@@ -2430,7 +3266,23 @@
           "Three Sand Siblings",
           "Fourth Division"
         ],
-        "debut": "Naruto Chapter #35",
+        "debut": "Naruto — chapitre 35",
+        "voiceActors": {
+          "jp": [
+            "Akira Ishida"
+          ],
+          "en": [
+            "Liam O'Brien"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 35",
+          "anime": "Naruto — épisode 20",
+          "novel": "Kakashi Hiden: Lightning in the Icy Sky",
+          "movie": "Naruto the Movie: Legend of the Stone of Gelel",
+          "game": "Naruto: Ninja Council",
+          "ova": "Hidden Leaf Village Grand Sports Festival!"
+        },
         "family": [
           {
             "rel": "father",
@@ -2487,7 +3339,7 @@
         "height": "158.5cm - 162.1cm",
         "weight": "46.6kg - 47.5kg",
         "bloodType": "A",
-        "birthdate": "November 27",
+        "birthdate": "27 novembre",
         "occupation": [
           "Chūnin Exams Proctor"
         ],
@@ -2534,7 +3386,23 @@
           "Third Division",
           "Suicide Corps  (Movie only)"
         ],
-        "debut": "Naruto Chapter #36",
+        "debut": "Naruto — chapitre 36",
+        "voiceActors": {
+          "jp": [
+            "Yōichi Masukawa"
+          ],
+          "en": [
+            "Brian Donovan"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 36",
+          "anime": "Naruto — épisode 21",
+          "novel": "Kakashi Hiden: Lightning in the Icy Sky",
+          "movie": "Naruto the Movie: Guardians of the Crescent Moon Kingdom",
+          "game": "Naruto: Konoha Ninpōchō",
+          "ova": "Hidden Leaf Village Grand Sports Festival!"
+        },
         "family": [
           {
             "rel": "son",
@@ -2568,7 +3436,7 @@
         "height": "159.2cm - 160.1cm",
         "weight": "45.8kg - 46.8kg",
         "bloodType": "O",
-        "birthdate": "July 3",
+        "birthdate": "3 juillet",
         "kekkeiGenkai": [
           "Byakugan"
         ],
@@ -2594,7 +3462,25 @@
           "Star Guard Team  (Anime only)",
           "Second Division"
         ],
-        "debut": "Naruto Chapter #36",
+        "debut": "Naruto — chapitre 36",
+        "voiceActors": {
+          "jp": [
+            "Kōichi Tōchika",
+            "Keiko Nemoto"
+          ],
+          "en": [
+            "Steve Staley",
+            "Wendee Lee"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 36",
+          "anime": "Naruto — épisode 21",
+          "novel": "Konoha Hiden: The Perfect Day for a Wedding",
+          "movie": "Naruto Shippūden the Movie",
+          "game": "Naruto: Konoha Ninpōchō",
+          "ova": "Hidden Leaf Village Grand Sports Festival!"
+        },
         "family": [
           {
             "rel": "grandfather",
@@ -2645,7 +3531,7 @@
         "height": "147.3cm - 148.3cm",
         "weight": "37.9kg - 38.2kg",
         "bloodType": "A",
-        "birthdate": "December 27",
+        "birthdate": "27 décembre",
         "occupation": [
           "Heiress of the Hyūga Clan  (Former)"
         ],
@@ -2691,7 +3577,23 @@
           "Second Division",
           "Hanabi Rescue Team  (Movie only)"
         ],
-        "debut": "Naruto Chapter #34",
+        "debut": "Naruto — chapitre 34",
+        "voiceActors": {
+          "jp": [
+            "Nana Mizuki"
+          ],
+          "en": [
+            "Stephanie Sheh"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 34",
+          "anime": "Naruto — épisode 1",
+          "novel": "Naruto: Innocent Heart, Demonic Blood",
+          "movie": "Naruto Shippūden the Movie",
+          "game": "Naruto: Konoha Ninpōchō",
+          "ova": "Hidden Leaf Village Grand Sports Festival!"
+        },
         "family": [
           {
             "rel": "grandfather",
@@ -2763,7 +3665,7 @@
         "height": "150.8cm - 152.1cm",
         "weight": "42kg - 42.9kg",
         "bloodType": "AB",
-        "birthdate": "September 22",
+        "birthdate": "22 septembre",
         "occupation": [
           "Hokage's Chief Aide",
           "Planner for the Shinobi Union",
@@ -2811,7 +3713,23 @@
           "Fourth Division",
           "Hanabi Rescue Team  (Movie only)"
         ],
-        "debut": "Naruto Chapter #34",
+        "debut": "Naruto — chapitre 34",
+        "voiceActors": {
+          "jp": [
+            "Shōtarō Morikubo"
+          ],
+          "en": [
+            "Tom Gibis"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 34",
+          "anime": "Naruto — épisode 1",
+          "novel": "Kakashi Hiden: Lightning in the Icy Sky",
+          "movie": "Naruto the Movie: Legend of the Stone of Gelel",
+          "game": "Naruto: Konoha Ninpōchō",
+          "ova": "Hidden Leaf Village Grand Sports Festival!"
+        },
         "family": [
           {
             "rel": "father",
@@ -2857,7 +3775,7 @@
         "height": "154.2cm",
         "weight": "44.5kg",
         "bloodType": "O",
-        "birthdate": "February 10",
+        "birthdate": "10 février",
         "classification": [
           "Jinchūriki",
           "Pseudo-Jinchūriki",
@@ -2866,12 +3784,12 @@
           "Type Capteur"
         ],
         "titles": [
-          "うちはオビトUchihaObito",
-          "tobi(トビ)",
-          "madaraUchiha(うちはマダラ,UchihaMadara)",
-          "maskedMadara(仮面のマダラ,KamenNoMadara)",
-          "maskedMan(仮面の男,KamenNoOtoko)",
-          "saviour(救世主,Kyūseishu)"
+          "うちはオビトUchiha Obito",
+          "tobi",
+          "madara Uchiha",
+          "masked Madara",
+          "masked Man",
+          "saviour"
         ],
         "occupation": [
           "Leader of Akatsuki",
@@ -2955,7 +3873,27 @@
         "team": [
           "Team Minato"
         ],
-        "debut": "Naruto Chapter #239",
+        "debut": "Naruto — chapitre 239",
+        "voiceActors": {
+          "jp": [
+            "Wataru Takagi",
+            "Naoya Uchida",
+            "Sōsuke Komori"
+          ],
+          "en": [
+            "Michael Yurchak",
+            "Todd Haberkorn",
+            "Neil Kaplan"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 239",
+          "anime": "Naruto Shippūden — épisode 32",
+          "novel": "Naruto Jinraiden: The Day the Wolf Howled",
+          "movie": "Road to Ninja: Naruto the Movie",
+          "game": "Naruto Shippūden: Ultimate Ninja Heroes 3",
+          "ova": "Naruto: The Cross Roads"
+        },
         "family": [
           {
             "rel": "grandmother ",
@@ -2989,7 +3927,7 @@
         "height": "175.5cm",
         "weight": "40.1kg",
         "bloodType": "A",
-        "birthdate": "September 19",
+        "birthdate": "19 septembre",
         "classification": [
           "Rang S",
           "Type Capteur"
@@ -3021,7 +3959,26 @@
         "team": [
           "Ame Orphans"
         ],
-        "debut": "Naruto Chapter #372",
+        "debut": "Naruto — chapitre 372",
+        "voiceActors": {
+          "jp": [
+            "Junpei Morita",
+            "Ken'yū Horiuchi",
+            "Tomoaki Maeno"
+          ],
+          "en": [
+            "Vic Mignogna",
+            "Troy Baker",
+            "Matthew Mercer"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 372",
+          "anime": "Naruto Shippūden — épisode 128",
+          "novel": "Akatsuki Hiden: Evil Flowers in Full Bloom",
+          "movie": "Road to Ninja: Naruto the Movie  (Pain)",
+          "game": "Naruto Shippūden: Ultimate Ninja Heroes 3  (Pain)"
+        },
         "family": [
           {
             "rel": "mother",
@@ -3056,13 +4013,13 @@
         "height": "192cm",
         "weight": "87.1kg",
         "bloodType": "B",
-        "birthdate": "May 15",
+        "birthdate": "15 mai",
         "classification": [
           "Jinchūriki"
         ],
         "titles": [
           "キラービーKirāBī",
-          "killerBee"
+          "killer Bee"
         ],
         "occupation": [
           "Guardian of Kumogakure"
@@ -3107,7 +4064,25 @@
           "A–B Combo",
           "Kumo Council"
         ],
-        "debut": "Naruto Chapter #408",
+        "debut": "Naruto — chapitre 408",
+        "voiceActors": {
+          "jp": [
+            "Hisao Egawa",
+            "Mariko Higashiuchi"
+          ],
+          "en": [
+            "Catero Colbert",
+            "Reno Wilson"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 408",
+          "anime": "Naruto Shippūden — épisode 142",
+          "novel": "The Last: Naruto the Movie",
+          "movie": "Naruto the Movie: Blood Prison",
+          "game": "Naruto Shippūden: Ultimate Ninja Storm 2",
+          "ova": "Naruto Shippūden: UNSG anime cutscenes"
+        },
         "family": [
           {
             "rel": "adoptive father",
@@ -3147,7 +4122,7 @@
         "height": "184cm",
         "weight": "76kg",
         "bloodType": "B",
-        "birthdate": "January 1",
+        "birthdate": "1 janvier",
         "occupation": [
           "Academy Teacher"
         ],
@@ -3202,7 +4177,25 @@
           "Team Guy",
           "Third Division"
         ],
-        "debut": "Naruto Chapter #38",
+        "debut": "Naruto — chapitre 38",
+        "voiceActors": {
+          "jp": [
+            "Masashi Ebara",
+            "Mayuki Makiguchi"
+          ],
+          "en": [
+            "Skip Stellrecht",
+            "Todd Haberkorn"
+          ]
+        },
+        "debutAll": {
+          "manga": "Naruto — chapitre 38",
+          "anime": "Naruto — épisode 21",
+          "novel": "Kakashi Hiden: Lightning in the Icy Sky",
+          "movie": "Naruto Shippūden the Movie",
+          "game": "Naruto: Konoha Ninpōchō",
+          "ova": "Finally a clash! Jōnin vs. Genin!! Indiscriminate Grand Melee Tournament Meeting!!"
+        },
         "family": [
           {
             "rel": "father",
@@ -3307,6 +4300,16 @@
     }
   ],
   "relations": [
+    {
+      "from": "sharingan",
+      "relation": "appartient",
+      "to": "uchiha"
+    },
+    {
+      "from": "samehada",
+      "relation": "appartient",
+      "to": "kirigakure"
+    },
     {
       "from": "naruto-uzumaki",
       "relation": "habite",

@@ -33,7 +33,7 @@ export default function CardArt({
             <div className="ak-cosmic" aria-hidden />
             {(idle || current) ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img key={idle || current || ''} src={idle || current || ''} alt={name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', imageRendering: 'pixelated' }} />
+              <img key={idle || current || ''} src={idle || current || ''} alt={name} className="ak-era-img" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', imageRendering: 'pixelated' }} />
             ) : (
               <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 60, opacity: 0.5 }} aria-hidden>{fallbackIcon}</div>
             )}
@@ -52,7 +52,7 @@ export default function CardArt({
         <div style={{ position: 'relative', borderRadius: 11, overflow: 'hidden', border: `2px solid ${frame}aa`, aspectRatio: '1 / 1', background: `linear-gradient(135deg, ${frame}33, ${frame}0A)`, boxShadow: 'inset 0 0 36px rgba(0,0,0,0.6)' }}>
           {current ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img key={current} src={current} alt={name} className="ak-art-img" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />
+            <img key={current} src={current} alt={name} className="ak-art-img ak-era-img" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />
           ) : (
             <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 70, opacity: 0.5 }} aria-hidden>{fallbackIcon}</div>
           )}
@@ -73,20 +73,7 @@ export default function CardArt({
         </div>
       )}
 
-      {/* sélecteur de modes */}
-      {forms.length > 1 && (
-        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'center', marginTop: 9 }}>
-          {forms.map((f, i) => {
-            const on = i === sel;
-            return (
-              <button key={i} type="button" onClick={() => onSelect(i)} className="ak-var"
-                style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap', padding: '5px 11px', borderRadius: 20, border: `1px solid ${on ? frame : 'var(--bd2)'}`, background: on ? `${frame}22` : 'transparent', color: on ? frame : 'var(--td2)' }}>
-                {f.label}
-              </button>
-            );
-          })}
-        </div>
-      )}
+      {/* sélecteur de formes déplacé HORS de la carte → onglets au-dessus (voir CharacterView / FormTabs) */}
       {forms[sel]?.caption && (
         <div style={{ textAlign: 'center', marginTop: 8, fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', fontStyle: 'italic' }}>{forms[sel].caption}</div>
       )}

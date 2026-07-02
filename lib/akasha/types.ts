@@ -84,6 +84,24 @@ export const RARITY_META: Record<AkashaRarity, { label: string; color: string }>
   legendary: { label: 'Légendaire', color: '#D4A017' },
 };
 
+/** Univers connus du registre : ordre d'affichage curé + identité visuelle (emoji, couleur).
+ *  Un univers seedé mais absent d'ici apparaît quand même (fallback ✦ violet, après les connus). */
+export const UNIVERSE_META: { name: string; emoji: string; color: string }[] = [
+  { name: 'Naruto',                    emoji: '🍥', color: '#E8623A' },
+  { name: 'One Piece',                 emoji: '👒', color: '#D63C3C' },
+  { name: 'Dragon Ball',               emoji: '🐉', color: '#F2A93B' },
+  { name: 'Bleach',                    emoji: '⚔️', color: '#5A88B0' },
+  { name: 'Hunter x Hunter',           emoji: '🎣', color: '#3FA35C' },
+  { name: "JoJo's Bizarre Adventure",  emoji: 'ゴ',  color: '#8E44AD' },
+  { name: 'Initial D',                 emoji: '🏁', color: '#0094D4' },
+  { name: 'Death Note',                emoji: '📓', color: '#8A8F98' },
+  { name: 'Histoire / réel',           emoji: '🏛️', color: '#D4A017' },
+];
+
+export function universeMeta(name: string): { name: string; emoji: string; color: string } {
+  return UNIVERSE_META.find((u) => u.name === name) ?? { name, emoji: '✦', color: '#7B5CF0' };
+}
+
 /** Libellés FR des relations connues (fallback : la chaîne brute). */
 export const RELATION_LABELS: Record<string, string> = {
   possede: 'possède',

@@ -4,15 +4,16 @@ import { AKASHA_TYPES, TYPE_META, type AkashaType } from '@/lib/akasha/types';
 
 const ACCENT = '#7B5CF0';
 
-function buildHref(type: AkashaType | null, search: string): string {
+function buildHref(type: AkashaType | null, search: string, universe?: string): string {
   const p = new URLSearchParams();
+  if (universe) p.set('universe', universe);
   if (type) p.set('type', type);
   if (search) p.set('search', search);
   const qs = p.toString();
   return qs ? `/learn/akasha?${qs}` : '/learn/akasha';
 }
 
-export default function AkashaFilters({ active, search }: { active?: AkashaType; search: string }) {
+export default function AkashaFilters({ active, search, universe }: { active?: AkashaType; search: string; universe?: string }) {
   const tabs: { type: AkashaType | null; label: string; icon?: string }[] = [
     { type: null, label: 'Tout' },
     ...AKASHA_TYPES.map((t) => ({ type: t, label: TYPE_META[t].plural, icon: TYPE_META[t].icon })),
@@ -25,7 +26,7 @@ export default function AkashaFilters({ active, search }: { active?: AkashaType;
         return (
           <Link
             key={tab.label}
-            href={buildHref(tab.type, search)}
+            href={buildHref(tab.type, search, universe)}
             className="ak-tab"
             style={{
               fontFamily: 'var(--fo)',
