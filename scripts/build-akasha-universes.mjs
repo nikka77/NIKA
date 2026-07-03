@@ -604,7 +604,7 @@ async function main() {
     if (!f?.name) continue;
     const type = String(f.type || '');
     const rarity = /Logia|mythique|spécial/i.test(type) ? 'epic' : 'rare';
-    if (addEnt(slugify(f.name), 'power', f.name, 'One Piece', firstSentence(f.description) || `Fruit du Démon${type ? ' de type ' + type : ''}.`, rarity, purge({ element: `Fruit du Démon${type ? ' · ' + type : ''}`, roman_name: f.roman_name || null }))) nf++;
+    if (addEnt(slugify(f.name), 'power', f.name, 'One Piece', firstSentence(f.description) || `Fruit du Démon${type ? ' de type ' + type : ''}.`, rarity, purge({ element: `Fruit du Démon${type ? ' · ' + type : ''}`, roman_name: f.roman_name || null, category: 'Fruit du Démon' }))) nf++;
   }
   console.log(`  + ${nf} Fruits du Démon (power)`);
   const opCrews = (await getJSON('https://api.api-onepiece.com/v2/crews/fr')) ?? [];
@@ -612,24 +612,24 @@ async function main() {
   for (const cr of Array.isArray(opCrews) ? opCrews : []) {
     if (!cr?.name) continue;
     const rarity = cr.is_yonko ? 'legendary' : Number(cr.total_prime) > 1e9 ? 'epic' : 'rare';
-    if (addEnt(slugify(cr.name), 'status', cr.name, 'One Piece', firstSentence(cr.description) || 'Équipage de pirates.', rarity, purge({ scope: 'Équipage pirate', roman_name: cr.roman_name || null, total_prime: cr.total_prime ? `${cr.total_prime} Berrys` : null }))) ncr++;
+    if (addEnt(slugify(cr.name), 'status', cr.name, 'One Piece', firstSentence(cr.description) || 'Équipage de pirates.', rarity, purge({ scope: 'Équipage pirate', roman_name: cr.roman_name || null, total_prime: cr.total_prime ? `${cr.total_prime} Berrys` : null, category: 'Équipage' }))) ncr++;
   }
   console.log(`  + ${ncr} équipages (status)`);
   const opHakis = (await getJSON('https://api.api-onepiece.com/v2/hakis/fr')) ?? [];
   let nh = 0;
-  for (const h of Array.isArray(opHakis) ? opHakis : []) if (h?.name && addEnt(slugify(h.name), 'skill', h.name, 'One Piece', firstSentence(h.description) || 'Type de Haki.', 'epic', purge({ discipline: 'Haki', roman_name: h.roman_name || null }))) nh++;
+  for (const h of Array.isArray(opHakis) ? opHakis : []) if (h?.name && addEnt(slugify(h.name), 'skill', h.name, 'One Piece', firstSentence(h.description) || 'Type de Haki.', 'epic', purge({ discipline: 'Haki', roman_name: h.roman_name || null, category: 'Haki' }))) nh++;
   const opGears = (await getJSON('https://api.api-onepiece.com/v2/luffy-gears/fr')) ?? [];
   let ng = 0;
-  for (const g of Array.isArray(opGears) ? opGears : []) if (g?.name && addEnt(slugify(g.name), 'skill', g.name, 'One Piece', firstSentence(g.description) || 'Transformation de Luffy.', 'epic', { discipline: 'Gear (Luffy)' })) { ng++; relations.push({ from: slugify(g.name), to: 'monkey-d-luffy', relation: 'maitrise' }); }
+  for (const g of Array.isArray(opGears) ? opGears : []) if (g?.name && addEnt(slugify(g.name), 'skill', g.name, 'One Piece', firstSentence(g.description) || 'Transformation de Luffy.', 'epic', { discipline: 'Gear (Luffy)', category: 'Gear' })) { ng++; relations.push({ from: slugify(g.name), to: 'monkey-d-luffy', relation: 'maitrise' }); }
   console.log(`  + ${nh} hakis + ${ng} gears (skill)`);
 
   console.log('→ Dragon Ball — entités (transformations, planètes)…');
   const dbTrans = (await getJSON('https://dragonball-api.com/api/transformations?limit=100'));
   let nt = 0;
-  for (const t of (dbTrans?.items || dbTrans || [])) if (t?.name && addEnt(slugify(t.name), 'skill', t.name, 'Dragon Ball', `Transformation de puissance${t.ki ? ` (Ki ${t.ki})` : ''}.`, 'epic', purge({ discipline: 'Transformation', ki: t.ki || null }), t.image || null)) nt++;
+  for (const t of (dbTrans?.items || dbTrans || [])) if (t?.name && addEnt(slugify(t.name), 'skill', t.name, 'Dragon Ball', `Transformation de puissance${t.ki ? ` (Ki ${t.ki})` : ''}.`, 'epic', purge({ discipline: 'Transformation', ki: t.ki || null, category: 'Transformation' }), t.image || null)) nt++;
   const dbPlanets = (await getJSON('https://dragonball-api.com/api/planets?limit=100'));
   let np = 0;
-  for (const pl of (dbPlanets?.items || dbPlanets || [])) if (pl?.name && addEnt(slugify(pl.name), 'place', pl.name, 'Dragon Ball', firstSentence(pl.description) || 'Planète.', 'rare', { region: pl.isDestroyed ? 'Planète détruite' : 'Planète' }, pl.image || null)) np++;
+  for (const pl of (dbPlanets?.items || dbPlanets || [])) if (pl?.name && addEnt(slugify(pl.name), 'place', pl.name, 'Dragon Ball', firstSentence(pl.description) || 'Planète.', 'rare', { region: pl.isDestroyed ? 'Planète détruite' : 'Planète', category: 'Planète' }, pl.image || null)) np++;
   console.log(`  + ${nt} transformations (skill) + ${np} planètes (place)`);
 
   // ── Enrichissement One Piece : croiser les 786 persos api-onepiece (données FR riches) avec le
@@ -670,6 +670,42 @@ async function main() {
     opEnr++;
   }
   console.log(`  ✓ ${opEnr} persos One Piece enrichis, +${opRelC} liens équipage, +${opRelF} liens fruit`);
+
+  // ── Catégorie normalisée pour les entités CURÉES (carte slug→catégorie + fallback par type) ──
+  const CATEGORY_BY_SLUG = {
+    // JoJo
+    stand: 'Stand', 'stand-requiem': 'Stand', 'onde-hamon': 'Aptitude', 'masque-de-pierre': 'Relique', 'fleche-du-stand': 'Relique',
+    joestar: 'Clan & lignée', passione: 'Organisation', 'fondation-speedwagon': 'Organisation', 'hommes-du-pilier': 'Race & espèce',
+    // Bleach
+    zanpakuto: 'Arme & outil', hogyoku: 'Relique', bankai: 'Technique', kido: 'Technique', shunpo: 'Aptitude',
+    'gotei-13': 'Organisation', espada: 'Organisation', quincy: 'Race & espèce', hollow: 'Race & espèce', shinigami: 'Métier',
+    // Dragon Ball
+    kamehameha: 'Technique', genkidama: 'Technique', 'kaio-ken': 'Technique', 'super-saiyan': 'Transformation', 'ultra-instinct': 'Transformation',
+    saiyan: 'Race & espèce', 'dragon-balls': 'Relique', senzu: 'Relique', 'capsule-corp': 'Organisation',
+    // One Piece
+    haki: 'Haki', 'fruit-du-demon': 'Fruit du Démon', 'chapeau-de-paille': 'Équipage', marine: 'Organisation',
+    yonko: 'Titre & rang', shichibukai: 'Titre & rang', pirate: 'Métier', 'thousand-sunny': 'Navire',
+    'one-piece-tresor': 'Relique', ponegliphes: 'Relique',
+    // HxH
+    nen: 'Aptitude', gungi: 'Aptitude', chasseur: 'Métier', 'brigade-fantome': 'Organisation', 'association-hunters': 'Organisation',
+    zoldyck: 'Clan & lignée', 'fourmis-chimeres': 'Race & espèce', 'examen-hunter': 'Titre & rang',
+    // Initial D
+    'ae86-trueno': 'Voiture', 'rx7-fd': 'Voiture', 'r32-gtr': 'Voiture', sileighty: 'Voiture', 'lancer-evo3': 'Voiture',
+    drift: 'Aptitude', 'pilote-de-toge': 'Métier', redsuns: 'Écurie de course', nightkids: 'Écurie de course', 'impact-blue': 'Écurie de course', 'project-d': 'Écurie de course', 'speed-stars': 'Écurie de course',
+    // Death Note
+    'cahier-de-la-mort': 'Relique', 'dieu-de-la-mort': 'Race & espèce', kira: 'Titre & rang', detective: 'Métier',
+    'oeil-de-shinigami': 'Aptitude', spk: 'Organisation', yotsuba: 'Organisation', 'cellule-kira': 'Organisation',
+  };
+  for (const e of entries) {
+    if (e.attributes.category) continue;
+    if (CATEGORY_BY_SLUG[e.slug]) { e.attributes.category = CATEGORY_BY_SLUG[e.slug]; continue; }
+    if (e.type === 'power') e.attributes.category = 'Technique';
+    else if (e.type === 'skill') e.attributes.category = 'Aptitude';
+    else if (e.type === 'artifact') e.attributes.category = 'Relique';
+    else if (e.type === 'profession') e.attributes.category = 'Métier';
+    else if (e.type === 'status') e.attributes.category = /Équipage/.test(String(e.attributes.scope || '')) ? 'Équipage' : 'Organisation';
+    else if (e.type === 'place') e.attributes.category = 'Lieu';
+  }
 
   // Relations : vérifier que tous les slugs existent dans CE lot
   const bad = relations.filter((r) => !seen.has(r.from) || !seen.has(r.to));

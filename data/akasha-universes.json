@@ -483,7 +483,8 @@
    "description": "La société des âmes : le Seireitei des Shinigami entouré des districts du Rukongai.",
    "image_url": null,
    "attributes": {
-    "region": "Monde spirituel"
+    "region": "Monde spirituel",
+    "category": "Lieu"
    },
    "rarity": "epic"
   },
@@ -497,7 +498,8 @@
    "description": "Le sabre-âme des Shinigami : chaque lame est un esprit vivant qui porte un nom, un shikai et un bankai.",
    "image_url": null,
    "attributes": {
-    "material": "Lame-âme"
+    "material": "Lame-âme",
+    "category": "Arme & outil"
    },
    "rarity": "epic"
   },
@@ -511,7 +513,8 @@
    "description": "Gardiens de l'équilibre des âmes : ils guident les défunts et purifient les Hollows.",
    "image_url": null,
    "attributes": {
-    "sector": "Fauchage des âmes"
+    "sector": "Fauchage des âmes",
+    "category": "Métier"
    },
    "rarity": "rare"
   },
@@ -525,7 +528,8 @@
    "description": "Âmes corrompues au masque blanc, dévoreuses d'esprits — les proies naturelles des Shinigami.",
    "image_url": null,
    "attributes": {
-    "scope": "Espèce spirituelle"
+    "scope": "Espèce spirituelle",
+    "category": "Race & espèce"
    },
    "rarity": "rare"
   },
@@ -539,7 +543,8 @@
    "description": "La seconde libération du zanpakutō : des années d'entraînement pour décupler sa puissance.",
    "image_url": null,
    "attributes": {
-    "element": "Libération ultime"
+    "element": "Libération ultime",
+    "category": "Technique"
    },
    "rarity": "epic"
   },
@@ -553,7 +558,8 @@
    "description": "Le désert blanc éternel des Hollows sous une lune inversée — le royaume d'Aizen et de Las Noches.",
    "image_url": null,
    "attributes": {
-    "region": "Monde des Hollows"
+    "region": "Monde des Hollows",
+    "category": "Lieu"
    },
    "rarity": "epic"
   },
@@ -567,7 +573,8 @@
    "description": "Les dix arrancars d'élite d'Aizen, numérotés selon leur puissance — chacun incarne un aspect de la mort.",
    "image_url": null,
    "attributes": {
-    "scope": "Élite arrancar"
+    "scope": "Élite arrancar",
+    "category": "Organisation"
    },
    "rarity": "epic"
   },
@@ -581,7 +588,8 @@
    "description": "L'orbe qui abolit la frontière entre Shinigami et Hollow et matérialise les désirs de son porteur.",
    "image_url": null,
    "attributes": {
-    "material": "Orbe de distorsion"
+    "material": "Orbe de distorsion",
+    "category": "Relique"
    },
    "rarity": "legendary"
   },
@@ -595,7 +603,8 @@
    "description": "La forteresse-palais d'Aizen au cœur du désert blanc, si vaste qu'elle contient son propre ciel.",
    "image_url": null,
    "attributes": {
-    "region": "Hueco Mundo"
+    "region": "Hueco Mundo",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -609,7 +618,8 @@
    "description": "Les treize divisions de protection de la Soul Society — chaque capitaine vaut une armée.",
    "image_url": null,
    "attributes": {
-    "scope": "Armée de cour"
+    "scope": "Armée de cour",
+    "category": "Organisation"
    },
    "rarity": "epic"
   },
@@ -623,7 +633,8 @@
    "description": "Les archers humains qui détruisent les Hollows au lieu de les purifier — exterminés par les Shinigami, sauf une lignée.",
    "image_url": null,
    "attributes": {
-    "scope": "Peuple archer"
+    "scope": "Peuple archer",
+    "category": "Race & espèce"
    },
    "rarity": "epic"
   },
@@ -637,7 +648,8 @@
    "description": "L'art du déplacement instantané des Shinigami — Yoruichi en est la « déesse ».",
    "image_url": null,
    "attributes": {
-    "discipline": "Pas éclair"
+    "discipline": "Pas éclair",
+    "category": "Aptitude"
    },
    "rarity": "rare"
   },
@@ -651,7 +663,8 @@
    "description": "Les incantations démoniaques du Gotei : voies de la destruction et voies du lien, du n°1 au n°99.",
    "image_url": null,
    "attributes": {
-    "element": "Sorcellerie"
+    "element": "Sorcellerie",
+    "category": "Technique"
    },
    "rarity": "rare"
   },
@@ -7645,7 +7658,8 @@
    "description": "La vague déferlante de ki enseignée par Kamé Sennin — la technique signature de l'école Tortue.",
    "image_url": null,
    "attributes": {
-    "element": "Ki"
+    "element": "Ki",
+    "category": "Technique"
    },
    "rarity": "epic"
   },
@@ -7659,7 +7673,8 @@
    "description": "La transformation légendaire des Saiyans : cheveux d'or et puissance démultipliée, éveillée par la rage.",
    "image_url": null,
    "attributes": {
-    "discipline": "Transformation"
+    "discipline": "Transformation",
+    "category": "Transformation"
    },
    "rarity": "legendary"
   },
@@ -7673,7 +7688,8 @@
    "description": "Peuple de guerriers de l'espace à la force prodigieuse, quasi exterminé par Freezer.",
    "image_url": null,
    "attributes": {
-    "scope": "Peuple guerrier"
+    "scope": "Peuple guerrier",
+    "category": "Race & espèce"
    },
    "rarity": "epic"
   },
@@ -7687,7 +7703,8 @@
    "description": "La planète verte des Nameks, théâtre du combat contre Freezer et berceau des Dragon Balls originelles.",
    "image_url": null,
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -7701,7 +7718,8 @@
    "description": "Les sept boules de cristal qui, réunies, invoquent le dragon sacré exauçant les vœux.",
    "image_url": null,
    "attributes": {
-    "material": "Boules de cristal"
+    "material": "Boules de cristal",
+    "category": "Relique"
    },
    "rarity": "legendary"
   },
@@ -7715,7 +7733,8 @@
    "description": "L'orbe d'énergie empruntée à tous les êtres vivants — l'arme de la dernière chance de Goku.",
    "image_url": null,
    "attributes": {
-    "element": "Énergie collective"
+    "element": "Énergie collective",
+    "category": "Technique"
    },
    "rarity": "epic"
   },
@@ -7729,7 +7748,8 @@
    "description": "Un an d'entraînement à l'intérieur, un jour à l'extérieur : l'accélérateur des guerriers Z.",
    "image_url": null,
    "attributes": {
-    "region": "Palais de Dendé"
+    "region": "Palais de Dendé",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -7743,7 +7763,8 @@
    "description": "La technique du Roi Kaiō : multiplier sa puissance au prix du corps — l'atout rouge de Goku avant le Super Saiyan.",
    "image_url": null,
    "attributes": {
-    "element": "Multiplicateur"
+    "element": "Multiplicateur",
+    "category": "Technique"
    },
    "rarity": "rare"
   },
@@ -7757,7 +7778,8 @@
    "description": "L'état où le corps esquive et frappe sans la pensée — la maîtrise des anges, effleurée par Goku.",
    "image_url": null,
    "attributes": {
-    "discipline": "Technique divine"
+    "discipline": "Technique divine",
+    "category": "Transformation"
    },
    "rarity": "legendary"
   },
@@ -7771,7 +7793,8 @@
    "description": "L'empire technologique de la famille Brief : tout un vaisseau dans une capsule de poche.",
    "image_url": null,
    "attributes": {
-    "scope": "Empire technologique"
+    "scope": "Empire technologique",
+    "category": "Organisation"
    },
    "rarity": "rare"
   },
@@ -7785,7 +7808,8 @@
    "description": "Le monde natal des Saiyans, pulvérisé par Freezer d'une seule sphère — le berceau perdu de Goku.",
    "image_url": null,
    "attributes": {
-    "region": "Espace"
+    "region": "Espace",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -7799,7 +7823,8 @@
    "description": "Les haricots magiques de Maître Karin : un seul restaure toute la vitalité — et dix jours de repas.",
    "image_url": null,
    "attributes": {
-    "material": "Graines de Karin"
+    "material": "Graines de Karin",
+    "category": "Relique"
    },
    "rarity": "rare"
   },
@@ -17828,7 +17853,8 @@
    "description": "L'art de maîtriser son aura vitale : Ten, Zetsu, Ren, Hatsu — le socle de tout combat de Hunter.",
    "image_url": null,
    "attributes": {
-    "discipline": "Aura"
+    "discipline": "Aura",
+    "category": "Aptitude"
    },
    "rarity": "legendary"
   },
@@ -17842,7 +17868,8 @@
    "description": "Licence d'élite qui ouvre tous les droits : traquer trésors, créatures, criminels ou saveurs inconnues.",
    "image_url": null,
    "attributes": {
-    "sector": "Exploration & traque"
+    "sector": "Exploration & traque",
+    "category": "Métier"
    },
    "rarity": "epic"
   },
@@ -17856,7 +17883,8 @@
    "description": "Le Genei Ryodan : treize voleurs de classe A à l'araignée tatouée, originaires de Ryūsegai.",
    "image_url": null,
    "attributes": {
-    "scope": "Troupe criminelle"
+    "scope": "Troupe criminelle",
+    "category": "Organisation"
    },
    "rarity": "epic"
   },
@@ -17870,7 +17898,8 @@
    "description": "La plus célèbre famille d'assassins du monde, retranchée sur le mont Kukurū.",
    "image_url": null,
    "attributes": {
-    "scope": "Clan"
+    "scope": "Clan",
+    "category": "Clan & lignée"
    },
    "rarity": "epic"
   },
@@ -17884,7 +17913,8 @@
    "description": "Le jeu vidéo grandeur nature créé par des Hunters : une île réelle régie par des cartes aux pouvoirs fous.",
    "image_url": null,
    "attributes": {
-    "region": "Île-jeu"
+    "region": "Île-jeu",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -17898,7 +17928,8 @@
    "description": "L'île natale de Gon, d'où il regardait partir les bateaux en rêvant de son père.",
    "image_url": null,
    "attributes": {
-    "region": "Mer du sud"
+    "region": "Mer du sud",
+    "category": "Lieu"
    },
    "rarity": "common"
   },
@@ -17912,7 +17943,8 @@
    "description": "Les insectes qui héritent des gènes de leurs proies — jusqu'à donner naissance au Roi Meruem.",
    "image_url": null,
    "attributes": {
-    "scope": "Espèce"
+    "scope": "Espèce",
+    "category": "Race & espèce"
    },
    "rarity": "epic"
   },
@@ -17926,7 +17958,8 @@
    "description": "L'épreuve annuelle aux phases mortelles qui ne délivre qu'une poignée de licences par an.",
    "image_url": null,
    "attributes": {
-    "scope": "Épreuve"
+    "scope": "Épreuve",
+    "category": "Titre & rang"
    },
    "rarity": "rare"
   },
@@ -17940,7 +17973,8 @@
    "description": "L'arène-gratte-ciel où l'on grimpe étage par étage à la force des poings — l'école du Nen de Gon et Killua.",
    "image_url": null,
    "attributes": {
-    "region": "Arène de 251 étages"
+    "region": "Arène de 251 étages",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -17954,7 +17988,8 @@
    "description": "Le jeu d'échecs de Chine orientale dont Komugi est la championne éternelle — le seul terrain où le Roi a plié.",
    "image_url": null,
    "attributes": {
-    "discipline": "Jeu de stratégie"
+    "discipline": "Jeu de stratégie",
+    "category": "Aptitude"
    },
    "rarity": "common"
   },
@@ -17968,7 +18003,8 @@
    "description": "L'organisation qui délivre les licences et régit l'élite : ses douze piliers portent des noms du zodiaque.",
    "image_url": null,
    "attributes": {
-    "scope": "Organisation"
+    "scope": "Organisation",
+    "category": "Organisation"
    },
    "rarity": "epic"
   },
@@ -17982,7 +18018,8 @@
    "description": "La montagne-forteresse des Zoldyck, gardée par la Porte du Crépuscule et un chien de sept mètres.",
    "image_url": null,
    "attributes": {
-    "region": "Domaine Zoldyck"
+    "region": "Domaine Zoldyck",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -22666,7 +22703,8 @@
    "description": "La manifestation psychique du combattant : un esprit aux pouvoirs uniques que seuls les porteurs voient.",
    "image_url": null,
    "attributes": {
-    "element": "Esprit combattant"
+    "element": "Esprit combattant",
+    "category": "Stand"
    },
    "rarity": "legendary"
   },
@@ -22680,7 +22718,8 @@
    "description": "L'art respiratoire qui charge le corps d'une énergie solaire — l'arme absolue contre les vampires.",
    "image_url": null,
    "attributes": {
-    "discipline": "Énergie solaire"
+    "discipline": "Énergie solaire",
+    "category": "Aptitude"
    },
    "rarity": "epic"
   },
@@ -22694,7 +22733,8 @@
    "description": "La relique aztèque qui transforme son porteur en vampire — l'objet qui a maudit deux siècles de Joestar.",
    "image_url": null,
    "attributes": {
-    "material": "Relique aztèque"
+    "material": "Relique aztèque",
+    "category": "Relique"
    },
    "rarity": "epic"
   },
@@ -22708,7 +22748,8 @@
    "description": "Paisible ville côtière japonaise à l'étrange densité de porteurs de Stand — le décor de Diamond is Unbreakable.",
    "image_url": null,
    "attributes": {
-    "region": "Ville côtière · Japon"
+    "region": "Ville côtière · Japon",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -22722,7 +22763,8 @@
    "description": "La lignée marquée d'une étoile à l'épaule, liée par le destin à Dio à travers les générations.",
    "image_url": null,
    "attributes": {
-    "scope": "Famille"
+    "scope": "Famille",
+    "category": "Clan & lignée"
    },
    "rarity": "legendary"
   },
@@ -22736,7 +22778,8 @@
    "description": "Taillée dans une météorite, elle éveille le Stand de ceux qu'elle transperce — ou les tue.",
    "image_url": null,
    "attributes": {
-    "material": "Pointe météorique"
+    "material": "Pointe météorique",
+    "category": "Relique"
    },
    "rarity": "legendary"
   },
@@ -22750,7 +22793,8 @@
    "description": "La mafia qui règne sur Naples — que Giorno infiltre pour la conquérir de l'intérieur.",
    "image_url": null,
    "attributes": {
-    "scope": "Gang napolitain"
+    "scope": "Gang napolitain",
+    "category": "Organisation"
    },
    "rarity": "rare"
   },
@@ -22764,7 +22808,8 @@
    "description": "La prison maximale où Jolyne est piégée — et où le disciple de Dio prépare le « paradis ».",
    "image_url": null,
    "attributes": {
-    "region": "Floride"
+    "region": "Floride",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -22778,7 +22823,8 @@
    "description": "Les surhommes aztèques endormis dans la pierre, créateurs du Masque — l'Onde est leur seule faiblesse.",
    "image_url": null,
    "attributes": {
-    "scope": "Race ancienne"
+    "scope": "Race ancienne",
+    "category": "Race & espèce"
    },
    "rarity": "epic"
   },
@@ -22792,7 +22838,8 @@
    "description": "Quand la Flèche transperce un Stand déjà éveillé : Gold Experience Requiem remet même la mort à zéro.",
    "image_url": null,
    "attributes": {
-    "element": "Évolution ultime"
+    "element": "Évolution ultime",
+    "category": "Stand"
    },
    "rarity": "legendary"
   },
@@ -22806,7 +22853,8 @@
    "description": "La fondation du fidèle Speedwagon : un siècle de soutien scientifique et logistique aux Joestar.",
    "image_url": null,
    "attributes": {
-    "scope": "Organisation"
+    "scope": "Organisation",
+    "category": "Organisation"
    },
    "rarity": "rare"
   },
@@ -22820,7 +22868,8 @@
    "description": "Le bout du voyage de 50 jours : la ville où Dio attend, et où le temps s'arrête.",
    "image_url": null,
    "attributes": {
-    "region": "Égypte"
+    "region": "Égypte",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -26923,7 +26972,8 @@
    "description": "La « Hachi-Roku » panda du tofu Fujiwara : propulsion légère, moteur affûté en secret — la voiture légende du tōge.",
    "image_url": null,
    "attributes": {
-    "material": "Sprinter Trueno GT-APEX"
+    "material": "Sprinter Trueno GT-APEX",
+    "category": "Voiture"
    },
    "rarity": "legendary"
   },
@@ -26937,7 +26987,8 @@
    "description": "Le col aux cinq épingles consécutives, terrain de jeu nocturne des Speed Stars — et royaume de l'AE86.",
    "image_url": null,
    "attributes": {
-    "region": "Préfecture de Gunma"
+    "region": "Préfecture de Gunma",
+    "category": "Lieu"
    },
    "rarity": "epic"
   },
@@ -26951,7 +27002,8 @@
    "description": "L'équipe fondée par Ryosuke Takahashi pour conquérir tous les cols du Kantō avec Takumi et Keisuke.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipe de course"
+    "scope": "Équipe de course",
+    "category": "Écurie de course"
    },
    "rarity": "epic"
   },
@@ -26965,7 +27017,8 @@
    "description": "La FD jaune de Keisuke : rotatif affûté et aéro travaillée — l'arme de l'uphill de Project D.",
    "image_url": null,
    "attributes": {
-    "material": "FD3S · moteur rotatif"
+    "material": "FD3S · moteur rotatif",
+    "category": "Voiture"
    },
    "rarity": "epic"
   },
@@ -26979,7 +27032,8 @@
    "description": "Le col des RedSuns et de la « comète blanche » : le fief des frères Takahashi.",
    "image_url": null,
    "attributes": {
-    "region": "Préfecture de Gunma"
+    "region": "Préfecture de Gunma",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -26993,7 +27047,8 @@
    "description": "L'équipe amateur d'Akina menée par Iketani — les premiers témoins du prodige au tofu.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipe locale"
+    "scope": "Équipe locale",
+    "category": "Écurie de course"
    },
    "rarity": "common"
   },
@@ -27007,7 +27062,8 @@
    "description": "« Godzilla » : la GT-R de Nakazato, quatre roues motrices et force brute — l'anti-thèse de l'AE86.",
    "image_url": null,
    "attributes": {
-    "material": "BNR32 · RB26DETT"
+    "material": "BNR32 · RB26DETT",
+    "category": "Voiture"
    },
    "rarity": "rare"
   },
@@ -27021,7 +27077,8 @@
    "description": "La monture d'Impact Blue : une Silvia greffée d'un avant de 180SX — l'arme des reines d'Usui.",
    "image_url": null,
    "attributes": {
-    "material": "S13 face 180SX"
+    "material": "S13 face 180SX",
+    "category": "Voiture"
    },
    "rarity": "rare"
   },
@@ -27035,7 +27092,8 @@
    "description": "L'Evo III de Kyoichi Sudo : turbo, transmission intégrale et misfiring system — la doctrine Emperor sur roues.",
    "image_url": null,
    "attributes": {
-    "material": "CE9A · 4G63T"
+    "material": "CE9A · 4G63T",
+    "category": "Voiture"
    },
    "rarity": "rare"
   },
@@ -27049,7 +27107,8 @@
    "description": "Le col des NightKids — la ligne droite finale où la puissance de la GT-R fait la loi.",
    "image_url": null,
    "attributes": {
-    "region": "Préfecture de Gunma"
+    "region": "Préfecture de Gunma",
+    "category": "Lieu"
    },
    "rarity": "common"
   },
@@ -27063,7 +27122,8 @@
    "description": "Le col sinueux d'Impact Blue, réputé pour son enchaînement C-121 — le territoire de Mako et Sayuki.",
    "image_url": null,
    "attributes": {
-    "region": "Préfecture de Gunma"
+    "region": "Préfecture de Gunma",
+    "category": "Lieu"
    },
    "rarity": "common"
   },
@@ -27077,7 +27137,8 @@
    "description": "L'écurie des frères Takahashi : la plus rapide de Gunma, dirigée à la donnée et au chrono par Ryosuke.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipe de course"
+    "scope": "Équipe de course",
+    "category": "Écurie de course"
    },
    "rarity": "epic"
   },
@@ -27091,7 +27152,8 @@
    "description": "L'équipe de Myōgi menée par Nakazato — la culture de la puissance et l'orgueil du col.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipe de course"
+    "scope": "Équipe de course",
+    "category": "Écurie de course"
    },
    "rarity": "rare"
   },
@@ -27105,7 +27167,8 @@
    "description": "Le duo Mako & Sayuki sur SilEighty : le binôme pilote-copilote le plus rapide d'Usui.",
    "image_url": null,
    "attributes": {
-    "scope": "Duo de course"
+    "scope": "Duo de course",
+    "category": "Écurie de course"
    },
    "rarity": "rare"
   },
@@ -27119,7 +27182,8 @@
    "description": "Les coureurs des routes de montagne japonaises : downhill, uphill, et l'art de frôler le rail.",
    "image_url": null,
    "attributes": {
-    "sector": "Course de montagne"
+    "sector": "Course de montagne",
+    "category": "Métier"
    },
    "rarity": "rare"
   },
@@ -27133,7 +27197,8 @@
    "description": "L'art de glisser une propulsion en virage sans perdre de vitesse — la signature du tōge.",
    "image_url": null,
    "attributes": {
-    "discipline": "Pilotage"
+    "discipline": "Pilotage",
+    "category": "Aptitude"
    },
    "rarity": "epic"
   },
@@ -27454,7 +27519,7 @@
       "Alexis Tomassian"
      ]
     },
-    "favorites": 99754,
+    "favorites": 99758,
     "status": "Décédé",
     "nindo": "Je suis la justice.",
     "bio": "Premier de la nation, brillant et désœuvré, Light Yagami ramasse un cahier tombé du ciel : le Death Note du shinigami Ryuk. Convaincu de pouvoir purger le monde du crime, il devient « Kira », dieu autoproclamé d'un ordre nouveau — et engage avec le détective L la plus vertigineuse partie d'échecs du manga, jusqu'à sa chute face à Near.",
@@ -27491,7 +27556,7 @@
       "Guillaume Lebon"
      ]
     },
-    "favorites": 131471
+    "favorites": 131475
    },
    "rarity": "legendary"
   },
@@ -27515,7 +27580,7 @@
       "Emmanuel Karsen"
      ]
     },
-    "favorites": 12881
+    "favorites": 12884
    },
    "rarity": "epic"
   },
@@ -27563,7 +27628,7 @@
       "Vincent de Boüard"
      ]
     },
-    "favorites": 3829
+    "favorites": 3830
    },
    "rarity": "epic"
   },
@@ -27771,7 +27836,8 @@
    "description": "Le cahier des dieux de la mort : quiconque y voit son nom inscrit meurt — 40 secondes, crise cardiaque par défaut.",
    "image_url": null,
    "attributes": {
-    "material": "Cahier de shinigami"
+    "material": "Cahier de shinigami",
+    "category": "Relique"
    },
    "rarity": "legendary"
   },
@@ -27785,7 +27851,8 @@
    "description": "Les shinigami du monde des morts : ils prolongent leur vie en inscrivant celle des humains.",
    "image_url": null,
    "attributes": {
-    "scope": "Shinigami"
+    "scope": "Shinigami",
+    "category": "Race & espèce"
    },
    "rarity": "epic"
   },
@@ -27799,7 +27866,8 @@
    "description": "Le « sauveur » anonyme qui exécute les criminels du monde entier — messie pour les uns, tueur en série pour les autres.",
    "image_url": null,
    "attributes": {
-    "scope": "Identité"
+    "scope": "Identité",
+    "category": "Titre & rang"
    },
    "rarity": "epic"
   },
@@ -27813,7 +27881,8 @@
    "description": "Les esprits les plus brillants du monde lancés sur l'affaire Kira : L, puis ses successeurs.",
    "image_url": null,
    "attributes": {
-    "sector": "Enquête"
+    "sector": "Enquête",
+    "category": "Métier"
    },
    "rarity": "rare"
   },
@@ -27827,7 +27896,8 @@
    "description": "Le pacte qui échange la moitié de sa vie contre la vision du nom et de l'espérance de vie d'autrui.",
    "image_url": null,
    "attributes": {
-    "discipline": "Pacte"
+    "discipline": "Pacte",
+    "category": "Aptitude"
    },
    "rarity": "epic"
   },
@@ -27841,7 +27911,8 @@
    "description": "L'orphelinat pour génies fondé par Watari — la pépinière des successeurs de L.",
    "image_url": null,
    "attributes": {
-    "region": "Winchester · Angleterre"
+    "region": "Winchester · Angleterre",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -27855,7 +27926,8 @@
    "description": "La poignée de policiers restés aux côtés de L pour traquer Kira, quitte à y laisser leur carrière — ou leur vie.",
    "image_url": null,
    "attributes": {
-    "scope": "Task force"
+    "scope": "Task force",
+    "category": "Organisation"
    },
    "rarity": "rare"
   },
@@ -27869,7 +27941,8 @@
    "description": "Le désert d'os et d'ennui où les dieux de la mort jouent aux dés — Ryuk en est parti par curiosité.",
    "image_url": null,
    "attributes": {
-    "region": "Royaume des morts"
+    "region": "Royaume des morts",
+    "category": "Lieu"
    },
    "rarity": "rare"
   },
@@ -27883,7 +27956,8 @@
    "description": "La Special Provision for Kira : l'unité de Near, montée pour reprendre la traque après la mort de L.",
    "image_url": null,
    "attributes": {
-    "scope": "Task force américaine"
+    "scope": "Task force américaine",
+    "category": "Organisation"
    },
    "rarity": "rare"
   },
@@ -27897,7 +27971,8 @@
    "description": "Le conglomérat dont les cadres tuent à coups de Death Note en réunion hebdomadaire — l'arc du Kira d'entreprise.",
    "image_url": null,
    "attributes": {
-    "scope": "Conglomérat"
+    "scope": "Conglomérat",
+    "category": "Organisation"
    },
    "rarity": "common"
   },
@@ -29717,7 +29792,8 @@
    "description": "La route de tous les dangers qui ceinture le globe — au bout : Laugh Tale et le One Piece.",
    "image_url": null,
    "attributes": {
-    "region": "Route maritime"
+    "region": "Route maritime",
+    "category": "Lieu"
    },
    "rarity": "legendary"
   },
@@ -29731,7 +29807,8 @@
    "description": "Les fruits qui donnent un pouvoir unique contre la capacité de nager — la loterie du diable.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit maudit"
+    "element": "Fruit maudit",
+    "category": "Fruit du Démon"
    },
    "rarity": "legendary"
   },
@@ -29745,7 +29822,8 @@
    "description": "L'équipage de Luffy : une poignée de rêveurs devenus l'équipage le plus recherché des mers.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "legendary"
   },
@@ -29759,7 +29837,8 @@
    "description": "Depuis l'exécution de Gol D. Roger, le monde entier a pris la mer à la recherche du One Piece.",
    "image_url": null,
    "attributes": {
-    "sector": "Mers & abordages"
+    "sector": "Mers & abordages",
+    "category": "Métier"
    },
    "rarity": "rare"
   },
@@ -29773,7 +29852,8 @@
    "description": "La volonté matérialisée : l'observation qui anticipe, l'armement qui durcit, le roi qui terrasse.",
    "image_url": null,
    "attributes": {
-    "discipline": "Volonté"
+    "discipline": "Volonté",
+    "category": "Haki"
    },
    "rarity": "epic"
   },
@@ -29787,7 +29867,8 @@
    "description": "Le navire-lion des Chapeaux de Paille, œuvre de Franky — le successeur bien-aimé du Vogue Merry.",
    "image_url": null,
    "attributes": {
-    "material": "Navire · bois d'Adam"
+    "material": "Navire · bois d'Adam",
+    "category": "Navire"
    },
    "rarity": "epic"
   },
@@ -29801,7 +29882,8 @@
    "description": "Le bras armé du Gouvernement Mondial — l'éternel poursuivant des pirates, de la Justice Absolue aux héros du peuple.",
    "image_url": null,
    "attributes": {
-    "scope": "Force mondiale"
+    "scope": "Force mondiale",
+    "category": "Organisation"
    },
    "rarity": "rare"
   },
@@ -29815,7 +29897,8 @@
    "description": "La plus paisible des quatre mers — et le berceau de Luffy, Zoro, Nami, Usopp et Sanji.",
    "image_url": null,
    "attributes": {
-    "region": "Mer orientale"
+    "region": "Mer orientale",
+    "category": "Lieu"
    },
    "rarity": "common"
   },
@@ -29829,7 +29912,8 @@
    "description": "Le trésor que Roger a laissé « quelque part » sur Laugh Tale — le mot qui a lancé le Grand Âge de la Piraterie.",
    "image_url": null,
    "attributes": {
-    "material": "Trésor ultime"
+    "material": "Trésor ultime",
+    "category": "Relique"
    },
    "rarity": "legendary"
   },
@@ -29843,7 +29927,8 @@
    "description": "Les stèles gravées qui portent l'histoire interdite du Siècle Oublié — seule Robin sait encore les lire.",
    "image_url": null,
    "attributes": {
-    "material": "Stèles indestructibles"
+    "material": "Stèles indestructibles",
+    "category": "Relique"
    },
    "rarity": "epic"
   },
@@ -29857,7 +29942,8 @@
    "description": "Le théâtre de la Guerre au Sommet : Barbe Blanche contre la Marine entière, pour la tête d'Ace.",
    "image_url": null,
    "attributes": {
-    "region": "QG de la Marine"
+    "region": "QG de la Marine",
+    "category": "Lieu"
    },
    "rarity": "epic"
   },
@@ -29871,7 +29957,8 @@
    "description": "Les quatre Empereurs qui règnent sur la seconde moitié de Grand Line comme des forces de la nature.",
    "image_url": null,
    "attributes": {
-    "scope": "Empereurs"
+    "scope": "Empereurs",
+    "category": "Titre & rang"
    },
    "rarity": "legendary"
   },
@@ -29885,7 +29972,8 @@
    "description": "Les sept pirates affranchis par le Gouvernement — corsaires un jour, menaces le lendemain.",
    "image_url": null,
    "attributes": {
-    "scope": "Grands Corsaires"
+    "scope": "Grands Corsaires",
+    "category": "Titre & rang"
    },
    "rarity": "epic"
   },
@@ -62579,7 +62667,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Gomu Gomu no Mi"
+    "roman_name": "Gomu Gomu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62594,7 +62683,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Bara Bara no Mi"
+    "roman_name": "Bara Bara no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62609,7 +62699,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Sube Sube no Mi"
+    "roman_name": "Sube Sube no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62624,7 +62715,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Kilo Kilo no Mi"
+    "roman_name": "Kilo Kilo no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62639,7 +62731,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Bomu Bomu no Mi"
+    "roman_name": "Bomu Bomu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62654,7 +62747,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Hana Hana no Mi"
+    "roman_name": "Hana Hana no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62669,7 +62763,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Doru Doru no Mi"
+    "roman_name": "Doru Doru no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62684,7 +62779,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Baku Baku no Mi"
+    "roman_name": "Baku Baku no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62699,7 +62795,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Mane Mane no Mi"
+    "roman_name": "Mane Mane no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62714,7 +62811,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Toge Toge no Mi"
+    "roman_name": "Toge Toge no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62729,7 +62827,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Supa Supa no Mi"
+    "roman_name": "Supa Supa no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62744,7 +62843,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Ori Ori no Mi"
+    "roman_name": "Ori Ori no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62759,7 +62859,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Bane Bane no Mi"
+    "roman_name": "Bane Bane no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62774,7 +62875,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Ito Ito no Mi"
+    "roman_name": "Ito Ito no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62789,7 +62891,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Noro Noro no Mi"
+    "roman_name": "Noro Noro no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62804,7 +62907,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Doa Doa no Mi"
+    "roman_name": "Doa Doa no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62819,7 +62923,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Awa Awa no Mi"
+    "roman_name": "Awa Awa no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62834,7 +62939,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Beri Beri no Mi"
+    "roman_name": "Beri Beri no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62849,7 +62955,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Sabi Sabi no Mi"
+    "roman_name": "Sabi Sabi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62864,7 +62971,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Shari Shari no Mi"
+    "roman_name": "Shari Shari no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62879,7 +62987,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Yomi Yomi no Mi"
+    "roman_name": "Yomi Yomi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62894,7 +63003,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Kage Kage no Mi"
+    "roman_name": "Kage Kage no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62909,7 +63019,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Horo Horo no Mi"
+    "roman_name": "Horo Horo no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62924,7 +63035,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Suke Suke no Mi"
+    "roman_name": "Suke Suke no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62939,7 +63051,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Nikyu Nikyu no Mi"
+    "roman_name": "Nikyu Nikyu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62954,7 +63067,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Jiki Jiki no Mi"
+    "roman_name": "Jiki Jiki no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62969,7 +63083,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Ope Ope no Mi"
+    "roman_name": "Ope Ope no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62984,7 +63099,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Shiro Shiro no Mi"
+    "roman_name": "Shiro Shiro no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -62999,7 +63115,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Wara Wara no Mi"
+    "roman_name": "Wara Wara no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63014,7 +63131,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Oto Oto no Mi"
+    "roman_name": "Oto Oto no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63029,7 +63147,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Mero Mero no Mi"
+    "roman_name": "Mero Mero no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63044,7 +63163,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Doku Doku no Mi"
+    "roman_name": "Doku Doku no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63059,7 +63179,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Horu Horu no Mi"
+    "roman_name": "Horu Horu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63074,7 +63195,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Choki Choki no Mi"
+    "roman_name": "Choki Choki no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63089,7 +63211,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Gura Gura no Mi"
+    "roman_name": "Gura Gura no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63104,7 +63227,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Kira Kira no Mi"
+    "roman_name": "Kira Kira no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63119,7 +63243,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Poke Poke no Mi"
+    "roman_name": "Poke Poke no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63134,7 +63259,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Woshu Woshu no Mi"
+    "roman_name": "Woshu Woshu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63149,7 +63275,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Fuwa Fuwa no Mi"
+    "roman_name": "Fuwa Fuwa no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63164,7 +63291,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Mato Mato no Mi"
+    "roman_name": "Mato Mato no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63179,7 +63307,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Fuku Fuku no Mi"
+    "roman_name": "Fuku Fuku no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63194,7 +63323,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Buki Buki no Mi"
+    "roman_name": "Buki Buki no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63209,7 +63339,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Guru Guru no Mi"
+    "roman_name": "Guru Guru no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63224,7 +63355,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Beta Beta no Mi"
+    "roman_name": "Beta Beta no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63239,7 +63371,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Hobi Hobi no Mi"
+    "roman_name": "Hobi Hobi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63254,7 +63387,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Zushi Zushi no Mi"
+    "roman_name": "Zushi Zushi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63269,7 +63403,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Bari Bari no Mi"
+    "roman_name": "Bari Bari no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63284,7 +63419,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Nui Nui no Mi"
+    "roman_name": "Nui Nui no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63299,7 +63435,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Giro Giro no Mi"
+    "roman_name": "Giro Giro no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63314,7 +63451,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Ato Ato no Mi"
+    "roman_name": "Ato Ato no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63329,7 +63467,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Jake Jake no Mi"
+    "roman_name": "Jake Jake no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63344,7 +63483,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Pamu Pamu no Mi"
+    "roman_name": "Pamu Pamu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63359,7 +63499,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Sui Sui no Mi"
+    "roman_name": "Sui Sui no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63374,7 +63515,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Ton Ton no Mi"
+    "roman_name": "Ton Ton no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63389,7 +63531,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Hira Hira no Mi"
+    "roman_name": "Hira Hira no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63404,7 +63547,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Ishi Ishi no Mi"
+    "roman_name": "Ishi Ishi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63419,7 +63563,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Fude Fude no Mi"
+    "roman_name": "Fude Fude no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63434,7 +63579,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Nagi Nahi no Mi"
+    "roman_name": "Nagi Nahi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63449,7 +63595,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Chiyu Chiyu no Mi"
+    "roman_name": "Chiyu Chiyu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63464,7 +63611,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Soru Soru no Mi"
+    "roman_name": "Soru Soru no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63479,7 +63627,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Mira Mira no Mi"
+    "roman_name": "Mira Mira no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63494,7 +63643,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Pero Pero no Mi"
+    "roman_name": "Pero Pero no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63509,7 +63659,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Bisu Bisu no Mi"
+    "roman_name": "Bisu Bisu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63524,7 +63675,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Kuri Kuri no Mi"
+    "roman_name": "Kuri Kuri no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63539,7 +63691,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Bata Bata no Mi"
+    "roman_name": "Bata Bata no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63554,7 +63707,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Buku Buku no Mi"
+    "roman_name": "Buku Buku no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63569,7 +63723,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Shibo Shibo no Mi"
+    "roman_name": "Shibo Shibo no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63584,7 +63739,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Memo Memo no Mi"
+    "roman_name": "Memo Memo no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63599,7 +63755,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Mochi Mochi no Mi"
+    "roman_name": "Mochi Mochi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63614,7 +63771,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Hoya Hoya no Mi"
+    "roman_name": "Hoya Hoya no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63629,7 +63787,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Netsu Netsu no Mi"
+    "roman_name": "Netsu Netsu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63644,7 +63803,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Kuku Kuku no Mi"
+    "roman_name": "Kuku Kuku no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63659,7 +63819,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Gocha Gocha no Mi"
+    "roman_name": "Gocha Gocha no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63674,7 +63835,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Kubu Kobu no Mi"
+    "roman_name": "Kubu Kobu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63689,7 +63851,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Oshi Oshi no Mi"
+    "roman_name": "Oshi Oshi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63704,7 +63867,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Kibi Kibi no Mi"
+    "roman_name": "Kibi Kibi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63719,7 +63883,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Toki Toki no Mi"
+    "roman_name": "Toki Toki no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63734,7 +63899,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Juku Juku no Mi"
+    "roman_name": "Juku Juku no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63749,7 +63915,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Maki Maki no Mi"
+    "roman_name": "Maki Maki no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63764,7 +63931,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Moku Moku no Mi"
+    "roman_name": "Moku Moku no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -63779,7 +63947,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Suna Suna no Mi"
+    "roman_name": "Suna Suna no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -63794,7 +63963,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Mera Mera no Mi"
+    "roman_name": "Mera Mera no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -63809,7 +63979,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Goro Goro no Mi"
+    "roman_name": "Goro Goro no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -63824,7 +63995,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Hie Hie no Mi"
+    "roman_name": "Hie Hie no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -63839,7 +64011,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Yami Yami no Mi"
+    "roman_name": "Yami Yami no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -63854,7 +64027,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Pika Pika no Mi"
+    "roman_name": "Pika Pika no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -63869,7 +64043,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Magu Magu no Mi"
+    "roman_name": "Magu Magu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -63884,7 +64059,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Numa Numa no Mi"
+    "roman_name": "Numa Numa no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -63899,7 +64075,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Gasu Gasu no Mi"
+    "roman_name": "Gasu Gasu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -63914,7 +64091,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Yuki Yuki no Mi"
+    "roman_name": "Yuki Yuki no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -63929,7 +64107,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Ushi Ushi no Mi"
+    "roman_name": "Ushi Ushi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63944,7 +64123,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Hito Hito no Mi"
+    "roman_name": "Hito Hito no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63959,7 +64139,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Tori Tori no Mi"
+    "roman_name": "Tori Tori no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63974,7 +64155,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Mogu Mogu no Mi"
+    "roman_name": "Mogu Mogu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -63989,7 +64171,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Inu Inu no Mi moderu Dakkusufunto"
+    "roman_name": "Inu Inu no Mi moderu Dakkusufunto",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64004,7 +64187,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Inu Inu no Mi moderu Jakkaru"
+    "roman_name": "Inu Inu no Mi moderu Jakkaru",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64019,7 +64203,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Uma Uma no Mi"
+    "roman_name": "Uma Uma no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64034,7 +64219,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Neko Neko no Mi moderu: Hyō"
+    "roman_name": "Neko Neko no Mi moderu: Hyō",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64049,7 +64235,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Zo Zo no Mi"
+    "roman_name": "Zo Zo no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64064,7 +64251,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Inu Inu no Mi moderu: Ōkami"
+    "roman_name": "Inu Inu no Mi moderu: Ōkami",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64079,7 +64267,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Ushi Ushi no Mi moderu Kirin"
+    "roman_name": "Ushi Ushi no Mi moderu Kirin",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64094,7 +64283,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Hebi Hebi no Mi moderu: Anakonda"
+    "roman_name": "Hebi Hebi no Mi moderu: Anakonda",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64109,7 +64299,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Hebi Hebi no Mi moderu: Kingu Kobura"
+    "roman_name": "Hebi Hebi no Mi moderu: Kingu Kobura",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64124,7 +64315,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Kame Kame no Mi"
+    "roman_name": "Kame Kame no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64139,7 +64331,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Tama Tama no Mi"
+    "roman_name": "Tama Tama no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64154,7 +64347,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Sara Sara no Mi moderu: Ahorōtoru"
+    "roman_name": "Sara Sara no Mi moderu: Ahorōtoru",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64169,7 +64363,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Mushi Mushi no Mi, Moderu Kabutomushi"
+    "roman_name": "Mushi Mushi no Mi, Moderu Kabutomushi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64184,7 +64379,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Mushi Mushi no Mi, Moderu Suzumebachi"
+    "roman_name": "Mushi Mushi no Mi, Moderu Suzumebachi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64199,7 +64395,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Tori Tori no Mi Moderu Arubatorosu"
+    "roman_name": "Tori Tori no Mi Moderu Arubatorosu",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64214,7 +64411,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Inu Inu no Mi Moderu Bake-danuki"
+    "roman_name": "Inu Inu no Mi Moderu Bake-danuki",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64229,7 +64427,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Antique",
-    "roman_name": "Ryū Ryū no Mi Moderu Arosaurusu"
+    "roman_name": "Ryū Ryū no Mi Moderu Arosaurusu",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64244,7 +64443,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Antique",
-    "roman_name": "Zō Zō no Mi, moderu Manmosu"
+    "roman_name": "Zō Zō no Mi, moderu Manmosu",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64259,7 +64459,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Antique",
-    "roman_name": "Ryū Ryū no Mi Moderu Supinosaurusu"
+    "roman_name": "Ryū Ryū no Mi Moderu Supinosaurusu",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64274,7 +64475,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Antique",
-    "roman_name": "Ryū Ryū no Mi Kodai-shu Moderu Puteranodon"
+    "roman_name": "Ryū Ryū no Mi Kodai-shu Moderu Puteranodon",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64289,7 +64491,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Antique",
-    "roman_name": "Ryū Ryū no Mi Moderu Burakiosaurusu"
+    "roman_name": "Ryū Ryū no Mi Moderu Burakiosaurusu",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64304,7 +64507,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Antique",
-    "roman_name": "Ryū Ryū no Mi Moderu Pakikefarosaurusu"
+    "roman_name": "Ryū Ryū no Mi Moderu Pakikefarosaurusu",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64319,7 +64523,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Antique",
-    "roman_name": "Ryū Ryū no Mi Moderu Torikeratopusu"
+    "roman_name": "Ryū Ryū no Mi Moderu Torikeratopusu",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64334,7 +64539,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Antique",
-    "roman_name": "Kumo Kumo no Mi Moderu Rosamigare Guraubogerī"
+    "roman_name": "Kumo Kumo no Mi Moderu Rosamigare Guraubogerī",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64349,7 +64555,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Antique",
-    "roman_name": "Neko Neko no Mi Moderu Sāberutaigā"
+    "roman_name": "Neko Neko no Mi Moderu Sāberutaigā",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64364,7 +64571,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Tori Tori no Mi, Moderu Fenikkusu"
+    "roman_name": "Tori Tori no Mi, Moderu Fenikkusu",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -64379,7 +64587,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Hito Hito no Mi moderu Daibutsu"
+    "roman_name": "Hito Hito no Mi moderu Daibutsu",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -64394,7 +64603,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Uo Uo no Mi, Moderu Seiryū"
+    "roman_name": "Uo Uo no Mi, Moderu Seiryū",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -64409,7 +64619,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Inu Inu no Mi, Moderu Kyūbi no Kitsune"
+    "roman_name": "Inu Inu no Mi, Moderu Kyūbi no Kitsune",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -64424,7 +64635,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Hebi Hebi no Mi moderu Yamata no Orochi"
+    "roman_name": "Hebi Hebi no Mi moderu Yamata no Orochi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -64439,7 +64651,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Hito Hito no Mi, Moderu: Ōnyūdō"
+    "roman_name": "Hito Hito no Mi, Moderu: Ōnyūdō",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -64454,7 +64667,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Inu Inu no Mi Moderu Ōkuchi no Makami"
+    "roman_name": "Inu Inu no Mi Moderu Ōkuchi no Makami",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -64468,7 +64682,8 @@
    "description": "il permet de se transformer en mouton.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64482,7 +64697,8 @@
    "description": "il permet de se transformer en chauve-souris.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64496,7 +64712,8 @@
    "description": "il permet de se transformer en gazelle.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64510,7 +64727,8 @@
    "description": "il permet de se transformer en souris.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64524,7 +64742,8 @@
    "description": "il permet de se transformer en lion.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64538,7 +64757,8 @@
    "description": "il permet de se transformer en cheval.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64552,7 +64772,8 @@
    "description": "il permet de se transformer en serpent.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64566,7 +64787,8 @@
    "description": "il permet de se transformer en lapin.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64580,7 +64802,8 @@
    "description": "il permet de se transformer en hippopotame.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64594,7 +64817,8 @@
    "description": "il permet de se transformer en alpaga.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64608,7 +64832,8 @@
    "description": "il permet de se transformer en éléphant.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64622,7 +64847,8 @@
    "description": "il permet de se transformer en scorpion.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64636,7 +64862,8 @@
    "description": "il permet de se transformer en singe.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64650,7 +64877,8 @@
    "description": "il permet de se transformer en tatou.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64664,7 +64892,8 @@
    "description": "il permet de se transformer en autruche.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64678,7 +64907,8 @@
    "description": "il permet de se transformer en écureuil volant.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64692,7 +64922,8 @@
    "description": "il permet de se transformer en serpent blanc.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64706,7 +64937,8 @@
    "description": "il permet de se transformer en gorille",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64720,7 +64952,8 @@
    "description": "il permet de se transformer en coq",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64734,7 +64967,8 @@
    "description": "il permet de se transformer en girafe",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64748,7 +64982,8 @@
    "description": "il permet de se transformer en crotale",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64762,7 +64997,8 @@
    "description": "il permet de se transformer en hétérodon",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64776,7 +65012,8 @@
    "description": "il permet de se transformer en caïman",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64790,7 +65027,8 @@
    "description": "il permet de se transformer en carlin",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64805,7 +65043,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Goe Goe no Mi"
+    "roman_name": "Goe Goe no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64820,7 +65059,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Hiso Hiso no Mi"
+    "roman_name": "Hiso Hiso no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64835,7 +65075,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Kama Kama no Mi"
+    "roman_name": "Kama Kama no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64850,7 +65091,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Kachi Kachi no Mi"
+    "roman_name": "Kachi Kachi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64865,7 +65107,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Nemu Nemu no Mi"
+    "roman_name": "Nemu Nemu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64880,7 +65123,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Mini Mini no Mi"
+    "roman_name": "Mini Mini no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64895,7 +65139,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Atsu Atsu no Mi"
+    "roman_name": "Atsu Atsu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64910,7 +65155,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Noko Noko no Mi"
+    "roman_name": "Noko Noko no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64925,7 +65171,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Ami Ami no Mi"
+    "roman_name": "Ami Ami no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64940,7 +65187,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Kopi Kopi no Mi"
+    "roman_name": "Kopi Kopi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64955,7 +65203,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Mosa Mosa no Mi"
+    "roman_name": "Mosa Mosa no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64970,7 +65219,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Modo Modo no Mi"
+    "roman_name": "Modo Modo no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -64985,7 +65235,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Gutsu Gutsu no Mi"
+    "roman_name": "Gutsu Gutsu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65000,7 +65251,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Peto Peto no Mi"
+    "roman_name": "Peto Peto no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65015,7 +65267,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Kone Kone no Mi"
+    "roman_name": "Kone Kone no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65030,7 +65283,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Moa Moa no Mi"
+    "roman_name": "Moa Moa no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65045,7 +65299,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Kyubu Kyubu no Mi"
+    "roman_name": "Kyubu Kyubu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65060,7 +65315,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Maji Maji no Mi"
+    "roman_name": "Maji Maji no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65075,7 +65331,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Nito Nito no Mi"
+    "roman_name": "Nito Nito no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65090,7 +65347,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Hore Hore no Mi"
+    "roman_name": "Hore Hore no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65105,7 +65363,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Nuku Nuke no Mi"
+    "roman_name": "Nuku Nuke no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65120,7 +65379,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Koro Koro no Mi"
+    "roman_name": "Koro Koro no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65135,7 +65395,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Jara Jara no Mi"
+    "roman_name": "Jara Jara no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65150,7 +65411,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Iro Iro no Mi"
+    "roman_name": "Iro Iro no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65165,7 +65427,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Gol Gol no Mi"
+    "roman_name": "Gol Gol no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65180,7 +65443,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Raki Raki no Mi"
+    "roman_name": "Raki Raki no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65195,7 +65459,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Nepa Nepa no Mi"
+    "roman_name": "Nepa Nepa no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65210,7 +65475,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Mono Mono no Mi"
+    "roman_name": "Mono Mono no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65225,7 +65491,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Bijo Bijo no Mi"
+    "roman_name": "Bijo Bijo no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65240,7 +65507,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Ute Ute no Mi"
+    "roman_name": "Ute Ute no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65255,7 +65523,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Pocha Pocha no Mi"
+    "roman_name": "Pocha Pocha no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65270,7 +65539,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Bana Bana no Mi"
+    "roman_name": "Bana Bana no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65285,7 +65555,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Deri Deri no Mi"
+    "roman_name": "Deri Deri no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65300,7 +65571,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Dero Dero no Mi"
+    "roman_name": "Dero Dero no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65315,7 +65587,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Basu Basu no Mi"
+    "roman_name": "Basu Basu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65330,7 +65603,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Gasha Gasha no Mi"
+    "roman_name": "Gasha Gasha no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65345,7 +65619,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Nibi Nibi no Mi"
+    "roman_name": "Nibi Nibi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65360,7 +65635,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Toro Toro no Mi"
+    "roman_name": "Toro Toro no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -65375,7 +65651,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Pasa Pasa no Mi"
+    "roman_name": "Pasa Pasa no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -65390,7 +65667,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Ame Ame no Mi"
+    "roman_name": "Ame Ame no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -65405,7 +65683,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Tori Tori no Mi moderu Washi"
+    "roman_name": "Tori Tori no Mi moderu Washi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65420,7 +65699,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan",
-    "roman_name": "Ushi Ushi no Mi moderu Lama"
+    "roman_name": "Ushi Ushi no Mi moderu Lama",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65435,7 +65715,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Inu Inu no Mi Moderu Bake-danuki"
+    "roman_name": "Inu Inu no Mi Moderu Bake-danuki",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -65450,7 +65731,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Batto Batto no Mi Moderu Banpaia"
+    "roman_name": "Batto Batto no Mi Moderu Banpaia",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -65465,7 +65747,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Tori Tori no Mi, Moderu Nue"
+    "roman_name": "Tori Tori no Mi, Moderu Nue",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -65480,7 +65763,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Hito Hito no Mi, Moderu: Nika"
+    "roman_name": "Hito Hito no Mi, Moderu: Nika",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -65494,7 +65778,8 @@
    "description": "Fruit du Démon de type Smile.",
    "image_url": null,
    "attributes": {
-    "element": "Fruit du Démon · Smile"
+    "element": "Fruit du Démon · Smile",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65509,7 +65794,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Nomi Nomi no Mi"
+    "roman_name": "Nomi Nomi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65524,7 +65810,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Riki Riki no Mi"
+    "roman_name": "Riki Riki no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65539,7 +65826,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Wapu Wapu no mi"
+    "roman_name": "Wapu Wapu no mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65554,7 +65842,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Shima Shima no Mi"
+    "roman_name": "Shima Shima no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65569,7 +65858,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Deka Deka no Mi"
+    "roman_name": "Deka Deka no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65584,7 +65874,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Gabu Gabu no Mi"
+    "roman_name": "Gabu Gabu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65599,7 +65890,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Shiku Shiku no Mi"
+    "roman_name": "Shiku Shiku no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65614,7 +65906,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Uma Uma no Mi, modèle Pégase"
+    "roman_name": "Uma Uma no Mi, modèle Pégase",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -65629,7 +65922,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Zoan Mythique",
-    "roman_name": "Tori Tori no Mi"
+    "roman_name": "Tori Tori no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -65644,7 +65938,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Fruit"
+    "roman_name": "Fruit",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -65659,7 +65954,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Paramecia",
-    "roman_name": "Toshi Toshi no Mi"
+    "roman_name": "Toshi Toshi no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65674,7 +65970,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Logia",
-    "roman_name": "Mori Mori no Mi"
+    "roman_name": "Mori Mori no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "epic"
   },
@@ -65689,7 +65986,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Clone",
-    "roman_name": "Supā Supā no Mi"
+    "roman_name": "Supā Supā no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65704,7 +66002,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Clone",
-    "roman_name": "Sui Sui no Mi"
+    "roman_name": "Sui Sui no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65719,7 +66018,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Clone",
-    "roman_name": "Mero Mero no Mi"
+    "roman_name": "Mero Mero no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65734,7 +66034,8 @@
    "image_url": null,
    "attributes": {
     "element": "Fruit du Démon · Clone",
-    "roman_name": "Nikyu Nikyu no Mi"
+    "roman_name": "Nikyu Nikyu no Mi",
+    "category": "Fruit du Démon"
    },
    "rarity": "rare"
   },
@@ -65750,7 +66051,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Mugiwara no Ichimi",
-    "total_prime": "3.161.000.100 Berrys"
+    "total_prime": "3.161.000.100 Berrys",
+    "category": "Équipage"
    },
    "rarity": "legendary"
   },
@@ -65766,7 +66068,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Akagami Kaizokudan",
-    "total_prime": "4.142.900.000 Berrys"
+    "total_prime": "4.142.900.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "legendary"
   },
@@ -65782,7 +66085,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Arubida Kaizokudan",
-    "total_prime": "5.000.000 Berrys"
+    "total_prime": "5.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -65798,7 +66102,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Bagī Kaizokudan",
-    "total_prime": "20.000.000 Berrys"
+    "total_prime": "20.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -65814,7 +66119,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Rojā Kaizoku Dan",
-    "total_prime": "5.564.800.000 Berrys"
+    "total_prime": "5.564.800.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "legendary"
   },
@@ -65830,7 +66136,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Usoppu Kaizokudan",
-    "total_prime": "200.000.000 Berrys"
+    "total_prime": "200.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -65846,7 +66153,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Kuroneko Kaizoku Dan",
-    "total_prime": "32.000.000 Berrys"
+    "total_prime": "32.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -65862,7 +66170,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Kuriiku Kaizoku Kantai",
-    "total_prime": "29.000.000 Berrys"
+    "total_prime": "29.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -65878,7 +66187,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Kukku Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -65894,7 +66204,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Āron Ichimi",
-    "total_prime": "42.5000.000 Berrys"
+    "total_prime": "42.5000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -65910,7 +66221,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Iesu Kaizokudan",
-    "total_prime": "3.000.000 Berrys"
+    "total_prime": "3.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -65926,7 +66238,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Runbā Kaizoku-dan",
-    "total_prime": "33.000.000 Berrys"
+    "total_prime": "33.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -65942,7 +66255,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Kyo Hē Kaizoku-dan",
-    "total_prime": "200.000.000 Berrys"
+    "total_prime": "200.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -65958,7 +66272,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Burikingu Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -65974,7 +66289,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Chūrippu Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -65990,7 +66306,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Shirohige Kaizokudan",
-    "total_prime": "7.480.000.000 Berrys"
+    "total_prime": "7.480.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "legendary"
   },
@@ -66006,7 +66323,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Saruyama Rengō",
-    "total_prime": "84.000.000 Berrys"
+    "total_prime": "84.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66022,7 +66340,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Hokahoka Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66038,7 +66357,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Beramī Kaizokudan",
-    "total_prime": "93.000.000 Berrys"
+    "total_prime": "93.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66054,7 +66374,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Roshio Kaizokudan",
-    "total_prime": "42.000.000 Berrys"
+    "total_prime": "42.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66070,7 +66391,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Donkihōte Kaizokudan",
-    "total_prime": "1.113.000.000 Berrys"
+    "total_prime": "1.113.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66086,7 +66408,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Kurohige Kaizokudan",
-    "total_prime": "2.445.800.000 Berrys"
+    "total_prime": "2.445.800.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "legendary"
   },
@@ -66102,7 +66425,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Kiba Gaeru Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66118,7 +66442,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Fokushī Kaizokudan",
-    "total_prime": "24.000.000 Berrys"
+    "total_prime": "24.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66134,7 +66459,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Ō Kabuto Kaizokudan",
-    "total_prime": "36.000.000 Berrys"
+    "total_prime": "36.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66150,7 +66476,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Taiyō no Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66166,7 +66493,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Uchū Kaizoku",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66182,7 +66510,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Surirā Bāku",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66198,7 +66527,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Rōringu Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66214,7 +66544,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Makuro Ichimi",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66230,7 +66561,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Kyandi Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66246,7 +66578,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Hāto no Kaizokudan",
-    "total_prime": "500.000.000 Berrys"
+    "total_prime": "500.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66262,7 +66595,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Kiddo Kaizokudan",
-    "total_prime": "670.000.000 Berrys"
+    "total_prime": "670.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66278,7 +66612,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Hōkinsu Kaizokudan",
-    "total_prime": "320.000.000 Berrys"
+    "total_prime": "320.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66294,7 +66629,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Dorēku Kaizokudan",
-    "total_prime": "222.000.000 Berrys"
+    "total_prime": "222.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66310,7 +66646,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "On Ea Kaizokudan",
-    "total_prime": "350.000.000 Berrys"
+    "total_prime": "350.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66326,7 +66663,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Bonī Kaizokudan",
-    "total_prime": "140.000.000 Berrys"
+    "total_prime": "140.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66342,7 +66680,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Faia Tanku Kaizokudan",
-    "total_prime": "485.000.000 Berrys"
+    "total_prime": "485.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66358,7 +66697,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Hakaisō Kaizokudan",
-    "total_prime": "108.000.000 Berrys"
+    "total_prime": "108.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66374,7 +66714,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Akumeito Kaizokudan",
-    "total_prime": "60.000.000 Berrys"
+    "total_prime": "60.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66390,7 +66731,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Kuja Kaizokudan",
-    "total_prime": "160.000.000 Berrys"
+    "total_prime": "160.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66406,7 +66748,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Supēdo Kaizokudan",
-    "total_prime": "550.000.000 Berrys"
+    "total_prime": "550.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66422,7 +66765,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Chahige Kaizokudan",
-    "total_prime": "80.060.000 Berrys"
+    "total_prime": "80.060.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66438,7 +66782,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Hyakujū Kaizokudan",
-    "total_prime": "11.179.100.000 Berrys"
+    "total_prime": "11.179.100.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "legendary"
   },
@@ -66454,7 +66799,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Kinjishi Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66470,7 +66816,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Burūjamu Kaizoku-dan",
-    "total_prime": "17.700.000 Berrys"
+    "total_prime": "17.700.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66485,7 +66832,8 @@
    "image_url": null,
    "attributes": {
     "scope": "Équipage pirate",
-    "total_prime": "aucune Berrys"
+    "total_prime": "aucune Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66501,7 +66849,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Nise Mugiwara no Ichimi",
-    "total_prime": "26.000.000 Berrys"
+    "total_prime": "26.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66517,7 +66866,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Karibū Kaizokudan",
-    "total_prime": "400.000.000 Berrys"
+    "total_prime": "400.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66533,7 +66883,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Shin Gyojin Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66549,7 +66900,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Furaingu Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66565,7 +66917,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Jairo Kaizokudan",
-    "total_prime": "73.000.000 Berrys"
+    "total_prime": "73.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66581,7 +66934,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Biggu Mamu Kaizokudan",
-    "total_prime": "11.121.500.000 Berrys"
+    "total_prime": "11.121.500.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "legendary"
   },
@@ -66597,7 +66951,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Bagīzu Deribarī",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66613,7 +66968,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Utsukushiki Kaizoku-dan",
-    "total_prime": "397.000.000 Berrys"
+    "total_prime": "397.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66629,7 +66985,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Baruto Kurabu",
-    "total_prime": "267.000.000 Berrys"
+    "total_prime": "267.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66645,7 +67002,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Yonta Maria Dai-senda",
-    "total_prime": "50.000.000 Berrys"
+    "total_prime": "50.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66661,7 +67019,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Mikadzuki no norikumiin",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66677,7 +67036,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Bareruzu Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66693,7 +67053,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Toripuru-Ekkusu Jimu Kakutō Rengō",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66709,7 +67070,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Shin Kyo Hē Kaizoku-dan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66725,7 +67087,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Rokkusu Kaizokudan",
-    "total_prime": "500.000.000 Berrys"
+    "total_prime": "500.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66741,7 +67104,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Gyanzakku Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66757,7 +67121,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Amīgo Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66773,7 +67138,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Fenikkusu Kaizokudan",
-    "total_prime": "100.000.000 Berrys"
+    "total_prime": "100.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66789,7 +67155,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Baian Kaizoku-dan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66805,7 +67172,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Shunaidā Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66821,7 +67189,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Wetton Kaizoku-dan",
-    "total_prime": "14.800.000 Berrys"
+    "total_prime": "14.800.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66837,7 +67206,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Panpukin Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66853,7 +67223,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Reddo Arōzu Kaizokudan",
-    "total_prime": "1.000.000 Berrys"
+    "total_prime": "1.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66869,7 +67240,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Chobihige Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66885,7 +67257,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Toranpu Kyōdai",
-    "total_prime": "38.500.000 Berrys"
+    "total_prime": "38.500.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66901,7 +67274,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Gasupāde Kaizokudan",
-    "total_prime": "152.000.000 Berrys"
+    "total_prime": "152.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66917,7 +67291,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Zenī Kaizoku-dan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66933,7 +67308,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Barubaru Dan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66949,7 +67325,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Ochanoma Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66965,7 +67342,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Maddo Torejā Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66981,7 +67359,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Barokku Wākusu",
-    "total_prime": "399.700.00 Berrys"
+    "total_prime": "399.700.00 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -66996,7 +67375,8 @@
    "image_url": null,
    "attributes": {
     "scope": "Équipage pirate",
-    "roman_name": "Rubunīru Ōkoku"
+    "roman_name": "Rubunīru Ōkoku",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67012,7 +67392,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Happō Suigun",
-    "total_prime": "500.000.000 Berrys"
+    "total_prime": "500.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67028,7 +67409,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Makuro Ichimi",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67043,7 +67425,8 @@
    "image_url": null,
    "attributes": {
     "scope": "Équipage pirate",
-    "roman_name": "Kaigun"
+    "roman_name": "Kaigun",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67058,7 +67441,8 @@
    "image_url": null,
    "attributes": {
     "scope": "Équipage pirate",
-    "roman_name": "Sekai Kizoku"
+    "roman_name": "Sekai Kizoku",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67074,7 +67458,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Shibarikubi no Bigaro",
-    "total_prime": "14.900.000 Berrys"
+    "total_prime": "14.900.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67090,7 +67475,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Maddo Torejā Kaizokudan",
-    "total_prime": "inconnu Berrys"
+    "total_prime": "inconnu Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67105,7 +67491,8 @@
    "image_url": null,
    "attributes": {
     "scope": "Équipage pirate",
-    "roman_name": "Tontatta Ōkoku"
+    "roman_name": "Tontatta Ōkoku",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67121,7 +67508,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Mugiwara Dai-sendan",
-    "total_prime": "1.022.000 Berrys"
+    "total_prime": "1.022.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67137,7 +67525,8 @@
    "attributes": {
     "scope": "Équipage pirate",
     "roman_name": "Bagīzu Deribarī",
-    "total_prime": "344.000.000 Berrys"
+    "total_prime": "344.000.000 Berrys",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67151,7 +67540,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67165,7 +67555,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67179,7 +67570,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67193,7 +67585,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67207,7 +67600,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67221,7 +67615,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67235,7 +67630,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67249,7 +67645,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67263,7 +67660,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67277,7 +67675,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67291,7 +67690,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67305,7 +67705,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67319,7 +67720,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67333,7 +67735,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67347,7 +67750,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67361,7 +67765,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67375,7 +67780,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67389,7 +67795,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67403,7 +67810,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67417,7 +67825,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67431,7 +67840,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67445,7 +67855,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67459,7 +67870,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67473,7 +67885,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67487,7 +67900,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67501,7 +67915,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67515,7 +67930,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67529,7 +67945,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67543,7 +67960,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67557,7 +67975,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67571,7 +67990,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67585,7 +68005,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67599,7 +68020,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67613,7 +68035,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67627,7 +68050,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67641,7 +68065,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67655,7 +68080,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67669,7 +68095,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67683,7 +68110,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67697,7 +68125,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67711,7 +68140,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67725,7 +68155,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67739,7 +68170,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67753,7 +68185,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67767,7 +68200,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67781,7 +68215,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67795,7 +68230,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67809,7 +68245,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67823,7 +68260,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67837,7 +68275,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67851,7 +68290,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67865,7 +68305,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67879,7 +68320,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67893,7 +68335,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67907,7 +68350,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67921,7 +68365,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67935,7 +68380,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67949,7 +68395,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67963,7 +68410,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67977,7 +68425,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -67991,7 +68440,8 @@
    "description": "Équipage de pirates.",
    "image_url": null,
    "attributes": {
-    "scope": "Équipage pirate"
+    "scope": "Équipage pirate",
+    "category": "Équipage"
    },
    "rarity": "rare"
   },
@@ -68006,7 +68456,8 @@
    "image_url": null,
    "attributes": {
     "discipline": "Haki",
-    "roman_name": "Kenbun-shoku no Haki : Mantora"
+    "roman_name": "Kenbun-shoku no Haki : Mantora",
+    "category": "Haki"
    },
    "rarity": "epic"
   },
@@ -68021,7 +68472,8 @@
    "image_url": null,
    "attributes": {
     "discipline": "Haki",
-    "roman_name": "Busō-shoku no Haki"
+    "roman_name": "Busō-shoku no Haki",
+    "category": "Haki"
    },
    "rarity": "epic"
   },
@@ -68036,7 +68488,8 @@
    "image_url": null,
    "attributes": {
     "discipline": "Haki",
-    "roman_name": "Haō-shoku no Haki"
+    "roman_name": "Haō-shoku no Haki",
+    "category": "Haki"
    },
    "rarity": "epic"
   },
@@ -68050,7 +68503,8 @@
    "description": "C'est une technique qui consiste à améliorer sa puissance et sa vitesse au combat en augmentant sa pression sanguine en positionnant son corps comme s",
    "image_url": null,
    "attributes": {
-    "discipline": "Gear (Luffy)"
+    "discipline": "Gear (Luffy)",
+    "category": "Gear"
    },
    "rarity": "epic"
   },
@@ -68064,7 +68518,8 @@
    "description": "C'est une technique qui consiste à améliorer grandement la puissance de combat de Luffy, pour l'activer, celui-ci mord à pleines dents son pouce et so",
    "image_url": null,
    "attributes": {
-    "discipline": "Gear (Luffy)"
+    "discipline": "Gear (Luffy)",
+    "category": "Gear"
    },
    "rarity": "epic"
   },
@@ -68078,7 +68533,8 @@
    "description": "C'est une technique récente débloquée par son entraînement, elle lui permet de gonfler, d'améliorer son fluide offensif (Haki de l'armement) et de rét",
    "image_url": null,
    "attributes": {
-    "discipline": "Gear (Luffy)"
+    "discipline": "Gear (Luffy)",
+    "category": "Gear"
    },
    "rarity": "epic"
   },
@@ -68092,7 +68548,8 @@
    "description": "Il l'utilisera la première fois contre le grand corsaire Doflamingo.",
    "image_url": null,
    "attributes": {
-    "discipline": "Gear (Luffy)"
+    "discipline": "Gear (Luffy)",
+    "category": "Gear"
    },
    "rarity": "epic"
   },
@@ -68106,7 +68563,8 @@
    "description": "Il l'utilise pour la première fois contre Cracker, cette technique ressemble énormément au Gomu Gomu no Fuusen.",
    "image_url": null,
    "attributes": {
-    "discipline": "Gear (Luffy)"
+    "discipline": "Gear (Luffy)",
+    "category": "Gear"
    },
    "rarity": "epic"
   },
@@ -68120,7 +68578,8 @@
    "description": "Elle est moins imposante que le Boundman.",
    "image_url": null,
    "attributes": {
-    "discipline": "Gear (Luffy)"
+    "discipline": "Gear (Luffy)",
+    "category": "Gear"
    },
    "rarity": "epic"
   },
@@ -68134,7 +68593,8 @@
    "description": "Forme éveillé",
    "image_url": null,
    "attributes": {
-    "discipline": "Gear (Luffy)"
+    "discipline": "Gear (Luffy)",
+    "category": "Gear"
    },
    "rarity": "epic"
   },
@@ -68149,7 +68609,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/goku_ssj.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "3 Billion"
+    "ki": "3 Billion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68164,7 +68625,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/goku_ssj2.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "6 Billion"
+    "ki": "6 Billion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68179,7 +68641,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/goku_ssj3.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "24 Billion"
+    "ki": "24 Billion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68194,7 +68657,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/goku_ssj4.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "2 Quadrillion"
+    "ki": "2 Quadrillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68209,7 +68673,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/goku_ssjb.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "9 Quintillion"
+    "ki": "9 Quintillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68224,7 +68689,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/vegeta SSJ (2).webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "330.000.000"
+    "ki": "330.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68239,7 +68705,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/vegeta SSJ2.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "24 Billion"
+    "ki": "24 Billion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68254,7 +68721,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/vegeta ssj4.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "1.8 Trillion"
+    "ki": "1.8 Trillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68269,7 +68737,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/vegeta SSJB.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "100 Quintillion"
+    "ki": "100 Quintillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68284,7 +68753,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/vegeta mega instinto.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "19.84 Septillion"
+    "ki": "19.84 Septillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68299,7 +68769,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/Piccolo super namekiano.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "2.175 Billion"
+    "ki": "2.175 Billion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68314,7 +68785,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/picolo orange.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "41.25 Quintillion"
+    "ki": "41.25 Quintillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68329,7 +68801,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/freezer 2nd forma.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "1.060.000"
+    "ki": "1.060.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68344,7 +68817,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/Freezer_3.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "2.120.000"
+    "ki": "2.120.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68359,7 +68833,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/render_freezer_perfect_form_by_poh2000-d4n0ewd.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "60.000.000"
+    "ki": "60.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68374,7 +68849,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/freezer_gold.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "100 Quintillion"
+    "ki": "100 Quintillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68389,7 +68865,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/zarbon monster.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "30.000"
+    "ki": "30.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68404,7 +68881,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/cell imperfect.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "370.000.000"
+    "ki": "370.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68419,7 +68897,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/Semi-Perfect_Cell.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "897.000.000"
+    "ki": "897.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68434,7 +68913,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/cell perfect.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "10.970.000.000"
+    "ki": "10.970.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68449,7 +68929,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/gohan_ssj-removebg-preview.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "4.700.000.000"
+    "ki": "4.700.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68464,7 +68945,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/Gohan_joven_ssj2.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "10.200.000.000"
+    "ki": "10.200.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68479,7 +68961,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/gohan_ultimate.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "43.000.000.000"
+    "ki": "43.000.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68494,7 +68977,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/beast_gohan___dragon_ball_super_super_hero_by_rmrlr2020_dfbqvta-pre.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": " 25.6 Septillion"
+    "ki": " 25.6 Septillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68509,7 +68993,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/trunks_ssj-removebg-preview.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "905.000.000"
+    "ki": "905.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68524,7 +69009,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/trunks ssj2.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "18.000.000.000"
+    "ki": "18.000.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68539,7 +69025,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/trunks ssj3.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "1.25 Billion"
+    "ki": "1.25 Billion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68554,7 +69041,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/trunks ssj iracundo.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "17.5 Quintillion "
+    "ki": "17.5 Quintillion ",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68569,7 +69057,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/gotenks ssj.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "5.7 Billion"
+    "ki": "5.7 Billion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68584,7 +69073,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/Gotenks_SSJ3.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "45.6 Billion"
+    "ki": "45.6 Billion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68599,7 +69089,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/Super_Buu_Artwork.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "5.670.000.000"
+    "ki": "5.670.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68614,7 +69105,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/Gotenks-Buu-removebg-preview.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "12.300.000.000"
+    "ki": "12.300.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68629,7 +69121,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/Super_Buu_Gohan_Absorbido.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "14.800.000.000"
+    "ki": "14.800.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68644,7 +69137,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/majin buu pure.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "4.000.000.000"
+    "ki": "4.000.000.000",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68659,7 +69153,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/gogeta_ssj_render_2_by_ssjrose890_de2z0ra-pre.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "6.3 sextillion"
+    "ki": "6.3 sextillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68674,7 +69169,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/GOGETA SSJ4.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "168 quadrillion"
+    "ki": "168 quadrillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68689,7 +69185,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/gogeta SSJB.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "12.6 septillion"
+    "ki": "12.6 septillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68704,7 +69201,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/gogeta__bm__ssb_evolution___1__con_aura__by_ssjrose890_df682g0-fullview.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "1.26 octillion"
+    "ki": "1.26 octillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68719,7 +69217,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/Vegetto.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "9 Trillion"
+    "ki": "9 Trillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68734,7 +69233,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/VEGITO SSJB.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "10.8 Septillion"
+    "ki": "10.8 Septillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68749,7 +69249,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/Super-Janemba_artwork_SDBH.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "75 Billion"
+    "ki": "75 Billion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68764,7 +69265,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/Broly_Super_Saiyajin_Legendario_1.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "11.2 Septillion"
+    "ki": "11.2 Septillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68779,7 +69281,8 @@
    "image_url": "https://dragonball-api.com/transformaciones/goku_ultra.webp",
    "attributes": {
     "discipline": "Transformation",
-    "ki": "90 Septillion"
+    "ki": "90 Septillion",
+    "category": "Transformation"
    },
    "rarity": "epic"
   },
@@ -68793,7 +69296,8 @@
    "description": "Planeta natal de los Namekianos.",
    "image_url": "https://dragonball-api.com/planetas/Namek_U7.webp",
    "attributes": {
-    "region": "Planète détruite"
+    "region": "Planète détruite",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68807,7 +69311,8 @@
    "description": "La Tierra también llamado Mundo del Dragón (Dragon World), es el planeta principal donde se desarrolla la serie de Dragon Ball.",
    "image_url": "https://dragonball-api.com/planetas/Tierra_Dragon_Ball_Z.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68821,7 +69326,8 @@
    "description": "El planeta Vegeta, conocido como planeta Plant antes del fin de la Guerra Saiyan-tsufruiana en el año 730, es un planeta rocoso ficticio de la serie d",
    "image_url": "https://dragonball-api.com/planetas/Planeta_Vegeta_en_Dragon_Ball_Super_Broly.webp",
    "attributes": {
-    "region": "Planète détruite"
+    "region": "Planète détruite",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68835,7 +69341,8 @@
    "description": "Planeta artificial utilizado por Freezer como base de operaciones y centro de clonación.",
    "image_url": "https://dragonball-api.com/planetas/PlanetaFreezer.webp",
    "attributes": {
-    "region": "Planète détruite"
+    "region": "Planète détruite",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68849,7 +69356,8 @@
    "description": "Planeta habitado por los Kanassans y conocido por la lucha entre Bardock y los habitantes del planeta.",
    "image_url": "https://dragonball-api.com/planetas/800px-PlanetKannasa.webp",
    "attributes": {
-    "region": "Planète détruite"
+    "region": "Planète détruite",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68863,7 +69371,8 @@
    "description": "Planeta donde Gohan y Krillin encontraron las Dragon Balls para revivir a sus amigos durante la Saga de Namek.",
    "image_url": "https://dragonball-api.com/planetas/monmar.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68877,7 +69386,8 @@
    "description": "Planeta de la técnica Instant Transmission, aprendida por Goku durante su estancia.",
    "image_url": "https://dragonball-api.com/planetas/PlanetYardrat.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68891,7 +69401,8 @@
    "description": "El Planeta Kaio se encuentra al final del largo Camino de la Serpiente.",
    "image_url": "https://dragonball-api.com/planetas/Planeta_del_Kaio_del_Norte.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68905,7 +69416,8 @@
    "description": "Makyo es un planeta y la fuente de alimentación de todos los malévolos, especialmente Garlic Jr., que solo aparece durante el Arco de Garlic Jr.",
    "image_url": "https://dragonball-api.com/planetas/Makyo_Star.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68919,7 +69431,8 @@
    "description": "Planeta habitado por los Babari, es un planeta telúrico del Universo 10 donde residen los babarianos, hizo su primera aparición en el episodio 54 de D",
    "image_url": "https://dragonball-api.com/planetas/Planeta_Babari.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68933,7 +69446,8 @@
    "description": "Planeta natal de los Tsufur, la raza a la que pertenecía el Dr.",
    "image_url": "https://dragonball-api.com/planetas/tsufur.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68947,7 +69461,8 @@
    "description": "Sin informacion",
    "image_url": "https://dragonball-api.com/planetas/planetwhatis.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68961,7 +69476,8 @@
    "description": "El Otro Mundo en contraparte al Mundo de los vivos, es, en Dragon Ball, la versión del mundo de los muertos.",
    "image_url": "https://dragonball-api.com/planetas/otro mundo.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68975,7 +69491,8 @@
    "description": "Planeta de Bills un cuerpo celeste ubicado dentro del mundo de los vivos del Universo 7, el cual aparece por primera vez en la película Dragon Ball Z:",
    "image_url": "https://dragonball-api.com/planetas/Templo_de_Bills2.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -68989,7 +69506,8 @@
    "description": "El Planeta del Gran Kaio es donde se organiza el Torneo de Artes Marciales del Otro Mundo en honor a la muerte del Kaio del Norte (Kaito), donde parti",
    "image_url": "https://dragonball-api.com/planetas/Planetadaikaiosama.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -69003,7 +69521,8 @@
    "description": "El Núcleo del Mundo es el planeta nativo de toda la especie nucleica, del cual surgen los benévolos Kaio y Kaio-shin, así como los malévolos Makaio, M",
    "image_url": "https://dragonball-api.com/planetas/nucleo_mundo.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -69017,7 +69536,8 @@
    "description": "El Planeta Sagrado es el planeta localizado en el Reino Kaio-shin donde residen los Kaio-shin del Universo 7.",
    "image_url": "https://dragonball-api.com/planetas/Planeta_Sagrado.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -69031,7 +69551,8 @@
    "description": "El Nuevo Planeta Plant, también conocido como el Nuevo Planeta Tsufru, es el nombre que se le da al nuevo hogar de los Tsufruianos controlados por Veg",
    "image_url": "https://dragonball-api.com/planetas/Nuevo_planeta_plant.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -69045,7 +69566,8 @@
    "description": "El templo móvil del Rey de Todo (sala del trono), es como su nombre lo indica, un templo móvil en el cual reside los tronos de los dos Reyes de Todo e",
    "image_url": "https://dragonball-api.com/planetas/Trono_del_Rey_de_Todo.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   },
@@ -69059,7 +69581,8 @@
    "description": "El Universo 11, es, como su nombre lo indica, el undécimo de los doce universos existentes actualmente en el mundo de Dragon Ball.",
    "image_url": "https://dragonball-api.com/planetas/Universo_11.webp",
    "attributes": {
-    "region": "Planète"
+    "region": "Planète",
+    "category": "Planète"
    },
    "rarity": "rare"
   }

@@ -16,6 +16,7 @@ const CARD_COLS = 'id, slug, type, name, is_fiction, universe, summary, image_ur
 export interface ListEntriesParams {
   type?: AkashaType;
   universe?: string;
+  cat?: string;
   search?: string;
   page?: number;
 }
@@ -36,7 +37,7 @@ const RARITY_BUCKETS: (string | null)[] = ['legendary', 'epic', 'rare', 'common'
  *  « buckets » de rareté (légendaire → commun), chaque bucket ordonné par nom. Une page ne
  *  chevauche au plus que 2 buckets → 5 counts + ≤2 requêtes data. */
 export async function listEntries(
-  { type, universe, search, page = 1 }: ListEntriesParams = {},
+  { type, universe, cat, search, page = 1 }: ListEntriesParams = {},
 ): Promise<ListEntriesResult> {
   const pageSize = PAGE_SIZE;
   const current = Math.max(1, Math.floor(page) || 1);
@@ -53,6 +54,7 @@ export async function listEntries(
   const applyFilters = (q: any, rarity: string | null): any => {
     if (type) q = q.eq('type', type);
     if (universe) q = q.eq('universe', universe);
+    if (cat) q = q.eq('attributes->>category', cat);
     if (s) q = q.or(`name.ilike.%${s}%,universe.ilike.%${s}%,summary.ilike.%${s}%`);
     q = rarity === null ? q.is('rarity', null) : q.eq('rarity', rarity);
     return q;
@@ -144,6 +146,34 @@ export async function getEntryBySlug(slug: string): Promise<AkashaEntryDetail | 
     relationsOut: normalizeRelations(outRows),
     relationsIn: normalizeRelations(inRows),
   };
+}
+
+/** Compte d'entrées par CATÉGORIE (attributes.category) dans le scope courant (univers / type).
+ *  Alimente le rail « Collections » du registre. Même pagination range (plafond PostgREST 1 000). */
+export async function listCategoryCounts(
+  { type, universe }: { type?: AkashaType; universe?: string } = {},
+): Promise<{ category: string; count: number }[]> {
+  const supabase = await createClient();
+  if (!supabase) return [];
+
+  const counts = new Map<string, number>();
+  const PAGE = 1000;
+  for (let from = 0; ; from += PAGE) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let q: any = supabase.from('akasha_entries').select('category:attributes->>category').range(from, from + PAGE - 1);
+    if (type) q = q.eq('type', type);
+    if (universe) q = q.eq('universe', universe);
+    const { data } = await q;
+    const rows = (data as { category: string | null }[] | null) ?? [];
+    for (const row of rows) {
+      const c = row.category?.trim();
+      if (c) counts.set(c, (counts.get(c) ?? 0) + 1);
+    }
+    if (rows.length < PAGE) break;
+  }
+  return Array.from(counts.entries())
+    .map(([category, count]) => ({ category, count }))
+    .sort((a, b) => b.count - a.count || a.category.localeCompare(b.category, 'fr'));
 }
 
 /** Compte d'entrées par univers (pour le hub du registre).

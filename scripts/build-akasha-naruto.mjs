@@ -768,7 +768,7 @@ async function main() {
       ? `Arme / outil de l'univers Naruto — porté par ${names.join(', ')}${others > 0 ? ` et ${others} autre${others > 1 ? 's' : ''}` : ''}.`
       : "Arme / outil de l'univers Naruto.";
     const rarity = ICONIC_ART[name] || (rec.count >= 10 ? 'rare' : 'common');
-    add(entry(slug, 'artifact', frName, summary, rarity, purge({ material: toolCategory(name), origin: 'Univers Naruto' }), refImg(slug)));
+    add(entry(slug, 'artifact', frName, summary, rarity, purge({ material: toolCategory(name), origin: 'Univers Naruto', category: 'Arme & outil' }), refImg(slug)));
     for (const o of owners) relations.push([o, 'possede', slug]);
     massArt++;
   }
@@ -784,7 +784,7 @@ async function main() {
     if (typeof v === 'object') return Object.values(v).flatMap(flatten);
     return [v];
   };
-  function massField({ getter, type, relation, noun, link, frMap = {}, iconic = {}, catKey, catFn, cat, cap = 40, minCount = 1, epicAt = 10 }) {
+  function massField({ getter, type, relation, noun, link, frMap = {}, iconic = {}, catKey, catFn, cat, category, cap = 40, minCount = 1, epicAt = 10 }) {
     const map = new Map(); // nom nettoyé → { count, owners:Set<slug> }
     for (const c of chars) {
       const owner = charSlugByApiName.get(c.name);
@@ -811,6 +811,7 @@ async function main() {
       const who = names.length ? ` — ${link} ${names.join(', ')}${others > 0 ? ` et ${others} autre${others > 1 ? 's' : ''}` : ''}` : '';
       const rarity = iconic[name] || (rec.count >= epicAt ? 'rare' : 'common');
       const attrs = catKey ? { [catKey]: catFn ? catFn(name) : cat } : {};
+      if (category) attrs.category = category; // regroupement navigable du registre (?cat=)
       add(entry(slug, type, frName, `${noun}${who}.`, rarity, purge(attrs), refImg(slug)));
       for (const o of owners) relations.push([o, relation, slug]);
       n++;
@@ -832,7 +833,7 @@ async function main() {
     'Explosion Release': "Libération de l'Explosion (Bakuton)", 'Steel Release': "Libération de l'Acier (Kōton)",
     'Crystal Release': 'Libération du Cristal (Shōton)', 'Dark Release': "Libération des Ténèbres (Meiton)",
   };
-  massField({ getter: (c) => c.natureType, type: 'power', relation: 'maitrise', noun: 'Nature de chakra de l\'univers Naruto', link: 'maîtrisée par', frMap: NATURE_FR, catKey: 'element', cat: 'Nature de chakra', epicAt: 40 });
+  massField({ getter: (c) => c.natureType, type: 'power', relation: 'maitrise', noun: 'Nature de chakra de l\'univers Naruto', link: 'maîtrisée par', frMap: NATURE_FR, catKey: 'element', cat: 'Nature de chakra', category: 'Nature de chakra', epicAt: 40 });
 
   // Jutsu → POUVOIR (le gros lot : ~1400 techniques). Noms canon conservés (romaji/EN) faute de FR.
   const jutsuCat = (n) => {
@@ -846,22 +847,54 @@ async function main() {
     return 'Ninjutsu';
   };
   const JUTSU_ICONIC = { 'Shadow Clone Technique': 'epic', 'Tailed Beast Ball': 'epic', 'Flying Thunder God Technique': 'epic', 'Eight Gates': 'epic', 'Summoning Technique': 'rare', 'Mystical Palm Technique': 'rare' };
-  massField({ getter: (c) => c.jutsu, type: 'power', relation: 'maitrise', noun: 'Technique de l\'univers Naruto', link: 'maîtrisée par', iconic: JUTSU_ICONIC, catKey: 'element', catFn: jutsuCat, epicAt: 15 });
+  massField({ getter: (c) => c.jutsu, type: 'power', relation: 'maitrise', noun: 'Technique de l\'univers Naruto', link: 'maîtrisée par', iconic: JUTSU_ICONIC, catKey: 'element', catFn: jutsuCat, category: 'Jutsu', epicAt: 15 });
 
   // Kekkei genkai → COMPÉTENCE (dōjutsu & lignées ; ceux déjà pris en power/curé reçoivent juste les relations).
-  massField({ getter: (c) => c.personal?.kekkeiGenkai, type: 'skill', relation: 'maitrise', noun: 'Aptitude héréditaire (kekkei genkai) de l\'univers Naruto', link: 'portée par', catKey: 'discipline', cat: 'Kekkei genkai', epicAt: 8 });
+  massField({ getter: (c) => c.personal?.kekkeiGenkai, type: 'skill', relation: 'maitrise', noun: 'Aptitude héréditaire (kekkei genkai) de l\'univers Naruto', link: 'portée par', catKey: 'discipline', cat: 'Kekkei genkai', category: 'Kekkei genkai', epicAt: 8 });
 
   // Classifications → STATUT (Jinchūriki, Sannin, Sage, Missing-nin…).
   const CLASS_FR = { 'Missing-nin': 'Ninja déserteur (Missing-nin)', 'Medical-nin': 'Ninja médical', 'Sensor Type': 'Type sensoriel', 'Jinchūriki': 'Jinchūriki', 'Sage': 'Ermite (Sage)', 'Sannin': 'Sannin légendaire', 'Mercenary Ninja': 'Ninja mercenaire', 'Summon': 'Créature invoquée', 'Daimyō': 'Daimyō (seigneur)' };
-  massField({ getter: (c) => c.personal?.classification, type: 'status', relation: 'appartient', noun: 'Statut de l\'univers Naruto', link: 'incarné par', frMap: CLASS_FR, catKey: 'scope', cat: 'Classification', epicAt: 20 });
+  massField({ getter: (c) => c.personal?.classification, type: 'status', relation: 'appartient', noun: 'Statut de l\'univers Naruto', link: 'incarné par', frMap: CLASS_FR, catKey: 'scope', cat: 'Classification', category: 'Classification', epicAt: 20 });
 
   // Équipes / organisations → STATUT (Akatsuki, Épéistes de la Brume, Konoha 11…).
   const TEAM_FR = { 'Seven Ninja Swordsmen of the Mist': 'Sept Épéistes de la Brume', 'Konoha Military Police Force': 'Police militaire de Konoha', 'Allied Shinobi Forces': 'Force Shinobi Alliée', 'Medic Corps': 'Corps médical', 'Twelve Guardian Ninja': 'Douze Ninjas Gardiens' };
-  massField({ getter: (c) => c.personal?.team, type: 'status', relation: 'appartient', noun: 'Groupe de l\'univers Naruto', link: 'réunit', frMap: TEAM_FR, catKey: 'scope', cat: 'Organisation', minCount: 2, epicAt: 8 });
+  massField({ getter: (c) => c.personal?.team, type: 'status', relation: 'appartient', noun: 'Groupe de l\'univers Naruto', link: 'réunit', frMap: TEAM_FR, catKey: 'scope', cat: 'Organisation', category: 'Organisation', minCount: 2, epicAt: 8 });
 
   // Occupations → MÉTIER (filtré ≥2 titulaires pour couper le bruit des rôles uniques).
   const OCC_FR = { 'Village Head': 'Chef de village', 'Academy Teacher': "Professeur de l'Académie", 'Chūnin Exams Proctor': "Examinateur de l'examen chūnin", 'Scientist': 'Scientifique', 'Thief': 'Voleur', 'Mercenary': 'Mercenaire', 'Merchant': 'Marchand', 'Blacksmith': 'Forgeron', 'Bounty Hunter': 'Chasseur de primes' };
-  massField({ getter: (c) => c.personal?.occupation, type: 'profession', relation: 'exerce', noun: 'Métier de l\'univers Naruto', link: 'exercé par', frMap: OCC_FR, catKey: 'sector', cat: 'Métier ninja', minCount: 2, epicAt: 8 });
+  massField({ getter: (c) => c.personal?.occupation, type: 'profession', relation: 'exerce', noun: 'Métier de l\'univers Naruto', link: 'exercé par', frMap: OCC_FR, catKey: 'sector', cat: 'Métier ninja', category: 'Métier', minCount: 2, epicAt: 8 });
+
+  // Affiliations → ORGANISATION. ⚠ C'est ICI que vit l'Akatsuki (jamais dans `team` : 47 membres via
+  // affiliation) + Racine, Taka, etc. On exclut les villages (déjà des lieux, relation habite) et les
+  // pays (« Land of … », hors périmètre) pour ne créer que les organisations manquantes.
+  const AFF_FR = { 'Akatsuki': 'Akatsuki', 'Root': 'Racine (Anbu)', 'Allied Shinobi Forces': 'Force Shinobi Alliée', 'Mount Myōboku': 'Mont Myōboku', 'Ryūchi Cave': 'Caverne Ryūchi', 'Shikkotsu Forest': 'Forêt Shikkotsu' };
+  const AFF_ICONIC = { 'Akatsuki': 'legendary', 'Root': 'epic', 'Allied Shinobi Forces': 'epic' };
+  massField({
+    getter: (c) => arr(c.personal?.affiliation).map((x) => cleanNote(String(x))).filter((x) => !Object.keys(VILLAGE_SLUGS).some((v) => x.includes(v)) && !/^Land of|^Konoha$/i.test(x)),
+    type: 'status', relation: 'appartient', noun: 'Organisation de l\'univers Naruto', link: 'réunit',
+    frMap: AFF_FR, iconic: AFF_ICONIC, catKey: 'scope', cat: 'Organisation', category: 'Organisation', minCount: 3, epicAt: 15,
+  });
+
+  // ── Catégorie normalisée pour les entités CURÉES (carte slug→catégorie + fallback par type) ──
+  const CATEGORY_BY_SLUG = {
+    sharingan: 'Dōjutsu', byakugan: 'Dōjutsu', rinnegan: 'Dōjutsu',
+    uchiha: 'Clan', senju: 'Clan', uzumaki: 'Clan', hyuga: 'Clan', nara: 'Clan',
+    hokage: 'Titre & rang', kage: 'Titre & rang', sannin: 'Titre & rang', jinchuriki: 'Classification',
+    shinobi: 'Métier', 'ninja-medical': 'Métier',
+    kusanagi: 'Arme & outil', gunbai: 'Arme & outil', samehada: 'Arme & outil',
+    konohagakure: 'Village', sunagakure: 'Village', kirigakure: 'Village', iwagakure: 'Village', kumogakure: 'Village', amegakure: 'Village', otogakure: 'Village',
+  };
+  for (const e of entries) {
+    if (e.attributes.category) continue;
+    if (CATEGORY_BY_SLUG[e.slug]) { e.attributes.category = CATEGORY_BY_SLUG[e.slug]; continue; }
+    if (e.type === 'power') e.attributes.category = 'Jutsu';
+    else if (e.type === 'skill') e.attributes.category = 'Aptitude';
+    else if (e.type === 'artifact') e.attributes.category = 'Arme & outil';
+    else if (e.type === 'profession') e.attributes.category = 'Métier';
+    else if (e.type === 'status') e.attributes.category = String(e.attributes.scope || '').includes('Clan') ? 'Clan' : 'Statut';
+    else if (e.type === 'place') e.attributes.category = 'Lieu';
+    // characters : pas de catégorie (le regroupement passe déjà par village / clan / rôle).
+  }
 
   // ── Popularité Naruto (favorites MAL via Jikan) → rareté = palier de popularité (comme les autres univers) ──
   // L'API Dattebayo n'a pas de favorites → on croise les casts Naruto/Shippuden/Boruto de Jikan par tokens.

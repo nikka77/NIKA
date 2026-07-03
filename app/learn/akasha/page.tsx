@@ -2,12 +2,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import DomainHero from '@/components/DomainHero';
-import { listEntries, listUniverseCounts } from '@/lib/akasha/queries';
+import { listCategoryCounts, listEntries, listUniverseCounts } from '@/lib/akasha/queries';
 import { asAkashaType, TYPE_META } from '@/lib/akasha/types';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import AkashaFilters from '@/components/akasha/AkashaFilters';
 import CollectionStrip from '@/components/akasha/CollectionStrip';
 import UniverseRail from '@/components/akasha/UniverseRail';
+import CategoryRail from '@/components/akasha/CategoryRail';
 
 export const metadata: Metadata = {
   title: 'AKASHA — Le registre de tout ce qui existe | NIKA LEARN',
@@ -18,12 +19,13 @@ export const metadata: Metadata = {
 
 const ACCENT = '#7B5CF0';
 
-type SearchParams = { type?: string; universe?: string; search?: string; page?: string };
+type SearchParams = { type?: string; universe?: string; cat?: string; search?: string; page?: string };
 
-function pageHref(target: number, type: string | undefined, search: string, universe?: string): string {
+function pageHref(target: number, type: string | undefined, search: string, universe?: string, cat?: string): string {
   const p = new URLSearchParams();
   if (universe) p.set('universe', universe);
   if (type) p.set('type', type);
+  if (cat) p.set('cat', cat);
   if (search) p.set('search', search);
   if (target > 1) p.set('page', String(target));
   const qs = p.toString();
@@ -34,12 +36,14 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
   const sp = (await searchParams) ?? {};
   const type = asAkashaType(sp.type);
   const universe = (sp.universe ?? '').trim() || undefined;
+  const cat = (sp.cat ?? '').trim() || undefined;
   const search = (sp.search ?? '').trim();
   const page = Number(sp.page) || 1;
 
-  const [{ entries, total, page: current, totalPages }, universeCounts] = await Promise.all([
-    listEntries({ type, universe, search, page }),
+  const [{ entries, total, page: current, totalPages }, universeCounts, categoryCounts] = await Promise.all([
+    listEntries({ type, universe, cat, search, page }),
     listUniverseCounts(),
+    listCategoryCounts({ type, universe }),
   ]);
 
   return (
@@ -124,6 +128,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
           >
             {type && <input type="hidden" name="type" value={type} />}
             {universe && <input type="hidden" name="universe" value={universe} />}
+            {cat && <input type="hidden" name="cat" value={cat} />}
             <input
               name="search"
               defaultValue={search}
@@ -180,6 +185,8 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
 
         <AkashaFilters active={type} search={search} universe={universe} />
 
+        <CategoryRail counts={categoryCounts} active={cat} universe={universe} type={type} search={search} />
+
         <div
           style={{
             display: 'flex',
@@ -194,6 +201,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
             {total} entrée{total > 1 ? 's' : ''}
             {universe ? ` · ${universe}` : ''}
             {type ? ` · ${TYPE_META[type].plural}` : ''}
+            {cat ? ` · ${cat}` : ''}
             {search ? ` · « ${search} »` : ''}
           </div>
         </div>
@@ -215,11 +223,11 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
               Aucune entité dans ce filtre
             </p>
             <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)', marginBottom: '1.2rem' }}>
-              {search || type || universe
+              {search || type || universe || cat
                 ? 'Essaie une autre recherche ou réinitialise les filtres.'
                 : 'Le registre se remplit — reviens bientôt.'}
             </p>
-            {(search || type || universe) && (
+            {(search || type || universe || cat) && (
               <Link
                 href="/learn/akasha"
                 style={{
@@ -251,7 +259,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
             }}
           >
             {current > 1 ? (
-              <Link href={pageHref(current - 1, type, search, universe)} className="ak-page" style={pageBtnStyle}>
+              <Link href={pageHref(current - 1, type, search, universe, cat)} className="ak-page" style={pageBtnStyle}>
                 ← Précédent
               </Link>
             ) : (
@@ -261,7 +269,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
               Page {current} / {totalPages}
             </span>
             {current < totalPages ? (
-              <Link href={pageHref(current + 1, type, search, universe)} className="ak-page" style={pageBtnStyle}>
+              <Link href={pageHref(current + 1, type, search, universe, cat)} className="ak-page" style={pageBtnStyle}>
                 Suivant →
               </Link>
             ) : (
