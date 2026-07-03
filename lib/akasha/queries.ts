@@ -11,7 +11,7 @@ import type {
 } from './types';
 
 const PAGE_SIZE = 24;
-const CARD_COLS = 'id, slug, type, name, is_fiction, universe, summary, image_url, rarity';
+const CARD_COLS = 'id, slug, type, name, is_fiction, universe, summary, image_url, rarity, category:attributes->>category';
 
 export interface ListEntriesParams {
   type?: AkashaType;

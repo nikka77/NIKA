@@ -35,8 +35,10 @@ export default function EntityAttributes({
     if (v) rows.push({ label: f.label, value: v });
   }
   // Clés supplémentaires (jsonb flexible) non listées dans ATTRIBUTE_FIELDS.
+  // `category` est déjà rendue en chip « ◈ Collection » dans le bandeau ; les clés techniques restent internes.
+  const HIDDEN = new Set(['category', 'rosterLabel', 'eras', 'facts', 'quote', 'bio', 'trivia', 'abilities']);
   for (const [k, val] of Object.entries(attributes)) {
-    if (knownKeys.has(k)) continue;
+    if (knownKeys.has(k) || HIDDEN.has(k)) continue;
     const v = formatValue(val);
     if (v) rows.push({ label: k.replace(/_/g, ' '), value: v });
   }

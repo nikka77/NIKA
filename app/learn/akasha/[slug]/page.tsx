@@ -174,8 +174,16 @@ export default async function AkashaEntryPage({ params }: Props) {
               </h1>
 
               {entry.universe && (
-                <div style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)', marginTop: 8 }}>
-                  {entry.universe}
+                <div style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)', marginTop: 8, display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+                  <span>{entry.universe}</span>
+                  {typeof (entry.attributes as Record<string, unknown>).category === 'string' && (
+                    <Link
+                      href={`/learn/akasha?universe=${encodeURIComponent(entry.universe)}&cat=${encodeURIComponent((entry.attributes as Record<string, unknown>).category as string)}`}
+                      style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: '#0EA878', textDecoration: 'none', background: 'rgba(14,168,120,0.10)', border: '1px solid rgba(14,168,120,0.35)', borderRadius: 20, padding: '2px 10px' }}
+                    >
+                      ◈ Collection : {(entry.attributes as Record<string, unknown>).category as string}
+                    </Link>
+                  )}
                 </div>
               )}
 

@@ -83,6 +83,11 @@ export default function AkashaCard({ entry }: { entry: AkashaEntryCard }) {
               {universeMeta(entry.universe).emoji} {entry.universe}
             </span>
           )}
+          {entry.category && entry.type !== 'character' && (
+            <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: '#0EA878', background: 'rgba(14,168,120,0.10)', border: '1px solid rgba(14,168,120,0.35)', borderRadius: 20, padding: '1px 8px' }}>
+              ◈ {entry.category}
+            </span>
+          )}
           <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 600, color: entry.is_fiction ? m.color : 'var(--td3)' }}>
             {entry.is_fiction ? '✦ Fiction' : '◆ Réel'}
           </span>

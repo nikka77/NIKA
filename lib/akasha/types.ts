@@ -31,11 +31,11 @@ export interface AkashaEntry {
   created_at: string;
 }
 
-/** Projection légère pour les cartes de la grille. */
+/** Projection légère pour les cartes de la grille (+ catégorie extraite du JSONB, sans l'embarquer). */
 export type AkashaEntryCard = Pick<
   AkashaEntry,
   'id' | 'slug' | 'type' | 'name' | 'is_fiction' | 'universe' | 'summary' | 'image_url' | 'rarity'
->;
+> & { category?: string | null };
 
 /** Cible résolue d'une relation (entité liée). */
 export interface RelationTarget {
