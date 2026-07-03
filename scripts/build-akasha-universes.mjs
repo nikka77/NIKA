@@ -470,7 +470,7 @@ async function jikanCast(malId) {
     const jp = vas.filter((v) => v.language === 'Japanese').map((v) => displayName(String(v.person?.name || ''))).filter(Boolean).slice(0, 3);
     const en = vas.filter((v) => v.language === 'French' || v.language === 'English').map((v) => displayName(String(v.person?.name || ''))).filter(Boolean).slice(0, 2);
     const va = jp.length || en.length ? { jp, en } : null;
-    map.set(c.character.name, { img, role: c.role || null, va });
+    map.set(c.character.name, { img, role: c.role || null, va, fav: typeof c.favorites === 'number' ? c.favorites : 0 });
   }
   return map;
 }
@@ -486,6 +486,10 @@ const displayName = (s) => (s.includes(', ') ? s.split(/,\s*/).reverse().join(' 
 const GARBAGE_NAME = /[<>]|https?:|\/wiki\/|\.(?:png|jpe?g|gif)/i;
 const firstSentence = (s, n = 150) => String(s || '').replace(/\s+/g, ' ').trim().split(/(?<=[.!?])\s/)[0].slice(0, n);
 const purge = (o) => { for (const k of Object.keys(o)) { const v = o[k]; if (v == null || v === '' || (Array.isArray(v) && v.length === 0)) delete o[k]; } return o; };
+// Popularité MAL (favorites) → palier de rareté : le tri du registre par rareté devient un tri par popularité.
+const favTier = (n) => (n >= 25000 ? 'legendary' : n >= 5000 ? 'epic' : n >= 600 ? 'rare' : 'common');
+const RANK = { common: 0, rare: 1, epic: 2, legendary: 3 };
+const rarityMax = (a, b) => (RANK[b] > (RANK[a] ?? 0) ? b : a);
 
 async function main() {
   const entries = [];
@@ -533,6 +537,7 @@ async function main() {
       const attributes = { role: c.role };
       if (c.aff) attributes.affiliation = c.aff;
       if (cv?.va) attributes.voiceActors = cv.va; // doubleurs JP/VF-EN pour les curés aussi
+      if (cv?.fav) attributes.favorites = cv.fav;
       // Champs de profondeur optionnels (le dossier perso les lit génériquement : onglet Histoire, bannière credo…)
       for (const k of ['status', 'nindo', 'nindoLabel', 'bio', 'personality', 'quotes', 'trivia']) if (c[k]) attributes[k] = c[k];
       // Dragon Ball : image détourée + race/ki de l'API dédiée
@@ -557,7 +562,7 @@ async function main() {
         await sleep(1100);
       }
       if (!img) console.warn(`  ⚠ pas de portrait pour ${c.name} (mal: ${c.mal})`);
-      add(entry(c.slug, 'character', c.name, u.label, c.summary, c.rarity, attributes, img));
+      add(entry(c.slug, 'character', c.name, u.label, c.summary, rarityMax(c.rarity, favTier(cv?.fav || 0)), attributes, img));
     }
     for (const [type, slug, name, [k, v], summary, rarity] of u.entities) add(entry(slug, type, name, u.label, summary, rarity, { [k]: v }));
 
@@ -567,15 +572,15 @@ async function main() {
     const curatedMal = new Set(u.chars.map((c) => c.mal));
     const curatedSlug = new Set(u.chars.map((c) => c.slug));
     let massU = 0;
-    for (const [rawName, { img, role, va }] of cast) {
+    for (const [rawName, { img, role, va, fav }] of cast) {
       if (!rawName || GARBAGE_NAME.test(rawName) || curatedMal.has(rawName)) continue;
       const name = displayName(rawName);
       let slug = slugify(name);
       if (!slug || slug.length < 2 || curatedSlug.has(slug)) continue;
       if (seen.has(slug)) { slug = `${slug}-${slugify(u.label)}`; if (seen.has(slug)) continue; }
-      const isMain = role === 'Main';
-      const roleFr = isMain ? 'Personnage principal' : 'Personnage secondaire';
-      add(entry(slug, 'character', name, u.label, `${roleFr} de ${u.label}.`, isMain ? 'rare' : 'common', purge({ role: roleFr, voiceActors: va || undefined }), img));
+      const roleFr = role === 'Main' ? 'Personnage principal' : 'Personnage secondaire';
+      // Rareté = palier de POPULARITÉ (favorites MAL) → tri du registre = tri par popularité.
+      add(entry(slug, 'character', name, u.label, `${roleFr} de ${u.label}.`, favTier(fav), purge({ role: roleFr, favorites: fav || undefined, voiceActors: va || undefined }), img));
       massU++;
     }
     console.log(`  + ${massU} persos (casting complet)`);

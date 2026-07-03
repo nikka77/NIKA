@@ -477,7 +477,9 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
   const clanV = str(a.clan);
   const villageV = affiliation.length ? null : str(a.village);
   const rankV = str(a.rank);
-  const multiUniv = !!(showRole || bounty || crew || fruit || race || ki || sizeV || clanV || villageV || rankV);
+  const favN = typeof a.favorites === 'number' ? a.favorites : null;
+  const favFmt = favN ? favN.toLocaleString('fr-FR') : null;
+  const multiUniv = !!(showRole || bounty || crew || fruit || race || ki || sizeV || clanV || villageV || rankV || favFmt);
   const squad = a.squad && typeof a.squad === 'object' ? (a.squad as { name?: string; members?: { rel: string; name: string; slug?: string }[] }) : null;
   const bio = str(a.bio);
   const personality = str(a.personality);
@@ -557,6 +559,13 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
             {affiliation.length > 0 && <Sec title="Affiliations" accent="#0EA878" icon="affiliations"><Chips items={affiliation} color="#0EA878" /></Sec>}
             {occupation.length > 0 && <Sec title="Fonctions" accent="#0094D4" icon="fonctions"><Chips items={occupation} color="#0094D4" /></Sec>}
             {titles.length > 0 && <Sec title="Surnoms" accent="#D4A017"><Chips items={titles} color="#D4A017" /></Sec>}
+            {favFmt && (
+              <Sec title="Popularité" accent="#E8623A">
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 16, color: '#E8623A', background: '#E8623A1A', border: '1px solid #E8623A55', borderRadius: 8, padding: '5px 12px' }}>
+                  <span aria-hidden>★</span>{favFmt} fans
+                </span>
+              </Sec>
+            )}
             {showRole && <Sec title="Rôle" accent="#7B5CF0"><Chips items={[roleAttr]} color="#7B5CF0" /></Sec>}
             {clanV && <Sec title="Clan" accent="#7B5CF0"><Chips items={[clanV]} color="#7B5CF0" /></Sec>}
             {villageV && <Sec title="Village" accent="#0EA878" icon="affiliations"><Chips items={[villageV]} color="#0EA878" /></Sec>}

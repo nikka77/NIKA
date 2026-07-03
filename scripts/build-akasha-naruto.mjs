@@ -863,6 +863,36 @@ async function main() {
   const OCC_FR = { 'Village Head': 'Chef de village', 'Academy Teacher': "Professeur de l'Académie", 'Chūnin Exams Proctor': "Examinateur de l'examen chūnin", 'Scientist': 'Scientifique', 'Thief': 'Voleur', 'Mercenary': 'Mercenaire', 'Merchant': 'Marchand', 'Blacksmith': 'Forgeron', 'Bounty Hunter': 'Chasseur de primes' };
   massField({ getter: (c) => c.personal?.occupation, type: 'profession', relation: 'exerce', noun: 'Métier de l\'univers Naruto', link: 'exercé par', frMap: OCC_FR, catKey: 'sector', cat: 'Métier ninja', minCount: 2, epicAt: 8 });
 
+  // ── Popularité Naruto (favorites MAL via Jikan) → rareté = palier de popularité (comme les autres univers) ──
+  // L'API Dattebayo n'a pas de favorites → on croise les casts Naruto/Shippuden/Boruto de Jikan par tokens.
+  const JIKAN = 'https://api.jikan.moe/v4';
+  const jget = async (url) => { try { const r = await fetch(url); return r.ok ? await r.json() : null; } catch { return null; } };
+  const favTier = (v) => (v >= 25000 ? 'legendary' : v >= 5000 ? 'epic' : v >= 600 ? 'rare' : 'common');
+  const RANK = { common: 0, rare: 1, epic: 2, legendary: 3 };
+  const rarityMax = (x, y) => (RANK[y] > (RANK[x] ?? 0) ? y : x);
+  const favMap = new Map();
+  for (const id of [20, 1735, 34566]) { // Naruto, Shippuden, Boruto
+    const j = await jget(`${JIKAN}/anime/${id}/characters`);
+    for (const cc of j?.data ?? []) { const nm = cc.character?.name; const fv = typeof cc.favorites === 'number' ? cc.favorites : 0; if (nm) favMap.set(nm, Math.max(favMap.get(nm) || 0, fv)); }
+    await new Promise((r) => setTimeout(r, 1000));
+  }
+  const tokset = (s) => new Set(slugify(s).split('-').filter((t) => t.length >= 3));
+  const favIndex = [...favMap.entries()].map(([nm, fv]) => ({ toks: tokset(nm), fv }));
+  const matchFav = (name) => {
+    const want = tokset(name); if (!want.size) return 0;
+    let best = 0, bestHit = 0;
+    for (const cand of favIndex) { let hit = 0; for (const t of want) if (cand.toks.has(t)) hit++; if (hit > bestHit && hit >= Math.min(2, want.size)) { bestHit = hit; best = cand.fv; } }
+    return best;
+  };
+  let popN = 0;
+  for (const e of entries) {
+    if (e.type !== 'character') continue;
+    const fv = matchFav(e.name);
+    if (fv > 0) { e.attributes.favorites = fv; popN++; }
+    e.rarity = rarityMax(e.rarity, favTier(fv)); // masse → palier popularité ; curé → boosté si plus haut
+  }
+  console.log(`✓ popularité Naruto : ${popN}/${entries.filter((e) => e.type === 'character').length} persos notés (favorites MAL)`);
+
   // Validation : ne garder que les relations dont les 2 extrémités existent.
   const clean = relations.filter(([f, , t]) => {
     const ok = slugs.has(f) && slugs.has(t) && f !== t;
