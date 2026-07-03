@@ -2027,7 +2027,6 @@
               "Sharingan"
             ],
             "arc": "Pays des Vagues · Examens Chūnin",
-            "idle": "/images/akasha/naruto/idle/partie-i.webp",
             "stats": {
               "nin": 3.5,
               "tai": 3,
@@ -2066,7 +2065,17 @@
               "Sceau maudit niv. 2",
               "Chidori noir"
             ],
-            "arc": "Vallée de la Fin (vs Naruto)"
+            "arc": "Vallée de la Fin (vs Naruto)",
+            "stats": {
+              "nin": 4,
+              "tai": 3.5,
+              "gen": 3,
+              "int": 3,
+              "for": 3.5,
+              "vit": 4,
+              "end": 3,
+              "sce": 3
+            }
           },
           {
             "label": "Hebi",
@@ -2137,7 +2146,17 @@
               "Amaterasu",
               "Kagutsuchi"
             ],
-            "arc": "Quatrième Guerre Shinobi"
+            "arc": "Quatrième Guerre Shinobi",
+            "stats": {
+              "nin": 5,
+              "tai": 4.5,
+              "gen": 5,
+              "int": 5,
+              "for": 3.5,
+              "vit": 5,
+              "end": 3.5,
+              "sce": 5
+            }
           },
           {
             "label": "Rinnegan",
@@ -2615,7 +2634,17 @@
               "Kamui (distorsion spatiale)",
               "Raikiri"
             ],
-            "arc": "Shippūden — l'éveil du Mangekyō"
+            "arc": "Shippūden — l'éveil du Mangekyō",
+            "stats": {
+              "nin": 5,
+              "tai": 4.5,
+              "gen": 4,
+              "int": 5,
+              "for": 3.5,
+              "vit": 4.5,
+              "end": 3,
+              "sce": 5
+            }
           },
           {
             "label": "Double Mangekyō",
@@ -2680,16 +2709,15 @@
               "Raikiri (sans Sharingan)"
             ],
             "arc": "L'ère de la paix",
-            "idle": "/images/akasha/naruto/idle/hokage.webp",
             "stats": {
-              "nin": 5,
+              "nin": 4.5,
               "tai": 4.5,
-              "gen": 2.5,
-              "int": 4,
-              "for": 4.5,
+              "gen": 3.5,
+              "int": 5,
+              "for": 3.5,
               "vit": 4.5,
-              "end": 5,
-              "sce": 4.5
+              "end": 3.5,
+              "sce": 5
             }
           }
         ],
@@ -2962,7 +2990,17 @@
               "Susanoo (Totsuka & Yata)",
               "Izanami"
             ],
-            "arc": "Le dernier duel — vs Sasuke"
+            "arc": "Le dernier duel — vs Sasuke",
+            "stats": {
+              "nin": 5,
+              "tai": 4,
+              "gen": 5,
+              "int": 5,
+              "for": 3,
+              "vit": 4.5,
+              "end": 1.5,
+              "sce": 5
+            }
           },
           {
             "label": "Edo Tensei",
@@ -3249,7 +3287,17 @@
               "Susanoo",
               "Genjutsu"
             ],
-            "arc": "Fondation de Konoha → Vallée de la Fin"
+            "arc": "Fondation de Konoha → Vallée de la Fin",
+            "stats": {
+              "nin": 5,
+              "tai": 5,
+              "gen": 5,
+              "int": 5,
+              "for": 4.5,
+              "vit": 5,
+              "end": 4.5,
+              "sce": 5
+            }
           },
           {
             "label": "Edo Tensei",
@@ -3324,7 +3372,17 @@
               "Limbo",
               "Tsukuyomi Infini"
             ],
-            "arc": "L'Œil de la Lune"
+            "arc": "L'Œil de la Lune",
+            "stats": {
+              "nin": 5,
+              "tai": 5,
+              "gen": 5,
+              "int": 5,
+              "for": 5,
+              "vit": 5,
+              "end": 5,
+              "sce": 5
+            }
           }
         ],
         "favorites": 13613
@@ -3546,7 +3604,17 @@
               "Fondation du village",
               "Distribution des Bijū"
             ],
-            "arc": "Fondation de Konoha"
+            "arc": "Fondation de Konoha",
+            "stats": {
+              "nin": 5,
+              "tai": 4.5,
+              "gen": 3.5,
+              "int": 4.5,
+              "for": 5,
+              "vit": 4.5,
+              "end": 5,
+              "sce": 5
+            }
           },
           {
             "label": "Mode Ermite",
@@ -3577,7 +3645,6 @@
               "Senjutsu"
             ],
             "arc": "Le sommet de sa puissance",
-            "idle": "/images/akasha/naruto/idle/mode-ermite.webp",
             "stats": {
               "nin": 5,
               "tai": 5,
@@ -3616,7 +3683,17 @@
               "Mokuryū",
               "Kakuan Nitten Suishu"
             ],
-            "arc": "Vallée de la Fin — vs Madara"
+            "arc": "Vallée de la Fin — vs Madara",
+            "stats": {
+              "nin": 5,
+              "tai": 5,
+              "gen": 4,
+              "int": 4.5,
+              "for": 5,
+              "vit": 5,
+              "end": 5,
+              "sce": 5
+            }
           }
         ],
         "favorites": 874
@@ -5352,7 +5429,17 @@
               "Chakra prêté par haine",
               "Manteaux démoniaques"
             ],
-            "arc": "Scellé — derrière les barreaux"
+            "arc": "Scellé — derrière les barreaux",
+            "stats": {
+              "nin": 5,
+              "tai": 4,
+              "gen": 3,
+              "int": 4,
+              "for": 4,
+              "vit": 3.5,
+              "end": 5,
+              "sce": 2
+            }
           },
           {
             "label": "Chakra doré",

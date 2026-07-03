@@ -29,6 +29,9 @@ export default function ArcFrieze({ forms, sel, onSelect, color, heading, pixela
           const age = str(f.age);
           const arc = str(f.arc);
           const img = str(f.idle) ?? str(f.url);
+          // Rendu « sprite » (contain + pixelated) uniquement pour les vrais sprites idle ;
+          // les images anime classiques passent en cover net, quel que soit le prop global.
+          const isSprite = pixelated && !!str(f.idle) && img === str(f.idle);
           const first = i === 0;
           const last = i === forms.length - 1;
           return (
@@ -49,7 +52,7 @@ export default function ArcFrieze({ forms, sel, onSelect, color, heading, pixela
               {/* sprite */}
               {img && (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={img} alt="" width={54} height={54} loading="lazy" style={{ objectFit: pixelated ? 'contain' : 'cover', borderRadius: 11, border: `1px solid ${on ? color : 'var(--bd)'}`, background: on ? `${color}1A` : 'var(--bg)', boxShadow: on ? `0 6px 16px -8px ${color}` : 'none', imageRendering: pixelated ? 'pixelated' : 'auto', transition: 'all .18s' }} />
+                <img src={img} alt="" width={54} height={54} loading="lazy" style={{ objectFit: isSprite ? 'contain' : 'cover', borderRadius: 11, border: `1px solid ${on ? color : 'var(--bd)'}`, background: on ? `${color}1A` : 'var(--bg)', boxShadow: on ? `0 6px 16px -8px ${color}` : 'none', imageRendering: isSprite ? 'pixelated' : 'auto', transition: 'all .18s' }} />
               )}
               {/* textes */}
               <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: on ? 800 : 700, lineHeight: 1.15, color: on ? color : 'var(--td)', textAlign: 'center' }}>{label}</div>

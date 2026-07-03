@@ -33,7 +33,7 @@ export default function CardArt({
             <div className="ak-cosmic" aria-hidden />
             {(idle || current) ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img key={idle || current || ''} src={idle || current || ''} alt={name} className="ak-era-img" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', imageRendering: 'pixelated' }} />
+              <img key={idle || current || ''} src={idle || current || ''} alt={name} className="ak-era-img" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: idle ? 'contain' : 'cover', objectPosition: 'center', imageRendering: idle ? 'pixelated' : 'auto' }} />
             ) : (
               <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 60, opacity: 0.5 }} aria-hidden>{fallbackIcon}</div>
             )}
