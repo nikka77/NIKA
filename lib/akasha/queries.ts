@@ -9,6 +9,7 @@ import type {
   RelationTarget,
   ResolvedRelation,
 } from './types';
+import { FAMILY_FIELD } from './types';
 
 const PAGE_SIZE = 24;
 const CARD_COLS = 'id, slug, type, name, is_fiction, universe, summary, image_url, rarity, category:attributes->>category';
@@ -17,6 +18,7 @@ export interface ListEntriesParams {
   type?: AkashaType;
   universe?: string;
   cat?: string;
+  fam?: string;
   search?: string;
   page?: number;
 }
@@ -37,7 +39,7 @@ const RARITY_BUCKETS: (string | null)[] = ['legendary', 'epic', 'rare', 'common'
  *  « buckets » de rareté (légendaire → commun), chaque bucket ordonné par nom. Une page ne
  *  chevauche au plus que 2 buckets → 5 counts + ≤2 requêtes data. */
 export async function listEntries(
-  { type, universe, cat, search, page = 1 }: ListEntriesParams = {},
+  { type, universe, cat, fam, search, page = 1 }: ListEntriesParams = {},
 ): Promise<ListEntriesResult> {
   const pageSize = PAGE_SIZE;
   const current = Math.max(1, Math.floor(page) || 1);
@@ -55,6 +57,8 @@ export async function listEntries(
     if (type) q = q.eq('type', type);
     if (universe) q = q.eq('universe', universe);
     if (cat) q = q.eq('attributes->>category', cat);
+    const famField = cat ? FAMILY_FIELD[cat] : undefined;
+    if (fam && famField) q = q.eq(`attributes->>${famField}`, fam);
     if (s) q = q.or(`name.ilike.%${s}%,universe.ilike.%${s}%,summary.ilike.%${s}%`);
     q = rarity === null ? q.is('rarity', null) : q.eq('rarity', rarity);
     return q;
@@ -174,6 +178,40 @@ export async function listCategoryCounts(
   return Array.from(counts.entries())
     .map(([category, count]) => ({ category, count }))
     .sort((a, b) => b.count - a.count || a.category.localeCompare(b.category, 'fr'));
+}
+
+/** Compte d'entrées par SOUS-FAMILLE au sein d'une collection (cat=Jutsu → Ninjutsu/Genjutsu/… ;
+ *  cat=Fruit du Démon → Paramecia/Logia/Zoan ; cat=Arme & outil → Lame/Arme de jet/…).
+ *  Le champ porteur est dérivé de FAMILY_FIELD ; les collections sans 2ᵉ niveau renvoient []. */
+export async function listFamilyCounts(
+  { universe, cat }: { universe?: string; cat?: string } = {},
+): Promise<{ fam: string; count: number }[]> {
+  const field = cat ? FAMILY_FIELD[cat] : undefined;
+  if (!cat || !field) return [];
+  const supabase = await createClient();
+  if (!supabase) return [];
+
+  const counts = new Map<string, number>();
+  const PAGE = 1000;
+  for (let from = 0; ; from += PAGE) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let q: any = supabase
+      .from('akasha_entries')
+      .select(`fam:attributes->>${field}`)
+      .eq('attributes->>category', cat)
+      .range(from, from + PAGE - 1);
+    if (universe) q = q.eq('universe', universe);
+    const { data } = await q;
+    const rows = (data as { fam: string | null }[] | null) ?? [];
+    for (const row of rows) {
+      const f = row.fam?.trim();
+      if (f) counts.set(f, (counts.get(f) ?? 0) + 1);
+    }
+    if (rows.length < PAGE) break;
+  }
+  return Array.from(counts.entries())
+    .map(([fam, count]) => ({ fam, count }))
+    .sort((a, b) => b.count - a.count || a.fam.localeCompare(b.fam, 'fr'));
 }
 
 /** Compte d'entrées par univers (pour le hub du registre).

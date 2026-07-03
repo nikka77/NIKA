@@ -632,6 +632,40 @@ async function main() {
   for (const pl of (dbPlanets?.items || dbPlanets || [])) if (pl?.name && addEnt(slugify(pl.name), 'place', pl.name, 'Dragon Ball', firstSentence(pl.description) || 'Planète.', 'rare', { region: pl.isDestroyed ? 'Planète détruite' : 'Planète', category: 'Planète' }, pl.image || null)) np++;
   console.log(`  + ${nt} transformations (skill) + ${np} planètes (place)`);
 
+  // ── JoJo : STANDS individuels (curés FR) — la manifestation psychique de chaque combattant. ──
+  // [slug, nom, porteurSlug, rareté, résumé]. Porteurs curés + quelques slugs de masse (validés par
+  // le filtre de relations : slug inconnu → warning, pas de casse).
+  const JOJO_STANDS = [
+    ['star-platinum', 'Star Platinum', 'jotaro-kujo', 'legendary', "Le Stand de Jotaro : précision d'orfèvre, force et vitesse absolues — et l'arrêt du temps une fois éveillé (Star Platinum : The World)."],
+    ['the-world', 'The World', 'dio-brando', 'legendary', "ZA WARUDO ! Le Stand de Dio arrête le temps — neuf secondes pour écraser le monde, un rouleau compresseur en option."],
+    ['crazy-diamond', 'Crazy Diamond', 'josuke-higashikata', 'epic', "Le Stand de Josuke répare tout ce qu'il touche — objets, blessures, criminels transformés en mur. Tout, sauf Josuke lui-même."],
+    ['gold-experience', 'Gold Experience', 'giorno-giovanna', 'epic', "Le Stand de Giorno insuffle la vie : un objet devient plante ou animal, et frapper la vie renvoie la douleur à l'agresseur."],
+    ['gold-experience-requiem', 'Gold Experience Requiem', 'giorno-giovanna', 'legendary', "L'éveil ultime par la Flèche : GER annule toute action et remet « à zéro » — même la mort de son adversaire, pour l'éternité."],
+    ['stone-free', 'Stone Free', 'jolyne-cujoh', 'epic', "Le Stand de Jolyne la détisse en fil indestructible : s'évader, écouter aux murs, recoudre son propre corps — la liberté faite corde."],
+    ['hermit-purple', 'Hermit Purple', 'joseph-joestar', 'rare', "Les lianes psychiques de Joseph : photographier l'invisible en fracassant un appareil photo, et fouetter à distance."],
+    ['hierophant-green', 'Hierophant Green', 'noriaki-kakyoin', 'epic', "Le Stand émeraude de Kakyoin : marionnettiste à distance, gardien du champ des 20 mètres — Emerald Splash !"],
+    ['silver-chariot', 'Silver Chariot', 'jean-pierre-polnareff', 'epic', "Le chevalier d'argent de Polnareff : une rapière plus rapide que l'œil, une armure qui se largue pour doubler la vitesse."],
+    ['the-fool', 'The Fool', 'iggy', 'rare', "Le Stand de sable d'Iggy : il se reforme à l'infini, planeur un instant, mâchoire d'acier l'instant d'après."],
+    ['magicians-red', "Magician's Red", 'muhammad-avdol', 'rare', "Le Stand de feu d'Avdol : brasier vivant à tête d'aigle, détecteur de mensonges incandescent (Crossfire Hurricane)."],
+    ['the-hand', 'The Hand', 'okuyasu-nijimura', 'rare', "Le Stand d'Okuyasu EFFACE l'espace de la main droite — ce qui est effacé disparaît, où ? Même lui ne le sait pas."],
+    ['echoes', 'Echoes', 'koichi-hirose', 'rare', "Le Stand de Koichi grandit avec lui : Act 1 murmure, Act 2 piège les onomatopées, Act 3 écrase de gravité — 3 FREEZE !"],
+    ['heavens-door', "Heaven's Door", 'rohan-kishibe', 'epic', "Le Stand de Rohan ouvre les gens comme des livres : lire leur vie, y écrire des ordres — « je ne peux pas attaquer Rohan Kishibe »."],
+    ['killer-queen', 'Killer Queen', 'yoshikage-kira', 'legendary', "Le Stand de Kira transforme tout ce qu'il touche en bombe — première bombe de contact, Sheer Heart Attack autonome, et Bites the Dust qui boucle le temps."],
+    ['sticky-fingers', 'Sticky Fingers', 'bruno-bucciarati', 'epic', "Le Stand de Bucciarati ouvre des fermetures éclair sur tout : corps, murs, espace — se démonter pour esquiver, ranger un bras en poche."],
+    ['king-crimson', 'King Crimson', 'diavolo', 'legendary', "Le Stand de Diavolo EFFACE le temps : dix secondes annulées dont lui seul voit le déroulement — « tu n'atteindras jamais la vérité »."],
+    ['made-in-heaven', 'Made in Heaven', 'enrico-pucci', 'legendary', "L'ascension de Pucci : accélérer le temps jusqu'à recréer l'univers entier — le paradis selon DIO, un monde où chacun connaît son destin."],
+    ['whitesnake', 'Whitesnake', 'enrico-pucci', 'epic', "Le premier Stand de Pucci vole l'esprit en disques : Stand et souvenirs extraits comme des CD, rejouables dans n'importe quel corps."],
+    ['sex-pistols', 'Sex Pistols', 'guido-mista', 'rare', "Six petits tireurs lunatiques (le n°4 n'existe pas) qui guident les balles de Mista — tant qu'ils sont nourris."],
+  ];
+  let nst = 0;
+  for (const [slug, name, owner, rarity, summary] of JOJO_STANDS) {
+    if (addEnt(slug, 'power', name, "JoJo's Bizarre Adventure", summary, rarity, { element: 'Stand', category: 'Stand' })) {
+      relations.push({ from: owner, to: slug, relation: 'maitrise' });
+      nst++;
+    }
+  }
+  console.log(`  + ${nst} Stands individuels (JoJo)`);
+
   // ── Enrichissement One Piece : croiser les 786 persos api-onepiece (données FR riches) avec le
   //    registre par tokens (« Monkey D Luffy » ↔ slug « luffy-monkey-d ») → primes/équipages/fruits
   //    + relations perso→équipage (appartient) & perso→fruit (maitrise). Limité aux persos de MASSE. ──
@@ -670,6 +704,77 @@ async function main() {
     opEnr++;
   }
   console.log(`  ✓ ${opEnr} persos One Piece enrichis, +${opRelC} liens équipage, +${opRelF} liens fruit`);
+
+  // ── Pages ÉVOLUTIVES hors Naruto (le moteur PlaceView s'active sur attributes.eras) ──
+  const UNI_DETAILS = {
+    'soul-society': {
+      kanji: '尸魂界',
+      quote: { text: "La Soul Society n'est pas le paradis. C'est une société — avec ses nobles, ses bas-fonds… et ses lames.", author: 'Rukia Kuchiki' },
+      facts: [
+        { label: 'Fondation', value: 'Il y a ~1 000 ans, par Genryūsai Yamamoto' },
+        { label: 'Cœur', value: 'Le Seireitei — la cité fortifiée des Shinigami' },
+        { label: 'Périphérie', value: 'Le Rukongai, 320 districts des âmes' },
+        { label: 'Noblesse', value: 'Quatre grandes maisons (Kuchiki, Shihōin…)' },
+        { label: 'Loi', value: 'La Chambre Centrale des 46' },
+      ],
+      bio: "La Soul Society est le monde où transitent les âmes : au centre, le Seireitei et ses treize divisions de Shinigami ; tout autour, l'immense Rukongai où survivent les âmes ordinaires. Mille ans d'ordre y ont été fondés par le Gotei 13 de Yamamoto — jusqu'à ce que la trahison d'Aizen, puis l'invasion des Quincy de Yhwach, fassent trembler l'édifice sur ses fondations.",
+      eras: [
+        { label: 'Fondation', leader: 'Genryūsai Yamamoto', period: 'Il y a 1 000 ans', event: 'Création du Gotei 13', threat: 'Chaos originel', img: '/images/akasha/places/soul-society-fondation.webp',
+          summary: "Yamamoto fonde le Gotei 13 : treize divisions de faucheurs d'âmes pour faire régner l'ordre — une armée née dans un âge de sang." },
+        { label: 'Paix armée', leader: 'Gotei 13', period: 'Le long équilibre', event: 'Ordre du Seireitei', threat: 'Hollows', img: '/images/akasha/places/soul-society-paix.webp',
+          summary: "Des siècles d'équilibre : le Seireitei veille, le Rukongai survit, les Hollows sont purifiés — la routine millénaire des Shinigami." },
+        { label: 'La Trahison', leader: 'Sōsuke Aizen', period: 'Arc Soul Society', event: 'Fuite d\'Aizen (Hōgyoku)', threat: 'Arrancars', img: '/images/akasha/places/soul-society-trahison.webp',
+          summary: "Aizen abat son masque : la Chambre des 46 assassinée, le Hōgyoku volé, trois capitaines passés à l'ennemi — la Soul Society vacille." },
+        { label: 'Guerre de Mille Ans', leader: 'Shunsui Kyōraku', period: 'Arc final', event: 'Invasion du Wandenreich', threat: 'Yhwach & les Quincy', img: '/images/akasha/places/soul-society-guerre.webp',
+          summary: "Les Quincy surgissent de l'ombre : Yamamoto tombe, le Seireitei est ravagé — et Kyōraku reconstruit sur les cendres." },
+      ],
+    },
+    'grand-line': {
+      kanji: '偉大なる航路',
+      quote: { text: 'Mon trésor ? Il est à vous si vous le voulez. Cherchez-le : j\'ai tout laissé là-bas.', author: 'Gol D. Roger' },
+      facts: [
+        { label: 'Entrée', value: 'Reverse Mountain — un seul courant y mène' },
+        { label: 'Garde-fous', value: 'Les Calm Belts, repaires des Rois des Mers' },
+        { label: 'Navigation', value: 'Log Pose obligatoire (la boussole y devient folle)' },
+        { label: 'Moitiés', value: 'Paradise, puis le Nouveau Monde après Red Line' },
+        { label: 'Terminus', value: 'Laugh Tale — et le One Piece' },
+      ],
+      bio: "La Grand Line ceinture le globe entre deux Calm Belts infestés de monstres marins : une route où le climat, les courants et les boussoles perdent la raison. Sa première moitié, Paradise, brise les rookies ; la seconde, le Nouveau Monde, appartient aux Empereurs. Tout au bout dort Laugh Tale, l'île où Roger a laissé son trésor — la raison pour laquelle le monde entier a pris la mer.",
+      eras: [
+        { label: "L'ère de Roger", leader: 'Gol D. Roger', period: 'Il y a 24 ans', event: 'Conquête de la route', threat: 'La Marine', img: '/images/akasha/places/grand-line-roger.webp',
+          summary: "L'Oro Jackson atteint Laugh Tale : Roger conquiert la route maritime, devient le Roi des Pirates — et meurt à Loguetown, le sourire aux lèvres." },
+        { label: 'Grand Âge de la Piraterie', leader: 'Les rookies', period: 'Depuis 24 ans', event: "Ruée vers l'aventure", threat: 'Marine & Shichibukai', img: '/images/akasha/places/grand-line-ruee.webp',
+          summary: "Les derniers mots de Roger jettent le monde à la mer : des milliers d'équipages s'engouffrent dans Paradise à la poursuite du One Piece." },
+        { label: 'Nouveau Monde', leader: 'Les Quatre Empereurs', period: 'Seconde moitié', event: 'Règne des Yonkō', threat: 'Kaido · Big Mom · Barbe Noire', img: '/images/akasha/places/grand-line-nouveau-monde.webp',
+          summary: "Au-delà de Red Line, la mer des monstres : quatre Empereurs se partagent des eaux où même les vétérans de Paradise coulent." },
+        { label: 'Course finale', leader: 'Monkey D. Luffy', period: "Aujourd'hui", event: 'Route vers Laugh Tale', threat: 'La guerre finale', img: '/images/akasha/places/grand-line-laugh-tale.webp',
+          summary: "Les Ponéglyphes s'assemblent, les Empereurs tombent — la course au One Piece entre dans son dernier acte." },
+      ],
+    },
+    'ae86-trueno': {
+      kanji: 'ハチロク',
+      quote: { text: 'Avec la même voiture, un pilote différent… c\'est une autre voiture.', author: 'Bunta Fujiwara' },
+      facts: [
+        { label: 'Châssis', value: 'Toyota Sprinter Trueno GT-APEX (AE86, 1983)' },
+        { label: 'Architecture', value: 'Moteur avant, propulsion (FR) · ~925 kg' },
+        { label: 'Livrée', value: 'Panda blanc & noir · « Fujiwara Tofu Shop »' },
+        { label: 'Moteur', value: '4A-GE 1.6 — puis 4A-GE Groupe A à 11 000 tr/min' },
+        { label: 'Terrain', value: 'Le downhill du mont Akina' },
+      ],
+      bio: "La « Hachi-Roku » du magasin de tofu Fujiwara n'a rien d'une voiture de course : une propulsion légère de 1983, dépassée sur le papier par tout ce qui roule. Mais façonnée par les livraisons de l'aube et le pied de Takumi, elle devient le fantôme d'Akina — la voiture qui humilie les RedSuns, casse son moteur au combat, renaît avec un cœur de Groupe A et porte le downhill de Project D.",
+      eras: [
+        { label: 'La livreuse de tofu', leader: 'Bunta Fujiwara', period: "Avant l'histoire", event: "Livraisons de l'aube", threat: "Un gobelet d'eau", img: '/images/akasha/artifacts/ae86-tofu.webp',
+          summary: "La voiture de livraison du tofu Fujiwara : chaque matin depuis ses 13 ans, Takumi dévale l'Akina sans savoir qu'il apprend l'art du drift." },
+        { label: "Reine d'Akina", leader: 'Takumi Fujiwara', period: 'First Stage', event: 'Victoire sur la FD de Keisuke', threat: 'RedSuns & NightKids', img: '/images/akasha/artifacts/ae86-akina.webp',
+          summary: "La « vieille » Hachi-Roku humilie les RedSuns : gouttière, frôlages de rail — la légende du fantôme d'Akina est née." },
+        { label: 'Moteur brisé', leader: 'Kyoichi Sudo', period: 'Second Stage', event: "Casse du 4A-GE face à l'Evo III", threat: 'La fin ?', img: '/images/akasha/artifacts/ae86-casse.webp',
+          summary: "Face à l'Emperor de Sudo, le moteur rend l'âme en pleine course — l'AE86 semble finie… jusqu'à ce que Bunta déniche un 4A-GE de course." },
+        { label: 'Project D', leader: 'Takumi Fujiwara', period: 'Fourth Stage', event: '11 000 tr/min', threat: 'Tous les cols du Kantō', img: '/images/akasha/artifacts/ae86-project-d.webp',
+          summary: "Renée avec un moteur qui hurle à 11 000 tr/min, la panda devient l'arme du downhill de Project D — invaincue de col en col." },
+      ],
+    },
+  };
+  for (const e of entries) if (UNI_DETAILS[e.slug]) Object.assign(e.attributes, UNI_DETAILS[e.slug]);
 
   // ── Catégorie normalisée pour les entités CURÉES (carte slug→catégorie + fallback par type) ──
   const CATEGORY_BY_SLUG = {

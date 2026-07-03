@@ -3,15 +3,17 @@
 // Rendu serveur, liens URL partageables. La catégorie est DROPPÉE quand on change d'univers ou de
 // type (elle n'aurait plus de sens) — seuls ce rail, la recherche et la pagination la portent.
 import Link from 'next/link';
-import type { AkashaType } from '@/lib/akasha/types';
+import { familyLabel, type AkashaType } from '@/lib/akasha/types';
 
 const ACCENT = '#0EA878';
+const FAM_ACCENT = '#D4A017';
 
-function buildHref(cat: string | null, universe: string | undefined, type: AkashaType | undefined, search: string): string {
+function buildHref(cat: string | null, universe: string | undefined, type: AkashaType | undefined, search: string, fam?: string | null): string {
   const p = new URLSearchParams();
   if (universe) p.set('universe', universe);
   if (type) p.set('type', type);
   if (cat) p.set('cat', cat);
+  if (cat && fam) p.set('fam', fam); // une famille n'a de sens que dans sa collection
   if (search) p.set('search', search);
   const qs = p.toString();
   return qs ? `/learn/akasha?${qs}` : '/learn/akasha';
@@ -20,12 +22,16 @@ function buildHref(cat: string | null, universe: string | undefined, type: Akash
 export default function CategoryRail({
   counts,
   active,
+  famCounts = [],
+  activeFam,
   universe,
   type,
   search,
 }: {
   counts: { category: string; count: number }[];
   active?: string;
+  famCounts?: { fam: string; count: number }[];
+  activeFam?: string;
   universe?: string;
   type?: AkashaType;
   search: string;
@@ -78,6 +84,36 @@ export default function CategoryRail({
           );
         })}
       </div>
+
+      {/* 2ᵉ niveau : sous-familles de la collection active (Ninjutsu/Genjutsu…, Paramecia/Logia/Zoan…) */}
+      {active && famCounts.length >= 2 && (
+        <div className="hero-domabar" style={{ display: 'flex', gap: 6, overflowX: 'auto', padding: '7px 0 5px', alignItems: 'center' }}>
+          <span aria-hidden style={{ flexShrink: 0, fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: FAM_ACCENT, paddingRight: 2 }}>
+            ↳ Familles
+          </span>
+          {famCounts.map(({ fam, count }) => {
+            const on = activeFam === fam;
+            return (
+              <Link
+                key={fam}
+                href={buildHref(active, universe, type, search, on ? null : fam)}
+                className="ak-tab"
+                style={{
+                  flexShrink: 0, display: 'flex', alignItems: 'center', gap: 5, textDecoration: 'none',
+                  fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, whiteSpace: 'nowrap',
+                  padding: '4px 10px', borderRadius: 16,
+                  border: `1px solid ${on ? FAM_ACCENT : 'var(--bd2)'}`,
+                  background: on ? 'rgba(212,160,23,0.14)' : 'transparent',
+                  color: on ? FAM_ACCENT : 'var(--td3)',
+                }}
+              >
+                {familyLabel(fam)}
+                <span style={{ fontSize: 9, fontWeight: 800, color: on ? FAM_ACCENT : 'var(--td3)', background: 'rgba(5,12,23,0.45)', borderRadius: 20, padding: '1px 5px' }}>{count}</span>
+              </Link>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

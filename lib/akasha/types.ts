@@ -102,6 +102,21 @@ export function universeMeta(name: string): { name: string; emoji: string; color
   return UNIVERSE_META.find((u) => u.name === name) ?? { name, emoji: '✦', color: '#7B5CF0' };
 }
 
+/** Sous-familles navigables à l'intérieur d'une collection : catégorie → champ JSONB porteur.
+ *  (Jutsu → element = Ninjutsu/Genjutsu/Taijutsu… ; Fruits → element = « Fruit du Démon · Logia » ;
+ *  Armes → material = Lame/Arme de jet…). Les autres collections n'ont pas de 2ᵉ niveau. */
+export const FAMILY_FIELD: Record<string, string> = {
+  'Jutsu': 'element',
+  'Fruit du Démon': 'element',
+  'Arme & outil': 'material',
+};
+
+/** Libellé court d'une sous-famille (« Fruit du Démon · Logia » → « Logia »). */
+export function familyLabel(value: string): string {
+  const i = value.lastIndexOf('·');
+  return i >= 0 ? value.slice(i + 1).trim() || value : value;
+}
+
 /** Libellés FR des relations connues (fallback : la chaîne brute). */
 export const RELATION_LABELS: Record<string, string> = {
   possede: 'possède',
