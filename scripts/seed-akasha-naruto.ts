@@ -42,16 +42,21 @@ if (!url || !key) {
 const sb = createClient(url, key);
 
 async function main() {
-  const { data: rows, error } = await sb
-    .from('akasha_entries')
-    .upsert(entries, { onConflict: 'slug' })
-    .select('id, slug');
-  if (error) {
-    console.error('✗ entries:', error.message);
-    process.exit(1);
+  // Upserts par LOTS : l'import de masse dépasse 1 000 entrées — un payload unique serait fragile.
+  const CHUNK = 200;
+  const idBySlug = new Map<string, string>();
+  for (let i = 0; i < entries.length; i += CHUNK) {
+    const { data: rows, error } = await sb
+      .from('akasha_entries')
+      .upsert(entries.slice(i, i + CHUNK), { onConflict: 'slug' })
+      .select('id, slug');
+    if (error) {
+      console.error(`✗ entries (lot ${Math.floor(i / CHUNK) + 1}):`, error.message);
+      process.exit(1);
+    }
+    for (const r of rows ?? []) idBySlug.set(r.slug as string, r.id as string);
   }
-  const idBySlug = new Map((rows ?? []).map((r) => [r.slug as string, r.id as string]));
-  console.log(`✓ ${rows?.length ?? 0} entrées upsertées`);
+  console.log(`✓ ${idBySlug.size} entrées upsertées`);
 
   const relRows = relations
     .map((r) => {
@@ -65,17 +70,19 @@ async function main() {
     })
     .filter((x): x is { from_entry: string; to_entry: string; relation: string } => x !== null);
 
-  if (relRows.length) {
+  let relCount = 0;
+  for (let i = 0; i < relRows.length; i += CHUNK) {
     const { data: rel, error: relErr } = await sb
       .from('akasha_relations')
-      .upsert(relRows, { onConflict: 'from_entry,to_entry,relation' })
+      .upsert(relRows.slice(i, i + CHUNK), { onConflict: 'from_entry,to_entry,relation' })
       .select('id');
     if (relErr) {
-      console.error('✗ relations:', relErr.message);
+      console.error(`✗ relations (lot ${Math.floor(i / CHUNK) + 1}):`, relErr.message);
       process.exit(1);
     }
-    console.log(`✓ ${rel?.length ?? relRows.length} relations upsertées`);
+    relCount += rel?.length ?? 0;
   }
+  if (relRows.length) console.log(`✓ ${relCount} relations upsertées`);
 
   console.log('✦ Seed AKASHA Naruto terminé.');
 }

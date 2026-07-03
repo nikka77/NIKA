@@ -462,10 +462,15 @@ const UNIVERSES = [
 // ─── Fetch images ────────────────────────────────────────────────────────────
 async function jikanCast(malId) {
   const j = await getJSON(`${JIKAN}/anime/${malId}/characters`);
-  const map = new Map();
+  const map = new Map(); // nom → { img, role, va } (role = Main/Supporting ; va = doubleurs JP/VF-EN)
   for (const c of j?.data ?? []) {
     const img = c.character?.images?.webp?.image_url || c.character?.images?.jpg?.image_url || null;
-    if (c.character?.name && img && !img.includes('questionmark')) map.set(c.character.name, img);
+    if (!(c.character?.name && img && !img.includes('questionmark'))) continue;
+    const vas = Array.isArray(c.voice_actors) ? c.voice_actors : [];
+    const jp = vas.filter((v) => v.language === 'Japanese').map((v) => displayName(String(v.person?.name || ''))).filter(Boolean).slice(0, 3);
+    const en = vas.filter((v) => v.language === 'French' || v.language === 'English').map((v) => displayName(String(v.person?.name || ''))).filter(Boolean).slice(0, 2);
+    const va = jp.length || en.length ? { jp, en } : null;
+    map.set(c.character.name, { img, role: c.role || null, va });
   }
   return map;
 }
@@ -473,6 +478,14 @@ async function jikanCast(malId) {
 function entry(slug, type, name, universe, summary, rarity, attributes, image_url) {
   return { slug, type, name, is_fiction: true, universe, summary, description: summary, image_url: image_url ?? null, attributes, rarity };
 }
+
+const slugify = (s) =>
+  String(s).normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+// Noms MAL en « Nom, Prénom » → « Prénom Nom » (les héros à « D. » sont curés, donc épargnés du mass import).
+const displayName = (s) => (s.includes(', ') ? s.split(/,\s*/).reverse().join(' ') : s);
+const GARBAGE_NAME = /[<>]|https?:|\/wiki\/|\.(?:png|jpe?g|gif)/i;
+const firstSentence = (s, n = 150) => String(s || '').replace(/\s+/g, ' ').trim().split(/(?<=[.!?])\s/)[0].slice(0, n);
+const purge = (o) => { for (const k of Object.keys(o)) { const v = o[k]; if (v == null || v === '' || (Array.isArray(v) && v.length === 0)) delete o[k]; } return o; };
 
 async function main() {
   const entries = [];
@@ -494,11 +507,11 @@ async function main() {
   const tokens = (s) => new Set(String(s).toLowerCase().normalize('NFD').replace(/[^a-z\s]/g, ' ').split(/\s+/).filter((t) => t.length >= 3));
   const fuzzyGet = (cast, name) => {
     const want = tokens(name);
-    for (const [k, img] of cast) {
+    for (const [k, v] of cast) {
       const have = tokens(k);
       let hit = 0;
       for (const t of want) if (have.has(t)) hit++;
-      if (hit >= Math.min(2, want.size) && hit > 0) return img;
+      if (hit >= Math.min(2, want.size) && hit > 0) return v.img;
     }
     return null;
   };
@@ -515,9 +528,11 @@ async function main() {
     console.log(`  ${cast.size} portraits MAL`);
 
     for (const c of u.chars) {
-      let img = cast.get(c.mal) ?? fuzzyGet(cast, c.mal) ?? null;
+      const cv = cast.get(c.mal);
+      let img = cv?.img ?? fuzzyGet(cast, c.mal) ?? null;
       const attributes = { role: c.role };
       if (c.aff) attributes.affiliation = c.aff;
+      if (cv?.va) attributes.voiceActors = cv.va; // doubleurs JP/VF-EN pour les curés aussi
       // Champs de profondeur optionnels (le dossier perso les lit génériquement : onglet Histoire, bannière credo…)
       for (const k of ['status', 'nindo', 'nindoLabel', 'bio', 'personality', 'quotes', 'trivia']) if (c[k]) attributes[k] = c[k];
       // Dragon Ball : image détourée + race/ki de l'API dédiée
@@ -545,8 +560,111 @@ async function main() {
       add(entry(c.slug, 'character', c.name, u.label, c.summary, c.rarity, attributes, img));
     }
     for (const [type, slug, name, [k, v], summary, rarity] of u.entities) add(entry(slug, type, name, u.label, summary, rarity, { [k]: v }));
+
+    // ── Import de MASSE : casting COMPLET de l'univers (Jikan), au-delà des persos curés. ──
+    // On épargne les persos déjà curés (par nom MAL et par slug) pour ne pas les dupliquer ;
+    // collision cross-univers → suffixe par univers.
+    const curatedMal = new Set(u.chars.map((c) => c.mal));
+    const curatedSlug = new Set(u.chars.map((c) => c.slug));
+    let massU = 0;
+    for (const [rawName, { img, role, va }] of cast) {
+      if (!rawName || GARBAGE_NAME.test(rawName) || curatedMal.has(rawName)) continue;
+      const name = displayName(rawName);
+      let slug = slugify(name);
+      if (!slug || slug.length < 2 || curatedSlug.has(slug)) continue;
+      if (seen.has(slug)) { slug = `${slug}-${slugify(u.label)}`; if (seen.has(slug)) continue; }
+      const isMain = role === 'Main';
+      const roleFr = isMain ? 'Personnage principal' : 'Personnage secondaire';
+      add(entry(slug, 'character', name, u.label, `${roleFr} de ${u.label}.`, isMain ? 'rare' : 'common', purge({ role: roleFr, voiceActors: va || undefined }), img));
+      massU++;
+    }
+    console.log(`  + ${massU} persos (casting complet)`);
+
     for (const [from, rel, to] of u.relations) relations.push({ from, to, relation: rel });
   }
+
+  // ── Import de MASSE des ENTITÉS via les API dédiées (One Piece FR + Dragon Ball) ──
+  const addEnt = (slug, type, name, universe, summary, rarity, attrs, img) => {
+    let s = slug;
+    if (!s || seen.has(s)) { if (seen.has(s)) s = `${slug}-${slugify(universe)}`; }
+    if (!s || seen.has(s)) return false;
+    add(entry(s, type, name, universe, summary, rarity, attrs, img ?? null));
+    return true;
+  };
+
+  console.log('→ One Piece — entités (fruits, équipages, hakis, gears)…');
+  const opFruits = (await getJSON('https://api.api-onepiece.com/v2/fruits/fr')) ?? [];
+  let nf = 0;
+  for (const f of Array.isArray(opFruits) ? opFruits : []) {
+    if (!f?.name) continue;
+    const type = String(f.type || '');
+    const rarity = /Logia|mythique|spécial/i.test(type) ? 'epic' : 'rare';
+    if (addEnt(slugify(f.name), 'power', f.name, 'One Piece', firstSentence(f.description) || `Fruit du Démon${type ? ' de type ' + type : ''}.`, rarity, purge({ element: `Fruit du Démon${type ? ' · ' + type : ''}`, roman_name: f.roman_name || null }))) nf++;
+  }
+  console.log(`  + ${nf} Fruits du Démon (power)`);
+  const opCrews = (await getJSON('https://api.api-onepiece.com/v2/crews/fr')) ?? [];
+  let ncr = 0;
+  for (const cr of Array.isArray(opCrews) ? opCrews : []) {
+    if (!cr?.name) continue;
+    const rarity = cr.is_yonko ? 'legendary' : Number(cr.total_prime) > 1e9 ? 'epic' : 'rare';
+    if (addEnt(slugify(cr.name), 'status', cr.name, 'One Piece', firstSentence(cr.description) || 'Équipage de pirates.', rarity, purge({ scope: 'Équipage pirate', roman_name: cr.roman_name || null, total_prime: cr.total_prime ? `${cr.total_prime} Berrys` : null }))) ncr++;
+  }
+  console.log(`  + ${ncr} équipages (status)`);
+  const opHakis = (await getJSON('https://api.api-onepiece.com/v2/hakis/fr')) ?? [];
+  let nh = 0;
+  for (const h of Array.isArray(opHakis) ? opHakis : []) if (h?.name && addEnt(slugify(h.name), 'skill', h.name, 'One Piece', firstSentence(h.description) || 'Type de Haki.', 'epic', purge({ discipline: 'Haki', roman_name: h.roman_name || null }))) nh++;
+  const opGears = (await getJSON('https://api.api-onepiece.com/v2/luffy-gears/fr')) ?? [];
+  let ng = 0;
+  for (const g of Array.isArray(opGears) ? opGears : []) if (g?.name && addEnt(slugify(g.name), 'skill', g.name, 'One Piece', firstSentence(g.description) || 'Transformation de Luffy.', 'epic', { discipline: 'Gear (Luffy)' })) { ng++; relations.push({ from: slugify(g.name), to: 'monkey-d-luffy', relation: 'maitrise' }); }
+  console.log(`  + ${nh} hakis + ${ng} gears (skill)`);
+
+  console.log('→ Dragon Ball — entités (transformations, planètes)…');
+  const dbTrans = (await getJSON('https://dragonball-api.com/api/transformations?limit=100'));
+  let nt = 0;
+  for (const t of (dbTrans?.items || dbTrans || [])) if (t?.name && addEnt(slugify(t.name), 'skill', t.name, 'Dragon Ball', `Transformation de puissance${t.ki ? ` (Ki ${t.ki})` : ''}.`, 'epic', purge({ discipline: 'Transformation', ki: t.ki || null }), t.image || null)) nt++;
+  const dbPlanets = (await getJSON('https://dragonball-api.com/api/planets?limit=100'));
+  let np = 0;
+  for (const pl of (dbPlanets?.items || dbPlanets || [])) if (pl?.name && addEnt(slugify(pl.name), 'place', pl.name, 'Dragon Ball', firstSentence(pl.description) || 'Planète.', 'rare', { region: pl.isDestroyed ? 'Planète détruite' : 'Planète' }, pl.image || null)) np++;
+  console.log(`  + ${nt} transformations (skill) + ${np} planètes (place)`);
+
+  // ── Enrichissement One Piece : croiser les 786 persos api-onepiece (données FR riches) avec le
+  //    registre par tokens (« Monkey D Luffy » ↔ slug « luffy-monkey-d ») → primes/équipages/fruits
+  //    + relations perso→équipage (appartient) & perso→fruit (maitrise). Limité aux persos de MASSE. ──
+  console.log('→ One Piece — enrichissement (primes, équipages, fruits)…');
+  const opRoster = entries.filter((e) => e.universe === 'One Piece' && e.type === 'character');
+  const tokset = (s) => new Set(slugify(s).split('-').filter((t) => t.length >= 3));
+  const opIndex = opRoster.map((e) => ({ e, toks: tokset(e.name) }));
+  const matchOp = (name) => {
+    const want = tokset(name);
+    if (!want.size) return null;
+    let best = null, bestHit = 0;
+    for (const cand of opIndex) {
+      let hit = 0; for (const t of want) if (cand.toks.has(t)) hit++;
+      if (hit > bestHit && hit >= Math.min(2, want.size)) { bestHit = hit; best = cand.e; }
+    }
+    return best;
+  };
+  let opEnr = 0, opRelC = 0, opRelF = 0;
+  const opUsed = new Set();
+  for (const oc of (Array.isArray(opChars) ? opChars : [])) {
+    if (!oc?.name) continue;
+    const e = matchOp(oc.name);
+    if (!e || opUsed.has(e.slug)) continue; // 1 perso API ↔ 1 entrée registre
+    if (!/^Personnage (principal|secondaire)$/.test(e.attributes.role || '')) continue; // persos de masse seulement
+    opUsed.add(e.slug);
+    const a = e.attributes;
+    if (oc.bounty && a.bounty == null) a.bounty = `${oc.bounty} Berrys`;
+    if (oc.job && a.occupation == null) a.occupation = oc.job;
+    if (oc.age && a.age == null) a.age = oc.age;
+    if (oc.crew?.name && a.crew == null) a.crew = oc.crew.name;
+    if (oc.fruit?.name && a.fruit == null) a.fruit = oc.fruit.name;
+    const bits = [oc.crew?.name, oc.bounty ? `prime ${oc.bounty} Berrys` : null].filter(Boolean);
+    if (bits.length) e.summary = `${e.summary.replace(/\.$/, '')} — ${bits.join(', ')}.`;
+    if (oc.crew?.name) { const cs = slugify(oc.crew.name); if (seen.has(cs) && cs !== e.slug) { relations.push({ from: e.slug, to: cs, relation: 'appartient' }); opRelC++; } }
+    if (oc.fruit?.name) { const fs = slugify(oc.fruit.name); if (seen.has(fs) && fs !== e.slug) { relations.push({ from: e.slug, to: fs, relation: 'maitrise' }); opRelF++; } }
+    opEnr++;
+  }
+  console.log(`  ✓ ${opEnr} persos One Piece enrichis, +${opRelC} liens équipage, +${opRelF} liens fruit`);
 
   // Relations : vérifier que tous les slugs existent dans CE lot
   const bad = relations.filter((r) => !seen.has(r.from) || !seen.has(r.to));

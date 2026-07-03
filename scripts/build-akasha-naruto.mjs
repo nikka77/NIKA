@@ -657,6 +657,212 @@ async function main() {
   ];
   relations.push(...EXTRA);
 
+  // ── Import de MASSE : tous les personnages restants de l'API (Naruto / Shippuden / Boruto / films / novels) ──
+  // Les fiches curées ci-dessus restent prioritaires (slug déjà pris → skip). Filtre qualité : image requise.
+  // Résumé FR généré à partir des faits (clan · village · rang) ; rareté par richesse de moveset.
+  const VILLAGE_SLUGS = { Konohagakure: 'konohagakure', Sunagakure: 'sunagakure', Kirigakure: 'kirigakure', Iwagakure: 'iwagakure', Kumogakure: 'kumogakure', Amegakure: 'amegakure', Otogakure: 'otogakure' };
+  const CLAN_SLUGS = { Uchiha: 'uchiha', Senju: 'senju', Uzumaki: 'uzumaki', Hyūga: 'hyuga', Nara: 'nara' };
+  // Slugs déjà pris par les AUTRES univers (upsert par slug → un homonyme écraserait leur entrée !
+  // cas réels : le bijū « Son Gokū » vs Goku (Dragon Ball), « Shinigami » du Shiki Fūjin vs la
+  // profession Bleach, Iggy (JoJo), Komugi (HxH)) → suffixe -naruto.
+  let externalSlugs = new Set();
+  try {
+    externalSlugs = new Set(JSON.parse(readFileSync(join(ROOT, 'data', 'akasha-universes.json'), 'utf8')).entries.map((e) => e.slug));
+  } catch { /* akasha-universes.json pas encore généré : rien à protéger */ }
+  let mass = 0, skippedNoImg = 0;
+  for (const c of chars) {
+    if (!c?.name) continue;
+    const img = arr(c.images)[0] ?? null;
+    if (!img) { skippedNoImg++; continue; }
+    let slug = slugify(c.name);
+    if (slug && externalSlugs.has(slug)) slug = `${slug}-naruto`;
+    if (!slug || slugs.has(slug)) continue;
+    const p = c.personal || {};
+    const clanName = typeof p.clan === 'string' ? cleanNote(p.clan) : arr(p.clan)[0] ? cleanNote(String(arr(p.clan)[0])) : null;
+    const aff = arr(p.affiliation).map((a) => cleanNote(String(a)));
+    const villageName = Object.keys(VILLAGE_SLUGS).find((v) => aff.some((a) => a.includes(v))) ?? null;
+    const rank = pickRank(c.rank);
+    const jc = arr(c.jutsu).length;
+    const massRarity = jc >= 25 ? 'epic' : jc >= 8 ? 'rare' : 'common';
+    const bits = [clanName && `clan ${clanName}`, villageName ?? aff[0], rank && `rang ${rank}`].filter(Boolean);
+    const summary = bits.length ? `Personnage de l'univers Naruto — ${bits.join(' · ')}.` : "Personnage de l'univers Naruto.";
+    add(entry(slug, 'character', c.name, summary, massRarity, purge({
+      clan: clanName, village: villageName, rank,
+      sex: firstVal(p.sex), age: firstVal(p.age), birthdate: frDate(firstVal(p.birthdate)),
+      voiceActors: cleanVA(c.voiceActors),
+      family: c.family && typeof c.family === 'object' ? Object.entries(c.family).map(([rel, name]) => ({ rel, name: String(name) })) : [],
+    }), img));
+    if (villageName) relations.push([slug, 'habite', VILLAGE_SLUGS[villageName]]);
+    const clanKey = clanName ? Object.keys(CLAN_SLUGS).find((k) => clanName.includes(k)) : null;
+    if (clanKey) relations.push([slug, 'appartient', CLAN_SLUGS[clanKey]]);
+    mass++;
+  }
+  console.log(`✓ import de masse : +${mass} personnages (${skippedNoImg} sans image ignorés)`);
+
+  // ── Import de MASSE des ARTEFACTS : tous les outils/armes portés par les personnages ──
+  // L'API n'a pas d'endpoint /tools → on AGRÈGE le champ `tools` des 1431 personnages.
+  // cleanNote fusionne les variantes « (Anime only) ». Les 3 artefacts curés (kusanagi/gunbai/samehada)
+  // restent prioritaires. Relation : chaque porteur du registre `possède` l'artefact → la fiche
+  // artefact liste ses porteurs (EntityRelations « Référencé par »), et chaque perso liste ses armes.
+  const charNameBySlug = new Map();
+  for (const e of entries) if (e.type === 'character') charNameBySlug.set(e.slug, e.name);
+  // Nom du perso (API) → slug registre, pour rattacher les porteurs (l'outil est un champ du perso).
+  const charSlugByApiName = new Map();
+  for (const c of chars) { const s = slugify(externalSlugs.has(slugify(c.name)) ? `${slugify(c.name)}-naruto` : slugify(c.name)); if (slugs.has(s)) charSlugByApiName.set(c.name, s); }
+
+  // Traduction FR des outils courants (fallback : nom nettoyé — beaucoup sont déjà des noms propres JP).
+  const TOOL_FR = {
+    'Sword': 'Sabre', 'Poison': 'Poison', 'Sand': 'Sable', 'Wire Strings': "Fils d'acier",
+    'Explosive Tag': 'Parchemin explosif', 'Antidote': 'Antidote', 'Chakra Blade': 'Lame à chakra',
+    'Umbrella': 'Ombrelle', 'Shinobi Gauntlet': 'Gantelet shinobi', 'Club': 'Massue', 'Scalpel': 'Scalpel',
+    'Konoha Chakra Blade': 'Lame à chakra de Konoha', 'Crossbow': 'Arbalète', 'Spear': 'Lance', 'Bell': 'Grelot',
+    'Sword of Kusanagi': 'Sabre de Kusanagi', 'Nunchaku': 'Nunchaku', 'Makibishi': 'Makibishi',
+    "First Hokage's Necklace": 'Collier du Premier Hokage', 'Sword of Nunoboko': 'Épée de Nunoboko',
+    'White Light Chakra Sabre': 'Sabre à chakra de lumière blanche', 'Katar': 'Katar', 'Bow & Arrow': 'Arc et flèches',
+    'Military Rations Pill': 'Pilule de rations militaires', 'Mind Awakening Pill': "Pilule d'éveil",
+    'Flying Thunder God Kunai': 'Kunai du Dieu du Tonnerre Volant', 'Weights': "Poids d'entraînement",
+    'Tonfa': 'Tonfa', 'Space-Time Gate': 'Portail spatio-temporel', 'Fūma Shuriken': 'Shuriken Fūma',
+    'Bō': 'Bâton bō', 'Kama': 'Kama', 'Kusari': 'Chaîne kusari', 'Bow': 'Arc', 'Chain': 'Chaîne',
+    'Cursed Seal Device': 'Dispositif du Sceau Maudit', 'Infinite Armour': 'Armure infinie',
+    'Absorbing Hand': 'Main absorbante', 'Chakra-Suppressing Seal': 'Sceau de suppression du chakra',
+  };
+  // Catégorie (attribut `material`) inférée par mots-clés.
+  const toolCategory = (n) => {
+    const s = n.toLowerCase();
+    if (/sword|blade|sabre|tant|katana|kubik|kusanagi|nunoboko|kabutowari|sabre/.test(s)) return 'Lame';
+    if (/shuriken|kunai|senbon|makibishi|bow|arrow|crossbow|needle/.test(s)) return 'Arme de jet';
+    if (/poison|antidote|pill|drug|ration/.test(s)) return 'Consommable';
+    if (/tag|scroll|seal|talisman|parchemin/.test(s)) return 'Parchemin & sceau';
+    if (/staff|bō|club|spear|lance|kama|shakuj|nunchaku|tonfa|gauntlet|gunbai|kusari|chain/.test(s)) return 'Arme de mêlée';
+    return 'Outil ninja';
+  };
+  const ICONIC_ART = { 'Kubikiribōchō': 'epic', 'Sword of Nunoboko': 'legendary', "First Hokage's Necklace": 'epic', 'Kohaku no Jōhei': 'epic', 'White Light Chakra Sabre': 'epic', 'Flying Thunder God Kunai': 'rare', 'Sword of Kusanagi': 'epic', 'Bashōsen': 'legendary', 'Benihisago': 'epic', 'Shichiseiken': 'rare' };
+
+  const artMap = new Map(); // nom nettoyé → { count, owners:Set<slug> }
+  for (const c of chars) {
+    const owner = charSlugByApiName.get(c.name);
+    for (const raw of arr(c.tools)) {
+      const s = String(raw);
+      // Garde-fou : le champ `tools` de l'API contient parfois des légendes HTML d'images ou des
+      // chaînes de jeux vidéo (dates) qui ont fui → on rejette HTML / URL / fichier / année.
+      if (/[<>]|\/wiki\/|\.(?:png|jpe?g|gif|svg)|https?:|\d{4}/i.test(s)) continue;
+      const name = cleanNote(s);
+      if (!name || name.length < 2) continue;
+      if (!artMap.has(name)) artMap.set(name, { count: 0, owners: new Set() });
+      const rec = artMap.get(name);
+      rec.count++;
+      if (owner) rec.owners.add(owner);
+    }
+  }
+  let massArt = 0;
+  for (const [name, rec] of artMap) {
+    const frName = TOOL_FR[name] || name;
+    let slug = slugify(frName);
+    if (!slug) continue;
+    if (externalSlugs.has(slug)) slug = `${slug}-naruto`;
+    const owners = [...rec.owners].slice(0, 40); // borne le nb de relations par artefact (« Sabre » = 124 porteurs)
+    if (slugs.has(slug)) { for (const o of owners) relations.push([o, 'possede', slug]); continue; } // curé/homonyme : on rattache juste les porteurs
+    const names = [...rec.owners].map((s) => charNameBySlug.get(s)).filter(Boolean).slice(0, 3);
+    const others = rec.owners.size - names.length;
+    const summary = names.length
+      ? `Arme / outil de l'univers Naruto — porté par ${names.join(', ')}${others > 0 ? ` et ${others} autre${others > 1 ? 's' : ''}` : ''}.`
+      : "Arme / outil de l'univers Naruto.";
+    const rarity = ICONIC_ART[name] || (rec.count >= 10 ? 'rare' : 'common');
+    add(entry(slug, 'artifact', frName, summary, rarity, purge({ material: toolCategory(name), origin: 'Univers Naruto' }), refImg(slug)));
+    for (const o of owners) relations.push([o, 'possede', slug]);
+    massArt++;
+  }
+  console.log(`✓ import de masse artefacts : +${massArt} (${artMap.size} outils uniques agrégés)`);
+
+  // ── Import de MASSE générique depuis un champ des personnages (jutsu, natures, kekkei genkai,
+  //    classifications, métiers, équipes) → entités typées + relation perso→entité. ──
+  // Filtre garde-fou commun (mêmes fuites que pour les outils : HTML, URL, dates, gabarits wiki).
+  const GARBAGE_RE = /[<>]|\/wiki\/|\.(?:png|jpe?g|gif|svg)|https?:|\d{4}|wiki has an article|article about this|\btopic:/i;
+  const flatten = (v) => {
+    if (v == null) return [];
+    if (Array.isArray(v)) return v.flatMap(flatten);
+    if (typeof v === 'object') return Object.values(v).flatMap(flatten);
+    return [v];
+  };
+  function massField({ getter, type, relation, noun, link, frMap = {}, iconic = {}, catKey, catFn, cat, cap = 40, minCount = 1, epicAt = 10 }) {
+    const map = new Map(); // nom nettoyé → { count, owners:Set<slug> }
+    for (const c of chars) {
+      const owner = charSlugByApiName.get(c.name);
+      for (const rawItem of flatten(getter(c))) {
+        const raw = String(rawItem);
+        if (GARBAGE_RE.test(raw)) continue;
+        const name = cleanNote(raw);
+        if (!name || name.length < 2) continue;
+        if (!map.has(name)) map.set(name, { count: 0, owners: new Set() });
+        const rec = map.get(name); rec.count++; if (owner) rec.owners.add(owner);
+      }
+    }
+    let n = 0;
+    for (const [name, rec] of map) {
+      if (rec.count < minCount) continue;
+      const frName = frMap[name] || name;
+      let slug = slugify(frName);
+      if (!slug) continue;
+      if (externalSlugs.has(slug)) slug = `${slug}-naruto`;
+      const owners = [...rec.owners].slice(0, cap);
+      if (slugs.has(slug)) { for (const o of owners) relations.push([o, relation, slug]); continue; }
+      const names = [...rec.owners].map((s) => charNameBySlug.get(s)).filter(Boolean).slice(0, 3);
+      const others = rec.owners.size - names.length;
+      const who = names.length ? ` — ${link} ${names.join(', ')}${others > 0 ? ` et ${others} autre${others > 1 ? 's' : ''}` : ''}` : '';
+      const rarity = iconic[name] || (rec.count >= epicAt ? 'rare' : 'common');
+      const attrs = catKey ? { [catKey]: catFn ? catFn(name) : cat } : {};
+      add(entry(slug, type, frName, `${noun}${who}.`, rarity, purge(attrs), refImg(slug)));
+      for (const o of owners) relations.push([o, relation, slug]);
+      n++;
+    }
+    console.log(`✓ import de masse ${type} (${noun.split(' de')[0].toLowerCase()}) : +${n} (${map.size} uniques)`);
+    return n;
+  }
+
+  // Natures de chakra → POUVOIR (avant les jutsu, pour réserver les slugs élémentaires).
+  const NATURE_FR = {
+    'Fire Release': 'Libération du Feu (Katon)', 'Water Release': "Libération de l'Eau (Suiton)",
+    'Earth Release': 'Libération de la Terre (Doton)', 'Wind Release': 'Libération du Vent (Fūton)',
+    'Lightning Release': 'Libération de la Foudre (Raiton)', 'Yin Release': 'Libération du Yin',
+    'Yang Release': 'Libération du Yang', 'Yin–Yang Release': 'Libération du Yin-Yang',
+    'Wood Release': 'Libération du Bois (Mokuton)', 'Lava Release': 'Libération de la Lave (Yōton)',
+    'Ice Release': 'Libération de la Glace (Hyōton)', 'Magnet Release': 'Libération du Magnétisme (Jiton)',
+    'Boil Release': "Libération de l'Ébullition (Futton)", 'Storm Release': 'Libération de la Tempête (Ranton)',
+    'Scorch Release': 'Libération de la Calcination (Shakuton)', 'Dust Release': 'Libération de la Poussière (Jinton)',
+    'Explosion Release': "Libération de l'Explosion (Bakuton)", 'Steel Release': "Libération de l'Acier (Kōton)",
+    'Crystal Release': 'Libération du Cristal (Shōton)', 'Dark Release': "Libération des Ténèbres (Meiton)",
+  };
+  massField({ getter: (c) => c.natureType, type: 'power', relation: 'maitrise', noun: 'Nature de chakra de l\'univers Naruto', link: 'maîtrisée par', frMap: NATURE_FR, catKey: 'element', cat: 'Nature de chakra', epicAt: 40 });
+
+  // Jutsu → POUVOIR (le gros lot : ~1400 techniques). Noms canon conservés (romaji/EN) faute de FR.
+  const jutsuCat = (n) => {
+    if (/Release/.test(n)) return 'Ninjutsu élémentaire';
+    if (/Seal(ing)?|Fūin/.test(n)) return 'Fūinjutsu';
+    if (/Summoning|Kuchiyose/.test(n)) return 'Invocation';
+    if (/Genjutsu|Illusion/.test(n)) return 'Genjutsu';
+    if (/Sage|Senjutsu|Sennin/.test(n)) return 'Senjutsu';
+    if (/Fist|Gate|Taijutsu|Kick|Punch/.test(n)) return 'Taijutsu';
+    if (/Medical|Healing|Palm/.test(n)) return 'Ninjutsu médical';
+    return 'Ninjutsu';
+  };
+  const JUTSU_ICONIC = { 'Shadow Clone Technique': 'epic', 'Tailed Beast Ball': 'epic', 'Flying Thunder God Technique': 'epic', 'Eight Gates': 'epic', 'Summoning Technique': 'rare', 'Mystical Palm Technique': 'rare' };
+  massField({ getter: (c) => c.jutsu, type: 'power', relation: 'maitrise', noun: 'Technique de l\'univers Naruto', link: 'maîtrisée par', iconic: JUTSU_ICONIC, catKey: 'element', catFn: jutsuCat, epicAt: 15 });
+
+  // Kekkei genkai → COMPÉTENCE (dōjutsu & lignées ; ceux déjà pris en power/curé reçoivent juste les relations).
+  massField({ getter: (c) => c.personal?.kekkeiGenkai, type: 'skill', relation: 'maitrise', noun: 'Aptitude héréditaire (kekkei genkai) de l\'univers Naruto', link: 'portée par', catKey: 'discipline', cat: 'Kekkei genkai', epicAt: 8 });
+
+  // Classifications → STATUT (Jinchūriki, Sannin, Sage, Missing-nin…).
+  const CLASS_FR = { 'Missing-nin': 'Ninja déserteur (Missing-nin)', 'Medical-nin': 'Ninja médical', 'Sensor Type': 'Type sensoriel', 'Jinchūriki': 'Jinchūriki', 'Sage': 'Ermite (Sage)', 'Sannin': 'Sannin légendaire', 'Mercenary Ninja': 'Ninja mercenaire', 'Summon': 'Créature invoquée', 'Daimyō': 'Daimyō (seigneur)' };
+  massField({ getter: (c) => c.personal?.classification, type: 'status', relation: 'appartient', noun: 'Statut de l\'univers Naruto', link: 'incarné par', frMap: CLASS_FR, catKey: 'scope', cat: 'Classification', epicAt: 20 });
+
+  // Équipes / organisations → STATUT (Akatsuki, Épéistes de la Brume, Konoha 11…).
+  const TEAM_FR = { 'Seven Ninja Swordsmen of the Mist': 'Sept Épéistes de la Brume', 'Konoha Military Police Force': 'Police militaire de Konoha', 'Allied Shinobi Forces': 'Force Shinobi Alliée', 'Medic Corps': 'Corps médical', 'Twelve Guardian Ninja': 'Douze Ninjas Gardiens' };
+  massField({ getter: (c) => c.personal?.team, type: 'status', relation: 'appartient', noun: 'Groupe de l\'univers Naruto', link: 'réunit', frMap: TEAM_FR, catKey: 'scope', cat: 'Organisation', minCount: 2, epicAt: 8 });
+
+  // Occupations → MÉTIER (filtré ≥2 titulaires pour couper le bruit des rôles uniques).
+  const OCC_FR = { 'Village Head': 'Chef de village', 'Academy Teacher': "Professeur de l'Académie", 'Chūnin Exams Proctor': "Examinateur de l'examen chūnin", 'Scientist': 'Scientifique', 'Thief': 'Voleur', 'Mercenary': 'Mercenaire', 'Merchant': 'Marchand', 'Blacksmith': 'Forgeron', 'Bounty Hunter': 'Chasseur de primes' };
+  massField({ getter: (c) => c.personal?.occupation, type: 'profession', relation: 'exerce', noun: 'Métier de l\'univers Naruto', link: 'exercé par', frMap: OCC_FR, catKey: 'sector', cat: 'Métier ninja', minCount: 2, epicAt: 8 });
+
   // Validation : ne garder que les relations dont les 2 extrémités existent.
   const clean = relations.filter(([f, , t]) => {
     const ok = slugs.has(f) && slugs.has(t) && f !== t;

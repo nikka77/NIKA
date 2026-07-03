@@ -224,7 +224,7 @@ export default function PlaceDossier({ entry }: { entry: AkashaEntryDetail }) {
         {active === 'roster' && (
           <Sec title={`${rosterLabel} · ${roster.length}`} accent="#0094D4">
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-              {roster.map((r) => (
+              {roster.slice(0, 60).map((r) => (
                 <Link key={r.id} href={`/learn/akasha/${r.target.slug}`} style={{ width: 82, textDecoration: 'none', flexShrink: 0 }}>
                   <div style={{ width: 82, height: 82, borderRadius: 12, overflow: 'hidden', background: `linear-gradient(135deg, ${ACCENT}30, ${ACCENT}0A)`, border: `1px solid ${ACCENT}40`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {r.target.image_url ? (
@@ -238,6 +238,11 @@ export default function PlaceDossier({ entry }: { entry: AkashaEntryDetail }) {
                 </Link>
               ))}
             </div>
+            {roster.length > 60 && (
+              <div style={{ marginTop: 10, fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)' }}>
+                + {roster.length - 60} autres — la liste complète est dans l'onglet Liens.
+              </div>
+            )}
           </Sec>
         )}
 

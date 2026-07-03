@@ -28,40 +28,68 @@ export interface ListEntriesResult {
   totalPages: number;
 }
 
-/** Liste filtrée (type, univers, recherche plein-texte sur nom/univers/résumé) + paginée. */
+// Ordre d'importance des raretés (les plus rares d'abord), le reste (rareté nulle) en fin.
+const RARITY_BUCKETS: (string | null)[] = ['legendary', 'epic', 'rare', 'common', null];
+
+/** Liste filtrée (type, univers, recherche) + paginée, TRIÉE par rareté décroissante puis nom.
+ *  `rarity` est une colonne texte (pas un enum) → tri impossible côté PostgREST : on pagine par
+ *  « buckets » de rareté (légendaire → commun), chaque bucket ordonné par nom. Une page ne
+ *  chevauche au plus que 2 buckets → 5 counts + ≤2 requêtes data. */
 export async function listEntries(
   { type, universe, search, page = 1 }: ListEntriesParams = {},
 ): Promise<ListEntriesResult> {
   const pageSize = PAGE_SIZE;
   const current = Math.max(1, Math.floor(page) || 1);
   const from = (current - 1) * pageSize;
-  const to = from + pageSize - 1;
 
   const supabase = await createClient();
   if (!supabase) {
     return { entries: [], total: 0, page: current, pageSize, totalPages: 0 };
   }
 
-  let query = supabase
-    .from('akasha_entries')
-    .select(CARD_COLS, { count: 'exact' })
-    .order('name', { ascending: true })
-    .range(from, to);
+  const s = search ? search.replace(/[%,()]/g, ' ').trim() : '';
+  // Applique les filtres communs (type / univers / recherche + le bucket de rareté) à un builder frais.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const applyFilters = (q: any, rarity: string | null): any => {
+    if (type) q = q.eq('type', type);
+    if (universe) q = q.eq('universe', universe);
+    if (s) q = q.or(`name.ilike.%${s}%,universe.ilike.%${s}%,summary.ilike.%${s}%`);
+    q = rarity === null ? q.is('rarity', null) : q.eq('rarity', rarity);
+    return q;
+  };
 
-  if (type) query = query.eq('type', type);
-  if (universe) query = query.eq('universe', universe);
+  // Comptage par bucket (HEAD, sans données) → total + navigation dans les buckets.
+  const counts = await Promise.all(
+    RARITY_BUCKETS.map(async (rarity) => {
+      const { count } = await applyFilters(
+        supabase.from('akasha_entries').select('id', { count: 'exact', head: true }),
+        rarity,
+      );
+      return count ?? 0;
+    }),
+  );
+  const total = counts.reduce((a, b) => a + b, 0);
 
-  if (search) {
-    // Neutralise les caractères qui casseraient la syntaxe `.or(...)` de PostgREST.
-    const s = search.replace(/[%,()]/g, ' ').trim();
-    if (s) query = query.or(`name.ilike.%${s}%,universe.ilike.%${s}%,summary.ilike.%${s}%`);
+  // Parcourt les buckets dans l'ordre de rareté, prélève la tranche qui recoupe la fenêtre [from, from+pageSize).
+  const rows: AkashaEntryCard[] = [];
+  let acc = 0;
+  for (let i = 0; i < RARITY_BUCKETS.length && rows.length < pageSize; i++) {
+    const start = acc;
+    const end = acc + counts[i];
+    acc = end;
+    if (end <= from || counts[i] === 0) continue; // bucket entièrement avant la fenêtre
+    if (start >= from + pageSize) break; // au-delà de la fenêtre
+    const localFrom = Math.max(0, from - start);
+    const need = pageSize - rows.length;
+    const { data } = await applyFilters(
+      supabase.from('akasha_entries').select(CARD_COLS).order('name', { ascending: true }),
+      RARITY_BUCKETS[i],
+    ).range(localFrom, localFrom + need - 1);
+    if (data) rows.push(...(data as AkashaEntryCard[]));
   }
 
-  const { data, count } = await query;
-  const total = count ?? 0;
-
   return {
-    entries: (data as AkashaEntryCard[] | null) ?? [],
+    entries: rows,
     total,
     page: current,
     pageSize,
@@ -118,16 +146,22 @@ export async function getEntryBySlug(slug: string): Promise<AkashaEntryDetail | 
   };
 }
 
-/** Compte d'entrées par univers (pour le hub du registre). ~150 lignes → un select léger suffit. */
+/** Compte d'entrées par univers (pour le hub du registre).
+ *  ⚠ PostgREST plafonne chaque requête à 1 000 lignes (même avec .limit() supérieur) → pagination range. */
 export async function listUniverseCounts(): Promise<{ universe: string; count: number }[]> {
   const supabase = await createClient();
   if (!supabase) return [];
 
-  const { data } = await supabase.from('akasha_entries').select('universe').limit(2000);
   const counts = new Map<string, number>();
-  for (const row of (data as { universe: string | null }[] | null) ?? []) {
-    const u = row.universe?.trim();
-    if (u) counts.set(u, (counts.get(u) ?? 0) + 1);
+  const PAGE = 1000;
+  for (let from = 0; ; from += PAGE) {
+    const { data } = await supabase.from('akasha_entries').select('universe').range(from, from + PAGE - 1);
+    const rows = (data as { universe: string | null }[] | null) ?? [];
+    for (const row of rows) {
+      const u = row.universe?.trim();
+      if (u) counts.set(u, (counts.get(u) ?? 0) + 1);
+    }
+    if (rows.length < PAGE) break;
   }
   return Array.from(counts.entries()).map(([universe, count]) => ({ universe, count }));
 }

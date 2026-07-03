@@ -464,6 +464,20 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
   // Champs enrichis (base, non liés à la forme)
   const status = str(a.status);
   const tailedBeast = str(a.tailedBeast);
+  // Champs multi-univers (One Piece / Dragon Ball…) — surfacés dans l'onglet Identité.
+  const roleAttr = str(a.role);
+  const showRole = roleAttr && !/^Personnage (principal|secondaire)$/.test(roleAttr);
+  const bounty = str(a.bounty);
+  const crew = str(a.crew);
+  const fruit = str(a.fruit);
+  const race = str(a.race);
+  const ki = str(a.ki);
+  const sizeV = str(a.size);
+  // Naruto (import de masse) : clan / village / rang — non couverts par classification/affiliation.
+  const clanV = str(a.clan);
+  const villageV = affiliation.length ? null : str(a.village);
+  const rankV = str(a.rank);
+  const multiUniv = !!(showRole || bounty || crew || fruit || race || ki || sizeV || clanV || villageV || rankV);
   const squad = a.squad && typeof a.squad === 'object' ? (a.squad as { name?: string; members?: { rel: string; name: string; slug?: string }[] }) : null;
   const bio = str(a.bio);
   const personality = str(a.personality);
@@ -474,12 +488,12 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
   const ageV = fstr(f.age, a.age);
   const heightV = fstr(f.height, a.height);
   const weightV = fstr(f.weight, a.weight);
-  const vitals = [ageV, heightV, weightV, str(a.bloodType), str(a.sex), str(a.birthdate)].some(Boolean);
+  const vitals = [ageV, heightV, weightV, sizeV, str(a.bloodType), str(a.sex), str(a.birthdate)].some(Boolean);
 
   const model3d = (threeD as unknown as Record<string, Model3D>)[entry.slug];
 
   const tabs = [
-    { key: 'identite', label: 'Identité', show: vitals || classification.length || affiliation.length || occupation.length || titles.length },
+    { key: 'identite', label: 'Identité', show: vitals || classification.length || affiliation.length || occupation.length || titles.length || multiUniv },
     // ⬢ 3D : la visionneuse fonctionne (GLB riggé chargé au clic, pas au load — Identité reste par défaut),
     //    MAIS le mesh Meshy a des artefacts (tache rouge torse, tête cadrée hors champ) → masquée tant que
     //    le modèle n'est pas régénéré propre. Mettre `show: !!model3d` pour la réactiver.
@@ -533,6 +547,7 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
                 <Vital k="age" label="Âge" value={ageV} />
                 <Vital k="height" label="Taille" value={heightV} />
                 <Vital k="weight" label="Poids" value={weightV} />
+                <Vital k="size" label="Taille" value={sizeV} />
                 <Vital k="blood" label="Sang" value={str(a.bloodType)} />
                 <Vital k="sex" label="Sexe" value={str(a.sex) === 'Male' ? 'Homme' : str(a.sex) === 'Female' ? 'Femme' : str(a.sex)} />
                 <Vital k="cal" label="Naissance" value={str(a.birthdate)} />
@@ -542,6 +557,21 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
             {affiliation.length > 0 && <Sec title="Affiliations" accent="#0EA878" icon="affiliations"><Chips items={affiliation} color="#0EA878" /></Sec>}
             {occupation.length > 0 && <Sec title="Fonctions" accent="#0094D4" icon="fonctions"><Chips items={occupation} color="#0094D4" /></Sec>}
             {titles.length > 0 && <Sec title="Surnoms" accent="#D4A017"><Chips items={titles} color="#D4A017" /></Sec>}
+            {showRole && <Sec title="Rôle" accent="#7B5CF0"><Chips items={[roleAttr]} color="#7B5CF0" /></Sec>}
+            {clanV && <Sec title="Clan" accent="#7B5CF0"><Chips items={[clanV]} color="#7B5CF0" /></Sec>}
+            {villageV && <Sec title="Village" accent="#0EA878" icon="affiliations"><Chips items={[villageV]} color="#0EA878" /></Sec>}
+            {rankV && <Sec title="Rang ninja" accent="#0094D4"><Chips items={[rankV]} color="#0094D4" /></Sec>}
+            {race && <Sec title="Espèce / Race" accent="#0094D4"><Chips items={[race]} color="#0094D4" /></Sec>}
+            {bounty && (
+              <Sec title="Prime" accent="#D4A017">
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 18, color: '#D4A017', background: '#D4A0171A', border: '1px solid #D4A01755', borderRadius: 8, padding: '5px 12px' }}>
+                  <span aria-hidden>🏴‍☠️</span>{bounty}
+                </span>
+              </Sec>
+            )}
+            {crew && <Sec title="Équipage" accent="#0EA878" icon="affiliations"><Chips items={[crew]} color="#0EA878" /></Sec>}
+            {fruit && <Sec title="Fruit du Démon" accent="#E8623A"><Chips items={[fruit]} color="#E8623A" /></Sec>}
+            {ki && <Sec title="Puissance (Ki)" accent="#D4A017"><Chips items={[ki]} color="#D4A017" /></Sec>}
             {status && <Sec title="Statut" accent="#0EA878"><Chips items={[status]} color="#0EA878" /></Sec>}
             {tailedBeast && (
               <Sec title="Bijū — démon à queues" accent="#E8623A">
