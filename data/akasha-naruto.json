@@ -1756,7 +1756,7 @@
             "blend": "screen"
           }
         ],
-        "favorites": 87743
+        "favorites": 87747
       },
       "rarity": "legendary"
     },
@@ -1786,11 +1786,12 @@
           "Type Capteur"
         ],
         "titles": [
-          "うちはサスケUchiha Sasuke",
-          "child Of The Prophecy",
-          "sasuke Of The Sharingan",
-          "supporting Kage"
+          "Le dernier des Uchiha",
+          "Le Hokage de l'ombre",
+          "Sasuke du Rinnegan"
         ],
+        "nindo": "Je vais restaurer mon clan… et tuer un certain homme.",
+        "nindoLabel": "Nindō · sa voie du ninja",
         "occupation": [
           "Head of the Uchiha Clan"
         ],
@@ -1931,6 +1932,40 @@
           "game": "Naruto: Konoha Ninpōchō",
           "ova": "Find the Four-Leaf Red Clover!"
         },
+        "status": "Vivant",
+        "squad": {
+          "name": "Équipe 7",
+          "members": [
+            {
+              "rel": "Sensei",
+              "name": "Kakashi Hatake",
+              "slug": "kakashi-hatake"
+            },
+            {
+              "rel": "Coéquipier",
+              "name": "Naruto Uzumaki",
+              "slug": "naruto-uzumaki"
+            },
+            {
+              "rel": "Coéquipière",
+              "name": "Sakura Haruno",
+              "slug": "sakura-haruno"
+            }
+          ]
+        },
+        "bio": "Survivant du massacre de son clan, Sasuke grandit avec une seule obsession : venger les siens en tuant son frère Itachi. Prodige de l'Académie, rival et coéquipier de Naruto au sein de l'Équipe 7, il déserte Konoha pour chercher la puissance auprès d'Orochimaru. La vérité sur le sacrifice d'Itachi le brise et le retourne contre le village, jusqu'à l'affrontement final de la Vallée de la Fin où Naruto le ramène. Racheté, doté du Rinnegan, il devient le « Hokage de l'ombre » : l'épée qui protège Konoha depuis les ténèbres.",
+        "personality": "Froid, orgueilleux et solitaire, Sasuke enferme sa douleur derrière un mépris de façade. Sa quête de puissance l'a mené aux pires trahisons — mais son lien avec Naruto, le seul qu'il n'a jamais pu trancher, a fini par le ramener.",
+        "quotes": [
+          "Mon rêve n'est pas un rêve : je vais restaurer mon clan, et tuer un certain homme.",
+          "Tu es devenu mon meilleur ami… c'est pour ça que je dois te tuer.",
+          "J'ai fermé les yeux depuis trop longtemps… mes ténèbres m'appartiennent."
+        ],
+        "trivia": [
+          "Son nom vient de Sasuke Sarutobi, ninja légendaire du folklore japonais.",
+          "Il n'active son premier Sharingan que la nuit du massacre — et l'oublie pendant des années.",
+          "Son Chidori percé avec le Sharingan est le seul assaut que Kakashi lui ait jamais transmis.",
+          "Adulte, il voyage seul pour expier — son manteau cache le bras qu'il a laissé à la Vallée de la Fin."
+        ],
         "family": [
           {
             "rel": "father",
@@ -1960,6 +1995,192 @@
         "gallery": [
           "https://static.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png",
           "https://static.wikia.nocookie.net/naruto/images/1/13/Sasuke_Part_2.png"
+        ],
+        "forms": [
+          {
+            "label": "Partie I",
+            "url": "https://static.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png",
+            "caption": "12 ans · Genin · le prodige de l'Équipe 7",
+            "summary": "Premier de sa promotion, il maîtrise déjà le Katon du clan et éveille son Sharingan face à Haku. Kakashi lui enseigne le Chidori.",
+            "age": "12 ans",
+            "height": "1,50 m",
+            "weight": "42 kg",
+            "rank": "Genin",
+            "classification": [],
+            "natures": [
+              "Fire Release",
+              "Lightning Release"
+            ],
+            "kekkeiGenkai": [
+              "Sharingan"
+            ],
+            "occupation": [
+              "Genin · Équipe 7"
+            ],
+            "affiliation": [
+              "Konohagakure",
+              "Équipe 7"
+            ],
+            "signature": [
+              "Boule de feu suprême",
+              "Chidori",
+              "Sharingan"
+            ],
+            "arc": "Pays des Vagues · Examens Chūnin",
+            "idle": "/images/akasha/naruto/idle/partie-i.webp",
+            "stats": {
+              "nin": 3.5,
+              "tai": 3,
+              "gen": 2.5,
+              "int": 3,
+              "for": 2.5,
+              "vit": 3.5,
+              "end": 2.5,
+              "sce": 3
+            }
+          },
+          {
+            "label": "Sceau maudit",
+            "url": "/images/akasha/naruto/sasuke-cs2.webp",
+            "caption": "13 ans · Sceau maudit niveau 2 — la Vallée de la Fin",
+            "summary": "La marque d'Orochimaru le transforme : peau grise, ailes-mains démoniaques. Il terrasse Naruto à la Vallée de la Fin et quitte Konoha.",
+            "age": "13 ans",
+            "height": "1,53 m",
+            "weight": "43 kg",
+            "rank": "Genin",
+            "classification": [],
+            "natures": [
+              "Fire Release",
+              "Lightning Release"
+            ],
+            "kekkeiGenkai": [
+              "Sharingan"
+            ],
+            "occupation": [
+              "Déserteur"
+            ],
+            "affiliation": [
+              "Orochimaru"
+            ],
+            "signature": [
+              "Sceau maudit niv. 2",
+              "Chidori noir"
+            ],
+            "arc": "Vallée de la Fin (vs Naruto)"
+          },
+          {
+            "label": "Hebi",
+            "url": "https://static.wikia.nocookie.net/naruto/images/1/13/Sasuke_Part_2.png",
+            "caption": "16 ans · chef de Hebi — la vengeance accomplie",
+            "summary": "Ayant absorbé la formation d'Orochimaru, il traque Itachi avec son équipe Hebi et l'abat sous l'éclair de Kirin — avant d'apprendre l'insoutenable vérité.",
+            "age": "16 ans",
+            "height": "1,68 m",
+            "weight": "52 kg",
+            "rank": "Déserteur",
+            "classification": [],
+            "natures": [
+              "Fire Release",
+              "Lightning Release"
+            ],
+            "kekkeiGenkai": [
+              "Sharingan"
+            ],
+            "occupation": [
+              "Chef de Hebi"
+            ],
+            "affiliation": [
+              "Hebi / Taka"
+            ],
+            "signature": [
+              "Kirin",
+              "Chidori (formes multiples)",
+              "Kusanagi"
+            ],
+            "arc": "Vengeance — vs Itachi",
+            "stats": {
+              "nin": 5,
+              "tai": 4.5,
+              "gen": 5,
+              "int": 4.5,
+              "for": 3.5,
+              "vit": 5,
+              "end": 3,
+              "sce": 4.5
+            }
+          },
+          {
+            "label": "Mangekyō éternel",
+            "url": "/images/akasha/naruto/sasuke-susanoo.webp",
+            "caption": "17 ans · Mangekyō éternel — le Susanoo se dresse",
+            "summary": "Greffé des yeux d'Itachi, son Mangekyō éternel déploie un Susanoo complet : flammes d'Amaterasu et armure spectrale indestructible.",
+            "age": "17 ans",
+            "height": "1,68 m",
+            "weight": "52 kg",
+            "rank": "Déserteur",
+            "classification": [],
+            "natures": [
+              "Fire Release",
+              "Lightning Release",
+              "Yin Release"
+            ],
+            "kekkeiGenkai": [
+              "Mangekyō Sharingan éternel"
+            ],
+            "occupation": [
+              "Nukenin international"
+            ],
+            "affiliation": [
+              "Akatsuki (allié)"
+            ],
+            "signature": [
+              "Susanoo parfait",
+              "Amaterasu",
+              "Kagutsuchi"
+            ],
+            "arc": "Quatrième Guerre Shinobi"
+          },
+          {
+            "label": "Rinnegan",
+            "url": "/images/akasha/naruto/sasuke-adulte.webp",
+            "caption": "Adulte · Rinnegan — l'épée qui veille depuis l'ombre",
+            "summary": "Éveillé au Rinnegan par le chakra du Sage, il sillonne le monde en éclaireur solitaire : la seconde lame de Konoha, invisible et absolue.",
+            "age": "19 ans+",
+            "height": "1,82 m",
+            "weight": "56 kg",
+            "rank": "Nukenin gracié",
+            "classification": [],
+            "natures": [
+              "Fire Release",
+              "Lightning Release",
+              "Yin–Yang Release"
+            ],
+            "kekkeiGenkai": [
+              "Rinnegan",
+              "Mangekyō éternel"
+            ],
+            "occupation": [
+              "Protecteur itinérant"
+            ],
+            "affiliation": [
+              "Konohagakure (soutien)"
+            ],
+            "signature": [
+              "Amenotejikara",
+              "Chibaku Tensei",
+              "Indra no Ya"
+            ],
+            "arc": "Errance — le Hokage de l'ombre",
+            "stats": {
+              "nin": 5,
+              "tai": 5,
+              "gen": 5,
+              "int": 5,
+              "for": 4,
+              "vit": 5,
+              "end": 4,
+              "sce": 5
+            }
+          }
         ],
         "favorites": 30254
       },
@@ -2117,15 +2338,12 @@
         "bloodType": "O",
         "birthdate": "15 septembre",
         "titles": [
-          "はたけカカシHatake Kakashi",
-          "copy Ninja Kakashi",
-          "kakashi Of The Sharingan",
-          "hero Of The Sharingan",
-          "cold-blooded Kakashi",
-          "friend-killer Kakashi",
-          "sixth Hokage",
-          "sukea"
+          "Le Ninja copieur",
+          "Kakashi au Sharingan",
+          "Sixième Hokage"
         ],
+        "nindo": "Ceux qui enfreignent les règles sont des moins que rien… mais ceux qui abandonnent leurs amis sont pires encore.",
+        "nindoLabel": "Nindō · sa voie du ninja",
         "occupation": [
           "Anbu Captain  (Former)",
           "Third Division Commander of the Allied Shinobi Forces",
@@ -2244,6 +2462,40 @@
           "game": "Naruto: Konoha Ninpōchō",
           "ova": "Find the Four-Leaf Red Clover!"
         },
+        "status": "Vivant",
+        "squad": {
+          "name": "Équipe 7 (sensei)",
+          "members": [
+            {
+              "rel": "Élève",
+              "name": "Naruto Uzumaki",
+              "slug": "naruto-uzumaki"
+            },
+            {
+              "rel": "Élève",
+              "name": "Sasuke Uchiha",
+              "slug": "sasuke-uchiha"
+            },
+            {
+              "rel": "Élève",
+              "name": "Sakura Haruno",
+              "slug": "sakura-haruno"
+            }
+          ]
+        },
+        "bio": "Fils du « Croc Blanc de Konoha », Kakashi devient jōnin à 13 ans et reçoit de son coéquipier mourant, Obito, le Sharingan qui fera sa légende : plus de mille techniques copiées. Passé par les Anbu après la mort de Rin, il devient le sensei désabusé — et en apparence toujours en retard — de l'Équipe 7, à qui il transmet la leçon d'Obito : ne jamais abandonner ses camarades. Pendant la Quatrième Guerre, son Kamui et un bref double Mangekyō en font un acteur décisif face à Obito et Kaguya. La paix revenue, il coiffe le chapeau de Sixième Hokage.",
+        "personality": "Nonchalant, toujours plongé dans « Le Paradis du Batifolage », Kakashi cultive l'art du détachement — un masque de plus. Derrière : un stratège glacial, un professeur exigeant, et un homme hanté par tous ceux qu'il n'a pas pu sauver.",
+        "quotes": [
+          "Yo. Désolé du retard — je me suis perdu sur le chemin de la vie.",
+          "Le travail d'équipe passe avant tout.",
+          "Je protège mes camarades. Quoi qu'il en coûte."
+        ],
+        "trivia": [
+          "Son visage sans masque est l'un des gags les plus longs de la série — même ses élèves ont échoué à le voir.",
+          "Il lit la série de romans érotiques de Jiraiya en public, y compris en mission.",
+          "Il invoque une meute de chiens ninjas, menée par le carlin Pakkun.",
+          "Jōnin à 13 ans, Hokage à 31 : l'une des carrières les plus précoces de Konoha."
+        ],
         "family": [
           {
             "rel": "father",
@@ -2255,7 +2507,193 @@
           "https://static.wikia.nocookie.net/naruto/images/2/27/Kakashi_Hatake.png",
           "https://static.wikia.nocookie.net/naruto/images/2/25/Kakashi_Part_III.png"
         ],
-        "favorites": 49142
+        "forms": [
+          {
+            "label": "Anbu",
+            "url": "/images/akasha/naruto/kakashi-anbu.webp",
+            "caption": "Anbu · les années sombres après Rin",
+            "summary": "Après la mort de Rin, Kakashi s'enfonce dans les Anbu : missions noires, masque de chien, précision chirurgicale — jusqu'à ce que le Troisième l'en sorte.",
+            "age": "14-20 ans",
+            "height": "1,68 m",
+            "rank": "Anbu",
+            "classification": [],
+            "natures": [
+              "Lightning Release"
+            ],
+            "kekkeiGenkai": [
+              "Sharingan (greffé)"
+            ],
+            "occupation": [
+              "Capitaine Anbu"
+            ],
+            "affiliation": [
+              "Konohagakure",
+              "Anbu"
+            ],
+            "signature": [
+              "Chidori",
+              "Tantō",
+              "Assassinat silencieux"
+            ],
+            "arc": "Jeunesse — les années sombres",
+            "stats": {
+              "nin": 4,
+              "tai": 4,
+              "gen": 3,
+              "int": 4.5,
+              "for": 3,
+              "vit": 4,
+              "end": 2.5,
+              "sce": 4
+            }
+          },
+          {
+            "label": "Ninja copieur",
+            "url": "https://static.wikia.nocookie.net/naruto/images/2/27/Kakashi_Hatake.png",
+            "caption": "27 ans · Jōnin · le sensei de l'Équipe 7",
+            "summary": "Le ninja copieur prend en charge Naruto, Sasuke et Sakura : l'épreuve des clochettes, le Pays des Vagues, et la leçon qui définit tout — le travail d'équipe.",
+            "age": "26-27 ans",
+            "height": "1,81 m",
+            "weight": "67,5 kg",
+            "rank": "Jōnin",
+            "classification": [],
+            "natures": [
+              "Lightning Release",
+              "Earth Release",
+              "Water Release",
+              "Fire Release"
+            ],
+            "kekkeiGenkai": [
+              "Sharingan (greffé)"
+            ],
+            "occupation": [
+              "Sensei de l'Équipe 7"
+            ],
+            "affiliation": [
+              "Konohagakure",
+              "Équipe 7"
+            ],
+            "signature": [
+              "Chidori / Raikiri",
+              "1000 techniques copiées",
+              "Invocation canine"
+            ],
+            "arc": "Partie I — sensei de l'Équipe 7",
+            "stats": {
+              "nin": 5,
+              "tai": 4.5,
+              "gen": 4,
+              "int": 5,
+              "for": 3.5,
+              "vit": 4.5,
+              "end": 3,
+              "sce": 5
+            }
+          },
+          {
+            "label": "Kamui",
+            "url": "/images/akasha/naruto/kakashi-kamui.webp",
+            "caption": "Mangekyō · Kamui — aspirer l'espace lui-même",
+            "summary": "Son Mangekyō éveille le Kamui : un vortex qui aspire n'importe quelle cible vers une autre dimension — l'arme qui le lie, sans qu'il le sache, à Obito.",
+            "age": "29-31 ans",
+            "height": "1,81 m",
+            "rank": "Jōnin",
+            "classification": [],
+            "natures": [
+              "Lightning Release"
+            ],
+            "kekkeiGenkai": [
+              "Mangekyō Sharingan"
+            ],
+            "occupation": [
+              "Jōnin d'élite"
+            ],
+            "affiliation": [
+              "Konohagakure"
+            ],
+            "signature": [
+              "Kamui (distorsion spatiale)",
+              "Raikiri"
+            ],
+            "arc": "Shippūden — l'éveil du Mangekyō"
+          },
+          {
+            "label": "Double Mangekyō",
+            "url": "/images/akasha/naruto/kakashi-guerre.webp",
+            "caption": "Guerre · le cadeau d'Obito — Susanoo complet",
+            "summary": "Le chakra d'Obito mourant lui offre brièvement les deux Mangekyō : Kakashi déploie un Susanoo complet et porte le coup décisif contre Kaguya.",
+            "age": "31 ans",
+            "height": "1,81 m",
+            "rank": "Jōnin",
+            "classification": [],
+            "natures": [
+              "Lightning Release",
+              "Yin–Yang Release"
+            ],
+            "kekkeiGenkai": [
+              "Double Mangekyō (Obito)"
+            ],
+            "occupation": [
+              "Commandant de division"
+            ],
+            "affiliation": [
+              "Forces Shinobi Alliées"
+            ],
+            "signature": [
+              "Susanoo complet",
+              "Kamui Raikiri"
+            ],
+            "arc": "Guerre — vs Kaguya",
+            "stats": {
+              "nin": 5,
+              "tai": 4.5,
+              "gen": 4.5,
+              "int": 5,
+              "for": 3.5,
+              "vit": 5,
+              "end": 3.5,
+              "sce": 5
+            }
+          },
+          {
+            "label": "Hokage",
+            "url": "/images/akasha/naruto/kakashi-hokage.webp",
+            "caption": "Sixième Hokage · l'ère de la reconstruction",
+            "summary": "Sans plus de Sharingan, il guide Konoha dans l'après-guerre : reconstruction, ouverture des villages — et passation, des années plus tard, à Naruto.",
+            "age": "32+ ans",
+            "height": "1,81 m",
+            "rank": "Hokage",
+            "classification": [],
+            "natures": [
+              "Lightning Release"
+            ],
+            "kekkeiGenkai": [],
+            "occupation": [
+              "Sixième Hokage"
+            ],
+            "affiliation": [
+              "Konohagakure"
+            ],
+            "signature": [
+              "Administration",
+              "Diplomatie",
+              "Raikiri (sans Sharingan)"
+            ],
+            "arc": "L'ère de la paix",
+            "idle": "/images/akasha/naruto/idle/hokage.webp",
+            "stats": {
+              "nin": 5,
+              "tai": 4.5,
+              "gen": 2.5,
+              "int": 4,
+              "for": 4.5,
+              "vit": 4.5,
+              "end": 5,
+              "sce": 4.5
+            }
+          }
+        ],
+        "favorites": 49144
       },
       "rarity": "legendary"
     },
@@ -2285,9 +2723,12 @@
           "Déserteur (Nukenin)"
         ],
         "titles": [
-          "うちはイタチUchiha Itachi",
-          "itachi Of The Sharingan"
+          "Le génie du clan Uchiha",
+          "Itachi de l'Illusion",
+          "Le héros de l'ombre"
         ],
+        "nindo": "Pardonne-moi, Sasuke… ce sera la dernière fois.",
+        "nindoLabel": "Nindō · sa voie du ninja",
         "occupation": [
           "Anbu Captain  (Former)"
         ],
@@ -2370,6 +2811,20 @@
           "game": "Naruto: Ultimate Ninja 2",
           "ova": "Hidden Leaf Village Grand Sports Festival!"
         },
+        "status": "Décédé",
+        "bio": "Prodige absolu — Sharingan à 8 ans, Anbu à 11, capitaine à 13 — Itachi grandit entre deux loyautés : son clan, qui prépare un coup d'État, et son village, qui exige son anéantissement. Il choisit l'impensable : exécuter les siens en une nuit, épargner son petit frère, et endosser à jamais le rôle du monstre au sein de l'Akatsuki pour continuer à protéger Konoha de l'intérieur. Malade, il se laisse tuer par Sasuke pour lui offrir sa vengeance — et lui transmettre ses yeux. Réanimé pendant la guerre, il brise l'Edo Tensei et disparaît en héros que seul son frère connaîtra.",
+        "personality": "Calme, doux et d'une intelligence terrifiante, Itachi est un pacifiste qui a porté les crimes les plus lourds. Tout chez lui est sacrifice : sa réputation, son clan, sa vie — offerts sans un mot pour la paix du village et l'avenir de Sasuke.",
+        "quotes": [
+          "Pardonne-moi, Sasuke… ce sera la dernière fois.",
+          "Les hommes vivent prisonniers de leurs certitudes.",
+          "Tu n'as pas besoin de me pardonner. Quoi que tu deviennes, je t'aimerai toujours."
+        ],
+        "trivia": [
+          "Le poke sur le front de Sasuke — « pardonne-moi, une prochaine fois » — est devenu le geste le plus iconique de la fratrie.",
+          "Son Susanoo porte l'épée de Totsuka (qui scelle) et le miroir de Yata (qui repousse tout).",
+          "Il est mort debout, souriant, après avoir scellé Orochimaru hors de Sasuke.",
+          "Ses corbeaux servaient autant le genjutsu que le message : l'un portait un Mangekyō de secours."
+        ],
         "family": [
           {
             "rel": "father",
@@ -2394,6 +2849,162 @@
         ],
         "gallery": [
           "https://static.wikia.nocookie.net/naruto/images/b/bb/Itachi.png"
+        ],
+        "forms": [
+          {
+            "label": "Anbu",
+            "url": "/images/akasha/naruto/itachi-anbu.webp",
+            "caption": "13 ans · capitaine Anbu · l'agent double",
+            "summary": "Le plus jeune capitaine Anbu de l'histoire, espion du village au sein de son propre clan — jusqu'à la nuit du massacre.",
+            "age": "11-13 ans",
+            "height": "1,60 m",
+            "rank": "Capitaine Anbu",
+            "classification": [],
+            "natures": [
+              "Fire Release",
+              "Water Release"
+            ],
+            "kekkeiGenkai": [
+              "Sharingan"
+            ],
+            "occupation": [
+              "Capitaine Anbu"
+            ],
+            "affiliation": [
+              "Konohagakure",
+              "Anbu"
+            ],
+            "signature": [
+              "Genjutsu du Sharingan",
+              "Clones de corbeaux",
+              "Katon"
+            ],
+            "arc": "Jeunesse — le prodige des Anbu",
+            "stats": {
+              "nin": 4.5,
+              "tai": 4,
+              "gen": 5,
+              "int": 5,
+              "for": 3,
+              "vit": 4.5,
+              "end": 2.5,
+              "sce": 4.5
+            }
+          },
+          {
+            "label": "Akatsuki",
+            "url": "https://static.wikia.nocookie.net/naruto/images/b/bb/Itachi.png",
+            "caption": "Akatsuki · le criminel que Konoha a fabriqué",
+            "summary": "Sous la cape aux nuages rouges, il joue le monstre pour surveiller l'Akatsuki — tout en freinant, de l'intérieur, la traque de Naruto.",
+            "age": "17-21 ans",
+            "height": "1,78 m",
+            "weight": "58 kg",
+            "rank": "Nukenin (rang S)",
+            "classification": [
+              "Missing-nin"
+            ],
+            "natures": [
+              "Fire Release",
+              "Water Release",
+              "Yin Release"
+            ],
+            "kekkeiGenkai": [
+              "Mangekyō Sharingan"
+            ],
+            "occupation": [
+              "Membre de l'Akatsuki"
+            ],
+            "affiliation": [
+              "Akatsuki"
+            ],
+            "signature": [
+              "Tsukuyomi",
+              "Amaterasu",
+              "Genjutsu absolu"
+            ],
+            "arc": "Akatsuki — le monstre de façade",
+            "stats": {
+              "nin": 5,
+              "tai": 4.5,
+              "gen": 5,
+              "int": 5,
+              "for": 3.5,
+              "vit": 5,
+              "end": 2.5,
+              "sce": 5
+            }
+          },
+          {
+            "label": "Susanoo",
+            "url": "/images/akasha/naruto/itachi-susanoo.webp",
+            "caption": "Susanoo · Totsuka et Yata — le dernier duel",
+            "summary": "Rongé par la maladie, il offre à Sasuke le duel de sa vengeance : Amaterasu, Tsukuyomi, Susanoo — et meurt d'un dernier poke sur le front.",
+            "age": "21 ans",
+            "height": "1,78 m",
+            "rank": "Nukenin (rang S)",
+            "classification": [
+              "Missing-nin"
+            ],
+            "natures": [
+              "Fire Release",
+              "Yin Release"
+            ],
+            "kekkeiGenkai": [
+              "Mangekyō Sharingan"
+            ],
+            "occupation": [
+              "Membre de l'Akatsuki"
+            ],
+            "affiliation": [
+              "Akatsuki"
+            ],
+            "signature": [
+              "Susanoo (Totsuka & Yata)",
+              "Izanami"
+            ],
+            "arc": "Le dernier duel — vs Sasuke"
+          },
+          {
+            "label": "Edo Tensei",
+            "url": "/images/akasha/naruto/itachi-edo.webp",
+            "caption": "Edo Tensei · l'âme qui brisa la réanimation",
+            "summary": "Réanimé par Kabuto, il se libère du contrôle grâce au corbeau laissé en Naruto, piège Kabuto dans Izanami et met fin à l'Edo Tensei — en héros, enfin, aux yeux de son frère.",
+            "age": "—",
+            "height": "1,78 m",
+            "rank": "Réanimé",
+            "classification": [
+              "Edo Tensei"
+            ],
+            "natures": [
+              "Fire Release",
+              "Yin Release"
+            ],
+            "kekkeiGenkai": [
+              "Mangekyō Sharingan"
+            ],
+            "occupation": [
+              "Âme libérée"
+            ],
+            "affiliation": [
+              "—"
+            ],
+            "signature": [
+              "Izanami",
+              "Kotoamatsukami (corbeau)",
+              "Susanoo"
+            ],
+            "arc": "Guerre — briser l'Edo Tensei",
+            "stats": {
+              "nin": 5,
+              "tai": 4.5,
+              "gen": 5,
+              "int": 5,
+              "for": 3.5,
+              "vit": 5,
+              "end": 5,
+              "sce": 5
+            }
+          }
         ],
         "favorites": 67678
       },
@@ -2425,11 +3036,12 @@
           "Type Capteur"
         ],
         "titles": [
-          "うちはマダラUchiha Madara",
-          "second Six Paths",
-          "saviour Of This World",
-          "ghost Of The Uchiha"
+          "Le fantôme des Uchiha",
+          "Cofondateur de Konoha",
+          "Le second Sage des Six Chemins"
         ],
+        "nindo": "Rien ne se passe jamais comme prévu en ce bas monde.",
+        "nindoLabel": "Nindō · sa voie du ninja",
         "occupation": [
           "Co-founder of Konohagakure",
           "Head of the Uchiha clan  (Former)"
@@ -2539,6 +3151,20 @@
           "game": "Naruto Shippūden: Ultimate Ninja Storm 2",
           "ova": "Naruto Shippūden: UNSG anime cutscenes"
         },
+        "status": "Décédé",
+        "bio": "Chef du clan Uchiha à l'époque des guerres claniques, rival juré puis partenaire d'Hashirama Senju, Madara cofonde Konoha — avant de s'en détourner, persuadé que la paix des hommes est un mensonge. Vaincu à la Vallée de la Fin, il survit en secret, éveille le Rinnegan grâce aux cellules d'Hashirama et lègue son plan à Obito : l'Œil de la Lune, un genjutsu éternel projeté sur la lune pour plonger l'humanité dans un rêve parfait. Réanimé pendant la Quatrième Guerre, il écrase des armées entières, devient le jinchūriki du Jūbi… avant d'être trahi par sa propre marionnette, Zetsu Noir, au profit de Kaguya.",
+        "personality": "Orgueil d'aristocrate, désillusion de vétéran : Madara ne croit qu'à la force et au rêve. Sa fraternité brisée avec Hashirama est la blessure originelle — il a préféré un monde d'illusion parfaite à un monde réel imparfait.",
+        "quotes": [
+          "Rien ne se passe jamais comme prévu en ce bas monde.",
+          "Danser, c'est un art qui se pratique à deux.",
+          "L'homme ne peut s'empêcher d'espérer — c'est sa plus belle faiblesse, et sa perte."
+        ],
+        "trivia": [
+          "Son duel « 1 vs 10 000 » face aux armées alliées est resté le gold standard du powerscaling shinobi.",
+          "Le gunbai qu'il porte est devenu l'emblème de l'Akatsuki via Obito.",
+          "Il a survécu à la Vallée de la Fin en mordant sa propre chair — le monde entier l'a cru mort pendant des décennies.",
+          "Kishimoto l'a nommé d'après le « démon » des jeux de go : celui qui renverse la partie."
+        ],
         "family": [
           {
             "rel": "father",
@@ -2553,6 +3179,153 @@
         ],
         "gallery": [
           "https://static.wikia.nocookie.net/naruto/images/f/fd/Madara.png"
+        ],
+        "forms": [
+          {
+            "label": "Guerres claniques",
+            "url": "/images/akasha/naruto/madara-fondateur.webp",
+            "caption": "Ère des clans · le chef de guerre des Uchiha",
+            "summary": "À l'ère où Uchiha et Senju s'entretuent, Madara est LA terreur des champs de bataille — l'égal d'Hashirama, son rival et seul ami.",
+            "age": "Jeunesse",
+            "height": "1,79 m",
+            "weight": "71 kg",
+            "rank": "Chef de clan",
+            "classification": [],
+            "natures": [
+              "Fire Release",
+              "Wind Release",
+              "Lightning Release"
+            ],
+            "kekkeiGenkai": [
+              "Mangekyō Sharingan éternel"
+            ],
+            "occupation": [
+              "Chef du clan Uchiha"
+            ],
+            "affiliation": [
+              "Clan Uchiha"
+            ],
+            "signature": [
+              "Gunbai",
+              "Katon dévastateurs",
+              "Susanoo"
+            ],
+            "arc": "Ère des clans en guerre",
+            "stats": {
+              "nin": 5,
+              "tai": 4.5,
+              "gen": 5,
+              "int": 4.5,
+              "for": 4,
+              "vit": 4.5,
+              "end": 4.5,
+              "sce": 4.5
+            }
+          },
+          {
+            "label": "Fondation",
+            "url": "https://static.wikia.nocookie.net/naruto/images/f/fd/Madara.png",
+            "caption": "Cofondateur · l'alliance trahie",
+            "summary": "Il fonde Konoha avec Hashirama et nomme le village — avant de le quitter, vaincu à la Vallée de la Fin dans le duel qui redessina la géographie.",
+            "age": "Adulte",
+            "height": "1,79 m",
+            "weight": "71 kg",
+            "rank": "Cofondateur",
+            "classification": [],
+            "natures": [
+              "Fire Release",
+              "Yin Release"
+            ],
+            "kekkeiGenkai": [
+              "Mangekyō Sharingan éternel"
+            ],
+            "occupation": [
+              "Cofondateur de Konoha"
+            ],
+            "affiliation": [
+              "Konohagakure"
+            ],
+            "signature": [
+              "Susanoo",
+              "Genjutsu"
+            ],
+            "arc": "Fondation de Konoha → Vallée de la Fin"
+          },
+          {
+            "label": "Edo Tensei",
+            "url": "/images/akasha/naruto/madara-susanoo.webp",
+            "caption": "Edo Tensei · Susanoo parfait — 1 contre 10 000",
+            "summary": "Réanimé avec le Rinnegan et le Mokuton, il pulvérise seul la 4ᵉ division, fait pleuvoir des météores et tranche des montagnes de son Susanoo parfait.",
+            "age": "—",
+            "height": "1,79 m",
+            "rank": "Réanimé (rang S+)",
+            "classification": [
+              "Edo Tensei"
+            ],
+            "natures": [
+              "Fire Release",
+              "Wood Release",
+              "Yin–Yang Release"
+            ],
+            "kekkeiGenkai": [
+              "Rinnegan",
+              "Mokuton"
+            ],
+            "occupation": [
+              "Fléau de la 4ᵉ Guerre"
+            ],
+            "affiliation": [
+              "—"
+            ],
+            "signature": [
+              "Susanoo parfait",
+              "Météores",
+              "Mokuton"
+            ],
+            "arc": "Guerre — 1 contre 10 000",
+            "stats": {
+              "nin": 5,
+              "tai": 5,
+              "gen": 5,
+              "int": 5,
+              "for": 5,
+              "vit": 5,
+              "end": 5,
+              "sce": 5
+            }
+          },
+          {
+            "label": "Jinchūriki du Jūbi",
+            "url": "/images/akasha/naruto/madara-juubi.webp",
+            "caption": "Jinchūriki du Jūbi · l'Œil de la Lune s'ouvre",
+            "summary": "Ressuscité puis fusionné au Jūbi, il transcende les Kage, aveugle le monde sous le Tsukuyomi Infini — un instant de triomphe avant la trahison de Zetsu Noir.",
+            "age": "—",
+            "height": "1,79 m",
+            "rank": "Jinchūriki du Jūbi",
+            "classification": [
+              "Jinchūriki",
+              "Ermite des Six Chemins"
+            ],
+            "natures": [
+              "Yin–Yang Release"
+            ],
+            "kekkeiGenkai": [
+              "Rinnegan",
+              "Rinne Sharingan"
+            ],
+            "occupation": [
+              "Second Sage des Six Chemins"
+            ],
+            "affiliation": [
+              "—"
+            ],
+            "signature": [
+              "Boules Cherche-Vérité",
+              "Limbo",
+              "Tsukuyomi Infini"
+            ],
+            "arc": "L'Œil de la Lune"
+          }
         ],
         "favorites": 13613
       },
@@ -2582,10 +3355,12 @@
           "Ermite (Sage)"
         ],
         "titles": [
-          "千手柱間Senju Hashirama",
-          "first Hokage",
-          "god Of Shinobi"
+          "Le Dieu des shinobi",
+          "Premier Hokage",
+          "Le maître du Mokuton"
         ],
+        "nindo": "Le village d'abord. Toujours. C'est ça, la Volonté du Feu.",
+        "nindoLabel": "Nindō · sa voie du ninja",
         "occupation": [
           "Head of the Senju clan",
           "Hokage"
@@ -2660,6 +3435,20 @@
           "game": "Naruto: Ultimate Ninja",
           "ova": "Naruto Shippūden: UNSG anime cutscenes"
         },
+        "status": "Décédé",
+        "bio": "Chef du clan Senju à l'ère des guerres claniques, Hashirama rêve depuis l'enfance d'un monde où les enfants ne meurent plus au combat — un rêve partagé, au bord d'une rivière, avec un garçon nommé Madara. Devenus chefs de clans ennemis, les deux amis finissent par sceller la paix et fonder ensemble Konoha, le premier village caché. Élu Premier Hokage contre le vœu de Madara, il doit affronter son ancien ami à la Vallée de la Fin, dans un duel qui sculpte la vallée elle-même. Son Mokuton, unique dans l'histoire, et sa Volonté du Feu irriguent encore chaque génération de Konoha.",
+        "personality": "Exubérant, chaleureux, d'un optimisme désarmant — Hashirama passe du rire tonitruant à l'abattement comique en une phrase. Mais sous la bonhomie : le shinobi le plus puissant de son ère, et un idéaliste prêt à tout sacrifier, y compris son ami, pour le village.",
+        "quotes": [
+          "Le village d'abord. Toujours.",
+          "Où que tu ailles, quoi que tu deviennes… tu resteras mon ami, Madara.",
+          "La Volonté du Feu, c'est croire que la génération suivante fera mieux que la nôtre."
+        ],
+        "trivia": [
+          "Son Mokuton est resté inégalé : même les greffes de ses cellules n'en reproduisent qu'un pâle écho.",
+          "Son visage est le premier sculpté sur la falaise des Hokage.",
+          "Les Dieux du duel : sa statue et celle de Madara gardent la Vallée de la Fin.",
+          "Ses cellules sont à l'origine de la moitié des expériences interdites du monde shinobi (Danzō, Yamato, Madara…)."
+        ],
         "family": [
           {
             "rel": "father",
@@ -2689,6 +3478,146 @@
         ],
         "gallery": [
           "https://static.wikia.nocookie.net/naruto/images/7/7e/Hashirama_Senju.png"
+        ],
+        "forms": [
+          {
+            "label": "Ère des clans",
+            "url": "https://static.wikia.nocookie.net/naruto/images/7/7e/Hashirama_Senju.png",
+            "caption": "Ère des clans · le chef des Senju",
+            "summary": "À la tête des Senju, il affronte inlassablement les Uchiha de Madara — tout en rêvant du village qui mettra fin à la guerre des enfants-soldats.",
+            "age": "Jeunesse",
+            "height": "1,85 m",
+            "weight": "74 kg",
+            "rank": "Chef de clan",
+            "classification": [],
+            "natures": [
+              "Earth Release",
+              "Water Release",
+              "Wood Release"
+            ],
+            "kekkeiGenkai": [
+              "Mokuton"
+            ],
+            "occupation": [
+              "Chef du clan Senju"
+            ],
+            "affiliation": [
+              "Clan Senju"
+            ],
+            "signature": [
+              "Mokuton",
+              "Régénération sans sceaux"
+            ],
+            "arc": "Ère des clans en guerre",
+            "stats": {
+              "nin": 5,
+              "tai": 4.5,
+              "gen": 3.5,
+              "int": 4.5,
+              "for": 5,
+              "vit": 4.5,
+              "end": 5,
+              "sce": 5
+            }
+          },
+          {
+            "label": "Premier Hokage",
+            "url": "/images/akasha/naruto/hashirama-hokage.webp",
+            "caption": "Premier Hokage · le rêve devenu village",
+            "summary": "Konoha fondée, il en devient le Premier Hokage, distribue les Bijū aux autres villages en gage de paix — et voit Madara s'éloigner dans l'ombre.",
+            "age": "Adulte",
+            "height": "1,85 m",
+            "weight": "74 kg",
+            "rank": "Hokage",
+            "classification": [],
+            "natures": [
+              "Wood Release"
+            ],
+            "kekkeiGenkai": [
+              "Mokuton"
+            ],
+            "occupation": [
+              "Premier Hokage"
+            ],
+            "affiliation": [
+              "Konohagakure"
+            ],
+            "signature": [
+              "Fondation du village",
+              "Distribution des Bijū"
+            ],
+            "arc": "Fondation de Konoha"
+          },
+          {
+            "label": "Mode Ermite",
+            "url": "/images/akasha/naruto/hashirama-sage.webp",
+            "caption": "Mode Ermite · le Bouddha aux mille mains",
+            "summary": "Son senjutsu propre culmine dans le Shinsū Senju : une statue de bois aux mille poings capable d'écraser le Susanoo parfait de Madara.",
+            "age": "Adulte",
+            "height": "1,85 m",
+            "rank": "Hokage",
+            "classification": [
+              "Ermite (Sage)"
+            ],
+            "natures": [
+              "Wood Release",
+              "Yin–Yang Release"
+            ],
+            "kekkeiGenkai": [
+              "Mokuton"
+            ],
+            "occupation": [
+              "Premier Hokage"
+            ],
+            "affiliation": [
+              "Konohagakure"
+            ],
+            "signature": [
+              "Shinsū Senju (Bouddha aux mille mains)",
+              "Senjutsu"
+            ],
+            "arc": "Le sommet de sa puissance",
+            "idle": "/images/akasha/naruto/idle/mode-ermite.webp",
+            "stats": {
+              "nin": 5,
+              "tai": 5,
+              "gen": 4,
+              "int": 4.5,
+              "for": 5,
+              "vit": 5,
+              "end": 5,
+              "sce": 5
+            }
+          },
+          {
+            "label": "Vallée de la Fin",
+            "url": "/images/akasha/naruto/hashirama-vallee.webp",
+            "caption": "Vallée de la Fin · le duel qui sculpta la terre",
+            "summary": "Face à Madara et Kurama asservi, il livre le plus grand duel de l'histoire : la terre s'ouvre, une vallée naît — et son ami tombe, pour un siècle de paix fragile.",
+            "age": "Adulte",
+            "height": "1,85 m",
+            "rank": "Hokage",
+            "classification": [
+              "Ermite (Sage)"
+            ],
+            "natures": [
+              "Wood Release"
+            ],
+            "kekkeiGenkai": [
+              "Mokuton"
+            ],
+            "occupation": [
+              "Premier Hokage"
+            ],
+            "affiliation": [
+              "Konohagakure"
+            ],
+            "signature": [
+              "Mokuryū",
+              "Kakuan Nitten Suishu"
+            ],
+            "arc": "Vallée de la Fin — vs Madara"
+          }
         ],
         "favorites": 874
       },
@@ -3849,7 +4778,7 @@
           "https://static.wikia.nocookie.net/naruto/images/4/44/Shikamaru_Part_I.png",
           "https://static.wikia.nocookie.net/naruto/images/9/9a/Shikamaru_Nara.png"
         ],
-        "favorites": 18827
+        "favorites": 18829
       },
       "rarity": "epic"
     },
@@ -4311,7 +5240,7 @@
           "https://static.wikia.nocookie.net/naruto/images/3/31/Might_Guy.png",
           "https://static.wikia.nocookie.net/naruto/images/b/b3/Might_Guy_Part_III.png"
         ],
-        "favorites": 2372
+        "favorites": 2373
       },
       "rarity": "rare"
     },
@@ -4323,9 +5252,9 @@
       "universe": "Naruto",
       "summary": "Le Démon-renard à Neuf Queues, le plus puissant des Bijū, scellé en Naruto.",
       "description": "Le Démon-renard à Neuf Queues, le plus puissant des Bijū, scellé en Naruto.",
-      "image_url": null,
+      "image_url": "/images/akasha/naruto/kurama-rage.webp",
       "attributes": {
-        "role": "Bête à queues (Bijū)",
+        "role": "Bijū à Neuf Queues",
         "race": "Bijū",
         "classification": [
           "Tailed Beast",
@@ -4339,6 +5268,132 @@
         "jutsu": [
           "The Springtime of Youth wiki has an article about this topic:",
           "Nine-Tails"
+        ],
+        "status": "Décédé",
+        "titles": [
+          "Kyūbi — le Démon-Renard",
+          "Le plus puissant des Bijū",
+          "Le partenaire de Naruto"
+        ],
+        "nindo": "Je suis Kurama, le Renard à Neuf Queues — pas une « masse de chakra » sans nom !",
+        "bio": "Né du chakra du Jūbi partagé par le Sage des Six Chemins, Kurama est le plus puissant des neuf Bijū — et le plus haï. Utilisé comme arme par Madara à la Vallée de la Fin, scellé en Mito puis en Kushina Uzumaki, il est arraché à cette dernière par Obito la nuit de la naissance de Naruto et ravage Konoha, avant d'être scellé dans le nouveau-né par le Quatrième. Des années de haine derrière les barreaux plus tard, Naruto lui arrache son chakra, puis gagne ce que personne n'avait offert au renard : sa confiance. Partenaires en pleine symbiose, ils sauvent le monde ensemble — jusqu'au Mode Baryon, où Kurama s'éteint pour que Naruto vive.",
+        "personality": "Cynique, orgueilleux et cruel en façade — des siècles de peur et d'asservissement humains l'ont forgé ainsi. Mais Naruto révèle l'autre Kurama : un partenaire loyal, râleur et étrangement tendre, premier des Bijū à choisir un humain.",
+        "quotes": [
+          "Je suis Kurama ! Retiens ce nom, gamin.",
+          "Naruto… tu es sûr de vouloir mourir avec moi ? — Alors allons-y ensemble.",
+          "Les humains m'ont craint, scellé, utilisé. Lui… il m'a appelé par mon nom."
+        ],
+        "trivia": [
+          "Kurama est le seul Bijū dont le jinchūriki n'a jamais « pris » le chakra de force après réconciliation : il le DONNE.",
+          "Sa haine venait aussi de Madara : le Sharingan l'a asservi deux fois dans l'histoire.",
+          "Le Mode Baryon consume son existence même — il meurt en s'excusant de mentir à Naruto sur le prix.",
+          "Yin et Yang : le Quatrième l'a scellé en deux moitiés, réunies seulement pendant la Guerre."
+        ],
+        "forms": [
+          {
+            "label": "Le Fléau",
+            "url": "/images/akasha/naruto/kurama-rage.webp",
+            "caption": "Le Fléau · la nuit où Konoha brûla",
+            "summary": "Arraché à Kushina et asservi par Obito, Kurama rase Konoha la nuit de la naissance de Naruto — jusqu'au sceau ultime du Quatrième Hokage.",
+            "age": "Immémorial",
+            "height": "≈ 100 m",
+            "rank": "Bijū (9 queues)",
+            "classification": [
+              "Bijū"
+            ],
+            "natures": [
+              "Fire Release",
+              "Wind Release"
+            ],
+            "occupation": [
+              "Force de la nature"
+            ],
+            "affiliation": [
+              "—"
+            ],
+            "signature": [
+              "Bijūdama",
+              "Rugissement dévastateur"
+            ],
+            "arc": "Attaque de Konoha",
+            "stats": {
+              "nin": 5,
+              "tai": 5,
+              "gen": 3,
+              "int": 3.5,
+              "for": 5,
+              "vit": 4.5,
+              "end": 5,
+              "sce": 2
+            }
+          },
+          {
+            "label": "La Cage",
+            "url": "/images/akasha/naruto/kurama-cage.webp",
+            "caption": "La Cage · la haine derrière les barreaux",
+            "summary": "Depuis l'égout mental de Naruto, il distille son chakra empoisonné, attendant la faille — chaque manteau démoniaque est un pas vers la libération.",
+            "age": "Immémorial",
+            "height": "≈ 100 m",
+            "rank": "Bijū scellé",
+            "classification": [
+              "Bijū",
+              "Scellé"
+            ],
+            "natures": [
+              "Fire Release"
+            ],
+            "occupation": [
+              "Prisonnier de Naruto"
+            ],
+            "affiliation": [
+              "Naruto Uzumaki"
+            ],
+            "signature": [
+              "Chakra prêté par haine",
+              "Manteaux démoniaques"
+            ],
+            "arc": "Scellé — derrière les barreaux"
+          },
+          {
+            "label": "Chakra doré",
+            "url": "/images/akasha/naruto/kurama-doree.webp",
+            "caption": "Chakra doré · le premier Bijū libre",
+            "summary": "Sa confiance offerte, son chakra devient doré : l'avatar colossal combat AVEC Naruto, non plus à travers lui — le premier Bijū partenaire de l'histoire.",
+            "age": "Immémorial",
+            "height": "≈ 100 m",
+            "rank": "Partenaire",
+            "classification": [
+              "Bijū"
+            ],
+            "natures": [
+              "Fire Release",
+              "Wind Release",
+              "Yang Release"
+            ],
+            "occupation": [
+              "Partenaire de Naruto"
+            ],
+            "affiliation": [
+              "Naruto Uzumaki",
+              "Forces Shinobi Alliées"
+            ],
+            "signature": [
+              "Bijūdama en rafale",
+              "Avatar doré",
+              "Fusion parfaite"
+            ],
+            "arc": "Quatrième Guerre — la symbiose",
+            "stats": {
+              "nin": 5,
+              "tai": 5,
+              "gen": 3,
+              "int": 4.5,
+              "for": 5,
+              "vit": 5,
+              "end": 5,
+              "sce": 3
+            }
+          }
         ]
       },
       "rarity": "legendary"
@@ -4668,7 +5723,7 @@
             "slug": "momoshiki-otsutsuki"
           }
         ],
-        "favorites": 2046
+        "favorites": 2047
       },
       "rarity": "epic"
     },
@@ -19375,7 +20430,7 @@
             "Crispin Freeman"
           ]
         },
-        "favorites": 76
+        "favorites": 75
       },
       "rarity": "common"
     },
