@@ -11,11 +11,14 @@ export async function GET(request: Request) {
   const fallback = new URL('/learn/akasha', request.url);
   if (!supabase) return NextResponse.redirect(fallback);
 
+  // Scopé à un univers si ?u= fourni (bouton « Surprends-moi » du hub), sinon tout le registre.
+  const universe = new URL(request.url).searchParams.get('u')?.trim() || null;
   // 3 tirages sur 4 parmi les entrées imagées (fiches plus spectaculaires), sinon tout le registre.
   const imagedOnly = Math.random() < 0.75;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const base = (): any => {
     let q = supabase.from('akasha_entries').select('slug', { count: 'exact' });
+    if (universe) q = q.eq('universe', universe);
     if (imagedOnly) q = q.not('image_url', 'is', null);
     return q;
   };
