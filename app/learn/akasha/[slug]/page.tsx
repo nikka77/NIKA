@@ -12,6 +12,7 @@ import EntityRelations from '@/components/akasha/EntityRelations';
 import Markdown from '@/components/akasha/Markdown';
 import CharacterView from '@/components/akasha/CharacterView';
 import PlaceView from '@/components/akasha/PlaceView';
+import VisitTracker from '@/components/akasha/hub/VisitTracker';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -42,6 +43,7 @@ export default async function AkashaEntryPage({ params }: Props) {
   if (entry.type === 'character') {
     return (
       <main>
+        <VisitTracker slug={entry.slug} name={entry.name} universe={entry.universe} image={entry.image_url} />
         <div style={{ maxWidth: 470, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.2rem clamp(3rem,7vw,5rem)' }}>
           <Link
             href="/learn/akasha"
@@ -59,6 +61,7 @@ export default async function AkashaEntryPage({ params }: Props) {
   if (Array.isArray((entry.attributes as Record<string, unknown>).eras) && ((entry.attributes as Record<string, unknown>).eras as unknown[]).length > 0) {
     return (
       <main>
+        <VisitTracker slug={entry.slug} name={entry.name} universe={entry.universe} image={entry.image_url} />
         <div style={{ maxWidth: 470, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.2rem clamp(3rem,7vw,5rem)' }}>
           <Link
             href="/learn/akasha"
@@ -74,6 +77,7 @@ export default async function AkashaEntryPage({ params }: Props) {
 
   return (
     <main>
+      <VisitTracker slug={entry.slug} name={entry.name} universe={entry.universe} image={entry.image_url} />
       {/* ── BANDEAU ───────────────────────────────────────────── */}
       <div
         style={{

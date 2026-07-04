@@ -14,8 +14,13 @@ import Reveal from '@/components/akasha/hub/Reveal';
 import ShareButton from '@/components/akasha/hub/ShareButton';
 import HubInsights from '@/components/akasha/hub/HubInsights';
 import HubCollection from '@/components/akasha/hub/HubCollection';
+import ContinueBanner from '@/components/akasha/hub/ContinueBanner';
 
 type Props = { params: Promise<{ slug: string }> };
+
+// ISR : le hub ne dépend que de la base (counts, stars, insights) qui ne bouge qu'au reseed.
+// On rend statiquement chaque hub et on revalide toutes les heures → 0 requête Supabase par visite.
+export const revalidate = 3600;
 
 export function generateStaticParams(): { slug: string }[] {
   return UNIVERSE_TAXONOMY.map((u) => ({ slug: u.slug }));
@@ -62,6 +67,15 @@ export default async function UniverseHubPage({ params }: Props) {
     universeInsights(taxo.name),
     listEvolutive(taxo.name, 8),
   ]);
+
+  // Garde-fou : un univers sans aucune donnée exploitable n'est pas une page indexable.
+  if (total === 0 && stars.length === 0 && piliers.length === 0) notFound();
+
+  // Personnage du jour propre au hub (pick déterministe seed = date + univers).
+  const daySeed = new Date().toISOString().slice(0, 10) + taxo.slug;
+  let dh = 0;
+  for (const ch of daySeed) dh = (dh * 31 + ch.charCodeAt(0)) >>> 0;
+  const dailyStar = stars.length ? stars[dh % stars.length] : null;
 
   // Axes affichables : valeurs curées avec data d'abord, puis les valeurs « découvertes » (hors config) par volume.
   const axes = taxo.axes
@@ -139,6 +153,26 @@ export default async function UniverseHubPage({ params }: Props) {
       </div>
 
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2rem) 1.4rem clamp(3rem,7vw,5rem)', display: 'flex', flexDirection: 'column', gap: '2.1rem' }}>
+        {/* ── REPRISE + PERSO DU JOUR ────────────────────────── */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: '-0.6rem' }}>
+          <ContinueBanner universe={taxo.name} color={m.color} />
+          {dailyStar && (
+            <Link href={`/learn/akasha/${dailyStar.slug}`} className="dom-card" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 13, padding: '9px 13px' }}>
+              <div style={{ width: 44, height: 44, borderRadius: 9, overflow: 'hidden', flexShrink: 0, background: 'var(--bg3)' }}>
+                {dailyStar.image_url && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={dailyStar.image_url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />
+                )}
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: m.color }}>★ Personnage du jour</div>
+                <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 17, color: 'var(--td)', lineHeight: 1.1 }}>{dailyStar.name}</div>
+              </div>
+              <span aria-hidden style={{ color: m.color, fontSize: 18, paddingRight: 4 }}>→</span>
+            </Link>
+          )}
+        </div>
+
         {/* ── COLLECTION / TÊTES D'AFFICHE (Pokédex + progression) ── */}
         {stars.length > 0 && (
           <Reveal as="div">
