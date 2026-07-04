@@ -13,6 +13,7 @@ import HubHalo from '@/components/akasha/hub/HubHalo';
 import Reveal from '@/components/akasha/hub/Reveal';
 import ShareButton from '@/components/akasha/hub/ShareButton';
 import HubInsights from '@/components/akasha/hub/HubInsights';
+import HubCollection from '@/components/akasha/hub/HubCollection';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -138,29 +139,10 @@ export default async function UniverseHubPage({ params }: Props) {
       </div>
 
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2rem) 1.4rem clamp(3rem,7vw,5rem)', display: 'flex', flexDirection: 'column', gap: '2.1rem' }}>
-        {/* ── TÊTES D'AFFICHE ────────────────────────────────── */}
+        {/* ── COLLECTION / TÊTES D'AFFICHE (Pokédex + progression) ── */}
         {stars.length > 0 && (
-          <Reveal>
-            <div style={sectionTitle}>
-              <span>★ Têtes d’affiche</span>
-              <span style={{ color: 'var(--td3)', letterSpacing: '0.03em' }}>{stars.length} légendes</span>
-            </div>
-            <div className="hero-domabar ak-star-rail" style={{ display: 'flex', gap: 11, overflowX: 'auto', paddingBottom: 8 }}>
-              {stars.map((s, i) => (
-                <Link key={s.slug} href={`/learn/akasha/${s.slug}`} className="ak-tab" style={{ flexShrink: 0, width: 104, textDecoration: 'none', textAlign: 'center' }}>
-                  <div className="ak-star-bob" style={{ width: 104, height: 118, borderRadius: 13, overflow: 'hidden', border: `2px solid ${s.rarity === 'legendary' ? '#D4A017' : s.rarity === 'epic' ? '#7B5CF0' : 'var(--bd2)'}`, background: 'var(--bg2)', position: 'relative', animationDelay: `${(i % 6) * 0.22}s` }}>
-                    {s.image_url && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={s.image_url} alt="" loading={i < 3 ? 'eager' : 'lazy'} fetchPriority={i === 0 ? 'high' : 'auto'} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />
-                    )}
-                    {s.rarity === 'legendary' && (
-                      <span style={{ position: 'absolute', top: 5, right: 5, fontSize: 11 }} aria-hidden>👑</span>
-                    )}
-                  </div>
-                  <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: 'var(--td)', lineHeight: 1.2, marginTop: 6 }}>{s.name}</div>
-                </Link>
-              ))}
-            </div>
+          <Reveal as="div">
+            <HubCollection stars={stars} piliers={piliers} universe={taxo.name} color={m.color} ranks={vis?.ranks ?? ['Novice', 'Initié', 'Adepte', 'Expert', 'Maître', 'Légende']} />
           </Reveal>
         )}
 

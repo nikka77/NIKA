@@ -19,18 +19,24 @@ function rollRarity(): string {
   return 'common';
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   const supabase = await createClient();
   if (!supabase) return NextResponse.json({ cards: [] });
 
+  // Scopé à un univers si ?u= fourni (booster ouvert depuis un hub) → ne tire que ses cartes.
+  const universe = new URL(request.url).searchParams.get('u')?.trim() || null;
+
   const pick = async (rarity: string): Promise<Card | null> => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const base = (): any =>
-      supabase
+    const base = (): any => {
+      let q = supabase
         .from('akasha_entries')
         .select(COLS, { count: 'exact' })
         .eq('rarity', rarity)
         .not('image_url', 'is', null);
+      if (universe) q = q.eq('universe', universe);
+      return q;
+    };
     const { count } = await base().range(0, 0);
     if (!count) return null;
     const idx = Math.floor(Math.random() * count);
