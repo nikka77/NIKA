@@ -10,6 +10,7 @@ import type {
   ResolvedRelation,
 } from './types';
 import { FAMILY_FIELD } from './types';
+import { ALLOWED_FILTER_ATTRS } from './universe-taxonomy';
 
 const PAGE_SIZE = 24;
 const CARD_COLS = 'id, slug, type, name, is_fiction, universe, summary, image_url, rarity, category:attributes->>category';
@@ -19,6 +20,9 @@ export interface ListEntriesParams {
   universe?: string;
   cat?: string;
   fam?: string;
+  /** Filtre générique par axe de taxonomie (?attr=village&val=Konohagakure) — clés whitelistes. */
+  attr?: string;
+  val?: string;
   search?: string;
   page?: number;
 }
@@ -39,7 +43,7 @@ const RARITY_BUCKETS: (string | null)[] = ['legendary', 'epic', 'rare', 'common'
  *  « buckets » de rareté (légendaire → commun), chaque bucket ordonné par nom. Une page ne
  *  chevauche au plus que 2 buckets → 5 counts + ≤2 requêtes data. */
 export async function listEntries(
-  { type, universe, cat, fam, search, page = 1 }: ListEntriesParams = {},
+  { type, universe, cat, fam, attr, val, search, page = 1 }: ListEntriesParams = {},
 ): Promise<ListEntriesResult> {
   const pageSize = PAGE_SIZE;
   const current = Math.max(1, Math.floor(page) || 1);
@@ -51,6 +55,7 @@ export async function listEntries(
   }
 
   const s = search ? search.replace(/[%,()]/g, ' ').trim() : '';
+  const axisAttr = attr && val && ALLOWED_FILTER_ATTRS.has(attr) ? attr : undefined;
   // Applique les filtres communs (type / univers / recherche + le bucket de rareté) à un builder frais.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const applyFilters = (q: any, rarity: string | null): any => {
@@ -59,6 +64,7 @@ export async function listEntries(
     if (cat) q = q.eq('attributes->>category', cat);
     const famField = cat ? FAMILY_FIELD[cat] : undefined;
     if (fam && famField) q = q.eq(`attributes->>${famField}`, fam);
+    if (axisAttr) q = q.eq(`attributes->>${axisAttr}`, val);
     if (s) q = q.or(`name.ilike.%${s}%,universe.ilike.%${s}%,summary.ilike.%${s}%`);
     q = rarity === null ? q.is('rarity', null) : q.eq('rarity', rarity);
     return q;
@@ -212,6 +218,126 @@ export async function listFamilyCounts(
   return Array.from(counts.entries())
     .map(([fam, count]) => ({ fam, count }))
     .sort((a, b) => b.count - a.count || a.fam.localeCompare(b.fam, 'fr'));
+}
+
+/** Compte total d'entrées d'un univers (HEAD, sans données). */
+export async function countUniverse(universe: string): Promise<number> {
+  const supabase = await createClient();
+  if (!supabase) return 0;
+  const { count } = await supabase
+    .from('akasha_entries')
+    .select('id', { count: 'exact', head: true })
+    .eq('universe', universe);
+  return count ?? 0;
+}
+
+/** STARS d'un univers : personnages les plus rares (légendaire → épique → rare), avec image.
+ *  Alimente le rail « Têtes d'affiche » du hub d'univers. */
+export async function listStars(universe: string, limit = 12): Promise<AkashaEntryCard[]> {
+  const supabase = await createClient();
+  if (!supabase) return [];
+  const rows: AkashaEntryCard[] = [];
+  for (const rarity of ['legendary', 'epic', 'rare']) {
+    if (rows.length >= limit) break;
+    const { data } = await supabase
+      .from('akasha_entries')
+      .select(CARD_COLS)
+      .eq('universe', universe)
+      .eq('type', 'character')
+      .eq('rarity', rarity)
+      .not('image_url', 'is', null)
+      .order('name', { ascending: true })
+      .range(0, limit - rows.length - 1);
+    if (data) rows.push(...(data as AkashaEntryCard[]));
+  }
+  return rows.slice(0, limit);
+}
+
+/** Fiches par slugs (piliers du hub d'univers) — l'ordre d'entrée est préservé. */
+export async function getEntriesBySlugs(slugs: string[]): Promise<AkashaEntryCard[]> {
+  if (!slugs.length) return [];
+  const supabase = await createClient();
+  if (!supabase) return [];
+  const { data } = await supabase.from('akasha_entries').select(CARD_COLS).in('slug', slugs);
+  const by = new Map(((data as AkashaEntryCard[] | null) ?? []).map((e) => [e.slug, e]));
+  return slugs.map((s) => by.get(s)).filter(Boolean) as AkashaEntryCard[];
+}
+
+/** Compte d'entrées par VALEUR pour un axe de taxonomie (attributes.<attr>) dans un univers.
+ *  Scan paginé (1 requête / 1 000 lignes de l'univers) → chips du hub avec compteurs. */
+export async function listAxisCounts(universe: string, attrs: string[]): Promise<Map<string, Map<string, number>>> {
+  const out = new Map<string, Map<string, number>>(attrs.map((a) => [a, new Map()]));
+  if (!attrs.length) return out;
+  const supabase = await createClient();
+  if (!supabase) return out;
+  const sel = attrs.map((a, i) => `a${i}:attributes->>${a}`).join(', ');
+  const PAGE = 1000;
+  for (let from = 0; ; from += PAGE) {
+    const { data } = await supabase
+      .from('akasha_entries')
+      .select(sel)
+      .eq('universe', universe)
+      .range(from, from + PAGE - 1);
+    const rows = (data as Record<string, string | null>[] | null) ?? [];
+    for (const row of rows) {
+      attrs.forEach((a, i) => {
+        const v = row[`a${i}`]?.trim();
+        if (v) {
+          const m = out.get(a)!;
+          m.set(v, (m.get(v) ?? 0) + 1);
+        }
+      });
+    }
+    if (rows.length < PAGE) break;
+  }
+  return out;
+}
+
+/** « Voir aussi » : entrées de la même collection (sinon même type) du même univers,
+ *  hors l'entrée courante, les plus rares d'abord. */
+export async function listSimilar(
+  { universe, cat, type, excludeSlug, limit = 6 }: { universe: string | null; cat?: string | null; type: AkashaType; excludeSlug: string; limit?: number },
+): Promise<AkashaEntryCard[]> {
+  const supabase = await createClient();
+  if (!supabase) return [];
+  const rows: AkashaEntryCard[] = [];
+  for (const rarity of ['legendary', 'epic', 'rare', 'common']) {
+    if (rows.length >= limit) break;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let q: any = supabase
+      .from('akasha_entries')
+      .select(CARD_COLS)
+      .neq('slug', excludeSlug)
+      .eq('rarity', rarity)
+      .order('name', { ascending: true })
+      .range(0, limit - rows.length - 1);
+    if (universe) q = q.eq('universe', universe);
+    if (cat) q = q.eq('attributes->>category', cat);
+    else q = q.eq('type', type);
+    const { data } = await q;
+    if (data) rows.push(...(data as AkashaEntryCard[]));
+  }
+  return rows.slice(0, limit);
+}
+
+/** Carte du jour : pick déterministe (seed = date UTC) parmi les rares+ imagés. */
+export async function getDailyCard(dateSeed: string): Promise<AkashaEntryCard | null> {
+  const supabase = await createClient();
+  if (!supabase) return null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const base = (): any =>
+    supabase
+      .from('akasha_entries')
+      .select(CARD_COLS, { count: 'exact' })
+      .in('rarity', ['legendary', 'epic'])
+      .not('image_url', 'is', null);
+  const { count } = await base().range(0, 0);
+  if (!count) return null;
+  let h = 0;
+  for (const ch of dateSeed) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  const idx = h % count;
+  const { data } = await base().order('slug', { ascending: true }).range(idx, idx);
+  return (data as AkashaEntryCard[] | null)?.[0] ?? null;
 }
 
 /** Compte d'entrées par univers (pour le hub du registre).

@@ -2,8 +2,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getEntryBySlug } from '@/lib/akasha/queries';
-import { TYPE_META, RARITY_META } from '@/lib/akasha/types';
+import { getEntryBySlug, listSimilar } from '@/lib/akasha/queries';
+import { TYPE_META, RARITY_META, type AkashaType } from '@/lib/akasha/types';
+import { universeHubSlug } from '@/lib/akasha/universe-taxonomy';
+import AkashaGrid from '@/components/akasha/AkashaGrid';
 import EntityBadge from '@/components/akasha/EntityBadge';
 import EntityAttributes from '@/components/akasha/EntityAttributes';
 import EntityRelations from '@/components/akasha/EntityRelations';
@@ -32,6 +34,9 @@ export default async function AkashaEntryPage({ params }: Props) {
   if (!entry) notFound();
 
   const m = TYPE_META[entry.type];
+  const category = typeof (entry.attributes as Record<string, unknown>).category === 'string'
+    ? ((entry.attributes as Record<string, unknown>).category as string)
+    : null;
 
   // Personnages → fiche « carte à jouer » réactive (carte + dossier évoluent par forme).
   if (entry.type === 'character') {
@@ -175,7 +180,13 @@ export default async function AkashaEntryPage({ params }: Props) {
 
               {entry.universe && (
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)', marginTop: 8, display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
-                  <span>{entry.universe}</span>
+                  {universeHubSlug(entry.universe) ? (
+                    <Link href={`/learn/akasha/u/${universeHubSlug(entry.universe)}`} style={{ color: 'var(--td2)', textDecoration: 'none', fontWeight: 700 }}>
+                      {entry.universe} ↗
+                    </Link>
+                  ) : (
+                    <span>{entry.universe}</span>
+                  )}
                   {typeof (entry.attributes as Record<string, unknown>).category === 'string' && (
                     <Link
                       href={`/learn/akasha?universe=${encodeURIComponent(entry.universe)}&cat=${encodeURIComponent((entry.attributes as Record<string, unknown>).category as string)}`}
@@ -218,7 +229,21 @@ export default async function AkashaEntryPage({ params }: Props) {
         <EntityAttributes type={entry.type} attributes={entry.attributes} />
 
         <EntityRelations out={entry.relationsOut} incoming={entry.relationsIn} />
+
+        <SimilarSection universe={entry.universe} cat={category} type={entry.type} excludeSlug={entry.slug} />
       </div>
     </main>
+  );
+}
+
+/** « Voir aussi » — 6 entrées de la même collection (sinon du même type) : plus de cul-de-sac. */
+async function SimilarSection({ universe, cat, type, excludeSlug }: { universe: string | null; cat: string | null; type: AkashaType; excludeSlug: string }) {
+  const similar = await listSimilar({ universe, cat, type, excludeSlug });
+  if (!similar.length) return null;
+  return (
+    <section>
+      <h2 className="akasha-section-title">Voir aussi{cat ? ` — ${cat}` : ''}</h2>
+      <AkashaGrid entries={similar} />
+    </section>
   );
 }

@@ -55,6 +55,7 @@ async function main() {
   const idBySlug = new Map((rows ?? []).map((r) => [r.slug as string, r.id as string]));
   console.log(`✓ ${rows?.length ?? 0} entrées upsertées`);
 
+  const seenRel = new Set<string>();
   const relRows = relations
     .map((r) => {
       const from_entry = idBySlug.get(r.from);
@@ -63,6 +64,11 @@ async function main() {
         console.warn(`  ⚠ relation ignorée (slug introuvable): ${r.from} → ${r.to}`);
         return null;
       }
+      // Dédoublonnage (from|rel|to) : un doublon dans le même chunk fait échouer l'upsert
+      // Postgres (« ON CONFLICT DO UPDATE command cannot affect row a second time »).
+      const k = `${from_entry}|${r.relation}|${to_entry}`;
+      if (seenRel.has(k) || from_entry === to_entry) return null;
+      seenRel.add(k);
       return { from_entry, to_entry, relation: r.relation };
     })
     .filter((x): x is { from_entry: string; to_entry: string; relation: string } => x !== null);

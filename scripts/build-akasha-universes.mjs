@@ -219,6 +219,8 @@ const UNIVERSES = [
   {
     // Chaque partie de JoJo est un anime MAL distinct → casts additionnels pour les JoJo 3→6.
     label: "JoJo's Bizarre Adventure", malId: 14719, extraMalIds: [20899, 31933, 37991, 48661],
+    // L'axe CANON de JoJo : la partie. Déduite de la saison animée où le perso apparaît en premier.
+    partByMal: { 14719: 'Partie 1-2', 20899: 'Partie 3', 31933: 'Partie 4', 37991: 'Partie 5', 48661: 'Partie 6' },
     chars: [
       { slug: 'jonathan-joestar', name: 'Jonathan Joestar', mal: 'Joestar, Jonathan', rarity: 'epic', role: 'Gentleman · 1ʳᵉ génération', summary: "Le premier JoJo : gentleman victorien au grand cœur, premier maître de l'Onde face à Dio." },
       { slug: 'joseph-joestar', name: 'Joseph Joestar', mal: 'Joestar, Joseph', rarity: 'legendary', role: 'Stratège espiègle · 2ᵉ génération', summary: "Le JoJo le plus roublard : provocateur génial dont la botte secrète est d'annoncer ta prochaine réplique." },
@@ -523,19 +525,25 @@ async function main() {
   for (const u of UNIVERSES) {
     console.log(`→ ${u.label} (Jikan ${u.malId})…`);
     const cast = await jikanCast(u.malId);
+    // Source de PREMIÈRE apparition (name → malId) : porte l'axe « partie » JoJo (partByMal).
+    const srcByName = new Map();
+    for (const k of cast.keys()) srcByName.set(k, u.malId);
     await sleep(1100); // rate limit Jikan
     for (const extra of u.extraMalIds ?? []) {
       const more = await jikanCast(extra);
-      for (const [k, v] of more) if (!cast.has(k)) cast.set(k, v);
+      for (const [k, v] of more) if (!cast.has(k)) { cast.set(k, v); srcByName.set(k, extra); }
       await sleep(1100);
     }
     console.log(`  ${cast.size} portraits MAL`);
+    const partOf = (malName) => (u.partByMal ? u.partByMal[srcByName.get(malName)] : undefined);
 
     for (const c of u.chars) {
       const cv = cast.get(c.mal);
       let img = cv?.img ?? fuzzyGet(cast, c.mal) ?? null;
       const attributes = { role: c.role };
       if (c.aff) attributes.affiliation = c.aff;
+      const pt = partOf(c.mal);
+      if (pt) attributes.partie = pt;
       if (cv?.va) attributes.voiceActors = cv.va; // doubleurs JP/VF-EN pour les curés aussi
       if (cv?.fav) attributes.favorites = cv.fav;
       // Champs de profondeur optionnels (le dossier perso les lit génériquement : onglet Histoire, bannière credo…)
@@ -580,7 +588,7 @@ async function main() {
       if (seen.has(slug)) { slug = `${slug}-${slugify(u.label)}`; if (seen.has(slug)) continue; }
       const roleFr = role === 'Main' ? 'Personnage principal' : 'Personnage secondaire';
       // Rareté = palier de POPULARITÉ (favorites MAL) → tri du registre = tri par popularité.
-      add(entry(slug, 'character', name, u.label, `${roleFr} de ${u.label}.`, favTier(fav), purge({ role: roleFr, favorites: fav || undefined, voiceActors: va || undefined }), img));
+      add(entry(slug, 'character', name, u.label, `${roleFr} de ${u.label}.`, favTier(fav), purge({ role: roleFr, favorites: fav || undefined, voiceActors: va || undefined, partie: partOf(rawName) }), img));
       massU++;
     }
     console.log(`  + ${massU} persos (casting complet)`);
@@ -657,9 +665,17 @@ async function main() {
     ['whitesnake', 'Whitesnake', 'enrico-pucci', 'epic', "Le premier Stand de Pucci vole l'esprit en disques : Stand et souvenirs extraits comme des CD, rejouables dans n'importe quel corps."],
     ['sex-pistols', 'Sex Pistols', 'guido-mista', 'rare', "Six petits tireurs lunatiques (le n°4 n'existe pas) qui guident les balles de Mista — tant qu'ils sont nourris."],
   ];
+  // Partie d'origine de chaque Stand (l'axe canon JoJo, aussi porté par les persos via partByMal).
+  const STAND_PART = {
+    'star-platinum': 'Partie 3', 'the-world': 'Partie 3', 'hermit-purple': 'Partie 3', 'hierophant-green': 'Partie 3',
+    'silver-chariot': 'Partie 3', 'the-fool': 'Partie 3', 'magicians-red': 'Partie 3',
+    'crazy-diamond': 'Partie 4', 'the-hand': 'Partie 4', 'echoes': 'Partie 4', 'heavens-door': 'Partie 4', 'killer-queen': 'Partie 4',
+    'gold-experience': 'Partie 5', 'gold-experience-requiem': 'Partie 5', 'sticky-fingers': 'Partie 5', 'king-crimson': 'Partie 5', 'sex-pistols': 'Partie 5',
+    'stone-free': 'Partie 6', 'made-in-heaven': 'Partie 6', 'whitesnake': 'Partie 6',
+  };
   let nst = 0;
   for (const [slug, name, owner, rarity, summary] of JOJO_STANDS) {
-    if (addEnt(slug, 'power', name, "JoJo's Bizarre Adventure", summary, rarity, { element: 'Stand', category: 'Stand' })) {
+    if (addEnt(slug, 'power', name, "JoJo's Bizarre Adventure", summary, rarity, purge({ element: 'Stand', category: 'Stand', partie: STAND_PART[slug] }))) {
       relations.push({ from: owner, to: slug, relation: 'maitrise' });
       nst++;
     }
@@ -704,6 +720,271 @@ async function main() {
     opEnr++;
   }
   console.log(`  ✓ ${opEnr} persos One Piece enrichis, +${opRelC} liens équipage, +${opRelF} liens fruit`);
+
+  // ── AXES TAXONOMIQUES par univers (organisation canon → hubs /learn/akasha/u/*) ──────────
+  // Matcher par NOM (les slugs de masse varient) : motif multi-mots = includes ; mot seul =
+  // égalité de TOKEN exact (« hisoka » ↔ « Hisoka Morow » ✓, mais « rem » n'attrape pas « Remi »).
+  const nameIs = (e, pat) => {
+    const n = e.name.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    if (pat.includes(' ')) return n.includes(pat);
+    return n === pat || n.split(/[\s.,'’-]+/).includes(pat);
+  };
+
+  // 1) One Piece — FACTION (heuristique crew / occupation / prime)
+  let nFac = 0;
+  for (const e of entries) {
+    if (e.universe !== 'One Piece' || e.type !== 'character') continue;
+    const a = e.attributes;
+    if (a.faction) continue;
+    const crew = String(a.crew || '');
+    const occ = String(a.occupation || '');
+    let f = null;
+    if (/marine/i.test(crew) || /amiral|colonel|sergent|capitaine de la marine|instructeur|soldat/i.test(occ)) f = 'Marine';
+    else if (/cipher pol|cp\s?-?[09]/i.test(crew + ' ' + occ)) f = 'Gouvernement Mondial';
+    else if (/revolutionnaire|révolutionnaire/i.test(crew + ' ' + occ)) f = 'Révolutionnaire';
+    else if (/équipage|equipage|pirate|armarda|flotte|barbe|bonney|firetank|kid/i.test(crew) || /pirate|corsaire|capitaine|second du navire/i.test(occ) || a.bounty || a.total_prime) f = 'Pirate';
+    else if (crew) f = 'Civil';
+    if (f) { a.faction = f; nFac++; }
+  }
+  console.log(`  ✓ ${nFac} factions One Piece posées`);
+
+  // 2) Death Note — CAMP (duel Kira vs L : curation par nom)
+  const DN_CAMPS = [
+    ['light yagami', 'Kira'], ['misa amane', 'Kira'], ['teru mikami', 'Kira'], ['kiyomi takada', 'Kira'],
+    ['kyosuke higuchi', 'Yotsuba'], ['reiji namikawa', 'Yotsuba'], ['shingo mido', 'Yotsuba'], ['suguru shimura', 'Yotsuba'],
+    ['eiichi takahashi', 'Yotsuba'], ['masahiko kida', 'Yotsuba'], ['arayoshi hatori', 'Yotsuba'], ['takeshi ooi', 'Yotsuba'],
+    ['l lawliet', 'Cellule d’enquête'], ['soichiro yagami', 'Cellule d’enquête'], ['touta matsuda', 'Cellule d’enquête'],
+    ['shuichi aizawa', 'Cellule d’enquête'], ['kanzo mogi', 'Cellule d’enquête'], ['hideki ide', 'Cellule d’enquête'],
+    ['hirokazu ukita', 'Cellule d’enquête'], ['watari', 'Cellule d’enquête'], ['quillsh wammy', 'Cellule d’enquête'],
+    ['near', 'SPK'], ['nate river', 'SPK'], ['anthony rester', 'SPK'], ['stephen gevanni', 'SPK'], ['halle lidner', 'SPK'],
+    ['mello', 'Wammy’s House'], ['mihael keehl', 'Wammy’s House'], ['mail jeevas', 'Wammy’s House'], ['matt', 'Wammy’s House'],
+    ['ryuk', 'Shinigami'], ['rem', 'Shinigami'], ['sidoh', 'Shinigami'], ['gelus', 'Shinigami'], ['shinigami king', 'Shinigami'],
+  ];
+  let nCamp = 0;
+  for (const e of entries) {
+    if (e.universe !== 'Death Note' || e.type !== 'character' || e.attributes.camp) continue;
+    const hit = DN_CAMPS.find(([pat]) => nameIs(e, pat));
+    if (hit) { e.attributes.camp = hit[1]; nCamp++; }
+  }
+  console.log(`  ✓ ${nCamp} camps Death Note posés`);
+
+  // 3) Initial D — ÉCURIES + COLS des pilotes, cols en LIEUX, duo pilote↔voiture
+  const ID_PILOTS = [
+    ['takumi fujiwara', { aff: 'Project D', col: 'Mont Akina', car: 'ae86-trueno' }],
+    ['bunta fujiwara', { col: 'Mont Akina' }],
+    ['keisuke takahashi', { aff: 'Project D', col: 'Mont Akagi', car: 'rx7-fd' }],
+    ['ryosuke takahashi', { aff: 'Project D', col: 'Mont Akagi' }],
+    ['takeshi nakazato', { aff: 'Myogi NightKids', col: 'Mont Myōgi', car: 'r32-gtr' }],
+    ['shingo shoji', { aff: 'Myogi NightKids', col: 'Mont Myōgi' }],
+    ['koichiro iketani', { aff: 'Akina SpeedStars', col: 'Mont Akina' }],
+    ['kenji', { aff: 'Akina SpeedStars', col: 'Mont Akina' }],
+    ['itsuki takeuchi', { aff: 'Akina SpeedStars', col: 'Mont Akina' }],
+    ['mako sato', { aff: 'Impact Blue', col: 'Col d’Usui', car: 'sileighty' }],
+    ['sayuki', { aff: 'Impact Blue', col: 'Col d’Usui' }],
+    ['kyoichi sudo', { aff: 'Team Emperor', col: 'Irohazaka', car: 'lancer-evo3' }],
+    ['seiji iwaki', { aff: 'Team Emperor', col: 'Irohazaka' }],
+  ];
+  let nPil = 0;
+  for (const e of entries) {
+    if (e.universe !== 'Initial D' || e.type !== 'character') continue;
+    const hit = ID_PILOTS.find(([pat]) => nameIs(e, pat));
+    if (!hit) continue;
+    const [, cfg] = hit;
+    if (cfg.aff && !e.attributes.affiliation) e.attributes.affiliation = cfg.aff;
+    if (cfg.col) e.attributes.col = cfg.col;
+    if (cfg.car) relations.push({ from: e.slug, to: cfg.car, relation: 'possede' });
+    nPil++;
+  }
+  const ID_COLS = [
+    ['mont-akina', 'Mont Akina', 'Le col du duel : le downhill le plus célèbre du Kantō, territoire de la Hachi-Roku du tofu Fujiwara.', 'epic', 'Préfecture de Gunma'],
+    ['mont-akagi', 'Mont Akagi', 'Le fief des Akagi RedSuns : la montagne des frères Takahashi et de la FC/FD.', 'rare', 'Préfecture de Gunma'],
+    ['mont-myogi', 'Mont Myōgi', 'Le territoire des Myogi NightKids : lignes rapides et gardes-corps qui pardonnent peu.', 'rare', 'Préfecture de Gunma'],
+    ['col-usui', 'Col d’Usui', 'Le circuit des Impact Blue : virages en C historiques, royaume de la Sileighty de Mako & Sayuki.', 'rare', 'Frontière Gunma / Nagano'],
+    ['irohazaka', 'Irohazaka', 'Les 48 virages en épingle de Nikkō : le terrain de chasse du Team Emperor — et du saut de l’AE86.', 'epic', 'Préfecture de Tochigi'],
+  ];
+  let nCols = 0;
+  for (const [slug, name, summary, rarity, region] of ID_COLS) {
+    if (addEnt(slug, 'place', name, 'Initial D', summary, rarity, { region, col: name, category: 'Lieu' })) nCols++;
+  }
+  console.log(`  ✓ ${nPil} pilotes Initial D (écurie/col) + ${nCols} cols en lieux`);
+
+  // 4) Bleach — RACES SPIRITUELLES + DIVISIONS du Gotei 13 (curation par nom)
+  const BLEACH_TAXO = [
+    // [motif nom, race, division]
+    ['ichigo kurosaki', 'Shinigami', null], ['rukia kuchiki', 'Shinigami', '13ᵉ division'],
+    ['renji abarai', 'Shinigami', '6ᵉ division'], ['byakuya kuchiki', 'Shinigami', '6ᵉ division'],
+    ['genryuusai', 'Shinigami', '1ʳᵉ division'], ['yamamoto', 'Shinigami', '1ʳᵉ division'],
+    ['chojiro sasakibe', 'Shinigami', '1ʳᵉ division'],
+    ['suì-fēng', 'Shinigami', '2ᵉ division'], ['soi fon', 'Shinigami', '2ᵉ division'], ['soifon', 'Shinigami', '2ᵉ division'],
+    ['marechiyo', 'Shinigami', '2ᵉ division'], ['yoruichi', 'Shinigami', '2ᵉ division'],
+    ['gin ichimaru', 'Shinigami', '3ᵉ division'], ['izuru kira', 'Shinigami', '3ᵉ division'],
+    ['retsu unohana', 'Shinigami', '4ᵉ division'], ['isane kotetsu', 'Shinigami', '4ᵉ division'], ['hanatarou', 'Shinigami', '4ᵉ division'], ['hanataro', 'Shinigami', '4ᵉ division'],
+    ['sousuke aizen', 'Shinigami', '5ᵉ division'], ['sosuke aizen', 'Shinigami', '5ᵉ division'], ['momo hinamori', 'Shinigami', '5ᵉ division'], ['shinji hirako', 'Visored', '5ᵉ division'],
+    ['sajin komamura', 'Shinigami', '7ᵉ division'], ['tetsuzaemon', 'Shinigami', '7ᵉ division'],
+    ['shunsui', 'Shinigami', '8ᵉ division'], ['nanao ise', 'Shinigami', '8ᵉ division'],
+    ['kaname tousen', 'Shinigami', '9ᵉ division'], ['kaname tosen', 'Shinigami', '9ᵉ division'], ['shuuhei hisagi', 'Shinigami', '9ᵉ division'], ['shuhei hisagi', 'Shinigami', '9ᵉ division'], ['kensei muguruma', 'Visored', '9ᵉ division'],
+    ['hitsugaya', 'Shinigami', '10ᵉ division'], ['rangiku matsumoto', 'Shinigami', '10ᵉ division'],
+    ['kenpachi zaraki', 'Shinigami', '11ᵉ division'], ['yachiru', 'Shinigami', '11ᵉ division'], ['ikkaku madarame', 'Shinigami', '11ᵉ division'], ['yumichika', 'Shinigami', '11ᵉ division'],
+    ['mayuri kurotsuchi', 'Shinigami', '12ᵉ division'], ['nemu kurotsuchi', 'Shinigami', '12ᵉ division'], ['kisuke urahara', 'Shinigami', '12ᵉ division'],
+    ['juushirou ukitake', 'Shinigami', '13ᵉ division'], ['jushiro ukitake', 'Shinigami', '13ᵉ division'], ['kaien shiba', 'Shinigami', '13ᵉ division'],
+    ['isshin', 'Shinigami', '10ᵉ division'],
+    // Hollows / Arrancars / Espada
+    ['ulquiorra', 'Arrancar', null], ['grimmjow', 'Arrancar', null], ['coyote starrk', 'Arrancar', null],
+    ['tier harribel', 'Arrancar', null], ['baraggan', 'Arrancar', null], ['nnoitra', 'Arrancar', null],
+    ['szayelaporro', 'Arrancar', null], ['zommari', 'Arrancar', null], ['aaroniero', 'Arrancar', null],
+    ['yammy', 'Arrancar', null], ['nelliel', 'Arrancar', null], ['nel tu', 'Arrancar', null],
+    // Quincy
+    ['uryuu ishida', 'Quincy', null], ['uryu ishida', 'Quincy', null], ['ryuuken', 'Quincy', null],
+    ['yhwach', 'Quincy', null], ['haschwalth', 'Quincy', null], ['bazz-b', 'Quincy', null],
+    // Humains & Fullbringers
+    ['orihime inoue', 'Humain', null], ['tatsuki', 'Humain', null], ['keigo', 'Humain', null], ['mizuiro', 'Humain', null],
+    ['yasutora sado', 'Fullbringer', null], ['kuugo ginjou', 'Fullbringer', null], ['kugo ginjo', 'Fullbringer', null], ['riruka', 'Fullbringer', null],
+    // Visored hors divisions
+    ['hiyori', 'Visored', null], ['love aikawa', 'Visored', null], ['lisa yadomaru', 'Visored', null], ['mashiro', 'Visored', null], ['hachigen', 'Visored', null], ['rojuro', 'Visored', null],
+  ];
+  let nBl = 0;
+  for (const e of entries) {
+    if (e.universe !== 'Bleach' || e.type !== 'character') continue;
+    const hit = BLEACH_TAXO.find(([pat]) => nameIs(e, pat));
+    if (!hit) continue;
+    const [, race, division] = hit;
+    if (race && !e.attributes.race) e.attributes.race = race;
+    if (division && !e.attributes.division) e.attributes.division = division;
+    nBl++;
+  }
+  console.log(`  ✓ ${nBl} persos Bleach (race/division)`);
+
+  // 5) Bleach — ZANPAKUTŌ en artefacts, liés à leur porteur (résolution par nom → slug réel)
+  const ZANPAKUTO = [
+    ['zangetsu', 'Zangetsu', 'ichigo kurosaki', 'legendary', 'La « lune tranchante » d’Ichigo : un couperet démesuré, un Getsuga Tenshō, et un Bankai qui condense la puissance en vitesse pure.'],
+    ['senbonzakura', 'Senbonzakura', 'byakuya kuchiki', 'epic', 'Le zanpakutō de Byakuya se dissout en mille pétales-lames — le Bankai en fait une tempête rose mortelle.'],
+    ['hyorinmaru', 'Hyōrinmaru', 'hitsugaya', 'epic', 'Le dragon de glace de Hitsugaya : le zanpakutō de glace le plus puissant de la Soul Society, capable de geler le ciel.'],
+    ['zabimaru', 'Zabimaru', 'renji abarai', 'epic', 'Le serpent-scie de Renji : une lame segmentée qui fouette à distance — et un Bankai squelette de serpent géant.'],
+    ['sode-no-shirayuki', 'Sode no Shirayuki', 'rukia kuchiki', 'epic', 'La « manche de neige blanche » de Rukia : la plus belle lame de la Soul Society, blanche des ondulations à la garde, maîtresse des danses de glace.'],
+    ['kyoka-suigetsu', 'Kyōka Suigetsu', 'aizen', 'legendary', 'L’« hypnose parfaite » d’Aizen : quiconque a vu sa libération une seule fois voit ses cinq sens réécrits à volonté.'],
+    ['ryujin-jakka', 'Ryūjin Jakka', 'yamamoto', 'legendary', 'Le zanpakutō de feu du capitaine-commandant : le plus ancien et le plus destructeur — sa libération réduit le monde en cendres.'],
+    ['shinso', 'Shinsō', 'gin ichimaru', 'epic', 'La « lance divine » de Gin : une lame courte qui s’allonge à la vitesse de la lumière — cent fois sa taille en un clin d’œil.'],
+    ['nozarashi', 'Nozarashi', 'kenpachi zaraki', 'epic', 'La lame « délaissée » de Kenpachi : un couperet de brute qui tranche même les météores, longtemps sans nom faute d’être écoutée.'],
+    ['benihime', 'Benihime', 'kisuke urahara', 'epic', 'La « princesse écarlate » d’Urahara : boucliers de sang, lames d’énergie et pièges — aussi retorse que son porteur.'],
+    ['haineko', 'Haineko', 'rangiku matsumoto', 'rare', 'Le « chat de cendres » de Rangiku : la lame se disperse en cendres coupantes qui suivent la garde.'],
+    ['kazeshini', 'Kazeshini', 'hisagi', 'rare', 'La « mort du vent » de Hisagi : deux faux reliées par une chaîne — une arme qu’il redoute lui-même, faite pour moissonner la vie.'],
+    ['katen-kyokotsu', 'Katen Kyōkotsu', 'shunsui', 'epic', 'La paire de lames de Kyōraku : elle rend RÉELS les jeux d’enfants — ombres, duels de couleurs… et le perdant meurt.'],
+    ['sogyo-no-kotowari', 'Sōgyo no Kotowari', 'ukitake', 'epic', 'Les lames jumelles d’Ukitake : elles absorbent l’attaque ennemie… et la renvoient amplifiée.'],
+    ['suzumebachi', 'Suzumebachi', 'suì-fēng', 'rare', 'Le « frelon » de Soi Fon : deux piqûres au même point — Nigeki Kessatsu, la mort en deux coups.'],
+    ['wabisuke', 'Wabisuke', 'izuru kira', 'rare', 'Le « pénitent » de Kira : chaque parade DOUBLE le poids de l’arme adverse, jusqu’à plier l’ennemi au sol — tête baissée pour l’exécution.'],
+  ];
+  let nzp = 0;
+  for (const [slug, name, ownerPat, rarity, summary] of ZANPAKUTO) {
+    const owner = entries.find((e) => e.universe === 'Bleach' && e.type === 'character' && nameIs(e, ownerPat));
+    if (addEnt(slug, 'artifact', name, 'Bleach', summary, rarity, purge({ material: 'Zanpakutō', origin: owner ? `Lame de ${owner.name}` : 'Lame d’âme', category: 'Arme & outil' }))) {
+      if (owner) relations.push({ from: owner.slug, to: slug, relation: 'possede' });
+      nzp++;
+    }
+  }
+  console.log(`  ✓ ${nzp} zanpakutō (artefacts liés)`);
+
+  // 6) Hunter x Hunter — TYPES DE NEN (curation par nom, les ~25 sûrs du canon)
+  const HXH_NEN = [
+    ['gon freecss', 'Renforcement'], ['uvogin', 'Renforcement'], ['nobunaga', 'Renforcement'], ['phinks', 'Renforcement'],
+    ['isaac netero', 'Renforcement'], ['netero', 'Renforcement'], ['wing', 'Renforcement'], ['palm siberia', 'Renforcement'],
+    ['killua zoldyck', 'Transformation'], ['hisoka', 'Transformation'], ['machi', 'Transformation'], ['biscuit', 'Transformation'], ['feitan', 'Transformation'],
+    ['kurapika', 'Matérialisation'], ['kite', 'Matérialisation'], ['shizuku', 'Matérialisation'], ['kortopi', 'Matérialisation'], ['knov', 'Matérialisation'],
+    ['leorio', 'Émission'], ['franklin', 'Émission'], ['razor', 'Émission'], ['knuckle', 'Émission'],
+    ['illumi', 'Manipulation'], ['shalnark', 'Manipulation'], ['kalluto', 'Manipulation'], ['shoot', 'Manipulation'], ['morel', 'Manipulation'],
+    ['chrollo', 'Spécialisation'], ['neferpitou', 'Spécialisation'], ['pakunoda', 'Spécialisation'], ['neon', 'Spécialisation'],
+  ];
+  let nNen = 0;
+  for (const e of entries) {
+    if (e.universe !== 'Hunter x Hunter' || e.type !== 'character' || e.attributes.nen) continue;
+    const hit = HXH_NEN.find(([pat]) => nameIs(e, pat));
+    if (hit) { e.attributes.nen = hit[1]; nNen++; }
+  }
+  console.log(`  ✓ ${nNen} types de Nen posés`);
+
+  // 7) Dragon Ball — RACES étendues + SAGAS (curation) + lignées de transformations (relations)
+  const DB_RACES = [
+    [['goku', 'son goku'], 'Saiyan'], [['vegeta'], 'Saiyan'], [['gohan', 'son gohan'], 'Saiyan'], [['goten', 'son goten'], 'Saiyan'],
+    [['trunks'], 'Saiyan'], [['bardock'], 'Saiyan'], [['raditz'], 'Saiyan'], [['nappa'], 'Saiyan'], [['broly'], 'Saiyan'],
+    [['cabba'], 'Saiyan'], [['caulifla'], 'Saiyan'], [['kale'], 'Saiyan'], [['gine'], 'Saiyan'],
+    [['bulma'], 'Human'], [['krillin', 'kuririn'], 'Human'], [['yamcha'], 'Human'], [['tenshinhan', 'tien'], 'Human'],
+    [['chiaotzu', 'chaozu'], 'Human'], [['muten', 'roshi', 'kame sennin'], 'Human'], [['chi-chi', 'chichi'], 'Human'],
+    [['videl'], 'Human'], [['mr. satan', 'hercule', 'mark satan'], 'Human'], [['uub', 'oob'], 'Human'],
+    [['piccolo'], 'Namekian'], [['dende'], 'Namekian'], [['nail'], 'Namekian'], [['kami'], 'Namekian'],
+    [['frieza', 'freeza', 'freezer'], 'Frieza Race'], [['cooler', 'coora'], 'Frieza Race'], [['king cold', 'cold'], 'Frieza Race'], [['frost'], 'Frieza Race'],
+    [['android 16', 'c-16'], 'Android'], [['android 17', 'c-17', 'lapis'], 'Android'], [['android 18', 'c-18', 'lazuli'], 'Android'],
+    [['android 19'], 'Android'], [['android 20', 'dr. gero', 'gero'], 'Android'], [['cell'], 'Android'],
+    [['majin buu', 'buu', 'boo', 'majin boo'], 'Majin'],
+    [['whis'], 'Angel'], [['vados'], 'Angel'], [['grand priest', 'daishinkan'], 'Angel'],
+  ];
+  const DB_SAGAS = [
+    [['raditz'], 'Saga Saiyan'], [['nappa'], 'Saga Saiyan'], [['bardock'], 'Saga Saiyan'],
+    [['frieza', 'freeza', 'freezer'], 'Saga Namek'], [['zarbon'], 'Saga Namek'], [['dodoria'], 'Saga Namek'],
+    [['ginyu'], 'Saga Namek'], [['recoome', 'reacoom'], 'Saga Namek'], [['burter'], 'Saga Namek'], [['jeice'], 'Saga Namek'], [['guldo'], 'Saga Namek'],
+    [['dende'], 'Saga Namek'], [['nail'], 'Saga Namek'], [['cui', 'kiwi'], 'Saga Namek'],
+    [['cell'], 'Saga Cell'], [['android 16', 'c-16'], 'Saga Cell'], [['android 17', 'c-17'], 'Saga Cell'], [['android 18', 'c-18'], 'Saga Cell'],
+    [['android 19'], 'Saga Cell'], [['android 20', 'dr. gero', 'gero'], 'Saga Cell'],
+    [['majin buu', 'buu', 'boo', 'majin boo'], 'Saga Buu'], [['babidi'], 'Saga Buu'], [['dabura'], 'Saga Buu'], [['videl'], 'Saga Buu'], [['spopovich'], 'Saga Buu'],
+    [['beerus'], 'Saga Super'], [['whis'], 'Saga Super'], [['champa'], 'Saga Super'], [['vados'], 'Saga Super'],
+    [['jiren'], 'Saga Super'], [['toppo', 'top'], 'Saga Super'], [['dyspo'], 'Saga Super'], [['hit'], 'Saga Super'],
+    [['zamasu'], 'Saga Super'], [['goku black'], 'Saga Super'], [['zeno', 'zen-oh'], 'Saga Super'],
+    [['cabba'], 'Saga Super'], [['caulifla'], 'Saga Super'], [['kale'], 'Saga Super'], [['frost'], 'Saga Super'], [['broly'], 'Saga Super'],
+  ];
+  let nRace = 0, nSaga = 0;
+  for (const e of entries) {
+    if (e.universe !== 'Dragon Ball' || e.type !== 'character') continue;
+    if (!e.attributes.race) {
+      const hit = DB_RACES.find(([pats]) => pats.some((p) => nameIs(e, p)));
+      if (hit) { e.attributes.race = hit[1]; nRace++; }
+    }
+    if (!e.attributes.saga) {
+      const hit = DB_SAGAS.find(([pats]) => pats.some((p) => nameIs(e, p)));
+      if (hit) { e.attributes.saga = hit[1]; nSaga++; }
+    }
+  }
+  // Lignées : « Goku SSJ » (transformation) → relation Goku ─maîtrise→ la transformation.
+  let nLin = 0;
+  const dbCharsReg = entries.filter((e) => e.universe === 'Dragon Ball' && e.type === 'character');
+  for (const t of entries) {
+    if (t.universe !== 'Dragon Ball' || t.attributes.category !== 'Transformation') continue;
+    const first = String(t.name).split(/\s+/)[0].toLowerCase();
+    if (first.length < 3) continue;
+    const ownerChar = dbCharsReg.find((c) => c.name.toLowerCase().split(/\s+/).includes(first));
+    if (ownerChar) { relations.push({ from: ownerChar.slug, to: t.slug, relation: 'maitrise' }); nLin++; }
+  }
+  console.log(`  ✓ DB : ${nRace} races + ${nSaga} sagas + ${nLin} lignées de transformation`);
+
+  // 8) JoJo — la LIGNÉE JOESTAR (arbre généalogique, format FamilyTree {rel EN, name, slug})
+  const JOJO_FAMILY = {
+    'jonathan joestar': [
+      { rel: 'father', name: 'George Joestar I' }, { rel: 'wife', name: 'Erina Pendleton' },
+      { rel: 'son', name: 'George Joestar II' }, { rel: 'descendant', name: 'Joseph Joestar', slug: 'joseph-joestar' },
+    ],
+    'joseph joestar': [
+      { rel: 'grandmother', name: 'Erina Joestar' }, { rel: 'ancestor', name: 'Jonathan Joestar', slug: 'jonathan-joestar' },
+      { rel: 'wife', name: 'Suzi Q' }, { rel: 'daughter', name: 'Holy Kujo' },
+      { rel: 'son', name: 'Josuke Higashikata', slug: 'josuke-higashikata' },
+    ],
+    'jotaro kujo': [
+      { rel: 'mother', name: 'Holy Kujo' }, { rel: 'grandfather', name: 'Joseph Joestar', slug: 'joseph-joestar' },
+      { rel: 'daughter', name: 'Jolyne Cujoh', slug: 'jolyne-cujoh' },
+    ],
+    'josuke higashikata': [
+      { rel: 'father', name: 'Joseph Joestar', slug: 'joseph-joestar' }, { rel: 'mother', name: 'Tomoko Higashikata' },
+    ],
+    'giorno giovanna': [
+      { rel: 'father', name: 'DIO (corps de Jonathan)', slug: 'dio-brando' }, { rel: 'ancestor', name: 'Jonathan Joestar', slug: 'jonathan-joestar' },
+    ],
+    'jolyne cujoh': [
+      { rel: 'father', name: 'Jotaro Kujo', slug: 'jotaro-kujo' },
+    ],
+  };
+  let nJf = 0;
+  for (const e of entries) {
+    if (e.universe !== "JoJo's Bizarre Adventure" || e.type !== 'character' || e.attributes.family) continue;
+    const key = Object.keys(JOJO_FAMILY).find((pat) => nameIs(e, pat));
+    if (key) { e.attributes.family = JOJO_FAMILY[key]; nJf++; }
+  }
+  console.log(`  ✓ ${nJf} arbres Joestar posés`);
 
   // ── Pages ÉVOLUTIVES hors Naruto (le moteur PlaceView s'active sur attributes.eras) ──
   const UNI_DETAILS = {

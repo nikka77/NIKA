@@ -3,8 +3,43 @@ import Link from 'next/link';
 import EntityBadge from './EntityBadge';
 import { TYPE_META, RARITY_META, universeMeta, type AkashaEntryCard } from '@/lib/akasha/types';
 
+/** Fallback visuel THÉMÉ par collection quand l'entrée n'a pas d'image : icône + teinte
+ *  propres à la collection (au lieu de l'emoji de type générique) → les grilles des 2 400
+ *  entrées sans visuel restent « designées ». */
+const CATEGORY_FALLBACK: Record<string, { icon: string; color: string }> = {
+  'Jutsu':             { icon: '🌀', color: '#D44B24' },
+  'Arme & outil':      { icon: '⚔️', color: '#D4A017' },
+  'Organisation':      { icon: '🛡️', color: '#E07038' },
+  'Métier':            { icon: '🧰', color: '#0094D4' },
+  'Nature de chakra':  { icon: '🔥', color: '#D44B24' },
+  'Kekkei genkai':     { icon: '🧬', color: '#7B5CF0' },
+  'Classification':    { icon: '📜', color: '#7A90A8' },
+  'Village':           { icon: '🏯', color: '#0EA878' },
+  'Clan':              { icon: '⛩️', color: '#E8623A' },
+  'Clan & lignée':     { icon: '⛩️', color: '#E8623A' },
+  'Dōjutsu':           { icon: '👁️', color: '#D63C3C' },
+  'Titre & rang':      { icon: '👑', color: '#D4A017' },
+  'Fruit du Démon':    { icon: '🍈', color: '#8E44AD' },
+  'Équipage':          { icon: '🏴‍☠️', color: '#D63C3C' },
+  'Haki':              { icon: '🌊', color: '#5A88B0' },
+  'Gear':              { icon: '⚙️', color: '#D63C3C' },
+  'Navire':            { icon: '⛵', color: '#0094D4' },
+  'Relique':           { icon: '🏺', color: '#D4A017' },
+  'Transformation':    { icon: '⚡', color: '#F2A93B' },
+  'Planète':           { icon: '🪐', color: '#0094D4' },
+  'Technique':         { icon: '💥', color: '#D44B24' },
+  'Aptitude':          { icon: '✴️', color: '#12B8CC' },
+  'Stand':             { icon: '👥', color: '#8E44AD' },
+  'Race & espèce':     { icon: '🧬', color: '#3FA35C' },
+  'Voiture':           { icon: '🏎️', color: '#0094D4' },
+  'Écurie de course':  { icon: '🏁', color: '#0094D4' },
+  'Lieu':              { icon: '🗺️', color: '#0EA878' },
+};
+
 export default function AkashaCard({ entry }: { entry: AkashaEntryCard }) {
   const m = TYPE_META[entry.type];
+  const fb = (entry.category && CATEGORY_FALLBACK[entry.category]) || null;
+  const fbColor = fb?.color ?? m.color;
   return (
     <Link
       href={`/learn/akasha/${entry.slug}`}
@@ -26,7 +61,9 @@ export default function AkashaCard({ entry }: { entry: AkashaEntryCard }) {
         style={{
           position: 'relative',
           height: 130,
-          background: `linear-gradient(135deg, ${m.color}33, ${m.color}0A)`,
+          background: entry.image_url
+            ? `linear-gradient(135deg, ${m.color}33, ${m.color}0A)`
+            : `radial-gradient(120% 120% at 50% 0%, ${fbColor}3D 0%, ${fbColor}14 45%, rgba(5,8,18,0.9) 100%)`,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -42,9 +79,14 @@ export default function AkashaCard({ entry }: { entry: AkashaEntryCard }) {
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
           />
         ) : (
-          <span aria-hidden style={{ fontSize: 40, opacity: 0.5 }}>
-            {m.icon}
-          </span>
+          <>
+            <span aria-hidden style={{ position: 'absolute', fontSize: 96, opacity: 0.1, filter: 'blur(1px)', transform: 'rotate(-12deg) translateY(6px)' }}>
+              {fb?.icon ?? m.icon}
+            </span>
+            <span aria-hidden style={{ fontSize: 38, filter: `drop-shadow(0 4px 14px ${fbColor}88)` }}>
+              {fb?.icon ?? m.icon}
+            </span>
+          </>
         )}
         <span style={{ position: 'absolute', top: 8, left: 8 }}>
           <EntityBadge type={entry.type} size="sm" />

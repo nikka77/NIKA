@@ -2,11 +2,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import DomainHero from '@/components/DomainHero';
-import { listCategoryCounts, listEntries, listFamilyCounts, listUniverseCounts } from '@/lib/akasha/queries';
-import { asAkashaType, TYPE_META } from '@/lib/akasha/types';
+import { getDailyCard, listCategoryCounts, listEntries, listFamilyCounts, listUniverseCounts } from '@/lib/akasha/queries';
+import { asAkashaType, TYPE_META, universeMeta } from '@/lib/akasha/types';
+import { ALLOWED_FILTER_ATTRS, axisValueLabel, universeHubSlug } from '@/lib/akasha/universe-taxonomy';
+import DailyCard from '@/components/akasha/DailyCard';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import AkashaFilters from '@/components/akasha/AkashaFilters';
 import CollectionStrip from '@/components/akasha/CollectionStrip';
+import DailyBooster from '@/components/akasha/DailyBooster';
 import UniverseRail from '@/components/akasha/UniverseRail';
 import CategoryRail from '@/components/akasha/CategoryRail';
 
@@ -19,14 +22,15 @@ export const metadata: Metadata = {
 
 const ACCENT = '#7B5CF0';
 
-type SearchParams = { type?: string; universe?: string; cat?: string; fam?: string; search?: string; page?: string };
+type SearchParams = { type?: string; universe?: string; cat?: string; fam?: string; attr?: string; val?: string; search?: string; page?: string };
 
-function pageHref(target: number, type: string | undefined, search: string, universe?: string, cat?: string, fam?: string): string {
+function pageHref(target: number, type: string | undefined, search: string, universe?: string, cat?: string, fam?: string, attr?: string, val?: string): string {
   const p = new URLSearchParams();
   if (universe) p.set('universe', universe);
   if (type) p.set('type', type);
   if (cat) p.set('cat', cat);
   if (cat && fam) p.set('fam', fam);
+  if (attr && val) { p.set('attr', attr); p.set('val', val); }
   if (search) p.set('search', search);
   if (target > 1) p.set('page', String(target));
   const qs = p.toString();
@@ -39,15 +43,21 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
   const universe = (sp.universe ?? '').trim() || undefined;
   const cat = (sp.cat ?? '').trim() || undefined;
   const fam = (sp.fam ?? '').trim() || undefined;
+  const attr = (sp.attr ?? '').trim() || undefined;
+  const val = (sp.val ?? '').trim() || undefined;
+  const axisOn = !!(attr && val && ALLOWED_FILTER_ATTRS.has(attr));
   const search = (sp.search ?? '').trim();
   const page = Number(sp.page) || 1;
+  const isRoot = !type && !universe && !cat && !fam && !axisOn && !search && page === 1;
 
-  const [{ entries, total, page: current, totalPages }, universeCounts, categoryCounts, familyCounts] = await Promise.all([
-    listEntries({ type, universe, cat, fam, search, page }),
+  const [{ entries, total, page: current, totalPages }, universeCounts, categoryCounts, familyCounts, daily] = await Promise.all([
+    listEntries({ type, universe, cat, fam, attr, val, search, page }),
     listUniverseCounts(),
     listCategoryCounts({ type, universe }),
     listFamilyCounts({ universe, cat }),
+    isRoot ? getDailyCard(new Date().toISOString().slice(0, 10)) : Promise.resolve(null),
   ]);
+  const hubSlug = universe ? universeHubSlug(universe) : undefined;
 
   return (
     <main>
@@ -133,6 +143,8 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
             {universe && <input type="hidden" name="universe" value={universe} />}
             {cat && <input type="hidden" name="cat" value={cat} />}
             {cat && fam && <input type="hidden" name="fam" value={fam} />}
+            {axisOn && <input type="hidden" name="attr" value={attr} />}
+            {axisOn && <input type="hidden" name="val" value={val} />}
             <input
               name="search"
               defaultValue={search}
@@ -185,7 +197,21 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
       >
         <CollectionStrip />
 
+        {isRoot && <DailyBooster />}
+
+        {daily && <DailyCard entry={daily} />}
+
         <UniverseRail counts={universeCounts} active={universe} type={type} search={search} />
+
+        {universe && hubSlug && (
+          <Link
+            href={`/learn/akasha/u/${hubSlug}`}
+            className="ak-tab"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none', fontFamily: 'var(--fe)', fontSize: 13.5, fontWeight: 800, fontStyle: 'italic', letterSpacing: '0.04em', textTransform: 'uppercase', padding: '9px 18px', borderRadius: 11, marginBottom: '1.2rem', border: `1px solid ${universeMeta(universe).color}66`, background: `${universeMeta(universe).color}1A`, color: universeMeta(universe).color }}
+          >
+            {universeMeta(universe).emoji} Explorer le hub {universe} →
+          </Link>
+        )}
 
         <AkashaFilters active={type} search={search} universe={universe} />
 
@@ -207,8 +233,15 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
             {type ? ` · ${TYPE_META[type].plural}` : ''}
             {cat ? ` · ${cat}` : ''}
             {cat && fam ? ` · ${fam.includes('·') ? fam.slice(fam.lastIndexOf('·') + 1).trim() : fam}` : ''}
+            {axisOn ? ` · ${axisValueLabel(universe ?? '', attr!, val!)}` : ''}
             {search ? ` · « ${search} »` : ''}
           </div>
+          <Link
+            href="/learn/akasha/random"
+            style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: '#7B5CF0', textDecoration: 'none', border: '1px solid rgba(123,92,240,0.4)', borderRadius: 8, padding: '5px 12px' }}
+          >
+            ✦ Surprends-moi
+          </Link>
         </div>
 
         {entries.length > 0 ? (
@@ -228,11 +261,11 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
               Aucune entité dans ce filtre
             </p>
             <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)', marginBottom: '1.2rem' }}>
-              {search || type || universe || cat || fam
+              {search || type || universe || cat || fam || axisOn
                 ? 'Essaie une autre recherche ou réinitialise les filtres.'
                 : 'Le registre se remplit — reviens bientôt.'}
             </p>
-            {(search || type || universe || cat || fam) && (
+            {(search || type || universe || cat || fam || axisOn) && (
               <Link
                 href="/learn/akasha"
                 style={{
@@ -264,7 +297,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
             }}
           >
             {current > 1 ? (
-              <Link href={pageHref(current - 1, type, search, universe, cat, fam)} className="ak-page" style={pageBtnStyle}>
+              <Link href={pageHref(current - 1, type, search, universe, cat, fam, axisOn ? attr : undefined, axisOn ? val : undefined)} className="ak-page" style={pageBtnStyle}>
                 ← Précédent
               </Link>
             ) : (
@@ -274,7 +307,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
               Page {current} / {totalPages}
             </span>
             {current < totalPages ? (
-              <Link href={pageHref(current + 1, type, search, universe, cat, fam)} className="ak-page" style={pageBtnStyle}>
+              <Link href={pageHref(current + 1, type, search, universe, cat, fam, axisOn ? attr : undefined, axisOn ? val : undefined)} className="ak-page" style={pageBtnStyle}>
                 Suivant →
               </Link>
             ) : (

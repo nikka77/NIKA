@@ -1152,6 +1152,24 @@ async function main() {
   }
   console.log(`✓ popularité Naruto : ${popN}/${entries.filter((e) => e.type === 'character').length} persos notés (favorites MAL)`);
 
+  // ── GÉNÉRATIONS (axe taxonomique du hub /learn/akasha/u/naruto) — curation par nom ──
+  const GENERATIONS = [
+    [['Hashirama Senju', 'Tobirama Senju', 'Madara Uchiha', 'Mito Uzumaki', 'Izuna Uchiha', 'Tōka Senju'], 'Fondateurs'],
+    [['Jiraiya', 'Tsunade', 'Orochimaru'], 'Sannin'],
+    [['Kakashi Hatake', 'Obito Uchiha', 'Rin Nohara', 'Might Guy', 'Asuma Sarutobi', 'Kurenai Yūhi', 'Anko Mitarashi', 'Yamato', 'Minato Namikaze', 'Kushina Uzumaki', 'Itachi Uchiha', 'Shisui Uchiha'], 'Génération de Kakashi'],
+    [['Naruto Uzumaki', 'Sasuke Uchiha', 'Sakura Haruno', 'Sai', 'Shikamaru Nara', 'Ino Yamanaka', 'Chōji Akimichi', 'Kiba Inuzuka', 'Shino Aburame', 'Hinata Hyūga', 'Neji Hyūga', 'Rock Lee', 'Tenten', 'Gaara', 'Temari', 'Kankurō'], 'Konoha 11'],
+    [['Boruto Uzumaki', 'Sarada Uchiha', 'Mitsuki', 'Himawari Uzumaki', 'Kawaki', 'Shikadai Nara', 'Inojin Yamanaka', 'Chōchō Akimichi', 'Metal Lee', 'Mirai Sarutobi', 'Iwabee Yuino', 'Denki Kaminarimon'], 'Nouvelle ère'],
+  ];
+  const normGen = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  let genN = 0;
+  for (const e of entries) {
+    if (e.type !== 'character' || e.attributes.generation) continue;
+    const en = normGen(e.name);
+    const hit = GENERATIONS.find(([names]) => names.some((n) => normGen(n) === en));
+    if (hit) { e.attributes.generation = hit[1]; genN++; }
+  }
+  console.log(`✓ générations Naruto : ${genN} persos rattachés`);
+
   // Validation : ne garder que les relations dont les 2 extrémités existent.
   const clean = relations.filter(([f, , t]) => {
     const ok = slugs.has(f) && slugs.has(t) && f !== t;
