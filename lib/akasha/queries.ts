@@ -291,6 +291,26 @@ export async function universeInsights(universe: string): Promise<UniverseInsigh
   return { total, byType, byRarity, topFav: topFav.slice(0, 10), recent: recent.slice(0, 10) };
 }
 
+/** Index léger d'un univers (slug, nom, type) pour la recherche instantanée client du hub.
+ *  Borné à `cap` entrées (les plus rares d'abord via l'ordre de rareté implicite du seed). */
+export async function listUniverseIndex(universe: string, cap = 2500): Promise<{ s: string; n: string; t: AkashaType }[]> {
+  const supabase = await createClient();
+  if (!supabase) return [];
+  const out: { s: string; n: string; t: AkashaType }[] = [];
+  const PAGE = 1000;
+  for (let from = 0; from < cap; from += PAGE) {
+    const { data } = await supabase
+      .from('akasha_entries')
+      .select('slug, name, type')
+      .eq('universe', universe)
+      .range(from, Math.min(from + PAGE, cap) - 1);
+    const rows = (data as { slug: string; name: string; type: AkashaType }[] | null) ?? [];
+    for (const r of rows) out.push({ s: r.slug, n: r.name, t: r.type });
+    if (rows.length < PAGE) break;
+  }
+  return out;
+}
+
 /** Pages évolutives d'un univers (entités portant `attributes.eras`) — la vitrine « Voyages dans le temps ». */
 export async function listEvolutive(universe: string, limit = 8): Promise<AkashaEntryCard[]> {
   const supabase = await createClient();

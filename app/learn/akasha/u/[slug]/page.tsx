@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SITE_URL } from '@/lib/site';
 import { hubVisual, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
-import { universeMeta } from '@/lib/akasha/types';
-import { countUniverse, getEntriesBySlugs, listAxisCounts, listBounties, listCategoryCounts, listEvolutive, listStars, universeInsights } from '@/lib/akasha/queries';
+import { TYPE_META, universeMeta } from '@/lib/akasha/types';
+import { countUniverse, getEntriesBySlugs, listAxisCounts, listBounties, listCategoryCounts, listEvolutive, listStars, listUniverseIndex, universeInsights } from '@/lib/akasha/queries';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import HubHalo from '@/components/akasha/hub/HubHalo';
 import Reveal from '@/components/akasha/hub/Reveal';
@@ -16,6 +16,7 @@ import HubInsights from '@/components/akasha/hub/HubInsights';
 import HubCollection from '@/components/akasha/hub/HubCollection';
 import ContinueBanner from '@/components/akasha/hub/ContinueBanner';
 import HubSignature from '@/components/akasha/hub/HubSignature';
+import HubSearch from '@/components/akasha/hub/HubSearch';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -69,6 +70,7 @@ export default async function UniverseHubPage({ params }: Props) {
     listEvolutive(taxo.name, 8),
   ]);
   const bounties = vis?.signature === 'bounties' ? await listBounties(8) : [];
+  const searchIndex = await listUniverseIndex(taxo.name);
 
   // Garde-fou : un univers sans aucune donnée exploitable n'est pas une page indexable.
   if (total === 0 && stars.length === 0 && piliers.length === 0) notFound();
@@ -155,6 +157,19 @@ export default async function UniverseHubPage({ params }: Props) {
       </div>
 
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2rem) 1.4rem clamp(3rem,7vw,5rem)', display: 'flex', flexDirection: 'column', gap: '2.1rem' }}>
+        {/* ── RECHERCHE INSTANTANÉE + ONGLETS TYPE ───────────── */}
+        <div>
+          <HubSearch index={searchIndex} universe={taxo.name} color={m.color} />
+          <div style={{ display: 'flex', gap: 7, flexWrap: 'wrap', marginTop: 10 }}>
+            {(['character', 'place', 'artifact', 'power', 'skill', 'status'] as const).filter((t) => insights.byType[t]).map((t) => (
+              <Link key={t} href={`/learn/akasha?universe=${encodeURIComponent(taxo.name)}&type=${t}`} className="ak-tab" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, padding: '6px 12px', borderRadius: 20, border: '1px solid var(--bd2)', background: 'var(--bg2)', color: 'var(--td2)' }}>
+                {TYPE_META[t].icon} {TYPE_META[t].plural}
+                <span style={{ fontSize: 9.5, fontWeight: 800, color: 'var(--td3)' }}>{insights.byType[t]}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* ── REPRISE + PERSO DU JOUR ────────────────────────── */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: '-0.6rem' }}>
           <ContinueBanner universe={taxo.name} color={m.color} />
@@ -260,6 +275,21 @@ export default async function UniverseHubPage({ params }: Props) {
             <AkashaGrid entries={piliers} />
           </Reveal>
         )}
+
+        {/* ── EXPLORER UN AUTRE UNIVERS (maillage inter-hubs) ── */}
+        <Reveal>
+          <div style={sectionTitle}><span>🌐 Explorer un autre monde</span></div>
+          <div className="hero-domabar" style={{ display: 'flex', gap: 9, overflowX: 'auto', paddingBottom: 6 }}>
+            {UNIVERSE_TAXONOMY.filter((u) => u.slug !== taxo.slug).map((u) => {
+              const um = universeMeta(u.name);
+              return (
+                <Link key={u.slug} href={`/learn/akasha/u/${u.slug}`} className="ak-tab" style={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: 7, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700, whiteSpace: 'nowrap', padding: '9px 15px', borderRadius: 12, border: `1px solid ${um.color}55`, background: `${um.color}14`, color: um.color }}>
+                  <span aria-hidden>{um.emoji}</span> {u.name}
+                </Link>
+              );
+            })}
+          </div>
+        </Reveal>
 
         {/* ── COPY D'ATTERRISSAGE SEO ─────────────────────────── */}
         <Reveal as="div">
