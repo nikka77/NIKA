@@ -4,12 +4,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { SITE_URL } from '@/lib/site';
 import { hubVisual, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { universeMeta } from '@/lib/akasha/types';
 import { countUniverse, getEntriesBySlugs, listAxisCounts, listCategoryCounts, listStars } from '@/lib/akasha/queries';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import HubHalo from '@/components/akasha/hub/HubHalo';
 import Reveal from '@/components/akasha/hub/Reveal';
+import ShareButton from '@/components/akasha/hub/ShareButton';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -21,9 +23,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const taxo = taxonomyBySlug(slug);
   if (!taxo) return { title: 'Univers introuvable — AKASHA' };
+  const total = await countUniverse(taxo.name);
+  const axesFr = taxo.axes.map((a) => a.label.toLowerCase()).join(', ');
+  const title = `${taxo.name} — ${total} entrées | AKASHA · NIKA`;
+  const description = `${taxo.tagline} Explore les ${total} entrées de ${taxo.name} dans le registre AKASHA : ${axesFr}, personnages légendaires et collections.`;
+  const url = `${SITE_URL}/learn/akasha/u/${taxo.slug}`;
   return {
-    title: `${taxo.name} — l'univers | AKASHA · NIKA LEARN`,
-    description: `${taxo.tagline} Explore ${taxo.name} dans le registre AKASHA : ${taxo.axes.map((a) => a.label.toLowerCase()).join(', ')}, personnages et collections.`,
+    metadataBase: new URL(SITE_URL),
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url, type: 'website', siteName: 'NIKA' },
+    twitter: { card: 'summary_large_image', title, description },
   };
 }
 
@@ -118,6 +129,7 @@ export default async function UniverseHubPage({ params }: Props) {
                 {x.icon} {x.label} →
               </Link>
             ))}
+            <ShareButton title={`${taxo.name} — AKASHA`} text={taxo.tagline} color={m.color} />
           </div>
         </div>
       </div>
@@ -208,7 +220,47 @@ export default async function UniverseHubPage({ params }: Props) {
             <AkashaGrid entries={piliers} />
           </Reveal>
         )}
+
+        {/* ── COPY D'ATTERRISSAGE SEO ─────────────────────────── */}
+        <Reveal as="div">
+          <div style={{ fontFamily: 'var(--fo)', fontSize: 13.5, color: 'var(--td3)', lineHeight: 1.7, maxWidth: 760, borderTop: '1px solid var(--bd)', paddingTop: '1.4rem' }}>
+            <p style={{ margin: 0 }}>
+              Le hub <strong style={{ color: 'var(--td2)' }}>{taxo.name}</strong> du registre AKASHA rassemble <strong style={{ color: m.color }}>{total} entrées</strong> — {taxo.tagline.toLowerCase()} Parcours par {axes.map((a) => a.label.toLowerCase()).join(', ')}, découverte des personnages légendaires, des collections et des lieux emblématiques, le tout relié dans un même graphe.
+            </p>
+          </div>
+        </Reveal>
       </div>
+
+      {/* Données structurées : page de collection + FAQ (rich results) */}
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: `${taxo.name} — AKASHA`,
+          description: taxo.tagline,
+          url: `${SITE_URL}/learn/akasha/u/${taxo.slug}`,
+          isPartOf: { '@type': 'WebSite', name: 'NIKA', url: SITE_URL },
+          mainEntity: {
+            '@type': 'ItemList',
+            numberOfItems: total,
+            itemListElement: stars.slice(0, 10).map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s.name, url: `${SITE_URL}/learn/akasha/${s.slug}` })),
+          },
+        }) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: [
+            { '@type': 'Question', name: `Combien d'entrées compte l'univers ${taxo.name} sur AKASHA ?`, acceptedAnswer: { '@type': 'Answer', text: `Le registre AKASHA recense ${total} entrées pour l'univers ${taxo.name} : personnages, lieux, artefacts, pouvoirs et collections.` } },
+            ...axes.slice(0, 2).map((a) => ({ '@type': 'Question', name: `Quels ${a.label.toLowerCase()} trouve-t-on dans ${taxo.name} ?`, acceptedAnswer: { '@type': 'Answer', text: `${a.chips.map((c) => c.label).join(', ')}.` } })),
+          ],
+        }) }}
+      />
     </main>
   );
 }
