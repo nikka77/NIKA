@@ -986,6 +986,278 @@ async function main() {
   }
   console.log(`  ✓ ${nJf} arbres Joestar posés`);
 
+  // ── 12 STARS MULTI-UNIVERS — fiches « légendaires » complètes (même moteur que les 7 Naruto) ──
+  // Formes évolutives + sprites pixel (public/images/akasha/universes/idle/) + stats databook
+  // génériques (PUI/TEC/AGI/INT/FOR/VIT/END/ESP) + credo + histoire FR.
+  const IDLE_U = (n) => `/images/akasha/universes/idle/${n}.webp`;
+  const GEN_LABELS = { nin: 'PUI', tai: 'TEC', gen: 'AGI', int: 'INT', for: 'FOR', vit: 'VIT', end: 'END', sce: 'ESP' };
+  const STAR_DETAILS = {
+    'monkey-d-luffy': {
+      nindoLabel: 'Rêve · sa promesse', nindo: 'Je serai le Roi des Pirates !',
+      titles: ['Chapeau de Paille', 'Cinquième Empereur', 'Joy Boy'], status: 'Vivant — Empereur',
+      statLabels: GEN_LABELS,
+      bio: "Un garçon d'un village d'East Blue avale un Fruit du Démon, hérite du chapeau de paille de Shanks et prend la mer avec une promesse folle : trouver le One Piece. Équipage après équipage, mer après mer, Luffy renverse les puissants — Crocodile, Doflamingo, Kaido — non pas pour régner, mais pour être l'homme le plus LIBRE du monde.",
+      personality: "Simple, glouton, d'une loyauté absolue. Luffy ne réfléchit pas — il ressent. Il tend la main à quiconque pleure, déclare la guerre à quiconque touche à son équipage, et sourit face à ce qui devrait le terrifier.",
+      quotes: [
+        'Je serai le Roi des Pirates !',
+        "Bien sûr que je vais peut-être mourir. Mais je me battrai libre — c'est ça, être pirate.",
+        "Tu veux savoir qui je suis ? Je suis Monkey D. Luffy — et je ne perdrai contre personne !",
+      ],
+      trivia: [
+        'Son « Gomu Gomu no Mi » est en réalité le Hito Hito no Mi modèle Nika, fruit mythique traqué par le Gouvernement depuis 800 ans.',
+        'Sa prime dépasse les 3 milliards de Berrys après Onigashima.',
+        "Il ne sait pas nager — comme tout utilisateur de Fruit du Démon : l'ironie fondatrice du manga.",
+      ],
+      forms: [
+        { label: 'East Blue', idle: IDLE_U('luffy-eastblue'), age: '17 ans', arc: 'Romance Dawn → Arlong Park', caption: 'Le garçon au chapeau de paille', summary: "Un gamin élastique, quatre compagnons, un rafiot — et la promesse faite à Shanks qui prend la mer.", stats: { nin: 3, tai: 3.5, gen: 4, int: 2, for: 3.5, vit: 3.5, end: 4.5, sce: 5 } },
+        { label: 'Gear 2', idle: IDLE_U('luffy-gear2'), age: '17 ans', arc: 'Enies Lobby', caption: 'Le sang comme moteur', summary: "Luffy pompe son sang comme une turbine : peau rougie, vapeur — la vitesse d'un Soru permanent, au prix de son endurance.", stats: { nin: 3.5, tai: 4, gen: 4.5, int: 2, for: 4, vit: 5, end: 3.5, sce: 5 } },
+        { label: 'Gear 4 — Boundman', idle: IDLE_U('luffy-gear4'), age: '19 ans', arc: 'Dressrosa', caption: 'Le muscle gonflé de Haki', summary: "Torse gonflé, Haki armé sur tout le corps : l'élasticité devient artillerie — Kong Gun, Rhino Schneider, la puissance qui a brisé Doflamingo.", stats: { nin: 4.5, tai: 4.5, gen: 4, int: 2.5, for: 5, vit: 4.5, end: 4, sce: 5 } },
+        { label: 'Gear 5 — Nika', idle: IDLE_U('luffy-gear5'), age: '19 ans', arc: 'Onigashima', caption: 'Le Guerrier de la Libération', summary: "L'éveil du fruit : cheveux blancs, cœur qui bat le rythme de la liberté — le monde devient son jouet en caoutchouc. Le rire de Joy Boy résonne à nouveau.", stats: { nin: 5, tai: 5, gen: 5, int: 3, for: 5, vit: 5, end: 5, sce: 5 } },
+      ],
+    },
+    'roronoa-zoro': {
+      nindoLabel: 'Serment · sa lame', nindo: 'Plus jamais je ne perdrai — jusqu\'à ce que je sois le plus grand sabreur du monde.',
+      titles: ['Chasseur de Pirates', 'Roi de l\'Enfer'], status: 'Vivant — bras droit des Chapeaux de Paille',
+      statLabels: GEN_LABELS,
+      bio: "Chasseur de primes devenu premier compagnon de Luffy, Zoro poursuit le serment fait à Kuina, son amie d'enfance morte : devenir le meilleur sabreur du monde. Son style à trois sabres — un dans chaque main, un entre les dents — fauche tout ce qui se dresse entre lui et Mihawk.",
+      personality: "Stoïque, d'une discipline de fer… et incapable de suivre un plan de ville. Zoro s'entraîne jusqu'à l'évanouissement, boit comme un tonneau et n'a qu'une parole. Il accepterait de mourir pour Luffy — il a d'ailleurs déjà essayé.",
+      quotes: [
+        "Rien… il ne s'est rien passé. (Thriller Bark — après avoir absorbé la douleur de Luffy)",
+        'Les cicatrices dans le dos sont la honte du sabreur.',
+        "Tant que je le protège, le Roi des Pirates n'a rien à craindre.",
+      ],
+      trivia: [
+        'Son sens de l\'orientation est si catastrophique qu\'il se perd sur une ligne droite — gag récurrent depuis East Blue.',
+        'À Wano, il hérite d\'Enma, la lame d\'Oden qui « dévore » le Haki de son porteur.',
+        'Sa technique Ashura fait apparaître trois visages et six bras — une aura démoniaque, pas une illusion.',
+      ],
+      forms: [
+        { label: 'East Blue', idle: IDLE_U('zoro-eastblue'), age: '19 ans', arc: 'Shells Town → Baratie', caption: 'Le chasseur de pirates', summary: "Trois sabres, un bandana et un duel perdu d'avance contre Mihawk — accepté le sourire aux lèvres, la cicatrice en travers du torse.", stats: { nin: 3, tai: 4.5, gen: 3, int: 2.5, for: 4, vit: 3.5, end: 5, sce: 4.5 } },
+        { label: 'Nouveau Monde', idle: IDLE_U('zoro-timeskip'), age: '21 ans', arc: 'Retour → Dressrosa', caption: "L'élève de Mihawk", summary: "Deux ans d'entraînement chez son propre rival : l'œil gauche s'est fermé, la puissance a décuplé — Pica, une montagne de pierre, tombe en un seul coup.", stats: { nin: 4, tai: 5, gen: 3, int: 3, for: 4.5, vit: 4, end: 5, sce: 4.5 } },
+        { label: 'Wano — Enma', idle: IDLE_U('zoro-wano'), age: '21 ans', arc: 'Pays de Wano', caption: 'Le Roi de l\'Enfer', summary: "Avec Enma et le Haki du Roi enfin éveillé, Zoro entaille Kaido et gagne son surnom : Roi de l'Enfer — trois lames, une aura de démon.", stats: { nin: 4.5, tai: 5, gen: 3.5, int: 3, for: 5, vit: 4.5, end: 5, sce: 5 } },
+      ],
+    },
+    'son-goku': {
+      nindoLabel: 'Credo · son moteur', nindo: 'Plus l\'adversaire est fort, plus j\'ai envie de me battre.',
+      titles: ['Kakarot', 'Le Saiyan élevé sur Terre'], status: 'Vivant — défenseur de l\'Univers 7',
+      statLabels: GEN_LABELS,
+      bio: "Envoyé bébé pour détruire la Terre, recueilli par Son Gohan, Kakarot devient Son Goku : l'enfant à la queue de singe qui cherche les Dragon Balls devient le guerrier qui repousse Freezer, Cell et Buu, puis se mesure aux dieux eux-mêmes. Chaque limite n'existe que pour être pulvérisée.",
+      personality: "Naïf en tout sauf au combat, où il devient un génie tactique. Goku pardonne à ses pires ennemis — Piccolo, Vegeta en témoignent — car un ennemi épargné est un rival de plus pour demain.",
+      quotes: [
+        "Je suis le Saiyan élevé sur Terre — Son Goku !",
+        'Je ne défends pas la Terre parce que c\'est mon devoir. Je la défends parce que c\'est chez moi.',
+        "Tu es le numéro un, Vegeta. (Tournoi du Pouvoir)",
+      ],
+      trivia: [
+        'Son nom saiyan, Kakarot, dérive de « carotte » — toute sa famille est nommée d\'après des légumes.',
+        'Il n\'a jamais embrassé Chi-Chi à l\'écran — confirmé (avec effroi) par leurs fils.',
+        "L'Ultra Instinct est une technique divine que même les Dieux de la Destruction peinent à maîtriser.",
+      ],
+      forms: [
+        { label: 'Goku', idle: IDLE_U('goku-base'), arc: 'De Raditz à Buu', caption: 'Le gi orange de Kame House', summary: "La base : le gi orange de Tortue Géniale, le Kamehameha, et un appétit de combat (et de riz) sans fond.", stats: { nin: 4, tai: 4.5, gen: 4, int: 3, for: 4, vit: 4, end: 4.5, sce: 4.5 } },
+        { label: 'Super Saiyan', idle: IDLE_U('goku-ssj'), arc: 'Namek — vs Freezer', caption: 'La légende dorée', summary: "La colère face à la mort de Krillin réveille la légende : cheveux d'or, aura de feu — le Super Saiyan renaît après 1 000 ans, sur Namek en flammes.", stats: { nin: 4.5, tai: 4.5, gen: 4, int: 3, for: 4.5, vit: 4.5, end: 4.5, sce: 4.5 } },
+        { label: 'Super Saiyan Blue', idle: IDLE_U('goku-blue'), arc: 'Dragon Ball Super', caption: 'Le ki divin maîtrisé', summary: "La transformation du Super Saiyan God stabilisée : le bleu du ki divin, la puissance des dieux dans un corps mortel — face à Beerus, Hit, Jiren.", stats: { nin: 5, tai: 5, gen: 4.5, int: 3.5, for: 5, vit: 5, end: 4.5, sce: 4.5 } },
+        { label: 'Ultra Instinct', idle: IDLE_U('goku-ui'), arc: 'Tournoi du Pouvoir', caption: 'Le corps qui pense seul', summary: "L'état des anges : le corps esquive et frappe SANS la pensée. Cheveux d'argent, calme absolu — la limite au-delà des limites, brisée face à Jiren.", stats: { nin: 5, tai: 5, gen: 5, int: 4, for: 5, vit: 5, end: 5, sce: 5 } },
+      ],
+    },
+    'vegeta': {
+      nindoLabel: 'Orgueil · son trône', nindo: 'Je suis le prince des Saiyans. Kakarot… c\'est MOI qui te dépasserai.',
+      titles: ['Prince des Saiyans', 'Le rival éternel'], status: 'Vivant — protecteur (à contrecœur) de la Terre',
+      statLabels: GEN_LABELS,
+      bio: "Prince d'un peuple exterminé, arrivé sur Terre en conquérant, resté par orgueil — puis par amour, même s'il mourrait plutôt que l'admettre. Vegeta est l'ombre de Goku et son aiguillon : chaque victoire de Kakarot est une blessure, chaque blessure un carburant.",
+      personality: "Fier jusqu'à l'autodestruction, travailleur là où Goku est un don du ciel. Son arc est la plus longue rédemption du shōnen : du génocidaire au père qui sacrifie sa vie pour Trunks, en gardant le rictus.",
+      quotes: [
+        "Je suis le prince de TOUS les Saiyans !",
+        'Prends soin de Trunks… et de Bulma. (avant son sacrifice contre Buu)',
+        "Kakarot… tu es le numéro un. (Namek, à l'agonie)",
+      ],
+      trivia: [
+        'Son gant blanc et son plastron sont restés son identité visuelle à travers 30 ans de sagas.',
+        "L'attaque Final Flash contre Cell reste l'un des cris les plus célèbres du doublage FR.",
+        'Il développe l\'Ultra Ego — la voie du dieu de la destruction — en miroir de l\'Ultra Instinct de Goku.',
+      ],
+      forms: [
+        { label: 'Arrivée sur Terre', idle: IDLE_U('vegeta-saiyan'), arc: 'Saga Saiyan', caption: 'Le prince conquérant', summary: "Scouter à l'œil, armure de combat, mépris intégral : le prince vient détruire la Terre — et y rencontre l'insecte qui le hantera toute sa vie.", stats: { nin: 4, tai: 4.5, gen: 3.5, int: 4, for: 4, vit: 4, end: 4, sce: 4.5 } },
+        { label: 'Super Saiyan', idle: IDLE_U('vegeta-ssj'), arc: 'Androïdes → Cell', caption: 'La légende, par la rage', summary: "Là où Goku a transcendé par la perte, Vegeta y parvient par la RAGE pure : l'or lui va bien, l'arrogance encore mieux.", stats: { nin: 4.5, tai: 4.5, gen: 3.5, int: 4, for: 4.5, vit: 4.5, end: 4.5, sce: 4.5 } },
+        { label: 'Super Saiyan Blue', idle: IDLE_U('vegeta-blue'), arc: 'Dragon Ball Super', caption: 'Le ki divin du prince', summary: "Le prince atteint les dieux à la force du poignet — sans rituel, sans raccourci : des années de gravité 500G dans la Capsule Corp.", stats: { nin: 5, tai: 5, gen: 4, int: 4, for: 5, vit: 4.5, end: 4.5, sce: 5 } },
+      ],
+    },
+    'ichigo-kurosaki': {
+      nindoLabel: 'Raison · son sabre', nindo: 'Si je ne peux pas protéger tout le monde… alors à quoi sert ce pouvoir ?',
+      titles: ['Shinigami remplaçant', 'Le protecteur de Karakura'], status: 'Vivant — Karakura',
+      statLabels: GEN_LABELS,
+      bio: "Lycéen capable de voir les esprits, Ichigo reçoit les pouvoirs de Rukia Kuchiki une nuit qui change tout : le voilà Shinigami remplaçant, faucheur d'âmes à mi-temps. De la Soul Society à Hueco Mundo, il découvrira que son sang mêle TOUTES les lignées : Shinigami, Quincy, Hollow.",
+      personality: "Bougon, front plissé en permanence, mais d'une droiture totale : Ichigo ne se bat jamais pour gagner — il se bat pour que personne d'autre ne saigne à sa place.",
+      quotes: [
+        "Je ne me bats pas parce que je veux gagner. Je me bats parce que je DOIS protéger.",
+        'Zangetsu… porte-moi encore une fois.',
+        "Tremble, Aizen. Ce que tu vois est le fruit de mon sacrifice — le Getsuga final.",
+      ],
+      trivia: [
+        'Son nom peut se lire « celui qui protège » (護) — le programme de toute sa vie.',
+        'Zangetsu est en réalité double : le vieil homme est son côté Quincy, le Hollow blanc son vrai pouvoir de Shinigami.',
+        'Sa couleur de cheveux orange lui vaut des bagarres depuis le collège — il n\'a jamais cédé à la teinture.',
+      ],
+      forms: [
+        { label: 'Shikai — Zangetsu', idle: IDLE_U('ichigo-shikai'), age: '15 ans', arc: 'Soul Society', caption: 'Le couperet géant', summary: "Zangetsu libéré : un couperet sans garde, enveloppé de bandages, aussi grand que lui — et le Getsuga Tenshō qui fend les murs du Seireitei.", stats: { nin: 4, tai: 4, gen: 3.5, int: 3, for: 4, vit: 4, end: 4.5, sce: 5 } },
+        { label: 'Bankai — Tensa Zangetsu', idle: IDLE_U('ichigo-bankai'), age: '15-17 ans', arc: 'vs Byakuya → Arrancars', caption: 'La lame noire condensée', summary: "Le Bankai qui a choqué la Soul Society : au lieu de grandir, Zangetsu se CONDENSE — un katana noir, un manteau déchiré, la vitesse d'un dieu de la mort.", stats: { nin: 4.5, tai: 4.5, gen: 4, int: 3, for: 4, vit: 5, end: 4.5, sce: 5 } },
+        { label: 'Hollowfication', idle: IDLE_U('ichigo-hollow'), age: '16-17 ans', arc: 'Hueco Mundo', caption: 'Le masque blanc', summary: "Le Hollow intérieur accepté : masque cornu, Getsuga noir, instinct pur — la fusion qui a laissé Ulquiorra en poussière au sommet de Las Noches.", stats: { nin: 5, tai: 5, gen: 4, int: 2.5, for: 5, vit: 5, end: 5, sce: 4 } },
+      ],
+    },
+    'gon-freecss': {
+      nindoLabel: 'Cap · sa boussole', nindo: 'Papa, je vais te trouver — et je verrai le monde que tu as choisi plutôt que moi.',
+      titles: ['Le fils de Ging', 'Hunter à la canne à pêche'], status: 'Vivant — a perdu (rendu ?) son Nen',
+      statLabels: GEN_LABELS,
+      bio: "Élevé sur l'île de la Baleine, Gon découvre que son père, qu'il croyait mort, est un Hunter légendaire qui l'a abandonné pour l'aventure. Sa réponse : passer l'examen le plus mortel du monde à 12 ans, se faire des amis en or (Killua, Kurapika, Leorio) — et poursuivre l'ombre de Ging jusqu'au bout de la rage.",
+      personality: "Solaire, direct, incapable de mentir — et c'est précisément ce qui le rend inquiétant : la même pureté qui charme tout le monde devient, quand on lui prend quelqu'un, une absence totale de limite.",
+      quotes: [
+        'Je suis Gon Freecss ! Et je vais trouver mon père !',
+        "Killua, tu es mon meilleur ami. C'est pour ça que je peux tout te dire.",
+        "Ça m'est égal si c'est la fin. Pour tuer Pitou, je donnerai TOUT. (transformation)",
+      ],
+      trivia: [
+        'Sa canne à pêche a battu l\'examen Hunter : il a « pêché » le badge de Hisoka.',
+        'Sa transformation adulte est un vœu Nen suicidaire : toute sa puissance future, brûlée en un instant.',
+        "Togashi n'a jamais confirmé s'il retrouvera un jour son Nen.",
+      ],
+      forms: [
+        { label: 'Gon', idle: IDLE_U('gon-base'), age: '12 ans', arc: 'Examen Hunter → York Shin', caption: 'Le garçon à la canne', summary: "Un gamin de l'île de la Baleine qui sent la forêt et fonce d'abord, réfléchit ensuite — le Renforcement fait garçon : Jajanken, pierre-papier-ciseaux mortel.", stats: { nin: 3.5, tai: 4, gen: 4, int: 2.5, for: 4, vit: 4, end: 4.5, sce: 5 } },
+        { label: 'Transformation', idle: IDLE_U('gon-adulte'), age: '—', arc: 'Fourmis-Chimères — vs Neferpitou', caption: 'La rage faite corps', summary: "Devant le corps de Kite, Gon sacrifie TOUT son avenir de Nen pour la puissance immédiate : un corps adulte, une aura qui terrifie les Fourmis royales — et un prix irréversible.", stats: { nin: 5, tai: 5, gen: 4.5, int: 2, for: 5, vit: 5, end: 4, sce: 3 } },
+      ],
+    },
+    'killua-zoldyck': {
+      nindoLabel: 'Choix · sa liberté', nindo: 'Je ne trahirai jamais Gon. C\'est la seule chose que je me suis jurée.',
+      titles: ['Héritier des Zoldyck', 'L\'éclair blanc'], status: 'Vivant — voyage avec Alluka',
+      statLabels: GEN_LABELS,
+      bio: "Élevé pour tuer par la plus célèbre famille d'assassins du monde, Killua fugue à 12 ans pour passer l'examen Hunter « pour s'amuser » — et y rencontre la première personne qu'il veut protéger plutôt qu'éliminer. Son arc entier tient dans ce choix : l'ami plutôt que l'arme.",
+      personality: "Génie blasé au sourire de chat, gamin accro au chocolat — et tueur au sang absolument froid quand il le décide. L'aiguille d'Illumi plantée dans son cerveau lui ordonnait de fuir les plus forts : il l'a arrachée pour rester aux côtés de Gon.",
+      quotes: [
+        'Gon est ma lumière.',
+        "Un pro trouve toujours le moyen de gagner — même contre plus fort que lui.",
+        'Kanmuru : je pense plus vite que l\'éclair, parce que je SUIS l\'éclair.',
+      ],
+      trivia: [
+        'Il s\'est électrocuté volontairement pendant des mois pour transformer la torture familiale en pouvoir (Transformation).',
+        'Ses yo-yos pèsent 50 kg chacun — personne ne s\'en doute jamais.',
+        'Il libère sa petite sœur Alluka, l\'arme la plus dangereuse de la famille, par pur amour fraternel.',
+      ],
+      forms: [
+        { label: 'Killua', idle: IDLE_U('killua-base'), age: '12 ans', arc: 'Examen → Greed Island', caption: "L'assassin en fugue", summary: "Mains-lames, pas d'assassin silencieux, yo-yos de 50 kg : le prodige Zoldyck applique l'art familial… à la protection de son premier ami.", stats: { nin: 4, tai: 4, gen: 5, int: 4, for: 3.5, vit: 4.5, end: 4, sce: 4 } },
+        { label: 'Godspeed — Kanmuru', idle: IDLE_U('killua-godspeed'), age: '13 ans', arc: 'Fourmis-Chimères', caption: "L'éclair incarné", summary: "L'aura électrique automatise ses réflexes : plus besoin de penser pour esquiver ni frapper — Killua devient littéralement la foudre blanche.", stats: { nin: 4.5, tai: 4.5, gen: 5, int: 4, for: 3.5, vit: 5, end: 3.5, sce: 4.5 } },
+      ],
+    },
+    'jotaro-kujo': {
+      nindoLabel: 'Flegme · sa carapace', nindo: 'Yare yare daze…',
+      titles: ['JoJo de la 3ᵉ génération', 'L\'homme au Stand du temps'], status: 'Océanographe — docteur ès étoiles de mer',
+      statLabels: GEN_LABELS,
+      bio: "Lycéen de Tokyo persuadé d'être possédé par un « esprit maléfique », Jotaro découvre que ce fantôme est un Stand — Star Platinum — et que le vampire responsable du réveil de ce pouvoir, DIO, détient le corps de son ancêtre. Cinquante jours de voyage vers l'Égypte plus tard, la lignée Joestar est vengée.",
+      personality: "Mutique, imperturbable, allergique aux effusions — « yare yare daze » est sa réponse à peu près tout. Sous la visière : une intelligence froide qui piège DIO lui-même, et une loyauté de granit envers les siens.",
+      quotes: [
+        'Yare yare daze…',
+        "STAR PLATINUM : ZA WARUDO ! Le temps s'est arrêté pour toi aussi, DIO.",
+        'Il y a des choses qu\'on ne peut régler qu\'avec les poings. (ORA ORA ORA)',
+      ],
+      trivia: [
+        'Star Platinum arrête le temps — pouvoir jumeau de The World, révélé au dernier round contre DIO.',
+        'Sa casquette et ses cheveux fusionnent — mystère graphique jamais résolu par Araki.',
+        'Docteur en biologie marine : le délinquant taciturne est devenu spécialiste des étoiles de mer.',
+      ],
+      forms: [
+        { label: 'Stardust Crusaders', idle: IDLE_U('jotaro-p3'), age: '17 ans', arc: 'Partie 3 — vers l\'Égypte', caption: 'Le gakuran et la chaîne', summary: "50 jours, 10 000 km, une dynastie à venger : le lycéen au gakuran troué mène la croisade contre DIO — Star Platinum cogne, ORA en rafale.", stats: { nin: 5, tai: 5, gen: 3, int: 4.5, for: 5, vit: 5, end: 4.5, sce: 4 } },
+        { label: 'Morioh', idle: IDLE_U('jotaro-p4'), age: '28 ans', arc: 'Partie 4 — Diamond is Unbreakable', caption: 'Le mentor en blanc', summary: "Costume blanc, badge de l'océanographe : Jotaro revient guider Josuke à Morioh — Star Platinum : The World n'arrête plus que 2 secondes, mais 2 secondes de Jotaro suffisent.", stats: { nin: 4.5, tai: 4.5, gen: 3, int: 5, for: 4.5, vit: 4.5, end: 4, sce: 4 } },
+      ],
+    },
+    'dio-brando': {
+      nindoLabel: 'Ambition · son trône', nindo: 'Toi, JoJo… c\'est le destin qui m\'a choisi. MOI, DIO !',
+      titles: ['L\'ennemi de la lignée', 'Le vampire au Stand du monde'], status: 'Réduit en cendres — héritage toujours actif',
+      statLabels: GEN_LABELS,
+      bio: "Fils de misère adopté par les Joestar, Dio choisit le mal comme on choisit une carrière : empoisonner le père, briser le fils, et couronner le tout avec le Masque de Pierre — l'immortalité vampirique. Décapité, il survit un siècle au fond de l'océan accroché au corps de Jonathan, puis revient avec le Stand le plus tyrannique qui soit : The World.",
+      personality: "Charisme de gourou, cruauté d'enfant qui arrache les ailes : DIO ne veut pas seulement gagner — il veut que le monde admette qu'il MÉRITAIT de gagner. Son ombre plane sur six parties du manga.",
+      quotes: [
+        'Ce n\'est pas moi qui ai abandonné mon humanité, JoJo — je l\'ai TRANSCENDÉE !',
+        'ZA WARUDO ! TOKI YO TOMARE ! (Le monde ! Le temps, arrête-toi !)',
+        'MUDA MUDA MUDA MUDA !',
+      ],
+      trivia: [
+        'Son « WRYYY » et son rouleau compresseur sont devenus des monuments d\'internet.',
+        "Giorno Giovanna, héros de la Partie 5, est son fils — conçu avec le corps volé de Jonathan.",
+        'Son plan « Heaven » se réalise après sa mort via le prêtre Pucci (Partie 6).',
+      ],
+      forms: [
+        { label: 'Vampire', idle: IDLE_U('dio-vampire'), age: '20 ans (puis ∞)', arc: 'Partie 1 — Phantom Blood', caption: 'Le Masque de Pierre', summary: "Le fils adoptif pose le masque sur son visage et abandonne l'humanité : force surhumaine, regard pétrifiant, éternité — il ne restera de lui qu'une tête… tenace.", stats: { nin: 4.5, tai: 4, gen: 3.5, int: 4.5, for: 5, vit: 4, end: 5, sce: 3.5 } },
+        { label: 'DIO — The World', idle: IDLE_U('dio-world'), age: '≈ 120 ans', arc: 'Partie 3 — Égypte', caption: 'Le maître du temps arrêté', summary: "Un siècle au fond de la mer, un corps volé, un Stand absolu : The World fige le temps 9 secondes — assez pour un rouleau compresseur. « Approche, Jotaro. »", stats: { nin: 5, tai: 4.5, gen: 4, int: 5, for: 5, vit: 5, end: 4.5, sce: 3 } },
+      ],
+    },
+    'takumi-fujiwara': {
+      nindoLabel: 'Ligne · sa trajectoire', nindo: 'Je ne connais pas la théorie. Je sais juste comment la voiture veut tourner.',
+      titles: ['Le fantôme d\'Akina', 'As du downhill de Project D'], status: 'Actif — rallye pro (épilogue)',
+      statLabels: GEN_LABELS,
+      bio: "Chaque matin depuis ses 13 ans, Takumi livre le tofu familial en dévalant le mont Akina — sans savoir qu'il forge, virage après virage, le meilleur pilote de descente du Kantō. Quand la Hachi-Roku « dépassée » humilie la RX-7 des RedSuns, la rumeur du fantôme d'Akina se répand dans toute la préfecture.",
+      personality: "Lunaire, monosyllabique, réveillé uniquement par le volant : Takumi ne comprend ni les chiffres ni la mécanique — il SENT. Le gobelet d'eau calé dans le porte-verre par Bunta lui a appris la douceur ; les duels lui apprendront la rage.",
+      quotes: [
+        "C'est juste une livraison de tofu. Je fais ça tous les matins.",
+        'La gouttière… je peux y mettre la roue.',
+        "Cette voiture, c'est mon père qui l'a réglée. Elle n'a pas fini de surprendre.",
+      ],
+      trivia: [
+        'Sa technique signature — le drift de la gouttière — cale la roue intérieure dans le caniveau pour pivoter plus vite.',
+        'Le 4A-GE Groupe A monté par Bunta hurle jusqu\'à 11 000 tr/min.',
+        'Il bat l\'Evo de l\'Emperor, la NSX… sans jamais lire une seule revue auto.',
+      ],
+      forms: [
+        { label: 'Livreur de tofu', idle: IDLE_U('takumi-lyceen'), age: '18 ans', arc: 'First Stage', caption: 'Le fantôme d\'Akina', summary: "Un lycéen endormi, une AE86 de livraison, un col avalé 3 000 fois : quand Keisuke le défie, le « fantôme » ne sait même pas qu'il est rapide.", stats: { nin: 3.5, tai: 4.5, gen: 5, int: 2.5, for: 2.5, vit: 4.5, end: 4, sce: 4.5 } },
+        { label: 'Project D', idle: IDLE_U('takumi-projectd'), age: '19 ans', arc: 'Fourth → Final Stage', caption: 'L\'as du downhill', summary: "Recruté par Ryosuke, Takumi devient l'arme de descente de Project D : col après col, invaincu — jusqu'au duel final contre la GT-R de Shinigami.", stats: { nin: 4.5, tai: 5, gen: 5, int: 3.5, for: 3, vit: 5, end: 4.5, sce: 5 } },
+      ],
+    },
+    'light-yagami': {
+      nindoLabel: 'Sentence · son verdict', nindo: 'Je suis la justice. Le monde nouveau n\'a besoin que d\'un dieu — moi.',
+      titles: ['Kira', 'Le dieu du monde nouveau (autoproclamé)'], status: 'Mort — d\'une crise cardiaque, ironiquement',
+      statLabels: GEN_LABELS,
+      bio: "Premier de la nation, fils de policier, ennui abyssal — jusqu'au cahier tombé du ciel : écris un nom, la personne meurt. En six jours, Light juge 40 criminels. En six mois, le monde entier connaît « Kira ». Il ne reste qu'un obstacle entre lui et sa divinité : un détective sans nom, assis en tailleur.",
+      personality: "Brillant, méthodique, et pourri par la certitude d'avoir raison : Light n'a jamais eu l'impression de tomber — chaque meurtre était « nécessaire », chaque manipulation « rationnelle ». Le génie du mal avec la conscience tranquille.",
+      quotes: [
+        'Keikaku dōri… (tout se déroule comme prévu)',
+        "Je prendrai une chips… et je la MANGERAI !",
+        'Je suis Kira. Et le monde m\'a déjà choisi.',
+      ],
+      trivia: [
+        'Le pacte des yeux de shinigami coûte la moitié de la vie restante — Light ne l\'a jamais accepté : trop calculateur.',
+        'Sa règle des 40 secondes (crise cardiaque par défaut) a redéfini le thriller psychologique.',
+        'Ryuk avait prévenu dès la première nuit : « c\'est moi qui écrirai ton nom, un jour ». Il a tenu parole.',
+      ],
+      forms: [
+        { label: 'Le cahier', idle: IDLE_U('light-lyceen'), age: '17 ans', arc: 'Découverte du Death Note', caption: 'Le lycéen parfait', summary: "L'élève parfait ramasse un cahier noir dans la cour du lycée. 40 noms plus tard, Interpol a un problème — et Ryuk, du spectacle.", stats: { nin: 3, tai: 2, gen: 3, int: 5, for: 1.5, vit: 2, end: 3, sce: 5 } },
+        { label: 'Kira', idle: IDLE_U('light-kira'), age: '18-23 ans', arc: 'Duel contre L → SPK', caption: 'Le dieu autoproclamé', summary: "Kira règne : les criminels meurent à heure fixe, les états s'inclinent, L lui-même tombe. Reste Near, Mello — et l'entrepôt de la Yellow Box.", stats: { nin: 3.5, tai: 2, gen: 3.5, int: 5, for: 1.5, vit: 2, end: 3.5, sce: 5 } },
+      ],
+    },
+    'l-lawliet': {
+      nindoLabel: 'Méthode · sa logique', nindo: 'Je suis la justice — non parce que j\'ai raison, mais parce que je ne perds jamais.',
+      titles: ['L', 'Le plus grand détective du monde (×3)'], status: 'Mort — le nom écrit par Rem',
+      statLabels: GEN_LABELS,
+      bio: "Personne ne connaît son visage, tout le monde connaît sa lettre : L, le détective qui résout l'insoluble derrière un écran gothique. L'affaire Kira le force à sortir de l'ombre — jusqu'à s'enchaîner (littéralement) à son suspect principal, qu'il considère aussi comme son premier ami.",
+      personality: "Assis en gargouille, sucre dans le thé jusqu'à saturation, pieds nus : L pense mieux dans l'inconfort des autres. Son taux de certitude affiché (« 5 % ») est toujours un mensonge tactique — c'est 90 dans sa tête.",
+      quotes: [
+        'Je suis L.',
+        "Si je m'assois normalement, ma capacité de déduction chute de 40 %.",
+        'Light-kun… tu es mon premier ami. (et mon principal suspect)',
+      ],
+      trivia: [
+        'Il détient les identités des « trois plus grands détectives du monde » : L, Eraldo Coil et Danuve — les trois sont lui.',
+        'Watari est son intendant, son sniper et le fondateur de la Wammy\'s House qui l\'a élevé.',
+        'Sa mort à mi-série reste l\'un des chocs narratifs les plus célèbres du manga moderne.',
+      ],
+      forms: [
+        { label: 'Le détective', idle: IDLE_U('l-assis'), age: '24 ans', arc: 'Affaire Kira — cellule d\'enquête', caption: 'La gargouille pensante', summary: "Accroupi face à 12 écrans, pouce aux lèvres, sucre en intraveineuse : L réduit le monde entier à une probabilité — et Kira à un lycéen de Tokyo.", stats: { nin: 3, tai: 3, gen: 3.5, int: 5, for: 1.5, vit: 2.5, end: 3, sce: 5 } },
+        { label: 'Face à Kira', idle: IDLE_U('l-debout'), age: '25 ans', arc: 'Confrontation finale', caption: 'Le dernier pari', summary: "Menotté à son suspect, certain à 99 % mais sans preuve : L joue sa dernière carte sous la pluie du toit — il entend déjà les cloches.", stats: { nin: 3, tai: 3.5, gen: 3.5, int: 5, for: 2, vit: 2.5, end: 3, sce: 5 } },
+      ],
+    },
+  };
+  let nStar = 0;
+  for (const e of entries) {
+    if (STAR_DETAILS[e.slug]) { Object.assign(e.attributes, STAR_DETAILS[e.slug]); nStar++; }
+  }
+  console.log(`  ✓ ${nStar}/12 stars multi-univers équipées (formes + sprites + credo)`);
+
   // ── Pages ÉVOLUTIVES hors Naruto (le moteur PlaceView s'active sur attributes.eras) ──
   const UNI_DETAILS = {
     'soul-society': {

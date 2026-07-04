@@ -621,8 +621,16 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
             {kekkei.length > 0 && <Sec title="Kekkei Genkai" accent="#D44B24" icon="kekkei"><Chips items={kekkei} color="#D44B24" /></Sec>}
             {jutsu.length > 0 && <Sec title={`Techniques · ${jutsu.length}`} icon="techniques"><JutsuGroups items={jutsu} color={ACCENT} /></Sec>}
             {fStats && (
-              <Sec title="Radar comparatif — databook" accent="#F0C040">
-                <RadarCompare selfLabel={str(f.label) ?? 'forme'} selfStats={fStats} color={ACCENT} />
+              <Sec title={entry.universe === 'Naruto' ? 'Radar comparatif — databook' : 'Radar databook'} accent="#F0C040">
+                {entry.universe === 'Naruto' ? (
+                  <RadarCompare selfLabel={str(f.label) ?? 'forme'} selfStats={fStats} color={ACCENT} />
+                ) : (
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <div style={{ width: 210, maxWidth: '100%' }}>
+                      <DatabookRadar stats={fStats} color={ACCENT} size={200} labels={(a.statLabels as Record<string, string> | undefined) ?? null} />
+                    </div>
+                  </div>
+                )}
               </Sec>
             )}
             <Moveset2D slug={entry.slug} aura={chakraAura(str(f.label) ?? '')} caption="Sprite : Naruto adulte · l'aura suit la forme sélectionnée" />

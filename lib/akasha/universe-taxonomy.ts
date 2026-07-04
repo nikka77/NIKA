@@ -30,6 +30,8 @@ export interface UniverseTaxonomy {
   axes: UniverseAxis[];
   /** Pages piliers (fiches bespoke/évolutives) mises en avant sur le hub. */
   piliers: string[];
+  /** Pages spéciales de l'univers (ex. Most Wanted OP), affichées en CTA sur le hub. */
+  extras?: { href: string; label: string; icon: string }[];
 }
 
 export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
@@ -96,6 +98,7 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
       },
     ],
     piliers: ['grand-line', 'one-piece-tresor', 'thousand-sunny', 'chapeau-de-paille'],
+    extras: [{ href: '/learn/akasha/wanted', label: 'Most Wanted — le classement des primes', icon: '🏴‍☠️' }],
   },
   {
     name: 'Dragon Ball',

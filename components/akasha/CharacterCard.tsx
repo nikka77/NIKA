@@ -77,7 +77,7 @@ export default function CharacterCard({ entry, sel, onSelect }: { entry: AkashaE
   const gallery = list(a.gallery);
   const galleryForms: Form[] = gallery.map((url, i) => ({ label: ['Partie I', 'Partie II', 'Partie III'][i] ?? `Forme ${i + 1}`, url }));
   const curatedForms: Form[] = (Array.isArray(a.forms) ? (a.forms as Form[]) : [])
-    .filter((f) => f && typeof f.url === 'string');
+    .filter((f) => f && (typeof f.url === 'string' || typeof f.idle === 'string'));
   const forms = curatedForms.length ? curatedForms : galleryForms;
 
   const f: Partial<Form> = forms[sel] ?? {};
@@ -155,6 +155,7 @@ export default function CharacterCard({ entry, sel, onSelect }: { entry: AkashaE
               fallbackIcon={m.icon}
               idle={f.idle ?? null}
               stats={f.stats ?? null}
+              statLabels={(a.statLabels as Record<string, string> | undefined) ?? null}
             />
           </div>
 

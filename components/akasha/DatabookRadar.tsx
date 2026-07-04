@@ -9,7 +9,7 @@ const AXES: { key: keyof Stats; label: string }[] = [
 ];
 const MAX = 5;
 
-export default function DatabookRadar({ stats, color = '#7B5CF0', size = 188, compare, compareColor = '#E23B4E' }: { stats: Stats; color?: string; size?: number; compare?: Stats; compareColor?: string }) {
+export default function DatabookRadar({ stats, color = '#7B5CF0', size = 188, compare, compareColor = '#E23B4E', labels }: { stats: Stats; color?: string; size?: number; compare?: Stats; compareColor?: string; labels?: Partial<Record<keyof Stats, string>> | null }) {
   const cx = size / 2, cy = size / 2, R = size * 0.33;
   const ang = (i: number) => -Math.PI / 2 + i * (Math.PI / 4);
   const pt = (i: number, r: number): [number, number] => [cx + Math.cos(ang(i)) * r, cy + Math.sin(ang(i)) * r];
@@ -38,7 +38,7 @@ export default function DatabookRadar({ stats, color = '#7B5CF0', size = 188, co
         return (
           <text key={i} x={lx} y={ly} fontFamily="ui-monospace, monospace" fontSize={8.5} fontWeight={700}
             fill="var(--td3)" textAnchor="middle" dominantBaseline="middle">
-            {a.label}<tspan fill={color} dx={2}>{v % 1 === 0 ? v : v.toFixed(1)}</tspan>
+            {labels?.[a.key] ?? a.label}<tspan fill={color} dx={2}>{v % 1 === 0 ? v : v.toFixed(1)}</tspan>
           </text>
         );
       })}

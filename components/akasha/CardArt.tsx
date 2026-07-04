@@ -8,11 +8,12 @@ import DatabookRadar, { type Stats } from './DatabookRadar';
 export type CardForm = { label: string; url: string; caption?: string; idle?: string; stats?: Stats };
 
 export default function CardArt({
-  forms, sel, onSelect, name, frame, villageSlug, clanSlug, clan, natures, fallbackIcon, idle, stats,
+  forms, sel, onSelect, name, frame, villageSlug, clanSlug, clan, natures, fallbackIcon, idle, stats, statLabels,
 }: {
   forms: CardForm[]; sel: number; onSelect: (i: number) => void;
   name: string; frame: string; villageSlug: string | null; clanSlug: string | null; clan: string | null;
   natures: string[]; fallbackIcon: string; idle?: string | null; stats?: Stats | null;
+  statLabels?: Partial<Record<keyof Stats, string>> | null;
 }) {
   const current = forms[sel]?.url ?? forms[0]?.url ?? null;
   const databook = !!stats;
@@ -43,7 +44,7 @@ export default function CardArt({
           <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', borderRadius: 11, border: '1px solid var(--bd)', background: 'rgba(5,8,18,0.5)', padding: '4px 4px 2px' }}>
             <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: 8.5, fontWeight: 700, letterSpacing: '0.14em', color: 'var(--td3)', textAlign: 'center', paddingTop: 3 }}>★ DATABOOK</div>
             <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              {stats && <DatabookRadar stats={stats} color={frame} />}
+              {stats && <DatabookRadar stats={stats} color={frame} labels={statLabels} />}
             </div>
           </div>
         </div>

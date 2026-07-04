@@ -220,6 +220,32 @@ export async function listFamilyCounts(
     .sort((a, b) => b.count - a.count || a.fam.localeCompare(b.fam, 'fr'));
 }
 
+/** MOST WANTED One Piece : tous les persos à PRIME, triés par montant décroissant.
+ *  Les primes sont des chaînes (« 3000000000 Berrys ») → parsing + tri côté serveur Node. */
+export async function listBounties(limit = 60): Promise<(AkashaEntryCard & { bounty: string; bountyValue: number })[]> {
+  const supabase = await createClient();
+  if (!supabase) return [];
+  const rows: (AkashaEntryCard & { bounty: string })[] = [];
+  const PAGE = 1000;
+  for (let from = 0; ; from += PAGE) {
+    const { data } = await supabase
+      .from('akasha_entries')
+      .select(`${CARD_COLS}, bounty:attributes->>bounty`)
+      .eq('universe', 'One Piece')
+      .eq('type', 'character')
+      .not('attributes->>bounty', 'is', null)
+      .range(from, from + PAGE - 1);
+    const batch = (data as (AkashaEntryCard & { bounty: string })[] | null) ?? [];
+    rows.push(...batch);
+    if (batch.length < PAGE) break;
+  }
+  return rows
+    .map((r) => ({ ...r, bountyValue: parseInt(String(r.bounty).replace(/[^\d]/g, ''), 10) || 0 }))
+    .filter((r) => r.bountyValue > 0)
+    .sort((a, b) => b.bountyValue - a.bountyValue)
+    .slice(0, limit);
+}
+
 /** Compte total d'entrées d'un univers (HEAD, sans données). */
 export async function countUniverse(universe: string): Promise<number> {
   const supabase = await createClient();
