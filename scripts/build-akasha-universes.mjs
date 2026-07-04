@@ -9,9 +9,15 @@
 //
 // Ensuite : PATH="/opt/homebrew/bin:$PATH" npx tsx --env-file=.env.local scripts/seed-akasha-universes.ts
 // (upsert par slug — additif, ne touche pas aux entrées Naruto).
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, readFileSync, existsSync } from 'node:fs';
 
 const JIKAN = 'https://api.jikan.moe/v4';
+
+// Contenu premium CURÉ hors-ligne (pages évolutives + Stands + rosters), authoré + vérifié
+// par workflow puis figé dans data/akasha-content-extra.json. Chargé si présent (additif).
+const EXTRA = existsSync('data/akasha-content-extra.json')
+  ? JSON.parse(readFileSync('data/akasha-content-extra.json', 'utf8'))
+  : { pages: [], stands: [], rosters: [] };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function getJSON(url, tries = 3) {
@@ -1328,6 +1334,71 @@ async function main() {
     },
   };
   for (const e of entries) if (UNI_DETAILS[e.slug]) Object.assign(e.attributes, UNI_DETAILS[e.slug]);
+
+  // ── Pages évolutives SUPPLÉMENTAIRES (data-driven, authorées par workflow) ──
+  const EXTRA_PAGES = new Map((EXTRA.pages || []).map((p) => [p.slug, p]));
+  let nEP = 0;
+  for (const e of entries) {
+    const p = EXTRA_PAGES.get(e.slug);
+    if (!p) continue;
+    const { slug, ...attrs } = p;
+    Object.assign(e.attributes, attrs);
+    nEP++;
+  }
+  if (nEP) console.log(`  ✓ ${nEP} pages évolutives supplémentaires mergées (Hueco Mundo, Namek…)`);
+
+  // ── Stands JoJo SUPPLÉMENTAIRES (data-driven) ──
+  let nExStand = 0;
+  const jojoCharByName = entries.filter((e) => e.universe === "JoJo's Bizarre Adventure" && e.type === 'character');
+  const resolveJojoOwner = (name) => {
+    const n = String(name).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    const toks = n.split(/[\s.,'’-]+/).filter((t) => t.length >= 3);
+    let best = null, bestHit = 0;
+    for (const c of jojoCharByName) {
+      const cn = c.name.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+      const ctoks = new Set(cn.split(/[\s.,'’-]+/).filter((t) => t.length >= 3));
+      let hit = 0; for (const t of toks) if (ctoks.has(t)) hit++;
+      if (hit > bestHit && hit >= Math.min(2, toks.length)) { bestHit = hit; best = c; }
+    }
+    return best;
+  };
+  for (const st of (EXTRA.stands || [])) {
+    if (!st?.slug || !st?.name) continue;
+    if (addEnt(st.slug, 'power', st.name, "JoJo's Bizarre Adventure", st.summary || 'Stand.', st.rarity || 'rare', purge({ element: 'Stand', category: 'Stand', partie: st.partie || null }))) {
+      const owner = resolveJojoOwner(st.ownerName || '');
+      if (owner) relations.push({ from: owner.slug, to: st.slug, relation: 'maitrise' });
+      nExStand++;
+    }
+  }
+  if (nExStand) console.log(`  ✓ ${nExStand} Stands JoJo supplémentaires`);
+
+  // ── Rosters d'ORGANISATIONS (data-driven) : org entity + relations appartient ──
+  let nOrg = 0, nMemRel = 0;
+  const resolveMember = (universe, name) => {
+    const n = String(name).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    const toks = n.split(/[\s.,'’-]+/).filter((t) => t.length >= 3);
+    if (!toks.length) return null;
+    let best = null, bestHit = 0;
+    for (const c of entries) {
+      if (c.universe !== universe || c.type !== 'character') continue;
+      const cn = c.name.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+      const ctoks = new Set(cn.split(/[\s.,'’-]+/).filter((t) => t.length >= 3));
+      let hit = 0; for (const t of toks) if (ctoks.has(t)) hit++;
+      // exige un recouvrement fort (≥2 tokens ou nom mono-token exact) pour éviter les faux positifs
+      if (hit > bestHit && hit >= Math.min(2, toks.length)) { bestHit = hit; best = c; }
+    }
+    return best;
+  };
+  for (const org of (EXTRA.rosters || [])) {
+    if (!org?.orgSlug || !org?.orgName) continue;
+    addEnt(org.orgSlug, 'status', org.orgName, org.universe, org.summary || `${org.orgName}.`, org.rarity || 'epic', purge({ scope: 'Organisation', category: org.category || 'Organisation' }));
+    if (seen.has(org.orgSlug)) nOrg++;
+    for (const m of (org.members || [])) {
+      const mem = resolveMember(org.universe, m.name);
+      if (mem && mem.slug !== org.orgSlug) { relations.push({ from: mem.slug, to: org.orgSlug, relation: 'appartient' }); nMemRel++; }
+    }
+  }
+  if (nOrg) console.log(`  ✓ ${nOrg} organisations (rosters) + ${nMemRel} liens de membres`);
 
   // ── Catégorie normalisée pour les entités CURÉES (carte slug→catégorie + fallback par type) ──
   const CATEGORY_BY_SLUG = {
