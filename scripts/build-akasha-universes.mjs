@@ -10,6 +10,7 @@
 // Ensuite : PATH="/opt/homebrew/bin:$PATH" npx tsx --env-file=.env.local scripts/seed-akasha-universes.ts
 // (upsert par slug — additif, ne touche pas aux entrées Naruto).
 import { writeFileSync, readFileSync, existsSync } from 'node:fs';
+import { fetchAniListChars, anilistIndex } from './lib/anilist.mjs';
 
 const JIKAN = 'https://api.jikan.moe/v4';
 
@@ -636,6 +637,34 @@ async function main() {
   let ng = 0;
   for (const g of Array.isArray(opGears) ? opGears : []) if (g?.name && addEnt(slugify(g.name), 'skill', g.name, 'One Piece', firstSentence(g.description) || 'Transformation de Luffy.', 'epic', { discipline: 'Gear (Luffy)', category: 'Gear' })) { ng++; relations.push({ from: slugify(g.name), to: 'monkey-d-luffy', relation: 'maitrise' }); }
   console.log(`  + ${nh} hakis + ${ng} gears (skill)`);
+
+  // ── One Piece — NOUVELLES collections via api-onepiece (navires, épées, dials, sagas) ──
+  console.log('→ One Piece — navires / épées / dials / sagas…');
+  const opBoats = (await getJSON('https://api.api-onepiece.com/v2/boats/fr')) ?? [];
+  let nbo = 0;
+  for (const b of Array.isArray(opBoats) ? opBoats : []) {
+    if (!b?.name) continue;
+    const rarity = /Roger|Barbe Blanche|Chapeau de Paille|Moby|Oro Jackson|Thousand|Going/i.test(b.name) ? 'epic' : 'rare';
+    if (addEnt(slugify(b.name), 'artifact', b.name, 'One Piece', firstSentence(b.description) || `${b.type || 'Navire'} de One Piece.`, rarity, purge({ material: b.type || 'Navire', origin: b.crew?.name || null, roman_name: b.roman_name || null, category: 'Navire' }))) {
+      nbo++;
+      const cs = b.crew?.name ? slugify(b.crew.name) : null;
+      if (cs && seen.has(cs)) relations.push({ from: slugify(b.name), to: cs, relation: 'appartient' });
+    }
+  }
+  const opSwords = (await getJSON('https://api.api-onepiece.com/v2/swords/fr')) ?? [];
+  let nsw = 0;
+  for (const s of Array.isArray(opSwords) ? opSwords : []) {
+    if (!s?.name) continue;
+    const rarity = /Yoru|Ace|Shusui|Enma|Wado|Meito|Meïto|Suprême/i.test((s.name || '') + ' ' + (s.description || '')) ? 'epic' : 'rare';
+    if (addEnt(slugify(s.name), 'artifact', s.name, 'One Piece', firstSentence(s.description) || 'Épée légendaire.', rarity, purge({ material: 'Sabre', roman_name: s.roman_name || null, category: 'Arme & outil' }))) nsw++;
+  }
+  const opDials = (await getJSON('https://api.api-onepiece.com/v2/dials/fr')) ?? [];
+  let ndi = 0;
+  for (const d of Array.isArray(opDials) ? opDials : []) if (d?.name && addEnt(slugify(d.name), 'artifact', d.name, 'One Piece', firstSentence(d.description) || 'Coquillage-outil de Skypiea.', 'rare', purge({ material: 'Dial (coquillage)', roman_name: d.roman_name || null, category: 'Relique' }))) ndi++;
+  const opSagas = (await getJSON('https://api.api-onepiece.com/v2/sagas/fr')) ?? [];
+  let nsa = 0;
+  for (const sg of Array.isArray(opSagas) ? opSagas : []) if (sg?.title && addEnt(slugify(sg.title), 'status', sg.title, 'One Piece', firstSentence(sg.description) || 'Saga de One Piece.', 'rare', purge({ scope: 'Saga narrative', category: 'Saga' }))) nsa++;
+  console.log(`  + ${nbo} navires + ${nsw} épées + ${ndi} dials + ${nsa} sagas (One Piece)`);
 
   console.log('→ Dragon Ball — entités (transformations, planètes)…');
   const dbTrans = (await getJSON('https://dragonball-api.com/api/transformations?limit=100'));
@@ -1435,6 +1464,31 @@ async function main() {
     else if (e.type === 'status') e.attributes.category = /Équipage/.test(String(e.attributes.scope || '')) ? 'Équipage' : 'Organisation';
     else if (e.type === 'place') e.attributes.category = 'Lieu';
   }
+
+  // ── Enrichissement ANILIST : combler la popularité (favorites) + bio manquantes ──
+  // AniList expose favourites + description par perso, triés par popularité (idMal réutilisé).
+  // NB : on n'utilise QUE les favoris (nombres, neutres). Les descriptions AniList sont en
+  // anglais → écartées (règle NIKA « textes en français toujours »).
+  console.log('→ AniList — enrichissement popularité (favoris) par univers…');
+  let aniFav = 0;
+  for (const u of UNIVERSES) {
+    const chars = await fetchAniListChars(u.malId, 6);
+    if (!chars.length) { console.log(`  ⚠ AniList vide pour ${u.label} (mal ${u.malId})`); continue; }
+    const lookup = anilistIndex(chars);
+    let fu = 0;
+    for (const e of entries) {
+      if (e.universe !== u.label || e.type !== 'character') continue;
+      const hit = lookup(e.name);
+      if (!hit) continue;
+      if ((!e.attributes.favorites || e.attributes.favorites === 0) && hit.fav > 0) {
+        e.attributes.favorites = hit.fav;
+        e.rarity = rarityMax(e.rarity, favTier(hit.fav));
+        aniFav++; fu++;
+      }
+    }
+    console.log(`  ✓ ${u.label} : +${fu} favoris (AniList ${chars.length} persos)`);
+  }
+  console.log(`  ✓ AniList total : +${aniFav} favoris`);
 
   // Relations : vérifier que tous les slugs existent dans CE lot
   const bad = relations.filter((r) => !seen.has(r.from) || !seen.has(r.to));

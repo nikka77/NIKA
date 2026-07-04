@@ -27,6 +27,7 @@ const CATEGORY_FALLBACK: Record<string, { icon: string; color: string }> = {
   'Relique':           { icon: '🏺', color: '#D4A017' },
   'Transformation':    { icon: '⚡', color: '#F2A93B' },
   'Planète':           { icon: '🪐', color: '#0094D4' },
+  'Saga':              { icon: '📖', color: '#D63C3C' },
   'Technique':         { icon: '💥', color: '#D44B24' },
   'Aptitude':          { icon: '✴️', color: '#12B8CC' },
   'Stand':             { icon: '👥', color: '#8E44AD' },

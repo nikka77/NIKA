@@ -1152,6 +1152,23 @@ async function main() {
   }
   console.log(`✓ popularité Naruto : ${popN}/${entries.filter((e) => e.type === 'character').length} persos notés (favorites MAL)`);
 
+  // ── Enrichissement ANILIST : combler les favoris manquants (long tail) — FAVORIS SEULEMENT ──
+  // (descriptions AniList en anglais → écartées ; règle NIKA « textes en français toujours »).
+  const { fetchAniListChars, anilistIndex } = await import('./lib/anilist.mjs');
+  let aniN = 0;
+  const aniChars = [];
+  for (const id of [20, 1735, 34566]) { const c = await fetchAniListChars(id, 5); aniChars.push(...c); }
+  if (aniChars.length) {
+    const aniLookup = anilistIndex(aniChars);
+    for (const e of entries) {
+      if (e.type !== 'character') continue;
+      const hit = aniLookup(e.name);
+      if (!hit) continue;
+      if ((!e.attributes.favorites || e.attributes.favorites === 0) && hit.fav > 0) { e.attributes.favorites = hit.fav; e.rarity = rarityMax(e.rarity, favTier(hit.fav)); aniN++; }
+    }
+  }
+  console.log(`✓ AniList Naruto : +${aniN} favoris (${aniChars.length} persos AniList)`);
+
   // ── GÉNÉRATIONS (axe taxonomique du hub /learn/akasha/u/naruto) — curation par nom ──
   const GENERATIONS = [
     [['Hashirama Senju', 'Tobirama Senju', 'Madara Uchiha', 'Mito Uzumaki', 'Izuna Uchiha', 'Tōka Senju'], 'Fondateurs'],
