@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import { SITE_URL } from '@/lib/site';
 import { hubVisual, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { universeMeta } from '@/lib/akasha/types';
-import { countUniverse, getEntriesBySlugs, listAxisCounts, listCategoryCounts, listEvolutive, listStars, universeInsights } from '@/lib/akasha/queries';
+import { countUniverse, getEntriesBySlugs, listAxisCounts, listBounties, listCategoryCounts, listEvolutive, listStars, universeInsights } from '@/lib/akasha/queries';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import HubHalo from '@/components/akasha/hub/HubHalo';
 import Reveal from '@/components/akasha/hub/Reveal';
@@ -15,6 +15,7 @@ import ShareButton from '@/components/akasha/hub/ShareButton';
 import HubInsights from '@/components/akasha/hub/HubInsights';
 import HubCollection from '@/components/akasha/hub/HubCollection';
 import ContinueBanner from '@/components/akasha/hub/ContinueBanner';
+import HubSignature from '@/components/akasha/hub/HubSignature';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -67,6 +68,7 @@ export default async function UniverseHubPage({ params }: Props) {
     universeInsights(taxo.name),
     listEvolutive(taxo.name, 8),
   ]);
+  const bounties = vis?.signature === 'bounties' ? await listBounties(8) : [];
 
   // Garde-fou : un univers sans aucune donnée exploitable n'est pas une page indexable.
   if (total === 0 && stars.length === 0 && piliers.length === 0) notFound();
@@ -178,6 +180,11 @@ export default async function UniverseHubPage({ params }: Props) {
           <Reveal as="div">
             <HubCollection stars={stars} piliers={piliers} universe={taxo.name} color={m.color} ranks={vis?.ranks ?? ['Novice', 'Initié', 'Adepte', 'Expert', 'Maître', 'Légende']} />
           </Reveal>
+        )}
+
+        {/* ── SIGNATURE BESPOKE DE L'UNIVERS ─────────────────── */}
+        {vis?.signature && (
+          <Reveal as="div"><HubSignature signature={vis.signature} axes={axes} universe={taxo.name} color={m.color} bounties={bounties} /></Reveal>
         )}
 
         {/* ── INSIGHTS (chiffres-clés, rareté, top popularité, derniers ajoutés) ── */}
