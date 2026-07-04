@@ -7,11 +7,12 @@ import { notFound } from 'next/navigation';
 import { SITE_URL } from '@/lib/site';
 import { hubVisual, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { universeMeta } from '@/lib/akasha/types';
-import { countUniverse, getEntriesBySlugs, listAxisCounts, listCategoryCounts, listStars } from '@/lib/akasha/queries';
+import { countUniverse, getEntriesBySlugs, listAxisCounts, listCategoryCounts, listEvolutive, listStars, universeInsights } from '@/lib/akasha/queries';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import HubHalo from '@/components/akasha/hub/HubHalo';
 import Reveal from '@/components/akasha/hub/Reveal';
 import ShareButton from '@/components/akasha/hub/ShareButton';
+import HubInsights from '@/components/akasha/hub/HubInsights';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -51,12 +52,14 @@ export default async function UniverseHubPage({ params }: Props) {
   const m = universeMeta(taxo.name);
   const vis = hubVisual(taxo.slug);
   const attrs = taxo.axes.map((a) => a.attr);
-  const [total, stars, axisCounts, catCounts, piliers] = await Promise.all([
+  const [total, stars, axisCounts, catCounts, piliers, insights, evolutive] = await Promise.all([
     countUniverse(taxo.name),
     listStars(taxo.name, 12),
     listAxisCounts(taxo.name, attrs),
     listCategoryCounts({ universe: taxo.name }),
     getEntriesBySlugs(taxo.piliers),
+    universeInsights(taxo.name),
+    listEvolutive(taxo.name, 8),
   ]);
 
   // Axes affichables : valeurs curées avec data d'abord, puis les valeurs « découvertes » (hors config) par volume.
@@ -158,6 +161,20 @@ export default async function UniverseHubPage({ params }: Props) {
                 </Link>
               ))}
             </div>
+          </Reveal>
+        )}
+
+        {/* ── INSIGHTS (chiffres-clés, rareté, top popularité, derniers ajoutés) ── */}
+        <Reveal as="div"><HubInsights insights={insights} color={m.color} /></Reveal>
+
+        {/* ── VOYAGES DANS LE TEMPS (pages évolutives) ───────── */}
+        {evolutive.length > 0 && (
+          <Reveal>
+            <div style={sectionTitle}>
+              <span>🕰️ Voyages dans le temps</span>
+              <span style={{ color: 'var(--td3)', letterSpacing: '0.03em' }}>{evolutive.length} lieux & artefacts évolutifs</span>
+            </div>
+            <AkashaGrid entries={evolutive} />
           </Reveal>
         )}
 

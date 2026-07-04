@@ -246,6 +246,64 @@ export async function listBounties(limit = 60): Promise<(AkashaEntryCard & { bou
     .slice(0, limit);
 }
 
+export interface UniverseInsights {
+  total: number;
+  byType: Record<string, number>;
+  byRarity: Record<string, number>;
+  topFav: (AkashaEntryCard & { favorites: number })[];
+  recent: AkashaEntryCard[];
+}
+
+/** INSIGHTS d'un univers en UN SEUL scan paginé : total, répartition type/rareté,
+ *  top popularité (favorites MAL) et derniers ajoutés (created_at). Alimente les sections
+ *  « chiffres-clés », « donut rareté », « top 10 » et « derniers ajoutés » du hub. */
+export async function universeInsights(universe: string): Promise<UniverseInsights> {
+  const empty: UniverseInsights = { total: 0, byType: {}, byRarity: {}, topFav: [], recent: [] };
+  const supabase = await createClient();
+  if (!supabase) return empty;
+
+  const byType: Record<string, number> = {};
+  const byRarity: Record<string, number> = {};
+  const topFav: (AkashaEntryCard & { favorites: number })[] = [];
+  const recent: (AkashaEntryCard & { created_at: string })[] = [];
+  let total = 0;
+  const PAGE = 1000;
+  for (let from = 0; ; from += PAGE) {
+    const { data } = await supabase
+      .from('akasha_entries')
+      .select('slug, name, type, is_fiction, universe, summary, image_url, rarity, created_at, category:attributes->>category, fav:attributes->>favorites')
+      .eq('universe', universe)
+      .range(from, from + PAGE - 1);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const rows = (data as any[] | null) ?? [];
+    for (const r of rows) {
+      total++;
+      byType[r.type] = (byType[r.type] ?? 0) + 1;
+      if (r.rarity) byRarity[r.rarity] = (byRarity[r.rarity] ?? 0) + 1;
+      const fav = parseInt(String(r.fav ?? ''), 10);
+      if (fav > 0 && r.image_url) topFav.push({ ...(r as AkashaEntryCard), favorites: fav });
+      if (r.created_at && r.image_url) recent.push(r as AkashaEntryCard & { created_at: string });
+    }
+    if (rows.length < PAGE) break;
+  }
+  topFav.sort((a, b) => b.favorites - a.favorites);
+  recent.sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
+  return { total, byType, byRarity, topFav: topFav.slice(0, 10), recent: recent.slice(0, 10) };
+}
+
+/** Pages évolutives d'un univers (entités portant `attributes.eras`) — la vitrine « Voyages dans le temps ». */
+export async function listEvolutive(universe: string, limit = 8): Promise<AkashaEntryCard[]> {
+  const supabase = await createClient();
+  if (!supabase) return [];
+  const { data } = await supabase
+    .from('akasha_entries')
+    .select(CARD_COLS)
+    .eq('universe', universe)
+    .not('attributes->>eras', 'is', null)
+    .limit(limit);
+  return (data as AkashaEntryCard[] | null) ?? [];
+}
+
 /** Compte total d'entrées d'un univers (HEAD, sans données). */
 export async function countUniverse(universe: string): Promise<number> {
   const supabase = await createClient();
