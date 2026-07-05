@@ -23,35 +23,34 @@ async function gql(malId, page, tries = 3) {
   return null;
 }
 
-/** Coupe la bio AniList (markdown maison) en une intro FR-propre : retire les balises ~! !~, __, [](),
- *  garde la première phrase lisible. */
-function cleanBio(desc) {
+/** Nettoie la description AniList en texte brut lisible (retire balises maison ~!!~, markdown, HTML)
+ *  SANS traduire — conservée telle quelle (anglais) pour traduction FR ultérieure. */
+function rawText(desc) {
   if (!desc) return null;
   const s = String(desc)
     .replace(/~!|!~/g, '')
     .replace(/__|\*\*|\*/g, '')
     .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/<br\s*\/?>/gi, ' ')
     .replace(/<[^>]+>/g, '')
     .replace(/\s+/g, ' ')
     .trim();
-  // Ignore les blocs "Height: … Affiliation: …" en tête → prendre la 1re vraie phrase.
-  const sentence = s.split(/(?<=[.!?])\s/).find((p) => p.length > 40 && !/^(Height|Weight|Age|Birth|Affiliation|Bounty|Occupation)/i.test(p));
-  return (sentence || s).slice(0, 240) || null;
+  return s.length > 20 ? s.slice(0, 1200) : null;
 }
 
-/** Récupère jusqu'à `maxPages` × 50 personnages d'une série → [{names:[...], favourites, bio}].
- *  `names` regroupe full/native/alternatives pour faciliter le matching côté build. */
-export async function fetchAniListChars(malId, maxPages = 6) {
+/** Récupère jusqu'à `maxPages` × 50 personnages d'une série → [{names:[...], favourites, descRaw}].
+ *  descRaw = description AniList BRUTE (anglais) pour enrichissement + traduction future. */
+export async function fetchAniListChars(malId, maxPages = 10) {
   const out = [];
   for (let p = 1; p <= maxPages; p++) {
     const chars = await gql(malId, p);
     if (!chars?.nodes?.length) break;
     for (const c of chars.nodes) {
       const names = [c.name?.full, c.name?.native, ...(c.name?.alternative || [])].filter(Boolean);
-      out.push({ names, favourites: c.favourites || 0, bio: cleanBio(c.description) });
+      out.push({ names, favourites: c.favourites || 0, descRaw: rawText(c.description) });
     }
     if (!chars.pageInfo?.hasNextPage) break;
-    await sleep(750);
+    await sleep(700);
   }
   return out;
 }
@@ -60,7 +59,7 @@ export async function fetchAniListChars(malId, maxPages = 6) {
  *  (« Luffy Monkey » ↔ « Monkey D. Luffy »). Retourne une fonction de lookup. */
 export function anilistIndex(chars) {
   const toks = (s) => new Set(String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z\s]/g, ' ').split(/\s+/).filter((t) => t.length >= 3));
-  const idx = chars.map((c) => ({ toks: toks(c.names.join(' ')), fav: c.favourites, bio: c.bio }));
+  const idx = chars.map((c) => ({ toks: toks(c.names.join(' ')), fav: c.favourites, descRaw: c.descRaw }));
   return (name) => {
     const want = toks(name);
     if (!want.size) return null;

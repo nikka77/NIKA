@@ -1152,12 +1152,12 @@ async function main() {
   }
   console.log(`✓ popularité Naruto : ${popN}/${entries.filter((e) => e.type === 'character').length} persos notés (favorites MAL)`);
 
-  // ── Enrichissement ANILIST : combler les favoris manquants (long tail) — FAVORIS SEULEMENT ──
-  // (descriptions AniList en anglais → écartées ; règle NIKA « textes en français toujours »).
+  // ── Enrichissement ANILIST : favoris manquants + descriptions BRUTES (descRaw, anglais) ──
+  // descRaw stockée pour enrichissement + traduction FR future (jamais affichée telle quelle).
   const { fetchAniListChars, anilistIndex } = await import('./lib/anilist.mjs');
-  let aniN = 0;
+  let aniN = 0, aniD = 0;
   const aniChars = [];
-  for (const id of [20, 1735, 34566]) { const c = await fetchAniListChars(id, 5); aniChars.push(...c); }
+  for (const id of [20, 1735, 34566]) { const c = await fetchAniListChars(id, 10); aniChars.push(...c); }
   if (aniChars.length) {
     const aniLookup = anilistIndex(aniChars);
     for (const e of entries) {
@@ -1165,9 +1165,10 @@ async function main() {
       const hit = aniLookup(e.name);
       if (!hit) continue;
       if ((!e.attributes.favorites || e.attributes.favorites === 0) && hit.fav > 0) { e.attributes.favorites = hit.fav; e.rarity = rarityMax(e.rarity, favTier(hit.fav)); aniN++; }
+      if (!e.attributes.descRaw && hit.descRaw) { e.attributes.descRaw = hit.descRaw; e.attributes.descLang = 'en'; aniD++; }
     }
   }
-  console.log(`✓ AniList Naruto : +${aniN} favoris (${aniChars.length} persos AniList)`);
+  console.log(`✓ AniList Naruto : +${aniN} favoris, +${aniD} descriptions brutes (${aniChars.length} persos AniList)`);
 
   // ── GÉNÉRATIONS (axe taxonomique du hub /learn/akasha/u/naruto) — curation par nom ──
   const GENERATIONS = [
@@ -1209,12 +1210,20 @@ async function main() {
     if (Array.isArray(fam)) for (const f of fam) { const s = slugify(f.name); if (slugs.has(s)) f.slug = s; }
   }
 
+  // ── DÉDUP : fusion des doublons de personnages Naruto (clé canonique romanisation-insensible) ──
+  // Slugs curés (config CHARACTERS) toujours gardés comme keeper.
+  const { dedupeChars } = await import('./lib/dedup.mjs');
+  const curatedNaruto = new Set(CHARACTERS.map((c) => c.slug || slugify(c.key)));
+  const ddN = dedupeChars(entries, dedup, [], curatedNaruto);
+  console.log(`✓ dédup Naruto : ${ddN.merges.length} doublons fusionnés → ${ddN.entries.length} entrées`);
+  writeFileSync(join(ROOT, 'data', 'akasha-merges-naruto.json'), JSON.stringify(ddN.merges, null, 1));
+
   mkdirSync(join(ROOT, 'data'), { recursive: true });
-  const out = { generatedFrom: 'dattebayo-api', universe: 'Naruto', entries, relations: dedup };
+  const out = { generatedFrom: 'dattebayo-api', universe: 'Naruto', entries: ddN.entries, relations: ddN.relations };
   writeFileSync(join(ROOT, 'data', 'akasha-naruto.json'), JSON.stringify(out, null, 2));
-  console.log(`✓ ${entries.length} entrées, ${dedup.length} relations → data/akasha-naruto.json`);
+  console.log(`✓ ${ddN.entries.length} entrées, ${ddN.relations.length} relations → data/akasha-naruto.json`);
   const byType = {};
-  for (const e of entries) byType[e.type] = (byType[e.type] || 0) + 1;
+  for (const e of ddN.entries) byType[e.type] = (byType[e.type] || 0) + 1;
   console.log('  par type:', JSON.stringify(byType));
 }
 

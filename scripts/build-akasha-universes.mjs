@@ -11,6 +11,8 @@
 // (upsert par slug — additif, ne touche pas aux entrées Naruto).
 import { writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { fetchAniListChars, anilistIndex } from './lib/anilist.mjs';
+import { dedupeChars } from './lib/dedup.mjs';
+import { DEDUP_ALIASES } from './lib/dedup-aliases.mjs';
 
 const JIKAN = 'https://api.jikan.moe/v4';
 
@@ -1467,15 +1469,15 @@ async function main() {
 
   // ── Enrichissement ANILIST : combler la popularité (favorites) + bio manquantes ──
   // AniList expose favourites + description par perso, triés par popularité (idMal réutilisé).
-  // NB : on n'utilise QUE les favoris (nombres, neutres). Les descriptions AniList sont en
-  // anglais → écartées (règle NIKA « textes en français toujours »).
-  console.log('→ AniList — enrichissement popularité (favoris) par univers…');
-  let aniFav = 0;
+  // Favoris (nombres, neutres) → popularité/rareté. descRaw = description AniList BRUTE (anglais),
+  // stockée pour ENRICHISSEMENT + traduction FR ultérieure (JAMAIS affichée telle quelle → règle FR).
+  console.log('→ AniList — favoris + descriptions brutes (descRaw) par univers…');
+  let aniFav = 0, aniDesc = 0;
   for (const u of UNIVERSES) {
-    const chars = await fetchAniListChars(u.malId, 6);
+    const chars = await fetchAniListChars(u.malId, 10);
     if (!chars.length) { console.log(`  ⚠ AniList vide pour ${u.label} (mal ${u.malId})`); continue; }
     const lookup = anilistIndex(chars);
-    let fu = 0;
+    let fu = 0, du = 0;
     for (const e of entries) {
       if (e.universe !== u.label || e.type !== 'character') continue;
       const hit = lookup(e.name);
@@ -1485,23 +1487,33 @@ async function main() {
         e.rarity = rarityMax(e.rarity, favTier(hit.fav));
         aniFav++; fu++;
       }
+      if (!e.attributes.descRaw && hit.descRaw) { e.attributes.descRaw = hit.descRaw; e.attributes.descLang = 'en'; aniDesc++; du++; }
     }
-    console.log(`  ✓ ${u.label} : +${fu} favoris (AniList ${chars.length} persos)`);
+    console.log(`  ✓ ${u.label} : +${fu} favoris, +${du} descriptions (AniList ${chars.length} persos)`);
   }
-  console.log(`  ✓ AniList total : +${aniFav} favoris`);
+  console.log(`  ✓ AniList total : +${aniFav} favoris, +${aniDesc} descriptions brutes`);
 
-  // Relations : vérifier que tous les slugs existent dans CE lot
-  const bad = relations.filter((r) => !seen.has(r.from) || !seen.has(r.to));
+  // ── DÉDUP : fusion des doublons de personnages (clé canonique + alias curés) ──
+  // Les slugs CURÉS (config u.chars + STAR_DETAILS) sont toujours gardés comme keeper.
+  const curatedSlugs = new Set([...UNIVERSES.flatMap((u) => u.chars.map((c) => c.slug)), ...Object.keys(STAR_DETAILS)]);
+  const dd = dedupeChars(entries, relations, DEDUP_ALIASES, curatedSlugs);
+  const finalEntries = dd.entries;
+  const seenFinal = new Set(finalEntries.map((e) => e.slug));
+  console.log(`  ✓ dédup : ${dd.merges.length} doublons fusionnés → ${finalEntries.length} entrées`);
+  writeFileSync('data/akasha-merges-universes.json', JSON.stringify(dd.merges, null, 1));
+
+  // Relations : ne garder que celles dont les 2 extrémités existent (post-dédup)
+  const bad = dd.relations.filter((r) => !seenFinal.has(r.from) || !seenFinal.has(r.to));
   for (const b of bad) console.warn('  ⚠ relation ignorée:', b.from, '→', b.to);
-  const ok = relations.filter((r) => seen.has(r.from) && seen.has(r.to));
+  const ok = dd.relations.filter((r) => seenFinal.has(r.from) && seenFinal.has(r.to));
 
   const byType = {};
-  for (const e of entries) byType[e.type] = (byType[e.type] || 0) + 1;
-  const noImg = entries.filter((e) => e.type === 'character' && !e.image_url).length;
-  writeFileSync('data/akasha-universes.json', JSON.stringify({ entries, relations: ok }, null, 1));
-  console.log(`✓ ${entries.length} entrées, ${ok.length} relations → data/akasha-universes.json`);
+  for (const e of finalEntries) byType[e.type] = (byType[e.type] || 0) + 1;
+  const noImg = finalEntries.filter((e) => e.type === 'character' && !e.image_url).length;
+  writeFileSync('data/akasha-universes.json', JSON.stringify({ entries: finalEntries, relations: ok }, null, 1));
+  console.log(`✓ ${finalEntries.length} entrées, ${ok.length} relations → data/akasha-universes.json`);
   console.log('  par type:', JSON.stringify(byType));
-  console.log('  par univers:', UNIVERSES.map((u) => `${u.label}:${entries.filter((e) => e.universe === u.label).length}`).join(' · '));
+  console.log('  par univers:', UNIVERSES.map((u) => `${u.label}:${finalEntries.filter((e) => e.universe === u.label).length}`).join(' · '));
   if (noImg) console.log(`  ⚠ ${noImg} perso(s) sans portrait`);
 }
 
