@@ -1,19 +1,12 @@
 // components/akasha/AkashaFilters.tsx — onglets de filtre par type (liens → URL partageable).
 import Link from 'next/link';
 import { AKASHA_TYPES, TYPE_META, type AkashaType } from '@/lib/akasha/types';
+import { registryHref, type RegistryFilters } from '@/lib/akasha/href';
 
 const ACCENT = '#7B5CF0';
 
-function buildHref(type: AkashaType | null, search: string, universe?: string): string {
-  const p = new URLSearchParams();
-  if (universe) p.set('universe', universe);
-  if (type) p.set('type', type);
-  if (search) p.set('search', search);
-  const qs = p.toString();
-  return qs ? `/learn/akasha?${qs}` : '/learn/akasha';
-}
-
-export default function AkashaFilters({ active, search, universe }: { active?: AkashaType; search: string; universe?: string }) {
+// PROPAGE tous les filtres au changement de type (builder central) — fin des resets silencieux (L3).
+export default function AkashaFilters({ active, search, universe, keep }: { active?: AkashaType; search: string; universe?: string; keep?: Partial<RegistryFilters> }) {
   const tabs: { type: AkashaType | null; label: string; icon?: string }[] = [
     { type: null, label: 'Tout' },
     ...AKASHA_TYPES.map((t) => ({ type: t, label: TYPE_META[t].plural, icon: TYPE_META[t].icon })),
@@ -26,7 +19,7 @@ export default function AkashaFilters({ active, search, universe }: { active?: A
         return (
           <Link
             key={tab.label}
-            href={buildHref(tab.type, search, universe)}
+            href={registryHref({ ...keep, universe, search, type: tab.type ?? undefined })}
             className="ak-tab"
             style={{
               fontFamily: 'var(--fo)',

@@ -14,6 +14,7 @@ import Markdown from '@/components/akasha/Markdown';
 import CharacterView from '@/components/akasha/CharacterView';
 import PlaceView from '@/components/akasha/PlaceView';
 import VisitTracker from '@/components/akasha/hub/VisitTracker';
+import Crumbs from '@/components/akasha/Crumbs';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -55,12 +56,7 @@ export default async function AkashaEntryPage({ params }: Props) {
       <main>
         <VisitTracker slug={entry.slug} name={entry.name} universe={entry.universe} image={entry.image_url} />
         <div style={{ maxWidth: 470, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.2rem clamp(3rem,7vw,5rem)' }}>
-          <Link
-            href="/learn/akasha"
-            style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', textDecoration: 'none', display: 'inline-block', marginBottom: '1rem' }}
-          >
-            ← Registre AKASHA
-          </Link>
+          <Crumbs universe={entry.universe} category={typeof (entry.attributes as Record<string, unknown>).category === 'string' ? ((entry.attributes as Record<string, unknown>).category as string) : null} name={entry.name} />
           <CharacterView entry={entry} popRank={popRank} />
         </div>
       </main>
@@ -73,12 +69,7 @@ export default async function AkashaEntryPage({ params }: Props) {
       <main>
         <VisitTracker slug={entry.slug} name={entry.name} universe={entry.universe} image={entry.image_url} />
         <div style={{ maxWidth: 470, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.2rem clamp(3rem,7vw,5rem)' }}>
-          <Link
-            href="/learn/akasha"
-            style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', textDecoration: 'none', display: 'inline-block', marginBottom: '1rem' }}
-          >
-            ← Registre AKASHA
-          </Link>
+          <Crumbs universe={entry.universe} category={typeof (entry.attributes as Record<string, unknown>).category === 'string' ? ((entry.attributes as Record<string, unknown>).category as string) : null} name={entry.name} />
           <PlaceView entry={entry} />
         </div>
       </main>
@@ -97,20 +88,7 @@ export default async function AkashaEntryPage({ params }: Props) {
         }}
       >
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <Link
-            href="/learn/akasha"
-            style={{
-              fontFamily: 'var(--fo)',
-              fontSize: 12,
-              fontWeight: 700,
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-              color: 'var(--td3)',
-              textDecoration: 'none',
-            }}
-          >
-            ← Registre AKASHA
-          </Link>
+          <Crumbs universe={entry.universe} category={category} name={entry.name} />
 
           <div style={{ display: 'flex', gap: '1.4rem', flexWrap: 'wrap', alignItems: 'flex-start', marginTop: '1.1rem' }}>
             {/* Visuel */}
@@ -253,7 +231,7 @@ export default async function AkashaEntryPage({ params }: Props) {
           );
         })()}
 
-        <EntityAttributes type={entry.type} attributes={entry.attributes} />
+        <EntityAttributes type={entry.type} attributes={entry.attributes} universe={entry.universe} />
 
         <EntityRelations out={entry.relationsOut} incoming={entry.relationsIn} />
 

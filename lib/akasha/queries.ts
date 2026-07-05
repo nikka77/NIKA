@@ -28,6 +28,8 @@ export interface ListEntriesParams {
   search?: string;
   /** Filtre RARETÉ (?rarity=legendary|epic|rare|common) — Refonte L2. */
   rarity?: string;
+  /** Tri (?sort=pop|alpha) — défaut : rareté décroissante (buckets). Refonte L3. */
+  sort?: string;
   page?: number;
 }
 
@@ -47,7 +49,7 @@ const RARITY_BUCKETS: (string | null)[] = ['legendary', 'epic', 'rare', 'common'
  *  « buckets » de rareté (légendaire → commun), chaque bucket ordonné par nom. Une page ne
  *  chevauche au plus que 2 buckets → 5 counts + ≤2 requêtes data. */
 export async function listEntries(
-  { type, universe, cat, fam, attr, val, search, rarity: rarityParam, page = 1 }: ListEntriesParams = {},
+  { type, universe, cat, fam, attr, val, search, rarity: rarityParam, sort: sortParam, page = 1 }: ListEntriesParams = {},
 ): Promise<ListEntriesResult> {
   const pageSize = PAGE_SIZE;
   const current = Math.max(1, Math.floor(page) || 1);
@@ -62,7 +64,7 @@ export async function listEntries(
   const axisAttr = attr && val && ALLOWED_FILTER_ATTRS.has(attr) ? attr : undefined;
   // Applique les filtres communs (type / univers / recherche + le bucket de rareté) à un builder frais.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const applyFilters = (q: any, rarity: string | null): any => {
+  const applyFilters = (q: any, rarity: string | null | undefined): any => {
     if (type) q = q.eq('type', type);
     if (universe) q = q.eq('universe', universe);
     if (cat) q = q.eq('attributes->>category', cat);
@@ -72,9 +74,26 @@ export async function listEntries(
     // La recherche fouille AUSSI les descriptions VF canon (descFr) : « Rasengan », « Konoha »,
     // « Fruit du Démon »… remontent enfin les fiches dont seule la bio parle.
     if (s) q = q.or(`name.ilike.%${s}%,universe.ilike.%${s}%,summary.ilike.%${s}%,attributes->>descFr.ilike.%${s}%`);
-    q = rarity === null ? q.is('rarity', null) : q.eq('rarity', rarity);
+    if (rarity !== undefined) q = rarity === null ? q.is('rarity', null) : q.eq('rarity', rarity);
     return q;
   };
+
+  // ── TRI NATIF (?sort=pop|alpha) : un seul range paginé, pas de buckets (Refonte L3). ──
+  if (sortParam === 'pop' || sortParam === 'alpha') {
+    let q = applyFilters(supabase.from('akasha_entries').select(CARD_COLS, { count: 'exact' }), rarityParam);
+    q = sortParam === 'pop'
+      ? q.order('attributes->favorites', { ascending: false, nullsFirst: false }).order('name', { ascending: true })
+      : q.order('name', { ascending: true });
+    const { data, count } = await q.range(from, from + pageSize - 1);
+    const totalSorted = count ?? 0;
+    return {
+      entries: (data as AkashaEntryCard[] | null) ?? [],
+      total: totalSorted,
+      page: current,
+      pageSize,
+      totalPages: Math.max(1, Math.ceil(totalSorted / pageSize)),
+    };
+  }
 
   // Filtre rareté actif → un seul bucket ; sinon parcours complet légendaire → commun.
   const buckets: (string | null)[] = rarityParam && ['legendary', 'epic', 'rare', 'common'].includes(rarityParam)

@@ -13,6 +13,8 @@ import DailyBooster from '@/components/akasha/DailyBooster';
 import UniverseRail from '@/components/akasha/UniverseRail';
 import CategoryRail from '@/components/akasha/CategoryRail';
 import DidYouKnow from '@/components/akasha/DidYouKnow';
+import FilterBar from '@/components/akasha/FilterBar';
+import { registryHref } from '@/lib/akasha/href';
 
 export const metadata: Metadata = {
   title: 'AKASHA — Le registre de tout ce qui existe | NIKA LEARN',
@@ -23,20 +25,11 @@ export const metadata: Metadata = {
 
 const ACCENT = '#7B5CF0';
 
-type SearchParams = { type?: string; universe?: string; cat?: string; fam?: string; attr?: string; val?: string; search?: string; rarity?: string; page?: string };
+type SearchParams = { type?: string; universe?: string; cat?: string; fam?: string; attr?: string; val?: string; search?: string; rarity?: string; sort?: string; page?: string };
 
-function pageHref(target: number, type: string | undefined, search: string, universe?: string, cat?: string, fam?: string, attr?: string, val?: string, rarity?: string): string {
-  const p = new URLSearchParams();
-  if (universe) p.set('universe', universe);
-  if (type) p.set('type', type);
-  if (cat) p.set('cat', cat);
-  if (cat && fam) p.set('fam', fam);
-  if (attr && val) { p.set('attr', attr); p.set('val', val); }
-  if (rarity) p.set('rarity', rarity);
-  if (search) p.set('search', search);
-  if (target > 1) p.set('page', String(target));
-  const qs = p.toString();
-  return qs ? `/learn/akasha?${qs}` : '/learn/akasha';
+// Toutes les URLs passent par le builder CENTRAL registryHref (lib/akasha/href) — Refonte L3.
+function pageHref(target: number, type: string | undefined, search: string, universe?: string, cat?: string, fam?: string, attr?: string, val?: string, rarity?: string, sort?: string): string {
+  return registryHref({ universe, type, cat, fam, attr, val, rarity, sort, search, page: target });
 }
 
 export default async function AkashaPage({ searchParams }: { searchParams?: Promise<SearchParams> }) {
@@ -50,11 +43,12 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
   const axisOn = !!(attr && val && ALLOWED_FILTER_ATTRS.has(attr));
   const search = (sp.search ?? '').trim();
   const rarity = ['legendary', 'epic', 'rare', 'common'].includes((sp.rarity ?? '').trim()) ? (sp.rarity ?? '').trim() : undefined;
+  const sort = ['pop', 'alpha'].includes((sp.sort ?? '').trim()) ? (sp.sort ?? '').trim() : undefined;
   const page = Number(sp.page) || 1;
-  const isRoot = !type && !universe && !cat && !fam && !axisOn && !search && !rarity && page === 1;
+  const isRoot = !type && !universe && !cat && !fam && !axisOn && !search && !rarity && !sort && page === 1;
 
   const [{ entries, total, page: current, totalPages }, universeCounts, categoryCounts, familyCounts, daily] = await Promise.all([
-    listEntries({ type, universe, cat, fam, attr, val, search, rarity, page }),
+    listEntries({ type, universe, cat, fam, attr, val, search, rarity, sort, page }),
     listUniverseCounts(),
     listCategoryCounts({ type, universe }),
     listFamilyCounts({ universe, cat }),
@@ -222,7 +216,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
           </Link>
         )}
 
-        <AkashaFilters active={type} search={search} universe={universe} />
+        <AkashaFilters active={type} search={search} universe={universe} keep={{ cat, fam, attr: axisOn ? attr : undefined, val: axisOn ? val : undefined, rarity, sort }} />
 
         {/* ── GEMMES DE RARETÉ (?rarity=) — filtre TCG, toggle par palier ── */}
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', margin: '0.2rem 0 1.1rem' }}>
@@ -256,6 +250,23 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
         </div>
 
         <CategoryRail counts={categoryCounts} active={cat} famCounts={familyCounts} activeFam={fam} universe={universe} type={type} search={search} />
+
+        {/* ── FILTRES ACTIFS (chips supprimables) + TRI — fin des filtres fantômes ── */}
+        <FilterBar f={{ universe, type, cat, fam, attr: axisOn ? attr : undefined, val: axisOn ? val : undefined, rarity, sort, search }} />
+        {total > 0 && (
+          <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap', margin: '0 0 0.9rem' }}>
+            <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--td3)' }}>Tri :</span>
+            {([['', 'Rareté'], ['pop', 'Popularité'], ['alpha', 'A → Z']] as const).map(([key, label]) => {
+              const active = (sort ?? '') === key;
+              return (
+                <Link key={label} href={pageHref(1, type, search, universe, cat, fam, axisOn ? attr : undefined, axisOn ? val : undefined, rarity, key || undefined)}
+                  style={{ fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, textDecoration: 'none', padding: '4px 11px', borderRadius: 20, color: active ? '#7B5CF0' : 'var(--td3)', background: active ? 'rgba(123,92,240,0.14)' : 'transparent', border: `1px solid ${active ? '#7B5CF0' : 'var(--bd2)'}` }}>
+                  {label}
+                </Link>
+              );
+            })}
+          </div>
+        )}
 
         <div
           style={{
@@ -332,26 +343,40 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '1.2rem',
+              gap: '0.5rem',
+              flexWrap: 'wrap' as const,
               marginTop: '2.5rem',
             }}
           >
             {current > 1 ? (
-              <Link href={pageHref(current - 1, type, search, universe, cat, fam, axisOn ? attr : undefined, axisOn ? val : undefined)} className="ak-page" style={pageBtnStyle}>
-                ← Précédent
+              <Link href={pageHref(current - 1, type, search, universe, cat, fam, axisOn ? attr : undefined, axisOn ? val : undefined, rarity, sort)} className="ak-page" style={pageBtnStyle}>
+                ←
               </Link>
             ) : (
-              <span style={{ ...pageBtnStyle, opacity: 0.35, pointerEvents: 'none' }}>← Précédent</span>
+              <span style={{ ...pageBtnStyle, opacity: 0.35, pointerEvents: 'none' }}>←</span>
             )}
-            <span style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)' }}>
-              Page {current} / {totalPages}
-            </span>
+            {/* Fenêtre de pages numérotées : 1 … c-1 c c+1 … N (Refonte L3) */}
+            {(() => {
+              const wanted = new Set([1, current - 1, current, current + 1, totalPages].filter((n) => n >= 1 && n <= totalPages));
+              const nums = Array.from(wanted).sort((a, b) => a - b);
+              const items: (number | '…')[] = [];
+              nums.forEach((n, i) => { if (i > 0 && n - nums[i - 1] > 1) items.push('…'); items.push(n); });
+              return items.map((it, i) =>
+                it === '…' ? (
+                  <span key={`e${i}`} style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)' }}>…</span>
+                ) : it === current ? (
+                  <span key={it} style={{ ...pageBtnStyle, background: 'rgba(123,92,240,0.18)', borderColor: '#7B5CF0', color: '#7B5CF0', pointerEvents: 'none' }}>{it}</span>
+                ) : (
+                  <Link key={it} href={pageHref(it, type, search, universe, cat, fam, axisOn ? attr : undefined, axisOn ? val : undefined, rarity, sort)} className="ak-page" style={pageBtnStyle}>{it}</Link>
+                ),
+              );
+            })()}
             {current < totalPages ? (
-              <Link href={pageHref(current + 1, type, search, universe, cat, fam, axisOn ? attr : undefined, axisOn ? val : undefined)} className="ak-page" style={pageBtnStyle}>
-                Suivant →
+              <Link href={pageHref(current + 1, type, search, universe, cat, fam, axisOn ? attr : undefined, axisOn ? val : undefined, rarity, sort)} className="ak-page" style={pageBtnStyle}>
+                →
               </Link>
             ) : (
-              <span style={{ ...pageBtnStyle, opacity: 0.35, pointerEvents: 'none' }}>Suivant →</span>
+              <span style={{ ...pageBtnStyle, opacity: 0.35, pointerEvents: 'none' }}>→</span>
             )}
           </div>
         )}

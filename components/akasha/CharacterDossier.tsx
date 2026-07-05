@@ -529,7 +529,15 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
     { key: 'liens', label: 'Liens', show: entry.relationsOut.length || entry.relationsIn.length },
   ].filter((t) => t.show);
 
-  const [active, setActive] = useState(tabs[0]?.key ?? 'identite');
+  // Deep-link ?tab= (L3) : /learn/akasha/naruto-uzumaki?tab=histoire ouvre directement l'onglet.
+  // Lecture au premier rendu client (composant client, pas de useSearchParams → pas de Suspense requis).
+  const [active, setActive] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const want = new URLSearchParams(window.location.search).get('tab');
+      if (want && tabs.some((t) => t.key === want)) return want;
+    }
+    return tabs[0]?.key ?? 'identite';
+  });
   if (!tabs.length) return null;
 
   return (

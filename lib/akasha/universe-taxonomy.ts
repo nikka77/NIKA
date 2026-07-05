@@ -349,3 +349,8 @@ export function axisValueLabel(universe: string, attr: string, value: string): s
   const ax = BY_NAME.get(universe)?.axes.find((a) => a.attr === attr);
   return ax?.values.find((x) => x.v === value)?.l ?? value;
 }
+
+/** Libellé FR d'un AXE (« village » → « Villages ») — FilterBar, breadcrumb (retombe sur l'attr brut). */
+export function axisLabel(universe: string, attr: string): string | null {
+  return BY_NAME.get(universe)?.axes.find((a) => a.attr === attr)?.label ?? null;
+}
