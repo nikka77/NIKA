@@ -26,6 +26,8 @@ export interface ListEntriesParams {
   attr?: string;
   val?: string;
   search?: string;
+  /** Filtre RARETÉ (?rarity=legendary|epic|rare|common) — Refonte L2. */
+  rarity?: string;
   page?: number;
 }
 
@@ -45,7 +47,7 @@ const RARITY_BUCKETS: (string | null)[] = ['legendary', 'epic', 'rare', 'common'
  *  « buckets » de rareté (légendaire → commun), chaque bucket ordonné par nom. Une page ne
  *  chevauche au plus que 2 buckets → 5 counts + ≤2 requêtes data. */
 export async function listEntries(
-  { type, universe, cat, fam, attr, val, search, page = 1 }: ListEntriesParams = {},
+  { type, universe, cat, fam, attr, val, search, rarity: rarityParam, page = 1 }: ListEntriesParams = {},
 ): Promise<ListEntriesResult> {
   const pageSize = PAGE_SIZE;
   const current = Math.max(1, Math.floor(page) || 1);
@@ -74,9 +76,14 @@ export async function listEntries(
     return q;
   };
 
+  // Filtre rareté actif → un seul bucket ; sinon parcours complet légendaire → commun.
+  const buckets: (string | null)[] = rarityParam && ['legendary', 'epic', 'rare', 'common'].includes(rarityParam)
+    ? [rarityParam]
+    : RARITY_BUCKETS;
+
   // Comptage par bucket (HEAD, sans données) → total + navigation dans les buckets.
   const counts = await Promise.all(
-    RARITY_BUCKETS.map(async (rarity) => {
+    buckets.map(async (rarity) => {
       const { count } = await applyFilters(
         supabase.from('akasha_entries').select('id', { count: 'exact', head: true }),
         rarity,
@@ -89,7 +96,7 @@ export async function listEntries(
   // Parcourt les buckets dans l'ordre de rareté, prélève la tranche qui recoupe la fenêtre [from, from+pageSize).
   const rows: AkashaEntryCard[] = [];
   let acc = 0;
-  for (let i = 0; i < RARITY_BUCKETS.length && rows.length < pageSize; i++) {
+  for (let i = 0; i < buckets.length && rows.length < pageSize; i++) {
     const start = acc;
     const end = acc + counts[i];
     acc = end;
@@ -99,7 +106,7 @@ export async function listEntries(
     const need = pageSize - rows.length;
     const { data } = await applyFilters(
       supabase.from('akasha_entries').select(CARD_COLS).order('name', { ascending: true }),
-      RARITY_BUCKETS[i],
+      buckets[i],
     ).range(localFrom, localFrom + need - 1);
     if (data) rows.push(...(data as AkashaEntryCard[]));
   }
@@ -148,7 +155,8 @@ export const getEntryBySlug = cache(async function getEntryBySlug(slug: string):
   const [{ data: outRows }, { data: inRows }] = await Promise.all([
     supabase
       .from('akasha_relations')
-      .select('id, relation, target:akasha_entries!akasha_relations_to_entry_fkey(slug, name, type, image_url)')
+      // category/is_signature projetés pour imprimer l'ATTAQUE SIGNATURE sur la face TCG (L2).
+      .select('id, relation, target:akasha_entries!akasha_relations_to_entry_fkey(slug, name, type, image_url, category:attributes->>category, is_signature:attributes->>is_signature)')
       .eq('from_entry', e.id),
     supabase
       .from('akasha_relations')
@@ -447,6 +455,21 @@ export async function getDailyCard(dateSeed: string): Promise<AkashaEntryCard | 
   const idx = h % count;
   const { data } = await base().order('slug', { ascending: true }).range(idx, idx);
   return (data as AkashaEntryCard[] | null)?.[0] ?? null;
+}
+
+/** Rang de POPULARITÉ d'un perso dans son univers (#N par favoris MAL/AniList). 1 count HEAD.
+ *  Comparaison JSONB numérique via l'opérateur -> (les favorites sont stockés en nombre JSON). */
+export async function popularityRank(universe: string | null, favorites: number): Promise<number | null> {
+  if (!universe || !favorites || favorites <= 0) return null;
+  const supabase = await createClient();
+  if (!supabase) return null;
+  const { count } = await supabase
+    .from('akasha_entries')
+    .select('id', { count: 'exact', head: true })
+    .eq('universe', universe)
+    .eq('type', 'character')
+    .gt('attributes->favorites', favorites);
+  return count == null ? null : count + 1;
 }
 
 /** « Le savais-tu ? » : pick déterministe (seed = date + scope) parmi les fiches à bio VF (descFr).

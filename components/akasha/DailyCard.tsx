@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { RARITY_META, universeMeta, type AkashaEntryCard } from '@/lib/akasha/types';
 import { flavorText } from '@/lib/akasha/flavor';
+import ClaimDaily from './ClaimDaily';
 
 export default function DailyCard({ entry }: { entry: AkashaEntryCard }) {
   const flavor = flavorText(entry.descFr, 130);
@@ -55,6 +56,8 @@ export default function DailyCard({ entry }: { entry: AkashaEntryCard }) {
             {flavor ? `« ${flavor} »` : entry.summary}
           </p>
         )}
+        {/* La carte du jour se RÉCLAME (rejoint la collection) — cohérence TCG. */}
+        <ClaimDaily slug={entry.slug} name={entry.name} img={entry.image_url} color={accent} />
       </div>
       <div aria-hidden style={{ alignSelf: 'center', paddingRight: 16, fontFamily: 'var(--fo)', fontSize: 18, color: accent }}>→</div>
     </Link>

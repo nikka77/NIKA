@@ -891,6 +891,46 @@ ul { list-style: none; }
   .ak-era-img { animation: none; }
 }
 
+/* ═══ RARETÉ TCG — identité visuelle par palier (Refonte L2 « Tout est carte ») ═══
+   La rareté doit se voir à 3 mètres : common plat, rare liseré argent, epic halo violet
+   pulsé, legendary or + balayage holo. Classes appliquées sur les cartes (grille + fiche). */
+.ak-r-common { border-color: rgba(122, 138, 160, 0.30) !important; }
+.ak-r-rare {
+  border-color: #9aa0a6 !important;
+  box-shadow: 0 0 0 1px rgba(190, 197, 205, 0.22), 0 8px 26px -14px rgba(154, 160, 166, 0.55);
+}
+.ak-r-epic {
+  border-color: #7b5cf0 !important;
+  box-shadow: 0 0 0 1px rgba(123, 92, 240, 0.30), 0 10px 30px -12px rgba(123, 92, 240, 0.65);
+  animation: akEpicPulse 3.2s ease-in-out infinite;
+}
+@keyframes akEpicPulse {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(123, 92, 240, 0.30), 0 10px 30px -12px rgba(123, 92, 240, 0.55); }
+  50% { box-shadow: 0 0 0 1px rgba(123, 92, 240, 0.55), 0 10px 38px -10px rgba(123, 92, 240, 0.85); }
+}
+.ak-r-legendary {
+  border-color: #d4a017 !important;
+  box-shadow: 0 0 0 1px rgba(212, 160, 23, 0.40), 0 12px 36px -12px rgba(212, 160, 23, 0.75);
+  position: relative;
+  overflow: hidden;
+}
+/* Balayage holo doré — passe toutes les ~4,5 s sur la carte légendaire. */
+.ak-r-legendary::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 5; pointer-events: none;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 226, 140, 0.16) 46%, rgba(255, 255, 255, 0.30) 50%, rgba(255, 226, 140, 0.16) 54%, transparent 70%);
+  transform: translateX(-120%);
+  animation: akLegendSheen 4.5s ease-in-out infinite;
+}
+@keyframes akLegendSheen {
+  0%, 55% { transform: translateX(-120%); }
+  85%, 100% { transform: translateX(120%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ak-r-epic { animation: none; }
+  .ak-r-legendary::after { display: none; }
+}
+
 /* ── Techniques animées : animation bouclée embarquée dans le WebP (déterministe) ── */
 
 /* ═══ HUB D'UNIVERS AKASHA — identité visuelle & motion (config-driven) ═══ */

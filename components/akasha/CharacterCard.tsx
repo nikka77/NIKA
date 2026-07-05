@@ -65,7 +65,7 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
-export default function CharacterCard({ entry, sel, onSelect }: { entry: AkashaEntry; sel: number; onSelect: (i: number) => void }) {
+export default function CharacterCard({ entry, sel, onSelect, sigMoves = [] }: { entry: AkashaEntry; sel: number; onSelect: (i: number) => void; sigMoves?: string[] }) {
   const a = entry.attributes as Record<string, unknown>;
   const rar = entry.rarity ? RARITY_META[entry.rarity] : null;
   const frame = rar?.color ?? '#5A88B0';
@@ -104,7 +104,7 @@ export default function CharacterCard({ entry, sel, onSelect }: { entry: AkashaE
 
   return (
     <article
-      className="ak-card"
+      className={`ak-card ak-r-${entry.rarity ?? 'common'}`}
       style={{
         position: 'relative', borderRadius: 18, padding: 4, overflow: 'hidden',
         background: `linear-gradient(155deg, ${frame}, ${frame}88 28%, #1a1f33 60%, ${frame}66)`,
@@ -191,10 +191,12 @@ export default function CharacterCard({ entry, sel, onSelect }: { entry: AkashaE
                 <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 700, fontSize: 14, color: 'var(--td)' }}>{kekkei.join(' · ')}</div>
               </AbilityBox>
             )}
-            {(signature.length > 0 || jutsu.length > 0) && (
+            {(signature.length > 0 || jutsu.length > 0 || sigMoves.length > 0) && (
               <AbilityBox icon={<CategoryIcon name="techniques" size={16} />} label="Techniques signature" accent={frame}>
                 <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 15, color: 'var(--td)', lineHeight: 1.2 }}>
-                  {(signature.length > 0 ? signature : jutsu.slice(0, 1)).join(' · ')}
+                  {/* Priorité : signatures curées → attaques SIGNATURE liées (relations is_signature,
+                      ex. Goku → Kamehameha, zéro saisie) → 1er jutsu. */}
+                  {(signature.length > 0 ? signature : sigMoves.length > 0 ? sigMoves : jutsu.slice(0, 1)).join(' · ')}
                 </div>
                 {jutsu.length > 0 && (
                   <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', marginTop: 4 }}>

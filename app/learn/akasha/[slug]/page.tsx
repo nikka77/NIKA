@@ -2,7 +2,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getEntryBySlug, listSimilar } from '@/lib/akasha/queries';
+import { getEntryBySlug, listSimilar, popularityRank } from '@/lib/akasha/queries';
 import { TYPE_META, RARITY_META, type AkashaType } from '@/lib/akasha/types';
 import { flavorExcerpt } from '@/lib/akasha/flavor';
 import { universeHubSlug } from '@/lib/akasha/universe-taxonomy';
@@ -47,6 +47,10 @@ export default async function AkashaEntryPage({ params }: Props) {
 
   // Personnages → fiche « carte à jouer » réactive (carte + dossier évoluent par forme).
   if (entry.type === 'character') {
+    // Rang de popularité dans l'univers (#N par favoris) — 1 count HEAD, affiché sous la carte.
+    const fav = typeof (entry.attributes as Record<string, unknown>).favorites === 'number'
+      ? ((entry.attributes as Record<string, unknown>).favorites as number) : 0;
+    const popRank = await popularityRank(entry.universe, fav);
     return (
       <main>
         <VisitTracker slug={entry.slug} name={entry.name} universe={entry.universe} image={entry.image_url} />
@@ -57,7 +61,7 @@ export default async function AkashaEntryPage({ params }: Props) {
           >
             ← Registre AKASHA
           </Link>
-          <CharacterView entry={entry} />
+          <CharacterView entry={entry} popRank={popRank} />
         </div>
       </main>
     );

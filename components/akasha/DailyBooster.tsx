@@ -5,6 +5,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { RARITY_META, universeMeta, type AkashaRarity } from '@/lib/akasha/types';
+import CardBack from './CardBack';
 
 type Card = { slug: string; name: string; universe: string | null; image_url: string | null; rarity: AkashaRarity | null };
 
@@ -97,10 +98,15 @@ export default function DailyBooster() {
                   }}
                 >
                   {/* face */}
-                  <div style={{ position: 'absolute', inset: 0, borderRadius: 12, overflow: 'hidden', backfaceVisibility: 'hidden', border: `2px solid ${rar?.color ?? 'var(--bd2)'}`, background: 'var(--bg2)', boxShadow: on && rar ? `0 10px 26px -12px ${rar.color}` : 'none' }}>
+                  <div className={on ? `ak-r-${c.rarity ?? 'common'}` : undefined} style={{ position: 'absolute', inset: 0, borderRadius: 12, overflow: 'hidden', backfaceVisibility: 'hidden', border: `2px solid ${rar?.color ?? 'var(--bd2)'}`, background: 'var(--bg2)', boxShadow: on && rar ? `0 10px 26px -12px ${rar.color}` : 'none' }}>
                     {c.image_url && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={c.image_url} alt="" style={{ width: '100%', height: '72%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }} />
+                      <div style={{ position: 'relative', width: '100%', height: '72%', overflow: 'hidden' }}>
+                        {/* image ENTIÈRE centrée sur fond flouté — cohérent avec les cartes (L104) */}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img aria-hidden src={c.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'blur(12px) saturate(1.25) brightness(0.5)', transform: 'scale(1.2)' }} />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={c.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
+                      </div>
                     )}
                     <div style={{ padding: '4px 7px' }}>
                       <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 800, color: 'var(--td)', lineHeight: 1.15, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{c.name}</div>
@@ -109,9 +115,9 @@ export default function DailyBooster() {
                       </div>
                     </div>
                   </div>
-                  {/* dos */}
-                  <div style={{ position: 'absolute', inset: 0, borderRadius: 12, backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', border: '2px solid rgba(123,92,240,0.5)', background: 'linear-gradient(135deg, #171232, #0B0820)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 30 }}>
-                    ✦
+                  {/* dos — le DOS DE CARTE officiel AKASHA (uniforme : ne spoile pas l'univers) */}
+                  <div style={{ position: 'absolute', inset: 0, borderRadius: 12, backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', overflow: 'hidden' }}>
+                    <CardBack height="100%" />
                   </div>
                 </div>
               </Link>

@@ -37,12 +37,15 @@ export type AkashaEntryCard = Pick<
   'id' | 'slug' | 'type' | 'name' | 'is_fiction' | 'universe' | 'summary' | 'image_url' | 'rarity'
 > & { category?: string | null; descFr?: string | null };
 
-/** Cible résolue d'une relation (entité liée). */
+/** Cible résolue d'une relation (entité liée). category/is_signature : projetés sur les relations
+ *  SORTANTES uniquement (impression de l'attaque signature sur la carte — Refonte L2). */
 export interface RelationTarget {
   slug: string;
   name: string;
   type: AkashaType;
   image_url: string | null;
+  category?: string | null;
+  is_signature?: string | null;
 }
 
 export interface ResolvedRelation {

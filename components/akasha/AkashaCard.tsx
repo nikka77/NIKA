@@ -45,7 +45,7 @@ export default function AkashaCard({ entry }: { entry: AkashaEntryCard }) {
   return (
     <Link
       href={`/learn/akasha/${entry.slug}`}
-      className="dom-card akasha-card"
+      className={`dom-card akasha-card ak-r-${entry.rarity ?? 'common'}`}
       style={{
         width: '100%',
         background: 'var(--bg2)',

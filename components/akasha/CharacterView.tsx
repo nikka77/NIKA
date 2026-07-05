@@ -11,7 +11,7 @@ import ArcFrieze from './ArcFrieze';
 import { RARITY_META, type AkashaEntryDetail } from '@/lib/akasha/types';
 import { normalizeForms } from '@/lib/akasha/forms';
 
-export default function CharacterView({ entry }: { entry: AkashaEntryDetail }) {
+export default function CharacterView({ entry, popRank }: { entry: AkashaEntryDetail; popRank?: number | null }) {
   const [sel, setSel] = useState(0);
   const frame = entry.rarity ? RARITY_META[entry.rarity].color : '#5A88B0';
   const foilmax = entry.rarity === 'legendary' ? 0.6 : entry.rarity === 'epic' ? 0.48 : entry.rarity === 'rare' ? 0.38 : 0.26;
@@ -26,14 +26,34 @@ export default function CharacterView({ entry }: { entry: AkashaEntryDetail }) {
   // que CharacterCard et CharacterDossier, sinon `sel` se désynchronise entre carte et dossier.
   const forms = normalizeForms(entry.attributes as Record<string, unknown>) as Record<string, unknown>[];
 
+  // Attaques SIGNATURE liées (relations 'maitrise' → techniques is_signature) : imprimées sur la
+  // face TCG pour les persos non curés (Goku → Kamehameha sans aucune saisie manuelle).
+  const sigMoves = entry.relationsOut
+    .filter((r) => r.relation === 'maitrise' && r.target.category === 'Attaque' && r.target.is_signature === 'true')
+    .map((r) => r.target.name)
+    .slice(0, 3);
+
   return (
     <>
       {/* Frise chronologique horizontale — remplace le sélecteur d'onglets ET l'onglet Parcours */}
       {forms.length > 1 && <ArcFrieze forms={forms} sel={sel} onSelect={setSel} color={frame} />}
 
       <CardFx color={frame} foilmax={foilmax}>
-        <CharacterCard entry={entry} sel={sel} onSelect={setSel} />
+        <CharacterCard entry={entry} sel={sel} onSelect={setSel} sigMoves={sigMoves} />
       </CardFx>
+
+      {/* Rang de popularité dans l'univers (favoris MAL/AniList) — la rareté devient lisible. */}
+      {(() => {
+        const fav = typeof (entry.attributes as Record<string, unknown>).favorites === 'number'
+          ? ((entry.attributes as Record<string, unknown>).favorites as number) : 0;
+        if (!fav || !popRank) return null;
+        return (
+          <div style={{ textAlign: 'center', marginTop: 8, fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, color: 'var(--td3)', letterSpacing: '0.04em' }}>
+            <span style={{ color: '#E8623A' }}>★ {fav.toLocaleString('fr-FR')} fans</span>
+            {entry.universe && <span> · #{popRank} de {entry.universe}</span>}
+          </div>
+        );
+      })()}
 
       <CardActions slug={entry.slug} name={entry.name} img={entry.image_url ?? undefined} color={frame} />
 

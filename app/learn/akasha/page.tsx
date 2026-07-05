@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import DomainHero from '@/components/DomainHero';
 import { getDailyCard, listCategoryCounts, listEntries, listFamilyCounts, listUniverseCounts } from '@/lib/akasha/queries';
-import { asAkashaType, TYPE_META, universeMeta } from '@/lib/akasha/types';
+import { asAkashaType, RARITY_META, TYPE_META, universeMeta } from '@/lib/akasha/types';
 import { ALLOWED_FILTER_ATTRS, axisValueLabel, universeHubSlug } from '@/lib/akasha/universe-taxonomy';
 import DailyCard from '@/components/akasha/DailyCard';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
@@ -23,15 +23,16 @@ export const metadata: Metadata = {
 
 const ACCENT = '#7B5CF0';
 
-type SearchParams = { type?: string; universe?: string; cat?: string; fam?: string; attr?: string; val?: string; search?: string; page?: string };
+type SearchParams = { type?: string; universe?: string; cat?: string; fam?: string; attr?: string; val?: string; search?: string; rarity?: string; page?: string };
 
-function pageHref(target: number, type: string | undefined, search: string, universe?: string, cat?: string, fam?: string, attr?: string, val?: string): string {
+function pageHref(target: number, type: string | undefined, search: string, universe?: string, cat?: string, fam?: string, attr?: string, val?: string, rarity?: string): string {
   const p = new URLSearchParams();
   if (universe) p.set('universe', universe);
   if (type) p.set('type', type);
   if (cat) p.set('cat', cat);
   if (cat && fam) p.set('fam', fam);
   if (attr && val) { p.set('attr', attr); p.set('val', val); }
+  if (rarity) p.set('rarity', rarity);
   if (search) p.set('search', search);
   if (target > 1) p.set('page', String(target));
   const qs = p.toString();
@@ -48,11 +49,12 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
   const val = (sp.val ?? '').trim() || undefined;
   const axisOn = !!(attr && val && ALLOWED_FILTER_ATTRS.has(attr));
   const search = (sp.search ?? '').trim();
+  const rarity = ['legendary', 'epic', 'rare', 'common'].includes((sp.rarity ?? '').trim()) ? (sp.rarity ?? '').trim() : undefined;
   const page = Number(sp.page) || 1;
-  const isRoot = !type && !universe && !cat && !fam && !axisOn && !search && page === 1;
+  const isRoot = !type && !universe && !cat && !fam && !axisOn && !search && !rarity && page === 1;
 
   const [{ entries, total, page: current, totalPages }, universeCounts, categoryCounts, familyCounts, daily] = await Promise.all([
-    listEntries({ type, universe, cat, fam, attr, val, search, page }),
+    listEntries({ type, universe, cat, fam, attr, val, search, rarity, page }),
     listUniverseCounts(),
     listCategoryCounts({ type, universe }),
     listFamilyCounts({ universe, cat }),
@@ -221,6 +223,37 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
         )}
 
         <AkashaFilters active={type} search={search} universe={universe} />
+
+        {/* ── GEMMES DE RARETÉ (?rarity=) — filtre TCG, toggle par palier ── */}
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', margin: '0.2rem 0 1.1rem' }}>
+          {(['legendary', 'epic', 'rare', 'common'] as const).map((r) => {
+            const meta = RARITY_META[r];
+            const active = rarity === r;
+            return (
+              <Link
+                key={r}
+                href={pageHref(1, type, search, universe, cat, fam, axisOn ? attr : undefined, axisOn ? val : undefined, active ? undefined : r)}
+                className={active ? `ak-r-${r}` : undefined}
+                style={{
+                  fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase',
+                  padding: '5px 12px', borderRadius: 20, textDecoration: 'none',
+                  color: active ? meta.color : 'var(--td3)',
+                  background: active ? `${meta.color}1A` : 'var(--bg2)',
+                  border: `1px solid ${active ? meta.color : 'var(--bd2)'}`,
+                  display: 'inline-flex', alignItems: 'center', gap: 6,
+                }}
+              >
+                <span aria-hidden style={{ width: 8, height: 8, borderRadius: 2, transform: 'rotate(45deg)', background: meta.color, boxShadow: `0 0 6px ${meta.color}` }} />
+                {meta.label}
+              </Link>
+            );
+          })}
+          {rarity && (
+            <Link href={pageHref(1, type, search, universe, cat, fam, axisOn ? attr : undefined, axisOn ? val : undefined)} style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: 'var(--td3)', textDecoration: 'none', padding: '5px 10px' }}>
+              ✕ Toutes raretés
+            </Link>
+          )}
+        </div>
 
         <CategoryRail counts={categoryCounts} active={cat} famCounts={familyCounts} activeFam={fam} universe={universe} type={type} search={search} />
 
