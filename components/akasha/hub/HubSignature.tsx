@@ -2,7 +2,7 @@
 // (vis.signature). 100 % serveur (RSC) : hexagone du Nen, carte des villages, échelle des primes,
 // organigramme du Gotei, frise des parties/sagas, panneaux de cols, duel Kira vs L.
 import Link from 'next/link';
-import type { HubVisual } from '@/lib/akasha/universe-taxonomy';
+import { universeHubSlug, type HubVisual } from '@/lib/akasha/universe-taxonomy';
 
 export interface AxisChip { v: string; label: string; count: number; tint?: string; badge?: string }
 export interface AxisView { attr: string; label: string; icon: string; chips: AxisChip[] }
@@ -10,9 +10,11 @@ export interface Bounty { slug: string; name: string; image_url: string | null; 
 
 const TITLE = (color: string) => ({ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase' as const, color, marginBottom: 12, display: 'flex', alignItems: 'center', gap: 8 });
 
+// Pointe vers la SOUS-PAGE D'AXE dédiée (L6) plutôt que le registre filtré ; repli registre si l'univers
+// n'a pas de hub-slug (ne devrait pas arriver puisque la signature vient d'un hub).
 function href(universe: string, attr: string, val: string) {
-  const p = new URLSearchParams({ universe, attr, val });
-  return `/learn/akasha?${p.toString()}`;
+  const slug = universeHubSlug(universe);
+  return slug ? `/learn/akasha/u/${slug}/${attr}/${encodeURIComponent(val)}` : `/learn/akasha?${new URLSearchParams({ universe, attr, val }).toString()}`;
 }
 
 // ── Hexagone du Nen (Hunter x Hunter) ──────────────────────────────
@@ -149,13 +151,22 @@ function KiraDuel({ axis, universe }: { axis: AxisView; universe: string }) {
   const kira = find('Kira');
   const l = find('Cellule d’enquête');
   const others = axis.chips.filter((c) => c !== kira && c !== l);
-  const Side = ({ chip, side, col }: { chip?: AxisChip; side: string; col: string }) => (
-    <Link href={chip ? href(universe, axis.attr, chip.v) : '#'} className="dom-card" style={{ flex: 1, textDecoration: 'none', background: `linear-gradient(160deg, ${col}22, var(--bg2))`, border: `1px solid ${col}66`, borderRadius: 13, padding: '16px 14px', textAlign: 'center', ['--dc' as string]: col }}>
-      <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: col }}>{side}</div>
-      <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 26, color: 'var(--td)', margin: '4px 0' }}>{chip?.count ?? 0}</div>
-      <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>{chip?.label ?? side}</div>
-    </Link>
-  );
+  // Chip absente → carte NON cliquable (fini le lien mort href='#' — audit L6).
+  const Side = ({ chip, side, col }: { chip?: AxisChip; side: string; col: string }) => {
+    const inner = (
+      <>
+        <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: col }}>{side}</div>
+        <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 26, color: 'var(--td)', margin: '4px 0' }}>{chip?.count ?? 0}</div>
+        <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>{chip?.label ?? side}</div>
+      </>
+    );
+    const style = { flex: 1, textDecoration: 'none' as const, background: `linear-gradient(160deg, ${col}22, var(--bg2))`, border: `1px solid ${col}66`, borderRadius: 13, padding: '16px 14px', textAlign: 'center' as const, ['--dc' as string]: col };
+    return chip ? (
+      <Link href={href(universe, axis.attr, chip.v)} className="dom-card" style={style}>{inner}</Link>
+    ) : (
+      <div style={{ ...style, opacity: 0.6 }}>{inner}</div>
+    );
+  };
   return (
     <section>
       <div style={TITLE('#8A8F98')}><span>♟️ Le duel</span></div>

@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SITE_URL } from '@/lib/site';
 import { hubVisual, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
-import { TYPE_META, universeMeta } from '@/lib/akasha/types';
+import { RARITY_META, TYPE_META, universeMeta } from '@/lib/akasha/types';
+import { flavorText } from '@/lib/akasha/flavor';
 import { countUniverse, getEntriesBySlugs, listAxisCounts, listBounties, listCategoryCounts, listEvolutive, listStars, listUniverseIndex, universeInsights } from '@/lib/akasha/queries';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import HubHalo from '@/components/akasha/hub/HubHalo';
@@ -174,21 +175,34 @@ export default async function UniverseHubPage({ params }: Props) {
         {/* ── REPRISE + PERSO DU JOUR ────────────────────────── */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: '-0.6rem' }}>
           <ContinueBanner universe={taxo.name} color={m.color} />
-          {dailyStar && (
-            <Link href={`/learn/akasha/${dailyStar.slug}`} className="dom-card" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 13, padding: '9px 13px' }}>
-              <div style={{ width: 44, height: 44, borderRadius: 9, overflow: 'hidden', flexShrink: 0, background: 'var(--bg3)' }}>
-                {dailyStar.image_url && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={dailyStar.image_url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />
-                )}
-              </div>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: m.color }}>★ Personnage du jour</div>
-                <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 17, color: 'var(--td)', lineHeight: 1.1 }}>{dailyStar.name}</div>
-              </div>
-              <span aria-hidden style={{ color: m.color, fontSize: 18, paddingRight: 4 }}>→</span>
-            </Link>
-          )}
+          {dailyStar && (() => {
+            // Perso du jour v2 (L6) : portrait centré + rareté + flavor VF canon.
+            const rar = dailyStar.rarity ? RARITY_META[dailyStar.rarity] : null;
+            const flavor = flavorText(dailyStar.descFr, 130);
+            return (
+              <Link href={`/learn/akasha/${dailyStar.slug}`} className={`dom-card ak-r-${dailyStar.rarity ?? 'common'}`} style={{ display: 'flex', alignItems: 'stretch', gap: 12, textDecoration: 'none', background: 'var(--bg2)', border: `1px solid ${rar?.color ?? 'var(--bd)'}`, borderRadius: 13, padding: 10, overflow: 'hidden' }}>
+                <div style={{ position: 'relative', width: 62, height: 82, borderRadius: 9, overflow: 'hidden', flexShrink: 0, background: 'var(--bg3)' }}>
+                  {dailyStar.image_url && (
+                    <>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img aria-hidden src={dailyStar.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'blur(10px) brightness(0.5)', transform: 'scale(1.2)' }} />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={dailyStar.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
+                    </>
+                  )}
+                </div>
+                <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 2 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: m.color }}>★ Personnage du jour</span>
+                    {rar && <span style={{ fontFamily: 'var(--fo)', fontSize: 8.5, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: rar.color, background: `${rar.color}18`, border: `1px solid ${rar.color}55`, borderRadius: 20, padding: '1px 7px' }}>{rar.label}</span>}
+                  </div>
+                  <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 18, color: 'var(--td)', lineHeight: 1.05 }}>{dailyStar.name}</div>
+                  {flavor && <div style={{ fontFamily: 'var(--fo)', fontSize: 11.5, fontStyle: 'italic', color: 'var(--td3)', lineHeight: 1.45, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>« {flavor} »</div>}
+                </div>
+                <span aria-hidden style={{ alignSelf: 'center', color: m.color, fontSize: 18, paddingRight: 2 }}>→</span>
+              </Link>
+            );
+          })()}
         </div>
 
         {/* ── COLLECTION / TÊTES D'AFFICHE (Pokédex + progression) ── */}
@@ -233,7 +247,7 @@ export default async function UniverseHubPage({ params }: Props) {
                 return (
                   <Link
                     key={c.v}
-                    href={registryHref(taxo.name, { attr: axis.attr, val: c.v })}
+                    href={`/learn/akasha/u/${taxo.slug}/${axis.attr}/${encodeURIComponent(c.v)}`}
                     className="ak-tab"
                     style={{ display: 'flex', alignItems: 'center', gap: 7, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700, padding: '8px 13px', borderRadius: 11, border: `1px solid ${tint}44`, background: `${tint}12`, color: 'var(--td2)' }}
                   >
