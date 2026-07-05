@@ -9,7 +9,7 @@ import { akashaRelationSeedSchema } from '../lib/akasha/schema';
 const files = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 if (!files.length) { console.error('✗ usage: seed-akasha-relations.ts <fichier.json> [...]'); process.exit(1); }
 
-const relations = [];
+const relations: { from: string; to: string; relation: string }[] = [];
 for (const f of files) {
   if (!existsSync(f)) { console.warn(`  ⚠ ${f} absent, ignoré`); continue; }
   const raw = JSON.parse(readFileSync(f, 'utf8')) as { relations: unknown[] };

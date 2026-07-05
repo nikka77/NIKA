@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getEntryBySlug, listSimilar } from '@/lib/akasha/queries';
 import { TYPE_META, RARITY_META, type AkashaType } from '@/lib/akasha/types';
+import { flavorExcerpt } from '@/lib/akasha/flavor';
 import { universeHubSlug } from '@/lib/akasha/universe-taxonomy';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import EntityBadge from '@/components/akasha/EntityBadge';
@@ -21,9 +22,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = await getEntryBySlug(slug);
   if (!entry) return { title: 'Entité introuvable — AKASHA' };
   const m = TYPE_META[entry.type];
+  // SEO : la bio VF canon (descFr) donne une méta description UNIQUE et riche aux 3 315 fiches
+  // traduites — bien mieux que le summary générique (« Personnage secondaire de… »).
+  const descFr = typeof (entry.attributes as Record<string, unknown>).descFr === 'string'
+    ? ((entry.attributes as Record<string, unknown>).descFr as string) : null;
   return {
     title: `${entry.name} — ${m.label} | AKASHA`,
     description:
+      flavorExcerpt(descFr, 155) ??
       entry.summary ??
       `${entry.name}, ${m.label.toLowerCase()} du registre AKASHA${entry.universe ? ` (${entry.universe})` : ''}.`,
   };
@@ -223,12 +229,25 @@ export default async function AkashaEntryPage({ params }: Props) {
           gap: '2.2rem',
         }}
       >
-        {entry.description && (
-          <section>
-            <h2 className="akasha-section-title">Description</h2>
-            <Markdown source={entry.description} />
-          </section>
-        )}
+        {(() => {
+          // Bio VF canon (descFr) : affichée EN PLUS de la description build quand elle est
+          // nettement plus riche — les 3 315 fiches traduites cessent d'être des coquilles vides.
+          const descFrVal = typeof (entry.attributes as Record<string, unknown>).descFr === 'string'
+            ? ((entry.attributes as Record<string, unknown>).descFr as string).trim() : null;
+          const richer = descFrVal && descFrVal.length > (entry.description?.length ?? 0) + 40;
+          if (!entry.description && !richer) return null;
+          return (
+            <section>
+              <h2 className="akasha-section-title">Description</h2>
+              {entry.description && <Markdown source={entry.description} />}
+              {richer && (
+                <p style={{ fontFamily: 'var(--fo)', fontSize: 14.5, color: 'var(--td2)', lineHeight: 1.7, margin: entry.description ? '0.8rem 0 0' : 0, whiteSpace: 'pre-line' }}>
+                  {descFrVal}
+                </p>
+              )}
+            </section>
+          );
+        })()}
 
         <EntityAttributes type={entry.type} attributes={entry.attributes} />
 

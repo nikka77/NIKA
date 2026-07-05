@@ -9,6 +9,7 @@ import CharacterDossier from './CharacterDossier';
 import CardActions from './CardActions';
 import ArcFrieze from './ArcFrieze';
 import { RARITY_META, type AkashaEntryDetail } from '@/lib/akasha/types';
+import { normalizeForms } from '@/lib/akasha/forms';
 
 export default function CharacterView({ entry }: { entry: AkashaEntryDetail }) {
   const [sel, setSel] = useState(0);
@@ -21,12 +22,9 @@ export default function CharacterView({ entry }: { entry: AkashaEntryDetail }) {
   const nindoLabel = typeof (entry.attributes as Record<string, unknown>).nindoLabel === 'string'
     ? ((entry.attributes as Record<string, unknown>).nindoLabel as string)
     : 'Credo';
-  // Une forme est affichable si elle porte AU MOINS un visuel : url (anime) OU idle (sprite pixel).
-  // (Les stars multi-univers n'ont que des sprites — pas d'images de forme 16:9.)
-  const forms = (Array.isArray((entry.attributes as Record<string, unknown>).forms)
-    ? ((entry.attributes as Record<string, unknown>).forms as Record<string, unknown>[])
-    : []
-  ).filter((f) => f && (typeof f.url === 'string' || typeof f.idle === 'string'));
+  // Formes affichables : règle UNIQUE partagée (url OU idle) via normalizeForms — même filtre
+  // que CharacterCard et CharacterDossier, sinon `sel` se désynchronise entre carte et dossier.
+  const forms = normalizeForms(entry.attributes as Record<string, unknown>) as Record<string, unknown>[];
 
   return (
     <>

@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import EntityBadge from './EntityBadge';
 import { TYPE_META, RARITY_META, universeMeta, type AkashaEntryCard } from '@/lib/akasha/types';
+import { flavorText } from '@/lib/akasha/flavor';
 
 /** Fallback visuel THÉMÉ par collection quand l'entrée n'a pas d'image : icône + teinte
  *  propres à la collection (au lieu de l'emoji de type générique) → les grilles des 2 400
@@ -136,23 +137,31 @@ export default function AkashaCard({ entry }: { entry: AkashaEntryCard }) {
             {entry.is_fiction ? '✦ Fiction' : '◆ Réel'}
           </span>
         </div>
-        {entry.summary && (
-          <p
-            style={{
-              fontFamily: 'var(--fo)',
-              fontSize: 12.5,
-              color: 'var(--td2)',
-              lineHeight: 1.5,
-              margin: '0.2rem 0 0',
-              display: '-webkit-box',
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: 'vertical',
-              overflow: 'hidden',
-            }}
-          >
-            {entry.summary}
-          </p>
-        )}
+        {(() => {
+          // FLAVOR TEXT : la voix canon (1re phrase narrative de la bio VF) prime sur le summary
+          // générique (« Personnage secondaire de… »). Italique = convention flavor TCG.
+          const flavor = flavorText(entry.descFr);
+          const text = flavor ?? entry.summary;
+          if (!text) return null;
+          return (
+            <p
+              style={{
+                fontFamily: 'var(--fo)',
+                fontSize: 12.5,
+                color: 'var(--td2)',
+                fontStyle: flavor ? 'italic' : 'normal',
+                lineHeight: 1.5,
+                margin: '0.2rem 0 0',
+                display: '-webkit-box',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+              }}
+            >
+              {flavor ? `« ${text} »` : text}
+            </p>
+          );
+        })()}
       </div>
     </Link>
   );

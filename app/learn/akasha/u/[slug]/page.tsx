@@ -13,6 +13,7 @@ import HubHalo from '@/components/akasha/hub/HubHalo';
 import Reveal from '@/components/akasha/hub/Reveal';
 import ShareButton from '@/components/akasha/hub/ShareButton';
 import HubInsights from '@/components/akasha/hub/HubInsights';
+import DidYouKnow from '@/components/akasha/DidYouKnow';
 import HubCollection from '@/components/akasha/hub/HubCollection';
 import ContinueBanner from '@/components/akasha/hub/ContinueBanner';
 import HubSignature from '@/components/akasha/hub/HubSignature';
@@ -204,6 +205,9 @@ export default async function UniverseHubPage({ params }: Props) {
 
         {/* ── INSIGHTS (chiffres-clés, rareté, top popularité, derniers ajoutés) ── */}
         <Reveal as="div"><HubInsights insights={insights} color={m.color} /></Reveal>
+
+        {/* ── LE SAVAIS-TU ? — fait canon du jour tiré des bios VF de CET univers ── */}
+        <Reveal as="div"><DidYouKnow universe={taxo.name} accent={m.color} /></Reveal>
 
         {/* ── VOYAGES DANS LE TEMPS (pages évolutives) ───────── */}
         {evolutive.length > 0 && (

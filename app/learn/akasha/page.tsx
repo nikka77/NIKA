@@ -12,6 +12,7 @@ import CollectionStrip from '@/components/akasha/CollectionStrip';
 import DailyBooster from '@/components/akasha/DailyBooster';
 import UniverseRail from '@/components/akasha/UniverseRail';
 import CategoryRail from '@/components/akasha/CategoryRail';
+import DidYouKnow from '@/components/akasha/DidYouKnow';
 
 export const metadata: Metadata = {
   title: 'AKASHA — Le registre de tout ce qui existe | NIKA LEARN',
@@ -200,6 +201,12 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
         {isRoot && <DailyBooster />}
 
         {daily && <DailyCard entry={daily} />}
+
+        {isRoot && (
+          <div style={{ marginBottom: '1.4rem' }}>
+            <DidYouKnow />
+          </div>
+        )}
 
         <UniverseRail counts={universeCounts} active={universe} type={type} search={search} />
 

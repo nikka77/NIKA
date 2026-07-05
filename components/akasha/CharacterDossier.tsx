@@ -9,6 +9,8 @@ import Moveset2D from './Moveset2D';
 import Character3D from './Character3D';
 import threeD from '@/data/akasha-3d.json';
 import type { AkashaEntryDetail } from '@/lib/akasha/types';
+import { ALLOWED_FILTER_ATTRS } from '@/lib/akasha/universe-taxonomy';
+import { normalizeForms } from '@/lib/akasha/forms';
 
 type Model3D = { src: string; poster?: string; note?: string };
 
@@ -59,6 +61,20 @@ function Chips({ items, color }: { items: string[]; color: string }) {
         <span key={i} style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td2)', background: `${color}14`, border: `1px solid ${color}33`, borderRadius: 7, padding: '3px 9px' }}>{t}</span>
       ))}
     </div>
+  );
+}
+
+/** Chip d'AXE cliquable : si l'attribut est un axe de taxonomy (village, clan, crew, race…),
+ *  la valeur devient un lien vers le registre filtré → « tous les Konoha », « tout l'équipage ».
+ *  Sinon retombe sur la chip statique. La plomberie serveur (attr/val) existait déjà. */
+function AxisChip({ universe, attr, value, color }: { universe: string | null; attr: string; value: string; color: string }) {
+  const linkable = universe && ALLOWED_FILTER_ATTRS.has(attr);
+  const style = { fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: linkable ? 700 : 400, color: linkable ? color : 'var(--td2)', background: `${color}14`, border: `1px solid ${color}${linkable ? '55' : '33'}`, borderRadius: 7, padding: '3px 9px', textDecoration: 'none' as const, display: 'inline-flex', alignItems: 'center', gap: 4 };
+  if (!linkable) return <span style={style}>{value}</span>;
+  return (
+    <Link href={`/learn/akasha?universe=${encodeURIComponent(universe)}&attr=${encodeURIComponent(attr)}&val=${encodeURIComponent(value)}`} style={style}>
+      {value}<span aria-hidden style={{ fontSize: 9, opacity: 0.75 }}>→</span>
+    </Link>
   );
 }
 
@@ -445,7 +461,9 @@ function Sec({ title, accent = ACCENT, icon, children }: { title: string; accent
 export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntryDetail; sel?: number }) {
   const a = entry.attributes as Record<string, unknown>;
   // Forme active : le dossier évolue avec la carte (même index `sel`).
-  const forms = (Array.isArray(a.forms) ? (a.forms as Record<string, unknown>[]) : []).filter((x) => x && typeof x.url === 'string');
+  // MÊME règle de filtrage que CharacterView/CharacterCard (url OU idle) via normalizeForms —
+  // un filtre divergent décale `sel` et affiche les vitals d'une autre forme (bug corrigé).
+  const forms = normalizeForms(a) as Record<string, unknown>[];
   const f = (forms[sel] ?? {}) as Record<string, unknown>;
   const hasCurated = forms.length > 0;
   const pick = (fv: unknown, base: unknown): string[] => (fv !== undefined ? list(fv) : list(base));
@@ -569,10 +587,10 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
               </Sec>
             )}
             {showRole && <Sec title="Rôle" accent="#7B5CF0"><Chips items={[roleAttr]} color="#7B5CF0" /></Sec>}
-            {clanV && <Sec title="Clan" accent="#7B5CF0"><Chips items={[clanV]} color="#7B5CF0" /></Sec>}
-            {villageV && <Sec title="Village" accent="#0EA878" icon="affiliations"><Chips items={[villageV]} color="#0EA878" /></Sec>}
-            {rankV && <Sec title="Rang ninja" accent="#0094D4"><Chips items={[rankV]} color="#0094D4" /></Sec>}
-            {race && <Sec title="Espèce / Race" accent="#0094D4"><Chips items={[race]} color="#0094D4" /></Sec>}
+            {clanV && <Sec title="Clan" accent="#7B5CF0"><AxisChip universe={entry.universe} attr="clan" value={clanV} color="#7B5CF0" /></Sec>}
+            {villageV && <Sec title="Village" accent="#0EA878" icon="affiliations"><AxisChip universe={entry.universe} attr="village" value={villageV} color="#0EA878" /></Sec>}
+            {rankV && <Sec title="Rang ninja" accent="#0094D4"><AxisChip universe={entry.universe} attr="rank" value={rankV} color="#0094D4" /></Sec>}
+            {race && <Sec title="Espèce / Race" accent="#0094D4"><AxisChip universe={entry.universe} attr="race" value={race} color="#0094D4" /></Sec>}
             {bounty && (
               <Sec title="Prime" accent="#D4A017">
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 18, color: '#D4A017', background: '#D4A0171A', border: '1px solid #D4A01755', borderRadius: 8, padding: '5px 12px' }}>
@@ -580,7 +598,7 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
                 </span>
               </Sec>
             )}
-            {crew && <Sec title="Équipage" accent="#0EA878" icon="affiliations"><Chips items={[crew]} color="#0EA878" /></Sec>}
+            {crew && <Sec title="Équipage" accent="#0EA878" icon="affiliations"><AxisChip universe={entry.universe} attr="crew" value={crew} color="#0EA878" /></Sec>}
             {fruit && <Sec title="Fruit du Démon" accent="#E8623A"><Chips items={[fruit]} color="#E8623A" /></Sec>}
             {ki && <Sec title="Puissance (Ki)" accent="#D4A017"><Chips items={[ki]} color="#D4A017" /></Sec>}
             {status && <Sec title="Statut" accent="#0EA878"><Chips items={[status]} color="#0EA878" /></Sec>}

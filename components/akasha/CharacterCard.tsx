@@ -8,6 +8,7 @@ import CardArt from './CardArt';
 import { CategoryIcon } from './NarutoIcons';
 import type { Stats } from './DatabookRadar';
 import { RARITY_META, TYPE_META, type AkashaEntry } from '@/lib/akasha/types';
+import { normalizeForms } from '@/lib/akasha/forms';
 
 const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
 const list = (v: unknown): string[] =>
@@ -76,8 +77,8 @@ export default function CharacterCard({ entry, sel, onSelect }: { entry: AkashaE
   const baseNatures = list(a.natureType);
   const gallery = list(a.gallery);
   const galleryForms: Form[] = gallery.map((url, i) => ({ label: ['Partie I', 'Partie II', 'Partie III'][i] ?? `Forme ${i + 1}`, url }));
-  const curatedForms: Form[] = (Array.isArray(a.forms) ? (a.forms as Form[]) : [])
-    .filter((f) => f && (typeof f.url === 'string' || typeof f.idle === 'string'));
+  // Règle de filtrage UNIQUE (url OU idle) partagée avec CharacterView/CharacterDossier.
+  const curatedForms: Form[] = normalizeForms(a) as Form[];
   const forms = curatedForms.length ? curatedForms : galleryForms;
 
   const f: Partial<Form> = forms[sel] ?? {};

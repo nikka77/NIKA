@@ -35,7 +35,7 @@ export interface AkashaEntry {
 export type AkashaEntryCard = Pick<
   AkashaEntry,
   'id' | 'slug' | 'type' | 'name' | 'is_fiction' | 'universe' | 'summary' | 'image_url' | 'rarity'
-> & { category?: string | null };
+> & { category?: string | null; descFr?: string | null };
 
 /** Cible résolue d'une relation (entité liée). */
 export interface RelationTarget {

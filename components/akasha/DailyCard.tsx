@@ -2,8 +2,10 @@
 // (seed = date) parmi les rares+, mise en avant en bannière sur le hub AKASHA.
 import Link from 'next/link';
 import { RARITY_META, universeMeta, type AkashaEntryCard } from '@/lib/akasha/types';
+import { flavorText } from '@/lib/akasha/flavor';
 
 export default function DailyCard({ entry }: { entry: AkashaEntryCard }) {
+  const flavor = flavorText(entry.descFr, 130);
   const um = entry.universe ? universeMeta(entry.universe) : null;
   const rar = entry.rarity ? RARITY_META[entry.rarity] : null;
   const accent = rar?.color ?? '#7B5CF0';
@@ -48,9 +50,9 @@ export default function DailyCard({ entry }: { entry: AkashaEntryCard }) {
             </span>
           )}
         </div>
-        {entry.summary && (
-          <p style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td2)', lineHeight: 1.5, margin: '0.2rem 0 0', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-            {entry.summary}
+        {(flavor || entry.summary) && (
+          <p style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td2)', fontStyle: flavor ? 'italic' : 'normal', lineHeight: 1.5, margin: '0.2rem 0 0', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+            {flavor ? `« ${flavor} »` : entry.summary}
           </p>
         )}
       </div>

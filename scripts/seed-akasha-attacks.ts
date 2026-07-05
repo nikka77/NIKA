@@ -28,7 +28,7 @@ console.log(`✓ validation OK : ${entities.length} techniques, ${relations.leng
 
 if (DRY) {
   const byU: Record<string, number> = {};
-  for (const e of entities) byU[e.universe] = (byU[e.universe] || 0) + 1;
+  for (const e of entities) { const u = e.universe ?? '?'; byU[u] = (byU[u] || 0) + 1; }
   console.log('  par univers:', JSON.stringify(byU));
   console.log('· dry-run : aucune écriture en base.');
   process.exit(0);

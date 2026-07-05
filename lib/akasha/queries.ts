@@ -1,5 +1,6 @@
 // lib/akasha/queries.ts — accès données AKASHA (Server Components uniquement).
 // Lecture publique (RLS USING(true)) → le client anon serveur suffit.
+import { cache } from 'react';
 import { createClient } from '@/lib/supabase/server';
 import type {
   AkashaEntry,
@@ -13,7 +14,8 @@ import { FAMILY_FIELD } from './types';
 import { ALLOWED_FILTER_ATTRS } from './universe-taxonomy';
 
 const PAGE_SIZE = 24;
-const CARD_COLS = 'id, slug, type, name, is_fiction, universe, summary, image_url, rarity, category:attributes->>category';
+// descFr (bio VF canon) projeté pour le FLAVOR TEXT des cartes (1re phrase, cf. lib/akasha/flavor.ts).
+const CARD_COLS = 'id, slug, type, name, is_fiction, universe, summary, image_url, rarity, category:attributes->>category, descFr:attributes->>descFr';
 
 export interface ListEntriesParams {
   type?: AkashaType;
@@ -65,7 +67,9 @@ export async function listEntries(
     const famField = cat ? FAMILY_FIELD[cat] : undefined;
     if (fam && famField) q = q.eq(`attributes->>${famField}`, fam);
     if (axisAttr) q = q.eq(`attributes->>${axisAttr}`, val);
-    if (s) q = q.or(`name.ilike.%${s}%,universe.ilike.%${s}%,summary.ilike.%${s}%`);
+    // La recherche fouille AUSSI les descriptions VF canon (descFr) : « Rasengan », « Konoha »,
+    // « Fruit du Démon »… remontent enfin les fiches dont seule la bio parle.
+    if (s) q = q.or(`name.ilike.%${s}%,universe.ilike.%${s}%,summary.ilike.%${s}%,attributes->>descFr.ilike.%${s}%`);
     q = rarity === null ? q.is('rarity', null) : q.eq('rarity', rarity);
     return q;
   };
@@ -125,8 +129,9 @@ function normalizeRelations(rows: unknown): ResolvedRelation[] {
   return out;
 }
 
-/** Une fiche par slug + ses relations résolues (sortantes ET entrantes). */
-export async function getEntryBySlug(slug: string): Promise<AkashaEntryDetail | null> {
+/** Une fiche par slug + ses relations résolues (sortantes ET entrantes).
+ *  `cache()` : generateMetadata + page (+ og) appellent ce fetch dans le MÊME rendu → 1 seul hit DB. */
+export const getEntryBySlug = cache(async function getEntryBySlug(slug: string): Promise<AkashaEntryDetail | null> {
   const supabase = await createClient();
   if (!supabase) return null;
 
@@ -156,7 +161,7 @@ export async function getEntryBySlug(slug: string): Promise<AkashaEntryDetail | 
     relationsOut: normalizeRelations(outRows),
     relationsIn: normalizeRelations(inRows),
   };
-}
+});
 
 /** Compte d'entrées par CATÉGORIE (attributes.category) dans le scope courant (univers / type).
  *  Alimente le rail « Collections » du registre. Même pagination range (plafond PostgREST 1 000). */
@@ -324,8 +329,8 @@ export async function listEvolutive(universe: string, limit = 8): Promise<Akasha
   return (data as AkashaEntryCard[] | null) ?? [];
 }
 
-/** Compte total d'entrées d'un univers (HEAD, sans données). */
-export async function countUniverse(universe: string): Promise<number> {
+/** Compte total d'entrées d'un univers (HEAD, sans données). `cache()` : appelé par metadata + page. */
+export const countUniverse = cache(async function countUniverse(universe: string): Promise<number> {
   const supabase = await createClient();
   if (!supabase) return 0;
   const { count } = await supabase
@@ -333,7 +338,7 @@ export async function countUniverse(universe: string): Promise<number> {
     .select('id', { count: 'exact', head: true })
     .eq('universe', universe);
   return count ?? 0;
-}
+});
 
 /** STARS d'un univers : personnages les plus rares (légendaire → épique → rare), avec image.
  *  Alimente le rail « Têtes d'affiche » du hub d'univers. */
@@ -439,6 +444,29 @@ export async function getDailyCard(dateSeed: string): Promise<AkashaEntryCard | 
   if (!count) return null;
   let h = 0;
   for (const ch of dateSeed) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  const idx = h % count;
+  const { data } = await base().order('slug', { ascending: true }).range(idx, idx);
+  return (data as AkashaEntryCard[] | null)?.[0] ?? null;
+}
+
+/** « Le savais-tu ? » : pick déterministe (seed = date + scope) parmi les fiches à bio VF (descFr).
+ *  Optionnellement scopé à un univers (hubs). Le composant extrait la prose via flavorExcerpt. */
+export async function getDidYouKnow(dateSeed: string, universe?: string): Promise<AkashaEntryCard | null> {
+  const supabase = await createClient();
+  if (!supabase) return null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const base = (): any => {
+    let q = supabase
+      .from('akasha_entries')
+      .select(CARD_COLS, { count: 'exact' })
+      .not('attributes->>descFr', 'is', null);
+    if (universe) q = q.eq('universe', universe);
+    return q;
+  };
+  const { count } = await base().range(0, 0);
+  if (!count) return null;
+  let h = 0;
+  for (const ch of dateSeed + '|' + (universe ?? '')) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
   const idx = h % count;
   const { data } = await base().order('slug', { ascending: true }).range(idx, idx);
   return (data as AkashaEntryCard[] | null)?.[0] ?? null;
