@@ -13,22 +13,34 @@ const LS_LAST = 'nika:akasha:booster';
 const LS_COLLECTION = 'nika:akasha:collection';
 const today = () => new Date().toISOString().slice(0, 10);
 
-function addToCollection(cards: Card[]) {
+const LS_SHARDS = 'nika:akasha:shards';
+const SHARD_VALUE: Record<string, number> = { common: 1, rare: 3, epic: 8, legendary: 20 };
+
+/** Ajoute à la collection ; les DOUBLONS deviennent des ÉCLATS (L5, anti-frustration). */
+function addToCollection(cards: Card[]): number {
+  let shards = 0;
   try {
     const raw = localStorage.getItem(LS_COLLECTION);
     const cur: { slug: string; name: string; img: string | null }[] = raw ? JSON.parse(raw) : [];
     for (const c of cards) {
       if (!cur.some((x) => x.slug === c.slug)) cur.push({ slug: c.slug, name: c.name, img: c.image_url });
+      else shards += SHARD_VALUE[c.rarity ?? 'common'] ?? 1;
     }
     localStorage.setItem(LS_COLLECTION, JSON.stringify(cur));
+    if (shards > 0) {
+      const prev = Number(localStorage.getItem(LS_SHARDS)) || 0;
+      localStorage.setItem(LS_SHARDS, String(prev + shards));
+    }
     window.dispatchEvent(new Event('akasha:collection'));
   } catch { /* stockage indisponible → le pack reste visuel */ }
+  return shards;
 }
 
 export default function DailyBooster() {
   const [state, setState] = useState<'hidden' | 'ready' | 'opening' | 'done'>('hidden');
   const [cards, setCards] = useState<Card[]>([]);
   const [flipped, setFlipped] = useState(0);
+  const [shards, setShards] = useState(0);
 
   useEffect(() => {
     try {
@@ -44,7 +56,7 @@ export default function DailyBooster() {
       if (!j.cards?.length) { setState('hidden'); return; }
       setCards(j.cards);
       localStorage.setItem(LS_LAST, today());
-      addToCollection(j.cards);
+      setShards(addToCollection(j.cards));
       setState('done');
       // Flip séquentiel : 1 carte toutes les 450 ms.
       j.cards.forEach((_, i) => setTimeout(() => setFlipped(i + 1), 350 + i * 450));
@@ -61,7 +73,7 @@ export default function DailyBooster() {
             🎴 Booster du jour
           </div>
           <div style={{ fontFamily: 'var(--fe)', fontSize: 19, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 1.05, marginTop: 3 }}>
-            {state === 'done' ? 'Ajoutées à ta collection !' : '3 cartes gratuites t’attendent'}
+            {state === 'done' ? (shards > 0 ? `Ajoutées ! +${shards} éclats (doublons)` : 'Ajoutées à ta collection !') : '3 cartes gratuites t’attendent'}
           </div>
         </div>
         {state !== 'done' && (

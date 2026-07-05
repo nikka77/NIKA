@@ -194,6 +194,12 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
       >
         <CollectionStrip />
 
+        {/* CTA Album (L5) : le but de la collection devient visible — sets à compléter. */}
+        <Link href="/learn/akasha/album" className="dom-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, textDecoration: 'none', background: 'linear-gradient(120deg, rgba(212,160,23,0.10), var(--bg2))', border: '1px solid rgba(212,160,23,0.4)', borderRadius: 13, padding: '0.75rem 1rem', marginBottom: '1.4rem' }}>
+          <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 15, textTransform: 'uppercase', color: 'var(--td)' }}>🗂 L&rsquo;Album — 20 sets à compléter</span>
+          <span aria-hidden style={{ fontFamily: 'var(--fo)', fontSize: 16, color: '#D4A017' }}>→</span>
+        </Link>
+
         {isRoot && <DailyBooster />}
 
         {daily && <DailyCard entry={daily} />}
