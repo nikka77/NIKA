@@ -1,0 +1,619 @@
+{
+ "relations": [
+  {
+   "from": "monkey-d-luffy",
+   "to": "hito-hito-no-mi-modele-nika",
+   "relation": "maitrise"
+  },
+  {
+   "from": "tony-tony-chopper",
+   "to": "fruit-de-l-humain",
+   "relation": "maitrise"
+  },
+  {
+   "from": "nico-robin",
+   "to": "fruit-des-eclosions",
+   "relation": "maitrise"
+  },
+  {
+   "from": "brook",
+   "to": "fruit-de-la-resurrection",
+   "relation": "maitrise"
+  },
+  {
+   "from": "bartolomeo",
+   "to": "fruit-de-la-barriere",
+   "relation": "maitrise"
+  },
+  {
+   "from": "baby-5",
+   "to": "armo-fruit",
+   "relation": "maitrise"
+  },
+  {
+   "from": "leo",
+   "to": "fruit-de-la-couture",
+   "relation": "maitrise"
+  },
+  {
+   "from": "kabu",
+   "to": "fruit-de-l-insecte-version-scarabee-rhinoceros",
+   "relation": "maitrise"
+  },
+  {
+   "from": "alvida",
+   "to": "fruit-glisse-glisse",
+   "relation": "maitrise"
+  },
+  {
+   "from": "galdino",
+   "to": "ciro-fruit",
+   "relation": "maitrise"
+  },
+  {
+   "from": "foxy",
+   "to": "fruit-ramollo",
+   "relation": "maitrise"
+  },
+  {
+   "from": "moria-gecko",
+   "to": "fruit-de-l-ombre",
+   "relation": "maitrise"
+  },
+  {
+   "from": "absalom",
+   "to": "fruit-de-l-invisibilite",
+   "relation": "maitrise"
+  },
+  {
+   "from": "perona",
+   "to": "fruit-de-l-ectoplasme",
+   "relation": "maitrise"
+  },
+  {
+   "from": "bege-capone",
+   "to": "fruit-du-chateau",
+   "relation": "maitrise"
+  },
+  {
+   "from": "bonney-jewelry",
+   "to": "fruit-de-l-age",
+   "relation": "maitrise"
+  },
+  {
+   "from": "boa-hancock",
+   "to": "fruit-de-la-passion",
+   "relation": "maitrise"
+  },
+  {
+   "from": "sandersonia-boa",
+   "to": "fruit-du-reptile-version-anaconda",
+   "relation": "maitrise"
+  },
+  {
+   "from": "marigold-boa",
+   "to": "fruit-du-reptile-version-cobra-royal",
+   "relation": "maitrise"
+  },
+  {
+   "from": "shiki",
+   "to": "fruit-flottant",
+   "relation": "maitrise"
+  },
+  {
+   "from": "caribou",
+   "to": "fruit-du-marais",
+   "relation": "maitrise"
+  },
+  {
+   "from": "linlin-charlotte",
+   "to": "fruit-des-ames",
+   "relation": "maitrise"
+  },
+  {
+   "from": "smoothie-charlotte",
+   "to": "fruit-du-cheval",
+   "relation": "maitrise"
+  },
+  {
+   "from": "cracker-charlotte",
+   "to": "fruit-du-biscuit",
+   "relation": "maitrise"
+  },
+  {
+   "from": "daifuku-charlotte",
+   "to": "fruit-de-la-lampe",
+   "relation": "maitrise"
+  },
+  {
+   "from": "oven-charlotte",
+   "to": "fruit-de-la-chaleur-one-piece",
+   "relation": "maitrise"
+  },
+  {
+   "from": "opera-charlotte",
+   "to": "fruit-de-la-creme",
+   "relation": "maitrise"
+  },
+  {
+   "from": "brulee-charlotte",
+   "to": "fruit-du-miroir",
+   "relation": "maitrise"
+  },
+  {
+   "from": "mont-d-or-charlotte",
+   "to": "fruit-du-livre",
+   "relation": "maitrise"
+  },
+  {
+   "from": "galette-charlotte",
+   "to": "fruit-du-beurre",
+   "relation": "maitrise"
+  },
+  {
+   "from": "pudding-charlotte",
+   "to": "fruit-des-souvenirs",
+   "relation": "maitrise"
+  },
+  {
+   "from": "newshi-charlotte",
+   "to": "fruit-de-la-mixite",
+   "relation": "maitrise"
+  },
+  {
+   "from": "pekoms",
+   "to": "fruit-de-la-tortue",
+   "relation": "maitrise"
+  },
+  {
+   "from": "streusen",
+   "to": "fruit-du-cuistot",
+   "relation": "maitrise"
+  },
+  {
+   "from": "king",
+   "to": "fruit-du-dinosaure-version-pteranodon",
+   "relation": "maitrise"
+  },
+  {
+   "from": "queen",
+   "to": "fruit-du-dinosaure-version-brachiosaure",
+   "relation": "maitrise"
+  },
+  {
+   "from": "jack-one-piece",
+   "to": "fruit-du-pachyderme-version-mammouth",
+   "relation": "maitrise"
+  },
+  {
+   "from": "page-one",
+   "to": "fruit-du-dinosaure-version-spinosaurus",
+   "relation": "maitrise"
+  },
+  {
+   "from": "ulti",
+   "to": "fruit-du-dinosaure-version-pachycephalosaurus",
+   "relation": "maitrise"
+  },
+  {
+   "from": "who-s-who",
+   "to": "fruit-du-felin-version-tigre-a-dents-de-sabre-one-piece",
+   "relation": "maitrise"
+  },
+  {
+   "from": "black-maria",
+   "to": "fruit-de-l-araignee-version-rosamygale-grauvogeli",
+   "relation": "maitrise"
+  },
+  {
+   "from": "sasaki-one-piece",
+   "to": "fruit-du-dinosaure-version-triceratops",
+   "relation": "maitrise"
+  },
+  {
+   "from": "basil-hawkins",
+   "to": "fruit-de-la-paille",
+   "relation": "maitrise"
+  },
+  {
+   "from": "holdem",
+   "to": "smile-de-lion",
+   "relation": "maitrise"
+  },
+  {
+   "from": "speed",
+   "to": "smile-de-cheval",
+   "relation": "maitrise"
+  },
+  {
+   "from": "solitaire",
+   "to": "smile-du-singe",
+   "relation": "maitrise"
+  },
+  {
+   "from": "bao-huang",
+   "to": "smile-de-l-ecureuil-volant",
+   "relation": "maitrise"
+  },
+  {
+   "from": "briscola",
+   "to": "smile-du-gorille",
+   "relation": "maitrise"
+  },
+  {
+   "from": "fourtricks",
+   "to": "smile-du-coq",
+   "relation": "maitrise"
+  },
+  {
+   "from": "hamlet",
+   "to": "smile-de-la-girafe",
+   "relation": "maitrise"
+  },
+  {
+   "from": "mizerka",
+   "to": "smile-du-gorille",
+   "relation": "maitrise"
+  },
+  {
+   "from": "poker",
+   "to": "smile-de-la-crotale",
+   "relation": "maitrise"
+  },
+  {
+   "from": "snakeman",
+   "to": "smile-de-serpent",
+   "relation": "maitrise"
+  },
+  {
+   "from": "dachoman",
+   "to": "smile-de-l-autruche",
+   "relation": "maitrise"
+  },
+  {
+   "from": "caimanlady",
+   "to": "smile-de-caiman",
+   "relation": "maitrise"
+  },
+  {
+   "from": "apoo-scratchmen",
+   "to": "fruit-du-son",
+   "relation": "maitrise"
+  },
+  {
+   "from": "burgess-jesus",
+   "to": "fruit-de-la-force",
+   "relation": "maitrise"
+  },
+  {
+   "from": "shiliew",
+   "to": "fruit-de-l-invisibilite",
+   "relation": "maitrise"
+  },
+  {
+   "from": "avalo-pizarro",
+   "to": "fruit-de-l-ile",
+   "relation": "maitrise"
+  },
+  {
+   "from": "catarina-devon",
+   "to": "fruit-du-canide-version-renard-a-neuf-queues",
+   "relation": "maitrise"
+  },
+  {
+   "from": "wolf-sanjuan",
+   "to": "fruit-du-gigantisme",
+   "relation": "maitrise"
+  },
+  {
+   "from": "vasco-shot",
+   "to": "fruit-du-glouglou",
+   "relation": "maitrise"
+  },
+  {
+   "from": "doc-q",
+   "to": "fruit-de-la-maladie",
+   "relation": "maitrise"
+  },
+  {
+   "from": "barbe-blanche",
+   "to": "fruit-du-tremblement",
+   "relation": "maitrise"
+  },
+  {
+   "from": "portgas-d-ace",
+   "to": "pyro-fruit",
+   "relation": "maitrise"
+  },
+  {
+   "from": "blamenco",
+   "to": "fruit-de-la-poche",
+   "relation": "maitrise"
+  },
+  {
+   "from": "trebol",
+   "to": "fruit-du-poisse-poisse",
+   "relation": "maitrise"
+  },
+  {
+   "from": "diamante",
+   "to": "fruit-du-vole-au-vent",
+   "relation": "maitrise"
+  },
+  {
+   "from": "pica",
+   "to": "fruit-de-la-caillasse",
+   "relation": "maitrise"
+  },
+  {
+   "from": "sugar",
+   "to": "fruit-du-joujou",
+   "relation": "maitrise"
+  },
+  {
+   "from": "senor-pink",
+   "to": "fruit-du-barbotage",
+   "relation": "maitrise"
+  },
+  {
+   "from": "machvise",
+   "to": "fruit-du-tonne-tonne",
+   "relation": "maitrise"
+  },
+  {
+   "from": "gladius",
+   "to": "fruit-du-paf-paf",
+   "relation": "maitrise"
+  },
+  {
+   "from": "monet",
+   "to": "fruit-du-flocon",
+   "relation": "maitrise"
+  },
+  {
+   "from": "lucci-rob",
+   "to": "fruit-du-pachyderme",
+   "relation": "maitrise"
+  },
+  {
+   "from": "kaku",
+   "to": "fruit-du-bovin-version-girafe",
+   "relation": "maitrise"
+  },
+  {
+   "from": "magellan",
+   "to": "fruit-du-poison",
+   "relation": "maitrise"
+  },
+  {
+   "from": "sakazuki",
+   "to": "fruit-du-magma",
+   "relation": "maitrise"
+  },
+  {
+   "from": "borsalino",
+   "to": "fruit-luminescent",
+   "relation": "maitrise"
+  },
+  {
+   "from": "tsuru",
+   "to": "fruit-de-la-lessive",
+   "relation": "maitrise"
+  },
+  {
+   "from": "smoker",
+   "to": "fruit-fumigene",
+   "relation": "maitrise"
+  },
+  {
+   "from": "hina-one-piece",
+   "to": "fruit-du-sequestre",
+   "relation": "maitrise"
+  },
+  {
+   "from": "shu",
+   "to": "fruit-de-la-rouille",
+   "relation": "maitrise"
+  },
+  {
+   "from": "sharinguru",
+   "to": "fruit-des-roues",
+   "relation": "maitrise"
+  },
+  {
+   "from": "sengoku",
+   "to": "fruit-de-l-humain-version-bouddha",
+   "relation": "maitrise"
+  },
+  {
+   "from": "drake-x",
+   "to": "fruit-du-dinosaure-version-allosaurus",
+   "relation": "maitrise"
+  },
+  {
+   "from": "wapol",
+   "to": "fruit-du-glouton",
+   "relation": "maitrise"
+  },
+  {
+   "from": "chaka",
+   "to": "fruit-du-canide-version-chacal",
+   "relation": "maitrise"
+  },
+  {
+   "from": "pell-one-piece",
+   "to": "fruit-du-volatile-version-faucon",
+   "relation": "maitrise"
+  },
+  {
+   "from": "toki-kozuki",
+   "to": "fruit-du-temps",
+   "relation": "maitrise"
+  },
+  {
+   "from": "kinemon",
+   "to": "fruit-du-vetement",
+   "relation": "maitrise"
+  },
+  {
+   "from": "shinobu",
+   "to": "fruit-de-la-maturation",
+   "relation": "maitrise"
+  },
+  {
+   "from": "orochi-kurozumi",
+   "to": "fruit-du-reptile-version-dragon-a-huit-tetes",
+   "relation": "maitrise"
+  },
+  {
+   "from": "semimaru-kurozumi",
+   "to": "fruit-de-la-barriere",
+   "relation": "maitrise"
+  },
+  {
+   "from": "higurashi-kurozumi",
+   "to": "travesti-fruit",
+   "relation": "maitrise"
+  },
+  {
+   "from": "yamato",
+   "to": "fruit-du-canide-version-loup-divin",
+   "relation": "maitrise"
+  },
+  {
+   "from": "viola",
+   "to": "fruit-du-regard",
+   "relation": "maitrise"
+  },
+  {
+   "from": "kelly-funk",
+   "to": "fruit-de-la-pelisse",
+   "relation": "maitrise"
+  },
+  {
+   "from": "marco",
+   "to": "fruit-du-ph-nix",
+   "relation": "maitrise"
+  },
+  {
+   "from": "pierre",
+   "to": "fruit-du-cheval",
+   "relation": "maitrise"
+  },
+  {
+   "from": "sabo",
+   "to": "pyro-fruit",
+   "relation": "maitrise"
+  },
+  {
+   "from": "ivankov-emporio",
+   "to": "fruit-des-hormones",
+   "relation": "maitrise"
+  },
+  {
+   "from": "belo-betty",
+   "to": "fruit-de-l-exaltation",
+   "relation": "maitrise"
+  },
+  {
+   "from": "morley",
+   "to": "fruit-du-pousse-pousse",
+   "relation": "maitrise"
+  },
+  {
+   "from": "inazuma",
+   "to": "fruit-des-ciseaux",
+   "relation": "maitrise"
+  },
+  {
+   "from": "zala",
+   "to": "fruit-de-l-oursin",
+   "relation": "maitrise"
+  },
+  {
+   "from": "bentham",
+   "to": "travesti-fruit",
+   "relation": "maitrise"
+  },
+  {
+   "from": "blueno",
+   "to": "fruit-du-portier",
+   "relation": "maitrise"
+  },
+  {
+   "from": "kalifa",
+   "to": "fruit-des-bulles",
+   "relation": "maitrise"
+  },
+  {
+   "from": "kuzan",
+   "to": "fruit-du-givre",
+   "relation": "maitrise"
+  },
+  {
+   "from": "bellamy",
+   "to": "fruit-du-ressort",
+   "relation": "maitrise"
+  },
+  {
+   "from": "kuma-bartholomew",
+   "to": "fruit-des-coussinets",
+   "relation": "maitrise"
+  },
+  {
+   "from": "morgans",
+   "to": "fruit-du-volatile-version-albatros",
+   "relation": "maitrise"
+  },
+  {
+   "from": "ain",
+   "to": "fruit-jeune-jeune",
+   "relation": "maitrise"
+  },
+  {
+   "from": "bins",
+   "to": "fruit-touffu-touffu",
+   "relation": "maitrise"
+  },
+  {
+   "from": "gild-tesoro",
+   "to": "fruit-de-l-or",
+   "relation": "maitrise"
+  },
+  {
+   "from": "tanaka",
+   "to": "fruit-du-passe-muraille",
+   "relation": "maitrise"
+  },
+  {
+   "from": "ann",
+   "to": "fruit-de-la-vision",
+   "relation": "maitrise"
+  },
+  {
+   "from": "vegapunk",
+   "to": "fruit-du-ciboulot",
+   "relation": "maitrise"
+  },
+  {
+   "from": "s-snake",
+   "to": "clone-du-fruit-de-la-passion",
+   "relation": "maitrise"
+  },
+  {
+   "from": "s-hawk",
+   "to": "clone-du-fruit-du-tailladant",
+   "relation": "maitrise"
+  },
+  {
+   "from": "s-bear",
+   "to": "clone-du-fruit-des-coussinets",
+   "relation": "maitrise"
+  },
+  {
+   "from": "s-shark",
+   "to": "clone-du-fruit-du-barbotage",
+   "relation": "maitrise"
+  }
+ ]
+}
