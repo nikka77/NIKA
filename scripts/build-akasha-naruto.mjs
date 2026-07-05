@@ -1253,6 +1253,12 @@ async function main() {
   writeFileSync(join(ROOT, 'data', 'akasha-merges-naruto.json'), JSON.stringify(ddN.merges, null, 1));
 
   mkdirSync(join(ROOT, 'data'), { recursive: true });
+  // Traductions VF (descFr) : source de vérité data/akasha-translations.json → réinjectées à chaque build.
+  try {
+    const tl = JSON.parse(readFileSync(join(ROOT, 'data', 'akasha-translations.json'), 'utf8'));
+    let ni = 0; for (const e of ddN.entries) if (tl[e.slug] && String(tl[e.slug]).trim().length > 10) { (e.attributes = e.attributes || {}).descFr = String(tl[e.slug]).trim(); ni++; }
+    console.log(`✓ ${ni} traductions VF (descFr) réinjectées`);
+  } catch { /* pas encore de traductions */ }
   const out = { generatedFrom: 'dattebayo-api', universe: 'Naruto', entries: ddN.entries, relations: ddN.relations };
   writeFileSync(join(ROOT, 'data', 'akasha-naruto.json'), JSON.stringify(out, null, 2));
   console.log(`✓ ${ddN.entries.length} entrées, ${ddN.relations.length} relations → data/akasha-naruto.json`);

@@ -481,7 +481,9 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
   const favFmt = favN ? favN.toLocaleString('fr-FR') : null;
   const multiUniv = !!(showRole || bounty || crew || fruit || race || ki || sizeV || clanV || villageV || rankV || favFmt);
   const squad = a.squad && typeof a.squad === 'object' ? (a.squad as { name?: string; members?: { rel: string; name: string; slug?: string }[] }) : null;
-  const bio = str(a.bio);
+  // Bio affichée : la bio CURÉE (FR maison) d'abord, sinon la description traduite en VF canon (descFr,
+  // issue de la traduction des descRaw). Jamais le descRaw brut (anglais) — règle FR.
+  const bio = str(a.bio) || str(a.descFr);
   const personality = str(a.personality);
   const quotes = list(a.quotes);
   const trivia = list(a.trivia);

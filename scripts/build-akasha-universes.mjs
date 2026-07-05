@@ -1561,6 +1561,12 @@ async function main() {
   const byType = {};
   for (const e of finalEntries) byType[e.type] = (byType[e.type] || 0) + 1;
   const noImg = finalEntries.filter((e) => e.type === 'character' && !e.image_url).length;
+  // Traductions VF (descFr) : source de vérité data/akasha-translations.json → réinjectées à chaque build.
+  try {
+    const tl = JSON.parse(readFileSync('data/akasha-translations.json', 'utf8'));
+    let ni = 0; for (const e of finalEntries) if (tl[e.slug] && String(tl[e.slug]).trim().length > 10) { e.attributes.descFr = String(tl[e.slug]).trim(); ni++; }
+    console.log(`  ✓ ${ni} traductions VF (descFr) réinjectées`);
+  } catch { /* pas encore de traductions */ }
   writeFileSync('data/akasha-universes.json', JSON.stringify({ entries: finalEntries, relations: ok }, null, 1));
   console.log(`✓ ${finalEntries.length} entrées, ${ok.length} relations → data/akasha-universes.json`);
   console.log('  par type:', JSON.stringify(byType));
