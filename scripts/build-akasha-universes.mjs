@@ -631,8 +631,9 @@ async function main() {
   for (const f of Array.isArray(opFruits) ? opFruits : []) {
     if (!f?.name) continue;
     const type = String(f.type || '');
-    const rarity = /Logia|mythique|spécial/i.test(type) ? 'epic' : 'rare';
-    if (addEnt(slugify(f.name), 'power', f.name, 'One Piece', firstSentence(f.description) || `Fruit du Démon${type ? ' de type ' + type : ''}.`, rarity, purge({ element: `Fruit du Démon${type ? ' · ' + type : ''}`, roman_name: f.roman_name || null, category: 'Fruit du Démon', ...descA(f.description, 'fr') }))) nf++;
+    // Grade de rareté par sous-type canonique : Zoan Mythique = le plus rare, Logia/Zoan Antique au-dessus du lot.
+    const rarity = /mythique/i.test(type) ? 'legendary' : /Logia|antique/i.test(type) ? 'epic' : 'rare';
+    if (addEnt(slugify(f.name), 'power', f.name, 'One Piece', firstSentence(f.description) || `Fruit du Démon${type ? ' de type ' + type : ''}.`, rarity, purge({ element: `Fruit du Démon${type ? ' · ' + type : ''}`, fruit_type: type || null, roman_name: f.roman_name || null, category: 'Fruit du Démon', ...descA(f.description, 'fr') }))) nf++;
   }
   console.log(`  + ${nf} Fruits du Démon (power)`);
   const opCrews = (await getJSON('https://api.api-onepiece.com/v2/crews/fr')) ?? [];
@@ -658,7 +659,7 @@ async function main() {
   for (const b of Array.isArray(opBoats) ? opBoats : []) {
     if (!b?.name) continue;
     const rarity = /Roger|Barbe Blanche|Chapeau de Paille|Moby|Oro Jackson|Thousand|Going/i.test(b.name) ? 'epic' : 'rare';
-    if (addEnt(slugify(b.name), 'artifact', b.name, 'One Piece', firstSentence(b.description) || `${b.type || 'Navire'} de One Piece.`, rarity, purge({ material: b.type || 'Navire', origin: b.crew?.name || null, roman_name: b.roman_name || null, category: 'Navire', ...descA(b.description, 'fr') }))) {
+    if (addEnt(slugify(b.name), 'artifact', b.name, 'One Piece', firstSentence(b.description) || `${b.type || 'Navire'} de One Piece.`, rarity, purge({ material: b.type || 'Navire', boat_class: b.type || null, origin: b.crew?.name || null, roman_name: b.roman_name || null, category: 'Navire', ...descA(b.description, 'fr') }))) {
       nbo++;
       const cs = b.crew?.name ? slugify(b.crew.name) : null;
       if (cs && seen.has(cs)) relations.push({ from: slugify(b.name), to: cs, relation: 'appartient' });
@@ -668,8 +669,11 @@ async function main() {
   let nsw = 0;
   for (const s of Array.isArray(opSwords) ? opSwords : []) {
     if (!s?.name) continue;
-    const rarity = /Yoru|Ace|Shusui|Enma|Wado|Meito|Meïto|Suprême/i.test((s.name || '') + ' ' + (s.description || '')) ? 'epic' : 'rare';
-    if (addEnt(slugify(s.name), 'artifact', s.name, 'One Piece', firstSentence(s.description) || 'Épée légendaire.', rarity, purge({ material: 'Sabre', roman_name: s.roman_name || null, category: 'Arme & outil', ...descA(s.description, 'fr') }))) nsw++;
+    // Grade MEITO canonique (api swords.category) = l'axe de collection : Saijō Ō Wazamono (12 suprêmes) →
+    // Ō Wazamono (21) → Ryō Wazamono (50) → Wazamono. Pilote la rareté. type = classe de lame (Kokutō…).
+    const grade = String(s.category || '').trim();
+    const rarity = /Saijo|Saijō/i.test(grade) ? 'legendary' : /Ô Wazamono|O Wazamono/i.test(grade) ? 'epic' : grade ? 'rare' : 'rare';
+    if (addEnt(slugify(s.name), 'artifact', s.name, 'One Piece', firstSentence(s.description) || 'Épée légendaire.', rarity, purge({ material: 'Sabre', blade_type: s.type || null, meito_grade: grade || null, roman_name: s.roman_name || null, category: 'Arme & outil', ...descA(s.description, 'fr') }))) nsw++;
   }
   const opDials = (await getJSON('https://api.api-onepiece.com/v2/dials/fr')) ?? [];
   let ndi = 0;
@@ -1516,21 +1520,29 @@ async function main() {
   console.log(`  ✓ AniList total : +${aniFav} favoris, +${aniDesc} descriptions brutes`);
 
   // ── Repli JIKAN `about` par NOM : comble les persos qu'ni le join mal_id ni AniList n'ont couverts
-  // (mal_id absent du cache au moment du casting, ou noms divergents). Réutilise anilistIndex par tokens.
+  // (mal_id absent du cache au moment du casting, ou noms divergents). CLOISONNÉ PAR UNIVERS : le cache
+  // couvre TOUS les univers, donc un match par nom non-scopé contamine (ex. Komugi HxH ← bio Komugi Naruto).
+  // On limite chaque lookup aux mal_id de l'univers (malId + extraMalIds).
   let aboutFallback = 0;
-  const aboutChars = Object.values(aboutCache).filter((v) => v.about).map((v) => ({
-    names: [v.name, v.name.includes(', ') ? v.name.split(/,\s*/).reverse().join(' ') : v.name],
-    favourites: 0, descRaw: String(v.about).replace(/\s+/g, ' ').trim().slice(0, 1200),
-  }));
-  if (aboutChars.length) {
-    const aboutLookup = anilistIndex(aboutChars);
-    for (const e of entries) {
-      if (e.type !== 'character' || e.attributes.descRaw) continue;
-      const hit = aboutLookup(e.name);
-      if (hit?.descRaw) { e.attributes.descRaw = hit.descRaw; e.attributes.descLang = 'en'; aboutFallback++; }
-    }
+  const aboutByUniv = new Map(); // label → fn(name)
+  for (const u of UNIVERSES) {
+    const ids = new Set([u.malId, ...(u.extraMalIds ?? [])].map(String));
+    const chars = Object.entries(aboutCache)
+      .filter(([mal, v]) => v.about && ids.has(String(mal)))
+      .map(([, v]) => ({
+        names: [v.name, v.name.includes(', ') ? v.name.split(/,\s*/).reverse().join(' ') : v.name],
+        favourites: 0, descRaw: String(v.about).replace(/\s+/g, ' ').trim().slice(0, 1200),
+      }));
+    if (chars.length) aboutByUniv.set(u.label, anilistIndex(chars));
   }
-  console.log(`  ✓ repli Jikan about : +${aboutFallback} descriptions brutes (${aboutChars.length} bios en cache)`);
+  for (const e of entries) {
+    if (e.type !== 'character' || e.attributes.descRaw) continue;
+    const lk = aboutByUniv.get(e.universe);
+    if (!lk) continue;
+    const hit = lk(e.name);
+    if (hit?.descRaw) { e.attributes.descRaw = hit.descRaw; e.attributes.descLang = 'en'; aboutFallback++; }
+  }
+  console.log(`  ✓ repli Jikan about (cloisonné par univers) : +${aboutFallback} descriptions brutes`);
 
   // ── DÉDUP : fusion des doublons de personnages (clé canonique + alias curés) ──
   // Les slugs CURÉS (config u.chars + STAR_DETAILS) sont toujours gardés comme keeper.

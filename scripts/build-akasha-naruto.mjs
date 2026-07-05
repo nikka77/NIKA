@@ -1171,14 +1171,28 @@ async function main() {
   console.log(`✓ AniList Naruto : +${aniN} favoris, +${aniD} descriptions brutes (${aniChars.length} persos AniList)`);
 
   // ── Enrichissement JIKAN `about` (bio EN par nom) — comble ce qu'AniList a manqué. ──
-  // Cache résumable data/jikan-about.json (mal_id → {name, about}) produit par fetch-jikan-about.mjs.
+  // Cache résumable data/jikan-about.json (mal_id de PERSONNAGE → {name, about}) produit par fetch-jikan-about.mjs.
   let aboutD = 0;
   try {
     const aboutCache = JSON.parse(readFileSync(join(ROOT, 'data', 'jikan-about.json'), 'utf8'));
-    const aboutChars = Object.values(aboutCache).filter((v) => v.about).map((v) => ({
-      names: [v.name, v.name.includes(', ') ? v.name.split(/,\s*/).reverse().join(' ') : v.name],
-      favourites: 0, descRaw: String(v.about).replace(/\s+/g, ' ').trim().slice(0, 1200),
-    }));
+    // CLOISONNEMENT correct : le cache couvre TOUS les univers et est clé par mal_id de PERSONNAGE (pas
+    // d'anime). On récupère les mal_id des persos des 3 animes Naruto (20/1735/34566) pour ne garder QUE
+    // leurs bios → un match par nom non-scopé contaminerait (homonymes cross-univers, ex. Shin, Komugi…).
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+    const narutoCharIds = new Set();
+    for (const animeId of [20, 1735, 34566]) {
+      try {
+        const j = await (await fetch(`https://api.jikan.moe/v4/anime/${animeId}/characters`)).json();
+        for (const c of j?.data ?? []) if (c.character?.mal_id) narutoCharIds.add(String(c.character.mal_id));
+      } catch { /* réseau : on continue */ }
+      await sleep(1100);
+    }
+    const aboutChars = Object.entries(aboutCache)
+      .filter(([mal, v]) => v.about && narutoCharIds.has(String(mal)))
+      .map(([, v]) => ({
+        names: [v.name, v.name.includes(', ') ? v.name.split(/,\s*/).reverse().join(' ') : v.name],
+        favourites: 0, descRaw: String(v.about).replace(/\s+/g, ' ').trim().slice(0, 1200),
+      }));
     if (aboutChars.length) {
       const aboutLookup = anilistIndex(aboutChars);
       for (const e of entries) {

@@ -105,6 +105,25 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
           { v: 'L’équipage des Pirates Roger', l: 'Pirates de Roger' },
         ],
       },
+      {
+        attr: 'fruit_type', label: 'Types de Fruit du Démon', icon: '🍎',
+        values: [
+          { v: 'Paramecia', tint: '#C0455E', badge: '🌀' },
+          { v: 'Logia', tint: '#E0762A', badge: '🔥' },
+          { v: 'Zoan', tint: '#6B8E3D', badge: '🐾' },
+          { v: 'Zoan Antique', l: 'Zoan Antique', tint: '#8A6D3B', badge: '🦕' },
+          { v: 'Zoan Mythique', l: 'Zoan Mythique', tint: '#B8912F', badge: '🐉' },
+          { v: 'Smile', l: 'SMILE (artificiel)', tint: '#8E7CC3', badge: '😀' },
+        ],
+      },
+      {
+        attr: 'meito_grade', label: 'Grades de sabre (Meito)', icon: '⚔️',
+        values: [
+          { v: 'Saijo Ô Wazamono', l: 'Saijō Ō Wazamono (12 Suprêmes)', tint: '#C9A227', badge: '👑' },
+          { v: 'Ô Wazamono', l: 'Ō Wazamono (21 Grandes)', tint: '#9AA0A6', badge: '🥈' },
+          { v: 'Ryo Wazamono', l: 'Ryō Wazamono (50 Bonnes)', tint: '#8A6D3B', badge: '🥉' },
+        ],
+      },
     ],
     piliers: ['grand-line', 'one-piece-tresor', 'thousand-sunny', 'chapeau-de-paille'],
     extras: [{ href: '/learn/akasha/wanted', label: 'Most Wanted — le classement des primes', icon: '🏴‍☠️' }],
