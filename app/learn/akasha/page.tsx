@@ -14,7 +14,9 @@ import UniverseRail from '@/components/akasha/UniverseRail';
 import CategoryRail from '@/components/akasha/CategoryRail';
 import DidYouKnow from '@/components/akasha/DidYouKnow';
 import FilterBar from '@/components/akasha/FilterBar';
+import OmniSearch from '@/components/akasha/OmniSearch';
 import { registryHref } from '@/lib/akasha/href';
+import { listTopByAttr } from '@/lib/akasha/queries';
 
 export const metadata: Metadata = {
   title: 'AKASHA — Le registre de tout ce qui existe | NIKA LEARN',
@@ -47,14 +49,26 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
   const page = Number(sp.page) || 1;
   const isRoot = !type && !universe && !cat && !fam && !axisOn && !search && !rarity && !sort && page === 1;
 
-  const [{ entries, total, page: current, totalPages }, universeCounts, categoryCounts, familyCounts, daily] = await Promise.all([
+  const [{ entries, total, page: current, totalPages }, universeCounts, categoryCounts, familyCounts, daily, duelPool] = await Promise.all([
     listEntries({ type, universe, cat, fam, attr, val, search, rarity, sort, page }),
     listUniverseCounts(),
     listCategoryCounts({ type, universe }),
     listFamilyCounts({ universe, cat }),
     isRoot ? getDailyCard(new Date().toISOString().slice(0, 10)) : Promise.resolve(null),
+    isRoot ? listTopByAttr('favorites', { limit: 40 }) : Promise.resolve([]),
   ]);
   const hubSlug = universe ? universeHubSlug(universe) : undefined;
+
+  // Duel du jour (L8) : 2 persos populaires d'univers DIFFÉRENTS, pick déterministe (seed = date).
+  let duel: { a: string; b: string; an: string; bn: string } | null = null;
+  if (isRoot && duelPool.length >= 4) {
+    const ds = new Date().toISOString().slice(0, 10);
+    let h = 0; for (const ch of ds) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+    const a = duelPool[h % duelPool.length];
+    const others = duelPool.filter((p) => p.universe !== a.universe && p.slug !== a.slug);
+    const b = others[(h >> 3) % Math.max(1, others.length)];
+    if (a && b) duel = { a: a.slug, b: b.slug, an: a.name, bn: b.name };
+  }
 
   return (
     <main>
@@ -181,6 +195,10 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
               Chercher
             </button>
           </form>
+
+          <div style={{ marginTop: 12, maxWidth: 520 }}>
+            <OmniSearch />
+          </div>
         </div>
       </div>
 
@@ -209,6 +227,24 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
             </Link>
           ))}
         </div>
+
+        {/* Duel du jour + quiz (L8) — le rendez-vous quotidien. */}
+        {isRoot && (duel || true) && (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 8, marginBottom: '1.4rem' }}>
+            {duel && (
+              <Link href={`/learn/akasha/vs/${duel.a}/${duel.b}`} className="dom-card" style={{ textDecoration: 'none', background: 'linear-gradient(120deg, rgba(232,98,58,0.12), var(--bg2))', border: '1px solid rgba(232,98,58,0.45)', borderRadius: 12, padding: '0.7rem 0.9rem', display: 'flex', flexDirection: 'column', gap: 2 }}>
+                <span style={{ fontSize: 16 }} aria-hidden>⚔️</span>
+                <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 13.5, color: 'var(--td)', lineHeight: 1.1 }}>Duel du jour</span>
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{duel.an} vs {duel.bn}</span>
+              </Link>
+            )}
+            <Link href="/learn/akasha/quiz" className="dom-card" style={{ textDecoration: 'none', background: 'linear-gradient(120deg, rgba(123,92,240,0.12), var(--bg2))', border: '1px solid rgba(123,92,240,0.45)', borderRadius: 12, padding: '0.7rem 0.9rem', display: 'flex', flexDirection: 'column', gap: 2 }}>
+              <span style={{ fontSize: 16 }} aria-hidden>🧠</span>
+              <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 13.5, color: 'var(--td)', lineHeight: 1.1 }}>Quiz du jour</span>
+              <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)' }}>Qui suis-je ? · 5 questions</span>
+            </Link>
+          </div>
+        )}
 
         {isRoot && <DailyBooster />}
 

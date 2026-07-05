@@ -515,6 +515,20 @@ export async function getDidYouKnow(dateSeed: string, universe?: string): Promis
   return (data as AkashaEntryCard[] | null)?.[0] ?? null;
 }
 
+/** OMNI-SEARCH (L8) : recherche instantanée nom + bio VF, avec extrait descFr pour le surlignage. */
+export async function omniSearch(query: string, limit = 24): Promise<(AkashaEntryCard & { descFr?: string | null })[]> {
+  const s = query.replace(/[%,()]/g, ' ').trim();
+  if (s.length < 2) return [];
+  const supabase = await createClient();
+  if (!supabase) return [];
+  const { data } = await supabase
+    .from('akasha_entries')
+    .select(`${CARD_COLS}`)
+    .or(`name.ilike.%${s}%,attributes->>descFr.ilike.%${s}%`)
+    .limit(limit);
+  return (data as (AkashaEntryCard & { descFr?: string | null })[] | null) ?? [];
+}
+
 /** VITRINE d'une collection (L7) : toutes les entrées d'une catégorie (cap), avec un sous-attribut
  *  projeté (fruit_type, meito_grade, boat_class…) pour le regroupement en sections. `requireSub` ne
  *  garde que celles qui portent le sous-attribut (ex. épées classées Meito). */
