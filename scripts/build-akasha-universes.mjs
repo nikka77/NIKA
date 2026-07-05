@@ -481,7 +481,7 @@ async function jikanCast(malId) {
     const jp = vas.filter((v) => v.language === 'Japanese').map((v) => displayName(String(v.person?.name || ''))).filter(Boolean).slice(0, 3);
     const en = vas.filter((v) => v.language === 'French' || v.language === 'English').map((v) => displayName(String(v.person?.name || ''))).filter(Boolean).slice(0, 2);
     const va = jp.length || en.length ? { jp, en } : null;
-    map.set(c.character.name, { img, role: c.role || null, va, fav: typeof c.favorites === 'number' ? c.favorites : 0 });
+    map.set(c.character.name, { img, role: c.role || null, va, fav: typeof c.favorites === 'number' ? c.favorites : 0, mal: c.character?.mal_id ?? null });
   }
   return map;
 }
@@ -496,6 +496,8 @@ const slugify = (s) =>
 const displayName = (s) => (s.includes(', ') ? s.split(/,\s*/).reverse().join(' ') : s);
 const GARBAGE_NAME = /[<>]|https?:|\/wiki\/|\.(?:png|jpe?g|gif)/i;
 const firstSentence = (s, n = 150) => String(s || '').replace(/\s+/g, ' ').trim().split(/(?<=[.!?])\s/)[0].slice(0, n);
+// Capture une description d'API en descRaw + langue (pour enrichissement + traduction FR future).
+const descA = (t, lang) => (t && String(t).trim().length > 30 ? { descRaw: String(t).replace(/\s+/g, ' ').trim().slice(0, 1500), descLang: lang } : {});
 const purge = (o) => { for (const k of Object.keys(o)) { const v = o[k]; if (v == null || v === '' || (Array.isArray(v) && v.length === 0)) delete o[k]; } return o; };
 // Popularité MAL (favorites) → palier de rareté : le tri du registre par rareté devient un tri par popularité.
 const favTier = (n) => (n >= 25000 ? 'legendary' : n >= 5000 ? 'epic' : n >= 600 ? 'rare' : 'common');
@@ -517,6 +519,11 @@ async function main() {
   const opChars = (await getJSON('https://api.api-onepiece.com/v2/characters/fr')) ?? [];
   const opByName = new Map((Array.isArray(opChars) ? opChars : []).map((c) => [c.name, c]));
   console.log(`  ${Array.isArray(opChars) ? opChars.length : 0} persos OP`);
+  // Cache Jikan `about` (bio EN complète par mal_id) → descRaw des personnages (curés + masse).
+  // Produit par scripts/fetch-jikan-about.mjs (résumable). Absent = pas d'enrichissement bio, sans casser.
+  const aboutCache = existsSync('data/jikan-about.json') ? JSON.parse(readFileSync('data/jikan-about.json', 'utf8')) : {};
+  const aboutOf = (malId) => (malId != null && aboutCache[malId]?.about ? aboutCache[malId].about : null);
+  console.log(`  cache jikan-about : ${Object.values(aboutCache).filter((v) => v.about).length} bios`);
 
   // Fallback : match par tokens significatifs (≥3 lettres) quand le nom MAL exact diffère.
   const tokens = (s) => new Set(String(s).toLowerCase().normalize('NFD').replace(/[^a-z\s]/g, ' ').split(/\s+/).filter((t) => t.length >= 3));
@@ -555,6 +562,9 @@ async function main() {
       if (pt) attributes.partie = pt;
       if (cv?.va) attributes.voiceActors = cv.va; // doubleurs JP/VF-EN pour les curés aussi
       if (cv?.fav) attributes.favorites = cv.fav;
+      // descRaw = bio brute EN (Jikan `about`) → traduction FR future. Jamais affichée telle quelle.
+      const cAbout = aboutOf(cv?.mal);
+      if (cAbout) Object.assign(attributes, descA(cAbout, 'en'));
       // Champs de profondeur optionnels (le dossier perso les lit génériquement : onglet Histoire, bannière credo…)
       for (const k of ['status', 'nindo', 'nindoLabel', 'bio', 'personality', 'quotes', 'trivia']) if (c[k]) attributes[k] = c[k];
       // Dragon Ball : image détourée + race/ki de l'API dédiée
@@ -563,6 +573,7 @@ async function main() {
         if (d?.image) img = d.image;
         if (d?.race) attributes.race = d.race;
         if (d?.ki) attributes.ki = d.ki;
+        if (!attributes.descRaw && d?.description) Object.assign(attributes, descA(d.description, 'es')); // repli ES si pas de bio EN
       }
       // One Piece : prime + équipage FR de l'API dédiée
       if (u.opApi && c.op) {
@@ -589,7 +600,7 @@ async function main() {
     const curatedMal = new Set(u.chars.map((c) => c.mal));
     const curatedSlug = new Set(u.chars.map((c) => c.slug));
     let massU = 0;
-    for (const [rawName, { img, role, va, fav }] of cast) {
+    for (const [rawName, { img, role, va, fav, mal }] of cast) {
       if (!rawName || GARBAGE_NAME.test(rawName) || curatedMal.has(rawName)) continue;
       const name = displayName(rawName);
       let slug = slugify(name);
@@ -597,7 +608,7 @@ async function main() {
       if (seen.has(slug)) { slug = `${slug}-${slugify(u.label)}`; if (seen.has(slug)) continue; }
       const roleFr = role === 'Main' ? 'Personnage principal' : 'Personnage secondaire';
       // Rareté = palier de POPULARITÉ (favorites MAL) → tri du registre = tri par popularité.
-      add(entry(slug, 'character', name, u.label, `${roleFr} de ${u.label}.`, favTier(fav), purge({ role: roleFr, favorites: fav || undefined, voiceActors: va || undefined, partie: partOf(rawName) }), img));
+      add(entry(slug, 'character', name, u.label, `${roleFr} de ${u.label}.`, favTier(fav), purge({ role: roleFr, favorites: fav || undefined, voiceActors: va || undefined, partie: partOf(rawName), ...descA(aboutOf(mal), 'en') }), img));
       massU++;
     }
     console.log(`  + ${massU} persos (casting complet)`);
@@ -621,7 +632,7 @@ async function main() {
     if (!f?.name) continue;
     const type = String(f.type || '');
     const rarity = /Logia|mythique|spécial/i.test(type) ? 'epic' : 'rare';
-    if (addEnt(slugify(f.name), 'power', f.name, 'One Piece', firstSentence(f.description) || `Fruit du Démon${type ? ' de type ' + type : ''}.`, rarity, purge({ element: `Fruit du Démon${type ? ' · ' + type : ''}`, roman_name: f.roman_name || null, category: 'Fruit du Démon' }))) nf++;
+    if (addEnt(slugify(f.name), 'power', f.name, 'One Piece', firstSentence(f.description) || `Fruit du Démon${type ? ' de type ' + type : ''}.`, rarity, purge({ element: `Fruit du Démon${type ? ' · ' + type : ''}`, roman_name: f.roman_name || null, category: 'Fruit du Démon', ...descA(f.description, 'fr') }))) nf++;
   }
   console.log(`  + ${nf} Fruits du Démon (power)`);
   const opCrews = (await getJSON('https://api.api-onepiece.com/v2/crews/fr')) ?? [];
@@ -629,15 +640,15 @@ async function main() {
   for (const cr of Array.isArray(opCrews) ? opCrews : []) {
     if (!cr?.name) continue;
     const rarity = cr.is_yonko ? 'legendary' : Number(cr.total_prime) > 1e9 ? 'epic' : 'rare';
-    if (addEnt(slugify(cr.name), 'status', cr.name, 'One Piece', firstSentence(cr.description) || 'Équipage de pirates.', rarity, purge({ scope: 'Équipage pirate', roman_name: cr.roman_name || null, total_prime: cr.total_prime ? `${cr.total_prime} Berrys` : null, category: 'Équipage' }))) ncr++;
+    if (addEnt(slugify(cr.name), 'status', cr.name, 'One Piece', firstSentence(cr.description) || 'Équipage de pirates.', rarity, purge({ scope: 'Équipage pirate', roman_name: cr.roman_name || null, total_prime: cr.total_prime ? `${cr.total_prime} Berrys` : null, category: 'Équipage', ...descA(cr.description, 'fr') }))) ncr++;
   }
   console.log(`  + ${ncr} équipages (status)`);
   const opHakis = (await getJSON('https://api.api-onepiece.com/v2/hakis/fr')) ?? [];
   let nh = 0;
-  for (const h of Array.isArray(opHakis) ? opHakis : []) if (h?.name && addEnt(slugify(h.name), 'skill', h.name, 'One Piece', firstSentence(h.description) || 'Type de Haki.', 'epic', purge({ discipline: 'Haki', roman_name: h.roman_name || null, category: 'Haki' }))) nh++;
+  for (const h of Array.isArray(opHakis) ? opHakis : []) if (h?.name && addEnt(slugify(h.name), 'skill', h.name, 'One Piece', firstSentence(h.description) || 'Type de Haki.', 'epic', purge({ discipline: 'Haki', roman_name: h.roman_name || null, category: 'Haki', ...descA(h.description, 'fr') }))) nh++;
   const opGears = (await getJSON('https://api.api-onepiece.com/v2/luffy-gears/fr')) ?? [];
   let ng = 0;
-  for (const g of Array.isArray(opGears) ? opGears : []) if (g?.name && addEnt(slugify(g.name), 'skill', g.name, 'One Piece', firstSentence(g.description) || 'Transformation de Luffy.', 'epic', { discipline: 'Gear (Luffy)', category: 'Gear' })) { ng++; relations.push({ from: slugify(g.name), to: 'monkey-d-luffy', relation: 'maitrise' }); }
+  for (const g of Array.isArray(opGears) ? opGears : []) if (g?.name && addEnt(slugify(g.name), 'skill', g.name, 'One Piece', firstSentence(g.description) || 'Transformation de Luffy.', 'epic', { discipline: 'Gear (Luffy)', category: 'Gear', ...descA(g.description, 'fr') })) { ng++; relations.push({ from: slugify(g.name), to: 'monkey-d-luffy', relation: 'maitrise' }); }
   console.log(`  + ${nh} hakis + ${ng} gears (skill)`);
 
   // ── One Piece — NOUVELLES collections via api-onepiece (navires, épées, dials, sagas) ──
@@ -647,7 +658,7 @@ async function main() {
   for (const b of Array.isArray(opBoats) ? opBoats : []) {
     if (!b?.name) continue;
     const rarity = /Roger|Barbe Blanche|Chapeau de Paille|Moby|Oro Jackson|Thousand|Going/i.test(b.name) ? 'epic' : 'rare';
-    if (addEnt(slugify(b.name), 'artifact', b.name, 'One Piece', firstSentence(b.description) || `${b.type || 'Navire'} de One Piece.`, rarity, purge({ material: b.type || 'Navire', origin: b.crew?.name || null, roman_name: b.roman_name || null, category: 'Navire' }))) {
+    if (addEnt(slugify(b.name), 'artifact', b.name, 'One Piece', firstSentence(b.description) || `${b.type || 'Navire'} de One Piece.`, rarity, purge({ material: b.type || 'Navire', origin: b.crew?.name || null, roman_name: b.roman_name || null, category: 'Navire', ...descA(b.description, 'fr') }))) {
       nbo++;
       const cs = b.crew?.name ? slugify(b.crew.name) : null;
       if (cs && seen.has(cs)) relations.push({ from: slugify(b.name), to: cs, relation: 'appartient' });
@@ -658,14 +669,14 @@ async function main() {
   for (const s of Array.isArray(opSwords) ? opSwords : []) {
     if (!s?.name) continue;
     const rarity = /Yoru|Ace|Shusui|Enma|Wado|Meito|Meïto|Suprême/i.test((s.name || '') + ' ' + (s.description || '')) ? 'epic' : 'rare';
-    if (addEnt(slugify(s.name), 'artifact', s.name, 'One Piece', firstSentence(s.description) || 'Épée légendaire.', rarity, purge({ material: 'Sabre', roman_name: s.roman_name || null, category: 'Arme & outil' }))) nsw++;
+    if (addEnt(slugify(s.name), 'artifact', s.name, 'One Piece', firstSentence(s.description) || 'Épée légendaire.', rarity, purge({ material: 'Sabre', roman_name: s.roman_name || null, category: 'Arme & outil', ...descA(s.description, 'fr') }))) nsw++;
   }
   const opDials = (await getJSON('https://api.api-onepiece.com/v2/dials/fr')) ?? [];
   let ndi = 0;
-  for (const d of Array.isArray(opDials) ? opDials : []) if (d?.name && addEnt(slugify(d.name), 'artifact', d.name, 'One Piece', firstSentence(d.description) || 'Coquillage-outil de Skypiea.', 'rare', purge({ material: 'Dial (coquillage)', roman_name: d.roman_name || null, category: 'Relique' }))) ndi++;
+  for (const d of Array.isArray(opDials) ? opDials : []) if (d?.name && addEnt(slugify(d.name), 'artifact', d.name, 'One Piece', firstSentence(d.description) || 'Coquillage-outil de Skypiea.', 'rare', purge({ material: 'Dial (coquillage)', roman_name: d.roman_name || null, category: 'Relique', ...descA(d.description, 'fr') }))) ndi++;
   const opSagas = (await getJSON('https://api.api-onepiece.com/v2/sagas/fr')) ?? [];
   let nsa = 0;
-  for (const sg of Array.isArray(opSagas) ? opSagas : []) if (sg?.title && addEnt(slugify(sg.title), 'status', sg.title, 'One Piece', firstSentence(sg.description) || 'Saga de One Piece.', 'rare', purge({ scope: 'Saga narrative', category: 'Saga' }))) nsa++;
+  for (const sg of Array.isArray(opSagas) ? opSagas : []) if (sg?.title && addEnt(slugify(sg.title), 'status', sg.title, 'One Piece', firstSentence(sg.description) || 'Saga de One Piece.', 'rare', purge({ scope: 'Saga narrative', category: 'Saga', ...descA(sg.description, 'fr') }))) nsa++;
   console.log(`  + ${nbo} navires + ${nsw} épées + ${ndi} dials + ${nsa} sagas (One Piece)`);
 
   console.log('→ Dragon Ball — entités (transformations, planètes)…');
@@ -674,7 +685,7 @@ async function main() {
   for (const t of (dbTrans?.items || dbTrans || [])) if (t?.name && addEnt(slugify(t.name), 'skill', t.name, 'Dragon Ball', `Transformation de puissance${t.ki ? ` (Ki ${t.ki})` : ''}.`, 'epic', purge({ discipline: 'Transformation', ki: t.ki || null, category: 'Transformation' }), t.image || null)) nt++;
   const dbPlanets = (await getJSON('https://dragonball-api.com/api/planets?limit=100'));
   let np = 0;
-  for (const pl of (dbPlanets?.items || dbPlanets || [])) if (pl?.name && addEnt(slugify(pl.name), 'place', pl.name, 'Dragon Ball', firstSentence(pl.description) || 'Planète.', 'rare', { region: pl.isDestroyed ? 'Planète détruite' : 'Planète', category: 'Planète' }, pl.image || null)) np++;
+  for (const pl of (dbPlanets?.items || dbPlanets || [])) if (pl?.name && addEnt(slugify(pl.name), 'place', pl.name, 'Dragon Ball', firstSentence(pl.description) || 'Planète.', 'rare', { region: pl.isDestroyed ? 'Planète détruite' : 'Planète', category: 'Planète', ...descA(pl.description, 'es') }, pl.image || null)) np++;
   console.log(`  + ${nt} transformations (skill) + ${np} planètes (place)`);
 
   // ── JoJo : STANDS individuels (curés FR) — la manifestation psychique de chaque combattant. ──
@@ -1474,7 +1485,18 @@ async function main() {
   console.log('→ AniList — favoris + descriptions brutes (descRaw) par univers…');
   let aniFav = 0, aniDesc = 0;
   for (const u of UNIVERSES) {
-    const chars = await fetchAniListChars(u.malId, 10);
+    // Média principal + médias secondaires (parties JoJo, films DB, suites Initial D) → couverture max.
+    const ids = [u.malId, ...(u.extraMalIds ?? [])];
+    const chars = [];
+    const seenAni = new Set();
+    for (const id of ids) {
+      let part = await fetchAniListChars(id, 10);
+      // Rate-limit AniList (90/min) : un média peut revenir VIDE après un burst (ex. les 300+ persos DB
+      // juste avant). On retente une fois après une pause plus longue avant d'abandonner ce média.
+      if (!part.length) { await sleep(4000); part = await fetchAniListChars(id, 10); }
+      for (const c of part) { const k = (c.names?.[0] || '').toLowerCase(); if (k && !seenAni.has(k)) { seenAni.add(k); chars.push(c); } }
+      await sleep(500); // respire entre médias pour éviter la salve
+    }
     if (!chars.length) { console.log(`  ⚠ AniList vide pour ${u.label} (mal ${u.malId})`); continue; }
     const lookup = anilistIndex(chars);
     let fu = 0, du = 0;
@@ -1492,6 +1514,23 @@ async function main() {
     console.log(`  ✓ ${u.label} : +${fu} favoris, +${du} descriptions (AniList ${chars.length} persos)`);
   }
   console.log(`  ✓ AniList total : +${aniFav} favoris, +${aniDesc} descriptions brutes`);
+
+  // ── Repli JIKAN `about` par NOM : comble les persos qu'ni le join mal_id ni AniList n'ont couverts
+  // (mal_id absent du cache au moment du casting, ou noms divergents). Réutilise anilistIndex par tokens.
+  let aboutFallback = 0;
+  const aboutChars = Object.values(aboutCache).filter((v) => v.about).map((v) => ({
+    names: [v.name, v.name.includes(', ') ? v.name.split(/,\s*/).reverse().join(' ') : v.name],
+    favourites: 0, descRaw: String(v.about).replace(/\s+/g, ' ').trim().slice(0, 1200),
+  }));
+  if (aboutChars.length) {
+    const aboutLookup = anilistIndex(aboutChars);
+    for (const e of entries) {
+      if (e.type !== 'character' || e.attributes.descRaw) continue;
+      const hit = aboutLookup(e.name);
+      if (hit?.descRaw) { e.attributes.descRaw = hit.descRaw; e.attributes.descLang = 'en'; aboutFallback++; }
+    }
+  }
+  console.log(`  ✓ repli Jikan about : +${aboutFallback} descriptions brutes (${aboutChars.length} bios en cache)`);
 
   // ── DÉDUP : fusion des doublons de personnages (clé canonique + alias curés) ──
   // Les slugs CURÉS (config u.chars + STAR_DETAILS) sont toujours gardés comme keeper.

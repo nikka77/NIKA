@@ -1170,6 +1170,26 @@ async function main() {
   }
   console.log(`✓ AniList Naruto : +${aniN} favoris, +${aniD} descriptions brutes (${aniChars.length} persos AniList)`);
 
+  // ── Enrichissement JIKAN `about` (bio EN par nom) — comble ce qu'AniList a manqué. ──
+  // Cache résumable data/jikan-about.json (mal_id → {name, about}) produit par fetch-jikan-about.mjs.
+  let aboutD = 0;
+  try {
+    const aboutCache = JSON.parse(readFileSync(join(ROOT, 'data', 'jikan-about.json'), 'utf8'));
+    const aboutChars = Object.values(aboutCache).filter((v) => v.about).map((v) => ({
+      names: [v.name, v.name.includes(', ') ? v.name.split(/,\s*/).reverse().join(' ') : v.name],
+      favourites: 0, descRaw: String(v.about).replace(/\s+/g, ' ').trim().slice(0, 1200),
+    }));
+    if (aboutChars.length) {
+      const aboutLookup = anilistIndex(aboutChars);
+      for (const e of entries) {
+        if (e.type !== 'character' || e.attributes.descRaw) continue;
+        const hit = aboutLookup(e.name);
+        if (hit?.descRaw) { e.attributes.descRaw = hit.descRaw; e.attributes.descLang = 'en'; aboutD++; }
+      }
+    }
+    console.log(`✓ Jikan about Naruto : +${aboutD} descriptions brutes (${aboutChars.length} bios en cache)`);
+  } catch { console.log('  (cache jikan-about absent — passe about ignorée)'); }
+
   // ── GÉNÉRATIONS (axe taxonomique du hub /learn/akasha/u/naruto) — curation par nom ──
   const GENERATIONS = [
     [['Hashirama Senju', 'Tobirama Senju', 'Madara Uchiha', 'Mito Uzumaki', 'Izuna Uchiha', 'Tōka Senju'], 'Fondateurs'],
