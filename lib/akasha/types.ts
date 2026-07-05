@@ -46,6 +46,7 @@ export interface RelationTarget {
   image_url: string | null;
   category?: string | null;
   is_signature?: string | null;
+  favorites?: string | null;
 }
 
 export interface ResolvedRelation {

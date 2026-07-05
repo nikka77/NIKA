@@ -179,7 +179,8 @@ export const getEntryBySlug = cache(async function getEntryBySlug(slug: string):
       .eq('from_entry', e.id),
     supabase
       .from('akasha_relations')
-      .select('id, relation, target:akasha_entries!akasha_relations_from_entry_fkey(slug, name, type, image_url)')
+      // favorites projeté pour trier « Maîtrisée par » (gabarit fiche Attaque — L4) par popularité.
+      .select('id, relation, target:akasha_entries!akasha_relations_from_entry_fkey(slug, name, type, image_url, favorites:attributes->>favorites)')
       .eq('to_entry', e.id),
   ]);
 

@@ -64,6 +64,49 @@ function Chips({ items, color }: { items: string[]; color: string }) {
   );
 }
 
+/** MOVESET data-driven (L4) : attaques signature en GRANDES cartes (façon fiche de jeu de combat),
+ *  le reste en grille compacte cap 12 + « Voir les N ». Chaque technique est un lien vers sa fiche. */
+function MovesetSection({ atkRels }: { atkRels: { id: string; target: { slug: string; name: string; is_signature?: string | null } }[] }) {
+  const [showAll, setShowAll] = useState(false);
+  const sigs = atkRels.filter((r) => r.target.is_signature === 'true');
+  const rest = atkRels.filter((r) => r.target.is_signature !== 'true');
+  const CAP = 12;
+  const visible = showAll ? rest : rest.slice(0, CAP);
+  return (
+    <div>
+      {sigs.length > 0 && (
+        <Sec title={`Attaques signature · ${sigs.length}`} accent="#E8623A" icon="techniques">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 8 }}>
+            {sigs.map((r) => (
+              <Link key={r.id} href={`/learn/akasha/${r.target.slug}`} style={{ position: 'relative', display: 'block', textDecoration: 'none', padding: '0.7rem 0.8rem', borderRadius: 11, background: 'linear-gradient(135deg, rgba(232,98,58,0.16), rgba(232,98,58,0.04))', border: '1px solid rgba(232,98,58,0.5)', overflow: 'hidden' }}>
+                <span aria-hidden style={{ position: 'absolute', top: 6, right: 8, fontSize: 11 }}>⭐</span>
+                <span style={{ display: 'block', fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 14, color: 'var(--td)', lineHeight: 1.15 }}>{r.target.name}</span>
+                <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 9, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#E8623A', marginTop: 4 }}>Signature</span>
+              </Link>
+            ))}
+          </div>
+        </Sec>
+      )}
+      {rest.length > 0 && (
+        <Sec title={`Toutes les techniques · ${atkRels.length}`} accent="#7B5CF0" icon="techniques">
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+            {visible.map((r) => (
+              <Link key={r.id} href={`/learn/akasha/${r.target.slug}`} style={{ fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 600, color: 'var(--td2)', textDecoration: 'none', background: 'rgba(123,92,240,0.10)', border: '1px solid rgba(123,92,240,0.30)', borderRadius: 7, padding: '3px 9px' }}>
+                {r.target.name}
+              </Link>
+            ))}
+          </div>
+          {rest.length > CAP && (
+            <button type="button" onClick={() => setShowAll((v) => !v)} style={{ marginTop: 10, fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, color: '#7B5CF0', background: 'transparent', border: '1px solid rgba(123,92,240,0.4)', borderRadius: 8, padding: '6px 14px', cursor: 'pointer' }}>
+              {showAll ? 'Réduire' : `Voir les ${rest.length} techniques`}
+            </button>
+          )}
+        </Sec>
+      )}
+    </div>
+  );
+}
+
 /** Chip d'AXE cliquable : si l'attribut est un axe de taxonomy (village, clan, crew, race…),
  *  la valeur devient un lien vers le registre filtré → « tous les Konoha », « tout l'équipage ».
  *  Sinon retombe sur la chip statique. La plomberie serveur (attr/val) existait déjà. */
@@ -514,6 +557,18 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
 
   const model3d = (threeD as unknown as Record<string, Model3D>)[entry.slug];
 
+  // ── ATTAQUES liées (relations 'maitrise' → entités category='Attaque') — Refonte L4 « L'arsenal ».
+  // Signatures d'abord, puis le reste alphabétique. Le MOVESET devient un onglet à part entière.
+  const atkRels = entry.relationsOut
+    .filter((r) => r.relation === 'maitrise' && r.target.category === 'Attaque')
+    .sort((x, y) => {
+      const sx = x.target.is_signature === 'true' ? 0 : 1;
+      const sy = y.target.is_signature === 'true' ? 0 : 1;
+      return sx - sy || x.target.name.localeCompare(y.target.name, 'fr');
+    });
+  // Fruit du Démon lié (relation → fiche du fruit) : la chip devient un LIEN vers l'entité.
+  const fruitRel = entry.relationsOut.find((r) => r.relation === 'maitrise' && r.target.category === 'Fruit du Démon') ?? null;
+
   const tabs = [
     { key: 'identite', label: 'Identité', show: vitals || classification.length || affiliation.length || occupation.length || titles.length || multiUniv },
     // ⬢ 3D : la visionneuse fonctionne (GLB riggé chargé au clic, pas au load — Identité reste par défaut),
@@ -523,6 +578,7 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
     { key: 'histoire', label: 'Histoire', show: !!(bio || personality || quotes.length || trivia.length) },
     // Parcours déplacé HORS du dossier → frise chronologique horizontale au-dessus de la carte (ArcFrieze).
     { key: 'aptitudes', label: 'Aptitudes', show: natures.length || kekkei.length || jutsu.length },
+    { key: 'techniques', label: 'Techniques', show: atkRels.length > 0 },
     { key: 'arsenal', label: 'Arsenal', show: tools.length },
     { key: 'famille', label: 'Famille', show: family.length },
     { key: 'media', label: 'Média', show: !!(voiceActors || debutAll) },
@@ -600,14 +656,31 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
             {rankV && <Sec title="Rang ninja" accent="#0094D4"><AxisChip universe={entry.universe} attr="rank" value={rankV} color="#0094D4" /></Sec>}
             {race && <Sec title="Espèce / Race" accent="#0094D4"><AxisChip universe={entry.universe} attr="race" value={race} color="#0094D4" /></Sec>}
             {bounty && (
+              /* AVIS DE RECHERCHE (L4) : la prime en wanted poster — l'échelle de puissance officielle d'OP. */
               <Sec title="Prime" accent="#D4A017">
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 18, color: '#D4A017', background: '#D4A0171A', border: '1px solid #D4A01755', borderRadius: 8, padding: '5px 12px' }}>
-                  <span aria-hidden>🏴‍☠️</span>{bounty}
-                </span>
+                <div style={{ maxWidth: 260, borderRadius: 10, overflow: 'hidden', border: '2px solid #D4A01788', background: 'linear-gradient(180deg, #2A2113 0%, #1A1509 100%)', boxShadow: 'inset 0 0 26px rgba(0,0,0,0.55)' }}>
+                  <div style={{ textAlign: 'center', padding: '8px 10px 2px', fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 22, letterSpacing: '0.22em', color: '#E8D5A0' }}>WANTED</div>
+                  <div style={{ textAlign: 'center', fontFamily: 'var(--fo)', fontSize: 8.5, fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#D4A017' }}>Dead or Alive</div>
+                  <div style={{ textAlign: 'center', padding: '8px 10px 4px', fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 20, color: '#F0C040', textShadow: '0 2px 10px rgba(212,160,23,0.5)' }}>
+                    {bounty}
+                  </div>
+                  <div style={{ textAlign: 'center', paddingBottom: 8, fontFamily: 'var(--fo)', fontSize: 8.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8A6D3B' }}>— Gouvernement Mondial —</div>
+                </div>
               </Sec>
             )}
             {crew && <Sec title="Équipage" accent="#0EA878" icon="affiliations"><AxisChip universe={entry.universe} attr="crew" value={crew} color="#0EA878" /></Sec>}
-            {fruit && <Sec title="Fruit du Démon" accent="#E8623A"><Chips items={[fruit]} color="#E8623A" /></Sec>}
+            {fruit && (
+              <Sec title="Fruit du Démon" accent="#E8623A">
+                {fruitRel ? (
+                  /* Lien direct vers la FICHE du fruit (relation 'maitrise') — L4. */
+                  <Link href={`/learn/akasha/${fruitRel.target.slug}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700, color: '#E8623A', textDecoration: 'none', background: '#E8623A1A', border: '1px solid #E8623A55', borderRadius: 8, padding: '5px 12px' }}>
+                    <span aria-hidden>🍎</span>{fruitRel.target.name}<span aria-hidden style={{ fontSize: 10, opacity: 0.75 }}>→</span>
+                  </Link>
+                ) : (
+                  <Chips items={[fruit]} color="#E8623A" />
+                )}
+              </Sec>
+            )}
             {ki && <Sec title="Puissance (Ki)" accent="#D4A017"><Chips items={[ki]} color="#D4A017" /></Sec>}
             {status && <Sec title="Statut" accent="#0EA878"><Chips items={[status]} color="#0EA878" /></Sec>}
             {tailedBeast && (
@@ -663,6 +736,11 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
             )}
             <Moveset2D slug={entry.slug} aura={chakraAura(str(f.label) ?? '')} caption="Sprite : Naruto adulte · l'aura suit la forme sélectionnée" />
           </>
+        )}
+
+        {/* ── TECHNIQUES (L4) : moveset data-driven — signatures en cartes, le reste en grille ── */}
+        {active === 'techniques' && atkRels.length > 0 && (
+          <MovesetSection atkRels={atkRels} />
         )}
 
         {active === 'arsenal' && tools.length > 0 && (
