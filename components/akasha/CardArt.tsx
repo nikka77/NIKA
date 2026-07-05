@@ -52,8 +52,14 @@ export default function CardArt({
         // ── Layout d'origine : grande illustration ──
         <div style={{ position: 'relative', borderRadius: 11, overflow: 'hidden', border: `2px solid ${frame}aa`, aspectRatio: '1 / 1', background: `linear-gradient(135deg, ${frame}33, ${frame}0A)`, boxShadow: 'inset 0 0 36px rgba(0,0,0,0.6)' }}>
           {current ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img key={current} src={current} alt={name} className="ak-art-img ak-era-img" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />
+            // Image ENTIÈRE centrée (jamais rognée, quel que soit le format) sur un fond flouté d'elle-même
+            // qui remplit le cadre → pas de bande vide, sujet toujours au centre.
+            <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img aria-hidden src={current} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'blur(20px) saturate(1.25) brightness(0.5)', transform: 'scale(1.18)' }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img key={current} src={current} alt={name} className="ak-art-img ak-era-img" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
+            </>
           ) : (
             <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 70, opacity: 0.5 }} aria-hidden>{fallbackIcon}</div>
           )}

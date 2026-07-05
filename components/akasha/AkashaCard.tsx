@@ -72,13 +72,14 @@ export default function AkashaCard({ entry }: { entry: AkashaEntryCard }) {
         }}
       >
         {entry.image_url ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={entry.image_url}
-            alt=""
-            loading="lazy"
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
-          />
+          // Image ENTIÈRE centrée (jamais rognée) sur un fond flouté d'elle-même → aperçu cohérent
+          // avec la grande carte, sujet toujours au centre quel que soit le format.
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img aria-hidden src={entry.image_url} alt="" loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'blur(16px) saturate(1.25) brightness(0.5)', transform: 'scale(1.2)' }} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={entry.image_url} alt="" loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
+          </>
         ) : (
           <>
             <span aria-hidden style={{ position: 'absolute', fontSize: 96, opacity: 0.1, filter: 'blur(1px)', transform: 'rotate(-12deg) translateY(6px)' }}>

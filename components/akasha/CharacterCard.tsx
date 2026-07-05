@@ -88,7 +88,9 @@ export default function CharacterCard({ entry, sel, onSelect }: { entry: AkashaE
   const hasCurated = curatedForms.length > 0;
   const rank = f.rank ?? str(a.rank);
   const classification = f.classification ?? list(a.classification);
-  const age = f.age ?? (hasCurated ? null : str(a.age) ? `${str(a.age)} ans` : null);
+  // N'ajoute « ans » que sur un nombre NU : certaines sources (api-onepiece) donnent déjà « 24 ans ».
+  const ageRaw = f.age ?? (hasCurated ? null : str(a.age));
+  const age = ageRaw ? (/[a-z]/i.test(ageRaw) ? ageRaw : `${ageRaw} ans`) : null;
   const height = f.height ?? (hasCurated ? null : str(a.height));
   const weight = f.weight ?? (hasCurated ? null : str(a.weight));
   const kekkei = f.kekkeiGenkai ?? list(a.kekkeiGenkai);

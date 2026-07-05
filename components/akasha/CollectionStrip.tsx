@@ -44,10 +44,14 @@ export default function CollectionStrip() {
       <div className="hero-domabar" style={{ display: 'flex', gap: 10, overflowX: 'auto', paddingBottom: 4 }}>
         {items.map((it) => (
           <Link key={it.slug} href={`/learn/akasha/${it.slug}`} style={{ flexShrink: 0, width: 92, textDecoration: 'none' }}>
-            <div style={{ width: 92, height: 92, borderRadius: 12, overflow: 'hidden', background: `linear-gradient(135deg, ${ACCENT}30, ${ACCENT}0A)`, border: `1px solid ${ACCENT}40`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: 92, height: 92, borderRadius: 12, overflow: 'hidden', position: 'relative', background: `linear-gradient(135deg, ${ACCENT}30, ${ACCENT}0A)`, border: `1px solid ${ACCENT}40`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               {it.img ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={it.img} alt={it.name} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img aria-hidden src={it.img} alt="" loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'blur(12px) saturate(1.25) brightness(0.5)', transform: 'scale(1.2)' }} />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={it.img} alt={it.name} loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
+                </>
               ) : (
                 <span aria-hidden style={{ fontSize: 30, opacity: 0.6 }}>✦</span>
               )}

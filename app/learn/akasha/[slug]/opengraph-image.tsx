@@ -87,8 +87,10 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
             }}
           >
             {entry?.image_url ? (
+              // Image ENTIÈRE centrée sur le cadre dégradé (Satori ne supporte pas filter:blur → contain
+              // plutôt que le fond flouté, mais même intention : sujet centré, jamais rogné).
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={entry.image_url} alt="" width={340} height={470} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+              <img src={entry.image_url} alt="" width={340} height={470} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
             ) : (
               <div style={{ display: 'flex', fontSize: 150 }}>{m.icon}</div>
             )}
