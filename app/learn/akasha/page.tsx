@@ -194,11 +194,21 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
       >
         <CollectionStrip />
 
-        {/* CTA Album (L5) : le but de la collection devient visible — sets à compléter. */}
-        <Link href="/learn/akasha/album" className="dom-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, textDecoration: 'none', background: 'linear-gradient(120deg, rgba(212,160,23,0.10), var(--bg2))', border: '1px solid rgba(212,160,23,0.4)', borderRadius: 13, padding: '0.75rem 1rem', marginBottom: '1.4rem' }}>
-          <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 15, textTransform: 'uppercase', color: 'var(--td)' }}>🗂 L&rsquo;Album — 20 sets à compléter</span>
-          <span aria-hidden style={{ fontFamily: 'var(--fo)', fontSize: 16, color: '#D4A017' }}>→</span>
-        </Link>
+        {/* Destinations (L5/L7) : album, records, vitrines de collection. */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 8, marginBottom: '1.4rem' }}>
+          {([
+            { href: '/learn/akasha/album', icon: '🗂', label: 'L’Album', sub: '20 sets à compléter', tint: '#D4A017' },
+            { href: '/learn/akasha/tops', icon: '🏆', label: 'Les Records', sub: 'Classements cross-univers', tint: '#E8623A' },
+            { href: '/learn/akasha/c/fruits-du-demon', icon: '🍎', label: 'Fruits du Démon', sub: '200+ par famille', tint: '#C0455E' },
+            { href: '/learn/akasha/c/armurerie-meito', icon: '⚔️', label: 'Armurerie Meito', sub: 'Sabres classés', tint: '#C9A227' },
+          ] as const).map((d) => (
+            <Link key={d.href} href={d.href} className="dom-card" style={{ textDecoration: 'none', background: `linear-gradient(135deg, ${d.tint}12, var(--bg2))`, border: `1px solid ${d.tint}44`, borderRadius: 12, padding: '0.7rem 0.85rem', display: 'flex', flexDirection: 'column', gap: 2 }}>
+              <span style={{ fontSize: 18 }} aria-hidden>{d.icon}</span>
+              <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 13.5, color: 'var(--td)', lineHeight: 1.1 }}>{d.label}</span>
+              <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)' }}>{d.sub}</span>
+            </Link>
+          ))}
+        </div>
 
         {isRoot && <DailyBooster />}
 

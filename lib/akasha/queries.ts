@@ -515,6 +515,43 @@ export async function getDidYouKnow(dateSeed: string, universe?: string): Promis
   return (data as AkashaEntryCard[] | null)?.[0] ?? null;
 }
 
+/** VITRINE d'une collection (L7) : toutes les entrées d'une catégorie (cap), avec un sous-attribut
+ *  projeté (fruit_type, meito_grade, boat_class…) pour le regroupement en sections. `requireSub` ne
+ *  garde que celles qui portent le sous-attribut (ex. épées classées Meito). */
+export async function listCollectionEntries(
+  category: string,
+  subAttr: string | null,
+  { universe, requireSub = false, cap = 400 }: { universe?: string; requireSub?: boolean; cap?: number } = {},
+): Promise<(AkashaEntryCard & { sub?: string | null })[]> {
+  const supabase = await createClient();
+  if (!supabase) return [];
+  const cols = subAttr ? `${CARD_COLS}, sub:attributes->>${subAttr}` : CARD_COLS;
+  let q = supabase.from('akasha_entries').select(cols).eq('attributes->>category', category);
+  if (universe) q = q.eq('universe', universe);
+  if (requireSub && subAttr) q = q.not(`attributes->>${subAttr}`, 'is', null);
+  q = q.order('name', { ascending: true }).range(0, cap - 1);
+  const { data } = await q;
+  return (data as (AkashaEntryCard & { sub?: string | null })[] | null) ?? [];
+}
+
+/** CLASSEMENT (L7) : top N par un attribut NUMÉRIQUE stocké en JSONB (favorites, ki…). Carte + valeur. */
+export async function listTopByAttr(
+  numAttr: string,
+  { universe, type = 'character' as AkashaType, limit = 20 }: { universe?: string; type?: AkashaType; limit?: number } = {},
+): Promise<(AkashaEntryCard & { metric: number })[]> {
+  const supabase = await createClient();
+  if (!supabase) return [];
+  let q = supabase
+    .from('akasha_entries')
+    .select(`${CARD_COLS}, metric:attributes->>${numAttr}`)
+    .not(`attributes->>${numAttr}`, 'is', null);
+  if (universe) q = q.eq('universe', universe);
+  if (type) q = q.eq('type', type);
+  q = q.order(`attributes->${numAttr}`, { ascending: false, nullsFirst: false }).range(0, limit - 1);
+  const { data } = await q;
+  return ((data as (AkashaEntryCard & { metric: string })[] | null) ?? []).map((e) => ({ ...e, metric: Number(e.metric) || 0 }));
+}
+
 /** Compte d'entrées par univers (pour le hub du registre).
  *  ⚠ PostgREST plafonne chaque requête à 1 000 lignes (même avec .limit() supérieur) → pagination range. */
 export async function listUniverseCounts(): Promise<{ universe: string; count: number }[]> {
