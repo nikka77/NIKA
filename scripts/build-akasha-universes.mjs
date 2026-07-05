@@ -1381,6 +1381,28 @@ async function main() {
   };
   for (const e of entries) if (UNI_DETAILS[e.slug]) Object.assign(e.attributes, UNI_DETAILS[e.slug]);
 
+  // ── Primes One Piece : overrides canon curés + normalisation de format (Most Wanted) ──
+  // L'API api-onepiece ne fournit la prime que pour une minorité de persos ; les têtes majeures
+  // (Yonko, légendes, Cross Guild, primes post-Wano) arrivent par l'import de masse Jikan SANS prime.
+  // data/op-bounties-curated.json (slug → entier Berrys) comble ces trous et corrige les erreurs.
+  const OP_BOUNTIES = existsSync('data/op-bounties-curated.json')
+    ? JSON.parse(readFileSync('data/op-bounties-curated.json', 'utf8'))
+    : {};
+  const fmtBerrys = (n) => `${Number(n).toLocaleString('de-DE')} Berrys`; // 4.388.000.000 Berrys
+  let opBAdd = 0, opBFix = 0, opBNorm = 0;
+  for (const e of entries) {
+    if (e.universe !== 'One Piece' || e.type !== 'character') continue;
+    if (OP_BOUNTIES[e.slug] != null) {
+      const before = e.attributes.bounty;
+      e.attributes.bounty = fmtBerrys(OP_BOUNTIES[e.slug]);
+      if (before == null) opBAdd++; else if (before !== e.attributes.bounty) opBFix++;
+    } else if (e.attributes.bounty != null) {
+      const v = parseInt(String(e.attributes.bounty).replace(/[^\d]/g, ''), 10);
+      if (v > 0) { const f = fmtBerrys(v); if (f !== e.attributes.bounty) { e.attributes.bounty = f; opBNorm++; } }
+    }
+  }
+  if (opBAdd || opBFix || opBNorm) console.log(`  ✓ primes OP : ${opBAdd} ajoutées + ${opBFix} corrigées + ${opBNorm} normalisées (curated)`);
+
   // ── Pages évolutives SUPPLÉMENTAIRES (data-driven, authorées par workflow) ──
   const EXTRA_PAGES = new Map((EXTRA.pages || []).map((p) => [p.slug, p]));
   let nEP = 0;
