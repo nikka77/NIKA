@@ -62,8 +62,18 @@ const VILLAGES: Record<string, { kanji: string; color: string }> = {
   otogakure: { kanji: '音', color: '#7B5CF0' },
 };
 
-const VILLAGE_IMG: Record<string, string> = { konohagakure: '/images/akasha/emblems/konoha.webp' };
-const CLAN_IMG: Record<string, string> = { uzumaki: '/images/akasha/emblems/uzumaki.webp' };
+const E = '/images/akasha/emblems/';
+// Blasons canon (forme officielle Narutopedia + couleur du chart, sur disque) — détourés/composés.
+const VILLAGE_IMG: Record<string, string> = {
+  konohagakure: `${E}konoha.webp`, sunagakure: `${E}suna.webp`, kirigakure: `${E}kiri.webp`,
+  kumogakure: `${E}kumo.webp`, iwagakure: `${E}iwa.webp`, amegakure: `${E}ame.webp`, otogakure: `${E}oto.webp`,
+};
+const CLAN_IMG: Record<string, string> = {
+  uchiha: `${E}uchiha.webp`, uzumaki: `${E}uzumaki.webp`, senju: `${E}senju.webp`, hyuga: `${E}hyuga.webp`,
+  nara: `${E}nara.webp`, akimichi: `${E}akimichi.webp`, yamanaka: `${E}yamanaka.webp`, inuzuka: `${E}inuzuka.webp`,
+  aburame: `${E}aburame.webp`, sarutobi: `${E}sarutobi.webp`, otsutsuki: `${E}otsutsuki.webp`,
+  fuma: `${E}fuma.webp`, kamizuru: `${E}kamizuru.webp`, funato: `${E}funato.webp`,
+};
 
 function KonohaLeaf({ size, color }: { size: number; color: string }) {
   return (
