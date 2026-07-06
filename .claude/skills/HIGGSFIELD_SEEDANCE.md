@@ -75,3 +75,46 @@ premium tech commercial aesthetic
 - Pas de logos tiers (Airbnb, marques de bateaux) dans les prompts
 - Données réalistes Côte d'Azur (lieux : Nice, Cannes, Antibes, Théoule, Lérins, Monaco)
 - Conserver les prompts qui fonctionnent dans `tasks/video-prompts.md` (les capitaliser)
+
+---
+
+## Arsenal complet Higgsfield (MCP `33a482bb-…`) — audit 05/07/2026
+
+> Le « supercomputer » de Dan = Higgsfield en MCP. `generate_image`/`generate_video`/`generate_audio`/`generate_3d` + preflight `get_cost:true` (coût AVANT job). Solde/plan via `balance`. Solde au 05/07 : **1,72 cr (plan Plus) → top-up requis**. Packs 500/1000/2000/4000.
+
+### IMAGE — génération
+| Modèle | Pour | Coût préflighté |
+|---|---|---|
+| `recraft_v4_1` (model_type=`vector`, `colors[]`, `background_color`) | **LOGOS / ICÔNES / BLASONS flat vectoriels, palette + fond contrôlés** — LE modèle pour les emblèmes AKASHA | à préflighter |
+| `nano_banana_pro`, `gpt_image_2`, `openai_hazel` | **texte/typo/kanji/chiffres nets** (logos univers, bagues Akatsuki, numéros Espada), 4K | nano_pro = 2 cr |
+| `soul_2` | perso/UGC/portrait/éditorial réaliste | 0,12 cr |
+| `soul_cinematic`, `cinematic_studio_2_5` | concept art / stills ciné (héros de section) | — |
+| `soul_location` | décors/environnements (cartes, lieux) | — |
+| `soul_cast` (+ Soul-ID) | **identité perso CONSTANTE** entre générations | — |
+| `seedream_v4_5` (4K/6K), `flux_2`, `flux_kontext`, `grok_image`, `kling_omni`, `z_image` (budget), `image_auto` | polyvalents / édition / rapide | — |
+
+### IMAGE — édition & finition (post-génération)
+`flux_kontext`/`seedream`/`openai_hazel` (édition par instruction, style transfer) · `remove_background` (**détourage → icônes transparentes**) · `outpaint` (étendre le cadre) · `reframe` (recadrer un ratio) · upscale `topaz_image`/`bytedance_image_upscale`/`topaz_image_generative` (2K/4K, face enhance) · `autosprite` (image perso → **sprite sheet game-ready** idle/walk/run/attack/jump + 8 dir iso).
+
+### VIDEO
+Génération : `veo3_1` (top ciné + audio), `kling3_0` (multi-shot, audio sync, motion transfer), `seedance_2_0` (référence-driven, identité consistante, 4K, start/end frame), `minimax_hailuo` (physique/émotion), `cinematic_studio_3_0`, `wan2_7` (audio sync perso), `grok_video`, `gemini_omni`. Image→vidéo via `higgsfield_preset` (presets_show). · **Marketing Studio Video** (pubs UGC TikTok/Reels one-click : hooks/settings/avatars/ad_reference). · **Clipify** (1 YouTube → 10-20 shorts sous-titrés, face-track, font Bebas Neue dispo). · **Explainer Video** (blocs + voix + sous-titres). Post : upscale/deflicker/background-remover vidéo.
+
+### AUDIO / VOIX
+`text2speech_v2` (moteurs ElevenLabs/MiniMax/Seed/Vibe/Cozy), **voix FR** (Alain, Hélène, Mathieu, Étienne) · `create_voice` (**clonage → voix NIKO signature**) · `sonilo_music` (musique) + `mirelo_text_to_audio` (**SFX** — arcade) · `dubbing`, `voice_change`.
+
+### 3D
+`sam_3_3d` (Meta, image→GLB) · `image_to_3d`/`multi_image_to_3d` (Meshy — **1-4 vues = meilleure géométrie, résout les artefacts mono-vue qui gataient l'onglet 3D**) : texturing, PBR, auto-rig humanoïde, animation depuis **lib 678 clips** (idle 0/walk 30/run 16/jump 466/dance 64…) · `tripo_3d` (texte→3D) · `3d_rigging` (rigger un GLB existant).
+
+### STUDIOS & PIPELINES
+Marketing Studio (brand kit + produits + avatars + styles d'ad) · Shorts Studio · **Website builder** (create/deploy/publish, `website_db`, secrets, repo) · **Game pipeline** (`deploy_game`/`publish_game` + autosprite + sonilo + mirelo → déployer l'arcade AKASHA) · **Virality Predictor** (score viralité) · Soul training (`show_characters` action=train : 5-20 photos → Soul-ID réutilisable).
+
+### GESTION (indispensable pour l'auto-QC)
+`get_cost` (preflight) · `balance`/`transactions`/`show_plans_and_credits` · `media_upload`/`media_import_url` (réfs i2i) · **`job_display`/`show_generations`/`show_medias`** (récupérer la sortie rendue → je la LIS → j'analyse vs critères QC → je régénère les ratés) · `models_explore`/`presets_show`/`show_reference_elements`.
+
+### Ce que ça change pour AKASHA (décisions)
+1. **Emblèmes/icônes/blasons → `recraft_v4_1` vector** (palette + fond plats, SVG-like) plutôt que soul_2 : plus net en petit, détourable, cohérent. soul_2 reste pour les héros/portraits.
+2. **Texte canon (logos, kanji Akatsuki, chiffres Espada) → `nano_banana_pro`/`openai_hazel`**.
+3. **Cohérence de set** : générer 1 emblème « hero », le passer en `medias`/image-ref (i2i) aux frères du set → même style. Ou Soul-ID pour un perso récurrent.
+4. **Finition systématique** : `remove_background` (transparent) → `upscale` si besoin.
+5. **Auto-QC** : après chaque `generate_image`, `job_display` → lire l'image → comparer aux `qc_criteria` → régénérer si erreur (mauvais kanji/chiffre, symbole générique, flou).
+6. **Débloquables** : onglet 3D (multi_image_to_3d), SFX arcade #52 (mirelo/sonilo), voix NIKO (create_voice), vidéos marketing (skill ci-dessus).

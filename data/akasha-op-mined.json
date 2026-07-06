@@ -1,0 +1,677 @@
+{
+ "universe": "One Piece",
+ "stat": {
+  "height_cm": 27,
+  "devil_fruit": 25,
+  "devil_fruit_type": 17,
+  "rel_appartient": 31,
+  "rel_reside": 0,
+  "rel_famille": 0,
+  "rel_fruit": 20,
+  "dropped": 36
+ },
+ "typeHist": {
+  "Paramecia": 14,
+  "Zoan": 2,
+  "Logia": 1
+ },
+ "mined": [
+  {
+   "slug": "monkey-d-luffy",
+   "name": "Monkey D. Luffy",
+   "attrs": {
+    "height_cm": 172,
+    "devil_fruit": "Gomu Gomu no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-du-gum-gum",
+     "toName": "Fruit du Gum-Gum"
+    },
+    {
+     "relation": "appartient",
+     "to": "chapeau-de-paille",
+     "toName": "Équipage du Chapeau de Paille"
+    }
+   ]
+  },
+  {
+   "slug": "roronoa-zoro",
+   "name": "Roronoa Zoro",
+   "attrs": {
+    "height_cm": 178
+   },
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "chapeau-de-paille",
+     "toName": "Équipage du Chapeau de Paille"
+    }
+   ]
+  },
+  {
+   "slug": "nami",
+   "name": "Nami",
+   "attrs": {
+    "height_cm": 169
+   },
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "chapeau-de-paille",
+     "toName": "Équipage du Chapeau de Paille"
+    },
+    {
+     "relation": "appartient",
+     "to": "l-equipage-d-arlong",
+     "toName": "L’équipage d’Arlong",
+     "role": "former"
+    }
+   ]
+  },
+  {
+   "slug": "usopp",
+   "name": "Usopp",
+   "attrs": {
+    "height_cm": 174
+   },
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "chapeau-de-paille",
+     "toName": "Équipage du Chapeau de Paille"
+    }
+   ]
+  },
+  {
+   "slug": "sanji",
+   "name": "Sanji",
+   "attrs": {
+    "height_cm": 177
+   },
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "chapeau-de-paille",
+     "toName": "Équipage du Chapeau de Paille"
+    },
+    {
+     "relation": "appartient",
+     "to": "baratie-one-piece",
+     "toName": "Baratie",
+     "role": "former"
+    }
+   ]
+  },
+  {
+   "slug": "tony-tony-chopper",
+   "name": "Tony Tony Chopper",
+   "attrs": {
+    "devil_fruit": "Hito Hito no Mi",
+    "devil_fruit_type": "Zoan"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-de-l-humain",
+     "toName": "Fruit de l'Humain"
+    }
+   ]
+  },
+  {
+   "slug": "nico-robin",
+   "name": "Nico Robin",
+   "attrs": {
+    "height_cm": 188,
+    "devil_fruit": "Hana Hana no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-des-eclosions",
+     "toName": "Fruit Des Éclosions"
+    },
+    {
+     "relation": "appartient",
+     "to": "chapeau-de-paille",
+     "toName": "Équipage du Chapeau de Paille"
+    },
+    {
+     "relation": "appartient",
+     "to": "baroque-works",
+     "toName": "Baroque Works",
+     "role": "former"
+    }
+   ]
+  },
+  {
+   "slug": "shanks",
+   "name": "Shanks",
+   "attrs": {},
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "l-equipage-du-roux",
+     "toName": "L’équipage du Roux"
+    },
+    {
+     "relation": "appartient",
+     "to": "yonko",
+     "toName": "Yonkō"
+    }
+   ]
+  },
+  {
+   "slug": "franky",
+   "name": "Franky",
+   "attrs": {
+    "height_cm": 225
+   },
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "chapeau-de-paille",
+     "toName": "Équipage du Chapeau de Paille"
+    }
+   ]
+  },
+  {
+   "slug": "brook",
+   "name": "Brook",
+   "attrs": {
+    "devil_fruit": "Yomi Yomi no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-de-la-resurrection",
+     "toName": "Fruit de la Résurrection"
+    },
+    {
+     "relation": "appartient",
+     "to": "chapeau-de-paille",
+     "toName": "Équipage du Chapeau de Paille"
+    },
+    {
+     "relation": "appartient",
+     "to": "l-equipage-du-rumbar",
+     "toName": "L’équipage du Rumbar",
+     "role": "former"
+    }
+   ]
+  },
+  {
+   "slug": "jinbe",
+   "name": "Jinbe",
+   "attrs": {
+    "height_cm": 301
+   },
+   "rels": []
+  },
+  {
+   "slug": "trafalgar-law",
+   "name": "Trafalgar Law",
+   "attrs": {
+    "height_cm": 191,
+    "devil_fruit": "Ope Ope no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-du-bistouri",
+     "toName": "Fruit du Bistouri"
+    },
+    {
+     "relation": "appartient",
+     "to": "l-equipage-du-hearth",
+     "toName": "L’équipage du Hearth"
+    },
+    {
+     "relation": "appartient",
+     "to": "shichibukai",
+     "toName": "Shichibukai",
+     "role": "Former"
+    },
+    {
+     "relation": "appartient",
+     "to": "l-equipage-de-don-quichotte",
+     "toName": "L’équipage de Don Quichotte",
+     "role": "Former"
+    }
+   ]
+  },
+  {
+   "slug": "barbe-blanche",
+   "name": "Edward Newgate · Barbe Blanche",
+   "attrs": {
+    "height_cm": 666,
+    "devil_fruit": "Gura Gura no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-du-tremblement",
+     "toName": "Fruit du Tremblement"
+    },
+    {
+     "relation": "appartient",
+     "to": "l-equipage-de-barbe-blanche",
+     "toName": "L’équipage de Barbe Blanche",
+     "role": "former/deceased"
+    },
+    {
+     "relation": "appartient",
+     "to": "sphinx-one-piece",
+     "toName": "Sphinx",
+     "role": "former"
+    }
+   ]
+  },
+  {
+   "slug": "dracule-mihawk",
+   "name": "Dracule Mihawk",
+   "attrs": {
+    "height_cm": 198
+   },
+   "rels": []
+  },
+  {
+   "slug": "boa-hancock",
+   "name": "Boa Hancock",
+   "attrs": {
+    "height_cm": 191,
+    "devil_fruit": "Mero Mero no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "clone-du-fruit-de-la-passion",
+     "toName": "Clone du fruit de la passion"
+    },
+    {
+     "relation": "appartient",
+     "to": "shichibukai",
+     "toName": "Shichibukai",
+     "role": "former"
+    }
+   ]
+  },
+  {
+   "slug": "crocodile",
+   "name": "Crocodile",
+   "attrs": {},
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "baroque-works",
+     "toName": "Baroque Works"
+    }
+   ]
+  },
+  {
+   "slug": "buggy",
+   "name": "Buggy le Clown",
+   "attrs": {
+    "height_cm": 192,
+    "devil_fruit": "Bara Bara no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-de-la-fragmentation",
+     "toName": "Fruit de la Fragmentation"
+    },
+    {
+     "relation": "appartient",
+     "to": "buggy-s-delivery",
+     "toName": "Buggy's Delivery"
+    }
+   ]
+  },
+  {
+   "slug": "monkey-d-garp",
+   "name": "Monkey D. Garp",
+   "attrs": {},
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "marine-one-piece",
+     "toName": "Marine"
+    }
+   ]
+  },
+  {
+   "slug": "bartolomeo",
+   "name": "Bartolomeo",
+   "attrs": {
+    "height_cm": 220,
+    "devil_fruit": "Bari Bari no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-de-la-barriere",
+     "toName": "Fruit de la Barrière"
+    }
+   ]
+  },
+  {
+   "slug": "bepo",
+   "name": "Bepo",
+   "attrs": {},
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "l-equipage-du-hearth",
+     "toName": "L’équipage du Hearth"
+    }
+   ]
+  },
+  {
+   "slug": "carrot",
+   "name": "Carrot",
+   "attrs": {
+    "height_cm": 161,
+    "devil_fruit": "None Carrot is a rabbit mink in the Warrior Beast Tribe, a m"
+   },
+   "rels": []
+  },
+  {
+   "slug": "daifuku-charlotte",
+   "name": "Daifuku Charlotte",
+   "attrs": {
+    "height_cm": 489,
+    "devil_fruit": "Hoya-Hoya no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-de-la-lampe",
+     "toName": "Fruit de la Lampe"
+    }
+   ]
+  },
+  {
+   "slug": "oven-charlotte",
+   "name": "Oven Charlotte",
+   "attrs": {
+    "height_cm": 492,
+    "devil_fruit": "Netsu-Netsu no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-de-la-chaleur",
+     "toName": "Fruit de la Chaleur"
+    }
+   ]
+  },
+  {
+   "slug": "katakuri-charlotte",
+   "name": "Katakuri Charlotte",
+   "attrs": {
+    "height_cm": 509,
+    "devil_fruit": "Mochi-Mochi no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-du-riz-gluant",
+     "toName": "Fruit du Riz Gluant"
+    }
+   ]
+  },
+  {
+   "slug": "caesar-clown",
+   "name": "Caesar Clown",
+   "attrs": {
+    "devil_fruit": "Gasu Gasu no Mi"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-du-gaz",
+     "toName": "Fruit du Gaz"
+    }
+   ]
+  },
+  {
+   "slug": "rosinante-donquixote",
+   "name": "Rosinante Donquixote",
+   "attrs": {
+    "height_cm": 293,
+    "devil_fruit": "Nagi Nagi no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "l-equipage-de-don-quichotte",
+     "toName": "L’équipage de Don Quichotte"
+    }
+   ]
+  },
+  {
+   "slug": "doflamingo-donquixote",
+   "name": "Doflamingo Donquixote",
+   "attrs": {
+    "height_cm": 305,
+    "devil_fruit": "Bounty: Doflamingo is a member of the Shichibukai, captain o"
+   },
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "l-equipage-de-don-quichotte",
+     "toName": "L’équipage de Don Quichotte"
+    }
+   ]
+  },
+  {
+   "slug": "enel",
+   "name": "Enel",
+   "attrs": {
+    "devil_fruit": "Goro Goro no Mi",
+    "devil_fruit_type": "Logia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fulguro-fruit",
+     "toName": "Fulguro-Fruit"
+    }
+   ]
+  },
+  {
+   "slug": "kid-eustass",
+   "name": "Kid Eustass",
+   "attrs": {
+    "height_cm": 205,
+    "devil_fruit": "Jiki Jiki no Mi",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "magneto-fruit",
+     "toName": "Magnéto-Fruit"
+    },
+    {
+     "relation": "appartient",
+     "to": "l-equipage-de-kid",
+     "toName": "L’équipage de Kid"
+    }
+   ]
+  },
+  {
+   "slug": "isshou",
+   "name": "Isshou",
+   "attrs": {
+    "height_cm": 270
+   },
+   "rels": []
+  },
+  {
+   "slug": "kaku",
+   "name": "Kaku",
+   "attrs": {
+    "height_cm": 193,
+    "devil_fruit": "Ushi Ushi no Mi",
+    "devil_fruit_type": "Zoan"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-du-bovin-version-bison",
+     "toName": "Fruit du Bovin, version Bison"
+    }
+   ]
+  },
+  {
+   "slug": "komurasaki",
+   "name": "Komurasaki",
+   "attrs": {
+    "height_cm": 170
+   },
+   "rels": []
+  },
+  {
+   "slug": "leo",
+   "name": "Leo",
+   "attrs": {
+    "devil_fruit": "Nui Nui Fruit",
+    "devil_fruit_type": "Paramecia"
+   },
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "chapeau-de-paille",
+     "toName": "Équipage du Chapeau de Paille"
+    }
+   ]
+  },
+  {
+   "slug": "marianne",
+   "name": "Marianne",
+   "attrs": {
+    "height_cm": 145
+   },
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "baroque-works",
+     "toName": "Baroque Works"
+    }
+   ]
+  },
+  {
+   "slug": "vivi-nefertari",
+   "name": "Vivi Nefertari",
+   "attrs": {
+    "devil_fruit": "None Nefertari Vivi"
+   },
+   "rels": []
+  },
+  {
+   "slug": "sai",
+   "name": "Sai",
+   "attrs": {},
+   "rels": [
+    {
+     "relation": "appartient",
+     "to": "chapeau-de-paille",
+     "toName": "Équipage du Chapeau de Paille",
+     "role": "current"
+    },
+    {
+     "relation": "appartient",
+     "to": "chinjao",
+     "toName": "Chinjao"
+    }
+   ]
+  },
+  {
+   "slug": "sengoku",
+   "name": "Sengoku",
+   "attrs": {
+    "devil_fruit": "Hito Hito no Mi"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-de-l-humain",
+     "toName": "Fruit de l'Humain"
+    }
+   ]
+  },
+  {
+   "slug": "shiki",
+   "name": "Shiki",
+   "attrs": {
+    "devil_fruit": "Fuwa Fuwa no Mi"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-flottant",
+     "toName": "Fruit Flottant"
+    }
+   ]
+  },
+  {
+   "slug": "smoker",
+   "name": "Smoker",
+   "attrs": {
+    "devil_fruit": "Moku Moku no Mi"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-fumigene",
+     "toName": "Fruit Fumigène"
+    }
+   ]
+  },
+  {
+   "slug": "cindry-victoria",
+   "name": "Cindry Victoria",
+   "attrs": {
+    "height_cm": 188
+   },
+   "rels": []
+  },
+  {
+   "slug": "yamato",
+   "name": "Yamato",
+   "attrs": {
+    "height_cm": 263
+   },
+   "rels": []
+  },
+  {
+   "slug": "zala",
+   "name": "Zala",
+   "attrs": {
+    "devil_fruit": "Toge Toge no Mi"
+   },
+   "rels": [
+    {
+     "relation": "maitrise",
+     "to": "fruit-de-l-oursin",
+     "toName": "Fruit de l'Oursin"
+    }
+   ]
+  }
+ ]
+}
