@@ -1259,6 +1259,13 @@ async function main() {
     let ni = 0; for (const e of ddN.entries) if (tl[e.slug] && String(tl[e.slug]).trim().length > 10) { (e.attributes = e.attributes || {}).descFr = String(tl[e.slug]).trim(); ni++; }
     console.log(`✓ ${ni} traductions VF (descFr) réinjectées`);
   } catch { /* pas encore de traductions */ }
+  // Fiches-clans riches curées (24) : source de vérité data/akasha-naruto-clans.json → réinjectées à chaque build.
+  try {
+    const curatedClans = JSON.parse(readFileSync(join(ROOT, 'data', 'akasha-naruto-clans.json'), 'utf8'));
+    const have = new Set(ddN.entries.map((e) => e.slug));
+    let nc = 0; for (const c of curatedClans) if (!have.has(c.slug)) { ddN.entries.push(c); nc++; }
+    console.log(`✓ ${nc} fiches-clans curées réinjectées`);
+  } catch { /* pas de clans curés */ }
   const out = { generatedFrom: 'dattebayo-api', universe: 'Naruto', entries: ddN.entries, relations: ddN.relations };
   writeFileSync(join(ROOT, 'data', 'akasha-naruto.json'), JSON.stringify(out, null, 2));
   console.log(`✓ ${ddN.entries.length} entrées, ${ddN.relations.length} relations → data/akasha-naruto.json`);
