@@ -18,6 +18,7 @@ import DidYouKnow from '@/components/akasha/DidYouKnow';
 import HubCollection from '@/components/akasha/hub/HubCollection';
 import ContinueBanner from '@/components/akasha/hub/ContinueBanner';
 import HubSignature from '@/components/akasha/hub/HubSignature';
+import { VillageEmblem, ClanCrest } from '@/components/akasha/NarutoIcons';
 import HubSearch from '@/components/akasha/hub/HubSearch';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -244,10 +245,27 @@ export default async function UniverseHubPage({ params }: Props) {
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {axis.chips.map((c) => {
                 const tint = c.tint ?? m.color;
+                const href = `/learn/akasha/u/${taxo.slug}/${axis.attr}/${encodeURIComponent(c.v)}`;
+                // Boutons-blason pour les axes clan/village Naruto (emblèmes canon).
+                const emblem = taxo.slug === 'naruto' && axis.attr === 'clan'
+                  ? <ClanCrest slug={c.v} name={c.label} size={48} />
+                  : taxo.slug === 'naruto' && axis.attr === 'village'
+                  ? <VillageEmblem slug={c.v.toLowerCase()} size={48} />
+                  : null;
+                if (emblem) {
+                  return (
+                    <Link key={c.v} href={href} className="ak-tab" title={c.label}
+                      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, textDecoration: 'none', fontFamily: 'var(--fo)', width: 96, padding: '13px 8px 10px', borderRadius: 15, border: `1px solid ${tint}44`, background: `${tint}12` }}>
+                      <span style={{ height: 48, display: 'flex', alignItems: 'center', filter: 'drop-shadow(0 2px 7px rgba(0,0,0,0.5))' }}>{emblem}</span>
+                      <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--td)', textAlign: 'center', lineHeight: 1.1 }}>{c.label}</span>
+                      <span style={{ fontSize: 10, fontWeight: 800, color: tint, background: `${tint}1F`, borderRadius: 20, padding: '1px 7px' }}>{c.count}</span>
+                    </Link>
+                  );
+                }
                 return (
                   <Link
                     key={c.v}
-                    href={`/learn/akasha/u/${taxo.slug}/${axis.attr}/${encodeURIComponent(c.v)}`}
+                    href={href}
                     className="ak-tab"
                     style={{ display: 'flex', alignItems: 'center', gap: 7, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700, padding: '8px 13px', borderRadius: 11, border: `1px solid ${tint}44`, background: `${tint}12`, color: 'var(--td2)' }}
                   >

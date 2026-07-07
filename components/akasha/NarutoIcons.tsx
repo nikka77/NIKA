@@ -85,8 +85,14 @@ function KonohaLeaf({ size, color }: { size: number; color: string }) {
   );
 }
 
+// Normalise une valeur d'axe → clé ASCII : « Hyūga » → hyuga, « Fūma (Land of Sound) » → fuma.
+function emblemKey(slug?: string | null): string {
+  return (slug ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s*\(.*?\)\s*/g, '').trim();
+}
+
 export function VillageEmblem({ slug, size = 30 }: { slug?: string | null; size?: number }) {
-  const img = slug ? VILLAGE_IMG[slug] : null;
+  const key = emblemKey(slug);
+  const img = key ? VILLAGE_IMG[key] : null;
   if (img) {
     // eslint-disable-next-line @next/next/no-img-element
     return <img src={img} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
@@ -128,7 +134,7 @@ function UchihaFan({ size }: { size: number }) {
 }
 
 export function ClanCrest({ slug, name, size = 30 }: { slug?: string | null; name?: string | null; size?: number }) {
-  const s = (slug ?? '').toLowerCase();
+  const s = emblemKey(slug);
   if (CLAN_IMG[s]) {
     // eslint-disable-next-line @next/next/no-img-element
     return <img src={CLAN_IMG[s]} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
