@@ -9,7 +9,7 @@ import { listEntries } from '@/lib/akasha/queries';
 import { taxonomyBySlug, hubVisual, axisValueLabel, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { universeMeta } from '@/lib/akasha/types';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
-import { VillageEmblem, ClanCrest } from '@/components/akasha/NarutoIcons';
+import { VillageEmblem, ClanCrest, RankBadge, GenerationBadge } from '@/components/akasha/NarutoIcons';
 
 export const revalidate = 3600; // ISR 1 h
 
@@ -75,12 +75,16 @@ export default async function AxisValuePage({ params }: Props) {
             <span aria-hidden style={{ color: 'var(--td3)' }}>›</span>
             <span style={{ color: 'var(--td3)' }}>{axisDef.label}</span>
           </nav>
-          {/* Gros blason canon (Naruto clans/villages) — objectif hub : le blason en héros. */}
-          {taxo.slug === 'naruto' && (axisDef.attr === 'village' || axisDef.attr === 'clan') && (
+          {/* Gros médaillon canon (Naruto clans/villages/rangs/générations) — objectif hub : l'emblème en héros. */}
+          {taxo.slug === 'naruto' && (axisDef.attr === 'village' || axisDef.attr === 'clan' || axisDef.attr === 'rank' || axisDef.attr === 'generation') && (
             <div style={{ marginBottom: 12, filter: 'drop-shadow(0 5px 16px rgba(0,0,0,0.6))' }}>
               {axisDef.attr === 'village'
                 ? <VillageEmblem slug={val.toLowerCase()} size={104} />
-                : <ClanCrest slug={val} name={label} size={104} />}
+                : axisDef.attr === 'clan'
+                ? <ClanCrest slug={val} name={label} size={104} />
+                : axisDef.attr === 'rank'
+                ? <RankBadge value={val} size={104} />
+                : <GenerationBadge value={val} size={104} />}
             </div>
           )}
           <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: tint, marginBottom: 4 }}>

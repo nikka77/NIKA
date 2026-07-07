@@ -74,6 +74,17 @@ const CLAN_IMG: Record<string, string> = {
   aburame: `${E}aburame.webp`, sarutobi: `${E}sarutobi.webp`, otsutsuki: `${E}otsutsuki.webp`,
   fuma: `${E}fuma.webp`, kamizuru: `${E}kamizuru.webp`, funato: `${E}funato.webp`,
 };
+// Rangs ninja & générations (Higgsfield → médaillons plats crème sur disque, même famille que les blasons).
+const R = '/images/akasha/ranks/';
+const G = '/images/akasha/generations/';
+const RANK_IMG: Record<string, string> = {
+  academystudent: `${R}academie.webp`, genin: `${R}genin.webp`, chunin: `${R}chunin.webp`,
+  tokubetsujonin: `${R}jonin-special.webp`, jonin: `${R}jonin.webp`, anbu: `${R}anbu.webp`, kage: `${R}kage.webp`,
+};
+const GEN_IMG: Record<string, string> = {
+  fondateurs: `${G}fondateurs.webp`, sannin: `${G}sannin.webp`,
+  generationdekakashi: `${G}generation-kakashi.webp`, konoha11: `${G}konoha-11.webp`, nouvelleere: `${G}nouvelle-ere.webp`,
+};
 
 function KonohaLeaf({ size, color }: { size: number; color: string }) {
   return (
@@ -156,6 +167,24 @@ export function ClanCrest({ slug, name, size = 30 }: { slug?: string | null; nam
       {initial}
     </span>
   );
+}
+
+// ─── Médaillons de rang ninja & de génération (Higgsfield, plats) ────
+// Clé médaillon : « Academy Student » → academystudent, « Génération de Kakashi » → generationdekakashi.
+function badgeKey(v?: string | null): string {
+  return (v ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, '');
+}
+export function RankBadge({ value, size = 30 }: { value?: string | null; size?: number }) {
+  const src = RANK_IMG[badgeKey(value)];
+  if (!src) return null;
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
+}
+export function GenerationBadge({ value, size = 30 }: { value?: string | null; size?: number }) {
+  const src = GEN_IMG[badgeKey(value)];
+  if (!src) return null;
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
 }
 
 // ─── Icônes de catégories (Higgsfield, détourées) ────────────────────

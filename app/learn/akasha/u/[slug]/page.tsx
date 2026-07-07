@@ -18,7 +18,7 @@ import DidYouKnow from '@/components/akasha/DidYouKnow';
 import HubCollection from '@/components/akasha/hub/HubCollection';
 import ContinueBanner from '@/components/akasha/hub/ContinueBanner';
 import HubSignature from '@/components/akasha/hub/HubSignature';
-import { VillageEmblem, ClanCrest } from '@/components/akasha/NarutoIcons';
+import { VillageEmblem, ClanCrest, RankBadge, GenerationBadge } from '@/components/akasha/NarutoIcons';
 
 // Icône par catégorie de collection (assets existants cat/ + refs). Retombe sur ◈ si non mappé.
 const CAT_ICON: Record<string, string> = {
@@ -255,11 +255,15 @@ export default async function UniverseHubPage({ params }: Props) {
               {axis.chips.map((c) => {
                 const tint = c.tint ?? m.color;
                 const href = `/learn/akasha/u/${taxo.slug}/${axis.attr}/${encodeURIComponent(c.v)}`;
-                // Boutons-blason pour les axes clan/village Naruto (emblèmes canon).
+                // Boutons-médaillon pour les axes clan/village/rang/génération Naruto (emblèmes canon + icônes Higgsfield).
                 const emblem = taxo.slug === 'naruto' && axis.attr === 'clan'
                   ? <ClanCrest slug={c.v} name={c.label} size={48} />
                   : taxo.slug === 'naruto' && axis.attr === 'village'
                   ? <VillageEmblem slug={c.v.toLowerCase()} size={48} />
+                  : taxo.slug === 'naruto' && axis.attr === 'rank'
+                  ? <RankBadge value={c.v} size={48} />
+                  : taxo.slug === 'naruto' && axis.attr === 'generation'
+                  ? <GenerationBadge value={c.v} size={48} />
                   : null;
                 if (emblem) {
                   return (
