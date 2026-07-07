@@ -19,6 +19,15 @@ import HubCollection from '@/components/akasha/hub/HubCollection';
 import ContinueBanner from '@/components/akasha/hub/ContinueBanner';
 import HubSignature from '@/components/akasha/hub/HubSignature';
 import { VillageEmblem, ClanCrest } from '@/components/akasha/NarutoIcons';
+
+// Icône par catégorie de collection (assets existants cat/ + refs). Retombe sur ◈ si non mappé.
+const CAT_ICON: Record<string, string> = {
+  Jutsu: '/images/akasha/cat/techniques.webp', Technique: '/images/akasha/cat/techniques.webp',
+  'Arme & outil': '/images/akasha/cat/outils.webp', Organisation: '/images/akasha/cat/affiliations.webp',
+  'Métier': '/images/akasha/cat/fonctions.webp', 'Kekkei genkai': '/images/akasha/cat/kekkei.webp',
+  Classification: '/images/akasha/cat/classification.webp', Clan: '/images/akasha/cat/clan.webp',
+  Village: '/images/akasha/emblems/konoha.webp', 'Dōjutsu': '/images/akasha/ref/sharingan.webp',
+};
 import HubSearch from '@/components/akasha/hub/HubSearch';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -287,17 +296,24 @@ export default async function UniverseHubPage({ params }: Props) {
               <span style={{ color: 'var(--td3)', letterSpacing: '0.03em' }}>{catCounts.length}</span>
             </div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-              {catCounts.map((c) => (
+              {catCounts.map((c) => {
+                const icon = CAT_ICON[c.category];
+                return (
                 <Link
                   key={c.category}
                   href={registryHref(taxo.name, { cat: c.category })}
                   className="ak-tab"
-                  style={{ display: 'flex', alignItems: 'center', gap: 7, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700, padding: '8px 13px', borderRadius: 11, border: '1px solid rgba(14,168,120,0.35)', background: 'rgba(14,168,120,0.08)', color: '#0EA878' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: icon ? 8 : 7, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700, padding: icon ? '6px 12px 6px 8px' : '8px 13px', borderRadius: 11, border: '1px solid rgba(14,168,120,0.35)', background: 'rgba(14,168,120,0.08)', color: '#0EA878' }}
                 >
+                  {icon
+                    // eslint-disable-next-line @next/next/no-img-element
+                    ? <img src={icon} alt="" width={24} height={24} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }} />
+                    : <span aria-hidden style={{ opacity: 0.7 }}>◈</span>}
                   {c.category}
                   <span style={{ fontSize: 10, fontWeight: 800, color: '#0EA878', background: 'rgba(5,12,23,0.4)', borderRadius: 20, padding: '1px 7px' }}>{c.count}</span>
                 </Link>
-              ))}
+                );
+              })}
             </div>
           </Reveal>
         )}
