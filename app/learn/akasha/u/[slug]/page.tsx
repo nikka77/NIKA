@@ -26,7 +26,8 @@ const CAT_ICON: Record<string, string> = {
   'Arme & outil': '/images/akasha/cat/outils.webp', Organisation: '/images/akasha/cat/affiliations.webp',
   'Métier': '/images/akasha/cat/fonctions.webp', 'Kekkei genkai': '/images/akasha/cat/kekkei.webp',
   Classification: '/images/akasha/cat/classification.webp', Clan: '/images/akasha/cat/clan.webp',
-  Village: '/images/akasha/emblems/konoha.webp', 'Dōjutsu': '/images/akasha/ref/sharingan.webp',
+  Village: '/images/akasha/emblems/konoha.webp', 'Dōjutsu': '/images/akasha/cat/dojutsu.webp',
+  'Nature de chakra': '/images/akasha/cat/nature.webp', 'Titre & rang': '/images/akasha/cat/titre-rang.webp',
 };
 import HubSearch from '@/components/akasha/hub/HubSearch';
 
