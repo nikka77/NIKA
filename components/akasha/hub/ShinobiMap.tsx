@@ -132,9 +132,6 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
           const count = counts[v.key];
           const great = v.tier === 'great';
           const on = hover === v.key;
-          const flipDown = v.y < MAP.h * 0.36;           // villages du haut → tooltip dessous
-          const px = (v.x / MAP.w) * 100;
-          const tx = px < 16 ? '-12%' : px > 84 ? '-88%' : '-50%'; // évite les débordements latéraux
           const marker = (
             <div
               onMouseEnter={() => setHover(v.key)} onMouseLeave={() => setHover(null)}
@@ -148,23 +145,6 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
                 <span style={{ width: on ? 15 : 11, height: on ? 15 : 11, borderRadius: '50%', background: '#f0ead8', border: '2px solid #0a2130', boxShadow: on ? '0 0 10px rgba(240,234,216,0.9)' : '0 0 6px rgba(240,234,216,0.5)', transition: 'all .18s' }} />
               )}
               <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: great ? 12.5 : 10, color: '#fff', textShadow: '0 1px 4px rgba(0,0,0,0.95), 0 0 3px rgba(0,0,0,0.9)', whiteSpace: 'nowrap', letterSpacing: 0.3 }}>{v.name}</span>
-
-              {on && (
-                <div role="tooltip" style={{ position: 'absolute', ...(flipDown ? { top: '100%' } : { bottom: '100%' }), left: '50%', transform: `translate(${tx}, ${flipDown ? '10px' : '-10px'})`, width: 198, padding: '11px 13px', borderRadius: 13, background: 'linear-gradient(180deg, rgba(15,20,28,0.98), rgba(9,12,18,0.98))', border: `1px solid ${color}66`, boxShadow: '0 14px 36px rgba(0,0,0,0.7)', pointerEvents: 'none', zIndex: 70 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 9, marginBottom: (typeof count === 'number' || v.note) ? 7 : 0 }}>
-                    {great && <VillageEmblem slug={v.key} size={32} />}
-                    <div style={{ minWidth: 0 }}>
-                      <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 14.5, color: 'var(--td)', lineHeight: 1.05 }}>{v.fullName}</div>
-                      <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: 'var(--td3)', marginTop: 3, letterSpacing: 0.3 }}>{v.land}</div>
-                    </div>
-                  </div>
-                  {typeof count === 'number' ? (
-                    <div style={{ fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 800, color }}>{count} ninjas répertoriés →</div>
-                  ) : v.note ? (
-                    <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, lineHeight: 1.45, color: 'var(--td2)' }}>{v.note}</div>
-                  ) : null}
-                </div>
-              )}
             </div>
           );
           return great ? (
@@ -173,6 +153,33 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
             <div key={v.key}>{marker}</div>
           );
         })}
+
+        {/* Tooltip UNIQUE ancré aux coordonnées du village survolé (enfant direct du conteneur → jamais dans un coin) */}
+        {(() => {
+          const v = VILLAGES.find((x) => x.key === hover);
+          if (!v) return null;
+          const count = counts[v.key];
+          const great = v.tier === 'great';
+          const flipDown = v.y < MAP.h * 0.36;                    // villages du haut → tooltip dessous
+          const px = (v.x / MAP.w) * 100;
+          const tx = px < 15 ? '-6%' : px > 85 ? '-94%' : '-50%'; // évite les débordements latéraux
+          return (
+            <div role="tooltip" style={{ position: 'absolute', left: `${px}%`, top: `${(v.y / MAP.h) * 100}%`, transform: `translate(${tx}, ${flipDown ? '42px' : 'calc(-100% - 30px)'})`, width: 200, padding: '11px 13px', borderRadius: 13, background: 'linear-gradient(180deg, rgba(15,20,28,0.98), rgba(9,12,18,0.98))', border: `1px solid ${color}66`, boxShadow: '0 14px 36px rgba(0,0,0,0.7)', pointerEvents: 'none', zIndex: 80 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 9, marginBottom: (typeof count === 'number' || v.note) ? 7 : 0 }}>
+                {great && <VillageEmblem slug={v.key} size={32} />}
+                <div style={{ minWidth: 0 }}>
+                  <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 14.5, color: 'var(--td)', lineHeight: 1.05 }}>{v.fullName}</div>
+                  <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: 'var(--td3)', marginTop: 3, letterSpacing: 0.3 }}>{v.land}</div>
+                </div>
+              </div>
+              {typeof count === 'number' ? (
+                <div style={{ fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 800, color }}>{count} ninjas répertoriés →</div>
+              ) : v.note ? (
+                <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, lineHeight: 1.45, color: 'var(--td2)' }}>{v.note}</div>
+              ) : null}
+            </div>
+          );
+        })()}
       </div>
 
       {/* Légende */}
