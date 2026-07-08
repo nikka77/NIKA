@@ -3,6 +3,7 @@
 // organigramme du Gotei, frise des parties/sagas, panneaux de cols, duel Kira vs L.
 import Link from 'next/link';
 import { universeHubSlug, type HubVisual } from '@/lib/akasha/universe-taxonomy';
+import { VillageEmblem } from '@/components/akasha/NarutoIcons';
 
 export interface AxisChip { v: string; label: string; count: number; tint?: string; badge?: string }
 export interface AxisView { attr: string; label: string; icon: string; chips: AxisChip[] }
@@ -59,7 +60,9 @@ function VillageMap({ axis, universe, color }: { axis: AxisView; universe: strin
           const tint = c.tint ?? color;
           return (
             <Link key={c.v} href={href(universe, axis.attr, c.v)} className="dom-card" style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none', background: `linear-gradient(110deg, ${tint}1F, var(--bg2))`, border: `1px solid ${tint}55`, borderRadius: 13, padding: '12px 14px', ['--dc' as string]: tint }}>
-              <span style={{ fontSize: 26 }} aria-hidden>{c.badge ?? '🏯'}</span>
+              {universe === 'Naruto'
+                ? <span style={{ display: 'flex', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.5))' }}><VillageEmblem slug={c.v.toLowerCase()} size={38} /></span>
+                : <span style={{ fontSize: 26 }} aria-hidden>{c.badge ?? '🏯'}</span>}
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 17, color: 'var(--td)' }}>{c.label}</div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: tint }}>{c.count} ninjas répertoriés</div>
