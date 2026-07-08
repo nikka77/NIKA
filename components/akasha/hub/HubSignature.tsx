@@ -4,6 +4,7 @@
 import Link from 'next/link';
 import { universeHubSlug, type HubVisual } from '@/lib/akasha/universe-taxonomy';
 import { VillageEmblem } from '@/components/akasha/NarutoIcons';
+import ShinobiMap from '@/components/akasha/hub/ShinobiMap';
 
 export interface AxisChip { v: string; label: string; count: number; tint?: string; badge?: string }
 export interface AxisView { attr: string; label: string; icon: string; chips: AxisChip[] }
@@ -51,7 +52,12 @@ function NenWheel({ axis, universe, color }: { axis: AxisView; universe: string;
 }
 
 // ── Carte des Villages cachés (Naruto) ─────────────────────────────
+// Naruto : carte interactive du continent shinobi. Autres univers : liste de cartes (fallback).
 function VillageMap({ axis, universe, color }: { axis: AxisView; universe: string; color: string }) {
+  if (universe === 'Naruto') {
+    const counts = Object.fromEntries(axis.chips.map((c) => [c.v.toLowerCase(), c.count]));
+    return <ShinobiMap counts={counts} hubSlug={universeHubSlug(universe)} color={color} />;
+  }
   return (
     <section>
       <div style={TITLE(color)}><span>🗺️ Le continent shinobi</span><span style={{ color: 'var(--td3)' }}>{axis.chips.length} villages cachés</span></div>
@@ -60,9 +66,7 @@ function VillageMap({ axis, universe, color }: { axis: AxisView; universe: strin
           const tint = c.tint ?? color;
           return (
             <Link key={c.v} href={href(universe, axis.attr, c.v)} className="dom-card" style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none', background: `linear-gradient(110deg, ${tint}1F, var(--bg2))`, border: `1px solid ${tint}55`, borderRadius: 13, padding: '12px 14px', ['--dc' as string]: tint }}>
-              {universe === 'Naruto'
-                ? <span style={{ display: 'flex', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.5))' }}><VillageEmblem slug={c.v.toLowerCase()} size={38} /></span>
-                : <span style={{ fontSize: 26 }} aria-hidden>{c.badge ?? '🏯'}</span>}
+              <span style={{ fontSize: 26 }} aria-hidden>{c.badge ?? '🏯'}</span>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 17, color: 'var(--td)' }}>{c.label}</div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: tint }}>{c.count} ninjas répertoriés</div>
