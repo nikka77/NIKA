@@ -17,6 +17,7 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
   const hoveredLand = VILLAGES.find((v) => v.key === hover)?.land ?? null;
   const villageHref = (fullName: string) => `/learn/akasha/u/${hubSlug}/village/${encodeURIComponent(fullName)}`;
   const maxCount = Math.max(1, ...VILLAGES.map((v) => counts[v.key] || 0)); // pour dimensionner les pins ∝ densité
+  const windPath = REGIONS.find((r) => r.key === 'wind')?.path ?? ''; // désert de Suna
   const grat: number[] = [];
   for (let x = 100; x < MAP.w; x += 100) grat.push(x);
 
@@ -37,6 +38,7 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
                 <path d={CONTINENT} />
                 {ISLANDS.map((d, i) => <path key={i} d={d} />)}
               </clipPath>
+              <clipPath id="sm-desert"><path d={windPath} /></clipPath>
               <linearGradient id="sm-ocean" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0" stopColor="#0d2636" /><stop offset="1" stopColor="#071824" />
               </linearGradient>
@@ -72,6 +74,10 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
             {/* Terre : terrain + teintes + relief, clippés */}
             <g clipPath="url(#sm-land)">
               <image href="/images/akasha/map/terrain.webp" x="-20" y="-20" width={MAP.w + 40} height={MAP.h + 40} preserveAspectRatio="xMidYMid slice" opacity="0.92" />
+              {/* Biome désert (Pays du Vent) par-dessus la forêt de base */}
+              <g clipPath="url(#sm-desert)">
+                <image href="/images/akasha/map/desert.webp" x="40" y="330" width="320" height="290" preserveAspectRatio="xMidYMid slice" opacity="0.96" />
+              </g>
               {REGIONS.map((r) => (
                 <path key={r.key} d={r.path} fill={r.tint} fillOpacity={r.label === hoveredLand ? 0.5 : 0.3} stroke={r.tint} strokeOpacity="0.35" strokeWidth="1.5" style={{ transition: 'fill-opacity .2s' }} />
               ))}
