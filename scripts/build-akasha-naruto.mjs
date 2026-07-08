@@ -1266,6 +1266,13 @@ async function main() {
     let nc = 0; for (const c of curatedClans) if (!have.has(c.slug)) { ddN.entries.push(c); nc++; }
     console.log(`✓ ${nc} fiches-clans curées réinjectées`);
   } catch { /* pas de clans curés */ }
+  // Lieux/repères curés (carte interactive) : data/akasha-naruto-places.json.
+  try {
+    const curatedPlaces = JSON.parse(readFileSync(join(ROOT, 'data', 'akasha-naruto-places.json'), 'utf8'));
+    const have = new Set(ddN.entries.map((e) => e.slug));
+    let np = 0; for (const p of curatedPlaces) if (!have.has(p.slug)) { ddN.entries.push(p); np++; }
+    console.log(`✓ ${np} lieux curés réinjectés`);
+  } catch { /* pas de lieux curés */ }
   const out = { generatedFrom: 'dattebayo-api', universe: 'Naruto', entries: ddN.entries, relations: ddN.relations };
   writeFileSync(join(ROOT, 'data', 'akasha-naruto.json'), JSON.stringify(out, null, 2));
   console.log(`✓ ${ddN.entries.length} entrées, ${ddN.relations.length} relations → data/akasha-naruto.json`);

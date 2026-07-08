@@ -14,6 +14,10 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
 }) {
   const [hover, setHover] = useState<string | null>(null);
   const [reduce, setReduce] = useState(false);
+  const [compact, setCompact] = useState(false);
+  const [showMinor, setShowMinor] = useState(true);
+  const [showLandmarks, setShowLandmarks] = useState(true);
+  const [showAnime, setShowAnime] = useState(true);
   const [view, setView] = useState({ k: 1, x: 0, y: 0 });
   const svgRef = useRef<SVGSVGElement>(null);
   const drag = useRef<{ cx: number; cy: number; x: number; y: number } | null>(null);
@@ -21,11 +25,18 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
   const router = useRouter();
 
   useEffect(() => { try { setReduce(matchMedia('(prefers-reduced-motion: reduce)').matches); } catch { /* SSR */ } }, []);
+  useEffect(() => {
+    const check = () => setCompact(window.innerWidth < 620);
+    check(); window.addEventListener('resize', check); return () => window.removeEventListener('resize', check);
+  }, []);
+  const uiScale = compact ? 1.7 : 1; // agrandit pins & labels sur petit écran
+  const shownVillages = VILLAGES.filter((v) => (v.tier === 'great' || showMinor) && (v.canon !== 'anime' || showAnime));
 
   const hoveredLand = VILLAGES.find((v) => v.key === hover)?.land ?? null;
   const villageHref = (fullName: string) => `/learn/akasha/u/${hubSlug}/village/${encodeURIComponent(fullName)}`;
   const maxCount = Math.max(1, ...VILLAGES.map((v) => counts[v.key] || 0));
   const windPath = REGIONS.find((r) => r.key === 'wind')?.path ?? '';
+  const lightningPath = REGIONS.find((r) => r.key === 'lightning')?.path ?? '';
   const grat: number[] = [];
   for (let x = 100; x < MAP.w; x += 100) grat.push(x);
 
@@ -62,6 +73,8 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
             <defs>
               <clipPath id="sm-land"><path d={CONTINENT} />{ISLANDS.map((d, i) => <path key={i} d={d} />)}</clipPath>
               <clipPath id="sm-desert"><path d={windPath} /></clipPath>
+              <clipPath id="sm-water">{ISLANDS.map((d, i) => <path key={i} d={d} />)}</clipPath>
+              <clipPath id="sm-lightning"><path d={lightningPath} /></clipPath>
               <linearGradient id="sm-ocean" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0d2636" /><stop offset="1" stopColor="#071824" /></linearGradient>
               <pattern id="sm-waves" width="46" height="28" patternUnits="userSpaceOnUse">
                 <path d="M0,15 q11,-9 23,0 t23,0" fill="none" stroke="#3f7290" strokeWidth="1.3" strokeLinecap="round" opacity="0.4" />
@@ -92,6 +105,12 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
                 <image href="/images/akasha/map/terrain.webp" x="-20" y="-20" width={MAP.w + 40} height={MAP.h + 40} preserveAspectRatio="xMidYMid slice" opacity="0.92" />
                 <g clipPath="url(#sm-desert)">
                   <image href="/images/akasha/map/desert.webp" x="40" y="330" width="320" height="290" preserveAspectRatio="xMidYMid slice" opacity="0.96" />
+                </g>
+                <g clipPath="url(#sm-water)">
+                  <image href="/images/akasha/map/reef.webp" x="730" y="290" width="250" height="260" preserveAspectRatio="xMidYMid slice" opacity="0.95" />
+                </g>
+                <g clipPath="url(#sm-lightning)">
+                  <image href="/images/akasha/map/highlands.webp" x="700" y="60" width="290" height="230" preserveAspectRatio="xMidYMid slice" opacity="0.95" />
                 </g>
                 {REGIONS.map((r) => (
                   <path key={r.key} d={r.path} fill={r.tint} fillOpacity={r.label === hoveredLand ? 0.5 : 0.3} stroke={r.tint} strokeOpacity="0.35" strokeWidth="1.5" style={{ transition: 'fill-opacity .2s' }} />
@@ -127,24 +146,32 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
                 </g>
               ))}
 
-              {LANDMARKS.map((l) => (
-                <g key={l.key}>
-                  <path d={`M${l.x},${l.y - 3.4} L${l.x + 3.4},${l.y} L${l.x},${l.y + 3.4} L${l.x - 3.4},${l.y} Z`} fill="#f0ead8" opacity="0.85" />
-                  <text x={l.x + 7} y={l.y + 3.4} style={{ fontFamily: 'var(--fo)', fontSize: 8.5, fontWeight: 600, fill: '#f0ead8', fillOpacity: 0.65 }}>{l.name}</text>
-                </g>
-              ))}
+              {showLandmarks && LANDMARKS.map((l) => {
+                const d = 3.4 * uiScale;
+                const lon = hover === `lm:${l.key}`;
+                const go = () => { if (!didPan.current) router.push(`/learn/akasha/${l.slug}`); };
+                return (
+                  <g key={l.key} role="link" aria-label={l.name} tabIndex={0} style={{ cursor: 'pointer' }}
+                    onClick={go} onKeyDown={(e) => { if (e.key === 'Enter') go(); }}
+                    onMouseEnter={() => setHover(`lm:${l.key}`)} onMouseLeave={() => setHover(null)}>
+                    <circle cx={l.x} cy={l.y} r={10 * uiScale} fill="transparent" />
+                    <path d={`M${l.x},${l.y - d} L${l.x + d},${l.y} L${l.x},${l.y + d} L${l.x - d},${l.y} Z`} fill={lon ? '#fff' : '#f0ead8'} opacity={lon ? 1 : 0.85} />
+                    <text x={l.x + d + 3} y={l.y + d} style={{ fontFamily: 'var(--fo)', fontSize: 8.5 * uiScale, fontWeight: 600, fill: lon ? '#fff' : '#f0ead8', fillOpacity: lon ? 0.95 : 0.65, textDecoration: lon ? 'underline' : 'none' }}>{l.name}</text>
+                  </g>
+                );
+              })}
 
               <text x="286" y="62" style={{ fontSize: 54, fontWeight: 900, fill: '#2a4a5e', fillOpacity: 0.22 }}>忍</text>
               <text x="470" y="624" style={{ fontSize: 40, fontWeight: 900, fill: '#2a4a5e', fillOpacity: 0.2 }}>海</text>
               <text x="726" y="360" style={{ fontSize: 30, fontWeight: 900, fill: '#2a4a5e', fillOpacity: 0.2 }}>渦</text>
 
               {/* PINS */}
-              {VILLAGES.map((v) => {
+              {shownVillages.map((v) => {
                 const great = v.tier === 'great';
                 const on = hover === v.key;
-                const r = great ? Math.round(16 + 11 * Math.sqrt((counts[v.key] || 0) / maxCount)) : 6;
+                const r = Math.round((great ? 16 + 11 * Math.sqrt((counts[v.key] || 0) / maxCount) : 6) * uiScale);
                 const bs = Math.round(r * 1.5);
-                const nameStyle = { fontFamily: 'var(--fe)', fontStyle: 'italic' as const, fontWeight: 800, fontSize: great ? 13 : 10, fill: '#fff', paintOrder: 'stroke' as const, stroke: '#05070b', strokeWidth: 3, strokeOpacity: 0.9, strokeLinejoin: 'round' as const };
+                const nameStyle = { fontFamily: 'var(--fe)', fontStyle: 'italic' as const, fontWeight: 800, fontSize: (great ? 13 : 10) * uiScale, fill: '#fff', paintOrder: 'stroke' as const, stroke: '#05070b', strokeWidth: 3, strokeOpacity: 0.9, strokeLinejoin: 'round' as const };
                 const nav = great ? () => { if (!didPan.current) router.push(villageHref(v.fullName)); } : undefined;
                 return (
                   <g key={v.key} role={great ? 'link' : undefined} aria-label={great ? `${v.fullName} — ${counts[v.key] ?? ''} ninjas` : v.fullName}
@@ -230,7 +257,21 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
         })()}
       </div>
 
-      <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginTop: 11, fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 600, color: 'var(--td3)' }}>
+      {/* Filtres */}
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 11 }}>
+        {[
+          { l: 'Villages mineurs', on: showMinor, set: setShowMinor },
+          { l: 'Anime-exclusif', on: showAnime, set: setShowAnime },
+          { l: 'Repères', on: showLandmarks, set: setShowLandmarks },
+        ].map((t) => (
+          <button key={t.l} onClick={() => t.set((v) => !v)} aria-pressed={t.on}
+            style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, padding: '5px 11px', borderRadius: 20, cursor: 'pointer', border: `1px solid ${t.on ? color : 'var(--bd)'}`, background: t.on ? `${color}22` : 'transparent', color: t.on ? color : 'var(--td3)' }}>
+            {t.on ? '◉' : '○'} {t.l}
+          </button>
+        ))}
+      </div>
+
+      <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginTop: 9, fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 600, color: 'var(--td3)' }}>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}><span style={{ width: 12, height: 12, borderRadius: '50%', background: color }} /> Grand village (cliquable)</span>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}><span style={{ width: 9, height: 9, borderRadius: '50%', background: '#f0ead8' }} /> Village mineur canon</span>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}><span style={{ display: 'inline-block', width: 8, height: 8, background: '#f0ead8', transform: 'rotate(45deg)' }} /> Lieu marquant</span>

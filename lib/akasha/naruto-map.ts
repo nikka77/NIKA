@@ -54,7 +54,7 @@ export interface MapVillage {
   x: number; y: number;
 }
 
-export interface MapLandmark { key: string; name: string; x: number; y: number; }
+export interface MapLandmark { key: string; name: string; slug: string; x: number; y: number; }
 
 // ── Régions (silhouettes stylisées, à raffiner visuellement) ────────────────
 export const REGIONS: MapRegion[] = [
@@ -91,12 +91,15 @@ export const VILLAGES: MapVillage[] = [
   { key: 'yugakure', emblem: '', name: 'Yu', fullName: 'Yugakure', land: 'Pays des Sources chaudes', tier: 'minor', canon: 'manga', note: 'Village caché des Sources — devenu station thermale ; berceau de Hidan.', x: 642, y: 300 },
   { key: 'shimogakure', emblem: '', name: 'Shimo', fullName: 'Shimogakure', land: 'Pays du Givre', tier: 'minor', canon: 'manga', note: 'Village caché du Givre, au nord du Pays du Feu.', x: 610, y: 200 },
   { key: 'uzushiogakure', emblem: '', name: 'Uzushio', fullName: 'Uzushiogakure', land: 'Pays des Tourbillons', tier: 'minor', canon: 'manga', note: 'Village caché des Tourbillons, détruit — berceau du clan Uzumaki et de ses sceaux.', x: 690, y: 452 },
+  // Villages anime-exclusifs (filtrables)
+  { key: 'hoshigakure', emblem: '', name: 'Hoshi', fullName: 'Hoshigakure', land: "Pays de l'Ours", tier: 'minor', canon: 'anime', note: "Village caché de l'Étoile — entraîne ses ninjas au chakra d'un météore tombé du ciel (anime).", x: 902, y: 214 },
+  { key: 'getsugakure', emblem: '', name: 'Getsu', fullName: 'Getsugakure', land: 'Pays de la Lune', tier: 'minor', canon: 'anime', note: 'Village caché de la Lune, sur une île au sud (anime/films).', x: 918, y: 318 },
 ];
 
 // ── Repères géographiques ────────────────────────────────────────────────────
 export const LANDMARKS: MapLandmark[] = [
-  { key: 'valley-of-end', name: 'Vallée de la Fin', x: 388, y: 306 },
-  { key: 'tenchi-bridge', name: 'Pont Tenchi', x: 300, y: 238 },
-  { key: 'genbu', name: 'Genbu (Tortue-île)', x: 952, y: 258 },
-  { key: 'mountains-graveyard', name: 'Cimetière des Monts', x: 560, y: 120 },
+  { key: 'valley-of-end', name: 'Vallée de la Fin', slug: 'valley-of-end', x: 388, y: 306 },
+  { key: 'tenchi-bridge', name: 'Pont Tenchi', slug: 'tenchi-bridge', x: 300, y: 238 },
+  { key: 'genbu', name: 'Genbu (Tortue-île)', slug: 'genbu-island', x: 952, y: 258 },
+  { key: 'mountains-graveyard', name: 'Cimetière des Monts', slug: 'mountains-graveyard', x: 560, y: 120 },
 ];
