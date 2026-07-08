@@ -5,6 +5,22 @@
 
 export const MAP = { w: 1000, h: 640 } as const;
 
+// Silhouette continentale UNIQUE (masse principale Terre+Vent+Feu+mineurs, reliée à la péninsule Foudre au NE).
+// Le Pays de l'Eau est un archipel séparé (ISLANDS). Terrain clippé à CONTINENT ∪ ISLANDS.
+export const CONTINENT =
+  'M92,150 C132,96 245,86 305,100 C385,86 475,90 552,104 C602,100 642,126 662,182 ' +
+  'C678,150 700,140 712,150 C736,82 852,62 942,112 C986,148 974,236 900,270 ' +
+  'C824,300 748,278 712,236 C700,262 678,296 660,322 C670,404 658,486 612,544 ' +
+  'C560,590 458,600 360,604 C250,612 138,608 96,562 C54,512 58,440 68,380 ' +
+  'C60,300 62,204 92,150 Z';
+
+export const ISLANDS: string[] = [
+  'M812,332 C876,314 946,340 958,404 C966,462 922,520 858,522 C806,522 772,486 770,436 C769,392 778,344 812,332 Z',
+  'M760,300 C788,292 806,308 800,332 C794,352 770,356 756,346 C746,338 744,312 760,300 Z',
+  'M905,300 C935,296 948,318 938,338 C930,354 906,352 896,338 C889,326 890,306 905,300 Z',
+  'M676,438 C702,430 720,446 713,466 C706,484 681,486 670,470 C662,458 662,448 676,438 Z', // Uzushio
+];
+
 export interface MapRegion {
   key: string;
   label: string;       // nom FR du pays
@@ -40,7 +56,7 @@ export const REGIONS: MapRegion[] = [
   { key: 'lightning', label: 'Pays de la Foudre', kanji: '雷', tint: '#c9a227',
     path: 'M730,80 C820,55 940,70 960,140 C975,200 940,255 875,270 C810,285 745,255 725,200 C710,155 705,105 730,80 Z', lx: 760, ly: 225 },
   { key: 'water', label: "Pays de l'Eau", kanji: '水', tint: '#3a86b0',
-    path: 'M800,330 C880,310 960,335 965,410 C968,480 915,545 850,545 C795,545 760,495 760,435 C760,385 765,345 800,330 Z', lx: 812, ly: 505 },
+    path: 'M812,332 C876,314 946,340 958,404 C966,462 922,520 858,522 C806,522 772,486 770,436 C769,392 778,344 812,332 Z', lx: 864, ly: 500 },
   // Pays mineurs (petites zones)
   { key: 'sound', label: 'Pays du Son', kanji: '音', tint: '#7b5cf0',
     path: 'M430,120 C490,105 545,120 548,165 C550,205 510,225 470,222 C430,220 415,180 430,120 Z', lx: 440, ly: 138 },

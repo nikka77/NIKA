@@ -4,7 +4,7 @@
 // overlay HTML pour les blasons cliquables et les tooltips. Aucun asset tiers.
 import { useState } from 'react';
 import Link from 'next/link';
-import { MAP, REGIONS, VILLAGES, LANDMARKS } from '@/lib/akasha/naruto-map';
+import { MAP, REGIONS, VILLAGES, LANDMARKS, CONTINENT, ISLANDS } from '@/lib/akasha/naruto-map';
 import { VillageEmblem } from '@/components/akasha/NarutoIcons';
 
 export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3a' }: {
@@ -23,7 +23,10 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
       <div style={{ position: 'relative', width: '100%', aspectRatio: `${MAP.w} / ${MAP.h}`, borderRadius: 16, overflow: 'hidden', border: '1px solid var(--bd)', boxShadow: 'inset 0 0 60px rgba(0,0,0,0.6)' }}>
         <svg viewBox={`0 0 ${MAP.w} ${MAP.h}`} width="100%" height="100%" style={{ position: 'absolute', inset: 0, display: 'block' }} aria-hidden>
           <defs>
-            <clipPath id="sm-continent">{REGIONS.map((r) => <path key={r.key} d={r.path} />)}</clipPath>
+            <clipPath id="sm-land">
+              <path d={CONTINENT} />
+              {ISLANDS.map((d, i) => <path key={i} d={d} />)}
+            </clipPath>
             <pattern id="sm-waves" width="42" height="26" patternUnits="userSpaceOnUse" patternTransform="translate(0 0)">
               <path d="M0,14 q10,-8 21,0 t21,0" fill="none" stroke="#3a6a86" strokeWidth="1.4" strokeLinecap="round" opacity="0.5" />
             </pattern>
@@ -37,21 +40,25 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
           <rect width={MAP.w} height={MAP.h} fill="#0a2130" />
           <rect width={MAP.w} height={MAP.h} fill="url(#sm-waves)" />
 
-          {/* Terrain (texture générée) clippé au continent + halo côtier */}
-          <g clipPath="url(#sm-continent)">
+          {/* Une seule masse continentale : terrain + teintes de nation, clippés à la terre */}
+          <g clipPath="url(#sm-land)">
             <image href="/images/akasha/map/terrain.webp" x="-20" y="-20" width={MAP.w + 40} height={MAP.h + 40} preserveAspectRatio="xMidYMid slice" opacity="0.95" />
+            {REGIONS.map((r) => (
+              <path key={r.key} d={r.path} fill={r.tint} fillOpacity={0.32} stroke={r.tint} strokeOpacity="0.4" strokeWidth="1.5" />
+            ))}
           </g>
-          {/* Teintes de nation + côtes + kanji */}
-          {REGIONS.map((r) => {
-            const on = hover === r.key;
-            return (
-              <g key={r.key}>
-                <path d={r.path} fill={r.tint} fillOpacity={on ? 0.42 : 0.24} stroke={r.tint} strokeOpacity="0.95" strokeWidth={on ? 3 : 2} style={{ transition: 'fill-opacity .2s' }} />
-                <text x={r.lx} y={r.ly} textAnchor="middle" dominantBaseline="middle" style={{ fontSize: 46, fontWeight: 900, fill: '#0c0f16', fillOpacity: 0.5, letterSpacing: 2 }}>{r.kanji}</text>
-                <text x={r.lx} y={r.ly + 34} textAnchor="middle" style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, fill: '#f0ead8', fillOpacity: 0.85, letterSpacing: 1 }}>{r.label.replace('Pays ', '')}</text>
-              </g>
-            );
-          })}
+
+          {/* Côtes */}
+          <path d={CONTINENT} fill="none" stroke="#f0ead8" strokeOpacity="0.34" strokeWidth="2.5" strokeLinejoin="round" />
+          {ISLANDS.map((d, i) => <path key={i} d={d} fill="none" stroke="#f0ead8" strokeOpacity="0.34" strokeWidth="2" strokeLinejoin="round" />)}
+
+          {/* Kanji + label de chaque nation */}
+          {REGIONS.map((r) => (
+            <g key={r.key}>
+              <text x={r.lx} y={r.ly} textAnchor="middle" dominantBaseline="middle" style={{ fontSize: 44, fontWeight: 900, fill: '#0c0f16', fillOpacity: 0.42, letterSpacing: 2 }}>{r.kanji}</text>
+              <text x={r.lx} y={r.ly + 32} textAnchor="middle" style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, fill: '#f0ead8', fillOpacity: 0.82, letterSpacing: 1 }}>{r.label.replace('Pays ', '')}</text>
+            </g>
+          ))}
 
           {/* Repères */}
           {LANDMARKS.map((l) => (
