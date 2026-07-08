@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SITE_URL } from '@/lib/site';
 import { hubVisual, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
-import { RARITY_META, TYPE_META, universeMeta, universeWordmark } from '@/lib/akasha/types';
+import { RARITY_META, TYPE_META, universeMeta, universeWordmark, universeBanner } from '@/lib/akasha/types';
 import { flavorText } from '@/lib/akasha/flavor';
 import { countUniverse, getEntriesBySlugs, listAxisCounts, listBounties, listCategoryCounts, listEvolutive, listStars, listUniverseIndex, universeInsights } from '@/lib/akasha/queries';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
@@ -117,7 +117,13 @@ export default async function UniverseHubPage({ params }: Props) {
     <main>
       {/* ── HERO UNIVERS ─────────────────────────────────────── */}
       <div className="ak-hub-grain" style={{ background: vis?.heroGradient ?? `linear-gradient(180deg, ${m.color}2E 0%, ${m.color}0C 55%, var(--bg) 100%)`, borderBottom: '1px solid var(--bd)', padding: 'clamp(2.2rem,5vw,3.6rem) 1.4rem 1.8rem', position: 'relative', overflow: 'hidden' }}>
-        {vis && <div className="ak-hub-pattern" aria-hidden style={{ ['--ak-bg' as string]: vis.bgPattern }} />}
+        {universeBanner(taxo.name) && (
+          <>
+            <div aria-hidden style={{ position: 'absolute', inset: 0, backgroundImage: `url(${universeBanner(taxo.name)})`, backgroundSize: 'cover', backgroundPosition: 'center 32%', zIndex: 0 }} />
+            <div aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(90deg, color-mix(in srgb, var(--bg) 94%, transparent) 0%, color-mix(in srgb, var(--bg) 66%, transparent) 40%, color-mix(in srgb, var(--bg) 20%, transparent) 72%, transparent 100%), linear-gradient(180deg, color-mix(in srgb, var(--bg) 64%, transparent) 0%, transparent 32%, color-mix(in srgb, var(--bg) 82%, transparent) 84%, var(--bg) 100%)' }} />
+          </>
+        )}
+        {vis && <div className="ak-hub-pattern" aria-hidden style={{ ['--ak-bg' as string]: vis.bgPattern, zIndex: 1 }} />}
         <HubHalo color={m.color} />
         <div className="ak-kanji-drift" aria-hidden style={{ position: 'absolute', top: '-0.3em', right: '-0.05em', fontFamily: 'var(--fe)', fontSize: 'clamp(120px,26vw,300px)', fontWeight: 900, color: `${m.color}14`, lineHeight: 1, pointerEvents: 'none', userSelect: 'none' }}>
           {taxo.kanji}

@@ -121,6 +121,14 @@ export function universeWordmark(name: string): string | null {
   return UNIVERSE_WORDMARK[name] ?? null;
 }
 
+// Bannières héros (illustration d'ambiance maison en fond du bandeau de hub) — fond opaque.
+const UNIVERSE_BANNER: Record<string, string> = {
+  'Naruto': '/images/akasha/universes/banners/naruto.webp',
+};
+export function universeBanner(name: string): string | null {
+  return UNIVERSE_BANNER[name] ?? null;
+}
+
 /** Sous-familles navigables à l'intérieur d'une collection : catégorie → champ JSONB porteur.
  *  (Jutsu → element = Ninjutsu/Genjutsu/Taijutsu… ; Fruits → element = « Fruit du Démon · Logia » ;
  *  Armes → material = Lame/Arme de jet…). Les autres collections n'ont pas de 2ᵉ niveau. */
