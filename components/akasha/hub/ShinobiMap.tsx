@@ -3,7 +3,7 @@
 // Géométrie SVG maison (continent unique + archipel, relief, rose des vents) + texture terrain générée.
 // Les PINS sont dessinés DANS le SVG (coordonnées viewBox) → aucun élément ne peut « retomber » dans un
 // coin au re-render. Seul le tooltip est un overlay HTML unique, ancré aux coordonnées du village survolé.
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { MAP, REGIONS, VILLAGES, LANDMARKS, CONTINENT, ISLANDS, MOUNTAINS, TREES, DUNES } from '@/lib/akasha/naruto-map';
 
@@ -11,9 +11,12 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
   counts: Record<string, number>; hubSlug?: string; color?: string;
 }) {
   const [hover, setHover] = useState<string | null>(null);
+  const [reduce, setReduce] = useState(false);
+  useEffect(() => { try { setReduce(matchMedia('(prefers-reduced-motion: reduce)').matches); } catch { /* SSR */ } }, []);
   const router = useRouter();
   const hoveredLand = VILLAGES.find((v) => v.key === hover)?.land ?? null;
   const villageHref = (fullName: string) => `/learn/akasha/u/${hubSlug}/village/${encodeURIComponent(fullName)}`;
+  const maxCount = Math.max(1, ...VILLAGES.map((v) => counts[v.key] || 0)); // pour dimensionner les pins ∝ densité
   const grat: number[] = [];
   for (let x = 100; x < MAP.w; x += 100) grat.push(x);
 
@@ -39,6 +42,7 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
               </linearGradient>
               <pattern id="sm-waves" width="46" height="28" patternUnits="userSpaceOnUse">
                 <path d="M0,15 q11,-9 23,0 t23,0" fill="none" stroke="#3f7290" strokeWidth="1.3" strokeLinecap="round" opacity="0.4" />
+                {!reduce && <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="46 0" dur="9s" repeatCount="indefinite" />}
               </pattern>
               <radialGradient id="sm-vignette" cx="50%" cy="45%" r="78%">
                 <stop offset="58%" stopColor="#000" stopOpacity="0" /><stop offset="100%" stopColor="#000" stopOpacity="0.5" />
@@ -123,12 +127,28 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
               <text x="0" y="-25" textAnchor="middle" style={{ fontFamily: 'var(--fo)', fontSize: 9, fontWeight: 800, fill: '#f0ead8' }}>N</text>
             </g>
 
+            {/* Kanji décoratifs dans l'océan */}
+            <text x="286" y="62" style={{ fontSize: 54, fontWeight: 900, fill: '#2a4a5e', fillOpacity: 0.22 }}>忍</text>
+            <text x="470" y="624" style={{ fontSize: 40, fontWeight: 900, fill: '#2a4a5e', fillOpacity: 0.2 }}>海</text>
+            <text x="726" y="360" style={{ fontSize: 30, fontWeight: 900, fill: '#2a4a5e', fillOpacity: 0.2 }}>渦</text>
+
+            {/* Barre d'échelle */}
+            <g transform="translate(60,610)" opacity="0.7">
+              <line x1="0" y1="0" x2="90" y2="0" stroke="#f0ead8" strokeWidth="1.6" />
+              <line x1="0" y1="-3" x2="0" y2="3" stroke="#f0ead8" strokeWidth="1.6" />
+              <line x1="45" y1="-2" x2="45" y2="2" stroke="#f0ead8" strokeWidth="1.2" />
+              <line x1="90" y1="-3" x2="90" y2="3" stroke="#f0ead8" strokeWidth="1.6" />
+              <text x="45" y="-6" textAnchor="middle" style={{ fontFamily: 'var(--fo)', fontSize: 8.5, fontWeight: 700, fill: '#f0ead8', fillOpacity: 0.8 }}>≈ 100 ri</text>
+            </g>
+
             <rect width={MAP.w} height={MAP.h} fill="url(#sm-vignette)" pointerEvents="none" />
 
             {/* ── PINS (dans le SVG, coordonnées viewBox → jamais dans un coin) ── */}
             {VILLAGES.map((v) => {
               const great = v.tier === 'great';
               const on = hover === v.key;
+              const r = great ? Math.round(16 + 11 * Math.sqrt((counts[v.key] || 0) / maxCount)) : 6; // rayon ∝ densité
+              const bs = Math.round(r * 1.5); // taille du blason
               const nameStyle = { fontFamily: 'var(--fe)', fontStyle: 'italic' as const, fontWeight: 800, fontSize: great ? 13 : 10, fill: '#fff', paintOrder: 'stroke' as const, stroke: '#05070b', strokeWidth: 3, strokeOpacity: 0.9, strokeLinejoin: 'round' as const };
               const nav = great ? () => router.push(villageHref(v.fullName)) : undefined;
               return (
@@ -147,10 +167,10 @@ export default function ShinobiMap({ counts, hubSlug = 'naruto', color = '#4a8a3
                 >
                   {great ? (
                     <g transform={`translate(${v.x} ${v.y})`}>
-                      {on && <circle r="27" fill="none" stroke="#fff" strokeOpacity="0.55" strokeWidth="2" />}
-                      <circle r="23" fill="url(#sm-pinbg)" stroke={on ? '#ffffff' : '#f0ead8'} strokeOpacity={on ? 0.85 : 0.22} strokeWidth="1.5" />
-                      <image href={`/images/akasha/emblems/${v.emblem}.webp`} x="-17" y="-17" width="34" height="34" />
-                      <text y="41" textAnchor="middle" style={nameStyle}>{v.name}</text>
+                      {on && <circle r={r + 4} fill="none" stroke="#fff" strokeOpacity="0.55" strokeWidth="2" />}
+                      <circle r={r} fill="url(#sm-pinbg)" stroke={on ? '#ffffff' : '#f0ead8'} strokeOpacity={on ? 0.85 : 0.22} strokeWidth="1.5" />
+                      <image href={`/images/akasha/emblems/${v.emblem}.webp`} x={-bs / 2} y={-bs / 2} width={bs} height={bs} />
+                      <text y={r + 17} textAnchor="middle" style={nameStyle}>{v.name}</text>
                     </g>
                   ) : (
                     <g transform={`translate(${v.x} ${v.y})`}>
