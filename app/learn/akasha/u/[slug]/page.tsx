@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SITE_URL } from '@/lib/site';
 import { hubVisual, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
-import { RARITY_META, TYPE_META, universeMeta } from '@/lib/akasha/types';
+import { RARITY_META, TYPE_META, universeMeta, universeWordmark } from '@/lib/akasha/types';
 import { flavorText } from '@/lib/akasha/flavor';
 import { countUniverse, getEntriesBySlugs, listAxisCounts, listBounties, listCategoryCounts, listEvolutive, listStars, listUniverseIndex, universeInsights } from '@/lib/akasha/queries';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
@@ -133,8 +133,11 @@ export default async function UniverseHubPage({ params }: Props) {
           <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: m.color, margin: '1rem 0 0.5rem' }}>
             {m.emoji} Univers · {total} entrées
           </div>
-          <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(44px,9vw,96px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.88, margin: 0 }}>
-            {taxo.name}
+          <h1 style={{ margin: 0, lineHeight: 0.88 }}>
+            {universeWordmark(taxo.name)
+              // eslint-disable-next-line @next/next/no-img-element
+              ? <img src={universeWordmark(taxo.name)!} alt={taxo.name} style={{ height: 'clamp(58px,11vw,120px)', width: 'auto', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.55))' }} />
+              : <span style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(44px,9vw,96px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)' }}>{taxo.name}</span>}
           </h1>
           <p style={{ fontFamily: 'var(--fo)', fontSize: 'clamp(13.5px,1.5vw,16px)', color: 'var(--td2)', maxWidth: 520, lineHeight: 1.65, margin: '0.9rem 0 1.3rem' }}>
             {taxo.tagline}

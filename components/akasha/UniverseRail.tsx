@@ -2,7 +2,7 @@
 // (emoji + nom + compteur), liens → URL partageable (?universe=…). Ordre curé via UNIVERSE_META,
 // les univers inconnus (futurs seeds) apparaissent après, avec le fallback visuel.
 import Link from 'next/link';
-import { UNIVERSE_META, universeMeta, type AkashaType } from '@/lib/akasha/types';
+import { UNIVERSE_META, universeMeta, universeWordmark, type AkashaType } from '@/lib/akasha/types';
 
 const ACCENT = '#7B5CF0';
 
@@ -82,8 +82,10 @@ export default function UniverseRail({
                 boxShadow: on ? `0 6px 18px -10px ${m.color}` : 'none',
               }}
             >
-              <span aria-hidden>{m.emoji}</span>
-              {name}
+              {universeWordmark(name)
+                // eslint-disable-next-line @next/next/no-img-element
+                ? <img src={universeWordmark(name)!} alt={name} style={{ height: 24, width: 'auto', objectFit: 'contain', display: 'block', filter: on ? 'none' : 'saturate(0.9)' }} />
+                : <><span aria-hidden>{m.emoji}</span>{name}</>}
               <span style={{ fontSize: 10, fontWeight: 800, color: on ? m.color : 'var(--td3)', background: 'rgba(5,12,23,0.45)', borderRadius: 20, padding: '1px 7px' }}>{byName.get(name)}</span>
             </Link>
           );

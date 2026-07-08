@@ -106,6 +106,21 @@ export function universeMeta(name: string): { name: string; emoji: string; color
   return UNIVERSE_META.find((u) => u.name === name) ?? { name, emoji: '✦', color: '#7B5CF0' };
 }
 
+// Wordmarks illustrés maison (dessin original par univers, Higgsfield) — fond transparent.
+const UNIVERSE_WORDMARK: Record<string, string> = {
+  'Naruto': '/images/akasha/universes/naruto.webp',
+  'One Piece': '/images/akasha/universes/one-piece.webp',
+  'Dragon Ball': '/images/akasha/universes/dragon-ball.webp',
+  'Bleach': '/images/akasha/universes/bleach.webp',
+  'Hunter x Hunter': '/images/akasha/universes/hxh.webp',
+  "JoJo's Bizarre Adventure": '/images/akasha/universes/jojo.webp',
+  'Initial D': '/images/akasha/universes/initial-d.webp',
+  'Death Note': '/images/akasha/universes/death-note.webp',
+};
+export function universeWordmark(name: string): string | null {
+  return UNIVERSE_WORDMARK[name] ?? null;
+}
+
 /** Sous-familles navigables à l'intérieur d'une collection : catégorie → champ JSONB porteur.
  *  (Jutsu → element = Ninjutsu/Genjutsu/Taijutsu… ; Fruits → element = « Fruit du Démon · Logia » ;
  *  Armes → material = Lame/Arme de jet…). Les autres collections n'ont pas de 2ᵉ niveau. */
