@@ -124,6 +124,13 @@ export function universeWordmark(name: string): string | null {
 // Bannières héros (illustration d'ambiance maison en fond du bandeau de hub) — fond opaque.
 const UNIVERSE_BANNER: Record<string, string> = {
   'Naruto': '/images/akasha/universes/banners/naruto.webp',
+  'One Piece': '/images/akasha/universes/banners/one-piece.webp',
+  'Dragon Ball': '/images/akasha/universes/banners/dragon-ball.webp',
+  'Bleach': '/images/akasha/universes/banners/bleach.webp',
+  'Hunter x Hunter': '/images/akasha/universes/banners/hxh.webp',
+  "JoJo's Bizarre Adventure": '/images/akasha/universes/banners/jojo.webp',
+  'Initial D': '/images/akasha/universes/banners/initial-d.webp',
+  'Death Note': '/images/akasha/universes/banners/death-note.webp',
 };
 export function universeBanner(name: string): string | null {
   return UNIVERSE_BANNER[name] ?? null;
