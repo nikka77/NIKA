@@ -19,7 +19,7 @@ import HubCollection from '@/components/akasha/hub/HubCollection';
 import ContinueBanner from '@/components/akasha/hub/ContinueBanner';
 import HubSignature from '@/components/akasha/hub/HubSignature';
 import { VillageEmblem, ClanCrest, RankBadge, GenerationBadge } from '@/components/akasha/NarutoIcons';
-import { DevilFruitIcon, SabreGradeIcon } from '@/components/akasha/OnePieceIcons';
+import { opAxisIcon } from '@/components/akasha/OnePieceIcons';
 
 // Icône par catégorie de collection (assets existants cat/ + refs). Retombe sur ◈ si non mappé.
 const CAT_ICON: Record<string, string> = {
@@ -275,10 +275,8 @@ export default async function UniverseHubPage({ params }: Props) {
                   ? <RankBadge value={c.v} size={48} />
                   : taxo.slug === 'naruto' && axis.attr === 'generation'
                   ? <GenerationBadge value={c.v} size={48} />
-                  : taxo.slug === 'one-piece' && axis.attr === 'fruit_type'
-                  ? <DevilFruitIcon value={c.v} size={48} />
-                  : taxo.slug === 'one-piece' && axis.attr === 'meito_grade'
-                  ? <SabreGradeIcon value={c.v} size={48} />
+                  : taxo.slug === 'one-piece'
+                  ? opAxisIcon(axis.attr, c.v, 48)
                   : null;
                 if (emblem) {
                   return (
