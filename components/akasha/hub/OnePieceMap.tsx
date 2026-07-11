@@ -362,6 +362,9 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
                   </div>
                 </div>
               )}
+              {selected.entitySlug && (
+                <a href={`/learn/akasha/${selected.entitySlug}`} style={{ display: 'inline-block', marginTop: 10, fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color, textDecoration: 'none' }}>Voir la fiche complète →</a>
+              )}
             </div>
           </div>
         </div>
