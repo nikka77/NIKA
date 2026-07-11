@@ -10,6 +10,12 @@ const T = (px: number, py: number): [number, number] => [py, H - px]; // data [x
 const tShape = (pts: [number, number][]) => pts.map(([x, y], i) => (i ? 'L' : 'M') + T(x, y).join(',')).join(' ');
 const FULL = { x: 0, y: 0, w: W, h: H };
 const MIN_W = 520, MAX_W = W;
+type View = { x: number; y: number; w: number; h: number };
+// Empêche de sortir des bords de la carte (clamp taille + position).
+const clamp = (v: View): View => {
+  const w = Math.min(v.w, W), h = Math.min(v.h, H);
+  return { w, h, x: Math.max(0, Math.min(v.x, W - w)), y: Math.max(0, Math.min(v.y, H - h)) };
+};
 
 function Island({ isl, on, sel, onSel, onHover }: {
   isl: OpwIsland; on: boolean; sel: boolean; onSel: () => void; onHover: (v: boolean) => void;
@@ -61,7 +67,7 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
         const nw = Math.min(MAX_W, Math.max(MIN_W, v.w * f));
         const k = nw / v.w, nh = v.h * k;
         const cx = v.x + px * v.w, cy = v.y + py * v.h;
-        return { x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: nh };
+        return clamp({ x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: nh });
       });
     };
     el.addEventListener('wheel', onWheel, { passive: false });
@@ -72,7 +78,7 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
     const nw = Math.min(MAX_W, Math.max(MIN_W, v.w * f));
     const k = nw / v.w, nh = v.h * k;
     const cx = v.x + v.w / 2, cy = v.y + v.h / 2;
-    return { x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: nh };
+    return clamp({ x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: nh });
   });
 
   const onPointerDown = (e: React.PointerEvent) => { drag.current = { x: e.clientX, y: e.clientY, moved: false }; (e.target as Element).setPointerCapture?.(e.pointerId); };
@@ -83,7 +89,7 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
     const dy = (e.clientY - drag.current.y) * (view.h / rect.height);
     if (Math.abs(e.clientX - drag.current.x) + Math.abs(e.clientY - drag.current.y) > 3) drag.current.moved = true;
     drag.current = { x: e.clientX, y: e.clientY, moved: drag.current.moved };
-    setView((v) => ({ ...v, x: v.x - dx, y: v.y - dy }));
+    setView((v) => clamp({ ...v, x: v.x - dx, y: v.y - dy }));
   };
   const onPointerUp = () => { drag.current = null; };
 
@@ -139,12 +145,18 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
           <image href="/images/akasha/op-world-bg.webp" x={0} y={0} width={W} height={H} preserveAspectRatio="none" />
 
           {/* Territoires Yonko */}
-          {showYonko && OP_WORLD.yonko.map((y) => (
-            <g key={y.id} style={{ pointerEvents: 'none' }}>
-              {y.shapes.map((sh, i) => <path key={i} d={tShape(sh) + 'Z'} fill={y.color} fillOpacity={0.16} stroke={y.color} strokeOpacity={0.7} strokeWidth={4} strokeDasharray="14 10" />)}
-              <text x={T(y.shapes[0][0][0], y.shapes[0][0][1])[0]} y={T(y.shapes[0][0][0], y.shapes[0][0][1])[1]} fontFamily="var(--fe)" fontStyle="italic" fontWeight="800" fontSize={40} fill={y.color} stroke="#06131F" strokeWidth={6} paintOrder="stroke">{y.yonko}</text>
-            </g>
-          ))}
+          {showYonko && OP_WORLD.yonko.map((y) => {
+            const all = y.shapes.flat();
+            const cx = all.reduce((s, p) => s + p[0], 0) / all.length;
+            const cy = all.reduce((s, p) => s + p[1], 0) / all.length;
+            const [lx, ly] = T(cx, cy);
+            return (
+              <g key={y.id} style={{ pointerEvents: 'none' }}>
+                {y.shapes.map((sh, i) => <path key={i} d={tShape(sh) + 'Z'} fill={y.color} fillOpacity={0.16} stroke={y.color} strokeOpacity={0.7} strokeWidth={4} strokeDasharray="14 10" />)}
+                <text x={lx} y={ly} textAnchor="middle" fontFamily="var(--fe)" fontStyle="italic" fontWeight="800" fontSize={40} fill={y.color} stroke="#06131F" strokeWidth={6} paintOrder="stroke">{y.yonko}</text>
+              </g>
+            );
+          })}
 
           {/* Routes */}
           {OP_WORLD.routes.filter((r) => routes.has(r.id)).map((r) => (
@@ -154,22 +166,22 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
             </g>
           ))}
 
-          {/* POI */}
-          {showPoi && OP_WORLD.poi.map((p) => {
-            const [cx, cy] = T(p.x, p.y);
-            return (
-              <g key={p.id} style={{ cursor: 'pointer' }} onPointerEnter={() => setHover(p.id)} onPointerLeave={() => setHover(null)} onClick={() => setSel({ kind: 'poi', id: p.id })}>
-                <path d={`M${cx},${cy - 11} L${cx + 9},${cy} L${cx},${cy + 11} L${cx - 9},${cy} Z`} fill="#F2C14E" stroke="#06131F" strokeWidth={2} />
-                {hover === p.id && <text x={cx} y={cy - 16} textAnchor="middle" fontFamily="var(--fo)" fontWeight="700" fontSize={22} fill="#FDE9B0" stroke="#06131F" strokeWidth={5} paintOrder="stroke" style={{ pointerEvents: 'none' }}>{p.name}</text>}
-              </g>
-            );
-          })}
-
           {/* Îles (hotspots cliquables) */}
           {OP_WORLD.islands.map((isl) => (
             <Island key={isl.id} isl={isl} on={hover === isl.id} sel={sel?.kind === 'island' && sel.id === isl.id}
               onHover={(v) => setHover(v ? isl.id : null)} onSel={() => { if (!drag.current?.moved) setSel({ kind: 'island', id: isl.id }); }} />
           ))}
+
+          {/* POI (au-dessus des îles → cliquables) */}
+          {showPoi && OP_WORLD.poi.map((p) => {
+            const [cx, cy] = T(p.x, p.y);
+            return (
+              <g key={p.id} style={{ cursor: 'pointer' }} onPointerEnter={() => setHover(p.id)} onPointerLeave={() => setHover(null)} onClick={() => { if (!drag.current?.moved) setSel({ kind: 'poi', id: p.id }); }}>
+                <path d={`M${cx},${cy - 11} L${cx + 9},${cy} L${cx},${cy + 11} L${cx - 9},${cy} Z`} fill="#F2C14E" stroke="#06131F" strokeWidth={2} />
+                {hover === p.id && <text x={cx} y={cy - 16} textAnchor="middle" fontFamily="var(--fo)" fontWeight="700" fontSize={22} fill="#FDE9B0" stroke="#06131F" strokeWidth={5} paintOrder="stroke" style={{ pointerEvents: 'none' }}>{p.name}</text>}
+              </g>
+            );
+          })}
         </svg>
       </div>
 
