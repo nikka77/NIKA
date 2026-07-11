@@ -9,7 +9,7 @@ const DIR = '/images/akasha/universes/op-icons';
 
 const FRUIT_IMG: Record<string, string> = {
   'Paramecia': 'paramecia', 'Logia': 'logia', 'Zoan': 'zoan',
-  'Zoan Antique': 'zoan-antique', 'Zoan Mythique': 'zoan-mythique', 'Smile': 'smile',
+  'Zoan Antique': 'zoan-antique', 'Zoan Mythique': 'zoan-mythique', 'Smile': 'smile', 'Clone': 'clone',
 };
 const GRADE_IMG: Record<string, string> = {
   'Saijo Ô Wazamono': 'saijo', 'Ô Wazamono': 'o-wazamono', 'Ryo Wazamono': 'ryo-wazamono',
@@ -25,6 +25,9 @@ const CREW_IMG: Record<string, string> = {
   'L’équipage de Barbe Blanche': 'barbe-blanche',
   'L’équipage de Don Quichotte': 'don-quichotte',
   'L’équipage des Pirates Roger': 'roger',
+  // Extras d'axe fréquents (valeurs minées) : réutilise l'emblème de faction Marine + Armada bespoke.
+  'Marine': 'marine',
+  'Armarda du Chapeau de Paille': 'armada',
 };
 
 const MAPS: Record<string, Record<string, string>> = {

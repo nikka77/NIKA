@@ -18,6 +18,7 @@ import DidYouKnow from '@/components/akasha/DidYouKnow';
 import HubCollection from '@/components/akasha/hub/HubCollection';
 import ContinueBanner from '@/components/akasha/hub/ContinueBanner';
 import HubSignature from '@/components/akasha/hub/HubSignature';
+import OnePieceMap from '@/components/akasha/hub/OnePieceMap';
 import { VillageEmblem, ClanCrest, RankBadge, GenerationBadge } from '@/components/akasha/NarutoIcons';
 import { opAxisIcon } from '@/components/akasha/OnePieceIcons';
 import { dbAxisIcon } from '@/components/akasha/DragonBallIcons';
@@ -97,6 +98,9 @@ export default async function UniverseHubPage({ params }: Props) {
   for (const ch of daySeed) dh = (dh * 31 + ch.charCodeAt(0)) >>> 0;
   const dailyStar = stars.length ? stars[dh % stars.length] : null;
 
+  // Valeurs de `crew` One Piece qui sont en fait des LIEUX/organisations (bruit de mining) → hors axe Équipages.
+  const OP_NON_CREW = new Set(['Skypiea', 'Alabasta', 'Pays des Wa', 'Royaume de Goa', 'Armée Révolutionnaire', 'Cipher Pol',
+    'Enies Lobby', 'Water Seven', 'Dressrosa', 'Punk Hazard', 'Jaya', 'Little Garden', 'Whisky Peak', 'Thriller Bark', 'Ohara', 'Loguetown']);
   // Axes affichables : valeurs curées avec data d'abord, puis les valeurs « découvertes » (hors config) par volume.
   const axes = taxo.axes
     .map((axis) => {
@@ -105,8 +109,9 @@ export default async function UniverseHubPage({ params }: Props) {
         .map((x) => ({ v: x.v, label: x.l ?? x.v, count: counts.get(x.v) ?? 0, tint: x.tint, badge: x.badge }))
         .filter((x) => x.count > 0);
       const curatedSet = new Set(axis.values.map((x) => x.v));
+      const skip = taxo.slug === 'one-piece' && axis.attr === 'crew' ? OP_NON_CREW : null;
       const extras = Array.from(counts.entries())
-        .filter(([v, c]) => !curatedSet.has(v) && c >= 3)
+        .filter(([v, c]) => !curatedSet.has(v) && c >= 3 && !skip?.has(v))
         .sort((a, b) => b[1] - a[1])
         .slice(0, Math.max(0, 14 - curated.length))
         .map(([v, count]) => ({ v, label: v, count, tint: undefined as string | undefined, badge: undefined as string | undefined }));
@@ -238,6 +243,9 @@ export default async function UniverseHubPage({ params }: Props) {
         {/* ── SIGNATURE BESPOKE DE L'UNIVERS ─────────────────── */}
         {vis?.signature && (
           <Reveal as="div"><HubSignature signature={vis.signature} axes={axes} universe={taxo.name} color={m.color} bounties={bounties} /></Reveal>
+        )}
+        {taxo.slug === 'one-piece' && (
+          <Reveal as="div"><OnePieceMap color={m.color} /></Reveal>
         )}
 
         {/* ── INSIGHTS (chiffres-clés, rareté, top popularité, derniers ajoutés) ── */}
