@@ -9092,9 +9092,13 @@
       "universe": "Dragon Ball",
       "summary": "La planète verte des Nameks, théâtre du combat contre Freezer et berceau des Dragon Balls originelles.",
       "description": "La planète verte des Nameks, théâtre du combat contre Freezer et berceau des Dragon Balls originelles.",
-      "image_url": null,
+      "image_url": "https://dragonball-api.com/planetas/Namek_U7.webp",
       "attributes": {
         "region": "Planète",
+        "category": "Lieu",
+        "descRaw": "Planeta natal de los Namekianos. Escenario de importantes batallas y la obtención de las Dragon Balls de Namek.",
+        "descLang": "es",
+        "descFr": "Planète natale des Neks. Théâtre de batailles importantes et lieu où furent obtenues les Dragon Balls de Namek.",
         "kanji": "ナメック星",
         "quote": {
           "text": "Cette planète tremble sous ma colère... Dans cinq minutes, elle explosera et il n'en restera rien.",
@@ -9164,8 +9168,7 @@
             "summary": "Sur un monde jumeau au ciel tout aussi vert, le peuple exilé replante ses villages et fait renaître, loin des cendres, l'âme de Namek.",
             "img": "/images/akasha/eras/namek-renaissance.webp"
           }
-        ],
-        "category": "Lieu"
+        ]
       },
       "rarity": "rare"
     },
@@ -31514,6 +31517,8 @@
       "image_url": null,
       "attributes": {
         "region": "Préfecture de Gunma",
+        "col": "Mont Akina",
+        "category": "Lieu",
         "kanji": "秋名山",
         "quote": {
           "text": "Il n'y a pas de virage que je ne puisse pas prendre à fond sur Akina. Ce col, je l'ai dans le sang.",
@@ -31583,8 +31588,7 @@
             "summary": "Devenu terre sacrée du touge, Akina n'est plus une route mais une légende que nul ne parvient à égaler.",
             "img": "/images/akasha/artifacts/ae86-project-d.webp"
           }
-        ],
-        "category": "Lieu"
+        ]
       },
       "rarity": "epic"
     },
@@ -31629,6 +31633,7 @@
       "image_url": null,
       "attributes": {
         "region": "Préfecture de Gunma",
+        "col": "Mont Akagi",
         "category": "Lieu"
       },
       "rarity": "rare"
@@ -31704,6 +31709,7 @@
       "image_url": null,
       "attributes": {
         "region": "Préfecture de Gunma",
+        "col": "Mont Myōgi",
         "category": "Lieu"
       },
       "rarity": "common"
@@ -35161,6 +35167,9 @@
       "image_url": null,
       "attributes": {
         "material": "Navire · bois d'Adam",
+        "boat_class": "Navire Pirate",
+        "origin": "L’équipage du Chapeau de Paille",
+        "roman_name": "Sauzando Sanī-gō",
         "category": "Navire"
       },
       "rarity": "epic"
@@ -35176,6 +35185,7 @@
       "image_url": null,
       "attributes": {
         "scope": "Force mondiale",
+        "roman_name": "Kaigun",
         "category": "Organisation"
       },
       "rarity": "rare"
@@ -74623,26 +74633,6 @@
       "rarity": "epic"
     },
     {
-      "slug": "fruit-du-felin-version-tigre-a-dents-de-sabre-one-piece",
-      "type": "power",
-      "name": "Fruit du Félin, version Tigre à dents de sabre",
-      "is_fiction": true,
-      "universe": "One Piece",
-      "summary": "celui qui le mange peut se transformer en phénix.",
-      "description": "celui qui le mange peut se transformer en phénix.",
-      "image_url": null,
-      "attributes": {
-        "element": "Fruit du Démon · Zoan Mythique",
-        "fruit_type": "Zoan Mythique",
-        "roman_name": "Tori Tori no Mi, Moderu Fenikkusu",
-        "category": "Fruit du Démon",
-        "descRaw": "celui qui le mange peut se transformer en phénix. Il peut se régénérer et également soigner les blessures d'autres êtres vivants.",
-        "descLang": "fr",
-        "descFr": "celui qui le mange peut se transformer en phénix. Il peut se régénérer et également soigner les blessures d'autres êtres vivants."
-      },
-      "rarity": "legendary"
-    },
-    {
       "slug": "fruit-de-l-humain-version-bouddha",
       "type": "power",
       "name": "Fruit de l'Humain, version Bouddha",
@@ -75339,26 +75329,6 @@
       "rarity": "rare"
     },
     {
-      "slug": "fruit-de-la-chaleur-one-piece",
-      "type": "power",
-      "name": "Fruit de la Chaleur",
-      "is_fiction": true,
-      "universe": "One Piece",
-      "summary": "L'utilisateur peut contrôler sa chaleur corporelle et l'augmenter à plus de 10 000 degrés, ce qui lui permet de faire fondre n'importe quoi.",
-      "description": "L'utilisateur peut contrôler sa chaleur corporelle et l'augmenter à plus de 10 000 degrés, ce qui lui permet de faire fondre n'importe quoi.",
-      "image_url": null,
-      "attributes": {
-        "element": "Fruit du Démon · Paramecia",
-        "fruit_type": "Paramecia",
-        "roman_name": "Atsu Atsu no Mi",
-        "category": "Fruit du Démon",
-        "descRaw": "L'utilisateur peut contrôler sa chaleur corporelle et l'augmenter à plus de 10 000 degrés, ce qui lui permet de faire fondre n'importe quoi. Il devient donc insensible au froid.",
-        "descLang": "fr",
-        "descFr": "L'utilisateur peut contrôler sa chaleur corporelle et l'augmenter à plus de 10 000 degrés, ce qui lui permet de faire fondre n'importe quoi. Il devient donc insensible au froid."
-      },
-      "rarity": "rare"
-    },
-    {
       "slug": "fruit-du-chamquipue",
       "type": "power",
       "name": "Fruit du Chamquipue",
@@ -75957,26 +75927,6 @@
         "descFr": "Ce fruit permet à son utilisateur de reproduire l'apparence des défunts."
       },
       "rarity": "rare"
-    },
-    {
-      "slug": "fruit-de-la-dissolution-one-piece",
-      "type": "power",
-      "name": "Fruit de la Dissolution",
-      "is_fiction": true,
-      "universe": "One Piece",
-      "summary": "le corps de celui qui le mange se transforme en liquide.",
-      "description": "le corps de celui qui le mange se transforme en liquide.",
-      "image_url": null,
-      "attributes": {
-        "element": "Fruit du Démon · Logia",
-        "fruit_type": "Logia",
-        "roman_name": "Toro Toro no Mi",
-        "category": "Fruit du Démon",
-        "descRaw": "le corps de celui qui le mange se transforme en liquide.",
-        "descLang": "fr",
-        "descFr": "le corps de celui qui le mange se transforme en liquide."
-      },
-      "rarity": "epic"
     },
     {
       "slug": "fruit-du-papier",
@@ -77835,22 +77785,6 @@
       "rarity": "rare"
     },
     {
-      "slug": "marine-one-piece",
-      "type": "status",
-      "name": "Marine",
-      "is_fiction": true,
-      "universe": "One Piece",
-      "summary": "Équipage de pirates.",
-      "description": "Équipage de pirates.",
-      "image_url": null,
-      "attributes": {
-        "scope": "Équipage pirate",
-        "roman_name": "Kaigun",
-        "category": "Équipage"
-      },
-      "rarity": "rare"
-    },
-    {
       "slug": "dragon-celestes",
       "type": "status",
       "name": "Dragon Célestes",
@@ -79064,24 +78998,6 @@
       "rarity": "rare"
     },
     {
-      "slug": "thousand-sunny-one-piece",
-      "type": "artifact",
-      "name": "Thousand Sunny",
-      "is_fiction": true,
-      "universe": "One Piece",
-      "summary": "Navire Pirate de One Piece.",
-      "description": "Navire Pirate de One Piece.",
-      "image_url": null,
-      "attributes": {
-        "material": "Navire Pirate",
-        "boat_class": "Navire Pirate",
-        "origin": "L’équipage du Chapeau de Paille",
-        "roman_name": "Sauzando Sanī-gō",
-        "category": "Navire"
-      },
-      "rarity": "epic"
-    },
-    {
       "slug": "shiro-mokuba-i",
       "type": "artifact",
       "name": "Shiro Mokuba I",
@@ -80056,10 +79972,10 @@
       "image_url": null,
       "attributes": {
         "material": "Navire Pirate",
+        "category": "Navire",
         "boat_class": "Navire Pirate",
         "origin": "L’équipage du Chapeau de Paille",
-        "roman_name": "Karasumaru",
-        "category": "Navire"
+        "roman_name": "Karasumaru"
       },
       "rarity": "rare"
     },
@@ -81662,21 +81578,6 @@
       "rarity": "rare"
     },
     {
-      "slug": "corbeau-one-piece",
-      "type": "artifact",
-      "name": "Corbeau",
-      "is_fiction": true,
-      "universe": "One Piece",
-      "summary": "Coquillage-outil de Skypiea.",
-      "description": "Coquillage-outil de Skypiea.",
-      "image_url": null,
-      "attributes": {
-        "material": "Dial (coquillage)",
-        "category": "Relique"
-      },
-      "rarity": "rare"
-    },
-    {
       "slug": "jet-skis",
       "type": "artifact",
       "name": "Jet-Skis",
@@ -81737,21 +81638,6 @@
       "rarity": "rare"
     },
     {
-      "slug": "alabasta-one-piece",
-      "type": "status",
-      "name": "Alabasta",
-      "is_fiction": true,
-      "universe": "One Piece",
-      "summary": "Saga de One Piece.",
-      "description": "Saga de One Piece.",
-      "image_url": null,
-      "attributes": {
-        "scope": "Saga narrative",
-        "category": "Saga"
-      },
-      "rarity": "rare"
-    },
-    {
       "slug": "ile-celeste",
       "type": "status",
       "name": "Île Céleste",
@@ -81785,21 +81671,6 @@
       "slug": "guerre-au-sommet",
       "type": "status",
       "name": "Guerre au Sommet",
-      "is_fiction": true,
-      "universe": "One Piece",
-      "summary": "Saga de One Piece.",
-      "description": "Saga de One Piece.",
-      "image_url": null,
-      "attributes": {
-        "scope": "Saga narrative",
-        "category": "Saga"
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "ile-des-hommes-poissons-one-piece",
-      "type": "status",
-      "name": "Île des Hommes-Poissons",
       "is_fiction": true,
       "universe": "One Piece",
       "summary": "Saga de One Piece.",
@@ -82545,24 +82416,6 @@
       "rarity": "epic"
     },
     {
-      "slug": "namek-dragon-ball",
-      "type": "place",
-      "name": "Namek",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "Planeta natal de los Namekianos.",
-      "description": "Planeta natal de los Namekianos.",
-      "image_url": "https://dragonball-api.com/planetas/Namek_U7.webp",
-      "attributes": {
-        "region": "Planète détruite",
-        "category": "Planète",
-        "descRaw": "Planeta natal de los Namekianos. Escenario de importantes batallas y la obtención de las Dragon Balls de Namek.",
-        "descLang": "es",
-        "descFr": "Planète natale des Neks. Théâtre de batailles importantes et lieu où furent obtenues les Dragon Balls de Namek."
-      },
-      "rarity": "rare"
-    },
-    {
       "slug": "tierra",
       "type": "place",
       "name": "Tierra",
@@ -83222,54 +83075,6 @@
       "rarity": "rare"
     },
     {
-      "slug": "mont-akina-initial-d",
-      "type": "place",
-      "name": "Mont Akina",
-      "is_fiction": true,
-      "universe": "Initial D",
-      "summary": "Le col du duel : le downhill le plus célèbre du Kantō, territoire de la Hachi-Roku du tofu Fujiwara.",
-      "description": "Le col du duel : le downhill le plus célèbre du Kantō, territoire de la Hachi-Roku du tofu Fujiwara.",
-      "image_url": null,
-      "attributes": {
-        "region": "Préfecture de Gunma",
-        "col": "Mont Akina",
-        "category": "Lieu"
-      },
-      "rarity": "epic"
-    },
-    {
-      "slug": "mont-akagi-initial-d",
-      "type": "place",
-      "name": "Mont Akagi",
-      "is_fiction": true,
-      "universe": "Initial D",
-      "summary": "Le fief des Akagi RedSuns : la montagne des frères Takahashi et de la FC/FD.",
-      "description": "Le fief des Akagi RedSuns : la montagne des frères Takahashi et de la FC/FD.",
-      "image_url": null,
-      "attributes": {
-        "region": "Préfecture de Gunma",
-        "col": "Mont Akagi",
-        "category": "Lieu"
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "mont-myogi-initial-d",
-      "type": "place",
-      "name": "Mont Myōgi",
-      "is_fiction": true,
-      "universe": "Initial D",
-      "summary": "Le territoire des Myogi NightKids : lignes rapides et gardes-corps qui pardonnent peu.",
-      "description": "Le territoire des Myogi NightKids : lignes rapides et gardes-corps qui pardonnent peu.",
-      "image_url": null,
-      "attributes": {
-        "region": "Préfecture de Gunma",
-        "col": "Mont Myōgi",
-        "category": "Lieu"
-      },
-      "rarity": "rare"
-    },
-    {
       "slug": "col-usui",
       "type": "place",
       "name": "Col d’Usui",
@@ -83925,21 +83730,6 @@
       "rarity": "legendary"
     },
     {
-      "slug": "zoldyck-hunter-x-hunter",
-      "type": "status",
-      "name": "Famille Zoldyck",
-      "is_fiction": true,
-      "universe": "Hunter x Hunter",
-      "summary": "La plus célèbre lignée d'assassins professionnels au monde, retranchée sur le mont Kukuroo à Padokea.",
-      "description": "La plus célèbre lignée d'assassins professionnels au monde, retranchée sur le mont Kukuroo à Padokea.",
-      "image_url": null,
-      "attributes": {
-        "scope": "Organisation",
-        "category": "Clan & lignée"
-      },
-      "rarity": "legendary"
-    },
-    {
       "slug": "gotei-13-bleach",
       "type": "status",
       "name": "Gotei 13 (Treize Divisions de la Cour)",
@@ -83953,21 +83743,6 @@
         "category": "Organisation"
       },
       "rarity": "legendary"
-    },
-    {
-      "slug": "espada-bleach",
-      "type": "status",
-      "name": "Espada",
-      "is_fiction": true,
-      "universe": "Bleach",
-      "summary": "Les dix Arrancars les plus puissants au service de Sosuke Aizen à Las Noches, classés par numéro gravé sur leur corps.",
-      "description": "Les dix Arrancars les plus puissants au service de Sosuke Aizen à Las Noches, classés par numéro gravé sur leur corps.",
-      "image_url": null,
-      "attributes": {
-        "scope": "Organisation",
-        "category": "Organisation"
-      },
-      "rarity": "epic"
     },
     {
       "slug": "foosha",

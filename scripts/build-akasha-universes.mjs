@@ -13,6 +13,7 @@ import { writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { applyEnrichment } from '../data/akasha-enrich.mjs';
 import { fetchAniListChars, anilistIndex } from './lib/anilist.mjs';
 import { dedupeChars } from './lib/dedup.mjs';
+import { dedupeByName } from './akasha-dedup.mjs';
 import { DEDUP_ALIASES } from './lib/dedup-aliases.mjs';
 
 const JIKAN = 'https://api.jikan.moe/v4';
@@ -1571,7 +1572,7 @@ async function main() {
   // Les slugs CURÉS (config u.chars + STAR_DETAILS) sont toujours gardés comme keeper.
   const curatedSlugs = new Set([...UNIVERSES.flatMap((u) => u.chars.map((c) => c.slug)), ...Object.keys(STAR_DETAILS)]);
   const dd = dedupeChars(entries, relations, DEDUP_ALIASES, curatedSlugs);
-  const finalEntries = dd.entries;
+  let finalEntries = dd.entries;
   const seenFinal = new Set(finalEntries.map((e) => e.slug));
   console.log(`  ✓ dédup : ${dd.merges.length} doublons fusionnés → ${finalEntries.length} entrées`);
   writeFileSync('data/akasha-merges-universes.json', JSON.stringify(dd.merges, null, 1));
@@ -1579,7 +1580,7 @@ async function main() {
   // Relations : ne garder que celles dont les 2 extrémités existent (post-dédup)
   const bad = dd.relations.filter((r) => !seenFinal.has(r.from) || !seenFinal.has(r.to));
   for (const b of bad) console.warn('  ⚠ relation ignorée:', b.from, '→', b.to);
-  const ok = dd.relations.filter((r) => seenFinal.has(r.from) && seenFinal.has(r.to));
+  let ok = dd.relations.filter((r) => seenFinal.has(r.from) && seenFinal.has(r.to));
 
   const byType = {};
   for (const e of finalEntries) byType[e.type] = (byType[e.type] || 0) + 1;
@@ -1592,6 +1593,10 @@ async function main() {
   } catch { /* pas encore de traductions */ }
   // Enrichissement curé durable (lieux OP, artefacts DB, tags nen/saga/race) — cf. data/akasha-enrich.mjs.
   { const r = applyEnrichment(finalEntries); console.log(`  ✓ enrichissement : +${r.added} entités · tags nen ${r.nen}/saga ${r.saga}/race ${r.race}`); }
+  // Dédup final tous types (même univers+type+nom) — le suffixe par univers des collisions curé/miné créait des doublons.
+  const dd2 = dedupeByName(finalEntries, ok);
+  if (dd2.removed.length) console.log(`  ✓ dédup entités : −${dd2.removed.length} doublons (${dd2.removed.slice(0, 6).join(', ')}${dd2.removed.length > 6 ? '…' : ''})`);
+  finalEntries = dd2.entries; ok = dd2.relations;
   writeFileSync('data/akasha-universes.json', JSON.stringify({ entries: finalEntries, relations: ok }, null, 1));
   console.log(`✓ ${finalEntries.length} entrées, ${ok.length} relations → data/akasha-universes.json`);
   console.log('  par type:', JSON.stringify(byType));
