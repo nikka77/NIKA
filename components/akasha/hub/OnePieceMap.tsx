@@ -44,7 +44,7 @@ function smooth(pts: [number, number][]): string {
 }
 
 function Island({ isl, on, onHover }: { isl: OpIsland; on: boolean; onHover: (v: boolean) => void }) {
-  const { x, y, r, seed, name, sky, route, note, lbl } = isl;
+  const { x, y, r, seed, name, sky, route, note, lbl, minor } = isl;
   const isStart = route === 1, isEnd = route === 22;
   const body = (
     <g style={{ cursor: isl.slug ? 'pointer' : 'default' }} onMouseEnter={() => onHover(true)} onMouseLeave={() => onHover(false)}>
@@ -58,8 +58,9 @@ function Island({ isl, on, onHover }: { isl: OpIsland; on: boolean; onHover: (v:
       {r >= 15 && <path d={`M${x - r * 0.3},${y - r * 0.1} l${r * 0.28},${-r * 0.55} l${r * 0.3},${r * 0.55} z`} fill="#B7A277" stroke="#7C623E" strokeWidth={0.7} />}
       {(isStart || isEnd) && <circle cx={x} cy={y} r={r + 6} fill="none" stroke={isEnd ? '#F2C14E' : '#3FBE7A'} strokeWidth={2} opacity="0.7" />}
       {/* étiquette */}
-      <text x={x} y={lbl === 'up' ? y - r - 6 : y + r + 14} textAnchor="middle" fontFamily="var(--fo)" fontWeight="700"
-        fontSize={on ? 14 : 11} fill={on ? '#FFFFFF' : '#DCE8F2'} stroke="#06131F" strokeWidth={2.6} paintOrder="stroke">{name}</text>
+      <text x={x} y={lbl === 'up' ? y - r - (minor ? 4 : 6) : y + r + (minor ? 11 : 14)} textAnchor="middle" fontFamily="var(--fo)" fontWeight="700"
+        fontSize={on ? (minor ? 12.5 : 14) : (minor ? 8.7 : 11)} fill={on ? '#FFFFFF' : (minor ? '#AEC2D4' : '#DCE8F2')}
+        opacity={minor && !on ? 0.8 : 1} stroke="#06131F" strokeWidth={minor ? 2 : 2.6} paintOrder="stroke">{name}</text>
       {on && note && (
         <text x={x} y={lbl === 'up' ? y - r - 21 : y + r + 30} textAnchor="middle" fontFamily="var(--fo)" fontStyle="italic"
           fontSize="11" fill="#F2C14E" stroke="#06131F" strokeWidth={2.4} paintOrder="stroke">{note}</text>

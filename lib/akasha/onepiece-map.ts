@@ -45,6 +45,7 @@ export interface OpIsland {
   route?: number;        // rang dans le parcours de l'équipage (sinon île de décor)
   note?: string;
   lbl?: 'up' | 'down';   // placement du label
+  minor?: boolean;       // île de décor (label plus petit)
 }
 
 // ~48 îles positionnées (parcours + décor). `route` = ordre de voyage des Chapeaux de Paille.
@@ -96,4 +97,48 @@ export const OP_ISLANDS: OpIsland[] = [
   { name: 'Torino', x: 1080, y: 700, r: 12, zone: 'south-blue', seed: 179, lbl: 'down' },
   { name: 'Karate', x: 1230, y: 690, r: 9, zone: 'south-blue', seed: 181 },
   { name: 'Lvneel', x: 340, y: 700, r: 9, zone: 'north-blue', seed: 191 },
+  // ── East Blue (lieux secondaires) ──
+  { name: 'Goa', x: 80, y: 185, r: 10, zone: 'east-blue', seed: 211, minor: true, note: 'Royaume — île de l’Aube', lbl: 'down' },
+  { name: 'Îles Conomi', x: 402, y: 258, r: 8, zone: 'east-blue', seed: 223, minor: true, lbl: 'down' },
+  { name: 'Gosa', x: 290, y: 300, r: 7, zone: 'east-blue', seed: 227, minor: true, lbl: 'down' },
+  { name: 'Oykot', x: 375, y: 305, r: 8, zone: 'east-blue', seed: 229, minor: true },
+  { name: 'Polestar', x: 128, y: 312, r: 9, zone: 'east-blue', seed: 233, minor: true, lbl: 'down' },
+  { name: 'Sixis', x: 58, y: 250, r: 7, zone: 'east-blue', seed: 239, minor: true },
+  { name: 'Frost Moon', x: 232, y: 62, r: 7, zone: 'east-blue', seed: 241, minor: true, lbl: 'up' },
+  // ── North Blue (lieux secondaires) ──
+  { name: 'Flevance', x: 150, y: 772, r: 10, zone: 'north-blue', seed: 251, minor: true, note: 'Pays blanc — patrie de Law', lbl: 'down' },
+  { name: 'Swallow', x: 212, y: 802, r: 7, zone: 'north-blue', seed: 257, minor: true },
+  { name: 'Micqueot', x: 322, y: 762, r: 8, zone: 'north-blue', seed: 263, minor: true, lbl: 'down' },
+  { name: 'Minion', x: 92, y: 722, r: 7, zone: 'north-blue', seed: 269, minor: true },
+  { name: 'Notice', x: 382, y: 642, r: 7, zone: 'north-blue', seed: 271, minor: true },
+  { name: 'Ilusia', x: 172, y: 662, r: 7, zone: 'north-blue', seed: 277, minor: true },
+  // ── West Blue (lieux secondaires) ──
+  { name: 'Weatheria', x: 942, y: 90, r: 8, zone: 'west-blue', seed: 311, minor: true, sky: true, note: 'Île du savoir météo — Nami', lbl: 'up' },
+  { name: 'Mystoria', x: 962, y: 212, r: 8, zone: 'west-blue', seed: 293, minor: true },
+  { name: 'Spider Miles', x: 1182, y: 120, r: 9, zone: 'west-blue', seed: 281, minor: true, lbl: 'up' },
+  { name: 'Lulusia', x: 1252, y: 236, r: 9, zone: 'west-blue', seed: 307, minor: true, note: 'Royaume rayé de la carte', lbl: 'down' },
+  { name: 'Karakuri', x: 1312, y: 150, r: 9, zone: 'west-blue', seed: 283, minor: true, note: 'Île de Vegapunk', lbl: 'down' },
+  // ── South Blue (lieux secondaires) ──
+  { name: 'Kano', x: 972, y: 760, r: 8, zone: 'south-blue', seed: 313, minor: true, lbl: 'down' },
+  { name: 'Muggy', x: 1162, y: 770, r: 8, zone: 'south-blue', seed: 317, minor: true },
+  { name: 'Torino Kingdom', x: 1300, y: 752, r: 9, zone: 'south-blue', seed: 331, minor: true, note: 'Entraînement de Chopper', lbl: 'down' },
+  // ── Paradise (lieux secondaires) ──
+  { name: 'Tequila Wolf', x: 60, y: 330, r: 8, zone: 'paradise', seed: 379, minor: true, note: 'Pont sans fin — Robin', lbl: 'up' },
+  { name: 'Twin Cape', x: 118, y: 398, r: 8, zone: 'paradise', seed: 337, minor: true, note: 'Laboon & Crocus', lbl: 'up' },
+  { name: 'Cactus', x: 128, y: 500, r: 8, zone: 'paradise', seed: 347, minor: true, lbl: 'down' },
+  { name: 'Rainbase', x: 412, y: 458, r: 7, zone: 'paradise', seed: 349, minor: true, lbl: 'down' },
+  { name: 'Boin', x: 300, y: 548, r: 8, zone: 'paradise', seed: 367, minor: true, note: 'Entraînement d’Usopp', lbl: 'down' },
+  { name: 'Kuraigana', x: 420, y: 542, r: 10, zone: 'paradise', seed: 353, minor: true, note: 'Château de Mihawk — Zoro', lbl: 'down' },
+  { name: 'Namakura', x: 492, y: 552, r: 7, zone: 'paradise', seed: 373, minor: true },
+  { name: 'Kamabakka', x: 562, y: 545, r: 9, zone: 'paradise', seed: 359, minor: true, note: 'Royaume d’Ivankov — Sanji', lbl: 'down' },
+  // ── New World (lieux secondaires) ──
+  { name: 'Sphinx', x: 850, y: 345, r: 9, zone: 'new-world', seed: 383, minor: true, note: 'Île de Barbe Blanche', lbl: 'up' },
+  { name: 'Foodvalten', x: 912, y: 342, r: 8, zone: 'new-world', seed: 389, minor: true, lbl: 'up' },
+  { name: 'Prodence', x: 980, y: 342, r: 8, zone: 'new-world', seed: 401, minor: true },
+  { name: 'Zunisha', x: 1016, y: 340, r: 7, zone: 'new-world', seed: 419, minor: true, note: 'Éléphant millénaire' },
+  { name: 'Hachinosu', x: 1066, y: 340, r: 10, zone: 'new-world', seed: 397, minor: true, note: 'Île des Pirates — Barbe Noire', lbl: 'up' },
+  { name: 'Risky Red', x: 1222, y: 345, r: 8, zone: 'new-world', seed: 409, minor: true, lbl: 'up' },
+  { name: 'Cacao', x: 1018, y: 545, r: 6, zone: 'new-world', seed: 431, minor: true, lbl: 'down' },
+  { name: 'Chocolat', x: 1086, y: 548, r: 6, zone: 'new-world', seed: 433, minor: true, lbl: 'down' },
+  { name: 'Lodestar', x: 1300, y: 470, r: 9, zone: 'new-world', seed: 421, minor: true, note: 'Dernière île avant Laugh Tale', lbl: 'down' },
 ];
