@@ -10,6 +10,7 @@
 // Ensuite : PATH="/opt/homebrew/bin:$PATH" npx tsx --env-file=.env.local scripts/seed-akasha-universes.ts
 // (upsert par slug — additif, ne touche pas aux entrées Naruto).
 import { writeFileSync, readFileSync, existsSync } from 'node:fs';
+import { applyEnrichment } from '../data/akasha-enrich.mjs';
 import { fetchAniListChars, anilistIndex } from './lib/anilist.mjs';
 import { dedupeChars } from './lib/dedup.mjs';
 import { DEDUP_ALIASES } from './lib/dedup-aliases.mjs';
@@ -1589,6 +1590,8 @@ async function main() {
     let ni = 0; for (const e of finalEntries) if (tl[e.slug] && String(tl[e.slug]).trim().length > 10) { e.attributes.descFr = String(tl[e.slug]).trim(); ni++; }
     console.log(`  ✓ ${ni} traductions VF (descFr) réinjectées`);
   } catch { /* pas encore de traductions */ }
+  // Enrichissement curé durable (lieux OP, artefacts DB, tags nen/saga/race) — cf. data/akasha-enrich.mjs.
+  { const r = applyEnrichment(finalEntries); console.log(`  ✓ enrichissement : +${r.added} entités · tags nen ${r.nen}/saga ${r.saga}/race ${r.race}`); }
   writeFileSync('data/akasha-universes.json', JSON.stringify({ entries: finalEntries, relations: ok }, null, 1));
   console.log(`✓ ${finalEntries.length} entrées, ${ok.length} relations → data/akasha-universes.json`);
   console.log('  par type:', JSON.stringify(byType));
