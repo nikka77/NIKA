@@ -1,7 +1,8 @@
 'use client';
 // components/akasha/hub/OnePieceMap.tsx — carte du monde One Piece : image officielle (op-maps) en fond
-// + calques d'infos superposés (îles cliquables, POI, routes de l'équipage/membres/navires, territoires
-// Yonko). Lecture GAUCHE→DROITE (paysage). Transform data→image : X = coord.y, Y = 2048 − coord.x.
+// + calques superposés (îles, POI, routes équipage/membres/navires, territoires Yonko). Lecture GAUCHE→DROITE.
+// Transform data→image : X = coord.y, Y = 2048 − coord.x. Recherche, filtre mer/arc, plein écran, pinch,
+// escales numérotées, rejeu du voyage, fiche enrichie (vignette + liens personnages).
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { OP_WORLD, OPW_ROUTE_LABEL, type OpwIsland, type OpwPoi } from '@/lib/akasha/op-world-map';
 
@@ -11,25 +12,34 @@ const tShape = (pts: [number, number][]) => pts.map(([x, y], i) => (i ? 'L' : 'M
 const FULL = { x: 0, y: 0, w: W, h: H };
 const MIN_W = 520, MAX_W = W;
 type View = { x: number; y: number; w: number; h: number };
-// Empêche de sortir des bords de la carte (clamp taille + position).
 const clamp = (v: View): View => {
   const w = Math.min(v.w, W), h = Math.min(v.h, H);
   return { w, h, x: Math.max(0, Math.min(v.x, W - w)), y: Math.max(0, Math.min(v.y, H - h)) };
 };
 
-function Island({ isl, on, sel, onSel, onHover }: {
-  isl: OpwIsland; on: boolean; sel: boolean; onSel: () => void; onHover: (v: boolean) => void;
+// Route de l'équipage précalculée (rejeu #10 + escales #9).
+const CREW = OP_WORLD.routes.find((r) => r.id === 'straw-hat-crew');
+const CREW_PTS: [number, number][] = CREW ? CREW.path.map(([x, y]) => T(x, y)) : [];
+const CREW_D = CREW_PTS.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+const CREW_LEN = CREW_PTS.reduce((s, p, i) => (i ? s + Math.hypot(p[0] - CREW_PTS[i - 1][0], p[1] - CREW_PTS[i - 1][1]) : 0), 0);
+const REGIONS = [...new Set(OP_WORLD.islands.map((i) => i.region))];
+const ARCS = [...new Set(OP_WORLD.islands.flatMap((i) => i.arcs))].sort();
+const registryHref = (name: string) => `/learn/akasha?universe=${encodeURIComponent('One Piece')}&search=${encodeURIComponent(name)}`;
+
+function Island({ isl, on, sel, matched, onSel, onHover }: {
+  isl: OpwIsland; on: boolean; sel: boolean; matched: boolean; onSel: () => void; onHover: (v: boolean) => void;
 }) {
   const [cx, cy] = T(isl.x, isl.y);
-  const hot = { style: { cursor: 'pointer' as const }, onPointerEnter: () => onHover(true), onPointerLeave: () => onHover(false), onClick: onSel };
+  const hi = on || sel || matched;
+  const stroke = sel ? '#F2C14E' : on ? '#FFFFFF' : matched ? '#3FBEFF' : 'none';
   return (
-    <g {...hot}>
+    <g style={{ cursor: 'pointer' }} onPointerEnter={() => onHover(true)} onPointerLeave={() => onHover(false)} onClick={onSel}>
       {isl.shape && isl.shape.length > 2
-        ? <path d={tShape(isl.shape) + 'Z'} fill="#FFE082" fillOpacity={sel ? 0.34 : on ? 0.24 : 0}
-            stroke={sel ? '#F2C14E' : on ? '#FFFFFF' : 'none'} strokeWidth={sel ? 7 : on ? 5 : 0} pointerEvents="all" />
-        : <circle cx={cx} cy={cy} r={16} fill="#FFE082" fillOpacity={sel ? 0.34 : on ? 0.24 : 0}
-            stroke={sel || on ? '#F2C14E' : 'none'} strokeWidth={sel || on ? 4 : 0} pointerEvents="all" />}
-      {(on || sel) && (
+        ? <path d={tShape(isl.shape) + 'Z'} fill={matched ? '#3FBEFF' : '#FFE082'} fillOpacity={sel ? 0.34 : on ? 0.24 : matched ? 0.2 : 0}
+            stroke={stroke} strokeWidth={sel ? 7 : hi ? 5 : 0} pointerEvents="all" />
+        : <circle cx={cx} cy={cy} r={16} fill={matched ? '#3FBEFF' : '#FFE082'} fillOpacity={sel ? 0.34 : hi ? 0.24 : 0}
+            stroke={stroke} strokeWidth={hi ? 4 : 0} pointerEvents="all" />}
+      {hi && (
         <text x={cx} y={cy - (isl.area >= 20000 ? 34 : 20)} textAnchor="middle" fontFamily="var(--fo)" fontWeight="700"
           fontSize={26} fill="#FFFFFF" stroke="#06131F" strokeWidth={6} paintOrder="stroke" style={{ pointerEvents: 'none' }}>{isl.name}</text>
       )}
@@ -39,13 +49,24 @@ function Island({ isl, on, sel, onSel, onHover }: {
 
 export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
   const svgRef = useRef<SVGSVGElement>(null);
+  const boxRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState(FULL);
   const [hover, setHover] = useState<string | null>(null);
   const [sel, setSel] = useState<{ kind: 'island' | 'poi'; id: string } | null>(null);
   const [routes, setRoutes] = useState<Set<string>>(new Set(['straw-hat-crew']));
   const [showPoi, setShowPoi] = useState(false);
-  const [showYonko, setShowYonko] = useState(false);
+  const [yonko, setYonko] = useState<Set<string>>(new Set());
+  const [query, setQuery] = useState('');
+  const [filter, setFilter] = useState<{ kind: 'region' | 'arc'; value: string } | null>(null);
+  const [showStops, setShowStops] = useState(false);
+  const [replay, setReplay] = useState(false);
+  const [replayNonce, setReplayNonce] = useState(0);
+
+  const pointers = useRef<Map<number, { x: number; y: number }>>(new Map());
   const drag = useRef<{ x: number; y: number; moved: boolean } | null>(null);
+  const pinch = useRef<{ dist: number } | null>(null);
+  const motionRef = useRef<SVGAnimateMotionElement>(null);
+  const drawRef = useRef<SVGAnimateElement>(null);
 
   const selected = useMemo(() => {
     if (!sel) return null;
@@ -54,46 +75,108 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
       : OP_WORLD.poi.find((p) => p.id === sel.id) || null;
   }, [sel]);
 
+  const matchedIds = useMemo(() => {
+    if (!filter) return null;
+    const s = new Set<string>();
+    for (const i of OP_WORLD.islands) {
+      if (filter.kind === 'region' ? i.region === filter.value : i.arcs.includes(filter.value)) s.add(i.id);
+    }
+    return s;
+  }, [filter]);
+
+  const searchResults = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (q.length < 2) return [];
+    const hit = (n: string) => n.toLowerCase().includes(q);
+    return [
+      ...OP_WORLD.islands.filter((i) => hit(i.name)).map((i) => ({ kind: 'island' as const, id: i.id, name: i.name, x: i.x, y: i.y, region: i.region })),
+      ...OP_WORLD.poi.filter((p) => hit(p.name)).map((p) => ({ kind: 'poi' as const, id: p.id, name: p.name, x: p.x, y: p.y, region: p.region })),
+    ].slice(0, 8);
+  }, [query]);
+
+  // Zoom molette (Ctrl/⌘).
   useEffect(() => {
     const el = svgRef.current;
     if (!el) return;
     const onWheel = (e: WheelEvent) => {
-      if (!(e.ctrlKey || e.metaKey)) return; // molette simple → scroll page ; Ctrl/⌘+molette → zoom
+      if (!(e.ctrlKey || e.metaKey)) return;
       e.preventDefault();
       const rect = el.getBoundingClientRect();
       const px = (e.clientX - rect.left) / rect.width, py = (e.clientY - rect.top) / rect.height;
       setView((v) => {
         const f = e.deltaY < 0 ? 0.82 : 1.22;
         const nw = Math.min(MAX_W, Math.max(MIN_W, v.w * f));
-        const k = nw / v.w, nh = v.h * k;
+        const k = nw / v.w;
         const cx = v.x + px * v.w, cy = v.y + py * v.h;
-        return clamp({ x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: nh });
+        return clamp({ x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: v.h * k });
       });
     };
     el.addEventListener('wheel', onWheel, { passive: false });
     return () => el.removeEventListener('wheel', onWheel);
   }, []);
 
-  const zoomBtn = (f: number) => setView((v) => {
-    const nw = Math.min(MAX_W, Math.max(MIN_W, v.w * f));
-    const k = nw / v.w, nh = v.h * k;
-    const cx = v.x + v.w / 2, cy = v.y + v.h / 2;
-    return clamp({ x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: nh });
+  // Rejeu du voyage (#10).
+  useEffect(() => {
+    if (!replay) return;
+    const id = requestAnimationFrame(() => { motionRef.current?.beginElement?.(); drawRef.current?.beginElement?.(); });
+    return () => cancelAnimationFrame(id);
+  }, [replay, replayNonce]);
+
+  const zoomAround = (f: number, px = 0.5, py = 0.5) => setView((v) => {
+    const nw = Math.min(MAX_W, Math.max(MIN_W, v.w * f)), k = nw / v.w;
+    const cx = v.x + px * v.w, cy = v.y + py * v.h;
+    return clamp({ x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: v.h * k });
   });
 
-  const onPointerDown = (e: React.PointerEvent) => { drag.current = { x: e.clientX, y: e.clientY, moved: false }; (e.target as Element).setPointerCapture?.(e.pointerId); };
+  const focusOn = (x: number, y: number) => {
+    const [cx, cy] = T(x, y);
+    const w = 1100, h = w / 2;
+    setView(clamp({ x: cx - w / 2, y: cy - h / 2, w, h }));
+  };
+
+  // Pointeurs : 1 = pan, 2 = pinch.
+  const svgPt = (cx: number, cy: number) => {
+    const r = svgRef.current!.getBoundingClientRect();
+    return { fx: (cx - r.left) / r.width, fy: (cy - r.top) / r.height, rw: r.width, rh: r.height };
+  };
+  const onPointerDown = (e: React.PointerEvent) => {
+    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    (e.target as Element).setPointerCapture?.(e.pointerId);
+    if (pointers.current.size === 1) drag.current = { x: e.clientX, y: e.clientY, moved: false };
+    else if (pointers.current.size === 2) { drag.current = null; const p = [...pointers.current.values()]; pinch.current = { dist: Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y) }; }
+  };
   const onPointerMove = (e: React.PointerEvent) => {
-    if (!drag.current || !svgRef.current) return;
-    const rect = svgRef.current.getBoundingClientRect();
-    const dx = (e.clientX - drag.current.x) * (view.w / rect.width);
-    const dy = (e.clientY - drag.current.y) * (view.h / rect.height);
+    if (!pointers.current.has(e.pointerId) || !svgRef.current) return;
+    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.current.size >= 2 && pinch.current) {
+      const p = [...pointers.current.values()];
+      const dist = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+      const midX = (p[0].x + p[1].x) / 2, midY = (p[0].y + p[1].y) / 2;
+      const { fx, fy } = svgPt(midX, midY);
+      const f = pinch.current.dist / (dist || 1);
+      pinch.current = { dist };
+      setView((v) => { const nw = Math.min(MAX_W, Math.max(MIN_W, v.w * f)), k = nw / v.w; const cx = v.x + fx * v.w, cy = v.y + fy * v.h; return clamp({ x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: v.h * k }); });
+      return;
+    }
+    if (!drag.current) return;
+    const { rw, rh } = svgPt(e.clientX, e.clientY);
+    const dx = (e.clientX - drag.current.x) * (view.w / rw);
+    const dy = (e.clientY - drag.current.y) * (view.h / rh);
     if (Math.abs(e.clientX - drag.current.x) + Math.abs(e.clientY - drag.current.y) > 3) drag.current.moved = true;
     drag.current = { x: e.clientX, y: e.clientY, moved: drag.current.moved };
     setView((v) => clamp({ ...v, x: v.x - dx, y: v.y - dy }));
   };
-  const onPointerUp = () => { drag.current = null; };
+  const onPointerUp = (e: React.PointerEvent) => {
+    pointers.current.delete(e.pointerId);
+    pinch.current = null;
+    if (pointers.current.size === 1) { const [p] = [...pointers.current.values()]; drag.current = { x: p.x, y: p.y, moved: true }; }
+    else if (pointers.current.size === 0) drag.current = null;
+  };
 
   const toggleRoute = (id: string) => setRoutes((s) => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
+  const toggleYonko = (id: string) => setYonko((s) => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
+  const toggleFullscreen = () => { const el = boxRef.current; if (!el) return; document.fullscreenElement ? document.exitFullscreen() : el.requestFullscreen?.(); };
+  const startReplay = () => { setRoutes((s) => new Set(s).add('straw-hat-crew')); setReplay(true); setReplayNonce((n) => n + 1); };
 
   const chip = (active: boolean, onClick: () => void, label: React.ReactNode, dot?: string, key?: string) => (
     <button key={key} onClick={onClick} style={{
@@ -113,43 +196,75 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
         🗺️ Carte du monde — {OP_WORLD.counts.islands} îles · {OP_WORLD.counts.poi} lieux · routes d’équipage · territoires Yonko
       </div>
       <p style={{ fontFamily: 'var(--fo)', fontSize: 12.5, color: 'var(--td3)', margin: '0 0 10px' }}>
-        East Blue (droite) → Grand Line → Nouveau Monde (gauche). Glisse pour explorer, boutons ou Ctrl/⌘+molette pour zoomer, clique une île pour sa fiche.
+        East Blue (droite) → Grand Line → Nouveau Monde (gauche). Glisse pour explorer, Ctrl/⌘+molette ou pincer pour zoomer, clique une île pour sa fiche.
       </p>
+
+      {/* Recherche (#1) + filtre mer/arc (#5) */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 8, alignItems: 'center' }}>
+        <div style={{ position: 'relative', flex: '1 1 220px', minWidth: 180 }}>
+          <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="🔎 Rechercher une île, un lieu…"
+            style={{ width: '100%', boxSizing: 'border-box', padding: '8px 12px', borderRadius: 10, border: '1px solid var(--bd)', background: 'var(--bg2)', color: 'var(--td)', fontFamily: 'var(--fo)', fontSize: 13 }} />
+          {searchResults.length > 0 && (
+            <div style={{ position: 'absolute', top: '100%', left: 0, right: 0, zIndex: 10, marginTop: 4, background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 10, overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.4)' }}>
+              {searchResults.map((r) => (
+                <button key={r.kind + r.id} onClick={() => { focusOn(r.x, r.y); setSel({ kind: r.kind, id: r.id }); setQuery(''); }}
+                  style={{ display: 'flex', justifyContent: 'space-between', width: '100%', gap: 8, padding: '8px 12px', border: 'none', borderBottom: '1px solid var(--bd)', background: 'transparent', color: 'var(--td)', cursor: 'pointer', fontFamily: 'var(--fo)', fontSize: 12.5, textAlign: 'left' }}>
+                  <span>{r.kind === 'poi' ? '◆ ' : ''}{r.name}</span><span style={{ color: 'var(--td3)', fontSize: 10.5 }}>{r.region}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+        <select value={filter?.kind === 'region' ? filter.value : ''} onChange={(e) => setFilter(e.target.value ? { kind: 'region', value: e.target.value } : null)}
+          style={{ padding: '8px 10px', borderRadius: 10, border: '1px solid var(--bd)', background: 'var(--bg2)', color: 'var(--td2)', fontFamily: 'var(--fo)', fontSize: 12 }}>
+          <option value="">🌊 Toutes les mers</option>
+          {REGIONS.map((r) => <option key={r} value={r}>{r}</option>)}
+        </select>
+        <select value={filter?.kind === 'arc' ? filter.value : ''} onChange={(e) => setFilter(e.target.value ? { kind: 'arc', value: e.target.value } : null)}
+          style={{ padding: '8px 10px', borderRadius: 10, border: '1px solid var(--bd)', background: 'var(--bg2)', color: 'var(--td2)', fontFamily: 'var(--fo)', fontSize: 12, maxWidth: 200 }}>
+          <option value="">📖 Tous les arcs</option>
+          {ARCS.map((a) => <option key={a} value={a}>{a}</option>)}
+        </select>
+        {filter && chip(true, () => setFilter(null), `✕ ${matchedIds?.size ?? 0} îles`, '#3FBEFF')}
+      </div>
 
       {/* Calques */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 8, alignItems: 'center' }}>
         {chip(showPoi, () => setShowPoi((v) => !v), 'POI', '#F2C14E')}
-        {chip(showYonko, () => setShowYonko((v) => !v), 'Territoires Yonko', '#E056C1')}
+        {chip(showStops, () => setShowStops((v) => !v), 'Escales n°', '#3FBE7A')}
+        {chip(replay, startReplay, '▶ Rejouer le voyage', color)}
         <span style={{ width: 1, height: 18, background: 'var(--bd)', margin: '0 2px' }} />
         {OP_WORLD.routes.map((r) => chip(routes.has(r.id), () => toggleRoute(r.id), OPW_ROUTE_LABEL[r.id] || r.character, r.color, r.id))}
-        <span style={{ width: 1, height: 18, background: 'var(--bd)', margin: '0 2px' }} />
-        {chip(false, () => setRoutes(new Set()), 'Effacer routes')}
+        {chip(false, () => setRoutes(new Set()), 'Effacer')}
+      </div>
+      {/* Territoires Yonko (#3) */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 8, alignItems: 'center' }}>
+        <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--td3)' }}>Territoires&nbsp;:</span>
+        {OP_WORLD.yonko.map((y) => chip(yonko.has(y.id), () => toggleYonko(y.id), y.yonko, y.color, y.id))}
+        {chip(yonko.size === OP_WORLD.yonko.length, () => setYonko(yonko.size === OP_WORLD.yonko.length ? new Set() : new Set(OP_WORLD.yonko.map((y) => y.id))), 'Tous')}
       </div>
 
-      <div style={{ position: 'relative', borderRadius: 16, border: '1px solid var(--bd)', background: '#0A2036', overflow: 'hidden' }}>
+      <div ref={boxRef} style={{ position: 'relative', borderRadius: 16, border: '1px solid var(--bd)', background: '#0A2036', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 10, right: 10, zIndex: 5, display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {[['+', 0.7], ['−', 1.43]].map(([t, f]) => (
-            <button key={t as string} onClick={() => zoomBtn(f as number)} aria-label={t === '+' ? 'Zoom avant' : 'Zoom arrière'}
+          {([['+', 0.7], ['−', 1.43]] as const).map(([t, f]) => (
+            <button key={t} onClick={() => zoomAround(f)} aria-label={t === '+' ? 'Zoom avant' : 'Zoom arrière'}
               style={{ width: 30, height: 30, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 17, fontWeight: 700, cursor: 'pointer' }}>{t}</button>
           ))}
           <button onClick={() => setView(FULL)} aria-label="Recentrer" style={{ width: 30, height: 30, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⤢</button>
+          <button onClick={toggleFullscreen} aria-label="Plein écran" style={{ width: 30, height: 30, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⛶</button>
         </div>
 
         <svg ref={svgRef} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} role="img"
-          aria-label="Carte du monde One Piece interactive"
-          preserveAspectRatio="xMidYMid slice"
-          onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerLeave={onPointerUp}
+          aria-label="Carte du monde One Piece interactive" preserveAspectRatio="xMidYMid slice"
+          onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp} onPointerLeave={onPointerUp}
           style={{ width: '100%', aspectRatio: '2 / 1', display: 'block', touchAction: 'none', cursor: drag.current ? 'grabbing' : 'grab' }}>
 
-          {/* Fond : carte officielle */}
           <image href="/images/akasha/op-world-bg.webp" x={0} y={0} width={W} height={H} preserveAspectRatio="none" />
 
           {/* Territoires Yonko */}
-          {showYonko && OP_WORLD.yonko.map((y) => {
+          {OP_WORLD.yonko.filter((y) => yonko.has(y.id)).map((y) => {
             const all = y.shapes.flat();
-            const cx = all.reduce((s, p) => s + p[0], 0) / all.length;
-            const cy = all.reduce((s, p) => s + p[1], 0) / all.length;
-            const [lx, ly] = T(cx, cy);
+            const [lx, ly] = T(all.reduce((s, p) => s + p[0], 0) / all.length, all.reduce((s, p) => s + p[1], 0) / all.length);
             return (
               <g key={y.id} style={{ pointerEvents: 'none' }}>
                 {y.shapes.map((sh, i) => <path key={i} d={tShape(sh) + 'Z'} fill={y.color} fillOpacity={0.16} stroke={y.color} strokeOpacity={0.7} strokeWidth={4} strokeDasharray="14 10" />)}
@@ -162,17 +277,17 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
           {OP_WORLD.routes.filter((r) => routes.has(r.id)).map((r) => (
             <g key={r.id} style={{ pointerEvents: 'none' }}>
               <path d={tShape(r.path)} fill="none" stroke={r.color} strokeOpacity={0.28} strokeWidth={14} strokeLinecap="round" strokeLinejoin="round" />
-              <path className={r.id === 'straw-hat-crew' ? 'op-flow' : undefined} d={tShape(r.path)} fill="none" stroke={r.color} strokeWidth={5} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="3 12" />
+              <path className={r.id === 'straw-hat-crew' && !replay ? 'op-flow' : undefined} d={tShape(r.path)} fill="none" stroke={r.color} strokeWidth={5} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="3 12" />
             </g>
           ))}
 
-          {/* Îles (hotspots cliquables) */}
+          {/* Îles (hotspots) */}
           {OP_WORLD.islands.map((isl) => (
-            <Island key={isl.id} isl={isl} on={hover === isl.id} sel={sel?.kind === 'island' && sel.id === isl.id}
+            <Island key={isl.id} isl={isl} on={hover === isl.id} sel={sel?.kind === 'island' && sel.id === isl.id} matched={!!matchedIds?.has(isl.id)}
               onHover={(v) => setHover(v ? isl.id : null)} onSel={() => { if (!drag.current?.moved) setSel({ kind: 'island', id: isl.id }); }} />
           ))}
 
-          {/* POI (au-dessus des îles → cliquables) */}
+          {/* POI (au-dessus → cliquables) */}
           {showPoi && OP_WORLD.poi.map((p) => {
             const [cx, cy] = T(p.x, p.y);
             return (
@@ -182,39 +297,79 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
               </g>
             );
           })}
+
+          {/* Escales numérotées (#9) */}
+          {showStops && CREW_PTS.map((p, i) => (
+            <g key={i} style={{ pointerEvents: 'none' }}>
+              <circle cx={p[0]} cy={p[1]} r={16} fill={color} stroke="#06131F" strokeWidth={2.5} />
+              <text x={p[0]} y={p[1] + 6} textAnchor="middle" fontFamily="var(--fo)" fontWeight="800" fontSize={19} fill="#FFFFFF">{i + 1}</text>
+            </g>
+          ))}
+
+          {/* Rejeu du voyage (#10) */}
+          {replay && (
+            <g style={{ pointerEvents: 'none' }}>
+              <path d={CREW_D} fill="none" stroke="#F2C14E" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={CREW_LEN} strokeDashoffset={CREW_LEN}>
+                <animate ref={drawRef} attributeName="stroke-dashoffset" from={CREW_LEN} to={0} dur="16s" begin="indefinite" fill="freeze" />
+              </path>
+              <g transform={CREW_PTS.length ? `translate(${CREW_PTS[0][0]},${CREW_PTS[0][1]})` : undefined}>
+                <circle r={22} fill="#0A1420" stroke="#F2C14E" strokeWidth={3} />
+                <text textAnchor="middle" y={9} fontSize={28}>⛵</text>
+                <animateMotion ref={motionRef} dur="16s" begin="indefinite" fill="freeze" rotate="0" path={CREW_D} />
+              </g>
+            </g>
+          )}
         </svg>
+
+        {/* Légende (#3) */}
+        <div style={{ position: 'absolute', left: 10, bottom: 10, zIndex: 5, display: 'flex', gap: 12, flexWrap: 'wrap', padding: '6px 10px', borderRadius: 10, background: 'rgba(10,20,32,0.78)', border: '1px solid var(--bd)', fontFamily: 'var(--fo)', fontSize: 10.5, color: '#DCE8F2' }}>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}><span style={{ width: 16, height: 3, background: '#F2C14E' }} /> Route</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}><span style={{ color: '#F2C14E' }}>◆</span> POI</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}><span style={{ width: 11, height: 11, border: '2px dashed #E056C1', borderRadius: 3 }} /> Territoire Yonko</span>
+        </div>
       </div>
 
-      {/* Fiche */}
+      {/* Fiche (#8 vignette + #7 liens) */}
       {selected && (
         <div style={{ marginTop: 10, border: '1px solid var(--bd)', borderRadius: 12, padding: '12px 14px', background: 'var(--su)' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
-            <div>
-              <div style={{ fontFamily: 'var(--fb)', fontSize: 20, color: 'var(--td)' }}>{selected.name}</div>
-              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 4 }}>
-                <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, padding: '2px 8px', borderRadius: 999, background: 'var(--su2)', color: 'var(--td2)' }}>{selected.region}</span>
-                {'firstAppearance' in selected && (selected as OpwIsland).firstAppearance?.chapter && (
-                  <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)' }}>Ch. {(selected as OpwIsland).firstAppearance!.chapter} · Ép. {(selected as OpwIsland).firstAppearance!.episode}</span>
-                )}
+          <div style={{ display: 'flex', gap: 12 }}>
+            {selected.image && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={selected.image} alt={selected.name} width={90} height={90} loading="lazy"
+                style={{ width: 90, height: 90, objectFit: 'cover', borderRadius: 10, border: '1px solid var(--bd)', flexShrink: 0 }} />
+            )}
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
+                <div>
+                  <div style={{ fontFamily: 'var(--fb)', fontSize: 20, color: 'var(--td)' }}>{selected.name}</div>
+                  <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 4 }}>
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, padding: '2px 8px', borderRadius: 999, background: 'var(--su2)', color: 'var(--td2)' }}>{selected.region}</span>
+                    {'firstAppearance' in selected && (selected as OpwIsland).firstAppearance?.chapter && (
+                      <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)' }}>Ch. {(selected as OpwIsland).firstAppearance!.chapter} · Ép. {(selected as OpwIsland).firstAppearance!.episode}</span>
+                    )}
+                  </div>
+                </div>
+                <button onClick={() => setSel(null)} aria-label="Fermer" style={{ border: 'none', background: 'transparent', color: 'var(--td3)', fontSize: 18, cursor: 'pointer', lineHeight: 1 }}>✕</button>
               </div>
+              {selected.description && <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)', margin: '8px 0 0', lineHeight: 1.5 }}>{selected.description}</p>}
+              {selected.visitedBy?.length > 0 && (
+                <div style={{ marginTop: 8 }}>
+                  <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: 4 }}>Fréquenté par</div>
+                  <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
+                    {selected.visitedBy.slice(0, 14).map((v) => (
+                      <a key={v} href={registryHref(v)} style={{ fontFamily: 'var(--fo)', fontSize: 10.5, padding: '2px 7px', borderRadius: 999, border: '1px solid var(--bd)', color: 'var(--td2)', textDecoration: 'none' }}>{v}</a>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
-            <button onClick={() => setSel(null)} aria-label="Fermer" style={{ border: 'none', background: 'transparent', color: 'var(--td3)', fontSize: 18, cursor: 'pointer', lineHeight: 1 }}>✕</button>
           </div>
-          {selected.description && <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)', margin: '8px 0 0', lineHeight: 1.5 }}>{selected.description}</p>}
-          {selected.visitedBy?.length > 0 && (
-            <div style={{ marginTop: 8 }}>
-              <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: 4 }}>Fréquenté par</div>
-              <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
-                {selected.visitedBy.slice(0, 12).map((v) => <span key={v} style={{ fontFamily: 'var(--fo)', fontSize: 10.5, padding: '2px 7px', borderRadius: 999, border: '1px solid var(--bd)', color: 'var(--td2)' }}>{v}</span>)}
-              </div>
-            </div>
-          )}
         </div>
       )}
 
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 8, fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>
-        <span>🖱️ Glisser = déplacer · Ctrl/⌘ + molette = zoom · boutons +/−</span>
-        <span>Fond & données : op-maps.com</span>
+        <span>🖱️ Glisser = déplacer · Ctrl/⌘ + molette / pincer = zoom · ⛶ plein écran</span>
+        <span>Fond &amp; données : op-maps.com</span>
       </div>
     </div>
   );

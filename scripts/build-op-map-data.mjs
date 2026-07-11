@@ -36,13 +36,14 @@ const islands = raw.islands.map((i) => {
     visitedBy: i.visitedBy || [],
     arcs: i.arcs || [],
     description: i.description || '',
+    image: i.image || null,
   };
 });
 
 const poi = raw.poi.map((p) => {
   const [x, y] = p.coordinates;
   acc(x, y);
-  return { id: p.id, name: p.name, x, y, region: p.region, visitedBy: p.visitedBy || [], description: p.description || '' };
+  return { id: p.id, name: p.name, x, y, region: p.region, visitedBy: p.visitedBy || [], description: p.description || '', image: p.image || null };
 });
 
 const routes = raw.routes.map((r) => ({

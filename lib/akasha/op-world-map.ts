@@ -7,9 +7,9 @@ export interface OpwFirst { saga?: string; chapter?: number; episode?: number }
 export interface OpwIsland {
   id: string; name: string; x: number; y: number; region: string;
   shape: [number, number][] | null; area: number; major: boolean;
-  firstAppearance: OpwFirst | null; visitedBy: string[]; arcs: string[]; description: string;
+  firstAppearance: OpwFirst | null; visitedBy: string[]; arcs: string[]; description: string; image: string | null;
 }
-export interface OpwPoi { id: string; name: string; x: number; y: number; region: string; visitedBy: string[]; description: string }
+export interface OpwPoi { id: string; name: string; x: number; y: number; region: string; visitedBy: string[]; description: string; image: string | null }
 export interface OpwRoute { id: string; character: string; crew: string; color: string; description: string; path: [number, number][] }
 export interface OpwYonko { id: string; name: string; yonko: string; color: string; description: string; shapes: [number, number][][] }
 export interface OpWorld {
