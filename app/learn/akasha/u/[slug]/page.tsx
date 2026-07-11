@@ -145,7 +145,7 @@ export default async function UniverseHubPage({ params }: Props) {
           <h1 style={{ margin: 0, lineHeight: 0.88 }}>
             {universeWordmark(taxo.name)
               // eslint-disable-next-line @next/next/no-img-element
-              ? <img src={universeWordmark(taxo.name)!} alt={taxo.name} style={{ height: 'clamp(58px,11vw,120px)', width: 'auto', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.55))' }} />
+              ? <img src={universeWordmark(taxo.name)!} alt={taxo.name} style={{ height: 'clamp(58px,11vw,120px)', width: 'auto', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 0 6px rgba(255,255,255,0.22)) drop-shadow(0 4px 14px rgba(0,0,0,0.5))' }} />
               : <span style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(44px,9vw,96px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)' }}>{taxo.name}</span>}
           </h1>
           <p style={{ fontFamily: 'var(--fo)', fontSize: 'clamp(13.5px,1.5vw,16px)', color: 'var(--td2)', maxWidth: 520, lineHeight: 1.65, margin: '0.9rem 0 1.3rem' }}>
@@ -270,27 +270,27 @@ export default async function UniverseHubPage({ params }: Props) {
                 const href = `/learn/akasha/u/${taxo.slug}/${axis.attr}/${encodeURIComponent(c.v)}`;
                 // Boutons-médaillon pour les axes clan/village/rang/génération Naruto (emblèmes canon + icônes Higgsfield).
                 const emblem = taxo.slug === 'naruto' && axis.attr === 'clan'
-                  ? <ClanCrest slug={c.v} name={c.label} size={48} />
+                  ? <ClanCrest slug={c.v} name={c.label} size={40} />
                   : taxo.slug === 'naruto' && axis.attr === 'village'
-                  ? <VillageEmblem slug={c.v.toLowerCase()} size={48} />
+                  ? <VillageEmblem slug={c.v.toLowerCase()} size={40} />
                   : taxo.slug === 'naruto' && axis.attr === 'rank'
-                  ? <RankBadge value={c.v} size={48} />
+                  ? <RankBadge value={c.v} size={40} />
                   : taxo.slug === 'naruto' && axis.attr === 'generation'
-                  ? <GenerationBadge value={c.v} size={48} />
+                  ? <GenerationBadge value={c.v} size={40} />
                   : taxo.slug === 'one-piece'
-                  ? opAxisIcon(axis.attr, c.v, 48)
+                  ? opAxisIcon(axis.attr, c.v, 40)
                   : taxo.slug === 'dragon-ball'
-                  ? dbAxisIcon(axis.attr, c.v, 48)
+                  ? dbAxisIcon(axis.attr, c.v, 40)
                   : ['bleach', 'hunter-x-hunter', 'jojo', 'initial-d', 'death-note'].includes(taxo.slug)
-                  ? moreAxisIcon(taxo.slug, axis.attr, c.v, 48)
+                  ? moreAxisIcon(taxo.slug, axis.attr, c.v, 40)
                   : null;
                 if (emblem) {
                   return (
                     <Link key={c.v} href={href} className="ak-tab" title={c.label}
-                      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, textDecoration: 'none', fontFamily: 'var(--fo)', width: 96, padding: '13px 8px 10px', borderRadius: 15, border: `1px solid ${tint}44`, background: `${tint}12` }}>
-                      <span style={{ height: 48, display: 'flex', alignItems: 'center', filter: 'drop-shadow(0 2px 7px rgba(0,0,0,0.5))' }}>{emblem}</span>
-                      <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--td)', textAlign: 'center', lineHeight: 1.1 }}>{c.label}</span>
-                      <span style={{ fontSize: 10, fontWeight: 800, color: tint, background: `${tint}1F`, borderRadius: 20, padding: '1px 7px' }}>{c.count}</span>
+                      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, textDecoration: 'none', fontFamily: 'var(--fo)', width: 76, padding: '8px 5px 6px', borderRadius: 11, border: `1px solid ${tint}44`, background: `${tint}12` }}>
+                      <span style={{ height: 40, display: 'flex', alignItems: 'center', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.5))' }}>{emblem}</span>
+                      <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--td)', textAlign: 'center', lineHeight: 1.08 }}>{c.label}</span>
+                      <span style={{ fontSize: 9, fontWeight: 800, color: tint, background: `${tint}1F`, borderRadius: 20, padding: '0 5px' }}>{c.count}</span>
                     </Link>
                   );
                 }
