@@ -32,10 +32,19 @@ const out = COUNTRIES.map((c) => ({
   shapes: c.idx.map((i) => green[i]).filter(Boolean),
 }));
 
-// 4) Villages mineurs à ninjas (Oto/Ame) + marqueurs — positions SVG à ajuster visuellement.
+// 4) Villages mineurs à ninjas (cliquables → page village). Positions = marqueurs réels du SVG.
 const VILLAGES = [
-  { key: 'otogakure', village: 'Otogakure', name: 'Oto', land: 'Pays du Son', emblem: 'oto', x: 700, y: 388, great: false },
-  { key: 'amegakure', village: 'Amegakure', name: 'Ame', land: 'Pays de la Pluie', emblem: 'ame', x: 545, y: 350, great: false },
+  { key: 'otogakure', village: 'Otogakure', name: 'Oto', land: 'Pays du Son', emblem: 'oto', x: 693, y: 388, great: false },
+  { key: 'amegakure', village: 'Amegakure', name: 'Ame', land: 'Pays de la Pluie', emblem: 'ame', x: 411, y: 548, great: false },
+];
+
+// 5) Repères lore (villages/lieux sans données ninja) — label au survol, non cliquables. Positions = marqueurs SVG.
+const LANDMARKS = [
+  { key: 'kusagakure', name: 'Kusa', full: 'Kusagakure', land: "Pays de l'Herbe", x: 523, y: 354 },
+  { key: 'takigakure', name: 'Taki', full: 'Takigakure', land: 'Pays de la Cascade', x: 760, y: 392 },
+  { key: 'shimogakure', name: 'Shimo', full: 'Shimogakure', land: 'Pays du Givre', x: 838, y: 357 },
+  { key: 'uzushiogakure', name: 'Uzushio', full: 'Uzushiogakure', land: 'Pays des Tourbillons', x: 951, y: 630 },
+  { key: 'tanigakure', name: 'Tani', full: 'Tanigakure', land: 'Pays de la Rivière', x: 521, y: 719 },
 ];
 
 const banner = `// lib/akasha/naruto-world.ts — carte du monde shinobi : fond SVG canon + hotspots pays/villages.
@@ -44,8 +53,10 @@ const banner = `// lib/akasha/naruto-world.ts — carte du monde shinobi : fond 
 export const NARUTO_MAP = { w: 1500, h: 882, bg: '/images/akasha/naruto/world-map.svg' } as const;
 export interface NwCountry { key: string; land: string; kanji: string; village: string; villageName: string; emblem: string; color: string; cx: number; cy: number; shapes: string[] }
 export interface NwVillage { key: string; village: string; name: string; land: string; emblem: string; x: number; y: number; great: boolean }
+export interface NwLandmark { key: string; name: string; full: string; land: string; x: number; y: number }
 export const NW_COUNTRIES: NwCountry[] = ${JSON.stringify(out, null, 1)};
 export const NW_VILLAGES: NwVillage[] = ${JSON.stringify(VILLAGES, null, 1)};
+export const NW_LANDMARKS: NwLandmark[] = ${JSON.stringify(LANDMARKS, null, 1)};
 `;
 fs.writeFileSync('lib/akasha/naruto-world.ts', banner);
 console.log('✓ lib/akasha/naruto-world.ts —', out.map((c) => `${c.villageName}:${c.shapes.length}sh`).join(' '));

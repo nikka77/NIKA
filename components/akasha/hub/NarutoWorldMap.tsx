@@ -4,7 +4,7 @@
 // Formes extraites du SVG (scripts/build-naruto-world.mjs), même espace 1500×882 → transform identité.
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { NARUTO_MAP, NW_COUNTRIES, NW_VILLAGES } from '@/lib/akasha/naruto-world';
+import { NARUTO_MAP, NW_COUNTRIES, NW_VILLAGES, NW_LANDMARKS } from '@/lib/akasha/naruto-world';
 
 const W = NARUTO_MAP.w, H = NARUTO_MAP.h;
 const FULL = { x: 0, y: 0, w: W, h: H };
@@ -111,6 +111,22 @@ export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }
               <g key={v.key} style={{ cursor: 'pointer' }} onPointerEnter={() => setHover(v.key)} onPointerLeave={() => setHover(null)} onClick={() => go(v.village)}>
                 <circle cx={v.x} cy={v.y} r={on ? 18 : 12} fill={color} stroke="#1A2230" strokeWidth={3} />
                 {on && <text x={v.x} y={v.y - 22} textAnchor="middle" fontFamily="var(--fo)" fontWeight="800" fontSize={24} fill="#FFFFFF" stroke="#1A2230" strokeWidth={6} paintOrder="stroke" style={{ pointerEvents: 'none' }}>{v.name}</text>}
+              </g>
+            );
+          })}
+
+          {/* Repères lore (villages sans data ninja) — label au survol, non cliquables */}
+          {NW_LANDMARKS.map((l) => {
+            const on = hover === l.key;
+            return (
+              <g key={l.key} onPointerEnter={() => setHover(l.key)} onPointerLeave={() => setHover(null)} style={{ cursor: 'help' }}>
+                <circle cx={l.x} cy={l.y} r={on ? 13 : 8} fill="#EAF2F8" fillOpacity={0.55} stroke="#1A2230" strokeWidth={2.5} pointerEvents="all" />
+                {on && (
+                  <g style={{ pointerEvents: 'none' }}>
+                    <text x={l.x} y={l.y - 20} textAnchor="middle" fontFamily="var(--fo)" fontWeight="800" fontSize={22} fill="#FFFFFF" stroke="#1A2230" strokeWidth={6} paintOrder="stroke">{l.full}</text>
+                    <text x={l.x} y={l.y - 40} textAnchor="middle" fontFamily="var(--fo)" fontWeight="700" fontSize={15} fill="#CBD8E6" stroke="#1A2230" strokeWidth={4} paintOrder="stroke">{l.land}</text>
+                  </g>
+                )}
               </g>
             );
           })}

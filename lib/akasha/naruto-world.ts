@@ -4,6 +4,7 @@
 export const NARUTO_MAP = { w: 1500, h: 882, bg: '/images/akasha/naruto/world-map.svg' } as const;
 export interface NwCountry { key: string; land: string; kanji: string; village: string; villageName: string; emblem: string; color: string; cx: number; cy: number; shapes: string[] }
 export interface NwVillage { key: string; village: string; name: string; land: string; emblem: string; x: number; y: number; great: boolean }
+export interface NwLandmark { key: string; name: string; full: string; land: string; x: number; y: number }
 export const NW_COUNTRIES: NwCountry[] = [
  {
   "key": "fire",
@@ -89,7 +90,7 @@ export const NW_VILLAGES: NwVillage[] = [
   "name": "Oto",
   "land": "Pays du Son",
   "emblem": "oto",
-  "x": 700,
+  "x": 693,
   "y": 388,
   "great": false
  },
@@ -99,8 +100,50 @@ export const NW_VILLAGES: NwVillage[] = [
   "name": "Ame",
   "land": "Pays de la Pluie",
   "emblem": "ame",
-  "x": 545,
-  "y": 350,
+  "x": 411,
+  "y": 548,
   "great": false
+ }
+];
+export const NW_LANDMARKS: NwLandmark[] = [
+ {
+  "key": "kusagakure",
+  "name": "Kusa",
+  "full": "Kusagakure",
+  "land": "Pays de l'Herbe",
+  "x": 523,
+  "y": 354
+ },
+ {
+  "key": "takigakure",
+  "name": "Taki",
+  "full": "Takigakure",
+  "land": "Pays de la Cascade",
+  "x": 760,
+  "y": 392
+ },
+ {
+  "key": "shimogakure",
+  "name": "Shimo",
+  "full": "Shimogakure",
+  "land": "Pays du Givre",
+  "x": 838,
+  "y": 357
+ },
+ {
+  "key": "uzushiogakure",
+  "name": "Uzushio",
+  "full": "Uzushiogakure",
+  "land": "Pays des Tourbillons",
+  "x": 951,
+  "y": 630
+ },
+ {
+  "key": "tanigakure",
+  "name": "Tani",
+  "full": "Tanigakure",
+  "land": "Pays de la Rivière",
+  "x": 521,
+  "y": 719
  }
 ];
