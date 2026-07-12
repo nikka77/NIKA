@@ -16,6 +16,7 @@ const PAIRS: [string, string][] = [
   ['kusanagi', 'sabre-de-kusanagi'],
   ['bankai', 'atk-bl-bankai'],
   ['garlic-junior', 'garlic-jr'],
+  ['mary-geoise', 'mary-geoise-op'],
 ];
 
 async function mergeOne(keepSlug: string, dropSlug: string) {
