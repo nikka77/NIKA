@@ -4,6 +4,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { listBounties } from '@/lib/akasha/queries';
 
+export const revalidate = 3600; // ISR 1 h
+
 export const metadata: Metadata = {
   title: 'Most Wanted — les primes de One Piece | AKASHA · NIKA LEARN',
   description:

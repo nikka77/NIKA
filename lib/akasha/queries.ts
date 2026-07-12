@@ -341,8 +341,9 @@ export async function universeInsights(universe: string): Promise<UniverseInsigh
 }
 
 /** Index léger d'un univers (slug, nom, type) pour la recherche instantanée client du hub.
- *  Borné à `cap` entrées (les plus rares d'abord via l'ordre de rareté implicite du seed). */
-export async function listUniverseIndex(universe: string, cap = 2500): Promise<{ s: string; n: string; t: AkashaType }[]> {
+ *  Borné à `cap` entrées, triées par nom pour un ordre stable (le plus gros univers, Naruto,
+ *  en compte 3319 — cap volontairement large pour ne jamais tronquer un univers réel). */
+export async function listUniverseIndex(universe: string, cap = 6000): Promise<{ s: string; n: string; t: AkashaType }[]> {
   const supabase = await createClient();
   if (!supabase) return [];
   const out: { s: string; n: string; t: AkashaType }[] = [];
@@ -352,6 +353,7 @@ export async function listUniverseIndex(universe: string, cap = 2500): Promise<{
       .from('akasha_entries')
       .select('slug, name, type')
       .eq('universe', universe)
+      .order('name', { ascending: true })
       .range(from, Math.min(from + PAGE, cap) - 1);
     const rows = (data as { slug: string; name: string; type: AkashaType }[] | null) ?? [];
     for (const r of rows) out.push({ s: r.slug, n: r.name, t: r.type });

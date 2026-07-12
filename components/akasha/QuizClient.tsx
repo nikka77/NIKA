@@ -84,7 +84,7 @@ export default function QuizClient({ pool, daySeed }: { pool: QuizEntry[]; daySe
         « {q.target.clue} »
       </blockquote>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 8 }}>
+      <div className="g-auto-140" style={{ gap: 8 }}>
         {q.options.map((o) => {
           const isTarget = o.slug === q.target.slug;
           const chosen = picked === o.slug;

@@ -74,13 +74,13 @@ export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }
         <div style={{ position: 'absolute', top: 10, right: 10, zIndex: 5, display: 'flex', flexDirection: 'column', gap: 4 }}>
           {([['+', 0.7], ['−', 1.43]] as const).map(([t, f]) => (
             <button key={t} onClick={() => zoomBtn(f)} aria-label={t === '+' ? 'Zoom avant' : 'Zoom arrière'}
-              style={{ width: 30, height: 30, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(20,28,40,0.8)', color: '#EAF2F8', fontSize: 17, fontWeight: 700, cursor: 'pointer' }}>{t}</button>
+              style={{ width: 44, height: 44, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(20,28,40,0.8)', color: '#EAF2F8', fontSize: 17, fontWeight: 700, cursor: 'pointer' }}>{t}</button>
           ))}
-          <button onClick={() => setView(FULL)} aria-label="Recentrer" style={{ width: 30, height: 30, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(20,28,40,0.8)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⤢</button>
+          <button onClick={() => setView(FULL)} aria-label="Recentrer" style={{ width: 44, height: 44, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(20,28,40,0.8)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⤢</button>
         </div>
 
-        <svg ref={svgRef} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} role="img"
-          aria-label="Carte du continent shinobi" preserveAspectRatio="xMidYMid slice"
+        <svg ref={svgRef} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} role="application"
+          aria-label="Carte du continent shinobi — pays et villages navigables au clavier" preserveAspectRatio="xMidYMid slice"
           onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerLeave={onPointerUp}
           style={{ width: '100%', aspectRatio: `${W} / ${H}`, display: 'block', touchAction: 'none', cursor: drag.current ? 'grabbing' : 'grab' }}>
 
@@ -90,7 +90,9 @@ export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }
           {NW_COUNTRIES.map((c) => {
             const on = hover === c.key;
             return (
-              <g key={c.key} style={{ cursor: 'pointer' }} onPointerEnter={() => setHover(c.key)} onPointerLeave={() => setHover(null)} onClick={() => go(c.village)}>
+              <g key={c.key} style={{ cursor: 'pointer', outline: 'none' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={`${c.villageName} — ${c.land}`}
+                onPointerEnter={() => setHover(c.key)} onPointerLeave={() => setHover(null)} onFocus={() => setHover(c.key)} onBlur={() => setHover(null)}
+                onClick={() => go(c.village)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(c.village); } }}>
                 {c.shapes.map((d, i) => (
                   <path key={i} d={d} fill={c.color} fillOpacity={on ? 0.34 : 0} stroke={on ? '#FFFFFF' : 'none'} strokeWidth={on ? 4 : 0} pointerEvents="all" />
                 ))}
@@ -108,7 +110,9 @@ export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }
           {NW_VILLAGES.map((v) => {
             const on = hover === v.key;
             return (
-              <g key={v.key} style={{ cursor: 'pointer' }} onPointerEnter={() => setHover(v.key)} onPointerLeave={() => setHover(null)} onClick={() => go(v.village)}>
+              <g key={v.key} style={{ cursor: 'pointer', outline: 'none' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={v.name}
+                onPointerEnter={() => setHover(v.key)} onPointerLeave={() => setHover(null)} onFocus={() => setHover(v.key)} onBlur={() => setHover(null)}
+                onClick={() => go(v.village)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(v.village); } }}>
                 <circle cx={v.x} cy={v.y} r={on ? 18 : 12} fill={color} stroke="#1A2230" strokeWidth={3} />
                 {on && <text x={v.x} y={v.y - 22} textAnchor="middle" fontFamily="var(--fo)" fontWeight="800" fontSize={24} fill="#FFFFFF" stroke="#1A2230" strokeWidth={6} paintOrder="stroke" style={{ pointerEvents: 'none' }}>{v.name}</text>}
               </g>
@@ -119,7 +123,8 @@ export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }
           {NW_LANDMARKS.map((l) => {
             const on = hover === l.key;
             return (
-              <g key={l.key} onPointerEnter={() => setHover(l.key)} onPointerLeave={() => setHover(null)} style={{ cursor: 'help' }}>
+              <g key={l.key} style={{ cursor: 'help', outline: 'none' }} className="ak-svg-focusable" tabIndex={0} aria-label={`${l.full} — ${l.land}`}
+                onPointerEnter={() => setHover(l.key)} onPointerLeave={() => setHover(null)} onFocus={() => setHover(l.key)} onBlur={() => setHover(null)}>
                 <circle cx={l.x} cy={l.y} r={on ? 13 : 8} fill="#EAF2F8" fillOpacity={0.55} stroke="#1A2230" strokeWidth={2.5} pointerEvents="all" />
                 {on && (
                   <g style={{ pointerEvents: 'none' }}>

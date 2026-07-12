@@ -17,9 +17,14 @@ export default function DatabookRadar({ stats, color = '#7B5CF0', size = 188, co
   const data = poly((i) => (R * Math.max(0, Math.min(MAX, stats[AXES[i].key] ?? 0))) / MAX);
   const cmp = compare ? poly((i) => (R * Math.max(0, Math.min(MAX, compare[AXES[i].key] ?? 0))) / MAX) : null;
   const total = AXES.reduce((s, a) => s + (stats[a.key] ?? 0), 0);
+  const axisLabel = (a: typeof AXES[number]) => labels?.[a.key] ?? a.label;
+  const desc = AXES.map((a) => `${axisLabel(a)} ${stats[a.key] ?? 0}/5`).join(', ');
+  const ariaLabel = compare
+    ? `Statistiques databook, comparaison : ${desc} — contre ${AXES.map((a) => `${axisLabel(a)} ${compare[a.key] ?? 0}/5`).join(', ')}. Total ${total}/40.`
+    : `Statistiques databook : ${desc}. Total ${total}/40.`;
 
   return (
-    <svg viewBox={`0 0 ${size} ${size}`} width="100%" height="100%" role="img" aria-label="Statistiques databook" style={{ display: 'block' }}>
+    <svg viewBox={`0 0 ${size} ${size}`} width="100%" height="100%" role="img" aria-label={ariaLabel} style={{ display: 'block' }}>
       {/* anneaux 1..5 */}
       {[1, 2, 3, 4, 5].map((lvl) => (
         <polygon key={lvl} points={poly(() => (R * lvl) / MAX)} fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth={1} />

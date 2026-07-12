@@ -6,6 +6,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { SITE_URL } from '@/lib/site';
 import { listEntries, listAxisCounts } from '@/lib/akasha/queries';
 import { taxonomyBySlug, hubVisual, axisValueLabel, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { universeMeta } from '@/lib/akasha/types';
@@ -45,6 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${label} — ${r.axisDef.label} de ${r.taxo.name} | AKASHA`,
     description: `Tous les ${r.axisDef.label.toLowerCase()} « ${label} » de l'univers ${r.taxo.name} dans le registre AKASHA, classés par popularité.`,
+    alternates: { canonical: `${SITE_URL}/learn/akasha/u/${r.slug}/${r.axisDef.attr}/${encodeURIComponent(r.val)}` },
   };
 }
 

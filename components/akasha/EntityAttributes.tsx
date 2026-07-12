@@ -111,7 +111,7 @@ export default function EntityAttributes({
                   fontWeight: 700,
                   letterSpacing: '0.04em',
                   textTransform: 'uppercase',
-                  color: 'var(--td3)',
+                  color: 'var(--td2)',
                   width: 130,
                   flexShrink: 0,
                 }}

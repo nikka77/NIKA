@@ -217,6 +217,9 @@ ul { list-style: none; }
   box-shadow: 0 6px 18px rgba(0,0,0,0.07);
 }
 
+/* Hotspots SVG (cartes AKASHA) navigables au clavier — anneau de focus visible. */
+.ak-svg-focusable:focus-visible { outline: 3px solid #FFD54A; outline-offset: 2px; }
+
 /* ===== RESPONSIVE GRID CLASSES ===== */
 .g-2 { display: grid; grid-template-columns: repeat(2, 1fr); }
 .g-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
@@ -228,6 +231,11 @@ ul { list-style: none; }
 .g-footer { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; }
 .g-listing { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; }
 .g-fill-80 { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+.g-fill-86 { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); }
+.g-fill-150 { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.g-auto-140 { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.g-auto-150 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.g-auto-300 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
 /* ===== MOBILE-FIRST : repli automatique des grilles (app-ready) ===== */
 @media (max-width: 768px) {

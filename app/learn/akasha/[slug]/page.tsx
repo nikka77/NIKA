@@ -16,6 +16,8 @@ import PlaceView from '@/components/akasha/PlaceView';
 import VisitTracker from '@/components/akasha/hub/VisitTracker';
 import Crumbs from '@/components/akasha/Crumbs';
 
+export const revalidate = 3600; // ISR 1 h — page la plus visitée du domaine, tournait sans cache
+
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -113,7 +115,7 @@ export default async function AkashaEntryPage({ params }: Props) {
           {users.length > 0 && (
             <section>
               <h2 className="akasha-section-title">Maîtrisée par · {users.length}</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 10 }}>
+              <div className="g-fill-150" style={{ gap: 10 }}>
                 {users.map((r) => (
                   <Link key={r.id} href={`/learn/akasha/${r.target.slug}`} className="dom-card" style={{ display: 'flex', alignItems: 'center', gap: 9, textDecoration: 'none', background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 11, padding: '7px 9px' }}>
                     <span style={{ position: 'relative', width: 36, height: 36, borderRadius: 9, overflow: 'hidden', flexShrink: 0, background: `${accent}22`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

@@ -41,6 +41,11 @@ export default function HubSearch({ index, universe, color }: { index: Item[]; u
         aria-label={`Rechercher dans ${universe}`}
         style={{ width: '100%', fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td)', background: 'var(--bg2)', border: `1px solid ${q ? color : 'var(--bd2)'}`, borderRadius: 11, padding: '11px 14px', outline: 'none' }}
       />
+      {q.trim().length >= 2 && results.length === 0 && (
+        <div role="status" style={{ position: 'absolute', top: '100%', left: 0, right: 0, marginTop: 6, background: 'var(--bg2)', border: '1px solid var(--bd2)', borderRadius: 12, padding: '12px 14px', zIndex: 20, boxShadow: '0 16px 40px -18px rgba(0,0,0,0.8)', fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)' }}>
+          Aucun résultat pour « {q.trim()} » dans {universe}.
+        </div>
+      )}
       {results.length > 0 && (
         <div role="listbox" style={{ position: 'absolute', top: '100%', left: 0, right: 0, marginTop: 6, background: 'var(--bg2)', border: '1px solid var(--bd2)', borderRadius: 12, overflow: 'hidden', zIndex: 20, boxShadow: '0 16px 40px -18px rgba(0,0,0,0.8)' }}>
           {results.map((it, i) => {

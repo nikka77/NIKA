@@ -78,7 +78,7 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
     }
   };
   const onPointerUp = (e: React.PointerEvent) => { ptrs.current.delete(e.pointerId); if (ptrs.current.size === 0) panStart.current = null; };
-  const toggleFs = () => { const el = boxRef.current; if (!el) return; if (document.fullscreenElement) document.exitFullscreen(); else el.requestFullscreen?.(); };
+  const toggleFs = () => { const el = boxRef.current; if (!el) return; if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); else el.requestFullscreen?.()?.catch(() => {}); };
 
   const enterU = (u: CosmosUniverse) => { if (gest.current?.moved) return; setEnteredU(u); setSel(null); reset(); };
   const exitU = () => { setEnteredU(null); setSel(null); reset(); };
@@ -213,18 +213,24 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
               )}
             </div>
 
-            {/* Bouton retour (dans une galaxie) */}
-            {enteredU && (
-              <button onClick={exitU} style={{ position: 'absolute', left: 10, top: 10, zIndex: 10, display: 'flex', alignItems: 'center', gap: 5, padding: '5px 11px', borderRadius: 999, cursor: 'pointer', border: '1px solid rgba(255,255,255,0.2)', background: 'rgba(10,8,24,0.72)', color: '#fff', fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, backdropFilter: 'blur(4px)' }}>← Multivers</button>
-            )}
+          </div>
 
-            {/* Contrôles */}
-            <div style={{ position: 'absolute', right: 10, bottom: 10, display: 'flex', flexDirection: 'column', gap: 6, zIndex: 10 }}>
-              {[{ k: 'fs', t: '⛶', f: toggleFs }, { k: '+', t: '＋', f: () => applyZoom(zoom * 1.3) }, { k: '-', t: '－', f: () => applyZoom(zoom / 1.3) }, { k: 'r', t: '⟲', f: reset }].map((b) => (
-                <button key={b.k} onClick={b.f} aria-label={b.k} style={{ width: 30, height: 30, borderRadius: 8, cursor: 'pointer', border: '1px solid rgba(255,255,255,0.18)', background: 'rgba(10,8,24,0.7)', color: '#fff', fontSize: 14, fontWeight: 700, backdropFilter: 'blur(4px)' }}>{b.t}</button>
+          {/* Barre d'outils SOUS la carte (pas en overlay) — aucun risque de recouvrir une planète/galaxie */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', marginTop: 10 }}>
+            {enteredU && (
+              <button onClick={exitU} style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '10px 14px', borderRadius: 999, cursor: 'pointer', border: '1px solid var(--bd)', background: 'var(--bg2)', color: 'var(--td)', fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700 }}>← Multivers</button>
+            )}
+            <div style={{ display: 'flex', gap: 6, marginLeft: enteredU ? 'auto' : 0 }}>
+              {[
+                { k: 'fs', t: '⛶', label: 'Plein écran', f: toggleFs },
+                { k: '+', t: '＋', label: 'Zoom avant', f: () => applyZoom(zoom * 1.3) },
+                { k: '-', t: '－', label: 'Zoom arrière', f: () => applyZoom(zoom / 1.3) },
+                { k: 'r', t: '⟲', label: 'Réinitialiser le zoom', f: reset },
+              ].map((b) => (
+                <button key={b.k} onClick={b.f} aria-label={b.label} title={b.label} style={{ width: 44, height: 44, borderRadius: 10, cursor: 'pointer', border: '1px solid var(--bd)', background: 'var(--bg2)', color: 'var(--td)', fontSize: 16, fontWeight: 700 }}>{b.t}</button>
               ))}
             </div>
-            {zoom > 1 && <div style={{ position: 'absolute', left: 10, bottom: 10, zIndex: 10, fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, color: 'rgba(255,255,255,0.75)', background: 'rgba(10,8,24,0.6)', borderRadius: 6, padding: '2px 8px' }}>×{zoom.toFixed(1)}</div>}
+            {zoom > 1 && <span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: 'var(--td3)' }}>×{zoom.toFixed(1)}</span>}
           </div>
 
           {/* Panneau détail de la galaxie explorée : hiérarchie + [fiche planète] + personnages */}

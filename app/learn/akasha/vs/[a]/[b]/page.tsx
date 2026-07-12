@@ -82,10 +82,10 @@ export default async function VersusPage({ params }: Props) {
           {ea.name} <span style={{ color: '#E8623A' }}>vs</span> {eb.name}
         </h1>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: 10, alignItems: 'center', marginBottom: '1.8rem' }}>
-          <Fighter e={ea} side="a" />
-          <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 'clamp(22px,6vw,34px)', color: 'var(--td3)' }}>VS</div>
-          <Fighter e={eb} side="b" />
+        <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: '1.8rem' }}>
+          <div style={{ flex: 1, minWidth: 0 }}><Fighter e={ea} side="a" /></div>
+          <div style={{ flex: '0 0 auto', fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 'clamp(22px,6vw,34px)', color: 'var(--td3)' }}>VS</div>
+          <div style={{ flex: 1, minWidth: 0 }}><Fighter e={eb} side="b" /></div>
         </div>
 
         <div style={{ background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 14, padding: '0.8rem 1.1rem' }}>

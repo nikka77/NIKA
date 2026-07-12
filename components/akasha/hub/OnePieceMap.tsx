@@ -33,7 +33,9 @@ function Island({ isl, on, sel, matched, onSel, onHover }: {
   const hi = on || sel || matched;
   const stroke = sel ? '#F2C14E' : on ? '#FFFFFF' : matched ? '#3FBEFF' : 'none';
   return (
-    <g style={{ cursor: 'pointer' }} onPointerEnter={() => onHover(true)} onPointerLeave={() => onHover(false)} onClick={onSel}>
+    <g style={{ cursor: 'pointer', outline: 'none' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={isl.name}
+      onPointerEnter={() => onHover(true)} onPointerLeave={() => onHover(false)} onFocus={() => onHover(true)} onBlur={() => onHover(false)}
+      onClick={onSel} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSel(); } }}>
       {isl.shape && isl.shape.length > 2
         ? <path d={tShape(isl.shape) + 'Z'} fill={matched ? '#3FBEFF' : '#FFE082'} fillOpacity={sel ? 0.34 : on ? 0.24 : matched ? 0.2 : 0}
             stroke={stroke} strokeWidth={sel ? 7 : hi ? 5 : 0} pointerEvents="all" />
@@ -175,7 +177,7 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
 
   const toggleRoute = (id: string) => setRoutes((s) => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
   const toggleYonko = (id: string) => setYonko((s) => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
-  const toggleFullscreen = () => { const el = boxRef.current; if (!el) return; document.fullscreenElement ? document.exitFullscreen() : el.requestFullscreen?.(); };
+  const toggleFullscreen = () => { const el = boxRef.current; if (!el) return; document.fullscreenElement ? document.exitFullscreen().catch(() => {}) : el.requestFullscreen?.()?.catch(() => {}); };
   const startReplay = () => { setRoutes((s) => new Set(s).add('straw-hat-crew')); setReplay(true); setReplayNonce((n) => n + 1); };
 
   const chip = (active: boolean, onClick: () => void, label: React.ReactNode, dot?: string, key?: string) => (
@@ -248,14 +250,14 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
         <div style={{ position: 'absolute', top: 10, right: 10, zIndex: 5, display: 'flex', flexDirection: 'column', gap: 4 }}>
           {([['+', 0.7], ['−', 1.43]] as const).map(([t, f]) => (
             <button key={t} onClick={() => zoomAround(f)} aria-label={t === '+' ? 'Zoom avant' : 'Zoom arrière'}
-              style={{ width: 30, height: 30, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 17, fontWeight: 700, cursor: 'pointer' }}>{t}</button>
+              style={{ width: 44, height: 44, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 17, fontWeight: 700, cursor: 'pointer' }}>{t}</button>
           ))}
-          <button onClick={() => setView(FULL)} aria-label="Recentrer" style={{ width: 30, height: 30, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⤢</button>
-          <button onClick={toggleFullscreen} aria-label="Plein écran" style={{ width: 30, height: 30, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⛶</button>
+          <button onClick={() => setView(FULL)} aria-label="Recentrer" style={{ width: 44, height: 44, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⤢</button>
+          <button onClick={toggleFullscreen} aria-label="Plein écran" style={{ width: 44, height: 44, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⛶</button>
         </div>
 
-        <svg ref={svgRef} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} role="img"
-          aria-label="Carte du monde One Piece interactive" preserveAspectRatio="xMidYMid slice"
+        <svg ref={svgRef} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} role="application"
+          aria-label="Carte du monde One Piece interactive — îles et points d'intérêt navigables au clavier" preserveAspectRatio="xMidYMid slice"
           onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp} onPointerLeave={onPointerUp}
           style={{ width: '100%', aspectRatio: '2 / 1', display: 'block', touchAction: 'none', cursor: drag.current ? 'grabbing' : 'grab' }}>
 
@@ -291,7 +293,10 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
           {showPoi && OP_WORLD.poi.map((p) => {
             const [cx, cy] = T(p.x, p.y);
             return (
-              <g key={p.id} style={{ cursor: 'pointer' }} onPointerEnter={() => setHover(p.id)} onPointerLeave={() => setHover(null)} onClick={() => { if (!drag.current?.moved) setSel({ kind: 'poi', id: p.id }); }}>
+              <g key={p.id} style={{ cursor: 'pointer', outline: 'none' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={p.name}
+                onPointerEnter={() => setHover(p.id)} onPointerLeave={() => setHover(null)} onFocus={() => setHover(p.id)} onBlur={() => setHover(null)}
+                onClick={() => { if (!drag.current?.moved) setSel({ kind: 'poi', id: p.id }); }}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSel({ kind: 'poi', id: p.id }); } }}>
                 <path d={`M${cx},${cy - 11} L${cx + 9},${cy} L${cx},${cy + 11} L${cx - 9},${cy} Z`} fill="#F2C14E" stroke="#06131F" strokeWidth={2} />
                 {hover === p.id && <text x={cx} y={cy - 16} textAnchor="middle" fontFamily="var(--fo)" fontWeight="700" fontSize={22} fill="#FDE9B0" stroke="#06131F" strokeWidth={5} paintOrder="stroke" style={{ pointerEvents: 'none' }}>{p.name}</text>}
               </g>

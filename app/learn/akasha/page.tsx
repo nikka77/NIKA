@@ -2,9 +2,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import DomainHero from '@/components/DomainHero';
+import { SITE_URL } from '@/lib/site';
 import { getDailyCard, listCategoryCounts, listEntries, listFamilyCounts, listUniverseCounts } from '@/lib/akasha/queries';
 import { asAkashaType, RARITY_META, TYPE_META, universeMeta } from '@/lib/akasha/types';
-import { ALLOWED_FILTER_ATTRS, axisValueLabel, universeHubSlug } from '@/lib/akasha/universe-taxonomy';
+import { ALLOWED_FILTER_ATTRS, axisValueLabel, taxonomyByName, universeHubSlug } from '@/lib/akasha/universe-taxonomy';
 import DailyCard from '@/components/akasha/DailyCard';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import AkashaFilters from '@/components/akasha/AkashaFilters';
@@ -18,16 +19,35 @@ import OmniSearch from '@/components/akasha/OmniSearch';
 import { registryHref } from '@/lib/akasha/href';
 import { listTopByAttr } from '@/lib/akasha/queries';
 
-export const metadata: Metadata = {
-  title: 'AKASHA — Le registre de tout ce qui existe | NIKA LEARN',
-  description:
-    'Akasha : le registre universel NIKA. Personnages, lieux, artefacts, métiers, statuts, pouvoirs et compétences — réels ou imaginés, reliés entre eux.',
-  keywords: ['akasha', 'registre', 'lore', 'wiki', 'personnages', 'univers', 'NIKA learn'],
-};
-
-const ACCENT = '#7B5CF0';
+export const revalidate = 3600; // ISR 1 h — était rendu dynamiquement à chaque requête sans cache
 
 type SearchParams = { type?: string; universe?: string; cat?: string; fam?: string; attr?: string; val?: string; search?: string; rarity?: string; sort?: string; page?: string };
+
+// Le filtre ?universe=&attr=&val= duplique EXACTEMENT le contenu de la page d'axe dédiée
+// (/learn/akasha/u/[slug]/[axis]/[value], qui a son propre generateMetadata) → canonical vers
+// elle plutôt que de laisser 108+ combinaisons de query-string partager le même <title> statique.
+export async function generateMetadata({ searchParams }: { searchParams?: Promise<SearchParams> }): Promise<Metadata> {
+  const base: Metadata = {
+    title: 'AKASHA — Le registre de tout ce qui existe | NIKA LEARN',
+    description:
+      'Akasha : le registre universel NIKA. Personnages, lieux, artefacts, métiers, statuts, pouvoirs et compétences — réels ou imaginés, reliés entre eux.',
+    keywords: ['akasha', 'registre', 'lore', 'wiki', 'personnages', 'univers', 'NIKA learn'],
+    alternates: { canonical: `${SITE_URL}/learn/akasha` },
+  };
+  const sp = (await searchParams) ?? {};
+  const universe = (sp.universe ?? '').trim();
+  const attr = (sp.attr ?? '').trim();
+  const val = (sp.val ?? '').trim();
+  if (universe && attr && val && ALLOWED_FILTER_ATTRS.has(attr)) {
+    const taxo = taxonomyByName(universe);
+    if (taxo?.axes.some((a) => a.attr === attr)) {
+      return { ...base, alternates: { canonical: `${SITE_URL}/learn/akasha/u/${taxo.slug}/${attr}/${encodeURIComponent(val)}` } };
+    }
+  }
+  return base;
+}
+
+const ACCENT = '#7B5CF0';
 
 // Toutes les URLs passent par le builder CENTRAL registryHref (lib/akasha/href) — Refonte L3.
 function pageHref(target: number, type: string | undefined, search: string, universe?: string, cat?: string, fam?: string, attr?: string, val?: string, rarity?: string, sort?: string): string {
@@ -213,7 +233,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
         <CollectionStrip />
 
         {/* Destinations (L5/L7) : album, records, vitrines de collection. */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 8, marginBottom: '1.4rem' }}>
+        <div className="g-auto-150" style={{ gap: 8, marginBottom: '1.4rem' }}>
           {([
             { href: '/learn/akasha/album', icon: '🗂', label: 'L’Album', sub: '20 sets à compléter', tint: '#D4A017' },
             { href: '/learn/akasha/tops', icon: '🏆', label: 'Les Records', sub: 'Classements cross-univers', tint: '#E8623A' },
@@ -230,7 +250,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
 
         {/* Duel du jour + quiz (L8) — le rendez-vous quotidien. */}
         {isRoot && (duel || true) && (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 8, marginBottom: '1.4rem' }}>
+          <div className="g-auto-150" style={{ gap: 8, marginBottom: '1.4rem' }}>
             {duel && (
               <Link href={`/learn/akasha/vs/${duel.a}/${duel.b}`} className="dom-card" style={{ textDecoration: 'none', background: 'linear-gradient(120deg, rgba(232,98,58,0.12), var(--bg2))', border: '1px solid rgba(232,98,58,0.45)', borderRadius: 12, padding: '0.7rem 0.9rem', display: 'flex', flexDirection: 'column', gap: 2 }}>
                 <span style={{ fontSize: 16 }} aria-hidden>⚔️</span>

@@ -12,15 +12,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const out: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/learn/akasha`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
     { url: `${SITE_URL}/learn/akasha/wanted`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${SITE_URL}/learn/akasha/album`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${SITE_URL}/learn/akasha/tops`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${SITE_URL}/learn/akasha/quiz`, lastModified: now, changeFrequency: 'weekly', priority: 0.5 },
+    { url: `${SITE_URL}/learn/akasha/c/fruits-du-demon`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${SITE_URL}/learn/akasha/c/armurerie-meito`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
   ];
 
-  // Hubs + axes long-tail (?universe=&attr=&val=) — les pages de niche les plus partageables.
+  // Hubs + axes long-tail — page DÉDIÉE (a un vrai generateMetadata + canonical), pas la version
+  // query-string du registre qui duplique le même contenu sans title/description propres.
   for (const u of UNIVERSE_TAXONOMY) {
     out.push({ url: `${SITE_URL}/learn/akasha/u/${u.slug}`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 });
     for (const axis of u.axes) {
       for (const val of axis.values) {
-        const p = new URLSearchParams({ universe: u.name, attr: axis.attr, val: val.v });
-        out.push({ url: `${SITE_URL}/learn/akasha?${p.toString()}`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 });
+        out.push({ url: `${SITE_URL}/learn/akasha/u/${u.slug}/${axis.attr}/${encodeURIComponent(val.v)}`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 });
       }
     }
   }

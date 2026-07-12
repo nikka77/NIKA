@@ -31,7 +31,7 @@ export default function Crumbs({ universe, category, name }: { universe?: string
         <span key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
           {i > 0 && <span aria-hidden style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>›</span>}
           {it.href ? (
-            <Link href={it.href} style={{ fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, letterSpacing: '0.04em', textTransform: i === 0 ? 'uppercase' : 'none', color: 'var(--td3)', textDecoration: 'none' }}>
+            <Link href={it.href} style={{ fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, letterSpacing: '0.04em', textTransform: i === 0 ? 'uppercase' : 'none', color: 'var(--td2)', textDecoration: 'none' }}>
               {i === 0 ? '← ' : ''}{it.label}
             </Link>
           ) : (

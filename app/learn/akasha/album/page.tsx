@@ -7,6 +7,8 @@ import { AKASHA_SETS } from '@/lib/akasha/sets';
 import { getEntriesBySlugs } from '@/lib/akasha/queries';
 import AlbumClient, { type AlbumSetData } from '@/components/akasha/AlbumClient';
 
+export const revalidate = 3600; // ISR 1 h
+
 export const metadata: Metadata = {
   title: 'Album de collection — AKASHA | NIKA LEARN',
   description: 'Complète les sets canon d’AKASHA : Équipe 7, Chapeau de Paille, Gotei 13, Espada, lignée Joestar… Collectionne les cartes en explorant le registre.',

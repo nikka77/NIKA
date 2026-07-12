@@ -46,7 +46,7 @@ export default async function TopsPage() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 1050, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.2rem) 1.4rem clamp(3rem,7vw,5rem)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.4rem', alignItems: 'start' }}>
+      <div className="g-auto-300" style={{ maxWidth: 1050, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.2rem) 1.4rem clamp(3rem,7vw,5rem)', gap: '2.4rem', alignItems: 'start' }}>
         <Leaderboard title="Les plus populaires" icon="⭐" accent="#E8623A" rows={popRows} />
         <Leaderboard title="Les plus grosses primes" icon="🏴‍☠️" accent="#D4A017" rows={bountyRows} />
         <Leaderboard title="Les colosses" icon="📏" accent="#0094D4" rows={tallRows} />

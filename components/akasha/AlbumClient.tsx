@@ -80,7 +80,7 @@ export default function AlbumClient({ sets }: { sets: AlbumSetData[] }) {
                       <div style={{ width: `${pct}%`, height: '100%', borderRadius: 4, background: `linear-gradient(90deg, ${um.color}, ${um.color}88)`, transition: 'width 0.5s ease' }} />
                     </div>
                     {/* slots */}
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(86px, 1fr))', gap: 8 }}>
+                    <div className="g-fill-86" style={{ gap: 8 }}>
                       {set.entries.map((e) => {
                         const has = mounted && owned.has(e.slug);
                         return has ? (

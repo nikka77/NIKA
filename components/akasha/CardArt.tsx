@@ -82,7 +82,7 @@ export default function CardArt({
 
       {/* sélecteur de formes déplacé HORS de la carte → onglets au-dessus (voir CharacterView / FormTabs) */}
       {forms[sel]?.caption && (
-        <div style={{ textAlign: 'center', marginTop: 8, fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', fontStyle: 'italic' }}>{forms[sel].caption}</div>
+        <div style={{ textAlign: 'center', marginTop: 8, fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td2)', fontStyle: 'italic' }}>{forms[sel].caption}</div>
       )}
     </div>
   );

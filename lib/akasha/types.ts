@@ -99,7 +99,6 @@ export const UNIVERSE_META: { name: string; emoji: string; color: string }[] = [
   { name: "JoJo's Bizarre Adventure",  emoji: 'ゴ',  color: '#8E44AD' },
   { name: 'Initial D',                 emoji: '🏁', color: '#0094D4' },
   { name: 'Death Note',                emoji: '📓', color: '#8A8F98' },
-  { name: 'Histoire / réel',           emoji: '🏛️', color: '#D4A017' },
 ];
 
 export function universeMeta(name: string): { name: string; emoji: string; color: string } {

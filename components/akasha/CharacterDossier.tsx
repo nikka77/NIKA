@@ -76,7 +76,7 @@ function MovesetSection({ atkRels }: { atkRels: { id: string; target: { slug: st
     <div>
       {sigs.length > 0 && (
         <Sec title={`Attaques signature · ${sigs.length}`} accent="#E8623A" icon="techniques">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 8 }}>
+          <div className="g-fill-150" style={{ gap: 8 }}>
             {sigs.map((r) => (
               <Link key={r.id} href={`/learn/akasha/${r.target.slug}`} style={{ position: 'relative', display: 'block', textDecoration: 'none', padding: '0.7rem 0.8rem', borderRadius: 11, background: 'linear-gradient(135deg, rgba(232,98,58,0.16), rgba(232,98,58,0.04))', border: '1px solid rgba(232,98,58,0.5)', overflow: 'hidden' }}>
                 <span aria-hidden style={{ position: 'absolute', top: 6, right: 8, fontSize: 11 }}>⭐</span>
@@ -430,7 +430,7 @@ function FamilyTree({ family, selfName, selfSlug, color }: { family: Fam[]; self
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: hasTree ? 16 : 0 }}>
           {others.map((f, i) => (
             <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--fo)', fontSize: 13 }}>
-              <span style={{ fontSize: 9.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--td3)', minWidth: 78 }}>{familyLabel(f.rel)}</span>
+              <span style={{ fontSize: 9.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--td2)', minWidth: 78 }}>{familyLabel(f.rel)}</span>
               {f.slug ? (
                 <Link href={`/learn/akasha/${f.slug}`} style={{ color, textDecoration: 'none', fontWeight: 600 }}>{f.name}</Link>
               ) : (
@@ -696,7 +696,7 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                   {squad.members.map((mb, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--fo)', fontSize: 13 }}>
-                      <span style={{ fontSize: 9.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--td3)', minWidth: 84 }}>{mb.rel}</span>
+                      <span style={{ fontSize: 9.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--td2)', minWidth: 84 }}>{mb.rel}</span>
                       {mb.slug ? (
                         <Link href={`/learn/akasha/${mb.slug}`} style={{ color: '#0094D4', textDecoration: 'none', fontWeight: 600 }}>{mb.name}</Link>
                       ) : (
@@ -796,13 +796,13 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                   {voiceActors.jp && voiceActors.jp.length > 0 && (
                     <div style={{ display: 'flex', gap: 8, fontFamily: 'var(--fo)', fontSize: 13 }}>
-                      <span style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--td3)', minWidth: 78 }}>Japonais</span>
+                      <span style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--td2)', minWidth: 78 }}>Japonais</span>
                       <span style={{ color: 'var(--td2)' }}>{voiceActors.jp.join(' · ')}</span>
                     </div>
                   )}
                   {voiceActors.en && voiceActors.en.length > 0 && (
                     <div style={{ display: 'flex', gap: 8, fontFamily: 'var(--fo)', fontSize: 13 }}>
-                      <span style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--td3)', minWidth: 78 }}>Anglais</span>
+                      <span style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--td2)', minWidth: 78 }}>Anglais</span>
                       <span style={{ color: 'var(--td2)' }}>{voiceActors.en.join(' · ')}</span>
                     </div>
                   )}
