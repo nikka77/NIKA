@@ -19,7 +19,7 @@ const villageHref = (village: string) => `/learn/akasha/u/naruto/village/${encod
 export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }) {
   const svgRef = useRef<SVGSVGElement>(null);
   const router = useRouter();
-  const [view, setView] = useState(FULL);
+  const [view, setView] = useState<View>(FULL);
   const [hover, setHover] = useState<string | null>(null);
   const drag = useRef<{ x: number; y: number; moved: boolean } | null>(null);
 
