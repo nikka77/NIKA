@@ -122,7 +122,7 @@ export default function Moveset2D({ slug, aura = null, caption }: { slug: string
 
   useEffect(() => {
     if (!cfg) return;
-    ['idle', 'idle2', 'walk1', 'walk2', 'walk3', 'walk4', 'walk5', 'walk6', 'run1', 'run2', 'run3', 'run4', 'run5', 'run6', 'crouch', 'jump', 'punch_a', 'punch_b', 'kick_a', 'kick_b', 'kick_c', 'guard', 'chakra', 'taunt'].forEach((f) => { const im = new Image(); im.src = `${cfg.dir}/${f}.png${ASSET_V}`; });
+    ['idle', 'idle2', 'walk1', 'walk2', 'walk3', 'walk4', 'walk5', 'walk6', 'run1', 'run2', 'run3', 'run4', 'run5', 'run6', 'crouch', 'jump', 'punch_a', 'punch_b', 'kick_a', 'kick_b', 'kick_c', 'guard', 'chakra', 'taunt'].forEach((f) => { const im = new Image(); im.src = `${cfg.dir}/${f}.webp${ASSET_V}`; });
   }, [cfg]);
 
   useEffect(() => {
@@ -216,7 +216,7 @@ export default function Moveset2D({ slug, aura = null, caption }: { slug: string
       if (label !== s.label && labelRef.current) { labelRef.current.textContent = `★ ${label}`; s.label = label; }
 
       const screenTx = s.posX + ff.tx;
-      const src = `${cfg.dir}/${ff.frame}.png${ASSET_V}`;
+      const src = `${cfg.dir}/${ff.frame}.webp${ASSET_V}`;
       if (imgRef.current && imgRef.current.getAttribute('src') !== src) imgRef.current.setAttribute('src', src);
       if (actorRef.current) actorRef.current.style.transform = `translate(${screenTx.toFixed(2)}%, ${ff.ty.toFixed(2)}%) scale(${ff.sx.toFixed(3)}, ${ff.sy.toFixed(3)})`;
       if (ghostRef.current) { ghostRef.current.style.opacity = String(ff.ghost * 0.3); if (ff.ghost > 0 && ghostRef.current.getAttribute('src') !== src) ghostRef.current.setAttribute('src', src); }
@@ -305,9 +305,9 @@ export default function Moveset2D({ slug, aura = null, caption }: { slug: string
             <div ref={auraRef} aria-hidden style={{ position: 'absolute', left: '50%', top: '50%', width: '85%', height: '85%', transform: 'translate(-50%,-50%)', opacity: 0, pointerEvents: 'none', background: 'radial-gradient(circle, rgba(255,150,30,0.6) 0%, rgba(255,110,10,0.28) 40%, transparent 68%)' }} />
             <div ref={speedRef} aria-hidden style={{ position: 'absolute', left: '24%', right: '6%', top: '34%', height: '18%', opacity: 0, pointerEvents: 'none', background: 'repeating-linear-gradient(0deg, rgba(205,232,255,0.55) 0 1px, transparent 1px 11px)', WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 35%, #000 80%, transparent)', maskImage: 'linear-gradient(90deg, transparent, #000 35%, #000 80%, transparent)' }} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img ref={ghostRef} src={`${cfg.dir}/idle.png${ASSET_V}`} alt="" aria-hidden style={{ ...imgStyle, opacity: 0, transform: 'translate(-6%, 0)' }} />
+            <img ref={ghostRef} src={`${cfg.dir}/idle.webp${ASSET_V}`} alt="" aria-hidden style={{ ...imgStyle, opacity: 0, transform: 'translate(-6%, 0)' }} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img ref={imgRef} src={`${cfg.dir}/idle.png${ASSET_V}`} alt="Naruto" style={imgStyle} />
+            <img ref={imgRef} src={`${cfg.dir}/idle.webp${ASSET_V}`} alt="Naruto" style={imgStyle} />
             <div ref={dustRef} aria-hidden style={{ position: 'absolute', left: '40%', bottom: '5%', width: '24%', height: '11%', transform: 'scale(0.5)', transformOrigin: 'center bottom', opacity: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse at 50% 100%, rgba(220,210,190,0.7) 0%, rgba(200,190,170,0.25) 45%, transparent 70%)' }} />
           </div>
         </div>
