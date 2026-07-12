@@ -156,7 +156,7 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
                     const nP = planetsOf(u.num).length;
                     const numBadge = <span aria-hidden style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 'clamp(13px,2.3vw,21px)', color: '#fff', textShadow: '0 1px 5px #000, 0 0 10px #000' }}>{u.num}</span>;
                     return (
-                      <div key={u.slug} style={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: '15%', transform: 'translate(-50%,-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 2 }}>
+                      <div key={u.slug} style={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: '13%', transform: 'translate(-50%,-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: Math.round(100 - y) }}>
                         <div className="ak-orb" style={{ position: 'relative', width: '100%', aspectRatio: '1/1', animation: `ak-floaty ${6 + (i % 4)}s ease-in-out ${(i * 0.6).toFixed(1)}s infinite` }}>
                           <span aria-hidden style={{ position: 'absolute', inset: '-26%', borderRadius: '50%', background: `radial-gradient(circle, ${urc}40, transparent 66%)`, filter: 'blur(5px)', pointerEvents: 'none' }} />
                           {nP > 0 ? (
