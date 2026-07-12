@@ -107,6 +107,14 @@ export const NW_VILLAGES: NwVillage[] = [
 ];
 export const NW_LANDMARKS: NwLandmark[] = [
  {
+  "key": "ishigakure",
+  "name": "Ishi",
+  "full": "Ishigakure",
+  "land": "Pays de la Pierre",
+  "x": 287,
+  "y": 509
+ },
+ {
   "key": "kusagakure",
   "name": "Kusa",
   "full": "Kusagakure",
@@ -145,5 +153,13 @@ export const NW_LANDMARKS: NwLandmark[] = [
   "land": "Pays de la Rivière",
   "x": 521,
   "y": 719
+ },
+ {
+  "key": "tanzaku",
+  "name": "Tanzaku",
+  "full": "Ville de Tanzaku",
+  "land": "Pays du Feu",
+  "x": 591,
+  "y": 589
  }
 ];

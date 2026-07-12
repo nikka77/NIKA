@@ -38,13 +38,16 @@ const VILLAGES = [
   { key: 'amegakure', village: 'Amegakure', name: 'Ame', land: 'Pays de la Pluie', emblem: 'ame', x: 411, y: 548, great: false },
 ];
 
-// 5) Repères lore (villages/lieux sans données ninja) — label au survol, non cliquables. Positions = marqueurs SVG.
+// 5) Repères lore (villages/lieux sans données ninja) — label au survol, non cliquables.
+// Positions = marqueurs SVG réels, identifiés par emblème/kanji (zoom du SVG).
 const LANDMARKS = [
-  { key: 'kusagakure', name: 'Kusa', full: 'Kusagakure', land: "Pays de l'Herbe", x: 523, y: 354 },
+  { key: 'ishigakure', name: 'Ishi', full: 'Ishigakure', land: 'Pays de la Pierre', x: 287, y: 509 },   // kanji 石
+  { key: 'kusagakure', name: 'Kusa', full: 'Kusagakure', land: "Pays de l'Herbe", x: 523, y: 354 },      // près du pont Kannabi
   { key: 'takigakure', name: 'Taki', full: 'Takigakure', land: 'Pays de la Cascade', x: 760, y: 392 },
-  { key: 'shimogakure', name: 'Shimo', full: 'Shimogakure', land: 'Pays du Givre', x: 838, y: 357 },
-  { key: 'uzushiogakure', name: 'Uzushio', full: 'Uzushiogakure', land: 'Pays des Tourbillons', x: 951, y: 630 },
-  { key: 'tanigakure', name: 'Tani', full: 'Tanigakure', land: 'Pays de la Rivière', x: 521, y: 719 },
+  { key: 'shimogakure', name: 'Shimo', full: 'Shimogakure', land: 'Pays du Givre', x: 838, y: 357 },     // kanji 霜
+  { key: 'uzushiogakure', name: 'Uzushio', full: 'Uzushiogakure', land: 'Pays des Tourbillons', x: 951, y: 630 }, // spirale 元・渦
+  { key: 'tanigakure', name: 'Tani', full: 'Tanigakure', land: 'Pays de la Rivière', x: 521, y: 719 },   // 谷川
+  { key: 'tanzaku', name: 'Tanzaku', full: 'Ville de Tanzaku', land: 'Pays du Feu', x: 591, y: 589 },    // 短冊街
 ];
 
 const banner = `// lib/akasha/naruto-world.ts — carte du monde shinobi : fond SVG canon + hotspots pays/villages.
