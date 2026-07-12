@@ -97,9 +97,29 @@ export const AKASHA_SETS: AkashaSet[] = [
     id: 'kira-enquete', title: 'L’affaire Kira', icon: '📓', universe: 'Death Note',
     slugs: ['light-yagami', 'l-lawliet', 'misa-amane', 'ryuk', 'rem', 'near', 'mello', 'soichiro-yagami'],
   },
+  {
+    id: 'task-force', title: 'La Task Force japonaise', icon: '🕵️', universe: 'Death Note',
+    slugs: ['touta-matsuda', 'shuichi-aizawa', 'hirokazu-ukita', 'kanzo-mogi', 'hideki-ide'],
+  },
+  {
+    id: 'shinigami', title: 'Les Shinigami', icon: '💀', universe: 'Death Note',
+    slugs: ['ryuk', 'rem', 'armonia-justin-beyondormason', 'shidoh', 'jealous', 'gook'],
+  },
+  {
+    id: 'wammys-house', title: 'Les héritiers de Wammy’s House', icon: '🏠', universe: 'Death Note',
+    slugs: ['near', 'mello', 'mail-jeevas', 'roger-ruvie', 'watari'],
+  },
   // ── Initial D ──
   {
     id: 'akina-speedstars', title: 'Les pilotes du Mont Akina', icon: '🏁', universe: 'Initial D',
     slugs: ['takumi-fujiwara', 'bunta-fujiwara', 'itsuki-takeuchi', 'koichiro-iketani', 'keisuke-takahashi', 'ryosuke-takahashi'],
+  },
+  {
+    id: 'redsuns', title: 'Les RedSuns du Mont Akagi', icon: '🌅', universe: 'Initial D',
+    slugs: ['keisuke-takahashi', 'kyoichi-sudo', 'takeshi-nakazato'],
+  },
+  {
+    id: 'duo-fc-sud', title: 'Le duo du FC Sud', icon: '🌸', universe: 'Initial D',
+    slugs: ['mako-sato', 'sayuki'],
   },
 ];

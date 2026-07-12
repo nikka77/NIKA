@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { listTopByAttr } from '@/lib/akasha/queries';
 import { flavorText } from '@/lib/akasha/flavor';
+import { UNIVERSE_META } from '@/lib/akasha/types';
 import QuizClient, { type QuizEntry } from '@/components/akasha/QuizClient';
 
 export const revalidate = 3600;
@@ -24,16 +25,23 @@ function maskName(text: string, name: string): string {
 }
 
 export default async function QuizPage() {
-  // Pool : ~80 persos les plus populaires (bio VF + image requises pour un bon quiz).
-  const top = await listTopByAttr('favorites', { limit: 120 });
-  const pool: QuizEntry[] = top
-    .filter((e) => e.image_url && e.descFr)
-    .map((e) => {
-      const flav = flavorText(e.descFr, 200);
-      return flav ? { slug: e.slug, name: e.name, universe: e.universe, image_url: e.image_url, clue: maskName(flav, e.name) } : null;
-    })
-    .filter((x): x is QuizEntry => !!x)
-    .slice(0, 80);
+  // Pool : 10 persos les plus populaires PAR UNIVERS (bio VF + image requises pour un bon quiz).
+  // Représentation garantie par univers plutôt qu'un top favorites global — sinon Naruto/One Piece
+  // écrasent les petits univers (Initial D, Death Note) qui n'apparaîtraient quasi jamais.
+  const perUniverse = await Promise.all(
+    UNIVERSE_META.map((u) => listTopByAttr('favorites', { universe: u.name, limit: 20 })),
+  );
+  const pool: QuizEntry[] = perUniverse
+    .flatMap((entries) =>
+      entries
+        .filter((e) => e.image_url && e.descFr)
+        .map((e) => {
+          const flav = flavorText(e.descFr, 200);
+          return flav ? { slug: e.slug, name: e.name, universe: e.universe, image_url: e.image_url, clue: maskName(flav, e.name) } : null;
+        })
+        .filter((x): x is QuizEntry => !!x)
+        .slice(0, 10),
+    );
 
   // Seed jour (nombre) déterministe.
   const today = new Date().toISOString().slice(0, 10);
