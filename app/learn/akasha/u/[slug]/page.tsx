@@ -57,7 +57,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = `${taxo.tagline} Explore les ${total} entrées de ${taxo.name} dans le registre AKASHA : ${axesFr}, personnages légendaires et collections.`;
   const url = `${SITE_URL}/learn/akasha/u/${taxo.slug}`;
   return {
-    metadataBase: new URL(SITE_URL),
     title,
     description,
     alternates: { canonical: url },

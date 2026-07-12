@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { getEntryBySlug } from '@/lib/akasha/queries';
 import { RARITY_META, universeMeta, type AkashaEntryDetail } from '@/lib/akasha/types';
 import { getCuratedDuels } from '@/lib/akasha/curated-duels';
+import { SITE_URL } from '@/lib/site';
 
 export const revalidate = 3600;
 
@@ -25,7 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { a, b } = await params;
   const [ea, eb] = await Promise.all([getEntryBySlug(a), getEntryBySlug(b)]);
   if (!ea || !eb) return { title: 'Comparateur — AKASHA' };
-  return { title: `${ea.name} vs ${eb.name} — Comparateur AKASHA`, description: `Qui l'emporte ? ${ea.name} face à ${eb.name} : popularité, prime, gabarit, arsenal comparés dans le registre AKASHA.` };
+  return {
+    title: `${ea.name} vs ${eb.name} — Comparateur AKASHA`,
+    description: `Qui l'emporte ? ${ea.name} face à ${eb.name} : popularité, prime, gabarit, arsenal comparés dans le registre AKASHA.`,
+    alternates: { canonical: `${SITE_URL}/learn/akasha/vs/${a}/${b}` },
+  };
 }
 
 function Fighter({ e, side }: { e: AkashaEntryDetail; side: 'a' | 'b' }) {

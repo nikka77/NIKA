@@ -6,6 +6,7 @@ import { getEntryBySlug, listSimilar, popularityRank } from '@/lib/akasha/querie
 import { TYPE_META, RARITY_META, universeMeta, type AkashaType } from '@/lib/akasha/types';
 import { flavorExcerpt } from '@/lib/akasha/flavor';
 import { universeHubSlug } from '@/lib/akasha/universe-taxonomy';
+import { SITE_URL } from '@/lib/site';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import EntityBadge from '@/components/akasha/EntityBadge';
 import EntityAttributes from '@/components/akasha/EntityAttributes';
@@ -29,12 +30,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // traduites — bien mieux que le summary générique (« Personnage secondaire de… »).
   const descFr = typeof (entry.attributes as Record<string, unknown>).descFr === 'string'
     ? ((entry.attributes as Record<string, unknown>).descFr as string) : null;
+  // Le summary générique (« Personnage secondaire de One Piece — Marine. ») se répète à l'identique
+  // sur des centaines de fiches du même type/univers → méta description dupliquée aux yeux de Google.
+  // Préfixer par le NOM (toujours unique) garantit une description distincte par fiche même sans descFr.
   return {
     title: `${entry.name} — ${m.label} | AKASHA`,
     description:
       flavorExcerpt(descFr, 155) ??
-      entry.summary ??
+      (entry.summary ? `${entry.name} — ${entry.summary}` : null) ??
       `${entry.name}, ${m.label.toLowerCase()} du registre AKASHA${entry.universe ? ` (${entry.universe})` : ''}.`,
+    alternates: { canonical: `${SITE_URL}/learn/akasha/${entry.slug}` },
   };
 }
 

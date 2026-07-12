@@ -8,6 +8,7 @@ import { listCollectionEntries } from '@/lib/akasha/queries';
 import { universeMeta, type AkashaEntryCard } from '@/lib/akasha/types';
 import { hubVisual, universeHubSlug } from '@/lib/akasha/universe-taxonomy';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
+import { SITE_URL } from '@/lib/site';
 
 export const revalidate = 3600;
 
@@ -18,9 +19,14 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const c = showcaseBySlug((await params).slug);
+  const { slug } = await params;
+  const c = showcaseBySlug(slug);
   if (!c) return { title: 'Collection introuvable — AKASHA' };
-  return { title: `${c.title} — ${c.universe} | AKASHA`, description: c.tagline };
+  return {
+    title: `${c.title} — ${c.universe} | AKASHA`,
+    description: c.tagline,
+    alternates: { canonical: `${SITE_URL}/learn/akasha/c/${slug}` },
+  };
 }
 
 export default async function CollectionShowcasePage({ params }: Props) {

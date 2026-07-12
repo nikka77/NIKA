@@ -6,8 +6,10 @@ import Footer from '@/components/Footer';
 import MapOverlay, { FloatMapBtn } from '@/components/MapOverlay';
 import BottomNav from '@/components/BottomNav';
 import ScrollProgress from '@/components/ScrollProgress';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'NIKA — Explore. Joue. Vis. | Côte d\'Azur',
   description: 'La super-app de la Côte d\'Azur : VTC, restaurants, logements insolites, bateaux, services locaux et agent IA NIKO. Nice, Antibes, Cannes.',
   keywords: ['nice app', 'côte d\'azur app', 'vtc nice', 'logement insolite nice', 'bateau cannes', 'super-app méditerranée'],
