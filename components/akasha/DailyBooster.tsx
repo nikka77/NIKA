@@ -5,12 +5,12 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { RARITY_META, universeMeta, type AkashaRarity } from '@/lib/akasha/types';
+import { addManyToCollection } from '@/lib/akasha/collection-storage';
 import CardBack from './CardBack';
 
 type Card = { slug: string; name: string; universe: string | null; image_url: string | null; rarity: AkashaRarity | null };
 
 const LS_LAST = 'nika:akasha:booster';
-const LS_COLLECTION = 'nika:akasha:collection';
 const today = () => new Date().toISOString().slice(0, 10);
 
 const LS_SHARDS = 'nika:akasha:shards';
@@ -18,21 +18,15 @@ const SHARD_VALUE: Record<string, number> = { common: 1, rare: 3, epic: 8, legen
 
 /** Ajoute à la collection ; les DOUBLONS deviennent des ÉCLATS (L5, anti-frustration). */
 function addToCollection(cards: Card[]): number {
+  const duplicates = addManyToCollection(cards.map((c) => ({ slug: c.slug, name: c.name, img: c.image_url })));
   let shards = 0;
-  try {
-    const raw = localStorage.getItem(LS_COLLECTION);
-    const cur: { slug: string; name: string; img: string | null }[] = raw ? JSON.parse(raw) : [];
-    for (const c of cards) {
-      if (!cur.some((x) => x.slug === c.slug)) cur.push({ slug: c.slug, name: c.name, img: c.image_url });
-      else shards += SHARD_VALUE[c.rarity ?? 'common'] ?? 1;
-    }
-    localStorage.setItem(LS_COLLECTION, JSON.stringify(cur));
-    if (shards > 0) {
+  for (const c of cards) if (duplicates.has(c.slug)) shards += SHARD_VALUE[c.rarity ?? 'common'] ?? 1;
+  if (shards > 0) {
+    try {
       const prev = Number(localStorage.getItem(LS_SHARDS)) || 0;
       localStorage.setItem(LS_SHARDS, String(prev + shards));
-    }
-    window.dispatchEvent(new Event('akasha:collection'));
-  } catch { /* stockage indisponible → le pack reste visuel */ }
+    } catch { /* stockage indisponible */ }
+  }
   return shards;
 }
 

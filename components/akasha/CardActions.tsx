@@ -3,18 +3,7 @@
 // Pas d'auth : la collection vit en localStorage (même approche que le kit livreur), lisible par
 // CollectionStrip sur le registre. On stocke {slug, name, img} pour un rendu autonome de la bande.
 import { useEffect, useState } from 'react';
-
-export type CollectItem = { slug: string; name: string; img?: string };
-const KEY = 'nika:akasha:collection';
-
-const read = (): CollectItem[] => {
-  try {
-    const raw = JSON.parse(localStorage.getItem(KEY) || '[]');
-    return Array.isArray(raw) ? raw.filter((x) => x && typeof x.slug === 'string') : [];
-  } catch {
-    return [];
-  }
-};
+import { hasInCollection, toggleCollection } from '@/lib/akasha/collection-storage';
 
 export default function CardActions({ slug, name, img, color }: { slug: string; name: string; img?: string; color: string }) {
   const [mounted, setMounted] = useState(false);
@@ -23,21 +12,13 @@ export default function CardActions({ slug, name, img, color }: { slug: string; 
 
   useEffect(() => {
     setMounted(true);
-    setCollected(read().some((x) => x.slug === slug));
+    setCollected(hasInCollection(slug));
   }, [slug]);
 
   const toggle = () => {
-    const cur = read();
-    const has = cur.some((x) => x.slug === slug);
-    const next = has ? cur.filter((x) => x.slug !== slug) : [{ slug, name, img }, ...cur];
-    try {
-      localStorage.setItem(KEY, JSON.stringify(next));
-      window.dispatchEvent(new Event('akasha:collection'));
-    } catch {
-      /* quota / privé */
-    }
-    setCollected(!has);
-    setFlash(has ? 'Retiré de ta collection' : 'Ajouté à ta collection ✦');
+    const nowOwned = toggleCollection({ slug, name, img });
+    setCollected(nowOwned);
+    setFlash(nowOwned ? 'Ajouté à ta collection ✦' : 'Retiré de ta collection');
     setTimeout(() => setFlash(null), 1800);
   };
 

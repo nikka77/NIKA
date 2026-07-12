@@ -3,19 +3,9 @@
 // alimenté par CardActions et affiche les cartes collectionnées (live via l'event 'akasha:collection').
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import type { CollectItem } from './CardActions';
+import { readCollection, onCollectionChange, type CollectItem } from '@/lib/akasha/collection-storage';
 
-const KEY = 'nika:akasha:collection';
 const ACCENT = '#7B5CF0';
-
-const read = (): CollectItem[] => {
-  try {
-    const r = JSON.parse(localStorage.getItem(KEY) || '[]');
-    return Array.isArray(r) ? r.filter((x) => x && typeof x.slug === 'string') : [];
-  } catch {
-    return [];
-  }
-};
 
 export default function CollectionStrip() {
   const [items, setItems] = useState<CollectItem[]>([]);
@@ -23,14 +13,9 @@ export default function CollectionStrip() {
 
   useEffect(() => {
     setMounted(true);
-    const sync = () => setItems(read());
+    const sync = () => setItems(readCollection());
     sync();
-    window.addEventListener('akasha:collection', sync);
-    window.addEventListener('storage', sync);
-    return () => {
-      window.removeEventListener('akasha:collection', sync);
-      window.removeEventListener('storage', sync);
-    };
+    return onCollectionChange(sync, { crossTab: true });
   }, []);
 
   if (!mounted || items.length === 0) return null;

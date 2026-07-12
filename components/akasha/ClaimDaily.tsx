@@ -3,32 +3,21 @@
 // collection localStorage (MÊME contrat que CardActions : clé nika:akasha:collection + event
 // 'akasha:collection'). Rendu DANS le Link DailyCard → stopPropagation/preventDefault.
 import { useEffect, useState } from 'react';
-
-const KEY = 'nika:akasha:collection';
-type Item = { slug: string; name: string; img?: string };
-const read = (): Item[] => {
-  try {
-    const raw = JSON.parse(localStorage.getItem(KEY) || '[]');
-    return Array.isArray(raw) ? raw.filter((x) => x && typeof x.slug === 'string') : [];
-  } catch { return []; }
-};
+import { hasInCollection, addManyToCollection } from '@/lib/akasha/collection-storage';
 
 export default function ClaimDaily({ slug, name, img, color }: { slug: string; name: string; img?: string | null; color: string }) {
   const [state, setState] = useState<'idle' | 'owned' | 'claimed'>('idle');
 
   useEffect(() => {
-    setState(read().some((x) => x.slug === slug) ? 'owned' : 'idle');
+    setState(hasInCollection(slug) ? 'owned' : 'idle');
   }, [slug]);
 
   const claim = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (state !== 'idle') return;
-    try {
-      localStorage.setItem(KEY, JSON.stringify([{ slug, name, img: img ?? undefined }, ...read()]));
-      window.dispatchEvent(new Event('akasha:collection'));
-      setState('claimed');
-    } catch { /* stockage privé/quota */ }
+    addManyToCollection([{ slug, name, img }]);
+    setState('claimed');
   };
 
   return (

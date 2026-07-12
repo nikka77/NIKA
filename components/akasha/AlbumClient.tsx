@@ -6,14 +6,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import CardBack from './CardBack';
 import { universeMeta, type AkashaEntryCard } from '@/lib/akasha/types';
-
-const KEY = 'nika:akasha:collection';
-const read = (): Set<string> => {
-  try {
-    const raw = JSON.parse(localStorage.getItem(KEY) || '[]');
-    return new Set(Array.isArray(raw) ? raw.filter((x) => x && typeof x.slug === 'string').map((x) => x.slug as string) : []);
-  } catch { return new Set(); }
-};
+import { readCollectionSlugs, onCollectionChange } from '@/lib/akasha/collection-storage';
 
 export interface AlbumSetData {
   id: string;
@@ -29,11 +22,9 @@ export default function AlbumClient({ sets }: { sets: AlbumSetData[] }) {
 
   useEffect(() => {
     setMounted(true);
-    setOwned(read());
-    const sync = () => setOwned(read());
-    window.addEventListener('akasha:collection', sync);
-    window.addEventListener('storage', sync);
-    return () => { window.removeEventListener('akasha:collection', sync); window.removeEventListener('storage', sync); };
+    const sync = () => setOwned(readCollectionSlugs());
+    sync();
+    return onCollectionChange(sync, { crossTab: true });
   }, []);
 
   const universes = Array.from(new Set(sets.map((s) => s.universe)));

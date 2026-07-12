@@ -5,8 +5,8 @@
 import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
 import { RARITY_META, type AkashaEntryCard, type AkashaRarity } from '@/lib/akasha/types';
+import { readCollectionSlugs, addManyToCollection, onCollectionChange } from '@/lib/akasha/collection-storage';
 
-const LS_COLLECTION = 'nika:akasha:collection';
 // Commun garde une bordure neutre (var(--bd2), theme-aware) plutôt que la couleur RARITY_META.common
 // (#7A90A8 fixe) — différenciation volontaire, seules les raretés rare/epic/legendary sont mutualisées.
 const rarityBorder = (r?: AkashaRarity | null) => (r && r !== 'common' ? RARITY_META[r].color : 'var(--bd2)');
@@ -15,13 +15,7 @@ const today = () => new Date().toISOString().slice(0, 10);
 type Card = { slug: string; name: string; image_url: string | null; rarity: AkashaRarity | null };
 
 function addToCollection(cards: { slug: string; name: string; image_url: string | null }[]) {
-  try {
-    const raw = localStorage.getItem(LS_COLLECTION);
-    const cur: { slug: string; name: string; img: string | null }[] = raw ? JSON.parse(raw) : [];
-    for (const c of cards) if (!cur.some((x) => x.slug === c.slug)) cur.push({ slug: c.slug, name: c.name, img: c.image_url });
-    localStorage.setItem(LS_COLLECTION, JSON.stringify(cur));
-    window.dispatchEvent(new Event('akasha:collection'));
-  } catch { /* stockage indisponible */ }
+  addManyToCollection(cards.map((c) => ({ slug: c.slug, name: c.name, img: c.image_url })));
 }
 
 export default function HubCollection({ stars, piliers, universe, color, ranks }: { stars: Card[]; piliers: AkashaEntryCard[]; universe: string; color: string; ranks: string[] }) {
@@ -30,17 +24,11 @@ export default function HubCollection({ stars, piliers, universe, color, ranks }
   const [pack, setPack] = useState<Card[] | null>(null);
   const [opening, setOpening] = useState(false);
 
-  const refresh = useCallback(() => {
-    try {
-      const raw = localStorage.getItem(LS_COLLECTION);
-      const cur: { slug: string }[] = raw ? JSON.parse(raw) : [];
-      setOwned(new Set(cur.map((c) => c.slug)));
-    } catch { /* noop */ }
-  }, []);
+  const refresh = useCallback(() => setOwned(readCollectionSlugs()), []);
 
   useEffect(() => {
     refresh();
-    window.addEventListener('akasha:collection', refresh);
+    const cleanup = onCollectionChange(refresh);
     // Streak de visite par univers.
     try {
       const key = `nika:akasha:streak:${universe}`;
@@ -56,7 +44,7 @@ export default function HubCollection({ stars, piliers, universe, color, ranks }
         setStreak(n);
       }
     } catch { /* noop */ }
-    return () => window.removeEventListener('akasha:collection', refresh);
+    return cleanup;
   }, [refresh, universe]);
 
   // Set « signature » traçable = têtes d'affiche + piliers (borné, honnête).
