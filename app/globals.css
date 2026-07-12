@@ -217,8 +217,11 @@ ul { list-style: none; }
   box-shadow: 0 6px 18px rgba(0,0,0,0.07);
 }
 
-/* Hotspots SVG (cartes AKASHA) navigables au clavier — anneau de focus visible. */
+/* Hotspots SVG (cartes AKASHA) navigables au clavier — anneau de focus visible uniquement
+   au clavier (pas au clic souris). Remplace un `outline:none` inline par élément, qui neutralisait
+   cette règle par spécificité (inline > classe) et rendait la navigation clavier invisible. */
 .ak-svg-focusable:focus-visible { outline: 3px solid #FFD54A; outline-offset: 2px; }
+.ak-svg-focusable:focus:not(:focus-visible) { outline: none; }
 
 /* ===== RESPONSIVE GRID CLASSES ===== */
 .g-2 { display: grid; grid-template-columns: repeat(2, 1fr); }

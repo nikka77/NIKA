@@ -49,7 +49,7 @@ export default function BleachSeireitiMap({ axis, universe, color }: { axis: Axi
       <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color, marginBottom: 4, display: 'flex', alignItems: 'center', gap: 8 }}>
         <span>⚔️ Le Seireitei</span><span style={{ color: 'var(--td3)' }}>13 portes, 13 divisions</span>
       </div>
-      <p style={{ fontFamily: 'var(--fo)', fontSize: 12.5, color: 'var(--td3)', margin: '0 0 10px' }}>
+      <p style={{ fontFamily: 'var(--fo)', fontSize: 12.5, color: 'var(--td2)', margin: '0 0 10px' }}>
         Chaque porte du mur du Seireitei est gardée par une division du Gotei 13. Clique une porte pour découvrir ses shinigami.
       </p>
 
@@ -82,7 +82,7 @@ export default function BleachSeireitiMap({ axis, universe, color }: { axis: Axi
                 width: 40, height: 40, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
                 background: on ? color : 'var(--bg3)', border: `2px solid ${color}`, textDecoration: 'none',
                 fontFamily: 'var(--fe)', fontWeight: 800, fontSize: 15, color: on ? 'var(--bg)' : color,
-                transition: 'transform 0.15s ease, background 0.15s ease', outline: 'none', zIndex: on ? 3 : 1,
+                transition: 'transform 0.15s ease, background 0.15s ease', zIndex: on ? 3 : 1,
               }}
             >
               {KANJI[c.v] ?? i + 1}
@@ -96,7 +96,7 @@ export default function BleachSeireitiMap({ axis, universe, color }: { axis: Axi
             background: 'var(--bg3)', border: `1px solid ${color}66`, borderRadius: 10, padding: '7px 12px', textAlign: 'center', pointerEvents: 'none', zIndex: 4,
           }}>
             <div style={{ fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700, color: 'var(--td)' }}>{active.label}</div>
-            <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>Capitaine {CAPTAINS[active.v] ?? '—'} · {active.count} shinigami</div>
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td2)' }}>Capitaine {CAPTAINS[active.v] ?? '—'} · {active.count} shinigami</div>
           </div>
         )}
       </div>

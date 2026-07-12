@@ -161,5 +161,21 @@ export const NW_LANDMARKS: NwLandmark[] = [
   "land": "Pays du Feu",
   "x": 591,
   "y": 589
+ },
+ {
+  "key": "yugakure",
+  "name": "Yu",
+  "full": "Yugakure",
+  "land": "Pays de l'Eau Chaude",
+  "x": 380,
+  "y": 630
+ },
+ {
+  "key": "hoshigakure",
+  "name": "Hoshi",
+  "full": "Hoshigakure",
+  "land": "Pays des Étoiles",
+  "x": 1080,
+  "y": 480
  }
 ];

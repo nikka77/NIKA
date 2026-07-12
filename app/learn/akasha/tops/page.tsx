@@ -37,7 +37,7 @@ export default async function TopsPage() {
     <main>
       <div style={{ background: 'linear-gradient(180deg, #1A1206 0%, #D4A01722 45%, var(--bg) 100%)', borderBottom: '1px solid var(--bd)', padding: 'clamp(2rem,5vw,3.4rem) 1.4rem 1.6rem' }}>
         <div style={{ maxWidth: 1050, margin: '0 auto' }}>
-          <Link href="/learn/akasha" style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', textDecoration: 'none' }}>← Registre AKASHA</Link>
+          <Link href="/learn/akasha" style={{ display: 'inline-flex', alignItems: 'center', minHeight: 24, padding: '4px 2px', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', textDecoration: 'none' }}>← Registre AKASHA</Link>
           <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#D4A017', margin: '1rem 0 0.5rem' }}>🏆 Le musée des records</div>
           <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(40px,8vw,76px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.9, margin: 0 }}>Les Records</h1>
           <p style={{ fontFamily: 'var(--fo)', fontSize: 'clamp(13px,1.5vw,15px)', color: 'var(--td2)', maxWidth: 540, lineHeight: 1.6, margin: '0.9rem 0 0' }}>

@@ -76,7 +76,7 @@ export default async function VersusPage({ params }: Props) {
   return (
     <main>
       <div style={{ maxWidth: 760, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.2rem clamp(3rem,7vw,5rem)' }}>
-        <Link href="/learn/akasha" style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', textDecoration: 'none' }}>← Registre AKASHA</Link>
+        <Link href="/learn/akasha" style={{ display: 'inline-flex', alignItems: 'center', minHeight: 24, padding: '4px 2px', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', textDecoration: 'none' }}>← Registre AKASHA</Link>
         <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#E8623A', margin: '1rem 0 0.4rem', textAlign: 'center' }}>⚔️ Comparateur</div>
         <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(26px,6vw,44px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', textAlign: 'center', lineHeight: 1, margin: '0 0 1.4rem' }}>
           {ea.name} <span style={{ color: '#E8623A' }}>vs</span> {eb.name}

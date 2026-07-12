@@ -33,7 +33,7 @@ export default async function AlbumPage() {
     <main>
       <div style={{ background: 'linear-gradient(180deg, #0B0820 0%, #140C30 55%, var(--bg) 100%)', borderBottom: '1px solid var(--bd)', padding: 'clamp(2rem,5vw,3.4rem) 1.4rem 1.6rem' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <Link href="/learn/akasha" style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', textDecoration: 'none' }}>
+          <Link href="/learn/akasha" style={{ display: 'inline-flex', alignItems: 'center', minHeight: 24, padding: '4px 2px', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', textDecoration: 'none' }}>
             ← Registre AKASHA
           </Link>
           <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#D4A017', margin: '1rem 0 0.5rem' }}>

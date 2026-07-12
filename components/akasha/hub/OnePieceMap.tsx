@@ -4,7 +4,7 @@
 // Transform data→image : X = coord.y, Y = 2048 − coord.x. Recherche, filtre mer/arc, plein écran, pinch,
 // escales numérotées, rejeu du voyage, fiche enrichie (vignette + liens personnages).
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { OP_WORLD, OPW_ROUTE_LABEL, type OpwIsland, type OpwPoi } from '@/lib/akasha/op-world-map';
+import { OP_WORLD, OPW_ROUTE_LABEL, type OpwIsland } from '@/lib/akasha/op-world-map';
 import { useMapZoomPanSvg } from '@/lib/akasha/useMapZoomPanSvg';
 
 const W = 4096, H = 2048;                 // fond op-world-bg.webp (4096×2048)
@@ -27,7 +27,7 @@ function Island({ isl, on, sel, matched, onSel, onHover }: {
   const hi = on || sel || matched;
   const stroke = sel ? '#F2C14E' : on ? '#FFFFFF' : matched ? '#3FBEFF' : 'none';
   return (
-    <g style={{ cursor: 'pointer', outline: 'none' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={isl.name}
+    <g style={{ cursor: 'pointer' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={isl.name}
       onPointerEnter={() => onHover(true)} onPointerLeave={() => onHover(false)} onFocus={() => onHover(true)} onBlur={() => onHover(false)}
       onClick={onSel} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSel(); } }}>
       {isl.shape && isl.shape.length > 2
@@ -217,7 +217,7 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
           {showPoi && OP_WORLD.poi.map((p) => {
             const [cx, cy] = T(p.x, p.y);
             return (
-              <g key={p.id} style={{ cursor: 'pointer', outline: 'none' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={p.name}
+              <g key={p.id} style={{ cursor: 'pointer' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={p.name}
                 onPointerEnter={() => setHover(p.id)} onPointerLeave={() => setHover(null)} onFocus={() => setHover(p.id)} onBlur={() => setHover(null)}
                 onClick={() => { if (!dragRef.current?.moved) setSel({ kind: 'poi', id: p.id }); }}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSel({ kind: 'poi', id: p.id }); } }}>

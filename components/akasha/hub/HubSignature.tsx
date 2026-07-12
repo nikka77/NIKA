@@ -3,7 +3,6 @@
 // organigramme du Gotei, frise des parties/sagas, panneaux de cols, duel Kira vs L.
 import Link from 'next/link';
 import { universeHubSlug, type HubVisual } from '@/lib/akasha/universe-taxonomy';
-import { VillageEmblem } from '@/components/akasha/NarutoIcons';
 import NarutoWorldMap from '@/components/akasha/hub/NarutoWorldMap';
 import BleachSeireitiMap from '@/components/akasha/hub/BleachSeireitiMap';
 

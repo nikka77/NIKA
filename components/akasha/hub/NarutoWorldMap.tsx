@@ -47,7 +47,7 @@ export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }
           {NW_COUNTRIES.map((c) => {
             const on = hover === c.key;
             return (
-              <g key={c.key} style={{ cursor: 'pointer', outline: 'none' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={`${c.villageName} — ${c.land}`}
+              <g key={c.key} style={{ cursor: 'pointer' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={`${c.villageName} — ${c.land}`}
                 onPointerEnter={() => setHover(c.key)} onPointerLeave={() => setHover(null)} onFocus={() => setHover(c.key)} onBlur={() => setHover(null)}
                 onClick={() => go(c.village)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(c.village); } }}>
                 {c.shapes.map((d, i) => (
@@ -67,7 +67,7 @@ export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }
           {NW_VILLAGES.map((v) => {
             const on = hover === v.key;
             return (
-              <g key={v.key} style={{ cursor: 'pointer', outline: 'none' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={v.name}
+              <g key={v.key} style={{ cursor: 'pointer' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={v.name}
                 onPointerEnter={() => setHover(v.key)} onPointerLeave={() => setHover(null)} onFocus={() => setHover(v.key)} onBlur={() => setHover(null)}
                 onClick={() => go(v.village)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(v.village); } }}>
                 <circle cx={v.x} cy={v.y} r={on ? 18 : 12} fill={color} stroke="#1A2230" strokeWidth={3} />
@@ -80,7 +80,7 @@ export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }
           {NW_LANDMARKS.map((l) => {
             const on = hover === l.key;
             return (
-              <g key={l.key} style={{ cursor: 'help', outline: 'none' }} className="ak-svg-focusable" tabIndex={0} aria-label={`${l.full} — ${l.land}`}
+              <g key={l.key} style={{ cursor: 'help' }} className="ak-svg-focusable" tabIndex={0} aria-label={`${l.full} — ${l.land}`}
                 onPointerEnter={() => setHover(l.key)} onPointerLeave={() => setHover(null)} onFocus={() => setHover(l.key)} onBlur={() => setHover(null)}>
                 <circle cx={l.x} cy={l.y} r={on ? 13 : 8} fill="#EAF2F8" fillOpacity={0.55} stroke="#1A2230" strokeWidth={2.5} pointerEvents="all" />
                 {on && (

@@ -7,7 +7,9 @@ import Link from 'next/link';
 import { RARITY_META, type AkashaEntryCard, type AkashaRarity } from '@/lib/akasha/types';
 
 const LS_COLLECTION = 'nika:akasha:collection';
-const rarityBorder = (r?: AkashaRarity | null) => (r === 'legendary' ? '#D4A017' : r === 'epic' ? '#7B5CF0' : r === 'rare' ? '#0094D4' : 'var(--bd2)');
+// Commun garde une bordure neutre (var(--bd2), theme-aware) plutôt que la couleur RARITY_META.common
+// (#7A90A8 fixe) — différenciation volontaire, seules les raretés rare/epic/legendary sont mutualisées.
+const rarityBorder = (r?: AkashaRarity | null) => (r && r !== 'common' ? RARITY_META[r].color : 'var(--bd2)');
 const today = () => new Date().toISOString().slice(0, 10);
 
 type Card = { slug: string; name: string; image_url: string | null; rarity: AkashaRarity | null };
