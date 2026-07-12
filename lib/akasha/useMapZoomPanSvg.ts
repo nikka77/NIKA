@@ -87,7 +87,12 @@ export function useMapZoomPanSvg({ w, h, minW, maxW = w }: { w: number; h: numbe
     pointers.current.delete(e.pointerId);
     pinch.current = null;
     if (pointers.current.size === 1) { const [p] = [...pointers.current.values()]; drag.current = { x: p.x, y: p.y, moved: true }; }
-    else if (pointers.current.size === 0) drag.current = null;
+    else if (pointers.current.size === 0 && drag.current) {
+      // Ne pas nuller drag.current tout de suite : le click natif qui suit pointerup (même cible,
+      // pointer capture oblige) doit encore pouvoir lire `moved` pour bloquer la sélection après un pan.
+      const d = drag.current;
+      requestAnimationFrame(() => { if (drag.current === d) drag.current = null; });
+    }
   };
 
   return { view, setView, svgRef, clamp, zoomAround, reset, dragRef: drag, onPointerDown, onPointerMove, onPointerUp };
