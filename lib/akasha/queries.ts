@@ -407,7 +407,9 @@ export async function getEntriesBySlugs(slugs: string[]): Promise<AkashaEntryCar
 
 /** Compte d'entrées par VALEUR pour un axe de taxonomie (attributes.<attr>) dans un univers.
  *  Scan paginé (1 requête / 1 000 lignes de l'univers) → chips du hub avec compteurs. */
-export async function listAxisCounts(universe: string, attrs: string[]): Promise<Map<string, Map<string, number>>> {
+export async function listAxisCounts(
+  universe: string, attrs: string[], filterAttr?: string, filterVal?: string,
+): Promise<Map<string, Map<string, number>>> {
   const out = new Map<string, Map<string, number>>(attrs.map((a) => [a, new Map()]));
   if (!attrs.length) return out;
   const supabase = await createClient();
@@ -415,11 +417,9 @@ export async function listAxisCounts(universe: string, attrs: string[]): Promise
   const sel = attrs.map((a, i) => `a${i}:attributes->>${a}`).join(', ');
   const PAGE = 1000;
   for (let from = 0; ; from += PAGE) {
-    const { data } = await supabase
-      .from('akasha_entries')
-      .select(sel)
-      .eq('universe', universe)
-      .range(from, from + PAGE - 1);
+    let q = supabase.from('akasha_entries').select(sel).eq('universe', universe);
+    if (filterAttr && filterVal) q = q.eq(`attributes->>${filterAttr}`, filterVal);
+    const { data } = await q.range(from, from + PAGE - 1);
     const rows = (data as Record<string, string | null>[] | null) ?? [];
     for (const row of rows) {
       attrs.forEach((a, i) => {

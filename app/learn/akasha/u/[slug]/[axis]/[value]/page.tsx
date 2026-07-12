@@ -5,7 +5,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { listEntries } from '@/lib/akasha/queries';
+import { listEntries, listAxisCounts } from '@/lib/akasha/queries';
 import { taxonomyBySlug, hubVisual, axisValueLabel, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { universeMeta } from '@/lib/akasha/types';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
@@ -63,6 +63,8 @@ export default async function AxisValuePage({ params, searchParams }: Props) {
   const subAttr = subFilterOn && sp.attr2 && SUB_ATTRS.has(sp.attr2) ? sp.attr2 : undefined;
   const subVal = subAttr && sp.val2 ? sp.val2 : undefined;
   const subAxes = subFilterOn ? taxo.axes.filter((a) => SUB_ATTRS.has(a.attr)) : [];
+  // Facettes DU village : ne proposer que les clans/rangs/générations réellement présents (avec compte).
+  const facets = subFilterOn ? await listAxisCounts(taxo.name, ['clan', 'rank', 'generation'], axisDef.attr, val) : null;
 
   const { entries, total } = await listEntries({ universe: taxo.name, attr: axisDef.attr, val, attr2: subAttr, val2: subVal, sort: 'pop' });
   if (total === 0 && !subVal) notFound();
@@ -114,23 +116,34 @@ export default async function AxisValuePage({ params, searchParams }: Props) {
         {/* ── SOUS-FILTRES (clan / rang / génération) — réorg hub : filtrer les ninjas du village ── */}
         {subFilterOn && (
           <div style={{ marginBottom: 20 }}>
-            {subAxes.map((ax) => (
-              <div key={ax.attr} style={{ marginBottom: 10 }}>
-                <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: 6 }}>{ax.icon} {ax.label}</div>
-                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                  {ax.values.map((v) => {
-                    const active = subAttr === ax.attr && subVal === v.v;
-                    const t = v.tint ?? m.color;
-                    const href = active ? basePath : `${basePath}?attr2=${ax.attr}&val2=${encodeURIComponent(v.v)}`;
-                    return (
-                      <Link key={v.v} href={href} scroll={false} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '4px 10px', borderRadius: 999, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, border: `1px solid ${active ? 'transparent' : t + '44'}`, background: active ? t : `${t}12`, color: active ? '#0A1420' : 'var(--td2)' }}>
-                        {v.badge && <span aria-hidden>{v.badge}</span>}{v.l ?? v.v}
-                      </Link>
-                    );
-                  })}
+            {subAxes.map((ax) => {
+              const fc = facets?.get(ax.attr);
+              const present = ax.values.filter((v) => (fc?.get(v.v) ?? 0) > 0);
+              if (!present.length) return null;
+              return (
+                <div key={ax.attr} style={{ marginBottom: 10 }}>
+                  <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: 6 }}>{ax.icon} {ax.label}</div>
+                  <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                    {present.map((v) => {
+                      const active = subAttr === ax.attr && subVal === v.v;
+                      const t = v.tint ?? m.color;
+                      const href = active ? basePath : `${basePath}?attr2=${ax.attr}&val2=${encodeURIComponent(v.v)}`;
+                      return (
+                        <Link key={v.v} href={href} scroll={false} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '3px 10px 3px 4px', borderRadius: 999, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, border: `1px solid ${active ? 'transparent' : t + '44'}`, background: active ? t : `${t}12`, color: active ? '#0A1420' : 'var(--td2)' }}>
+                          <span style={{ display: 'inline-flex', flexShrink: 0 }}>
+                            {ax.attr === 'clan' ? <ClanCrest slug={v.v} name={v.l ?? v.v} size={20} />
+                              : ax.attr === 'rank' ? <RankBadge value={v.v} size={20} />
+                              : <GenerationBadge value={v.v} size={20} />}
+                          </span>
+                          {v.l ?? v.v}
+                          <span style={{ fontSize: 10, opacity: 0.75, fontVariantNumeric: 'tabular-nums' }}>{fc?.get(v.v)}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
             {subAttr && (
               <Link href={basePath} scroll={false} style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: 'var(--td3)', textDecoration: 'none' }}>✕ Effacer le filtre</Link>
             )}
