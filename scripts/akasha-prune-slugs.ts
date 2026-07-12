@@ -3,13 +3,11 @@
 // Run: PATH="/opt/homebrew/bin:$PATH" npx tsx --env-file=.env.local scripts/akasha-prune-slugs.ts
 import { createClient } from '@supabase/supabase-js';
 
-// Doublons (curé vs miné) désormais fusionnés dans data/akasha-universes.json — à retirer de la base.
+// Lieux DB espagnols supplantés par les planètes FR curées — à retirer de la base (seed = upsert-only).
 const SLUGS = [
-  'espada-bleach', 'namek-dragon-ball', 'zoldyck-hunter-x-hunter',
-  'mont-akina-initial-d', 'mont-akagi-initial-d', 'mont-myogi-initial-d',
-  'thousand-sunny-one-piece', 'marine-one-piece', 'fruit-de-la-chaleur-one-piece',
-  'fruit-du-felin-version-tigre-a-dents-de-sabre-one-piece', 'fruit-de-la-dissolution-one-piece',
-  'alabasta-one-piece', 'ile-des-hommes-poissons-one-piece', 'corbeau-one-piece',
+  'tierra', 'planete-vegeta', 'vegeta-dragon-ball', 'freezer-no-79', 'monmar', 'kaio-del-norte',
+  'makyo', 'tsufur-universo-6', 'desconocido', 'planeta-de-bills', 'planeta-del-gran-kaio',
+  'planeta-sagrado', 'nucleo-del-mundo', 'nuevo-planeta-tsufrui', 'universo-11',
 ];
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

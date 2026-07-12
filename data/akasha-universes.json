@@ -9087,15 +9087,15 @@
     {
       "slug": "namek",
       "type": "place",
-      "name": "Namek",
+      "name": "Planète Namek",
       "is_fiction": true,
       "universe": "Dragon Ball",
-      "summary": "La planète verte des Nameks, théâtre du combat contre Freezer et berceau des Dragon Balls originelles.",
-      "description": "La planète verte des Nameks, théâtre du combat contre Freezer et berceau des Dragon Balls originelles.",
+      "summary": "Monde des Namekiens et de leurs Dragon Balls : dans l'Univers 7, Freezer la ravagea puis la fit exploser.",
+      "description": "Monde des Namekiens et de leurs Dragon Balls : dans l'Univers 7, Freezer la ravagea puis la fit exploser.",
       "image_url": "https://dragonball-api.com/planetas/Namek_U7.webp",
       "attributes": {
-        "region": "Planète",
-        "category": "Lieu",
+        "region": "Univers 7",
+        "category": "Planète",
         "descRaw": "Planeta natal de los Namekianos. Escenario de importantes batallas y la obtención de las Dragon Balls de Namek.",
         "descLang": "es",
         "descFr": "Planète natale des Neks. Théâtre de batailles importantes et lieu où furent obtenues les Dragon Balls de Namek.",
@@ -9170,7 +9170,7 @@
           }
         ]
       },
-      "rarity": "rare"
+      "rarity": "legendary"
     },
     {
       "slug": "dragon-balls",
@@ -9259,21 +9259,6 @@
       "attributes": {
         "scope": "Empire technologique",
         "category": "Organisation"
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "planete-vegeta",
-      "type": "place",
-      "name": "Planète Vegeta",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "Le monde natal des Saiyans, pulvérisé par Freezer d'une seule sphère — le berceau perdu de Goku.",
-      "description": "Le monde natal des Saiyans, pulvérisé par Freezer d'une seule sphère — le berceau perdu de Goku.",
-      "image_url": null,
-      "attributes": {
-        "region": "Espace",
-        "category": "Lieu"
       },
       "rarity": "rare"
     },
@@ -82416,92 +82401,20 @@
       "rarity": "epic"
     },
     {
-      "slug": "tierra",
-      "type": "place",
-      "name": "Tierra",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "La Tierra también llamado Mundo del Dragón (Dragon World), es el planeta principal donde se desarrolla la serie de Dragon Ball.",
-      "description": "La Tierra también llamado Mundo del Dragón (Dragon World), es el planeta principal donde se desarrolla la serie de Dragon Ball.",
-      "image_url": "https://dragonball-api.com/planetas/Tierra_Dragon_Ball_Z.webp",
-      "attributes": {
-        "region": "Planète",
-        "category": "Planète",
-        "descRaw": "La Tierra también llamado Mundo del Dragón (Dragon World), es el planeta principal donde se desarrolla la serie de Dragon Ball. Se encuentra en el Sistema Solar de la Vía Láctea de las Galaxias del Norte del Universo 7, lugar que supervisa el Kaio del Norte, y tiene su equivalente en el Universo 6. El hogar de los terrícolas y los Guerreros Z. Ha sido atacado en varias ocasiones por enemigos poderosos.",
-        "descLang": "es",
-        "descFr": "La Terre, également appelée Monde du Dragon (Dragon World), est la planète principale où se déroule la série Dragon Ball. Elle se situe dans le Système solaire de la Voie lactée, dans les Galaxies du Nord de l'Univers 7, région supervisée par le Kaïō du Nord, et possède son équivalent dans l'Univers 6. C'est le foyer des Terriens et des Guerriers Z. Elle a été attaquée à plusieurs reprises par de puissants ennemis."
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "vegeta-dragon-ball",
-      "type": "place",
-      "name": "Vegeta",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "El planeta Vegeta, conocido como planeta Plant antes del fin de la Guerra Saiyan-tsufruiana en el año 730, es un planeta rocoso ficticio de la serie d",
-      "description": "El planeta Vegeta, conocido como planeta Plant antes del fin de la Guerra Saiyan-tsufruiana en el año 730, es un planeta rocoso ficticio de la serie d",
-      "image_url": "https://dragonball-api.com/planetas/Planeta_Vegeta_en_Dragon_Ball_Super_Broly.webp",
-      "attributes": {
-        "region": "Planète détruite",
-        "category": "Planète",
-        "descRaw": "El planeta Vegeta, conocido como planeta Plant antes del fin de la Guerra Saiyan-tsufruiana en el año 730, es un planeta rocoso ficticio de la serie de manga y anime Dragon Ball y localizado en la Vía Láctea de las Galaxias del Norte del Universo 7 hasta su destrucción a manos de Freezer en los años 737-739. Planeta natal de los Saiyans, destruido por Freezer. Anteriormente conocido como Planeta Plant.",
-        "descLang": "es",
-        "descFr": "La planète Vegeta, connue sous le nom de planète Plant avant la fin de la guerre entre Saïyens et Tsufuls en l'an 730, est une planète rocheuse fictive de la série de manga et d'anime Dragon Ball, située dans la Voie lactée des Galaxies du Nord de l'Univers 7 jusqu'à sa destruction par Freezer entre les années 737 et 739. Planète natale des Saïyens, détruite par Freezer. Anciennement connue sous le nom de planète Plant."
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "freezer-no-79",
-      "type": "place",
-      "name": "Freezer No. 79",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "Planeta artificial utilizado por Freezer como base de operaciones y centro de clonación.",
-      "description": "Planeta artificial utilizado por Freezer como base de operaciones y centro de clonación.",
-      "image_url": "https://dragonball-api.com/planetas/PlanetaFreezer.webp",
-      "attributes": {
-        "region": "Planète détruite",
-        "category": "Planète",
-        "descRaw": "Planeta artificial utilizado por Freezer como base de operaciones y centro de clonación.",
-        "descLang": "es",
-        "descFr": "Planète artificielle utilisée par Freezer comme base d'opérations et centre de clonage."
-      },
-      "rarity": "rare"
-    },
-    {
       "slug": "kanassa",
       "type": "place",
       "name": "Kanassa",
       "is_fiction": true,
       "universe": "Dragon Ball",
-      "summary": "Planeta habitado por los Kanassans y conocido por la lucha entre Bardock y los habitantes del planeta.",
-      "description": "Planeta habitado por los Kanassans y conocido por la lucha entre Bardock y los habitantes del planeta.",
+      "summary": "Monde des Kanassiens, guerriers-poissons doués de voyance : l'escouade de Baddack la conquit avant d'en payer le prix.",
+      "description": "Monde des Kanassiens, guerriers-poissons doués de voyance : l'escouade de Baddack la conquit avant d'en payer le prix.",
       "image_url": "https://dragonball-api.com/planetas/800px-PlanetKannasa.webp",
       "attributes": {
-        "region": "Planète détruite",
+        "region": "Univers 7",
         "category": "Planète",
         "descRaw": "Planeta habitado por los Kanassans y conocido por la lucha entre Bardock y los habitantes del planeta.",
         "descLang": "es",
         "descFr": "Planète habitée par les Kanassans et connue pour le combat entre Baddack et les habitants de la planète."
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "monmar",
-      "type": "place",
-      "name": "Monmar",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "Planeta donde Gohan y Krillin encontraron las Dragon Balls para revivir a sus amigos durante la Saga de Namek.",
-      "description": "Planeta donde Gohan y Krillin encontraron las Dragon Balls para revivir a sus amigos durante la Saga de Namek.",
-      "image_url": "https://dragonball-api.com/planetas/monmar.webp",
-      "attributes": {
-        "region": "Planète",
-        "category": "Planète",
-        "descRaw": "Planeta donde Gohan y Krillin encontraron las Dragon Balls para revivir a sus amigos durante la Saga de Namek.",
-        "descLang": "es",
-        "descFr": "Planète où Gohan et Krillin trouvèrent les Dragon Balls pour ressusciter leurs amis durant la Saga de Namek."
       },
       "rarity": "rare"
     },
@@ -82511,53 +82424,17 @@
       "name": "Yardrat",
       "is_fiction": true,
       "universe": "Dragon Ball",
-      "summary": "Planeta de la técnica Instant Transmission, aprendida por Goku durante su estancia.",
-      "description": "Planeta de la técnica Instant Transmission, aprendida por Goku durante su estancia.",
+      "summary": "La planète des Yardratiens, où Goku apprit la Téléportation après la destruction de Namek.",
+      "description": "La planète des Yardratiens, où Goku apprit la Téléportation après la destruction de Namek.",
       "image_url": "https://dragonball-api.com/planetas/PlanetYardrat.webp",
       "attributes": {
-        "region": "Planète",
+        "region": "Univers 7",
         "category": "Planète",
         "descRaw": "Planeta de la técnica Instant Transmission, aprendida por Goku durante su estancia.",
         "descLang": "es",
         "descFr": "Planète de la technique de la Téléportation, apprise par Goku durant son séjour."
       },
-      "rarity": "rare"
-    },
-    {
-      "slug": "kaio-del-norte",
-      "type": "place",
-      "name": "Kaiō del Norte",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "El Planeta Kaio se encuentra al final del largo Camino de la Serpiente.",
-      "description": "El Planeta Kaio se encuentra al final del largo Camino de la Serpiente.",
-      "image_url": "https://dragonball-api.com/planetas/Planeta_del_Kaio_del_Norte.webp",
-      "attributes": {
-        "region": "Planète",
-        "category": "Planète",
-        "descRaw": "El Planeta Kaio se encuentra al final del largo Camino de la Serpiente. Es donde viven el Kaio del Norte, su mascota Bubbles, al que utiliza como parte de su entrenamiento, y Gregory.",
-        "descLang": "es",
-        "descFr": "La planète du Kaïō se trouve au bout du long Chemin du Serpent. C'est là que vivent le Kaïō du Nord, son animal de compagnie Bubbles, qu'il utilise dans le cadre de son entraînement, et Gregory."
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "makyo",
-      "type": "place",
-      "name": "Makyo",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "Makyo es un planeta y la fuente de alimentación de todos los malévolos, especialmente Garlic Jr., que solo aparece durante el Arco de Garlic Jr.",
-      "description": "Makyo es un planeta y la fuente de alimentación de todos los malévolos, especialmente Garlic Jr., que solo aparece durante el Arco de Garlic Jr.",
-      "image_url": "https://dragonball-api.com/planetas/Makyo_Star.webp",
-      "attributes": {
-        "region": "Planète",
-        "category": "Planète",
-        "descRaw": "Makyo es un planeta y la fuente de alimentación de todos los malévolos, especialmente Garlic Jr., que solo aparece durante el Arco de Garlic Jr. de Dragon Ball Z.",
-        "descLang": "es",
-        "descFr": "Makyo est une planète et la source d'énergie de tous les êtres malveillants, en particulier Garlic Jr., qui n'apparaît que durant l'Arc de Garlic Jr. dans Dragon Ball Z."
-      },
-      "rarity": "rare"
+      "rarity": "legendary"
     },
     {
       "slug": "babari",
@@ -82565,63 +82442,30 @@
       "name": "Babari",
       "is_fiction": true,
       "universe": "Dragon Ball",
-      "summary": "Planeta habitado por los Babari, es un planeta telúrico del Universo 10 donde residen los babarianos, hizo su primera aparición en el episodio 54 de D",
-      "description": "Planeta habitado por los Babari, es un planeta telúrico del Universo 10 donde residen los babarianos, hizo su primera aparición en el episodio 54 de D",
+      "summary": "Planète sauvage de l'Univers 10, terrain de chasse des redoutables guerriers Babariens.",
+      "description": "Planète sauvage de l'Univers 10, terrain de chasse des redoutables guerriers Babariens.",
       "image_url": "https://dragonball-api.com/planetas/Planeta_Babari.webp",
       "attributes": {
-        "region": "Planète",
+        "region": "Univers 10",
         "category": "Planète",
         "descRaw": "Planeta habitado por los Babari, es un planeta telúrico del Universo 10 donde residen los babarianos, hizo su primera aparición en el episodio 54 de Dragon Ball Super. Es donde Tarble, el hermano de Vegeta, se refugió.",
         "descLang": "es",
         "descFr": "Planète habitée par les Babariens, c'est une planète tellurique de l'Univers 10 où résident les Babariens ; elle fit sa première apparition dans l'épisode 54 de Dragon Ball Super. C'est là que Tarble, le frère de Vegeta, s'est réfugié."
       },
-      "rarity": "rare"
-    },
-    {
-      "slug": "tsufur-universo-6",
-      "type": "place",
-      "name": "Tsufur (Universo 6)",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "Planeta natal de los Tsufur, la raza a la que pertenecía el Dr.",
-      "description": "Planeta natal de los Tsufur, la raza a la que pertenecía el Dr.",
-      "image_url": "https://dragonball-api.com/planetas/tsufur.webp",
-      "attributes": {
-        "region": "Planète",
-        "category": "Planète",
-        "descRaw": "Planeta natal de los Tsufur, la raza a la que pertenecía el Dr. Raichi.",
-        "descLang": "es",
-        "descFr": "Planète natale des Tsufuls, la race à laquelle appartenait le Dr Raichi."
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "desconocido",
-      "type": "place",
-      "name": "Desconocido",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "Sin informacion",
-      "description": "Sin informacion",
-      "image_url": "https://dragonball-api.com/planetas/planetwhatis.webp",
-      "attributes": {
-        "region": "Planète",
-        "category": "Planète"
-      },
-      "rarity": "rare"
+      "rarity": "common"
     },
     {
       "slug": "otro-mundo",
       "type": "place",
-      "name": "Otro Mundo",
+      "name": "Autre Monde",
       "is_fiction": true,
       "universe": "Dragon Ball",
-      "summary": "El Otro Mundo en contraparte al Mundo de los vivos, es, en Dragon Ball, la versión del mundo de los muertos.",
-      "description": "El Otro Mundo en contraparte al Mundo de los vivos, es, en Dragon Ball, la versión del mundo de los muertos.",
+      "summary": "Le royaume des morts et des divinités : l'au-delà de Dragon Ball, où résident les Kaïō et le Grand Kaïō.",
+      "description": "Le royaume des morts et des divinités : l'au-delà de Dragon Ball, où résident les Kaïō et le Grand Kaïō.",
       "image_url": "https://dragonball-api.com/planetas/otro mundo.webp",
       "attributes": {
-        "region": "Planète",
-        "category": "Planète",
+        "region": "Autre Monde",
+        "category": "Lieu",
         "descRaw": "El Otro Mundo en contraparte al Mundo de los vivos, es, en Dragon Ball, la versión del mundo de los muertos. Es donde los personajes van cuando mueren, y también donde residen las deidades superiores del universo. En el episodio 53 del anime, el Otro Mundo fue descrito como \"la dimensión siguiente\", y el acto de desear traer a la vida a una persona muerta con las Esferas del Dragón se llama \"traer (a ellos) a esta dimensión.",
         "descLang": "es",
         "descFr": "L'Autre Monde, à l'opposé du Monde des vivants, est, dans Dragon Ball, la version du monde des morts. C'est là que vont les personnages lorsqu'ils meurent, et là que résident aussi les divinités supérieures de l'univers. Dans l'épisode 53 de l'anime, l'Autre Monde est décrit comme « la dimension suivante », et l'acte de souhaiter ramener à la vie une personne décédée grâce aux Dragon Balls est appelé « la ramener dans cette dimension »."
@@ -82629,128 +82473,20 @@
       "rarity": "rare"
     },
     {
-      "slug": "planeta-de-bills",
-      "type": "place",
-      "name": "Planeta de Bills ",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "Planeta de Bills un cuerpo celeste ubicado dentro del mundo de los vivos del Universo 7, el cual aparece por primera vez en la película Dragon Ball Z:",
-      "description": "Planeta de Bills un cuerpo celeste ubicado dentro del mundo de los vivos del Universo 7, el cual aparece por primera vez en la película Dragon Ball Z:",
-      "image_url": "https://dragonball-api.com/planetas/Templo_de_Bills2.webp",
-      "attributes": {
-        "region": "Planète",
-        "category": "Planète",
-        "descRaw": "Planeta de Bills un cuerpo celeste ubicado dentro del mundo de los vivos del Universo 7, el cual aparece por primera vez en la película Dragon Ball Z: La Batalla de los Dioses.",
-        "descLang": "es",
-        "descFr": "La planète de Beerus est un corps céleste situé dans le Monde des vivants de l'Univers 7, qui apparaît pour la première fois dans le film Dragon Ball Z : Battle of Gods."
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "planeta-del-gran-kaio",
-      "type": "place",
-      "name": "Planeta del Gran Kaio",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "El Planeta del Gran Kaio es donde se organiza el Torneo de Artes Marciales del Otro Mundo en honor a la muerte del Kaio del Norte (Kaito), donde parti",
-      "description": "El Planeta del Gran Kaio es donde se organiza el Torneo de Artes Marciales del Otro Mundo en honor a la muerte del Kaio del Norte (Kaito), donde parti",
-      "image_url": "https://dragonball-api.com/planetas/Planetadaikaiosama.webp",
-      "attributes": {
-        "region": "Planète",
-        "category": "Planète",
-        "descRaw": "El Planeta del Gran Kaio es donde se organiza el Torneo de Artes Marciales del Otro Mundo en honor a la muerte del Kaio del Norte (Kaito), donde participan guerreros poderosos.",
-        "descLang": "es",
-        "descFr": "La planète du Grand Kaïō est le lieu où est organisé le Tournoi des Arts Martiaux de l'Autre Monde en l'honneur de la mort du Kaïō du Nord (Kaïto), et où s'affrontent de puissants guerriers."
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "nucleo-del-mundo",
-      "type": "place",
-      "name": "Nucleo del Mundo",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "El Núcleo del Mundo es el planeta nativo de toda la especie nucleica, del cual surgen los benévolos Kaio y Kaio-shin, así como los malévolos Makaio, M",
-      "description": "El Núcleo del Mundo es el planeta nativo de toda la especie nucleica, del cual surgen los benévolos Kaio y Kaio-shin, así como los malévolos Makaio, M",
-      "image_url": "https://dragonball-api.com/planetas/nucleo_mundo.webp",
-      "attributes": {
-        "region": "Planète",
-        "category": "Planète",
-        "descRaw": "El Núcleo del Mundo es el planeta nativo de toda la especie nucleica, del cual surgen los benévolos Kaio y Kaio-shin, así como los malévolos Makaio, Makaio-shin y Dioses Demoníacos en contrapartida.",
-        "descLang": "es",
-        "descFr": "Le Noyau du Monde est la planète d'origine de toute l'espèce nucléenne, dont sont issus les bienveillants Kaïō et Kaïō Shin, ainsi que, à l'opposé, les malveillants Makaïō, Makaïō Shin et Dieux Démoniaques."
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "planeta-sagrado",
-      "type": "place",
-      "name": "Planeta sagrado",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "El Planeta Sagrado es el planeta localizado en el Reino Kaio-shin donde residen los Kaio-shin del Universo 7.",
-      "description": "El Planeta Sagrado es el planeta localizado en el Reino Kaio-shin donde residen los Kaio-shin del Universo 7.",
-      "image_url": "https://dragonball-api.com/planetas/Planeta_Sagrado.webp",
-      "attributes": {
-        "region": "Planète",
-        "category": "Planète",
-        "descRaw": "El Planeta Sagrado es el planeta localizado en el Reino Kaio-shin donde residen los Kaio-shin del Universo 7. No debe ser confundido con el Núcleo del Mundo.El Reino de los Kaio-shin, en el cual se encuentra localizado el planeta, es un reino especial completamente separado en el macrocosmos del Universo 7, es decir, está separado del Otro Mundo, del Mundo de los vivos y del Reino Demoníaco Oscuro.",
-        "descLang": "es",
-        "descFr": "La Planète Sacrée est la planète située dans le Royaume des Kaïō Shin où résident les Kaïō Shin de l'Univers 7. Elle ne doit pas être confondue avec le Noyau du Monde. Le Royaume des Kaïō Shin, où se trouve la planète, est un royaume spécial entièrement distinct au sein du macrocosme de l'Univers 7 ; autrement dit, il est séparé de l'Autre Monde, du Monde des vivants et du Royaume Démoniaque Obscur."
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "nuevo-planeta-tsufrui",
-      "type": "place",
-      "name": "Nuevo Planeta Tsufrui",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "El Nuevo Planeta Plant, también conocido como el Nuevo Planeta Tsufru, es el nombre que se le da al nuevo hogar de los Tsufruianos controlados por Veg",
-      "description": "El Nuevo Planeta Plant, también conocido como el Nuevo Planeta Tsufru, es el nombre que se le da al nuevo hogar de los Tsufruianos controlados por Veg",
-      "image_url": "https://dragonball-api.com/planetas/Nuevo_planeta_plant.webp",
-      "attributes": {
-        "region": "Planète",
-        "category": "Planète",
-        "descRaw": "El Nuevo Planeta Plant, también conocido como el Nuevo Planeta Tsufru, es el nombre que se le da al nuevo hogar de los Tsufruianos controlados por Vegeta Baby, ocasionado gracias al deseo concedido por medio de las Esferas del Dragón Definitivas de restaurar el Planeta Plant en la órbita de la Tierra.",
-        "descLang": "es",
-        "descFr": "La Nouvelle Planète Plant, également connue sous le nom de Nouvelle Planète Tsufru, est le nom donné au nouveau foyer des Tsufuls contrôlés par Baby Vegeta, rendu possible grâce au vœu exaucé par les Dragon Balls Ultimes de restaurer la planète Plant dans l'orbite de la Terre."
-      },
-      "rarity": "rare"
-    },
-    {
       "slug": "templo-movil-del-rey-de-todo",
       "type": "place",
-      "name": "Templo móvil del Rey de Todo",
+      "name": "Palais de Zeno",
       "is_fiction": true,
       "universe": "Dragon Ball",
-      "summary": "El templo móvil del Rey de Todo (sala del trono), es como su nombre lo indica, un templo móvil en el cual reside los tronos de los dos Reyes de Todo e",
-      "description": "El templo móvil del Rey de Todo (sala del trono), es como su nombre lo indica, un templo móvil en el cual reside los tronos de los dos Reyes de Todo e",
+      "summary": "Le palais flottant de Zeno, roi de tout, d'où il règne sur les douze univers.",
+      "description": "Le palais flottant de Zeno, roi de tout, d'où il règne sur les douze univers.",
       "image_url": "https://dragonball-api.com/planetas/Trono_del_Rey_de_Todo.webp",
       "attributes": {
-        "region": "Planète",
-        "category": "Planète",
+        "region": "Multivers",
+        "category": "Lieu",
         "descRaw": "El templo móvil del Rey de Todo (sala del trono), es como su nombre lo indica, un templo móvil en el cual reside los tronos de los dos Reyes de Todo en el Lugar de Supervivencia en Dragon Ball Super.",
         "descLang": "es",
         "descFr": "Le temple mobile du Roi de Tout (la salle du trône) est, comme son nom l'indique, un temple mobile où se trouvent les trônes des deux Rois de Tout, dans le Lieu de la Survie, dans Dragon Ball Super."
-      },
-      "rarity": "rare"
-    },
-    {
-      "slug": "universo-11",
-      "type": "place",
-      "name": "Universo 11",
-      "is_fiction": true,
-      "universe": "Dragon Ball",
-      "summary": "El Universo 11, es, como su nombre lo indica, el undécimo de los doce universos existentes actualmente en el mundo de Dragon Ball.",
-      "description": "El Universo 11, es, como su nombre lo indica, el undécimo de los doce universos existentes actualmente en el mundo de Dragon Ball.",
-      "image_url": "https://dragonball-api.com/planetas/Universo_11.webp",
-      "attributes": {
-        "region": "Planète",
-        "category": "Planète",
-        "descRaw": "El Universo 11, es, como su nombre lo indica, el undécimo de los doce universos existentes actualmente en el mundo de Dragon Ball. Este es gemelo del Universo 2 y el lugar de origen de las Tropas del Orgullo.",
-        "descLang": "es",
-        "descFr": "L'Univers 11 est, comme son nom l'indique, le onzième des douze univers actuellement existants dans le monde de Dragon Ball. Il est le jumeau de l'Univers 2 et le lieu d'origine des Pride Troopers."
       },
       "rarity": "rare"
     },
@@ -86533,6 +86269,1194 @@
         "region": "South Blue"
       },
       "rarity": "common"
+    },
+    {
+      "slug": "alpha-planete",
+      "type": "place",
+      "name": "Alpha",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Une planète rayée de la carte par la fureur de Kid Boubou, effacée sans qu'il n'en subsiste la moindre trace.",
+      "description": "Une planète rayée de la carte par la fureur de Kid Boubou, effacée sans qu'il n'en subsiste la moindre trace.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "ankoku",
+      "type": "place",
+      "name": "Planète Ankoku",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La planète natale de Yakon, le monstre avaleur de lumière que Goku affronta dans le vaisseau de Babidi.",
+      "description": "La planète natale de Yakon, le monstre avaleur de lumière que Goku affronta dans le vaisseau de Babidi.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "arak-planet",
+      "type": "place",
+      "name": "Monde d'Arak",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le domaine d'Arak, dieu de la destruction de l'Univers 5, veillé en permanence par son ange Cukatail.",
+      "description": "Le domaine d'Arak, dieu de la destruction de l'Univers 5, veillé en permanence par son ange Cukatail.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 5",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "arcose",
+      "type": "place",
+      "name": "Arcose",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Berceau des Arcosiens, qui fournirent aux Saïyans argent et technologie après la chute des Tsufuls.",
+      "description": "Berceau des Arcosiens, qui fournirent aux Saïyans argent et technologie après la chute des Tsufuls.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "arlia",
+      "type": "place",
+      "name": "Arlia",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Monde d'un peuple insectoïde opprimé : Vegeta et Nappa y abattirent le tyran Moai avant de pulvériser la planète.",
+      "description": "Monde d'un peuple insectoïde opprimé : Vegeta et Nappa y abattirent le tyran Moai avant de pulvériser la planète.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "bas-planete",
+      "type": "place",
+      "name": "Bas",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le monde d'origine des Bouléens, un peuple discret perdu dans l'immensité de l'espace.",
+      "description": "Le monde d'origine des Bouléens, un peuple discret perdu dans l'immensité de l'espace.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "batapi",
+      "type": "place",
+      "name": "Batapi",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Une planète nichée dans le système Rakka, aux marges des cartes stellaires connues.",
+      "description": "Une planète nichée dans le système Rakka, aux marges des cartes stellaires connues.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "big-gete-star",
+      "type": "place",
+      "name": "Big Gete Star",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Planète-machine artificielle bâtie autour d'une puce consciente, qui finit par ne faire plus qu'un avec Cooler.",
+      "description": "Planète-machine artificielle bâtie autour d'une puce consciente, qui finit par ne faire plus qu'un avec Cooler.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "banna",
+      "type": "place",
+      "name": "Banna",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Une planète lointaine simplement évoquée par Whis au détour d'une conversation, sans jamais être montrée à l'écran.",
+      "description": "Une planète lointaine simplement évoquée par Whis au détour d'une conversation, sans jamais être montrée à l'écran.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "beehay",
+      "type": "place",
+      "name": "Beehay",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Un astre semblable à un astéroïde, grouillant de vers géants baptisés les Mouma.",
+      "description": "Un astre semblable à un astéroïde, grouillant de vers géants baptisés les Mouma.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "beenz",
+      "type": "place",
+      "name": "Beenz",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Ancien monde du peuple surdoué des Beenz, où Thales ressuscita Rasin et Lakasei à partir de simples fossiles.",
+      "description": "Ancien monde du peuple surdoué des Beenz, où Thales ressuscita Rasin et Lakasei à partir de simples fossiles.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "beerus-planet",
+      "type": "place",
+      "name": "Monde de Beerus",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le domaine de Beerus, dieu de la destruction de l'Univers 7, où veille son maître et ange Whis.",
+      "description": "Le domaine de Beerus, dieu de la destruction de l'Univers 7, où veille son maître et ange Whis.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "belmod-planet",
+      "type": "place",
+      "name": "Monde de Belmod",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le monde de Belmod, dieu de la destruction de l'Univers 11, accompagné de son ange Marcarita.",
+      "description": "Le monde de Belmod, dieu de la destruction de l'Univers 11, accompagné de son ange Marcarita.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 11",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "cereal",
+      "type": "place",
+      "name": "Planète Cereal",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Berceau des Céréaliens, peuple meurtri qui se retrouve au cœur de l'intrigue du film Super Hero.",
+      "description": "Berceau des Céréaliens, peuple meurtri qui se retrouve au cœur de l'intrigue du film Super Hero.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "cretaceous",
+      "type": "place",
+      "name": "Planète Cretaceous",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Un monde peuplé de créatures dinosauriennes, où atterrit l'une des Dragon Balls de l'Étoile Noire.",
+      "description": "Un monde peuplé de créatures dinosauriennes, où atterrit l'une des Dragon Balls de l'Étoile Noire.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "dark-planet",
+      "type": "place",
+      "name": "Planète Sombre",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La planète où s'amarra la capsule de secours du Dr Raïchi, dernier survivant assoiffé de vengeance.",
+      "description": "La planète où s'amarra la capsule de secours du Dr Raïchi, dernier survivant assoiffé de vengeance.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "demon-realm",
+      "type": "place",
+      "name": "Royaume des Démons",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le royaume des démons, terre natale de Dabra, dont les ténèbres débordent parfois sur les mondes voisins.",
+      "description": "Le royaume des démons, terre natale de Dabra, dont les ténèbres débordent parfois sur les mondes voisins.",
+      "image_url": null,
+      "attributes": {
+        "region": "Royaume des Démons",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "dorakiya",
+      "type": "place",
+      "name": "Dorakiya",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le monde des Dorakiyens, peuple de l'Univers 11 que l'on croise rarement dans les récits.",
+      "description": "Le monde des Dorakiyens, peuple de l'Univers 11 que l'on croise rarement dans les récits.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 11",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "earth",
+      "type": "place",
+      "name": "Terre",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La Terre du futur, foyer des Guerriers Z et théâtre de presque toutes les grandes batailles de la saga.",
+      "description": "La Terre du futur, foyer des Guerriers Z et théâtre de presque toutes les grandes batailles de la saga.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "fake-namek",
+      "type": "place",
+      "name": "Faux Namek",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Planète déserte où Zaacro et Raiti, naufragés, tendirent une illusion de Namek pour piéger les Guerriers Z.",
+      "description": "Planète déserte où Zaacro et Raiti, naufragés, tendirent une illusion de Namek pour piéger les Guerriers Z.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "frieza-79",
+      "type": "place",
+      "name": "Freezer n°79",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Base de l'empire de Freezer où Vegeta, vaincu sur Terre, retrouve son éternel rival Cui.",
+      "description": "Base de l'empire de Freezer où Vegeta, vaincu sur Terre, retrouve son éternel rival Cui.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "frieza-448",
+      "type": "place",
+      "name": "Freezer n°448",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Ancienne colonie de Freezer qui, à l'époque de Resurrection F, s'était rebellée pour reprendre sa liberté.",
+      "description": "Ancienne colonie de Freezer qui, à l'époque de Resurrection F, s'était rebellée pour reprendre sa liberté.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "gelbo",
+      "type": "place",
+      "name": "Gelbo",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Planète secouée de séismes où humains et le monstre poisson-chat Zoonama cohabitent, gardienne d'une Dragon Ball de l'Étoile Noire.",
+      "description": "Planète secouée de séismes où humains et le monstre poisson-chat Zoonama cohabitent, gardienne d'une Dragon Ball de l'Étoile Noire.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "grand-kai-planet",
+      "type": "place",
+      "name": "Planète du Grand Kaïō",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Dans l'Autre Monde, la résidence du Grand Kaïō et l'arène du tournoi qui réunit les âmes des plus grands combattants.",
+      "description": "Dans l'Autre Monde, la résidence du Grand Kaïō et l'arène du tournoi qui réunit les âmes des plus grands combattants.",
+      "image_url": null,
+      "attributes": {
+        "region": "Autre Monde",
+        "category": "Planète"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "heaven",
+      "type": "place",
+      "name": "Paradis",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Immense monde de l'Autre Monde, tapissé de fleurs et de verdure, baigné d'une étrange lueur paisible.",
+      "description": "Immense monde de l'Autre Monde, tapissé de fleurs et de verdure, baigné d'une étrange lueur paisible.",
+      "image_url": null,
+      "attributes": {
+        "region": "Autre Monde",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "hera-planete",
+      "type": "place",
+      "name": "Héra",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le monde natal de Bojack et de ses Guerriers Galactiques, une race aussi fière que surpuissante.",
+      "description": "Le monde natal de Bojack et de ses Guerriers Galactiques, une race aussi fière que surpuissante.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "imecka",
+      "type": "place",
+      "name": "Imecka",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Première escale de Goku, Trunks et Pan en quête des Dragon Balls de l'Étoile Noire, rançonnée par des dirigeants cupides.",
+      "description": "Première escale de Goku, Trunks et Pan en quête des Dragon Balls de l'Étoile Noire, rançonnée par des dirigeants cupides.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "jung",
+      "type": "place",
+      "name": "Jung",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Planète riche en précieux Aurum bleu, où Goku et Merus déjouent le vol fomenté par les frères Macareni.",
+      "description": "Planète riche en précieux Aurum bleu, où Goku et Merus déjouent le vol fomenté par les frères Macareni.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "king-cold-planet",
+      "type": "place",
+      "name": "Planète du Roi Cold",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le monde du roi Cold, où Freezer mutilé fut reconstruit membre par membre et transformé en cyborg.",
+      "description": "Le monde du roi Cold, où Freezer mutilé fut reconstruit membre par membre et transformé en cyborg.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "king-kai-planet",
+      "type": "place",
+      "name": "Planète du Roi Kaïō",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Minuscule astre au bout du Chemin du Serpent, écrasé d'une gravité décuplée, où Goku s'entraîna avant d'être soufflé par l'explosion de Cell.",
+      "description": "Minuscule astre au bout du Chemin du Serpent, écrasé d'une gravité décuplée, où Goku s'entraîna avant d'être soufflé par l'explosion de Cell.",
+      "image_url": null,
+      "attributes": {
+        "region": "Autre Monde",
+        "category": "Planète"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "konats",
+      "type": "place",
+      "name": "Konats",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Monde de Tapion et de son frère Minotia, prison ancestrale du démon Hildegarn scellé dans les frères.",
+      "description": "Monde de Tapion et de son frère Minotia, prison ancestrale du démon Hildegarn scellé dans les frères.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "luud",
+      "type": "place",
+      "name": "Luud",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Planète d'une secte fanatique vouée au Mutant Machine Luud, qu'elle vénère comme un véritable dieu.",
+      "description": "Planète d'une secte fanatique vouée au Mutant Machine Luud, qu'elle vénère comme un véritable dieu.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "makyo-star",
+      "type": "place",
+      "name": "Étoile Makyo",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Berceau de Garlic Junior, réduit en poussière par le Masenko à pleine puissance de Gohan.",
+      "description": "Berceau de Garlic Junior, réduit en poussière par le Masenko à pleine puissance de Gohan.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "meat",
+      "type": "place",
+      "name": "Meat",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Planète du guet-apens : l'escouade de Baddack y fut décimée par les hommes de Dodoria, sur ordre de Freezer.",
+      "description": "Planète du guet-apens : l'escouade de Baddack y fut décimée par les hommes de Dodoria, sur ordre de Freezer.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "metamor",
+      "type": "place",
+      "name": "Metamor",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Terre des Metamorans, inventeurs de la Danse de la Fusion qui unit deux guerriers en un seul.",
+      "description": "Terre des Metamorans, inventeurs de la Danse de la Fusion qui unit deux guerriers en un seul.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "monmaasu",
+      "type": "place",
+      "name": "Monmaasu",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Un monde démesuré où absolument tout est gigantesque, refuge d'une Dragon Ball de l'Étoile Noire.",
+      "description": "Un monde démesuré où absolument tout est gigantesque, refuge d'une Dragon Ball de l'Étoile Noire.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "myuu-planet",
+      "type": "place",
+      "name": "Planète du Dr Myuu",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le laboratoire à ciel ouvert du Dr Myuu, où fut conçue et dissimulée la terrible créature Baby.",
+      "description": "Le laboratoire à ciel ouvert du Dr Myuu, où fut conçue et dissimulée la terrible créature Baby.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "nameless-planet",
+      "type": "place",
+      "name": "Planète Sans Nom",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Astre neutre suspendu entre les Univers 6 et 7, choisi comme arène du tournoi entre les équipes de Beerus et Champa.",
+      "description": "Astre neutre suspendu entre les Univers 6 et 7, choisi comme arène du tournoi entre les équipes de Beerus et Champa.",
+      "image_url": null,
+      "attributes": {
+        "region": "Multivers",
+        "category": "Planète"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "new-namek",
+      "type": "place",
+      "name": "Nouveau Namek",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La nouvelle terre d'accueil des Namekiens, reconstruite loin des cendres de leur planète d'origine.",
+      "description": "La nouvelle terre d'accueil des Namekiens, reconstruite loin des cendres de leur planète d'origine.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "new-vegeta",
+      "type": "place",
+      "name": "Nouvelle Vegeta",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Royaume offert à Vegeta par Paragus, condamné à disparaître sous l'impact fatal de la comète Camori.",
+      "description": "Royaume offert à Vegeta par Paragus, condamné à disparaître sous l'impact fatal de la comète Camori.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "pital",
+      "type": "place",
+      "name": "Pital",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Une planète entièrement dédiée aux soins, un vaste hôpital flottant à l'échelle d'un monde entier.",
+      "description": "Une planète entièrement dédiée aux soins, un vaste hôpital flottant à l'échelle d'un monde entier.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "polaris",
+      "type": "place",
+      "name": "Polaris",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Un monde gelé jusqu'aux os, écrin glacé de l'une des Dragon Balls de l'Étoile Noire.",
+      "description": "Un monde gelé jusqu'aux os, écrin glacé de l'une des Dragon Balls de l'Étoile Noire.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "potaufeu-planete",
+      "type": "place",
+      "name": "Potaufeu",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Planète aride hérissée de champignons géants, où sommeille l'arme Commeson déguisée en légendaire Eau surhumaine, gardée par le seul Potage.",
+      "description": "Planète aride hérissée de champignons géants, où sommeille l'arme Commeson déguisée en légendaire Eau surhumaine, gardée par le seul Potage.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "prison-planet",
+      "type": "place",
+      "name": "Planète Prison",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Assemblage monstrueux de planètes enchaînées par Fu, terrain de jeu de ses expériences dans Super Dragon Ball Heroes.",
+      "description": "Assemblage monstrueux de planètes enchaînées par Fu, terrain de jeu de ses expériences dans Super Dragon Ball Heroes.",
+      "image_url": null,
+      "attributes": {
+        "region": "Multivers",
+        "category": "Planète"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "rudeeze",
+      "type": "place",
+      "name": "Rudeeze",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Planète désertique tournant autour d'une nuée d'étoiles, domaine des Sandipèdes et d'une Dragon Ball de l'Étoile Noire.",
+      "description": "Planète désertique tournant autour d'une nuée d'étoiles, domaine des Sandipèdes et d'une Dragon Ball de l'Étoile Noire.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "sacred-world-of-the-kai",
+      "type": "place",
+      "name": "Monde Sacré des Kaïō",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Dans l'Autre Monde, le séjour sacré des Kaïō Shin, les divinités suprêmes qui veillent sur la création.",
+      "description": "Dans l'Autre Monde, le séjour sacré des Kaïō Shin, les divinités suprêmes qui veillent sur la création.",
+      "image_url": null,
+      "attributes": {
+        "region": "Autre Monde",
+        "category": "Planète"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "sadala",
+      "type": "place",
+      "name": "Planète Sadala",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Berceau des Saïyans : intacte dans l'Univers 6 où vit Cabba, mais anéantie dans l'Univers 7 par les Saïyans eux-mêmes.",
+      "description": "Berceau des Saïyans : intacte dans l'Univers 6 où vit Cabba, mais anéantie dans l'Univers 7 par les Saïyans eux-mêmes.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 6",
+        "category": "Planète"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "shamo",
+      "type": "place",
+      "name": "Shamo",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Monde voisin de Nouvelle Vegeta, asservi par Paragus puis réduit à néant par Broly déchaîné en Super Saïyan légendaire.",
+      "description": "Monde voisin de Nouvelle Vegeta, asservi par Paragus puis réduit à néant par Broly déchaîné en Super Saïyan légendaire.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "slug",
+      "type": "place",
+      "name": "Planète Slug",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Planète où le petit Slug, banni de Namek dès sa naissance, fut exilé loin des siens.",
+      "description": "Planète où le petit Slug, banni de Namek dès sa naissance, fut exilé loin des siens.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "snack",
+      "type": "place",
+      "name": "Snack",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La planète des Snackiens, protégée fièrement par leur héros local, le vaillant Galbee.",
+      "description": "La planète des Snackiens, protégée fièrement par leur héros local, le vaillant Galbee.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "tech-tech",
+      "type": "place",
+      "name": "Tech-Tech",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le monde natal des Tech-Tech, un peuple extraterrestre que l'on aperçoit rarement dans la galaxie.",
+      "description": "Le monde natal des Tech-Tech, un peuple extraterrestre que l'on aperçoit rarement dans la galaxie.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "tigere",
+      "type": "place",
+      "name": "Tigere",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Repaire d'une créature-tigre géante, gardienne farouche d'une Dragon Ball de l'Étoile Noire.",
+      "description": "Repaire d'une créature-tigre géante, gardienne farouche d'une Dragon Ball de l'Étoile Noire.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "vampa",
+      "type": "place",
+      "name": "Vampa",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Planète hostile où Broly fut abandonné enfant, survivant parmi une faune féroce dans Dragon Ball Super: Broly.",
+      "description": "Planète hostile où Broly fut abandonné enfant, survivant parmi une faune féroce dans Dragon Ball Super: Broly.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "vegeta-planete",
+      "type": "place",
+      "name": "Planète Vegeta",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Monde natal des Saïyans à la gravité décuplée : jadis Plant partagée avec les Tsufuls, détruite par Freezer par peur du Super Saïyan légendaire.",
+      "description": "Monde natal des Saïyans à la gravité décuplée : jadis Plant partagée avec les Tsufuls, détruite par Freezer par peur du Super Saïyan légendaire.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "wagashi",
+      "type": "place",
+      "name": "Wagashi",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La planète paisible dont est originaire Monaka, le livreur que Beerus fait passer pour un champion invincible.",
+      "description": "La planète paisible dont est originaire Monaka, le livreur que Beerus fait passer pour un champion invincible.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "zoon",
+      "type": "place",
+      "name": "Zoon",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Monde de Pui Pui, à la gravité dix fois supérieure à celle de la Terre, un avantage qui ne lui suffira pourtant pas.",
+      "description": "Monde de Pui Pui, à la gravité dix fois supérieure à celle de la Terre, un avantage qui ne lui suffira pourtant pas.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "zuno-planet",
+      "type": "place",
+      "name": "Planète de Zuno",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La demeure de Zuno, l'être omniscient qui répond à toutes les questions de l'univers... contre un simple baiser.",
+      "description": "La demeure de Zuno, l'être omniscient qui répond à toutes les questions de l'univers... contre un simple baiser.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "zalt",
+      "type": "place",
+      "name": "Zalt",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Planète entièrement aquatique de l'empire de Cooler, monde d'origine du guerrier Neiz.",
+      "description": "Planète entièrement aquatique de l'empire de Cooler, monde d'origine du guerrier Neiz.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "brench",
+      "type": "place",
+      "name": "Brench",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Fief de l'armée de Cooler, berceau du fidèle Sauza et, dit-on, peut-être aussi de Jeece.",
+      "description": "Fief de l'armée de Cooler, berceau du fidèle Sauza et, dit-on, peut-être aussi de Jeece.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "m-2",
+      "type": "place",
+      "name": "M-2",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Une planète qui est elle-même un Mutant Machine, quartier général de toute l'armée des Mutants Machines.",
+      "description": "Une planète qui est elle-même un Mutant Machine, quartier général de toute l'armée des Mutants Machines.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "todokama",
+      "type": "place",
+      "name": "Todokama",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Une planète que Vegeta et Broly explorent au fil de leurs aventures dans le manga Super.",
+      "description": "Une planète que Vegeta et Broly explorent au fil de leurs aventures dans le manga Super.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "kabocha",
+      "type": "place",
+      "name": "Kabocha",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le monde de Daiz, prince arrogant de la dynastie Pukinpa aux ambitions démesurées.",
+      "description": "Le monde de Daiz, prince arrogant de la dynastie Pukinpa aux ambitions démesurées.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "mars",
+      "type": "place",
+      "name": "Mars",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La planète Mars, dans la Zone Nord de la galaxie ; ses Martiens refont surface dans l'Autre Monde.",
+      "description": "La planète Mars, dans la Zone Nord de la galaxie ; ses Martiens refont surface dans l'Autre Monde.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "jupiter",
+      "type": "place",
+      "name": "Jupiter",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La cinquième planète de notre système solaire, exactement comme dans la réalité.",
+      "description": "La cinquième planète de notre système solaire, exactement comme dans la réalité.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers 7",
+        "category": "Planète"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "univers-1",
+      "type": "place",
+      "name": "Univers 1",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Univers au niveau mortel très élevé, exempté du Tournoi du Pouvoir avec son jumeau.",
+      "description": "Univers au niveau mortel très élevé, exempté du Tournoi du Pouvoir avec son jumeau.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers",
+        "category": "Univers",
+        "god": "Iwan",
+        "angel": "Awamo",
+        "kai": "Anato",
+        "twin": "Univers 12"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "univers-2",
+      "type": "place",
+      "name": "Univers 2 — Univers de l'Amour",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Univers gouverné par la belle Heles, patrie des Kamikaze Fireballs (Ribrianne). Éliminé au Tournoi du Pouvoir, puis restauré.",
+      "description": "Univers gouverné par la belle Heles, patrie des Kamikaze Fireballs (Ribrianne). Éliminé au Tournoi du Pouvoir, puis restauré.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers",
+        "category": "Univers",
+        "god": "Heles",
+        "angel": "Sour",
+        "kai": "Pell",
+        "twin": "Univers 11"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "univers-3",
+      "type": "place",
+      "name": "Univers 3",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Univers tourné vers la technologie et les guerriers-machines. Éliminé puis restauré.",
+      "description": "Univers tourné vers la technologie et les guerriers-machines. Éliminé puis restauré.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers",
+        "category": "Univers",
+        "god": "Mule",
+        "angel": "Camparri",
+        "kai": "Ea",
+        "twin": "Univers 10"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "univers-4",
+      "type": "place",
+      "name": "Univers 4",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Univers dirigé par le fourbe Quitela ; ses guerriers usent de ruse et d'invisibilité. Éliminé puis restauré.",
+      "description": "Univers dirigé par le fourbe Quitela ; ses guerriers usent de ruse et d'invisibilité. Éliminé puis restauré.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers",
+        "category": "Univers",
+        "god": "Quitela",
+        "angel": "Cognac",
+        "kai": "Cae",
+        "twin": "Univers 9"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "univers-5",
+      "type": "place",
+      "name": "Univers 5",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Univers au haut niveau mortel, exempté du Tournoi du Pouvoir.",
+      "description": "Univers au haut niveau mortel, exempté du Tournoi du Pouvoir.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers",
+        "category": "Univers",
+        "god": "Arack",
+        "angel": "Cukatail",
+        "kai": "Ogma",
+        "twin": "Univers 8"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "univers-6",
+      "type": "place",
+      "name": "Univers 6",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Univers jumeau du 7, gouverné par Champa (frère de Beerus). Abrite des Saïyens (Cabba, Caulifla, Kale), la Planète Sadala et Namek. Restauré après le Tournoi.",
+      "description": "Univers jumeau du 7, gouverné par Champa (frère de Beerus). Abrite des Saïyens (Cabba, Caulifla, Kale), la Planète Sadala et Namek. Restauré après le Tournoi.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers",
+        "category": "Univers",
+        "god": "Champa",
+        "angel": "Vados",
+        "kai": "Fuwa",
+        "twin": "Univers 7"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "univers-7",
+      "type": "place",
+      "name": "Univers 7",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Notre univers : celui de Goku, de la Terre, de Namek et de Freezer. Vainqueur du Tournoi du Pouvoir grâce à Android 17.",
+      "description": "Notre univers : celui de Goku, de la Terre, de Namek et de Freezer. Vainqueur du Tournoi du Pouvoir grâce à Android 17.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers",
+        "category": "Univers",
+        "god": "Beerus",
+        "angel": "Whis",
+        "kai": "Shin",
+        "twin": "Univers 6"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "univers-8",
+      "type": "place",
+      "name": "Univers 8",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Univers au haut niveau mortel, exempté du Tournoi du Pouvoir.",
+      "description": "Univers au haut niveau mortel, exempté du Tournoi du Pouvoir.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers",
+        "category": "Univers",
+        "god": "Liquiir",
+        "angel": "Korn",
+        "kai": "Ill",
+        "twin": "Univers 5"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "univers-9",
+      "type": "place",
+      "name": "Univers 9",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Univers du Trio de Dangers (Bergamo et ses frères). Premier éliminé au Tournoi du Pouvoir, puis restauré.",
+      "description": "Univers du Trio de Dangers (Bergamo et ses frères). Premier éliminé au Tournoi du Pouvoir, puis restauré.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers",
+        "category": "Univers",
+        "god": "Sidra",
+        "angel": "Mojito",
+        "kai": "Roh",
+        "twin": "Univers 4"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "univers-10",
+      "type": "place",
+      "name": "Univers 10",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Univers du Kaïō Shin Gowasu, dont l'apprenti Zamasu bascula dans la folie. Éliminé puis restauré.",
+      "description": "Univers du Kaïō Shin Gowasu, dont l'apprenti Zamasu bascula dans la folie. Éliminé puis restauré.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers",
+        "category": "Univers",
+        "god": "Rumsshi",
+        "angel": "Kusu",
+        "kai": "Gowasu",
+        "twin": "Univers 3"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "univers-11",
+      "type": "place",
+      "name": "Univers 11",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Univers des Pride Troopers, héros justiciers menés par Jiren, Toppo et Dyspo. Finaliste redoutable du Tournoi, puis restauré.",
+      "description": "Univers des Pride Troopers, héros justiciers menés par Jiren, Toppo et Dyspo. Finaliste redoutable du Tournoi, puis restauré.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers",
+        "category": "Univers",
+        "god": "Belmod",
+        "angel": "Marcarita",
+        "kai": "Khai",
+        "twin": "Univers 2"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "univers-12",
+      "type": "place",
+      "name": "Univers 12",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Univers au plus haut niveau mortel du multivers, exempté du Tournoi du Pouvoir.",
+      "description": "Univers au plus haut niveau mortel du multivers, exempté du Tournoi du Pouvoir.",
+      "image_url": null,
+      "attributes": {
+        "region": "Univers",
+        "category": "Univers",
+        "god": "Geene",
+        "angel": "Martinu",
+        "kai": "Agu",
+        "twin": "Univers 1"
+      },
+      "rarity": "epic"
     }
   ],
   "relations": [
