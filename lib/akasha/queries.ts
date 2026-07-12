@@ -25,6 +25,9 @@ export interface ListEntriesParams {
   /** Filtre générique par axe de taxonomie (?attr=village&val=Konohagakure) — clés whitelistes. */
   attr?: string;
   val?: string;
+  /** 2ᵉ filtre d'axe combiné (?attr=village&val=Konohagakure + attr2=clan&val2=Uchiha) — clés whitelistes. */
+  attr2?: string;
+  val2?: string;
   search?: string;
   /** Filtre RARETÉ (?rarity=legendary|epic|rare|common) — Refonte L2. */
   rarity?: string;
@@ -49,7 +52,7 @@ const RARITY_BUCKETS: (string | null)[] = ['legendary', 'epic', 'rare', 'common'
  *  « buckets » de rareté (légendaire → commun), chaque bucket ordonné par nom. Une page ne
  *  chevauche au plus que 2 buckets → 5 counts + ≤2 requêtes data. */
 export async function listEntries(
-  { type, universe, cat, fam, attr, val, search, rarity: rarityParam, sort: sortParam, page = 1 }: ListEntriesParams = {},
+  { type, universe, cat, fam, attr, val, attr2, val2, search, rarity: rarityParam, sort: sortParam, page = 1 }: ListEntriesParams = {},
 ): Promise<ListEntriesResult> {
   const pageSize = PAGE_SIZE;
   const current = Math.max(1, Math.floor(page) || 1);
@@ -62,6 +65,7 @@ export async function listEntries(
 
   const s = search ? search.replace(/[%,()]/g, ' ').trim() : '';
   const axisAttr = attr && val && ALLOWED_FILTER_ATTRS.has(attr) ? attr : undefined;
+  const axisAttr2 = attr2 && val2 && ALLOWED_FILTER_ATTRS.has(attr2) ? attr2 : undefined;
   // Applique les filtres communs (type / univers / recherche + le bucket de rareté) à un builder frais.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const applyFilters = (q: any, rarity: string | null | undefined): any => {
@@ -71,6 +75,7 @@ export async function listEntries(
     const famField = cat ? FAMILY_FIELD[cat] : undefined;
     if (fam && famField) q = q.eq(`attributes->>${famField}`, fam);
     if (axisAttr) q = q.eq(`attributes->>${axisAttr}`, val);
+    if (axisAttr2) q = q.eq(`attributes->>${axisAttr2}`, val2);
     // La recherche fouille AUSSI les descriptions VF canon (descFr) : « Rasengan », « Konoha »,
     // « Fruit du Démon »… remontent enfin les fiches dont seule la bio parle.
     if (s) q = q.or(`name.ilike.%${s}%,universe.ilike.%${s}%,summary.ilike.%${s}%,attributes->>descFr.ilike.%${s}%`);

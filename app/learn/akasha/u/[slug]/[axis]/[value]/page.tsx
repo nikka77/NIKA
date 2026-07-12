@@ -13,7 +13,8 @@ import { VillageEmblem, ClanCrest, RankBadge, GenerationBadge } from '@/componen
 
 export const revalidate = 3600; // ISR 1 h
 
-type Props = { params: Promise<{ slug: string; axis: string; value: string }> };
+type Props = { params: Promise<{ slug: string; axis: string; value: string }>; searchParams?: Promise<Record<string, string | undefined>> };
+const SUB_ATTRS = new Set(['clan', 'rank', 'generation']); // sous-filtres d'une page village (Naruto)
 
 // Pré-génère les valeurs CURÉES de chaque axe (les plus visitées) ; le reste se génère à la demande (ISR).
 export function generateStaticParams() {
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function AxisValuePage({ params }: Props) {
+export default async function AxisValuePage({ params, searchParams }: Props) {
   const r = await resolve(params);
   if (!r) notFound();
   const { taxo, axisDef, val } = r;
@@ -56,9 +57,18 @@ export default async function AxisValuePage({ params }: Props) {
   const valMeta = axisDef.values.find((x) => x.v === val);
   const tint = valMeta?.tint ?? m.color;
 
-  const { entries, total } = await listEntries({ universe: taxo.name, attr: axisDef.attr, val, sort: 'pop' });
-  if (total === 0) notFound();
+  // Sous-filtres (clan/rang/génération) sur une page village Naruto — filtrage combiné.
+  const sp = (await searchParams) ?? {};
+  const subFilterOn = taxo.slug === 'naruto' && axisDef.attr === 'village';
+  const subAttr = subFilterOn && sp.attr2 && SUB_ATTRS.has(sp.attr2) ? sp.attr2 : undefined;
+  const subVal = subAttr && sp.val2 ? sp.val2 : undefined;
+  const subAxes = subFilterOn ? taxo.axes.filter((a) => SUB_ATTRS.has(a.attr)) : [];
 
+  const { entries, total } = await listEntries({ universe: taxo.name, attr: axisDef.attr, val, attr2: subAttr, val2: subVal, sort: 'pop' });
+  if (total === 0 && !subVal) notFound();
+
+  const basePath = `/learn/akasha/u/${taxo.slug}/${axisDef.attr}/${encodeURIComponent(val)}`;
+  const subLabel = subAttr ? axisValueLabel(taxo.name, subAttr, subVal!) : null;
   // Valeurs sœurs (mêmes axe) → navigation latérale.
   const siblings = axisDef.values.filter((v) => v.v !== val);
 
@@ -95,13 +105,41 @@ export default async function AxisValuePage({ params }: Props) {
             {label}
           </h1>
           <div style={{ fontFamily: 'var(--fo)', fontSize: 13.5, color: 'var(--td2)', marginTop: 10 }}>
-            <strong style={{ color: tint }}>{total}</strong> {total > 1 ? 'entrées' : 'entrée'} · classées par popularité
+            <strong style={{ color: tint }}>{total}</strong> {total > 1 ? 'entrées' : 'entrée'} · classées par popularité{subLabel && <> · filtré : <strong style={{ color: tint }}>{subLabel}</strong></>}
           </div>
         </div>
       </div>
 
       <div style={{ maxWidth: 1000, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.2rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
-        <AkashaGrid entries={entries} />
+        {/* ── SOUS-FILTRES (clan / rang / génération) — réorg hub : filtrer les ninjas du village ── */}
+        {subFilterOn && (
+          <div style={{ marginBottom: 20 }}>
+            {subAxes.map((ax) => (
+              <div key={ax.attr} style={{ marginBottom: 10 }}>
+                <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: 6 }}>{ax.icon} {ax.label}</div>
+                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                  {ax.values.map((v) => {
+                    const active = subAttr === ax.attr && subVal === v.v;
+                    const t = v.tint ?? m.color;
+                    const href = active ? basePath : `${basePath}?attr2=${ax.attr}&val2=${encodeURIComponent(v.v)}`;
+                    return (
+                      <Link key={v.v} href={href} scroll={false} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '4px 10px', borderRadius: 999, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, border: `1px solid ${active ? 'transparent' : t + '44'}`, background: active ? t : `${t}12`, color: active ? '#0A1420' : 'var(--td2)' }}>
+                        {v.badge && <span aria-hidden>{v.badge}</span>}{v.l ?? v.v}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+            {subAttr && (
+              <Link href={basePath} scroll={false} style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: 'var(--td3)', textDecoration: 'none' }}>✕ Effacer le filtre</Link>
+            )}
+          </div>
+        )}
+
+        {total === 0
+          ? <div style={{ fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td3)', padding: '2rem 0', textAlign: 'center' }}>Aucun ninja de {label} ne correspond à ce filtre.</div>
+          : <AkashaGrid entries={entries} />}
 
         {total > entries.length && (
           <div style={{ textAlign: 'center', marginTop: '1.6rem' }}>
