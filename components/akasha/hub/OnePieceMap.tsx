@@ -5,17 +5,11 @@
 // escales numérotées, rejeu du voyage, fiche enrichie (vignette + liens personnages).
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { OP_WORLD, OPW_ROUTE_LABEL, type OpwIsland, type OpwPoi } from '@/lib/akasha/op-world-map';
+import { useMapZoomPanSvg } from '@/lib/akasha/useMapZoomPanSvg';
 
 const W = 4096, H = 2048;                 // fond op-world-bg.webp (4096×2048)
 const T = (px: number, py: number): [number, number] => [py, H - px]; // data [x,y] → écran paysage
 const tShape = (pts: [number, number][]) => pts.map(([x, y], i) => (i ? 'L' : 'M') + T(x, y).join(',')).join(' ');
-const FULL = { x: 0, y: 0, w: W, h: H };
-const MIN_W = 520, MAX_W = W;
-type View = { x: number; y: number; w: number; h: number };
-const clamp = (v: View): View => {
-  const w = Math.min(v.w, W), h = Math.min(v.h, H);
-  return { w, h, x: Math.max(0, Math.min(v.x, W - w)), y: Math.max(0, Math.min(v.y, H - h)) };
-};
 
 // Route de l'équipage précalculée (rejeu #10 + escales #9).
 const CREW = OP_WORLD.routes.find((r) => r.id === 'straw-hat-crew');
@@ -50,9 +44,8 @@ function Island({ isl, on, sel, matched, onSel, onHover }: {
 }
 
 export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
-  const svgRef = useRef<SVGSVGElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
-  const [view, setView] = useState(FULL);
+  const { view, setView, svgRef, clamp, zoomAround, reset, dragRef, onPointerDown, onPointerMove, onPointerUp } = useMapZoomPanSvg({ w: W, h: H, minW: 520 });
   const [hover, setHover] = useState<string | null>(null);
   const [sel, setSel] = useState<{ kind: 'island' | 'poi'; id: string } | null>(null);
   const [routes, setRoutes] = useState<Set<string>>(new Set(['straw-hat-crew']));
@@ -64,9 +57,6 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
   const [replay, setReplay] = useState(false);
   const [replayNonce, setReplayNonce] = useState(0);
 
-  const pointers = useRef<Map<number, { x: number; y: number }>>(new Map());
-  const drag = useRef<{ x: number; y: number; moved: boolean } | null>(null);
-  const pinch = useRef<{ dist: number } | null>(null);
   const motionRef = useRef<SVGAnimateMotionElement>(null);
   const drawRef = useRef<SVGAnimateElement>(null);
 
@@ -96,27 +86,6 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
     ].slice(0, 8);
   }, [query]);
 
-  // Zoom molette (Ctrl/⌘).
-  useEffect(() => {
-    const el = svgRef.current;
-    if (!el) return;
-    const onWheel = (e: WheelEvent) => {
-      if (!(e.ctrlKey || e.metaKey)) return;
-      e.preventDefault();
-      const rect = el.getBoundingClientRect();
-      const px = (e.clientX - rect.left) / rect.width, py = (e.clientY - rect.top) / rect.height;
-      setView((v) => {
-        const f = e.deltaY < 0 ? 0.82 : 1.22;
-        const nw = Math.min(MAX_W, Math.max(MIN_W, v.w * f));
-        const k = nw / v.w;
-        const cx = v.x + px * v.w, cy = v.y + py * v.h;
-        return clamp({ x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: v.h * k });
-      });
-    };
-    el.addEventListener('wheel', onWheel, { passive: false });
-    return () => el.removeEventListener('wheel', onWheel);
-  }, []);
-
   // Rejeu du voyage (#10).
   useEffect(() => {
     if (!replay) return;
@@ -124,55 +93,10 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
     return () => cancelAnimationFrame(id);
   }, [replay, replayNonce]);
 
-  const zoomAround = (f: number, px = 0.5, py = 0.5) => setView((v) => {
-    const nw = Math.min(MAX_W, Math.max(MIN_W, v.w * f)), k = nw / v.w;
-    const cx = v.x + px * v.w, cy = v.y + py * v.h;
-    return clamp({ x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: v.h * k });
-  });
-
   const focusOn = (x: number, y: number) => {
     const [cx, cy] = T(x, y);
     const w = 1100, h = w / 2;
     setView(clamp({ x: cx - w / 2, y: cy - h / 2, w, h }));
-  };
-
-  // Pointeurs : 1 = pan, 2 = pinch.
-  const svgPt = (cx: number, cy: number) => {
-    const r = svgRef.current!.getBoundingClientRect();
-    return { fx: (cx - r.left) / r.width, fy: (cy - r.top) / r.height, rw: r.width, rh: r.height };
-  };
-  const onPointerDown = (e: React.PointerEvent) => {
-    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
-    (e.target as Element).setPointerCapture?.(e.pointerId);
-    if (pointers.current.size === 1) drag.current = { x: e.clientX, y: e.clientY, moved: false };
-    else if (pointers.current.size === 2) { drag.current = null; const p = [...pointers.current.values()]; pinch.current = { dist: Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y) }; }
-  };
-  const onPointerMove = (e: React.PointerEvent) => {
-    if (!pointers.current.has(e.pointerId) || !svgRef.current) return;
-    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
-    if (pointers.current.size >= 2 && pinch.current) {
-      const p = [...pointers.current.values()];
-      const dist = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
-      const midX = (p[0].x + p[1].x) / 2, midY = (p[0].y + p[1].y) / 2;
-      const { fx, fy } = svgPt(midX, midY);
-      const f = pinch.current.dist / (dist || 1);
-      pinch.current = { dist };
-      setView((v) => { const nw = Math.min(MAX_W, Math.max(MIN_W, v.w * f)), k = nw / v.w; const cx = v.x + fx * v.w, cy = v.y + fy * v.h; return clamp({ x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: v.h * k }); });
-      return;
-    }
-    if (!drag.current) return;
-    const { rw, rh } = svgPt(e.clientX, e.clientY);
-    const dx = (e.clientX - drag.current.x) * (view.w / rw);
-    const dy = (e.clientY - drag.current.y) * (view.h / rh);
-    if (Math.abs(e.clientX - drag.current.x) + Math.abs(e.clientY - drag.current.y) > 3) drag.current.moved = true;
-    drag.current = { x: e.clientX, y: e.clientY, moved: drag.current.moved };
-    setView((v) => clamp({ ...v, x: v.x - dx, y: v.y - dy }));
-  };
-  const onPointerUp = (e: React.PointerEvent) => {
-    pointers.current.delete(e.pointerId);
-    pinch.current = null;
-    if (pointers.current.size === 1) { const [p] = [...pointers.current.values()]; drag.current = { x: p.x, y: p.y, moved: true }; }
-    else if (pointers.current.size === 0) drag.current = null;
   };
 
   const toggleRoute = (id: string) => setRoutes((s) => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
@@ -252,14 +176,14 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
             <button key={t} onClick={() => zoomAround(f)} aria-label={t === '+' ? 'Zoom avant' : 'Zoom arrière'}
               style={{ width: 44, height: 44, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 17, fontWeight: 700, cursor: 'pointer' }}>{t}</button>
           ))}
-          <button onClick={() => setView(FULL)} aria-label="Recentrer" style={{ width: 44, height: 44, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⤢</button>
+          <button onClick={reset} aria-label="Recentrer" style={{ width: 44, height: 44, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⤢</button>
           <button onClick={toggleFullscreen} aria-label="Plein écran" style={{ width: 44, height: 44, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(10,20,32,0.85)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⛶</button>
         </div>
 
         <svg ref={svgRef} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} role="application"
           aria-label="Carte du monde One Piece interactive — îles et points d'intérêt navigables au clavier" preserveAspectRatio="xMidYMid slice"
           onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp} onPointerLeave={onPointerUp}
-          style={{ width: '100%', aspectRatio: '2 / 1', display: 'block', touchAction: 'none', cursor: drag.current ? 'grabbing' : 'grab' }}>
+          style={{ width: '100%', aspectRatio: '2 / 1', display: 'block', touchAction: 'none', cursor: dragRef.current ? 'grabbing' : 'grab' }}>
 
           <image href="/images/akasha/op-world-bg.webp" x={0} y={0} width={W} height={H} preserveAspectRatio="none" />
 
@@ -286,7 +210,7 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
           {/* Îles (hotspots) */}
           {OP_WORLD.islands.map((isl) => (
             <Island key={isl.id} isl={isl} on={hover === isl.id} sel={sel?.kind === 'island' && sel.id === isl.id} matched={!!matchedIds?.has(isl.id)}
-              onHover={(v) => setHover(v ? isl.id : null)} onSel={() => { if (!drag.current?.moved) setSel({ kind: 'island', id: isl.id }); }} />
+              onHover={(v) => setHover(v ? isl.id : null)} onSel={() => { if (!dragRef.current?.moved) setSel({ kind: 'island', id: isl.id }); }} />
           ))}
 
           {/* POI (au-dessus → cliquables) */}
@@ -295,7 +219,7 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
             return (
               <g key={p.id} style={{ cursor: 'pointer', outline: 'none' }} className="ak-svg-focusable" tabIndex={0} role="button" aria-label={p.name}
                 onPointerEnter={() => setHover(p.id)} onPointerLeave={() => setHover(null)} onFocus={() => setHover(p.id)} onBlur={() => setHover(null)}
-                onClick={() => { if (!drag.current?.moved) setSel({ kind: 'poi', id: p.id }); }}
+                onClick={() => { if (!dragRef.current?.moved) setSel({ kind: 'poi', id: p.id }); }}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSel({ kind: 'poi', id: p.id }); } }}>
                 <path d={`M${cx},${cy - 11} L${cx + 9},${cy} L${cx},${cy + 11} L${cx - 9},${cy} Z`} fill="#F2C14E" stroke="#06131F" strokeWidth={2} />
                 {hover === p.id && <text x={cx} y={cy - 16} textAnchor="middle" fontFamily="var(--fo)" fontWeight="700" fontSize={22} fill="#FDE9B0" stroke="#06131F" strokeWidth={5} paintOrder="stroke" style={{ pointerEvents: 'none' }}>{p.name}</text>}

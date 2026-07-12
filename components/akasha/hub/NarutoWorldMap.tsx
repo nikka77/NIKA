@@ -2,64 +2,21 @@
 // components/akasha/hub/NarutoWorldMap.tsx — carte du monde shinobi : SVG canon en fond + hotspots pays/villages.
 // Clic pays/village → page des ninjas du village (/learn/akasha/u/naruto/village/{village}). Pan/zoom (comme OP).
 // Formes extraites du SVG (scripts/build-naruto-world.mjs), même espace 1500×882 → transform identité.
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { NARUTO_MAP, NW_COUNTRIES, NW_VILLAGES, NW_LANDMARKS } from '@/lib/akasha/naruto-world';
+import { useMapZoomPanSvg } from '@/lib/akasha/useMapZoomPanSvg';
 
 const W = NARUTO_MAP.w, H = NARUTO_MAP.h;
-const FULL = { x: 0, y: 0, w: W, h: H };
-const MIN_W = 360, MAX_W = W;
-type View = { x: number; y: number; w: number; h: number };
-const clamp = (v: View): View => {
-  const w = Math.min(v.w, W), h = Math.min(v.h, H);
-  return { w, h, x: Math.max(0, Math.min(v.x, W - w)), y: Math.max(0, Math.min(v.y, H - h)) };
-};
 const villageHref = (village: string) => `/learn/akasha/u/naruto/village/${encodeURIComponent(village)}`;
 
 export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }) {
-  const svgRef = useRef<SVGSVGElement>(null);
   const router = useRouter();
-  const [view, setView] = useState<View>(FULL);
+  const { view, svgRef, zoomAround, reset, dragRef, onPointerDown, onPointerMove, onPointerUp } = useMapZoomPanSvg({ w: W, h: H, minW: 360 });
   const [hover, setHover] = useState<string | null>(null);
-  const drag = useRef<{ x: number; y: number; moved: boolean } | null>(null);
 
-  useEffect(() => {
-    const el = svgRef.current;
-    if (!el) return;
-    const onWheel = (e: WheelEvent) => {
-      if (!(e.ctrlKey || e.metaKey)) return;
-      e.preventDefault();
-      const rect = el.getBoundingClientRect();
-      const px = (e.clientX - rect.left) / rect.width, py = (e.clientY - rect.top) / rect.height;
-      setView((v) => {
-        const f = e.deltaY < 0 ? 0.82 : 1.22;
-        const nw = Math.min(MAX_W, Math.max(MIN_W, v.w * f)), k = nw / v.w;
-        const cx = v.x + px * v.w, cy = v.y + py * v.h;
-        return clamp({ x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: v.h * k });
-      });
-    };
-    el.addEventListener('wheel', onWheel, { passive: false });
-    return () => el.removeEventListener('wheel', onWheel);
-  }, []);
-
-  const zoomBtn = (f: number) => setView((v) => {
-    const nw = Math.min(MAX_W, Math.max(MIN_W, v.w * f)), k = nw / v.w;
-    const cx = v.x + v.w / 2, cy = v.y + v.h / 2;
-    return clamp({ x: cx - (cx - v.x) * k, y: cy - (cy - v.y) * k, w: nw, h: v.h * k });
-  });
-
-  const onPointerDown = (e: React.PointerEvent) => { drag.current = { x: e.clientX, y: e.clientY, moved: false }; (e.target as Element).setPointerCapture?.(e.pointerId); };
-  const onPointerMove = (e: React.PointerEvent) => {
-    if (!drag.current || !svgRef.current) return;
-    const rect = svgRef.current.getBoundingClientRect();
-    const dx = (e.clientX - drag.current.x) * (view.w / rect.width);
-    const dy = (e.clientY - drag.current.y) * (view.h / rect.height);
-    if (Math.abs(e.clientX - drag.current.x) + Math.abs(e.clientY - drag.current.y) > 3) drag.current.moved = true;
-    drag.current = { x: e.clientX, y: e.clientY, moved: drag.current.moved };
-    setView((v) => clamp({ ...v, x: v.x - dx, y: v.y - dy }));
-  };
-  const onPointerUp = () => { drag.current = null; };
-  const go = (village: string) => { if (!drag.current?.moved) router.push(villageHref(village)); };
+  const zoomBtn = (f: number) => zoomAround(f);
+  const go = (village: string) => { if (!dragRef.current?.moved) router.push(villageHref(village)); };
 
   return (
     <div style={{ marginTop: '1.6rem' }}>
@@ -76,13 +33,13 @@ export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }
             <button key={t} onClick={() => zoomBtn(f)} aria-label={t === '+' ? 'Zoom avant' : 'Zoom arrière'}
               style={{ width: 44, height: 44, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(20,28,40,0.8)', color: '#EAF2F8', fontSize: 17, fontWeight: 700, cursor: 'pointer' }}>{t}</button>
           ))}
-          <button onClick={() => setView(FULL)} aria-label="Recentrer" style={{ width: 44, height: 44, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(20,28,40,0.8)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⤢</button>
+          <button onClick={reset} aria-label="Recentrer" style={{ width: 44, height: 44, borderRadius: 8, border: '1px solid var(--bd)', background: 'rgba(20,28,40,0.8)', color: '#EAF2F8', fontSize: 13, cursor: 'pointer' }}>⤢</button>
         </div>
 
         <svg ref={svgRef} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} role="application"
           aria-label="Carte du continent shinobi — pays et villages navigables au clavier" preserveAspectRatio="xMidYMid slice"
           onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerLeave={onPointerUp}
-          style={{ width: '100%', aspectRatio: `${W} / ${H}`, display: 'block', touchAction: 'none', cursor: drag.current ? 'grabbing' : 'grab' }}>
+          style={{ width: '100%', aspectRatio: `${W} / ${H}`, display: 'block', touchAction: 'none', cursor: dragRef.current ? 'grabbing' : 'grab' }}>
 
           <image href={NARUTO_MAP.bg} x={0} y={0} width={W} height={H} preserveAspectRatio="none" />
 
