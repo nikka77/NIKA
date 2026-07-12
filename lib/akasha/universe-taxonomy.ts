@@ -207,6 +207,8 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
           { v: 'Partie 4', l: '4 · Diamond is Unbreakable' },
           { v: 'Partie 5', l: '5 · Golden Wind' },
           { v: 'Partie 6', l: '6 · Stone Ocean' },
+          { v: 'Partie 7', l: '7 · Steel Ball Run' },
+          { v: 'Partie 8', l: '8 · JoJolion' },
         ],
       },
     ],
