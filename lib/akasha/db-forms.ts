@@ -1,5 +1,5 @@
 // lib/akasha/db-forms.ts — évolutions/transformations, fusions et artefacts par personnage.
-// Consommé par components/akasha/hub/DragonBallVisualizer.tsx.
+// Injecté dans l'attribut `forms` des entités via scripts/akasha-db-forms.ts (cartes TCG).
 // Les formes changent l'image, le niveau de puissance (approximatif) et les stats (boost cumulé,
 // plafonné à 99) pour rester cohérent. img optionnelle → retombe sur l'image de base du perso.
 

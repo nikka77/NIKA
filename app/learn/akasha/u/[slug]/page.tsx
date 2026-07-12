@@ -8,7 +8,7 @@ import { SITE_URL } from '@/lib/site';
 import { hubVisual, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { RARITY_META, TYPE_META, universeMeta, universeWordmark, universeBanner } from '@/lib/akasha/types';
 import { flavorText } from '@/lib/akasha/flavor';
-import { countUniverse, getEntriesBySlugs, listAxisCounts, listBounties, listCategoryCounts, listEvolutive, listStars, listUniverseIndex, universeInsights } from '@/lib/akasha/queries';
+import { countUniverse, getEntriesBySlugs, getFullEntriesBySlugs, listAxisCounts, listBounties, listCategoryCounts, listEntries, listEvolutive, listStars, listUniverseIndex, universeInsights } from '@/lib/akasha/queries';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import HubHalo from '@/components/akasha/hub/HubHalo';
 import Reveal from '@/components/akasha/hub/Reveal';
@@ -19,7 +19,7 @@ import HubCollection from '@/components/akasha/hub/HubCollection';
 import ContinueBanner from '@/components/akasha/hub/ContinueBanner';
 import HubSignature from '@/components/akasha/hub/HubSignature';
 import OnePieceMap from '@/components/akasha/hub/OnePieceMap';
-import DragonBallVisualizer from '@/components/akasha/hub/DragonBallVisualizer';
+import DragonBallCards from '@/components/akasha/hub/DragonBallCards';
 import DragonBallCosmos from '@/components/akasha/hub/DragonBallCosmos';
 import { VillageEmblem, ClanCrest, RankBadge, GenerationBadge } from '@/components/akasha/NarutoIcons';
 import { opAxisIcon } from '@/components/akasha/OnePieceIcons';
@@ -90,6 +90,14 @@ export default async function UniverseHubPage({ params }: Props) {
   ]);
   const bounties = vis?.signature === 'bounties' ? await listBounties(8) : [];
   const searchIndex = await listUniverseIndex(taxo.name);
+
+  // Cartes TCG du hub Dragon Ball : top persos par popularité (entités complètes → attribut `forms`).
+  const dbCards = taxo.slug === 'dragon-ball'
+    ? await getFullEntriesBySlugs([
+        ...(await listEntries({ universe: taxo.name, type: 'character', sort: 'pop', page: 1 })).entries,
+        ...(await listEntries({ universe: taxo.name, type: 'character', sort: 'pop', page: 2 })).entries,
+      ].map((e) => e.slug))
+    : [];
 
   // Garde-fou : un univers sans aucune donnée exploitable n'est pas une page indexable.
   if (total === 0 && stars.length === 0 && piliers.length === 0) notFound();
@@ -252,7 +260,7 @@ export default async function UniverseHubPage({ params }: Props) {
         {taxo.slug === 'dragon-ball' && (
           <>
             <Reveal as="div"><DragonBallCosmos color={m.color} /></Reveal>
-            <Reveal as="div"><DragonBallVisualizer color={m.color} /></Reveal>
+            {dbCards.length > 0 && <Reveal as="div"><DragonBallCards entries={dbCards} color={m.color} /></Reveal>}
           </>
         )}
 

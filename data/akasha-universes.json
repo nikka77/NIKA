@@ -8324,72 +8324,44 @@
         "personality": "Naïf en tout sauf au combat, où il devient un génie tactique. Goku pardonne à ses pires ennemis — Piccolo, Vegeta en témoignent — car un ennemi épargné est un rival de plus pour demain.",
         "forms": [
           {
-            "label": "Goku",
-            "idle": "/images/akasha/universes/idle/goku-base.webp",
-            "arc": "De Raditz à Buu",
-            "caption": "Le gi orange de Kame House",
-            "summary": "La base : le gi orange de Tortue Géniale, le Kamehameha, et un appétit de combat (et de riz) sans fond.",
-            "stats": {
-              "nin": 4,
-              "tai": 4.5,
-              "gen": 4,
-              "int": 3,
-              "for": 4,
-              "vit": 4,
-              "end": 4.5,
-              "sce": 4.5
-            }
+            "label": "Base",
+            "url": "https://dragonball-api.com/characters/goku_normal.webp",
+            "caption": "Puissance ≈ 12 M"
+          },
+          {
+            "label": "Kaïō-ken",
+            "url": "/images/akasha/db/forms/kaioken.webp",
+            "caption": "Puissance ≈ 480 M"
           },
           {
             "label": "Super Saiyan",
-            "idle": "/images/akasha/universes/idle/goku-ssj.webp",
-            "arc": "Namek — vs Freezer",
-            "caption": "La légende dorée",
-            "summary": "La colère face à la mort de Krillin réveille la légende : cheveux d'or, aura de feu — le Super Saiyan renaît après 1 000 ans, sur Namek en flammes.",
-            "stats": {
-              "nin": 4.5,
-              "tai": 4.5,
-              "gen": 4,
-              "int": 3,
-              "for": 4.5,
-              "vit": 4.5,
-              "end": 4.5,
-              "sce": 4.5
-            }
+            "url": "/images/akasha/db/forms/ssj.webp",
+            "caption": "Puissance ≈ 3 Md"
+          },
+          {
+            "label": "Super Saiyan 3",
+            "url": "/images/akasha/db/forms/ssj3.webp",
+            "caption": "Puissance ≈ 24 Md"
+          },
+          {
+            "label": "Super Saiyan God",
+            "url": "/images/akasha/db/forms/ssg.webp",
+            "caption": "Puissance ≈ 6 Bn"
           },
           {
             "label": "Super Saiyan Blue",
-            "idle": "/images/akasha/universes/idle/goku-blue.webp",
-            "arc": "Dragon Ball Super",
-            "caption": "Le ki divin maîtrisé",
-            "summary": "La transformation du Super Saiyan God stabilisée : le bleu du ki divin, la puissance des dieux dans un corps mortel — face à Beerus, Hit, Jiren.",
-            "stats": {
-              "nin": 5,
-              "tai": 5,
-              "gen": 4.5,
-              "int": 3.5,
-              "for": 5,
-              "vit": 5,
-              "end": 4.5,
-              "sce": 4.5
-            }
+            "url": "/images/akasha/db/forms/ssb.webp",
+            "caption": "Puissance ≈ 12 Bn"
           },
           {
             "label": "Ultra Instinct",
-            "idle": "/images/akasha/universes/idle/goku-ui.webp",
-            "arc": "Tournoi du Pouvoir",
-            "caption": "Le corps qui pense seul",
-            "summary": "L'état des anges : le corps esquive et frappe SANS la pensée. Cheveux d'argent, calme absolu — la limite au-delà des limites, brisée face à Jiren.",
-            "stats": {
-              "nin": 5,
-              "tai": 5,
-              "gen": 5,
-              "int": 4,
-              "for": 5,
-              "vit": 5,
-              "end": 5,
-              "sce": 5
-            }
+            "url": "/images/akasha/db/forms/ui-goku.webp",
+            "caption": "Puissance ≈ 90 Bn"
+          },
+          {
+            "label": "Super Saiyan 4",
+            "url": "/images/akasha/db/forms/ssj4.webp",
+            "caption": "Puissance ≈ 30 Bn"
           }
         ],
         "descFr": "Race : Saïyen. Taille : 175,3 cm. Poids : 85,4 kg. Année de naissance : An 737. Loisir : combattre des adversaires puissants. Nourriture préférée : tout. Véhicule préféré : Kinto'un (le Nuage Magique). D'abord nommé Kakarot, Goku naît membre d'une race d'extraterrestres appelés les Saïyens. Peu après sa naissance, Goku est envoyé de sa planète natale Vegeta vers la Terre, afin d'en revendre le potentiel sur le marché intergalactique en détruisant toute vie ; Goku est aussi éloigné pour échapper au génocide des Saïyens perpétré par Freezer. Une fois arrivé sur Terre, il est adopté par un vieil homme nommé Gohan (que l'on appellera plus tard grand-père Gohan). Au début, Goku est un enfant très violent à cause de son sang saïyen, mais une blessure à la tête lui cause une grave amnésie et le transforme en un garçon plus doux et innocent. Au début de la série, Goku rencontre Bulma, Yamcha, Oolong et Pu'ar, dont les personnages font écho à ceux du roman La Pérégrination vers l'Ouest de Wu Cheng'en. Il rencontre aussi Krillin, qui devient son meilleur ami, ainsi que d'autres personnages durant sa quête de puissance. Participant à plusieurs Tournois des Arts Martiaux, Goku affronte aussi des ennemis devenus alliés comme Tenshinhan et Chaozu, ainsi que le rejeton du Roi Démon Piccolo nommé Majunior (plus tard nommé simplement Piccolo). Dragon Ball Z se déroule cinq ans après la victoire de Goku contre Piccolo au 23e Tenkaichi Budokai. Il a désormais un fils nommé Son Gohan (nommé d'après grand-père Gohan) qui n'a pas l'amour du combat de son père mais possède un grand po",
@@ -8453,55 +8425,34 @@
         ],
         "forms": [
           {
-            "label": "Arrivée sur Terre",
-            "idle": "/images/akasha/universes/idle/vegeta-saiyan.webp",
-            "arc": "Saga Saiyan",
-            "caption": "Le prince conquérant",
-            "summary": "Scouter à l'œil, armure de combat, mépris intégral : le prince vient détruire la Terre — et y rencontre l'insecte qui le hantera toute sa vie.",
-            "stats": {
-              "nin": 4,
-              "tai": 4.5,
-              "gen": 3.5,
-              "int": 4,
-              "for": 4,
-              "vit": 4,
-              "end": 4,
-              "sce": 4.5
-            }
+            "label": "Base",
+            "url": "https://dragonball-api.com/characters/vegeta_normal.webp",
+            "caption": "Puissance ≈ 11 M"
           },
           {
             "label": "Super Saiyan",
-            "idle": "/images/akasha/universes/idle/vegeta-ssj.webp",
-            "arc": "Androïdes → Cell",
-            "caption": "La légende, par la rage",
-            "summary": "Là où Goku a transcendé par la perte, Vegeta y parvient par la RAGE pure : l'or lui va bien, l'arrogance encore mieux.",
-            "stats": {
-              "nin": 4.5,
-              "tai": 4.5,
-              "gen": 3.5,
-              "int": 4,
-              "for": 4.5,
-              "vit": 4.5,
-              "end": 4.5,
-              "sce": 4.5
-            }
+            "url": "https://dragonball-api.com/characters/vegeta_normal.webp",
+            "caption": "Puissance ≈ 3 Md"
+          },
+          {
+            "label": "Majin Vegeta",
+            "url": "https://dragonball-api.com/characters/vegeta_normal.webp",
+            "caption": "Puissance ≈ 8 Md"
           },
           {
             "label": "Super Saiyan Blue",
-            "idle": "/images/akasha/universes/idle/vegeta-blue.webp",
-            "arc": "Dragon Ball Super",
-            "caption": "Le ki divin du prince",
-            "summary": "Le prince atteint les dieux à la force du poignet — sans rituel, sans raccourci : des années de gravité 500G dans la Capsule Corp.",
-            "stats": {
-              "nin": 5,
-              "tai": 5,
-              "gen": 4,
-              "int": 4,
-              "for": 5,
-              "vit": 4.5,
-              "end": 4.5,
-              "sce": 5
-            }
+            "url": "https://dragonball-api.com/characters/vegeta_normal.webp",
+            "caption": "Puissance ≈ 12 Bn"
+          },
+          {
+            "label": "Super Saiyan Blue Évolution",
+            "url": "/images/akasha/db/forms/ssb-evo.webp",
+            "caption": "Puissance ≈ 30 Bn"
+          },
+          {
+            "label": "Ultra Ego",
+            "url": "/images/akasha/db/forms/ultra-ego.webp",
+            "caption": "Puissance ≈ 85 Bn"
           }
         ],
         "descFr": "Race : Saïyen. Date de naissance : An 732. Taille : 168 cm. Poids : 56 kg. Loisir : s'entraîner. Nourriture préférée : tous types de nourriture. Véhicule préféré : le module spatial. Famille connue : le Roi Vegeta (père), Tarble (frère), Bulma (épouse), Trunks (fils), Bra [Bulla] (fille). Vegeta est un personnage de fiction du manga Dragon Ball, créé par Akira Toriyama. Avec Goku, Gohan et Piccolo, il est l'un des personnages les plus importants de la série, débutant comme méchant avant de devenir un héros incontournable. Vegeta commence hautain, arrogant, imbu de lui-même et impitoyable en tant que prince des Saïyens. Son statut royal lui a fait développer un sentiment de supériorité démesuré et il se place au-dessus de la plupart, sinon de la totalité, des gens qu'il rencontre. Majestueux, égocentrique et empli de fierté, Vegeta fut jadis un guerrier impitoyable, au sang froid, un véritable tueur. Cependant, au fil de l'histoire, il devient une personne capable de se soucier de quelqu'un d'autre que lui-même et de l'aimer. Vegeta fut jadis un jeune membre de l'armée saïyenne, mais après la disparition de sa race, il travailla aux côtés de Nappa et Raditz, directement sous les ordres de Freezer. Il recherche l'immortalité pour régner sur l'univers, mais lorsqu'il apprend de Dodoria que Freezer a détruit sa planète, il décide d'éliminer Freezer (non pour venger sa race, mais pour assurer sa propre domination sur l'univers et se venger de Freezer qui l'avait utilisé à son insu pour servir ses propres objectifs). Il affronte plus tard Freezer avec les personnages principaux sur Namek et meurt dans les combats qui s'ensuivent ; une fois",
@@ -8536,7 +8487,29 @@
         "race": "Saiyan",
         "ki": "45.000.000",
         "descFr": "Grand-père Son Gohan devint le père adoptif et le grand-père de Son Goku lorsqu'il le trouva près du site d'atterrissage de son vaisseau spatial alors qu'il était bébé. Gohan fut initié aux arts martiaux par Muten-Rôshi et transmit son savoir à Goku.",
-        "saga": "Saga Saiyan"
+        "saga": "Saga Saiyan",
+        "forms": [
+          {
+            "label": "Base",
+            "url": "https://dragonball-api.com/characters/gohan.webp",
+            "caption": "Puissance ≈ 9 M"
+          },
+          {
+            "label": "Super Saiyan 2",
+            "url": "/images/akasha/db/forms/ssj2.webp",
+            "caption": "Puissance ≈ 6 Md"
+          },
+          {
+            "label": "Gohan Ultime",
+            "url": "/images/akasha/db/forms/ultimate.webp",
+            "caption": "Puissance ≈ 40 Md"
+          },
+          {
+            "label": "Gohan Beast",
+            "url": "/images/akasha/db/forms/beast.webp",
+            "caption": "Puissance ≈ 95 Bn"
+          }
+        ]
       },
       "rarity": "epic"
     },
@@ -8566,7 +8539,24 @@
         "race": "Namekian",
         "ki": "2.000.000",
         "descFr": "Race : Namek. Taille : 223,5 cm. Poids : 115,6 kg. Année de naissance : An 753. Nourriture préférée : l'eau (surtout l'eau de la glace fondue de la Zone Nord). Loisir : méditer dans un endroit calme. Véhicule préféré : aucun. Piccolo est un personnage de fiction de la méta-série Dragon Ball. Il est considéré à la fois comme le fils et la réincarnation du Roi Démon Piccolo, engendré pour échapper à une mort certaine des mains de Son Goku. Comme son père, il apparaît sous la forme d'une grande créature humanoïde verte aux oreilles pointues ; on révèle plus tard qu'il fait partie d'une race extraterrestre appelée les Nameks. Piccolo est d'abord dévoré par la vengeance contre Goku, et choisit de le vaincre et de le tuer durant le 23e Tenkaichi Budokai. Après sa défaite de justesse contre Goku, Piccolo est bientôt contraint de former une alliance d'abord difficile avec Goku et ses amis face à des menaces nouvelles et plus dangereuses comme les Saïyens et Freezer. Par nécessité, il prend aussi sur lui d'entraîner l'enfant de Goku, Son Gohan, tissant un lien qui se renforce quand il se sacrifie pour sauver la vie de l'enfant face à Nappa. Après sa résurrection, il rejoint pleinement Goku et les autres dans leurs luttes contre des méchants toujours plus puissants. Piccolo conserve des traces d'impitoyabilité et d'arrogance, mais une fois fusionné avec Kami (Tout-Puissant), toute trace de mal et de haine disparaît, et Piccolo renaît totalement en une âme pure. Piccolo reste un solitaire, préférant se tenir à l'écart des autres. Il a peu à dire sauf si cela concerne le combat, mais il",
-        "saga": "Saga Saiyan"
+        "saga": "Saga Saiyan",
+        "forms": [
+          {
+            "label": "Base",
+            "url": "https://dragonball-api.com/characters/picolo_normal.webp",
+            "caption": "Puissance ≈ 3 M"
+          },
+          {
+            "label": "Fusion (Nail & Kami)",
+            "url": "https://dragonball-api.com/characters/picolo_normal.webp",
+            "caption": "Puissance ≈ 1 Md"
+          },
+          {
+            "label": "Piccolo Orange",
+            "url": "/images/akasha/db/forms/orange-piccolo.webp",
+            "caption": "Puissance ≈ 50 Md"
+          }
+        ]
       },
       "rarity": "epic"
     },
@@ -8587,7 +8577,24 @@
         "descLang": "es",
         "saga": "Saga Namek",
         "favorites": 1499,
-        "descFr": "Freezer est le tyran de l'espace et le principal antagoniste de la saga de Freezer."
+        "descFr": "Freezer est le tyran de l'espace et le principal antagoniste de la saga de Freezer.",
+        "forms": [
+          {
+            "label": "Forme finale",
+            "url": "https://dragonball-api.com/characters/Freezer.webp",
+            "caption": "Puissance ≈ 120 M"
+          },
+          {
+            "label": "Golden Freezer",
+            "url": "/images/akasha/db/forms/golden-frieza.webp",
+            "caption": "Puissance ≈ 12 Bn"
+          },
+          {
+            "label": "Black Freezer",
+            "url": "/images/akasha/db/forms/black-frieza.webp",
+            "caption": "Puissance ≈ 900 Bn"
+          }
+        ]
       },
       "rarity": "legendary"
     },
@@ -8617,7 +8624,19 @@
         "race": "Android",
         "ki": "250.000.000",
         "saga": "Saga Cell",
-        "descFr": "Cell est un super-vilain de fiction qui apparaît pour la première fois dans le manga Dragon Ball créé par Akira Toriyama, puis dans Dragon Ball Z et Dragon Ball GT. Il est l'ultime création du scientifique Dr Gero, cloné à partir des cellules de plusieurs personnages de la série. À la suite de ce clonage, Cell est qualifié de « guerrier parfait », possédant des traits génétiques, des traits de personnalité et des capacités de presque tous les personnages de Dragon Ball. Ceux-ci incluent, sans s'y limiter, Piccolo, Freezer, Vegeta et même Son Goku lui-même. Cell possède une personnalité originale à laquelle diverses autres personnalités ont été ajoutées ; l'ordinateur a redessiné les parties faibles de la personnalité d'origine, y ajoutant les personnalités de divers personnages pour en faire l'arme parfaite. Tout au long de l'arc des Cyborgs, la personnalité de Cell change radicalement à chaque transformation. Au début, le désir de Cell d'achever son évolution en absorbant à la fois C-17 et C-18 est ce qui l'anime. Une fois sa forme finale atteinte, son empressement à tester les limites de sa puissance nouvelle est ce qui définit son personnage. Cell est unique parmi la plupart des vilains de la série en ce qu'il est très sophistiqué. Grâce à sa composition génétique issue d'autres guerriers, il est capable de manipuler psychologiquement ces guerriers et d'exploiter leurs faiblesses à son avantage."
+        "descFr": "Cell est un super-vilain de fiction qui apparaît pour la première fois dans le manga Dragon Ball créé par Akira Toriyama, puis dans Dragon Ball Z et Dragon Ball GT. Il est l'ultime création du scientifique Dr Gero, cloné à partir des cellules de plusieurs personnages de la série. À la suite de ce clonage, Cell est qualifié de « guerrier parfait », possédant des traits génétiques, des traits de personnalité et des capacités de presque tous les personnages de Dragon Ball. Ceux-ci incluent, sans s'y limiter, Piccolo, Freezer, Vegeta et même Son Goku lui-même. Cell possède une personnalité originale à laquelle diverses autres personnalités ont été ajoutées ; l'ordinateur a redessiné les parties faibles de la personnalité d'origine, y ajoutant les personnalités de divers personnages pour en faire l'arme parfaite. Tout au long de l'arc des Cyborgs, la personnalité de Cell change radicalement à chaque transformation. Au début, le désir de Cell d'achever son évolution en absorbant à la fois C-17 et C-18 est ce qui l'anime. Une fois sa forme finale atteinte, son empressement à tester les limites de sa puissance nouvelle est ce qui définit son personnage. Cell est unique parmi la plupart des vilains de la série en ce qu'il est très sophistiqué. Grâce à sa composition génétique issue d'autres guerriers, il est capable de manipuler psychologiquement ces guerriers et d'exploiter leurs faiblesses à son avantage.",
+        "forms": [
+          {
+            "label": "Cellule Parfaite",
+            "url": "https://dragonball-api.com/characters/celula.webp",
+            "caption": "Puissance ≈ 5 Md"
+          },
+          {
+            "label": "Super Parfaite",
+            "url": "https://dragonball-api.com/characters/celula.webp",
+            "caption": "Puissance ≈ 15 Md"
+          }
+        ]
       },
       "rarity": "epic"
     },
@@ -8647,7 +8666,24 @@
         "race": "Majin",
         "ki": "8 Billion",
         "saga": "Saga Buu",
-        "descFr": "Buu est introduit dans la série durant la saga Buu sous la forme d'une créature rose dodue à l'air innocent, semblable à un génie. Plus tard dans la série, on révèle que la forme originelle de Buu est une forme d'enfant plus svelte (« le Buu du Mal Pur ») ; cependant, sa nature et sa forme avaient été altérées après qu'il eut assimilé le dieu doux et dodu (le Daï Kaïoshin) dans son corps. Le créateur de Buu, un sorcier nommé Bibidi, avait utilisé Buu pour faire la guerre aux Kaïoshins. Buu parvint à assimiler deux des quatre Kaïoshins, le second étant celui qui altéra sa nature pour le rendre innocent. Avant d'assimiler le second Kaïoshin, il avait tué le troisième Kaïoshin. Après que Bibidi eut scellé Buu, Bibidi fut tué par le quatrième Kaïoshin, et Buu fut transporté sur la planète Terre où il resta dormant pendant cinq millions d'années jusqu'à ce qu'il soit réveillé par le fils de Bibidi, Babidi, durant les événements de Dragon Ball. Buu a de nombreux avatars dans la série. Quand il émerge pour la première fois de sa coque, il est grand et rond, et sa personnalité est naïve et innocente. La première forme de Buu tue Babidi, mais se lie vite d'amitié avec un humain nommé Mr. Satan, puis avec un chiot que Buu trouve et guérit après avoir décidé de partir en carnage meurtrier. Après avoir réalisé que le chiot l'aime bien, Buu le nomme Bee. Malgré ce revirement soudain de Buu, deux hommes armés détruisent sa maison et tentent de tuer Bee et Mr. Satan. Sous l'effet de sa rage contre les tireurs, la colère de Buu se manifeste sous la forme d'un autre Buu (« le Buu de la Colère Pure »). Après un combat"
+        "descFr": "Buu est introduit dans la série durant la saga Buu sous la forme d'une créature rose dodue à l'air innocent, semblable à un génie. Plus tard dans la série, on révèle que la forme originelle de Buu est une forme d'enfant plus svelte (« le Buu du Mal Pur ») ; cependant, sa nature et sa forme avaient été altérées après qu'il eut assimilé le dieu doux et dodu (le Daï Kaïoshin) dans son corps. Le créateur de Buu, un sorcier nommé Bibidi, avait utilisé Buu pour faire la guerre aux Kaïoshins. Buu parvint à assimiler deux des quatre Kaïoshins, le second étant celui qui altéra sa nature pour le rendre innocent. Avant d'assimiler le second Kaïoshin, il avait tué le troisième Kaïoshin. Après que Bibidi eut scellé Buu, Bibidi fut tué par le quatrième Kaïoshin, et Buu fut transporté sur la planète Terre où il resta dormant pendant cinq millions d'années jusqu'à ce qu'il soit réveillé par le fils de Bibidi, Babidi, durant les événements de Dragon Ball. Buu a de nombreux avatars dans la série. Quand il émerge pour la première fois de sa coque, il est grand et rond, et sa personnalité est naïve et innocente. La première forme de Buu tue Babidi, mais se lie vite d'amitié avec un humain nommé Mr. Satan, puis avec un chiot que Buu trouve et guérit après avoir décidé de partir en carnage meurtrier. Après avoir réalisé que le chiot l'aime bien, Buu le nomme Bee. Malgré ce revirement soudain de Buu, deux hommes armés détruisent sa maison et tentent de tuer Bee et Mr. Satan. Sous l'effet de sa rage contre les tireurs, la colère de Buu se manifeste sous la forme d'un autre Buu (« le Buu de la Colère Pure »). Après un combat",
+        "forms": [
+          {
+            "label": "Boubou (Gros)",
+            "url": "https://dragonball-api.com/characters/BuuGordo_Universo7.webp",
+            "caption": "Puissance ≈ 8 Md"
+          },
+          {
+            "label": "Super Boubou",
+            "url": "/images/akasha/db/forms/super-buu.webp",
+            "caption": "Puissance ≈ 30 Md"
+          },
+          {
+            "label": "Boubou (Kid)",
+            "url": "/images/akasha/db/forms/kid-buu.webp",
+            "caption": "Puissance ≈ 48 Md"
+          }
+        ]
       },
       "rarity": "epic"
     },
@@ -8816,7 +8852,24 @@
         "race": "Saiyan",
         "ki": "65.600.000",
         "descFr": "Gotenks est la fusion immensément puissante de Goten et Trunks, obtenue en utilisant avec succès la Danse de la Fusion, et le premier personnage issu d'une fusion réussie que l'on voit dans la série Dragon Ball.",
-        "saga": "Saga Buu"
+        "saga": "Saga Buu",
+        "forms": [
+          {
+            "label": "Base",
+            "url": "/images/akasha/db/forms/gotenks.webp",
+            "caption": "Puissance ≈ 20 Md"
+          },
+          {
+            "label": "Super Saiyan",
+            "url": "https://dragonball-api.com/characters/Gotenks_Artwork.webp",
+            "caption": "Puissance ≈ 40 Md"
+          },
+          {
+            "label": "Super Saiyan 3",
+            "url": "https://dragonball-api.com/characters/Gotenks_Artwork.webp",
+            "caption": "Puissance ≈ 90 Md"
+          }
+        ]
       },
       "rarity": "rare"
     },
@@ -9034,7 +9087,24 @@
         "descRaw": "Broly es un Saiyajin que posee un poder gigantesco e incontrolable, el cual se manifiesta en toda su magnitud cuando se convierte en el Super Saiyajin Legendario. Incluso cuando apenas era un bebé su nivel de poder alcanzaba cifras inmensas que provocaban asombro y preocupación entre los de su raza",
         "descLang": "es",
         "saga": "Saga Super",
-        "descFr": "Broly est un Saïyen qui possède une puissance gigantesque et incontrôlable, laquelle se manifeste dans toute son ampleur lorsqu'il se transforme en Super Saïyen Légendaire. Même lorsqu'il n'était encore qu'un bébé, son niveau de puissance atteignait des chiffres immenses qui provoquaient stupéfaction et inquiétude parmi ceux de sa race."
+        "descFr": "Broly est un Saïyen qui possède une puissance gigantesque et incontrôlable, laquelle se manifeste dans toute son ampleur lorsqu'il se transforme en Super Saïyen Légendaire. Même lorsqu'il n'était encore qu'un bébé, son niveau de puissance atteignait des chiffres immenses qui provoquaient stupéfaction et inquiétude parmi ceux de sa race.",
+        "forms": [
+          {
+            "label": "Base",
+            "url": "https://dragonball-api.com/transformaciones/Broly_DBS_Base.webp",
+            "caption": "Puissance ≈ 2 Md"
+          },
+          {
+            "label": "Super Saiyan (Colère)",
+            "url": "https://dragonball-api.com/transformaciones/Broly_DBS_Base.webp",
+            "caption": "Puissance ≈ 10 Bn"
+          },
+          {
+            "label": "Super Saiyan Légendaire",
+            "url": "/images/akasha/db/forms/lssj.webp",
+            "caption": "Puissance ≈ 60 Bn"
+          }
+        ]
       },
       "rarity": "legendary"
     },
@@ -10363,7 +10433,24 @@
         "descLang": "en",
         "race": "Saiyan",
         "descFr": "Bien élevé, sérieux et très prudent, Trunks vient d'une ligne temporelle alternative dans laquelle les Cyborgs C-17 et C-18 du futur ont assassiné l'équipe des Dragons et ont créé une anarchie apocalyptique sur Terre. Adolescent, Trunks est entraîné par le Gohan du futur et devient un combattant doué, un épéiste et un Super Saïyen. Trunks est le fils de Bulma et Vegeta. Moitié Saïyen, moitié humain, tout comme Gohan et Goten. Trunks a été entouré d'un environnement scientifique. Ayant sa mère et son grand-père comme scientifiques, il est devenu très intelligent en science.",
-        "saga": "Saga Cell"
+        "saga": "Saga Cell",
+        "forms": [
+          {
+            "label": "Base",
+            "url": "https://cdn.myanimelist.net/images/characters/5/375125.webp?s=dfee723daa759ba6480fa09fe6903b00",
+            "caption": "Puissance ≈ 5 M"
+          },
+          {
+            "label": "Super Saiyan",
+            "url": "https://cdn.myanimelist.net/images/characters/5/375125.webp?s=dfee723daa759ba6480fa09fe6903b00",
+            "caption": "Puissance ≈ 2 Md"
+          },
+          {
+            "label": "Super Saiyan Colère",
+            "url": "https://cdn.myanimelist.net/images/characters/5/375125.webp?s=dfee723daa759ba6480fa09fe6903b00",
+            "caption": "Puissance ≈ 18 Bn"
+          }
+        ]
       },
       "rarity": "rare"
     },
@@ -16001,7 +16088,24 @@
         "descLang": "en",
         "descFr": "Gogeta est la fusion résultant de Goku et Vegeta lorsqu'ils exécutent correctement la Danse de la Fusion. Sa voix est une double voix qui contient à la fois celles de Goku et de Vegeta. Comme son homologue par fusion Potara, Vegetto, il est considéré comme l'un des personnages les plus puissants de la franchise Dragon Ball.",
         "saga": "Saga Super",
-        "race": "Saiyan"
+        "race": "Saiyan",
+        "forms": [
+          {
+            "label": "Base",
+            "url": "/images/akasha/db/forms/gogeta.webp",
+            "caption": "Puissance ≈ 15 Md"
+          },
+          {
+            "label": "Super Saiyan",
+            "url": "https://cdn.myanimelist.net/images/characters/5/400009.webp?s=6ccccaa0ec400524baad62e10bc5cd02",
+            "caption": "Puissance ≈ 80 Md"
+          },
+          {
+            "label": "Super Saiyan Blue",
+            "url": "https://cdn.myanimelist.net/images/characters/5/400009.webp?s=6ccccaa0ec400524baad62e10bc5cd02",
+            "caption": "Puissance ≈ 100 Bn"
+          }
+        ]
       },
       "rarity": "rare"
     },

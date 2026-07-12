@@ -196,6 +196,17 @@ export const getEntryBySlug = cache(async function getEntryBySlug(slug: string):
   };
 });
 
+/** Entités COMPLÈTES (avec `attributes`, donc les `forms`) pour une liste de slugs, dans l'ordre
+ *  demandé — alimente les cartes TCG du hub (CharacterCard a besoin des attributs). */
+export async function getFullEntriesBySlugs(slugs: string[]): Promise<AkashaEntry[]> {
+  if (!slugs.length) return [];
+  const supabase = await createClient();
+  if (!supabase) return [];
+  const { data } = await supabase.from('akasha_entries').select('*').in('slug', slugs);
+  const bySlug = new Map((data ?? []).map((e) => [(e as AkashaEntry).slug, e as AkashaEntry]));
+  return slugs.map((s) => bySlug.get(s)).filter((e): e is AkashaEntry => !!e);
+}
+
 /** Compte d'entrées par CATÉGORIE (attributes.category) dans le scope courant (univers / type).
  *  Alimente le rail « Collections » du registre. Même pagination range (plafond PostgREST 1 000). */
 export async function listCategoryCounts(
