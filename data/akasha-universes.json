@@ -8755,7 +8755,6 @@
         "role": "Maître Tortue",
         "race": "Human",
         "ki": "500.000",
-        "descRaw": "Maestro de artes marciales y mentor de Goku. Conocido bajo el nombre de Muten Rosh, fue en su momento el terrícola más fuerte de la Tierra, y mucha gente lo recuerda como el \"Dios de las Artes Marciales\", pero antes de poder ostentar dicho título tuvo que trabajar y estudiar las artes marciales con su maestro Mutaito y su eterno rival Tsuru-Sen'nin.",
         "descLang": "es",
         "favorites": 909,
         "descFr": "Maître d'arts martiaux et mentor de Goku. Connu sous le nom de Muten Roshi, il fut en son temps le Terrien le plus fort de la Terre, et beaucoup se souviennent de lui comme du « Dieu des Arts Martiaux », mais avant de pouvoir porter ce titre il dut travailler et étudier les arts martiaux avec son maître Mutaito et son éternel rival Tsuru-Sen'nin."
@@ -9096,7 +9095,6 @@
       "attributes": {
         "region": "Univers 7",
         "category": "Planète",
-        "descRaw": "Planeta natal de los Namekianos. Escenario de importantes batallas y la obtención de las Dragon Balls de Namek.",
         "descLang": "es",
         "descFr": "Planète natale des Neks. Théâtre de batailles importantes et lieu où furent obtenues les Dragon Balls de Namek.",
         "kanji": "ナメック星",
@@ -82412,7 +82410,6 @@
       "attributes": {
         "region": "Univers 7",
         "category": "Planète",
-        "descRaw": "Planeta habitado por los Kanassans y conocido por la lucha entre Bardock y los habitantes del planeta.",
         "descLang": "es",
         "descFr": "Planète habitée par les Kanassans et connue pour le combat entre Baddack et les habitants de la planète."
       },
@@ -82430,7 +82427,6 @@
       "attributes": {
         "region": "Univers 7",
         "category": "Planète",
-        "descRaw": "Planeta de la técnica Instant Transmission, aprendida por Goku durante su estancia.",
         "descLang": "es",
         "descFr": "Planète de la technique de la Téléportation, apprise par Goku durant son séjour."
       },
@@ -82448,7 +82444,6 @@
       "attributes": {
         "region": "Univers 10",
         "category": "Planète",
-        "descRaw": "Planeta habitado por los Babari, es un planeta telúrico del Universo 10 donde residen los babarianos, hizo su primera aparición en el episodio 54 de Dragon Ball Super. Es donde Tarble, el hermano de Vegeta, se refugió.",
         "descLang": "es",
         "descFr": "Planète habitée par les Babariens, c'est une planète tellurique de l'Univers 10 où résident les Babariens ; elle fit sa première apparition dans l'épisode 54 de Dragon Ball Super. C'est là que Tarble, le frère de Vegeta, s'est réfugié."
       },
@@ -82466,7 +82461,6 @@
       "attributes": {
         "region": "Autre Monde",
         "category": "Lieu",
-        "descRaw": "El Otro Mundo en contraparte al Mundo de los vivos, es, en Dragon Ball, la versión del mundo de los muertos. Es donde los personajes van cuando mueren, y también donde residen las deidades superiores del universo. En el episodio 53 del anime, el Otro Mundo fue descrito como \"la dimensión siguiente\", y el acto de desear traer a la vida a una persona muerta con las Esferas del Dragón se llama \"traer (a ellos) a esta dimensión.",
         "descLang": "es",
         "descFr": "L'Autre Monde, à l'opposé du Monde des vivants, est, dans Dragon Ball, la version du monde des morts. C'est là que vont les personnages lorsqu'ils meurent, et là que résident aussi les divinités supérieures de l'univers. Dans l'épisode 53 de l'anime, l'Autre Monde est décrit comme « la dimension suivante », et l'acte de souhaiter ramener à la vie une personne décédée grâce aux Dragon Balls est appelé « la ramener dans cette dimension »."
       },
@@ -87455,6 +87449,900 @@
         "angel": "Martinu",
         "kai": "Agu",
         "twin": "Univers 1"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "machine-a-remonter-le-temps",
+      "type": "artifact",
+      "name": "Machine à remonter le temps",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "L'engin conçu par Bulma du futur qui permet à Trunks de voyager dans le passé pour changer le destin — et à Cell de le suivre.",
+      "description": "L'engin conçu par Bulma du futur qui permet à Trunks de voyager dans le passé pour changer le destin — et à Cell de le suivre.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "super-dragon-balls",
+      "type": "artifact",
+      "name": "Super Dragon Balls",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Sept boules géantes de la taille de planètes, réparties entre les Univers 6 et 7, qui invoquent Super Shenron et exaucent n'importe quel vœu.",
+      "description": "Sept boules géantes de la taille de planètes, réparties entre les Univers 6 et 7, qui invoquent Super Shenron et exaucent n'importe quel vœu.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "dragon-balls-de-namek",
+      "type": "artifact",
+      "name": "Dragon Balls de Namek",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Les boules originelles des Namekiens : plus grandes que celles de la Terre, elles invoquent Porunga et accordent trois souhaits.",
+      "description": "Les boules originelles des Namekiens : plus grandes que celles de la Terre, elles invoquent Porunga et accordent trois souhaits.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "dragon-balls-etoile-noire",
+      "type": "artifact",
+      "name": "Dragon Balls Étoile Noire",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Les boules d'origine créées par le dieu Namek : après un vœu, elles se dispersent à travers l'univers et menacent la Terre de destruction (Dragon Ball GT).",
+      "description": "Les boules d'origine créées par le dieu Namek : après un vœu, elles se dispersent à travers l'univers et menacent la Terre de destruction (Dragon Ball GT).",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "vaisseau-attaque-saiyan",
+      "type": "artifact",
+      "name": "Vaisseau d'attaque Saiyan",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La capsule sphérique dans laquelle les Saïyens traversent l'espace pour conquérir les planètes — celle qui amena bébé Kakarot sur Terre.",
+      "description": "La capsule sphérique dans laquelle les Saïyens traversent l'espace pour conquérir les planètes — celle qui amena bébé Kakarot sur Terre.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "bansho-sen",
+      "type": "artifact",
+      "name": "Éventail Bashō (Bansho-sen)",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "L'éventail légendaire capable de déclencher tempêtes et pluies torrentielles, seul moyen d'éteindre les flammes de la Montagne Fry-Pan.",
+      "description": "L'éventail légendaire capable de déclencher tempêtes et pluies torrentielles, seul moyen d'éteindre les flammes de la Montagne Fry-Pan.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "eau-ultra-divine",
+      "type": "artifact",
+      "name": "Eau Ultra Divine",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le breuvage sacré de Karin qui, en frôlant la mort de celui qui la boit, révèle et décuple son potentiel caché.",
+      "description": "Le breuvage sacré de Karin qui, en frôlant la mort de celui qui la boit, révèle et décuple son potentiel caché.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "anneau-du-temps",
+      "type": "artifact",
+      "name": "Anneau du Temps",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "L'anneau réservé aux Kaïō Shin, seul objet autorisant un voyage vers le futur — celui que Zamasu détourna pour son plan génocidaire.",
+      "description": "L'anneau réservé aux Kaïō Shin, seul objet autorisant un voyage vers le futur — celui que Zamasu détourna pour son plan génocidaire.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "metamo-ring",
+      "type": "artifact",
+      "name": "Metamo-Ring",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Les anneaux de l'Univers 6 qui, portés à des bras opposés, fusionnent deux guerriers façon Potara — mais seulement pour une trentaine de minutes.",
+      "description": "Les anneaux de l'Univers 6 qui, portés à des bras opposés, fusionnent deux guerriers façon Potara — mais seulement pour une trentaine de minutes.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "graine-de-larbre-de-force",
+      "type": "artifact",
+      "name": "Graine de l'Arbre de Force",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La semence qui donne naissance à l'Arbre de Force : il aspire toute l'énergie d'une planète pour produire des fruits d'un pouvoir colossal.",
+      "description": "La semence qui donne naissance à l'Arbre de Force : il aspire toute l'énergie d'une planète pour produire des fruits d'un pouvoir colossal.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "ocarina-de-tapion",
+      "type": "artifact",
+      "name": "Ocarina de Tapion",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "L'instrument dont la mélodie apaise et scelle le monstre Hirudegarn dans le corps de Tapion.",
+      "description": "L'instrument dont la mélodie apaise et scelle le monstre Hirudegarn dans le corps de Tapion.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "epee-de-lespoir",
+      "type": "artifact",
+      "name": "Épée de l'Espoir",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La lame héroïque de Tapion, transmise à Trunks — arme capable de trancher le géant Hirudegarn.",
+      "description": "La lame héroïque de Tapion, transmise à Trunks — arme capable de trancher le géant Hirudegarn.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "katchin",
+      "type": "artifact",
+      "name": "Katchin",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le métal le plus dur de l'univers Dragon Ball, réputé indestructible — étalon ultime de la solidité.",
+      "description": "Le métal le plus dur de l'univers Dragon Ball, réputé indestructible — étalon ultime de la solidité.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "dogi-ecole-tortue",
+      "type": "artifact",
+      "name": "Dogi de l'École Tortue",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le kimono orange frappé du symbole 亀, tenue emblématique des disciples de Kamé Sennin — Goku, Krillin, Yamcha.",
+      "description": "Le kimono orange frappé du symbole 亀, tenue emblématique des disciples de Kamé Sennin — Goku, Krillin, Yamcha.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "cape-turban-piccolo",
+      "type": "artifact",
+      "name": "Cape & turban lestés de Piccolo",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "La cape et le turban de plusieurs dizaines de kilos que Piccolo (et Gohan) portent à l'entraînement pour brider leur puissance.",
+      "description": "La cape et le turban de plusieurs dizaines de kilos que Piccolo (et Gohan) portent à l'entraînement pour brider leur puissance.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "vaisseau-capsule-corp",
+      "type": "artifact",
+      "name": "Vaisseau Capsule Corp",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le vaisseau sphérique de la Capsule Corporation qui emmène les héros jusqu'à Namek, doté d'une salle de gravité artificielle.",
+      "description": "Le vaisseau sphérique de la Capsule Corporation qui emmène les héros jusqu'à Namek, doté d'une salle de gravité artificielle.",
+      "image_url": null,
+      "attributes": {
+        "category": "Relique"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "moro",
+      "type": "character",
+      "name": "Moro",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Sorcier millenaire de l'arc Galactic Patrol Prisoner, il devore l'energie vitale de planetes entieres pour rajeunir. Seul l'Ultra Instinct de Goku l'arrete.",
+      "description": "Sorcier millenaire de l'arc Galactic Patrol Prisoner, il devore l'energie vitale de planetes entieres pour rajeunir. Seul l'Ultra Instinct de Goku l'arrete.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "saga": "Saga Super",
+        "powerLevel": "Absorbe le ki planetaire — au niveau de l'Ultra Instinct"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "granolah",
+      "type": "character",
+      "name": "Granolah",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Dernier survivant des Cerealians, ce sniper hors pair sacrifie sa longevite aux Dragon Balls pour devenir, un temps, le guerrier le plus fort de l'univers.",
+      "description": "Dernier survivant des Cerealians, ce sniper hors pair sacrifie sa longevite aux Dragon Balls pour devenir, un temps, le guerrier le plus fort de l'univers.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "saga": "Saga Super",
+        "powerLevel": "Le plus fort de l'univers (temporaire, prix : sa vie)"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "merus",
+      "type": "character",
+      "name": "Merus",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Agent d'elite de la Patrouille Galactique cachant sa vraie nature : un ange novice. Il maitrise l'Ultra Instinct mais s'efface apres avoir brave l'interdit contre Moro.",
+      "description": "Agent d'elite de la Patrouille Galactique cachant sa vraie nature : un ange novice. Il maitrise l'Ultra Instinct mais s'efface apres avoir brave l'interdit contre Moro.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Angel",
+        "saga": "Saga Super",
+        "powerLevel": "Ultra Instinct maitrise (puissance d'ange bridee)"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "cumber",
+      "type": "character",
+      "name": "Cumber",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Le tout premier Saiyan malefique, prisonnier libere dans Dragon Ball Heroes. Sa rage brute engendre un Super Saiyan cramoisi qui defie les fusions les plus redoutables.",
+      "description": "Le tout premier Saiyan malefique, prisonnier libere dans Dragon Ball Heroes. Sa rage brute engendre un Super Saiyan cramoisi qui defie les fusions les plus redoutables.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Saiyan",
+        "powerLevel": "Super Saiyan malefique (forme cramoisie)"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "turles",
+      "type": "character",
+      "name": "Turles",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Saiyan renegat au visage de Goku, il plante l'Arbre Divin sur Terre pour en devorer le fruit et decupler sa force. Antagoniste du film L'Arbre supr(e)me.",
+      "description": "Saiyan renegat au visage de Goku, il plante l'Arbre Divin sur Terre pour en devorer le fruit et decupler sa force. Antagoniste du film L'Arbre supr(e)me.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Saiyan",
+        "powerLevel": "Booste par le Fruit de l'Arbre Divin"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "cooler",
+      "type": "character",
+      "name": "Cooler",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Frere aine de Freezer, plus froid et plus fort que lui, dote d'une cinquieme transformation inedite. Il traque Goku pour laver l'honneur de sa lignee.",
+      "description": "Frere aine de Freezer, plus froid et plus fort que lui, dote d'une cinquieme transformation inedite. Il traque Goku pour laver l'honneur de sa lignee.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Frieza Race",
+        "powerLevel": "5e transformation (superieur a Freezer)"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "meta-cooler",
+      "type": "character",
+      "name": "Meta-Cooler",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Ressuscite en machine par le Big Gete Star, Cooler se demultiplie en une armee de clones metalliques qui se regenerent a l'infini pour submerger Goku.",
+      "description": "Ressuscite en machine par le Big Gete Star, Cooler se demultiplie en une armee de clones metalliques qui se regenerent a l'infini pour submerger Goku.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Android",
+        "powerLevel": "Corps-machine regenerant du Big Gete Star"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "lord-slug",
+      "type": "character",
+      "name": "Lord Slug",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Super Namekien renegat d'un age oublie, il gele la Terre pour la coloniser. Sa taille titanesque et sa jeunesse retrouvee en font le titan du film eponyme.",
+      "description": "Super Namekien renegat d'un age oublie, il gele la Terre pour la coloniser. Sa taille titanesque et sa jeunesse retrouvee en font le titan du film eponyme.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Namekian",
+        "powerLevel": "Super Namekien geant"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "tapion",
+      "type": "character",
+      "name": "Tapion",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Heros de la planete Konats, il scelle le demon Hirudegarn dans son propre corps au son de son ocarina. Il legue a Trunks son courage et une epee legendaire.",
+      "description": "Heros de la planete Konats, il scelle le demon Hirudegarn dans son propre corps au son de son ocarina. Il legue a Trunks son courage et une epee legendaire.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Guerrier-scelleur de Konats"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "minotia",
+      "type": "character",
+      "name": "Minotia",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Jeune frere de Tapion, venu de Konats. Ce garcon courageux gardait l'autre moitie du sceau d'Hirudegarn avant d'etre happe par le monstre libere.",
+      "description": "Jeune frere de Tapion, venu de Konats. Ce garcon courageux gardait l'autre moitie du sceau d'Hirudegarn avant d'etre happe par le monstre libere.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Enfant de Konats (non-combattant)"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "hirudegarn",
+      "type": "character",
+      "name": "Hirudegarn",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Demon-kaiju colossal scelle en deux moities depuis des siecles. Reveille, il ravage la ville jusqu'au Poing du Dragon d'un Goku Super Saiyan 3.",
+      "description": "Demon-kaiju colossal scelle en deux moities depuis des siecles. Reveille, il ravage la ville jusqu'au Poing du Dragon d'un Goku Super Saiyan 3.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Kaiju demoniaque — vaincu par le Poing du Dragon SSJ3"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "janemba",
+      "type": "character",
+      "name": "Janemba",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Démon né de la rancœur des âmes entassées en Enfer, dans le film Fusions. Ce colosse qui déforme le réel pousse Goku SSJ3 à bout, avant de s'incliner face à Gogeta.",
+      "description": "Démon né de la rancœur des âmes entassées en Enfer, dans le film Fusions. Ce colosse qui déforme le réel pousse Goku SSJ3 à bout, avant de s'incliner face à Gogeta.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Super Janemba"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "bojack",
+      "type": "character",
+      "name": "Bojack",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Pirate de l'espace de la race Hera, libéré de son sceau à la mort de North Kaïô. Chef des Guerriers Galactiques, il sème le chaos au tournoi jusqu'à ce que Gohan SSJ2 le pulvérise.",
+      "description": "Pirate de l'espace de la race Hera, libéré de son sceau à la mort de North Kaïô. Chef des Guerriers Galactiques, il sème le chaos au tournoi jusqu'à ce que Gohan SSJ2 le pulvérise.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Puissance maximale"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "zangya",
+      "type": "character",
+      "name": "Zangya",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Redoutable guerrière aux cheveux orange, bras droit de Bojack chez les Guerriers Galactiques. Sa fidélité lui vaut d'être sacrifiée comme bouclier par son propre maître.",
+      "description": "Redoutable guerrière aux cheveux orange, bras droit de Bojack chez les Guerriers Galactiques. Sa fidélité lui vaut d'être sacrifiée comme bouclier par son propre maître.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Guerrière galactique"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "paragus",
+      "type": "character",
+      "name": "Paragus",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Saïyen rescapé et père de Broly, ce stratège manipule son fils via un mouchard de contrôle pour se venger de Vegeta. Son ambition finit broyée par la fureur de sa progéniture.",
+      "description": "Saïyen rescapé et père de Broly, ce stratège manipule son fils via un mouchard de contrôle pour se venger de Vegeta. Son ambition finit broyée par la fureur de sa progéniture.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Saiyan",
+        "powerLevel": "Saïyen stratège"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "cheelai",
+      "type": "character",
+      "name": "Cheelai",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Jeune recrue à la peau verte de l'Armée de Freezer, dans le film Broly. Plus complice que soldate, elle se lie à Broly et l'arrache aux griffes de Freezer par un vœu à Shenron.",
+      "description": "Jeune recrue à la peau verte de l'Armée de Freezer, dans le film Broly. Plus complice que soldate, elle se lie à Broly et l'arrache aux griffes de Freezer par un vœu à Shenron.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Recrue de l'Armée de Freezer"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "lemo",
+      "type": "character",
+      "name": "Lemo",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Vétéran débonnaire de l'Armée de Freezer et coéquipier de Cheelai dans le film Broly. Prudent et paternel, il prend le géant Saïyen sous son aile loin des combats.",
+      "description": "Vétéran débonnaire de l'Armée de Freezer et coéquipier de Cheelai dans le film Broly. Prudent et paternel, il prend le géant Saïyen sous son aile loin des combats.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Vétéran de l'Armée de Freezer"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "bio-broly",
+      "type": "character",
+      "name": "Bio-Broly",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Clone bio-organique de Broly cultivé par Lord Jaguar à partir de son sang. Masse instable et sans conscience, il se dissout en un magma géant au contact de l'eau de mer.",
+      "description": "Clone bio-organique de Broly cultivé par Lord Jaguar à partir de son sang. Masse instable et sans conscience, il se dissout en un magma géant au contact de l'eau de mer.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Clone bio-organique"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "dr-wheelo",
+      "type": "character",
+      "name": "Docteur Wheelo",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Savant fou dont le cerveau survit dans un corps-robot géant après cinquante ans pris dans la glace. Il convoite le corps le plus puissant du monde pour renaître, dans Le Robot des glaces.",
+      "description": "Savant fou dont le cerveau survit dans un corps-robot géant après cinquante ans pris dans la glace. Il convoite le corps le plus puissant du monde pour renaître, dans Le Robot des glaces.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Cerveau bio-mécanique"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "garlic-jr",
+      "type": "character",
+      "name": "Garlic Junior",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Démon Makyan rongé par la rancune, écarté du poste de gardien de la Terre comme son père. Rendu immortel par les Dragon Balls, il ouvre la Zone Morte avant d'y être englouti.",
+      "description": "Démon Makyan rongé par la rancune, écarté du poste de gardien de la Terre comme son père. Rendu immortel par les Dragon Balls, il ouvre la Zone Morte avant d'y être englouti.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Démon Makyan immortel"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "angila",
+      "type": "character",
+      "name": "Angila",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Bras droit extraterrestre de Lord Slug et le plus coriace de ses sbires. Crinière blonde et toge violette, il crache des rayons oculaires avant de céder face à Goku.",
+      "description": "Bras droit extraterrestre de Lord Slug et le plus coriace de ses sbires. Crinière blonde et toge violette, il crache des rayons oculaires avant de céder face à Goku.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Bras droit de Lord Slug"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "amond",
+      "type": "character",
+      "name": "Amond",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Colosse de la bande de Turles dans « L'Arbre du pouvoir », gonflé par le Fruit de l'Arbre Sacré. Sa carrure de brute plie vite face aux guerriers Z.",
+      "description": "Colosse de la bande de Turles dans « L'Arbre du pouvoir », gonflé par le Fruit de l'Arbre Sacré. Sa carrure de brute plie vite face aux guerriers Z.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Sbire renforcé par le Fruit de l'Arbre Sacré"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "daiz",
+      "type": "character",
+      "name": "Daiz",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Mercenaire arrogant de la Crusher Corps de Turles, dopé au Fruit sacré. Ce sbire fanfaron ne fait pas long feu contre les guerriers Z.",
+      "description": "Mercenaire arrogant de la Crusher Corps de Turles, dopé au Fruit sacré. Ce sbire fanfaron ne fait pas long feu contre les guerriers Z.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Membre de la Crusher Corps, boosté au Fruit sacré"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "salza",
+      "type": "character",
+      "name": "Salza",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Chef raffiné du Commando de Cooler, maniant sa lame d'énergie. Le plus coriace des trois, il malmène Piccolo et Son Gohan avant de tomber.",
+      "description": "Chef raffiné du Commando de Cooler, maniant sa lame d'énergie. Le plus coriace des trois, il malmène Piccolo et Son Gohan avant de tomber.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Élite du Commando de Cooler (le plus fort des trois)"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "neiz",
+      "type": "character",
+      "name": "Neiz",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Sbire reptilien du Commando de Cooler, crachant des décharges électriques. Sa foudre ne suffit pas à venir à bout de Krilin.",
+      "description": "Sbire reptilien du Commando de Cooler, crachant des décharges électriques. Sa foudre ne suffit pas à venir à bout de Krilin.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Membre du Commando de Cooler, tireur électrique"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "dore",
+      "type": "character",
+      "name": "Dore",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Colosse vert et bodybuildé du Commando de Cooler. Il défie Piccolo dans « La Revanche de Cooler » avant de finir pulvérisé.",
+      "description": "Colosse vert et bodybuildé du Commando de Cooler. Il défie Piccolo dans « La Revanche de Cooler » avant de finir pulvérisé.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Force brute du Commando de Cooler"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "rasin",
+      "type": "character",
+      "name": "Rasin",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "L'un des deux frères bouffis de la Crusher Corps de Turles. Petit et rond, il unit ses tirs à Lakasei pour cogner plus fort.",
+      "description": "L'un des deux frères bouffis de la Crusher Corps de Turles. Petit et rond, il unit ses tirs à Lakasei pour cogner plus fort.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Sbire de Turles, plus fort en duo avec Lakasei"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "lakasei",
+      "type": "character",
+      "name": "Lakasei",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Frère de Rasin dans la bande de Turles. Ces deux sbires ronds fusionnent leurs rafales d'énergie avant de plier face aux guerriers Z.",
+      "description": "Frère de Rasin dans la bande de Turles. Ces deux sbires ronds fusionnent leurs rafales d'énergie avant de plier face aux guerriers Z.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Sbire de Turles, combine sa puissance avec Rasin"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "cell-max",
+      "type": "character",
+      "name": "Cell Max",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Version titanesque et déchaînée de Cell, ranimée par le Red Ribbon dans « Super Hero ». Puissance colossale mais esprit absent, brisé par Gohan Beast et Piccolo Orange.",
+      "description": "Version titanesque et déchaînée de Cell, ranimée par le Red Ribbon dans « Super Hero ». Puissance colossale mais esprit absent, brisé par Gohan Beast et Piccolo Orange.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Android",
+        "powerLevel": "Boss final de Super Hero, quasi au niveau de Gohan Beast"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "toma",
+      "type": "character",
+      "name": "Toma",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Fidèle compagnon d'armes de Baddack. Ce Saiyan de classe inférieure tombe sous les coups de l'escouade de Dodoria, attisant la rage de son chef.",
+      "description": "Fidèle compagnon d'armes de Baddack. Ce Saiyan de classe inférieure tombe sous les coups de l'escouade de Dodoria, attisant la rage de son chef.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Saiyan",
+        "powerLevel": "Saiyan de classe inférieure (~1 500 d'unités)"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "fasha",
+      "type": "character",
+      "name": "Fasha",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Seule femme de l'escouade de Baddack, guerrière Saiyan agile en armure rose. Elle périt sur la planète Meat, trahie par Freezer.",
+      "description": "Seule femme de l'escouade de Baddack, guerrière Saiyan agile en armure rose. Elle périt sur la planète Meat, trahie par Freezer.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Saiyan",
+        "powerLevel": "Guerrière Saiyan de l'escouade de Baddack"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "borgos",
+      "type": "character",
+      "name": "Borgos",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Mastodonte silencieux de l'équipe de Baddack. Ce Saiyan massif encaisse et cogne fort, jusqu'au massacre orchestré par Freezer sur la planète Meat.",
+      "description": "Mastodonte silencieux de l'équipe de Baddack. Ce Saiyan massif encaisse et cogne fort, jusqu'au massacre orchestré par Freezer sur la planète Meat.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Saiyan",
+        "powerLevel": "Saiyan massif de l'équipe de Baddack"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "shugesh",
+      "type": "character",
+      "name": "Shugesh",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Guerrier bourru de l'escouade de Bardock, ce Saiyan trapu tombe sous les coups des sbires de Dodoria sur la planete Meat, juste avant la chute de Vegeta.",
+      "description": "Guerrier bourru de l'escouade de Bardock, ce Saiyan trapu tombe sous les coups des sbires de Dodoria sur la planete Meat, juste avant la chute de Vegeta.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Saiyan",
+        "powerLevel": "Saiyan de classe basse (~1 000)"
+      },
+      "rarity": "common"
+    },
+    {
+      "slug": "gine",
+      "type": "character",
+      "name": "Gine",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Mere de Sangoku et compagne de Bardock : une Saiyanne au coeur tendre, plus douee pour la distribution de viande que pour le combat, qui confie son fils aux etoiles.",
+      "description": "Mere de Sangoku et compagne de Bardock : une Saiyanne au coeur tendre, plus douee pour la distribution de viande que pour le combat, qui confie son fils aux etoiles.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Saiyan",
+        "powerLevel": "Saiyanne de classe basse, non-combattante"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "android-13",
+      "type": "character",
+      "name": "C-13",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Androide de combat ne du superordinateur du Dr Gero. En absorbant C-14 et C-15, il devient le colossal Super C-13 et defie Sangoku Super Saiyan dans son film.",
+      "description": "Androide de combat ne du superordinateur du Dr Gero. En absorbant C-14 et C-15, il devient le colossal Super C-13 et defie Sangoku Super Saiyan dans son film.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Android",
+        "powerLevel": "Super C-13, niveau Super Saiyan"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "android-21",
+      "type": "character",
+      "name": "C-21",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Bio-androide du Dr Gero melee de cellules Majin, vedette de FighterZ. Une faim insatiable la pousse a absorber les guerriers pour atteindre une puissance quasi divine.",
+      "description": "Bio-androide du Dr Gero melee de cellules Majin, vedette de FighterZ. Une faim insatiable la pousse a absorber les guerriers pour atteindre une puissance quasi divine.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Android",
+        "powerLevel": "Forme finale, puissance quasi divine"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "pikkon",
+      "type": "character",
+      "name": "Pikkon",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Champion mysterieux de l'Au-dela, drape de vetements lestes, il rivalise avec Sangoku au Tournoi de l'autre monde et frappe fort avec sa tornade fulgurante.",
+      "description": "Champion mysterieux de l'Au-dela, drape de vetements lestes, il rivalise avec Sangoku au Tournoi de l'autre monde et frappe fort avec sa tornade fulgurante.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Niveau Super Saiyan (Au-dela)"
+      },
+      "rarity": "epic"
+    },
+    {
+      "slug": "grand-pretre",
+      "type": "character",
+      "name": "Grand Pretre",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Pere des Anges et bras droit de Zeno, il figure parmi les cinq etres les plus puissants du multivers : un sourire imperturbable, une puissance qui depasse les Dieux de la Destruction.",
+      "description": "Pere des Anges et bras droit de Zeno, il figure parmi les cinq etres les plus puissants du multivers : un sourire imperturbable, une puissance qui depasse les Dieux de la Destruction.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Angel",
+        "saga": "Saga Super",
+        "powerLevel": "Top 5 du multivers"
+      },
+      "rarity": "legendary"
+    },
+    {
+      "slug": "spopovich",
+      "type": "character",
+      "name": "Spopovich",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Combattant humain gonfle par la magie de Babidi. Au Tournoi Mondial, il massacre Videl sans pitie avant de siphonner l'energie de Gohan pour reveiller Boo.",
+      "description": "Combattant humain gonfle par la magie de Babidi. Au Tournoi Mondial, il massacre Videl sans pitie avant de siphonner l'energie de Gohan pour reveiller Boo.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "race": "Human",
+        "saga": "Saga Buu",
+        "powerLevel": "Humain dope par la magie de Babidi"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "ribrianne",
+      "type": "character",
+      "name": "Ribrianne",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Guerriere de l'amour de l'Univers 2, alias Brianne de Chateau. Elle se transforme en magical girl et bombarde ses rivales de coeurs explosifs au Tournoi du Pouvoir.",
+      "description": "Guerriere de l'amour de l'Univers 2, alias Brianne de Chateau. Elle se transforme en magical girl et bombarde ses rivales de coeurs explosifs au Tournoi du Pouvoir.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "saga": "Saga Super",
+        "powerLevel": "Combattante d'elite, Univers 2"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "obni",
+      "type": "character",
+      "name": "Obni",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Fier guerrier de l'Univers 10 et disciple du Kaioshin Rummush. Son combat presque telepathique et son courage impressionnent Sangoku au Tournoi du Pouvoir.",
+      "description": "Fier guerrier de l'Univers 10 et disciple du Kaioshin Rummush. Son combat presque telepathique et son courage impressionnent Sangoku au Tournoi du Pouvoir.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "saga": "Saga Super",
+        "powerLevel": "Guerrier d'elite, Univers 10"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "auta-magetta",
+      "type": "character",
+      "name": "Auta Magetta",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Robot Metalman de l'Univers 6, montagne de metal en fusion crachant du magma. Increvable au combat, mais si susceptible qu'une insulte suffit a le demoraliser.",
+      "description": "Robot Metalman de l'Univers 6, montagne de metal en fusion crachant du magma. Increvable au combat, mais si susceptible qu'une insulte suffit a le demoraliser.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "saga": "Saga Super",
+        "powerLevel": "Colosse Metalman, Univers 6"
+      },
+      "rarity": "rare"
+    },
+    {
+      "slug": "hatchiyack",
+      "type": "character",
+      "name": "Hatchiyack",
+      "is_fiction": true,
+      "universe": "Dragon Ball",
+      "summary": "Machine de guerre du Dr Raichi, nourrie par la haine des Tsufuls extermines. Cette rancune concentree engendre une puissance qui pretend surpasser Freezer.",
+      "description": "Machine de guerre du Dr Raichi, nourrie par la haine des Tsufuls extermines. Cette rancune concentree engendre une puissance qui pretend surpasser Freezer.",
+      "image_url": null,
+      "attributes": {
+        "category": "Personnage",
+        "powerLevel": "Haine tsuful concentree, > Freezer"
       },
       "rarity": "epic"
     }
