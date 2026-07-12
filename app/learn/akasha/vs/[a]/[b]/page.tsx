@@ -6,10 +6,17 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getEntryBySlug } from '@/lib/akasha/queries';
 import { RARITY_META, universeMeta, type AkashaEntryDetail } from '@/lib/akasha/types';
+import { getCuratedDuels } from '@/lib/akasha/curated-duels';
 
 export const revalidate = 3600;
 
 type Props = { params: Promise<{ a: string; b: string }> };
+
+// Pré-génère la sélection de duels curée (voir lib/akasha/curated-duels.ts) pour le SEO ; toute
+// autre paire de slugs reste accessible à la demande (dynamicParams reste à true par défaut).
+export async function generateStaticParams() {
+  return getCuratedDuels();
+}
 
 const num = (a: Record<string, unknown>, k: string): number => (typeof a[k] === 'number' ? (a[k] as number) : Number(String(a[k] ?? '').replace(/[^\d]/g, '')) || 0);
 const techCount = (e: AkashaEntryDetail) => e.relationsOut.filter((r) => r.relation === 'maitrise' && r.target.category === 'Attaque').length;

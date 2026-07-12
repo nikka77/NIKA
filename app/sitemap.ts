@@ -3,6 +3,7 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/site';
 import { UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
+import { getCuratedDuels } from '@/lib/akasha/curated-duels';
 import { createClient } from '@/lib/supabase/server';
 
 export const revalidate = 86400; // 1 jour
@@ -29,6 +30,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
     }
   }
+
+  // Duels curés (2 par univers + champions des 4 plus gros univers croisés) — voir generateStaticParams
+  // sur la page /vs/[a]/[b] pour la même sélection ; toute autre paire reste accessible à la demande.
+  const duels = await getCuratedDuels();
+  for (const d of duels) out.push({ url: `${SITE_URL}/learn/akasha/vs/${d.a}/${d.b}`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 });
 
   // Toutes les fiches (slugs paginés, plafond PostgREST 1000).
   const supabase = await createClient();
