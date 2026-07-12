@@ -5,7 +5,10 @@
 // fiche enrichie (statut, gravité, habitants → fiches). Vue « Univers » : les 12 univers de DBS.
 import { useCallback, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { DB_PLANETS, DB_UNIVERSES, DB_REALM_META, DB_TOP_META, type CosmosRealm, type CosmosPlanet } from '@/lib/akasha/db-cosmos';
+import { DB_PLANETS, DB_UNIVERSES, DB_REALM_META, DB_TOP_META, DB_GALLERY, DB_HIERARCHY, type CosmosRealm, type CosmosPlanet } from '@/lib/akasha/db-cosmos';
+
+// Ordre d'affichage des régions dans la galerie.
+const REGION_ORDER = ['Univers 7', 'Univers 6', 'Univers 5', 'Univers 10', 'Univers 11', 'Autre Monde', 'Multivers', 'Royaume des Démons'];
 
 const RARITY_COLOR: Record<string, string> = { legendary: '#F2C14E', epic: '#C77DFF', rare: '#4EA8DE' };
 const REALMS: CosmosRealm[] = ['univers-7', 'univers-6', 'au-dela'];
@@ -21,7 +24,7 @@ const STARS = (() => {
 })();
 
 export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string }) {
-  const [view, setView] = useState<'planetes' | 'univers'>('planetes');
+  const [view, setView] = useState<'planetes' | 'univers' | 'hierarchie'>('planetes');
   const [realm, setRealm] = useState<CosmosRealm | null>(null);
   const [sel, setSel] = useState<CosmosPlanet | null>(null);
   const [q, setQ] = useState('');
@@ -99,21 +102,24 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
       {/* Bascule + recherche */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center', marginBottom: 12 }}>
         <div style={{ display: 'inline-flex', gap: 4, padding: 3, borderRadius: 999, border: '1px solid var(--bd)', background: 'var(--bg2)' }}>
-          {(['planetes', 'univers'] as const).map((v) => {
+          {(['planetes', 'univers', 'hierarchie'] as const).map((v) => {
             const active = view === v;
+            const lbl = v === 'planetes' ? '🪐 Planètes' : v === 'univers' ? '🌌 Univers' : '👑 Hiérarchie';
             return (
               <button key={v} onClick={() => setView(v)} style={{
-                padding: '5px 14px', borderRadius: 999, cursor: 'pointer', border: 'none',
+                padding: '5px 13px', borderRadius: 999, cursor: 'pointer', border: 'none', whiteSpace: 'nowrap',
                 fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 800, letterSpacing: '0.03em',
                 background: active ? color : 'transparent', color: active ? '#0A1420' : 'var(--td2)',
-              }}>{v === 'planetes' ? '🪐 Planètes' : '🌌 Univers'}</button>
+              }}>{lbl}</button>
             );
           })}
         </div>
-        <div style={{ position: 'relative', flex: '1 1 200px', maxWidth: 300 }}>
-          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={view === 'planetes' ? '🔎 Chercher une planète, un habitant…' : '🔎 Chercher un univers, un dieu…'}
-            style={{ width: '100%', padding: '7px 12px', borderRadius: 999, border: '1px solid var(--bd)', background: 'var(--bg2)', color: 'var(--td)', fontFamily: 'var(--fo)', fontSize: 12.5 }} />
-        </div>
+        {view !== 'hierarchie' && (
+          <div style={{ position: 'relative', flex: '1 1 200px', maxWidth: 300 }}>
+            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={view === 'planetes' ? '🔎 Chercher une planète, un habitant…' : '🔎 Chercher un univers, un dieu…'}
+              style={{ width: '100%', padding: '7px 12px', borderRadius: 999, border: '1px solid var(--bd)', background: 'var(--bg2)', color: 'var(--td)', fontFamily: 'var(--fo)', fontSize: 12.5 }} />
+          </div>
+        )}
         {view === 'planetes' && query && <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>{nResults} résultat{nResults > 1 ? 's' : ''}</span>}
       </div>
 
@@ -235,6 +241,35 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
               <button onClick={() => setSel(null)} aria-label="Fermer" style={{ flexShrink: 0, border: 'none', background: 'transparent', color: 'var(--td3)', cursor: 'pointer', fontSize: 16, lineHeight: 1 }}>✕</button>
             </div>
           )}
+
+          {/* ── GALERIE DES MONDES : toutes les planètes illustrées ── */}
+          <div style={{ marginTop: 22 }}>
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color, marginBottom: 4 }}>
+              🌍 Galerie des mondes — {DB_GALLERY.length} planètes illustrées
+            </div>
+            <p style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)', margin: '0 0 12px' }}>
+              Chaque planète de Dragon Ball, illustrée pour AKASHA. Clique pour ouvrir sa fiche.
+            </p>
+            {REGION_ORDER.filter((r) => DB_GALLERY.some((g) => g.region === r && (!query || norm(g.name).includes(query)))).map((region) => {
+              const items = DB_GALLERY.filter((g) => g.region === region && (!query || norm(g.name).includes(query)));
+              return (
+                <div key={region} style={{ marginBottom: 14 }}>
+                  <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: 8 }}>{region} <span style={{ opacity: 0.6 }}>· {items.length}</span></div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+                    {items.map((g) => (
+                      <Link key={g.slug} href={`/learn/akasha/${g.slug}`} title={g.name} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, textDecoration: 'none', width: 74 }}>
+                        <span style={{ width: 66, height: 66, borderRadius: '50%', overflow: 'hidden', background: 'radial-gradient(circle, #1a1030, #0a0612)', boxShadow: '0 2px 10px rgba(0,0,0,0.5)', border: '1px solid var(--bd)' }}>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={g.img} alt={g.name} loading="lazy" style={{ width: '100%', height: '100%', objectFit: g.slug === 'beerus-planet' ? 'contain' : 'cover' }} />
+                        </span>
+                        <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 600, color: 'var(--td2)', textAlign: 'center', lineHeight: 1.15 }}>{g.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </>
       )}
 
@@ -267,6 +302,40 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
               </div>
             );
           })}
+        </div>
+      )}
+
+      {view === 'hierarchie' && (
+        <div>
+          <p style={{ fontFamily: 'var(--fo)', fontSize: 12.5, color: 'var(--td3)', margin: '0 0 16px', maxWidth: 640 }}>
+            De <strong style={{ color: 'var(--td2)' }}>Zeno</strong>, roi de tout, jusqu&apos;aux Kaïō des galaxies — la chaîne divine qui régit les douze univers. Clique une divinité pour sa fiche.
+          </p>
+          <div style={{ position: 'relative', paddingLeft: 6 }}>
+            {/* colonne divine */}
+            <div aria-hidden style={{ position: 'absolute', left: 10, top: 6, bottom: 20, width: 2, background: 'linear-gradient(180deg, #F4D03F, #C77DFF 45%, #5FD08A)', opacity: 0.4, borderRadius: 2 }} />
+            {DB_HIERARCHY.map((tier) => (
+              <div key={tier.label} style={{ position: 'relative', marginBottom: 16, paddingLeft: 20 }}>
+                <span aria-hidden style={{ position: 'absolute', left: 4, top: 3, width: 13, height: 13, borderRadius: 999, background: tier.color, boxShadow: `0 0 8px ${tier.color}`, border: '2px solid var(--bg)' }} />
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, flexWrap: 'wrap', marginBottom: 9 }}>
+                  <span style={{ fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 800, letterSpacing: '0.04em', textTransform: 'uppercase', color: tier.color }}>{tier.label}</span>
+                  <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>{tier.desc}</span>
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
+                  {tier.members.map((m) => (
+                    <Link key={m.slug} href={`/learn/akasha/${m.slug}`} style={{ display: 'flex', alignItems: 'center', gap: 7, textDecoration: 'none', padding: '3px 11px 3px 3px', borderRadius: 999, border: `1px solid ${tier.color}44`, background: `${tier.color}12` }}>
+                      <span style={{ width: 30, height: 30, borderRadius: '50%', overflow: 'hidden', flexShrink: 0, background: 'var(--bg3)', border: `1px solid ${tier.color}77` }}>
+                        {m.img && (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={m.img} alt={m.name} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+                        )}
+                      </span>
+                      <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, color: 'var(--td)' }}>{m.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
