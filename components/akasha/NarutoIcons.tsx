@@ -1,6 +1,7 @@
 // components/akasha/NarutoIcons.tsx — emblèmes & icônes AKASHA (SVG maison, sans dépendance, sans hotlink de logo).
 // Natures de chakra, blasons de clan, emblèmes de village (kanji du pays).
 import type { ReactNode } from 'react';
+import Image from 'next/image';
 
 // ─── Natures de chakra ───────────────────────────────────────────────
 const NATURES: { match: RegExp; label: string; color: string; glyph: ReactNode }[] = [
@@ -105,8 +106,7 @@ export function VillageEmblem({ slug, size = 30 }: { slug?: string | null; size?
   const key = emblemKey(slug);
   const img = key ? VILLAGE_IMG[key] : null;
   if (img) {
-    // eslint-disable-next-line @next/next/no-img-element
-    return <img src={img} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
+    return <Image src={img} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
   }
   const v = slug ? VILLAGES[slug] : null;
   if (!v) return null;
@@ -147,8 +147,7 @@ function UchihaFan({ size }: { size: number }) {
 export function ClanCrest({ slug, name, size = 30 }: { slug?: string | null; name?: string | null; size?: number }) {
   const s = emblemKey(slug);
   if (CLAN_IMG[s]) {
-    // eslint-disable-next-line @next/next/no-img-element
-    return <img src={CLAN_IMG[s]} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
+    return <Image src={CLAN_IMG[s]} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
   }
   if (s === 'uzumaki') return <UzumakiSwirl size={size} />;
   if (s === 'uchiha') return <UchihaFan size={size} />;
@@ -177,14 +176,12 @@ function badgeKey(v?: string | null): string {
 export function RankBadge({ value, size = 30 }: { value?: string | null; size?: number }) {
   const src = RANK_IMG[badgeKey(value)];
   if (!src) return null;
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
+  return <Image src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
 }
 export function GenerationBadge({ value, size = 30 }: { value?: string | null; size?: number }) {
   const src = GEN_IMG[badgeKey(value)];
   if (!src) return null;
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
+  return <Image src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.55))' }} />;
 }
 
 // ─── Icônes de catégories (Higgsfield, détourées) ────────────────────
@@ -200,8 +197,7 @@ const CAT_ICON: Record<string, string> = {
 export function CategoryIcon({ name, size = 18 }: { name: string; size?: number }) {
   const src = CAT_ICON[name];
   if (!src) return null;
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', flexShrink: 0 }} />;
+  return <Image src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', flexShrink: 0 }} />;
 }
 
 // ─── Icônes d'outils & armes (Higgsfield, style plat détouré + réf. Fandom) ──
@@ -221,8 +217,7 @@ const TOOL_IMG: Record<string, string> = {
 export function ToolIcon({ name, size = 28 }: { name: string; size?: number }) {
   const slug = TOOL_IMG[foldAscii(name.trim())];
   const src = slug ? `/images/akasha/ref/${slug}.webp` : '/images/akasha/cat/outils.webp';
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', flexShrink: 0 }} />;
+  return <Image src={src} alt="" width={size} height={size} style={{ objectFit: 'contain', flexShrink: 0 }} />;
 }
 
 // Libellés FR des liens de famille (API → français).

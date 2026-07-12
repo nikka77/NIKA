@@ -4,6 +4,7 @@
 // texte/drapeau). Consommé par le hub /learn/akasha/u/[slug] (mêmes boutons-médaillon que Naruto).
 // Renvoie null pour une valeur non mappée → le hub retombe sur la pastille texte (long-tail non curé).
 import type { ReactNode } from 'react';
+import Image from 'next/image';
 
 const DIR = '/images/akasha/universes/op-icons';
 
@@ -39,8 +40,7 @@ export function opAxisIcon(attr: string, value: string, size = 48): ReactNode {
   const file = MAPS[attr]?.[value];
   if (!file) return null;
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img src={`${DIR}/${file}.svg`} alt={value} width={size} height={size}
+    <Image src={`${DIR}/${file}.svg`} alt={value} width={size} height={size} unoptimized
       style={{ width: size, height: size, objectFit: 'contain', display: 'block' }} />
   );
 }

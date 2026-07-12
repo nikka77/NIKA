@@ -3,6 +3,7 @@
 // Jeu maison flat (recraft vectoriel, SVG transparent) + sceaux numérotés du Gotei 13 rendus en code.
 // Consommé par le hub /learn/akasha/u/[slug] (mêmes boutons-médaillon que Naruto/One Piece/Dragon Ball).
 import type { ReactNode } from 'react';
+import Image from 'next/image';
 
 const BASE = '/images/akasha/universes';
 
@@ -72,8 +73,7 @@ export function moreAxisIcon(slug: string, attr: string, value: string, size = 4
   const file = REGISTRY[slug]?.[attr]?.[value];
   if (!file) return null;
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img src={`${BASE}/${FOLDER[slug]}/${file}.svg`} alt={value} width={size} height={size}
+    <Image src={`${BASE}/${FOLDER[slug]}/${file}.svg`} alt={value} width={size} height={size} unoptimized
       style={{ width: size, height: size, objectFit: 'contain', display: 'block' }} />
   );
 }
