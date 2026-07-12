@@ -20,7 +20,7 @@ export default function ContinueBanner({ universe, color }: { universe: string; 
   return (
     <Link href={`/learn/akasha/${last.slug}`} className="dom-card" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', background: `linear-gradient(100deg, ${color}1A, var(--bg2))`, border: `1px solid ${color}44`, borderRadius: 13, padding: '9px 13px', marginBottom: 4 }}>
       <div style={{ width: 44, height: 44, borderRadius: 9, overflow: 'hidden', flexShrink: 0, background: 'var(--bg3)' }}>
-        {last.image && /* eslint-disable-next-line @next/next/no-img-element */ <img src={last.image} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />}
+        {last.image && /* eslint-disable-next-line @next/next/no-img-element */ <img src={last.image} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />}
       </div>
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color }}>↺ Reprendre</div>

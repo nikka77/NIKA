@@ -72,7 +72,7 @@ export default function PlaceCard({ entry, era, frame, baseImg, statLabels }: { 
           <div style={{ position: 'relative', borderRadius: 11, overflow: 'hidden', border: `2px solid ${frame}aa`, aspectRatio: '16 / 10', background: `linear-gradient(135deg, ${frame}33, ${frame}0A)`, boxShadow: 'inset 0 0 36px rgba(0,0,0,0.6)', marginBottom: 12 }}>
             {src ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img key={src} src={src} alt={`${entry.name} — ${str(era?.label) ?? ''}`} onError={() => setBroken(true)} className="ak-era-img" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img key={src} src={src} alt={`${entry.name} — ${str(era?.label) ?? ''}`} onError={() => setBroken(true)} loading="lazy" className="ak-era-img" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             ) : (
               <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 60, opacity: 0.5 }} aria-hidden>🏯</div>
             )}

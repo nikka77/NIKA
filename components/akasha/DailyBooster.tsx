@@ -109,9 +109,9 @@ export default function DailyBooster() {
                       <div style={{ position: 'relative', width: '100%', height: '72%', overflow: 'hidden' }}>
                         {/* image ENTIÈRE centrée sur fond flouté — cohérent avec les cartes (L104) */}
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img aria-hidden src={c.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'blur(12px) saturate(1.25) brightness(0.5)', transform: 'scale(1.2)' }} />
+                        <img aria-hidden src={c.image_url} alt="" loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'blur(12px) saturate(1.25) brightness(0.5)', transform: 'scale(1.2)' }} />
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={c.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
+                        <img src={c.image_url} alt="" loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
                       </div>
                     )}
                     <div style={{ padding: '4px 7px' }}>

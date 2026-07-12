@@ -26,9 +26,9 @@ export default function DailyCard({ entry }: { entry: AkashaEntryCard }) {
         {entry.image_url && (
           <>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img aria-hidden src={entry.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'blur(14px) saturate(1.25) brightness(0.5)', transform: 'scale(1.2)' }} />
+            <img aria-hidden src={entry.image_url} alt="" loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'blur(14px) saturate(1.25) brightness(0.5)', transform: 'scale(1.2)' }} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={entry.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
+            <img src={entry.image_url} alt="" loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
           </>
         )}
       </div>

@@ -84,7 +84,7 @@ export default function UniverseRail({
             >
               {universeWordmark(name)
                 // eslint-disable-next-line @next/next/no-img-element
-                ? <img src={universeWordmark(name)!} alt={name} style={{ height: 24, width: 'auto', objectFit: 'contain', display: 'block', filter: on ? 'none' : 'saturate(0.9)' }} />
+                ? <img src={universeWordmark(name)!} alt={name} loading="lazy" style={{ height: 24, width: 'auto', objectFit: 'contain', display: 'block', filter: on ? 'none' : 'saturate(0.9)' }} />
                 : <><span aria-hidden>{m.emoji}</span>{name}</>}
               <span style={{ fontSize: 10, fontWeight: 800, color: on ? m.color : 'var(--td3)', background: 'rgba(5,12,23,0.45)', borderRadius: 20, padding: '1px 7px' }}>{byName.get(name)}</span>
             </Link>

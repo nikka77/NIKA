@@ -88,9 +88,9 @@ export default function OmniSearch() {
                             {it.image_url && (
                               <>
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img aria-hidden src={it.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(7px) brightness(0.5)', transform: 'scale(1.2)' }} />
+                                <img aria-hidden src={it.image_url} alt="" loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(7px) brightness(0.5)', transform: 'scale(1.2)' }} />
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src={it.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain' }} />
+                                <img src={it.image_url} alt="" loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain' }} />
                               </>
                             )}
                           </span>

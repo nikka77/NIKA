@@ -106,7 +106,7 @@ export default function HubCollection({ stars, piliers, universe, color, ranks }
             {pack.map((c) => (
               <Link key={c.slug} href={`/learn/akasha/${c.slug}`} style={{ width: 66, textDecoration: 'none' }}>
                 <div style={{ width: 66, aspectRatio: '3/4', borderRadius: 8, overflow: 'hidden', border: `2px solid ${rarityBorder(c.rarity)}` }}>
-                  {c.image_url && /* eslint-disable-next-line @next/next/no-img-element */ <img src={c.image_url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />}
+                  {c.image_url && /* eslint-disable-next-line @next/next/no-img-element */ <img src={c.image_url} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />}
                 </div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 9, fontWeight: 700, color: 'var(--td2)', marginTop: 3, lineHeight: 1.1 }}>{c.name}</div>
               </Link>

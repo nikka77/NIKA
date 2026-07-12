@@ -309,7 +309,7 @@ function JutsuChips({ items, color }: { items: string[]; color: string }) {
           <Link key={i} href={`/learn/akasha/${slug}`}
             style={{ ...base, display: 'inline-flex', alignItems: 'center', gap: 5, textDecoration: 'none', color, fontWeight: 600, background: `${color}22`, border: `1px solid ${color}66`, padding: '3px 9px 3px 5px' }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`/images/akasha/ref/${slug}.webp`} alt="" width={15} height={15} style={{ objectFit: 'contain', flexShrink: 0 }} />
+            <img src={`/images/akasha/ref/${slug}.webp`} alt="" width={15} height={15} loading="lazy" style={{ objectFit: 'contain', flexShrink: 0 }} />
             {fr}
           </Link>
         );

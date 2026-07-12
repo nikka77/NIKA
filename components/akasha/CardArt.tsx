@@ -34,7 +34,7 @@ export default function CardArt({
             <div className="ak-cosmic" aria-hidden />
             {(idle || current) ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img key={idle || current || ''} src={idle || current || ''} alt={name} className="ak-era-img" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: idle ? 'contain' : 'cover', objectPosition: 'center', imageRendering: idle ? 'pixelated' : 'auto' }} />
+              <img key={idle || current || ''} src={idle || current || ''} alt={name} loading="lazy" className="ak-era-img" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: idle ? 'contain' : 'cover', objectPosition: 'center', imageRendering: idle ? 'pixelated' : 'auto' }} />
             ) : (
               <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 60, opacity: 0.5 }} aria-hidden>{fallbackIcon}</div>
             )}
@@ -56,9 +56,9 @@ export default function CardArt({
             // qui remplit le cadre → pas de bande vide, sujet toujours au centre.
             <>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img aria-hidden src={current} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'blur(20px) saturate(1.25) brightness(0.5)', transform: 'scale(1.18)' }} />
+              <img aria-hidden src={current} alt="" loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'blur(20px) saturate(1.25) brightness(0.5)', transform: 'scale(1.18)' }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img key={current} src={current} alt={name} className="ak-art-img ak-era-img" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
+              <img key={current} src={current} alt={name} loading="lazy" className="ak-art-img ak-era-img" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
             </>
           ) : (
             <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 70, opacity: 0.5 }} aria-hidden>{fallbackIcon}</div>

@@ -197,7 +197,7 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
                 <>
                   {/* Galaxie en fond + planètes en spirale */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img className="ak-galbg" aria-hidden src={enteredU.img} alt="" style={{ position: 'absolute', left: '50%', top: '50%', width: '78%', height: 'auto', transform: 'translate(-50%,-50%)', opacity: 0.16, filter: 'blur(1px)', borderRadius: '50%', animation: 'ak-spin 140s linear infinite', pointerEvents: 'none' }} />
+                  <img className="ak-galbg" aria-hidden src={enteredU.img} alt="" loading="lazy" style={{ position: 'absolute', left: '50%', top: '50%', width: '78%', height: 'auto', transform: 'translate(-50%,-50%)', opacity: 0.16, filter: 'blur(1px)', borderRadius: '50%', animation: 'ak-spin 140s linear infinite', pointerEvents: 'none' }} />
                   {uPlanets.map((g, i) => {
                     const [x, y] = spiral(i, uPlanets.length); const isSel = sel?.slug === g.slug;
                     return (
@@ -251,7 +251,7 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
                 <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 13, flexWrap: 'wrap' }}>
                   <span style={{ width: 66, height: 66, borderRadius: '50%', overflow: 'hidden', flexShrink: 0, border: `2px solid ${rc}88`, boxShadow: `0 0 18px ${rc}55` }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={enteredU.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={enteredU.img} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </span>
                   <div style={{ flex: 1, minWidth: 180 }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
@@ -277,7 +277,7 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: 11, margin: '14px 0', padding: 11, borderRadius: 12, border: `1px solid ${rc}55`, background: 'var(--su)' }}>
                     <div style={{ width: 62, height: 62, flexShrink: 0, borderRadius: sel.slug === 'beerus-planet' ? 9 : '50%', overflow: 'hidden', background: 'radial-gradient(circle, #1a1030, #0a0612)', boxShadow: `0 0 14px ${rc}66` }}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={sel.img} alt={sel.name} style={{ width: '100%', height: '100%', objectFit: sel.slug === 'beerus-planet' ? 'contain' : 'cover' }} />
+                      <img src={sel.img} alt={sel.name} loading="lazy" style={{ width: '100%', height: '100%', objectFit: sel.slug === 'beerus-planet' ? 'contain' : 'cover' }} />
                     </div>
                     <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 3 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
