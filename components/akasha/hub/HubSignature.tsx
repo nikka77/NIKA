@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { universeHubSlug, type HubVisual } from '@/lib/akasha/universe-taxonomy';
 import { VillageEmblem } from '@/components/akasha/NarutoIcons';
-import ShinobiMap from '@/components/akasha/hub/ShinobiMap';
+import NarutoWorldMap from '@/components/akasha/hub/NarutoWorldMap';
 
 export interface AxisChip { v: string; label: string; count: number; tint?: string; badge?: string }
 export interface AxisView { attr: string; label: string; icon: string; chips: AxisChip[] }
@@ -55,8 +55,7 @@ function NenWheel({ axis, universe, color }: { axis: AxisView; universe: string;
 // Naruto : carte interactive du continent shinobi. Autres univers : liste de cartes (fallback).
 function VillageMap({ axis, universe, color }: { axis: AxisView; universe: string; color: string }) {
   if (universe === 'Naruto') {
-    const counts = Object.fromEntries(axis.chips.map((c) => [c.v.toLowerCase(), c.count]));
-    return <ShinobiMap counts={counts} hubSlug={universeHubSlug(universe)} color={color} />;
+    return <NarutoWorldMap color={color} />;
   }
   return (
     <section>
