@@ -6,6 +6,7 @@
 // à frapper, SFX chiptune (Web Audio, mutable), plein écran, aura de forme (prop `aura`).
 import { useEffect, useRef, useState } from 'react';
 import moveset from '@/data/akasha-moveset.json';
+import { useFullscreenToggle } from '@/lib/akasha/useFullscreenToggle';
 
 type Cfg = { dir: string; label?: string };
 const MONO = 'ui-monospace, "SFMono-Regular", Menlo, monospace';
@@ -262,7 +263,7 @@ export default function Moveset2D({ slug, aura = null, caption }: { slug: string
     onContextMenu: (e: React.MouseEvent) => e.preventDefault(),
   });
   const toggleMute = () => { muteRef.current = !muteRef.current; setMuted(muteRef.current); };
-  const toggleFull = () => { const el = wrapRef.current; if (!el) return; if (document.fullscreenElement) document.exitFullscreen?.()?.catch(() => {}); else el.requestFullscreen?.()?.catch(() => {}); };
+  const toggleFull = useFullscreenToggle(wrapRef);
 
   const padBtn: React.CSSProperties = { fontFamily: MONO, fontSize: 13, fontWeight: 800, cursor: 'pointer', userSelect: 'none', touchAction: 'none', width: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 11, border: '1px solid var(--bd2)', background: 'rgba(123,92,240,0.10)', color: '#9d86f5' };
   const atkBtn: React.CSSProperties = { fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 800, cursor: 'pointer', userSelect: 'none', touchAction: 'none', padding: '0 13px', height: 44, display: 'flex', alignItems: 'center', gap: 5, borderRadius: 12, border: '1px solid rgba(240,160,30,0.5)', background: 'rgba(240,140,20,0.14)', color: '#f0a830' };

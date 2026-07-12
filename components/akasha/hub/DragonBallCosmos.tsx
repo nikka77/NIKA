@@ -6,6 +6,7 @@
 import { useMemo, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
 import { DB_UNIVERSES, DB_TOP_META, DB_GALLERY, DB_HIERARCHY, DB_PLANETS, DB_PLANET_CHARS, type CosmosUniverse, type CosmosGalleryItem } from '@/lib/akasha/db-cosmos';
+import { useFullscreenToggle } from '@/lib/akasha/useFullscreenToggle';
 
 const RARITY_COLOR: Record<string, string> = { legendary: '#F2C14E', epic: '#C77DFF', rare: '#4EA8DE' };
 // Région d'une planète → numéro d'univers (royaumes hors-numéro rattachés à l'Univers 7).
@@ -78,7 +79,7 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
     }
   };
   const onPointerUp = (e: React.PointerEvent) => { ptrs.current.delete(e.pointerId); if (ptrs.current.size === 0) panStart.current = null; };
-  const toggleFs = () => { const el = boxRef.current; if (!el) return; if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); else el.requestFullscreen?.()?.catch(() => {}); };
+  const toggleFs = useFullscreenToggle(boxRef);
 
   const enterU = (u: CosmosUniverse) => { if (gest.current?.moved) return; setEnteredU(u); setSel(null); reset(); };
   const exitU = () => { setEnteredU(null); setSel(null); reset(); };

@@ -6,6 +6,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { OP_WORLD, OPW_ROUTE_LABEL, type OpwIsland } from '@/lib/akasha/op-world-map';
 import { useMapZoomPanSvg } from '@/lib/akasha/useMapZoomPanSvg';
+import { useFullscreenToggle } from '@/lib/akasha/useFullscreenToggle';
 
 const W = 4096, H = 2048;                 // fond op-world-bg.webp (4096×2048)
 const T = (px: number, py: number): [number, number] => [py, H - px]; // data [x,y] → écran paysage
@@ -101,7 +102,7 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
 
   const toggleRoute = (id: string) => setRoutes((s) => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
   const toggleYonko = (id: string) => setYonko((s) => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
-  const toggleFullscreen = () => { const el = boxRef.current; if (!el) return; document.fullscreenElement ? document.exitFullscreen().catch(() => {}) : el.requestFullscreen?.()?.catch(() => {}); };
+  const toggleFullscreen = useFullscreenToggle(boxRef);
   const startReplay = () => { setRoutes((s) => new Set(s).add('straw-hat-crew')); setReplay(true); setReplayNonce((n) => n + 1); };
 
   const chip = (active: boolean, onClick: () => void, label: React.ReactNode, dot?: string, key?: string) => (
