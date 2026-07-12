@@ -3,11 +3,9 @@
 // Run: PATH="/opt/homebrew/bin:$PATH" npx tsx --env-file=.env.local scripts/akasha-prune-slugs.ts
 import { createClient } from '@supabase/supabase-js';
 
-// Lieux DB espagnols supplantés par les planètes FR curées — à retirer de la base (seed = upsert-only).
+// Slugs obsolètes à retirer de Supabase (seed = upsert-only, ne supprime pas).
 const SLUGS = [
-  'tierra', 'planete-vegeta', 'vegeta-dragon-ball', 'freezer-no-79', 'monmar', 'kaio-del-norte',
-  'makyo', 'tsufur-universo-6', 'desconocido', 'planeta-de-bills', 'planeta-del-gran-kaio',
-  'planeta-sagrado', 'nucleo-del-mundo', 'nuevo-planeta-tsufrui', 'universo-11',
+  'grand-pretre', // doublon de daishinkan (Grand Prêtre / Daishinkan)
 ];
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
