@@ -5,7 +5,7 @@
 // sa hiérarchie divine et ses personnages importants. Vue « Hiérarchie » : la chaîne divine globale.
 import { useMemo, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
-import { DB_UNIVERSES, DB_TOP_META, DB_GALLERY, DB_HIERARCHY, DB_PLANETS, type CosmosUniverse, type CosmosGalleryItem } from '@/lib/akasha/db-cosmos';
+import { DB_UNIVERSES, DB_TOP_META, DB_GALLERY, DB_HIERARCHY, DB_PLANETS, DB_PLANET_CHARS, type CosmosUniverse, type CosmosGalleryItem } from '@/lib/akasha/db-cosmos';
 
 const RARITY_COLOR: Record<string, string> = { legendary: '#F2C14E', epic: '#C77DFF', rare: '#4EA8DE' };
 // Région d'une planète → numéro d'univers (royaumes hors-numéro rattachés à l'Univers 7).
@@ -23,9 +23,9 @@ function spiral(i: number, n: number): [number, number] {
   if (n <= 1) return [50, 50];
   const gold = 2.399963229728653; // angle d'or (rad)
   const frac = (i + 0.5) / n;
-  const rad = Math.sqrt(frac) * 39;
+  const rad = Math.sqrt(frac) * 45;
   const a = i * gold;
-  return [50 + rad * Math.cos(a) * 0.62, 50 + rad * Math.sin(a)];
+  return [50 + rad * Math.cos(a) * 0.86, 50 + rad * Math.sin(a)];
 }
 
 // Étoiles déterministes (seed fixe) → aucun mismatch d'hydratation.
@@ -96,7 +96,7 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
 
   return (
     <div style={{ marginTop: '1.8rem' }}>
-      <style>{`@keyframes ak-twinkle{0%,100%{opacity:.25}50%{opacity:1}}@keyframes ak-float{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 5px))}}@keyframes ak-spin{to{transform:translate(-50%,-50%) rotate(360deg)}}@media (prefers-reduced-motion: reduce){.ak-star,.ak-orb,.ak-galbg{animation:none!important}}.db-cosmos-box:fullscreen{width:100vw;height:100vh;aspect-ratio:auto;border-radius:0}.db-cosmos-box:fullscreen .db-cosmos-world{height:100%}.ak-plabel{opacity:0;transition:opacity .15s}.ak-orb:hover .ak-plabel,.ak-plabel.on{opacity:1}.ak-orb:hover{z-index:6!important}`}</style>
+      <style>{`@keyframes ak-twinkle{0%,100%{opacity:.25}50%{opacity:1}}@keyframes ak-float{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 5px))}}@keyframes ak-floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}@keyframes ak-spin{to{transform:translate(-50%,-50%) rotate(360deg)}}@media (prefers-reduced-motion: reduce){.ak-star,.ak-orb,.ak-galbg{animation:none!important}}.db-cosmos-box:fullscreen{width:100vw;height:100vh;aspect-ratio:auto;border-radius:0}.db-cosmos-box:fullscreen .db-cosmos-world{height:100%}.ak-plabel{opacity:0;transition:opacity .15s}.ak-orb:hover .ak-plabel,.ak-plabel.on{opacity:1}.ak-orb:hover{z-index:6!important}`}</style>
 
       <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color, marginBottom: 4 }}>
         🪐 Carte du multivers — 12 univers · {DB_GALLERY.length} mondes
@@ -153,14 +153,42 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
                   </Link>
                   {DB_UNIVERSES.map((u, i) => {
                     const [x, y] = GALAXY_POS[u.num]; const urc = RARITY_COLOR[u.rarity] || '#8FA3B0';
+                    const nP = planetsOf(u.num).length;
+                    const numBadge = <span aria-hidden style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 'clamp(13px,2.3vw,21px)', color: '#fff', textShadow: '0 1px 5px #000, 0 0 10px #000' }}>{u.num}</span>;
                     return (
-                      <button key={u.slug} onClick={() => enterU(u)} aria-label={`Univers ${u.num}`} className="ak-orb"
-                        style={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: '15%', aspectRatio: '1/1', transform: 'translate(-50%,-50%)', border: 'none', padding: 0, cursor: 'pointer', background: 'transparent', animation: `ak-float ${6 + (i % 4)}s ease-in-out ${(i * 0.6).toFixed(1)}s infinite`, zIndex: 2 }}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={u.img} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%', boxShadow: `0 0 14px ${urc}77, 0 4px 14px rgba(0,0,0,0.6)` }} />
-                        <span aria-hidden style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 'clamp(14px,2.4vw,22px)', color: '#fff', textShadow: '0 1px 5px #000, 0 0 10px #000' }}>{u.num}</span>
-                        <span style={{ position: 'absolute', left: '50%', top: 'calc(100% + 2px)', transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontFamily: 'var(--fo)', fontSize: 'clamp(8px,1.05vw,10.5px)', fontWeight: 700, color: 'rgba(255,255,255,0.85)', textShadow: '0 1px 4px #000', pointerEvents: 'none' }}>{u.name || `Univers ${u.num}`}</span>
-                      </button>
+                      <div key={u.slug} style={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: '15%', transform: 'translate(-50%,-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 2 }}>
+                        <div className="ak-orb" style={{ position: 'relative', width: '100%', aspectRatio: '1/1', animation: `ak-floaty ${6 + (i % 4)}s ease-in-out ${(i * 0.6).toFixed(1)}s infinite` }}>
+                          <span aria-hidden style={{ position: 'absolute', inset: '-26%', borderRadius: '50%', background: `radial-gradient(circle, ${urc}40, transparent 66%)`, filter: 'blur(5px)', pointerEvents: 'none' }} />
+                          {nP > 0 ? (
+                            <button onClick={() => enterU(u)} title={`Univers ${u.num} — ${nP} monde${nP > 1 ? 's' : ''}`} aria-label={`Explorer l'Univers ${u.num}`} style={{ position: 'absolute', inset: 0, border: 'none', padding: 0, cursor: 'pointer', background: 'transparent' }}>
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img src={u.img} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%', boxShadow: `0 0 14px ${urc}88, 0 4px 14px rgba(0,0,0,0.6)` }} />
+                              {numBadge}
+                            </button>
+                          ) : (
+                            <span title={`Univers ${u.num} — aucune planète cartographiée`} style={{ position: 'absolute', inset: 0, opacity: 0.52, cursor: 'default' }}>
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img src={u.img} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%', boxShadow: `0 0 10px ${urc}44` }} />
+                              {numBadge}
+                            </span>
+                          )}
+                        </div>
+                        <span style={{ marginTop: 2, whiteSpace: 'nowrap', fontFamily: 'var(--fo)', fontSize: 'clamp(8px,1.05vw,10.5px)', fontWeight: 700, color: 'rgba(255,255,255,0.85)', textShadow: '0 1px 4px #000' }}>{u.name || `Univers ${u.num}`}</span>
+                        <div style={{ display: 'flex', gap: 4, marginTop: 3 }}>
+                          {u.godSlug && u.godImg && (
+                            <Link href={`/learn/akasha/${u.godSlug}`} title={`💥 ${u.god} — Dieu de la Destruction`} style={{ display: 'block', width: 20, height: 20, borderRadius: '50%', overflow: 'hidden', border: `1.5px solid ${urc}`, boxShadow: `0 0 6px ${urc}88` }}>
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img src={u.godImg} alt={u.god} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+                            </Link>
+                          )}
+                          {u.angelSlug && u.angelImg && (
+                            <Link href={`/learn/akasha/${u.angelSlug}`} title={`😇 ${u.angel} — Ange`} style={{ display: 'block', width: 20, height: 20, borderRadius: '50%', overflow: 'hidden', border: '1.5px solid rgba(255,255,255,0.55)' }}>
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img src={u.angelImg} alt={u.angel} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+                            </Link>
+                          )}
+                        </div>
+                      </div>
                     );
                   })}
                 </>
@@ -174,8 +202,9 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
                     return (
                       <button key={g.slug} onClick={() => { if (gest.current?.moved) return; setSel(isSel ? null : g); }} aria-label={g.name} className="ak-orb"
                         style={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: `${pR * 2}%`, aspectRatio: '1/1', transform: 'translate(-50%,-50%)', border: 'none', padding: 0, cursor: 'pointer', background: 'transparent', zIndex: isSel ? 5 : 2, animation: `ak-float ${6 + (i % 4)}s ease-in-out ${(i * 0.3).toFixed(1)}s infinite` }}>
+                        <span aria-hidden style={{ position: 'absolute', inset: '-30%', borderRadius: '50%', background: `radial-gradient(circle, ${rc}${isSel ? '66' : '33'}, transparent 64%)`, filter: 'blur(4px)', pointerEvents: 'none' }} />
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={g.img} alt={g.name} loading="lazy" style={{ width: '100%', height: '100%', objectFit: g.slug === 'beerus-planet' ? 'contain' : 'cover', borderRadius: g.slug === 'beerus-planet' ? 0 : '50%', boxShadow: g.slug === 'beerus-planet' ? 'none' : `0 0 ${isSel ? 16 : 9}px ${rc}${isSel ? 'CC' : '77'}, 0 3px 10px rgba(0,0,0,0.6)`, filter: g.slug === 'beerus-planet' ? `drop-shadow(0 0 9px ${rc}99)` : 'none' }} />
+                        <img src={g.img} alt={g.name} loading="lazy" style={{ position: 'relative', width: '100%', height: '100%', objectFit: g.slug === 'beerus-planet' ? 'contain' : 'cover', borderRadius: g.slug === 'beerus-planet' ? 0 : '50%', boxShadow: g.slug === 'beerus-planet' ? 'none' : `0 0 ${isSel ? 16 : 9}px ${rc}${isSel ? 'CC' : '77'}, 0 3px 10px rgba(0,0,0,0.6)`, filter: g.slug === 'beerus-planet' ? `drop-shadow(0 0 9px ${rc}99)` : 'none' }} />
                         <span className={`ak-plabel${isSel ? ' on' : ''}`} style={{ position: 'absolute', left: '50%', top: 'calc(100% + 1px)', transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontFamily: 'var(--fo)', fontSize: 'clamp(8px,1vw,11px)', fontWeight: 700, color: isSel ? rc : '#fff', background: 'rgba(8,6,18,0.7)', borderRadius: 5, padding: '0 4px', textShadow: '0 1px 4px #000', pointerEvents: 'none' }}>{g.name}</span>
                       </button>
                     );
@@ -198,34 +227,7 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
             {zoom > 1 && <div style={{ position: 'absolute', left: 10, bottom: 10, zIndex: 10, fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, color: 'rgba(255,255,255,0.75)', background: 'rgba(10,8,24,0.6)', borderRadius: 6, padding: '2px 8px' }}>×{zoom.toFixed(1)}</div>}
           </div>
 
-          {/* Fiche planète sélectionnée */}
-          {sel && (
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginTop: 12, padding: 12, borderRadius: 14, border: `1px solid ${rc}55`, background: 'var(--bg2)' }}>
-              <div style={{ width: 74, height: 74, flexShrink: 0, borderRadius: sel.slug === 'beerus-planet' ? 10 : '50%', overflow: 'hidden', background: 'radial-gradient(circle, #1a1030, #0a0612)', boxShadow: `0 0 16px ${rc}55`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={sel.img} alt={sel.name} style={{ width: '100%', height: '100%', objectFit: sel.slug === 'beerus-planet' ? 'contain' : 'cover' }} />
-              </div>
-              <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 5 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                  <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 18, color: 'var(--td)', lineHeight: 1 }}>{sel.name}</span>
-                  {selRich && <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 700, color: 'var(--td3)', background: 'var(--su2)', borderRadius: 20, padding: '1px 8px' }}>{selRich.status.startsWith('Détruite') ? '💥' : '🌍'} {selRich.status}</span>}
-                </div>
-                {selRich && <p style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)', margin: 0, lineHeight: 1.5 }}>{selRich.note}</p>}
-                {selRich && selRich.people.length > 0 && (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 5, flexWrap: 'wrap' }}>
-                    <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--td3)' }}>Habitants&nbsp;:</span>
-                    {selRich.people.map((pe) => (
-                      <Link key={pe.slug} href={`/learn/akasha/${pe.slug}`} style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: 'var(--td2)', background: 'var(--su2)', border: '1px solid var(--bd)', borderRadius: 999, padding: '2px 9px', textDecoration: 'none' }}>{pe.name}</Link>
-                    ))}
-                  </div>
-                )}
-                <Link href={`/learn/akasha/${sel.slug}`} style={{ fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 800, color: rc, textDecoration: 'none', marginTop: 2 }}>Voir la fiche complète →</Link>
-              </div>
-              <button onClick={() => setSel(null)} aria-label="Fermer" style={{ flexShrink: 0, border: 'none', background: 'transparent', color: 'var(--td3)', cursor: 'pointer', fontSize: 16, lineHeight: 1 }}>✕</button>
-            </div>
-          )}
-
-          {/* Panneau détail de la galaxie explorée : hiérarchie + personnages importants */}
+          {/* Panneau détail de la galaxie explorée : hiérarchie + [fiche planète] + personnages */}
           {enteredU && (() => {
             const top = DB_TOP_META[enteredU.top];
             const trioChip = { display: 'flex', alignItems: 'center', gap: 6, textDecoration: 'none', padding: '4px 11px', borderRadius: 999, border: `1px solid ${rc}44`, background: `${rc}12`, fontFamily: 'var(--fo)', fontSize: 11.5 } as const;
@@ -234,6 +236,9 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
               { role: 'Ange', icon: '😇', name: enteredU.angel, slug: enteredU.angelSlug },
               { role: 'Kaïō Shin', icon: '🔮', name: enteredU.kai, slug: enteredU.kaiSlug },
             ];
+            const pchars = sel ? DB_PLANET_CHARS[sel.slug] : undefined;
+            const charsList = pchars && pchars.length ? pchars : enteredU.chars;
+            const charsLabel = pchars && pchars.length && sel ? `Sur ${sel.name}` : 'Personnages importants';
             return (
               <div className={`ak-r-${enteredU.rarity}`} style={{ marginTop: 12, borderRadius: 16, border: `1px solid ${rc}55`, background: `radial-gradient(120% 80% at 0% 0%, ${rc}12, var(--bg2) 55%)`, padding: 16 }}>
                 <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 13, flexWrap: 'wrap' }}>
@@ -253,17 +258,39 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
                   </div>
                 </div>
                 <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: 7 }}>Hiérarchie divine</div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, marginBottom: enteredU.chars.length ? 16 : 0 }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
                   {trio.map((t) => t.slug
                     ? <Link key={t.role} href={`/learn/akasha/${t.slug}`} style={trioChip}>{t.icon} <b style={{ fontWeight: 800, color: 'var(--td)' }}>{t.name}</b> <span style={{ opacity: 0.6, fontSize: 9.5, color: 'var(--td3)' }}>{t.role}</span></Link>
                     : <span key={t.role} style={{ ...trioChip, color: 'var(--td3)' }}>{t.icon} <b style={{ fontWeight: 800 }}>{t.name}</b> <span style={{ opacity: 0.6, fontSize: 9.5 }}>{t.role}</span></span>
                   )}
                 </div>
-                {enteredU.chars.length > 0 && (
-                  <>
-                    <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color, marginBottom: 8 }}>👥 Personnages importants — {enteredU.chars.length}</div>
+
+                {/* Fiche de la planète sélectionnée (entre hiérarchie et personnages) */}
+                {sel && (
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 11, margin: '14px 0', padding: 11, borderRadius: 12, border: `1px solid ${rc}55`, background: 'var(--su)' }}>
+                    <div style={{ width: 62, height: 62, flexShrink: 0, borderRadius: sel.slug === 'beerus-planet' ? 9 : '50%', overflow: 'hidden', background: 'radial-gradient(circle, #1a1030, #0a0612)', boxShadow: `0 0 14px ${rc}66` }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={sel.img} alt={sel.name} style={{ width: '100%', height: '100%', objectFit: sel.slug === 'beerus-planet' ? 'contain' : 'cover' }} />
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 3 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                        <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 17, color: 'var(--td)', lineHeight: 1 }}>{sel.name}</span>
+                        <span style={{ fontFamily: 'var(--fo)', fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: rc }}>Planète</span>
+                        {selRich && <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 700, color: 'var(--td3)', background: 'var(--su2)', borderRadius: 20, padding: '1px 8px' }}>{selRich.status.startsWith('Détruite') ? '💥' : '🌍'} {selRich.status}</span>}
+                        {selRich?.gravity && <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 700, color: 'var(--td3)', background: 'var(--su2)', borderRadius: 20, padding: '1px 8px' }}>🏋 {selRich.gravity}</span>}
+                      </div>
+                      {selRich && <p style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', margin: 0, lineHeight: 1.45 }}>{selRich.note}</p>}
+                      <Link href={`/learn/akasha/${sel.slug}`} style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 800, color: rc, textDecoration: 'none', marginTop: 1 }}>Voir la fiche complète →</Link>
+                    </div>
+                    <button onClick={() => setSel(null)} aria-label="Fermer" style={{ flexShrink: 0, border: 'none', background: 'transparent', color: 'var(--td3)', cursor: 'pointer', fontSize: 15, lineHeight: 1 }}>✕</button>
+                  </div>
+                )}
+
+                {charsList.length > 0 && (
+                  <div style={{ marginTop: sel ? 0 : 16 }}>
+                    <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color, marginBottom: 8 }}>👥 {charsLabel} — {charsList.length}</div>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
-                      {enteredU.chars.map((m) => (
+                      {charsList.map((m) => (
                         <Link key={m.slug} href={`/learn/akasha/${m.slug}`} style={{ display: 'flex', alignItems: 'center', gap: 7, textDecoration: 'none', padding: '3px 11px 3px 3px', borderRadius: 999, border: `1px solid ${rc}44`, background: `${rc}12` }}>
                           <span style={{ width: 30, height: 30, borderRadius: '50%', overflow: 'hidden', flexShrink: 0, background: 'var(--bg3)', border: `1px solid ${rc}66` }}>
                             {m.img && (
@@ -275,7 +302,7 @@ export default function DragonBallCosmos({ color = '#E8613C' }: { color?: string
                         </Link>
                       ))}
                     </div>
-                  </>
+                  </div>
                 )}
               </div>
             );
