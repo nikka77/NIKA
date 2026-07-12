@@ -20,6 +20,7 @@ import ContinueBanner from '@/components/akasha/hub/ContinueBanner';
 import HubSignature from '@/components/akasha/hub/HubSignature';
 import OnePieceMap from '@/components/akasha/hub/OnePieceMap';
 import DragonBallVisualizer from '@/components/akasha/hub/DragonBallVisualizer';
+import DragonBallCosmos from '@/components/akasha/hub/DragonBallCosmos';
 import { VillageEmblem, ClanCrest, RankBadge, GenerationBadge } from '@/components/akasha/NarutoIcons';
 import { opAxisIcon } from '@/components/akasha/OnePieceIcons';
 import { dbAxisIcon } from '@/components/akasha/DragonBallIcons';
@@ -249,7 +250,10 @@ export default async function UniverseHubPage({ params }: Props) {
           <Reveal as="div"><OnePieceMap color={m.color} /></Reveal>
         )}
         {taxo.slug === 'dragon-ball' && (
-          <Reveal as="div"><DragonBallVisualizer color={m.color} /></Reveal>
+          <>
+            <Reveal as="div"><DragonBallCosmos color={m.color} /></Reveal>
+            <Reveal as="div"><DragonBallVisualizer color={m.color} /></Reveal>
+          </>
         )}
 
         {/* ── INSIGHTS (chiffres-clés, rareté, top popularité, derniers ajoutés) ── */}

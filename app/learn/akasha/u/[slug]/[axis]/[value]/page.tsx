@@ -2,6 +2,7 @@
 // Ex. /learn/akasha/u/naruto/village/Konohagakure — page dédiée d'une valeur d'axe, avec l'identité
 // visuelle de l'univers (HUB_VISUAL), les membres triés par popularité, et les valeurs sœurs. Config-
 // driven depuis la taxonomy → aucun composant par univers. generateStaticParams + ISR.
+// (Filtres facettés par sous-axe clan/rang/génération, scopés au village sélectionné.)
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
