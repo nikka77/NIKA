@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { universeHubSlug, type HubVisual } from '@/lib/akasha/universe-taxonomy';
 import { VillageEmblem } from '@/components/akasha/NarutoIcons';
 import NarutoWorldMap from '@/components/akasha/hub/NarutoWorldMap';
+import BleachSeireitiMap from '@/components/akasha/hub/BleachSeireitiMap';
 
 export interface AxisChip { v: string; label: string; count: number; tint?: string; badge?: string }
 export interface AxisView { attr: string; label: string; icon: string; chips: AxisChip[] }
@@ -151,6 +152,12 @@ function Board({ axis, universe, color, title, icon }: { axis: AxisView; univers
   );
 }
 
+// ── Gotei 13 : carte du Seireitei (Bleach). Autres univers à venir : grille générique (fallback).
+function Gotei13({ axis, universe, color }: { axis: AxisView; universe: string; color: string }) {
+  if (universe === 'Bleach') return <BleachSeireitiMap axis={axis} universe={universe} color={color} />;
+  return <Board axis={axis} universe={universe} color={color} title="Le Gotei 13" icon="⚔️" />;
+}
+
 // ── Duel Kira vs L (Death Note) ────────────────────────────────────
 function KiraDuel({ axis, universe }: { axis: AxisView; universe: string }) {
   const find = (v: string) => axis.chips.find((c) => c.v === v);
@@ -202,7 +209,7 @@ export default function HubSignature({ signature, axes, universe, color, bountie
     case 'bounties': return bounties?.length ? <PowerLadder bounties={bounties} color={color} /> : null;
     case 'powerscale': { const a = axis('saga'); return a ? <Frieze axis={a} universe={universe} color={color} title="La saga des puissances" icon="📈" /> : null; }
     case 'jojo': { const a = axis('partie'); return a ? <Frieze axis={a} universe={universe} color={color} title="Les parties" icon="🎭" /> : null; }
-    case 'gotei': { const a = axis('division'); return a ? <Board axis={a} universe={universe} color={color} title="Le Gotei 13" icon="⚔️" /> : null; }
+    case 'gotei': { const a = axis('division'); return a ? <Gotei13 axis={a} universe={universe} color={color} /> : null; }
     case 'passes': { const a = axis('col'); return a ? <Board axis={a} universe={universe} color={color} title="Les cols" icon="⛰️" /> : null; }
     case 'kiraduel': { const a = axis('camp'); return a ? <KiraDuel axis={a} universe={universe} /> : null; }
     default: return null;
