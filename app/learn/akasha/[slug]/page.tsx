@@ -303,11 +303,14 @@ export default async function AkashaEntryPage({ params }: Props) {
           const descFrVal = typeof (entry.attributes as Record<string, unknown>).descFr === 'string'
             ? ((entry.attributes as Record<string, unknown>).descFr as string).trim() : null;
           const richer = descFrVal && descFrVal.length > (entry.description?.length ?? 0) + 40;
-          if (!entry.description && !richer) return null;
+          // La description est déjà affichée en sous-titre du bandeau (entry.summary) quand les
+          // deux champs sont synchronisés (cas de la majorité des fiches) → éviter la répétition.
+          const descDiffersFromSummary = !!entry.description && entry.description.trim() !== (entry.summary ?? '').trim();
+          if (!descDiffersFromSummary && !richer) return null;
           return (
             <section>
               <h2 className="akasha-section-title">Description</h2>
-              {entry.description && <Markdown source={entry.description} />}
+              {descDiffersFromSummary && <Markdown source={entry.description!} />}
               {richer && (
                 <p style={{ fontFamily: 'var(--fo)', fontSize: 14.5, color: 'var(--td2)', lineHeight: 1.7, margin: entry.description ? '0.8rem 0 0' : 0, whiteSpace: 'pre-line' }}>
                   {descFrVal}
