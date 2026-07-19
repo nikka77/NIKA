@@ -85,14 +85,14 @@ zone-context) ; wordmarks partout (jamais emoji/monogramme — leçon). Statut D
 acceptable ». Reste optionnel lot 1 : deep-link `?focus=`, bottom-sheet mobile du canal.
 
 ### Lot 2 — Registre-cosmos (`app/learn/akasha/page.tsx`)
-- [ ] 2a. Hero compacté : titre + recherche GET seuls (sans les 12 blocs sous le hero mobile).
-- [ ] 2b. **Portes des univers** : grille 4×2 de cartes-wordmark grand format (wordmark + compteur
+- [x] 2a. Hero compacté : titre + recherche GET seuls (sans les 12 blocs sous le hero mobile).
+- [x] 2b. **Portes des univers** : grille 4×2 de cartes-wordmark grand format (wordmark + compteur
       `listUniverseCounts` + teinte univers au survol) remplaçant UniverseRail sur la racine
       (UniverseRail reste utilisé en mode filtré ?universe=). Lien → hub `/u/[slug]`.
-- [ ] 2c. Barre de filtres UNIQUE : fusionner AkashaFilters + rails type/rareté/tri en une
+- [x] 2c. Barre de filtres UNIQUE : fusionner AkashaFilters + rails type/rareté/tri en une
       barre (type · rareté · tri) au-dessus de la grille ; CategoryRail reste en chips dessous ;
       FilterBar (récap filtres actifs) conservé tel quel.
-- [ ] 2d. Nettoyage : DidYouKnow garde 1 emplacement ; supprimer les redondances restantes
+- [x] 2d. Nettoyage : DidYouKnow garde 1 emplacement ; supprimer les redondances restantes
       signalées par l'audit (double compteurs) ; vérifier pagination inchangée (SEO).
 - [ ] 2e. (option, si Dan valide le style) Tuile de mosaïque v2 sobre remplaçant AkashaCard
       sur la racine seulement (rareté = liseré fin, pas de cadre TCG) — sinon reporter lot 4.

@@ -183,12 +183,11 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
         {/* Destinations : records + vitrines de collection. */}
         <div className="g-auto-150" style={{ gap: 8, marginBottom: '1.4rem' }}>
           {([
-            { href: '/learn/akasha/tops', icon: '🏆', label: 'Les Records', sub: 'Classements cross-univers', tint: '#E8623A' },
-            { href: '/learn/akasha/c/fruits-du-demon', icon: '🍎', label: 'Fruits du Démon', sub: '200+ par famille', tint: '#C0455E' },
-            { href: '/learn/akasha/c/armurerie-meito', icon: '⚔️', label: 'Armurerie Meito', sub: 'Sabres classés', tint: '#C9A227' },
+            { href: '/learn/akasha/tops', label: 'Les Records', sub: 'Classements cross-univers', tint: '#E8623A' },
+            { href: '/learn/akasha/c/fruits-du-demon', label: 'Fruits du Démon', sub: '200+ par famille', tint: '#C0455E' },
+            { href: '/learn/akasha/c/armurerie-meito', label: 'Armurerie Meito', sub: 'Sabres classés', tint: '#C9A227' },
           ] as const).map((d) => (
-            <Link key={d.href} href={d.href} className="dom-card" style={{ textDecoration: 'none', background: `linear-gradient(135deg, ${d.tint}12, var(--bg2))`, border: `1px solid ${d.tint}44`, borderRadius: 12, padding: '0.7rem 0.85rem', display: 'flex', flexDirection: 'column', gap: 2 }}>
-              <span style={{ fontSize: 18 }} aria-hidden>{d.icon}</span>
+            <Link key={d.href} href={d.href} className="dom-card" style={{ textDecoration: 'none', background: 'var(--bg2)', borderLeft: `3px solid ${d.tint}`, border: '1px solid var(--bd)', borderLeftColor: d.tint, borderLeftWidth: 3, borderRadius: 12, padding: '0.75rem 0.95rem', display: 'flex', flexDirection: 'column', gap: 3 }}>
               <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 13.5, color: 'var(--td)', lineHeight: 1.1 }}>{d.label}</span>
               <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)' }}>{d.sub}</span>
             </Link>
@@ -214,7 +213,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
             className="ak-tab"
             style={{ display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none', fontFamily: 'var(--fe)', fontSize: 13.5, fontWeight: 800, fontStyle: 'italic', letterSpacing: '0.04em', textTransform: 'uppercase', padding: '9px 18px', borderRadius: 11, marginBottom: '1.2rem', border: `1px solid ${universeMeta(universe).color}66`, background: `${universeMeta(universe).color}1A`, color: universeMeta(universe).color }}
           >
-            {universeMeta(universe).emoji} Explorer le hub {universe} →
+            Explorer le hub {universe} →
           </Link>
         )}
 
@@ -294,7 +293,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
             href="/learn/akasha/random"
             style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: '#7B5CF0', textDecoration: 'none', border: '1px solid rgba(123,92,240,0.4)', borderRadius: 8, padding: '5px 12px' }}
           >
-            ✦ Surprends-moi
+            Surprends-moi
           </Link>
         </div>
 
@@ -310,7 +309,6 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
               textAlign: 'center',
             }}
           >
-            <div style={{ fontSize: 42, marginBottom: '0.7rem' }}>✦</div>
             <p style={{ fontFamily: 'var(--fe)', fontSize: 18, fontStyle: 'italic', fontWeight: 700, color: 'var(--td)', marginBottom: '0.4rem' }}>
               Aucune entité dans ce filtre
             </p>
