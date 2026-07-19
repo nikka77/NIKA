@@ -13,6 +13,7 @@ import EntityAttributes from '@/components/akasha/EntityAttributes';
 import EntityRelations from '@/components/akasha/EntityRelations';
 import Markdown from '@/components/akasha/Markdown';
 import CharacterZone from '@/components/akasha/zone/CharacterZone';
+import OrganizationZone from '@/components/akasha/zone/OrganizationZone';
 import PlaceView from '@/components/akasha/PlaceView';
 import Crumbs from '@/components/akasha/Crumbs';
 
@@ -63,6 +64,18 @@ export default async function AkashaEntryPage({ params }: Props) {
         <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
           <Crumbs universe={entry.universe} category={typeof (entry.attributes as Record<string, unknown>).category === 'string' ? ((entry.attributes as Record<string, unknown>).category as string) : null} name={entry.name} />
           <CharacterZone entry={entry} popRank={popRank} />
+        </div>
+      </main>
+    );
+  }
+
+  // Organisations (équipages, clans…) → fiche « organigramme-zone » (refonte lot 4b).
+  if (entry.type === 'status') {
+    return (
+      <main>
+        <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
+          <Crumbs universe={entry.universe} category={category} name={entry.name} />
+          <OrganizationZone entry={entry} />
         </div>
       </main>
     );

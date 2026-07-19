@@ -113,9 +113,9 @@ acceptable ». Reste optionnel lot 1 : deep-link `?focus=`, bottom-sheet mobile 
 - [x] 3f. Fix tactile (touchAction pan-y Naruto + OP — le scroll vertical passe, le drag horizontal panne). MapShell partagé → reporté au lot 4d (refactor à risque, faible valeur visible).
 
 ### Lot 4 — Moteurs spécialisés & mosaïque
-- [ ] 4a. Agrégats SQL (vue ou RPC) : compteurs par axe + effectifs/prime par organisation —
+- [x] 4a. Agrégats SQL (migration écrite supabase/akasha_aggregates.sql, optionnelle — replis applicatifs ; primes Yonko servies par fetch ciblé) : compteurs par axe + effectifs/prime par organisation —
       prérequis 4b, allège aussi les ~20 requêtes/hub.
-- [ ] 4b. Fiche organisation « organigramme-zone » (402 status) : membres en orbites
+- [x] 4b. Fiche organisation « organigramme-zone » (402 status) : membres en orbites
       hiérarchisées via `appartient` + attributs, prime totale en héros (OP).
 - [ ] 4c. Rouleau temporel (entités à `eras`/`forms`) : généralisation d'ArcFrieze en moteur
       de surface (les 37 fiches à ères + hubs).

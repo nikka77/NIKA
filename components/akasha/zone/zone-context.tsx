@@ -11,6 +11,7 @@ export type ZoneSelection =
   | { kind: 'technique'; name: string; slug?: string; signature?: boolean }
   | { kind: 'famille'; rel: string; name: string; slug?: string }
   | { kind: 'appartenance'; attr: string; label: string; value: string }
+  | { kind: 'membre'; slug: string; name: string; img?: string | null; favorites?: number | null; role?: string }
   | null;
 
 interface ZoneCtx {
