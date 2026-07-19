@@ -95,16 +95,35 @@ export default async function UniverseHubPage({ params }: Props) {
       ].map((e) => e.slug))
     : [];
 
-  // Data live des cartes (3b) : effectifs d'équipage Yonko depuis l'axe crew déjà chargé.
-  const YONKO_CREW: Record<string, string> = {
-    'Big Mom': 'L’équipage de Big Mom', 'Kaido': 'L’équipage aux Cent Bêtes',
-    'Barbe Noire': 'L’équipage de Barbe Noire', 'Shanks': 'L’équipage du Roux',
-    'Barbe Blanche': 'L’équipage de Barbe Blanche', 'Luffy': 'L’équipage du Chapeau de Paille',
+  // Data live des cartes (3b+4a) : effectifs (axe crew déjà chargé) + prime totale réelle
+  // (fiches status des 6 équipages, 1 requête, uniquement sur le hub OP).
+  const YONKO_CREW: Record<string, { name: string; slug: string }> = {
+    'Big Mom': { name: 'L’équipage de Big Mom', slug: 'l-equipage-de-big-mom' },
+    'Kaido': { name: 'L’équipage aux Cent Bêtes', slug: 'l-equipage-aux-cent-betes' },
+    'Barbe Noire': { name: 'L’équipage de Barbe Noire', slug: 'l-equipage-de-barbe-noire' },
+    'Shanks': { name: 'L’équipage du Roux', slug: 'l-equipage-du-roux' },
+    'Barbe Blanche': { name: 'L’équipage de Barbe Blanche', slug: 'l-equipage-de-barbe-blanche' },
+    'Luffy': { name: 'L’équipage du Chapeau de Paille', slug: 'l-equipage-du-chapeau-de-paille' },
   };
-  const crewCounts = axisCounts.get('crew');
-  const yonkoCounts = crewCounts
-    ? Object.fromEntries(Object.entries(YONKO_CREW).map(([y, crew]) => [y, crewCounts.get(crew) ?? 0]).filter(([, n]) => (n as number) > 0))
-    : undefined;
+  const primeMd = (raw: unknown): string | undefined => {
+    if (typeof raw !== 'string') return undefined;
+    const n = Number(raw.replace(/[^0-9]/g, ''));
+    return n > 0 ? `${(n / 1e9).toLocaleString('fr-FR', { maximumFractionDigits: 1 })} Md ฿` : undefined;
+  };
+  let yonkoLive: Record<string, { count: number; prime?: string }> | undefined;
+  if (vis?.map === 'op-world') {
+    const crewCounts = axisCounts.get('crew');
+    const crewEntries = await getFullEntriesBySlugs(Object.values(YONKO_CREW).map((c) => c.slug));
+    const bySlug = new Map(crewEntries.map((e) => [e.slug, e]));
+    yonkoLive = Object.fromEntries(
+      Object.entries(YONKO_CREW)
+        .map(([y, c]) => [y, {
+          count: crewCounts?.get(c.name) ?? 0,
+          prime: primeMd((bySlug.get(c.slug)?.attributes as Record<string, unknown> | undefined)?.total_prime),
+        }])
+        .filter(([, v]) => (v as { count: number }).count > 0),
+    );
+  }
 
   // Garde-fou : un univers sans aucune donnée exploitable n'est pas une page indexable.
   if (total === 0 && stars.length === 0 && piliers.length === 0) notFound();
@@ -215,7 +234,7 @@ export default async function UniverseHubPage({ params }: Props) {
       {/* ── SURFACE SIGNATURE PLEIN CADRE (lot 3a) : la carte du monde EST la porte d'entrée ── */}
       {(vis?.map || vis?.signature) && (
         <div className="ak-world-enter" style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(1.2rem,2.5vw,1.8rem) 1.4rem 0', display: 'flex', flexDirection: 'column', gap: '1.6rem' }}>
-          {vis?.map === 'op-world' && <OnePieceMap color={m.color} yonkoCounts={yonkoCounts} />}
+          {vis?.map === 'op-world' && <OnePieceMap color={m.color} yonkoLive={yonkoLive} />}
           {vis?.map === 'db-cosmos' && <DragonBallCosmos color={m.color} />}
           {vis?.signature && <HubSignature signature={vis.signature} axes={axesAll} universe={taxo.name} color={m.color} bounties={bounties} />}
         </div>
