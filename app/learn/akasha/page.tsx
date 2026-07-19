@@ -12,7 +12,6 @@ import UniverseRail from '@/components/akasha/UniverseRail';
 import CategoryRail from '@/components/akasha/CategoryRail';
 import DidYouKnow from '@/components/akasha/DidYouKnow';
 import FilterBar from '@/components/akasha/FilterBar';
-import OmniSearch from '@/components/akasha/OmniSearch';
 import { registryHref } from '@/lib/akasha/href';
 
 export const revalidate = 3600; // ISR 1 h — était rendu dynamiquement à chaque requête sans cache
@@ -200,7 +199,6 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
           </form>
 
           <div style={{ marginTop: 12, maxWidth: 520 }}>
-            <OmniSearch />
           </div>
         </div>
       </div>

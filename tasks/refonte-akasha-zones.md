@@ -25,14 +25,32 @@ artefact `0d1e0048` (7 onglets) · analyse complète : `analyse-synthese.md` (sc
 - [x] Audit médaillons 8 univers (111 fichiers, 0 404 ; rapport complet en session)
 - [x] Corrections 0 crédit : 15 blasons dormants câblés (CLAN_IMG), OP_NON_CREW +9,
       filtre Kazekage, typo « Armarda » (base + build + icône), 16 dossiers vides supprimés
-- [x] 4 directions artistiques « premium ++ » générées (Higgsfield nano_banana, 8 maquettes) :
-      Cartographie céleste · Washi & encre · Console instrument · Gravité dorée → **choix Dan attendu**
+- [x] 4 directions artistiques générées puis **TOUTES REJETÉES par Dan (19/07)** — comme les planches
+      par univers : rendu « IA » kitsch, trop chargé, injugeable en image. **DA EN PAUSE** : structure
+      d'abord en style NIKA existant, habillage en DERNIER, prototypé en vrai code uniquement.
+      Cible exprimée : **menu de jeu AAA × Apple/Linear** (impact + air + rigueur, zéro décoration plaquée).
 - [x] Campagne médaillons (25 images livrées + câblées, commit : 5 trous P1 + 6 long-tail P2 + 14 regen core ;
       solde Higgsfield vérifié 2 100 cr — pas de top-up requis). Pattern : webp détouré 420-440 px
       (famille Naruto) / SVG détouré < 30 KB lisible à 40 px (7 autres univers), aucun texte intégré.
-- [ ] Blueprint technique lot 1 : spec de la coquille (layout AKASHA rail+surface+canal),
-      API du panneau canal, unification des 2 grammaires d'URL, plan MapShell.
-- [ ] Tokenisation de la DA choisie (variables CSS + assets de fond).
+- [x] Blueprint technique lot 1 (ci-dessous) — Chantier 0 CLOS, lot 1 lancé le 19/07.
+- ~~Tokenisation DA~~ → reportée en fin de refonte (décision Dan 19/07).
+
+## Blueprint lot 1 — coquille + canal
+
+- **Coquille** : `app/learn/akasha/layout.tsx` (nouveau) = rail contexte gauche fin (monogramme,
+  Registre, 8 univers, déclencheur ⌘K — l'OmniSearch monte ICI, donc partout) + zone de contenu.
+  Mobile < 900px : rail replié en barre horizontale compacte.
+- **Canal** : `components/akasha/zone/ZoneShell.tsx` = grille 2 colonnes (surface libre |
+  panneau canal ~380px sticky) + contexte React de sélection (`useZoneSelection`).
+  Contrat : tout élément interactif de la surface appelle `select({kind, ...payload})` ;
+  le canal affiche le détail scopé ; état par défaut = identité (rendu au premier paint → SEO ok) ;
+  bouton retour ↩ dans le canal. Mobile : le canal passe sous la surface (bottom-sheet au lot 3).
+- **Fiche perso v2** : `components/akasha/zone/CharacterZone.tsx` remplace CharacterView
+  (carte TCG) + CharacterDossier (9 onglets) sur `[slug]/page.tsx` — surface = portrait grand
+  format piloté par ArcFrieze + grappes interactives (jutsu par famille, famille, appartenances,
+  radar) ; canal = identité/bio par défaut, re-scope au clic. Style : tokens NIKA existants,
+  esprit AAA×Apple (grande typo, air, hairlines).
+- **URLs** : aucune nouvelle route ; `?focus=` remplace `?tab=` (deep-link canal), redirection douce.
 
 ## Les 4 lots d'implémentation
 

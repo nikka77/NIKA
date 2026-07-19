@@ -12,7 +12,7 @@ import EntityBadge from '@/components/akasha/EntityBadge';
 import EntityAttributes from '@/components/akasha/EntityAttributes';
 import EntityRelations from '@/components/akasha/EntityRelations';
 import Markdown from '@/components/akasha/Markdown';
-import CharacterView from '@/components/akasha/CharacterView';
+import CharacterZone from '@/components/akasha/zone/CharacterZone';
 import PlaceView from '@/components/akasha/PlaceView';
 import Crumbs from '@/components/akasha/Crumbs';
 
@@ -52,17 +52,17 @@ export default async function AkashaEntryPage({ params }: Props) {
     ? ((entry.attributes as Record<string, unknown>).category as string)
     : null;
 
-  // Personnages → fiche « carte à jouer » réactive (carte + dossier évoluent par forme).
+  // Personnages → fiche « ZONE » (refonte lot 1) : surface vivante + panneau canal re-scopable.
   if (entry.type === 'character') {
-    // Rang de popularité dans l'univers (#N par favoris) — 1 count HEAD, affiché sous la carte.
+    // Rang de popularité dans l'univers (#N par favoris) — 1 count HEAD, affiché sous le nom.
     const fav = typeof (entry.attributes as Record<string, unknown>).favorites === 'number'
       ? ((entry.attributes as Record<string, unknown>).favorites as number) : 0;
     const popRank = await popularityRank(entry.universe, fav);
     return (
       <main>
-        <div style={{ maxWidth: 470, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.2rem clamp(3rem,7vw,5rem)' }}>
+        <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
           <Crumbs universe={entry.universe} category={typeof (entry.attributes as Record<string, unknown>).category === 'string' ? ((entry.attributes as Record<string, unknown>).category as string) : null} name={entry.name} />
-          <CharacterView entry={entry} popRank={popRank} />
+          <CharacterZone entry={entry} popRank={popRank} />
         </div>
       </main>
     );

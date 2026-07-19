@@ -17,7 +17,7 @@ function Highlight({ text, q }: { text: string; q: string }) {
   );
 }
 
-export default function OmniSearch() {
+export default function OmniSearch({ variant = 'bar' }: { variant?: 'bar' | 'icon' }) {
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState('');
   const [groups, setGroups] = useState<Group[]>([]);
@@ -52,11 +52,17 @@ export default function OmniSearch() {
 
   return (
     <>
-      <button type="button" onClick={() => setOpen(true)} className="ak-tab"
-        style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 600, color: 'var(--td3)', background: 'var(--bg2)', border: '1px solid var(--bd2)', borderRadius: 10, padding: '10px 14px', cursor: 'pointer', width: '100%', maxWidth: 520, textAlign: 'left' }}>
-        <span aria-hidden>🔎</span> Recherche instantanée…
-        <span style={{ marginLeft: 'auto', fontSize: 10, fontWeight: 700, color: 'var(--td3)', border: '1px solid var(--bd2)', borderRadius: 5, padding: '1px 5px' }}>⌘K</span>
-      </button>
+      {variant === 'icon' ? (
+        <button type="button" onClick={() => setOpen(true)} className="ak-rail-item" title="Recherche instantanée (⌘K)" aria-label="Recherche instantanée">
+          <span aria-hidden>🔎</span>
+        </button>
+      ) : (
+        <button type="button" onClick={() => setOpen(true)} className="ak-tab"
+          style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 600, color: 'var(--td3)', background: 'var(--bg2)', border: '1px solid var(--bd2)', borderRadius: 10, padding: '10px 14px', cursor: 'pointer', width: '100%', maxWidth: 520, textAlign: 'left' }}>
+          <span aria-hidden>🔎</span> Recherche instantanée…
+          <span style={{ marginLeft: 'auto', fontSize: 10, fontWeight: 700, color: 'var(--td3)', border: '1px solid var(--bd2)', borderRadius: 5, padding: '1px 5px' }}>⌘K</span>
+        </button>
+      )}
 
       {open && (
         <div role="dialog" aria-modal="true" onClick={() => setOpen(false)}
