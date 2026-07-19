@@ -80,6 +80,7 @@ const CLAN_IMG: Record<string, string> = {
   hoshigaki: `${E}hoshigaki.webp`, karatachi: `${E}karatachi.webp`, kedoin: `${E}kedoin.webp`,
   chinoike: `${E}chinoike.webp`, shimura: `${E}shimura.webp`, terumi: `${E}terumi.webp`,
   yotsuki: `${E}yotsuki.webp`, yuhi: `${E}yuhi.webp`, yuki: `${E}yuki.webp`,
+  kagetsu: `${E}kagetsu.webp`, shirogane: `${E}shirogane.webp`, izuno: `${E}izuno.webp`,
 };
 // Rangs ninja & générations (Higgsfield → médaillons plats crème sur disque, même famille que les blasons).
 const R = '/images/akasha/ranks/';
