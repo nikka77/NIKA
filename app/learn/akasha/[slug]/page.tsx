@@ -14,7 +14,7 @@ import EntityRelations from '@/components/akasha/EntityRelations';
 import Markdown from '@/components/akasha/Markdown';
 import CharacterZone from '@/components/akasha/zone/CharacterZone';
 import OrganizationZone from '@/components/akasha/zone/OrganizationZone';
-import PlaceView from '@/components/akasha/PlaceView';
+import EraZone from '@/components/akasha/zone/EraZone';
 import Crumbs from '@/components/akasha/Crumbs';
 
 export const revalidate = 3600; // ISR 1 h — page la plus visitée du domaine, tournait sans cache
@@ -159,13 +159,13 @@ export default async function AkashaEntryPage({ params }: Props) {
     );
   }
 
-  // Entités enrichies d'ères chronologiques (lieu, artefact…) → page bespoke « carte évolutive ».
+  // Entités à ères chronologiques (lieux, artefacts…) → « rouleau temporel » (refonte lot 4c).
   if (Array.isArray((entry.attributes as Record<string, unknown>).eras) && ((entry.attributes as Record<string, unknown>).eras as unknown[]).length > 0) {
     return (
       <main>
-        <div style={{ maxWidth: 470, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.2rem clamp(3rem,7vw,5rem)' }}>
-          <Crumbs universe={entry.universe} category={typeof (entry.attributes as Record<string, unknown>).category === 'string' ? ((entry.attributes as Record<string, unknown>).category as string) : null} name={entry.name} />
-          <PlaceView entry={entry} />
+        <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
+          <Crumbs universe={entry.universe} category={category} name={entry.name} />
+          <EraZone entry={entry} />
         </div>
       </main>
     );

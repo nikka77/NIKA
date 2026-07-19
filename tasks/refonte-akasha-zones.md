@@ -117,7 +117,7 @@ acceptable ». Reste optionnel lot 1 : deep-link `?focus=`, bottom-sheet mobile 
       prérequis 4b, allège aussi les ~20 requêtes/hub.
 - [x] 4b. Fiche organisation « organigramme-zone » (402 status) : membres en orbites
       hiérarchisées via `appartient` + attributs, prime totale en héros (OP).
-- [ ] 4c. Rouleau temporel (entités à `eras`/`forms`) : généralisation d'ArcFrieze en moteur
+- [x] 4c. Rouleau temporel (entités à `eras`/`forms`) : généralisation d'ArcFrieze en moteur
       de surface (les 37 fiches à ères + hubs).
 - [ ] 4d. Remplaçant définitif d'AkashaGrid/AkashaCard partout (retire framer-motion) +
       passerelles seiyū sur les fiches perso (voiceActors, 3 531 persos).
