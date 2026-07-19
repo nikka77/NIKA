@@ -218,10 +218,12 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
           </Link>
         )}
 
+        {/* ── BARRE UNIQUE (2c) : type · rareté · tri — un seul panneau ── */}
+        <div className="ak-filterpanel">
         <AkashaFilters active={type} search={search} universe={universe} keep={{ cat, fam, attr: axisOn ? attr : undefined, val: axisOn ? val : undefined, rarity, sort }} />
 
         {/* ── GEMMES DE RARETÉ (?rarity=) — filtre TCG, toggle par palier ── */}
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', margin: '0.2rem 0 1.1rem' }}>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
           {(['legendary', 'epic', 'rare', 'common'] as const).map((r) => {
             const meta = RARITY_META[r];
             const active = rarity === r;
@@ -250,13 +252,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
             </Link>
           )}
         </div>
-
-        <CategoryRail counts={categoryCounts} active={cat} famCounts={familyCounts} activeFam={fam} universe={universe} type={type} search={search} />
-
-        {/* ── FILTRES ACTIFS (chips supprimables) + TRI — fin des filtres fantômes ── */}
-        <FilterBar f={{ universe, type, cat, fam, attr: axisOn ? attr : undefined, val: axisOn ? val : undefined, rarity, sort, search }} />
-        {total > 0 && (
-          <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap', margin: '0 0 0.9rem' }}>
+          <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap', margin: 0 }}>
             <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--td3)' }}>Tri :</span>
             {([['', 'Rareté'], ['pop', 'Popularité'], ['alpha', 'A → Z']] as const).map(([key, label]) => {
               const active = (sort ?? '') === key;
@@ -268,7 +264,12 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
               );
             })}
           </div>
-        )}
+        </div>
+
+        <CategoryRail counts={categoryCounts} active={cat} famCounts={familyCounts} activeFam={fam} universe={universe} type={type} search={search} />
+
+        {/* ── FILTRES ACTIFS (chips supprimables) + TRI — fin des filtres fantômes ── */}
+        <FilterBar f={{ universe, type, cat, fam, attr: axisOn ? attr : undefined, val: axisOn ? val : undefined, rarity, sort, search }} />
 
         <div
           style={{
