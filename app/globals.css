@@ -1005,22 +1005,38 @@ ul { list-style: none; }
   transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
 }
 .ak-bar-btn:hover { border-color: var(--bd2); background: var(--bg3); color: var(--td); }
-.ak-switch-pop {
-  position: absolute; top: calc(100% + 8px); left: 0; z-index: 50;
-  min-width: 216px; padding: 6px;
-  display: flex; flex-direction: column; gap: 2px;
-  background: var(--bg2); border: 1px solid var(--bd2); border-radius: 13px;
-  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.75);
+/* Roue des univers (façon roue d'armes GTA) : overlay plein écran + SVG radial. */
+.ak-wheel-overlay {
+  position: fixed; inset: 0; z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(3, 6, 14, 0.78); backdrop-filter: blur(10px);
 }
-.ak-switch-sep { height: 1px; background: var(--bd); margin: 3px 6px; }
-.ak-switch-item {
-  display: flex; align-items: center;
-  padding: 9px 12px; border-radius: 9px; border: 1px solid transparent;
-  text-decoration: none;
-  transition: border-color 0.15s ease, background 0.15s ease;
+.ak-wheel { width: min(86vw, 86vh, 620px); height: auto; }
+@media (prefers-reduced-motion: no-preference) {
+  .ak-wheel { animation: akWheelIn 0.18s cubic-bezier(0.22, 0.9, 0.3, 1.1) both; }
+  @keyframes akWheelIn { from { opacity: 0; transform: scale(0.86); } to { opacity: 1; transform: scale(1); } }
 }
-.ak-switch-item img { max-width: 118px; max-height: 22px; width: auto; height: auto; object-fit: contain; display: block; }
-.ak-switch-item:hover { background: var(--bg3); border-color: var(--uc, var(--bd2)); }
+.ak-wheel-seg { cursor: pointer; outline: none; }
+.ak-wheel-seg path {
+  fill: rgba(9, 21, 42, 0.92); stroke: var(--bd2); stroke-width: 1;
+  transition: fill 0.13s ease, stroke 0.13s ease, filter 0.13s ease;
+}
+.ak-wheel-seg image { filter: saturate(0.85); opacity: 0.9; transition: filter 0.13s ease, opacity 0.13s ease; }
+.ak-wheel-seg:hover path, .ak-wheel-seg:focus-visible path {
+  fill: color-mix(in srgb, var(--uc, #7B5CF0) 22%, rgba(9, 21, 42, 0.94));
+  stroke: var(--uc, #7B5CF0);
+  filter: drop-shadow(0 0 14px color-mix(in srgb, var(--uc, #7B5CF0) 55%, transparent));
+}
+.ak-wheel-seg:hover image, .ak-wheel-seg:focus-visible image { filter: saturate(1.15); opacity: 1; }
+.ak-wheel-hub { cursor: pointer; outline: none; }
+.ak-wheel-hub circle {
+  fill: rgba(5, 12, 23, 0.96); stroke: var(--bd2); stroke-width: 1;
+  transition: stroke 0.13s ease, filter 0.13s ease;
+}
+.ak-wheel-hub:hover circle, .ak-wheel-hub:focus-visible circle {
+  stroke: var(--purple); filter: drop-shadow(0 0 12px rgba(123, 92, 240, 0.5));
+}
+
 /* Grille fiche « zone » : surface libre | canal ~380px collant. 1 colonne sous 980px. */
 .ak-zone-grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 26px; align-items: start; }
 .ak-canal { position: sticky; top: 16px; max-height: calc(100dvh - 32px); overflow-y: auto; scrollbar-width: thin; }
