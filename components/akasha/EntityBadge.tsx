@@ -22,7 +22,6 @@ export default function EntityBadge({ type, size = 'md' }: { type: AkashaType; s
         whiteSpace: 'nowrap',
       }}
     >
-      <span aria-hidden>{m.icon}</span>
       {m.label}
     </span>
   );

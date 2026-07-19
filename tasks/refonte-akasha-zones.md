@@ -119,10 +119,8 @@ acceptable ». Reste optionnel lot 1 : deep-link `?focus=`, bottom-sheet mobile 
       hiérarchisées via `appartient` + attributs, prime totale en héros (OP).
 - [x] 4c. Rouleau temporel (entités à `eras`/`forms`) : généralisation d'ArcFrieze en moteur
       de surface (les 37 fiches à ères + hubs).
-- [ ] 4d. Remplaçant définitif d'AkashaGrid/AkashaCard partout (retire framer-motion) +
-      passerelles seiyū sur les fiches perso (voiceActors, 3 531 persos).
-- [ ] 4e. Balayage final : emojis restants des anciennes surfaces, badge « ✦ Fiction »,
-      og:images re-skinnées, `?focus=` deep-link canal.
+- [x] 4d. AkashaMosaic partout (framer-motion reste aux modules home, hors AKASHA) + passerelles seiyū.
+- [x] 4e. Balayage : emojis retirés du chrome (hub, filtres, badges, rails, DidYouKnow), badge Fiction supprimé. Reportés fin de refonte (avec la DA) : og:images re-skin, ?focus= deep-link.
 
 ## Règles transverses
 

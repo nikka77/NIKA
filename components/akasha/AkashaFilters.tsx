@@ -9,7 +9,7 @@ const ACCENT = '#7B5CF0';
 export default function AkashaFilters({ active, search, universe, keep }: { active?: AkashaType; search: string; universe?: string; keep?: Partial<RegistryFilters> }) {
   const tabs: { type: AkashaType | null; label: string; icon?: string }[] = [
     { type: null, label: 'Tout' },
-    ...AKASHA_TYPES.map((t) => ({ type: t, label: TYPE_META[t].plural, icon: TYPE_META[t].icon })),
+    ...AKASHA_TYPES.map((t) => ({ type: t, label: TYPE_META[t].plural, icon: undefined as string | undefined })),
   ];
 
   return (
@@ -34,7 +34,7 @@ export default function AkashaFilters({ active, search, universe, keep }: { acti
               color: isActive ? ACCENT : 'var(--td2)',
             }}
           >
-            {tab.icon ? `${tab.icon} ` : ''}
+
             {tab.label}
           </Link>
         );

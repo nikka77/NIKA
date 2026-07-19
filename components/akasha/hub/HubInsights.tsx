@@ -43,7 +43,6 @@ export default function HubInsights({ insights, color }: { insights: UniverseIns
         <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap' }}>
           {types.map((t) => (
             <div key={t} style={{ flex: '1 0 92px', minWidth: 92, background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 12, padding: '11px 12px', textAlign: 'center' }}>
-              <div style={{ fontSize: 18 }} aria-hidden>{TYPE_META[t].icon}</div>
               <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 22, color: 'var(--td)', lineHeight: 1 }}><CountUp to={byType[t]} /></div>
               <div style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--td3)', marginTop: 3 }}>{TYPE_META[t].plural}</div>
             </div>

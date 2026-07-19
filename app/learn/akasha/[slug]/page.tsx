@@ -103,9 +103,8 @@ export default async function AkashaEntryPage({ params }: Props) {
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <Crumbs universe={entry.universe} category={category} name={entry.name} />
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center', marginBottom: 8 }}>
-              <span style={{ fontSize: 30 }} aria-hidden>⚡</span>
               {isSig && (
-                <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '3px 10px', borderRadius: 20, color: '#E8623A', background: '#E8623A1A', border: '1px solid #E8623A66' }}>⭐ Attaque signature</span>
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '3px 10px', borderRadius: 20, color: '#E8623A', background: '#E8623A1A', border: '1px solid #E8623A66' }}>★ Attaque signature</span>
               )}
               {discipline && (
                 <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', padding: '3px 10px', borderRadius: 20, color: accent, background: `${accent}14`, border: `1px solid ${accent}55` }}>{discipline}</span>
@@ -217,22 +216,6 @@ export default async function AkashaEntryPage({ params }: Props) {
             <div style={{ flex: 1, minWidth: 240 }}>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', marginBottom: 10 }}>
                 <EntityBadge type={entry.type} />
-                <span
-                  style={{
-                    fontFamily: 'var(--fo)',
-                    fontSize: 10.5,
-                    fontWeight: 700,
-                    letterSpacing: '0.05em',
-                    textTransform: 'uppercase',
-                    padding: '3px 9px',
-                    borderRadius: 20,
-                    color: entry.is_fiction ? m.color : 'var(--td2)',
-                    background: entry.is_fiction ? `${m.color}14` : 'var(--bg3)',
-                    border: `1px solid ${entry.is_fiction ? `${m.color}40` : 'var(--bd2)'}`,
-                  }}
-                >
-                  {entry.is_fiction ? '✦ Fiction' : '◆ Réel'}
-                </span>
                 {entry.rarity && (
                   <span
                     style={{

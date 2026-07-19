@@ -70,7 +70,7 @@ function VillageMap({ axis, universe, color }: { axis: AxisView; universe: strin
   }
   return (
     <section>
-      <div style={TITLE(color)}><span>🗺️ Le continent shinobi</span><span style={{ color: 'var(--td3)' }}>{axis.chips.length} villages cachés</span></div>
+      <div style={TITLE(color)}><span>Le continent shinobi</span><span style={{ color: 'var(--td3)' }}>{axis.chips.length} villages cachés</span></div>
       <div className="g-2" style={{ display: 'grid', gap: 9 }}>
         {axis.chips.map((c) => {
           const tint = c.tint ?? color;
@@ -97,7 +97,7 @@ function PowerLadder({ bounties, color }: { bounties: Bounty[]; color: string })
   const tier = (v: number) => (v >= 3e9 ? 'Empereur' : v >= 1e9 ? 'Yonko / Amiral' : v >= 3e8 ? 'Supernova' : 'Recherché');
   return (
     <section>
-      <div style={TITLE(color)}><span>🏴‍☠️ Échelle des primes</span><Link href="/learn/akasha/wanted" style={{ color: 'var(--td3)', textDecoration: 'none' }}>tout le classement →</Link></div>
+      <div style={TITLE(color)}><span>Échelle des primes</span><Link href="/learn/akasha/wanted" style={{ color: 'var(--td3)', textDecoration: 'none' }}>tout le classement →</Link></div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
         {bounties.map((b, i) => (
           <Link key={b.slug} href={`/learn/akasha/${b.slug}`} className="akasha-card" style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none', background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 11, padding: '6px 12px 6px 8px', ['--dc' as string]: color }}>
@@ -123,10 +123,10 @@ function PowerLadder({ bounties, color }: { bounties: Bounty[]; color: string })
 }
 
 // ── Frise des parties / sagas (JoJo, Dragon Ball) — stations à médaillons (3d) ──
-function Frieze({ axis, universe, color, title, icon, iconFor }: { axis: AxisView; universe: string; color: string; title: string; icon?: string; iconFor?: (v: string) => ReactNode }) {
+function Frieze({ axis, universe, color, title, iconFor }: { axis: AxisView; universe: string; color: string; title: string; icon?: string; iconFor?: (v: string) => ReactNode }) {
   return (
     <section>
-      <div style={TITLE(color)}><span>{icon ? `${icon} ` : ''}{title}</span><span style={{ color: 'var(--td3)' }}>{axis.chips.length} époques</span></div>
+      <div style={TITLE(color)}><span>{title}</span><span style={{ color: 'var(--td3)' }}>{axis.chips.length} époques</span></div>
       <div className="hero-domabar" style={{ display: 'flex', gap: 0, overflowX: 'auto', paddingBottom: 6 }}>
         {axis.chips.map((c, i) => {
           const medallion = iconFor?.(c.v) ?? null;
@@ -150,10 +150,10 @@ function Frieze({ axis, universe, color, title, icon, iconFor }: { axis: AxisVie
 }
 
 // ── Organigramme / grille de valeurs (Gotei 13, cols) ──────────────
-function Board({ axis, universe, color, title, icon }: { axis: AxisView; universe: string; color: string; title: string; icon: string }) {
+function Board({ axis, universe, color, title }: { axis: AxisView; universe: string; color: string; title: string; icon?: string }) {
   return (
     <section>
-      <div style={TITLE(color)}><span>{icon} {title}</span><span style={{ color: 'var(--td3)' }}>{axis.chips.length}</span></div>
+      <div style={TITLE(color)}><span>{title}</span><span style={{ color: 'var(--td3)' }}>{axis.chips.length}</span></div>
       <div className="g-3" style={{ display: 'grid', gap: 8 }}>
         {axis.chips.map((c) => (
           <Link key={c.v} href={href(universe, axis.attr, c.v)} className="dom-card" style={{ textDecoration: 'none', background: 'var(--bg2)', border: `1px solid ${color}33`, borderRadius: 11, padding: '11px 12px', textAlign: 'center', ['--dc' as string]: color }}>

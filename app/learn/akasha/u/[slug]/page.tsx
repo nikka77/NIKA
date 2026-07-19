@@ -190,7 +190,7 @@ export default async function UniverseHubPage({ params }: Props) {
             <span style={{ color: m.color }}>{taxo.name}</span>
           </nav>
           <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: m.color, margin: '1rem 0 0.5rem' }}>
-            {m.emoji} Univers · {total} entrées
+            Univers · {total} entrées
           </div>
           <h1 style={{ margin: 0, lineHeight: 0.88 }}>
             {universeWordmark(taxo.name)
@@ -214,7 +214,7 @@ export default async function UniverseHubPage({ params }: Props) {
               className="ak-cta"
               style={{ display: 'inline-block', fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 800, fontStyle: 'italic', letterSpacing: '0.04em', textTransform: 'uppercase', padding: '10px 20px', borderRadius: 10, border: '1px solid var(--bd2)', background: 'var(--bg2)', color: 'var(--td)', textDecoration: 'none' }}
             >
-              ✦ Surprends-moi
+              Surprends-moi
             </Link>
             {(taxo.extras ?? []).map((x) => (
               <Link
@@ -223,7 +223,7 @@ export default async function UniverseHubPage({ params }: Props) {
                 className="ak-cta"
                 style={{ display: 'inline-block', fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 800, fontStyle: 'italic', letterSpacing: '0.04em', textTransform: 'uppercase', padding: '10px 20px', borderRadius: 10, border: '1px solid var(--bd2)', background: 'var(--bg2)', color: 'var(--td)', textDecoration: 'none' }}
               >
-                {x.icon} {x.label} →
+                {x.label} →
               </Link>
             ))}
             <ShareButton title={`${taxo.name} — AKASHA`} text={taxo.tagline} color={m.color} />
@@ -247,7 +247,7 @@ export default async function UniverseHubPage({ params }: Props) {
           <div style={{ display: 'flex', gap: 7, flexWrap: 'wrap', marginTop: 10 }}>
             {(['character', 'place', 'artifact', 'power', 'skill', 'status'] as const).filter((t) => insights.byType[t]).map((t) => (
               <Link key={t} href={`/learn/akasha?universe=${encodeURIComponent(taxo.name)}&type=${t}`} className="ak-tab" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, padding: '6px 12px', borderRadius: 20, border: '1px solid var(--bd2)', background: 'var(--bg2)', color: 'var(--td2)' }}>
-                {TYPE_META[t].icon} {TYPE_META[t].plural}
+                {TYPE_META[t].plural}
                 <span style={{ fontSize: 9.5, fontWeight: 800, color: 'var(--td3)' }}>{insights.byType[t]}</span>
               </Link>
             ))}
@@ -268,7 +268,7 @@ export default async function UniverseHubPage({ params }: Props) {
         {evolutive.length > 1 && (
           <Reveal>
             <div style={sectionTitle}>
-              <span>🕰️ Voyages dans le temps</span>
+              <span>Voyages dans le temps</span>
               <span style={{ color: 'var(--td3)', letterSpacing: '0.03em' }}>{evolutive.length} lieux & artefacts évolutifs</span>
             </div>
             <AkashaMosaic entries={evolutive} />
@@ -279,7 +279,7 @@ export default async function UniverseHubPage({ params }: Props) {
         {axes.map((axis) => (
           <Reveal key={axis.attr}>
             <div style={sectionTitle}>
-              <span>{axis.icon} {axis.label}</span>
+              <span>{axis.label}</span>
               <span style={{ color: 'var(--td3)', letterSpacing: '0.03em' }}>{axis.chips.length}</span>
             </div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -333,7 +333,7 @@ export default async function UniverseHubPage({ params }: Props) {
         {catCounts.length > 0 && (
           <Reveal>
             <div style={sectionTitle}>
-              <span>◈ Collections</span>
+              <span>Collections</span>
               <span style={{ color: 'var(--td3)', letterSpacing: '0.03em' }}>{catCounts.length}</span>
             </div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -363,7 +363,7 @@ export default async function UniverseHubPage({ params }: Props) {
         {piliers.length > 0 && (
           <Reveal>
             <div style={sectionTitle}>
-              <span>✦ Les piliers de {taxo.name}</span>
+              <span>Les piliers de {taxo.name}</span>
             </div>
             <AkashaMosaic entries={piliers} />
           </Reveal>
@@ -371,13 +371,13 @@ export default async function UniverseHubPage({ params }: Props) {
 
         {/* ── EXPLORER UN AUTRE UNIVERS (maillage inter-hubs) ── */}
         <Reveal>
-          <div style={sectionTitle}><span>🌐 Explorer un autre monde</span></div>
+          <div style={sectionTitle}><span>Explorer un autre monde</span></div>
           <div className="hero-domabar" style={{ display: 'flex', gap: 9, overflowX: 'auto', paddingBottom: 6 }}>
             {UNIVERSE_TAXONOMY.filter((u) => u.slug !== taxo.slug).map((u) => {
               const um = universeMeta(u.name);
               return (
                 <Link key={u.slug} href={`/learn/akasha/u/${u.slug}`} className="ak-tab" style={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: 7, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 12.5, fontWeight: 700, whiteSpace: 'nowrap', padding: '9px 15px', borderRadius: 12, border: `1px solid ${um.color}55`, background: `${um.color}14`, color: um.color }}>
-                  <span aria-hidden>{um.emoji}</span> {u.name}
+                  <span aria-hidden style={{ width: 7, height: 7, borderRadius: '50%', background: um.color, display: 'inline-block' }} /> {u.name}
                 </Link>
               );
             })}

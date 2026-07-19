@@ -25,7 +25,7 @@ export default async function DidYouKnow({ universe, accent }: { universe?: stri
       }}
     >
       <div style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color, marginBottom: 5 }}>
-        💡 Le savais-tu ?
+        Le savais-tu ?
       </div>
       <p style={{ fontFamily: 'var(--fo)', fontSize: 13, fontStyle: 'italic', color: 'var(--td2)', lineHeight: 1.6, margin: 0 }}>
         « {fact} »

@@ -38,7 +38,7 @@ export default function UniverseRail({
     <div style={{ marginBottom: '1.4rem' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
         <span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: ACCENT }}>
-          ✦ Univers
+          Univers
         </span>
         <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, color: 'var(--td3)' }}>
           {ordered.length} mondes · {total} entrées
@@ -59,7 +59,6 @@ export default function UniverseRail({
             color: !active ? ACCENT : 'var(--td2)',
           }}
         >
-          <span aria-hidden>✦</span>
           Tous
           <span style={{ fontSize: 10, fontWeight: 800, color: !active ? ACCENT : 'var(--td3)', background: 'rgba(5,12,23,0.45)', borderRadius: 20, padding: '1px 7px' }}>{total}</span>
         </Link>
@@ -85,7 +84,7 @@ export default function UniverseRail({
               {universeWordmark(name)
                 // eslint-disable-next-line @next/next/no-img-element
                 ? <img src={universeWordmark(name)!} alt={name} loading="lazy" style={{ height: 24, width: 'auto', objectFit: 'contain', display: 'block', filter: on ? 'none' : 'saturate(0.9)' }} />
-                : <><span aria-hidden>{m.emoji}</span>{name}</>}
+                : <>{name}</>}
               <span style={{ fontSize: 10, fontWeight: 800, color: on ? m.color : 'var(--td3)', background: 'rgba(5,12,23,0.45)', borderRadius: 20, padding: '1px 7px' }}>{byName.get(name)}</span>
             </Link>
           );
