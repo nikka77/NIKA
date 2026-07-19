@@ -116,8 +116,17 @@ export default async function UniverseHubPage({ params }: Props) {
     'Anciens membres du Cipher Pol', 'Anciens membres du Baroque Works']);
   // « Kazekage » est un TITRE miné à tort comme clan Naruto → hors axe Clans.
   const NARUTO_NON_CLAN = new Set(['Kazekage']);
+  // 3e : l'axe porté par la surface signature ne se répète plus en rail (dédup audit n°6),
+  // et les petits univers (< 250 entrées) passent en gabarit compact.
+  const SIGNATURE_ATTRS: Record<string, string[]> = {
+    villages: ['village'], nen: ['nen'], jojo: ['partie'], passes: ['col'],
+    kiraduel: ['camp'], gotei: ['race', 'division'], powerscale: ['saga'], bounties: [],
+  };
+  const sigAttrs = vis?.signature ? SIGNATURE_ATTRS[vis.signature] ?? [] : [];
+  const compact = total < 250;
+
   // Axes affichables : valeurs curées avec data d'abord, puis les valeurs « découvertes » (hors config) par volume.
-  const axes = taxo.axes
+  const axesAll = taxo.axes
     .map((axis) => {
       const counts = axisCounts.get(axis.attr) ?? new Map<string, number>();
       const curated = axis.values
@@ -134,6 +143,7 @@ export default async function UniverseHubPage({ params }: Props) {
       return { ...axis, chips: [...curated, ...extras] };
     })
     .filter((axis) => axis.chips.length > 0);
+  const axes = axesAll.filter((axis) => !sigAttrs.includes(axis.attr));
 
   const sectionTitle = { fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase' as const, color: m.color, marginBottom: 10, display: 'flex', alignItems: 'center', gap: 8 };
 
@@ -207,7 +217,7 @@ export default async function UniverseHubPage({ params }: Props) {
         <div className="ak-world-enter" style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(1.2rem,2.5vw,1.8rem) 1.4rem 0', display: 'flex', flexDirection: 'column', gap: '1.6rem' }}>
           {vis?.map === 'op-world' && <OnePieceMap color={m.color} yonkoCounts={yonkoCounts} />}
           {vis?.map === 'db-cosmos' && <DragonBallCosmos color={m.color} />}
-          {vis?.signature && <HubSignature signature={vis.signature} axes={axes} universe={taxo.name} color={m.color} bounties={bounties} />}
+          {vis?.signature && <HubSignature signature={vis.signature} axes={axesAll} universe={taxo.name} color={m.color} bounties={bounties} />}
         </div>
       )}
 
@@ -229,14 +239,14 @@ export default async function UniverseHubPage({ params }: Props) {
           <Reveal as="div"><DragonBallCards entries={dbCards} color={m.color} /></Reveal>
         )}
 
-        {/* ── INSIGHTS (chiffres-clés, rareté, top popularité, derniers ajoutés) ── */}
-        <Reveal as="div"><HubInsights insights={insights} color={m.color} /></Reveal>
+        {/* ── INSIGHTS — masqués en gabarit compact (< 250 entrées, audit n°6) ── */}
+        {!compact && <Reveal as="div"><HubInsights insights={insights} color={m.color} /></Reveal>}
 
         {/* ── LE SAVAIS-TU ? — fait canon du jour tiré des bios VF de CET univers ── */}
         <Reveal as="div"><DidYouKnow universe={taxo.name} accent={m.color} /></Reveal>
 
         {/* ── VOYAGES DANS LE TEMPS (pages évolutives) ───────── */}
-        {evolutive.length > 0 && (
+        {evolutive.length > 1 && (
           <Reveal>
             <div style={sectionTitle}>
               <span>🕰️ Voyages dans le temps</span>

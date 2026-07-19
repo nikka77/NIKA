@@ -184,7 +184,7 @@ export default function OnePieceMap({ color = '#D63C3C' , yonkoCounts }: { color
         <svg ref={svgRef} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} role="application"
           aria-label="Carte du monde One Piece interactive — îles et points d'intérêt navigables au clavier" preserveAspectRatio="xMidYMid slice"
           onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp} onPointerLeave={onPointerUp}
-          style={{ width: '100%', aspectRatio: '2 / 1', display: 'block', touchAction: 'none', cursor: dragRef.current ? 'grabbing' : 'grab' }}>
+          style={{ width: '100%', aspectRatio: '2 / 1', display: 'block', touchAction: 'pan-y', cursor: dragRef.current ? 'grabbing' : 'grab' }}>
 
           <image href="/images/akasha/op-world-bg.webp" x={0} y={0} width={W} height={H} preserveAspectRatio="none" />
 

@@ -39,7 +39,7 @@ export default function NarutoWorldMap({ color = '#E8613C', counts }: { color?: 
         <svg ref={svgRef} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} role="application"
           aria-label="Carte du continent shinobi — pays et villages navigables au clavier" preserveAspectRatio="xMidYMid slice"
           onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerLeave={onPointerUp}
-          style={{ width: '100%', aspectRatio: `${W} / ${H}`, display: 'block', touchAction: 'none', cursor: dragRef.current ? 'grabbing' : 'grab' }}>
+          style={{ width: '100%', aspectRatio: `${W} / ${H}`, display: 'block', touchAction: 'pan-y', cursor: dragRef.current ? 'grabbing' : 'grab' }}>
 
           <image href={NARUTO_MAP.bg} x={0} y={0} width={W} height={H} preserveAspectRatio="none" />
 
