@@ -82,12 +82,12 @@ function ZoneInner({ entry, popRank }: { entry: AkashaEntryDetail; popRank?: num
       <section style={{ minWidth: 0 }}>
         {/* En-tête : chips sobres puis NOM en très grand (énergie AAA, exécution hairline). */}
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', marginBottom: 10 }}>
-          <span style={chip('var(--td3)')}>👤 Personnage</span>
+          <span style={chip('var(--td3)')}>Personnage</span>
           {rar && <span style={chip(rar.color)}>{rar.label}</span>}
           {entry.universe && (hub ? (
-            <Link href={`/learn/akasha/u/${hub}`} style={{ ...chip(accent), textDecoration: 'none' }}>{um?.emoji} {entry.universe} ↗</Link>
+            <Link href={`/learn/akasha/u/${hub}`} style={{ ...chip(accent), textDecoration: 'none' }}><span aria-hidden style={{ width: 7, height: 7, borderRadius: '50%', background: accent, display: 'inline-block' }} />{entry.universe} ↗</Link>
           ) : (
-            <span style={chip('var(--td3)')}>{um?.emoji} {entry.universe}</span>
+            <span style={chip('var(--td3)')}><span aria-hidden style={{ width: 7, height: 7, borderRadius: '50%', background: accent, display: 'inline-block' }} />{entry.universe}</span>
           ))}
         </div>
         <h1 style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(38px,6.5vw,84px)', lineHeight: 0.88, letterSpacing: '-0.01em', color: 'var(--td)', margin: '0 0 10px' }}>

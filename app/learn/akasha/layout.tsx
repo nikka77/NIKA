@@ -5,6 +5,7 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import OmniSearch from '@/components/akasha/OmniSearch';
+import { AkashaGlyph, UniverseGlyph } from '@/components/akasha/glyphs';
 import { UNIVERSE_META } from '@/lib/akasha/types';
 import { universeHubSlug } from '@/lib/akasha/universe-taxonomy';
 
@@ -12,7 +13,9 @@ export default function AkashaLayout({ children }: { children: ReactNode }) {
   return (
     <div className="ak-shell">
       <nav className="ak-rail" aria-label="Navigation AKASHA">
-        <Link href="/learn/akasha" className="ak-rail-item ak-rail-logo" title="Registre AKASHA">✦</Link>
+        <Link href="/learn/akasha" className="ak-rail-item" title="Registre AKASHA">
+          <AkashaGlyph />
+        </Link>
         <OmniSearch variant="icon" />
         <span className="ak-rail-sep" aria-hidden />
         <div className="ak-rail-unis">
@@ -22,7 +25,7 @@ export default function AkashaLayout({ children }: { children: ReactNode }) {
             return (
               <Link key={u.name} href={`/learn/akasha/u/${slug}`} className="ak-rail-item" title={u.name}
                 style={{ ['--uc' as string]: u.color }}>
-                <span aria-hidden>{u.emoji}</span>
+                <UniverseGlyph name={u.name} />
               </Link>
             );
           })}

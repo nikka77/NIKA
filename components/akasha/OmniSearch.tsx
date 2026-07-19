@@ -5,6 +5,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { universeMeta } from '@/lib/akasha/types';
+import { SearchGlyph } from './glyphs';
 
 interface Item { slug: string; name: string; universe: string | null; image_url: string | null; rarity: string | null; snippet: string | null; }
 interface Group { type: string; label: string; icon: string; items: Item[]; }
@@ -54,12 +55,12 @@ export default function OmniSearch({ variant = 'bar' }: { variant?: 'bar' | 'ico
     <>
       {variant === 'icon' ? (
         <button type="button" onClick={() => setOpen(true)} className="ak-rail-item" title="Recherche instantanée (⌘K)" aria-label="Recherche instantanée">
-          <span aria-hidden>🔎</span>
+          <SearchGlyph />
         </button>
       ) : (
         <button type="button" onClick={() => setOpen(true)} className="ak-tab"
           style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 600, color: 'var(--td3)', background: 'var(--bg2)', border: '1px solid var(--bd2)', borderRadius: 10, padding: '10px 14px', cursor: 'pointer', width: '100%', maxWidth: 520, textAlign: 'left' }}>
-          <span aria-hidden>🔎</span> Recherche instantanée…
+          <SearchGlyph size={15} /> Recherche instantanée…
           <span style={{ marginLeft: 'auto', fontSize: 10, fontWeight: 700, color: 'var(--td3)', border: '1px solid var(--bd2)', borderRadius: 5, padding: '1px 5px' }}>⌘K</span>
         </button>
       )}
@@ -69,7 +70,7 @@ export default function OmniSearch({ variant = 'bar' }: { variant?: 'bar' | 'ico
           style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(3,6,14,0.72)', backdropFilter: 'blur(6px)', display: 'flex', justifyContent: 'center', alignItems: 'flex-start', padding: 'clamp(1rem,6vh,4rem) 1rem 1rem' }}>
           <div onClick={(e) => e.stopPropagation()} style={{ width: '100%', maxWidth: 620, background: 'var(--bg)', border: '1px solid var(--bd2)', borderRadius: 16, overflow: 'hidden', boxShadow: '0 30px 80px -20px rgba(0,0,0,0.8)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 16px', borderBottom: '1px solid var(--bd)' }}>
-              <span aria-hidden style={{ fontSize: 18 }}>🔎</span>
+              <SearchGlyph size={17} />
               <input ref={inputRef} value={q} onChange={(e) => setQ(e.target.value)} placeholder="Personnage, technique, univers, ou un mot de la bio…"
                 style={{ flex: 1, background: 'transparent', border: 'none', outline: 'none', fontFamily: 'var(--fo)', fontSize: 15, color: 'var(--td)' }} />
               <button type="button" onClick={() => setOpen(false)} aria-label="Fermer" style={{ background: 'none', border: 'none', color: 'var(--td3)', fontSize: 20, cursor: 'pointer' }}>✕</button>
