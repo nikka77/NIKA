@@ -104,7 +104,7 @@ acceptable ». Reste optionnel lot 1 : deep-link `?focus=`, bottom-sheet mobile 
 - [x] 3b. Data live sur cartes existantes (effectifs villages Naruto + équipages Yonko ; prime cumulée → 4a) : compteurs par village (Naruto, `listAxisCounts`)
       et par île/territoire (OP : persos par region + total_prime par Yonko) affichés sur la
       surface ; réutiliser les données déjà chargées par le hub (zéro requête neuve si possible).
-- [ ] 3c. **Carte Bleach 4 mondes** (décision Dan) : Terre/Karakura · Soul Society (cercle
+- [x] 3c. **Carte Bleach 4 mondes** (décision Dan) : Terre/Karakura · Soul Society (cercle
       Gotei existant imbriqué en drill-down) · Hueco Mundo · Wandenreich — composition verticale
       calculée (pattern « géométrie = taxonomie »), données `race` (100 % remplies).
 - [ ] 3d. Cartes calculées des 4 orphelins : roue du Nen (HxH), frise des 8 parties (JoJo),

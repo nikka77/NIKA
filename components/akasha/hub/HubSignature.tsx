@@ -4,6 +4,7 @@
 import Link from 'next/link';
 import { universeHubSlug, type HubVisual } from '@/lib/akasha/universe-taxonomy';
 import NarutoWorldMap from '@/components/akasha/hub/NarutoWorldMap';
+import BleachWorldsMap from '@/components/akasha/hub/BleachWorldsMap';
 import BleachSeireitiMap from '@/components/akasha/hub/BleachSeireitiMap';
 
 export interface AxisChip { v: string; label: string; count: number; tint?: string; badge?: string }
@@ -153,7 +154,6 @@ function Board({ axis, universe, color, title, icon }: { axis: AxisView; univers
 
 // ── Gotei 13 : carte du Seireitei (Bleach). Autres univers à venir : grille générique (fallback).
 function Gotei13({ axis, universe, color }: { axis: AxisView; universe: string; color: string }) {
-  if (universe === 'Bleach') return <BleachSeireitiMap axis={axis} universe={universe} color={color} />;
   return <Board axis={axis} universe={universe} color={color} title="Le Gotei 13" icon="⚔️" />;
 }
 
@@ -208,7 +208,10 @@ export default function HubSignature({ signature, axes, universe, color, bountie
     case 'bounties': return bounties?.length ? <PowerLadder bounties={bounties} color={color} /> : null;
     case 'powerscale': { const a = axis('saga'); return a ? <Frieze axis={a} universe={universe} color={color} title="La saga des puissances" icon="📈" /> : null; }
     case 'jojo': { const a = axis('partie'); return a ? <Frieze axis={a} universe={universe} color={color} title="Les parties" icon="🎭" /> : null; }
-    case 'gotei': { const a = axis('division'); return a ? <Gotei13 axis={a} universe={universe} color={color} /> : null; }
+    case 'gotei': {
+      if (universe === 'Bleach') return <BleachWorldsMap raceAxis={axis('race')} divisionAxis={axis('division')} universe={universe} color={color} />;
+      const a = axis('division'); return a ? <Gotei13 axis={a} universe={universe} color={color} /> : null;
+    }
     case 'passes': { const a = axis('col'); return a ? <Board axis={a} universe={universe} color={color} title="Les cols" icon="⛰️" /> : null; }
     case 'kiraduel': { const a = axis('camp'); return a ? <KiraDuel axis={a} universe={universe} /> : null; }
     default: return null;
