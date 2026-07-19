@@ -191,6 +191,15 @@ export default async function UniverseHubPage({ params }: Props) {
         </div>
       </div>
 
+      {/* ── SURFACE SIGNATURE PLEIN CADRE (lot 3a) : la carte du monde EST la porte d'entrée ── */}
+      {(vis?.map || vis?.signature) && (
+        <div className="ak-world-enter" style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(1.2rem,2.5vw,1.8rem) 1.4rem 0', display: 'flex', flexDirection: 'column', gap: '1.6rem' }}>
+          {vis?.map === 'op-world' && <OnePieceMap color={m.color} />}
+          {vis?.map === 'db-cosmos' && <DragonBallCosmos color={m.color} />}
+          {vis?.signature && <HubSignature signature={vis.signature} axes={axes} universe={taxo.name} color={m.color} bounties={bounties} />}
+        </div>
+      )}
+
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2rem) 1.4rem clamp(3rem,7vw,5rem)', display: 'flex', flexDirection: 'column', gap: '2.1rem' }}>
         {/* ── RECHERCHE INSTANTANÉE + ONGLETS TYPE ───────────── */}
         <div>
@@ -205,18 +214,8 @@ export default async function UniverseHubPage({ params }: Props) {
           </div>
         </div>
 
-        {/* ── SIGNATURE BESPOKE DE L'UNIVERS ─────────────────── */}
-        {vis?.signature && (
-          <Reveal as="div"><HubSignature signature={vis.signature} axes={axes} universe={taxo.name} color={m.color} bounties={bounties} /></Reveal>
-        )}
-        {taxo.slug === 'one-piece' && (
-          <Reveal as="div"><OnePieceMap color={m.color} /></Reveal>
-        )}
-        {taxo.slug === 'dragon-ball' && (
-          <>
-            <Reveal as="div"><DragonBallCosmos color={m.color} /></Reveal>
-            {dbCards.length > 0 && <Reveal as="div"><DragonBallCards entries={dbCards} color={m.color} /></Reveal>}
-          </>
+        {taxo.slug === 'dragon-ball' && dbCards.length > 0 && (
+          <Reveal as="div"><DragonBallCards entries={dbCards} color={m.color} /></Reveal>
         )}
 
         {/* ── INSIGHTS (chiffres-clés, rareté, top popularité, derniers ajoutés) ── */}

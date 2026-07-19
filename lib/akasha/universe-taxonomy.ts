@@ -263,6 +263,8 @@ export interface HubVisual {
   bgPattern: string;
   /** Signature bespoke rendue par le hub (composant dédié). */
   signature?: 'villages' | 'bounties' | 'powerscale' | 'gotei' | 'nen' | 'jojo' | 'passes' | 'kiraduel';
+  /** Carte-monde plein cadre montée EN TÊTE du hub (lot 3a — plus de if slug === dans la page). */
+  map?: 'op-world' | 'db-cosmos';
   /** Rangs de collectionneur (du plus bas au plus haut) déblocables selon le % de complétion. */
   ranks: string[];
 }
@@ -282,12 +284,14 @@ export const HUB_VISUAL: Record<string, HubVisual> = {
     heroGradient: 'linear-gradient(160deg, #06182E 0%, #D63C3C22 45%, var(--bg) 100%)',
     bgPattern: svg("<path d='M0 40 q15 -12 30 0 t30 0' fill='none' stroke='%23D63C3C' stroke-width='2'/><path d='M0 52 q15 -12 30 0 t30 0' fill='none' stroke='%23D63C3C' stroke-width='1.5'/>"),
     signature: 'bounties',
+    map: 'op-world',
     ranks: ['Mousse', 'Pirate', 'Supernova', 'Corsaire', 'Yonko', 'Roi des Pirates'],
   },
   'dragon-ball': {
     heroGradient: 'linear-gradient(160deg, #2A1C02 0%, #F2A93B22 42%, var(--bg) 100%)',
     bgPattern: svg("<circle cx='30' cy='30' r='13' fill='none' stroke='%23F2A93B' stroke-width='2'/><path d='M30 22 l2.4 4.9 5.4 .8-3.9 3.8 .9 5.4-4.8-2.5-4.8 2.5 .9-5.4-3.9-3.8 5.4-.8z' fill='%23F2A93B'/>"),
     signature: 'powerscale',
+    map: 'db-cosmos',
     ranks: ['Terrien', 'Combattant', 'Guerrier Z', 'Super Saiyan', 'Dieu', 'Ultra Instinct'],
   },
   bleach: {
