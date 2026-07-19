@@ -74,12 +74,12 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
 
   return (
     <main>
-      {/* ── HERO ──────────────────────────────────────────────── */}
+      {/* ── HERO compact (lot 2a) : titre + recherche, rien d'autre ── */}
       <div
         style={{
           background: 'linear-gradient(180deg, #0B0820 0%, #140C30 55%, var(--bg) 100%)',
           borderBottom: '1px solid var(--bd)',
-          padding: 'clamp(2.5rem,6vw,4.5rem) 1.4rem 2rem',
+          padding: 'clamp(1.8rem,4vw,2.8rem) 1.4rem 1.6rem',
           position: 'relative',
           overflow: 'hidden',
         }}
@@ -87,40 +87,11 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
         <DomainHero slug="learn" />
 
         <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative' }}>
-          <Link
-            href="/learn"
-            style={{
-              fontFamily: 'var(--fo)',
-              fontSize: 12,
-              fontWeight: 700,
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-              color: 'var(--td3)',
-              textDecoration: 'none',
-            }}
-          >
-            ← NIKA LEARN
-          </Link>
-
-          <div
-            style={{
-              fontFamily: 'var(--fo)',
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: '0.16em',
-              textTransform: 'uppercase',
-              color: ACCENT,
-              margin: '1rem 0 0.6rem',
-            }}
-          >
-            ✦ Registre universel
-          </div>
-
           <h1
             className="akasha-title"
             style={{
               fontFamily: 'var(--fe)',
-              fontSize: 'clamp(52px,11vw,120px)',
+              fontSize: 'clamp(42px,8vw,84px)',
               fontWeight: 900,
               fontStyle: 'italic',
               textTransform: 'uppercase',
@@ -135,15 +106,14 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
           <p
             style={{
               fontFamily: 'var(--fo)',
-              fontSize: 'clamp(14px,1.6vw,17px)',
+              fontSize: 'clamp(13px,1.5vw,15.5px)',
               color: 'var(--td2)',
               maxWidth: 520,
-              lineHeight: 1.7,
-              margin: '1rem 0 1.8rem',
+              lineHeight: 1.6,
+              margin: '0.7rem 0 1.2rem',
             }}
           >
-            Le registre de tout ce qui existe, réel ou imaginé — personnages, lieux, artefacts,
-            métiers, pouvoirs et compétences, reliés entre eux.
+            Le registre de tout ce qui existe — 7 691 entrées reliées à travers 8 univers.
           </p>
 
           {/* Recherche : formulaire GET → URL partageable, zéro JS client */}
@@ -198,8 +168,6 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
             </button>
           </form>
 
-          <div style={{ marginTop: 12, maxWidth: 520 }}>
-          </div>
         </div>
       </div>
 
