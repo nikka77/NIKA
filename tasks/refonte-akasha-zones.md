@@ -107,7 +107,7 @@ acceptable ». Reste optionnel lot 1 : deep-link `?focus=`, bottom-sheet mobile 
 - [x] 3c. **Carte Bleach 4 mondes** (décision Dan) : Terre/Karakura · Soul Society (cercle
       Gotei existant imbriqué en drill-down) · Hueco Mundo · Wandenreich — composition verticale
       calculée (pattern « géométrie = taxonomie »), données `race` (100 % remplies).
-- [ ] 3d. Cartes calculées des 4 orphelins : roue du Nen (HxH), frise des 8 parties (JoJo),
+- [x] 3d. Cartes calculées des 4 orphelins : roue du Nen (HxH), frise des 8 parties (JoJo),
       plateau Kira vs L (DN), tracé des cols (Initial D) — moteurs de surface config-driven.
 - [ ] 3e. Gabarit compact pour univers < 250 entrées (Initial D/DN : pas de sections à 1 élément).
 - [ ] 3f. Fix tactile mobile des cartes (`touchAction` Naruto) + MapShell partagé (chrome,
