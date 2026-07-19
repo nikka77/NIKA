@@ -10,7 +10,7 @@ import { useMapZoomPanSvg } from '@/lib/akasha/useMapZoomPanSvg';
 const W = NARUTO_MAP.w, H = NARUTO_MAP.h;
 const villageHref = (village: string) => `/learn/akasha/u/naruto/village/${encodeURIComponent(village)}`;
 
-export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }) {
+export default function NarutoWorldMap({ color = '#E8613C', counts }: { color?: string; counts?: Record<string, number> }) {
   const router = useRouter();
   const { view, svgRef, zoomAround, reset, dragRef, onPointerDown, onPointerMove, onPointerUp } = useMapZoomPanSvg({ w: W, h: H, minW: 360 });
   const [hover, setHover] = useState<string | null>(null);
@@ -57,6 +57,9 @@ export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }
                   <g style={{ pointerEvents: 'none' }}>
                     <text x={c.cx} y={c.cy - 8} textAnchor="middle" fontFamily="var(--fo)" fontWeight="800" fontSize={30} fill="#FFFFFF" stroke="#1A2230" strokeWidth={7} paintOrder="stroke">{c.villageName}</text>
                     <text x={c.cx} y={c.cy + 24} textAnchor="middle" fontFamily="var(--fo)" fontWeight="700" fontSize={18} fill="#FFE0B0" stroke="#1A2230" strokeWidth={5} paintOrder="stroke">{c.land}</text>
+                    {counts?.[c.village] ? (
+                      <text x={c.cx} y={c.cy + 50} textAnchor="middle" fontFamily="var(--fo)" fontWeight="800" fontSize={17} fill="#9FE8C4" stroke="#1A2230" strokeWidth={5} paintOrder="stroke">{counts[c.village]} shinobi</text>
+                    ) : null}
                   </g>
                 )}
               </g>
@@ -100,6 +103,7 @@ export default function NarutoWorldMap({ color = '#E8613C' }: { color?: string }
           <a key={c.key} href={villageHref(c.village)} onMouseEnter={() => setHover(c.key)} onMouseLeave={() => setHover(null)}
             style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '5px 11px', borderRadius: 999, border: `1px solid ${c.color}77`, background: `${c.color}18`, color: 'var(--td2)', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, textDecoration: 'none' }}>
             <span style={{ fontFamily: 'var(--fe)' }}>{c.kanji}</span> {c.villageName}
+            {counts?.[c.village] ? <span style={{ fontSize: 10, fontWeight: 800, color: c.color, background: 'rgba(5,12,23,0.45)', borderRadius: 20, padding: '1px 6px' }}>{counts[c.village]}</span> : null}
           </a>
         ))}
       </div>

@@ -98,10 +98,10 @@ acceptable ». Reste optionnel lot 1 : deep-link `?focus=`, bottom-sheet mobile 
       sur la racine seulement (rareté = liseré fin, pas de cadre TCG) — sinon reporter lot 4.
 
 ### Lot 3 — Hubs (`app/learn/akasha/u/[slug]/page.tsx` + hub/)
-- [ ] 3a. Signature PLEIN CADRE : la surface signature (carte) passe en tête du hub, sections
+- [x] 3a. Signature PLEIN CADRE : la surface signature (carte) passe en tête du hub, sections
       restantes derrière des ancres/calques ; brancher OnePieceMap et DragonBallCosmos via
       `HUB_VISUAL.signature` en config (tuer les `if slug ===` du hub).
-- [ ] 3b. Data live sur cartes existantes : compteurs par village (Naruto, `listAxisCounts`)
+- [x] 3b. Data live sur cartes existantes (effectifs villages Naruto + équipages Yonko ; prime cumulée → 4a) : compteurs par village (Naruto, `listAxisCounts`)
       et par île/territoire (OP : persos par region + total_prime par Yonko) affichés sur la
       surface ; réutiliser les données déjà chargées par le hub (zéro requête neuve si possible).
 - [ ] 3c. **Carte Bleach 4 mondes** (décision Dan) : Terre/Karakura · Soul Society (cercle

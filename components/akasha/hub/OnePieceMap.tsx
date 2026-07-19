@@ -44,7 +44,7 @@ function Island({ isl, on, sel, matched, onSel, onHover }: {
   );
 }
 
-export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
+export default function OnePieceMap({ color = '#D63C3C' , yonkoCounts }: { color?: string ; yonkoCounts?: Record<string, number> }) {
   const boxRef = useRef<HTMLDivElement>(null);
   const { view, setView, svgRef, clamp, zoomAround, reset, dragRef, onPointerDown, onPointerMove, onPointerUp } = useMapZoomPanSvg({ w: W, h: H, minW: 520 });
   const [hover, setHover] = useState<string | null>(null);
@@ -167,7 +167,7 @@ export default function OnePieceMap({ color = '#D63C3C' }: { color?: string }) {
       {/* Territoires Yonko (#3) */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 8, alignItems: 'center' }}>
         <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--td3)' }}>Territoires&nbsp;:</span>
-        {OP_WORLD.yonko.map((y) => chip(yonko.has(y.id), () => toggleYonko(y.id), y.yonko, y.color, y.id))}
+        {OP_WORLD.yonko.map((y) => chip(yonko.has(y.id), () => toggleYonko(y.id), yonkoCounts?.[y.yonko] ? `${y.yonko} · ${yonkoCounts[y.yonko]}` : y.yonko, y.color, y.id))}
         {chip(yonko.size === OP_WORLD.yonko.length, () => setYonko(yonko.size === OP_WORLD.yonko.length ? new Set() : new Set(OP_WORLD.yonko.map((y) => y.id))), 'Tous')}
       </div>
 

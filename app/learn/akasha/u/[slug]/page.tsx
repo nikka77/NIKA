@@ -95,6 +95,17 @@ export default async function UniverseHubPage({ params }: Props) {
       ].map((e) => e.slug))
     : [];
 
+  // Data live des cartes (3b) : effectifs d'équipage Yonko depuis l'axe crew déjà chargé.
+  const YONKO_CREW: Record<string, string> = {
+    'Big Mom': 'L’équipage de Big Mom', 'Kaido': 'L’équipage aux Cent Bêtes',
+    'Barbe Noire': 'L’équipage de Barbe Noire', 'Shanks': 'L’équipage du Roux',
+    'Barbe Blanche': 'L’équipage de Barbe Blanche', 'Luffy': 'L’équipage du Chapeau de Paille',
+  };
+  const crewCounts = axisCounts.get('crew');
+  const yonkoCounts = crewCounts
+    ? Object.fromEntries(Object.entries(YONKO_CREW).map(([y, crew]) => [y, crewCounts.get(crew) ?? 0]).filter(([, n]) => (n as number) > 0))
+    : undefined;
+
   // Garde-fou : un univers sans aucune donnée exploitable n'est pas une page indexable.
   if (total === 0 && stars.length === 0 && piliers.length === 0) notFound();
 
@@ -194,7 +205,7 @@ export default async function UniverseHubPage({ params }: Props) {
       {/* ── SURFACE SIGNATURE PLEIN CADRE (lot 3a) : la carte du monde EST la porte d'entrée ── */}
       {(vis?.map || vis?.signature) && (
         <div className="ak-world-enter" style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(1.2rem,2.5vw,1.8rem) 1.4rem 0', display: 'flex', flexDirection: 'column', gap: '1.6rem' }}>
-          {vis?.map === 'op-world' && <OnePieceMap color={m.color} />}
+          {vis?.map === 'op-world' && <OnePieceMap color={m.color} yonkoCounts={yonkoCounts} />}
           {vis?.map === 'db-cosmos' && <DragonBallCosmos color={m.color} />}
           {vis?.signature && <HubSignature signature={vis.signature} axes={axes} universe={taxo.name} color={m.color} bounties={bounties} />}
         </div>

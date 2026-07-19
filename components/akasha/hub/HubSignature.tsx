@@ -55,7 +55,7 @@ function NenWheel({ axis, universe, color }: { axis: AxisView; universe: string;
 // Naruto : carte interactive du continent shinobi. Autres univers : liste de cartes (fallback).
 function VillageMap({ axis, universe, color }: { axis: AxisView; universe: string; color: string }) {
   if (universe === 'Naruto') {
-    return <NarutoWorldMap color={color} />;
+    return <NarutoWorldMap color={color} counts={Object.fromEntries(axis.chips.map((c) => [c.v, c.count]))} />;
   }
   return (
     <section>
