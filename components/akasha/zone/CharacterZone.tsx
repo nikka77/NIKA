@@ -8,7 +8,7 @@ import Link from 'next/link';
 import ArcFrieze from '../ArcFrieze';
 import DatabookRadar, { type Stats } from '../DatabookRadar';
 import { familyLabel } from '../NarutoIcons';
-import { RARITY_META, universeMeta, type AkashaEntryDetail } from '@/lib/akasha/types';
+import { RARITY_META, universeMeta, universeWordmark, type AkashaEntryDetail } from '@/lib/akasha/types';
 import { ALLOWED_FILTER_ATTRS, universeHubSlug } from '@/lib/akasha/universe-taxonomy';
 import { normalizeForms } from '@/lib/akasha/forms';
 import { ZoneProvider, useZone, type ZoneSelection } from './zone-context';
@@ -84,11 +84,18 @@ function ZoneInner({ entry, popRank }: { entry: AkashaEntryDetail; popRank?: num
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', marginBottom: 10 }}>
           <span style={chip('var(--td3)')}>Personnage</span>
           {rar && <span style={chip(rar.color)}>{rar.label}</span>}
-          {entry.universe && (hub ? (
-            <Link href={`/learn/akasha/u/${hub}`} style={{ ...chip(accent), textDecoration: 'none' }}><span aria-hidden style={{ width: 7, height: 7, borderRadius: '50%', background: accent, display: 'inline-block' }} />{entry.universe} ↗</Link>
-          ) : (
-            <span style={chip('var(--td3)')}><span aria-hidden style={{ width: 7, height: 7, borderRadius: '50%', background: accent, display: 'inline-block' }} />{entry.universe}</span>
-          ))}
+          {entry.universe && (() => {
+            const mark = universeWordmark(entry.universe);
+            const inner = mark
+              // eslint-disable-next-line @next/next/no-img-element
+              ? <img src={mark} alt={entry.universe} style={{ height: 15, width: 'auto', maxWidth: 92, objectFit: 'contain', display: 'block' }} />
+              : <>{entry.universe}</>;
+            return hub ? (
+              <Link href={`/learn/akasha/u/${hub}`} title={entry.universe} style={{ ...chip(accent), textDecoration: 'none' }}>{inner} ↗</Link>
+            ) : (
+              <span style={chip('var(--td3)')}>{inner}</span>
+            );
+          })()}
         </div>
         <h1 style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(38px,6.5vw,84px)', lineHeight: 0.88, letterSpacing: '-0.01em', color: 'var(--td)', margin: '0 0 10px' }}>
           {entry.name}
