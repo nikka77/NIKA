@@ -6,7 +6,7 @@ import { SITE_URL } from '@/lib/site';
 import { listCategoryCounts, listEntries, listFamilyCounts, listUniverseCounts } from '@/lib/akasha/queries';
 import { asAkashaType, RARITY_META, TYPE_META, universeMeta } from '@/lib/akasha/types';
 import { ALLOWED_FILTER_ATTRS, axisValueLabel, taxonomyByName, universeHubSlug } from '@/lib/akasha/universe-taxonomy';
-import AkashaGrid from '@/components/akasha/AkashaGrid';
+import AkashaMosaic from '@/components/akasha/AkashaMosaic';
 import AkashaFilters from '@/components/akasha/AkashaFilters';
 import UniverseRail from '@/components/akasha/UniverseRail';
 import UniverseGates from '@/components/akasha/UniverseGates';
@@ -298,7 +298,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
         </div>
 
         {entries.length > 0 ? (
-          <AkashaGrid entries={entries} />
+          <AkashaMosaic entries={entries} />
         ) : (
           <div
             style={{

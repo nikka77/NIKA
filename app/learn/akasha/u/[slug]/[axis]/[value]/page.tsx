@@ -10,7 +10,7 @@ import { SITE_URL } from '@/lib/site';
 import { listEntries, listAxisCounts } from '@/lib/akasha/queries';
 import { taxonomyBySlug, hubVisual, axisValueLabel, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { universeMeta } from '@/lib/akasha/types';
-import AkashaGrid from '@/components/akasha/AkashaGrid';
+import AkashaMosaic from '@/components/akasha/AkashaMosaic';
 import { VillageEmblem, ClanCrest, RankBadge, GenerationBadge } from '@/components/akasha/NarutoIcons';
 
 export const revalidate = 3600; // ISR 1 h
@@ -155,7 +155,7 @@ export default async function AxisValuePage({ params, searchParams }: Props) {
 
         {total === 0
           ? <div style={{ fontFamily: 'var(--fo)', fontSize: 14, color: 'var(--td3)', padding: '2rem 0', textAlign: 'center' }}>Aucun ninja de {label} ne correspond à ce filtre.</div>
-          : <AkashaGrid entries={entries} />}
+          : <AkashaMosaic entries={entries} />}
 
         {total > entries.length && (
           <div style={{ textAlign: 'center', marginTop: '1.6rem' }}>

@@ -8,7 +8,7 @@ import { SITE_URL } from '@/lib/site';
 import { hubVisual, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { RARITY_META, TYPE_META, universeMeta, universeWordmark, universeBanner } from '@/lib/akasha/types';
 import { countUniverse, getEntriesBySlugs, getFullEntriesBySlugs, listAxisCounts, listBounties, listCategoryCounts, listEntries, listEvolutive, listStars, listUniverseIndex, universeInsights } from '@/lib/akasha/queries';
-import AkashaGrid from '@/components/akasha/AkashaGrid';
+import AkashaMosaic from '@/components/akasha/AkashaMosaic';
 import HubHalo from '@/components/akasha/hub/HubHalo';
 import Reveal from '@/components/akasha/hub/Reveal';
 import ShareButton from '@/components/akasha/hub/ShareButton';
@@ -271,7 +271,7 @@ export default async function UniverseHubPage({ params }: Props) {
               <span>🕰️ Voyages dans le temps</span>
               <span style={{ color: 'var(--td3)', letterSpacing: '0.03em' }}>{evolutive.length} lieux & artefacts évolutifs</span>
             </div>
-            <AkashaGrid entries={evolutive} />
+            <AkashaMosaic entries={evolutive} />
           </Reveal>
         )}
 
@@ -365,7 +365,7 @@ export default async function UniverseHubPage({ params }: Props) {
             <div style={sectionTitle}>
               <span>✦ Les piliers de {taxo.name}</span>
             </div>
-            <AkashaGrid entries={piliers} />
+            <AkashaMosaic entries={piliers} />
           </Reveal>
         )}
 

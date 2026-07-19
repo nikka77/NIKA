@@ -2,12 +2,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getEntryBySlug, listSimilar, popularityRank } from '@/lib/akasha/queries';
+import { getEntryBySlug, listSharedVoice, listSimilar, popularityRank } from '@/lib/akasha/queries';
 import { TYPE_META, RARITY_META, universeMeta, type AkashaType } from '@/lib/akasha/types';
 import { flavorExcerpt } from '@/lib/akasha/flavor';
 import { universeHubSlug } from '@/lib/akasha/universe-taxonomy';
 import { SITE_URL } from '@/lib/site';
-import AkashaGrid from '@/components/akasha/AkashaGrid';
+import AkashaMosaic from '@/components/akasha/AkashaMosaic';
 import EntityBadge from '@/components/akasha/EntityBadge';
 import EntityAttributes from '@/components/akasha/EntityAttributes';
 import EntityRelations from '@/components/akasha/EntityRelations';
@@ -59,11 +59,15 @@ export default async function AkashaEntryPage({ params }: Props) {
     const fav = typeof (entry.attributes as Record<string, unknown>).favorites === 'number'
       ? ((entry.attributes as Record<string, unknown>).favorites as number) : 0;
     const popRank = await popularityRank(entry.universe, fav);
+    // Passerelle seiyū : mêmes cordes vocales, autres mondes (1 requête, ISR).
+    const va = (entry.attributes as Record<string, unknown>).voiceActors as { jp?: string[] } | undefined;
+    const jp = Array.isArray(va?.jp) ? va.jp[0] : undefined;
+    const sharedVoice = jp ? await listSharedVoice(jp, entry.slug) : [];
     return (
       <main>
         <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
           <Crumbs universe={entry.universe} category={typeof (entry.attributes as Record<string, unknown>).category === 'string' ? ((entry.attributes as Record<string, unknown>).category as string) : null} name={entry.name} />
-          <CharacterZone entry={entry} popRank={popRank} />
+          <CharacterZone entry={entry} popRank={popRank} sharedVoice={sharedVoice} />
         </div>
       </main>
     );
@@ -345,7 +349,7 @@ async function SimilarSection({ universe, cat, type, excludeSlug }: { universe: 
   return (
     <section>
       <h2 className="akasha-section-title">Voir aussi{cat ? ` — ${cat}` : ''}</h2>
-      <AkashaGrid entries={similar} />
+      <AkashaMosaic entries={similar} />
     </section>
   );
 }

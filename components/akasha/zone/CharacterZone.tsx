@@ -27,15 +27,17 @@ const BELONG_ATTRS: [string, string][] = [
   ['nen', 'Nen'], ['generation', 'Génération'], ['rank', 'Rang'],
 ];
 
-export default function CharacterZone({ entry, popRank }: { entry: AkashaEntryDetail; popRank?: number | null }) {
+type SharedVoice = { slug: string; name: string; universe: string | null; image_url: string | null };
+
+export default function CharacterZone({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; popRank?: number | null; sharedVoice?: SharedVoice[] }) {
   return (
     <ZoneProvider>
-      <ZoneInner entry={entry} popRank={popRank} />
+      <ZoneInner entry={entry} popRank={popRank} sharedVoice={sharedVoice} />
     </ZoneProvider>
   );
 }
 
-function ZoneInner({ entry, popRank }: { entry: AkashaEntryDetail; popRank?: number | null }) {
+function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; popRank?: number | null; sharedVoice?: SharedVoice[] }) {
   const { sel, select } = useZone();
   const [formIdx, setFormIdx] = useState(0);
 
@@ -178,7 +180,7 @@ function ZoneInner({ entry, popRank }: { entry: AkashaEntryDetail; popRank?: num
 
       {/* ── CANAL ───────────────────────────────────────────── */}
       <aside className="ak-canal" aria-live="polite">
-        <Canal entry={entry} accent={accent} f={f} fstr={fstr} fStats={fStats} />
+        <Canal entry={entry} accent={accent} f={f} fstr={fstr} fStats={fStats} sharedVoice={sharedVoice} />
       </aside>
     </div>
   );
@@ -211,9 +213,9 @@ const chip = (color: string): React.CSSProperties => ({
 
 /* ── Le canal : un seul panneau, re-scopé par la sélection ── */
 
-function Canal({ entry, accent, f, fstr, fStats }: {
+function Canal({ entry, accent, f, fstr, fStats, sharedVoice }: {
   entry: AkashaEntryDetail; accent: string; f: Record<string, unknown>;
-  fstr: (fv: unknown, base: unknown) => string | null; fStats?: Stats;
+  fstr: (fv: unknown, base: unknown) => string | null; fStats?: Stats; sharedVoice?: SharedVoice[];
 }) {
   const { sel, select } = useZone();
   const scope = sel === null ? 'Identité'
@@ -236,7 +238,7 @@ function Canal({ entry, accent, f, fstr, fStats }: {
         )}
       </div>
 
-      {sel === null && <IdentityPanel entry={entry} accent={accent} f={f} fstr={fstr} fStats={fStats} />}
+      {sel === null && <IdentityPanel entry={entry} accent={accent} f={f} fstr={fstr} fStats={fStats} sharedVoice={sharedVoice} />}
       {sel?.kind === 'forme' && <FormePanel f={f} accent={accent} fStats={fStats} />}
       {sel?.kind === 'technique' && <TechniquePanel sel={sel} accent={accent} />}
       {sel?.kind === 'famille' && <FamillePanel sel={sel} accent={accent} />}
@@ -258,9 +260,9 @@ function CanalTitle({ children }: { children: React.ReactNode }) {
   return <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, textTransform: 'uppercase', fontSize: 22, lineHeight: 1.05, color: 'var(--td)', marginBottom: 12 }}>{children}</div>;
 }
 
-function IdentityPanel({ entry, accent, f, fstr, fStats }: {
+function IdentityPanel({ entry, accent, f, fstr, fStats, sharedVoice }: {
   entry: AkashaEntryDetail; accent: string; f: Record<string, unknown>;
-  fstr: (fv: unknown, base: unknown) => string | null; fStats?: Stats;
+  fstr: (fv: unknown, base: unknown) => string | null; fStats?: Stats; sharedVoice?: SharedVoice[];
 }) {
   const a = entry.attributes as Record<string, unknown>;
   const bio = str(a.bio) || str(a.descFr) || entry.summary;
@@ -299,6 +301,26 @@ function IdentityPanel({ entry, accent, f, fstr, fStats }: {
           {voice.en?.[0] && <Row k="Voix · EN" v={voice.en[0]} />}
         </div>
       ) : null}
+      {/* Passerelle seiyū : le seul pont naturel entre les 8 mondes (lot 4d). */}
+      {sharedVoice && sharedVoice.length > 0 && (
+        <div style={{ marginTop: 14 }}>
+          <div style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: 8 }}>
+            Partage sa voix avec
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+            {sharedVoice.map((sv) => {
+              const svColor = sv.universe ? universeMeta(sv.universe).color : 'var(--td3)';
+              return (
+                <Link key={sv.slug} href={`/learn/akasha/${sv.slug}`} className="ak-tab" title={sv.universe ?? undefined}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, padding: '5px 11px', borderRadius: 9, border: '1px solid var(--bd2)', background: 'var(--bg)', color: 'var(--td2)' }}>
+                  <span aria-hidden style={{ width: 6, height: 6, borderRadius: '50%', background: svColor, display: 'inline-block' }} />
+                  {sv.name}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

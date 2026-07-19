@@ -7,7 +7,7 @@ import { COLLECTION_SHOWCASES, showcaseBySlug } from '@/lib/akasha/collections';
 import { listCollectionEntries } from '@/lib/akasha/queries';
 import { universeMeta, type AkashaEntryCard } from '@/lib/akasha/types';
 import { hubVisual, universeHubSlug } from '@/lib/akasha/universe-taxonomy';
-import AkashaGrid from '@/components/akasha/AkashaGrid';
+import AkashaMosaic from '@/components/akasha/AkashaMosaic';
 import { SITE_URL } from '@/lib/site';
 
 export const revalidate = 3600;
@@ -82,13 +82,13 @@ export default async function CollectionShowcasePage({ params }: Props) {
               <h2 style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 21, textTransform: 'uppercase', color: g.tint, margin: 0 }}>{g.l}</h2>
               <span style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: 'var(--td3)' }}>· {g.entries.length}</span>
             </div>
-            <AkashaGrid entries={g.entries as AkashaEntryCard[]} />
+            <AkashaMosaic entries={g.entries as AkashaEntryCard[]} />
           </section>
         ))}
         {others.length > 0 && (
           <section id="autres">
             <h2 style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 21, textTransform: 'uppercase', color: 'var(--td3)', margin: '0 0 12px' }}>Autres · {others.length}</h2>
-            <AkashaGrid entries={others as AkashaEntryCard[]} />
+            <AkashaMosaic entries={others as AkashaEntryCard[]} />
           </section>
         )}
       </div>

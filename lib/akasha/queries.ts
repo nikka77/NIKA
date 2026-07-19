@@ -491,6 +491,22 @@ export async function popularityRank(universe: string | null, favorites: number)
   return count == null ? null : count + 1;
 }
 
+/** Passerelle seiyū (lot 4d) : personnages TOUS UNIVERS partageant le doubleur JP donné —
+ *  le seul pont naturel entre les 8 mondes (voiceActors rempli à 87 %). */
+export async function listSharedVoice(jp: string, excludeSlug: string): Promise<{ slug: string; name: string; universe: string | null; image_url: string | null }[]> {
+  const supabase = await createClient();
+  if (!supabase) return [];
+  const { data } = await supabase
+    .from('akasha_entries')
+    .select('slug,name,universe,image_url')
+    .eq('type', 'character')
+    .neq('slug', excludeSlug)
+    .contains('attributes->voiceActors->jp', JSON.stringify([jp]))
+    .order('attributes->favorites', { ascending: false, nullsFirst: false })
+    .limit(6);
+  return (data as { slug: string; name: string; universe: string | null; image_url: string | null }[] | null) ?? [];
+}
+
 /** « Le savais-tu ? » : pick déterministe (seed = date + scope) parmi les fiches à bio VF (descFr).
  *  Optionnellement scopé à un univers (hubs). Le composant extrait la prose via flavorExcerpt. */
 export async function getDidYouKnow(dateSeed: string, universe?: string): Promise<AkashaEntryCard | null> {
