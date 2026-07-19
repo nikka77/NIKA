@@ -1,6 +1,6 @@
 'use client';
 // lib/akasha/useFullscreenToggle.ts — bascule plein écran d'un conteneur, reprise à l'identique
-// dans OnePieceMap, DragonBallCosmos et Moveset2D (audit de précision Niveau 3).
+// dans OnePieceMap et DragonBallCosmos (audit de précision Niveau 3).
 import { useCallback, type RefObject } from 'react';
 
 export function useFullscreenToggle(ref: RefObject<HTMLElement | null>) {

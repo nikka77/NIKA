@@ -7,7 +7,6 @@ import { notFound } from 'next/navigation';
 import { SITE_URL } from '@/lib/site';
 import { hubVisual, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { RARITY_META, TYPE_META, universeMeta, universeWordmark, universeBanner } from '@/lib/akasha/types';
-import { flavorText } from '@/lib/akasha/flavor';
 import { countUniverse, getEntriesBySlugs, getFullEntriesBySlugs, listAxisCounts, listBounties, listCategoryCounts, listEntries, listEvolutive, listStars, listUniverseIndex, universeInsights } from '@/lib/akasha/queries';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import HubHalo from '@/components/akasha/hub/HubHalo';
@@ -15,8 +14,6 @@ import Reveal from '@/components/akasha/hub/Reveal';
 import ShareButton from '@/components/akasha/hub/ShareButton';
 import HubInsights from '@/components/akasha/hub/HubInsights';
 import DidYouKnow from '@/components/akasha/DidYouKnow';
-import HubCollection from '@/components/akasha/hub/HubCollection';
-import ContinueBanner from '@/components/akasha/hub/ContinueBanner';
 import HubSignature from '@/components/akasha/hub/HubSignature';
 import OnePieceMap from '@/components/akasha/hub/OnePieceMap';
 import DragonBallCards from '@/components/akasha/hub/DragonBallCards';
@@ -100,12 +97,6 @@ export default async function UniverseHubPage({ params }: Props) {
 
   // Garde-fou : un univers sans aucune donnée exploitable n'est pas une page indexable.
   if (total === 0 && stars.length === 0 && piliers.length === 0) notFound();
-
-  // Personnage du jour propre au hub (pick déterministe seed = date + univers).
-  const daySeed = new Date().toISOString().slice(0, 10) + taxo.slug;
-  let dh = 0;
-  for (const ch of daySeed) dh = (dh * 31 + ch.charCodeAt(0)) >>> 0;
-  const dailyStar = stars.length ? stars[dh % stars.length] : null;
 
   // Valeurs de `crew` One Piece qui sont en fait des LIEUX/organisations (bruit de mining) → hors axe Équipages.
   const OP_NON_CREW = new Set(['Skypiea', 'Alabasta', 'Pays des Wa', 'Royaume de Goa', 'Armée Révolutionnaire', 'Cipher Pol',
@@ -208,46 +199,6 @@ export default async function UniverseHubPage({ params }: Props) {
             ))}
           </div>
         </div>
-
-        {/* ── REPRISE + PERSO DU JOUR ────────────────────────── */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: '-0.6rem' }}>
-          <ContinueBanner universe={taxo.name} color={m.color} />
-          {dailyStar && (() => {
-            // Perso du jour v2 (L6) : portrait centré + rareté + flavor VF canon.
-            const rar = dailyStar.rarity ? RARITY_META[dailyStar.rarity] : null;
-            const flavor = flavorText(dailyStar.descFr, 130);
-            return (
-              <Link href={`/learn/akasha/${dailyStar.slug}`} className={`dom-card ak-r-${dailyStar.rarity ?? 'common'}`} style={{ display: 'flex', alignItems: 'stretch', gap: 12, textDecoration: 'none', background: 'var(--bg2)', border: `1px solid ${rar?.color ?? 'var(--bd)'}`, borderRadius: 13, padding: 10, overflow: 'hidden' }}>
-                <div style={{ position: 'relative', width: 62, height: 82, borderRadius: 9, overflow: 'hidden', flexShrink: 0, background: 'var(--bg3)' }}>
-                  {dailyStar.image_url && (
-                    <>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img aria-hidden src={dailyStar.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'blur(10px) brightness(0.5)', transform: 'scale(1.2)' }} />
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={dailyStar.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />
-                    </>
-                  )}
-                </div>
-                <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 2 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                    <span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: m.color }}>★ Personnage du jour</span>
-                    {rar && <span style={{ fontFamily: 'var(--fo)', fontSize: 8.5, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: rar.color, background: `${rar.color}18`, border: `1px solid ${rar.color}55`, borderRadius: 20, padding: '1px 7px' }}>{rar.label}</span>}
-                  </div>
-                  <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 18, color: 'var(--td)', lineHeight: 1.05 }}>{dailyStar.name}</div>
-                  {flavor && <div style={{ fontFamily: 'var(--fo)', fontSize: 11.5, fontStyle: 'italic', color: 'var(--td3)', lineHeight: 1.45, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>« {flavor} »</div>}
-                </div>
-                <span aria-hidden style={{ alignSelf: 'center', color: m.color, fontSize: 18, paddingRight: 2 }}>→</span>
-              </Link>
-            );
-          })()}
-        </div>
-
-        {/* ── COLLECTION / TÊTES D'AFFICHE (Pokédex + progression) ── */}
-        {stars.length > 0 && (
-          <Reveal as="div">
-            <HubCollection stars={stars} piliers={piliers} universe={taxo.name} color={m.color} ranks={vis?.ranks ?? ['Novice', 'Initié', 'Adepte', 'Expert', 'Maître', 'Légende']} />
-          </Reveal>
-        )}
 
         {/* ── SIGNATURE BESPOKE DE L'UNIVERS ─────────────────── */}
         {vis?.signature && (

@@ -475,25 +475,6 @@ export async function listSimilar(
   return rows.slice(0, limit);
 }
 
-/** Carte du jour : pick déterministe (seed = date UTC) parmi les rares+ imagés. */
-export async function getDailyCard(dateSeed: string): Promise<AkashaEntryCard | null> {
-  const supabase = await createClient();
-  if (!supabase) return null;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const base = (): any =>
-    supabase
-      .from('akasha_entries')
-      .select(CARD_COLS, { count: 'exact' })
-      .in('rarity', ['legendary', 'epic'])
-      .not('image_url', 'is', null);
-  const { count } = await base().range(0, 0);
-  if (!count) return null;
-  let h = 0;
-  for (const ch of dateSeed) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
-  const idx = h % count;
-  const { data } = await base().order('slug', { ascending: true }).range(idx, idx);
-  return (data as AkashaEntryCard[] | null)?.[0] ?? null;
-}
 
 /** Rang de POPULARITÉ d'un perso dans son univers (#N par favoris MAL/AniList). 1 count HEAD.
  *  Comparaison JSONB numérique via l'opérateur -> (les favorites sont stockés en nombre JSON). */

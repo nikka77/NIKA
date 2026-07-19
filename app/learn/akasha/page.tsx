@@ -3,21 +3,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import DomainHero from '@/components/DomainHero';
 import { SITE_URL } from '@/lib/site';
-import { getDailyCard, listCategoryCounts, listEntries, listFamilyCounts, listUniverseCounts } from '@/lib/akasha/queries';
+import { listCategoryCounts, listEntries, listFamilyCounts, listUniverseCounts } from '@/lib/akasha/queries';
 import { asAkashaType, RARITY_META, TYPE_META, universeMeta } from '@/lib/akasha/types';
 import { ALLOWED_FILTER_ATTRS, axisValueLabel, taxonomyByName, universeHubSlug } from '@/lib/akasha/universe-taxonomy';
-import DailyCard from '@/components/akasha/DailyCard';
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import AkashaFilters from '@/components/akasha/AkashaFilters';
-import CollectionStrip from '@/components/akasha/CollectionStrip';
-import DailyBooster from '@/components/akasha/DailyBooster';
 import UniverseRail from '@/components/akasha/UniverseRail';
 import CategoryRail from '@/components/akasha/CategoryRail';
 import DidYouKnow from '@/components/akasha/DidYouKnow';
 import FilterBar from '@/components/akasha/FilterBar';
 import OmniSearch from '@/components/akasha/OmniSearch';
 import { registryHref } from '@/lib/akasha/href';
-import { listTopByAttr } from '@/lib/akasha/queries';
 
 export const revalidate = 3600; // ISR 1 h — était rendu dynamiquement à chaque requête sans cache
 
@@ -69,26 +65,13 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
   const page = Number(sp.page) || 1;
   const isRoot = !type && !universe && !cat && !fam && !axisOn && !search && !rarity && !sort && page === 1;
 
-  const [{ entries, total, page: current, totalPages }, universeCounts, categoryCounts, familyCounts, daily, duelPool] = await Promise.all([
+  const [{ entries, total, page: current, totalPages }, universeCounts, categoryCounts, familyCounts] = await Promise.all([
     listEntries({ type, universe, cat, fam, attr, val, search, rarity, sort, page }),
     listUniverseCounts(),
     listCategoryCounts({ type, universe }),
     listFamilyCounts({ universe, cat }),
-    isRoot ? getDailyCard(new Date().toISOString().slice(0, 10)) : Promise.resolve(null),
-    isRoot ? listTopByAttr('favorites', { limit: 40 }) : Promise.resolve([]),
   ]);
   const hubSlug = universe ? universeHubSlug(universe) : undefined;
-
-  // Duel du jour (L8) : 2 persos populaires d'univers DIFFÉRENTS, pick déterministe (seed = date).
-  let duel: { a: string; b: string; an: string; bn: string } | null = null;
-  if (isRoot && duelPool.length >= 4) {
-    const ds = new Date().toISOString().slice(0, 10);
-    let h = 0; for (const ch of ds) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
-    const a = duelPool[h % duelPool.length];
-    const others = duelPool.filter((p) => p.universe !== a.universe && p.slug !== a.slug);
-    const b = others[(h >> 3) % Math.max(1, others.length)];
-    if (a && b) duel = { a: a.slug, b: b.slug, an: a.name, bn: b.name };
-  }
 
   return (
     <main>
@@ -230,12 +213,9 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
           padding: 'clamp(1.4rem,3vw,2rem) 1.4rem clamp(3rem,7vw,5rem)',
         }}
       >
-        <CollectionStrip />
-
-        {/* Destinations (L5/L7) : album, records, vitrines de collection. */}
+        {/* Destinations : records + vitrines de collection. */}
         <div className="g-auto-150" style={{ gap: 8, marginBottom: '1.4rem' }}>
           {([
-            { href: '/learn/akasha/album', icon: '🗂', label: 'L’Album', sub: '20 sets à compléter', tint: '#D4A017' },
             { href: '/learn/akasha/tops', icon: '🏆', label: 'Les Records', sub: 'Classements cross-univers', tint: '#E8623A' },
             { href: '/learn/akasha/c/fruits-du-demon', icon: '🍎', label: 'Fruits du Démon', sub: '200+ par famille', tint: '#C0455E' },
             { href: '/learn/akasha/c/armurerie-meito', icon: '⚔️', label: 'Armurerie Meito', sub: 'Sabres classés', tint: '#C9A227' },
@@ -247,28 +227,6 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
             </Link>
           ))}
         </div>
-
-        {/* Duel du jour + quiz (L8) — le rendez-vous quotidien. */}
-        {isRoot && (duel || true) && (
-          <div className="g-auto-150" style={{ gap: 8, marginBottom: '1.4rem' }}>
-            {duel && (
-              <Link href={`/learn/akasha/vs/${duel.a}/${duel.b}`} className="dom-card" style={{ textDecoration: 'none', background: 'linear-gradient(120deg, rgba(232,98,58,0.12), var(--bg2))', border: '1px solid rgba(232,98,58,0.45)', borderRadius: 12, padding: '0.7rem 0.9rem', display: 'flex', flexDirection: 'column', gap: 2 }}>
-                <span style={{ fontSize: 16 }} aria-hidden>⚔️</span>
-                <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 13.5, color: 'var(--td)', lineHeight: 1.1 }}>Duel du jour</span>
-                <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{duel.an} vs {duel.bn}</span>
-              </Link>
-            )}
-            <Link href="/learn/akasha/quiz" className="dom-card" style={{ textDecoration: 'none', background: 'linear-gradient(120deg, rgba(123,92,240,0.12), var(--bg2))', border: '1px solid rgba(123,92,240,0.45)', borderRadius: 12, padding: '0.7rem 0.9rem', display: 'flex', flexDirection: 'column', gap: 2 }}>
-              <span style={{ fontSize: 16 }} aria-hidden>🧠</span>
-              <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 800, fontSize: 13.5, color: 'var(--td)', lineHeight: 1.1 }}>Quiz du jour</span>
-              <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)' }}>Qui suis-je ? · 5 questions</span>
-            </Link>
-          </div>
-        )}
-
-        {isRoot && <DailyBooster />}
-
-        {daily && <DailyCard entry={daily} />}
 
         {isRoot && (
           <div style={{ marginBottom: '1.4rem' }}>

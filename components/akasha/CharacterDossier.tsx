@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { ChakraNatureIcon, familyLabel, CategoryIcon, ToolIcon } from './NarutoIcons';
 import EntityRelations from './EntityRelations';
 import DatabookRadar, { type Stats } from './DatabookRadar';
-import Moveset2D from './Moveset2D';
 import Character3D from './Character3D';
 import threeD from '@/data/akasha-3d.json';
 import type { AkashaEntryDetail } from '@/lib/akasha/types';
@@ -15,15 +14,6 @@ import { normalizeForms } from '@/lib/akasha/forms';
 type Model3D = { src: string; poster?: string; note?: string };
 
 const ACCENT = '#7B5CF0';
-
-// Aura de chakra selon la forme active (déclenche l'overlay dans le moveset). null = pas d'aura.
-const chakraAura = (label: string): string | null => {
-  const l = label.toLowerCase();
-  if (/six chemins|baryon|bij[uū]/.test(l)) return '#ffd24a'; // doré (Bijū / Six Chemins / Baryon)
-  if (/kurama/.test(l)) return '#ff9c1e';                      // orange chakra (Chakra Kurama)
-  if (/queue|version/.test(l)) return '#ff4d2a';              // manteau rouge (1 Queue / Version 2)
-  return null;                                                 // Partie I/II, Ermite, Hokage
-};
 
 const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
 const list = (v: unknown): string[] =>
@@ -734,7 +724,6 @@ export default function CharacterDossier({ entry, sel = 0 }: { entry: AkashaEntr
                 )}
               </Sec>
             )}
-            <Moveset2D slug={entry.slug} aura={chakraAura(str(f.label) ?? '')} caption="Sprite : Naruto adulte · l'aura suit la forme sélectionnée" />
           </>
         )}
 

@@ -14,7 +14,6 @@ import EntityRelations from '@/components/akasha/EntityRelations';
 import Markdown from '@/components/akasha/Markdown';
 import CharacterView from '@/components/akasha/CharacterView';
 import PlaceView from '@/components/akasha/PlaceView';
-import VisitTracker from '@/components/akasha/hub/VisitTracker';
 import Crumbs from '@/components/akasha/Crumbs';
 
 export const revalidate = 3600; // ISR 1 h — page la plus visitée du domaine, tournait sans cache
@@ -61,7 +60,6 @@ export default async function AkashaEntryPage({ params }: Props) {
     const popRank = await popularityRank(entry.universe, fav);
     return (
       <main>
-        <VisitTracker slug={entry.slug} name={entry.name} universe={entry.universe} image={entry.image_url} />
         <div style={{ maxWidth: 470, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.2rem clamp(3rem,7vw,5rem)' }}>
           <Crumbs universe={entry.universe} category={typeof (entry.attributes as Record<string, unknown>).category === 'string' ? ((entry.attributes as Record<string, unknown>).category as string) : null} name={entry.name} />
           <CharacterView entry={entry} popRank={popRank} />
@@ -84,7 +82,6 @@ export default async function AkashaEntryPage({ params }: Props) {
       .sort((a, b) => (Number(b.target.favorites) || 0) - (Number(a.target.favorites) || 0));
     return (
       <main>
-        <VisitTracker slug={entry.slug} name={entry.name} universe={entry.universe} image={entry.image_url} />
         <div style={{ background: `linear-gradient(180deg, ${accent}26 0%, ${accent}08 45%, var(--bg) 100%)`, borderBottom: '1px solid var(--bd)', padding: 'clamp(2rem,5vw,3rem) 1.4rem 1.6rem' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <Crumbs universe={entry.universe} category={category} name={entry.name} />
@@ -153,7 +150,6 @@ export default async function AkashaEntryPage({ params }: Props) {
   if (Array.isArray((entry.attributes as Record<string, unknown>).eras) && ((entry.attributes as Record<string, unknown>).eras as unknown[]).length > 0) {
     return (
       <main>
-        <VisitTracker slug={entry.slug} name={entry.name} universe={entry.universe} image={entry.image_url} />
         <div style={{ maxWidth: 470, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.2rem clamp(3rem,7vw,5rem)' }}>
           <Crumbs universe={entry.universe} category={typeof (entry.attributes as Record<string, unknown>).category === 'string' ? ((entry.attributes as Record<string, unknown>).category as string) : null} name={entry.name} />
           <PlaceView entry={entry} />
@@ -164,7 +160,6 @@ export default async function AkashaEntryPage({ params }: Props) {
 
   return (
     <main>
-      <VisitTracker slug={entry.slug} name={entry.name} universe={entry.universe} image={entry.image_url} />
       {/* ── BANDEAU ───────────────────────────────────────────── */}
       <div
         style={{
