@@ -581,7 +581,7 @@ async function main() {
       if (u.opApi && c.op) {
         const o = opByName.get(c.op);
         if (o?.bounty) attributes.bounty = `${o.bounty} Berrys`;
-        if (o?.crew?.name) attributes.crew = o.crew.name;
+        if (o?.crew?.name) attributes.crew = fixCrewName(o.crew.name);
         if (o?.job) attributes.occupation = o.job;
       }
       // Dernier recours : recherche globale Jikan (les casts MAL de certaines séries sont épars, ex. Initial D).
@@ -638,10 +638,13 @@ async function main() {
     if (addEnt(slugify(f.name), 'power', f.name, 'One Piece', firstSentence(f.description) || `Fruit du Démon${type ? ' de type ' + type : ''}.`, rarity, purge({ element: `Fruit du Démon${type ? ' · ' + type : ''}`, fruit_type: type || null, roman_name: f.roman_name || null, category: 'Fruit du Démon', ...descA(f.description, 'fr') }))) nf++;
   }
   console.log(`  + ${nf} Fruits du Démon (power)`);
+// Typo de l'API api-onepiece (« Armarda ») corrigée à l'ingestion — sinon icône + slug décrochent.
+  const fixCrewName = (s) => (s === 'Armarda du Chapeau de Paille' ? 'Armada du Chapeau de Paille' : s);
   const opCrews = (await getJSON('https://api.api-onepiece.com/v2/crews/fr')) ?? [];
   let ncr = 0;
   for (const cr of Array.isArray(opCrews) ? opCrews : []) {
     if (!cr?.name) continue;
+    cr.name = fixCrewName(cr.name);
     const rarity = cr.is_yonko ? 'legendary' : Number(cr.total_prime) > 1e9 ? 'epic' : 'rare';
     if (addEnt(slugify(cr.name), 'status', cr.name, 'One Piece', firstSentence(cr.description) || 'Équipage de pirates.', rarity, purge({ scope: 'Équipage pirate', roman_name: cr.roman_name || null, total_prime: cr.total_prime ? `${cr.total_prime} Berrys` : null, category: 'Équipage', ...descA(cr.description, 'fr') }))) ncr++;
   }
@@ -765,11 +768,11 @@ async function main() {
     if (oc.bounty && a.bounty == null) a.bounty = `${oc.bounty} Berrys`;
     if (oc.job && a.occupation == null) a.occupation = oc.job;
     if (oc.age && a.age == null) a.age = oc.age;
-    if (oc.crew?.name && a.crew == null) a.crew = oc.crew.name;
+    if (oc.crew?.name && a.crew == null) a.crew = fixCrewName(oc.crew.name);
     if (oc.fruit?.name && a.fruit == null) a.fruit = oc.fruit.name;
-    const bits = [oc.crew?.name, oc.bounty ? `prime ${oc.bounty} Berrys` : null].filter(Boolean);
+    const bits = [oc.crew?.name ? fixCrewName(oc.crew.name) : null, oc.bounty ? `prime ${oc.bounty} Berrys` : null].filter(Boolean);
     if (bits.length) e.summary = `${e.summary.replace(/\.$/, '')} — ${bits.join(', ')}.`;
-    if (oc.crew?.name) { const cs = slugify(oc.crew.name); if (seen.has(cs) && cs !== e.slug) { relations.push({ from: e.slug, to: cs, relation: 'appartient' }); opRelC++; } }
+    if (oc.crew?.name) { const cs = slugify(fixCrewName(oc.crew.name)); if (seen.has(cs) && cs !== e.slug) { relations.push({ from: e.slug, to: cs, relation: 'appartient' }); opRelC++; } }
     if (oc.fruit?.name) { const fs = slugify(oc.fruit.name); if (seen.has(fs) && fs !== e.slug) { relations.push({ from: e.slug, to: fs, relation: 'maitrise' }); opRelF++; } }
     opEnr++;
   }

@@ -28,7 +28,7 @@ const CREW_IMG: Record<string, string> = {
   'L’équipage des Pirates Roger': 'roger',
   // Extras d'axe fréquents (valeurs minées) : réutilise l'emblème de faction Marine + Armada bespoke.
   'Marine': 'marine',
-  'Armarda du Chapeau de Paille': 'armada',
+  'Armada du Chapeau de Paille': 'armada',
 };
 
 const MAPS: Record<string, Record<string, string>> = {

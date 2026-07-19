@@ -74,6 +74,12 @@ const CLAN_IMG: Record<string, string> = {
   nara: `${E}nara.webp`, akimichi: `${E}akimichi.webp`, yamanaka: `${E}yamanaka.webp`, inuzuka: `${E}inuzuka.webp`,
   aburame: `${E}aburame.webp`, sarutobi: `${E}sarutobi.webp`, otsutsuki: `${E}otsutsuki.webp`,
   fuma: `${E}fuma.webp`, kamizuru: `${E}kamizuru.webp`, funato: `${E}funato.webp`,
+  // Blasons générés puis restés dormants sur disque (audit Chantier 0) — câblés d'un coup.
+  tsuchigumo: `${E}tsuchigumo.webp`, hozuki: `${E}hozuki.webp`, iburi: `${E}iburi.webp`,
+  kurama: `${E}kurama-clan.webp`, hatake: `${E}hatake.webp`, kaguya: `${E}kaguya.webp`,
+  hoshigaki: `${E}hoshigaki.webp`, karatachi: `${E}karatachi.webp`, kedoin: `${E}kedoin.webp`,
+  chinoike: `${E}chinoike.webp`, shimura: `${E}shimura.webp`, terumi: `${E}terumi.webp`,
+  yotsuki: `${E}yotsuki.webp`, yuhi: `${E}yuhi.webp`, yuki: `${E}yuki.webp`,
 };
 // Rangs ninja & générations (Higgsfield → médaillons plats crème sur disque, même famille que les blasons).
 const R = '/images/akasha/ranks/';

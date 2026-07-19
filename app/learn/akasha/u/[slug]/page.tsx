@@ -100,7 +100,11 @@ export default async function UniverseHubPage({ params }: Props) {
 
   // Valeurs de `crew` One Piece qui sont en fait des LIEUX/organisations (bruit de mining) → hors axe Équipages.
   const OP_NON_CREW = new Set(['Skypiea', 'Alabasta', 'Pays des Wa', 'Royaume de Goa', 'Armée Révolutionnaire', 'Cipher Pol',
-    'Enies Lobby', 'Water Seven', 'Dressrosa', 'Punk Hazard', 'Jaya', 'Little Garden', 'Whisky Peak', 'Thriller Bark', 'Ohara', 'Loguetown']);
+    'Enies Lobby', 'Water Seven', 'Dressrosa', 'Punk Hazard', 'Jaya', 'Little Garden', 'Whisky Peak', 'Thriller Bark', 'Ohara', 'Loguetown',
+    'Île des hommes-poissons', 'Impel Down', 'Zo', 'Archipel Conomi', 'Île de Drum', 'Archipel des Sabaody', 'Archipel des Gecko',
+    'Anciens membres du Cipher Pol', 'Anciens membres du Baroque Works']);
+  // « Kazekage » est un TITRE miné à tort comme clan Naruto → hors axe Clans.
+  const NARUTO_NON_CLAN = new Set(['Kazekage']);
   // Axes affichables : valeurs curées avec data d'abord, puis les valeurs « découvertes » (hors config) par volume.
   const axes = taxo.axes
     .map((axis) => {
@@ -109,7 +113,8 @@ export default async function UniverseHubPage({ params }: Props) {
         .map((x) => ({ v: x.v, label: x.l ?? x.v, count: counts.get(x.v) ?? 0, tint: x.tint, badge: x.badge }))
         .filter((x) => x.count > 0);
       const curatedSet = new Set(axis.values.map((x) => x.v));
-      const skip = taxo.slug === 'one-piece' && axis.attr === 'crew' ? OP_NON_CREW : null;
+      const skip = taxo.slug === 'one-piece' && axis.attr === 'crew' ? OP_NON_CREW
+        : taxo.slug === 'naruto' && axis.attr === 'clan' ? NARUTO_NON_CLAN : null;
       const extras = Array.from(counts.entries())
         .filter(([v, c]) => !curatedSet.has(v) && c >= 3 && !skip?.has(v))
         .sort((a, b) => b[1] - a[1])
