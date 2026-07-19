@@ -52,19 +52,78 @@ artefact `0d1e0048` (7 onglets) · analyse complète : `analyse-synthese.md` (sc
   esprit AAA×Apple (grande typo, air, hairlines).
 - **URLs** : aucune nouvelle route ; `?focus=` remplace `?tab=` (deep-link canal), redirection douce.
 
-## Les 4 lots d'implémentation
+## PROTOCOLE DE REPRISE (session neuve / tokens épuisés — LIRE EN PREMIER)
 
-1. **Coquille + fiche personnage** — le layout.tsx AKASHA manquant (rail contexte / surface /
-   canal), nouvelle fiche perso (surface micro-carte + canal, remplace carte TCG + dossier 833 l.).
-   Mobile : canal = bottom-sheet. Garde-fou : contenu par défaut du canal rendu serveur (SEO).
-2. **Registre-cosmos** — la racine (mur de ~15 blocs → cosmos des 8 univers + mosaïque à
-   surlignage in-situ, tri favorites, une seule barre de filtres, ⌘K partout).
-3. **Hubs** — surface signature plein cadre dès l'arrivée, data live branchée sur les cartes
-   (compteurs par village, primes par territoire), carte Bleach 4 mondes, cartes calculées pour
-   les 4 univers orphelins (roue Nen, frise JoJo, plateau Kira, cols Gunma), gabarit compact
-   pour univers < 250 entrées.
-4. **Moteurs spécialisés** — organigramme-zone Nexus pour les 402 fiches status (+ agrégats SQL),
-   rouleau Emaki pour les entités à eras/forms, passerelles seiyū inter-univers.
+1. Lire CE fichier en entier + `tasks/lessons.md`. La mémoire persistante résume le contexte
+   (fiches `akasha-refonte-zones` et `da-akasha-pas-de-maquettes-ia`).
+2. État = `git log --oneline -15` (tout est en commits locaux atomiques, RIEN n'est poussé —
+   toujours demander à Dan avant push). Chaque étape ci-dessous ≈ 1 commit : reprendre à la
+   première étape non cochée du lot en cours.
+3. Vérif standard après chaque étape : `npx tsc --noEmit` + UNE page en navigateur
+   (texte + erreurs console suffisent ; screenshot seulement si changement visuel majeur).
+4. Env : dev server via preview (port 3000) ; Supabase = `set -a && source .env.local && set +a`.
+
+## RÈGLES D'ÉCONOMIE DE TOKENS (demande Dan 19/07 — sans perte de qualité)
+
+- **Pas de workflows multi-agents pour l'implémentation** (les runs d'analyse ont coûté
+  ~1M tokens pièce) : exécution solo, séquentielle, sur ce plan pré-mâché. Workflows réservés
+  aux audits massifs ET sur demande explicite de Dan.
+- **Pas de maquettes IA, pas d'exploration spéculative** : la réflexion coûteuse est déjà
+  consignée ici ; exécuter, ne pas re-concevoir.
+- Lectures chirurgicales (offset/limit, grep d'abord), jamais de relecture d'un fichier connu.
+- Vérification navigateur minimale (cf. protocole §3) ; commit petit et fréquent = un arrêt
+  brutal ne perd jamais plus d'une étape.
+- Réponses à Dan : denses, sans redites du plan (il est ici).
+
+## Les 4 lots — étapes pré-mâchées (≈ 1 commit par case)
+
+### Lot 1 — Coquille + fiche personnage ✅ LIVRÉ (commits 137defc→4d3fe3c)
+Coquille = barre fine 44px (`layout.tsx` : AKASHA · UniverseWheel · ⌘K) ; **Roue des univers**
+façon GTA (UniverseWheel.tsx, portal body — gotcha : backdrop-filter parent = containing block
+des fixed) ; fiche perso = CharacterZone (surface portrait+ArcFrieze+grappes | canal re-scopable,
+zone-context) ; wordmarks partout (jamais emoji/monogramme — leçon). Statut Dan : « provisoirement
+acceptable ». Reste optionnel lot 1 : deep-link `?focus=`, bottom-sheet mobile du canal.
+
+### Lot 2 — Registre-cosmos (`app/learn/akasha/page.tsx`)
+- [ ] 2a. Hero compacté : titre + recherche GET seuls (sans les 12 blocs sous le hero mobile).
+- [ ] 2b. **Portes des univers** : grille 4×2 de cartes-wordmark grand format (wordmark + compteur
+      `listUniverseCounts` + teinte univers au survol) remplaçant UniverseRail sur la racine
+      (UniverseRail reste utilisé en mode filtré ?universe=). Lien → hub `/u/[slug]`.
+- [ ] 2c. Barre de filtres UNIQUE : fusionner AkashaFilters + rails type/rareté/tri en une
+      barre (type · rareté · tri) au-dessus de la grille ; CategoryRail reste en chips dessous ;
+      FilterBar (récap filtres actifs) conservé tel quel.
+- [ ] 2d. Nettoyage : DidYouKnow garde 1 emplacement ; supprimer les redondances restantes
+      signalées par l'audit (double compteurs) ; vérifier pagination inchangée (SEO).
+- [ ] 2e. (option, si Dan valide le style) Tuile de mosaïque v2 sobre remplaçant AkashaCard
+      sur la racine seulement (rareté = liseré fin, pas de cadre TCG) — sinon reporter lot 4.
+
+### Lot 3 — Hubs (`app/learn/akasha/u/[slug]/page.tsx` + hub/)
+- [ ] 3a. Signature PLEIN CADRE : la surface signature (carte) passe en tête du hub, sections
+      restantes derrière des ancres/calques ; brancher OnePieceMap et DragonBallCosmos via
+      `HUB_VISUAL.signature` en config (tuer les `if slug ===` du hub).
+- [ ] 3b. Data live sur cartes existantes : compteurs par village (Naruto, `listAxisCounts`)
+      et par île/territoire (OP : persos par region + total_prime par Yonko) affichés sur la
+      surface ; réutiliser les données déjà chargées par le hub (zéro requête neuve si possible).
+- [ ] 3c. **Carte Bleach 4 mondes** (décision Dan) : Terre/Karakura · Soul Society (cercle
+      Gotei existant imbriqué en drill-down) · Hueco Mundo · Wandenreich — composition verticale
+      calculée (pattern « géométrie = taxonomie »), données `race` (100 % remplies).
+- [ ] 3d. Cartes calculées des 4 orphelins : roue du Nen (HxH), frise des 8 parties (JoJo),
+      plateau Kira vs L (DN), tracé des cols (Initial D) — moteurs de surface config-driven.
+- [ ] 3e. Gabarit compact pour univers < 250 entrées (Initial D/DN : pas de sections à 1 élément).
+- [ ] 3f. Fix tactile mobile des cartes (`touchAction` Naruto) + MapShell partagé (chrome,
+      légende, panneau — recodés 4× aujourd'hui).
+
+### Lot 4 — Moteurs spécialisés & mosaïque
+- [ ] 4a. Agrégats SQL (vue ou RPC) : compteurs par axe + effectifs/prime par organisation —
+      prérequis 4b, allège aussi les ~20 requêtes/hub.
+- [ ] 4b. Fiche organisation « organigramme-zone » (402 status) : membres en orbites
+      hiérarchisées via `appartient` + attributs, prime totale en héros (OP).
+- [ ] 4c. Rouleau temporel (entités à `eras`/`forms`) : généralisation d'ArcFrieze en moteur
+      de surface (les 37 fiches à ères + hubs).
+- [ ] 4d. Remplaçant définitif d'AkashaGrid/AkashaCard partout (retire framer-motion) +
+      passerelles seiyū sur les fiches perso (voiceActors, 3 531 persos).
+- [ ] 4e. Balayage final : emojis restants des anciennes surfaces, badge « ✦ Fiction »,
+      og:images re-skinnées, `?focus=` deep-link canal.
 
 ## Règles transverses
 
