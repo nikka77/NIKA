@@ -54,10 +54,9 @@ export default function OmniSearch({ variant = 'bar' }: { variant?: 'bar' | 'ico
   return (
     <>
       {variant === 'icon' ? (
-        <button type="button" onClick={() => setOpen(true)} className="ak-rail-item" title="Recherche instantanée (⌘K)" aria-label="Recherche instantanée" style={{ width: '100%' }}>
+        <button type="button" onClick={() => setOpen(true)} className="ak-bar-btn" title="Recherche instantanée (⌘K)" aria-label="Recherche instantanée">
           <SearchGlyph size={14} />
-          Recherche
-          <span style={{ marginLeft: 'auto', fontSize: 9.5, fontWeight: 700, border: '1px solid var(--bd2)', borderRadius: 5, padding: '1px 5px' }}>⌘K</span>
+          <span style={{ fontSize: 9.5, fontWeight: 700, border: '1px solid var(--bd2)', borderRadius: 5, padding: '1px 5px' }}>⌘K</span>
         </button>
       ) : (
         <button type="button" onClick={() => setOpen(true)} className="ak-tab"
