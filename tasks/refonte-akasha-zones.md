@@ -129,3 +129,28 @@ dépendance (la mort d'AkashaGrid retire framer-motion), Server Components par d
 préservés (jamais de compteur rendu 0 sans JS), mobile 375 px + rail bas NIKA, jamais fonder
 une zone sur les seules relations (35,5 % d'entrées isolées → les attributs sont des axes de
 plein droit), dégradation honnête pour les pouvoirs sans images (glyphes, jamais de vignettes).
+
+## CYCLE 3 — « ZÉRO CARTE » + habillage final (décisions Dan 20/07)
+
+Dan (après push du cycle 2) : le design reste hétérogène et le « système de carte » doit
+disparaître PARTOUT — tuiles de listes, ~3 200 fiches à l'ancien gabarit, et plus aucune
+boîte-carte arrondie nulle part. Listes → « liste + aperçu » (rangées denses + panneau qui se
+re-scope au survol, façon écran de sélection AAA / Linear). Habillage AAA×Apple appliqué EN MÊME
+TEMPS que l'unification, validé sur code réel tranche par tranche.
+
+Langage visuel v2 (à appliquer partout) : hairlines et filets au lieu de boîtes, fonds pleins
+bord-à-bord, hiérarchie par la typographie (noms très grands), UNE couleur d'accent par page
+(celle de l'univers), rayons discrets (≤ 6px, thumbs d'image seulement), zéro glow gratuit.
+
+- [x] C3-1. **Liste + aperçu** (AkashaList) sur le registre + pages d'axe : rangées hairline
+      (thumb 40px, nom, point-univers, losange-rareté) | panneau d'aperçu sticky re-scopé au
+      survol/clic, défaut = 1re entrée ; mobile = rangées seules. Remplace la mosaïque là où
+      la largeur le permet (le « voir aussi » des fiches garde la mosaïque en attendant C3-4).
+- [ ] C3-2. Langage v2 sur les zones existantes : Character/Organization/EraZone + canal
+      dé-cartés (panneau canal → région à filet supérieur, chips → liens-compteurs minimaux,
+      portrait full-bleed), validation Dan sur la fiche Naruto.
+- [ ] C3-3. Unification des ~3 200 fiches restantes : PowerZone (attaques/jutsu/pouvoirs/
+      compétences — glyphe + maîtres + variantes) et GenericZone (artefacts/métiers/lieux
+      simples — relations en grappes) sur la même coquille surface+canal.
+- [ ] C3-4. Sweep final : vitrines /c/, tops, wanted, pages d'axe (chrome), « voir aussi »
+      compact, et cohérence totale du langage v2 (plus une seule boîte-carte dans AKASHA).
