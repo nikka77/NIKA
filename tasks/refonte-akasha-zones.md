@@ -27,7 +27,7 @@ artefact `0d1e0048` (7 onglets) · analyse complète : `analyse-synthese.md` (sc
       filtre Kazekage, typo « Armarda » (base + build + icône), 16 dossiers vides supprimés
 - [x] 4 directions artistiques « premium ++ » générées (Higgsfield nano_banana, 8 maquettes) :
       Cartographie céleste · Washi & encre · Console instrument · Gravité dorée → **choix Dan attendu**
-- [ ] Campagne médaillons (25 images recommandées : 5 trous P1 + 6 long-tail P2 + 14 regen core ;
+- [x] Campagne médaillons (25 images livrées + câblées, commit : 5 trous P1 + 6 long-tail P2 + 14 regen core ;
       solde Higgsfield vérifié 2 100 cr — pas de top-up requis). Pattern : webp détouré 420-440 px
       (famille Naruto) / SVG détouré < 30 KB lisible à 40 px (7 autres univers), aucun texte intégré.
 - [ ] Blueprint technique lot 1 : spec de la coquille (layout AKASHA rail+surface+canal),
