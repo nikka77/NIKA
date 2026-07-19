@@ -1044,3 +1044,18 @@ ul { list-style: none; }
   .ak-zone-grid { grid-template-columns: minmax(0, 1fr); }
   .ak-canal { position: static; max-height: none; }
 }
+
+/* Portes des univers (registre-cosmos, lot 2b) : wordmark grand format + compteur. */
+.ak-gates { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 1.6rem; }
+@media (max-width: 860px) { .ak-gates { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.ak-gate {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px;
+  min-height: 104px; padding: 16px 12px; border-radius: 14px; text-decoration: none;
+  background: var(--bg2); border: 1px solid var(--bd);
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+.ak-gate img { max-width: 78%; max-height: 40px; width: auto; height: auto; object-fit: contain; display: block; filter: saturate(0.92); transition: filter 0.16s ease, transform 0.16s ease; }
+.ak-gate-count { font-family: var(--fo); font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--td3); font-variant-numeric: tabular-nums; transition: color 0.16s ease; }
+.ak-gate:hover { border-color: var(--uc, var(--bd2)); box-shadow: 0 14px 34px -20px var(--uc, transparent); transform: translateY(-2px); }
+.ak-gate:hover img { filter: saturate(1.12); transform: scale(1.04); }
+.ak-gate:hover .ak-gate-count { color: var(--td2); }

@@ -9,6 +9,7 @@ import { ALLOWED_FILTER_ATTRS, axisValueLabel, taxonomyByName, universeHubSlug }
 import AkashaGrid from '@/components/akasha/AkashaGrid';
 import AkashaFilters from '@/components/akasha/AkashaFilters';
 import UniverseRail from '@/components/akasha/UniverseRail';
+import UniverseGates from '@/components/akasha/UniverseGates';
 import CategoryRail from '@/components/akasha/CategoryRail';
 import DidYouKnow from '@/components/akasha/DidYouKnow';
 import FilterBar from '@/components/akasha/FilterBar';
@@ -200,7 +201,12 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
           </div>
         )}
 
-        <UniverseRail counts={universeCounts} active={universe} type={type} search={search} />
+        {/* Racine : les PORTES des univers (2b) ; en mode filtré, le rail compact reste. */}
+        {isRoot ? (
+          <UniverseGates counts={universeCounts} />
+        ) : (
+          <UniverseRail counts={universeCounts} active={universe} type={type} search={search} />
+        )}
 
         {universe && hubSlug && (
           <Link
