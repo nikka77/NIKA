@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import MapOverlay, { FloatMapBtn } from '@/components/MapOverlay';
 import BottomNav from '@/components/BottomNav';
 import ScrollProgress from '@/components/ScrollProgress';
+import LiquidGlassRuntime from '@/components/LiquidGlassRuntime';
 import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <MapOverlay />
         <FloatMapBtn />
         <BottomNav />
+        <LiquidGlassRuntime />
       </body>
     </html>
   );

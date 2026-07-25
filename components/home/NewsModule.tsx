@@ -27,7 +27,7 @@ export default function NewsModule() {
   const [cat, setCat] = useState<string | null>(null);
   const results = useMemo(() => NEWS.filter(n => !cat || n.cat === cat), [cat]);
   return (
-    <div className="hero-domabar news-mod" style={card(NW)}>
+    <div data-liquid-glass="panel" suppressHydrationWarning className="hero-domabar news-mod" style={card(NW)}>
       <Head accent={NW} label="News" sub="· L'actu de la Côte" />
       <div className="hero-domabar" style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 4 }}>
         <Chip accent={NW} active={!cat} onClick={() => setCat(null)} label="Tout" />

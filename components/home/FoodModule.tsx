@@ -131,7 +131,7 @@ function DemoFoodModule({ pros, place }: { pros?: Pro[]; place: string }) {
   const pick = (m: Mode) => { setMode(m); if (selId) { const p = data.find(x => x.id === selId); if (!p || !p.modes.includes(m)) setSelId(null); } };
 
   return (
-    <div style={{ maxWidth: 384, margin: '0 auto', background: 'rgba(5,12,23,0.7)', border: `1px solid ${GOLD}55`, borderRadius: 18, backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', padding: 10, display: 'flex', gap: 10, textAlign: 'left', height: 200, boxShadow: '0 10px 30px rgba(0,0,0,0.35)' }}>
+    <div data-liquid-glass="panel" suppressHydrationWarning style={{ maxWidth: 384, margin: '0 auto', background: 'rgba(5,12,23,0.7)', border: `1px solid ${GOLD}55`, borderRadius: 18, backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', padding: 10, display: 'flex', gap: 10, textAlign: 'left', height: 200, boxShadow: '0 10px 30px rgba(0,0,0,0.35)' }}>
       <div style={{ width: '46%', flexShrink: 0, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
         <AnimatePresence mode="wait" initial={false}>
           {selected ? (
@@ -213,7 +213,7 @@ function NightFoodModule({ entries, place, defaultOpen }: { entries: NightEntry[
   return (
     <div style={{ maxWidth: 384, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 10 }}>
       {/* Haut : molette (ou mode unique) + logos enseignes */}
-      <div style={{ background: 'rgba(5,12,23,0.7)', border: `1px solid ${moduleAccent}55`, borderRadius: 18, backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', padding: 10, display: 'flex', gap: 10, textAlign: 'left', height: 168, boxShadow: '0 10px 30px rgba(0,0,0,0.35)', transition: 'border-color 0.3s' }}>
+      <div data-liquid-glass="panel" suppressHydrationWarning style={{ background: 'rgba(5,12,23,0.7)', border: `1px solid ${moduleAccent}55`, borderRadius: 18, backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', padding: 10, display: 'flex', gap: 10, textAlign: 'left', height: 168, boxShadow: '0 10px 30px rgba(0,0,0,0.35)', transition: 'border-color 0.3s' }}>
         <div style={{ width: '46%', flexShrink: 0 }}>
           {availableModes.length > 1
             ? <ModeWheel value={mode} onChange={setMode} accent={moduleAccent} modes={availableModes} />

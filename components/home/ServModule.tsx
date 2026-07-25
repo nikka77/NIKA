@@ -36,7 +36,7 @@ const GRAD: Record<string, string> = {
 export default function ServModule() {
   const [tab, setTab] = useState<Tab>('reserver');
   return (
-    <div className="hero-domabar serv-mod" style={card}>
+    <div data-liquid-glass="panel" suppressHydrationWarning className="hero-domabar serv-mod" style={card}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 10 }}>
         <span style={{ width: 7, height: 7, borderRadius: '50%', background: SV, boxShadow: `0 0 8px ${SV}` }} />
         <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 15, letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--td)' }}>Serv</span>

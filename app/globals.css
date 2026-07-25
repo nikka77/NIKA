@@ -283,14 +283,49 @@ ul { list-style: none; }
   filter: drop-shadow(0 3px 5px rgba(0,0,0,0.4));
 }
 
+/* ===== LIQUID GLASS (matériau navigation — verre lentillé) =====
+   Deux découpes : .liquid-glass = capsule/panneau (bord complet + rims spéculaires),
+   .liquid-glass-bar = barre bord-à-bord (filet bas seulement). Fond en 2 couches :
+   sheen diagonal (reflet) + teinte sombre translucide, révélés par blur saturé.
+   ⚠ backdrop-filter crée un containing block : jamais de descendant position:fixed. */
+.liquid-glass,
+.liquid-glass-bar {
+  background:
+    linear-gradient(120deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.02) 36%, rgba(255,255,255,0.015) 64%, rgba(255,255,255,0.06) 100%),
+    rgba(16,22,34,0.55);
+  -webkit-backdrop-filter: blur(28px) saturate(185%);
+  backdrop-filter: blur(28px) saturate(185%);
+}
+.liquid-glass {
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    inset 0 -1px 0 rgba(255,255,255,0.05),
+    0 12px 40px rgba(0,0,0,0.45);
+}
+.liquid-glass-bar {
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.10), 0 10px 30px rgba(0,0,0,0.28);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .liquid-glass, .liquid-glass-bar, .bottom-nav { background: rgba(10,16,26,0.94); }
+}
+
 /* ===== BOTTOM NAV MOBILE (app-feel) ===== */
 .bottom-nav {
   display: none;
   position: fixed; left: 14px; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom)); z-index: 350;
   flex-direction: column; gap: 3px;
-  background: rgba(44,48,60,0.50); backdrop-filter: blur(26px) saturate(150%); -webkit-backdrop-filter: blur(26px) saturate(150%);
-  border: 1px solid rgba(255,255,255,0.16); border-radius: 999px;
-  box-shadow: 0 14px 38px rgba(0,0,0,0.45); padding: 5px 18px 4px; overflow: hidden;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.02) 40%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.08) 100%),
+    rgba(24,30,44,0.42);
+  -webkit-backdrop-filter: blur(30px) saturate(190%); backdrop-filter: blur(30px) saturate(190%);
+  border: 1px solid rgba(255,255,255,0.18); border-radius: 999px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.28),
+    inset 0 -1px 0 rgba(255,255,255,0.06),
+    0 16px 44px rgba(0,0,0,0.50);
+  padding: 5px 18px 4px; overflow: hidden;
 }
 .bn-track { display: flex; width: 100%; transition: transform 0.32s cubic-bezier(0.22,0.61,0.36,1); }
 .bn-page { flex: 0 0 100%; display: flex; align-items: stretch; }

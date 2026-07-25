@@ -43,7 +43,7 @@ const skipLabel = (s: Skipper) => s === 'avec' ? 'avec skipper' : s === 'option'
 export default function AzurModule() {
   const [tab, setTab] = useState<Tab>('bateau');
   return (
-    <div className="hero-domabar azur-mod" style={card}>
+    <div data-liquid-glass="panel" suppressHydrationWarning className="hero-domabar azur-mod" style={card}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 10 }}>
         <span style={{ width: 7, height: 7, borderRadius: '50%', background: AZ, boxShadow: `0 0 8px ${AZ}` }} />
         <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 15, letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--td)' }}>Azur</span>

@@ -66,7 +66,7 @@ export default function ConfirmDialog({
   const accent = danger ? 'var(--coral)' : 'var(--az)';
   return (
     <div role="dialog" aria-modal="true" aria-label={title} onClick={busy ? undefined : onClose} style={overlay}>
-      <div onClick={e => e.stopPropagation()} style={card}>
+      <div data-liquid-glass="panel" suppressHydrationWarning onClick={e => e.stopPropagation()} style={card}>
         <h3 style={titleStyle}>{title}</h3>
         {message && <p style={msgStyle}>{message}</p>}
         <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end' }}>

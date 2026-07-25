@@ -740,7 +740,7 @@ export default function ProviderDetail({
       </div>
 
       {/* ══ STICKY BAR MOBILE ════════════════════════════════════════════════ */}
-      <div className="riv-sticky-bar" style={{
+      <div data-liquid-glass="bar" suppressHydrationWarning className="riv-sticky-bar" style={{
         position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 100,
         background: 'rgba(10,14,26,0.95)', backdropFilter: 'blur(12px)',
         borderTop: '1px solid var(--bd2)', padding: '12px 1.2rem',

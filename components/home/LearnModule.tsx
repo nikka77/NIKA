@@ -30,7 +30,7 @@ export default function LearnModule() {
   const results = useMemo(() => COURS.filter(c => !cat || c.cat === cat), [cat]);
   const selC = results.find(c => c.id === sel) ?? results[0] ?? null;
   return (
-    <div className="hero-domabar learn-mod" style={card(LV)}>
+    <div data-liquid-glass="panel" suppressHydrationWarning className="hero-domabar learn-mod" style={card(LV)}>
       <Head accent={LV} label="Learn" sub="· Apprends sur la Côte" />
       <div className="hero-domabar" style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 4 }}>
         <Chip accent={LV} active={!cat} onClick={() => setCat(null)} label="Tout" />

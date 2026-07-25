@@ -9,7 +9,7 @@ import UniverseWheel from '@/components/akasha/UniverseWheel';
 export default function AkashaLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <div className="ak-topbar">
+      <div data-liquid-glass="bar" suppressHydrationWarning className="ak-topbar">
         <Link href="/learn/akasha" title="Registre AKASHA"
           style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 14, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--purple)', textDecoration: 'none', flexShrink: 0 }}>
           Akasha

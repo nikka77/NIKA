@@ -21,7 +21,7 @@ export default function SecModule() {
   const [sel, setSel] = useState<string | null>(null);
   const selS = SERVICES.find(s => s.id === sel) ?? null;
   return (
-    <div className="hero-domabar sec-mod" style={card(SC)}>
+    <div data-liquid-glass="panel" suppressHydrationWarning className="hero-domabar sec-mod" style={card(SC)}>
       <Head accent={SC} label="Sec" sub="· Sécurité & urgences" />
 
       {/* SOS */}

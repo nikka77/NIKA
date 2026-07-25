@@ -37,7 +37,7 @@ export default function SmartSearch({ value, onChange, onSubmit, placeholders, a
         boxShadow: focused ? `0 0 0 1.5px ${accent}, 0 0 26px -4px ${accent}` : 'none',
         opacity: focused ? 1 : 0, transition: 'opacity .25s, box-shadow .25s',
       }} />
-      <div style={{
+      <div data-liquid-glass="capsule" suppressHydrationWarning style={{
         position: 'relative', display: 'flex', alignItems: 'center', gap: 8,
         background: 'rgba(5,12,23,0.72)', border: `1px solid ${focused ? accent : 'var(--bd2)'}`,
         borderRadius: 40, padding: '0 6px 0 16px', height: 52,

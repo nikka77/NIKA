@@ -249,7 +249,7 @@ export default function AutoModule({ mode, onMode, user, dest, trip, onClearDest
   const schedDone = /T\d\d:\d\d$/.test(schedAt);
 
   return (
-    <div className="hero-domabar auto-mod" style={card}>
+    <div data-liquid-glass="panel" suppressHydrationWarning className="hero-domabar auto-mod" style={card}>
       {/* En-tête + icône discrète « Mes véhicules » */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
         <span style={{ display: 'flex', alignItems: 'center', gap: 7 }}>

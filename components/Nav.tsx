@@ -64,10 +64,8 @@ export default function Nav() {
 
   return (
     <>
-      <nav style={{
-        position: 'sticky', top: 0, zIndex: 300,
-        background: 'rgba(5,12,23,0.93)', backdropFilter: 'blur(14px)',
-        borderBottom: '1px solid var(--bd)', padding: '0 1.4rem',
+      <nav data-liquid-glass="bar" suppressHydrationWarning className="liquid-glass-bar" style={{
+        position: 'sticky', top: 0, zIndex: 300, padding: '0 1.4rem',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 54,
       }}>
         <Link href="/" style={{ fontFamily: 'var(--fn)', fontSize: 24, letterSpacing: '0.12em', display: 'flex', alignItems: 'center', gap: 7 }}>
@@ -83,7 +81,7 @@ export default function Nav() {
               <span style={{ fontSize: 8, transform: domainsOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>▼</span>
             </button>
             {domainsOpen && (
-              <div style={{ position: 'absolute', top: 54, left: 0, width: 400, background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 12, padding: '0.6rem', boxShadow: '0 14px 36px rgba(0,0,0,0.5)' }}>
+              <div data-liquid-glass="panel" suppressHydrationWarning className="liquid-glass" style={{ position: 'absolute', top: 54, left: 0, width: 400, borderRadius: 16, padding: '0.6rem' }}>
                 <div className="g-2" style={{ gap: 4 }}>
                   {DOMAINS.map(d => (
                     <Link key={d.slug} href={`/${d.slug}`} className="nav-drop-item" onClick={() => setDomainsOpen(false)}>
@@ -117,7 +115,7 @@ export default function Nav() {
                 <span className="max-md:hidden" style={{ fontSize: 8, color: 'var(--td3)', transform: profileOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>▼</span>
               </button>
               {profileOpen && (
-                <div style={{ position: 'absolute', top: 46, right: 0, width: 200, background: 'var(--bg2)', border: '1px solid var(--bd)', borderRadius: 12, padding: '0.5rem', boxShadow: '0 14px 36px rgba(0,0,0,0.5)', zIndex: 320 }}>
+                <div data-liquid-glass="panel" suppressHydrationWarning className="liquid-glass" style={{ position: 'absolute', top: 46, right: 0, width: 200, borderRadius: 16, padding: '0.5rem', zIndex: 320 }}>
                   <div style={{ padding: '8px 10px', borderBottom: '1px solid var(--bd)', marginBottom: 4 }}>
                     <div style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: 'var(--td)' }}>{user.username}</div>
                     <div style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>{user.level_name} · {user.nika_credits ?? 0} $NIKKA</div>
@@ -151,7 +149,7 @@ export default function Nav() {
       </nav>
 
       {/* Mobile nav */}
-      <div style={{ position: 'fixed', top: 54, left: 0, right: 0, zIndex: 290, background: 'var(--bg2)', borderBottom: '1px solid var(--bd)', transform: mobileOpen ? 'translateY(0)' : 'translateY(-8px)', opacity: mobileOpen ? 1 : 0, transition: 'transform 0.28s ease, opacity 0.28s ease', pointerEvents: mobileOpen ? 'all' : 'none' }}>
+      <div data-liquid-glass="bar" suppressHydrationWarning className="liquid-glass-bar" style={{ position: 'fixed', top: 54, left: 0, right: 0, zIndex: 290, transform: mobileOpen ? 'translateY(0)' : 'translateY(-8px)', opacity: mobileOpen ? 1 : 0, transition: 'transform 0.28s ease, opacity 0.28s ease', pointerEvents: mobileOpen ? 'all' : 'none' }}>
         <div style={{ padding: '0.9rem 1.4rem', borderBottom: '1px solid var(--bd)' }}>
           <div className="g-3" style={{ gap: 6 }}>
             {DOMAINS.map(d => (

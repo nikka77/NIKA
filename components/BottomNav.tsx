@@ -48,7 +48,7 @@ export default function BottomNav() {
   };
 
   return (
-    <nav className="bottom-nav" aria-label="Navigation des domaines">
+    <nav data-liquid-glass="capsule" suppressHydrationWarning className="bottom-nav" aria-label="Navigation des domaines">
       <div style={{ overflow: 'hidden', width: '100%' }}
         onTouchStart={e => { startX.current = e.touches[0].clientX; }}
         onTouchEnd={e => onEnd(e.changedTouches[0].clientX)}

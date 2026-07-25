@@ -16,7 +16,7 @@ const TILES = [
 
 export default function ToolsModule() {
   return (
-    <div className="hero-domabar tools-mod" style={card(TL)}>
+    <div data-liquid-glass="panel" suppressHydrationWarning className="hero-domabar tools-mod" style={card(TL)}>
       <Head accent={TL} label="Tools" sub="· Boîte à outils Côte d'Azur" />
 
       {/* Outil vedette : Livraison */}

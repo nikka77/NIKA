@@ -33,7 +33,7 @@ const GRAD: Record<string, string> = {
 export default function RentModule() {
   const [tab, setTab] = useState<Tab>('louer');
   return (
-    <div className="hero-domabar rent-mod" style={card}>
+    <div data-liquid-glass="panel" suppressHydrationWarning className="hero-domabar rent-mod" style={card}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 10 }}>
         <span style={{ width: 7, height: 7, borderRadius: '50%', background: RT, boxShadow: `0 0 8px ${RT}` }} />
         <span style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, fontSize: 15, letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--td)' }}>Rent</span>
