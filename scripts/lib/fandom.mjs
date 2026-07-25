@@ -59,3 +59,104 @@ export async function pageLinksIn(api, page, validSet) {
 }
 
 export { sleep as fandomSleep };
+
+/* ════════ NIKA OPS — « yeux » des agents locaux (25/07/2026) ════════
+   Les modèles locaux ne naviguent pas : le worker récupère ici la page canon,
+   la nettoie en prose et la met en cache disque avant de la passer au modèle. */
+
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+
+/** univers AKASHA → sous-domaine fandom.com */
+export const WIKIS = {
+  'Naruto': 'naruto',
+  'One Piece': 'onepiece',
+  'Bleach': 'bleach',
+  'Dragon Ball': 'dragonball',
+  'Hunter x Hunter': 'hunterxhunter',
+  "JoJo's Bizarre Adventure": 'jojo',
+  'Death Note': 'deathnote',
+  'Initial D': 'initiald',
+};
+
+export const wikiApi = (universe) =>
+  WIKIS[universe] ? `https://${WIKIS[universe]}.fandom.com/api.php` : null;
+
+/** Wikitext brut → prose lisible (templates, liens wiki, refs, balises, titres). */
+export function cleanWikitext(wt) {
+  let s = wt ?? '';
+  for (let i = 0; i < 6; i++) s = s.replace(/\{\{[^{}]*\}\}/g, '');       // templates imbriqués
+  s = s.replace(/<ref[^>]*>[\s\S]*?<\/ref>/g, '').replace(/<ref[^>]*\/>/g, '');
+  s = s.replace(/\[\[(?:File|Image|Fichier):[^\]]*\]\]/gi, '');
+  s = s.replace(/\[\[(?:[^|\]]*\|)?([^\]]+)\]\]/g, '$1');                  // déwikifier
+  s = s.replace(/<\/?[^>]+>/g, '');
+  s = s.replace(/^=+\s*(.+?)\s*=+$/gm, '\n§ $1');                          // sections → marqueurs
+  s = s.replace(/'''?/g, '').replace(/^\s*[*#:]+\s*/gm, '· ');
+  return s.replace(/[ \t]+/g, ' ').replace(/\n{2,}/g, '\n').trim();
+}
+
+const CACHE_DIR = new URL('../../.ops-cache/fandom/', import.meta.url).pathname;
+
+/** Mots significatifs d'un nom : sans accents, sans particules ni ponctuation. */
+const nameWords = (s) =>
+  new Set(
+    (s ?? '')
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .toLowerCase().replace(/[^a-z0-9\s]/g, ' ')
+      .split(/\s+/)
+      .filter((w) => w && !['the', 'of', 'de', 'du', 'la', 'le', 'les', 's', 'gou', 'san', 'kun'].includes(w)),
+  );
+
+/**
+ * Le titre trouvé désigne-t-il bien l'entité demandée ?
+ * Tolère l'inversion (« Shamrock Figarland » ≡ « Figarland Shamrock ») ; rejette les voisins
+ * (« Giorno's Mother » vs « Giorno Giovanna », « Super 17 » vs « Android 17 »).
+ */
+export function sameEntityName(name, title) {
+  const a = nameWords(name), b = nameWords(title);
+  if (!a.size || !b.size) return false;
+  const inter = [...a].filter((w) => b.has(w)).length;
+  return inter === a.size || inter === b.size;   // l'un est inclus dans l'autre
+}
+
+/**
+ * Page canon d'une entité, en prose + cache disque.
+ * @returns {Promise<{title:string,url:string,text:string}|null>} null si univers/page introuvable.
+ */
+export async function fetchFandomProse(universe, name, { maxChars = 5000 } = {}) {
+  const api = wikiApi(universe);
+  if (!api) return null;
+
+  await mkdir(CACHE_DIR, { recursive: true });
+  const file = `${CACHE_DIR}${createHash('sha1').update(`${universe}:${name}`).digest('hex').slice(0, 16)}.json`;
+  try { return JSON.parse(await readFile(file, 'utf8')); } catch { /* cache froid */ }
+
+  // redirects=1 : « Haiya Dragon » → « Icarus » (sinon on ne récupère que « #REDIRECT »)
+  const parseUrl = (t) => `${api}?action=parse&page=${encodeURIComponent(t)}&prop=wikitext&redirects=1&format=json&formatversion=2`;
+  let title = name;
+  let j = await wget(parseUrl(title));
+
+  let resolvedBy = 'exact';
+  if (!j?.parse?.wikitext) {                       // titre exact absent → recherche plein texte
+    const found = await searchTitles(api, name, null, 1);
+    if (!found.length) return null;
+    title = found[0];
+    resolvedBy = 'search';
+    j = await wget(parseUrl(title));
+    if (!j?.parse?.wikitext) return null;
+  }
+
+  const out = {
+    title: j.parse.title ?? title,
+    url: `https://${WIKIS[universe]}.fandom.com/wiki/${encodeURIComponent(title)}`,
+    text: cleanWikitext(j.parse.wikitext).slice(0, maxChars),
+    resolvedBy,
+    // GARDE D'IDENTITÉ (25/07) : la recherche plein texte ramenait des entités VOISINES
+    // (« Giorno's Mother » → article de Giorno ; « Super 17-gou » → Android 17). On compare
+    // les ensembles de mots significatifs : titre et nom doivent désigner la même entité.
+    sameEntity: sameEntityName(name, j.parse.title ?? title),
+  };
+  await writeFile(file, JSON.stringify(out));
+  await sleep(250);                                 // politesse Fandom
+  return out;
+}
