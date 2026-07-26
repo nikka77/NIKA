@@ -115,8 +115,46 @@
       (« inconnu » n'écrase jamais une valeur existante). Vérifiée en navigateur.
       5 colonnes : à relire · **preuve douteuse** (suspects, applicables après vérif) · écartées par les
       gardes · approuvées · rejetées. Chaque attribut s'affiche avec sa citation source.
-- [ ] **Ouverture des vannes** (après validation Dan des 27 en attente) : lots de 50-100 fiches,
-      worker lancé hors session de dev (il sature le GPU d'un Mac 16 Go).
+- [x] **Relecteur local** (25/07) : agent `review_local` + colonnes auto_verdict/auto_motif/auto_model
+      (DDL passée via dashboard) + `scripts/ops-fill-review.mjs` + badges de verdict dans /ops.
+      Mesure sur 12 productions à vérité connue : 7/7 sur la détection d'erreur factuelle, 0 faux positif.
+      → FAIT le 25/07 : (a) enchaînement auto dans le worker (`chainReview`) — toute production jugeable
+      part en relecture dès son insertion ; (b) bouton « appliquer les N jugées valides » dans /ops
+      (API action `approve_all_valid`, testée : 8/8 écrites en base, aucun champ _preuve ne fuit).
+- [x] **Premier lot lancé** le 25/07 : 40 `akasha_attrs` + 20 `fandom_descfr` (60 tâches), relectures
+      enchaînées automatiquement. Worker en drain, ~2 h. Résultats à trier dans /ops.
+- [x] **Lot 1 traité de bout en bout (25-26/07)** : 206 tâches passées dans la file. 71 productions en
+      attente de review humaine, déjà triées par les vérificateurs : 17 valides · 26 à corriger · 4 à
+      rejeter · 24 non jugeables (pas de source vérifiable ou abstention). 44 notées par HHEM.
+      Accord juge LLM ↔ ancrage HHEM : 30/39 (les désaccords sont les axes inférentiels, cf. lessons).
+      Vraies erreurs attrapées : Chopper (fruit Paramecia au lieu de Zoan), Shanks (apprenti ≠ membre
+      de l'équipage de Roger), Sasori (rang absent de la source), Daddy Masterson, Gennō, Akio.
+- [ ] **Dan : passer la file dans /ops** — bouton « Appliquer les 17 jugées valides », puis regarder
+      les 26 « à corriger » une par une (chacune porte son motif et son score d'ancrage).
+- [x] **Débit optimisé (26/07)** : 147 s → **69 s** par tâche (tri de la file par modèle + keep-alive
+      + prompts/budgets allégés). MLX testé et écarté (ignore `format`). Voir lessons.md.
+- [x] **Infobox des wikis exploitée** : `fetchFandomInfobox` lit l'infobox RENDUE (HTML) — les wikis ne
+      la stockent pas dans le wikitext. Chaque fiche commence par une FICHE TECHNIQUE compacte
+      (Classification, Affiliation, Team, Race…) : plus de données utiles dans moins de contexte.
+      Mesure préalable : 95 % des preuves étaient déjà dans les 2500 premiers caractères.
+- [ ] **Lots suivants** : viser les 4 394 fiches sans descFr et les axes manquants, par paquets de 60-100,
+      hors session de dev (le worker sature le GPU d'un Mac 16 Go).
+- [x] **Duel de juges tranché (25/07)** : qwen3:8b (autre famille) testé contre gemma4 maison sur 12
+      productions à vérité connue → 5 accords, 5 désaccords, aucun ne domine (qwen3 a RATÉ l'erreur L
+      que le maison avait vue, mais a vu une faiblesse que le maison avait validée). Décision : PAS de
+      second juge LLM en routine — entonnoir à 3 étages à la place (code → HHEM sur CPU → juge LLM).
+      qwen3 conservé pour audits ponctuels.
+- [x] **Vérificateur d'ancrage HHEM** (`scripts/hhem/score.py` + `ops-score-ancrage.mjs`, venv .ops-venv) :
+      modèle spécialisé 0,1 Md sur CPU — zéro concurrence GPU. Colonne `auto_score` + pastille dans /ops.
+      Piège corrigé : traduire les valeurs FR de la taxonomie en anglais avant de les soumettre.
+      Usage : signal POSITIF uniquement (haut = confiance ; bas = à regarder, pas à jeter).
+- [x] **Vue par agent + console Claude dans /ops** (`lib/ops/agents.ts`, `app/ops/AgentsPanel.tsx`,
+      `app/api/ops/claude`) : 6 agents avec état (au travail/attente/inactif), ce qu'ils font à l'instant,
+      modèle GPU réellement chargé, et un champ pour prompter Claude Code en streaming.
+      RPC `ops_queue_by_type` pour compter la file par agent sans consommer les messages.
+- [ ] **Dan : `claude` dans un terminal pour se reconnecter** — la réinstallation du CLI (binaire natif
+      jamais installé, postinstall npm avorté) a effacé la session OAuth. Sans ça, la console Claude
+      affiche « session expirée ».
 - [ ] **L2 — Page /ops (kanban)** : gate (localhost + `OPS_SECRET`) ; **vue kanban** (queued → running →
       done → reviewed, cartes = tâches, colonnes par statut pgmq/review) ; santé OmniRoute/Ollama/worker ;
       start/stop worker. Patterns volés à vibe-kanban (27k ⭐, Apache-2.0, en cours d'abandon — inspirer,
