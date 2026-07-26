@@ -211,7 +211,8 @@ TASK_TYPES.akasha_relations = {
   },
   zod: z.object({
     relations: z.array(z.object({
-      avec: z.string().min(2), nature: z.string(), periode: z.string(),
+      // min(1), pas min(2) : « L » (Death Note) est un nom légitime d'une seule lettre (constaté 26/07).
+      avec: z.string().min(1), nature: z.string(), periode: z.string(),
       resume: z.string().min(15), preuve: z.string(),
     })).max(6),
   }),
@@ -313,19 +314,31 @@ async function callModel(type, payload) {
     if (!res.ok) throw new Error(`Gemini HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
     raw = (await res.json()).candidates?.[0]?.content?.parts?.[0]?.text ?? '';
   } else {
-    const res = await fetch(`${OMNI_URL}/chat/completions`, {
-      method: 'POST',
-      signal: AbortSignal.timeout(TIMEOUT_MS),
-      headers: { Authorization: `Bearer ${OMNI_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        // +900 de marge : les modèles cloud « à raisonnement » (gpt-oss) brûlent des tokens AVANT
-        // le JSON ; trop court → « Failed to validate JSON » de Groq (constaté le 26/07 à 100).
-        model, stream: false, messages, max_tokens: (NUM_PREDICT[type] ?? 800) + 900,
-        response_format: { type: 'json_schema', json_schema: { name: type, strict: true, schema } },
-      }),
-    });
-    if (!res.ok) throw new Error(`OmniRoute HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-    raw = (await res.json()).choices?.[0]?.message?.content ?? '';
+    // Le palier gratuit Groq plafonne les tokens/minute : un 429 n'est pas une erreur, c'est
+    // « repasse dans Xs » (8 tâches de front l'ont crevé le 26/07). On attend le délai annoncé.
+    for (let essai = 1; ; essai++) {
+      const res = await fetch(`${OMNI_URL}/chat/completions`, {
+        method: 'POST',
+        signal: AbortSignal.timeout(TIMEOUT_MS),
+        headers: { Authorization: `Bearer ${OMNI_KEY}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          // +900 de marge : les modèles cloud « à raisonnement » (gpt-oss) brûlent des tokens AVANT
+          // le JSON ; trop court → « Failed to validate JSON » de Groq (constaté le 26/07 à 100).
+          model, stream: false, messages, max_tokens: (NUM_PREDICT[type] ?? 800) + 900,
+          response_format: { type: 'json_schema', json_schema: { name: type, strict: true, schema } },
+        }),
+      });
+      if (res.status === 429 && essai < 4) {
+        const corps = await res.text();
+        const attente = Number(corps.match(/try again in (\d+(?:\.\d+)?)s/i)?.[1] ?? res.headers.get('retry-after') ?? 20);
+        console.log(`  ⏳ 429 sur ${model} — pause ${Math.ceil(attente + 1)} s (essai ${essai})`);
+        await new Promise((r) => setTimeout(r, (attente + 1) * 1000));
+        continue;
+      }
+      if (!res.ok) throw new Error(`OmniRoute HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
+      raw = (await res.json()).choices?.[0]?.message?.content ?? '';
+      break;
+    }
   }
   return t.zod.parse(JSON.parse(raw.replace(/^```(?:json)?|```$/g, '').trim()));
 }
