@@ -178,11 +178,86 @@ Puis :
   },
 };
 
+// L'HISTOIRE derrière les axes : qui a compté pour qui, et quand. Demandé par Dan le 26/07
+// (cas Law : « capitaine du Heart » ne dit rien de son passé chez Don Quichotte ni de sa vengeance).
+// La nature est contrainte par enum, chaque relation exige sa preuve — mêmes remèdes que les axes.
+const NATURES = ['famille', 'mentor', 'élève', 'allié', 'ennemi', 'rival',
+  'ancien équipage', 'équipage actuel', 'subordonné', 'supérieur', 'autre'];
+
+TASK_TYPES.akasha_relations = {
+  model: (p) => expertFor(p.universe),
+  schema: {
+    type: 'object',
+    properties: {
+      relations: {
+        type: 'array',
+        maxItems: 6,
+        items: {
+          type: 'object',
+          properties: {
+            avec: { type: 'string' },
+            nature: { type: 'string', enum: NATURES },
+            periode: { type: 'string', enum: ['passé', 'actuel', 'inconnu'] },
+            resume: { type: 'string' },
+            preuve: { type: 'string' },
+          },
+          required: ['avec', 'nature', 'periode', 'resume', 'preuve'],
+          additionalProperties: false,
+        },
+      },
+    },
+    required: ['relations'],
+    additionalProperties: false,
+  },
+  zod: z.object({
+    relations: z.array(z.object({
+      avec: z.string().min(2), nature: z.string(), periode: z.string(),
+      resume: z.string().min(15), preuve: z.string(),
+    })).max(6),
+  }),
+  // L'histoire d'un personnage vit dans le corps de l'article : on prend plus large que les axes.
+  fetch: async (p) => {
+    const page = await fetchFandomProse(p.universe, p.name, { maxChars: 6000 });
+    return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity } : p;
+  },
+  guard: (p) => TASK_TYPES.fandom_descfr.guard(p),
+  prompt: (p) => `À partir de l'article ci-dessous, dresse les relations MAJEURES de ${p.name} (${p.universe})
+avec d'autres personnages nommés.
+
+RÈGLES :
+- 3 à 6 relations, les plus structurantes de son histoire (famille, mentor, ennemi juré, équipage…).
+- "avec" : le NOM du personnage lié, tel qu'écrit dans l'article. Jamais ${p.name} lui-même.
+- "nature" : la catégorie la plus juste. « ancien équipage » = il en a fait partie puis l'a quitté.
+- "periode" : « passé » si la relation appartient à son histoire, « actuel » si elle tient toujours.
+- "resume" : 1 à 2 phrases EN FRANÇAIS qui racontent la relation — faits de l'article uniquement,
+  présent de narration, aucun anglicisme.
+- "preuve" : recopie la phrase EXACTE de l'article (anglais) qui établit cette relation — 25 mots max.
+- N'invente RIEN : une relation absente de l'article n'existe pas. Moins de relations mais sûres.
+
+FICHE : ${p.name}
+ARTICLE DU WIKI (${p.fandomTitle}) :
+${p.fandom}`,
+};
+
+/** Cohérence relation ↔ preuve, en code : la preuve doit nommer le personnage lié. */
+function checkRelations(out, p) {
+  const norm = (x) => x.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const suspects = [];
+  for (const r of out.relations ?? []) {
+    const mots = norm(r.avec).split(/[^a-z0-9]+/).filter((w) => w.length >= 4);
+    if (norm(r.avec) === norm(p.name)) { suspects.push(`relation de ${r.avec} avec lui-même`); continue; }
+    if (!r.preuve || norm(r.preuve) === 'aucune') { suspects.push(`« ${r.avec} » sans preuve`); continue; }
+    if (mots.length && !mots.some((w) => norm(r.preuve).includes(w)))
+      suspects.push(`la preuve ne nomme pas « ${r.avec} »`);
+  }
+  return suspects;
+}
+
 /* ── Appel modèle (JSON contraint par schéma) ───────────────────── */
 // Modèles locaux : Ollama NATIF (param `format` = décodage contraint fiable).
 // OmniRoute fige indéfiniment sur `response_format` (constaté le 25/07) → réservé aux futurs modèles cloud.
 // Budget de génération par type : inutile d'autoriser 1200 tokens à une tâche qui en produit 150.
-const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 400 };
+const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 400, akasha_relations: 900 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
 const modelOf = (type, p) => {
@@ -279,7 +354,8 @@ async function processMessage(msg) {
     try {
       const out = await callModel(type, p);
       // Contrôle de cohérence valeur↔preuve (code pur) : le modèle peut citer juste et conclure faux.
-      const suspects = type === 'akasha_attrs' ? checkPreuves(out) : [];
+      const suspects = type === 'akasha_attrs' ? checkPreuves(out)
+        : type === 'akasha_relations' ? checkRelations(out, p) : [];
       return {
         ...base,
         status: suspects.length ? 'suspect' : 'done',
@@ -304,6 +380,10 @@ async function chainReview(row, reviewedId) {
     const etablis = Object.entries(valeurs).filter(([, v]) => v && v !== 'inconnu');
     if (!etablis.length) return;                     // abstention : rien à juger (le code tranche)
     production = etablis.map(([k, v]) => `${k} = ${v}  (preuve avancée : « ${preuves[k] ?? 'aucune'} »)`).join('\n');
+  } else if (row.task_type === 'akasha_relations') {
+    const rel = row.result?.relations ?? [];
+    if (!rel.length) return;                         // abstention honnête : rien à juger
+    production = rel.map((r) => `${r.avec} (${r.nature}, ${r.periode}) : ${r.resume}  (preuve avancée : « ${r.preuve} »)`).join('\n');
   } else if (row.result?.descFr) {
     production = row.result.descFr;
   } else return;

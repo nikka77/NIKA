@@ -5,13 +5,15 @@
 import { useCallback, useEffect, useState } from 'react';
 import AgentsPanel, { ClaudeConsole, type AgentEtat } from './AgentsPanel';
 
+type Relation = { avec: string; nature: string; periode: string; resume: string; preuve: string };
+
 type Result = {
   id: number;
   task_type: string;
   target_slug: string;
   model: string | null;
   payload: { name?: string; universe?: string; summary?: string; fandomTitle?: string; fandomUrl?: string } | null;
-  result: Record<string, string> | null;
+  result: { descFr?: string; relations?: Relation[]; [k: string]: unknown } | null;
   status: string;
   review_status: string;
   error: string | null;
@@ -223,9 +225,9 @@ function Card({ r, busy, compact, onReview }: {
 }) {
   // attributs : on sépare valeurs et preuves (champs « <attr>_preuve »)
   const attrs = r.task_type === 'akasha_attrs' && r.result
-    ? Object.entries(r.result).filter(([k, v]) => !k.endsWith('_preuve') && v && v !== 'inconnu')
+    ? (Object.entries(r.result).filter(([k, v]) => !k.endsWith('_preuve') && typeof v === 'string' && v !== 'inconnu') as [string, string][])
     : null;
-  const preuve = (k: string) => r.result?.[`${k}_preuve`];
+  const preuve = (k: string) => r.result?.[`${k}_preuve`] as string | undefined;
 
   return (
     <article style={{
@@ -297,6 +299,34 @@ function Card({ r, busy, compact, onReview }: {
               )}
             </div>
           )) : <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>aucun attribut établi</span>}
+        </div>
+      )}
+
+      {r.task_type === 'akasha_relations' && Array.isArray(r.result?.relations) && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 7, marginTop: 8 }}>
+          {r.result.relations.map((rel, i) => {
+            const tint = ['ennemi', 'rival'].includes(rel.nature) ? KO
+              : ['équipage actuel', 'ancien équipage'].includes(rel.nature) ? CY : OK;
+            return (
+              <div key={i}>
+                <span style={{
+                  fontFamily: 'var(--fo)', fontSize: 10.5, color: tint,
+                  border: `1px solid ${tint}44`, background: `${tint}12`, borderRadius: 6, padding: '3px 8px',
+                }}>{rel.avec} · {rel.nature} · {rel.periode}</span>
+                {!compact && (
+                  <p style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td2)', margin: '4px 0 0', lineHeight: 1.45 }}>
+                    {rel.resume}
+                  </p>
+                )}
+                {!compact && rel.preuve && (
+                  <p style={{
+                    fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', fontStyle: 'italic',
+                    margin: '3px 0 0', paddingLeft: 8, borderLeft: '2px solid var(--bd2)', lineHeight: 1.4,
+                  }}>« {rel.preuve.slice(0, 160)} »</p>
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
 

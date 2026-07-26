@@ -26,7 +26,7 @@ export const AXES = {
   'One Piece': {
     faction: ['Pirate', 'Marine', 'Gouvernement Mondial', 'Révolutionnaire', 'Civil'],
     crew: ['L’équipage du Chapeau de Paille', 'L’équipage de Big Mom', 'L’équipage aux Cent Bêtes',
-      'L’équipage de Barbe Blanche', 'L’équipage de Don Quichotte', 'L’équipage des Pirates Roger'],
+      'L’équipage de Barbe Blanche', 'L’équipage de Don Quichotte', 'L’équipage du Heart', 'L’équipage des Pirates Roger'],
     fruit_type: ['Paramecia', 'Logia', 'Zoan', 'Zoan Antique', 'Zoan Mythique', 'Smile'],
   },
   'Dragon Ball': {
@@ -85,6 +85,7 @@ const TRACES = {
   'L’équipage aux Cent Bêtes': ['beasts pirates', 'kaidou', 'kaido'],
   'L’équipage de Barbe Blanche': ['whitebeard'],
   'L’équipage de Don Quichotte': ['donquixote'],
+  'L’équipage du Heart': ['heart pirates'],
   'L’équipage des Pirates Roger': ['roger pirates'],
   'Gouvernement Mondial': ['world government'],
   'Révolutionnaire': ['revolutionary'],

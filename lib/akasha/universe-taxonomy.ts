@@ -102,6 +102,7 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
           { v: 'L’équipage aux Cent Bêtes', l: 'Cent Bêtes (Kaido)' },
           { v: 'L’équipage de Barbe Blanche', l: 'Barbe Blanche' },
           { v: 'L’équipage de Don Quichotte', l: 'Don Quichotte' },
+          { v: 'L’équipage du Heart', l: 'Heart (Law)' },
           { v: 'L’équipage des Pirates Roger', l: 'Pirates de Roger' },
         ],
       },

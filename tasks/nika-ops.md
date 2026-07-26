@@ -57,6 +57,7 @@
 | 14 | Santé site (liens, 404, images) | script + local | L6 |
 | 15 | Backlog groomer (tasks/*.md → priorités) | gemma4, validé Dan | L6 |
 | 16 | Secrétaire WhatsApp (notes, questions, tâches) | local, escalade Claude | L5 |
+| 17 | Historien (relations entre personnages, preuve à l'appui) | expert univers / cloud | ✓ 26/07 |
 
 ## Lots
 
@@ -190,6 +191,15 @@
     branche NATIVE `gemini/<modele>` dans le worker (responseSchema natif). Reste : Dan colle
     `GEMINI_API_KEY=…` dans .env.local, puis test 6 fiches. Piste ensuite : juge cloud Gemini
     (famille indépendante du producteur Groq) pour lever le goulot du juge local.
+  - Gemini (suite) : clé VALIDE mais projet AI Studio en mode prépayé à 0 crédit (HTTP 429
+    « prepayment credits depleted ») → Dan doit basculer sur un projet en plan gratuit dans
+    ai.studio/projects. La branche native `gemini/<modele>` du worker est prête et testée côté code.
+  - Agent n°17 « Historien » (`akasha_relations`, 26/07, demandé par Dan sur le cas Law) : relations
+    majeures avec nature (enum), période, résumé FR et preuve citée ; contrôle code preuve↔personnage ;
+    relecture enchaînée ; application → attributes.relations ; rendu carte /ops dédié ; remplisseur
+    `ops-fill-relations.mjs` (idempotent). Pilote Law ✓ : Doflamingo (ennemi, passé), Rosinante,
+    Luffy, Heart Pirates, Kid — exactement l'histoire que les axes seuls ne racontaient pas.
+    Taxonomie : « L'équipage du Heart » ajouté (TS + miroir + traces).
   - (historique)  créer une clé Gemini (aistudio.google.com/apikey) ou
       Groq (console.groq.com/keys) puis, dans un terminal (la clé ne passe jamais par Claude ni par un fichier du dépôt) :
       `omniroute setup --add-provider --provider groq --api-key <COLLER_LA_CLÉ> --test-provider`

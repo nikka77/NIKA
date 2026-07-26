@@ -148,6 +148,12 @@ async function applyResult(supabase: Admin, id: number): Promise<boolean> {
     // les champs « _preuve » restent dans agent_results, pas dans la fiche.
     for (const [k, v] of Object.entries(row.result ?? {}))
       if (v && v !== 'inconnu' && !k.endsWith('_preuve')) patch[k] = v;
+  } else if (row.task_type === 'akasha_relations') {
+    // L'histoire entre personnages (Law ↔ Don Quichotte…) ; les preuves restent dans agent_results.
+    const rel = (row.result?.relations ?? []) as Array<Record<string, string>>;
+    if (!rel.length) return false;
+    patch.relations = rel.map(({ avec, nature, periode, resume }) => ({ avec, nature, periode, resume }));
+    patch.relationsSource = row.model;
   }
 
   const { error } = await supabase.from('akasha_entries').update({ attributes: patch }).eq('slug', row.target_slug);

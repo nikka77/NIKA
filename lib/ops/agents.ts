@@ -26,6 +26,13 @@ export const AGENTS: AgentDef[] = [
     famille: 'data',
   },
   {
+    type: 'akasha_relations',
+    nom: 'Historien',
+    role: 'Retrace les relations majeures d’un personnage (famille, mentors, ennemis, équipages passés), preuve à l’appui',
+    modele: 'expert de l’univers',
+    famille: 'data',
+  },
+  {
     type: 'flavor_akasha',
     nom: 'Reformulateur',
     role: 'Reformule un résumé existant (déclassé : produisait des paraphrases)',
