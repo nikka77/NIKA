@@ -128,6 +128,11 @@ export default function OpsBoard() {
           <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)' }}>
             console locale des agents · rafraîchie toutes les 8 s
           </span>
+          {/* La calibration : sans elle, le verdict du juge n'est qu'une décoration. */}
+          <a href="/ops/audit" style={{
+            fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, color: CY, textDecoration: 'none',
+            border: `1px solid ${CY}55`, background: `${CY}12`, borderRadius: 20, padding: '4px 12px',
+          }}>◎ Audit à l’aveugle</a>
         </div>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', margin: '10px 0 22px' }}>
           {injoignable && <Pill label="API injoignable — machine chargée ?" color={KO} />}

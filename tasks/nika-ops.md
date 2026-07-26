@@ -234,6 +234,17 @@
   worker, remplisseur générique `ops-fill-fiches.mjs --role=…`, cartes /ops, application descFr.
   Pilotes 8 fiches via Groq : 7 produits (qualité canon), 1 refus de garde légitime.
 
+- [x] **L11 — Calibration du juge (26/07)** : `/ops/audit` — audit à l'aveugle, verdict IA retiré
+  côté API, taux d'accord + kappa de Cohen, annulation en base si Dan invalide une fiche appliquée.
+  Stocké dans `ops_notes` (source='audit') : aucun DDL à exécuter. 54 fiches en réserve.
+  Déclencheur : le « 51/51 » était circulaire (bouton « appliquer les valides »).
+  Cible : accord ≥ 90 % (plafond humain-humain, littérature JUDGe 2026) et kappa ≥ 0,6.
+- [ ] **L12 — Autonomie graduée (après le verdict de l'audit)** : trois paliers selon le risque —
+  auto (fiches descriptives, réversibles), auto + contrôle a posteriori (attributs à preuve forte
+  ET ancrage HHEM haut), jamais sans Dan (taxonomie, canon, argent, clients). Prérequis : journal
+  d'application + annulation par lot (l'annulation unitaire existe depuis L11), alarme d'échec
+  (canal WhatsApp du L5), et jeu de fiches témoins rejoué chaque semaine (détection de dérive).
+
 ## Boîte à outils GitHub (moisson du 23/07, à intégrer par lots)
 - **CCR — claude-code-router** (musistudio) : fait tourner LE HARNAIS Claude Code sur n'importe quel
   modèle (config → OmniRoute/Ollama). Usage 1 : « Claude Code de secours » quand les tokens Max sont
