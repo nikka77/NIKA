@@ -312,6 +312,32 @@ const modelOf = (type, p) => {
 };
 const schemaOf = (t, p) => (typeof t.schema === 'function' ? t.schema(p) : t.schema);
 
+/** Appel OpenAI-compatible (Groq, Cerebras, OmniRoute…) — backoff 429 au délai annoncé. */
+async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
+  for (let essai = 1; ; essai++) {
+    const res = await fetch(url, {
+      method: 'POST',
+      signal: AbortSignal.timeout(TIMEOUT_MS),
+      headers: { Authorization: `Bearer ${cle}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        // +900 de marge : les modèles « à raisonnement » (gpt-oss) brûlent des tokens AVANT le JSON.
+        model: modele, stream: false, messages,
+        max_tokens: (NUM_PREDICT[type] ?? 800) + 900,
+        response_format: { type: 'json_schema', json_schema: { name: type, strict: true, schema } },
+      }),
+    });
+    if (res.status === 429 && essai < 4) {
+      const corps = await res.text();
+      const attente = Number(corps.match(/try again in (\d+(?:\.\d+)?)s/i)?.[1] ?? res.headers.get('retry-after') ?? 20);
+      console.log(`  ⏳ 429 (${new URL(url).host}) — pause ${Math.ceil(attente + 1)} s (essai ${essai})`);
+      await new Promise((r) => setTimeout(r, (attente + 1) * 1000));
+      continue;
+    }
+    if (!res.ok) throw new Error(`HTTP ${res.status} (${new URL(url).host}): ${(await res.text()).slice(0, 200)}`);
+    return (await res.json()).choices?.[0]?.message?.content ?? '';
+  }
+}
+
 async function callModel(type, payload) {
   const t = TASK_TYPES[type];
   const model = modelOf(type, payload);
@@ -333,30 +359,21 @@ async function callModel(type, payload) {
     if (!res.ok) throw new Error(`Ollama HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
     raw = (await res.json()).message?.content ?? '';
   } else if (model.startsWith('cerebras/')) {
-    // Cerebras NATIF : absent du catalogue OmniRoute, API compatible OpenAI, json_schema supporté.
-    // Palier gratuit : 30k tokens/min (5× Groq) — le 2e couloir cloud, même gpt-oss-120b.
+    // Cerebras NATIF : absent du catalogue OmniRoute. Palier gratuit supprimé (26/07) — branche
+    // dormante, réactivable si Dan crédite le compte.
     if (!process.env.CEREBRAS_API_KEY) throw new Error('CEREBRAS_API_KEY absent de .env.local');
-    for (let essai = 1; ; essai++) {
-      const res = await fetch('https://api.cerebras.ai/v1/chat/completions', {
-        method: 'POST',
-        signal: AbortSignal.timeout(TIMEOUT_MS),
-        headers: { Authorization: `Bearer ${process.env.CEREBRAS_API_KEY}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: model.slice(9), stream: false, messages,
-          max_tokens: (NUM_PREDICT[type] ?? 800) + 900,
-          response_format: { type: 'json_schema', json_schema: { name: type, strict: true, schema } },
-        }),
-      });
-      if (res.status === 429 && essai < 4) {
-        const attente = Number(res.headers.get('retry-after') ?? 20);
-        console.log(`  ⏳ 429 sur ${model} — pause ${attente + 1} s (essai ${essai})`);
-        await new Promise((r) => setTimeout(r, (attente + 1) * 1000));
-        continue;
-      }
-      if (!res.ok) throw new Error(`Cerebras HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-      raw = (await res.json()).choices?.[0]?.message?.content ?? '';
-      break;
-    }
+    raw = await appelOpenAICompat({
+      url: 'https://api.cerebras.ai/v1/chat/completions', cle: process.env.CEREBRAS_API_KEY,
+      modele: model.slice(9), messages, type, schema,
+    });
+  } else if (model.startsWith('groq/') && process.env.GROQ_API_KEY) {
+    // Groq NATIF dès que la clé est dans .env.local : OmniRoute sort du chemin de production
+    // (bilan du 26/07 : gel sur response_format, serveur périmé aveugle aux clés, préfixes volés
+    // par des alias — 3 pannes réelles pour un proxy d'un seul fournisseur).
+    raw = await appelOpenAICompat({
+      url: 'https://api.groq.com/openai/v1/chat/completions', cle: process.env.GROQ_API_KEY,
+      modele: model.slice(5), messages, type, schema,
+    });
   } else if (model.startsWith('gemini/')) {
     // Gemini NATIF (pas OmniRoute) : son adaptateur passe par l'endpoint compatible OpenAI qui
     // refuse les clés nouveau format « AQ.… » (constaté le 26/07). L'endpoint officiel les accepte
@@ -383,31 +400,10 @@ async function callModel(type, payload) {
     if (!res.ok) throw new Error(`Gemini HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
     raw = (await res.json()).candidates?.[0]?.content?.parts?.[0]?.text ?? '';
   } else {
-    // Le palier gratuit Groq plafonne les tokens/minute : un 429 n'est pas une erreur, c'est
-    // « repasse dans Xs » (8 tâches de front l'ont crevé le 26/07). On attend le délai annoncé.
-    for (let essai = 1; ; essai++) {
-      const res = await fetch(`${OMNI_URL}/chat/completions`, {
-        method: 'POST',
-        signal: AbortSignal.timeout(TIMEOUT_MS),
-        headers: { Authorization: `Bearer ${OMNI_KEY}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          // +900 de marge : les modèles cloud « à raisonnement » (gpt-oss) brûlent des tokens AVANT
-          // le JSON ; trop court → « Failed to validate JSON » de Groq (constaté le 26/07 à 100).
-          model, stream: false, messages, max_tokens: (NUM_PREDICT[type] ?? 800) + 900,
-          response_format: { type: 'json_schema', json_schema: { name: type, strict: true, schema } },
-        }),
-      });
-      if (res.status === 429 && essai < 4) {
-        const corps = await res.text();
-        const attente = Number(corps.match(/try again in (\d+(?:\.\d+)?)s/i)?.[1] ?? res.headers.get('retry-after') ?? 20);
-        console.log(`  ⏳ 429 sur ${model} — pause ${Math.ceil(attente + 1)} s (essai ${essai})`);
-        await new Promise((r) => setTimeout(r, (attente + 1) * 1000));
-        continue;
-      }
-      if (!res.ok) throw new Error(`OmniRoute HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-      raw = (await res.json()).choices?.[0]?.message?.content ?? '';
-      break;
-    }
+    // Tout le reste passe par OmniRoute (proxy local) — chemin de repli, plus le chemin nominal.
+    raw = await appelOpenAICompat({
+      url: `${OMNI_URL}/chat/completions`, cle: OMNI_KEY, modele: model, messages, type, schema,
+    });
   }
   return t.zod.parse(JSON.parse(raw.replace(/^```(?:json)?|```$/g, '').trim()));
 }

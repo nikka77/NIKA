@@ -28,7 +28,7 @@ const { data: pendantes } = await supabase
   .from('agent_results')
   .select('target_slug')
   .eq('task_type', 'akasha_relations')
-  .in('status', ['done', 'suspect']);
+  .in('status', ['done', 'suspect', 'refused']);
 const dejaEnReview = new Set((pendantes ?? []).map((r) => r.target_slug));
 
 const candidates = (data ?? [])
