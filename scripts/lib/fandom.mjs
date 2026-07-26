@@ -70,6 +70,8 @@ export { sleep as fandomSleep };
    la nettoie en prose et la met en cache disque avant de la passer au modèle. */
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { homedir } from 'node:os';
+import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 
 /** univers AKASHA → sous-domaine fandom.com */
@@ -156,7 +158,11 @@ export function cleanWikitext(wt) {
   return s.replace(/[ \t]+/g, ' ').replace(/\n{2,}/g, '\n').trim();
 }
 
-const CACHE_DIR = new URL('../../.ops-cache/fandom/', import.meta.url).pathname;
+// ~/.cache et pas le dépôt : (1) le dépôt vit dans iCloud — un cache de 139+ fichiers y serait
+// resynchronisé en boucle ; (2) l'ancien `.pathname` encodait l'espace de « Mobile Documents » en
+// %20 et créait un dossier parasite hors iCloud (découvert le 26/07 — la leçon fileURLToPath du
+// 25/07 n'avait pas été balayée sur TOUT le dépôt).
+const CACHE_DIR = join(homedir(), '.cache', 'nika', 'fandom') + '/';
 
 /** Mots significatifs d'un nom : sans accents, sans particules ni ponctuation. */
 const nameWords = (s) =>

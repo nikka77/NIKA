@@ -208,6 +208,17 @@
       comparer la qualité au local AVANT de router en masse. Jamais de données privées NIKA au cloud
       (AKASHA = wikis publics, OK ; FOOD/clients/avis = local uniquement).
 
+- [x] **L9 — Système durci (26/07 soir, « continue à améliorer »)** :
+  - Couloirs de workers : `--types=a,b` — un worker rend les tâches des autres couloirs à la file.
+    Testé : production cloud + jugement local en processus séparés, `scripts/flotte.sh` les lance
+    ensemble en `taskpolicy -c background` (interface fluide). `CLOUD_MODEL=…` pour changer de fournisseur.
+  - RAM rendue en fin de drain (déchargement Ollama auto) — le swap 11 Go → 2,8 Go mesuré.
+  - /ops : pilule swap (vert <40 %, orange <75 %, rouge au-delà) + bouton « purger les échecs
+    techniques » (les refus de garde restent : eux documentent).
+  - Cache Fandom sorti d'iCloud (`~/.cache/nika/fandom`) + 2 `.pathname` restants corrigés.
+  - RESTE (menu validé à faire choisir par Dan) : clé Cerebras (30k TPM gratuits, même gpt-oss-120b,
+    json_schema OK — 2e couloir cloud), `node_modules`/`.next` en .nosync, fenêtre de nuit pg_cron+launchd.
+
 ## Boîte à outils GitHub (moisson du 23/07, à intégrer par lots)
 - **CCR — claude-code-router** (musistudio) : fait tourner LE HARNAIS Claude Code sur n'importe quel
   modèle (config → OmniRoute/Ollama). Usage 1 : « Claude Code de secours » quand les tokens Max sont

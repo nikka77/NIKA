@@ -2,6 +2,8 @@
 // Boucle : claim pgmq → garde → modèle local via OmniRoute (sortie contrainte) → agent_results → archive.
 // Usage :  node --env-file=.env.local scripts/agent-worker.mjs           (vide la file puis s'arrête)
 //          node --env-file=.env.local scripts/agent-worker.mjs --loop    (tourne en continu, pause 30 s à vide)
+// Confort machine : préfixer par `taskpolicy -c background` — macOS déclasse le worker en priorité
+// CPU/IO de fond et l'interface reste fluide pendant les gros lots.
 // Les résultats ne touchent JAMAIS les tables réelles : ils attendent la review dans agent_results.
 import { createClient } from '@supabase/supabase-js';
 import { z } from 'zod';
@@ -23,6 +25,9 @@ const CONC = Number(process.argv.find((a) => a.startsWith('--conc='))?.split('='
 // La relecture (review_local) reste TOUJOURS sur l'expert local : un juge indépendant du producteur.
 // Avec un endpoint cloud, monter --conc=10 à 20 — le serveur distant encaisse, contrairement au Mac.
 const CLOUD = process.argv.find((a) => a.startsWith('--cloud='))?.split('=')[1] ?? null;
+// --types=a,b : COULOIR — ce worker ne traite que ces types ; les messages étrangers retournent
+// en file aussitôt pour le worker du couloir voisin (ex : production au cloud, jugement au local).
+const TYPES = process.argv.find((a) => a.startsWith('--types='))?.split('=')[1]?.split(',').filter(Boolean) ?? null;
 
 /* ── Types de tâches ────────────────────────────────────────────── */
 // Chaque type : modèle, schéma JSON (décodage contraint), garde d'entrée, prompt.
@@ -467,10 +472,27 @@ for (;;) {
     continue;
   }
 
+  // Tri de couloir : on rend les tâches des autres avant de travailler les nôtres.
+  let miens = lot;
+  if (TYPES) {
+    const etrangers = lot.filter((m) => !TYPES.includes(m.message?.type));
+    if (etrangers.length) {
+      await supabase.rpc('ops_queue_send_batch', { messages: etrangers.map((m) => m.message) });
+      for (const m of etrangers) await supabase.rpc('ops_queue_archive', { message_id: m.msg_id });
+      console.log(`  ↷ ${etrangers.length} tâche(s) hors couloir remises en file`);
+    }
+    miens = lot.filter((m) => TYPES.includes(m.message?.type));
+    if (!miens.length) {
+      if (!LOOP) break;                                  // drain : plus rien pour ce couloir
+      await new Promise((r) => setTimeout(r, 30_000));   // continu : on laisse le voisin les prendre
+      continue;
+    }
+  }
+
   // Groupes par modèle : on épuise un modèle avant de passer au suivant (un changement
   // coûtait 147 s de médiane), et on parallélise à l'intérieur de chaque groupe.
   const groupes = new Map();
-  for (const msg of lot) {
+  for (const msg of miens) {
     const t = TASK_TYPES[msg.message?.type];
     const cle = t ? String(modelOf(msg.message.type, msg.message.payload ?? {})) : 'inconnu';
     (groupes.get(cle) ?? groupes.set(cle, []).get(cle)).push(msg);
@@ -480,4 +502,13 @@ for (;;) {
     await traiterEnParallele(msgs, CONC);
   }
 }
+// Libère la RAM en partant : un modèle en keep_alive squatte 8 Go pendant que Dan compile et
+// navigue — le swap plein (11/12 Go mesurés le 26/07) venait en partie de là.
+try {
+  const ps = await fetch('http://localhost:11434/api/ps').then((r) => r.json());
+  for (const m of ps.models ?? []) {
+    await fetch('http://localhost:11434/api/generate', { method: 'POST', body: JSON.stringify({ model: m.name, keep_alive: 0 }) });
+    console.log(`  ⏏ ${m.name} déchargé — RAM rendue`);
+  }
+} catch { /* Ollama éteint : rien à décharger */ }
 console.log(`fini — done: ${counts.done} · suspect: ${counts.suspect} · refused: ${counts.refused} · failed: ${counts.failed}`);

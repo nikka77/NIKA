@@ -1,6 +1,7 @@
 // app/api/ops/state/route.ts — état de la console OPS (file pgmq + résultats d'agents)
 // et actions de review. Verrouillé localhost (lib/ops/guard).
 import { NextResponse } from 'next/server';
+import { execSync } from 'node:child_process';
 import { createClient } from '@supabase/supabase-js';
 import { opsAllowed } from '@/lib/ops/guard';
 import { AGENTS, type AgentEtat } from '@/lib/ops/agents';
@@ -44,6 +45,14 @@ export async function GET() {
   ]);
 
   // Modèle actuellement chargé côté Ollama = ce sur quoi le GPU travaille à la seconde près.
+  // Swap macOS : « total = X used = Y » — le baromètre du ralentissement ressenti.
+  let swap: { total: number; used: number } | null = null;
+  try {
+    // chemin absolu : /usr/sbin n'est pas dans le PATH du serveur Next lancé par launch.json
+    const m = /total = ([\d.]+)M.*used = ([\d.]+)M/.exec(execSync('/usr/sbin/sysctl -n vm.swapusage', { timeout: 2000 }).toString());
+    if (m) swap = { total: Math.round(Number(m[1])), used: Math.round(Number(m[2])) };
+  } catch { /* indisponible : pilule absente */ }
+
   let modeleActif: string | null = null;
   try {
     const r = await fetch('http://localhost:11434/api/ps', { signal: AbortSignal.timeout(1500) });
@@ -82,7 +91,7 @@ export async function GET() {
   return NextResponse.json({
     queue: metrics?.[0] ?? { queue_length: 0, total_messages: 0 },
     results: recents,
-    health: { ollama, omniroute, modeleActif },
+    health: { ollama, omniroute, modeleActif, swap },
     agents,
   });
 }
@@ -93,7 +102,7 @@ export async function POST(req: Request) {
   const supabase = admin();
   if (!supabase) return NextResponse.json({ error: 'supabase absent' }, { status: 500 });
 
-  const { id, action } = (await req.json()) as { id: number; action: 'approve' | 'reject' | 'approve_all_valid' };
+  const { id, action } = (await req.json()) as { id: number; action: 'approve' | 'reject' | 'approve_all_valid' | 'purge_failed' };
 
   // Lot : applique toutes les productions que le relecteur local a jugées « valide ».
   // Dan garde la décision (c'est lui qui clique), mais en une fois au lieu de N.
@@ -110,6 +119,18 @@ export async function POST(req: Request) {
       if (res) applied++;
     }
     return NextResponse.json({ ok: true, applied, total: rows?.length ?? 0 });
+  }
+
+  if (action === 'purge_failed') {
+    // Les échecs TECHNIQUES (HTTP, quota, réseau) n'apprennent rien en review : on les purge en lot.
+    // Les refus de GARDE (status refused) restent : eux documentent pourquoi une fiche est écartée.
+    const { data: purged } = await supabase
+      .from('agent_results')
+      .delete()
+      .eq('review_status', 'pending')
+      .eq('status', 'failed')
+      .select('id');
+    return NextResponse.json({ ok: true, purged: purged?.length ?? 0 });
   }
 
   if (action === 'reject') {

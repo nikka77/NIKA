@@ -26,7 +26,7 @@ type Result = {
 type State = {
   queue: { queue_length: number; total_messages: number };
   results: Result[];
-  health: { ollama: boolean; omniroute: boolean; modeleActif: string | null };
+  health: { ollama: boolean; omniroute: boolean; modeleActif: string | null; swap: { total: number; used: number } | null };
   agents: AgentEtat[];
 };
 
@@ -107,6 +107,16 @@ export default function OpsBoard() {
   const approved = state?.results.filter((r) => r.review_status === 'approved') ?? [];
   const rejected = state?.results.filter((r) => r.review_status === 'rejected') ?? [];
   const nbValides = [...pending, ...suspect].filter((r) => r.auto_verdict === 'valide').length;
+  const nbEchecs = refused.filter((r) => r.status === 'failed').length;
+
+  const purgerEchecs = async () => {
+    await fetch('/api/ops/state', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'purge_failed' }),
+    });
+    await load();
+  };
 
   return (
     <main style={{ minHeight: '100svh', background: 'linear-gradient(180deg,#04181C 0%,#07252B 40%,var(--bg) 100%)' }}>
@@ -125,7 +135,24 @@ export default function OpsBoard() {
           <Pill label={`traitées : ${state?.queue.total_messages ?? '…'}`} color="var(--td3)" />
           <Pill label={`Ollama ${state?.health.ollama ? 'actif' : 'éteint'}`} color={state?.health.ollama ? OK : KO} />
           <Pill label={`OmniRoute ${state?.health.omniroute ? 'actif' : 'éteint'}`} color={state?.health.omniroute ? OK : KO} />
+          {state?.health.swap && (
+            <Pill
+              label={`swap ${(state.health.swap.used / 1024).toFixed(1)}/${(state.health.swap.total / 1024).toFixed(0)} Go`}
+              color={state.health.swap.used / state.health.swap.total < 0.4 ? OK
+                : state.health.swap.used / state.health.swap.total < 0.75 ? WARN : KO}
+            />
+          )}
 
+          {nbEchecs > 0 && (
+            <button onClick={purgerEchecs}
+              style={{
+                marginLeft: nbValides ? 0 : 'auto', padding: '5px 14px', borderRadius: 20, cursor: 'pointer',
+                border: '1px solid var(--bd2)', background: 'rgba(255,255,255,0.04)', color: 'var(--td3)',
+                fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700,
+              }}>
+              ✕ Purger les {nbEchecs} échecs techniques
+            </button>
+          )}
           {nbValides > 0 && (
             <button onClick={applyAllValid} disabled={!!bulk}
               style={{

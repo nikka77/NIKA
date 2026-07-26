@@ -7,7 +7,8 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 
 const run = promisify(execFile);
-const DIR = new URL('.', import.meta.url).pathname;
+import { fileURLToPath } from 'node:url';
+const DIR = fileURLToPath(new URL('.', import.meta.url));
 const DRY = process.argv.includes('--dry');
 const ONLY = process.argv.find((a) => a.startsWith('--only='))?.split('=')[1];
 
