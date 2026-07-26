@@ -253,6 +253,12 @@ function checkRelations(out, p) {
   for (const r of out.relations ?? []) {
     const mots = norm(r.avec).split(/[^a-z0-9]+/).filter((w) => w.length >= 4);
     if (norm(r.avec) === norm(p.name)) { suspects.push(`relation de ${r.avec} avec lui-même`); continue; }
+    // « avec » doit être un NOM PROPRE : le 26/07, Jotaro s'est vu attribuer une relation avec
+    // « his mother » — la preuve contenait bien « mother », donc le contrôle passait. Une périphrase
+    // n'est pas une entité : elle ne peut ni se relier à une fiche, ni s'afficher dans un graphe.
+    if (!/[A-ZÀ-Þ]/.test(r.avec.replace(/^(the|his|her|their|le|la|les|son|sa|ses)\s+/i, ''))) {
+      suspects.push(`« ${r.avec} » n'est pas un nom propre`); continue;
+    }
     if (!r.preuve || norm(r.preuve) === 'aucune') { suspects.push(`« ${r.avec} » sans preuve`); continue; }
     if (mots.length && !mots.some((w) => norm(r.preuve).includes(w)))
       suspects.push(`la preuve ne nomme pas « ${r.avec} »`);
