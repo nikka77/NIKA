@@ -260,8 +260,14 @@
   verrou optimiste) → review_status approved + ⚡auto ; badges « juge local / juge cloud / ⚡auto »
   dans /ops. Test réel : String Bean Binding Illusion auto-appliquée ; Solar Flare/Spirit Bomb
   bloquées par échec transitoire du juge local (fail-closed ✓, relectures rejouées).
-  RESTE (durcissement) : rejoueur automatique des relectures orphelines dans nuit.sh ; audit hebdo
-  (10 fiches) pour surveiller la dérive ; alarme WhatsApp (L5).
+  - AUDIT HEBDO ARMÉ (26/07 soir) : `scripts/audit-hebdo.sh` + LaunchAgent dimanche 9 h —
+    10 fiches récentes (⚡auto d'abord) re-vérifiées sur source par `claude -p` (abonnement),
+    outils restreints au seul outillage d'audit, « faux » annulé en base automatiquement,
+    votes en écriture DIRECTE Supabase (aucune dépendance au serveur de dev), garde OAuth
+    explicite si session expirée. Prompt versionné : scripts/audit-hebdo-prompt.md.
+    ⚠ BLOQUANT : Dan doit lancer `claude` une fois dans un terminal (OAuth expiré).
+  RESTE (durcissement) : rejoueur automatique des relectures orphelines dans nuit.sh ;
+  alarme WhatsApp (L5).
   Plan d'origine : trois paliers selon le risque —
   auto (fiches descriptives, réversibles), auto + contrôle a posteriori (attributs à preuve forte
   ET ancrage HHEM haut), jamais sans Dan (taxonomie, canon, argent, clients). Prérequis : journal
