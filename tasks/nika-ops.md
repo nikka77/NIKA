@@ -175,10 +175,13 @@
     token 24 h via fenêtre masquée, numéro de Dan vérifié en destinataire (5 max sur un numéro de test).
   - PREMIÈRE ALERTE REÇUE sur le WhatsApp de Dan ✓ — nuit.sh et audit-hebdo.sh basculent
     automatiquement dessus (lib/alerte.mjs détecte les variables).
-  - ⚠ À FAIRE VITE : token PERMANENT (utilisateur système dans Business Manager — le token
-    de démarrage meurt en 24 h) ; template `nika_alerte` (utile en production, le numéro de test
-    accepte le texte libre vers destinataires vérifiés) ; puis le webhook ENTRANT (notes/questions)
-    qui reste le cœur du secrétaire L5.
+  - TOKEN PERMANENT FAIT (27/07) : utilisateur système `nika-ops` (Admin, portefeuille NIKA),
+    éléments affectés = app NIKA (contrôle total) + compte WhatsApp test (accès total),
+    token sans expiration avec whatsapp_business_messaging + whatsapp_business_management,
+    collé en fenêtre masquée, testé par envoi réel ✓. L'alarme est éternelle.
+  - RESTE : template `nika_alerte` (utile en production seulement — le numéro de test accepte
+    le texte libre vers destinataires vérifiés) ; le webhook ENTRANT (notes/questions), cœur
+    du secrétaire L5 ; à terme, numéro de production (étape 2 Meta + vérification d'entreprise).
 - [ ] **L6 — Agents 5→15** : un agent = un type de tâche + un prompt + un script de remplissage + un
       critère de review. Ordre selon la valeur : à décider avec Dan après L4.
 - [x] **L7 — Worker parallèle + prise cloud** (26/07, demandé par Dan « go tout ») :
