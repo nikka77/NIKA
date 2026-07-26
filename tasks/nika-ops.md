@@ -216,8 +216,13 @@
   - /ops : pilule swap (vert <40 %, orange <75 %, rouge au-delà) + bouton « purger les échecs
     techniques » (les refus de garde restent : eux documentent).
   - Cache Fandom sorti d'iCloud (`~/.cache/nika/fandom`) + 2 `.pathname` restants corrigés.
-  - RESTE (menu validé à faire choisir par Dan) : clé Cerebras (30k TPM gratuits, même gpt-oss-120b,
-    json_schema OK — 2e couloir cloud), `node_modules`/`.next` en .nosync, fenêtre de nuit pg_cron+launchd.
+  - « Go tout » du 26/07 — exécuté :
+    · `node_modules`/`.next` en .nosync ✓ (premier /ops à froid : 15,4 s) ;
+    · routine de nuit ✓ — `scripts/nuit.sh` + LaunchAgent `com.nika.ops.nuit` (2 h 30, lots modestes,
+      production cloud → jugement local → HHEM, logs `~/.cache/nika/nuit-*.log`, pas de pg_cron : tout local) ;
+    · Cerebras ✗ — offre gratuite SUPPRIMÉE (402, solde 0 $, tarif au Mtoken) ; branche native
+      `cerebras/<modele>` prête si Dan crédite un jour ; nuit.sh teste la clé (1 token) avant de router.
+    · 2e couloir cloud réel = Gemini natif, dès que le projet AI Studio passe en plan gratuit (action Dan).
 
 ## Boîte à outils GitHub (moisson du 23/07, à intégrer par lots)
 - **CCR — claude-code-router** (musistudio) : fait tourner LE HARNAIS Claude Code sur n'importe quel

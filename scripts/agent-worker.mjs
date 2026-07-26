@@ -293,6 +293,31 @@ async function callModel(type, payload) {
     });
     if (!res.ok) throw new Error(`Ollama HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
     raw = (await res.json()).message?.content ?? '';
+  } else if (model.startsWith('cerebras/')) {
+    // Cerebras NATIF : absent du catalogue OmniRoute, API compatible OpenAI, json_schema supporté.
+    // Palier gratuit : 30k tokens/min (5× Groq) — le 2e couloir cloud, même gpt-oss-120b.
+    if (!process.env.CEREBRAS_API_KEY) throw new Error('CEREBRAS_API_KEY absent de .env.local');
+    for (let essai = 1; ; essai++) {
+      const res = await fetch('https://api.cerebras.ai/v1/chat/completions', {
+        method: 'POST',
+        signal: AbortSignal.timeout(TIMEOUT_MS),
+        headers: { Authorization: `Bearer ${process.env.CEREBRAS_API_KEY}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: model.slice(9), stream: false, messages,
+          max_tokens: (NUM_PREDICT[type] ?? 800) + 900,
+          response_format: { type: 'json_schema', json_schema: { name: type, strict: true, schema } },
+        }),
+      });
+      if (res.status === 429 && essai < 4) {
+        const attente = Number(res.headers.get('retry-after') ?? 20);
+        console.log(`  ⏳ 429 sur ${model} — pause ${attente + 1} s (essai ${essai})`);
+        await new Promise((r) => setTimeout(r, (attente + 1) * 1000));
+        continue;
+      }
+      if (!res.ok) throw new Error(`Cerebras HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
+      raw = (await res.json()).choices?.[0]?.message?.content ?? '';
+      break;
+    }
   } else if (model.startsWith('gemini/')) {
     // Gemini NATIF (pas OmniRoute) : son adaptateur passe par l'endpoint compatible OpenAI qui
     // refuse les clés nouveau format « AQ.… » (constaté le 26/07). L'endpoint officiel les accepte

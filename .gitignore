@@ -1,8 +1,12 @@
 # deps
 node_modules/
+node_modules
+node_modules.nosync/
 
 # Next.js build
 .next/
+.next
+
 out/
 
 # env
