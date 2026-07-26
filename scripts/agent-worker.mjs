@@ -316,7 +316,8 @@ const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300,
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
 const modelOf = (type, p) => {
-  if (JUGE && type === 'review_local') return JUGE;     // juge dédié (cloud ou local)
+  if (type === 'review_local' && p?.juge_modele) return p.juge_modele;  // double verdict : juge porté par la tâche
+  if (JUGE && type === 'review_local') return JUGE;     // repli : juge dédié (cloud ou local)
   if (CLOUD && type !== 'review_local') return CLOUD;   // production au cloud
   const t = TASK_TYPES[type];
   return typeof t.model === 'function' ? t.model(p) : t.model;
@@ -492,15 +493,56 @@ async function chainReview(row, reviewedId) {
   const page = await fetchFandomProse(p.universe, p.name).catch(() => null);
   if (!page?.text) return;                           // pas de source vérifiable → pas de jugement
 
+  // AUTONOMIE L12 (audit du 26/07 : un juge seul = 86 % de précision, insuffisant) :
+  // chaque production part chez DEUX juges de familles différentes. L'accord des deux
+  // autorise l'application automatique ; tout désaccord reste pour Dan.
+  const juges = [
+    { juge_modele: 'ollama/gemma4:12b', slot: 'auto' },
+    ...(process.env.GEMINI_API_KEY ? [{ juge_modele: 'gemini/gemini-flash-lite-latest', slot: 'auto2' }] : []),
+  ];
   await supabase.rpc('ops_queue_send_batch', {
-    messages: [{
+    messages: juges.map((j) => ({
       type: 'review_local',
       payload: {
         reviewed_id: reviewedId, slug: row.target_slug, name: p.name, universe: p.universe,
-        production, source: page.text.slice(0, 4500),
+        production, source: page.text.slice(0, 4500), ...j,
       },
-    }],
+    })),
   });
+}
+
+/* ── Application automatique (double verdict) ───────────────────── */
+// MIROIR de applyResult (app/api/ops/state/route.ts) — si tu changes une règle là-bas,
+// reporte-la ici. Les remplisseurs ne ciblent que des champs vides → l'annulation reste exacte.
+async function autoAppliquer(rowId) {
+  // Verrou optimiste : un seul gagnant si les deux relectures finissent en même temps.
+  const { data: gagne } = await supabase
+    .from('agent_results')
+    .update({ review_status: 'approved', auto_applique: true, reviewed_at: new Date().toISOString() })
+    .eq('id', rowId).eq('review_status', 'pending')
+    .eq('auto_verdict', 'valide').eq('auto2_verdict', 'valide').eq('status', 'done')
+    .select('*').single();
+  if (!gagne) return false;
+
+  const { data: entry } = await supabase.from('akasha_entries').select('attributes').eq('slug', gagne.target_slug).single();
+  if (!entry) return false;
+  const patch = { ...(entry.attributes ?? {}) };
+  const DESCFR = ['fandom_descfr', 'flavor_akasha', 'fiche_technique', 'fiche_artefact', 'fiche_lieu', 'fiche_lexique'];
+  if (DESCFR.includes(gagne.task_type)) {
+    patch.descFr = gagne.result?.descFr;
+    patch.descFrSource = gagne.model;
+  } else if (gagne.task_type === 'akasha_attrs') {
+    for (const [k, v] of Object.entries(gagne.result ?? {}))
+      if (v && v !== 'inconnu' && !k.endsWith('_preuve')) patch[k] = v;
+  } else if (gagne.task_type === 'akasha_relations') {
+    const rel = gagne.result?.relations ?? [];
+    if (!rel.length) return false;
+    patch.relations = rel.map(({ avec, nature, periode, resume }) => ({ avec, nature, periode, resume }));
+    patch.relationsSource = gagne.model;
+  } else return false;
+  await supabase.from('akasha_entries').update({ attributes: patch }).eq('slug', gagne.target_slug);
+  console.log(`  ⚡ auto-appliquée (double valide) : ${gagne.target_slug}`);
+  return true;
 }
 
 /* ── Boucle principale ──────────────────────────────────────────── */
@@ -524,16 +566,19 @@ async function traiterUn(msg) {
   counts[row.status]++;
 
   if (row.task_type === 'review_local') {
-    // Le verdict ne crée pas de résultat : il annote la production relue.
+    // Le verdict ne crée pas de résultat : il annote la production relue, dans le slot de SON juge.
+    const slot = row.payload.slot === 'auto2' ? 'auto2' : 'auto';
     await supabase
       .from('agent_results')
       .update({
-        auto_verdict: row.status === 'done' ? row.result.verdict : null,
-        auto_motif: row.status === 'done' ? `${row.result.motif} — « ${String(row.result.citation).slice(0, 220)} »` : row.error,
-        auto_model: row.model,
-        auto_at: new Date().toISOString(),
+        [slot + '_verdict']: row.status === 'done' ? row.result.verdict : null,
+        [slot + '_motif']: row.status === 'done' ? `${row.result.motif} — « ${String(row.result.citation).slice(0, 220)} »` : row.error,
+        [slot + '_model']: row.model,
+        [slot + '_at']: new Date().toISOString(),
       })
       .eq('id', row.payload.reviewed_id);
+    // Porte d'autonomie : les DEUX juges disent « valide » → application sans Dan, marquée auto.
+    if (row.status === 'done' && row.result.verdict === 'valide') await autoAppliquer(row.payload.reviewed_id);
   } else {
     const { data: ins, error: insErr } = await supabase.from('agent_results').insert(row).select('id').single();
     if (insErr) { console.error('agent_results:', insErr.message); return; }

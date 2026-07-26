@@ -22,6 +22,10 @@ type Result = {
   auto_motif: string | null;
   auto_model: string | null;
   auto_score: number | null;   // ancrage factuel HHEM (0 = non étayé, 1 = étayé)
+  auto2_verdict: string | null;  // 2e juge (cloud, autre famille) — double verdict = autonomie
+  auto2_motif: string | null;
+  auto2_model: string | null;
+  auto_applique: boolean;        // appliquée SANS Dan (double valide) — journalisée, annulable
 };
 type State = {
   queue: { queue_length: number; total_messages: number };
@@ -298,8 +302,25 @@ function Card({ r, busy, compact, onReview }: {
             background: `${VERDICT[r.auto_verdict]?.c ?? '#888'}12`,
             borderRadius: 5, padding: '2px 7px',
           }}>
-            relecture IA : {VERDICT[r.auto_verdict]?.l ?? r.auto_verdict}
+            juge local : {VERDICT[r.auto_verdict]?.l ?? r.auto_verdict}
           </span>
+          {r.auto2_verdict && (
+            <span style={{
+              marginLeft: 6, fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700,
+              color: VERDICT[r.auto2_verdict]?.c ?? 'var(--td3)',
+              border: `1px solid ${VERDICT[r.auto2_verdict]?.c ?? 'var(--bd2)'}55`,
+              background: `${VERDICT[r.auto2_verdict]?.c ?? '#888'}12`,
+              borderRadius: 5, padding: '2px 7px',
+            }}>
+              juge cloud : {VERDICT[r.auto2_verdict]?.l ?? r.auto2_verdict}
+            </span>
+          )}
+          {r.auto_applique && (
+            <span style={{
+              marginLeft: 6, fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: CY,
+              border: `1px solid ${CY}55`, background: `${CY}12`, borderRadius: 5, padding: '2px 7px',
+            }}>⚡ auto</span>
+          )}
           {!compact && r.auto_motif && (
             <p style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', margin: '4px 0 0', lineHeight: 1.4 }}>
               {r.auto_motif.slice(0, 260)}

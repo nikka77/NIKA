@@ -253,7 +253,16 @@
   Branchée dans flotte.sh et nuit.sh (repli automatique sur gemma4 local si la clé disparaît).
   Prises réelles du juge Gemini que le juge local avait ratées : « Joseph guidant Jotaro » non étayé,
   Erina mal attribuée, décès de Nico Olvia absent de la source.
-- [ ] **L12 — Autonomie graduée (après le verdict de l'audit)** : trois paliers selon le risque —
+- [x] **L12 — AUTONOMIE À DOUBLE VERDICT (26/07 soir, « go » Dan)** — construit et testé :
+  colonnes auto2_* + auto_applique (supabase/nika_ops_l12.sql, appliqué via dashboard) ; chainReview
+  envoie UNE relecture PAR JUGE (gemma4 local → slot auto, Gemini cloud → slot auto2, portée par
+  payload.juge_modele) ; double « valide » + done → autoAppliquer() (miroir worker de applyResult,
+  verrou optimiste) → review_status approved + ⚡auto ; badges « juge local / juge cloud / ⚡auto »
+  dans /ops. Test réel : String Bean Binding Illusion auto-appliquée ; Solar Flare/Spirit Bomb
+  bloquées par échec transitoire du juge local (fail-closed ✓, relectures rejouées).
+  RESTE (durcissement) : rejoueur automatique des relectures orphelines dans nuit.sh ; audit hebdo
+  (10 fiches) pour surveiller la dérive ; alarme WhatsApp (L5).
+  Plan d'origine : trois paliers selon le risque —
   auto (fiches descriptives, réversibles), auto + contrôle a posteriori (attributs à preuve forte
   ET ancrage HHEM haut), jamais sans Dan (taxonomie, canon, argent, clients). Prérequis : journal
   d'application + annulation par lot (l'annulation unitaire existe depuis L11), alarme d'échec

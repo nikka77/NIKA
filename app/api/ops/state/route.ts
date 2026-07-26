@@ -24,7 +24,7 @@ export async function GET() {
     supabase
       .from('agent_results')
       .select(
-        'id, task_type, target_slug, model, payload, result, status, review_status, error, created_at, auto_verdict, auto_motif, auto_model, auto_score',
+        'id, task_type, target_slug, model, payload, result, status, review_status, error, created_at, auto_verdict, auto_motif, auto_model, auto_score, auto2_verdict, auto2_motif, auto2_model, auto_applique',
       )
       .order('id', { ascending: false })
       .limit(120),
