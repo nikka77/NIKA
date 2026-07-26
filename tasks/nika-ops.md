@@ -168,8 +168,17 @@
 - [ ] **L4 — Orchestrateur + Reviewer** : prompt orchestrateur (objectif → tâches typées dans la file) ;
       prompt reviewer (lot de résultats → validé/corrigé/rejeté + rapport) ; déclenchement manuel depuis /ops
       d'abord, routine du soir ensuite si validé.
-- [ ] **L5 — WhatsApp** : app Meta dev + numéro test (action DAN) ; webhook `app/api/whatsapp/route.ts`
-      (vérif token, écrit dans la file) ; worker : réponse notes/questions via API Cloud ; escalade → tâche orchestrateur.
+- [~] **L5 — WhatsApp** — CANAL SORTANT EN SERVICE (27/07, ~1 h du matin, piloté dans Chrome) :
+  - App Meta « NIKA » (id 1800443491060769) créée sous un portefeuille business « NIKA » neuf ;
+    compte développeur créé au passage (mur anti-fraude « appareil inhabituel » levé par Dan).
+  - Numéro de test +1 555 178-2241, Phone ID + WABA ID dans .env.local (non secrets),
+    token 24 h via fenêtre masquée, numéro de Dan vérifié en destinataire (5 max sur un numéro de test).
+  - PREMIÈRE ALERTE REÇUE sur le WhatsApp de Dan ✓ — nuit.sh et audit-hebdo.sh basculent
+    automatiquement dessus (lib/alerte.mjs détecte les variables).
+  - ⚠ À FAIRE VITE : token PERMANENT (utilisateur système dans Business Manager — le token
+    de démarrage meurt en 24 h) ; template `nika_alerte` (utile en production, le numéro de test
+    accepte le texte libre vers destinataires vérifiés) ; puis le webhook ENTRANT (notes/questions)
+    qui reste le cœur du secrétaire L5.
 - [ ] **L6 — Agents 5→15** : un agent = un type de tâche + un prompt + un script de remplissage + un
       critère de review. Ordre selon la valeur : à décider avec Dan après L4.
 - [x] **L7 — Worker parallèle + prise cloud** (26/07, demandé par Dan « go tout ») :

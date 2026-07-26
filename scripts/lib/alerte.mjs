@@ -10,17 +10,30 @@ export async function envoyerAlerte(texte) {
   const canaux = [];
 
   if (process.env.WHATSAPP_TOKEN && process.env.WHATSAPP_PHONE_ID && process.env.WHATSAPP_TO) {
+    // Hors fenêtre de 24 h, Meta n'accepte que les TEMPLATES pour un message à l'initiative du
+    // système (erreur 131047 sinon) — or nos alarmes partent à 2 h 30 du matin. Stratégie :
+    // template « nika_alerte » (corps = {{1}}) si déclaré, texte brut en second essai sinon.
+    const appel = (body) => fetch(`https://graph.facebook.com/v21.0/${process.env.WHATSAPP_PHONE_ID}/messages`, {
+      method: 'POST',
+      signal: AbortSignal.timeout(15_000),
+      headers: { Authorization: `Bearer ${process.env.WHATSAPP_TOKEN}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messaging_product: 'whatsapp', to: process.env.WHATSAPP_TO, ...body }),
+    });
     try {
-      const r = await fetch(`https://graph.facebook.com/v21.0/${process.env.WHATSAPP_PHONE_ID}/messages`, {
-        method: 'POST',
-        signal: AbortSignal.timeout(15_000),
-        headers: { Authorization: `Bearer ${process.env.WHATSAPP_TOKEN}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messaging_product: 'whatsapp', to: process.env.WHATSAPP_TO,
-          type: 'text', text: { body: texte },
-        }),
-      });
-      canaux.push(r.ok ? 'whatsapp-meta' : `whatsapp-meta HTTP ${r.status}`);
+      let r;
+      if (process.env.WHATSAPP_TEMPLATE) {
+        r = await appel({
+          type: 'template',
+          template: {
+            name: process.env.WHATSAPP_TEMPLATE,
+            language: { code: process.env.WHATSAPP_TEMPLATE_LANG ?? 'fr' },
+            components: [{ type: 'body', parameters: [{ type: 'text', text: texte.slice(0, 900) }] }],
+          },
+        });
+      } else {
+        r = await appel({ type: 'text', text: { body: texte } });
+      }
+      canaux.push(r.ok ? 'whatsapp-meta' : `whatsapp-meta HTTP ${r.status}: ${JSON.stringify((await r.json())?.error?.message ?? '').slice(0, 80)}`);
     } catch (e) { canaux.push('whatsapp-meta erreur: ' + String(e).slice(0, 60)); }
   }
 
