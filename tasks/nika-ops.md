@@ -171,6 +171,22 @@
       (vérif token, écrit dans la file) ; worker : réponse notes/questions via API Cloud ; escalade → tâche orchestrateur.
 - [ ] **L6 — Agents 5→15** : un agent = un type de tâche + un prompt + un script de remplissage + un
       critère de review. Ordre selon la valeur : à décider avec Dan après L4.
+- [x] **L7 — Worker parallèle + prise cloud** (26/07, demandé par Dan « go tout ») :
+  - `--conc=N` (défaut 3) : pool borné DANS chaque groupe de modèle — jamais deux modèles chargés
+    en même temps (16 Go). Les groupes s'enchaînent, le gain de regroupement (147 s/bascule) est préservé.
+  - `--cloud=<modele>` : route les tâches de PRODUCTION vers OmniRoute (Gemini/Groq) ; `review_local`
+    reste TOUJOURS sur l'expert local (juge indépendant du producteur). Avec cloud : `--conc=10-20`.
+  - MESURÉ : le parallélisme serveur local est NUL — 3 requêtes gemma4:12b de front = ×0,97
+    (56,1 s séq vs 57,7 s par) ; une seule requête sature le GPU M1 Pro. `OLLAMA_NUM_PARALLEL`
+    remis au défaut (3 slots = +2-3 Go de cache KV pour rien). Le gain local de `--conc` vient du
+    RECOUVREMENT des fetchs Fandom/Supabase pendant la génération ; le gain ×10-20 viendra du cloud.
+- [ ] **L8 — Clé cloud gratuite (action DAN)** : créer une clé Gemini (aistudio.google.com/apikey) ou
+      Groq (console.groq.com/keys) puis, dans un terminal (la clé ne passe jamais par Claude ni par un fichier du dépôt) :
+      `omniroute setup --add-provider --provider groq --api-key <COLLER_LA_CLÉ> --test-provider`
+      (ou `--provider google` pour Gemini). Vérifier : `omniroute providers list` → 2 connexions actives.
+      Ensuite tester sur 6 fiches : `node --env-file=.env.local scripts/agent-worker.mjs --cloud=<modele> --conc=10`,
+      comparer la qualité au local AVANT de router en masse. Jamais de données privées NIKA au cloud
+      (AKASHA = wikis publics, OK ; FOOD/clients/avis = local uniquement).
 
 ## Boîte à outils GitHub (moisson du 23/07, à intégrer par lots)
 - **CCR — claude-code-router** (musistudio) : fait tourner LE HARNAIS Claude Code sur n'importe quel

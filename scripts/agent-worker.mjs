@@ -16,6 +16,13 @@ const VT = 600; // fenêtre de visibilité pgmq (s) — assez large pour un lot 
 // Un changement de modèle coûte ~147 s (mesuré le 26/07 sur 38 bascules) : on réclame donc
 // plusieurs tâches d'un coup et on les REGROUPE PAR MODÈLE avant de les traiter.
 const LOT = Number(process.argv.find((a) => a.startsWith('--lot='))?.split('=')[1] ?? 12);
+// Tâches menées de front. Local : 2-3 (la mémoire du Mac borne le cache KV des slots).
+// Endpoint cloud : 10-20 sans rien changer d'autre.
+const CONC = Number(process.argv.find((a) => a.startsWith('--conc='))?.split('=')[1] ?? 3);
+// --cloud=<modele> : route les tâches de PRODUCTION vers ce modèle via OmniRoute (Gemini, Groq…).
+// La relecture (review_local) reste TOUJOURS sur l'expert local : un juge indépendant du producteur.
+// Avec un endpoint cloud, monter --conc=10 à 20 — le serveur distant encaisse, contrairement au Mac.
+const CLOUD = process.argv.find((a) => a.startsWith('--cloud='))?.split('=')[1] ?? null;
 
 /* ── Types de tâches ────────────────────────────────────────────── */
 // Chaque type : modèle, schéma JSON (décodage contraint), garde d'entrée, prompt.
@@ -178,12 +185,16 @@ Puis :
 const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 400 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
-const modelOf = (t, p) => (typeof t.model === 'function' ? t.model(p) : t.model);
+const modelOf = (type, p) => {
+  if (CLOUD && type !== 'review_local') return CLOUD;   // production au cloud, jugement local
+  const t = TASK_TYPES[type];
+  return typeof t.model === 'function' ? t.model(p) : t.model;
+};
 const schemaOf = (t, p) => (typeof t.schema === 'function' ? t.schema(p) : t.schema);
 
 async function callModel(type, payload) {
   const t = TASK_TYPES[type];
-  const model = modelOf(t, payload);
+  const model = modelOf(type, payload);
   const schema = schemaOf(t, payload);
   const messages = [{ role: 'user', content: t.prompt(payload) }];
   let raw;
@@ -207,7 +218,7 @@ async function callModel(type, payload) {
       signal: AbortSignal.timeout(TIMEOUT_MS),
       headers: { Authorization: `Bearer ${OMNI_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model, stream: false, messages, max_tokens: 400,
+        model, stream: false, messages, max_tokens: NUM_PREDICT[type] ?? 800,
         response_format: { type: 'json_schema', json_schema: { name: type, strict: true, schema } },
       }),
     });
@@ -245,12 +256,12 @@ async function processMessage(msg) {
       return {
         ...base,
         status: suspects.length ? 'suspect' : 'done',
-        model: modelOf(t, p),
+        model: modelOf(type, p),
         result: out,
         error: suspects.length ? suspects.join(' · ') : null,
       };
     } catch (e) {
-      if (attempt >= 2) return { ...base, status: 'failed', model: modelOf(t, p), error: String(e).slice(0, 300) };
+      if (attempt >= 2) return { ...base, status: 'failed', model: modelOf(type, p), error: String(e).slice(0, 300) };
     }
   }
 }
@@ -285,23 +296,22 @@ async function chainReview(row, reviewedId) {
 }
 
 /* ── Boucle principale ──────────────────────────────────────────── */
-const counts = { done: 0, refused: 0, failed: 0, suspect: 0 };
-console.log(`⚙️  worker NIKA OPS — mode ${LOOP ? 'continu' : 'drain'}`);
-for (;;) {
-  const { data: lot, error } = await supabase.rpc('ops_queue_read', { vt: VT, qty: LOT });
-  if (error) { console.error('lecture file:', error.message); process.exit(1); }
-  if (!lot?.length) {
-    if (!LOOP) break;
-    await new Promise((r) => setTimeout(r, 30_000));
-    continue;
-  }
-  // Regroupement par modèle : toutes les tâches d'un même modèle s'enchaînent sans rechargement.
-  const msgs = [...lot].sort((a, b) => {
-    const m = (x) => { const t = TASK_TYPES[x.message?.type]; return t ? String(modelOf(t, x.message.payload ?? {})) : 'zzz'; };
-    return m(a).localeCompare(m(b));
-  });
+// Concurrence : le goulot n'est pas le calcul mais l'ATTENTE (le worker restait inactif
+// pendant que le modèle générait). On traite plusieurs tâches de front — mais uniquement
+// AU SEIN D'UN MÊME MODÈLE : deux modèles chargés en même temps feraient exploser les
+// 16 Go de la machine. En cloud (un endpoint qui encaisse 20 requêtes), monter CONC suffit.
+async function traiterEnParallele(msgs, conc) {
+  let i = 0;
+  const suivant = async () => {
+    while (i < msgs.length) {
+      const msg = msgs[i++];
+      await traiterUn(msg);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(conc, msgs.length) }, suivant));
+}
 
-  for (const msg of msgs) {
+async function traiterUn(msg) {
   const row = await processMessage(msg);
   counts[row.status]++;
 
@@ -318,12 +328,36 @@ for (;;) {
       .eq('id', row.payload.reviewed_id);
   } else {
     const { data: ins, error: insErr } = await supabase.from('agent_results').insert(row).select('id').single();
-    if (insErr) { console.error('agent_results:', insErr.message); process.exit(1); }
-    // Enchaînement : toute production jugeable part aussitôt en relecture locale (coût nul, tri gratuit).
+    if (insErr) { console.error('agent_results:', insErr.message); return; }
+    // Enchaînement : toute production jugeable part aussitôt en relecture locale.
     if (ins?.id && (row.status === 'done' || row.status === 'suspect')) await chainReview(row, ins.id);
   }
   await supabase.rpc('ops_queue_archive', { message_id: msg.msg_id });
   console.log(`  ${row.status === 'done' ? '✓' : row.status === 'refused' ? '◇' : '✗'} [${msg.msg_id}] ${row.target_slug ?? row.task_type} (${row.status})`);
+}
+
+const counts = { done: 0, refused: 0, failed: 0, suspect: 0 };
+console.log(`⚙️  worker NIKA OPS — mode ${LOOP ? 'continu' : 'drain'} · ${CONC} tâche(s) de front`);
+for (;;) {
+  const { data: lot, error } = await supabase.rpc('ops_queue_read', { vt: VT, qty: LOT });
+  if (error) { console.error('lecture file:', error.message); process.exit(1); }
+  if (!lot?.length) {
+    if (!LOOP) break;
+    await new Promise((r) => setTimeout(r, 30_000));
+    continue;
+  }
+
+  // Groupes par modèle : on épuise un modèle avant de passer au suivant (un changement
+  // coûtait 147 s de médiane), et on parallélise à l'intérieur de chaque groupe.
+  const groupes = new Map();
+  for (const msg of lot) {
+    const t = TASK_TYPES[msg.message?.type];
+    const cle = t ? String(modelOf(msg.message.type, msg.message.payload ?? {})) : 'inconnu';
+    (groupes.get(cle) ?? groupes.set(cle, []).get(cle)).push(msg);
+  }
+  for (const [modele, msgs] of groupes) {
+    console.log(`  → ${msgs.length} tâche(s) sur ${modele}`);
+    await traiterEnParallele(msgs, CONC);
   }
 }
-console.log(`fini — done: ${counts.done} · refused: ${counts.refused} · failed: ${counts.failed}`);
+console.log(`fini — done: ${counts.done} · suspect: ${counts.suspect} · refused: ${counts.refused} · failed: ${counts.failed}`);
