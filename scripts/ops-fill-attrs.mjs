@@ -25,7 +25,7 @@ const { data: pendantes } = await supabase
   .from('agent_results')
   .select('target_slug')
   .eq('task_type', 'akasha_attrs')
-  .in('status', ['done', 'suspect', 'refused']);
+  .eq('review_status', 'pending');
 const dejaEnReview = new Set((pendantes ?? []).map((r) => r.target_slug));
 
 // une fiche est candidate si AU MOINS un axe de son univers est vide

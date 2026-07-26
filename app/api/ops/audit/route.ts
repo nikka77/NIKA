@@ -78,13 +78,16 @@ export async function POST(req: Request) {
   const supabase = admin();
   if (!supabase) return NextResponse.json({ error: 'supabase absent' }, { status: 500 });
 
-  const { result_id, verdict_dan } = (await req.json()) as { result_id: number; verdict_dan: Vote['verdict_dan'] };
+  // `juge` : qui a tranché — 'dan' (défaut) ou 'claude' (audit délégué du 26/07). La provenance
+  // reste dans les données : un accord mesuré doit dire CONTRE QUOI il a été mesuré.
+  const { result_id, verdict_dan, juge, motif } = (await req.json()) as
+    { result_id: number; verdict_dan: Vote['verdict_dan']; juge?: string; motif?: string };
   const { data: row } = await supabase.from('agent_results').select('*').eq('id', result_id).single();
   if (!row) return NextResponse.json({ error: 'introuvable' }, { status: 404 });
 
   await supabase.from('ops_notes').insert({
     source: 'audit',
-    content: JSON.stringify({ result_id, verdict_dan, verdict_ia: row.auto_verdict, task_type: row.task_type }),
+    content: JSON.stringify({ result_id, verdict_dan, verdict_ia: row.auto_verdict, task_type: row.task_type, juge: juge ?? 'dan', motif }),
   });
 
   // Dan dit « faux » sur une fiche DÉJÀ appliquée → on retire ce que l'agent avait ajouté.

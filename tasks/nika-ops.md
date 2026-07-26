@@ -234,7 +234,14 @@
   worker, remplisseur générique `ops-fill-fiches.mjs --role=…`, cartes /ops, application descFr.
   Pilotes 8 fiches via Groq : 7 produits (qualité canon), 1 refus de garde légitime.
 
-- [x] **L11 — Calibration du juge (26/07)** : `/ops/audit` — audit à l'aveugle, verdict IA retiré
+- [x] **L11 — Calibration du juge (26/07) — AUDIT FAIT (délégué à Claude, provenance juge=claude)** :
+  55 fiches « valide » relues sur source : 42 exactes (76 %), 5 détails, 8 fausses annulées en base.
+  Pipeline moderne (hors Reformulateur déclassé) : 86 % exact — SOUS la barre d'autonomie (90 %).
+  Signature des 4 erreurs de fond : mot-clé présent mais MAL ATTRIBUÉ (Minato/Kakashi, Ichigo/parenthèse,
+  Law/passé, Carrot/alliée). Réparations : Ichigo race=Humain réappliqué, Minato→Kage, Law→Heart,
+  Carrot→inconnu (retraités, justes). Fillers corrigés (exclusion sur review_status pending, plus à vie).
+  Décision L12 : l'auto-application exigera le DOUBLE verdict (local + cloud autre famille) + audit hebdo.
+  Détail original : `/ops/audit` — audit à l'aveugle, verdict IA retiré
   côté API, taux d'accord + kappa de Cohen, annulation en base si Dan invalide une fiche appliquée.
   Stocké dans `ops_notes` (source='audit') : aucun DDL à exécuter. 54 fiches en réserve.
   Déclencheur : le « 51/51 » était circulaire (bouton « appliquer les valides »).
