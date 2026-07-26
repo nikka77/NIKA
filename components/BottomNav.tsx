@@ -12,7 +12,7 @@ import { useHeroNav } from '@/lib/store';
 const PAGES = [DOMAINS.slice(0, 5), DOMAINS.slice(5)]; // [food…rent], [serv…news]
 
 export default function BottomNav() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '';
   const router = useRouter();
   const heroActive = useHeroNav(s => s.activeDomain);
   const requestDomain = useHeroNav(s => s.requestDomain);

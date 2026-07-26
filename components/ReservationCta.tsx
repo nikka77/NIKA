@@ -31,7 +31,7 @@ function resolve(domaine: Domaine, sp: URLSearchParams): Sel | null {
 
 function Inner({ domaine }: { domaine: Domaine }) {
   const sp = useSearchParams();
-  const sel = resolve(domaine, sp);
+  const sel = resolve(domaine, sp ?? new URLSearchParams());
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');

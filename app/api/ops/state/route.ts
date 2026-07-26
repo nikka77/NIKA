@@ -161,7 +161,8 @@ async function applyResult(supabase: Admin, id: number): Promise<boolean> {
   if (!entry) return false;
 
   const patch: Record<string, unknown> = { ...(entry.attributes ?? {}) };
-  if (row.task_type === 'fandom_descfr' || row.task_type === 'flavor_akasha') {
+  const ROLES_DESCFR = ['fandom_descfr', 'flavor_akasha', 'fiche_technique', 'fiche_artefact', 'fiche_lieu', 'fiche_lexique'];
+  if (ROLES_DESCFR.includes(row.task_type)) {
     patch.descFr = row.result?.descFr;
     patch.descFrSource = row.model;
   } else if (row.task_type === 'akasha_attrs') {

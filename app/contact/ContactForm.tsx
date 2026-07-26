@@ -11,8 +11,8 @@ const inputStyle: React.CSSProperties = {
 
 function ContactInner() {
   const searchParams = useSearchParams();
-  const logement = searchParams.get('logement') || '';
-  const lieu = searchParams.get('lieu') || '';
+  const logement = searchParams?.get('logement') || '';
+  const lieu = searchParams?.get('lieu') || '';
   const isStayRequest = !!(logement && lieu);
 
   const defaultMessage = isStayRequest

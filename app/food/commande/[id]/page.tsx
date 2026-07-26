@@ -13,7 +13,7 @@ function CommandeInner() {
   const router = useRouter();
   const user = useAuthStore(s => s.user);
   const listingId = typeof window !== 'undefined' ? window.location.pathname.split('/').pop() : '';
-  const proId = params.get('pro') || '';
+  const proId = params?.get('pro') || '';
 
   const [item, setItem] = useState<Item | null>(null);
   const [pro, setPro] = useState<ProInfo | null>(null);

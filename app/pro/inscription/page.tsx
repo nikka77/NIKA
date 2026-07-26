@@ -10,7 +10,7 @@ type Step = 1 | 2 | 3 | 4;
 
 function ProInscriptionForm() {
   const searchParams = useSearchParams();
-  const initialDomain = searchParams.get('domain') || searchParams.get('type') || 'auto';
+  const initialDomain = searchParams?.get('domain') || searchParams?.get('type') || 'auto';
   const [step, setStep] = useState<Step>(1);
   const [domain, setDomain] = useState(initialDomain);
   const [form, setForm] = useState({ business_name: '', description: '', phone: '', address: '', google_place_id: '' });

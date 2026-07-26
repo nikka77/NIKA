@@ -9,6 +9,7 @@ import { createClient } from '@supabase/supabase-js';
 import { z } from 'zod';
 import { fetchFandomProse } from './lib/fandom.mjs';
 import { expertFor, axesSchema, AXES, checkPreuves, splitPreuves } from './lib/akasha-axes.mjs';
+import { ROLES, angleFor } from './lib/akasha-roles.mjs';
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 const OMNI_URL = process.env.OMNIROUTE_URL ?? 'http://localhost:20128/v1';
@@ -259,11 +260,49 @@ function checkRelations(out, p) {
   return suspects;
 }
 
+// Les RÔLES par univers (Archiviste des techniques, Conservateur des artefacts, Cartographe,
+// Lexicographe) : une seule fabrique — le rôle change l'ANGLE du prompt, jamais le modèle
+// (nouvel expert = bascule GPU de 147 s ; nouvel angle = gratuit). Voir scripts/lib/akasha-roles.mjs.
+function ficheRole(roleKey) {
+  return {
+    model: (p) => expertFor(p.universe),
+    zod: z.object({ descFr: z.string().min(60) }),
+    schema: {
+      type: 'object',
+      properties: { descFr: { type: 'string' } },
+      required: ['descFr'],
+      additionalProperties: false,
+    },
+    fetch: async (p) => {
+      const page = await fetchFandomProse(p.universe, p.name);
+      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity } : p;
+    },
+    guard: (p) => TASK_TYPES.fandom_descfr.guard(p),
+    prompt: (p) => `Tu rédiges les fiches françaises de l'encyclopédie AKASHA (univers d'animes/mangas).
+Voici l'article du wiki canon (en anglais, brut). Rédige "descFr" : 2 à 4 phrases en français,
+ton encyclopédique sobre, présent de narration.
+
+Le sujet est ${angleFor(roleKey, p.universe)}.
+
+RÈGLES :
+- N'utilise QUE des faits présents dans l'article ci-dessous. Aucune invention, aucun anglicisme.
+- Si l'article ne donne pas une information (rang, créateur…), n'en parle simplement pas.
+- Ne liste pas tout : retiens ce qui distingue ce sujet dans son univers.
+
+FICHE : ${p.name} — univers ${p.universe}
+${p.summary ? `RÉSUMÉ DÉJÀ CONNU (à compléter, pas à répéter) : ${p.summary}` : ''}
+
+ARTICLE DU WIKI (${p.fandomTitle}) :
+${p.fandom}`,
+  };
+}
+for (const roleKey of Object.keys(ROLES)) TASK_TYPES[roleKey] = ficheRole(roleKey);
+
 /* ── Appel modèle (JSON contraint par schéma) ───────────────────── */
 // Modèles locaux : Ollama NATIF (param `format` = décodage contraint fiable).
 // OmniRoute fige indéfiniment sur `response_format` (constaté le 25/07) → réservé aux futurs modèles cloud.
 // Budget de génération par type : inutile d'autoriser 1200 tokens à une tâche qui en produit 150.
-const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 400, akasha_relations: 900 };
+const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 400, akasha_relations: 900, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
 const modelOf = (type, p) => {

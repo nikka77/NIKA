@@ -224,6 +224,16 @@
       `cerebras/<modele>` prête si Dan crédite un jour ; nuit.sh teste la clé (1 token) avant de router.
     · 2e couloir cloud réel = Gemini natif, dès que le projet AI Studio passe en plan gratuit (action Dan).
 
+- [x] **L10 — Rôles adaptés par univers (26/07, « go tout » Dan)** : couche MODÈLE (8 experts) ×
+  couche RÔLE (types de tâche) — un rôle nouveau = un angle de prompt, jamais un nouveau modèle
+  (bascule GPU 147 s). 4 rôles ajoutés d'après l'INVENTAIRE réel de la base (606 techniques,
+  54 artefacts, 12 lieux, 29 statuts — pas d'entrées organisation/arc → pas de rôle fantôme) :
+  Archiviste des techniques, Conservateur des artefacts, Cartographe, Lexicographe (qui EST
+  l'expert clans/orgs : « Clan Uchiha » et « Gotei 13 » vivent sous le type status).
+  `scripts/lib/akasha-roles.mjs` (matrice rôle × univers × angle), fabrique ficheRole() dans le
+  worker, remplisseur générique `ops-fill-fiches.mjs --role=…`, cartes /ops, application descFr.
+  Pilotes 8 fiches via Groq : 7 produits (qualité canon), 1 refus de garde légitime.
+
 ## Boîte à outils GitHub (moisson du 23/07, à intégrer par lots)
 - **CCR — claude-code-router** (musistudio) : fait tourner LE HARNAIS Claude Code sur n'importe quel
   modèle (config → OmniRoute/Ollama). Usage 1 : « Claude Code de secours » quand les tokens Max sont

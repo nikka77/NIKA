@@ -27,7 +27,7 @@ const QUICK_REPLIES: Record<string, string[]> = {
 function NikoChatInner() {
   const searchParams = useSearchParams();
   const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState(searchParams.get('q') || '');
+  const [input, setInput] = useState(searchParams?.get('q') || '');
   const [loading, setLoading] = useState(false);
   const [started, setStarted] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);

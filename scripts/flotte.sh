@@ -11,7 +11,7 @@ MODELE=${CLOUD_MODEL:-groq/openai/gpt-oss-120b}
 echo "⚓ flotte NIKA OPS — production : ${MODELE} · jugement : local (Ctrl-C pour tout arrêter)"
 
 taskpolicy -c background node --env-file=.env.local scripts/agent-worker.mjs --loop \
-  --cloud="$MODELE" --types=akasha_attrs,akasha_relations,fandom_descfr,flavor_akasha --conc=3 &
+  --cloud="$MODELE" --types=akasha_attrs,akasha_relations,fandom_descfr,flavor_akasha,fiche_technique,fiche_artefact,fiche_lieu,fiche_lexique --conc=3 &
 PROD=$!
 
 taskpolicy -c background node --env-file=.env.local scripts/agent-worker.mjs --loop \

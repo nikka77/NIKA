@@ -30,7 +30,7 @@ node --env-file=.env.local scripts/ops-fill-fandom.mjs --limit=30 2>/dev/null ||
 
 # 1) Production (cloud) — rend les tâches de jugement à la file en sortant.
 taskpolicy -c background node --env-file=.env.local scripts/agent-worker.mjs \
-  --cloud="$MODELE" --types=akasha_attrs,akasha_relations,fandom_descfr,flavor_akasha --conc=3
+  --cloud="$MODELE" --types=akasha_attrs,akasha_relations,fandom_descfr,flavor_akasha,fiche_technique,fiche_artefact,fiche_lieu,fiche_lexique --conc=3
 
 # 2) Jugement (local) — puis déchargement auto du modèle (RAM rendue).
 taskpolicy -c background node --env-file=.env.local scripts/agent-worker.mjs \

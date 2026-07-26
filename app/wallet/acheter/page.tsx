@@ -12,7 +12,7 @@ const PACKS = [
 
 function AcheterForm() {
   const searchParams = useSearchParams();
-  const initialPack = parseInt(searchParams.get('pack') || '500');
+  const initialPack = parseInt(searchParams?.get('pack') || '500');
   const [selected, setSelected] = useState(initialPack);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState('');
