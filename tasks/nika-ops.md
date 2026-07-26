@@ -239,6 +239,13 @@
   Stocké dans `ops_notes` (source='audit') : aucun DDL à exécuter. 54 fiches en réserve.
   Déclencheur : le « 51/51 » était circulaire (bouton « appliquer les valides »).
   Cible : accord ≥ 90 % (plafond humain-humain, littérature JUDGe 2026) et kappa ≥ 0,6.
+- [x] **Gemini opérationnel (26/07 soir)** : clé sur « Default Gemini Project » (SANS facturation —
+  un projet facturé ne redevient jamais gratuit). Modèle `gemini-flash-lite-latest` (`gemini-2.5-flash`
+  n'est plus servi aux nouveaux comptes ; `gemini-flash-latest` plafonne à 5 req/min).
+  Option `--juge=<modele>` : producteur Groq / juge Gemini, deux familles indépendantes.
+  Branchée dans flotte.sh et nuit.sh (repli automatique sur gemma4 local si la clé disparaît).
+  Prises réelles du juge Gemini que le juge local avait ratées : « Joseph guidant Jotaro » non étayé,
+  Erina mal attribuée, décès de Nico Olvia absent de la source.
 - [ ] **L12 — Autonomie graduée (après le verdict de l'audit)** : trois paliers selon le risque —
   auto (fiches descriptives, réversibles), auto + contrôle a posteriori (attributs à preuve forte
   ET ancrage HHEM haut), jamais sans Dan (taxonomie, canon, argent, clients). Prérequis : journal

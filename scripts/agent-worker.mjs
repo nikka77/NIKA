@@ -26,6 +26,10 @@ const CONC = Number(process.argv.find((a) => a.startsWith('--conc='))?.split('='
 // La relecture (review_local) reste TOUJOURS sur l'expert local : un juge indépendant du producteur.
 // Avec un endpoint cloud, monter --conc=10 à 20 — le serveur distant encaisse, contrairement au Mac.
 const CLOUD = process.argv.find((a) => a.startsWith('--cloud='))?.split('=')[1] ?? null;
+// --juge=<modele> : envoie la RELECTURE sur un modèle distinct du producteur. Le juge doit rester
+// d'une autre famille que le producteur (angles morts complémentaires, duel du 25/07) — et au cloud
+// il cesse d'être le goulot (15 h de GPU local mesurées pour juger le chantier complet).
+const JUGE = process.argv.find((a) => a.startsWith('--juge='))?.split('=')[1] ?? null;
 // --types=a,b : COULOIR — ce worker ne traite que ces types ; les messages étrangers retournent
 // en file aussitôt pour le worker du couloir voisin (ex : production au cloud, jugement au local).
 const TYPES = process.argv.find((a) => a.startsWith('--types='))?.split('=')[1]?.split(',').filter(Boolean) ?? null;
@@ -312,7 +316,8 @@ const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300,
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
 const modelOf = (type, p) => {
-  if (CLOUD && type !== 'review_local') return CLOUD;   // production au cloud, jugement local
+  if (JUGE && type === 'review_local') return JUGE;     // juge dédié (cloud ou local)
+  if (CLOUD && type !== 'review_local') return CLOUD;   // production au cloud
   const t = TASK_TYPES[type];
   return typeof t.model === 'function' ? t.model(p) : t.model;
 };
@@ -386,25 +391,37 @@ async function callModel(type, payload) {
     // ET offre responseSchema — le décodage contraint natif, comme `format` chez Ollama.
     if (!process.env.GEMINI_API_KEY) throw new Error('GEMINI_API_KEY absent de .env.local');
     const { additionalProperties, ...gSchema } = schema;   // champ inconnu de l'API Gemini
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${model.slice(7)}:generateContent`,
-      {
-        method: 'POST',
-        signal: AbortSignal.timeout(TIMEOUT_MS),
-        headers: { 'x-goog-api-key': process.env.GEMINI_API_KEY, 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: t.prompt(payload) }] }],
-          generationConfig: {
-            temperature: 0,
-            maxOutputTokens: (NUM_PREDICT[type] ?? 800) + 900,   // marge de raisonnement, cf. chemin OmniRoute
-            responseMimeType: 'application/json',
-            responseSchema: gSchema,
-          },
-        }),
-      },
-    );
-    if (!res.ok) throw new Error(`Gemini HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-    raw = (await res.json()).candidates?.[0]?.content?.parts?.[0]?.text ?? '';
+    // Palier gratuit très serré (5 req/min sur gemini-flash-latest, mesuré le 26/07) : sans backoff,
+    // un lot de 9 perd 5 tâches d'un coup. Gemini annonce son délai dans error.details[].retryDelay.
+    for (let essai = 1; ; essai++) {
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model.slice(7)}:generateContent`,
+        {
+          method: 'POST',
+          signal: AbortSignal.timeout(TIMEOUT_MS),
+          headers: { 'x-goog-api-key': process.env.GEMINI_API_KEY, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: t.prompt(payload) }] }],
+            generationConfig: {
+              temperature: 0,
+              maxOutputTokens: (NUM_PREDICT[type] ?? 800) + 900,
+              responseMimeType: 'application/json',
+              responseSchema: gSchema,
+            },
+          }),
+        },
+      );
+      if (res.status === 429 && essai < 5) {
+        const corps = await res.text();
+        const attente = Number(corps.match(/"retryDelay":\s*"(\d+)s"/)?.[1] ?? 12);
+        console.log(`  ⏳ 429 (gemini) — pause ${attente + 1} s (essai ${essai})`);
+        await new Promise((r) => setTimeout(r, (attente + 1) * 1000));
+        continue;
+      }
+      if (!res.ok) throw new Error(`Gemini HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
+      raw = (await res.json()).candidates?.[0]?.content?.parts?.[0]?.text ?? '';
+      break;
+    }
   } else {
     // Tout le reste passe par OmniRoute (proxy local) — chemin de repli, plus le chemin nominal.
     raw = await appelOpenAICompat({
