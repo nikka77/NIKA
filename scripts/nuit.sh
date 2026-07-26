@@ -37,11 +37,17 @@ node --env-file=.env.local scripts/ops-fill-fandom.mjs --limit=30 2>/dev/null ||
 taskpolicy -c background node --env-file=.env.local scripts/agent-worker.mjs \
   --cloud="$MODELE" --types=akasha_attrs,akasha_relations,fandom_descfr,flavor_akasha,fiche_technique,fiche_artefact,fiche_lieu,fiche_lexique --conc=3
 
+# 1bis) Relectures orphelines de la veille : un juge qui a raté techniquement se rejoue.
+node --env-file=.env.local scripts/ops-rejoue-relectures.mjs
+
 # 2) Jugement (local) — puis déchargement auto du modèle (RAM rendue).
 taskpolicy -c background node --env-file=.env.local scripts/agent-worker.mjs \
   --juge="$JUGE" --types=review_local --conc=2
 
 # 3) Ancrage HHEM (CPU uniquement, le GPU dort déjà).
 taskpolicy -c background node --env-file=.env.local scripts/ops-score-ancrage.mjs 2>/dev/null || true
+
+# 4) Bilan + sentinelles → alerte (WhatsApp si clé, sinon notification macOS).
+node --env-file=.env.local scripts/ops-bilan-nuit.mjs --heures=8
 
 echo "═══ fin de nuit — $(date '+%H:%M') ═══"

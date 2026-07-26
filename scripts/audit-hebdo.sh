@@ -12,6 +12,7 @@ echo "═══ audit hebdo — $(date '+%Y-%m-%d %H:%M') ═══"
 if ! claude -p "OK" --output-format text < /dev/null > /dev/null 2>&1; then
   echo "⚠ session claude expirée — lance \`claude\` dans un terminal et connecte-toi, puis relance :"
   echo "  ./scripts/audit-hebdo.sh"
+  node --env-file=.env.local scripts/ops-alerte.mjs "⚠ NIKA OPS : audit hebdo SAUTÉ — session claude expirée. Lance claude dans un terminal, connecte-toi, puis ./scripts/audit-hebdo.sh"
   exit 0
 fi
 
@@ -20,5 +21,9 @@ claude -p "$(cat scripts/audit-hebdo-prompt.md)" \
   --output-format text \
   --allowedTools "Bash(node --env-file=.env.local scripts/ops-audit-batch.mjs:*)" \
   < /dev/null
+
+# Résumé de l'audit → alerte (les 3 lignes AUDIT_ écrites par Claude en fin de course).
+RESUME=$(grep -h "^AUDIT_" "$LOG" | tail -3 | tr '\n' ' ')
+node --env-file=.env.local scripts/ops-alerte.mjs "◎ NIKA OPS audit hebdo : ${RESUME:-terminé sans résumé — voir $LOG}"
 
 echo "═══ fin d'audit — $(date '+%H:%M') ═══"

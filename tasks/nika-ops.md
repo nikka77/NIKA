@@ -266,8 +266,19 @@
     votes en écriture DIRECTE Supabase (aucune dépendance au serveur de dev), garde OAuth
     explicite si session expirée. Prompt versionné : scripts/audit-hebdo-prompt.md.
     ⚠ BLOQUANT : Dan doit lancer `claude` une fois dans un terminal (OAuth expiré).
-  RESTE (durcissement) : rejoueur automatique des relectures orphelines dans nuit.sh ;
-  alarme WhatsApp (L5).
+  - REJOUEUR + ALARME (27/07, « go » Dan) :
+    · `ops-rejoue-relectures.mjs` — détecte les slots de juge vides ou en erreur technique
+      (> 30 min), rejoue la relecture manquante ; câblé dans nuit.sh AVANT le couloir des juges.
+      Effet bonus : tout l'arriéré d'avant le double verdict reçoit son second avis Gemini →
+      les doubles-valides du backlog s'auto-appliquent, la pile de Dan fond.
+    · `lib/alerte.mjs` + `ops-alerte.mjs` — 3 transports : WhatsApp Meta officiel
+      (WHATSAPP_TOKEN/PHONE_ID/TO), WhatsApp CallMeBot (CALLMEBOT_PHONE/APIKEY),
+      et notification macOS en repli TOUJOURS actif. Jamais de secret dans une alerte.
+    · `ops-bilan-nuit.mjs` — sentinelles : 🛑 zéro production = pipeline bloqué (une nuit
+      silencieuse ≠ une nuit en panne), ⚠ échecs > productions, 🌙 bilan normal ;
+      câblé en fin de nuit.sh. L'audit hebdo alerte aussi (résumé AUDIT_* ou session expirée).
+    · RESTE (action DAN) : activer le canal WhatsApp — CallMeBot (2 min) ou app Meta dev (15 min) ;
+      et la session `claude` CLI toujours expirée (lancer `claude` dans Terminal.app).
   Plan d'origine : trois paliers selon le risque —
   auto (fiches descriptives, réversibles), auto + contrôle a posteriori (attributs à preuve forte
   ET ancrage HHEM haut), jamais sans Dan (taxonomie, canon, argent, clients). Prérequis : journal
