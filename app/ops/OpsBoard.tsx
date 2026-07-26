@@ -3,6 +3,7 @@
 // Colonnes = cycle de vie d'une tâche : en file → à relire → approuvé / rejeté.
 // Chaque carte montre la SOURCE et la PRODUCTION côte à côte : la review se fait ici, pas dans un terminal.
 import { useCallback, useEffect, useState } from 'react';
+import AgentsPanel, { ClaudeConsole, type AgentEtat } from './AgentsPanel';
 
 type Result = {
   id: number;
@@ -15,17 +16,28 @@ type Result = {
   review_status: string;
   error: string | null;
   created_at: string;
+  auto_verdict: string | null;   // verdict du relecteur local
+  auto_motif: string | null;
+  auto_model: string | null;
+  auto_score: number | null;   // ancrage factuel HHEM (0 = non étayé, 1 = étayé)
 };
 type State = {
   queue: { queue_length: number; total_messages: number };
   results: Result[];
-  health: { ollama: boolean; omniroute: boolean };
+  health: { ollama: boolean; omniroute: boolean; modeleActif: string | null };
+  agents: AgentEtat[];
 };
 
 const CY = '#12B8CC';
 const OK = '#22DD88';
 const WARN = '#E0A020';
 const KO = '#E0554A';
+
+const VERDICT: Record<string, { l: string; c: string }> = {
+  valide: { l: 'valide', c: OK },
+  a_corriger: { l: 'à corriger', c: WARN },
+  rejeter: { l: 'à rejeter', c: KO },
+};
 
 const fe = (s: number): React.CSSProperties => ({
   fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900,
@@ -36,9 +48,20 @@ export default function OpsBoard() {
   const [state, setState] = useState<State | null>(null);
   const [busy, setBusy] = useState<number | null>(null);
 
+  const [injoignable, setInjoignable] = useState(false);
+
+  // Le worker peut saturer la machine : l'API devient alors lente ou muette. On l'encaisse
+  // au lieu d'empiler des rejets non gérés (constaté le 25/07 : compilation de 2 h 44 sous
+  // charge, et la page qui relançait un fetch échouant toutes les 8 s).
   const load = useCallback(async () => {
-    const r = await fetch('/api/ops/state', { cache: 'no-store' });
-    if (r.ok) setState(await r.json());
+    try {
+      const r = await fetch('/api/ops/state', { cache: 'no-store', signal: AbortSignal.timeout(20_000) });
+      if (!r.ok) throw new Error(String(r.status));
+      setState(await r.json());
+      setInjoignable(false);
+    } catch {
+      setInjoignable(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -58,6 +81,21 @@ export default function OpsBoard() {
     setBusy(null);
   };
 
+  // Lot : n'applique que ce que le relecteur local a jugé « valide ». Un clic au lieu de N.
+  const [bulk, setBulk] = useState<string | null>(null);
+  const applyAllValid = async () => {
+    setBulk('en cours…');
+    const r = await fetch('/api/ops/state', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'approve_all_valid' }),
+    });
+    const j = await r.json();
+    setBulk(`${j.applied ?? 0} fiche(s) appliquée(s)`);
+    await load();
+    setTimeout(() => setBulk(null), 4000);
+  };
+
   const pending = state?.results.filter((r) => r.review_status === 'pending' && r.status === 'done') ?? [];
   // « suspect » = le contrôle de cohérence valeur↔preuve a tiqué : à relire EN PRIORITÉ, pas à jeter.
   const suspect = state?.results.filter((r) => r.review_status === 'pending' && r.status === 'suspect') ?? [];
@@ -66,6 +104,7 @@ export default function OpsBoard() {
   ) ?? [];
   const approved = state?.results.filter((r) => r.review_status === 'approved') ?? [];
   const rejected = state?.results.filter((r) => r.review_status === 'rejected') ?? [];
+  const nbValides = [...pending, ...suspect].filter((r) => r.auto_verdict === 'valide').length;
 
   return (
     <main style={{ minHeight: '100svh', background: 'linear-gradient(180deg,#04181C 0%,#07252B 40%,var(--bg) 100%)' }}>
@@ -79,13 +118,31 @@ export default function OpsBoard() {
           </span>
         </div>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', margin: '10px 0 22px' }}>
+          {injoignable && <Pill label="API injoignable — machine chargée ?" color={KO} />}
           <Pill label={`file : ${state?.queue.queue_length ?? '…'}`} color={CY} />
           <Pill label={`traitées : ${state?.queue.total_messages ?? '…'}`} color="var(--td3)" />
           <Pill label={`Ollama ${state?.health.ollama ? 'actif' : 'éteint'}`} color={state?.health.ollama ? OK : KO} />
           <Pill label={`OmniRoute ${state?.health.omniroute ? 'actif' : 'éteint'}`} color={state?.health.omniroute ? OK : KO} />
+
+          {nbValides > 0 && (
+            <button onClick={applyAllValid} disabled={!!bulk}
+              style={{
+                marginLeft: 'auto', padding: '5px 14px', borderRadius: 20, cursor: bulk ? 'wait' : 'pointer',
+                border: `1px solid ${OK}77`, background: `${OK}1c`, color: OK,
+                fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700,
+              }}>
+              {bulk ?? `✓ Appliquer les ${nbValides} jugées valides`}
+            </button>
+          )}
         </div>
 
-        {/* Kanban */}
+        {/* Vue par agent : état + ce qu'il fait à cet instant */}
+        <AgentsPanel agents={state?.agents ?? []} modeleActif={state?.health.modeleActif ?? null} />
+
+        {/* Console Claude : prompter le développement du site depuis la page */}
+        <ClaudeConsole />
+
+        {/* Kanban des productions */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(310px,1fr))', gap: 14, alignItems: 'start' }}>
           <Column title="À relire" count={pending.length} accent={WARN}>
             {pending.map((r) => (
@@ -184,6 +241,38 @@ function Card({ r, busy, compact, onReview }: {
         )}
         <span style={{ marginLeft: 'auto', fontFamily: 'var(--fo)', fontSize: 9, color: CY }}>{r.task_type}</span>
       </div>
+
+      {/* Ancrage HHEM : « ce qui est affirmé est-il dans la source ? » — modèle spécialisé sur CPU. */}
+      {r.auto_score != null && (
+        <span style={{
+          display: 'inline-block', marginTop: 7,
+          fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700,
+          color: r.auto_score >= 0.5 ? OK : r.auto_score >= 0.15 ? WARN : KO,
+          border: `1px solid ${(r.auto_score >= 0.5 ? OK : r.auto_score >= 0.15 ? WARN : KO)}55`,
+          background: `${r.auto_score >= 0.5 ? OK : r.auto_score >= 0.15 ? WARN : KO}12`,
+          borderRadius: 5, padding: '2px 7px', marginRight: 6,
+        }}>ancrage {r.auto_score.toFixed(2)}</span>
+      )}
+
+      {/* Verdict du relecteur local : trie la file humaine, ne décide jamais seul. */}
+      {r.auto_verdict && (
+        <div style={{ marginTop: 7 }}>
+          <span style={{
+            fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700,
+            color: VERDICT[r.auto_verdict]?.c ?? 'var(--td3)',
+            border: `1px solid ${VERDICT[r.auto_verdict]?.c ?? 'var(--bd2)'}55`,
+            background: `${VERDICT[r.auto_verdict]?.c ?? '#888'}12`,
+            borderRadius: 5, padding: '2px 7px',
+          }}>
+            relecture IA : {VERDICT[r.auto_verdict]?.l ?? r.auto_verdict}
+          </span>
+          {!compact && r.auto_motif && (
+            <p style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', margin: '4px 0 0', lineHeight: 1.4 }}>
+              {r.auto_motif.slice(0, 260)}
+            </p>
+          )}
+        </div>
+      )}
 
       {!compact && r.payload?.summary && (
         <p style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', margin: '7px 0 0', lineHeight: 1.45 }}>
