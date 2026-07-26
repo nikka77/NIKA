@@ -173,10 +173,25 @@ const nameWords = (s) =>
  * Tolère l'inversion (« Shamrock Figarland » ≡ « Figarland Shamrock ») ; rejette les voisins
  * (« Giorno's Mother » vs « Giorno Giovanna », « Super 17 » vs « Android 17 »).
  */
+// Squelette phonétique d'un mot romanisé : les variantes de translittération (« Oderschvank » ≡
+// « Odelschwanck », « Anton » ≡ « Antoine » — refus injustes du 26/07) divergent presque toujours
+// sur r/l, v/w, c/k, s/z, les voyelles insérées et les doublements — jamais sur la charpente.
+// Une distance d'édition aveugle ne marche pas ici : le seuil qui accepte Odelschwanck (3 écarts)
+// accepterait aussi Naruto≡Boruto (2 écarts). Le squelette, lui, sépare les deux.
+const skeleton = (w) =>
+  (w[0] + w.slice(1).replace(/[aeiouy]/g, ''))   // voyelles hors initiale
+    .replace(/h/g, '')                            // h muets des romanisations
+    .replace(/r/g, 'l').replace(/v/g, 'w')        // r↔l, v↔w (japonais translittéré)
+    .replace(/[cq]/g, 'k').replace(/z/g, 's')     // c/q↔k, s↔z
+    .replace(/(.)\1+/g, '$1');                    // doublements
+
+// Deux mots se correspondent s'ils sont égaux, ou assez longs et de même squelette.
+const sameWord = (w, x) => w === x || (w.length >= 5 && x.length >= 5 && skeleton(w) === skeleton(x));
+
 export function sameEntityName(name, title) {
   const a = nameWords(name), b = nameWords(title);
   if (!a.size || !b.size) return false;
-  const inter = [...a].filter((w) => b.has(w)).length;
+  const inter = [...a].filter((w) => [...b].some((x) => sameWord(w, x))).length;
   return inter === a.size || inter === b.size;   // l'un est inclus dans l'autre
 }
 
@@ -192,7 +207,12 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000 } = {})
   // La version du nettoyeur fait partie de la clé : après correction, les vieilles entrées sont
   // ignorées d'office (sinon un worker encore en mémoire avec l'ancien code repeuple le cache).
   const file = `${CACHE_DIR}${createHash('sha1').update(`v4:${universe}:${name}`).digest('hex').slice(0, 16)}.json`;
-  try { return JSON.parse(await readFile(file, 'utf8')); } catch { /* cache froid */ }
+  // sameEntity est RECALCULÉ à la lecture : la garde évolue (squelettes de romanisation du 26/07)
+  // et un verdict figé dans le cache la court-circuiterait — sans avoir à invalider tout le cache.
+  try {
+    const c = JSON.parse(await readFile(file, 'utf8'));
+    return { ...c, sameEntity: c.title ? sameEntityName(name, c.title) : c.sameEntity };
+  } catch { /* cache froid */ }
 
   // redirects=1 : « Haiya Dragon » → « Icarus » (sinon on ne récupère que « #REDIRECT »)
   const parseUrl = (t) => `${api}?action=parse&page=${encodeURIComponent(t)}&prop=wikitext&redirects=1&format=json&formatversion=2`;

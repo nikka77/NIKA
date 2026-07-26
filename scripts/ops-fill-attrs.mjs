@@ -19,9 +19,18 @@ const { data, error } = await supabase
   .limit(600);
 if (error) { console.error(error.message); process.exit(1); }
 
+// Idempotence : une fiche dont une production akasha_attrs attend déjà la review de Dan
+// ne doit PAS être re-traitée (constaté le 26/07 : le remplisseur re-proposait les mêmes 6).
+const { data: pendantes } = await supabase
+  .from('agent_results')
+  .select('target_slug')
+  .eq('task_type', 'akasha_attrs')
+  .in('status', ['done', 'suspect']);
+const dejaEnReview = new Set((pendantes ?? []).map((r) => r.target_slug));
+
 // une fiche est candidate si AU MOINS un axe de son univers est vide
 const manquants = (e) => Object.keys(AXES[e.universe] ?? {}).filter((a) => !e.attributes?.[a]);
-const candidates = (data ?? []).filter((e) => manquants(e).length).slice(0, LIMIT);
+const candidates = (data ?? []).filter((e) => manquants(e).length && !dejaEnReview.has(e.slug)).slice(0, LIMIT);
 
 console.log(`${candidates.length} fiches avec des axes manquants :`);
 for (const c of candidates)

@@ -212,13 +212,40 @@ async function callModel(type, payload) {
     });
     if (!res.ok) throw new Error(`Ollama HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
     raw = (await res.json()).message?.content ?? '';
+  } else if (model.startsWith('gemini/')) {
+    // Gemini NATIF (pas OmniRoute) : son adaptateur passe par l'endpoint compatible OpenAI qui
+    // refuse les clés nouveau format « AQ.… » (constaté le 26/07). L'endpoint officiel les accepte
+    // ET offre responseSchema — le décodage contraint natif, comme `format` chez Ollama.
+    if (!process.env.GEMINI_API_KEY) throw new Error('GEMINI_API_KEY absent de .env.local');
+    const { additionalProperties, ...gSchema } = schema;   // champ inconnu de l'API Gemini
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${model.slice(7)}:generateContent`,
+      {
+        method: 'POST',
+        signal: AbortSignal.timeout(TIMEOUT_MS),
+        headers: { 'x-goog-api-key': process.env.GEMINI_API_KEY, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: t.prompt(payload) }] }],
+          generationConfig: {
+            temperature: 0,
+            maxOutputTokens: (NUM_PREDICT[type] ?? 800) + 900,   // marge de raisonnement, cf. chemin OmniRoute
+            responseMimeType: 'application/json',
+            responseSchema: gSchema,
+          },
+        }),
+      },
+    );
+    if (!res.ok) throw new Error(`Gemini HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
+    raw = (await res.json()).candidates?.[0]?.content?.parts?.[0]?.text ?? '';
   } else {
     const res = await fetch(`${OMNI_URL}/chat/completions`, {
       method: 'POST',
       signal: AbortSignal.timeout(TIMEOUT_MS),
       headers: { Authorization: `Bearer ${OMNI_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model, stream: false, messages, max_tokens: NUM_PREDICT[type] ?? 800,
+        // +900 de marge : les modèles cloud « à raisonnement » (gpt-oss) brûlent des tokens AVANT
+        // le JSON ; trop court → « Failed to validate JSON » de Groq (constaté le 26/07 à 100).
+        model, stream: false, messages, max_tokens: (NUM_PREDICT[type] ?? 800) + 900,
         response_format: { type: 'json_schema', json_schema: { name: type, strict: true, schema } },
       }),
     });

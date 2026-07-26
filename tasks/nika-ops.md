@@ -180,7 +180,17 @@
     (56,1 s séq vs 57,7 s par) ; une seule requête sature le GPU M1 Pro. `OLLAMA_NUM_PARALLEL`
     remis au défaut (3 slots = +2-3 Go de cache KV pour rien). Le gain local de `--conc` vient du
     RECOUVREMENT des fetchs Fandom/Supabase pendant la génération ; le gain ×10-20 viendra du cloud.
-- [ ] **L8 — Clé cloud gratuite (action DAN)** : créer une clé Gemini (aistudio.google.com/apikey) ou
+- [~] **L8 — Clé cloud gratuite** — Groq FAIT, Gemini en attente de clé dans .env.local :
+  - Groq ✓ (26/07) : modèle `groq/openai/gpt-oss-120b` (llama-3.3 refuse json_schema). MESURÉ sur
+    6 fiches réelles : production 46 s à 6 de front (~8 s/fiche, ×9 vs 69 s local), qualité au niveau
+    (Quincy/Arrancar/Paramecia/Logia justes, « inconnu » honnête sur un filler). Bout en bout ×3 —
+    le juge LOCAL (~40 s/relecture) est le nouveau goulot. Piège taxonomie révélé : Law → crew
+    « Don Quichotte » faute de « L'équipage du Heart » dans l'enum (à ajouter, décision Dan).
+  - Gemini : adaptateur OmniRoute inutilisable (endpoint compat OpenAI refuse les clés `AQ.…`) →
+    branche NATIVE `gemini/<modele>` dans le worker (responseSchema natif). Reste : Dan colle
+    `GEMINI_API_KEY=…` dans .env.local, puis test 6 fiches. Piste ensuite : juge cloud Gemini
+    (famille indépendante du producteur Groq) pour lever le goulot du juge local.
+  - (historique)  créer une clé Gemini (aistudio.google.com/apikey) ou
       Groq (console.groq.com/keys) puis, dans un terminal (la clé ne passe jamais par Claude ni par un fichier du dépôt) :
       `omniroute setup --add-provider --provider groq --api-key <COLLER_LA_CLÉ> --test-provider`
       (ou `--provider google` pour Gemini). Vérifier : `omniroute providers list` → 2 connexions actives.
