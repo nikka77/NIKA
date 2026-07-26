@@ -6,13 +6,16 @@
 import { createClient } from '@supabase/supabase-js';
 import { z } from 'zod';
 import { fetchFandomProse } from './lib/fandom.mjs';
-import { expertFor, axesSchema, AXES, checkPreuves } from './lib/akasha-axes.mjs';
+import { expertFor, axesSchema, AXES, checkPreuves, splitPreuves } from './lib/akasha-axes.mjs';
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 const OMNI_URL = process.env.OMNIROUTE_URL ?? 'http://localhost:20128/v1';
 const OMNI_KEY = process.env.OMNIROUTE_API_KEY;
 const LOOP = process.argv.includes('--loop');
-const VT = 180; // fenêtre de visibilité pgmq (s) — une tâche non archivée redevient visible après
+const VT = 600; // fenêtre de visibilité pgmq (s) — assez large pour un lot en cours de traitement
+// Un changement de modèle coûte ~147 s (mesuré le 26/07 sur 38 bascules) : on réclame donc
+// plusieurs tâches d'un coup et on les REGROUPE PAR MODÈLE avant de les traiter.
+const LOT = Number(process.argv.find((a) => a.startsWith('--lot='))?.split('=')[1] ?? 12);
 
 /* ── Types de tâches ────────────────────────────────────────────── */
 // Chaque type : modèle, schéma JSON (décodage contraint), garde d'entrée, prompt.
@@ -97,8 +100,11 @@ ${p.fandom}`,
     schema: (p) => axesSchema(p.universe),
     zod: z.record(z.string()),
     fetch: async (p) => {
+      // 2500 caractères suffisent : les attributs (village, clan, équipage…) sont dans
+      // l'introduction et l'infobox. Diviser le contexte par deux réduit d'autant le
+      // temps d'évaluation du prompt — le poste le plus cher de cette tâche.
       const page = await fetchFandomProse(p.universe, p.name);
-      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity } : p;
+      return page ? { ...p, fandom: page.text.slice(0, 2500), fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity } : p;
     },
     guard: (p) => {
       if (!AXES[p.universe]) return `univers sans taxonomie : ${p.universe}`;
@@ -110,7 +116,7 @@ ${p.fandom}`,
 
 MÉTHODE OBLIGATOIRE pour chaque attribut :
 1. Cherche dans l'article une phrase qui parle de ${p.name} LUI-MÊME et qui établit cet attribut.
-2. Recopie cette phrase à l'identique dans le champ "<attribut>_preuve".
+2. Recopie cette phrase dans "<attribut>_preuve" — 20 mots maximum, coupe si besoin.
 3. Renseigne alors l'attribut.
 Si aucune phrase de l'article ne l'établit POUR ${p.name} : réponds "inconnu" et mets "aucune" en preuve.
 
@@ -121,11 +127,55 @@ compte comme preuve. Ne déduis jamais rien de son nom.
 ARTICLE DU WIKI (${p.fandomTitle}) :
 ${p.fandom}`,
   },
+
+  // RELECTEUR LOCAL : juge une production d'agent avant la review humaine.
+  // Deux précautions contre l'auto-confirmation : (1) le juge n'est PAS l'expert qui a produit
+  // (persona « vérificateur » sur le modèle générique), (2) il doit citer la phrase de la source
+  // qui fonde son verdict — un verdict sans citation vérifiable ne vaut rien.
+  review_local: {
+    model: 'ollama/gemma4:12b',
+    schema: {
+      type: 'object',
+      properties: {
+        verdict: { type: 'string', enum: ['valide', 'a_corriger', 'rejeter'] },
+        motif: { type: 'string' },
+        citation: { type: 'string' },
+      },
+      required: ['verdict', 'motif', 'citation'],
+      additionalProperties: false,
+    },
+    zod: z.object({ verdict: z.enum(['valide', 'a_corriger', 'rejeter']), motif: z.string(), citation: z.string() }),
+    guard: (p) => ((p.source ?? '').length >= 200 ? null : 'source de vérification absente'),
+    prompt: (p) => `Tu es vérificateur pour l'encyclopédie AKASHA. Tu ne rédiges rien : tu CONTRÔLES.
+
+FICHE : ${p.name} (${p.universe})
+PRODUCTION DE L'AGENT À CONTRÔLER :
+${p.production}
+
+SOURCE DE RÉFÉRENCE (article du wiki canon) :
+${p.source}
+
+Contrôle, dans cet ordre :
+1. La production parle-t-elle bien de ${p.name}, et non d'un homonyme ou d'un proche ?
+2. Chaque fait avancé est-il présent dans la source ? (un fait absent = invention)
+3. Le français est-il correct, sans anglicisme ni terme anglais résiduel ?
+
+Puis :
+- "valide" si tout est exact et ancré dans la source ;
+- "a_corriger" si le fond est bon mais qu'un détail est faux, absent de la source ou mal écrit ;
+- "rejeter" si la production décrit une autre entité ou invente l'essentiel.
+
+"motif" : une phrase précise (le problème exact, ou pourquoi c'est juste).
+"citation" : recopie la phrase EXACTE de la source qui fonde ton verdict. Si tu n'en trouves aucune,
+écris "aucune" — et dans ce cas le verdict ne peut pas être "valide".`,
+  },
 };
 
 /* ── Appel modèle (JSON contraint par schéma) ───────────────────── */
 // Modèles locaux : Ollama NATIF (param `format` = décodage contraint fiable).
 // OmniRoute fige indéfiniment sur `response_format` (constaté le 25/07) → réservé aux futurs modèles cloud.
+// Budget de génération par type : inutile d'autoriser 1200 tokens à une tâche qui en produit 150.
+const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 400 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
 const modelOf = (t, p) => (typeof t.model === 'function' ? t.model(p) : t.model);
@@ -146,7 +196,7 @@ async function callModel(type, payload) {
         // raisonnement et rend un content vide (constaté le 25/07).
         // num_ctx 8192 : le défaut Ollama (4096) tronquerait l'article Fandom passé en prompt.
         model: model.slice(7), stream: false, messages, think: false,
-        format: schema, options: { temperature: 0, num_predict: 1200, num_ctx: 8192 },
+        format: schema, options: { temperature: 0, num_predict: NUM_PREDICT[type] ?? 800, num_ctx: 8192 },
       }),
     });
     if (!res.ok) throw new Error(`Ollama HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
@@ -205,23 +255,75 @@ async function processMessage(msg) {
   }
 }
 
+/* ── Enchaînement production → relecture locale ──────────────────── */
+// Mesuré le 25/07 : le juge local détecte 7/7 des erreurs factuelles sans faux positif.
+// Il n'applique rien — il annote, pour que la file humaine arrive déjà triée.
+async function chainReview(row, reviewedId) {
+  const p = row.payload ?? {};
+  let production;
+  if (row.task_type === 'akasha_attrs') {
+    const { valeurs, preuves } = splitPreuves(row.result);
+    const etablis = Object.entries(valeurs).filter(([, v]) => v && v !== 'inconnu');
+    if (!etablis.length) return;                     // abstention : rien à juger (le code tranche)
+    production = etablis.map(([k, v]) => `${k} = ${v}  (preuve avancée : « ${preuves[k] ?? 'aucune'} »)`).join('\n');
+  } else if (row.result?.descFr) {
+    production = row.result.descFr;
+  } else return;
+
+  const page = await fetchFandomProse(p.universe, p.name).catch(() => null);
+  if (!page?.text) return;                           // pas de source vérifiable → pas de jugement
+
+  await supabase.rpc('ops_queue_send_batch', {
+    messages: [{
+      type: 'review_local',
+      payload: {
+        reviewed_id: reviewedId, slug: row.target_slug, name: p.name, universe: p.universe,
+        production, source: page.text.slice(0, 4500),
+      },
+    }],
+  });
+}
+
 /* ── Boucle principale ──────────────────────────────────────────── */
-const counts = { done: 0, refused: 0, failed: 0 };
+const counts = { done: 0, refused: 0, failed: 0, suspect: 0 };
 console.log(`⚙️  worker NIKA OPS — mode ${LOOP ? 'continu' : 'drain'}`);
 for (;;) {
-  const { data: msgs, error } = await supabase.rpc('ops_queue_read', { vt: VT, qty: 1 });
+  const { data: lot, error } = await supabase.rpc('ops_queue_read', { vt: VT, qty: LOT });
   if (error) { console.error('lecture file:', error.message); process.exit(1); }
-  if (!msgs?.length) {
+  if (!lot?.length) {
     if (!LOOP) break;
     await new Promise((r) => setTimeout(r, 30_000));
     continue;
   }
-  const msg = msgs[0];
+  // Regroupement par modèle : toutes les tâches d'un même modèle s'enchaînent sans rechargement.
+  const msgs = [...lot].sort((a, b) => {
+    const m = (x) => { const t = TASK_TYPES[x.message?.type]; return t ? String(modelOf(t, x.message.payload ?? {})) : 'zzz'; };
+    return m(a).localeCompare(m(b));
+  });
+
+  for (const msg of msgs) {
   const row = await processMessage(msg);
   counts[row.status]++;
-  const { error: insErr } = await supabase.from('agent_results').insert(row);
-  if (insErr) { console.error('agent_results:', insErr.message); process.exit(1); }
+
+  if (row.task_type === 'review_local') {
+    // Le verdict ne crée pas de résultat : il annote la production relue.
+    await supabase
+      .from('agent_results')
+      .update({
+        auto_verdict: row.status === 'done' ? row.result.verdict : null,
+        auto_motif: row.status === 'done' ? `${row.result.motif} — « ${String(row.result.citation).slice(0, 220)} »` : row.error,
+        auto_model: row.model,
+        auto_at: new Date().toISOString(),
+      })
+      .eq('id', row.payload.reviewed_id);
+  } else {
+    const { data: ins, error: insErr } = await supabase.from('agent_results').insert(row).select('id').single();
+    if (insErr) { console.error('agent_results:', insErr.message); process.exit(1); }
+    // Enchaînement : toute production jugeable part aussitôt en relecture locale (coût nul, tri gratuit).
+    if (ins?.id && (row.status === 'done' || row.status === 'suspect')) await chainReview(row, ins.id);
+  }
   await supabase.rpc('ops_queue_archive', { message_id: msg.msg_id });
   console.log(`  ${row.status === 'done' ? '✓' : row.status === 'refused' ? '◇' : '✗'} [${msg.msg_id}] ${row.target_slug ?? row.task_type} (${row.status})`);
+  }
 }
 console.log(`fini — done: ${counts.done} · refused: ${counts.refused} · failed: ${counts.failed}`);

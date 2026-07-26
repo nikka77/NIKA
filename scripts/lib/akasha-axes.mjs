@@ -109,6 +109,17 @@ const TRACES = {
   Smile: ['smile', 'artificial'],
 };
 
+/**
+ * Terme ANGLAIS d'une valeur de taxonomie, pour interroger une source anglophone.
+ * Les articles Fandom sont en anglais : demander « L'équipage du Chapeau de Paille » à un
+ * vérificateur qui lit « Straw Hat Pirates » produit un faux négatif (mesuré le 25/07 :
+ * tous les Chapeaux de Paille notés 0,02-0,09 alors qu'ils sont exacts).
+ */
+export function termeAnglais(valeur) {
+  const t = TRACES[valeur];
+  return t?.length ? t[0].replace(/\b\w/g, (c) => c.toUpperCase()) : valeur;
+}
+
 /** Mots significatifs d'une valeur d'enum (fallback quand aucune trace n'est déclarée). */
 const valueWords = (v) =>
   v.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
