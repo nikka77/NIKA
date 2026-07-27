@@ -755,7 +755,8 @@ ${texteSans}`,
       }
       try { await envoyerWhatsApp(`${signature} — ${reponse}`, row.payload.de); } catch (e) { console.error('  ✗ réponse WhatsApp :', String(e).slice(0, 120)); }
       // Dan vient d'écrire → la fenêtre de 24 h est rouverte : livrer ce qui attendait au parc.
-      try { const n = await viderParc(); if (n) console.log(`  📬 parc livré : ${n} message(s)`); } catch { /* non bloquant */ }
+      try { console.log(`  📬 parc livré : ${await viderParc()} message(s)`); }
+      catch (e) { console.error('  ✗ viderParc :', String(e).slice(0, 200)); }
       await supabase.from('ops_notes').insert({
         source: 'whatsapp',
         content: JSON.stringify({ de_dan: row.payload.texte, reponse, par: signature, escalade: row.result.escalade, a: row.payload.recu_a }),
