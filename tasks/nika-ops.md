@@ -297,6 +297,16 @@
   d'application + annulation par lot (l'annulation unitaire existe depuis L11), alarme d'échec
   (canal WhatsApp du L5), et jeu de fiches témoins rejoué chaque semaine (détection de dérive).
 
+- [x] **L13 — Balayage & durcissement (27/07, ~1 h)** : PATH launchd (exit 127 évité) ; TCC iCloud
+  → clone d'automatisation `~/dev/NIKA` (git pull avant chaque nuit, .env.local copié À LA MAIN —
+  toute nouvelle clé doit y être recopiée) ; plists → clone ; couloirs --types remplacés par UN
+  worker bi-modèle (--cloud + --juge) ; file pgmq `ops_chat` dédiée au secrétaire (webhook +
+  --chat) ; échanges WhatsApp auto-approuvés (hors pile de review) ; démon
+  com.nika.ops.secretaire (KeepAlive) testé de bout en bout par le webhook public ;
+  /ops vérifié verrouillé en prod (404/403). RESTE (actions DAN) : `claude` dans Terminal.app
+  (l'audit de dimanche se sautera sinon) ; clé GROQ_API_KEY directe (sinon toute la production
+  dépend du démon OmniRoute manuel — panne silencieuse au premier redémarrage du Mac).
+
 ## Boîte à outils GitHub (moisson du 23/07, à intégrer par lots)
 - **CCR — claude-code-router** (musistudio) : fait tourner LE HARNAIS Claude Code sur n'importe quel
   modèle (config → OmniRoute/Ollama). Usage 1 : « Claude Code de secours » quand les tokens Max sont
