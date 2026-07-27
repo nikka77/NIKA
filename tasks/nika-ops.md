@@ -307,6 +307,18 @@
   (l'audit de dimanche se sautera sinon) ; clé GROQ_API_KEY directe (sinon toute la production
   dépend du démon OmniRoute manuel — panne silencieuse au premier redémarrage du Mac).
 
+- [x] **L14 — Session Claude headless restaurée + escalade validée (27/07)** : `claude setup-token`
+  → token OAuth 1 AN dans `CLAUDE_CODE_OAUTH_TOKEN` (.env.local ×2 — PAS le trousseau : les
+  connexions app/web ne servent à rien au CLI). Le flux : le CLI affiche l'URL d'autorisation
+  et RÉCUPÈRE LE CODE TOUT SEUL dès le clic « Autoriser » (le collage n'est qu'un repli) ;
+  il faut par contre un VRAI terminal (Terminal.app) — sous expect/pty artisanal le processus
+  meurt après l'URL. `audit-hebdo.sh` exporte désormais le token depuis .env.local ;
+  escalades/worker l'ont via `--env-file`. Test de bout en bout réussi : note escalade #64 →
+  branche `escalade/64` → fichier créé par Claude → commit script → WhatsApp. Défaut trouvé
+  et corrigé : `git add -A` balayait les fichiers non commités du clone → garde anti-balayage
+  (escalade reportée si `git status --porcelain` non vide). D'ici juillet 2027 : re-générer
+  le token (alarme prévue par l'audit qui échouera bruyamment, pas silencieusement).
+
 ## Boîte à outils GitHub (moisson du 23/07, à intégrer par lots)
 - **CCR — claude-code-router** (musistudio) : fait tourner LE HARNAIS Claude Code sur n'importe quel
   modèle (config → OmniRoute/Ollama). Usage 1 : « Claude Code de secours » quand les tokens Max sont

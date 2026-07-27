@@ -49,7 +49,7 @@ try {
   // Session Claude : sans elle, on prévient au lieu de laisser pourrir en silence.
   try { await sh('claude', ['-p', 'OK', '--output-format', 'text'], { timeout: 120_000 }); }
   catch {
-    await whatsapp('⚠ Escalade en attente mais session Claude expirée — lance `claude` dans Terminal.app puis renvoie ton message.');
+    await whatsapp('⚠ Escalade en attente mais token Claude invalide — régénère avec `claude setup-token` → .env.local (les 2 copies), puis renvoie ton message.');
     process.exit(0);
   }
 
@@ -58,6 +58,13 @@ try {
     console.log(`▶ escalade #${esc.id} : ${esc.de_dan.slice(0, 70)}`);
     await sh('git', ['checkout', 'main']);
     await sh('git', ['pull', '--ff-only'], { tolere: true });
+    // Anti-balayage : le `git add -A` final ramasserait tout fichier non commité sur main
+    // (vécu le 27/07 : deux scripts modifiés à la main ont fini dans le commit d'escalade).
+    const sale = await sh('git', ['status', '--porcelain']);
+    if (sale) {
+      await whatsapp(`⚠ Escalade #${esc.id} reportée : ~/dev/NIKA a des fichiers non commités (${sale.split('\n').length}). Commit/push côté iCloud puis git pull ici.`);
+      console.log(`✗ clone sale — escalade #${esc.id} reportée`); break;
+    }
     await sh('git', ['branch', '-D', branche], { tolere: true });
     await sh('git', ['checkout', '-b', branche]);
 

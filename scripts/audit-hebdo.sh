@@ -4,6 +4,9 @@
 # en headless (abonnement Max). Tout « faux » est annulé en base. Le taux surveille la dérive.
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"   # launchd : PATH minimal sinon
 cd "$(dirname "$0")/.."
+# Token headless (claude setup-token, 1 an) : sans lui, launchd n'a aucune session claude.
+TOK=$(grep '^CLAUDE_CODE_OAUTH_TOKEN=' .env.local 2>/dev/null | cut -d= -f2-)
+[ -n "$TOK" ] && export CLAUDE_CODE_OAUTH_TOKEN="$TOK"
 LOG=~/.cache/nika/audit-hebdo-$(date +%Y%m%d).log
 mkdir -p ~/.cache/nika
 exec >> "$LOG" 2>&1
@@ -11,9 +14,9 @@ echo "═══ audit hebdo — $(date '+%Y-%m-%d %H:%M') ═══"
 
 # Session Claude requise : si l'OAuth est expiré, on le dit clairement et on n'invente rien.
 if ! claude -p "OK" --output-format text < /dev/null > /dev/null 2>&1; then
-  echo "⚠ session claude expirée — lance \`claude\` dans un terminal et connecte-toi, puis relance :"
+  echo "⚠ session claude invalide — régénère le token : \`claude setup-token\` puis colle-le dans .env.local (CLAUDE_CODE_OAUTH_TOKEN), et relance :"
   echo "  ./scripts/audit-hebdo.sh"
-  node --env-file=.env.local scripts/ops-alerte.mjs "⚠ NIKA OPS : audit hebdo SAUTÉ — session claude expirée. Lance claude dans un terminal, connecte-toi, puis ./scripts/audit-hebdo.sh"
+  node --env-file=.env.local scripts/ops-alerte.mjs "⚠ NIKA OPS : audit hebdo SAUTÉ — token Claude invalide. Régénère avec claude setup-token → .env.local (les 2 copies), puis ./scripts/audit-hebdo.sh"
   exit 0
 fi
 
