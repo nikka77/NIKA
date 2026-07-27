@@ -3,6 +3,7 @@
 // Colonnes = cycle de vie d'une tâche : en file → à relire → approuvé / rejeté.
 // Chaque carte montre la SOURCE et la PRODUCTION côte à côte : la review se fait ici, pas dans un terminal.
 import { useCallback, useEffect, useState } from 'react';
+import ConfirmDialog from '@/components/ConfirmDialog';
 import AgentsPanel, { ClaudeConsole, type AgentEtat } from './AgentsPanel';
 
 type Relation = { avec: string; nature: string; periode: string; resume: string; preuve: string };
@@ -53,8 +54,10 @@ const fe = (s: number): React.CSSProperties => ({
 export default function OpsBoard() {
   const [state, setState] = useState<State | null>(null);
   const [busy, setBusy] = useState<number | null>(null);
+  const [reviewErr, setReviewErr] = useState<string | null>(null);
 
   const [injoignable, setInjoignable] = useState(false);
+  const loading = state === null && !injoignable;
 
   // Le worker peut saturer la machine : l'API devient alors lente ou muette. On l'encaisse
   // au lieu d'empiler des rejets non gérés (constaté le 25/07 : compilation de 2 h 44 sous
@@ -78,18 +81,26 @@ export default function OpsBoard() {
 
   const review = async (id: number, action: 'approve' | 'reject') => {
     setBusy(id);
-    await fetch('/api/ops/state', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id, action }),
-    });
+    setReviewErr(null);
+    try {
+      const r = await fetch('/api/ops/state', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, action }),
+      });
+      if (!r.ok) throw new Error(String(r.status));
+    } catch {
+      setReviewErr(`échec de l'action sur la fiche #${id} — réessaie`);
+    }
     await load();
     setBusy(null);
   };
 
   // Lot : n'applique que ce que le relecteur local a jugé « valide ». Un clic au lieu de N.
   const [bulk, setBulk] = useState<string | null>(null);
+  const [confirmBulk, setConfirmBulk] = useState<'apply' | 'purge' | null>(null);
   const applyAllValid = async () => {
+    setConfirmBulk(null);
     setBulk('en cours…');
     const r = await fetch('/api/ops/state', {
       method: 'POST',
@@ -114,6 +125,7 @@ export default function OpsBoard() {
   const nbEchecs = refused.filter((r) => r.status === 'failed').length;
 
   const purgerEchecs = async () => {
+    setConfirmBulk(null);
     await fetch('/api/ops/state', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -138,7 +150,11 @@ export default function OpsBoard() {
             border: `1px solid ${CY}55`, background: `${CY}12`, borderRadius: 20, padding: '4px 12px',
           }}>◎ Audit à l’aveugle</a>
         </div>
+        {reviewErr && (
+          <div style={{ margin: '8px 0', fontFamily: 'var(--fo)', fontSize: 11.5, color: KO }}>{reviewErr}</div>
+        )}
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', margin: '10px 0 22px' }}>
+          {loading && <Pill label="chargement…" color={CY} />}
           {injoignable && <Pill label="API injoignable — machine chargée ?" color={KO} />}
           <Pill label={`file : ${state?.queue.queue_length ?? '…'}`} color={CY} />
           <Pill label={`traitées : ${state?.queue.total_messages ?? '…'}`} color="var(--td3)" />
@@ -153,7 +169,7 @@ export default function OpsBoard() {
           )}
 
           {nbEchecs > 0 && (
-            <button onClick={purgerEchecs}
+            <button onClick={() => setConfirmBulk('purge')}
               style={{
                 marginLeft: nbValides ? 0 : 'auto', padding: '5px 14px', borderRadius: 20, cursor: 'pointer',
                 border: '1px solid var(--bd2)', background: 'rgba(255,255,255,0.04)', color: 'var(--td3)',
@@ -163,7 +179,7 @@ export default function OpsBoard() {
             </button>
           )}
           {nbValides > 0 && (
-            <button onClick={applyAllValid} disabled={!!bulk}
+            <button onClick={() => setConfirmBulk('apply')} disabled={!!bulk}
               style={{
                 marginLeft: 'auto', padding: '5px 14px', borderRadius: 20, cursor: bulk ? 'wait' : 'pointer',
                 border: `1px solid ${OK}77`, background: `${OK}1c`, color: OK,
@@ -173,6 +189,24 @@ export default function OpsBoard() {
             </button>
           )}
         </div>
+
+        <ConfirmDialog
+          open={confirmBulk === 'apply'}
+          title="Appliquer les fiches jugées valides ?"
+          message={`${nbValides} fiche(s) seront écrites dans akasha_entries en une fois.`}
+          confirmLabel="Appliquer"
+          onConfirm={applyAllValid}
+          onClose={() => setConfirmBulk(null)}
+        />
+        <ConfirmDialog
+          open={confirmBulk === 'purge'}
+          title="Purger les échecs techniques ?"
+          message={`${nbEchecs} entrée(s) seront supprimées définitivement (les refus de garde ne sont pas concernés).`}
+          confirmLabel="Purger"
+          danger
+          onConfirm={purgerEchecs}
+          onClose={() => setConfirmBulk(null)}
+        />
 
         {/* Vue par agent : état + ce qu'il fait à cet instant */}
         <AgentsPanel agents={state?.agents ?? []} modeleActif={state?.health.modeleActif ?? null} />
@@ -208,6 +242,7 @@ export default function OpsBoard() {
               <Card key={r.id} r={r} compact />
             ))}
             {!approved.length && <Empty text="rien encore appliqué" />}
+            {approved.length > 15 && <Empty text={`+ ${approved.length - 15} de plus`} />}
           </Column>
 
           <Column title="Rejetées" count={rejected.length} accent="var(--td3)">
@@ -215,6 +250,7 @@ export default function OpsBoard() {
               <Card key={r.id} r={r} compact />
             ))}
             {!rejected.length && <Empty text="rien rejeté" />}
+            {rejected.length > 15 && <Empty text={`+ ${rejected.length - 15} de plus`} />}
           </Column>
         </div>
 
