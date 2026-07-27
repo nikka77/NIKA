@@ -707,16 +707,25 @@ async function traiterUn(msg) {
         // Discussion directe avec Claude (abonnement, une réponse ponctuelle — le code passe
         // toujours par l'escalade). Groq reste l'étage de garde : c'est lui qui a classé.
         try {
-          const { execFile } = await import('node:child_process');
-          reponse = await new Promise((res, rej) => execFile('claude', [
-            '-p', `Tu es Claude, l'ingénieur de l'usine NIKA OPS (projet NIKA, super-app Côte d'Azur de Dan).
+          // spawn + stdin FERMÉ : claude -p attend l'EOF d'un tube resté ouvert (execFile ne
+          // sait pas fermer stdin — « Warning: no stdin data received » puis échec sous launchd).
+          const { spawn } = await import('node:child_process');
+          reponse = await new Promise((res, rej) => {
+            const ch = spawn('claude', [
+              '-p', `Tu es Claude, l'ingénieur de l'usine NIKA OPS (projet NIKA, super-app Côte d'Azur de Dan).
 Dan te parle sur WhatsApp. Réponds en français, bref et direct (style WhatsApp, pas de pavés).
 
 MESSAGE DE DAN :
 ${texteSans}`,
-            '--output-format', 'text',
-          ], { cwd: process.cwd(), timeout: 150_000, stdio: ['ignore', 'pipe', 'pipe'] },
-          (e, out, err) => (e ? rej(new Error(`${String(e).slice(0, 140)} ||stderr: ${String(err).slice(0, 200)}`)) : res(String(out).trim()))));
+              '--output-format', 'text',
+            ], { cwd: process.cwd(), stdio: ['ignore', 'pipe', 'pipe'] });
+            let out = '', err = '';
+            ch.stdout.on('data', (d) => { out += d; });
+            ch.stderr.on('data', (d) => { err += d; });
+            const t = setTimeout(() => { ch.kill(); rej(new Error('timeout 150 s')); }, 150_000);
+            ch.on('close', (code) => { clearTimeout(t); code === 0 ? res(out.trim()) : rej(new Error(`exit ${code} ||stderr: ${err.slice(0, 300)}`)); });
+            ch.on('error', (e) => { clearTimeout(t); rej(e); });
+          });
           signature = SIGNATURES_WHATSAPP.claude;
         } catch (e) {
           console.error('  ✗ claude -p (discussion) :', String(e).slice(0, 200));
