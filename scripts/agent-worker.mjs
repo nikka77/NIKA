@@ -717,7 +717,10 @@ ${texteSans}`,
             '--output-format', 'text',
           ], { cwd: process.cwd(), timeout: 150_000 }, (e, out) => (e ? rej(e) : res(String(out).trim()))));
           signature = SIGNATURES_WHATSAPP.claude;
-        } catch { reponse = `${row.result.reponse}\n(Claude injoignable à l'instant — réponse du secrétaire.)`; }
+        } catch (e) {
+          console.error('  ✗ claude -p (discussion) :', String(e).slice(0, 200));
+          reponse = `${row.result.reponse}\n(Claude injoignable à l'instant — réponse du secrétaire.)`;
+        }
       }
       try { await envoyerWhatsApp(`${signature} — ${reponse}`, row.payload.de); } catch (e) { console.error('  ✗ réponse WhatsApp :', String(e).slice(0, 120)); }
       await supabase.from('ops_notes').insert({
