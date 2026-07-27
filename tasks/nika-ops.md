@@ -307,6 +307,16 @@
   (l'audit de dimanche se sautera sinon) ; clé GROQ_API_KEY directe (sinon toute la production
   dépend du démon OmniRoute manuel — panne silencieuse au premier redémarrage du Mac).
 
+- [x] **L15 — Interlocuteurs nommés sur WhatsApp (27/07, demande Dan)** : chaque réponse est
+  SIGNÉE par qui parle — ⚡ Groq (secrétaire, défaut), ✨ Gemini, 🤖 Claude, 🏭 Usine (commandes
+  etat/lot, erreurs système). Dan choisit son interlocuteur par préfixe : « gemini: … » route la
+  réponse sur gemini-flash-lite, « claude: … » (hors code) déclenche une VRAIE réponse `claude -p`
+  (abonnement, ~15 s) — le code passe toujours par l'escalade, et Claude signe ses messages de fin
+  de branche. Groq reste l'étage de garde (classement escalade/commande) quel que soit le préfixe.
+  Pièges vaincus : catch muet, stdin jamais fermé (spawn + 'ignore', pas execFile), et
+  ANTHROPIC_API_KEY (chargée par --env-file pour NIKO) que le CLI préfère au token d'abonnement
+  → retirée de l'env des processus claude. Testé : ✨ #77, 🤖 #83.
+
 - [x] **L14 — Session Claude headless restaurée + escalade validée (27/07)** : `claude setup-token`
   → token OAuth 1 AN dans `CLAUDE_CODE_OAUTH_TOKEN` (.env.local ×2 — PAS le trousseau : les
   connexions app/web ne servent à rien au CLI). Le flux : le CLI affiche l'URL d'autorisation
