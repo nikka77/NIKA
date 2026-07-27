@@ -17,8 +17,11 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.
 const DEPOT = process.env.HOME + '/dev/NIKA';
 const VERROU = '/tmp/nika-escalades.lock';
 
+// Env des appels claude : SANS ANTHROPIC_API_KEY — le CLI la préfère au token d'abonnement
+// et part sur le compte API à sec (« Credit balance is too low », premier échec du 27/07).
+const ENV_CLAUDE = { ...process.env }; delete ENV_CLAUDE.ANTHROPIC_API_KEY;
 const sh = (cmd, args, opts = {}) => new Promise((res, rej) =>
-  execFile(cmd, args, { cwd: DEPOT, timeout: opts.timeout ?? 60_000, ...opts },
+  execFile(cmd, args, { cwd: DEPOT, timeout: opts.timeout ?? 60_000, ...(cmd === 'claude' ? { env: ENV_CLAUDE } : {}), ...opts },
     (e, out, err) => e && !opts.tolere ? rej(new Error(`${cmd}: ${String(err || e).slice(0, 200)}`)) : res((out ?? '').trim())));
 
 async function whatsapp(texte) {

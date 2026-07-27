@@ -718,7 +718,11 @@ Dan te parle sur WhatsApp. Réponds en français, bref et direct (style WhatsApp
 MESSAGE DE DAN :
 ${texteSans}`,
               '--output-format', 'text',
-            ], { cwd: process.cwd(), stdio: ['ignore', 'pipe', 'pipe'] });
+            ], { cwd: process.cwd(), stdio: ['ignore', 'pipe', 'pipe'], env: (() => {
+              // Le CLI préfère ANTHROPIC_API_KEY (compte API, crédits à sec) au token d'abonnement
+              // CLAUDE_CODE_OAUTH_TOKEN — on la retire de SON env (« Credit balance is too low », 27/07).
+              const env = { ...process.env }; delete env.ANTHROPIC_API_KEY; return env;
+            })() });
             let out = '', err = '';
             ch.stdout.on('data', (d) => { out += d; });
             ch.stderr.on('data', (d) => { err += d; });
