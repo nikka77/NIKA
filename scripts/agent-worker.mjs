@@ -715,7 +715,8 @@ Dan te parle sur WhatsApp. Réponds en français, bref et direct (style WhatsApp
 MESSAGE DE DAN :
 ${texteSans}`,
             '--output-format', 'text',
-          ], { cwd: process.cwd(), timeout: 150_000 }, (e, out) => (e ? rej(e) : res(String(out).trim()))));
+          ], { cwd: process.cwd(), timeout: 150_000, stdio: ['ignore', 'pipe', 'pipe'] },
+          (e, out, err) => (e ? rej(new Error(`${String(e).slice(0, 140)} ||stderr: ${String(err).slice(0, 200)}`)) : res(String(out).trim()))));
           signature = SIGNATURES_WHATSAPP.claude;
         } catch (e) {
           console.error('  ✗ claude -p (discussion) :', String(e).slice(0, 200));
