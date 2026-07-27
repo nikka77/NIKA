@@ -700,8 +700,11 @@ async function traiterUn(msg) {
       if (row.result.escalade) {
         console.log('  ⚑ escalade Claude notée :', row.payload.texte.slice(0, 60));
         const { spawn } = await import('node:child_process');
+        // Journal obligatoire : un échec d'escalade sans trace est indiagnosticable (vécu le 27/07).
+        const { openSync } = await import('node:fs');
+        const fdEsc = openSync('/tmp/nika-escalades.log', 'a');
         spawn('node', ['--env-file=.env.local', 'scripts/ops-escalades.mjs'],
-          { cwd: process.cwd(), detached: true, stdio: 'ignore' }).unref();
+          { cwd: process.cwd(), detached: true, stdio: ['ignore', fdEsc, fdEsc] }).unref();
       }
       if (row.result.commande_action && row.result.commande_action !== 'rien') {
         try {
