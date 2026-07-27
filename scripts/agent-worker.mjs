@@ -319,11 +319,32 @@ for (const roleKey of Object.keys(ROLES)) TASK_TYPES[roleKey] = ficheRole(roleKe
 // pour Claude — le secrétaire le DIT à Dan au lieu de promettre ce qu'il ne fera pas.
 TASK_TYPES.whatsapp_reponse = {
   model: 'groq/openai/gpt-oss-120b',
-  zod: z.object({ reponse: z.string().min(1), escalade: z.boolean() }),
+  zod: z.object({
+    reponse: z.string().min(1),
+    escalade: z.boolean(),
+    commande: z.object({
+      action: z.enum(['rien', 'etat', 'lot']),
+      role: z.enum(['attrs', 'relations', 'bios', 'technique', 'artefact', 'lieu', 'lexique']).optional(),
+      quantite: z.number().int().optional(),
+    }),
+  }),
   schema: {
     type: 'object',
-    properties: { reponse: { type: 'string' }, escalade: { type: 'boolean' } },
-    required: ['reponse', 'escalade'],
+    properties: {
+      reponse: { type: 'string' },
+      escalade: { type: 'boolean' },
+      commande: {
+        type: 'object',
+        properties: {
+          action: { type: 'string', enum: ['rien', 'etat', 'lot'] },
+          role: { type: 'string', enum: ['attrs', 'relations', 'bios', 'technique', 'artefact', 'lieu', 'lexique'] },
+          quantite: { type: 'integer' },
+        },
+        required: ['action'],
+        additionalProperties: false,
+      },
+    },
+    required: ['reponse', 'escalade', 'commande'],
     additionalProperties: false,
   },
   guard: (p) => ((p.texte ?? '').trim() ? null : 'message vide'),
@@ -337,6 +358,11 @@ RÈGLES :
   que c'est transmis à Claude (qui traite en lot depuis la console) — ne promets JAMAIS de le
   faire toi-même.
 - Pour une question générale : réponds directement, honnêtement, sans inventer.
+- COMMANDES D'AGENTS — si Dan demande l'état de l'usine (« état ? », « où en est la file ? »),
+  mets commande.action = "etat". S'il demande de lancer un lot (« lance 10 fiches techniques »,
+  « traite 5 relations »), mets commande.action = "lot" avec role parmi
+  [attrs, relations, bios, technique, artefact, lieu, lexique] et quantite (1 à 30).
+  Sinon commande.action = "rien". Dans "reponse", confirme ce que tu déclenches, sobrement.
 
 MESSAGE DE DAN :
 ${p.texte}`,
@@ -351,6 +377,47 @@ async function envoyerWhatsApp(texte, vers) {
     body: JSON.stringify({ messaging_product: 'whatsapp', to: vers, type: 'text', text: { body: texte } }),
   });
   if (!r.ok) throw new Error(`WhatsApp HTTP ${r.status}: ${(await r.text()).slice(0, 150)}`);
+}
+
+/** Commandes d'agents pilotables depuis WhatsApp — LISTE BLANCHE stricte : le modèle propose
+ * une action typée, seul ce tableau décide de ce qui s'exécute, avec des arguments FIXES. */
+const COMMANDES_LOT = {
+  attrs: ['scripts/ops-fill-attrs.mjs'],
+  relations: ['scripts/ops-fill-relations.mjs'],
+  bios: ['scripts/ops-fill-fandom.mjs'],
+  technique: ['scripts/ops-fill-fiches.mjs', '--role=fiche_technique'],
+  artefact: ['scripts/ops-fill-fiches.mjs', '--role=fiche_artefact'],
+  lieu: ['scripts/ops-fill-fiches.mjs', '--role=fiche_lieu'],
+  lexique: ['scripts/ops-fill-fiches.mjs', '--role=fiche_lexique'],
+};
+
+async function executerCommande(cmd) {
+  const { execFile } = await import('node:child_process');
+  const run = (args) => new Promise((res) => execFile('node', ['--env-file=.env.local', ...args],
+    { cwd: process.cwd(), timeout: 120_000 }, (e, out, err) => res((out + err).trim().split('\n').slice(-3).join('\n'))));
+
+  if (cmd.action === 'etat') {
+    const { data: m } = await supabase.rpc('ops_queue_metrics');
+    const { data: r } = await supabase.from('agent_results').select('status, auto_applique, created_at')
+      .gte('created_at', new Date(Date.now() - 24 * 3600_000).toISOString()).neq('task_type', 'review_local');
+    const faits = r?.filter((x) => ['done', 'suspect'].includes(x.status)).length ?? 0;
+    const autos = r?.filter((x) => x.auto_applique).length ?? 0;
+    const attente = r?.filter((x) => x.status === 'done').length ?? 0;
+    return `📊 File : ${m?.[0]?.queue_length ?? '?'} en attente · 24 h : ${faits} production(s), ⚡${autos} auto-appliquée(s), ${faits - autos} pour ta review (localhost:3000/ops)`;
+  }
+  if (cmd.action === 'lot') {
+    const args = COMMANDES_LOT[cmd.role];
+    if (!args) return `Rôle inconnu : ${cmd.role ?? '—'}. Rôles : ${Object.keys(COMMANDES_LOT).join(', ')}.`;
+    const n = Math.max(1, Math.min(30, cmd.quantite ?? 10));
+    const sortie = await run([...args, `--limit=${n}`]);
+    // Drain immédiat, détaché : production Groq + juge Gemini, comme la nuit.
+    const { spawn } = await import('node:child_process');
+    spawn('node', ['--env-file=.env.local', 'scripts/agent-worker.mjs',
+      '--cloud=groq/openai/gpt-oss-120b', '--juge=gemini/gemini-flash-lite-latest', '--conc=3'],
+      { cwd: process.cwd(), detached: true, stdio: 'ignore' }).unref();
+    return `🚀 Lot lancé (${cmd.role}, ${n} max) :\n${sortie}\nLe traitement tourne — les doubles-valides s'appliqueront seuls, le reste ira dans ta review.`;
+  }
+  return null;
 }
 
 /* ── Appel modèle (JSON contraint par schéma) ───────────────────── */
@@ -637,6 +704,12 @@ async function traiterUn(msg) {
         content: JSON.stringify({ de_dan: row.payload.texte, reponse: row.result.reponse, escalade: row.result.escalade, a: row.payload.recu_a }),
       });
       if (row.result.escalade) console.log('  ⚑ escalade Claude notée :', row.payload.texte.slice(0, 60));
+      if (row.result.commande && row.result.commande.action !== 'rien') {
+        try {
+          const resultat = await executerCommande(row.result.commande);
+          if (resultat) await envoyerWhatsApp(resultat, row.payload.de);
+        } catch (e) { console.error('  ✗ commande :', String(e).slice(0, 120)); }
+      }
     }
     // Enchaînement : toute production jugeable part aussitôt en relecture locale.
     if (ins?.id && (row.status === 'done' || row.status === 'suspect') && row.task_type !== 'whatsapp_reponse') await chainReview(row, ins.id);
