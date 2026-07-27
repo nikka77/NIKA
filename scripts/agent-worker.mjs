@@ -10,6 +10,7 @@ import { z } from 'zod';
 import { fetchFandomProse } from './lib/fandom.mjs';
 import { expertFor, axesSchema, AXES, checkPreuves, splitPreuves } from './lib/akasha-axes.mjs';
 import { ROLES, angleFor } from './lib/akasha-roles.mjs';
+import { viderParc } from './lib/whatsapp.mjs';
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 const OMNI_URL = process.env.OMNIROUTE_URL ?? 'http://localhost:20128/v1';
@@ -753,6 +754,8 @@ ${texteSans}`,
         }
       }
       try { await envoyerWhatsApp(`${signature} — ${reponse}`, row.payload.de); } catch (e) { console.error('  ✗ réponse WhatsApp :', String(e).slice(0, 120)); }
+      // Dan vient d'écrire → la fenêtre de 24 h est rouverte : livrer ce qui attendait au parc.
+      try { const n = await viderParc(); if (n) console.log(`  📬 parc livré : ${n} message(s)`); } catch { /* non bloquant */ }
       await supabase.from('ops_notes').insert({
         source: 'whatsapp',
         content: JSON.stringify({ de_dan: row.payload.texte, reponse, par: signature, escalade: row.result.escalade, a: row.payload.recu_a }),

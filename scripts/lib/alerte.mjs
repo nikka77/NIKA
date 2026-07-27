@@ -5,6 +5,7 @@
 //   3. Notification macOS (toujours disponible) : rien à configurer
 // Jamais de secret ni de donnée client dans une alerte : uniquement de l'état opérationnel.
 import { execFile } from 'node:child_process';
+import { envoyerOuParquer } from './whatsapp.mjs';
 
 export async function envoyerAlerte(texte) {
   const canaux = [];
@@ -31,9 +32,12 @@ export async function envoyerAlerte(texte) {
           },
         });
       } else {
-        r = await appel({ type: 'text', text: { body: texte } });
+        // Sans template : hors fenêtre de 24 h, Meta jette le texte EN SILENCE (l'API répond
+        // 200). envoyerOuParquer garde alors le contenu et le livre au prochain message de Dan.
+        canaux.push('whatsapp-meta ' + (await envoyerOuParquer(texte)));
+        r = null;
       }
-      canaux.push(r.ok ? 'whatsapp-meta' : `whatsapp-meta HTTP ${r.status}: ${JSON.stringify((await r.json())?.error?.message ?? '').slice(0, 80)}`);
+      if (r) canaux.push(r.ok ? 'whatsapp-meta' : `whatsapp-meta HTTP ${r.status}: ${JSON.stringify((await r.json())?.error?.message ?? '').slice(0, 80)}`);
     } catch (e) { canaux.push('whatsapp-meta erreur: ' + String(e).slice(0, 60)); }
   }
 

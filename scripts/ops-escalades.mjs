@@ -12,6 +12,8 @@
 import { createClient } from '@supabase/supabase-js';
 import { execFile } from 'node:child_process';
 import { existsSync, writeFileSync, unlinkSync, statSync } from 'node:fs';
+import { envoyerOuParquer } from './lib/whatsapp.mjs';
+import { envoyerAlerte } from './lib/alerte.mjs';
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 const DEPOT = process.env.HOME + '/dev/NIKA';
@@ -24,13 +26,15 @@ const sh = (cmd, args, opts = {}) => new Promise((res, rej) =>
   execFile(cmd, args, { cwd: DEPOT, timeout: opts.timeout ?? 60_000, ...(cmd === 'claude' ? { env: ENV_CLAUDE } : {}), ...opts },
     (e, out, err) => e && !opts.tolere ? rej(new Error(`${cmd}: ${String(err || e).slice(0, 200)}`)) : res((out ?? '').trim())));
 
+// Les escalades finissent parfois des heures après le dernier message de Dan (rattrapage de
+// nuit) : hors fenêtre de 24 h, le texte est PARQUÉ et livré à son prochain message — avec
+// une relance par les canaux de repli pour qu'il sache qu'un message l'attend.
 async function whatsapp(texte) {
-  await fetch(`https://graph.facebook.com/v21.0/${process.env.WHATSAPP_PHONE_ID}/messages`, {
-    method: 'POST',
-    signal: AbortSignal.timeout(20_000),
-    headers: { Authorization: `Bearer ${process.env.WHATSAPP_TOKEN}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ messaging_product: 'whatsapp', to: process.env.WHATSAPP_TO, type: 'text', text: { body: texte } }),
-  }).catch(() => {});
+  try {
+    if ((await envoyerOuParquer(texte)) === 'parqué') {
+      await envoyerAlerte("📬 NIKA OPS : un message de Claude t'attend — écris n'importe quoi sur WhatsApp pour le recevoir.");
+    }
+  } catch { /* jamais bloquant pour l'escalade */ }
 }
 
 // Verrou : un seul passage à la fois (périmé après 30 min — un crash ne bloque pas pour toujours).
