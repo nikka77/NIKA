@@ -308,11 +308,50 @@ ${p.fandom}`,
 }
 for (const roleKey of Object.keys(ROLES)) TASK_TYPES[roleKey] = ficheRole(roleKey);
 
+// SECRÉTAIRE WHATSAPP (L5, agent n°16) : répond aux messages de Dan déposés par le webhook.
+// Étage de garde = Groq (~1 s) ; ce qui touche au code/au site est mis en note d'escalade
+// pour Claude — le secrétaire le DIT à Dan au lieu de promettre ce qu'il ne fera pas.
+TASK_TYPES.whatsapp_reponse = {
+  model: 'groq/openai/gpt-oss-120b',
+  zod: z.object({ reponse: z.string().min(1), escalade: z.boolean() }),
+  schema: {
+    type: 'object',
+    properties: { reponse: { type: 'string' }, escalade: { type: 'boolean' } },
+    required: ['reponse', 'escalade'],
+    additionalProperties: false,
+  },
+  guard: (p) => ((p.texte ?? '').trim() ? null : 'message vide'),
+  prompt: (p) => `Tu es le secrétaire WhatsApp de NIKA OPS, l'usine d'agents du projet NIKA
+(super-app Côte d'Azur de Dan). Tu réponds à Dan, ton seul interlocuteur.
+
+RÈGLES :
+- Réponds en français, style WhatsApp : bref, direct, utile. Pas de pavés.
+- Si c'est une NOTE ou une idée à retenir : accuse réception en une phrase, elle est archivée.
+- Si Dan demande une modification du code/du site/des agents : mets "escalade" à true et dis-lui
+  que c'est transmis à Claude (qui traite en lot depuis la console) — ne promets JAMAIS de le
+  faire toi-même.
+- Pour une question générale : réponds directement, honnêtement, sans inventer.
+
+MESSAGE DE DAN :
+${p.texte}`,
+};
+
+/** Envoi d'une réponse WhatsApp (API Cloud, texte libre — la fenêtre est ouverte par le message reçu). */
+async function envoyerWhatsApp(texte, vers) {
+  const r = await fetch(`https://graph.facebook.com/v21.0/${process.env.WHATSAPP_PHONE_ID}/messages`, {
+    method: 'POST',
+    signal: AbortSignal.timeout(20_000),
+    headers: { Authorization: `Bearer ${process.env.WHATSAPP_TOKEN}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ messaging_product: 'whatsapp', to: vers, type: 'text', text: { body: texte } }),
+  });
+  if (!r.ok) throw new Error(`WhatsApp HTTP ${r.status}: ${(await r.text()).slice(0, 150)}`);
+}
+
 /* ── Appel modèle (JSON contraint par schéma) ───────────────────── */
 // Modèles locaux : Ollama NATIF (param `format` = décodage contraint fiable).
 // OmniRoute fige indéfiniment sur `response_format` (constaté le 25/07) → réservé aux futurs modèles cloud.
 // Budget de génération par type : inutile d'autoriser 1200 tokens à une tâche qui en produit 150.
-const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 400, akasha_relations: 900, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400 };
+const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 400, akasha_relations: 900, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
 const modelOf = (type, p) => {
@@ -582,8 +621,18 @@ async function traiterUn(msg) {
   } else {
     const { data: ins, error: insErr } = await supabase.from('agent_results').insert(row).select('id').single();
     if (insErr) { console.error('agent_results:', insErr.message); return; }
+    if (row.task_type === 'whatsapp_reponse' && row.status === 'done') {
+      // Le secrétaire répond à Dan, et garde trace : chaque échange va dans ops_notes
+      // (source whatsapp) — c'est le carnet du L5, relu par l'orchestrateur plus tard.
+      try { await envoyerWhatsApp(row.result.reponse, row.payload.de); } catch (e) { console.error('  ✗ réponse WhatsApp :', String(e).slice(0, 120)); }
+      await supabase.from('ops_notes').insert({
+        source: 'whatsapp',
+        content: JSON.stringify({ de_dan: row.payload.texte, reponse: row.result.reponse, escalade: row.result.escalade, a: row.payload.recu_a }),
+      });
+      if (row.result.escalade) console.log('  ⚑ escalade Claude notée :', row.payload.texte.slice(0, 60));
+    }
     // Enchaînement : toute production jugeable part aussitôt en relecture locale.
-    if (ins?.id && (row.status === 'done' || row.status === 'suspect')) await chainReview(row, ins.id);
+    if (ins?.id && (row.status === 'done' || row.status === 'suspect') && row.task_type !== 'whatsapp_reponse') await chainReview(row, ins.id);
   }
   await supabase.rpc('ops_queue_archive', { message_id: msg.msg_id });
   console.log(`  ${row.status === 'done' ? '✓' : row.status === 'refused' ? '◇' : '✗'} [${msg.msg_id}] ${row.target_slug ?? row.task_type} (${row.status})`);

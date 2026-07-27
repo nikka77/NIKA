@@ -8,7 +8,7 @@ import { spawn } from 'node:child_process';
 import { opsAllowed } from '@/lib/ops/guard';
 
 export const dynamic = 'force-dynamic';
-export const maxDuration = 3600;
+export const maxDuration = 300;
 
 export async function POST(req: Request) {
   if (!(await opsAllowed())) return NextResponse.json({ error: 'forbidden' }, { status: 403 });
