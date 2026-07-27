@@ -723,7 +723,7 @@ ${texteSans}`,
             ch.stdout.on('data', (d) => { out += d; });
             ch.stderr.on('data', (d) => { err += d; });
             const t = setTimeout(() => { ch.kill(); rej(new Error('timeout 150 s')); }, 150_000);
-            ch.on('close', (code) => { clearTimeout(t); code === 0 ? res(out.trim()) : rej(new Error(`exit ${code} ||stderr: ${err.slice(0, 300)}`)); });
+            ch.on('close', (code) => { clearTimeout(t); code === 0 ? res(out.trim()) : rej(new Error(`exit ${code} ||stdout: ${out.slice(0, 200)} ||stderr: ${err.slice(0, 200)}`)); });
             ch.on('error', (e) => { clearTimeout(t); rej(e); });
           });
           signature = SIGNATURES_WHATSAPP.claude;
