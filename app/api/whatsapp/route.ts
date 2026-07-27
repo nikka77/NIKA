@@ -57,7 +57,7 @@ export async function POST(req: Request) {
   const de_dan = messages.filter((m) => m.from && process.env.WHATSAPP_TO?.replace('+', '') === m.from);
 
   if (de_dan.length) {
-    await supabase.rpc('ops_queue_send_batch', {
+    await supabase.rpc('ops_chat_send_batch', {
       messages: de_dan.map((m) => ({
         type: 'whatsapp_reponse',
         payload: { de: m.from, texte: m.text!.body, message_id: m.id, recu_a: m.timestamp },

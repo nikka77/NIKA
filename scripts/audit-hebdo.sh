@@ -2,6 +2,7 @@
 # scripts/audit-hebdo.sh — l'audit à l'aveugle HEBDOMADAIRE (dimanche 9 h, launchd).
 # 10 fiches récentes (surtout les ⚡auto de la semaine) re-vérifiées sur source par Claude
 # en headless (abonnement Max). Tout « faux » est annulé en base. Le taux surveille la dérive.
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"   # launchd : PATH minimal sinon
 cd "$(dirname "$0")/.."
 LOG=~/.cache/nika/audit-hebdo-$(date +%Y%m%d).log
 mkdir -p ~/.cache/nika

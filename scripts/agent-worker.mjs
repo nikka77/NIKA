@@ -33,6 +33,12 @@ const JUGE = process.argv.find((a) => a.startsWith('--juge='))?.split('=')[1] ??
 // --types=a,b : COULOIR — ce worker ne traite que ces types ; les messages étrangers retournent
 // en file aussitôt pour le worker du couloir voisin (ex : production au cloud, jugement au local).
 const TYPES = process.argv.find((a) => a.startsWith('--types='))?.split('=')[1]?.split(',').filter(Boolean) ?? null;
+// --chat : lit la file DÉDIÉE du secrétaire (ops_chat) au lieu de la file des agents. Chacun chez
+// soi : plus de ping-pong entre le démon du chat et les lots AKASHA (défaut des couloirs --types).
+const CHAT = process.argv.includes('--chat');
+const RPC = CHAT
+  ? { read: 'ops_chat_read', archive: 'ops_chat_archive' }
+  : { read: 'ops_queue_read', archive: 'ops_queue_archive' };
 
 /* ── Types de tâches ────────────────────────────────────────────── */
 // Chaque type : modèle, schéma JSON (décodage contraint), garde d'entrée, prompt.
@@ -619,6 +625,7 @@ async function traiterUn(msg) {
     // Porte d'autonomie : les DEUX juges disent « valide » → application sans Dan, marquée auto.
     if (row.status === 'done' && row.result.verdict === 'valide') await autoAppliquer(row.payload.reviewed_id);
   } else {
+    if (row.task_type === 'whatsapp_reponse') row.review_status = 'approved';   // conversationnel : rien à relire
     const { data: ins, error: insErr } = await supabase.from('agent_results').insert(row).select('id').single();
     if (insErr) { console.error('agent_results:', insErr.message); return; }
     if (row.task_type === 'whatsapp_reponse' && row.status === 'done') {
@@ -634,14 +641,14 @@ async function traiterUn(msg) {
     // Enchaînement : toute production jugeable part aussitôt en relecture locale.
     if (ins?.id && (row.status === 'done' || row.status === 'suspect') && row.task_type !== 'whatsapp_reponse') await chainReview(row, ins.id);
   }
-  await supabase.rpc('ops_queue_archive', { message_id: msg.msg_id });
+  await supabase.rpc(RPC.archive, { message_id: msg.msg_id });
   console.log(`  ${row.status === 'done' ? '✓' : row.status === 'refused' ? '◇' : '✗'} [${msg.msg_id}] ${row.target_slug ?? row.task_type} (${row.status})`);
 }
 
 const counts = { done: 0, refused: 0, failed: 0, suspect: 0 };
 console.log(`⚙️  worker NIKA OPS — mode ${LOOP ? 'continu' : 'drain'} · ${CONC} tâche(s) de front`);
 for (;;) {
-  const { data: lot, error } = await supabase.rpc('ops_queue_read', { vt: VT, qty: LOT });
+  const { data: lot, error } = await supabase.rpc(RPC.read, { vt: VT, qty: LOT });
   if (error) { console.error('lecture file:', error.message); process.exit(1); }
   if (!lot?.length) {
     if (!LOOP) break;

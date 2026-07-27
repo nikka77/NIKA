@@ -8,7 +8,7 @@ export default function ConfidentialitePage() {
       <h1 style={{ fontFamily: 'var(--fe)', fontSize: 'clamp(28px,4vw,48px)', fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', color: 'var(--td)', lineHeight: 0.95, marginBottom: '0.5rem' }}>
         Confidentialité
       </h1>
-      <p style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)', marginBottom: '3rem' }}>Politique de Confidentialité & RGPD — Version 1.0 · Mai 2026</p>
+      <p style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)', marginBottom: '3rem' }}>Politique de Confidentialité & RGPD — Version 1.1 · Juillet 2026</p>
 
       {[
         {
@@ -22,6 +22,10 @@ export default function ConfidentialitePage() {
         {
           title: 'Stockage & Sécurité',
           content: 'Vos données sont hébergées sur Supabase (serveurs européens, conformes RGPD). Les mots de passe sont hachés. Les données de paiement ne sont pas stockées sur nos serveurs : elles transitent directement via Stripe (certifié PCI DSS Level 1).'
+        },
+        {
+          title: 'Messagerie WhatsApp',
+          content: 'Si vous écrivez au numéro WhatsApp de NIKA, nous traitons votre numéro, le contenu de vos messages et leur horodatage, uniquement pour vous répondre. Les messages transitent par l\'API officielle de Meta (WhatsApp Business), sont déposés dans notre file de traitement chez Supabase (serveurs européens) et une réponse vous est renvoyée ; un modèle de langage rédige ces réponses, et aucune donnée n\'est utilisée pour entraîner un modèle. Les conversations sont conservées 12 mois. Pour arrêter, cessez simplement d\'écrire, ou demandez la suppression de l\'historique à privacy@nika.app.'
         },
         {
           title: 'Vos droits',

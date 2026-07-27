@@ -3,7 +3,13 @@
 # Remplit la file avec des lots modestes (quotas gratuits respectés), draine la production au
 # cloud, puis le jugement en local, puis note l'ancrage HHEM (CPU). Tout en priorité de fond ;
 # la RAM est rendue en fin de drain (déchargement auto du worker). Dan relit au matin dans /ops.
+# launchd démarre avec un PATH minimal : sans cette ligne, `node` est introuvable (exit 127 —
+# constaté le 27/07 AVANT la première exécution, par contrôle du statut launchctl).
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 cd "$(dirname "$0")/.."
+# Clone d'automatisation (~/dev/NIKA) : se synchronise depuis GitHub avant chaque nuit —
+# le dépôt iCloud reste la copie de travail de Dan, launchd ne peut pas y lire (TCC macOS).
+git pull --ff-only 2>/dev/null || true
 LOG=~/.cache/nika/nuit-$(date +%Y%m%d).log
 mkdir -p ~/.cache/nika
 exec >> "$LOG" 2>&1
@@ -33,16 +39,10 @@ node --env-file=.env.local scripts/ops-fill-attrs.mjs --limit=40
 node --env-file=.env.local scripts/ops-fill-relations.mjs --limit=20
 node --env-file=.env.local scripts/ops-fill-fandom.mjs --limit=30 2>/dev/null || true
 
-# 1) Production (cloud) — rend les tâches de jugement à la file en sortant.
+# 1+2) Production (cloud) ET jugement (cloud, autre famille) : UN SEUL worker — le tri par
+# modèle fait le travail des anciens « couloirs », sans le ping-pong de renvois qu'ils causaient.
 taskpolicy -c background node --env-file=.env.local scripts/agent-worker.mjs \
-  --cloud="$MODELE" --types=akasha_attrs,akasha_relations,fandom_descfr,flavor_akasha,fiche_technique,fiche_artefact,fiche_lieu,fiche_lexique --conc=3
-
-# 1bis) Relectures orphelines de la veille : un juge qui a raté techniquement se rejoue.
-node --env-file=.env.local scripts/ops-rejoue-relectures.mjs
-
-# 2) Jugement (local) — puis déchargement auto du modèle (RAM rendue).
-taskpolicy -c background node --env-file=.env.local scripts/agent-worker.mjs \
-  --juge="$JUGE" --types=review_local --conc=2
+  --cloud="$MODELE" --juge="$JUGE" --conc=3
 
 # 3) Ancrage HHEM (CPU uniquement, le GPU dort déjà).
 taskpolicy -c background node --env-file=.env.local scripts/ops-score-ancrage.mjs 2>/dev/null || true
