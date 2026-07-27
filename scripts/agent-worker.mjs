@@ -321,9 +321,12 @@ for (const roleKey of Object.keys(ROLES)) TASK_TYPES[roleKey] = ficheRole(roleKe
 // Sans préfixe → Groq. Chaque réponse est SIGNÉE par le modèle qui parle (demande Dan 27/07).
 // NB : le démon secrétaire tourne sans --cloud, sinon le flag écraserait ce routage (modelOf).
 const SIGNATURES_WHATSAPP = { claude: '🤖 Claude', gemini: '✨ Gemini', groq: '⚡ Groq' };
+// Adressage EN DÉBUT de message, salutation tolérée (« Salut Claude, … ») — un nom cité au
+// milieu (« vérifie la dispo de Claude ») ne route pas : c'est un message SUR lui, pas POUR lui.
+// Le champ interlocuteur du schéma couvre les formulations libres (« demande à Claude de… »).
 function cibleWhatsApp(texte) {
-  const m = /^\s*(claude|gemini|groq)\s*[:,!—-]\s*/i.exec(texte ?? '');
-  return m ? { cible: m[1].toLowerCase(), texte: (texte ?? '').slice(m[0].length) } : { cible: 'groq', texte: texte ?? '' };
+  const m = /^\s*(?:salut|hey|bonjour|coucou|yo)?[\s,]*(claude|gemini|groq)\b[\s:,!—?-]*/i.exec(texte ?? '');
+  return m ? { cible: m[1].toLowerCase(), texte: (texte ?? '').slice(m[0].length) || (texte ?? '') } : { cible: 'groq', texte: texte ?? '' };
 }
 TASK_TYPES.whatsapp_reponse = {
   model: (p) => cibleWhatsApp(p.texte).cible === 'gemini' ? 'gemini/gemini-flash-lite-latest' : 'groq/openai/gpt-oss-120b',
@@ -331,6 +334,7 @@ TASK_TYPES.whatsapp_reponse = {
   // les optionnels imbriqués sont refusés (HTTP 400 constaté le 27/07). « aucun »/0 = neutre.
   zod: z.object({
     reponse: z.string().min(1),
+    interlocuteur: z.enum(['secretaire', 'claude', 'gemini']),
     escalade: z.boolean(),
     commande_action: z.enum(['rien', 'etat', 'lot']),
     commande_role: z.enum(['aucun', 'attrs', 'relations', 'bios', 'technique', 'artefact', 'lieu', 'lexique']),
@@ -340,12 +344,13 @@ TASK_TYPES.whatsapp_reponse = {
     type: 'object',
     properties: {
       reponse: { type: 'string' },
+      interlocuteur: { type: 'string', enum: ['secretaire', 'claude', 'gemini'] },
       escalade: { type: 'boolean' },
       commande_action: { type: 'string', enum: ['rien', 'etat', 'lot'] },
       commande_role: { type: 'string', enum: ['aucun', 'attrs', 'relations', 'bios', 'technique', 'artefact', 'lieu', 'lexique'] },
       commande_quantite: { type: 'integer' },
     },
-    required: ['reponse', 'escalade', 'commande_action', 'commande_role', 'commande_quantite'],
+    required: ['reponse', 'interlocuteur', 'escalade', 'commande_action', 'commande_role', 'commande_quantite'],
     additionalProperties: false,
   },
   guard: (p) => ((p.texte ?? '').trim() ? null : 'message vide'),
@@ -359,11 +364,18 @@ RÈGLES :
   que c'est transmis à Claude (qui traite en lot depuis la console) — ne promets JAMAIS de le
   faire toi-même.
 - Pour une question générale : réponds directement, honnêtement, sans inventer.
+- INTERLOCUTEUR — à QUI Dan s'adresse-t-il ? S'il nomme Claude en s'adressant à lui
+  (« Salut Claude… », « Claude peux-tu… », « demande à Claude de… », « dis à Claude… »),
+  mets interlocuteur = "claude" — un autre système transmettra à Claude, ne réponds pas à sa
+  place. Idem "gemini" si Dan s'adresse à Gemini. Sinon "secretaire" (toi). Citer un nom en
+  PARLANT DE lui (« Claude est-il dispo ? ») reste "secretaire" — mais réponds alors avec les
+  faits : Claude et Gemini sont joignables ici même en les nommant en début de message.
 - COMMANDES D'AGENTS — si Dan demande l'état de l'usine (« état ? », « où en est la file ? »),
   mets commande_action = "etat". S'il demande de lancer un lot (« lance 10 fiches techniques »,
   « traite 5 relations »), mets commande_action = "lot", commande_role parmi
   [attrs, relations, bios, technique, artefact, lieu, lexique] et commande_quantite (1 à 30).
   Sinon commande_action = "rien", commande_role = "aucun", commande_quantite = 0.
+  Ne déclenche JAMAIS un lot si la demande est ambiguë ou adressée à Claude — dans le doute, "rien".
   Dans "reponse", confirme ce que tu déclenches, sobrement.
 
 MESSAGE DE DAN :
@@ -700,7 +712,11 @@ async function traiterUn(msg) {
     if (row.task_type === 'whatsapp_reponse' && row.status === 'done') {
       // Le secrétaire répond à Dan, et garde trace : chaque échange va dans ops_notes
       // (source whatsapp) — c'est le carnet du L5, relu par l'orchestrateur plus tard.
-      const { cible, texte: texteSans } = cibleWhatsApp(row.payload.texte);
+      // Deux routes vers un interlocuteur : le préfixe (regex) ET le verdict sémantique de Groq
+      // (« Salut Claude… », « demande à Claude de… » — vécu le 27/07 : Dan parle naturellement).
+      const { cible: cibleRegex, texte: texteSans } = cibleWhatsApp(row.payload.texte);
+      const cible = cibleRegex !== 'groq' ? cibleRegex
+        : row.result.interlocuteur === 'claude' ? 'claude' : 'groq';
       let reponse = row.result.reponse;
       let signature = SIGNATURES_WHATSAPP[cible === 'claude' ? 'groq' : cible];
       if (cible === 'claude' && !row.result.escalade && row.result.commande_action === 'rien') {
