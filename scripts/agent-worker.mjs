@@ -317,8 +317,16 @@ for (const roleKey of Object.keys(ROLES)) TASK_TYPES[roleKey] = ficheRole(roleKe
 // SECRÉTAIRE WHATSAPP (L5, agent n°16) : répond aux messages de Dan déposés par le webhook.
 // Étage de garde = Groq (~1 s) ; ce qui touche au code/au site est mis en note d'escalade
 // pour Claude — le secrétaire le DIT à Dan au lieu de promettre ce qu'il ne fera pas.
+// Dan choisit son interlocuteur en préfixant : « claude: … », « gemini: … », « groq: … ».
+// Sans préfixe → Groq. Chaque réponse est SIGNÉE par le modèle qui parle (demande Dan 27/07).
+// NB : le démon secrétaire tourne sans --cloud, sinon le flag écraserait ce routage (modelOf).
+const SIGNATURES_WHATSAPP = { claude: '🤖 Claude', gemini: '✨ Gemini', groq: '⚡ Groq' };
+function cibleWhatsApp(texte) {
+  const m = /^\s*(claude|gemini|groq)\s*[:,!—-]\s*/i.exec(texte ?? '');
+  return m ? { cible: m[1].toLowerCase(), texte: (texte ?? '').slice(m[0].length) } : { cible: 'groq', texte: texte ?? '' };
+}
 TASK_TYPES.whatsapp_reponse = {
-  model: 'groq/openai/gpt-oss-120b',
+  model: (p) => cibleWhatsApp(p.texte).cible === 'gemini' ? 'gemini/gemini-flash-lite-latest' : 'groq/openai/gpt-oss-120b',
   // Schéma PLAT : le mode strict (Groq/OpenAI) exige que chaque propriété soit requise —
   // les optionnels imbriqués sont refusés (HTTP 400 constaté le 27/07). « aucun »/0 = neutre.
   zod: z.object({
@@ -341,7 +349,7 @@ TASK_TYPES.whatsapp_reponse = {
     additionalProperties: false,
   },
   guard: (p) => ((p.texte ?? '').trim() ? null : 'message vide'),
-  prompt: (p) => `Tu es le secrétaire WhatsApp de NIKA OPS, l'usine d'agents du projet NIKA
+  prompt: (p) => `Tu es ${cibleWhatsApp(p.texte).cible === 'gemini' ? 'Gemini, un des modèles' : 'le secrétaire (modèle Groq)'} de NIKA OPS, l'usine d'agents du projet NIKA
 (super-app Côte d'Azur de Dan). Tu réponds à Dan, ton seul interlocuteur.
 
 RÈGLES :
@@ -359,7 +367,7 @@ RÈGLES :
   Dans "reponse", confirme ce que tu déclenches, sobrement.
 
 MESSAGE DE DAN :
-${p.texte}`,
+${cibleWhatsApp(p.texte).texte}`,
 };
 
 /** Envoi d'une réponse WhatsApp (API Cloud, texte libre — la fenêtre est ouverte par le message reçu). */
@@ -692,10 +700,29 @@ async function traiterUn(msg) {
     if (row.task_type === 'whatsapp_reponse' && row.status === 'done') {
       // Le secrétaire répond à Dan, et garde trace : chaque échange va dans ops_notes
       // (source whatsapp) — c'est le carnet du L5, relu par l'orchestrateur plus tard.
-      try { await envoyerWhatsApp(row.result.reponse, row.payload.de); } catch (e) { console.error('  ✗ réponse WhatsApp :', String(e).slice(0, 120)); }
+      const { cible, texte: texteSans } = cibleWhatsApp(row.payload.texte);
+      let reponse = row.result.reponse;
+      let signature = SIGNATURES_WHATSAPP[cible === 'claude' ? 'groq' : cible];
+      if (cible === 'claude' && !row.result.escalade && row.result.commande_action === 'rien') {
+        // Discussion directe avec Claude (abonnement, une réponse ponctuelle — le code passe
+        // toujours par l'escalade). Groq reste l'étage de garde : c'est lui qui a classé.
+        try {
+          const { execFile } = await import('node:child_process');
+          reponse = await new Promise((res, rej) => execFile('claude', [
+            '-p', `Tu es Claude, l'ingénieur de l'usine NIKA OPS (projet NIKA, super-app Côte d'Azur de Dan).
+Dan te parle sur WhatsApp. Réponds en français, bref et direct (style WhatsApp, pas de pavés).
+
+MESSAGE DE DAN :
+${texteSans}`,
+            '--output-format', 'text',
+          ], { cwd: process.cwd(), timeout: 150_000 }, (e, out) => (e ? rej(e) : res(String(out).trim()))));
+          signature = SIGNATURES_WHATSAPP.claude;
+        } catch { reponse = `${row.result.reponse}\n(Claude injoignable à l'instant — réponse du secrétaire.)`; }
+      }
+      try { await envoyerWhatsApp(`${signature} — ${reponse}`, row.payload.de); } catch (e) { console.error('  ✗ réponse WhatsApp :', String(e).slice(0, 120)); }
       await supabase.from('ops_notes').insert({
         source: 'whatsapp',
-        content: JSON.stringify({ de_dan: row.payload.texte, reponse: row.result.reponse, escalade: row.result.escalade, a: row.payload.recu_a }),
+        content: JSON.stringify({ de_dan: row.payload.texte, reponse, par: signature, escalade: row.result.escalade, a: row.payload.recu_a }),
       });
       if (row.result.escalade) {
         console.log('  ⚑ escalade Claude notée :', row.payload.texte.slice(0, 60));
@@ -713,7 +740,7 @@ async function traiterUn(msg) {
             role: row.result.commande_role === 'aucun' ? undefined : row.result.commande_role,
             quantite: row.result.commande_quantite || undefined,
           });
-          if (resultat) await envoyerWhatsApp(resultat, row.payload.de);
+          if (resultat) await envoyerWhatsApp(`🏭 Usine — ${resultat}`, row.payload.de);
         } catch (e) { console.error('  ✗ commande :', String(e).slice(0, 120)); }
       }
     }

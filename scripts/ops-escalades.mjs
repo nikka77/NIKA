@@ -49,7 +49,7 @@ try {
   // Session Claude : sans elle, on prévient au lieu de laisser pourrir en silence.
   try { await sh('claude', ['-p', 'OK', '--output-format', 'text'], { timeout: 120_000 }); }
   catch {
-    await whatsapp('⚠ Escalade en attente mais token Claude invalide — régénère avec `claude setup-token` → .env.local (les 2 copies), puis renvoie ton message.');
+    await whatsapp('🏭 Usine — ⚠ escalade en attente mais token Claude invalide — régénère avec `claude setup-token` → .env.local (les 2 copies), puis renvoie ton message.');
     process.exit(0);
   }
 
@@ -62,7 +62,7 @@ try {
     // (vécu le 27/07 : deux scripts modifiés à la main ont fini dans le commit d'escalade).
     const sale = await sh('git', ['status', '--porcelain']);
     if (sale) {
-      await whatsapp(`⚠ Escalade #${esc.id} reportée : ~/dev/NIKA a des fichiers non commités (${sale.split('\n').length}). Commit/push côté iCloud puis git pull ici.`);
+      await whatsapp(`🏭 Usine — ⚠ escalade #${esc.id} reportée : ~/dev/NIKA a des fichiers non commités (${sale.split('\n').length}). Commit/push côté iCloud puis git pull ici.`);
       console.log(`✗ clone sale — escalade #${esc.id} reportée`); break;
     }
     await sh('git', ['branch', '-D', branche], { tolere: true });
@@ -87,7 +87,7 @@ RÈGLES STRICTES :
       ], { timeout: 600_000 });
     } catch (e) {
       await sh('git', ['checkout', 'main']);
-      await whatsapp(`❌ Escalade #${esc.id} échouée : ${String(e).slice(0, 160)}. La demande reste notée.`);
+      await whatsapp(`🏭 Usine — ❌ escalade #${esc.id} échouée : ${String(e).slice(0, 160)}. La demande reste notée.`);
       continue;
     }
 
@@ -97,9 +97,9 @@ RÈGLES STRICTES :
       await sh('git', ['commit', '-q', '-m', `escalade #${esc.id}: ${esc.de_dan.slice(0, 60)}\n\nDemandé par Dan via WhatsApp — branche à valider avant fusion.\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>`]);
       const stat = await sh('git', ['diff', 'main', '--stat']);
       const derniere = resume.split('\n').filter(Boolean).pop() ?? '';
-      await whatsapp(`🔧 Escalade #${esc.id} prête sur la branche ${branche} (~/dev/NIKA) :\n${derniere.slice(0, 250)}\n\n${stat.split('\n').pop()}\nRien n'est fusionné : dis à Claude « fusionne l'escalade #${esc.id} » (console /ops ou session) pour valider.`);
+      await whatsapp(`🤖 Claude — escalade #${esc.id} terminée, branche ${branche} prête (~/dev/NIKA) :\n${derniere.slice(0, 250)}\n\n${stat.split('\n').pop()}\nRien n'est fusionné : réponds « fusionne l'escalade #${esc.id} » (ou dis-le en session) pour valider.`);
     } else {
-      await whatsapp(`🔧 Escalade #${esc.id} : Claude a répondu sans modifier de fichier — « ${resume.split('\n').filter(Boolean).pop()?.slice(0, 200) ?? ''} »`);
+      await whatsapp(`🤖 Claude — escalade #${esc.id} : j'ai répondu sans modifier de fichier — « ${resume.split('\n').filter(Boolean).pop()?.slice(0, 200) ?? ''} »`);
     }
     await sh('git', ['checkout', 'main']);          // la nuit fait `git pull` : toujours revenir sur main
     await supabase.from('ops_notes').update({ done: true }).eq('id', esc.id);
