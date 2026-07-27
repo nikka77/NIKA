@@ -319,32 +319,25 @@ for (const roleKey of Object.keys(ROLES)) TASK_TYPES[roleKey] = ficheRole(roleKe
 // pour Claude — le secrétaire le DIT à Dan au lieu de promettre ce qu'il ne fera pas.
 TASK_TYPES.whatsapp_reponse = {
   model: 'groq/openai/gpt-oss-120b',
+  // Schéma PLAT : le mode strict (Groq/OpenAI) exige que chaque propriété soit requise —
+  // les optionnels imbriqués sont refusés (HTTP 400 constaté le 27/07). « aucun »/0 = neutre.
   zod: z.object({
     reponse: z.string().min(1),
     escalade: z.boolean(),
-    commande: z.object({
-      action: z.enum(['rien', 'etat', 'lot']),
-      role: z.enum(['attrs', 'relations', 'bios', 'technique', 'artefact', 'lieu', 'lexique']).optional(),
-      quantite: z.number().int().optional(),
-    }),
+    commande_action: z.enum(['rien', 'etat', 'lot']),
+    commande_role: z.enum(['aucun', 'attrs', 'relations', 'bios', 'technique', 'artefact', 'lieu', 'lexique']),
+    commande_quantite: z.number().int(),
   }),
   schema: {
     type: 'object',
     properties: {
       reponse: { type: 'string' },
       escalade: { type: 'boolean' },
-      commande: {
-        type: 'object',
-        properties: {
-          action: { type: 'string', enum: ['rien', 'etat', 'lot'] },
-          role: { type: 'string', enum: ['attrs', 'relations', 'bios', 'technique', 'artefact', 'lieu', 'lexique'] },
-          quantite: { type: 'integer' },
-        },
-        required: ['action'],
-        additionalProperties: false,
-      },
+      commande_action: { type: 'string', enum: ['rien', 'etat', 'lot'] },
+      commande_role: { type: 'string', enum: ['aucun', 'attrs', 'relations', 'bios', 'technique', 'artefact', 'lieu', 'lexique'] },
+      commande_quantite: { type: 'integer' },
     },
-    required: ['reponse', 'escalade', 'commande'],
+    required: ['reponse', 'escalade', 'commande_action', 'commande_role', 'commande_quantite'],
     additionalProperties: false,
   },
   guard: (p) => ((p.texte ?? '').trim() ? null : 'message vide'),
@@ -359,10 +352,11 @@ RÈGLES :
   faire toi-même.
 - Pour une question générale : réponds directement, honnêtement, sans inventer.
 - COMMANDES D'AGENTS — si Dan demande l'état de l'usine (« état ? », « où en est la file ? »),
-  mets commande.action = "etat". S'il demande de lancer un lot (« lance 10 fiches techniques »,
-  « traite 5 relations »), mets commande.action = "lot" avec role parmi
-  [attrs, relations, bios, technique, artefact, lieu, lexique] et quantite (1 à 30).
-  Sinon commande.action = "rien". Dans "reponse", confirme ce que tu déclenches, sobrement.
+  mets commande_action = "etat". S'il demande de lancer un lot (« lance 10 fiches techniques »,
+  « traite 5 relations »), mets commande_action = "lot", commande_role parmi
+  [attrs, relations, bios, technique, artefact, lieu, lexique] et commande_quantite (1 à 30).
+  Sinon commande_action = "rien", commande_role = "aucun", commande_quantite = 0.
+  Dans "reponse", confirme ce que tu déclenches, sobrement.
 
 MESSAGE DE DAN :
 ${p.texte}`,
@@ -704,9 +698,13 @@ async function traiterUn(msg) {
         content: JSON.stringify({ de_dan: row.payload.texte, reponse: row.result.reponse, escalade: row.result.escalade, a: row.payload.recu_a }),
       });
       if (row.result.escalade) console.log('  ⚑ escalade Claude notée :', row.payload.texte.slice(0, 60));
-      if (row.result.commande && row.result.commande.action !== 'rien') {
+      if (row.result.commande_action && row.result.commande_action !== 'rien') {
         try {
-          const resultat = await executerCommande(row.result.commande);
+          const resultat = await executerCommande({
+            action: row.result.commande_action,
+            role: row.result.commande_role === 'aucun' ? undefined : row.result.commande_role,
+            quantite: row.result.commande_quantite || undefined,
+          });
           if (resultat) await envoyerWhatsApp(resultat, row.payload.de);
         } catch (e) { console.error('  ✗ commande :', String(e).slice(0, 120)); }
       }
