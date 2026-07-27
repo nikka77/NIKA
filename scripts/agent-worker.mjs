@@ -697,7 +697,12 @@ async function traiterUn(msg) {
         source: 'whatsapp',
         content: JSON.stringify({ de_dan: row.payload.texte, reponse: row.result.reponse, escalade: row.result.escalade, a: row.payload.recu_a }),
       });
-      if (row.result.escalade) console.log('  ⚑ escalade Claude notée :', row.payload.texte.slice(0, 60));
+      if (row.result.escalade) {
+        console.log('  ⚑ escalade Claude notée :', row.payload.texte.slice(0, 60));
+        const { spawn } = await import('node:child_process');
+        spawn('node', ['--env-file=.env.local', 'scripts/ops-escalades.mjs'],
+          { cwd: process.cwd(), detached: true, stdio: 'ignore' }).unref();
+      }
       if (row.result.commande_action && row.result.commande_action !== 'rien') {
         try {
           const resultat = await executerCommande({

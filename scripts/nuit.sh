@@ -47,6 +47,9 @@ taskpolicy -c background node --env-file=.env.local scripts/agent-worker.mjs \
 # 3) Ancrage HHEM (CPU uniquement, le GPU dort déjà).
 taskpolicy -c background node --env-file=.env.local scripts/ops-score-ancrage.mjs 2>/dev/null || true
 
+# 3bis) Rattrapage des escalades Claude restées en attente (session expirée, échec…).
+node --env-file=.env.local scripts/ops-escalades.mjs || true
+
 # 4) Bilan + sentinelles → alerte (WhatsApp si clé, sinon notification macOS).
 node --env-file=.env.local scripts/ops-bilan-nuit.mjs --heures=8
 
