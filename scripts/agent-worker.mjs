@@ -532,16 +532,22 @@ const MODES_JSON = {
   'llama-3.3-70b-versatile': 'json_object',
   'nvidia/nemotron-3-ultra-550b-a55b:free': 'json_object',
   'nvidia/nemotron-3-super-120b-a12b:free': 'json_object',
+  'nvidia/nemotron-3-super-120b-a12b': 'json_object',
+  'nvidia/nemotron-3-ultra-550b-a55b': 'json_object',
 };
+// Les Nemotron « pensent » dans leur réponse sans cette directive (sonde NIM 29/07) —
+// /no_think en système rend un JSON propre directement parsable.
+const SANS_PENSEE = new Set(['nvidia/nemotron-3-super-120b-a12b', 'nvidia/nemotron-3-ultra-550b-a55b']);
 async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
   const fournisseur = url.includes('api.groq.com') ? 'groq' : url.includes('cerebras') ? 'cerebras'
     : url.includes('nvidia.com') ? 'nvidia' : url.includes('mistral.ai') ? 'mistral'
     : url.includes('openrouter.ai') ? 'openrouter' : null;
   await quotaReserver(fournisseur ? `${fournisseur}/${modele}` : null, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900);
   const modeJson = MODES_JSON[modele] ?? 'json_schema';
-  const msgs = modeJson === 'json_object'
+  let msgs = modeJson === 'json_object'
     ? [{ ...messages[0], content: `${messages[0].content}\n\nRéponds UNIQUEMENT par un objet JSON conforme à ce schéma (mêmes clés, mêmes types, AUCUN texte hors JSON, ne recopie pas le schéma) :\n${JSON.stringify(schema)}` }]
     : messages;
+  if (SANS_PENSEE.has(modele)) msgs = [{ role: 'system', content: '/no_think' }, ...msgs];
   for (let essai = 1; ; essai++) {
     const res = await fetch(url, {
       method: 'POST',
