@@ -23,6 +23,8 @@ MODELE=${CLOUD_MODEL:-groq/openai/gpt-oss-120b}
 # Au cloud il cesse d'être le goulot : 15 h de GPU local mesurées pour juger tout le chantier.
 JUGE=${JUDGE_MODEL:-}
 grep -q '^GEMINI_API_KEY=' .env.local 2>/dev/null && JUGE=${JUDGE_MODEL:-gemini/gemini-flash-lite-latest}
+# Juge n°2 en famille croisée (Meta) dès que la clé Groq existe — étude modèles 28/07.
+grep -q '^GROQ_API_KEY=' .env.local 2>/dev/null && JUGE=${JUDGE_MODEL:-groq/llama-3.3-70b-versatile}
 [ -z "$JUGE" ] && JUGE=ollama/gemma4:12b
 if grep -q '^CEREBRAS_API_KEY=' .env.local 2>/dev/null; then
   CK=$(grep '^CEREBRAS_API_KEY=' .env.local | cut -d= -f2)

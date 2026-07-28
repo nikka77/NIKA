@@ -457,23 +457,39 @@ const schemaOf = (t, p) => (typeof t.schema === 'function' ? t.schema(p) : t.sch
 // réserve d'abord sa part (RPC quota_consommer, table ops_quotas). Refus = attente puis
 // nouvel essai — un 429 préventif, avant de gaspiller l'appel réseau. Marge ~20 % sous
 // les plafonds gratuits constatés (Groq 30 req/6k TPM, gemini-flash-lite plus large).
+// Clés par MODÈLE (les quotas Groq/Gemini sont PAR MODÈLE — moisson du 28/07) avec repli
+// par fournisseur. `parJour` = second guichet sur 24 h quand le plafond quotidien mord
+// avant le plafond minute (llama-70b : 1 000 req/j). Marges ~10-20 % sous les plafonds.
 const LIMITES_FOURNISSEURS = {
+  'groq/openai/gpt-oss-120b':        { requetes: 25, jetons: 5_000, fenetre: 60 },
+  'groq/llama-3.3-70b-versatile':    { requetes: 25, jetons: 10_000, fenetre: 60, parJour: 900 },
+  'gemini/gemini-flash-lite-latest': { requetes: 12, jetons: 200_000, fenetre: 60, parJour: 450 },
+  'gemini/gemma-4-31b-it':           { requetes: 24, jetons: 13_000, fenetre: 60, parJour: 13_000 },
   groq:     { requetes: 25, jetons: 5_000, fenetre: 60 },
   gemini:   { requetes: 12, jetons: 200_000, fenetre: 60 },
   cerebras: { requetes: 25, jetons: 50_000, fenetre: 60 },
 };
 let quotaIndisponible = false;   // RPC absente (SQL pas encore appliqué) → on le dit UNE fois
-async function quotaReserver(fournisseur, jetonsEstimes) {
-  const lim = LIMITES_FOURNISSEURS[fournisseur];
+async function quotaReserver(cle, jetonsEstimes) {
+  const lim = LIMITES_FOURNISSEURS[cle] ?? LIMITES_FOURNISSEURS[String(cle).split('/')[0]];
   if (!lim || quotaIndisponible) return;
+  // Guichet JOUR d'abord : attendre une fenêtre de 24 h n'a pas de sens — on échoue franchement
+  // (la tâche repart en file demain via le rejoueur/les remplisseurs), on ne brûle pas la minute.
+  if (lim.parJour) {
+    const { data: okJour, error: eJour } = await supabase.rpc('quota_consommer', {
+      p_fournisseur: `${cle}:jour`, p_requetes: 1, p_jetons: 0,
+      p_limite_requetes: lim.parJour, p_limite_jetons: 1, p_fenetre_secondes: 86_400,
+    });
+    if (!eJour && okJour === false) throw new Error(`plafond quotidien ${cle} atteint (${lim.parJour}/j)`);
+  }
   for (let essai = 0; essai < 20; essai++) {
     const { data, error } = await supabase.rpc('quota_consommer', {
-      p_fournisseur: fournisseur, p_requetes: 1, p_jetons: Math.min(jetonsEstimes, lim.jetons),
+      p_fournisseur: cle, p_requetes: 1, p_jetons: Math.min(jetonsEstimes, lim.jetons),
       p_limite_requetes: lim.requetes, p_limite_jetons: lim.jetons, p_fenetre_secondes: lim.fenetre,
     });
     if (error) { quotaIndisponible = true; console.error('  ✗ budget LLM indisponible (production non bloquée) :', error.message.slice(0, 80)); return; }
     if (data) return;
-    if (essai === 0) console.log(`  ⏳ budget ${fournisseur} épuisé — attente de la fenêtre`);
+    if (essai === 0) console.log(`  ⏳ budget ${cle} épuisé — attente de la fenêtre`);
     await new Promise((r) => setTimeout(r, (lim.fenetre / 4 + Math.random() * 5) * 1000));
   }
 }
@@ -492,9 +508,17 @@ async function battreLeCoeur() {
 }
 
 /** Appel OpenAI-compatible (Groq, Cerebras, OmniRoute…) — backoff 429 au délai annoncé. */
+// Modèles sans json_schema strict (Groq le refuse, testé 28/07) → mode json_object :
+// schéma injecté dans le prompt, zod fait la police en aval. llama-3.1-8b ÉCARTÉ au même
+// test (il recopie le schéma au lieu de répondre).
+const MODES_JSON = { 'llama-3.3-70b-versatile': 'json_object' };
 async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
   const fournisseur = url.includes('api.groq.com') ? 'groq' : url.includes('cerebras') ? 'cerebras' : null;
-  await quotaReserver(fournisseur, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900);
+  await quotaReserver(fournisseur ? `${fournisseur}/${modele}` : null, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900);
+  const modeJson = MODES_JSON[modele] ?? 'json_schema';
+  const msgs = modeJson === 'json_object'
+    ? [{ ...messages[0], content: `${messages[0].content}\n\nRéponds UNIQUEMENT par un objet JSON conforme à ce schéma (mêmes clés, mêmes types, AUCUN texte hors JSON, ne recopie pas le schéma) :\n${JSON.stringify(schema)}` }]
+    : messages;
   for (let essai = 1; ; essai++) {
     const res = await fetch(url, {
       method: 'POST',
@@ -502,9 +526,11 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
       headers: { Authorization: `Bearer ${cle}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
         // +900 de marge : les modèles « à raisonnement » (gpt-oss) brûlent des tokens AVANT le JSON.
-        model: modele, stream: false, messages,
+        model: modele, stream: false, messages: msgs,
         max_tokens: (NUM_PREDICT[type] ?? 800) + 900,
-        response_format: { type: 'json_schema', json_schema: { name: type, strict: true, schema } },
+        response_format: modeJson === 'json_schema'
+          ? { type: 'json_schema', json_schema: { name: type, strict: true, schema } }
+          : { type: 'json_object' },
       }),
     });
     if (res.status === 429 && essai < 4) {
@@ -563,7 +589,7 @@ async function callModel(type, payload) {
     const { additionalProperties, ...gSchema } = schema;   // champ inconnu de l'API Gemini
     // Palier gratuit très serré (5 req/min sur gemini-flash-latest, mesuré le 26/07) : sans backoff,
     // un lot de 9 perd 5 tâches d'un coup. Gemini annonce son délai dans error.details[].retryDelay.
-    await quotaReserver('gemini', Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900);
+    await quotaReserver(`gemini/${model.slice(7)}`, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900);
     for (let essai = 1; ; essai++) {
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model.slice(7)}:generateContent`,
@@ -574,7 +600,9 @@ async function callModel(type, payload) {
           body: JSON.stringify({
             contents: [{ parts: [{ text: t.prompt(payload) }] }],
             generationConfig: {
-              temperature: 0,
+              // Gemma boucle en répétition à température 0 (Kamehameha 28/07 : JSON tronqué
+              // pile au plafond de tokens) — 0.2 casse la boucle, Gemini reste déterministe.
+              temperature: model.includes('gemma') ? 0.2 : 0,
               maxOutputTokens: (NUM_PREDICT[type] ?? 800) + 900,
               responseMimeType: 'application/json',
               responseSchema: gSchema,
@@ -668,7 +696,13 @@ async function chainReview(row, reviewedId) {
   // autorise l'application automatique ; tout désaccord reste pour Dan.
   const juges = [
     { juge_modele: 'ollama/gemma4:12b', slot: 'auto' },
-    ...(process.env.GEMINI_API_KEY ? [{ juge_modele: 'gemini/gemini-flash-lite-latest', slot: 'auto2' }] : []),
+    // Juge n°2 : llama-70b (Meta) en priorité — gemma local + Gemini étaient de la MÊME
+    // famille Google (angles morts partagés, corrigé par l'étude modèles du 28/07).
+    ...(process.env.GROQ_API_KEY
+      ? [{ juge_modele: 'groq/llama-3.3-70b-versatile', slot: 'auto2' }]
+      : process.env.GEMINI_API_KEY
+        ? [{ juge_modele: 'gemini/gemini-flash-lite-latest', slot: 'auto2' }]
+        : []),
   ];
   await supabase.rpc('ops_queue_send_batch', {
     messages: juges.map((j) => ({
