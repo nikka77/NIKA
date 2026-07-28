@@ -10,7 +10,7 @@ import { z } from 'zod';
 import { fetchFandomProse } from './lib/fandom.mjs';
 import { expertFor, axesSchema, AXES, checkPreuves, splitPreuves } from './lib/akasha-axes.mjs';
 import { ROLES, angleFor } from './lib/akasha-roles.mjs';
-import { nomExpert, memoireExpert } from './lib/akasha-experts.mjs';
+import { nomExpert, memoireExpert, expertNiche } from './lib/akasha-experts.mjs';
 import { viderParc } from './lib/whatsapp.mjs';
 import { hostname } from 'node:os';
 
@@ -88,8 +88,9 @@ DONNÉES :
     // Étape « yeux » : le worker va chercher la matière AVANT tout appel au modèle.
     fetch: async (p) => {
       const page = await fetchFandomProse(p.universe, p.name);
-      const memoire = await memoireExpert(supabase, 'fandom_descfr', p.universe);   // L18
-      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, memoire } : { ...p, memoire };
+      const niche = await expertNiche(supabase, p.universe, p.name);               // L19
+      const memoire = await memoireExpert(supabase, 'fandom_descfr', p.universe, niche?.noms);   // L18
+      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, memoire, niche } : { ...p, memoire, niche };
     },
     // Trois gardes, apprises des 3 erreurs d'identité du 25/07 :
     guard: (p) => {
@@ -102,7 +103,7 @@ DONNÉES :
         return `homonyme probable : aucun repère du résumé (${propres.slice(0, 3).join(', ')}) dans « ${p.fandomTitle} »`;
       return null;
     },
-    prompt: (p) => `Tu es ${nomExpert('fandom_descfr', p.universe)}, expert de l'encyclopédie AKASHA (univers d'animes/mangas).
+    prompt: (p) => `Tu es ${nomExpert('fandom_descfr', p.universe)}${p.niche ? `, et plus précisément « ${p.niche.nom} » (${p.niche.membres} entrées à ta charge)` : ''}, expert de l'encyclopédie AKASHA (univers d'animes/mangas).
 Voici l'article du wiki canon (en anglais, brut). Rédige "descFr" : 3 à 5 phrases en français,
 ton encyclopédique sobre, présent de narration.
 ${p.memoire ? `\n${p.memoire}\n` : ''}
@@ -296,13 +297,15 @@ function ficheRole(roleKey) {
     },
     fetch: async (p) => {
       const page = await fetchFandomProse(p.universe, p.name);
-      // Mémoire d'expert (L18) : exemplaires approuvés + leçons des erreurs jugées, pour CE
-      // rôle dans CET univers — c'est par elle que l'expert progresse fiche après fiche.
-      const memoire = await memoireExpert(supabase, roleKey, p.universe);
-      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, memoire } : { ...p, memoire };
+      // Mémoire d'expert (L18) + niche (L19) : l'expert le plus POINTU couvrant l'entrée
+      // (« Expert Kekkei genkai » avant « Expert Jutsu ») signe le prompt, et ses exemplaires
+      // viennent d'abord de son propre groupe — c'est par là qu'il progresse fiche après fiche.
+      const niche = await expertNiche(supabase, p.universe, p.name);
+      const memoire = await memoireExpert(supabase, roleKey, p.universe, niche?.noms);
+      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, memoire, niche } : { ...p, memoire, niche };
     },
     guard: (p) => TASK_TYPES.fandom_descfr.guard(p),
-    prompt: (p) => `Tu es ${nomExpert(roleKey, p.universe)}, expert de l'encyclopédie AKASHA (univers d'animes/mangas).
+    prompt: (p) => `Tu es ${nomExpert(roleKey, p.universe)}${p.niche ? `, et plus précisément « ${p.niche.nom} » (${p.niche.membres} entrées à ta charge)` : ''}, expert de l'encyclopédie AKASHA (univers d'animes/mangas).
 Voici l'article du wiki canon (en anglais, brut). Rédige "descFr" : 2 à 4 phrases en français,
 ton encyclopédique sobre, présent de narration.
 

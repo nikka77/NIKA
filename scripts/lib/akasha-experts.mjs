@@ -17,23 +17,70 @@ const NOMS_HORS_ROLES = {
 export const nomExpert = (taskType, universe) =>
   `${ROLES[taskType]?.nom ?? NOMS_HORS_ROLES[taskType] ?? 'Expert'} de ${universe ?? "l'univers"}`;
 
-/** Mémoire d'un expert (type × univers) : exemplaires approuvés + leçons des verdicts. */
-export async function memoireExpert(supabase, taskType, universe) {
+/* ── Experts de NICHE (L19) : découverts dans les données, jamais décrétés ─
+   Une entrée dont un attribut (village, clan, race, saga, element…) est partagé par
+   ≥ SEUIL_NICHE entrées relève d'un expert de niche : « Expert Konohagakure (Naruto) ».
+   Le worker interroge la niche à la volée (caches en mémoire de processus). */
+const SEUIL_NICHE = 8;
+const CLES_NICHE_EXCLUES = new Set(['bio', 'history', 'summary', 'description', 'nindo', 'image', 'image_url', 'url', 'quote', 'era', 'descLang', 'source', 'role', 'about_hash', 'sex', 'age', 'height', 'weight', 'birthday', 'birthdate', 'blood_type', 'status', 'villageSlug', 'rosterLabel']);
+const valeurNiche = (v) => typeof v === 'string' && v.length >= 2 && v.length <= 60 && !/[.!?]\s/.test(v);
+const cacheTailles = new Map();      // "u␟k␟v" → nombre d'entrées du groupe
+const cacheMembres = new Map();      // "u␟k␟v" → noms (pour les exemplaires ciblés)
+
+/** La niche la plus spécifique (groupe qualifié le PLUS PETIT) couvrant cette entrée. */
+export async function expertNiche(supabase, universe, name) {
+  if (!universe || !name) return null;
+  try {
+    const { data } = await supabase.from('akasha_entries')
+      .select('attributes').eq('universe', universe).eq('name', name).limit(1);
+    const attrs = data?.[0]?.attributes ?? {};
+    const candidats = [];
+    for (const [k, v] of Object.entries(attrs)) {
+      if (CLES_NICHE_EXCLUES.has(k) || !valeurNiche(v)) continue;
+      const id = `${universe}␟${k}␟${v}`;
+      if (!cacheTailles.has(id)) {
+        const { count } = await supabase.from('akasha_entries')
+          .select('id', { count: 'exact', head: true })
+          .eq('universe', universe).eq(`attributes->>${k}`, v);
+        cacheTailles.set(id, count ?? 0);
+      }
+      if (cacheTailles.get(id) >= SEUIL_NICHE) candidats.push({ axe: k, valeur: v, membres: cacheTailles.get(id), id });
+    }
+    if (!candidats.length) return null;
+    // le plus PETIT groupe qualifié = la spécialité la plus pointue (clan Uchiha avant Konohagakure)
+    const n = candidats.sort((a, b) => a.membres - b.membres)[0];
+    if (!cacheMembres.has(n.id)) {
+      const { data: m } = await supabase.from('akasha_entries')
+        .select('name').eq('universe', universe).eq(`attributes->>${n.axe}`, n.valeur).limit(20);
+      cacheMembres.set(n.id, (m ?? []).map((x) => x.name));
+    }
+    return { nom: `Expert ${n.valeur}`, axe: n.axe, valeur: n.valeur, membres: n.membres, noms: cacheMembres.get(n.id) };
+  } catch { return null; }             // la niche ne bloque jamais la production
+}
+
+/** Mémoire d'un expert (type × univers) : exemplaires approuvés + leçons des verdicts.
+    Si `nomsCluster` est fourni, les exemplaires viennent d'abord du même groupe de niche. */
+export async function memoireExpert(supabase, taskType, universe, nomsCluster) {
   if (!universe) return '';
   try {
-    const [ex, lec] = await Promise.all([
-      supabase.from('agent_results')
-        .select('payload, result')
-        .eq('task_type', taskType).eq('payload->>universe', universe)
-        .eq('review_status', 'approved').not('result->descFr', 'is', null)
-        .order('id', { ascending: false }).limit(2),
-      supabase.from('agent_results')
-        .select('auto_motif, auto2_motif')
-        .eq('task_type', taskType).eq('payload->>universe', universe)
-        .or('auto_verdict.eq.a_corriger,auto2_verdict.eq.a_corriger,review_status.eq.rejected')
-        .order('id', { ascending: false }).limit(3),
-    ]);
-    const exemples = (ex.data ?? [])
+    // Les requêtes Supabase sont MUTABLES : une fabrique par tentative, jamais de réutilisation.
+    const fabriqueEx = () => supabase.from('agent_results')
+      .select('payload, result')
+      .eq('task_type', taskType).eq('payload->>universe', universe)
+      .eq('review_status', 'approved').not('result->descFr', 'is', null)
+      .order('id', { ascending: false }).limit(2);
+    let exemplaires = null;
+    if (nomsCluster?.length) {
+      const { data } = await fabriqueEx().in('payload->>name', nomsCluster.slice(0, 20));
+      if (data?.length) exemplaires = data;   // priorité au même groupe de niche
+    }
+    if (!exemplaires) exemplaires = (await fabriqueEx()).data ?? [];
+    const lec = await supabase.from('agent_results')
+      .select('auto_motif, auto2_motif')
+      .eq('task_type', taskType).eq('payload->>universe', universe)
+      .or('auto_verdict.eq.a_corriger,auto2_verdict.eq.a_corriger,review_status.eq.rejected')
+      .order('id', { ascending: false }).limit(3);
+    const exemples = exemplaires
       .map((r) => `- (${r.payload?.name}) « ${String(r.result?.descFr ?? '').slice(0, 260)} »`);
     const lecons = [...new Set((lec.data ?? [])
       .flatMap((r) => [r.auto_motif, r.auto2_motif]).filter(Boolean)
