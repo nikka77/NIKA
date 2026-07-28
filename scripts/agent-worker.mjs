@@ -11,6 +11,7 @@ import { fetchFandomProse } from './lib/fandom.mjs';
 import { expertFor, axesSchema, AXES, checkPreuves, splitPreuves } from './lib/akasha-axes.mjs';
 import { ROLES, angleFor } from './lib/akasha-roles.mjs';
 import { viderParc } from './lib/whatsapp.mjs';
+import { hostname } from 'node:os';
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 const OMNI_URL = process.env.OMNIROUTE_URL ?? 'http://localhost:20128/v1';
@@ -451,8 +452,49 @@ const modelOf = (type, p) => {
 };
 const schemaOf = (t, p) => (typeof t.schema === 'function' ? t.schema(p) : t.schema);
 
+/* ── Flotte multi-nœuds : budget LLM global + heartbeat (L16) ───── */
+// Les quotas des fournisseurs sont PARTAGÉS par tous les nœuds : chaque appel cloud
+// réserve d'abord sa part (RPC quota_consommer, table ops_quotas). Refus = attente puis
+// nouvel essai — un 429 préventif, avant de gaspiller l'appel réseau. Marge ~20 % sous
+// les plafonds gratuits constatés (Groq 30 req/6k TPM, gemini-flash-lite plus large).
+const LIMITES_FOURNISSEURS = {
+  groq:     { requetes: 25, jetons: 5_000, fenetre: 60 },
+  gemini:   { requetes: 12, jetons: 200_000, fenetre: 60 },
+  cerebras: { requetes: 25, jetons: 50_000, fenetre: 60 },
+};
+let quotaIndisponible = false;   // RPC absente (SQL pas encore appliqué) → on le dit UNE fois
+async function quotaReserver(fournisseur, jetonsEstimes) {
+  const lim = LIMITES_FOURNISSEURS[fournisseur];
+  if (!lim || quotaIndisponible) return;
+  for (let essai = 0; essai < 20; essai++) {
+    const { data, error } = await supabase.rpc('quota_consommer', {
+      p_fournisseur: fournisseur, p_requetes: 1, p_jetons: Math.min(jetonsEstimes, lim.jetons),
+      p_limite_requetes: lim.requetes, p_limite_jetons: lim.jetons, p_fenetre_secondes: lim.fenetre,
+    });
+    if (error) { quotaIndisponible = true; console.error('  ✗ budget LLM indisponible (production non bloquée) :', error.message.slice(0, 80)); return; }
+    if (data) return;
+    if (essai === 0) console.log(`  ⏳ budget ${fournisseur} épuisé — attente de la fenêtre`);
+    await new Promise((r) => setTimeout(r, (lim.fenetre / 4 + Math.random() * 5) * 1000));
+  }
+}
+// Heartbeat : chaque nœud s'annonce (ops_workers) — le bilan de nuit saura qui est muet.
+let dernierBattement = 0, battementEnEchec = false;
+async function battreLeCoeur() {
+  if (Date.now() - dernierBattement < 30_000) return;
+  dernierBattement = Date.now();
+  const role = CHAT ? 'chat' : 'agents';
+  const { error } = await supabase.from('ops_workers').upsert({
+    id: `${hostname()}:${role}`, hote: hostname(), role, pid: process.pid,
+    detail: `conc=${CONC}${CLOUD ? ` cloud=${CLOUD}` : ''}${JUGE ? ` juge=${JUGE}` : ''}`,
+    derniere_activite: new Date().toISOString(),
+  });
+  if (error && !battementEnEchec) { battementEnEchec = true; console.error('  ✗ heartbeat :', error.message.slice(0, 80)); }
+}
+
 /** Appel OpenAI-compatible (Groq, Cerebras, OmniRoute…) — backoff 429 au délai annoncé. */
 async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
+  const fournisseur = url.includes('api.groq.com') ? 'groq' : url.includes('cerebras') ? 'cerebras' : null;
+  await quotaReserver(fournisseur, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900);
   for (let essai = 1; ; essai++) {
     const res = await fetch(url, {
       method: 'POST',
@@ -521,6 +563,7 @@ async function callModel(type, payload) {
     const { additionalProperties, ...gSchema } = schema;   // champ inconnu de l'API Gemini
     // Palier gratuit très serré (5 req/min sur gemini-flash-latest, mesuré le 26/07) : sans backoff,
     // un lot de 9 perd 5 tâches d'un coup. Gemini annonce son délai dans error.details[].retryDelay.
+    await quotaReserver('gemini', Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900);
     for (let essai = 1; ; essai++) {
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model.slice(7)}:generateContent`,
@@ -791,6 +834,7 @@ ${texteSans}`,
 const counts = { done: 0, refused: 0, failed: 0, suspect: 0 };
 console.log(`⚙️  worker NIKA OPS — mode ${LOOP ? 'continu' : 'drain'} · ${CONC} tâche(s) de front`);
 for (;;) {
+  await battreLeCoeur();
   const { data: lot, error } = await supabase.rpc(RPC.read, { vt: VT, qty: LOT });
   if (error) { console.error('lecture file:', error.message); process.exit(1); }
   if (!lot?.length) {
