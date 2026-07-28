@@ -554,9 +554,10 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
       signal: AbortSignal.timeout(TIMEOUT_MS),
       headers: { Authorization: `Bearer ${cle}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        // +900 de marge : les modèles « à raisonnement » (gpt-oss) brûlent des tokens AVANT le JSON.
+        // +900 de marge : les modèles « à raisonnement » (gpt-oss) brûlent des tokens AVANT le
+        // JSON — et Nemotron pense PARFOIS malgré /no_think sur les longs prompts (+2400, 29/07).
         model: modele, stream: false, messages: msgs,
-        max_tokens: (NUM_PREDICT[type] ?? 800) + 900,
+        max_tokens: (NUM_PREDICT[type] ?? 800) + (SANS_PENSEE.has(modele) ? 2_400 : 900),
         response_format: modeJson === 'json_schema'
           ? { type: 'json_schema', json_schema: { name: type, strict: true, schema } }
           : { type: 'json_object' },
@@ -570,7 +571,12 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
       continue;
     }
     if (!res.ok) throw new Error(`HTTP ${res.status} (${new URL(url).host}): ${(await res.text()).slice(0, 200)}`);
-    return (await res.json()).choices?.[0]?.message?.content ?? '';
+    const contenu = (await res.json()).choices?.[0]?.message?.content ?? '';
+    if (modeJson !== 'json_object') return contenu;
+    // Extraction tolérante : certains penseurs (Nemotron) laissent fuir du raisonnement
+    // AVANT l'objet — on découpe du premier « { » au dernier « } » (constaté le 29/07).
+    const debut = contenu.indexOf('{'), fin = contenu.lastIndexOf('}');
+    return debut >= 0 && fin > debut ? contenu.slice(debut, fin + 1) : contenu;
   }
 }
 
