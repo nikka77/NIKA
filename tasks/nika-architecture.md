@@ -78,6 +78,39 @@ tier 1** (flash-lite ~0,10 $/Mtok entrée : ~1 € les 10 000 fiches jugées) �
 Claude API pour les tâches d'orfèvrerie. Le Mac GPU reste le « gratuit illimité lent »
 pour les jugements de nuit.
 
+### 3-bis. La multitude — couloirs d'inférence gratuits (moisson GitHub 28/07)
+
+Source : `cheahjs/free-llm-api-resources` (liste maintenue). LE point clé : les quotas
+sont **par modèle et par compte** — chaque modèle est un couloir indépendant, et le VPS
+n'y change rien (mêmes comptes) : il change la DISPONIBILITÉ, pas le maximum simultané.
+
+| # | Couloir | Limites gratuites | Usage NIKA | Prérequis |
+|---|---|---|---|---|
+| 1 | Groq gpt-oss-120b (actuel) | ~6 k TPM | production lourde | ✓ |
+| 2 | Groq llama-3.3-70b | 1 000 req/j, 12 k TPM | 2e producteur / juge Meta | ✓ (même clé) |
+| 3 | Groq llama-3.1-8b | **14 400 req/j** | secrétaire, tri, tâches légères | ✓ (même clé) |
+| 4 | Gemini flash-lite (actuel) | 500 req/j, 15/min | juge Google | ✓ |
+| 5 | **Gemma 27B cloud (AI Studio)** | **14 400 req/j, 30/min** | juge/prod bis — même clé Gemini ! | ✓ (même clé) |
+| 6 | NVIDIA NIM | 40 req/min | gros couloir d'appoint | clé + vérif tél (Dan) |
+| 7 | Mistral La Plateforme | généreux | juge 4e famille — ⚠ consentement entraînement : données PUBLIQUES uniquement (fiches anime OK, jamais client) | clé + vérif tél (Dan) |
+| 8 | OpenRouter :free | 20/min, 50/j (→1 000/j avec 10 $ une fois) | débordement multi-modèles | clé (Dan) |
+| 9 | Cloudflare Workers AI | 10 k neurons/j | petits modèles d'appoint | ✓ compte déjà ouvert (R2) |
+| 10 | Cerebras | 5/min, 1 M tok/j (à re-sonder — 402 en juin) | dormant | re-tester la clé |
+| 11-12 | Local Mac : gemma4 12B + un 3-4B | illimité, lent | juges de nuit | ✓ / à charger |
+| 13-15 | Claude abonnement | fenêtre 5 h Max | escalades + sessions | ✓ |
+
+**Réalité des chiffres** : ~12-15 couloirs indépendants ≈ **30-40 tâches en vol** et
+**~20-30 tâches/min** soutenues (×5 l'actuel), ~40-50 k requêtes/JOUR de plafond cumulé.
+Bonus qualité : 5 familles de modèles (OpenAI-oss, Meta, Google, Mistral, NVIDIA) →
+doubles verdicts VRAIMENT croisés.
+
+**Intégration (lean, sans framework)** : tous ces fournisseurs sont OpenAI-compatibles →
+brancher sur `appelOpenAICompat` existant + étendre `LIMITES_FOURNISSEURS` **par modèle**
+(le budget global ops_quotas fait déjà l'arbitrage multi-nœuds) ; Gemma-cloud passe par la
+branche Gemini native (même API, même clé). Pas besoin de CrewAI/AutoGen/LangGraph : notre
+pgmq + budget global EST l'orchestrateur — LiteLLM (standard GitHub du routage) ne
+deviendrait pertinent qu'au-delà de ~10 couloirs si la config maison devient pénible.
+
 ## 4. Observabilité (obligatoire dès 2 nœuds)
 
 - **Uptime Kuma** sur le VPS-1 (déjà dans la boîte à outils GitHub) : ping site, webhook,
