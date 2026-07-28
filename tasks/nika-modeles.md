@@ -43,9 +43,31 @@ dix classements publics. À réviser à chaque audit hebdo.
 4. **Claude est un scalpel, pas une pelleteuse** : tout ce qui est mécanique va aux couloirs
    gratuits ; Claude garde le code, l'audit et la conversation.
 
-## 4. Chantiers restants
+## 4. Chantiers (état 28/07 soir)
 
-- [ ] Clés NVIDIA NIM + Mistral + OpenRouter (Dan, vérif téléphone pour les deux premiers)
-- [ ] Qualifier gemma-31b sur ~50 fiches (taux d'échec post température 0.2) via l'audit
-- [ ] Re-sonder Cerebras (la liste GitHub le dit revenu à 1 M tokens/j gratuits)
-- [ ] Cloudflare Workers AI (compte déjà ouvert) : brancher si un rôle léger le réclame
+- [~] Clés NVIDIA NIM + Mistral + OpenRouter : **branches DORMANTES prêtes dans le worker**
+  (préfixes nvidia/, mistral/, openrouter/ + budgets prudents) — il ne manque que les clés
+  (action Dan, vérif téléphone pour NVIDIA et Mistral) ; sonde d'embauche à l'arrivée de chaque clé.
+- [x] Qualification gemma-31b lancée sur 52 fiches réelles : à mi-course 18 done / 1 failed
+  (~5 % d'échec post température 0.2, contre ~50 % avant) ; les 10 refused sont des gardes
+  (sources absentes), pas des fautes du modèle. L'audit hebdo tranchera sur la QUALITÉ.
+- [x] Cerebras re-sondé : /models répond (gpt-oss-120b, gemma-4-31b, zai-glm-4.7) mais
+  l'inférence reste en 402 Payment required — la liste GitHub était optimiste. Dormant.
+- [x] Cloudflare Workers AI : EN RÉSERVE, décision motivée — aucun rôle léger en attente
+  (le candidat naturel, llama-8b, a été écarté à l'épreuve ; les rôles fiables exigent des
+  modèles ≥ 70B que Workers AI ne sert qu'en petites quantités de neurons/jour).
+
+## 5. Experts par univers avec mémoire (L18 — vision Dan)
+
+Chaque agent est désormais un EXPERT NOMMÉ « spécialité × univers » (l'Archiviste des
+techniques de Naruto ≠ celui de Bleach) et porte une **mémoire qui le fait progresser** :
+à chaque fiche, son prompt reçoit (1) ses dernières fiches APPROUVÉES du même univers
+(exemplaires de ton et de niveau) et (2) les motifs de ses erreurs jugées (leçons à ne pas
+répéter) — `scripts/lib/akasha-experts.mjs`, requêtes sur agent_results.
+
+La matrice : 4 rôles ROLES (techniques/jutsu, artefacts/armes-fruits, lieux, lexique/clans-orgs)
++ Biographe (fandom_descfr) + Taxonomiste (akasha_attrs) + Historien (akasha_relations),
+× 8 univers = **~50 experts logiques**, tous assignés à leur univers, partageant les couloirs
+physiques. Support d'apprentissage : la BASE (pas des .html) — structurée, requêtable,
+c'est elle qui nourrit la mémoire ET les pages HTML publiques du site déjà rendues.
+Rôles futurs (histoire/arcs) : dès que leurs données existeront en base (constat du 26/07).

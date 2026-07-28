@@ -10,6 +10,7 @@ import { z } from 'zod';
 import { fetchFandomProse } from './lib/fandom.mjs';
 import { expertFor, axesSchema, AXES, checkPreuves, splitPreuves } from './lib/akasha-axes.mjs';
 import { ROLES, angleFor } from './lib/akasha-roles.mjs';
+import { nomExpert, memoireExpert } from './lib/akasha-experts.mjs';
 import { viderParc } from './lib/whatsapp.mjs';
 import { hostname } from 'node:os';
 
@@ -87,7 +88,8 @@ DONNÉES :
     // Étape « yeux » : le worker va chercher la matière AVANT tout appel au modèle.
     fetch: async (p) => {
       const page = await fetchFandomProse(p.universe, p.name);
-      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity } : p;
+      const memoire = await memoireExpert(supabase, 'fandom_descfr', p.universe);   // L18
+      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, memoire } : { ...p, memoire };
     },
     // Trois gardes, apprises des 3 erreurs d'identité du 25/07 :
     guard: (p) => {
@@ -100,9 +102,10 @@ DONNÉES :
         return `homonyme probable : aucun repère du résumé (${propres.slice(0, 3).join(', ')}) dans « ${p.fandomTitle} »`;
       return null;
     },
-    prompt: (p) => `Tu rédiges les fiches françaises de l'encyclopédie AKASHA (univers d'animes/mangas).
+    prompt: (p) => `Tu es ${nomExpert('fandom_descfr', p.universe)}, expert de l'encyclopédie AKASHA (univers d'animes/mangas).
 Voici l'article du wiki canon (en anglais, brut). Rédige "descFr" : 3 à 5 phrases en français,
 ton encyclopédique sobre, présent de narration.
+${p.memoire ? `\n${p.memoire}\n` : ''}
 
 RÈGLES :
 - N'utilise QUE des faits présents dans l'article ci-dessous. Aucune invention, aucun anglicisme.
@@ -293,14 +296,18 @@ function ficheRole(roleKey) {
     },
     fetch: async (p) => {
       const page = await fetchFandomProse(p.universe, p.name);
-      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity } : p;
+      // Mémoire d'expert (L18) : exemplaires approuvés + leçons des erreurs jugées, pour CE
+      // rôle dans CET univers — c'est par elle que l'expert progresse fiche après fiche.
+      const memoire = await memoireExpert(supabase, roleKey, p.universe);
+      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, memoire } : { ...p, memoire };
     },
     guard: (p) => TASK_TYPES.fandom_descfr.guard(p),
-    prompt: (p) => `Tu rédiges les fiches françaises de l'encyclopédie AKASHA (univers d'animes/mangas).
+    prompt: (p) => `Tu es ${nomExpert(roleKey, p.universe)}, expert de l'encyclopédie AKASHA (univers d'animes/mangas).
 Voici l'article du wiki canon (en anglais, brut). Rédige "descFr" : 2 à 4 phrases en français,
 ton encyclopédique sobre, présent de narration.
 
 Le sujet est ${angleFor(roleKey, p.universe)}.
+${p.memoire ? `\n${p.memoire}\n` : ''}
 
 RÈGLES :
 - N'utilise QUE des faits présents dans l'article ci-dessous. Aucune invention, aucun anglicisme.
@@ -468,6 +475,10 @@ const LIMITES_FOURNISSEURS = {
   groq:     { requetes: 25, jetons: 5_000, fenetre: 60 },
   gemini:   { requetes: 12, jetons: 200_000, fenetre: 60 },
   cerebras: { requetes: 25, jetons: 50_000, fenetre: 60 },
+  // Couloirs dormants (clés à créer) — plafonds prudents, à ajuster à la sonde d'embauche.
+  nvidia:     { requetes: 32, jetons: 100_000, fenetre: 60 },
+  mistral:    { requetes: 20, jetons: 50_000, fenetre: 60 },
+  openrouter: { requetes: 16, jetons: 50_000, fenetre: 60, parJour: 45 },
 };
 let quotaIndisponible = false;   // RPC absente (SQL pas encore appliqué) → on le dit UNE fois
 async function quotaReserver(cle, jetonsEstimes) {
@@ -513,7 +524,9 @@ async function battreLeCoeur() {
 // test (il recopie le schéma au lieu de répondre).
 const MODES_JSON = { 'llama-3.3-70b-versatile': 'json_object' };
 async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
-  const fournisseur = url.includes('api.groq.com') ? 'groq' : url.includes('cerebras') ? 'cerebras' : null;
+  const fournisseur = url.includes('api.groq.com') ? 'groq' : url.includes('cerebras') ? 'cerebras'
+    : url.includes('nvidia.com') ? 'nvidia' : url.includes('mistral.ai') ? 'mistral'
+    : url.includes('openrouter.ai') ? 'openrouter' : null;
   await quotaReserver(fournisseur ? `${fournisseur}/${modele}` : null, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900);
   const modeJson = MODES_JSON[modele] ?? 'json_schema';
   const msgs = modeJson === 'json_object'
@@ -580,6 +593,28 @@ async function callModel(type, payload) {
     raw = await appelOpenAICompat({
       url: 'https://api.groq.com/openai/v1/chat/completions', cle: process.env.GROQ_API_KEY,
       modele: model.slice(5), messages, type, schema,
+    });
+  } else if (model.startsWith('nvidia/')) {
+    // Branche DORMANTE (clé à créer, vérif téléphone) — 40 req/min gratuits, OpenAI-compatible.
+    if (!process.env.NVIDIA_API_KEY) throw new Error('NVIDIA_API_KEY absente de .env.local');
+    raw = await appelOpenAICompat({
+      url: 'https://integrate.api.nvidia.com/v1/chat/completions', cle: process.env.NVIDIA_API_KEY,
+      modele: model.slice(7), messages, type, schema,
+    });
+  } else if (model.startsWith('mistral/')) {
+    // Branche DORMANTE — ⚠ palier gratuit Mistral : les données servent à l'entraînement.
+    // Fiches PUBLIQUES uniquement, jamais de données client (règle absolue).
+    if (!process.env.MISTRAL_API_KEY) throw new Error('MISTRAL_API_KEY absente de .env.local');
+    raw = await appelOpenAICompat({
+      url: 'https://api.mistral.ai/v1/chat/completions', cle: process.env.MISTRAL_API_KEY,
+      modele: model.slice(8), messages, type, schema,
+    });
+  } else if (model.startsWith('openrouter/')) {
+    // Branche DORMANTE — modèles :free (20/min, 50/j — 1 000/j après un versement unique de 10 $).
+    if (!process.env.OPENROUTER_API_KEY) throw new Error('OPENROUTER_API_KEY absente de .env.local');
+    raw = await appelOpenAICompat({
+      url: 'https://openrouter.ai/api/v1/chat/completions', cle: process.env.OPENROUTER_API_KEY,
+      modele: model.slice(11), messages, type, schema,
     });
   } else if (model.startsWith('gemini/')) {
     // Gemini NATIF (pas OmniRoute) : son adaptateur passe par l'endpoint compatible OpenAI qui
