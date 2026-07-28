@@ -723,7 +723,7 @@ async function processMessage(msg) {
 /* ── Enchaînement production → relecture locale ──────────────────── */
 // Mesuré le 25/07 : le juge local détecte 7/7 des erreurs factuelles sans faux positif.
 // Il n'applique rien — il annote, pour que la file humaine arrive déjà triée.
-async function chainReview(row, reviewedId) {
+async function chainReview(row, reviewedId, jugesOverride) {
   const p = row.payload ?? {};
   let production;
   if (row.task_type === 'akasha_attrs') {
@@ -744,8 +744,8 @@ async function chainReview(row, reviewedId) {
 
   // AUTONOMIE L12 (audit du 26/07 : un juge seul = 86 % de précision, insuffisant) :
   // chaque production part chez DEUX juges de familles différentes. L'accord des deux
-  // autorise l'application automatique ; tout désaccord reste pour Dan.
-  const juges = [
+  // autorise l'application automatique ; désaccord → arbitre (L20), sinon pile Dan.
+  const juges = jugesOverride ?? [
     { juge_modele: 'ollama/gemma4:12b', slot: 'auto' },
     // Juge n°2 : llama-70b (Meta) en priorité — gemma local + Gemini étaient de la MÊME
     // famille Google (angles morts partagés, corrigé par l'étude modèles du 28/07).
@@ -766,17 +766,49 @@ async function chainReview(row, reviewedId) {
   });
 }
 
+// L'ARBITRE (L20) : convoqué quand les deux juges se CONTREDISENT (valide contre
+// a_corriger/rejete) — jamais quand ils s'accordent pour corriger. Famille encore
+// différente (NVIDIA), une seule convocation par fiche (réservation optimiste).
+const ARBITRE_MODELE = process.env.NVIDIA_API_KEY ? 'nvidia/nvidia/nemotron-3-super-120b-a12b'
+  : process.env.OPENROUTER_API_KEY ? 'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free' : null;
+async function peutEtreArbitrer(reviewedId) {
+  if (!ARBITRE_MODELE) return;
+  const { data: r } = await supabase.from('agent_results')
+    .select('id, task_type, target_slug, payload, result, review_status, auto_verdict, auto2_verdict, arbitre_at')
+    .eq('id', reviewedId).single();
+  if (!r || r.review_status !== 'pending' || r.arbitre_at) return;
+  const a = r.auto_verdict, b = r.auto2_verdict;
+  if (!a || !b || a === b) return;
+  if (a !== 'valide' && b !== 'valide') return;   // d'accord pour corriger : rien à arbitrer
+  const { data: gagne } = await supabase.from('agent_results')
+    .update({ arbitre_at: new Date().toISOString(), arbitre_model: `${ARBITRE_MODELE} (convoqué)` })
+    .eq('id', reviewedId).is('arbitre_at', null).select('id');
+  if (!gagne?.length) return;
+  console.log(`  ⚖ arbitre convoqué (${a} / ${b}) sur #${reviewedId}`);
+  await chainReview({ task_type: r.task_type, target_slug: r.target_slug, payload: r.payload, result: r.result },
+    reviewedId, [{ juge_modele: ARBITRE_MODELE, slot: 'arbitre' }]);
+}
+
 /* ── Application automatique (double verdict) ───────────────────── */
 // MIROIR de applyResult (app/api/ops/state/route.ts) — si tu changes une règle là-bas,
 // reporte-la ici. Les remplisseurs ne ciblent que des champs vides → l'annulation reste exacte.
 async function autoAppliquer(rowId) {
-  // Verrou optimiste : un seul gagnant si les deux relectures finissent en même temps.
-  const { data: gagne } = await supabase
-    .from('agent_results')
-    .update({ review_status: 'approved', auto_applique: true, reviewed_at: new Date().toISOString() })
-    .eq('id', rowId).eq('review_status', 'pending')
-    .eq('auto_verdict', 'valide').eq('auto2_verdict', 'valide').eq('status', 'done')
-    .select('*').single();
+  // Double verdict unanime : les DEUX juges disent « valide ».
+  return verrouEtAppliquer(rowId, (q) => q.eq('auto_verdict', 'valide').eq('auto2_verdict', 'valide'));
+}
+// L'ARBITRE (L20) : sur désaccord des deux juges, le 3e avis (famille NVIDIA) départage —
+// majorité 2/3 « valide » suffit alors à l'application, toujours marquée ⚡ auto.
+async function autoAppliquerMajorite(rowId) {
+  return verrouEtAppliquer(rowId, (q) =>
+    q.eq('arbitre_verdict', 'valide').or('auto_verdict.eq.valide,auto2_verdict.eq.valide'));
+}
+async function verrouEtAppliquer(rowId, filtres) {
+  // Verrou optimiste : un seul gagnant si plusieurs relectures finissent en même temps.
+  const { data: gagne } = await filtres(
+    supabase.from('agent_results')
+      .update({ review_status: 'approved', auto_applique: true, reviewed_at: new Date().toISOString() })
+      .eq('id', rowId).eq('review_status', 'pending').eq('status', 'done'),
+  ).select('*').single();
   if (!gagne) return false;
 
   const { data: entry } = await supabase.from('akasha_entries').select('attributes').eq('slug', gagne.target_slug).single();
@@ -822,7 +854,7 @@ async function traiterUn(msg) {
 
   if (row.task_type === 'review_local') {
     // Le verdict ne crée pas de résultat : il annote la production relue, dans le slot de SON juge.
-    const slot = row.payload.slot === 'auto2' ? 'auto2' : 'auto';
+    const slot = row.payload.slot === 'arbitre' ? 'arbitre' : row.payload.slot === 'auto2' ? 'auto2' : 'auto';
     await supabase
       .from('agent_results')
       .update({
@@ -832,8 +864,17 @@ async function traiterUn(msg) {
         [slot + '_at']: new Date().toISOString(),
       })
       .eq('id', row.payload.reviewed_id);
-    // Porte d'autonomie : les DEUX juges disent « valide » → application sans Dan, marquée auto.
-    if (row.status === 'done' && row.result.verdict === 'valide') await autoAppliquer(row.payload.reviewed_id);
+    if (row.status === 'done') {
+      if (slot === 'arbitre') {
+        // Majorité 2/3 : l'arbitre rejoint un juge « valide » → application ; sinon pile Dan.
+        if (row.result.verdict === 'valide') await autoAppliquerMajorite(row.payload.reviewed_id);
+      } else {
+        // Porte d'autonomie : les DEUX juges disent « valide » → application sans Dan, marquée auto.
+        if (row.result.verdict === 'valide') await autoAppliquer(row.payload.reviewed_id);
+        // Désaccord franc entre les deux ? → convoquer l'arbitre (une seule fois par fiche).
+        await peutEtreArbitrer(row.payload.reviewed_id);
+      }
+    }
   } else {
     if (row.task_type === 'whatsapp_reponse') row.review_status = 'approved';   // conversationnel : rien à relire
     const { data: ins, error: insErr } = await supabase.from('agent_results').insert(row).select('id').single();

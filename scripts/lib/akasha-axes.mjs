@@ -22,6 +22,9 @@ export const AXES = {
     village: ['Konohagakure', 'Sunagakure', 'Kirigakure', 'Kumogakure', 'Iwagakure', 'Amegakure', 'Otogakure'],
     clan: ['Uchiha', 'Uzumaki', 'Senju', 'Hyūga', 'Nara', 'Akimichi', 'Yamanaka', 'Inuzuka', 'Ōtsutsuki'],
     rank: ['Academy Student', 'Genin', 'Chūnin', 'Tokubetsu Jōnin', 'Jōnin', 'Anbu', 'Kage'],
+    // L20 (demande Dan) : dès que ~8 fiches porteront la même organisation, l'expert de
+    // niche correspondant (« Expert Akatsuki ») naîtra tout seul au prochain scan.
+    organization: ['Akatsuki', 'Taka', 'Kara', 'Root'],
   },
   'One Piece': {
     faction: ['Pirate', 'Marine', 'Gouvernement Mondial', 'Révolutionnaire', 'Civil'],
