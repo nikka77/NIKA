@@ -119,8 +119,14 @@ files — on ne fait qu'ajouter des nœuds et des tiers payants là où ça coin
 6. Supabase Pro / Gemini tier 1 au premier signal réel (taille base / 429 récurrents).
 7. Coolify+Cloudflare pour le site le jour où Vercel Hobby coince.
 
-## 8. Décisions à prendre (Dan)
+## 8. Décisions prises (Dan, 28/07)
 
-- [ ] Valider la cible « P1 → P4 » et la séquence §7 (ou corriger).
-- [ ] R2 dès maintenant pour les médias ? (compte Cloudflare gratuit à créer — 5 min)
-- [ ] Confirmer le choix VPS (nika-vps.md §9) pour lancer la brique 1.
+- [x] Cible « P1 → P4 » et séquence §7 VALIDÉES.
+- [x] R2 FAIT (28/07) : abonnement activé (0 €/mois sous 10 Go), bucket `nika-media`
+  (juridiction UE, privé), jeton scopé Object R/W, helper `scripts/lib/r2.mjs` (aws4fetch),
+  aller-retour écriture/lecture/suppression testé. Clés dans .env.local ×2
+  (R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY / R2_ENDPOINT / R2_BUCKET).
+- [x] Prérequis flotte FAITS (28/07, L16) : `ops_quotas` + RPC `quota_consommer`
+  (budget LLM global atomique, testé 2 accordés / 3e refusé) et `ops_workers`
+  (heartbeat 30 s, testé — le secrétaire s'annonce). SQL : supabase/nika_ops_l16.sql.
+- [ ] Confirmer le choix VPS (nika-vps.md §9) pour lancer la brique 24/7. ← SEUL RESTANT
