@@ -45,12 +45,18 @@ Le double verdict = gemma4 (Mac, famille A) + Gemini (cloud, famille B). Trois o
 
 | Fournisseur | Offre | Specs | €/mois | Verdict |
 |---|---|---|---|---|
-| **Hetzner** (DE/FI) | CAX11 (ARM) | 2 vCPU, 4 Go, 40 Go | ~4,5 (IPv4 incl.) | **Recommandé** — meilleur rapport, réseau sérieux |
-| Hetzner | CX22 (x86) | 2 vCPU, 4 Go, 40 Go | ~5,5 | si un outil refuse l'ARM |
+| **Hetzner** (DE/FI) | CAX11 (ARM) | 2 vCPU, 4 Go, 40 Go | **4,99** (hausse juin 2026 : 4,49 + 0,50 IPv4) | **Recommandé pour le SOCLE** — le moins cher du sérieux malgré la hausse |
+| Hetzner | CAX21 (ARM) | 4 vCPU, 8 Go, 80 Go | 8,49 | si on veut de la marge |
+| Oracle Cloud | **Always Free A1** | **2 ARM, 12 Go** (divisé par 2 en juin 2026, sans annonce ; comptes PAYG peut-être encore 4/24 — flou officiel) | **0** | nœud d'APPOINT gratuit — la coupe silencieuse de juin est un signal : ne pas FONDER dessus |
+| Oracle Cloud | A1 payant | 0,01 $/cœur/h + 0,0015 $/Go/h → 2c/12 Go ≈ 26 €, 4c/8 Go ≈ 35 € | ~26-35 | **~4× Hetzner à specs égales — jamais rentable** |
 | OVH (FR) | VPS value | 2 vCPU, 4 Go | ~6-7 | données en France si c'est un critère |
-| Scaleway (FR) | DEV1-S | 2 vCPU, 2 Go | ~7 | plus cher pour moins |
-| Oracle Cloud | Free A1 | 4 ARM, 24 Go | **0** | tentant mais récupérable par Oracle sans préavis — acceptable pour ESSAYER, pas pour fonder |
 | Contabo | — | — | ~5 | réputation moyenne, non |
+
+⚠ MAJ 29/07 : Oracle a divisé le palier gratuit par deux (4→2 OCPU, 24→12 Go) le 15 juin
+2026 sans annonce publique, et Hetzner a augmenté ses prix en juin (+18 % sur CAX11).
+Conclusion inchangée dans l'esprit, précisée dans la lettre : **Hetzner pour fonder
+(~5 €/mois, stable), Oracle Free pour un nœud d'appoint à 0 €** (ses 12 Go permettraient
+même un petit juge local côté cloud) — jamais Oracle en payant.
 
 **Recommandation : Hetzner CAX11.** Nos charges sont des appels d'API (Groq, Gemini,
 Graph, Supabase) + `claude` CLI + `npx tsc` à l'occasion : 4 Go ARM suffisent largement.
