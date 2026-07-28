@@ -15,6 +15,8 @@ dix classements publics. À réviser à chaque audit hebdo.
 | **gemma-4-31b-it** (AI Studio) | `responseSchema` natif ✓ ; français propre (Amaterasu ✓) ; **14 400 req/j à 30/min** | boucle en répétition à temp 0 (1 échec/2 → corrigé temp 0.2, à surveiller à l'audit) | gratuit |
 | **gemini-flash-lite** (AI Studio) | juge historique correct ; 250 k TPM | 500 req/j ; même famille que gemma (plus juge n°2 depuis le 28/07) | gratuit |
 | **Claude** (abonnement Max) | code, audit sur sources (86 % → réservé aux tâches d'orfèvrerie), synthèse | fenêtres 5 h ; précieux — ne pas gaspiller en tâches mécaniques | abonnement |
+| **nemotron-3-super-120b** (NIM) · **ultra-550b** (OpenRouter :free) | cas pièges Naruto+Bleach réussis, JSON propre (`/no_think`) ; 40 req/min (NIM) | pense dans sa réponse sans /no_think ; ultra : 50 req/j seulement (arbitre) | gratuit |
+| **mistral-large-latest** (La Plateforme) | cas piège One Piece réussi ; `json_schema` STRICT natif ; 4e famille | ⚠ données d'entraînement (public only) ; mistral-SMALL écarté (piège raté : Luffy « Logia ») | gratuit |
 
 ## 2. Affectations (qui anime quoi)
 
@@ -27,7 +29,8 @@ dix classements publics. À réviser à chaque audit hebdo.
 | Secrétaire WhatsApp | gpt-oss-120b | classement fiable (escalade/commande) — un raté = commande fantôme, déjà vécu |
 | Interlocuteur « gemini: » | flash-lite | libéré du rôle de juge, reste le canal Gemini |
 | Escalades code + discussions « claude: » + audit hebdo | Claude | le seul qui code et audite à ce niveau |
-| (à venir, clés Dan) NVIDIA NIM · Mistral | juge n°3 d'arbitrage · 4e famille | Mistral : données PUBLIQUES uniquement (consentement entraînement) |
+| Juge n°3 / arbitre des désaccords | nemotron-super-120b (NIM, 40/min) ou ultra-550b (OpenRouter, 50/j) | famille NVIDIA — 3e angle de vue, sondes canon réussies |
+| 4e famille (juge/production d'appoint) | mistral-large-latest | schéma strict + piège réussi ; données PUBLIQUES uniquement (consentement entraînement) |
 
 ## 3. Principes issus de l'étude
 
@@ -45,9 +48,10 @@ dix classements publics. À réviser à chaque audit hebdo.
 
 ## 4. Chantiers (état 28/07 soir)
 
-- [~] Clés NVIDIA NIM + Mistral + OpenRouter : **branches DORMANTES prêtes dans le worker**
-  (préfixes nvidia/, mistral/, openrouter/ + budgets prudents) — il ne manque que les clés
-  (action Dan, vérif téléphone pour NVIDIA et Mistral) ; sonde d'embauche à l'arrivée de chaque clé.
+- [x] Clés NVIDIA NIM + Mistral + OpenRouter : **FAIT (29/07)** — 3 couloirs sondés et armés.
+  Embauches : nemotron-super-120b (NIM) + ultra-550b (OpenRouter, arbitre 50/j) +
+  mistral-large (strict schema, 4e famille). Écartés aux sondes : mistral-small (piège canon
+  raté), llama-3.1-8b (recopie le schéma). Le vivier compte désormais 5 familles actives.
 - [x] Qualification gemma-31b TERMINÉE (52 fiches réelles) : 39 done / 2 failed — **~5 %
   d'échec technique** post température 0.2 (contre ~50 % avant) ; 13 refused = gardes de
   sources, pas des fautes du modèle. MAIS 1 seul double-valide sur 39 : les juges croisés
