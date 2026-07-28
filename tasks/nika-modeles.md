@@ -48,9 +48,11 @@ dix classements publics. À réviser à chaque audit hebdo.
 - [~] Clés NVIDIA NIM + Mistral + OpenRouter : **branches DORMANTES prêtes dans le worker**
   (préfixes nvidia/, mistral/, openrouter/ + budgets prudents) — il ne manque que les clés
   (action Dan, vérif téléphone pour NVIDIA et Mistral) ; sonde d'embauche à l'arrivée de chaque clé.
-- [x] Qualification gemma-31b TERMINÉE (52 fiches réelles) : 39 done / 2 failed (~5 % d'échec
-  (~5 % d'échec post température 0.2, contre ~50 % avant) ; les 10 refused sont des gardes
-  (sources absentes), pas des fautes du modèle. L'audit hebdo tranchera sur la QUALITÉ.
+- [x] Qualification gemma-31b TERMINÉE (52 fiches réelles) : 39 done / 2 failed — **~5 %
+  d'échec technique** post température 0.2 (contre ~50 % avant) ; 13 refused = gardes de
+  sources, pas des fautes du modèle. MAIS 1 seul double-valide sur 39 : les juges croisés
+  retiennent presque tout pour review humaine → la QUALITÉ rédactionnelle reste à prouver
+  (pile /ops + audit dimanche) avant toute promotion comme producteur par défaut.
 - [x] Cerebras re-sondé : /models répond (gpt-oss-120b, gemma-4-31b, zai-glm-4.7) mais
   l'inférence reste en 402 Payment required — la liste GitHub était optimiste. Dormant.
 - [x] Cloudflare Workers AI : EN RÉSERVE, décision motivée — aucun rôle léger en attente
