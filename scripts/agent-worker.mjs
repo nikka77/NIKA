@@ -475,6 +475,9 @@ const LIMITES_FOURNISSEURS = {
   'groq/llama-3.3-70b-versatile':    { requetes: 25, jetons: 10_000, fenetre: 60, parJour: 900 },
   'gemini/gemini-flash-lite-latest': { requetes: 12, jetons: 200_000, fenetre: 60, parJour: 450 },
   'gemini/gemma-4-31b-it':           { requetes: 24, jetons: 13_000, fenetre: 60, parJour: 13_000 },
+  // Nemotron 550B gratuit via OpenRouter (sonde 29/07 : cas piège réussi, famille NVIDIA) —
+  // 50 req/JOUR seulement : rôle d'ARBITRE ponctuel, pas de juge de masse (1 000/j si 10 $ un jour).
+  'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free': { requetes: 16, jetons: 50_000, fenetre: 60, parJour: 45 },
   groq:     { requetes: 25, jetons: 5_000, fenetre: 60 },
   gemini:   { requetes: 12, jetons: 200_000, fenetre: 60 },
   cerebras: { requetes: 25, jetons: 50_000, fenetre: 60 },
@@ -525,7 +528,11 @@ async function battreLeCoeur() {
 // Modèles sans json_schema strict (Groq le refuse, testé 28/07) → mode json_object :
 // schéma injecté dans le prompt, zod fait la police en aval. llama-3.1-8b ÉCARTÉ au même
 // test (il recopie le schéma au lieu de répondre).
-const MODES_JSON = { 'llama-3.3-70b-versatile': 'json_object' };
+const MODES_JSON = {
+  'llama-3.3-70b-versatile': 'json_object',
+  'nvidia/nemotron-3-ultra-550b-a55b:free': 'json_object',
+  'nvidia/nemotron-3-super-120b-a12b:free': 'json_object',
+};
 async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
   const fournisseur = url.includes('api.groq.com') ? 'groq' : url.includes('cerebras') ? 'cerebras'
     : url.includes('nvidia.com') ? 'nvidia' : url.includes('mistral.ai') ? 'mistral'
