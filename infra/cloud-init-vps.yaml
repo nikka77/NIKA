@@ -1,0 +1,47 @@
+#cloud-config
+# infra/cloud-init-vps.yaml — naissance du VPS NIKA (S1 automatisé, 30/07/2026).
+# Collé dans le champ « Cloud config » à la création du serveur Hetzner : le serveur
+# sort de terre DÉJÀ durci — port 22 jamais exposé au public (Tailscale SSH), pare-feu
+# deny-all, mises à jour automatiques, utilisateur nika avec la clé de la session Claude.
+# TSKEY_PLACEHOLDER est remplacé par la clé d'authentification Tailscale (fenêtre masquée,
+# presse-papiers) juste avant le collage — jamais commitée.
+hostname: nika-usine
+timezone: Europe/Paris
+
+users:
+  - name: nika
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJdrUz/cQNoUODcWjtA22LBzl38TcH+cnsI8ndJ/57K9 nika-vps-202607
+
+package_update: true
+package_upgrade: true
+packages: [ufw, git, curl, ca-certificates, unattended-upgrades]
+
+write_files:
+  - path: /etc/ssh/sshd_config.d/90-nika.conf
+    content: |
+      PasswordAuthentication no
+      PermitRootLogin no
+      KbdInteractiveAuthentication no
+
+swap:
+  filename: /swapfile
+  size: 2G
+  maxsize: 2G
+
+runcmd:
+  # Pare-feu à bord : rien n'entre, sauf par le tailnet (le pare-feu Hetzner double en bordure).
+  - ufw default deny incoming
+  - ufw default allow outgoing
+  - ufw allow in on tailscale0
+  - ufw --force enable
+  # Tailscale : rejoint le tailnet tout seul, active Tailscale SSH (port 22 public inutile à vie).
+  - curl -fsSL https://tailscale.com/install.sh | sh
+  - tailscale up --authkey=TSKEY_PLACEHOLDER --ssh --hostname=nika-usine
+  # Correctifs de sécurité automatiques.
+  - dpkg-reconfigure -f noninteractive unattended-upgrades
+  - systemctl restart ssh
+final_message: "nika-usine prête — joignable UNIQUEMENT via le tailnet."

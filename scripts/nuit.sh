@@ -6,6 +6,8 @@
 # launchd démarre avec un PATH minimal : sans cette ligne, `node` est introuvable (exit 127 —
 # constaté le 27/07 AVANT la première exécution, par contrôle du statut launchctl).
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+# Priorité de fond : taskpolicy (macOS) ou nice (Linux) — mêmes scripts sur les deux mondes.
+PRIO=$(command -v taskpolicy >/dev/null && echo "taskpolicy -c background" || echo "nice -n 10")
 cd "$(dirname "$0")/.."
 # Clone d'automatisation (~/dev/NIKA) : se synchronise depuis GitHub avant chaque nuit —
 # le dépôt iCloud reste la copie de travail de Dan, launchd ne peut pas y lire (TCC macOS).
@@ -43,11 +45,11 @@ node --env-file=.env.local scripts/ops-fill-fandom.mjs --limit=30 2>/dev/null ||
 
 # 1+2) Production (cloud) ET jugement (cloud, autre famille) : UN SEUL worker — le tri par
 # modèle fait le travail des anciens « couloirs », sans le ping-pong de renvois qu'ils causaient.
-taskpolicy -c background node --env-file=.env.local scripts/agent-worker.mjs \
+$PRIO node --env-file=.env.local scripts/agent-worker.mjs \
   --cloud="$MODELE" --juge="$JUGE" --conc=3
 
 # 3) Ancrage HHEM (CPU uniquement, le GPU dort déjà).
-taskpolicy -c background node --env-file=.env.local scripts/ops-score-ancrage.mjs 2>/dev/null || true
+$PRIO node --env-file=.env.local scripts/ops-score-ancrage.mjs 2>/dev/null || true
 
 # 3bis) Rattrapage des escalades Claude restées en attente (session expirée, échec…).
 node --env-file=.env.local scripts/ops-escalades.mjs || true

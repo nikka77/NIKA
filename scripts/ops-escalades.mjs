@@ -16,7 +16,8 @@ import { envoyerOuParquer } from './lib/whatsapp.mjs';
 import { envoyerAlerte } from './lib/alerte.mjs';
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
-const DEPOT = process.env.HOME + '/dev/NIKA';
+// Mac : clone d'automatisation ~/dev/NIKA (TCC iCloud) ; VPS : ~/NIKA — NIKA_DEPOT tranche.
+const DEPOT = process.env.NIKA_DEPOT ?? process.env.HOME + '/dev/NIKA';
 const VERROU = '/tmp/nika-escalades.lock';
 
 // Env des appels claude : SANS ANTHROPIC_API_KEY — le CLI la préfère au token d'abonnement

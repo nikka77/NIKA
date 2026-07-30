@@ -1,0 +1,8 @@
+[Unit]
+Description=NIKA OPS — audit hebdomadaire à l'aveugle (claude headless)
+
+[Service]
+Type=oneshot
+User=nika
+WorkingDirectory=/home/nika/NIKA
+ExecStart=/home/nika/NIKA/scripts/audit-hebdo.sh

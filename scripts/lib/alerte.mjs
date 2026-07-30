@@ -52,13 +52,16 @@ export async function envoyerAlerte(texte) {
     } catch (e) { canaux.push('callmebot erreur: ' + String(e).slice(0, 60)); }
   }
 
-  // Repli local : toujours, pour que l'alarme existe dès ce soir même sans clé WhatsApp.
-  await new Promise((resolve) => {
-    execFile('osascript', ['-e',
-      `display notification ${JSON.stringify(texte.slice(0, 200))} with title "NIKA OPS" sound name "Submarine"`,
-    ], () => resolve());
-  });
-  canaux.push('notification-macos');
+  // Repli local macOS : toujours, pour que l'alarme existe même sans clé WhatsApp.
+  // (Sous Linux/VPS : pas d'écran — le parc 24 h et WhatsApp couvrent, on n'émet rien ici.)
+  if (process.platform === 'darwin') {
+    await new Promise((resolve) => {
+      execFile('osascript', ['-e',
+        `display notification ${JSON.stringify(texte.slice(0, 200))} with title "NIKA OPS" sound name "Submarine"`,
+      ], () => resolve());
+    });
+    canaux.push('notification-macos');
+  }
 
   return canaux;
 }

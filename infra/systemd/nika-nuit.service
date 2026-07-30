@@ -1,0 +1,10 @@
+[Unit]
+Description=NIKA OPS — routine de nuit (remplisseurs + worker + bilan)
+
+[Service]
+Type=oneshot
+User=nika
+WorkingDirectory=/home/nika/NIKA
+ExecStart=/home/nika/NIKA/scripts/nuit.sh
+Environment=NIKA_DEPOT=/home/nika/NIKA
+Nice=10
