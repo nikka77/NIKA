@@ -1,0 +1,8 @@
+[Unit]
+Description=NIKA OPS — sentinelle de restock Hetzner (gamme éco)
+
+[Service]
+Type=oneshot
+User=nika
+WorkingDirectory=/home/nika/NIKA
+ExecStart=/usr/bin/node --env-file=.env.local scripts/ops-veille-hetzner.mjs

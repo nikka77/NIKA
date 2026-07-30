@@ -1,0 +1,9 @@
+[Unit]
+Description=NIKA OPS — veille restock toutes les 2 h
+
+[Timer]
+OnCalendar=*-*-* 00/2:15:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
