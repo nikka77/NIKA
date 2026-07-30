@@ -752,7 +752,9 @@ async function chainReview(row, reviewedId, jugesOverride) {
   // chaque production part chez DEUX juges de familles différentes. L'accord des deux
   // autorise l'application automatique ; désaccord → arbitre (L20), sinon pile Dan.
   const juges = jugesOverride ?? [
-    { juge_modele: 'ollama/gemma4:12b', slot: 'auto' },
+    // Juge n°1 : gemma local (gratuit illimité) SI Ollama existe (Mac) — sinon flash-lite
+    // (Google, famille croisée avec llama préservée) : le VPS n'a pas de GPU (31/07).
+    { juge_modele: (await ollamaDisponible()) ? 'ollama/gemma4:12b' : 'gemini/gemini-flash-lite-latest', slot: 'auto' },
     // Juge n°2 : llama-70b (Meta) en priorité — gemma local + Gemini étaient de la MÊME
     // famille Google (angles morts partagés, corrigé par l'étude modèles du 28/07).
     ...(process.env.GROQ_API_KEY
@@ -770,6 +772,17 @@ async function chainReview(row, reviewedId, jugesOverride) {
       },
     })),
   });
+}
+
+// Ollama n'existe que sur le Mac — sondé UNE fois par processus (cache), jamais bloquant.
+let _ollamaDispo = null;
+async function ollamaDisponible() {
+  if (_ollamaDispo !== null) return _ollamaDispo;
+  try {
+    const r = await fetch('http://localhost:11434/api/tags', { signal: AbortSignal.timeout(2_000) });
+    _ollamaDispo = r.ok;
+  } catch { _ollamaDispo = false; }
+  return _ollamaDispo;
 }
 
 // L'ARBITRE (L20) : convoqué quand les deux juges se CONTREDISENT (valide contre
