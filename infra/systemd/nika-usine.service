@@ -1,0 +1,23 @@
+# nika-usine.service — l'usine AKASHA en continu (L23). Le worker boucle en permanence ;
+# il s'auto-régule sur les budgets ops_quotas (par minute et par jour) et fait la sieste
+# quand un guichet quotidien se ferme. Ravitaillé par nika-remplisseurs.timer.
+[Unit]
+Description=NIKA OPS — usine AKASHA en continu (production + jugement 24/7)
+OnFailure=nika-echec@%n.service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=nika
+WorkingDirectory=/home/nika/NIKA
+ExecStart=/home/nika/NIKA/scripts/usine.sh
+Restart=always
+RestartSec=30
+# Le worker est un client réseau, pas un calculateur : priorité basse pour laisser le
+# secrétaire WhatsApp répondre instantanément, et garde-fou mémoire (VPS 3,8 Go).
+Nice=10
+MemoryMax=1400M
+
+[Install]
+WantedBy=multi-user.target

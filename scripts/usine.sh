@@ -1,0 +1,28 @@
+#!/bin/zsh
+# scripts/usine.sh — L'USINE EN CONTINU (L23, 01/08/2026). Remplace la salve nocturne par un
+# fonctionnement 24/7 : la machine était inactive 22 h sur 24 (charge mesurée 0,12 à conc=8 —
+# le goulot est l'attente réseau, pas le CPU), alors que les budgets quotidiens des couloirs
+# gratuits, eux, courent toute la journée. En continu, on les consomme en douceur au lieu de
+# les brûler en une salve — c'est plus doux pour les fournisseurs ET plus rapide pour nous.
+#
+# Le worker s'auto-régule : budgets ops_quotas par minute ET par jour, sieste de 15 min quand
+# un guichet quotidien se ferme (PlafondJourError — la tâche est reportée, jamais perdue).
+# Le ravitaillement est assuré à part par nika-remplisseurs.timer (ops-remplir-auto.mjs).
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+# Préfixe de priorité en TABLEAU : en zsh une chaîne non citée ne se découpe pas (01/08).
+if command -v taskpolicy >/dev/null; then PRIO=(taskpolicy -c background); else PRIO=(nice -n 10); fi
+cd "$(dirname "$0")/.."
+
+# Couloirs en LISTE : le worker bascule sur le suivant quand un guichet du jour se ferme.
+# Production : gpt-oss-120b (qualifié, en tête) — les autres couloirs candidats n'entrent ici
+# QU'APRÈS avoir passé l'audit à l'aveugle du dimanche. On ne troque pas la qualité contre du débit.
+MODELE=${CLOUD_MODEL:-groq/openai/gpt-oss-120b}
+# Jugement n°2 (famille croisée) : llama-70b d'abord — son mur réel est 80 000 jetons/jour,
+# soit ~30 relectures — puis Nemotron (NVIDIA) et Mistral, deux familles de plus, pour que
+# la chaîne ne s'arrête pas à midi. Le juge n°1 (gemma, Google) est choisi par le worker.
+JUGE=${JUDGE_MODEL:-groq/llama-3.3-70b-versatile,nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest}
+CONC=${NIKA_CONC:-$(grep '^NIKA_CONC=' .env.local 2>/dev/null | cut -d= -f2)}
+
+echo "🏭 usine continue — production ${MODELE} · jugement ${JUGE} · ${CONC:-8} de front"
+exec "${PRIO[@]}" node --env-file=.env.local scripts/agent-worker.mjs \
+  --loop --cloud="$MODELE" --juge="$JUGE" --conc="${CONC:-8}"

@@ -1,0 +1,12 @@
+# nika-remplisseurs.service — ravitaillement de l'usine continue (L23). Ne commande QUE si
+# la file est basse (< 30) et dimensionne le lot sur le budget des juges restant pour la
+# journée : la file ne gonfle jamais de tâches qui seraient reportées.
+[Unit]
+Description=NIKA OPS — ravitaillement adaptatif de la file AKASHA
+OnFailure=nika-echec@%n.service
+
+[Service]
+Type=oneshot
+User=nika
+WorkingDirectory=/home/nika/NIKA
+ExecStart=/usr/bin/node --env-file=.env.local scripts/ops-remplir-auto.mjs

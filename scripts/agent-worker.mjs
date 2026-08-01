@@ -454,10 +454,35 @@ async function executerCommande(cmd) {
 const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 400, akasha_relations: 900, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
+/* ── Rotation de couloirs (L23, 01/08) ──────────────────────────────
+ * --cloud et --juge acceptent une LISTE séparée par des virgules. Les plafonds des paliers
+ * gratuits sont PAR MODÈLE et indépendants : Groq gpt-oss-120b, Groq llama-70b et Gemini
+ * gemma-4 ont trois compteurs distincts. Quand un couloir ferme son guichet du jour, on
+ * bascule sur le suivant au lieu d'attendre 24 h — c'est ce qui rend l'usine continue utile.
+ * Le mur mesuré n'est d'ailleurs pas le débit/minute mais les JETONS PAR JOUR (Groq :
+ * 200 000/j sur gpt-oss-120b ≈ 69 productions ; 100 000/j sur llama-70b ≈ 40 relectures).
+ * Un couloir épuisé est mis de côté 1 h puis re-testé (le guichet glisse sur 24 h). */
+const listeCouloirs = (s) => String(s ?? '').split(',').map((x) => x.trim()).filter(Boolean);
+const CLOUDS = listeCouloirs(CLOUD);
+const JUGES_CLI = listeCouloirs(JUGE);
+const couloirsEpuises = new Map();   // modèle → horodatage du guichet fermé
+const couloirDispo = (m) => !couloirsEpuises.has(m) || Date.now() - couloirsEpuises.get(m) > 3_600_000;
+const premierDispo = (liste) => liste.find(couloirDispo) ?? null;
+
 const modelOf = (type, p) => {
-  if (type === 'review_local' && p?.juge_modele) return p.juge_modele;  // double verdict : juge porté par la tâche
-  if (JUGE && type === 'review_local') return JUGE;     // repli : juge dédié (cloud ou local)
-  if (CLOUD && type !== 'review_local') return CLOUD;   // production au cloud
+  if (type === 'review_local') {
+    // Le juge est porté par la tâche (composition du jury décidée à l'enrôlement). S'il a
+    // fermé son guichet, on lui substitue un confrère libre plutôt que de reporter 24 h.
+    const porte = p?.juge_modele;
+    if (porte && couloirDispo(porte)) return porte;
+    // Interdits : lui-même et les modèles de ses confrères de jury (`evite`) — un remplaçant
+    // identique à l'autre juge produirait un consensus factice.
+    const interdits = new Set([porte, ...(p?.evite ?? [])]);
+    const remplacant = premierDispo(JUGES_CLI.filter((m) => !interdits.has(m)));
+    if (porte && remplacant) console.log(`  ⇄ juge ${porte} indisponible → ${remplacant}`);
+    return remplacant ?? porte ?? JUGES_CLI[0] ?? JUGE;
+  }
+  if (CLOUDS.length) return premierDispo(CLOUDS) ?? CLOUDS[0];   // production au cloud
   const t = TASK_TYPES[type];
   return typeof t.model === 'function' ? t.model(p) : t.model;
 };
@@ -471,34 +496,64 @@ const schemaOf = (t, p) => (typeof t.schema === 'function' ? t.schema(p) : t.sch
 // Clés par MODÈLE (les quotas Groq/Gemini sont PAR MODÈLE — moisson du 28/07) avec repli
 // par fournisseur. `parJour` = second guichet sur 24 h quand le plafond quotidien mord
 // avant le plafond minute (llama-70b : 1 000 req/j). Marges ~10-20 % sous les plafonds.
+// RECALÉ SUR LES DOCS OFFICIELLES le 01/08/2026 (audit des 4 verrous). Trois enseignements :
+//  · le frein n'était pas le débit/minute en REQUÊTES mais en JETONS — 5 000/min pour ~2 900
+//    réservés par production = UNE production par minute, d'où 59 attentes pour 44 productions ;
+//  · le vrai mur est ailleurs : les JETONS PAR JOUR (`jetonsParJour`), absents jusqu'ici —
+//    Groq donne 200 000/j sur gpt-oss-120b (~69 productions) et 100 000/j sur llama-70b (~40
+//    relectures). Sans ce guichet, on tapait dans le mur du fournisseur en aveugle ;
+//  · Google et Mistral NE PUBLIENT PLUS leurs plafonds gratuits (coupe de déc. 2025, renvoi
+//    vers un tableau de bord authentifié) → valeurs pessimistes, à recaler avant tout gros lot.
+// Consommation mesurée par production : gpt-oss-120b 2 887 · nemotron-super 2 879 ·
+// llama-70b 2 538 · gemma-4-31b 2 193 jetons.
 const LIMITES_FOURNISSEURS = {
-  'groq/openai/gpt-oss-120b':        { requetes: 25, jetons: 5_000, fenetre: 60 },
-  'groq/llama-3.3-70b-versatile':    { requetes: 25, jetons: 10_000, fenetre: 60, parJour: 900 },
-  'gemini/gemini-flash-lite-latest': { requetes: 12, jetons: 200_000, fenetre: 60, parJour: 450 },
-  'gemini/gemma-4-31b-it':           { requetes: 24, jetons: 13_000, fenetre: 60, parJour: 13_000 },
+  // ── Groq — https://console.groq.com/docs/rate-limits (compteurs PAR MODÈLE, indépendants)
+  'groq/openai/gpt-oss-120b':        { requetes: 24, jetons: 6_400, fenetre: 60, parJour: 800, jetonsParJour: 160_000 },
+  'groq/llama-3.3-70b-versatile':    { requetes: 24, jetons: 9_600, fenetre: 60, parJour: 800, jetonsParJour: 80_000 },
+  // ── Google — plafonds non publiés depuis déc. 2025 : 80 % des dernières valeurs connues.
+  // gemma-4 est le meilleur débit du parc (2 193 jetons/production → 5/min, des milliers/jour).
+  'gemini/gemini-flash-lite-latest': { requetes: 12, jetons: 200_000, fenetre: 60, parJour: 200 },
+  'gemini/gemma-4-31b-it':           { requetes: 24, jetons: 12_000, fenetre: 60, parJour: 11_500 },
   // Nemotron 550B gratuit via OpenRouter (sonde 29/07 : cas piège réussi, famille NVIDIA) —
   // 50 req/JOUR seulement : rôle d'ARBITRE ponctuel, pas de juge de masse (1 000/j si 10 $ un jour).
-  'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free': { requetes: 16, jetons: 50_000, fenetre: 60, parJour: 45 },
-  groq:     { requetes: 25, jetons: 5_000, fenetre: 60 },
-  gemini:   { requetes: 12, jetons: 200_000, fenetre: 60 },
-  cerebras: { requetes: 25, jetons: 50_000, fenetre: 60 },
-  // Couloirs dormants (clés à créer) — plafonds prudents, à ajuster à la sonde d'embauche.
-  nvidia:     { requetes: 32, jetons: 100_000, fenetre: 60 },
-  mistral:    { requetes: 20, jetons: 50_000, fenetre: 60 },
-  openrouter: { requetes: 16, jetons: 50_000, fenetre: 60, parJour: 45 },
+  'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free': { requetes: 16, jetons: 50_000, fenetre: 60, parJour: 40 },
+  // ── Replis par FOURNISSEUR : plancher pour un modèle non listé, jamais une cible de production.
+  groq:     { requetes: 24, jetons: 4_800, fenetre: 60, parJour: 800 },   // < 6 000, le plus bas TPM Groq
+  gemini:   { requetes: 12, jetons: 100_000, fenetre: 60, parJour: 200 },
+  cerebras: { requetes: 25, jetons: 50_000, fenetre: 60 },                // palier gratuit SUPPRIMÉ (402 le 26/07)
+  // NIM gratuit n'est pas un débit renouvelable mais un STOCK de ~1 000 crédits qui s'épuise
+  // DÉFINITIVEMENT : le guichet jour empêche une seule nuit de brûler la réserve entière.
+  nvidia:     { requetes: 32, jetons: 100_000, fenetre: 60, parJour: 150 },
+  // Mistral ne publie plus rien ; les sources tierces 2026 donnent ~2 req/min sur « Experiment ».
+  // Prudence maximale tant que la sonde n'a pas parlé (et données PUBLIQUES uniquement).
+  mistral:    { requetes: 2, jetons: 20_000, fenetre: 60 },
+  openrouter: { requetes: 16, jetons: 50_000, fenetre: 60, parJour: 40 },
 };
+// Guichet QUOTIDIEN fermé ≠ panne : la tâche n'a pas échoué, elle est trop tôt. En mode
+// continu (24/7, L23) la marquer « failed » brûlerait toute la file dès le plafond atteint.
+// Cette erreur distincte fait REPORTER la tâche : rien en base, message laissé en file
+// (sa visibilité expire → il repart), et le worker fait la sieste jusqu'à la fenêtre suivante.
+class PlafondJourError extends Error {
+  constructor(cle, limite) { super(`guichet du jour fermé pour ${cle} (plafond ${limite})`); this.cle = cle; }
+}
 let quotaIndisponible = false;   // RPC absente (SQL pas encore appliqué) → on le dit UNE fois
 async function quotaReserver(cle, jetonsEstimes) {
   const lim = LIMITES_FOURNISSEURS[cle] ?? LIMITES_FOURNISSEURS[String(cle).split('/')[0]];
   if (!lim || quotaIndisponible) return;
   // Guichet JOUR d'abord : attendre une fenêtre de 24 h n'a pas de sens — on échoue franchement
   // (la tâche repart en file demain via le rejoueur/les remplisseurs), on ne brûle pas la minute.
-  if (lim.parJour) {
+  if (lim.parJour || lim.jetonsParJour) {
     const { data: okJour, error: eJour } = await supabase.rpc('quota_consommer', {
-      p_fournisseur: `${cle}:jour`, p_requetes: 1, p_jetons: 0,
-      p_limite_requetes: lim.parJour, p_limite_jetons: 1, p_fenetre_secondes: 86_400,
+      p_fournisseur: `${cle}:jour`,
+      p_requetes: 1,
+      p_jetons: lim.jetonsParJour ? Math.min(jetonsEstimes, lim.jetonsParJour) : 0,
+      p_limite_requetes: lim.parJour ?? 1_000_000,
+      p_limite_jetons: lim.jetonsParJour ?? 1,
+      p_fenetre_secondes: 86_400,
     });
-    if (!eJour && okJour === false) throw new Error(`plafond quotidien ${cle} atteint (${lim.parJour}/j)`);
+    if (!eJour && okJour === false) {
+      throw new PlafondJourError(cle, `${lim.parJour ?? '—'} req/j · ${lim.jetonsParJour ?? '—'} jetons/j`);
+    }
   }
   for (let essai = 0; essai < 20; essai++) {
     const { data, error } = await supabase.rpc('quota_consommer', {
@@ -581,9 +636,9 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
   }
 }
 
-async function callModel(type, payload) {
+async function callModel(type, payload, modeleImpose) {
   const t = TASK_TYPES[type];
-  const model = modelOf(type, payload);
+  const model = modeleImpose ?? modelOf(type, payload);
   const schema = schemaOf(t, payload);
   const messages = [{ role: 'user', content: t.prompt(payload) }];
   let raw;
@@ -708,21 +763,32 @@ async function processMessage(msg) {
   const guardErr = t.guard(p);
   if (guardErr) return { ...base, status: 'refused', model: null, error: guardErr };
 
-  for (let attempt = 1; ; attempt++) {
+  let echecs = 0;
+  for (;;) {
+    const modele = modelOf(type, p);
     try {
-      const out = await callModel(type, p);
+      const out = await callModel(type, p, modele);
       // Contrôle de cohérence valeur↔preuve (code pur) : le modèle peut citer juste et conclure faux.
       const suspects = type === 'akasha_attrs' ? checkPreuves(out)
         : type === 'akasha_relations' ? checkRelations(out, p) : [];
       return {
         ...base,
         status: suspects.length ? 'suspect' : 'done',
-        model: modelOf(type, p),
+        model: modele,
         result: out,
         error: suspects.length ? suspects.join(' · ') : null,
       };
     } catch (e) {
-      if (attempt >= 2) return { ...base, status: 'failed', model: modelOf(type, p), error: String(e).slice(0, 300) };
+      // Guichet du jour fermé : on marque le couloir et on tente le suivant. Si aucun n'est
+      // libre, la tâche est REPORTÉE (rien en base, message laissé en file) — jamais « failed » :
+      // elle n'a pas échoué, elle est trop tôt.
+      if (e instanceof PlafondJourError) {
+        couloirsEpuises.set(e.cle, Date.now());
+        const suivant = modelOf(type, p);
+        if (suivant && suivant !== modele) { console.log(`  ⇄ ${e.cle} épuisé aujourd'hui → bascule sur ${suivant}`); continue; }
+        return { ...base, status: 'reporte', error: e.message };
+      }
+      if (++echecs >= 2) return { ...base, status: 'failed', model: modele, error: String(e).slice(0, 300) };
     }
   }
 }
@@ -730,7 +796,7 @@ async function processMessage(msg) {
 /* ── Enchaînement production → relecture locale ──────────────────── */
 // Mesuré le 25/07 : le juge local détecte 7/7 des erreurs factuelles sans faux positif.
 // Il n'applique rien — il annote, pour que la file humaine arrive déjà triée.
-async function chainReview(row, reviewedId, jugesOverride) {
+async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
   const p = row.payload ?? {};
   let production;
   if (row.task_type === 'akasha_attrs') {
@@ -753,9 +819,10 @@ async function chainReview(row, reviewedId, jugesOverride) {
   // chaque production part chez DEUX juges de familles différentes. L'accord des deux
   // autorise l'application automatique ; désaccord → arbitre (L20), sinon pile Dan.
   const juges = jugesOverride ?? [
-    // Juge n°1 : gemma local (gratuit illimité) SI Ollama existe (Mac) — sinon flash-lite
-    // (Google, famille croisée avec llama préservée) : le VPS n'a pas de GPU (31/07).
-    { juge_modele: (await ollamaDisponible()) ? 'ollama/gemma4:12b' : 'gemini/gemini-flash-lite-latest', slot: 'auto' },
+    // Juge n°1 : gemma local (gratuit illimité) SI Ollama existe (Mac) — sinon gemma-4-31b
+    // en nuage : même famille Google (croisement avec llama-70b préservé) mais 11 500 relectures
+    // par jour contre 200 à flash-lite, qui était le vrai plafond de la chaîne (audit 01/08).
+    { juge_modele: (await ollamaDisponible()) ? 'ollama/gemma4:12b' : 'gemini/gemma-4-31b-it', slot: 'auto' },
     // Juge n°2 : llama-70b (Meta) en priorité — gemma local + Gemini étaient de la MÊME
     // famille Google (angles morts partagés, corrigé par l'étude modèles du 28/07).
     ...(process.env.GROQ_API_KEY
@@ -764,12 +831,18 @@ async function chainReview(row, reviewedId, jugesOverride) {
         ? [{ juge_modele: 'gemini/gemini-flash-lite-latest', slot: 'auto2' }]
         : []),
   ];
+  // Chaque juge emporte la liste des modèles de ses confrères (`evite`) : si son guichet du
+  // jour ferme et qu'on lui substitue un remplaçant (rotation L23), la substitution ne doit
+  // JAMAIS retomber sur le modèle de l'autre juge — deux verdicts du même modèle feraient un
+  // faux consensus, donc une écriture automatique sans véritable second regard.
+  const modelesDuJury = [...new Set([...juges.map((j) => j.juge_modele), ...(evitePlus ?? [])])];
   await supabase.rpc('ops_queue_send_batch', {
     messages: juges.map((j) => ({
       type: 'review_local',
       payload: {
         reviewed_id: reviewedId, slug: row.target_slug, name: p.name, universe: p.universe,
         production, source: page.text.slice(0, 4500), ...j,
+        evite: modelesDuJury.filter((m) => m !== j.juge_modele),
       },
     })),
   });
@@ -794,7 +867,7 @@ const ARBITRE_MODELE = process.env.NVIDIA_API_KEY ? 'nvidia/nvidia/nemotron-3-su
 async function peutEtreArbitrer(reviewedId) {
   if (!ARBITRE_MODELE) return;
   const { data: r } = await supabase.from('agent_results')
-    .select('id, task_type, target_slug, payload, result, review_status, auto_verdict, auto2_verdict, arbitre_at')
+    .select('id, task_type, target_slug, payload, result, review_status, auto_verdict, auto2_verdict, auto_model, auto2_model, arbitre_at')
     .eq('id', reviewedId).single();
   if (!r || r.review_status !== 'pending' || r.arbitre_at) return;
   const a = r.auto_verdict, b = r.auto2_verdict;
@@ -805,8 +878,11 @@ async function peutEtreArbitrer(reviewedId) {
     .eq('id', reviewedId).is('arbitre_at', null).select('id');
   if (!gagne?.length) return;
   console.log(`  ⚖ arbitre convoqué (${a} / ${b}) sur #${reviewedId}`);
+  // L'arbitre départage : s'il devait être remplacé (guichet fermé), son remplaçant ne peut
+  // pas être l'un des deux juges qu'il arbitre — sinon il ne ferait que répéter un vote.
   await chainReview({ task_type: r.task_type, target_slug: r.target_slug, payload: r.payload, result: r.result },
-    reviewedId, [{ juge_modele: ARBITRE_MODELE, slot: 'arbitre' }]);
+    reviewedId, [{ juge_modele: ARBITRE_MODELE, slot: 'arbitre' }],
+    [r.auto_model, r.auto2_model].filter(Boolean));
 }
 
 /* ── Application automatique (double verdict) ───────────────────── */
@@ -890,6 +966,13 @@ async function traiterEnParallele(msgs, conc) {
 
 async function traiterUn(msg) {
   const row = await processMessage(msg);
+  if (row.status === 'reporte') {
+    // Ni archivage ni écriture : le message reste en file (visibilité expirée → il repart
+    // à la fenêtre suivante). On signale à la boucle qu'il faut lever le pied.
+    siesteDepuis = Date.now();
+    console.log(`  ⏸ [${msg.msg_id}] ${row.target_slug ?? row.task_type} reporté — ${row.error}`);
+    return;
+  }
   counts[row.status]++;
 
   if (row.task_type === 'review_local') {
@@ -998,9 +1081,19 @@ ${texteSans}`,
 }
 
 const counts = { done: 0, refused: 0, failed: 0, suspect: 0 };
+let siesteDepuis = 0;   // dernier report pour guichet quotidien fermé (voir PlafondJourError)
 console.log(`⚙️  worker NIKA OPS — mode ${LOOP ? 'continu' : 'drain'} · ${CONC} tâche(s) de front`);
 for (;;) {
   await battreLeCoeur();
+  // Guichet quotidien fermé au tour précédent : en continu on dort jusqu'à ce que la fenêtre
+  // de 24 h glisse ; en drain on s'arrête (nuit.sh enchaîne sur l'ancrage et le bilan).
+  if (siesteDepuis && Date.now() - siesteDepuis < 120_000) {
+    if (!LOOP) { console.log('  ⏸ guichet quotidien fermé — fin du drain'); break; }
+    console.log('  ⏸ guichet quotidien fermé — sieste de 15 min');
+    await new Promise((r) => setTimeout(r, 15 * 60_000));
+    siesteDepuis = 0;
+    continue;
+  }
   const { data: lot, error } = await supabase.rpc(RPC.read, { vt: VT, qty: LOT });
   if (error) { console.error('lecture file:', error.message); process.exit(1); }
   if (!lot?.length) {

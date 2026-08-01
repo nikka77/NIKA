@@ -1,0 +1,13 @@
+# Ravitaillement toutes les 20 min. Persistent=true : un rattrapage au réveil si le VPS
+# a redémarré. Le script ne fait rien quand la file est encore garnie — ce rythme serré ne
+# coûte donc presque rien et évite que l'usine tourne à vide entre deux lots.
+[Unit]
+Description=NIKA OPS — ravitaillement de la file toutes les 20 min
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=20min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

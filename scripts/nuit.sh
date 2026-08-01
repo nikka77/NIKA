@@ -38,10 +38,22 @@ if grep -q '^CEREBRAS_API_KEY=' .env.local 2>/dev/null; then
 fi
 echo "→ production sur ${MODELE} · jugement sur ${JUGE}"
 
-# Lots de la nuit — modestes exprès : ~90 productions + autant de relectures.
-node --env-file=.env.local scripts/ops-fill-attrs.mjs --limit=40
-node --env-file=.env.local scripts/ops-fill-relations.mjs --limit=20
-node --env-file=.env.local scripts/ops-fill-fandom.mjs --limit=30 2>/dev/null || true
+# Depuis L23 (01/08), l'usine tourne EN CONTINU (nika-usine.service) et est ravitaillée par
+# son propre timer : la nuit ne doit alors ni remplir (doublons) ni drainer (concurrence),
+# seulement faire l'ENTRETIEN — orphelines, ancrage, escalades, bilan. Sur une machine sans
+# service continu (le Mac), elle garde son rôle complet d'autrefois.
+if systemctl is-active --quiet nika-usine 2>/dev/null; then
+  CONTINU=1; echo "→ usine continue active : nuit en mode ENTRETIEN (ni remplissage ni drain)"
+else
+  CONTINU=0
+fi
+
+if [ "$CONTINU" = 0 ]; then
+  # Lots de la nuit — modestes exprès : ~90 productions + autant de relectures.
+  node --env-file=.env.local scripts/ops-fill-attrs.mjs --limit=40
+  node --env-file=.env.local scripts/ops-fill-relations.mjs --limit=20
+  node --env-file=.env.local scripts/ops-fill-fandom.mjs --limit=30 2>/dev/null || true
+fi
 
 # 0bis) Relectures ORPHELINES (juge en panne → production sans verdict) : remises en file
 # AVANT le drain pour être jugées cette nuit même — sinon elles s'accumulent en silence.
@@ -55,8 +67,10 @@ node --env-file=.env.local scripts/ops-rejoue-relectures.mjs || true
 # sous mutex (un seul Python à la fois). Ajustable sans commit : NIKA_CONC=4 dans .env.local
 # (lu ci-dessous — .env.local n'est chargé que par node, pas par le shell).
 CONC=${NIKA_CONC:-$(grep '^NIKA_CONC=' .env.local 2>/dev/null | cut -d= -f2)}
-"${PRIO[@]}" node --env-file=.env.local scripts/agent-worker.mjs \
-  --cloud="$MODELE" --juge="$JUGE" --conc="${CONC:-8}"
+if [ "$CONTINU" = 0 ]; then
+  "${PRIO[@]}" node --env-file=.env.local scripts/agent-worker.mjs \
+    --cloud="$MODELE" --juge="$JUGE" --conc="${CONC:-8}"
+fi
 
 # 3) Ancrage HHEM (CPU uniquement) — --write PERSISTE les scores (pastille /ops), sinon ils
 # partaient dans le log et personne ne les voyait. Pas de 2>/dev/null : c'est lui qui a caché
