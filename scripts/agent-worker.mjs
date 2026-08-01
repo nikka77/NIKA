@@ -841,7 +841,7 @@ async function callModel(type, payload, modeleImpose) {
     if (!process.env.DEEPINFRA_API_KEY) throw new Error('DEEPINFRA_API_KEY absente de .env.local');
     raw = await appelOpenAICompat({
       url: 'https://api.deepinfra.com/v1/openai/chat/completions', cle: process.env.DEEPINFRA_API_KEY,
-      modele: model.slice(11), messages, type, schema,
+      modele: model.slice(10), messages, type, schema,   // « deepinfra/ » = 10 caractères
     });
   } else if (model.startsWith('mistral/')) {
     // Branche DORMANTE — ⚠ palier gratuit Mistral : les données servent à l'entraînement.
@@ -856,7 +856,7 @@ async function callModel(type, payload, modeleImpose) {
     if (!process.env.OPENROUTER_API_KEY) throw new Error('OPENROUTER_API_KEY absente de .env.local');
     raw = await appelOpenAICompat({
       url: 'https://openrouter.ai/api/v1/chat/completions', cle: process.env.OPENROUTER_API_KEY,
-      modele: model.slice(11), messages, type, schema,
+      modele: model.slice(10), messages, type, schema,   // « deepinfra/ » = 10 caractères
     });
   } else if (model.startsWith('gemini/')) {
     // Gemini NATIF (pas OmniRoute) : son adaptateur passe par l'endpoint compatible OpenAI qui
