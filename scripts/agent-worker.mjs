@@ -49,7 +49,14 @@ const RPC = CHAT
 // Pas d'échappatoire « données insuffisantes » côté modèle : à température 0, sa seule présence
 // dans le schéma fait tout refuser (constaté sur 16/20 fiches le 25/07). Le tri appartient à la
 // garde du worker (amont) et au reviewer (aval), jamais au 12B.
-const FlavorOut = z.object({ descFr: z.string().min(30) });
+// VERROU 2 (audit du 01/08) : 104 fiches de la base finissent en plein mot — « …et sa réponse
+// extérieure fut de » sur Naruto lui-même. Origine : un slice() brut dans les scripts de build,
+// que la traduction recopiait fidèlement. Rien ne DÉTECTAIT une bio coupée avant écriture ; ce
+// contrôle ferme la porte pour toute production future (plafond de tokens ou source mutilée).
+const phraseComplete = (s) => /[.!?…»"”)\]]\s*$/.test(String(s).trim());
+const DescFr = (min) => z.string().min(min)
+  .refine(phraseComplete, 'descFr coupée en pleine phrase (plafond de tokens ou source tronquée)');
+const FlavorOut = z.object({ descFr: DescFr(30) });
 
 const TASK_TYPES = {
   flavor_akasha: {
@@ -79,7 +86,7 @@ DONNÉES :
   // (Le type flavor_akasha ci-dessus ne faisait que paraphraser un summary déjà français — review Dan 25/07.)
   fandom_descfr: {
     model: (p) => expertFor(p.universe),   // expert de l'univers (akasha-naruto, akasha-one-piece…)
-    zod: z.object({ descFr: z.string().min(80) }),
+    zod: z.object({ descFr: DescFr(80) }),
     schema: {
       type: 'object',
       properties: { descFr: { type: 'string' } },
@@ -289,7 +296,7 @@ function checkRelations(out, p) {
 function ficheRole(roleKey) {
   return {
     model: (p) => expertFor(p.universe),
-    zod: z.object({ descFr: z.string().min(60) }),
+    zod: z.object({ descFr: DescFr(60) }),
     schema: {
       type: 'object',
       properties: { descFr: { type: 'string' } },
@@ -652,7 +659,13 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
     }
     if (!res.ok) throw new Error(`HTTP ${res.status} (${new URL(url).host}): ${(await res.text()).slice(0, 200)}`);
     journaliserQuotaReel(fournisseur, modele, res.headers);
-    const contenu = (await res.json()).choices?.[0]?.message?.content ?? '';
+    const rep = await res.json();
+    // Sortie coupée au plafond de tokens : jusqu'ici SILENCIEUX (le JSON tronqué partait en
+    // erreur de parsing, motif indéchiffrable). On le nomme — c'est le seul signal qui dit
+    // qu'il faut relever NUM_PREDICT pour ce type de tâche.
+    if (rep.choices?.[0]?.finish_reason === 'length')
+      throw new Error(`sortie coupée au plafond de tokens (${type}, ${NUM_PREDICT[type] ?? 800}+marge) — relever NUM_PREDICT.${type}`);
+    const contenu = rep.choices?.[0]?.message?.content ?? '';
     if (modeJson !== 'json_object') return contenu;
     // Extraction tolérante : certains penseurs (Nemotron) laissent fuir du raisonnement
     // AVANT l'objet — on découpe du premier « { » au dernier « } » (constaté le 29/07).
