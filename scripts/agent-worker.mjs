@@ -61,14 +61,33 @@ const DescFr = (min) => z.string().min(min)
   .refine(phraseComplete, 'descFr coupée en pleine phrase (plafond de tokens ou source tronquée)');
 const FlavorOut = z.object({ descFr: DescFr(30) });
 
-/** L'article cite-t-il le nom cherché ? Preuve d'identité déterministe pour les ALIAS : un
- *  wiki nomme toujours les autres noms de son sujet dans le corps de l'article. Deux mots
- *  minimum — un nom d'un seul mot se rencontrerait par hasard dans 5 000 caractères de prose. */
-const citeLeNom = (texte, nom) => {
-  const mots = String(nom ?? '').trim().split(/\s+/);
-  if (mots.length < 2 || !texte) return false;
-  const norm = (x) => String(x).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  return norm(texte).includes(norm(nom));
+/** PREUVE D'IDENTITÉ PAR LES CHAMPS DE NOMMAGE (01/08) — déterministe, zéro appel de modèle.
+ *
+ *  Un wiki déclare les autres noms de son sujet dans son infobox : « True Name », « Alias »,
+ *  « Also called », « Romanized Name ». Si un mot du nom cherché y figure ALORS QU'IL N'EST PAS
+ *  dans le titre, c'est que l'article parle de la même entité sous un autre nom.
+ *
+ *  La condition « pas dans le titre » est ce qui rend la règle sûre. Sans elle, « Giorno's
+ *  Mother » serait accepté sur l'article « Giorno Giovanna » (le mot « Giorno » y est partout)
+ *  — or ce refus doit être maintenu, la mère n'est pas le fils. Avec elle il ne reste que
+ *  « Mother », absent des champs de nommage : refus conservé.
+ *
+ *  Mesuré sur Death Note, où la moitié des refus venait de là :
+ *    Halle Bullook / article « Halle Lidner »      → « Bullook » en alias      → même personne
+ *    Mary Kenwood  / article « Wedy »              → « Kenwood » en True Name  → même personne
+ *    Jealous       / article « Gelus »             → « Jealous » en Also called → même être
+ *    Giorno's Mother / article « Giorno Giovanna » → rien hors titre           → REFUSÉ (juste)
+ */
+const CHAMPS_NOMMAGE = /^\s*(name|true name|real name|alias(es)?|also called|other names?|romanized name|english name|epithet|nickname)\s*:.*$/gim;
+const citeLeNom = (texte, nom, titre) => {
+  if (!texte || !nom) return false;
+  const norm = (x) => String(x).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const champs = norm((String(texte).match(CHAMPS_NOMMAGE) ?? []).join(' | '));
+  if (!champs) return false;
+  const dansTitre = norm(titre ?? '');
+  // Mots d'au moins 4 lettres : « the », « of », « no » se rencontrent partout.
+  const mots = norm(nom).split(/[^a-z0-9]+/).filter((m) => m.length >= 4 && !dansTitre.includes(m));
+  return mots.length > 0 && mots.some((m) => champs.includes(m));
 };
 
 const TASK_TYPES = {
@@ -132,7 +151,7 @@ DONNÉES :
       // ne contient PAS « Giorno's Mother », ce refus-là reste donc justifié.
       // Réservé aux noms d'au moins deux mots : un nom d'un seul mot ferait des rencontres
       // fortuites dans 5 000 caractères de prose.
-      if (p.sameEntity === false && !citeLeNom(p.fandom, p.name))
+      if (p.sameEntity === false && !citeLeNom(p.fandom, p.name, p.fandomTitle))
         return `mauvaise entité : article « ${p.fandomTitle} » pour « ${p.name} »`;
       // 2) homonyme ? (Ain/Egghead vs Ain/Neo Marines) : aucun nom propre du résumé dans l'article.
       // PERSONNAGES SEULEMENT : nos résumés sont en français et les articles en anglais, donc
