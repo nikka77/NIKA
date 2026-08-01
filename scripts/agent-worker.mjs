@@ -643,7 +643,10 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
     if (res.status === 429 && essai < 4) {
       const corps = await res.text();
       const attente = Number(corps.match(/try again in (\d+(?:\.\d+)?)s/i)?.[1] ?? res.headers.get('retry-after') ?? 20);
-      console.log(`  ⏳ 429 (${new URL(url).host}) — pause ${Math.ceil(attente + 1)} s (essai ${essai})`);
+      // On journalise le MOTIF du 429 : sans lui, impossible de savoir si c'est le débit par
+      // minute, le quota du jour ou les jetons — donc impossible de régler le bon plafond.
+      const motif = corps.match(/"message"\s*:\s*"([^"]{0,160})/)?.[1] ?? corps.slice(0, 160);
+      console.log(`  ⏳ 429 (${new URL(url).host}) — pause ${Math.ceil(attente + 1)} s (essai ${essai}) · ${motif}`);
       await new Promise((r) => setTimeout(r, (attente + 1) * 1000));
       continue;
     }
