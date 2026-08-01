@@ -21,10 +21,14 @@ cd "$(dirname "$0")/.."
 # tous deux une requête de taille réelle et ont passé leurs sondes d'embauche du 29/07.
 # Familles distinctes de bout en bout : Mistral produit · Google et Meta jugent · NVIDIA arbitre.
 MODELE=${CLOUD_MODEL:-mistral/mistral-large-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/openai/gpt-oss-120b}
-# Jugement n°2 (famille croisée) : llama-70b d'abord — son mur réel est 80 000 jetons/jour,
-# soit ~30 relectures — puis Nemotron (NVIDIA) et Mistral, deux familles de plus, pour que
-# la chaîne ne s'arrête pas à midi. Le juge n°1 (gemma, Google) est choisi par le worker.
-JUGE=${JUDGE_MODEL:-groq/llama-3.3-70b-versatile,nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest}
+# Jugement n°2 (famille croisée) : Qwen3-32B chez DeepInfra depuis le 01/08 — facturé au
+# jeton, donc SANS guichet quotidien, le mur contre lequel tous les couloirs gratuits butaient.
+# Mesuré : 0,000195 $ le verdict avec /no_think (2,6 s) — les 10 $ de Dan valent ~51 000
+# relectures, quand juger l'encyclopédie entière deux fois en demande 23 000.
+# Derrière lui, les couloirs gratuits restent en repli : Nemotron, Mistral, llama.
+# Quatre familles distinctes de bout en bout :
+#   Mistral produit · Google (gemma) juge · Qwen juge · NVIDIA arbitre.
+JUGE=${JUDGE_MODEL:-deepinfra/Qwen/Qwen3-32B,nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,groq/llama-3.3-70b-versatile}
 CONC=${NIKA_CONC:-$(grep '^NIKA_CONC=' .env.local 2>/dev/null | cut -d= -f2)}
 
 echo "🏭 usine continue — production ${MODELE} · jugement ${JUGE} · ${CONC:-8} de front"

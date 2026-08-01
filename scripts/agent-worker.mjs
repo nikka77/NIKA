@@ -710,7 +710,9 @@ const MODES_JSON = {
 const OLLAMA = (process.env.OLLAMA_HOST ?? 'http://localhost:11434').replace(/\/+$/, '');
 const enteteOllama = () => (process.env.OLLAMA_CLE ? { Authorization: `Bearer ${process.env.OLLAMA_CLE}` } : {});
 
-const SANS_PENSEE = new Set(['nvidia/nemotron-3-super-120b-a12b', 'nvidia/nemotron-3-ultra-550b-a55b']);
+// Modèles « à raisonnement » : sans /no_think ils brûlent leur budget en pensée avant le JSON.
+// Mesuré sur Qwen3-32B le 01/08 : 331 jetons et 8,7 s sans la consigne, 66 jetons et 2,6 s avec.
+const SANS_PENSEE = new Set(['nvidia/nemotron-3-super-120b-a12b', 'nvidia/nemotron-3-ultra-550b-a55b', 'Qwen/Qwen3-32B']);
 
 // Les fournisseurs disent la vérité sur leurs plafonds dans les en-têtes x-ratelimit-* — bien
 // mieux que la doc (Google et Mistral ne publient plus rien, et la table Groq annonce un TPD
