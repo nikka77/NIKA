@@ -605,6 +605,13 @@ const LIMITES_FOURNISSEURS = {
   // Nemotron 550B gratuit via OpenRouter (sonde 29/07 : cas piège réussi, famille NVIDIA) —
   // 50 req/JOUR seulement : rôle d'ARBITRE ponctuel, pas de juge de masse (1 000/j si 10 $ un jour).
   'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free': { requetes: 16, jetons: 50_000, fenetre: 60, parJour: 40 },
+  // ── DeepInfra — facturé au JETON, sans guichet quotidien. Pas de parJour : le seul frein
+  // est le crédit du compte, et il est dérisoire (juger l'encyclopédie entière deux fois ≈ 5 $).
+  // Plafond/minute prudent au départ, à relever une fois la cadence réelle mesurée.
+  'deepinfra/Qwen/Qwen3-32B':                  { requetes: 60, jetons: 400_000, fenetre: 60 },
+  'deepinfra/mistralai/Mistral-Small-24B-Instruct-2501': { requetes: 60, jetons: 400_000, fenetre: 60 },
+  deepinfra: { requetes: 60, jetons: 400_000, fenetre: 60 },
+
   // ── Replis par FOURNISSEUR : plancher pour un modèle non listé, jamais une cible de production.
   groq:     { requetes: 24, jetons: 4_800, fenetre: 60, parJour: 800 },   // < 6 000, le plus bas TPM Groq
   gemini:   { requetes: 12, jetons: 100_000, fenetre: 60, parJour: 200 },
@@ -824,6 +831,15 @@ async function callModel(type, payload, modeleImpose) {
     raw = await appelOpenAICompat({
       url: 'https://integrate.api.nvidia.com/v1/chat/completions', cle: process.env.NVIDIA_API_KEY,
       modele: model.slice(7), messages, type, schema,
+    });
+  } else if (model.startsWith('deepinfra/')) {
+    // Facturé au JETON, sans quota quotidien — la sortie de l'impasse des paliers gratuits
+    // (veille du 01/08). Juger toute l'encyclopédie deux fois ≈ 5 $, soit moins d'un mois de
+    // VPS. API strictement compatible OpenAI, json_schema strict pris en charge.
+    if (!process.env.DEEPINFRA_API_KEY) throw new Error('DEEPINFRA_API_KEY absente de .env.local');
+    raw = await appelOpenAICompat({
+      url: 'https://api.deepinfra.com/v1/openai/chat/completions', cle: process.env.DEEPINFRA_API_KEY,
+      modele: model.slice(11), messages, type, schema,
     });
   } else if (model.startsWith('mistral/')) {
     // Branche DORMANTE — ⚠ palier gratuit Mistral : les données servent à l'entraînement.
