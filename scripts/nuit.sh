@@ -49,8 +49,14 @@ node --env-file=.env.local scripts/ops-rejoue-relectures.mjs || true
 
 # 1+2) Production (cloud) ET jugement (cloud, autre famille) : UN SEUL worker — le tri par
 # modèle fait le travail des anciens « couloirs », sans le ping-pong de renvois qu'ils causaient.
+# conc=8 (31/07, demande Dan) : le goulot est l'ATTENTE réseau, pas le CPU — 8 tâches de front
+# font travailler producteur + juges + arbitre sur leurs guichets respectifs EN MÊME TEMPS.
+# Sans danger : à quota atteint le worker attend la fenêtre (pas d'échec), et le gate HHEM est
+# sous mutex (un seul Python à la fois). Ajustable sans commit : NIKA_CONC=4 dans .env.local
+# (lu ci-dessous — .env.local n'est chargé que par node, pas par le shell).
+CONC=${NIKA_CONC:-$(grep '^NIKA_CONC=' .env.local 2>/dev/null | cut -d= -f2)}
 $PRIO node --env-file=.env.local scripts/agent-worker.mjs \
-  --cloud="$MODELE" --juge="$JUGE" --conc=3
+  --cloud="$MODELE" --juge="$JUGE" --conc="${CONC:-8}"
 
 # 3) Ancrage HHEM (CPU uniquement) — --write PERSISTE les scores (pastille /ops), sinon ils
 # partaient dans le log et personne ne les voyait. Pas de 2>/dev/null : c'est lui qui a caché

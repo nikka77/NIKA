@@ -56,9 +56,18 @@ export function construireAffirmations(row, source) {
 }
 
 let hhemAbsentAnnonce = false;
+// MUTEX : un seul processus Python HHEM à la fois — chaque instance charge ~1 Go de RAM,
+// et à concurrence élevée (--conc=8) plusieurs applications simultanées feraient OOM le
+// VPS (3,8 Go). Les appels concurrents font la queue (~9 s chacun, mesuré sur CX23).
+let tourHHEM = Promise.resolve();
 /** Note un lot d'affirmations. Rend Map(id → score), ou null si HHEM est indisponible
  *  (venv absent, Python en erreur) — l'appelant reste alors sur son comportement actuel. */
-export async function scorerHHEM(items) {
+export function scorerHHEM(items) {
+  const tour = tourHHEM.then(() => scorerHHEMSeul(items));
+  tourHHEM = tour.catch(() => {});
+  return tour;
+}
+async function scorerHHEMSeul(items) {
   if (!items.length) return new Map();
   try { await access(PY); } catch {
     if (!hhemAbsentAnnonce) { console.log('  ⚓ HHEM indisponible (.ops-venv absent) — ancrage non noté'); hhemAbsentAnnonce = true; }
