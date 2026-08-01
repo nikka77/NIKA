@@ -226,9 +226,10 @@ Puis :
 - "a_corriger" si le fond est bon mais qu'un détail est faux, absent de la source ou mal écrit ;
 - "rejeter" si la production décrit une autre entité ou invente l'essentiel.
 
-"motif" : une phrase précise (le problème exact, ou pourquoi c'est juste).
-"citation" : recopie la phrase EXACTE de la source qui fonde ton verdict. Si tu n'en trouves aucune,
-écris "aucune" — et dans ce cas le verdict ne peut pas être "valide".`,
+"motif" : UNE phrase précise (le problème exact, ou pourquoi c'est juste). Deux lignes maximum.
+"citation" : recopie UNE phrase EXACTE de la source qui fonde ton verdict — une seule, la plus
+courte qui suffise, jamais un paragraphe entier (elle est de toute façon tronquée au stockage).
+Si tu n'en trouves aucune, écris "aucune" — et dans ce cas le verdict ne peut pas être "valide".`,
   },
 };
 
@@ -482,7 +483,11 @@ async function executerCommande(cmd) {
 // Modèles locaux : Ollama NATIF (param `format` = décodage contraint fiable).
 // OmniRoute fige indéfiniment sur `response_format` (constaté le 25/07) → réservé aux futurs modèles cloud.
 // Budget de génération par type : inutile d'autoriser 1200 tokens à une tâche qui en produit 150.
-const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 400, akasha_relations: 900, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500 };
+// review_local 400 → 800 le 01/08 : conséquence directe de l'élargissement de la fenêtre du
+// juge (4 500 → 6 000 c le matin même). Avec plus de source à citer, les verdicts dépassaient
+// le plafond et sortaient en JSON tronqué — « Unterminated string at position 2611 ». C'est le
+// détecteur finish_reason posé le matin qui l'a nommé au lieu de laisser un parsing illisible.
+const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 800, akasha_relations: 900, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
 /* ── Rotation de couloirs (L23, 01/08) ──────────────────────────────

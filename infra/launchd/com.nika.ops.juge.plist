@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  com.nika.ops.juge — le Mac en nœud JUGE de la flotte AKASHA (L25, 01/08/2026).
+
+  ⚠ CHEMIN : ~/dev/NIKA, JAMAIS le dépôt iCloud — launchd n'a pas le droit de lire
+  « Mobile Documents » (TCC macOS), le job échouerait en silence. Le clone se met à jour
+  par git pull ; .env.local y est recopié à la main à chaque nouvelle clé.
+
+  KeepAlive + ThrottleInterval 300 : si Ollama n'est pas lancé, le script sort en erreur et
+  launchd retente dans 5 minutes au lieu de boucler à vide. Quand Ollama démarre, le juge
+  reprend tout seul — et le VPS le voit au battement suivant (ops_workers).
+
+  Charger :   launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.nika.ops.juge.plist
+  Décharger : launchctl bootout gui/$(id -u)/com.nika.ops.juge
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.nika.ops.juge</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-c</string>
+    <string>exec "$HOME/dev/NIKA/scripts/juge-mac.sh"</string>
+  </array>
+
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>300</integer>
+
+  <!-- Priorité de fond : le juge ne doit jamais gêner le travail de Dan sur sa machine. -->
+  <key>Nice</key>
+  <integer>10</integer>
+  <key>ProcessType</key>
+  <string>Background</string>
+  <key>LowPriorityIO</key>
+  <true/>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/nika-juge.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/nika-juge.log</string>
+</dict>
+</plist>
