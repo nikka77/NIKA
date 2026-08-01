@@ -715,6 +715,10 @@ const MODES_JSON = {
   'nvidia/nemotron-3-super-120b-a12b:free': 'json_object',
   'nvidia/nemotron-3-super-120b-a12b': 'json_object',
   'nvidia/nemotron-3-ultra-550b-a55b': 'json_object',
+  // Llama chez DeepInfra ACCEPTE json_schema mais ne l'honore pas toujours : mesuré le 01/08,
+  // 8 arbitrages perdus sur « Verdict : … » en prose au lieu du JSON. Le mode json_object
+  // (schéma injecté dans le prompt, zod en police derrière) ne l'a jamais pris en défaut.
+  'meta-llama/Llama-3.3-70B-Instruct-Turbo': 'json_object',
 };
 // Les Nemotron « pensent » dans leur réponse sans cette directive (sonde NIM 29/07) —
 // /no_think en système rend un JSON propre directement parsable.
