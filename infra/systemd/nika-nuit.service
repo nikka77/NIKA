@@ -1,4 +1,5 @@
 [Unit]
+OnFailure=nika-echec@%n.service
 Description=NIKA OPS — routine de nuit (remplisseurs + worker + bilan)
 
 [Service]

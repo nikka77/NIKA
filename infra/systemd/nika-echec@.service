@@ -1,0 +1,13 @@
+# nika-echec@.service — alarme d'ÉCHEC d'unité : appelée via OnFailure=nika-echec@%n.service.
+# Née le 01/08 : nuit.sh a échoué 2 nuits de suite en 203/EXEC (shebang zsh, zsh absent
+# d'Ubuntu) sans qu'AUCUNE alerte ne parte — le bilan de nuit est envoyé par le script
+# lui-même, donc un script qui ne démarre pas est une panne parfaitement silencieuse.
+# Cette unité ferme le trou : tout échec d'unité NIKA part sur WhatsApp (ou est parqué 24 h).
+[Unit]
+Description=NIKA OPS — alerte WhatsApp sur échec de l'unité %i
+
+[Service]
+Type=oneshot
+User=nika
+WorkingDirectory=/home/nika/NIKA
+ExecStart=/usr/bin/node --env-file=.env.local scripts/ops-alerte.mjs "🛑 NIKA OPS : l'unité %i a ÉCHOUÉ sur le VPS — journalctl -u %i pour le motif. Rien ne tournera tant que ce n'est pas réparé."

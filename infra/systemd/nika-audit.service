@@ -1,4 +1,5 @@
 [Unit]
+OnFailure=nika-echec@%n.service
 Description=NIKA OPS — audit hebdomadaire à l'aveugle (claude headless)
 
 [Service]
