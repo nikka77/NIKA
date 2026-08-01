@@ -7,7 +7,7 @@
 # constaté le 27/07 AVANT la première exécution, par contrôle du statut launchctl).
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 # Priorité de fond : taskpolicy (macOS) ou nice (Linux) — mêmes scripts sur les deux mondes.
-PRIO=$(command -v taskpolicy >/dev/null && echo "taskpolicy -c background" || echo "nice -n 10")
+if command -v taskpolicy >/dev/null; then PRIO=(taskpolicy -c background); else PRIO=(nice -n 10); fi   # TABLEAU : en zsh, $chaine non citée ne se découpe pas — « nice -n 10 » devenait un nom de commande (01/08)
 cd "$(dirname "$0")/.."
 # Clone d'automatisation (~/dev/NIKA) : se synchronise depuis GitHub avant chaque nuit —
 # le dépôt iCloud reste la copie de travail de Dan, launchd ne peut pas y lire (TCC macOS).
@@ -55,13 +55,13 @@ node --env-file=.env.local scripts/ops-rejoue-relectures.mjs || true
 # sous mutex (un seul Python à la fois). Ajustable sans commit : NIKA_CONC=4 dans .env.local
 # (lu ci-dessous — .env.local n'est chargé que par node, pas par le shell).
 CONC=${NIKA_CONC:-$(grep '^NIKA_CONC=' .env.local 2>/dev/null | cut -d= -f2)}
-$PRIO node --env-file=.env.local scripts/agent-worker.mjs \
+"${PRIO[@]}" node --env-file=.env.local scripts/agent-worker.mjs \
   --cloud="$MODELE" --juge="$JUGE" --conc="${CONC:-8}"
 
 # 3) Ancrage HHEM (CPU uniquement) — --write PERSISTE les scores (pastille /ops), sinon ils
 # partaient dans le log et personne ne les voyait. Pas de 2>/dev/null : c'est lui qui a caché
 # pendant une nuit que le venv manquait sur le VPS (leçon du 31/07).
-$PRIO node --env-file=.env.local scripts/ops-score-ancrage.mjs --write || true
+"${PRIO[@]}" node --env-file=.env.local scripts/ops-score-ancrage.mjs --write || true
 
 # 3bis) Rattrapage des escalades Claude restées en attente (session expirée, échec…).
 node --env-file=.env.local scripts/ops-escalades.mjs || true

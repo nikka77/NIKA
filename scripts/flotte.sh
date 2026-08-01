@@ -6,7 +6,7 @@
 # taskpolicy -c background : macOS déclasse CPU/IO — l'interface de Dan reste fluide.
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 # Priorité de fond : taskpolicy (macOS) ou nice (Linux) — mêmes scripts sur les deux mondes.
-PRIO=$(command -v taskpolicy >/dev/null && echo "taskpolicy -c background" || echo "nice -n 10")
+if command -v taskpolicy >/dev/null; then PRIO=(taskpolicy -c background); else PRIO=(nice -n 10); fi   # TABLEAU : en zsh, $chaine non citée ne se découpe pas — « nice -n 10 » devenait un nom de commande (01/08)
 cd "$(dirname "$0")/.."
 
 MODELE=${CLOUD_MODEL:-groq/openai/gpt-oss-120b}
@@ -20,7 +20,7 @@ grep -q '^GROQ_API_KEY=' .env.local 2>/dev/null && JUGE=${JUDGE_MODEL:-groq/llam
 
 echo "⚓ flotte NIKA OPS — production : ${MODELE} · jugement : ${JUGE} (Ctrl-C pour tout arrêter)"
 
-$PRIO node --env-file=.env.local scripts/agent-worker.mjs --loop \
+"${PRIO[@]}" node --env-file=.env.local scripts/agent-worker.mjs --loop \
   --cloud="$MODELE" --juge="$JUGE" --conc=3 &
 PROD=$!
 
