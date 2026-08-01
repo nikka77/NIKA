@@ -89,8 +89,85 @@ export async function GET() {
     return { ...a, etat, enFile: file, action, dernier: dernier?.created_at };
   });
 
+  // ── LA FLOTTE (L23-L25) — la console était restée centrée sur le Mac alors que l'usine vit
+  // maintenant sur plusieurs nœuds : VPS 24/7, GPU local, salves de campagne. Un battement de
+  // moins de 3 min = nœud vivant ; « ollama » dans le détail = il a un GPU.
+  const { data: workers } = await supabase
+    .from('ops_workers').select('id, hote, role, detail, derniere_activite')
+    .order('derniere_activite', { ascending: false });
+  const flotte = (workers ?? []).map((w) => ({
+    id: w.id as string,
+    role: w.role as string,
+    detail: (w.detail ?? '') as string,
+    gpu: String(w.detail ?? '').includes('ollama'),
+    ageSec: Math.round((Date.now() - new Date(w.derniere_activite as string).getTime()) / 1000),
+  })).filter((w) => w.ageSec < 86_400);
+
+  // ── LES COULOIRS — quel modèle a encore du budget, lequel a fermé son guichet du jour.
+  // C'est LE tableau de bord qui manquait : en une journée on a vu Groq plafonner à 2 000
+  // jetons/jour et llama-70b mourir à midi, sans que rien ne le montre à l'écran.
+  const PLAFONDS: Record<string, { parJour?: number; parMinute: number }> = {
+    'groq/openai/gpt-oss-120b': { parJour: 800, parMinute: 24 },
+    'groq/llama-3.3-70b-versatile': { parJour: 800, parMinute: 24 },
+    'gemini/gemma-4-31b-it': { parJour: 11_500, parMinute: 24 },
+    'gemini/gemini-flash-lite-latest': { parJour: 200, parMinute: 12 },
+    'nvidia/nvidia/nemotron-3-super-120b-a12b': { parJour: 150, parMinute: 32 },
+    'mistral/mistral-large-latest': { parMinute: 12 },
+    'deepinfra/Qwen/Qwen3-32B': { parMinute: 60 },
+    'deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo': { parMinute: 60 },
+  };
+  const { data: quotas } = await supabase.from('ops_quotas').select('fournisseur, requetes, fenetre_debut');
+  const parCle = new Map((quotas ?? []).map((q) => [q.fournisseur as string, q]));
+  const couloirs = Object.entries(PLAFONDS).map(([cle, lim]) => {
+    const jour = parCle.get(`${cle}:jour`);
+    const perimee = !jour || Date.now() - new Date(jour.fenetre_debut as string).getTime() > 86_400_000;
+    const consomme = perimee ? 0 : Number(jour?.requetes ?? 0);
+    return {
+      cle, court: cle.split('/').pop() as string,
+      payant: cle.startsWith('deepinfra/'),
+      parJour: lim.parJour ?? null,
+      consomme,
+      restant: lim.parJour ? Math.max(0, lim.parJour - consomme) : null,
+      ferme: lim.parJour ? consomme >= lim.parJour : false,
+    };
+  });
+
+  // ── LE JURY RÉEL — qui a rendu les verdicts de la dernière heure. Un jury sur le papier ne
+  // vaut rien : ce qui compte est le modèle qui a effectivement tranché.
+  const depuisH = new Date(Date.now() - 3_600_000).toISOString();
+  const { data: verdicts } = await supabase.from('agent_results')
+    .select('auto_model, auto2_model, auto_at, auto2_at').or(`auto_at.gte.${depuisH},auto2_at.gte.${depuisH}`).limit(400);
+  const compte = (champ: 'auto_model' | 'auto2_model') => {
+    const m: Record<string, number> = {};
+    for (const v of verdicts ?? []) {
+      const k = v[champ] as string | null;
+      if (k) m[k.split('/').pop() as string] = (m[k.split('/').pop() as string] ?? 0) + 1;
+    }
+    return Object.entries(m).sort((a, b) => b[1] - a[1]).map(([nom, n]) => ({ nom, n }));
+  };
+  const jury = { juge1: compte('auto_model'), juge2: compte('auto2_model') };
+
+  // ── CADENCE — productions abouties dans l'heure, le seul chiffre qui dit si ça avance.
+  const { count: cadence } = await supabase.from('agent_results')
+    .select('*', { count: 'exact', head: true })
+    .gte('created_at', depuisH).neq('task_type', 'review_local');
+
+  // ── COUVERTURE PAR UNIVERS — l'objectif final, univers par univers. Deux comptes légers
+  // chacun (pas de scan) : total, et combien portent déjà une description française.
+  const UNIVERS = ['Naruto', 'One Piece', 'Dragon Ball', 'Bleach', "JoJo's Bizarre Adventure",
+    'Hunter x Hunter', 'Death Note', 'Initial D'];
+  const univers = await Promise.all(UNIVERS.map(async (u) => {
+    const [{ count: total }, { count: avecFr }] = await Promise.all([
+      supabase.from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u),
+      supabase.from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u)
+        .not('attributes->>descFr', 'is', null),
+    ]);
+    return { nom: u, total: total ?? 0, avecFr: avecFr ?? 0 };
+  }));
+
   return NextResponse.json({
     queue: metrics?.[0] ?? { queue_length: 0, total_messages: 0 },
+    flotte, couloirs, jury, cadence: cadence ?? 0, univers,
     results: recents,
     health: { ollama, omniroute, modeleActif, swap },
     agents,

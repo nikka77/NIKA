@@ -28,8 +28,16 @@ type Result = {
   auto2_model: string | null;
   auto_applique: boolean;        // appliquée SANS Dan (double valide) — journalisée, annulable
 };
+type Noeud = { id: string; role: string; detail: string; gpu: boolean; ageSec: number };
+type Couloir = { cle: string; court: string; payant: boolean; parJour: number | null; consomme: number; restant: number | null; ferme: boolean };
+type Univers = { nom: string; total: number; avecFr: number };
 type State = {
   queue: { queue_length: number; total_messages: number };
+  flotte: Noeud[];
+  couloirs: Couloir[];
+  jury: { juge1: { nom: string; n: number }[]; juge2: { nom: string; n: number }[] };
+  cadence: number;
+  univers: Univers[];
   results: Result[];
   health: { ollama: boolean; omniroute: boolean; modeleActif: string | null; swap: { total: number; used: number } | null };
   agents: AgentEtat[];
@@ -158,6 +166,11 @@ export default function OpsBoard() {
           {injoignable && <Pill label="API injoignable — machine chargée ?" color={KO} />}
           <Pill label={`file : ${state?.queue.queue_length ?? '…'}`} color={CY} />
           <Pill label={`traitées : ${state?.queue.total_messages ?? '…'}`} color="var(--td3)" />
+          {/* Cadence : le seul chiffre qui dit si l'usine AVANCE. Une file qui ne bouge pas
+              et une usine à l'arrêt se ressemblent trop sans lui (vécu le 01/08 : 1 tâche
+              en 20 min, service « active », personne ne s'en apercevait). */}
+          <Pill label={`cadence : ${state?.cadence ?? '…'}/h`}
+            color={(state?.cadence ?? 0) > 40 ? OK : (state?.cadence ?? 0) > 5 ? WARN : KO} />
           <Pill label={`Ollama ${state?.health.ollama ? 'actif' : 'éteint'}`} color={state?.health.ollama ? OK : KO} />
           <Pill label={`OmniRoute ${state?.health.omniroute ? 'actif' : 'éteint'}`} color={state?.health.omniroute ? OK : KO} />
           {state?.health.swap && (
@@ -189,6 +202,78 @@ export default function OpsBoard() {
             </button>
           )}
         </div>
+
+        {/* ── LA FLOTTE, LES COULOIRS, LE JURY (L23-L25) ──────────────────────────
+            La console montrait le Mac et rien d'autre, alors que l'usine tourne sur le VPS
+            24/7 avec des couloirs qui s'ouvrent et se ferment dans la journée. Le 01/08, Groq
+            s'est plafonné à 2 000 jetons/jour et llama-70b est mort à midi sans que rien ne
+            l'affiche : ces trois blocs existent pour que ça ne se reproduise pas. */}
+        <div className="g-3" style={{ marginBottom: 22 }}>
+
+          <Bloc titre="La flotte" note={`${state?.flotte?.filter((n) => n.ageSec < 180).length ?? 0} nœud(s) vivant(s)`}>
+            {(state?.flotte ?? []).slice(0, 6).map((n) => {
+              const vivant = n.ageSec < 180;
+              return (
+                <Ligne key={n.id}
+                  gauche={<>
+                    <span style={{ color: vivant ? OK : 'var(--td3)' }}>{vivant ? '●' : '○'}</span>{' '}
+                    {n.id.split(':')[0].replace('.home', '')}
+                    <span style={{ color: 'var(--td3)' }}> · {n.role}</span>
+                    {n.gpu && <span style={{ color: CY }}> · GPU</span>}
+                  </>}
+                  droite={vivant ? 'à l’instant' : n.ageSec < 3600 ? `${Math.round(n.ageSec / 60)} min` : `${Math.round(n.ageSec / 3600)} h`}
+                />
+              );
+            })}
+            {!state?.flotte?.length && <Vide>aucun nœud n’a battu</Vide>}
+          </Bloc>
+
+          <Bloc titre="Les couloirs" note="guichet du jour">
+            {(state?.couloirs ?? []).map((c) => (
+              <Ligne key={c.cle}
+                gauche={<>
+                  <span style={{ color: c.ferme ? KO : c.payant ? CY : OK }}>{c.ferme ? '✕' : c.payant ? '$' : '●'}</span>{' '}
+                  {c.court}
+                </>}
+                droite={c.parJour === null ? (c.payant ? 'au jeton' : 'sans plafond')
+                  : c.ferme ? 'fermé' : `${c.restant}/${c.parJour}`}
+                sourd={c.ferme}
+              />
+            ))}
+          </Bloc>
+
+          <Bloc titre="Le jury" note="verdicts de la dernière heure">
+            <Ligne gauche={<span style={{ color: 'var(--td3)' }}>juge n°1</span>} droite="" />
+            {(state?.jury?.juge1 ?? []).slice(0, 3).map((j) => (
+              <Ligne key={'a' + j.nom} gauche={<span style={{ paddingLeft: 10 }}>{j.nom}</span>} droite={String(j.n)} />
+            ))}
+            <Ligne gauche={<span style={{ color: 'var(--td3)' }}>juge n°2</span>} droite="" />
+            {(state?.jury?.juge2 ?? []).slice(0, 3).map((j) => (
+              <Ligne key={'b' + j.nom} gauche={<span style={{ paddingLeft: 10 }}>{j.nom}</span>} droite={String(j.n)} />
+            ))}
+            {!state?.jury?.juge1?.length && !state?.jury?.juge2?.length && <Vide>aucun verdict depuis une heure</Vide>}
+          </Bloc>
+        </div>
+
+        {/* ── COUVERTURE PAR UNIVERS — l'objectif final, et le seul chiffre qui compte
+            vraiment : combien de fiches sont VISIBLES sur le site, pas combien ont été
+            produites. Une fiche produite mais non jugée n'existe pas pour un visiteur. */}
+        <Bloc titre="Couverture des univers" note="fiches publiées avec une description française">
+          {(state?.univers ?? []).sort((a, b) => b.total - a.total).map((u) => {
+            const pct = u.total ? Math.round((u.avecFr / u.total) * 100) : 0;
+            return (
+              <div key={u.nom} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '5px 0' }}>
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td)', width: 150, flexShrink: 0 }}>{u.nom}</span>
+                <div style={{ flex: 1, height: 7, borderRadius: 4, background: 'rgba(255,255,255,0.06)', overflow: 'hidden', minWidth: 60 }}>
+                  <div style={{ width: `${pct}%`, height: '100%', background: pct >= 80 ? OK : pct >= 50 ? CY : WARN }} />
+                </div>
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', width: 96, textAlign: 'right', flexShrink: 0 }}>
+                  {u.avecFr}/{u.total} · {pct} %
+                </span>
+              </div>
+            );
+          })}
+        </Bloc>
 
         <ConfirmDialog
           open={confirmBulk === 'apply'}
@@ -263,6 +348,31 @@ export default function OpsBoard() {
       </div>
     </main>
   );
+}
+
+/* Briques des blocs de suivi — même grammaire visuelle que le reste de la console :
+   hairline, typo Outfit, aucune couleur qui ne dise quelque chose. */
+function Bloc({ titre, note, children }: { titre: string; note?: string; children: React.ReactNode }) {
+  return (
+    <section style={{ border: '1px solid var(--bd2)', borderRadius: 12, padding: '13px 15px', background: 'rgba(255,255,255,0.02)', minWidth: 0, marginBottom: 14 }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 9 }}>
+        <span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--td)' }}>{titre}</span>
+        {note && <span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)' }}>{note}</span>}
+      </div>
+      {children}
+    </section>
+  );
+}
+function Ligne({ gauche, droite, sourd }: { gauche: React.ReactNode; droite: string; sourd?: boolean }) {
+  return (
+    <div style={{ display: 'flex', justifyContent: 'space-between', gap: 10, padding: '3px 0', fontFamily: 'var(--fo)', fontSize: 12, color: sourd ? 'var(--td3)' : 'var(--td)' }}>
+      <span style={{ minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{gauche}</span>
+      <span style={{ color: 'var(--td3)', flexShrink: 0 }}>{droite}</span>
+    </div>
+  );
+}
+function Vide({ children }: { children: React.ReactNode }) {
+  return <div style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', padding: '3px 0' }}>{children}</div>;
 }
 
 function Pill({ label, color }: { label: string; color: string }) {
