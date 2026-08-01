@@ -43,13 +43,19 @@ node --env-file=.env.local scripts/ops-fill-attrs.mjs --limit=40
 node --env-file=.env.local scripts/ops-fill-relations.mjs --limit=20
 node --env-file=.env.local scripts/ops-fill-fandom.mjs --limit=30 2>/dev/null || true
 
+# 0bis) Relectures ORPHELINES (juge en panne → production sans verdict) : remises en file
+# AVANT le drain pour être jugées cette nuit même — sinon elles s'accumulent en silence.
+node --env-file=.env.local scripts/ops-rejoue-relectures.mjs || true
+
 # 1+2) Production (cloud) ET jugement (cloud, autre famille) : UN SEUL worker — le tri par
 # modèle fait le travail des anciens « couloirs », sans le ping-pong de renvois qu'ils causaient.
 $PRIO node --env-file=.env.local scripts/agent-worker.mjs \
   --cloud="$MODELE" --juge="$JUGE" --conc=3
 
-# 3) Ancrage HHEM (CPU uniquement, le GPU dort déjà).
-$PRIO node --env-file=.env.local scripts/ops-score-ancrage.mjs 2>/dev/null || true
+# 3) Ancrage HHEM (CPU uniquement) — --write PERSISTE les scores (pastille /ops), sinon ils
+# partaient dans le log et personne ne les voyait. Pas de 2>/dev/null : c'est lui qui a caché
+# pendant une nuit que le venv manquait sur le VPS (leçon du 31/07).
+$PRIO node --env-file=.env.local scripts/ops-score-ancrage.mjs --write || true
 
 # 3bis) Rattrapage des escalades Claude restées en attente (session expirée, échec…).
 node --env-file=.env.local scripts/ops-escalades.mjs || true

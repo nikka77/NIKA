@@ -1,0 +1,7 @@
+# Venv .ops-venv — HHEM-2.1-Open (Vectara). Versions ÉPINGLÉES : transformers 5.x casse le
+# code custom du modèle (all_tied_weights_keys absent — constaté sur le VPS le 31/07/2026).
+# Install : python3 -m venv .ops-venv && .ops-venv/bin/pip install -r scripts/hhem/requirements.txt \
+#           --extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.13.0
+transformers==4.57.6
+sentencepiece
