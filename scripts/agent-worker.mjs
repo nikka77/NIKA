@@ -680,8 +680,16 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
           : { type: 'json_object' },
       }),
     });
-    if (res.status === 429 && essai < 4) {
+    if (res.status === 429) {
       const corps = await res.text();
+      // Un 429 « par JOUR » (TPD/RPD) ne se rattrape pas en attendant : le couloir est mort
+      // jusqu'au lendemain. Attendre 27 min pour re-tenter et re-échouer endormait l'usine —
+      // constaté le 01/08, llama-70b épuisé faisait 1 tâche en 20 min. On le traite comme
+      // notre propre guichet quotidien : le couloir est marqué, la rotation prend le relais.
+      if (/per day|\bTPD\b|\bRPD\b|daily/i.test(corps)) {
+        throw new PlafondJourError(fournisseur ? `${fournisseur}/${modele}` : modele, 'plafond QUOTIDIEN du fournisseur');
+      }
+      if (essai >= 4) throw new Error(`HTTP 429 (${new URL(url).host}) après 4 essais`);
       const attente = Number(corps.match(/try again in (\d+(?:\.\d+)?)s/i)?.[1] ?? res.headers.get('retry-after') ?? 20);
       // On journalise le MOTIF du 429 : sans lui, impossible de savoir si c'est le débit par
       // minute, le quota du jour ou les jetons — donc impossible de régler le bon plafond.
@@ -899,7 +907,11 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
     { juge_modele: (await ollamaDisponible()) ? 'ollama/gemma4:12b' : 'gemini/gemma-4-31b-it', slot: 'auto' },
     // Juge n°2 : llama-70b (Meta) en priorité — gemma local + Gemini étaient de la MÊME
     // famille Google (angles morts partagés, corrigé par l'étude modèles du 28/07).
-    ...(process.env.GROQ_API_KEY
+    // Le juge n°2 est choisi PARMI les couloirs encore ouverts de la liste --juge : les
+    // plafonds quotidiens de Groq sont si serrés (llama-70b épuisé en une demi-journée le
+    // 01/08) qu'enrôler un modèle mort condamnait la relecture pour la journée.
+    ...(premierDispo(JUGES_CLI) ? [{ juge_modele: premierDispo(JUGES_CLI), slot: 'auto2' }]
+      : process.env.GROQ_API_KEY
       ? [{ juge_modele: 'groq/llama-3.3-70b-versatile', slot: 'auto2' }]
       : process.env.GEMINI_API_KEY
         ? [{ juge_modele: 'gemini/gemini-flash-lite-latest', slot: 'auto2' }]
