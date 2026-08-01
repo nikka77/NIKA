@@ -39,6 +39,14 @@ const JUGE = process.argv.find((a) => a.startsWith('--juge='))?.split('=')[1] ??
 // --local : nœud GPU pur — il ne prend que les tâches confiées à un modèle local, et
 // laisse le nuage au VPS. Sans cela un Mac juge dispute au VPS un budget partagé.
 const LOCAL = process.argv.includes('--local');
+// --force-jury=modeleA,modeleB : mode CAMPAGNE. Les relectures déjà en file portent le jury
+// décidé à leur enrôlement ; quand on change de couloir en cours de route, elles restent
+// collées à l'ancien. Ce drapeau les réattribue AU VOL, par emplacement — A pour le juge n°1,
+// B pour le juge n°2. La correspondance par SLOT est ce qui rend la chose sûre : les deux
+// juges d'une même fiche ne peuvent pas se retrouver sur le même modèle, donc pas de faux
+// consensus. L'arbitre n'est jamais réattribué : il départage, il ne se substitue pas.
+const FORCE_JURY = (process.argv.find((a) => a.startsWith('--force-jury='))?.split('=')[1] ?? '')
+  .split(',').map((x) => x.trim()).filter(Boolean);
 const TYPES = process.argv.find((a) => a.startsWith('--types='))?.split('=')[1]?.split(',').filter(Boolean) ?? null;
 // --chat : lit la file DÉDIÉE du secrétaire (ops_chat) au lieu de la file des agents. Chacun chez
 // soi : plus de ping-pong entre le démon du chat et les lots AKASHA (défaut des couloirs --types).
@@ -546,6 +554,11 @@ const premierDispo = (liste) => liste.find(couloirDispo) ?? null;
 
 const modelOf = (type, p) => {
   if (type === 'review_local') {
+    // Mode campagne : on réattribue par emplacement, sauf l'arbitre.
+    if (FORCE_JURY.length && p?.slot !== 'arbitre') {
+      const i = p?.slot === 'auto2' ? 1 : 0;
+      if (FORCE_JURY[i]) return FORCE_JURY[i];
+    }
     // Le juge est porté par la tâche (composition du jury décidée à l'enrôlement). S'il a
     // fermé son guichet, on lui substitue un confrère libre plutôt que de reporter 24 h.
     const porte = p?.juge_modele;
