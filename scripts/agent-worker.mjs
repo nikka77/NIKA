@@ -559,7 +559,10 @@ async function quotaReserver(cle, jetonsEstimes) {
       p_requetes: 1,
       p_jetons: lim.jetonsParJour ? Math.min(jetonsEstimes, lim.jetonsParJour) : 0,
       p_limite_requetes: lim.parJour ?? 1_000_000,
-      p_limite_jetons: lim.jetonsParJour ?? 1,
+      // Pas de plafond de jetons/jour ⇒ limite « infinie », JAMAIS 1 : la colonne garde les
+      // jetons accumulés d'un réglage précédent, et une limite à 1 refermerait le guichet
+      // pour 24 h sur un compteur périmé (piège vécu le 01/08 : 19 218 jetons > 1).
+      p_limite_jetons: lim.jetonsParJour ?? 1_000_000_000,
       p_fenetre_secondes: 86_400,
     });
     if (!eJour && okJour === false) {
