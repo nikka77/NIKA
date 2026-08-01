@@ -507,9 +507,13 @@ const schemaOf = (t, p) => (typeof t.schema === 'function' ? t.schema(p) : t.sch
 // Consommation mesurée par production : gpt-oss-120b 2 887 · nemotron-super 2 879 ·
 // llama-70b 2 538 · gemma-4-31b 2 193 jetons.
 const LIMITES_FOURNISSEURS = {
-  // ── Groq — https://console.groq.com/docs/rate-limits (compteurs PAR MODÈLE, indépendants)
-  'groq/openai/gpt-oss-120b':        { requetes: 24, jetons: 6_400, fenetre: 60, parJour: 800, jetonsParJour: 160_000 },
-  'groq/llama-3.3-70b-versatile':    { requetes: 24, jetons: 9_600, fenetre: 60, parJour: 800, jetonsParJour: 80_000 },
+  // ── Groq — compteurs PAR MODÈLE, indépendants. Valeurs LUES DANS LES EN-TÊTES du compte le
+  // 01/08 (x-ratelimit-*), pas seulement dans la doc : 8 000 jetons/MINUTE et 1 000 requêtes/JOUR,
+  // et AUCUN compteur de jetons par jour n'est exposé. La doc mentionne un TPD de 200 000 : s'il
+  // existe vraiment, on le rencontrera en 429 (géré par le backoff) plutôt que de se brider à
+  // ~55 productions/jour pour une limite peut-être fictive. jetonsRestants() journalise la vérité.
+  'groq/openai/gpt-oss-120b':        { requetes: 24, jetons: 6_400, fenetre: 60, parJour: 800 },
+  'groq/llama-3.3-70b-versatile':    { requetes: 24, jetons: 9_600, fenetre: 60, parJour: 800 },
   // ── Google — plafonds non publiés depuis déc. 2025 : 80 % des dernières valeurs connues.
   // gemma-4 est le meilleur débit du parc (2 193 jetons/production → 5/min, des milliers/jour).
   'gemini/gemini-flash-lite-latest': { requetes: 12, jetons: 200_000, fenetre: 60, parJour: 200 },
@@ -594,6 +598,23 @@ const MODES_JSON = {
 // Les Nemotron « pensent » dans leur réponse sans cette directive (sonde NIM 29/07) —
 // /no_think en système rend un JSON propre directement parsable.
 const SANS_PENSEE = new Set(['nvidia/nemotron-3-super-120b-a12b', 'nvidia/nemotron-3-ultra-550b-a55b']);
+
+// Les fournisseurs disent la vérité sur leurs plafonds dans les en-têtes x-ratelimit-* — bien
+// mieux que la doc (Google et Mistral ne publient plus rien, et la table Groq annonce un TPD
+// que le compte n'expose pas). On la journalise une fois par heure et par modèle : de quoi
+// recaler LIMITES_FOURNISSEURS sur du mesuré au lieu du supposé, sans polluer le log.
+const dernierReleve = new Map();
+function journaliserQuotaReel(fournisseur, modele, headers) {
+  const cle = `${fournisseur}/${modele}`;
+  if (Date.now() - (dernierReleve.get(cle) ?? 0) < 3_600_000) return;
+  const restantReq = headers.get('x-ratelimit-remaining-requests');
+  const restantJet = headers.get('x-ratelimit-remaining-tokens');
+  if (restantReq == null && restantJet == null) return;
+  dernierReleve.set(cle, Date.now());
+  console.log(`  📊 ${cle} — reste ${restantReq ?? '?'} req (sur ${headers.get('x-ratelimit-limit-requests') ?? '?'})`
+    + ` · ${restantJet ?? '?'} jetons (sur ${headers.get('x-ratelimit-limit-tokens') ?? '?'})`
+    + ` · réarmement req ${headers.get('x-ratelimit-reset-requests') ?? '?'}`);
+}
 async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
   const fournisseur = url.includes('api.groq.com') ? 'groq' : url.includes('cerebras') ? 'cerebras'
     : url.includes('nvidia.com') ? 'nvidia' : url.includes('mistral.ai') ? 'mistral'
@@ -627,6 +648,7 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
       continue;
     }
     if (!res.ok) throw new Error(`HTTP ${res.status} (${new URL(url).host}): ${(await res.text()).slice(0, 200)}`);
+    journaliserQuotaReel(fournisseur, modele, res.headers);
     const contenu = (await res.json()).choices?.[0]?.message?.content ?? '';
     if (modeJson !== 'json_object') return contenu;
     // Extraction tolérante : certains penseurs (Nemotron) laissent fuir du raisonnement
