@@ -159,6 +159,12 @@ export const RELATION_LABELS: Record<string, string> = {
   allie: 'allié de',
   rival: 'rival de',
   appartient: 'appartient à',
+  // Natures venues de l'usine IA (lib/akasha/relations.ts). Formulées au VERBE : le composant
+  // les affiche telles quelles, « famille de → » d'un côté, « ← famille de » de l'autre.
+  famille: 'famille de',
+  mentor: 'mentor de',
+  eleve: 'élève de',
+  ennemi: 'ennemi de',
 };
 
 export function relationLabel(relation: string): string {

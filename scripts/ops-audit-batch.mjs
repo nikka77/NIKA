@@ -5,6 +5,9 @@
 //   ce qui déclenche aussi l'annulation en base si « faux » sur une fiche déjà appliquée).
 import { createClient } from '@supabase/supabase-js';
 import { fetchFandomProse } from './lib/fandom.mjs';
+// Import direct du .ts : Node ≥ 22.18 retire les types tout seul. Une seule table de correspondance
+// usine→graphe pour la console ET pour ce script — deux copies auraient fini par diverger.
+import { retirerDuGraphe } from '../lib/akasha/relations.ts';
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 8);
@@ -52,11 +55,17 @@ if (process.argv.includes('--list')) {
       content: JSON.stringify({ result_id: id, verdict_dan: v, verdict_ia: row.auto_verdict, task_type: row.task_type, juge: 'claude', motif: m }),
     });
     let annule = false;
+    let arcs = 0;
     if (v === 'faux' && row.review_status === 'approved') {
       const { data: entry } = await supabase.from('akasha_entries').select('attributes').eq('slug', row.target_slug).single();
       if (entry) {
         const patch = { ...(entry.attributes ?? {}) };
-        if (row.task_type === 'akasha_relations') { delete patch.relations; delete patch.relationsSource; }
+        if (row.task_type === 'akasha_relations') {
+          delete patch.relations; delete patch.relationsSource;
+          // Moitié qui compte : sans ça, une fiche jugée FAUSSE garde ses arêtes dans le graphe,
+          // donc reste affichée sur le site alors que la console la dit annulée.
+          arcs = (await retirerDuGraphe(supabase, { resultId: id, slug: row.target_slug, relations: row.result?.relations })).supprimees;
+        }
         else if (row.task_type === 'akasha_attrs') {
           for (const k of Object.keys(row.result ?? {})) if (!k.endsWith('_preuve')) delete patch[k];
         } else { delete patch.descFr; delete patch.descFrSource; }
@@ -65,7 +74,7 @@ if (process.argv.includes('--list')) {
         annule = true;
       }
     }
-    console.log(`#${id} → ${v}${annule ? ' (ANNULÉE en base)' : ''}`);
+    console.log(`#${id} → ${v}${annule ? ` (ANNULÉE en base${arcs ? `, ${arcs} arête(s) retirée(s) du graphe` : ''})` : ''}`);
   }
   const { data: notes } = await supabase.from('ops_notes').select('content').eq('source', 'audit');
   const vs = (notes ?? []).flatMap((n) => { try { return [JSON.parse(n.content)]; } catch { return []; } });

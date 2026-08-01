@@ -5,6 +5,7 @@ import { execSync } from 'node:child_process';
 import { createClient } from '@supabase/supabase-js';
 import { opsAllowed } from '@/lib/ops/guard';
 import { AGENTS, type AgentEtat } from '@/lib/ops/agents';
+import { poserAuGraphe, type IndexUnivers } from '@/lib/akasha/relations';
 
 export const dynamic = 'force-dynamic';
 
@@ -114,8 +115,11 @@ export async function POST(req: Request) {
       .eq('auto_verdict', 'valide')
       .in('status', ['done', 'suspect']);
     let applied = 0;
+    // Un seul index d'univers pour tout le lot : sans lui, 40 approbations One Piece = 40 scans
+    // paginés du registre. Le cache meurt avec la requête (jamais de vue périmée entre deux clics).
+    const cacheIndex = new Map<string, IndexUnivers>();
     for (const r of rows ?? []) {
-      const res = await applyResult(supabase, r.id);
+      const res = await applyResult(supabase, r.id, cacheIndex);
       if (res) applied++;
     }
     return NextResponse.json({ ok: true, applied, total: rows?.length ?? 0 });
@@ -149,7 +153,7 @@ export async function POST(req: Request) {
 
 /** Applique un résultat d'agent sur la fiche AKASHA, puis le marque approuvé. */
 type Admin = NonNullable<ReturnType<typeof admin>>;
-async function applyResult(supabase: Admin, id: number): Promise<boolean> {
+async function applyResult(supabase: Admin, id: number, cacheIndex?: Map<string, IndexUnivers>): Promise<boolean> {
   const { data: row } = await supabase.from('agent_results').select('*').eq('id', id).single();
   if (!row) return false;
 
@@ -161,6 +165,7 @@ async function applyResult(supabase: Admin, id: number): Promise<boolean> {
   if (!entry) return false;
 
   const patch: Record<string, unknown> = { ...(entry.attributes ?? {}) };
+  let versGraphe: Array<Record<string, string>> | null = null;
   const ROLES_DESCFR = ['fandom_descfr', 'flavor_akasha', 'fiche_technique', 'fiche_artefact', 'fiche_lieu', 'fiche_lexique'];
   if (ROLES_DESCFR.includes(row.task_type)) {
     patch.descFr = row.result?.descFr;
@@ -176,10 +181,25 @@ async function applyResult(supabase: Admin, id: number): Promise<boolean> {
     if (!rel.length) return false;
     patch.relations = rel.map(({ avec, nature, periode, resume }) => ({ avec, nature, periode, resume }));
     patch.relationsSource = row.model;
+    versGraphe = rel;
   }
 
   const { error } = await supabase.from('akasha_entries').update({ attributes: patch }).eq('slug', row.target_slug);
   if (error) return false;
+
+  // Sans cette seconde écriture, l'usine tournait pour rien : le site ne connaît QUE la table
+  // akasha_relations (lib/akasha/queries.ts), et rien ne lit attributes.relations — 138 productions
+  // pour 0 ligne de graphe au 01/08. attributes.relations reste écrit pour la prose (période,
+  // résumé), que le graphe ne sait pas porter ; les arêtes, elles, vont enfin où on les regarde.
+  if (versGraphe) {
+    try {
+      await poserAuGraphe(supabase, { resultId: id, slug: row.target_slug, relations: versGraphe }, cacheIndex);
+    } catch (e) {
+      // Le graphe est un BONUS de l'application : si l'upsert casse, la fiche reste écrite et
+      // approuvée. Le backfill (scripts/backfill-relations-usine.mjs) rattrapera le retard.
+      console.error('[ops] graphe non posé pour', row.target_slug, e);
+    }
+  }
 
   await supabase
     .from('agent_results')

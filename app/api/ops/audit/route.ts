@@ -10,6 +10,7 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { opsAllowed } from '@/lib/ops/guard';
+import { retirerDuGraphe } from '@/lib/akasha/relations';
 
 export const dynamic = 'force-dynamic';
 
@@ -94,12 +95,21 @@ export async function POST(req: Request) {
   // Le retour arrière est exact : les remplisseurs ne ciblent QUE des champs vides,
   // donc annuler = remettre à vide (aucune donnée humaine ne peut être écrasée).
   let annule = false;
+  let arcsRetires = 0;
   if (verdict_dan === 'faux' && row.review_status === 'approved') {
     const { data: entry } = await supabase
       .from('akasha_entries').select('attributes').eq('slug', row.target_slug).single();
     if (entry) {
       const patch: Record<string, unknown> = { ...(entry.attributes ?? {}) };
-      if (row.task_type === 'akasha_relations') { delete patch.relations; delete patch.relationsSource; }
+      if (row.task_type === 'akasha_relations') {
+        delete patch.relations; delete patch.relationsSource;
+        // Le nettoyage du GRAPHE est la moitié qui compte : effacer attributes.relations sans
+        // retirer les arêtes laisserait la fiche jugée FAUSSE peupler les rails du site pour
+        // toujours, invisible en console. Une annulation à moitié faite est pire que rien.
+        arcsRetires = (await retirerDuGraphe(supabase, {
+          resultId: result_id, slug: row.target_slug, relations: row.result?.relations,
+        })).supprimees;
+      }
       else if (row.task_type === 'akasha_attrs') {
         for (const k of Object.keys(row.result ?? {})) if (!k.endsWith('_preuve')) delete patch[k];
       } else { delete patch.descFr; delete patch.descFrSource; }
@@ -113,6 +123,7 @@ export async function POST(req: Request) {
   return NextResponse.json({
     ok: true,
     annule,
+    arcsRetires,
     juges: v.length,
     accord: Math.round((v.filter((x) => x.verdict_dan === 'exact').length / v.length) * 100),
     kappa: kappa(v),
