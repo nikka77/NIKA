@@ -3,34 +3,12 @@
 // Colonnes = cycle de vie d'une tâche : en file → à relire → approuvé / rejeté.
 // Chaque carte montre la SOURCE et la PRODUCTION côte à côte : la review se fait ici, pas dans un terminal.
 import { useCallback, useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import { fe, CY, OK, WARN, KO, type Result } from './pieces';
 import ConfirmDialog from '@/components/ConfirmDialog';
 import AgentsPanel, { ClaudeConsole, type AgentEtat } from './AgentsPanel';
 
-type Relation = { avec: string; nature: string; periode: string; resume: string; preuve: string };
 
-type Result = {
-  id: number;
-  task_type: string;
-  target_slug: string;
-  model: string | null;
-  payload: { name?: string; universe?: string; summary?: string; fandomTitle?: string; fandomUrl?: string } | null;
-  result: { descFr?: string; relations?: Relation[]; [k: string]: unknown } | null;
-  status: string;
-  review_status: string;
-  error: string | null;
-  created_at: string;
-  auto_verdict: string | null;   // verdict du relecteur local
-  auto_motif: string | null;
-  auto_model: string | null;
-  auto_score: number | null;   // ancrage factuel HHEM (0 = non étayé, 1 = étayé)
-  auto2_verdict: string | null;  // 2e juge (cloud, autre famille) — double verdict = autonomie
-  auto2_motif: string | null;
-  auto2_model: string | null;
-  arbitre_verdict: string | null;  // 3e voix (famille NVIDIA) — convoquée sur désaccord des juges
-  arbitre_motif: string | null;
-  arbitre_model: string | null;
-  auto_applique: boolean;        // appliquée SANS Dan (double valide) — journalisée, annulable
-};
 type Noeud = { id: string; role: string; detail: string; gpu: boolean; vuA?: string; ageSec: number };
 type Couloir = { cle: string; court: string; payant: boolean; parJour: number | null; consomme: number; restant: number | null; ferme: boolean; motifFermeture?: string | null };
 type Univers = { nom: string; total: number; avecFr: number };
@@ -43,26 +21,14 @@ type State = {
   univers: Univers[] | null;   // null en réponse légère — on garde alors la dernière valeur
   pendingTotal: number;
   validesTotal: number;
+  bacs: { relire: number; douteuses: number; ecartees: number; approuvees: number; rejetees: number; echecs: number };
   results: Result[];
   health: { ollama: boolean; omniroute: boolean; modeleActif: string | null; swap: { total: number; used: number } | null };
   agents: AgentEtat[];
 };
 
-const CY = '#12B8CC';
-const OK = '#22DD88';
-const WARN = '#E0A020';
-const KO = '#E0554A';
 
-const VERDICT: Record<string, { l: string; c: string }> = {
-  valide: { l: 'valide', c: OK },
-  a_corriger: { l: 'à corriger', c: WARN },
-  rejeter: { l: 'à rejeter', c: KO },
-};
 
-const fe = (s: number): React.CSSProperties => ({
-  fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900,
-  fontSize: s, letterSpacing: '0.02em', textTransform: 'uppercase',
-});
 
 export default function OpsBoard() {
   const [state, setState] = useState<State | null>(null);
@@ -158,7 +124,8 @@ export default function OpsBoard() {
   // écrit 107 (audit du 01/08). Le serveur applique désormais le critère de l'usine (double
   // verdict, done, jamais contre l'arbitre) et c'est LUI qui compte.
   const nbValides = state?.validesTotal ?? 0;
-  const nbEchecs = refused.filter((r) => r.status === 'failed').length;
+  // Compté par le SERVEUR : la console ne charge plus les fiches, elles vivent sur leurs pages.
+  const nbEchecs = state?.bacs?.echecs ?? 0;
 
   const purgerEchecs = async () => {
     setConfirmBulk(null);
@@ -323,46 +290,35 @@ export default function OpsBoard() {
         {/* Console Claude : prompter le développement du site depuis la page */}
 
 
-        {/* Kanban des productions */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(310px,1fr))', gap: 14, alignItems: 'start' }}>
-          <Column title="À relire" count={state?.pendingTotal ?? pending.length} accent={WARN}
-            note={pending.length < (state?.pendingTotal ?? 0) ? `${pending.length} affichées` : undefined}>
-            {[...pending].sort((a, b) => prioRelecture(a) - prioRelecture(b)).map((r) => (
-              <Card key={r.id} r={r} busy={busy === r.id} onReview={review} />
-            ))}
-            {!pending.length && <Empty text="rien à relire" />}
-          </Column>
-
-          <Column title="Preuve douteuse" count={suspect.length} accent={KO}>
-            {suspect.map((r) => (
-              <Card key={r.id} r={r} busy={busy === r.id} onReview={review} />
-            ))}
-            {!suspect.length && <Empty text="aucune incohérence détectée" />}
-          </Column>
-
-          <Column title="Écartées par les gardes" count={refused.length} accent="var(--td3)">
-            {refused.map((r) => (
-              <Card key={r.id} r={r} busy={busy === r.id} onReview={review} />
-            ))}
-            {!refused.length && <Empty text="aucun refus" />}
-          </Column>
-
-          <Column title="Approuvées" count={approved.length} accent={OK}>
-            {approved.slice(0, 15).map((r) => (
-              <Card key={r.id} r={r} compact />
-            ))}
-            {!approved.length && <Empty text="rien encore appliqué" />}
-            {approved.length > 15 && <Empty text={`+ ${approved.length - 15} de plus`} />}
-          </Column>
-
-          <Column title="Rejetées" count={rejected.length} accent="var(--td3)">
-            {rejected.slice(0, 15).map((r) => (
-              <Card key={r.id} r={r} compact />
-            ))}
-            {!rejected.length && <Empty text="rien rejeté" />}
-            {rejected.length > 15 && <Empty text={`+ ${rejected.length - 15} de plus`} />}
-          </Column>
+        {/* ── LES PILES — chacune sur sa page depuis le 01/08. Les cinq bacs côte à côte
+            étiraient la console sur trois écrans (367 à relire, 321 écartées) avant que Dan
+            n'atteigne son travail, et les compteurs mentaient : ils comptaient la fenêtre de
+            120 lignes chargée, pas le stock. Ici : le volume réel, et un clic pour y aller. */}
+        <div className="g-3" style={{ marginBottom: 22 }}>
+          {([
+            ['relire', 'À relire', WARN, 'le travail de Dan'],
+            ['douteuses', 'Preuve douteuse', KO, 'valeur ↔ preuve en désaccord'],
+            ['ecartees', 'Écartées par les gardes', 'var(--td3)', 'aucune source exploitable'],
+            ['approuvees', 'Approuvées', OK, 'publiées sur le site'],
+            ['rejetees', 'Rejetées', 'var(--td3)', 'refusées à la relecture'],
+          ] as const).map(([cle, titre, accent, note]) => (
+            <Link key={cle} href={`/ops/pile/${cle}`} style={{ textDecoration: 'none' }}>
+              <section style={{
+                border: `1px solid var(--bd2)`, borderTop: `2px solid ${accent}`, borderRadius: 12,
+                padding: '13px 15px', background: 'rgba(255,255,255,0.02)', marginBottom: 14,
+              }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 9 }}>
+                  <span style={{ ...fe(13), color: 'var(--td)' }}>{titre}</span>
+                  <span style={{ fontFamily: 'var(--fn)', fontSize: 20, color: accent, marginLeft: 'auto' }}>
+                    {state?.bacs?.[cle] ?? '…'}
+                  </span>
+                </div>
+                <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: 'var(--td3)', marginTop: 4 }}>{note}</div>
+              </section>
+            </Link>
+          ))}
         </div>
+
 
         {/* ── COUVERTURE PAR UNIVERS : combien de fiches sont VISIBLES sur le site — une fiche
             produite mais non jugée n'existe pas pour un visiteur. Puis les agents et la console
@@ -441,203 +397,7 @@ function Pill({ label, color }: { label: string; color: string }) {
 
 /* Ce qui mérite l'œil en premier : un désaccord entre juges QUE PERSONNE n'a départagé, puis
    l'ancrage le plus faible. Le reste suit dans l'ordre d'arrivée. */
-function prioRelecture(r: Result): number {
-  const desaccordNu = r.auto_verdict && r.auto2_verdict && r.auto_verdict !== r.auto2_verdict && !r.arbitre_verdict;
-  if (desaccordNu) return 0;
-  if (r.auto_score != null) return 1 + r.auto_score;   // 1,00 → 2,00 : le moins étayé d'abord
-  return 3;
-}
 
-function Column({ title, count, accent, note, children }: { title: string; count: number; accent: string; note?: string; children: React.ReactNode }) {
-  return (
-    <section style={{ minWidth: 0 }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10, paddingBottom: 8, borderBottom: `2px solid ${accent}` }}>
-        <span style={{ ...fe(13), color: 'var(--td)' }}>{title}</span>
-        <span style={{ fontFamily: 'var(--fn)', fontSize: 17, color: accent }}>{count}</span>
-        {note && <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>{note}</span>}
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>{children}</div>
-    </section>
-  );
-}
 
-function Empty({ text }: { text: string }) {
-  return <div style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', padding: '14px 2px' }}>{text}</div>;
-}
 
-function Card({ r, busy, compact, onReview }: {
-  r: Result; busy?: boolean; compact?: boolean;
-  onReview?: (id: number, a: 'approve' | 'reject') => void;
-}) {
-  // attributs : on sépare valeurs et preuves (champs « <attr>_preuve »)
-  const attrs = r.task_type === 'akasha_attrs' && r.result
-    ? (Object.entries(r.result).filter(([k, v]) => !k.endsWith('_preuve') && typeof v === 'string' && v !== 'inconnu') as [string, string][])
-    : null;
-  const preuve = (k: string) => r.result?.[`${k}_preuve`] as string | undefined;
 
-  return (
-    <article style={{
-      border: '1px solid var(--bd2)', borderRadius: 12, padding: 11,
-      background: 'rgba(255,255,255,0.03)',
-    }}>
-      <div style={{ display: 'flex', alignItems: 'baseline', gap: 7, flexWrap: 'wrap' }}>
-        <span style={{ fontFamily: 'var(--fo)', fontSize: 13, fontWeight: 700, color: 'var(--td)' }}>
-          {r.payload?.name ?? r.target_slug}
-        </span>
-        {r.payload?.universe && (
-          <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>{r.payload.universe}</span>
-        )}
-        <span style={{ marginLeft: 'auto', fontFamily: 'var(--fo)', fontSize: 9, color: CY }}>{r.task_type}</span>
-      </div>
-
-      {/* Ancrage HHEM : « ce qui est affirmé est-il dans la source ? » — modèle spécialisé sur CPU. */}
-      {/* Teinte NEUTRE depuis le 01/08 : mesuré, ce score ne discrimine pas le vrai du faux
-          (le veto a été retiré du pipeline le même jour) — un rouge ici biaisait la review
-          avec un signal démontré non informatif. Le chiffre reste pour la calibration. */}
-      {r.auto_score != null && (
-        <span style={{
-          display: 'inline-block', marginTop: 7,
-          fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: 'var(--td3)',
-          border: '1px solid var(--bd2)', background: 'rgba(255,255,255,0.04)',
-          borderRadius: 5, padding: '2px 7px', marginRight: 6,
-        }}>ancrage {r.auto_score.toFixed(2)}</span>
-      )}
-
-      {/* Verdict du relecteur local : trie la file humaine, ne décide jamais seul. */}
-      {r.auto_verdict && (
-        <div style={{ marginTop: 7 }}>
-          <span style={{
-            fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700,
-            color: VERDICT[r.auto_verdict]?.c ?? 'var(--td3)',
-            border: `1px solid ${VERDICT[r.auto_verdict]?.c ?? 'var(--bd2)'}55`,
-            background: `${VERDICT[r.auto_verdict]?.c ?? '#888'}12`,
-            borderRadius: 5, padding: '2px 7px',
-          }}>
-            juge local : {VERDICT[r.auto_verdict]?.l ?? r.auto_verdict}
-          </span>
-          {r.auto2_verdict && (
-            <span style={{
-              marginLeft: 6, fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700,
-              color: VERDICT[r.auto2_verdict]?.c ?? 'var(--td3)',
-              border: `1px solid ${VERDICT[r.auto2_verdict]?.c ?? 'var(--bd2)'}55`,
-              background: `${VERDICT[r.auto2_verdict]?.c ?? '#888'}12`,
-              borderRadius: 5, padding: '2px 7px',
-            }}>
-              juge cloud : {VERDICT[r.auto2_verdict]?.l ?? r.auto2_verdict}
-            </span>
-          )}
-          {r.arbitre_verdict && (
-            <span style={{
-              marginLeft: 6, fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700,
-              color: VERDICT[r.arbitre_verdict]?.c ?? 'var(--td3)',
-              border: `1px solid ${VERDICT[r.arbitre_verdict]?.c ?? 'var(--bd2)'}55`,
-              background: `${VERDICT[r.arbitre_verdict]?.c ?? '#888'}12`,
-              borderRadius: 5, padding: '2px 7px',
-            }}>
-              ⚖ arbitre : {VERDICT[r.arbitre_verdict]?.l ?? r.arbitre_verdict}
-            </span>
-          )}
-          {r.auto_applique && (
-            <span style={{
-              marginLeft: 6, fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: CY,
-              border: `1px solid ${CY}55`, background: `${CY}12`, borderRadius: 5, padding: '2px 7px',
-            }}>⚡ auto</span>
-          )}
-          {!compact && r.auto_motif && (
-            <p style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', margin: '4px 0 0', lineHeight: 1.4 }}>
-              {r.auto_motif.slice(0, 260)}
-            </p>
-          )}
-        </div>
-      )}
-
-      {!compact && r.payload?.summary && (
-        <p style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', margin: '7px 0 0', lineHeight: 1.45 }}>
-          <b style={{ color: 'var(--td2)' }}>avant · </b>{r.payload.summary}
-        </p>
-      )}
-
-      {attrs && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 8 }}>
-          {attrs.length ? attrs.map(([k, v]) => (
-            <div key={k}>
-              <span style={{
-                fontFamily: 'var(--fo)', fontSize: 10.5, color: OK,
-                border: `1px solid ${OK}44`, background: `${OK}12`, borderRadius: 6, padding: '3px 8px',
-              }}>{k} : {v}</span>
-              {/* La preuve est la garantie d'ancrage : elle se relit d'un coup d'œil. */}
-              {!compact && preuve(k) && (
-                <p style={{
-                  fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', fontStyle: 'italic',
-                  margin: '4px 0 0', paddingLeft: 8, borderLeft: '2px solid var(--bd2)', lineHeight: 1.4,
-                }}>« {String(preuve(k)).slice(0, 200)} »</p>
-              )}
-            </div>
-          )) : <span style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>aucun attribut établi</span>}
-        </div>
-      )}
-
-      {r.task_type === 'akasha_relations' && Array.isArray(r.result?.relations) && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 7, marginTop: 8 }}>
-          {r.result.relations.map((rel, i) => {
-            const tint = ['ennemi', 'rival'].includes(rel.nature) ? KO
-              : ['équipage actuel', 'ancien équipage'].includes(rel.nature) ? CY : OK;
-            return (
-              <div key={i}>
-                <span style={{
-                  fontFamily: 'var(--fo)', fontSize: 10.5, color: tint,
-                  border: `1px solid ${tint}44`, background: `${tint}12`, borderRadius: 6, padding: '3px 8px',
-                }}>{rel.avec} · {rel.nature} · {rel.periode}</span>
-                {!compact && (
-                  <p style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td2)', margin: '4px 0 0', lineHeight: 1.45 }}>
-                    {rel.resume}
-                  </p>
-                )}
-                {!compact && rel.preuve && (
-                  <p style={{
-                    fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)', fontStyle: 'italic',
-                    margin: '3px 0 0', paddingLeft: 8, borderLeft: '2px solid var(--bd2)', lineHeight: 1.4,
-                  }}>« {rel.preuve.slice(0, 160)} »</p>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      )}
-
-      {!attrs && r.result?.descFr && (
-        <p style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td2)', margin: '7px 0 0', lineHeight: 1.5 }}>
-          {compact ? r.result.descFr.slice(0, 110) + '…' : r.result.descFr}
-        </p>
-      )}
-
-      {r.error && (
-        <p style={{ fontFamily: 'var(--fo)', fontSize: 10.5, color: WARN, margin: '7px 0 0', lineHeight: 1.4 }}>{r.error}</p>
-      )}
-
-      {r.payload?.fandomUrl && !compact && (
-        <a href={r.payload.fandomUrl} target="_blank" rel="noreferrer"
-          style={{ fontFamily: 'var(--fo)', fontSize: 10, color: CY, textDecoration: 'none', display: 'inline-block', marginTop: 6 }}>
-          source : {r.payload.fandomTitle} ↗
-        </a>
-      )}
-
-      {onReview && (
-        <div style={{ display: 'flex', gap: 6, marginTop: 10 }}>
-          {/* un « suspect » reste applicable : c'est un signalement pour le relecteur, pas un rejet */}
-          <button onClick={() => onReview(r.id, 'approve')}
-            disabled={busy || (r.status !== 'done' && r.status !== 'suspect')}
-            style={btn(OK, busy || (r.status !== 'done' && r.status !== 'suspect'))}>✓ Appliquer</button>
-          <button onClick={() => onReview(r.id, 'reject')} disabled={busy}
-            style={btn('var(--td3)', busy)}>× Rejeter</button>
-        </div>
-      )}
-    </article>
-  );
-}
-
-const btn = (color: string, disabled?: boolean): React.CSSProperties => ({
-  flex: 1, padding: '7px 10px', borderRadius: 8, cursor: disabled ? 'not-allowed' : 'pointer',
-  border: `1px solid ${color}66`, background: `${color}14`, color,
-  fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, opacity: disabled ? 0.45 : 1,
-});

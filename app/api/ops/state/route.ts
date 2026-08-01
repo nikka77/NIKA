@@ -26,6 +26,21 @@ export async function GET(req: Request) {
   // Comptes SERVEUR exacts : le kanban n'affiche que 120 lignes, mais les boutons de lot
   // agissent sur toute la base — les libellés doivent annoncer la portée réelle (audit du
   // 01/08 : le dialogue disait « 18 fiches » et le lot en aurait écrit 107).
+  // Les comptes de chaque bac : la console n'affiche plus les fiches (elles ont leurs pages),
+  // elle en montre le volume et y renvoie. Cinq counts légers valent mieux que 120 lignes
+  // chargées pour rien à chaque tick.
+  const bac = (f: (q: any) => any) => f(supabase.from('agent_results')
+    .select('*', { count: 'exact', head: true }).neq('task_type', 'review_local'));
+  const [{ count: nRelire }, { count: nDouteuses }, { count: nEcartees }, { count: nApprouvees }, { count: nRejetees }] =
+    await Promise.all([
+      bac((q: any) => q.eq('review_status', 'pending').eq('status', 'done')),
+      bac((q: any) => q.eq('review_status', 'pending').eq('status', 'suspect')),
+      bac((q: any) => q.eq('review_status', 'pending').eq('status', 'refused')),
+      bac((q: any) => q.eq('review_status', 'approved')),
+      bac((q: any) => q.eq('review_status', 'rejected')),
+    ]);
+  const { count: nEchecs } = await bac((q: any) => q.eq('review_status', 'pending').eq('status', 'failed'));
+
   const [{ count: pendingTotal }, { count: validesTotal }] = await Promise.all([
     supabase.from('agent_results').select('*', { count: 'exact', head: true })
       .eq('review_status', 'pending').in('status', ['done', 'suspect']),
@@ -205,6 +220,8 @@ export async function GET(req: Request) {
     queue: metrics?.[0] ?? { queue_length: 0, total_messages: 0 },
     flotte, couloirs, jury, cadence: cadence ?? 0, univers,
     pendingTotal: pendingTotal ?? 0, validesTotal: validesTotal ?? 0,
+    bacs: { relire: nRelire ?? 0, douteuses: nDouteuses ?? 0, ecartees: nEcartees ?? 0,
+            approuvees: nApprouvees ?? 0, rejetees: nRejetees ?? 0, echecs: nEchecs ?? 0 },
     results: recents,
     health: { ollama, omniroute, modeleActif, swap },
     agents,
