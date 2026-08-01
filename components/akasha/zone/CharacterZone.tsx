@@ -62,7 +62,33 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
   const linkedNames = new Set(atkRels.map((r) => r.target.name.toLowerCase()));
   const jutsuPlain = list(a.jutsu).filter((j) => !linkedNames.has(j.toLowerCase()));
 
+  // Famille : le databook curé d'abord (il porte le lien précis — père, sœur, parrain…), puis
+  // les arêtes « famille » du graphe pour les milliers de fiches qui n'ont pas de databook.
+  // Dédup par nom : une même personne ne doit pas apparaître deux fois sous deux sources.
   const family = familyList(a.family);
+  const nomsFamille = new Set(family.map((m) => m.name.toLowerCase()));
+  for (const r of entry.relationsOut) {
+    if (r.relation !== 'famille' || nomsFamille.has(r.target.name.toLowerCase())) continue;
+    nomsFamille.add(r.target.name.toLowerCase());
+    family.push({ rel: 'famille', name: r.target.name, slug: r.target.slug });
+  }
+
+  // Liens narratifs venus du GRAPHE (alliés, mentors, élèves, ennemis, rivaux). Jusqu'au 01/08
+  // ces arêtes n'étaient affichées nulle part sur la fiche personnage : la refonte « zone »
+  // ne lisait que les attributs, si bien que le travail de l'usine et des builds restait
+  // invisible. Les appartenances taxonomiques (appartient/habite/exerce) sont déjà rendues
+  // par la grappe « Appartenances » — inutile de les redire ici.
+  const NATURES_LIENS: Record<string, string> = {
+    allie: 'Allié', mentor: 'Mentor', eleve: 'Élève', ennemi: 'Ennemi', rival: 'Rival',
+  };
+  const liens = [
+    ...entry.relationsOut.filter((r) => NATURES_LIENS[r.relation])
+      .map((r) => ({ label: NATURES_LIENS[r.relation], name: r.target.name, slug: r.target.slug })),
+    // Sens ENTRANT : les deux bouts sont résolus dans `target` (relationsIn porte l'autre
+    // extrémité), et la nature s'inverse — « X est mon mentor » se lit « Élève · X » chez lui.
+    ...entry.relationsIn.filter((r) => r.relation === 'mentor' || r.relation === 'eleve')
+      .map((r) => ({ label: r.relation === 'mentor' ? 'Élève' : 'Mentor', name: r.target.name, slug: r.target.slug })),
+  ].filter((l, i, t) => t.findIndex((x) => x.name === l.name && x.label === l.label) === i).slice(0, 24);
   const belong: { attr: string; label: string; value: string }[] = [];
   for (const [attr, label] of BELONG_ATTRS) {
     const v = str(a[attr]);
@@ -159,7 +185,20 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
               {family.map((m, i) => (
                 <ChipBtn key={i} accent={accent} active={sel?.kind === 'famille' && sel.name === m.name}
                   onClick={() => select({ kind: 'famille', rel: m.rel, name: m.name, slug: m.slug })}>
-                  <span style={{ color: 'var(--td3)', fontWeight: 400 }}>{familyLabel(m.rel)} · </span>{m.name}
+                  {/* Le databook donne le lien précis (père, sœur…) ; le graphe ne sait que
+                      « famille » — inutile de le répéter sous un titre qui le dit déjà. */}
+                  {m.rel !== 'famille' && <span style={{ color: 'var(--td3)', fontWeight: 400 }}>{familyLabel(m.rel)} · </span>}{m.name}
+                </ChipBtn>
+              ))}
+            </Grappe>
+          )}
+
+          {liens.length > 0 && (
+            <Grappe title={`Liens · ${liens.length}`} accent={accent}>
+              {liens.map((l, i) => (
+                <ChipBtn key={i} accent={accent} active={sel?.kind === 'famille' && sel.name === l.name}
+                  onClick={() => select({ kind: 'famille', rel: l.label, name: l.name, slug: l.slug })}>
+                  <span style={{ color: 'var(--td3)', fontWeight: 400 }}>{l.label} · </span>{l.name}
                 </ChipBtn>
               ))}
             </Grappe>

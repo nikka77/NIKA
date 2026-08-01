@@ -35,14 +35,16 @@ const JUGES = [
 // seuls les PERSONNAGES étaient servis (ops-fill-fandom), ce qui laissait 1 972 entrées Naruto
 // — jutsu, artefacts, lieux, statuts — hors d'atteinte de l'usine, quelle que soit la cadence.
 // Naruto : 43 % de la base pour 19 % de descFr, contre 88 % à Hunter x Hunter.
-// `relations` est à ZÉRO en attendant que l'usine soit branchée sur le graphe : ses relations
-// s'écrivent aujourd'hui dans un champ que le site ne lit pas — des jetons et des tours de
-// review dépensés pour rien. À remonter à ~0,15 dès le branchement livré.
+// `relations` est ROUVERTE depuis le 01/08 : l'usine écrivait jusque-là dans un champ que le
+// site ne lit pas (70 liens validés par Dan, 0 arête de graphe). Maintenant que l'approbation
+// verse dans akasha_relations, chaque relation produite devient visible sur la fiche publique.
+// Sa part reste modeste : l'infobox Fandom couvre le factuel en masse et gratuitement, l'IA
+// n'a de valeur que sur le narratif qu'aucune infobox ne dit (« a trahi », « ancien élève de »).
 const PART = {
-  fandom: Number(process.env.NIKA_PART_FANDOM ?? 0.40),
-  fiches: Number(process.env.NIKA_PART_FICHES ?? 0.40),
-  attrs: Number(process.env.NIKA_PART_ATTRS ?? 0.20),
-  relations: Number(process.env.NIKA_PART_RELATIONS ?? 0),
+  fandom: Number(process.env.NIKA_PART_FANDOM ?? 0.35),
+  fiches: Number(process.env.NIKA_PART_FICHES ?? 0.35),
+  attrs: Number(process.env.NIKA_PART_ATTRS ?? 0.15),
+  relations: Number(process.env.NIKA_PART_RELATIONS ?? 0.15),
 };
 // Les quatre rôles non-personnages tournent, un par passage du timer (20 min) : chacun est
 // servi toutes les 80 min, sans qu'un rôle prolifique n'affame les autres.
