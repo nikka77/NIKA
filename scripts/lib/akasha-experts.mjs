@@ -9,6 +9,8 @@ import { ROLES } from './akasha-roles.mjs';
 
 const NOMS_HORS_ROLES = {
   fandom_descfr: 'Biographe des personnages',
+  // L26 : l'expert des sections longues — il ne résume pas, il développe un chapitre.
+  fiche_section: 'Rédacteur des sections',
   akasha_attrs: 'Taxonomiste',
   akasha_relations: 'Historien des relations',
 };
@@ -63,11 +65,15 @@ export async function expertNiche(supabase, universe, name) {
 export async function memoireExpert(supabase, taskType, universe, nomsCluster) {
   if (!universe) return '';
   try {
+    // Le champ de PROSE dépend du rôle : une section rend { titre, texte }, une fiche { descFr }.
+    // Filtrer en dur sur descFr rendait la mémoire vide pour tout rôle qui n'en produit pas —
+    // on livrait alors un expert « à mémoire » qui n'apprenait rien (défaut relevé le 01/08).
+    const champProse = taskType === 'fiche_section' ? 'texte' : 'descFr';
     // Les requêtes Supabase sont MUTABLES : une fabrique par tentative, jamais de réutilisation.
     const fabriqueEx = () => supabase.from('agent_results')
       .select('payload, result')
       .eq('task_type', taskType).eq('payload->>universe', universe)
-      .eq('review_status', 'approved').not('result->descFr', 'is', null)
+      .eq('review_status', 'approved').not(`result->${champProse}`, 'is', null)
       .order('id', { ascending: false }).limit(2);
     let exemplaires = null;
     if (nomsCluster?.length) {
@@ -81,7 +87,8 @@ export async function memoireExpert(supabase, taskType, universe, nomsCluster) {
       .or('auto_verdict.eq.a_corriger,auto2_verdict.eq.a_corriger,review_status.eq.rejected')
       .order('id', { ascending: false }).limit(3);
     const exemples = exemplaires
-      .map((r) => `- (${r.payload?.name}) « ${String(r.result?.descFr ?? '').slice(0, 260)} »`);
+      .map((r) => `- (${r.payload?.name}${r.payload?.section_titre ? ` · ${r.payload.section_titre}` : ''}) `
+        + `« ${String(r.result?.[champProse] ?? '').slice(0, 260)} »`);
     const lecons = [...new Set((lec.data ?? [])
       .flatMap((r) => [r.auto_motif, r.auto2_motif]).filter(Boolean)
       .map((m) => String(m).slice(0, 110)))].slice(0, 3);

@@ -195,6 +195,50 @@ ${p.fandom}`,
   // LE GISEMENT : remplir les axes de taxonomie (village, clan, équipage, division, partie…).
   // Les valeurs sont contraintes par enum → le modèle ne PEUT PAS inventer hors taxonomie.
   // Vérifié le 25/07 : sur des fiches déjà curées, l'expert retrouve exactement les valeurs en base.
+  // ── FICHE PAR SECTION (L26, 01/08) — le remède mesuré au plafond de profondeur.
+  // Une fiche de 800 caractères tirée d'une fenêtre de 6 000 ne pouvait pas rendre une page de
+  // 246 738 (Naruto Uzumaki : l'agent voyait 2,4 % de la page, en produisait 0,3 %). On ne
+  // rédige plus « la fiche » mais UNE SECTION à la fois, sur le découpage du wiki lui-même :
+  // ~3 000 caractères, un sujet homogène, et une source que le juge peut lire EN ENTIER —
+  // c'est la première fois qu'un verdict porte sur la totalité de ce que l'agent a lu.
+  fiche_section: {
+    modele: 'ollama/gemma4:12b',
+    fetch: async (p) => {
+      const niche = await expertNiche(supabase, p.universe, p.name);
+      const memoire = await memoireExpert(supabase, 'fiche_section', p.universe, niche?.noms);
+      return { ...p, memoire, niche };
+    },
+    // La section arrive DÉJÀ dans la charge utile (le remplisseur l'a découpée) : la garde ne
+    // vérifie donc que la matière, pas l'identité — celle-ci a été tranchée à la découpe.
+    guard: (p) => (String(p.section_texte ?? '').length < 350
+      ? `section « ${p.section_titre} » trop maigre` : null),
+    zod: z.object({ titre: z.string().min(3), texte: DescFr(200) }),
+    schema: {
+      type: 'object',
+      properties: {
+        titre: { type: 'string', description: 'Titre de la section en français' },
+        texte: { type: 'string', description: 'La section rédigée en français' },
+      },
+      required: ['titre', 'texte'],
+      additionalProperties: false,
+    },
+    prompt: (p) => `Tu es ${nomExpert('fiche_section', p.universe)}${p.niche ? `, et plus précisément « ${p.niche.nom} »` : ''}, expert de l'encyclopédie AKASHA.
+
+Tu rédiges UNE SEULE SECTION de la fiche « ${p.name} » (${p.universe}) : la section « ${p.section_titre} ».
+${p.sommaire ? `\nLa fiche complète comportera ces sections : ${p.sommaire}.\nNe traite QUE la tienne — une autre plume écrit les suivantes, toute redite serait du doublon.\n` : ''}
+${p.memoire ? `\n${p.memoire}\n` : ''}
+RÈGLES :
+- N'utilise QUE des faits présents dans le texte source ci-dessous. Aucune invention.
+- Français encyclopédique sobre, présent de narration. Aucun anglicisme : traduis les termes
+  courants, garde en romaji les noms propres canon (Sharingan, Mangekyō, Kekkei Genkai).
+- Développe : tu as la place. Vise 6 à 12 phrases si la source le permet — c'est une SECTION,
+  pas un résumé. Reprends les mécanismes, les conditions, les exceptions que la source décrit.
+- "titre" : le titre de la section en français (« Acquisition » → « L'éveil », « Abilities » →
+  « Capacités », « Transformations » → « Évolutions »). Court, sans article inutile.
+
+SOURCE — section « ${p.section_titre} » de l'article canon :
+${p.section_texte}`,
+  },
   akasha_attrs: {
     model: (p) => expertFor(p.universe),
     schema: (p) => axesSchema(p.universe),
@@ -988,6 +1032,8 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
     const etablis = Object.entries(valeurs).filter(([, v]) => v && v !== 'inconnu');
     if (!etablis.length) return;                     // abstention : rien à juger (le code tranche)
     production = etablis.map(([k, v]) => `${k} = ${v}  (preuve avancée : « ${preuves[k] ?? 'aucune'} »)`).join('\n');
+  } else if (row.task_type === 'fiche_section') {
+    production = `Section « ${row.result?.titre} » :\n${row.result?.texte}`;
   } else if (row.task_type === 'akasha_relations') {
     const rel = row.result?.relations ?? [];
     if (!rel.length) return;                         // abstention honnête : rien à juger
@@ -999,7 +1045,12 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
   // maxChars explicite : sans lui, la fenêtre du juge dépendait de la tâche qui avait chauffé
   // le cache en premier (la clé de cache ignore maxChars). On demande la fenêtre MAXIMALE du
   // parc — celle du producteur de relations — pour que le juge ne soit jamais le moins informé.
-  const page = await fetchFandomProse(p.universe, p.name, { maxChars: 6000 }).catch(() => null);
+  // Une SECTION porte sa propre source dans la charge utile : le juge lit EXACTEMENT ce que
+  // l'agent a lu, en entier. C'est la première tâche du parc où la fenêtre du contrôleur
+  // couvre 100 % de celle du contrôlé — plus de fait « inventé » qui était simplement hors champ.
+  const page = row.task_type === 'fiche_section'
+    ? { text: String(p.section_texte ?? ''), title: p.name }
+    : await fetchFandomProse(p.universe, p.name, { maxChars: 6000 }).catch(() => null);
   if (!page?.text) return;                           // pas de source vérifiable → pas de jugement
 
   // AUTONOMIE L12 (audit du 26/07 : un juge seul = 86 % de précision, insuffisant) :
@@ -1168,6 +1219,16 @@ async function verrouEtAppliquer(rowId, filtres) {
   } else if (gagne.task_type === 'akasha_attrs') {
     for (const [k, v] of Object.entries(gagne.result ?? {}))
       if (v && v !== 'inconnu' && !k.endsWith('_preuve')) patch[k] = v;
+  } else if (gagne.task_type === 'fiche_section') {
+    // Les sections s'accumulent dans un TABLEAU ORDONNÉ : chaque agent écrit la sienne, à sa
+    // place, sans écraser celle du voisin. L'index vient du wiki, donc l'ordre de lecture est
+    // celui de l'article canon. Réécrire une section déjà présente la remplace (reprise possible).
+    const dejaLa = Array.isArray(patch.sections) ? patch.sections : [];
+    const neuve = { i: gagne.payload?.section_index, titre: gagne.result?.titre, texte: gagne.result?.texte };
+    if (!neuve.i || !neuve.texte) return false;
+    patch.sections = [...dejaLa.filter((x) => String(x.i) !== String(neuve.i)), neuve]
+      .sort((a, b) => Number(a.i) - Number(b.i));
+    patch.sectionsSource = gagne.model;
   } else if (gagne.task_type === 'akasha_relations') {
     const rel = gagne.result?.relations ?? [];
     if (!rel.length) return false;

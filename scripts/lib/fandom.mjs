@@ -249,3 +249,57 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000 } = {})
   await sleep(250);                                 // politesse Fandom
   return out;
 }
+
+/** LES SECTIONS D'UNE PAGE — le découpage du travail par le wiki lui-même (L26, 01/08/2026).
+ *
+ *  Pourquoi : une fiche de 800 caractères produite depuis une fenêtre de 6 000 ne pouvait pas
+ *  rendre justice à une page de 246 738 caractères — mesuré sur Naruto Uzumaki, l'agent voyait
+ *  2,4 % de la page et en produisait 0,3 %. Le remède n'est pas d'agrandir la fenêtre (aucun
+ *  modèle n'avale 250 000 caractères utilement) mais de DÉCOUPER : une section fait ~3 000
+ *  caractères, tient sans troncature, porte un sujet homogène, et se juge contre sa propre
+ *  source — pas contre un résumé.
+ *
+ *  Le wiki fournit lui-même le découpage (prop=sections), et sert chaque section isolément
+ *  (&section=N) : on ne devine rien, on suit sa structure.
+ *
+ *  @returns {Promise<{title:string,url:string,sections:Array<{index:string,titre:string,texte:string}>}|null>}
+ */
+export async function fetchFandomSections(universe, name, { minChars = 350, maxSections = 24 } = {}) {
+  const api = wikiApi(universe);
+  if (!api) return null;
+
+  // On réutilise la résolution de titre éprouvée (redirections, alias, recherche plein texte).
+  const page = await fetchFandomProse(universe, name, { maxChars: 500 });
+  if (!page?.title) return null;
+  const titre = page.title;
+
+  const j = await wget(`${api}?action=parse&page=${encodeURIComponent(titre)}&prop=sections&redirects=1&format=json&formatversion=2`);
+  const brutes = j?.parse?.sections ?? [];
+  if (!brutes.length) return { title: titre, url: page.url, sections: [] };
+
+  // Sections de tête uniquement : les sous-sous-parties (toclevel 3+) sont trop fines pour
+  // porter une fiche, et gonfleraient la facture sans rien ajouter au lecteur.
+  // On écarte ce qui ne raconte rien (références, galeries, liens externes). Trivia RESTE :
+  // c'est de la matière canon (14 anecdotes sourcées sur Sharingan), pas du remplissage.
+  const IGNORE = /^(references?|notes?|gallery|galerie|external links?|see also|navigation)$/i;
+  const retenues = brutes
+    .filter((s) => Number(s.toclevel) <= 2 && !IGNORE.test(String(s.line).trim()))
+    .slice(0, maxSections);
+
+  const sections = [];
+  for (const s of retenues) {
+    const p = await wget(`${api}?action=parse&page=${encodeURIComponent(titre)}&section=${s.index}&prop=text&redirects=1&format=json&formatversion=2`);
+    const html = String(p?.parse?.text ?? '')
+      .replace(/<style[\s\S]*?<\/style>/g, '').replace(/<script[\s\S]*?<\/script>/g, '')
+      .replace(/<table[\s\S]*?<\/table>/g, ' ')          // infobox et navbox : déjà récoltées ailleurs
+      .replace(/<sup[\s\S]*?<\/sup>/g, ' ');             // appels de note « [12] »
+    const texte = html.replace(/<[^>]+>/g, ' ').replace(/&#?\w+;/g, ' ').replace(/\s+/g, ' ').trim()
+      // Le rendu répète le titre de la section et son crochet d'édition en tête : « Acquisition [ ] … »
+      .replace(new RegExp('^' + String(s.line).trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*\\[?\\s*\\]?\\s*', 'i'), '')
+      .trim();
+    // Une section trop courte n'a pas de quoi nourrir une fiche — on ne paie pas pour du vide.
+    if (texte.length >= minChars) sections.push({ index: String(s.index), titre: String(s.line).trim(), texte });
+    await sleep(250);                                     // même rythme que le reste de la lib
+  }
+  return { title: titre, url: page.url, sections };
+}
