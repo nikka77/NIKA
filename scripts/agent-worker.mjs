@@ -207,7 +207,16 @@ ${p.source}
 Contrôle, dans cet ordre :
 1. La production parle-t-elle bien de ${p.name}, et non d'un homonyme ou d'un proche ?
 2. Chaque fait avancé est-il présent dans la source ? (un fait absent = invention)
-3. Le français est-il correct, sans anglicisme ni terme anglais résiduel ?
+${p.kind === 'prose'
+  ? `3. Le français est-il correct, sans anglicisme ni terme anglais résiduel ?`
+  : `3. NE JUGE PAS LA LANGUE. Cette production n'est pas un texte à lire mais des données :
+   les valeurs sont des termes canon (« Logia », « Jōnin », « Marine ») et les preuves sont des
+   citations VERBATIM de l'article anglais — le producteur a pour consigne stricte de les
+   recopier sans les traduire. Un mot anglais n'est donc JAMAIS un défaut ici.`}
+4. Un fait établi par la source à N'IMPORTE QUEL moment du récit est EXACT, même s'il n'est
+   plus vrai à la fin : un Marine devenu pirate l'a bien été, un Genin devenu Hokage a bien
+   été Genin. Ne conteste jamais une valeur au seul motif que la source la situe dans le
+   passé (« former », « Partie I », « anciennement »).
 
 Puis :
 - "valide" si tout est exact et ancré dans la source ;
@@ -874,7 +883,10 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
     production = row.result.descFr;
   } else return;
 
-  const page = await fetchFandomProse(p.universe, p.name).catch(() => null);
+  // maxChars explicite : sans lui, la fenêtre du juge dépendait de la tâche qui avait chauffé
+  // le cache en premier (la clé de cache ignore maxChars). On demande la fenêtre MAXIMALE du
+  // parc — celle du producteur de relations — pour que le juge ne soit jamais le moins informé.
+  const page = await fetchFandomProse(p.universe, p.name, { maxChars: 6000 }).catch(() => null);
   if (!page?.text) return;                           // pas de source vérifiable → pas de jugement
 
   // AUTONOMIE L12 (audit du 26/07 : un juge seul = 86 % de précision, insuffisant) :
@@ -903,7 +915,19 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
       type: 'review_local',
       payload: {
         reviewed_id: reviewedId, slug: row.target_slug, name: p.name, universe: p.universe,
-        production, source: page.text.slice(0, 4500), ...j,
+        // Le juge doit voir AU MOINS ce que le producteur a lu. Cette ligne tranchait à
+        // 4 500 c quand le producteur en lit 6 000 (relations) ou 5 000 (descFr) : mesuré le
+        // 01/08, 56 preuves sur 793 (7,1 %) étaient littéralement dans la source mais AU-DELÀ
+        // de 4 500 — le juge les condamnait comme « inventées » sans pouvoir les voir.
+        // Gedatsu/Mantra à l'octet 4 788, Shira/Silent Fist à 4 714, Carrot/Katakuri à 4 706.
+        // 65 % des pages en cache dépassent 4 500 c : le défaut touchait la majorité des fiches.
+        production, source: page.text.slice(0, 6000), ...j,
+        // La FORME de la production conditionne le contrôle de langue : sur des données
+        // clé=valeur, les preuves sont des citations anglaises verbatim exigées par le prompt
+        // producteur — les sanctionner comme « anglicismes » bloquait 17 fiches et provoquait
+        // 6 des 9 convocations d'arbitre sur les attributs (mesuré le 01/08).
+        kind: row.task_type === 'akasha_attrs' ? 'axes'
+          : row.task_type === 'akasha_relations' ? 'relations' : 'prose',
         evite: modelesDuJury.filter((m) => m !== j.juge_modele),
       },
     })),
