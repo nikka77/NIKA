@@ -782,9 +782,10 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
     if (rep.choices?.[0]?.finish_reason === 'length')
       throw new Error(`sortie coupée au plafond de tokens (${type}, ${NUM_PREDICT[type] ?? 800}+marge) — relever NUM_PREDICT.${type}`);
     const contenu = rep.choices?.[0]?.message?.content ?? '';
-    if (modeJson !== 'json_object') return contenu;
-    // Extraction tolérante : certains penseurs (Nemotron) laissent fuir du raisonnement
-    // AVANT l'objet — on découpe du premier « { » au dernier « } » (constaté le 29/07).
+    // Extraction tolérante, appliquée à TOUS les couloirs depuis le 01/08 : les modèles « à
+    // raisonnement » laissent fuir leur pensée avant l'objet, même en json_schema strict —
+    // Qwen3-32B rend « <think>\n\n</think>{...} » et le parsing échouait. Sans risque quand la
+    // sortie est déjà propre : le premier « { » est alors en position 0 et la coupe ne fait rien.
     const debut = contenu.indexOf('{'), fin = contenu.lastIndexOf('}');
     return debut >= 0 && fin > debut ? contenu.slice(debut, fin + 1) : contenu;
   }
