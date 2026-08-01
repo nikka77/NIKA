@@ -36,6 +36,9 @@ const CLOUD = process.argv.find((a) => a.startsWith('--cloud='))?.split('=')[1] 
 const JUGE = process.argv.find((a) => a.startsWith('--juge='))?.split('=')[1] ?? null;
 // --types=a,b : COULOIR — ce worker ne traite que ces types ; les messages étrangers retournent
 // en file aussitôt pour le worker du couloir voisin (ex : production au cloud, jugement au local).
+// --local : nœud GPU pur — il ne prend que les tâches confiées à un modèle local, et
+// laisse le nuage au VPS. Sans cela un Mac juge dispute au VPS un budget partagé.
+const LOCAL = process.argv.includes('--local');
 const TYPES = process.argv.find((a) => a.startsWith('--types='))?.split('=')[1]?.split(',').filter(Boolean) ?? null;
 // --chat : lit la file DÉDIÉE du secrétaire (ops_chat) au lieu de la file des agents. Chacun chez
 // soi : plus de ping-pong entre le démon du chat et les lots AKASHA (défaut des couloirs --types).
@@ -1092,6 +1095,13 @@ async function traiterUn(msg) {
   const modelePrevu = String(modelOf(msg.message?.type, msg.message?.payload ?? {}) ?? '');
   if (modelePrevu.startsWith('ollama/') && !(await ollamaDisponible())) {
     console.log(`  ↷ [${msg.msg_id}] laissée à un nœud GPU (${modelePrevu})`);
+    return;
+  }
+  // --local : ce nœud ne travaille QUE sur son GPU. Sans ce garde-fou, le Mac consommait le
+  // budget nuage partagé (gemma) pour des relectures que le VPS traite bien mieux, et se
+  // retrouvait à attendre une fenêtre de quota au lieu de faire tourner son modèle gratuit.
+  if (LOCAL && !modelePrevu.startsWith('ollama/')) {
+    console.log(`  ↷ [${msg.msg_id}] laissée au nuage (${modelePrevu})`);
     return;
   }
   const row = await processMessage(msg);

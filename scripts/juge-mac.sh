@@ -28,4 +28,4 @@ fi
 
 echo "⚖️  Mac en nœud juge — qwen3:8b (famille Qwen) · couloir review_local"
 exec taskpolicy -c background node --env-file=.env.local scripts/agent-worker.mjs \
-  --loop --types=review_local --juge=ollama/qwen3:8b --conc=1
+  --loop --local --types=review_local --juge=ollama/qwen3:8b --conc=1
