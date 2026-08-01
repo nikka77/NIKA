@@ -155,7 +155,31 @@ export default async function AkashaEntryPage({ params }: Props) {
               </div>
             </section>
           )}
-          <EntityAttributes type={entry.type} attributes={entry.attributes} universe={entry.universe} />
+          {/* ── LES SECTIONS (L26, 01/08) — le dossier long, écrit une section par agent sur le
+            découpage du wiki. C'est ici que la fiche cesse d'être une vignette : Sharingan passe
+            de 698 caractères de bio à 8 939 répartis en Éveil / Capacités / Évolutions /
+            Anecdotes. L'ordre est celui de l'article canon (l'index vient du wiki). */}
+        {(() => {
+          const sections = (entry.attributes as Record<string, unknown>)?.sections;
+          if (!Array.isArray(sections) || !sections.length) return null;
+          return (
+            <section>
+              {(sections as { i?: string; titre?: string; texte?: string }[])
+                .filter((s) => s?.titre && s?.texte)
+                .map((s, i) => (
+                  <div key={s.i ?? i} style={{ marginBottom: '1.6rem' }}>
+                    <h2 className="akasha-section-title">{s.titre}</h2>
+                    <p style={{
+                      fontFamily: 'var(--fo)', fontSize: 14.5, color: 'var(--td2)',
+                      lineHeight: 1.75, margin: 0, whiteSpace: 'pre-line',
+                    }}>{s.texte}</p>
+                  </div>
+                ))}
+            </section>
+          );
+        })()}
+
+        <EntityAttributes type={entry.type} attributes={entry.attributes} universe={entry.universe} />
           <SimilarSection universe={entry.universe} cat={category} type={entry.type} excludeSlug={entry.slug} />
         </div>
       </main>
