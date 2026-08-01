@@ -61,6 +61,16 @@ const DescFr = (min) => z.string().min(min)
   .refine(phraseComplete, 'descFr coupée en pleine phrase (plafond de tokens ou source tronquée)');
 const FlavorOut = z.object({ descFr: DescFr(30) });
 
+/** L'article cite-t-il le nom cherché ? Preuve d'identité déterministe pour les ALIAS : un
+ *  wiki nomme toujours les autres noms de son sujet dans le corps de l'article. Deux mots
+ *  minimum — un nom d'un seul mot se rencontrerait par hasard dans 5 000 caractères de prose. */
+const citeLeNom = (texte, nom) => {
+  const mots = String(nom ?? '').trim().split(/\s+/);
+  if (mots.length < 2 || !texte) return false;
+  const norm = (x) => String(x).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  return norm(texte).includes(norm(nom));
+};
+
 const TASK_TYPES = {
   flavor_akasha: {
     model: 'ollama/gemma4:12b',
@@ -113,7 +123,17 @@ DONNÉES :
       const seuil = ['power', 'skill', 'artifact', 'profession'].includes(p.type) ? 250 : 400;
       if ((p.fandom ?? '').length < seuil) return 'page Fandom absente ou trop maigre';
       // 1) le titre trouvé désigne-t-il la même entité ? (Giorno's Mother → Giorno, Super 17 → Android 17)
-      if (p.sameEntity === false) return `mauvaise entité : article « ${p.fandomTitle} » pour « ${p.name} »`;
+      // ALIAS (01/08) : un article cite TOUJOURS les autres noms de son sujet. Si le texte
+      // contient le nom cherché, c'est la même personne — même si les titres diffèrent. Mesuré
+      // sur Death Note, dont la moitié des refus venait de là : le wiki titre au vrai nom
+      // (Halle Lidner, Anthony Rester, Stephen Gevanni) quand notre registre porte le
+      // pseudonyme SPK (Halle Bullook, Anthony Carter, Stephen Loud) — les trois articles
+      // citent bien le pseudonyme. Et le contre-exemple tient : l'article « Giorno Giovanna »
+      // ne contient PAS « Giorno's Mother », ce refus-là reste donc justifié.
+      // Réservé aux noms d'au moins deux mots : un nom d'un seul mot ferait des rencontres
+      // fortuites dans 5 000 caractères de prose.
+      if (p.sameEntity === false && !citeLeNom(p.fandom, p.name))
+        return `mauvaise entité : article « ${p.fandomTitle} » pour « ${p.name} »`;
       // 2) homonyme ? (Ain/Egghead vs Ain/Neo Marines) : aucun nom propre du résumé dans l'article.
       // PERSONNAGES SEULEMENT : nos résumés sont en français et les articles en anglais, donc
       // « Troisième Hokage » ne rencontrera jamais « Third Hokage » ; et la page d'une technique
