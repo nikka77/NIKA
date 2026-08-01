@@ -612,9 +612,17 @@ const LIMITES_FOURNISSEURS = {
   // NIM gratuit n'est pas un débit renouvelable mais un STOCK de ~1 000 crédits qui s'épuise
   // DÉFINITIVEMENT : le guichet jour empêche une seule nuit de brûler la réserve entière.
   nvidia:     { requetes: 32, jetons: 100_000, fenetre: 60, parJour: 150 },
-  // Mistral ne publie plus rien ; les sources tierces 2026 donnent ~2 req/min sur « Experiment ».
-  // Prudence maximale tant que la sonde n'a pas parlé (et données PUBLIQUES uniquement).
-  mistral:    { requetes: 2, jetons: 20_000, fenetre: 60 },
+  // ⚠ CORRIGÉ DEUX FOIS le 01/08, et c'est instructif. (1) J'avais conclu « 2 req/minute »
+  // d'une rafale de 8 qui n'en laissait passer que 2 — c'était une limite de PARALLÉLISME que
+  // je lisais comme un volume. (2) La doc Mistral annonce 1 requête par SECONDE, soit 60/min ;
+  // mesuré EN SÉRIE à 1,1 s d'intervalle sur ce compte : 4 passent, puis refus — cadence
+  // soutenable réelle ≈ 13/minute. Ni ma première lecture ni la doc n'étaient bonnes.
+  // Valeur retenue : 12/min, sous le mesuré. Soit ~700 relectures/heure, gratuitement, dans
+  // une famille absente du jury (ni Google, ni Meta, ni Qwen) — de loin le meilleur couloir
+  // gratuit du parc, que j'avais écarté sur un contresens.
+  // Garde-fou : ce couloir se travaille EN SÉRIE (concurrence 1), la rafale le referme.
+  // (Palier gratuit = données d'entraînement : fiches PUBLIQUES d'AKASHA uniquement.)
+  mistral:    { requetes: 12, jetons: 200_000, fenetre: 60 },
   openrouter: { requetes: 16, jetons: 50_000, fenetre: 60, parJour: 40 },
 };
 // Guichet QUOTIDIEN fermé ≠ panne : la tâche n'a pas échoué, elle est trop tôt. En mode
