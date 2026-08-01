@@ -688,6 +688,13 @@ const MODES_JSON = {
 };
 // Les Nemotron « pensent » dans leur réponse sans cette directive (sonde NIM 29/07) —
 // /no_think en système rend un JSON propre directement parsable.
+// Serveur Ollama : la machine locale par défaut, mais OLLAMA_HOST permet de pointer un GPU
+// LOUÉ (RunPod, Vast.ai…) le temps d'une campagne. Le reste du code ne change pas : un GPU
+// distant est vu par la flotte exactement comme le Mac — même famille de modèles, même
+// gratuité apparente côté quotas, simplement 20 à 40 fois plus rapide.
+const OLLAMA = (process.env.OLLAMA_HOST ?? 'http://localhost:11434').replace(/\/+$/, '');
+const enteteOllama = () => (process.env.OLLAMA_CLE ? { Authorization: `Bearer ${process.env.OLLAMA_CLE}` } : {});
+
 const SANS_PENSEE = new Set(['nvidia/nemotron-3-super-120b-a12b', 'nvidia/nemotron-3-ultra-550b-a55b']);
 
 // Les fournisseurs disent la vérité sur leurs plafonds dans les en-têtes x-ratelimit-* — bien
@@ -773,7 +780,8 @@ async function callModel(type, payload, modeleImpose) {
   const messages = [{ role: 'user', content: t.prompt(payload) }];
   let raw;
   if (model.startsWith('ollama/')) {
-    const res = await fetch('http://localhost:11434/api/chat', {
+    const res = await fetch(`${OLLAMA}/api/chat`, {
+      headers: { 'Content-Type': 'application/json', ...enteteOllama() },
       method: 'POST',
       signal: AbortSignal.timeout(TIMEOUT_MS),
       body: JSON.stringify({
@@ -1020,7 +1028,7 @@ let _ollamaDispo = null;
 async function ollamaDisponible() {
   if (_ollamaDispo !== null) return _ollamaDispo;
   try {
-    const r = await fetch('http://localhost:11434/api/tags', { signal: AbortSignal.timeout(2_000) });
+    const r = await fetch(`${OLLAMA}/api/tags`, { headers: enteteOllama(), signal: AbortSignal.timeout(5_000) });
     _ollamaDispo = r.ok;
   } catch { _ollamaDispo = false; }
   return _ollamaDispo;
@@ -1318,9 +1326,9 @@ for (;;) {
 // Libère la RAM en partant : un modèle en keep_alive squatte 8 Go pendant que Dan compile et
 // navigue — le swap plein (11/12 Go mesurés le 26/07) venait en partie de là.
 try {
-  const ps = await fetch('http://localhost:11434/api/ps').then((r) => r.json());
+  const ps = await fetch(`${OLLAMA}/api/ps`, { headers: enteteOllama() }).then((r) => r.json());
   for (const m of ps.models ?? []) {
-    await fetch('http://localhost:11434/api/generate', { method: 'POST', body: JSON.stringify({ model: m.name, keep_alive: 0 }) });
+    await fetch(`${OLLAMA}/api/generate`, { method: 'POST', headers: { 'Content-Type': 'application/json', ...enteteOllama() }, body: JSON.stringify({ model: m.name, keep_alive: 0 }) });
     console.log(`  ⏏ ${m.name} déchargé — RAM rendue`);
   }
 } catch { /* Ollama éteint : rien à décharger */ }
