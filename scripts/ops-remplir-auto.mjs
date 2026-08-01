@@ -51,12 +51,23 @@ const PART = {
 const ROLES_TOUR = ['fiche_technique', 'fiche_lexique', 'fiche_artefact', 'fiche_lieu'];
 const ROLE_DU_TOUR = ROLES_TOUR[Math.floor(Date.now() / 1_200_000) % ROLES_TOUR.length];
 
-const { data: metrics } = await supabase.rpc('ops_queue_metrics');
-const enFile = metrics?.[0]?.queue_length ?? 0;
-if (enFile > SEUIL) {
-  console.log(`file à ${enFile} tâche(s) (> ${SEUIL}) — rien à commander, l'usine a de quoi faire`);
+// On ne compte QUE les tâches de PRODUCTION. Bug du 01/08 : la file totale servait de seuil,
+// or elle contient aussi les relectures — 89 verdicts en attente faisaient croire à une usine
+// occupée et le ravitaillement ne commandait plus rien. Résultat : zéro production pendant une
+// heure pendant que les juges finissaient tranquillement leur travail. Les deux étages ont des
+// rythmes différents (1 production = 2 relectures), il faut les jauger séparément.
+const { data: parType } = await supabase.rpc('ops_queue_by_type');
+const enFileProd = (parType ?? [])
+  .filter((r) => r.task_type !== 'review_local')
+  .reduce((n, r) => n + Number(r.en_attente ?? 0), 0);
+const enFileJuges = (parType ?? [])
+  .filter((r) => r.task_type === 'review_local')
+  .reduce((n, r) => n + Number(r.en_attente ?? 0), 0);
+if (enFileProd > SEUIL) {
+  console.log(`${enFileProd} production(s) en file (> ${SEUIL}) — rien à commander`);
   process.exit(0);
 }
+console.log(`file : ${enFileProd} production(s) · ${enFileJuges} relecture(s) en attente`);
 
 // Budget restant du jour, juge par juge. La fenêtre de 24 h GLISSE (elle ne se remet pas à
 // zéro à minuit) : une ligne dont la fenêtre a plus de 24 h est déjà périmée, donc pleine.
@@ -71,7 +82,7 @@ for (const j of JUGES) {
   detail.push(`${j.cle.split('/').pop()} ${restant}/${j.parJour}`);
   plafond = Math.min(plafond, restant);
 }
-console.log(`file : ${enFile} · budget juges restant → ${detail.join(' · ')}`);
+console.log(`budget juges restant → ${detail.join(' · ')}`);
 
 // Marge de 10 % : l'arbitre et les relectures rejouées consomment aussi ces guichets.
 const commande = Math.min(MAX, Math.floor(plafond * 0.9));
