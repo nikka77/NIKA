@@ -616,9 +616,13 @@ async function battreLeCoeur() {
   if (Date.now() - dernierBattement < 30_000) return;
   dernierBattement = Date.now();
   const role = CHAT ? 'chat' : 'agents';
+  // Le battement annonce si ce nœud a un GPU local (Ollama). C'est ainsi que le VPS, qui n'en
+  // a pas, sait qu'il peut confier une relecture au modèle local du Mac : gratuit, sans quota,
+  // et d'une famille (Qwen) qui manque cruellement au parc nuage.
+  const gpu = (await ollamaDisponible()) ? ' ollama' : '';
   const { error } = await supabase.from('ops_workers').upsert({
     id: `${hostname()}:${role}`, hote: hostname(), role, pid: process.pid,
-    detail: `conc=${CONC}${CLOUD ? ` cloud=${CLOUD}` : ''}${JUGE ? ` juge=${JUGE}` : ''}`,
+    detail: `conc=${CONC}${CLOUD ? ` cloud=${CLOUD}` : ''}${JUGE ? ` juge=${JUGE}` : ''}${gpu}`,
     derniere_activite: new Date().toISOString(),
   });
   if (error && !battementEnEchec) { battementEnEchec = true; console.error('  ✗ heartbeat :', error.message.slice(0, 80)); }
@@ -910,7 +914,11 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
     // Le juge n°2 est choisi PARMI les couloirs encore ouverts de la liste --juge : les
     // plafonds quotidiens de Groq sont si serrés (llama-70b épuisé en une demi-journée le
     // 01/08) qu'enrôler un modèle mort condamnait la relecture pour la journée.
-    ...(premierDispo(JUGES_CLI) ? [{ juge_modele: premierDispo(JUGES_CLI), slot: 'auto2' }]
+    // PRIORITÉ AU NŒUD GPU : si un Mac de la flotte tourne, qwen3 local juge à sa place —
+    // famille Qwen (absente du nuage), gratuit, sans plafond. Les couloirs payants restent
+    // pour les moments où le Mac dort ; le repli est automatique au battement suivant.
+    ...(await nœudGpuVivant() ? [{ juge_modele: 'ollama/qwen3:8b', slot: 'auto2' }]
+      : premierDispo(JUGES_CLI) ? [{ juge_modele: premierDispo(JUGES_CLI), slot: 'auto2' }]
       : process.env.GROQ_API_KEY
       ? [{ juge_modele: 'groq/llama-3.3-70b-versatile', slot: 'auto2' }]
       : process.env.GEMINI_API_KEY
@@ -944,6 +952,20 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
       },
     })),
   });
+}
+
+// Un nœud GPU de la flotte est-il vivant ? (battement de moins de 3 min portant « ollama »)
+// Sert au VPS, qui n'a pas de GPU, pour confier ses relectures au modèle local du Mac quand
+// celui-ci travaille : gratuit, sans plafond quotidien, et d'une famille absente du nuage.
+// Réponse mise en cache 60 s — on ne va pas interroger la base à chaque enrôlement de jury.
+let _nœudGpu = { a: 0, v: false };
+async function nœudGpuVivant() {
+  if (Date.now() - _nœudGpu.a < 60_000) return _nœudGpu.v;
+  const { data } = await supabase.from('ops_workers')
+    .select('id, detail, derniere_activite')
+    .gte('derniere_activite', new Date(Date.now() - 180_000).toISOString());
+  _nœudGpu = { a: Date.now(), v: (data ?? []).some((w) => String(w.detail ?? '').includes('ollama')) };
+  return _nœudGpu.v;
 }
 
 // Ollama n'existe que sur le Mac — sondé UNE fois par processus (cache), jamais bloquant.
@@ -1064,6 +1086,14 @@ async function traiterEnParallele(msgs, conc) {
 }
 
 async function traiterUn(msg) {
+  // Un nœud sans GPU ne doit JAMAIS consommer une tâche confiée à un modèle local : il la
+  // ferait échouer (localhost:11434 injoignable) alors qu'un autre nœud de la flotte sait la
+  // traiter. On la laisse en file — sa visibilité expire et le Mac la reprendra.
+  const modelePrevu = String(modelOf(msg.message?.type, msg.message?.payload ?? {}) ?? '');
+  if (modelePrevu.startsWith('ollama/') && !(await ollamaDisponible())) {
+    console.log(`  ↷ [${msg.msg_id}] laissée à un nœud GPU (${modelePrevu})`);
+    return;
+  }
   const row = await processMessage(msg);
   if (row.status === 'reporte') {
     // Ni archivage ni écriture : le message reste en file (visibilité expirée → il repart
