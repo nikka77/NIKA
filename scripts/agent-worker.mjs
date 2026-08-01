@@ -961,25 +961,26 @@ async function autoAppliquerMajorite(rowId) {
     q.eq('arbitre_verdict', 'valide').or('auto_verdict.eq.valide,auto2_verdict.eq.valide'));
 }
 async function verrouEtAppliquer(rowId, filtres) {
-  // Gate d'ancrage L12, posé le 31/07 : avant toute écriture SANS humain, HHEM (famille de
-  // poids totalement indépendante des LLM producteurs/juges) doit confirmer l'ancrage.
-  // Mesure du 25/07 : test STRICT — score haut = étayé, score bas ≠ faux (les inférences
-  // légitimes notent ~0). Donc : veto UNIQUEMENT sur akasha_attrs (phrases littérales, seul
-  // cas étalonné) et un veto = la fiche reste dans la pile de Dan, jamais rejetée.
-  // descFr : score écrit (pastille /ops) mais pas de veto (paire FR/EN non étalonnée).
-  // HHEM absent ou en erreur → comportement d'avant (fail-open, annoncé dans le log).
+  // ANCRAGE HHEM — SCORE INFORMATIF, PLUS DE VETO (mesuré le 01/08, veto retiré le jour même).
+  //
+  // Le veto sur akasha_attrs posé le 31/07 est tombé à l'épreuve des faits. Sur la source
+  // réelle de Sakazuki, au gabarit de phrase exact qu'utilise le scoreur :
+  //     « belongs to the Marine faction »  (VRAI)  → 0,93
+  //     « belongs to the Pirate faction »  (FAUX)  → 0,74
+  //     « ate a Devil Fruit of the Logia type » (VRAI) → 0,0099
+  //     « ate a Devil Fruit of the Zoan type »  (FAUX) → 0,0104   ← le faux au-DESSUS du vrai
+  // Vrais et faux se chevauchent : aucun seuil ne les sépare. Le veto ne protégeait donc de
+  // rien — il bloquait des fiches justes et double-validées (Sakazuki, Kaidou, Asuma) et
+  // gonflait la pile humaine. HHEM reste précieux sur de la PROSE (0,82 contre 0,02 à
+  // l'épreuve du 31/07) : on garde le score, affiché en pastille dans /ops pour trier la
+  // relecture, mais ce sont le double verdict et l'arbitre qui décident du fond.
+  // Leçon : un garde-fou doit être ÉPROUVÉ sur des cas vrais ET faux avant d'être armé.
   const { data: avant } = await supabase.from('agent_results')
     .select('id, task_type, target_slug, payload, result')
     .eq('id', rowId).eq('review_status', 'pending').eq('status', 'done').single();
   if (!avant) return false;
   const ancrage = await scoreAncrageProduction(avant);
-  if (ancrage) {
-    await supabase.from('agent_results').update({ auto_score: ancrage.min }).eq('id', rowId);
-    if (avant.task_type === 'akasha_attrs' && ancrage.min < 0.5) {
-      console.log(`  ⚓ ancrage faible (${ancrage.min.toFixed(2)}) — ⚡ refusé, pile Dan : ${avant.target_slug}`);
-      return false;
-    }
-  }
+  if (ancrage) await supabase.from('agent_results').update({ auto_score: ancrage.min }).eq('id', rowId);
 
   // Verrou optimiste : un seul gagnant si plusieurs relectures finissent en même temps.
   const { data: gagne } = await filtres(
