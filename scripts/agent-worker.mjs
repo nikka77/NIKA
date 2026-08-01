@@ -996,11 +996,13 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
     // Le juge n°2 est choisi PARMI les couloirs encore ouverts de la liste --juge : les
     // plafonds quotidiens de Groq sont si serrés (llama-70b épuisé en une demi-journée le
     // 01/08) qu'enrôler un modèle mort condamnait la relecture pour la journée.
-    // PRIORITÉ AU NŒUD GPU : si un Mac de la flotte tourne, qwen3 local juge à sa place —
-    // famille Qwen (absente du nuage), gratuit, sans plafond. Les couloirs payants restent
-    // pour les moments où le Mac dort ; le repli est automatique au battement suivant.
-    ...(await nœudGpuVivant() ? [{ juge_modele: 'ollama/qwen3:8b', slot: 'auto2' }]
-      : premierDispo(JUGES_CLI) ? [{ juge_modele: premierDispo(JUGES_CLI), slot: 'auto2' }]
+    // ORDRE INVERSÉ le 01/08, après l'arrivée de DeepInfra. Tant que le jugement était rare, le
+    // GPU local passait devant : gratuit et sans plafond. Maintenant qu'un couloir facturé au
+    // jeton existe, la comparaison est sans appel — 2,6 s et 0,000195 $ contre 80 s sur un Mac
+    // qui pagine. Le nœud GPU reste le FILET : il prend la main quand aucun couloir nuage n'est
+    // disponible (guichets fermés, ou Dan hors ligne), ce qui garde la chaîne vivante à coût nul.
+    ...(premierDispo(JUGES_CLI) ? [{ juge_modele: premierDispo(JUGES_CLI), slot: 'auto2' }]
+      : await nœudGpuVivant() ? [{ juge_modele: 'ollama/qwen3:8b', slot: 'auto2' }]
       : process.env.GROQ_API_KEY
       ? [{ juge_modele: 'groq/llama-3.3-70b-versatile', slot: 'auto2' }]
       : process.env.GEMINI_API_KEY
