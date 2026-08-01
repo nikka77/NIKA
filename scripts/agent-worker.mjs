@@ -100,15 +100,27 @@ DONNÉES :
       const memoire = await memoireExpert(supabase, 'fandom_descfr', p.universe, niche?.noms);   // L18
       return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, memoire, niche } : { ...p, memoire, niche };
     },
-    // Trois gardes, apprises des 3 erreurs d'identité du 25/07 :
+    // Trois gardes, apprises des 3 erreurs d'identité du 25/07 — RECALIBRÉES PAR TYPE le 01/08 :
+    // elles avaient été taillées pour des personnages et refusaient à tort une entrée sur cinq
+    // des autres types (audit des 4 verrous).
     guard: (p) => {
-      if ((p.fandom ?? '').length < 400) return 'page Fandom absente ou trop maigre';
+      // Seuil de matière : un article de jutsu fait 752 caractères de médiane contre 5 135 pour
+      // un personnage. Refuser un article de 360 c privait l'expert d'une matière suffisante
+      // pour 3 phrases — « Wind Release: Verdant Mountain Gale », « Exploding Sand Boulder »…
+      const seuil = ['power', 'skill', 'artifact', 'profession'].includes(p.type) ? 250 : 400;
+      if ((p.fandom ?? '').length < seuil) return 'page Fandom absente ou trop maigre';
       // 1) le titre trouvé désigne-t-il la même entité ? (Giorno's Mother → Giorno, Super 17 → Android 17)
       if (p.sameEntity === false) return `mauvaise entité : article « ${p.fandomTitle} » pour « ${p.name} »`;
-      // 2) homonyme ? (Ain/Egghead vs Ain/Neo Marines) : aucun nom propre du résumé dans l'article
-      const propres = [...new Set((p.summary ?? '').match(/(?<!^|[.!?]\s)\b[A-ZÀ-Þ][\wÀ-ÿ'-]{3,}/g) ?? [])];
-      if (propres.length && !propres.some((n) => (p.fandom ?? '').toLowerCase().includes(n.toLowerCase().slice(0, 6))))
-        return `homonyme probable : aucun repère du résumé (${propres.slice(0, 3).join(', ')}) dans « ${p.fandomTitle} »`;
+      // 2) homonyme ? (Ain/Egghead vs Ain/Neo Marines) : aucun nom propre du résumé dans l'article.
+      // PERSONNAGES SEULEMENT : nos résumés sont en français et les articles en anglais, donc
+      // « Troisième Hokage » ne rencontrera jamais « Third Hokage » ; et la page d'une technique
+      // ne cite pas forcément ceux qui l'emploient. Sur les non-personnages, cette garde ne
+      // détectait pas des homonymes : elle refusait 1 912 entrées Naruto au hasard de leur résumé.
+      if (p.type === 'character') {
+        const propres = [...new Set((p.summary ?? '').match(/(?<!^|[.!?]\s)\b[A-ZÀ-Þ][\wÀ-ÿ'-]{3,}/g) ?? [])];
+        if (propres.length && !propres.some((n) => (p.fandom ?? '').toLowerCase().includes(n.toLowerCase().slice(0, 6))))
+          return `homonyme probable : aucun repère du résumé (${propres.slice(0, 3).join(', ')}) dans « ${p.fandomTitle} »`;
+      }
       return null;
     },
     prompt: (p) => `Tu es ${nomExpert('fandom_descfr', p.universe)}${p.niche ? `, et plus précisément « ${p.niche.nom} » (${p.niche.membres} entrées à ta charge)` : ''}, expert de l'encyclopédie AKASHA (univers d'animes/mangas).

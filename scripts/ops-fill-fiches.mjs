@@ -18,12 +18,18 @@ if (!ROLES[ROLE]) {
   process.exit(1);
 }
 
+// Le filtre « pas encore rédigée » se fait EN SQL, pas après coup : avec un .limit(800) suivi
+// d'un filtre JS, on ne regardait que les 800 entrées les plus populaires — presque toutes
+// déjà rédigées — et il n'en ressortait qu'une poignée de candidates. 670 jutsu Naruto étaient
+// ainsi hors d'atteinte quel que soit le nombre de passes (audit du 01/08). Le tri par
+// popularité reste un ORDRE de priorité, il ne doit jamais servir de filtre.
 let q = supabase
   .from('akasha_entries')
   .select('slug, name, type, universe, summary, attributes')
   .in('type', typesFor(ROLE))
+  .filter('attributes->>descFr', 'is', null)
   .order('attributes->favorites', { ascending: false, nullsFirst: false })
-  .limit(800);
+  .limit(Math.max(LIMIT * 3, 100));
 if (SLUG) q = q.eq('slug', SLUG);
 if (UNIVERSE) q = q.eq('universe', UNIVERSE);
 const { data, error } = await q;
@@ -38,7 +44,7 @@ const { data: pendantes } = await supabase
 const dejaEnReview = new Set((pendantes ?? []).map((r) => r.target_slug));
 
 const candidates = (data ?? [])
-  .filter((e) => !e.attributes?.descFr && !dejaEnReview.has(e.slug))
+  .filter((e) => !dejaEnReview.has(e.slug))   // descFr déjà écarté en SQL
   .slice(0, LIMIT);
 
 console.log(`${ROLES[ROLE].nom} — ${candidates.length} fiche(s) à rédiger :`);

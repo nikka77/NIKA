@@ -28,16 +28,26 @@ const MAX = Number(process.argv.find((a) => a.startsWith('--max='))?.split('=')[
 // Les juges du double verdict, avec leur plafond quotidien (miroir de LIMITES_FOURNISSEURS
 // dans agent-worker.mjs — si tu changes un plafond là-bas, reporte-le ici).
 const JUGES = [
-  { cle: process.env.NIKA_JUGE1 ?? 'gemini/gemma-4-31b-it', parJour: 13_000 },
-  { cle: process.env.NIKA_JUGE2 ?? 'groq/llama-3.3-70b-versatile', parJour: 900 },
+  { cle: process.env.NIKA_JUGE1 ?? 'gemini/gemma-4-31b-it', parJour: 11_500 },
+  { cle: process.env.NIKA_JUGE2 ?? 'groq/llama-3.3-70b-versatile', parJour: 800 },
 ];
-// Répartition des commandes : descFr est le plus gros manque (4 354 fiches), les axes
-// alimentent les filtres, les relations le graphe. Ajustable par variables d'environnement.
+// Répartition des commandes. `fiches` a été ajoutée le 01/08 et c'est LE déblocage : jusque-là
+// seuls les PERSONNAGES étaient servis (ops-fill-fandom), ce qui laissait 1 972 entrées Naruto
+// — jutsu, artefacts, lieux, statuts — hors d'atteinte de l'usine, quelle que soit la cadence.
+// Naruto : 43 % de la base pour 19 % de descFr, contre 88 % à Hunter x Hunter.
+// `relations` est à ZÉRO en attendant que l'usine soit branchée sur le graphe : ses relations
+// s'écrivent aujourd'hui dans un champ que le site ne lit pas — des jetons et des tours de
+// review dépensés pour rien. À remonter à ~0,15 dès le branchement livré.
 const PART = {
-  fandom: Number(process.env.NIKA_PART_FANDOM ?? 0.55),
-  attrs: Number(process.env.NIKA_PART_ATTRS ?? 0.25),
-  relations: Number(process.env.NIKA_PART_RELATIONS ?? 0.20),
+  fandom: Number(process.env.NIKA_PART_FANDOM ?? 0.40),
+  fiches: Number(process.env.NIKA_PART_FICHES ?? 0.40),
+  attrs: Number(process.env.NIKA_PART_ATTRS ?? 0.20),
+  relations: Number(process.env.NIKA_PART_RELATIONS ?? 0),
 };
+// Les quatre rôles non-personnages tournent, un par passage du timer (20 min) : chacun est
+// servi toutes les 80 min, sans qu'un rôle prolifique n'affame les autres.
+const ROLES_TOUR = ['fiche_technique', 'fiche_lexique', 'fiche_artefact', 'fiche_lieu'];
+const ROLE_DU_TOUR = ROLES_TOUR[Math.floor(Date.now() / 1_200_000) % ROLES_TOUR.length];
 
 const { data: metrics } = await supabase.rpc('ops_queue_metrics');
 const enFile = metrics?.[0]?.queue_length ?? 0;
@@ -70,21 +80,25 @@ if (commande < 10) {
 
 const lots = {
   fandom: Math.round(commande * PART.fandom),
+  fiches: Math.round(commande * PART.fiches),
   attrs: Math.round(commande * PART.attrs),
   relations: Math.round(commande * PART.relations),
 };
-console.log(`commande : ${commande} tâches → descFr ${lots.fandom} · axes ${lots.attrs} · relations ${lots.relations}`);
+console.log(`commande : ${commande} tâches → personnages ${lots.fandom} · ${ROLE_DU_TOUR} ${lots.fiches}`
+  + ` · axes ${lots.attrs} · relations ${lots.relations}`);
 if (DRY) process.exit(0);
 
+// Chaque entrée porte ses arguments propres : le rôle du tour n'est passé qu'aux fiches.
 const SCRIPTS = {
-  fandom: 'scripts/ops-fill-fandom.mjs',
-  attrs: 'scripts/ops-fill-attrs.mjs',
-  relations: 'scripts/ops-fill-relations.mjs',
+  fandom: ['scripts/ops-fill-fandom.mjs'],
+  fiches: ['scripts/ops-fill-fiches.mjs', `--role=${ROLE_DU_TOUR}`],
+  attrs: ['scripts/ops-fill-attrs.mjs'],
+  relations: ['scripts/ops-fill-relations.mjs'],
 };
 for (const [nom, n] of Object.entries(lots)) {
   if (n < 1) continue;
   try {
-    const { stdout } = await run(process.execPath, ['--env-file=.env.local', SCRIPTS[nom], `--limit=${n}`],
+    const { stdout } = await run(process.execPath, ['--env-file=.env.local', ...SCRIPTS[nom], `--limit=${n}`],
       { cwd: process.cwd(), maxBuffer: 8 * 1024 * 1024, timeout: 300_000 });
     console.log(`  ${nom} :`, stdout.trim().split('\n').pop() ?? 'ok');
   } catch (e) {
