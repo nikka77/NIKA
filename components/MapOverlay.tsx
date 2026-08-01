@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { useMapStore } from '@/lib/store';
 import { MAP_STYLE, NICE, markerEl, escHtml } from '@/lib/map';
 import 'maplibre-gl/dist/maplibre-gl.css';
@@ -142,6 +143,10 @@ export default function MapOverlay() {
 // Float button (fixed, always visible)
 export function FloatMapBtn() {
   const { openMap } = useMapStore();
+  const pathname = usePathname() ?? '';
+  // Sur /ops, ce bouton flottant recouvrait le coin des cartes de review — la carte du site
+  // n'a aucun usage sur un poste de pilotage (01/08).
+  if (pathname.startsWith('/ops')) return null;
   return (
     <button
       onClick={openMap}

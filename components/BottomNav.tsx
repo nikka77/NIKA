@@ -13,6 +13,9 @@ const PAGES = [DOMAINS.slice(0, 5), DOMAINS.slice(5)]; // [food…rent], [serv�
 
 export default function BottomNav() {
   const pathname = usePathname() ?? '';
+  // La console /ops est un poste de travail, pas une page du site : la bulle recouvrait les
+  // boutons ✓/× de review (68 px mesurés le 01/08) et chaque tap raté éjectait Dan vers /food.
+  if (pathname.startsWith('/ops')) return null;
   const router = useRouter();
   const heroActive = useHeroNav(s => s.activeDomain);
   const requestDomain = useHeroNav(s => s.requestDomain);

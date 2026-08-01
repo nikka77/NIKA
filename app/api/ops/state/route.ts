@@ -14,10 +14,26 @@ const admin = () =>
     ? createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY)
     : null;
 
-export async function GET() {
+export async function GET(req: Request) {
+  const complet = new URL(req.url).searchParams.get('bloc') === 'lent';
+  // ?bloc=lent absent → réponse LÉGÈRE (pas les 16 counts d'univers). Le client demande le
+  // bloc lent toutes les 4 requêtes : même fraîcheur perçue, 70 % de requêtes en moins.
+
   if (!(await opsAllowed())) return NextResponse.json({ error: 'forbidden' }, { status: 403 });
   const supabase = admin();
   if (!supabase) return NextResponse.json({ error: 'supabase absent' }, { status: 500 });
+
+  // Comptes SERVEUR exacts : le kanban n'affiche que 120 lignes, mais les boutons de lot
+  // agissent sur toute la base — les libellés doivent annoncer la portée réelle (audit du
+  // 01/08 : le dialogue disait « 18 fiches » et le lot en aurait écrit 107).
+  const [{ count: pendingTotal }, { count: validesTotal }] = await Promise.all([
+    supabase.from('agent_results').select('*', { count: 'exact', head: true })
+      .eq('review_status', 'pending').in('status', ['done', 'suspect']),
+    supabase.from('agent_results').select('*', { count: 'exact', head: true })
+      .eq('review_status', 'pending').eq('auto_verdict', 'valide')
+      .eq('auto2_verdict', 'valide').eq('status', 'done')
+      .or('arbitre_verdict.is.null,arbitre_verdict.eq.valide'),
+  ]);
 
   const [{ data: metrics }, { data: parType }, { data: results }] = await Promise.all([
     supabase.rpc('ops_queue_metrics'),
@@ -25,7 +41,7 @@ export async function GET() {
     supabase
       .from('agent_results')
       .select(
-        'id, task_type, target_slug, model, payload, result, status, review_status, error, created_at, auto_verdict, auto_motif, auto_model, auto_score, auto2_verdict, auto2_motif, auto2_model, auto_applique',
+        'id, task_type, target_slug, model, payload, result, status, review_status, error, created_at, auto_verdict, auto_motif, auto_model, auto_score, auto2_verdict, auto2_motif, auto2_model, arbitre_verdict, arbitre_motif, arbitre_model, auto_applique',
       )
       .order('id', { ascending: false })
       .limit(120),
@@ -54,6 +70,15 @@ export async function GET() {
     if (m) swap = { total: Math.round(Number(m[1])), used: Math.round(Number(m[2])) };
   } catch { /* indisponible : pilule absente */ }
 
+  // La flotte d'abord : c'est ELLE qui dit si l'usine travaille — l'ancien critère (le modèle
+  // chargé dans l'Ollama LOCAL) affichait « worker à l'arrêt » avec 115 tâches en file pendant
+  // que le VPS traitait à 40/h (mesuré le 01/08 : le GPU du Mac au repos ≠ usine arrêtée).
+  const { data: workers } = await supabase
+    .from('ops_workers').select('id, hote, role, detail, derniere_activite')
+    .order('derniere_activite', { ascending: false });
+  const usineVivante = (workers ?? []).some((w) =>
+    w.role === 'agents' && Date.now() - new Date(w.derniere_activite as string).getTime() < 180_000);
+
   let modeleActif: string | null = null;
   try {
     const r = await fetch('http://localhost:11434/api/ps', { signal: AbortSignal.timeout(1500) });
@@ -68,7 +93,7 @@ export async function GET() {
   const agents: AgentEtat[] = AGENTS.map((a) => {
     const dernier = recents.find((r) => r.task_type === a.type);
     const file = enFile.get(a.type) ?? 0;
-    const actif = Boolean(modeleActif && a.modele !== 'HHEM-2.1 (0,1 Md)' && file > 0);
+    const actif = Boolean(usineVivante && a.modele !== 'HHEM-2.1 (0,1 Md)' && file > 0);
 
     let etat: AgentEtat['etat'] = 'inactif';
     let action = 'aucune tâche en file';
@@ -76,7 +101,7 @@ export async function GET() {
       etat = actif ? 'travaille' : 'attente';
       action = actif
         ? `traite « ${dernier?.payload?.name ?? '…'} » · ${file} en file`
-        : `${file} tâche(s) en file, worker à l'arrêt`;
+        : `${file} tâche(s) en file, aucun nœud vivant`;
     } else if (dernier) {
       action = `dernière : « ${dernier.payload?.name ?? dernier.target_slug} »`;
     }
@@ -92,22 +117,20 @@ export async function GET() {
   // ── LA FLOTTE (L23-L25) — la console était restée centrée sur le Mac alors que l'usine vit
   // maintenant sur plusieurs nœuds : VPS 24/7, GPU local, salves de campagne. Un battement de
   // moins de 3 min = nœud vivant ; « ollama » dans le détail = il a un GPU.
-  const { data: workers } = await supabase
-    .from('ops_workers').select('id, hote, role, detail, derniere_activite')
-    .order('derniere_activite', { ascending: false });
   const flotte = (workers ?? []).map((w) => ({
     id: w.id as string,
     role: w.role as string,
     detail: (w.detail ?? '') as string,
     gpu: String(w.detail ?? '').includes('ollama'),
+    vuA: w.derniere_activite as string,   // l'âge se calcule au RENDU — un snapshot vieillit mal dans un onglet sans focus
     ageSec: Math.round((Date.now() - new Date(w.derniere_activite as string).getTime()) / 1000),
   })).filter((w) => w.ageSec < 86_400);
 
   // ── LES COULOIRS — quel modèle a encore du budget, lequel a fermé son guichet du jour.
   // C'est LE tableau de bord qui manquait : en une journée on a vu Groq plafonner à 2 000
   // jetons/jour et llama-70b mourir à midi, sans que rien ne le montre à l'écran.
-  const PLAFONDS: Record<string, { parJour?: number; parMinute: number }> = {
-    'groq/openai/gpt-oss-120b': { parJour: 800, parMinute: 24 },
+  const PLAFONDS: Record<string, { parJour?: number; parMinute: number; jetonsParJour?: number }> = {
+    'groq/openai/gpt-oss-120b': { parJour: 800, parMinute: 24, jetonsParJour: 2_000 },
     'groq/llama-3.3-70b-versatile': { parJour: 800, parMinute: 24 },
     'gemini/gemma-4-31b-it': { parJour: 11_500, parMinute: 24 },
     'gemini/gemini-flash-lite-latest': { parJour: 200, parMinute: 12 },
@@ -116,19 +139,26 @@ export async function GET() {
     'deepinfra/Qwen/Qwen3-32B': { parMinute: 60 },
     'deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo': { parMinute: 60 },
   };
-  const { data: quotas } = await supabase.from('ops_quotas').select('fournisseur, requetes, fenetre_debut');
+  const { data: quotas } = await supabase.from('ops_quotas').select('fournisseur, requetes, jetons, fenetre_debut');
   const parCle = new Map((quotas ?? []).map((q) => [q.fournisseur as string, q]));
   const couloirs = Object.entries(PLAFONDS).map(([cle, lim]) => {
     const jour = parCle.get(`${cle}:jour`);
     const perimee = !jour || Date.now() - new Date(jour.fenetre_debut as string).getTime() > 86_400_000;
     const consomme = perimee ? 0 : Number(jour?.requetes ?? 0);
+    const jetons = perimee ? 0 : Number(jour?.jetons ?? 0);
+    // Deux guichets ferment un couloir : les requêtes ET les jetons. Ignorer le second
+    // affichait gpt-oss « 783/800 » grand ouvert alors que ses 2 000 jetons/jour étaient
+    // brûlés depuis le matin (audit du 01/08).
+    const fermeJetons = lim.jetonsParJour ? jetons >= lim.jetonsParJour : false;
+    const fermeRequetes = lim.parJour ? consomme >= lim.parJour : false;
     return {
       cle, court: cle.split('/').pop() as string,
       payant: cle.startsWith('deepinfra/'),
       parJour: lim.parJour ?? null,
       consomme,
       restant: lim.parJour ? Math.max(0, lim.parJour - consomme) : null,
-      ferme: lim.parJour ? consomme >= lim.parJour : false,
+      ferme: fermeRequetes || fermeJetons,
+      motifFermeture: fermeJetons ? 'jetons épuisés' : fermeRequetes ? 'requêtes épuisées' : null,
     };
   });
 
@@ -136,27 +166,33 @@ export async function GET() {
   // vaut rien : ce qui compte est le modèle qui a effectivement tranché.
   const depuisH = new Date(Date.now() - 3_600_000).toISOString();
   const { data: verdicts } = await supabase.from('agent_results')
-    .select('auto_model, auto2_model, auto_at, auto2_at').or(`auto_at.gte.${depuisH},auto2_at.gte.${depuisH}`).limit(400);
-  const compte = (champ: 'auto_model' | 'auto2_model') => {
+    .select('auto_model, auto2_model, auto_at, auto2_at').or(`auto_at.gte.${depuisH},auto2_at.gte.${depuisH}`).order('id', { ascending: false }).limit(400);
+  // Chaque verdict est compté sur SON horodatage : le .or() ramène la ligne dès qu'UN des
+  // deux est récent, et compter les deux gonflait le tally de ~20 % (mesuré : 100 affichés
+  // pour 81 réels côté juge n°1).
+  const compte = (champ: 'auto_model' | 'auto2_model', at: 'auto_at' | 'auto2_at') => {
     const m: Record<string, number> = {};
     for (const v of verdicts ?? []) {
       const k = v[champ] as string | null;
-      if (k) m[k.split('/').pop() as string] = (m[k.split('/').pop() as string] ?? 0) + 1;
+      const t = v[at] as string | null;
+      if (!k || !t || t < depuisH) continue;
+      m[k.split('/').pop() as string] = (m[k.split('/').pop() as string] ?? 0) + 1;
     }
     return Object.entries(m).sort((a, b) => b[1] - a[1]).map(([nom, n]) => ({ nom, n }));
   };
-  const jury = { juge1: compte('auto_model'), juge2: compte('auto2_model') };
+  const jury = { juge1: compte('auto_model', 'auto_at'), juge2: compte('auto2_model', 'auto2_at') };
 
   // ── CADENCE — productions abouties dans l'heure, le seul chiffre qui dit si ça avance.
   const { count: cadence } = await supabase.from('agent_results')
     .select('*', { count: 'exact', head: true })
-    .gte('created_at', depuisH).neq('task_type', 'review_local');
+    .gte('created_at', depuisH).neq('task_type', 'review_local')
+    .in('status', ['done', 'suspect']);   // une heure de refus de garde ne doit pas s'afficher verte
 
   // ── COUVERTURE PAR UNIVERS — l'objectif final, univers par univers. Deux comptes légers
   // chacun (pas de scan) : total, et combien portent déjà une description française.
   const UNIVERS = ['Naruto', 'One Piece', 'Dragon Ball', 'Bleach', "JoJo's Bizarre Adventure",
     'Hunter x Hunter', 'Death Note', 'Initial D'];
-  const univers = await Promise.all(UNIVERS.map(async (u) => {
+  const univers = !complet ? null : await Promise.all(UNIVERS.map(async (u) => {
     const [{ count: total }, { count: avecFr }] = await Promise.all([
       supabase.from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u),
       supabase.from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u)
@@ -168,6 +204,7 @@ export async function GET() {
   return NextResponse.json({
     queue: metrics?.[0] ?? { queue_length: 0, total_messages: 0 },
     flotte, couloirs, jury, cadence: cadence ?? 0, univers,
+    pendingTotal: pendingTotal ?? 0, validesTotal: validesTotal ?? 0,
     results: recents,
     health: { ollama, omniroute, modeleActif, swap },
     agents,
@@ -182,15 +219,21 @@ export async function POST(req: Request) {
 
   const { id, action } = (await req.json()) as { id: number; action: 'approve' | 'reject' | 'approve_all_valid' | 'purge_failed' };
 
-  // Lot : applique toutes les productions que le relecteur local a jugées « valide ».
-  // Dan garde la décision (c'est lui qui clique), mais en une fois au lieu de N.
+  // Lot : applique les productions au CRITÈRE DE L'USINE — double verdict unanime, statut
+  // done strict, et jamais contre l'arbitre. Resserré le 01/08 : l'ancien filtre (juge n°1
+  // seul, suspect accepté) aurait écrit 107 fiches en en annonçant 18, dont 79 avec le juge
+  // n°2 CONTRE et 41 où l'arbitre avait tranché contre — l'audit l'a mesuré sur pièces.
+  // L'override d'une fiche refusée par le jury reste possible, mais À L'UNITÉ : un lot doit
+  // être aussi exigeant que l'automate qu'il remplace.
   if (action === 'approve_all_valid') {
     const { data: rows } = await supabase
       .from('agent_results')
       .select('id')
       .eq('review_status', 'pending')
       .eq('auto_verdict', 'valide')
-      .in('status', ['done', 'suspect']);
+      .eq('auto2_verdict', 'valide')
+      .eq('status', 'done')
+      .or('arbitre_verdict.is.null,arbitre_verdict.eq.valide');
     let applied = 0;
     // Un seul index d'univers pour tout le lot : sans lui, 40 approbations One Piece = 40 scans
     // paginés du registre. Le cache meurt avec la requête (jamais de vue périmée entre deux clics).

@@ -13,6 +13,7 @@ import { ROLES, angleFor } from './lib/akasha-roles.mjs';
 import { nomExpert, memoireExpert, expertNiche } from './lib/akasha-experts.mjs';
 import { viderParc } from './lib/whatsapp.mjs';
 import { scoreAncrageProduction } from './lib/ancrage.mjs';
+import { poserAuGraphe } from '../lib/akasha/relations.ts';
 import { hostname } from 'node:os';
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
@@ -1170,6 +1171,17 @@ async function verrouEtAppliquer(rowId, filtres) {
     patch.relationsSource = gagne.model;
   } else return false;
   await supabase.from('akasha_entries').update({ attributes: patch }).eq('slug', gagne.target_slug);
+  // MIROIR COMPLET de applyResult (audit du 01/08) : l'application manuelle versait les
+  // relations au graphe, l'automatique non — 25 fiches ⚡ sur 46 n'avaient posé AUCUNE arête,
+  // et sans journal l'annulation d'audit serait tombée en régime « recalcul » au risque
+  // d'emporter une arête curée. Même try/catch non bloquant que la route : le graphe est un
+  // bonus, un upsert cassé ne doit pas laisser la fiche à moitié appliquée.
+  if (gagne.task_type === 'akasha_relations') {
+    try {
+      const bilan = await poserAuGraphe(supabase, { resultId: gagne.id, slug: gagne.target_slug, relations: gagne.result?.relations ?? [] });
+      if (bilan.posees) console.log(`  ⚑ ${bilan.posees} arête(s) versée(s) au graphe : ${gagne.target_slug}`);
+    } catch (e) { console.log('  ⚑ graphe non versé (rattrapable par backfill) :', String(e).slice(0, 100)); }
+  }
   console.log(`  ⚡ auto-appliquée (double valide) : ${gagne.target_slug}`);
   return true;
 }

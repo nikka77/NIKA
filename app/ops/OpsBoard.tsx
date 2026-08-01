@@ -2,7 +2,7 @@
 // app/ops/OpsBoard.tsx — le kanban de la console OPS.
 // Colonnes = cycle de vie d'une tâche : en file → à relire → approuvé / rejeté.
 // Chaque carte montre la SOURCE et la PRODUCTION côte à côte : la review se fait ici, pas dans un terminal.
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import ConfirmDialog from '@/components/ConfirmDialog';
 import AgentsPanel, { ClaudeConsole, type AgentEtat } from './AgentsPanel';
 
@@ -26,10 +26,13 @@ type Result = {
   auto2_verdict: string | null;  // 2e juge (cloud, autre famille) — double verdict = autonomie
   auto2_motif: string | null;
   auto2_model: string | null;
+  arbitre_verdict: string | null;  // 3e voix (famille NVIDIA) — convoquée sur désaccord des juges
+  arbitre_motif: string | null;
+  arbitre_model: string | null;
   auto_applique: boolean;        // appliquée SANS Dan (double valide) — journalisée, annulable
 };
-type Noeud = { id: string; role: string; detail: string; gpu: boolean; ageSec: number };
-type Couloir = { cle: string; court: string; payant: boolean; parJour: number | null; consomme: number; restant: number | null; ferme: boolean };
+type Noeud = { id: string; role: string; detail: string; gpu: boolean; vuA?: string; ageSec: number };
+type Couloir = { cle: string; court: string; payant: boolean; parJour: number | null; consomme: number; restant: number | null; ferme: boolean; motifFermeture?: string | null };
 type Univers = { nom: string; total: number; avecFr: number };
 type State = {
   queue: { queue_length: number; total_messages: number };
@@ -37,7 +40,9 @@ type State = {
   couloirs: Couloir[];
   jury: { juge1: { nom: string; n: number }[]; juge2: { nom: string; n: number }[] };
   cadence: number;
-  univers: Univers[];
+  univers: Univers[] | null;   // null en réponse légère — on garde alors la dernière valeur
+  pendingTotal: number;
+  validesTotal: number;
   results: Result[];
   health: { ollama: boolean; omniroute: boolean; modeleActif: string | null; swap: { total: number; used: number } | null };
   agents: AgentEtat[];
@@ -72,9 +77,16 @@ export default function OpsBoard() {
   // charge, et la page qui relançait un fetch échouant toutes les 8 s).
   const load = useCallback(async () => {
     try {
-      const r = await fetch('/api/ops/state', { cache: 'no-store', signal: AbortSignal.timeout(20_000) });
+      // Cadences différenciées (audit du 01/08) : un tick complet faisait 23 requêtes Supabase
+      // dont 16 counts de couverture qui ne changent qu'à l'application d'une fiche. Le bloc
+      // lent ne part qu'un tick sur quatre — même fraîcheur perçue, 70 % de requêtes en moins.
+      const lent = tickRef.current % 4 === 0;
+      tickRef.current += 1;
+      const r = await fetch(`/api/ops/state${lent ? '?bloc=lent' : ''}`, { cache: 'no-store', signal: AbortSignal.timeout(20_000) });
       if (!r.ok) throw new Error(String(r.status));
-      setState(await r.json());
+      const neuf: State = await r.json();
+      // réponse légère : on conserve la couverture déjà connue au lieu de l'effacer
+      setState((prec) => ({ ...neuf, univers: neuf.univers ?? prec?.univers ?? null }));
       setInjoignable(false);
     } catch {
       setInjoignable(true);
@@ -84,7 +96,11 @@ export default function OpsBoard() {
   useEffect(() => {
     load();
     const t = setInterval(load, 8000);   // le worker tourne en fond : on rafraîchit
-    return () => clearInterval(t);
+    // Un onglet sans focus gèle ses timers : au retour, l'écran peut mentir de plusieurs
+    // minutes (« à l'instant » sur un nœud mort). On refetch dès que la page redevient visible.
+    const reveil = () => { if (document.visibilityState === 'visible') load(); };
+    document.addEventListener('visibilitychange', reveil);
+    return () => { clearInterval(t); document.removeEventListener('visibilitychange', reveil); };
   }, [load]);
 
   const review = async (id: number, action: 'approve' | 'reject') => {
@@ -105,20 +121,29 @@ export default function OpsBoard() {
   };
 
   // Lot : n'applique que ce que le relecteur local a jugé « valide ». Un clic au lieu de N.
+  const tickRef = useRef(0);
   const [bulk, setBulk] = useState<string | null>(null);
   const [confirmBulk, setConfirmBulk] = useState<'apply' | 'purge' | null>(null);
   const applyAllValid = async () => {
     setConfirmBulk(null);
-    setBulk('en cours…');
-    const r = await fetch('/api/ops/state', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'approve_all_valid' }),
-    });
-    const j = await r.json();
-    setBulk(`${j.applied ?? 0} fiche(s) appliquée(s)`);
-    await load();
-    setTimeout(() => setBulk(null), 4000);
+    setBulk('application en cours…');
+    // try/finally : un échec réseau laissait le bouton figé sur « en cours… » jusqu'au
+    // rechargement (audit du 01/08) — l'état se libère quoi qu'il arrive.
+    try {
+      const r = await fetch('/api/ops/state', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'approve_all_valid' }),
+      });
+      if (!r.ok) throw new Error(String(r.status));
+      const j = await r.json();
+      setBulk(`✓ ${j.applied} appliquée(s)`);
+    } catch {
+      setReviewErr('le lot a échoué — recharge et vérifie ce qui a été écrit');
+    } finally {
+      await load();
+      setTimeout(() => setBulk(null), 4000);
+    }
   };
 
   const pending = state?.results.filter((r) => r.review_status === 'pending' && r.status === 'done') ?? [];
@@ -129,7 +154,10 @@ export default function OpsBoard() {
   ) ?? [];
   const approved = state?.results.filter((r) => r.review_status === 'approved') ?? [];
   const rejected = state?.results.filter((r) => r.review_status === 'rejected') ?? [];
-  const nbValides = [...pending, ...suspect].filter((r) => r.auto_verdict === 'valide').length;
+  // Compte SERVEUR : la fenêtre de 120 lignes annonçait « 18 fiches » quand le lot en aurait
+  // écrit 107 (audit du 01/08). Le serveur applique désormais le critère de l'usine (double
+  // verdict, done, jamais contre l'arbitre) et c'est LUI qui compte.
+  const nbValides = state?.validesTotal ?? 0;
   const nbEchecs = refused.filter((r) => r.status === 'failed').length;
 
   const purgerEchecs = async () => {
@@ -150,8 +178,20 @@ export default function OpsBoard() {
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, flexWrap: 'wrap', marginBottom: 4 }}>
           <h1 style={{ ...fe(30), color: 'var(--td)', margin: 0 }}>NIKA OPS</h1>
           <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td3)' }}>
-            console locale des agents · rafraîchie toutes les 8 s
+            console de l’usine · rafraîchie toutes les 8 s
           </span>
+          {/* L'état en 3 secondes — dérivé de la flotte et de la cadence, jamais du Mac seul.
+              Le vécu qui l'impose : « 1 tâche en 20 min, service actif, personne ne s'en
+              apercevait » (01/08). */}
+          {(() => {
+            const vivant = (state?.flotte ?? []).some((n) => n.role === 'agents' && ageNoeud(n) < 180);
+            const cadence = state?.cadence ?? 0;
+            const [txt, col] = !state ? ['…', 'var(--td3)']
+              : !vivant ? ['ARRÊTÉE', KO]
+              : cadence > 5 ? ['EN MARCHE', OK]
+              : ['EN SIESTE', WARN];
+            return <span style={{ ...fe(15), color: col, border: `1px solid ${col}66`, background: `${col}14`, borderRadius: 20, padding: '3px 14px' }}>usine {txt}</span>;
+          })()}
           {/* La calibration : sans elle, le verdict du juge n'est qu'une décoration. */}
           <a href="/ops/audit" style={{
             fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700, color: CY, textDecoration: 'none',
@@ -171,9 +211,11 @@ export default function OpsBoard() {
               en 20 min, service « active », personne ne s'en apercevait). */}
           <Pill label={`cadence : ${state?.cadence ?? '…'}/h`}
             color={(state?.cadence ?? 0) > 40 ? OK : (state?.cadence ?? 0) > 5 ? WARN : KO} />
-          <Pill label={`Ollama ${state?.health.ollama ? 'actif' : 'éteint'}`} color={state?.health.ollama ? OK : KO} />
-          <Pill label={`OmniRoute ${state?.health.omniroute ? 'actif' : 'éteint'}`} color={state?.health.omniroute ? OK : KO} />
-          {state?.health.swap && (
+          {/* Les pilules Ollama/OmniRoute ont disparu le 01/08 : OmniRoute n'est plus dans le
+              chemin de production, et le bloc Flotte montre déjà le nœud GPU avec son battement.
+              Deux alarmes rouges permanentes sur une usine en pleine forme apprenaient à l'œil
+              à ignorer le rouge. Le swap ne s'affiche que si un nœud local travaille vraiment. */}
+          {state?.health.swap && (state?.flotte ?? []).some((n) => n.gpu && ageNoeud(n) < 180) && (
             <Pill
               label={`swap ${(state.health.swap.used / 1024).toFixed(1)}/${(state.health.swap.total / 1024).toFixed(0)} Go`}
               color={state.health.swap.used / state.health.swap.total < 0.4 ? OK
@@ -198,7 +240,7 @@ export default function OpsBoard() {
                 border: `1px solid ${OK}77`, background: `${OK}1c`, color: OK,
                 fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700,
               }}>
-              {bulk ?? `✓ Appliquer les ${nbValides} jugées valides`}
+              {bulk ?? `✓ Appliquer les ${nbValides} doubles-valides`}
             </button>
           )}
         </div>
@@ -210,9 +252,10 @@ export default function OpsBoard() {
             l'affiche : ces trois blocs existent pour que ça ne se reproduise pas. */}
         <div className="g-3" style={{ marginBottom: 22 }}>
 
-          <Bloc titre="La flotte" note={`${state?.flotte?.filter((n) => n.ageSec < 180).length ?? 0} nœud(s) vivant(s)`}>
+          <Bloc titre="La flotte" note={`${state?.flotte?.filter((n) => ageNoeud(n) < 180).length ?? 0} nœud(s) vivant(s)`}>
             {(state?.flotte ?? []).slice(0, 6).map((n) => {
-              const vivant = n.ageSec < 180;
+              const age = ageNoeud(n);
+              const vivant = age < 180;
               return (
                 <Ligne key={n.id}
                   gauche={<>
@@ -221,7 +264,7 @@ export default function OpsBoard() {
                     <span style={{ color: 'var(--td3)' }}> · {n.role}</span>
                     {n.gpu && <span style={{ color: CY }}> · GPU</span>}
                   </>}
-                  droite={vivant ? 'à l’instant' : n.ageSec < 3600 ? `${Math.round(n.ageSec / 60)} min` : `${Math.round(n.ageSec / 3600)} h`}
+                  droite={vivant ? 'à l’instant' : age < 3600 ? `${Math.round(age / 60)} min` : `${Math.round(age / 3600)} h`}
                 />
               );
             })}
@@ -235,8 +278,9 @@ export default function OpsBoard() {
                   <span style={{ color: c.ferme ? KO : c.payant ? CY : OK }}>{c.ferme ? '✕' : c.payant ? '$' : '●'}</span>{' '}
                   {c.court}
                 </>}
-                droite={c.parJour === null ? (c.payant ? 'au jeton' : 'sans plafond')
-                  : c.ferme ? 'fermé' : `${c.restant}/${c.parJour}`}
+                droite={c.ferme ? `fermé — ${c.motifFermeture ?? 'plafond'}`
+                  : c.parJour === null ? (c.payant ? 'au jeton' : 'sans plafond')
+                  : `${c.restant}/${c.parJour}`}
                 sourd={c.ferme}
               />
             ))}
@@ -255,30 +299,10 @@ export default function OpsBoard() {
           </Bloc>
         </div>
 
-        {/* ── COUVERTURE PAR UNIVERS — l'objectif final, et le seul chiffre qui compte
-            vraiment : combien de fiches sont VISIBLES sur le site, pas combien ont été
-            produites. Une fiche produite mais non jugée n'existe pas pour un visiteur. */}
-        <Bloc titre="Couverture des univers" note="fiches publiées avec une description française">
-          {(state?.univers ?? []).sort((a, b) => b.total - a.total).map((u) => {
-            const pct = u.total ? Math.round((u.avecFr / u.total) * 100) : 0;
-            return (
-              <div key={u.nom} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '5px 0' }}>
-                <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td)', width: 150, flexShrink: 0 }}>{u.nom}</span>
-                <div style={{ flex: 1, height: 7, borderRadius: 4, background: 'rgba(255,255,255,0.06)', overflow: 'hidden', minWidth: 60 }}>
-                  <div style={{ width: `${pct}%`, height: '100%', background: pct >= 80 ? OK : pct >= 50 ? CY : WARN }} />
-                </div>
-                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', width: 96, textAlign: 'right', flexShrink: 0 }}>
-                  {u.avecFr}/{u.total} · {pct} %
-                </span>
-              </div>
-            );
-          })}
-        </Bloc>
-
         <ConfirmDialog
           open={confirmBulk === 'apply'}
           title="Appliquer les fiches jugées valides ?"
-          message={`${nbValides} fiche(s) seront écrites dans akasha_entries en une fois.`}
+          message={`${nbValides} fiche(s) au critère de l’usine (double verdict, jamais contre l’arbitre) seront écrites dans akasha_entries.`}
           confirmLabel="Appliquer"
           onConfirm={applyAllValid}
           onClose={() => setConfirmBulk(null)}
@@ -294,15 +318,16 @@ export default function OpsBoard() {
         />
 
         {/* Vue par agent : état + ce qu'il fait à cet instant */}
-        <AgentsPanel agents={state?.agents ?? []} modeleActif={state?.health.modeleActif ?? null} />
+
 
         {/* Console Claude : prompter le développement du site depuis la page */}
-        <ClaudeConsole />
+
 
         {/* Kanban des productions */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(310px,1fr))', gap: 14, alignItems: 'start' }}>
-          <Column title="À relire" count={pending.length} accent={WARN}>
-            {pending.map((r) => (
+          <Column title="À relire" count={state?.pendingTotal ?? pending.length} accent={WARN}
+            note={pending.length < (state?.pendingTotal ?? 0) ? `${pending.length} affichées` : undefined}>
+            {[...pending].sort((a, b) => prioRelecture(a) - prioRelecture(b)).map((r) => (
               <Card key={r.id} r={r} busy={busy === r.id} onReview={review} />
             ))}
             {!pending.length && <Empty text="rien à relire" />}
@@ -339,6 +364,29 @@ export default function OpsBoard() {
           </Column>
         </div>
 
+        {/* ── COUVERTURE PAR UNIVERS : combien de fiches sont VISIBLES sur le site — une fiche
+            produite mais non jugée n'existe pas pour un visiteur. Puis les agents et la console
+            Claude, APRÈS le travail de Dan (la pile commençait à 3 écrans de profondeur). */}
+        <AgentsPanel agents={state?.agents ?? []} modeleActif={state?.health.modeleActif ?? null} />
+        <ClaudeConsole />
+
+        <Bloc titre="Couverture des univers" note="fiches publiées avec une description française">
+          {(state?.univers ?? []).sort((a, b) => b.total - a.total).map((u) => {
+            const pct = u.total ? Math.round((u.avecFr / u.total) * 100) : 0;
+            return (
+              <div key={u.nom} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '5px 0' }}>
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td)', width: 150, flexShrink: 0 }}>{u.nom}</span>
+                <div style={{ flex: 1, height: 7, borderRadius: 4, background: 'rgba(255,255,255,0.06)', overflow: 'hidden', minWidth: 60 }}>
+                  <div style={{ width: `${pct}%`, height: '100%', background: pct >= 80 ? OK : pct >= 50 ? CY : WARN }} />
+                </div>
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', width: 96, textAlign: 'right', flexShrink: 0 }}>
+                  {u.avecFr}/{u.total} · {pct} %
+                </span>
+              </div>
+            );
+          })}
+        </Bloc>
+
         <p style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', marginTop: 26, lineHeight: 1.6 }}>
           Approuver écrit le résultat dans <code>akasha_entries.attributes</code> (les valeurs « inconnu » ne
           remplacent jamais une valeur existante). Alimenter la file :{' '}
@@ -352,6 +400,12 @@ export default function OpsBoard() {
 
 /* Briques des blocs de suivi — même grammaire visuelle que le reste de la console :
    hairline, typo Outfit, aucune couleur qui ne dise quelque chose. */
+/* Âge d'un nœud calculé au moment du RENDU : le serveur envoie l'horodatage brut, pas un
+   âge figé qui vieillirait mal dans un onglet resté en arrière-plan. */
+function ageNoeud(n: Noeud): number {
+  return n.vuA ? Math.round((Date.now() - new Date(n.vuA).getTime()) / 1000) : n.ageSec;
+}
+
 function Bloc({ titre, note, children }: { titre: string; note?: string; children: React.ReactNode }) {
   return (
     <section style={{ border: '1px solid var(--bd2)', borderRadius: 12, padding: '13px 15px', background: 'rgba(255,255,255,0.02)', minWidth: 0, marginBottom: 14 }}>
@@ -385,12 +439,22 @@ function Pill({ label, color }: { label: string; color: string }) {
   );
 }
 
-function Column({ title, count, accent, children }: { title: string; count: number; accent: string; children: React.ReactNode }) {
+/* Ce qui mérite l'œil en premier : un désaccord entre juges QUE PERSONNE n'a départagé, puis
+   l'ancrage le plus faible. Le reste suit dans l'ordre d'arrivée. */
+function prioRelecture(r: Result): number {
+  const desaccordNu = r.auto_verdict && r.auto2_verdict && r.auto_verdict !== r.auto2_verdict && !r.arbitre_verdict;
+  if (desaccordNu) return 0;
+  if (r.auto_score != null) return 1 + r.auto_score;   // 1,00 → 2,00 : le moins étayé d'abord
+  return 3;
+}
+
+function Column({ title, count, accent, note, children }: { title: string; count: number; accent: string; note?: string; children: React.ReactNode }) {
   return (
     <section style={{ minWidth: 0 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10, paddingBottom: 8, borderBottom: `2px solid ${accent}` }}>
         <span style={{ ...fe(13), color: 'var(--td)' }}>{title}</span>
         <span style={{ fontFamily: 'var(--fn)', fontSize: 17, color: accent }}>{count}</span>
+        {note && <span style={{ fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>{note}</span>}
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>{children}</div>
     </section>
@@ -427,13 +491,14 @@ function Card({ r, busy, compact, onReview }: {
       </div>
 
       {/* Ancrage HHEM : « ce qui est affirmé est-il dans la source ? » — modèle spécialisé sur CPU. */}
+      {/* Teinte NEUTRE depuis le 01/08 : mesuré, ce score ne discrimine pas le vrai du faux
+          (le veto a été retiré du pipeline le même jour) — un rouge ici biaisait la review
+          avec un signal démontré non informatif. Le chiffre reste pour la calibration. */}
       {r.auto_score != null && (
         <span style={{
           display: 'inline-block', marginTop: 7,
-          fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700,
-          color: r.auto_score >= 0.5 ? OK : r.auto_score >= 0.15 ? WARN : KO,
-          border: `1px solid ${(r.auto_score >= 0.5 ? OK : r.auto_score >= 0.15 ? WARN : KO)}55`,
-          background: `${r.auto_score >= 0.5 ? OK : r.auto_score >= 0.15 ? WARN : KO}12`,
+          fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: 'var(--td3)',
+          border: '1px solid var(--bd2)', background: 'rgba(255,255,255,0.04)',
           borderRadius: 5, padding: '2px 7px', marginRight: 6,
         }}>ancrage {r.auto_score.toFixed(2)}</span>
       )}
@@ -459,6 +524,17 @@ function Card({ r, busy, compact, onReview }: {
               borderRadius: 5, padding: '2px 7px',
             }}>
               juge cloud : {VERDICT[r.auto2_verdict]?.l ?? r.auto2_verdict}
+            </span>
+          )}
+          {r.arbitre_verdict && (
+            <span style={{
+              marginLeft: 6, fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700,
+              color: VERDICT[r.arbitre_verdict]?.c ?? 'var(--td3)',
+              border: `1px solid ${VERDICT[r.arbitre_verdict]?.c ?? 'var(--bd2)'}55`,
+              background: `${VERDICT[r.arbitre_verdict]?.c ?? '#888'}12`,
+              borderRadius: 5, padding: '2px 7px',
+            }}>
+              ⚖ arbitre : {VERDICT[r.arbitre_verdict]?.l ?? r.arbitre_verdict}
             </span>
           )}
           {r.auto_applique && (

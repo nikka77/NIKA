@@ -39,18 +39,22 @@ export default function AuditPanel() {
   useEffect(() => { load(); }, [load]);
 
   const voter = async (verdict_dan: 'exact' | 'a_corriger' | 'faux') => {
-    if (!etat?.fiche || busy) return;
-    setBusy(true);
-    const r = await fetch('/api/ops/audit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ result_id: etat.fiche.id, verdict_dan }),
-    });
-    const j = await r.json();
-    if (j.annule) setFlash('fiche déjà appliquée → annulée en base');
-    setTimeout(() => setFlash(null), 4000);
-    await load();
-    setBusy(false);
+    try {
+      if (!etat?.fiche || busy) return;
+      setBusy(true);
+      const r = await fetch('/api/ops/audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ result_id: etat.fiche.id, verdict_dan }),
+      });
+      const j = await r.json();
+      if (j.annule) setFlash('fiche déjà appliquée → annulée en base');
+      setTimeout(() => setFlash(null), 4000);
+      await load();
+      setBusy(false);
+} finally {
+      setBusy(false);
+    }
   };
 
   const f = etat?.fiche;

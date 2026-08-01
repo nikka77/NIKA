@@ -3,6 +3,7 @@ import { Bebas_Neue, Exo_2, Outfit } from 'next/font/google';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import HorsOps from '@/components/HorsOps';
 import MapOverlay, { FloatMapBtn } from '@/components/MapOverlay';
 import BottomNav from '@/components/BottomNav';
 import ScrollProgress from '@/components/ScrollProgress';
@@ -42,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ScrollProgress />
         <Nav />
         {children}
-        <Footer />
+        <HorsOps><Footer /></HorsOps>
         <MapOverlay />
         <FloatMapBtn />
         <BottomNav />
