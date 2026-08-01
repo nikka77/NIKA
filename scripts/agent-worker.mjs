@@ -1179,6 +1179,30 @@ async function autoAppliquerMajorite(rowId) {
   return verrouEtAppliquer(rowId, (q) =>
     q.eq('arbitre_verdict', 'valide').or('auto_verdict.eq.valide,auto2_verdict.eq.valide'));
 }
+/** Ajoute UNE section au tableau d'une fiche, en résistant aux écritures concurrentes.
+ *  Lecture-modification-écriture optimiste : on relit juste avant d'écrire, puis on VÉRIFIE
+ *  que la nôtre est bien arrivée. Si un voisin nous a doublés entre-temps, on recommence.
+ *  Trois tentatives suffisent largement à 6 sections de front ; au-delà on renonce plutôt que
+ *  de boucler, et la fiche repartira au prochain passage du remplisseur. */
+async function ajouterSection(slug, neuve, modele) {
+  for (let essai = 1; essai <= 3; essai++) {
+    const { data: entry } = await supabase.from('akasha_entries').select('attributes').eq('slug', slug).single();
+    if (!entry) return false;
+    const attrs = { ...(entry.attributes ?? {}) };
+    const dejaLa = Array.isArray(attrs.sections) ? attrs.sections : [];
+    attrs.sections = [...dejaLa.filter((x) => String(x.i) !== String(neuve.i)), neuve]
+      .sort((a, b) => Number(a.i) - Number(b.i));
+    attrs.sectionsSource = modele;
+    await supabase.from('akasha_entries').update({ attributes: attrs }).eq('slug', slug);
+
+    const { data: apres } = await supabase.from('akasha_entries').select('attributes').eq('slug', slug).single();
+    const posees = Array.isArray(apres?.attributes?.sections) ? apres.attributes.sections : [];
+    if (posees.some((x) => String(x.i) === String(neuve.i))) return true;   // la nôtre a tenu
+  }
+  console.log(`  ⚠ section ${neuve.i} de ${slug} perdue en concurrence après 3 essais`);
+  return false;
+}
+
 async function verrouEtAppliquer(rowId, filtres) {
   // ANCRAGE HHEM — SCORE INFORMATIF, PLUS DE VETO (mesuré le 01/08, veto retiré le jour même).
   //
@@ -1220,15 +1244,17 @@ async function verrouEtAppliquer(rowId, filtres) {
     for (const [k, v] of Object.entries(gagne.result ?? {}))
       if (v && v !== 'inconnu' && !k.endsWith('_preuve')) patch[k] = v;
   } else if (gagne.task_type === 'fiche_section') {
-    // Les sections s'accumulent dans un TABLEAU ORDONNÉ : chaque agent écrit la sienne, à sa
-    // place, sans écraser celle du voisin. L'index vient du wiki, donc l'ordre de lecture est
-    // celui de l'article canon. Réécrire une section déjà présente la remplace (reprise possible).
-    const dejaLa = Array.isArray(patch.sections) ? patch.sections : [];
+    // ⚠ ÉCRITURE CONCURRENTE — les sections d'une même fiche s'appliquent EN PARALLÈLE (5 ou 6
+    // de front), et chacune ajoute la sienne à un tableau qu'elle vient de lire : la dernière
+    // écriture écrasait les précédentes. Constaté sur Sharingan le 01/08 : deux sections
+    // marquées ⚡ appliquées, UNE SEULE en base. Le patch commun ne convient donc pas ici —
+    // on relit et on réécrit jusqu'à voir la nôtre arriver (voir ajouterSection).
     const neuve = { i: gagne.payload?.section_index, titre: gagne.result?.titre, texte: gagne.result?.texte };
     if (!neuve.i || !neuve.texte) return false;
-    patch.sections = [...dejaLa.filter((x) => String(x.i) !== String(neuve.i)), neuve]
-      .sort((a, b) => Number(a.i) - Number(b.i));
-    patch.sectionsSource = gagne.model;
+    const pose = await ajouterSection(gagne.target_slug, neuve, gagne.model);
+    if (!pose) return false;
+    console.log(`  ⚡ section « ${neuve.titre} » appliquée : ${gagne.target_slug}`);
+    return true;
   } else if (gagne.task_type === 'akasha_relations') {
     const rel = gagne.result?.relations ?? [];
     if (!rel.length) return false;

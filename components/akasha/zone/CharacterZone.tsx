@@ -217,6 +217,29 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
         </div>
       </section>
 
+      {/* ── LE DOSSIER (L26, 01/08) — les sections longues, écrites une par agent sur le
+          découpage du wiki. Elles vivent ICI et pas seulement sur la page générique : un
+          PERSONNAGE rend CharacterZone et n'atteint jamais le bas de la page (même piège que
+          les relations ce matin — Misa Amane avait 6 sections en base et une fiche muette). */}
+      {(() => {
+        const sections = (a.sections as { i?: string; titre?: string; texte?: string }[] | undefined);
+        if (!Array.isArray(sections) || !sections.length) return null;
+        return (
+          <section className="ak-dossier" style={{ gridColumn: '1 / -1', marginTop: 28 }}>
+            {sections.filter((s) => s?.titre && s?.texte).map((s, i) => (
+              <div key={s.i ?? i} style={{ marginBottom: 22 }}>
+                <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: accent, marginBottom: 9 }}>
+                  {s.titre}
+                </div>
+                <p style={{ fontFamily: 'var(--fo)', fontSize: 14.5, color: 'var(--td2)', lineHeight: 1.75, margin: 0, whiteSpace: 'pre-line' }}>
+                  {s.texte}
+                </p>
+              </div>
+            ))}
+          </section>
+        );
+      })()}
+
       {/* ── CANAL ───────────────────────────────────────────── */}
       <aside className="ak-canal" aria-live="polite">
         <Canal entry={entry} accent={accent} f={f} fstr={fstr} fStats={fStats} sharedVoice={sharedVoice} />
