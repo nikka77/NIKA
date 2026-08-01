@@ -610,6 +610,7 @@ const LIMITES_FOURNISSEURS = {
   // Plafond/minute prudent au départ, à relever une fois la cadence réelle mesurée.
   'deepinfra/Qwen/Qwen3-32B':                  { requetes: 60, jetons: 400_000, fenetre: 60 },
   'deepinfra/mistralai/Mistral-Small-24B-Instruct-2501': { requetes: 60, jetons: 400_000, fenetre: 60 },
+  'deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo': { requetes: 60, jetons: 400_000, fenetre: 60 },
   deepinfra: { requetes: 60, jetons: 400_000, fenetre: 60 },
 
   // ── Replis par FOURNISSEUR : plancher pour un modèle non listé, jamais une cible de production.
@@ -990,7 +991,14 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
     // Juge n°1 : gemma local (gratuit illimité) SI Ollama existe (Mac) — sinon gemma-4-31b
     // en nuage : même famille Google (croisement avec llama-70b préservé) mais 11 500 relectures
     // par jour contre 200 à flash-lite, qui était le vrai plafond de la chaîne (audit 01/08).
-    { juge_modele: (await ollamaDisponible()) ? 'ollama/gemma4:12b' : 'gemini/gemma-4-31b-it', slot: 'auto' },
+    // Juge n°1 : Llama-3.3-70B chez DeepInfra dès que la clé existe — famille Meta, distincte
+    // du producteur (Mistral), du juge n°2 (Qwen) et de l'arbitre (NVIDIA). Bascule du 01/08 :
+    // gemma-4-31b était devenu LE goulot du jugement, non par son plafond quotidien (11 500,
+    // confortable) mais par son débit — 12 000 jetons/minute PARTAGÉS entre tous les nœuds, soit
+    // ~5 verdicts/minute pour la flotte entière. Repli : gemma local si le Mac est là, sinon
+    // gemma en nuage — la chaîne reste vivante sans DeepInfra, simplement plus lente.
+    { juge_modele: process.env.DEEPINFRA_API_KEY ? 'deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo'
+        : (await ollamaDisponible()) ? 'ollama/gemma4:12b' : 'gemini/gemma-4-31b-it', slot: 'auto' },
     // Juge n°2 : llama-70b (Meta) en priorité — gemma local + Gemini étaient de la MÊME
     // famille Google (angles morts partagés, corrigé par l'étude modèles du 28/07).
     // Le juge n°2 est choisi PARMI les couloirs encore ouverts de la liste --juge : les
