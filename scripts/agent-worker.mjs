@@ -519,8 +519,17 @@ const LIMITES_FOURNISSEURS = {
   // et AUCUN compteur de jetons par jour n'est exposé. La doc mentionne un TPD de 200 000 : s'il
   // existe vraiment, on le rencontrera en 429 (géré par le backoff) plutôt que de se brider à
   // ~55 productions/jour pour une limite peut-être fictive. jetonsRestants() journalise la vérité.
-  'groq/openai/gpt-oss-120b':        { requetes: 24, jetons: 6_400, fenetre: 60, parJour: 800 },
+  // ⚠ gpt-oss-120b : TPD MESURÉ À 2 000 JETONS/JOUR sur ce compte (message du 429 le 01/08),
+  // soit ~8 fiches par jour — couloir MORT pour la production, malgré 1 000 req/jour affichées
+  // et une doc annonçant 200 000. Le plafond ci-dessous évite d'essayer pour rien : le worker
+  // bascule aussitôt sur le couloir suivant. Une sonde de taille RÉELLE (ops-sonde-couloirs)
+  // est le seul moyen de connaître ces murs — une sonde à 1 jeton passe et ment.
+  'groq/openai/gpt-oss-120b':        { requetes: 24, jetons: 6_400, fenetre: 60, parJour: 800, jetonsParJour: 2_000 },
   'groq/llama-3.3-70b-versatile':    { requetes: 24, jetons: 9_600, fenetre: 60, parJour: 800 },
+  // Production depuis le 01/08 : Mistral (4e famille, embauché le 29/07 au piège canon) — il
+  // encaisse une requête de taille réelle quand Groq refuse. ⚠ palier gratuit = données
+  // d'entraînement : fiches PUBLIQUES d'AKASHA uniquement, jamais de donnée client.
+  'mistral/mistral-large-latest':    { requetes: 2, jetons: 20_000, fenetre: 60 },
   // ── Google — plafonds non publiés depuis déc. 2025 : 80 % des dernières valeurs connues.
   // gemma-4 est le meilleur débit du parc (2 193 jetons/production → 5/min, des milliers/jour).
   'gemini/gemini-flash-lite-latest': { requetes: 12, jetons: 200_000, fenetre: 60, parJour: 200 },

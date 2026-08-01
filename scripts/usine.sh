@@ -16,7 +16,11 @@ cd "$(dirname "$0")/.."
 # Couloirs en LISTE : le worker bascule sur le suivant quand un guichet du jour se ferme.
 # Production : gpt-oss-120b (qualifié, en tête) — les autres couloirs candidats n'entrent ici
 # QU'APRÈS avoir passé l'audit à l'aveugle du dimanche. On ne troque pas la qualité contre du débit.
-MODELE=${CLOUD_MODEL:-groq/openai/gpt-oss-120b}
+# Production : Mistral en tête depuis le 01/08 — gpt-oss-120b, l'ancien titulaire, est plafonné
+# à 2 000 jetons/JOUR sur ce compte (~8 fiches), mesuré au 429. Mistral et Nemotron encaissent
+# tous deux une requête de taille réelle et ont passé leurs sondes d'embauche du 29/07.
+# Familles distinctes de bout en bout : Mistral produit · Google et Meta jugent · NVIDIA arbitre.
+MODELE=${CLOUD_MODEL:-mistral/mistral-large-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/openai/gpt-oss-120b}
 # Jugement n°2 (famille croisée) : llama-70b d'abord — son mur réel est 80 000 jetons/jour,
 # soit ~30 relectures — puis Nemotron (NVIDIA) et Mistral, deux familles de plus, pour que
 # la chaîne ne s'arrête pas à midi. Le juge n°1 (gemma, Google) est choisi par le worker.
