@@ -1225,8 +1225,21 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
   // JAMAIS retomber sur le modèle de l'autre juge — deux verdicts du même modèle feraient un
   // faux consensus, donc une écriture automatique sans véritable second regard.
   const modelesDuJury = [...new Set([...juges.map((j) => j.juge_modele), ...(evitePlus ?? [])])];
-  await supabase.rpc('ops_queue_send_batch', {
-    messages: juges.map((j) => ({
+  // TROIS ESSAIS (audit 02/08) : un échec silencieux ici fabrique une production ORPHELINE —
+  // insérée en base, aucun juge en file, invisible partout (la classe de bug rattrapée par
+  // ops-rejoue-relectures le 02/08 : 118 sections Death Note). On préfère crier que perdre.
+  const envoyerJury = async (messages) => {
+    for (let essai = 1; essai <= 3; essai++) {
+      const { error } = await supabase.rpc('ops_queue_send_batch', { messages });
+      if (!error) return true;
+      console.error(`  ✗ mise en file du jury (essai ${essai}/3) : ${error.message.slice(0, 80)}`);
+      await new Promise((r) => setTimeout(r, 1000 * essai));
+    }
+    console.error(`  ✗✗ jury JAMAIS mis en file pour #${reviewedId} — ops-rejoue-relectures le rattrapera`);
+    return false;
+  };
+  await envoyerJury(
+    juges.map((j) => ({
       type: 'review_local',
       payload: {
         reviewed_id: reviewedId, slug: row.target_slug, name: p.name, universe: p.universe,
@@ -1253,8 +1266,7 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
           : row.task_type === 'fiche_section' ? 'section' : 'prose',
         evite: modelesDuJury.filter((m) => m !== j.juge_modele),
       },
-    })),
-  });
+    })));
 }
 
 // Un nœud GPU de la flotte est-il vivant ? (battement de moins de 3 min portant « ollama »)
@@ -1645,8 +1657,13 @@ for (;;) {
   if (TYPES) {
     const etrangers = lot.filter((m) => !TYPES.includes(m.message?.type));
     if (etrangers.length) {
-      await supabase.rpc('ops_queue_send_batch', { messages: etrangers.map((m) => m.message) });
-      await supabase.rpc('ops_queue_archive_batch', { message_ids: etrangers.map((m) => m.msg_id) });
+      // ARCHIVER SEULEMENT SI LA RÉÉMISSION A RÉUSSI (audit 02/08) : supabase-js ne lance pas
+      // d'exception, il renvoie { error } — l'ignorer archivait des messages jamais réémis, une
+      // perte définitive et muette. Sur échec on n'archive pas : la visibilité expirera et les
+      // messages reviendront tout seuls, un doublon bénin plutôt qu'un trou.
+      const { error: eEnvoi } = await supabase.rpc('ops_queue_send_batch', { messages: etrangers.map((m) => m.message) });
+      if (eEnvoi) console.error(`  ✗ réémission hors couloir : ${eEnvoi.message.slice(0, 80)} — rien archivé`);
+      else await supabase.rpc('ops_queue_archive_batch', { message_ids: etrangers.map((m) => m.msg_id) });
       console.log(`  ↷ ${etrangers.length} tâche(s) hors couloir remises en file`);
     }
     miens = lot.filter((m) => TYPES.includes(m.message?.type));
@@ -1670,8 +1687,9 @@ for (;;) {
   };
   const rendus = miens.filter((m) => !saitFaire(m));
   if (rendus.length) {
-    await supabase.rpc('ops_queue_send_batch', { messages: rendus.map((m) => m.message) });
-    await supabase.rpc('ops_queue_archive_batch', { message_ids: rendus.map((m) => m.msg_id) });
+    const { error: eRendu } = await supabase.rpc('ops_queue_send_batch', { messages: rendus.map((m) => m.message) });
+    if (eRendu) console.error(`  ✗ réémission à la flotte : ${eRendu.message.slice(0, 80)} — rien archivé`);
+    else await supabase.rpc('ops_queue_archive_batch', { message_ids: rendus.map((m) => m.msg_id) });
     console.log(`  ↷ ${rendus.length} tâche(s) rendue(s) à la flotte (modèle non servi ici)`);
   }
   miens = miens.filter(saitFaire);

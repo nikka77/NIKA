@@ -50,7 +50,7 @@ export async function fetchAniListChars(malId, maxPages = 10) {
       out.push({ names, favourites: c.favourites || 0, descRaw: rawText(c.description) });
     }
     if (!chars.pageInfo?.hasNextPage) break;
-    await sleep(700);
+    await sleep(2_100);
   }
   return out;
 }

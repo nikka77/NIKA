@@ -1125,7 +1125,19 @@ async function main() {
   // ── Popularité Naruto (favorites MAL via Jikan) → rareté = palier de popularité (comme les autres univers) ──
   // L'API Dattebayo n'a pas de favorites → on croise les casts Naruto/Shippuden/Boruto de Jikan par tokens.
   const JIKAN = 'https://api.jikan.moe/v4';
-  const jget = async (url) => { try { const r = await fetch(url); return r.ok ? await r.json() : null; } catch { return null; } };
+  // Retry-429 obligatoire (audit 02/08) : cette passe arrive APRÈS des centaines d'appels Jikan
+  // du même run — un seul 429 silencieux vidait favMap et écrasait toutes les popularités à zéro.
+  const jget = async (url) => {
+    for (let i = 0; i < 4; i++) {
+      try {
+        const r = await fetch(url);
+        if (r.status === 429) { await new Promise((x) => setTimeout(x, 1500 * (i + 1))); continue; }
+        return r.ok ? await r.json() : null;
+      } catch { await new Promise((x) => setTimeout(x, 800 * (i + 1))); }
+    }
+    console.warn(`  ⚠ jget épuisé sur ${url.slice(0, 80)}`);
+    return null;
+  };
   const favTier = (v) => (v >= 25000 ? 'legendary' : v >= 5000 ? 'epic' : v >= 600 ? 'rare' : 'common');
   const RANK = { common: 0, rare: 1, epic: 2, legendary: 3 };
   const rarityMax = (x, y) => (RANK[y] > (RANK[x] ?? 0) ? y : x);

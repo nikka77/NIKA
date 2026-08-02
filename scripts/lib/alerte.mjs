@@ -37,8 +37,19 @@ export async function envoyerAlerte(texte) {
         canaux.push('whatsapp-meta ' + (await envoyerOuParquer(texte)));
         r = null;
       }
-      if (r) canaux.push(r.ok ? 'whatsapp-meta' : `whatsapp-meta HTTP ${r.status}: ${JSON.stringify((await r.json())?.error?.message ?? '').slice(0, 80)}`);
-    } catch (e) { canaux.push('whatsapp-meta erreur: ' + String(e).slice(0, 60)); }
+      if (r && r.ok) canaux.push('whatsapp-meta');
+      else if (r) {
+        // Le template peut mourir sans prévenir (mis en pause qualité, désapprouvé, jeton
+        // expiré — erreurs 132xxx/190). Consigner l'échec ne livre rien : une alerte critique
+        // de 2 h 30 se perdait définitivement (audit 02/08). On PARQUE, comme le chemin sans
+        // template — livrée au prochain message de Dan, jamais perdue.
+        canaux.push(`whatsapp-meta HTTP ${r.status}: ${JSON.stringify((await r.json())?.error?.message ?? '').slice(0, 80)}`);
+        canaux.push('parc ' + (await envoyerOuParquer(texte)));
+      }
+    } catch (e) {
+      canaux.push('whatsapp-meta erreur: ' + String(e).slice(0, 60));
+      try { canaux.push('parc ' + (await envoyerOuParquer(texte))); } catch { /* le parc est en base : si elle est morte, rien à faire */ }
+    }
   }
 
   if (process.env.CALLMEBOT_PHONE && process.env.CALLMEBOT_APIKEY) {

@@ -26,6 +26,12 @@ if ! curl -sf --max-time 5 http://localhost:11434/api/tags >/dev/null 2>&1; then
   exit 1
 fi
 
+# KV cache quantifié + flash attention (audit 02/08, doc Ollama) : sur un Mac 16 Go qui pagine,
+# q8_0 divise par deux la mémoire du cache de contexte — c'est la pagination, pas le calcul, qui
+# faisait les verdicts à 80 s. À poser AVANT le démarrage du serveur Ollama pour être pris.
+export OLLAMA_FLASH_ATTENTION=1
+export OLLAMA_KV_CACHE_TYPE=q8_0
+
 echo "⚖️  Mac en nœud juge — qwen3:8b (famille Qwen) · couloir review_local"
 exec taskpolicy -c background node --env-file=.env.local scripts/agent-worker.mjs \
   --loop --local --types=review_local --juge=ollama/qwen3:8b --conc=1

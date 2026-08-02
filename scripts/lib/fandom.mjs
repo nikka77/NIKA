@@ -6,16 +6,31 @@
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function wget(url, tries = 3) {
+  // maxlag=5 sur toute requête api.php : l'étiquette bot officielle (valeur par défaut de
+  // Pywikibot). En surcharge, le serveur répond une erreur maxlag avec Retry-After — on
+  // attend ce qu'il demande au lieu de le pousser (audit 02/08, Manual:Maxlag_parameter).
+  const u = url.includes('/api.php?') && !url.includes('maxlag=') ? `${url}&maxlag=5` : url;
   for (let i = 0; i < tries; i++) {
     try {
       // Timeout indispensable : sans lui, une connexion Fandom qui traîne bloque le script
       // indéfiniment (constaté le 25/07 — un scoring figé à 0 % CPU pendant 20 min).
-      const r = await fetch(url, {
-        headers: { 'User-Agent': 'NIKA-AKASHA/1.0 (encyclopédie éducative)' },
+      const r = await fetch(u, {
+        // Coordonnées de contact : l'étiquette MediaWiki demande un moyen de nous joindre
+        // plutôt que de nous bloquer à l'aveugle si le trafic pose problème.
+        headers: { 'User-Agent': 'NIKA-AKASHA/1.0 (encyclopédie éducative ; contact : tulbured06@gmail.com)' },
         signal: AbortSignal.timeout(25_000),
       });
-      if (r.status === 429) { await sleep(1500 * (i + 1)); continue; }
-      if (r.ok) return await r.json();
+      if (r.status === 429) {
+        // Retry-After d'abord : le serveur SAIT quand il sera prêt, notre backoff devine.
+        const apres = Number(r.headers.get('retry-after'));
+        await sleep(Number.isFinite(apres) && apres > 0 ? apres * 1000 : 1500 * (i + 1));
+        continue;
+      }
+      if (r.ok) {
+        const j = await r.json();
+        if (j?.error?.code === 'maxlag') { await sleep(Math.max(5, Number(r.headers.get('retry-after')) || 0) * 1000); continue; }
+        return j;
+      }
     } catch { /* retry */ }
     await sleep(500 * (i + 1));
   }

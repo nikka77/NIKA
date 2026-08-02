@@ -48,4 +48,4 @@ echo "✓ GPU joignable, qwen3 présent"
 # Concurrence 4 : un GPU loué encaisse plusieurs verdicts de front, contrairement au Mac.
 echo "⚖️  campagne de jugement sur GPU loué — arrête le pod dès que la file est vide"
 exec node --env-file=.env.local scripts/agent-worker.mjs \
-  --loop --local --types=review_local --juge=ollama/qwen3:8b --conc=4
+  --loop --local --types=review_local --juge=ollama/qwen3:8b --conc=4  # exige OLLAMA_NUM_PARALLEL=4 sur le pod (defaut Ollama: 1 — les 4 verdicts seraient serialises)
