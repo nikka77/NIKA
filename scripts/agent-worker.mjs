@@ -880,8 +880,8 @@ function lireRoutage() {
   } catch { _routage.plan = {}; }
   return _routage.plan;
 }
-const couloirsEpuises = new Map();   // modèle → horodatage du guichet fermé
-const couloirDispo = (m) => !couloirsEpuises.has(m) || Date.now() - couloirsEpuises.get(m) > 3_600_000;
+const couloirsEpuises = new Map();   // modèle → date de RÉOUVERTURE (1 h si épuisé, 3 min si saturé)
+const couloirDispo = (m) => !couloirsEpuises.has(m) || Date.now() > couloirsEpuises.get(m);
 const premierDispo = (liste) => liste.find(couloirDispo) ?? null;
 
 const modelOf = (type, p) => {
@@ -958,6 +958,13 @@ const schemaOf = (t, p) => (typeof t.schema === 'function' ? t.schema(p) : t.sch
 // (sa visibilité expire → il repart), et le worker fait la sieste jusqu'à la fenêtre suivante.
 class PlafondJourError extends Error {
   constructor(cle, limite) { super(`guichet du jour fermé pour ${cle} (plafond ${limite})`); this.cle = cle; }
+}
+// « Model busy » ≠ guichet fermé : le modèle est saturé LÀ MAINTENANT, pas épuisé pour la
+// journée. À 20 juges de front sur le même Qwen, chaque verdict payait 3×21 s de pauses
+// (02/08 au soir, cadence divisée par trois). On écarte le modèle 3 min et la rotation sert
+// le confrère suivant — mistral-small et nvidia attendaient, inutilisés.
+class SaturationError extends Error {
+  constructor(cle) { super(`${cle} saturé (model busy)`); this.cle = cle; }
 }
 let quotaIndisponible = false;   // RPC absente (SQL pas encore appliqué) → on le dit UNE fois
 async function quotaReserver(cle, jetonsEstimes) {
@@ -1099,6 +1106,14 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
       if (/no flex capacity/i.test(corps)) {
         sansFlex = true;
         console.log(`  ⇄ flex sans capacité (${new URL(url).host}) — repli immédiat au tier standard`);
+        continue;
+      }
+      // « Model busy » : saturation du modèle, pas du compte. Un essai rapide, puis on rend la
+      // main à la rotation (SaturationError → 3 min de côté) au lieu de 3×21 s sur place.
+      if (/model busy/i.test(corps)) {
+        if (essai >= 2) throw new SaturationError(fournisseur ? `${fournisseur}/${modele}` : `deepinfra/${modele}`);
+        console.log(`  ⏳ ${modele} saturé — 5 s puis rotation`);
+        await new Promise((r) => setTimeout(r, 5_000));
         continue;
       }
       // Un 429 « par JOUR » (TPD/RPD) ne se rattrape pas en attendant : le couloir est mort
@@ -1335,10 +1350,16 @@ async function processMessage(msg) {
       // libre, la tâche est REPORTÉE (rien en base, message laissé en file) — jamais « failed » :
       // elle n'a pas échoué, elle est trop tôt.
       if (e instanceof PlafondJourError) {
-        couloirsEpuises.set(e.cle, Date.now());
+        couloirsEpuises.set(e.cle, Date.now() + 3_600_000);
         const suivant = modelOf(type, p);
         if (suivant && suivant !== modele) { console.log(`  ⇄ ${e.cle} épuisé aujourd'hui → bascule sur ${suivant}`); continue; }
         return { ...base, status: 'reporte', error: e.message };
+      }
+      // Saturation passagère : 3 min de côté, le confrère suivant prend la main sans pause.
+      if (e instanceof SaturationError) {
+        couloirsEpuises.set(e.cle, Date.now() + 180_000);
+        const suivant = modelOf(type, p);
+        if (suivant && suivant !== modele) { console.log(`  ⇄ ${e.cle} saturé — 3 min de côté → ${suivant}`); continue; }
       }
       if (++echecs >= 2) return { ...base, status: 'failed', model: modele, error: String(e).slice(0, 300) };
     }
