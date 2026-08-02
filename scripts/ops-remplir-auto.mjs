@@ -82,15 +82,21 @@ console.log(`file : ${enFileProd} production(s) · ${enFileJuges} relecture(s) e
 // zéro à minuit) : une ligne dont la fenêtre a plus de 24 h est déjà périmée, donc pleine.
 const { data: quotas } = await supabase.from('ops_quotas').select('fournisseur, requetes, fenetre_debut');
 const consomme = new Map((quotas ?? []).map((q) => [q.fournisseur, q]));
-let plafond = Infinity;
+// SOMME et non MINIMUM (02/08) : depuis la rotation de couloirs, un juge à guichet fermé est
+// REMPLACÉ (Qwen, mistral-small…), il ne bloque plus la chaîne. Dimensionner sur le plus
+// contraint refusait de commander dès que gemma finissait ses 450 — pendant que DeepInfra
+// (sans plafond) attendait du travail. Chaque production consomme DEUX verdicts tirés du pool :
+// le vrai plafond du jour est (somme des guichets restants) / 2.
+let total = 0;
 const detail = [];
 for (const j of JUGES) {
   const ligne = consomme.get(`${j.cle}:jour`);
   const perimee = !ligne || Date.now() - new Date(ligne.fenetre_debut).getTime() > 86_400_000;
   const restant = perimee ? j.parJour : Math.max(0, j.parJour - (ligne.requetes ?? 0));
   detail.push(`${j.cle.split('/').pop()} ${restant}/${j.parJour}`);
-  plafond = Math.min(plafond, restant);
+  total += restant;
 }
+const plafond = total / 2;
 console.log(`budget juges restant → ${detail.join(' · ')}`);
 
 // Marge de 10 % : l'arbitre et les relectures rejouées consomment aussi ces guichets.
