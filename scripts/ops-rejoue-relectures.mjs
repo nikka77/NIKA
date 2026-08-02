@@ -16,6 +16,11 @@ const AGE_MIN = Number(process.argv.find((a) => a.startsWith('--age-min='))?.spl
 // productions en attente — un chantier lancé il y a dix minutes n'y figure jamais (02/08).
 const SLUGS = (process.argv.find((a) => a.startsWith('--slug='))?.split('=')[1] ?? '')
   .split(',').map((x) => x.trim()).filter(Boolean);
+// --universe : rattraper un univers entier d'un coup. 118 sections Death Note se sont retrouvées
+// sans aucune relecture en file le 02/08 — produites, jamais jugées, invisibles partout : ni dans
+// la file (rien à leur nom), ni dans la pile de Dan (pas de verdict à relire), ni sur le site.
+// Une production sans verdict ET sans tâche de verdict ne se signale nulle part.
+const UNIVERSE = process.argv.find((a) => a.startsWith('--universe='))?.split('=')[1];
 
 let q = supabase
   .from('agent_results')
@@ -27,6 +32,7 @@ let q = supabase
   .order('id', { ascending: true })
   .limit(Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 60));
 if (SLUGS.length) q = q.in('target_slug', SLUGS);
+if (UNIVERSE) q = q.eq('payload->>universe', UNIVERSE);
 const { data: rows } = await q;
 
 // Un slot est à rejouer si : jamais rempli, ou rempli par une ERREUR technique (pas un verdict).
