@@ -323,6 +323,42 @@ RÈGLES :
 SOURCE — section « ${p.section_titre} » de l'article canon :
 ${p.section_texte}`,
   },
+  arbitrage_claude_lot: {
+    // DIX LITIGES PAR APPEL (02/08, « la cadence est lente ») : un litige = un appel CLI
+    // entier coûtait 1 314 appels pour la pile de Dan — trois jours au guichet de 400. En lot
+    // de dix : ~130 appels, la pile se vide dans la soirée. Même barème, mêmes garanties.
+    model: 'anthropic/claude-haiku-4-5',
+    guard: (p) => (!Array.isArray(p.litiges) || !p.litiges.length ? 'lot vide' : null),
+    zod: z.object({ verdicts: z.array(z.object({ id: z.number(), decision: z.enum(['approve', 'reject']), motif: z.string().min(8) })).min(1) }),
+    schema: {
+      type: 'object',
+      properties: { verdicts: { type: 'array', items: { type: 'object',
+        properties: { id: { type: 'number' }, decision: { type: 'string', enum: ['approve', 'reject'] }, motif: { type: 'string' } },
+        required: ['id', 'decision', 'motif'], additionalProperties: false } } },
+      required: ['verdicts'], additionalProperties: false,
+    },
+    prompt: (p) => `Tu es l'ARBITRE FINAL de l'encyclopédie AKASHA. Des juges automatiques (petits
+modèles) se sont contredits ou ont refusé ces productions — tu lis chacune et tu TRANCHES.
+
+BARÈME :
+- Seuls comptent le fait AJOUTÉ (absent de la source) et le fait CONTREDIT par elle.
+- Section/description = TRADUCTION CONDENSÉE : détail non repris, choix de traduction,
+  reformulation ne sont JAMAIS des défauts. Données clé=valeur : preuves anglaises verbatim
+  attendues, l'anglais n'y est jamais un défaut. Un fait vrai à n'importe quel moment du récit
+  est exact.
+- Les juges pinaillent : vérifie leur reproche DANS la source avant de le croire.
+- Vraie déformation, texte corrompu, hors sujet : reject. Sinon : approve.
+
+Réponds UNIQUEMENT en JSON : {"verdicts":[{"id":<id>,"decision":"approve"|"reject","motif":"une phrase"}]}
+— un verdict PAR litige, id repris tel quel.
+===LITIGE===
+${p.litiges.map((l) => `═══ LITIGE id=${l.id} — ${l.name} (${l.universe}, type ${l.task_type_origine})
+PRODUCTION :
+${l.production}
+SOURCE :
+${String(l.source).slice(0, 3800)}
+REPROCHES : ${l.motifs}`).join('\n\n')}`,
+  },
   arbitrage_claude: {
     // L'ARBITRE SUPRÊME — troisième étage de la hiérarchie mesurée le 02/08 : petits modèles
     // jugent en masse (0,0002 $), Claude tranche les litiges (0,006 $), Dan ne voit que les cas
@@ -861,7 +897,7 @@ const modelOf = (type, p) => {
   // MODÈLE FIXE INVIOLABLE (02/08) : arbitrage_claude est un ÉTAGE, pas une tâche de masse —
   // --cloud l'écrasait et Nemotron a rendu des verdicts sous la signature de Claude (5 litiges,
   // découvert en lisant le premier plan du Dispatcheur). Ni la rotation ni le plan n'y touchent.
-  if (type === 'arbitrage_claude') return TASK_TYPES[type].model;
+  if (type === 'arbitrage_claude' || type === 'arbitrage_claude_lot') return TASK_TYPES[type].model;
   if (CLOUDS.length) {
     // LE PLAN DU DISPATCHEUR d'abord (02/08, rôle Claude n°6) : data/routage.json, régénéré
     // toutes les 15 min depuis l'état réel des piles et des guichets. Périmé (> 30 min) ou
@@ -1531,7 +1567,7 @@ async function verrouEtAppliquer(rowId, filtres) {
   // Leçon : un garde-fou doit être ÉPROUVÉ sur des cas vrais ET faux avant d'être armé.
   const { data: avant } = await supabase.from('agent_results')
     .select('id, task_type, target_slug, payload, result')
-    .eq('id', rowId).eq('review_status', 'pending').eq('status', 'done').single();
+    .eq('id', rowId).eq('review_status', 'pending').in('status', ['done', 'suspect']).single();
   if (!avant) return false;
   const ancrage = await scoreAncrageProduction(avant);
   if (ancrage) await supabase.from('agent_results').update({ auto_score: ancrage.min }).eq('id', rowId);
@@ -1540,7 +1576,7 @@ async function verrouEtAppliquer(rowId, filtres) {
   const { data: gagne } = await filtres(
     supabase.from('agent_results')
       .update({ review_status: 'approved', auto_applique: true, reviewed_at: new Date().toISOString() })
-      .eq('id', rowId).eq('review_status', 'pending').eq('status', 'done'),
+      .eq('id', rowId).eq('review_status', 'pending').in('status', ['done', 'suspect']),
   ).select('*').single();
   if (!gagne) return false;
 
@@ -1640,6 +1676,27 @@ async function traiterUn(msg) {
   }
   counts[row.status]++;
 
+  if (row.task_type === 'arbitrage_claude_lot' && row.status === 'done') {
+    const attendus = new Map((row.payload.litiges ?? []).map((l) => [Number(l.id), l]));
+    let appliques = 0;
+    for (const v of row.result?.verdicts ?? []) {
+      const cible = Number(v.id);
+      if (!attendus.has(cible)) continue;                      // id inventé : ignoré
+      await supabase.from('agent_results').update({
+        arbitre_verdict: v.decision === 'approve' ? 'valide' : 'rejeter',
+        arbitre_motif: `⚖ Claude : ${String(v.motif ?? '').slice(0, 300)}`,
+        arbitre_model: `${row.model} (arbitrage)`, arbitre_at: new Date().toISOString(),
+      }).eq('id', cible).eq('review_status', 'pending');
+      if (v.decision === 'approve') await verrouEtAppliquer(cible, (q) => q);
+      else await supabase.from('agent_results').update({ review_status: 'rejected', reviewed_at: new Date().toISOString() })
+        .eq('id', cible).eq('review_status', 'pending');
+      appliques++;
+    }
+    await supabase.rpc(RPC.archive, { message_id: msg.msg_id });
+    console.log(`  ⚖⚡ [${msg.msg_id}] lot de ${attendus.size} litige(s) → ${appliques} verdict(s) (Claude)`);
+    counts[row.status]++;
+    return;
+  }
   if (row.task_type === 'arbitrage_claude' && (row.status === 'done')) {
     // Le verdict de Claude s'écrit dans le slot ARBITRE de la production litigieuse, signé.
     // approve → application immédiate par le même verrou que le bouton de Dan ; reject →

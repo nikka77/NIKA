@@ -6,7 +6,7 @@
   <key>Label</key><string>com.nika.ops.arbitre</string>
   <key>ProgramArguments</key><array>
     <string>/bin/zsh</string><string>-c</string>
-    <string>cd ~/dev/NIKA && /opt/homebrew/bin/node --env-file=.env.local scripts/agent-worker.mjs --types=arbitrage_claude --conc=1 --lot=24</string>
+    <string>cd ~/dev/NIKA && /opt/homebrew/bin/node --env-file=.env.local scripts/agent-worker.mjs --types=arbitrage_claude,arbitrage_claude_lot --conc=1 --lot=24</string>
   </array>
   <key>StartInterval</key><integer>1800</integer>
   <key>StandardOutPath</key><string>/tmp/nika-arbitre.log</string>

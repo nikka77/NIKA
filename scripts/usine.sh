@@ -59,7 +59,7 @@ CONC=${NIKA_CONC:-$(grep '^NIKA_CONC=' .env.local 2>/dev/null | cut -d= -f2)}
 # à l'enrôlement — chaque production met ses deux juges en file en la quittant.
 # arbitrage_claude REJOINT le couloir de production le 02/08 : le CLI Claude vit désormais sur
 # le VPS (jeton d'abonnement dans .env.local) — les litiges se tranchent 24/7, PC de Dan éteint.
-TYPES=${NIKA_TYPES:-fandom_descfr,fiche_technique,fiche_artefact,fiche_lieu,fiche_lexique,fiche_section,akasha_attrs,akasha_relations,toilettage_fr,flavor_akasha,arbitrage_claude}
+TYPES=${NIKA_TYPES:-fandom_descfr,fiche_technique,fiche_artefact,fiche_lieu,fiche_lexique,fiche_section,akasha_attrs,akasha_relations,toilettage_fr,flavor_akasha,arbitrage_claude,arbitrage_claude_lot}
 
 echo "🏭 usine continue — production ${MODELE} · jury enrôlé ${JUGE} · ${CONC:-16} de front"
 exec "${PRIO[@]}" node --env-file=.env.local scripts/agent-worker.mjs \

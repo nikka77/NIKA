@@ -8,5 +8,5 @@ OnFailure=nika-echec@%n.service
 Type=oneshot
 User=nika
 WorkingDirectory=/home/nika/NIKA
-ExecStart=/usr/bin/node --env-file=.env.local scripts/ops-litiges-claude.mjs --limit=120
+ExecStart=/usr/bin/node --env-file=.env.local scripts/ops-litiges-claude.mjs --limit=400
 Nice=10

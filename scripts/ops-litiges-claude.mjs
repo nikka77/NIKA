@@ -25,7 +25,7 @@ const UNIVERSE = process.argv.find((a) => a.startsWith('--universe='))?.split('=
 
 let q = supabase.from('agent_results')
   .select('id, task_type, target_slug, payload, result, status, auto_verdict, auto_motif, auto2_verdict, auto2_motif, arbitre_verdict, arbitre_motif, arbitre_at')
-  .eq('review_status', 'pending').eq('status', 'done')
+  .eq('review_status', 'pending').in('status', ['done', 'suspect'])
   .neq('task_type', 'review_local')
   .not('auto_verdict', 'is', null).not('auto2_verdict', 'is', null)
   .lt('created_at', new Date(Date.now() - AGE_MIN * 60_000).toISOString())
@@ -33,10 +33,12 @@ let q = supabase.from('agent_results')
 if (UNIVERSE) q = q.eq('payload->>universe', UNIVERSE);
 const { data: rows } = await q;
 
-// Réglé-sans-publication : les deux juges d'accord pour refuser, ou l'arbitre machine a tranché
-// non-valide. Un désaccord SANS arbitre n'est pas un litige : l'arbitre machine passe d'abord.
+// Réglé-sans-publication : accord pour refuser, arbitre machine non-valide — ET, depuis le
+// 02/08 au soir (« dispatche tout ça »), les SUSPECT réglés : la preuve douteuse trouve son
+// juge de sortie dans l'arbitre Claude au lieu d'attendre l'œil de Dan indéfiniment.
 const litiges = (rows ?? []).filter((r) => {
   if (r.arbitre_motif?.startsWith('⚖ Claude')) return false;         // déjà arbitré par Claude
+  if (r.status === 'suspect') return Boolean(r.auto_verdict && r.auto2_verdict);
   if (r.auto_verdict === r.auto2_verdict) return r.auto_verdict !== 'valide';
   return Boolean(r.arbitre_verdict) && r.arbitre_verdict !== 'valide';
 }).slice(0, LIMIT);
@@ -65,7 +67,9 @@ async function sourceDe(r) {
   return page?.text ?? '';
 }
 
-const messages = [];
+// EN LOTS DE 10 : un litige par appel CLI coûtait 1 314 appels pour la pile — trois jours au
+// guichet. Dix par appel : la même pile tient en ~130 appels, une soirée.
+const dossiers = [];
 for (const r of litiges) {
   const production = productionDe(r);
   const source = await sourceDe(r);
@@ -74,16 +78,15 @@ for (const r of litiges) {
     r.auto_motif && `Juge n°1 (${r.auto_verdict}) : ${r.auto_motif}`,
     r.auto2_motif && `Juge n°2 (${r.auto2_verdict}) : ${r.auto2_motif}`,
     r.arbitre_motif && `Arbitre machine (${r.arbitre_verdict}) : ${r.arbitre_motif}`,
+    r.status === 'suspect' && 'Statut : SUSPECT (preuve douteuse signalée par les gardes)',
   ].filter(Boolean).join('\n');
-  messages.push({
-    type: 'arbitrage_claude',
-    payload: {
-      reviewed_id: r.id, name: r.payload?.name, universe: r.payload?.universe,
-      task_type_origine: r.task_type, production, source, motifs,
-    },
-  });
+  dossiers.push({ id: r.id, name: r.payload?.name, universe: r.payload?.universe,
+    task_type_origine: r.task_type, production: String(production).slice(0, 3000), source, motifs });
 }
-console.log(`→ ${messages.length} arbitrage(s) constitué(s)`);
+const messages = [];
+for (let i = 0; i < dossiers.length; i += 10)
+  messages.push({ type: 'arbitrage_claude_lot', payload: { litiges: dossiers.slice(i, i + 10) } });
+console.log(`→ ${dossiers.length} litige(s) en ${messages.length} lot(s) de 10`);
 if (DRY || !messages.length) process.exit(0);
 for (let i = 0; i < messages.length; i += 50)
   await supabase.rpc('ops_queue_send_batch', { messages: messages.slice(i, i + 50) });
