@@ -219,7 +219,11 @@ ${p.fandom}`,
     // ce qu'il corrige. Nos sections s'affichent en texte BRUT (CharacterZone, white-space:
     // pre-line) — les astérisques se verraient à l'écran. On les retire en code plutôt que
     // d'espérer que la consigne suffise : une règle déterministe ne se fatigue pas.
-    zod: z.object({ texte: DescFr(150), corrige: z.boolean() })
+    // Plancher bas (40) parce que la longueur utile est CELLE DE L'ENTRÉE : 446 descriptions
+    // Naruto/One Piece font moins de 200 caractères et portent pourtant un vrai défaut
+    // (« Amachi est un ninja médical qui FUT un complice d'Orochimaru », 77 c). C'est
+    // checkToilettage qui surveille le rapport de longueur — lui a le texte d'origine.
+    zod: z.object({ texte: DescFr(40), corrige: z.boolean() })
       .transform((r) => ({ ...r, texte: sansBalisage(r.texte) })),
     schema: {
       type: 'object',
@@ -230,11 +234,13 @@ ${p.fandom}`,
       required: ['texte', 'corrige'],
       additionalProperties: false,
     },
-    guard: (p) => (String(p.texte ?? '').length < 200 ? 'texte trop court pour un toilettage' : null),
+    // 80, pas 200 : la moitié du corpus Naruto/One Piece est plus courte que 200 caractères
+    // et porte pourtant de vrais défauts (« Akahoshi PRIT la tête du village », 142 c).
+    guard: (p) => (String(p.texte ?? '').length < 80 ? 'texte trop court pour un toilettage' : null),
     prompt: (p) => `Tu es correcteur de langue pour l'encyclopédie AKASHA. Tu ne rédiges rien, tu ne
 documentes rien : tu corriges le FRANÇAIS d'un texte déjà validé sur le fond.
 
-TEXTE À CORRIGER — fiche « ${p.name} » (${p.universe}), section « ${p.titre} » :
+TEXTE À CORRIGER — fiche « ${p.name} » (${p.universe})${p.titre ? `, section « ${p.titre} »` : ', description'} :
 ${p.texte}
 
 RÈGLES ABSOLUES :
@@ -243,6 +249,13 @@ RÈGLES ABSOLUES :
 - Corrige : les calques de l'anglais (« est montré », « est vu », « il est révélé que »,
   « au travers de »), les participes fautifs (« Ayant tombé amoureux » → « Tombé amoureux »),
   les temps incohérents, les passifs lourds, les mots anglais résiduels, la ponctuation.
+- CHAMPS D'INFOBOX EN PROSE (« Taille : 172,2 cm. Statut : Décédé. Première apparition :
+  épisode 133. ») : ne les supprime PAS, FONDS-LES dans une phrase — chaque valeur doit
+  survivre (« Mesurant 172 cm, il apparaît pour la première fois à l'épisode 133. »).
+- PRÉSENT DE NARRATION, toujours : le passé simple est proscrit (« prit la tête » → « prend
+  la tête », « fut capturé » → « est capturé »).
+- Si le texte commence sans sujet ou par une minuscule, nomme le sujet — « ${p.name} » — et
+  rien d'autre : aucun nom propre que la source ne contient déjà.
 - Garde tels quels les noms propres canon (Death Note, Shinigami, Sharingan, Kekkei Genkai)
   et le présent de narration.
 - N'ajoute AUCUNE apposition explicative, même vraie (« Hideki Ryuuga, connu sous le nom de
@@ -484,16 +497,29 @@ function checkToilettage(out, p) {
   const motsDe = (t) => new Set(norm(t).split(/[^a-z0-9]+/).filter(Boolean));
   const [pa, pb, ma, mb] = [propres(avant), propres(apres), motsDe(avant), motsDe(apres)];
   const perdus = [...pa].filter((n) => !mb.has(n));
-  const ajoutes = [...pb].filter((n) => !ma.has(n));
+  // Le nom de la fiche a le droit d'apparaître : 79 descriptions One Piece commencent sans
+  // sujet (« celui qui le mange peut se transformer… ») et la correction doit pouvoir écrire
+  // « Le Fruit de l'Araignée permet… ». Tout AUTRE nom propre neuf reste suspect.
+  const sien = new Set(String(p.name ?? '').split(/[^\p{L}\p{N}]+/u).map(cle).filter(Boolean));
+  const ajoutes = [...pb].filter((n) => !ma.has(n) && !sien.has(n));
   if (perdus.length) suspects.push(`nom propre perdu : ${perdus.slice(0, 4).join(', ')}`);
   if (ajoutes.length) suspects.push(`nom propre ajouté : ${ajoutes.slice(0, 4).join(', ')}`);
-  const chiffres = (t) => (t.match(/\d+/g) ?? []).sort().join(',');
+  // Les chiffres du NOM de la fiche ne comptent pas : nommer le sujet (« Le 18th Fleet
+  // Gallery Head Chef apparaît… ») introduisait un 18 qui n'était pas dans le texte source.
+  const sansNom = (t) => (p.name ? t.split(p.name).join(' ') : t);
+  const chiffres = (t) => (sansNom(t).match(/\d+/g) ?? []).sort().join(',');
   if (chiffres(avant) !== chiffres(apres)) suspects.push('les chiffres ne correspondent plus');
   // Négation : on ne compte QUE la moitié porteuse (pas, jamais, aucun, ni, sans). Le « ne »
   // s'élide, se déplace et disparaît en français correct (« ne … pas » → « sans ») — le
   // compter faisait crier au sens inversé sur une simple reformulation.
   const nie = (t) => (t.match(/\b(pas|jamais|aucun|aucune|nul|nulle|ni|sans|rien)\b/gi) ?? []).length;
   if (nie(apres) < nie(avant)) suspects.push(`négation perdue (${nie(avant)} → ${nie(apres)})`);
+  // Longueur : un correcteur ne résume pas et ne délaye pas. Le seul garde-fou de taille,
+  // puisque le plancher du schéma ne peut pas dépendre de l'entrée. Marge haute large :
+  // fondre une infobox en prose (« Taille : 172 cm. » → « Il mesure 172 cm. ») allonge.
+  const r = apres.length / Math.max(1, avant.length);
+  if (r < 0.6) suspects.push(`texte amputé (${avant.length} → ${apres.length} caractères)`);
+  if (r > 2.2) suspects.push(`texte délayé (${avant.length} → ${apres.length} caractères)`);
   return suspects;
 }
 
@@ -1381,6 +1407,17 @@ async function verrouEtAppliquer(rowId, filtres) {
     const pose = await ajouterSection(gagne.target_slug, neuve, gagne.model);
     if (!pose) return false;
     console.log(`  ⚡ section « ${neuve.titre} » appliquée : ${gagne.target_slug}`);
+    return true;
+  } else if (gagne.task_type === 'toilettage_fr' && !gagne.payload?.section_index) {
+    // Naruto et One Piece n'ont quasiment pas de sections (1 fiche sur 5 588) : leur prose,
+    // c'est descFr. Le toilettage réécrit donc le champ qu'il a reçu, pas un type de champ.
+    if (!gagne.result?.texte || !gagne.result?.corrige) return false;
+    patch.descFr = gagne.result.texte;
+    patch.descFrSource = `${gagne.model} (toilettage)`;
+    await supabase.from('akasha_entries').update({ attributes: patch }).eq('slug', gagne.target_slug);
+    // Message distinct : ici la porte est le CONTRÔLE DE CODE, pas deux verdicts de juges —
+    // afficher « double valide » raconterait une vérification qui n'a pas eu lieu.
+    console.log(`  ⚡ français corrigé — description : ${gagne.target_slug}`);
     return true;
   } else if (gagne.task_type === 'toilettage_fr') {
     // Même chemin que ci-dessus (ajouterSection remplace la section de même indice) : le

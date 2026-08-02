@@ -319,6 +319,11 @@ async function applyResult(supabase: Admin, id: number, cacheIndex?: Map<string,
     patch.relations = rel.map(({ avec, nature, periode, resume }) => ({ avec, nature, periode, resume }));
     patch.relationsSource = row.model;
     versGraphe = rel;
+  } else if (row.task_type === 'toilettage_fr' && !(row.payload as Record<string, string>)?.section_index) {
+    // Toilettage d'une DESCRIPTION (Naruto/One Piece : leur prose est descFr, pas des sections).
+    if (!row.result?.texte) return false;
+    patch.descFr = row.result.texte;
+    patch.descFrSource = `${row.model} (toilettage)`;
   } else if (row.task_type === 'fiche_section' || row.task_type === 'toilettage_fr') {
     // MIROIR DE L'AUTO-APPLICATION (02/08) : sans ces deux branches, « Appliquer » sur une
     // section marquait la production approuvée SANS RIEN ÉCRIRE — seul le worker savait poser
