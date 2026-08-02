@@ -822,7 +822,13 @@ const LIMITES_FOURNISSEURS = {
   cerebras: { requetes: 25, jetons: 50_000, fenetre: 60 },                // palier gratuit SUPPRIMÉ (402 le 26/07)
   // NIM gratuit n'est pas un débit renouvelable mais un STOCK de ~1 000 crédits qui s'épuise
   // DÉFINITIVEMENT : le guichet jour empêche une seule nuit de brûler la réserve entière.
-  nvidia:     { requetes: 32, jetons: 100_000, fenetre: 60, parJour: 150 },
+  // RELEVÉ À 400 le 02/08 — et surtout RÉSERVÉ À L'ARBITRAGE (nvidia sort de la production
+  // dans usine.sh). Le stock est fini, donc il doit se dépenser là où il est IRREMPLAÇABLE :
+  // NVIDIA est la seule famille du parc qui départage un désaccord entre les deux juges. À 150,
+  // la vanne s'était refermée d'elle-même et neuf arbitrages attendaient dans la file un modèle
+  // qui, lui, répondait en 1,9 s — nous nous bridions sur un couloir ouvert. En production, à
+  // l'inverse, il est remplaçable : Mistral, Groq et DeepInfra font le même travail.
+  nvidia:     { requetes: 32, jetons: 100_000, fenetre: 60, parJour: 400 },
   // ⚠ CORRIGÉ DEUX FOIS le 01/08, et c'est instructif. (1) J'avais conclu « 2 req/minute »
   // d'une rafale de 8 qui n'en laissait passer que 2 — c'était une limite de PARALLÉLISME que
   // je lisais comme un volume. (2) La doc Mistral annonce 1 requête par SECONDE, soit 60/min ;
