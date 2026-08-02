@@ -728,14 +728,24 @@ async function executerCommande(cmd) {
 // review_local 800 → 1 000 le 02/08 : sur le toilettage, la relecture compare DEUX textes
 // longs et la sortie a été coupée au plafond (« sortie coupée », puis JSON invalide).
 // toilettage_fr rend un texte ENTIER, pas un résumé : il lui faut le budget d'une section.
-// akasha_relations 900 → 1 800 le 02/08. Ce plafond avait été taillé sur Mistral ; Nemotron,
+// akasha_relations 900 → 1 800 → 3 000 le 02/08. Ce plafond avait été taillé sur Mistral ; Nemotron,
 // devenu producteur titulaire l'après-midi même, rédige des preuves plus longues et se faisait
 // couper net — 7 fiches perdues en 15 minutes (paulie, magellan, oolong, welfin…). Un plafond de
 // sortie n'est pas une propriété de la TÂCHE, c'est une propriété du couple tâche × modèle : il
 // se recale à chaque changement de producteur. Le détecteur de troncature a fait son travail —
 // c'est lui qui a nommé le remède dans le message d'erreur, sans lui les fiches partaient
 // tronquées en relecture et les juges auraient condamné le contenu au lieu du réglage.
-const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 1_000, akasha_relations: 1_800, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500, toilettage_fr: 2_400 };
+// 1 800 ne suffisait toujours pas (mesuré au deuxième tour) : Nemotron rédige une preuve
+// citée pour CHAQUE relation, et une fiche bien reliée en compte huit ou dix.
+// Le nom du modèle, sans son préfixe de couloir : « openrouter/nvidia/nemotron-3-ultra:free »
+// → « nvidia/nemotron-3-ultra:free ». Remplace six `model.slice(N)` codés en dur, dont un faux —
+// « openrouter/ » fait 11 caractères et le commentaire d'à côté disait 10, recopié de la branche
+// DeepInfra. Le modèle partait donc avec un « / » de tête ; OpenRouter le tolérait, mais la clé
+// de quota, elle, devenait « openrouter//nvidia/… » et ne retrouvait plus son plafond.
+// C'est la DEUXIÈME fois aujourd'hui qu'une découpe de préfixe à un caractère près passe — un
+// compte de caractères écrit à la main n'a aucune raison d'être là où le séparateur suffit.
+const sansCouloir = (m) => String(m).slice(String(m).indexOf('/') + 1);
+const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 1_000, akasha_relations: 3_000, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500, toilettage_fr: 2_400 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
 /* ── Rotation de couloirs (L23, 01/08) ──────────────────────────────
@@ -985,7 +995,7 @@ async function callModel(type, payload, modeleImpose) {
     if (!process.env.CEREBRAS_API_KEY) throw new Error('CEREBRAS_API_KEY absent de .env.local');
     raw = await appelOpenAICompat({
       url: 'https://api.cerebras.ai/v1/chat/completions', cle: process.env.CEREBRAS_API_KEY,
-      modele: model.slice(9), messages, type, schema,
+      modele: sansCouloir(model), messages, type, schema,
     });
   } else if (model.startsWith('groq/') && process.env.GROQ_API_KEY) {
     // Groq NATIF dès que la clé est dans .env.local : OmniRoute sort du chemin de production
@@ -993,14 +1003,14 @@ async function callModel(type, payload, modeleImpose) {
     // par des alias — 3 pannes réelles pour un proxy d'un seul fournisseur).
     raw = await appelOpenAICompat({
       url: 'https://api.groq.com/openai/v1/chat/completions', cle: process.env.GROQ_API_KEY,
-      modele: model.slice(5), messages, type, schema,
+      modele: sansCouloir(model), messages, type, schema,
     });
   } else if (model.startsWith('nvidia/')) {
     // Branche DORMANTE (clé à créer, vérif téléphone) — 40 req/min gratuits, OpenAI-compatible.
     if (!process.env.NVIDIA_API_KEY) throw new Error('NVIDIA_API_KEY absente de .env.local');
     raw = await appelOpenAICompat({
       url: 'https://integrate.api.nvidia.com/v1/chat/completions', cle: process.env.NVIDIA_API_KEY,
-      modele: model.slice(7), messages, type, schema,
+      modele: sansCouloir(model), messages, type, schema,
     });
   } else if (model.startsWith('deepinfra/')) {
     // Facturé au JETON, sans quota quotidien — la sortie de l'impasse des paliers gratuits
@@ -1009,7 +1019,7 @@ async function callModel(type, payload, modeleImpose) {
     if (!process.env.DEEPINFRA_API_KEY) throw new Error('DEEPINFRA_API_KEY absente de .env.local');
     raw = await appelOpenAICompat({
       url: 'https://api.deepinfra.com/v1/openai/chat/completions', cle: process.env.DEEPINFRA_API_KEY,
-      modele: model.slice(10), messages, type, schema,   // « deepinfra/ » = 10 caractères
+      modele: sansCouloir(model), messages, type, schema,
     });
   } else if (model.startsWith('mistral/')) {
     // Branche DORMANTE — ⚠ palier gratuit Mistral : les données servent à l'entraînement.
@@ -1017,14 +1027,14 @@ async function callModel(type, payload, modeleImpose) {
     if (!process.env.MISTRAL_API_KEY) throw new Error('MISTRAL_API_KEY absente de .env.local');
     raw = await appelOpenAICompat({
       url: 'https://api.mistral.ai/v1/chat/completions', cle: process.env.MISTRAL_API_KEY,
-      modele: model.slice(8), messages, type, schema,
+      modele: sansCouloir(model), messages, type, schema,
     });
   } else if (model.startsWith('openrouter/')) {
     // Branche DORMANTE — modèles :free (20/min, 50/j — 1 000/j après un versement unique de 10 $).
     if (!process.env.OPENROUTER_API_KEY) throw new Error('OPENROUTER_API_KEY absente de .env.local');
     raw = await appelOpenAICompat({
       url: 'https://openrouter.ai/api/v1/chat/completions', cle: process.env.OPENROUTER_API_KEY,
-      modele: model.slice(10), messages, type, schema,   // « deepinfra/ » = 10 caractères
+      modele: sansCouloir(model), messages, type, schema,
     });
   } else if (model.startsWith('gemini/')) {
     // Gemini NATIF (pas OmniRoute) : son adaptateur passe par l'endpoint compatible OpenAI qui
