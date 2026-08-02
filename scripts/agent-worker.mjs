@@ -1108,12 +1108,16 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
         console.log(`  ⇄ flex sans capacité (${new URL(url).host}) — repli immédiat au tier standard`);
         continue;
       }
-      // « Model busy » : saturation du modèle, pas du compte. Un essai rapide, puis on rend la
-      // main à la rotation (SaturationError → 3 min de côté) au lieu de 3×21 s sur place.
-      if (/model busy/i.test(corps)) {
+      // « Model busy » / « Rate limit exceeded » : saturation de l'INSTANT, pas du compte.
+      // Un essai rapide décalé, puis on rend la main à la rotation (SaturationError → 3 min
+      // de côté). Les pauses de 21 s synchronisées entre 24 workers formaient un troupeau qui
+      // re-tirait groupé et re-déclenchait le même 429 à l'infini (mistral-large 02/08 au
+      // soir : usine tombée à 250/h sur une rafale par SECONDE que notre fenêtre par minute
+      // ne voit pas).
+      if (/model busy|rate limit exceeded/i.test(corps)) {
         if (essai >= 2) throw new SaturationError(fournisseur ? `${fournisseur}/${modele}` : `deepinfra/${modele}`);
-        console.log(`  ⏳ ${modele} saturé — 5 s puis rotation`);
-        await new Promise((r) => setTimeout(r, 5_000));
+        console.log(`  ⏳ ${modele} saturé — pause courte puis rotation`);
+        await new Promise((r) => setTimeout(r, 4_000 + Math.floor(Math.random() * 4_000)));
         continue;
       }
       // Un 429 « par JOUR » (TPD/RPD) ne se rattrape pas en attendant : le couloir est mort
@@ -1123,7 +1127,9 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
       if (/per day|\bTPD\b|\bRPD\b|daily/i.test(corps)) {
         throw new PlafondJourError(fournisseur ? `${fournisseur}/${modele}` : modele, 'plafond QUOTIDIEN du fournisseur');
       }
-      if (essai >= 4) throw new Error(`HTTP 429 (${new URL(url).host}) après 4 essais`);
+      // 4 essais de 429 = le couloir n'encaisse pas MAINTENANT : 3 min de côté via la
+      // rotation plutôt qu'un échec sec qui laisse la boucle re-choisir le même couloir.
+      if (essai >= 4) throw new SaturationError(fournisseur ? `${fournisseur}/${modele}` : `${new URL(url).host}`);
       const attente = Number(corps.match(/try again in (\d+(?:\.\d+)?)s/i)?.[1] ?? res.headers.get('retry-after') ?? 20);
       // On journalise le MOTIF du 429 : sans lui, impossible de savoir si c'est le débit par
       // minute, le quota du jour ou les jetons — donc impossible de régler le bon plafond.
