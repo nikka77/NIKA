@@ -83,14 +83,26 @@ export async function POST(req: NextRequest) {
     return twiml();
   }
 
-  const prompt = SMS_PARSE_PROMPT.replace('{{MESSAGE}}', body.slice(0, 500));
-  const message = await anthropic.messages.create({
-    model: 'claude-sonnet-4-6',
-    max_tokens: 512,
-    messages: [{ role: 'user', content: prompt }],
-  });
+  // replace() par FONCTION : avec une chaîne, les motifs $& / $' du SMS seraient interprétés
+  // comme références de remplacement — un SMS contenant « 5$' » corrompait le prompt.
+  const prompt = SMS_PARSE_PROMPT.replace('{{MESSAGE}}', () => body.slice(0, 500));
+  // Haiku 4.5 : une extraction JSON de 500 caractères n'a pas besoin de Sonnet — même travail,
+  // ~3× moins cher et plus rapide (audit 02/08). Et TOUT l'appel sous try/catch : un 529 qui
+  // remontait en 500 faisait REJOUER le webhook par Twilio — le même SMS refacturé en boucle.
+  let message;
+  try {
+    message = await anthropic.messages.create({
+      model: 'claude-haiku-4-5',
+      max_tokens: 512,
+      messages: [{ role: 'user', content: prompt }],
+    });
+  } catch {
+    await sendSMS(from, 'Service momentanément indisponible — réessaie dans une minute.');
+    return twiml();
+  }
 
-  const rawText = message.content[0].type === 'text' ? message.content[0].text : '';
+  // content.find : sur refus ou réponse vide, content[0] n'existe pas (TypeError → 500 → rejeu).
+  const rawText = message.content.find((b) => b.type === 'text')?.text ?? '';
   const jsonMatch = rawText.match(/\{[\s\S]*\}/);
   let parsed: { action?: string; available?: boolean; hours?: { open: string; close: string }; stock?: { item: string; quantity: number }; flash?: { title: string; discount_type: string; discount_value: number; duration_minutes: number }; phone?: string } | null = null;
   if (jsonMatch) { try { parsed = JSON.parse(jsonMatch[0]); } catch { parsed = null; } }

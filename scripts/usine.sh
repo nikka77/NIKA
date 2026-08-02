@@ -43,7 +43,7 @@ MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-l
 # Google — perdue quand gemma-4-31b est devenu le goulot du parc le 01/08. Derrière lui,
 # DeepInfra reprend la main dès que le millier de requêtes du jour est consommé : la chaîne ne
 # s'arrête plus jamais faute de guichet, elle passe simplement du gratuit au payé.
-JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,deepinfra/Qwen/Qwen3-32B,nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,groq/llama-3.3-70b-versatile}
+JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,deepinfra/Qwen/Qwen3-32B,mistral/mistral-small-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/llama-3.3-70b-versatile}
 # 16 places de front depuis le 02/08. Le nœud ne calcule rien : il attend des réponses HTTP.
 # Mesuré à 8 places, en pleine charge : 1,3 % de CPU, 0,47 de charge sur 2 cœurs, 3,1 Go libres.
 # Le facteur limitant est le débit par minute des fournisseurs, pas la machine — et maintenant

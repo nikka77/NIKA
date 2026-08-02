@@ -97,7 +97,15 @@ async function streamTurn(apiKey: string, messages: Msg[], onText: (t: string) =
   const res = await fetch(ANTHROPIC_URL, {
     method: 'POST',
     headers: { 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
-    body: JSON.stringify({ model: MODEL, max_tokens: 1024, system: SYSTEM_PROMPT, tools: TOOLS, messages, stream: true }),
+    // PROMPT CACHING (audit 02/08) : system + tools sont identiques à chaque tour et à chaque
+    // visiteur — cache_control sur le dernier bloc les fait facturer à 10 % dès le 2e appel
+    // (docs.claude.com/en/docs/build-with-claude/prompt-caching). Sur un agent multi-tours qui
+    // rejoue tout l'historique à chaque tour, c'est le poste dominant du coût NIKO.
+    body: JSON.stringify({
+      model: MODEL, max_tokens: 1024,
+      system: [{ type: 'text', text: SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
+      tools: TOOLS, messages, stream: true,
+    }),
   });
   if (!res.ok || !res.body) throw new Error(`anthropic ${res.status}: ${await res.text().catch(() => '')}`);
 

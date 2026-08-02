@@ -373,33 +373,43 @@ export async function fetchFandomSections(universe, name, { minChars = 350, maxS
   if (identite === 'etranger') return { title: titre, url: page.url, sections: [], refus: `mauvaise entité : article « ${titre} »` };
   const alias = identite === 'alias' ? titre : null;
 
-  const j = await wget(`${api}?action=parse&page=${encodeURIComponent(titre)}&prop=sections&redirects=1&format=json&formatversion=2`);
+  // UN SEUL APPEL depuis le 02/08 (audit API) : parse accepte les prop combinés par « | » —
+  // wikitext ET table des sections arrivent ensemble, et chaque section se DÉCOUPE LOCALEMENT
+  // dans ce wikitext à son byteoffset. L'ancienne boucle re-téléchargeait chaque section rendue
+  // en HTML (~12 appels + 12 × 250 ms de politesse PAR FICHE) alors que tout le texte était déjà
+  // dans la première réponse : sur 7 691 fiches, ~92 000 appels de redondance pure.
+  // Doc : https://www.mediawiki.org/wiki/API:Parsing_wikitext (prop multiples, byteoffset).
+  const j = await wget(`${api}?action=parse&page=${encodeURIComponent(titre)}&prop=wikitext%7Csections&redirects=1&format=json&formatversion=2`);
   const brutes = j?.parse?.sections ?? [];
-  if (!brutes.length) return { title: titre, url: page.url, sections: [] };
+  const wikitext = String(j?.parse?.wikitext ?? '');
+  if (!brutes.length || !wikitext) return { title: titre, url: page.url, sections: [] };
 
   // Sections de tête uniquement : les sous-sous-parties (toclevel 3+) sont trop fines pour
   // porter une fiche, et gonfleraient la facture sans rien ajouter au lecteur.
   // On écarte ce qui ne raconte rien (références, galeries, liens externes). Trivia RESTE :
   // c'est de la matière canon (14 anecdotes sourcées sur Sharingan), pas du remplissage.
-  const IGNORE = /^(references?|notes?|gallery|galerie|external links?|see also|navigation)$/i;
+  const IGNORE = /^(references?|notes?|gallery|galerie|external links?|see also|(site )?navigation|merchandise)$/i;
   const retenues = brutes
     .filter((s) => Number(s.toclevel) <= 2 && !IGNORE.test(String(s.line).trim()))
     .slice(0, maxSections);
 
+  // byteOffset est en OCTETS UTF-8, pas en unités JS : on découpe sur le Buffer. Une section
+  // court jusqu'à la prochaine de niveau égal ou supérieur — c'est ce que servait &section=N
+  // (une section emporte ses sous-sections), on reproduit exactement ce périmètre.
+  const octets = Buffer.from(wikitext, 'utf8');
+  const finDe = (s) => {
+    const apres = brutes.find((x) => Number(x.byteoffset) > Number(s.byteoffset) && Number(x.toclevel) <= Number(s.toclevel));
+    return apres ? Number(apres.byteoffset) : octets.length;
+  };
+
   const sections = [];
   for (const s of retenues) {
-    const p = await wget(`${api}?action=parse&page=${encodeURIComponent(titre)}&section=${s.index}&prop=text&redirects=1&format=json&formatversion=2`);
-    const html = String(p?.parse?.text ?? '')
-      .replace(/<style[\s\S]*?<\/style>/g, '').replace(/<script[\s\S]*?<\/script>/g, '')
-      .replace(/<table[\s\S]*?<\/table>/g, ' ')          // infobox et navbox : déjà récoltées ailleurs
-      .replace(/<sup[\s\S]*?<\/sup>/g, ' ');             // appels de note « [12] »
-    const texte = html.replace(/<[^>]+>/g, ' ').replace(/&#?\w+;/g, ' ').replace(/\s+/g, ' ').trim()
-      // Le rendu répète le titre de la section et son crochet d'édition en tête : « Acquisition [ ] … »
-      .replace(new RegExp('^' + String(s.line).trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*\\[?\\s*\\]?\\s*', 'i'), '')
-      .trim();
+    if (!Number.isFinite(Number(s.byteoffset))) continue;   // section transcluse : offset null
+    const brut = octets.subarray(Number(s.byteoffset), finDe(s)).toString('utf8')
+      .replace(/^=+[^=\n]*=+\s*/, '');                      // la ligne de titre « == X == » ouvre le bloc
+    const texte = cleanWikitext(brut).replace(/\s+/g, ' ').trim();
     // Une section trop courte n'a pas de quoi nourrir une fiche — on ne paie pas pour du vide.
     if (texte.length >= minChars) sections.push({ index: String(s.index), titre: String(s.line).trim(), texte });
-    await sleep(250);                                     // même rythme que le reste de la lib
   }
   return { title: titre, url: page.url, sections, alias };
 }
