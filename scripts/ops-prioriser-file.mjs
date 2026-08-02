@@ -54,7 +54,30 @@ const rang = (m) => {
   const i = PRIORITAIRES.indexOf(u);
   return i >= 0 ? 1 + i : 100;                                    // puis les univers demandés
 };
-const tri = [...lus].sort((a, b) => rang(a) - rang(b) || a.msg_id - b.msg_id);
+let tri = [...lus].sort((a, b) => rang(a) - rang(b) || a.msg_id - b.msg_id);
+
+// --entrelacer : ALTERNER relectures et productions au lieu de les empiler par bloc (02/08).
+//
+// Trier par priorité produit une file EN DEUX BLOCS, et pgmq sert dans l'ordre : le nœud passe
+// donc une demi-heure à ne faire que juger, puis une demi-heure à ne faire que produire. Mesuré
+// aujourd'hui dans les deux sens — 169 verdicts et 0 production, puis 77 productions et 0
+// verdict. À chaque fois la moitié des couloirs regarde l'autre travailler, alors qu'ils ont des
+// compteurs séparés et pourraient tourner ensemble.
+//
+// Deux pour un : chaque production appelle DEUX verdicts, c'est le rapport qui garde les deux
+// étages au même rythme. Ce qui reste quand un côté s'épuise est simplement mis à la suite.
+if (process.argv.includes('--entrelacer')) {
+  const relectures = tri.filter((m) => m.message?.type === 'review_local');
+  const productions = tri.filter((m) => m.message?.type !== 'review_local');
+  const melange = [];
+  let i = 0, j = 0;
+  while (i < relectures.length || j < productions.length) {
+    for (let k = 0; k < 2 && i < relectures.length; k++) melange.push(relectures[i++]);
+    if (j < productions.length) melange.push(productions[j++]);
+  }
+  console.log(`entrelacement : ${relectures.length} relectures et ${productions.length} productions, deux pour une`);
+  tri = melange;
+}
 
 const compte = {};
 for (const m of tri) { const k = rang(m) === 0 ? 'relectures' : (universDe(m) ?? 'autre'); compte[k] = (compte[k] ?? 0) + 1; }
