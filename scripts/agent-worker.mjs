@@ -15,6 +15,7 @@ import { viderParc } from './lib/whatsapp.mjs';
 import { scoreAncrageProduction } from './lib/ancrage.mjs';
 import { poserAuGraphe } from '../lib/akasha/relations.ts';
 import { hostname } from 'node:os';
+import { readFileSync as lireFichierSync } from 'node:fs';
 import { execFile as execFileCb } from 'node:child_process';
 import { promisify } from 'node:util';
 const execFile = promisify(execFileCb);
@@ -822,6 +823,17 @@ const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffi
 const listeCouloirs = (s) => String(s ?? '').split(',').map((x) => x.trim()).filter(Boolean);
 const CLOUDS = listeCouloirs(CLOUD);
 const JUGES_CLI = listeCouloirs(JUGE);
+// Plan du Dispatcheur : lu du disque au plus toutes les 60 s, ignoré s'il a plus de 30 min.
+let _routage = { quand: 0, plan: {} };
+function lireRoutage() {
+  if (Date.now() - _routage.quand < 60_000) return _routage.plan;
+  _routage.quand = Date.now();
+  try {
+    const j = JSON.parse(lireFichierSync(process.env.NIKA_ROUTAGE ?? new URL('../data/routage.json', import.meta.url), 'utf8'));
+    _routage.plan = Date.now() - new Date(j.genere).getTime() < 30 * 60_000 ? (j.routage ?? {}) : {};
+  } catch { _routage.plan = {}; }
+  return _routage.plan;
+}
 const couloirsEpuises = new Map();   // modèle → horodatage du guichet fermé
 const couloirDispo = (m) => !couloirsEpuises.has(m) || Date.now() - couloirsEpuises.get(m) > 3_600_000;
 const premierDispo = (liste) => liste.find(couloirDispo) ?? null;
@@ -840,11 +852,26 @@ const modelOf = (type, p) => {
     // Interdits : lui-même et les modèles de ses confrères de jury (`evite`) — un remplaçant
     // identique à l'autre juge produirait un consensus factice.
     const interdits = new Set([porte, ...(p?.evite ?? [])]);
-    const remplacant = premierDispo(JUGES_CLI.filter((m) => !interdits.has(m)));
+    const planJuges = lireRoutage().review_local;
+    const viviers = planJuges?.length ? [...planJuges, ...JUGES_CLI] : JUGES_CLI;
+    const remplacant = premierDispo([...new Set(viviers)].filter((m) => !interdits.has(m)));
     if (porte && remplacant) console.log(`  ⇄ juge ${porte} indisponible → ${remplacant}`);
     return remplacant ?? porte ?? JUGES_CLI[0] ?? JUGE;
   }
+  // MODÈLE FIXE INVIOLABLE (02/08) : arbitrage_claude est un ÉTAGE, pas une tâche de masse —
+  // --cloud l'écrasait et Nemotron a rendu des verdicts sous la signature de Claude (5 litiges,
+  // découvert en lisant le premier plan du Dispatcheur). Ni la rotation ni le plan n'y touchent.
+  if (type === 'arbitrage_claude') return TASK_TYPES[type].model;
   if (CLOUDS.length) {
+    // LE PLAN DU DISPATCHEUR d'abord (02/08, rôle Claude n°6) : data/routage.json, régénéré
+    // toutes les 15 min depuis l'état réel des piles et des guichets. Périmé (> 30 min) ou
+    // muet sur ce type → la liste statique reprend, comme avant. L'intelligence est périodique
+    // et stratégique — jamais un appel LLM par tâche.
+    const plan = lireRoutage()[type];
+    if (plan?.length) {
+      const duPlan = premierDispo(plan.filter((c) => CLOUDS.includes(c)));
+      if (duPlan) return duPlan;
+    }
     // Les PENSEURS (Nemotron, gpt-oss) brûlent leur budget de sortie en raisonnement caché sur
     // les LONGS prompts, malgré /no_think — 31 sections coupées le 02/08, même après avoir
     // doublé le plafond (4 000 jetons !). La course au plafond est perdue d'avance : une tâche
@@ -1622,7 +1649,7 @@ async function traiterUn(msg) {
     await supabase.from('agent_results').update({
       arbitre_verdict: d === 'approve' ? 'valide' : 'rejeter',
       arbitre_motif: `⚖ Claude : ${String(row.result?.motif ?? '').slice(0, 300)}`,
-      arbitre_model: 'anthropic/claude-haiku-4-5 (arbitrage)', arbitre_at: new Date().toISOString(),
+      arbitre_model: `${row.model} (arbitrage)`, arbitre_at: new Date().toISOString(),
     }).eq('id', cible).eq('review_status', 'pending');
     if (d === 'approve') await verrouEtAppliquer(cible, (q) => q);
     else await supabase.from('agent_results').update({ review_status: 'rejected', reviewed_at: new Date().toISOString() })

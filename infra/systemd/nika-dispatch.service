@@ -1,0 +1,11 @@
+# nika-dispatch.service — le Dispatcheur (rôle Claude n°6) : plan de routage toutes les 15 min.
+[Unit]
+Description=NIKA OPS — Dispatcheur Claude (plan de routage des piles)
+OnFailure=nika-echec@%n.service
+[Service]
+Type=oneshot
+User=nika
+WorkingDirectory=/home/nika/NIKA
+Environment=NIKA_ROUTAGE=/home/nika/routage.json
+ExecStart=/usr/bin/node --env-file=.env.local scripts/ops-dispatcheur.mjs
+Nice=10

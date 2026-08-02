@@ -1,0 +1,12 @@
+{
+ "genere": "2026-08-02T15:25:12.380Z",
+ "motif": "arbitrage_claude (124) = jugement ; non-penseurs stables tête (llama-70b 800/j, mistral-small ∞), penseurs caché en réserve pour si contexte long ; gemma-4-26b exclu (restantJour=0).",
+ "routage": {
+  "arbitrage_claude": [
+   "groq/llama-3.3-70b-versatile",
+   "mistral/mistral-small-latest",
+   "nvidia/nvidia/nemotron-3-super-120b-a12b",
+   "deepinfra/Qwen/Qwen3-32B"
+  ]
+ }
+}

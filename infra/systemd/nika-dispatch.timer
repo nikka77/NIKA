@@ -1,0 +1,7 @@
+[Unit]
+Description=NIKA OPS — Dispatcheur toutes les 15 min
+[Timer]
+OnCalendar=*:03/15
+Persistent=false
+[Install]
+WantedBy=timers.target

@@ -8,6 +8,7 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
+Environment=NIKA_ROUTAGE=/home/nika/routage.json
 Type=simple
 User=nika
 WorkingDirectory=/home/nika/NIKA
