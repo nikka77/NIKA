@@ -8,7 +8,7 @@ set -euo pipefail
 
 DB=nika_ops
 ENVF=/home/nika/.nika-ops-db.env
-PGREST_VER=v12.2.3
+PGREST_VER=v14.16
 
 # ── 1. Postgres ──────────────────────────────────────────────────────────────
 if ! command -v psql >/dev/null; then
