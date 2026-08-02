@@ -1065,6 +1065,9 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
     ? [{ ...messages[0], content: `${messages[0].content}\n\nRéponds UNIQUEMENT par un objet JSON conforme à ce schéma (mêmes clés, mêmes types, AUCUN texte hors JSON, ne recopie pas le schéma) :\n${JSON.stringify(schema)}` }]
     : messages;
   if (SANS_PENSEE.has(modele)) msgs = [{ role: 'system', content: '/no_think' }, ...msgs];
+  // La remise flex n'est bonne que si DeepInfra a de la capacité flex : certains soirs il n'en a
+  // AUCUNE et chaque verdict payait 3×21 s de pauses avant d'échouer (02/08, juges à l'arrêt).
+  let sansFlex = false;
   for (let essai = 1; ; essai++) {
     const res = await fetch(url, {
       method: 'POST',
@@ -1082,7 +1085,7 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
         // n°1 du délire multilingue (5/12 sections encore atteintes après la température 0.2 —
         // « desde », troncatures, une hallucination). Les verdicts courts n'ont jamais été pris
         // en défaut : ils gardent la remise de 20 %.
-        ...(url.includes('deepinfra.com') && type === 'review_local' ? { service_tier: 'flex' } : {}),
+        ...(url.includes('deepinfra.com') && type === 'review_local' && !sansFlex ? { service_tier: 'flex' } : {}),
         max_tokens: (NUM_PREDICT[type] ?? 800) + (SANS_PENSEE.has(modele) ? 2_400 : 900),
         response_format: modeJson === 'json_schema'
           ? { type: 'json_schema', json_schema: { name: type, strict: true, schema } }
@@ -1091,6 +1094,13 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
     });
     if (res.status === 429) {
       const corps = await res.text();
+      // « No flex capacity available » : pas un débit à attendre — le tier N'EXISTE pas là
+      // maintenant. On rebascule au tier standard sur-le-champ, sans pause.
+      if (/no flex capacity/i.test(corps)) {
+        sansFlex = true;
+        console.log(`  ⇄ flex sans capacité (${new URL(url).host}) — repli immédiat au tier standard`);
+        continue;
+      }
       // Un 429 « par JOUR » (TPD/RPD) ne se rattrape pas en attendant : le couloir est mort
       // jusqu'au lendemain. Attendre 27 min pour re-tenter et re-échouer endormait l'usine —
       // constaté le 01/08, llama-70b épuisé faisait 1 tâche en 20 min. On le traite comme
