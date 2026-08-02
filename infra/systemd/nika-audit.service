@@ -1,9 +1,13 @@
+# nika-audit.service — l'audit à l'aveugle hebdomadaire, côté VPS (24/7, PC de Dan éteint).
+# Le CLI Claude vit sur le VPS depuis le 02/08 (jeton d'abonnement). Les rapports sortent du
+# dépôt (NIKA_AUDIT_DIR) pour garder l'arbre git propre — le classement part sur WhatsApp.
 [Unit]
+Description=NIKA OPS — audit à l'aveugle hebdomadaire (Claude)
 OnFailure=nika-echec@%n.service
-Description=NIKA OPS — audit hebdomadaire à l'aveugle (claude headless)
-
 [Service]
 Type=oneshot
 User=nika
 WorkingDirectory=/home/nika/NIKA
-ExecStart=/home/nika/NIKA/scripts/audit-hebdo.sh
+Environment=NIKA_AUDIT_DIR=/home/nika/audits
+ExecStart=/usr/bin/node --env-file=.env.local scripts/ops-audit-aveugle.mjs --par-couloir=6
+Nice=10

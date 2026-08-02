@@ -34,7 +34,7 @@ cd "$(dirname "$0")/.."
 # SOBRE (pas de raisonnement caché) à 60 req/min — les campagnes de sections, routées vers les
 # sobres depuis les troncatures Nemotron, plafonnaient aux 12/min de mistral-large. ~0,0004 $
 # la section : les 171 d'Initial D coûtent 7 centimes quand le couloir gratuit est plein.
-MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,deepinfra/mistralai/Mistral-Small-24B-Instruct-2501,groq/openai/gpt-oss-120b,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo,openrouter/mistralai/mistral-small-24b-instruct-2501}
+MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,deepinfra/mistralai/Mistral-Small-24B-Instruct-2501,groq/openai/gpt-oss-120b,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo,openrouter/mistralai/mistral-small-24b-instruct-2501,anthropic/claude-haiku-4-5}
 # Jugement n°2 (famille croisée) : Qwen3-32B chez DeepInfra depuis le 01/08 — facturé au
 # jeton, donc SANS guichet quotidien, le mur contre lequel tous les couloirs gratuits butaient.
 # Mesuré : 0,000195 $ le verdict avec /no_think (2,6 s) — les 10 $ de Dan valent ~51 000
@@ -47,7 +47,7 @@ MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-l
 # Google — perdue quand gemma-4-31b est devenu le goulot du parc le 01/08. Derrière lui,
 # DeepInfra reprend la main dès que le millier de requêtes du jour est consommé : la chaîne ne
 # s'arrête plus jamais faute de guichet, elle passe simplement du gratuit au payé.
-JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,deepinfra/Qwen/Qwen3-32B,mistral/mistral-small-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/llama-3.3-70b-versatile,openrouter/mistralai/mistral-small-24b-instruct-2501}
+JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,deepinfra/Qwen/Qwen3-32B,mistral/mistral-small-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/llama-3.3-70b-versatile,openrouter/mistralai/mistral-small-24b-instruct-2501,anthropic/claude-haiku-4-5}
 # 16 places de front depuis le 02/08. Le nœud ne calcule rien : il attend des réponses HTTP.
 # Mesuré à 8 places, en pleine charge : 1,3 % de CPU, 0,47 de charge sur 2 cœurs, 3,1 Go libres.
 # Le facteur limitant est le débit par minute des fournisseurs, pas la machine — et maintenant
@@ -57,7 +57,9 @@ CONC=${NIKA_CONC:-$(grep '^NIKA_CONC=' .env.local 2>/dev/null | cut -d= -f2)}
 # COULOIR DE PRODUCTION UNIQUEMENT depuis le 02/08 : les relectures ont leur propre worker
 # (scripts/juges.sh, service nika-juges). --juge reste passé car c'est LUI qui compose le jury
 # à l'enrôlement — chaque production met ses deux juges en file en la quittant.
-TYPES=${NIKA_TYPES:-fandom_descfr,fiche_technique,fiche_artefact,fiche_lieu,fiche_lexique,fiche_section,akasha_attrs,akasha_relations,toilettage_fr,flavor_akasha}
+# arbitrage_claude REJOINT le couloir de production le 02/08 : le CLI Claude vit désormais sur
+# le VPS (jeton d'abonnement dans .env.local) — les litiges se tranchent 24/7, PC de Dan éteint.
+TYPES=${NIKA_TYPES:-fandom_descfr,fiche_technique,fiche_artefact,fiche_lieu,fiche_lexique,fiche_section,akasha_attrs,akasha_relations,toilettage_fr,flavor_akasha,arbitrage_claude}
 
 echo "🏭 usine continue — production ${MODELE} · jury enrôlé ${JUGE} · ${CONC:-16} de front"
 exec "${PRIO[@]}" node --env-file=.env.local scripts/agent-worker.mjs \

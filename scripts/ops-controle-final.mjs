@@ -83,8 +83,9 @@ const rapport = [`# Contrôle qualité final — ${UNIVERSE} — ${date}`, '',
 console.log(`\nTAUX DE CONFIANCE ${UNIVERSE} : ${taux} % · moyenne ${moyenne.toFixed(1)}/10`);
 for (const p of pires) console.log(`  pire : ${p.slug} ${p.note}/10 — ${String(p.defaut).slice(0, 90)}`);
 if (!DRY) {
-  mkdirSync('tasks/audits', { recursive: true });
-  writeFileSync(`tasks/audits/confiance-${UNIVERSE.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${date}.md`, rapport + '\n');
+  const DOSSIER = process.env.NIKA_AUDIT_DIR ?? 'tasks/audits';
+  mkdirSync(DOSSIER, { recursive: true });
+  writeFileSync(`${DOSSIER}/confiance-${UNIVERSE.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${date}.md`, rapport + '\n');
   await supabase.from('ops_notes').insert({ note: `✅ Contrôle final ${UNIVERSE} : confiance ${taux} % (moyenne ${moyenne.toFixed(1)}/10, ${valides.length} fiches)` });
   await envoyerAlerte(`✅ ${UNIVERSE} — taux de confiance ${taux} % (moyenne ${moyenne.toFixed(1)}/10)`).catch(() => {});
   await battreEnClaude('controle', `${UNIVERSE} : confiance ${taux} %`);

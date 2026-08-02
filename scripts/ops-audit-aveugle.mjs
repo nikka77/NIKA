@@ -113,8 +113,9 @@ const rapport = [`# Audit à l'aveugle — ${date}`, '',
   ...classement.map((c) => `| ${c.modele} | **${c.moyenne}/10** | ${c.n} | ${c.pire.replace(/\|/g, '·')} |`),
   '', '— Un couloir sous 6/10 deux semaines de suite se licencie (retiré de usine.sh).'].join('\n');
 if (!DRY) {
-  mkdirSync('tasks/audits', { recursive: true });
-  writeFileSync(`tasks/audits/${date}.md`, rapport + '\n');
+  const DOSSIER = process.env.NIKA_AUDIT_DIR ?? 'tasks/audits';
+  mkdirSync(DOSSIER, { recursive: true });
+  writeFileSync(`${DOSSIER}/${date}.md`, rapport + '\n');
   await envoyerAlerte(`⚖ Audit à l'aveugle ${date} :\n${classement.map((c) => `${c.moyenne}/10 ${c.modele.split('/').pop()}`).join('\n')}`).catch(() => {});
   console.log(`\n✓ rapport : tasks/audits/${date}.md`);
 } else console.log('\n' + rapport);

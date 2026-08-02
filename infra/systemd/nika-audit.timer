@@ -1,9 +1,7 @@
 [Unit]
-Description=NIKA OPS — déclencheur dimanche 09:00
-
+Description=NIKA OPS — audit à l'aveugle chaque dimanche 09h30
 [Timer]
-OnCalendar=Sun *-*-* 09:00:00
+OnCalendar=Sun *-*-* 09:30
 Persistent=true
-
 [Install]
 WantedBy=timers.target
