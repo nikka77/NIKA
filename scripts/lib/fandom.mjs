@@ -109,6 +109,33 @@ export const WIKIS = {
 export const wikiApi = (universe) =>
   WIKIS[universe] ? `https://${WIKIS[universe]}.fandom.com/api.php` : null;
 
+/** REGISTRE D'ALIAS CURÉ (02/08) — notre nom → le titre canon du wiki, vérifié À LA MAIN.
+ *  La résolution automatique échoue quand nos noms (français, ou romanisés « ou ») ne partagent
+ *  aucun mot avec le titre anglais : « Cellule d'enquête Kira » ≡ Japanese Task Force,
+ *  « Kyousuke » ≡ Kyosuke. La garde d'identité refusait — à raison : deviner, c'est comme ça
+ *  qu'on a publié quatre sections de L sur la fiche « Détective ». Ici l'identité n'est pas
+ *  devinée, elle est CURÉE : chaque paire a été vérifiée contre la page réelle (sonde du 02/08).
+ *  Une entrée d'ici l'emporte sur la résolution automatique ET vaut preuve d'identité. */
+export const ALIAS_REGISTRE = {
+  'Death Note': {
+    'SPK': 'Special Provision for Kira',
+    'Hideki Ryuuga': 'Hideki Ryuga',
+    'Monde des Shinigami': 'Shinigami Realm',
+    'Œil de Shinigami': 'Shinigami Eyes',
+    "Cellule d'enquête Kira": 'Japanese Task Force',
+    'Kyousuke Higuchi': 'Kyosuke Higuchi',
+    'Shingo Midou': 'Shingo Mido',
+    'Kiichirou Osoreda': 'Kiichiro Osoreda',
+    'Ginzou Kaneboshi': 'Ginzo Kaneboshi',
+    'Shūichi Aizawa': 'Shuichi Aizawa',
+    'Itou Shiroba': 'Ito Shiroba',
+    'Ellickson Gardner': 'Ellickson Gardner',
+    'Daril Ghiroza': 'Daril Ghiroza',
+    'Yasunaga': 'Yasunaga',
+    'Kyoko': 'Kyoko',
+  },
+};
+
 /** Champs d'infobox sans intérêt pour nos agents (médias, apparitions, physique, doublage). */
 const INFOBOX_IGNORE = /^(manga|anime|novel|movie|game|ova|appears|japanese|english|voice|seiyu|image|caption|birthdate|deathdate|height|weight|blood|ninja registration|academy|ch(u|ū)nin prom|debut|kanji|romaji|literal|other names?)/i;
 
@@ -294,20 +321,26 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000 } = {})
   await mkdir(CACHE_DIR, { recursive: true });
   // La version du nettoyeur fait partie de la clé : après correction, les vieilles entrées sont
   // ignorées d'office (sinon un worker encore en mémoire avec l'ancien code repeuple le cache).
-  const file = `${CACHE_DIR}${createHash('sha1').update(`v5:${universe}:${name}`).digest('hex').slice(0, 16)}.json`;
+  // L'alias curé fait partie de la clé : poser une curation invalide d'office l'ancienne
+  // résolution fautive en cache (« Cellule d'enquête Kira » y pointait sur Light Yagami).
+  const cleCache = `v5:${universe}:${name}${ALIAS_REGISTRE[universe]?.[name] ? ':cure=' + ALIAS_REGISTRE[universe][name] : ''}`;
+  const file = `${CACHE_DIR}${createHash('sha1').update(cleCache).digest('hex').slice(0, 16)}.json`;
   // sameEntity est RECALCULÉ à la lecture : la garde évolue (squelettes de romanisation du 26/07)
   // et un verdict figé dans le cache la court-circuiterait — sans avoir à invalider tout le cache.
   try {
     const c = JSON.parse(await readFile(file, 'utf8'));
-    return { ...c, sameEntity: c.title ? sameEntityName(name, c.title) : c.sameEntity };
+    // Un alias curé ne se re-juge pas « à vue » : la curation l'emporte sur le recalcul.
+    return { ...c, sameEntity: c.aliasCure ? true : c.title ? sameEntityName(name, c.title) : c.sameEntity };
   } catch { /* cache froid */ }
 
   // redirects=1 : « Haiya Dragon » → « Icarus » (sinon on ne récupère que « #REDIRECT »)
   const parseUrl = (t) => `${api}?action=parse&page=${encodeURIComponent(t)}&prop=wikitext&redirects=1&format=json&formatversion=2`;
-  let title = name;
+  // L'alias CURÉ d'abord : titre vérifié à la main, identité garantie par la curation.
+  const cure = ALIAS_REGISTRE[universe]?.[name];
+  let title = cure ?? name;
   let j = await wget(parseUrl(title));
 
-  let resolvedBy = 'exact';
+  let resolvedBy = cure ? 'alias-cure' : 'exact';
   // MACRONS (02/08) : nos noms viennent des API japonaises (« Shūichi Aizawa », « Tōta
   // Matsuda ») quand les wikis titrent en ASCII (« Shuichi Aizawa », « Touta Matsuda »).
   // Sans cet essai, le titre exact échoue et la recherche plein texte ramène n'importe quel
@@ -337,7 +370,8 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000 } = {})
     // GARDE D'IDENTITÉ (25/07) : la recherche plein texte ramenait des entités VOISINES
     // (« Giorno's Mother » → article de Giorno ; « Super 17-gou » → Android 17). On compare
     // les ensembles de mots significatifs : titre et nom doivent désigner la même entité.
-    sameEntity: sameEntityName(name, j.parse.title ?? title),
+    sameEntity: cure ? true : sameEntityName(name, j.parse.title ?? title),
+    aliasCure: Boolean(cure),
   };
   await writeFile(file, JSON.stringify(out));
   await sleep(250);                                 // politesse Fandom
@@ -374,7 +408,7 @@ export async function fetchFandomSections(universe, name, { minChars = 350, maxS
   // contenu qui parle de quelqu'un d'autre — et les juges les refusaient une à une, à raison.
   // Deux issues seulement : même entité (titre concordant), ou ALIAS PROUVÉ par les champs
   // de nommage de l'article (Jealous ≡ Gelus). Tout le reste est refusé à la source.
-  const identite = identiteEntre(name, titre, page.text);
+  const identite = page.aliasCure ? 'alias' : identiteEntre(name, titre, page.text);
   if (identite === 'etranger') return { title: titre, url: page.url, sections: [], refus: `mauvaise entité : article « ${titre} »` };
   const alias = identite === 'alias' ? titre : null;
 
