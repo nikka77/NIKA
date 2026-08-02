@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Audit à l'aveugle hebdomadaire (rôle Claude n°1, activé par Dan le 02/08/2026).
+     Tourne depuis ~/dev/NIKA (JAMAIS iCloud — TCC) : le CLI Claude vit sur le Mac. -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>com.nika.ops.audit</string>
+  <key>ProgramArguments</key><array>
+    <string>/bin/zsh</string><string>-c</string>
+    <string>cd ~/dev/NIKA && /opt/homebrew/bin/node --env-file=.env.local scripts/ops-audit-aveugle.mjs --par-couloir=6</string>
+  </array>
+  <key>StartCalendarInterval</key><dict><key>Weekday</key><integer>0</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>30</integer></dict>
+  <key>StandardOutPath</key><string>/tmp/nika-audit.log</string>
+  <key>StandardErrorPath</key><string>/tmp/nika-audit.log</string>
+</dict></plist>

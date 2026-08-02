@@ -116,25 +116,19 @@ export const wikiApi = (universe) =>
  *  qu'on a publié quatre sections de L sur la fiche « Détective ». Ici l'identité n'est pas
  *  devinée, elle est CURÉE : chaque paire a été vérifiée contre la page réelle (sonde du 02/08).
  *  Une entrée d'ici l'emporte sur la résolution automatique ET vaut preuve d'identité. */
-export const ALIAS_REGISTRE = {
-  'Death Note': {
-    'SPK': 'Special Provision for Kira',
-    'Hideki Ryuuga': 'Hideki Ryuga',
-    'Monde des Shinigami': 'Shinigami Realm',
-    'Œil de Shinigami': 'Shinigami Eyes',
-    "Cellule d'enquête Kira": 'Japanese Task Force',
-    'Kyousuke Higuchi': 'Kyosuke Higuchi',
-    'Shingo Midou': 'Shingo Mido',
-    'Kiichirou Osoreda': 'Kiichiro Osoreda',
-    'Ginzou Kaneboshi': 'Ginzo Kaneboshi',
-    'Shūichi Aizawa': 'Shuichi Aizawa',
-    'Itou Shiroba': 'Ito Shiroba',
-    'Ellickson Gardner': 'Ellickson Gardner',
-    'Daril Ghiroza': 'Daril Ghiroza',
-    'Yasunaga': 'Yasunaga',
-    'Kyoko': 'Kyoko',
-  },
-};
+/** REGISTRE D'ALIAS CURÉ — data/alias-cures.json (02/08). Notre nom → titre canon du wiki,
+ *  chaque paire VÉRIFIÉE contre la page réelle avant d'entrer (sonde parse). Fichier de DONNÉES
+ *  et non de code : le Curateur (ops-curer-alias.mjs, rôle Claude activé par Dan) y écrit ses
+ *  trouvailles confirmées sans toucher au connecteur. Une entrée l'emporte sur la résolution
+ *  automatique ET vaut preuve d'identité — la curation ne se re-juge pas à vue. */
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join as joinPath } from 'node:path';
+const ICI = dirname(fileURLToPath(import.meta.url));
+export const ALIAS_REGISTRE = (() => {
+  try { return JSON.parse(readFileSync(joinPath(ICI, '..', '..', 'data', 'alias-cures.json'), 'utf8')); }
+  catch { return {}; }
+})();
 
 /** Champs d'infobox sans intérêt pour nos agents (médias, apparitions, physique, doublage). */
 const INFOBOX_IGNORE = /^(manga|anime|novel|movie|game|ova|appears|japanese|english|voice|seiyu|image|caption|birthdate|deathdate|height|weight|blood|ninja registration|academy|ch(u|ū)nin prom|debut|kanji|romaji|literal|other names?)/i;
