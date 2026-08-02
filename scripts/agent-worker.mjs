@@ -792,7 +792,18 @@ const modelOf = (type, p) => {
     if (porte && remplacant) console.log(`  ⇄ juge ${porte} indisponible → ${remplacant}`);
     return remplacant ?? porte ?? JUGES_CLI[0] ?? JUGE;
   }
-  if (CLOUDS.length) return premierDispo(CLOUDS) ?? CLOUDS[0];   // production au cloud
+  if (CLOUDS.length) {
+    // Les PENSEURS (Nemotron, gpt-oss) brûlent leur budget de sortie en raisonnement caché sur
+    // les LONGS prompts, malgré /no_think — 31 sections coupées le 02/08, même après avoir
+    // doublé le plafond (4 000 jetons !). La course au plafond est perdue d'avance : une tâche
+    // à prompt long va d'abord à un producteur SOBRE (Mistral réussissait les mêmes sections
+    // à 1 700). Les penseurs restent en repli si les sobres ont fermé leurs guichets.
+    if (type === 'fiche_section') {
+      const sobre = premierDispo(CLOUDS.filter((m) => !SANS_PENSEE.has(sansCouloir(m))));
+      if (sobre) return sobre;
+    }
+    return premierDispo(CLOUDS) ?? CLOUDS[0];                     // production au cloud
+  }
   const t = TASK_TYPES[type];
   return typeof t.model === 'function' ? t.model(p) : t.model;
 };
