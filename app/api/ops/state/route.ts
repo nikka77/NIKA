@@ -213,13 +213,18 @@ export async function GET(req: Request) {
   // chacun (pas de scan) : total, et combien portent déjà une description française.
   const UNIVERS = ['Naruto', 'One Piece', 'Dragon Ball', 'Bleach', "JoJo's Bizarre Adventure",
     'Hunter x Hunter', 'Death Note', 'Initial D'];
+  // « avecDossier » ajouté le 02/08 : la jauge ne montrait que descFr alors que la production
+  // du jour (sections L26) n'y apparaît pas — 279 sections Death Note publiées et un compteur
+  // immobile. Un tableau de bord doit mesurer l'objectif COURANT, pas celui d'hier.
   const univers = !complet ? null : await Promise.all(UNIVERS.map(async (u) => {
-    const [{ count: total }, { count: avecFr }] = await Promise.all([
+    const [{ count: total }, { count: avecFr }, { count: avecDossier }] = await Promise.all([
       supabase.from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u),
       supabase.from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u)
         .not('attributes->>descFr', 'is', null),
+      supabase.from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u)
+        .not('attributes->sections', 'is', null),
     ]);
-    return { nom: u, total: total ?? 0, avecFr: avecFr ?? 0 };
+    return { nom: u, total: total ?? 0, avecFr: avecFr ?? 0, avecDossier: avecDossier ?? 0 };
   }));
 
   return NextResponse.json({

@@ -11,7 +11,7 @@ import AgentsPanel, { ClaudeConsole, type AgentEtat } from './AgentsPanel';
 
 type Noeud = { id: string; role: string; detail: string; gpu: boolean; vuA?: string; ageSec: number };
 type Couloir = { cle: string; court: string; payant: boolean; parJour: number | null; consomme: number; restant: number | null; ferme: boolean; motifFermeture?: string | null };
-type Univers = { nom: string; total: number; avecFr: number };
+type Univers = { nom: string; total: number; avecFr: number; avecDossier?: number };
 type State = {
   queue: { queue_length: number; total_messages: number };
   flotte: Noeud[];
@@ -326,17 +326,26 @@ export default function OpsBoard() {
         <AgentsPanel agents={state?.agents ?? []} modeleActif={state?.health.modeleActif ?? null} />
         <ClaudeConsole />
 
-        <Bloc titre="Couverture des univers" note="fiches publiées avec une description française">
+        {/* Deux jauges par univers depuis le 02/08 : descFr ET dossiers de sections. La jauge
+            unique masquait le travail du jour — 279 sections Death Note publiées, compteur
+            immobile. Un tableau de bord mesure l'objectif COURANT, pas celui d'hier. */}
+        <Bloc titre="Couverture des univers" note="description française · — · dossier de sections">
           {(state?.univers ?? []).sort((a, b) => b.total - a.total).map((u) => {
             const pct = u.total ? Math.round((u.avecFr / u.total) * 100) : 0;
+            const pctD = u.total ? Math.round(((u.avecDossier ?? 0) / u.total) * 100) : 0;
             return (
               <div key={u.nom} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '5px 0' }}>
                 <span style={{ fontFamily: 'var(--fo)', fontSize: 12, color: 'var(--td)', width: 150, flexShrink: 0 }}>{u.nom}</span>
-                <div style={{ flex: 1, height: 7, borderRadius: 4, background: 'rgba(255,255,255,0.06)', overflow: 'hidden', minWidth: 60 }}>
-                  <div style={{ width: `${pct}%`, height: '100%', background: pct >= 80 ? OK : pct >= 50 ? CY : WARN }} />
+                <div style={{ flex: 1, minWidth: 60 }}>
+                  <div style={{ height: 6, borderRadius: 4, background: 'rgba(255,255,255,0.06)', overflow: 'hidden' }}>
+                    <div style={{ width: `${pct}%`, height: '100%', background: pct >= 80 ? OK : pct >= 50 ? CY : WARN }} />
+                  </div>
+                  <div style={{ height: 6, borderRadius: 4, background: 'rgba(255,255,255,0.06)', overflow: 'hidden', marginTop: 2 }}>
+                    <div style={{ width: `${pctD}%`, height: '100%', background: 'var(--az)' }} />
+                  </div>
                 </div>
-                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', width: 96, textAlign: 'right', flexShrink: 0 }}>
-                  {u.avecFr}/{u.total} · {pct} %
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', width: 130, textAlign: 'right', flexShrink: 0 }}>
+                  {u.avecFr}/{u.total} fr · {u.avecDossier ?? 0} dossiers
                 </span>
               </div>
             );
