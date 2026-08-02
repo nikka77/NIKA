@@ -11,7 +11,8 @@ import AgentsPanel, { ClaudeConsole, type AgentEtat } from './AgentsPanel';
 
 type Noeud = { id: string; role: string; detail: string; gpu: boolean; vuA?: string; ageSec: number };
 type Couloir = { cle: string; court: string; payant: boolean; parJour: number | null; consomme: number; restant: number | null; ferme: boolean; motifFermeture?: string | null };
-type Univers = { nom: string; total: number; avecFr: number; avecDossier?: number };
+type Univers = { nom: string; total: number; avecFr: number; avecDossier?: number;
+  autres?: { total: number; avecFr: number; avecDossier: number } };
 type ArbitreClaude = { verdictsHeure: number; litigesEnFile: number };
 type State = {
   queue: { queue_length: number; total_messages: number };
@@ -342,7 +343,10 @@ export default function OpsBoard() {
           </div>
         </Bloc>
 
-        <Bloc titre="Couverture des univers" note="description française · — · dossier de sections">
+        {/* PERSONNAGES seulement dans la jauge (02/08, correction de Dan) : toutes entrées
+            confondues elle affichait « 77 dossiers » pour 74 fiches Death Note — les lieux et
+            voitures comptaient. Les autres entrées restent lisibles en seconde ligne, à part. */}
+        <Bloc titre="Couverture des univers" note="fiches personnages : description française · — · dossier de sections">
           {(state?.univers ?? []).sort((a, b) => b.total - a.total).map((u) => {
             const pct = u.total ? Math.round((u.avecFr / u.total) * 100) : 0;
             const pctD = u.total ? Math.round(((u.avecDossier ?? 0) / u.total) * 100) : 0;
@@ -357,8 +361,13 @@ export default function OpsBoard() {
                     <div style={{ width: `${pctD}%`, height: '100%', background: 'var(--az)' }} />
                   </div>
                 </div>
-                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', width: 130, textAlign: 'right', flexShrink: 0 }}>
-                  {u.avecFr}/{u.total} fr · {u.avecDossier ?? 0} dossiers
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', width: 172, textAlign: 'right', flexShrink: 0 }}>
+                  {u.avecFr}/{u.total} fr · {u.avecDossier ?? 0}/{u.total} dossiers
+                  {u.autres ? (
+                    <span style={{ display: 'block', fontSize: 10, color: 'var(--td4, var(--td3))', opacity: 0.75 }}>
+                      autres entrées : {u.autres.avecFr}/{u.autres.total} fr · {u.autres.avecDossier} dos
+                    </span>
+                  ) : null}
                 </span>
               </div>
             );

@@ -226,15 +226,23 @@ export async function GET(req: Request) {
   // « avecDossier » ajouté le 02/08 : la jauge ne montrait que descFr alors que la production
   // du jour (sections L26) n'y apparaît pas — 279 sections Death Note publiées et un compteur
   // immobile. Un tableau de bord doit mesurer l'objectif COURANT, pas celui d'hier.
+  // PERSONNAGES d'abord (02/08, correction de Dan) : toutes entrées confondues, la jauge
+  // devenait absurde — « 77 dossiers » pour 74 fiches Death Note, 30 dossiers pour 26 persos
+  // Initial D (les voitures comptaient). La jauge mesure les FICHES personnages ; le reste
+  // (jutsu, lieux, autos…) part dans « autres », visible mais séparé.
   const univers = !complet ? null : await Promise.all(UNIVERS.map(async (u) => {
-    const [{ count: total }, { count: avecFr }, { count: avecDossier }] = await Promise.all([
-      supabase.from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u),
-      supabase.from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u)
-        .not('attributes->>descFr', 'is', null),
-      supabase.from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u)
-        .not('attributes->sections', 'is', null),
+    const base = () => supabase.from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u);
+    const [{ count: total }, { count: avecFr }, { count: avecDossier },
+      { count: aTotal }, { count: aFr }, { count: aDossier }] = await Promise.all([
+      base().eq('type', 'character'),
+      base().eq('type', 'character').not('attributes->>descFr', 'is', null),
+      base().eq('type', 'character').not('attributes->sections', 'is', null),
+      base().neq('type', 'character'),
+      base().neq('type', 'character').not('attributes->>descFr', 'is', null),
+      base().neq('type', 'character').not('attributes->sections', 'is', null),
     ]);
-    return { nom: u, total: total ?? 0, avecFr: avecFr ?? 0, avecDossier: avecDossier ?? 0 };
+    return { nom: u, total: total ?? 0, avecFr: avecFr ?? 0, avecDossier: avecDossier ?? 0,
+      autres: { total: aTotal ?? 0, avecFr: aFr ?? 0, avecDossier: aDossier ?? 0 } };
   }));
 
   return NextResponse.json({
