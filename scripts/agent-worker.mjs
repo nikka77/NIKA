@@ -1469,21 +1469,9 @@ async function traiterEnParallele(msgs, conc) {
 }
 
 async function traiterUn(msg) {
-  // Un nœud sans GPU ne doit JAMAIS consommer une tâche confiée à un modèle local : il la
-  // ferait échouer (localhost:11434 injoignable) alors qu'un autre nœud de la flotte sait la
-  // traiter. On la laisse en file — sa visibilité expire et le Mac la reprendra.
-  const modelePrevu = String(modelOf(msg.message?.type, msg.message?.payload ?? {}) ?? '');
-  if (modelePrevu.startsWith('ollama/') && !(await ollamaDisponible())) {
-    console.log(`  ↷ [${msg.msg_id}] laissée à un nœud GPU (${modelePrevu})`);
-    return;
-  }
-  // --local : ce nœud ne travaille QUE sur son GPU. Sans ce garde-fou, le Mac consommait le
-  // budget nuage partagé (gemma) pour des relectures que le VPS traite bien mieux, et se
-  // retrouvait à attendre une fenêtre de quota au lieu de faire tourner son modèle gratuit.
-  if (LOCAL && !modelePrevu.startsWith('ollama/')) {
-    console.log(`  ↷ [${msg.msg_id}] laissée au nuage (${modelePrevu})`);
-    return;
-  }
+  // Les tâches qu'un nœud ne sait pas exécuter (modèle local sans GPU ici, ou modèle nuage sur
+  // un nœud --local) sont écartées EN AMONT, dans la boucle, et rendues à la flotte séance
+  // tenante. Les écarter ici les aurait laissées invisibles pendant VT — voir le tri de modèle.
   const row = await processMessage(msg);
   if (row.status === 'reporte') {
     // Ni archivage ni écriture : le message reste en file (visibilité expirée → il repart
@@ -1642,6 +1630,30 @@ for (;;) {
       await new Promise((r) => setTimeout(r, 30_000));   // continu : on laisse le voisin les prendre
       continue;
     }
+  }
+
+  // Tri de MODÈLE — même geste que le tri de couloir, et pour la même raison. Un nœud qui ne
+  // sait pas exécuter une tâche doit la RENDRE, pas se contenter de ne pas la faire : sa lecture
+  // a posé une visibilité de VT (600 s) que personne ne lève. Mesuré le 02/08 : le Mac, armé en
+  // juge local alors que tous les verdicts en file étaient attribués au nuage, lisait la file par
+  // lots de 12 et la masquait entière au VPS — 427 relectures en attente, 0,5 verdict/min au lieu
+  // de 35. Le nœud tournait « sans erreur », les compteurs étaient verts, et la file gelait.
+  const gpuIci = await ollamaDisponible();
+  const saitFaire = (m) => {
+    const mod = String(modelOf(m.message?.type, m.message?.payload ?? {}) ?? '');
+    return mod.startsWith('ollama/') ? gpuIci : !LOCAL;
+  };
+  const rendus = miens.filter((m) => !saitFaire(m));
+  if (rendus.length) {
+    await supabase.rpc('ops_queue_send_batch', { messages: rendus.map((m) => m.message) });
+    for (const m of rendus) await supabase.rpc('ops_queue_archive', { message_id: m.msg_id });
+    console.log(`  ↷ ${rendus.length} tâche(s) rendue(s) à la flotte (modèle non servi ici)`);
+  }
+  miens = miens.filter(saitFaire);
+  if (!miens.length) {
+    if (!LOOP) break;
+    await new Promise((r) => setTimeout(r, 30_000));
+    continue;
   }
 
   // Groupes par modèle : on épuise un modèle avant de passer au suivant (un changement
