@@ -12,7 +12,12 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.
 const DRY = process.argv.includes('--dry');
 const AGE_MIN = Number(process.argv.find((a) => a.startsWith('--age-min='))?.split('=')[1] ?? 30);
 
-const { data: rows } = await supabase
+// --slug=a,b,c : cibler une campagne précise. Sans lui, la requête prend les 60 PLUS ANCIENNES
+// productions en attente — un chantier lancé il y a dix minutes n'y figure jamais (02/08).
+const SLUGS = (process.argv.find((a) => a.startsWith('--slug='))?.split('=')[1] ?? '')
+  .split(',').map((x) => x.trim()).filter(Boolean);
+
+let q = supabase
   .from('agent_results')
   .select('id, task_type, target_slug, payload, result, auto_verdict, auto_motif, auto2_verdict, auto2_motif, created_at')
   .eq('review_status', 'pending')
@@ -20,7 +25,9 @@ const { data: rows } = await supabase
   .neq('task_type', 'review_local')
   .lt('created_at', new Date(Date.now() - AGE_MIN * 60_000).toISOString())
   .order('id', { ascending: true })
-  .limit(60);
+  .limit(Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 60));
+if (SLUGS.length) q = q.in('target_slug', SLUGS);
+const { data: rows } = await q;
 
 // Un slot est à rejouer si : jamais rempli, ou rempli par une ERREUR technique (pas un verdict).
 const enErreur = (verdict, motif) => !verdict && /error|failed|http \d|timeout/i.test(motif ?? '');
@@ -39,23 +46,48 @@ function productionDe(row) {
     if (!rel.length) return null;
     return rel.map((r) => `${r.avec} (${r.nature}, ${r.periode}) : ${r.resume}  (preuve avancée : « ${r.preuve} »)`).join('\n');
   }
+  // Une SECTION porte sa propre source dans sa charge utile — miroir exact de chainReview.
+  if (row.task_type === 'fiche_section') {
+    return row.result?.texte ? `Section « ${row.result?.titre} » :\n${row.result.texte}` : null;
+  }
+  if (row.task_type === 'toilettage_fr') return row.result?.corrige ? row.result?.texte ?? null : null;
   return row.result?.descFr ?? null;
 }
+
+// MIROIR de chainReview, deuxième moitié : la SOURCE que verra le juge, et la NATURE de la
+// tâche. Ce `kind` conditionne tout le contrôle — sans lui, une section était jugée avec le
+// barème des données clé=valeur (« ne juge pas la langue »), c'est-à-dire pas du tout.
+const KIND = {
+  akasha_attrs: 'axes', akasha_relations: 'relations',
+  toilettage_fr: 'toilettage', fiche_section: 'section',
+};
+async function sourceDe(row) {
+  const p = row.payload ?? {};
+  if (row.task_type === 'fiche_section') return String(p.section_texte ?? '');
+  if (row.task_type === 'toilettage_fr') return String(p.texte ?? '');
+  const page = await fetchFandomProse(p.universe, p.name, { maxChars: 6000 }).catch(() => null);
+  return page?.text ?? '';
+}
+
+// Le jury EN SERVICE, pas celui d'il y a une semaine. Les valeurs par défaut suivent usine.sh :
+// ce script rejouait encore sur ollama/gemma4 et gemini-flash-lite, deux couloirs sortis du parc.
+const JURY = [
+  { juge_modele: process.env.NIKA_JUGE1 ?? 'deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo', slot: 'auto' },
+  { juge_modele: process.env.NIKA_JUGE2 ?? 'openrouter/google/gemma-4-26b-a4b-it:free', slot: 'auto2' },
+];
 
 const messages = [];
 for (const row of rows ?? []) {
   const slots = [];
-  if (enErreur(row.auto_verdict, row.auto_motif) || jamaisJuge(row.auto_verdict, row.auto_motif))
-    slots.push({ juge_modele: 'ollama/gemma4:12b', slot: 'auto' });
-  if (process.env.GEMINI_API_KEY && (enErreur(row.auto2_verdict, row.auto2_motif) || jamaisJuge(row.auto2_verdict, row.auto2_motif)))
-    slots.push({ juge_modele: 'gemini/gemini-flash-lite-latest', slot: 'auto2' });
+  if (enErreur(row.auto_verdict, row.auto_motif) || jamaisJuge(row.auto_verdict, row.auto_motif)) slots.push(JURY[0]);
+  if (enErreur(row.auto2_verdict, row.auto2_motif) || jamaisJuge(row.auto2_verdict, row.auto2_motif)) slots.push(JURY[1]);
   if (!slots.length) continue;
 
   const production = productionDe(row);
   if (!production) continue;                                 // rien à juger (abstention honnête)
   const p = row.payload ?? {};
-  const page = await fetchFandomProse(p.universe, p.name).catch(() => null);
-  if (!page?.text) continue;                                 // pas de source → pas de jugement
+  const source = await sourceDe(row);
+  if (!source) continue;                                     // pas de source → pas de jugement
 
   for (const j of slots) {
     console.log(`  ↻ #${row.id} ${row.target_slug} → ${j.slot} (${j.juge_modele.split('/')[1] ?? j.juge_modele})`);
@@ -63,7 +95,10 @@ for (const row of rows ?? []) {
       type: 'review_local',
       payload: {
         reviewed_id: row.id, slug: row.target_slug, name: p.name, universe: p.universe,
-        production, source: page.text.slice(0, 4500), ...j,
+        ...(p.alias_de ? { alias_de: p.alias_de } : {}),
+        kind: KIND[row.task_type] ?? 'prose',
+        production, source: source.slice(0, 6000), ...j,
+        evite: JURY.map((x) => x.juge_modele).filter((m) => m !== j.juge_modele),
       },
     });
   }

@@ -380,7 +380,18 @@ ${p.source}
 Contrôle, dans cet ordre :
 1. ${p.alias_de ? `(identité acquise, voir ci-dessus — passe directement au point 2)` : `La production parle-t-elle bien de ${p.name}, et non d'un homonyme ou d'un proche ?`}
 2. Chaque fait avancé est-il présent dans la source ? (un fait absent = invention)
-${p.kind === 'toilettage'
+${p.kind === 'section'
+  ? `   ⚠ ET RIEN D'AUTRE. La production est une TRADUCTION FRANÇAISE CONDENSÉE d'un passage
+   anglais : elle DOIT être plus courte que la source et n'en garder que l'essentiel. Ne sont
+   donc PAS des défauts, et ne doivent jamais être signalés —
+     · un détail de la source que la production ne reprend pas (c'est la condensation demandée) ;
+     · un choix de traduction (« chips » pour « potato chips », « équipe spéciale » pour
+       « task force ») : traduire n'est pas déformer ;
+     · une reformulation, un regroupement de deux phrases, un ordre différent.
+   Un seul défaut compte ici : un fait AJOUTÉ, absent de la source — ou un fait CONTREDIT par
+   elle. Si tu hésites entre « traduit autrement » et « inventé », c'est traduit autrement.
+`
+  : ''}${p.kind === 'toilettage'
   ? `3. TÂCHE DE CORRECTION DE LANGUE : la production est la version corrigée de la source. Elle
    doit dire EXACTEMENT la même chose, en meilleur français. Vérifie donc DEUX choses —
    (a) aucun fait ajouté, retiré ni déformé. Un FAIT, c'est un nom propre, un chiffre, une
@@ -390,7 +401,7 @@ ${p.kind === 'toilettage'
    Ne signale un fait changé que si le texte corrigé raconte autre chose ;
    (b) le français est-il réellement meilleur, et correct ? Si la correction n'apporte rien ou
    appauvrit le texte, verdict "a_corriger".`
-  : p.kind === 'prose'
+  : p.kind === 'prose' || p.kind === 'section'
   ? `3. Le français est-il correct, sans anglicisme ni terme anglais résiduel ?`
   : `3. NE JUGE PAS LA LANGUE. Cette production n'est pas un texte à lire mais des données :
    les valeurs sont des termes canon (« Logia », « Jōnin », « Marine ») et les preuves sont des
@@ -1234,9 +1245,12 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
         // clé=valeur, les preuves sont des citations anglaises verbatim exigées par le prompt
         // producteur — les sanctionner comme « anglicismes » bloquait 17 fiches et provoquait
         // 6 des 9 convocations d'arbitre sur les attributs (mesuré le 01/08).
+        // « section » à part depuis le 02/08 : une section n'est pas de la prose libre, c'est
+        // une TRADUCTION CONDENSÉE d'un passage anglais, et le contrôle doit le savoir.
         kind: row.task_type === 'akasha_attrs' ? 'axes'
           : row.task_type === 'akasha_relations' ? 'relations'
-          : row.task_type === 'toilettage_fr' ? 'toilettage' : 'prose',
+          : row.task_type === 'toilettage_fr' ? 'toilettage'
+          : row.task_type === 'fiche_section' ? 'section' : 'prose',
         evite: modelesDuJury.filter((m) => m !== j.juge_modele),
       },
     })),
