@@ -19,7 +19,10 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 if command -v taskpolicy >/dev/null; then PRIO=(taskpolicy -c background); else PRIO=(nice -n 10); fi
 cd "$(dirname "$0")/.."
 
-JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,deepinfra/Qwen/Qwen3-32B,mistral/mistral-small-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/llama-3.3-70b-versatile,openrouter/mistralai/mistral-small-24b-instruct-2501,anthropic/claude-haiku-4-5}
+# mistral-small AVANT Qwen (02/08 soir) : gemma épuisé, tout le monde retombait sur le même
+# Qwen DeepInfra qui saturait (« Model busy » en chaîne). Mistral est « sans plafond » et
+# n'a jamais été pris en défaut comme JUGE — il encaisse le premier repli, Qwen respire.
+JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,mistral/mistral-small-latest,deepinfra/Qwen/Qwen3-32B,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/llama-3.3-70b-versatile,openrouter/mistralai/mistral-small-24b-instruct-2501,anthropic/claude-haiku-4-5}
 CONC=${NIKA_CONC_JUGES:-12}
 
 echo "⚖️  étage de jugement — couloir review_local · jury ${JUGE} · ${CONC} de front"
