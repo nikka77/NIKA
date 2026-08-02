@@ -313,6 +313,44 @@ RÈGLES :
 SOURCE — section « ${p.section_titre} » de l'article canon :
 ${p.section_texte}`,
   },
+  arbitrage_claude: {
+    // L'ARBITRE SUPRÊME — troisième étage de la hiérarchie mesurée le 02/08 : petits modèles
+    // jugent en masse (0,0002 $), Claude tranche les litiges (0,006 $), Dan ne voit que les cas
+    // d'école. Le balayeur (ops-litiges-claude.mjs) embarque TOUT dans la charge utile
+    // (production, source, reproches) : le worker n'a rien à re-résoudre.
+    model: 'anthropic/claude-haiku-4-5',
+    guard: (p) => (!p.reviewed_id || !p.production || !p.source ? 'litige incomplet' : null),
+    zod: z.object({ decision: z.enum(['approve', 'reject']), motif: z.string().min(8) }),
+    schema: {
+      type: 'object',
+      properties: { decision: { type: 'string', enum: ['approve', 'reject'] }, motif: { type: 'string' } },
+      required: ['decision', 'motif'], additionalProperties: false,
+    },
+    prompt: (p) => `Tu es l'ARBITRE FINAL de l'encyclopédie AKASHA. Des juges automatiques (petits modèles)
+se sont contredits ou ont refusé cette production — toi, tu lis et tu TRANCHES.
+
+BARÈME :
+- Seuls comptent le fait AJOUTÉ (absent de la source) et le fait CONTREDIT par elle.
+- Une section/description est une TRADUCTION CONDENSÉE : détail non repris, choix de traduction,
+  reformulation ne sont JAMAIS des défauts.
+- Données clé=valeur : les preuves sont des citations anglaises verbatim — l'anglais n'y est
+  jamais un défaut. Un fait vrai à N'IMPORTE QUEL moment du récit est exact.
+- Les juges automatiques pinaillent : vérifie leur reproche DANS la source avant de le croire.
+- Vraie déformation (date fausse, mauvais personnage, fait inventé), texte corrompu ou hors
+  sujet : reject. Sinon : approve.
+
+Réponds UNIQUEMENT en JSON : {"decision":"approve"|"reject","motif":"une phrase — le fait qui tranche"}
+===LITIGE===
+FICHE : ${p.name} (${p.universe}) — type ${p.task_type_origine}
+PRODUCTION CONTESTÉE :
+${p.production}
+
+SOURCE :
+${String(p.source).slice(0, 6000)}
+
+REPROCHES DES JUGES :
+${p.motifs}`,
+  },
   akasha_attrs: {
     model: (p) => expertFor(p.universe),
     schema: (p) => axesSchema(p.universe),
@@ -1062,6 +1100,33 @@ async function callModel(type, payload, modeleImpose) {
       url: 'https://openrouter.ai/api/v1/chat/completions', cle: process.env.OPENROUTER_API_KEY,
       modele: sansCouloir(model), messages, type, schema,
     });
+  } else if (model.startsWith('anthropic/')) {
+    // CLAUDE DANS LA FLOTTE (02/08) — l'étage d'arbitrage qui a vidé la pile de Dan (128 litiges,
+    // 77 % de faux positifs des petits juges) devient permanent. API Messages native : le
+    // format n'est pas OpenAI-compatible, et le préambule statique passe en system AVEC
+    // cache_control — facturé à 10 % dès le deuxième litige de la fenêtre.
+    if (!process.env.ANTHROPIC_API_KEY) throw new Error('ANTHROPIC_API_KEY absente de .env.local');
+    await quotaReserver(`anthropic/${sansCouloir(model)}`, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + 700);
+    const [systeme, ...reste] = String(messages[0].content).split('\n===LITIGE===\n');
+    const rA = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST', signal: AbortSignal.timeout(TIMEOUT_MS),
+      headers: { 'x-api-key': process.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
+      body: JSON.stringify({
+        model: sansCouloir(model), max_tokens: 500,
+        system: [{ type: 'text', text: systeme, cache_control: { type: 'ephemeral' } }],
+        messages: [{ role: 'user', content: reste.join('\n') || systeme }],
+      }),
+    });
+    const corpsA = await rA.text();
+    if (rA.status === 400 && /credit balance is too low/i.test(corpsA)) {
+      // Solde épuisé : guichet FERMÉ proprement — la tâche attend, rien n'échoue, et le couloir
+      // rouvrira tout seul quand Dan créditera le compte (l'entrée couloirsEpuises expire en 1 h).
+      throw new PlafondJourError(`anthropic/${sansCouloir(model)}`, 'solde de crédits API épuisé — console.anthropic.com');
+    }
+    if (rA.status === 429) throw new PlafondJourError(`anthropic/${sansCouloir(model)}`, 'limite de débit Anthropic');
+    if (!rA.ok) throw new Error(`anthropic ${rA.status}: ${corpsA.slice(0, 160)}`);
+    const jA = JSON.parse(corpsA);
+    raw = jA?.content?.find((b) => b.type === 'text')?.text ?? '';
   } else if (model.startsWith('gemini/')) {
     // Gemini NATIF (pas OmniRoute) : son adaptateur passe par l'endpoint compatible OpenAI qui
     // refuse les clés nouveau format « AQ.… » (constaté le 26/07). L'endpoint officiel les accepte
@@ -1518,6 +1583,25 @@ async function traiterUn(msg) {
   }
   counts[row.status]++;
 
+  if (row.task_type === 'arbitrage_claude' && (row.status === 'done')) {
+    // Le verdict de Claude s'écrit dans le slot ARBITRE de la production litigieuse, signé.
+    // approve → application immédiate par le même verrou que le bouton de Dan ; reject →
+    // rejet motivé. Dans les deux cas le litige SORT de la pile humaine.
+    const cible = Number(row.payload.reviewed_id);
+    const d = row.result?.decision;
+    await supabase.from('agent_results').update({
+      arbitre_verdict: d === 'approve' ? 'valide' : 'rejeter',
+      arbitre_motif: `⚖ Claude : ${String(row.result?.motif ?? '').slice(0, 300)}`,
+      arbitre_model: 'anthropic/claude-haiku-4-5 (arbitrage)', arbitre_at: new Date().toISOString(),
+    }).eq('id', cible).eq('review_status', 'pending');
+    if (d === 'approve') await verrouEtAppliquer(cible, (q) => q);
+    else await supabase.from('agent_results').update({ review_status: 'rejected', reviewed_at: new Date().toISOString() })
+      .eq('id', cible).eq('review_status', 'pending');
+    await supabase.rpc(RPC.archive, { message_id: msg.msg_id });
+    console.log(`  ⚖⚡ [${msg.msg_id}] litige #${cible} → ${d} (Claude)`);
+    counts[row.status]++;
+    return;
+  }
   if (row.task_type === 'review_local') {
     // Le verdict ne crée pas de résultat : il annote la production relue, dans le slot de SON juge.
     const slot = row.payload.slot === 'arbitre' ? 'arbitre' : row.payload.slot === 'auto2' ? 'auto2' : 'auto';

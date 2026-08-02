@@ -1,0 +1,12 @@
+# nika-litiges.service — le balayeur des litiges vers l'arbitre Claude (02/08/2026).
+# Toutes les 30 min, les productions refusées/tranchées-non-valide partent chez Claude
+# (haiku-4-5) qui applique le barème d'arbitrage. Guichet volontaire : 400/jour ≈ 2,60 $ max.
+[Unit]
+Description=NIKA OPS — balayage des litiges vers l'arbitre Claude
+OnFailure=nika-echec@%n.service
+[Service]
+Type=oneshot
+User=nika
+WorkingDirectory=/home/nika/NIKA
+ExecStart=/usr/bin/node --env-file=.env.local scripts/ops-litiges-claude.mjs --limit=120
+Nice=10

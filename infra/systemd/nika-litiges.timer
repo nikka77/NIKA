@@ -1,0 +1,7 @@
+[Unit]
+Description=NIKA OPS — litiges vers l'arbitre Claude toutes les 30 min
+[Timer]
+OnCalendar=*:07/30
+Persistent=false
+[Install]
+WantedBy=timers.target

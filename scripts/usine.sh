@@ -30,7 +30,11 @@ cd "$(dirname "$0")/.."
 # avait passé sa sonde d'embauche du 29/07, il est gratuit, et il encaisse 32 requêtes/minute
 # contre 12 à Mistral. La production était bridée par le couloir le plus lent alors que le plus
 # rapide dormait, fermé par notre propre compteur.
-MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,groq/openai/gpt-oss-120b,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo,openrouter/mistralai/mistral-small-24b-instruct-2501}
+# Mistral-Small DeepInfra ajouté le 02/08 pour la VITESSE DE CROISIÈRE : c'est un producteur
+# SOBRE (pas de raisonnement caché) à 60 req/min — les campagnes de sections, routées vers les
+# sobres depuis les troncatures Nemotron, plafonnaient aux 12/min de mistral-large. ~0,0004 $
+# la section : les 171 d'Initial D coûtent 7 centimes quand le couloir gratuit est plein.
+MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,deepinfra/mistralai/Mistral-Small-24B-Instruct-2501,groq/openai/gpt-oss-120b,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo,openrouter/mistralai/mistral-small-24b-instruct-2501}
 # Jugement n°2 (famille croisée) : Qwen3-32B chez DeepInfra depuis le 01/08 — facturé au
 # jeton, donc SANS guichet quotidien, le mur contre lequel tous les couloirs gratuits butaient.
 # Mesuré : 0,000195 $ le verdict avec /no_think (2,6 s) — les 10 $ de Dan valent ~51 000
