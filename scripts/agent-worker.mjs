@@ -756,7 +756,7 @@ async function executerCommande(cmd) {
 // C'est la DEUXIÈME fois aujourd'hui qu'une découpe de préfixe à un caractère près passe — un
 // compte de caractères écrit à la main n'a aucune raison d'être là où le séparateur suffit.
 const sansCouloir = (m) => String(m).slice(String(m).indexOf('/') + 1);
-const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 1_000, akasha_relations: 3_000, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500, toilettage_fr: 2_400 };
+const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 1_000, akasha_relations: 3_000, fiche_section: 1_600, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500, toilettage_fr: 2_400 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
 /* ── Rotation de couloirs (L23, 01/08) ──────────────────────────────
