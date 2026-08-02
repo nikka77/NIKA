@@ -70,6 +70,12 @@ const DescFr = (min) => z.string().min(min)
   .refine(phraseComplete, 'descFr coupée en pleine phrase (plafond de tokens ou source tronquée)');
 const FlavorOut = z.object({ descFr: DescFr(30) });
 
+/** Markdown retiré : nos textes s'affichent bruts, un astérisque resterait à l'écran. */
+const sansBalisage = (s) => String(s ?? '')
+  .replace(/\*\*(.+?)\*\*/g, '$1').replace(/__(.+?)__/g, '$1')
+  .replace(/(?<![\w*])\*(?!\s)(.+?)(?<![\s*])\*(?![\w*])/g, '$1')
+  .replace(/^#{1,6}\s+/gm, '').replace(/^\s*[-–]\s+/gm, '· ');
+
 /** PREUVE D'IDENTITÉ PAR LES CHAMPS DE NOMMAGE (01/08) — déterministe, zéro appel de modèle.
  *
  *  Un wiki déclare les autres noms de son sujet dans son infobox : « True Name », « Alias »,
@@ -193,8 +199,61 @@ ${p.fandom}`,
   // rédige plus « la fiche » mais UNE SECTION à la fois, sur le découpage du wiki lui-même :
   // ~3 000 caractères, un sujet homogène, et une source que le juge peut lire EN ENTIER —
   // c'est la première fois qu'un verdict porte sur la totalité de ce que l'agent a lu.
+  // TOILETTAGE FR (02/08) — le seul agent du parc qui ne rapporte AUCUN fait.
+  //
+  // Mesuré sur les 172 sections Death Note : 20 (12 %) portaient des calques de l'anglais —
+  // « Ayant tombé amoureux », « est montré », « est vu », « il est révélé que ». Le fond est
+  // juste (les juges l'ont validé, c'est leur travail), la langue non : ils contrôlent
+  // l'ancrage aux faits, pas l'élégance. Un texte faux se rejette ; un texte mal écrit se
+  // corrige — deux métiers, deux agents.
+  //
+  // Sa source de vérité n'est PAS le wiki : c'est le texte lui-même. La consigne est donc
+  // l'inverse de celle d'un rédacteur — ne rien apporter. Et le juge le contrôle avec la
+  // MÊME exigence que les autres : « chaque fait est-il dans la source ? », la source étant
+  // ici la version d'origine. Un correcteur qui invente se fait refuser comme un rédacteur.
+  toilettage_fr: {
+    // Le français est le SUJET de la tâche, pas la connaissance canon : on prend un modèle
+    // à l'aise dans la langue plutôt que l'expert de l'univers (--cloud= le remplace).
+    model: 'mistral/mistral-large-latest',
+    // Le pilote du 02/08 a rendu « lég**e**reux » et « *Death Note* » : le correcteur balise
+    // ce qu'il corrige. Nos sections s'affichent en texte BRUT (CharacterZone, white-space:
+    // pre-line) — les astérisques se verraient à l'écran. On les retire en code plutôt que
+    // d'espérer que la consigne suffise : une règle déterministe ne se fatigue pas.
+    zod: z.object({ texte: DescFr(150), corrige: z.boolean() })
+      .transform((r) => ({ ...r, texte: sansBalisage(r.texte) })),
+    schema: {
+      type: 'object',
+      properties: {
+        texte: { type: 'string', description: 'Le texte en français corrigé' },
+        corrige: { type: 'boolean', description: 'true si quelque chose a été corrigé' },
+      },
+      required: ['texte', 'corrige'],
+      additionalProperties: false,
+    },
+    guard: (p) => (String(p.texte ?? '').length < 200 ? 'texte trop court pour un toilettage' : null),
+    prompt: (p) => `Tu es correcteur de langue pour l'encyclopédie AKASHA. Tu ne rédiges rien, tu ne
+documentes rien : tu corriges le FRANÇAIS d'un texte déjà validé sur le fond.
+
+TEXTE À CORRIGER — fiche « ${p.name} » (${p.universe}), section « ${p.titre} » :
+${p.texte}
+
+RÈGLES ABSOLUES :
+- Ne change AUCUN fait : ni nom, ni date, ni chiffre, ni lien entre personnages. N'ajoute
+  rien, ne retire rien, ne résume pas. Le texte corrigé dit EXACTEMENT la même chose.
+- Corrige : les calques de l'anglais (« est montré », « est vu », « il est révélé que »,
+  « au travers de »), les participes fautifs (« Ayant tombé amoureux » → « Tombé amoureux »),
+  les temps incohérents, les passifs lourds, les mots anglais résiduels, la ponctuation.
+- Garde tels quels les noms propres canon (Death Note, Shinigami, Sharingan, Kekkei Genkai)
+  et le présent de narration.
+- N'ajoute AUCUNE apposition explicative, même vraie (« Hideki Ryuuga, connu sous le nom de
+  L, est… ») : le lecteur a déjà le nom de la fiche sous les yeux, et ce que tu ajoutes n'a
+  pas été vérifié sur la source.
+- TEXTE BRUT : aucun balisage, ni astérisque, ni gras, ni italique, ni titre markdown.
+- Si le français est déjà correct, renvoie le texte À L'IDENTIQUE et mets "corrige" à false.`,
+  },
+
   fiche_section: {
-    modele: 'ollama/gemma4:12b',
+    model: 'ollama/gemma4:12b',
     fetch: async (p) => {
       const niche = await expertNiche(supabase, p.universe, p.name);
       const memoire = await memoireExpert(supabase, 'fiche_section', p.universe, niche?.noms);
@@ -292,13 +351,20 @@ production nomme donc légitimement « ${p.alias_de} ». Contrôle les FAITS, ja
 ` : ''}PRODUCTION DE L'AGENT À CONTRÔLER :
 ${p.production}
 
-SOURCE DE RÉFÉRENCE (article du wiki canon) :
+SOURCE DE RÉFÉRENCE (${p.kind === 'toilettage' ? 'VERSION D’ORIGINE du même texte, avant correction de la langue' : 'article du wiki canon'}) :
 ${p.source}
 
 Contrôle, dans cet ordre :
 1. ${p.alias_de ? `(identité acquise, voir ci-dessus — passe directement au point 2)` : `La production parle-t-elle bien de ${p.name}, et non d'un homonyme ou d'un proche ?`}
 2. Chaque fait avancé est-il présent dans la source ? (un fait absent = invention)
-${p.kind === 'prose'
+${p.kind === 'toilettage'
+  ? `3. TÂCHE DE CORRECTION DE LANGUE : la production est la version corrigée de la source. Elle
+   doit dire EXACTEMENT la même chose, en meilleur français. Vérifie donc DEUX choses —
+   (a) aucun fait ajouté, retiré ni déformé (un nom, un chiffre, un lien qui change = "rejeter") ;
+   (b) le français est-il réellement meilleur, et correct ? Si la correction n'apporte rien ou
+   appauvrit le texte, verdict "a_corriger". Une reformulation qui garde tous les faits n'est
+   PAS un défaut : c'est le travail demandé.`
+  : p.kind === 'prose'
   ? `3. Le français est-il correct, sans anglicisme ni terme anglais résiduel ?`
   : `3. NE JUGE PAS LA LANGUE. Cette production n'est pas un texte à lire mais des données :
    les valeurs sont des termes canon (« Logia », « Jōnin », « Marine ») et les preuves sont des
@@ -1030,6 +1096,10 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
     production = etablis.map(([k, v]) => `${k} = ${v}  (preuve avancée : « ${preuves[k] ?? 'aucune'} »)`).join('\n');
   } else if (row.task_type === 'fiche_section') {
     production = `Section « ${row.result?.titre} » :\n${row.result?.texte}`;
+  } else if (row.task_type === 'toilettage_fr') {
+    // Rien à juger si le correcteur n'a rien touché : pas de relecture, pas d'écriture.
+    if (!row.result?.corrige || String(row.result?.texte ?? '') === String(p.texte ?? '')) return;
+    production = row.result.texte;
   } else if (row.task_type === 'akasha_relations') {
     const rel = row.result?.relations ?? [];
     if (!rel.length) return;                         // abstention honnête : rien à juger
@@ -1046,7 +1116,11 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
   // couvre 100 % de celle du contrôlé — plus de fait « inventé » qui était simplement hors champ.
   const page = row.task_type === 'fiche_section'
     ? { text: String(p.section_texte ?? ''), title: p.name }
-    : await fetchFandomProse(p.universe, p.name, { maxChars: 6000 }).catch(() => null);
+    // Toilettage : la source de vérité est la VERSION D'ORIGINE. Le juge compare donc les
+    // deux français et voit immédiatement un fait ajouté, retiré ou déformé au passage.
+    : row.task_type === 'toilettage_fr'
+      ? { text: String(p.texte ?? ''), title: p.name }
+      : await fetchFandomProse(p.universe, p.name, { maxChars: 6000 }).catch(() => null);
   if (!page?.text) return;                           // pas de source vérifiable → pas de jugement
 
   // AUTONOMIE L12 (audit du 26/07 : un juge seul = 86 % de précision, insuffisant) :
@@ -1108,7 +1182,8 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
         // producteur — les sanctionner comme « anglicismes » bloquait 17 fiches et provoquait
         // 6 des 9 convocations d'arbitre sur les attributs (mesuré le 01/08).
         kind: row.task_type === 'akasha_attrs' ? 'axes'
-          : row.task_type === 'akasha_relations' ? 'relations' : 'prose',
+          : row.task_type === 'akasha_relations' ? 'relations'
+          : row.task_type === 'toilettage_fr' ? 'toilettage' : 'prose',
         evite: modelesDuJury.filter((m) => m !== j.juge_modele),
       },
     })),
@@ -1254,6 +1329,17 @@ async function verrouEtAppliquer(rowId, filtres) {
     const pose = await ajouterSection(gagne.target_slug, neuve, gagne.model);
     if (!pose) return false;
     console.log(`  ⚡ section « ${neuve.titre} » appliquée : ${gagne.target_slug}`);
+    return true;
+  } else if (gagne.task_type === 'toilettage_fr') {
+    // Même chemin que ci-dessus (ajouterSection remplace la section de même indice) : le
+    // toilettage ne crée jamais de section, il en réécrit une — et il hérite du verrou
+    // anti-concurrence, car plusieurs sections d'une même fiche se corrigent en parallèle.
+    const p = gagne.payload ?? {};
+    const texte = gagne.result?.texte;
+    if (!p.section_index || !texte || !gagne.result?.corrige) return false;
+    const pose = await ajouterSection(gagne.target_slug, { i: p.section_index, titre: p.titre, texte }, gagne.model);
+    if (!pose) return false;
+    console.log(`  ⚡ français corrigé — « ${p.titre} » : ${gagne.target_slug}`);
     return true;
   } else if (gagne.task_type === 'akasha_relations') {
     const rel = gagne.result?.relations ?? [];

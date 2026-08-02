@@ -319,6 +319,21 @@ async function applyResult(supabase: Admin, id: number, cacheIndex?: Map<string,
     patch.relations = rel.map(({ avec, nature, periode, resume }) => ({ avec, nature, periode, resume }));
     patch.relationsSource = row.model;
     versGraphe = rel;
+  } else if (row.task_type === 'fiche_section' || row.task_type === 'toilettage_fr') {
+    // MIROIR DE L'AUTO-APPLICATION (02/08) : sans ces deux branches, « Appliquer » sur une
+    // section marquait la production approuvée SANS RIEN ÉCRIRE — seul le worker savait poser
+    // une section. Le bouton mentait, exactement comme les neuf chiffres de la console le 01/08.
+    // Une section se REMPLACE par son indice (le toilettage réécrit celle qui existe déjà).
+    const p = (row.payload ?? {}) as Record<string, string>;
+    const i = p.section_index;
+    const texte = row.result?.texte as string | undefined;
+    // Le toilettage ne renvoie pas de titre : il garde celui de la section qu'il corrige.
+    const titre = (row.task_type === 'toilettage_fr' ? p.titre : row.result?.titre) as string | undefined;
+    if (!i || !texte) return false;
+    const dejaLa = (Array.isArray(patch.sections) ? patch.sections : []) as Array<Record<string, string>>;
+    patch.sections = [...dejaLa.filter((s) => String(s.i) !== String(i)), { i: String(i), titre, texte }]
+      .sort((a, b) => Number(a.i) - Number(b.i));
+    patch.sectionsSource = row.model;
   }
 
   const { error } = await supabase.from('akasha_entries').update({ attributes: patch }).eq('slug', row.target_slug);

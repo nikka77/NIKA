@@ -19,6 +19,8 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.
 const DRY = process.argv.includes('--dry');
 const PRIORITAIRES = (process.argv.find((a) => a.startsWith('--univers='))?.split('=')[1] ?? '')
   .split(',').map((s) => s.trim()).filter(Boolean);
+const DABORD = (process.argv.find((a) => a.startsWith('--dabord='))?.split('=')[1] ?? '')
+  .split(',').map((s) => s.trim()).filter(Boolean);
 
 // Visibilité longue (10 min) : le temps de tout lire et de tout réémettre sans qu'un worker
 // ne reprenne un message à mi-chemin. On archive AU FUR ET À MESURE de la réémission.
@@ -34,6 +36,13 @@ if (!lus.length) process.exit(0);
 
 const universDe = (m) => m.message?.payload?.universe ?? null;
 const rang = (m) => {
+  // --dabord=<type> : un CHANTIER passe devant tout, relectures comprises (02/08). Sans lui,
+  // un pilote de 4 tâches lancé derrière 400 relectures attend une heure pour être vu — le
+  // worker cycle à vide, rend les tâches des autres couloirs et se rendort 30 s.
+  if (DABORD.length) {
+    const i = DABORD.indexOf(m.message?.type);
+    if (i >= 0) return -10 + i;
+  }
   if (m.message?.type === 'review_local') return 0;              // la qualité d'abord
   const u = universDe(m);
   const i = PRIORITAIRES.indexOf(u);
