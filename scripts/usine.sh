@@ -36,7 +36,12 @@ MODELE=${CLOUD_MODEL:-mistral/mistral-large-latest,groq/openai/gpt-oss-120b,deep
 # Derrière lui, les couloirs gratuits restent en repli : Nemotron, Mistral, llama.
 # Quatre familles distinctes de bout en bout :
 #   Mistral produit · Google (gemma) juge · Qwen juge · NVIDIA arbitre.
-JUGE=${JUDGE_MODEL:-deepinfra/Qwen/Qwen3-32B,nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,groq/llama-3.3-70b-versatile}
+# GEMMA GRATUIT EN TÊTE depuis le 02/08 (palier OpenRouter débloqué). Il passe AVANT DeepInfra
+# pour deux raisons : il est gratuit là où DeepInfra est facturé, et il rend au jury sa famille
+# Google — perdue quand gemma-4-31b est devenu le goulot du parc le 01/08. Derrière lui,
+# DeepInfra reprend la main dès que le millier de requêtes du jour est consommé : la chaîne ne
+# s'arrête plus jamais faute de guichet, elle passe simplement du gratuit au payé.
+JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,deepinfra/Qwen/Qwen3-32B,nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,groq/llama-3.3-70b-versatile}
 CONC=${NIKA_CONC:-$(grep '^NIKA_CONC=' .env.local 2>/dev/null | cut -d= -f2)}
 
 echo "🏭 usine continue — production ${MODELE} · jugement ${JUGE} · ${CONC:-8} de front"

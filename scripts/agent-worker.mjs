@@ -805,9 +805,18 @@ const LIMITES_FOURNISSEURS = {
   // gemma-4 est le meilleur débit du parc (2 193 jetons/production → 5/min, des milliers/jour).
   'gemini/gemini-flash-lite-latest': { requetes: 12, jetons: 200_000, fenetre: 60, parJour: 200 },
   'gemini/gemma-4-31b-it':           { requetes: 24, jetons: 12_000, fenetre: 60, parJour: 11_500 },
-  // Nemotron 550B gratuit via OpenRouter (sonde 29/07 : cas piège réussi, famille NVIDIA) —
-  // 50 req/JOUR seulement : rôle d'ARBITRE ponctuel, pas de juge de masse (1 000/j si 10 $ un jour).
-  'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free': { requetes: 16, jetons: 50_000, fenetre: 60, parJour: 40 },
+  // ── OpenRouter : palier débloqué le 02/08 (achat unique de 10 $ → 1 000 req/jour À VIE au
+  // lieu de 50). Le quota des modèles « :free » est COMPTÉ PAR COMPTE, pas par modèle : les
+  // guichets ci-dessous se partagent donc le millier, d'où 450 chacun et non 900. Cadence
+  // plafonnée à 18/min, sous les 20/min imposées par OpenRouter à tous les modèles gratuits.
+  // Sondes de taille réelle du 02/08 (3 000 jetons de source + schéma JSON strict) :
+  //   nemotron-ultra 550B  ✓ 4,7 s, JSON propre      → arbitre
+  //   gemma-4-26b-a4b      ✓ 5,6 s, JSON propre      → juge de famille Google
+  //   nemotron-super 120B  ✓ 5,3 s (à 900 jetons de sortie ; à 400 il tronquait son raisonnement)
+  //   gemma-4-31b          ✗ 429 systématique — hôte saturé, écarté malgré le modèle identique
+  //   gpt-oss-20b          ✗ 19 s et JSON invalide   → écarté
+  'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free': { requetes: 18, jetons: 50_000, fenetre: 60, parJour: 450 },
+  'openrouter/google/gemma-4-26b-a4b-it:free':         { requetes: 18, jetons: 50_000, fenetre: 60, parJour: 450 },
   // ── DeepInfra — facturé au JETON, sans guichet quotidien. Pas de parJour : le seul frein
   // est le crédit du compte, et il est dérisoire (juger l'encyclopédie entière deux fois ≈ 5 $).
   // Plafond/minute prudent au départ, à relever une fois la cadence réelle mesurée.
@@ -1308,8 +1317,13 @@ async function ollamaDisponible() {
 // L'ARBITRE (L20) : convoqué quand les deux juges se CONTREDISENT (valide contre
 // a_corriger/rejete) — jamais quand ils s'accordent pour corriger. Famille encore
 // différente (NVIDIA), une seule convocation par fiche (réservation optimiste).
-const ARBITRE_MODELE = process.env.NVIDIA_API_KEY ? 'nvidia/nvidia/nemotron-3-super-120b-a12b'
-  : process.env.OPENROUTER_API_KEY ? 'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free' : null;
+// ORDRE INVERSÉ le 02/08 : OpenRouter d'abord, NIM en repli. Les deux servent la même famille,
+// mais pas la même ressource — OpenRouter donne 1 000 requêtes gratuites qui REVIENNENT chaque
+// jour, NIM une réserve d'environ 1 000 appels qui ne revient jamais. On dépense le renouvelable
+// avant l'épuisable ; le stock NIM devient le filet qui garde l'arbitre vivant quand le millier
+// du jour est consommé. Bonus : le 550B est un modèle plus fort que le 120B pour départager.
+const ARBITRE_MODELE = process.env.OPENROUTER_API_KEY ? 'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free'
+  : process.env.NVIDIA_API_KEY ? 'nvidia/nvidia/nemotron-3-super-120b-a12b' : null;
 async function peutEtreArbitrer(reviewedId) {
   if (!ARBITRE_MODELE) return;
   const { data: r } = await supabase.from('agent_results')
