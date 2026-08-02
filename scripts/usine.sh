@@ -24,11 +24,13 @@ cd "$(dirname "$0")/.."
 # la priorité, mais quand ils sont tous à sec l'usine s'arrêtait pour la journée — mesuré ce
 # midi, le chantier Death Note tournait en rond, chaque tâche lue puis reportée faute de guichet.
 # Facturé au jeton, sans plafond quotidien : c'est le filet qui empêche l'usine de s'éteindre.
-# NVIDIA SORT DE LA PRODUCTION le 02/08. Son palier gratuit n'est pas un débit mais un STOCK
-# fini (~1 000 appels, qui ne se rechargent pas). Le dépenser en production, c'est le brûler sur
-# un travail que Mistral, Groq et DeepInfra savent faire — alors qu'il est la SEULE famille du
-# parc capable de départager les deux juges. Il reste donc au jugement, où il est irremplaçable.
-MODELE=${CLOUD_MODEL:-mistral/mistral-large-latest,groq/openai/gpt-oss-120b,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo}
+# NVIDIA REPASSE EN TÊTE DE PRODUCTION le 02/08, et c'est un retour, pas un aller-retour de
+# confort : je l'en avais sorti le matin même en le croyant fini. Le compte, consulté directement,
+# n'a plus de page « crédits » — il affiche un DÉBIT : 40 requêtes/minute renouvelables. Nemotron
+# avait passé sa sonde d'embauche du 29/07, il est gratuit, et il encaisse 32 requêtes/minute
+# contre 12 à Mistral. La production était bridée par le couloir le plus lent alors que le plus
+# rapide dormait, fermé par notre propre compteur.
+MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,groq/openai/gpt-oss-120b,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo}
 # Jugement n°2 (famille croisée) : Qwen3-32B chez DeepInfra depuis le 01/08 — facturé au
 # jeton, donc SANS guichet quotidien, le mur contre lequel tous les couloirs gratuits butaient.
 # Mesuré : 0,000195 $ le verdict avec /no_think (2,6 s) — les 10 $ de Dan valent ~51 000

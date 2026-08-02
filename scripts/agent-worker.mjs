@@ -829,15 +829,14 @@ const LIMITES_FOURNISSEURS = {
   groq:     { requetes: 24, jetons: 4_800, fenetre: 60, parJour: 800 },   // < 6 000, le plus bas TPM Groq
   gemini:   { requetes: 12, jetons: 100_000, fenetre: 60, parJour: 200 },
   cerebras: { requetes: 25, jetons: 50_000, fenetre: 60 },                // palier gratuit SUPPRIMÉ (402 le 26/07)
-  // NIM gratuit n'est pas un débit renouvelable mais un STOCK de ~1 000 crédits qui s'épuise
-  // DÉFINITIVEMENT : le guichet jour empêche une seule nuit de brûler la réserve entière.
-  // RELEVÉ À 400 le 02/08 — et surtout RÉSERVÉ À L'ARBITRAGE (nvidia sort de la production
-  // dans usine.sh). Le stock est fini, donc il doit se dépenser là où il est IRREMPLAÇABLE :
-  // NVIDIA est la seule famille du parc qui départage un désaccord entre les deux juges. À 150,
-  // la vanne s'était refermée d'elle-même et neuf arbitrages attendaient dans la file un modèle
-  // qui, lui, répondait en 1,9 s — nous nous bridions sur un couloir ouvert. En production, à
-  // l'inverse, il est remplaçable : Mistral, Groq et DeepInfra font le même travail.
-  nvidia:     { requetes: 32, jetons: 100_000, fenetre: 60, parJour: 400 },
+  // GUICHET JOUR SUPPRIMÉ le 02/08, après être allé voir le compte plutôt que la documentation.
+  // Nous gardions NIM comme un STOCK fini de ~1 000 crédits — c'est ce qu'annoncent encore tous
+  // les articles de 2026, et c'est ce qui justifiait un plafond de 150/jour. Le compte n'a plus
+  // de page « crédits » du tout : le menu affiche « Your API Rate Limit — Up to 40 rpm ». NIM
+  // est donc un DÉBIT RENOUVELABLE, pas une réserve, et notre plafond bridait un couloir gratuit
+  // deux fois plus rapide que Mistral. Aucun en-tête de quota n'est exposé : s'il existe un
+  // plafond caché, le 429 le révélera et fermera le couloir une heure — c'est déjà géré.
+  nvidia:     { requetes: 32, jetons: 100_000, fenetre: 60 },
   // ⚠ CORRIGÉ DEUX FOIS le 01/08, et c'est instructif. (1) J'avais conclu « 2 req/minute »
   // d'une rafale de 8 qui n'en laissait passer que 2 — c'était une limite de PARALLÉLISME que
   // je lisais comme un volume. (2) La doc Mistral annonce 1 requête par SECONDE, soit 60/min ;
@@ -1317,15 +1316,28 @@ async function ollamaDisponible() {
 // L'ARBITRE (L20) : convoqué quand les deux juges se CONTREDISENT (valide contre
 // a_corriger/rejete) — jamais quand ils s'accordent pour corriger. Famille encore
 // différente (NVIDIA), une seule convocation par fiche (réservation optimiste).
-// ORDRE INVERSÉ le 02/08 : OpenRouter d'abord, NIM en repli. Les deux servent la même famille,
-// mais pas la même ressource — OpenRouter donne 1 000 requêtes gratuites qui REVIENNENT chaque
-// jour, NIM une réserve d'environ 1 000 appels qui ne revient jamais. On dépense le renouvelable
-// avant l'épuisable ; le stock NIM devient le filet qui garde l'arbitre vivant quand le millier
-// du jour est consommé. Bonus : le 550B est un modèle plus fort que le 120B pour départager.
-const ARBITRE_MODELE = process.env.OPENROUTER_API_KEY ? 'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free'
-  : process.env.NVIDIA_API_KEY ? 'nvidia/nvidia/nemotron-3-super-120b-a12b' : null;
+// L'ARBITRE CHANGE DE FAMILLE le 02/08, conséquence directe du reclassement de NVIDIA. Tant que
+// NIM passait pour une réserve finie, il ne servait qu'ici ; maintenant qu'on sait que c'est un
+// débit renouvelable à 40 rpm, sa place est en PRODUCTION, où il double la cadence de Mistral.
+// Mais un arbitre ne peut pas appartenir à la famille de celui qu'il arbitre — ni à celle des
+// deux juges. Il reste donc exactement une famille libre : Qwen.
+//   NVIDIA produit · Meta et Google jugent · Qwen départage. Quatre familles, aucune ne se juge.
+// Liste ORDONNÉE et non modèle unique : le premier choix n'est valable que s'il n'est pas déjà
+// l'un des deux juges de CETTE fiche. Le cas se produit dès que gemma épuise ses 450 requêtes du
+// jour — le juge n°2 devient Qwen, et un arbitre Qwen ne ferait que répéter son propre vote.
+// Le repli n'était vérifié que pour le REMPLAÇANT (liste `evite`), jamais pour le titulaire.
+const ARBITRES = [
+  process.env.DEEPINFRA_API_KEY && 'deepinfra/Qwen/Qwen3-32B',
+  process.env.OPENROUTER_API_KEY && 'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free',
+  process.env.NVIDIA_API_KEY && 'nvidia/nvidia/nemotron-3-super-120b-a12b',
+  process.env.MISTRAL_API_KEY && 'mistral/mistral-large-latest',
+].filter(Boolean);
+const arbitrePour = (juge1, juge2) => {
+  const pris = new Set([juge1, juge2].filter(Boolean));
+  return ARBITRES.find((m) => !pris.has(m)) ?? ARBITRES[0] ?? null;
+};
 async function peutEtreArbitrer(reviewedId) {
-  if (!ARBITRE_MODELE) return;
+  if (!ARBITRES.length) return;
   const { data: r } = await supabase.from('agent_results')
     .select('id, task_type, target_slug, payload, result, review_status, auto_verdict, auto2_verdict, auto_model, auto2_model, arbitre_at')
     .eq('id', reviewedId).single();
@@ -1333,15 +1345,17 @@ async function peutEtreArbitrer(reviewedId) {
   const a = r.auto_verdict, b = r.auto2_verdict;
   if (!a || !b || a === b) return;
   if (a !== 'valide' && b !== 'valide') return;   // d'accord pour corriger : rien à arbitrer
+  const arbitre = arbitrePour(r.auto_model, r.auto2_model);
+  if (!arbitre) return;
   const { data: gagne } = await supabase.from('agent_results')
-    .update({ arbitre_at: new Date().toISOString(), arbitre_model: `${ARBITRE_MODELE} (convoqué)` })
+    .update({ arbitre_at: new Date().toISOString(), arbitre_model: `${arbitre} (convoqué)` })
     .eq('id', reviewedId).is('arbitre_at', null).select('id');
   if (!gagne?.length) return;
-  console.log(`  ⚖ arbitre convoqué (${a} / ${b}) sur #${reviewedId}`);
+  console.log(`  ⚖ arbitre convoqué (${a} / ${b}) sur #${reviewedId} → ${arbitre.split('/').pop()}`);
   // L'arbitre départage : s'il devait être remplacé (guichet fermé), son remplaçant ne peut
   // pas être l'un des deux juges qu'il arbitre — sinon il ne ferait que répéter un vote.
   await chainReview({ task_type: r.task_type, target_slug: r.target_slug, payload: r.payload, result: r.result },
-    reviewedId, [{ juge_modele: ARBITRE_MODELE, slot: 'arbitre' }],
+    reviewedId, [{ juge_modele: arbitre, slot: 'arbitre' }],
     [r.auto_model, r.auto2_model].filter(Boolean));
 }
 
