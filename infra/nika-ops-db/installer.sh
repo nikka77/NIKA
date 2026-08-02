@@ -27,7 +27,7 @@ EOF
   chown nika:nika "$ENVF" && chmod 600 "$ENVF"
 fi
 # shellcheck disable=SC1090
-source "$ENVF"
+set -a; source "$ENVF"; set +a   # -a : exporté aussi vers les sous-processus (node du §7)
 
 # ── 3. Rôles + base ─────────────────────────────────────────────────────────
 sudo -u postgres psql -v ON_ERROR_STOP=1 <<EOF
