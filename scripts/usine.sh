@@ -20,7 +20,11 @@ cd "$(dirname "$0")/.."
 # à 2 000 jetons/JOUR sur ce compte (~8 fiches), mesuré au 429. Mistral et Nemotron encaissent
 # tous deux une requête de taille réelle et ont passé leurs sondes d'embauche du 29/07.
 # Familles distinctes de bout en bout : Mistral produit · Google et Meta jugent · NVIDIA arbitre.
-MODELE=${CLOUD_MODEL:-mistral/mistral-large-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/openai/gpt-oss-120b}
+# DeepInfra EN DERNIER, et seulement en dernier (02/08) : les trois couloirs gratuits gardent
+# la priorité, mais quand ils sont tous à sec l'usine s'arrêtait pour la journée — mesuré ce
+# midi, le chantier Death Note tournait en rond, chaque tâche lue puis reportée faute de guichet.
+# Facturé au jeton, sans plafond quotidien : c'est le filet qui empêche l'usine de s'éteindre.
+MODELE=${CLOUD_MODEL:-mistral/mistral-large-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/openai/gpt-oss-120b,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo}
 # Jugement n°2 (famille croisée) : Qwen3-32B chez DeepInfra depuis le 01/08 — facturé au
 # jeton, donc SANS guichet quotidien, le mur contre lequel tous les couloirs gratuits butaient.
 # Mesuré : 0,000195 $ le verdict avec /no_think (2,6 s) — les 10 $ de Dan valent ~51 000
