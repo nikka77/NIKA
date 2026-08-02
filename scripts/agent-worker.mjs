@@ -7,7 +7,7 @@
 // Les résultats ne touchent JAMAIS les tables réelles : ils attendent la review dans agent_results.
 import { createClient } from '@supabase/supabase-js';
 import { z } from 'zod';
-import { fetchFandomProse } from './lib/fandom.mjs';
+import { fetchFandomProse, citeLeNom } from './lib/fandom.mjs';
 import { expertFor, axesSchema, AXES, checkPreuves, splitPreuves } from './lib/akasha-axes.mjs';
 import { ROLES, angleFor } from './lib/akasha-roles.mjs';
 import { nomExpert, memoireExpert, expertNiche } from './lib/akasha-experts.mjs';
@@ -86,18 +86,10 @@ const FlavorOut = z.object({ descFr: DescFr(30) });
  *    Mary Kenwood  / article « Wedy »              → « Kenwood » en True Name  → même personne
  *    Jealous       / article « Gelus »             → « Jealous » en Also called → même être
  *    Giorno's Mother / article « Giorno Giovanna » → rien hors titre           → REFUSÉ (juste)
+ *
+ *  La règle (citeLeNom) vit dans scripts/lib/fandom.mjs depuis le 02/08 : le tri des sections
+ *  réhabilite EXACTEMENT ce que cette garde accepte — une seule définition de l'alias.
  */
-const CHAMPS_NOMMAGE = /^\s*(name|true name|real name|alias(es)?|also called|other names?|romanized name|english name|epithet|nickname)\s*:.*$/gim;
-const citeLeNom = (texte, nom, titre) => {
-  if (!texte || !nom) return false;
-  const norm = (x) => String(x).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-  const champs = norm((String(texte).match(CHAMPS_NOMMAGE) ?? []).join(' | '));
-  if (!champs) return false;
-  const dansTitre = norm(titre ?? '');
-  // Mots d'au moins 4 lettres : « the », « of », « no » se rencontrent partout.
-  const mots = norm(nom).split(/[^a-z0-9]+/).filter((m) => m.length >= 4 && !dansTitre.includes(m));
-  return mots.length > 0 && mots.some((m) => champs.includes(m));
-};
 
 const TASK_TYPES = {
   flavor_akasha: {
@@ -293,14 +285,18 @@ ${p.fandom}`,
     prompt: (p) => `Tu es vérificateur pour l'encyclopédie AKASHA. Tu ne rédiges rien : tu CONTRÔLES.
 
 FICHE : ${p.name} (${p.universe})
-PRODUCTION DE L'AGENT À CONTRÔLER :
+${p.alias_de ? `IDENTITÉ DÉJÀ ÉTABLIE — NE LA CONTESTE PAS : l'article source s'intitule « ${p.alias_de} ».
+C'est le MÊME sujet que ${p.name} sous son autre nom, vérifié sur les champs de nommage de
+l'article (le wiki titre au vrai nom, notre registre porte le pseudonyme de la VF/VA). La
+production nomme donc légitimement « ${p.alias_de} ». Contrôle les FAITS, jamais l'identité.
+` : ''}PRODUCTION DE L'AGENT À CONTRÔLER :
 ${p.production}
 
 SOURCE DE RÉFÉRENCE (article du wiki canon) :
 ${p.source}
 
 Contrôle, dans cet ordre :
-1. La production parle-t-elle bien de ${p.name}, et non d'un homonyme ou d'un proche ?
+1. ${p.alias_de ? `(identité acquise, voir ci-dessus — passe directement au point 2)` : `La production parle-t-elle bien de ${p.name}, et non d'un homonyme ou d'un proche ?`}
 2. Chaque fait avancé est-il présent dans la source ? (un fait absent = invention)
 ${p.kind === 'prose'
   ? `3. Le français est-il correct, sans anglicisme ni terme anglais résiduel ?`
@@ -1096,6 +1092,10 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
       type: 'review_local',
       payload: {
         reviewed_id: reviewedId, slug: row.target_slug, name: p.name, universe: p.universe,
+        // L'identité a déjà été prouvée à la mise en file (champs de nommage de l'article) :
+        // le juge n'a pas à la rejuger « à vue », il la refusait sur la seule différence de
+        // nom entre notre registre et le titre du wiki.
+        ...(p.alias_de ? { alias_de: p.alias_de } : {}),
         // Le juge doit voir AU MOINS ce que le producteur a lu. Cette ligne tranchait à
         // 4 500 c quand le producteur en lit 6 000 (relations) ou 5 000 (descFr) : mesuré le
         // 01/08, 56 preuves sur 793 (7,1 %) étaient littéralement dans la source mais AU-DELÀ

@@ -49,9 +49,12 @@ console.log(`${candidates.length} fiche(s) à découper${UNIVERSE ? ` [${UNIVERS
 if (!candidates.length) process.exit(0);
 
 const messages = [];
-let sansSource = 0;
+let sansSource = 0, mauvaiseEntite = 0;
 for (const e of candidates) {
   const page = await fetchFandomSections(e.universe, e.name, { maxSections: MAX_SECTIONS });
+  // Identité refusée à la source (02/08) : douze sections d'un article qui parle d'un autre
+  // sujet coûtaient douze productions ET douze relectures, pour finir rejetées une à une.
+  if (page?.refus) { mauvaiseEntite++; console.log(`  ✗ ${e.name.padEnd(26)} ${page.refus}`); continue; }
   if (!page?.sections?.length) { sansSource++; continue; }
   // Le SOMMAIRE part avec chaque section : l'agent sait ce que les autres traitent et ne
   // marche pas sur leurs plates-bandes. Sans lui, cinq plumes indépendantes se répètent.
@@ -64,12 +67,16 @@ for (const e of candidates) {
         slug: e.slug, name: e.name, type: e.type, universe: e.universe, summary: e.summary,
         section_index: s.index, section_titre: s.titre, section_texte: s.texte,
         fandomTitle: page.title, fandomUrl: page.url, sommaire,
+        // Alias PROUVÉ (champs de nommage) : le juge doit savoir que « Gelus » et « Jealous »
+        // sont le même être, sinon il rejette la production pour erreur d'identité — 30 des
+        // 172 sections en attente de Death Note ont été refusées exactement pour ça.
+        ...(page.alias ? { alias_de: page.alias } : {}),
       },
     });
   }
 }
 
-console.log(`\n→ ${messages.length} section(s) au total · ${sansSource} fiche(s) sans source exploitable`);
+console.log(`\n→ ${messages.length} section(s) au total · ${sansSource} fiche(s) sans source exploitable · ${mauvaiseEntite} refusée(s) pour mauvaise entité`);
 if (DRY || !messages.length) { if (DRY) console.log('(à blanc — rien mis en file)'); process.exit(0); }
 
 // Envoi par paquets : un lot de 400 sections dépasse la taille d'un appel RPC confortable.

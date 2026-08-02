@@ -170,6 +170,12 @@ const nameWords = (s) =>
     (s ?? '')
       .normalize('NFD').replace(/[̀-ͯ]/g, '')
       .toLowerCase().replace(/[^a-z0-9\s]/g, ' ')
+      // Voyelles longues du japonais romanisé : « Tōta » (macron déjà tombé → « tota ») et
+      // « Touta » sont le MÊME nom, mais le squelette ne les rapproche pas — il exige cinq
+      // lettres de part et d'autre et « tota » en fait quatre. On aligne l'écriture avant de
+      // comparer : ō = ou = oo, ū = uu. (Constaté le 02/08 : Tōta Matsuda / Touta Matsuda
+      // classé « mauvaise entité » alors que c'est le même homme, à l'accent près.)
+      .replace(/ou/g, 'o').replace(/oo/g, 'o').replace(/uu/g, 'u')
       .split(/\s+/)
       .filter((w) => w && !['the', 'of', 'de', 'du', 'la', 'le', 'les', 's', 'gou', 'san', 'kun'].includes(w)),
   );
@@ -202,6 +208,62 @@ export function sameEntityName(name, title) {
 }
 
 /**
+ * Champs de nommage d'un article : « Name : … », « Alias : … », « Also called : … ».
+ * Un wiki déclare TOUJOURS les autres noms de son sujet — c'est la preuve d'alias.
+ */
+export const CHAMPS_NOMMAGE = /^\s*(name|true name|real name|alias(es)?|also called|other names?|romanized name|english name|epithet|nickname)\s*:.*$/gim;
+
+/**
+ * Le texte cite-t-il `nom` dans ses champs de nommage, HORS des mots du titre ?
+ * Si oui, l'article parle de la même entité sous un autre nom (Jealous ≡ Gelus).
+ * La condition « hors du titre » est ce qui rend la règle sûre : « Giorno's Mother » ne
+ * passe pas sur l'article « Giorno Giovanna » (il ne reste que « Mother », absent des champs).
+ * Vit ici depuis le 02/08 : le worker (garde du producteur) et le tri des sections
+ * (réhabilitation des faux refus d'identité) doivent appliquer LA MÊME règle.
+ */
+export function citeLeNom(texte, nom, titre) {
+  if (!texte || !nom) return false;
+  const lignes = String(texte).match(CHAMPS_NOMMAGE) ?? [];
+  if (!lignes.length) return false;
+  const champs = nameWords(lignes.join(' | '));
+  const dansTitre = nameWords(titre ?? '');
+  // Mots d'au moins 4 lettres : « the », « of », « no » se rencontrent partout.
+  const mots = [...nameWords(nom)].filter((m) => m.length >= 4 && ![...dansTitre].some((t) => sameWord(m, t)));
+  // Comparaison par SQUELETTE, pas par égalité : les wikis translittèrent au petit bonheur
+  // (« True Name : Kal Snydar » pour notre « Kal Snyder » — même homme, une lettre d'écart).
+  // La même règle qu'ailleurs dans ce fichier, donc les mêmes garde-fous : ≥ 5 lettres.
+  return mots.length > 0 && mots.some((m) => [...champs].some((c) => sameWord(m, c)));
+}
+
+/**
+ * IDENTITÉ ENTRE NOTRE FICHE ET L'ARTICLE TROUVÉ — quatre issues, aucune opinion.
+ *   'meme'     : même nom aux variantes de romanisation près (Tōta ≡ Touta)
+ *   'alias'    : autre nom du même sujet, PROUVÉ par les champs de nommage (Jealous ≡ Gelus)
+ *   'indecis'  : un mot significatif en commun mais aucune preuve (Œil de Shinigami /
+ *                Shinigami Eyes : sans doute le bon article, mais notre nom est en français
+ *                et le wiki en anglais — rien à prouver là-dessus, donc on ne tranche pas)
+ *   'etranger' : rien en commun, aucune preuve (Détective → « L (character) », Ginzou
+ *                Kaneboshi → « Give-and-Take (chapter) ») — l'article parle d'autre chose
+ * @param {string} texte article (infobox + prose) servant de preuve
+ */
+export function identiteEntre(nom, titre, texte) {
+  if (sameEntityName(nom, titre)) return 'meme';
+  // Sigle : « SPK » ≡ « Special Provision for Kira ». Aucun champ de nommage ne le dira,
+  // et pourtant l'identité est certaine — les initiales du titre FORMENT le sigle.
+  const brut = String(nom).replace(/[^A-Za-z]/g, '');
+  if (brut.length >= 2 && brut.length <= 5 && brut === brut.toUpperCase()) {
+    // Initiales des mots PORTEURS : « for », « of », « the » ne comptent pas dans un sigle
+    // (SPK = Special Provision [for] Kira). nameWords les écarte déjà.
+    const OUTILS = ['for', 'and', 'to', 'in', 'on', 'a', 'an', 'pour', 'et', 'des'];
+    const initiales = [...nameWords(titre)].filter((w) => !OUTILS.includes(w)).map((w) => w[0]).join('').toUpperCase();
+    if (initiales.length >= 2 && initiales.includes(brut)) return 'meme';
+  }
+  if (citeLeNom(texte, nom, titre)) return 'alias';
+  const a = nameWords(nom), b = nameWords(titre);
+  return [...a].some((w) => w.length >= 4 && [...b].some((x) => sameWord(w, x))) ? 'indecis' : 'etranger';
+}
+
+/**
  * Page canon d'une entité, en prose + cache disque.
  * @returns {Promise<{title:string,url:string,text:string}|null>} null si univers/page introuvable.
  */
@@ -212,7 +274,7 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000 } = {})
   await mkdir(CACHE_DIR, { recursive: true });
   // La version du nettoyeur fait partie de la clé : après correction, les vieilles entrées sont
   // ignorées d'office (sinon un worker encore en mémoire avec l'ancien code repeuple le cache).
-  const file = `${CACHE_DIR}${createHash('sha1').update(`v4:${universe}:${name}`).digest('hex').slice(0, 16)}.json`;
+  const file = `${CACHE_DIR}${createHash('sha1').update(`v5:${universe}:${name}`).digest('hex').slice(0, 16)}.json`;
   // sameEntity est RECALCULÉ à la lecture : la garde évolue (squelettes de romanisation du 26/07)
   // et un verdict figé dans le cache la court-circuiterait — sans avoir à invalider tout le cache.
   try {
@@ -226,6 +288,18 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000 } = {})
   let j = await wget(parseUrl(title));
 
   let resolvedBy = 'exact';
+  // MACRONS (02/08) : nos noms viennent des API japonaises (« Shūichi Aizawa », « Tōta
+  // Matsuda ») quand les wikis titrent en ASCII (« Shuichi Aizawa », « Touta Matsuda »).
+  // Sans cet essai, le titre exact échoue et la recherche plein texte ramène n'importe quel
+  // article citant le nom — Aizawa était tombé sur « Finis (chapter) », et douze sections
+  // ont été rédigées sur le mauvais sujet avant d'être refusées une à une par les juges.
+  if (!j?.parse?.wikitext) {
+    const ascii = name.normalize('NFD').replace(/[̀-ͯ]/g, '');
+    if (ascii !== name) {
+      const k = await wget(parseUrl(ascii));
+      if (k?.parse?.wikitext) { title = ascii; resolvedBy = 'ascii'; j = k; }
+    }
+  }
   if (!j?.parse?.wikitext) {                       // titre exact absent → recherche plein texte
     const found = await searchTitles(api, name, null, 1);
     if (!found.length) return null;
@@ -269,9 +343,20 @@ export async function fetchFandomSections(universe, name, { minChars = 350, maxS
   if (!api) return null;
 
   // On réutilise la résolution de titre éprouvée (redirections, alias, recherche plein texte).
-  const page = await fetchFandomProse(universe, name, { maxChars: 500 });
+  const page = await fetchFandomProse(universe, name, { maxChars: 1200 });
   if (!page?.title) return null;
   const titre = page.title;
+
+  // GARDE D'IDENTITÉ (02/08) — la même que celle du producteur, appliquée AVANT de découper.
+  // La recherche plein texte tombe parfois sur un article voisin : « Détective » → « L
+  // (character) », « Ginzou Kaneboshi » → « Give-and-Take (chapter) », « Cellule d'enquête
+  // Kira » → « Separation ». Sans cette garde on payait douze sections par fiche pour du
+  // contenu qui parle de quelqu'un d'autre — et les juges les refusaient une à une, à raison.
+  // Deux issues seulement : même entité (titre concordant), ou ALIAS PROUVÉ par les champs
+  // de nommage de l'article (Jealous ≡ Gelus). Tout le reste est refusé à la source.
+  const identite = identiteEntre(name, titre, page.text);
+  if (identite === 'etranger') return { title: titre, url: page.url, sections: [], refus: `mauvaise entité : article « ${titre} »` };
+  const alias = identite === 'alias' ? titre : null;
 
   const j = await wget(`${api}?action=parse&page=${encodeURIComponent(titre)}&prop=sections&redirects=1&format=json&formatversion=2`);
   const brutes = j?.parse?.sections ?? [];
@@ -301,5 +386,5 @@ export async function fetchFandomSections(universe, name, { minChars = 350, maxS
     if (texte.length >= minChars) sections.push({ index: String(s.index), titre: String(s.line).trim(), texte });
     await sleep(250);                                     // même rythme que le reste de la lib
   }
-  return { title: titre, url: page.url, sections };
+  return { title: titre, url: page.url, sections, alias };
 }
