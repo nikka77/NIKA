@@ -360,10 +360,13 @@ Contrôle, dans cet ordre :
 ${p.kind === 'toilettage'
   ? `3. TÂCHE DE CORRECTION DE LANGUE : la production est la version corrigée de la source. Elle
    doit dire EXACTEMENT la même chose, en meilleur français. Vérifie donc DEUX choses —
-   (a) aucun fait ajouté, retiré ni déformé (un nom, un chiffre, un lien qui change = "rejeter") ;
+   (a) aucun fait ajouté, retiré ni déformé. Un FAIT, c'est un nom propre, un chiffre, une
+   date, un lien entre personnages ou une action. Ce n'est PAS un mot : remplacer un
+   anglicisme par son équivalent français (« l'Équipe de tâche » → « l'équipe spéciale »,
+   « est montré » → « apparaît ») est EXACTEMENT le travail demandé, jamais une déformation.
+   Ne signale un fait changé que si le texte corrigé raconte autre chose ;
    (b) le français est-il réellement meilleur, et correct ? Si la correction n'apporte rien ou
-   appauvrit le texte, verdict "a_corriger". Une reformulation qui garde tous les faits n'est
-   PAS un défaut : c'est le travail demandé.`
+   appauvrit le texte, verdict "a_corriger".`
   : p.kind === 'prose'
   ? `3. Le français est-il correct, sans anglicisme ni terme anglais résiduel ?`
   : `3. NE JUGE PAS LA LANGUE. Cette production n'est pas un texte à lire mais des données :
@@ -448,6 +451,51 @@ FICHE : ${p.name}
 ARTICLE DU WIKI (${p.fandomTitle}) :
 ${p.fandom}`,
 };
+
+/** CONTRÔLE DU TOILETTAGE — en code, parce que deux juges LLM n'y arrivent pas (02/08).
+ *
+ *  Mesuré sur le pilote : les deux juges ont classé « à corriger » des corrections JUSTES
+ *  (« l'Équipe de tâche » → « l'équipe spéciale », « tuer une personne » → « tuer quiconque »).
+ *  C'est structurel, pas un défaut de prompt : on leur demande « chaque fait est-il dans la
+ *  source ? » alors que la tâche consiste PRÉCISÉMENT à changer les mots. Un juge honnête
+ *  signale donc chaque différence — et bloque tout. Deux prompts successifs n'y ont rien fait.
+ *
+ *  Ce que l'on veut vraiment interdire est bien plus étroit, et se vérifie sans modèle :
+ *    · un nom propre qui disparaît ou qui APPARAÎT (le pilote a inventé « Hideki Ryuuga,
+ *      connu sous le nom de L » — vrai, mais non vérifié sur la source) ;
+ *    · un chiffre qui change (dates, numéros de chapitre, âges) ;
+ *    · une négation qui saute — le seul moyen d'inverser un sens sans toucher au vocabulaire.
+ *  Le reste — syntaxe, synonymes, ordre des mots — est le travail demandé.
+ *
+ *  Le fond, lui, a DÉJÀ été jugé quand la section a été écrite : on ne rejuge pas des faits,
+ *  on surveille une réécriture. Et l'original reste dans agent_results : tout est réversible.
+ */
+function checkToilettage(out, p) {
+  const avant = String(p.texte ?? ''), apres = String(out.texte ?? '');
+  const suspects = [];
+  const norm = (x) => x.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  // Noms propres = mots capitalisés hors début de phrase. Comparaison en minuscules : passer
+  // « l'Équipe » à « l'équipe » est une correction de casse, pas la perte d'un nom.
+  // Un nom propre se réduit à son premier morceau alphanumérique : « Wammy's » et
+  // « One-Shot » sont coupés en deux par l'apostrophe et le trait d'union, et se comparaient
+  // alors à rien — le pilote a signalé « wammy's perdu ET ajouté » dans la même phrase.
+  const cle = (m) => norm(m).split(/[^a-z0-9]+/).filter(Boolean)[0] ?? '';
+  const propres = (t) => new Set((t.match(/(?<![.!?«]\s|^)\b[A-ZÀ-Þ][\wÀ-ÿ'’-]{2,}/g) ?? []).map(cle).filter((m) => m.length >= 3));
+  const motsDe = (t) => new Set(norm(t).split(/[^a-z0-9]+/).filter(Boolean));
+  const [pa, pb, ma, mb] = [propres(avant), propres(apres), motsDe(avant), motsDe(apres)];
+  const perdus = [...pa].filter((n) => !mb.has(n));
+  const ajoutes = [...pb].filter((n) => !ma.has(n));
+  if (perdus.length) suspects.push(`nom propre perdu : ${perdus.slice(0, 4).join(', ')}`);
+  if (ajoutes.length) suspects.push(`nom propre ajouté : ${ajoutes.slice(0, 4).join(', ')}`);
+  const chiffres = (t) => (t.match(/\d+/g) ?? []).sort().join(',');
+  if (chiffres(avant) !== chiffres(apres)) suspects.push('les chiffres ne correspondent plus');
+  // Négation : on ne compte QUE la moitié porteuse (pas, jamais, aucun, ni, sans). Le « ne »
+  // s'élide, se déplace et disparaît en français correct (« ne … pas » → « sans ») — le
+  // compter faisait crier au sens inversé sur une simple reformulation.
+  const nie = (t) => (t.match(/\b(pas|jamais|aucun|aucune|nul|nulle|ni|sans|rien)\b/gi) ?? []).length;
+  if (nie(apres) < nie(avant)) suspects.push(`négation perdue (${nie(avant)} → ${nie(apres)})`);
+  return suspects;
+}
 
 /** Cohérence relation ↔ preuve, en code : la preuve doit nommer le personnage lié. */
 function checkRelations(out, p) {
@@ -641,7 +689,10 @@ async function executerCommande(cmd) {
 // juge (4 500 → 6 000 c le matin même). Avec plus de source à citer, les verdicts dépassaient
 // le plafond et sortaient en JSON tronqué — « Unterminated string at position 2611 ». C'est le
 // détecteur finish_reason posé le matin qui l'a nommé au lieu de laisser un parsing illisible.
-const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 800, akasha_relations: 900, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500 };
+// review_local 800 → 1 000 le 02/08 : sur le toilettage, la relecture compare DEUX textes
+// longs et la sortie a été coupée au plafond (« sortie coupée », puis JSON invalide).
+// toilettage_fr rend un texte ENTIER, pas un résumé : il lui faut le budget d'une section.
+const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 1_000, akasha_relations: 900, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500, toilettage_fr: 2_400 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
 /* ── Rotation de couloirs (L23, 01/08) ──────────────────────────────
@@ -1060,7 +1111,8 @@ async function processMessage(msg) {
       const out = await callModel(type, p, modele);
       // Contrôle de cohérence valeur↔preuve (code pur) : le modèle peut citer juste et conclure faux.
       const suspects = type === 'akasha_attrs' ? checkPreuves(out)
-        : type === 'akasha_relations' ? checkRelations(out, p) : [];
+        : type === 'akasha_relations' ? checkRelations(out, p)
+        : type === 'toilettage_fr' ? checkToilettage(out, p) : [];
       return {
         ...base,
         status: suspects.length ? 'suspect' : 'done',
@@ -1503,8 +1555,14 @@ ${texteSans}`,
         } catch (e) { console.error('  ✗ commande :', String(e).slice(0, 120)); }
       }
     }
+    // TOILETTAGE : pas de jury LLM (voir checkToilettage — deux juges bloquent toute
+    // réécriture par construction). Le contrôle de code EST la porte : propre → appliqué et
+    // marqué ⚡ ; suspect → pile de Dan avec le motif exact. Rien n'est perdu : le texte
+    // d'origine reste dans le payload, l'annulation le repose.
+    if (ins?.id && row.task_type === 'toilettage_fr') {
+      if (row.status === 'done' && row.result?.corrige) await verrouEtAppliquer(ins.id, (q) => q.eq('status', 'done'));
     // Enchaînement : toute production jugeable part aussitôt en relecture locale.
-    if (ins?.id && (row.status === 'done' || row.status === 'suspect') && row.task_type !== 'whatsapp_reponse') await chainReview(row, ins.id);
+    } else if (ins?.id && (row.status === 'done' || row.status === 'suspect') && row.task_type !== 'whatsapp_reponse') await chainReview(row, ins.id);
   }
   await supabase.rpc(RPC.archive, { message_id: msg.msg_id });
   console.log(`  ${row.status === 'done' ? '✓' : row.status === 'refused' ? '◇' : '✗'} [${msg.msg_id}] ${row.target_slug ?? row.task_type} (${row.status})`);
