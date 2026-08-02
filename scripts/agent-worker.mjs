@@ -1622,7 +1622,17 @@ for (;;) {
     siesteDepuis = 0;
     continue;
   }
-  const { data: lot, error } = await supabase.rpc(RPC.read, { vt: VT, qty: LOT });
+  // LECTURE PAR COULOIR (02/08) : un worker spécialisé ne lit QUE son couloir, le filtre est dans
+  // la requête. Avant, il recevait la file entière et devait rendre ce qui n'était pas à lui —
+  // réémission au fond, ordre de priorité détruit à chaque tour, deux workers se renvoyant la
+  // file sans jamais la vider. C'est ce qui a gelé la flotte à 0,5 verdict/min ce matin.
+  // Repli sur la lecture large si la fonction n'existe pas encore (base non migrée) : le tri de
+  // couloir plus bas reste en place et fait le travail, en moins bien.
+  const { data: lot, error } = TYPES && !CHAT
+    ? await supabase.rpc('ops_queue_read_couloir', { p_vt: VT, p_qty: LOT, p_types: TYPES })
+      .then((r) => (r.error?.message?.includes('ops_queue_read_couloir')
+        ? supabase.rpc(RPC.read, { vt: VT, qty: LOT }) : r))
+    : await supabase.rpc(RPC.read, { vt: VT, qty: LOT });
   if (error) { console.error('lecture file:', error.message); process.exit(1); }
   if (!lot?.length) {
     if (!LOOP) break;

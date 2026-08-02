@@ -42,7 +42,11 @@ begin
          read_ct = m.read_ct + 1
     from candidats c
    where m.msg_id = c.msg_id
-  returning m.msg_id, m.read_ct, m.enqueued_at, m.vt, m.message;
+  -- `headers` inclus : pgmq 1.5 a ajouté une sixième colonne à `message_record`, et un `returning`
+  -- à cinq colonnes échoue à l'EXÉCUTION, pas à la création — « structure of query does not match
+  -- function result type ». La fonction existe donc, mais rate au premier appel. La liste des
+  -- colonnes se lit sur une lecture réelle (ops_queue_read en renvoie six), jamais sur la doc.
+  returning m.msg_id, m.read_ct, m.enqueued_at, m.vt, m.message, m.headers;
 end;
 $$;
 

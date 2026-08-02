@@ -50,6 +50,11 @@ JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,deepinfra/Qwen/Qwe
 # que les couloirs tournent en parallèle, il faut assez de places pour les alimenter tous.
 CONC=${NIKA_CONC:-$(grep '^NIKA_CONC=' .env.local 2>/dev/null | cut -d= -f2)}
 
-echo "🏭 usine continue — production ${MODELE} · jugement ${JUGE} · ${CONC:-16} de front"
+# COULOIR DE PRODUCTION UNIQUEMENT depuis le 02/08 : les relectures ont leur propre worker
+# (scripts/juges.sh, service nika-juges). --juge reste passé car c'est LUI qui compose le jury
+# à l'enrôlement — chaque production met ses deux juges en file en la quittant.
+TYPES=${NIKA_TYPES:-fandom_descfr,fiche_technique,fiche_artefact,fiche_lieu,fiche_lexique,fiche_section,akasha_attrs,akasha_relations,toilettage_fr,flavor_akasha}
+
+echo "🏭 usine continue — production ${MODELE} · jury enrôlé ${JUGE} · ${CONC:-16} de front"
 exec "${PRIO[@]}" node --env-file=.env.local scripts/agent-worker.mjs \
-  --loop --cloud="$MODELE" --juge="$JUGE" --conc="${CONC:-16}"
+  --loop --types="$TYPES" --cloud="$MODELE" --juge="$JUGE" --conc="${CONC:-16}"
