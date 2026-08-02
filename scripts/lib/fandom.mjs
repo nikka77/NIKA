@@ -34,7 +34,12 @@ async function wget(url, tries = 3) {
     } catch { /* retry */ }
     await sleep(500 * (i + 1));
   }
-  return null;
+  // PANNE ≠ ABSENCE (audit 02/08). Arriver ici signifie : réseau mort, Cloudflare, ou 429
+  // épuisé — jamais « page inexistante » (MediaWiki répond 200 avec {error:{code:missingtitle}}
+  // pour une vraie absence, et ce JSON est rendu plus haut). Renvoyer null ici faisait classer
+  // des fiches légitimes « sans source exploitable » pendant un blocage passager — un état qui
+  // se figeait. On CRIE : le worker marquera la tâche failed (rejouable), pas refused (définitif).
+  throw new Error(`fandom injoignable après ${tries} essais : ${url.slice(0, 90)}`);
 }
 
 const META = /^(List of|Template:|Category:|File:|User:|Help:|Forum:|Blog:|Talk:|Module:)/i;

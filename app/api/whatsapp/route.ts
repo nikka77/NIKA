@@ -43,12 +43,30 @@ export async function POST(req: Request) {
   let corps: {
     entry?: Array<{ changes?: Array<{ value?: {
       messages?: Array<{ from?: string; id?: string; type?: string; timestamp?: string; text?: { body?: string } }>;
+      statuses?: Array<{ id?: string; status?: string; errors?: Array<{ code?: number; title?: string; message?: string }> }>;
     } }> }>;
   };
   try { corps = JSON.parse(brut); } catch { return NextResponse.json({ ok: true }); }
 
-  const messages = (corps.entry ?? [])
-    .flatMap((e) => e.changes ?? [])
+  const changements = (corps.entry ?? []).flatMap((e) => e.changes ?? []);
+
+  // STATUTS D'ENVOI (audit 02/08) : Meta signale ici les échecs de NOS envois (template en pause
+  // qualité, fenêtre fermée 131047, jeton…) — on les jetait, et une alerte perdue restait perdue
+  // sans trace. Un statut « failed » part en ops_notes : visible dans /ops, et le contenu sera
+  // relivré par le parc au prochain message de Dan.
+  const echecs = changements
+    .flatMap((c) => c.value?.statuses ?? [])
+    .filter((st) => st.status === 'failed');
+  if (echecs.length) {
+    const supa = admin();
+    if (supa) {
+      await supa.from('ops_notes').insert(echecs.map((st) => ({
+        note: `whatsapp NON LIVRÉ (${st.id?.slice(-8) ?? '?'}) : ${(st.errors ?? []).map((e) => `${e.code} ${e.title ?? e.message ?? ''}`).join(' · ').slice(0, 200) || 'sans détail'}`,
+      })));
+    }
+  }
+
+  const messages = changements
     .flatMap((c) => c.value?.messages ?? [])
     .filter((m) => m.type === 'text' && m.text?.body);
 
