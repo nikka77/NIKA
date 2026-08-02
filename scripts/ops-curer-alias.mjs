@@ -103,6 +103,17 @@ NOMS : ${JSON.stringify(lot)}`;
             if ([...a].some((w) => b.has(w))) officiel = hit;
           }
         }
+        // GARDE DE NATURE (02/08, après la moisson) : un nom de GROUPE (clan, famille, équipe…)
+        // curé vers la page d'un INDIVIDU est un faux ami — « Clan Terumī » → Mei Terumī avait
+        // passé le recouvrement de mots. La preuve d'identité vaudrait pour la mauvaise entité.
+        {
+          const groupeNotre = /^(clan|famille|family|équipe|team|groupe)\b/i.test(notre);
+          const groupeTitre = /(clan|family|team|group|corps|squad|division)/i.test(officiel ?? '');
+          if (officiel && groupeNotre && !groupeTitre) {
+            console.log(`    ✗ ${notre} → « ${officiel} » : groupe curé vers un individu (jeté)`);
+            officiel = null;
+          }
+        }
         if (officiel) {
           registre[univers] = registre[univers] ?? {};
           registre[univers][notre] = officiel;
