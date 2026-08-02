@@ -15,6 +15,9 @@ import { viderParc } from './lib/whatsapp.mjs';
 import { scoreAncrageProduction } from './lib/ancrage.mjs';
 import { poserAuGraphe } from '../lib/akasha/relations.ts';
 import { hostname } from 'node:os';
+import { execFile as execFileCb } from 'node:child_process';
+import { promisify } from 'node:util';
+const execFile = promisify(execFileCb);
 import { LIMITES_FOURNISSEURS } from '../lib/ops/limites.mjs';
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
@@ -1119,14 +1122,29 @@ async function callModel(type, payload, modeleImpose) {
     });
     const corpsA = await rA.text();
     if (rA.status === 400 && /credit balance is too low/i.test(corpsA)) {
-      // Solde épuisé : guichet FERMÉ proprement — la tâche attend, rien n'échoue, et le couloir
-      // rouvrira tout seul quand Dan créditera le compte (l'entrée couloirsEpuises expire en 1 h).
-      throw new PlafondJourError(`anthropic/${sansCouloir(model)}`, 'solde de crédits API épuisé — console.anthropic.com');
+      // SOLDE API ÉPUISÉ → repli sur L'ABONNEMENT (02/08, question de Dan : « utilisable avec
+      // abonnement claude ? » — oui). Claude Code en mode sans-tête (claude -p) est couvert par
+      // le forfait Max, jeton OAuth déjà dans .env.local. Nuance assumée : ces arbitrages
+      // puisent dans les limites d'usage de l'abonnement — celles des sessions interactives de
+      // Dan. Le CLI n'existe que sur le Mac : ailleurs, guichet fermé proprement (la tâche
+      // attend, le couloir re-teste dans l'heure — l'API reprend la main dès qu'elle est créditée).
+      let cliOk = false;
+      try { await execFile('claude', ['--version'], { timeout: 8_000 }); cliOk = true; } catch { /* pas de CLI ici */ }
+      if (!cliOk) throw new PlafondJourError(`anthropic/${sansCouloir(model)}`, 'solde API épuisé, pas de CLI — console.anthropic.com');
+      const { stdout } = await execFile('claude',
+        ['-p', String(messages[0].content), '--model', sansCouloir(model)],
+        { timeout: 180_000, maxBuffer: 4 * 1024 * 1024, env: { ...process.env } });
+      raw = stdout;
     }
-    if (rA.status === 429) throw new PlafondJourError(`anthropic/${sansCouloir(model)}`, 'limite de débit Anthropic');
-    if (!rA.ok) throw new Error(`anthropic ${rA.status}: ${corpsA.slice(0, 160)}`);
-    const jA = JSON.parse(corpsA);
-    raw = jA?.content?.find((b) => b.type === 'text')?.text ?? '';
+    else if (rA.status === 429) throw new PlafondJourError(`anthropic/${sansCouloir(model)}`, 'limite de débit Anthropic');
+    else if (!rA.ok) throw new Error(`anthropic ${rA.status}: ${corpsA.slice(0, 160)}`);
+    else {
+      const jA = JSON.parse(corpsA);
+      raw = jA?.content?.find((b) => b.type === 'text')?.text ?? '';
+    }
+    // Haiku commente volontiers APRÈS son JSON (« Voilà mon verdict… ») : on clampe à l'objet
+    // le plus externe avant le parseur strict — même filet que pour les penseurs Qwen.
+    raw = (String(raw).match(/\{[\s\S]*\}/) ?? [raw])[0];
   } else if (model.startsWith('gemini/')) {
     // Gemini NATIF (pas OmniRoute) : son adaptateur passe par l'endpoint compatible OpenAI qui
     // refuse les clés nouveau format « AQ.… » (constaté le 26/07). L'endpoint officiel les accepte
