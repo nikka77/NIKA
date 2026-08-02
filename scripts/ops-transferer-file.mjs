@@ -21,7 +21,9 @@ while (transferes < MAX) {
   let lot = null;
   try {
     // vt d'une heure : le temps du transfert, personne d'autre ne relit ces messages.
-    const { data, error } = await source.rpc('ops_queue_read_couloir', { p_vt: 3600, p_qty: 500, p_types: null });
+    // Lots de 50 : sous restriction, la passerelle REST coupe (522) avant qu'un UPDATE de
+    // 500 lignes ne finisse — un petit lot a une chance de passer sous le timeout Cloudflare.
+    const { data, error } = await source.rpc('ops_queue_read_couloir', { p_vt: 3600, p_qty: 50, p_types: null });
     if (error) throw new Error(error.message);
     lot = data ?? [];
   } catch (e) {
