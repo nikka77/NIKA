@@ -728,7 +728,14 @@ async function executerCommande(cmd) {
 // review_local 800 → 1 000 le 02/08 : sur le toilettage, la relecture compare DEUX textes
 // longs et la sortie a été coupée au plafond (« sortie coupée », puis JSON invalide).
 // toilettage_fr rend un texte ENTIER, pas un résumé : il lui faut le budget d'une section.
-const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 1_000, akasha_relations: 900, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500, toilettage_fr: 2_400 };
+// akasha_relations 900 → 1 800 le 02/08. Ce plafond avait été taillé sur Mistral ; Nemotron,
+// devenu producteur titulaire l'après-midi même, rédige des preuves plus longues et se faisait
+// couper net — 7 fiches perdues en 15 minutes (paulie, magellan, oolong, welfin…). Un plafond de
+// sortie n'est pas une propriété de la TÂCHE, c'est une propriété du couple tâche × modèle : il
+// se recale à chaque changement de producteur. Le détecteur de troncature a fait son travail —
+// c'est lui qui a nommé le remède dans le message d'erreur, sans lui les fiches partaient
+// tronquées en relecture et les juges auraient condamné le contenu au lieu du réglage.
+const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 1_000, akasha_relations: 1_800, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500, toilettage_fr: 2_400 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
 /* ── Rotation de couloirs (L23, 01/08) ──────────────────────────────
