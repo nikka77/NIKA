@@ -95,7 +95,9 @@ for (let i = 0; i < tri.length; i += 50) {
   const lot = tri.slice(i, i + 50);
   const { error } = await supabase.rpc('ops_queue_send_batch', { messages: lot.map((m) => m.message) });
   if (error) { console.error('réémission :', error.message); process.exit(1); }
-  for (const m of lot) await supabase.rpc('ops_queue_archive', { message_id: m.msg_id });
+  // Par LOT : archiver 750 messages un par un coutait ~30 s de latence reseau pure (40 ms
+  // l'aller-retour vers Francfort) — pgmq.archive accepte un tableau depuis toujours.
+  await supabase.rpc('ops_queue_archive_batch', { message_ids: lot.map((m) => m.msg_id) });
   remis += lot.length;
   process.stdout.write(`\r  réordonnés : ${remis}/${tri.length}`);
 }

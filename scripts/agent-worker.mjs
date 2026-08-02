@@ -1646,7 +1646,7 @@ for (;;) {
     const etrangers = lot.filter((m) => !TYPES.includes(m.message?.type));
     if (etrangers.length) {
       await supabase.rpc('ops_queue_send_batch', { messages: etrangers.map((m) => m.message) });
-      for (const m of etrangers) await supabase.rpc('ops_queue_archive', { message_id: m.msg_id });
+      await supabase.rpc('ops_queue_archive_batch', { message_ids: etrangers.map((m) => m.msg_id) });
       console.log(`  ↷ ${etrangers.length} tâche(s) hors couloir remises en file`);
     }
     miens = lot.filter((m) => TYPES.includes(m.message?.type));
@@ -1671,7 +1671,7 @@ for (;;) {
   const rendus = miens.filter((m) => !saitFaire(m));
   if (rendus.length) {
     await supabase.rpc('ops_queue_send_batch', { messages: rendus.map((m) => m.message) });
-    for (const m of rendus) await supabase.rpc('ops_queue_archive', { message_id: m.msg_id });
+    await supabase.rpc('ops_queue_archive_batch', { message_ids: rendus.map((m) => m.msg_id) });
     console.log(`  ↷ ${rendus.length} tâche(s) rendue(s) à la flotte (modèle non servi ici)`);
   }
   miens = miens.filter(saitFaire);
