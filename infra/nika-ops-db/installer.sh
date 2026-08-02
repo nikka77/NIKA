@@ -66,7 +66,7 @@ server-host = "0.0.0.0"
 server-port = 3001
 db-pool = 12
 EOF
-chmod 600 /etc/postgrest.conf
+chown nika:nika /etc/postgrest.conf && chmod 600 /etc/postgrest.conf   # le service tourne en User=nika
 
 cat > /etc/systemd/system/nika-ops-db-api.service <<'EOF'
 [Unit]
