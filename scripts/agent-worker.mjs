@@ -172,7 +172,13 @@ DONNÉES :
       // « Troisième Hokage » ne rencontrera jamais « Third Hokage » ; et la page d'une technique
       // ne cite pas forcément ceux qui l'emploient. Sur les non-personnages, cette garde ne
       // détectait pas des homonymes : elle refusait 1 912 entrées Naruto au hasard de leur résumé.
-      if (p.type === 'character') {
+      // TITRE STRICTEMENT ÉGAL = même entité par construction (02/08) : sur le wiki DE l'univers,
+      // une page dont le titre est exactement notre nom ne peut pas être un homonyme d'ailleurs.
+      // La garde refusait Yasunaga, Kyoko, Daril Ghiroza — pages justes mais trop PETITES pour
+      // contenir un repère du résumé français. Le doute anti-homonyme ne vaut que si les titres
+      // diffèrent (résolution par recherche).
+      const titresEgaux = String(p.fandomTitle ?? '').trim().toLowerCase() === String(p.name ?? '').trim().toLowerCase();
+      if (p.type === 'character' && !titresEgaux) {
         const propres = [...new Set((p.summary ?? '').match(/(?<!^|[.!?]\s)\b[A-ZÀ-Þ][\wÀ-ÿ'-]{3,}/g) ?? [])];
         if (propres.length && !propres.some((n) => (p.fandom ?? '').toLowerCase().includes(n.toLowerCase().slice(0, 6))))
           return `homonyme probable : aucun repère du résumé (${propres.slice(0, 3).join(', ')}) dans « ${p.fandomTitle} »`;
