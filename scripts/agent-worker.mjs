@@ -1602,6 +1602,12 @@ ${texteSans}`,
 const counts = { done: 0, refused: 0, failed: 0, suspect: 0 };
 let siesteDepuis = 0;   // dernier report pour guichet quotidien fermé (voir PlafondJourError)
 console.log(`⚙️  worker NIKA OPS — mode ${LOOP ? 'continu' : 'drain'} · ${CONC} tâche(s) de front`);
+// LE CŒUR BAT PENDANT LE TRAVAIL, PAS SEULEMENT ENTRE DEUX LOTS (02/08). Un tour de boucle
+// dure le temps de son lot : douze tâches sur un couloir bridé à 12 req/min, ce sont des
+// minutes sans un seul battement — et la console affichait « USINE ARRÊTÉE » pendant que
+// l'usine produisait. Un signal de vie qui s'éteint quand le travail est le plus lourd
+// désigne exactement l'inverse de ce qui se passe. Le battement vit donc sur son horloge.
+if (LOOP) setInterval(() => { battreLeCoeur().catch(() => {}); }, 45_000).unref();
 for (;;) {
   await battreLeCoeur();
   // Guichet quotidien fermé au tour précédent : en continu on dort jusqu'à ce que la fenêtre
