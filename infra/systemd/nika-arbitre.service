@@ -1,0 +1,30 @@
+# nika-juges.service — le SECOND étage, dédié aux relectures (02/08/2026).
+#
+# La chaîne consomme deux verdicts par production. Un worker unique les traitait dans l'ordre de
+# la file, donc par blocs : mesuré le 02/08, 169 verdicts et 0 production, puis 77 productions et
+# 0 verdict — la moitié des couloirs regardait l'autre travailler. Chaque étage a maintenant son
+# couloir (ops_queue_read_couloir), avance à son rythme, et le rapport 2 pour 1 s'établit seul.
+#
+# Ce service n'a été possible qu'après la lecture par couloir : avant elle, deux workers
+# spécialisés se renvoyaient mutuellement la file sans jamais la vider.
+[Unit]
+Description=NIKA OPS — arbitre Claude (litiges, service dédié)
+OnFailure=nika-echec@%n.service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Environment=NIKA_ROUTAGE=/home/nika/routage.json
+Type=simple
+User=nika
+WorkingDirectory=/home/nika/NIKA
+ExecStart=/home/nika/NIKA/scripts/arbitre.sh
+Restart=always
+RestartSec=30
+# Le worker est un client réseau, pas un calculateur : priorité basse pour laisser le
+# secrétaire WhatsApp répondre instantanément, et garde-fou mémoire (VPS 3,8 Go).
+Nice=10
+MemoryMax=1200M
+
+[Install]
+WantedBy=multi-user.target
