@@ -22,6 +22,17 @@ import { WIKIS, ALIAS_REGISTRE } from './lib/fandom.mjs';
 const execFile = promisify(execFileCb);
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 const DRY = process.argv.includes('--dry');
+
+// Battement de flotte : ce rôle s'annonce pour la console /ops (LA FLOTTE).
+async function battreEnClaude(role, detail) {
+  try {
+    await supabase.from('ops_workers').upsert({
+      id: `claude:${role}`, hote: 'claude', role: 'claude', pid: process.pid,
+      detail, derniere_activite: new Date().toISOString(),
+    });
+  } catch { /* console aveugle, jamais bloquant */ }
+}
+
 const SEUL = process.argv.find((a) => a.startsWith('--universe='))?.split('=')[1];
 
 // 1) Le gisement : les noms que l'usine a refusés pour résolution.
@@ -111,3 +122,4 @@ if (!DRY && totalConfirmees) {
   writeFileSync('data/alias-cures.json', JSON.stringify(registre, null, 1) + '\n');
   console.log('✓ data/alias-cures.json mis à jour — les remplisseurs re-serviront ces fiches');
 }
+await battreEnClaude('curateur', `${totalConfirmees} paire(s) confirmée(s) ce passage`);

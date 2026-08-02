@@ -20,6 +20,17 @@ import { WIKIS, ALIAS_REGISTRE } from './lib/fandom.mjs';
 const execFile = promisify(execFileCb);
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 const DRY = process.argv.includes('--dry');
+
+// Battement de flotte : ce rôle s'annonce pour la console /ops (LA FLOTTE).
+async function battreEnClaude(role, detail) {
+  try {
+    await supabase.from('ops_workers').upsert({
+      id: `claude:${role}`, hote: 'claude', role: 'claude', pid: process.pid,
+      detail, derniere_activite: new Date().toISOString(),
+    });
+  } catch { /* console aveugle, jamais bloquant */ }
+}
+
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 10);
 const UNIVERSE = process.argv.find((a) => a.startsWith('--universe='))?.split('=')[1];
 const H = { headers: { 'User-Agent': 'NIKA-AKASHA/1.0 (contact : tulbured06@gmail.com)' } };
@@ -99,3 +110,4 @@ ${mentions.join('\n\n').slice(0, 12000)}`;
   redigees++;
 }
 console.log(`\n${redigees} fiche(s) rédigée(s), signées et sourcées`);
+await battreEnClaude('redacteur', `${redigees} fiche(s) rédigée(s) ce passage`);

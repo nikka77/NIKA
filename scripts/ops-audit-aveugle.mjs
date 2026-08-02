@@ -24,6 +24,17 @@ const N = Number(process.argv.find((a) => a.startsWith('--par-couloir='))?.split
 const JOURS = Number(process.argv.find((a) => a.startsWith('--jours='))?.split('=')[1] ?? 7);
 const DRY = process.argv.includes('--dry');
 
+// Battement de flotte : ce rôle s'annonce pour la console /ops (LA FLOTTE).
+async function battreEnClaude(role, detail) {
+  try {
+    await supabase.from('ops_workers').upsert({
+      id: `claude:${role}`, hote: 'claude', role: 'claude', pid: process.pid,
+      detail, derniere_activite: new Date().toISOString(),
+    });
+  } catch { /* console aveugle, jamais bloquant */ }
+}
+
+
 // Échantillon : productions approuvées de la semaine, groupées par modèle producteur.
 const { data: rows } = await supabase.from('agent_results')
   .select('id, task_type, model, payload, result')
@@ -107,3 +118,4 @@ if (!DRY) {
   await envoyerAlerte(`⚖ Audit à l'aveugle ${date} :\n${classement.map((c) => `${c.moyenne}/10 ${c.modele.split('/').pop()}`).join('\n')}`).catch(() => {});
   console.log(`\n✓ rapport : tasks/audits/${date}.md`);
 } else console.log('\n' + rapport);
+await battreEnClaude('audit', `${classement.length} couloir(s) audités`);

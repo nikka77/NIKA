@@ -664,7 +664,12 @@ function cibleWhatsApp(texte) {
   return m ? { cible: m[1].toLowerCase(), texte: (texte ?? '').slice(m[0].length) || (texte ?? '') } : { cible: 'groq', texte: texte ?? '' };
 }
 TASK_TYPES.whatsapp_reponse = {
-  model: (p) => cibleWhatsApp(p.texte).cible === 'gemini' ? 'gemini/gemini-flash-lite-latest' : 'groq/openai/gpt-oss-120b',
+  // SECRÉTAIRE PREMIUM (rôle Claude n°5, activé par Dan le 02/08) : Haiku répond quand
+  // NIKA_CHAT_PREMIUM=1 dans le .env.local du VPS — à poser après avoir crédité l'API
+  // (le secrétaire vit sur le VPS, sans CLI : seule l'API le sert). Sans le drapeau, le
+  // routage historique reste en place — le chat ne casse jamais faute de crédit.
+  model: (p) => process.env.NIKA_CHAT_PREMIUM === '1' ? 'anthropic/claude-haiku-4-5'
+    : cibleWhatsApp(p.texte).cible === 'gemini' ? 'gemini/gemini-flash-lite-latest' : 'groq/openai/gpt-oss-120b',
   // Schéma PLAT : le mode strict (Groq/OpenAI) exige que chaque propriété soit requise —
   // les optionnels imbriqués sont refusés (HTTP 400 constaté le 27/07). « aucun »/0 = neutre.
   zod: z.object({
@@ -913,7 +918,8 @@ let dernierBattement = 0, battementEnEchec = false;
 async function battreLeCoeur() {
   if (Date.now() - dernierBattement < 30_000) return;
   dernierBattement = Date.now();
-  const role = CHAT ? 'chat' : 'agents';
+  const role = CHAT ? 'chat'
+    : (TYPES?.length === 1 && TYPES[0] === 'arbitrage_claude') ? 'arbitre-claude' : 'agents';
   // Le battement annonce si ce nœud a un GPU local (Ollama). C'est ainsi que le VPS, qui n'en
   // a pas, sait qu'il peut confier une relecture au modèle local du Mac : gratuit, sans quota,
   // et d'une famille (Qwen) qui manque cruellement au parc nuage.
