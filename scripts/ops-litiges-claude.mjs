@@ -81,7 +81,7 @@ for (const r of litiges) {
     r.status === 'suspect' && 'Statut : SUSPECT (preuve douteuse signalée par les gardes)',
   ].filter(Boolean).join('\n');
   dossiers.push({ id: r.id, name: r.payload?.name, universe: r.payload?.universe,
-    task_type_origine: r.task_type, production: String(production).slice(0, 3000), source, motifs });
+    task_type_origine: r.task_type, production: String(production).slice(0, 2500), source: String(source).slice(0, 2800), motifs });
 }
 const messages = [];
 for (let i = 0; i < dossiers.length; i += 10)

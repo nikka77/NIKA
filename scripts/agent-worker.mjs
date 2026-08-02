@@ -356,7 +356,7 @@ ${p.litiges.map((l) => `═══ LITIGE id=${l.id} — ${l.name} (${l.universe}
 PRODUCTION :
 ${l.production}
 SOURCE :
-${String(l.source).slice(0, 3800)}
+${String(l.source).slice(0, 2800)}
 REPROCHES : ${l.motifs}`).join('\n\n')}`,
   },
   arbitrage_claude: {

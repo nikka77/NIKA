@@ -24,7 +24,7 @@ RestartSec=30
 # Le worker est un client réseau, pas un calculateur : priorité basse pour laisser le
 # secrétaire WhatsApp répondre instantanément, et garde-fou mémoire (VPS 3,8 Go).
 Nice=10
-MemoryMax=1200M
+MemoryMax=2300M
 
 [Install]
 WantedBy=multi-user.target
