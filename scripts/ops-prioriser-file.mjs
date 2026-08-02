@@ -43,7 +43,13 @@ const rang = (m) => {
     const i = DABORD.indexOf(m.message?.type);
     if (i >= 0) return -10 + i;
   }
-  if (m.message?.type === 'review_local') return 0;              // la qualité d'abord
+  // La qualité d'abord — mais les relectures ne sont pas interchangeables. Sans distinction
+  // d'univers, les 129 verdicts Death Note attendaient derrière 240 verdicts d'univers que Dan
+  // n'avait pas demandés : la file avançait, « Death Note en attente » ne bougeait pas (02/08).
+  if (m.message?.type === 'review_local') {
+    const i = PRIORITAIRES.indexOf(universDe(m));
+    return i >= 0 ? -1 + i / 1000 : 0;
+  }
   const u = universDe(m);
   const i = PRIORITAIRES.indexOf(u);
   return i >= 0 ? 1 + i : 100;                                    // puis les univers demandés

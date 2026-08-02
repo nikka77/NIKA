@@ -293,10 +293,16 @@ ${p.sommaire ? `\nLa fiche complète comportera ces sections : ${p.sommaire}.\nN
 ${p.memoire ? `\n${p.memoire}\n` : ''}
 RÈGLES :
 - N'utilise QUE des faits présents dans le texte source ci-dessous. Aucune invention.
+- TA MÉMOIRE DE L'ŒUVRE NE COMPTE PAS ICI. Si tu connais un fait vrai qui n'est pas dans la
+  section ci-dessous, il est hors sujet : ne l'écris pas. Un relecteur compare ton texte à
+  CETTE section et à rien d'autre — tout ce que tu ajoutes de mémoire, même exact, sera compté
+  comme non vérifiable et la section entière repartira. Une section courte et fidèle passe ;
+  une section étoffée de souvenirs ne passe pas.
 - Français encyclopédique sobre, présent de narration. Aucun anglicisme : traduis les termes
   courants, garde en romaji les noms propres canon (Sharingan, Mangekyō, Kekkei Genkai).
-- Développe : tu as la place. Vise 6 à 12 phrases si la source le permet — c'est une SECTION,
-  pas un résumé. Reprends les mécanismes, les conditions, les exceptions que la source décrit.
+- Longueur À LA MESURE DE LA SOURCE : environ ${Math.max(3, Math.min(12, Math.round(String(p.section_texte ?? '').length / 300)))} phrases.
+  Reprends les mécanismes, les conditions et les exceptions que la source décrit — mais ne
+  remplis pas la place restante. Rendre une source maigre en peu de phrases est un succès.
 - "titre" : le titre de la section en français (« Acquisition » → « L'éveil », « Abilities » →
   « Capacités », « Transformations » → « Évolutions »). Court, sans article inutile.
 
