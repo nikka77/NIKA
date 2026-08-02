@@ -183,6 +183,16 @@ export async function GET(req: Request) {
     };
   });
 
+  // ── L'ARBITRE CLAUDE en temps réel (assaut du 02/08) : verdicts de l'heure et file de lots.
+  const [{ count: claudeHeure }, { data: fileLots }] = await Promise.all([
+    supabase.from('agent_results').select('*', { count: 'exact', head: true })
+      .ilike('arbitre_motif', '⚖ Claude%').gte('arbitre_at', new Date(Date.now() - 3600_000).toISOString()),
+    supabase.rpc('ops_queue_by_type'),
+  ]);
+  const litigesEnFile = (fileLots ?? []).reduce((n: number, x: { task_type: string; en_attente: number }) =>
+    n + (x.task_type === 'arbitrage_claude' ? Number(x.en_attente)
+      : x.task_type === 'arbitrage_claude_lot' ? Number(x.en_attente) * 10 : 0), 0);
+
   // ── LE JURY RÉEL — qui a rendu les verdicts de la dernière heure. Un jury sur le papier ne
   // vaut rien : ce qui compte est le modèle qui a effectivement tranché.
   const depuisH = new Date(Date.now() - 3_600_000).toISOString();
@@ -230,6 +240,7 @@ export async function GET(req: Request) {
   return NextResponse.json({
     queue: metrics?.[0] ?? { queue_length: 0, total_messages: 0 },
     flotte, couloirs, jury, cadence: cadence ?? 0, univers,
+    arbitreClaude: { verdictsHeure: claudeHeure ?? 0, litigesEnFile },
     pendingTotal: pendingTotal ?? 0, validesTotal: validesTotal ?? 0,
     bacs: { relire: nRelire ?? 0, douteuses: nDouteuses ?? 0, ecartees: nEcartees ?? 0,
             approuvees: nApprouvees ?? 0, rejetees: nRejetees ?? 0, echecs: nEchecs ?? 0 },

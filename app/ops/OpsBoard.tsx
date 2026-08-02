@@ -12,6 +12,7 @@ import AgentsPanel, { ClaudeConsole, type AgentEtat } from './AgentsPanel';
 type Noeud = { id: string; role: string; detail: string; gpu: boolean; vuA?: string; ageSec: number };
 type Couloir = { cle: string; court: string; payant: boolean; parJour: number | null; consomme: number; restant: number | null; ferme: boolean; motifFermeture?: string | null };
 type Univers = { nom: string; total: number; avecFr: number; avecDossier?: number };
+type ArbitreClaude = { verdictsHeure: number; litigesEnFile: number };
 type State = {
   queue: { queue_length: number; total_messages: number };
   flotte: Noeud[];
@@ -329,6 +330,18 @@ export default function OpsBoard() {
         {/* Deux jauges par univers depuis le 02/08 : descFr ET dossiers de sections. La jauge
             unique masquait le travail du jour — 279 sections Death Note publiées, compteur
             immobile. Un tableau de bord mesure l'objectif COURANT, pas celui d'hier. */}
+        <Bloc titre="Arbitre Claude" note="litiges tranchés — l'étage qui vide la pile de Dan">
+          <div style={{ display: 'flex', gap: 22, alignItems: 'baseline', padding: '4px 0' }}>
+            <span style={{ fontFamily: 'var(--fn)', fontSize: 30, color: 'var(--az)' }}>
+              {(state as { arbitreClaude?: ArbitreClaude } | null)?.arbitreClaude?.verdictsHeure ?? 0}
+              <span style={{ fontSize: 13, color: 'var(--td3)', fontFamily: 'var(--fo)' }}> verdicts/h</span>
+            </span>
+            <span style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)' }}>
+              file : {(state as { arbitreClaude?: ArbitreClaude } | null)?.arbitreClaude?.litigesEnFile ?? 0} litige(s)
+            </span>
+          </div>
+        </Bloc>
+
         <Bloc titre="Couverture des univers" note="description française · — · dossier de sections">
           {(state?.univers ?? []).sort((a, b) => b.total - a.total).map((u) => {
             const pct = u.total ? Math.round((u.avecFr / u.total) * 100) : 0;
