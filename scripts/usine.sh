@@ -30,7 +30,7 @@ cd "$(dirname "$0")/.."
 # avait passé sa sonde d'embauche du 29/07, il est gratuit, et il encaisse 32 requêtes/minute
 # contre 12 à Mistral. La production était bridée par le couloir le plus lent alors que le plus
 # rapide dormait, fermé par notre propre compteur.
-MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,groq/openai/gpt-oss-120b,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo}
+MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,groq/openai/gpt-oss-120b,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo,openrouter/mistralai/mistral-small-24b-instruct-2501}
 # Jugement n°2 (famille croisée) : Qwen3-32B chez DeepInfra depuis le 01/08 — facturé au
 # jeton, donc SANS guichet quotidien, le mur contre lequel tous les couloirs gratuits butaient.
 # Mesuré : 0,000195 $ le verdict avec /no_think (2,6 s) — les 10 $ de Dan valent ~51 000
@@ -43,7 +43,7 @@ MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-l
 # Google — perdue quand gemma-4-31b est devenu le goulot du parc le 01/08. Derrière lui,
 # DeepInfra reprend la main dès que le millier de requêtes du jour est consommé : la chaîne ne
 # s'arrête plus jamais faute de guichet, elle passe simplement du gratuit au payé.
-JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,deepinfra/Qwen/Qwen3-32B,mistral/mistral-small-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/llama-3.3-70b-versatile}
+JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,deepinfra/Qwen/Qwen3-32B,mistral/mistral-small-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/llama-3.3-70b-versatile,openrouter/mistralai/mistral-small-24b-instruct-2501}
 # 16 places de front depuis le 02/08. Le nœud ne calcule rien : il attend des réponses HTTP.
 # Mesuré à 8 places, en pleine charge : 1,3 % de CPU, 0,47 de charge sur 2 cœurs, 3,1 Go libres.
 # Le facteur limitant est le débit par minute des fournisseurs, pas la machine — et maintenant
