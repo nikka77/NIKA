@@ -210,3 +210,15 @@ grant all on all sequences in schema public, pgmq to service_role;
 grant execute on all functions in schema public, pgmq to service_role;
 alter default privileges in schema public grant all on tables to service_role;
 alter default privileges in schema public grant all on sequences to service_role;
+
+-- ── Rattrapage 03/08 (colonnes/RPC créées jadis à la main dans le SQL Editor,
+-- retrouvées par lecture du CODE — le schéma vivait en partie hors des fichiers) ──
+alter table public.agent_results add column if not exists auto_score numeric;
+
+create or replace function public.ops_queue_by_type()
+returns table(task_type text, en_attente bigint)
+language sql security definer set search_path = pgmq, public as $$
+  select message->>'type' as task_type, count(*) as en_attente
+  from pgmq.q_agent_tasks group by 1;
+$$;
+grant execute on function public.ops_queue_by_type() to service_role;
