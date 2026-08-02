@@ -38,10 +38,15 @@ const SIGNE = 'claude-haiku-4-5 (rédacteur sans-source)';
 
 // Candidats : refusées « aucune source exploitable », toujours sans descFr, PAS déjà curées
 // (le Curateur passe avant — s'il a trouvé la page, l'usine classique fera mieux que nous).
+// « mauvaise entité » et « homonyme probable » ajoutés le 02/08 : Butler, Giorno's Mother ou
+// Class Representative n'ont AUCUNE page propre — la recherche wiki rend un article voisin,
+// la garde refuse (correct), et ces figurants restaient invisibles du Rédacteur. Après le
+// passage du Curateur (qui capte les vrais alias, ex. Izunavi), ces refus-là sont bien des
+// sans-source : mentions éparses ou rien.
 const refuses = new Map();
 for (let d = 0; ; d += 1000) {
   const { data } = await supabase.from('agent_results').select('payload')
-    .eq('status', 'refused').or('error.ilike.%aucune source%,error.ilike.%absente ou trop maigre%,error.ilike.%trop maigre%').order('id').range(d, d + 999);
+    .eq('status', 'refused').or('error.ilike.%aucune source%,error.ilike.%absente ou trop maigre%,error.ilike.%trop maigre%,error.ilike.%mauvaise entité%,error.ilike.%homonyme probable%').order('id').range(d, d + 999);
   for (const r of data ?? []) {
     const u = r.payload?.universe, n = r.payload?.name;
     if (!u || !n || !WIKIS[u] || ALIAS_REGISTRE[u]?.[n]) continue;
