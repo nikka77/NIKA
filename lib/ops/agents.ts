@@ -82,6 +82,13 @@ export const AGENTS: AgentDef[] = [
     famille: 'controle',
   },
   {
+    type: 'claude_dispatcheur',
+    nom: 'Dispatcheur',
+    role: 'Répartit les piles sur les couloirs toutes les 15 min depuis l’état réel (guichets, pannes, volumes) — le plan que l’usine consulte',
+    modele: 'claude-haiku-4-5 (abonnement, VPS)',
+    famille: 'claude',
+  },
+  {
     type: 'arbitrage_claude',
     nom: 'Arbitre suprême',
     role: 'Tranche les litiges que les petits juges n’ont pas su régler (77 % de faux positifs mesurés le 02/08) — verdicts signés ⚖ Claude',
