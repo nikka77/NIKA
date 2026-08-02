@@ -15,10 +15,11 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { execFile as execFileCb } from 'node:child_process';
 import { promisify } from 'node:util';
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 import { LIMITES_FOURNISSEURS } from '../lib/ops/limites.mjs';
 
 const execFile = promisify(execFileCb);
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 
 // Les couloirs éligibles par étage — le Dispatcheur ORDONNE, il n'invente pas de couloir.

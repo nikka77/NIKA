@@ -12,11 +12,12 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { execFile as execFileCb } from 'node:child_process';
 import { promisify } from 'node:util';
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { fetchFandomProse } from './lib/fandom.mjs';
 import { envoyerAlerte } from './lib/alerte.mjs';
 
 const execFile = promisify(execFileCb);
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const UNIVERSE = process.argv.find((a) => a.startsWith('--universe='))?.split('=')[1];
 const N = Number(process.argv.find((a) => a.startsWith('--echantillon='))?.split('=')[1] ?? 12);
 const DRY = process.argv.includes('--dry');
@@ -32,7 +33,7 @@ async function battreEnClaude(role, detail) {
 }
 
 // Échantillon : fiches publiées, tirées au pas fixe sur la liste triée (rejouable, sans horloge).
-const { data: entrees } = await supabase.from('akasha_entries')
+const { data: entrees } = await clientSite().from('akasha_entries')
   .select('slug, name, attributes').eq('universe', UNIVERSE).order('slug');
 const publiees = (entrees ?? []).filter((e) => e.attributes?.descFr || e.attributes?.sections?.length);
 const pas = Math.max(1, Math.floor(publiees.length / N));

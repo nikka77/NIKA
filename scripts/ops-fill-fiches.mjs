@@ -4,9 +4,10 @@
 // Le rôle définit les types d'entrées couverts (scripts/lib/akasha-roles.mjs) ; l'expert de
 // l'univers rédige, la chaîne de contrôle (garde → juge → review Dan) est la même que partout.
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { ROLES, typesFor } from './lib/akasha-roles.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const ROLE = process.argv.find((a) => a.startsWith('--role='))?.split('=')[1];
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 10);
@@ -23,8 +24,7 @@ if (!ROLES[ROLE]) {
 // déjà rédigées — et il n'en ressortait qu'une poignée de candidates. 670 jutsu Naruto étaient
 // ainsi hors d'atteinte quel que soit le nombre de passes (audit du 01/08). Le tri par
 // popularité reste un ORDRE de priorité, il ne doit jamais servir de filtre.
-let q = supabase
-  .from('akasha_entries')
+let q = clientSite().from('akasha_entries')
   .select('slug, name, type, universe, summary, attributes')
   .in('type', typesFor(ROLE))
   .filter('attributes->>descFr', 'is', null)

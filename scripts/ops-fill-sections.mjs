@@ -11,9 +11,10 @@
 // Usage : node --env-file=.env.local scripts/ops-fill-sections.mjs --universe="Death Note"
 //         [--dry] [--limit=20] [--slug=sharingan] [--max-sections=12] [--refaire]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { fetchFandomSections } from './lib/fandom.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const REFAIRE = process.argv.includes('--refaire');
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 10);
@@ -24,7 +25,7 @@ const SLUG = process.argv.find((a) => a.startsWith('--slug='))?.split('=')[1];
 // PAGINATION : Supabase plafonne à 1 000 lignes, et la base en compte 7 691.
 const entrees = [];
 for (let d = 0; ; d += 1000) {
-  let q = supabase.from('akasha_entries')
+  let q = clientSite().from('akasha_entries')
     .select('slug, name, type, universe, summary, attributes')
     .order('attributes->favorites', { ascending: false, nullsFirst: false })
     .range(d, d + 999);

@@ -18,9 +18,10 @@
 //
 // Usage : node --env-file=.env.local scripts/ops-purger-sections-etrangeres.mjs [--dry] [--universe="Death Note"]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { identiteEntre, fetchFandomProse } from './lib/fandom.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const UNIVERSE = process.argv.find((a) => a.startsWith('--universe='))?.split('=')[1];
 
@@ -67,14 +68,14 @@ if (DRY || !aPurger.length) { if (DRY) console.log('(à blanc — rien retiré)'
 let retirees = 0;
 for (const { slug, titre, rows } of aPurger) {
   // 1) La fiche publique d'abord : c'est elle que lit Dan.
-  const { data: e } = await supabase.from('akasha_entries').select('attributes').eq('slug', slug).single();
+  const { data: e } = await clientSite().from('akasha_entries').select('attributes').eq('slug', slug).single();
   if (e?.attributes?.sections?.length) {
     const indices = new Set(rows.map((r) => String(r.payload?.section_index)));
     const restantes = e.attributes.sections.filter((s) => !indices.has(String(s.i)));
     if (restantes.length !== e.attributes.sections.length) {
       const attrs = { ...e.attributes };
       if (restantes.length) attrs.sections = restantes; else delete attrs.sections;
-      await supabase.from('akasha_entries').update({ attributes: attrs }).eq('slug', slug);
+      await clientSite().from('akasha_entries').update({ attributes: attrs }).eq('slug', slug);
       retirees += e.attributes.sections.length - restantes.length;
     }
   }

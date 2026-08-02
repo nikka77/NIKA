@@ -9,8 +9,9 @@
 //
 // Usage : node --env-file=.env.local scripts/ops-liberer-bloquees-ancrage.mjs [--dry]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 
 const { data: rows, error } = await supabase.from('agent_results')
@@ -40,7 +41,7 @@ for (const r of rows) {
     .select('*').single();
   if (!gagne) continue;
 
-  const { data: entry } = await supabase.from('akasha_entries').select('attributes').eq('slug', gagne.target_slug).single();
+  const { data: entry } = await clientSite().from('akasha_entries').select('attributes').eq('slug', gagne.target_slug).single();
   if (!entry) continue;
   const patch = { ...(entry.attributes ?? {}) };
   const DESCFR = ['fandom_descfr', 'flavor_akasha', 'fiche_technique', 'fiche_artefact', 'fiche_lieu', 'fiche_lexique'];
@@ -51,7 +52,7 @@ for (const r of rows) {
     for (const [k, v] of Object.entries(gagne.result ?? {}))
       if (v && v !== 'inconnu' && !k.endsWith('_preuve')) patch[k] = v;
   } else continue;
-  await supabase.from('akasha_entries').update({ attributes: patch }).eq('slug', gagne.target_slug);
+  await clientSite().from('akasha_entries').update({ attributes: patch }).eq('slug', gagne.target_slug);
   applique++;
   console.log(`  ⚡ appliquée : ${gagne.target_slug}`);
 }

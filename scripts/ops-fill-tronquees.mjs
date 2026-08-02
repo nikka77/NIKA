@@ -11,8 +11,9 @@
 //
 // Usage : node --env-file=.env.local scripts/ops-fill-tronquees.mjs [--dry] [--limit=50] [--universe="Naruto"]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 50);
 const UNIVERSE = process.argv.find((a) => a.startsWith('--universe='))?.split('=')[1];
@@ -33,7 +34,7 @@ const TACHE_POUR = {
 // scannait que 13 % de la base et on ne « trouvait » que 3 fiches coupées sur 104 (01/08).
 const data = [];
 for (let debut = 0; ; debut += 1000) {
-  let q = supabase.from('akasha_entries')
+  let q = clientSite().from('akasha_entries')
     .select('slug, name, type, universe, summary, attributes')
     .order('slug').range(debut, debut + 999);
   if (UNIVERSE) q = q.eq('universe', UNIVERSE);

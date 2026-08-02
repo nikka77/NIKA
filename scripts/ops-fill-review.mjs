@@ -3,10 +3,11 @@
 // humaine — « valide » se survole, « a_corriger » et « rejeter » se regardent en priorité.
 // Usage : node --env-file=.env.local scripts/ops-fill-review.mjs [--dry] [--limit=30] [--re]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 import { splitPreuves } from './lib/akasha-axes.mjs';
 import { fetchFandomProse } from './lib/fandom.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const REDO = process.argv.includes('--re');           // rejuger même si un verdict existe
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 30);

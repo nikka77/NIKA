@@ -14,10 +14,11 @@
 // Usage : node --env-file=.env.local scripts/ops-litiges-claude.mjs [--dry] [--limit=120]
 //         [--age-min=20] [--universe="Death Note"]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 import { fetchFandomProse } from './lib/fandom.mjs';
 import { splitPreuves } from './lib/akasha-axes.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 120);
 const AGE_MIN = Number(process.argv.find((a) => a.startsWith('--age-min='))?.split('=')[1] ?? 20);

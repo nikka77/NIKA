@@ -7,9 +7,10 @@
 // elles ne repasseront jamais en review (idempotence oblige), il faut aller les rechercher.
 // Additif et idempotent : upsert sur (from_entry, to_entry, relation), aucune entrée créée.
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { indexerUnivers, lignesDeGraphe, poserAuGraphe, natureVersGraphe, normaliserNom } from '../lib/akasha/relations.ts';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 0);
 
@@ -40,7 +41,7 @@ const aRejouer = LIMIT ? productions.slice(0, LIMIT) : productions;
 const slugs = [...new Set(aRejouer.map((p) => p.target_slug))];
 const ficheParSlug = new Map();
 for (let i = 0; i < slugs.length; i += 300) {
-  const { data } = await supabase.from('akasha_entries').select('id, slug, universe').in('slug', slugs.slice(i, i + 300));
+  const { data } = await clientSite().from('akasha_entries').select('id, slug, universe').in('slug', slugs.slice(i, i + 300));
   for (const f of data ?? []) ficheParSlug.set(f.slug, f);
 }
 

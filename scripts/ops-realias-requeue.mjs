@@ -7,9 +7,10 @@
 //
 // Usage : node --env-file=.env.local scripts/ops-realias-requeue.mjs [--dry] [--limit=300]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 import { ALIAS_REGISTRE } from './lib/fandom.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 300);
 

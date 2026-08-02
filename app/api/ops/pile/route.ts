@@ -6,6 +6,7 @@
 // Chaque bac vit maintenant sur sa page, avec une vraie pagination et son compte exact.
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '@/lib/ops/db.mjs';
 import { opsAllowed } from '@/lib/ops/guard';
 
 export const dynamic = 'force-dynamic';

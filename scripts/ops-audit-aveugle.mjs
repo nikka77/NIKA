@@ -14,12 +14,13 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { execFile as execFileCb } from 'node:child_process';
 import { promisify } from 'node:util';
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 import { fetchFandomProse } from './lib/fandom.mjs';
 import { splitPreuves } from './lib/akasha-axes.mjs';
 import { envoyerAlerte } from './lib/alerte.mjs';
 
 const execFile = promisify(execFileCb);
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const N = Number(process.argv.find((a) => a.startsWith('--par-couloir='))?.split('=')[1] ?? 6);
 const JOURS = Number(process.argv.find((a) => a.startsWith('--jours='))?.split('=')[1] ?? 7);
 const DRY = process.argv.includes('--dry');

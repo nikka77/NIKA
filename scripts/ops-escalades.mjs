@@ -10,12 +10,13 @@
 //   4. Le commit est fait par CE script, pas par Claude ; le dépôt revient toujours sur main.
 //   5. Verrou anti-concurrence + délai max 10 min par escalade, 3 escalades max par passage.
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 import { execFile } from 'node:child_process';
 import { existsSync, writeFileSync, unlinkSync, statSync } from 'node:fs';
 import { envoyerOuParquer } from './lib/whatsapp.mjs';
 import { envoyerAlerte } from './lib/alerte.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 // Mac : clone d'automatisation ~/dev/NIKA (TCC iCloud) ; VPS : ~/NIKA — NIKA_DEPOT tranche.
 const DEPOT = process.env.NIKA_DEPOT ?? process.env.HOME + '/dev/NIKA';
 const VERROU = '/tmp/nika-escalades.lock';

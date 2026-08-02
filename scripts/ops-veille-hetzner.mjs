@@ -5,9 +5,10 @@
 // on migre alors le nœud (sans état → 30 min) et on divise la facture par 3.
 // Anti-spam : une alerte par cible et par 24 h (mémo dans ops_quotas via le guichet jour).
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 import { envoyerOuParquer } from './lib/whatsapp.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const CIBLES = ['cax11', 'cx23', 'cax21', 'cx33'];
 const LIEUX = ['nbg1', 'fsn1', 'hel1'];
 

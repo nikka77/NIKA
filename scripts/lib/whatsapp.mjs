@@ -4,8 +4,9 @@
 // message (ops_notes, source wa_sortant), prévenir par les canaux de repli, et livrer
 // automatiquement dès que Dan écrit à nouveau (viderParc, appelé par le worker du chat).
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../../lib/ops/db.mjs';
 
-const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const sb = clientOps();
 
 /** La fenêtre de service est-elle sûrement ouverte ? (marge d'1 h par défaut sur les 24 h) */
 export async function fenetreOuverte(margeHeures = 1) {

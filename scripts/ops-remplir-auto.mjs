@@ -16,12 +16,13 @@
 //
 // Usage : node --env-file=.env.local scripts/ops-remplir-auto.mjs [--dry] [--seuil=30] [--max=400]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { LIMITES_FOURNISSEURS } from '../lib/ops/limites.mjs';
 
 const run = promisify(execFile);
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const SEUIL = Number(process.argv.find((a) => a.startsWith('--seuil='))?.split('=')[1] ?? 30);
 const MAX = Number(process.argv.find((a) => a.startsWith('--max='))?.split('=')[1] ?? 400);

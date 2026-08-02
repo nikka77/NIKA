@@ -3,9 +3,10 @@
 // ⚠ taux d'échec anormal. Une nuit silencieuse et une nuit en panne ne doivent JAMAIS se ressembler.
 // Usage : node --env-file=.env.local scripts/ops-bilan-nuit.mjs [--heures=8]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 import { envoyerAlerte } from './lib/alerte.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const HEURES = Number(process.argv.find((a) => a.startsWith('--heures='))?.split('=')[1] ?? 8);
 const depuis = new Date(Date.now() - HEURES * 3600_000).toISOString();
 

@@ -2,13 +2,13 @@
 // Usage :  node --env-file=.env.local scripts/ops-fill-flavor.mjs --dry   (liste les candidates, n'envoie rien)
 //          node --env-file=.env.local scripts/ops-fill-flavor.mjs        (envoie 20 tâches dans pgmq)
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const LOT = 20;
 
-const { data, error } = await supabase
-  .from('akasha_entries')
+const { data, error } = await clientSite().from('akasha_entries')
   .select('slug, name, type, universe, summary, category:attributes->>category, descFr:attributes->>descFr')
   .eq('type', 'character')
   .filter('attributes->>descFr', 'is', null)

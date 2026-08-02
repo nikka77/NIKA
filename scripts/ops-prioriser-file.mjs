@@ -14,8 +14,9 @@
 //
 // Usage : node --env-file=.env.local scripts/ops-prioriser-file.mjs --univers="Death Note,Initial D" [--dry]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const PRIORITAIRES = (process.argv.find((a) => a.startsWith('--univers='))?.split('=')[1] ?? '')
   .split(',').map((s) => s.trim()).filter(Boolean);

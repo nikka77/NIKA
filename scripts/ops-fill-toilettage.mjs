@@ -32,8 +32,9 @@
 // Usage : node --env-file=.env.local scripts/ops-fill-toilettage.mjs --universe="One Piece"
 //         [--dry] [--limit=40] [--slug=…] [--tout] [--a-reproduire]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const TOUT = process.argv.includes('--tout');          // toiletter même sans marqueur détecté
 const A_REPRODUIRE = process.argv.includes('--a-reproduire');
@@ -75,7 +76,7 @@ const A_REPRODUIRE_RAISONS = [
 
 const entrees = [];
 for (let d = 0; ; d += 1000) {
-  let q = supabase.from('akasha_entries').select('slug, name, universe, attributes').order('slug').range(d, d + 999);
+  let q = clientSite().from('akasha_entries').select('slug, name, universe, attributes').order('slug').range(d, d + 999);
   if (UNIVERSE) q = q.eq('universe', UNIVERSE);
   if (SLUG) q = q.eq('slug', SLUG);
   const { data, error } = await q;

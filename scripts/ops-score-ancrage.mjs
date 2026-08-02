@@ -4,10 +4,11 @@
 // Usage : node --env-file=.env.local scripts/ops-score-ancrage.mjs [--limit=30] [--write]
 //   sans --write : affiche seulement (mode inspection)
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 import { fetchFandomProse } from './lib/fandom.mjs';
 import { construireAffirmations, scorerHHEM } from './lib/ancrage.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 30);
 const WRITE = process.argv.includes('--write');
 

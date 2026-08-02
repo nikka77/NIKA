@@ -6,6 +6,7 @@
 // CPU/IO de fond et l'interface reste fluide pendant les gros lots.
 // Les résultats ne touchent JAMAIS les tables réelles : ils attendent la review dans agent_results.
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { z } from 'zod';
 import { fetchFandomProse, citeLeNom } from './lib/fandom.mjs';
 import { expertFor, axesSchema, AXES, checkPreuves, splitPreuves } from './lib/akasha-axes.mjs';
@@ -21,7 +22,7 @@ import { promisify } from 'node:util';
 const execFile = promisify(execFileCb);
 import { LIMITES_FOURNISSEURS } from '../lib/ops/limites.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const OMNI_URL = process.env.OMNIROUTE_URL ?? 'http://localhost:20128/v1';
 const OMNI_KEY = process.env.OMNIROUTE_API_KEY;
 const LOOP = process.argv.includes('--loop');
@@ -1585,16 +1586,16 @@ async function autoAppliquerMajorite(rowId) {
  *  de boucler, et la fiche repartira au prochain passage du remplisseur. */
 async function ajouterSection(slug, neuve, modele) {
   for (let essai = 1; essai <= 3; essai++) {
-    const { data: entry } = await supabase.from('akasha_entries').select('attributes').eq('slug', slug).single();
+    const { data: entry } = await clientSite().from('akasha_entries').select('attributes').eq('slug', slug).single();
     if (!entry) return false;
     const attrs = { ...(entry.attributes ?? {}) };
     const dejaLa = Array.isArray(attrs.sections) ? attrs.sections : [];
     attrs.sections = [...dejaLa.filter((x) => String(x.i) !== String(neuve.i)), neuve]
       .sort((a, b) => Number(a.i) - Number(b.i));
     attrs.sectionsSource = modele;
-    await supabase.from('akasha_entries').update({ attributes: attrs }).eq('slug', slug);
+    await clientSite().from('akasha_entries').update({ attributes: attrs }).eq('slug', slug);
 
-    const { data: apres } = await supabase.from('akasha_entries').select('attributes').eq('slug', slug).single();
+    const { data: apres } = await clientSite().from('akasha_entries').select('attributes').eq('slug', slug).single();
     const posees = Array.isArray(apres?.attributes?.sections) ? apres.attributes.sections : [];
     if (posees.some((x) => String(x.i) === String(neuve.i))) return true;   // la nôtre a tenu
   }
@@ -1632,7 +1633,7 @@ async function verrouEtAppliquer(rowId, filtres) {
   ).select('*').single();
   if (!gagne) return false;
 
-  const { data: entry } = await supabase.from('akasha_entries').select('attributes').eq('slug', gagne.target_slug).single();
+  const { data: entry } = await clientSite().from('akasha_entries').select('attributes').eq('slug', gagne.target_slug).single();
   if (!entry) return false;
   const patch = { ...(entry.attributes ?? {}) };
   const DESCFR = ['fandom_descfr', 'flavor_akasha', 'fiche_technique', 'fiche_artefact', 'fiche_lieu', 'fiche_lexique'];
@@ -1660,7 +1661,7 @@ async function verrouEtAppliquer(rowId, filtres) {
     if (!gagne.result?.texte || !gagne.result?.corrige) return false;
     patch.descFr = gagne.result.texte;
     patch.descFrSource = `${gagne.model} (toilettage)`;
-    await supabase.from('akasha_entries').update({ attributes: patch }).eq('slug', gagne.target_slug);
+    await clientSite().from('akasha_entries').update({ attributes: patch }).eq('slug', gagne.target_slug);
     // Message distinct : ici la porte est le CONTRÔLE DE CODE, pas deux verdicts de juges —
     // afficher « double valide » raconterait une vérification qui n'a pas eu lieu.
     console.log(`  ⚡ français corrigé — description : ${gagne.target_slug}`);
@@ -1682,7 +1683,7 @@ async function verrouEtAppliquer(rowId, filtres) {
     patch.relations = rel.map(({ avec, nature, periode, resume }) => ({ avec, nature, periode, resume }));
     patch.relationsSource = gagne.model;
   } else return false;
-  await supabase.from('akasha_entries').update({ attributes: patch }).eq('slug', gagne.target_slug);
+  await clientSite().from('akasha_entries').update({ attributes: patch }).eq('slug', gagne.target_slug);
   // MIROIR COMPLET de applyResult (audit du 01/08) : l'application manuelle versait les
   // relations au graphe, l'automatique non — 25 fiches ⚡ sur 46 n'avaient posé AUCUNE arête,
   // et sans journal l'annulation d'audit serait tombée en régime « recalcul » au risque

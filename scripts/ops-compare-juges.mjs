@@ -3,10 +3,11 @@
 // (angle mort partagé quand juge et producteur ont les mêmes poids).
 // Usage : node --env-file=.env.local scripts/ops-compare-juges.mjs [--juge=qwen3:8b] [--limit=12]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 import { splitPreuves } from './lib/akasha-axes.mjs';
 import { fetchFandomProse } from './lib/fandom.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const JUGE = process.argv.find((a) => a.startsWith('--juge='))?.split('=')[1] ?? 'qwen3:8b';
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 12);
 

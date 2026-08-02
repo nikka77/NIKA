@@ -2,16 +2,16 @@
 // Ce sont ces axes qui alimentent les filtres et les zones AKASHA (village, clan, équipage, division…).
 // Usage : node --env-file=.env.local scripts/ops-fill-attrs.mjs [--dry] [--limit=20] [--universe="Naruto"]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { AXES } from './lib/akasha-axes.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 20);
 const UNIVERSE = process.argv.find((a) => a.startsWith('--universe='))?.split('=')[1];
 
 const universes = UNIVERSE ? [UNIVERSE] : Object.keys(AXES);
-const { data, error } = await supabase
-  .from('akasha_entries')
+const { data, error } = await clientSite().from('akasha_entries')
   .select('slug, name, type, universe, summary, attributes')
   .eq('type', 'character')
   .in('universe', universes)

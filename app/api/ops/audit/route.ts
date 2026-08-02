@@ -9,6 +9,7 @@
 // Stockage : ops_notes (source='audit', content=JSON) — pas de DDL à faire exécuter à Dan.
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '@/lib/ops/db.mjs';
 import { opsAllowed } from '@/lib/ops/guard';
 import { retirerDuGraphe } from '@/lib/akasha/relations';
 
@@ -16,7 +17,7 @@ export const dynamic = 'force-dynamic';
 
 const admin = () =>
   process.env.SUPABASE_SERVICE_ROLE_KEY && process.env.NEXT_PUBLIC_SUPABASE_URL
-    ? createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY)
+    ? clientOps()
     : null;
 type Admin = NonNullable<ReturnType<typeof admin>>;
 
@@ -97,8 +98,7 @@ export async function POST(req: Request) {
   let annule = false;
   let arcsRetires = 0;
   if (verdict_dan === 'faux' && row.review_status === 'approved') {
-    const { data: entry } = await supabase
-      .from('akasha_entries').select('attributes').eq('slug', row.target_slug).single();
+    const { data: entry } = await clientSite().from('akasha_entries').select('attributes').eq('slug', row.target_slug).single();
     if (entry) {
       const patch: Record<string, unknown> = { ...(entry.attributes ?? {}) };
       if (row.task_type === 'akasha_relations') {
@@ -113,7 +113,7 @@ export async function POST(req: Request) {
       else if (row.task_type === 'akasha_attrs') {
         for (const k of Object.keys(row.result ?? {})) if (!k.endsWith('_preuve')) delete patch[k];
       } else { delete patch.descFr; delete patch.descFrSource; }
-      await supabase.from('akasha_entries').update({ attributes: patch }).eq('slug', row.target_slug);
+      await clientSite().from('akasha_entries').update({ attributes: patch }).eq('slug', row.target_slug);
       await supabase.from('agent_results').update({ review_status: 'rejected' }).eq('id', result_id);
       annule = true;
     }

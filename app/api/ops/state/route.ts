@@ -3,6 +3,7 @@
 import { NextResponse } from 'next/server';
 import { execSync } from 'node:child_process';
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '@/lib/ops/db.mjs';
 import { opsAllowed } from '@/lib/ops/guard';
 import { AGENTS, type AgentEtat } from '@/lib/ops/agents';
 // .mjs de données pures, partagé avec le worker Node — une seule source pour les plafonds.
@@ -15,7 +16,7 @@ export const dynamic = 'force-dynamic';
 
 const admin = () =>
   process.env.SUPABASE_SERVICE_ROLE_KEY && process.env.NEXT_PUBLIC_SUPABASE_URL
-    ? createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY)
+    ? clientOps()
     : null;
 
 export async function GET(req: Request) {
@@ -231,7 +232,7 @@ export async function GET(req: Request) {
   // Initial D (les voitures comptaient). La jauge mesure les FICHES personnages ; le reste
   // (jutsu, lieux, autos…) part dans « autres », visible mais séparé.
   const univers = !complet ? null : await Promise.all(UNIVERS.map(async (u) => {
-    const base = () => supabase.from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u);
+    const base = () => clientSite().from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u);
     const [{ count: total }, { count: avecFr }, { count: avecDossier },
       { count: aTotal }, { count: aFr }, { count: aDossier }] = await Promise.all([
       base().eq('type', 'character'),
@@ -324,8 +325,7 @@ async function applyResult(supabase: Admin, id: number, cacheIndex?: Map<string,
   const { data: row } = await supabase.from('agent_results').select('*').eq('id', id).single();
   if (!row) return false;
 
-  const { data: entry } = await supabase
-    .from('akasha_entries')
+  const { data: entry } = await clientSite().from('akasha_entries')
     .select('attributes')
     .eq('slug', row.target_slug)
     .single();
@@ -371,7 +371,7 @@ async function applyResult(supabase: Admin, id: number, cacheIndex?: Map<string,
     patch.sectionsSource = row.model;
   }
 
-  const { error } = await supabase.from('akasha_entries').update({ attributes: patch }).eq('slug', row.target_slug);
+  const { error } = await clientSite().from('akasha_entries').update({ attributes: patch }).eq('slug', row.target_slug);
   if (error) return false;
 
   // Sans cette seconde écriture, l'usine tournait pour rien : le site ne connaît QUE la table

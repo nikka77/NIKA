@@ -10,8 +10,9 @@
 //
 // Usage : node --env-file=.env.local scripts/ops-reposer-sections.mjs [--dry] [--universe="Death Note"]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const UNIVERSE = process.argv.find((a) => a.startsWith('--universe='))?.split('=')[1];
 
@@ -42,7 +43,7 @@ for (const r of approuvees) {
 
 let reparees = 0, ajoutees = 0;
 for (const [slug, { modele, sections }] of parFiche) {
-  const { data: e } = await supabase.from('akasha_entries').select('attributes').eq('slug', slug).single();
+  const { data: e } = await clientSite().from('akasha_entries').select('attributes').eq('slug', slug).single();
   if (!e) continue;
   const presentes = Array.isArray(e.attributes?.sections) ? e.attributes.sections : [];
   const dejaLa = new Set(presentes.map((x) => String(x.i)));
@@ -56,7 +57,7 @@ for (const [slug, { modele, sections }] of parFiche) {
   const attrs = { ...(e.attributes ?? {}) };
   attrs.sections = [...presentes, ...manquantes].sort((a, b) => Number(a.i) - Number(b.i));
   attrs.sectionsSource = modele;
-  await supabase.from('akasha_entries').update({ attributes: attrs }).eq('slug', slug);
+  await clientSite().from('akasha_entries').update({ attributes: attrs }).eq('slug', slug);
 }
 
 console.log(`\n${DRY ? '(à blanc) ' : ''}${reparees} fiche(s) réparée(s) · ${ajoutees} section(s) reposée(s)`);

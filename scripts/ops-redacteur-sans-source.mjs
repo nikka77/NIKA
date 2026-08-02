@@ -15,10 +15,11 @@
 import { execFile as execFileCb } from 'node:child_process';
 import { promisify } from 'node:util';
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { WIKIS, ALIAS_REGISTRE } from './lib/fandom.mjs';
 
 const execFile = promisify(execFileCb);
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 
 // Battement de flotte : ce rôle s'annonce pour la console /ops (LA FLOTTE).
@@ -57,7 +58,7 @@ for (let d = 0; ; d += 1000) {
 }
 const candidats = [];
 for (const { universe, name } of refuses.values()) {
-  const { data: e } = await supabase.from('akasha_entries')
+  const { data: e } = await clientSite().from('akasha_entries')
     .select('slug, name, summary, attributes').eq('universe', universe).eq('name', name).maybeSingle();
   if (e && !e.attributes?.descFr) candidats.push({ ...e, universe });
   if (candidats.length >= LIMIT) break;
@@ -111,7 +112,7 @@ ${mentions.join('\n\n').slice(0, 12000)}`;
   if (DRY) continue;
   // 3) Signature et publication directe — le circuit validé par Dan pour ce rôle.
   const attrs = { ...(c.attributes ?? {}), descFr: sortie.descFr, descFrSource: `${SIGNE} · mentions : ${pages.join(', ').slice(0, 160)}` };
-  await supabase.from('akasha_entries').update({ attributes: attrs }).eq('slug', c.slug);
+  await clientSite().from('akasha_entries').update({ attributes: attrs }).eq('slug', c.slug);
   redigees++;
 }
 console.log(`\n${redigees} fiche(s) rédigée(s), signées et sourcées`);

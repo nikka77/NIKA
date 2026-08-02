@@ -60,9 +60,9 @@ db-uri = "postgres://authenticator:${NIKA_OPS_AUTH_PASS}@127.0.0.1:5432/${DB}"
 db-schemas = "public"
 db-anon-role = "anon"
 jwt-secret = "${NIKA_OPS_JWT_SECRET}"
-# tailnet + localhost uniquement : le pare-feu Hetzner ne laisse entrer que l'UDP 41641
-# (tailscale), donc 0.0.0.0 n'expose rien au public — et le VPS sert ses propres workers.
-server-host = "0.0.0.0"
+# PostgREST n'écoute qu'en local : c'est nginx (:3002) qui expose l'API au tailnet en
+# réécrivant le préfixe /rest/v1 que supabase-js ajoute toujours (Supabase gateway).
+server-host = "127.0.0.1"
 server-port = 3001
 db-pool = 12
 EOF
@@ -85,6 +85,25 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable --now nika-ops-db-api
+
+# ── 5bis. nginx : /rest/v1/* → PostgREST (supabase-js préfixe TOUJOURS /rest/v1) ──
+# Le pare-feu Hetzner ne laisse entrer que l'UDP 41641 (tailscale) : le :3002 en 0.0.0.0
+# n'est joignable que du tailnet et de la machine elle-même.
+command -v nginx >/dev/null || apt-get install -y -qq nginx
+cat > /etc/nginx/sites-available/nika-ops-api <<'EOF'
+server {
+  listen 3002;
+  # supabase-js appelle {url}/rest/v1/{table} — PostgREST sert à la racine.
+  location /rest/v1/ {
+    proxy_pass http://127.0.0.1:3001/;
+    proxy_set_header Connection "";
+    proxy_http_version 1.1;
+    client_max_body_size 32m;
+  }
+}
+EOF
+ln -sf /etc/nginx/sites-available/nika-ops-api /etc/nginx/sites-enabled/nika-ops-api
+nginx -t -q && systemctl reload nginx && systemctl enable --now nginx
 
 # ── 6. Purge quotidienne de l'archive (cron système) ────────────────────────
 cat > /etc/cron.daily/nika-ops-purge-archive <<EOF

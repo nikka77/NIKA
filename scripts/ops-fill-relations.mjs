@@ -3,12 +3,13 @@
 //         [--universe="One Piece"] [--slug=trafalgar-law]
 // Les personnages MAJEURS (favorites) passent d'abord : c'est là que l'histoire est la plus riche.
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { AXES } from './lib/akasha-axes.mjs';
 // Node ≥ 22.18 retire les types tout seul : une seule définition de « l'histoire est racontée »,
 // partagée avec la console OPS.
 import { NATURES_HISTOIRE } from '../lib/akasha/relations.ts';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 10);
 const UNIVERSE = process.argv.find((a) => a.startsWith('--universe='))?.split('=')[1];
@@ -21,8 +22,7 @@ const SLUG = process.argv.find((a) => a.startsWith('--slug='))?.split('=')[1];
 async function tousLesPersonnages() {
   const out = [];
   for (let debut = 0; ; debut += 1000) {
-    let q = supabase
-      .from('akasha_entries')
+    let q = clientSite().from('akasha_entries')
       .select('id, slug, name, type, universe')
       .eq('type', 'character')
       .order('attributes->favorites', { ascending: false, nullsFirst: false })
@@ -82,7 +82,7 @@ if (DRY || !lot.length) process.exit(0);
 
 // Le résumé n'est chargé QUE pour le lot : le tirer pour 4 038 fiches à chaque passage, ce sont
 // quelques Mo transférés pour dix qui servent.
-const { data: resumes } = await supabase.from('akasha_entries').select('slug, summary').in('slug', lot.map((c) => c.slug));
+const { data: resumes } = await clientSite().from('akasha_entries').select('slug, summary').in('slug', lot.map((c) => c.slug));
 const resumeParSlug = new Map((resumes ?? []).map((r) => [r.slug, r.summary]));
 
 const messages = lot.map((c) => ({

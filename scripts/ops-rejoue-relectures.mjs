@@ -5,10 +5,11 @@
 // erreur, et assez vieille pour ne plus être « en cours » (la file a une visibilité de 10 min).
 // Usage : node --env-file=.env.local scripts/ops-rejoue-relectures.mjs [--dry] [--age-min=30]
 import { createClient } from '@supabase/supabase-js';
+import { clientOps } from '../lib/ops/db.mjs';
 import { fetchFandomProse } from './lib/fandom.mjs';
 import { splitPreuves } from './lib/akasha-axes.mjs';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
 const AGE_MIN = Number(process.argv.find((a) => a.startsWith('--age-min='))?.split('=')[1] ?? 30);
 

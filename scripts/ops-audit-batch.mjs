@@ -4,12 +4,13 @@
 // --vote '[{"id":123,"v":"exact","m":"..."}]' : enregistre les verdicts via l'API (juge=claude,
 //   ce qui déclenche aussi l'annulation en base si « faux » sur une fiche déjà appliquée).
 import { createClient } from '@supabase/supabase-js';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { fetchFandomProse } from './lib/fandom.mjs';
 // Import direct du .ts : Node ≥ 22.18 retire les types tout seul. Une seule table de correspondance
 // usine→graphe pour la console ET pour ce script — deux copies auraient fini par diverger.
 import { retirerDuGraphe } from '../lib/akasha/relations.ts';
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = clientOps();
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 8);
 const SKIP = Number(process.argv.find((a) => a.startsWith('--skip='))?.split('=')[1] ?? 0);
 
@@ -57,7 +58,7 @@ if (process.argv.includes('--list')) {
     let annule = false;
     let arcs = 0;
     if (v === 'faux' && row.review_status === 'approved') {
-      const { data: entry } = await supabase.from('akasha_entries').select('attributes').eq('slug', row.target_slug).single();
+      const { data: entry } = await clientSite().from('akasha_entries').select('attributes').eq('slug', row.target_slug).single();
       if (entry) {
         const patch = { ...(entry.attributes ?? {}) };
         if (row.task_type === 'akasha_relations') {
@@ -69,7 +70,7 @@ if (process.argv.includes('--list')) {
         else if (row.task_type === 'akasha_attrs') {
           for (const k of Object.keys(row.result ?? {})) if (!k.endsWith('_preuve')) delete patch[k];
         } else { delete patch.descFr; delete patch.descFrSource; }
-        await supabase.from('akasha_entries').update({ attributes: patch }).eq('slug', row.target_slug);
+        await clientSite().from('akasha_entries').update({ attributes: patch }).eq('slug', row.target_slug);
         await supabase.from('agent_results').update({ review_status: 'rejected' }).eq('id', id);
         annule = true;
       }
