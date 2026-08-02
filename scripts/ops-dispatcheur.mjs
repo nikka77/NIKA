@@ -23,8 +23,11 @@ const DRY = process.argv.includes('--dry');
 
 // Les couloirs éligibles par étage — le Dispatcheur ORDONNE, il n'invente pas de couloir.
 const COULOIRS = {
+  // Mistral-Small DeepInfra RETIRÉ de la production le 03/08 : délire multilingue mesuré sur
+  // les sections (6 productions corrompues attrapées par la vague 20h01). Il reste éligible au
+  // jugement (verdicts courts, jamais pris en défaut). Réintégrable après audit à l'aveugle.
   production: ['nvidia/nvidia/nemotron-3-super-120b-a12b', 'mistral/mistral-large-latest',
-    'deepinfra/mistralai/Mistral-Small-24B-Instruct-2501', 'groq/openai/gpt-oss-120b',
+    'groq/openai/gpt-oss-120b',
     'deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo', 'openrouter/mistralai/mistral-small-24b-instruct-2501'],
   jugement: ['openrouter/google/gemma-4-26b-a4b-it:free', 'deepinfra/Qwen/Qwen3-32B',
     'mistral/mistral-small-latest', 'nvidia/nvidia/nemotron-3-super-120b-a12b', 'groq/llama-3.3-70b-versatile'],

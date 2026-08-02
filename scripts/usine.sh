@@ -34,7 +34,7 @@ cd "$(dirname "$0")/.."
 # SOBRE (pas de raisonnement caché) à 60 req/min — les campagnes de sections, routées vers les
 # sobres depuis les troncatures Nemotron, plafonnaient aux 12/min de mistral-large. ~0,0004 $
 # la section : les 171 d'Initial D coûtent 7 centimes quand le couloir gratuit est plein.
-MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,deepinfra/mistralai/Mistral-Small-24B-Instruct-2501,groq/openai/gpt-oss-120b,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo,openrouter/mistralai/mistral-small-24b-instruct-2501,anthropic/claude-haiku-4-5}
+MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,groq/openai/gpt-oss-120b,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo,openrouter/mistralai/mistral-small-24b-instruct-2501,anthropic/claude-haiku-4-5}
 # Jugement n°2 (famille croisée) : Qwen3-32B chez DeepInfra depuis le 01/08 — facturé au
 # jeton, donc SANS guichet quotidien, le mur contre lequel tous les couloirs gratuits butaient.
 # Mesuré : 0,000195 $ le verdict avec /no_think (2,6 s) — les 10 $ de Dan valent ~51 000

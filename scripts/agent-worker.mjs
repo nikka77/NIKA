@@ -1064,6 +1064,10 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
         // +900 de marge : les modèles « à raisonnement » (gpt-oss) brûlent des tokens AVANT le
         // JSON — et Nemotron pense PARFOIS malgré /no_think sur les longs prompts (+2400, 29/07).
         model: modele, stream: false, messages: msgs,
+        // Température basse (03/08) : à la température par défaut du fournisseur, Mistral-Small
+        // DeepInfra partait en délire multilingue sur les longues sections (« 그런 Shalnark »,
+        // personnages inventés). Une encyclopédie ne crée pas — elle traduit : 0.2 partout.
+        temperature: 0.2,
         // service_tier flex sur DeepInfra, le seul couloir facturé : −20 % MESURÉ à la sonde du
         // 02/08 (0,0000087 $ → 0,0000070 $ le même appel). Contrepartie : capacité non garantie
         // en pointe — pour une usine asynchrone qui réessaie déjà, c'est gratuit.
