@@ -94,7 +94,7 @@ ${mentions.join('\n\n').slice(0, 12000)}`;
   let sortie = {};
   try {
     const { stdout } = await execFile('claude', ['-p', prompt, '--model', 'claude-haiku-4-5'],
-      { timeout: 240_000, maxBuffer: 4 * 1024 * 1024, env: { ...process.env } });
+      { timeout: 240_000, maxBuffer: 4 * 1024 * 1024, env: (({ ANTHROPIC_API_KEY: _cle, ...e }) => e)(process.env) });
     sortie = JSON.parse((stdout.match(/\{[\s\S]*\}/) ?? ['{}'])[0]);
   } catch (e) { console.error(`  ✗ ${c.name} : ${String(e.message).slice(0, 90)}`); continue; }
 

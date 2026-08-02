@@ -63,7 +63,7 @@ Réponds UNIQUEMENT en JSON : {"notes": [{"slug": "…", "note": <0-10>, "defaut
 ${lot.map((d) => `═══ FICHE ${d.slug} (${d.nom})\n${d.contenu}\n─── SOURCE\n${d.source}`).join('\n\n')}`;
   try {
     const { stdout } = await execFile('claude', ['-p', prompt, '--model', 'claude-haiku-4-5'],
-      { timeout: 300_000, maxBuffer: 8 * 1024 * 1024, env: { ...process.env } });
+      { timeout: 300_000, maxBuffer: 8 * 1024 * 1024, env: (({ ANTHROPIC_API_KEY: _cle, ...e }) => e)(process.env) });
     notes.push(...(JSON.parse((stdout.match(/\{[\s\S]*\}/) ?? ['{}'])[0]).notes ?? []));
   } catch (e) { console.error(`  ✗ lot ${i / 4 + 1} : ${String(e.message).slice(0, 90)}`); }
 }

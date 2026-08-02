@@ -1172,7 +1172,7 @@ async function callModel(type, payload, modeleImpose) {
       if (!cliOk) throw new PlafondJourError(`anthropic/${sansCouloir(model)}`, 'solde API épuisé, pas de CLI — console.anthropic.com');
       const { stdout } = await execFile('claude',
         ['-p', String(messages[0].content), '--model', sansCouloir(model)],
-        { timeout: 180_000, maxBuffer: 4 * 1024 * 1024, env: { ...process.env } });
+        { timeout: 180_000, maxBuffer: 4 * 1024 * 1024, env: (({ ANTHROPIC_API_KEY: _cle, ...e }) => e)(process.env) });
       raw = stdout;
     }
     else if (rA.status === 429) throw new PlafondJourError(`anthropic/${sansCouloir(model)}`, 'limite de débit Anthropic');

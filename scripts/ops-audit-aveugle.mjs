@@ -94,7 +94,7 @@ ${dossiers.map((d) => `--- PRODUCTION id=${d.id} (type ${d.type})\n${d.productio
 
   try {
     const { stdout } = await execFile('claude', ['-p', prompt, '--model', 'claude-haiku-4-5'],
-      { timeout: 300_000, maxBuffer: 8 * 1024 * 1024, env: { ...process.env } });
+      { timeout: 300_000, maxBuffer: 8 * 1024 * 1024, env: (({ ANTHROPIC_API_KEY: _cle, ...e }) => e)(process.env) });
     const notes = JSON.parse((stdout.match(/\{[\s\S]*\}/) ?? ['{}'])[0]).notes ?? [];
     const valides = notes.filter((n) => Number.isFinite(Number(n.note)));
     if (!valides.length) continue;

@@ -74,7 +74,7 @@ NOMS : ${JSON.stringify(lot)}`;
     let brut = '';
     try {
       ({ stdout: brut } = await execFile('claude', ['-p', prompt, '--model', 'claude-haiku-4-5'],
-        { timeout: 240_000, maxBuffer: 4 * 1024 * 1024, env: { ...process.env } }));
+        { timeout: 240_000, maxBuffer: 4 * 1024 * 1024, env: (({ ANTHROPIC_API_KEY: _cle, ...e }) => e)(process.env) }));
     } catch (e) { console.error(`  ✗ appel Claude : ${String(e.message).slice(0, 100)}`); continue; }
     let paires = {};
     try { paires = JSON.parse((brut.match(/\{[\s\S]*\}/) ?? ['{}'])[0]).paires ?? {}; } catch { /* lot perdu */ }

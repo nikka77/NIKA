@@ -83,7 +83,7 @@ Réponds UNIQUEMENT en JSON :
 Ne mets une entrée QUE pour les types présents dans les piles.`;
 
 const { stdout } = await execFile('claude', ['-p', prompt, '--model', 'claude-haiku-4-5'],
-  { timeout: 240_000, maxBuffer: 4 * 1024 * 1024, env: { ...process.env } });
+  { timeout: 240_000, maxBuffer: 4 * 1024 * 1024, env: (({ ANTHROPIC_API_KEY: _cle, ...e }) => e)(process.env) });
 let plan;
 try { plan = JSON.parse((stdout.match(/\{[\s\S]*\}/) ?? ['{}'])[0]); } catch { console.error('plan illisible'); process.exit(1); }
 
