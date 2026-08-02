@@ -44,8 +44,12 @@ MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-l
 # DeepInfra reprend la main dès que le millier de requêtes du jour est consommé : la chaîne ne
 # s'arrête plus jamais faute de guichet, elle passe simplement du gratuit au payé.
 JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,deepinfra/Qwen/Qwen3-32B,nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,groq/llama-3.3-70b-versatile}
+# 16 places de front depuis le 02/08. Le nœud ne calcule rien : il attend des réponses HTTP.
+# Mesuré à 8 places, en pleine charge : 1,3 % de CPU, 0,47 de charge sur 2 cœurs, 3,1 Go libres.
+# Le facteur limitant est le débit par minute des fournisseurs, pas la machine — et maintenant
+# que les couloirs tournent en parallèle, il faut assez de places pour les alimenter tous.
 CONC=${NIKA_CONC:-$(grep '^NIKA_CONC=' .env.local 2>/dev/null | cut -d= -f2)}
 
-echo "🏭 usine continue — production ${MODELE} · jugement ${JUGE} · ${CONC:-8} de front"
+echo "🏭 usine continue — production ${MODELE} · jugement ${JUGE} · ${CONC:-16} de front"
 exec "${PRIO[@]}" node --env-file=.env.local scripts/agent-worker.mjs \
-  --loop --cloud="$MODELE" --juge="$JUGE" --conc="${CONC:-8}"
+  --loop --cloud="$MODELE" --juge="$JUGE" --conc="${CONC:-16}"

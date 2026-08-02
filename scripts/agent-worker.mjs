@@ -23,7 +23,10 @@ const LOOP = process.argv.includes('--loop');
 const VT = 600; // fenêtre de visibilité pgmq (s) — assez large pour un lot en cours de traitement
 // Un changement de modèle coûte ~147 s (mesuré le 26/07 sur 38 bascules) : on réclame donc
 // plusieurs tâches d'un coup et on les REGROUPE PAR MODÈLE avant de les traiter.
-const LOT = Number(process.argv.find((a) => a.startsWith('--lot='))?.split('=')[1] ?? 12);
+// 24 depuis le 02/08 : maintenant que les groupes de modèles tournent en parallèle, un lot ne
+// sert plus seulement à amortir la lecture — c'est lui qui décide COMBIEN de couloirs travaillent
+// en même temps. Un lot de 12 dans une file homogène ne réveillait qu'un seul couloir.
+const LOT = Number(process.argv.find((a) => a.startsWith('--lot='))?.split('=')[1] ?? 24);
 // Tâches menées de front. Local : 2-3 (la mémoire du Mac borne le cache KV des slots).
 // Endpoint cloud : 10-20 sans rien changer d'autre.
 const CONC = Number(process.argv.find((a) => a.startsWith('--conc='))?.split('=')[1] ?? 3);
@@ -1710,9 +1713,24 @@ for (;;) {
     const cle = t ? String(modelOf(msg.message.type, msg.message.payload ?? {})) : 'inconnu';
     (groupes.get(cle) ?? groupes.set(cle, []).get(cle)).push(msg);
   }
-  for (const [modele, msgs] of groupes) {
-    console.log(`  → ${msgs.length} tâche(s) sur ${modele}`);
-    await traiterEnParallele(msgs, CONC);
+  // GROUPES EN PARALLÈLE SUR UN NŒUD SANS GPU (02/08). Les épuiser l'un après l'autre avait une
+  // raison — recharger un modèle dans Ollama coûtait 147 s de médiane — mais cette raison ne vaut
+  // que pour un GPU local, où un seul modèle tient en mémoire à la fois. Sur des API distantes il
+  // n'y a rien à recharger, et la file d'attente les sépare déjà : chaque couloir a son propre
+  // compteur par minute. En séquentiel, un lot de douze relectures monopolisait le nœud sur
+  // gemma pendant que Nemotron, Mistral et DeepInfra attendaient sans rien faire — mesuré ce
+  // midi : 169 verdicts et ZÉRO production en une demi-heure, alors que les couloirs de
+  // production étaient tous ouverts. On répartit donc les places de front entre les groupes.
+  if (gpuIci || groupes.size === 1) {
+    for (const [modele, msgs] of groupes) {
+      console.log(`  → ${msgs.length} tâche(s) sur ${modele}`);
+      await traiterEnParallele(msgs, CONC);
+    }
+  } else {
+    const part = Math.max(2, Math.floor(CONC / groupes.size));
+    console.log(`  ⇉ ${groupes.size} couloirs en parallèle · ${part} place(s) chacun : `
+      + [...groupes].map(([m, v]) => `${m.split('/').pop()}×${v.length}`).join(' · '));
+    await Promise.all([...groupes].map(([, msgs]) => traiterEnParallele(msgs, part)));
   }
 }
 // Libère la RAM en partant : un modèle en keep_alive squatte 8 Go pendant que Dan compile et
