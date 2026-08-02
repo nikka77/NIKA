@@ -845,6 +845,16 @@ async function executerCommande(cmd) {
 // C'est la DEUXIÈME fois aujourd'hui qu'une découpe de préfixe à un caractère près passe — un
 // compte de caractères écrit à la main n'a aucune raison d'être là où le séparateur suffit.
 const sansCouloir = (m) => String(m).slice(String(m).indexOf('/') + 1);
+// GARDE ANTI-CORRUPTION (03/08) — le QC de flux a trouvé du charabia PUBLIÉ : hangul, mots
+// espagnols/turcs insérés, jetons mixtes. Les juges 24-32B laissent passer ; le code, non.
+// Détection : scripts non latins (hors japonais romanisé), mots-outils étrangers entourés
+// d'espaces, jetons mêlant lettres+chiffres improbables. Une prise = failed (rejouable).
+const MARQUES_CORRUPTION = [
+  /[\u3130-\u318F\uAC00-\uD7AF\u0400-\u04FF\u0600-\u06FF\u4E00-\u9FFF\u3040-\u30FF]/, // hangul/cyrillique/arabe/CJK
+  / (desde|durante|hacia|также|entonces|также|birlikte|çünkü|però|además) /i,
+  /[a-z][A-Z]{2,}[a-z]/,                                    // « ZdécoE », « VfrmutifL »
+];
+const sentLaCorruption = (texte) => MARQUES_CORRUPTION.some((m) => m.test(String(texte ?? '')));
 const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 1_000, akasha_relations: 3_000, fiche_section: 1_600, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500, toilettage_fr: 2_400 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
@@ -1068,10 +1078,11 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
         // DeepInfra partait en délire multilingue sur les longues sections (« 그런 Shalnark »,
         // personnages inventés). Une encyclopédie ne crée pas — elle traduit : 0.2 partout.
         temperature: 0.2,
-        // service_tier flex sur DeepInfra, le seul couloir facturé : −20 % MESURÉ à la sonde du
-        // 02/08 (0,0000087 $ → 0,0000070 $ le même appel). Contrepartie : capacité non garantie
-        // en pointe — pour une usine asynchrone qui réessaie déjà, c'est gratuit.
-        ...(url.includes('deepinfra.com') ? { service_tier: 'flex' } : {}),
+        // flex RESTREINT AU JUGEMENT (03/08) : sur la production, le tier dégradé est le suspect
+        // n°1 du délire multilingue (5/12 sections encore atteintes après la température 0.2 —
+        // « desde », troncatures, une hallucination). Les verdicts courts n'ont jamais été pris
+        // en défaut : ils gardent la remise de 20 %.
+        ...(url.includes('deepinfra.com') && type === 'review_local' ? { service_tier: 'flex' } : {}),
         max_tokens: (NUM_PREDICT[type] ?? 800) + (SANS_PENSEE.has(modele) ? 2_400 : 900),
         response_format: modeJson === 'json_schema'
           ? { type: 'json_schema', json_schema: { name: type, strict: true, schema } }
@@ -1671,6 +1682,13 @@ async function traiterUn(msg) {
   // un nœud --local) sont écartées EN AMONT, dans la boucle, et rendues à la flotte séance
   // tenante. Les écarter ici les aurait laissées invisibles pendant VT — voir le tri de modèle.
   const row = await processMessage(msg);
+  if (row.status === 'done' && ['fiche_section', 'fandom_descfr', 'toilettage_fr', 'fiche_technique', 'fiche_artefact', 'fiche_lieu', 'fiche_lexique'].includes(row.task_type)) {
+    const prose = row.result?.texte ?? row.result?.descFr ?? '';
+    if (sentLaCorruption(prose)) {
+      row.status = 'failed';
+      row.error = 'corruption détectée par la garde de code (charabia/langue étrangère) — rejouable';
+    }
+  }
   if (row.status === 'reporte') {
     // Ni archivage ni écriture : le message reste en file (visibilité expirée → il repart
     // à la fenêtre suivante). On signale à la boucle qu'il faut lever le pied.
