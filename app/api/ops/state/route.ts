@@ -5,6 +5,10 @@ import { execSync } from 'node:child_process';
 import { createClient } from '@supabase/supabase-js';
 import { opsAllowed } from '@/lib/ops/guard';
 import { AGENTS, type AgentEtat } from '@/lib/ops/agents';
+// .mjs de données pures, partagé avec le worker Node — une seule source pour les plafonds.
+import { LIMITES_FOURNISSEURS } from '@/lib/ops/limites.mjs';
+
+type Limite = { requetes: number; jetons: number; fenetre: number; parJour?: number; jetonsParJour?: number };
 import { poserAuGraphe, type IndexUnivers } from '@/lib/akasha/relations';
 
 export const dynamic = 'force-dynamic';
@@ -144,16 +148,18 @@ export async function GET(req: Request) {
   // ── LES COULOIRS — quel modèle a encore du budget, lequel a fermé son guichet du jour.
   // C'est LE tableau de bord qui manquait : en une journée on a vu Groq plafonner à 2 000
   // jetons/jour et llama-70b mourir à midi, sans que rien ne le montre à l'écran.
-  const PLAFONDS: Record<string, { parJour?: number; parMinute: number; jetonsParJour?: number }> = {
-    'groq/openai/gpt-oss-120b': { parJour: 800, parMinute: 24, jetonsParJour: 2_000 },
-    'groq/llama-3.3-70b-versatile': { parJour: 800, parMinute: 24 },
-    'gemini/gemma-4-31b-it': { parJour: 11_500, parMinute: 24 },
-    'gemini/gemini-flash-lite-latest': { parJour: 200, parMinute: 12 },
-    'nvidia/nvidia/nemotron-3-super-120b-a12b': { parJour: 150, parMinute: 32 },
-    'mistral/mistral-large-latest': { parMinute: 12 },
-    'deepinfra/Qwen/Qwen3-32B': { parMinute: 60 },
-    'deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo': { parMinute: 60 },
-  };
+  // Les plafonds viennent de lib/ops/limites.mjs, le MÊME fichier que lit le worker. Ils étaient
+  // recopiés ici à la main jusqu'au 02/08, et les deux copies ont divergé le jour même : la
+  // console annonçait « nvidia — fermé, requêtes épuisées » alors que le worker venait de rouvrir
+  // le couloir, et j'ai cherché la panne du mauvais côté. Un tableau de bord qui ment envoie
+  // chercher au mauvais endroit — il coûte plus cher que pas de tableau de bord du tout.
+  // On ne garde que les entrées PAR MODÈLE (avec un « / ») : les autres sont les replis par
+  // fournisseur, qui ne correspondent à aucun couloir réellement emprunté.
+  const PLAFONDS = Object.fromEntries(
+    Object.entries(LIMITES_FOURNISSEURS as Record<string, Limite>)
+      .filter(([cle]) => cle.includes('/'))
+      .map(([cle, l]) => [cle, { parJour: l.parJour, parMinute: l.requetes, jetonsParJour: l.jetonsParJour }]),
+  ) as Record<string, { parJour?: number; parMinute: number; jetonsParJour?: number }>;
   const { data: quotas } = await supabase.from('ops_quotas').select('fournisseur, requetes, jetons, fenetre_debut');
   const parCle = new Map((quotas ?? []).map((q) => [q.fournisseur as string, q]));
   const couloirs = Object.entries(PLAFONDS).map(([cle, lim]) => {

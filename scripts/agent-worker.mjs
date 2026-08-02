@@ -15,6 +15,7 @@ import { viderParc } from './lib/whatsapp.mjs';
 import { scoreAncrageProduction } from './lib/ancrage.mjs';
 import { poserAuGraphe } from '../lib/akasha/relations.ts';
 import { hostname } from 'node:os';
+import { LIMITES_FOURNISSEURS } from '../lib/ops/limites.mjs';
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 const OMNI_URL = process.env.OMNIROUTE_URL ?? 'http://localhost:20128/v1';
@@ -787,72 +788,6 @@ const schemaOf = (t, p) => (typeof t.schema === 'function' ? t.schema(p) : t.sch
 //    vers un tableau de bord authentifié) → valeurs pessimistes, à recaler avant tout gros lot.
 // Consommation mesurée par production : gpt-oss-120b 2 887 · nemotron-super 2 879 ·
 // llama-70b 2 538 · gemma-4-31b 2 193 jetons.
-const LIMITES_FOURNISSEURS = {
-  // ── Groq — compteurs PAR MODÈLE, indépendants. Valeurs LUES DANS LES EN-TÊTES du compte le
-  // 01/08 (x-ratelimit-*), pas seulement dans la doc : 8 000 jetons/MINUTE et 1 000 requêtes/JOUR,
-  // et AUCUN compteur de jetons par jour n'est exposé. La doc mentionne un TPD de 200 000 : s'il
-  // existe vraiment, on le rencontrera en 429 (géré par le backoff) plutôt que de se brider à
-  // ~55 productions/jour pour une limite peut-être fictive. jetonsRestants() journalise la vérité.
-  // ⚠ gpt-oss-120b : TPD MESURÉ À 2 000 JETONS/JOUR sur ce compte (message du 429 le 01/08),
-  // soit ~8 fiches par jour — couloir MORT pour la production, malgré 1 000 req/jour affichées
-  // et une doc annonçant 200 000. Le plafond ci-dessous évite d'essayer pour rien : le worker
-  // bascule aussitôt sur le couloir suivant. Une sonde de taille RÉELLE (ops-sonde-couloirs)
-  // est le seul moyen de connaître ces murs — une sonde à 1 jeton passe et ment.
-  'groq/openai/gpt-oss-120b':        { requetes: 24, jetons: 6_400, fenetre: 60, parJour: 800, jetonsParJour: 2_000 },
-  'groq/llama-3.3-70b-versatile':    { requetes: 24, jetons: 9_600, fenetre: 60, parJour: 800 },
-  // Production depuis le 01/08 : Mistral (4e famille, embauché le 29/07 au piège canon) — il
-  // encaisse une requête de taille réelle quand Groq refuse. ⚠ palier gratuit = données
-  // d'entraînement : fiches PUBLIQUES d'AKASHA uniquement, jamais de donnée client.
-  'mistral/mistral-large-latest':    { requetes: 2, jetons: 20_000, fenetre: 60 },
-  // ── Google — plafonds non publiés depuis déc. 2025 : 80 % des dernières valeurs connues.
-  // gemma-4 est le meilleur débit du parc (2 193 jetons/production → 5/min, des milliers/jour).
-  'gemini/gemini-flash-lite-latest': { requetes: 12, jetons: 200_000, fenetre: 60, parJour: 200 },
-  'gemini/gemma-4-31b-it':           { requetes: 24, jetons: 12_000, fenetre: 60, parJour: 11_500 },
-  // ── OpenRouter : palier débloqué le 02/08 (achat unique de 10 $ → 1 000 req/jour À VIE au
-  // lieu de 50). Le quota des modèles « :free » est COMPTÉ PAR COMPTE, pas par modèle : les
-  // guichets ci-dessous se partagent donc le millier, d'où 450 chacun et non 900. Cadence
-  // plafonnée à 18/min, sous les 20/min imposées par OpenRouter à tous les modèles gratuits.
-  // Sondes de taille réelle du 02/08 (3 000 jetons de source + schéma JSON strict) :
-  //   nemotron-ultra 550B  ✓ 4,7 s, JSON propre      → arbitre
-  //   gemma-4-26b-a4b      ✓ 5,6 s, JSON propre      → juge de famille Google
-  //   nemotron-super 120B  ✓ 5,3 s (à 900 jetons de sortie ; à 400 il tronquait son raisonnement)
-  //   gemma-4-31b          ✗ 429 systématique — hôte saturé, écarté malgré le modèle identique
-  //   gpt-oss-20b          ✗ 19 s et JSON invalide   → écarté
-  'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free': { requetes: 18, jetons: 50_000, fenetre: 60, parJour: 450 },
-  'openrouter/google/gemma-4-26b-a4b-it:free':         { requetes: 18, jetons: 50_000, fenetre: 60, parJour: 450 },
-  // ── DeepInfra — facturé au JETON, sans guichet quotidien. Pas de parJour : le seul frein
-  // est le crédit du compte, et il est dérisoire (juger l'encyclopédie entière deux fois ≈ 5 $).
-  // Plafond/minute prudent au départ, à relever une fois la cadence réelle mesurée.
-  'deepinfra/Qwen/Qwen3-32B':                  { requetes: 60, jetons: 400_000, fenetre: 60 },
-  'deepinfra/mistralai/Mistral-Small-24B-Instruct-2501': { requetes: 60, jetons: 400_000, fenetre: 60 },
-  'deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo': { requetes: 60, jetons: 400_000, fenetre: 60 },
-  deepinfra: { requetes: 60, jetons: 400_000, fenetre: 60 },
-
-  // ── Replis par FOURNISSEUR : plancher pour un modèle non listé, jamais une cible de production.
-  groq:     { requetes: 24, jetons: 4_800, fenetre: 60, parJour: 800 },   // < 6 000, le plus bas TPM Groq
-  gemini:   { requetes: 12, jetons: 100_000, fenetre: 60, parJour: 200 },
-  cerebras: { requetes: 25, jetons: 50_000, fenetre: 60 },                // palier gratuit SUPPRIMÉ (402 le 26/07)
-  // GUICHET JOUR SUPPRIMÉ le 02/08, après être allé voir le compte plutôt que la documentation.
-  // Nous gardions NIM comme un STOCK fini de ~1 000 crédits — c'est ce qu'annoncent encore tous
-  // les articles de 2026, et c'est ce qui justifiait un plafond de 150/jour. Le compte n'a plus
-  // de page « crédits » du tout : le menu affiche « Your API Rate Limit — Up to 40 rpm ». NIM
-  // est donc un DÉBIT RENOUVELABLE, pas une réserve, et notre plafond bridait un couloir gratuit
-  // deux fois plus rapide que Mistral. Aucun en-tête de quota n'est exposé : s'il existe un
-  // plafond caché, le 429 le révélera et fermera le couloir une heure — c'est déjà géré.
-  nvidia:     { requetes: 32, jetons: 100_000, fenetre: 60 },
-  // ⚠ CORRIGÉ DEUX FOIS le 01/08, et c'est instructif. (1) J'avais conclu « 2 req/minute »
-  // d'une rafale de 8 qui n'en laissait passer que 2 — c'était une limite de PARALLÉLISME que
-  // je lisais comme un volume. (2) La doc Mistral annonce 1 requête par SECONDE, soit 60/min ;
-  // mesuré EN SÉRIE à 1,1 s d'intervalle sur ce compte : 4 passent, puis refus — cadence
-  // soutenable réelle ≈ 13/minute. Ni ma première lecture ni la doc n'étaient bonnes.
-  // Valeur retenue : 12/min, sous le mesuré. Soit ~700 relectures/heure, gratuitement, dans
-  // une famille absente du jury (ni Google, ni Meta, ni Qwen) — de loin le meilleur couloir
-  // gratuit du parc, que j'avais écarté sur un contresens.
-  // Garde-fou : ce couloir se travaille EN SÉRIE (concurrence 1), la rafale le referme.
-  // (Palier gratuit = données d'entraînement : fiches PUBLIQUES d'AKASHA uniquement.)
-  mistral:    { requetes: 12, jetons: 200_000, fenetre: 60 },
-  openrouter: { requetes: 16, jetons: 50_000, fenetre: 60, parJour: 40 },
-};
 // Guichet QUOTIDIEN fermé ≠ panne : la tâche n'a pas échoué, elle est trop tôt. En mode
 // continu (24/7, L23) la marquer « failed » brûlerait toute la file dès le plafond atteint.
 // Cette erreur distincte fait REPORTER la tâche : rien en base, message laissé en file

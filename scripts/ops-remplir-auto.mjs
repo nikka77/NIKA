@@ -18,6 +18,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
+import { LIMITES_FOURNISSEURS } from '../lib/ops/limites.mjs';
 
 const run = promisify(execFile);
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
@@ -25,12 +26,20 @@ const DRY = process.argv.includes('--dry');
 const SEUIL = Number(process.argv.find((a) => a.startsWith('--seuil='))?.split('=')[1] ?? 30);
 const MAX = Number(process.argv.find((a) => a.startsWith('--max='))?.split('=')[1] ?? 400);
 
-// Les juges du double verdict, avec leur plafond quotidien (miroir de LIMITES_FOURNISSEURS
-// dans agent-worker.mjs — si tu changes un plafond là-bas, reporte-le ici).
+// Les juges du double verdict et leur plafond quotidien. Les plafonds ne sont PLUS recopiés ici :
+// ils viennent de lib/ops/limites.mjs, la même source que le worker et la console (02/08). La
+// copie manuelle annonçait encore gemma-4-31b à 11 500/jour et llama-70b à 800 — deux modèles
+// qui ne sont plus au jury — et dimensionnait donc les commandes sur un budget imaginaire.
+// Un juge sans guichet quotidien (DeepInfra, facturé au jeton) ne limite rien : Infinity.
 const JUGES = [
-  { cle: process.env.NIKA_JUGE1 ?? 'gemini/gemma-4-31b-it', parJour: 11_500 },
-  { cle: process.env.NIKA_JUGE2 ?? 'groq/llama-3.3-70b-versatile', parJour: 800 },
-];
+  process.env.NIKA_JUGE1 ?? 'deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo',
+  process.env.NIKA_JUGE2 ?? 'openrouter/google/gemma-4-26b-a4b-it:free',
+].map((cle) => ({
+  cle,
+  parJour: LIMITES_FOURNISSEURS[cle]?.parJour
+    ?? LIMITES_FOURNISSEURS[String(cle).split('/')[0]]?.parJour
+    ?? Infinity,
+}));
 // Répartition des commandes. `fiches` a été ajoutée le 01/08 et c'est LE déblocage : jusque-là
 // seuls les PERSONNAGES étaient servis (ops-fill-fandom), ce qui laissait 1 972 entrées Naruto
 // — jutsu, artefacts, lieux, statuts — hors d'atteinte de l'usine, quelle que soit la cadence.
