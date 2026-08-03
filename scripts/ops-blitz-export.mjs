@@ -24,6 +24,10 @@ const DIR = arg('dir', '/tmp');
 const MAX_SECTIONS = Number(arg('max-sections', 8));
 const LIMIT = Number(arg('limit', 2000));
 const PERSOS_SEULS = process.argv.includes('--persos-seuls');
+// --autres-seuls : les personnages passent TOUJOURS en premier (c'est la jauge de Dan), donc un
+// lot limité ne descend jamais jusqu'aux jutsu/lieux tant qu'il reste un perso à faire. Ce flag
+// saute l'étage des personnages pour attaquer directement le reste (03/08).
+const AUTRES_SEULS = process.argv.includes('--autres-seuls');
 if (!UNIVERSE) { console.error('--universe obligatoire'); process.exit(1); }
 
 const s = clientSite();
@@ -34,7 +38,7 @@ const lot = async (persos) => {
     .is('attributes->sections', null).limit(LIMIT);
   return data ?? [];
 };
-const cibles = [...(await lot(true)), ...(PERSOS_SEULS ? [] : await lot(false))].slice(0, LIMIT);
+const cibles = [...(AUTRES_SEULS ? [] : await lot(true)), ...(PERSOS_SEULS ? [] : await lot(false))].slice(0, LIMIT);
 console.log(`cibles : ${cibles.length} entité(s) sans dossier [${UNIVERSE}]`);
 
 const entites = []; let sansPage = 0;
