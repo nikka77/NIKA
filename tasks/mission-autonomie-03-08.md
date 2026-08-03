@@ -37,3 +37,24 @@ doit le lire, mesurer l'état réel, et continuer à la phase courante.
 - 03/08 09:27 — état de départ : à relire 4 476 · écartées 915 · DB 344 dossiers/477 ·
   Naruto 0/1 337 · One Piece 0/1 449. Phase A lancée (123 mûrs), B lancée (curateur 8 univers),
   découpes C/D/E lancées sur le VPS.
+- 03/08 10:0x — GISEMENT : la pile ne mûrissait pas parce que 1 879 productions attendaient un
+  arbitre que le guichet VPS (400 lots/j) ne pouvait plus servir. Grande vague fenêtre :
+  **1 823 verdicts appliqués, 1 548 publications** (85 % d'approbations, 67 bascules sceptique).
+  Pile 4 476 → 3 106. Leçon : un filtre d'export trop étroit (doubles refus seulement) cache le
+  vrai stock — compter par ÉTAT de verdict avant de conclure que « rien n'est mûr ».
+- 03/08 11:2x — Blitz Dragon Ball : 1 535 sections → 1 175 validées (357 recalées), 1 123 posées.
+  DB persos 81 %, autres entrées 0 → 417/664. Outils du blitz déplacés du scratchpad AU DÉPÔT
+  (une purge de session les avait effacés en pleine mission).
+- 03/08 11:3x — Phase D lancée : Naruto exporté (850 entités, 3 313 sections, 165 chargeurs),
+  blitz partie 1/2 (83 chargeurs) en vol. Export One Piece lancé dans la foulée.
+- 03/08 13:0x — Phase D (Naruto) : 3 313 sections traduites en 2 blitz (330 agents), 637 recalées
+  par les vérificateurs (19 %), **2 614 posées** sur 796 fiches, 0 perdue. Naruto 0 → 796 dossiers.
+- 03/08 13:1x — Phase E lancée : One Piece exporté (901 entités, 4 347 sections, 215 chargeurs,
+  99 sans page), blitz 1/3 en vol.
+- 03/08 17:0x — **PHASE E TERMINÉE**. One Piece : 4 347 sections en 3 blitz (430 agents),
+  1 023 recalées par les vérificateurs (24 %), **3 163 posées** sur 847 fiches. OP 0 → 856 dossiers.
+- **BILAN DE MISSION** : 2 687 / 4 038 personnages ont un dossier (67 %), contre 1 090 ce matin.
+  ~11 000 sections traduites dans la journée, ~2 900 recalées par les vérificateurs, 9 hallucinations
+  interceptées par la garde stricte, 0 écriture erronée. 1 823 verdicts d'arbitrage appliqués
+  (1 548 publications). Reste : les figurants sans page Fandom (plafond honnête) et les « autres
+  entrées » de Naruto/One Piece (2 802) qui n'ont jamais été découpées — chantier suivant.
