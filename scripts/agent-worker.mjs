@@ -64,6 +64,12 @@ const CHAT = process.argv.includes('--chat');
 const RPC = CHAT
   ? { read: 'ops_chat_read', archive: 'ops_chat_archive' }
   : { read: 'ops_queue_read', archive: 'ops_queue_archive' };
+// La file du CHAT vit sur SUPABASE, pas sur la base de travail (03/08) : c'est le webhook
+// WhatsApp — hébergé sur Vercel, public — qui y dépose les messages de Dan, et Vercel ne peut
+// pas joindre le VPS (pare-feu tailnet uniquement). Après la migration, le worker lisait une
+// file `ops_chat` inexistante côté VPS : tout message WhatsApp tombait dans le vide, sans
+// erreur. Le volume est de quelques messages par jour — l'egress est négligeable.
+const fileClient = () => (CHAT ? clientSite() : supabase);
 
 /* ── Types de tâches ────────────────────────────────────────────── */
 // Chaque type : modèle, schéma JSON (décodage contraint), garde d'entrée, prompt.
@@ -1752,7 +1758,7 @@ async function traiterUn(msg) {
         .eq('id', cible).eq('review_status', 'pending');
       appliques++;
     }
-    await supabase.rpc(RPC.archive, { message_id: msg.msg_id });
+    await fileClient().rpc(RPC.archive, { message_id: msg.msg_id });
     console.log(`  ⚖⚡ [${msg.msg_id}] lot de ${attendus.size} litige(s) → ${appliques} verdict(s) (Claude)`);
     counts[row.status]++;
     return;
@@ -1771,7 +1777,7 @@ async function traiterUn(msg) {
     if (d === 'approve') await verrouEtAppliquer(cible, (q) => q);
     else await supabase.from('agent_results').update({ review_status: 'rejected', reviewed_at: new Date().toISOString() })
       .eq('id', cible).eq('review_status', 'pending');
-    await supabase.rpc(RPC.archive, { message_id: msg.msg_id });
+    await fileClient().rpc(RPC.archive, { message_id: msg.msg_id });
     console.log(`  ⚖⚡ [${msg.msg_id}] litige #${cible} → ${d} (Claude)`);
     counts[row.status]++;
     return;
@@ -1883,7 +1889,7 @@ ${texteSans}`,
     // Enchaînement : toute production jugeable part aussitôt en relecture locale.
     } else if (ins?.id && (row.status === 'done' || row.status === 'suspect') && row.task_type !== 'whatsapp_reponse') await chainReview(row, ins.id);
   }
-  await supabase.rpc(RPC.archive, { message_id: msg.msg_id });
+  await fileClient().rpc(RPC.archive, { message_id: msg.msg_id });
   console.log(`  ${row.status === 'done' ? '✓' : row.status === 'refused' ? '◇' : '✗'} [${msg.msg_id}] ${row.target_slug ?? row.task_type} (${row.status})`);
 }
 
@@ -1916,8 +1922,8 @@ for (;;) {
   const { data: lot, error } = TYPES && !CHAT
     ? await supabase.rpc('ops_queue_read_couloir', { p_vt: VT, p_qty: LOT, p_types: TYPES })
       .then((r) => (r.error?.message?.includes('ops_queue_read_couloir')
-        ? supabase.rpc(RPC.read, { vt: VT, qty: LOT }) : r))
-    : await supabase.rpc(RPC.read, { vt: VT, qty: LOT });
+        ? fileClient().rpc(RPC.read, { vt: VT, qty: LOT }) : r))
+    : await fileClient().rpc(RPC.read, { vt: VT, qty: LOT });
   if (error) { console.error('lecture file:', error.message); process.exit(1); }
   if (!lot?.length) {
     if (!LOOP) break;
