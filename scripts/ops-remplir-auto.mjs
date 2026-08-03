@@ -67,8 +67,13 @@ const ROLE_DU_TOUR = ROLES_TOUR[Math.floor(Date.now() / 1_200_000) % ROLES_TOUR.
 // heure pendant que les juges finissaient tranquillement leur travail. Les deux étages ont des
 // rythmes différents (1 production = 2 relectures), il faut les jauger séparément.
 const { data: parType } = await supabase.rpc('ops_queue_by_type');
+// ARBITRAGE EXCLU AUSSI (03/08) : les lots `arbitrage_claude_lot` ne sont pas de la production
+// — ils vivent sur le guichet Claude (400/jour) et, une fois celui-ci fermé, s'accumulent sans
+// être servis. 2 234 lots morts comptaient comme « 2 234 productions en file » : le
+// ravitaillement s'est tu pendant des heures et l'usine a tourné à vide, file pleine. Un étage
+// qui a son propre guichet doit être jaugé à part, comme les juges.
 const enFileProd = (parType ?? [])
-  .filter((r) => r.task_type !== 'review_local')
+  .filter((r) => r.task_type !== 'review_local' && !String(r.task_type).startsWith('arbitrage_'))
   .reduce((n, r) => n + Number(r.en_attente ?? 0), 0);
 const enFileJuges = (parType ?? [])
   .filter((r) => r.task_type === 'review_local')
