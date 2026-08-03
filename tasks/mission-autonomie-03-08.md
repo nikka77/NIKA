@@ -63,3 +63,36 @@ doit le lire, mesurer l'état réel, et continuer à la phase courante.
   **Persos 3 411/4 038 (84 %)** · autres entrées 880/3 653 (24 %).
   Plafond mesuré des autres entrées : 530/700 Naruto et 310/700 One Piece SANS page Fandom
   exploitable (jutsu mineurs = infobox sans prose) — impossibles documentés, pas un échec.
+
+## Clôture de la mission (04/08, ~00 h 30)
+
+**Chantier 1 — pile « à relire » : absorbée.** Litiges mûrs par passage : 3 269 → 3 040 → 2 500 →
+1 879 → 1 356 → 845 → 427 → 213 → 209. Environ **9 500 verdicts d'arbitrage appliqués** sur les
+deux jours, dont ~6 800 publications, avec ~600 approbations basculées en rejet par les sceptiques.
+
+**Chantier 2 — « autres entrées » : au plafond du traduisible.** Le critère d'arrêt (un export qui
+ne rend presque plus que des `sansPage`) est atteint pour One Piece (17 entités contre 448) et
+Naruto (92 contre 608). Les entrées restantes n'ont qu'une infobox sur Fandom : rien à traduire
+sans inventer.
+
+**Audit sémantique de clôture** (44 entités des 8 univers, 123 sections re-notées contre sources
+Fandom re-téléchargées) :
+
+| Voie | Entités | Sections | descFr | Corrompues |
+|------|---------|----------|--------|------------|
+| Usine (double jury) | 36 | **8,3/10** | 7,3/10 | 2 |
+| Blitz fenêtre (traducteur + vérificateur) | 8 | **8,4/10** | 2,3/10 * | 0 |
+
+\* Le 2,3 ne juge PAS la qualité du blitz : celui-ci ne produit que des sections. Les fiches
+blitzées sont justement celles qui n'avaient pas de dossier, et beaucoup attendent encore leur
+descFr — l'auditeur note 0 une description absente. La qualité des SECTIONS, seule chose que le
+blitz produit, est au niveau de l'usine.
+
+Deux fiches fautives trouvées et corrigées sur-le-champ : `orihime-inoue` (descFr inventant des
+faits non sourcés) et `hol-horse` (contradiction Hall & Oates → Full Force + un mot polonais
+« różnych » dans une section). Purgées et remises en production.
+
+**Incidents résolus sur les deux jours** : egress Supabase épuisé → migration de la base de travail
+sur le VPS ; compute Nano saturé → Micro ; verdicts croisés (6 752 relectures aux ids périmés) ;
+ravitaillement bloqué par des lots d'arbitrage non servis ; `akasha_relations` resté pointé sur la
+mauvaise base après migration ; file du secrétaire WhatsApp idem, avec chaîne de repli à 5 couloirs.
