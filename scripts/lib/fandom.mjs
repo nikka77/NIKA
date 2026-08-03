@@ -192,7 +192,16 @@ export function cleanWikitext(wt) {
   // et induisent le modèle en erreur — un juge a cru à une faute d'orthographe dans notre base
   // en lisant la translittération espagnole (25/07). À retirer AVANT de déwikifier.
   s = s.replace(/\[\[[a-z]{2,3}(?:-[a-z]{2,4})?:[^\]]*\]\]/g, '');
-  s = s.replace(/\[\[(?:[^|\]]*\|)?([^\]]+)\]\]/g, '$1');                  // déwikifier
+  // Déwikifier EN BOUCLE : les liens imbriqués ([[File:x|vignette de [[Gon]] enfant]]) laissaient
+  // des débris « an]] » en tête de section — 739 sections de la file en portaient (QC du 03/08,
+  // note tombée à 6,8). Une passe ne suffit jamais sur du wikitext réel ; on itère jusqu'à
+  // stabilité puis on balaie les crochets orphelins.
+  for (let i = 0; i < 4; i++) {
+    const avant = s;
+    s = s.replace(/\[\[(?:[^[\]|]*\|)?([^[\]]*)\]\]/g, '$1');
+    if (s === avant) break;
+  }
+  s = s.replace(/\[\[|\]\]/g, '');
   s = s.replace(/<\/?[^>]+>/g, '');
   s = s.replace(/^=+\s*(.+?)\s*=+$/gm, '\n§ $1');                          // sections → marqueurs
   s = s.replace(/'''?/g, '').replace(/^\s*[*#:]+\s*/gm, '· ');
