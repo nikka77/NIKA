@@ -718,7 +718,12 @@ TASK_TYPES.whatsapp_reponse = {
   // NIKA_CHAT_PREMIUM=1 dans le .env.local du VPS — à poser après avoir crédité l'API
   // (le secrétaire vit sur le VPS, sans CLI : seule l'API le sert). Sans le drapeau, le
   // routage historique reste en place — le chat ne casse jamais faute de crédit.
-  model: (p) => process.env.NIKA_CHAT_PREMIUM === '1' ? 'anthropic/claude-haiku-4-5'
+  // JAMAIS MUET (03/08) : le secrétaire partage le guichet Claude avec l'arbitre, qui brûle les
+  // 400 lots du jour dès le matin. Résultat mesuré : un message de Dan « reporté — guichet fermé »,
+  // donc sans réponse pendant des heures. Un secrétaire qui répond moins bien vaut infiniment
+  // mieux qu'un secrétaire muet : si le couloir premium est fermé, on retombe sur les gratuits.
+  model: (p) => (process.env.NIKA_CHAT_PREMIUM === '1' && couloirDispo('anthropic/claude-haiku-4-5'))
+    ? 'anthropic/claude-haiku-4-5'
     : cibleWhatsApp(p.texte).cible === 'gemini' ? 'gemini/gemini-flash-lite-latest' : 'groq/openai/gpt-oss-120b',
   // Schéma PLAT : le mode strict (Groq/OpenAI) exige que chaque propriété soit requise —
   // les optionnels imbriqués sont refusés (HTTP 400 constaté le 27/07). « aucun »/0 = neutre.
@@ -744,7 +749,7 @@ TASK_TYPES.whatsapp_reponse = {
     additionalProperties: false,
   },
   guard: (p) => ((p.texte ?? '').trim() ? null : 'message vide'),
-  prompt: (p) => `Tu es ${cibleWhatsApp(p.texte).cible === 'gemini' ? 'Gemini, un des modèles' : 'le secrétaire (modèle Groq)'} de NIKA OPS, l'usine d'agents du projet NIKA
+  prompt: (p) => `Tu es ${cibleWhatsApp(p.texte).cible === 'gemini' ? 'Gemini, un des modèles' : 'le secrétaire'} de NIKA OPS, l'usine d'agents du projet NIKA
 (super-app Côte d'Azur de Dan). Tu réponds à Dan, ton seul interlocuteur.
 
 RÈGLES :
