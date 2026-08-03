@@ -58,3 +58,8 @@ doit le lire, mesurer l'état réel, et continuer à la phase courante.
   interceptées par la garde stricte, 0 écriture erronée. 1 823 verdicts d'arbitrage appliqués
   (1 548 publications). Reste : les figurants sans page Fandom (plafond honnête) et les « autres
   entrées » de Naruto/One Piece (2 802) qui n'ont jamais été découpées — chantier suivant.
+- 03/08 20:0x — Après-mission, 3 vagues de sillage : 4 310 verdicts appliqués (3 081 publications,
+  ~330 bascules sceptique). Blitz « autres entrées » : Naruto 242 + One Piece 1 237 sections posées.
+  **Persos 3 411/4 038 (84 %)** · autres entrées 880/3 653 (24 %).
+  Plafond mesuré des autres entrées : 530/700 Naruto et 310/700 One Piece SANS page Fandom
+  exploitable (jutsu mineurs = infobox sans prose) — impossibles documentés, pas un échec.
