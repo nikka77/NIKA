@@ -722,9 +722,23 @@ TASK_TYPES.whatsapp_reponse = {
   // 400 lots du jour dès le matin. Résultat mesuré : un message de Dan « reporté — guichet fermé »,
   // donc sans réponse pendant des heures. Un secrétaire qui répond moins bien vaut infiniment
   // mieux qu'un secrétaire muet : si le couloir premium est fermé, on retombe sur les gratuits.
-  model: (p) => (process.env.NIKA_CHAT_PREMIUM === '1' && couloirDispo('anthropic/claude-haiku-4-5'))
-    ? 'anthropic/claude-haiku-4-5'
-    : cibleWhatsApp(p.texte).cible === 'gemini' ? 'gemini/gemini-flash-lite-latest' : 'groq/openai/gpt-oss-120b',
+  // CHAÎNE DE REPLI COMPLÈTE (03/08, deuxième correctif du soir) : le premier repli tombait sur
+  // Groq… lui aussi épuisé à cette heure (800 req/j). Un secrétaire ne doit jamais dépendre d'un
+  // seul couloir gratuit : on descend la liste jusqu'au premier OUVERT, et le dernier maillon est
+  // DeepInfra — facturé au jeton, donc jamais fermé. Quelques centimes par mois pour la garantie
+  // qu'un message de Dan trouve toujours quelqu'un.
+  model: (p) => {
+    const gemini = cibleWhatsApp(p.texte).cible === 'gemini';
+    const chaine = [
+      ...(process.env.NIKA_CHAT_PREMIUM === '1' ? ['anthropic/claude-haiku-4-5'] : []),
+      ...(gemini ? ['gemini/gemini-flash-lite-latest'] : []),
+      'groq/openai/gpt-oss-120b',
+      'gemini/gemini-flash-lite-latest',
+      'mistral/mistral-small-latest',
+      'deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo',
+    ];
+    return premierDispo([...new Set(chaine)]) ?? 'deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo';
+  },
   // Schéma PLAT : le mode strict (Groq/OpenAI) exige que chaque propriété soit requise —
   // les optionnels imbriqués sont refusés (HTTP 400 constaté le 27/07). « aucun »/0 = neutre.
   zod: z.object({
