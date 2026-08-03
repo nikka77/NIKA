@@ -78,8 +78,8 @@ for (const p of aRejouer) {
 
   // Ce qui existe DÉJÀ (seeds curés, passages précédents) : à rapporter séparément, sinon le
   // bilan laisse croire qu'on a créé des arêtes qu'on n'a fait que reconnaître.
-  const { data: avant } = await supabase
-    .from('akasha_relations').select('to_entry, relation')
+  const { data: avant } = await clientSite()
+      .from('akasha_relations').select('to_entry, relation')
     .eq('from_entry', fiche.id).in('to_entry', lignes.map((l) => l.to_entry));
   const presentes = new Set((avant ?? []).map((r) => `${r.relation}|${r.to_entry}`));
   const nouvelles = lignes.filter((l) => !presentes.has(`${l.relation}|${l.to_entry}`));

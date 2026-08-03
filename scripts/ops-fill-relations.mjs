@@ -47,7 +47,7 @@ async function tousLesPersonnages() {
 async function dejaRacontes() {
   const ids = new Set();
   for (let debut = 0; ; debut += 1000) {
-    const { data, error } = await supabase
+    const { data, error } = await clientSite()
       .from('akasha_relations').select('from_entry').in('relation', NATURES_HISTOIRE).range(debut, debut + 999);
     if (error) { console.error('✗ lecture akasha_relations :', error.message); process.exit(1); }
     for (const r of data ?? []) ids.add(r.from_entry);
