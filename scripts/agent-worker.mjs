@@ -1833,6 +1833,20 @@ async function traiterUn(msg) {
       // (source whatsapp) — c'est le carnet du L5, relu par l'orchestrateur plus tard.
       // Deux routes vers un interlocuteur : le préfixe (regex) ET le verdict sémantique de Groq
       // (« Salut Claude… », « demande à Claude de… » — vécu le 27/07 : Dan parle naturellement).
+      // « CLAUDE ICI » (04/08) — Dan s'adresse à la SESSION Claude Code ouverte sur son Mac, pas
+      // au CLI du VPS : celle-là a le contexte de la journée, l'autre repart de zéro. Le worker
+      // accuse réception et se tait ; l'écoute côté fenêtre (scripts/ops-ecoute-fenetre.mjs) prend
+      // le relais. Sans ce garde-fou, les deux répondraient au même message.
+      const pourLaFenetre = /^\s*claude\s+ici\b/i.test(row.payload.texte ?? '');
+      if (pourLaFenetre) {
+        try { await envoyerWhatsApp('📨 Reçu — transmis à la session Claude Code (elle a tout le contexte).', row.payload.de); }
+        catch (e) { console.error('  ✗ accusé fenêtre :', String(e).slice(0, 120)); }
+        await supabase.from('ops_notes').insert({ source: 'wa_fenetre', done: false,
+          content: JSON.stringify({ de: row.payload.de, texte: row.payload.texte, a: row.payload.recu_a }) });
+        console.log('  📨 message pour la fenêtre Claude Code — worker en retrait');
+        await fileClient().rpc(RPC.archive, { message_id: msg.msg_id });
+        return;
+      }
       const { cible: cibleRegex, texte: texteSans } = cibleWhatsApp(row.payload.texte);
       const cible = cibleRegex !== 'groq' ? cibleRegex
         : row.result.interlocuteur === 'claude' ? 'claude' : 'groq';
