@@ -1,5 +1,15 @@
 # NIKA — Instructions Claude Code
 
+## ⚠ Emplacement du dépôt
+
+**Le dépôt vit dans `~/dev/NIKA`. Jamais dans iCloud.** (05/08/2026)
+
+La copie sous `~/Library/Mobile Documents/com~apple~CloudDocs/NIKA` est un filet gelé, à ne pas
+éditer. iCloud synchronisait `.next/` pendant les écritures de Turbopack (manifestes supprimés,
+500 aléatoires cherchés des semaines du mauvais côté), `launchd` n'a pas le droit de lire iCloud
+(TCC) donc aucun démon ne peut y exécuter du code, et `npm install` y a déjà détruit le lien
+`node_modules.nosync`. Une seule copie, un seul lieu d'exécution.
+
 ## Contexte projet
 NIKA est une super-app Côte d'Azur (Next.js 16 + Supabase + Tailwind).
 9 domaines : FOOD, AUTO, STAY, AZUR, RENT, SERV, LEARN, SEC, NEWS.
