@@ -1942,6 +1942,26 @@ ${texteSans}`,
 
 const counts = { done: 0, refused: 0, failed: 0, suspect: 0 };
 let siesteDepuis = 0;   // dernier report pour guichet quotidien fermé (voir PlafondJourError)
+
+// SONDE DE SCHÉMA AU DÉMARRAGE (05/08) — un schéma incomplet doit CRIER, pas se taire.
+// Le null guard `supabase ? … : {data:null}` couvre l'absence de client, jamais celle d'une table :
+// 14 tables manquantes ont fait échouer des flux entiers en silence pendant des semaines, et après
+// la migration de la base de travail le remplisseur de relations a tourné des heures en erreur sans
+// que rien ne s'arrête. Un worker qui démarre sur un schéma troué produit du vide avec application.
+// Contournable par --sans-sonde pour un diagnostic, jamais en service.
+if (!process.argv.includes('--sans-sonde')) {
+  const { execFile } = await import('node:child_process');
+  const { promisify } = await import('node:util');
+  const ici = new URL('.', import.meta.url).pathname;
+  try {
+    await promisify(execFile)(process.execPath, [`${ici}ops-sonde-schema.mjs`, '--silencieux'], { timeout: 60_000 });
+  } catch (e) {
+    console.error('✗✗ sonde de schéma en échec — le worker ne démarre pas.');
+    console.error(String(e.stderr || e.stdout || e.message).slice(0, 800));
+    process.exit(1);
+  }
+}
+
 console.log(`⚙️  worker NIKA OPS — mode ${LOOP ? 'continu' : 'drain'} · ${CONC} tâche(s) de front`);
 // LE CŒUR BAT PENDANT LE TRAVAIL, PAS SEULEMENT ENTRE DEUX LOTS (02/08). Un tour de boucle
 // dure le temps de son lot : douze tâches sur un couloir bridé à 12 req/min, ce sont des
