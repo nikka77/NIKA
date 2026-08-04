@@ -276,6 +276,41 @@ export function sameEntityBySlug(slug, title) {
   return sameEntityName(String(slug).replace(/-/g, ' '), title);
 }
 
+/** LA PAGE TROUVÉE EST-ELLE UNE ŒUVRE PLUTÔT QU'UNE ENTITÉ ? (05/08/2026)
+ *
+ *  La recherche plein texte ne ramène pas seulement des entités voisines : elle ramène des
+ *  CHAPITRES, des ÉPISODES, des ARCS, des pages-listes et des pages d'homonymie. Une fiche
+ *  rédigée depuis l'une d'elles raconte l'œuvre au lieu de son sujet — vécu le 04/08 avec
+ *  « Fool » → « Anime Bonus Corner », « Man X » → « SO Chapter 103 », « Jujika » → « Episode 325 »,
+ *  « Île de Drum » → « Drum Island Arc », « Vegeta SSJ4 » → une page d'épisode de Dragon Ball GT.
+ *
+ *  Deux signaux, parce qu'un seul ne suffit pas : le TITRE trahit la plupart des cas, mais pas
+ *  « Super Saiyan 4 Vegeta » — celui-là ne se voit que dans l'INFOBOX (« Episode # : 59 »).
+ *  Validé sur les 12 fautes réelles du 04/08 (12/12 attrapées) et 11 résolutions légitimes
+ *  (11/11 épargnées, dont « Dragon Ball (object) » et « Zangetsu (Quincy Powers) » : une
+ *  parenthèse de désambiguïsation n'est pas une page d'œuvre).
+ *
+ *  @returns {string|null} le motif du refus, ou null si la page est bien une entité.
+ */
+const TITRE_OEUVRE = /\((chapter|episode|disambiguation|saga|arc)\)|^list of |^minor characters|bonus corner|^(so|db|op) chapter |^episode \d| (arc|saga)$|\/(history|gallery|techniques|relationships|abilities)/i;
+const INFOBOX_OEUVRE = /^(episode|chapter)\s*#|^volume\s*:|^air ?date\s*:|^series\s*:|^previous episode\s*:|^next episode\s*:/im;
+
+export function pageDOeuvre(titre, texte) {
+  if (TITRE_OEUVRE.test(String(titre ?? ''))) return `page d'œuvre ou de liste : « ${titre} »`;
+  // Seules les premières lignes : c'est là que vit l'infobox, et « Episode » peut apparaître
+  // légitimement dans la prose d'une fiche de personnage.
+  const entete = String(texte ?? '').split('\n').slice(0, 22).join('\n');
+  if (INFOBOX_OEUVRE.test(entete)) return `infobox d'épisode ou de chapitre sous le titre « ${titre} »`;
+  return null;
+}
+
+/** Un mot significatif du nom demandé manque-t-il au titre retenu ? Signal, pas verdict. */
+export function resolutionPartielle(nom, titre) {
+  const t = String(titre ?? '').toLowerCase();
+  return String(nom ?? '').toLowerCase().split(/[^a-zà-ÿ0-9]+/)
+    .filter((m) => m.length > 2).some((m) => !t.includes(m));
+}
+
 /**
  * Champs de nommage d'un article : « Name : … », « Alias : … », « Also called : … ».
  * Un wiki déclare TOUJOURS les autres noms de son sujet — c'est la preuve d'alias.
@@ -352,8 +387,14 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000, slug =
   try {
     const c = JSON.parse(await readFile(file, 'utf8'));
     // Un alias curé ne se re-juge pas « à vue » : la curation l'emporte sur le recalcul.
-    return { ...c, sameEntity: c.aliasCure ? true
-      : c.title ? sameEntityName(name, c.title) || sameEntityBySlug(slug, c.title) : c.sameEntity };
+    // Les gardes sont RECALCULÉES à la lecture, jamais lues du cache : elles évoluent (slug le
+    // 04/08, nature de page le 05/08) et un verdict figé les court-circuiterait sans qu'on ait à
+    // invalider tout le cache.
+    return { ...c,
+      sameEntity: c.aliasCure ? true
+        : c.title ? sameEntityName(name, c.title) || sameEntityBySlug(slug, c.title) : c.sameEntity,
+      pageOeuvre: pageDOeuvre(c.title, c.text),
+      resolutionPartielle: resolutionPartielle(name, c.title) };
   } catch { /* cache froid */ }
 
   // redirects=1 : « Haiya Dragon » → « Icarus » (sinon on ne récupère que « #REDIRECT »)
@@ -396,17 +437,26 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000, slug =
     if (!j?.parse?.wikitext) return null;
   }
 
+  const titreFinal = j.parse.title ?? title;
+  const texte = (await fetchFandomInfobox(universe, titreFinal)) + cleanWikitext(j.parse.wikitext).slice(0, maxChars);
   const out = {
-    title: j.parse.title ?? title,
+    title: titreFinal,
     url: `https://${WIKIS[universe]}.fandom.com/wiki/${encodeURIComponent(title)}`,
-    text: (await fetchFandomInfobox(universe, title)) + cleanWikitext(j.parse.wikitext).slice(0, maxChars),
+    text: texte,
     resolvedBy,
     // GARDE D'IDENTITÉ (25/07) : la recherche plein texte ramenait des entités VOISINES
     // (« Giorno's Mother » → article de Giorno ; « Super 17-gou » → Android 17). On compare
     // les ensembles de mots significatifs : titre et nom doivent désigner la même entité.
     sameEntity: cure ? true
-      : sameEntityName(name, j.parse.title ?? title) || sameEntityBySlug(slug, j.parse.title ?? title),
+      : sameEntityName(name, titreFinal) || sameEntityBySlug(slug, titreFinal),
     aliasCure: Boolean(cure),
+    // GARDE DE NATURE (05/08) : la page trouvée est-elle seulement une page d'ENTITÉ ?
+    pageOeuvre: pageDOeuvre(titreFinal, texte),
+    // RÉSOLUTION PARTIELLE : un mot du nom demandé manque au titre retenu. Ce n'est pas une
+    // faute en soi (« Île Cactus » → « Cactus Island » est une traduction), mais c'est là que
+    // se concentrent les erreurs d'espèce — 5 fautes sur 46 mesurées côté One Piece le 04/08.
+    // On le SIGNALE ; c'est à l'appelant de faire contrôler ces cas-là.
+    resolutionPartielle: resolutionPartielle(name, titreFinal),
   };
   await writeFile(file, JSON.stringify(out));
   await sleep(250);                                 // politesse Fandom
@@ -445,6 +495,9 @@ export async function fetchFandomSections(universe, name, { minChars = 350, maxS
   // de nommage de l'article (Jealous ≡ Gelus). Tout le reste est refusé à la source.
   // Le slug vaut la même preuve d'identité ici que dans la prose : sans lui, une entité au nom
   // traduit repartait en « mauvaise entité » alors que la page trouvée était la bonne.
+  // Une page d'ŒUVRE (chapitre, épisode, arc, page-liste) n'est jamais la source d'une entité :
+  // on refuse AVANT de découper, comme pour une entité étrangère.
+  if (page.pageOeuvre) return { title: titre, url: page.url, sections: [], refus: `mauvaise entité : ${page.pageOeuvre}` };
   const identite = page.aliasCure || sameEntityBySlug(slug, titre) ? 'alias' : identiteEntre(name, titre, page.text);
   if (identite === 'etranger') return { title: titre, url: page.url, sections: [], refus: `mauvaise entité : article « ${titre} »` };
   const alias = identite === 'alias' ? titre : null;

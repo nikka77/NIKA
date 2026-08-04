@@ -152,7 +152,7 @@ DONNÉES :
       const page = await fetchFandomProse(p.universe, p.name, { slug: p.slug });
       const niche = await expertNiche(supabase, p.universe, p.name);               // L19
       const memoire = await memoireExpert(supabase, 'fandom_descfr', p.universe, niche?.noms);   // L18
-      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, memoire, niche } : { ...p, memoire, niche };
+      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, pageOeuvre: page.pageOeuvre, resolutionPartielle: page.resolutionPartielle, memoire, niche } : { ...p, memoire, niche };
     },
     // Trois gardes, apprises des 3 erreurs d'identité du 25/07 — RECALIBRÉES PAR TYPE le 01/08 :
     // elles avaient été taillées pour des personnages et refusaient à tort une entrée sur cinq
@@ -173,6 +173,7 @@ DONNÉES :
       // ne contient PAS « Giorno's Mother », ce refus-là reste donc justifié.
       // Réservé aux noms d'au moins deux mots : un nom d'un seul mot ferait des rencontres
       // fortuites dans 5 000 caractères de prose.
+      if (p.pageOeuvre) return `mauvaise entité : ${p.pageOeuvre}`;
       if (p.sameEntity === false && !citeLeNom(p.fandom, p.name, p.fandomTitle))
         return `mauvaise entité : article « ${p.fandomTitle} » pour « ${p.name} »`;
       // 2) homonyme ? (Ain/Egghead vs Ain/Neo Marines) : aucun nom propre du résumé dans l'article.
@@ -421,11 +422,14 @@ ${p.motifs}`,
       // l'introduction et l'infobox. Diviser le contexte par deux réduit d'autant le
       // temps d'évaluation du prompt — le poste le plus cher de cette tâche.
       const page = await fetchFandomProse(p.universe, p.name, { slug: p.slug });
-      return page ? { ...p, fandom: page.text.slice(0, 2500), fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity } : p;
+      return page ? { ...p, fandom: page.text.slice(0, 2500), fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, pageOeuvre: page.pageOeuvre, resolutionPartielle: page.resolutionPartielle } : p;
     },
     guard: (p) => {
       if (!AXES[p.universe]) return `univers sans taxonomie : ${p.universe}`;
       if ((p.fandom ?? '').length < 400) return 'page Fandom absente ou trop maigre';
+      // Une page d'ŒUVRE (chapitre, épisode, arc, page-liste) ne décrit jamais une entité :
+      // refuser ici coûte zéro, produire depuis elle coûte une fiche fausse et deux relectures.
+      if (p.pageOeuvre) return `mauvaise entité : ${p.pageOeuvre}`;
       if (p.sameEntity === false) return `mauvaise entité : article « ${p.fandomTitle} » pour « ${p.name} »`;
       return null;
     },
@@ -564,7 +568,7 @@ TASK_TYPES.akasha_relations = {
   // L'histoire d'un personnage vit dans le corps de l'article : on prend plus large que les axes.
   fetch: async (p) => {
     const page = await fetchFandomProse(p.universe, p.name, { maxChars: 6000, slug: p.slug });
-    return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity } : p;
+    return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, pageOeuvre: page.pageOeuvre, resolutionPartielle: page.resolutionPartielle } : p;
   },
   guard: (p) => TASK_TYPES.fandom_descfr.guard(p),
   prompt: (p) => `À partir de l'article ci-dessous, dresse les relations MAJEURES de ${p.name} (${p.universe})
@@ -689,7 +693,7 @@ function ficheRole(roleKey) {
       // viennent d'abord de son propre groupe — c'est par là qu'il progresse fiche après fiche.
       const niche = await expertNiche(supabase, p.universe, p.name);
       const memoire = await memoireExpert(supabase, roleKey, p.universe, niche?.noms);
-      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, memoire, niche } : { ...p, memoire, niche };
+      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, pageOeuvre: page.pageOeuvre, resolutionPartielle: page.resolutionPartielle, memoire, niche } : { ...p, memoire, niche };
     },
     guard: (p) => TASK_TYPES.fandom_descfr.guard(p),
     prompt: (p) => `Tu es ${nomExpert(roleKey, p.universe)}${p.niche ? `, et plus précisément « ${p.niche.nom} » (${p.niche.membres} entrées à ta charge)` : ''}, expert de l'encyclopédie AKASHA (univers d'animes/mangas).
