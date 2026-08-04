@@ -45,12 +45,22 @@ for (const e of cibles.slice(0, LIMIT)) {
   if (!page.sameEntity) { refus++; continue; }        // la garde d'identité prime, comme partout
   const prose = String(page.text).trim();
   if (prose.length < 220) { maigres++; continue; }
-  entrees.push({ slug: e.slug, name: e.name, type: e.type, titre: page.title,
+  // RÉSOLUTION PARTIELLE (04/08) : la garde d'identité accepte dès qu'un ensemble de mots est
+  // INCLUS dans l'autre — « Cold Nezumi Zeppyo » (une attaque) est ainsi passé sur la page du
+  // capitaine « Nezumi », et « Kokuto Yoru Slash » sur celle de l'épée Yoru. La fiche aurait
+  // annoncé une technique et raconté une biographie. On marque ces cas pour que le rédacteur ET
+  // le vérificateur les voient : le drapeau ne bloque pas, il rend le doute visible.
+  const motsNom = e.name.toLowerCase().split(/[^a-zà-ÿ0-9]+/).filter((w) => w.length > 2);
+  const titreBas = String(page.title).toLowerCase();
+  const partielle = motsNom.some((w) => !titreBas.includes(w));
+  entrees.push({ slug: e.slug, name: e.name, type: e.type, titre: page.title, partielle,
     resume: String(e.summary ?? '').slice(0, 160), source: prose.slice(0, 3000) });
   if (entrees.length % 100 === 0) console.log(`  … ${entrees.length} préparées (${maigres} trop maigres, ${refus} refusées)`);
 }
 
 const n = Math.ceil(entrees.length / PAR);
 for (let i = 0; i < n; i++) fs.writeFileSync(`${DIR}/${PREFIXE}_${i}.json`, JSON.stringify(entrees.slice(i * PAR, (i + 1) * PAR)));
-fs.writeFileSync(`${DIR}/${PREFIXE}-meta.json`, JSON.stringify({ universe: UNIVERSE, entrees: entrees.length, chargeurs: n, maigres, refus }));
+const partielles = entrees.filter((e) => e.partielle).length;
+fs.writeFileSync(`${DIR}/${PREFIXE}-meta.json`, JSON.stringify({ universe: UNIVERSE, entrees: entrees.length, chargeurs: n, maigres, refus, partielles }));
 console.log(`FINAL — ${entrees.length} entrée(s) · ${n} chargeur(s) · ${maigres} sans prose exploitable · ${refus} refusées par la garde`);
+console.log(`  dont ${partielles} à résolution PARTIELLE (titre ≠ nom) — à faire contrôler en nature`);
