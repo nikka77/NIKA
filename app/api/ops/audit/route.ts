@@ -40,7 +40,10 @@ function kappa(votes: Vote[]) {
 
 async function votes(supabase: Admin): Promise<Vote[]> {
   const { data } = await supabase.from('ops_notes').select('content').eq('source', 'audit');
-  return (data ?? []).flatMap((n) => { try { return [JSON.parse(n.content) as Vote]; } catch { return []; } });
+  // Le type de `data` remonte `never` quand le schéma généré ne connaît pas ops_notes (table de la
+  // base de TRAVAIL, pas du site) : on annote la ligne au lieu de laisser l'inférence échouer.
+  return ((data ?? []) as { content: string }[])
+    .flatMap((n) => { try { return [JSON.parse(n.content) as Vote]; } catch { return []; } });
 }
 
 export async function GET() {
