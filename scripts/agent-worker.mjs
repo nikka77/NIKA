@@ -353,6 +353,10 @@ BARÈME :
   reformulation ne sont JAMAIS des défauts. Données clé=valeur : preuves anglaises verbatim
   attendues, l'anglais n'y est jamais un défaut. Un fait vrai à n'importe quel moment du récit
   est exact.
+- RELATIONS : l'étiquette entre parenthèses (« ennemi », « allié », « rival »…) est un FAIT comme
+  un autre. Une preuve qui dit « a rejoint les rangs de X » ne soutient pas « rival de X » ; celui
+  qui DIRIGE une organisation n'en est pas « l'allié ». Étiquette non soutenue par sa preuve =
+  reject, même si le résumé est exact (QC du 04/08 : une relation sur six).
 - Les juges pinaillent : vérifie leur reproche DANS la source avant de le croire.
 - Vraie déformation, texte corrompu, hors sujet : reject. Sinon : approve.
 
@@ -388,6 +392,10 @@ BARÈME :
   reformulation ne sont JAMAIS des défauts.
 - Données clé=valeur : les preuves sont des citations anglaises verbatim — l'anglais n'y est
   jamais un défaut. Un fait vrai à N'IMPORTE QUEL moment du récit est exact.
+- RELATIONS : l'étiquette entre parenthèses (« ennemi », « allié », « rival »…) est un FAIT comme
+  un autre. Une preuve qui dit « a rejoint les rangs de X » ne soutient pas « rival de X » ; celui
+  qui DIRIGE une organisation n'en est pas « l'allié ». Étiquette non soutenue par sa preuve =
+  reject, même si le résumé est exact (QC du 04/08 : une relation sur six).
 - Les juges automatiques pinaillent : vérifie leur reproche DANS la source avant de le croire.
 - Vraie déformation (date fausse, mauvais personnage, fait inventé), texte corrompu ou hors
   sujet : reject. Sinon : approve.
@@ -565,7 +573,13 @@ avec d'autres personnages nommés.
 RÈGLES :
 - 3 à 6 relations, les plus structurantes de son histoire (famille, mentor, ennemi juré, équipage…).
 - "avec" : le NOM du personnage lié, tel qu'écrit dans l'article. Jamais ${p.name} lui-même.
-- "nature" : la catégorie la plus juste. « ancien équipage » = il en a fait partie puis l'a quitté.
+- "nature" : la catégorie que ta PREUVE soutient, pas celle qui « sonne bien ». Le QC du 04/08 a
+  trouvé ce défaut dans une relation sur six : les faits étaient justes, l'étiquette fausse.
+  · membre d'un équipage → « équipage actuel » ou « ancien équipage », JAMAIS « rival » du capitaine
+  · celui qui dirige une organisation → « supérieur », jamais « allié » de sa propre organisation
+  · deux personnes qui traversent la même épreuve sans agir ensemble → « autre », pas « allié »
+  · « ancien équipage » = il en a fait partie PUIS l'a quitté (ou le groupe a été dissous)
+  Si aucune catégorie n'est soutenue par la preuve, mets « autre » — c'est une réponse honnête.
 - "periode" : « passé » si la relation appartient à son histoire, « actuel » si elle tient toujours.
 - "resume" : 1 à 2 phrases EN FRANÇAIS qui racontent la relation — faits de l'article uniquement,
   présent de narration, aucun anglicisme.
