@@ -149,7 +149,7 @@ DONNÉES :
     },
     // Étape « yeux » : le worker va chercher la matière AVANT tout appel au modèle.
     fetch: async (p) => {
-      const page = await fetchFandomProse(p.universe, p.name);
+      const page = await fetchFandomProse(p.universe, p.name, { slug: p.slug });
       const niche = await expertNiche(supabase, p.universe, p.name);               // L19
       const memoire = await memoireExpert(supabase, 'fandom_descfr', p.universe, niche?.noms);   // L18
       return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, memoire, niche } : { ...p, memoire, niche };
@@ -412,7 +412,7 @@ ${p.motifs}`,
       // 2500 caractères suffisent : les attributs (village, clan, équipage…) sont dans
       // l'introduction et l'infobox. Diviser le contexte par deux réduit d'autant le
       // temps d'évaluation du prompt — le poste le plus cher de cette tâche.
-      const page = await fetchFandomProse(p.universe, p.name);
+      const page = await fetchFandomProse(p.universe, p.name, { slug: p.slug });
       return page ? { ...p, fandom: page.text.slice(0, 2500), fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity } : p;
     },
     guard: (p) => {
@@ -555,7 +555,7 @@ TASK_TYPES.akasha_relations = {
   }),
   // L'histoire d'un personnage vit dans le corps de l'article : on prend plus large que les axes.
   fetch: async (p) => {
-    const page = await fetchFandomProse(p.universe, p.name, { maxChars: 6000 });
+    const page = await fetchFandomProse(p.universe, p.name, { maxChars: 6000, slug: p.slug });
     return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity } : p;
   },
   guard: (p) => TASK_TYPES.fandom_descfr.guard(p),
@@ -669,7 +669,7 @@ function ficheRole(roleKey) {
       additionalProperties: false,
     },
     fetch: async (p) => {
-      const page = await fetchFandomProse(p.universe, p.name);
+      const page = await fetchFandomProse(p.universe, p.name, { slug: p.slug });
       // Mémoire d'expert (L18) + niche (L19) : l'expert le plus POINTU couvrant l'entrée
       // (« Expert Kekkei genkai » avant « Expert Jutsu ») signe le prompt, et ses exemplaires
       // viennent d'abord de son propre groupe — c'est par là qu'il progresse fiche après fiche.
@@ -1435,7 +1435,7 @@ async function chainReview(row, reviewedId, jugesOverride, evitePlus) {
     // deux français et voit immédiatement un fait ajouté, retiré ou déformé au passage.
     : row.task_type === 'toilettage_fr'
       ? { text: String(p.texte ?? ''), title: p.name }
-      : await fetchFandomProse(p.universe, p.name, { maxChars: 6000 }).catch(() => null);
+      : await fetchFandomProse(p.universe, p.name, { maxChars: 6000, slug: p.slug }).catch(() => null);
   if (!page?.text) return;                           // pas de source vérifiable → pas de jugement
 
   // AUTONOMIE L12 (audit du 26/07 : un juge seul = 86 % de précision, insuffisant) :

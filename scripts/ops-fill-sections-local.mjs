@@ -48,7 +48,7 @@ const envoyer = async () => {
 
 for (const e of candidates) {
   if (dejaEnFile.has(e.slug)) { sautees++; continue; }
-  const page = await fetchFandomSections(e.universe, e.name, { maxSections: MAX_SECTIONS });
+  const page = await fetchFandomSections(e.universe, e.name, { maxSections: MAX_SECTIONS, slug: e.slug });
   if (page?.refus) { mauvaiseEntite++; console.log(`  ✗ ${e.name.padEnd(26)} ${page.refus}`); continue; }
   if (!page?.sections?.length) { sansSource++; continue; }
   const sommaire = page.sections.map((s) => s.titre).join(', ');

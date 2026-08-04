@@ -44,7 +44,7 @@ console.log(`cibles : ${cibles.length} entité(s) sans dossier [${UNIVERSE}]`);
 const entites = []; let sansPage = 0;
 for (const e of cibles) {
   try {
-    const page = await fetchFandomSections(UNIVERSE, e.name, { maxSections: MAX_SECTIONS });
+    const page = await fetchFandomSections(UNIVERSE, e.name, { maxSections: MAX_SECTIONS, slug: e.slug });
     // Une section trop courte ne porte pas de matière : elle coûterait un aller-retour d'agent
     // pour trois mots. Le seuil de 250 caractères vient des blitz JoJo/HxH/Bleach.
     const sections = (page?.sections ?? [])

@@ -257,6 +257,25 @@ export function sameEntityName(name, title) {
   return inter === a.size || inter === b.size;   // l'un est inclus dans l'autre
 }
 
+/** Le SLUG comme seconde preuve d'identité (04/08/2026).
+ *
+ *  La garde compare le nom NIKA au titre du wiki. Quand notre nom est une TRADUCTION, les deux ne
+ *  partagent aucun mot : « Île Cactus » contre « Cactus Island », « Docteur Wheelo » contre
+ *  « Dr. Wheelo ». La garde refusait, à tort — 1 037 refus « mauvaise entité » dans la pile des
+ *  écartées, dont une majorité de ce seul genre.
+ *
+ *  Or nos slugs sont souvent frappés sur le nom D'ORIGINE (`cactus-island`, `dr-wheelo`) : c'est
+ *  notre propre trace de l'entité côté source. On s'en sert comme second témoin — mesuré sur les
+ *  216 alias confirmés à la main, il en reconnaît 45 (21 %) sans un seul appel de modèle.
+ *
+ *  Ce n'est PAS un assouplissement : le slug doit passer la même épreuve que le nom. Un slug
+ *  français (`archipel-des-sabaody`) ne matche rien et la garde refuse comme avant.
+ */
+export function sameEntityBySlug(slug, title) {
+  if (!slug || !title) return false;
+  return sameEntityName(String(slug).replace(/-/g, ' '), title);
+}
+
 /**
  * Champs de nommage d'un article : « Name : … », « Alias : … », « Also called : … ».
  * Un wiki déclare TOUJOURS les autres noms de son sujet — c'est la preuve d'alias.
@@ -317,7 +336,7 @@ export function identiteEntre(nom, titre, texte) {
  * Page canon d'une entité, en prose + cache disque.
  * @returns {Promise<{title:string,url:string,text:string}|null>} null si univers/page introuvable.
  */
-export async function fetchFandomProse(universe, name, { maxChars = 5000 } = {}) {
+export async function fetchFandomProse(universe, name, { maxChars = 5000, slug = null } = {}) {
   const api = wikiApi(universe);
   if (!api) return null;
 
@@ -333,7 +352,8 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000 } = {})
   try {
     const c = JSON.parse(await readFile(file, 'utf8'));
     // Un alias curé ne se re-juge pas « à vue » : la curation l'emporte sur le recalcul.
-    return { ...c, sameEntity: c.aliasCure ? true : c.title ? sameEntityName(name, c.title) : c.sameEntity };
+    return { ...c, sameEntity: c.aliasCure ? true
+      : c.title ? sameEntityName(name, c.title) || sameEntityBySlug(slug, c.title) : c.sameEntity };
   } catch { /* cache froid */ }
 
   // redirects=1 : « Haiya Dragon » → « Icarus » (sinon on ne récupère que « #REDIRECT »)
@@ -356,6 +376,17 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000 } = {})
       if (k?.parse?.wikitext) { title = ascii; resolvedBy = 'ascii'; j = k; }
     }
   }
+  // LE SLUG COMME TITRE (04/08) : avant de tomber dans la recherche plein texte — qui ramène
+  // n'importe quel article citant le nom — on essaie le slug dékébabé. Nos slugs gardent souvent
+  // le nom d'origine là où le champ `name` porte la traduction : `cactus-island` trouve la page
+  // du premier coup quand « Île Cactus » n'existe sur aucun wiki anglophone.
+  if (!j?.parse?.wikitext && slug) {
+    const parSlug = String(slug).replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    if (parSlug.toLowerCase() !== name.toLowerCase()) {
+      const k = await wget(parseUrl(parSlug));
+      if (k?.parse?.wikitext) { title = parSlug; resolvedBy = 'slug'; j = k; }
+    }
+  }
   if (!j?.parse?.wikitext) {                       // titre exact absent → recherche plein texte
     const found = await searchTitles(api, name, null, 1);
     if (!found.length) return null;
@@ -373,7 +404,8 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000 } = {})
     // GARDE D'IDENTITÉ (25/07) : la recherche plein texte ramenait des entités VOISINES
     // (« Giorno's Mother » → article de Giorno ; « Super 17-gou » → Android 17). On compare
     // les ensembles de mots significatifs : titre et nom doivent désigner la même entité.
-    sameEntity: cure ? true : sameEntityName(name, j.parse.title ?? title),
+    sameEntity: cure ? true
+      : sameEntityName(name, j.parse.title ?? title) || sameEntityBySlug(slug, j.parse.title ?? title),
     aliasCure: Boolean(cure),
   };
   await writeFile(file, JSON.stringify(out));
@@ -395,12 +427,12 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000 } = {})
  *
  *  @returns {Promise<{title:string,url:string,sections:Array<{index:string,titre:string,texte:string}>}|null>}
  */
-export async function fetchFandomSections(universe, name, { minChars = 350, maxSections = 24 } = {}) {
+export async function fetchFandomSections(universe, name, { minChars = 350, maxSections = 24, slug = null } = {}) {
   const api = wikiApi(universe);
   if (!api) return null;
 
   // On réutilise la résolution de titre éprouvée (redirections, alias, recherche plein texte).
-  const page = await fetchFandomProse(universe, name, { maxChars: 1200 });
+  const page = await fetchFandomProse(universe, name, { maxChars: 1200, slug });
   if (!page?.title) return null;
   const titre = page.title;
 
@@ -411,7 +443,9 @@ export async function fetchFandomSections(universe, name, { minChars = 350, maxS
   // contenu qui parle de quelqu'un d'autre — et les juges les refusaient une à une, à raison.
   // Deux issues seulement : même entité (titre concordant), ou ALIAS PROUVÉ par les champs
   // de nommage de l'article (Jealous ≡ Gelus). Tout le reste est refusé à la source.
-  const identite = page.aliasCure ? 'alias' : identiteEntre(name, titre, page.text);
+  // Le slug vaut la même preuve d'identité ici que dans la prose : sans lui, une entité au nom
+  // traduit repartait en « mauvaise entité » alors que la page trouvée était la bonne.
+  const identite = page.aliasCure || sameEntityBySlug(slug, titre) ? 'alias' : identiteEntre(name, titre, page.text);
   if (identite === 'etranger') return { title: titre, url: page.url, sections: [], refus: `mauvaise entité : article « ${titre} »` };
   const alias = identite === 'alias' ? titre : null;
 
