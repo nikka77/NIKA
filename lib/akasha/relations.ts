@@ -8,6 +8,8 @@
 // Importable des deux côtés : depuis Next (`@/lib/akasha/relations`) et depuis les scripts .mjs
 // (`../lib/akasha/relations.ts`, Node ≥ 22.18 retire les types tout seul). D'où la contrainte :
 // ce fichier ne contient QUE de la syntaxe effaçable — pas d'enum, pas de namespace.
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
 /** Natures produites par l'agent (enum figée dans scripts/agent-worker.mjs) → natures du graphe.
@@ -81,16 +83,45 @@ export function slugifier(s: unknown): string {
     .replace(/^-+|-+$/g, '');
 }
 
+/** Ce qu'une nature de relation EXIGE de sa cible. Sert uniquement à garder la passe « nom
+ *  partiel » : une relation personnelle ne peut pas pointer sur une organisation, et
+ *  réciproquement. Mesuré le 05/08 : sans cette garde, « ennemi de Big Mom » résolvait sur
+ *  « L'équipage de Big Mom », et « équipage actuel : Foxy Pirates » sur « Foxy Pirates' Referee ».
+ *  Les natures absentes de cette table (supérieur, subordonné…) acceptent les deux : un supérieur
+ *  peut être une personne comme une institution. */
+const NATURE_ATTEND_TYPE: Record<string, 'character' | 'groupe'> = {
+  'famille': 'character', 'mentor': 'character', 'élève': 'character',
+  'allié': 'character', 'ennemi': 'character', 'rival': 'character',
+  'ancien équipage': 'groupe', 'équipage actuel': 'groupe',
+};
+
+/** Registre d'alias INVERSÉ : titre du wiki (normalisé) → nom NIKA, par univers.
+ *  Chargé une fois, à la lecture du module. Ce module ne part jamais au navigateur (seuls deux
+ *  routes serveur et les scripts .mjs l'importent) ; le try/catch garantit malgré tout une
+ *  dégradation propre — sans registre, on retombe exactement sur le comportement d'avant. */
+const ALIAS_INVERSE: Map<string, string> = (() => {
+  const m = new Map<string, string>();
+  try {
+    const brut = JSON.parse(readFileSync(join(process.cwd(), 'data', 'alias-cures.json'), 'utf8')) as
+      Record<string, Record<string, string>>;
+    for (const [univers, paires] of Object.entries(brut))
+      for (const [nomNika, titreWiki] of Object.entries(paires))
+        m.set(`${univers}|${normaliserNom(titreWiki)}`, nomNika);
+  } catch { /* registre absent : la résolution garde ses quatre passes d'origine */ }
+  return m;
+})();
+
 export type RelationUsine = { avec?: unknown; nature?: unknown; [k: string]: unknown };
 export type LigneGraphe = { from_entry: string; to_entry: string; relation: string };
-type EntreeIndexee = { id: string; slug: string; name: string };
+type EntreeIndexee = { id: string; slug: string; name: string; type?: string };
 
 export type IndexUnivers = {
   univers: string;
   taille: number;
-  /** Nom libre → entrée du MÊME univers, ou null. Aucun rattrapage flou : une cible non trouvée
-   *  est perdue, jamais devinée (un faux lien coûte plus cher qu'un lien manquant). */
-  resoudre: (nom: unknown) => EntreeIndexee | null;
+  /** Nom libre → entrée du MÊME univers, ou null. Aucun rattrapage flou : une cible ambiguë est
+   *  perdue, jamais devinée (un faux lien coûte plus cher qu'un lien manquant).
+   *  `nature` (facultative) arme la garde de type sur la passe « nom partiel ». */
+  resoudre: (nom: unknown, nature?: unknown) => EntreeIndexee | null;
 };
 
 type ClientAdmin = SupabaseClient;
@@ -106,11 +137,11 @@ export async function indexerUnivers(
   const dejaLa = cache?.get(univers);
   if (dejaLa) return dejaLa;
 
-  const lignes: { id: string; slug: string; name: string; roman: string | null }[] = [];
+  const lignes: { id: string; slug: string; name: string; type: string; roman: string | null }[] = [];
   for (let debut = 0; ; debut += 1000) {
     const { data, error } = await supabase
       .from('akasha_entries')
-      .select('id, slug, name, roman:attributes->>roman_name')
+      .select('id, slug, name, type, roman:attributes->>roman_name')
       .eq('universe', univers)
       .range(debut, debut + 999);
     if (error) throw new Error(`index univers « ${univers} » : ${error.message}`);
@@ -130,7 +161,7 @@ export async function indexerUnivers(
   // on ne relie rien (le registre contient des paires comme ça, mesurées le 01/08).
   const soupleAmbigu = new Set<string>();
   for (const l of lignes) {
-    const e: EntreeIndexee = { id: l.id, slug: l.slug, name: l.name };
+    const e: EntreeIndexee = { id: l.id, slug: l.slug, name: l.name, type: l.type };
     const n = normaliserNom(l.name);
     if (n && !parNom.has(n)) parNom.set(n, e);
     const r = normaliserNom(l.roman);
@@ -146,13 +177,52 @@ export async function indexerUnivers(
   }
   for (const s of soupleAmbigu) parSouple.delete(s);
 
+  // Cinquième et sixième passes (05/08) — mesurées sur les 1 204 cibles que l'usine n'avait pas
+  // su résoudre : le registre d'alias en récupère 144 (784 arêtes) et le nom PARTIEL 159 de plus.
+  //
+  // 5. REGISTRE D'ALIAS INVERSÉ. Nos fiches portent le nom français ou japonais, l'agent écrit
+  //    parfois le titre anglais du wiki (« Straw Hat Pirates » cité 113 fois pour une fiche qui
+  //    s'appelle « L'équipage du Chapeau de Paille »). data/alias-cures.json contient déjà la
+  //    correspondance, vérifiée contre la page réelle par trois sceptiques indépendants.
+  //
+  // 6. NOM PARTIEL, mais SEULEMENT s'il est unique ET de la bonne NATURE. La règle d'origine
+  //    refusait tout nom partiel « parce qu'ambigu » ; c'est vrai quand plusieurs entrées
+  //    répondent, faux quand une seule le fait. Le vrai danger n'était pas la partialité mais le
+  //    CHANGEMENT DE NATURE : « ennemi de Big Mom » tombait sur « L'équipage de Big Mom », et
+  //    « équipage actuel : Foxy Pirates » sur « Foxy Pirates' Referee ». D'où la garde : une
+  //    relation personnelle exige un personnage, une relation de groupe exige une organisation.
+  const parPartiel = new Map<string, EntreeIndexee[]>();
+  for (const l of lignes) {
+    const e: EntreeIndexee = { id: l.id, slug: l.slug, name: l.name, type: l.type };
+    for (const mot of new Set(normaliserNom(l.name).split(' ').filter((m) => m.length > 2)))
+      parPartiel.set(mot, [...(parPartiel.get(mot) ?? []), e]);
+  }
+
   const index: IndexUnivers = {
     univers,
     taille: lignes.length,
-    resoudre(nom) {
+    resoudre(nom, nature) {
       const n = normaliserNom(nom);
       if (!n) return null;
-      return parNom.get(n) ?? parRoman.get(n) ?? parSlug.get(slugifier(nom)) ?? parSouple.get(cleSouple(nom)) ?? null;
+      const sur = parNom.get(n) ?? parRoman.get(n) ?? parSlug.get(slugifier(nom)) ?? parSouple.get(cleSouple(nom));
+      if (sur) return sur;
+
+      const parAlias = ALIAS_INVERSE.get(`${univers}|${n}`);
+      if (parAlias) {
+        const e = parNom.get(normaliserNom(parAlias));
+        if (e) return e;
+      }
+
+      // Le nom partiel ne vaut que sur UN mot significatif et UNE seule entrée candidate.
+      const mots = n.split(' ').filter((m) => m.length > 2);
+      if (mots.length !== 1) return null;
+      const cands = parPartiel.get(mots[0]) ?? [];
+      if (cands.length !== 1) return null;
+      const c = cands[0];
+      const attendu = NATURE_ATTEND_TYPE[String(nature ?? '').normalize('NFC').trim().toLowerCase()];
+      if (attendu === 'character' && c.type !== 'character') return null;
+      if (attendu === 'groupe' && c.type === 'character') return null;
+      return c;
     },
   };
   cache?.set(univers, index);
@@ -181,7 +251,9 @@ export function lignesDeGraphe(
     const avec = String(r?.avec ?? '');
     const relation = natureVersGraphe(r?.nature);
     if (!relation) { ignorees.push({ avec, motif: `nature « ${String(r?.nature)} » non versée` }); continue; }
-    const cible = index.resoudre(avec);
+    // La nature accompagne le nom : c'est elle qui garde la passe « nom partiel » contre les
+    // changements d'espèce (une personne prise pour son équipage, et réciproquement).
+    const cible = index.resoudre(avec, r?.nature);
     if (!cible) { ignorees.push({ avec, motif: 'cible absente du registre' }); continue; }
     // Une fiche qui se lie à elle-même (homonymie de résolution) : arête sans intérêt et boucle
     // visuelle sur la page — le seeder historique l'écarte déjà, on fait pareil.
