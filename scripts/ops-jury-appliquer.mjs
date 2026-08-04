@@ -20,14 +20,45 @@ for (let i = 0; i < N; i++) {
 const brut = JSON.parse(fs.readFileSync(SORTIE, 'utf8'));
 const verdicts = brut.result?.verdicts ?? brut.verdicts ?? [];
 
-const vus = new Set(); const retenus = []; let horsChargeur = 0, doublons = 0;
+/** MOTIFS INTERDITS — cassés d'office, en seconde instance motivée (04/08/2026).
+ *
+ *  Le barème dit depuis le 03/08 que le champ `name` du dossier EST la référence du nom : une
+ *  romanisation ou une traduction différente dans la source n'est jamais un défaut. La règle a
+ *  été réécrite positivement, et six rejets de la même famille sont quand même repassés le
+ *  lendemain (« Kano Kuni » contre « Kano Country », le macron d'« Ashisogi Jizō »,
+ *  « Don Quichotte » contre « Donquixote »).
+ *
+ *  Un barème s'oublie au fil d'une longue liste ; un filtre à la sortie, non. On ne discute donc
+ *  plus la règle avec le juge : on relit ses motifs, et ceux qui tombent dans une famille
+ *  interdite deviennent des approbations, avec le motif d'origine conservé pour l'audit.
+ */
+const MOTIFS_INTERDITS = [
+  { famille: 'nom / romanisation',
+    test: /romanis|orthograph|\bnom\b[^.]{0,40}(incorrect|erron|diff)|(au lieu de|et non|plutôt que)\s*[«"'']/i },
+];
+const casse = (motif) => MOTIFS_INTERDITS.find((f) => f.test.test(String(motif ?? '')));
+
+const vus = new Set(); const retenus = []; let horsChargeur = 0, doublons = 0; const casses = [];
 for (const v of verdicts) {
   if (!autorises.has(v.id)) { horsChargeur++; continue; }
   if (vus.has(v.id)) { doublons++; continue; }
-  vus.add(v.id); retenus.push(v);
+  vus.add(v.id);
+  const f = v.decision === 'reject' ? casse(v.motif) : null;
+  if (f) {
+    casses.push({ id: v.id, famille: f.famille, motif: v.motif });
+    retenus.push({ id: v.id, decision: 'approve',
+      motif: `seconde instance : rejet cassé (famille interdite « ${f.famille} ») — le champ name du dossier EST la référence du nom NIKA. Motif d'origine : ${String(v.motif).slice(0, 150)}` });
+    continue;
+  }
+  retenus.push(v);
 }
 console.log(`chargeurs : ${autorises.size} production(s) · verdicts rendus : ${verdicts.length}`);
 console.log(`retenus ${retenus.length} · hors chargeur ${horsChargeur} (JETÉS) · doublons ${doublons}`);
+if (casses.length) {
+  console.log(`⚖ ${casses.length} rejet(s) cassé(s) en seconde instance (motif interdit) :`);
+  for (const c of casses.slice(0, 10)) console.log(`   · ${c.id} [${c.famille}] ${String(c.motif).slice(0, 110)}`);
+  if (casses.length > 10) console.log(`   … et ${casses.length - 10} autre(s)`);
+}
 const approuves = retenus.filter((v) => v.decision === 'approve');
 console.log(`→ ${approuves.length} approbation(s), ${retenus.length - approuves.length} rejet(s)`);
 if (process.argv.includes('--dry')) process.exit(0);
