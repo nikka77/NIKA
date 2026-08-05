@@ -15,6 +15,7 @@ import Markdown from '@/components/akasha/Markdown';
 import CharacterZone from '@/components/akasha/zone/CharacterZone';
 import OrganizationZone from '@/components/akasha/zone/OrganizationZone';
 import EraZone from '@/components/akasha/zone/EraZone';
+import DossierSections from '@/components/akasha/DossierSections';
 import Crumbs from '@/components/akasha/Crumbs';
 
 export const revalidate = 3600; // ISR 1 h — page la plus visitée du domaine, tournait sans cache
@@ -80,6 +81,14 @@ export default async function AkashaEntryPage({ params }: Props) {
         <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
           <Crumbs universe={entry.universe} category={category} name={entry.name} />
           <OrganizationZone entry={entry} />
+          {/* Le DOSSIER (05/08) — 141 fiches status portaient des sections que cette branche
+              ne rendait jamais. Monté ICI, dans la page, plutôt que dans la zone : la zone est
+              un composant client au layout dense, la page contrôle déjà le conteneur. */}
+          <DossierSections
+            sections={(entry.attributes as Record<string, unknown>).sections}
+            accent={(entry.universe && universeMeta(entry.universe)?.color) || m.color}
+            style={{ marginTop: 28 }}
+          />
         </div>
       </main>
     );
@@ -155,29 +164,9 @@ export default async function AkashaEntryPage({ params }: Props) {
               </div>
             </section>
           )}
-          {/* ── LES SECTIONS (L26, 01/08) — le dossier long, écrit une section par agent sur le
-            découpage du wiki. C'est ici que la fiche cesse d'être une vignette : Sharingan passe
-            de 698 caractères de bio à 8 939 répartis en Éveil / Capacités / Évolutions /
-            Anecdotes. L'ordre est celui de l'article canon (l'index vient du wiki). */}
-        {(() => {
-          const sections = (entry.attributes as Record<string, unknown>)?.sections;
-          if (!Array.isArray(sections) || !sections.length) return null;
-          return (
-            <section>
-              {(sections as { i?: string; titre?: string; texte?: string }[])
-                .filter((s) => s?.titre && s?.texte)
-                .map((s, i) => (
-                  <div key={s.i ?? i} style={{ marginBottom: '1.6rem' }}>
-                    <h2 className="akasha-section-title">{s.titre}</h2>
-                    <p style={{
-                      fontFamily: 'var(--fo)', fontSize: 14.5, color: 'var(--td2)',
-                      lineHeight: 1.75, margin: 0, whiteSpace: 'pre-line',
-                    }}>{s.texte}</p>
-                  </div>
-                ))}
-            </section>
-          );
-        })()}
+          {/* Le DOSSIER — composant partagé depuis le 05/08 (il vivait ici en copie locale,
+            et nulle part sur les gabarits status/ères/générique : 791 fiches muettes). */}
+        <DossierSections sections={(entry.attributes as Record<string, unknown>).sections} accent={accent} />
 
         <EntityAttributes type={entry.type} attributes={entry.attributes} universe={entry.universe} />
           <SimilarSection universe={entry.universe} cat={category} type={entry.type} excludeSlug={entry.slug} />
@@ -193,6 +182,13 @@ export default async function AkashaEntryPage({ params }: Props) {
         <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
           <Crumbs universe={entry.universe} category={category} name={entry.name} />
           <EraZone entry={entry} />
+          {/* Le DOSSIER (05/08) — même réparation que la branche status : le rouleau temporel
+              raconte les ères, les sections racontent le reste, les deux coexistent. */}
+          <DossierSections
+            sections={(entry.attributes as Record<string, unknown>).sections}
+            accent={(entry.universe && universeMeta(entry.universe)?.color) || m.color}
+            style={{ marginTop: 28 }}
+          />
         </div>
       </main>
     );
@@ -338,6 +334,15 @@ export default async function AkashaEntryPage({ params }: Props) {
             </section>
           );
         })()}
+
+        {/* Le DOSSIER (05/08) — le gabarit générique (lieux, artefacts, techniques hors
+            attaque, professions) n'affichait JAMAIS les sections : c'était le plus gros
+            contingent des 791 fiches muettes. */}
+        <DossierSections
+          sections={(entry.attributes as Record<string, unknown>).sections}
+          accent={(entry.universe && universeMeta(entry.universe)?.color) || m.color}
+          style={{ marginBottom: 24 }}
+        />
 
         <EntityAttributes type={entry.type} attributes={entry.attributes} universe={entry.universe} />
 
