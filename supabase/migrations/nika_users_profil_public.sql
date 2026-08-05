@@ -14,56 +14,54 @@
 -- chaque utilisateur deviendraient publics. Une colonne d'autorité ne doit pas être seulement
 -- non-modifiable : elle ne doit pas être LISIBLE par n'importe qui.
 --
--- LE REMÈDE. Les politiques RLS sont par LIGNE, jamais par colonne : on ne peut pas dire « sa
--- propre ligne en entier, celle des autres en partie ». On sépare donc les deux usages —
---   · `users`            → lisible par son seul propriétaire (et par service_role) ;
---   · `profils_publics`  → vue en lecture libre, limitée aux colonnes d'affichage.
+-- LE PIÈGE À NE PAS TOMBER DEDANS (première version de ce fichier, corrigée avant application) :
+-- retirer les colonnes sensibles au rôle `authenticated` par GRANT casse le portefeuille — un
+-- utilisateur ne peut plus lire SON PROPRE solde. Les GRANT sont par rôle, jamais par ligne.
 --
--- IMPACT APPLICATIF MESURÉ : une seule lecture d'autrui dans tout le dépôt, le classement
--- (app/leaderboard/page.tsx), et elle ne demande QUE username, level_name, xp, avatar_url — donc
--- exactement les colonnes de la vue. Les pages d'administration passent par service_role.
+-- LA BONNE RÉPARTITION, qui sépare les deux questions :
+--   · QUELLES LIGNES → politique RLS. `authenticated` ne voit que la sienne, en entier.
+--   · QUELLES COLONNES pour le public → une VUE, lisible sans droit sur la table.
 --
--- APPLICATION :
+-- IMPACT APPLICATIF MESURÉ AVANT ÉCRITURE : une seule lecture d'autrui dans tout le dépôt, le
+-- classement (app/leaderboard/page.tsx), et elle ne demande QUE username, level_name, xp,
+-- avatar_url — exactement les colonnes de la vue. Les lectures de solde, de kyc_level et de
+-- full_name ciblent toutes la ligne de l'utilisateur connecté. Les pages d'administration passent
+-- par service_role, que les politiques ne concernent pas.
+--
+-- APPLICATION : SQL Editor du dashboard Supabase, ou
 --   DB_PASSWORD=… node scripts/apply-sql.cjs supabase/migrations/nika_users_profil_public.sql
--- APRÈS APPLICATION, vérifier (doit rendre 0 ligne) :
---   node --env-file=.env.local scripts/ops-sonde-schema.mjs
+-- VÉRIFICATION APRÈS COUP :
+--   node --env-file=.env.local scripts/ops-sonde-schema.mjs   ← l'alerte doit disparaître
 
--- 1. La vue publique : uniquement ce qu'un classement ou un profil visible doit montrer.
---    `security_invoker = on` : la vue n'accorde aucun privilège de plus que celui qui l'interroge,
---    elle ne sert qu'à restreindre les COLONNES.
+-- 1. LA VUE PUBLIQUE. `security_invoker = off` (le défaut historique) : elle s'exécute avec les
+--    droits de son propriétaire, donc elle reste lisible même quand l'appelant n'a plus aucun
+--    droit sur `users`. C'est précisément ce qu'on veut : le public passe par la vue, jamais par
+--    la table.
 create or replace view public.profils_publics
-  with (security_invoker = on) as
+  with (security_invoker = off) as
   select id, username, avatar_url, xp, level, level_name, badge_tier, is_pro, city, bio
   from public.users;
 
 grant select on public.profils_publics to anon, authenticated;
 
--- 2. `users` redevient privée : chacun sa ligne. service_role n'est pas soumis aux politiques.
+-- 2. LA TABLE REDEVIENT PRIVÉE. Chacun sa ligne — en ENTIER, pour que le portefeuille, le niveau
+--    et le statut KYC de l'utilisateur connecté restent lisibles par lui.
 drop policy if exists users_select_public on public.users;
 drop policy if exists "users are viewable by everyone" on public.users;
+drop policy if exists users_lecture_profil_public on public.users;
 drop policy if exists users_lecture_proprietaire on public.users;
 create policy users_lecture_proprietaire
   on public.users for select
+  to authenticated
   using (auth.uid() = id);
 
--- 3. La vue doit rester lisible même quand la ligne ne l'est plus : elle a besoin d'une politique
---    de lecture ouverte sur les seules colonnes qu'elle expose. On la porte par une politique
---    dédiée, restreinte aux lignes que l'on accepte de montrer (ici toutes : un profil de
---    classement est public par nature).
-drop policy if exists users_lecture_profil_public on public.users;
-create policy users_lecture_profil_public
-  on public.users for select
-  to anon, authenticated
-  using (true);
--- ⚠ La politique ci-dessus rouvrirait la table entière si elle restait seule : c'est pourquoi
---    les COLONNES sensibles sont retirées par GRANT juste en dessous. Politique = lignes,
---    grant = colonnes ; il faut les deux.
-revoke select on public.users from anon, authenticated;
-grant select (id, username, avatar_url, xp, level, level_name, badge_tier, is_pro, city, bio)
-  on public.users to anon, authenticated;
+-- 3. LE PUBLIC N'A PLUS RIEN SUR LA TABLE. La clé anon n'obtient plus une seule colonne de
+--    `users` : elle lit `profils_publics` ou rien. (`authenticated` garde ses colonnes : c'est la
+--    politique ci-dessus qui le limite à sa propre ligne.)
+revoke select on public.users from anon;
 
 comment on view public.profils_publics is
   'Profil visible par tous (classement, mentions). La table users garde les colonnes d''autorité '
-  '(nika_credits, kyc_level, is_verified) et les PII (full_name, wallet_address), retirées du '
-  'GRANT public le 05/08/2026 : une colonne d''autorité ne doit pas être seulement non-modifiable, '
-  'elle ne doit pas être lisible.';
+  '(nika_credits, kyc_level, is_verified) et les PII (full_name, wallet_address) : depuis le '
+  '05/08/2026 elles ne sont lisibles que par leur propriétaire connecté. Une colonne d''autorité '
+  'ne doit pas être seulement non-modifiable, elle ne doit pas être lisible.';

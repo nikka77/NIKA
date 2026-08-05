@@ -42,14 +42,17 @@ async function tout(table, colonnes) {
 
 const entries = await tout('akasha_entries', 'id,slug,type,name,universe,summary,description,image_url,attributes,rarity');
 const relations = await tout('akasha_relations', '*');
+// Depuis le 05/08 les sections vivent dans leur propre table : un instantané qui les oublierait
+// ne serait plus un point de retour, il perdrait 19 545 sections sans le dire.
+const sections = await tout('akasha_sections', 'id,entry_id,idx,titre,texte,source');
 
-const corps = JSON.stringify({ pris_le: new Date().toISOString(), entries, relations });
+const corps = JSON.stringify({ pris_le: new Date().toISOString(), entries, relations, sections });
 const fichier = path.join(DIR, `akasha-${stamp}.json.gz`);
 fs.writeFileSync(fichier, zlib.gzipSync(corps, { level: 9 }));
 
 const octets = fs.statSync(fichier).size;
 console.log(`✓ instantané : ${fichier}`);
-console.log(`  ${entries.length} entrée(s) · ${relations.length} relation(s) · ${(octets / 1048576).toFixed(1)} Mo compressés`);
+console.log(`  ${entries.length} entrée(s) · ${relations.length} relation(s) · ${sections.length} section(s) · ${(octets / 1048576).toFixed(1)} Mo compressés`);
 
 // Rotation : un instantané qu'on ne purge jamais finit par remplir le disque de la machine qu'il
 // devait protéger.

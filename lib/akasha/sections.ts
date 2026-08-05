@@ -12,11 +12,10 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 
 export type Section = { i: string; titre?: string; texte: string };
 
-/** REPLI TEMPORAIRE. Tant que la migration n'a pas tourné (elle attend une commande de Dan, le
- *  DDL demandant le mot de passe de la base), les sections vivent encore dans le JSONB. Ce module
- *  lit donc la TABLE si elle répond, le JSONB sinon — pour qu'aucune page ne casse entre les deux
- *  états. Ce repli disparaît dès que `ops-migrer-sections.mjs --purger` a tourné ; il est daté
- *  exprès pour qu'on ne l'oublie pas. */
+/** FILET, plus un repli. La migration a tourné le 05/08 : 19 545 sections copiées, 4 645 fiches
+ *  vérifiées une par une, puis le JSONB vidé (0 fiche sur 7 691 le porte encore). `attributsFiche`
+ *  n'est donc plus jamais utilisé en pratique — il reste accepté pour qu'une restauration
+ *  d'instantané antérieur au 05/08 s'affiche quand même, sans page blanche. */
 let tableDisponible: boolean | null = null;
 
 async function laTableRepond(supabase: SupabaseClient): Promise<boolean> {
