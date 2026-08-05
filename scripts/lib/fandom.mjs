@@ -311,6 +311,35 @@ export function resolutionPartielle(nom, titre) {
     .filter((m) => m.length > 2).some((m) => !t.includes(m));
 }
 
+const motsSignificatifs = (s) => new Set(String(s ?? '').toLowerCase()
+  .normalize('NFD').replace(/[̀-ͯ]/g, '')
+  .split(/[^a-z0-9]+/).filter((m) => m.length > 2));
+
+/** LA PAGE EST-ELLE PLUS GÉNÉRALE QUE CE QU'ON DEMANDE ? (05/08/2026)
+ *
+ *  Classe d'erreur mesurée le 04/08 puis re-mesurée le 05 : notre nom désigne une VARIANTE, la
+ *  recherche rend la page PARENTE, et l'agent décrit consciencieusement le parent. Six fiches
+ *  publiées ainsi, retirées à la main — « Eternal Mangekyō Sharingan » décrit par la page du
+ *  Mangekyō de base (elle n'explique jamais ce qui rend l'Éternel éternel), « Summoning Technique
+ *  (Hōzuki Castle's Ninken) » par la page générique de l'invocation, « Chūnin Exams Assistant »
+ *  par la page de l'examen. La garde d'identité les laissait toutes passer : les mots du titre
+ *  SONT dans notre nom, donc l'inclusion est vraie — c'est justement le problème.
+ *
+ *  La règle : si les mots du titre forment un sous-ensemble STRICT des mots de notre nom, la page
+ *  couvre moins que ce qu'on demande. Validée sur les 6 cas réels (6/6 bloqués) et sur 12
+ *  résolutions légitimes (12/12 épargnées — traductions, romanisations, désambiguïsations).
+ *
+ *  Ne couvre PAS l'entité voisine à nombre de mots égal (« Clan Yūhi » → « Kurenai Yūhi ») :
+ *  celle-là relève d'une autre garde, et il vaut mieux une règle étroite et sûre qu'une large
+ *  qui refuse du bon travail.
+ */
+export function pagePlusGenerale(nom, titre) {
+  const n = motsSignificatifs(nom), t = motsSignificatifs(titre);
+  if (!n.size || !t.size || t.size >= n.size) return null;
+  if (![...t].every((m) => n.has(m))) return null;
+  return `page plus générale que l'entité : « ${titre} » ne couvre pas « ${nom} »`;
+}
+
 /**
  * Champs de nommage d'un article : « Name : … », « Alias : … », « Also called : … ».
  * Un wiki déclare TOUJOURS les autres noms de son sujet — c'est la preuve d'alias.
@@ -393,7 +422,7 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000, slug =
     return { ...c,
       sameEntity: c.aliasCure ? true
         : c.title ? sameEntityName(name, c.title) || sameEntityBySlug(slug, c.title) : c.sameEntity,
-      pageOeuvre: pageDOeuvre(c.title, c.text),
+      pageOeuvre: pageDOeuvre(c.title, c.text) ?? pagePlusGenerale(name, c.title),
       resolutionPartielle: resolutionPartielle(name, c.title) };
   } catch { /* cache froid */ }
 
@@ -451,7 +480,7 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000, slug =
       : sameEntityName(name, titreFinal) || sameEntityBySlug(slug, titreFinal),
     aliasCure: Boolean(cure),
     // GARDE DE NATURE (05/08) : la page trouvée est-elle seulement une page d'ENTITÉ ?
-    pageOeuvre: pageDOeuvre(titreFinal, texte),
+    pageOeuvre: pageDOeuvre(titreFinal, texte) ?? pagePlusGenerale(name, titreFinal),
     // RÉSOLUTION PARTIELLE : un mot du nom demandé manque au titre retenu. Ce n'est pas une
     // faute en soi (« Île Cactus » → « Cactus Island » est une traduction), mais c'est là que
     // se concentrent les erreurs d'espèce — 5 fautes sur 46 mesurées côté One Piece le 04/08.
