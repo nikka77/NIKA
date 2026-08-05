@@ -9,6 +9,16 @@
 // sans la course qui les avait perdues. Idempotent : relançable sans risque.
 //
 // Usage : node --env-file=.env.local scripts/ops-reposer-sections.mjs [--dry] [--universe="Death Note"]
+// ⛔ NEUTRALISÉ LE 05/08/2026 — ce script repose des sections dans akasha_entries.attributes.sections,
+// un emplacement PURGÉ le 05/08 (les sections vivent dans la table akasha_sections, une ligne
+// chacune, contrainte d'unicité). Le relancer repolluerait le JSONB avec ~19 000 sections que le
+// site ne lit plus — et la migration qui a suivi devrait être refaite. Sa raison d'être (rejouer
+// une pose perdue par la concurrence du lire-modifier-écrire) a disparu avec la table : la
+// contrainte (entry_id, idx) rend la pose idempotente par construction.
+console.error('⛔ ops-reposer-sections est neutralisé depuis le 05/08/2026 : les sections vivent dans');
+console.error('   la table akasha_sections. Pour reposer une section : lib/akasha/sections.ts → poserSections.');
+process.exit(1);
+
 import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
 

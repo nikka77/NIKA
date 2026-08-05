@@ -31,12 +31,30 @@ const AUTRES_SEULS = process.argv.includes('--autres-seuls');
 if (!UNIVERSE) { console.error('--universe obligatoire'); process.exit(1); }
 
 const s = clientSite();
+// « Sans dossier » se lit dans akasha_sections depuis la migration du 05/08 : le JSONB
+// attributes.sections est purgé, donc .is('attributes->sections', null) était devenu
+// TOUJOURS-VRAI — le blitz aurait re-découpé l'univers entier. On tire UNE FOIS le Set
+// des entry_id déjà pourvus (paginé : .select() plafonne à 1 000 lignes en silence).
+const dejaDossier = new Set();
+for (let d = 0; ; d += 1000) {
+  const { data, error } = await s.from('akasha_sections').select('entry_id').order('id').range(d, d + 999);
+  if (error) { console.error('✗ lecture akasha_sections :', error.message); process.exit(1); }
+  for (const r of data ?? []) dejaDossier.add(r.entry_id);
+  if ((data ?? []).length < 1000) break;
+}
 // Personnages d'abord (c'est la jauge de Dan), puis le reste — chacun sans dossier.
+// Pagination complète AVANT le filtre JS : un .limit() côté SQL pouvait ne ramener que des
+// fiches déjà pourvues et rendre un lot vide alors qu'il restait du travail plus loin.
 const lot = async (persos) => {
-  const { data } = await s.from('akasha_entries').select('slug,name,summary,type')
-    .eq('universe', UNIVERSE)[persos ? 'eq' : 'neq']('type', 'character')
-    .is('attributes->sections', null).limit(LIMIT);
-  return data ?? [];
+  const rows = [];
+  for (let d = 0; ; d += 1000) {
+    const { data } = await s.from('akasha_entries').select('id,slug,name,summary,type')
+      .eq('universe', UNIVERSE)[persos ? 'eq' : 'neq']('type', 'character')
+      .order('slug').range(d, d + 999);
+    rows.push(...(data ?? []));
+    if ((data ?? []).length < 1000) break;
+  }
+  return rows.filter((e) => !dejaDossier.has(e.id));
 };
 const cibles = [...(AUTRES_SEULS ? [] : await lot(true)), ...(PERSOS_SEULS ? [] : await lot(false))].slice(0, LIMIT);
 console.log(`cibles : ${cibles.length} entité(s) sans dossier [${UNIVERSE}]`);

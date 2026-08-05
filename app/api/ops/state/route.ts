@@ -237,20 +237,44 @@ export async function GET(req: Request) {
   // le tick lent, donc toute la console. 6 s ou rien : le client garde la dernière valeur.
   const avecPlafond = <T,>(p: Promise<T>): Promise<T | null> =>
     Promise.race([p, new Promise<null>((r) => setTimeout(() => r(null), 6_000))]);
-  const univers = !complet ? null : await avecPlafond(Promise.all(UNIVERS.map(async (u) => {
-    const base = () => clientSite().from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u);
-    const [{ count: total }, { count: avecFr }, { count: avecDossier },
-      { count: aTotal }, { count: aFr }, { count: aDossier }] = await Promise.all([
-      base().eq('type', 'character'),
-      base().eq('type', 'character').not('attributes->>descFr', 'is', null),
-      base().eq('type', 'character').not('attributes->sections', 'is', null),
-      base().neq('type', 'character'),
-      base().neq('type', 'character').not('attributes->>descFr', 'is', null),
-      base().neq('type', 'character').not('attributes->sections', 'is', null),
-    ]);
-    return { nom: u, total: total ?? 0, avecFr: avecFr ?? 0, avecDossier: avecDossier ?? 0,
-      autres: { total: aTotal ?? 0, avecFr: aFr ?? 0, avecDossier: aDossier ?? 0 } };
-  })));
+  const univers = !complet ? null : await avecPlafond((async () => {
+    // « avecDossier » se lit dans akasha_sections depuis la migration du 05/08 : le JSONB
+    // attributes.sections est PURGÉ (0 fiche sur 7 691) — le compter là affichait zéro partout.
+    // Deux scans paginés (leçon du 01/08 : .select() plafonne à 1 000 lignes en silence) :
+    // les entry_id DISTINCTS porteurs d'une section, puis id → (univers, type) pour croiser.
+    // C'est la console localhost — le coût de ~25 pages est acceptable.
+    const avecSections = new Set<string>();
+    for (let d = 0; ; d += 1000) {
+      const { data } = await clientSite().from('akasha_sections')
+        .select('entry_id').order('id').range(d, d + 999);
+      for (const r of data ?? []) avecSections.add(r.entry_id as string);
+      if (!data || data.length < 1000) break;
+    }
+    const dossiers = new Map<string, { persos: number; autres: number }>();
+    for (let d = 0; ; d += 1000) {
+      const { data } = await clientSite().from('akasha_entries')
+        .select('id, universe, type').order('id').range(d, d + 999);
+      for (const r of data ?? []) {
+        if (!avecSections.has(r.id as string)) continue;
+        const m = dossiers.get(r.universe as string) ?? { persos: 0, autres: 0 };
+        if (r.type === 'character') m.persos++; else m.autres++;
+        dossiers.set(r.universe as string, m);
+      }
+      if (!data || data.length < 1000) break;
+    }
+    return Promise.all(UNIVERS.map(async (u) => {
+      const base = () => clientSite().from('akasha_entries').select('*', { count: 'exact', head: true }).eq('universe', u);
+      const [{ count: total }, { count: avecFr }, { count: aTotal }, { count: aFr }] = await Promise.all([
+        base().eq('type', 'character'),
+        base().eq('type', 'character').not('attributes->>descFr', 'is', null),
+        base().neq('type', 'character'),
+        base().neq('type', 'character').not('attributes->>descFr', 'is', null),
+      ]);
+      const d = dossiers.get(u) ?? { persos: 0, autres: 0 };
+      return { nom: u, total: total ?? 0, avecFr: avecFr ?? 0, avecDossier: d.persos,
+        autres: { total: aTotal ?? 0, avecFr: aFr ?? 0, avecDossier: d.autres } };
+    }));
+  })());
 
   return NextResponse.json({
     queue: metrics?.[0] ?? { queue_length: 0, total_messages: 0 },
@@ -352,8 +376,9 @@ async function applyResult(supabase: Admin, id: number, cacheIndex?: Map<string,
     // L'histoire entre personnages (Law ↔ Don Quichotte…) ; les preuves restent dans agent_results.
     const rel = (row.result?.relations ?? []) as Array<Record<string, string>>;
     if (!rel.length) return false;
-    patch.relations = rel.map(({ avec, nature, periode, resume }) => ({ avec, nature, periode, resume }));
-    patch.relationsSource = row.model;
+    // UNE ARÊTE VIT DANS LE GRAPHE (05/08) : plus d'écriture dans attributes.relations — la
+    // contrainte SQL la rejette, et c'est cet update qui cassait « Appliquer » à 100 % pour
+    // les productions de relations. Le versement (versGraphe → poserAuGraphe) suffit.
     versGraphe = rel;
   } else if (row.task_type === 'toilettage_fr' && !(row.payload as Record<string, string>)?.section_index) {
     // Toilettage d'une DESCRIPTION (Naruto/One Piece : leur prose est descFr, pas des sections).

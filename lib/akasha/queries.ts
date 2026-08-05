@@ -304,6 +304,32 @@ export async function listBounties(limit = 60): Promise<(AkashaEntryCard & { bou
     .slice(0, limit);
 }
 
+/** LES ÂGES : l'âge canon est une chaîne (« 12–13 », « 30 ans », « 13 (Kakashi Gaiden) »)
+ *  → parsing du premier nombre + tri côté serveur Node, même traitement que les primes.
+ *  Branché en remplacement de height_cm (0 fiche au 05/08) — 733 fiches portent un âge, vérifié. */
+export async function listAges(): Promise<(AkashaEntryCard & { age: string; ageValue: number })[]> {
+  const supabase = await createClient();
+  if (!supabase) return [];
+  const rows: (AkashaEntryCard & { age: string })[] = [];
+  const PAGE = 1000;
+  for (let from = 0; ; from += PAGE) {
+    const { data } = await supabase
+      .from('akasha_entries')
+      .select(`${CARD_COLS}, age:attributes->>age`)
+      .eq('type', 'character')
+      .not('attributes->>age', 'is', null)
+      .order('slug')
+      .range(from, from + PAGE - 1);
+    const batch = (data as (AkashaEntryCard & { age: string })[] | null) ?? [];
+    rows.push(...batch);
+    if (batch.length < PAGE) break;
+  }
+  return rows
+    .map((r) => ({ ...r, ageValue: parseInt(String(r.age).match(/\d+/)?.[0] ?? '', 10) || 0 }))
+    .filter((r) => r.ageValue > 0)
+    .sort((a, b) => b.ageValue - a.ageValue);
+}
+
 export interface UniverseInsights {
   total: number;
   byType: Record<string, number>;

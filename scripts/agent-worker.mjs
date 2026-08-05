@@ -9,6 +9,7 @@ import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { z } from 'zod';
 import { fetchFandomProse, citeLeNom } from './lib/fandom.mjs';
+import { poserSections } from '../lib/akasha/sections.ts';
 import { expertFor, axesSchema, AXES, checkPreuves, splitPreuves } from './lib/akasha-axes.mjs';
 import { ROLES, angleFor } from './lib/akasha-roles.mjs';
 import { nomExpert, memoireExpert, expertNiche } from './lib/akasha-experts.mjs';
@@ -1627,23 +1628,25 @@ async function autoAppliquerMajorite(rowId) {
  *  que la nôtre est bien arrivée. Si un voisin nous a doublés entre-temps, on recommence.
  *  Trois tentatives suffisent largement à 6 sections de front ; au-delà on renonce plutôt que
  *  de boucler, et la fiche repartira au prochain passage du remplisseur. */
-async function ajouterSection(slug, neuve, modele) {
-  for (let essai = 1; essai <= 3; essai++) {
-    const { data: entry } = await clientSite().from('akasha_entries').select('attributes').eq('slug', slug).single();
-    if (!entry) return false;
-    const attrs = { ...(entry.attributes ?? {}) };
-    const dejaLa = Array.isArray(attrs.sections) ? attrs.sections : [];
-    attrs.sections = [...dejaLa.filter((x) => String(x.i) !== String(neuve.i)), neuve]
-      .sort((a, b) => Number(a.i) - Number(b.i));
-    attrs.sectionsSource = modele;
-    await clientSite().from('akasha_entries').update({ attributes: attrs }).eq('slug', slug);
-
-    const { data: apres } = await clientSite().from('akasha_entries').select('attributes').eq('slug', slug).single();
-    const posees = Array.isArray(apres?.attributes?.sections) ? apres.attributes.sections : [];
-    if (posees.some((x) => String(x.i) === String(neuve.i))) return true;   // la nôtre a tenu
+async function ajouterSection(slug, neuve, modele, remplacer = false) {
+  // UNE SECTION = UNE LIGNE (05/08). L'ancienne version relisait attributes.sections, ajoutait
+  // la sienne et réécrivait l'objet entier, avec 3 essais pour survivre à la concurrence
+  // (Sharingan, 01/08 : deux sections appliquées, UNE seule en base). Depuis la migration,
+  // attributes.sections est PURGÉ : continuer d'y écrire, c'était produire des sections que le
+  // site ne lit plus — perte silencieuse, trouvée par la vague d'organisation du 05/08 au soir.
+  // La table akasha_sections rend le verrou inutile : contrainte d'unicité (entry_id, idx),
+  // deux écrivains ne se perdent plus. `remplacer` n'est vrai que pour le toilettage,
+  // qui corrige une section existante — une production neuve n'écrase jamais du validé.
+  const { data: entry } = await clientSite().from('akasha_entries').select('id').eq('slug', slug).single();
+  if (!entry) return false;
+  try {
+    await poserSections(clientSite(), entry.id,
+      [{ i: String(neuve.i), titre: neuve.titre, texte: neuve.texte }], modele, remplacer);
+    return true;
+  } catch (e) {
+    console.log(`  ⚠ section ${neuve.i} de ${slug} non posée : ${String(e.message ?? e).slice(0, 90)}`);
+    return false;
   }
-  console.log(`  ⚠ section ${neuve.i} de ${slug} perdue en concurrence après 3 essais`);
-  return false;
 }
 
 async function verrouEtAppliquer(rowId, filtres) {
@@ -1716,28 +1719,33 @@ async function verrouEtAppliquer(rowId, filtres) {
     const p = gagne.payload ?? {};
     const texte = gagne.result?.texte;
     if (!p.section_index || !texte || !gagne.result?.corrige) return false;
-    const pose = await ajouterSection(gagne.target_slug, { i: p.section_index, titre: p.titre, texte }, gagne.model);
+    const pose = await ajouterSection(gagne.target_slug, { i: p.section_index, titre: p.titre, texte }, gagne.model, true);
     if (!pose) return false;
     console.log(`  ⚡ français corrigé — « ${p.titre} » : ${gagne.target_slug}`);
     return true;
   } else if (gagne.task_type === 'akasha_relations') {
+    // UNE ARÊTE VIT DANS LE GRAPHE, jamais dans attributes — la contrainte SQL du 05/08
+    // rejette d'ailleurs toute écriture de `relations` dans le JSONB. C'est elle qui a révélé
+    // ce chemin resté branché sur l'ancien emplacement : l'update échouait, et l'erreur
+    // n'était pas lue. Le versement au graphe devient donc TOUTE l'application.
     const rel = gagne.result?.relations ?? [];
     if (!rel.length) return false;
-    patch.relations = rel.map(({ avec, nature, periode, resume }) => ({ avec, nature, periode, resume }));
-    patch.relationsSource = gagne.model;
+    try {
+      const bilan = await poserAuGraphe(supabase, { resultId: gagne.id, slug: gagne.target_slug, relations: rel });
+      if (bilan.posees) console.log(`  ⚑ ${bilan.posees} arête(s) versée(s) au graphe : ${gagne.target_slug}`);
+    } catch (e) { console.log('  ⚑ graphe non versé (rattrapable par backfill) :', String(e).slice(0, 100)); }
+    console.log(`  ⚡ auto-appliquée (double valide) : ${gagne.target_slug}`);
+    return true;
   } else return false;
-  await clientSite().from('akasha_entries').update({ attributes: patch }).eq('slug', gagne.target_slug);
+  // L'erreur est LUE (05/08) : ce même update a échoué en silence pendant des heures quand la
+  // contrainte des relations est arrivée — un échec muet ici marque « appliqué » sans écrire.
+  const { error: errPatch } = await clientSite().from('akasha_entries').update({ attributes: patch }).eq('slug', gagne.target_slug);
+  if (errPatch) { console.log(`  ✗ application ${gagne.target_slug} : ${errPatch.message.slice(0, 90)}`); return false; }
   // MIROIR COMPLET de applyResult (audit du 01/08) : l'application manuelle versait les
   // relations au graphe, l'automatique non — 25 fiches ⚡ sur 46 n'avaient posé AUCUNE arête,
   // et sans journal l'annulation d'audit serait tombée en régime « recalcul » au risque
   // d'emporter une arête curée. Même try/catch non bloquant que la route : le graphe est un
   // bonus, un upsert cassé ne doit pas laisser la fiche à moitié appliquée.
-  if (gagne.task_type === 'akasha_relations') {
-    try {
-      const bilan = await poserAuGraphe(supabase, { resultId: gagne.id, slug: gagne.target_slug, relations: gagne.result?.relations ?? [] });
-      if (bilan.posees) console.log(`  ⚑ ${bilan.posees} arête(s) versée(s) au graphe : ${gagne.target_slug}`);
-    } catch (e) { console.log('  ⚑ graphe non versé (rattrapable par backfill) :', String(e).slice(0, 100)); }
-  }
   console.log(`  ⚡ auto-appliquée (double valide) : ${gagne.target_slug}`);
   return true;
 }

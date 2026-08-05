@@ -72,6 +72,10 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
     listFamilyCounts({ universe, cat }),
   ]);
   const hubSlug = universe ? universeHubSlug(universe) : undefined;
+  // Le compteur du hero vient des counts DÉJÀ chargés (universeCounts) — il était figé en dur
+  // à « 7 691 » et mentait dès la première entrée ajoutée. Repli sur la dernière valeur connue
+  // si la base est injoignable (0 entrée affichée serait pire que légèrement périmée).
+  const totalEntrees = universeCounts.reduce((n, u) => n + u.count, 0) || 7691;
 
   return (
     <main>
@@ -114,7 +118,7 @@ export default async function AkashaPage({ searchParams }: { searchParams?: Prom
               margin: '0.7rem 0 1.2rem',
             }}
           >
-            Le registre de tout ce qui existe — 7 691 entrées reliées à travers 8 univers.
+            Le registre de tout ce qui existe — {totalEntrees.toLocaleString('fr-FR')} entrées reliées à travers 8 univers.
           </p>
 
           {/* Recherche : formulaire GET → URL partageable, zéro JS client */}

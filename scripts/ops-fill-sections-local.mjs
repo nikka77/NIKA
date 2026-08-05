@@ -12,7 +12,7 @@
 //         --universe="Dragon Ball" [--limit=500] [--max-sections=8] [--autres]
 import { readFileSync } from 'node:fs';
 import { fetchFandomSections } from './lib/fandom.mjs';
-import { clientOps } from '../lib/ops/db.mjs';
+import { clientOps, clientSite } from '../lib/ops/db.mjs';
 
 const UNIVERSE = process.argv.find((a) => a.startsWith('--universe='))?.split('=')[1];
 const LIMIT = Number(process.argv.find((a) => a.startsWith('--limit='))?.split('=')[1] ?? 500);
@@ -21,9 +21,38 @@ const AUTRES = process.argv.includes('--autres');
 if (!UNIVERSE) { console.error('--universe obligatoire'); process.exit(1); }
 
 const ops = clientOps();
+
+// Filtre « sans dossier » (05/08) : les dossiers vivent dans la table akasha_sections — on tire
+// UNE FOIS le Set des slugs déjà pourvus (entry_id → slug via akasha_entries, paginé : .select()
+// plafonne à 1 000 lignes en silence). Si la base site est illisible (restrictions egress, le
+// cas d'origine de ce plan C), on continue SANS filtre : les doublons restent bénins
+// (contrainte d'unicité (entry_id, idx), poserSections n'écrase jamais).
+const dejaDossier = new Set();
+try {
+  const site = clientSite();
+  const idsAvecSection = new Set();
+  for (let d = 0; ; d += 1000) {
+    const { data, error } = await site.from('akasha_sections').select('entry_id').order('id').range(d, d + 999);
+    if (error) throw new Error(error.message);
+    for (const r of data ?? []) idsAvecSection.add(r.entry_id);
+    if ((data ?? []).length < 1000) break;
+  }
+  for (let d = 0; ; d += 1000) {
+    const { data, error } = await site.from('akasha_entries').select('id, slug')
+      .eq('universe', UNIVERSE).order('slug').range(d, d + 999);
+    if (error) throw new Error(error.message);
+    for (const r of data ?? []) if (idsAvecSection.has(r.id)) dejaDossier.add(r.slug);
+    if ((data ?? []).length < 1000) break;
+  }
+  console.log(`${dejaDossier.size} fiche(s) de l'univers ont déjà un dossier — sautées`);
+} catch (e) {
+  console.warn(`base site illisible (${e?.message ?? e}) — filtre « sans dossier » ignoré, doublons bénins`);
+}
+
 const build = JSON.parse(readFileSync(new URL('../data/akasha-universes.json', import.meta.url), 'utf8'));
 const candidates = build.entries
-  .filter((e) => e.universe === UNIVERSE && (AUTRES ? e.type !== 'character' : e.type === 'character'))
+  .filter((e) => e.universe === UNIVERSE && (AUTRES ? e.type !== 'character' : e.type === 'character')
+    && !dejaDossier.has(e.slug))
   .slice(0, LIMIT);
 console.log(`${candidates.length} fiche(s) à découper [${UNIVERSE}${AUTRES ? ' · autres entrées' : ' · personnages'}] — listes du build local`);
 

@@ -977,6 +977,18 @@ ul { list-style: none; }
   .ak-r-legendary::after { display: none; }
 }
 
+/* ── OMNI-SEARCH (Refonte L8) — ligne de résultat : survol/focus lisibles, y compris au clavier ── */
+.ak-omni-row { transition: background 0.15s ease; }
+.ak-omni-row:focus-visible { outline: 2px solid var(--purple); outline-offset: -2px; }
+@media (hover: hover) and (pointer: fine) {
+  .ak-omni-row:hover { background: rgba(123, 92, 240, 0.10); }
+}
+@media (prefers-reduced-motion: reduce) { .ak-omni-row { transition: none; } }
+
+/* ── DOSSIER (L26) — les sections longues sous la carte : colonne lisible, séparée de la zone ── */
+.ak-dossier { border-top: 1px solid var(--bd); padding-top: 22px; }
+.ak-dossier p { max-width: 74ch; }
+
 /* ── Techniques animées : animation bouclée embarquée dans le WebP (déterministe) ── */
 
 /* ═══ HUB D'UNIVERS AKASHA — identité visuelle & motion (config-driven) ═══ */
