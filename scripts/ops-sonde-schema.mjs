@@ -76,6 +76,28 @@ const INVARIANTS = [
     },
   },
   {
+    nom: 'aucune arête inter-univers dans le graphe',
+    pourquoi: 'le graphe AKASHA est PAR UNIVERS ; 215 arêtes d\'homonymes résolus dans le mauvais '
+      + 'univers (Yamato [OP] → Konohagakure [Naruto]) ont été purgées le 05/08 — un seeder qui '
+      + 'résout les noms sur la table globale peut en réintroduire',
+    async verifier() {
+      // Échantillon des arêtes les plus récentes : un seeder fautif en produit en rafale, donc
+      // les 500 dernières suffisent à le voir — scanner les 16 000 à chaque démarrage serait cher.
+      const s = clientSite();
+      const { data: rel } = await s.from('akasha_relations')
+        .select('from_entry, to_entry').order('id', { ascending: false }).limit(500);
+      const ids = [...new Set((rel ?? []).flatMap((r) => [r.from_entry, r.to_entry]))];
+      const uni = new Map();
+      for (let i = 0; i < ids.length; i += 200) {
+        const { data } = await s.from('akasha_entries').select('id, universe').in('id', ids.slice(i, i + 200));
+        for (const e of data ?? []) uni.set(e.id, e.universe);
+      }
+      const inter = (rel ?? []).filter((r) => uni.get(r.from_entry) && uni.get(r.to_entry)
+        && uni.get(r.from_entry) !== uni.get(r.to_entry)).length;
+      return inter ? `${inter} arête(s) inter-univers dans les 500 dernières — un seeder résout hors de son univers` : null;
+    },
+  },
+  {
     nom: 'aucune arête ne dort dans akasha_entries.attributes.relations',
     pourquoi: 'une arête vit dans akasha_relations, la seule table que le site interroge ; '
       + 'le JSONB en a retenu 7 955 invisibles jusqu\'au 05/08',
