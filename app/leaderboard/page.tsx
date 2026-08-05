@@ -40,9 +40,16 @@ interface TopUser {
 
 export default async function LeaderboardPage() {
   const supabase = await createClient();
-  const { data: topUsers } = supabase
-    ? await supabase.from('users').select('username, level_name, xp, avatar_url').order('xp', { ascending: false }).limit(10)
-    : { data: null };
+  // PROFIL PUBLIC (05/08) — le classement lit la VUE, pas la table : `users` porte des colonnes
+  // d'autorité (nika_credits, kyc_level, is_verified) et des PII (full_name) qui n'ont rien à
+  // faire dans une réponse publique. Repli sur la table tant que la migration
+  // supabase/migrations/nika_users_profil_public.sql n'a pas été appliquée — les colonnes
+  // demandées sont les mêmes des deux côtés, donc le rendu est identique.
+  const lireTop = async (source: string) => supabase
+    ? supabase.from(source).select('username, level_name, xp, avatar_url').order('xp', { ascending: false }).limit(10)
+    : { data: null, error: null };
+  let { data: topUsers, error } = await lireTop('profils_publics');
+  if (error) ({ data: topUsers } = await lireTop('users'));
 
   const hasData = !!topUsers?.length;
 

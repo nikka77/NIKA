@@ -43,8 +43,34 @@ const ATTENDU = {
   },
 };
 
-/** Invariants de DONNÉES — pas de structure, mais tout aussi silencieux quand ils cassent. */
+/** Invariants de DONNÉES — pas de structure, mais tout aussi silencieux quand ils cassent.
+ *  `bloquant: false` = on CRIE sans empêcher l'usine de tourner. Un défaut qui attend une action
+ *  humaine (une migration à appliquer avec le mot de passe de la base) ne doit pas arrêter la
+ *  production : une alarme qui empêche de travailler finit débranchée, et on perd les deux. */
 const INVARIANTS = [
+  {
+    bloquant: false,
+    nom: 'aucune colonne d\'autorité ni PII lisible avec la clé PUBLIQUE',
+    pourquoi: 'la clé anon part dans le navigateur ; une colonne d\'autorité ne doit pas être '
+      + 'seulement non-modifiable, elle ne doit pas être lisible (décision 5 du 05/08)',
+    async verifier() {
+      const url = process.env.NEXT_PUBLIC_SUPABASE_URL, cle = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      if (!url || !cle) return null;                       // pas de clé publique : rien à sonder
+      const { createClient } = await import('@supabase/supabase-js');
+      const anon = createClient(url, cle);
+      const fautes = [];
+      for (const [table, colonnes] of Object.entries({
+        users: ['nika_credits', 'kyc_level', 'is_verified', 'full_name', 'wallet_address'],
+        food_orders: ['customer_phone', 'delivery_address'],
+      })) {
+        for (const c of colonnes) {
+          const { error } = await anon.from(table).select(c).limit(1);
+          if (!error) fautes.push(`${table}.${c}`);
+        }
+      }
+      return fautes.length ? `lisible(s) publiquement : ${fautes.join(', ')} — appliquer supabase/migrations/nika_users_profil_public.sql` : null;
+    },
+  },
   {
     nom: 'aucune arête ne dort dans akasha_entries.attributes.relations',
     pourquoi: 'une arête vit dans akasha_relations, la seule table que le site interroge ; '
@@ -89,11 +115,15 @@ for (const [nom, base] of Object.entries(ATTENDU)) {
 }
 
 dire('\n── INVARIANTS DE DONNÉES');
+let alertes = 0;
 for (const inv of INVARIANTS) {
   const souci = await inv.verifier();
-  if (souci) { console.error(`  ✗ ${inv.nom}\n     ${souci}\n     (pourquoi : ${inv.pourquoi})`); manques++; }
-  else dire(`  ✓ ${inv.nom}`);
+  if (!souci) { dire(`  ✓ ${inv.nom}`); continue; }
+  const bloquant = inv.bloquant !== false;
+  console.error(`  ${bloquant ? '✗' : '⚠'} ${inv.nom}\n     ${souci}\n     (pourquoi : ${inv.pourquoi})`);
+  if (bloquant) manques++; else alertes++;
 }
+if (alertes) console.error(`\n⚠ ${alertes} alerte(s) non bloquante(s) — à traiter, sans arrêter l'usine.`);
 
 if (manques) {
   console.error(`\n✗✗ SONDE EN ÉCHEC — ${manques} manque(s). L'usine ne doit pas démarrer sur un schéma incomplet :`);
