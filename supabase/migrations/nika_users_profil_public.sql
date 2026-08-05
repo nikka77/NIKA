@@ -33,12 +33,14 @@
 -- VÉRIFICATION APRÈS COUP :
 --   node --env-file=.env.local scripts/ops-sonde-schema.mjs   ← l'alerte doit disparaître
 
--- 1. LA VUE PUBLIQUE. `security_invoker = off` (le défaut historique) : elle s'exécute avec les
---    droits de son propriétaire, donc elle reste lisible même quand l'appelant n'a plus aucun
---    droit sur `users`. C'est précisément ce qu'on veut : le public passe par la vue, jamais par
---    la table.
-create or replace view public.profils_publics
-  with (security_invoker = off) as
+-- ✅ APPLIQUÉE LE 05/08/2026 (éditeur SQL du tableau de bord). Vérifiée après coup : les cinq
+--    colonnes sensibles renvoient 0 ligne à la clé publique, la vue rend le classement, et
+--    service_role voit toujours la donnée intacte.
+--
+-- 1. LA VUE PUBLIQUE. On NE met PAS `security_invoker` : le défaut de PostgreSQL est déjà
+--    « droits du propriétaire », donc la vue reste lisible quand l'appelant n'a aucun droit sur
+--    `users`. C'est exactement ce qu'on veut — le public passe par la vue, jamais par la table.
+create or replace view public.profils_publics as
   select id, username, avatar_url, xp, level, level_name, badge_tier, is_pro, city, bio
   from public.users;
 
@@ -55,10 +57,18 @@ create policy users_lecture_proprietaire
   to authenticated
   using (auth.uid() = id);
 
--- 3. LE PUBLIC N'A PLUS RIEN SUR LA TABLE. La clé anon n'obtient plus une seule colonne de
---    `users` : elle lit `profils_publics` ou rien. (`authenticated` garde ses colonnes : c'est la
---    politique ci-dessus qui le limite à sa propre ligne.)
-revoke select on public.users from anon;
+-- 3. RIEN À RÉVOQUER, et c'est le point mesuré. Une fois « Public profiles » retirée, `anon`
+--    n'a plus AUCUNE politique de lecture sur `users` : PostgreSQL lui rend 0 ligne, sans erreur.
+--    Le `revoke select … from anon` envisagé au départ était donc superflu — et il aurait masqué
+--    la vraie protection derrière une seconde, plus difficile à auditer. On s'en tient à RLS.
+--
+--    ÉTAT VÉRIFIÉ APRÈS APPLICATION (pg_policies sur `users`) :
+--      Create profile on signup   INSERT  {public}         NULL
+--      users_lecture_proprietaire SELECT  {authenticated}  (id = auth.uid())
+--      Own profile update         UPDATE  {public}         (auth.uid() = id)
+--
+--    POUR REVENIR EN ARRIÈRE, une seule instruction :
+--      create policy "Public profiles" on public.users for select to public using (true);
 
 comment on view public.profils_publics is
   'Profil visible par tous (classement, mentions). La table users garde les colonnes d''autorité '

@@ -64,8 +64,12 @@ const INVARIANTS = [
         food_orders: ['customer_phone', 'delivery_address'],
       })) {
         for (const c of colonnes) {
-          const { error } = await anon.from(table).select(c).limit(1);
-          if (!error) fautes.push(`${table}.${c}`);
+          // ON TESTE CE QUI REVIENT, PAS L'ABSENCE D'ERREUR (corrigé le 05/08, après que cette
+          // sonde a crié à tort sur une exposition déjà fermée). Une table protégée par RLS sans
+          // politique pour `anon` renvoie 0 ligne SANS erreur : juger sur `error` déclare exposé
+          // ce qui est parfaitement verrouillé. Seule une LIGNE qui remonte prouve la fuite.
+          const { data } = await anon.from(table).select(c).limit(1);
+          if ((data ?? []).length) fautes.push(`${table}.${c}`);
         }
       }
       return fautes.length ? `lisible(s) publiquement : ${fautes.join(', ')} — appliquer supabase/migrations/nika_users_profil_public.sql` : null;
