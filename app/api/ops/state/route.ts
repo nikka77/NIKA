@@ -11,6 +11,7 @@ import { LIMITES_FOURNISSEURS } from '@/lib/ops/limites.mjs';
 
 type Limite = { requetes: number; jetons: number; fenetre: number; parJour?: number; jetonsParJour?: number };
 import { poserAuGraphe, type IndexUnivers } from '@/lib/akasha/relations';
+import { poserSections } from '@/lib/akasha/sections';
 
 export const dynamic = 'force-dynamic';
 
@@ -331,7 +332,7 @@ async function applyResult(supabase: Admin, id: number, cacheIndex?: Map<string,
   if (!row) return false;
 
   const { data: entry } = await clientSite().from('akasha_entries')
-    .select('attributes')
+    .select('id, attributes')
     .eq('slug', row.target_slug)
     .single();
   if (!entry) return false;
@@ -370,10 +371,13 @@ async function applyResult(supabase: Admin, id: number, cacheIndex?: Map<string,
     // Le toilettage ne renvoie pas de titre : il garde celui de la section qu'il corrige.
     const titre = (row.task_type === 'toilettage_fr' ? p.titre : row.result?.titre) as string | undefined;
     if (!i || !texte) return false;
-    const dejaLa = (Array.isArray(patch.sections) ? patch.sections : []) as Array<Record<string, string>>;
-    patch.sections = [...dejaLa.filter((s) => String(s.i) !== String(i)), { i: String(i), titre, texte }]
-      .sort((a, b) => Number(a.i) - Number(b.i));
-    patch.sectionsSource = row.model;
+    // UNE SECTION = UNE LIGNE (05/08). Avant, on relisait le tableau JSONB, on y insérait la
+    // section et on réécrivait TOUT `attributes` : deux écrivains simultanés — l'usine et un
+    // blitz fenêtre — se perdaient mutuellement leur travail, en silence. La table porte une
+    // contrainte d'unicité (entry_id, idx) : l'idempotence est structurelle.
+    // Le toilettage est le SEUL cas qui remplace : il corrige une section existante.
+    await poserSections(clientSite(), (entry as { id: string }).id,
+      [{ i: String(i), titre, texte }], row.model, row.task_type === 'toilettage_fr');
   }
 
   const { error } = await clientSite().from('akasha_entries').update({ attributes: patch }).eq('slug', row.target_slug);

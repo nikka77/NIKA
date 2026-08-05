@@ -11,6 +11,7 @@ import type {
   ResolvedRelation,
 } from './types';
 import { FAMILY_FIELD } from './types';
+import { lireSections } from './sections';
 import { ALLOWED_FILTER_ATTRS } from './universe-taxonomy';
 
 const PAGE_SIZE = 24;
@@ -175,8 +176,15 @@ export const getEntryBySlug = cache(async function getEntryBySlug(slug: string):
 
   const e = entry as AkashaEntry;
 
+  // SECTIONS (05/08) — elles vivent désormais dans la table akasha_sections, une ligne chacune.
+  // On les résout ICI, au point unique où la fiche est assemblée, et on les réinjecte dans
+  // `attributes.sections` : les deux composants qui les affichent (la page générique et
+  // CharacterZone, qui est un composant CLIENT et ne peut pas interroger la base) continuent de
+  // lire le même champ sans être touchés. lireSections replie sur le JSONB tant que la migration
+  // n'a pas tourné — voir lib/akasha/sections.ts.
   // Deux FK vers la même table → désambiguïsation par le nom de contrainte.
-  const [{ data: outRows }, { data: inRows }] = await Promise.all([
+  const [sections, { data: outRows }, { data: inRows }] = await Promise.all([
+    lireSections(supabase, e.id, e.attributes as Record<string, unknown>),
     supabase
       .from('akasha_relations')
       // category/is_signature projetés pour imprimer l'ATTAQUE SIGNATURE sur la face TCG (L2).
@@ -191,6 +199,7 @@ export const getEntryBySlug = cache(async function getEntryBySlug(slug: string):
 
   return {
     ...e,
+    attributes: { ...(e.attributes as Record<string, unknown>), sections },
     relationsOut: normalizeRelations(outRows),
     relationsIn: normalizeRelations(inRows),
   };

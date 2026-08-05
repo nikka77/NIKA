@@ -11,6 +11,7 @@
 //           --fichier=<chemin/naruto-validees.json> [--signature="…"]
 import fs from 'node:fs';
 import { clientSite } from '../lib/ops/db.mjs';
+import { poserSections } from '../lib/akasha/sections.ts';
 
 const arg = (n, d = null) => process.argv.find((a) => a.startsWith(`--${n}=`))?.split('=').slice(1).join('=') ?? d;
 const UNIVERSE = arg('universe');
@@ -49,21 +50,19 @@ for (const [slug, sections] of parSlug) {
   faites++;
   const entry = etat.get(slug);
   if (!entry) { perdues += sections.length; continue; }
-  const attrs = { ...(entry.attributes ?? {}) };
-  const dejaLa = Array.isArray(attrs.sections) ? attrs.sections : [];
-  const dejaIdx = new Set(dejaLa.map((x) => String(x.i)));
-  const neuves = sections.filter((x) => !dejaIdx.has(String(x.i)));
-  gardees += sections.length - neuves.length;
-  if (!neuves.length) continue;
-  attrs.sections = [...dejaLa, ...neuves.map((x) => ({ i: String(x.i), titre: x.titre, texte: x.texte }))]
-    .sort((a, b) => Number(a.i) - Number(b.i));
-  attrs.sectionsSource = SIGNATURE;
-  let posee = false;
+  // UNE SECTION = UNE LIGNE (05/08). La déduplication à la main (lire le tableau, filtrer les
+  // index déjà là, réécrire l'objet entier) est remplacée par la contrainte d'unicité
+  // (entry_id, idx) : `poserSections` n'écrase jamais une section existante, et deux écrivains
+  // simultanés ne se perdent plus. Le compte des « déjà en place » se déduit de l'écart.
+  let posee = false, ecrites = 0;
   for (let essai = 0; essai < 3 && !posee; essai++) {
-    const { error } = await s.from('akasha_entries').update({ attributes: attrs }).eq('id', entry.id);
-    if (!error) posee = true; else await new Promise((r) => setTimeout(r, 3000));
+    try {
+      ecrites = await poserSections(s, entry.id, sections.map((x) => ({ i: String(x.i), titre: x.titre, texte: x.texte })), SIGNATURE);
+      posee = true;
+    } catch { await new Promise((r) => setTimeout(r, 3000)); }
   }
-  if (posee) posees += neuves.length; else perdues += neuves.length;
+  if (posee) { posees += ecrites; gardees += sections.length - ecrites; }
+  else perdues += sections.length;
   if (faites % 40 === 0) console.log(`  … ${faites}/${parSlug.size} fiches (posées ${posees})`);
 }
 console.log(`FINAL — posées ${posees} · déjà en place ${gardees} · perdues ${perdues} · fiches ${parSlug.size}`);
