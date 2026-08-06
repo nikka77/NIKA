@@ -1,0 +1,178 @@
+{
+ "_meta": {
+  "titre": "TRACE — vague E stars (#19) : 4 fiches One Piece (forms seul, nindo déjà posé) + son-goten Dragon Ball (nindo+nindoLabel+forms), avant de chaque fiche touchée",
+  "date": "2026-08-06T21:55:42.482Z",
+  "source": "data/audits/stars-vague-e.json",
+  "protocole": "lecture fraîche par fiche (slug, type=character) → ajout si absent seulement (forms, nindo, nindoLabel — jamais sources, doc du lot) → update de attributes seul par fusion → vérification post-écriture par équivalence canonique (clés triées récursivement, insensible au retri JSONB de Postgres) : ajouts présents + aucune clé usine perdue ni modifiée. `avant` = attributes JSONB entier lu juste avant écriture. Conformité contrat stars-contrat.json : zéro stat estimée (aucune clé stats dans le lot — repli One Piece assumé, radar absent), formes sans url/idle conservées en tuiles (décision Dan 06/08).",
+  "comptes": {
+   "posees": 5,
+   "sauteesDejaPourvues": 0,
+   "erreurs": 0,
+   "attendu": 5,
+   "replisDocumentesDansLeLot": 0
+  }
+ },
+ "resultats": [
+  {
+   "slug": "son-goten",
+   "univers": "Dragon Ball",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms",
+    "nindo",
+    "nindoLabel"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "race": "Saiyan",
+    "role": "Cadet insouciant",
+    "saga": "Saga Buu",
+    "descFr": "Race : moitié Saïyen, moitié humain. Taille : 123 cm. Poids : 26 kg. Année de naissance : An 767. Loisirs : jouer à la guerre, attraper des insectes. Nourriture préférée : les Pocky, le daifuku à la fraise. Véhicule préféré : le vélo. Goten est un personnage de fiction du manga et de l'animé Dragon Ball Z, qui apparaît aussi dans Dragon Ball GT. Il est le second fils de Son Goku et Chichi. Goten est un hybride humain-saïyen, tout comme son grand frère Son Gohan. Le physique naturel de Son Goten reproduit presque parfaitement celui de son père Goku, même si son apparence, comme sa coupe de cheveux et ses vêtements, change de temps à autre. On voit généralement Goten porter une tenue imitant celle de son père, avec seulement de légères différences. Comme dans les derniers épisodes de Dragon Ball Z, ses cheveux ont poussé et ne ressemblent plus à ceux de son père ; il porte aussi un t-shirt bleu et blanc avec son nom imprimé dessus. Dans Dragon Ball GT, il porte un t-shirt blanc avec un jean violet, et ses cheveux sont bien plus courts. Sa carnation reste légèrement hâlée dans toutes ses apparitions dans Dragon Ball Z/GT. Contrairement à son frère, Goten n'a jamais été montré avec une queue. Cela n'est jamais expliqué. Dans Dragon Ball Online (qui se déroule 216 ans après Dragon Ball Z, et où, contrairement à Dragon Ball GT, Toriyama a eu un grand contrôle créatif sur l'histoire), il est établi qu'en l'An 800, Goten, avec le Trunks de l'époque, a créé l'École d'Épée Kikoukenjutsu.",
+    "descRaw": "Race: Half Saiyan, Half-Human Height: 123 cm (4') Weight: 26 kg (57 lbs) Birth Year: 767 age Hobbies: Playing War, Catching Bugs Favorite Food: Pocky, Strawberry Daifuku Favorite Vehicle: Bicycle Goten is a fictional character in the manga and anime series Dragon Ball Z, as well as appearing in Dragon Ball GT. He is the second son of Son Goku and Chi Chi. Goten is a Human-Saiyan hybrid, just like his older brother Son Gohan. Son Goten's natural physique almost perfectly replicates his father Goku's, even though his appearance such as hair style and clothes change from time to time. Goten is generally seen wearing an outfit that mimics his father's, with only slight differences. As in the case of the last few episodes of Dragon Ball Z, his hair has grown long, no longer looking like his father's he also wears a blue and white shirt with his name printed on it. In Dragon Ball GT, he wears a white shirt with purple jeans, and his hair is much shorter. His skin color stays lightly tanned for all of his appearances in Dragon Ball Z/GT. Goten, unlike his brother, was never shown to have a tail. This is never explained. In Dragon Ball Online (which takes place 216 years after Dragon Ball Z, and unlike Dragon Ball GT, Toriyama had a lot of creative control over the story), it is stated that in 800 Age, Goten, along with Present Day Trunks had created the Kikoukenjutsu Sword School (Source: Wikipedia, Dragon Ball Super Exciting Guide, Character Edition)",
+    "descLang": "en",
+    "favorites": 639,
+    "voiceActors": {
+     "en": [
+      "Robert McCollum",
+      "Kara Edwards"
+     ],
+     "jp": [
+      "Masako Nozawa"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "shanks",
+   "univers": "One Piece",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "crew": "L’équipage des Pirates Roger",
+    "role": "Empereur · le Roux",
+    "nindo": "Qu'importe la raison : personne ne blesse un de mes amis.",
+    "bounty": "4.048.900.000 Berrys",
+    "descFr": "Âge : 37 ; 39 Anniversaire : 9 mars Affiliations : Pirates du Roux ; Empereur ; Prime : Shanks le Roux est un pirate légendaire et puissant de la Grand Line, capitaine de l'Équipage du Roux et l'un des Quatre Empereurs de la seconde moitié de la Grand Line. De plus, il est le héros d'enfance de Monkey D. Luffy et un ancien membre de l'équipage de Gold Roger. Dans l'ensemble, il est très respecté par la plupart des personnages, malgré une nature « douce » et amicale et le fait qu'il n'apparaisse jamais en combat réel avant d'engager un affrontement avec Barbe Blanche. Globalement, il n'apparaît pas beaucoup dans la série, bien qu'il figure dans la majorité des génériques d'ouverture ou de fin de l'anime. Shanks porte toujours une longue cape noire sur les épaules et, jusqu'à sa rencontre avec Luffy, portait un chapeau de paille qu'il avait gardé pendant de nombreuses années. Il porte toujours un pantalon coupé sous le genou ainsi qu'une paire de sandales. Ce qu'il y a de plus frappant chez Shanks, c'est la couleur de ses cheveux roux, dont vient son surnom « Shanks le Roux ». Il a aussi trois cicatrices en travers de l'œil gauche, que Barbe Noire lui a infligées il y a longtemps. Il lui manque le bras gauche, qu'il a perdu en sauvant Luffy d'un Roi des Mers. Shanks et son équipage sont presque toujours en train de faire la fête et de boire des boissons alcoolisées lorsqu'ils apparaissent, les passe-temps favoris du capitaine étant d'assister à des fêtes et des banquets et d'en organiser. Selon Oda, Shanks est le personnage qui lui ressemble le plus.",
+    "descRaw": "Age: 37; 39 Birthday: March 9 Affiliations: Red Hair Pirates; Yonko; Bounty: Red-Haired Shanks is a legendary and powerful pirate in the Grand Line, being the captain of the Red Haired Pirate Crew and one of the Four Emperors in the second half of the grand line. Furthermore, he is Monkey D. Luffy's childhood hero and a former member of Gol D. Roger's Crew. Overall, he is greatly respected by most of the characters, despite having a \"soft\" and friendly nature and never appearing in actual combat until he started a fight with Whitebeard. As a whole, he does not make many appearances in the series, although he appears in a majority of the opening or closing themes of the anime. Shanks always wears a long black cape over his shoulders and until he met Luffy, wore a straw hat that he had worn for many years beforehand. He always wears trousers that are cut below the knee as well as a pair of sandals. The most striking thing about Shanks is the color of his red hair, of which his nick-name \"Red Haired Shanks\" comes from. He also has three scars across his left eye, which were given to him by Blackbeard a long time ago. He has a missing left arm, that he had lost when he saved Luffy from a Sea King. Shanks and his crew are almost always seen partying and drinking alcoholic beverages whenever they make an appearance as the Captain's favorite pastimes are attending and hosting parties and banquets. According to Oda, Shanks is the one character that resembles himself the most out of a",
+    "faction": "Pirate",
+    "descLang": "en",
+    "favorites": 6751,
+    "nindoLabel": "Serment · ses amis",
+    "voiceActors": {
+     "en": [
+      "Brandon Potter",
+      "Antoine Tomé"
+     ],
+     "jp": [
+      "Shuuichi Ikeda",
+      "Nobunaga Shimazaki"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "boa-hancock",
+   "univers": "One Piece",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "crew": "L’équipage des Pirates Kuja",
+    "role": "Impératrice Serpent",
+    "nindo": "Le monde me pardonnera toujours — car je suis belle !",
+    "bounty": "1.659.000.000 Berrys",
+    "descFr": "Taille : 191 cm Affiliation : Kuja ; Pirates Kuja ; Grand Corsaire (ancien) Occupation : Capitaine pirate ; Impératrice d'Amazon Lily ; Grand Corsaire (ancien) Fruit du Démon : Mero Mero no Mi (Fruit de l'Amour) Type : Paramecia Prime : 1 659 000 000 (autrefois 80 000 000) Elle est l'un des Grands Corsaires et capitaine des Pirates Kuja. Elle est l'Impératrice de la Tribu Amazone sur l'Île des Femmes. Elle déteste le Gouvernement Mondial, mais veut conserver son titre de Grand Corsaire. Son immense beauté cache une personnalité cruelle, comme le montre le fait qu'elle donne un coup de pied à un chaton sur son passage. Enfant, Boa et ses sœurs ont été capturées et vendues comme esclaves aux Nobles Mondiaux. Là, elle a été marquée du « Pied du Dragon » — un signe qui atteste de votre misère et de votre statut d'esclave. Pour dissimuler ce fait, elle a répandu parmi son peuple la rumeur qu'en affrontant une Gorgone, elle et ses sœurs auraient été maudites, et qu'elles ont désormais dans le dos des yeux de Gorgone capables de changer en pierre quiconque les regarde s'ils sont exposés. Elle éprouve un immense béguin pour Luffy, au point que si elle reste éloignée de lui, elle est frappée du « Mal d'Amour » et finira par mourir. Elle a mangé le fruit « mero-mero » alors qu'elle était esclave et a acquis le pouvoir de changer quiconque la trouve belle.",
+    "descRaw": "Height: 191 cm (6'3\") Affiliation: Kuja; Kuja Pirates; Shichibukai (former) Occupation: Pirate Captain; Empress of Amazon Lily; Shichibukai (former)Devil Fruit: Mero Mero no Mi (Love-Love Fruit) Type: Paramecia Bounty: 1,659,000,000 (Formerly 80,000,000) She is one of the Shichibukai and captain of the Kuja Pirates. She is the Empress of the Amazon Tribe on the Isle of Woman. She detests the World Government, but wants to keep her Shichibukai title. Her immense beauty belies her cruel personality, as shown when she kicks a kitten in her way. As children, Boa with her sisters were captured and sold as slave for World Nobles. There she was branded with \"Dragon Foot\" - a sign that proves your misery and status as a slave. To hide this fact, she has spread a rumor among her people that upon battling a Gorgon, she and her sisters were cursed, and now have Gorgon eyes on their backs that will turn anyone around into stone if it is exposed. She has an immense crush on Luffy, so much so that if she stays away from him, she is stricken with \"Love Sickness\" and will eventually die. She ate \"mero-mero\" fruit when she was a slave and gained the ability to turn anyone who thinks she is beautifu",
+    "faction": "Pirate",
+    "descLang": "en",
+    "favorites": 4831,
+    "fruit_type": "Paramecia",
+    "nindoLabel": "Credo · sa beauté",
+    "voiceActors": {
+     "en": [
+      "Lydia Mackay",
+      "Olivia Dutron"
+     ],
+     "jp": [
+      "Kotono Mitsuishi",
+      "Kanae Itou"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "jinbe",
+   "univers": "One Piece",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "crew": "L’équipage du Chapeau de Paille",
+    "role": "Timonier · homme-poisson",
+    "nindo": "Tu n'as pas encore tout perdu — regarde ce qu'il te reste !",
+    "bounty": "1.100.000.000 Berrys",
+    "descFr": "Âge : 44 ; 46 Date de naissance : 2 avril Taille : 301 cm Groupe sanguin : F Affiliation : Poste : Barreur Fruit du Démon : aucun Prime : Jinbe est un homme-poisson requin-baleine qui fut le deuxième capitaine des Pirates du Soleil après Fisher Tiger, et qui est devenu Grand Corsaire il y a huit ans. Le nom de Jinbe vient de jinbei-zame (甚平鮫), qui signifie « requin-baleine » en japonais. Son épithète, Kaikyou, se traduirait normalement par « Détroit » ou « Canal ». Cependant, comme le kanji utilisé s'écrit (海侠の) et non (海峡の), la partie kyou (侠) vient de (任侠), un terme honorifique employé pour s'adresser à un membre haut placé de la yakuza, faisant ainsi de son épithète un jeu de mots japonais.",
+    "descRaw": "Age: 44; 46 Birthdate: April 2nd Height: 301 cm Blood type: F Affiliation: Position: Helmsman Devil fruit: none Bounty: Jinbe is a whale shark fishman who was the second captain of the Sunny Pirates after Fisher Tiger, and who became a Shichibukai eight years ago. Jinbe's name comes from jinbei-zame (甚平鮫), which means \"whale shark\" in Japanese. His epithet, Kaikyou would normally translate into \"Strait\" or \"Channel.\" However since the kanji for it is written as (海侠の) and not (海峡の), the kyou part (侠) of it comes from (任侠), a honorific used when addressing a high ranking yakuza member, thus making his epithet a Japanese pun. (Source: One Piece Wiki)",
+    "faction": "Pirate",
+    "descLang": "en",
+    "favorites": 4302,
+    "nindoLabel": "Leçon · ce qu'il reste",
+    "voiceActors": {
+     "en": [
+      "Sylvain Lemarié",
+      "Daniel Baugh"
+     ],
+     "jp": [
+      "Katsuhisa Houki",
+      "Daisuke Gouri",
+      "Chika Sakamoto"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "barbe-blanche",
+   "univers": "One Piece",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "crew": "L’équipage de Barbe Blanche",
+    "role": "L'Homme le plus fort du monde",
+    "nindo": "Le One Piece… existe bel et bien !",
+    "bounty": "5.046.000.000 Berrys",
+    "descFr": "Taille : 666 cm Affiliation : Pirates de Barbe Blanche (ancien/décédé) ; Sphinx (ancien) ; Pirates de Rocks (ancien) Poste : Capitaine (Pirates de Barbe Blanche) ; Empereur (l'un des 4 Empereurs du Nouveau Monde) Fruit du Démon : Gura Gura no Mi (Fruit des Séismes) Type de Fruit du Démon : Paramecia Prime : 5 046 000 000 Edward Newgate, également connu sous le nom de Barbe Blanche, est le capitaine des Pirates de Barbe Blanche. Il fait partie des Empereurs, les 4 empereurs du Nouveau Monde, aux côtés de Big Mom, Barbe Noire, Kaido et Shanks le Roux. Les Empereurs font partie des San Dai Seiryoku, les Trois Grandes Puissances. Les deux autres grandes puissances sont le Quartier Général de la Marine et les Grands Corsaires, les sept guerriers des mers. On dit que Barbe Blanche est l'homme le plus fort du monde et le pirate le plus proche d'obtenir le trésor légendaire, le One Piece. On raconte que Barbe Blanche livrait autrefois de nombreuses batailles au défunt Seigneur des Pirates, Gold Roger, et qu'il était considéré comme son égal par le passé. Barbe Blanche semble avoir quelques problèmes de santé, découlant peut-être de son âge avancé ou de ses affrontements féroces avec d'autres grands pirates au temps de sa jeunesse. Il est toujours entouré d'infirmières et branché à des tubes intraveineux. Mais malgré...",
+    "descRaw": "Height: 666 cm (21'10\") Affiliation: Whitebeard Pirates (former/deceased); Sphinx (former); Rocks Pirates (former) Position: Captain (Whitebeard Pirates); Yonko (one of the 4 emperors of the New World) Devil Fruit: Gura Gura no Mi (Tremor-Tremor Fruit) Devil Fruit Type: Paramecia Bounty: 5,046,000,000 Edward Newgate, also known as Whitebeard, is the captain of the Whitebeard Pirates. He is part of the Yonko, the 4 emperors of the New World, alongside Big Mom, Blackbeard, Kaido and Red-haired Shanks. The Yonko are part of the San Dai Seiryoku, the Three Great Powers. The other two great powers are the Marine Headquarters and the Shichibukai, the seven warlords of the sea. Whitebeard is said to be the strongest man in the world and the pirate closest to obtaining the legendary treasure, One Piece. It is said that Whitebeard used to have numerous battles with the late Pirate King, Gol D. Roger, and was marked as his equal in the past. Whitebeard appears to have some health problems, possibly stemming from his advanced age or from his ferocious encounters with other great pirates during his earlier days. He is always surrounded by nurses and is hooked up to intravenous tubes. But despi",
+    "faction": "Pirate",
+    "descLang": "en",
+    "favorites": 4041,
+    "fruit_type": "Paramecia",
+    "nindoLabel": "Dernier mot · son héritage",
+    "voiceActors": {
+     "en": [
+      "R. Bruce Elliott",
+      "Marc Alfos"
+     ],
+     "jp": [
+      "Kinryuu Arimoto",
+      "Ryuuzaburou Ootomo"
+     ]
+    }
+   }
+  }
+ ]
+}
