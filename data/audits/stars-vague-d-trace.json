@@ -1,0 +1,532 @@
+{
+ "_meta": {
+  "titre": "TRACE — vague D stars (#19) : 4 fiches Naruto corrigées + volet Dragon Ball, avant de chaque fiche touchée",
+  "date": "2026-08-06T20:47:51.338Z",
+  "source": "data/audits/stars-vague-d.json",
+  "protocole": "lecture fraîche par fiche (slug+universe) → ajout si absent seulement (forms, nindo, nindoLabel — jamais sources, doc du lot) → update de attributes seul par fusion → vérification post-écriture (ajouts présents + aucune clé usine perdue). `avant` = attributes JSONB entier lu juste avant écriture. Note : la vérification de 1re passe comparait en JSON brut, sensible à l’ordre des clés — Postgres JSONB retrie les clés des objets, d’où 11 faux « ERREUR » ; re-vérification canonique faite dans la foulée (aucune double écriture), statuts ci-dessous = réalité en base.",
+  "comptes": {
+   "posees": 11,
+   "sauteesDejaPourvues": 0,
+   "erreurs": 0,
+   "attendu": 11,
+   "replisDocumentesDansLeLot": 11
+  }
+ },
+ "resultats": [
+  {
+   "slug": "might-guy",
+   "univers": "Naruto",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms",
+    "nindo",
+    "nindoLabel"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "age": "26–27",
+    "sex": "Male",
+    "rank": "Jōnin",
+    "role": "Maître du taijutsu",
+    "team": [
+     "Team Chōza",
+     "Team Guy",
+     "Third Division"
+    ],
+    "debut": "Naruto — chapitre 38",
+    "jutsu": [
+     "Daytime Tiger",
+     "Double Dynamic Entry",
+     "Dynamic Action",
+     "Dynamic Entry",
+     "Eight Gates",
+     "Eight Gates Released Formation",
+     "Evening Elephant",
+     "Front Lotus",
+     "Intersection Method",
+     "Leaf Coiling Whirlwind",
+     "Leaf Coiling Wind",
+     "Leaf Drop",
+     "Leaf Gale",
+     "Leaf Great Flash",
+     "Leaf Great Whirlwind",
+     "Leaf Gust",
+     "Leaf Rock-Destroying Rise",
+     "Leaf Strong Whirlwind",
+     "Leaf Whirlwind",
+     "Little Toe Attack",
+     "Morning Peacock",
+     "Night Guy",
+     "Reverse Lotus",
+     "Seasickness Fist",
+     "Shadow of the Dancing Leaf",
+     "Strong Fist",
+     "Summoning Technique (Tortoise)",
+     "Violent — Leaf Adamantine-Strength Whirlwind"
+    ],
+    "tools": [
+     "Bow & Arrow",
+     "Kusarigama",
+     "Nunchaku",
+     "Sōshūga"
+    ],
+    "descFr": "Taille : 184 cm Rang : Jônin Il est le chef de l'Équipe Gai, composée de Rock Lee, Neji Hyûga et Tenten. Gai, et par extension Lee, vit sa vie selon sa propre philosophie des « Règles Personnelles », qui consiste à s'imposer des pénalités plus rudes en cas d'échec afin qu'il en ressorte quelque chose de bon. Par exemple, il jura de faire 500 tours de Konoha sur les mains s'il perdait un concours contre Kakashi, et s'exécuta après avoir perdu, même si les gens finirent par ne plus y prêter attention. Il n'hésite pas non plus à faire des choses qu'il n'apprécie pas ou que d'autres trouveraient embarrassantes si cela sert son propre perfectionnement, comme le montre sa conviction qu'on ne peut détester aucun aliment, quels que soient ses ingrédients ou son goût. De plus, Gai accorde une immense valeur à sa jeunesse et déteste l'idée de ne plus être aussi jeune qu'autrefois. Pour remédier à ce problème, il passe beaucoup de temps avec ses jeunes coéquipiers, espérant acquérir un peu de leurs propriétés juvéniles. De même, il se désigne souvent comme la « Noble Bête Verte de Konoha ». Gai est le rival autoproclamé de Kakashi Hatake. Kakashi, cependant, est indifférent à leur rivalité, ce qui agace Gai au plus haut point. Kakashi a aussi l'habitude, involontairement",
+    "family": [
+     {
+      "rel": "father",
+      "name": "Might Duy",
+      "slug": "might-duy"
+     }
+    ],
+    "height": "184cm",
+    "weight": "76kg",
+    "descRaw": "Height: 184 cm Rank: Jonin He is the leader of Team Guy, consisting of Rock Lee, Neji Hyuga, and Tenten. Guy, and by extension Lee, lives his life by his own \"My Rules\" philosophy, which involves setting tougher self-imposed penalties for failure so something good comes of it. For example, he vowed to walk 500 laps around Konoha on his hands if he lost a contest with Kakashi, and proceeded to do so upon losing, even though people eventually stopped paying attention. He also doesn't hesitate to do things he doesn't enjoy or that others might find embarrassing if it means his own self-improvement, as seen with his belief that one cannot dislike food regardless of its ingredients or taste. In addition, Guy values his youth to a great degree and dislikes the idea that he may not be as young as he once was. To help remedy this problem he spends large amounts of time with his younger teammates, hoping to acquire some of their youthful properties. Likewise, he often refers to himself as \"Konoha's Noble Green Beast\". Guy is the self-proclaimed rival of Kakashi Hatake. Kakashi, however, is indifferent to their rivalry, which annoys Guy to no end. Kakashi also seems to have a habit of uninte",
+    "gallery": [
+     "https://static.wikia.nocookie.net/naruto/images/3/31/Might_Guy.png",
+     "https://static.wikia.nocookie.net/naruto/images/b/b3/Might_Guy_Part_III.png"
+    ],
+    "village": "Konohagakure",
+    "debutAll": {
+     "ova": "Finally a clash! Jōnin vs. Genin!! Indiscriminate Grand Melee Tournament Meeting!!",
+     "game": "Naruto: Konoha Ninpōchō",
+     "anime": "Naruto — épisode 21",
+     "manga": "Naruto — chapitre 38",
+     "movie": "Naruto Shippūden the Movie",
+     "novel": "Kakashi Hiden: Lightning in the Icy Sky"
+    },
+    "descLang": "en",
+    "birthdate": "1 janvier",
+    "bloodType": "B",
+    "favorites": 2373,
+    "sourceUrl": "https://naruto.fandom.com/wiki/Might_Guy",
+    "generation": "Génération de Kakashi",
+    "natureType": [
+     "Fire Release",
+     "Lightning Release"
+    ],
+    "occupation": [
+     "Academy Teacher"
+    ],
+    "affiliation": [
+     "Forces Shinobi Alliées",
+     "Konohagakure"
+    ],
+    "villageSlug": "konohagakure",
+    "voiceActors": {
+     "en": [
+      "Skip Stellrecht",
+      "Todd Haberkorn"
+     ],
+     "jp": [
+      "Masashi Ebara",
+      "Mayuki Makiguchi"
+     ]
+    },
+    "organization": "Team Chōza"
+   }
+  },
+  {
+   "slug": "boruto-uzumaki",
+   "univers": "Naruto",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms",
+    "nindo",
+    "nindoLabel"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "age": "5",
+    "sex": "Male",
+    "clan": "Uzumaki",
+    "rank": "Genin",
+    "descFr": "Boruto Uzumaki est un ninja de Konohagakure appartenant au clan Uzumaki et un descendant direct du clan Hyûga par sa mère. D'abord plein de ressentiment envers son père et son absence depuis qu'il est devenu Hokage, Boruto finit par respecter son père et ses devoirs. Il jure néanmoins de devenir plutôt un ninja à l'image de son mentor. Boruto est bruyant, énergique et têtu, tout comme son père ; il possède même un tic verbal, « dattebasa » (だってばさ), semblable au « dattebayo » de Naruto et au « (da)ttebane » ((だ)ってばね) de sa grand-mère paternelle. Cependant, comparé à son père au même âge, Boruto est plus raffiné et rusé, connaissant apparemment tous les raccourcis, et plus mûr dans sa compréhension du fonctionnement du monde. Des deux, il est le plus sarcastique. Contrairement à Naruto, Boruto ne crie pas ce qu'il ressent, ce qui constitue la plus grande différence. Malgré son attitude décontractée, il est très appliqué. À l'inverse, l'éducation de Boruto a aussi été différente de celle de son père : la famille de Boruto est toujours là pour lui, il a de même beaucoup d'amis, et ses acquis lui sont venus facilement et naturellement grâce à une combinaison de talents prodigieux et de parents aimants. À l'image de leurs parents, Boruto partage un lien",
+    "family": [
+     {
+      "rel": "grandfather",
+      "name": "Hiashi Hyūga",
+      "slug": "hiashi-hyuga"
+     },
+     {
+      "rel": "grandmother",
+      "name": "Kushina Uzumaki",
+      "slug": "kushina-uzumaki"
+     },
+     {
+      "rel": "father",
+      "name": "Naruto Uzumaki",
+      "slug": "naruto-uzumaki"
+     },
+     {
+      "rel": "great-grandfather",
+      "name": "Hyūga Elder",
+      "slug": "hyuga-elder"
+     },
+     {
+      "rel": "granduncle",
+      "name": "Hizashi Hyūga",
+      "slug": "hizashi-hyuga"
+     },
+     {
+      "rel": "grandmother ",
+      "name": "Hinata and Hanabi's Mother",
+      "slug": "hinata-and-hanabi-s-mother"
+     },
+     {
+      "rel": "mother",
+      "name": "Hinata Hyūga",
+      "slug": "hinata-hyuga"
+     },
+     {
+      "rel": "aunt",
+      "name": "Hanabi Hyūga",
+      "slug": "hanabi-hyuga"
+     },
+     {
+      "rel": "sister",
+      "name": "Himawari Uzumaki",
+      "slug": "himawari-uzumaki"
+     },
+     {
+      "rel": "first cousin once removed",
+      "name": "Neji Hyūga",
+      "slug": "neji-hyuga"
+     },
+     {
+      "rel": "adoptive brother",
+      "name": "Kawaki",
+      "slug": "kawaki"
+     },
+     {
+      "rel": "host",
+      "name": "Momoshiki Ōtsutsuki",
+      "slug": "momoshiki-otsutsuki"
+     }
+    ],
+    "descRaw": "Boruto Uzumaki is a shinobi from Konohagakure's Uzumaki clan and a direct descendant of the Hyūga clan through his mother. While initially resentful of his father and his absence since becoming Hokage, Boruto eventually comes to respect his father and duties. Regardless, he vows to instead become a shinobi like his mentor. Boruto is loud, energetic, and stubborn not unlike his father; even possessing a verbal tic, \"dattebasa\" (だってばさ), similar to Naruto's \"dattebayo\" and his paternal grandmother's \"(da)ttebane\" ((だ)ってばね). However, compared to his father at his age, Boruto is more refined and crafty, seemingly knowing all the shortcuts, as well as more mature in knowing how the world works. Between the two, he is more sarcastic. Unlike Naruto, Boruto doesn't yell what he feels, which is the biggest difference. Despite his laid-back attitude, he is very diligent. Conversely, Boruto's upbringing has also been different than that of his father's: Boruto's family is always there for him, and he likewise has many friends, and his acquisitions came easily and naturally to him from a combination of prodigious talents and nurturing parents. Similar to that of their parents, Boruto shares a c",
+    "village": "Konohagakure",
+    "descLang": "en",
+    "birthdate": "27 mars",
+    "favorites": 2047,
+    "generation": "Nouvelle ère",
+    "voiceActors": {
+     "en": [
+      "Amanda Celine Miller",
+      "Maile Flanagan"
+     ],
+     "jp": [
+      "Yūko Sanpei",
+      "Kokoro Kikuchi"
+     ]
+    },
+    "organization": "Team 7"
+   }
+  },
+  {
+   "slug": "haku",
+   "univers": "Naruto",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms",
+    "nindo",
+    "nindoLabel"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "age": "15",
+    "sex": "Male",
+    "clan": "Yuki",
+    "descFr": "Le Pays de la Brume a connu son lot de guerres civiles et a toujours utilisé ses ninjas dotés de Lignées Avancées comme armes principales. Avec le temps, ceux qui possédaient un « Sang Avancé » finirent par être haïs et craints. Cela contraignit ceux au sang avancé à se cacher afin de vivre en paix. Haku était l'une des rares personnes de la Brume à posséder encore un Sang Avancé. Alors que Haku n'était qu'un jeune enfant, son père découvrit que sa femme faisait partie d'une Lignée Avancée. Le père de Haku entreprit de tuer sa mère puis se lança à sa poursuite. Dans sa terreur, Haku tua son père et fuit son petit village, se croyant un monstre : un monstre que personne n'aimait. Un jour fatidique, Haku, dans les bas-fonds d'une arrière-ruelle, leva les yeux et vit un ninja le fixer d'en haut ; ce ninja était Zabuza. Zabuza comprit que Haku était l'un des porteurs de la limite héréditaire de Lignée Avancée et prit l'enfant sous son aile.",
+    "family": [
+     {
+      "rel": "father",
+      "name": "Haku's Father",
+      "slug": "haku-s-father"
+     },
+     {
+      "rel": "mother",
+      "name": "Haku's Mother",
+      "slug": "haku-s-mother"
+     }
+    ],
+    "descRaw": "The Country of Mist has had its share of civil wars and has always used their Shinobi with Advanced Bloodlines as the primary weapons. Over time, those with &quot;Advanced Blood&quot; came to be hated and feared. This forced those with advanced bloods into hiding in order to live in peace. Haku was one of the few people in the Mist with Advanced Blood left. When Haku was just a young child, his father discovered that his wife was part of an Advanced Bloodline. Haku&#039;s father proceeded to kill his mother and then went after him. In Haku&#039;s fright, he killed his father and fled his small village, believing himself to be a monster: a monster loved by no one. On one faithful day, Haku looked up in the slums of the back alley to see a Shinobi staring down at him, this Shinobi was Zabuza. Zabuza realized that Haku was one of the Advanced Bloodline limit carriers, and took the child under his wing.",
+    "village": "Kirigakure",
+    "descLang": "en",
+    "birthdate": "9 janvier",
+    "favorites": 869,
+    "voiceActors": {
+     "en": [
+      "Susan Dalian",
+      "Mona Marshall",
+      "Michelle Ruff"
+     ],
+     "jp": [
+      "Mayumi Asano"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "mitsuki",
+   "univers": "Naruto",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms",
+    "nindo",
+    "nindoLabel"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "sex": "Male",
+    "rank": "Genin",
+    "descFr": "Mitsuki fut créé en tant qu'humain synthétique par Orochimaru, cultivé à partir du même embryon qu'au moins un « Mitsuki » plus âgé. Tout comme son « frère », Mitsuki fut nommé d'après « Tsuki » (杯, littéralement : Réceptacle) et le sixième signe du zodiaque chinois, « Mi » (巳, littéralement : Serpent). Orochimaru, en tant que « parent » de Mitsuki, voulait que Mitsuki trouve son indépendance, ayant concocté un complot complexe pour qu'il y parvienne. À la sixième tentative du plan d'Orochimaru, effaçant à chaque fois les souvenirs de la précédente, Mitsuki maîtrisa la Transformation de l'Ermite et décida de se rebeller contre son « parent » et son « grand frère ». Il quitta leur compagnie et partit forger son propre destin lui-même, se faisant désormais appeler « Mitsuki » (巳月) en remplaçant le deuxième caractère par « Tsuki » (月, littéralement : Lune). En découvrant l'existence de Boruto Uzumaki grâce à un cadeau d'Orochimaru, Mitsuki décida de se rendre à Konoha et de se lier d'amitié avec lui afin de trouver sa propre voie dans la vie. Mitsuki a un tempérament très calme et pragmatique. On le voit généralement très enjoué, voire indifférent, face à la situation présente. Sans être conflictuel, il dit librement ce qu'il pense en toute situation et agit",
+    "family": [
+     {
+      "rel": "genetic template/parent",
+      "name": "Orochimaru",
+      "slug": "orochimaru"
+     },
+     {
+      "rel": "clone/brother",
+      "name": "Log",
+      "slug": "log"
+     },
+     {
+      "rel": "pet ",
+      "name": "Mikazuki"
+     }
+    ],
+    "descRaw": "Mitsuki was created as a synthetic human by Orochimaru, being cultivated from the same embryo as at least one older \"Mitsuki\". Just like his \"brother\", Mitsuki was named after \"Tsuki\" (杯, Literally meaning: Vessel) and the sixth sign of the Chinese zodiac calendar, \"Mi\" (巳, Literally meaning: Snake). Orochimaru, as Mitsuki's \"parent\", wanted Mitsuki to find his independence, having concocted a complex plot for Mitsuki to do so. On Orochimaru's sixth attempt of the plan, each time erasing Mitsuki's memories of the previous, Mitsuki mastered Sage Transformation and decided to rebel against his \"parent\" and \"older brother\". He left their company and set out to forge his own destiny himself, now going by the name \"Mitsuki\" (巳月, Mitsuki) by replacing the second character with \"Tsuki\" (月, Literally meaning: Moon). Upon discovering the existence of Boruto Uzumaki via a gift from Orochimaru, Mitsuki decided to go to Konoha and befriend him in order to find his own path in life. Mitsuki has a very calm and matter-of-fact demeanor. He is generally seen very cheerful, if not indifferent, the situation at hand. While not confrontational, he freely speaks his mind in any situation and does thin",
+    "village": "Otogakure",
+    "descLang": "en",
+    "birthdate": "25 juillet",
+    "favorites": 984,
+    "generation": "Nouvelle ère",
+    "voiceActors": {
+     "en": [
+      "Robbie Daymond"
+     ],
+     "jp": [
+      "Ryūichi Kijima"
+     ]
+    },
+    "organization": "Team 7"
+   }
+  },
+  {
+   "slug": "gokuu-black",
+   "univers": "Dragon Ball",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms",
+    "nindo",
+    "nindoLabel"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "role": "Personnage secondaire",
+    "descFr": "Dans le futur, il arrive sur Terre et se déchaîne, laissant l'humanité au bord de l'extinction. Il rencontre Trunks et le bat facilement. Trunks survit à leur affrontement et, pendant un an et demi, se prépare à remonter le temps grâce à une Machine à Voyager dans le Temps avec Bulma, dans une tentative de sauver le futur. Trunks et Bulma sont finalement interceptés par Goku Black lui-même lorsque le vilain tue Bulma et détruit leur cachette. Trunks s'échappe de justesse avec juste assez de carburant pour un aller simple vers le passé, tandis que Goku Black le poursuit. Goku Black réapparaît et attaque Mai en narguant Trunks.",
+    "descRaw": "In the future, he arrives on Earth and goes on a rampage, leaving humanity on the brink of extinction. He encounters Trunks and easily defeats him. Trunks survives their encounter and, for one year and half, prepares to travel back in time using a Time Machine with Bulma in an attempt to save the future. Trunks and Bulma are eventually intercepted by Gokuu Black himself when the villain kills Bulma and destroys their hideout. Trunks narrowly escapes with enough fuel for a one-way trip back to the past while Gokuu Black pursues him. Gokuu Black appears again and attacks Mai and taunts Trunks. (Source: Dragon Ball Wikia)",
+    "descLang": "en",
+    "favorites": 1750,
+    "voiceActors": {
+     "en": [
+      "Sean Schemmel",
+      "Patrick Borg"
+     ],
+     "jp": [
+      "Masako Nozawa"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "trunks",
+   "univers": "Dragon Ball",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms",
+    "nindo",
+    "nindoLabel"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "ki": "50.000.000",
+    "race": "Saiyan",
+    "role": "Demi-Saiyan du futur",
+    "saga": "Saga Cell",
+    "descFr": "Trunks est le fils hybride humain et saïyen de Bulma et Vegeta, et plus tard le grand frère de Bulla. Enfant, durant l'arc de Majin Buu, Trunks se montre plutôt arrogant et pingre tout comme son père, ainsi que farceur, sans doute parce que ce Trunks-là a grandi avec son père Vegeta et a profité des luxes de la paix, tandis que le Trunks du futur a grandi sans le Vegeta du futur et dans un monde apocalyptique, le rendant bien plus sérieux et prudent. Trunks possède une combinaison des personnalités de ses deux parents : arrogant et fier comme son père, gâté et égoïste comme sa mère. Plus tard, Trunks adopte une personnalité similaire à celle de son homologue du futur. Pendant et entre ses combats au Tournoi des Arts Martiaux, il agit exactement comme son père : calme lorsqu'il combat et insultant ses adversaires.",
+    "descRaw": "Trunks is the Human and Saiyan hybrid son of Bulma and Vegeta, and later the older brother of Bulla. As a child during the Majin Buu arc, Trunks is shown to be quite cocky and stingy just like his father, as well as mischievous, most likely due to the fact that this Trunks grew up with his father Vegeta and enjoyed the luxuries of peace, while Future Trunks grew up without Future Vegeta and in an apocalyptic world, causing him to be much more serious and cautious. Trunks has a combination of both of his parents' personalities: cocky and proud like his father and spoiled and selfish like his mother. In his later years, Trunks adopts a personality similar to his future counterpart's. During and in between his battles at the World Martial Arts Tournament, he acts just like his father does, calm when he fights and insulting his opponents. (Source: Dragon Ball Wiki)",
+    "descLang": "en",
+    "favorites": 1450,
+    "voiceActors": {
+     "en": [
+      "Laura Bailey",
+      "Eric Vale"
+     ],
+     "jp": [
+      "Takeshi Kusao",
+      "Hiromi Tsuru"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "kame-sennin",
+   "univers": "Dragon Ball",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms",
+    "nindo",
+    "nindoLabel"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "ki": "500.000",
+    "race": "Human",
+    "role": "Maître Tortue",
+    "descFr": "Maître d'arts martiaux et mentor de Goku. Connu sous le nom de Muten Roshi, il fut en son temps le Terrien le plus fort de la Terre, et beaucoup se souviennent de lui comme du « Dieu des Arts Martiaux », mais avant de pouvoir porter ce titre il dut travailler et étudier les arts martiaux avec son maître Mutaito et son éternel rival Tsuru-Sen'nin.",
+    "descRaw": "Age: 753 (Dragon Ball); 774 (Dragon Ball Z) Date Of Birth: Age 430 Height: 5\"5\" (165 cm) Weight: 97 lbs (44 kg) Rank: Kame-sennin (Turtle Hermit) The \"Turtle Immortal\" is an ancient and wise martial arts master and the first Earthling to wield the Kamehameha. Though he seems frail, he is a mighty warrior. Muten-Rôshi trained Grandpa Son Gohan, Ox King, Son Goku, Kuririn, and Yamcha. His home, Kame House, a shack on a small isolated island, serves as a gathering place for the Z Fighters and friends. He is a stock character, as he is both the archetypal wise old man and dirty old man, the latter being typical of shōnen anime. Sometimes he gets cranky, which further provides comic relief. He is bald, with a thick goatee and a thick mustache. Muten-Rôshi wears beach clothes or a martial arts suit and a turtle shell on his back. He usually wields a walking stick. His companions are usually Oolong, Umigame and Lunch. (Source: Wikipedia)",
+    "descLang": "es",
+    "favorites": 1185,
+    "voiceActors": {
+     "en": [
+      "Mike McFarland",
+      "Terry Klassen"
+     ],
+     "jp": [
+      "Hiroshi Masuoka",
+      "Kouhei Miyauchi"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "krillin",
+   "univers": "Dragon Ball",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms",
+    "nindo",
+    "nindoLabel"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "ki": "1.000.000",
+    "race": "Human",
+    "role": "Meilleur ami humain",
+    "saga": "Saga Saiyan",
+    "descFr": "Petit moine guerrier sans cheveux (pour la majeure partie de la série), le loyal Krillin apporte une touche comique durant les moments tendus. Comme Chaozu, Krillin n'a pas de nez. C'est un artiste martial bienveillant, sociable et compétitif. Son seul véritable vice semble être son intérêt pour les femmes ; à mesure que la série avance, ses intentions deviennent plus romantiques, et dans les situations dangereuses, il désespère parfois de mourir peut-être célibataire. L'un des plus puissants et talentueux artistes martiaux humains de la Terre, Krillin est courageux, un allié fidèle et de bonne nature. C'est un Guerrier Z de premier plan, bien qu'il soit généralement surpassé par les principaux ennemis. Jadis farouche rival de Son Goku, il devient vite son meilleur ami en s'entraînant sous Tortue Géniale. Il est aussi proche du fils de Goku, Gohan. Il finit par épouser C-18 et se ranger, ayant une fille nommée Marron.",
+    "descRaw": "A short, hairless (for most of the series) warrior monk, loyal Krillin provides comic relief during tense moments. Like Chiaotzu, Krillin doesn't have a nose. He is a good-natured, outgoing and competitive martial artist. His only true vice seems to be his interest in women, though as the series progresses, his intentions lean more romantic, and in dangerous situations, he sometimes despairs about possibly dying unmarried. One of the most powerful and talented Human martial artists on Earth, Krillin is courageous, a faithful ally and good-natured. He is a prominent Z Fighter, despite usually being overpowered by the major enemies. Once a fierce rival of Son Goku, he quickly became his best friend while training under Master Roshi. He also is close to Goku's son, Gohan. He eventually marries Android 18 and settles down, having a daughter named Marron.",
+    "descLang": "en",
+    "favorites": 1083,
+    "voiceActors": {
+     "en": [
+      "Sonny Strait",
+      "Terry Klassen"
+     ],
+     "jp": [
+      "Mayumi Tanaka"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "bardock",
+   "univers": "Dragon Ball",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms",
+    "nindo",
+    "nindoLabel"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "race": "Saiyan",
+    "role": "Personnage secondaire",
+    "saga": "Saga Saiyan",
+    "descFr": "Baddack est introduit pour la première fois dans le téléfilm spécial Baddack contre Freezer. Ce n'est qu'après la diffusion du film au Japon qu'il apparaît plus tard dans deux cases du manga d'Akira Toriyama, qui a aidé à concevoir le personnage pour la production télévisée de Toei Doga. Son nom est un jeu de mots sur « burdock » (la bardane), une plante. Baddack est le père biologique de Raditz et de Son Goku ; c'est un Saïyen doté du don de prémonition. Dans plusieurs de ses visions récurrentes, il voit la destruction de sa planète natale Vegeta par la main de Freezer. Après avoir échappé à une mort certaine face à Dodoria, il tente désespérément de changer le sombre avenir de sa planète en affrontant Freezer et sa légion de soldats de front. Il échoue finalement à stopper l'attaque de Freezer et est tué dans le processus. Quelques instants avant sa mort, il reçoit une vision de son fils affrontant le tyran. Selon le téléfilm, la puissance de combat de Baddack fut estimée à 10 000 par des médecins attentifs alors qu'il se remettait de sa dernière mission. Dans le manga Dragon Ball : Episode of Bardock, Baddack devient Super Saïyen pour la première fois, afin de promouvoir son personnage dans le jeu d'arcade Dragon Ball Heroes, où il passe aussi Super Saïyen.",
+    "descRaw": "Bardock is first introduced in the television special, Bardock - The Father of Goku. It was only after the film's airing in Japan that he was later shown in two panels of the manga by Akira Toriyama, who helped design the character for Toei Doga's television production. His name is a pun on \"burdock\" (バードック, bādokku?), a herb. While the Viz manga and FUNimation's Japanese-language English-subtitled anime both use \"Burdock\", FUNimation's English anime dubs uses \"Bardock\", and some Japanese merchandise even use \"Barduck\". The biological father of Raditz and Son Goku, Burdock is a Saiyan who is given the gift of precognition. In several of his recurring visions, he witnesses the destruction of his home planet Vegeta by the hand of Freeza. After escaping certain death from Dodoria, he tries desperately to change his planet's grim future by attempting to combat Freeza and his legion of men head on. He ultimately fails on ceasing Freeza's attack on the planet and is killed in the process. Moments before his death, he received a vision of his son facing the warlord. According to the anime special, Burdock was estimated a battle power of 10,000 by observant doctors while recovering from his last mission. In the Dragon Ball: Episode of Bardock manga, Bardock became a Super Saiyan for the first time, to help promote his character in the arcade game Dragon Ball Heroes, where he also goes Super Saiyan. (Source: Wikipedia)",
+    "descLang": "en",
+    "favorites": 1061,
+    "voiceActors": {
+     "en": [
+      "Sonny Strait"
+     ],
+     "jp": [
+      "Masako Nozawa"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "vegetto",
+   "univers": "Dragon Ball",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms",
+    "nindo",
+    "nindoLabel"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "race": "Saiyan",
+    "role": "Personnage secondaire",
+    "saga": "Saga Super",
+    "descFr": "Vegetto, ou Vegito selon le doublage FUNimation, est un Saïyen, résultat de la fusion de Son Goku et Vegeta grâce aux boucles d'oreilles Potara en un être unique. Parce qu'il est né d'eux, sa personnalité présente des traits à la fois de Vegeta et de Goku et il a aussi hérité de leurs souvenirs. Bien qu'il soit une fusion de Goku et Vegeta, la personnalité de Vegetto semble tirer davantage de sa force de la moitié Vegeta. Il s'est montré grossier et arrogant au combat, fier de sa puissance et enclin à rabaisser ses adversaires tout en gagnant un combat. Vegetto manie une puissance formidable, et il est considéré comme l'un des plus puissants guerriers de toute la franchise Dragon Ball.",
+    "descRaw": "Vegetto, or Vegito as per the FUNimation dub, is a Saiyan, who is the result of Son Gokū and Vegeta using Potara earrings to fuse into a singular being. Because he was created from them, his personality has traits of both Vegeta and Gokū and has also inherited their memories. Despite being a fusion of both Gokū and Vegeta, Vegetto's personality appears to garner more of its strengths from the Vegeta-half. He has shown himself to be rude and arrogant in combat, proud of his power and prone to belittling opponents while winning a battle. Vegito wields tremendous power, and he is regarded as one of the mightiest warriors in the entire Dragon Ball franchise. (Source: Dragon Universe Wiki, Dragon Ball Wiki)",
+    "descLang": "en",
+    "favorites": 544,
+    "voiceActors": {
+     "en": [
+      "Christopher Sabat",
+      "Brian Drummond"
+     ],
+     "jp": [
+      "Ryo Horikawa",
+      "Masako Nozawa"
+     ]
+    }
+   }
+  },
+  {
+   "slug": "yamcha",
+   "univers": "Dragon Ball",
+   "statut": "POSÉE",
+   "champsPoses": [
+    "forms"
+   ],
+   "dejaPourvus": [],
+   "verif": "OK (équivalence canonique, insensible au retri des clés JSONB)",
+   "avant": {
+    "ki": "1.980.000",
+    "race": "Human",
+    "role": "Loup du désert",
+    "saga": "Saga Saiyan",
+    "descFr": "Dragon Ball : Yamcha, le célèbre bandit du désert, débute comme antagoniste de Goku mais devient vite son ami grâce à Bulma. Il vivait dans le désert, ce qui fait qu'il n'a jamais eu beaucoup de contact avec les femmes. Chaque fois qu'il rencontrait Bulma, il rougissait énormément et se pétrifiait sur place. La technique emblématique de Yamcha était le Poing du Loup à Croc. Avec ce mouvement, il frappait l'adversaire de ses mains en position de griffe, le majeur, l'annulaire et le pouce recourbés. Son meilleur ami est un chat volant et métamorphe nommé Pu'ar. Dragon Ball Z : Yamcha a rangé sa vie de bandit du désert et est devenu membre des Guerriers Z ainsi qu'élève de Tortue Géniale. Yamcha a acquis un contrôle du ki incroyable, comme le montre sa nouvelle technique emblématique, la Boule d'Énergie. Avec ce mouvement, il peut guider une boule de ki dans n'importe quelle direction à l'aide de son majeur et de son index.",
+    "descRaw": "Dragonball Yamcha, the notorious desert bandit, started out as an antagonist of Goku but quickly became his friend thanks to Bulma. He lived in the desert, which resulted in him never having much female contact. Whenever he encountered Bulma, he would blush immensely and become petrified right on the spot. Yamcha's trade mark move was known as the Fist of the Wolf Fang. With this move, he would strike the opponent with his hands in a claw like pose with his middle finger, ring finger and thumb curled. His best friend is a floating shift-shaping cat named Pu'ar. Dragonball Z Yamcha's cleaned up his act as a desert bandit and become a member of the Z-fighters as well as a student of Master Roshi. Yamcha gained incredible ki control as displayed in his new signature move the Spirit Ball. With this move, he can guide a ki ball in any direction using his middle and index fingers.",
+    "descLang": "en",
+    "favorites": 454,
+    "voiceActors": {
+     "en": [
+      "Christopher Sabat",
+      "Ted Cole"
+     ],
+     "jp": [
+      "Toru Furuya"
+     ]
+    }
+   }
+  }
+ ]
+}
