@@ -9,7 +9,10 @@ const AXES: { key: keyof Stats; label: string }[] = [
 ];
 const MAX = 5;
 
-export default function DatabookRadar({ stats, color = '#7B5CF0', size = 188, compare, compareColor = '#E23B4E', labels }: { stats: Stats; color?: string; size?: number; compare?: Stats; compareColor?: string; labels?: Partial<Record<keyof Stats, string>> | null }) {
+// `estime` (décision Dan 06/08) : seuls les databooks Naruto sont des stats canon — toute
+// autre fiche à stats porte une mention discrète « stats estimées — non canon », rendue ici
+// dans la même famille mono que les légendes existantes (axes, « / 40 »). Aucune écriture en base.
+export default function DatabookRadar({ stats, color = '#7B5CF0', size = 188, compare, compareColor = '#E23B4E', labels, estime }: { stats: Stats; color?: string; size?: number; compare?: Stats; compareColor?: string; labels?: Partial<Record<keyof Stats, string>> | null; estime?: boolean }) {
   const cx = size / 2, cy = size / 2, R = size * 0.33;
   const ang = (i: number) => -Math.PI / 2 + i * (Math.PI / 4);
   const pt = (i: number, r: number): [number, number] => [cx + Math.cos(ang(i)) * r, cy + Math.sin(ang(i)) * r];
@@ -19,9 +22,9 @@ export default function DatabookRadar({ stats, color = '#7B5CF0', size = 188, co
   const total = AXES.reduce((s, a) => s + (stats[a.key] ?? 0), 0);
   const axisLabel = (a: typeof AXES[number]) => labels?.[a.key] ?? a.label;
   const desc = AXES.map((a) => `${axisLabel(a)} ${stats[a.key] ?? 0}/5`).join(', ');
-  const ariaLabel = compare
+  const ariaLabel = (compare
     ? `Statistiques databook, comparaison : ${desc} — contre ${AXES.map((a) => `${axisLabel(a)} ${compare[a.key] ?? 0}/5`).join(', ')}. Total ${total}/40.`
-    : `Statistiques databook : ${desc}. Total ${total}/40.`;
+    : `Statistiques databook : ${desc}. Total ${total}/40.`) + (estime ? ' Stats estimées — non canon.' : '');
 
   return (
     <svg viewBox={`0 0 ${size} ${size}`} width="100%" height="100%" role="img" aria-label={ariaLabel} style={{ display: 'block' }}>
@@ -50,6 +53,10 @@ export default function DatabookRadar({ stats, color = '#7B5CF0', size = 188, co
       {/* total au centre */}
       <text x={cx} y={cy - 4} fontFamily="var(--fe)" fontSize={20} fontWeight={900} fontStyle="italic" fill="#fff" textAnchor="middle">{total % 1 === 0 ? total : total.toFixed(1)}</text>
       <text x={cx} y={cy + 9} fontFamily="ui-monospace, monospace" fontSize={7} letterSpacing="0.12em" fill="var(--td3)" textAnchor="middle">/ 40</text>
+      {/* mention discrète sous le graphe — jamais sur un databook Naruto (canon) */}
+      {estime && (
+        <text x={cx} y={size - 3} fontFamily="ui-monospace, monospace" fontSize={6.5} letterSpacing="0.1em" fill="var(--td3)" textAnchor="middle">stats estimées — non canon</text>
+      )}
     </svg>
   );
 }

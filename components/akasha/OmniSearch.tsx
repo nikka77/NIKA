@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { universeMeta } from '@/lib/akasha/types';
 import { SearchGlyph } from './glyphs';
 
-interface Item { slug: string; name: string; universe: string | null; image_url: string | null; rarity: string | null; snippet: string | null; }
+interface Item { slug: string; name: string; universe: string | null; image_url: string | null; rarity: string | null; snippet: string | null; sectionTitre?: string | null; }
 interface Group { type: string; label: string; icon: string; items: Item[]; }
 
 function Highlight({ text, q }: { text: string; q: string }) {
@@ -72,13 +72,13 @@ export default function OmniSearch({ variant = 'bar' }: { variant?: 'bar' | 'ico
           <div onClick={(e) => e.stopPropagation()} style={{ width: '100%', maxWidth: 620, background: 'var(--bg)', border: '1px solid var(--bd2)', borderRadius: 16, overflow: 'hidden', boxShadow: '0 30px 80px -20px rgba(0,0,0,0.8)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 16px', borderBottom: '1px solid var(--bd)' }}>
               <SearchGlyph size={17} />
-              <input ref={inputRef} value={q} onChange={(e) => setQ(e.target.value)} placeholder="Personnage, technique, univers, ou un mot de la bio…"
+              <input ref={inputRef} value={q} onChange={(e) => setQ(e.target.value)} placeholder="Personnage, technique, univers, ou un mot des dossiers…"
                 style={{ flex: 1, background: 'transparent', border: 'none', outline: 'none', fontFamily: 'var(--fo)', fontSize: 15, color: 'var(--td)' }} />
               <button type="button" onClick={() => setOpen(false)} aria-label="Fermer" style={{ background: 'none', border: 'none', color: 'var(--td3)', fontSize: 20, cursor: 'pointer' }}>✕</button>
             </div>
             <div style={{ maxHeight: '62vh', overflowY: 'auto', padding: groups.length ? '8px 0' : 0 }}>
               {q.trim().length < 2 ? (
-                <div style={{ padding: '2rem', textAlign: 'center', fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)' }}>Tape au moins 2 lettres — la recherche fouille aussi les biographies.</div>
+                <div style={{ padding: '2rem', textAlign: 'center', fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)' }}>Tape au moins 2 lettres — la recherche fouille aussi les biographies et les dossiers.</div>
               ) : loading && !groups.length ? (
                 <div style={{ padding: '2rem', textAlign: 'center', fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)' }}>Recherche…</div>
               ) : !groups.length ? (
@@ -106,7 +106,12 @@ export default function OmniSearch({ variant = 'bar' }: { variant?: 'bar' | 'ico
                             <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 13.5, fontWeight: 700, color: 'var(--td)' }}>
                               <Highlight text={it.name} q={q} />{um && <span style={{ fontWeight: 600, color: um.color, marginLeft: 6, fontSize: 11 }}>{um.emoji} {it.universe}</span>}
                             </span>
-                            {it.snippet && <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}><Highlight text={it.snippet} q={q} /></span>}
+                            {it.snippet && (
+                              <span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                {it.sectionTitre && <span style={{ fontWeight: 700, color: 'var(--td2)' }}><Highlight text={it.sectionTitre} q={q} /> · </span>}
+                                <Highlight text={it.snippet} q={q} />
+                              </span>
+                            )}
                           </span>
                         </Link>
                       );

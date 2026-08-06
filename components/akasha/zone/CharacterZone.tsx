@@ -289,6 +289,12 @@ function Canal({ entry, accent, f, fstr, fStats, sharedVoice }: {
   fstr: (fv: unknown, base: unknown) => string | null; fStats?: Stats; sharedVoice?: SharedVoice[];
 }) {
   const { sel, select } = useZone();
+  // Libellés d'axes remappés par le build (ex. One Piece : PUI/TEC/AGI…) — calculés ICI, une
+  // fois, pour que TOUS les radars du canal les reçoivent (le FormePanel les perdait, bug 06/08).
+  const statLabels = ((entry.attributes as Record<string, unknown>).statLabels as Partial<Record<keyof Stats, string>> | undefined) ?? null;
+  // Décision Dan 06/08 : seuls les databooks Naruto sont canon — hors Naruto, stats gardées
+  // mais marquées « estimées » (aucune écriture en base, pur affichage).
+  const statsEstimees = entry.universe !== 'Naruto';
   const scope = sel === null ? 'Identité'
     : sel.kind === 'technique' ? 'Technique'
     : sel.kind === 'famille' ? 'Famille'
@@ -309,8 +315,8 @@ function Canal({ entry, accent, f, fstr, fStats, sharedVoice }: {
         )}
       </div>
 
-      {sel === null && <IdentityPanel entry={entry} accent={accent} f={f} fstr={fstr} fStats={fStats} sharedVoice={sharedVoice} />}
-      {sel?.kind === 'forme' && <FormePanel f={f} idx={sel.index} accent={accent} fStats={fStats} />}
+      {sel === null && <IdentityPanel entry={entry} accent={accent} f={f} fstr={fstr} fStats={fStats} statLabels={statLabels} estime={statsEstimees} sharedVoice={sharedVoice} />}
+      {sel?.kind === 'forme' && <FormePanel f={f} idx={sel.index} accent={accent} fStats={fStats} statLabels={statLabels} estime={statsEstimees} />}
       {sel?.kind === 'technique' && <TechniquePanel sel={sel} accent={accent} />}
       {sel?.kind === 'famille' && <FamillePanel sel={sel} accent={accent} />}
       {sel?.kind === 'appartenance' && <AppartenancePanel sel={sel} accent={accent} universe={entry.universe} />}
@@ -331,9 +337,10 @@ function CanalTitle({ children }: { children: React.ReactNode }) {
   return <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, textTransform: 'uppercase', fontSize: 22, lineHeight: 1.05, color: 'var(--td)', marginBottom: 12 }}>{children}</div>;
 }
 
-function IdentityPanel({ entry, accent, f, fstr, fStats, sharedVoice }: {
+function IdentityPanel({ entry, accent, f, fstr, fStats, statLabels, estime, sharedVoice }: {
   entry: AkashaEntryDetail; accent: string; f: Record<string, unknown>;
-  fstr: (fv: unknown, base: unknown) => string | null; fStats?: Stats; sharedVoice?: SharedVoice[];
+  fstr: (fv: unknown, base: unknown) => string | null; fStats?: Stats;
+  statLabels: Partial<Record<keyof Stats, string>> | null; estime: boolean; sharedVoice?: SharedVoice[];
 }) {
   const a = entry.attributes as Record<string, unknown>;
   const bio = str(a.bio) || str(a.descFr) || entry.summary;
@@ -363,7 +370,7 @@ function IdentityPanel({ entry, accent, f, fstr, fStats, sharedVoice }: {
       )}
       {fStats && (
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 12 }}>
-          <DatabookRadar stats={fStats} color={accent} size={196} labels={(a.statLabels as Partial<Record<keyof Stats, string>> | undefined) ?? null} />
+          <DatabookRadar stats={fStats} color={accent} size={196} labels={statLabels} estime={estime} />
         </div>
       )}
       {voice && (voice.jp?.length || voice.en?.length) ? (
@@ -396,7 +403,10 @@ function IdentityPanel({ entry, accent, f, fstr, fStats, sharedVoice }: {
   );
 }
 
-function FormePanel({ f, idx, accent, fStats }: { f: Record<string, unknown>; idx: number; accent: string; fStats?: Stats }) {
+function FormePanel({ f, idx, accent, fStats, statLabels, estime }: {
+  f: Record<string, unknown>; idx: number; accent: string; fStats?: Stats;
+  statLabels: Partial<Record<keyof Stats, string>> | null; estime: boolean;
+}) {
   // Repli aligné sur ArcFrieze : « Forme N », jamais « Forme » nu.
   const label = str(f.label) ?? `Forme ${idx + 1}`;
   return (
@@ -407,7 +417,7 @@ function FormePanel({ f, idx, accent, fStats }: { f: Record<string, unknown>; id
       {str(f.caption) && <p style={{ fontFamily: 'var(--fo)', fontSize: 13, lineHeight: 1.7, color: 'var(--td2)', margin: '12px 0 0' }}>{str(f.caption)}</p>}
       {fStats && (
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: 14 }}>
-          <DatabookRadar stats={fStats} color={accent} size={196} />
+          <DatabookRadar stats={fStats} color={accent} size={196} labels={statLabels} estime={estime} />
         </div>
       )}
     </div>

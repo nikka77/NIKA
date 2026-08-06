@@ -12,11 +12,62 @@ import type {
 } from './types';
 import { FAMILY_FIELD } from './types';
 import { lireSections } from './sections';
-import { ALLOWED_FILTER_ATTRS } from './universe-taxonomy';
+import { ALLOWED_FILTER_ATTRS, taxonomyByName } from './universe-taxonomy';
 
 const PAGE_SIZE = 24;
 // descFr (bio VF canon) projeté pour le FLAVOR TEXT des cartes (1re phrase, cf. lib/akasha/flavor.ts).
 const CARD_COLS = 'id, slug, type, name, is_fiction, universe, summary, image_url, rarity, category:attributes->>category, descFr:attributes->>descFr';
+
+// ── SCAN D'UNIVERS MUTUALISÉ (perf hub, 06/08) ──────────────────────────────
+// Le hub d'univers déclenchait 4 scans paginés COMPLETS des mêmes lignes
+// (listAxisCounts, listCategoryCounts, universeInsights, listUniverseIndex)
+// + 2-3 requêtes listStars → 23 allers-retours mesurés sur /u/naruto.
+// scanUniverse fait UN SEUL passage (pages parallèles, bornées par le count
+// HEAD déjà caché) qui projette l'union des colonnes dont ces lectures ont
+// besoin ; cache() le partage entre toutes dans un même rendu.
+// descFr (bios VF, ~360 o/ligne) est volontairement EXCLU du scan (egress) :
+// les lectures qui affichent du flavor text (piliers, évolutives) gardent
+// leur requête CARD_COLS dédiée.
+const SCAN_COLS = 'id, slug, name, type, is_fiction, universe, summary, image_url, rarity, created_at, category:attributes->>category, fav:attributes->>favorites';
+
+type ScanRow = {
+  id: string; slug: string; name: string; type: AkashaType; is_fiction: boolean;
+  universe: string | null; summary: string | null; image_url: string | null;
+  rarity: AkashaEntryCard['rarity']; created_at: string | null; category: string | null; fav: string | null;
+} & Record<string, string | null | boolean>;
+
+/** Projection carte d'une ligne de scan (sans descFr — voir note SCAN_COLS). */
+const toCard = (r: ScanRow): AkashaEntryCard => ({
+  id: r.id, slug: r.slug, type: r.type, name: r.name, is_fiction: r.is_fiction,
+  universe: r.universe, summary: r.summary, image_url: r.image_url, rarity: r.rarity,
+  category: r.category ?? null,
+});
+
+const scanUniverse = cache(async function scanUniverse(universe: string): Promise<ScanRow[]> {
+  const supabase = await createClient();
+  if (!supabase) return [];
+  const total = await countUniverse(universe); // caché → gratuit quand la page l'appelle aussi
+  if (!total) return [];
+  // Les axes canon de CET univers (village, clan… — jamais ceux des autres mondes),
+  // projetés `ax_<attr>` pour listAxisCounts.
+  const attrs = taxonomyByName(universe)?.axes.map((a) => a.attr) ?? [];
+  const cols = SCAN_COLS + attrs.map((a) => `, ax_${a}:attributes->>${a}`).join('');
+  const PAGE = 1000; // plafond PostgREST par requête
+  const pages = Math.ceil(total / PAGE);
+  // Ordre PK explicite : la pagination PARALLÈLE exige des fenêtres stables.
+  const results = await Promise.all(
+    Array.from({ length: pages }, (_, i) =>
+      supabase
+        .from('akasha_entries')
+        .select(cols)
+        .eq('universe', universe)
+        .order('id', { ascending: true })
+        .range(i * PAGE, (i + 1) * PAGE - 1),
+    ),
+  );
+  return results.flatMap(({ data }) => (data as unknown as ScanRow[] | null) ?? []);
+});
+// ────────────────────────────────────────────────────────────────────────────
 
 export interface ListEntriesParams {
   type?: AkashaType;
@@ -119,22 +170,31 @@ export async function listEntries(
   const total = counts.reduce((a, b) => a + b, 0);
 
   // Parcourt les buckets dans l'ordre de rareté, prélève la tranche qui recoupe la fenêtre [from, from+pageSize).
-  const rows: AkashaEntryCard[] = [];
+  // Les fenêtres sont dérivées des counts déjà connus → les ≤2 fetchs partent en PARALLÈLE (avant : séquentiels).
+  const windows: { rarity: string | null; localFrom: number; take: number }[] = [];
   let acc = 0;
-  for (let i = 0; i < buckets.length && rows.length < pageSize; i++) {
+  let taken = 0;
+  for (let i = 0; i < buckets.length && taken < pageSize; i++) {
     const start = acc;
     const end = acc + counts[i];
     acc = end;
     if (end <= from || counts[i] === 0) continue; // bucket entièrement avant la fenêtre
     if (start >= from + pageSize) break; // au-delà de la fenêtre
     const localFrom = Math.max(0, from - start);
-    const need = pageSize - rows.length;
-    const { data } = await applyFilters(
-      supabase.from('akasha_entries').select(CARD_COLS).order('name', { ascending: true }),
-      buckets[i],
-    ).range(localFrom, localFrom + need - 1);
-    if (data) rows.push(...(data as AkashaEntryCard[]));
+    const take = Math.min(pageSize - taken, counts[i] - localFrom);
+    if (take <= 0) continue;
+    windows.push({ rarity: buckets[i], localFrom, take });
+    taken += take;
   }
+  const slices = await Promise.all(
+    windows.map((w) =>
+      applyFilters(
+        supabase.from('akasha_entries').select(CARD_COLS).order('name', { ascending: true }),
+        w.rarity,
+      ).range(w.localFrom, w.localFrom + w.take - 1),
+    ),
+  );
+  const rows: AkashaEntryCard[] = slices.flatMap(({ data }) => (data as AkashaEntryCard[] | null) ?? []);
 
   return {
     entries: rows,
@@ -205,15 +265,21 @@ export const getEntryBySlug = cache(async function getEntryBySlug(slug: string):
   };
 });
 
-/** Entités COMPLÈTES (avec `attributes`, donc les `forms`) pour une liste de slugs, dans l'ordre
- *  demandé — alimente les cartes TCG du hub (CharacterCard a besoin des attributs). */
-export async function getFullEntriesBySlugs(slugs: string[]): Promise<AkashaEntry[]> {
+/** Socle commun des deux lectures « par slugs » (fusion doublons, audit perf) :
+ *  1 requête `.in`, ordre d'entrée préservé. */
+async function fetchBySlugs<T extends { slug: string }>(slugs: string[], cols: string): Promise<T[]> {
   if (!slugs.length) return [];
   const supabase = await createClient();
   if (!supabase) return [];
-  const { data } = await supabase.from('akasha_entries').select('*').in('slug', slugs);
-  const bySlug = new Map((data ?? []).map((e) => [(e as AkashaEntry).slug, e as AkashaEntry]));
-  return slugs.map((s) => bySlug.get(s)).filter((e): e is AkashaEntry => !!e);
+  const { data } = await supabase.from('akasha_entries').select(cols).in('slug', slugs);
+  const bySlug = new Map((((data as unknown) as T[] | null) ?? []).map((e) => [e.slug, e]));
+  return slugs.map((s) => bySlug.get(s)).filter((e): e is T => !!e);
+}
+
+/** Entités COMPLÈTES (avec `attributes`, donc les `forms`) pour une liste de slugs, dans l'ordre
+ *  demandé — alimente les cartes TCG du hub (CharacterCard a besoin des attributs). */
+export async function getFullEntriesBySlugs(slugs: string[]): Promise<AkashaEntry[]> {
+  return fetchBySlugs<AkashaEntry>(slugs, '*');
 }
 
 /** Compte d'entrées par CATÉGORIE (attributes.category) dans le scope courant (univers / type).
@@ -221,6 +287,18 @@ export async function getFullEntriesBySlugs(slugs: string[]): Promise<AkashaEntr
 export async function listCategoryCounts(
   { type, universe }: { type?: AkashaType; universe?: string } = {},
 ): Promise<{ category: string; count: number }[]> {
+  // Fast-path hub : univers seul → agrégat sur le scan mutualisé (0 requête propre).
+  if (universe && !type) {
+    const counts = new Map<string, number>();
+    for (const row of await scanUniverse(universe)) {
+      const c = row.category?.trim();
+      if (c) counts.set(c, (counts.get(c) ?? 0) + 1);
+    }
+    return Array.from(counts.entries())
+      .map(([category, count]) => ({ category, count }))
+      .sort((a, b) => b.count - a.count || a.category.localeCompare(b.category, 'fr'));
+  }
+
   const supabase = await createClient();
   if (!supabase) return [];
 
@@ -338,37 +416,22 @@ export interface UniverseInsights {
   recent: AkashaEntryCard[];
 }
 
-/** INSIGHTS d'un univers en UN SEUL scan paginé : total, répartition type/rareté,
- *  top popularité (favorites MAL) et derniers ajoutés (created_at). Alimente les sections
- *  « chiffres-clés », « donut rareté », « top 10 » et « derniers ajoutés » du hub. */
+/** INSIGHTS d'un univers : total, répartition type/rareté, top popularité (favorites MAL)
+ *  et derniers ajoutés (created_at). Agrégats calculés sur le scan MUTUALISÉ du hub
+ *  (0 requête propre — avant : son propre scan paginé complet). */
 export async function universeInsights(universe: string): Promise<UniverseInsights> {
-  const empty: UniverseInsights = { total: 0, byType: {}, byRarity: {}, topFav: [], recent: [] };
-  const supabase = await createClient();
-  if (!supabase) return empty;
-
   const byType: Record<string, number> = {};
   const byRarity: Record<string, number> = {};
   const topFav: (AkashaEntryCard & { favorites: number })[] = [];
   const recent: (AkashaEntryCard & { created_at: string })[] = [];
   let total = 0;
-  const PAGE = 1000;
-  for (let from = 0; ; from += PAGE) {
-    const { data } = await supabase
-      .from('akasha_entries')
-      .select('slug, name, type, is_fiction, universe, summary, image_url, rarity, created_at, category:attributes->>category, fav:attributes->>favorites')
-      .eq('universe', universe)
-      .range(from, from + PAGE - 1);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const rows = (data as any[] | null) ?? [];
-    for (const r of rows) {
-      total++;
-      byType[r.type] = (byType[r.type] ?? 0) + 1;
-      if (r.rarity) byRarity[r.rarity] = (byRarity[r.rarity] ?? 0) + 1;
-      const fav = parseInt(String(r.fav ?? ''), 10);
-      if (fav > 0 && r.image_url) topFav.push({ ...(r as AkashaEntryCard), favorites: fav });
-      if (r.created_at && r.image_url) recent.push(r as AkashaEntryCard & { created_at: string });
-    }
-    if (rows.length < PAGE) break;
+  for (const r of await scanUniverse(universe)) {
+    total++;
+    byType[r.type] = (byType[r.type] ?? 0) + 1;
+    if (r.rarity) byRarity[r.rarity] = (byRarity[r.rarity] ?? 0) + 1;
+    const fav = parseInt(String(r.fav ?? ''), 10);
+    if (fav > 0 && r.image_url) topFav.push({ ...toCard(r), favorites: fav });
+    if (r.created_at && r.image_url) recent.push({ ...toCard(r), created_at: r.created_at });
   }
   topFav.sort((a, b) => b.favorites - a.favorites);
   recent.sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
@@ -379,22 +442,11 @@ export async function universeInsights(universe: string): Promise<UniverseInsigh
  *  Borné à `cap` entrées, triées par nom pour un ordre stable (le plus gros univers, Naruto,
  *  en compte 3319 — cap volontairement large pour ne jamais tronquer un univers réel). */
 export async function listUniverseIndex(universe: string, cap = 6000): Promise<{ s: string; n: string; t: AkashaType }[]> {
-  const supabase = await createClient();
-  if (!supabase) return [];
-  const out: { s: string; n: string; t: AkashaType }[] = [];
-  const PAGE = 1000;
-  for (let from = 0; from < cap; from += PAGE) {
-    const { data } = await supabase
-      .from('akasha_entries')
-      .select('slug, name, type')
-      .eq('universe', universe)
-      .order('name', { ascending: true })
-      .range(from, Math.min(from + PAGE, cap) - 1);
-    const rows = (data as { slug: string; name: string; type: AkashaType }[] | null) ?? [];
-    for (const r of rows) out.push({ s: r.slug, n: r.name, t: r.type });
-    if (rows.length < PAGE) break;
-  }
-  return out;
+  // Projection du scan mutualisé (0 requête propre — avant : son propre scan paginé complet).
+  return (await scanUniverse(universe))
+    .map((r) => ({ s: r.slug, n: r.name, t: r.type }))
+    .sort((a, b) => a.n.localeCompare(b.n, 'fr'))
+    .slice(0, cap);
 }
 
 /** Pages évolutives d'un univers (entités portant `attributes.eras`) — la vitrine « Voyages dans le temps ». */
@@ -422,35 +474,21 @@ export const countUniverse = cache(async function countUniverse(universe: string
 });
 
 /** STARS d'un univers : personnages les plus rares (légendaire → épique → rare), avec image.
- *  Alimente le rail « Têtes d'affiche » du hub d'univers. */
+ *  Tiré du scan mutualisé du hub (0 requête propre — avant : 1 requête par rareté).
+ *  Sans descFr (voir SCAN_COLS) : le hub ne s'en sert que pour le garde-fou + le JSON-LD. */
 export async function listStars(universe: string, limit = 12): Promise<AkashaEntryCard[]> {
-  const supabase = await createClient();
-  if (!supabase) return [];
-  const rows: AkashaEntryCard[] = [];
-  for (const rarity of ['legendary', 'epic', 'rare']) {
-    if (rows.length >= limit) break;
-    const { data } = await supabase
-      .from('akasha_entries')
-      .select(CARD_COLS)
-      .eq('universe', universe)
-      .eq('type', 'character')
-      .eq('rarity', rarity)
-      .not('image_url', 'is', null)
-      .order('name', { ascending: true })
-      .range(0, limit - rows.length - 1);
-    if (data) rows.push(...(data as AkashaEntryCard[]));
-  }
-  return rows.slice(0, limit);
+  const bucket: Record<string, number> = { legendary: 0, epic: 1, rare: 2 };
+  return (await scanUniverse(universe))
+    .filter((r) => r.type === 'character' && r.image_url && r.rarity != null && r.rarity in bucket)
+    .sort((a, b) => bucket[a.rarity as string] - bucket[b.rarity as string] || a.name.localeCompare(b.name, 'fr'))
+    .slice(0, limit)
+    .map(toCard);
 }
 
-/** Fiches par slugs (piliers du hub d'univers) — l'ordre d'entrée est préservé. */
+/** Fiches par slugs (piliers du hub d'univers) — l'ordre d'entrée est préservé.
+ *  CARD_COLS (avec descFr) : les piliers s'affichent en mosaïque avec flavor text. */
 export async function getEntriesBySlugs(slugs: string[]): Promise<AkashaEntryCard[]> {
-  if (!slugs.length) return [];
-  const supabase = await createClient();
-  if (!supabase) return [];
-  const { data } = await supabase.from('akasha_entries').select(CARD_COLS).in('slug', slugs);
-  const by = new Map(((data as AkashaEntryCard[] | null) ?? []).map((e) => [e.slug, e]));
-  return slugs.map((s) => by.get(s)).filter(Boolean) as AkashaEntryCard[];
+  return fetchBySlugs<AkashaEntryCard>(slugs, CARD_COLS);
 }
 
 /** Compte d'entrées par VALEUR pour un axe de taxonomie (attributes.<attr>) dans un univers.
@@ -460,6 +498,24 @@ export async function listAxisCounts(
 ): Promise<Map<string, Map<string, number>>> {
   const out = new Map<string, Map<string, number>>(attrs.map((a) => [a, new Map()]));
   if (!attrs.length) return out;
+
+  // Fast-path hub : sans 2ᵉ filtre et sur les axes canon de l'univers → agrégat sur le scan
+  // mutualisé (0 requête propre). Le chemin filtré (pages d'axe, lignes déjà réduites) reste
+  // sur sa requête dédiée : un scan complet y coûterait PLUS cher.
+  const taxoAttrs = new Set(taxonomyByName(universe)?.axes.map((a) => a.attr) ?? []);
+  if (!filterAttr && attrs.every((a) => taxoAttrs.has(a))) {
+    for (const row of await scanUniverse(universe)) {
+      for (const a of attrs) {
+        const v = (row[`ax_${a}`] as string | null | undefined)?.trim();
+        if (v) {
+          const m = out.get(a)!;
+          m.set(v, (m.get(v) ?? 0) + 1);
+        }
+      }
+    }
+    return out;
+  }
+
   const supabase = await createClient();
   if (!supabase) return out;
   const sel = attrs.map((a, i) => `a${i}:attributes->>${a}`).join(', ');
@@ -490,24 +546,27 @@ export async function listSimilar(
 ): Promise<AkashaEntryCard[]> {
   const supabase = await createClient();
   if (!supabase) return [];
-  const rows: AkashaEntryCard[] = [];
-  for (const rarity of ['legendary', 'epic', 'rare', 'common']) {
-    if (rows.length >= limit) break;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let q: any = supabase
-      .from('akasha_entries')
-      .select(CARD_COLS)
-      .neq('slug', excludeSlug)
-      .eq('rarity', rarity)
-      .order('name', { ascending: true })
-      .range(0, limit - rows.length - 1);
-    if (universe) q = q.eq('universe', universe);
-    if (cat) q = q.eq('attributes->>category', cat);
-    else q = q.eq('type', type);
-    const { data } = await q;
-    if (data) rows.push(...(data as AkashaEntryCard[]));
-  }
-  return rows.slice(0, limit);
+  // Les 4 buckets partent en PARALLÈLE (avant : séquentiels avec arrêt anticipé) —
+  // 1 aller-retour de latence au lieu de 4 ; on tronque ensuite dans l'ordre de rareté.
+  const slices = await Promise.all(
+    ['legendary', 'epic', 'rare', 'common'].map((rarity) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      let q: any = supabase
+        .from('akasha_entries')
+        .select(CARD_COLS)
+        .neq('slug', excludeSlug)
+        .eq('rarity', rarity)
+        .order('name', { ascending: true })
+        .range(0, limit - 1);
+      if (universe) q = q.eq('universe', universe);
+      if (cat) q = q.eq('attributes->>category', cat);
+      else q = q.eq('type', type);
+      return q;
+    }),
+  );
+  return slices
+    .flatMap(({ data }: { data: AkashaEntryCard[] | null }) => data ?? [])
+    .slice(0, limit);
 }
 
 
@@ -548,15 +607,15 @@ export async function getDidYouKnow(dateSeed: string, universe?: string): Promis
   const supabase = await createClient();
   if (!supabase) return null;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const base = (): any => {
+  const base = (head = false): any => {
     let q = supabase
       .from('akasha_entries')
-      .select(CARD_COLS, { count: 'exact' })
+      .select(CARD_COLS, { count: 'exact', head })
       .not('attributes->>descFr', 'is', null);
     if (universe) q = q.eq('universe', universe);
     return q;
   };
-  const { count } = await base().range(0, 0);
+  const { count } = await base(true); // HEAD : le count seul, sans ligne de données
   if (!count) return null;
   let h = 0;
   for (const ch of dateSeed + '|' + (universe ?? '')) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
