@@ -53,7 +53,11 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
   const hasCurated = forms.length > 0;
   const fstr = (fv: unknown, base: unknown): string | null =>
     (typeof fv === 'string' && fv.trim() ? fv.trim() : hasCurated ? null : str(base));
-  const portrait = str(f.url) ?? str(f.idle) ?? entry.image_url;
+  // Une forme sans visuel est LÉGITIME (décision 06/08) : pas de repli sur l'image de base —
+  // le portrait rend une tuile stylisée (dégradé d'accent + initiale du label en Bebas).
+  const portrait = str(f.url) ?? str(f.idle) ?? (hasCurated ? null : entry.image_url);
+  const formLabel = str(f.label) ?? `Forme ${formIdx + 1}`;
+  const initiale = (formLabel.match(/\p{L}|\p{N}/u)?.[0] ?? '◆').toUpperCase();
 
   // Techniques : relations « maitrise » (signatures d'abord) + jutsu du databook (dédupliqués).
   const atkRels = entry.relationsOut
@@ -137,14 +141,19 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
 
         {/* Portrait grand format — évolue avec la frise. */}
         <div style={{ position: 'relative', width: '100%', maxWidth: 560, aspectRatio: '4/5', borderRadius: 18, overflow: 'hidden', border: '1px solid var(--bd2)', background: 'var(--bg2)', boxShadow: `0 40px 90px -50px ${accent}88` }}>
-          {portrait && (
+          {portrait ? (
             <>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img aria-hidden src={portrait} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(26px) brightness(0.45) saturate(1.1)', transform: 'scale(1.25)' }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={portrait} alt={entry.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain' }} />
             </>
-          )}
+          ) : hasCurated ? (
+            /* Tuile stylisée pleine surface — forme légitime sans visuel : même conteneur, aucune casse. */
+            <div aria-hidden style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(145deg, ${accent} 0%, ${accent}66 55%, ${accent}22 100%)` }}>
+              <span style={{ fontFamily: 'var(--fn)', fontWeight: 900, fontSize: 'clamp(96px,18vw,180px)', lineHeight: 1, color: '#fff', textShadow: '0 10px 50px rgba(3,7,15,0.5)' }}>{initiale}</span>
+            </div>
+          ) : null}
           {forms.length > 1 && str(f.label) && (
             <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: '26px 16px 12px', background: 'linear-gradient(180deg, transparent, rgba(3,7,15,0.85))', fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--td2)' }}>
               {str(f.label)}{str(f.arc) && <span style={{ color: 'var(--td3)' }}> · {str(f.arc)}</span>}
@@ -301,7 +310,7 @@ function Canal({ entry, accent, f, fstr, fStats, sharedVoice }: {
       </div>
 
       {sel === null && <IdentityPanel entry={entry} accent={accent} f={f} fstr={fstr} fStats={fStats} sharedVoice={sharedVoice} />}
-      {sel?.kind === 'forme' && <FormePanel f={f} accent={accent} fStats={fStats} />}
+      {sel?.kind === 'forme' && <FormePanel f={f} idx={sel.index} accent={accent} fStats={fStats} />}
       {sel?.kind === 'technique' && <TechniquePanel sel={sel} accent={accent} />}
       {sel?.kind === 'famille' && <FamillePanel sel={sel} accent={accent} />}
       {sel?.kind === 'appartenance' && <AppartenancePanel sel={sel} accent={accent} universe={entry.universe} />}
@@ -387,8 +396,9 @@ function IdentityPanel({ entry, accent, f, fstr, fStats, sharedVoice }: {
   );
 }
 
-function FormePanel({ f, accent, fStats }: { f: Record<string, unknown>; accent: string; fStats?: Stats }) {
-  const label = str(f.label) ?? 'Forme';
+function FormePanel({ f, idx, accent, fStats }: { f: Record<string, unknown>; idx: number; accent: string; fStats?: Stats }) {
+  // Repli aligné sur ArcFrieze : « Forme N », jamais « Forme » nu.
+  const label = str(f.label) ?? `Forme ${idx + 1}`;
   return (
     <div>
       <CanalTitle>{label}</CanalTitle>

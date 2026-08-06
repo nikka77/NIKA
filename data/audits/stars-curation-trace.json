@@ -1,0 +1,2873 @@
+{
+  "_meta": {
+    "titre": "TRACE — application de la curation stars (#19), avant de chaque fiche touchée",
+    "date": "2026-08-06T19:52:50.733Z",
+    "source": "data/audits/stars-curation.json",
+    "protocole": "lecture fraîche par fiche → ajout si absent seulement (forms, nindo, nindoLabel, bounty) → update de attributes seul → vérification post-écriture (ajouts présents + aucune clé usine perdue)",
+    "comptes": {
+      "posees": 34,
+      "sauteesDejaPourvues": 2,
+      "erreurs": 0,
+      "replisDocumentesDansLeLot": 62
+    }
+  },
+  "resultats": [
+    {
+      "slug": "shikamaru-nara",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "jiraiya",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "gaara",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "minato-namikaze",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "obito-uchiha",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "rock-lee",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "sakura-haruno",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "deidara",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "orochimaru",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "tsunade",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "sasori",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "shisui-uchiha",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "hidan",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "temari",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "kiba-inuzuka",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "zabuza-momochi",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "konan",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "sarada-uchiha",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "sai-naruto",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "tobirama-senju",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "kushina-uzumaki",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "kisame-hoshigaki",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "killer-b",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "tenten",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "ino-yamanaka",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "kawaki",
+      "univers": "Naruto",
+      "statut": "POSÉE",
+      "champs": [
+        "forms"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "nico-robin",
+      "univers": "One Piece",
+      "statut": "SAUTÉE — déjà pourvue",
+      "dejaPourvus": [
+        "forms(5)",
+        "nindo",
+        "nindoLabel"
+      ]
+    },
+    {
+      "slug": "usopp",
+      "univers": "One Piece",
+      "statut": "SAUTÉE — déjà pourvue",
+      "dejaPourvus": [
+        "forms(3)",
+        "nindo",
+        "nindoLabel"
+      ]
+    },
+    {
+      "slug": "brook",
+      "univers": "One Piece",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [
+        "bounty"
+      ],
+      "verif": "OK"
+    },
+    {
+      "slug": "trafalgar-law",
+      "univers": "One Piece",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [
+        "bounty"
+      ],
+      "verif": "OK"
+    },
+    {
+      "slug": "franky",
+      "univers": "One Piece",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [
+        "bounty"
+      ],
+      "verif": "OK"
+    },
+    {
+      "slug": "shanks",
+      "univers": "One Piece",
+      "statut": "POSÉE",
+      "champs": [
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "boa-hancock",
+      "univers": "One Piece",
+      "statut": "POSÉE",
+      "champs": [
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "doflamingo-donquixote",
+      "univers": "One Piece",
+      "statut": "POSÉE",
+      "champs": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "jinbe",
+      "univers": "One Piece",
+      "statut": "POSÉE",
+      "champs": [
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    },
+    {
+      "slug": "barbe-blanche",
+      "univers": "One Piece",
+      "statut": "POSÉE",
+      "champs": [
+        "nindo",
+        "nindoLabel"
+      ],
+      "dejaPourvus": [],
+      "verif": "OK"
+    }
+  ],
+  "avant": [
+    {
+      "slug": "shikamaru-nara",
+      "univers": "Naruto",
+      "id": "927a8de6-5abf-42b1-b04b-79b7e372119c",
+      "date": "2026-08-06T19:52:43.954Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "12–13",
+        "sex": "Male",
+        "clan": "Nara",
+        "rank": "Kage",
+        "role": "Stratège",
+        "team": [
+          "Team 10",
+          "Sasuke Recovery Team",
+          "Konoha 11  (Anime only)",
+          "Twenty Platoons",
+          "Fourth Division",
+          "Hanabi Rescue Team  (Movie only)"
+        ],
+        "debut": "Naruto — chapitre 34",
+        "jutsu": [
+          "Earth Release: Practice Brick Technique",
+          "Flying Swallow",
+          "Formation Ino–Shika–Chō",
+          "Human Bullet Yo-Yo",
+          "Ninja Art: Bare-Handed Blade Block",
+          "Shadow Clone Technique",
+          "Shadow Clutch Technique",
+          "Shadow Gathering Technique",
+          "Shadow Imitation Shuriken Technique",
+          "Shadow Imitation Technique",
+          "Shadow Sewing Technique",
+          "Shadow–Neck Binding Technique"
+        ],
+        "tools": [
+          "Chakra Blade",
+          "Explosive Tag",
+          "Flash Bomb",
+          "Tantō",
+          "Wire Strings"
+        ],
+        "descFr": "Taille : 170 cm Rang : Genin (I) ; Chûnin (II) ; Hokage (III) Shikamaru est une personne extrêmement peu enthousiaste et, à ce titre, vit sa vie en évitant le travail. Cela tient en partie à sa recherche du moindre effort, car il choisit souvent de faire des choses qu'il ne ferait pas autrement si on le harcèle suffisamment. Pendant son temps libre, il fait généralement la sieste, observe les nuages et joue à des jeux de stratégie comme le Shôgi et le Go. Placé dans une situation où il pourrait avoir à fournir un effort, il tente de trouver un moyen de l'éviter, comme abandonner un combat ou faire semblant d'être occupé par autre chose. Dans les cas où il ne peut éviter ces situations, Shikamaru a tendance à lancer « c'est galère ». Malgré ses tendances paresseuses, Shikamaru est extrêmement intelligent. Son professeur, Asuma, découvrit que Shikamaru avait un QI de plus de 200, et apprit que ses mauvaises notes venaient du fait qu'il trouvait que soulever un crayon représentait trop de travail pour lui. Néanmoins, Shikamaru travaille très bien avec ses coéquipiers, car leurs pères formaient une équipe dans leur jeunesse. L'une des caractéristiques les plus marquantes de Shikamaru est qu'il trouve toutes les femmes autoritaires et « pénibles ». Contrairement à cette opin",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Shikaku Nara",
+            "slug": "shikaku-nara"
+          },
+          {
+            "rel": "mother",
+            "name": "Yoshino Nara",
+            "slug": "yoshino-nara"
+          },
+          {
+            "rel": "son",
+            "name": "Shikadai Nara",
+            "slug": "shikadai-nara"
+          },
+          {
+            "rel": "wife",
+            "name": "Temari Nara"
+          }
+        ],
+        "height": "150.8cm - 152.1cm",
+        "weight": "42kg - 42.9kg",
+        "descRaw": "Height: 170 cm Rank: Genin (I); Chuunin (II); Hokage (III) Shikamaru is an extremely unenthusiastic person, and as such lives his life avoiding work. This is partly due to him seeking paths of least resistance, as he often chooses to do things he would otherwise not do if people nag him enough. In his free time he typically takes naps, watches clouds, and plays strategy games such as Shogi and Go. When put into a situation where he potentially needs to put effort into something, he attempts to try to find a way to avoid it such as forfeiting a battle or by pretending to be preoccupied with something else. In the instances where he can not avoid these situations, Shikamaru tends to remark \"how troublesome.\" Despite his lazy tendencies, Shikamaru is extremely intelligent. His teacher, Asuma, found Shikamaru to have an IQ of over 200, and learned that Shikamaru's poor grades were a result of him finding lifting a pencil to be too much work for him. Nevertheless, Shikamaru works very well with his teammates, as their fathers were teamed together in their youth. One of Shikamaru's more distinctive characteristics is that he finds all women to be bossy and \"a pain.\" Contrary to this opin",
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/4/44/Shikamaru_Part_I.png",
+          "https://static.wikia.nocookie.net/naruto/images/9/9a/Shikamaru_Nara.png"
+        ],
+        "village": "Konohagakure",
+        "clanSlug": "nara",
+        "debutAll": {
+          "ova": "Hidden Leaf Village Grand Sports Festival!",
+          "game": "Naruto: Konoha Ninpōchō",
+          "anime": "Naruto — épisode 1",
+          "manga": "Naruto — chapitre 34",
+          "movie": "Naruto the Movie: Legend of the Stone of Gelel",
+          "novel": "Kakashi Hiden: Lightning in the Icy Sky"
+        },
+        "descLang": "en",
+        "birthdate": "22 septembre",
+        "bloodType": "AB",
+        "favorites": 18831,
+        "sourceUrl": "https://naruto.fandom.com/wiki/Shikamaru_Nara",
+        "generation": "Konoha 11",
+        "natureType": [
+          "Fire Release",
+          "Earth Release",
+          "Yin Release"
+        ],
+        "occupation": [
+          "Hokage's Chief Aide",
+          "Planner for the Shinobi Union",
+          "Proxy Commander of Fourth Division of the Allied Shinobi Forces",
+          "Chūnin Exam Proctor",
+          "Head of the Nara Clan"
+        ],
+        "affiliation": [
+          "Forces Shinobi Alliées",
+          "Konohagakure"
+        ],
+        "villageSlug": "konohagakure",
+        "voiceActors": {
+          "en": [
+            "Tom Gibis"
+          ],
+          "jp": [
+            "Shōtarō Morikubo"
+          ]
+        },
+        "organization": "Konoha 11"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "jiraiya",
+      "univers": "Naruto",
+      "id": "d2745642-5bfd-4d5e-b245-2c8f6addd637",
+      "date": "2026-08-06T19:52:44.258Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "50–51",
+        "sex": "Male",
+        "rank": "Jōnin",
+        "role": "Sannin, ermite",
+        "team": [
+          "Team Hiruzen",
+          "Ame Orphans",
+          "Team Jiraiya"
+        ],
+        "debut": "Naruto — chapitre 90",
+        "jutsu": [
+          "Barrier: Canopy Method Formation",
+          "Barrier: Toad Gourd Prison",
+          "Big Ball Rasengan",
+          "Earth Release: Earth-Style Wall",
+          "Earth Release: Swamp of the Underworld",
+          "Finger Carving Seal",
+          "Fire Release: Big Flame Bullet",
+          "Fire Release: Dragon Fire Technique",
+          "Fire Release: Fire Dragon Flame Bullet",
+          "Fire Release: Flame Bullet",
+          "Fire Release: Toad Oil Flame Bullet",
+          "Fire Sealing Method",
+          "Five Elements Unseal",
+          "Frog Kata",
+          "Hair Needle Senbon",
+          "Hiding in a Toad Technique",
+          "Needle Hell",
+          "Needle Jizō",
+          "Rasengan",
+          "Reverse Summoning Technique",
+          "Sage Art: Goemon",
+          "Sage Mode",
+          "Shadow Clone Technique",
+          "Spiralling Serial Spheres",
+          "Summoning Technique (Toad)",
+          "Summoning: Crushing Toad Stomach",
+          "Summoning: Food Cart Destroyer Technique",
+          "Summoning: Toad Mouth Bind",
+          "Summoning: Toad Shop Technique",
+          "Toad Flatness — Shadow Manipulation Technique",
+          "Toad Oil Bullet",
+          "Transparent Escape Technique",
+          "Turning into a Frog Technique",
+          "Ultra-Big Ball Rasengan",
+          "Water Release: Water Gun",
+          "Wild Lion's Mane Technique"
+        ],
+        "tools": [
+          "Chakra-Suppressing Seal",
+          "Fūma Shuriken",
+          "Hidden Kunai Mechanism",
+          "Stone Swords"
+        ],
+        "descFr": "Taille : 191,2 cm Jiraiya est l'un des trois puissants ninjas originaires de Konoha (le Village Caché de la Feuille) et formés par le Troisième Hokage, Hiruzen Sarutobi. Ses deux coéquipiers étaient Tsunade et Orochimaru. Par la suite, ils devinrent connus sous le nom des Trois Ninjas Légendaires, aussi appelés les « Sannin ». Jiraiya est également un pervers accompli. Il adore les jolies femmes et se laisse souvent distraire à leur vue. Il donne souvent pour prétexte qu'il fait des recherches pour ses écrits. Parmi ses autres traits, c'est un dompteur de crapauds, capable d'invoquer à volonté de puissants crapauds pour l'aider au combat. Il joue un rôle essentiel dans l'enseignement et l'entraînement de Naruto.",
+        "family": [
+          {
+            "rel": "clone",
+            "name": "Koji Kashin",
+            "slug": "koji-kashin"
+          },
+          {
+            "rel": "godson",
+            "name": "Naruto Uzumaki",
+            "slug": "naruto-uzumaki"
+          }
+        ],
+        "height": "191.2cm",
+        "weight": "87.5kg",
+        "descRaw": "Height: 191.2 cm Jiraiya is one of the three powerful ninjas originated from Konoha (village hidden in the leaves) and trained by the Third Hokage, Hiruzen Sarutobi. His two team mates were Tsunade and Orochimaru. Later on, they became known as the Legendary Three Ninja, also known as \"Sannin\". Jiraiya is also a full-pledged pervert. He adores good looking women and gets distracted by their sight often. He often gives the reason that he is doing research for his writing. Amongst other traits, he is a toad-tamer, with the ability to summon powerful toads at will to aid him in battle. He holds a key part in teaching and training Naruto.",
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/2/21/Profile_Jiraiya.png"
+        ],
+        "village": "Konohagakure",
+        "debutAll": {
+          "ova": "Finally a clash! Jōnin vs. Genin!! Indiscriminate Grand Melee Tournament Meeting!!",
+          "game": "Naruto: Ultimate Ninja 2",
+          "anime": "Naruto — épisode 52",
+          "manga": "Naruto — chapitre 90",
+          "movie": "Naruto the Movie: Ninja Clash in the Land of Snow"
+        },
+        "descLang": "en",
+        "birthdate": "11 novembre",
+        "bloodType": "B",
+        "favorites": 15100,
+        "signature": [
+          "Rasengan"
+        ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Jiraiya",
+        "generation": "Sannin",
+        "natureType": [
+          "Fire Release",
+          "Wind Release",
+          "Earth Release",
+          "Water Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "occupation": [
+          "Writer"
+        ],
+        "affiliation": [
+          "Konohagakure",
+          "Mont Myōboku"
+        ],
+        "villageSlug": "konohagakure",
+        "voiceActors": {
+          "en": [
+            "David Lodge",
+            "Brad MacDonald",
+            "Richard Cansino"
+          ],
+          "jp": [
+            "Hōchū Ōtsuka",
+            "Tōru Nara"
+          ]
+        },
+        "organization": "Team Jiraiya",
+        "classification": [
+          "Ermite (Sage)",
+          "Sannin"
+        ]
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "gaara",
+      "univers": "Naruto",
+      "id": "b5b33ad2-70c8-44cb-859d-373d464c97f7",
+      "date": "2026-08-06T19:52:44.478Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "12–13",
+        "sex": "Male",
+        "clan": "Kazekage",
+        "rank": "Kage",
+        "role": "Cinquième Kazekage",
+        "team": [
+          "Three Sand Siblings",
+          "Fourth Division"
+        ],
+        "debut": "Naruto — chapitre 35",
+        "jutsu": [
+          "Air Sand Protective Wall",
+          "Armour of Sand",
+          "Concealed Sand Picture Cat",
+          "Desert Layered Imperial Funeral Seal",
+          "Desert Suspension",
+          "Desert Wave",
+          "Desert: Hand",
+          "Exploding Sand Boulder",
+          "Feigning Sleep Technique",
+          "Monstrous Sand Arm",
+          "Prison Sand Burial",
+          "Quicksand Waterfall Flow",
+          "Sand Binding Coffin",
+          "Sand Binding Prison",
+          "Sand Body",
+          "Sand Bullet",
+          "Sand Castle Wolf Horn",
+          "Sand Characters",
+          "Sand Clone",
+          "Sand Drizzle",
+          "Sand Hail",
+          "Sand Lightning Needles",
+          "Sand Mesh",
+          "Sand Pillar",
+          "Sand Restraining Technique",
+          "Sand Shuriken",
+          "Sand Spear",
+          "Sand Stream",
+          "Sand Sword",
+          "Sand Waterfall Funeral",
+          "Sand Waterfall Imperial Funeral",
+          "Shield of Sand",
+          "Successive Shots Sand Drizzle",
+          "Third Eye",
+          "Ultimately Hard Absolute Attack: Spear of Shukaku",
+          "Ultimately Hard Absolute Defence: Shield of Shukaku",
+          "Wind Release: Breakthrough",
+          "Wind Release: Great Breakthrough",
+          "Wind Release: Infinite Sand Cloud — Great Breakthrough",
+          "Wind Release: Multi-Layered Gale",
+          "Wind Release: Sand Buckshot"
+        ],
+        "tools": [
+          "Gold Dust",
+          "Jōhyō",
+          "Sand",
+          "Sand Gourd",
+          "Sealing Tag"
+        ],
+        "descFr": "Taille : 146 cm Gaara fut introduit dans la série lors de l'arc de l'Examen Chûnin, en tant que ninja violent du pays allié de Konoha, le Pays du Vent. Il vint à Konoha avec ses frère et sœur Temari et Kankurô, et avec leur mentor Baki, pour participer à l'Examen Chûnin. Dès le premier regard, il fut présenté comme un individu impitoyable et violent. En raison de son enfance difficile et du manque d'amour, Gaara grandit en haïssant tout le monde autour de lui, ne s'aimant que lui-même. Lors d'un incident marquant, environ 6 ans avant le début de l'histoire principale, il se fit tatouer le kanji japonais « Aï », qui signifie « Amour ». Dans le cas de Gaara, cet amour était pour lui-même, car il était un « démon n'aimant que lui-même ». Le point de vue de Gaara changea radicalement après un affrontement avec Naruto, qui lui enseigna le vrai sens de l'amour des autres. Depuis, Gaara se sent toujours redevable envers Naruto et tente de l'aider autant qu'il le peut. Comme Naruto, Gaara est un Jinchûriki qui abrite en lui le Démon à une queue, Ichibi no Shukaku. Gaara ressemble aussi à Naruto en ce que, dans ses jeunes années, il était souvent repoussé par les autres enfants et craint par les habitants de Suna en raison de l'incroyable pouvoir qu'il possédait.",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Rasa"
+          },
+          {
+            "rel": "mother",
+            "name": "Karura",
+            "slug": "karura"
+          },
+          {
+            "rel": "brother",
+            "name": "Kankurō",
+            "slug": "kankuro"
+          },
+          {
+            "rel": "sister",
+            "name": "Temari",
+            "slug": "temari"
+          },
+          {
+            "rel": "nephew",
+            "name": "Shikadai Nara",
+            "slug": "shikadai-nara"
+          },
+          {
+            "rel": "uncle",
+            "name": "Yashamaru",
+            "slug": "yashamaru"
+          },
+          {
+            "rel": "adoptive son",
+            "name": "Shinki",
+            "slug": "shinki"
+          }
+        ],
+        "height": "146.1cm - 148.1cm",
+        "weight": "39kg - 40.2kg",
+        "descRaw": "Height: 146 cm Gaara was introduced in the series in Chuunin Exams arc, as a violent shinobi from Konoha's allied country, the Wind country. He came to Konoha with his siblings Temari and Kankuro, and with his mentor Baki, to participate in Chuunin exams. From the first look, he was shown as merciless and violent individual. Due to his hard childhood, and lack of love, Gaara grew up hating everybody around him, loving only himself. In fateful incident about 6 years before the main story time, he made himself a tattoo of Japanese Kanji letter \"Ai\", which stands for \"Love\". In Gaara's case, that Love was for himself, as he was \"Demon loving only himself\". Gaara's point of view dramatically changed after a clash with Naruto, who taught him the true meaning of loving others. Since then, Gaara always feels in debt to Naruto, and tries to help him as much as he can. Like Naruto, Gaara is a Jinchuuriki who holds within him the one tailed beast, Ichibi no Shukaku. Gaara also relates to Naruto in that in his early years, Gaara was often repelled by other children, and feared by Suna's citizens due to the incredible power he possessed.",
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/2/20/Gaara_in_Part_I.png",
+          "https://static.wikia.nocookie.net/naruto/images/0/0f/Gaara_Part_II.png"
+        ],
+        "village": "Sunagakure",
+        "debutAll": {
+          "ova": "Hidden Leaf Village Grand Sports Festival!",
+          "game": "Naruto: Ninja Council",
+          "anime": "Naruto — épisode 20",
+          "manga": "Naruto — chapitre 35",
+          "movie": "Naruto the Movie: Legend of the Stone of Gelel",
+          "novel": "Kakashi Hiden: Lightning in the Icy Sky"
+        },
+        "descLang": "en",
+        "birthdate": "19 janvier",
+        "bloodType": "AB",
+        "favorites": 13578,
+        "sourceUrl": "https://naruto.fandom.com/wiki/Gaara",
+        "generation": "Konoha 11",
+        "natureType": [
+          "Magnet Release",
+          "Wind Release",
+          "Earth Release",
+          "Lightning Release"
+        ],
+        "occupation": [
+          "Kazekage",
+          "Regimental Commander of the Allied Shinobi Forces",
+          "Commander of the Fourth Division"
+        ],
+        "affiliation": [
+          "Forces Shinobi Alliées",
+          "Sunagakure"
+        ],
+        "villageSlug": "sunagakure",
+        "voiceActors": {
+          "en": [
+            "Liam O'Brien"
+          ],
+          "jp": [
+            "Akira Ishida"
+          ]
+        },
+        "kekkeiGenkai": [
+          "Magnet (Jiton)"
+        ],
+        "organization": "Three Sand Siblings",
+        "classification": [
+          "Jinchūriki",
+          "Type Capteur"
+        ]
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "minato-namikaze",
+      "univers": "Naruto",
+      "id": "f04dd964-dadf-4022-a39d-c2639bb9cb43",
+      "date": "2026-08-06T19:52:44.676Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "24",
+        "sex": "Male",
+        "rank": "Kage",
+        "role": "Quatrième Hokage",
+        "team": [
+          "Team Jiraiya",
+          "Team Minato"
+        ],
+        "debut": "Naruto — chapitre 239",
+        "jutsu": [
+          "Area Scanning Technique",
+          "Chakra Transfer Technique",
+          "Contract Seal",
+          "Dead Demon Consuming Seal",
+          "Eight Trigrams Sealing Style",
+          "Flying Thunder Formation Technique",
+          "Flying Thunder God Mutually Instantaneous Revolving Technique",
+          "Flying Thunder God Slash",
+          "Flying Thunder God Technique",
+          "Flying Thunder God — Second Step",
+          "Flying Thunder God: Guiding Thunder",
+          "Four Red Yang Formation",
+          "Four Symbols Seal",
+          "Memory Erasing Seal",
+          "Nine-Tails Chakra Mode",
+          "Parent and Child Rasengan",
+          "Rasengan",
+          "Sage Mode",
+          "Sensing Technique",
+          "Shadow Clone Technique",
+          "Spiralling Flash Super Round Dance Howl Style Three",
+          "Summoning Technique (Shinigami, Toad)",
+          "Summoning: Food Cart Destroyer Technique",
+          "Supreme Ultimate Rasengan",
+          "Tailed Beast Ball",
+          "Tailed Beast Chakra Arms",
+          "Tailed Beast Transfer Technique"
+        ],
+        "tools": [
+          "Flying Thunder God Kunai"
+        ],
+        "descFr": "Taille : 179 cm (5'10\") Minato Namikaze était le Quatrième Hokage de Konohagakure et l'homme responsable d'avoir scellé le Démon-Renard à Neuf Queues à l'intérieur de Naruto Uzumaki à sa naissance. Ce faisant, il y perdit la vie, et avant de mourir il demanda que les villageois ne voient pas Naruto comme le monstre qu'il abritait, souhaitant au contraire qu'il soit considéré comme un héros, une requête ignorée par les villageois. « Namikaze » se traduit littéralement par « Vent des vagues ». « Minato » se traduit par « Havre » ou « Port ». Minato partage un certain nombre de traits avec Naruto, notamment en apparence et en caractère. De telles comparaisons sont fréquentes tout au long de la première partie de la série, ainsi que dans la seconde. La deuxième partie de la série révèle que Naruto est son fils, d'où les comparaisons, né de Kushina Uzumaki. Dans sa jeunesse, Minato, avec deux autres Genin inconnus, fut un élève de Jiraiya. Avant de devenir Hokage, il fut aussi le maître de Kakashi Hatake, Obito Uchiha et Rin. Minato est dit être le plus grand ninja que Konoha ait jamais produit, doté d'un talent naturel qu'on n'avait pas vu depuis de nombreuses années. Il créa plusieurs techniques distinctives, dont le Hiraishin no Jutsu, qui lui permettait essentiellement de se téléporter vers n'importe quel endroit à l'aide de",
+        "family": [
+          {
+            "rel": "son",
+            "name": "Naruto Uzumaki",
+            "slug": "naruto-uzumaki"
+          },
+          {
+            "rel": "grandson",
+            "name": "Boruto Uzumaki",
+            "slug": "boruto-uzumaki"
+          },
+          {
+            "rel": "granddaughter",
+            "name": "Himawari Uzumaki",
+            "slug": "himawari-uzumaki"
+          },
+          {
+            "rel": "wife",
+            "name": "Kushina Uzumaki",
+            "slug": "kushina-uzumaki"
+          }
+        ],
+        "height": "179.2cm",
+        "titles": [
+          "波風ミナトNamikaze Minato",
+          "fourth Hokage",
+          "konoha's Yellow Flash",
+          "child Of The Prophecy",
+          "saviour Of This World"
+        ],
+        "weight": "66.1kg",
+        "descRaw": "Height: 179cm (5'10\") Minato Namikaze was the Fourth Hokage of Konohagakure and the man responsible for sealing the nine-tailed demon fox inside Naruto Uzumaki when he was born. Doing so cost him his life, and before dying he asked that the villagers not see Naruto as the monster within him, instead wanting him to be viewed as a hero, a request ignored by the villagers. \"Namikaze\" translates literally as \"Wave wind\". \"Minato\" translates as \"Harbor\" or \"Port\". Minato shares a number of traits with Naruto, namely in appearance and attitude. Such comparisons are common throughout the first part of the series, and in the second as well. The second part of the series reveals that Naruto is his son, hence the comparisons, born to Kushina Uzumaki. In his youth Minato, along with two other unknown Genin, was a student of Jiraiya. Prior to becoming Hokage, he was also the sensei of Kakashi Hatake, Obito Uchiha, and Rin. Minato is said to be the greatest ninja Konoha had ever produced, with natural talent that had not been seen in many years. He created several distinctive techniques, including the Hiraishin no Jutsu, which essentially allowed him to teleport to any location with the use of ",
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/7/71/Minato_Namikaze.png"
+        ],
+        "village": "Konohagakure",
+        "debutAll": {
+          "ova": "Hidden Leaf Village Grand Sports Festival!",
+          "game": "Naruto: Konoha Ninpōchō",
+          "anime": "Naruto — épisode 1",
+          "manga": "Naruto — chapitre 239",
+          "movie": "Naruto Shippūden the Movie: The Lost Tower",
+          "novel": "Naruto: Innocent Heart, Demonic Blood"
+        },
+        "descLang": "en",
+        "birthdate": "25 janvier",
+        "bloodType": "B",
+        "favorites": 11357,
+        "signature": [
+          "Rasengan",
+          "Hiraishin"
+        ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Minato_Namikaze",
+        "generation": "Génération de Kakashi",
+        "natureType": [
+          "Fire Release",
+          "Wind Release",
+          "Lightning Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "occupation": [
+          "Hokage"
+        ],
+        "affiliation": [
+          "Forces Shinobi Alliées",
+          "Konohagakure",
+          "Mont Myōboku"
+        ],
+        "villageSlug": "konohagakure",
+        "voiceActors": {
+          "en": [
+            "Tony Oliver"
+          ],
+          "jp": [
+            "Toshiyuki Morikawa",
+            "Miyu Irino"
+          ]
+        },
+        "organization": "Team Jiraiya",
+        "classification": [
+          "Jinchūriki",
+          "Ermite (Sage)",
+          "Type Capteur"
+        ]
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "obito-uchiha",
+      "univers": "Naruto",
+      "id": "705bebcd-af08-4611-9a02-bb2232ba5419",
+      "date": "2026-08-06T19:52:44.873Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "13  (Kakashi Gaiden)",
+        "sex": "Male",
+        "clan": "Uchiha",
+        "rank": "Chūnin",
+        "role": "Membre masqué de l’Akatsuki",
+        "team": [
+          "Team Minato"
+        ],
+        "debut": "Naruto — chapitre 239",
+        "jutsu": [
+          "Animal Path",
+          "Asura Path",
+          "Black Receiver",
+          "Chakra Transfer Technique",
+          "Demonic Statue Chains",
+          "Deva Path",
+          "Earth Release: Hiding Like a Mole Technique",
+          "Explosive Landmines",
+          "Fire Release: Blast Wave Wild Dance",
+          "Fire Release: Great Fireball Technique",
+          "Fire Release: Phoenix Sage Fire Technique",
+          "Genjutsu: Sharingan",
+          "Hands of Flame",
+          "Human Path",
+          "Infinite Tsukuyomi",
+          "Izanagi",
+          "Kamui",
+          "Naraka Path",
+          "Outer Path",
+          "Outer Path — Samsara of Heavenly Life Technique",
+          "Preta Path",
+          "Regeneration Ability",
+          "Sealing Technique: Phantom Dragons Nine Consuming Seals",
+          "Sensing Technique",
+          "Six Paths Senjutsu",
+          "Six Paths Technique",
+          "Six Paths Ten-Tails Coffin Seal",
+          "Six Paths of Pain",
+          "Six Red Yang Formation",
+          "Summoning Rinnegan",
+          "Summoning Technique (Demonic Statue of the Outer Path, Kurama)",
+          "Summoning: Demonic Statue of the Outer Path",
+          "Tail Releasing Method",
+          "Tailed Beast Ball",
+          "Tailed Beast Chakra Arms",
+          "Tailed Beast Transfer Technique",
+          "Telescope Technique",
+          "Truth-Seeking Ball",
+          "Uchiha Flame Formation",
+          "Uchiha Return",
+          "Whac-A-Mole Technique",
+          "Wood Release: Cutting Technique",
+          "Wood Release: Great Spear Tree",
+          "Wood Release: Underground Roots Technique",
+          "Wood Release: Wood Dragon Technique"
+        ],
+        "tools": [
+          "Fūma Shuriken",
+          "Gunbai",
+          "Kusari",
+          "Sword",
+          "Sword of Nunoboko"
+        ],
+        "descFr": "Obito Uchiha faisait équipe avec Kakashi Hatake et Rin sous les ordres du Quatrième Hokage. Obito était fréquemment en retard aux missions à cause des bonnes actions aléatoires qu'il accomplissait, ce qui irritait grandement Kakashi. Il semblait aussi avoir un béguin pour Rin. Lorsque Rin est enlevée durant l'arc du Kakashi Gaiden, Kakashi, alors chef d'équipe, insista pour poursuivre la mission plutôt que de la sauver. Arguant que ceux qui ne sauvent pas leurs coéquipiers ne valent pas mieux que des ordures, Obito refusa et parvint finalement à convaincre Kakashi de le rejoindre. Durant leur opération de sauvetage, Kakashi perdit son œil gauche à la suite de l'attaque d'un ninja ennemi, et Obito éveilla son Sharingan pour sauver Kakashi et vaincre le ninja. Une fois Rin retrouvée, Obito sauva de nouveau Kakashi en le poussant hors de la trajectoire d'un éboulement, se faisant écraser tout le côté droit du corps au passage. Incapable de fuir avec ses coéquipiers, Obito demanda à Rin d'implanter son œil Sharingan restant dans l'orbite endommagée de Kakashi, en guise de cadeau.",
+        "family": [
+          {
+            "rel": "grandmother ",
+            "name": "Obito's Grandmother",
+            "slug": "obito-s-grandmother"
+          }
+        ],
+        "height": "154.2cm",
+        "titles": [
+          "うちはオビトUchiha Obito",
+          "tobi",
+          "madara Uchiha",
+          "masked Madara",
+          "masked Man",
+          "saviour"
+        ],
+        "weight": "44.5kg",
+        "descRaw": "Obito Uchiha was teammates with Kakashi Hatake and Rin under the Fourth Hokage. Obito was frequently late for missions due to the random good deeds he would carry out, which greatly irritated Kakashi. He also seemed to have had a crush on Rin. When Rin is kidnapped during the Kakashi Gaiden arc, Kakashi, the current team leader, insisted that they continue the mission instead of saving her. Citing that those who do not save their teammates are no better than trash, Obito refused and eventually managed to persuade Kakashi to join him. During their rescue effort, Kakashi lost his left eye as a result of an enemy ninja's attack, and Obito awakened his Sharingan to save Kakashi and defeat the ninja. Once finding Rin, Obito again saved Kakashi by pushing him out of the way of a rock slide, though has his right side crushed in the process. Unable to escape with his teammates, Obito had Rin implant his remaining Sharingan eye in Kakashi's damaged eye socket as a gift.",
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/4/4a/Obito_Uchiha.png",
+          "https://static.wikia.nocookie.net/naruto/images/3/3c/Obito.png"
+        ],
+        "village": "Konohagakure",
+        "clanSlug": "uchiha",
+        "debutAll": {
+          "ova": "Naruto: The Cross Roads",
+          "game": "Naruto Shippūden: Ultimate Ninja Heroes 3",
+          "anime": "Naruto Shippūden — épisode 32",
+          "manga": "Naruto — chapitre 239",
+          "movie": "Road to Ninja: Naruto the Movie",
+          "novel": "Naruto Jinraiden: The Day the Wolf Howled"
+        },
+        "descLang": "en",
+        "birthdate": "10 février",
+        "bloodType": "O",
+        "favorites": 9018,
+        "sourceUrl": "https://naruto.fandom.com/wiki/Obito_Uchiha",
+        "generation": "Génération de Kakashi",
+        "natureType": [
+          "Fire Release",
+          "Wind Release",
+          "Lightning Release",
+          "Earth Release",
+          "Water Release",
+          "Wood Release",
+          "Yin Release",
+          "Yang Release",
+          "Yin–Yang Release"
+        ],
+        "occupation": [
+          "Leader of Akatsuki",
+          "Secret Leader of Kirigakure"
+        ],
+        "affiliation": [
+          "Konohagakure",
+          "Akatsuki",
+          "Kirigakure"
+        ],
+        "villageSlug": "konohagakure",
+        "voiceActors": {
+          "en": [
+            "Michael Yurchak",
+            "Todd Haberkorn",
+            "Neil Kaplan"
+          ],
+          "jp": [
+            "Wataru Takagi",
+            "Naoya Uchida",
+            "Sōsuke Komori"
+          ]
+        },
+        "kekkeiGenkai": [
+          "Sharingan"
+        ],
+        "organization": "Akatsuki",
+        "classification": [
+          "Jinchūriki",
+          "Pseudo-Jinchūriki",
+          "Déserteur (Nukenin)",
+          "Rang S",
+          "Type Capteur"
+        ]
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "rock-lee",
+      "univers": "Naruto",
+      "id": "7b11efac-ed1b-46a3-9a33-d9a8d0e8e482",
+      "date": "2026-08-06T19:52:45.094Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "13–14",
+        "sex": "Male",
+        "clan": "Lee",
+        "rank": "Jōnin",
+        "role": "Spécialiste du taijutsu",
+        "team": [
+          "Team Guy",
+          "Konoha 11  (Anime only)",
+          "Star Guard Team  (Anime only)",
+          "Team Two  (Anime only)",
+          "Third Division",
+          "Suicide Corps  (Movie only)"
+        ],
+        "debut": "Naruto — chapitre 36",
+        "jutsu": [
+          "Crane Wing Formation",
+          "Double Dynamic Entry",
+          "Drunken Fist",
+          "Dynamic Entry",
+          "Eight Gates",
+          "Front Lotus",
+          "Front Lotus: Eight Trigrams Palms Revolving Heaven",
+          "Leaf Coiling Whirlwind",
+          "Leaf Drop",
+          "Leaf Flash Kick",
+          "Leaf Gale",
+          "Leaf Great Whirlwind",
+          "Leaf Rising Wind",
+          "Leaf Whirlwind",
+          "Ninja Art: Bare-Handed Blade Block",
+          "One-Man Front Lotus",
+          "Reverse Lotus",
+          "Seasickness Fist",
+          "Shadow of the Dancing Leaf",
+          "Strong Fist",
+          "Youth Full Power"
+        ],
+        "tools": [
+          "Flying Thunder God Kunai",
+          "Military Rations Pill",
+          "Tonfa",
+          "Weights"
+        ],
+        "descFr": "Lee est un ninja affilié au village de Konohagakure et un membre de l'Équipe Gai, composée de lui-même, Neji Hyûga, Tenten et Maito Gai, le chef de l'équipe. Incapable d'utiliser la plupart des techniques ninja, Lee se consacre exclusivement au taijutsu, des techniques ninja proches des arts martiaux. Lee rêve de devenir un « ninja splendide » malgré ses incapacités.",
+        "family": [
+          {
+            "rel": "son",
+            "name": "Metal Lee",
+            "slug": "metal-lee"
+          }
+        ],
+        "height": "158.5cm - 162.1cm",
+        "weight": "46.6kg - 47.5kg",
+        "descRaw": "Lee is a ninja affiliated with the village of Konohagakure, and is a member of Team Guy, which consists of himself, Neji Hyuuga, Tenten, and Might Guy—the team's leader. Unable to use most ninja techniques, Lee dedicates himself to using solely taijutsu, ninja techniques similar to martial arts. Lee dreams of becoming a \"splendid ninja\" despite his inabilities.",
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/9/97/Rock_Lee_Part_I.png",
+          "https://static.wikia.nocookie.net/naruto/images/7/7d/Lee_timeskip.png"
+        ],
+        "village": "Konohagakure",
+        "debutAll": {
+          "ova": "Hidden Leaf Village Grand Sports Festival!",
+          "game": "Naruto: Konoha Ninpōchō",
+          "anime": "Naruto — épisode 21",
+          "manga": "Naruto — chapitre 36",
+          "movie": "Naruto the Movie: Guardians of the Crescent Moon Kingdom",
+          "novel": "Kakashi Hiden: Lightning in the Icy Sky"
+        },
+        "descLang": "en",
+        "birthdate": "27 novembre",
+        "bloodType": "A",
+        "favorites": 6465,
+        "sourceUrl": "https://naruto.fandom.com/wiki/Rock_Lee",
+        "generation": "Konoha 11",
+        "occupation": [
+          "Chūnin Exams Proctor"
+        ],
+        "affiliation": [
+          "Forces Shinobi Alliées",
+          "Konohagakure"
+        ],
+        "villageSlug": "konohagakure",
+        "voiceActors": {
+          "en": [
+            "Brian Donovan"
+          ],
+          "jp": [
+            "Yōichi Masukawa"
+          ]
+        },
+        "organization": "Konoha 11"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "sakura-haruno",
+      "univers": "Naruto",
+      "id": "04a1be10-777e-4043-81a7-d05a55c1ad29",
+      "date": "2026-08-06T19:52:45.303Z",
+      "champsAjoutes": [
+        "forms"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "12–13",
+        "sex": "Female",
+        "clan": "Uchiha",
+        "rank": "Jōnin",
+        "role": "Kunoichi médicale",
+        "team": [
+          "Team Kakashi",
+          "Konoha 11  (Anime only)",
+          "Team Asuma  (Anime only)",
+          "Kazekage Rescue Team",
+          "Eight Man Squad",
+          "Team Three  (Anime only)",
+          "Third Division",
+          "Hanabi Rescue Team  (Movie only)",
+          "Ino–Saku–Sai  (Novel only)",
+          "Medic Corps"
+        ],
+        "debut": "Naruto — chapitre 3",
+        "jutsu": [
+          "Area Scanning Technique",
+          "Chakra Enhanced Strength",
+          "Chakra Scalpel",
+          "Chakra Transfer Technique",
+          "Cherry Blossom Impact",
+          "Creation Rebirth",
+          "Delicate Illness Extraction Technique",
+          "Four-Corner Sealing Barrier",
+          "Healing Resuscitation Regeneration Technique",
+          "Healing Technique",
+          "Katsuyu: Immense Network Healing",
+          "Mystical Palm Technique",
+          "Ninja Art Creation Rebirth — Strength of a Hundred Technique",
+          "Polar Particle Unsealing Technique",
+          "Puppet: Spring Punishing Strike",
+          "Sakura Blizzard Technique",
+          "Strength of a Hundred Seal",
+          "Summoning Technique (Slug)",
+          "Yin Seal: Release"
+        ],
+        "tools": [
+          "Antidote",
+          "Konoha Chakra Blade",
+          "Lightning Barrel",
+          "Military Rations Pill",
+          "Poison",
+          "Senbon",
+          "Tantō"
+        ],
+        "descFr": "Taille : 149 cm (I) ; 161 cm (II) Rang : Genin (I) ; Chûnin (II) Sakura est la seule ninja féminine de l'Équipe 7. Lorsqu'elle rencontre Naruto pour la première fois, elle est physiquement faible et éprouve un béguin immense pour Sasuke. Elle n'aime pas non plus Naruto. Sa seule qualité est son intelligence : en tant que fille la plus douée de l'académie ninja, elle possède un excellent contrôle du chakra, mais à part cela on pourrait la ranger parmi les kunoichi sans talent exceptionnel. Dans la première partie de l'Examen Chûnin, elle répond facilement aux questions, mais dans la deuxième partie, elle est incapable de vaincre les ninjas du Son qui attaquent Sasuke et Naruto. Elle fait le serment de devenir une meilleure ninja et une meilleure personne. Pour prouver son engagement, elle coupe ses longs cheveux avec un kunai. Dans la troisième partie de l'Examen Chûnin, elle affronte Ino Yamanaka, son ancienne amie mais désormais rivale pour l'affection de Sasuke. Les deux se mettent hors de combat simultanément. Cela transforme leur relation en une rivalité entre amies. Après l'ellipse temporelle, elle est désormais chûnin, ayant été entraînée par Tsunade durant les deux dernières années. C'est désormais une ninja médecin d'une habileté considérable, suffisante pour peut-être un jour surpasser Tsunade. Cela se voit lorsqu'elle est capable de réaliser une opération chirurgicale complexe",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Kizashi Haruno",
+            "slug": "kizashi-haruno"
+          },
+          {
+            "rel": "mother",
+            "name": "Mebuki Haruno",
+            "slug": "mebuki-haruno"
+          },
+          {
+            "rel": "daughter",
+            "name": "Sarada Uchiha",
+            "slug": "sarada-uchiha"
+          },
+          {
+            "rel": "husband",
+            "name": "Sasuke Uchiha",
+            "slug": "sasuke-uchiha"
+          }
+        ],
+        "height": "148.5cm - 150.1cm",
+        "weight": "35.4kg - 35.9kg",
+        "descRaw": "Height: 149cm (I); 161cm (II) Rank: Genin (I); Chuunin (II) Sakura is the only female ninja of Team 7. When she first meets Naruto she is physically weak and has an immense crush on Sasuke. She dislikes Naruto as well. The only thing she's good at is her brain as the smartest girl in ninja academy her excellent chakra control, out of that she could be categorized as a kunoichi with no exceptional talent. In the first part of the Chuunin exam, she is easily able to answer the questions, but in the second part, she is unable to defeat the Sound ninja attacking Sasuke and Naruto. She makes a pledge to become a better ninja and a better person. To prove her commitment she cuts her long hair with a kunai. In the third part of the Chuunin Exam, she goes up against Ino Yamanaka, her former friend but a current rival for Sasuke's affections. The two defeat each other simultaneously. This turns their relationship into a rivalry between friends. After the time skip, she is now a chuunin having been trained by Tsunade for the past two years. She is now a medic Ninja of considerable skill, enough skill to possibly defeat Tsunade one day. It is shown when she is able to do a complicated surgery",
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/6/64/Sakura_Part_1.png",
+          "https://static.wikia.nocookie.net/naruto/images/b/ba/Sakurap2.png"
+        ],
+        "village": "Konohagakure",
+        "debutAll": {
+          "ova": "Find the Four-Leaf Red Clover!",
+          "game": "Naruto: Konoha Ninpōchō",
+          "anime": "Naruto — épisode 1",
+          "manga": "Naruto — chapitre 3",
+          "movie": "Naruto the Movie: Ninja Clash in the Land of Snow",
+          "novel": "Naruto: Innocent Heart, Demonic Blood"
+        },
+        "descLang": "en",
+        "birthdate": "28 mars",
+        "bloodType": "O",
+        "favorites": 5672,
+        "sourceUrl": "https://naruto.fandom.com/wiki/Sakura_Haruno",
+        "generation": "Konoha 11",
+        "natureType": [
+          "Earth Release",
+          "Water Release",
+          "Fire Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "occupation": [
+          "Director of Konoha Children Mental Health Clinic",
+          "Head of Konoha Medical Department"
+        ],
+        "affiliation": [
+          "Forces Shinobi Alliées",
+          "Konohagakure",
+          "Shikkotsu Forest"
+        ],
+        "villageSlug": "konohagakure",
+        "voiceActors": {
+          "en": [
+            "Kate Higgins"
+          ],
+          "jp": [
+            "Chie Nakamura"
+          ]
+        },
+        "organization": "Konoha 11",
+        "classification": [
+          "Ninja médical"
+        ]
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "deidara",
+      "univers": "Naruto",
+      "id": "9f31a928-28cf-4f5c-bc74-298cc379dbbb",
+      "date": "2026-08-06T19:52:45.496Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "19",
+        "sex": "Male",
+        "rank": "S-rank",
+        "descFr": "Élément de chakra : Doton Taille : 166 cm Fonction : membre de l'Akatsuki Deidara est un ninja déserteur d'Iwagakure. Avant de rejoindre l'Akatsuki, Deidara était un poseur de bombes terroriste à louer. Son travail attira l'attention de Pain, qui envoya d'autres membres de l'Akatsuki le recruter. Bien qu'il ait d'abord refusé, Deidara fut contraint de rejoindre l'organisation après avoir été vaincu par Itachi Uchiha. Deidara nourrit dès lors une profonde aversion pour Itachi et devint déterminé à le vaincre, allant jusqu'à entraîner l'un de ses yeux pour surmonter la capacité emblématique d'Itachi : le genjutsu. Deidara fit équipe avec Sasori en rejoignant l'organisation, lequel gagna l'admiration de Deidara par son talent artistique et sa perspicacité. Deidara fit ensuite équipe avec Tobi après la mort de Sasori, qu'il traitait comme un disciple. Malgré l'habitude de Tobi de mettre accidentellement Deidara en colère, Deidara prenait grand soin de protéger Tobi du danger et passa même ses derniers instants à lui présenter des excuses. Au combat, Deidara utilise des bouches spéciales dans la paume de chaque main pour créer de l'Argile Explosive, une argile imprégnée de chakra qui explose sur commande. Il utilise couramment le commandement « Katsu » pour la déclencher. La puissance de l'explosion de ses créations dépend de la quantité de chakra qu'il",
+        "descRaw": "Chakra Element: Doton Height: 166 cm Occupation: Akatsuki member Deidara is a missing-nin from Iwagakure. Before joining the Akatsuki, Deidara was a terrorist bomber for hire. His work caught the eye of Pain, who sent other Akatsuki members to recruit him. Though he refused at first, Deidara was forced to join the organization after being defeated by Itachi Uchiha. Deidara maintained a deep loathing for Itachi from that point onward and became determined to defeat him, even training one of his eyes to overcome Itachi's signature ability: genjutsu. Deidara was partnered with Sasori upon joining the organization, who earned Deidara's admiration through his artistic ability and insight. Deidara was partnered with Tobi after Sasori's death, whom he treated as a disciple. Despite Tobi's habit of accidentally angering Deidara, Deidara took great care to keep Tobi out of harm's way and even spent his final moments apologizing to him. In battle, Deidara uses special mouths on the palm of each hand to create Exploding Clay, chakra-infused clay that explodes on command. He commonly uses the command \"Katsu\" to trigger it. The blast strength of his creations is determined by how much chakra he",
+        "village": "Iwagakure",
+        "descLang": "en",
+        "birthdate": "5 mai",
+        "favorites": 3624,
+        "voiceActors": {
+          "en": [
+            "Quinton Flynn",
+            "Roger Craig Smith"
+          ],
+          "jp": [
+            "Katsuhiko Kawamoto"
+          ]
+        },
+        "organization": "Akatsuki"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "orochimaru",
+      "univers": "Naruto",
+      "id": "fdf26386-1145-43c1-9b06-b3061d2be150",
+      "date": "2026-08-06T19:52:45.685Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "50–51",
+        "sex": "File:Gender Various.svg Various",
+        "rank": "Sannin",
+        "role": "Sannin renégat",
+        "team": [
+          "Team Hiruzen",
+          "Team Orochimaru",
+          "Team Dosu"
+        ],
+        "debut": "Naruto — chapitre 45",
+        "jutsu": [
+          "Binding Snake Glare Spell",
+          "Casualty Puppet",
+          "Chakra Scalpel",
+          "Earth Release: Hiding Like a Mole Technique",
+          "Earth Release: Shadow Clone",
+          "Eight Branches Technique",
+          "Eight Trigrams Sealing Style",
+          "Five Elements Seal",
+          "Five Elements Unseal",
+          "Formation of Ten Thousand Snakes",
+          "Four Black Snakes Formation",
+          "Four Symbols Seal",
+          "Fūinjutsu Trap",
+          "Gathering of the Snakes",
+          "Genjutsu Binding",
+          "Hidden Doorway Technique",
+          "Hidden Shadow Snake Hands",
+          "Hideout Destruction Trap",
+          "Hiding in Surface Technique",
+          "Living Corpse Reincarnation",
+          "Many Hidden Shadow Snake Hands",
+          "Orochimaru's Juinjutsu",
+          "Orochimaru-Style Body Replacement Technique",
+          "Regeneration Ability",
+          "Reversible Technique",
+          "Self-Healing Technique",
+          "Shadow Clone Technique",
+          "Shuriken Shadow Clone Technique",
+          "Slithering Snake Mode",
+          "Snake Clone Technique",
+          "Snake Mouth Bind",
+          "Soft Physique Modification",
+          "Sound Wave Technique",
+          "Space–Time Technique Formula: Underworld Turnover",
+          "Substitute Technique",
+          "Summoning Technique (Shinigami, Snake)",
+          "Summoning: Impure World Reincarnation",
+          "Summoning: Rashōmon",
+          "Summoning: Triple Rashōmon",
+          "Sword of Kusanagi: Longsword of the Sky",
+          "Temporary Paralysis Technique",
+          "Twin Snakes Mutual Death Technique",
+          "Vanishing Facial Copy Technique",
+          "White Snake Possession",
+          "Wind Release: Breakthrough",
+          "Wind Release: Gale Palm",
+          "Wind Release: Great Breakthrough"
+        ],
+        "tools": [
+          "Genjutsu Pill",
+          "Mind Awakening Pill",
+          "Poison",
+          "Shinigami Mask",
+          "Sword",
+          "Sword of Kusanagi"
+        ],
+        "descFr": "Taille : 179,4 cm - 172 cm Affiliations : Konohagakure (la Feuille), la Racine, l'Akatsuki, Otogakure (le Son) Classification : Sannin, Ermite, rang S, ninja déserteur Orochimaru est un antagoniste majeur de la série Naruto. C'est un ninja déserteur de Konohagakure, reconnu comme l'un des ninjas les plus puissants et connu comme l'un des « Sannin Légendaires » (les Trois Ninjas Légendaires), titre qui lui fut donné, ainsi qu'à ses anciens coéquipiers Jiraiya et Tsunade, par Hanzô durant la Deuxième Grande Guerre Ninja. Ses principaux objectifs sont de capturer Sasuke Uchiha pour en faire son nouveau corps afin de s'emparer du Sharingan, et de détruire Konoha.",
+        "family": [
+          {
+            "rel": "clone/son",
+            "name": "Mitsuki",
+            "slug": "mitsuki"
+          }
+        ],
+        "height": "179.4cm - 172cm",
+        "weight": "63.9kg - 57.3kg",
+        "descRaw": "Height: 179.4 cm - 172 cm Affiliations: Konohagakure (Leaf), Root, Akatsuki, Otagakure (Sound) Classification: Sannin, Sage, S-rank, Missing-nin Orochimaru is a major antagonist of the Naruto series. They are a missing ninja from Konohagakure, who is recognized as one of the most powerful ninjas and known as one of the \"Legendary Sannin\" (Legendary Three Ninja), which was a title that was given to them and their former teammates, Jiraiya and Tsunade, by Hanzou during the Second Shinobi World War. Their main goals are to capture Uchiha Sasuke as his new body to gain possession of the Sharingan and to destroy Konoha.",
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/1/14/Orochimaru_Infobox.png",
+          "https://static.wikia.nocookie.net/naruto/images/b/be/Orochimaru_Part_III.png"
+        ],
+        "village": "Konohagakure",
+        "debutAll": {
+          "ova": "Hidden Leaf Village Grand Sports Festival!",
+          "game": "Naruto: Ninja Council",
+          "anime": "Naruto — épisode 27",
+          "manga": "Naruto — chapitre 45",
+          "movie": "Naruto Shippūden the Movie: Bonds",
+          "novel": "Sasuke Shinden: Book of Sunrise"
+        },
+        "descLang": "en",
+        "birthdate": "27 octobre",
+        "bloodType": "B",
+        "favorites": 2595,
+        "signature": [
+          "Edo Tensei"
+        ],
+        "sourceUrl": "https://naruto.fandom.com/wiki/Orochimaru",
+        "generation": "Sannin",
+        "natureType": [
+          "Wind Release",
+          "Lightning Release",
+          "Earth Release",
+          "Water Release",
+          "Fire Release",
+          "Wood Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "occupation": [
+          "Founder and Leader of Otogakure",
+          "Scientist"
+        ],
+        "affiliation": [
+          "Konohagakure",
+          "Akatsuki",
+          "Root",
+          "Otogakure",
+          "Ryūchi Cave"
+        ],
+        "villageSlug": "konohagakure",
+        "voiceActors": {
+          "en": [
+            "Steven Blum",
+            "Mary Elizabeth McGlynn",
+            "Crispin Freeman"
+          ],
+          "jp": [
+            "Kujira",
+            "Yuriko Yamaguchi",
+            "Mayumi Yamaguchi"
+          ]
+        },
+        "organization": "Akatsuki",
+        "classification": [
+          "Déserteur (Nukenin)",
+          "Rang S",
+          "Sannin"
+        ]
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "tsunade",
+      "univers": "Naruto",
+      "id": "dd23eb7c-2c51-4af9-af28-f721171df7ec",
+      "date": "2026-08-06T19:52:45.882Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "51",
+        "sex": "Female",
+        "clan": "Senju",
+        "rank": "Kage",
+        "role": "Cinquième Hokage",
+        "team": [
+          "Team Hiruzen"
+        ],
+        "debut": "Naruto — chapitre 139",
+        "jutsu": [
+          "Body Pathway Derangement",
+          "Cell Activation Technique",
+          "Chakra Enhanced Strength",
+          "Chakra Scalpel",
+          "Chakra Transfer Technique",
+          "Creation Rebirth",
+          "Five Elements Unseal",
+          "Four-Corner Sealing Barrier",
+          "Genjutsu Binding",
+          "Heavenly Foot of Pain",
+          "Heavenly Spear Foot",
+          "Katsuyu: Immense Network Healing",
+          "Mechanical Eight Trigrams Formation",
+          "Mystical Palm Technique",
+          "Ninja Art Creation Rebirth — Strength of a Hundred Technique",
+          "Reverse Summoning Technique",
+          "Shadow Clone Technique",
+          "Strength of a Hundred Seal",
+          "Summoning Technique (Slug)",
+          "Time-Release Technique",
+          "Transformation Technique",
+          "Yin Seal: Release"
+        ],
+        "tools": [
+          "Antidote",
+          "Mechanical Eight Trigrams Formation Drum",
+          "Ninja Info Cards",
+          "Poison"
+        ],
+        "descFr": "Tsunade est la petite-fille du Premier Hokage et l'un des Sannin légendaires.",
+        "family": [
+          {
+            "rel": "great-grandfather",
+            "name": "Butsuma Senju",
+            "slug": "butsuma-senju"
+          },
+          {
+            "rel": "grandfather",
+            "name": "Hashirama Senju",
+            "slug": "hashirama-senju"
+          },
+          {
+            "rel": "granduncle",
+            "name": "Kawarama Senju",
+            "slug": "kawarama-senju"
+          },
+          {
+            "rel": "grandmother",
+            "name": "Mito Uzumaki",
+            "slug": "mito-uzumaki"
+          },
+          {
+            "rel": "brother",
+            "name": "Nawaki",
+            "slug": "nawaki"
+          },
+          {
+            "rel": "lover",
+            "name": "Dan Katō",
+            "slug": "dan-kato"
+          }
+        ],
+        "height": "163.1cm",
+        "weight": "48.9kg",
+        "descRaw": "Tsunade is the granddaughter of the First Hokage and she is one of the legendary Sannin.",
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/b/b3/Tsunade_infobox2.png"
+        ],
+        "village": "Konohagakure",
+        "clanSlug": "senju",
+        "debutAll": {
+          "ova": "Finally a clash! Jōnin vs. Genin!! Indiscriminate Grand Melee Tournament Meeting!!",
+          "game": "Naruto: Ultimate Ninja 2",
+          "anime": "Naruto — épisode 83",
+          "manga": "Naruto — chapitre 139",
+          "movie": "Naruto Shippūden the Movie",
+          "novel": "Kakashi Hiden: Lightning in the Icy Sky"
+        },
+        "descLang": "en",
+        "birthdate": "2 août",
+        "bloodType": "B",
+        "favorites": 2150,
+        "sourceUrl": "https://naruto.fandom.com/wiki/Tsunade",
+        "generation": "Sannin",
+        "natureType": [
+          "Lightning Release",
+          "Earth Release",
+          "Water Release",
+          "Fire Release",
+          "Yin Release",
+          "Yang Release"
+        ],
+        "occupation": [
+          "Hokage"
+        ],
+        "affiliation": [
+          "Forces Shinobi Alliées",
+          "Konohagakure",
+          "Shikkotsu Forest"
+        ],
+        "villageSlug": "konohagakure",
+        "voiceActors": {
+          "en": [
+            "Debi Mae West",
+            "Mary Elizabeth McGlynn"
+          ],
+          "jp": [
+            "Masako Katsuki",
+            "Haruhi Terada"
+          ]
+        },
+        "organization": "Team Hiruzen",
+        "classification": [
+          "Ninja médical",
+          "Sannin"
+        ]
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "sasori",
+      "univers": "Naruto",
+      "id": "b627f416-1fbe-41a5-9a79-a1f5c724bbba",
+      "date": "2026-08-06T19:52:46.062Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "35",
+        "sex": "Male",
+        "rank": "S-rank",
+        "descFr": "Taille : 164 cm Classification : rang S, ninja déserteur Sasori, également connu sous le nom de Sasori du Sable Rouge, était le petit-fils de Chiyo et un membre de l'Akatsuki avant sa mort. Il faisait à l'origine équipe avec Orochimaru, mais fut ensuite réassigné comme coéquipier de Deidara. Les parents de Sasori furent tués par Sakumo Hatake alors qu'il était enfant, le laissant orphelin sans personne d'autre que sa grand-mère pour l'élever. Pour aider Sasori à surmonter la mort de ses parents, Chiyo lui enseigna l'art de la fabrication de marionnettes. Il commença à en fabriquer dès l'âge de cinq ans, et parvint même à créer des marionnettes ressemblant à ses parents dans une tentative de soulager la terrible solitude qu'il ressentait. Sasori finit par se désintéresser de ces marionnettes car c'étaient des êtres sans vie, incapables de lui donner l'amour parental naturel qu'il désirait. Sasori était un talent inné dans cet art, imaginant même des façons magistrales d'éliminer la faiblesse d'un marionnettiste. Sasori fut le créateur de nombreuses marionnettes magistralement confectionnées, dont plusieurs furent utilisées par Kankurô. Chiyo aussi maniait les marionnettes de Sasori, car ce fut elle qui récupéra les marionnettes de la Mère et du Père après que Sasori les eut abandonnées.",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Sasori's Father",
+            "slug": "sasori-s-father"
+          },
+          {
+            "rel": "mother",
+            "name": "Sasori's Mother",
+            "slug": "sasori-s-mother"
+          },
+          {
+            "rel": "grandmother",
+            "name": "Chiyo"
+          },
+          {
+            "rel": "granduncle",
+            "name": "Ebizō",
+            "slug": "ebizo"
+          }
+        ],
+        "descRaw": "Height: 164 cm Classification: S-rank, Missing-nin Sasori, also known as Sasori of the Red Sand, was the grandson of Chiyo and a member of the Akatsuki before his death. He was originally partnered with Orochimaru but was later reassigned as the partner of Deidara. Sasori's parents were killed by Sakumo Hatake when he was a child, leaving him as an orphan with no one but his Grandmother to raise him. To help Sasori cope with the death of his parents, Chiyo taught him the art of puppet making. He began making puppets at the age of five, and was even able to create puppets that resembled his parents in an attempt to mend the terrible loneliness he felt. Sasori later lost interest in these puppets because they were lifeless beings unable to give him the natural parental love that he desired. Sasori was a born natural at the art, even devising masterful ways of eliminating a puppet master's weakness. Sasori was the creator of numerous masterfully crafted puppets, a number of which were used by Kankuro. Chiyo as well was a wielder of Sasori's puppets, as she was the one who retrieved the Mother and Father puppets after Sasori discarded them.",
+        "village": "Sunagakure",
+        "descLang": "en",
+        "birthdate": "8 novembre",
+        "favorites": 2074,
+        "voiceActors": {
+          "en": [
+            "Johnny Yong Bosch",
+            "J.B. Blanc",
+            "Kate Higgins"
+          ],
+          "jp": [
+            "Takahiro Sakurai",
+            "Yutaka Aoyama",
+            "Akiko Yajima"
+          ]
+        },
+        "organization": "Akatsuki"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "shisui-uchiha",
+      "univers": "Naruto",
+      "id": "537494e7-7fc8-4d28-8a36-32915fdd9bff",
+      "date": "2026-08-06T19:52:46.256Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "sex": "Male",
+        "clan": "Uchiha",
+        "rank": "Anbu",
+        "descFr": "Shisui Uchiha était craint sous le nom de « Shisui du Corps Scintillant » et était l'un des plus talentueux du clan Uchiha. Shisui était le meilleur ami d'Itachi Uchiha ; en fait, Itachi le considérait comme un grand frère. Il fut retrouvé noyé dans une rivière dans ce qui semblait être un suicide, bien que la Police Militaire de Konoha ait cru à un meurtre. Il fut révélé plus tard que Shisui avait reçu l'ordre de surveiller Itachi. Itachi avoua par la suite à Sasuke Uchiha qu'il avait assassiné Shisui pour obtenir le Mangekyô Sharingan, contrefaisant l'écriture de Shisui sur sa lettre de suicide à l'aide du Sharingan.",
+        "family": [
+          {
+            "rel": "ancestor",
+            "name": "Kagami Uchiha",
+            "slug": "kagami-uchiha"
+          }
+        ],
+        "descRaw": "Shisui Uchiha was feared as \"Shisui of the Body Flicker\" and was one of the most talented of the Uchiha clan. Shisui was the best friend of Itachi Uchiha; in fact, Itachi thought of him as an older brother. He was found drowned in a river from what appeared to be suicide, though the Konoha Military Police believed it to be murder. It was later revealed that Shisui had been ordered to keep tabs on Itachi. Itachi later admitted to Sasuke Uchiha that he had murdered Shisui to obtain the Mangekyō Sharingan, forging Shisui's handwriting on his suicide note with the help of the Sharingan.",
+        "village": "Konohagakure",
+        "descLang": "en",
+        "birthdate": "19 octobre",
+        "favorites": 1881,
+        "generation": "Génération de Kakashi",
+        "voiceActors": {
+          "en": [
+            "Nicolas Roye"
+          ],
+          "jp": [
+            "Hidenobu Kiuchi",
+            "Kengo Kawanishi"
+          ]
+        }
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "hidan",
+      "univers": "Naruto",
+      "id": "eb285f91-5795-487b-b90c-566f1401b603",
+      "date": "2026-08-06T19:52:46.449Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "22",
+        "sex": "Male",
+        "descFr": "Village : Yugakure, le Village Caché de la Vapeur Arme : faux à trois lames Religion : le jashinisme Parce qu'il est membre de la religion jashiniste, Hidan possède l'immortalité. Cette immortalité prendra toutefois fin s'il ne sacrifie pas régulièrement des personnes à Jashin. C'est une religion qui vénère une divinité du même nom et où tout ce qui est en deçà de la mort et de la destruction totale est considéré comme un péché. Les expérimentations de sa religion ont conduit à la création de ses capacités uniques : en consommant le sang d'un adversaire puis en traçant au sol le symbole triangulaire de Jashin, Hidan peut créer un lien de type poupée vaudou avec son adversaire. Une fois ce lien établi, tout dommage infligé au corps de Hidan se répercute sur son adversaire, ce qui lui permet de le tuer en s'infligeant des blessures mortelles. Étant immortel, Hidan n'est pas gêné en agissant ainsi, trouvant au contraire du plaisir dans la douleur que cela lui procure. Hidan est sadique, arrogant, grossier et impatient. Autant de qualités que son partenaire, Kakuzu, trouve agaçantes. Lui et son partenaire Kakuzu se battent et se disputent sans cesse, si bien qu'on peut se demander pourquoi ils sont dans la même équipe. Kakuzu a d'ailleurs remarqué que lui et Hidan formaient l'équipe parfaite, car même si Kakuz",
+        "descRaw": "Village: Yugakure, the Village Hidden in the Steam Weapon: 3-headed Scythe Religion: Jashin-ism Because he is a member of the Jashin religion, Hidan has immortality. This immortality will end, however, if he does not regularly sacrifice people to Jashin. This is a religion that worships a deity of the same name and where anything less than death and utter destruction is considered a sin. His religion's experiments have led to the creation of his unique abilities; by consuming an opponent's blood and then drawing Jashin's triangular-design on the ground, Hidan can create a voodoo doll-like link with his opponent. Once this link is created, any damage done to Hidan's body is reflected on his opponent, allowing him to kill them by giving himself fatal injuries. Because he is immortal, Hidan is not impaired while doing this, instead finding pleasure in the pain it causes him. Hidan is sadistic, arrogant, rude, and impatient. All qualities which his partner, Kakuzu, finds annoying. He and his partner, Kakuzu, fight and argue constantly, so it might be a wonder why they are put on the same team. Kakuzu actually commented that he and Hidan made the perfect team, because even thought Kakuz",
+        "descLang": "en",
+        "birthdate": "2 avril",
+        "favorites": 1513,
+        "voiceActors": {
+          "en": [
+            "Chris Edgerly",
+            "Wally Wingert"
+          ],
+          "jp": [
+            "Masaki Terasoma"
+          ]
+        },
+        "organization": "Akatsuki"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "temari",
+      "univers": "Naruto",
+      "id": "601abfb2-04f7-4af2-88c7-7b932a9d9245",
+      "date": "2026-08-06T19:52:46.634Z",
+      "champsAjoutes": [
+        "forms"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "15–16",
+        "sex": "Female",
+        "clan": "Kazekage",
+        "rank": "Jōnin",
+        "descFr": "Taille : 165 cm Rang : Genin (I) ; Jônin (II) Temari est l'aînée des enfants du Quatrième Kazekage, ce qui fait d'elle la grande sœur de Gaara et Kankurô. Temari est généralement autoritaire, voire brusque, envers son entourage, n'ayant souvent pas peur de dire ce qu'elle pense. L'une des rares choses qui l'intimident est son jeune frère Gaara. Elle reste très rarement fidèle à son attitude habituellement dure et exigeante en présence du garçon, par crainte de la fureur de Gaara. Temari a néanmoins un côté attentionné et n'est pas au-dessus de montrer de l'inquiétude pour les autres. On la voit souvent avec Shikamaru. Temari est une fine analyste et peut facilement déduire les stratégies et les faiblesses d'un adversaire peu après le début d'un combat. Pour le combat proprement dit, elle utilise son gigantesque éventail de fer qui, en plus de servir de massue improvisée, peut être utilisé pour planer afin d'intimider ses ennemis. Elle aime les châtaignes sucrées et la soupe kenchin.",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Rasa"
+          },
+          {
+            "rel": "mother",
+            "name": "Karura",
+            "slug": "karura"
+          },
+          {
+            "rel": "brother",
+            "name": "Kankurō",
+            "slug": "kankuro"
+          },
+          {
+            "rel": "son",
+            "name": "Shikadai Nara",
+            "slug": "shikadai-nara"
+          },
+          {
+            "rel": "uncle",
+            "name": "Yashamaru",
+            "slug": "yashamaru"
+          },
+          {
+            "rel": "husband",
+            "name": "Shikamaru Nara",
+            "slug": "shikamaru-nara"
+          },
+          {
+            "rel": "adoptive nephew",
+            "name": "Shinki",
+            "slug": "shinki"
+          }
+        ],
+        "descRaw": "Height: 165 cm Rank: Genin (I); Jonin (II) Temari is the oldest child of the Fourth Kazekage, making her the older sister of Gaara and Kankuro. Temari is generally overbearing, if not crude, toward those around her, often not being afraid to speak her mind. One of the few things shown to intimidate her is her younger brother Gaara. She very rarely stays true to her normally tough, demanding attitude, when around the boy, due to the fear of Gaara's wrath. Temari does have a caring side, and is not above showing concern for others. She is often seen with Shikamaru. Temari is a keen analyst, and can easily deduce an opponent's strategies and weaknesses soon after a battle begins. For actual combat she uses her giant iron fan that, in addition to serving as a makeshift club, can be used to glide upon in order to intimidate her foes. She likes sweet chestnuts and kenchin soup.",
+        "village": "Sunagakure",
+        "descLang": "en",
+        "birthdate": "23 août",
+        "favorites": 1303,
+        "generation": "Konoha 11",
+        "voiceActors": {
+          "en": [
+            "Tara Platt",
+            "Ali Hillis"
+          ],
+          "jp": [
+            "Romi Park"
+          ]
+        },
+        "organization": "Three Sand Siblings"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "kiba-inuzuka",
+      "univers": "Naruto",
+      "id": "fac8015b-09bd-4e63-af30-b97e3e2bf524",
+      "date": "2026-08-06T19:52:46.825Z",
+      "champsAjoutes": [
+        "forms"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "12–13",
+        "sex": "Male",
+        "clan": "Inuzuka",
+        "rank": "Chūnin",
+        "descFr": "Taille : 151,2 cm (Partie I), 169,1 cm (Partie II) Équipe : Équipe Kurenai (Kurenai, Shino, Hinata, Kiba) Affiliation : Konohagakure Kiba Inuzuka est l'un des principaux personnages secondaires de la série. C'est un ninja de niveau Chûnin de Konohagakure et un membre du clan Inuzuka, dresseurs de chiens, ainsi qu'un membre de l'équipe de Chûnin, l'Équipe Kurenai, aux côtés de Shino Aburame et Hinata Hyûga. On voit généralement Kiba accompagné de son partenaire, Akamaru, avec qui il combat en collaboration. Kiba est souvent colérique et impulsif (en net contraste avec ses coéquipiers Shino et Hinata) et peut être enclin à commettre des erreurs lorsqu'il s'agite au combat. Le fait qu'il apprécie le combat, ainsi que son habitude d'afficher un sourire joyeux face à un adversaire particulièrement fort, indique qu'il est prêt à risquer sa vie pour une mission, et qu'il est plutôt assoiffé de sang. Il tient profondément à Akamaru et est prêt à faire tout le nécessaire pour le protéger. Et, malgré son attitude plutôt bourrue, nombre des actes de Kiba révèlent qu'il est très proche de sa grande sœur, Hana Inuzuka, et qu'il reste farouchement loyal au clan Inuzuka. La personnalité et le style de jutsu de Kiba sont encore renforcés par son apparence sauvage. Bien que clairement humain,",
+        "family": [
+          {
+            "rel": "mother",
+            "name": "Tsume Inuzuka",
+            "slug": "tsume-inuzuka"
+          },
+          {
+            "rel": "sister",
+            "name": "Hana Inuzuka",
+            "slug": "hana-inuzuka"
+          },
+          {
+            "rel": "lover",
+            "name": "Tamaki",
+            "slug": "tamaki"
+          }
+        ],
+        "descRaw": "Height: 151.2 cm (Part I), 169.1 cm (Part II) Team: Team Kurenai (Kurenai, Shino, Hinata, Kiba) Affiliation: Konohagakure Kiba Inuzuka is one of the main supporting characters of the series. He is a Chūnin-level shinobi of Konohagakure and a member of the Inuzuka Dog-User clan, as well as a member of the Chūnin team, Team Kurenai, along with Shino Aburame and Hinata Hyūga. Kiba is usually seen with and fights in collaboration with his partner, Akamaru. Kiba is often short-tempered and impulsive (in stark contrast to his teammates Shino and Hinata), and can be prone to making mistakes when he becomes agitated in battle. The fact that he enjoys combat, as well as a habit of showing a joyful smile when facing a particularly strong opponent, indicates that he is willing to risk his life for a mission, and is rather bloodthirsty. He deeply cares for Akamaru, and is willing to do whatever is necessary to protect him. And, despite his rather gruff attitude, many of Kiba's actions reveal that he is very close to his older sister, Hana Inuzuka, and remains fiercely loyal to the Inuzuka clan. Kiba's personality and jutsu style are further enhanced by his wild appearance. While clearly human,",
+        "village": "Konohagakure",
+        "descLang": "en",
+        "birthdate": "7 juillet",
+        "favorites": 1031,
+        "generation": "Konoha 11",
+        "voiceActors": {
+          "en": [
+            "Kyle Hebert",
+            "Doug Erholtz"
+          ],
+          "jp": [
+            "Kōsuke Toriumi"
+          ]
+        },
+        "organization": "Konoha 11"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "zabuza-momochi",
+      "univers": "Naruto",
+      "id": "81d51311-a162-41c2-908e-7033aec918c5",
+      "date": "2026-08-06T19:52:47.015Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "26",
+        "sex": "Male",
+        "rank": "Anbu",
+        "descFr": "Zabuza est né à Kirigakure. Lors de l'un des événements annuels de Kirigakure consistant à opposer les ninjas fraîchement diplômés les uns aux autres, Zabuza tua à lui seul tous ses camarades, mettant fin au rituel et lui valant d'être surnommé le « Démon du Village Caché de la Brume ». Zabuza devint ensuite l'un des Sept Ninjas Épéistes de la Brume, où il acquit son zanbatô, et devint aussi membre de l'ANBU de Kirigakure. À un moment donné, Zabuza trouva un jeune garçon nommé Haku errant dans la campagne et proposa de le prendre sous son aile comme instrument. Haku accepta et devint loyal envers Zabuza, apprenant de lui et le protégeant chaque fois que nécessaire. Étant de Kirigakure, Zabuza excelle dans les techniques axées sur l'eau, dont certaines lui sont exclusives. Outre les capacités offensives de ses techniques d'eau, Zabuza est très habile en assassinat.",
+        "descRaw": "Zabuza was born in Kirigakure. During one of Kirigakure's annual events of pitting graduating ninja against each other, Zabuza singlehandedly killed all of his peers, bringing an end to the ritual and causing him to be called the \"Demon of the Hidden Mist\". Zabuza would go on to become one of the Seven Shinobi Swordsmen of the Mist where he acquired his zanbatō, and also became a member of the Kirigakure ANBU. At some point in time, Zabuza found a young boy named Haku wandering the countryside and offered to take Haku in as his tool. Haku accepted and became loyal to Zabuza, learning from Zabuza and protecting him whenever necessary. Z Being from Kirigakure, Zabuza excels in water-oriented jutsu, some of which are exclusive to him. In addition to the offensive capabilities of his water jutsu, Zabuza is very skilled in assassinations.",
+        "village": "Kirigakure",
+        "descLang": "en",
+        "birthdate": "15 août",
+        "favorites": 1060,
+        "voiceActors": {
+          "en": [
+            "Steven Blum"
+          ],
+          "jp": [
+            "Unshō Ishizuka"
+          ]
+        },
+        "organization": "Sept Épéistes de la Brume"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "konan",
+      "univers": "Naruto",
+      "id": "f9e52487-c377-4b6a-ba2c-f56594ba56e8",
+      "date": "2026-08-06T19:52:47.201Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "35",
+        "sex": "Female",
+        "rank": "S-rank",
+        "descFr": "Konan est la partenaire du chef de l'Akatsuki, Pain, et la seule ninja féminine de l'Akatsuki. Elle fut rendue orpheline dans son enfance par l'une des nombreuses guerres d'Amegakure, ce qui la contraignit à se débrouiller seule jusqu'à ce que Jiraiya la trouve. Jiraiya entraîna Konan à tirer parti de son talent naturel pour l'origami, si bien que le papier est un élément clé de son style de combat. Konan peut diviser son corps en un nombre incalculable de feuilles de papier, qu'elle contrôle et remodèle à distance pour reconnaître une zone ou former des armes d'attaque. Elle peut même former des ailes qui reflètent son titre d'« Ange de Dieu » parmi les habitants d'Amegakure, car elle exécute souvent la volonté de Pain (qui porte le titre de « Dieu »). Ses capacités sont limitées lorsqu'elle est mouillée, car le papier se colle à lui-même et perd sa rigidité.",
+        "descRaw": "Konan is the partner of the Akatsuki leader, Pain, and the only female ninja in Akatsuki. She was orphaned as a child by one of Amegakure's many wars, forcing her to fend for herself until being found by Jiraiya. Jiraiya trained Konan to take advantage of her natural talent with origami, and as a result paper is a key component in her battle style. Konan can divide her body into countless numbers of paper sheets, which she controls and reshapes remotely to scout out an area or form weapons for attack. She can even form wings that mirror her title as \"God's Angel\" amongst the villagers of Amegakure, as she often carries out Pain's (Who has the title of \"God\") will. Her abilities are constrained while wet, as paper, clings to itself and loses its stiffness.",
+        "village": "Amegakure",
+        "descLang": "en",
+        "birthdate": "20 février",
+        "favorites": 1123,
+        "voiceActors": {
+          "en": [
+            "Dorothy Elias-Fahn"
+          ],
+          "jp": [
+            "Atsuko Tanaka",
+            "Kaori Mine"
+          ]
+        },
+        "organization": "Akatsuki"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "sarada-uchiha",
+      "univers": "Naruto",
+      "id": "ae0b42d8-5c78-4992-b8a5-e478b0573ad3",
+      "date": "2026-08-06T19:52:47.392Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "11",
+        "sex": "Female",
+        "clan": "Uchiha",
+        "rank": "Chūnin",
+        "descFr": "Sarada Uchiha est une kunoichi de Konohagakure appartenant au clan Uchiha. Ayant grandi sans son père à ses côtés, Sarada peine d'abord à comprendre qui elle est ou ce qu'elle est censée devenir. Après l'avoir rencontré avec l'aide de Naruto Uzumaki, Sarada en vient à croire qu'elle se définit par les liens qu'elle entretient avec les autres, et en tant que membre de l'Équipe Konohamaru, elle aspire à devenir un jour Hokage afin de pouvoir se lier avec le plus de gens possible. Cependant, Sarada partage une relation compliquée avec le fils de Naruto, Boruto Uzumaki, bien qu'elle s'intéresse aussi à lui en raison de leurs rapports similaires avec leurs pères respectifs. Les deux ninjas sont souvent en désaccord, la jeune Uchiha accordant de la valeur au poste de Hokage tandis que Boruto affiche au départ un profond mépris pour celui-ci, et ils se disputent et se battent généralement pour presque tout. Malgré cela, ils sont très proches, se souciant profondément du bien-être l'un de l'autre et soutenant réellement leurs rêves. Dans l'anime, Sarada semble également proche de Himawari, qu'elle appelle « Hima-chan ».",
+        "family": [
+          {
+            "rel": "grandfather",
+            "name": "Kizashi Haruno",
+            "slug": "kizashi-haruno"
+          },
+          {
+            "rel": "grandmother",
+            "name": "Mebuki Haruno",
+            "slug": "mebuki-haruno"
+          },
+          {
+            "rel": "father",
+            "name": "Sasuke Uchiha",
+            "slug": "sasuke-uchiha"
+          },
+          {
+            "rel": "uncle",
+            "name": "Itachi Uchiha",
+            "slug": "itachi-uchiha"
+          },
+          {
+            "rel": "mother",
+            "name": "Sakura Haruno",
+            "slug": "sakura-haruno"
+          }
+        ],
+        "descRaw": "Sarada Uchiha is a kunoichi from Konohagakure's Uchiha clan. Because she grew up without having her father around, Sarada initially struggles to understand who she is or what she's supposed to be. After meeting him with the help of Naruto Uzumaki, Sarada comes to believe that she is defined by the connections she has with others, and as a member of Team Konohamaru, she seeks to someday become Hokage so that she can connect with as many people as possible. However, Sarada shares a complicated relationship with Naruto's son, Boruto Uzumaki, although she is also interested in him due to their similar relationships with their respective fathers. The two ninjas are often at odds with one another, with the young Uchiha valuing the Hokage post while Boruto initially showing utter disdain for it, and they usually argue and fight with each other for almost anything. Despite this, they are very close, deeply caring for one another's well-being and actually supporting their dreams greatly. In the anime, Sarada appears to be close to Himawari as well, referring to her as \"Hima-chan\".",
+        "village": "Konohagakure",
+        "descLang": "en",
+        "birthdate": "31 mars",
+        "favorites": 1239,
+        "generation": "Nouvelle ère",
+        "voiceActors": {
+          "en": [
+            "Cherami Leigh",
+            "Laura Bailey"
+          ],
+          "jp": [
+            "Kokoro Kikuchi"
+          ]
+        },
+        "organization": "Team 7"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "sai-naruto",
+      "univers": "Naruto",
+      "id": "3d13a84e-90c8-4da0-8f01-ff2de381a39e",
+      "date": "2026-08-06T19:52:47.583Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "17",
+        "sex": "Male",
+        "clan": "Yamanaka",
+        "rank": "Anbu",
+        "descFr": "Taille : 172,1 cm Sai est le remplaçant de Sasuke Uchiha dans l'Équipe 7. Le nom « Sai » lui est donné dans le but de rejoindre l'équipe. Il fut recruté jeune par la Racine, qui l'entraîna à n'avoir aucune émotion afin de lui faciliter l'accomplissement de ses missions. Ce manque de personnalité amène Sai à rencontrer des difficultés en rejoignant l'Équipe 7, car il commet l'erreur d'insulter les autres membres pour tenter de paraître sociable. Il essaie de sembler plus attentionné en souriant, mais ses coéquipiers finissent par ne pas aimer cela en raison de son manque de sincérité évident. Sai est un artiste talentueux et prétend avoir dessiné des milliers d'images. Malgré la quantité d'images qu'il a dessinées, son absence d'émotion lui rend impossible d'être inspiré pour donner un titre à quoi que ce soit, si bien que toutes ses œuvres sont sans nom.",
+        "family": [
+          {
+            "rel": "son",
+            "name": "Inojin Yamanaka",
+            "slug": "inojin-yamanaka"
+          },
+          {
+            "rel": "adoptive brother",
+            "name": "Shin",
+            "slug": "shin"
+          },
+          {
+            "rel": "wife",
+            "name": "Ino Yamanaka",
+            "slug": "ino-yamanaka"
+          }
+        ],
+        "descRaw": "Height: 172.1 cm Sai is the replacement of Sasuke Uchiha in Team 7. The name \"Sai\" is given to him for the purposes of joining the team. He was recruited at a young age by Root, which trained him to have no emotions so as to make it easier for him to accomplish missions. This lack of personality causes Sai to meet with hardship upon joining Team 7, as he makes the mistake of insulting the other members in an attempt to seem sociable. He tries to seem more caring by smiling, though his teammates come to dislike it due to his obvious insincerity. Sai is a talented artist, and claims to have drawn thousands of pictures. Despite the magnitude of pictures he has drawn, his lack of emotion makes it impossible for him to be inspired to give something a title, and thus all of his works are nameless.",
+        "village": "Konohagakure",
+        "descLang": "en",
+        "birthdate": "25 novembre",
+        "favorites": 980,
+        "generation": "Konoha 11",
+        "voiceActors": {
+          "en": [
+            "Benjamin Diskin"
+          ],
+          "jp": [
+            "Satoshi Hino"
+          ]
+        },
+        "organization": "Root"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "tobirama-senju",
+      "univers": "Naruto",
+      "id": "5f55b703-49cd-4f1e-96be-65dcf5af7763",
+      "date": "2026-08-06T19:52:47.784Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "sex": "Male",
+        "clan": "Senju",
+        "rank": "Kage",
+        "descFr": "Le Deuxième Hokage est le frère cadet du Premier Hokage et le grand-oncle de Tsunade. En tant que frère du Premier, le Deuxième Hokage était un membre du clan Senju de la forêt. Le Premier et le Deuxième développèrent ensemble Konohagakure pour en faire un village grandissant. Il fut autrefois le professeur du Troisième Hokage. Il était réputé comme le plus grand maître des techniques d'eau, capable de créer de l'eau à partir de rien, ce qui lui permettait d'utiliser n'importe quel Suiton sans avoir besoin d'une source. Il est plus tard ramené d'entre les morts par Orochimaru grâce à la Réincarnation des Âmes pour combattre le Troisième Hokage durant l'arc de la Destruction de Konoha. Son âme est finalement scellée dans le ventre du Dieu de la Mort, avec celle de son frère et les bras d'Orochimaru. Avec son frère et Madara Uchiha, il fut également l'un des fondateurs du Village Caché de la Feuille.",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Butsuma Senju",
+            "slug": "butsuma-senju"
+          },
+          {
+            "rel": "brother",
+            "name": "Kawarama Senju",
+            "slug": "kawarama-senju"
+          },
+          {
+            "rel": "grandniece",
+            "name": "Tsunade",
+            "slug": "tsunade"
+          },
+          {
+            "rel": "grandnephew",
+            "name": "Nawaki",
+            "slug": "nawaki"
+          }
+        ],
+        "descRaw": "The Second Hokage is the younger brother to the First Hokage and Tsunade's great-uncle. As the brother of the First, the Second Hokage was a member of the Senju Clan of the forest. The First and Second together fostered Konohagakure into a growing village. He was once the teacher of the Third Hokage. He was hailed for being the greatest master of water jutsu, being able to create water from nothing, allowing him to use any Suiton jutsu without requiring a source. He is later revived from the dead by Orochimaru using Impure World Resurrection to fight the Third Hokage during the Destruction of Konoha arc. His soul is eventually sealed into the stomach of the Death God, along with his brother and Orochimaru's arms. Together with his brother and Madara Uchiha, he was also one of the founders of the Hidden Leaf.",
+        "village": "Konohagakure",
+        "descLang": "en",
+        "birthdate": "19 février",
+        "favorites": 921,
+        "generation": "Fondateurs",
+        "voiceActors": {
+          "en": [
+            "Peter Lurie",
+            "Jamieson Price",
+            "Steven Blum"
+          ],
+          "jp": [
+            "Ken'yū Horiuchi",
+            "Kengo Kawanishi"
+          ]
+        },
+        "organization": "Team Tobirama"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "kushina-uzumaki",
+      "univers": "Naruto",
+      "id": "af275d44-2342-46be-9b8e-ce752db28168",
+      "date": "2026-08-06T19:52:47.995Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "24",
+        "sex": "Female",
+        "clan": "Uzumaki",
+        "rank": "Jōnin",
+        "descFr": "Taille : 165 cm Kushina Uzumaki est une ninja de l'ancien Pays du Tourbillon. Elle eut un fils, Naruto Uzumaki, avec le Hokage de l'époque, Minato Namikaze. On note qu'elle avait un tempérament impétueux et garçon manqué, de longs cheveux roux, et qu'avec le temps elle s'épanouit en une très belle femme. Malgré la forte ressemblance de Naruto avec son père, on dit qu'une grande partie de sa personnalité et de son choix de ninjutsu ressemble à celle de sa mère. On la présume morte, car elle est décrite au passé. Son visage apparaît dans quelques scènes tandis qu'elle discute avec Jiraiya et Minato Namikaze. Dans cette partie du manga, Jiraiya est allongé au sol en train d'avoir des retours en arrière. Dans ses souvenirs, il est avec Minato et Kushina alors qu'ils donnent à leur enfant à naître le nom de « Naruto ».",
+        "family": [
+          {
+            "rel": "son",
+            "name": "Naruto Uzumaki",
+            "slug": "naruto-uzumaki"
+          },
+          {
+            "rel": "grandson",
+            "name": "Boruto Uzumaki",
+            "slug": "boruto-uzumaki"
+          },
+          {
+            "rel": "granddaughter",
+            "name": "Himawari Uzumaki",
+            "slug": "himawari-uzumaki"
+          },
+          {
+            "rel": "husband",
+            "name": "Minato Namikaze",
+            "slug": "minato-namikaze"
+          }
+        ],
+        "descRaw": "Height: 165 cm Kushina Uzumaki is a ninja of the former Land of the Whirlpool. She had a son, Naruto Uzumaki, with the Hokage of the time, Minato Namikaze. She is noted to have had a brash, tomboyish demeanor, long red hair, and as time passed, blossomed into a very beautiful woman. Despite Naruto's close resemblance to his father, much of his personality and choice of ninjutsu are said to be similar to that of his mother's. She is presumed to be dead, as she is described in the past tense. Her face is shown in a couple of slides as she is talking with Jiraiya and Minato Namikaze. In this part of the manga Jiraiya is lying on the ground while having flashbacks. In his flashbacks, he is with Minato and Kushina as they are naming their unborn child \"Naruto.\"",
+        "village": "Konohagakure",
+        "descLang": "en",
+        "birthdate": "10 juillet",
+        "favorites": 1004,
+        "generation": "Génération de Kakashi",
+        "voiceActors": {
+          "en": [
+            "Dorothy Elias-Fahn",
+            "Laura Bailey"
+          ],
+          "jp": [
+            "Emi Shinohara"
+          ]
+        },
+        "import_source": 829
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "kisame-hoshigaki",
+      "univers": "Naruto",
+      "id": "5b9a8424-3d05-4c09-9ec0-940676716f1f",
+      "date": "2026-08-06T19:52:48.181Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "29",
+        "sex": "Male",
+        "clan": "Hoshigaki",
+        "rank": "S-rank",
+        "descFr": "Taille : 195 cm Affiliation : Akatsuki Kisame Hoshigaki est un ninja déserteur de Kirigakure et fait équipe avec Itachi Uchiha. Il s'entend considérablement mieux avec Itachi que la plupart des membres de l'Akatsuki avec leurs propres partenaires, faisant immédiatement ce qu'Itachi lui demande et veillant toujours sur son bien-être. Son ancien pays, le Pays de l'Eau, le recherche désormais pour avoir comploté de renverser son gouvernement et pour son implication dans de nombreux assassinats. Lorsqu'il était encore loyal à Kirigakure, il était l'un des Sept Épéistes de la Brume, un groupe de ninjas maniant des armes particulièrement grandes au combat. Kisame a une apparence distinctive de requin, avec une peau bleu pâle, de petits yeux blancs, des structures faciales évoquant des branchies et des dents triangulaires acérées. Même son nom, Kisame, signifie « requin démon ». Ses qualités de requin se retrouvent dans le type de techniques qu'il utilise au combat, car il façonne souvent des masses d'eau en formes de requins qui attaquent ensuite ses adversaires. S'il n'y a pas de source d'eau là où il combat, Kisame peut utiliser la Technique de l'Eau : Onde de Choc Explosive pour créer l'équivalent d'un lac d'eau à utiliser pour ses attaques. On note aussi que Kisame possède un",
+        "descRaw": "Height: 195 cm Affiliation: Akatsuki Kisame Hoshigaki is a missing-nin from Kirigakure and is partnered with Itachi Uchiha. He gets along considerably better with Itachi than most Akatsuki members do with their own partners, immediately doing as Itachi asks of him and always looking out for Itachi's well-being. His former country, the Land of Water, now seeks him out for plotting to overthrow its government and being involved in numerous assassinations. When he was still loyal to Kirigakure, he was one of the Seven Swordsmen of the Mist, a group of ninja that wield particularly large weapons in battle. Kisame has a distinctive shark-like appearance, complete with pale blue skin, small white eyes, gill-like facial structures, and sharp triangular teeth. Even his name, Kisame, means \"demon shark\". His shark-like qualities carry over to the type of techniques he uses in battle, as he often shapes bodies of water into the forms of sharks that proceed to attack opponents. If there is no water source where he happens to be fighting, Kisame can use Water Release: Exploding Water Shockwave to create a lake's worth of water to be used for attacks. Kisame is also noted to have a particularly",
+        "village": "Kirigakure",
+        "descLang": "en",
+        "birthdate": "18 mars",
+        "favorites": 817,
+        "voiceActors": {
+          "en": [
+            "Michael McConnohie",
+            "Kirk Thornton"
+          ],
+          "jp": [
+            "Tomoyuki Dan"
+          ]
+        },
+        "organization": "Akatsuki"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "killer-b",
+      "univers": "Naruto",
+      "id": "3ef5c909-e299-43dc-a5e0-392776ce3f29",
+      "date": "2026-08-06T19:52:48.372Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "36",
+        "sex": "Male",
+        "role": "Jinchūriki, rappeur",
+        "team": [
+          "A–B Combo",
+          "Kumo Council"
+        ],
+        "debut": "Naruto — chapitre 408",
+        "jutsu": [
+          "Acrobat",
+          "Cloud-Style Deception Beheading",
+          "Continuous Tailed Beast Balls",
+          "Disturbance Taijutsu",
+          "Headbutt",
+          "Ink Clone Technique",
+          "Ink Creation",
+          "Lightning Release: Double Lariat",
+          "Lightning Release: Lariat",
+          "Octopus Leg Clone Technique",
+          "Reverse Mist Beheading",
+          "Sealing Technique: Octopus Hold",
+          "Shadow Clone Technique",
+          "Tailed Beast Ball",
+          "Tailed Beast Chakra Arms",
+          "Tailed Beast Eight Twists",
+          "Tailed Beast Full Charge",
+          "Tailed Beast Lariat"
+        ],
+        "tools": [
+          "Chakra Cannon",
+          "Samehada",
+          "Supervibrato Lightning Release Swords"
+        ],
+        "descFr": "Killer Bee est un ninja musclé de Kumogakure et le Jinchûriki du Démon à Huit Queues. Il est suggéré qu'il vient du clan Yotsuki. Il semble détester la lumière. Il porte aussi sept épées et a un frère qui est le Raikage. Il semble exiger le respect des autres et demande qu'on l'appelle « Seigneur Jinchûriki » et que son Démon à queues soit appelé « Seigneur Huit-Queues ». Il paraît également enclin à parler en chanson, plus précisément dans un style rap, même lorsqu'il est confronté à des menaces potentielles. Il s'arrête même au milieu d'un combat pour écrire les rimes qui lui viennent. Il entretient une relation décontractée avec le Démon à Huit Queues, engageant fréquemment des conversations amicales avec lui.",
+        "family": [
+          {
+            "rel": "adoptive father",
+            "name": "A"
+          },
+          {
+            "rel": "adoptive brother",
+            "name": "A"
+          },
+          {
+            "rel": "adoptive cousin",
+            "name": "Blue B",
+            "slug": "blue-b"
+          }
+        ],
+        "height": "192cm",
+        "titles": [
+          "キラービーKirāBī",
+          "killer Bee"
+        ],
+        "weight": "87.1kg",
+        "descRaw": "Killer Bee is a muscle-bound shinobi from Kumogakure and the Jinchūriki of the Eight-Tailed Beast. It is hinted he comes from the Yotsuki clan. He appears to dislike light. He also carries seven swords and has a brother who is the Raikage. It seems that he demands respect from others and asks to be called \"Lord Jinchūriki\" and his Tailed Beast be called \"Lord Eight-Tails\". He also appears willing to speak in song, more specifically in rap style, even when confronted with potential threats. He will even stop in a middle of a fight to write whatever rhymes come to him. He has a casual relationship with the Eight-tailed Beast, frequently engaging in friendly conversation with it.",
+        "gallery": [
+          "https://static.wikia.nocookie.net/naruto/images/6/63/Killer_B.png",
+          "https://static.wikia.nocookie.net/naruto/images/3/30/Killer_B_Part_III.png"
+        ],
+        "village": "Kumogakure",
+        "debutAll": {
+          "ova": "Naruto Shippūden: UNSG anime cutscenes",
+          "game": "Naruto Shippūden: Ultimate Ninja Storm 2",
+          "anime": "Naruto Shippūden — épisode 142",
+          "manga": "Naruto — chapitre 408",
+          "movie": "Naruto the Movie: Blood Prison",
+          "novel": "The Last: Naruto the Movie"
+        },
+        "descLang": "en",
+        "birthdate": "15 mai",
+        "bloodType": "B",
+        "favorites": 787,
+        "sourceUrl": "https://naruto.fandom.com/wiki/Killer_B",
+        "natureType": [
+          "Lightning Release",
+          "Water Release",
+          "Fire Release",
+          "Yang Release"
+        ],
+        "occupation": [
+          "Guardian of Kumogakure"
+        ],
+        "affiliation": [
+          "Forces Shinobi Alliées",
+          "Kumogakure"
+        ],
+        "villageSlug": "kumogakure",
+        "voiceActors": {
+          "en": [
+            "Catero Colbert",
+            "Reno Wilson"
+          ],
+          "jp": [
+            "Hisao Egawa",
+            "Mariko Higashiuchi"
+          ]
+        },
+        "organization": "A–B Combo",
+        "classification": [
+          "Jinchūriki"
+        ]
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "tenten",
+      "univers": "Naruto",
+      "id": "a33dc15f-90ac-4f68-b406-79d8e3b7ed02",
+      "date": "2026-08-06T19:52:48.561Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "13–14",
+        "sex": "Female",
+        "rank": "Chūnin",
+        "descFr": "Taille : 164 cm Rang : Genin (I) ; Chûnin (II) Tenten se spécialise dans l'armement et, selon Gai, elle peut atteindre le centre de la cible 100 fois sur 100, bien que ses ennemis les plus puissants parviennent souvent à bloquer ses attaques. Au combat, elle invoque divers types d'armes depuis les parchemins qu'elle transporte. Dans la Partie I, elle possède de nombreux parchemins à cette fin, mais dans la Partie II, elle a regroupé son arsenal en un seul grand parchemin. Les armes consistent principalement en projectiles d'acier et un assortiment d'armes de corps à corps, bien qu'on la voie utiliser une arbalète dans l'anime et même une bombe à pointes dans la Partie II.",
+        "descRaw": "Height: 164 cm Rank: Genin (I); Chuunin (II) Tenten specializes in weaponry, and according to Guy she can hit a bullseye 100 out of 100 times, although her more powerful enemies can often block her attacks. In battle she summons varying types of weapons from the scrolls she carries with her. In Part I she has many scrolls that serve this purpose, but in Part II she has consolidated her arsenal into a single large scroll. The weapons predominately consist of steel projectiles and an assortment of close-combat weapons, though she is seen using a crossbow in the anime and even a spiked bomb in Part II.",
+        "village": "Konohagakure",
+        "descLang": "en",
+        "birthdate": "9 mars",
+        "favorites": 601,
+        "generation": "Konoha 11",
+        "voiceActors": {
+          "en": [
+            "Danielle Judovits"
+          ],
+          "jp": [
+            "Yukari Tamura"
+          ]
+        },
+        "organization": "Konoha 11"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "ino-yamanaka",
+      "univers": "Naruto",
+      "id": "41a89d97-fe78-421c-b600-92f6de41ee74",
+      "date": "2026-08-06T19:52:48.748Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "age": "12–13",
+        "sex": "Female",
+        "clan": "Yamanaka",
+        "rank": "Chūnin",
+        "descFr": "Taille : 149,3 cm (Partie I), 162,2 cm (Partie II) Famille : Inoichi Yamanaka (père) Équipe : Équipe Asuma, Konoha 11, Troisième Équipe des Nijû Shôtai, Cinquième Division Ino Yamanaka est une amie d'enfance de Sakura Haruno qui était harcelée à cause de son grand front, jusqu'à ce qu'Ino se lie d'amitié avec elle. Elle joua un rôle de mentor, étant plus dure et plus sûre d'elle. Sous son influence, Sakura commença à développer sa propre identité.",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Inoichi Yamanaka",
+            "slug": "inoichi-yamanaka"
+          },
+          {
+            "rel": "mother",
+            "name": "Ino's Mother",
+            "slug": "ino-s-mother"
+          },
+          {
+            "rel": "son",
+            "name": "Inojin Yamanaka",
+            "slug": "inojin-yamanaka"
+          },
+          {
+            "rel": "husband",
+            "name": "Sai Yamanaka"
+          }
+        ],
+        "descRaw": "Height: 149.3 cm (Part I), 162.2 cm (Part II) Family: Inoichi Yamanaka (Father) Team: Team Asuma Konoha 11 Team Three Nijū Shōtai Fifth Division Ino Yamanaka is a childhood friend of Sakura Haruno who was bullied due to her large forehead, ending when Ino befriended her. She acted like a mentor, being tougher and more confident. Under her influence, Sakura began to develop her own identity.",
+        "village": "Konohagakure",
+        "descLang": "en",
+        "birthdate": "23 septembre",
+        "favorites": 593,
+        "generation": "Konoha 11",
+        "voiceActors": {
+          "en": [
+            "Colleen Villard",
+            "Stephanie Sheh"
+          ],
+          "jp": [
+            "Ryōka Yuzuki"
+          ]
+        },
+        "organization": "Konoha 11"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "kawaki",
+      "univers": "Naruto",
+      "id": "954c1b4c-b98f-4df8-9e50-076868530e49",
+      "date": "2026-08-06T19:52:48.959Z",
+      "champsAjoutes": [
+        "forms"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "sex": "Male",
+        "clan": "Uzumaki",
+        "rank": "Genin",
+        "descFr": "Taille : 183 cm Affiliation : Kara, Konohagakure Kawaki est un ninja élevé par Jigen et son organisation Kara pour être le futur réceptacle d'Isshiki Ôtsutsuki. Après avoir été amené à Konohagakure, il est recueilli par Naruto Uzumaki et développe un lien fraternel avec Boruto Uzumaki. Après avoir été amené à Konohagakure par l'Équipe 7, il est recueilli par Naruto Uzumaki qui l'élève comme son propre fils, période durant laquelle il développe un lien fraternel avec Boruto Uzumaki pour résoudre le mystère du Kâma. En raison de son enfance rude, Kawaki se montre agressif et vulgaire envers les personnes qu'il n'aime pas ou auxquelles il s'oppose. Il fait preuve de compassion envers les animaux faibles et blessés et refuse de laisser des enfants innocents se faire blesser. Il est le disciple de Naruto tout comme Boruto est celui de Sasuke. Il a aussi appris la technique de multiclonage de Naruto.",
+        "family": [
+          {
+            "rel": "father",
+            "name": "Kokatsu",
+            "slug": "kokatsu"
+          },
+          {
+            "rel": "adoptive father",
+            "name": "Naruto Uzumaki",
+            "slug": "naruto-uzumaki"
+          },
+          {
+            "rel": "adoptive mother",
+            "name": "Hinata Uzumaki"
+          },
+          {
+            "rel": "adoptive brother",
+            "name": "Boruto Uzumaki",
+            "slug": "boruto-uzumaki"
+          },
+          {
+            "rel": "adoptive sister",
+            "name": "Himawari Uzumaki",
+            "slug": "himawari-uzumaki"
+          },
+          {
+            "rel": "adoptive grandfather",
+            "name": "Hiashi Hyūga",
+            "slug": "hiashi-hyuga"
+          },
+          {
+            "rel": "adoptive aunt",
+            "name": "Hanabi Hyūga",
+            "slug": "hanabi-hyuga"
+          }
+        ],
+        "descRaw": "Height: 183 cm Affiliation: Kara, Konohagakure Kawaki is a shinobi raised by Jigen and his organization Kara to be the future vessel for Isshiki Ōtsutsuki. After being brought to Konohagakure, he is taken in by Naruto Uzumaki and develops a brotherly bond with Boruto Uzumaki. After being brought to Konohagakure by Team 7, he is taken in by Naruto Uzumaki who raises him as his own, during which he develops a brotherly bond with Boruto Uzumaki to solve the mystery of the Kāma. Stemming from his harsh childhood, Kawaki is shown to be aggressive and vulgar to people he dislikes or opposes. He showed sympathy for weak and injured animals and refused to let innocent children get hurt. He is Naruto's disciple just like Boruto is Sasuke's. He also learned the shadow clone technique from Naruto.",
+        "village": "Konohagakure",
+        "descLang": "en",
+        "favorites": 588,
+        "generation": "Nouvelle ère",
+        "voiceActors": {
+          "en": [
+            "Michael Schwalbe",
+            "Chris Niosi"
+          ],
+          "jp": [
+            "Yūma Uchida",
+            "Shinya Hamazoe"
+          ]
+        },
+        "organization": "Kara"
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "brook",
+      "univers": "One Piece",
+      "id": "ce9f6ae8-2b82-48af-814c-84fe144dcc82",
+      "date": "2026-08-06T19:52:49.274Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [
+        "bounty"
+      ],
+      "attributesAvant": {
+        "crew": "L’équipage du Chapeau de Paille",
+        "role": "Musicien squelette",
+        "bounty": "383.000.000 Berrys",
+        "descFr": "Âge : 88 ; 90 Date de naissance : 3 avril ; Bélier Taille : 2 m 66 cm Affiliation : Équipage du Chapeau de Paille ; Pirates de Rumbar (ancien) Poste : Musicien, Épéiste Fruit du Démon : Yomi Yomi no Mi (Fruit de la Résurrection) Type : Paramecia Prime : Brook, connu sous le nom de « Squelette Gentleman », est un pirate qui habite la région du Triangle de Florian sur la Grand Line. Bien qu'il se dise gentleman et parle dans le langage qui va avec, l'étiquette de Brook s'est gravement détériorée au fil de son isolement. Il a d'affreuses manières à table : il réclame à manger à grands cris en attendant d'être servi, demande à échanger son assiette avec ceux dont la part est plus grande que la sienne, et mange si salement que tout son visage en est taché. Il est aussi extrêmement flatulent après les repas, mais dit « excusez-moi » pour rester « gentleman ». Il adore aussi raconter d'étranges blagues sur le thème des os, ainsi que des récits mélodramatiques, et il est très pervers, demandant à voir les sous-vêtements de Nami et Robin dès leur rencontre. C'est un musicien accompli (chose que Luffy a toujours voulue dans son équipage depuis le début), amateur de violon. Grâce à son poids léger, il peut non seulement sauter à des hauteurs incroyables mais aussi courir sur l'eau en agitant furieusement les jambes. Il utilise un shikomizue comme arme principale ; avec lui, il peut porter de rapides attaques d'iaidō que l'ennemi ne peut percevoir.",
+        "descRaw": "Age: 88; 90 Birthdate: April 3; Aries Height: 2m 66cm (8'8½\") Affiliation: Straw Hat Pirates; Rumbar Pirates (former) Position: Musician, Swordsman Devil Fruit: Yomi Yomi no Mi (Revive Revive Fruit) Type: Paramecia Bounty: Brook known as the \"Gentleman Skeleton\", is a pirate inhabiting the Florian Triangle region of the Grand Line. Although he claims to be a gentleman, and talks in the dialect of one, Brook's etiquette has severely degenerated over the course of his isolation. He has awful table manners: he shouts for food while waiting to be served, asks to swap plates with people who have larger servings than he does and eating so messily his entire face is stained. He is also extremely flatulent after meals, but says \"excuse me\" so as to be \"gentlemanly.\" He also loves to tell odd, bone-themed jokes, as well as melodramatic tales, and is very perverted, asking to see Nami and Robin's underwear upon meeting them. He's a skilled musician (something Luffy has always wanted in his crew since the beginning), fond of playing the violin. Due to his light weight he can not only jump to incredible heights but can run on water by moving his legs furiously. He uses a shikomizue as his main weapon; with it, he is able to make swift iaidō attacks that the enemy cannot notice.",
+        "faction": "Pirate",
+        "descLang": "en",
+        "favorites": 11201,
+        "fruit_type": "Paramecia",
+        "occupation": "Musicien",
+        "voiceActors": {
+          "en": [
+            "Ian Sinclair",
+            "Arnaud Léonard"
+          ],
+          "jp": [
+            "Cho"
+          ]
+        },
+        "import_source": 99
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "trafalgar-law",
+      "univers": "One Piece",
+      "id": "246e361f-df84-4388-9382-d18fd98ef768",
+      "date": "2026-08-06T19:52:49.471Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [
+        "bounty"
+      ],
+      "attributesAvant": {
+        "crew": "L’équipage du Heart",
+        "role": "Chirurgien de la Mort",
+        "bounty": "3.000.000.000 Berrys",
+        "descFr": "Taille : 191 cm Affiliation : Pirates du Cœur, Alliance Ninja-Pirate-Mink-Samouraï, Grand Corsaire (ancien), Pirates de Donquixote (ancien) Fruit du Démon : Ope Ope no Mi (Fruit du Bistouri) Type de Fruit du Démon : Paramecia Prime : 3 000 000 000 (précédemment 200 000 000, 440 000 000 et 500 000 000) Trafalgar Law est le capitaine des Pirates du Cœur, un équipage originaire de North Blue. Il est l'un des onze pirates désignés comme « Les Onze Supernovas » sur l'Archipel Sabaody, dont les primes dépassent les 100 000 000 à l'arrivée des Chapeau de Paille sur les lieux. Law est un personnage extrêmement décontracté, presque toujours souriant (bien que pas d'un grand sourire, comme son confrère Supernova Urouge). Il a aussi une attitude plus téméraire face aux autres pirates que le Gouvernement Mondial a désignés comme une menace plus élevée : par exemple, il a demandé avec désinvolture à X. Drake combien de personnes il avait tuées lors de sa toute première apparition, et n'a eu aucun scrupule à faire un doigt d'honneur à Eustass Kid, le Supernova le plus recherché de l'Archipel (souriant même d'un air de défi en le faisant). Cependant, il déteste qu'on lui donne des ordres. Il est aussi immanquablement poli, appelant d'ordinaire les autres « Monsieur », et il semble...",
+        "descRaw": "Height: 191 cm (6'3\") Affiliation: Heart Pirates, Ninja-Pirate-Mink-Samurai Alliance, Shichibukai (Former), Donquixote Pirates (Former) Devil Fruit: Ope Ope no Mi (Op-Op Fruit) Devil Fruit Type: Paramecia Bounty: 3,000,000,000 (previously; 200,000,000, 440,000,000, and 500,000,000) Trafalgar Law is the captain of the Heart Pirates​, a pirate crew from the North Blue. He is one of eleven pirates who has been referred to as \"The Eleven Supernovas\" on Sabaody Archipelago whose bounties are higher than 100,000,000 when the Straw Hats arrive in the place. Law is an extremely laid-back character, who is nearly always seen smiling (although not with a huge grin, like fellow Supernova Urouge). He also has a more reckless attitude when faced against other pirates that the World Government has labeled as a higher threat: For example, he casually asked X. Drake how many people he had slain in his very first appearance, and had no qualms about flipping his middle finger at Eustass Kid, the most wanted Supernova on the Archipelago (even smiling defiantly when doing so). However, he hates being ordered around. He is also unfailingly polite, usually referring to others as \"Mr\", and appears to be ",
+        "faction": "Pirate",
+        "descLang": "en",
+        "favorites": 10271,
+        "voiceActors": {
+          "en": [
+            "Matthew Mercer",
+            "Antoine Doignon"
+          ],
+          "jp": [
+            "Hiroshi Kamiya"
+          ]
+        }
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "franky",
+      "univers": "One Piece",
+      "id": "d2f74ff3-d7f5-45a4-9413-b098940a12f1",
+      "date": "2026-08-06T19:52:49.668Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [
+        "bounty"
+      ],
+      "attributesAvant": {
+        "crew": "L’équipage du Chapeau de Paille",
+        "role": "Charpentier cyborg",
+        "bounty": "394.000.000 Berrys",
+        "descFr": "Âge : 34 ; 36 Date de naissance : 9 mars Signe : Poissons Taille : 225 cm Affiliation : Équipage du Chapeau de Paille ; Franky Family (ancien) ; Ouvriers de Tom (ancien) Poste : Charpentier Fruit du Démon : aucun Prime : Franky est un cyborg de 34 ans, charpentier de l'Équipage du Chapeau de Paille et leur troisième membre le plus récemment recruté. Il est apparu pour la première fois dans l'arc de Water 7. Franky est l'un des « Ouvriers de Tom », de son nom d'origine « Cutty Flam ». Le rêve de Franky est de construire un navire capable de voyager jusqu'au bout de la Grand Line. C'est le navire à bord duquel voyagent actuellement les Chapeau de Paille, mais son rêve ne sera pas réalisé tant qu'ils n'auront pas atteint le bout. Franky joue d'ordinaire les durs et s'énerve vite, mais il est aussi très émotif face aux histoires tristes et fond souvent en larmes abondantes ou, à l'occasion, joue une chanson. Son trait de caractère le plus marquant est son attitude flamboyante. Il crie fréquemment le mot « SUPER » quand il est de bonne humeur ou l'insère dans son discours. Il a aussi une pose signature qu'il utilise très souvent. Franky est prompt à défendre les autres (par exemple la Franky Family, Nico Robin) et à agir si ses amis sont blessés. Il se fait aussi vite des amis, des alliés et des camarades, même parmi les individus les plus improbables. C'est pourquoi on le voit comme une figure de « grand frère ». Monkey D. Luffy présente des qualités similaires (à l'exception des bagarres inutiles), et pour cette raison, malgré leurs différends passés, tous deux en sont venus à se respecter.",
+        "descRaw": "Age: 34; 36 Birthdate: March 9 Zodiac Sign: Pisces Height: 225 cm (7'4½\") Affiliation: Straw Hat Pirates; Franky Family (former); Tom's Workers (former) Position: Shipwright Devil Fruit: none Bounty: Franky is a 34 year old cyborg who is the shipwright of the Straw Hat Pirates and their third most recently recruited member. He first appeared in the Water 7 arc. Franky is one of \"Tom's Workers\", with the original name \"Cutty Flam.\" Franky's dream is to build a ship that would travel to the end of the Grand Line. This is the ship that the Straw Hats are currently riding, but his dream is not yet achieved until they make it to the end. Franky usually acts tough and is quickly angered, but he is also very emotional when it comes to sad tales and often bursts into large tears, or on some occasions, plays a song. His most distinguishable personality trait is his flamboyant attitude. He frequently shouts the word 'SUPER' when he's in a positive mood or adds it into his speech. He also has a signature pose which he uses very often. Franky is quick to defend other people (e.g. Franky Family, Nico Robin) and take action if his friends are harmed. He is also quick in making friends, allies, and comrades with even the most unlikely of individuals. Because of this, he is seen as a 'big brother' figure. Monkey D. Luffy bears similar qualities (with the exception of engaging in unnecessary fights) and because of this, despite the disputes the two had in the past, both grew to respect each o",
+        "faction": "Pirate",
+        "descLang": "en",
+        "favorites": 6830,
+        "occupation": "Charpentier",
+        "voiceActors": {
+          "en": [
+            "Patrick Seitz",
+            "Bruno Magne"
+          ],
+          "jp": [
+            "Kazuki Yao",
+            "Junko Noda",
+            "Subaru Kimura"
+          ]
+        }
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "shanks",
+      "univers": "One Piece",
+      "id": "37515f4d-435a-4d64-bb96-8da3e2ff8e73",
+      "date": "2026-08-06T19:52:49.869Z",
+      "champsAjoutes": [
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "crew": "L’équipage des Pirates Roger",
+        "role": "Empereur · le Roux",
+        "bounty": "4.048.900.000 Berrys",
+        "descFr": "Âge : 37 ; 39 Anniversaire : 9 mars Affiliations : Pirates du Roux ; Empereur ; Prime : Shanks le Roux est un pirate légendaire et puissant de la Grand Line, capitaine de l'Équipage du Roux et l'un des Quatre Empereurs de la seconde moitié de la Grand Line. De plus, il est le héros d'enfance de Monkey D. Luffy et un ancien membre de l'équipage de Gold Roger. Dans l'ensemble, il est très respecté par la plupart des personnages, malgré une nature « douce » et amicale et le fait qu'il n'apparaisse jamais en combat réel avant d'engager un affrontement avec Barbe Blanche. Globalement, il n'apparaît pas beaucoup dans la série, bien qu'il figure dans la majorité des génériques d'ouverture ou de fin de l'anime. Shanks porte toujours une longue cape noire sur les épaules et, jusqu'à sa rencontre avec Luffy, portait un chapeau de paille qu'il avait gardé pendant de nombreuses années. Il porte toujours un pantalon coupé sous le genou ainsi qu'une paire de sandales. Ce qu'il y a de plus frappant chez Shanks, c'est la couleur de ses cheveux roux, dont vient son surnom « Shanks le Roux ». Il a aussi trois cicatrices en travers de l'œil gauche, que Barbe Noire lui a infligées il y a longtemps. Il lui manque le bras gauche, qu'il a perdu en sauvant Luffy d'un Roi des Mers. Shanks et son équipage sont presque toujours en train de faire la fête et de boire des boissons alcoolisées lorsqu'ils apparaissent, les passe-temps favoris du capitaine étant d'assister à des fêtes et des banquets et d'en organiser. Selon Oda, Shanks est le personnage qui lui ressemble le plus.",
+        "descRaw": "Age: 37; 39 Birthday: March 9 Affiliations: Red Hair Pirates; Yonko; Bounty: Red-Haired Shanks is a legendary and powerful pirate in the Grand Line, being the captain of the Red Haired Pirate Crew and one of the Four Emperors in the second half of the grand line. Furthermore, he is Monkey D. Luffy's childhood hero and a former member of Gol D. Roger's Crew. Overall, he is greatly respected by most of the characters, despite having a \"soft\" and friendly nature and never appearing in actual combat until he started a fight with Whitebeard. As a whole, he does not make many appearances in the series, although he appears in a majority of the opening or closing themes of the anime. Shanks always wears a long black cape over his shoulders and until he met Luffy, wore a straw hat that he had worn for many years beforehand. He always wears trousers that are cut below the knee as well as a pair of sandals. The most striking thing about Shanks is the color of his red hair, of which his nick-name \"Red Haired Shanks\" comes from. He also has three scars across his left eye, which were given to him by Blackbeard a long time ago. He has a missing left arm, that he had lost when he saved Luffy from a Sea King. Shanks and his crew are almost always seen partying and drinking alcoholic beverages whenever they make an appearance as the Captain's favorite pastimes are attending and hosting parties and banquets. According to Oda, Shanks is the one character that resembles himself the most out of a",
+        "faction": "Pirate",
+        "descLang": "en",
+        "favorites": 6751,
+        "voiceActors": {
+          "en": [
+            "Brandon Potter",
+            "Antoine Tomé"
+          ],
+          "jp": [
+            "Shuuichi Ikeda",
+            "Nobunaga Shimazaki"
+          ]
+        }
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "boa-hancock",
+      "univers": "One Piece",
+      "id": "797b2015-ce48-4565-93b2-e8621947ea1a",
+      "date": "2026-08-06T19:52:50.059Z",
+      "champsAjoutes": [
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "crew": "L’équipage des Pirates Kuja",
+        "role": "Impératrice Serpent",
+        "bounty": "1.659.000.000 Berrys",
+        "descFr": "Taille : 191 cm Affiliation : Kuja ; Pirates Kuja ; Grand Corsaire (ancien) Occupation : Capitaine pirate ; Impératrice d'Amazon Lily ; Grand Corsaire (ancien) Fruit du Démon : Mero Mero no Mi (Fruit de l'Amour) Type : Paramecia Prime : 1 659 000 000 (autrefois 80 000 000) Elle est l'un des Grands Corsaires et capitaine des Pirates Kuja. Elle est l'Impératrice de la Tribu Amazone sur l'Île des Femmes. Elle déteste le Gouvernement Mondial, mais veut conserver son titre de Grand Corsaire. Son immense beauté cache une personnalité cruelle, comme le montre le fait qu'elle donne un coup de pied à un chaton sur son passage. Enfant, Boa et ses sœurs ont été capturées et vendues comme esclaves aux Nobles Mondiaux. Là, elle a été marquée du « Pied du Dragon » — un signe qui atteste de votre misère et de votre statut d'esclave. Pour dissimuler ce fait, elle a répandu parmi son peuple la rumeur qu'en affrontant une Gorgone, elle et ses sœurs auraient été maudites, et qu'elles ont désormais dans le dos des yeux de Gorgone capables de changer en pierre quiconque les regarde s'ils sont exposés. Elle éprouve un immense béguin pour Luffy, au point que si elle reste éloignée de lui, elle est frappée du « Mal d'Amour » et finira par mourir. Elle a mangé le fruit « mero-mero » alors qu'elle était esclave et a acquis le pouvoir de changer quiconque la trouve belle.",
+        "descRaw": "Height: 191 cm (6'3\") Affiliation: Kuja; Kuja Pirates; Shichibukai (former) Occupation: Pirate Captain; Empress of Amazon Lily; Shichibukai (former)Devil Fruit: Mero Mero no Mi (Love-Love Fruit) Type: Paramecia Bounty: 1,659,000,000 (Formerly 80,000,000) She is one of the Shichibukai and captain of the Kuja Pirates. She is the Empress of the Amazon Tribe on the Isle of Woman. She detests the World Government, but wants to keep her Shichibukai title. Her immense beauty belies her cruel personality, as shown when she kicks a kitten in her way. As children, Boa with her sisters were captured and sold as slave for World Nobles. There she was branded with \"Dragon Foot\" - a sign that proves your misery and status as a slave. To hide this fact, she has spread a rumor among her people that upon battling a Gorgon, she and her sisters were cursed, and now have Gorgon eyes on their backs that will turn anyone around into stone if it is exposed. She has an immense crush on Luffy, so much so that if she stays away from him, she is stricken with \"Love Sickness\" and will eventually die. She ate \"mero-mero\" fruit when she was a slave and gained the ability to turn anyone who thinks she is beautifu",
+        "faction": "Pirate",
+        "descLang": "en",
+        "favorites": 4831,
+        "fruit_type": "Paramecia",
+        "voiceActors": {
+          "en": [
+            "Lydia Mackay",
+            "Olivia Dutron"
+          ],
+          "jp": [
+            "Kotono Mitsuishi",
+            "Kanae Itou"
+          ]
+        }
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "doflamingo-donquixote",
+      "univers": "One Piece",
+      "id": "75d15799-c182-4764-8b98-c5f62997e537",
+      "date": "2026-08-06T19:52:50.240Z",
+      "champsAjoutes": [
+        "forms",
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "crew": "L’équipage de Don Quichotte",
+        "role": "Personnage secondaire",
+        "bounty": "340.000.000 Berrys",
+        "descFr": "Alias : Joker Âge : 39 ; 41 Taille : 305 cm Rang : Grand Corsaire Affiliations : Pirates de Donquixote ; Famille Donquixote ; Grand Corsaire ; Maison de Vente aux Enchères d'Humains ; Pirates de Bellamy Fruit du Démon : Prime : Doflamingo est un Grand Corsaire, capitaine des Pirates de Donquixote, membre de la Famille Donquixote, et Roi de Dressrosa. Sa prime avant qu'il ne devienne Grand Corsaire était de 340 000 000 berrys. Doflamingo est un homme blond plus grand que la moyenne, vêtu en général de vêtements flamboyants. En référence à son thème animalier, le flamant rose, ses vêtements sont de couleurs vives, son manteau à plumes étant d'un rose distinctif. Il a aussi une façon particulière de marcher, un dandinement aux jambes arquées (mais il ne le fait pas toujours), ce qui est aussi une référence à son thème animalier. Il y a vingt-deux ans, ses cheveux étaient plus longs qu'aujourd'hui, il avait deux boucles d'oreilles à l'oreille gauche et portait une paire de lunettes sur le front, en plus des lunettes de soleil qu'il porte encore aujourd'hui. Il porte une chemise blanche à rayures rouges, une ceinture verte et un pantalon orange à rayures blanches. À l'origine dans l'anime, Doflamingo avait une chemise rouge à rayures noires, une ceinture violette et un pantalon noir à rayures rouges. Cependant, lors de sa réapparition durant les événements de Sabaody, sa palette de couleurs est passée à celle du manga, à l'exception de ses lunettes. Dans le manga, il a des lunettes teintées d'orange, tandis que dans l'anime elles sont teintées de violet. Il sourit aussi souvent, sinon toujours. Doflamingo est l'un des...",
+        "descRaw": "Alias: Joker Age: 39; 41 Height: 305cm (10'0\") Rank: Shichibukai (Warlord of the Sea) Affiliations: Donquixote Pirates; Donquixote Family; Shichibukai; Human Auction House; Bellamy Pirates Devil Fruit: Bounty: Doflamingo is a member of the Shichibukai, captain of the Donquixote Pirates, member of Donquixote Family, and King of Dressrosa. His bounty before he became a member of the Shichibukai was 340,000,000 Beli. Doflamingo is a larger than normal blond haired man who generally dresses in flamboyant clothes. In reference to his animal theme, the flamingo, his clothes are brightly colored with his feathered coat being distinctively pink. He also has an odd way of walking, a bow-legged waddle (but does not always do this), which is also a reference to his animal theme. Twenty-two years ago, his hair was longer than currently, had two earrings in his left ear, and he sported a pair of goggles that he wore on his forehead, in addition to his sunglasses that he wears to this day. He has a white shirt with red stripes, a green belt, and orange pants with white stripes. Originally in the anime, Doflamingo had a red shirt with black stripes, a purple belt, and black pants with red stripes. However, when he reappeared during the events of Sabaody, his color scheme was switched to its manga depiction with the exception of his glasses. In the manga, he has orange tinted glasses while in the anime, he has purple tinted ones. He is also often, if not always, smiling. Doflamingo is one of",
+        "faction": "Pirate",
+        "descLang": "en",
+        "favorites": 4616,
+        "fruit_type": "Paramecia",
+        "voiceActors": {
+          "en": [
+            "Robert McCollum",
+            "Julie Basecqz"
+          ],
+          "jp": [
+            "Hideyuki Tanaka",
+            "Tomoe Hanba"
+          ]
+        }
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "jinbe",
+      "univers": "One Piece",
+      "id": "331c5768-0e98-4d84-b55f-57a54e45b249",
+      "date": "2026-08-06T19:52:50.418Z",
+      "champsAjoutes": [
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "crew": "L’équipage du Chapeau de Paille",
+        "role": "Timonier · homme-poisson",
+        "bounty": "1.100.000.000 Berrys",
+        "descFr": "Âge : 44 ; 46 Date de naissance : 2 avril Taille : 301 cm Groupe sanguin : F Affiliation : Poste : Barreur Fruit du Démon : aucun Prime : Jinbe est un homme-poisson requin-baleine qui fut le deuxième capitaine des Pirates du Soleil après Fisher Tiger, et qui est devenu Grand Corsaire il y a huit ans. Le nom de Jinbe vient de jinbei-zame (甚平鮫), qui signifie « requin-baleine » en japonais. Son épithète, Kaikyou, se traduirait normalement par « Détroit » ou « Canal ». Cependant, comme le kanji utilisé s'écrit (海侠の) et non (海峡の), la partie kyou (侠) vient de (任侠), un terme honorifique employé pour s'adresser à un membre haut placé de la yakuza, faisant ainsi de son épithète un jeu de mots japonais.",
+        "descRaw": "Age: 44; 46 Birthdate: April 2nd Height: 301 cm Blood type: F Affiliation: Position: Helmsman Devil fruit: none Bounty: Jinbe is a whale shark fishman who was the second captain of the Sunny Pirates after Fisher Tiger, and who became a Shichibukai eight years ago. Jinbe's name comes from jinbei-zame (甚平鮫), which means \"whale shark\" in Japanese. His epithet, Kaikyou would normally translate into \"Strait\" or \"Channel.\" However since the kanji for it is written as (海侠の) and not (海峡の), the kyou part (侠) of it comes from (任侠), a honorific used when addressing a high ranking yakuza member, thus making his epithet a Japanese pun. (Source: One Piece Wiki)",
+        "faction": "Pirate",
+        "descLang": "en",
+        "favorites": 4302,
+        "voiceActors": {
+          "en": [
+            "Sylvain Lemarié",
+            "Daniel Baugh"
+          ],
+          "jp": [
+            "Katsuhisa Houki",
+            "Daisuke Gouri",
+            "Chika Sakamoto"
+          ]
+        }
+      },
+      "verification": "OK"
+    },
+    {
+      "slug": "barbe-blanche",
+      "univers": "One Piece",
+      "id": "e299e002-35fc-4a3c-9795-3bb7a302386c",
+      "date": "2026-08-06T19:52:50.609Z",
+      "champsAjoutes": [
+        "nindo",
+        "nindoLabel"
+      ],
+      "champsDejaPourvusSautes": [],
+      "attributesAvant": {
+        "crew": "L’équipage de Barbe Blanche",
+        "role": "L'Homme le plus fort du monde",
+        "bounty": "5.046.000.000 Berrys",
+        "descFr": "Taille : 666 cm Affiliation : Pirates de Barbe Blanche (ancien/décédé) ; Sphinx (ancien) ; Pirates de Rocks (ancien) Poste : Capitaine (Pirates de Barbe Blanche) ; Empereur (l'un des 4 Empereurs du Nouveau Monde) Fruit du Démon : Gura Gura no Mi (Fruit des Séismes) Type de Fruit du Démon : Paramecia Prime : 5 046 000 000 Edward Newgate, également connu sous le nom de Barbe Blanche, est le capitaine des Pirates de Barbe Blanche. Il fait partie des Empereurs, les 4 empereurs du Nouveau Monde, aux côtés de Big Mom, Barbe Noire, Kaido et Shanks le Roux. Les Empereurs font partie des San Dai Seiryoku, les Trois Grandes Puissances. Les deux autres grandes puissances sont le Quartier Général de la Marine et les Grands Corsaires, les sept guerriers des mers. On dit que Barbe Blanche est l'homme le plus fort du monde et le pirate le plus proche d'obtenir le trésor légendaire, le One Piece. On raconte que Barbe Blanche livrait autrefois de nombreuses batailles au défunt Seigneur des Pirates, Gold Roger, et qu'il était considéré comme son égal par le passé. Barbe Blanche semble avoir quelques problèmes de santé, découlant peut-être de son âge avancé ou de ses affrontements féroces avec d'autres grands pirates au temps de sa jeunesse. Il est toujours entouré d'infirmières et branché à des tubes intraveineux. Mais malgré...",
+        "descRaw": "Height: 666 cm (21'10\") Affiliation: Whitebeard Pirates (former/deceased); Sphinx (former); Rocks Pirates (former) Position: Captain (Whitebeard Pirates); Yonko (one of the 4 emperors of the New World) Devil Fruit: Gura Gura no Mi (Tremor-Tremor Fruit) Devil Fruit Type: Paramecia Bounty: 5,046,000,000 Edward Newgate, also known as Whitebeard, is the captain of the Whitebeard Pirates. He is part of the Yonko, the 4 emperors of the New World, alongside Big Mom, Blackbeard, Kaido and Red-haired Shanks. The Yonko are part of the San Dai Seiryoku, the Three Great Powers. The other two great powers are the Marine Headquarters and the Shichibukai, the seven warlords of the sea. Whitebeard is said to be the strongest man in the world and the pirate closest to obtaining the legendary treasure, One Piece. It is said that Whitebeard used to have numerous battles with the late Pirate King, Gol D. Roger, and was marked as his equal in the past. Whitebeard appears to have some health problems, possibly stemming from his advanced age or from his ferocious encounters with other great pirates during his earlier days. He is always surrounded by nurses and is hooked up to intravenous tubes. But despi",
+        "faction": "Pirate",
+        "descLang": "en",
+        "favorites": 4041,
+        "fruit_type": "Paramecia",
+        "voiceActors": {
+          "en": [
+            "R. Bruce Elliott",
+            "Marc Alfos"
+          ],
+          "jp": [
+            "Kinryuu Arimoto",
+            "Ryuuzaburou Ootomo"
+          ]
+        }
+      },
+      "verification": "OK"
+    }
+  ]
+}

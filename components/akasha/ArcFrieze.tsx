@@ -49,10 +49,15 @@ export default function ArcFrieze({ forms, sel, onSelect, color, heading, pixela
                 <div style={{ position: 'absolute', top: 6, left: first ? '50%' : 0, right: last ? '50%' : 0, height: 2, background: 'var(--bd2)' }} />
                 <div style={{ position: 'absolute', top: 1, left: '50%', transform: 'translateX(-50%)', width: 12, height: 12, borderRadius: '50%', border: `2px solid ${on ? color : 'var(--bd2)'}`, background: on ? color : 'var(--bg)', boxShadow: on ? `0 0 9px ${color}` : 'none', transition: 'all .18s' }} />
               </div>
-              {/* sprite */}
-              {img && (
+              {/* sprite — ou tuile stylisée si la forme n'a pas de visuel (légitime, décision 06/08) :
+                  même géométrie que la tuile image (54×54, radius 11), dégradé d'accent + initiale Bebas. */}
+              {img ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={img} alt="" width={54} height={54} loading="lazy" style={{ objectFit: isSprite ? 'contain' : 'cover', borderRadius: 11, border: `1px solid ${on ? color : 'var(--bd)'}`, background: on ? `${color}1A` : 'var(--bg)', boxShadow: on ? `0 6px 16px -8px ${color}` : 'none', imageRendering: isSprite ? 'pixelated' : 'auto', transition: 'all .18s' }} />
+              ) : (
+                <div aria-hidden style={{ width: 54, height: 54, borderRadius: 11, border: `1px solid ${on ? color : 'var(--bd)'}`, background: `linear-gradient(145deg, ${color} 0%, ${color}66 55%, ${color}22 100%)`, boxShadow: on ? `0 6px 16px -8px ${color}` : 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--fn)', fontWeight: 900, fontSize: 25, lineHeight: 1, color: '#fff', textShadow: '0 1px 6px rgba(3,7,15,0.45)', transition: 'all .18s' }}>
+                  {(label.match(/\p{L}|\p{N}/u)?.[0] ?? '◆').toUpperCase()}
+                </div>
               )}
               {/* textes */}
               <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: on ? 800 : 700, lineHeight: 1.15, color: on ? color : 'var(--td)', textAlign: 'center' }}>{label}</div>

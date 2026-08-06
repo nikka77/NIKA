@@ -1,7 +1,9 @@
 // lib/akasha/forms.ts — normalisation PARTAGÉE des formes d'un personnage.
-// RÈGLE UNIQUE : une forme est affichable si elle porte AU MOINS un visuel — `url` (image anime 16:9)
-// OU `idle` (sprite pixel). Les stars multi-univers n'ont QUE des sprites. Utilisé par CharacterView,
-// CharacterCard ET CharacterDossier : un filtre divergent désynchronise `sel` (mauvais vitals affichés).
+// RÈGLE UNIQUE (décision Dan 06/08) : une forme SANS visuel est désormais LÉGITIME — la curation
+// purement données (label/âge/arc/stats) doit rester visible. Le front la rend en tuile stylisée
+// (initiale du label sur dégradé d'accent) dans ArcFrieze et le portrait de CharacterZone ; CardArt
+// a déjà son repli icône. On ne jette plus que les entrées non-objet. Utilisé par CharacterZone,
+// CharacterCard ET DragonBallCards : un filtre divergent désynchronise `sel` (mauvais vitals affichés).
 export interface CharacterForm {
   label?: string;
   url?: string;
@@ -12,5 +14,5 @@ export interface CharacterForm {
 
 export function normalizeForms(attributes: Record<string, unknown>): CharacterForm[] {
   const raw = Array.isArray(attributes.forms) ? (attributes.forms as CharacterForm[]) : [];
-  return raw.filter((f) => f && (typeof f.url === 'string' || typeof f.idle === 'string'));
+  return raw.filter((f): f is CharacterForm => !!f && typeof f === 'object');
 }
