@@ -1,152 +1,351 @@
 {
-  "_meta": {
-    "titre": "FORMAT DES STARS (#19) — contrat de données AVANT curation",
-    "date": "2026-08-06",
-    "but": "Contrat EXACT de attributes.forms / nindo / statLabels pour que la curation des 45 stars (30 Naruto + 15 One Piece) soit visible du premier coup. AUCUNE curation faite ici.",
-    "sources_code": [
-      "components/akasha/zone/CharacterZone.tsx (ZoneInner, IdentityPanel, FormePanel)",
-      "components/akasha/ArcFrieze.tsx",
-      "components/akasha/DatabookRadar.tsx",
-      "lib/akasha/forms.ts (normalizeForms — la règle de visibilité)",
-      "components/akasha/CharacterCard.tsx (album TCG, second consommateur)",
-      "app/learn/akasha/[slug]/page.tsx (dispatch: character:58 AVANT eras:179)"
+ "_meta": {
+  "titre": "FORMAT DES STARS (#19) — contrat de données AVANT curation",
+  "date": "2026-08-06",
+  "but": "Contrat EXACT de attributes.forms / nindo / statLabels pour que la curation des 45 stars (30 Naruto + 15 One Piece) soit visible du premier coup. AUCUNE curation faite ici.",
+  "sources_code": [
+   "components/akasha/zone/CharacterZone.tsx (ZoneInner, IdentityPanel, FormePanel)",
+   "components/akasha/ArcFrieze.tsx",
+   "components/akasha/DatabookRadar.tsx",
+   "lib/akasha/forms.ts (normalizeForms — la règle de visibilité)",
+   "components/akasha/CharacterCard.tsx (album TCG, second consommateur)",
+   "app/learn/akasha/[slug]/page.tsx (dispatch: character:58 AVANT eras:179)"
+  ],
+  "fiche_reference": "naruto-uzumaki (10 formes, databook canon) et monkey-d-luffy (4 formes, stats estimées + statLabels remappés)"
+ },
+ "contrat": {
+  "stockage": {
+   "table": "akasha_entries",
+   "colonne": "attributes (JSONB)",
+   "champs_curateur": [
+    "forms",
+    "nindo",
+    "nindoLabel",
+    "statLabels"
+   ],
+   "interdits": "attributes.sections et attributes.relations ne s'écrivent JAMAIS dans le JSONB — ils vivent dans les tables akasha_sections (entry_id, idx, titre, texte) et akasha_relations (from_entry, to_entry, relation) ; queries.ts les fusionne en lecture. forms/nindo/statLabels, eux, vivent bien dans attributes.",
+   "ecriture": "lire-fusionner-écrire le JSONB entier SANS toucher aux champs que l'usine remplit (bio, descFr, favorites, jutsu, family, voiceActors…) — l'usine tourne pendant la curation."
+  },
+  "regle_de_visibilite_DURE": "PÉRIMÉE PUIS RÉVISÉE 06/08 (décision Dan) : une forme SANS url/idle est désormais CONSERVÉE par normalizeForms et rendue en tuile stylisée (dégradé d'accent + initiale) dans ArcFrieze et le portrait. L'ancienne règle (forme sans visuel jetée) ne s'applique plus.",
+  "forme_exemple_commente": {
+   "_note": "Chaque clé : { valeur d'exemple (forme « Mode Ermite » de naruto-uzumaki, verbatim base), commentaire }",
+   "label": {
+    "exemple": "Mode Ermite",
+    "commentaire": "string, quasi requis — titre de la station dans la frise, du bandeau sur le portrait (si >1 forme), du FormePanel. Fallback affiché : « Forme N »."
+   },
+   "url": {
+    "exemple": "/images/akasha/naruto/naruto-sage.webp",
+    "commentaire": "string — grande image de la forme (locale /images/... ou wiki https://static.wikia...). Portrait 4:5 en object-fit:contain sur fond flouté : tout ratio passe. Priorité portrait : url > idle > entry.image_url."
+   },
+   "idle": {
+    "exemple": "/images/akasha/naruto/idle/mode-ermite.webp",
+    "commentaire": "string — sprite pixel carré (rendu 54×54, image-rendering:pixelated dans la frise). La frise préfère idle à url. url OU idle suffit à rendre la forme visible ; les stars OP existantes (luffy) n'ont QUE idle."
+   },
+   "age": {
+    "exemple": "16 ans",
+    "commentaire": "string libre — sous le label dans la frise, ligne « Âge » du FormePanel, et OVERRIDE de attributes.age dans le panneau Identité (voir piège fstr)."
+   },
+   "arc": {
+    "exemple": "Assaut de Pain",
+    "commentaire": "string — micro-ligne d'arc dans la frise, suffixe du bandeau portrait, ligne « Arc » du FormePanel. C'est lui qui fait « frise d'arcs »."
+   },
+   "caption": {
+    "exemple": "16 ans · Ermite du mont Myōboku · Assaut de Pain",
+    "commentaire": "string — paragraphe du FormePanel (canal re-scopé au clic sur la station)."
+   },
+   "stats": {
+    "exemple": {
+     "nin": 4.5,
+     "tai": 4,
+     "gen": 1.5,
+     "int": 3,
+     "for": 4.5,
+     "vit": 4,
+     "end": 5,
+     "sce": 3.5
+    },
+    "commentaire": "objet à 8 clés FIXES {nin,tai,gen,int,for,vit,end,sce} — NOMBRES JSON (jamais strings), échelle 0–5 par pas de 0,5, clampés [0,5] ; total affiché /40. ABSENT → aucun radar, silencieusement (c'est le mécanisme du repli One Piece). Axes du radar : NIN Ninjutsu, TAI Taijutsu, GEN Genjutsu, INT Intelligence, FOR Force, VIT Vitesse, END Endurance, SCE Sceaux."
+   },
+   "height": {
+    "exemple": "1,66 m",
+    "commentaire": "string optionnelle — override de attributes.height dans le panneau Identité (piège fstr ci-dessous)."
+   },
+   "weight": {
+    "exemple": "51 kg",
+    "commentaire": "string optionnelle — idem pour attributes.weight."
+   },
+   "rank": {
+    "exemple": "Genin",
+    "commentaire": "string — lue par CharacterCard (album TCG) en override de attributes.rank. Pas rendue par CharacterZone."
+   },
+   "summary": {
+    "exemple": "Formé par les crapauds, il maîtrise le senjutsu (Mode Ermite) et terrasse Pain avec le Rasenshuriken.",
+    "commentaire": "string — CharacterCard seulement."
+   },
+   "signature": {
+    "exemple": [
+     "Mode Ermite",
+     "Rasenshuriken",
+     "Rasengan"
     ],
-    "fiche_reference": "naruto-uzumaki (10 formes, databook canon) et monkey-d-luffy (4 formes, stats estimées + statLabels remappés)"
-  },
-
-  "contrat": {
-    "stockage": {
-      "table": "akasha_entries",
-      "colonne": "attributes (JSONB)",
-      "champs_curateur": ["forms", "nindo", "nindoLabel", "statLabels"],
-      "interdits": "attributes.sections et attributes.relations ne s'écrivent JAMAIS dans le JSONB — ils vivent dans les tables akasha_sections (entry_id, idx, titre, texte) et akasha_relations (from_entry, to_entry, relation) ; queries.ts les fusionne en lecture. forms/nindo/statLabels, eux, vivent bien dans attributes.",
-      "ecriture": "lire-fusionner-écrire le JSONB entier SANS toucher aux champs que l'usine remplit (bio, descFr, favorites, jutsu, family, voiceActors…) — l'usine tourne pendant la curation."
-    },
-
-    "regle_de_visibilite_DURE": "normalizeForms (lib/akasha/forms.ts) ne retient une forme QUE si elle porte `url` (string) OU `idle` (string). Une forme sans aucun des deux est silencieusement JETÉE : la curation devient invisible — c'est LE piège que ce contrat existe pour éviter. La frise n'apparaît que si forms.length > 1 (2 formes visibles minimum) ; avec 1 seule forme le portrait est piloté mais il n'y a pas de frise.",
-
-    "forme_exemple_commente": {
-      "_note": "Chaque clé : { valeur d'exemple (forme « Mode Ermite » de naruto-uzumaki, verbatim base), commentaire }",
-      "label": { "exemple": "Mode Ermite", "commentaire": "string, quasi requis — titre de la station dans la frise, du bandeau sur le portrait (si >1 forme), du FormePanel. Fallback affiché : « Forme N »." },
-      "url": { "exemple": "/images/akasha/naruto/naruto-sage.webp", "commentaire": "string — grande image de la forme (locale /images/... ou wiki https://static.wikia...). Portrait 4:5 en object-fit:contain sur fond flouté : tout ratio passe. Priorité portrait : url > idle > entry.image_url." },
-      "idle": { "exemple": "/images/akasha/naruto/idle/mode-ermite.webp", "commentaire": "string — sprite pixel carré (rendu 54×54, image-rendering:pixelated dans la frise). La frise préfère idle à url. url OU idle suffit à rendre la forme visible ; les stars OP existantes (luffy) n'ont QUE idle." },
-      "age": { "exemple": "16 ans", "commentaire": "string libre — sous le label dans la frise, ligne « Âge » du FormePanel, et OVERRIDE de attributes.age dans le panneau Identité (voir piège fstr)." },
-      "arc": { "exemple": "Assaut de Pain", "commentaire": "string — micro-ligne d'arc dans la frise, suffixe du bandeau portrait, ligne « Arc » du FormePanel. C'est lui qui fait « frise d'arcs »." },
-      "caption": { "exemple": "16 ans · Ermite du mont Myōboku · Assaut de Pain", "commentaire": "string — paragraphe du FormePanel (canal re-scopé au clic sur la station)." },
-      "stats": {
-        "exemple": { "nin": 4.5, "tai": 4, "gen": 1.5, "int": 3, "for": 4.5, "vit": 4, "end": 5, "sce": 3.5 },
-        "commentaire": "objet à 8 clés FIXES {nin,tai,gen,int,for,vit,end,sce} — NOMBRES JSON (jamais strings), échelle 0–5 par pas de 0,5, clampés [0,5] ; total affiché /40. ABSENT → aucun radar, silencieusement (c'est le mécanisme du repli One Piece). Axes du radar : NIN Ninjutsu, TAI Taijutsu, GEN Genjutsu, INT Intelligence, FOR Force, VIT Vitesse, END Endurance, SCE Sceaux."
-      },
-      "height": { "exemple": "1,66 m", "commentaire": "string optionnelle — override de attributes.height dans le panneau Identité (piège fstr ci-dessous)." },
-      "weight": { "exemple": "51 kg", "commentaire": "string optionnelle — idem pour attributes.weight." },
-      "rank": { "exemple": "Genin", "commentaire": "string — lue par CharacterCard (album TCG) en override de attributes.rank. Pas rendue par CharacterZone." },
-      "summary": { "exemple": "Formé par les crapauds, il maîtrise le senjutsu (Mode Ermite) et terrasse Pain avec le Rasenshuriken.", "commentaire": "string — CharacterCard seulement." },
-      "signature": { "exemple": ["Mode Ermite", "Rasenshuriken", "Rasengan"], "commentaire": "string[] — CharacterCard seulement." },
-      "natures": { "exemple": ["Wind Release"], "commentaire": "string[] — CharacterCard seulement (icônes natures)." },
-      "classification": { "exemple": ["Jinchūriki", "Ermite (Sage)"], "commentaire": "string[] — CharacterCard seulement." },
-      "kekkeiGenkai": { "exemple": [], "commentaire": "string[] — CharacterCard seulement." },
-      "occupation_affiliation": { "exemple": [["Ninja de Konoha"], ["Konohagakure", "Mont Myōboku"]], "commentaire": "string[] chacune — typées dans CharacterCard mais rendues nulle part aujourd'hui. Tolérées (présentes sur la référence), pas requises." }
-    },
-
-    "nindo": {
-      "nindo": "attributes.nindo — string, la citation-credo. Rendue en blockquote accentué dans le panneau Identité. Ex. naruto-uzumaki : « Je ne reviens jamais sur ma parole. C'est ça, mon nindō : ma voie du ninja ! »",
-      "nindoLabel": "attributes.nindoLabel — string, le libellé sous la citation (défaut « Credo »). Ex. « Nindō · sa voie du ninja » (Naruto), « Rêve · sa promesse » (Luffy) — pour OP, utiliser « Rêve · … »."
-    },
-
-    "statLabels": {
-      "quoi": "attributes.statLabels — objet partiel {nin,tai,gen,int,for,vit,end,sce} → libellés d'axes de remplacement. Précédent OP (luffy) : {nin:'PUI', tai:'TEC', gen:'AGI', int:'INT', for:'FOR', vit:'VIT', end:'END', sce:'ESP'}.",
-      "gotcha": "appliqué UNIQUEMENT au radar du panneau Identité (CharacterZone:357) et à la carte TCG — le radar du FormePanel (CharacterZone:400) ne reçoit PAS labels et retombe sur NIN/TAI/GEN/… Si on relabellise pour OP, le FormePanel affichera les axes Naruto : bug d'affichage à corriger AVANT toute curation OP avec stats."
-    },
-
-    "eras_AVERTISSEMENT": {
-      "quoi": "attributes.eras est un AUTRE gabarit (EraZone, « rouleau temporel ») réservé aux lieux/artefacts/statuts/pouvoirs. Structure Era : {img, label, period, event, leader, threat, summary}.",
-      "regle": "JAMAIS sur un personnage : la branche type==='character' (page.tsx:58) passe AVANT la branche eras (page.tsx:179) — des eras sur un perso seraient des données mortes."
-    },
-
-    "pieges": [
-      "1. Forme sans `url` NI `idle` → jetée par normalizeForms → curation invisible.",
-      "2. Il faut ≥ 2 formes visibles pour la frise (forms.length > 1).",
-      "3. Dès qu'il existe ≥ 1 forme curée (hasCurated), attributes.age/height/weight de base ne s'affichent PLUS dans le panneau Identité : fstr(f.x, a.x) rend null si la forme courante n'a pas la valeur. Porter age/height/weight PAR FORME (au moins la première).",
-      "4. stats absentes = pas de radar, sans erreur — c'est voulu (repli OP), mais ça masque aussi une faute de frappe (`stat` au lieu de `stats`).",
-      "5. stats en STRINGS (\"3.5\") au lieu de nombres → comportement non garanti dans les clamps du radar : nombres JSON obligatoires.",
-      "6. statLabels ignoré par le radar du FormePanel (voir section statLabels).",
-      "7. eras sur un personnage = données mortes (dispatch).",
-      "8. sections/relations ne vont JAMAIS dans attributes (tables dédiées).",
-      "9. L'ordre du tableau forms EST l'ordre chronologique de la frise — trier avant écriture.",
-      "10. Écrire attributes par fusion (merge) : l'usine remplit d'autres champs en parallèle."
-    ]
-  },
-
-  "naruto": [
-    "shikamaru-nara", "jiraiya", "gaara", "minato-namikaze", "obito-uchiha",
-    "rock-lee", "sakura-haruno", "deidara", "orochimaru", "might-guy",
-    "tsunade", "sasori", "boruto-uzumaki", "shisui-uchiha", "hidan",
-    "temari", "sarada-uchiha", "konan", "zabuza-momochi", "kiba-inuzuka",
-    "kushina-uzumaki", "mitsuki", "sai-naruto", "tobirama-senju", "haku",
-    "kisame-hoshigaki", "killer-b", "tenten", "ino-yamanaka", "kawaki"
-  ],
-  "narutoDetail": {
-    "_critere": "top 30 personnages Naruto par attributes.favorites, SANS attributes.forms (1330 candidats sur 1337 persos), après exclusion documentée d'un doublon (voir exclusions).",
-    "favorites": {
-      "shikamaru-nara": 18831, "jiraiya": 15100, "gaara": 13578, "minato-namikaze": 11357,
-      "obito-uchiha": 9018, "rock-lee": 6465, "sakura-haruno": 5672, "deidara": 3624,
-      "orochimaru": 2595, "might-guy": 2373, "tsunade": 2150, "sasori": 2074,
-      "boruto-uzumaki": 2047, "shisui-uchiha": 1881, "hidan": 1513, "temari": 1303,
-      "sarada-uchiha": 1239, "konan": 1123, "zabuza-momochi": 1060, "kiba-inuzuka": 1031,
-      "kushina-uzumaki": 1004, "mitsuki": 984, "sai-naruto": 980, "tobirama-senju": 921,
-      "haku": 869, "kisame-hoshigaki": 817, "killer-b": 787, "tenten": 601,
-      "ino-yamanaka": 593, "kawaki": 588
-    },
-    "deja_curees_hors_liste": ["naruto-uzumaki", "sasuke-uchiha", "itachi-uchiha", "kakashi-hatake", "madara-uchiha", "hashirama-senju", "kurama"]
-  },
-
-  "onePiece": [
-    "sanji", "nico-robin", "tony-tony-chopper", "nami", "usopp",
-    "portgas-d-ace", "brook", "trafalgar-law", "franky", "katakuri-charlotte",
-    "shanks", "boa-hancock", "doflamingo-donquixote", "jinbe", "barbe-blanche"
-  ],
-  "onePieceDetail": {
-    "_critere": "top 15 personnages One Piece par attributes.favorites, SANS forms (1447 candidats sur 1449), après exclusion de 2 entrées aux favoris invraisemblables (voir exclusions).",
-    "favorites": {
-      "sanji": 33368, "nico-robin": 24013, "tony-tony-chopper": 16999, "nami": 16600,
-      "usopp": 14718, "portgas-d-ace": 11702, "brook": 11201, "trafalgar-law": 10271,
-      "franky": 6830, "katakuri-charlotte": 6819, "shanks": 6751, "boa-hancock": 4831,
-      "doflamingo-donquixote": 4616, "jinbe": 4302, "barbe-blanche": 4041
-    },
-    "deja_curees_hors_liste": ["monkey-d-luffy", "roronoa-zoro"]
-  },
-
-  "onePieceRepli": {
-    "constat": "Il n'existe AUCUN databook chiffré canon pour One Piece : les Vivre Cards (databook officiel) donnent primes, tailles, anniversaires — jamais de stats 0–5. Tout radar OP serait un chiffre inventé.",
-    "geste_backlog": "frise de formes SANS radar — omettre simplement `stats` sur chaque forme (le radar disparaît proprement, la frise et le FormePanel restent entiers) — plus le RANG DE PRIME : attributes.bounty (string, ex. « 3.000.000.000 Berrys »), déjà rendu en ligne « Prime » du panneau Identité ; le rang inter-fiches peut se calculer depuis les bounty existants.",
-    "precedent_contradictoire": "monkey-d-luffy et roronoa-zoro portent DÉJÀ des stats ESTIMÉES non canon avec statLabels remappés (PUI/TEC/AGI/INT/FOR/VIT/END/ESP). Décision à trancher par Dan AVANT curation : (a) suivre le repli backlog (canon seulement, pas de radar) et retirer/assumer l'écart des 2 précédents, ou (b) étendre le précédent estimé aux 15 — auquel cas corriger d'abord le gotcha FormePanel/statLabels.",
-    "sources_primes": "onepiece.fandom.com — infobox « Bounty » par personnage ; Vivre Card databook pour les valeurs officielles."
-  },
-
-  "exclusions": [
-    { "slug": "nine-tailed-naruto-clone", "univers": "Naruto", "favorites": 19521, "raison": "doublon MAL de Naruto lui-même (le summary décrit Naruto Uzumaki : Minato père, Kushina mère) — pas une star à curer, Naruto a déjà ses 10 formes. Aurait été #1 du critère brut." },
-    { "slug": "mr-love", "univers": "One Piece", "favorites": 15069, "raison": "figurant Baroque Works (ép. 125) à 15 069 favoris — favoris manifestement absorbés d'un autre personnage (piège de romanisation/alias MAL). Aurait été #5 du critère brut." },
-    { "slug": "den", "univers": "One Piece", "favorites": 5769, "raison": "personnage mineur (frère de Tom) à 5 769 favoris — même piège probable (Den ≈ Denjirō ?). Aurait été #13 du critère brut." }
-  ],
-
-  "anomaliesFavorites": {
-    "constat": "Le critère mécanique exclut des stars objectives dont les favoris sont absents ou corrompus en base : hinata-hyuga (favorites ABSENT), neji-hyuga (ABSENT), nagato (11).",
-    "proposition": "soumettre à Dan la substitution de 2–3 fins de liste (tenten 601, ino-yamanaka 593, kawaki 588) par hinata-hyuga, neji-hyuga, nagato — et/ou réparer les favoris à la source avant de figer la liste."
-  },
-
-  "sourcesDatabook": {
-    "principe": "Les stats chiffrées CANON de Naruto viennent des 3 premiers databooks officiels de Kishimoto. Le 4e (Jin no Sho, 2014) contient des profils mais AUCUNE table de stats. Hyō no Sho et les fanbooks n'en ont pas non plus.",
-    "page_par_personnage": "https://naruto.fandom.com/wiki/<Nom_romaji> — section « Stats » : tableau « Databook | Ninjutsu | Taijutsu | Genjutsu | Intelligence | Strength | Speed | Stamina | Hand seals | Total », UNE LIGNE PAR DATABOOK. Échelle 0–5 par pas de 0,5, total /40 : mappe 1:1 sur le radar → nin, tai, gen, int, for, vit, end, sce.",
-    "page_fr": "https://naruto.fandom.com/fr/wiki/<Nom> — section « Statistiques » (mêmes chiffres, libellés français).",
-    "databooks": [
-      { "n": 1, "titre": "Rin no Sho", "annee": 2002, "couverture": "≈ début → examens Chūnin (Partie I jeune)", "url": "https://naruto.fandom.com/wiki/Rin_no_Sho" },
-      { "n": 2, "titre": "Tō no Sho", "annee": 2005, "couverture": "≈ fin de la Partie I", "url": "https://naruto.fandom.com/wiki/T%C5%8D_no_Sho" },
-      { "n": 3, "titre": "Sha no Sho", "annee": 2008, "couverture": "Partie II jusqu'au ch. ≈402", "url": "https://naruto.fandom.com/wiki/Sha_no_Sho" },
-      { "n": 4, "titre": "Jin no Sho", "annee": 2014, "couverture": "profils jusqu'à la fin — AUCUNE table de stats", "url": "https://naruto.fandom.com/wiki/Jin_no_Sho" }
+    "commentaire": "string[] — CharacterCard seulement."
+   },
+   "natures": {
+    "exemple": [
+     "Wind Release"
     ],
-    "affectation_par_forme": "associer chaque ligne de databook à la forme d'époque : DB1 → forme Partie I jeune, DB2 → fin Partie I, DB3 → Partie II (c'est le patron de naruto-uzumaki en base). Les formes postérieures au ch. 402 (guerre tardive, Boruto) n'ont PAS de chiffres canon : soit omettre stats sur ces formes (radar absent, propre), soit reconduire la ligne DB3 en l'assumant — à trancher avec Dan.",
-    "sans_stats_canon_probable": ["killer-b (début ch. 408 > DB3)", "kushina-uzumaki (apparition réelle ch. 497)", "shisui-uchiha (profil Jin no Sho, sans stats)", "boruto-uzumaki", "sarada-uchiha", "mitsuki", "kawaki"],
-    "regle_pour_eux": "même geste que le repli One Piece : frise de formes SANS radar (omettre stats).",
-    "a_verifier_page_par_page": ["obito-uchiha (enfant : stats ? Tobi : non)", "tobirama-senju", "konan", "sai-naruto", "sasori", "hidan", "haku", "zabuza-momochi"]
+    "commentaire": "string[] — CharacterCard seulement (icônes natures)."
+   },
+   "classification": {
+    "exemple": [
+     "Jinchūriki",
+     "Ermite (Sage)"
+    ],
+    "commentaire": "string[] — CharacterCard seulement."
+   },
+   "kekkeiGenkai": {
+    "exemple": [],
+    "commentaire": "string[] — CharacterCard seulement."
+   },
+   "occupation_affiliation": {
+    "exemple": [
+     [
+      "Ninja de Konoha"
+     ],
+     [
+      "Konohagakure",
+      "Mont Myōboku"
+     ]
+    ],
+    "commentaire": "string[] chacune — typées dans CharacterCard mais rendues nulle part aujourd'hui. Tolérées (présentes sur la référence), pas requises."
+   }
+  },
+  "nindo": {
+   "nindo": "attributes.nindo — string, la citation-credo. Rendue en blockquote accentué dans le panneau Identité. Ex. naruto-uzumaki : « Je ne reviens jamais sur ma parole. C'est ça, mon nindō : ma voie du ninja ! »",
+   "nindoLabel": "attributes.nindoLabel — string, le libellé sous la citation (défaut « Credo »). Ex. « Nindō · sa voie du ninja » (Naruto), « Rêve · sa promesse » (Luffy) — pour OP, utiliser « Rêve · … »."
+  },
+  "statLabels": {
+   "quoi": "attributes.statLabels — objet partiel {nin,tai,gen,int,for,vit,end,sce} → libellés d'axes de remplacement. Précédent OP (luffy) : {nin:'PUI', tai:'TEC', gen:'AGI', int:'INT', for:'FOR', vit:'VIT', end:'END', sce:'ESP'}.",
+   "gotcha": "appliqué UNIQUEMENT au radar du panneau Identité (CharacterZone:357) et à la carte TCG — le radar du FormePanel (CharacterZone:400) ne reçoit PAS labels et retombe sur NIN/TAI/GEN/… Si on relabellise pour OP, le FormePanel affichera les axes Naruto : bug d'affichage à corriger AVANT toute curation OP avec stats."
+  },
+  "eras_AVERTISSEMENT": {
+   "quoi": "attributes.eras est un AUTRE gabarit (EraZone, « rouleau temporel ») réservé aux lieux/artefacts/statuts/pouvoirs. Structure Era : {img, label, period, event, leader, threat, summary}.",
+   "regle": "JAMAIS sur un personnage : la branche type==='character' (page.tsx:58) passe AVANT la branche eras (page.tsx:179) — des eras sur un perso seraient des données mortes."
+  },
+  "pieges": [
+   "1. Forme sans `url` NI `idle` → jetée par normalizeForms → curation invisible.",
+   "2. Il faut ≥ 2 formes visibles pour la frise (forms.length > 1).",
+   "3. Dès qu'il existe ≥ 1 forme curée (hasCurated), attributes.age/height/weight de base ne s'affichent PLUS dans le panneau Identité : fstr(f.x, a.x) rend null si la forme courante n'a pas la valeur. Porter age/height/weight PAR FORME (au moins la première).",
+   "4. stats absentes = pas de radar, sans erreur — c'est voulu (repli OP), mais ça masque aussi une faute de frappe (`stat` au lieu de `stats`).",
+   "5. stats en STRINGS (\"3.5\") au lieu de nombres → comportement non garanti dans les clamps du radar : nombres JSON obligatoires.",
+   "6. statLabels ignoré par le radar du FormePanel (voir section statLabels).",
+   "7. eras sur un personnage = données mortes (dispatch).",
+   "8. sections/relations ne vont JAMAIS dans attributes (tables dédiées).",
+   "9. L'ordre du tableau forms EST l'ordre chronologique de la frise — trier avant écriture.",
+   "10. Écrire attributes par fusion (merge) : l'usine remplit d'autres champs en parallèle."
+  ]
+ },
+ "naruto": [
+  "shikamaru-nara",
+  "jiraiya",
+  "gaara",
+  "minato-namikaze",
+  "obito-uchiha",
+  "rock-lee",
+  "sakura-haruno",
+  "deidara",
+  "orochimaru",
+  "might-guy",
+  "tsunade",
+  "sasori",
+  "boruto-uzumaki",
+  "shisui-uchiha",
+  "hidan",
+  "temari",
+  "sarada-uchiha",
+  "konan",
+  "zabuza-momochi",
+  "kiba-inuzuka",
+  "kushina-uzumaki",
+  "mitsuki",
+  "sai-naruto",
+  "tobirama-senju",
+  "haku",
+  "kisame-hoshigaki",
+  "killer-b",
+  "tenten",
+  "ino-yamanaka",
+  "kawaki"
+ ],
+ "narutoDetail": {
+  "_critere": "top 30 personnages Naruto par attributes.favorites, SANS attributes.forms (1330 candidats sur 1337 persos), après exclusion documentée d'un doublon (voir exclusions).",
+  "favorites": {
+   "shikamaru-nara": 18831,
+   "jiraiya": 15100,
+   "gaara": 13578,
+   "minato-namikaze": 11357,
+   "obito-uchiha": 9018,
+   "rock-lee": 6465,
+   "sakura-haruno": 5672,
+   "deidara": 3624,
+   "orochimaru": 2595,
+   "might-guy": 2373,
+   "tsunade": 2150,
+   "sasori": 2074,
+   "boruto-uzumaki": 2047,
+   "shisui-uchiha": 1881,
+   "hidan": 1513,
+   "temari": 1303,
+   "sarada-uchiha": 1239,
+   "konan": 1123,
+   "zabuza-momochi": 1060,
+   "kiba-inuzuka": 1031,
+   "kushina-uzumaki": 1004,
+   "mitsuki": 984,
+   "sai-naruto": 980,
+   "tobirama-senju": 921,
+   "haku": 869,
+   "kisame-hoshigaki": 817,
+   "killer-b": 787,
+   "tenten": 601,
+   "ino-yamanaka": 593,
+   "kawaki": 588
+  },
+  "deja_curees_hors_liste": [
+   "naruto-uzumaki",
+   "sasuke-uchiha",
+   "itachi-uchiha",
+   "kakashi-hatake",
+   "madara-uchiha",
+   "hashirama-senju",
+   "kurama"
+  ]
+ },
+ "onePiece": [
+  "sanji",
+  "nico-robin",
+  "tony-tony-chopper",
+  "nami",
+  "usopp",
+  "portgas-d-ace",
+  "brook",
+  "trafalgar-law",
+  "franky",
+  "katakuri-charlotte",
+  "shanks",
+  "boa-hancock",
+  "doflamingo-donquixote",
+  "jinbe",
+  "barbe-blanche"
+ ],
+ "onePieceDetail": {
+  "_critere": "top 15 personnages One Piece par attributes.favorites, SANS forms (1447 candidats sur 1449), après exclusion de 2 entrées aux favoris invraisemblables (voir exclusions).",
+  "favorites": {
+   "sanji": 33368,
+   "nico-robin": 24013,
+   "tony-tony-chopper": 16999,
+   "nami": 16600,
+   "usopp": 14718,
+   "portgas-d-ace": 11702,
+   "brook": 11201,
+   "trafalgar-law": 10271,
+   "franky": 6830,
+   "katakuri-charlotte": 6819,
+   "shanks": 6751,
+   "boa-hancock": 4831,
+   "doflamingo-donquixote": 4616,
+   "jinbe": 4302,
+   "barbe-blanche": 4041
+  },
+  "deja_curees_hors_liste": [
+   "monkey-d-luffy",
+   "roronoa-zoro"
+  ]
+ },
+ "onePieceRepli": {
+  "constat": "Il n'existe AUCUN databook chiffré canon pour One Piece : les Vivre Cards (databook officiel) donnent primes, tailles, anniversaires — jamais de stats 0–5. Tout radar OP serait un chiffre inventé.",
+  "geste_backlog": "frise de formes SANS radar — omettre simplement `stats` sur chaque forme (le radar disparaît proprement, la frise et le FormePanel restent entiers) — plus le RANG DE PRIME : attributes.bounty (string, ex. « 3.000.000.000 Berrys »), déjà rendu en ligne « Prime » du panneau Identité ; le rang inter-fiches peut se calculer depuis les bounty existants.",
+  "precedent_contradictoire": "monkey-d-luffy et roronoa-zoro portent DÉJÀ des stats ESTIMÉES non canon avec statLabels remappés (PUI/TEC/AGI/INT/FOR/VIT/END/ESP). Décision à trancher par Dan AVANT curation : (a) suivre le repli backlog (canon seulement, pas de radar) et retirer/assumer l'écart des 2 précédents, ou (b) étendre le précédent estimé aux 15 — auquel cas corriger d'abord le gotcha FormePanel/statLabels.",
+  "sources_primes": "onepiece.fandom.com — infobox « Bounty » par personnage ; Vivre Card databook pour les valeurs officielles."
+ },
+ "exclusions": [
+  {
+   "slug": "nine-tailed-naruto-clone",
+   "univers": "Naruto",
+   "favorites": 19521,
+   "raison": "doublon MAL de Naruto lui-même (le summary décrit Naruto Uzumaki : Minato père, Kushina mère) — pas une star à curer, Naruto a déjà ses 10 formes. Aurait été #1 du critère brut."
+  },
+  {
+   "slug": "mr-love",
+   "univers": "One Piece",
+   "favorites": 15069,
+   "raison": "figurant Baroque Works (ép. 125) à 15 069 favoris — favoris manifestement absorbés d'un autre personnage (piège de romanisation/alias MAL). Aurait été #5 du critère brut."
+  },
+  {
+   "slug": "den",
+   "univers": "One Piece",
+   "favorites": 5769,
+   "raison": "personnage mineur (frère de Tom) à 5 769 favoris — même piège probable (Den ≈ Denjirō ?). Aurait été #13 du critère brut."
   }
+ ],
+ "anomaliesFavorites": {
+  "constat": "Le critère mécanique exclut des stars objectives dont les favoris sont absents ou corrompus en base : hinata-hyuga (favorites ABSENT), neji-hyuga (ABSENT), nagato (11).",
+  "proposition": "soumettre à Dan la substitution de 2–3 fins de liste (tenten 601, ino-yamanaka 593, kawaki 588) par hinata-hyuga, neji-hyuga, nagato — et/ou réparer les favoris à la source avant de figer la liste."
+ },
+ "sourcesDatabook": {
+  "principe": "Les stats chiffrées CANON de Naruto viennent des 3 premiers databooks officiels de Kishimoto. Le 4e (Jin no Sho, 2014) contient des profils mais AUCUNE table de stats. Hyō no Sho et les fanbooks n'en ont pas non plus.",
+  "page_par_personnage": "https://naruto.fandom.com/wiki/<Nom_romaji> — section « Stats » : tableau « Databook | Ninjutsu | Taijutsu | Genjutsu | Intelligence | Strength | Speed | Stamina | Hand seals | Total », UNE LIGNE PAR DATABOOK. Échelle 0–5 par pas de 0,5, total /40 : mappe 1:1 sur le radar → nin, tai, gen, int, for, vit, end, sce.",
+  "page_fr": "https://naruto.fandom.com/fr/wiki/<Nom> — section « Statistiques » (mêmes chiffres, libellés français).",
+  "databooks": [
+   {
+    "n": 1,
+    "titre": "Rin no Sho",
+    "annee": 2002,
+    "couverture": "≈ début → examens Chūnin (Partie I jeune)",
+    "url": "https://naruto.fandom.com/wiki/Rin_no_Sho"
+   },
+   {
+    "n": 2,
+    "titre": "Tō no Sho",
+    "annee": 2005,
+    "couverture": "≈ fin de la Partie I",
+    "url": "https://naruto.fandom.com/wiki/T%C5%8D_no_Sho"
+   },
+   {
+    "n": 3,
+    "titre": "Sha no Sho",
+    "annee": 2008,
+    "couverture": "Partie II jusqu'au ch. ≈402",
+    "url": "https://naruto.fandom.com/wiki/Sha_no_Sho"
+   },
+   {
+    "n": 4,
+    "titre": "Jin no Sho",
+    "annee": 2014,
+    "couverture": "profils jusqu'à la fin — AUCUNE table de stats",
+    "url": "https://naruto.fandom.com/wiki/Jin_no_Sho"
+   }
+  ],
+  "affectation_par_forme": "associer chaque ligne de databook à la forme d'époque : DB1 → forme Partie I jeune, DB2 → fin Partie I, DB3 → Partie II (c'est le patron de naruto-uzumaki en base). Les formes postérieures au ch. 402 (guerre tardive, Boruto) n'ont PAS de chiffres canon : soit omettre stats sur ces formes (radar absent, propre), soit reconduire la ligne DB3 en l'assumant — à trancher avec Dan.",
+  "sans_stats_canon_probable": [
+   "killer-b (début ch. 408 > DB3)",
+   "kushina-uzumaki (apparition réelle ch. 497)",
+   "shisui-uchiha (profil Jin no Sho, sans stats)",
+   "boruto-uzumaki",
+   "sarada-uchiha",
+   "mitsuki",
+   "kawaki"
+  ],
+  "regle_pour_eux": "même geste que le repli One Piece : frise de formes SANS radar (omettre stats).",
+  "a_verifier_page_par_page": [
+   "obito-uchiha (enfant : stats ? Tobi : non)",
+   "tobirama-senju",
+   "konan",
+   "sai-naruto",
+   "sasori",
+   "hidan",
+   "haku",
+   "zabuza-momochi"
+  ]
+ }
 }
