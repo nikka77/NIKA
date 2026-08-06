@@ -245,7 +245,8 @@ export default async function UniverseHubPage({ params }: Props) {
         <div>
           <HubSearch index={searchIndex} universe={taxo.name} color={m.color} />
           <div style={{ display: 'flex', gap: 7, flexWrap: 'wrap', marginTop: 10 }}>
-            {(['character', 'place', 'artifact', 'power', 'skill', 'status'] as const).filter((t) => insights.byType[t]).map((t) => (
+            {/* `profession` inclus (06/08) : les 94 métiers Naruto n'avaient AUCUN onglet/rail — le filtre byType masque le tab dans les univers sans métier. */}
+            {(['character', 'place', 'artifact', 'power', 'skill', 'status', 'profession'] as const).filter((t) => insights.byType[t]).map((t) => (
               <Link key={t} href={`/learn/akasha?universe=${encodeURIComponent(taxo.name)}&type=${t}`} className="ak-tab" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, padding: '6px 12px', borderRadius: 20, border: '1px solid var(--bd2)', background: 'var(--bg2)', color: 'var(--td2)' }}>
                 {TYPE_META[t].plural}
                 <span style={{ fontSize: 9.5, fontWeight: 800, color: 'var(--td3)' }}>{insights.byType[t]}</span>

@@ -1,0 +1,346 @@
+{
+  "generele": "2026-08-06",
+  "regle": "Plan appliqué aveuglément par l'applicateur : « de »/« valeur » matchent attributes.<axe> byte-pour-byte (attention apostrophes U+2019 vs U+0027, doubles espaces). renames = attributes.<axe> := vers ; retraits = suppression de la clé (le champ est erroné, pas la graphie). Aucun autre champ touché.",
+  "plans": [
+    {
+      "universe": "One Piece",
+      "axe": "crew",
+      "valeursAvant": 87,
+      "valeursApres": 41,
+      "fichesTouchees": 153,
+      "renames": [
+        {
+          "de": "Faux Equipage du Chapeau de Paille",
+          "vers": "Faux équipage du Chapeau de Paille",
+          "nFiches": 8,
+          "nFichesVers": 0,
+          "motif": "accent manquant sur « Equipage » — alignement sur la convention corpus (é accentué)"
+        },
+        {
+          "de": "Thriller Bark",
+          "vers": "L’équipage de Thriller Bark",
+          "nFiches": 4,
+          "nFichesVers": 0,
+          "motif": "les 4 fiches (Moria, Perona, Absalom, Hogback) sont le Mystic Four des Thriller Bark Pirates — la valeur actuelle est le lieu, l'équipage canon s'appelle « L'équipage de Thriller Bark »"
+        },
+        {
+          "de": "Kuja Pirates",
+          "vers": "L’équipage des Pirates Kuja",
+          "nFiches": 2,
+          "nFichesVers": 2,
+          "motif": "graphie anglaise résiduelle → forme française dominante du corpus (même équipage : Boa Hancock, Marguerite)"
+        },
+        {
+          "de": "L'équipage de Don Quichotte",
+          "vers": "L’équipage de Don Quichotte",
+          "nFiches": 2,
+          "nFichesVers": 15,
+          "motif": "doublon de graphie (apostrophe/casse/espaces) — fusion vers la variante canon"
+        },
+        {
+          "de": "L’équipage du Hearth",
+          "vers": "L’équipage du Heart",
+          "nFiches": 2,
+          "nFichesVers": 3,
+          "motif": "coquille « Hearth » → Heart Pirates (Shachi et Jean Bart sont canoniquement des Heart Pirates)"
+        },
+        {
+          "de": "Blackbeard Pirates",
+          "vers": "L’équipage de Barbe Noire",
+          "nFiches": 1,
+          "nFichesVers": 9,
+          "motif": "graphie anglaise résiduelle → forme française dominante (9 fiches)"
+        },
+        {
+          "de": "Golden Lion Pirates",
+          "vers": "L’équipage du Lion d’Or",
+          "nFiches": 1,
+          "nFichesVers": 3,
+          "motif": "graphie anglaise résiduelle → forme française dominante (3 fiches, même équipage de Shiki)"
+        },
+        {
+          "de": "L’armada Pirate de Don Krieg",
+          "vers": "L’équipage de Krieg",
+          "nFiches": 1,
+          "nFichesVers": 1,
+          "motif": "même entité (la flotte de Don Krieg = Krieg Pirates) ; Pearl rejoint son capitaine sous la graphie corpus"
+        },
+        {
+          "de": "L'équipage de Barbe Blanche",
+          "vers": "L’équipage de Barbe Blanche",
+          "nFiches": 1,
+          "nFichesVers": 34,
+          "motif": "doublon de graphie (apostrophe/casse/espaces) — fusion vers la variante canon"
+        },
+        {
+          "de": "L’équipage de Barbe Rouge",
+          "vers": "L’équipage du Roux",
+          "nFiches": 1,
+          "nFichesVers": 4,
+          "motif": "mauvaise traduction de « Red Hair Pirates » : la fiche est Yasopp, sniper canonique de l'équipage du Roux ; aucun équipage « Barbe Rouge » n'existe"
+        },
+        {
+          "de": "L'Équipage des Maquereaux",
+          "vers": "L’équipage des Maquereaux",
+          "nFiches": 1,
+          "nFichesVers": 0,
+          "motif": "casse et apostrophe hors convention corpus (É majuscule + apostrophe droite) → graphie « L'équipage de/du/des … » à é minuscule et apostrophe typographique"
+        },
+        {
+          "de": "L'équipage du Chapeau de Paille",
+          "vers": "L’équipage du Chapeau de Paille",
+          "nFiches": 1,
+          "nFichesVers": 14,
+          "motif": "doublon de graphie (apostrophe/casse/espaces) — fusion vers la variante canon"
+        }
+      ],
+      "retraits": [
+        {
+          "valeur": "Skypiea",
+          "nFiches": 15,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Pays des Wa",
+          "nFiches": 13,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Alabasta",
+          "nFiches": 10,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Royaume de Goa",
+          "nFiches": 9,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Île des hommes-poissons",
+          "nFiches": 7,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Impel Down",
+          "nFiches": 7,
+          "motif": "lieu (prison du Gouvernement Mondial), pas un équipage"
+        },
+        {
+          "valeur": "Water Seven",
+          "nFiches": 7,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Dressrosa",
+          "nFiches": 6,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Archipel Conomi",
+          "nFiches": 4,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Île de Drum",
+          "nFiches": 4,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Archipel des Gecko",
+          "nFiches": 3,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Archipel des Sabaody",
+          "nFiches": 3,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Enies Lobby",
+          "nFiches": 3,
+          "motif": "lieu (île judiciaire), pas un équipage"
+        },
+        {
+          "valeur": "Zo",
+          "nFiches": 3,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Archipel des Argao",
+          "nFiches": 2,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Baratie",
+          "nFiches": 2,
+          "motif": "lieu (restaurant flottant), pas un équipage"
+        },
+        {
+          "valeur": "Cap des Jumeaux",
+          "nFiches": 2,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Erbaf",
+          "nFiches": 2,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Gran Tesero",
+          "nFiches": 2,
+          "motif": "lieu (navire-casino, Film Gold), pas un équipage"
+        },
+        {
+          "valeur": "Ohara",
+          "nFiches": 2,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Pays des fleurs",
+          "nFiches": 2,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Punk Hazard",
+          "nFiches": 2,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Royaume de Mogalo",
+          "nFiches": 2,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Royaume de Prodence",
+          "nFiches": 2,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Royaume maléfique de Black Drum",
+          "nFiches": 2,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Archipel de Boing",
+          "nFiches": 1,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Baterilla",
+          "nFiches": 1,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Dragon Célestes",
+          "nFiches": 1,
+          "motif": "caste sociale (Nobles Mondiaux), pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Elegia",
+          "nFiches": 1,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Esclave",
+          "nFiches": 1,
+          "motif": "statut (Kuma), pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Île aux cactus",
+          "nFiches": 1,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Little Garden",
+          "nFiches": 1,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Long Ring Long Land",
+          "nFiches": 1,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Royaume de Lvneel",
+          "nFiches": 1,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Source de l'insouciance",
+          "nFiches": 1,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Village de Shimotsuki",
+          "nFiches": 1,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        },
+        {
+          "valeur": "Weatheria",
+          "nFiches": 1,
+          "motif": "lieu de résidence/origine, pas un équipage — champ crew erroné, à vider"
+        }
+      ]
+    },
+    {
+      "universe": "Naruto",
+      "axe": "clan",
+      "valeursAvant": 50,
+      "valeursApres": 45,
+      "fichesTouchees": 12,
+      "renames": [
+        {
+          "de": "Fūma  (Land of Sound)",
+          "vers": "Fūma (Land of Sound)",
+          "nFiches": 7,
+          "nFichesVers": 0,
+          "motif": "double espace hors canon — graphie canon Fandom « Fūma Clan (Land of Sound) », convention corpus sans « Clan » ; clan DISTINCT du Fūma générique (2 fiches), ne pas fusionner"
+        },
+        {
+          "de": "Fūma   (Presumed)",
+          "vers": "Fūma",
+          "nFiches": 1,
+          "nFichesVers": 2,
+          "motif": "« (Presumed) » est une annotation d'infobox Fandom, pas un nom de clan ; Kōtarō Fūma appartient au clan Fūma générique (vérifié sur sa page Narutopedia — distinct du Fūma du Pays du Son)"
+        },
+        {
+          "de": "Karatachi",
+          "vers": "Karatachi Family",
+          "nFiches": 1,
+          "nFichesVers": 1,
+          "motif": "canon Fandom = article « Karatachi Family » (vérifié par l'API) ; convention corpus : les familles gardent « Family » (Kagetsu/Wasabi/Wagarashi Family) ; Kagura Karatachi y est listé"
+        },
+        {
+          "de": "Kazekage Clan",
+          "vers": "Kazekage",
+          "nFiches": 1,
+          "nFichesVers": 5,
+          "motif": "doublon de graphie : convention corpus = nom nu sans « Clan » (5 fiches « Kazekage » contre 1) ; article canon Fandom « Kazekage Clan »"
+        },
+        {
+          "de": "Wagarashi family",
+          "vers": "Wagarashi Family",
+          "nFiches": 1,
+          "nFichesVers": 1,
+          "motif": "doublon de casse — canon Fandom « Wagarashi Family » (article vérifié par l'API)"
+        },
+        {
+          "de": "Wasabi Family  (Adopted)",
+          "vers": "Wasabi Family",
+          "nFiches": 1,
+          "nFichesVers": 1,
+          "motif": "« (Adopted) » est une annotation d'infobox (Idate Morino, adopté), pas un nom ; canon Fandom « Wasabi Family » ; double espace en prime"
+        }
+      ],
+      "retraits": []
+    }
+  ],
+  "incertitudes": [
+    "One Piece/crew — « Royaume de Germa » (6 fiches, toutes Vinsmoke) : renommer vers « Germa 66 » serait juste pour Judge/Ichiji/Niji/Yonji/Reiju mais douteux pour Sora (reine du royaume, pas combattante du Germa 66) ; ni pur lieu (retrait = perte d'affiliation) ni équipage — laissé tel quel, arbitrage humain requis.",
+    "One Piece/crew — « Ligue des Primates » (2 : Montblanc Cricket, Masira) désigne l'Alliance de Saruyama ; la graphie française canon est incertaine (« Alliance de Saruyama » ?) — laissé tel quel plutôt qu'un rename à l'aveugle.",
+    "One Piece/crew — « Anciens membres de la Marine » (1), « Anciens membres du Cipher Pol » (5), « Anciens membres du Baroque Works » (3) : fusionner vers Marine/Cipher Pol ferait perdre la nuance ancien/actuel (et « Baroque Works » n'existe même pas comme valeur) — décision produit, laissés tels quels.",
+    "One Piece/crew — « Marine » (29), « Cipher Pol » (8), « Armée Révolutionnaire » (8), « Néo Marine » (3), « Buggy's Delivery » (2), « World Economic Journal » (1) : organisations réelles mais pas des équipages pirates — gardées ; les déplacer vers un axe « affiliation » ou les couvrir via OP_NON_CREW est une décision produit, pas de graphie.",
+    "Naruto/clan — « Jūgo's » (1) et « Yota's » (1) : conformes au canon Fandom (« Jūgo's Clan »/« Yota's Clan », moins « Clan » selon la convention corpus) mais l'affichage « Clan Jūgo's » est disgracieux ; renommer en « Jūgo »/« Yota » serait un choix d'affichage, pas de canon — laissés tels quels.",
+    "Naruto/clan — garde-fou : « Fūma » (générique — Premier Chemin Animal, Eiki Fūma, Kōtarō Fūma) et « Fūma (Land of Sound) » (7) sont DEUX clans canon distincts (deux articles Narutopedia) — ne jamais les fusionner."
+  ]
+}

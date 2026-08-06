@@ -1,0 +1,109 @@
+{
+  "titre": "Reprise des fiches faibles Death Note — plan du 06/08/2026",
+  "reference": {
+    "controle_qualite": "tasks/audits/confiance-death-note-2026-08-02.md (copie iCloud ; 12 fiches, moyenne 6,2/10, confiance 58 %)",
+    "backlog": "tasks/akasha-organisation.md §4 entrée 15",
+    "verification": "état DB du 06/08 contrôlé fiche par fiche contre les pages deathnote.fandom.com réelles (scripts/lib/fandom.mjs)"
+  },
+  "fiches": [
+    {
+      "slug": "shingo-midou",
+      "probleme": "descFr minimaliste d'une phrase (57 c, copie du summary) — QC 2/10 toujours d'actualité — alors que la page Fandom « Shingo Mido » (alias curé, identité sûre) est riche (Appearance, Character, Plot). En prime, deux sections quasi-doublons « Rôle dans le Groupe Yotsuba » (idx fin-1 et fin-2, même sujet, source claude-haiku finisseur).",
+      "action": "Remettre en file fandom_descfr (résolution par alias curé, sans risque). Dédoublonner les sections à la main : supprimer idx fin-1, garder fin-2 (la plus complète, couvre la mort)."
+    },
+    {
+      "slug": "noriko",
+      "probleme": "descFr RÉPARÉE depuis le QC (fidèle à la page « Nori », alias curé). MAIS la section « Crédits » (idx 2) reste entièrement hors sujet : crédits complets du musical brésilien, cite la traductrice Noriko Tanaka — la confusion de personnes relevée par le QC (3/10) vit désormais uniquement là.",
+      "action": "Supprimer la section Crédits (DELETE akasha_sections WHERE entry_id = fiche noriko AND idx = '2'). Aucune tâche en file : la descFr est bonne, la régénérer serait du gâchis."
+    },
+    {
+      "slug": "light-s-teacher",
+      "probleme": "Aucune page personnage sur deathnote.fandom.com (« Light's Teacher » → missingtitle) ; la recherche plein texte tombe sur la page de la CHANSON « Where is the Justice » (sameEntity=false). La descFr actuelle a été rédigée depuis cette page de chanson et ne couvre que la comédie musicale — c'est le défaut « ne couvre que la musicale » du QC (4/10), toujours présent. 4 tâches akasha_relations refusées les 04-05/08 pour la même raison.",
+      "action": "Décision manuelle, NE PAS remettre en file (la garde d'identité refuserait, à raison — il n'y a pas de page à curer en alias). Deux issues : écarter/dépublier la fiche, ou réécrire la descFr à la main depuis la scène d'ouverture manga/anime (2 phrases suffisent)."
+    },
+    {
+      "slug": "george-sairas",
+      "probleme": "La troncature du QC (« Kira n'est p ») est réparée, MAIS la descFr contredit la page réelle : « Sairas divulgue des informations secrètes sur le SPK » — la page dit l'inverse, il FOURNIT à Near les ressources pour CRÉER le SPK ; et « annonce officiellement son soutien » surinterprète (la page : il NIE croire que Kira est la justice, il annonce seulement que les USA ne s'opposeront plus).",
+      "action": "Remettre en file fandom_descfr (titre exact, identité sûre). ATTENTION : le summary de la fiche porte lui-même la phrase fautive sur le SPK et part dans le payload comme contexte — le corriger à la main AVANT l'envoi (retirer « De plus, Sairas divulgue des informations secrètes sur le SPK. » et adoucir « annonce officiellement son soutien » en « annonce que les USA ne s'opposeront plus à Kira »), puis reconstruire le payload avec le summary corrigé."
+    },
+    {
+      "slug": "roger-ruvie",
+      "probleme": "La troncature du QC (« puis quitt ») a disparu mais la descFr est retombée à une phrase (83 c, copie du summary) — QC 6/10. La page réelle est riche : grognon, studieux, n'aime pas les enfants, aime les livres d'insectes, devient le troisième Watari. L'épilogue vit déjà dans la section Intrigue (réparée), il manque à la descFr.",
+      "action": "Remettre en file fandom_descfr (titre exact, identité sûre)."
+    },
+    {
+      "slug": "daril-ghiroza",
+      "probleme": "descFr réparée et fidèle (shinigami rang 3, section Personnage du QC intégrée : squelettes, accessoires métalliques, lieux lumineux, jeu). MAIS le summary nomme la MAUVAISE PERSONNE : « Agent du FBI envoyé filer les dirigeants du groupe Yotsuba… crise cardiaque » — Daril Ghiroza est une shinigami de How to Read jamais apparue sur Terre. La fiche affiche donc un summary qui contredit sa propre descFr.",
+      "action": "Corriger le summary à la main (UPDATE akasha_entries SET summary) — une tâche fandom_descfr ne touche pas ce champ. Proposition : « Shinigami femelle de rang 3 conçue par Obata sur le modèle de Ryuk, jamais choisie pour apparaître sur Terre. » Nota : une tâche fandom_descfr failed/pending du 02/08 traîne en agent_results pour ce slug."
+    },
+    {
+      "slug": "mello",
+      "probleme": "La coupure « Le dessinateur » du QC est réparée (fin propre, doubleurs exacts : Nozomu Sasaki/David Hurtwitz confirmables). MAIS la descFr s'ouvre sur un déversement d'infobox brut avant la première phrase : « Âge : 13-15 ans… Date de naissance : 13 décembre 1989 Groupe sanguin : A Aime : le chocolat Déteste : ceux qui sont meilleurs que lui ».",
+      "action": "Tâche toilettage_fr en file pour nettoyer la tête de descFr — PAS de régénération fandom_descfr : le fond est bon (8/10 au QC), on ne rejoue pas ce qui marche."
+    }
+  ],
+  "conformes": [
+    {
+      "slug": "hirokazu-ukita",
+      "constat": "Réparée. Les doubleurs jugés « inventés » par le QC (Hidenobu Kiuchi, Jeremy From) sont DANS l'infobox réelle de la page — le connecteur filtre les champs voice/japanese/english (INFOBOX_IGNORE), le juge ne pouvait pas les voir. « S'apprête à tirer » corrigé."
+    },
+    {
+      "slug": "kurou-otoharada",
+      "constat": "Réparée. Fin complète ; « Tueur de Shinjuku » est l'alias canon de l'infobox (Shinjuku Killer) ; 6 tués/blessés + 8 otages conformes à la page."
+    },
+    {
+      "slug": "anthony-carter",
+      "constat": "Conforme. Fin propre ; « Near, le nouveau L » est exact dans le one-shot post-série."
+    },
+    {
+      "slug": "sudou",
+      "constat": "Conforme et complète (l'omission d'apparence du QC est cosmétique, hors critères)."
+    },
+    {
+      "slug": "kanichi-takimura",
+      "constat": "QC 9/10. descFr d'une phrase (60 c) mais fidèle, non tronquée ; le dossier porte le contenu (Intrigue : enlèvement par Mello, strangulation, Light impliqué). Hors critères stricts — voir incertitudes."
+    }
+  ],
+  "aQueuer": [
+    {
+      "type": "fandom_descfr",
+      "payload": {
+        "slug": "shingo-midou",
+        "name": "Shingo Midou",
+        "type": "character",
+        "universe": "Death Note",
+        "summary": "Shingo Midou est l'un des huit membres du groupe Yotsuba."
+      }
+    },
+    {
+      "type": "fandom_descfr",
+      "payload": {
+        "slug": "george-sairas",
+        "name": "George Sairas",
+        "type": "character",
+        "universe": "Death Note",
+        "summary": "Il est le vice-président des États-Unis dans le manga. Lorsque David Hoope meurt, Sairas devient président à sa place. Il capitule devant Kira et annonce officiellement son soutien. De plus, Sairas divulgue des informations secrètes sur le SPK. How to Read 13 décrit Sairas comme « faible de caractère » et « manquant clairement des qualités d'un dirigeant ». Dans l'anime, Sairas est président dès le début."
+      }
+    },
+    {
+      "type": "fandom_descfr",
+      "payload": {
+        "slug": "roger-ruvie",
+        "name": "Roger Ruvie",
+        "type": "character",
+        "universe": "Death Note",
+        "summary": "Roger est le responsable de la « Wammy's House » chaque fois que Watari est absent."
+      }
+    },
+    {
+      "type": "toilettage_fr",
+      "payload": {
+        "slug": "mello",
+        "name": "Mello",
+        "universe": "Death Note",
+        "texte": "Âge : 13-15 ans avant l'ellipse temporelle, 19-20 ans après Date de naissance : 13 décembre 1989 Groupe sanguin : A Aime : le chocolat Déteste : ceux qui sont meilleurs que lui Mello est l'aîné des deux successeurs de L, élevés à la Wammy's House, l'orphelinat de Watari pour enfants surdoués, à Winchester, en Angleterre. Lorsqu'il est décidé que Mello doit travailler avec l'autre successeur, Near, Mello refuse, invoquant son incapacité à travailler avec Near, à qui il est considéré comme inférieur. À l'image du goût de L pour les sucreries, on voit souvent Mello manger des barres de chocolat. How to Read 13 indique que Mello a « un esprit excellent » et qu'il « laisse parfois ses émotions le desservir ». Le livre cite « la haine de Mello envers Near », qui a créé « un défaut dans sa personnalité ». Le livre précise que Mello n'est pas purement mauvais, citant ses excuses et son souci sincère pour le bien-être de Matt. Tsugumi Ohba, le scénariste de Death Note, a déclaré que Mello « travaille dur pour tout ». Ohba a ajouté que le nom de Mello « ne signifie pas vraiment quelque chose », contrairement au nom de Near qui correspond à Nate River, etc. Mello est doublé par Nozomu Sasaki dans l'anime japonais, David Hurtwitz dans la version anglaise et Javier Olguín dans le doublage latino-espagnol."
+      }
+    }
+  ],
+  "nota": "Envoi via ops_queue_send_batch({ messages: aQueuer }) — même RPC que ops-fill-fandom.mjs. L'usine est EN PAUSE : ne rien envoyer avant sa relance. Les actions manuelles (noriko, daril-ghiroza, light-s-teacher, doublons shingo) ne passent PAS par la file."
+}

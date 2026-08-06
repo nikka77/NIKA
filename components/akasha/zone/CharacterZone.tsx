@@ -22,9 +22,9 @@ const familyList = (v: unknown): Fam[] =>
 
 // Libellés FR des attributs d'appartenance surfacés en grappe (ordre d'affichage).
 const BELONG_ATTRS: [string, string][] = [
-  ['clan', 'Clan'], ['village', 'Village'], ['crew', 'Équipage'], ['faction', 'Faction'],
-  ['division', 'Division'], ['camp', 'Camp'], ['partie', 'Partie'], ['race', 'Race'],
-  ['nen', 'Nen'], ['generation', 'Génération'], ['rank', 'Rang'],
+  ['clan', 'Clan'], ['village', 'Village'], ['organization', 'Organisation'], ['crew', 'Équipage'],
+  ['faction', 'Faction'], ['division', 'Division'], ['camp', 'Camp'], ['partie', 'Partie'],
+  ['race', 'Race'], ['nen', 'Nen'], ['generation', 'Génération'], ['rank', 'Rang'],
 ];
 
 type SharedVoice = { slug: string; name: string; universe: string | null; image_url: string | null };

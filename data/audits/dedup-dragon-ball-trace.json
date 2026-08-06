@@ -1,0 +1,1344 @@
+{
+  "genere_le": "2026-08-06T00:10:30.881Z",
+  "plan": "data/audits/dedup-dragon-ball.json",
+  "regle": "trace complète de chaque fiche mourante (ligne akasha_entries, sections, arêtes) prise AVANT la fusion, + avant des corrections. Restauration possible à la main.",
+  "fusions": [
+    {
+      "absorbe": "freezer",
+      "meurt": "freeza",
+      "ids": {
+        "absorbe": "1b64325a-5e2c-47cc-8dbc-2e353c0f1b69",
+        "meurt": "d151385b-6c12-4edb-b37e-85818dd1fccb"
+      },
+      "mourante": {
+        "entry": {
+          "id": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+          "slug": "freeza",
+          "type": "character",
+          "name": "Freeza",
+          "is_fiction": true,
+          "universe": "Dragon Ball",
+          "summary": "Personnage secondaire de Dragon Ball.",
+          "description": "Personnage secondaire de Dragon Ball.",
+          "image_url": "https://cdn.myanimelist.net/images/characters/7/359258.webp?s=9283da1c6156a10c96ca75d71522d62d",
+          "attributes": {
+            "race": "Frieza Race",
+            "role": "Personnage secondaire",
+            "saga": "Saga Namek",
+            "descFr": "Freezer est un super-vilain de fiction qui apparaît pour la première fois dans le manga Dragon Ball créé par Akira Toriyama, puis dans Dragon Ball Z, Dragon Ball Super et Dragon Ball GT. Freezer apparaît aussi dans le téléfilm spécial Baddack contre Freezer ; dans quelques films Dragon Ball Z et dans Dragon Ball GT. Il est l'un des plus puissants grands super-vilains introduits dans l'univers Dragon Ball. Dans la série humoristique Neko Majin Z, on révèle qu'il a un fils, Kuriza. Freezer est présenté dans la série comme le puissant tyran galactique en quête d'immortalité et de conquête, souverain d'un empire réputé contrôler soixante-dix-neuf planètes ou plus. Freezer crée des armées à partir des planètes qu'il conquiert, la race qu'il utilise le plus étant les Saïyens. Freezer avait entendu parler de la légende du Super Saïyen, un être à la puissance sans égale, mais l'écartait comme une simple mythologie ; cependant, après que plusieurs Saïyens eurent émergé avec un potentiel évoluant rapidement, Freezer commença à craindre que la légende ne se réalise, et détruisit en conséquence la race saïyenne. Ses actions et sa soif de pouvoir finissent par l'opposer aux héros de la série lorsqu'il tente de s'emparer des Dragon Balls exauceuses de vœux sur la planète Namek.",
+            "descRaw": "Frieza is a fictional graphic novel supervillain who first appears in the Dragon Ball manga created by Akira Toriyama, followed by Dragon Ball Z, Dragon Ball Super and Dragon Ball GT. Frieza also appears in the television special Bardock: The Father of Goku; a few Dragon Ball Z movies and in Dragon Ball GT. He is one of the most powerful major supervillains introduced throughout the Dragon Ball universe. In the gag series Neko Majin Z, it is revealed that he has a son, Kuriza. Frieza is introduced in the series as the powerful galactic overlord on a mission for immortality and conquest, ruler of an empire said to control seventy-nine or more planets. Frieza creates armies from the planets that he conquers, his most utilized race were the Saiyans. Frieza had heard about the legend of the Super Saiyan, a being with unrivaled power, but dismissed it as simple mythology; however, after several Saiyans emerged with rapidly evolving potential, Frieza began to fear that the legend would indeed come true, so as a result, destroyed the Saiyan race. His actions and lust for power eventually bring him into conflict with the heroes of the series when he tries to take possession of the wish-granting Dragon Balls on Planet Namek. (Source: Wikipedia)",
+            "descLang": "en",
+            "favorites": 1762,
+            "voiceActors": {
+              "en": [
+                "Linda Young",
+                "Pauline Newstone"
+              ],
+              "jp": [
+                "Ryusei Nakao"
+              ]
+            }
+          },
+          "rarity": "rare",
+          "created_at": "2026-07-02T19:17:54.932736+00:00"
+        },
+        "sections": [
+          {
+            "id": 16071,
+            "entry_id": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "idx": "1",
+            "titre": "Concept and creation",
+            "texte": "Freeza est un jeu de mots sur « freezer » (congélateur). Akira Toriyama a imaginé un réfrigérateur en créant le personnage, et tous ses subordonnés sont nommés d'après des objets que l'on trouve dans un réfrigérateur. Freeza a été inspiré par les spéculateurs immobiliers, que Toriyama considérait comme « le pire genre de personnes ». ",
+            "source": "openrouter/mistralai/mistral-small-24b-instruct-2501",
+            "created_at": "2026-08-05T18:39:55.587287+00:00"
+          },
+          {
+            "id": 16072,
+            "entry_id": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "idx": "2",
+            "titre": "Apparence",
+            "texte": "Freeza possède une variété de transformations, chacune distincte des autres. Sa quatrième et plus puissante forme est en réalité sa forme originale, les trois autres étant des formes qui suppriment sa puissance. Toutes ses formes s'inspirent de concepts de démons occidentaux et japonais. Dans sa première forme, Freeza porte un Bio Suit de couleur violet et jaune brass avec de larges épaulières, faisant partie intégrante de son corps. Il peut briser cette armure pour se transformer ou la remplacer par un nouveau Bio Suit. Dans sa forme naturelle, Freeza porte le Bio Suit de sa race. Dans sa forme Mecha, son corps est équipé d'un Cosmic Suit permanent. Lors de la Saga de la Survie Universelle, il arbore un halo sur la tête, en raison de sa mort, mais ce halo est retiré après le tournoi, grâce à Whis qui lui rend la vie pour bonne conduite. Dans son enfance, Freeza, dans sa première forme, ne possède pas son exosquelette typique, sauf sur la tête, révélant une peau rose sur son torse. Ses couleurs de peau sont différentes, avec des nuances plus vives de rose et de rouge, et des plaques blanches sur ses bracelets.",
+            "source": "openrouter/mistralai/mistral-small-24b-instruct-2501",
+            "created_at": "2026-08-05T18:39:55.587287+00:00"
+          },
+          {
+            "id": 16073,
+            "entry_id": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "idx": "4",
+            "titre": "Relation avec Frost",
+            "texte": "Freeza et Frost sont des homologues universels, partageant de nombreuses similitudes et étant presque identiques. Lors de leur première rencontre, les deux empereurs se sont souri, Freeza étant agréablement surpris de découvrir l'existence d'un autre empereur. Ils ont discuté en privé et ont probablement appris à se connaître, Freeza notant qu'ils avaient plusieurs points communs. Cependant, Freeza ne se souciait pas réellement de Frost, comme le prouve le fait qu'il l'a trahi en lui enseignant à renforcer sa force, puis en le blessant de manière inattendue.",
+            "source": "openrouter/mistralai/mistral-small-24b-instruct-2501",
+            "created_at": "2026-08-05T18:39:55.587287+00:00"
+          }
+        ],
+        "relations_sortantes": [
+          {
+            "id": "00603396-057d-4262-bb3f-55775d0611bd",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "b1134dd8-c321-4c5b-a7ba-ed79ef21b2ac",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "01793d5c-0f88-4968-b69a-041a7426ecd6",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "cebf2f45-e625-458c-b1b4-322a8a5184bf",
+            "relation": "famille",
+            "created_at": "2026-08-04T22:49:22.932016+00:00"
+          },
+          {
+            "id": "06321231-af89-4e13-b12e-15d956481469",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "f51546d1-25c8-4cc7-a0b2-803fc8e887dd",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "0757cc36-3fe0-4790-b6ab-d3ca6712410a",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "f3cd596c-b3a3-49ce-a03d-210272922d7d",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "085a2826-01bc-4589-9c82-e468a14c10e7",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "8666f941-64b6-4377-b01a-c32d1acc4756",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.082204+00:00"
+          },
+          {
+            "id": "08908e70-8291-425a-b3e2-39f23790b99e",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "2f69e942-04b4-4da0-8ec9-182da084d301",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.082204+00:00"
+          },
+          {
+            "id": "0c353b99-0c37-4756-99b2-2b38d34d9433",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "57da6de5-5924-4a45-ab97-1f43251cb86a",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "0e1c95e7-28ee-4aa0-9e42-8e6780a36d8c",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "5fc0ec2e-ad7e-4298-944f-aa560cc63bd1",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "0f208c32-974a-4bc5-a3e8-96c517aeb39d",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "b99e1562-4ebd-46fc-b51e-96386aba0da6",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "14198669-4727-4433-b692-fb591fc570f4",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "2903358d-c7fd-4e32-a574-4fcb06d3fd89",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "1702a018-bba3-49b7-807f-f8255a044036",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "d92f657a-bd32-40d3-9188-6599d8cc70e1",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "1a2ccb3b-e1a0-4fb7-836c-68f552344a27",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "014be454-c2f8-42d8-965a-fb9d9dba066f",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "1ba50c6d-b7ce-4067-b673-e5c8f3b50566",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "257294a1-86f1-4a30-b6fe-152befd85a4d",
+            "relation": "famille",
+            "created_at": "2026-08-04T22:49:22.932016+00:00"
+          },
+          {
+            "id": "1bf06939-0ef9-4ee6-adc9-48198968f06b",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "512caaf2-ae41-4ce6-ab53-20bd2743fdd4",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "21559001-4c66-46b0-845e-518988306128",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "946e3b7d-7f84-4a34-9e30-b15ec89bb175",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "218fff4b-3282-468c-81a3-721ec68160f5",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "ee006721-28f5-470a-a407-ea330a9ac0dd",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "235c9b9b-2bbc-4935-bce7-331ce5ed0793",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "0fcd3ea6-557e-45ba-8fa4-4337bccd4a38",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "26d5c349-3ab2-4076-832e-9854f621eee9",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "595f3bc2-5b35-4cfc-b4b1-aa3a610b1fd3",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "297fe7f5-956c-4424-9603-768d362b5752",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "6f08089f-f629-4a41-a324-4a83006a23ad",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "2a0af1c6-7c65-44cc-b8db-5365a679ec68",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "281c80be-c7aa-4e5d-bcb6-3c356ecda97a",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "304b1f0f-008c-4a39-b2f0-26df1cb93c5d",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "a7cdafcc-b849-4a09-8867-a69c1c1539eb",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "3167c5ae-748c-48bd-ad7b-f70845016d5e",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "8d5c7778-0541-4507-bd46-61e28302dd2e",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "32aefc7f-7b6d-42ab-ad75-cb39d685bba1",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "04d7a69f-ac6c-4a7e-a138-5028c6bb8ff2",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.731904+00:00"
+          },
+          {
+            "id": "34bd3457-8608-42ca-92a3-a7781a29d67d",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "69a71af7-6158-47aa-a506-0dc0236e7f72",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "3b27ff26-5228-4f6f-a81c-50e818798f03",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "df9feff5-cd74-4e8d-ae32-f2fa040ba977",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "3ba1e8bd-2d58-4f99-9de3-99b57b122968",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "a1963408-4807-49e6-8918-846814235b3b",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "3ea92142-250d-432f-b30d-9a8730d5b826",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "fb982ec3-9470-44a5-ba71-5a2f9cca2542",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "414a1f6b-1da2-42d1-8188-f7c406110127",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "0ef34412-bcbb-4ff8-ab98-dbbdf8dc95fa",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "43237e8f-bdb1-441e-b99f-04b304b50b14",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "e5f8bc8f-3149-4048-80ba-8370e3ab37f7",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "48105428-8dfa-4c20-94fb-bef9c73ed947",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "8f9d0b53-9d8f-421d-a370-3cef8411f724",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "48b83ed1-13fc-4b84-bbd2-1baecba45c22",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "2a4cb585-3f47-4d2a-8002-0781be961902",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "49975a6a-811e-4484-a7ee-afd9bc26480f",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "09148a82-87c9-421f-949e-dc7c72fff284",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "4b6b2ccb-8b40-467c-8a93-2e1aff5ae38e",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "2408c176-8ef9-4979-a363-d8cc0feb81a1",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "4e37d2ed-418f-4dc2-9831-c1f2384c279f",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "9ff6cf66-07d9-4ae7-be15-d1fd0ad7308e",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "4f6b634e-3adf-4293-b146-feb8bc5c8c3f",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "78c9fb43-baee-471e-b095-516225fa4070",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "4f9f8d73-7a62-43a5-9083-89d13a7bf3b8",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "2347264c-8b11-4286-84cc-893af6adae0b",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.082204+00:00"
+          },
+          {
+            "id": "5032c5ac-22c1-4ea9-9bf8-c3df8ea6a248",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "ed20582a-8748-4b87-acb2-5f3f6608ccb8",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "50ef4492-e4ba-4bc8-80fb-d19b58618728",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "dd670d6f-9555-4dd3-94f9-b572ba415b16",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "513ec7fe-7186-4567-9e5d-8edbcb3325ac",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "f73538e6-efc6-4197-8e9b-061630966640",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.082204+00:00"
+          },
+          {
+            "id": "5540e990-f493-4bee-aca5-8f09b7d8c48d",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "2cd402a3-bf6e-4951-a4a1-b7edeef4145f",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "56326503-7cd6-4c51-bf17-5e7ef3d16a9c",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "22d386b5-0e79-40a9-8f85-aa899b0ed128",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "56e03c85-04ee-4a3b-a19c-510030de4863",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "83b176f5-b721-4289-9232-b5c7016a48d8",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "5a5d0238-07a4-4bdc-bd86-25ae04112044",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "6ea23bc1-a5ef-46db-807d-19eafa221f2d",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "60feae99-76fc-4a73-8daa-1e6bece6acac",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "bcb10e46-671b-41bc-a300-aa954923fc0e",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "61033946-ad3f-49b6-9bf4-3de456610744",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "b0b88a6f-713a-414b-ae06-461cb23f70b4",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "611d4a07-b09d-4160-bda5-fd89cded1654",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "d13dc6d1-49f6-4e59-865d-7bf5f29451d8",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "62e0de4e-a559-4325-bd1b-e124cd75b78b",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "38caa7a1-61d7-41e7-b2f2-520f158b0182",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "65354020-4544-49de-b4d9-ffb0acb04e34",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "98cad542-0f93-4c84-b0d3-0eb6df5e7500",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "671a2a2f-3802-46ef-87ef-68b3957a98e1",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "089d6b7c-a5c3-4219-90de-c8e771d9786b",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "67503c88-42a3-4360-a225-ffb420ebb15d",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "79fb665b-1748-467a-99cd-2ffbe5ff5d9f",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "68f17d45-244f-40c9-9132-cc103cdc3645",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "8a8c462e-8bb0-4dcb-a907-5b36f8701a3a",
+            "relation": "ennemi",
+            "created_at": "2026-08-04T22:59:43.960506+00:00"
+          },
+          {
+            "id": "6a68d0c4-163c-4716-8c9b-cc0e3a81f773",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "917682f7-fcc7-495f-bc96-d1c2f99046dc",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "6d0e65c5-6bcc-4f49-a0ea-6c38fa91fd56",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "97eecafe-0c99-47c7-84f7-78433b44ab83",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "72020366-9190-4f56-a796-538bf161448f",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "913d7353-45df-4fb7-af73-59d349c478ee",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "73cf843d-d0e0-447b-b138-1abe30c68c8f",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "87400621-b21c-4df0-93b3-951f78d0b9b8",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "74dc86af-05cb-44f3-a17e-ee42eb09a388",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "9b2739ed-d39e-4628-b22c-dcbbf42eb2fc",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "77df7aa9-0ac3-443f-b885-9d51f63d573a",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "f1a4fd18-1b1a-49a4-ac7e-d893dc0cb499",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "78f0eef7-6cb9-44d3-ae09-6efcabc5733a",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "cef381ea-a80d-483a-bfa5-6961102662fd",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "794e7b82-c209-4455-9120-769af264119c",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "b7ddf816-4450-4517-a52a-0e6cba68bc88",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "7cb26f49-1e00-41e4-81e6-cc6c58c39f8b",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "f81e47b0-3da9-4ed1-b956-850ae9d4d16e",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "7dff7901-30ca-4aab-9df6-68a180972ce9",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "af645300-06eb-4378-81da-015845e9e773",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "81af664e-c256-4127-b04b-66bf5dabd4a1",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "ca7b39c8-2c21-40ed-b475-6d5ff8a05f9f",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "884e529e-3328-4af2-a610-00a9fab0a972",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "7e62d13a-aa8f-4c7a-a3cc-e9ba68af63ea",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "8a41b4e4-bc1f-4e3d-bc64-4dc1be44cad0",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "aa9205fe-36ae-465f-8425-88ec0d50db88",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "8ac5df07-0881-4e18-a202-943cc04881b6",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "0a900310-7ebe-4dc9-8af1-eede98b154df",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "8bbe4683-734c-4f88-b9a8-783ee2de1ad9",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "8d98a162-9ab6-4a98-9d5f-8591ba3ffdd9",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "8c4749b1-bf61-4774-a850-aff7528c77a6",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "ba9013a5-c318-4899-b304-19f773051c58",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "8c5cd420-2128-44c1-99d5-b8b995b45ec8",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "e1cffb6f-4217-4873-833f-c3850ea7c3b6",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "9b085690-310d-43aa-9924-70674f3dc086",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "4768bb1b-acb0-49e1-9ae2-3b8ec68f4610",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "9b2abade-83b9-463e-abf9-b1a54339ea61",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "430dfcf1-8090-424e-afa7-bebb23ed6d54",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "9b836f8d-2f24-476a-b27c-2ed94f24cc38",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "2dc0f9e2-86f6-4820-86bc-906b95c82c23",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "9d95bea9-b3ab-4481-90d7-208b168a2911",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "9d37d90b-1e42-4af9-9857-5163b810a4e2",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "9e9aea41-dd3d-469c-9978-e407e5c16719",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "2312e357-8fb9-481b-8136-a036c3e3b833",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "a33e57d7-e47f-4ed0-94f0-3e06108b3a17",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "c512181e-74b0-42a8-8afb-2132fcac59e1",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "a33f0b0f-2b7c-42e8-b5e6-e5e1b3645540",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "621b2c95-c4cf-4ebd-a008-05425040f02c",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "a5b0b14b-0de8-4861-9f5c-d2a4bdf203ff",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "758526ee-1b35-4a12-bdcf-78a44f5f72ae",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "a5ecb535-3f2c-44a0-ad1a-bf9ec8088519",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "1e9c0450-746c-49d3-a57d-d5d0d995d1fe",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "abcfec26-d15c-42fe-aa0b-d4fe89cc6330",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "de55c73d-b44b-4ae2-8fbb-e76656cf6fbd",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "ae0b3cd3-3ffc-47cb-8965-da8466ec4faf",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "e88f6d67-57c4-408c-a6df-d6a5dabc4f08",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "b2381214-b171-48a8-b8fa-56ba1f925258",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "dad54b0f-1606-4246-b6de-26be7f9e1691",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.082204+00:00"
+          },
+          {
+            "id": "b32ce62d-c1d9-4dd4-868b-78ff07c9bb8b",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "ebe78b14-93e4-4436-99a9-03cc0498cdb6",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "b383593e-b409-48e9-9ad8-256e1454ca08",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "c82e2003-0112-4f02-a0ce-73c4c8bbcf36",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "b4d2690c-53b2-4388-a4a6-fd11df2c9a9a",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "448ee758-ac5d-4e50-8fd2-1f3903358677",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "bc9506be-0ca0-4f58-9fea-5923dc966d58",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "c8cd97d9-a884-40b2-a0fc-9b226eedb955",
+            "relation": "eleve",
+            "created_at": "2026-08-04T22:49:22.932016+00:00"
+          },
+          {
+            "id": "bd9f85ec-f496-4925-ae61-e043f3dee417",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "d997567c-5fd1-4e2d-99c6-5e1b9da0605f",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "bde1667b-c72e-4261-b178-66c722200a70",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "f02d7a70-e3b6-43a8-b09b-ada5b827652d",
+            "relation": "mentor",
+            "created_at": "2026-08-04T22:49:22.932016+00:00"
+          },
+          {
+            "id": "bf1455fa-a7be-4ea6-a77b-07d55dd8685d",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "678ad6c2-4722-410c-ae68-edd052d69711",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "bf7d1416-f5ab-4553-bb4e-59d4394bee01",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "7264babe-6d5f-4294-b899-2b67c29cadc7",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "c0e59306-b7a6-4f44-988a-f250f7ac5aeb",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "6d7a09dd-a057-4eaf-a852-2180ddf62e02",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "c6fe980a-2254-4a86-b1f6-d2ca1bb50f91",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "3b1cedc1-f8ee-499e-b669-a37f42a64b71",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "c7008951-b793-45ba-9723-2bea3b11acad",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "60ef1e66-3314-4e88-ad2b-e6ddee85c675",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "c7011237-5d1d-48da-a79b-1b8de093fee8",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "5ad41aca-ef13-49e0-933c-e403d4ea6ee4",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "ca8aff15-8cc5-475a-b54e-585e479685c1",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "631e53f3-43ed-482c-be04-d002f4e2eae6",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "cc7db0b7-7b32-4821-a4a1-acf760a0e653",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "6f6e2ef8-7d02-43d0-9d59-cf7e5ad6c6b0",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "ccc34f6c-bbe6-47e2-9954-b11944741d33",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "061f481b-4cc3-4b6e-895c-7995fac3798d",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "cf1bc678-a740-4600-8036-ad51764890d0",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "11403c5b-231d-4218-9c5e-d4a0cf369ee5",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "d1c575f0-eac5-4d21-b676-6e54645145d5",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "f013b5bd-bf6a-4d46-a8f0-d7d94d567920",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "d1e7d08d-dc3f-4255-b970-7b82bb906f8a",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "b11e5c36-e9f6-4b4c-8231-bf1d2185eb45",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "d61607ef-02b5-4744-b4ff-656f51dfa59e",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "5e760efb-adb0-46ed-ba11-3f1fb754eef3",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "d68edf1f-df46-499e-862e-960a0b990a54",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "287e511b-43cc-4fe8-a917-1e0d6f474dd9",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "db274340-5bb7-4c34-aaf6-e151da1ebced",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "bf7d44c7-53d7-4af2-8fc6-796a1272f5dd",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "e02113cf-2b4e-4748-be34-4f05e354484f",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "684b520d-0080-42c2-8b48-549d73c75c85",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "e0c51c85-8fbc-4d69-9c4b-47a48dedd638",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "f08299b3-aa57-42f5-ab5e-5b3a3171514d",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "e650deae-5609-4682-8f55-4605ada29f07",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "609effad-d537-4cc7-b743-fd39e9125ce5",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "eff93248-e6a3-4bad-afb3-66c848fb14de",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "07487e17-ff52-4ef0-9ebd-d5b02ca7f705",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "f201e99e-b2f1-487d-b9db-c7cf1aada9bf",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "47a507e8-fe14-4231-a4be-0a6fdffbc2cf",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "f86bb81b-02b1-4f0e-bde9-d83a7b20757b",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "be2e64db-a0f8-49cb-aa24-8046f9869581",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "f9dc6e20-e025-47e6-bb98-4c6d685f88bb",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "9c63b4cd-a8e1-4b55-a9f4-4b16f57919f2",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "fa0a4d34-4d0e-4602-9eca-5b86ca787026",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "d68fb82e-3d35-4046-95c5-8e373d6fd41d",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "fb4222b5-aa6d-477c-994c-124b319d33d0",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "3949636d-c883-46f0-9cd5-65f39a91ab8d",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          },
+          {
+            "id": "fe824412-dbf1-409a-9212-d5296e717013",
+            "from_entry": "d151385b-6c12-4edb-b37e-85818dd1fccb",
+            "to_entry": "040b10bf-b026-469e-9067-5dde682ba49b",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T08:32:22.471174+00:00"
+          }
+        ],
+        "relations_entrantes": []
+      },
+      "absorbeur_avant": {
+        "attributes": {
+          "ki": "530.000",
+          "race": "Frieza Race",
+          "role": "Empereur galactique",
+          "saga": "Saga Namek",
+          "forms": [
+            {
+              "url": "https://dragonball-api.com/characters/Freezer.webp",
+              "label": "Forme finale",
+              "caption": "Puissance ≈ 120 M"
+            },
+            {
+              "url": "/images/akasha/db/forms/golden-frieza.webp",
+              "label": "Golden Freezer",
+              "caption": "Puissance ≈ 12 Bn"
+            },
+            {
+              "url": "/images/akasha/db/forms/black-frieza.webp",
+              "label": "Black Freezer",
+              "caption": "Puissance ≈ 900 Bn"
+            }
+          ],
+          "descFr": "Freezer est le tyran de l'espace et le principal antagoniste de la saga de Freezer.",
+          "descRaw": "Freezer es el tirano espacial y el principal antagonista de la saga de Freezer.",
+          "descLang": "es",
+          "favorites": 1499
+        },
+        "summary": "Le tyran de l'univers, destructeur de la planète Vegeta — l'ennemi qui a fait naître le premier Super Saiyan."
+      }
+    },
+    {
+      "absorbe": "kame-sennin",
+      "meurt": "muten-roushi",
+      "ids": {
+        "absorbe": "b006a811-411b-464e-bbba-9a1aded735a4",
+        "meurt": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce"
+      },
+      "mourante": {
+        "entry": {
+          "id": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+          "slug": "muten-roushi",
+          "type": "character",
+          "name": "Muten-Roushi",
+          "is_fiction": true,
+          "universe": "Dragon Ball",
+          "summary": "Personnage secondaire de Dragon Ball.",
+          "description": "Personnage secondaire de Dragon Ball.",
+          "image_url": "https://cdn.myanimelist.net/images/characters/6/359001.webp?s=b0f6c285cdf733f32738264f42ebdd2f",
+          "attributes": {
+            "race": "Human",
+            "role": "Personnage secondaire",
+            "descFr": "Âge : 753 (Dragon Ball) ; 774 (Dragon Ball Z). Date de naissance : An 430. Taille : 165 cm. Poids : 44 kg. Rang : Kame-sennin (Ermite Tortue). Le « Génie des Tortues » est un maître d'arts martiaux ancien et sage, et le premier Terrien à manier le Kamehameha. Bien qu'il paraisse frêle, c'est un puissant guerrier. Muten-Rôshi a entraîné grand-père Son Gohan, Ox King, Son Goku, Krillin et Yamcha. Sa demeure, Kame House, une cabane sur une petite île isolée, sert de lieu de rassemblement pour les Guerriers Z et leurs amis. C'est un personnage type, à la fois l'archétype du vieux sage et du vieux pervers, ce dernier étant typique des animés shōnen. Parfois il devient grognon, ce qui apporte davantage de comique. Il est chauve, avec une épaisse barbiche et une épaisse moustache. Muten-Rôshi porte des vêtements de plage ou une tenue d'arts martiaux et une carapace de tortue sur le dos. Il manie généralement une canne. Ses compagnons habituels sont Oolong, Umigame et Lunch.",
+            "descRaw": "Age: 753 (Dragon Ball); 774 (Dragon Ball Z) Date Of Birth: Age 430 Height: 5\"5\" (165 cm) Weight: 97 lbs (44 kg) Rank: Kame-sennin (Turtle Hermit) The \"Turtle Immortal\" is an ancient and wise martial arts master and the first Earthling to wield the Kamehameha. Though he seems frail, he is a mighty warrior. Muten-Rôshi trained Grandpa Son Gohan, Ox King, Son Goku, Kuririn, and Yamcha. His home, Kame House, a shack on a small isolated island, serves as a gathering place for the Z Fighters and friends. He is a stock character, as he is both the archetypal wise old man and dirty old man, the latter being typical of shōnen anime. Sometimes he gets cranky, which further provides comic relief. He is bald, with a thick goatee and a thick mustache. Muten-Rôshi wears beach clothes or a martial arts suit and a turtle shell on his back. He usually wields a walking stick. His companions are usually Oolong, Umigame and Lunch. (Source: Wikipedia)",
+            "descLang": "en",
+            "favorites": 1185,
+            "voiceActors": {
+              "en": [
+                "Mike McFarland",
+                "Terry Klassen"
+              ],
+              "jp": [
+                "Hiroshi Masuoka",
+                "Kouhei Miyauchi"
+              ]
+            }
+          },
+          "rarity": "rare",
+          "created_at": "2026-07-02T19:17:54.932736+00:00"
+        },
+        "sections": [
+          {
+            "id": 18282,
+            "entry_id": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "idx": "1",
+            "titre": "Biographie",
+            "texte": "Muten-Roushi est l'ancien élève de Sifu Norris, le maître des arts martiaux qui a scellé Lord Piccolo pendant des siècles. Dans Dragonball Evolution, il accepte Goku comme élève, mais seulement après avoir entrepris la quête pour trouver les sept Dragon Balls avant Piccolo. Goku le tue accidentellement sous sa forme d'Oozaru.",
+            "source": "openrouter/mistralai/mistral-small-24b-instruct-2501",
+            "created_at": "2026-08-05T18:40:31.742109+00:00"
+          },
+          {
+            "id": 18283,
+            "entry_id": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "idx": "2",
+            "titre": "Techniques et Capacités",
+            "texte": "Muten-Roushi maîtrise plusieurs techniques martiales et énergétiques. Il utilise le Shadow Crane Strike, une technique agile de combat rapproché, et le Kamehameha, une puissante onde d'énergie. Il peut également utiliser le Kamehameha comme un Kiai Defibrillator pour soigner ses alliés. De plus, il possède le Mafuba, un sortilège permettant de piéger des adversaires dans un contenant, et le Ki Blast Cannon, une technique de tir d'énergie.",
+            "source": "openrouter/mistralai/mistral-small-24b-instruct-2501",
+            "created_at": "2026-08-05T18:40:31.742109+00:00"
+          }
+        ],
+        "relations_sortantes": [
+          {
+            "id": "1542ec25-27e8-463f-b04c-259a16fab334",
+            "from_entry": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "to_entry": "014be454-c2f8-42d8-965a-fb9d9dba066f",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "16231500-4b0a-4dbd-9731-b5ba6217fafe",
+            "from_entry": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "to_entry": "592a7a34-fb5e-4ff2-ab94-afd423c2e109",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.082204+00:00"
+          },
+          {
+            "id": "1d70bdb4-1b07-47ab-a533-6db02f5e80e9",
+            "from_entry": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "to_entry": "1674c2e2-d149-4632-977b-fa006b754418",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.082204+00:00"
+          },
+          {
+            "id": "2089d2c5-f7a7-46ba-b6f6-3d59aab49e2f",
+            "from_entry": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "to_entry": "c5faa70a-1b56-4783-9506-ee135dde5b52",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.082204+00:00"
+          },
+          {
+            "id": "20c1a92d-3c8d-4dde-8969-76a5d7723823",
+            "from_entry": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "to_entry": "7b29cd4e-d7a7-47a8-9c4a-fd7af0c2635a",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.082204+00:00"
+          },
+          {
+            "id": "2323a0be-d2f7-4eea-8a45-16f380d4d67f",
+            "from_entry": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "to_entry": "3376a50c-ac09-4393-bbb7-41a414a1d8c3",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "60a28e8a-1a95-4310-814b-141ce38ac479",
+            "from_entry": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "to_entry": "2a4cb585-3f47-4d2a-8002-0781be961902",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.082204+00:00"
+          },
+          {
+            "id": "682e4d48-4b0e-415d-8fc6-fb361a1cb1b1",
+            "from_entry": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "to_entry": "d92f657a-bd32-40d3-9188-6599d8cc70e1",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "d4417c14-3ffa-449a-a9f9-ec9112490992",
+            "from_entry": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "to_entry": "6c99e914-925e-4cf1-9327-17608ece7d32",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "db24ea9d-5e62-4b34-b191-f72317fe4b6d",
+            "from_entry": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "to_entry": "7e62d13a-aa8f-4c7a-a3cc-e9ba68af63ea",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "e850baf5-6e0f-43b3-b84e-f080fe1e0f95",
+            "from_entry": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "to_entry": "c2b576c8-384d-4081-a2c8-1b2e32e34cae",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.591033+00:00"
+          },
+          {
+            "id": "f9991294-b04f-4a35-83d3-e147c18616d2",
+            "from_entry": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce",
+            "to_entry": "dad54b0f-1606-4246-b6de-26be7f9e1691",
+            "relation": "maitrise",
+            "created_at": "2026-07-05T12:32:38.082204+00:00"
+          }
+        ],
+        "relations_entrantes": []
+      },
+      "absorbeur_avant": {
+        "attributes": {
+          "ki": "500.000",
+          "race": "Human",
+          "role": "Maître Tortue",
+          "descFr": "Maître d'arts martiaux et mentor de Goku. Connu sous le nom de Muten Roshi, il fut en son temps le Terrien le plus fort de la Terre, et beaucoup se souviennent de lui comme du « Dieu des Arts Martiaux », mais avant de pouvoir porter ce titre il dut travailler et étudier les arts martiaux avec son maître Mutaito et son éternel rival Tsuru-Sen'nin.",
+          "descLang": "es",
+          "favorites": 909
+        },
+        "summary": "L'ermite écarlate, inventeur du Kamehameha et premier maître de Goku — 300 ans de sagesse et de magazines douteux."
+      }
+    },
+    {
+      "absorbe": "spopovitch",
+      "meurt": "spopovich",
+      "ids": {
+        "absorbe": "21e0ebf9-3cfc-433e-aaf2-c43e2e3dac5e",
+        "meurt": "9fc149c4-ea8b-4ca2-9110-627f1c274236"
+      },
+      "mourante": {
+        "entry": {
+          "id": "9fc149c4-ea8b-4ca2-9110-627f1c274236",
+          "slug": "spopovich",
+          "type": "character",
+          "name": "Spopovich",
+          "is_fiction": true,
+          "universe": "Dragon Ball",
+          "summary": "Combattant humain gonfle par la magie de Babidi. Au Tournoi Mondial, il massacre Videl sans pitie avant de siphonner l'energie de Gohan pour reveiller Boo.",
+          "description": "Combattant humain gonfle par la magie de Babidi. Au Tournoi Mondial, il massacre Videl sans pitie avant de siphonner l'energie de Gohan pour reveiller Boo.",
+          "image_url": "https://static.wikia.nocookie.net/dragonball/images/b/b3/Spopovich_25th_BT.png/revision/latest?cb=20211004205424",
+          "attributes": {
+            "race": "Human",
+            "saga": "Saga Buu",
+            "descFr": "Spopovich, autrefois combattant humain musclé et perdant face à Mr. Satan au 24e Tournoi Mondial des Arts Martiaux, réapparaît au 25e tournoi entièrement transformé après son contrôle mental par le sorcier Babidi. Ses traits distinctifs incluent la perte totale de ses cheveux, une peau grise pâle, une musculature hypertrophiée et le symbole noir « M » gravé sur son front, signalant sa possession. Possédé par Babidi, Spopovich adopte une personnalité extrêmement agressive et assoiffée de sang, attendant l'occasion de se venger de Mr. Satan en attaquant vicieusement Videl et en dominant ses attaques sans effort. Avec son allié Yamu, il subjugue le Gohan surpuissant avec l'aide du Kaioshin Shin, permettant à Yamu de drainer toute l'énergie vitale de Gohan via un appareil d'absorption avant que Babidi ne le tue en le faisant exploser.",
+            "category": "Personnage",
+            "powerLevel": "Humain dope par la magie de Babidi",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre 02/08 — rédigé depuis la page Fandom, contre-vérifié par un second agent)"
+          },
+          "rarity": "rare",
+          "created_at": "2026-07-12T11:48:44.418033+00:00"
+        },
+        "sections": [
+          {
+            "id": 12280,
+            "entry_id": "9fc149c4-ea8b-4ca2-9110-627f1c274236",
+            "idx": "1",
+            "titre": "Apparence",
+            "texte": "Spopovich possède initialement des cheveux marron clair qui lui arrivent aux épaules, ainsi qu'une musculature impressionnante, le rendant plus large et plus grand que la plupart des autres personnages. Lorsqu'il est possédé par Babidi, il perd ses cheveux et devient encore plus musclé, avec des veines apparentes sur tout le corps, sa peau prenant une couleur sombre.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:38:56.557099+00:00"
+          },
+          {
+            "id": 12281,
+            "entry_id": "9fc149c4-ea8b-4ca2-9110-627f1c274236",
+            "idx": "2",
+            "titre": "Personnalité",
+            "texte": "Spopovich possède une personnalité extrêmement agressive, marquée par une soif de sang. Il punit brutalement ses adversaires, souvent jusqu'à la mort, même si ce n'est pas une exigence de ses missions. Il perd rapidement son calme, des insultes mineures suffisant à le plonger dans des rages meurtrières. Il pense lentement et mélange souvent les termes, comme lorsqu'il parle de voler l'énergie de Gohan en mélangeant « baby » et « candy ». Malgré sa nature violente, il est prêt à écouter son camarade Yamu, qui le rappelle à leur objectif plutôt qu'à sa vengeance personnelle.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:38:56.557099+00:00"
+          },
+          {
+            "id": 12282,
+            "entry_id": "9fc149c4-ea8b-4ca2-9110-627f1c274236",
+            "idx": "3",
+            "titre": "Biographie",
+            "texte": "Spopovich, avant son ensorcellement hypnotique, est mentionné dans le manga et apparaît brièvement dans des flashbacks de l'anime. Il est l'un des combattants du 24e Tenkaichi Budokai, où il affronte Killa au deuxième tour et le bat, avançant ainsi jusqu'à la finale contre Mr. Satan. Spopovich perd facilement contre Mr. Satan. Lors du 25e Tenkaichi Budokai, Spopovich participe à nouveau, mais son apparence est radicalement différente. Il a perdu sa chevelure brune, sa peau est d'un gris pâle, et sa masse musculaire a considérablement augmenté. Une marque sombre en forme de « M » est désormais visible sur son front. Accompagné de son allié Yamu, qui présente des caractéristiques similaires, Spopovich et Yamu attirent l'attention de Shin et Kibito, ainsi que de Mr. Satan, qui reconnaît Spopovich du tournoi précédent. Spopovich se montre immunisé contre les attaques de Videl, démontrant une supériorité de puissance. Excité par l'opportunité de se venger de Mr. Satan, Spopovich attaque violemment Videl avec toute sa rage refoulée. Ce n'est qu'après l'ordre de Yamu de cesser son attaque et de rester concentré que Spopovich finit par éjecter Videl du ring. Dans le match suivant, Spopovich, aidé par Shin, immobilise un Gohan pleinement transformé, permettant à Yamu de drainer toute l'énergie de Gohan. Ensuite, Spopovich et Yamu s'envolent, incitant Shin et les Z Fighters à les poursuivre. Il est révélé par Shin, qui se révèle être le Kaiō Shin, que Spopovich est possédé par le sorcier maléfique Babidi et utilisé comme l'un de ses sbires pour accumuler suffisamment d'énergie afin de ressusciter la création la plus puissante de Bibidi, Majin Buu. À leur arrivée sur le vaisseau de Babidi, Spopovich et Yamu sont accueillis par Pui Pui, Dabura, et Babidi lui-même. Le sorcier maléfique prend le Dispositif d'Aspiration d'Énergie et se débarrasse rapidement de Spopovich en le faisant exploser.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:38:56.557099+00:00"
+          },
+          {
+            "id": 12283,
+            "entry_id": "9fc149c4-ea8b-4ca2-9110-627f1c274236",
+            "idx": "4",
+            "titre": "Background",
+            "texte": "Avant sa manipulation hypnotique, Spopovich est mentionné dans le manga et apparaît brièvement dans des flashbacks de l'anime. Il est présenté comme l'un des combattants du 24e Tenkaichi Budokai. Spopovich affronte Killa au deuxième tour du tournoi et le bat, puis il accède à la finale pour affronter Mr. Satan. Spopovich perd facilement contre Mr. Satan.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:38:56.557099+00:00"
+          },
+          {
+            "id": 12284,
+            "entry_id": "9fc149c4-ea8b-4ca2-9110-627f1c274236",
+            "idx": "5",
+            "titre": "Dragon Ball Z",
+            "texte": "Spopovich participe au 25e Tenkaichi Budokai, mais son apparence a radicalement changé par rapport à sa forme précédente. Il a perdu sa crinière brune, sa peau est d'un gris pâle et sa masse musculaire a considérablement augmenté. Il arbore désormais un symbole sombre en forme de « M » sur son front. Accompagné de son allié Yamu, qui présente des caractéristiques similaires, Spopovich et Yamu attirent l'attention de Shin, Kibito, et Mr. Satan, qui sentent que quelque chose ne va pas. Spopovich se montre immunisé contre les attaques de Videl, démontrant une supériorité de puissance. Il attaque violemment Videl, mais Yamu lui ordonne de cesser et de rester concentré, ce qui conduit à la défaite de Videl. Dans le match suivant, Spopovich, aidé par Shin, immobilise Gohan et permet à Yamu de drainer toute son énergie. Shin révèle ensuite que Spopovich est possédé par le sorcier maléfique Babidi, utilisé pour accumuler suffisamment d'énergie afin de ressusciter Majin Buu. À leur arrivée sur le vaisseau de Babidi, Spopovich et Yamu sont accueillis par Pui Pui, Dabura et Babidi lui-même, qui récupère le dispositif d'aspiration d'énergie et se débarrasse de Spopovich en le faisant exploser.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:38:56.557099+00:00"
+          },
+          {
+            "id": 12285,
+            "entry_id": "9fc149c4-ea8b-4ca2-9110-627f1c274236",
+            "idx": "7",
+            "titre": "Super Dragon Ball Heroes",
+            "texte": "Dans <i>Super Dragon Ball Heroes</i>, une incarnation de Spopovich participe au tournoi Super Space-Time en tant que concurrent, aux côtés de Dabura, Pui Pui, Yamu, Yakon, et deux membres inconnus. Dans le manga, Spopovich, Yamu et Yakon s'associent à Commander Zeeun, Wings, Angila, Recoome, Jeice et Guldo pour affronter Yamcha, mais Jiren les vainc tous d'un seul coup. En conséquence de l'échec de son équipe à accéder au second tour du tournoi, Spopovich et ses alliés sont éliminés.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:38:56.557099+00:00"
+          },
+          {
+            "id": 12286,
+            "entry_id": "9fc149c4-ea8b-4ca2-9110-627f1c274236",
+            "idx": "9",
+            "titre": "Autres histoires de Dragon Ball",
+            "texte": "Dans d'autres histoires de Dragon Ball, Spopovich et Yamu sont possédés par Babidi pour rassembler de l'énergie et ressusciter le Majin Buu pur dans une dimension temporelle distordue. Ils attaquent Future Trunks et son partenaire, mais sont vaincus et forcés de battre en retraite. Plus tard, Future Trunks et son partenaire découvrent que le Grand Supreme Kai est venu sur Terre pour demander l'aide de l'équipe Dragon et du Time Patrol de King Kai pour empêcher la résurrection de Kid Buu. Ils finissent par trouver Spopovich et Yamu et les suivent jusqu'au vaisseau spatial de Babidi, où ils affrontent Spopovich, Yamu et Pui Pui. Ils parviennent à les vaincre, mais Kid Buu est ressuscité et absorbe le Grand Supreme Kai, devenant une version plus faible de Innocent Buu. Dans l'événement « Go Forth! Hero of Justice », la distorsion dimensionnelle dans l'âge??? provoque une attaque de plusieurs vilains contre la ville de Satan, dont Spopovich et Yamu, membres de l'organisation de Babidi. Heureusement, le Saiya Squad, composé d'Adult Gohan et Videl sous leurs alter ego de super-héros Great Saiyaman 1 et 2, intervient pour protéger Mr. Satan. Contrairement à leurs précédentes rencontres, Gohan et Videl parviennent à vaincre Spopovich et Yamu.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:38:56.557099+00:00"
+          },
+          {
+            "id": 12287,
+            "entry_id": "9fc149c4-ea8b-4ca2-9110-627f1c274236",
+            "idx": "10",
+            "titre": "Dokkan Battle",
+            "texte": "Dans Dokkan Battle, Spopovich et Yamu sont possédés par Babidi pour rassembler de l'énergie et ressusciter le Majin Buu pur dans la dimension distordue de l'Age???, où Grand Supreme Kai et South Supreme Kai n'ont jamais été absorbés en raison de la distorsion dimensionnelle. Le duo attaque Future Trunks et son partenaire de Time Patroller (le joueur) qui se rendent au laboratoire du Dr Gero, mais ils sont vaincus et forcés de battre en retraite. Plus tard, Future Trunks et son partenaire découvrent que Grand Supreme Kai est venu sur Terre pour demander l'aide de l'équipe Dragon et de la Time Patrol de King Kai (formée à la demande de King Kai pour enquêter sur la distorsion dimensionnelle) afin d'empêcher la résurrection de Kid Buu. Finalement, ils retrouvent Spopovich et Yamu et les suivent jusqu'au vaisseau spatial de Babidi, où ils affrontent Spopovich, Yamu et Pui Pui. Ils parviennent à les vaincre, mais Kid Buu est ressuscité et absorbe Grand Supreme Kai, devenant une version plus faible de Innocent Buu. Dans l'événement « Go Forth! Hero of Justice », la distorsion dimensionnelle dans l'Age??? provoque l'attaque de divers villains contre la ville de Satan. Spopovich et Yamu font partie des villains qui envahissent la ville en tant que membres de l'organisation de Babidi. Heureusement, le Saiya Squad, composé d'Adult Gohan et Videl sous leurs alter égos de super-héros Great Saiyaman 1 et 2, intervient pour protéger Mr. Satan contre Spopovich et Yamu. Contrairement à leurs rencontres dans la série principale, Gohan et Videl parviennent à vaincre les deux. Après les avoir vaincus, Mr. Satan reconnaît la force de Great Saiyaman, mais sauve la face en affirmant que Great Saiyaman est plus faible que lui.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:38:56.557099+00:00"
+          }
+        ],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "6f227345-42b0-4356-9001-d0badb652122",
+            "from_entry": "fe227d6e-478a-4fea-b885-fa530de9abcb",
+            "to_entry": "9fc149c4-ea8b-4ca2-9110-627f1c274236",
+            "relation": "allie",
+            "created_at": "2026-08-04T22:50:20.34969+00:00"
+          },
+          {
+            "id": "f8acf08e-a4f7-428a-8e31-9328f40d00cf",
+            "from_entry": "b2966ec7-8078-41c5-962a-50bd7757d436",
+            "to_entry": "9fc149c4-ea8b-4ca2-9110-627f1c274236",
+            "relation": "rival",
+            "created_at": "2026-08-04T22:48:49.287723+00:00"
+          }
+        ]
+      },
+      "absorbeur_avant": {
+        "attributes": {
+          "role": "Personnage secondaire",
+          "descFr": "Jadis un homme massivement grand, coriace, imposant et fort (pour un humain), il combattit Mr Satan et perdit lors du précédent Tournoi Mondial selon l'anime. Babidi prit le contrôle de son esprit ainsi que de celui de Yamu dans la saga Buu. Spopovich fut alors transformé en un être humanoïde dément et puissant. Il fut ensuite envoyé par Babidi collecter de l'énergie au 25e Tenka-ichi Budôkai. Il combat Videl au premier tour et prend indirectement sa revanche sur Mr Satan en la battant presque à mort. Il aurait réussi si Yamu n'était pas intervenu avec ce qui lui restait d'humanité, rappelant à la brute qu'une telle cruauté n'est pas nécessaire à leur mission. Yamu et Spopovich s'en prennent ensemble à Gohan et, à l'aide d'un appareil spécial, ils le dérobent de son énergie, bien que ce soit le Kaiôshin paralysant Gohan avant l'attaque qui leur permit d'y parvenir. Après l'avoir complètement drainé, ils retournent auprès de leur maître, Babidi, pour lui remettre l'énergie. Babidi décide bientôt qu'ils ont fait leur temps et provoque son explosion dans un processus lent et douloureux.",
+          "descRaw": "Once a massively tall, tough, bulky, and strong (for a human) man, he fought against Mr. Satan and lost in the previous World Tournament according to the anime. Babidi took control of his mind along with Yamu in the Buu Saga. Spopovich was then turned into an insane, powerful humanoid being. He was then sent by Babidi to collect energy at the 25th Tenka-ichi Budoukai. He fights Videl in the first round and vicariously takes his revenge on Mr. Satan by nearly beating her to death. He would have succeeded if Yamu didn't intervene with what was left of his humanity, reminding the brute that such cruelty is not necessary to their mission. Yamu and Spopovich team up on Gohan and, using a special device, they rob him of his energy, though it was Supreme Kai paralyzing Gohan before the attack that allowed them to do so. After completely draining him, they return to their master, Babidi, to deliver the energy to him. Babidi soon decides they have outlived their usefulness and causes him to explode in a slow and painful process.",
+          "descLang": "en",
+          "favorites": 5,
+          "voiceActors": {
+            "en": [
+              "Andrew Chandler",
+              "Georges Lycan"
+            ],
+            "jp": [
+              "Hisao Egawa"
+            ]
+          }
+        },
+        "summary": "Personnage secondaire de Dragon Ball."
+      }
+    },
+    {
+      "absorbe": "auta-magetta",
+      "meurt": "magetta",
+      "ids": {
+        "absorbe": "345f9b05-dbe7-4604-a98e-9adf490eeaf9",
+        "meurt": "41211e0d-15d9-490f-aa21-4a0cf36a366f"
+      },
+      "mourante": {
+        "entry": {
+          "id": "41211e0d-15d9-490f-aa21-4a0cf36a366f",
+          "slug": "magetta",
+          "type": "character",
+          "name": "Magetta",
+          "is_fiction": true,
+          "universe": "Dragon Ball",
+          "summary": "Personnage secondaire de Dragon Ball.",
+          "description": "Personnage secondaire de Dragon Ball.",
+          "image_url": "https://cdn.myanimelist.net/images/characters/16/298390.webp?s=fe93624e3e0c42f361e9be732c5b2d82",
+          "attributes": {
+            "role": "Personnage secondaire",
+            "descFr": "Magetta est un guerrier du sixième univers et fait partie de l'équipe de Champa contre Beerus. Magetta est un membre de la race des Metalman de l'Univers 6. Magetta peut élever la température autour de lui, rendant toute la zone environnante extrêmement brûlante. Il fut capable de bloquer facilement le Galick Gun de Vegeta avec son Crachat de Lave, qui se solidifie et peut servir d'arme. Le poids de Magetta est aussi si considérable que même Vegeta en Super Saïyen ne parvint pas à le soulever. Cependant, l'une de ses faiblesses est sa faible mobilité, car il ne peut voler. Néanmoins, Vegeta lui-même reconnaît qu'il est dangereux de le combattre au corps à corps, suggérant qu'il est un excellent combattant de mêlée. Dans le manga, Magetta se montra encore plus résistant : les coups de poing de Vegeta ne réussirent qu'à blesser le Saïyen lui-même. Il fut aussi révélé qu'il pesait plus de 1 000 tonnes, rendant Vegeta, même en forme de Super Saïyen, incapable de le soulever.",
+            "descRaw": "Magetta is a warrior from the sixth universe and is part of Champa's team against Beerus.' Magetta is a member of the Metalman race from Universe 6. Magetta can raise the temperature within his vicinity which can cause the whole area around to become extremely hot. Magetta was able to easily block Vegeta's Galick Gun with his Lava Spit which becomes solidified which can be used as a weapon. Magetta's weight is also so great that not even Super Saiyan Vegeta could lift him. However, one of Magetta's weakness is his low mobilty as he cannot fly. Nevertheless Vegeta himself says it is dangerous to fight him in close quarters, suggesting that he is a great melee fighter. In the manga, Magetta showed himself even more durable, as Vegeta's punches only succeeded in hurting the Saiyan himself. He was also revealed to be over 1,000 tons, making Vegeta even in Super Saiyan form unable to lift him.",
+            "descLang": "en",
+            "favorites": 1,
+            "voiceActors": {
+              "en": [
+                "Antoine Nouel"
+              ],
+              "jp": [
+                "Naoki Tatsuta"
+              ]
+            }
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T19:17:54.932736+00:00"
+        },
+        "sections": [
+          {
+            "id": 4878,
+            "entry_id": "41211e0d-15d9-490f-aa21-4a0cf36a366f",
+            "idx": "1",
+            "titre": "Apparence",
+            "texte": "Malgré sa ressemblance avec un robot, Magetta n'en est pas un. Il a une silhouette imposante et une stature lourde. Sa poitrine, sa mâchoire inférieure, ses poignets et ses chevilles sont tous de couleur argent, tandis que le reste de son corps est de couleur bronze et pourpre. Il possède une paire d'yeux cyan lumineux et deux cœurs réacteurs transparents qui contiennent de la lave, essentiellement ses cœurs. Magetta a également une tuyauterie à vapeur sur le dessus de sa tête.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:36:58.287245+00:00"
+          },
+          {
+            "id": 4879,
+            "entry_id": "41211e0d-15d9-490f-aa21-4a0cf36a366f",
+            "idx": "2",
+            "titre": "Personnalité",
+            "texte": "Magetta est confiant dans ses capacités. Comme le reste de la race des Metalmen, Magetta est très sensible et est incapable de se battre lorsqu'il est insulté. Cela est démontré lorsque Vegeta l'insulte pendant leur match, ce qui fait que Magetta perd et pleure par la suite. Il lui manque également l'intelligence académique, comme beaucoup d'autres combattants, ce qui est visible lorsqu'il passe à peine son examen pour participer au tournoi. Cependant, il peut parfaitement comprendre ce que les autres lui disent. Il semble avoir une relation très amicale avec Botamo, probablement en raison du fait qu'ils sont tous les deux les grands combattants de l'équipe de Champa.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:36:58.287245+00:00"
+          },
+          {
+            "id": 4880,
+            "entry_id": "41211e0d-15d9-490f-aa21-4a0cf36a366f",
+            "idx": "3",
+            "titre": "Biographie",
+            "texte": "Magetta est un membre de la race des Metalman de l'Univers 6. Il est choisi par Vados pour être l'un des cinq combattants qui affronteront l'équipe de l'Univers 7 dans le Tournoi des Détruireurs. Il participe à la compétition sur la Planète sans Nom aux côtés de ses coéquipiers : Hit, Cabba, Frost et Botamo. Magetta parvient à passer l'examen écrit pour participer au tournoi, bien qu'il ait des difficultés à répondre aux questions, comme le prouve le tuyau sur sa tête qui se déclenche. Finalement, il passe avec une note de 50%. Il regarde le premier match entre Botamo et Goku, que Botamo perd après avoir été jeté hors du ring par Goku. Le prochain combattant de l'Univers 6 est Frost, qui affronte Goku et le bat par tricherie, avant de perdre contre Vegeta. Magetta affronte ensuite Vegeta, mais il est vaincu après que Vegeta l'a insulté, ce qui lui fait perdre la volonté de combattre. Plus tard, Magetta est recruté par Champa pour son équipe de baseball et participe au Tournoi de Survie de l'Univers, où il affronte Top et Rabanra. Il est finalement éliminé du tournoi par Vegeta, mais est plus tard ressuscité avec son univers lorsque Android 17 utilise les Super Dragon Balls pour ressusciter toutes les univers.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:36:58.287245+00:00"
+          },
+          {
+            "id": 4881,
+            "entry_id": "41211e0d-15d9-490f-aa21-4a0cf36a366f",
+            "idx": "4",
+            "titre": "Dragon Ball Super",
+            "texte": "Magetta est un membre de la race Metalman de l'Univers 6. Il est choisi par Vados pour être l'un des cinq combattants qui affronteront l'équipe de l'Univers 7 dans le Tournoi des Destroyers. Il participe à la compétition sur la Planète Sans Nom aux côtés de ses coéquipiers : Hit, Cabba, Frost et Botamo. Magetta réussit à passer l'examen écrit pour participer au tournoi, bien qu'il ait des difficultés à répondre aux questions, comme le prouve le tuyau sur sa tête qui se déclenche. Finalement, il passe avec une note de 50 %. Il regarde le premier match entre Botamo et Goku, que Botamo perd après avoir été jeté hors du ring. Le prochain combattant de l'Univers 6 est Frost, qui affronte Goku, puis Vegeta après avoir battu Goku et Piccolo en trichant. Magetta affronte ensuite Vegeta, mais malgré ses efforts, il ne parvient pas à le toucher en raison de sa vitesse. Il utilise alors une attaque de tornade, mais Vegeta l'esquive et riposte avec des blasts de ki. Magetta riposte avec son crachat de lave, mais Vegeta évite les dégâts et contre-attaque. Le combat se poursuit, avec Magetta qui utilise son crachat de lave pour essayer de vaincre Vegeta, mais ce dernier transformé en Super Saiyan parvient à esquiver les attaques et à riposter. Finalement, Magetta est vaincu après que Vegeta l'a insulté, ce qui le démoralise et le fait tomber hors du ring. Plus tard, Magetta est vu pleurant à cause de l'insulte de Vegeta, tandis que Botamo tente de le consoler. Dans la saga « Future » Trunks, Magetta est recruté par Champa pour son équipe de baseball. Il est ensuite vu dans la saga « Universe Survival » en train de combattre Top, puis il sauve Botamo de Vegeta et tente de vaincre ce dernier avec l'aide de Botamo, mais ils sont finalement séparés par Kale transformée en Super Saiyan légendaire. Magetta affronte ensuite Rabanra, puis est vaincu par Vegeta après avoir été insulté une fois de plus. Il est ensuite éliminé du tournoi et regarde le reste de la compétition en silence, avant d'être effacé avec son univers. Cependant, il est plus tard ramené à la vie avec son univers lorsque Android 17 utilise les Super Dragon Balls pour ressusciter toutes les univers.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:36:58.287245+00:00"
+          },
+          {
+            "id": 4882,
+            "entry_id": "41211e0d-15d9-490f-aa21-4a0cf36a366f",
+            "idx": "10",
+            "titre": "Pouvoir",
+            "texte": "Magetta possède une puissance considérable, capable de résister à plusieurs attaques de Vegeta. Lors du Tournoi du Pouvoir, Frost déclare qu'aucune attaque ordinaire ne pourra le faire sortir de l'arène. Sa puissance et sa technique sont suffisantes pour forcer Vegeta à se transformer en Super Saiyan pour l'affronter. Dans l'anime, Magetta surpasse facilement les attaques de Vegeta, y compris le Galick Gun, le Big Bang Attack et le Final Flash. Cependant, il perd contre Vegeta après avoir été jeté hors de l'arène, en partie à cause des insultes de Vegeta qui le démoralisent. Malgré sa faible mobilité, Magetta est un excellent combattant au corps à corps, comme en témoigne sa vitesse et sa force physique. Dans le manga, Magetta montre une durabilité encore plus grande, les coups de poing de Vegeta ne réussissant qu'à blesser le Saiyan lui-même. Son poids est d'au moins 1 000 tonnes, ce qui rend Vegeta, même en forme de Super Saiyan, incapable de le soulever. Ce poids considérable le rend vital pour le Tournoi du Pouvoir, car il sera difficile pour quelqu'un de le pousser ou de le jeter hors de l'arène. Magetta est capable de rivaliser avec Top dans un échange de coups et de bloquer les attaques de Super Saiyan Vegeta. Cependant, lorsqu'il est insulté et que son couvre-oreille en lave est détruit, Magetta perd toute volonté de combattre et est poussé hors de l'arène par Super Saiyan Blue Vegeta.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:36:58.287245+00:00"
+          },
+          {
+            "id": 4883,
+            "entry_id": "41211e0d-15d9-490f-aa21-4a0cf36a366f",
+            "idx": "11",
+            "titre": "Techniques et Capacités Spéciales",
+            "texte": "Magetta possède une durabilité accrue en tant que Metal Man, lui permettant de résister à des attaques qui seraient normalement destructrices. Il peut également augmenter sa puissance, ce qui lui confère une aura rouge et lui permet de générer des courants d'air chaud puissants. Magetta peut cracher des flammes de lave et créer un club en refroidissant la lave. Il peut également augmenter la température de son environnement et créer des tornades en faisant tourner son corps à grande vitesse. De plus, Magetta peut libérer de la vapeur chaude de la tuyauterie de sa tête et utiliser une technique appelée Bota Magetta, où Botamo s'assied sur ses épaules et couvre ses oreilles pour l'empêcher d'entendre des insultes. Magetta peut également voler en utilisant son ki et effectuer des attaques de base de ki. Il possède également des capacités telles que le Volcano Explosion, le Cooled Lava Club, le Steam Pipe et le High Ki Gas.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:36:58.287245+00:00"
+          },
+          {
+            "id": 4884,
+            "entry_id": "41211e0d-15d9-490f-aa21-4a0cf36a366f",
+            "idx": "14",
+            "titre": "Apparitions dans d'autres médias",
+            "texte": "Magetta fait ses débuts dans les jeux vidéo en tant que personnage jouable dans Dragon Ball Heroes, introduit dans la septième mission de la série God Mission (GDM7). Magetta est mentionné dans Dragon Ball Xenoverse 2, il quitte le tournoi après que Champa l'insulte et, par conséquent, ne combat pas lors de la compétition d'arts martiaux de sélection des dieux de la destruction des univers 6 et 7 dans la chronologie modifiée de l'âge 779. Bien que Magetta n'apparaisse pas physiquement, sa photo apparaît sur la liste du tournoi sur le stage de la planète sans nom. Dans la mise à jour 1.06.00, le Guerrier du futur peut obtenir le costume de Magetta (haut du corps, bas du corps, main et pieds) en l'achetant à la boutique de médailles TP (ouverte du vendredi au dimanche). En plus du costume, il existe également une option d'accessoire appelée Tête de Magetta, qui est un casque modèle sur la tête de Magetta.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:36:58.287245+00:00"
+          },
+          {
+            "id": 4885,
+            "entry_id": "41211e0d-15d9-490f-aa21-4a0cf36a366f",
+            "idx": "15",
+            "titre": "Apparitions dans les jeux vidéo",
+            "texte": "Magetta fait ses débuts dans les jeux vidéo en tant que personnage jouable dans Dragon Ball Heroes, introduit dans la septième mission de la série God Mission (GDM7). Magetta est mentionné dans Dragon Ball Xenoverse 2, où il quitte le tournoi après avoir été insulté par Champa et ne participe pas au tournoi des arts martiaux de sélection des dieux de la destruction des univers 6 et 7 dans la chronologie modifiée de l'âge 779. Bien que Magetta n'apparaisse pas physiquement, sa photo apparaît sur la liste du tournoi sur le stage de la planète sans nom. Dans la mise à jour 1.06.00, le Guerrier du futur peut obtenir le costume de Magetta (haut du corps, bas du corps, main et pieds) en l'achetant à la boutique de médailles TP (ouverte du vendredi au dimanche). En plus du costume, il existe également une option d'accessoire appelée Tête de Magetta, qui est un casque modèle sur la tête de Magetta.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:36:58.287245+00:00"
+          }
+        ],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "c61cb0ef-9a15-4aed-9ad7-4e45018feecd",
+            "from_entry": "565494ea-9d11-4f45-8bf1-ce1be7b858b8",
+            "to_entry": "41211e0d-15d9-490f-aa21-4a0cf36a366f",
+            "relation": "allie",
+            "created_at": "2026-08-04T22:46:51.117105+00:00"
+          }
+        ]
+      },
+      "absorbeur_avant": {
+        "attributes": {
+          "saga": "Saga Super",
+          "descFr": "Auta Magetta, un Metalman de l'Univers 6 dont la race existe également dans l'Univers 7, est un combattant massif à la stature imposante présentant un torse, une mâchoire inférieure, des poignets et des chevilles couleur argent, le reste du corps étant bronze et violet. Contrairement à son apparence similaire à un robot, Magetta est un être vivant dont les deux cœurs sont constitués de réacteurs transparents remplis de magma, avec un tuyau d'émission de vapeur situé sur sa tête qui libère de la vapeur lorsqu'il est émotionnellement tendu. Confiant en ses capacités de combattant, Magetta est capable de cracher du magma avec une attaque appelée Lava Spit qui s'intensifie minute après minute, augmentant progressivement sa dangerosité. Cependant, partageant une faiblesse commune aux Metalmen, Magetta est extrêmement sensible aux insultes et perd toute volonté de combattre lorsqu'il se sent humilié, comme le démontre Vegeta qui l'appelle une « pile de ferraille misérable ». Ami proche du compagnon Botamo, un autre grand combattant de l'équipe de Champa, Magetta participe au Tournoi des Univers 6 et 7.",
+          "category": "Personnage",
+          "powerLevel": "Colosse Metalman, Univers 6",
+          "descFrSource": "claude-haiku-4-5 (blitz fenêtre 02/08 — rédigé depuis la page Fandom, contre-vérifié par un second agent)"
+        },
+        "summary": "Robot Metalman de l'Univers 6, montagne de metal en fusion crachant du magma. Increvable au combat, mais si susceptible qu'une insulte suffit a le demoraliser."
+      }
+    }
+  ],
+  "corrections_avant": {
+    "anton-the-great": {
+      "favorites": 3786,
+      "descFr": "Race : moitié Saïyen, moitié humain. Taille : 175 cm. Gohan est un intellectuel timide et studieux, et enfant il manque de l'esprit combatif saïyen. Cependant, parce qu'il est forcé de protéger ceux qu'il aime, il puise dans son immense potentiel de sang-mêlé saïyen et dans ses réserves émotionnelles, devenant l'un des plus puissants Guerriers Z. Adulte, il abandonne ses fonctions de super-héros et utilise son esprit, en tant qu'éminent érudit du monde de Dragon Ball. Gohan était extrêmement puissant, dépassant parfois des colosses comme Goku et Vegeta.",
+      "descRaw": "Race: Half-Saiyan, Half-Human Height: 175 cm (5'9”) Gohan is a shy and studious intellectual, and as a child lacks the Saiyan fighting spirit. However, because he is forced to protect the ones he loves, he taps into his vast half-breed Saiyan potential and emotional reserves, becoming one of the most powerful Z Fighters. As an adult, he abandons his superhero duties and uses his mind, as a premier scholar of the Dragon World. Gohan was extremely powerful, surpassing powerhouses like Goku and Vegeta at times. (Source: Dragon Ball Super Exciting Guide, Character Edition)",
+      "descLang": "en"
+    },
+    "son-gohan": {
+      "favorites": 32,
+      "descFr": "Grand-père Son Gohan devint le père adoptif et le grand-père de Son Goku lorsqu'il le trouva près du site d'atterrissage de son vaisseau spatial alors qu'il était bébé. Gohan fut initié aux arts martiaux par Muten-Rôshi et transmit son savoir à Goku.",
+      "descRaw": "Grandpa Son Gohan became the adoptive father and grandfather of Son Goku when he found him near the landing site of his space ship when he was an infant. Gohan was taught martial arts by Muten-Roshi and passed on his knowledge to Goku.",
+      "descLang": "en",
+      "voiceActors": {
+        "en": [
+          "Christopher Sabat",
+          "Terry Klassen"
+        ],
+        "jp": [
+          "Osamu Saka",
+          "Jouji Yanami"
+        ]
+      }
+    }
+  },
+  "nota_voiceActors": "correction son-gohan/voiceActors NON appliquée : le plan prescrit un re-sync Jikan (« vers » non concret), Jikan HS pendant l’audit — laissée telle quelle."
+}

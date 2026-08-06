@@ -1,0 +1,831 @@
+{
+  "genere_le": "2026-08-06T00:07:40.467Z",
+  "regle": "trace inverse de data/audits/normalisation-axes.json — {slug, champ, avant} pour CHAQUE fiche touchée ; restaurer = reposer attributes.<champ> = avant",
+  "fiches": [
+    {
+      "slug": "drip",
+      "champ": "crew",
+      "avant": "Faux Equipage du Chapeau de Paille"
+    },
+    {
+      "slug": "black-demaro",
+      "champ": "crew",
+      "avant": "Faux Equipage du Chapeau de Paille"
+    },
+    {
+      "slug": "turco",
+      "champ": "crew",
+      "avant": "Faux Equipage du Chapeau de Paille"
+    },
+    {
+      "slug": "cocoa",
+      "champ": "crew",
+      "avant": "Faux Equipage du Chapeau de Paille"
+    },
+    {
+      "slug": "nora-gitsune",
+      "champ": "crew",
+      "avant": "Faux Equipage du Chapeau de Paille"
+    },
+    {
+      "slug": "chocolat",
+      "champ": "crew",
+      "avant": "Faux Equipage du Chapeau de Paille"
+    },
+    {
+      "slug": "mounblutain",
+      "champ": "crew",
+      "avant": "Faux Equipage du Chapeau de Paille"
+    },
+    {
+      "slug": "manjaro",
+      "champ": "crew",
+      "avant": "Faux Equipage du Chapeau de Paille"
+    },
+    {
+      "slug": "absalom",
+      "champ": "crew",
+      "avant": "Thriller Bark"
+    },
+    {
+      "slug": "perona",
+      "champ": "crew",
+      "avant": "Thriller Bark"
+    },
+    {
+      "slug": "hogback",
+      "champ": "crew",
+      "avant": "Thriller Bark"
+    },
+    {
+      "slug": "moria-gecko",
+      "champ": "crew",
+      "avant": "Thriller Bark"
+    },
+    {
+      "slug": "boa-hancock",
+      "champ": "crew",
+      "avant": "Kuja Pirates"
+    },
+    {
+      "slug": "marguerite",
+      "champ": "crew",
+      "avant": "Kuja Pirates"
+    },
+    {
+      "slug": "doflamingo-donquixote",
+      "champ": "crew",
+      "avant": "L'équipage de Don Quichotte"
+    },
+    {
+      "slug": "caesar-clown",
+      "champ": "crew",
+      "avant": "L'équipage de Don Quichotte"
+    },
+    {
+      "slug": "jean-bart",
+      "champ": "crew",
+      "avant": "L’équipage du Hearth"
+    },
+    {
+      "slug": "shachi",
+      "champ": "crew",
+      "avant": "L’équipage du Hearth"
+    },
+    {
+      "slug": "kuzan",
+      "champ": "crew",
+      "avant": "Blackbeard Pirates"
+    },
+    {
+      "slug": "scarlet",
+      "champ": "crew",
+      "avant": "Golden Lion Pirates"
+    },
+    {
+      "slug": "pearl",
+      "champ": "crew",
+      "avant": "L’armada Pirate de Don Krieg"
+    },
+    {
+      "slug": "izou",
+      "champ": "crew",
+      "avant": "L'équipage de Barbe Blanche"
+    },
+    {
+      "slug": "yasopp",
+      "champ": "crew",
+      "avant": "L’équipage de Barbe Rouge"
+    },
+    {
+      "slug": "macro",
+      "champ": "crew",
+      "avant": "L'Équipage des Maquereaux"
+    },
+    {
+      "slug": "vivi-nefertari",
+      "champ": "crew",
+      "avant": "L'équipage du Chapeau de Paille"
+    },
+    {
+      "slug": "yama",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "shura-one-piece",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "laki",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "aisa",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "amazon",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "braham",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "wiper",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "hotori",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "kamakiri",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "conis",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "pierre",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "pagaya",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "calgara",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "satori",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "kotori",
+      "champ": "crew",
+      "avant": "Skypiea"
+    },
+    {
+      "slug": "semimaru-kurozumi",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "higurashi-kurozumi",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "toko",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "sukiyaki-kozuki",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "toki-kozuki",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "shinobu",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "yatappe",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "kawamatsu",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "kinemon",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "hyogoro",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "orochi-kurozumi",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "omasa",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "tenguyama-hitetsu",
+      "champ": "crew",
+      "avant": "Pays des Wa"
+    },
+    {
+      "slug": "hikoichi",
+      "champ": "crew",
+      "avant": "Alabasta"
+    },
+    {
+      "slug": "titi-nefertari",
+      "champ": "crew",
+      "avant": "Alabasta"
+    },
+    {
+      "slug": "stomp",
+      "champ": "crew",
+      "avant": "Alabasta"
+    },
+    {
+      "slug": "pell-one-piece",
+      "champ": "crew",
+      "avant": "Alabasta"
+    },
+    {
+      "slug": "ivan-x",
+      "champ": "crew",
+      "avant": "Alabasta"
+    },
+    {
+      "slug": "cobra-nefertari",
+      "champ": "crew",
+      "avant": "Alabasta"
+    },
+    {
+      "slug": "toto",
+      "champ": "crew",
+      "avant": "Alabasta"
+    },
+    {
+      "slug": "cowboy",
+      "champ": "crew",
+      "avant": "Alabasta"
+    },
+    {
+      "slug": "igaram",
+      "champ": "crew",
+      "avant": "Alabasta"
+    },
+    {
+      "slug": "chaka",
+      "champ": "crew",
+      "avant": "Alabasta"
+    },
+    {
+      "slug": "dogra",
+      "champ": "crew",
+      "avant": "Royaume de Goa"
+    },
+    {
+      "slug": "stelly",
+      "champ": "crew",
+      "avant": "Royaume de Goa"
+    },
+    {
+      "slug": "makino",
+      "champ": "crew",
+      "avant": "Royaume de Goa"
+    },
+    {
+      "slug": "higuma",
+      "champ": "crew",
+      "avant": "Royaume de Goa"
+    },
+    {
+      "slug": "dadan-curly",
+      "champ": "crew",
+      "avant": "Royaume de Goa"
+    },
+    {
+      "slug": "woop-slap",
+      "champ": "crew",
+      "avant": "Royaume de Goa"
+    },
+    {
+      "slug": "outlook-iii",
+      "champ": "crew",
+      "avant": "Royaume de Goa"
+    },
+    {
+      "slug": "didit",
+      "champ": "crew",
+      "avant": "Royaume de Goa"
+    },
+    {
+      "slug": "magra",
+      "champ": "crew",
+      "avant": "Royaume de Goa"
+    },
+    {
+      "slug": "den",
+      "champ": "crew",
+      "avant": "Île des hommes-poissons"
+    },
+    {
+      "slug": "shirahoshi",
+      "champ": "crew",
+      "avant": "Île des hommes-poissons"
+    },
+    {
+      "slug": "shyarly",
+      "champ": "crew",
+      "avant": "Île des hommes-poissons"
+    },
+    {
+      "slug": "megalo",
+      "champ": "crew",
+      "avant": "Île des hommes-poissons"
+    },
+    {
+      "slug": "otohime",
+      "champ": "crew",
+      "avant": "Île des hommes-poissons"
+    },
+    {
+      "slug": "fukaboshi",
+      "champ": "crew",
+      "avant": "Île des hommes-poissons"
+    },
+    {
+      "slug": "neptune",
+      "champ": "crew",
+      "avant": "Île des hommes-poissons"
+    },
+    {
+      "slug": "saldeath",
+      "champ": "crew",
+      "avant": "Impel Down"
+    },
+    {
+      "slug": "minorhinoceros",
+      "champ": "crew",
+      "avant": "Impel Down"
+    },
+    {
+      "slug": "sadi",
+      "champ": "crew",
+      "avant": "Impel Down"
+    },
+    {
+      "slug": "magellan",
+      "champ": "crew",
+      "avant": "Impel Down"
+    },
+    {
+      "slug": "hannyabal",
+      "champ": "crew",
+      "avant": "Impel Down"
+    },
+    {
+      "slug": "domino",
+      "champ": "crew",
+      "avant": "Impel Down"
+    },
+    {
+      "slug": "minokoala",
+      "champ": "crew",
+      "avant": "Impel Down"
+    },
+    {
+      "slug": "chimney",
+      "champ": "crew",
+      "avant": "Water Seven"
+    },
+    {
+      "slug": "lulu-peeply",
+      "champ": "crew",
+      "avant": "Water Seven"
+    },
+    {
+      "slug": "mozu",
+      "champ": "crew",
+      "avant": "Water Seven"
+    },
+    {
+      "slug": "kiwi",
+      "champ": "crew",
+      "avant": "Water Seven"
+    },
+    {
+      "slug": "cook-tom",
+      "champ": "crew",
+      "avant": "Water Seven"
+    },
+    {
+      "slug": "tilestone",
+      "champ": "crew",
+      "avant": "Water Seven"
+    },
+    {
+      "slug": "kokoro",
+      "champ": "crew",
+      "avant": "Water Seven"
+    },
+    {
+      "slug": "tank-lepanto",
+      "champ": "crew",
+      "avant": "Dressrosa"
+    },
+    {
+      "slug": "rebecca",
+      "champ": "crew",
+      "avant": "Dressrosa"
+    },
+    {
+      "slug": "dold-iii-riku",
+      "champ": "crew",
+      "avant": "Dressrosa"
+    },
+    {
+      "slug": "gatz",
+      "champ": "crew",
+      "avant": "Dressrosa"
+    },
+    {
+      "slug": "scarlett",
+      "champ": "crew",
+      "avant": "Dressrosa"
+    },
+    {
+      "slug": "kyros",
+      "champ": "crew",
+      "avant": "Dressrosa"
+    },
+    {
+      "slug": "nojiko",
+      "champ": "crew",
+      "avant": "Archipel Conomi"
+    },
+    {
+      "slug": "chabo",
+      "champ": "crew",
+      "avant": "Archipel Conomi"
+    },
+    {
+      "slug": "nako",
+      "champ": "crew",
+      "avant": "Archipel Conomi"
+    },
+    {
+      "slug": "yosaku",
+      "champ": "crew",
+      "avant": "Archipel Conomi"
+    },
+    {
+      "slug": "kuromarimo",
+      "champ": "crew",
+      "avant": "Île de Drum"
+    },
+    {
+      "slug": "hiluluk",
+      "champ": "crew",
+      "avant": "Île de Drum"
+    },
+    {
+      "slug": "chess",
+      "champ": "crew",
+      "avant": "Île de Drum"
+    },
+    {
+      "slug": "kureha",
+      "champ": "crew",
+      "avant": "Île de Drum"
+    },
+    {
+      "slug": "merry",
+      "champ": "crew",
+      "avant": "Archipel des Gecko"
+    },
+    {
+      "slug": "banchina",
+      "champ": "crew",
+      "avant": "Archipel des Gecko"
+    },
+    {
+      "slug": "kaya",
+      "champ": "crew",
+      "avant": "Archipel des Gecko"
+    },
+    {
+      "slug": "duval",
+      "champ": "crew",
+      "avant": "Archipel des Sabaody"
+    },
+    {
+      "slug": "disco",
+      "champ": "crew",
+      "avant": "Archipel des Sabaody"
+    },
+    {
+      "slug": "shakuyaku",
+      "champ": "crew",
+      "avant": "Archipel des Sabaody"
+    },
+    {
+      "slug": "and",
+      "champ": "crew",
+      "avant": "Enies Lobby"
+    },
+    {
+      "slug": "kerville",
+      "champ": "crew",
+      "avant": "Enies Lobby"
+    },
+    {
+      "slug": "bas",
+      "champ": "crew",
+      "avant": "Enies Lobby"
+    },
+    {
+      "slug": "giovanni",
+      "champ": "crew",
+      "avant": "Zo"
+    },
+    {
+      "slug": "wanda",
+      "champ": "crew",
+      "avant": "Zo"
+    },
+    {
+      "slug": "pedro",
+      "champ": "crew",
+      "avant": "Zo"
+    },
+    {
+      "slug": "chouchou",
+      "champ": "crew",
+      "avant": "Archipel des Argao"
+    },
+    {
+      "slug": "boodle",
+      "champ": "crew",
+      "avant": "Archipel des Argao"
+    },
+    {
+      "slug": "patty",
+      "champ": "crew",
+      "avant": "Baratie"
+    },
+    {
+      "slug": "zeff",
+      "champ": "crew",
+      "avant": "Baratie"
+    },
+    {
+      "slug": "crocus",
+      "champ": "crew",
+      "avant": "Cap des Jumeaux"
+    },
+    {
+      "slug": "laboon",
+      "champ": "crew",
+      "avant": "Cap des Jumeaux"
+    },
+    {
+      "slug": "loki",
+      "champ": "crew",
+      "avant": "Erbaf"
+    },
+    {
+      "slug": "oimo",
+      "champ": "crew",
+      "avant": "Erbaf"
+    },
+    {
+      "slug": "tanaka",
+      "champ": "crew",
+      "avant": "Gran Tesero"
+    },
+    {
+      "slug": "gild-tesoro",
+      "champ": "crew",
+      "avant": "Gran Tesero"
+    },
+    {
+      "slug": "olvia-nico",
+      "champ": "crew",
+      "avant": "Ohara"
+    },
+    {
+      "slug": "clover-clou-d",
+      "champ": "crew",
+      "avant": "Ohara"
+    },
+    {
+      "slug": "chinjao",
+      "champ": "crew",
+      "avant": "Pays des fleurs"
+    },
+    {
+      "slug": "ramen",
+      "champ": "crew",
+      "avant": "Pays des fleurs"
+    },
+    {
+      "slug": "scotch",
+      "champ": "crew",
+      "avant": "Punk Hazard"
+    },
+    {
+      "slug": "rock-one-piece",
+      "champ": "crew",
+      "avant": "Punk Hazard"
+    },
+    {
+      "slug": "bobby-funk",
+      "champ": "crew",
+      "avant": "Royaume de Mogalo"
+    },
+    {
+      "slug": "kelly-funk",
+      "champ": "crew",
+      "avant": "Royaume de Mogalo"
+    },
+    {
+      "slug": "elizabello-ii",
+      "champ": "crew",
+      "avant": "Royaume de Prodence"
+    },
+    {
+      "slug": "dagama",
+      "champ": "crew",
+      "avant": "Royaume de Prodence"
+    },
+    {
+      "slug": "kinderella",
+      "champ": "crew",
+      "avant": "Royaume maléfique de Black Drum"
+    },
+    {
+      "slug": "wapol",
+      "champ": "crew",
+      "avant": "Royaume maléfique de Black Drum"
+    },
+    {
+      "slug": "heracles",
+      "champ": "crew",
+      "avant": "Archipel de Boing"
+    },
+    {
+      "slug": "rouge-portgas-d",
+      "champ": "crew",
+      "avant": "Baterilla"
+    },
+    {
+      "slug": "jalmack",
+      "champ": "crew",
+      "avant": "Dragon Célestes"
+    },
+    {
+      "slug": "uta",
+      "champ": "crew",
+      "avant": "Elegia"
+    },
+    {
+      "slug": "kuma-bartholomew",
+      "champ": "crew",
+      "avant": "Esclave"
+    },
+    {
+      "slug": "miss-monday",
+      "champ": "crew",
+      "avant": "Île aux cactus"
+    },
+    {
+      "slug": "dorry",
+      "champ": "crew",
+      "avant": "Little Garden"
+    },
+    {
+      "slug": "tonjit",
+      "champ": "crew",
+      "avant": "Long Ring Long Land"
+    },
+    {
+      "slug": "norland-montblanc",
+      "champ": "crew",
+      "avant": "Royaume de Lvneel"
+    },
+    {
+      "slug": "gedatsu",
+      "champ": "crew",
+      "avant": "Source de l'insouciance"
+    },
+    {
+      "slug": "kuina",
+      "champ": "crew",
+      "avant": "Village de Shimotsuki"
+    },
+    {
+      "slug": "haredas",
+      "champ": "crew",
+      "avant": "Weatheria"
+    },
+    {
+      "slug": "hanzaki",
+      "champ": "clan",
+      "avant": "Fūma  (Land of Sound)"
+    },
+    {
+      "slug": "sasame",
+      "champ": "clan",
+      "avant": "Fūma  (Land of Sound)"
+    },
+    {
+      "slug": "kamikiri",
+      "champ": "clan",
+      "avant": "Fūma  (Land of Sound)"
+    },
+    {
+      "slug": "kagero",
+      "champ": "clan",
+      "avant": "Fūma  (Land of Sound)"
+    },
+    {
+      "slug": "jigumo",
+      "champ": "clan",
+      "avant": "Fūma  (Land of Sound)"
+    },
+    {
+      "slug": "arashi",
+      "champ": "clan",
+      "avant": "Fūma  (Land of Sound)"
+    },
+    {
+      "slug": "kotohime",
+      "champ": "clan",
+      "avant": "Fūma  (Land of Sound)"
+    },
+    {
+      "slug": "kotaro-fuma",
+      "champ": "clan",
+      "avant": "Fūma   (Presumed)"
+    },
+    {
+      "slug": "kagura-karatachi",
+      "champ": "clan",
+      "avant": "Karatachi"
+    },
+    {
+      "slug": "kankuro",
+      "champ": "clan",
+      "avant": "Kazekage Clan"
+    },
+    {
+      "slug": "kyuroku-wagarashi",
+      "champ": "clan",
+      "avant": "Wagarashi family"
+    },
+    {
+      "slug": "idate-morino",
+      "champ": "clan",
+      "avant": "Wasabi Family  (Adopted)"
+    }
+  ]
+}

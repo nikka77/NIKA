@@ -31,8 +31,8 @@
 //
 // Usage : node --env-file=.env.local scripts/ops-fill-toilettage.mjs --universe="One Piece"
 //         [--dry] [--limit=40] [--slug=…] [--tout] [--a-reproduire]
-import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
+import { trier } from '../lib/akasha/sections.ts';
 
 const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
@@ -76,7 +76,7 @@ const A_REPRODUIRE_RAISONS = [
 
 const entrees = [];
 for (let d = 0; ; d += 1000) {
-  let q = clientSite().from('akasha_entries').select('slug, name, universe, attributes').order('slug').range(d, d + 999);
+  let q = clientSite().from('akasha_entries').select('id, slug, name, universe, attributes').order('slug').range(d, d + 999);
   if (UNIVERSE) q = q.eq('universe', UNIVERSE);
   if (SLUG) q = q.eq('slug', SLUG);
   const { data, error } = await q;
@@ -90,11 +90,29 @@ const { data: pendantes } = await supabase.from('agent_results')
   .select('target_slug, payload').eq('task_type', 'toilettage_fr').eq('review_status', 'pending');
 const dejaEnFile = new Set((pendantes ?? []).map((r) => `${r.target_slug}#${r.payload?.section_index ?? 'descFr'}`));
 
-// Un texte à examiner = une section, ou la description de la fiche.
+// UNE SECTION = UNE LIGNE de akasha_sections (05/08) : attributes.sections est purgé. On tire
+// les lignes par paquets d'ids — la table ne porte pas l'univers, et un .in() borné ne fait
+// sortir que le corpus demandé (l'egress Supabase se compte, incident du 02/08).
+const parFiche = new Map(); // entry_id → lignes { idx, titre, texte }
+for (let d = 0; d < entrees.length; d += 100) {
+  const ids = entrees.slice(d, d + 100).map((e) => e.id);
+  for (let p = 0; ; p += 1000) {
+    const { data, error } = await clientSite().from('akasha_sections')
+      .select('id, entry_id, idx, titre, texte').in('entry_id', ids).order('id').range(p, p + 999);
+    if (error) { console.error(error.message); process.exit(1); }
+    for (const l of data ?? []) {
+      if (!parFiche.has(l.entry_id)) parFiche.set(l.entry_id, []);
+      parFiche.get(l.entry_id).push(l);
+    }
+    if ((data?.length ?? 0) < 1000) break;
+  }
+}
+
+// Un texte à examiner = une section (une ligne de la table), ou la description de la fiche.
 const morceaux = [];
 for (const e of entrees) {
-  for (const s of e.attributes?.sections ?? [])
-    morceaux.push({ e, cle: String(s.i), titre: s.titre, texte: String(s.texte ?? '') });
+  for (const s of trier((parFiche.get(e.id) ?? []).map((l) => ({ ...l, i: l.idx }))))
+    morceaux.push({ e, cle: String(s.i), titre: s.titre ?? null, texte: String(s.texte ?? '') });
   if (e.attributes?.descFr) morceaux.push({ e, cle: 'descFr', titre: null, texte: String(e.attributes.descFr) });
 }
 

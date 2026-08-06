@@ -17,8 +17,8 @@
 //   « etranger » aucun lien → RETIRÉE de la fiche, résultat marqué rejeté
 //
 // Usage : node --env-file=.env.local scripts/ops-purger-sections-etrangeres.mjs [--dry] [--universe="Death Note"]
-import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
+import { retirerSections } from '../lib/akasha/sections.ts';
 import { identiteEntre, fetchFandomProse } from './lib/fandom.mjs';
 
 const supabase = clientOps();
@@ -67,17 +67,18 @@ if (DRY || !aPurger.length) { if (DRY) console.log('(à blanc — rien retiré)'
 
 let retirees = 0;
 for (const { slug, titre, rows } of aPurger) {
-  // 1) La fiche publique d'abord : c'est elle que lit Dan.
-  const { data: e } = await clientSite().from('akasha_entries').select('attributes').eq('slug', slug).single();
-  if (e?.attributes?.sections?.length) {
-    const indices = new Set(rows.map((r) => String(r.payload?.section_index)));
-    const restantes = e.attributes.sections.filter((s) => !indices.has(String(s.i)));
-    if (restantes.length !== e.attributes.sections.length) {
-      const attrs = { ...e.attributes };
-      if (restantes.length) attrs.sections = restantes; else delete attrs.sections;
-      await clientSite().from('akasha_entries').update({ attributes: attrs }).eq('slug', slug);
-      retirees += e.attributes.sections.length - restantes.length;
-    }
+  // 1) La fiche publique d'abord : c'est elle que lit Dan. UNE SECTION = UNE LIGNE de
+  //    akasha_sections (05/08) : on retire LES lignes visées (entry_id, idx), jamais un
+  //    tableau entier. Sans index on ne retire RIEN — retirerSections sans index effacerait
+  //    TOUTES les sections de la fiche, y compris celles d'autres producteurs.
+  const { data: e } = await clientSite().from('akasha_entries').select('id').eq('slug', slug).single();
+  const indices = [...new Set(rows.map((r) => String(r.payload?.section_index ?? '')).filter(Boolean))];
+  if (e?.id && indices.length) {
+    // Un retrait qui échoue laisse les résultats en l'état : rejeter quand même mettrait la
+    // fiche hors de portée du prochain passage (le scan ignore les « rejected ») — la section
+    // resterait en base pour toujours, sans trace. On réessaiera au prochain run.
+    try { retirees += await retirerSections(clientSite(), e.id, indices); }
+    catch (err) { console.error(`  ✗ ${slug} : ${String(err.message ?? err).slice(0, 90)}`); continue; }
   }
   // 2) Puis les résultats : rejetés avec le motif, pour qu'aucun verdict tardif ne les réapplique
   //    (verrouEtAppliquer n'agit que sur du « pending ») et que la trace reste lisible dans /ops.

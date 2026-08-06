@@ -12,6 +12,7 @@ import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '@/lib/ops/db.mjs';
 import { opsAllowed } from '@/lib/ops/guard';
 import { retirerDuGraphe } from '@/lib/akasha/relations';
+import { retirerSections } from '@/lib/akasha/sections';
 
 export const dynamic = 'force-dynamic';
 
@@ -100,23 +101,35 @@ export async function POST(req: Request) {
   // donc annuler = remettre à vide (aucune donnée humaine ne peut être écrasée).
   let annule = false;
   let arcsRetires = 0;
+  let sectionsRetirees = 0;
   if (verdict_dan === 'faux' && row.review_status === 'approved') {
-    const { data: entry } = await clientSite().from('akasha_entries').select('attributes').eq('slug', row.target_slug).single();
+    const { data: entry } = await clientSite().from('akasha_entries').select('id, attributes').eq('slug', row.target_slug).single();
     if (entry) {
-      const patch: Record<string, unknown> = { ...(entry.attributes ?? {}) };
-      if (row.task_type === 'akasha_relations') {
-        delete patch.relations; delete patch.relationsSource;
-        // Le nettoyage du GRAPHE est la moitié qui compte : effacer attributes.relations sans
-        // retirer les arêtes laisserait la fiche jugée FAUSSE peupler les rails du site pour
-        // toujours, invisible en console. Une annulation à moitié faite est pire que rien.
-        arcsRetires = (await retirerDuGraphe(supabase, {
-          resultId: result_id, slug: row.target_slug, relations: row.result?.relations,
-        })).supprimees;
+      if (row.task_type === 'fiche_section') {
+        // UNE SECTION VIT DANS akasha_sections, jamais dans attributes (05/08) : annuler,
+        // c'est retirer LA ligne posée (entry_id, idx) — le pendant exact de retirerDuGraphe
+        // pour les arêtes. Sans index dans le payload on ne retire RIEN : retirerSections
+        // sans index effacerait TOUTES les sections de la fiche, celles des autres
+        // producteurs comprises.
+        const idx = row.payload?.section_index;
+        if (idx != null && String(idx).length)
+          sectionsRetirees = await retirerSections(clientSite(), entry.id, [String(idx)]);
+      } else {
+        const patch: Record<string, unknown> = { ...(entry.attributes ?? {}) };
+        if (row.task_type === 'akasha_relations') {
+          delete patch.relations; delete patch.relationsSource;
+          // Le nettoyage du GRAPHE est la moitié qui compte : effacer attributes.relations sans
+          // retirer les arêtes laisserait la fiche jugée FAUSSE peupler les rails du site pour
+          // toujours, invisible en console. Une annulation à moitié faite est pire que rien.
+          arcsRetires = (await retirerDuGraphe(supabase, {
+            resultId: result_id, slug: row.target_slug, relations: row.result?.relations,
+          })).supprimees;
+        }
+        else if (row.task_type === 'akasha_attrs') {
+          for (const k of Object.keys(row.result ?? {})) if (!k.endsWith('_preuve')) delete patch[k];
+        } else { delete patch.descFr; delete patch.descFrSource; }
+        await clientSite().from('akasha_entries').update({ attributes: patch }).eq('slug', row.target_slug);
       }
-      else if (row.task_type === 'akasha_attrs') {
-        for (const k of Object.keys(row.result ?? {})) if (!k.endsWith('_preuve')) delete patch[k];
-      } else { delete patch.descFr; delete patch.descFrSource; }
-      await clientSite().from('akasha_entries').update({ attributes: patch }).eq('slug', row.target_slug);
       await supabase.from('agent_results').update({ review_status: 'rejected' }).eq('id', result_id);
       annule = true;
     }
@@ -127,6 +140,7 @@ export async function POST(req: Request) {
     ok: true,
     annule,
     arcsRetires,
+    sectionsRetirees,
     juges: v.length,
     accord: Math.round((v.filter((x) => x.verdict_dan === 'exact').length / v.length) * 100),
     kappa: kappa(v),

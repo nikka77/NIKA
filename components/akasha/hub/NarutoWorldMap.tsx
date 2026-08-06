@@ -10,6 +10,13 @@ import { useMapZoomPanSvg } from '@/lib/akasha/useMapZoomPanSvg';
 const W = NARUTO_MAP.w, H = NARUTO_MAP.h;
 const villageHref = (village: string) => `/learn/akasha/u/naruto/village/${encodeURIComponent(village)}`;
 
+// Kanji + teinte des villages mineurs (chips sous la carte) — teintes alignées sur l'axe `village`
+// de lib/akasha/universe-taxonomy.ts (Oto violet, Ame bleu-gris).
+const MINOR_VILLAGE_META: Record<string, { kanji: string; tint: string }> = {
+  otogakure: { kanji: '音', tint: '#8E44AD' },
+  amegakure: { kanji: '雨', tint: '#5C6B8A' },
+};
+
 export default function NarutoWorldMap({ color = '#E8613C', counts }: { color?: string; counts?: Record<string, number> }) {
   const router = useRouter();
   const { view, svgRef, zoomAround, reset, dragRef, onPointerDown, onPointerMove, onPointerUp } = useMapZoomPanSvg({ w: W, h: H, minW: 360 });
@@ -106,6 +113,17 @@ export default function NarutoWorldMap({ color = '#E8613C', counts }: { color?: 
             {counts?.[c.village] ? <span style={{ fontSize: 10, fontWeight: 800, color: c.color, background: 'rgba(5,12,23,0.45)', borderRadius: 20, padding: '1px 6px' }}>{counts[c.village]}</span> : null}
           </a>
         ))}
+        {/* Villages mineurs (Oto 37, Ame 31 fiches) : cliquables sur la carte mais absents des chips jusqu'au 06/08. */}
+        {NW_VILLAGES.map((v) => {
+          const t = MINOR_VILLAGE_META[v.key]?.tint ?? color;
+          return (
+            <a key={v.key} href={villageHref(v.village)} onMouseEnter={() => setHover(v.key)} onMouseLeave={() => setHover(null)}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '5px 11px', borderRadius: 999, border: `1px solid ${t}77`, background: `${t}18`, color: 'var(--td2)', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, textDecoration: 'none' }}>
+              <span style={{ fontFamily: 'var(--fe)' }}>{MINOR_VILLAGE_META[v.key]?.kanji ?? '里'}</span> {v.name}
+              {counts?.[v.village] ? <span style={{ fontSize: 10, fontWeight: 800, color: t, background: 'rgba(5,12,23,0.45)', borderRadius: 20, padding: '1px 6px' }}>{counts[v.village]}</span> : null}
+            </a>
+          );
+        })}
       </div>
       <div style={{ marginTop: 8, fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)' }}>Carte : Naruto World Map (fan, CC) — retravaillée pour AKASHA.</div>
     </div>

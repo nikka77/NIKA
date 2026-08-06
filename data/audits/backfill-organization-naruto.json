@@ -1,0 +1,1182 @@
+{
+  "meta": {
+    "genere": "2026-08-05",
+    "source": "arêtes « appartient » de akasha_relations vers les entrées Naruto type=status, attributes.category=Organisation",
+    "regles": [
+      "Personnages Naruto uniquement (sources non-character et non-Naruto ignorées).",
+      "Cibles LIEUX exclues (…gakure, « … Village », monts/îles/forêts) : la géographie vit dans attributes.village.",
+      "Une seule organisation par personnage : priorité canon (Akatsuki, Taka, Kara, Root, Sound Four, Sept Épéistes de la Brume, Konoha 11, Douze Ninjas Gardiens, Police militaire de Konoha), sinon le plus petit effectif, sinon l’alphabet.",
+      "Valeur « Racine (Anbu) » normalisée en « Root » — vocabulaire de scripts/lib/akasha-axes.mjs et des 6 fiches déjà posées.",
+      "mapping = fiches dont attributes.organization est NULL (écriture sûre) ; deja_poses = valeur déjà en place, à arbitrer ; multi_appartenances = toutes les cibles des personnages multi-org."
+    ],
+    "stats": {
+      "organisations_cibles": 171,
+      "aretes_appartient": 906,
+      "personnages_concernes": 466,
+      "a_ecrire": 445,
+      "deja_poses": 21,
+      "multi_appartenances": 106,
+      "effectifs_apres_backfill": {
+        "Force Shinobi Alliée": 42,
+        "Akatsuki": 37,
+        "Kara": 25,
+        "Root": 23,
+        "Third Division": 15,
+        "Corps médical": 13,
+        "Konoha 11": 13,
+        "Twenty Platoons": 11,
+        "Sept Épéistes de la Brume": 11,
+        "Eight Man Squad": 9,
+        "Police militaire de Konoha": 9,
+        "Fourth Division": 9,
+        "First Division": 9,
+        "Team Kakashi": 8,
+        "Fifth Division": 8,
+        "Team 10": 8,
+        "Surprise Attack Division": 8,
+        "Analysis Team": 8,
+        "Fire Temple": 7,
+        "Konoha Orphanage": 7,
+        "Second Division": 7,
+        "Infiltration and Reconnaissance Party": 7,
+        "Suna Council": 7,
+        "New Seven Ninja Swordsmen": 7,
+        "Konoha Barrier Team": 7,
+        "Douze Ninjas Gardiens": 7,
+        "Logistical Support and Medical Division": 7,
+        "Escort Unit": 7,
+        "Ame Orphans": 6,
+        "Sasuke Recovery Team": 6
+      }
+    }
+  },
+  "mapping": {
+    "a-first-raikage": "Gold and Silver Brothers",
+    "a-fourth-raikage": "A–B Combo",
+    "a-third-raikage": "Eight-Tails Subduing Team",
+    "ada": "Kara",
+    "ajisai": "Team Ajisai",
+    "akaboshi": "Magaki Group",
+    "akamaru": "Konoha 11",
+    "akita-inuzuka": "Scientific Ninja Weapons Team",
+    "amado-sanzu": "Kara",
+    "ameno": "Team Ameno",
+    "ameyuri-ringo": "Sept Épéistes de la Brume",
+    "aniki": "Moya Triad",
+    "anko-mitarashi": "Team Orochimaru",
+    "ao": "Kara",
+    "aoba-yamashiro": "Intelligence Division",
+    "aoi-rokusho": "Team Oboro",
+    "araya": "Team Shinki",
+    "asaka": "Haze Quadruplets",
+    "asuma-sarutobi": "Douze Ninjas Gardiens",
+    "atsui": "First Division",
+    "baiu": "Team Shigure",
+    "baki": "Three Sand Siblings",
+    "bando": "Team Bandō",
+    "bansai": "Fire Temple",
+    "benten": "Magaki Group",
+    "black-zetsu": "Akatsuki",
+    "boro": "Kara",
+    "boruto-uzumaki": "Team 7",
+    "boxing-kangaroos": "Four Ninja Animal Warriors",
+    "bug": "Kara",
+    "buntan-kurosuki": "New Seven Ninja Swordsmen",
+    "bunzo": "Akagi Gang",
+    "burami": "Team Kazami",
+    "c": "Kumo Council",
+    "chibi-naruto": "Akatsuki",
+    "chino": "Lightning Group",
+    "chiriku": "Douze Ninjas Gardiens",
+    "chocho-akimichi": "Team 10",
+    "choji-akimichi": "Konoha 11",
+    "choji-s-mother": "Allied Mothers Force",
+    "chojuro": "Sept Épéistes de la Brume",
+    "choza-akimichi": "Ino–Shika–Chō",
+    "chukaku": "Impure World Reincarnation Allied Forces",
+    "chukichi": "Surprise Attack and Diversion Platoon",
+    "chushin": "Magaki Group",
+    "condor": "Four Ninja Animal Warriors",
+    "daemon": "Kara",
+    "daen-nara": "Force Shinobi Alliée",
+    "daibutsu": "Akatsuki",
+    "daimaru": "Impure World Reincarnation Allied Forces",
+    "dango-mitsuki": "Infiltration and Reconnaissance Party",
+    "danzo-shimura": "Root",
+    "daore-dotonbori": "Exploding-Till-You-Eat",
+    "darui": "Kumo Council",
+    "datsuji": "Team Goji",
+    "deepa": "Kara",
+    "delta": "Kara",
+    "demonic-statue-of-the-outer-path": "Akatsuki",
+    "denki-kaminarimon": "Team 5",
+    "dodai": "Communications Team",
+    "doshin": "Leaf's Anbu",
+    "doshu-goetsu": "Team 40",
+    "dosu-kinuta": "Team Dosu",
+    "ebisu": "Team Chōza",
+    "ebizo": "Honoured Siblings",
+    "enko-onikuma": "Team 40",
+    "ensui-nara": "Third Division",
+    "fu": "Team Fū",
+    "fu-yamanaka": "Root",
+    "fubuki-kakuyoku": "Dotō's Three-Man-Team",
+    "fudo": "Furido's 4-Man Team",
+    "fuen": "Furido's 4-Man Team",
+    "fugai": "Haido's Knights",
+    "fugaku-uchiha": "Police militaire de Konoha",
+    "fuguki-suikazan": "Sept Épéistes de la Brume",
+    "fujin-naruto": "Legendary Stupid Brothers",
+    "fuka": "Furido's 4-Man Team",
+    "fukasaku": "Two Great Sage Toads",
+    "furui": "Eight-Tails Subduing Team",
+    "fuyo": "Team Ajisai",
+    "gaara": "Three Sand Siblings",
+    "gamakichi": "Force Shinobi Alliée",
+    "gando": "Shirogane Three",
+    "ganryu": "Team Ganryū",
+    "gantetsu": "Shinobazu",
+    "garashi-tono": "Kara",
+    "gari": "Explosion Corps",
+    "garo": "Kara",
+    "gato": "Gatō Company",
+    "gekko": "Byakuya Gang",
+    "gengo": "Enlightened Ones",
+    "genma-shiranui": "Hokage Guard Platoon",
+    "gennai": "Team Komugi",
+    "gensho-ryudoin": "Three Ryūdōin Brothers",
+    "giant-anteater": "Four Ninja Animal Warriors",
+    "ginji": "Akatsuki",
+    "ginkaku-naruto": "Gold and Silver Brothers",
+    "gitai": "Gang of Four",
+    "goji": "Team Goji",
+    "goza": "Suna Council",
+    "gozu-naruto": "Demon Brothers",
+    "guren": "Team Guren",
+    "haido": "Haido's Knights",
+    "hako-kuroi": "Team 25",
+    "hakui": "Leaf's Anbu",
+    "hakui-medic": "Logistical Support and Medical Division",
+    "hana-inuzuka": "Fifth Division",
+    "hanabi-hyuga": "Team 15",
+    "harine": "Konoha Orphanage",
+    "hashirama-senju": "Force Shinobi Alliée",
+    "hassaku-onomichi": "New Seven Ninja Swordsmen",
+    "hebiichigo": "New Seven Ninja Swordsmen",
+    "heiji": "Impure World Reincarnation Allied Forces",
+    "hiashi-hyuga": "First Division",
+    "hidan": "Akatsuki",
+    "himeyuri": "Akatsuki",
+    "hinata-hyuga": "Konoha 11",
+    "hinoe": "Root",
+    "hinoto": "Root",
+    "hiruga": "Haze Quadruplets",
+    "hiruko-missing-nin": "Hiruko's Team",
+    "hisame": "Team Suien",
+    "hoheto-hyuga": "Surprise Attack Division",
+    "hoki-taketori": "Team 25",
+    "hoki-takumi": "Four Celestial Symbols Men",
+    "hoki-watari": "Watari Ninja",
+    "hokushin": "Watari Ninja",
+    "homura-mitokado": "Konoha Council",
+    "hosho": "Corps médical",
+    "hyo": "Root",
+    "ibiki-morino": "Konoha Torture and Interrogation Force",
+    "ibushi": "Shirogane Three",
+    "ichi": "Hiruko's Team",
+    "ichigen": "Fire Temple",
+    "ichirota-oniyuzu": "New Seven Ninja Swordsmen",
+    "inabi-uchiha": "Police militaire de Konoha",
+    "inaho": "Team Komugi",
+    "ino-s-mother": "Allied Mothers Force",
+    "ino-yamanaka": "Konoha 11",
+    "inoichi-yamanaka": "Ino–Shika–Chō",
+    "inojin-yamanaka": "Konoha Barrier Team",
+    "io-medical-nin": "Logistical Support and Medical Division",
+    "iroha-hyuga": "Kumo Barrier Team",
+    "ishidate": "Wandering Ninja Clan",
+    "isshiki-otsutsuki": "Kara",
+    "ittan": "Surprise Attack Division",
+    "iwa-doctor": "Kara",
+    "iwabee-yuino": "Team 5",
+    "iwaji": "Three Brothers",
+    "iwakyo": "Three Brothers",
+    "iwana-otogakure": "Team Kajika",
+    "iwashi-tatami": "Hokage Guard Platoon",
+    "iwazo": "Three Brothers",
+    "iyashi": "Corps médical",
+    "izumo-kamizuki": "Konoha Barrier Team",
+    "jako": "Jako's Gang",
+    "jako-ryudoin": "Three Ryūdōin Brothers",
+    "jiga": "Janin",
+    "jigen": "Kara",
+    "jinin-akebino": "Sept Épéistes de la Brume",
+    "jinpachi-munashi": "Sept Épéistes de la Brume",
+    "jiraiya": "Team Jiraiya",
+    "jirobo": "Sound Four",
+    "joseki": "Suna Council",
+    "jugo": "Akatsuki",
+    "junsai": "Team Ganryū",
+    "juzo-biwa": "Akatsuki",
+    "kabuto-s-sensei": "Team Orochimaru",
+    "kagami-uchiha": "Escort Unit",
+    "kagari": "Team Oboro",
+    "kagura-karatachi": "New Seven Ninja Swordsmen",
+    "kajika": "Team Kajika",
+    "kakoi": "Konoha Barrier Team",
+    "kakuzu-s-partner": "Akatsuki",
+    "kamira": "Haido's Knights",
+    "kankuro": "Counter-Terrorism Division",
+    "kanoe": "Root",
+    "kanoto": "Root",
+    "kanpo": "Corps médical",
+    "kanpu": "Konoha Orphanage",
+    "karashi": "Kurosuki Family",
+    "karenbana": "Wandering Ninja Clan",
+    "karui": "Team Samui",
+    "karyu": "Lightning Group",
+    "katasuke-tono": "Scientific Ninja Weapons Team",
+    "katsuyu": "Force Shinobi Alliée",
+    "kayui": "Third Division",
+    "kazami": "Team Kazami",
+    "kazuma": "Douze Ninjas Gardiens",
+    "kegon": "Team Fū",
+    "keiri": "Konoha Orphanage",
+    "kiba-inuzuka": "Konoha 11",
+    "kie": "Akatsuki",
+    "kigiri": "Team Guren",
+    "kiho": "Team Guren",
+    "kiji": "Team Bandō",
+    "killer-b": "A–B Combo",
+    "kin-tsuchi": "Team Dosu",
+    "kinkaku-naruto": "Gold and Silver Brothers",
+    "kinoto": "Root",
+    "kiri-ninja": "Surprise Attack Division",
+    "kirisame": "Team Suien",
+    "kiseru-gankubi": "Kara",
+    "kitane": "Douze Ninjas Gardiens",
+    "kito": "Corps médical",
+    "kitsuchi": "Second Division",
+    "kohan-yamanaka": "Konoha Barrier Team",
+    "koharu-utatane": "Konoha Council",
+    "koji-suna": "Team Ameno",
+    "kokuri": "Mujina Bandits",
+    "komori": "Enlightened Ones",
+    "komugi-naruto": "Team Komugi",
+    "kongo": "Wandering Ninja Clan",
+    "konohamaru-sarutobi": "Team Ebisu",
+    "kosuke-scientist": "Scientific Ninja Weapons Team",
+    "kotaro-fuma": "Police militaire de Konoha",
+    "kotetsu-hagane": "Konoha Barrier Team",
+    "kui-dotonbori": "Exploding-Till-You-Eat",
+    "kujaku-naruto": "Four Celestial Symbols Men",
+    "kumadori-naruto": "Analysis Team",
+    "kurenai-yuhi": "Team 8",
+    "kurotsuchi": "Second Division",
+    "kusabi": "Gatō Company",
+    "kushimaru-kuriarare": "Sept Épéistes de la Brume",
+    "kussaku": "Sensor Division",
+    "kusuna": "Gang of Four",
+    "kusushi": "Corps médical",
+    "kyoho-fuefuki": "New Seven Ninja Swordsmen",
+    "kyoya": "Akatsuki",
+    "kyusuke": "Akatsuki",
+    "madara-uchiha": "Akatsuki",
+    "maki-naruto": "Sealing Team",
+    "makinami-senka": "Three Senka Brothers",
+    "mamushi": "Team Saya",
+    "mangetsu-hozuki": "Sept Épéistes de la Brume",
+    "matsuri": "Team Matsuri",
+    "mawashi-dokuraku": "Analysis Team",
+    "mebuki-haruno": "Allied Mothers Force",
+    "mei-terumi": "Daimyō Protection Squad",
+    "meizu": "Demon Brothers",
+    "menma-namikaze": "Team Kakashi",
+    "meno-ninja": "Shirogane Three",
+    "metal-lee": "Team 5",
+    "midare": "Team Shigure",
+    "mifune": "Fifth Division",
+    "migaki": "Corps médical",
+    "might-guy": "Team Chōza",
+    "mijin": "Team Sajin",
+    "mikoshi": "Team Matsuri",
+    "minato-namikaze": "Team Jiraiya",
+    "minoichi": "Enlightened Ones",
+    "minoji": "Team Shibire",
+    "miru": "Cypher Division",
+    "misumi-tsurugi": "Team Kabuto",
+    "mitate": "Corps médical",
+    "mitoku": "Konoha Cryptanalysis Team",
+    "mitsuki": "Team 7",
+    "mizore-fuyukuma": "Dotō's Three-Man-Team",
+    "mizunoe": "Root",
+    "mizunoto": "Root",
+    "mo": "Moya Triad",
+    "moegi-kazamatsuri": "Team Ebisu",
+    "mogusa": "Corps médical",
+    "monga": "Third Division",
+    "monju": "Shinobazu",
+    "moroi": "Kumo Barrier Team",
+    "moryo": "Ghost Army",
+    "mozuku": "Konoha Torture and Interrogation Force",
+    "mubi": "Team Oboro",
+    "mujin": "Team Sajin",
+    "mukade": "Akatsuki",
+    "murasame": "Team Suien",
+    "muta-aburame": "Infiltration and Reconnaissance Party",
+    "muyami": "Team Kazami",
+    "nadare-roga": "Dotō's Three-Man-Team",
+    "nagare": "Watari Ninja",
+    "nagato": "Akatsuki",
+    "namida-suzumeno": "Team 15",
+    "nango": "Magaki Group",
+    "naruto-uzumaki": "Konoha 11",
+    "natsu": "Second Division",
+    "nauma": "Douze Ninjas Gardiens",
+    "nazuna": "Akatsuki",
+    "neji-hyuga": "Konoha 11",
+    "ni": "Hiruko's Team",
+    "nono-yakushi": "Root",
+    "nonota": "Sealing Team",
+    "nowaki": "Lightning Group",
+    "nurari": "Team Guren",
+    "nurui": "Third Division",
+    "oboro": "Team Oboro",
+    "oga": "Kara",
+    "okisuke": "Fifth Division",
+    "oko": "Byakuya Gang",
+    "omoi": "Team Samui",
+    "osoi": "Impure World Reincarnation Allied Forces",
+    "oyone": "Analysis Team",
+    "raido-namiashi": "Hokage Guard Platoon",
+    "raiga-kurosuki": "Sept Épéistes de la Brume",
+    "raijin-naruto": "Legendary Stupid Brothers",
+    "raimei": "Akatsuki",
+    "ran-kunoichi": "Third Division",
+    "ranka": "Infiltration and Reconnaissance Party",
+    "ranke": "Haido's Knights",
+    "ranmaru": "Kurosuki Family",
+    "rashii": "First Division",
+    "renga": "Janin",
+    "renga-kokubo": "Team 25",
+    "riichi-ninja": "Twenty Platoons",
+    "rin-nohara": "Team Minato",
+    "rinji": "Team Guren",
+    "rock-lee": "Konoha 11",
+    "rokkaku-ryudoin": "Three Ryūdōin Brothers",
+    "ruiga": "Janin",
+    "ruka": "Third Division",
+    "ryogi": "Byakuya Gang",
+    "ryugan": "Four Celestial Symbols Men",
+    "ryusa": "Suna Council",
+    "sada": "Team Bandō",
+    "sagan": "Fourth Division",
+    "sajin-genin": "Team Sajin",
+    "sajo": "Suna Council",
+    "sakon-and-ukon": "Sound Four",
+    "sakura-haruno": "Konoha 11",
+    "samui": "Team Samui",
+    "san": "Hiruko's Team",
+    "sana": "Team Saya",
+    "santa-yamanaka": "Third Division",
+    "sarada-uchiha": "Team 7",
+    "saya": "Team Saya",
+    "sazanami-senka": "Three Senka Brothers",
+    "seito": "Douze Ninjas Gardiens",
+    "sekiei-s-partner": "Kumo Spectators",
+    "sekiei-spectator": "Kumo Spectators",
+    "sen": "Team Shira",
+    "senta": "Akagi Gang",
+    "sentoki": "Fire Temple",
+    "setsuna": "Gang of Four",
+    "setsuna-uchiha": "Police militaire de Konoha",
+    "shibire": "Team Shibire",
+    "shigure-naruto": "Team Shigure",
+    "shiho": "Konoha Cryptanalysis Team",
+    "shikadai-nara": "Team 10",
+    "shikaku-nara": "Ino–Shika–Chō",
+    "shikamaru-nara": "Konoha 11",
+    "shima": "Two Great Sage Toads",
+    "shimon-hijiri": "Analysis Team",
+    "shin": "Root",
+    "shin-uchiha": "Akatsuki",
+    "shinga": "Leaf's Anbu",
+    "shinki": "Team Shinki",
+    "shinko-inari": "Team 2",
+    "shinobu-mibu": "Konoha Torture and Interrogation Force",
+    "shira": "Team Shira",
+    "shiranami": "Magaki Group",
+    "shishio": "Team Ameno",
+    "shizuku": "Gang of Four",
+    "shizuma-hoshigaki": "New Seven Ninja Swordsmen",
+    "shizune": "Konoha Special Mission Platoon",
+    "shojoji": "Mujina Bandits",
+    "shun": "Second Division",
+    "shura-naruto": "Shinobazu",
+    "sora": "Fire Temple",
+    "suguro": "Jako's Gang",
+    "suien": "Team Suien",
+    "suigetsu-hozuki": "Akatsuki",
+    "suiko": "Four Celestial Symbols Men",
+    "suiren": "Team Ajisai",
+    "suiren-kiri": "Team Ganryū",
+    "sukui": "Logistical Support and Medical Division",
+    "sumire-kakei": "Scientific Ninja Weapons Team",
+    "suzuran": "Akatsuki",
+    "taiko-uchiha": "Police militaire de Konoha",
+    "tajiki": "Third Division",
+    "takanami-senka": "Three Senka Brothers",
+    "tamaki": "Team 7",
+    "tango": "Communications Team",
+    "tanuki-shigaraki": "Root",
+    "tanzo": "Team Shibire",
+    "tarui": "Team Yurui",
+    "tasuki": "Konoha Barrier Team",
+    "tatsuma-aburame": "Root",
+    "tayuya": "Sound Four",
+    "team-goji-leader": "Team Goji",
+    "tekka-uchiha": "Police militaire de Konoha",
+    "temari": "Three Sand Siblings",
+    "temujin": "Haido's Knights",
+    "tenga": "Intelligence Division",
+    "tenma-izumo": "Team 2",
+    "tenten": "Konoha 11",
+    "terai": "Root",
+    "terubo": "Konoha Orphanage",
+    "tessa": "Fourth Division",
+    "tetsu": "Force Shinobi Alliée",
+    "three-haimaru-brothers": "Fifth Division",
+    "tobi-zetsu": "Akatsuki",
+    "tobirama-senju": "Team Tobirama",
+    "toki-shinobazu": "Shinobazu",
+    "tokuma-hyuga": "Infiltration and Reconnaissance Party",
+    "tonbo-tobitake": "Analysis Team",
+    "tonton": "Logistical Support and Medical Division",
+    "torifu-akimichi": "Escort Unit",
+    "toroi-genin": "Team Yurui",
+    "torune-aburame": "Root",
+    "tou": "Douze Ninjas Gardiens",
+    "tsubaki-kurogane": "Team 15",
+    "tsuchinoe": "Root",
+    "tsuchinoto": "Root",
+    "tsukiyo": "Mujina Bandits",
+    "tsunade": "Team Hiruzen",
+    "tsuru-itoi": "Team 40",
+    "udon-ise": "Team 5",
+    "ugai": "Corps médical",
+    "urushi": "Konoha Orphanage",
+    "victor": "Kara",
+    "victor-s-secretary": "Kara",
+    "waraji": "Gatō Company",
+    "wasabi-izuno": "Team 15",
+    "white-zetsu": "Akatsuki",
+    "ya": "Moya Triad",
+    "yakumi-uchiha": "Police militaire de Konoha",
+    "yamame": "Team Kajika",
+    "yashiro-uchiha": "Police militaire de Konoha",
+    "yodo": "Team Shinki",
+    "yokaze": "Logistical Support and Medical Division",
+    "yome": "Team Shira",
+    "yomi": "Ghost Army",
+    "yoro": "Team Fū",
+    "yoroi-akado": "Team Kabuto",
+    "yoruga": "Haze Quadruplets",
+    "yoshino-nara": "Allied Mothers Force",
+    "yuga": "Haze Quadruplets",
+    "yugao-uzuki": "Team Ro",
+    "yukata": "Team Matsuri",
+    "yuki-minazuki": "Team 2",
+    "yura": "Akatsuki",
+    "yurika": "Konoha Cryptanalysis Team",
+    "yurui": "Team Yurui",
+    "yurui-anime": "Third Division",
+    "zabuza-momochi": "Sept Épéistes de la Brume",
+    "zaji": "Surprise Attack Division",
+    "zaku-abumi": "Team Dosu",
+    "zangei": "Akatsuki",
+    "zenza": "Fire Temple",
+    "zori": "Gatō Company"
+  },
+  "deja_poses": {
+    "code": {
+      "actuel": "Kara",
+      "deduit": "Kara"
+    },
+    "deidara": {
+      "actuel": "Akatsuki",
+      "deduit": "Akatsuki"
+    },
+    "hiruzen-sarutobi": {
+      "actuel": "Root",
+      "deduit": "Team Hiruzen"
+    },
+    "itachi-uchiha": {
+      "actuel": "Akatsuki",
+      "deduit": "Akatsuki"
+    },
+    "kabuto-yakushi": {
+      "actuel": "Root",
+      "deduit": "Akatsuki"
+    },
+    "kakashi-hatake": {
+      "actuel": "Root",
+      "deduit": "Root"
+    },
+    "kakuzu": {
+      "actuel": "Akatsuki",
+      "deduit": "Akatsuki"
+    },
+    "karin-naruto": {
+      "actuel": "Akatsuki",
+      "deduit": "Akatsuki"
+    },
+    "kawaki": {
+      "actuel": "Kara",
+      "deduit": "Kara"
+    },
+    "kidomaru": {
+      "actuel": "Sound Four",
+      "deduit": "Sound Four"
+    },
+    "kisame-hoshigaki": {
+      "actuel": "Akatsuki",
+      "deduit": "Akatsuki"
+    },
+    "koji-kashin": {
+      "actuel": "Kara",
+      "deduit": "Kara"
+    },
+    "konan": {
+      "actuel": "Akatsuki",
+      "deduit": "Akatsuki"
+    },
+    "obito-uchiha": {
+      "actuel": "Akatsuki",
+      "deduit": "Akatsuki"
+    },
+    "orochimaru": {
+      "actuel": "Akatsuki",
+      "deduit": "Akatsuki"
+    },
+    "sai-naruto": {
+      "actuel": "Root",
+      "deduit": "Root"
+    },
+    "sasori": {
+      "actuel": "Akatsuki",
+      "deduit": "Akatsuki"
+    },
+    "sasuke-uchiha": {
+      "actuel": "Akatsuki",
+      "deduit": "Akatsuki"
+    },
+    "shino-aburame": {
+      "actuel": "Root",
+      "deduit": "Konoha 11"
+    },
+    "yahiko": {
+      "actuel": "Akatsuki",
+      "deduit": "Akatsuki"
+    },
+    "yamato-naruto": {
+      "actuel": "Root",
+      "deduit": "Root"
+    }
+  },
+  "multi_appartenances": {
+    "a-fourth-raikage": [
+      "A–B Combo",
+      "Eight-Tails Subduing Team",
+      "Force Shinobi Alliée"
+    ],
+    "akamaru": [
+      "Bikōchū Search Team",
+      "Eight Man Squad",
+      "Fifth Division",
+      "Force Shinobi Alliée",
+      "Konoha 11",
+      "Sasuke Recovery Team",
+      "Team 8",
+      "Team Two"
+    ],
+    "amado-sanzu": [
+      "Kara",
+      "Scientific Ninja Weapons Team"
+    ],
+    "anko-mitarashi": [
+      "Force Shinobi Alliée",
+      "Infiltration and Reconnaissance Party",
+      "Kaima Capture Team",
+      "Team Orochimaru"
+    ],
+    "ao": [
+      "Force Shinobi Alliée",
+      "Kara",
+      "Sensor Division"
+    ],
+    "aoba-yamashiro": [
+      "Intelligence Division",
+      "Twenty Platoons"
+    ],
+    "asuma-sarutobi": [
+      "Douze Ninjas Gardiens",
+      "Team 10",
+      "Twenty Platoons"
+    ],
+    "baki": [
+      "Suna Council",
+      "Three Sand Siblings"
+    ],
+    "c": [
+      "Kumo Council",
+      "Sensor Division"
+    ],
+    "chibi-naruto": [
+      "Akatsuki",
+      "Ame Orphans",
+      "Kara"
+    ],
+    "chiriku": [
+      "Douze Ninjas Gardiens",
+      "Fire Temple"
+    ],
+    "choji-akimichi": [
+      "Force Shinobi Alliée",
+      "Fourth Division",
+      "Konoha 11",
+      "Peddlers Escort Team",
+      "Sasuke Recovery Team",
+      "Team 10",
+      "Twenty Platoons"
+    ],
+    "chojuro": [
+      "Daimyō Protection Squad",
+      "Force Shinobi Alliée",
+      "Sept Épéistes de la Brume"
+    ],
+    "choza-akimichi": [
+      "First Division",
+      "Force Shinobi Alliée",
+      "Ino–Shika–Chō",
+      "Team Chōza"
+    ],
+    "chukaku": [
+      "Fire Temple",
+      "Impure World Reincarnation Allied Forces"
+    ],
+    "danzo-shimura": [
+      "Escort Unit",
+      "Konoha Council",
+      "Root"
+    ],
+    "darui": [
+      "First Division",
+      "Force Shinobi Alliée",
+      "Kumo Council"
+    ],
+    "deidara": [
+      "Akatsuki",
+      "Explosion Corps",
+      "Surprise Attack and Diversion Platoon"
+    ],
+    "dodai": [
+      "Communications Team",
+      "Force Shinobi Alliée",
+      "Fourth Division"
+    ],
+    "ebisu": [
+      "Team Chōza",
+      "Team Ebisu"
+    ],
+    "ebizo": [
+      "Honoured Siblings",
+      "Suna Council"
+    ],
+    "gaara": [
+      "Force Shinobi Alliée",
+      "Fourth Division",
+      "Three Sand Siblings"
+    ],
+    "genma-shiranui": [
+      "Daimyō Protection Squad",
+      "Hokage Guard Platoon",
+      "Konoha Special Mission Platoon",
+      "Team Chōza"
+    ],
+    "gozu-naruto": [
+      "Demon Brothers",
+      "Team Guren"
+    ],
+    "himeyuri": [
+      "Akatsuki",
+      "Kara"
+    ],
+    "hinata-hyuga": [
+      "Bikōchū Search Team",
+      "Eight Man Squad",
+      "Force Shinobi Alliée",
+      "Hanabi Rescue Team",
+      "Konoha 11",
+      "Peddlers Escort Team",
+      "Second Division",
+      "Team 8",
+      "Team Three"
+    ],
+    "hiruzen-sarutobi": [
+      "Escort Unit",
+      "Force Shinobi Alliée",
+      "Team Hiruzen",
+      "Team Tobirama"
+    ],
+    "homura-mitokado": [
+      "Escort Unit",
+      "Konoha Council",
+      "Team Tobirama"
+    ],
+    "ibiki-morino": [
+      "Konoha Torture and Interrogation Force",
+      "Team 40"
+    ],
+    "ino-yamanaka": [
+      "Analysis Team",
+      "Fifth Division",
+      "Force Shinobi Alliée",
+      "Ino–Saku–Sai",
+      "Kaima Capture Team",
+      "Konoha 11",
+      "Konoha Barrier Team",
+      "Team 10",
+      "Team Three",
+      "Twenty Platoons"
+    ],
+    "inoichi-yamanaka": [
+      "Analysis Team",
+      "Force Shinobi Alliée",
+      "Ino–Shika–Chō",
+      "Intelligence Division"
+    ],
+    "inojin-yamanaka": [
+      "Konoha Barrier Team",
+      "Team 10"
+    ],
+    "itachi-uchiha": [
+      "Akatsuki",
+      "Team Ro"
+    ],
+    "iwashi-tatami": [
+      "Daimyō Protection Squad",
+      "Hokage Guard Platoon",
+      "Konoha Special Mission Platoon",
+      "Third Division"
+    ],
+    "izumo-kamizuki": [
+      "First Division",
+      "Konoha Barrier Team",
+      "Twenty Platoons"
+    ],
+    "jiraiya": [
+      "Ame Orphans",
+      "Team Hiruzen",
+      "Team Jiraiya"
+    ],
+    "jugo": [
+      "Akatsuki",
+      "Taka"
+    ],
+    "juzo-biwa": [
+      "Akatsuki",
+      "Sept Épéistes de la Brume"
+    ],
+    "kabuto-s-sensei": [
+      "Team Kabuto",
+      "Team Orochimaru",
+      "Twenty Platoons"
+    ],
+    "kabuto-yakushi": [
+      "Akatsuki",
+      "Konoha Orphanage",
+      "Root",
+      "Team Kabuto"
+    ],
+    "kakashi-hatake": [
+      "Eight Man Squad",
+      "Force Shinobi Alliée",
+      "Kazekage Rescue Team",
+      "Root",
+      "Team Kakashi",
+      "Team Minato",
+      "Team One",
+      "Team Ro",
+      "Third Division"
+    ],
+    "kankuro": [
+      "Counter-Terrorism Division",
+      "Force Shinobi Alliée",
+      "Surprise Attack Division",
+      "Three Sand Siblings"
+    ],
+    "karin-naruto": [
+      "Akatsuki",
+      "Taka"
+    ],
+    "karui": [
+      "Second Division",
+      "Team Samui"
+    ],
+    "kawaki": [
+      "Kara",
+      "Team 7"
+    ],
+    "kazuma": [
+      "Douze Ninjas Gardiens",
+      "Furido's 4-Man Team"
+    ],
+    "kiba-inuzuka": [
+      "Bikōchū Search Team",
+      "Eight Man Squad",
+      "Fifth Division",
+      "Force Shinobi Alliée",
+      "Konoha 11",
+      "Police militaire de Konoha",
+      "Sasuke Recovery Team",
+      "Team 8",
+      "Team Two"
+    ],
+    "killer-b": [
+      "A–B Combo",
+      "Force Shinobi Alliée",
+      "Kumo Council"
+    ],
+    "kisame-hoshigaki": [
+      "Akatsuki",
+      "Cypher Division",
+      "Sept Épéistes de la Brume"
+    ],
+    "koharu-utatane": [
+      "Escort Unit",
+      "Konoha Council",
+      "Team Tobirama"
+    ],
+    "konan": [
+      "Akatsuki",
+      "Ame Orphans"
+    ],
+    "konohamaru-sarutobi": [
+      "Team 7",
+      "Team Ebisu"
+    ],
+    "kotetsu-hagane": [
+      "First Division",
+      "Konoha Barrier Team",
+      "Twenty Platoons"
+    ],
+    "kumadori-naruto": [
+      "Analysis Team",
+      "Corps médical"
+    ],
+    "kurotsuchi": [
+      "Force Shinobi Alliée",
+      "Second Division"
+    ],
+    "maki-naruto": [
+      "Sealing Team",
+      "Third Division"
+    ],
+    "matsuri": [
+      "Fourth Division",
+      "Team Matsuri"
+    ],
+    "mifune": [
+      "Fifth Division",
+      "Force Shinobi Alliée"
+    ],
+    "might-guy": [
+      "Force Shinobi Alliée",
+      "Team Chōza",
+      "Team Guy",
+      "Third Division"
+    ],
+    "minato-namikaze": [
+      "Force Shinobi Alliée",
+      "Team Jiraiya",
+      "Team Minato"
+    ],
+    "moegi-kazamatsuri": [
+      "Team 10",
+      "Team Ebisu"
+    ],
+    "nagato": [
+      "Akatsuki",
+      "Ame Orphans"
+    ],
+    "naruto-uzumaki": [
+      "Bikōchū Search Team",
+      "Eight Man Squad",
+      "Force Shinobi Alliée",
+      "Hanabi Rescue Team",
+      "Kaima Capture Team",
+      "Kazekage Rescue Team",
+      "Konoha 11",
+      "Peddlers Escort Team",
+      "Sasuke Recovery Team",
+      "Star Guard Team",
+      "Team Kakashi",
+      "Team One"
+    ],
+    "nazuna": [
+      "Akatsuki",
+      "Kara"
+    ],
+    "neji-hyuga": [
+      "Konoha 11",
+      "Sasuke Recovery Team",
+      "Second Division",
+      "Star Guard Team",
+      "Team Guy"
+    ],
+    "nono-yakushi": [
+      "Corps médical",
+      "Konoha Orphanage",
+      "Root"
+    ],
+    "obito-uchiha": [
+      "Akatsuki",
+      "Team Minato"
+    ],
+    "omoi": [
+      "Force Shinobi Alliée",
+      "Surprise Attack Division",
+      "Team Samui"
+    ],
+    "orochimaru": [
+      "Akatsuki",
+      "Root",
+      "Team Dosu",
+      "Team Hiruzen",
+      "Team Orochimaru"
+    ],
+    "oyone": [
+      "Analysis Team",
+      "Corps médical"
+    ],
+    "raido-namiashi": [
+      "Daimyō Protection Squad",
+      "Hokage Guard Platoon",
+      "Konoha Special Mission Platoon",
+      "Twenty Platoons"
+    ],
+    "raiga-kurosuki": [
+      "Kurosuki Family",
+      "Sept Épéistes de la Brume"
+    ],
+    "raimei": [
+      "Akatsuki",
+      "Kara"
+    ],
+    "ranka": [
+      "Analysis Team",
+      "Infiltration and Reconnaissance Party"
+    ],
+    "rock-lee": [
+      "Force Shinobi Alliée",
+      "Konoha 11",
+      "Star Guard Team",
+      "Team Guy",
+      "Team Two",
+      "Third Division"
+    ],
+    "sai-naruto": [
+      "Eight Man Squad",
+      "Force Shinobi Alliée",
+      "Hanabi Rescue Team",
+      "Infiltration and Reconnaissance Party",
+      "Ino–Saku–Sai",
+      "Konoha 11",
+      "Root",
+      "Surprise Attack Division",
+      "Team 25",
+      "Team Kakashi",
+      "Team One"
+    ],
+    "sakura-haruno": [
+      "Corps médical",
+      "Eight Man Squad",
+      "Force Shinobi Alliée",
+      "Hanabi Rescue Team",
+      "Ino–Saku–Sai",
+      "Kazekage Rescue Team",
+      "Konoha 11",
+      "Team Kakashi",
+      "Team Three",
+      "Third Division"
+    ],
+    "samui": [
+      "First Division",
+      "Team Samui"
+    ],
+    "sasori": [
+      "Akatsuki",
+      "Puppet Brigade",
+      "Surprise Attack and Diversion Platoon"
+    ],
+    "sasuke-uchiha": [
+      "Akatsuki",
+      "Sound Four",
+      "Taka",
+      "Team Kakashi"
+    ],
+    "shigure-naruto": [
+      "Ame Orphans",
+      "Team Shigure"
+    ],
+    "shikamaru-nara": [
+      "Force Shinobi Alliée",
+      "Fourth Division",
+      "Hanabi Rescue Team",
+      "Konoha 11",
+      "Sasuke Recovery Team",
+      "Team 10",
+      "Twenty Platoons"
+    ],
+    "shin": [
+      "Root",
+      "Surprise Attack and Diversion Platoon"
+    ],
+    "shino-aburame": [
+      "Bikōchū Search Team",
+      "Eight Man Squad",
+      "Fifth Division",
+      "Force Shinobi Alliée",
+      "Kaima Capture Team",
+      "Konoha 11",
+      "Team 8",
+      "Team One"
+    ],
+    "shinobu-mibu": [
+      "Konoha Torture and Interrogation Force",
+      "Twenty Platoons"
+    ],
+    "shizune": [
+      "Force Shinobi Alliée",
+      "Konoha Special Mission Platoon",
+      "Logistical Support and Medical Division"
+    ],
+    "sora": [
+      "Fire Temple",
+      "Team Kakashi"
+    ],
+    "suigetsu-hozuki": [
+      "Akatsuki",
+      "Taka"
+    ],
+    "sumire-kakei": [
+      "Scientific Ninja Weapons Team",
+      "Team 15"
+    ],
+    "suzuran": [
+      "Akatsuki",
+      "Kara"
+    ],
+    "tango": [
+      "Communications Team",
+      "Surprise Attack Division"
+    ],
+    "temari": [
+      "Force Shinobi Alliée",
+      "Fourth Division",
+      "Three Sand Siblings"
+    ],
+    "tenten": [
+      "First Division",
+      "Force Shinobi Alliée",
+      "Konoha 11",
+      "Star Guard Team",
+      "Team Guy",
+      "Team Two"
+    ],
+    "tobi-zetsu": [
+      "Akatsuki",
+      "White Zetsu Army"
+    ],
+    "tobirama-senju": [
+      "Escort Unit",
+      "Force Shinobi Alliée",
+      "Team Tobirama"
+    ],
+    "torune-aburame": [
+      "Impure World Reincarnation Allied Forces",
+      "Root"
+    ],
+    "tsunade": [
+      "Force Shinobi Alliée",
+      "Team Hiruzen"
+    ],
+    "udon-ise": [
+      "Team 5",
+      "Team Ebisu"
+    ],
+    "victor": [
+      "Force Shinobi Alliée",
+      "Kara"
+    ],
+    "white-zetsu": [
+      "Akatsuki",
+      "White Zetsu Army"
+    ],
+    "yahiko": [
+      "Akatsuki",
+      "Ame Orphans"
+    ],
+    "yamato-naruto": [
+      "Eight Man Squad",
+      "Force Shinobi Alliée",
+      "Infiltration and Reconnaissance Party",
+      "Root",
+      "Team Kakashi",
+      "Team Ro",
+      "Team Two"
+    ],
+    "yomi": [
+      "Gang of Four",
+      "Ghost Army"
+    ],
+    "yugao-uzuki": [
+      "Force Shinobi Alliée",
+      "Logistical Support and Medical Division",
+      "Team Ro"
+    ],
+    "yukata": [
+      "Fourth Division",
+      "Team Matsuri"
+    ],
+    "yura": [
+      "Akatsuki",
+      "Suna Council"
+    ]
+  },
+  "cibles_exclues_lieux": {
+    "Mont Myōboku": 24,
+    "Kusagakure": 18,
+    "Takigakure": 14,
+    "Caverne Ryūchi": 14,
+    "Hoshigakure": 10,
+    "Daidai Village": 8,
+    "Tonika Village": 7,
+    "Yumegakure": 6,
+    "Tsuchigumo Village": 6,
+    "Rōran": 6,
+    "Yukigakure": 6,
+    "Moon": 5,
+    "Takumi Village": 5,
+    "Temujin's Continent": 5,
+    "Green Banks": 4,
+    "Mount Shumisen": 4,
+    "Forêt Shikkotsu": 3,
+    "Benisu Island": 3,
+    "Uzushiogakure": 3,
+    "Tree Felling Village": 3,
+    "Nadeshiko Village": 3,
+    "Kazahana Castle": 3,
+    "Yugakure": 3
+  }
+}

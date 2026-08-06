@@ -11,8 +11,8 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { execFile as execFileCb } from 'node:child_process';
 import { promisify } from 'node:util';
-import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
+import { lireSections } from '../lib/akasha/sections.ts';
 import { fetchFandomProse } from './lib/fandom.mjs';
 import { envoyerAlerte } from './lib/alerte.mjs';
 
@@ -34,8 +34,21 @@ async function battreEnClaude(role, detail) {
 
 // Échantillon : fiches publiées, tirées au pas fixe sur la liste triée (rejouable, sans horloge).
 const { data: entrees } = await clientSite().from('akasha_entries')
-  .select('slug, name, attributes').eq('universe', UNIVERSE).order('slug');
-const publiees = (entrees ?? []).filter((e) => e.attributes?.descFr || e.attributes?.sections?.length);
+  .select('id, slug, name, attributes').eq('universe', UNIVERSE).order('slug');
+// UNE SECTION = UNE LIGNE de akasha_sections (05/08) : repérer qui en a se fait par paquets
+// d'ids — la table ne porte pas l'univers, et on ne tire ici que les entry_id, pas les textes.
+const aDesSections = new Set();
+const tous = entrees ?? [];
+for (let d = 0; d < tous.length; d += 100) {
+  const ids = tous.slice(d, d + 100).map((e) => e.id);
+  for (let p = 0; ; p += 1000) {
+    const { data } = await clientSite().from('akasha_sections')
+      .select('id, entry_id').in('entry_id', ids).order('id').range(p, p + 999);
+    for (const l of data ?? []) aDesSections.add(l.entry_id);
+    if ((data?.length ?? 0) < 1000) break;
+  }
+}
+const publiees = tous.filter((e) => e.attributes?.descFr || aDesSections.has(e.id));
 const pas = Math.max(1, Math.floor(publiees.length / N));
 const tirage = Array.from({ length: Math.min(N, publiees.length) }, (_, k) => publiees[k * pas]);
 console.log(`${UNIVERSE} : ${publiees.length} fiche(s) publiée(s), échantillon de ${tirage.length}`);
@@ -46,7 +59,10 @@ for (const e of tirage) {
   if (!page?.text) continue;
   const morceaux = [];
   if (e.attributes?.descFr) morceaux.push(`DESCRIPTION : ${e.attributes.descFr}`);
-  for (const sec of (e.attributes?.sections ?? []).slice(0, 2))
+  // lireSections lit la table (triée par index) ; `attributes` ne sert que de filet de
+  // restauration d'instantané antérieur au 05/08 — même garde que le site.
+  const sections = await lireSections(clientSite(), e.id, e.attributes);
+  for (const sec of sections.slice(0, 2))
     morceaux.push(`SECTION « ${sec.titre} » : ${String(sec.texte).slice(0, 1200)}`);
   if (morceaux.length) dossiers.push({ slug: e.slug, nom: e.name, contenu: morceaux.join('\n'), source: page.text.slice(0, 3500) });
 }

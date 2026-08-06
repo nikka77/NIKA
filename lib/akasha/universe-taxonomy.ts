@@ -65,6 +65,22 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
         ],
       },
       {
+        // Valeurs alignées sur scripts/lib/akasha-axes.mjs (vocabulaire des agents : Root, pas
+        // « Racine (Anbu) ») — le backfill data/audits/backfill-organization-naruto.json remplit l'axe.
+        attr: 'organization', label: 'Organisations', icon: '☁️',
+        values: [
+          { v: 'Akatsuki', tint: '#C0392B', badge: '☁️' },
+          { v: 'Taka', tint: '#6E5A8E', badge: '🦅' },
+          { v: 'Kara', tint: '#7A8394', badge: '⚙️' },
+          { v: 'Root', l: 'Racine', tint: '#5B6D5B', badge: '🌱' },
+          { v: 'Sound Four', l: 'Quatuor du Son', tint: '#8E44AD', badge: '🎵' },
+          { v: 'Sept Épéistes de la Brume', tint: '#5A88B0', badge: '🗡️' },
+          { v: 'Konoha 11', tint: '#3FA35C', badge: '🍃' },
+          { v: 'Douze Ninjas Gardiens', tint: '#B8912F', badge: '🛡️' },
+          { v: 'Police militaire de Konoha', l: 'Police de Konoha', tint: '#4A5A7A', badge: '🚔' },
+        ],
+      },
+      {
         attr: 'rank', label: 'Rangs ninja', icon: '🎖️',
         values: [
           { v: 'Academy Student', l: 'Élève de l’Académie' }, { v: 'Genin' }, { v: 'Chūnin' },
@@ -79,7 +95,8 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
         ],
       },
     ],
-    piliers: ['naruto-uzumaki', 'konohagakure', 'sharingan', 'rasengan', 'clan-uchiha', 'samehada', 'ninja-medical'],
+    // NB : le pilier du clan Uchiha est la fiche `uchiha` (« Clan Uchiha ») — `clan-uchiha` n'existe pas en base.
+    piliers: ['naruto-uzumaki', 'konohagakure', 'sharingan', 'rasengan', 'uchiha', 'samehada', 'ninja-medical'],
   },
   {
     name: 'One Piece',

@@ -1,0 +1,115 @@
+{
+  "$schema_note": "Plan de fusion Dragon Ball (agent dédup #8, 06/08/2026) — AUCUNE écriture effectuée. Vérifié en base (clientSite, akasha_entries/akasha_sections/akasha_relations). Jikan était HS (504) pendant tout l'audit : les valeurs favorites sont déduites de la base, à recouper.",
+  "fusions": [
+    {
+      "absorbe": "freezer",
+      "meurt": "freeza",
+      "ids": { "absorbe": "1b64325a-5e2c-47cc-8dbc-2e353c0f1b69", "meurt": "d151385b-6c12-4edb-b37e-85818dd1fccb" },
+      "preuves": [
+        "Même personnage certain : les deux descFr décrivent le tyran Freezer/Frieza d'Akira Toriyama, même race (Frieza Race), même saga (Saga Namek).",
+        "freezer = fiche curée du hub (ki 530.000, rôle « Empereur galactique », 3 forms avec images dont Golden/Black, résumé FR soigné, 26 arêtes ENTRANTES — c'est elle que le site référence) ; freeza = record Jikan (descRaw wiki EN, voiceActors, favorites 1762, 111 arêtes sortantes de l'usine).",
+        "Backlog §4.8 de tasks/akasha-organisation.md : « fusionner freeza→freezer »."
+      ],
+      "deplacements": {
+        "sections": "AUCUNE à déplacer. Les 3 sections de freeza ([1] Concept and creation, [2] Apparence, [4] Relation avec Frost) doublonnent contenu ET sujet des sections [1][2][4] de freezer (comparées texte à texte, versions freezer plus longues : 843c vs 336c, 1484c vs 1127c, 819c vs 564c). Elles meurent avec la fiche (DELETE akasha_sections WHERE entry_id = freeza).",
+        "aretes": "111 sortantes : UPDATE from_entry → id freezer, en supprimant d'abord tout triplet (relation, to_entry) déjà présent chez freezer (9 sortantes existantes) et toute arête freeza→freezer qui deviendrait une boucle. 0 entrante.",
+        "attributs": "Copier chez freezer les clés absentes : voiceActors. Remplacer descFr (83 chars, stub issu du seed dragonball-api) par celui de freeza (1284 chars) + copier descRaw/descLang avec (cohérence de provenance). favorites : 1762 (valeur Jikan de freeza) — PAS la somme, voir incertitude n°4.",
+        "manifeste": "Ajouter { \"from\": \"freeza\", \"to\": \"freezer\", \"universe\": \"Dragon Ball\" } à data/akasha-merges-universes.json (format existant) pour l'idempotence build/reseed + dedup-cleanup.mjs.",
+        "alias": "Registre data/alias-cures.json mono-alias : la clé « Freezer » est déjà prise par « Frieza », donc les futures mentions « Freeza » de l'usine ne résoudront plus après fusion (limitation acceptée, ou étendre le registre — hors périmètre)."
+      }
+    },
+    {
+      "absorbe": "kame-sennin",
+      "meurt": "muten-roushi",
+      "ids": { "absorbe": "b006a811-411b-464e-bbba-9a1aded735a4", "meurt": "ef1ee6d4-cc15-4d3f-87e7-5a0037682fce" },
+      "preuves": [
+        "Même personnage certain : le descRaw de muten-roushi dit lui-même « Rank: Kame-sennin (Turtle Hermit) » ; les deux fiches décrivent le maître d'arts martiaux mentor de Goku (Master Roshi).",
+        "kame-sennin = fiche curée (ki 500.000, rôle « Maître Tortue », résumé FR soigné, 11 arêtes ENTRANTES — référencée par le site) ; muten-roushi = record Jikan (favorites 1185, voiceActors, descRaw stats MAL, 12 sortantes).",
+        "Backlog §4.8 : « fusionner muten-roushi→kame-sennin »."
+      ],
+      "deplacements": {
+        "sections": "Déplacer les 2 sections de muten-roushi ([1] Biographie, [2] Techniques et Capacités — titres ABSENTS chez kame-sennin qui a [1] Apparence, [2] Personnalité) : UPDATE entry_id → id kame-sennin AVEC ré-indexation idx 1→3 et 2→4 (unicité entry_id+idx : 1 et 2 sont pris).",
+        "aretes": "12 sortantes : UPDATE from_entry → id kame-sennin, dédup contre l'unique sortante existante, drop des boucles. 0 entrante.",
+        "attributs": "Copier les clés absentes chez kame-sennin : descRaw, descLang, voiceActors. descFr : GARDER celui de kame-sennin (348c, ton NIKA) — la bio stats de muten-roushi survit dans la section Biographie déplacée. favorites : 1185 (valeur Jikan la plus riche) — pas la somme, incertitude n°4.",
+        "manifeste": "Ajouter { \"from\": \"muten-roushi\", \"to\": \"kame-sennin\", \"universe\": \"Dragon Ball\" } à data/akasha-merges-universes.json.",
+        "alias": "data/alias-cures.json : supprimer ou repointer la clé « Muten-Roushi » (valeur « Roshi/Dragonball Evolution ») — après fusion elle résoudrait vers un nom mort ; « Kamé Sennin »: « Master Roshi » reste valide."
+      }
+    },
+    {
+      "absorbe": "spopovitch",
+      "meurt": "spopovich",
+      "ids": { "absorbe": "21e0ebf9-3cfc-433e-aaf2-c43e2e3dac5e", "meurt": "9fc149c4-ea8b-4ca2-9110-627f1c274236" },
+      "preuves": [
+        "Même personnage certain : deux romanisations du même combattant humain possédé par Babidi au 25e Tournoi (les deux bios racontent la défaite contre Mr. Satan puis le contrôle mental) ; sections aux titres et contenus quasi identiques.",
+        "spopovitch = la plus riche : 11 sections (sur-ensemble strict des 8 de spopovich), favorites 5, voiceActors, 5 arêtes sortantes, graphie française officielle.",
+        "Trouvé par balayage manuel des 477 slugs character (cleSouple ne collisionne PAS : « spopovich » ≠ « spopovitch » après aplatissement). Le registre d'alias sait déjà que c'est le même : « Spopovitch »: « Spopovich » dans data/alias-cures.json."
+      ],
+      "deplacements": {
+        "sections": "AUCUNE à déplacer : les 8 sections de spopovich (idx 1,2,3,4,5,7,9,10) ont toutes un homologue de même titre et même sujet chez spopovitch (comparé texte à texte — mêmes faits, autre génération). Elles meurent avec la fiche.",
+        "aretes": "2 ENTRANTES : UPDATE to_entry → id spopovitch, dédup contre les entrantes existantes (0), drop des boucles. 0 sortante.",
+        "attributs": "Copier les clés absentes chez spopovitch : race (Human), saga (Saga Buu), category, powerLevel. summary : prendre celui de spopovich (résumé curé « Combattant humain gonflé par la magie de Babidi… ») car celui de spopovitch est le placeholder générique « Personnage secondaire de Dragon Ball. ». NE PAS copier descFrSource (il décrit la provenance du descFr de spopovich, non retenu).",
+        "manifeste": "Ajouter { \"from\": \"spopovich\", \"to\": \"spopovitch\", \"universe\": \"Dragon Ball\" } à data/akasha-merges-universes.json."
+      }
+    },
+    {
+      "absorbe": "auta-magetta",
+      "meurt": "magetta",
+      "ids": { "absorbe": "345f9b05-dbe7-4604-a98e-9adf490eeaf9", "meurt": "41211e0d-15d9-490f-aa21-4a0cf36a366f" },
+      "preuves": [
+        "Même personnage certain : les deux bios décrivent LE Metalman de l'Univers 6 choisi par Vados pour l'équipe de Champa ; sections idx 1,2,3,4,10,11 aux titres identiques et contenus jumeaux (« Magetta est confiant… » / « Auta Magetta est confiant… »).",
+        "auta-magetta = nom canon complet (précédent des fusions : kanou→ashido-kanou, stussy→stussy-buckingham), fiche curée (saga Super, powerLevel, résumé FR NIKA « montagne de métal en fusion… ») ; magetta = record Jikan (favorites 1, voiceActors, role, + 2 sections uniques idx 14-15).",
+        "Richesse quasi à égalité (8 sections vs 6) — le nom canon et le résumé curé tranchent en faveur d'auta-magetta."
+      ],
+      "deplacements": {
+        "sections": "Déplacer les 2 sections UNIQUES de magetta : [14] Apparitions dans d'autres médias (916c) et [15] Apparitions dans les jeux vidéo (903c) → UPDATE entry_id → id auta-magetta, idx 14 et 15 conservés (libres : max idx keeper = 11, unicité respectée sans ré-indexation). Les 6 autres (titres jumeaux, versions keeper plus longues) meurent avec la fiche.",
+        "aretes": "1 ENTRANTE : UPDATE to_entry → id auta-magetta (dédup : keeper a 0 entrante), drop boucle éventuelle. 0 sortante.",
+        "attributs": "Copier les clés absentes chez auta-magetta : role, favorites (1), voiceActors, descRaw, descLang.",
+        "manifeste": "Ajouter { \"from\": \"magetta\", \"to\": \"auta-magetta\", \"universe\": \"Dragon Ball\" } à data/akasha-merges-universes.json."
+      }
+    }
+  ],
+  "corrections": [
+    {
+      "slug": "anton-the-great",
+      "champ": "attributes.favorites",
+      "de": 3786,
+      "vers": 0,
+      "motif": "Valeur du record MAL de Son Gohan (le descRaw de la fiche est mot pour mot la bio MAL de Gohan : « Race: Half-Saiyan… Gohan is a shy and studious intellectual ») — gotcha connu du cache about clé par mal_id. Anton est un catcheur de remplissage du 22e Budokai ; ses pairs plafonnent entre 0 et 11 favoris (magetta 1, spopovitch 5, rou-kaioshin 11). Poser 0 puis recouper Jikan quand MAL répondra (HS pendant l'audit)."
+    },
+    {
+      "slug": "anton-the-great",
+      "champ": "attributes.descFr",
+      "de": "« Race : moitié Saïyen, moitié humain… Gohan est un intellectuel timide… » (bio de Son Gohan, 559c)",
+      "vers": null,
+      "motif": "Bio d'un autre personnage. Purger puis régénérer depuis ses 2 sections SAINES ([3] Biographie, [5] Dragon Ball — elles, parlent bien du catcheur Anton, adversaire de Krillin). Même sort pour attributes.descRaw et descLang (même pollution). Ses voiceActors (Daisuke Gouri/Chris Rager) sont les SIENS — ne pas y toucher."
+    },
+    {
+      "slug": "son-gohan",
+      "champ": "attributes.favorites",
+      "de": 32,
+      "vers": 3786,
+      "motif": "La fiche du garçon Gohan (ki 45M, forms SSJ2/Ultime/Beast) porte le record MAL de GRAND-PÈRE Gohan : descRaw « Grandpa Son Gohan became the adoptive father… », voiceActors Osamu Saka/Jouji Yanami (les VA du grand-père), favorites 32. MAL nomme les deux « Son Gohan », d'où le mauvais appariement. 3786 est la valeur du record du vrai Gohan, retrouvée sur anton-the-great. À recouper Jikan (HS pendant l'audit)."
+    },
+    {
+      "slug": "son-gohan",
+      "champ": "attributes.descFr",
+      "de": "« Grand-père Son Gohan devint le père adoptif et le grand-père de Son Goku… » (bio du grand-père)",
+      "vers": null,
+      "motif": "Re-syncer descFr/descRaw/descLang depuis le record MAL du Gohan GARÇON (celui dont la bio est aujourd'hui sur anton-the-great), ou régénérer. Les 2 sections ([1] Apparence, [2] Personnalité) parlent, elles, du bon Gohan — ne pas y toucher."
+    },
+    {
+      "slug": "son-gohan",
+      "champ": "attributes.voiceActors",
+      "de": { "jp": ["Osamu Saka", "Jouji Yanami"], "en": ["Christopher Sabat", "Terry Klassen"] },
+      "vers": "re-sync record MAL du Gohan garçon (jp : Masako Nozawa)",
+      "motif": "VA du grand-père sur la fiche du garçon — même mauvais appariement de record que favorites/descFr."
+    }
+  ],
+  "incertitudes": [
+    "Jikan HS (504 « MyAnimeList may be down ») pendant tout l'audit : aucune valeur favorites n'a pu être recoupée à la source. Les « vers » (0 pour anton, 3786 pour son-gohan, 1762 pour freezer, 1185 pour kame-sennin) sont déduits de la base — à confirmer par un appel Jikan avant application.",
+    "Trio Kaioshin : « 15th-generation-s-higashi-no-kaioshin » (favorites 70) est probablement le JEUNE Rou Kaioshin (VA jp Tetsuya Iwanaga = le flashback), donc un doublon potentiel de rou-kaioshin — MAIS sa descFr/descRaw est celle de SHIN (quasi identique à higashi-no-kaioshin) et ses 2 arêtes entrantes (rival←roh, allie←sugoro) visent plutôt Shin. Trois fiches, deux personnages, une bio dupliquée : PAS de fusion planifiée sans trancher — MAL les garde d'ailleurs comme records séparés.",
+    "Autres favorites suspects, invérifiables Jikan HS : mr-satan 3498 (au-dessus de Freezer réunifié) et jinzouningen-19-gou 1259 (au-dessus du 18-gou 930 et du 17-gou 537, très improbable pour l'Android 19). Leurs bios décrivent le BON personnage (pas le gotcha anton) — aucune correction planifiée, à recouper Jikan.",
+    "Le backlog §4.8 dit « somme des favorites » ; ce plan retient à la place la valeur Jikan la plus riche (1762 pour freezer, 1185 pour kame-sennin) car les deux valeurs de chaque paire proviennent du MÊME record MAL syncé à deux dates (le seed dragonball-api ne fournit pas de favorites) — sommer double-compterait les mêmes votes. À valider par Dan avant application.",
+    "Les sections « jumelles » supprimées avec les fiches mortes ont été comparées sur titre + début de texte + longueur (mêmes faits, autre génération) — pas mot à mot sur l'intégralité. Risque résiduel faible d'un détail unique perdu ; conserver l'instantané du corpus pris avant la vague comme filet."
+  ]
+}

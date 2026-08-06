@@ -20,7 +20,10 @@ export const expertFor = (universe) =>
 export const AXES = {
   'Naruto': {
     village: ['Konohagakure', 'Sunagakure', 'Kirigakure', 'Kumogakure', 'Iwagakure', 'Amegakure', 'Otogakure'],
-    clan: ['Uchiha', 'Uzumaki', 'Senju', 'Hyūga', 'Nara', 'Akimichi', 'Yamanaka', 'Inuzuka', 'Ōtsutsuki'],
+    clan: ['Uchiha', 'Uzumaki', 'Senju', 'Hyūga', 'Nara', 'Akimichi', 'Yamanaka', 'Inuzuka', 'Ōtsutsuki',
+      // Valeurs canon reportées par la normalisation des axes du 06/08 (data/audits/normalisation-axes.json).
+      // ⚠ « Fūma » (générique) et « Fūma (Land of Sound) » sont DEUX clans canon distincts — ne jamais fusionner.
+      'Fūma', 'Fūma (Land of Sound)', 'Karatachi Family', 'Kazekage', 'Wagarashi Family', 'Wasabi Family'],
     rank: ['Academy Student', 'Genin', 'Chūnin', 'Tokubetsu Jōnin', 'Jōnin', 'Anbu', 'Kage'],
     // L20 (demande Dan) : dès que ~8 fiches porteront la même organisation, l'expert de
     // niche correspondant (« Expert Akatsuki ») naîtra tout seul au prochain scan.
@@ -29,7 +32,11 @@ export const AXES = {
   'One Piece': {
     faction: ['Pirate', 'Marine', 'Gouvernement Mondial', 'Révolutionnaire', 'Civil'],
     crew: ['L’équipage du Chapeau de Paille', 'L’équipage de Big Mom', 'L’équipage aux Cent Bêtes',
-      'L’équipage de Barbe Blanche', 'L’équipage de Don Quichotte', 'L’équipage du Heart', 'L’équipage des Pirates Roger'],
+      'L’équipage de Barbe Blanche', 'L’équipage de Don Quichotte', 'L’équipage du Heart', 'L’équipage des Pirates Roger',
+      // Valeurs canon reportées par la normalisation des axes du 06/08 (data/audits/normalisation-axes.json).
+      'L’équipage de Barbe Noire', 'L’équipage du Roux', 'L’équipage du Lion d’Or', 'L’équipage de Krieg',
+      'L’équipage de Thriller Bark', 'L’équipage des Pirates Kuja', 'L’équipage des Maquereaux',
+      'Faux équipage du Chapeau de Paille'],
     fruit_type: ['Paramecia', 'Logia', 'Zoan', 'Zoan Antique', 'Zoan Mythique', 'Smile'],
   },
   'Dragon Ball': {
