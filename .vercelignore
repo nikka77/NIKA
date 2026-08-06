@@ -4,3 +4,5 @@ node_modules
 .next
 .ops-cache
 graphify-out
+# sans slash final : c'est un SYMLINK vers la copie iCloud (pendu chez Vercel → ENOENT au build)
+.ops-venv
