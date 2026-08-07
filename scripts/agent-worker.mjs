@@ -991,9 +991,15 @@ const premierDispo = (liste) => liste.find(couloirDispo) ?? null;
 const modelOf = (type, p) => {
   if (type === 'review_local') {
     // Mode campagne : on réattribue par emplacement, sauf l'arbitre.
+    // ...MAIS SEULEMENT SI SON GUICHET EST OUVERT (07/08/2026). Ce raccourci retournait le modèle
+    // forcé sans rien vérifier, court-circuitant la substitution écrite six lignes plus bas. Vécu
+    // le soir même : le jury de campagne était épinglé sur groq/llama-3.3-70b, qui a atteint son
+    // plafond QUOTIDIEN — chaque relecture repartait alors en file, revenait, replafonnait, et le
+    // drainage est passé de treize à une par intervalle. Un jury forcé reste une préférence, pas
+    // une fatalité : guichet fermé, on laisse le vivier faire son travail.
     if (FORCE_JURY.length && p?.slot !== 'arbitre') {
       const i = p?.slot === 'auto2' ? 1 : 0;
-      if (FORCE_JURY[i]) return FORCE_JURY[i];
+      if (FORCE_JURY[i] && couloirDispo(FORCE_JURY[i])) return FORCE_JURY[i];
     }
     // Le juge est porté par la tâche (composition du jury décidée à l'enrôlement). S'il a
     // fermé son guichet, on lui substitue un confrère libre plutôt que de reporter 24 h.
