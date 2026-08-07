@@ -155,7 +155,10 @@ Synthèse des 8 diagnostics d'univers + tri de la pile ops. **Tout ce qui suit a
 relu dans le code le 07/08** : les chiffres ci-dessous priment sur les sections 1-5 ci-dessus,
 dont les corrections sont reportées en fin de section.
 
-## A. État mesuré le 07/08
+## A. État mesuré le 07/08 (MATIN — avant la vague de curation)
+
+> ⚠️ **Cette photo est celle du MATIN. L'état de clôture, recompté indépendamment le soir,
+> est en section E.** Les colonnes « sans image » et « sections » ci-dessous ont bougé.
 
 Base site : **7 687 entrées · 16 439 arêtes · 19 964 sections · 4 815 fiches dossiérées**.
 
@@ -275,3 +278,206 @@ re-mesurée ou re-proposée.** Un repli honnête et documenté est une réponse.
 - **Entrée 27** : le diagnostic DB fournit la preuve manquante — `15th-generation-s-higashi-no-kaioshin` est un doublon de `higashi-no-kaioshin` **par son texte** et de `rou-kaioshin` **par son nom**. Ajouter `paikuhan`/`pikkon` à cette entrée.
 - **§5, « Campagne d'images des pouvoirs → dépend du solde Higgsfield »** → **INVALIDÉ pour Naruto** : `pageimages` rend ~1 618 images gratuitement (vérifié 4/4 le 07/08). À re-mesurer pour OP / DB / Bleach avant de maintenir la ligne.
 - **NOUVEAU, au-dessus de tout le reste** : **l'usine elle-même est cassée** — boucle de ravitaillement sans idempotence (97 productions pour une entité, 4 076 écartées en 30 h malgré le commit « écartées à ZÉRO »), 402 mal classé en `failed` (3 857 lignes mortes), étage d'arbitrage qui n'a **jamais** rendu un verdict (315 lots, 0 done), double verdict impossible faute de solde. **Aucune relance de curation n'a de sens avant les rangs 2 et 3.**
+
+---
+
+# E. Clôture de la curation du 07/08 — vérification finale
+
+**Tous les chiffres de cette section sont les MIENS**, recomptés en base ce soir par des scans
+paginés complets, sans reprendre un seul nombre des rapports d'exécutants. Là où mon compte
+diffère du leur, c'est le mien qui fait foi et l'écart est dit. Scripts de mesure jetables, aucune
+écriture : la base n'a pas été touchée par cette vérification.
+
+## E.1 — État du corpus, recompté ce soir
+
+| Univers | Fiches | descFr vide | sans image | dont **placeholder** | dossiers | sections | **fiches vides** |
+|---|---|---|---|---|---|---|---|
+| Naruto | 3 318 | 275 | **313** | 0 | 1 416 | 4 301 | 250 |
+| One Piece | 2 270 | 243 | **402** | **22** | 1 811 | 7 450 | 115 |
+| Dragon Ball | 1 137 | 84 | **40** | 0 | 804 | 3 199 | 33 |
+| Bleach | 386 | 27 | **64** | 0 | 275 | 1 684 | 16 |
+| JoJo | 233 | 16 | 6 | 0 | 196 | 1 041 | 3 |
+| Hunter x Hunter | 215 | 3 | 0 | 0 | 194 | 998 | 0 |
+| Death Note | 84 | 0 | 1 | 0 | 77 | 292 | 0 |
+| Initial D | 44 | 2 | 2 | 0 | 42 | 161 | 2 |
+| **Total** | **7 687** | **650** | **828** | **22** | **4 815** | **19 126** | **419** |
+
+Comparé à la photo du matin (§A) : **entrées 7 687 → 7 687** (aucune création, aucune suppression),
+**arêtes 16 439 → 16 439**, **sections 19 964 → 19 126** (−838), **dossiers 4 815 → 4 815**
+(le dédoublonnage n'a vidé aucune fiche), **sans image 3 336 → 828** (−2 508).
+**0 arête inter-univers** (plafond n°11 tenu). `npm run build` **310/310 vert**,
+`ops-sonde-schema` **verte**.
+
+**Nuance sur les images, qui compte** : la couverture réelle n'est pas 6 859/7 687 mais
+**6 837/7 687**, parce que **22 fiches portent le carton « NoPicAvailable » du wiki**, pas une
+image. Vérifié au rendu sur `/learn/akasha/yamaoroshi`. Et **33 URL sont partagées par 67 fiches
+de TYPES DIFFÉRENTS** — une image d'île servie à un équipage et à un navire est une erreur
+d'entité, pas un doublon maison.
+
+## E.2 — Les 8 pages lues en lecteur : ce qui est vraiment mieux
+
+Huit fiches touchées par des chantiers différents, lues au rendu (texte visible, payload RSC exclu).
+
+**Réparé, constaté à l'écran :**
+- **`son-goku`** — la symétrie allié/ennemi/rival est **effective** : « Liens · 24 » avec Allié ×5,
+  Ennemi ×3, Rival ×5, Mentor ×4, Élève ×7. La fiche n°1 du site n'est plus muette sur ses liens.
+- **La fuite du bloc « Attributs » est FERMÉE** : sur les 8 pages, **0 occurrence visible** de
+  `descFrSource`, `[object Object]`, `descFrRetiree`, `descFrImpossible`, `resumeCorrige`,
+  `descFrPurgee`, `descRaw`. (Ces clés restent en base — `descFrSource` 3 861, `descRaw` 3 289 —
+  mais ne franchissent plus la page : c'est une liste de publication, pas une purge.)
+- **Markdown brut : 0** astérisque et 0 balise HTML égarée sur **19 126 sections** ;
+  `naruto-uzumaki` ne rend plus « *« dattebayo »* ».
+- **`kusagakure`** est bien devenu « Lieu · Village » (retypage effectif).
+- **`thriller-bark-lieu`** est juste : bonne image, 7 sections propres, description exacte.
+
+**Pas mieux, ou cassé autrement :**
+- **`yamaoroshi`** sert le carton « pas d'image disponible » comme visuel. Une case vide se voit ;
+  celle-ci se croit, et sort la fiche de la liste des muettes.
+- **`ace`** est plus grave que signalé. Ce n'est pas seulement l'image : la fiche est un
+  `artifact` dont le descFr dit « Ace est un sabre de taille normale », et **ses 8 sections
+  décrivent Portgas D. Ace le personnage** (« Ace était un jeune homme grand et musclé aux cheveux
+  noirs bouclés »), avec le portrait du personnage en visuel. Le chantier sections a nourri la
+  mauvaise entité, exactement comme le chantier images.
+- **`gran-tesero`** aligne **trois contradictions sur un écran** : fil d'ariane « Lieu », résumé
+  « Équipage de pirates. », description « Le Gran Tesoro est un navire massif ». Et son jumeau
+  `gran-tesoro` [artifact/Navire] existe toujours.
+- **`aaroniero-arruruerie`** imprime encore deux fois le même récit : §4 « Intrigue » 5 857 car. et
+  §6 « Arc de Hueco Mundo » 5 983 car.
+
+## E.3 — Défauts que personne n'avait relevés (mesurés ici)
+
+1. **LE RETYPAGE EST À MOITIÉ FAIT — 36 fiches sur 36.** Les 36 fiches re-typées `status → place`
+   ont bien changé de `type`, de `category` et perdu leur `scope`, mais **leur `summary` n'a pas
+   été touché** : les 29 Naruto affichent encore « Organisation de l'univers Naruto — réunit X, Y
+   et n autres. » et les 7 One Piece « Équipage de pirates. » `/kusagakure` annonce « Lieu ·
+   Village » puis, deux lignes plus bas, « Organisation de l'univers Naruto — réunit Karin, Mui,
+   Benga et 15 autres. » Le compte croisé est exact : 36 re-typées, 36 résumés contradictoires.
+   Correctif : un UPDATE du `summary` sur les mêmes 36 ids, avec la trace déjà écrite.
+2. **662 des « index manquants » ont été creusés par NOTRE dédoublonnage.** Le corpus compte
+   **13 922 index manquants sur 3 959 dossiers (82,2 %)** — dont **662 correspondent exactement
+   aux sections retirées ce matin**, c'est-à-dire du contenu supprimé exprès. Le chantier « trous
+   d'index » (rang 4, n°1) ne doit donc **jamais** se contenter de compter les trous : un trou
+   n'est pas une preuve de manque. Naruto : **993 dossiers / 2 338 trous** (le plan disait
+   969/2 150 — l'écart est le dédoublonnage lui-même).
+3. **48 grappes de doublons par nom normalisé**, dont un motif systématique en One Piece :
+   `X-lieu`[place] + `X`[status] pour Skypiea, Ohara, Water Seven, Loguetown, Punk Hazard,
+   Dressrosa, Enies Lobby, Reverse Mountain, East Blue, Green Bit, Alabasta, Thriller Bark (trois
+   exemplaires), Île des Hommes-Poissons, Royaume de Goa / Lvneel / Germa / Prodence, Village de
+   Shimotsuki. Et en Bleach le motif `atk-bl-X`[power] + `X`[artifact] (Zabimaru, Hyōrinmaru,
+   Katen Kyōkotsu, Benihime, Sode no Shirayuki). C'est l'entrée 15 (b), mesurée : **48, pas 30.**
+4. **La convention `mentor`/`eleve` Dragon Ball est maintenant VISIBLE** — la symétrisation l'a
+   sortie de l'ombre. `/son-goku` affiche aujourd'hui « Élève · North Kaio », « Élève · Karin »
+   (ce sont ses MAÎTRES) et « Mentor · Bubbles » (le singe). Le rang 5 n°5 n'est plus une dette
+   théorique : c'est un contresens sur la fiche n°1 du site, et **c'est notre correctif qui l'a
+   rendu lisible**.
+5. **Les titres anglais restants sont 129, pas 293.** En ne retenant que les libellés **sans aucun
+   nom propre** — donc réellement traduisibles : **129 occurrences sur 16 libellés** (Techniques
+   71, Power 26, Biography 8, Manga 5, Anime 4, Allies 3, Friends 2, Rivals 2, puis Locations,
+   Legacy, Ships, Games, Attacks, Aftermath, « Powers & Abilities », « Crew and Allies » à 1). Le
+   reste des occurrences porte des noms d'arcs et d'œuvres : ce sont des noms propres, ils restent.
+6. **247 fiches sont entièrement muettes** : ni descFr, ni section, ni image. C'est le sous-ensemble
+   dur des 419 vides, et le seul chiffre qui décrive ce que voit vraiment un lecteur égaré.
+7. **Le chiffre « 675 813 caractères retirés » est faux** : la trace en contient **675 450**
+   (recompté sur `data/audits/sections-curation-trace.json`, 838 retraits). La donnée est saine,
+   c'est la ligne de rapport qui ne l'est pas — ne pas la reprendre ailleurs.
+8. **Contrôle indépendant du défaut « source vide » : confirmé.** J'ai rejoué `fetchFandomProse`
+   (la vraie garde du projet) sur 5 entités à nom français : **4 sur 5 rendent 0 caractère sous
+   leur nom français et de 1 324 à 5 300 caractères sous leur nom anglais** — Ponéglyphes → 0 /
+   « Poneglyph » 5 300 ; Île Confiture → 0 / « Jam Island » 1 324 ; Île Fromage → 0 /
+   « Cheese Island » 1 572 ; Cimetière des Monts → 0 / « Mountains' Graveyard » 3 057. (La 5ᵉ,
+   « Épée de l'Espoir », rend 5 276 car. sous son nom français : le défaut n'est pas universel,
+   il est massif.) **La famille « source vide » a donc été close « refus TENU » à tort**, et son
+   correctif doit précéder toute relance.
+
+## E.4 — Ce qui reste vraiment à faire, classé
+
+### R1 — Réparations de ce qu'on vient de faire (aucun appel LLM, aucune matière neuve)
+
+| # | Geste | Volume | Preuve |
+|---|---|---|---|
+| R1.1 | **Remettre à NULL les 22 `image_url` valant `NoPicAvailable.png`** et filtrer ce fichier à la pose | 22 fiches | rendu `/yamaoroshi` |
+| R1.2 | **Réécrire le `summary` des 36 fiches re-typées** (« Organisation… » / « Équipage de pirates. » sur des `place`) | 36 fiches | E.3 n°1 |
+| R1.3 | **Rattraper la garde « source vide »** : replier sur le nom ANGLAIS quand le nom français ne rend rien, puis **ré-ouvrir les 657 tentatives closes à tort** (83 entités, dont 27 à nom français) | 657 tentatives | E.3 n°8 |
+| R1.4 | **Rendre le surnom « Maria-chan »** à `black-maria` (texte intégral dans la trace, slug `black-maria`, idx 5) et **ajouter au détecteur la classe « composé à trait d'union dont les morceaux existent »** | 1 fiche + 1 garde | trace de dédoublonnage |
+| R1.5 | **Trancher les 11 paires de sections encore jumelles à ≥ 0,80** — sous le seuil de vingt, la règle de la maison dit de LIRE, pas de seuiller (`aaroniero-arruruerie`, `ally`, `pagaya`, `ubau-naruto`, `kiho`, `sorrel`, `fox-masked-anbu-member`, `nelson-royal`…) ; 31 paires à ≥ 0,70 | 31 paires | mesure Jaccard ce soir |
+| R1.6 | **Corriger le découpage de l'export en amont** — sans ça l'usine refabrique des paires parent/enfant à chaque fiche neuve. Le dédoublonnage est une purge, pas une réparation. | 1 script | entrée n°8 |
+
+### R2 — Débloquer l'usine (prérequis absolu à toute relance)
+
+| # | Geste | État mesuré ce soir |
+|---|---|---|
+| R2.1 | **Trancher le juge n°1** — bascule `NIKA_JUGE1` (coût : une variable d'env) ou recharge DeepInfra (coût : de l'argent). **Décision de Dan.** | **584 productions en `done` attendent une relecture, `auto_verdict` NUL sur 584/584 et `arbitre_verdict` NUL sur 584/584 — ZÉRO a les deux verdicts que le double verdict exige** ; 538 portent le 402 dans leur motif |
+| R2.2 | **Rejouer les 2 257 échecs rejouables** des 2 766 en attente : 1 711 × 402 (guichet fermé), 306 × arbitrage id-en-chaîne (**corrigé ce matin**), 240 × HTTP 429 mistral (limite de débit). Zéro matière neuve, zéro entité nouvelle. | familles recomptées ce soir |
+| R2.3 | **Brancher le filtre de sortie des familles INTERDITES** (graphie / romanisation / accent) — 3ᵉ récidive, décidé le 04/08, toujours pas branché | inchangé |
+| R2.4 | **Router `fiche_section` vers un modèle qui respecte la consigne** + plafonner la source à ~8 000 car. | 225 échecs « plafond de jetons » restants |
+
+### R3 — Gisements réels (après R1 et R2 seulement)
+
+1. **One Piece — 88 Fruits du Démon sans dossier** (cible **197, pas 211**, plafond n°7). Mesuré ce soir : fruits **108/186 dossiérés**, pouvoirs OP **219/309 (70,9 %)**, attaques **96/98 (98,0 %)**.
+2. **Naruto — 48 fiches vides à degré ≥ 5** (les natures de chakra, toutes à degré 40, toutes muettes). Liste, pas campagne.
+3. **Naruto — trous d'index**, mais **en lisant le wiki, pas en comptant les trous** (E.3 n°2).
+4. **Dragon Ball — 38 transformations sans descFr.**
+5. **Justesse des fiches Attaque/Artefact OP** — `ace` prouve que le défaut déborde des 21 attaques signalées : le contrôle doit comparer le nom de la fiche au contenu de ses sections, tous types confondus.
+6. **Death Note** — entrée 15, volume minuscule.
+
+### R4 — Décisions de Dan encore ouvertes
+
+Inchangées : juge n°1 (R2.1), noms anglais Naruto (**801 fiches mesurées, dont 707 `power`**),
+onglet Métiers, les 60 `ki` Dragon Ball, la convention `mentor`/`eleve` DB (**devenue visible**,
+E.3 n°4), les axes sous le seuil.
+
+## E.5 — Plafonds : DÉFINITIFS, fusionnés
+
+Les **13 plafonds de la section C sont confirmés et deviennent définitifs.** Aucun n'est du travail
+en attente ; aucun ne doit être rouvert, re-mesuré ni re-proposé. Trois précisions de clôture :
+
+- **Plafond n°13 (images) est LEVÉ, pas maintenu** : la campagne `pageimages` a rendu **2 508
+  images gratuitement** et le trou est passé de 3 336 à 828. Ce qui reste est un vrai plafond, plus
+  petit : 828 fiches, dont 247 entièrement muettes. **La décision de Dan tient : une forme sans
+  image reste CONSERVÉE, rendue en tuile stylisée.**
+- **Plafond n°1 (radar et stats) est intact et le reste** : zéro nouvelle stat estimée a été posée
+  aujourd'hui ; Luffy et Zoro gardent les leurs marquées « estimé » ; les stats post-databook
+  restent omises ; le radar reste réservé aux databooks canon Naruto.
+- **NOUVEAU plafond n°14 — « un trou d'index n'est pas une preuve de manque. »** 662 des 13 922
+  index manquants sont des sections que nous avons retirées exprès ce matin, et l'export saute
+  légitimement les galeries et les listes de références. Le nombre de trous ne mesure rien à lui
+  seul : seule la lecture de la page wiki dit s'il manque quelque chose.
+
+## E.6 — Timer `nika-remplisseurs` : NE PAS RALLUMER
+
+**Non.** Ce n'est pas une prudence de principe, c'est ce que disent les compteurs.
+
+1. **Le jury est toujours mort.** 584 productions attendent une relecture ; `auto_verdict` est NUL
+   sur 584/584 et `arbitre_verdict` NUL sur 584/584. **Aucune n'a les deux verdicts que le double
+   verdict exige.** Rallumer le ravitaillement, c'est fabriquer des productions que personne ne
+   peut juger : la pile grossit, rien ne se publie.
+2. **Le dimensionnement du remplisseur est aveugle dans cet état.** `ops-remplir-auto.mjs`
+   calibre son lot sur le budget quotidien des juges, et un juge facturé au jeton (DeepInfra) y
+   compte pour `Infinity`. Avec un JUGE1 en 402, le lot est dimensionné sur un budget imaginaire —
+   exactement le défaut soldé le 02/08 sur les plafonds recopiés à la main.
+3. **Une garde fautive est encore en production.** Tant que le repli sur le nom anglais n'est pas
+   posé (R1.3), le ravitaillement re-fabriquera les mêmes faux refus « source vide » : mon contrôle
+   donne 4 échecs sur 5 entités à nom français, avec de la matière disponible à chaque fois.
+4. **Il y a mieux à faire d'abord, et c'est gratuit.** 2 257 des 2 766 échecs en attente sont
+   rejouables sans toucher à une entité neuve. C'est du travail déjà payé qui attend.
+
+La file n'est PAS l'argument : elle est quasi vide (**5 messages**, 115 967 servis depuis le
+début). Mais une file vide devant un juge mort n'appelle pas du ravitaillement.
+
+**Ordre de rallumage, quand ce sera le moment :** R2.1 (Dan tranche le juge) → R1.3 (garde du nom
+anglais) → R2.2 (rejeu des 2 257) → vérifier que `auto_verdict` et `auto2_verdict` se posent tous
+les deux sur un lot témoin → **alors** seulement le timer.
+
+**Commande exacte, pour Dan et seulement quand il le décidera** (unité systemd sur le VPS,
+`infra/systemd/nika-remplisseurs.timer`, cadence 20 min, `Persistent=true`) :
+
+```bash
+# sur le VPS
+sudo systemctl start nika-remplisseurs.timer          # si l'unité est encore activée
+sudo systemctl enable --now nika-remplisseurs.timer   # si elle a été désactivée
+systemctl status nika-remplisseurs.timer --no-pager   # prouver l'exécution (leçon du 01/08)
+```
+
+> **Je n'ai PAS vérifié l'état actuel du timer** : c'est une unité systemd sur le VPS et je n'ai
+> aucun moyen de la lire depuis ce poste. « Le timer est arrêté » reste une affirmation reçue,
+> pas une mesure. À contrôler par `systemctl list-timers nika-remplisseurs` avant tout geste.

@@ -1,0 +1,1258 @@
+{
+ "chantier": "retypage-et-axes",
+ "date": "2026-08-07T09:07:20.158Z",
+ "trace": "data/audits/retypage-trace.json",
+ "regle_de_preuve": "catégorie de la page canon Fandom (prop=categories, 07/08) ; à défaut nom en -gakure / « … Village » ; côté OP, exigence supplémentaire : AUCUNE fiche place jumelle",
+ "compte_croise": {
+  "candidats": 36,
+  "traites": 36,
+  "sautes": 0,
+  "somme_ok": true,
+  "verifies_type_place": 36,
+  "verifies_category": 36,
+  "verifies_scope_retire": 36,
+  "axes_organization_candidats": 10,
+  "axes_organization_traites": 10,
+  "axes_organization_restants": 0
+ },
+ "comptes_par_type": {
+  "avant": {
+   "Naruto": {
+    "character": 1337,
+    "place": 11,
+    "artifact": 190,
+    "profession": 94,
+    "status": 216,
+    "power": 1442,
+    "skill": 28
+   },
+   "One Piece": {
+    "character": 1449,
+    "place": 186,
+    "artifact": 155,
+    "profession": 1,
+    "status": 159,
+    "power": 309,
+    "skill": 11
+   }
+  },
+  "apres": {
+   "Naruto": {
+    "character": 1337,
+    "place": 40,
+    "artifact": 190,
+    "profession": 94,
+    "status": 187,
+    "power": 1442,
+    "skill": 28
+   },
+   "One Piece": {
+    "character": 1449,
+    "place": 193,
+    "artifact": 155,
+    "profession": 1,
+    "status": 152,
+    "power": 309,
+    "skill": 11
+   }
+  }
+ },
+ "retypages": [
+  {
+   "slug": "hoshigakure",
+   "universe": "Naruto",
+   "name": "Hoshigakure",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "nom en -gakure + wiki:Villages ; infobox Country=Land of Bears (VF non attestée, en conflit avec naruto-world.ts « Pays des Étoiles » → rien posé)"
+  },
+  {
+   "slug": "ishigakure",
+   "universe": "Naruto",
+   "name": "Ishigakure",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": "Pays de la Pierre",
+   "preuve": "nom en -gakure + wiki:Villages ; pays attesté NW_LANDMARKS"
+  },
+  {
+   "slug": "kusagakure",
+   "universe": "Naruto",
+   "name": "Kusagakure",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": "Pays de l'Herbe",
+   "preuve": "nom en -gakure + wiki:Villages ; pays attesté NW_LANDMARKS + region existante (tenchi-bridge)"
+  },
+  {
+   "slug": "takigakure",
+   "universe": "Naruto",
+   "name": "Takigakure",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": "Pays de la Cascade",
+   "preuve": "nom en -gakure + wiki:Villages ; pays attesté NW_LANDMARKS"
+  },
+  {
+   "slug": "uzushiogakure",
+   "universe": "Naruto",
+   "name": "Uzushiogakure",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": "Pays des Tourbillons",
+   "preuve": "nom en -gakure + wiki:Villages ; infobox Country=Land of Whirlpools = NW_LANDMARKS"
+  },
+  {
+   "slug": "yugakure",
+   "universe": "Naruto",
+   "name": "Yugakure",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": "Pays de l'Eau Chaude",
+   "preuve": "nom en -gakure + wiki:Villages ; infobox Country=Land of Hot Water = NW_LANDMARKS"
+  },
+  {
+   "slug": "yukigakure",
+   "universe": "Naruto",
+   "name": "Yukigakure",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "nom en -gakure + wiki:Villages ; infobox Country=Land of Snow (VF non attestée)"
+  },
+  {
+   "slug": "yumegakure",
+   "universe": "Naruto",
+   "name": "Yumegakure",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "nom en -gakure + wiki:Villages ; pas de Country dans l’infobox"
+  },
+  {
+   "slug": "ceramic-village",
+   "universe": "Naruto",
+   "name": "Ceramic Village",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": "Pays du Vent",
+   "preuve": "wiki:Villages ; infobox Country=Land of Wind = NW_COUNTRIES"
+  },
+  {
+   "slug": "daidai-village",
+   "universe": "Naruto",
+   "name": "Daidai Village",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Villages (stub, pas d’infobox)"
+  },
+  {
+   "slug": "howling-wolf-village",
+   "universe": "Naruto",
+   "name": "Howling Wolf Village",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Villages ; infobox Country=Land of Medicines (VF non attestée)"
+  },
+  {
+   "slug": "nadeshiko-village",
+   "universe": "Naruto",
+   "name": "Nadeshiko Village",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Villages ; pas de Country dans l’infobox"
+  },
+  {
+   "slug": "takumi-village",
+   "universe": "Naruto",
+   "name": "Takumi Village",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": "Pays de la Rivière",
+   "preuve": "wiki:Villages ; infobox Country=Land of Rivers = NW_LANDMARKS (tanigakure)"
+  },
+  {
+   "slug": "tonika-village",
+   "universe": "Naruto",
+   "name": "Tonika Village",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": "Pays du Feu",
+   "preuve": "wiki:Villages ; infobox Country=Land of Fire = NW_COUNTRIES"
+  },
+  {
+   "slug": "tree-felling-village",
+   "universe": "Naruto",
+   "name": "Tree Felling Village",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Locations+Villages"
+  },
+  {
+   "slug": "tsuchigumo-village",
+   "universe": "Naruto",
+   "name": "Tsuchigumo Village",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Villages ; pas de Country dans l’infobox"
+  },
+  {
+   "slug": "shuku-village",
+   "universe": "Naruto",
+   "name": "Shuku Village",
+   "type": "status → place",
+   "category": "Organisation → Village",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "nom en « … Village » SEUL — page absente du wiki (recherche « Shuku » → aucun homologue) ; fiche vide, 0 arête"
+  },
+  {
+   "slug": "benisu-island",
+   "universe": "Naruto",
+   "name": "Benisu Island",
+   "type": "status → place",
+   "category": "Organisation → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Countries"
+  },
+  {
+   "slug": "fire-temple",
+   "universe": "Naruto",
+   "name": "Fire Temple",
+   "type": "status → place",
+   "category": "Organisation → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Locations"
+  },
+  {
+   "slug": "green-banks",
+   "universe": "Naruto",
+   "name": "Green Banks",
+   "type": "status → place",
+   "category": "Organisation → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Locations"
+  },
+  {
+   "slug": "kazahana-castle",
+   "universe": "Naruto",
+   "name": "Kazahana Castle",
+   "type": "status → place",
+   "category": "Organisation → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Locations"
+  },
+  {
+   "slug": "konoha-orphanage",
+   "universe": "Naruto",
+   "name": "Konoha Orphanage",
+   "type": "status → place",
+   "category": "Organisation → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Locations"
+  },
+  {
+   "slug": "moon",
+   "universe": "Naruto",
+   "name": "Moon",
+   "type": "status → place",
+   "category": "Organisation → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Locations"
+  },
+  {
+   "slug": "mount-shumisen",
+   "universe": "Naruto",
+   "name": "Mount Shumisen",
+   "type": "status → place",
+   "category": "Organisation → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Locations"
+  },
+  {
+   "slug": "roran",
+   "universe": "Naruto",
+   "name": "Rōran",
+   "type": "status → place",
+   "category": "Organisation → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Countries"
+  },
+  {
+   "slug": "temujin-s-continent",
+   "universe": "Naruto",
+   "name": "Temujin's Continent",
+   "type": "status → place",
+   "category": "Organisation → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki:Locations"
+  },
+  {
+   "slug": "caverne-ryuchi",
+   "universe": "Naruto",
+   "name": "Caverne Ryūchi",
+   "type": "status → place",
+   "category": "Organisation → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "titre canon « Ryūchi Cave » → wiki:Locations+Villages"
+  },
+  {
+   "slug": "foret-shikkotsu",
+   "universe": "Naruto",
+   "name": "Forêt Shikkotsu",
+   "type": "status → place",
+   "category": "Organisation → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "titre canon « Shikkotsu Forest » → wiki:Locations+Villages"
+  },
+  {
+   "slug": "mont-myoboku",
+   "universe": "Naruto",
+   "name": "Mont Myōboku",
+   "type": "status → place",
+   "category": "Organisation → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Organisation"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "titre canon « Mount Myōboku » → wiki:Villages (terre des crapauds, pas un village ninja → Lieu)"
+  },
+  {
+   "slug": "elegia",
+   "universe": "One Piece",
+   "name": "Elegia",
+   "type": "status → place",
+   "category": "Équipage → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Équipage pirate"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "wiki « Elegia » : Archipelagos ; aucun jumeau `place`"
+  },
+  {
+   "slug": "gran-tesero",
+   "universe": "One Piece",
+   "name": "Gran Tesero",
+   "type": "status → place",
+   "category": "Équipage → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Équipage pirate"
+    }
+   ],
+   "region_posee": "New World",
+   "preuve": "titre canon « Gran Tesoro » ; wiki:Non-Canon New World Locations ; aucun jumeau `place`"
+  },
+  {
+   "slug": "ile-d-asuka",
+   "universe": "One Piece",
+   "name": "Île d'Asuka",
+   "type": "status → place",
+   "category": "Équipage → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Équipage pirate"
+    }
+   ],
+   "region_posee": "Paradise",
+   "preuve": "titre canon « Asuka Island » ; wiki:Non-Canon Paradise Islands ; aucun jumeau `place`"
+  },
+  {
+   "slug": "ile-de-mecha",
+   "universe": "One Piece",
+   "name": "Île de Mecha",
+   "type": "status → place",
+   "category": "Équipage → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Équipage pirate"
+    }
+   ],
+   "region_posee": "Paradise",
+   "preuve": "titre canon « Mecha Island » ; wiki:Non-Canon Paradise Islands ; aucun jumeau `place`"
+  },
+  {
+   "slug": "iile-de-la-couronne",
+   "universe": "One Piece",
+   "name": "IÎle de la couronne",
+   "type": "status → place",
+   "category": "Équipage → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Équipage pirate"
+    }
+   ],
+   "region_posee": "Paradise",
+   "preuve": "titre canon « O-Kan Island » ; wiki:Non-Canon Paradise Islands ; aucun jumeau `place`"
+  },
+  {
+   "slug": "la-lune",
+   "universe": "One Piece",
+   "name": "La lune",
+   "type": "status → place",
+   "category": "Équipage → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Équipage pirate"
+    }
+   ],
+   "region_posee": null,
+   "preuve": "titre canon « Moon » ; wiki:Locations ; aucun jumeau `place`"
+  },
+  {
+   "slug": "royaume-malefique-de-black-drum",
+   "universe": "One Piece",
+   "name": "Royaume maléfique de Black Drum",
+   "type": "status → place",
+   "category": "Équipage → Lieu",
+   "scope_retire": [
+    {
+     "cle": "scope",
+     "valeur": "Équipage pirate"
+    }
+   ],
+   "region_posee": "South Blue",
+   "preuve": "titre canon « Evil Black Drum Kingdom » ; wiki:World Government Kingdoms ; aucun jumeau `place`"
+  }
+ ],
+ "axes_corriges": [
+  {
+   "slug": "bansai",
+   "axe": "organization",
+   "valeur_retiree": "Fire Temple",
+   "motif": "« Fire Temple » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "arete_appartient_conservee": true
+  },
+  {
+   "slug": "harine",
+   "axe": "organization",
+   "valeur_retiree": "Konoha Orphanage",
+   "motif": "« Konoha Orphanage » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "arete_appartient_conservee": true
+  },
+  {
+   "slug": "ichigen",
+   "axe": "organization",
+   "valeur_retiree": "Fire Temple",
+   "motif": "« Fire Temple » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "arete_appartient_conservee": true
+  },
+  {
+   "slug": "kanpu",
+   "axe": "organization",
+   "valeur_retiree": "Konoha Orphanage",
+   "motif": "« Konoha Orphanage » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "arete_appartient_conservee": true
+  },
+  {
+   "slug": "keiri",
+   "axe": "organization",
+   "valeur_retiree": "Konoha Orphanage",
+   "motif": "« Konoha Orphanage » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "arete_appartient_conservee": true
+  },
+  {
+   "slug": "sentoki",
+   "axe": "organization",
+   "valeur_retiree": "Fire Temple",
+   "motif": "« Fire Temple » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "arete_appartient_conservee": true
+  },
+  {
+   "slug": "sora",
+   "axe": "organization",
+   "valeur_retiree": "Fire Temple",
+   "motif": "« Fire Temple » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "arete_appartient_conservee": true
+  },
+  {
+   "slug": "terubo",
+   "axe": "organization",
+   "valeur_retiree": "Konoha Orphanage",
+   "motif": "« Konoha Orphanage » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "arete_appartient_conservee": true
+  },
+  {
+   "slug": "urushi",
+   "axe": "organization",
+   "valeur_retiree": "Konoha Orphanage",
+   "motif": "« Konoha Orphanage » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "arete_appartient_conservee": true
+  },
+  {
+   "slug": "zenza",
+   "axe": "organization",
+   "valeur_retiree": "Fire Temple",
+   "motif": "« Fire Temple » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "arete_appartient_conservee": true
+  }
+ ],
+ "echecs": [],
+ "verification_fiche_a_fiche": [
+  {
+   "slug": "hoshigakure",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "ishigakure",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "Pays de la Pierre"
+  },
+  {
+   "slug": "kusagakure",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "Pays de l'Herbe"
+  },
+  {
+   "slug": "takigakure",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "Pays de la Cascade"
+  },
+  {
+   "slug": "uzushiogakure",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "Pays des Tourbillons"
+  },
+  {
+   "slug": "yugakure",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "Pays de l'Eau Chaude"
+  },
+  {
+   "slug": "yukigakure",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "yumegakure",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "ceramic-village",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "Pays du Vent"
+  },
+  {
+   "slug": "daidai-village",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "howling-wolf-village",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "nadeshiko-village",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "takumi-village",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "Pays de la Rivière"
+  },
+  {
+   "slug": "tonika-village",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "Pays du Feu"
+  },
+  {
+   "slug": "tree-felling-village",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "tsuchigumo-village",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "shuku-village",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "benisu-island",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "fire-temple",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "green-banks",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "kazahana-castle",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "konoha-orphanage",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "moon",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "mount-shumisen",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "roran",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "temujin-s-continent",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "caverne-ryuchi",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "foret-shikkotsu",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "mont-myoboku",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "elegia",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "gran-tesero",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "New World"
+  },
+  {
+   "slug": "ile-d-asuka",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "Paradise"
+  },
+  {
+   "slug": "ile-de-mecha",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "Paradise"
+  },
+  {
+   "slug": "iile-de-la-couronne",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "Paradise"
+  },
+  {
+   "slug": "la-lune",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": null
+  },
+  {
+   "slug": "royaume-malefique-de-black-drum",
+   "type_ok": true,
+   "category_ok": true,
+   "scope_absent_ok": true,
+   "region": "South Blue"
+  }
+ ],
+ "laisses_volontairement": {
+  "motif": "Re-typer une fiche status qui a DÉJÀ une fiche place jumelle fabrique deux lieux pour la même île : le compteur « Lieux » et le registre doubleraient, et la carte du monde OP (op-world-map.json → entitySlug) continuerait de pointer sur l’autre. Ces fiches relèvent de la FUSION (plan, entrée 15b « One Piece, 30 grappes »), pas du re-typage.",
+  "one_piece_jumeaux": [
+   {
+    "slug": "alabasta",
+    "name": "Alabasta",
+    "jumeau": [
+     "alabasta-lieu"
+    ]
+   },
+   {
+    "slug": "archipel-conomi",
+    "name": "Archipel Conomi",
+    "jumeau": [
+     "conomi-islands"
+    ]
+   },
+   {
+    "slug": "archipel-de-boing",
+    "name": "Archipel de Boing",
+    "jumeau": [
+     "boin-archipelago"
+    ]
+   },
+   {
+    "slug": "archipel-des-argao",
+    "name": "Archipel des Argao",
+    "jumeau": [
+     "organ-island"
+    ]
+   },
+   {
+    "slug": "archipel-des-gecko",
+    "name": "Archipel des Gecko",
+    "jumeau": [
+     "gecko-islands"
+    ]
+   },
+   {
+    "slug": "archipel-des-sabaody",
+    "name": "Archipel des Sabaody",
+    "jumeau": [
+     "sabaody"
+    ]
+   },
+   {
+    "slug": "baratie",
+    "name": "Baratie",
+    "jumeau": [
+     "baratie-lieu"
+    ]
+   },
+   {
+    "slug": "baterilla",
+    "name": "Baterilla",
+    "jumeau": [
+     "baterilla-island"
+    ]
+   },
+   {
+    "slug": "cap-des-jumeaux",
+    "name": "Cap des Jumeaux",
+    "jumeau": [
+     "twin-cape"
+    ]
+   },
+   {
+    "slug": "dressrosa",
+    "name": "Dressrosa",
+    "jumeau": [
+     "dressrosa-lieu"
+    ]
+   },
+   {
+    "slug": "east-blue-one-piece",
+    "name": "East Blue",
+    "jumeau": [
+     "east-blue"
+    ]
+   },
+   {
+    "slug": "enies-lobby",
+    "name": "Enies Lobby",
+    "jumeau": [
+     "enies-lobby-lieu"
+    ]
+   },
+   {
+    "slug": "erbaf",
+    "name": "Erbaf",
+    "jumeau": [
+     "elbaf"
+    ]
+   },
+   {
+    "slug": "green-bit",
+    "name": "Green Bit",
+    "jumeau": [
+     "green-bit-op"
+    ]
+   },
+   {
+    "slug": "ile-de-drum",
+    "name": "Île de Drum",
+    "jumeau": [
+     "drum-island"
+    ]
+   },
+   {
+    "slug": "ile-des-animaux-etranges",
+    "name": "Île des animaux étranges",
+    "jumeau": [
+     "island-of-rare-animals"
+    ]
+   },
+   {
+    "slug": "ile-des-hommes-poissons",
+    "name": "Île des hommes-poissons",
+    "jumeau": [
+     "fishman-island"
+    ]
+   },
+   {
+    "slug": "impel-down",
+    "name": "Impel Down",
+    "jumeau": [
+     "impel-down-lieu"
+    ]
+   },
+   {
+    "slug": "little-garden",
+    "name": "Little Garden",
+    "jumeau": [
+     "little-garden-lieu"
+    ]
+   },
+   {
+    "slug": "loguetown",
+    "name": "Loguetown",
+    "jumeau": [
+     "loguetown-lieu"
+    ]
+   },
+   {
+    "slug": "long-ring-long-land",
+    "name": "Long Ring Long Land",
+    "jumeau": [
+     "long-ring-long-land-op"
+    ]
+   },
+   {
+    "slug": "ohara",
+    "name": "Ohara",
+    "jumeau": [
+     "ohara-lieu"
+    ]
+   },
+   {
+    "slug": "pays-des-fleurs",
+    "name": "Pays des fleurs",
+    "jumeau": [
+     "kano-country"
+    ]
+   },
+   {
+    "slug": "pays-des-wa",
+    "name": "Pays des Wa",
+    "jumeau": [
+     "wano"
+    ]
+   },
+   {
+    "slug": "punk-hazard",
+    "name": "Punk Hazard",
+    "jumeau": [
+     "punk-hazard-lieu"
+    ]
+   },
+   {
+    "slug": "reverse-mountain",
+    "name": "Reverse Mountain",
+    "jumeau": [
+     "reverse-mountain-lieu"
+    ]
+   },
+   {
+    "slug": "royaume-de-germa",
+    "name": "Royaume de Germa",
+    "jumeau": [
+     "germa-kingdom"
+    ]
+   },
+   {
+    "slug": "royaume-de-goa",
+    "name": "Royaume de Goa",
+    "jumeau": [
+     "goa-kingdom"
+    ]
+   },
+   {
+    "slug": "royaume-de-lvneel",
+    "name": "Royaume de Lvneel",
+    "jumeau": [
+     "lvneel-kingdom"
+    ]
+   },
+   {
+    "slug": "royaume-de-prodence",
+    "name": "Royaume de Prodence",
+    "jumeau": [
+     "prodence-kingdom"
+    ]
+   },
+   {
+    "slug": "skypiea",
+    "name": "Skypiea",
+    "jumeau": [
+     "skypiea-lieu"
+    ]
+   },
+   {
+    "slug": "sphinx-one-piece",
+    "name": "Sphinx",
+    "jumeau": [
+     "sphinx-island"
+    ]
+   },
+   {
+    "slug": "thriller-bark",
+    "name": "Thriller Bark",
+    "jumeau": [
+     "thriller-bark-lieu"
+    ]
+   },
+   {
+    "slug": "village-de-shimotsuki",
+    "name": "Village de Shimotsuki",
+    "jumeau": [
+     "shimotsuki-village"
+    ]
+   },
+   {
+    "slug": "water-seven",
+    "name": "Water Seven",
+    "jumeau": [
+     "water-seven-lieu"
+    ]
+   },
+   {
+    "slug": "weatheria",
+    "name": "Weatheria",
+    "jumeau": [
+     "weatheria-op"
+    ]
+   },
+   {
+    "slug": "zo",
+    "name": "Zo",
+    "jumeau": [
+     "zou"
+    ]
+   }
+  ],
+  "one_piece_quasi_jumeaux": [
+   {
+    "slug": "royaume-de-mogalo",
+    "name": "Royaume de Mogalo",
+    "jumeau_probable": "mogaro-kingdom",
+    "note": "graphie Mogalo/Mogaro — à trancher par la fusion, pas par le re-typage"
+   },
+   {
+    "slug": "royaume-de-luvneel",
+    "name": "Royaume de Luvneel",
+    "jumeau_probable": "lvneel-kingdom",
+    "note": "graphie Luvneel/Lvneel ; royaume-de-lvneel existe DÉJÀ à côté → grappe à 3"
+   }
+  ],
+  "sans_preuve": [
+   {
+    "slug": "source-de-l-insouciance",
+    "name": "Source de l'insouciance",
+    "note": "aucune descFr, aucune page trouvée sur onepiece.fandom.com (« Fountain of Carefreeness » absent) — laissée en status : pas de preuve, pas d’écriture"
+   }
+  ]
+ },
+ "effets_de_bord_verifies": [
+  {
+   "sujet": "gabarit de fiche",
+   "constat": "les 36 fiches quittent OrganizationZone pour le gabarit générique ; la chip « Organisation » (OrganizationZone l.35, lit attributes.scope) disparaît, les membres restent affichés en « Connexions › Référencé par ← appartient à » (EntityRelations). Vérifié en local sur /kusagakure (18 membres), /fire-temple (7), /la-lune."
+  },
+  {
+   "sujet": "fil d’Ariane",
+   "constat": "/kusagakure : « Registre AKASHA › Naruto › Organisation › Kusagakure » → « … › Village › Kusagakure ». Vérifié."
+  },
+  {
+   "sujet": "compteurs de hub",
+   "constat": "Naruto « Lieux 11 → 40 », « Statuts 216 → 187 » ; One Piece « Lieux 186 → 193 », « Statuts 159 → 152 ». Totaux d’univers inchangés (3 318 / 2 270). Vérifié sur /learn/akasha/u/naruto."
+  },
+  {
+   "sujet": "collections (attributes.category)",
+   "constat": "Naruto : Organisation 171 → 142, Village 7 → 24, Lieu 4 → 16. One Piece : Équipage 149 → 142, Lieu 37 → 44. Vérifié sur le rail Collections du hub."
+  },
+  {
+   "sujet": "axe organization Naruto",
+   "constat": "125 valeurs / 468 fiches → 123 / 458. « Fire Temple » et « Konoha Orphanage » ne sont plus dans le rail Organisations du hub."
+  },
+  {
+   "sujet": "carte du monde Naruto",
+   "constat": "AUCUN effet : NarutoWorldMap pointe sur /u/naruto/village/<valeur> (axe village porté par les PERSONNAGES), jamais sur les fiches de lieu. Le re-typage ne réveille pas les repères ishigakure/kusagakure/takigakure/uzushiogakure/yugakure/hoshigakure, qui restent non cliquables — et shimogakure/tanigakure/tanzaku n’ont toujours aucune fiche en base."
+  },
+  {
+   "sujet": "PERTE assumée",
+   "constat": "les 10 personnages dont l’axe organization est retiré (5 Fire Temple, 5 Konoha Orphanage) perdent la chip « Organisation · X » de CharacterZone : l’arête appartient existe toujours en base mais CharacterZone ne rend pas les arêtes appartient SORTANTES. Le lien survit dans l’autre sens (la fiche du lieu liste ses 7 / 7 membres). À rouvrir avec un axe « lieu » dans BELONG_ATTRS ou le rendu des arêtes appartient sortantes."
+  }
+ ],
+ "residus_hors_perimetre": [
+  {
+   "sujet": "summary",
+   "constat": "les 29 fiches Naruto gardent le résumé « Organisation de l’univers Naruto — réunit X, Y et N autres. » et les 7 fiches OP « Équipage de pirates. » : visibles en sous-titre du bandeau et sur les cartes du registre. Hors périmètre (ni type ni axe) — non touché."
+  },
+  {
+   "sujet": "pages d’axe vides",
+   "constat": "/learn/akasha/u/naruto/organization/Fire%20Temple répond toujours 200 avec 0 entrée (même comportement que « Kazekage » en axe clan) : la page d’axe n’est pas gardée par un compte > 0."
+  },
+  {
+   "sujet": "régions non posées",
+   "constat": "21 des 29 lieux Naruto et 2 des 7 lieux OP restent sans region : la VF du pays n’est pas attestée (Land of Snow, Land of Medicines) ou la source interne contredit le wiki (Hoshigakure : infobox « Land of Bears » contre « Pays des Étoiles » dans lib/akasha/naruto-world.ts)."
+  }
+ ]
+}

@@ -1,0 +1,1114 @@
+{
+ "chantier": "retypage-et-axes",
+ "date": "2026-08-07T09:07:15.105Z",
+ "depot": "/Users/macbookprom1pro/dev/NIKA",
+ "note": "ÉTAT AVANT, lu juste avant écriture. attributes complet par slug (type ET attributs).",
+ "comptes_par_type_avant": {
+  "Naruto": {
+   "character": 1337,
+   "place": 11,
+   "artifact": 190,
+   "profession": 94,
+   "status": 216,
+   "power": 1442,
+   "skill": 28
+  },
+  "One Piece": {
+   "character": 1449,
+   "place": 186,
+   "artifact": 155,
+   "profession": 1,
+   "status": 159,
+   "power": 309,
+   "skill": 11
+  }
+ },
+ "candidats": 36,
+ "candidats_introuvables": [],
+ "fiches": [
+  {
+   "slug": "benisu-island",
+   "id": "f4db9943-a970-4a7f-b617-837fe2d79a4f",
+   "name": "Benisu Island",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "L'île de Benisu est une nation insulaire située au sud du Pays du Feu et du Pays de la Foudre, dotée de ses propres shinobis sans que son statut de village ne soit confirmé. Ses représentants connus, l'équipe Bandō, en incarnent l'identité militaire et commerciale, comme l'indiquent les kanjis de leurs bandeaux frontaux évoquant le négoce. Leur rôle dans l'intrigue reste marginal, bien que leur existence souligne la diversité des entités shinobies mineures de l'univers.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Countries",
+   "wiki_categories": [
+    "Countries"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "caverne-ryuchi",
+   "id": "a0a11210-8b9b-4b99-9e07-3c78c6c017a3",
+   "name": "Caverne Ryūchi",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "La Caverne Ryūchi est l'une des trois grandes régions de sages inexplorées, réputée pour être le domaine des serpents, y compris le vénérable Sage Serpent Blanc. Elle est également le lieu où Orochimaru a découvert l'origine des capacités du clan de Jūgo. La caverne est gardée par des serpents qui imposent trois épreuves aux visiteurs souhaitant apprendre le senjutsu, avec des conséquences fatales en cas d'échec. ",
+    "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501",
+    "scope": "Organisation"
+   },
+   "preuve": "titre canon « Ryūchi Cave » → wiki:Locations+Villages",
+   "wiki_categories": [
+    "Locations",
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "ceramic-village",
+   "id": "b3a9e265-a775-4c9b-af5d-086990435b98",
+   "name": "Ceramic Village",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Le village de Céramique, situé dans le Pays du Vent près de la frontière avec le Pays des Rivières, se distingue par son artisanat de poterie réputé. Dirigé historiquement par les « Dieux de la Céramique », une famille influente imposant des normes artistiques strictes, il connaît un tournant brutal sous la direction de Mashō puis de son fils Gōshō, ce dernier sacrifiant l’héritage du style Hanasaki au profit d’une production ostentatoire. Sa destruction par l’Akatsuki, en quête de son argile rare, marque la fin de son existence.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Villages ; infobox Country=Land of Wind = NW_COUNTRIES",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": "Pays du Vent",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "daidai-village",
+   "id": "b64bc16b-7da4-4da0-aad1-1a021bc3119f",
+   "name": "Daidai Village",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Villages (stub, pas d’infobox)",
+   "wiki_categories": [
+    "Stubs",
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "elegia",
+   "id": "6df22f83-5d84-4b9a-b20d-c261f3696e79",
+   "name": "Elegia",
+   "universe": "One Piece",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Équipage",
+    "descFr": "Elegia est un archipel qui sert de lieu principal pour le film One Piece Film: Red, où se déroule le festival de musique live d'Uta. L'archipel est composé de trois îles, dont la plus grande abrite un vaste hall de concert. Elegia a une histoire marquée par une tragédie survenue il y a douze ans, lorsqu'Uta a involontairement invoqué le démon Tot Musica, causant la mort de la quasi-totalité de la population. L'archipel est également lié à la fille de Shanks, Uta, qui a organisé un concert sur l'île pour piéger les consciences de ses fans dans un monde virtuel.",
+    "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "scope": "Équipage pirate"
+   },
+   "preuve": "wiki « Elegia » : Archipelagos ; aucun jumeau `place`",
+   "wiki_categories": [
+    "Archipelagos"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "fire-temple",
+   "id": "08cdc6a0-bfed-4464-a5cf-3a555baf31ef",
+   "name": "Fire Temple",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Le Temple du Feu est un monastère shinobi du Pays du Feu, inspiré des temples ninjas et abritant exclusivement des moines guerriers. Dirigé par Chiriku, ancien membre des Douze Gardiens Ninja, il se distingue par ses murs scellés réputés infranchissables et son lien avec les légendes des Tengu, maîtres mythiques du ninjutsu. Ses moines maîtrisent le Don du Groupe de l'Ermite, une technique spirituelle rare. Le temple est détruit lors d'une attaque d'Akatsuki, ne laissant que quelques survivants, dont Sora.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Locations",
+   "wiki_categories": [
+    "Locations"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "foret-shikkotsu",
+   "id": "eb964281-5244-4940-8549-66acddf584d7",
+   "name": "Forêt Shikkotsu",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "La forêt Shikkotsu est l’une des trois régions légendaires réservées aux ermites, aux côtés du mont Myōboku et de la grotte Ryūchi. Elle abrite Katsuyu, la limace géante invoquée par Tsunade et son élève Sakura Haruno, qui y puisent une partie de leur puissance médicale et défensive.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "titre canon « Shikkotsu Forest » → wiki:Locations+Villages",
+   "wiki_categories": [
+    "Locations",
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "gran-tesero",
+   "id": "2042bed9-c6f2-456f-b13d-e71fda6a2700",
+   "name": "Gran Tesero",
+   "universe": "One Piece",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Équipage",
+    "descFr": "Le Gran Tesoro est un navire massif abritant une métropole, considéré comme la plus grande ville de divertissement au monde. Il était autrefois dirigé par Gild Tesoro, mais après sa déposition et l'évacuation de la majorité de la population, Carina a pris le commandement du navire. Le Gran Tesoro est reconnu comme un État indépendant par le Gouvernement mondial en raison de la richesse de Tesoro et est classé comme une zone démilitarisée. Il est surnommé le « pays des rêves en mouvement ».",
+    "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "scope": "Équipage pirate"
+   },
+   "preuve": "titre canon « Gran Tesoro » ; wiki:Non-Canon New World Locations ; aucun jumeau `place`",
+   "wiki_categories": [
+    "Non-Canon New World Locations",
+    "Non-Canon Towns and Cities",
+    "Non-Canon Ships"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": "New World",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "green-banks",
+   "id": "8aa1ab66-207e-4b7d-b561-40c624131498",
+   "name": "Green Banks",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Les Rives Vertes désignent un village pauvre devenu prospère grâce à la construction d’un pont à péage, initiative de son ancien chef Tōfū. Situé près des frontières du Pays du Feu et du Pays du Vent, il suit une coutume héréditaire de succession, comme en témoigne l’accession de Kiri après la mort de son père. Ce lieu sert de cadre à des intrigues locales impliquant des shinobis indépendants.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Locations",
+   "wiki_categories": [
+    "Locations"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "hoshigakure",
+   "id": "e0e094aa-9478-4a61-a1d7-72f56afd75df",
+   "name": "Hoshigakure",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Hoshigakure no Sato, ou le Village caché de l'Étoile, est un village shinobi méconnu du Pays des Ours, fondé deux siècles avant la série autour d'une météorite aux radiations amplificatrices de chakra. Dirigé nominalement par un Hoshikage, il développe la Méthode du Paon Mystérieux, technique mortelle permettant un contrôle quasi absolu du chakra, avant d'être interdite puis rétablie par ambition politique. Son histoire récente est marquée par la rébellion contre Akahoshi, son dirigeant corrompu, et la destruction de la météorite par Naruto.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "nom en -gakure + wiki:Villages ; infobox Country=Land of Bears (VF non attestée, en conflit avec naruto-world.ts « Pays des Étoiles » → rien posé)",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "howling-wolf-village",
+   "id": "1e8d9c52-9dc3-4cf1-8662-825ddc8637f9",
+   "name": "Howling Wolf Village",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Le village du Hurlement du Loup est un village caché du Pays des Remèdes, fondé par le clan Kodon après avoir scellé le monstre Rōen. Connu pour son invention de la poudre de feu bleu, une arme redoutable, il renonce à ses services de shinobi après un drame causé par cette dernière. Depuis, il observe une stricte neutralité, symbolisée par quatre-vingt-huit torii marquant son isolement.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Villages ; infobox Country=Land of Medicines (VF non attestée)",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "iile-de-la-couronne",
+   "id": "66cb47e9-88dd-45bd-8077-44aae92359a9",
+   "name": "IÎle de la couronne",
+   "universe": "One Piece",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Équipage",
+    "descFr": "L'île O-Kan, située dans l'univers de One Piece, est connue pour ses fontaines qui, lors de la désignation d'un nouveau roi des animaux, jaillissent en formant une couronne. Actuellement, le roi des animaux est Mobanby, entouré d'habitants étranges tels que Karasuke, Bald Parrot, Kirin et Lion (décédé). L'île accueille aussi des visiteurs notables comme le Comte Battler, le Général Hotdog, le Président Heaby ainsi que Chopper et les autres membres du chapeau de paille. Elle constitue le lieu non canon du royaume de Chopper sur l'île des animaux étranges, présenté dans le troisième film de One Piece.",
+    "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b",
+    "scope": "Équipage pirate"
+   },
+   "preuve": "titre canon « O-Kan Island » ; wiki:Non-Canon Paradise Islands ; aucun jumeau `place`",
+   "wiki_categories": [
+    "Non-Canon Paradise Islands",
+    "Location Stubs"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": "Paradise",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "ile-d-asuka",
+   "id": "bb0e8dcb-9d6e-452f-b013-1a3ddf1228a0",
+   "name": "Île d'Asuka",
+   "universe": "One Piece",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Équipage",
+    "descFr": "L'île d'Asuka, située dans le Paradise, est une île non canonique qui sert de cadre principal au film 'The Cursed Holy Sword'. Elle abrite le Shichiseiken, une lame maudite scellée il y a plusieurs siècles après une guerre déclenchée par trois princes amoureux d'une prêtresse, et dont la puissance augmente lors de chaque pleine lune rouge centenaire. L'île possède également un dojo de la Marine et trois tours reliées par une grotte utilisées pour contenir l'énergie noire de l'épée, laquelle a finalement été détruite par l'équipage du Chapeau de Paille.",
+    "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b",
+    "scope": "Équipage pirate"
+   },
+   "preuve": "titre canon « Asuka Island » ; wiki:Non-Canon Paradise Islands ; aucun jumeau `place`",
+   "wiki_categories": [
+    "Non-Canon Paradise Islands"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": "Paradise",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "ile-de-mecha",
+   "id": "699a2a84-c44f-4b97-be6c-8036249b181b",
+   "name": "Île de Mecha",
+   "universe": "One Piece",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Équipage",
+    "descFr": "Mecha Island, également connue sous le nom de Meka Shima, est une île non-canonique située dans la première moitié de la Grand Line, célèbre pour abriter le Géant Soldat Mécanique du Château Karakuri. Cette île, en réalité un immense tortue de mer endormie, se réveille tous les mille ans pour pondre ses œufs, ce qui rend impossible son repérage par un Log Pose. Ratchet, le seigneur féodal et génie scientifique, y a installé des machines avancées pour dominer le monde, mais il a été vaincu par l'Équipage du Chapeau de Paille.",
+    "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501",
+    "scope": "Équipage pirate"
+   },
+   "preuve": "titre canon « Mecha Island » ; wiki:Non-Canon Paradise Islands ; aucun jumeau `place`",
+   "wiki_categories": [
+    "Non-Canon Paradise Islands",
+    "Non-Canon Animals"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": "Paradise",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "ishigakure",
+   "id": "f53eedfb-3da4-4400-82d0-defd56b583bf",
+   "name": "Ishigakure",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Village caché situé entre le Pays de la Terre et le Pays du Vent. Gaara Hiden révèle que plusieurs terroristes possédant des kekkei genkai proviennent de ce village.",
+    "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)",
+    "scope": "Organisation"
+   },
+   "preuve": "nom en -gakure + wiki:Villages ; pays attesté NW_LANDMARKS",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": "Pays de la Pierre",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "kazahana-castle",
+   "id": "6d82df97-df65-43a1-9908-ac796231f6ad",
+   "name": "Kazahana Castle",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Le château Kazahana est une forteresse de style japonais située dans les montagnes du Pays de la Neige, apparue dans *Naruto the Movie: Ninja Clash in the Land of Snow*. Ancienne résidence du daimyō Sōsetsu Kazahana et de sa fille Koyuki, il fut incendié par Dotō, frère cadet de Sōsetsu, lors d’un coup d’État visant à s’emparer d’un trésor caché. Seul lieu emblématique du film, il marque le cadre central de l’intrigue.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Locations",
+   "wiki_categories": [
+    "Locations"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "konoha-orphanage",
+   "id": "1236fe9f-4971-47bc-b430-bdeaade30b55",
+   "name": "Konoha Orphanage",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "L'orphelinat de Konoha est un établissement situé en périphérie du village, dirigé notamment par Nonō Yakushi, ancienne membre de Racine et capitaine du corps médical. Il accueille des enfants de diverses origines et sert de centre de soins aux shinobi durant les conflits. Certains de ses pensionnaires, comme Kabuto Yakushi, intègrent plus tard les rangs des ninjas de Konoha ou d'autres organisations.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Locations",
+   "wiki_categories": [
+    "Locations"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "kusagakure",
+   "id": "d886b17d-bf36-4ead-bbce-400ace4e8073",
+   "name": "Kusagakure",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Kusagakure no Sato est un village shinobi situé dans un pays forestier riche en reliefs escarpés, allié à Konohagakure. Spécialisé dans la diplomatie et l'analyse des techniques adverses, il se distingue par sa capacité à anticiper les mouvements des autres nations. Son territoire, marqué par des ponts stratégiques comme le Kannabi et le Tenchi, fut un théâtre majeur lors de la Troisième Guerre mondiale des shinobi.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "nom en -gakure + wiki:Villages ; pays attesté NW_LANDMARKS + region existante (tenchi-bridge)",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": "Pays de l'Herbe",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "la-lune",
+   "id": "fb45a17e-ba23-4b50-893b-140b68f4f39e",
+   "name": "La lune",
+   "universe": "One Piece",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Équipage",
+    "descFr": "La lune, ou Tsuki, est un corps céleste géant qui orbite autour de la planète Bleue et constitue la principale source de lumière naturelle la nuit. Elle joue un rôle crucial dans la transformation des membres de la tribu Mink en leur forme Sulong sous la lumière de la pleine lune. La lune abrite également la ville antique de Birka, un lieu de technologie avancée et de ruines mystérieuses, où les automates créés par Dr. Tsukimi sont conservés. Enel, croyant que la lune est le légendaire Fairy Vearth, a construit l'Ark Maxim pour s'y rendre.",
+    "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501",
+    "scope": "Équipage pirate"
+   },
+   "preuve": "titre canon « Moon » ; wiki:Locations ; aucun jumeau `place`",
+   "wiki_categories": [
+    "Locations"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "mont-myoboku",
+   "id": "e66b1537-04e4-4515-94b2-0de7c93bf566",
+   "name": "Mont Myōboku",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "L'une des trois grandes régions sages, terre des crapauds et demeure de tous ceux invoqués par Naruto, Minato et Jiraiya. Dirigée par le Grand Sage Crapaud, elle est accessible via un mois de voyage secret depuis Konohagakure ou par contrat d'invocation.",
+    "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)",
+    "scope": "Organisation"
+   },
+   "preuve": "titre canon « Mount Myōboku » → wiki:Villages (terre des crapauds, pas un village ninja → Lieu)",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "moon",
+   "id": "0a1298ab-6451-4c79-b94c-6844519e16d7",
+   "name": "Moon",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "La Lune est un corps céleste artificiel créé par Hamura et Hagoromo Ōtsutsuki pour y sceller leur mère, Kaguya, au moyen de la technique Chibaku Tensei. Hamura y installe le clan Ōtsutsuki afin de surveiller l’humanité et de garder la Statue Démoniaque du Sentier Extérieur, avant qu’une guerre civile ne décime presque entièrement ses membres. Son intérieur abrite un écosystème artificiel alimenté par le Tenseigan, tandis que son rôle central dans le *Plan Œil de la Lune* en fait un élément clé des conflits shinobi, notamment lors de la Quatrième Grande Guerre.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Locations",
+   "wiki_categories": [
+    "Locations"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "mount-shumisen",
+   "id": "a9216443-db21-4f66-881a-a425a3270c8c",
+   "name": "Mount Shumisen",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Le mont Shumisen sert de repaire à Hiruko dans le troisième film *Shippūden*, où il établit sa forteresse au sommet. Gardé par quatre subordonnés aux portes successives, il abrite les victimes porteuses de *kekkei genkai* crucifiées et constitue un élément clé du rituel de la *Chimère*, visant à conférer l'immortalité à Hiruko. La montagne, détruite lors de l'affrontement final, incarne les trois piliers du sortilège : la terre, le ciel et l'humain.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Locations",
+   "wiki_categories": [
+    "Locations"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "nadeshiko-village",
+   "id": "faf229ce-c759-4790-b6df-0a2067f375a1",
+   "name": "Nadeshiko Village",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Le village de Nadeshiko est une communauté shinobi établie près du Pays de l’Eau, régie par une organisation matrilinéaire. Ses habitantes, des kunoichi, doivent vaincre des hommes en combat pour les ramener au village et les épouser. Perché sur trois collines escarpées reliées par des ponts, il présente une architecture fortifiée, mêlant remparts et tours. Ce lieu incarne un modèle social inspiré des légendes amazones, où la force et l’héritage féminin structurent la société.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Villages ; pas de Country dans l’infobox",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "roran",
+   "id": "d2300197-48b9-4710-ab87-2f8af296ccef",
+   "name": "Rōran",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Le royaume de Rōran, situé dans le Pays du Vent, sert de cadre principal au film *Naruto Shippūden : La Tour perdue*. Dirigé par la reine Sāra après la chute de sa mère Sēramu, il abrite des lieux clés comme le Jardin du Ryūmyaku et son palais royal. Le ministre Mukade, manipulant le pouvoir du Ryūmyaku, y instaure une force de ninjas marionnettes avant d’être vaincu par Naruto Uzumaki et Minato Namikaze. Détruit par une guerre, le royaume survit grâce à ses survivants, menés par une Sāra marquée par les idéaux de Naruto.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Countries",
+   "wiki_categories": [
+    "Countries"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "royaume-malefique-de-black-drum",
+   "id": "4763aa16-5519-4a95-b753-c74fef18312a",
+   "name": "Royaume maléfique de Black Drum",
+   "universe": "One Piece",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Équipage",
+    "descFr": "Le Royaume maléfique de Black Drum est le royaume dirigé par Wapol, accompagné de son épouse Kinderella et de son chien Hakowan, situé dans le Sud Bleu et caractérisé par un immense château et un ciel souvent orageux. Après le succès de sa société Wapol Konzern, les Nobles Mondiaux lui ont attribué ce royaume, le rendant à nouveau éligible pour participer au Levely. Lors du Levely, Wapol a tenté d'insulter la princesse Vivi du royaume d'Arabasta avant d'être retenu par Dalton, tout en exprimant auparavant son désir de détruire le Royaume Sakura sous la direction de Dalton.",
+    "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b",
+    "scope": "Équipage pirate"
+   },
+   "preuve": "titre canon « Evil Black Drum Kingdom » ; wiki:World Government Kingdoms ; aucun jumeau `place`",
+   "wiki_categories": [
+    "World Government Kingdoms",
+    "South Blue Locations"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": "South Blue",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "shuku-village",
+   "id": "cb82a0fe-9ed4-45e2-964f-20316ba3de64",
+   "name": "Shuku Village",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "scope": "Organisation"
+   },
+   "preuve": "nom en « … Village » SEUL — page absente du wiki (recherche « Shuku » → aucun homologue) ; fiche vide, 0 arête",
+   "wiki_categories": [],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "takigakure",
+   "id": "01b6db96-5eb1-4bb9-8f14-7c02781246ff",
+   "name": "Takigakure",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Takigakure est un village shinobi situé dans un pays non nommé, reconnu pour sa résistance aux invasions et sa production cyclique d'Eau du Héros, un breuvage amplifiant temporairement le chakra au prix d'un risque mortel. Il abrite l'un des seuls démons à queues extérieurs aux cinq grandes nations, Chōmei, scellé en Fū avant son extraction par l'Akatsuki. Son histoire est marquée par la trahison de Kakuzu, puni pour un échec missionnaire puis devenu criminel après avoir massacré les anciens du village.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "nom en -gakure + wiki:Villages ; pays attesté NW_LANDMARKS",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": "Pays de la Cascade",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "takumi-village",
+   "id": "be53c45e-2abf-4e59-bd47-c8726780c20f",
+   "name": "Takumi Village",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Takumi no Sato est un village présent exclusivement dans l'animé situé dans le Pays des Rivières, fondé il y a plus d'un siècle par Seimei et réputé pour sa fabrication d'armes vendues aux différents villages shinobi. En raison de la crainte que leurs outils ne profitent aux ennemis, le village a subi des attaques des grandes puissances tout en continuant à quémander leur aide, jusqu'à ce que l'obsolescence de ses armes provoquée par l'amélioration de la clientèle le plonge dans la détresse. Quatre artisans particulièrement doués — Hōki, Kujaku, Ryūgan et Suiko — ont alors porté le symbole de Takumi sur leur frontal, étudié les arts ninja et tenté de ressusciter Seimei en utilisant le Shukaku à une queue de Gaara afin de se venger des Cinq Grands Villages Shinobi.",
+    "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Villages ; infobox Country=Land of Rivers = NW_LANDMARKS (tanigakure)",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": "Pays de la Rivière",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "temujin-s-continent",
+   "id": "f90d76dc-42f5-4225-8f66-57caafae73db",
+   "name": "Temujin's Continent",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Ce continent sans nom, présenté dans le film Naruto : La Légende de la Pierre de Gelel, est décrit comme étant ravagé par la guerre et dont l'esthétique s'inspire de l'Europe post-médiévale et de la Mésoamérique. Temujin et Haido y sont originaires ; la Pierre de Gelel y est connue de façon très ésotérique, car un clan y a migré après avoir été décimé sur le continent principal. Naruto et Temujin y rencontrent les restes de ce clan, qui voyagent en caravane en se présentant comme des peuples nomades. Seule la lignée royale de ce lieu peut sceller la Veine de Gelel, tandis que ses habitants, ignorant totalement le chakra, emploient des techniques nommées en anglais, témoignant de leur isolement vis-à-vis du monde shinobi.",
+    "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Locations",
+   "wiki_categories": [
+    "Locations"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Lieu",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "tonika-village",
+   "id": "8112c299-8d34-48a2-9be5-3a80fb2ccbc7",
+   "name": "Tonika Village",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Le village de Tonika est une petite localité située aux confins du Pays du Feu, connue pour abriter *Le Gouffre*, un site mystérieux convoité par Kabuto Yakushi. Dirigé par un chef local, il est détruit lors d’une invasion menée par ce dernier afin d’exploiter ses ressources pour ses expériences. Ses habitants, dont Dokku, Faz et Lando, résistent vaillamment avant d’être contraints à la fuite vers le village voisin de Hachō.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Villages ; infobox Country=Land of Fire = NW_COUNTRIES",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": "Pays du Feu",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "tree-felling-village",
+   "id": "7c9e973b-676f-4089-ba4d-083b157f6110",
+   "name": "Tree Felling Village",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Le Village de l'Abattage des Arbres, renommé Village de la Renaissance de l'Arbre, est une petite communauté autrefois soumise à un démon obscur, Black Shadow, qui exigeait des sacrifices humains en échange de sa protection. Le village abritait jadis l'Arbre de Vie, abattu par ses ancêtres pour exploiter une grotte cristallifère, libérant ainsi la créature. Grâce à Naruto Uzumaki et à Aoi, le démon est vaincu et un nouvel Arbre de Vie, aux propriétés curatives, y pousse à nouveau. Le maire, rongé par la culpabilité des générations passées, officialise ce renouveau en changeant le nom du village.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Locations+Villages",
+   "wiki_categories": [
+    "Locations",
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "tsuchigumo-village",
+   "id": "e292399c-ab31-4c6d-8be5-f4c0b0d7c130",
+   "name": "Tsuchigumo Village",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Le village Tsuchigumo est le foyer du clan Tsuchigumo, dirigé par le chef Tsuchigumo. Il regroupe les membres du clan qui ont refusé de suivre En no Gyōja vers le mont Katsuragi et qui, par conséquent, ont été privés du kinjutsu du clan. Après avoir été manipulés par le groupe Magaki afin d'obtenir ce kinjutsu, les villageois ont été utilisés comme une horde contrôlée contre l'équipe Yamato et leurs alliés, avant d'être libérés suite à la défaite du groupe Magaki.",
+    "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b",
+    "scope": "Organisation"
+   },
+   "preuve": "wiki:Villages ; pas de Country dans l’infobox",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "uzushiogakure",
+   "id": "095e72cf-c97c-47e5-8eb2-8924f94f30a9",
+   "name": "Uzushiogakure",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Uzushiogakure est le village shinobi du Pays des Tourbillons, réputé pour la longévité exceptionnelle de ses habitants et son expertise en fūinjutsu. Ses techniques, comme le Sceau des Quatre Symboles, lui valurent une renommée redoutée en temps de guerre, entraînant sa destruction par des villages rivaux avant l’exil de Kushina Uzumaki. Les survivants de sa chute se dispersèrent à travers le monde pour échapper à leurs persécuteurs.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "nom en -gakure + wiki:Villages ; infobox Country=Land of Whirlpools = NW_LANDMARKS",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": "Pays des Tourbillons",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "yugakure",
+   "id": "a1cf2488-1e40-40c6-8c24-0099d8dc0ea4",
+   "name": "Yugakure",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Yugakure no Sato est le village caché du Pays de l’Eau Chaude, marqué par un pacifisme radical après avoir renoncé aux missions shinobi traditionnelles. Ses ninjas, désormais appelés Yu-nin, se consacrent à la sécurité des routes touristiques et aux travaux locaux, évitant tout engagement conflictuel. Ce choix divise, comme en témoigne la désertion violente de Hidan, adepte de Jashin, qui rejette cette doctrine. Entouré de sources chaudes et de vapeurs épaisses, le village mise sur son attractivité thermale pour prospérer.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "nom en -gakure + wiki:Villages ; infobox Country=Land of Hot Water = NW_LANDMARKS",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": "Pays de l'Eau Chaude",
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "yukigakure",
+   "id": "5740fb9a-b167-4966-9eb7-79ed324e9158",
+   "name": "Yukigakure",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Yukigakure est le village caché du Pays de la Neige, spécialisé dans la manipulation de la glace préexistante, souvent sous forme d'animaux. Ses shinobi emploient une technologie avancée, notamment une armure de chakra renforçant leurs capacités et les protégeant des attaques. Le village utilise également des armes sophistiquées, comme des canons à kunai ou des dirigeables, marquant son originalité parmi les nations shinobi.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "nom en -gakure + wiki:Villages ; infobox Country=Land of Snow (VF non attestée)",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  },
+  {
+   "slug": "yumegakure",
+   "id": "185f261c-85cb-44c4-b083-0d1027ddf3e4",
+   "name": "Yumegakure",
+   "universe": "Naruto",
+   "type_avant": "status",
+   "attributes_avant": {
+    "category": "Organisation",
+    "descFr": "Yumegakure no Sato est un petit village shinobi niché dans une forêt reculée, dirigé par le clan Tenrō après avoir évincé le clan fondateur Amagiri. Spécialisé dans des variantes offensives de la technique de transformation, il abrite une bête gardienne imposante, scellée jadis par les Tenrō, et entretient un pacte de paix avec Konoha pour en contenir la puissance. Son architecture évoque l’époque d’Edo, et son territoire inclut des lieux stratégiques comme la Prison des Trois-Têtes, cachée dans un volcan.",
+    "descFrSource": "mistral/mistral-large-latest",
+    "scope": "Organisation"
+   },
+   "preuve": "nom en -gakure + wiki:Villages ; pas de Country dans l’infobox",
+   "wiki_categories": [
+    "Villages"
+   ],
+   "vise": {
+    "type": "place",
+    "category": "Village",
+    "region": null,
+    "scope": "(retiré)"
+   }
+  }
+ ],
+ "axe_organization_faux": [
+  {
+   "slug": "bansai",
+   "id": "d75b731a-331f-41e5-8d35-8ade7e8cb853",
+   "name": "Bansai",
+   "attributes_avant": {
+    "age": "64",
+    "descFr": "Bansai est un vieux moine ninja du Temple du Feu et l'un des trois seuls survivants connus de l'attaque de l'Akatsuki contre le temple. Lorsque Asuma Sarutobi et son équipe se rendirent au temple pour recueillir des informations sur l'Akatsuki, Bansai, inquiet pour le bien-être d'Asuma et de son équipe, récita une prière. Celle-ci plongea Asuma dans une transe où il vit l'esprit de son défunt camarade Chiriku. Bansai est aujourd'hui à la retraite.",
+    "descLang": "en",
+    "descRaw": "Bansai (板斎) is an elder ninja monk in the Fire Temple and one of only three known survivors of the Akatsuki attack on the temple. When Asuma Sarutobi and his team went to the temple to gather information on Akatsuki, Bansai, worried about Asuma and his team's well-being, said a prayer. This made Asuma go into a trance and see the spirit of his dead comrade Chiriku. Bansai is currently retired. (Source: Narutopedia)",
+    "organization": "Fire Temple",
+    "sex": "Male",
+    "voiceActors": {
+     "en": [
+      "William Frederick Knight"
+     ],
+     "jp": [
+      "Ryūji Nakagi"
+     ]
+    }
+   },
+   "valeur_retiree": "Fire Temple",
+   "motif": "« Fire Temple » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "fait_conserve_par_arete_appartient": true
+  },
+  {
+   "slug": "harine",
+   "id": "a1fbbd91-e20c-4451-9bde-01cc87c1235a",
+   "name": "Harine",
+   "attributes_avant": {
+    "age": "8",
+    "descFr": "Harine est un jeune garçon de 8 ans qui vit à l'orphelinat de Konoha. Il est connu pour ses cheveux épais et hérissés, ressemblant à ceux d'un hérisson, et pour son caractère fier et direct. Harine a été aperçu aux côtés des autres enfants de l'orphelinat, notamment lorsqu'il a exprimé son scepticisme face à l'idée de Nonō Yakushi de nommer Kabuto d'après un casque. Dans le jeu Naruto Mobile, Harine démontre ses compétences en bojutsu et utilise des ballons avec des tags explosifs pour attaquer ses ennemis.",
+    "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "organization": "Konoha Orphanage",
+    "sex": "Male",
+    "village": "Konohagakure",
+    "voiceActors": {
+     "en": [],
+     "jp": [
+      "Kengo Kawanishi"
+     ]
+    }
+   },
+   "valeur_retiree": "Konoha Orphanage",
+   "motif": "« Konoha Orphanage » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "fait_conserve_par_arete_appartient": true
+  },
+  {
+   "slug": "ichigen",
+   "id": "099ae408-8518-4860-88b2-0e730fdef701",
+   "name": "Ichigen",
+   "attributes_avant": {
+    "age": "22",
+    "descFr": "Ichigen est un jeune moine-ninja en formation au Temple de Feu, qui admire profondément Chiriku et aspire à devenir comme lui. Il avertit Chiriku de l'intrusion des membres d'Akatsuki, Kakuzu et Hidan, lors de la mission de suppression d'Akatsuki. Il est présumé décédé, car il n'est pas identifié comme l'un des trois moines survivants connus lors de l'attaque du temple. Il porte l'uniforme typique des moines-ninjas et a une tête rasée, des petits yeux noirs et un grain de beauté sombre sous son œil gauche.",
+    "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "organization": "Fire Temple",
+    "sex": "Male"
+   },
+   "valeur_retiree": "Fire Temple",
+   "motif": "« Fire Temple » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "fait_conserve_par_arete_appartient": true
+  },
+  {
+   "slug": "kanpu",
+   "id": "804dd051-65be-483c-908c-ed20814e503a",
+   "name": "Kanpu",
+   "attributes_avant": {
+    "age": "62",
+    "descFr": "Kanpu est un homme âgé de 62 ans qui travaille comme gardien dans un orphelinat situé à la périphérie de Konohagakure. Il est connu pour son caractère attentionné et défend les enfants de l'orphelinat, notamment Kabuto, contre les menaces extérieures. Kanpu a également montré son opposition à Danzō Shimura lorsqu'il a tenté de recruter un enfant de l'orphelinat pour Root. Il est décrit comme ayant de mauvaises compétences en gestion, mais il se montre protecteur envers les enfants dont il a la charge.",
+    "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "organization": "Konoha Orphanage",
+    "sex": "Male",
+    "village": "Konohagakure",
+    "voiceActors": {
+     "en": [
+      "Michael McConnohie"
+     ],
+     "jp": [
+      "Taira Kikumoto"
+     ]
+    }
+   },
+   "valeur_retiree": "Konoha Orphanage",
+   "motif": "« Konoha Orphanage » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "fait_conserve_par_arete_appartient": true
+  },
+  {
+   "slug": "keiri",
+   "id": "80c34b4e-980c-4f67-b314-8c80bf637344",
+   "name": "Keiri",
+   "attributes_avant": {
+    "age": "36",
+    "descFr": "Keiri est une gardienne d'un orphelinat situé à la périphérie de Konohagakure. Elle avertit Nonō Yakushi des difficultés financières de l'orphelinat, qui s'aggravent après l'arrivée de Kabuto. Keiri menace de dénoncer les méthodes de Danzō Shimura au Troisième Hokage lorsqu'il vient recruter un nouveau membre pour Root. Elle semble facilement frustrée par les enfants, mais leur porte une profonde affection. Keiri a les cheveux et les yeux noirs, et porte une robe noire avec un tablier blanc et un coiffe blanc qui couvre ses cheveux.",
+    "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "organization": "Konoha Orphanage",
+    "sex": "Female",
+    "village": "Konohagakure",
+    "voiceActors": {
+     "en": [
+      "Carrie Keranen"
+     ],
+     "jp": [
+      "Noriko Miyashita"
+     ]
+    }
+   },
+   "valeur_retiree": "Konoha Orphanage",
+   "motif": "« Konoha Orphanage » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "fait_conserve_par_arete_appartient": true
+  },
+  {
+   "slug": "sentoki",
+   "id": "41a76ab8-cfdc-4474-9e73-fb7e9bf5f57d",
+   "name": "Sentoki",
+   "attributes_avant": {
+    "age": "25",
+    "descFr": "Sentoki est un jeune moine-ninja en formation au Temple du Feu, dans le pays du Feu. Il est caractérisé par sa préoccupation pour ses camarades et son apparence distinctive, avec une tête rasée et une cicatrice sur le côté gauche de la tête. Lors de la mission de suppression d'Akatsuki, Sentoki est absent du temple lors de l'attaque menée par Hidan et Kakuzu, mais il revient immédiatement après pour trouver le temple en ruines. Il se rend ensuite à Konoha pour informer les autorités de l'attaque et demander de l'aide. Sentoki est l'un des trois seuls survivants moines connus de l'attaque, aux côtés de Bansai et Zenza.",
+    "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "organization": "Fire Temple",
+    "sex": "Male",
+    "voiceActors": {
+     "en": [],
+     "jp": [
+      "Kōji Fujiyoshi"
+     ]
+    }
+   },
+   "valeur_retiree": "Fire Temple",
+   "motif": "« Fire Temple » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "fait_conserve_par_arete_appartient": true
+  },
+  {
+   "slug": "sora",
+   "id": "7c2a68b2-6cbb-43e2-97bb-e2f2a9fa0790",
+   "name": "Sora",
+   "attributes_avant": {
+    "age": "16",
+    "descFr": "Contexte : On sait peu de choses sur son enfance, seulement qu'un jour il devint fou furieux et ravagea le Temple du Feu, un lieu par ailleurs réputé être une forteresse indestructible. Par la suite, il fut détesté par certains des moines du temple, et se mit bientôt à subir le même traitement qu'un Jinchûriki. Il voulait faire partie des Douze Ninjas Gardiens. Il se déteste à cause de ses pouvoirs et se met en colère quand les gens le dévisagent. Lors de leur première rencontre, il déteste Naruto, mais ensuite ils deviennent amis. Sora n'aime pas recevoir de l'aide des autres, surtout des ninjas. Il ne voulait même pas que l'Équipe Yamato vienne. Partie II, arc filler du Temple du Feu : cet arc commence à cause d'un malentendu ; Naruto Uzumaki se bat contre l'un des moines en formation du Temple du Feu, Sora, qui utilise lui aussi des techniques basées sur le chakra du vent. Après la confusion, les moines et l'Équipe Kakashi se rendent au Temple du Feu. Les moines du temple expliquent que les tombes abritent les fidèles gardes du corps du seigneur féodal du Pays du Feu. Naruto observe Sora s'entraîner avec d'autres moines et se sent offensé en réalisant qu'il se retient. Naruto défie Sora, mais juste au moment où l'affaire est sur le point de devenir sérieuse, un autre moine l'arrête. Naruto se rend compte que Sora",
+    "descLang": "en",
+    "descRaw": "Background: Not much is known about his childhood, only that one day he went berserk and wrecked the Temple of Fire, a place otherwise believed to be an indestructible fortress. Afterward, he was loathed by some of the monks of the temple, and soon began receiving the same treatment as a Jinchūriki. He wanted to become part of the Twelve Guardian Ninja. He hates himself because of his powers and gets angry when people stare at him. When they first meet he hates Naruto but then they become friends. Sora does not like getting help from people, especially ninja. He did not even want Team Yamato to come. Part II Fire Temple Filler Arc: This arc begins due to a misunderstanding, Naruto Uzumaki fights one of the monks-in-training from the Fire Temple, Sora, who also uses wind chakra based techniques. After the confusion, the monks and Team Kakashi travel to the Fire Temple. The temple monks explain that the tombs hold the loyal bodyguards of Fire Country's feudal lord. Naruto observes Sora sparring with other monks and becomes offended upon realizing he is holding back. Naruto challenges Sora, but just as the matter is about to get serious, another monk stops him. Naruto realizes Sora is",
+    "family": [
+     {
+      "name": "Kazuma",
+      "rel": "father",
+      "slug": "kazuma"
+     }
+    ],
+    "favorites": 11,
+    "organization": "Fire Temple",
+    "sex": "Male",
+    "voiceActors": {
+     "en": [
+      "Michael Sinterniklaas"
+     ],
+     "jp": [
+      "Daisuke Hirakawa",
+      "Keiko Nemoto"
+     ]
+    }
+   },
+   "valeur_retiree": "Fire Temple",
+   "motif": "« Fire Temple » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "fait_conserve_par_arete_appartient": true
+  },
+  {
+   "slug": "terubo",
+   "id": "3a2bbb44-5b6d-440c-8e4b-cf5840674b9e",
+   "name": "Terubō",
+   "attributes_avant": {
+    "age": "8",
+    "descFr": "Terubō est un jeune orphelin de 8 ans qui vit à l'orphelinat de Konoha. Il est connu pour son manque d'enthousiasme envers les idées de Nonō Yakushi, notamment lorsqu'elle a suggéré de nommer Kabuto d'après un casque. Terubō a des cheveux bruns longs et des yeux de couleur sombre. Il aime les vêtements qui ressemblent à des poupées en papier, ce qui a inspiré son nom donné par Masashi Kishimoto.",
+    "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "organization": "Konoha Orphanage",
+    "sex": "Male",
+    "village": "Konohagakure",
+    "voiceActors": {
+     "en": [],
+     "jp": [
+      "Mariko Higashiuchi"
+     ]
+    }
+   },
+   "valeur_retiree": "Konoha Orphanage",
+   "motif": "« Konoha Orphanage » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "fait_conserve_par_arete_appartient": true
+  },
+  {
+   "slug": "urushi",
+   "id": "1d898560-7d0a-4551-bddb-320dc2c81f6c",
+   "name": "Urushi",
+   "attributes_avant": {
+    "age": "25",
+    "descFr": "Urushi est un enfant orphelin qui vivait à l'Orphelinat de Konoha. Il devint plus tard un ninja de Konohagakure. À un certain moment, Urushi, ainsi que d'autres enfants et Nonô d'un orphelinat, trouvèrent un jeune garçon blessé sous un arbre. Après qu'elle l'eut soigné, Urushi aida le jeune garçon à rejoindre l'orphelinat avec eux. Le lendemain, il déclara qu'il était étrange que quelqu'un n'ait pas de nom, et la religieuse décida donc de l'appeler Kabuto, d'après le casque qu'Urushi avait posé sur la tête de Kabuto. Au fil des années, tandis que les orphelins aidaient Nonô et Kabuto à soigner certains ninjas de Konohagakure, Urushi protesta à l'idée de devoir aider des ninjas, mais il comprenait qu'ils avaient besoin d'argent et les aidait consciencieusement.",
+    "descLang": "en",
+    "descRaw": "Urushi is an orphaned child who lived in the Konoha Orphanage. He later became a shinobi of Konohagakure. At some point in time, Urushi along with some other children and Nonou from an orphanage, found a young boy under a tree wounded. After she had healed him, Urushi assisted the young boy in getting back to the orphanage with them. The next day, he stated that it was odd for someone to have no name, and as such the nun decided to call him Kabuto after the helmet Urushi put on Kabuto's head. Over the years, as the orphans aided Nonou and Kabuto in treating some Konohagakure shinobi, Urushi protested having to help ninja, but understood that they needed the money and dutifully helped them. (Source: Narutopedia)",
+    "family": [
+     {
+      "name": "Nonō Yakushi",
+      "rel": "adoptive mother",
+      "slug": "nono-yakushi"
+     },
+     {
+      "name": "Kabuto Yakushi",
+      "rel": "adoptive brother",
+      "slug": "kabuto-yakushi"
+     },
+     {
+      "name": "Shin Uchiha",
+      "rel": "adoptive nephews",
+      "slug": "shin-uchiha"
+     }
+    ],
+    "organization": "Konoha Orphanage",
+    "rank": "Chūnin",
+    "sex": "Male",
+    "village": "Konohagakure",
+    "voiceActors": {
+     "en": [
+      "Liam O'Brien",
+      "Michelle Ruff"
+     ],
+     "jp": [
+      "Taira Kikumoto",
+      "Miki Fukui"
+     ]
+    }
+   },
+   "valeur_retiree": "Konoha Orphanage",
+   "motif": "« Konoha Orphanage » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "fait_conserve_par_arete_appartient": true
+  },
+  {
+   "slug": "zenza",
+   "id": "49e64f9a-4cc7-4e78-9212-7d8185ec838d",
+   "name": "Zenza",
+   "attributes_avant": {
+    "age": "20",
+    "descFr": "Zenza est un jeune moine ninja en formation au Temple de Feu, situé dans le Pays du Feu. Il porte l'habit traditionnel des moines ninjas, composé d'un kimono ample et d'une ceinture grise sur les épaules, ainsi que des sandales simples. Lors de l'attaque du Temple de Feu par les membres d'Akatsuki Hidan et Kakuzu, Zenza était en patrouille à l'extérieur du temple et a été profondément choqué par la perte de ses camarades, dont Chiriku. Il est l'un des trois seuls survivants moines connus de cette attaque, aux côtés de Bansai et Sentoki.",
+    "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "organization": "Fire Temple",
+    "sex": "Male",
+    "voiceActors": {
+     "en": [
+      "Patrick Seitz"
+     ],
+     "jp": []
+    }
+   },
+   "valeur_retiree": "Fire Temple",
+   "motif": "« Fire Temple » est un LIEU (preuve wiki ci-dessus), pas une organisation : l'axe organization du hub Naruto le présenterait comme une organisation alors que la fiche est désormais typée place",
+   "fait_conserve_par_arete_appartient": true
+  }
+ ]
+}
