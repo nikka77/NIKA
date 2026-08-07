@@ -2104,7 +2104,7 @@ if (!process.argv.includes('--sans-sonde')) {
     await Promise.all(aSonder.map(async (m) => {
       if (!(await couloirDisponible(m))) { couloirsEpuises.set(m, Date.now() + DUREE_FACTURATION); morts.push(m); }
     }));
-    if (morts.length) console.log(`  ⛔ ${morts.length} couloir(s) fermé(s) au démarrage, écartés 1 h : ${morts.join(', ')}`);
+    if (morts.length) console.log(`  ⛔ ${morts.length} couloir(s) fermé(s) au démarrage, écartés ${DUREE_FACTURATION / 3_600_000} h : ${morts.join(', ')}`);
   } catch (e) {
     console.log(`  ⚠ sonde des couloirs indisponible (${String(e.message ?? e).slice(0, 60)}) — découverte à l'usage`);
   }
