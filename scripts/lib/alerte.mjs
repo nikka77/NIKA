@@ -6,9 +6,41 @@
 // Jamais de secret ni de donnée client dans une alerte : uniquement de l'état opérationnel.
 import { execFile } from 'node:child_process';
 import { envoyerOuParquer } from './whatsapp.mjs';
+import { clientOps } from '../../lib/ops/db.mjs';
+
+/** SILENCE APRÈS LA PREMIÈRE FOIS (07/08/2026).
+ *
+ *  Une unité systemd en `Restart=always` qui refuse de démarrer déclenche son `OnFailure=` à
+ *  chaque tentative : nika-secretaire a ainsi émis 7 952 fois la MÊME alerte le 03/08, une toutes
+ *  les onze secondes, jusqu'à 8 039 exemplaires au total. Répétée, une alerte n'informe pas mieux —
+ *  elle noie tout le reste, et c'est exactement ce qui est arrivé : les rapports de la journée sont
+ *  devenus inatteignables sous la pile.
+ *
+ *  Une alerte identique n'est donc réémise qu'après un délai de garde. Le fait est le même ; s'il
+ *  dure, il sera redit — une fois par demi-heure, ce qui suffit largement à ne pas l'oublier.
+ *  Le compte des répétitions étouffées voyage avec la réémission : « (×271 depuis 22:14) » dit la
+ *  gravité mieux que 271 messages identiques.
+ */
+const GARDE_MINUTES = Number(process.env.NIKA_ALERTE_GARDE_MIN ?? 30);
+
+async function etoufferSiRepetee(texte) {
+  try {
+    const sb = clientOps();
+    const depuis = new Date(Date.now() - GARDE_MINUTES * 60_000).toISOString();
+    const { data } = await sb.from('ops_notes').select('id, created_at')
+      .eq('source', 'wa_alerte_emise').eq('content', texte)
+      .gte('created_at', depuis).order('id', { ascending: false }).limit(1);
+    if (data?.length) return true;                       // déjà dite dans le délai de garde
+    await sb.from('ops_notes').insert({ source: 'wa_alerte_emise', done: true, content: texte });
+    return false;
+  } catch {
+    return false;    // base injoignable : on préfère une alerte de trop qu'une alerte perdue
+  }
+}
 
 export async function envoyerAlerte(texte) {
   const canaux = [];
+  if (await etoufferSiRepetee(texte)) return ['étouffée (identique il y a moins de ' + GARDE_MINUTES + ' min)'];
 
   if (process.env.WHATSAPP_TOKEN && process.env.WHATSAPP_PHONE_ID && process.env.WHATSAPP_TO) {
     // Hors fenêtre de 24 h, Meta n'accepte que les TEMPLATES pour un message à l'initiative du

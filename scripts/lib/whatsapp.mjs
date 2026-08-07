@@ -28,25 +28,56 @@ export async function envoyerTexteBrut(texte, vers = process.env.WHATSAPP_TO) {
   return r.ok;
 }
 
-/** Texte direct si la fenêtre est sûre, sinon parc — le nudge de repli est au choix de l'appelant. */
+/** Texte direct si la fenêtre est sûre, sinon parc — le nudge de repli est au choix de l'appelant.
+ *
+ *  ANTI-RÉPÉTITION (07/08/2026) : une sentinelle qui crie toutes les cinq secondes parce qu'un
+ *  service redémarre en boucle a rempli le parc de 8 039 exemplaires du MÊME message en deux jours
+ *  (« nika-secretaire.service a ÉCHOUÉ », 7 952 rien que le 03/08). Une alerte répétée n'informe
+ *  pas mieux : elle enterre tout le reste. On ne parque donc pas un message déjà parqué à
+ *  l'identique et non encore livré — c'est le même fait, il attend déjà son tour. */
 export async function envoyerOuParquer(texte) {
   if (await fenetreOuverte()) {
     if (await envoyerTexteBrut(texte).catch(() => false)) return 'direct';
   }
+  const { count } = await sb.from('ops_notes')
+    .select('id', { count: 'exact', head: true })
+    .eq('source', 'wa_sortant').eq('done', false).eq('content', texte);
+  if (count) return 'déjà parqué';
   await sb.from('ops_notes').insert({ source: 'wa_sortant', done: false, content: texte });
   return 'parqué';
 }
 
-/** À l'arrivée d'un message de Dan (fenêtre garantie ouverte) : livrer ce qui attendait. */
-export async function viderParc() {
+/** À l'arrivée d'un message de Dan (fenêtre garantie ouverte) : livrer ce qui attendait.
+ *
+ *  LES PLUS RÉCENTS D'ABORD (07/08/2026). Ce vidage servait les 5 PLUS ANCIENS : Dan recevait donc,
+ *  à chaque message qu'il écrivait, cinq alertes vieilles de cinq jours sur un service qui
+ *  remarchait depuis — pendant que les rapports du jour dormaient sous 8 000 messages, hors
+ *  d'atteinte (il aurait fallu écrire 1 600 fois pour les faire remonter). Une nouvelle vaut
+ *  toujours mieux qu'une nouvelle périmée : on sert du plus récent au plus ancien, et on solde
+ *  d'office ce qui a plus de 24 h — une alerte de la semaine dernière n'appelle plus d'action,
+ *  elle reste consultable en base mais n'encombre plus la conversation. */
+export async function viderParc({ limite = 5, peremptionHeures = 24 } = {}) {
+  const seuil = new Date(Date.now() - peremptionHeures * 3600_000).toISOString();
+  const { count: perimes } = await sb.from('ops_notes')
+    .select('id', { count: 'exact', head: true })
+    .eq('source', 'wa_sortant').eq('done', false).lt('created_at', seuil);
+  if (perimes) {
+    await sb.from('ops_notes').update({ done: true })
+      .eq('source', 'wa_sortant').eq('done', false).lt('created_at', seuil);
+  }
+
   const { data } = await sb.from('ops_notes').select('id, content').eq('source', 'wa_sortant')
-    .eq('done', false).order('id', { ascending: true }).limit(5);
+    .eq('done', false).order('id', { ascending: false }).limit(limite);
   let livres = 0;
-  for (const n of data ?? []) {
+  for (const n of (data ?? []).reverse()) {          // remis dans l'ordre du temps à la lecture
     if (await envoyerTexteBrut(`📬 Arrivé pendant ton absence :\n${n.content}`).catch(() => false)) {
       await sb.from('ops_notes').update({ done: true }).eq('id', n.id);
       livres++;
     }
   }
+  // Reste-t-il du courrier ? On le dit plutôt que de le laisser deviner.
+  const { count: reste } = await sb.from('ops_notes')
+    .select('id', { count: 'exact', head: true }).eq('source', 'wa_sortant').eq('done', false);
+  if (reste) await envoyerTexteBrut(`📬 (${reste} message(s) plus ancien(s) encore en attente — écris à nouveau pour la suite.)`).catch(() => false);
   return livres;
 }
