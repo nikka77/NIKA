@@ -1,0 +1,347 @@
+{
+ "date": "2026-08-07",
+ "operation": "pose des dossiers FR attaques One Piece — AJOUT-SEULEMENT (upsert onConflict entry_id,idx / ignoreDuplicates)",
+ "attendu_avant": 0,
+ "lignes_avant": [],
+ "nb_lignes_avant": 0,
+ "entrees_concernees": [
+  {
+   "slug": "atk-op-bajrang-gun",
+   "id": "5c9b2ccf-abaa-4e95-b1c6-ef4cee9145f7",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-tatsumaki",
+   "id": "2e822364-befc-4aad-a72e-d58d6fbdb686",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-bien-cuit-grill-shot",
+   "id": "beeb72b2-270f-4289-8771-d3a1e38578fe",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-thunder-lance-tempo",
+   "id": "d9ffbea7-a32c-4140-bf78-db4673e120b6",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-clutch",
+   "id": "84373062-652a-4b7c-816f-3a3277bacf4a",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-spider-net",
+   "id": "4264e2bf-643e-47a5-8e64-63cbe740b1bc",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-weapons-left",
+   "id": "8a04e147-6b38-4c54-b56a-7580c0ddf328",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-swallow-bond-avant",
+   "id": "65c3d7ad-c356-47f1-be67-efe359189aee",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-yarinami",
+   "id": "fc55702b-5972-4836-b8ce-3acaee47aeb0",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-kyokaen",
+   "id": "e51226a9-4c23-47d3-9759-5d6dd0d2e4dc",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-room",
+   "id": "ccd4d361-8bc9-4766-b9d1-3ead625f0ec9",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-counter-shock",
+   "id": "b837b47f-8e22-40d6-b235-df52d90ff8ce",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-kurouzu",
+   "id": "8cd86a8b-cda5-46aa-b4b0-dbf81ca44f08",
+   "nb_sections": 3
+  },
+  {
+   "slug": "atk-op-red-roc",
+   "id": "185fb013-a89b-44f4-9652-ff4585990d25",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-shishi-sonson",
+   "id": "6f8bdf1e-3b48-46ec-a24f-6f08817caf03",
+   "nb_sections": 3
+  },
+  {
+   "slug": "atk-op-poele-a-frire",
+   "id": "e9a4e566-f40d-488c-af79-2ab6d50354fa",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-cyclone-tempo",
+   "id": "45679c09-4d28-4183-9f45-108539b035cc",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-cien-fleur",
+   "id": "404352c1-743f-4838-bd16-af25281c1718",
+   "nb_sections": 3
+  },
+  {
+   "slug": "atk-op-demonio-fleur",
+   "id": "3f04ef9f-d63e-40e8-ba78-8cebc6d8e92c",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-strong-right",
+   "id": "b1008275-a9a6-4ca5-b082-63d945bd6380",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-karakusagawara-seiken",
+   "id": "39d5096c-05f2-4427-b644-50f213a9dfde",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-onigawara-seiken",
+   "id": "dd65288c-af10-441b-b653-016323623377",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-jujika",
+   "id": "063e4a30-1670-4125-a0b2-a8fe5f8b8211",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-shambles",
+   "id": "ff885e4b-68ff-465f-ac2a-a6ffe578546a",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-k-room",
+   "id": "4965a4ac-6571-4173-800c-d69f7c4bbcab",
+   "nb_sections": 3
+  },
+  {
+   "slug": "atk-op-liberation",
+   "id": "b05f3452-7ad2-48c4-bc1d-a581ad3fbc2d",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-oni-giri",
+   "id": "ab36df4a-6147-4bda-b393-381f63d0b802",
+   "nb_sections": 3
+  },
+  {
+   "slug": "atk-op-purgatory-oni-giri",
+   "id": "5bd2e3aa-6096-490b-8909-a588f72d0ff4",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-thunderbolt-tempo",
+   "id": "6969d220-50bd-48c0-9a18-505f017a58b6",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-kaen-boshi",
+   "id": "3a24b0f5-41c9-49ce-85b9-a4739dacd09f",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-mil-fleur",
+   "id": "af519c1b-592d-40d0-8d77-ea8ec21552b3",
+   "nb_sections": 3
+  },
+  {
+   "slug": "atk-op-coup-de-vent",
+   "id": "e3cef786-2ce0-431e-8c6f-fbaf778a68d6",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-hanauta-sancho-yahazu-giri",
+   "id": "8aa5a60b-7325-4862-927b-b16cafdde393",
+   "nb_sections": 3
+  },
+  {
+   "slug": "atk-op-buraikan",
+   "id": "57a3d09f-ac0c-47d0-b3fa-f5a44204d099",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-hiken",
+   "id": "90435dd3-48ea-4737-9cf2-2ad672941ef0",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-ryu-no-ibuki",
+   "id": "4215674a-c6a9-40a6-9f5a-69155184e9e7",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-puncture-wille",
+   "id": "24e0b696-b3d6-4c51-99e0-72e9d3e19fac",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-tora-gari",
+   "id": "7130f36c-87cb-45b8-9eee-5f8db07cf712",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-mouton-shot",
+   "id": "fedd9802-5cac-40b4-af38-c6020411c3be",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-mirage-tempo",
+   "id": "d0bd7751-7d5c-4feb-bde2-214a91da18af",
+   "nb_sections": 3
+  },
+  {
+   "slug": "atk-op-firebird-star",
+   "id": "dbb58d00-1195-4c4c-828f-3a83cc9ec9af",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-gigantesco-mano",
+   "id": "4451856a-8a9a-4570-991b-f35c303965af",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-radical-beam",
+   "id": "fc5aced8-3905-4f61-9024-6e4ce23bab05",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-nemuriuta-flanc",
+   "id": "34f9f10c-84ae-464b-8b54-4e8e8c107ecd",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-samehada-shotei",
+   "id": "33032f8d-50ce-4c0f-a4bc-18c723ac0bf6",
+   "nb_sections": 1
+  },
+  {
+   "slug": "atk-op-dai-enkai-entei",
+   "id": "c20529e0-9d1a-4e09-8cde-087c17f9db7c",
+   "nb_sections": 3
+  },
+  {
+   "slug": "atk-op-ryu-no-kagizume",
+   "id": "f0b88f78-e9ea-4d4c-b7c6-11e4cca0b1d3",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-injection-shot",
+   "id": "ef899ee5-d1ca-4516-b20a-2db8b260ce3f",
+   "nb_sections": 2
+  },
+  {
+   "slug": "atk-op-divine-departure",
+   "id": "27ebfd2a-be0a-4ca8-b523-a0ffe4754804",
+   "nb_sections": 2
+  }
+ ],
+ "apres": {
+  "posees": 49,
+  "sautees": 0,
+  "sautees_detail": [],
+  "erreurs": [],
+  "sections_attendues": 93,
+  "sections_en_base": 93,
+  "sections_nouvelles": 93,
+  "sections_conformes": 93,
+  "absentes": [],
+  "divergences": []
+ },
+ "reprise": {
+  "date": "2026-08-07",
+  "operation": "reprise — pose des 11 dossiers FR restants (/tmp/atk-fr-reprise.json) — AJOUT-SEULEMENT (upsert onConflict entry_id,idx / ignoreDuplicates)",
+  "attendu_avant": 0,
+  "lignes_avant": [],
+  "nb_lignes_avant": 0,
+  "note_lignes_avant": "Requête clientSite akasha_sections .in(entry_id, 11 ids) exécutée avant toute écriture : 0 ligne retournée, gamma-knife compris.",
+  "entrees_concernees": [
+   {
+    "slug": "atk-op-king-of-hell",
+    "id": "c59ca9d9-2564-49bb-bfee-afb071d9c56e",
+    "nb_sections": 3
+   },
+   {
+    "slug": "atk-op-impact-dial",
+    "id": "416c7b96-5e4f-4a76-8b63-1eb070bdf67d",
+    "nb_sections": 2
+   },
+   {
+    "slug": "atk-op-monster-point",
+    "id": "21ac8eb7-b2f0-4033-a507-e6a938ec1d41",
+    "nb_sections": 3
+   },
+   {
+    "slug": "atk-op-kung-fu-point",
+    "id": "77f48b6b-9ab4-4e73-83f1-278bb6065a40",
+    "nb_sections": 2
+   },
+   {
+    "slug": "atk-op-guard-point",
+    "id": "fd168783-e929-409a-ae1f-fe34e6e82665",
+    "nb_sections": 3
+   },
+   {
+    "slug": "atk-op-horn-point",
+    "id": "f8fb574a-4878-4953-85c6-e33053b4dc72",
+    "nb_sections": 3
+   },
+   {
+    "slug": "atk-op-arm-point",
+    "id": "d5822027-bbf4-4232-bd52-b10388626913",
+    "nb_sections": 3
+   },
+   {
+    "slug": "atk-op-midori-boshi",
+    "id": "fbcedef9-9906-4e07-b8ef-12c52a251170",
+    "nb_sections": 3
+   },
+   {
+    "slug": "atk-op-concasse",
+    "id": "3547d686-b99b-4da1-ad65-7a9041e2842b",
+    "nb_sections": 2
+   },
+   {
+    "slug": "atk-op-shima-yurai",
+    "id": "11c9adad-f5f0-47f3-9920-bf0296e3741c",
+    "nb_sections": 1
+   },
+   {
+    "slug": "atk-op-gamma-knife",
+    "id": "cc196ead-b4a9-4863-9de7-b04bf2b20309",
+    "nb_sections": 2
+   }
+  ],
+  "apres": {
+   "posees": 27,
+   "sautees": 0,
+   "sautees_detail": [],
+   "erreurs": [],
+   "sections_attendues": 27,
+   "sections_en_base": 27,
+   "count_exact": 27,
+   "sections_nouvelles": 27,
+   "sections_conformes": 27,
+   "absentes": [],
+   "divergences": [],
+   "inattendues": [],
+   "ecarts_comptage": [],
+   "verdict": "CONFORME — équivalence canonique (clés triées récursivement) + comptage croisé aux deux bouts"
+  }
+ }
+}

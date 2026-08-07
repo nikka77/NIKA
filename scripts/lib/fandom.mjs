@@ -506,6 +506,28 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000, slug =
  *
  *  @returns {Promise<{title:string,url:string,sections:Array<{index:string,titre:string,texte:string}>}|null>}
  */
+
+/** Position CARACTÈRE réelle d'une section dans le wikitext, quelle que soit l'unité du wiki.
+ *  La doc MediaWiki donne parse.sections[].byteoffset en OCTETS UTF-8 — mais onepiece.fandom.com
+ *  le sert en CARACTÈRES (mesuré le 07/08 : titre « King of Hell Three Sword Style » à l'octet
+ *  41026, byteoffset annoncé 40567 = index caractère exact ; l'écart, 459, est le japonais des
+ *  {{Nihongo}} en amont). Trancher le Buffer en octets sur ce wiki corrompait les DEUX bornes
+ *  de chaque section — 7 extractions parties en vague avec le début dans la section précédente
+ *  et la fin coupée en plein mot. On ne DEVINE pas l'unité : on retient le candidat qui tombe
+ *  exactement sur un début de titre (« = » en début de ligne), l'unité documentée d'abord.
+ *  Aucun des deux ne tombe juste (section transcluse, gabarit) → null : mieux vaut sauter la
+ *  section que découper au milieu d'une phrase. */
+export function posSection(wikitext, octets, byteoffset) {
+  const brut = Number(byteoffset);
+  if (!Number.isFinite(brut)) return null;
+  const estTitre = (i) => i >= 0 && i < wikitext.length && wikitext[i] === '='
+    && (i === 0 || wikitext[i - 1] === '\n');
+  const depuisOctets = octets.subarray(0, Math.min(brut, octets.length)).toString('utf8').length;
+  if (estTitre(depuisOctets)) return depuisOctets;
+  if (estTitre(brut)) return brut;
+  return null;
+}
+
 export async function fetchFandomSections(universe, name, { minChars = 350, maxSections = 24, slug = null } = {}) {
   const api = wikiApi(universe);
   if (!api) return null;
@@ -551,23 +573,460 @@ export async function fetchFandomSections(universe, name, { minChars = 350, maxS
     .filter((s) => Number(s.toclevel) <= 2 && !IGNORE.test(String(s.line).trim()))
     .slice(0, maxSections);
 
-  // byteOffset est en OCTETS UTF-8, pas en unités JS : on découpe sur le Buffer. Une section
-  // court jusqu'à la prochaine de niveau égal ou supérieur — c'est ce que servait &section=N
-  // (une section emporte ses sous-sections), on reproduit exactement ce périmètre.
+  // L'unité de byteoffset dépend du wiki (octets d'après la doc, CARACTÈRES constatés sur
+  // Fandom — voir posSection) : chaque section est ancrée sur son vrai début de titre, puis on
+  // découpe en unités JS. Une section court jusqu'à la prochaine de niveau égal ou supérieur —
+  // c'est ce que servait &section=N (une section emporte ses sous-sections), même périmètre.
   const octets = Buffer.from(wikitext, 'utf8');
+  const posDe = new Map(brutes.map((s) => [s, posSection(wikitext, octets, s.byteoffset)]));
   const finDe = (s) => {
-    const apres = brutes.find((x) => Number(x.byteoffset) > Number(s.byteoffset) && Number(x.toclevel) <= Number(s.toclevel));
-    return apres ? Number(apres.byteoffset) : octets.length;
+    const ici = posDe.get(s);
+    return brutes
+      .filter((x) => posDe.get(x) != null && posDe.get(x) > ici && Number(x.toclevel) <= Number(s.toclevel))
+      .reduce((min, x) => Math.min(min, posDe.get(x)), wikitext.length);
   };
 
   const sections = [];
   for (const s of retenues) {
-    if (!Number.isFinite(Number(s.byteoffset))) continue;   // section transcluse : offset null
-    const brut = octets.subarray(Number(s.byteoffset), finDe(s)).toString('utf8')
+    if (posDe.get(s) == null) continue;                     // transcluse, ou offset qui ne tombe sur aucun titre
+    const brut = wikitext.slice(posDe.get(s), finDe(s))
       .replace(/^=+[^=\n]*=+\s*/, '');                      // la ligne de titre « == X == » ouvre le bloc
     const texte = cleanWikitext(brut).replace(/\s+/g, ' ').trim();
     // Une section trop courte n'a pas de quoi nourrir une fiche — on ne paie pas pour du vide.
     if (texte.length >= minChars) sections.push({ index: String(s.index), titre: String(s.line).trim(), texte });
   }
   return { title: titre, url: page.url, sections, alias };
+}
+
+/* ════════ TECHNIQUES SANS PAGE PROPRE (07/08/2026, entrée 29) ════════
+   Sondé sur onepiece.fandom.com : les attaques restantes n'ont PAS d'article — leur prose vit en
+   SECTIONS (souvent toclevel 3+) de pages HÔTES dont le titre ne matche pas l'attaque : le fruit
+   (« Hiken » → Mera Mera no Mi), le style (« Oni Giri » → Three Sword Style), une sous-page
+   /Techniques (Gomu Gomu no Mi/Techniques) ou une sous-page d'arme (Battle Frankies/BF-36).
+   fetchFandomSections ne peut pas les servir : il écarte les toclevel 3+ ET sa garde exige que le
+   TITRE DE PAGE désigne l'entité. Ici l'identité se prouve autrement — par le TITRE DE SECTION
+   (ou par une redirection à fragment, où c'est le wiki lui-même qui affirme l'équivalence). */
+
+// La recherche plein texte ramène aussi des pages de jeux vidéo, de produits dérivés,
+// d'épisodes et de sommaires — jamais la bonne hôte. Complète META (qui ne voit que les
+// espaces de noms). Familles constatées sur les sondes du 07/08 : Figuarts (figurines),
+// Funimation/DVD (diffusion), Bounty Rush et Jumputi (jeux), novels, SBS et volumes (édition).
+const REBUT_TECHNIQUE = /video game|merchandise|bento|episode|chapter|figuarts|funimation|dvd|bounty rush|jumputi|novel|sbs|volume/i;
+
+// Équivalence CANONIQUE entre un titre de section et un nom d'attaque : les wikis décorent leurs
+// lignes de section (italique wiki ''X'', balises HTML, guillemets, diacritiques des romanisations)
+// et nos noms portent parfois des accents français. On compare des squelettes nus ; la forme
+// compactée (sans espaces) rapproche en plus « Oni Giri » d'un éventuel « Onigiri ».
+const canonTechnique = (s) => String(s ?? '')
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/''+/g, ' ')
+  .normalize('NFD').replace(/[̀-ͯ]/g, '')
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, ' ')
+  .trim();
+
+// ENTRÉE DE LISTE NOMMÉE — le format réel des attaques sur les pages hôtes (vérifié 07/08 sur
+// Three Sword Style) : `*{{Nihongo|'''Oni Giri'''|鬼斬り|…}}: description…`. Ce ne sont PAS des
+// titres de section : la table des sections de Three Sword Style ne contient ni Oni Giri ni
+// Tatsumaki — les techniques vivent en items de liste sous « Techniques ». L'identité se prouve
+// donc par le NOM EN GRAS qui ouvre l'item (ou le premier paramètre du gabarit Nihongo).
+const LISTE_WIKI = /^([*#;:]+)/;
+const nomDEntree = (ligne) => {
+  const m = LISTE_WIKI.exec(ligne);
+  if (!m) return null;
+  // Le nom vit en TÊTE d'item ; un gras à 300 caractères du bord est une emphase de prose,
+  // pas un intitulé (l'intro de Three Sword Style cite '''Oni Giri''' en pleine phrase — mais
+  // sans marqueur de liste, donc déjà écartée ici).
+  const tete = ligne.slice(0, 200);
+  const gras = /'''([^'\n]+?)'''/.exec(tete);
+  if (gras) return { profondeur: m[1].length, nom: gras[1] };
+  const nihongo = /\{\{[Nn]ihongo\|([^|{}]+)\|/.exec(tete);
+  if (nihongo) return { profondeur: m[1].length, nom: nihongo[1] };
+  return null;
+};
+
+/**
+ * PROSE D'UNE ATTAQUE SANS ARTICLE PROPRE, extraite de sa page hôte.
+ * Quatre routes constatées (sonde du 07/08) :
+ *   R1 : redirection avec fragment (« Room » → Ope Ope no Mi#Techniques)
+ *   R2 : entrée/section d'une page de style ou de fruit (« Oni Giri » → Three Sword Style)
+ *   R3 : sous-page …/Techniques (« Gomu Gomu no Mi/Gear 5 Techniques »)
+ *   R4 : sous-page d'arme (Battle Frankies/BF-36)
+ * IDENTITÉ = match canonique d'un TITRE DE SECTION ou du NOM EN GRAS d'une entrée de liste —
+ * ou le fragment de la redirection (là, l'équivalence est affirmée par le wiki lui-même).
+ * Le porteur sert d'ARBITRE entre pages candidates multiples : à qualité égale, on préfère la
+ * page dont le wikitext cite un des porteurs connus de l'attaque.
+ * PANNE ≠ ABSENCE : wget CRIE sur réseau mort ; null ne signifie ici qu'une absence vraie.
+ *
+ * @returns {Promise<{pageTitre:string,sectionTitre:string,url:string,route:'R1'|'R2'|'R3'|'R4',sections:Array<{titre:string,texte:string}>}|null>}
+ */
+export async function fetchFandomTechnique(universe, nomAttaque, { porteurs = [], slug = null } = {}) {
+  const api = wikiApi(universe);
+  if (!api) return null;
+  const base = `https://${WIKIS[universe]}.fandom.com/wiki/`;
+
+  // Formes canoniques acceptées pour le titre de section : le nom, et le slug dékébabé (il garde
+  // souvent la graphie d'origine quand le champ `name` porte une variante — même témoin qu'en 04/08).
+  const cibles = new Set([canonTechnique(nomAttaque)]);
+  if (slug) cibles.add(canonTechnique(String(slug).replace(/^atk-[a-z0-9]+-/, '').replace(/-/g, ' ')));
+  cibles.delete('');
+  const compactes = new Set([...cibles].map((c) => c.replace(/ /g, '')));
+  const matchLine = (line) => {
+    const c = canonTechnique(line);
+    if (cibles.has(c) || compactes.has(c.replace(/ /g, ''))) return true;
+    // PRÉFIXE POSSESSIF DU WIKI (constaté 07/08) : l'entrée s'appelle « Gomu Gomu no Bajrang
+    // Gun » quand notre nom est « Bajrang Gun » — le wiki préfixe du fruit, pas nous. L'entrée
+    // matche si elle SE TERMINE par notre nom ET que le préfixe s'achève par la particule « no »
+    // (le possessif japonais). Étroit à dessein : « Purgatory Oni Giri » ne matche pas « Oni
+    // Giri » (préfixe sans « no ») — c'est une AUTRE attaque, pas un préfixe de style.
+    for (const t of cibles) {
+      if (t && c.endsWith(' ' + t) && c.slice(0, c.length - t.length - 1).endsWith(' no')) return true;
+    }
+    return false;
+  };
+
+  // Mots significatifs des porteurs, SANS le rapprochement ou→o de nameWords : ici on cherche la
+  // citation LITTÉRALE dans le wikitext (« Brook » ne s'y écrit jamais « Brok »).
+  const nu = (t) => String(t ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const motsPorteurs = (porteurs ?? []).flatMap((p) => nu(p).split(/[^a-z0-9]+/).filter((w) => w.length >= 4));
+  const citePorteur = (wikitext) => {
+    const wt = nu(wikitext);
+    return motsPorteurs.some((w) => new RegExp(`\\b${w}\\b`).test(wt));
+  };
+
+  // ── a. sonde de redirection : le wiki connaît-il déjà ce nom ? (R1 si fragment) ──
+  const jr = await wget(`${api}?action=query&titles=${encodeURIComponent(nomAttaque)}&redirects=1&format=json&formatversion=2`);
+  await sleep(250);
+  const redir = (jr?.query?.redirects ?? [])[0] ?? null;
+  const fragment = redir?.tofragment ?? null;
+
+  const essayes = new Set();
+
+  // NIVEAUX DE PREUVE d'un intitulé (section ou entrée), du plus sûr au moins sûr :
+  //   1 — équivalence canonique (nom, forme compactée « Fire Bird Star » ≡ « Firebird Star »,
+  //       préfixe possessif « no »)
+  //   2 — segment d'un intitulé à DEUX-POINTS (« Ittoryu Iai: Shishi Sonson » porte notre
+  //       « Shishi Sonson » ; « Poêle à Frire: Spectre » porte notre « Poêle à Frire ») ;
+  //       préfixe = le PORTEUR (« Franky Radical Beam » pour notre « Radical Beam ») ;
+  //       mots-outils insérés (« Swallow Bond en Avant » ≡ « Swallow Bond Avant »)
+  //   3 — TRADUCTION ATTESTÉE PAR LA LIGNE MÊME : même nombre de mots, UN seul d'écart, et le mot
+  //       manquant est écrit dans la ligne — le champ « literally meaning » du gabarit Nihongo
+  //       (« Rengoku Oni Giri … literally meaning "Purgatory Ogre Cutter" » prouve notre
+  //       « Purgatory Oni Giri »). Rien n'est deviné : la preuve est dans la ligne.
+  //   4 — le champ « literally meaning » PORTE notre nom : « Kamusari … literally meaning
+  //       "Divine Departure" » prouve notre « Divine Departure ». Même logique : la preuve est
+  //       écrite dans la ligne, on ne traduit rien nous-mêmes.
+  const sansPetits = (c) => c.split(' ').filter((w) => w.length > 2).join(' ');
+  const tierNom = (brut, ligne = '') => {
+    if (matchLine(brut)) return 1;
+    const c = canonTechnique(brut);
+    const segs = String(brut).split(':');
+    // DIRECTIONNEL (vague 07/08) : seul le sens « Préfixe: NotreNom » (« Ittoryu Iai: Shishi
+    // Sonson ») vaut preuve directe — le sens inverse « NotreNom: Variante » (« Midori Boshi:
+    // Devil ») livre une variante précise pour un nom générique ; il descend en tier 5, dernier
+    // ressort, servi seulement quand le wiki ne connaît AUCUN autre référent (cas légitime :
+    // « Poêle à Frire: Spectre », unique entrée du wiki pour ce nom).
+    if (segs.length > 1 && matchLine(segs[segs.length - 1])) return 2;
+    for (const t of cibles) {
+      if (t && c.endsWith(' ' + t)) {
+        const prefixe = c.slice(0, c.length - t.length - 1).split(' ').filter(Boolean);
+        if (prefixe.length && prefixe.every((w) => motsPorteurs.includes(w))) return 2;
+      }
+      const sp = sansPetits(t);
+      if (sp && sp.split(' ').length >= 2 && sansPetits(c) === sp) return 2;
+    }
+    if (ligne) {
+      const motsLigne = new Set(canonTechnique(ligne).split(' '));
+      const ce = c.split(' ');
+      for (const t of cibles) {
+        const ct = t.split(' ');
+        if (ct.length !== ce.length || ct.length < 2) continue;
+        const diff = ct.filter((w, k) => w !== ce[k]);
+        if (diff.length === 1 && diff[0].length >= 3 && motsLigne.has(diff[0])) return 3;
+      }
+      // ÉGALITÉ STRICTE, pas « contient » : chaque technique Ryusoken porte « Dragon Claw
+      // Fist » dans son literal — un « contient » faisait résoudre notre « Dragon Claw » sur
+      // « Moeru Ryusoken: Kaen Ryuo », une variante enflammée qui n'est pas notre sujet.
+      const lit = /literally meaning "([^"]+)"/i.exec(ligne);
+      if (lit && cibles.has(canonTechnique(lit[1]))) return 4;
+    }
+    if (segs.length > 1 && segs.slice(0, -1).some((s) => matchLine(s))) return 5;
+    return 0;
+  };
+
+  // Cherche dans `texteStr` la MEILLEURE entrée de liste (au sens des tiers) ; le bloc court
+  // jusqu'à la prochaine entrée NOMMÉE de profondeur égale ou moindre, ou au prochain titre —
+  // les sous-items (variantes en **) et lignes de continuation restent DANS le bloc, même
+  // périmètre qu'une section qui emporte ses sous-sections.
+  const chercheEntree = (texteStr) => {
+    const lignes = texteStr.split('\n');
+    let best = null;
+    for (let li = 0; li < lignes.length; li++) {
+      const e = nomDEntree(lignes[li]);
+      if (!e) continue;
+      const tier = tierNom(e.nom, lignes[li]);
+      if (!tier || (best && best.tier <= tier)) continue;
+      let finLi = lignes.length;
+      for (let k = li + 1; k < lignes.length; k++) {
+        if (/^=/.test(lignes[k])) { finLi = k; break; }
+        const ek = nomDEntree(lignes[k]);
+        if (ek && ek.profondeur <= e.profondeur) { finLi = k; break; }
+      }
+      best = {
+        tier,
+        nom: e.nom.replace(/\[\[|\]\]/g, '').replace(/''+/g, '').trim(),
+        charIdx: lignes.slice(0, li).reduce((n, x) => n + x.length + 1, 0),
+        bloc: lignes.slice(li, finLi).join('\n'),
+      };
+      if (tier === 1) break;                                // rien ne battra une preuve exacte
+    }
+    return best;
+  };
+
+  // UN SEUL parse par page candidate (prop combinés, comme fetchFandomSections) ; renvoie
+  // { resultat, citePorteur } si une section OU une entrée porte le nom, null sinon (page
+  // absente comprise — MediaWiki répond missingtitle en 200, wget le rend tel quel).
+  async function essaie(titre, { fragmentCible = null, viaRedirect = false } = {}) {
+    if (!titre || essayes.has(titre)) return null;
+    essayes.add(titre);
+    const j = await wget(`${api}?action=parse&page=${encodeURIComponent(titre)}&prop=wikitext%7Csections&redirects=1&format=json&formatversion=2`);
+    await sleep(250);                                       // politesse Fandom (~4 req/s)
+    const secs = j?.parse?.sections ?? [];
+    const wikitext = String(j?.parse?.wikitext ?? '');
+    if (!wikitext) return null;
+
+    const pageTitre = j.parse.title ?? titre;
+    const route = viaRedirect && fragmentCible ? 'R1'
+      : /\/[^/]*techniques$/i.test(pageTitre) ? 'R3'
+        : pageTitre.includes('/') ? 'R4'
+          : 'R2';
+    // Ancrage des sections en unités JS via posSection — l'unité de byteoffset dépend du wiki
+    // (7 extractions corrompues en vague quand on tranchait le Buffer en octets, ce wiki servant
+    // des offsets en caractères).
+    const octets = Buffer.from(wikitext, 'utf8');
+    const posDe = new Map(secs.map((s) => [s, posSection(wikitext, octets, s.byteoffset)]));
+    const nettoie = (a, b) => cleanWikitext(
+      wikitext.slice(a, b).replace(/^=+[^=\n]*=+\s*/, ''),
+    ).replace(/\s+/g, ' ').trim();
+    const titreDe = (s) => String(s.line).replace(/<[^>]+>/g, '').replace(/''+/g, '').trim();
+    const bornes = (cible) => {
+      const debut = posDe.get(cible);
+      if (debut == null) return null;
+      const fin = secs
+        .filter((x) => posDe.get(x) != null && posDe.get(x) > debut && Number(x.toclevel) <= Number(cible.toclevel))
+        .reduce((min, x) => Math.min(min, posDe.get(x)), wikitext.length);
+      return [debut, fin];
+    };
+    const livre = (sectionTitre, anchor, sections) => ({
+      resultat: {
+        pageTitre,
+        sectionTitre,
+        url: `${base}${encodeURIComponent(pageTitre)}${anchor ? '#' + encodeURIComponent(anchor) : ''}`,
+        route,
+        sections,
+      },
+      // Une redirection vaut preuve d'identité à elle seule — pas besoin d'arbitre.
+      citePorteur: viaRedirect || citePorteur(wikitext),
+    });
+
+    // Découpe d'une SECTION avec ses sous-sections, en unités JS ancrées par posSection.
+    // Même périmètre que fetchFandomSections, mais SANS filtre toclevel.
+    const coupeSection = (cible) => {
+      const b0 = bornes(cible);
+      if (!b0) return null;                                 // offset irrésolu : on saute, on ne devine pas
+      const [debut, fin] = b0;
+      const total = nettoie(debut, fin);
+      if (total.length < 120) return null;                  // plancher : pas de quoi nourrir une fiche
+      const sous = secs.filter((x) => posDe.get(x) != null && posDe.get(x) > debut && posDe.get(x) < fin);
+      if (sous.length) {
+        // Des sous-sections riches (> ~4 000 car. cumulés) écraseraient une fiche unique : on les
+        // rend comme sections séparées, découpées au niveau des enfants directs.
+        const minLvl = Math.min(...sous.map((x) => Number(x.toclevel)));
+        const enfants = sous.filter((x) => Number(x.toclevel) === minLvl);
+        const finEnfant = (s) => {
+          const ap = secs.find((x) => posDe.get(x) != null && posDe.get(x) > posDe.get(s) && Number(x.toclevel) <= Number(s.toclevel));
+          return ap ? Math.min(posDe.get(ap), fin) : fin;
+        };
+        const blocs = enfants.map((s) => ({ titre: titreDe(s), texte: nettoie(posDe.get(s), finEnfant(s)) }));
+        if (blocs.reduce((n, b) => n + b.texte.length, 0) > 4000) {
+          const tete = nettoie(debut, posDe.get(enfants[0]));
+          const detail = tete.length >= 120 ? [{ titre: titreDe(cible), texte: tete }] : [];
+          for (const b of blocs) if (b.texte.length >= 120) detail.push(b);
+          if (detail.length) return detail;
+        }
+      }
+      return [{ titre: titreDe(cible), texte: total }];
+    };
+
+    // ── 1. le fragment de redirection prime : c'est le wiki qui désigne la section, pas nous ──
+    if (fragmentCible) {
+      const parFrag = secs.find((s) => s.anchor === fragmentCible && posDe.get(s) != null)
+        ?? secs.find((s) => posDe.get(s) != null && canonTechnique(s.line) === canonTechnique(fragmentCible.replace(/_/g, ' ')));
+      if (parFrag) {
+        // Fragment CONTENEUR (« Room » → #Techniques) : la section liste PLUSIEURS techniques —
+        // on isole l'entrée de la nôtre plutôt que de livrer vingt attaques d'un bloc. Mais
+        // SEULEMENT sur preuve EXACTE (tier 1) : la redirection « Midori Boshi » → #Pop Green
+        // désigne la section ENTIÈRE comme notre sujet — en isoler « Midori Boshi: Devil »
+        // (preuve faible) livrait une variante précise pour un nom générique (vague 07/08).
+        if (!matchLine(fragmentCible.replace(/_/g, ' '))) {
+          const b1 = bornes(parFrag);
+          const e = b1 ? chercheEntree(wikitext.slice(b1[0], b1[1])) : null;
+          if (e && e.tier === 1) {
+            const texte = cleanWikitext(e.bloc).replace(/\s+/g, ' ').trim();
+            if (texte.length >= 120) return livre(e.nom, parFrag.anchor, [{ titre: e.nom, texte }]);
+          }
+          // L'entrée exacte peut vivre dans une section SŒUR du fragment : la redirection
+          // « Shima Yurashi » → #Techniques désigne un conteneur dont l'unique entrée est
+          // Hakua — la nôtre vit sous « Unnamed Techniques » (servie FAUSSE en vague 07/08,
+          // rattrapée à la main). Une preuve tier 1 n'importe où sur la page bat un conteneur
+          // générique ; sans elle, la désignation du wiki reste la bonne réponse
+          // (« Midori Boshi » → la section #Pop Green entière).
+          const eg = chercheEntree(wikitext);
+          if (eg && eg.tier === 1) {
+            const texte = cleanWikitext(eg.bloc).replace(/\s+/g, ' ').trim();
+            if (texte.length >= 120) {
+              let englobante = null;
+              for (const s of secs) {
+                const off = posDe.get(s);
+                if (off != null && off <= eg.charIdx && (!englobante || off > posDe.get(englobante))) englobante = s;
+              }
+              return livre(eg.nom, englobante?.anchor ?? parFrag.anchor, [{ titre: eg.nom, texte }]);
+            }
+          }
+        }
+        const coupe = coupeSection(parFrag);
+        if (coupe) return livre(titreDe(parFrag), parFrag.anchor, coupe);
+      }
+      // fragment introuvable sur la page : on retombe sur la résolution par nom, ci-dessous
+    }
+
+    // ── 2. une SECTION porte le nom en preuve exacte (TOUS les toclevels : c'est précisément
+    //       parce que ces attaques vivent en toclevel 3+ que fetchFandomSections ne les voyait pas) ──
+    const parLigne = secs.find((s) => posDe.get(s) != null && tierNom(s.line) === 1);
+    if (parLigne) {
+      const coupe = coupeSection(parLigne);
+      if (coupe) return livre(titreDe(parLigne), parLigne.anchor, coupe);
+    }
+
+    // ── 3. une ENTRÉE DE LISTE porte le nom en preuve DIRECTE (tiers 1-2) — le format
+    //       majoritaire (Oni Giri, Concasse, Franky Radical Beam…) ──
+    const e = chercheEntree(wikitext);
+    const livreEntree = (e2) => {
+      const texte = cleanWikitext(e2.bloc).replace(/\s+/g, ' ').trim();
+      if (texte.length < 120) return null;
+      // Ancre de la section ENGLOBANTE pour l'URL : la dernière dont la position précède l'entrée.
+      let englobante = null;
+      for (const s of secs) {
+        const off = posDe.get(s);
+        if (off == null) continue;
+        if (off <= e2.charIdx && (!englobante || off > posDe.get(englobante))) englobante = s;
+      }
+      return livre(e2.nom, englobante?.anchor ?? null, [{ titre: e2.nom, texte }]);
+    };
+    if (e && e.tier <= 2) {
+      const r = livreEntree(e);
+      if (r) return r;
+    }
+
+    // ── 4. section COMPOSÉE « notre nom + le style de la page » : « King of Hell Three Sword
+    //       Style » sur la page « Three Sword Style » désigne bien notre « King of Hell » — le
+    //       reste du titre de section est exactement le sujet de la page hôte, pas une autre
+    //       attaque. Preuve étroite : chaque mot du reste doit appartenir au titre de la page.
+    //       AVANT les preuves par traduction : la section couvre l'état entier, pas une seule
+    //       de ses techniques. ──
+    const motsPage = new Set(canonTechnique(pageTitre).split(' '));
+    const parCompose = secs.find((s) => {
+      if (posDe.get(s) == null) return false;
+      const c = canonTechnique(s.line);
+      for (const t of cibles) {
+        if (t && c.startsWith(t + ' ') && c.slice(t.length + 1).split(' ').every((w) => motsPage.has(w))) return true;
+      }
+      return false;
+    });
+    if (parCompose) {
+      const coupe = coupeSection(parCompose);
+      if (coupe) return livre(titreDe(parCompose), parCompose.anchor, coupe);
+    }
+
+    // ── 5. dernier ressort : entrée puis section prouvées par TRADUCTION (tiers 3-4) ──
+    if (e) {
+      const r = livreEntree(e);
+      if (r) return r;
+    }
+    const parTier = secs.find((s) => posDe.get(s) != null && tierNom(s.line) > 0);
+    if (parTier) {
+      const coupe = coupeSection(parTier);
+      if (coupe) return livre(titreDe(parTier), parTier.anchor, coupe);
+    }
+    return null;
+  }
+
+  // Meilleur match SANS citation de porteur : gardé en secours, au cas où aucun candidat cité ne sort.
+  let secours = null;
+
+  // ── la redirection d'abord : identité affirmée par le wiki lui-même (R1/R4) ──
+  if (redir?.to) {
+    const r = await essaie(redir.to, { fragmentCible: fragment, viaRedirect: true });
+    if (r) return r.resultat;
+    if (!redir.to.includes('/')) {
+      const r3 = await essaie(`${redir.to}/Techniques`);
+      if (r3) {
+        if (r3.citePorteur || !motsPorteurs.length) return r3.resultat;
+        secours ??= r3.resultat;
+      }
+    }
+  }
+
+  // ── b. recherche exacte (guillemets = phrase entière) : la page hôte sort en tête (R2) ──
+  const filtreHits = (js) => (js?.query?.search ?? []).map((h) => h.title)
+    .filter((t) => !META.test(t) && !REBUT_TECHNIQUE.test(t));
+  // srlimit=10 et pas 5 : les épisodes et chapitres monopolisent la tête du classement (« Gamma
+  // Knife » place Ope Ope no Mi en 9e position) — le filtre à rebut fait le tri derrière.
+  const js = await wget(`${api}?action=query&list=search&srsearch=${encodeURIComponent(`"${nomAttaque}"`)}&srlimit=10&format=json&formatversion=2`);
+  await sleep(250);
+  let hits = filtreHits(js);
+  if (!hits.length) {
+    // La phrase EXACTE ne replie pas les diacritiques : « Poele à Frire » (notre graphie) ne
+    // trouve jamais « Poêle à Frire » (celle du wiki). La recherche par MOTS, elle, replie —
+    // on ne s'en sert qu'à sec, la phrase exacte restant plus précise quand elle répond.
+    const js2 = await wget(`${api}?action=query&list=search&srsearch=${encodeURIComponent(nomAttaque)}&srlimit=10&format=json&formatversion=2`);
+    await sleep(250);
+    hits = filtreHits(js2);
+  }
+
+  // ── c+d+e. chaque candidat puis sa sous-page /Techniques (R3) ; le porteur arbitre ──
+  // Pages de BASE avant les sous-pages (tri stable : l'ordre de la recherche survit dans chaque
+  // groupe) : « Concassé » existe sur Black Leg Style (la version de base) ET sur la sous-page
+  // /Diable Jambe (sa variante enflammée, qui se décrit elle-même comme « the Diable Jambe
+  // version ») — le classement de recherche servait la variante en premier (vague 07/08).
+  hits.sort((a, b) => (a.includes('/') ? 1 : 0) - (b.includes('/') ? 1 : 0));
+  for (const t of hits) {
+    for (const cand of [t, t.includes('/') ? null : `${t}/Techniques`]) {
+      if (!cand) continue;
+      const r = await essaie(cand);
+      if (!r) continue;
+      if (r.citePorteur || !motsPorteurs.length) return r.resultat;
+      secours ??= r.resultat;
+    }
+  }
+
+  // ── recherche QUALIFIÉE PAR PORTEUR, dernier filet avant l'absence : « Liberation » seul
+  //     noie la page hôte sous les épisodes (Yami Yami no Mi hors du top 10), « Liberation
+  //     Teach » la fait remonter. On n'y passe qu'à sec — et l'identité reste prouvée par le
+  //     titre de section ou d'entrée, jamais par le classement de la recherche. ──
+  if (!secours) {
+    for (const p of (porteurs ?? []).slice(0, 2)) {
+      const mots = nu(p).split(/[^a-z0-9]+/).filter((w) => w.length >= 4).join(' ');
+      if (!mots) continue;
+      const jp = await wget(`${api}?action=query&list=search&srsearch=${encodeURIComponent(`${nomAttaque} ${mots}`)}&srlimit=5&format=json&formatversion=2`);
+      await sleep(250);
+      for (const t of filtreHits(jp)) {
+        const r = await essaie(t);
+        if (!r) continue;
+        if (r.citePorteur || !motsPorteurs.length) return r.resultat;
+        secours ??= r.resultat;
+      }
+    }
+  }
+  return secours;                                           // null = absence vraie, à sec de candidats
 }
