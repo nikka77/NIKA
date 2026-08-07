@@ -76,11 +76,47 @@ async function sourceDe(row) {
   return page?.text ?? '';
 }
 
-// Le jury EN SERVICE, pas celui d'il y a une semaine. Les valeurs par défaut suivent usine.sh :
-// ce script rejouait encore sur ollama/gemma4 et gemini-flash-lite, deux couloirs sortis du parc.
+// LE JURY SE CHOISIT AU LANCEMENT, IL NE SE CODE PLUS EN DUR (07/08/2026).
+//
+// Ce script a déjà été corrigé une fois pour « suivre usine.sh » — et il a re-péri de la même
+// façon : son juge n°1 par défaut, DeepInfra, s'est mis à répondre 402 (facturation), si bien que
+// le rattrapage de 2 h 30 rejouait chaque nuit 328 relectures sur un guichet fermé et les
+// remettait en échec. Résultat mesuré le 07/08 : auto_verdict NUL sur 328/328, et 664 productions
+// empilées derrière, en attente d'un jugement qui ne venait jamais.
+//
+// Épingler un couloir, c'est parier qu'il sera ouvert la nuit où on ne regarde pas. On sonde donc
+// à chaque lancement et on prend les deux premiers DISPONIBLES, en gardant la règle du 28/07 :
+// deux FAMILLES différentes (un juge et son confrère de la même maison partagent leurs angles
+// morts — le double verdict n'aurait plus qu'un avis). NIKA_JUGE1/NIKA_JUGE2 forcent la main quand
+// on veut une campagne précise.
+const CANDIDATS = [
+  'groq/llama-3.3-70b-versatile',            // Meta
+  'gemini/gemma-4-31b-it',                   // Google
+  'mistral/mistral-large-latest',            // Mistral
+  'nvidia/nemotron-3-super-120b',            // NVIDIA
+  'groq/openai/gpt-oss-120b',                // OpenAI-oss
+  'openrouter/nemotron-550b:free',
+];
+
+async function jurySain() {
+  const forces = [process.env.NIKA_JUGE1, process.env.NIKA_JUGE2].filter(Boolean);
+  if (forces.length === 2) return forces;
+  const { couloirsOuverts } = await import('./lib/couloirs.mjs');
+  const ouverts = await couloirsOuverts(CANDIDATS, 2 - forces.length);
+  return [...forces, ...ouverts.filter((o) => !forces.includes(o))].slice(0, 2);
+}
+
+const [juge1, juge2] = await jurySain();
+if (!juge1 || !juge2) {
+  // On CRIE plutôt que de rejouer dans le vide : c'est exactement ce silence qui a laissé
+  // 328 relectures échouer nuit après nuit.
+  console.error('✗ aucun jury sain : moins de deux couloirs ouverts parmi', CANDIDATS.join(', '));
+  process.exit(1);
+}
+console.log(`jury du jour : ${juge1} (auto) · ${juge2} (auto2)`);
 const JURY = [
-  { juge_modele: process.env.NIKA_JUGE1 ?? 'deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo', slot: 'auto' },
-  { juge_modele: process.env.NIKA_JUGE2 ?? 'openrouter/google/gemma-4-26b-a4b-it:free', slot: 'auto2' },
+  { juge_modele: juge1, slot: 'auto' },
+  { juge_modele: juge2, slot: 'auto2' },
 ];
 
 const messages = [];
