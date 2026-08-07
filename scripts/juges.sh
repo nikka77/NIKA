@@ -37,7 +37,13 @@ CONC=${NIKA_CONC_JUGES:-12}
 # --force-jury les réassigne par emplacement (A = juge n°1, B = juge n°2, jamais le même modèle
 # pour les deux, donc pas de faux consensus). Deux FAMILLES distinctes, comme le veut la règle du
 # 28/07. NIKA_FORCE_JURY pour changer sans toucher au script.
-FORCE_JURY=${NIKA_FORCE_JURY:-groq/llama-3.3-70b-versatile,openrouter/google/gemma-4-26b-a4b-it:free}
+# Choisis sur le BUDGET DU JOUR restant, pas sur la seule disponibilité (08/08, 01 h 10) :
+# openrouter/gemma-4-26b:free est plafonné à 450 requêtes/jour et les avait toutes consommées.
+# Chaque fiche recevait alors son premier verdict et jamais le second — les emplacements de juge
+# se terminaient bien (« ✓ done »), mais AUCUN dossier ne se bouclait, ce qui ne se voit pas dans
+# le journal. gemini/gemma-4-31b-it porte 11 500 req/jour et n'en avait consommé que 45.
+# Deux familles distinctes : Meta pour le premier juge, Google pour le second.
+FORCE_JURY=${NIKA_FORCE_JURY:-groq/llama-3.3-70b-versatile,gemini/gemma-4-31b-it}
 
 echo "⚖️  étage de jugement — couloir review_local · jury ${JUGE} · réattribution ${FORCE_JURY} · ${CONC} de front"
 exec "${PRIO[@]}" node --env-file=.env.local scripts/agent-worker.mjs \
