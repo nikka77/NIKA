@@ -56,7 +56,9 @@ try {
   if (!escalades.length) { console.log('aucune escalade en attente'); process.exit(0); }
 
   // Session Claude : sans elle, on prévient au lieu de laisser pourrir en silence.
-  try { await sh('claude', ['-p', 'OK', '--output-format', 'text'], { timeout: 120_000 }); }
+  // Simple test de session : le modèle le plus léger suffit, et il ne doit RIEN coûter au
+  // quota du modèle de travail de Dan (07/08).
+  try { await sh('claude', ['-p', 'OK', '--model', 'haiku', '--output-format', 'text'], { timeout: 120_000 }); }
   catch {
     await whatsapp('🏭 Usine — ⚠ escalade en attente mais token Claude invalide — régénère avec `claude setup-token` → .env.local (les 2 copies), puis renvoie ton message.');
     process.exit(0);
@@ -80,6 +82,10 @@ try {
     let resume = '';
     try {
       resume = await sh('claude', [
+        // MODÈLE ÉPINGLÉ (07/08) : sans --model, une escalade consommait le quota du modèle par
+        // défaut du COMPTE de Dan. Une escalade est une tâche de code sérieuse mais bornée —
+        // Sonnet la fait. NIKA_CLAUDE_MODELE pour en changer sans toucher au code.
+        '--model', process.env.NIKA_CLAUDE_MODELE || 'sonnet',
         '-p',
         `Tu travailles dans le dépôt NIKA (branche ${branche}, déjà créée pour toi).
 Réalise cette demande de Dan, reçue par WhatsApp :

@@ -13,7 +13,7 @@ exec >> "$LOG" 2>&1
 echo "═══ audit hebdo — $(date '+%Y-%m-%d %H:%M') ═══"
 
 # Session Claude requise : si l'OAuth est expiré, on le dit clairement et on n'invente rien.
-if ! claude -p "OK" --output-format text < /dev/null > /dev/null 2>&1; then
+if ! claude -p "OK" --model haiku --output-format text < /dev/null > /dev/null 2>&1; then
   echo "⚠ session claude invalide — régénère le token : \`claude setup-token\` puis colle-le dans .env.local (CLAUDE_CODE_OAUTH_TOKEN), et relance :"
   echo "  ./scripts/audit-hebdo.sh"
   node --env-file=.env.local scripts/ops-alerte.mjs "⚠ NIKA OPS : audit hebdo SAUTÉ — token Claude invalide. Régénère avec claude setup-token → .env.local (les 2 copies), puis ./scripts/audit-hebdo.sh"
@@ -21,7 +21,10 @@ if ! claude -p "OK" --output-format text < /dev/null > /dev/null 2>&1; then
 fi
 
 # Outils autorisés : UNIQUEMENT l'outillage d'audit (liste + vote). Rien d'autre.
+# MODÈLE ÉPINGLÉ (07/08) : sans --model, l'audit hebdomadaire consommait le quota du modèle par
+# défaut du COMPTE de Dan, chaque dimanche, sans qu'il ouvre une fenêtre.
 claude -p "$(cat scripts/audit-hebdo-prompt.md)" \
+  --model "${NIKA_CLAUDE_MODELE:-sonnet}" \
   --output-format text \
   --allowedTools "Bash(node --env-file=.env.local scripts/ops-audit-batch.mjs:*)" \
   < /dev/null

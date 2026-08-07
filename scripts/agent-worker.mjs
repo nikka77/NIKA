@@ -1972,6 +1972,12 @@ Dan te parle sur WhatsApp. Réponds en français, bref et direct (style WhatsApp
 
 MESSAGE DE DAN :
 ${texteSans}`,
+              // MODÈLE ÉPINGLÉ (07/08) : sans --model, le CLI prend le défaut du COMPTE de Dan —
+              // c'est-à-dire son modèle le plus cher, et son quota hebdomadaire à lui. Dan a vu sa
+              // limite fondre sans avoir ouvert une seule fenêtre : c'était l'usine qui la mangeait,
+              // un message WhatsApp à la fois. Une réponse WhatsApp de trois lignes n'a besoin de
+              // rien de plus que Sonnet. NIKA_CLAUDE_MODELE permet d'en changer sans toucher au code.
+              '--model', process.env.NIKA_CLAUDE_MODELE || 'sonnet',
               '--output-format', 'text',
             ], { cwd: process.cwd(), stdio: ['ignore', 'pipe', 'pipe'], env: (() => {
               // Le CLI préfère ANTHROPIC_API_KEY (compte API, crédits à sec) au token d'abonnement
