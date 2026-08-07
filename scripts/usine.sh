@@ -34,7 +34,8 @@ cd "$(dirname "$0")/.."
 # SOBRE (pas de raisonnement caché) à 60 req/min — les campagnes de sections, routées vers les
 # sobres depuis les troncatures Nemotron, plafonnaient aux 12/min de mistral-large. ~0,0004 $
 # la section : les 171 d'Initial D coûtent 7 centimes quand le couloir gratuit est plein.
-MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,groq/openai/gpt-oss-120b,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo,openrouter/mistralai/mistral-small-24b-instruct-2501,anthropic/claude-haiku-4-5}
+# Même solde mort côté PRODUCTION : deepinfra/Llama-3.3-70B retiré le 07/08 (402).
+MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-large-latest,groq/openai/gpt-oss-120b,openrouter/mistralai/mistral-small-24b-instruct-2501,anthropic/claude-haiku-4-5}
 # Jugement n°2 (famille croisée) : Qwen3-32B chez DeepInfra depuis le 01/08 — facturé au
 # jeton, donc SANS guichet quotidien, le mur contre lequel tous les couloirs gratuits butaient.
 # Mesuré : 0,000195 $ le verdict avec /no_think (2,6 s) — les 10 $ de Dan valent ~51 000
@@ -47,7 +48,12 @@ MODELE=${CLOUD_MODEL:-nvidia/nvidia/nemotron-3-super-120b-a12b,mistral/mistral-l
 # Google — perdue quand gemma-4-31b est devenu le goulot du parc le 01/08. Derrière lui,
 # DeepInfra reprend la main dès que le millier de requêtes du jour est consommé : la chaîne ne
 # s'arrête plus jamais faute de guichet, elle passe simplement du gratuit au payé.
-JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,deepinfra/Qwen/Qwen3-32B,mistral/mistral-small-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/llama-3.3-70b-versatile,openrouter/mistralai/mistral-small-24b-instruct-2501,anthropic/claude-haiku-4-5}
+# COULOIR RETIRÉ le 07/08 : deepinfra (Qwen3-32B) répond 402 « You need positive balance » —
+# solde épuisé. Le laisser en DEUXIÈME position faisait basculer chaque tâche plafonnée par Groq
+# sur un guichet mort : elle repartait en file, revenait, replafonnait — la file MONTAIT au lieu
+# de descendre. Un couloir dont on sait qu'il est fermé n'a rien à faire dans une rotation ;
+# à re-créditer chez le fournisseur pour le réarmer.
+JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,mistral/mistral-small-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/llama-3.3-70b-versatile,openrouter/mistralai/mistral-small-24b-instruct-2501,anthropic/claude-haiku-4-5}
 # 16 places de front depuis le 02/08. Le nœud ne calcule rien : il attend des réponses HTTP.
 # Mesuré à 8 places, en pleine charge : 1,3 % de CPU, 0,47 de charge sur 2 cœurs, 3,1 Go libres.
 # Le facteur limitant est le débit par minute des fournisseurs, pas la machine — et maintenant
