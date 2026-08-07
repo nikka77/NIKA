@@ -1447,8 +1447,18 @@ async function processMessage(msg) {
   }
 
   // 2) Garde anti-fabulation : pas de matière ⇒ pas d'appel modèle.
+  //
+  // UN REFUS DE GARDE N'ATTEND PERSONNE (07/08/2026). Il partait jusqu'ici en
+  // `review_status: 'pending'`, comme une production à relire — alors qu'aucun modèle n'a parlé
+  // et qu'il n'y a rien à juger : la garde a constaté qu'il n'y avait pas de matière, point.
+  // Deux dégâts mesurés le même jour : la pile « à relire » affichait 7 691 lignes qui n'étaient
+  // pas du travail (le vrai reste à relire était de 327), et le garde d'idempotence — qui
+  // s'appuie sur 'pending' — condamnait ces entités à ne plus JAMAIS être recommandées, même
+  // une fois la garde réparée. On clôt donc à la source : 'rejected', le motif dans `error`.
+  // La ligne reste en base (traçabilité, et c'est elle qui prouve le plafond), mais elle sort
+  // du circuit humain et ne bloque plus le ravitaillement.
   const guardErr = t.guard(p);
-  if (guardErr) return { ...base, status: 'refused', model: null, error: guardErr };
+  if (guardErr) return { ...base, status: 'refused', review_status: 'rejected', model: null, error: guardErr };
 
   let echecs = 0;
   for (;;) {
