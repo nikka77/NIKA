@@ -2078,6 +2078,28 @@ if (!process.argv.includes('--sans-sonde')) {
   }
 }
 
+// SONDE DES COULOIRS AU DÉMARRAGE (07/08/2026) — le worker OUBLIAIT quels guichets sont morts.
+// `couloirsEpuises` ne se remplit qu'en heurtant un mur : après chaque redémarrage, le worker
+// redécouvrait un par un les couloirs fermés, en sacrifiant une tâche à chacun. Vécu ce soir, à
+// chaque redémarrage : une rafale de relectures reportées sur deepinfra (402 depuis le matin), puis
+// l'étage qui repart. Une minute perdue et des tâches qui font des allers-retours dans la file,
+// pour une information qu'un appel d'un jeton donne d'avance.
+// La sonde ne bloque JAMAIS le démarrage : un couloir injoignable est une information, pas une
+// panne — et si la sonde elle-même échoue, on démarre comme avant, en apprenant sur le tas.
+{
+  const aSonder = [...new Set([...JUGES_CLI, ...ARBITRES, ...CLOUDS])];
+  try {
+    const { couloirDisponible } = await import('./lib/couloirs.mjs');
+    const morts = [];
+    await Promise.all(aSonder.map(async (m) => {
+      if (!(await couloirDisponible(m))) { couloirsEpuises.set(m, Date.now() + 3_600_000); morts.push(m); }
+    }));
+    if (morts.length) console.log(`  ⛔ ${morts.length} couloir(s) fermé(s) au démarrage, écartés 1 h : ${morts.join(', ')}`);
+  } catch (e) {
+    console.log(`  ⚠ sonde des couloirs indisponible (${String(e.message ?? e).slice(0, 60)}) — découverte à l'usage`);
+  }
+}
+
 console.log(`⚙️  worker NIKA OPS — mode ${LOOP ? 'continu' : 'drain'} · ${CONC} tâche(s) de front`);
 // LE CŒUR BAT PENDANT LE TRAVAIL, PAS SEULEMENT ENTRE DEUX LOTS (02/08). Un tour de boucle
 // dure le temps de son lot : douze tâches sur un couloir bridé à 12 req/min, ce sont des
