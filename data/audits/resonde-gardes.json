@@ -1,0 +1,293 @@
+{
+  "chantier": "resonde-gardes — re-sondage des 3 302 tentatives « refus SUSPECT » du 07/08",
+  "fait_le": "2026-08-07T12:44:11.301Z",
+  "trace": "data/audits/resonde-gardes-trace.json",
+  "perimetre": {
+    "tentatives_visees": 3302,
+    "couples_nommes_dans_le_triage": 177,
+    "couples_distincts": 176,
+    "familles": "B_homonyme, C3_seuil_titre_identique, E_plus_generale"
+  },
+  "verdicts_de_la_garde_reparee": {
+    "passe": 143,
+    "encore_refuses": 33,
+    "lignes_portees_par_les_passe": 3079,
+    "lignes_portees_par_les_refus": 223,
+    "total_lignes": 3302,
+    "compte_croise_avec_le_triage": {
+      "attendu": 3302,
+      "mesure": 3302,
+      "egal": true
+    },
+    "deux_passes_independantes": "1re passe 12:27Z et 2e passe (ce fichier) : mêmes 143/33, 0 divergence de verdict, 0 divergence de titre"
+  },
+  "independance_des_gardes": {
+    "question": "sur quelle preuve repose chaque « oui » ? une garde qui dit oui pour la même raison que la précédente n'est plus un second avis",
+    "passe_sans_aucune_preuve_independante": 0,
+    "preuves_cumulables": {
+      "alias_cure": 21,
+      "titre_egal": 41,
+      "titre_plus_riche": 107,
+      "slug": 116,
+      "cite_le_nom": 14,
+      "attestation_wiki": 55,
+      "repere_du_resume": 12
+    },
+    "passe_a_une_seule_preuve": 15,
+    "les_quatre_plus_exposes_relus_a_la_main": [
+      "Abellon → « Aveyron » : l'infobox du wiki porte « Romanized Name : Aberon ». JUSTE.",
+      "Cell Games Announcer → « Jimmy Firecracker » : le champ Alias liste « Cell Games Announcer ». JUSTE.",
+      "Enma Dai-Ou → « King Yemma » : le champ Alias liste « Enma Daio ». JUSTE.",
+      "Minami no Kaioushin → « South Supreme Kai » : le champ Alias liste « Southern Kaioshin ». JUSTE."
+    ],
+    "pieges_signales_par_les_contre_verificateurs": [
+      "Gunjou (Bleach) → « Gunjō » par essai macron, et non plus « Kūgo Ginjō ». La BONNE page.",
+      "Shuu (Dragon Ball) → « Shu » (l'homme de Pilaf), et non plus « Mr. Shu » le précepteur.",
+      "Bongou → « Bongo » et Bungou → « Bungo » : deux pages distinctes, plus une seule pour deux.",
+      "Mother (Dragon Ball) → REFUSÉ « identité invérifiable » : ne part plus sur « Chi-Chi's mother ».",
+      "identiteAttestee est désormais propagé par les QUATRE fetch du worker (l. 156, 485, 631, 756) : la branche n'est plus morte. Son Gohan, Carol Masterson, Captain John passent par elle."
+    ]
+  },
+  "remise_en_file": {
+    "faite": false,
+    "deja_tentee_le_07_08_a_14h29": {
+      "messages": 143,
+      "consommes_en": "2,3 s",
+      "refuses": 143,
+      "produits": 0
+    },
+    "motifs_du_refus_en_production": {
+      "homonyme probable": 100,
+      "mauvaise entité": 7,
+      "page Fandom absente ou trop maigre": 36
+    },
+    "diagnostic": "le producteur tourne sur le code COMMITÉ (HEAD) ; les réparations du 07/08 sont dans l'arbre de travail et non commitées (scripts/lib/fandom.mjs, scripts/agent-worker.mjs, data/alias-cures.json)",
+    "preuve_mesuree": "la garde de HEAD, extraite de git et rejouée sur les 143 couples, reproduit 108 motifs À LA LETTRE ; les 35 écarts sont les couples où le résolveur réparé (macron, alias neufs) change la page, l'autre moitié non commitée du correctif",
+    "preuve_annexe": "aucun processus node local ne consomme la file de production (--chat sur ops_chat, --local sur review_local) ; les lignes du jour portent des modèles distants (nvidia/nemotron ×276, mistral-large ×17)",
+    "pourquoi_on_ne_relance_pas": "relancer une seconde fois reconstruirait la même pile une troisième fois, pour la même raison. Leçon du 05/08 : purger sans fermer la classe d'erreur, c'est programmer sa répétition. Ici la classe d'erreur n'est plus la garde, c'est l'écart entre le code réparé et le code qui tourne.",
+    "condition_pour_relancer": "commiter les trois fichiers réparés et les déployer sur le worker de production, PUIS remettre les 143 couples en file (un message par couple, jamais un par tentative). Le plafond de 400 n'est pas atteint : 143.",
+    "hors_de_mon_mandat": "commit et déploiement — consigne explicite « NE COMMITE RIEN — revue après la vague »"
+  },
+  "refus_qui_tiennent": {
+    "total": 33,
+    "plafond_vrai": [
+      {
+        "nom": "Axe",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "pourquoi": "page réduite à un renvoi hors wiki ({{Soft redirect}} vers Wikipédia) : 14 c une fois le modèle nettoyé, le wiki canon n'a aucune matière propre"
+      },
+      {
+        "nom": "Flail",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "pourquoi": "page réduite à un renvoi hors wiki ({{Soft redirect}} vers Wikipédia) : 14 c une fois le modèle nettoyé, le wiki canon n'a aucune matière propre"
+      },
+      {
+        "nom": "Jō",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "pourquoi": "page réduite à un renvoi hors wiki ({{Soft redirect}} vers Wikipédia) : 14 c une fois le modèle nettoyé, le wiki canon n'a aucune matière propre"
+      },
+      {
+        "nom": "Katar",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "pourquoi": "page réduite à un renvoi hors wiki ({{Soft redirect}} vers Wikipédia) : 14 c une fois le modèle nettoyé, le wiki canon n'a aucune matière propre"
+      },
+      {
+        "nom": "Kuwa",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "pourquoi": "page réduite à un renvoi hors wiki ({{Soft redirect}} vers Wikipédia) : 14 c une fois le modèle nettoyé, le wiki canon n'a aucune matière propre"
+      },
+      {
+        "nom": "Nunchaku",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "pourquoi": "page réduite à un renvoi hors wiki ({{Soft redirect}} vers Wikipédia) : 14 c une fois le modèle nettoyé, le wiki canon n'a aucune matière propre"
+      },
+      {
+        "nom": "Scalpel",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "pourquoi": "page réduite à un renvoi hors wiki ({{Soft redirect}} vers Wikipédia) : 14 c une fois le modèle nettoyé, le wiki canon n'a aucune matière propre"
+      },
+      {
+        "nom": "Shakujō",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "pourquoi": "page réduite à un renvoi hors wiki ({{Soft redirect}} vers Wikipédia) : 14 c une fois le modèle nettoyé, le wiki canon n'a aucune matière propre"
+      },
+      {
+        "nom": "Shield",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "pourquoi": "page réduite à un renvoi hors wiki ({{Soft redirect}} vers Wikipédia) : 14 c une fois le modèle nettoyé, le wiki canon n'a aucune matière propre"
+      },
+      {
+        "nom": "Tessen",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "pourquoi": "page réduite à un renvoi hors wiki ({{Soft redirect}} vers Wikipédia) : 14 c une fois le modèle nettoyé, le wiki canon n'a aucune matière propre"
+      },
+      {
+        "nom": "Three-Section Staff",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "pourquoi": "page réduite à un renvoi hors wiki ({{Soft redirect}} vers Wikipédia) : 14 c une fois le modèle nettoyé, le wiki canon n'a aucune matière propre"
+      },
+      {
+        "nom": "Whip",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "pourquoi": "page réduite à un renvoi hors wiki ({{Soft redirect}} vers Wikipédia) : 14 c une fois le modèle nettoyé, le wiki canon n'a aucune matière propre"
+      },
+      {
+        "nom": "Katasuke Tōno's Assistant",
+        "univers": "Naruto",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Katasuke Tōno » ne couvre pas « Katasuke Tōno's Assistant »",
+        "pourquoi": "aucune page propre sur le wiki : seule existe la page générale, qui décrit un autre sujet que notre déclinaison"
+      },
+      {
+        "nom": "Summoning Technique (Doki)",
+        "univers": "Naruto",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Summoning Technique » ne couvre pas « Summoning Technique (Doki) »",
+        "pourquoi": "aucune page propre sur le wiki : seule existe la page générale, qui décrit un autre sujet que notre déclinaison"
+      },
+      {
+        "nom": "Summoning Technique (Giant Eagle)",
+        "univers": "Naruto",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Giant Eagle » ne couvre pas « Summoning Technique (Giant Eagle) »",
+        "pourquoi": "aucune page propre sur le wiki : seule existe la page générale, qui décrit un autre sujet que notre déclinaison"
+      },
+      {
+        "nom": "Summoning Technique (Hōzuki Castle's Ninken)",
+        "univers": "Naruto",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Summoning Technique » ne couvre pas « Summoning Technique (Hōzuki Castle's Ninken) »",
+        "pourquoi": "aucune page propre sur le wiki : seule existe la page générale, qui décrit un autre sujet que notre déclinaison"
+      },
+      {
+        "nom": "Summoning Technique (Nuiba)",
+        "univers": "Naruto",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Summoning Technique » ne couvre pas « Summoning Technique (Nuiba) »",
+        "pourquoi": "aucune page propre sur le wiki : seule existe la page générale, qui décrit un autre sujet que notre déclinaison"
+      },
+      {
+        "nom": "Summoning Technique (Shinigami, Snake)",
+        "univers": "Naruto",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Summoning Technique » ne couvre pas « Summoning Technique (Shinigami, Snake) »",
+        "pourquoi": "aucune page propre sur le wiki : seule existe la page générale, qui décrit un autre sujet que notre déclinaison"
+      },
+      {
+        "nom": "Wood Release: Underground Roots Technique",
+        "univers": "Naruto",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Wood Release » ne couvre pas « Wood Release: Underground Roots Technique »",
+        "pourquoi": "aucune page propre sur le wiki : seule existe la page générale, qui décrit un autre sujet que notre déclinaison"
+      }
+    ],
+    "a_revoir": [
+      {
+        "nom": "Campacino Achino",
+        "univers": "One Piece",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Campacino » ne couvre pas « Campacino Achino »",
+        "piste": "le wiki titre les membres de la famille par leur seul prénom (« Campacino ») ; « Achino » est notre romanisation d'« Accino ». Candidat au registre d'alias curé : Campacino Achino → Campacino"
+      },
+      {
+        "nom": "Ed",
+        "univers": "One Piece",
+        "motif_garde": "identité invérifiable : résumé sans repère, et « Ed (Actor) » n'est ni notre nom ni une de ses écritures",
+        "piste": "le wiki redirige « Ed » vers « Ed (Actor) », mais la parenthèse est une désambiguïsation : rien ne dit que notre Ed est cet acteur. Nom trop court pour que l'attestation joue"
+      },
+      {
+        "nom": "Hockera Achino",
+        "univers": "One Piece",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Hockera » ne couvre pas « Hockera Achino »",
+        "piste": "même famille : candidat au registre d'alias curé, Hockera Achino → Hockera"
+      },
+      {
+        "nom": "Koala Zombie",
+        "univers": "One Piece",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Koala » ne couvre pas « Koala Zombie »",
+        "piste": "notre nom qualifie l'état du personnage ; le wiki titre « Koala ». Candidat au registre, à vérifier : le Koala de Thriller Bark n'est pas la Koala de l'Armée Révolutionnaire"
+      },
+      {
+        "nom": "Lil Achino",
+        "univers": "One Piece",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Lil » ne couvre pas « Lil Achino »",
+        "piste": "même famille : candidat au registre d'alias curé, Lil Achino → Lil"
+      },
+      {
+        "nom": "Masshikaku",
+        "univers": "One Piece",
+        "motif_garde": "identité invérifiable : résumé sans repère, et « Mashikaku (Non-Canon) » n'est ni notre nom ni une de ses écritures",
+        "piste": "seule page servie : « Mashikaku (Non-Canon) ». La parenthèse distingue une version NON CANON — à trancher avant de produire"
+      },
+      {
+        "nom": "Pirate Captain (500 Hostages)",
+        "univers": "One Piece",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Pirate Captain » ne couvre pas « Pirate Captain (500 Hostages) »",
+        "piste": "notre glose entre parenthèses ne correspond à aucune page ; « Pirate Captain » est un rôle générique. À vérifier à la main avant tout alias"
+      },
+      {
+        "nom": "Snake Way Guide",
+        "univers": "Dragon Ball",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Snake Way » ne couvre pas « Snake Way Guide »",
+        "piste": "le wiki décrit le lieu (« Snake Way »), pas son gardien. Vérifier s'il a une page propre sous un autre nom avant de curer"
+      },
+      {
+        "nom": "Masshikaku",
+        "univers": "One Piece",
+        "motif_garde": "identité invérifiable : résumé sans repère, et « Mashikaku (Non-Canon) » n'est ni notre nom ni une de ses écritures",
+        "piste": "seule page servie : « Mashikaku (Non-Canon) ». La parenthèse distingue une version NON CANON — à trancher avant de produire"
+      },
+      {
+        "nom": "Mother",
+        "univers": "Dragon Ball",
+        "motif_garde": "identité invérifiable : résumé sans repère, et « Chi-Chi's mother » n'est ni notre nom ni une de ses écritures",
+        "piste": "notre entrée s'appelle « Mother » avec un résumé entièrement générique ; la page servie est « Chi-Chi's mother » (l'Ox-Queen). Rien n'établit que ce soit la même : entrée à renommer ou à documenter à la source"
+      },
+      {
+        "nom": "Hidden Kunai Mechanism",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "piste": "DÉFAUT DU MOISSONNEUR D'INFOBOX, mesuré : 588 c bruts dont l'essentiel est un {{Infobox/Tools}} (porteurs, débuts manga/anime, classification) que fetchFandomInfobox ne rend pas — la taille vue par la garde (123 c) est exactement celle de la prose seule, l'infobox a rendu 0. Avec elle, l'entrée passait le plancher sans rien assouplir."
+      },
+      {
+        "nom": "Daidai Village",
+        "univers": "Naruto",
+        "motif_garde": "page Fandom absente ou trop maigre",
+        "piste": "DÉFAUT DE NOTRE NETTOYEUR, mesuré à la source : 309 c bruts, 116 c nettoyés. La phrase de définition commence par {{translation|'''Daidai Village'''|橙村|Daidai-mura}}, que cleanWikitext supprime ENTIÈREMENT — il ne reste plus qu'« is a small village inhabited by the members of the Yoimura Clan », une phrase SANS SUJET. Le plancher de 150 a donc raison ici pour une mauvaise raison : même relevé, il livrerait un texte décapité. Correctif : garder l'argument 1 de {{translation|X|…}}."
+      },
+      {
+        "nom": "Z-Sword (Épée Zeta)",
+        "univers": "Dragon Ball",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Z Sword » ne couvre pas « Z-Sword (Épée Zeta) »",
+        "piste": "défaut de NOTRE côté : notre nom porte une glose française entre parenthèses qui empoisonne la requête. La page « Z Sword » est la bonne — à curer, ou à nettoyer dans le nom de l'entrée"
+      },
+      {
+        "nom": "Gentle Step Spiralling Twin Lion Fists",
+        "univers": "Naruto",
+        "motif_garde": "mauvaise entité : page plus générale que l'entité : « Gentle Step Twin Lion Fists » ne couvre pas « Gentle Step Spiralling Twin Lion Fists »",
+        "piste": "le wiki sert « Gentle Step Twin Lion Fists » : à établir si notre entrée est la même technique sous une autre traduction ou une variante distincte"
+      }
+    ]
+  },
+  "defauts_ouverts_trouves_par_ce_re_sondage": [
+    "BLOQUANT — le correctif des gardes n'est pas déployé sur le producteur : tant qu'il ne l'est pas, aucune remise en file ne peut aboutir (143/143 refusées le 07/08 à 14:30).",
+    "cleanWikitext supprime {{translation|X|…}} en entier et décapite la phrase de définition des ébauches (Daidai Village : 309 c bruts → 116 c, phrase sans sujet). Garder l'argument 1.",
+    "fetchFandomInfobox ne moissonne pas {{Infobox/Tools}} (Naruto) : Hidden Kunai Mechanism vu à 123 c au lieu de ~450. Deux entrées concernées ici, davantage dans le corpus outils.",
+    "4 des 143 passes ne tiennent qu'au champ de nommage du wiki (citeLeNom) après résolution par RECHERCHE plein texte : relues à la main, les quatre sont justes, mais c'est la population à ré-auditer en premier au prochain assouplissement."
+  ],
+  "etat_final": {
+    "lignes_en_base": {
+      "clos_suspect_restant": 0,
+      "marquees_re_sondee": 3079,
+      "marquees_plafond": 31,
+      "marquees_a_revoir": 192
+    },
+    "file_de_production": "vide (0 message) — rien n'a été posté par ce re-sondage",
+    "timer_de_ravitaillement": "laissé ARRÊTÉ, conformément à la consigne",
+    "rien_de_commite": true
+  }
+}

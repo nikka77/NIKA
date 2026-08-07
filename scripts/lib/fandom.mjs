@@ -276,6 +276,86 @@ export function sameEntityBySlug(slug, title) {
   return sameEntityName(String(slug).replace(/-/g, ' '), title);
 }
 
+/** LE TITRE EST-IL UNE ÉCRITURE PLUS RICHE DE NOTRE NOM ? (07/08/2026)
+ *
+ *  Défaut mesuré le 07/08 : la garde anti-homonyme du worker ne s'efface que sur une égalité
+ *  STRICTE des titres. Or le wiki titre presque toujours plus richement que nous — titre
+ *  honorifique (« Mutaito » → « Master Mutaito »), ordre japonais (« Minoru Kazeno » →
+ *  « Kazeno Minoru »), glose entre parenthèses (« Hiru » → « Leech (Hiru) »), page qui réunit
+ *  deux comparses (« Dip » → « Chip and Dip »), sous-page de porteur (« Goethe » →
+ *  « Yoshino Sōma/Goethe »). Dans les cinq cas, TOUS les mots de notre nom sont dans le titre :
+ *  il n'y a aucun doute d'identité à lever, et la garde refusait quand même — 2 640 tentatives
+ *  écartées, 5 faux positifs sur 6 lus par l'audit.
+ *
+ *  CE QUI RESTE REFUSÉ, et c'est le cœur de la règle : la DÉSAMBIGUÏSATION PURE. « Ain (Neo
+ *  Marines) » pour notre « Ain » — le titre nu EST déjà notre nom, la parenthèse ne fait que
+ *  trier entre plusieurs porteurs du même nom, et rien ne dit que celui du wiki est le nôtre.
+ *  C'est exactement le cas qui a fait naître la garde (Ain/Egghead contre Ain/Neo Marines).
+ *  À l'inverse « Leech (Hiru) » met NOTRE nom DANS la parenthèse : c'est une glose, pas un tri.
+ *
+ *  Ce n'est PAS une preuve d'identité en soi — sameEntityName, l'alias curé et pageDOeuvre
+ *  gardent le dernier mot. C'est seulement le constat qu'un DOUTE anti-homonyme n'a plus d'objet.
+ *
+ *  ── PAS DE COUSIN PHONÉTIQUE DANS UN TITRE PLUS LONG (07/08/2026, même jour) ──────────────
+ *  Trou trouvé par le contre-vérificateur anti-laxisme, quelques heures après la règle
+ *  ci-dessus : elle appariait les mots par `sameWord`, qui rapproche deux mots de cinq lettres
+ *  au SQUELETTE identique. Le commentaire promettait « tous les mots de notre nom sont dans le
+ *  titre » ; le code disait « ont un COUSIN dans le titre ». Sur Bleach, « Gunjou » se laissait
+ *  ainsi apparier à « Kūgo Ginjō » (gunjo ≡ ginjo au squelette) — un AUTRE personnage — et la
+ *  garde anti-homonyme, dont c'était le dernier mot, se taisait. Le vice n'est pas la tolérance
+ *  en soi : c'est qu'elle ÔTE LEUR INDÉPENDANCE aux gardes. `sameEntityName` avait déjà laissé
+ *  passer la garde n°1 sur ce même squelette ; la garde anti-homonyme n'existe que pour pouvoir
+ *  la CONTREDIRE. La réduire à la même mesure de ressemblance, c'est n'avoir plus qu'un avis.
+ *
+ *  La ligne de partage est nette, et mesurée sur les couples réels : quand le titre compte
+ *  AUTANT de mots que notre nom, le squelette rapproche de vraies variantes d'écriture (Musse
+ *  ≡ Mousse, Katopesla ≡ Catopesra, Sarkies ≡ Sarquiss, Minoru Kazeno ≡ Kazeno Minoru) ; quand
+ *  il en compte PLUS, il n'y a plus de variante à reconnaître — un titre qui AJOUTE des mots
+ *  aux nôtres doit contenir les nôtres tels quels (« Master Mutaito », « Chip and Dip »,
+ *  « Leech (Hiru) », « Yoshino Sōma/Goethe » les contiennent tous à la lettre). On exige donc
+ *  l'égalité stricte dès que le titre est plus long. Ferme aussi, au passage, le vieux
+ *  « Councillor » → « Konoha Council » de Naruto, qui passait avant même la règle du 07/08.
+ */
+export function titrePlusRiche(nom, titre) {
+  const n = nameWords(nom), t = nameWords(titre);
+  if (!n.size || !t.size) return false;
+  // Titre plus long que notre nom : appariement À LA LETTRE, aucun cousin phonétique admis.
+  const apparie = t.size > n.size ? (w) => t.has(w) : (w) => [...t].some((x) => sameWord(w, x));
+  if (![...n].every(apparie)) return false;                                     // notre nom entier ?
+  // LE POSSESSIF DÉSIGNE UN PORTEUR, IL N'ENRICHIT PAS UN NOM (07/08/2026, soir).
+  //
+  //  Second trou, trouvé en auditant les 145 couples débloqués : notre entité « Mother »
+  //  (Dragon Ball), au résumé entièrement générique, tombait sur la page « Chi-Chi's mother » —
+  //  l'Ox-Queen — et la garde anti-homonyme se taisait, puisque « mother » figure bel et bien
+  //  dans le titre. Or « X's Y » ne dit pas notre nom plus richement : il dit « le Y DE X »,
+  //  c'est-à-dire qu'il TRIE entre tous les porteurs possibles de Y. C'est mot pour mot ce que
+  //  fait la parenthèse d'« Ain (Neo Marines) », traitée trois lignes plus bas depuis le matin ;
+  //  le possessif est la même chose écrite autrement, et il avait été oublié.
+  //  Ne mord que si le possessif est dans LE TITRE et pas dans notre nom : « Katasuke Tōno's
+  //  Assistant » → « Katasuke Tōno » relève de pagePlusGenerale, et continue d'en relever.
+  const possessif = (s) => /['’]s\b|s['’](?=\s|$)/.test(String(s ?? ''));
+  if (possessif(titre) && !possessif(nom)) return false;
+  if (!/\([^)]*\)/.test(String(titre))) return true;
+  // Parenthèse présente : elle ne disculpe que si notre nom N'EST PAS déjà le titre nu.
+  const nu = nameWords(String(titre).replace(/\([^)]*\)/g, ' '));
+  return ![...n].every((w) => [...nu].some((x) => sameWord(w, x)));
+}
+
+/** Notre nom et le titre sont-ils LE MÊME libellé, aux signes près ? (07/08/2026)
+ *  Sur le wiki DE l'univers, un titre égal au nôtre ne peut pas désigner un homonyme d'ailleurs :
+ *  l'identité est acquise par construction. On replie la casse, les diacritiques (nos noms
+ *  portent les macrons des API japonaises, « Shakujō », quand le wiki titre parfois en ASCII) et
+ *  la ponctuation (« Z-Sword » ≡ « Z Sword »). Rien d'autre — ce n'est pas un rapprochement
+ *  phonétique, c'est une égalité. */
+export const libelleNu = (s) => String(s ?? '')
+  .normalize('NFD').replace(/[̀-ͯ]/g, '')
+  .toLowerCase().replace(/[^a-z0-9]/g, '');
+
+export function titreStrictementEgal(nom, titre) {
+  const a = libelleNu(nom), b = libelleNu(titre);
+  return Boolean(a) && a === b;
+}
+
 /** LA PAGE TROUVÉE EST-ELLE UNE ŒUVRE PLUTÔT QU'UNE ENTITÉ ? (05/08/2026)
  *
  *  La recherche plein texte ne ramène pas seulement des entités voisines : elle ramène des
@@ -332,11 +412,49 @@ const motsSignificatifs = (s) => new Set(String(s ?? '').toLowerCase()
  *  Ne couvre PAS l'entité voisine à nombre de mots égal (« Clan Yūhi » → « Kurenai Yūhi ») :
  *  celle-là relève d'une autre garde, et il vaut mieux une règle étroite et sûre qu'une large
  *  qui refuse du bon travail.
+ *
+ *  ── FORME COURTE DU MÊME INDIVIDU (07/08/2026) ───────────────────────────────────────────
+ *  Défaut mesuré le 07/08 : la règle mordait aussi quand le titre est simplement le nom USUEL
+ *  de notre entité — « Son Gohan » refusé pour la page « Gohan », « Carol Masterson » pour
+ *  « Carol ». 216 tentatives écartées, 3 faux positifs sur 6 lus. Il fallait un témoin qui
+ *  sépare la forme courte (« Gohan » EST Son Gohan) de la page parente (« Mangekyō Sharingan »
+ *  n'est PAS l'Éternel) — sans rien deviner nous-mêmes.
+ *
+ *  Ce témoin, c'est le wiki lui-même, et il tient en deux signaux que la même requête ramène :
+ *    1. il REDIRIGE notre nom exact vers cette page, SANS fragment. Une redirection sans
+ *       fragment dit « même sujet, même page » ; avec fragment (« Pseudo-Jinchūriki » →
+ *       Jinchūriki#Similar Cases) elle dit « ton sujet est un MORCEAU de cette page » — ce qui
+ *       est précisément le refus à conserver. Une page atteinte par la RECHERCHE n'atteste
+ *       rien du tout (les 4 cas Naruto de l'audit : Summoning Technique (Hōzuki Castle's
+ *       Ninken), Katasuke Tōno's Assistant, Chūnin Exams Assistant, Wood Release…).
+ *    2. AUCUNE SECTION de la page ne porte notre nom. Le contre-exemple qui a fait ajouter ce
+ *       second signal : « Eternal Mangekyō Sharingan » redirige bien vers « Mangekyō
+ *       Sharingan » SANS fragment — mais cette page a une section « Eternal Mangekyō
+ *       Sharingan ». Le wiki dit donc que notre sujet est une PARTIE de la page : refus tenu,
+ *       comme le 05/08. Les pages « Gohan » et « Carol » n'ont aucune section de ce genre.
+ *
+ *  Sans attestation (appelant qui ne la fournit pas, résolution par recherche), la règle du
+ *  05/08 s'applique inchangée : le refus est le défaut, l'exemption doit se prouver.
+ *
+ *  @param {{redirections?:Array<{from:string,to:string,tofragment?:string}>,sections?:string[]}} [attestation]
  */
-export function pagePlusGenerale(nom, titre) {
+export function formeCourteAttestee(nom, titre, attestation) {
+  const red = (attestation?.redirections ?? []).find((r) => libelleNu(r.from) === libelleNu(nom));
+  if (!red || red.tofragment) return false;              // pas de redirection de NOTRE nom, ou vers un morceau
+  const n = motsSignificatifs(nom);
+  if (!n.size) return false;
+  for (const ligne of attestation?.sections ?? []) {
+    const s = motsSignificatifs(ligne);
+    if (s.size && [...n].every((m) => s.has(m))) return false;   // notre nom est une SECTION : sujet partiel
+  }
+  return true;
+}
+
+export function pagePlusGenerale(nom, titre, attestation = null) {
   const n = motsSignificatifs(nom), t = motsSignificatifs(titre);
   if (!n.size || !t.size || t.size >= n.size) return null;
   if (![...t].every((m) => n.has(m))) return null;
+  if (formeCourteAttestee(nom, titre, attestation)) return null;
   return `page plus générale que l'entité : « ${titre} » ne couvre pas « ${nom} »`;
 }
 
@@ -409,7 +527,14 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000, slug =
   // ignorées d'office (sinon un worker encore en mémoire avec l'ancien code repeuple le cache).
   // L'alias curé fait partie de la clé : poser une curation invalide d'office l'ancienne
   // résolution fautive en cache (« Cellule d'enquête Kira » y pointait sur Light Yagami).
-  const cleCache = `v5:${universe}:${name}${ALIAS_REGISTRE[universe]?.[name] ? ':cure=' + ALIAS_REGISTRE[universe][name] : ''}`;
+  // v6 (07/08) : la réponse porte désormais les REDIRECTIONS et la table des SECTIONS —
+  // l'attestation dont pagePlusGenerale a besoin. Les entrées v5 ne les contiennent pas ; les
+  // relire sans les invalider aurait fait durer le faux positif « Son Gohan » indéfiniment.
+  // v7 (07/08, soir) : la RÉSOLUTION elle-même a changé (essai des voyelles longues avant la
+  // recherche plein texte). Le cache garde un TITRE : le relire, c'est resservir « Kūgo Ginjō »
+  // pour « Gunjou » indéfiniment. Une garde réparée ne vaut rien tant que le cache sert
+  // l'ancienne réponse — leçon du 05/08 appliquée au cache et non plus seulement à la pile.
+  const cleCache = `v7:${universe}:${name}${ALIAS_REGISTRE[universe]?.[name] ? ':cure=' + ALIAS_REGISTRE[universe][name] : ''}`;
   const file = `${CACHE_DIR}${createHash('sha1').update(cleCache).digest('hex').slice(0, 16)}.json`;
   // sameEntity est RECALCULÉ à la lecture : la garde évolue (squelettes de romanisation du 26/07)
   // et un verdict figé dans le cache la court-circuiterait — sans avoir à invalider tout le cache.
@@ -422,12 +547,18 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000, slug =
     return { ...c,
       sameEntity: c.aliasCure ? true
         : c.title ? sameEntityName(name, c.title) || sameEntityBySlug(slug, c.title) : c.sameEntity,
-      pageOeuvre: pageDOeuvre(c.title, c.text) ?? pagePlusGenerale(name, c.title),
+      pageOeuvre: pageDOeuvre(c.title, c.text)
+        ?? (c.aliasCure ? null
+          : pagePlusGenerale(name, c.title, { redirections: c.redirections, sections: c.sections })),
+      identiteAttestee: formeCourteAttestee(name, c.title, { redirections: c.redirections, sections: c.sections }),
       resolutionPartielle: resolutionPartielle(name, c.title) };
   } catch { /* cache froid */ }
 
   // redirects=1 : « Haiya Dragon » → « Icarus » (sinon on ne récupère que « #REDIRECT »)
-  const parseUrl = (t) => `${api}?action=parse&page=${encodeURIComponent(t)}&prop=wikitext&redirects=1&format=json&formatversion=2`;
+  // prop=wikitext|sections : la table des sections vient dans LA MÊME réponse (aucun appel de
+  // plus) et sert de témoin à pagePlusGenerale — « Mangekyō Sharingan » a une section
+  // « Eternal Mangekyō Sharingan », « Gohan » n'a aucune section « Son Gohan ».
+  const parseUrl = (t) => `${api}?action=parse&page=${encodeURIComponent(t)}&prop=wikitext%7Csections&redirects=1&format=json&formatversion=2`;
   // L'alias CURÉ d'abord : titre vérifié à la main, identité garantie par la curation.
   const cure = ALIAS_REGISTRE[universe]?.[name];
   let title = cure ?? name;
@@ -444,6 +575,29 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000, slug =
     if (ascii !== name) {
       const k = await wget(parseUrl(ascii));
       if (k?.parse?.wikitext) { title = ascii; resolvedBy = 'ascii'; j = k; }
+    }
+  }
+  // VOYELLES LONGUES, DANS L'AUTRE SENS (07/08) — l'essai ASCII ci-dessus ne couvre qu'un cas :
+  // NOTRE nom porte le macron, le wiki titre en ASCII. Le cas inverse n'était essayé NULLE PART,
+  // et c'est lui qui a produit la seule fiche fausse trouvée par les contre-vérificateurs :
+  // notre « Gunjou » (Bleach) n'existe pas tel quel, la recherche plein texte a donc ramené
+  // « Kūgo Ginjō » — un autre personnage — alors que la BONNE page, « Gunjō », est là, sur le
+  // même wiki, à un accent près. Même mécanique pour « Shuu » → « Shu » (l'homme de Pilaf, et
+  // non « Mr. Shu » le précepteur de Gohan) et pour « Bongou »/« Bungou » → « Bongo »/« Bungo »,
+  // deux personnages DISTINCTS de Wano que la recherche confondait sur une seule page.
+  // Deux écritures à essayer, jamais plus, et seulement si le titre exact a déjà échoué :
+  // la forme à macron (ou→ō, uu→ū) puis la forme contractée (ou→o, uu→u). Ce n'est pas un
+  // assouplissement — on demande au wiki un titre EXACT, ce qui vaut infiniment mieux que la
+  // recherche plein texte à laquelle on tombait sinon ; et toutes les gardes s'appliquent après.
+  if (!j?.parse?.wikitext && /ou|uu|oo/i.test(name)) {
+    const variantes = [
+      ['macron', name.replace(/ou/g, 'ō').replace(/uu/g, 'ū').replace(/oo/g, 'ō')],
+      ['contracte', name.replace(/ou/g, 'o').replace(/uu/g, 'u').replace(/oo/g, 'o')],
+    ];
+    for (const [forme, essai] of variantes) {
+      if (j?.parse?.wikitext || essai === name) continue;
+      const k = await wget(parseUrl(essai));
+      if (k?.parse?.wikitext) { title = essai; resolvedBy = `voyelle-longue:${forme}`; j = k; }
     }
   }
   // LE SLUG COMME TITRE (04/08) : avant de tomber dans la recherche plein texte — qui ramène
@@ -468,8 +622,15 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000, slug =
 
   const titreFinal = j.parse.title ?? title;
   const texte = (await fetchFandomInfobox(universe, titreFinal)) + cleanWikitext(j.parse.wikitext).slice(0, maxChars);
+  // ATTESTATION DU WIKI (07/08) — ce que le wiki DIT du rapport entre notre nom et cette page :
+  // ses redirections (avec ou sans fragment) et le découpage qu'il donne à la page. Deux
+  // témoins bruts, conservés tels quels : c'est pagePlusGenerale qui les interprète.
+  const redirections = (j.parse.redirects ?? []).map((r) => ({ from: r.from, to: r.to, tofragment: r.tofragment }));
+  const sections = (j.parse.sections ?? []).map((s) => String(s.line ?? ''));
   const out = {
     title: titreFinal,
+    redirections,
+    sections,
     url: `https://${WIKIS[universe]}.fandom.com/wiki/${encodeURIComponent(title)}`,
     text: texte,
     resolvedBy,
@@ -480,7 +641,20 @@ export async function fetchFandomProse(universe, name, { maxChars = 5000, slug =
       : sameEntityName(name, titreFinal) || sameEntityBySlug(slug, titreFinal),
     aliasCure: Boolean(cure),
     // GARDE DE NATURE (05/08) : la page trouvée est-elle seulement une page d'ENTITÉ ?
-    pageOeuvre: pageDOeuvre(titreFinal, texte) ?? pagePlusGenerale(name, titreFinal),
+    // L'ALIAS CURÉ NE SE RE-JUGE PAS (07/08) : pagePlusGenerale est un verdict d'IDENTITÉ
+    // (« cette page couvre-t-elle bien notre entité ? ») et la curation a déjà tranché cette
+    // question-là, à la main. Sans cette exception, « Son Goku » — curé vers « Goku » depuis le
+    // 02/08 — était refusé « page plus générale » à chaque passage : la garde défaisait la
+    // curation. pageDOeuvre RESTE actif : la NATURE de la page (chapitre, épisode, liste) est
+    // une autre question, et une curation qui pointe sur une page d'œuvre est une erreur à voir.
+    pageOeuvre: pageDOeuvre(titreFinal, texte)
+      ?? (cure ? null : pagePlusGenerale(name, titreFinal, { redirections, sections })),
+    // IDENTITÉ ATTESTÉE PAR LE WIKI (07/08) : il redirige NOTRE nom exact vers cette page, sans
+    // fragment, et aucune de ses sections ne porte ce nom. Le wiki affirme donc « ce nom désigne
+    // ce sujet » — s'il y avait homonymie, il servirait une page d'homonymie ou un titre
+    // parenthésé. C'est la même preuve que celle qui lève pagePlusGenerale ; les gardes du
+    // producteur s'en servent pour ne pas rouvrir un doute que la source a déjà tranché.
+    identiteAttestee: formeCourteAttestee(name, titreFinal, { redirections, sections }),
     // RÉSOLUTION PARTIELLE : un mot du nom demandé manque au titre retenu. Ce n'est pas une
     // faute en soi (« Île Cactus » → « Cactus Island » est une traduction), mais c'est là que
     // se concentrent les erreurs d'espèce — 5 fautes sur 46 mesurées côté One Piece le 04/08.

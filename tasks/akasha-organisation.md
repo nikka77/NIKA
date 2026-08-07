@@ -314,6 +314,16 @@ image. Vérifié au rendu sur `/learn/akasha/yamaoroshi`. Et **33 URL sont parta
 de TYPES DIFFÉRENTS** — une image d'île servie à un équipage et à un navire est une erreur
 d'entité, pas un doublon maison.
 
+> **Le tableau ci-dessus a été DÉPASSÉ par la réparation qui l'a suivi** (§F.1). Recompté à
+> 14 h 50 sur la base du site, scan paginé complet : **sections 19 126 → 19 118 (−8)** et
+> **sans image 828 → 851 (+23)**. Ces deux écarts ne sont pas une régression, ce sont les
+> défauts 1 et 3 des contre-vérificateurs réparés : `ops-reparer-curation-0708.mjs` a remis à
+> NULL les **22** `image_url` « NoPicAvailable » **+ 1** (`ace`) = **23**, et supprimé les
+> **8** sections de `ace` qui racontaient Portgas D. Ace. 22 + 1 = 23 et 8 = 8 : les deux bouts
+> se ferment. Le **placeholder est à ZÉRO en base** (0 `NoPicAvailable`, 0 `placehold`/`picsum`/
+> `unsplash`) — la couverture réelle et la couverture affichée coïncident enfin : **6 836/7 687**.
+> Entrées **7 687 → 7 687** : aucune création, aucune suppression.
+
 ## E.2 — Les 8 pages lues en lecteur : ce qui est vraiment mieux
 
 Huit fiches touchées par des chantiers différents, lues au rendu (texte visible, payload RSC exclu).
@@ -445,6 +455,12 @@ en attente ; aucun ne doit être rouvert, re-mesuré ni re-proposé. Trois préc
 
 ## E.6 — Timer `nika-remplisseurs` : NE PAS RALLUMER
 
+> **Verdict RECONDUIT et re-mesuré après la réparation des gardes — voir §F.4**, qui remplace
+> cette section sur les chiffres (le fond ne bouge pas : toujours NON). Les points 1 à 4 ci-dessous
+> restent vrais, mais §F.4 les mesure au lieu de les estimer et ajoute deux motifs que personne
+> n'avait vus : le code réparé n'est pas déployé, et un **second robinet de ravitaillement**
+> (`nika-nuit.timer`) est ouvert indépendamment de celui-ci.
+
 **Non.** Ce n'est pas une prudence de principe, c'est ce que disent les compteurs.
 
 1. **Le jury est toujours mort.** 584 productions attendent une relecture ; `auto_verdict` est NUL
@@ -481,3 +497,310 @@ systemctl status nika-remplisseurs.timer --no-pager   # prouver l'exécution (le
 > **Je n'ai PAS vérifié l'état actuel du timer** : c'est une unité systemd sur le VPS et je n'ai
 > aucun moyen de la lire depuis ce poste. « Le timer est arrêté » reste une affirmation reçue,
 > pas une mesure. À contrôler par `systemctl list-timers nika-remplisseurs` avant tout geste.
+
+---
+
+# F. Vérification finale après réparation des gardes — 07/08, 14 h 50
+
+**Tous les chiffres de cette section sont recomptés par moi**, en scans paginés complets sur les
+deux bases, sans reprendre un seul nombre des rapports d'exécutants. Aucune écriture : ni en base,
+ni en file, ni en dépôt. Là où mon compte diffère du leur, l'écart est dit et expliqué.
+
+## F.0 — Recompte contradictoire de l'état du soir
+
+| Compteur | Annoncé | **Recompté** | Écart | Explication mesurée |
+|---|---|---|---|---|
+| File `ops_queue_by_type` | 5 | **0** | −5 | file vide : `ops_queue_metrics` → `queue_length 0`, `total_messages 116 128` |
+| Pile `pending` · `failed` | 2 766 | **2 766** | 0 | — |
+| Pile `pending` · `done` | 584 | **589** | +5 | 5 `fiche_technique` (`mistral-large`) posées entre 13 h 20 et 13 h 36 : la file s'est vidée dans le `done`, les deux compteurs bougent du même nombre |
+| Pile `pending` · `refused` | 24 | **167** | +143 | les 24 vrais refus **+ les 143 annotés « ⏸ REFUS SANS VALEUR 07/08 »** remis en file à 14 h 30. Le chiffre 24 les omettait |
+| Pile `pending` · `suspect` | 75 | **75** | 0 | — |
+| **Pile `pending` TOTAL** | — | **3 597** | — | **2 766 + 589 + 167 + 75 = 3 597**, égal au compte direct : le tableau ferme aux deux bouts |
+| Corpus — entrées | 7 687 | **7 687** | 0 | aucune création, aucune suppression |
+| Corpus — sections | 19 126 | **19 118** | −8 | les 8 sections de `ace` retirées par la réparation (§F.1, défaut 3) |
+| Corpus — sans image | 828 | **851** | +23 | 22 `NoPicAvailable` + `ace` remis à NULL (§F.1, défaut 1). **Toutes en One Piece : 402 → 425**, les 7 autres univers inchangés |
+| Corpus — descFr vide | 650 | **650** | 0 | par univers aussi : 275 / 243 / 84 / 27 / 16 / 3 / 0 / 2 |
+
+**Les deux « écarts » du corpus ne sont pas des régressions, ce sont les réparations elles-mêmes.**
+Le compte croisé le prouve : 22 + 1 = **23** images remises à vide, 8 = **8** sections retirées.
+Et le placeholder est désormais à **ZÉRO en base** — 0 `NoPicAvailable`, 0 `placehold`, 0 `picsum`,
+0 `unsplash` : couverture réelle et couverture affichée coïncident enfin (**6 836/7 687**).
+
+## F.1 — Les 4 gardes réparées : comptes réels avant / après
+
+Réparations dans `scripts/lib/fandom.mjs` et `scripts/agent-worker.mjs`, registre dans
+`data/alias-cures.json`. Batterie rejouable : `node scripts/ops-tester-gardes.mjs`. Elle
+n'héberge **aucune copie** de la garde : elle l'EXTRAIT du source du worker à l'accolade
+équilibrée et l'exécute telle quelle, pour qu'elle ne puisse pas se périmer.
+
+| # | Défaut | Correction | Avant | Après |
+|---|---|---|---|---|
+| 1 | **« homonyme probable »** — les repères d'un résumé FRANÇAIS cherchés dans une page ANGLAISE. « Mutaito » refusé pour « Master Mutaito », « Minoru Kazeno » pour « Kazeno Minoru », « Dip » pour « Chip and Dip » | (a) primitive `titrePlusRiche()` : le doute tombe quand TOUS nos mots sont dans le titre (honorifique, ordre japonais, glose) — **pas** sur une désambiguïsation pure ; (b) les mots qui ne sont que le titre de l'ŒUVRE (« Piece », « Dragon », « Ball ») ne comptent plus comme repères | 5 faux positifs sur 6 lus | **0** |
+| 2 | **« seuil de matière »** — Kanchi refusé à 398 c pour un seuil de 400, Ugai à 254/400, Piercing Showers à 191/250, titre pourtant STRICTEMENT égal au nom | quand l'identité est ACQUISE (titre = notre libellé aux accents près, ou alias curé, ou identité attestée), le seuil de type cède la place à un **plancher de 150 c**. La famille « source vide » (0 c) reste refusée | 0 justifié sur 3 lus | **0** |
+| 3 | **« page plus générale »** — « Son Gohan » refusé pour « Gohan », « Carol Masterson » pour « Carol » | réparé **par témoin de la source**, pas par assouplissement : la garde ne mord plus quand le wiki (1) redirige notre nom exact **sans fragment** ET (2) n'a **aucune section** de ce nom. Les deux signaux arrivent dans la requête qu'on faisait déjà — **zéro appel de plus** | 3 faux positifs sur 6 lus | **0** |
+| 3 bis | un alias **CURÉ** était encore re-jugé : « Son Goku », curé vers « Goku » depuis le 02/08, refusé « page plus générale » à chaque passage — **la garde défaisait la curation** | `pagePlusGenerale` ne re-juge plus un alias curé. `pageDOeuvre` reste actif : la NATURE de la page est une autre question | refus à chaque passage | **0** |
+| 4 | **« source vide »** — 4 entités à nom français sur 5 rendent 0 c sous leur nom français et de 1 324 à 5 300 c sous leur nom anglais | **aucune correction de code** : la voie sanctionnée est le registre. 43 entités sondées, **12 paires ATTESTÉES** ajoutées (568 → **580**, compté aux deux bouts). Attestation = redirection du wiki, ou slug NIKA identique au titre au sens de `sameEntityBySlug`. **Aucune traduction fabriquée** | 568 paires | **580** |
+
+**Le compte « avant » est MESURÉ, pas cité** : les mêmes cas rejoués sur un miroir de `git show HEAD`
+(fandom.mjs + agent-worker.mjs + alias-cures.json d'avant) donnent **31/31 refusés**.
+
+**Batterie rejouée par moi ce soir — 4 volets, zéro échec :**
+`faux_positifs_avant 23 → faux_positifs_apres 0` · `vrais_refus_preserves 8/8` ·
+`bonnes_pages 4/4` · `unitaires 31/31`.
+
+**Vrais refus TENUS** (la réparation n'a rien ouvert de ce qui devait rester fermé) : les 5 pages
+parentes retirées à la main les 04-05/08 ; « Ain » contre « Ain (Neo Marines) » (désambiguïsation
+pure) ; « Zangetsu » contre « Zangetsu (Quincy Powers) » ; « Giorno's Mother » contre « Giorno
+Giovanna » ; « Super 17 » contre « Android 17 » ; les pages d'œuvre ; la source vide à 0 c et
+149 c sous identité acquise. **« Eternal Mangekyō Sharingan » redirige aussi sans fragment**, mais
+la page a une SECTION de ce nom — refus tenu : c'est ce second signal qui rend le défaut 3
+réparable sans laxisme.
+
+**Pièges signalés par les contre-vérificateurs, tous colmatés et re-vérifiés** : « Gunjou » résout
+sur « Gunjō » (essai à macron) et non « Kūgo Ginjō » · « Shuu » sur « Shu » et non « Mr. Shu » ·
+« Bongou »/« Bungou » sur deux pages distinctes · « Mother » (Dragon Ball) **REFUSÉ** « identité
+invérifiable » au lieu de produire depuis « Chi-Chi's mother » · `identiteAttestee` propagé par les
+**quatre** `fetch` du worker (l. 156, 485, 631, 756) : la branche n'est plus morte.
+
+**Clé de cache v5 → v6** : les entrées v5 ne portent ni redirections ni sections ; les relire sans
+les invalider aurait fait durer le faux positif indéfiniment.
+
+## F.2 — La re-sonde des 3 302 tentatives suspectes
+
+**3 302 tentatives** visées, portées par **177 couples nommés** dans `piles-triage.json` → **176
+distincts** (1 doublon, `fandom_descfr|carol-masterson`). Sondés **176/176**, aucune panne.
+
+| Verdict de la garde réparée | Couples | Tentatives portées |
+|---|---|---|
+| **Passent** | **143** | **3 079** |
+| **Refus qui tient** | **33** | **223** |
+| Total | 176 | **3 302** ✓ |
+
+**Compte croisé aux deux bouts, vérifié par moi en base ce soir :**
+3 079 « ✅ re-sondée » + 31 « ⛔ PLAFOND » + 192 « 🔎 À REVOIR » = **3 302**, et **0** ligne
+« ⚠ clos 07/08 » et **0** ligne « SUSPECT » restantes. **Deux passes indépendantes** (12 h 27 Z puis
+une seconde écrite séparément) : **0 divergence de verdict, 0 divergence de titre**.
+
+**Indépendance des gardes — la question que la première passe ne posait pas.** Pour chacun des 143
+« oui », la preuve qui le porte a été relevée : slug 116 · titre plus riche 107 · attestation du
+wiki 55 · titre égal 41 · alias curé 21 · champ de nommage 14 · repère du résumé 12 (cumulables).
+**AUCUN des 143 ne repose sur le seul squelette phonétique** : la garde anti-homonyme garde partout
+un avis qu'elle peut opposer à `sameEntityName`. C'était le cœur du reproche anti-laxisme ; il ne
+mord plus. Les **4 passes les plus exposées** (identité tenant au seul champ de nommage après
+recherche plein texte) ont été relues à la source, toutes justes : Abellon → « Aveyron »
+(*Romanized Name : Aberon*) · Cell Games Announcer → « Jimmy Firecracker » · Enma Dai-Ou → « King
+Yemma » · Minami no Kaioushin → « South Supreme Kai ».
+
+**Les 143 n'ont PAS été produits, et c'est le fait qui commande la suite.** Ils ont été remis en
+file le 07/08 à **14 h 30 : 143 messages, consommés en 2,3 s, refusés 143 sur 143, `model` NUL,
+aucun modèle appelé, zéro production** (ids 50214→50356, 123 slugs distincts, 6 types de tâche).
+Motifs reproduits : « homonyme probable » ×100, « page absente ou trop maigre » ×36, « mauvaise
+entité » ×7. **Diagnostic mesuré, pas supposé** : la garde extraite de `git show HEAD` et rejouée
+sur ces 143 couples reproduit **108 motifs à la lettre** ; les 35 écarts sont les couples où le
+résolveur réparé change la page. Les 143 lignes sont **annotées** (motif d'origine, cause réelle,
+verdict de la garde réparée, consigne « NE PAS relancer avant déploiement ») — 143 posées, 143
+relues.
+
+**Les 33 refus qui tiennent, rangés en deux tas qui n'appellent pas le même travail :**
+
+- **19 plafonds vrais** — voir §F.3.
+- **14 à revoir**, questions de FAIT qui demandent une lecture humaine, pas un réglage de garde :
+  Campacino / Hockera / Lil **Achino** (le wiki titre par le seul prénom · candidats au registre) ·
+  **Koala Zombie** (le Koala de Thriller Bark est-il la Koala de l'Armée Révolutionnaire ?) ·
+  **Masshikaku** (seule page servie : « Mashikaku (Non-Canon) ») · **Ed** (nom trop court) ·
+  **Pirate Captain (500 Hostages)** · **Snake Way Guide** · **Mother** [DB] · **Z-Sword (Épée
+  Zeta)** (notre glose française empoisonne la requête) · **Gentle Step Spiralling Twin Lion
+  Fists** · et **2 défauts d'outillage mesurés à la source, à ne pas confondre avec des plafonds** :
+  - `Daidai Village` n'est **pas** une page vide (309 c bruts) — `cleanWikitext` supprime
+    `{{translation|'''Daidai Village'''|橙村|…}}` EN ENTIER et laisse une phrase **sans sujet**.
+    Correctif exact : garder l'argument 1 de `{{translation|X|…}}`.
+  - `Hidden Kunai Mechanism` n'est **pas** maigre (588 c bruts) — `fetchFandomInfobox` ne moissonne
+    pas `{{Infobox/Tools}}` et rend 0 c là où l'infobox en portait ~330.
+
+  Les deux touchent le nettoyeur de **tout** le corpus pour un gain de **2 entrées** ici : non
+  corrigés exprès un soir de gel, documentés avec leur correctif.
+
+## F.3 — Plafonds : DÉFINITIFS, fusionnés, fermés
+
+**Les 14 plafonds (les 13 de la section C + le n°14 de §E.5) sont DÉFINITIFS.** Aucun n'est du
+travail en attente ; aucun ne doit être rouvert, re-mesuré, re-proposé ni re-sondé. S'y ajoutent
+les **19 plafonds d'entité** fermés par la re-sonde avec le motif RÉEL de la garde réparée :
+
+**12 armes Naruto — page réduite à un renvoi hors wiki** (`{{Soft redirect}}` vers Wikipédia,
+**14 c** une fois le modèle nettoyé : le wiki canon n'a aucune matière propre) : *Axe, Flail, Jō,
+Katar, Kuwa, Nunchaku, Scalpel, Shakujō, Shield, Tessen, Three-Section Staff, Whip.* Le plancher
+de 150 c fait exactement son travail.
+
+**7 entités Naruto — page réellement plus générale que l'entité**, la garde a raison :
+*Katasuke Tōno's Assistant* · *Summoning Technique (Doki)* · *(Giant Eagle)* · *(Hōzuki Castle's
+Ninken)* · *(Nuiba)* · *(Shinigami, Snake)* · *Wood Release: Underground Roots Technique.*
+
+**Rappels de plafonds qui ne bougent pas** (décisions de Dan, non négociables) :
+- **Une forme sans image reste CONSERVÉE**, rendue en tuile stylisée. Le trou est passé de 3 336 à
+  **851** ; ce qui reste est un vrai plafond, plus petit.
+- **Zéro stat estimée.** Luffy et Zoro gardent les leurs, marquées « estimé ». Les stats
+  post-databook restent omises. **Le radar reste réservé aux databooks canon Naruto.**
+- **Plafond n°14** — un trou d'index n'est pas une preuve de manque.
+
+## F.4 — Ravitaillement : peut-on rallumer `nika-remplisseurs.timer` ?
+
+# NON. — et cette fois c'est mesuré, pas estimé.
+
+### Motif 1 (dirimant) — le code réparé N'EST PAS DÉPLOYÉ
+
+Les quatre gardes sont réparées **dans l'arbre de travail**, pas dans le dépôt : `scripts/lib/
+fandom.mjs`, `scripts/agent-worker.mjs`, `data/alias-cures.json` sont **modifiés et non commités**.
+Le dépôt est à **8010fed6**. Le producteur, lui, est **VIVANT et distant** : `ops_workers` donne
+`nika-usine:agents` avec une `derniere_activite` de **4 secondes**, et aucun processus node local
+ne lit la file de production (PID 1204 `--chat`, PID 18522 `--local --types=review_local`).
+
+**Preuve directe, pas déduite** : les 143 couples remis en file à 14 h 30 ont été refusés **143/143
+en 2,3 s** avec les motifs d'AVANT. Rallumer maintenant, c'est faire tourner l'usine sur la garde
+que la journée entière a servi à réparer. **100 % de la correction aurait un effet nul.**
+
+### Motif 2 — le vivier de ravitaillement est déjà clos à 77 %
+
+Vivier réel, mesuré ce soir (entrées sans `descFr`, par rôle de remplisseur) croisé aux couples
+`(type · slug)` clos aujourd'hui :
+
+| Rôle du remplisseur | Vivier | Déjà clos aujourd'hui | Part |
+|---|---|---|---|
+| `fiche_artefact` | 112 | **112** | **100 %** |
+| `fiche_lexique` | 106 | **106** | **100 %** |
+| `fiche_lieu` | 45 | **44** | **98 %** |
+| `fandom_descfr` | 39 | **38** | **97 %** |
+| `fiche_technique` | 348 | 203 | 58 % |
+| **Total** | **650** | **503** | **77 %** |
+
+Et le rôle du tour est justement `fiche_artefact` : le **premier** passage du timer commanderait
+**87 entités dont 87 ont été refusées ce matin**. Le vivier `fandom_descfr` contient même
+« Bongou » et « Mother » [DB] — deux cas que la garde RÉPARÉE traite correctement et que la garde
+DÉPLOYÉE refuserait à l'identique.
+
+### Motif 3 — taux de refus observé, jour par jour
+
+| Jour | Lignes produites | Refusés | **dont à l'étage GARDE** | Taux |
+|---|---|---|---|---|
+| 05/08 | 3 503 | 3 460 | **3 460 (100 %)** | **98,8 %** |
+| 06/08 | 3 279 | 3 091 | **3 091 (100 %)** | **94,3 %** |
+| 07/08 | 1 722 | 1 412 | **1 412 (100 %)** | **82,0 %** |
+
+**Cent pour cent des refus tombent au stade de la garde** (`model` NUL) : ils ne coûtent pas un
+jeton, mais ils écrivent une ligne de pile chacun. C'est exactement la mécanique qui a fabriqué
+les 7 691.
+
+### Motif 4 — le dimensionnement est toujours aveugle (mesuré à blanc)
+
+`node scripts/ops-remplir-auto.mjs --dry`, ce soir, rend mot pour mot :
+
+```
+file : 0 production(s) · 0 relecture(s) en attente
+budget juges restant → Llama-3.3-70B-Instruct-Turbo Infinity/Infinity · gemma-4-26b-a4b-it:free 152/450
+commande : 400 tâches → personnages 140 · fiche_artefact 140 · axes 60 · relations 60
+```
+
+Le JUGE1 DeepInfra compte pour **`Infinity`** alors qu'il rend des **402** : le lot est plafonné par
+`--max`, pas par la capacité réelle. Capacité de jugement réellement disponible aujourd'hui :
+**152 / 2 = 76 productions**. **Commande : 400. Sur-souscription 5,3×.**
+
+### Motif 5 — le jury est toujours mort, et la pile est déjà pleine devant lui
+
+**589** productions attendent une relecture. `auto_verdict` **NUL sur 589/589** ; `arbitre_verdict`
+**NUL sur 589/589** ; `auto2_verdict` posé sur 476. **Nombre de productions ayant les DEUX verdicts
+que le double verdict exige : 0 sur 589.** Et **2 766** échecs attendent un rejeu — 1 711 × 402,
+439 de schéma, 221 « plafond de jetons », 220 × 429. C'est du travail déjà payé.
+
+### Ce qui NE justifie PAS le refus — l'honnêteté du contre-argument
+
+**La pile ne se reconstruirait PAS à 7 691.** Le garde d'idempotence `dejaEnFile` a été **paginé ce
+matin** et filtre sur `review_status = 'pending'` : or un refus atterrit précisément en `pending`.
+Une entité refusée est donc **protégée dès son premier refus**. Mesure à l'appui : les 143 remis en
+file ont produit **exactement 143 lignes**, pas 1 430. L'amplification ×10,6 (7 691 tentatives pour
+723 entités) venait de la cécité du garde, et cette cécité-là est réparée.
+
+Le mal réel est plus petit et parfaitement chiffrable : **~503 lignes de pile inutiles**, soit les
+77 % du vivier déjà clos — qui **re-bloqueraient le garde d'idempotence** et défairaient le tri de
+la journée, à re-trier à la main. C'est un quinzième du volume, mais **la même classe d'erreur** :
+purger sans fermer la classe d'erreur, c'est programmer sa répétition (leçon du 05/08). Ici la
+classe d'erreur n'est plus dans la garde — elle est dans **l'écart entre le code réparé et le code
+qui tourne**.
+
+Autre chiffre à ne pas invoquer à tort : **1 916 slugs sont sortis de la protection** du garde
+(passés en `rejected` par le tri du jour) contre **2 669** encore protégés. Ce n'est pas un défaut
+du tri : c'est le prix normal d'un tri, et il est borné par le point ci-dessus.
+
+### DÉFAUT NEUF — un SECOND robinet, que couper le timer ne ferme pas
+
+`scripts/nuit.sh` (l. 53-55) appelle **les mêmes remplisseurs** :
+
+```
+ops-fill-attrs.mjs --limit=40 · ops-fill-relations.mjs --limit=20 · ops-fill-fandom.mjs --limit=30
+```
+
+et il est déclenché par **`nika-nuit.timer`, `OnCalendar=*-*-* 02:30:00`, `Persistent=true`**.
+**Éteindre `nika-remplisseurs.timer` ne suffit donc pas à arrêter le ravitaillement** : à 2 h 30
+cette nuit, l'usine sera re-servie de 90 tâches sur la garde non déployée. Ce robinet-là n'est
+mentionné nulle part dans le plan. **À vérifier et à couper aussi, ou à assumer sciemment.**
+
+### Ordre de rallumage — la condition n°0 est neuve
+
+0. **COMMITER ET DÉPLOYER** les trois fichiers réparés sur le producteur, puis prouver le
+   déploiement sur un **lot témoin de 5 couples** pris dans les 143 (attendu : 5 passent, 0 refus
+   de garde, `model` NON nul). *Sans cette étape, tout le reste est sans objet.*
+1. **R2.1** — Dan tranche le juge n°1 (bascule `NIKA_JUGE1`, ou recharge DeepInfra).
+2. **R2.2** — rejeu des 2 257 échecs rejouables (zéro entité neuve, travail déjà payé).
+3. Vérifier que `auto_verdict` **et** `auto2_verdict` se posent tous les deux sur un lot témoin.
+4. Remettre en file les **143 couples** — un message **par couple**, jamais un par tentative.
+5. **Alors seulement** le timer, en surveillant `nika-nuit.timer` de la même main.
+
+### Commande exacte — pour Dan, et seulement quand il le décidera. JE NE L'AI PAS LANCÉE.
+
+```bash
+# depuis ce poste — la clé existe : ~/.ssh/nika_vps (pas d'alias dans ~/.ssh/config)
+ssh -i ~/.ssh/nika_vps nika@100.75.38.126
+
+# sur le VPS
+systemctl list-timers 'nika-*' --all --no-pager        # 1) LIRE l'état AVANT tout geste
+sudo systemctl start nika-remplisseurs.timer           # si l'unité est encore activée
+sudo systemctl enable --now nika-remplisseurs.timer    # si elle a été désactivée
+systemctl status nika-remplisseurs.timer --no-pager    # prouver l'exécution (leçon du 01/08)
+
+# le SECOND robinet, à décider dans le même geste (défaut neuf ci-dessus)
+systemctl list-timers nika-nuit --all --no-pager
+```
+
+> **L'état actuel des deux timers reste NON VÉRIFIÉ.** Correction d'une affirmation que j'ai
+> d'abord écrite à tort : **l'accès existe** — la clé `~/.ssh/nika_vps` est en place et l'hôte
+> `100.75.38.126` est dans `known_hosts` (il n'y a simplement pas de `~/.ssh/config`). Je n'ai
+> **pas** ouvert de session : lire l'état n'était pas dans mon mandat, qui dit de donner la
+> commande sans la lancer. « Le timer est arrêté » demeure donc une affirmation **reçue, pas
+> mesurée** — d'où la ligne `list-timers` en tête du bloc, à passer avant tout geste.
+> Ce que je peux prouver, en revanche, c'est que **le worker du VPS est vivant** (`ops_workers`,
+> `nika-usine:agents`, activité à la seconde) et que **la file est à 0** : tout message posté part
+> immédiatement, sur le code d'avant la réparation.
+
+## F.5 — Non-régression du site, vérifiée au rendu
+
+`npm run build` **vert** (sortie 0, aucun *error*/*warn*/*failed*). `ops-sonde-schema` **verte** :
+6 tables, 2 RPC, 3 invariants — dont *0 arête inter-univers* (plafond n°11) et *0 arête dormante
+dans `attributes`*. Serveur de production lancé sur un port isolé, **6 pages tirées en HTTP 200** :
+
+| Page | HTTP | Constat au rendu |
+|---|---|---|
+| `/learn/akasha/son-goku` | 200 | 195 ko, descFr 1 588 c, 3 sections, image présente |
+| `/learn/akasha/kusagakure` | 200 | **la phrase « Organisation de l'univers Naruto… » a disparu** de `summary` ET de `description` (les deux colonnes, comme le voulait le correctif) |
+| `/learn/akasha/ace` | 200 | **0 occurrence de « Portgas »** ; description = le SABRE ; attributs = Matière *Sabre*, Type de lame *Coutelas*, Nom original *Ēsu*, Grade Meito *Saijo Ô Wazamono* ; image NULL, 0 section |
+| `/learn/akasha/sora` | 200 | **« Temple du Feu » de retour** (attribut `organization` restauré) |
+| `/learn/akasha/naruto-uzumaki` | 200 | 230 ko, aucun markdown brut |
+| `/learn/akasha/monkey-d-luffy` | 200 | 158 ko |
+
+- **Fuite du bloc « Attributs » : toujours FERMÉE.** 0 occurrence **visible** de `descFrSource`,
+  `descFrRetiree`, `descFrImpossible`, `resumeCorrige`, `descFrPurgee`, `[object Object]` sur les
+  6 pages. `descRaw` apparaît 1 fois sur 4 pages **dans la charge RSC sérialisée uniquement** — la
+  clé est bien dans le `Set HIDDEN` et n'est **jamais rendue**. Ce n'est pas la fuite ; c'est du
+  transport. (À noter tout de même : on expédie au navigateur du wikitexte anglais qu'il n'affiche
+  pas — question de poids, pas de publication.)
+- **Aucune image placeholder revenue** : 0 en base, 0 sur les 6 pages.
+- Sur `son-goku`, `sora` et `kusagakure` le bloc « Attributs » **ne s'affiche plus du tout** — non
+  par masquage, mais parce qu'il ne reste aucune ligne publiable : c'est le comportement voulu
+  (`rows.length === 0 → null`), pas une disparition de contenu.

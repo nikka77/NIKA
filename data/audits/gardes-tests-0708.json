@@ -1,0 +1,668 @@
+{
+  "chantier": "gardes-tests",
+  "fait_le": "2026-08-07T12:20:47.498Z",
+  "garde_testee": "agent-worker.mjs → TASK_TYPES.fandom_descfr.guard (extraite du source, non recopiée)",
+  "methode_avant": "même batterie rejouée sur un miroir de `git show HEAD` (fandom.mjs, agent-worker.mjs, alias-cures.json) : 31/31 refusés",
+  "couples_nommes_de_l_audit": {
+    "methode": "177 couples des 3 familles suspectes, résolution + garde, sur le miroir HEAD puis sur le code corrigé",
+    "avant": {
+      "refuses": 174,
+      "passent": 3
+    },
+    "apres": {
+      "refuses": 32,
+      "passent": 145
+    },
+    "refus_restants": {
+      "C3 — 17": "pages RÉELLEMENT vides : leur wikitext entier vaut « Category:Tools » (14 caractères). Le plancher de 150 fait exactement son travail — ce ne sont pas des faux positifs.",
+      "E — 9": "5 sont les vrais refus du 05/08 (Summoning Technique (…), Wood Release, Katasuke Tōno's Assistant) et 3 de la même classe ; 1 relève d'un défaut DISTINCT non traité ici — « Z-Sword (Épée Zeta) », dont NOTRE nom porte une glose française entre parenthèses qui empoisonne la requête.",
+      "B — 6": "formes courtes SANS redirection du wiki (famille Achino, Koala Zombie, Pirate Captain (500 Hostages), Snake Way Guide) : aucune attestation, donc refus conservé. Ce sont des candidats au registre d'alias curé, pas à un assouplissement de garde."
+    }
+  },
+  "sens_1_faux_positifs": [
+    {
+      "defaut": 1,
+      "universe": "Dragon Ball",
+      "nom": "Mutaito",
+      "type": "character",
+      "refus_avant_audit": "homonyme probable — titre honorifique « Master Mutaito »",
+      "refus_avant_mesure": "homonyme probable : aucun repère du résumé (Dragon, Ball) dans « Master Mutaito »",
+      "titre_trouve": "Master Mutaito",
+      "taille": 5300,
+      "resolu_par": "exact",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 1,
+      "universe": "Hunter x Hunter",
+      "nom": "Hiru",
+      "type": "character",
+      "refus_avant_audit": "homonyme probable — alias curé « Leech » ignoré par la garde",
+      "refus_avant_mesure": "homonyme probable : aucun repère du résumé (Bêtes, Ombre, Parrains) dans « Leech »",
+      "titre_trouve": "Leech",
+      "taille": 3464,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 1,
+      "universe": "One Piece",
+      "nom": "Dip",
+      "type": "character",
+      "refus_avant_audit": "homonyme probable — page commune « Chip and Dip »",
+      "refus_avant_mesure": "homonyme probable : aucun repère du résumé (Piece) dans « Chip and Dip »",
+      "titre_trouve": "Chip and Dip",
+      "taille": 1475,
+      "resolu_par": "exact",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 1,
+      "universe": "One Piece",
+      "nom": "Minoru Kazeno",
+      "type": "character",
+      "refus_avant_audit": "homonyme probable — ordre japonais « Kazeno Minoru »",
+      "refus_avant_mesure": "homonyme probable : aucun repère du résumé (Piece) dans « Kazeno Minoru »",
+      "titre_trouve": "Kazeno Minoru",
+      "taille": 2140,
+      "resolu_par": "exact",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 1,
+      "universe": "Bleach",
+      "nom": "Goethe",
+      "type": "character",
+      "refus_avant_audit": "homonyme probable : aucun repère du résumé (Quincy, Wandenreich) dans « Yoshino Sōma/Goethe »",
+      "refus_avant_mesure": "homonyme probable : aucun repère du résumé (Quincy, Wandenreich) dans « Yoshino Sōma/Goethe »",
+      "titre_trouve": "Yoshino Sōma/Goethe",
+      "taille": 5083,
+      "resolu_par": "exact",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 2,
+      "universe": "Naruto",
+      "nom": "Kanchi",
+      "type": "character",
+      "refus_avant_audit": "page Fandom absente ou trop maigre (398 c pour un seuil de 400)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (398 c mesurés, seuil 400)",
+      "titre_trouve": "Kanchi",
+      "taille": 398,
+      "resolu_par": "exact",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 2,
+      "universe": "Naruto",
+      "nom": "Ugai",
+      "type": "character",
+      "refus_avant_audit": "page Fandom absente ou trop maigre (254 c pour un seuil de 400)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (254 c mesurés, seuil 400)",
+      "titre_trouve": "Ugai",
+      "taille": 254,
+      "resolu_par": "exact",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 2,
+      "universe": "Naruto",
+      "nom": "Piercing Showers",
+      "type": "power",
+      "refus_avant_audit": "page Fandom absente ou trop maigre (191 c pour un seuil de 250)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (191 c mesurés, seuil 250)",
+      "titre_trouve": "Piercing Showers",
+      "taille": 191,
+      "resolu_par": "exact",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 2,
+      "universe": "Naruto",
+      "nom": "Puppet Buzzsaw",
+      "type": "artifact",
+      "refus_avant_audit": "page Fandom absente ou trop maigre (183 c pour un seuil de 250)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (183 c mesurés, seuil 250)",
+      "titre_trouve": "Puppet Buzzsaw",
+      "taille": 183,
+      "resolu_par": "exact",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 3,
+      "universe": "Dragon Ball",
+      "nom": "Son Gohan",
+      "type": "character",
+      "refus_avant_audit": "page plus générale : « Gohan » ne couvre pas « Son Gohan »",
+      "refus_avant_mesure": "mauvaise entité : page plus générale que l'entité : « Gohan » ne couvre pas « Son Gohan »",
+      "titre_trouve": "Gohan",
+      "taille": 5516,
+      "resolu_par": "exact",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 3,
+      "universe": "One Piece",
+      "nom": "Carol Masterson",
+      "type": "character",
+      "refus_avant_audit": "page plus générale : « Carol » ne couvre pas « Carol Masterson »",
+      "refus_avant_mesure": "mauvaise entité : page plus générale que l'entité : « Carol » ne couvre pas « Carol Masterson »",
+      "titre_trouve": "Carol",
+      "taille": 1576,
+      "resolu_par": "exact",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 4,
+      "universe": "One Piece",
+      "nom": "Ponéglyphes",
+      "type": "artifact",
+      "refus_avant_audit": "source vide (0 caractère)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (0 c — aucune page servie)",
+      "titre_trouve": "Poneglyph",
+      "taille": 5300,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 4,
+      "universe": "One Piece",
+      "nom": "Île Amour",
+      "type": "place",
+      "refus_avant_audit": "source vide (0 caractère)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (0 c)",
+      "titre_trouve": "Loving Island",
+      "taille": 654,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 4,
+      "universe": "One Piece",
+      "nom": "Île Paquet",
+      "type": "place",
+      "refus_avant_audit": "source vide (0 caractère)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (0 c)",
+      "titre_trouve": "Package Island",
+      "taille": 1004,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 4,
+      "universe": "One Piece",
+      "nom": "Île Tricolore",
+      "type": "place",
+      "refus_avant_audit": "source vide (0 caractère)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (0 c)",
+      "titre_trouve": "Sanshoku Island",
+      "taille": 826,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 4,
+      "universe": "One Piece",
+      "nom": "Île Levure",
+      "type": "place",
+      "refus_avant_audit": "source vide (0 caractère)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (0 c)",
+      "titre_trouve": "Kibo Island",
+      "taille": 642,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 4,
+      "universe": "One Piece",
+      "nom": "Île Graine",
+      "type": "place",
+      "refus_avant_audit": "source vide (0 caractère)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (0 c)",
+      "titre_trouve": "Tanega Island",
+      "taille": 961,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 4,
+      "universe": "One Piece",
+      "nom": "Île Moelleuse",
+      "type": "place",
+      "refus_avant_audit": "source vide (0 caractère)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (0 c)",
+      "titre_trouve": "Funwari Island",
+      "taille": 1496,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 4,
+      "universe": "One Piece",
+      "nom": "Île Fromage",
+      "type": "place",
+      "refus_avant_audit": "source vide (0 caractère)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (0 c)",
+      "titre_trouve": "Cheese Island",
+      "taille": 1572,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 4,
+      "universe": "One Piece",
+      "nom": "Île Confiture",
+      "type": "place",
+      "refus_avant_audit": "source vide (0 caractère)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (0 c)",
+      "titre_trouve": "Jam Island",
+      "taille": 1324,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 4,
+      "universe": "Naruto",
+      "nom": "Capitaine du navire fantôme",
+      "type": "character",
+      "refus_avant_audit": "source vide (0 caractère)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (0 c)",
+      "titre_trouve": "Captain of the Ghost Ship",
+      "taille": 868,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 4,
+      "universe": "Naruto",
+      "nom": "Premier Chemin Animal (personnage)",
+      "type": "character",
+      "refus_avant_audit": "source vide (0 caractère)",
+      "refus_avant_mesure": "mauvaise entité : article « Chūji » pour « Premier Chemin Animal (personnage) » (et non source vide : la recherche tombait sur un voisin)",
+      "titre_trouve": "First Animal Path (character)",
+      "taille": 2301,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    },
+    {
+      "defaut": 4,
+      "universe": "Naruto",
+      "nom": "Cimetière des Monts",
+      "type": "place",
+      "refus_avant_audit": "source vide (0 caractère)",
+      "refus_avant_mesure": "page Fandom absente ou trop maigre (0 c)",
+      "titre_trouve": "Mountains' Graveyard",
+      "taille": 3442,
+      "resolu_par": "alias-cure",
+      "refus_apres": null,
+      "verdict": "CORRIGÉ"
+    }
+  ],
+  "sens_2_vrais_refus": [
+    {
+      "classe": "page plus générale",
+      "universe": "Naruto",
+      "nom": "Eternal Mangekyō Sharingan",
+      "type": "power",
+      "pourquoi": "redirection SANS fragment, mais la page « Mangekyō Sharingan » a une SECTION du même nom : notre sujet n'est qu'un morceau",
+      "titre_trouve": "Mangekyō Sharingan",
+      "taille": 5250,
+      "resolu_par": "exact",
+      "refus_apres": "mauvaise entité : page plus générale que l'entité : « Mangekyō Sharingan » ne couvre pas « Eternal Mangekyō Sharingan »",
+      "verdict": "REFUS PRÉSERVÉ"
+    },
+    {
+      "classe": "page plus générale",
+      "universe": "Naruto",
+      "nom": "Pseudo-Jinchūriki",
+      "type": "profession",
+      "pourquoi": "redirection AVEC fragment (#Similar Cases) : le wiki dit lui-même que c'est un morceau de page",
+      "titre_trouve": "Jinchūriki",
+      "taille": 5000,
+      "resolu_par": "exact",
+      "refus_apres": "mauvaise entité : page plus générale que l'entité : « Jinchūriki » ne couvre pas « Pseudo-Jinchūriki »",
+      "verdict": "REFUS PRÉSERVÉ"
+    },
+    {
+      "classe": "page plus générale",
+      "universe": "Naruto",
+      "nom": "Summoning Technique (Hōzuki Castle's Ninken)",
+      "type": "power",
+      "pourquoi": "aucune redirection : page atteinte par la RECHERCHE, qui n'atteste rien",
+      "titre_trouve": "Summoning Technique",
+      "taille": 4995,
+      "resolu_par": "search",
+      "refus_apres": "mauvaise entité : page plus générale que l'entité : « Summoning Technique » ne couvre pas « Summoning Technique (Hōzuki Castle's Ninken) »",
+      "verdict": "REFUS PRÉSERVÉ"
+    },
+    {
+      "classe": "page plus générale",
+      "universe": "Naruto",
+      "nom": "Katasuke Tōno's Assistant",
+      "type": "profession",
+      "pourquoi": "aucune redirection : la page décrit le maître, pas l'assistant",
+      "titre_trouve": "Katasuke Tōno",
+      "taille": 5278,
+      "resolu_par": "search",
+      "refus_apres": "mauvaise entité : page plus générale que l'entité : « Katasuke Tōno » ne couvre pas « Katasuke Tōno's Assistant »",
+      "verdict": "REFUS PRÉSERVÉ"
+    },
+    {
+      "classe": "page plus générale",
+      "universe": "Naruto",
+      "nom": "Chūnin Exams Assistant",
+      "type": "profession",
+      "pourquoi": "aucune redirection : la page décrit l'examen, pas son auxiliaire",
+      "titre_trouve": "Chūnin Exams",
+      "taille": 5000,
+      "resolu_par": "search",
+      "refus_apres": "mauvaise entité : page plus générale que l'entité : « Chūnin Exams » ne couvre pas « Chūnin Exams Assistant »",
+      "verdict": "REFUS PRÉSERVÉ"
+    },
+    {
+      "classe": "mauvaise entité",
+      "universe": "Naruto",
+      "nom": "Mercenaire",
+      "type": "profession",
+      "pourquoi": "nom français non attesté sur le wiki anglais — reste au plafond, pas d'alias inventé",
+      "titre_trouve": null,
+      "taille": 0,
+      "resolu_par": null,
+      "refus_apres": "page Fandom absente ou trop maigre",
+      "verdict": "REFUS PRÉSERVÉ"
+    },
+    {
+      "classe": "mauvaise entité",
+      "universe": "One Piece",
+      "nom": "Hollandais Volant",
+      "type": "artifact",
+      "pourquoi": "traduction française sans attestation du wiki — plafond documenté",
+      "titre_trouve": null,
+      "taille": 0,
+      "resolu_par": null,
+      "refus_apres": "page Fandom absente ou trop maigre",
+      "verdict": "REFUS PRÉSERVÉ"
+    },
+    {
+      "classe": "mauvaise entité",
+      "universe": "Naruto",
+      "nom": "Grelot",
+      "type": "artifact",
+      "pourquoi": "traduction française sans attestation du wiki — plafond documenté",
+      "titre_trouve": null,
+      "taille": 0,
+      "resolu_par": null,
+      "refus_apres": "page Fandom absente ou trop maigre",
+      "verdict": "REFUS PRÉSERVÉ"
+    }
+  ],
+  "sens_3_bonnes_pages": [
+    {
+      "universe": "Bleach",
+      "nom": "Gunjou",
+      "titre_attendu": "Gunjō",
+      "titre_avant": "Kūgo Ginjō — le Fullbringer chef de Xcution, un AUTRE personnage (12 sections déjà rédigées dessus)",
+      "pourquoi": "notre Gunjou est un Togabito de l'Enfer aux tentacules ; « Gunjō » existe sur le même wiki",
+      "titre_trouve": "Gunjō",
+      "resolu_par": "voyelle-longue:macron",
+      "taille": 1775,
+      "refus": null,
+      "verdict": "BONNE PAGE"
+    },
+    {
+      "universe": "Dragon Ball",
+      "nom": "Shuu",
+      "titre_attendu": "Shu",
+      "titre_avant": "Mr. Shu — le précepteur de Gohan, un AUTRE personnage",
+      "pourquoi": "notre Shuu est l'homme de main ninja de Pilaf : la page « Shu » (27 604 c) existe",
+      "titre_trouve": "Shu",
+      "resolu_par": "voyelle-longue:contracte",
+      "taille": 5240,
+      "refus": null,
+      "verdict": "BONNE PAGE"
+    },
+    {
+      "universe": "One Piece",
+      "nom": "Bongou",
+      "titre_attendu": "Bongo",
+      "titre_avant": "Bungo — deux entités distinctes de Wano réduites à une seule page",
+      "pourquoi": "« Bongo » (凡ゴウ) et « Bungo » (ブン業) sont deux personnages, et deux pages",
+      "titre_trouve": "Bongo",
+      "resolu_par": "voyelle-longue:contracte",
+      "taille": 2863,
+      "refus": null,
+      "verdict": "BONNE PAGE"
+    },
+    {
+      "universe": "One Piece",
+      "nom": "Bungou",
+      "titre_attendu": "Bungo",
+      "titre_avant": "Bungo — bonne page, mais atteinte par hasard : « Bongou » y tombait aussi",
+      "pourquoi": "la résolution doit être déterministe, pas une collision de recherche",
+      "titre_trouve": "Bungo",
+      "resolu_par": "voyelle-longue:contracte",
+      "taille": 3129,
+      "refus": null,
+      "verdict": "BONNE PAGE"
+    }
+  ],
+  "unitaires": [
+    {
+      "cas": "désambiguïsation pure — « Ain » ≠ « Ain (Neo Marines) »",
+      "attendu": false,
+      "obtenu": false,
+      "verdict": "OK"
+    },
+    {
+      "cas": "désambiguïsation pure — « Zangetsu » ≠ « Zangetsu (Quincy Powers) »",
+      "attendu": false,
+      "obtenu": false,
+      "verdict": "OK"
+    },
+    {
+      "cas": "entité voisine — « Giorno's Mother » ≠ « Giorno Giovanna »",
+      "attendu": false,
+      "obtenu": false,
+      "verdict": "OK"
+    },
+    {
+      "cas": "entité voisine — sameEntityName(« Giorno's Mother », « Giorno Giovanna »)",
+      "attendu": false,
+      "obtenu": false,
+      "verdict": "OK"
+    },
+    {
+      "cas": "voisin numéroté — « Super 17 » ≠ « Android 17 »",
+      "attendu": false,
+      "obtenu": false,
+      "verdict": "OK"
+    },
+    {
+      "cas": "titre plus riche — « Mutaito » ⊂ « Master Mutaito »",
+      "attendu": true,
+      "obtenu": true,
+      "verdict": "OK"
+    },
+    {
+      "cas": "glose entre parenthèses — « Hiru » ⊂ « Leech (Hiru) »",
+      "attendu": true,
+      "obtenu": true,
+      "verdict": "OK"
+    },
+    {
+      "cas": "page d'œuvre — « Île de Drum » → « Drum Island Arc »",
+      "attendu": true,
+      "obtenu": true,
+      "verdict": "OK"
+    },
+    {
+      "cas": "page d'œuvre — « Man X » → « SO Chapter 103 »",
+      "attendu": true,
+      "obtenu": true,
+      "verdict": "OK"
+    },
+    {
+      "cas": "page-liste — « List of Devil Fruits »",
+      "attendu": true,
+      "obtenu": true,
+      "verdict": "OK"
+    },
+    {
+      "cas": "plus générale SANS attestation — « Eternal Mangekyō Sharingan » → « Mangekyō Sharingan »",
+      "attendu": true,
+      "obtenu": true,
+      "verdict": "OK"
+    },
+    {
+      "cas": "plus générale — section du même nom sur la page : refus TENU",
+      "attendu": true,
+      "obtenu": true,
+      "verdict": "OK"
+    },
+    {
+      "cas": "plus générale — redirection AVEC fragment : refus TENU",
+      "attendu": true,
+      "obtenu": true,
+      "verdict": "OK"
+    },
+    {
+      "cas": "plus générale — redirection d'un AUTRE titre que le nôtre : refus TENU",
+      "attendu": true,
+      "obtenu": true,
+      "verdict": "OK"
+    },
+    {
+      "cas": "forme courte attestée — « Son Gohan » → « Gohan » : refus LEVÉ",
+      "attendu": false,
+      "obtenu": false,
+      "verdict": "OK"
+    },
+    {
+      "cas": "nom de l'œuvre non discriminant — « Personnage mineur d'One Piece » ne fonde aucun doute",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "OK"
+    },
+    {
+      "cas": "repère RÉEL absent de la page, sans attestation : doute maintenu (« Jaya »)",
+      "attendu": "homonyme probable : aucun repère du résumé (Jaya) dans « Masira »",
+      "obtenu": "homonyme probable : aucun repère du résumé (Jaya) dans « Masira »",
+      "verdict": "OK"
+    },
+    {
+      "cas": "cousin phonétique, titre plus long — « Gunjou » ≠ « Kūgo Ginjō »",
+      "attendu": false,
+      "obtenu": false,
+      "verdict": "OK"
+    },
+    {
+      "cas": "cousin phonétique, titre plus long — « Councillor » ≠ « Konoha Council »",
+      "attendu": false,
+      "obtenu": false,
+      "verdict": "OK"
+    },
+    {
+      "cas": "résumé sans repère ET titre étranger : refus (« Mother » → « Chi-Chi's mother »)",
+      "attendu": "identité invérifiable : résumé sans repère, et « Chi-Chi's mother » n'est ni notre nom ni une de ses écritures",
+      "obtenu": "identité invérifiable : résumé sans repère, et « Chi-Chi's mother » n'est ni notre nom ni une de ses écritures",
+      "verdict": "OK"
+    },
+    {
+      "cas": "résumé sans repère MAIS la page nous nomme : le doute tombe (« Abellon » → « Aveyron »)",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "OK"
+    },
+    {
+      "cas": "possessif du titre = tri entre porteurs — « Mother » ≠ « Chi-Chi's mother »",
+      "attendu": false,
+      "obtenu": false,
+      "verdict": "OK"
+    },
+    {
+      "cas": "possessif dans NOTRE nom : titrePlusRiche n'a pas à trancher — « Katasuke Tōno's Assistant »",
+      "attendu": false,
+      "obtenu": false,
+      "verdict": "OK"
+    },
+    {
+      "cas": "variante d'écriture, MÊME nombre de mots — « Musse » ≡ « Mousse »",
+      "attendu": true,
+      "obtenu": true,
+      "verdict": "OK"
+    },
+    {
+      "cas": "variante d'écriture, MÊME nombre de mots — « Minoru Kazeno » ≡ « Kazeno Minoru »",
+      "attendu": true,
+      "obtenu": true,
+      "verdict": "OK"
+    },
+    {
+      "cas": "identité attestée par redirection : le doute anti-homonyme tombe aussi",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "OK"
+    },
+    {
+      "cas": "alias CURÉ : pagePlusGenerale ne le re-juge pas (« Son Goku » → « Goku »)",
+      "attendu": "Goku",
+      "obtenu": "Goku",
+      "verdict": "OK"
+    },
+    {
+      "cas": "seuil — identité NON acquise : le seuil de type reste en vigueur",
+      "attendu": "page Fandom absente ou trop maigre",
+      "obtenu": "page Fandom absente ou trop maigre",
+      "verdict": "OK"
+    },
+    {
+      "cas": "seuil — source VIDE, identité acquise : refus TENU",
+      "attendu": "page Fandom absente ou trop maigre",
+      "obtenu": "page Fandom absente ou trop maigre",
+      "verdict": "OK"
+    },
+    {
+      "cas": "seuil — 149 c sous identité acquise : refus TENU",
+      "attendu": "page Fandom absente ou trop maigre",
+      "obtenu": "page Fandom absente ou trop maigre",
+      "verdict": "OK"
+    },
+    {
+      "cas": "seuil — 150 c sous identité acquise : accepté",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "OK"
+    }
+  ],
+  "comptes": {
+    "faux_positifs_avant": 23,
+    "tous_refuses_avant_correction": "23/23 relevés nommément, 31/31 refusés au total sur le miroir HEAD",
+    "faux_positifs_apres": 0,
+    "faux_positifs_corriges": "23/23",
+    "vrais_refus_preserves": "8/8",
+    "bonnes_pages": "4/4",
+    "unitaires": "31/31"
+  }
+}

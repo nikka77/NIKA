@@ -8,7 +8,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { z } from 'zod';
-import { fetchFandomProse, citeLeNom } from './lib/fandom.mjs';
+import { fetchFandomProse, citeLeNom, titrePlusRiche, titreStrictementEgal } from './lib/fandom.mjs';
 import { poserSections } from '../lib/akasha/sections.ts';
 import { expertFor, axesSchema, AXES, checkPreuves, splitPreuves } from './lib/akasha-axes.mjs';
 import { ROLES, angleFor } from './lib/akasha-roles.mjs';
@@ -153,16 +153,39 @@ DONNÉES :
       const page = await fetchFandomProse(p.universe, p.name, { slug: p.slug });
       const niche = await expertNiche(supabase, p.universe, p.name);               // L19
       const memoire = await memoireExpert(supabase, 'fandom_descfr', p.universe, niche?.noms);   // L18
-      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, pageOeuvre: page.pageOeuvre, resolutionPartielle: page.resolutionPartielle, memoire, niche } : { ...p, memoire, niche };
+      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, aliasCure: page.aliasCure, identiteAttestee: page.identiteAttestee, pageOeuvre: page.pageOeuvre, resolutionPartielle: page.resolutionPartielle, memoire, niche } : { ...p, memoire, niche };
     },
     // Trois gardes, apprises des 3 erreurs d'identité du 25/07 — RECALIBRÉES PAR TYPE le 01/08 :
     // elles avaient été taillées pour des personnages et refusaient à tort une entrée sur cinq
     // des autres types (audit des 4 verrous).
     guard: (p) => {
+      // IDENTITÉ ACQUISE SANS MODÈLE (07/08) — trois formes, aucune n'est une ressemblance :
+      //   · le titre EST notre libellé, aux accents et signes près ;
+      //   · la paire a été curée à la main dans data/alias-cures.json ;
+      //   · le WIKI redirige notre nom exact vers cette page, sans fragment, et aucune de ses
+      //     sections ne porte ce nom (page.identiteAttestee) — « Son Gohan » → « Gohan »,
+      //     « Carol Masterson » → « Carol ». S'il y avait homonymie, le wiki servirait une page
+      //     d'homonymie ou un titre parenthésé, pas une redirection nue.
+      // Sur le wiki DE l'univers, aucun de ces trois cas ne peut désigner un homonyme d'ailleurs.
+      const identiteAcquise = titreStrictementEgal(p.name, p.fandomTitle)
+        || Boolean(p.aliasCure) || Boolean(p.identiteAttestee);
       // Seuil de matière : un article de jutsu fait 752 caractères de médiane contre 5 135 pour
       // un personnage. Refuser un article de 360 c privait l'expert d'une matière suffisante
       // pour 3 phrases — « Wind Release: Verdant Mountain Gale », « Exploding Sand Boulder »…
-      const seuil = ['power', 'skill', 'artifact', 'profession'].includes(p.type) ? 250 : 400;
+      //
+      // PLANCHER QUAND L'IDENTITÉ EST ACQUISE (07/08) : le seuil sert à écarter DEUX risques —
+      // « ce n'est pas la bonne page » et « cette page n'a rien à dire ». Quand le titre est
+      // notre nom lettre pour lettre, le premier risque n'existe plus, et il ne reste qu'un
+      // nombre arbitraire qui tuait des tâches parfaitement saines : Kanchi refusé à 398
+      // caractères contre 400, Piercing Showers à 191 contre 250, Puppet Buzzsaw à 183 —
+      // 446 tentatives écartées, 0 refus justifié sur 3 lus par l'audit du 07/08.
+      // 150 et pas 0 : en dessous, l'infobox et la phrase d'amorce ne portent pas un seul fait
+      // vérifiable, et la famille « source vide » (0 caractère) doit rester refusée. La
+      // doctrine de la maison est déjà écrite pour ce cas — « rendre une source maigre en peu
+      // de phrases est un succès » (fiche_section, 01/08) : on produit court, on ne refuse pas.
+      const PLANCHER_IDENTITE_ACQUISE = 150;
+      const seuil = identiteAcquise ? PLANCHER_IDENTITE_ACQUISE
+        : ['power', 'skill', 'artifact', 'profession'].includes(p.type) ? 250 : 400;
       if ((p.fandom ?? '').length < seuil) return 'page Fandom absente ou trop maigre';
       // 1) le titre trouvé désigne-t-il la même entité ? (Giorno's Mother → Giorno, Super 17 → Android 17)
       // ALIAS (01/08) : un article cite TOUJOURS les autres noms de son sujet. Si le texte
@@ -187,11 +210,44 @@ DONNÉES :
       // La garde refusait Yasunaga, Kyoko, Daril Ghiroza — pages justes mais trop PETITES pour
       // contenir un repère du résumé français. Le doute anti-homonyme ne vaut que si les titres
       // diffèrent (résolution par recherche).
-      const titresEgaux = String(p.fandomTitle ?? '').trim().toLowerCase() === String(p.name ?? '').trim().toLowerCase();
-      if (p.type === 'character' && !titresEgaux) {
-        const propres = [...new Set((p.summary ?? '').match(/(?<!^|[.!?]\s)\b[A-ZÀ-Þ][\wÀ-ÿ'-]{3,}/g) ?? [])];
+      // TITRE PLUS RICHE = MÊME ENTITÉ (07/08) : le wiki titre presque toujours plus richement
+      // que nous, et la garde traitait chacune de ces écritures comme une entité différente —
+      // « Mutaito » refusé pour « Master Mutaito », « Minoru Kazeno » pour « Kazeno Minoru »,
+      // « Dip » pour « Chip and Dip », « Goethe » pour « Yoshino Sōma/Goethe ». 2 640
+      // tentatives écartées, 5 faux positifs sur 6 lus. Quand TOUS les mots de notre nom sont
+      // dans le titre, il n'y a plus d'homonyme à craindre : le doute est sans objet.
+      // La désambiguïsation pure (« Ain (Neo Marines) » pour notre « Ain ») reste, elle, sous
+      // garde — c'est le cas même qui a fait naître cette règle (voir titrePlusRiche).
+      const identiteHorsDoute = identiteAcquise || titrePlusRiche(p.name, p.fandomTitle);
+      if (p.type === 'character' && !identiteHorsDoute) {
+        // LE NOM DE L'ŒUVRE N'EST PAS UN REPÈRE (07/08) — la fuite principale des 2 640
+        // tentatives : sur un résumé générique (« Personnage mineur d'One Piece », « Personnage
+        // secondaire de Dragon Ball »), les seuls noms propres sont ceux de l'ŒUVRE — « Piece »,
+        // « Dragon », « Ball ». Ils ne distinguent AUCUN personnage d'un autre : les chercher
+        // dans la page, c'est réclamer une preuve d'identité à un texte qui n'en contient pas,
+        // puis refuser faute de l'avoir trouvée. Un doute doit reposer sur un indice ; ici il
+        // n'y en avait aucun. Les vrais repères (Quincy, Wandenreich, Jaya, Achino…) restent
+        // exigés à l'identique — la garde ne tombe que lorsqu'il ne reste rien à vérifier.
+        const motsOeuvre = new Set(String(p.universe ?? '').toLowerCase()
+          .normalize('NFD').replace(/[̀-ͯ]/g, '').split(/[^a-z0-9]+/).filter(Boolean));
+        const propres = [...new Set((p.summary ?? '').match(/(?<!^|[.!?]\s)\b[A-ZÀ-Þ][\wÀ-ÿ'-]{3,}/g) ?? [])]
+          .filter((n) => !motsOeuvre.has(n.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')));
         if (propres.length && !propres.some((n) => (p.fandom ?? '').toLowerCase().includes(n.toLowerCase().slice(0, 6))))
           return `homonyme probable : aucun repère du résumé (${propres.slice(0, 3).join(', ')}) dans « ${p.fandomTitle} »`;
+        // UN RÉSUMÉ SANS REPÈRE NE PROUVE RIEN NON PLUS (07/08 au soir) — l'exemption ci-dessus
+        // a été écrite ce matin pour cesser de RÉCLAMER une preuve à un texte qui n'en contient
+        // pas. Elle a été lue à l'envers : faute de repère, la garde disait « oui » au lieu de
+        // se taire. Trouvé en auditant les 145 couples débloqués — notre entité « Mother »
+        // (Dragon Ball), au résumé « Personnage secondaire de Dragon Ball. », partait produire
+        // une fiche depuis « Chi-Chi's mother », l'Ox-Queen, sans que rien n'ait jamais établi
+        // que c'est la même. Quand il ne reste RIEN à vérifier dans le résumé, l'identité doit
+        // venir d'ailleurs : titre acquis, titre plus riche (traités plus haut, on n'arrive ici
+        // que s'ils ont échoué), ou le témoin le plus solide qui reste — la page NOMME notre
+        // entité dans ses champs de nommage (« Romanized Name : Aberon » pour notre
+        // « Abellon »). Sans aucun des trois, on ne refuse pas par excès de zèle : on refuse
+        // parce qu'aucune source, ni la nôtre ni le wiki, ne dit que ces deux-là sont un.
+        if (!propres.length && !citeLeNom(p.fandom, p.name, p.fandomTitle))
+          return `identité invérifiable : résumé sans repère, et « ${p.fandomTitle} » n'est ni notre nom ni une de ses écritures`;
       }
       return null;
     },
@@ -426,7 +482,7 @@ ${p.motifs}`,
       // l'introduction et l'infobox. Diviser le contexte par deux réduit d'autant le
       // temps d'évaluation du prompt — le poste le plus cher de cette tâche.
       const page = await fetchFandomProse(p.universe, p.name, { slug: p.slug });
-      return page ? { ...p, fandom: page.text.slice(0, 2500), fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, pageOeuvre: page.pageOeuvre, resolutionPartielle: page.resolutionPartielle } : p;
+      return page ? { ...p, fandom: page.text.slice(0, 2500), fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, aliasCure: page.aliasCure, identiteAttestee: page.identiteAttestee, pageOeuvre: page.pageOeuvre, resolutionPartielle: page.resolutionPartielle } : p;
     },
     guard: (p) => {
       if (!AXES[p.universe]) return `univers sans taxonomie : ${p.universe}`;
@@ -572,7 +628,7 @@ TASK_TYPES.akasha_relations = {
   // L'histoire d'un personnage vit dans le corps de l'article : on prend plus large que les axes.
   fetch: async (p) => {
     const page = await fetchFandomProse(p.universe, p.name, { maxChars: 6000, slug: p.slug });
-    return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, pageOeuvre: page.pageOeuvre, resolutionPartielle: page.resolutionPartielle } : p;
+    return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, aliasCure: page.aliasCure, identiteAttestee: page.identiteAttestee, pageOeuvre: page.pageOeuvre, resolutionPartielle: page.resolutionPartielle } : p;
   },
   guard: (p) => TASK_TYPES.fandom_descfr.guard(p),
   prompt: (p) => `À partir de l'article ci-dessous, dresse les relations MAJEURES de ${p.name} (${p.universe})
@@ -697,7 +753,7 @@ function ficheRole(roleKey) {
       // viennent d'abord de son propre groupe — c'est par là qu'il progresse fiche après fiche.
       const niche = await expertNiche(supabase, p.universe, p.name);
       const memoire = await memoireExpert(supabase, roleKey, p.universe, niche?.noms);
-      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, pageOeuvre: page.pageOeuvre, resolutionPartielle: page.resolutionPartielle, memoire, niche } : { ...p, memoire, niche };
+      return page ? { ...p, fandom: page.text, fandomTitle: page.title, fandomUrl: page.url, sameEntity: page.sameEntity, aliasCure: page.aliasCure, identiteAttestee: page.identiteAttestee, pageOeuvre: page.pageOeuvre, resolutionPartielle: page.resolutionPartielle, memoire, niche } : { ...p, memoire, niche };
     },
     guard: (p) => TASK_TYPES.fandom_descfr.guard(p),
     prompt: (p) => `Tu es ${nomExpert(roleKey, p.universe)}${p.niche ? `, et plus précisément « ${p.niche.nom} » (${p.niche.membres} entrées à ta charge)` : ''}, expert de l'encyclopédie AKASHA (univers d'animes/mangas).
