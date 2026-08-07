@@ -30,6 +30,15 @@ cd "$(dirname "$0")/.."
 JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,mistral/mistral-small-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/llama-3.3-70b-versatile,openrouter/mistralai/mistral-small-24b-instruct-2501,anthropic/claude-haiku-4-5}
 CONC=${NIKA_CONC_JUGES:-12}
 
-echo "⚖️  étage de jugement — couloir review_local · jury ${JUGE} · ${CONC} de front"
+# RÉATTRIBUTION AU VOL DU JURY (07/08) — une relecture porte, dans sa charge utile, le jury décidé
+# à son ENRÔLEMENT. Retirer un couloir mort de la liste ci-dessus ne libère donc pas celles qui
+# l'attendent déjà : le 07/08, 5 des 24 emplacements étaient collés à deepinfra (402, solde épuisé)
+# et leurs tâches étaient reportées en boucle — la file MONTAIT au lieu de descendre, indéfiniment.
+# --force-jury les réassigne par emplacement (A = juge n°1, B = juge n°2, jamais le même modèle
+# pour les deux, donc pas de faux consensus). Deux FAMILLES distinctes, comme le veut la règle du
+# 28/07. NIKA_FORCE_JURY pour changer sans toucher au script.
+FORCE_JURY=${NIKA_FORCE_JURY:-groq/llama-3.3-70b-versatile,openrouter/google/gemma-4-26b-a4b-it:free}
+
+echo "⚖️  étage de jugement — couloir review_local · jury ${JUGE} · réattribution ${FORCE_JURY} · ${CONC} de front"
 exec "${PRIO[@]}" node --env-file=.env.local scripts/agent-worker.mjs \
-  --loop --types=review_local --juge="$JUGE" --conc="$CONC"
+  --loop --types=review_local --juge="$JUGE" --force-jury="$FORCE_JURY" --conc="$CONC"
