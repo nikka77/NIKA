@@ -98,29 +98,35 @@ const CANDIDATS = [
   'openrouter/nemotron-550b:free',
 ];
 
-async function jurySain() {
-  const forces = [process.env.NIKA_JUGE1, process.env.NIKA_JUGE2].filter(Boolean);
-  if (forces.length === 2) return forces;
-  const { couloirsOuverts } = await import('./lib/couloirs.mjs');
-  const ouverts = await couloirsOuverts(CANDIDATS, 2 - forces.length);
-  return [...forces, ...ouverts.filter((o) => !forces.includes(o))].slice(0, 2);
-}
-
-const [juge1, juge2] = await jurySain();
-if (!juge1 || !juge2) {
+// ON RÉPARTIT SUR TOUS LES COULOIRS OUVERTS, PAS SUR UN SEUL (07/08/2026, même soir).
+// Premier jet : un couloir par slot. Mesuré aussitôt sur 348 relectures — Groq plafonne à
+// 12 000 jetons/minute et un jugement en coûte ~3 800, soit trois par minute : deux heures de
+// file d'attente pendant que cinq autres couloirs, ouverts, ne faisaient rien. Chaque relecture
+// reçoit donc SON couloir, distribué à tour de rôle. La règle des familles tient toujours, mais
+// elle s'applique désormais PAR RELECTURE (ses deux juges de maisons différentes), pas au lot.
+const { couloirsOuverts } = await import('./lib/couloirs.mjs');
+const forces = [process.env.NIKA_JUGE1, process.env.NIKA_JUGE2].filter(Boolean);
+const OUVERTS = forces.length === 2 ? forces : await couloirsOuverts(CANDIDATS, CANDIDATS.length);
+if (OUVERTS.length < 2) {
   // On CRIE plutôt que de rejouer dans le vide : c'est exactement ce silence qui a laissé
   // 328 relectures échouer nuit après nuit.
   console.error('✗ aucun jury sain : moins de deux couloirs ouverts parmi', CANDIDATS.join(', '));
   process.exit(1);
 }
-console.log(`jury du jour : ${juge1} (auto) · ${juge2} (auto2)`);
-const JURY = [
-  { juge_modele: juge1, slot: 'auto' },
-  { juge_modele: juge2, slot: 'auto2' },
-];
+console.log(`${OUVERTS.length} couloir(s) ouvert(s) : ${OUVERTS.join(', ')}`);
+const maison = (m) => String(m).split('/')[1] ?? String(m).split('/')[0];
+/** Les deux juges de CETTE relecture : deux couloirs de maisons différentes, pris à tour de rôle. */
+function juryDe(n) {
+  const a = OUVERTS[n % OUVERTS.length];
+  const b = OUVERTS.find((c, i) => i !== (n % OUVERTS.length) && maison(c) !== maison(a))
+    ?? OUVERTS.find((c) => c !== a);
+  return [{ juge_modele: a, slot: 'auto' }, { juge_modele: b, slot: 'auto2' }];
+}
 
 const messages = [];
+let rang = 0;
 for (const row of rows ?? []) {
+  const JURY = juryDe(rang++);
   const slots = [];
   if (enErreur(row.auto_verdict, row.auto_motif) || jamaisJuge(row.auto_verdict, row.auto_motif)) slots.push(JURY[0]);
   if (enErreur(row.auto2_verdict, row.auto2_motif) || jamaisJuge(row.auto2_verdict, row.auto2_motif)) slots.push(JURY[1]);
