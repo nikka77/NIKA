@@ -12,6 +12,7 @@
 // Usage : node --env-file=.env.local scripts/ops-fill-tronquees.mjs [--dry] [--limit=50] [--universe="Naruto"]
 import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
+import { dejaEnFile } from './lib/deja-en-file.mjs';
 
 const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
@@ -45,9 +46,9 @@ for (let debut = 0; ; debut += 1000) {
 }
 
 // Les fiches déjà en attente de relecture ne sont pas remises en file (idempotence).
-const { data: pendantes } = await supabase.from('agent_results')
-  .select('target_slug').eq('review_status', 'pending');
-const dejaEnReview = new Set((pendantes ?? []).map((r) => r.target_slug));
+// PAGINÉ (07/08) : un `.select()` nu plafonne à 1 000 lignes chez PostgREST — le garde ne
+// voyait que le premier millier d'une pile de 11 000 et laissait repartir tout le reste.
+const dejaEnReview = await dejaEnFile(supabase);
 
 const coupees = data.filter((e) => {
   const d = String(e.attributes?.descFr ?? '').trim();

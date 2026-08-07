@@ -5,6 +5,7 @@
 // l'univers rédige, la chaîne de contrôle (garde → juge → review Dan) est la même que partout.
 import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
+import { dejaEnFile } from './lib/deja-en-file.mjs';
 import { ROLES, typesFor } from './lib/akasha-roles.mjs';
 
 const supabase = clientOps();
@@ -36,12 +37,9 @@ const { data, error } = await q;
 if (error) { console.error(error.message); process.exit(1); }
 
 // Idempotence : ni fiches déjà rédigées, ni productions en attente de review.
-const { data: pendantes } = await supabase
-  .from('agent_results')
-  .select('target_slug')
-  .eq('task_type', ROLE)
-  .eq('review_status', 'pending');
-const dejaEnReview = new Set((pendantes ?? []).map((r) => r.target_slug));
+// PAGINÉ (07/08) : un `.select()` nu plafonne à 1 000 lignes chez PostgREST — le garde ne
+// voyait que le premier millier d'une pile de 11 000 et laissait repartir tout le reste.
+const dejaEnReview = await dejaEnFile(supabase, ROLE);
 
 const candidates = (data ?? [])
   .filter((e) => !dejaEnReview.has(e.slug))   // descFr déjà écarté en SQL

@@ -3,6 +3,7 @@
 // Usage : node --env-file=.env.local scripts/ops-fill-attrs.mjs [--dry] [--limit=20] [--universe="Naruto"]
 import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
+import { dejaEnFile } from './lib/deja-en-file.mjs';
 import { AXES } from './lib/akasha-axes.mjs';
 
 const supabase = clientOps();
@@ -21,12 +22,9 @@ if (error) { console.error(error.message); process.exit(1); }
 
 // Idempotence : une fiche dont une production akasha_attrs attend déjà la review de Dan
 // ne doit PAS être re-traitée (constaté le 26/07 : le remplisseur re-proposait les mêmes 6).
-const { data: pendantes } = await supabase
-  .from('agent_results')
-  .select('target_slug')
-  .eq('task_type', 'akasha_attrs')
-  .eq('review_status', 'pending');
-const dejaEnReview = new Set((pendantes ?? []).map((r) => r.target_slug));
+// PAGINÉ (07/08) : un `.select()` nu plafonne à 1 000 lignes chez PostgREST — le garde ne
+// voyait que le premier millier d'une pile de 11 000 et laissait repartir tout le reste.
+const dejaEnReview = await dejaEnFile(supabase, 'akasha_attrs');
 
 // une fiche est candidate si AU MOINS un axe de son univers est vide
 const manquants = (e) => Object.keys(AXES[e.universe] ?? {}).filter((a) => !e.attributes?.[a]);

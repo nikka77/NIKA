@@ -92,6 +92,13 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
     // extrémité), et la nature s'inverse — « X est mon mentor » se lit « Élève · X » chez lui.
     ...entry.relationsIn.filter((r) => r.relation === 'mentor' || r.relation === 'eleve')
       .map((r) => ({ label: r.relation === 'mentor' ? 'Élève' : 'Mentor', name: r.target.name, slug: r.target.slug })),
+    // Allié, ennemi, rival sont RÉFLEXIFS : le libellé ne s'inverse pas, mais le lien devait
+    // quand même être lu dans les deux sens (audit du 07/08). Sans cette ligne, une fiche que
+    // les autres citent sans les citer en retour s'affichait seule : son-goku, fiche n°1 du
+    // site, portait 90 arêtes entrantes (Vegeta rival, Freezer ennemi, Krillin allié) et 1
+    // sortante — sa page annonçait zéro allié et zéro ennemi.
+    ...entry.relationsIn.filter((r) => r.relation === 'allie' || r.relation === 'ennemi' || r.relation === 'rival')
+      .map((r) => ({ label: NATURES_LIENS[r.relation], name: r.target.name, slug: r.target.slug })),
   ].filter((l, i, t) => t.findIndex((x) => x.name === l.name && x.label === l.label) === i).slice(0, 24);
   const belong: { attr: string; label: string; value: string }[] = [];
   for (const [attr, label] of BELONG_ATTRS) {

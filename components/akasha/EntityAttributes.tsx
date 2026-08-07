@@ -77,9 +77,31 @@ export default function EntityAttributes({
   // Clés supplémentaires (jsonb flexible) non listées dans ATTRIBUTE_FIELDS.
   // `category` est en chip « ◈ Collection » ; descRaw/descLang = matière de traduction (jamais affichés
   // bruts — règle FR) ; descFr est rendue en section Description ; les clés techniques restent internes.
-  const HIDDEN = new Set(['category', 'rosterLabel', 'eras', 'facts', 'quote', 'bio', 'trivia', 'abilities', 'descRaw', 'descLang', 'descFr', 'is_signature', 'source']);
+  //
+  // CETTE LISTE EST UNE LISTE DE PUBLICATION (audit du 07/08). Tout ce qui n'y figure pas s'affiche
+  // sur la page publique — c'est ainsi que 3 861 fiches ont publié `descFrSource` (« claude-haiku-4-5
+  // (blitz fenêtre…) », « groq/openai/gpt-oss-120b »… : la plomberie de l'usine), que les fiches à
+  // dossier ont rendu « sections | [object Object] » (queries.ts réinjecte les sections DANS
+  // attributes), et que des notes d'ops écrites pour nous — descFrRetiree, resumeCorrige — se sont
+  // retrouvées mot pour mot devant le lecteur. Une clé technique NEUVE doit être ajoutée ICI le jour
+  // où on l'écrit en base, pas le jour où on la découvre en ligne.
+  const HIDDEN = new Set([
+    'category', 'rosterLabel', 'eras', 'facts', 'quote', 'bio', 'trivia', 'abilities',
+    'descRaw', 'descLang', 'descFr', 'is_signature', 'source',
+    // provenance et plomberie d'usine
+    'descFrSource', 'sectionsSource', 'import_source', 'sourceUrl', 'purgeAudit',
+    // annotations d'ops (nos notes de travail, jamais du contenu de fiche)
+    'descFrRetiree', 'descFrImpossible', 'descFrPurgee', 'resumeCorrige',
+    // structures rendues par leurs propres composants (jamais en liste d'attributs)
+    'sections', 'forms', 'statLabels', 'gallery', 'animations', 'quotes',
+    // clés de jointure internes
+    'villageSlug', 'clanSlug',
+  ]);
   for (const [k, val] of Object.entries(attributes)) {
     if (knownKeys.has(k) || HIDDEN.has(k)) continue;
+    // Tautologie mesurée sur 73 fiches : `element` et `category` portent la même valeur
+    // (« Élément | Nature de chakra » sous « ◈ Nature de chakra ») — on ne redit pas la chip.
+    if (k === 'element' && String(val) === String(attributes.category)) continue;
     const v = formatValue(val);
     if (v) rows.push({ key: k, label: EXTRA_LABELS_FR[k] ?? k.replace(/_/g, ' '), value: v });
   }

@@ -338,7 +338,10 @@ ${p.section_texte}`,
     // de dix : ~130 appels, la pile se vide dans la soirée. Même barème, mêmes garanties.
     model: 'anthropic/claude-haiku-4-5',
     guard: (p) => (!Array.isArray(p.litiges) || !p.litiges.length ? 'lot vide' : null),
-    zod: z.object({ verdicts: z.array(z.object({ id: z.number(), decision: z.enum(['approve', 'reject']), motif: z.string().min(8) })).min(1) }),
+    // `z.coerce.number()` et pas `z.number()` (07/08) : le modèle rend volontiers l'id en CHAÎNE
+    // (« id": "1284" »), zod jetait alors le LOT ENTIER — 315 lots produits, 0 verdict rendu depuis
+    // la création de cet étage. La coercition accepte les deux graphies sans rien relâcher d'autre.
+    zod: z.object({ verdicts: z.array(z.object({ id: z.coerce.number(), decision: z.enum(['approve', 'reject']), motif: z.string().min(8) })).min(1) }),
     schema: {
       type: 'object',
       properties: { verdicts: { type: 'array', items: { type: 'object',
@@ -1183,6 +1186,15 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
       await new Promise((r) => setTimeout(r, (attente + 1) * 1000));
       continue;
     }
+    // GUICHET FERMÉ ≠ TÂCHE FAUTIVE (07/08) : 402 (crédit épuisé), 401/403 (clé morte ou révoquée)
+    // disent que le COULOIR est indisponible, pas que la tâche est mauvaise. Tombés dans le throw
+    // générique, ils marquaient la tâche `failed` — une panne de facturation DeepInfra a ainsi
+    // brûlé 3 857 tâches parfaitement valides en quelques heures. PlafondJourError, lui, REPORTE la
+    // tâche (rien d'écrit, message laissé en file) et fait basculer la rotation sur un autre couloir.
+    if (res.status === 402 || res.status === 401 || res.status === 403) {
+      throw new PlafondJourError(fournisseur ? `${fournisseur}/${modele}` : modele,
+        `guichet fermé (HTTP ${res.status}) — ${(await res.text()).slice(0, 120)}`);
+    }
     if (!res.ok) throw new Error(`HTTP ${res.status} (${new URL(url).host}): ${(await res.text()).slice(0, 200)}`);
     journaliserQuotaReel(fournisseur, modele, res.headers);
     const rep = await res.json();
@@ -1281,7 +1293,9 @@ async function callModel(type, payload, modeleImpose) {
       method: 'POST', signal: AbortSignal.timeout(TIMEOUT_MS),
       headers: { 'x-api-key': process.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
       body: JSON.stringify({
-        model: sansCouloir(model), max_tokens: 500,
+        // Dimensionné au LOT, pas fixe (07/08) : un lot de dix litiges rend dix verdicts motivés —
+        // 500 jetons coupaient la réponse au troisième et le JSON tronqué partait en erreur de parsing.
+        model: sansCouloir(model), max_tokens: Math.max(500, 240 * reste.length + 400),
         system: [{ type: 'text', text: systeme, cache_control: { type: 'ephemeral' } }],
         messages: [{ role: 'user', content: reste.join('\n') || systeme }],
       }),
