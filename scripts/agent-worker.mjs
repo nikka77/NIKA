@@ -1663,15 +1663,27 @@ async function ollamaDisponible() {
 // l'un des deux juges de CETTE fiche. Le cas se produit dès que gemma épuise ses 450 requêtes du
 // jour — le juge n°2 devient Qwen, et un arbitre Qwen ne ferait que répéter son propre vote.
 // Le repli n'était vérifié que pour le REMPLAÇANT (liste `evite`), jamais pour le titulaire.
+// UNE CLÉ PRÉSENTE N'EST PAS UN GUICHET OUVERT (07/08/2026). Cette liste ne testait que
+// l'existence de la variable d'environnement — or DEEPINFRA_API_KEY est bien là, et le compte
+// répond 402 « You need positive balance » depuis ce matin. Résultat mesuré le soir même : chaque
+// désaccord entre les deux juges convoquait un arbitre sur un couloir mort, la relecture repartait
+// en file, revenait, re-convoquait — et comme les deux juges se contredisent souvent (85 valide /
+// 105 à corriger sur 200), l'étage entier s'est arrêté, worker en « sieste de 15 min ».
+// DeepInfra passe donc en DERNIER (à re-créditer pour reprendre son rang), et surtout `arbitrePour`
+// vérifie désormais la disponibilité au lieu de la supposer — comme le fait déjà le vivier des juges.
 const ARBITRES = [
-  process.env.DEEPINFRA_API_KEY && 'deepinfra/Qwen/Qwen3-32B',
-  process.env.OPENROUTER_API_KEY && 'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free',
   process.env.NVIDIA_API_KEY && 'nvidia/nvidia/nemotron-3-super-120b-a12b',
   process.env.MISTRAL_API_KEY && 'mistral/mistral-large-latest',
+  process.env.OPENROUTER_API_KEY && 'openrouter/nvidia/nemotron-3-ultra-550b-a55b:free',
+  process.env.DEEPINFRA_API_KEY && 'deepinfra/Qwen/Qwen3-32B',
 ].filter(Boolean);
 const arbitrePour = (juge1, juge2) => {
+  // Jamais l'un des deux juges qu'il arbitre : un arbitre qui répète un vote ne départage rien.
   const pris = new Set([juge1, juge2].filter(Boolean));
-  return ARBITRES.find((m) => !pris.has(m)) ?? ARBITRES[0] ?? null;
+  const libres = ARBITRES.filter((m) => !pris.has(m));
+  // Un arbitre injoignable vaut moins que pas d'arbitre : sans lui la fiche attend Dan, avec lui
+  // elle tourne en boucle dans la file et bloque tout l'étage derrière elle.
+  return libres.find(couloirDispo) ?? ARBITRES.find(couloirDispo) ?? null;
 };
 async function peutEtreArbitrer(reviewedId) {
   if (!ARBITRES.length) return;
