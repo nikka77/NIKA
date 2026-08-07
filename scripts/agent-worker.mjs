@@ -1067,8 +1067,18 @@ const schemaOf = (t, p) => (typeof t.schema === 'function' ? t.schema(p) : t.sch
 // Cette erreur distincte fait REPORTER la tâche : rien en base, message laissé en file
 // (sa visibilité expire → il repart), et le worker fait la sieste jusqu'à la fenêtre suivante.
 class PlafondJourError extends Error {
-  constructor(cle, limite) { super(`guichet du jour fermé pour ${cle} (plafond ${limite})`); this.cle = cle; }
+  // `duree` : combien de temps écarter le couloir. Un quota du JOUR se réarme (1 h de mise à
+  // l'écart suffit, on retente) ; une FACTURATION morte ou une clé révoquée, non — et la
+  // redécouvrir toutes les heures coûte une rafale de tâches à chaque fois. Vécu le 08/08 à
+  // 00 h 40 : deepinfra, en 402 depuis la veille au matin, était retenté à chaque expiration de
+  // la mise à l'écart, et l'étage de jugement repartait en sieste derrière lui.
+  constructor(cle, limite, duree = 3_600_000) {
+    super(`guichet du jour fermé pour ${cle} (plafond ${limite})`);
+    this.cle = cle; this.duree = duree;
+  }
 }
+/** Un guichet fermé pour PAIEMENT ou AUTORISATION ne rouvrira pas de la nuit : 12 h de côté. */
+const DUREE_FACTURATION = 12 * 3_600_000;
 // « Model busy » ≠ guichet fermé : le modèle est saturé LÀ MAINTENANT, pas épuisé pour la
 // journée. À 20 juges de front sur le même Qwen, chaque verdict payait 3×21 s de pauses
 // (02/08 au soir, cadence divisée par trois). On écarte le modèle 3 min et la rotation sert
@@ -1255,7 +1265,7 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
     // tâche (rien d'écrit, message laissé en file) et fait basculer la rotation sur un autre couloir.
     if (res.status === 402 || res.status === 401 || res.status === 403) {
       throw new PlafondJourError(fournisseur ? `${fournisseur}/${modele}` : modele,
-        `guichet fermé (HTTP ${res.status}) — ${(await res.text()).slice(0, 120)}`);
+        `guichet fermé (HTTP ${res.status}) — ${(await res.text()).slice(0, 120)}`, DUREE_FACTURATION);
     }
     if (!res.ok) throw new Error(`HTTP ${res.status} (${new URL(url).host}): ${(await res.text()).slice(0, 200)}`);
     journaliserQuotaReel(fournisseur, modele, res.headers);
@@ -1487,7 +1497,7 @@ async function processMessage(msg) {
       // libre, la tâche est REPORTÉE (rien en base, message laissé en file) — jamais « failed » :
       // elle n'a pas échoué, elle est trop tôt.
       if (e instanceof PlafondJourError) {
-        couloirsEpuises.set(e.cle, Date.now() + 3_600_000);
+        couloirsEpuises.set(e.cle, Date.now() + (e.duree ?? 3_600_000));
         const suivant = modelOf(type, p);
         if (suivant && suivant !== modele) { console.log(`  ⇄ ${e.cle} épuisé aujourd'hui → bascule sur ${suivant}`); continue; }
         return { ...base, status: 'reporte', error: e.message };
@@ -2092,7 +2102,7 @@ if (!process.argv.includes('--sans-sonde')) {
     const { couloirDisponible } = await import('./lib/couloirs.mjs');
     const morts = [];
     await Promise.all(aSonder.map(async (m) => {
-      if (!(await couloirDisponible(m))) { couloirsEpuises.set(m, Date.now() + 3_600_000); morts.push(m); }
+      if (!(await couloirDisponible(m))) { couloirsEpuises.set(m, Date.now() + DUREE_FACTURATION); morts.push(m); }
     }));
     if (morts.length) console.log(`  ⛔ ${morts.length} couloir(s) fermé(s) au démarrage, écartés 1 h : ${morts.join(', ')}`);
   } catch (e) {
