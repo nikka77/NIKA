@@ -1,0 +1,100 @@
+{
+  "$schema_note": "Chantier « faux classements de popularité » (attributes.favorites) — 08/08/2026. Même famille de bug que la fusion Dragon Ball du 06/08 (data/audits/dedup-dragon-ball.json) : une fiche hérite du favorites/bio d'une autre. Ici le mécanisme exact identifié dans le code (scripts/lib/anilist.mjs::anilistIndex + scripts/build-akasha-naruto.mjs lignes 1150-1183 et scripts/build-akasha-universes.mjs lignes 1512-1547) est un fuzzy-match par TOKENS DE NOM (≥3 lettres, seuil ≥2 tokens partagés) entre le nom de la fiche et le nom+alt-names AniList d'un personnage de la MÊME série — pas littéralement une clé mal_id, mais la même classe de symptôme : deux identités distinctes partagent un enregistrement source. Trace AVANT écriture : data/audits/faux-classements-trace.json (état des 7 fiches juste avant les UPDATE). Toutes les valeurs retirées ont été vérifiées EN DIRECT sur myanimelist.net (Jikan/api.jikan.moe était en 504 « MyAnimeList may be down » pendant tout l'audit, comme lors du chantier Dragon Ball du 06/08 — contournement : fetch direct des pages character.php / character/<id> de myanimelist.net, qui répondaient normalement).",
+
+  "methode": {
+    "mesure_ampleur": [
+      "Dump complet des 4034 fiches type=character (8 univers) depuis clientSite (akasha_entries).",
+      "Classement par attributs.favorites décroissant, PAR UNIVERS : Bleach(293), Death Note(74), Dragon Ball(473), Hunter x Hunter(203), Initial D(26), JoJo's Bizarre Adventure(179), Naruto(1337), One Piece(1449).",
+      "Top 25 de chacun des 8 univers inspecté à l'œil : Bleach/Death Note/Dragon Ball/HxH/Initial D/JoJo — AUCUNE anomalie (le haut du classement colle à la notoriété réelle, cohérent avec MAL). Seuls Naruto et One Piece — les deux univers cités par les symptômes signalés — portent des faux classements.",
+      "Détection ciblée additionnelle sur Naruto+One Piece : (a) tous les 'character' avec role générique ('Personnage secondaire'/'principal', signature du mass-import Jikan par opposition aux fiches curées) et favorites>300 ; (b) tous les 'character' avec un descRaw court (<350 car., signature d'un stub wiki fin, plutôt qu'une biographie riche) et favorites>100 ; (c) tous les 'character' dont descRaw commence par 'Debut:'/'First Appearance:' (gabarit générique One Piece Wiki) et favorites>100.",
+      "Détection croisée par BIO DUPLIQUÉE : groupage de toutes les fiches (8 univers) par (universe, descRaw exact) — 46 groupes de descRaw identiques portés par ≥2 slugs distincts trouvés ; la quasi-totalité sont des cas LÉGITIMES (une bio collective d'un groupe nommé — ex. « Newkama Force #1..#6 », « Acrobatic Fuwas #1..#4 » — chaque membre du groupe partage authentiquement la même description de source). Un seul de ces 46 groupes est le faux classement confirmé : naruto-uzumaki / nine-tailed-naruto-clone.",
+      "Chaque fiche suspecte vérifiée EN DIRECT sur myanimelist.net (character.php?q=… pour trouver la fiche, puis /character/<id>/<slug> pour lire 'Member Favorites'). Pour nine-tailed-naruto-clone : recherche MAL ET AniList (GraphQL characters(search:...)) — AUCUNE fiche 'Nine-Tailed Naruto Clone' n'existe sur l'une ou l'autre plateforme, donc la valeur ne peut provenir que d'un mauvais appariement."
+    ],
+    "jikan_indisponible": "api.jikan.moe/v4 a répondu 504 'Jikan failed to connect to MyAnimeList' sur tous les essais (characters?q=…, anime/{id}/characters), à plusieurs reprises pendant toute la session — même panne que celle documentée dans data/audits/dedup-dragon-ball.json le 06/08. Repli : fetch direct des pages MAL (myanimelist.net), qui elles répondaient — donc la preuve reste bien 'MyAnimeList', comme demandé, seule la voie d'accès change (page HTML au lieu de l'API Jikan)."
+  },
+
+  "corrections_appliquees": [
+    {
+      "slug": "nine-tailed-naruto-clone",
+      "universe": "Naruto",
+      "rang_avant": "5ᵉ de l'univers Naruto (19 521 favoris), devant Shikamaru Nara (18 831), Jiraiya (15 100), Madara Uchiha (13 617), Gaara (13 578).",
+      "champs_retires": ["favorites (19521)", "descFr", "descRaw", "descLang", "voiceActors"],
+      "preuve": "AUCUNE fiche 'Nine-Tailed Naruto Clone' sur MyAnimeList (character.php?q=Nine-Tailed → 14 résultats fox/renard, aucun Naruto) NI sur AniList (GraphQL characters(search:\"Nine-Tailed Naruto Clone\") → liste vide). Le contenu retiré (descFr/descRaw/voiceActors) était MOT POUR MOT la biographie + les voiceActors (Maile Flanagan/Junko Takeuchi) de naruto-uzumaki, qui porte lui-même sa PROPRE valeur correcte (87 752, source Jikan directe, jamais touchée). Mécanisme : AniList liste 'Naruto Uzumaki' avec l'alt-name 'Nine-Tails Jinchuuriki' (vérifié en direct sur graphql.anilist.co, idMal=20 → favourites=19 871 au moment de l'audit, en hausse cohérente vs les 19 521 captés au moment du build) ; le fuzzy-match à 2 tokens partagés ('nine' + 'naruto') de scripts/lib/anilist.mjs::anilistIndex a confondu les deux fiches.",
+      "champs_conserves": ["sex", "family (genetic donor: Naruto Uzumaki / chakra donor: Kurama / creator: Kabuto Yakushi — authentique à cette entité)", "image_url (Kyuubi_Naruto_Clone.png, image propre à ce filler)", "import_source"],
+      "mal_url": "recherché, absent"
+    },
+    {
+      "slug": "mr-love",
+      "universe": "One Piece",
+      "rang_avant": "7ᵉ de l'univers One Piece (15 069 favoris), devant Usopp (14 718), Portgas D. Ace (11 702), Brook (11 201), Trafalgar Law (10 271).",
+      "champs_retires": ["favorites (15069)"],
+      "preuve": "https://myanimelist.net/character/269221/Mr_Love — Member Favorites = 0 (vérifié en direct). Bio (Baroque Works Billions, épisode 125) confirmée exacte — seul le nombre était faux.",
+      "mal_url": "https://myanimelist.net/character/269221/Mr_Love"
+    },
+    {
+      "slug": "den",
+      "universe": "One Piece",
+      "rang_avant": "15ᵉ (5 769 favoris) — au niveau de Shanks (6 751)/Katakuri (6 819)/Franky (6 830), palier de rareté 'epic' usurpé.",
+      "champs_retires": ["favorites (5769)"],
+      "preuve": "https://myanimelist.net/character/41205/Den — Member Favorites = 0.",
+      "mal_url": "https://myanimelist.net/character/41205/Den"
+    },
+    {
+      "slug": "boss",
+      "universe": "One Piece",
+      "rang_avant": "~21ᵉ (2 837 favoris) — un scarabée géant de filler (Little East Blue) au niveau de Boa Hancock/Doflamingo.",
+      "champs_retires": ["favorites (2837)"],
+      "preuve": "https://myanimelist.net/character/268861/Boss — Member Favorites = 0 (bio confirmée identique : 'unique large beetle from the Little East Blue Arc').",
+      "mal_url": "https://myanimelist.net/character/268861/Boss"
+    },
+    {
+      "slug": "captain-of-the-lady-mary",
+      "universe": "One Piece",
+      "rang_avant": "~24ᵉ (2 092 favoris) — capitaine anime-only d'un navire de l'épisode 1, jamais revu.",
+      "champs_retires": ["favorites (2092)"],
+      "preuve": "https://myanimelist.net/character/267369/Captain_of_the_Lady_Mary — Member Favorites = 0.",
+      "mal_url": "https://myanimelist.net/character/267369/Captain_of_the_Lady_Mary"
+    },
+    {
+      "slug": "ganryu-roger-pirates",
+      "universe": "One Piece",
+      "rang_avant": "~30ᵉ (1 355 favoris) — membre d'arrière-plan de l'équipage de Roger, jamais nommément développé.",
+      "champs_retires": ["favorites (1355)"],
+      "preuve": "https://myanimelist.net/character/269035/Ganryu_Roger_Pirates — Member Favorites = 0.",
+      "mal_url": "https://myanimelist.net/character/269035/Ganryu_Roger_Pirates"
+    },
+    {
+      "slug": "master",
+      "universe": "One Piece",
+      "rang_avant": "~45ᵉ (229 favoris) — un creuseur anonyme d'un épisode filler (145).",
+      "champs_retires": ["favorites (229)"],
+      "preuve": "Recherche MAL 'Master'/'The Master' : aucune fiche One Piece dans les résultats (~50 personnages 'Master' d'autres séries listés, One Piece absent). Le personnage n'a pas de page MAL du tout.",
+      "mal_url": "recherché, absent"
+    }
+  ],
+
+  "verification_pages": {
+    "hub_naruto_topFav_apres": ["naruto-uzumaki 87752", "itachi-uchiha 67679", "kakashi-hatake 49149", "sasuke-uchiha 30258", "shikamaru-nara 18831", "jiraiya 15100", "madara-uchiha 13617", "gaara 13578", "minato-namikaze 11357", "obito-uchiha 9018"],
+    "hub_one_piece_topFav_apres": ["monkey-d-luffy 149139", "roronoa-zoro 116139", "sanji 33368", "nico-robin 24013", "tony-tony-chopper 16999", "nami 16600", "usopp 14718", "portgas-d-ace 11702", "brook 11201", "trafalgar-law 10271"],
+    "tops_global_top25_apres": "Aucune des 7 fiches corrigées n'apparaît dans le top 25 cross-univers (lib/akasha/queries.ts::listTopByAttr, limite affichée 15) — ni avant ni après le fix, ce chantier n'a donc jamais fui sur /tops. Seuls les hubs univers Naruto et One Piece (lib/akasha/queries.ts::universeInsights, topFav slice 0-10) affichaient les faux classements, exactement comme décrit dans les symptômes.",
+    "methode_verification": "Requêtes clientSite directes (order attributes->favorites desc, range 0-9) reproduisant exactement universeInsights() et listTopByAttr(), après écriture, pour confirmer le rendu réel plutôt que de supposer."
+  },
+
+  "compte_croise": {
+    "naruto_avec_favorites_avant": 376,
+    "naruto_avec_favorites_apres": 375,
+    "naruto_delta": -1,
+    "one_piece_avec_favorites_avant": 614,
+    "one_piece_avec_favorites_apres": 608,
+    "one_piece_delta": -6,
+    "total_fiches_corrigees": 7,
+    "verifie": "Delta mesuré en base (COUNT WHERE attributes->favorites IS NOT NULL) après écriture = exactement le nombre de fiches purgées par univers. Aucune autre fiche n'a été touchée (vérifié : les 7 UPDATE ont ciblé .eq('id', <uuid unique>), lu juste avant écriture)."
+  },
+
+  "non_faits_et_limites": [
+    "hinata-hyuga, neji-hyuga, kaguya-otsutsuki (cités dans les symptômes comme SANS valeur) : confirmés vides, et LAISSÉS vides — combler ces trous serait une tâche d'ENRICHISSEMENT (hors mandat 'corriger les faux classements'), et devrait de toute façon passer par le même pipeline anilistIndex dont le seuil de fuzzy-match à 2 tokens est justement la cause racine ici : le refaire sans corriger le seuil rejouerait le bug. Root cause non patchée dans le code (scripts/lib/anilist.mjs, scripts/build-akasha-naruto.mjs, scripts/build-akasha-universes.mjs) — seule la donnée en base a été corrigée, conformément au mandat 'trace + fix data', pas 'fix pipeline'. Un futur rebuild rejouerait la même contamination pour ces 7 slugs (et potentiellement d'autres) si le seuil n'est pas durci.",
+    "Balayage borné, pas exhaustif : la détection ciblée n'a couvert que Naruto et One Piece (les 2 univers cités dans les symptômes) avec des seuils (favorites>100/300, bio<350 car.) choisis pour capter le haut du classement affiché sur les pages publiques (hub top 10, /tops top 15/25). Des contaminations à très faible favorites (donc invisibles sur ces pages) peuvent subsister plus bas dans les 4034 fiches — non auditées ligne à ligne (hors mandat, hors budget raisonnable pour ce chantier).",
+    "'ken' (Bleach, doublon de kenpachi-zaraki, même favorites=6038) repéré en sous-produit de la détection bio-dupliquée : PAS un faux classement (les deux valeurs sont identiques et correctes, Ken n'est qu'un surnom dupliqué en fiche à part) — c'est un cas de DÉDUPLICATION (même famille que freeza/freezer), hors mandat de ce chantier. Signalé mais non traité ici.",
+    "Cas à très faible enjeu repérés par la détection bio-dupliquée (46 groupes, voir méthode) mais NON creusés individuellement au-delà des 7 corrigés : manda/manda-ii (fav 6), isobu/three-giant-snakes (fav 3 vs 11, valeurs DIFFÉRENTES malgré bio identique — curieux mais sous le seuil de dommage visible), son-goku-naruto/king-naruto (fav 12), koji-kashin/koji (fav 30). Tous < 50 favoris, donc invisibles sur les pages publiques (hub top 10 commence à des centaines/milliers) — non traités par choix de proportionnalité, pas par oubli."
+  ]
+}

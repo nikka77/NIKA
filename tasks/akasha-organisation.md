@@ -804,3 +804,159 @@ dans `attributes`*. Serveur de production lancé sur un port isolé, **6 pages t
 - Sur `son-goku`, `sora` et `kusagakure` le bloc « Attributs » **ne s'affiche plus du tout** — non
   par masquage, mais parce qu'il ne reste aucune ligne publiable : c'est le comportement voulu
   (`rows.length === 0 → null`), pas une disparition de contenu.
+
+---
+
+# G. Vérification finale du 08/08 (soir) — 4 chantiers de la journée, recompte indépendant
+
+Chantiers audités : **textes-coupes** (troncatures descFr), **faux-classements-popularite**
+(favoris fabriqués), **doublons-fr-en** (13 fusions Naruto · Pouvoirs), **petits-univers**
+(Death Note/JoJo/HxH/Initial D). **Tous les chiffres ci-dessous sont recomptés par moi**, scans
+paginés complets sur la base du site (`clientSite`), sans reprendre un chiffre des rapports
+d'exécutants. Aucune écriture en base pendant cette vérification.
+
+## G.1 — Recompte du corpus, avant/après la vague du 08/08
+
+| Compteur | Avant la vague (donné) | **Recompté ce soir** | Écart | Explication mesurée |
+|---|---|---|---|---|
+| Entrées | 7 687 | **7 674** | **−13** | exactement les 13 fusions `doublons-fr-en` (toutes en Naruto — vérifié : Naruto 3 318 → 3 305, les 7 autres univers inchangés en effectif) |
+| Arêtes | 16 439 | **16 387** | **−52** | conforme au chiffre du chantier (« 52 doublons supprimés » sur re-routage) ; **0 arête orpheline** vers un id supprimé, **0 arête inter-univers** (plafond n°11 toujours tenu) |
+| Sections | 19 129 | **19 122** | **−7** | doublons-fr-en (21→15 sections sur les paires fusionnées, −6) + petits-univers (suppression de la section « Crédits » de `noriko` et d'un doublon quasi identique sur `shingo-midou`, −1 net constaté) |
+| Sans image | 851 | **840** | **−11** | **vérifié fiche par fiche** : sur les 13 fusions, 11 paires avaient l'`image_url` posée côté fiche EN supprimée et vide côté fiche FR survivante — le merge l'a **recopiée avant suppression** (contrôlé sur `liberation-du-cristal-shoton` : URL Fandom réelle, pas un placeholder) |
+| Sans descFr | 622 | **593** | **−29** | ≈ 9 (doublons-fr-en : 9 des 13 paires avaient le descFr côté EN uniquement, recopié avant suppression, vérifié 9/9) + ~20 (petits-univers : JoJo 16→0, HxH 3→0, confirmé par le recompte par univers ci-dessous) |
+
+**0 image placeholder** en base (`NoPicAvailable`/`placehold`/`picsum`/`unsplash`) — **plafond n°13
+toujours tenu**, aucune régression de la réparation du 07/08.
+
+### Par univers (recompte de ce soir)
+
+| Univers | Fiches | sans descFr | sans image |
+|---|---|---|---|
+| Naruto | **3 305** *(−13)* | 259 | 302 |
+| One Piece | 2 270 | 230 | 425 |
+| Dragon Ball | 1 137 | 77 | 40 |
+| Bleach | 386 | 25 | 64 |
+| JoJo | 233 | **0** *(chantier petits-univers : confirmé 0/233 sans descFr)* | 6 |
+| Hunter x Hunter | 215 | **0** *(idem, confirmé 0/215)* | 0 |
+| Death Note | 84 | 0 | 1 |
+| Initial D | 44 | 2 *(inchangé — les 2 « documentées impossibles »)* | 2 |
+| **Total** | **7 674** | **593** | **840** |
+
+Autres compteurs de fond, mesurés ce soir : **4 804 fiches dossiérées** (≥ 1 section),
+**235 fiches entièrement muettes** (ni descFr, ni section, ni image — en baisse par rapport aux
+247 mesurées le 07/08 au soir, grâce aux descFr JoJo/HxH), **0 arête inter-univers**.
+
+## G.2 — Pages lues en lecteur (chantiers différents)
+
+**Mieux, constaté à l'écran ou en base :**
+- **`naruto-uzumaki`** (textes-coupes) — la bio se termine sur une phrase complète et ponctuée :
+  *« …eux aussi finirent par nourrir une haine féroce envers Naruto. »* (1 188 car., conforme au
+  1 278→1 188 annoncé). Plus aucune coupure en pleine phrase sur les 3 têtes d'affiche recontrôlées
+  (`joseph-joestar`, `jotaro-kujo`, `josuke-higashikata` : les 3 se terminent proprement, longueurs
+  exactes au caractère près par rapport au rapport).
+- **`ace`** (déjà réparé le 07/08, non re-cassé par la vague du 08/08) — toujours 0 section, descFr
+  = le sabre, aucune trace de Portgas D. Ace.
+- **Fusions `doublons-fr-en` : contenu réellement préservé, pas juste supprimé.** Vérifié fiche par
+  fiche sur les 13 paires : la description ET l'image de la fiche EN supprimée sont bien recopiées
+  sur la fiche FR survivante avant le DELETE (ex. `liberation-du-cristal-shoton` porte maintenant
+  l'image Fandom réelle de `crystal-release`, plus son descFr). Les 4 anciens slugs testés
+  (`lava-release`, `ice-release`, `shadow-clone-technique`, `summoning-impure-world-reincarnation`)
+  rendent bien « Entité introuvable » (HTTP 200, pas de fantôme).
+- **Hub Naruto et hub One Piece — classements crédibles.** Les stars Naruto affichées sont Naruto,
+  Itachi, Kakashi, Sasuke, Shikamaru, Jiraiya, Madara, Gaara, Minato, Obito — aucune trace de
+  `nine-tailed-naruto-clone`. `/tops` (cross-univers) ne fait fuiter aucun des 7 faux favoris
+  purgés. Vérifié en base : les 7 fiches (`nine-tailed-naruto-clone`, `mr-love`, `den`, `boss`,
+  `captain-of-the-lady-mary`, `ganryu-roger-pirates`, `master`) ont bien `favorites` retiré.
+- **`daril-ghiroza`** (petits-univers) — summary corrigé, cohérent avec la descFr (shinigami de
+  How to Read, plus la confusion avec l'agent du FBI).
+
+**Pas mieux, ou nuances à lire :**
+- **`shingo-midou` (petits-univers) — le rapport de chantier est FAUX sur ce point précis,
+  confirmé indépendamment.** Il affirme *« 1 section restante après suppression (fin-2) »* ; en
+  base, **2 sections existent** : idx=3 « Rôle dans l'intrigue » (id 20168) et idx=fin-2 « Rôle
+  dans le groupe Yotsuba » (id 13462). Le DELETE lui-même (id 13461, doublon quasi identique) est
+  légitime et sans perte ; c'est l'affirmation de vérification qui est fausse — la fiche a une
+  section de plus que ce qui a été contrôlé.
+- **`edo-tensei` (doublons-fr-en) — 2 sections gardent une métadonnée `source` fausse.** Le texte
+  des sections idx=2 (« Contrôle ») et idx=7 (« Orochimaru ») a bien été remplacé par la version
+  EN traduite (contenu vérifié conforme), mais leur champ `source` affiche toujours l'ancienne
+  valeur `deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo` au lieu de la vraie provenance. Défaut
+  de provenance, pas de contenu — mais un enregistrement qui ment sur son origine.
+- **`flying-raijin` / `flying-thunder-god-technique` — toujours visibles côte à côte sur le premier
+  écran du registre « Naruto · Pouvoirs » (tri par défaut).** Ce n'est **pas un oubli** : la paire
+  est dans `data/audits/doublons-fr-en.json.exclusions`, avec un motif écrit et sourcé (Hiraishin
+  est un terme-ombrelle couvrant au moins 4 variantes déjà présentes comme fiches séparées ; fusion
+  1:1 aurait perdu cette portée). Décision documentée, correcte sur le fond — mais **un lecteur qui
+  clique sur l'onglet Pouvoirs de Naruto voit encore ce qui ressemble à un doublon FR/EN.**
+- **`fu-yamanaka` porte toujours mot pour mot la biographie de `ino-yamanaka`** (même `descRaw`,
+  même incipit) — c'est exactement la même contamination que le cas `nine-tailed-naruto-clone`
+  corrigé par le chantier faux-classements, mais celui-ci reste non traité ; déjà signalé comme
+  angle mort par la vérification de ce chantier, reconfirmé ici, toujours vrai ce soir.
+- **`son-goku` (textes-coupes)** — la bio se termine par une parenthèse sans point final :
+  *« …nommé d'après grand-père Gohan) »*. Longueur exacte conforme au rapport (1 521 car.), le
+  sens de la phrase est complet — ce n'est pas une troncature, juste un point final manquant après
+  la parenthèse. Cosmétique, pas un défaut du chantier.
+
+## G.3 — Build et sonde
+
+- **`npm run build` (`next build`) : VERT.** Exit 0, 0 occurrence de `error`/`warn`/`failed` dans
+  la sortie complète, 309/309 pages statiques générées. *(Dev server arrêté proprement avant le
+  build — leçon du 12/06 — puis redémarré à l'identique après, aucune interruption laissée.)*
+- **`node scripts/ops-sonde-schema.mjs` : VERTE.** Les deux bases répondent, les 3 invariants
+  passent : 0 colonne PII lisible en clé publique, **0 arête inter-univers**, 0 arête dormante dans
+  `attributes.relations`.
+
+## G.4 — Plafonds fusionnés — DÉFINITIFS, confirmés ce soir, non re-proposables
+
+Les **14 plafonds des sections C/E.5/F.3 restent définitifs** ; rien ci-dessous ne les rouvre.
+Deux précisions closes par la vague du 08/08 :
+
+15. **DOUBLONS FR/EN NARUTO · POUVOIRS — 13/14 fusionnés, 1 exclusion documentée et définitive.**
+    `flying-raijin` (Hiraishin) et `flying-thunder-god-technique` restent deux fiches distinctes :
+    ce n'est pas un doublon 1:1 (portée ombrelle vs technique précise, ≥ 4 variantes déjà séparées
+    en base). **Ne pas re-proposer la fusion stricte** — l'alternative, si Dan la veut un jour, est
+    un lien « variante-de » entre les deux, pas une fusion.
+16. **FAUX CLASSEMENTS DE POPULARITÉ — les 7 fiches ciblées sont propres, tenu ce soir.**
+    `nine-tailed-naruto-clone`, `mr-love`, `den`, `boss`, `captain-of-the-lady-mary`,
+    `ganryu-roger-pirates`, `master` : `favorites` retiré sur les 7, vérifié en base. **Reste un
+    angle mort non couvert par ce chantier** (pas un plafond — du travail non fait) :
+    `fu-yamanaka` porte encore la bio d'`ino-yamanaka`, même mécanisme de contamination, jamais
+    balayé. Voir R1 ci-dessous.
+
+## G.5 — Ce qui reste vraiment à faire (issu de la vague du 08/08 elle-même)
+
+| # | Geste | Volume | Preuve |
+|---|---|---|---|
+| G.1 | **Corriger le `source` des 2 sections d'`edo-tensei`** (« Contrôle », « Orochimaru ») — remplacer `deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo` par la vraie provenance EN traduite | 2 sections | G.2 |
+| G.2 | **Balayer `fu-yamanaka`/`ino-yamanaka`** avec le même contrôle qui a trouvé `nine-tailed-naruto-clone` (bio dupliquée mot pour mot dans le même univers) — et rejouer ce contrôle sur tout le corpus, pas seulement Naruto/OP, avant de clore le chantier faux-classements | 1 fiche connue + balayage à refaire | G.2, chantier faux-classements |
+| G.3 | **Corriger l'affirmation de vérification `shingo-midou`** dans `data/audits/petits-univers.json` (« 1 section restante » → 2) — pas une réécriture de données, une correction de rapport | 1 ligne de rapport | G.2 |
+| G.4 | **Committer ou trancher** les fichiers modifiés/non trackés de la vague du 08/08** (`data/akasha-merges-universes.json`, `data/alias-cures.json`, `lib/akasha/universe-taxonomy.ts`, + 10 fichiers `data/audits/*`) — dépôt encore à `76f0719f`, rien de cette vague n'est committé | 14 fichiers | `git status` |
+
+**Non re-ouvert par cette vérification** : tout ce qui était déjà plafond avant le 08/08 (§C/E.5/F.3)
+reste tel quel — cette section ne fait qu'ajouter les 2 nouveaux points (15, 16) issus des 4
+chantiers du jour.
+
+### Chantier ouvert le 08/08 — TEXTES PARTAGÉS ENTRE FICHES (24 groupes à instruire)
+
+Détecté en fermant la classe du défaut `fu-yamanaka` : **38 groupes / 84 fiches** portent un texte
+identique. La liste complète et classée est dans `data/audits/textes-partages-0808.json`. Trois
+natures, qui n'appellent PAS le même geste — c'est pourquoi rien n'a été fusionné en masse :
+
+- **SÉRIE (3 groupes, légitime — NE PAS TOUCHER)** : plusieurs membres d'un groupe nommé documentés
+  sur UNE page du wiki (`newkama-force-1..6`, `acrobatic-fuwas-1..4`, `superhuman-domingos-1..3`).
+  La source est réellement commune ; ce n'est pas un défaut.
+- **MÊME ENTITÉ (10 groupes)** : candidats à fusion — `kenpachi-zaraki ↔ ken` (6 038 favoris des
+  deux côtés), `gama ↔ gamamaru`, `udon-ise ↔ ise`, `kosuke ↔ kosuke-maruboshi`, `ashina ↔
+  ashina-uzumaki`, `setsuna ↔ setsuna-uchiha`, `shin ↔ shin-emon`, `uranai-baba ↔ old-witch`…
+  ⚠ **PIÈGES AVÉRÉS, à ne pas fusionner sans lire** : `manda ↔ manda-ii` sont DEUX serpents
+  différents (Manda II est le second) ; `water-daimyo ↔ hot-water-daimyo` sont les daimyō de DEUX
+  pays distincts ; `wind-daimyo-part-i ↔ part-ii` est un même homme à deux époques. L'heuristique
+  « un nom contient l'autre » les classe ensemble à tort.
+- **CONTAMINATION (14 groupes)** : une fiche porte le texte d'une AUTRE entité. Un seul cas est
+  prouvé et corrigé (`fu-yamanaka`, qui portait l'infobox d'`ino-yamanaka`) ; les autres sont
+  souvent des paires légitimement documentées sur une page commune (`ban ↔ hou` chez Bleach,
+  `kogarashi ↔ oto` qui sont deux katanas d'une même paire, `linlin-s-mother ↔ linlin-s-father`).
+  À lire un par un.
+
+**Pourquoi c'est laissé ouvert** : 24 groupes sont au-dessus du seuil de lecture immédiate, et une
+fusion fausse coûte plus cher qu'un doublon visible. Le travail est de LIRE, pas de seuiller.

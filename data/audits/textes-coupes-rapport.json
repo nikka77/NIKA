@@ -1,0 +1,828 @@
+{
+  "chantier": "textes-coupes",
+  "fait_le": "2026-08-08T06:55:37.149189+00:00",
+  "resume": "108 candidats trouvés par requête (descFr d'akasha_entries ne finissant pas par une ponctuation forte, sur 7 068 fiches porteuses de descFr). Lus un par un : 48 vraies coupures en pleine phrase (dont les 7 têtes d'affiche citées dans le mandat), 22 signatures de scraper « (Source : Wikipedia/…) » trouvées en balayant TOUTE la base (pas seulement les candidats), 58 fins légitimes écartées (queues d'infobox complètes « Chapitre X ; Épisode Y », listes d'affiliations, phrases courtes déjà closes).",
+  "plafond_de_l_ecrivain": "Ce chantier N'A PAS eu besoin de rediagnostiquer le plafond de tokens : scripts/agent-worker.mjs porte depuis le 01/08 une garde de CODE (phraseComplete, zod .refine, VERROU 2) qui refuse toute nouvelle production fandom_descfr/toilettage_fr ne finissant pas par une ponctuation forte — AUCUNE fiche coupée ne peut plus s'écrire en base depuis cette date, quel que soit NUM_PREDICT. Les 70 fiches touchées ici sont un STOCK HISTORIQUE (avant la garde, ou d'un pipeline de scraping plus ancien pour les 22 signatures). NUM_PREDICT.fiche_section a été relevé 1 600→2 600 le 08/08 (commit 76f0719f) pour une panne DIFFÉRENTE (sections, pas descFr) — à ne pas confondre. NUM_PREDICT.fandom_descfr reste à 500 : il n'a pas eu besoin d'être relevé, la garde de code suffit.",
+  "methode_fix": "descFr est une PROSE SYNTHÉTISÉE par le modèle depuis l'article Fandom entier (résumé/paraphrase), pas une traduction littérale d'une phrase — la 'suite' exacte du modèle d'origine n'existe donc littéralement nulle part dans la source (vérifié en rouvrant les pages Fandom des 7 têtes d'affiche via fetchFandomProse : aucune phrase source ne correspond mot pour mot à la fin coupée). Réécrire une fin plausible aurait été de l'invention non traçable à une source. Choix retenu, conforme au mandat ('coupe proprement... toujours mieux qu'une phrase suspendue') : TRONCATURE PROPRE à la dernière ponctuation forte pour les 48 coupures, retrait des libellés d'infobox nus sans valeur (« Prime : », « Capacité Nen : », « Contexte : Chronologie : … » en fin de texte, qui ne portaient aucune information récupérable). Pour les 22 signatures de scraper : retrait mécanique de « (Source : …) » et ponctuation finale restaurée si besoin — texte inchangé sinon.",
+  "garde_concurrence": "Avant chaque écriture, relecture du descFr ACTUEL et comparaison à celui capturé dans la trace : si différent (l'usine tourne à ≈1 700 productions/h), la fiche n'est PAS touchée. 1 cas réel : nine-tailed-naruto-clone — son attributes.descFr a disparu entre le scan et l'écriture (l'usine l'a réécrit sans descFr entre-temps), donc non modifié ici — sans cette garde, l'écriture aurait écrasé le travail concurrent de l'usine.",
+  "comptes": {
+    "fiches_avec_descFr_a_l_audit": 7068,
+    "candidats_bruts": 108,
+    "vrai_coupures_pleine_phrase": 48,
+    "signatures_scraper_source": 22,
+    "fins_legitimes_ecartees": 58,
+    "total_cibles": 70,
+    "appliques": 69,
+    "ecartes_concurrence": 1,
+    "echecs": 0,
+    "candidats_restants_apres_coup (verification croisee)": 58,
+    "candidats_restants_attendu (= fins legitimes ecartees)": 58
+  },
+  "tetes_d_affiche_mandat": {
+    "naruto-uzumaki": {
+      "avant_len": 1278,
+      "apres_len": 1188
+    },
+    "son-goku": {
+      "avant_len": 1588,
+      "apres_len": 1521
+    },
+    "shikamaru-nara": {
+      "avant_len": 1290,
+      "apres_len": 1263
+    },
+    "minato-namikaze": {
+      "avant_len": 1345,
+      "apres_len": 1182
+    },
+    "sakura-haruno": {
+      "avant_len": 1409,
+      "apres_len": 1324
+    },
+    "deidara": {
+      "avant_len": 1370,
+      "apres_len": 1287
+    },
+    "might-guy": {
+      "avant_len": 1280,
+      "apres_len": 1235
+    }
+  },
+  "detail_appliques": [
+    {
+      "slug": "joseph-joestar",
+      "avant_len": 1714,
+      "apres_len": 1666,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "jotaro-kujo",
+      "avant_len": 1668,
+      "apres_len": 1609,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "josuke-higashikata",
+      "avant_len": 1664,
+      "apres_len": 1618,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "vegeta",
+      "avant_len": 1661,
+      "apres_len": 1536,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "hit",
+      "avant_len": 1650,
+      "apres_len": 1482,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "kurapika",
+      "avant_len": 1633,
+      "apres_len": 1561,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "majin-buu",
+      "avant_len": 1627,
+      "apres_len": 1611,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "musse",
+      "avant_len": 1612,
+      "apres_len": 1571,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "piccolo",
+      "avant_len": 1601,
+      "apres_len": 1544,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "son-goku",
+      "avant_len": 1588,
+      "apres_len": 1521,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "shura",
+      "avant_len": 1584,
+      "apres_len": 1539,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "bulma",
+      "avant_len": 1568,
+      "apres_len": 1554,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "deidara",
+      "avant_len": 1370,
+      "apres_len": 1287,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "tsubaki-kurogane",
+      "avant_len": 1349,
+      "apres_len": 1288,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "hanare",
+      "avant_len": 1348,
+      "apres_len": 1291,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "minato-namikaze",
+      "avant_len": 1345,
+      "apres_len": 1182,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "sora",
+      "avant_len": 1337,
+      "apres_len": 1306,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "kankuro",
+      "avant_len": 1331,
+      "apres_len": 1221,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "hidan",
+      "avant_len": 1327,
+      "apres_len": 1234,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "shino-aburame",
+      "avant_len": 1316,
+      "apres_len": 1223,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "bruno-bucciarati",
+      "avant_len": 1314,
+      "apres_len": 1238,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "giant-ox",
+      "avant_len": 1302,
+      "apres_len": 1245,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "kiba-inuzuka",
+      "avant_len": 1296,
+      "apres_len": 1268,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "kisame-hoshigaki",
+      "avant_len": 1294,
+      "apres_len": 1258,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "shikamaru-nara",
+      "avant_len": 1290,
+      "apres_len": 1263,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "kakuzu",
+      "avant_len": 1287,
+      "apres_len": 1252,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "might-guy",
+      "avant_len": 1280,
+      "apres_len": 1235,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "naruto-uzumaki",
+      "avant_len": 1278,
+      "apres_len": 1188,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "mitsuki",
+      "avant_len": 1275,
+      "apres_len": 1193,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "boruto-uzumaki",
+      "avant_len": 1267,
+      "apres_len": 1216,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "hashirama-senju",
+      "avant_len": 1258,
+      "apres_len": 1191,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "kosuke-maruboshi",
+      "avant_len": 1257,
+      "apres_len": 1230,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "guren",
+      "avant_len": 1249,
+      "apres_len": 720,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "menma-namikaze",
+      "avant_len": 1246,
+      "apres_len": 1145,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "natsuki-mogi",
+      "avant_len": 97,
+      "apres_len": 29,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "shen-long",
+      "avant_len": 1666,
+      "apres_len": 1631,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "ten-shin-han",
+      "avant_len": 1578,
+      "apres_len": 1531,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "sakura-haruno",
+      "avant_len": 1409,
+      "apres_len": 1324,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "kimimaro",
+      "avant_len": 1342,
+      "apres_len": 1246,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "anita",
+      "avant_len": 1324,
+      "apres_len": 1218,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "jonathan-joestar",
+      "avant_len": 1297,
+      "apres_len": 1243,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "bunta-fujiwara",
+      "avant_len": 1234,
+      "apres_len": 1218,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "bonolenov-ndongo",
+      "avant_len": 1040,
+      "apres_len": 1025,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "gol-d-roger",
+      "avant_len": 906,
+      "apres_len": 898,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "sabo",
+      "avant_len": 545,
+      "apres_len": 487,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "kaidou",
+      "avant_len": 468,
+      "apres_len": 460,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "enya-geil",
+      "avant_len": 442,
+      "apres_len": 429,
+      "motif": "coupée en pleine phrase — tronquée proprement à la dernière phrase complète"
+    },
+    {
+      "slug": "chibi",
+      "avant_len": 272,
+      "apres_len": 243,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "himawari-uzumaki",
+      "avant_len": 1267,
+      "apres_len": 1244,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "uub",
+      "avant_len": 770,
+      "apres_len": 749,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "bra",
+      "avant_len": 907,
+      "apres_len": 886,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "bulma-s-mother",
+      "avant_len": 1029,
+      "apres_len": 996,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "guldo",
+      "avant_len": 308,
+      "apres_len": 287,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "gregory",
+      "avant_len": 505,
+      "apres_len": 479,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "chojuro",
+      "avant_len": 246,
+      "apres_len": 223,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "king-vegeta",
+      "avant_len": 1058,
+      "apres_len": 1037,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "utakata",
+      "avant_len": 367,
+      "apres_len": 344,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "kale",
+      "avant_len": 496,
+      "apres_len": 467,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "konkichi",
+      "avant_len": 1194,
+      "apres_len": 1158,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "zarbon",
+      "avant_len": 1252,
+      "apres_len": 1236,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "future-mai",
+      "avant_len": 150,
+      "apres_len": 121,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "burter",
+      "avant_len": 445,
+      "apres_len": 424,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "babidi",
+      "avant_len": 162,
+      "apres_len": 141,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "recoome",
+      "avant_len": 440,
+      "apres_len": 419,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "kami",
+      "avant_len": 1151,
+      "apres_len": 1132,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "dabura",
+      "avant_len": 419,
+      "apres_len": 398,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "dai-kaio",
+      "avant_len": 811,
+      "apres_len": 783,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "rou-kaioshin",
+      "avant_len": 1383,
+      "apres_len": 1362,
+      "motif": "signature de scraper « Source : … » retirée"
+    },
+    {
+      "slug": "jaco-teirimentenpibosshi",
+      "avant_len": 997,
+      "apres_len": 969,
+      "motif": "signature de scraper « Source : … » retirée"
+    }
+  ],
+  "detail_ecartes_concurrence": [
+    {
+      "slug": "nine-tailed-naruto-clone",
+      "motif": "descFr a changé depuis le scan — non touché",
+      "attendu_len": 1278
+    }
+  ],
+  "detail_fins_legitimes_ecartees": [
+    {
+      "slug": "dalmatian",
+      "len": 1684,
+      "fin": ". Première apparition : Chapitre 553 ; Épisode 462",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "monet",
+      "len": 1166,
+      "fin": " « Ufufufufu ». Première apparition : Chapitre 657",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "big-pan",
+      "len": 1142,
+      "fin": "du Groggy Ring. Première apparition : Chapitre 309",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "yonka",
+      "len": 1071,
+      "fin": ". Première apparition : Chapitre 608 ; Épisode 527",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "ichika",
+      "len": 1004,
+      "fin": ". Première apparition : Chapitre 608 ; Épisode 527",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "braham",
+      "len": 864,
+      "fin": ". Première apparition : Chapitre 249 ; Épisode 163",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "corgi",
+      "len": 824,
+      "fin": "e de sauvetage. Première apparition : Chapitre 328",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "strawberry",
+      "len": 759,
+      "fin": ". Première apparition : Chapitre 420 ; Épisode 302",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "gorilla",
+      "len": 677,
+      "fin": "silex standard. Première apparition : Chapitre 596",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "terry",
+      "len": 619,
+      "fin": ". Première apparition : Chapitre 223 ; Épisode 146",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "roshio",
+      "len": 595,
+      "fin": ". Première apparition : Chapitre 222 ; Épisode 146",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "aunt",
+      "len": 567,
+      "fin": "r l'accompagner. Première apparition : Épisode 318",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "bepo",
+      "len": 525,
+      "fin": "our de la Fourrure) Affiliations : Pirates du Cœur",
+      "motif": "clause finale grammaticalement complète (nom/adjectif/liste), sans point final — lu individuellement, aucune perte de contenu identifiée"
+    },
+    {
+      "slug": "gu",
+      "len": 483,
+      "fin": "is pas dans le manga. Première apparition : Film 4",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "tsuru",
+      "len": 459,
+      "fin": ". Première apparition : Chapitre 234 ; Épisode 151",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "shine",
+      "len": 425,
+      "fin": ". Première apparition : Chapitre 214 ; Épisode 128",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "aswa",
+      "len": 418,
+      "fin": ". Première apparition : Chapitre 163 ; Épisode 100",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "dio-brando",
+      "len": 356,
+      "fin": "rtie 3 : Stardust Crusaders Partie 6 : Stone Ocean",
+      "motif": "clause finale grammaticalement complète (nom/adjectif/liste), sans point final — lu individuellement, aucune perte de contenu identifiée"
+    },
+    {
+      "slug": "itomimizu",
+      "len": 334,
+      "fin": "nt « Tubifex ». Première apparition : Chapitre 306",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "shigure",
+      "len": 307,
+      "fin": "es dessins circulaires intégrés sur toute la gaine",
+      "motif": "clause finale grammaticalement complète (nom/adjectif/liste), sans point final — lu individuellement, aucune perte de contenu identifiée"
+    },
+    {
+      "slug": "spector",
+      "len": 291,
+      "fin": ". Première apparition : Chapitre 223 ; Épisode 146",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "capote",
+      "len": 287,
+      "fin": "fendre l'océan. Première apparition : Chapitre 306",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "stool",
+      "len": 272,
+      "fin": "a. Première apparition : Chapitre 134 ; Épisode 81",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "sarkies",
+      "len": 256,
+      "fin": ". Première apparition : Chapitre 222 ; Épisode 146",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "sayo",
+      "len": 251,
+      "fin": "ve de leur père. Première apparition : Épisode 382",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "stainless",
+      "len": 236,
+      "fin": "). Première apparition : Chapitre 96 ; Épisode 151",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "gyro-one-piece",
+      "len": 224,
+      "fin": "ommes-Poissons. Première apparition : Chapitre 611",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "spandine",
+      "len": 202,
+      "fin": ". Première apparition : Chapitre 392 ; Épisode 275",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "hanger",
+      "len": 195,
+      "fin": "re. Première apparition : Chapitre 97 ; Épisode 48",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "run",
+      "len": 184,
+      "fin": ". Première apparition : Chapitre 679 ; Épisode 605",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "den",
+      "len": 178,
+      "fin": "a Forêt Marine. Première apparition : Chapitre 616",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "sho",
+      "len": 174,
+      "fin": "llent « Tatie ». Première apparition : Épisode 318",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "akihiro",
+      "len": 172,
+      "fin": "llent « Tatie ». Première apparition : Épisode 318",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "stelly",
+      "len": 171,
+      "fin": " celle de Sabo. Première apparition : Chapitre 586",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "ayako",
+      "len": 170,
+      "fin": "llent « Tatie ». Première apparition : Épisode 318",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "gear-4-gear-fourth-snake-man",
+      "len": 159,
+      "fin": "première fois contre Katakuri dans le Mirror World",
+      "motif": "clause finale grammaticalement complète (nom/adjectif/liste), sans point final — lu individuellement, aucune perte de contenu identifiée"
+    },
+    {
+      "slug": "mjosgard-donquixote",
+      "len": 148,
+      "fin": "ut de la série. Première apparition : Chapitre 625",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "oden-kozuki",
+      "len": 146,
+      "fin": "Kozuki, Pirates de Roger, Pirates de Barbe Blanche",
+      "motif": "clause finale grammaticalement complète (nom/adjectif/liste), sans point final — lu individuellement, aucune perte de contenu identifiée"
+    },
+    {
+      "slug": "ally",
+      "len": 144,
+      "fin": ". Première apparition : Chapitre 658 ; Épisode 583",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "zeo",
+      "len": 136,
+      "fin": "ommes-Poissons. Première apparition : Chapitre 611",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "sind",
+      "len": 136,
+      "fin": ". Première apparition : Chapitre 657 ; Épisode 582",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "daruma",
+      "len": 136,
+      "fin": "ommes-Poissons. Première apparition : Chapitre 611",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "senor-pink",
+      "len": 135,
+      "fin": " de Donquixote. Première apparition : Chapitre 702",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "yamato",
+      "len": 130,
+      "fin": "inja-Pirate-Mink-Samouraï ; Pirates aux Cent Bêtes",
+      "motif": "clause finale grammaticalement complète (nom/adjectif/liste), sans point final — lu individuellement, aucune perte de contenu identifiée"
+    },
+    {
+      "slug": "hiramera",
+      "len": 122,
+      "fin": ". Première apparition : Chapitre 608 ; Épisode 527",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "kairen",
+      "len": 120,
+      "fin": ". Première apparition : Chapitre 608 ; Épisode 527",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "russian",
+      "len": 93,
+      "fin": "mère de Gimlet. Première apparition : Chapitre 775",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "konpira",
+      "len": 78,
+      "fin": " laisse supposer une très bonne qualité de la lame",
+      "motif": "phrase ou fait court déjà complet — sans point final"
+    },
+    {
+      "slug": "sind-s-father",
+      "len": 48,
+      "fin": "Première apparition : Chapitre 673 ; Épisode 599",
+      "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+    },
+    {
+      "slug": "smile-de-l-heterodon",
+      "len": 40,
+      "fin": "il permet de se transformer en hétérodon",
+      "motif": "phrase ou fait court déjà complet — sans point final"
+    },
+    {
+      "slug": "smile-du-gorille",
+      "len": 38,
+      "fin": "il permet de se transformer en gorille",
+      "motif": "phrase ou fait court déjà complet — sans point final"
+    },
+    {
+      "slug": "smile-de-la-crotale",
+      "len": 38,
+      "fin": "il permet de se transformer en crotale",
+      "motif": "phrase ou fait court déjà complet — sans point final"
+    },
+    {
+      "slug": "smile-de-caiman",
+      "len": 37,
+      "fin": "il permet de se transformer en caïman",
+      "motif": "phrase ou fait court déjà complet — sans point final"
+    },
+    {
+      "slug": "smile-de-la-girafe",
+      "len": 37,
+      "fin": "il permet de se transformer en girafe",
+      "motif": "phrase ou fait court déjà complet — sans point final"
+    },
+    {
+      "slug": "smile-de-carlin",
+      "len": 37,
+      "fin": "il permet de se transformer en carlin",
+      "motif": "phrase ou fait court déjà complet — sans point final"
+    },
+    {
+      "slug": "smile-du-coq",
+      "len": 34,
+      "fin": "il permet de se transformer en coq",
+      "motif": "phrase ou fait court déjà complet — sans point final"
+    },
+    {
+      "slug": "adele",
+      "len": 33,
+      "fin": "Épisodes : 527-529, 558, 569, 573",
+      "motif": "phrase ou fait court déjà complet — sans point final"
+    },
+    {
+      "slug": "fruit-du-bovin-version-lama",
+      "len": 32,
+      "fin": "Permet de se transformer en lama",
+      "motif": "phrase ou fait court déjà complet — sans point final"
+    }
+  ],
+  "verification_croisee": {
+    "post_fix_candidats_bruts": 58,
+    "correspond_exactement_aux_fins_legitimes_ecartees": true
+  }
+}

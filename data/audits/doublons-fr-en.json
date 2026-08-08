@@ -1,0 +1,428 @@
+{
+  "$schema_note": "Plan de fusion FR/EN Naruto · Pouvoirs (chantier doublons-fr-en, 08/08/2026). AUCUNE écriture effectuée par ce script. Vérifié en base (clientSite, akasha_entries/akasha_sections/akasha_relations) + croisé avec naruto.fandom.com (api.php : redirects, langlinks, search plein-texte, categories) le 08/08/2026.",
+  "regle_generale": "Keeper = TOUJOURS la fiche FR (nom + slug + image conservés par défaut). Absorbe de la fiche EN : descFr SEULEMENT si le descFr FR est vide ou manifestement plus pauvre/cassé (comparé texte à texte, jamais sur la seule longueur) ; les sections UNIQUES (aucun homologue de même sujet côté FR) ; le degré via re-routage complet des arêtes (dédupliquées contre les arêtes déjà présentes chez le keeper, boucles supprimées). Sections FR/EN de MÊME sujet : comparées texte à texte, la version la plus complète/propre gagne (peut être FR ou EN), l'autre meurt avec sa fiche. Aucun favoris à sommer (attribut absent sur tous ces jutsu/kekkei genkai — propre aux personnages MAL).",
+  "fusions": [
+    {
+      "absorbe": "liberation-de-la-lave-yoton",
+      "meurt": "lava-release",
+      "ids": {
+        "absorbe": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+        "meurt": "16753280-2da6-4709-9720-834e8265693f"
+      },
+      "kanji_terme_japonais": "溶遁 (Yōton)",
+      "preuve_meme_sujet": "Page wiki EN \"Yōton\" = disambiguation (Category:Disambiguation) entre 溶遁 Lava Release et 陽遁 Yang Release ; le contenu cité (\"Lava Release, techniques that combine fire and earth-based chakra\") correspond exactement à lava-release.descFr (\"Kekkei genkai combinant Feu et Terre\"). Notre fiche FR est nommée explicitement \"Libération de la Lave (Yōton)\" — lève l'ambiguïté vers Lava, pas Yang.",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Libération de la Lave (Yōton)",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 10,
+          "descFr_len": 0,
+          "image_url": null
+        },
+        "meurt": {
+          "nom": "Lava Release",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 10,
+          "descFr_len": 238,
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/5/5c/Kakazan.png/revision/latest/scale-to-width-down/720?cb=20130815161125"
+        }
+      },
+      "decision_descFr": "absorb_en",
+      "decision_sections": "none",
+      "note": "FR descFr vide (0c) → absorbe les 238c EN."
+    },
+    {
+      "absorbe": "liberation-de-la-glace-hyoton",
+      "meurt": "ice-release",
+      "ids": {
+        "absorbe": "568aed6e-5586-43d2-a499-673eff5cbd2c",
+        "meurt": "ad70aa6c-a339-4496-ad61-5431482dcc9c"
+      },
+      "kanji_terme_japonais": "氷遁 (Hyōton)",
+      "preuve_meme_sujet": "Redirection wiki directe : \"Hyoton\" → \"Ice Release\" (api redirects=1). FR nommée \"Libération de la Glace (Hyōton)\".",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Libération de la Glace (Hyōton)",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 6,
+          "descFr_len": 0,
+          "image_url": null
+        },
+        "meurt": {
+          "nom": "Ice Release",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 3,
+          "descFr_len": 304,
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/c/c2/Ice_Release.png/revision/latest/scale-to-width-down/720?cb=20170120070228"
+        }
+      },
+      "decision_descFr": "absorb_en",
+      "decision_sections": "none",
+      "note": "FR descFr vide (0c) → absorbe les 304c EN."
+    },
+    {
+      "absorbe": "liberation-de-la-calcination-shakuton",
+      "meurt": "scorch-release",
+      "ids": {
+        "absorbe": "04ed6517-f649-424d-a97f-dbc1d6d7fe3e",
+        "meurt": "0a0b52fb-2261-4689-a17c-c9d9ef49b822"
+      },
+      "kanji_terme_japonais": "灼遁 (Shakuton)",
+      "preuve_meme_sujet": "Redirection wiki directe : \"Shakuton\" → \"Scorch Release\". FR nommée \"Libération de la Calcination (Shakuton)\", déjà dans le registre d'alias curés (data/alias-cures.json).",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Libération de la Calcination (Shakuton)",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 1,
+          "descFr_len": 328,
+          "image_url": null
+        },
+        "meurt": {
+          "nom": "Scorch Release",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 1,
+          "descFr_len": 274,
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/f/f2/Scorch_Release.png/revision/latest/scale-to-width-down/720?cb=20160121002928"
+        }
+      },
+      "decision_descFr": "keep_fr",
+      "decision_sections": "drop_en_duplicate",
+      "note": "FR descFr DÉJÀ présent et plus riche (328c vs 274c) → gardé tel quel. Absorbe seulement discipline=\"Kekkei genkai\" (clé absente)."
+    },
+    {
+      "absorbe": "liberation-de-l-ebullition-futton",
+      "meurt": "boil-release",
+      "ids": {
+        "absorbe": "50ee09aa-80c8-42e1-9476-c31c5593848e",
+        "meurt": "49966fd3-a732-404f-808b-f366e823630f"
+      },
+      "kanji_terme_japonais": "沸遁 (Futton)",
+      "preuve_meme_sujet": "Redirection wiki directe : \"Futton\" → \"Boil Release\". FR nommée \"Libération de l'Ébullition (Futton)\".",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Libération de l'Ébullition (Futton)",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 5,
+          "descFr_len": 0,
+          "image_url": null
+        },
+        "meurt": {
+          "nom": "Boil Release",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 5,
+          "descFr_len": 379,
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/a/ac/Skilled_Mist.png/revision/latest/scale-to-width-down/720?cb=20150123214353"
+        }
+      },
+      "decision_descFr": "absorb_en",
+      "decision_sections": "none",
+      "note": "FR descFr vide (0c) → absorbe les 379c EN."
+    },
+    {
+      "absorbe": "liberation-de-la-tempete-ranton",
+      "meurt": "storm-release",
+      "ids": {
+        "absorbe": "2ce9cfa6-6d7d-4a70-98d0-8810d85008ae",
+        "meurt": "b9298c8f-9f7e-4675-af1e-53648de5b9a2"
+      },
+      "kanji_terme_japonais": "嵐遁 (Ranton)",
+      "preuve_meme_sujet": "Redirection wiki directe : \"Ranton\" → \"Storm Release\". FR nommée \"Libération de la Tempête (Ranton)\".",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Libération de la Tempête (Ranton)",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 3,
+          "descFr_len": 0,
+          "image_url": null
+        },
+        "meurt": {
+          "nom": "Storm Release",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 3,
+          "descFr_len": 381,
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/0/06/Ranton_Reiz%C4%81_S%C4%81kasu.png/revision/latest/scale-to-width-down/720?cb=20120705141609"
+        }
+      },
+      "decision_descFr": "absorb_en",
+      "decision_sections": "none",
+      "note": "FR descFr vide (0c) → absorbe les 381c EN."
+    },
+    {
+      "absorbe": "liberation-de-l-explosion-bakuton",
+      "meurt": "explosion-release",
+      "ids": {
+        "absorbe": "71ece741-78dc-4b07-883f-2c4879280117",
+        "meurt": "2dd0d511-8436-4112-b9c4-4b3efb8239e0"
+      },
+      "kanji_terme_japonais": "爆遁 (Bakuton)",
+      "preuve_meme_sujet": "Redirection wiki directe : \"Bakuton\" → \"Explosion Release\". FR nommée \"Libération de l'Explosion (Bakuton)\". Les 2 fiches portent CHACUNE une section idx1 \"Formes\" au texte quasi identique (Deidara/Gari/Sasuke Shinden) — comparé texte à texte.",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Libération de l'Explosion (Bakuton)",
+          "sections": 1,
+          "aretes_out": 0,
+          "aretes_in": 3,
+          "descFr_len": 0,
+          "image_url": null
+        },
+        "meurt": {
+          "nom": "Explosion Release",
+          "sections": 1,
+          "aretes_out": 0,
+          "aretes_in": 3,
+          "descFr_len": 434,
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/b/bc/Landmine_Fist.png/revision/latest/scale-to-width-down/720?cb=20150123214706"
+        }
+      },
+      "decision_descFr": "absorb_en",
+      "decision_sections": "drop_en_duplicate_section",
+      "note": "FR descFr vide (0c) → absorbe les 434c EN. Section EN \"Formes\" doublonne mot pour mot la section FR \"Formes\" → meurt avec la fiche."
+    },
+    {
+      "absorbe": "liberation-des-tenebres-meiton",
+      "meurt": "dark-release",
+      "ids": {
+        "absorbe": "b60b12a3-3a92-4dda-8922-d836da7fb08b",
+        "meurt": "416c85d1-8752-40cc-8bb2-d3a8e5f28966"
+      },
+      "kanji_terme_japonais": "冥遁 (Meiton)",
+      "preuve_meme_sujet": "Recherche plein-texte wiki : \"Meiton\" apparaît dans l'article \"Dark Release\" (terme japonais cité en infobox). FR nommée \"Libération des Ténèbres (Meiton)\".",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Libération des Ténèbres (Meiton)",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 1,
+          "descFr_len": 0,
+          "image_url": null
+        },
+        "meurt": {
+          "nom": "Dark Release",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 1,
+          "descFr_len": 183,
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/e/e4/Dark_release_mark.png/revision/latest/scale-to-width-down/720?cb=20101111163308"
+        }
+      },
+      "decision_descFr": "absorb_en",
+      "decision_sections": "none",
+      "note": "FR descFr vide (0c) → absorbe les 183c EN."
+    },
+    {
+      "absorbe": "liberation-du-cristal-shoton",
+      "meurt": "crystal-release",
+      "ids": {
+        "absorbe": "b83413c5-a46d-4b46-b812-3353c94c81a1",
+        "meurt": "e9afe582-0adf-4026-9440-48801ddd0496"
+      },
+      "kanji_terme_japonais": "晶遁 (Shōton)",
+      "preuve_meme_sujet": "Redirection wiki directe : \"Shoton\" → \"Crystal Release\". FR nommée \"Libération du Cristal (Shōton)\".",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Libération du Cristal (Shōton)",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 1,
+          "descFr_len": 0,
+          "image_url": null
+        },
+        "meurt": {
+          "nom": "Crystal Release",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 1,
+          "descFr_len": 207,
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/5/5c/Jade_Crystal_Prison.png/revision/latest/scale-to-width-down/720?cb=20151006202337"
+        }
+      },
+      "decision_descFr": "absorb_en",
+      "decision_sections": "none",
+      "note": "FR descFr vide (0c) → absorbe les 207c EN."
+    },
+    {
+      "absorbe": "liberation-de-l-acier-koton",
+      "meurt": "steel-release",
+      "ids": {
+        "absorbe": "812eb8ab-09e9-4d68-94e8-61125976b786",
+        "meurt": "e362b75a-8be7-479a-9dbf-ef16e04b2c47"
+      },
+      "kanji_terme_japonais": "鋼遁 (Kōton)",
+      "preuve_meme_sujet": "Recherche plein-texte wiki : \"Kôton\" apparaît dans l'article \"Steel Release\" (terme japonais). FR nommée \"Libération de l'Acier (Kōton)\", déjà dans le registre d'alias curés.",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Libération de l'Acier (Kōton)",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 1,
+          "descFr_len": 599,
+          "image_url": null
+        },
+        "meurt": {
+          "nom": "Steel Release",
+          "sections": 1,
+          "aretes_out": 0,
+          "aretes_in": 1,
+          "descFr_len": 247,
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/8/81/Steel_armour.png/revision/latest/scale-to-width-down/720?cb=20100423154647"
+        }
+      },
+      "decision_descFr": "keep_fr",
+      "decision_sections": "move_en_unique",
+      "note": "FR descFr DÉJÀ présent et plus riche (599c vs 247c) → gardé. Absorbe discipline=\"Kekkei genkai\". Section EN idx2 \"Anecdotes\" UNIQUE (FR a 0 section) → déplacée en idx1."
+    },
+    {
+      "absorbe": "liberation-du-magnetisme-jiton",
+      "meurt": "magnet-release",
+      "ids": {
+        "absorbe": "99a0db2c-7bf0-4426-a648-b42ce8db2948",
+        "meurt": "f0c61aae-9cdb-4ae1-9e7a-e3252b2da379"
+      },
+      "kanji_terme_japonais": "磁遁 (Jiton)",
+      "preuve_meme_sujet": "Redirection wiki directe : \"Jiton\" → \"Magnet Release\". FR nommée \"Libération du Magnétisme (Jiton)\".",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Libération du Magnétisme (Jiton)",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 7,
+          "descFr_len": 0,
+          "image_url": null
+        },
+        "meurt": {
+          "nom": "Magnet Release",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 7,
+          "descFr_len": 195,
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/5/51/Magnet_Release.png/revision/latest?cb=20151031163042"
+        }
+      },
+      "decision_descFr": "absorb_en",
+      "decision_sections": "none",
+      "note": "FR descFr vide (0c) → absorbe les 195c EN."
+    },
+    {
+      "absorbe": "liberation-du-bois-mokuton",
+      "meurt": "wood-release",
+      "ids": {
+        "absorbe": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+        "meurt": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b"
+      },
+      "kanji_terme_japonais": "木遁 (Mokuton)",
+      "preuve_meme_sujet": "Redirection wiki directe : \"Mokuton\" → \"Wood Release\". FR nommée \"Libération du Bois (Mokuton)\" ; la fiche EN dying porte elle-même le nom \"Mokuton\" (pas \"Wood Release\") — déjà dans le registre d'alias curés (\"Mokuton\": \"Wood Release\").",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Libération du Bois (Mokuton)",
+          "sections": 0,
+          "aretes_out": 0,
+          "aretes_in": 15,
+          "descFr_len": 0,
+          "image_url": null
+        },
+        "meurt": {
+          "nom": "Mokuton",
+          "sections": 3,
+          "aretes_out": 0,
+          "aretes_in": 16,
+          "descFr_len": 423,
+          "image_url": "/images/akasha/ref/wood-release.webp"
+        }
+      },
+      "decision_descFr": "absorb_en",
+      "decision_sections": "move_en_all",
+      "note": "FR descFr vide (0c) → absorbe les 423c EN. 3 sections EN (Usage, Utilisateurs, Anecdotes) TOUTES uniques (FR a 0 section) → déplacées en idx1,2,3."
+    },
+    {
+      "absorbe": "shadow-clone",
+      "meurt": "shadow-clone-technique",
+      "ids": {
+        "absorbe": "b03f635c-2866-4a6c-bbe9-b02bbab945a6",
+        "meurt": "1fd80370-45d4-43e6-bf21-11e1ea63051e"
+      },
+      "kanji_terme_japonais": "影分身の術 — cité explicitement dans les deux fiches",
+      "preuve_meme_sujet": "Interwiki langlink officiel EN→FR : page EN \"Shadow Clone Technique\" → langlink fr=\"Multi Clonage\" (naruto.fandom.com/fr), qui correspond au nom FR curé \"Multiclonage\". Les 2 sections idx1 (FR \"Présentation\" 3500c, EN \"Vue d'ensemble\" 1000c) racontent le MÊME fait (partage équitable du chakra, technique de Tobirama, interdiction sauf Naruto/Kyūbi) — comparées texte à texte, version FR strictement plus longue et détaillée.",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Multiclonage",
+          "sections": 2,
+          "aretes_out": 0,
+          "aretes_in": 1,
+          "descFr_len": 290,
+          "image_url": "/images/akasha/ref/shadow-clone.webp"
+        },
+        "meurt": {
+          "nom": "Shadow Clone Technique",
+          "sections": 1,
+          "aretes_out": 0,
+          "aretes_in": 41,
+          "descFr_len": 386,
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/0/07/Tobirama_creating_Shadow_Clones.png/revision/latest/scale-to-width-down/720?cb=20140904190251"
+        }
+      },
+      "decision_descFr": "absorb_en",
+      "decision_sections": "drop_en_duplicate_section",
+      "note": "FR descFr (290c) remplacé par EN (386c, plus précis : cite Tobirama Senju créateur + restriction Multiple Shadow Clone). Section EN \"Vue d'ensemble\" doublonne (sous-ensemble) la section FR \"Présentation\", bien plus complète → meurt avec la fiche. Section FR idx2 \"Anecdotes\" (Sun Wukong, YuYu Hakusho) INTACTE, aucun équivalent EN."
+    },
+    {
+      "absorbe": "edo-tensei",
+      "meurt": "summoning-impure-world-reincarnation",
+      "ids": {
+        "absorbe": "5027d00e-8679-482e-8fe1-768722bd14de",
+        "meurt": "2b98ca1c-a05d-442f-97b2-4f6e01114049"
+      },
+      "kanji_terme_japonais": "穢土転生 — Edo Tensei EST le nom japonais de la technique elle-même",
+      "preuve_meme_sujet": "Redirection wiki directe et sans ambiguïté : \"Edo Tensei\" → \"Summoning: Impure World Reincarnation\" (pageid 3354). Les deux fiches décrivent la même réanimation kinjutsu rang S créée par Tobirama Senju (ADN + sacrifice vivant + sceau de contrôle).",
+      "etat_avant": {
+        "absorbe": {
+          "nom": "Edo Tensei",
+          "sections": 4,
+          "aretes_out": 0,
+          "aretes_in": 1,
+          "descFr_len": 547,
+          "image_url": "/images/akasha/ref/edo-tensei.webp"
+        },
+        "meurt": {
+          "nom": "Summoning: Impure World Reincarnation",
+          "sections": 8,
+          "aretes_out": 0,
+          "aretes_in": 3,
+          "descFr_len": 309,
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/0/03/Hokage_reincarnated.png/revision/latest/scale-to-width-down/720?cb=20140612141309"
+        }
+      },
+      "decision_descFr": "absorb_en",
+      "decision_sections": "edo_tensei_special",
+      "note": "FR descFr (547c) était un stub cassé mélangeant le titre EN en italique (\"*Summoning: Impure World Reincarnation* est un kinjutsu...\") → remplacé par le descFr EN (309c), propre et 100% français. Sections : 4 EN uniques déplacées (Utilisation, Contre-mesures, Réincarnés Connus, Kabuto Yakushi), 2 EN absorbées en remplacement du texte FR existant (Contrôle, Orochimaru — versions EN plus détaillées), 2 EN abandonnées (Attributs/Caractéristiques et Améliorations — doublons de sujet, versions FR déjà correctes et propres, une des versions EN portant même une faute \"avantager\")."
+    }
+  ],
+  "exclusions": [
+    {
+      "a": "flying-raijin",
+      "b": "flying-thunder-god-technique",
+      "ids": {
+        "a": "ec73e9c6-28a8-43aa-a904-58729d821cf2",
+        "b": "b38a2a89-bbc4-4e46-9d2d-b3b09f0c844e"
+      },
+      "decision": "NON FUSIONNÉ",
+      "raison": "DOUTEUSE — PAS un doublon 1:1. Preuve : la page wiki EN \"Hiraishin\" est catégorisée Category:Disambiguation (pas un article) ; le langlink officiel EN \"Flying Thunder God Technique\"→fr pointe vers \"Dieu du Tonnerre Volant\", PAS vers \"Hiraishin\". Le propre descFr de notre fiche FR \"flying-raijin\" (Hiraishin) se décrit LUI-MÊME comme une ombrelle couvrant 10 variantes distinctes (\"Hiraishin désigne plusieurs variantes... Flying Thunder God Technique, sa version Boruto, le Flying Thunder God Slash, le Flying Thunder God — Second Step, le Flying Thunder God: Sequential Steps, le Flying Thunder God: Guiding Thunder, le Flying Thunder God Mutually Instantaneous Revolving Technique...\"), dont AU MOINS 4 existent déjà comme fiches séparées dans notre base (flying-thunder-god-guiding-thunder, flying-thunder-god-second-step, flying-thunder-god-slash, flying-thunder-god-mutually-instantaneous-revolving-technique). Fusionner 1:1 avec seulement flying-thunder-god-technique effacerait cette portée ombrelle et laisserait les autres variantes orphelines d'un parent. Inversement, la fiche EN elle-même (section \"Aperçu\") traite \"Hiraishin\" comme un simple synonyme japonais DE CETTE fiche précise. Les deux fiches ne désignent donc pas rigoureusement le même périmètre : conservées séparées, à trancher par Dan (soit garder Hiraishin comme hub/dossier des variantes via des arêtes \"variante-de\", soit fusionner strictement en acceptant la perte de portée)."
+    }
+  ],
+  "methode_de_preuve": [
+    "Redirection MediaWiki (api.php?action=query&titles=X&redirects=1) : le terme romaji japonais redirige vers la page EN — confirme le MÊME sujet sans ambiguïté (9/11 natures).",
+    "Recherche plein-texte (list=search) quand la page directe \"Kôton\"/\"Meiton\" n'existe pas : confirme que le terme apparaît dans l'article EN cible, comme terme japonais cité en infobox (2/11 natures : Kōton→Steel Release, Meiton→Dark Release).",
+    "Désambiguïsation kanji (\"Yōton\" = page Category:Disambiguation entre 溶遁 Lava et 陽遁 Yang) : tranchée par le sens du nom FR (\"Libération de la LAVE\").",
+    "Interwiki langlink officiel EN→FR (prop=langlinks&lllang=fr) : Shadow Clone Technique↔\"Multi Clonage\" confirme Multiclonage ; Flying Thunder God Technique↔\"Dieu du Tonnerre Volant\" DISCONFIRME Hiraishin comme équivalent 1:1 (d'où l'exclusion).",
+    "Comparaison texte à texte des sections + descFr existants en base (pas seulement les titres) pour choisir quelle version garder/absorber/abandonner à chaque collision de sujet."
+  ]
+}

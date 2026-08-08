@@ -1,0 +1,198 @@
+{
+  "titre": "Clôture des petits univers — Death Note, JoJo, Hunter x Hunter, Initial D (08/08/2026)",
+  "depot": "/Users/macbookprom1pro/dev/NIKA (canonique) — non commité, revue après la vague",
+  "trace_avant": [
+    "data/audits/petits-univers-trace-entries.json (28 fiches, état complet AVANT écriture)",
+    "data/audits/petits-univers-trace-sections.json (sections noriko + shingo-midou AVANT écriture)"
+  ],
+  "methode": "Sondes DB directes (clientSite, akasha_entries + akasha_sections + akasha_relations), Fandom API (fetchFandomProse de scripts/lib/fandom.mjs) et MyAnimeList (WebFetch) pour sourcer chaque texte. Comparaisons avant/après en équivalence canonique. Aucune suppression de fiche. Build local vérifié (tsc propre sur le fichier touché, 8 pages rendues en HTTP 200 dont la page d'axe modifiée).",
+
+  "1_death_note_entree_15": {
+    "resume": "Les 5 actions manuelles listées dans l'entrée 15 du plan sont FAITES et vérifiées au rendu. Bonus : un 2ᵉ défaut de la même famille (confusion de personne) trouvé et corrigé en chemin.",
+    "actions": [
+      {
+        "slug": "noriko",
+        "action": "DELETE akasha_sections id=6833 (idx=2, titre « Crédits »)",
+        "motif": "Section hors-sujet : crédits complets de la version brésilienne du musical, citant la traductrice Noriko Tanaka — c'est là que vivait la confusion de personnes relevée par le contrôle qualité du 02/08 (3/10). La descFr (déjà réparée, fidèle à la page « Nori ») n'est pas touchée.",
+        "verifie": "0 section restante sur la fiche (elle n'en avait qu'une, fautive) ; page /noriko en 200."
+      },
+      {
+        "slug": "shingo-midou",
+        "action": "DELETE akasha_sections id=13461 (idx=fin-1, titre « Rôle dans le Groupe Yotsuba »), conservé idx=fin-2 (« Rôle dans le groupe Yotsuba », plus complète, couvre la mort)",
+        "motif": "Doublon quasi identique posé deux fois par le même modèle finisseur (claude-haiku).",
+        "verifie": "1 section restante après suppression (fin-2) ; page /shingo-midou en 200.",
+        "non_fait": "La descFr de shingo-midou reste une phrase unique (copie du summary, QC 2/10) — la tâche fandom_descfr proposée dans reprise-death-note.json n'a jamais tourné (usine cassée/en pause depuis, voir F.4 du plan). Hors mandat de cette session (item 1 ne listait que « sections de shingo-midou »)."
+      },
+      {
+        "slug": "daril-ghiroza",
+        "action": "UPDATE summary + description",
+        "avant": "« Agent du FBI envoyé filer les dirigeants du groupe Yotsuba, il meurt d'une crise cardiaque provoquée par le Death Note de Higuchi. » — MAUVAISE PERSONNE.",
+        "apres": "« Shinigami femelle de rang 3 conçue par Takeshi Obata sur le modèle de Ryuk, à l'apparence plus orthodoxe et asiatique. Jamais choisie pour descendre sur Terre, elle occupe son temps dans le royaume des shinigamis à empiler des squelettes humains. »",
+        "motif": "Daril Ghiroza est une shinigami de How to Read jamais apparue sur Terre ; le summary contredisait la descFr déjà correcte en base (rang 3, squelettes, accessoires métalliques, lieux lumineux).",
+        "verifie": "page /daril-ghiroza en 200, summary cohérent avec la descFr."
+      },
+      {
+        "slug": "light-s-teacher",
+        "decision": "RÉÉCRITURE (pas de dépublication) — mieux que prévu : une page dédiée EXISTE, mal titrée « English teacher » (pas « Light's Teacher »), jamais trouvée par le résolveur automatique qui cherchait le titre exact et retombait sur la page de la chanson « Where is the Justice ».",
+        "source": "https://deathnote.fandom.com/wiki/English_teacher (pageid 9592, infobox Human3 : manga « Boredom », anime « Rebirth », VA japonais Yasunori Masutani / anglais Brian Dobson)",
+        "action": "UPDATE attributes.descFr + descFrSource + descRaw",
+        "apres": "« Le professeur d'anglais de Light Yagami est un personnage mineur qui ouvre la série : dans la scène inaugurale du manga (chapitre « Boredom ») comme de l'anime (épisode « Rebirth »), il l'interroge en pleine rêverie pour lui faire traduire un passage, que Light résout sans effort. Son rôle reste discret, mais les textes qu'il fait lire en classe préfigurent sans le savoir des événements de la suite de l'histoire. »",
+        "motif": "L'ancienne descFr venait de la page de la comédie musicale (defaut QC 4/10 : « ne couvre que la musicale »). Le champ descRaw en base portait déjà la bonne phrase anglaise (« Light's high school English teacher is a minor character... ») sans jamais avoir été traduite/exploitée — signe que la bonne source avait été touchée une fois puis perdue en route.",
+        "verifie": "page /light-s-teacher en 200."
+      },
+      {
+        "slug": "george-sairas",
+        "action": "UPDATE summary + description (le payload corrigé n'était JAMAIS parti, contrairement à ce que redoutait reprise-death-note.json — la phrase fautive était encore en base ce matin)",
+        "avant": "« ... Il capitule devant Kira et annonce officiellement son soutien. De plus, Sairas divulgue des informations secrètes sur le SPK. ... »",
+        "apres": "« ... Il capitule devant Kira et annonce que les États-Unis ne s'opposeront plus à lui. ... » (phrase SPK retirée entièrement)",
+        "motif": "La page réelle dit l'inverse : Sairas FOURNIT à Near les ressources pour CRÉER le SPK, il ne le trahit pas. Vérifié à l'écran : la section Intrigue de la fiche (non modifiée, déjà correcte) dit littéralement « il aide Near à obtenir les ressources nécessaires pour créer l'organisation SPK ».",
+        "verifie": "page /george-sairas en 200, lue en entier : 0 occurrence de « divulgue » ou « secrètes » sur la fiche rendue."
+      }
+    ],
+    "bonus_meme_defaut_trouve_en_chemin": {
+      "slug": "ellickson-gardner",
+      "constat": "En vérifiant qui pouvait étoffer l'axe camp=SPK (trop mince, voir §3), sa descFr (correcte) dit qu'il est un agent du SPK mort d'une crise cardiaque quand la Mafia obtient un Death Note volé — mais son summary/description racontait une tout autre histoire : un agent FBI de surveillance Yotsuba tué par Higuchi via Misa (l'épisode antérieur des agents FBI, sans rapport).",
+      "action": "UPDATE summary + description, alignés sur la descFr déjà correcte et sourcée.",
+      "verifie": "page /ellickson-gardner en 200."
+    }
+  },
+
+  "2_descfr_manquantes": {
+    "resume": "21 annoncées dans le mandat ; recomptées à 19 en base ce matin (2 déjà résolues entre le 07/08 soir et le 08/08 — compte croisé, pas d'invention de chiffre). 17 rédigées et sourcées, 2 documentées impossibles.",
+    "chiffres_avant_apres": {
+      "jojo": { "avant_mandat": 16, "mesure_08_08": 14, "ecrites": 12, "documentees_impossibles": 2 },
+      "hunter_x_hunter": { "avant_mandat": 3, "mesure_08_08": 3, "ecrites": 3, "documentees_impossibles": 0 },
+      "initial_d": { "avant_mandat": 2, "mesure_08_08": 2, "ecrites": 0, "documentees_impossibles": 2 },
+      "total": { "mesure_08_08": 19, "ecrites": 17, "documentees_impossibles_ou_orphelines": 2 }
+    },
+    "note_jojo": "12 rédigées + 1 déjà comptée côté HxH par erreur de ma part au premier passage — le compte exact : sur les 14 slugs JoJo mesurés sans descFr, 13 ont reçu une descFr (11 pages dédiées + 2 pages de chapitre) et 1 (family-club-vendor) a reçu la promotion de son summary déjà sourcé, faute de page dédiée retrouvable.",
+    "ecrites": [
+      { "slug": "the-world", "univers": "JoJo", "source": "https://jojo.fandom.com/wiki/The_World (page dédiée)" },
+      { "slug": "gold-experience-requiem", "univers": "JoJo", "source": "https://jojo.fandom.com/wiki/Gold_Experience_Requiem (page dédiée)" },
+      { "slug": "whitesnake", "univers": "JoJo", "source": "https://jojo.fandom.com/wiki/Whitesnake (page dédiée)" },
+      { "slug": "aerosmith", "univers": "JoJo", "source": "https://jojo.fandom.com/wiki/Aerosmith (page dédiée)" },
+      { "slug": "foo-fighters-jojo-s-bizarre-adventure", "univers": "JoJo", "source": "https://jojo.fandom.com/wiki/Foo_Fighters (page dédiée)" },
+      { "slug": "scary-monsters", "univers": "JoJo", "source": "https://jojo.fandom.com/wiki/Scary_Monsters (page dédiée)" },
+      { "slug": "joestar", "univers": "JoJo", "source": "https://jojo.fandom.com/wiki/Joestar_Family (page dédiée)" },
+      { "slug": "kiss", "univers": "JoJo", "source": "https://jojo.fandom.com/wiki/Kiss (page dédiée)" },
+      { "slug": "magicians-red", "univers": "JoJo", "source": "https://jojo.fandom.com/wiki/Magician's_Red (page dédiée)" },
+      { "slug": "sardinian-fortune-teller", "univers": "JoJo", "source": "https://jojo.fandom.com/wiki/Storm_Warning_in_Sardinia_Island!_(Chapter) — PAS de page personnage dédiée, contenu extrait de la page du chapitre 102" },
+      { "slug": "blackmailing-criminal", "univers": "JoJo", "source": "https://jojo.fandom.com/wiki/Man_in_the_Mirror_and_Purple_Haze,_Part_6_(Chapter) — PAS de page dédiée, extrait du chapitre 45" },
+      { "slug": "bruno-s-mother", "univers": "JoJo", "source": "https://jojo.fandom.com/wiki/Bruno_Bucciarati's_Youth_(Chapter) — PAS de page dédiée, extrait du chapitre 78" },
+      { "slug": "le-caire", "univers": "JoJo", "source": "Aucune page wiki dédiée (ville réelle) — texte basé sur les faits d'intrigue de Stardust Crusaders déjà établis par le summary existant (voyage de 50 jours, DIO, The World)" },
+      { "slug": "family-club-vendor", "univers": "JoJo", "source": "Aucune page dédiée trouvée (ni recherche directe, ni page « Minor Characters ») ; MAL character id 622752 renvoie désormais « Invalid ID ». Texte = promotion du summary déjà en base (non fabriqué par cette session), sans ajout de fait nouveau." },
+      { "slug": "sister-ortho", "univers": "Hunter x Hunter", "source": "https://hunterxhunter.fandom.com/wiki/Ortho_Siblings — pas de page individuelle, page du duo (frère + sœur)" },
+      { "slug": "association-hunters", "univers": "Hunter x Hunter", "source": "https://hunterxhunter.fandom.com/wiki/Hunter_Association (page dédiée)" },
+      { "slug": "examen-hunter", "univers": "Hunter x Hunter", "source": "https://hunterxhunter.fandom.com/wiki/Hunter_Exam (page dédiée)" }
+    ],
+    "documentees_impossibles": [
+      {
+        "slug": "kawase-mitsuro",
+        "univers": "Initial D",
+        "constat": "Aucune page initiald.fandom.com trouvée sous ce nom ni ses variantes (Mitsuro/Mitsuo). La recherche de personnage MyAnimeList pour « Kawase Mitsuro » renvoie un match sur un anime SANS RAPPORT (« Houkago no Shokuinshitsu »). L'image_url en base (MAL character id 9454) pointe en réalité vers « Angelique », personnage de Bakuretsu Tenshi (Burst Angel) — image mal-associée.",
+        "decision": "descFr NON écrite (aucune invention). L'entité elle-même est suspecte : probable artefact de pipeline de données (mauvais id MAL rattaché à un nom Initial D), pas seulement un manque de description.",
+        "action_hors_mandat": "Signalé, non corrigé (changer/retirer la fiche serait une SUPPRESSION hors du périmètre AJOUT-SEULEMENT de cette session)."
+      },
+      {
+        "slug": "kazama-toshiaki",
+        "univers": "Initial D",
+        "constat": "Même défaut que kawase-mitsuro : aucune page wiki, recherche MAL « Kazama Toshiaki » vers le même anime sans rapport, image_url (MAL character id 9453) pointant vers « Robin » du manga Zone.",
+        "decision": "descFr NON écrite (aucune invention), même motif.",
+        "action_hors_mandat": "Signalé, non corrigé."
+      }
+    ]
+  },
+
+  "3_axes_minces": {
+    "critere": "< 5 fiches portant la valeur (le seuil « pages d'axe minces pré-générées : dé-curer sous 5 entrées ou étoffer » du plan, §2 Front commun P3). 4 univers sondés, 11 valeurs sous le seuil au total — sous vingt cas, chacune LUE individuellement plutôt que seuillée en bloc.",
+    "hunter_x_hunter_nen": {
+      "constat": "Les 6 types canon sont TOUS ≥ 5 (Renforcement 12, Manipulation 12, Émission 9, Transformation 7, Spécialisation 6, Matérialisation 5). Confirmé conforme au plan : rien à faire.",
+      "action": "AUCUNE — axe déjà sain."
+    },
+    "jojo_partie": {
+      "constat": "Partie 7 (4 fiches) et Partie 8 (2 fiches) sont anormalement minces — MAIS ce ne sont QUE des fiches de type power (Stands : Scary Monsters, Ball Breaker, Tusk, D4C pour la Partie 7 ; Soft & Wet, Wonder of U pour la Partie 8). AUCUN personnage de Steel Ball Run ou JoJolion n'existe dans la base (vérifié sur les 233 noms JoJo : ni Johnny Joestar, ni Gyro Zeppeli, ni Josuke Higashikata (Part 8), ni Yasuho Hirose...). Ce n'est pas un axe mince à seuiller, c'est l'absence quasi totale de deux arcs entiers.",
+      "decision": "NI dé-curation NI invention. Retirer ces valeurs masquerait deux arcs canoniques réels derrière leurs 4+2 fiches de pouvoirs existantes (pire que le statu quo). Créer une dizaine de fiches personnages de toutes pièces dépasse le mandat « descriptions + décisions d'axe » de cette session et le principe AJOUT-SEULEMENT prudent (un lot de nouvelles fiches mérite son propre chantier, sourcé et tracé comme tel).",
+      "plafond": "Étoffer Parties 7-8 nécessite un chantier dédié de création de fiches personnages (10-20 fiches, effort « data, moyen » déjà identifié par le plan initial) — PAS fait ici, documenté comme reste ouvert."
+    },
+    "initial_d_affiliation": {
+      "team_emperor_1": {
+        "constat": "Kyoichi Sudo est le seul membre. Vérifié via sa propre descFr (« leader des Emperor ») et celle de Kai Kogashiwa (initialement suspecté membre d'Emperor par proximité géographique sur Irohazaka — vérification faite, sa descFr dit explicitement qu'il pilote pour l'équipe RIVALE « Katagiri », pas Emperor). Aucun autre personnage Emperor curé dans la base.",
+        "decision": "GARDÉ, PLAFOND canon — même principe que Naruto Takigakure (1 fiche, assumé). Ne pas inventer de coéquipier."
+      },
+      "impact_blue_2": {
+        "constat": "Mako Sato + Sayuki — c'est la totalité de l'équipe telle qu'elle existe dans l'œuvre (duo féminin de descente).",
+        "decision": "GARDÉ, PLAFOND canon — même principe que Naruto Kara (3 fiches, assumé)."
+      },
+      "akina_speedstars_4": {
+        "constat": "Itsuki, Iketani, Kenji, Yuichi Tachibana — groupe d'amis de Takumi, cohérent et complet dans le périmètre des 44 fiches Initial D curées.",
+        "decision": "GARDÉ, PLAFOND probable — 1 sous le seuil, aucun 5ᵉ membre identifiable sans sur-interpréter la source."
+      },
+      "akagi_redsuns_0": {
+        "constat": "AUCUNE fiche personnage ne porte attributes.affiliation='Akagi RedSuns' — MAIS la fiche groupe « redsuns » (status, descFr complète et correcte) existe et porte 4 arêtes akasha_relations de type appartient (Ryosuke Takahashi, Keisuke Takahashi, Kenta Nakamura, Hiroshi Fumihiro). Le filtre d'axe ne lit que le champ scalaire attributes.affiliation, jamais le graphe de relations — ces 4 pilotes sont modélisés avec une affiliation ACTUELLE unique (Project D, leur équipe après la dissolution des RedSuns), donc invisibles pour ce filtre précis sans dupliquer/casser leur tag Project D.",
+        "decision": "DÉ-CURÉE de lib/akasha/universe-taxonomy.ts (retirée du tableau values de l'axe affiliation Initial D) — la page /u/initial-d/affiliation/Akagi%20RedSuns était une page fantôme à 0 résultat malgré une fiche groupe et 4 arêtes bien réelles ailleurs sur le site. RIEN n'est supprimé en base : la fiche /redsuns et ses 4 arêtes restent intactes et navigables depuis les fiches des 4 pilotes (bloc Liens). Vérifié au rendu : /u/initial-d affiche 5 chips d'écurie (RedSuns disparu de la liste), /redsuns répond 200.",
+        "reouverture": "À reconsidérer seulement si le modèle de données passe à une affiliation multiple (array) ou si le filtre d'axe apprend à lire les relations appartient — pas avant."
+      }
+    },
+    "initial_d_col": {
+      "constat": "Mont Akagi (3 pilotes réels + la fiche du col elle-même comptée dans les 4), Col d'Usui (2 + 1 = 3), Irohazaka (2 + 1 = 3) sont sous le seuil. Chaque groupe recoupe exactement les mêmes personnages déjà documentés comme canon-complets côté affiliation (RedSuns/ex-RedSuns→Project D sur Akagi, Impact Blue sur Usui, Emperor sur Irohazaka).",
+      "decision": "GARDÉS, PLAFONDS canon — même raisonnement que les affiliations correspondantes, pas de nouvelle fiche à inventer."
+    },
+    "death_note_camp": {
+      "wammy_s_house_3": {
+        "constat": "Roger Ruvie, Mello, Matt (Mail Jeevas). L et Near, pourtant de la Wammy's House, sont tagués sur leur camp OPÉRATIONNEL (« Cellule d'enquête » pour L, « SPK » pour Near) — modèle volontairement exclusif, pas un oubli : Watari est logé au même endroit (Cellule d'enquête).",
+        "decision": "GARDÉ, PLAFOND — cohérent avec le design de l'axe (camp narratif, pas simple lieu d'origine)."
+      },
+      "spk_3_vers_6": {
+        "constat": "Near, Ellickson Gardner, Steve Mason seulement — alors que 3 fiches DÉJÀ EN BASE, avec des descFr déjà sourcées et explicites, n'étaient simplement pas taguées : Anthony Carter (« désormais le numéro 2 du SPK »), Stephen Loud (« travaille pour Near... aux côtés de Lidner et Rester »), Halle Bullook (Halle Lidner, agent du SPK).",
+        "action": "ÉTOFFÉ par AJOUT SEUL (aucune fiche créée, aucune supprimée) : attributes.camp='SPK' posé sur ces 3 fiches, sourcé par leur propre descFr déjà en base.",
+        "verifie": "axe camp=SPK : 3 → 6 fiches (Near, Stephen Loud, Anthony Carter, Steve Mason, Ellickson Gardner, Halle Bullook) — au-dessus du seuil de 5."
+      }
+    }
+  },
+
+  "4_verdict_par_univers": {
+    "death_note": {
+      "clos": false,
+      "ce_qui_l_en_empeche": [
+        "shingo-midou reste à une descFr d'une phrase (QC 2/10) — la voie fandom_descfr n'a jamais tourné (usine cassée depuis le 07/08, voir tasks/akasha-organisation.md §F.4) ; hors mandat explicite de l'entrée 15 qui ne demandait que la section.",
+        "mello garde l'infobox brute en tête de sa descFr affichée (« Âge : 13-15 ans... ») — tâche toilettage_fr jamais passée non plus, PAS dans la liste des 5 actions manuelles mandatées ici, donc non touchée cette session.",
+        "Le contrôle qualité complet du 02/08 portait sur 12 fiches seulement (échantillon), pas sur les 84 — un re-passage systématique (item 3 de l'entrée Death Note du plan) reste à faire une fois ops-controle-final rebranché."
+      ],
+      "plafond": "0 fiche sans descFr, 84/84 — c'est un fait acquis et stable, pas un travail en attente."
+    },
+    "jojo": {
+      "clos": false,
+      "ce_qui_l_en_empeche": [
+        "2 fiches (family-club-vendor déjà traitée en repli, donc OK) — reste RIEN côté descFr manquante : 0/233.",
+        "Parties 7 et 8 restent des arcs fantômes (4 et 2 fiches, uniquement des pouvoirs, 0 personnage) — seul vrai obstacle restant à un JoJo « fini », et c'est un chantier de création de fiches, pas de description."
+      ],
+      "plafond": "descFr 233/233 désormais — mais l'univers ne peut pas être dit clos tant que 2 arcs sur 8 (Steel Ball Run, JoJolion) n'ont aucun personnage curé."
+    },
+    "hunter_x_hunter": {
+      "clos": true,
+      "ce_qui_l_en_empeche": "Rien d'identifié : 215/215 descFr, 0 fiche vide, axe nen sain sur ses 6 valeurs (toutes ≥ 5), sister-ortho traitée. Seul reste marginal : la purge inter-univers des 11 arêtes vers Naruto (chantier transversal déjà couvert ailleurs, plafond n°11 du plan général — 0 arête inter-univers en base au 07/08, donc déjà réglé)."
+    },
+    "initial_d": {
+      "clos": false,
+      "ce_qui_l_en_empeche": [
+        "2 fiches (kawase-mitsuro, kazama-toshiaki) dont la CANONICITÉ MÊME est douteuse (voir §2) — ni descFr écrite ni fiche retirée, statu quo documenté en attendant un arbitrage de Dan (retirer, ou confirmer via une autre source que ces personnages existent bien dans Initial D).",
+        "Akagi RedSuns décurée du filtre — l'axe affiliation ne peut plus jamais afficher que 5 écuries tant que le modèle reste mono-affiliation."
+      ],
+      "plafond": "descFr 42/44 (2 non résolubles avec les moyens de cette session) ; tous les autres axes minces (Team Emperor, Impact Blue, Akina SpeedStars, tous les cols) sont des plafonds canon assumés, pas des manques."
+    }
+  },
+
+  "chiffres_compte_croise": {
+    "descFr_absentes_avant_mesuree_ce_matin": { "jojo": 14, "hunter_x_hunter": 3, "initial_d": 2, "total": 19 },
+    "descFr_absentes_apres": { "jojo": 0, "hunter_x_hunter": 0, "initial_d": 2, "total": 2 },
+    "descFr_ecrites_cette_session": 17,
+    "sections_death_note_avant_apres": { "noriko": "1 → 0", "shingo_midou": "2 → 1" },
+    "summary_description_corriges_death_note": 3,
+    "descFr_corrigee_death_note": 1,
+    "camp_spk_avant_apres": "3 → 6",
+    "taxonomy_valeurs_decurees": 1,
+    "fiches_supprimees": 0,
+    "fiches_creees": 0,
+    "build": "tsc propre sur lib/akasha/universe-taxonomy.ts ; 8 pages vérifiées en HTTP 200 sur le dev local (hub initial-d, redsuns, noriko, shingo-midou, george-sairas, light-s-teacher, daril-ghiroza, the-world, sister-ortho)"
+  }
+}

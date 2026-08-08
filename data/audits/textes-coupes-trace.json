@@ -1,0 +1,1144 @@
+{
+  "chantier": "textes-coupes",
+  "fait_le": "2026-08-08T06:51:22.189959Z",
+  "objet": "attributes.descFr coupé en pleine phrase + signatures de scraper résiduelles (« Source : … »)",
+  "plafond_deja_releve": "Le plafond de l'écrivain N'EST PAS un diagnostic à refaire : scripts/agent-worker.mjs porte depuis le 01/08 une garde de CODE (phraseComplete, ligne ~84, zod .refine) qui REFUSE toute nouvelle production fandom_descfr/toilettage_fr dont le texte ne finit pas par une ponctuation forte — aucune fiche coupée ne peut plus être ÉCRITE en base depuis cette date. Les 70 fiches ci-dessous sont un STOCK HISTORIQUE, écrit AVANT la garde (ou par un pipeline de scraping plus ancien, cf. les 22 signatures « Source : Wikipedia/Dragon Ball Wiki/… »), pas un défaut vivant. NUM_PREDICT.fiche_section a été relevé 1 600→2 600 le 08/08 (commit 76f0719f) pour une panne DIFFÉRENTE (des SECTIONS qui mouraient au plafond de tokens, pas descFr) — à ne pas confondre. NUM_PREDICT.fandom_descfr reste à 500 : il n'a pas eu besoin d'être relevé, la garde de code suffit à empêcher qu'un futur dépassement s'écrive en base (le worker le rejoue au lieu de l'appliquer).",
+  "methode": "1) Lecture de akasha_entries (7 687 fiches, 7 068 avec descFr non vide) via clientSite(). 2) CANDIDATS = descFr dont la fin ne matche pas /[.!?…»\"”)\\]]\\s*$/ (regex de la garde de production phraseComplete) → 108 candidats. 3) Chaque candidat LU (aucun seuillage — 108 > 20 mais la règle maison sur les cas AMBIGUS ne dispense pas de lire un compte de candidats explicite). 4) Signatures de scraper cherchées sur LES 7 068 fiches (pas seulement les candidats) : 22 fiches portent « Source : Wikipedia/Dragon Ball Wiki/Dragon Ball Wikia/Boruto Wiki/Kanzenshuu » en fin de texte.",
+  "comptes": {
+    "fiches_avec_descFr": 7068,
+    "candidats_bruts": 108,
+    "vrai_coupures_pleine_phrase": 48,
+    "signatures_scraper_source": 22,
+    "fins_legitimes_ecartees": 58,
+    "chevauchement_vrai_et_signature": [],
+    "total_fiches_a_corriger": 70
+  },
+  "classification": {
+    "vrai": [
+      "joseph-joestar",
+      "jotaro-kujo",
+      "josuke-higashikata",
+      "vegeta",
+      "hit",
+      "kurapika",
+      "majin-buu",
+      "musse",
+      "piccolo",
+      "son-goku",
+      "shura",
+      "bulma",
+      "deidara",
+      "tsubaki-kurogane",
+      "hanare",
+      "minato-namikaze",
+      "sora",
+      "kankuro",
+      "hidan",
+      "shino-aburame",
+      "bruno-bucciarati",
+      "giant-ox",
+      "kiba-inuzuka",
+      "kisame-hoshigaki",
+      "shikamaru-nara",
+      "kakuzu",
+      "might-guy",
+      "naruto-uzumaki",
+      "nine-tailed-naruto-clone",
+      "mitsuki",
+      "boruto-uzumaki",
+      "hashirama-senju",
+      "kosuke-maruboshi",
+      "guren",
+      "menma-namikaze",
+      "natsuki-mogi",
+      "shen-long",
+      "ten-shin-han",
+      "sakura-haruno",
+      "kimimaro",
+      "anita",
+      "jonathan-joestar",
+      "bunta-fujiwara",
+      "bonolenov-ndongo",
+      "gol-d-roger",
+      "sabo",
+      "kaidou",
+      "enya-geil"
+    ],
+    "signatures_scraper": [
+      "chibi",
+      "himawari-uzumaki",
+      "uub",
+      "bra",
+      "bulma-s-mother",
+      "guldo",
+      "gregory",
+      "chojuro",
+      "king-vegeta",
+      "utakata",
+      "kale",
+      "konkichi",
+      "zarbon",
+      "future-mai",
+      "burter",
+      "babidi",
+      "recoome",
+      "kami",
+      "dabura",
+      "dai-kaio",
+      "rou-kaioshin",
+      "jaco-teirimentenpibosshi"
+    ],
+    "fins_legitimes_ecartees_avec_motif": [
+      {
+        "slug": "dalmatian",
+        "len": 1684,
+        "fin": ". Première apparition : Chapitre 553 ; Épisode 462",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "monet",
+        "len": 1166,
+        "fin": " « Ufufufufu ». Première apparition : Chapitre 657",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "big-pan",
+        "len": 1142,
+        "fin": "du Groggy Ring. Première apparition : Chapitre 309",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "yonka",
+        "len": 1071,
+        "fin": ". Première apparition : Chapitre 608 ; Épisode 527",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "ichika",
+        "len": 1004,
+        "fin": ". Première apparition : Chapitre 608 ; Épisode 527",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "braham",
+        "len": 864,
+        "fin": ". Première apparition : Chapitre 249 ; Épisode 163",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "corgi",
+        "len": 824,
+        "fin": "e de sauvetage. Première apparition : Chapitre 328",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "strawberry",
+        "len": 759,
+        "fin": ". Première apparition : Chapitre 420 ; Épisode 302",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "gorilla",
+        "len": 677,
+        "fin": "silex standard. Première apparition : Chapitre 596",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "terry",
+        "len": 619,
+        "fin": ". Première apparition : Chapitre 223 ; Épisode 146",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "roshio",
+        "len": 595,
+        "fin": ". Première apparition : Chapitre 222 ; Épisode 146",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "aunt",
+        "len": 567,
+        "fin": "r l'accompagner. Première apparition : Épisode 318",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "bepo",
+        "len": 525,
+        "fin": "our de la Fourrure) Affiliations : Pirates du Cœur",
+        "motif": "clause finale grammaticalement complète (nom/adjectif/liste), sans point final — lu individuellement, aucune perte de contenu identifiée"
+      },
+      {
+        "slug": "gu",
+        "len": 483,
+        "fin": "is pas dans le manga. Première apparition : Film 4",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "tsuru",
+        "len": 459,
+        "fin": ". Première apparition : Chapitre 234 ; Épisode 151",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "shine",
+        "len": 425,
+        "fin": ". Première apparition : Chapitre 214 ; Épisode 128",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "aswa",
+        "len": 418,
+        "fin": ". Première apparition : Chapitre 163 ; Épisode 100",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "dio-brando",
+        "len": 356,
+        "fin": "rtie 3 : Stardust Crusaders Partie 6 : Stone Ocean",
+        "motif": "clause finale grammaticalement complète (nom/adjectif/liste), sans point final — lu individuellement, aucune perte de contenu identifiée"
+      },
+      {
+        "slug": "itomimizu",
+        "len": 334,
+        "fin": "nt « Tubifex ». Première apparition : Chapitre 306",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "shigure",
+        "len": 307,
+        "fin": "es dessins circulaires intégrés sur toute la gaine",
+        "motif": "clause finale grammaticalement complète (nom/adjectif/liste), sans point final — lu individuellement, aucune perte de contenu identifiée"
+      },
+      {
+        "slug": "spector",
+        "len": 291,
+        "fin": ". Première apparition : Chapitre 223 ; Épisode 146",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "capote",
+        "len": 287,
+        "fin": "fendre l'océan. Première apparition : Chapitre 306",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "stool",
+        "len": 272,
+        "fin": "a. Première apparition : Chapitre 134 ; Épisode 81",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "sarkies",
+        "len": 256,
+        "fin": ". Première apparition : Chapitre 222 ; Épisode 146",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "sayo",
+        "len": 251,
+        "fin": "ve de leur père. Première apparition : Épisode 382",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "stainless",
+        "len": 236,
+        "fin": "). Première apparition : Chapitre 96 ; Épisode 151",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "gyro-one-piece",
+        "len": 224,
+        "fin": "ommes-Poissons. Première apparition : Chapitre 611",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "spandine",
+        "len": 202,
+        "fin": ". Première apparition : Chapitre 392 ; Épisode 275",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "hanger",
+        "len": 195,
+        "fin": "re. Première apparition : Chapitre 97 ; Épisode 48",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "run",
+        "len": 184,
+        "fin": ". Première apparition : Chapitre 679 ; Épisode 605",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "den",
+        "len": 178,
+        "fin": "a Forêt Marine. Première apparition : Chapitre 616",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "sho",
+        "len": 174,
+        "fin": "llent « Tatie ». Première apparition : Épisode 318",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "akihiro",
+        "len": 172,
+        "fin": "llent « Tatie ». Première apparition : Épisode 318",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "stelly",
+        "len": 171,
+        "fin": " celle de Sabo. Première apparition : Chapitre 586",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "ayako",
+        "len": 170,
+        "fin": "llent « Tatie ». Première apparition : Épisode 318",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "gear-4-gear-fourth-snake-man",
+        "len": 159,
+        "fin": "première fois contre Katakuri dans le Mirror World",
+        "motif": "clause finale grammaticalement complète (nom/adjectif/liste), sans point final — lu individuellement, aucune perte de contenu identifiée"
+      },
+      {
+        "slug": "mjosgard-donquixote",
+        "len": 148,
+        "fin": "ut de la série. Première apparition : Chapitre 625",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "oden-kozuki",
+        "len": 146,
+        "fin": "Kozuki, Pirates de Roger, Pirates de Barbe Blanche",
+        "motif": "clause finale grammaticalement complète (nom/adjectif/liste), sans point final — lu individuellement, aucune perte de contenu identifiée"
+      },
+      {
+        "slug": "ally",
+        "len": 144,
+        "fin": ". Première apparition : Chapitre 658 ; Épisode 583",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "zeo",
+        "len": 136,
+        "fin": "ommes-Poissons. Première apparition : Chapitre 611",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "sind",
+        "len": 136,
+        "fin": ". Première apparition : Chapitre 657 ; Épisode 582",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "daruma",
+        "len": 136,
+        "fin": "ommes-Poissons. Première apparition : Chapitre 611",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "senor-pink",
+        "len": 135,
+        "fin": " de Donquixote. Première apparition : Chapitre 702",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "yamato",
+        "len": 130,
+        "fin": "inja-Pirate-Mink-Samouraï ; Pirates aux Cent Bêtes",
+        "motif": "clause finale grammaticalement complète (nom/adjectif/liste), sans point final — lu individuellement, aucune perte de contenu identifiée"
+      },
+      {
+        "slug": "hiramera",
+        "len": 122,
+        "fin": ". Première apparition : Chapitre 608 ; Épisode 527",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "kairen",
+        "len": 120,
+        "fin": ". Première apparition : Chapitre 608 ; Épisode 527",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "russian",
+        "len": 93,
+        "fin": "mère de Gimlet. Première apparition : Chapitre 775",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "konpira",
+        "len": 78,
+        "fin": " laisse supposer une très bonne qualité de la lame",
+        "motif": "phrase ou fait court déjà complet — sans point final"
+      },
+      {
+        "slug": "sind-s-father",
+        "len": 48,
+        "fin": "Première apparition : Chapitre 673 ; Épisode 599",
+        "motif": "queue d'infobox complète (Chapitre/Épisode/Film cité en entier) — rien de perdu, juste sans point final"
+      },
+      {
+        "slug": "smile-de-l-heterodon",
+        "len": 40,
+        "fin": "il permet de se transformer en hétérodon",
+        "motif": "phrase ou fait court déjà complet — sans point final"
+      },
+      {
+        "slug": "smile-du-gorille",
+        "len": 38,
+        "fin": "il permet de se transformer en gorille",
+        "motif": "phrase ou fait court déjà complet — sans point final"
+      },
+      {
+        "slug": "smile-de-la-crotale",
+        "len": 38,
+        "fin": "il permet de se transformer en crotale",
+        "motif": "phrase ou fait court déjà complet — sans point final"
+      },
+      {
+        "slug": "smile-de-caiman",
+        "len": 37,
+        "fin": "il permet de se transformer en caïman",
+        "motif": "phrase ou fait court déjà complet — sans point final"
+      },
+      {
+        "slug": "smile-de-la-girafe",
+        "len": 37,
+        "fin": "il permet de se transformer en girafe",
+        "motif": "phrase ou fait court déjà complet — sans point final"
+      },
+      {
+        "slug": "smile-de-carlin",
+        "len": 37,
+        "fin": "il permet de se transformer en carlin",
+        "motif": "phrase ou fait court déjà complet — sans point final"
+      },
+      {
+        "slug": "smile-du-coq",
+        "len": 34,
+        "fin": "il permet de se transformer en coq",
+        "motif": "phrase ou fait court déjà complet — sans point final"
+      },
+      {
+        "slug": "adele",
+        "len": 33,
+        "fin": "Épisodes : 527-529, 558, 569, 573",
+        "motif": "phrase ou fait court déjà complet — sans point final"
+      },
+      {
+        "slug": "fruit-du-bovin-version-lama",
+        "len": 32,
+        "fin": "Permet de se transformer en lama",
+        "motif": "phrase ou fait court déjà complet — sans point final"
+      }
+    ]
+  },
+  "avant": {
+    "anita": {
+      "id": "6759644c-f7cc-4586-baf3-5a0456996cee",
+      "slug": "anita",
+      "name": "Anita",
+      "universe": "JoJo's Bizarre Adventure",
+      "type": "character",
+      "descFr": "Anita est une femme de la haute société assise dans le même train que Melone. Elle est arrogante et gâtée, se plaignant du bruit des autres passagers et les traitant de paysans. Melone lui demande comment elle se porte et fouille dans son sac pour trouver une pièce d'identité, découvrant qu'elle a 24 ans et est née le 10 mars 1977. Elle le gifle et dit qu'elle va appeler la sécurité, mais Melone lui lèche le doigt et détermine qu'elle est de groupe sanguin O, et qu'elle est aussi plutôt forte pour une femme de son âge. Anita révèle que sa famille a de solides relations au sein de la police et du gouvernement et ne laisserait pas passer ce que Melone a fait. Melone découvre qu'elle a une mauvaise compatibilité avec Bruno Bucciarati et qu'elle est aussi fumeuse et buveuse, ce qui fait d'elle un parent parfait pour Baby Face avec l'ADN de Bucciarati. En trois minutes et trois secondes, elle « conçoit » le Stand homoncule, probablement dans sa tête ou son cou, qui apprend rapidement de son langage vulgaire après qu'elle a exprimé son intention de vouloir assassiner Melone et insulté le contrôleur du train. Baby Face urine plus tard partout dans le dos d'Anita, la poussant à croire que le train est sale. Alors qu'elle sort en courant du train pour trouver un témoin afin de poursuivre la compagnie ferroviaire",
+      "len": 1324,
+      "descFrSource": null
+    },
+    "babidi": {
+      "id": "cda557c6-940a-439c-ba9c-8e7601b96ec4",
+      "slug": "babidi",
+      "name": "Babidi",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Babidi était déterminé à ressusciter Majin Buu afin de poursuivre l'œuvre de son père, à savoir conquérir l'univers, et ainsi le rendre fier. (Source : Wikipedia)",
+      "len": 162,
+      "descFrSource": null
+    },
+    "bonolenov-ndongo": {
+      "id": "120f300a-696e-412f-bf50-0d6462d7645b",
+      "slug": "bonolenov-ndongo",
+      "name": "Bonolenov Ndongo",
+      "universe": "Hunter x Hunter",
+      "type": "character",
+      "descFr": "Bonolenov est le membre numéro 13. Il est vêtu en partie de haillons et ressemble à une momie. Durant l'arc de York Shin, son apparition fut insignifiante. Durant l'arc des Chimera Ant, on le vit combattre avec le reste de la Genei Ryodan contre les Chimera Ant. On sait très peu de choses sur sa personnalité et ses raisons d'avoir rejoint la Ryodan, mais dans le combat contre les Chimera Ant il affiche une attitude moqueuse et confiante. Bonolenov est originaire de la tribu Gyudondondo, et c'est l'un des membres de la Genei Ryodan qui n'est pas originaire de Ryūseigai. Lorsque les garçons de sa tribu ont 3 ans, on leur enfonce des aiguilles dans le corps. Ces aiguilles sont progressivement remplacées par de plus grosses aiguilles, puis par des bâtons, jusqu'à créer des trous dans la peau. Les membres de cette tribu sont appelés « guerriers danseurs », peut-être en référence aux différents sons produits selon les trous. Il est vêtu de bandages qui recouvrent un grand nombre de trous répartis sur tout son corps. Capacité Nen :",
+      "len": 1040,
+      "descFrSource": null
+    },
+    "boruto-uzumaki": {
+      "id": "cf0b9fc8-06d7-44d3-9eb0-21e62b705275",
+      "slug": "boruto-uzumaki",
+      "name": "Boruto Uzumaki",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Boruto Uzumaki est un ninja de Konohagakure appartenant au clan Uzumaki et un descendant direct du clan Hyûga par sa mère. D'abord plein de ressentiment envers son père et son absence depuis qu'il est devenu Hokage, Boruto finit par respecter son père et ses devoirs. Il jure néanmoins de devenir plutôt un ninja à l'image de son mentor. Boruto est bruyant, énergique et têtu, tout comme son père ; il possède même un tic verbal, « dattebasa » (だってばさ), semblable au « dattebayo » de Naruto et au « (da)ttebane » ((だ)ってばね) de sa grand-mère paternelle. Cependant, comparé à son père au même âge, Boruto est plus raffiné et rusé, connaissant apparemment tous les raccourcis, et plus mûr dans sa compréhension du fonctionnement du monde. Des deux, il est le plus sarcastique. Contrairement à Naruto, Boruto ne crie pas ce qu'il ressent, ce qui constitue la plus grande différence. Malgré son attitude décontractée, il est très appliqué. À l'inverse, l'éducation de Boruto a aussi été différente de celle de son père : la famille de Boruto est toujours là pour lui, il a de même beaucoup d'amis, et ses acquis lui sont venus facilement et naturellement grâce à une combinaison de talents prodigieux et de parents aimants. À l'image de leurs parents, Boruto partage un lien",
+      "len": 1267,
+      "descFrSource": null
+    },
+    "bra": {
+      "id": "40037e40-83d3-4fef-a0e9-9e33907d6e9f",
+      "slug": "bra",
+      "name": "Bra",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Bra est le second enfant (après Trunks) de Bulma et Vegeta. Contrairement à Pan qui se comporte en garçon manqué, Bra se comporte de manière féminine et reste auprès de sa mère. Comme Bulma, Bra a les cheveux bleus dans l'anime et violets dans le manga. Son père ne semble pas tenir à l'encourager à s'entraîner (comme il le fait avec son frère Trunks), mais tous deux sont très proches, comme cela devient évident dans Dragon Ball GT, où Vegeta se montre très protecteur envers sa fille à plusieurs reprises. Durant la saga Bébi, Bra (comme le reste du monde) est possédée par Bébi. Elle est l'un des quatre personnages qui aident Bébi à devenir plus fort ; après cela, cependant, son rôle est grandement réduit. Bien qu'on ne l'ait jamais vue au combat (elle préfère faire du shopping plutôt que s'entraîner), sauf quand Bébi la contrôlait, elle a la capacité de voler grâce à son ki. (Source : Wikipedia)",
+      "len": 907,
+      "descFrSource": null
+    },
+    "bruno-bucciarati": {
+      "id": "f6a29e7f-9c69-4da9-96d7-0b7cad556e15",
+      "slug": "bruno-bucciarati",
+      "name": "Bruno Bucciarati",
+      "universe": "JoJo's Bizarre Adventure",
+      "type": "character",
+      "descFr": "Taille : 178 cm Nationalité : Italien Profession : Capo de Passione Bruno Bucciarati fait sa première apparition en tant que membre du gang fictif « Passione », interrogeant Giorno Giovanna sur la mort d'un autre membre du gang, Luca « l'Œil Larmoyant ». Par la suite, Giorno convainc Bucciarati de l'aider à renverser le boss de « Passione », dans un complot visant à prendre le contrôle du gang. Finissant par déserter « Passione », Bucciarati mène un groupe de membres renégats du gang contre le boss, qui se révèle être un homme nommé Diavolo. Enfant, Bruno est né dans un pauvre village de pêcheurs, mais il admirait son père pour l'amour qu'il portait à sa famille. Lorsque son père se retrouva mêlé au trafic de drogue et fut gravement blessé, Bruno le protégea de ceux qui essayaient de le tuer, en les tuant lui-même. Cela l'entraîna dans le monde des gangsters. Bien qu'il fût membre de « Passione », il avait une personnalité aimable ; de nombreuses personnes venaient le voir pour obtenir de l'aide. Sticky Fingers est le nom du Stand de Bucciarati. Il a la capacité de placer une fermeture éclair entièrement fonctionnelle d'un simple toucher. Par exemple : Sticky Fingers peut frapper un mur, y plaçant une fermeture éclair. Il peut ensuite ouvrir la fermeture, permettant de passer à travers ou dans",
+      "len": 1314,
+      "descFrSource": null
+    },
+    "bulma": {
+      "id": "57ed5a7d-e337-4a00-ab5d-678213717c78",
+      "slug": "bulma",
+      "name": "Bulma",
+      "universe": "Dragon Ball",
+      "type": "character",
+      "descFr": "Race : Terrienne. Taille : 165 cm. Poids : 49 kg. Année de naissance : An 733. Loisir : inventer. Nourriture préférée : les fraises. Véhicule préféré : tous types de véhicules. Bulma est au départ un personnage principal secondaire, mais son rôle est vite minimisé au fil de la série, même si elle reste un personnage de soutien important pour la majeure partie de celle-ci. Bulma est une parodie directe du personnage de Xuanzang du roman chinois La Pérégrination vers l'Ouest. Bien que le personnage de Bulma parodie un moine, son nom japonais « Buruma » désigne une marque de shorts de gym populaires portés par les filles au Japon. Son nom réadapté, Bulma, est une reprise directe du mot « bloomers », une marque populaire de sous-vêtements féminins du début du XXe siècle. Bulma est le deuxième personnage introduit dans la série Dragon Ball. Au début de l'histoire, elle est l'inventrice du Radar à Dragon Balls et recherche les légendaires Dragon Balls. Bulma espérait utiliser les Dragon Balls pour souhaiter le petit ami parfait. En cherchant une Dragon Ball voisine, elle tombe sur Son Goku. C'est alors qu'elle découvre que Goku a hérité de son grand-père Gohan l'une des boules qu'elle recherche (la boule à quatre étoiles). À cause de l'amour de Goku pour cette boule et de sa croyance que l'esprit de son grand-père y vit, Goku n'est pas disposé à s'en séparer. Bulma lui demande alors de la lui prêter en échange de l'emmener avec elle dans ses voyages. À ce moment, ils font équipe pour trouver le reste des boules et l'aventure commence. Dans la suite",
+      "len": 1568,
+      "descFrSource": null
+    },
+    "bulma-s-mother": {
+      "id": "52aba9a9-76c6-42d3-a99f-8c8405f7b773",
+      "slug": "bulma-s-mother",
+      "name": "Bulma's Mother",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "La mère de Bulma, dont le nom n'est pas donné, est la femme du Dr Briefs. Elle est toujours intéressée à flirter avec Goku et Vegeta. Dans l'anime, elle déclare qu'elle aimerait sortir avec Vegeta et Goku. Lorsque Bulma proposa à Vegeta de rester chez eux — peu après que Vegeta avait tenté de tuer les Guerriers Z —, il fut immédiatement accueilli à bras ouverts et déconcerté par la mère de Bulma ; le choc de voir quelqu'un se montrer si aimable envers lui faillit le submerger. On sait peu de choses sur elle, mais dans l'anime elle est perpétuellement joyeuse, et caractérisée comme l'archétype de la blonde écervelée qui adore faire du shopping et manger des gâteaux hors de prix. Elle ne semble jamais vieillir tout au long de la série et paraît toujours aussi jeune que lors de son introduction vers le début de Dragon Ball. Son vrai nom est inconnu, mais Akira Toriyama a déclaré que s'il devait lui donner un nom, ce serait « Panchi » (jeu de mots sur « panties », culottes en anglais). (Source : Wikipedia, Kanzenshuu)",
+      "len": 1029,
+      "descFrSource": null
+    },
+    "bunta-fujiwara": {
+      "id": "3225a19d-b9ec-409d-acc4-95dd345e154b",
+      "slug": "bunta-fujiwara",
+      "name": "Bunta Fujiwara",
+      "universe": "Initial D",
+      "type": "character",
+      "descFr": "Âge : 43 ans (44 dans Project D). Voiture : Subaru Impreza WRX STI Coupé Type R Version V (GC8) (couleur : Sonic Blue Mica dans l'anime / Gunmetal Gray Mica dans le manga). Aime : le son d'un carburateur, le tabac. N'aime pas : le tofu, les grosses voitures. Bunta Fujiwara est le propriétaire d'une boutique de tofu à Akina, et le père de Takumi. Il était autrefois le pilote de descente n°1 du mont Akina, mais il ne court plus, préférant guider le développement de Takumi. C'est le pilote d'origine de la mystérieuse AE86 qui détient le record du meilleur temps en descente à Akina. Bunta a une manière bien particulière d'entraîner son fils à conduire : chaque matin, quand Takumi livre le tofu, Bunta lui donne un gobelet d'eau. Le gobelet est placé dans le porte-gobelet ; Takumi ne doit pas en renverser une seule goutte pendant qu'il conduit. C'est censé éviter de casser le tofu dans le coffre, mais cela force Takumi à conduire de manière très souple. Quant à Bunta, il est toujours considéré comme le pilote de descente le plus rapide d'Akina. On en a la preuve dès le début de la série lorsqu'il pousse le Trueno avec Yuuichi côté passager en train d'allumer une cigarette, tout en driftant dans un virage. Saison quatre :",
+      "len": 1234,
+      "descFrSource": null
+    },
+    "burter": {
+      "id": "b2560640-4331-4622-9eab-9ca52b1c9558",
+      "slug": "burter",
+      "name": "Burter",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Butta est le membre le plus grand de l'équipe. C'est un extraterrestre à la peau bleue surnommé « l'Ouragan Bleu » qui se considère comme la personne la plus rapide de l'univers. Et en effet, il possède une vitesse incroyable qu'il démontre en récupérant prestement une Dragon Ball lancée par Vegeta pour l'empêcher de tomber entre les mains de Freezer. Selon Kuririn, Butta et Jheese sont tous deux aussi forts que Reacoom. (Source : Wikipedia)",
+      "len": 445,
+      "descFrSource": null
+    },
+    "chibi": {
+      "id": "10aa73b4-77a8-4757-b743-b46e07155e33",
+      "slug": "chibi",
+      "name": "Chibi",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Chibi est le membre barbu et de petite taille du groupe de Tall Man. Il n'est pas nommé dans le doublage FUNimation. Son nom signifie approximativement « super-déformé » ou « nabot » en japonais, et fait peut-être référence à sa petite taille. (Source : Dragon Ball Wikia)",
+      "len": 272,
+      "descFrSource": null
+    },
+    "chojuro": {
+      "id": "783820a5-2a80-4313-a1fb-6fa712042e28",
+      "slug": "chojuro",
+      "name": "Chōjūrō",
+      "universe": "Naruto",
+      "type": null,
+      "descFr": "Semble être l'un des Sept Épéistes. Il protège le Mizukage durant leur voyage vers le Sommet des Kage. Il paraît peu sûr de lui. Il semble manier une sorte d'arme double (vraisemblablement une épée) reliée par les poignées. (Source : Narutopedia)",
+      "len": 246,
+      "descFrSource": null
+    },
+    "dabura": {
+      "id": "dc594cd7-b4c8-4e6c-b4da-5d3c41e0272f",
+      "slug": "dabura",
+      "name": "Dabura",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Dabra est le roi d'un Royaume des Démons, et le bras droit de Babidi, placé sous son contrôle par un sortilège. Dabra a le pouvoir spécial de transformer ses ennemis en pierre, simplement en crachant sur eux. Son nom est à l'origine tiré d'une prononciation japonaise de la seconde moitié de l'incantation « Abracadabra ». Goku mentionne que la puissance de Dabra est égale à celle de Cell parfait. (Source : Wikipedia)",
+      "len": 419,
+      "descFrSource": null
+    },
+    "dai-kaio": {
+      "id": "e88dda3b-6c97-45f6-9a50-b94ecb03c4c2",
+      "slug": "dai-kaio",
+      "name": "Dai Kaio",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Bien que le Grand Kaiô n'apparaisse pas dans le manga Dragon Ball, il y est mentionné. En fait, sa caractérisation dans l'anime fut suggérée à l'équipe de production par l'auteur du manga lui-même, Akira Toriyama. Le Grand Kaiô est dépeint comme un vieux hippie, portant généralement un jean et une veste en jean, et écoutant constamment du rock sur son poste radio. Bien qu'il soit le professeur des plus grands guerriers de l'univers, le Grand Kaiô est davantage une figure de grand-père doux et bienveillant qu'un adepte de la discipline traditionnelle (tout comme le Kaiô du Nord et Maître Roshi). Ne tenant aucun compte du formalisme respectueux mais froid, il traite avec amour ses inférieurs sociaux comme des égaux et les choie comme s'ils étaient ses propres petits-enfants. (Source : Dragon Ball Wiki)",
+      "len": 811,
+      "descFrSource": null
+    },
+    "deidara": {
+      "id": "9f31a928-28cf-4f5c-bc74-298cc379dbbb",
+      "slug": "deidara",
+      "name": "Deidara",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Élément de chakra : Doton Taille : 166 cm Fonction : membre de l'Akatsuki Deidara est un ninja déserteur d'Iwagakure. Avant de rejoindre l'Akatsuki, Deidara était un poseur de bombes terroriste à louer. Son travail attira l'attention de Pain, qui envoya d'autres membres de l'Akatsuki le recruter. Bien qu'il ait d'abord refusé, Deidara fut contraint de rejoindre l'organisation après avoir été vaincu par Itachi Uchiha. Deidara nourrit dès lors une profonde aversion pour Itachi et devint déterminé à le vaincre, allant jusqu'à entraîner l'un de ses yeux pour surmonter la capacité emblématique d'Itachi : le genjutsu. Deidara fit équipe avec Sasori en rejoignant l'organisation, lequel gagna l'admiration de Deidara par son talent artistique et sa perspicacité. Deidara fit ensuite équipe avec Tobi après la mort de Sasori, qu'il traitait comme un disciple. Malgré l'habitude de Tobi de mettre accidentellement Deidara en colère, Deidara prenait grand soin de protéger Tobi du danger et passa même ses derniers instants à lui présenter des excuses. Au combat, Deidara utilise des bouches spéciales dans la paume de chaque main pour créer de l'Argile Explosive, une argile imprégnée de chakra qui explose sur commande. Il utilise couramment le commandement « Katsu » pour la déclencher. La puissance de l'explosion de ses créations dépend de la quantité de chakra qu'il",
+      "len": 1370,
+      "descFrSource": null
+    },
+    "enya-geil": {
+      "id": "5bbde37d-b909-40de-87b3-c11af469a431",
+      "slug": "enya-geil",
+      "name": "Enya Geil",
+      "universe": "JoJo's Bizarre Adventure",
+      "type": "character",
+      "descFr": "Enya Geil est l'une des plus loyales partisanes de Dio, et celle qui lui a initialement donné la Flèche de Stand, qu'elle avait obtenue de Diavolo. Elle est la mère de J. Geil. Son Stand est Justice, capable de contrôler les gens à travers leurs blessures, qu'ils soient vivants ou morts. Pour des raisons juridiques, son nom est modifié dans la version américaine du jeu et du manga, respectivement en N-Yah Gail et Enyaba Geil. Dans l'OAV :",
+      "len": 442,
+      "descFrSource": null
+    },
+    "future-mai": {
+      "id": "9c80f15c-ad16-4e55-a6b9-b189863f507b",
+      "slug": "future-mai",
+      "name": "Future Mai",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Mai du Futur est la Mai de la ligne temporelle de Trunks du Futur. Elle est la cheffe de la Résistance contre Black Goku. (Source : Dragon Ball Wikia)",
+      "len": 150,
+      "descFrSource": null
+    },
+    "giant-ox": {
+      "id": "964111f1-518d-49e3-a4de-b27628840b3d",
+      "slug": "giant-ox",
+      "name": "Giant Ox",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Le Démon à Huit Queues est un Démon à queues scellé en Killer B de Kumogakure, après l'échec de son cousin, de l'oncle de son cousin et du père de son cousin avant lui. Killer B étant l'un des rares Jinchûriki à avoir pris le contrôle de son Démon à queues, sa relation avec le Huit Queues est très détendue. Là où le Démon-Renard à Neuf Queues menace constamment son Jinchûriki et doit être maîtrisé ou confiné pour qu'on puisse lui parler, B et le Huit Queues peuvent discuter tranquillement, Killer B allant jusqu'à s'asseoir sur son nez. Cependant, B a tendance à agacer le Huit Queues de façon comique ; son tempérament sérieux et pragmatique contraste souvent avec la tendance de B à faire l'imbécile dès qu'il en a envie, ce qui alimente l'irritation du Démon à queues envers son hôte. Le Huit Queues n'hésite d'ailleurs pas à dire du mal de B. Il est aussi connu pour le réprimander dans les moments graves, comme lorsqu'il a critiqué B qui rappait durant son combat contre Kisame alors qu'il aurait dû être totalement concentré sur son adversaire. De ce fait, le Huit Queues semble bien plus remarquable que B en matière de sens des responsabilités. Avant que B n'apprenne à le maîtriser, le Huit Queues était réputé sauvage et violent. Il s'est aussi livré à de nombreux déchaînements lorsqu'",
+      "len": 1302,
+      "descFrSource": null
+    },
+    "gol-d-roger": {
+      "id": "f9ac920a-e60f-4784-ade0-df41e88576e4",
+      "slug": "gol-d-roger",
+      "name": "Gol D. Roger",
+      "universe": "One Piece",
+      "type": "character",
+      "descFr": "Gold Roger (dont le vrai nom fut plus tard révélé être Gol D. Roger) était le Seigneur des Pirates, le pirate le plus fort en vie, et propriétaire du trésor légendaire connu sous le nom de One Piece. Né à Loguetown, Roger était célèbre comme l'homme qui a accompli ce que nul ne croyait possible — il a conquis la Grand Line. Avant même de partir, il était le seul homme à ne vraiment pas craindre les dangers de la Grand Line et était même impatient de s'y aventurer. Malgré les avertissements sur les navires qui ne revenaient jamais de cet océan, il s'en moquait ; en fait, il a même déclaré que c'était la raison de son départ. On disait qu'il était totalement intrépide, et ceux qui ont assisté à son exécution affirment même qu'il a souri juste avant sa mort. Beaucoup de gens qui ont rencontré Monkey D. Luffy et qui ont connu Roger ont fait remarquer que les deux se ressemblent énormément. Prime :",
+      "len": 906,
+      "descFrSource": null
+    },
+    "gregory": {
+      "id": "6cbbb157-c0eb-4541-9eab-1d7246f32890",
+      "slug": "gregory",
+      "name": "Gregory",
+      "universe": "Dragon Ball",
+      "type": "character",
+      "descFr": "Gregory est un petit grillon volant et l'animal de compagnie bavard du Kaiô du Nord. Gregory est très respectueux de son maître et parle toujours de lui avec éloge, mais il dira des méchancetés à quiconque il ne juge pas meilleur que lui. Le Kaiô du Nord fit appel à lui après que Goku parvint à attraper Bubbles : le nouvel objectif était de frapper Gregory avec un lourd marteau. Bien plus tard, Gregory est tué lorsque Cell semi-parfait explose sur la planète du Kaiô du Nord. Source : Dragon Ball Wiki",
+      "len": 505,
+      "descFrSource": null
+    },
+    "guldo": {
+      "id": "60e25717-70c1-43d0-ba66-171c50b871c0",
+      "slug": "guldo",
+      "name": "Guldo",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Guldo est le membre le plus petit et le moins puissant physiquement de l'équipe. Bien qu'il soit clairement le membre le plus faible du groupe, Guldo possède certaines capacités psychiques, dont celle d'arrêter le temps (aussi longtemps qu'il peut retenir son souffle) et la télékinésie. (Source : Wikipedia)",
+      "len": 308,
+      "descFrSource": null
+    },
+    "guren": {
+      "id": "f6a19879-53ba-48ef-b3e8-76a65ad88d2f",
+      "slug": "guren",
+      "name": "Guren",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Une kunoichi qui apparaît dans le deuxième arc de remplissage de Naruto Shippûden. C'est la chef féminine des subordonnés d'Orochimaru. Elle utilise la marque unique de jutsu de l'Élément Cristal. Enfant, Guren venait d'un petit village inconnu où elle était rejetée par les autres parce qu'elle possédait des pouvoirs uniques. Plus tard, Orochimaru apparut et détruisit le village entier à lui seul. Il fut intrigué par les pouvoirs de Guren et lui proposa de venir avec lui. Guren choisit de le suivre car elle enviait sa puissance. Rapidement, elle devint l'une des subordonnées les plus puissantes et les plus loyales d'Orochimaru. Elle finit par se voir proposer de devenir l'un des futurs réceptacles d'Orochimaru. Guren apprit aussi plus tard que le Démon-Renard à Neuf Queues, le plus puissant des Démons à queues, était finalement passé en possession du Village Caché de la Feuille à la suite des événements où le Quatrième Hokage l'avait scellé dans son fils nouveau-né, mais en raison de l'extrême secret entretenu dans ce village à ce sujet, comme tout le monde en dehors de Konoha, Guren resta ignorante de l'identité du réceptacle du puissant démon, Naruto Uzumaki, qu'elle rencontrerait plus tard, parvenant plutôt à la conclusion que",
+      "len": 1249,
+      "descFrSource": null
+    },
+    "hanare": {
+      "id": "3b215d68-24d1-4ac1-b258-c91cd36f7132",
+      "slug": "hanare",
+      "name": "Hanare",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Hanare est une kunoichi du Village de Jômae. C'était une orpheline qui aspirait à voir ses parents et à trouver un foyer qu'elle pourrait appeler le sien. Enfant, Hanare était réputée très seule, car elle n'avait jamais connu sa famille ni vu son propre village. Elle fut formée dès son plus jeune âge à l'art de l'espionnage. Un jour, elle fut trouvée en train de pleurer dans un endroit proche de son village par le jeune Kakashi, qui l'aperçut et la porta sur son dos. Il lui expliqua alors qu'elle pouvait lever les yeux vers les nuages au-dessus d'elle pour retrouver son chemin. Ils furent ensuite tous deux repérés par un ninja du village de Hanare ; Kakashi la reposa sur ses pieds, lui dit au revoir et partit. Elle fut alors ravie que quelqu'un comme Kakashi ait pu l'aider dans sa vie. Les capacités de Hanare lui permettent de lire dans l'esprit de quelqu'un en utilisant son œil droit pour y regarder littéralement. Elle est même capable d'utiliser cette faculté sur ceux qui sondent ses propres pensées. Elle peut aussi effacer toutes les pensées qu'elle a recueillies. Pour utiliser cette technique, elle tisse des signes en bougeant son œil selon des schémas précis. La technique spéciale de Hanare peut l'aider à collecter et rassembler des informations sur diverses choses. Elle a aussi été entraînée à avoir une extrêmement forte",
+      "len": 1348,
+      "descFrSource": null
+    },
+    "hashirama-senju": {
+      "id": "64cdbf63-eed9-4f90-88cc-ba5a18a062da",
+      "slug": "hashirama-senju",
+      "name": "Hashirama Senju",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Kekkei Genkai : Élément Bois Clan : clan Senju Fonction : cofondateur de Konohagakure, chef du clan Senju, Hokage Hashirama Senju était un membre du célèbre clan Senju. Il fut lui-même acclamé comme le « Dieu des Ninjas » pour ses prouesses ninja inégalées. Hashirama cherchait la paix pour le monde ninja et, à cette fin, fonda Konohagakure avec son clan. Dans ses jeunes années, après que leurs clans se furent affrontés sans cesse, il allia son clan à celui de Madara Uchiha, et tous deux, avec leurs clans, fondèrent Konoha. Plus tard, Madara quitta le village en raison des politiques du village et de son clan. Ce conflit déboucha sur un combat contre Madara Uchiha et le Démon-Renard à Neuf Queues à la Vallée de la Fin. Pour commémorer ce combat, deux statues de Madara et Hashirama furent taillées dans la terre autour de la cascade. Cependant la guerre faisait toujours rage, et incertain quant au titre de Hokage, il ne se contenta pas de nommer son frère Tobirama comme son successeur en tant que Deuxième Hokage (Nidaime Hokage), mais, d'un commun accord avec son frère, ils décidèrent aussi qu'un de leurs élèves, Sarutobi, devrait devenir le Troisième Hokage (Sandaime Hokage), ce qui parut à son tour une sage décision puisque les deux frères",
+      "len": 1258,
+      "descFrSource": null
+    },
+    "hidan": {
+      "id": "eb285f91-5795-487b-b90c-566f1401b603",
+      "slug": "hidan",
+      "name": "Hidan",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Village : Yugakure, le Village Caché de la Vapeur Arme : faux à trois lames Religion : le jashinisme Parce qu'il est membre de la religion jashiniste, Hidan possède l'immortalité. Cette immortalité prendra toutefois fin s'il ne sacrifie pas régulièrement des personnes à Jashin. C'est une religion qui vénère une divinité du même nom et où tout ce qui est en deçà de la mort et de la destruction totale est considéré comme un péché. Les expérimentations de sa religion ont conduit à la création de ses capacités uniques : en consommant le sang d'un adversaire puis en traçant au sol le symbole triangulaire de Jashin, Hidan peut créer un lien de type poupée vaudou avec son adversaire. Une fois ce lien établi, tout dommage infligé au corps de Hidan se répercute sur son adversaire, ce qui lui permet de le tuer en s'infligeant des blessures mortelles. Étant immortel, Hidan n'est pas gêné en agissant ainsi, trouvant au contraire du plaisir dans la douleur que cela lui procure. Hidan est sadique, arrogant, grossier et impatient. Autant de qualités que son partenaire, Kakuzu, trouve agaçantes. Lui et son partenaire Kakuzu se battent et se disputent sans cesse, si bien qu'on peut se demander pourquoi ils sont dans la même équipe. Kakuzu a d'ailleurs remarqué que lui et Hidan formaient l'équipe parfaite, car même si Kakuz",
+      "len": 1327,
+      "descFrSource": null
+    },
+    "himawari-uzumaki": {
+      "id": "1919837a-053a-4e3a-9e3e-18c9f02f651d",
+      "slug": "himawari-uzumaki",
+      "name": "Himawari Uzumaki",
+      "universe": "Naruto",
+      "type": null,
+      "descFr": "Himawari est la deuxième et plus jeune enfant de Hinata et Naruto Uzumaki. Himawari est une personne enjouée, prévenante et au grand cœur. On la montre adorant sa famille, tout excitée de voir son père rentrer à la maison, espérant rendre heureux son défunt cousin Neji en apportant des fleurs sur sa tombe, et aimant rendre visite à sa famille maternelle chaque fois que possible, puisqu'il est révélé qu'Himawari est proche de sa tante et de son grand-père du côté de sa mère. Elle semble aussi se soucier particulièrement de son grand frère, et réciproquement, espérant toujours jouer avec lui dès que possible. Himawari a un attachement très fort à ses parents, qu'elle appelle « Maman » et « Papa ». Himawari est très mature pour son âge, aidant sa mère aux tâches ménagères. Elle tient aussi de son grand-père paternel, étant patiente, encourageante et compréhensive envers son père souvent absent et ses devoirs de Hokage, mais elle aspire parfois à ce qu'il soit à la maison. Malgré son absence d'entraînement en tant que kunoichi, Himawari a montré un potentiel considérable, étant capable de terrifier son prodigieux grand frère lorsqu'elle est en colère, et de mettre son père K.-O. d'un seul coup alors qu'elle n'était qu'un bambin. (Source : Boruto Wiki)",
+      "len": 1267,
+      "descFrSource": null
+    },
+    "hit": {
+      "id": "b3195a9c-7571-4bb4-a610-4ffe1bd7b97e",
+      "slug": "hit",
+      "name": "Hit",
+      "universe": "Dragon Ball",
+      "type": "character",
+      "descFr": "Hit est un guerrier d'une race inconnue et un tueur à gages estimé de l'Univers 6 ; il a aussi plus de 1000 ans. Sa technique emblématique est le Time Skip (Saut Temporel). Il était le dernier combattant de l'équipe de Champa dans le Tournoi des Destructeurs. Il n'était pas dans ses habitudes de participer à un événement comme le Tournoi des Destructeurs à cause de son mode de vie solitaire. Il a accepté de participer au tournoi parce que Vados lui a proposé de lui donner un cube qui lui permettrait de voyager entre les univers. Hit est d'abord dépeint comme une personne impassible et silencieuse qui ne parle que lorsque c'est nécessaire. Durant le tournoi, il se levait rarement de son siège dans les gradins et gardait toujours les yeux fermés, car il n'était là que pour obtenir le cube. Durant les premières parties du tournoi, Hit élimine Frost puis Vegeta en montrant peu de remords ou d'empathie envers l'un ou l'autre. Son plus grand combat fut contre Goku, son parfait opposé du fait de la nature joueuse et bavarde de Goku. Hit commença à montrer qu'il s'amusait un peu car il se mit à jouer avec lui tandis que Goku tentait de comprendre le fonctionnement de son saut temporel, mais il ne voyait toujours pas Goku comme quelqu'un digne de son temps. Une fois que Goku fut capable de prédire les sauts temporels de Hit, il lui offrit un combat comme il n'en avait pas connu depuis longtemps. Hit fut poussé au-delà de ses limites d'artiste martial à cause de Goku. Hit montra bien plus d'émotion qu'à son habitude durant ce combat, ce fut un tournant pour son personnage car il commença à respecter Goku et voulut aussi devenir plus",
+      "len": 1650,
+      "descFrSource": null
+    },
+    "jaco-teirimentenpibosshi": {
+      "id": "f29c80ed-fadc-49c8-957d-1f7dfe62e05c",
+      "slug": "jaco-teirimentenpibosshi",
+      "name": "Jaco Teirimentenpibosshi",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Un flic extraterrestre venu sur Terre pour arrêter un dangereux envahisseur. Jaco est un extraterrestre ressemblant à un robot, avec une tête principalement bleu clair, à l'exception de son crâne violet. Il a des yeux jaunes, et son nez et sa bouche sont très humains. Tout son corps est également violet. Selon Jaco, il est le 3e plus petit des 38 Patrouilleurs Galactiques, avec ses 148 cm. Jaco est un extraterrestre qui tire une grande fierté de ses fonctions. Il est aussi quelque peu insensible, puisqu'il était prêt à utiliser une Bombe d'Extinction pour anéantir l'humanité simplement parce qu'Omori l'avait critiquée. Il considère aussi comme inférieur quiconque ne répond pas à ses attentes. Cependant, cette idée est peut-être due à son extrême loyauté envers sa planète, si bien qu'il adhère à leur vision de l'humanité. Il déteste aussi qu'on le traite de petit, au point d'avoir failli tuer un civil pour cela, et il a tendance à paniquer très facilement. (Source : Dragonball Wikia)",
+      "len": 997,
+      "descFrSource": null
+    },
+    "jonathan-joestar": {
+      "id": "6101d810-b23d-45c5-9f04-dee3477e83d3",
+      "slug": "jonathan-joestar",
+      "name": "Jonathan Joestar",
+      "universe": "JoJo's Bizarre Adventure",
+      "type": "character",
+      "descFr": "Sexe : Masculin Âge : 12 ans (1880), 20 ans (1888) Date de naissance : 4 avril 1868 Signe : Bélier Taille : 195 cm Poids : 105 kg Groupe sanguin : A Nationalité : Britannique Profession : Archéologue Stand : Joestar Stand Jonathan Joestar est le protagoniste de la Partie 1 : Phantom Blood, et le premier JoJo de la série JoJo's Bizarre Adventure. Fils de George Joestar Ier, Jonathan est un homme honnête, bon et positif dont la vie est marquée par la tragédie après sa rencontre avec son frère aîné adoptif, Dio Brando. En vrai gentleman, Jonathan est aimable et enjoué. Jonathan a un état d'esprit qui le pousse à imaginer les conséquences de ses actes sur autrui, même quand il s'agit d'ennemis apparents. Il est doux et compatissant, ressentant de la peine même lorsqu'il vainc un policier zombifié. Malgré son habileté au combat, il ne blessera jamais gravement une personne sans raison valable. Pourtant, Jonathan peut ressentir une fureur juste face à la malveillance de ses adversaires et rendre justice en les vainquant. De plus, il n'éprouve aucune pitié pour les individus véritablement méprisables qu'il ne connaît pas, comme Doobie. Par son courage et son esprit, Jonathan laisse un héritage en tant que premier JoJo de la série. Contexte : Chronologie : Héritage (parties futures) :",
+      "len": 1297,
+      "descFrSource": null
+    },
+    "joseph-joestar": {
+      "id": "3225fd94-a540-45f0-8a2a-7c0385b8f912",
+      "slug": "joseph-joestar",
+      "name": "Joseph Joestar",
+      "universe": "JoJo's Bizarre Adventure",
+      "type": "character",
+      "descFr": "Âge : 18 ans (Partie 2), 68 ans (Partie 3), 78 ans (Partie 4) Anniversaire : 27 septembre 1920 Signe : Balance Taille : 195 cm Poids : 97 kg Groupe sanguin : B Nationalité : Anglo-Américain Profession : agent immobilier Stand : Hermit Purple Joseph Joestar est le protagoniste principal de la deuxième partie de la série JoJo's Bizarre Adventure, Battle Tendency, et le deuxième JoJo de la série. Il apparaît également comme allié majeur dans Stardust Crusaders (Partie 3) et comme allié secondaire dans Diamond is Unbreakable (Partie 4). Joseph est un utilisateur d'Onde (Hamon) né et, à terme, un utilisateur de Stand, maniant le Stand psychique et photographique Hermit Purple. Fauteur de troubles exubérant doté d'un talent exceptionnel pour la ruse, Joseph fait face aux menaces fantastiques qui l'assaillent tout au long de sa vie avec initiative et une ingéniosité impressionnante, combattant vampires, Hommes-Piliers et utilisateurs de Stand malveillants. Contexte : Partie 2 : Battle Tendency Partie 3 : Stardust Crusaders Partie 4 : Diamond is Unbreakable Chronologie : Partie 2 : Battle Tendency Partie 3 : Stardust Crusaders Partie 4 : Diamond is Unbreakable Stand - Hermit Purple Type de capacité : Courte portée, Reconnaissance Type de forme : Naturel Non-Humanoïde Pouvoir : Photographie spirituelle Le Stand de Joseph, Hermit Purple, se manifeste sous la forme d'un enchevêtrement de vignes épineuses, que Joseph peut utiliser à la fois comme arme et comme défense dangereuse. De plus, il a été démontré qu'il peut conduire l'Onde, ce qui fait d'Hermit Purple l'un des Stands les plus efficaces contre ceux qui y sont vulnérables, comme les vampires. L'une de ses capacités spéciales est d'utiliser",
+      "len": 1714,
+      "descFrSource": null
+    },
+    "josuke-higashikata": {
+      "id": "ae2047d5-fc0c-4aec-9cca-2c10267fdfd3",
+      "slug": "josuke-higashikata",
+      "name": "Josuke Higashikata",
+      "universe": "JoJo's Bizarre Adventure",
+      "type": "character",
+      "descFr": "Taille : 180 cm Groupe sanguin : B Nationalité : Japonais Josuke est le protagoniste principal de JoJo's Bizarre Adventure Partie 4. Son histoire commence alors qu'il entre en première année de lycée dans la ville de Morioh. La Partie 4 débute avec Jotaro qui part à sa recherche, car Josuke est le fils illégitime du grand-père de Jotaro, Joseph Joestar. Josuke fait son entrée dans l'univers de JoJo en adolescent attentionné, populaire et un peu naïf. Inspiré par le sens de la justice de son grand-père policier (du côté de sa mère), il n'a pas peur de se battre pour ceux qui en ont besoin. Il est confronté par Jotaro à la nécessité d'éradiquer les utilisateurs de Stand maléfiques de sa ville natale, Morioh. Il refuse d'abord, estimant que cela ne le regarde pas. Cependant, il change vite d'avis lorsque son grand-père policier est tué par un utilisateur de Stand criminel. Avec un serment rappelant celui de Peter Parker, Josuke décide de rendre justice aux utilisateurs de Stand maléfiques à la place de son grand-père. Josuke est aimable avec les gens et dit « Monsieur » et « Mademoiselle » comme un jeune homme normal et poli, jusqu'à ce qu'on l'énerve (ce qui n'est pas très difficile). Le moyen le plus facile est de se moquer de ses cheveux, ce qui rend Josuke furieux et explosivement violent. Josuke a grandi avec sa mère célibataire, sans jamais connaître son père Joseph Joestar. Josuke est rusé et a un petit penchant sournois pour l'argent, ce qui est montré à plusieurs reprises dans l'histoire. Néanmoins, c'est une personne fiable et amicale, toujours prête à protéger ceux qui en ont besoin. Le pouvoir du Stand de Josuke, Crazy Diamond,",
+      "len": 1664,
+      "descFrSource": null
+    },
+    "jotaro-kujo": {
+      "id": "368b769a-fae6-45b9-ae84-e57883ba8c49",
+      "slug": "jotaro-kujo",
+      "name": "Jotaro Kujo",
+      "universe": "JoJo's Bizarre Adventure",
+      "type": "character",
+      "descFr": "Anniversaire : 1971 Âge : 17 ans (Partie 3), 28 ans (Partie 4), 30 ans (Partie 5), 40-41 ans (Partie 6) Signe : Verseau Sexe : Masculin Groupe sanguin : B Taille : 195 cm Poids : 82 kg Stand : Star Platinum Profession : Étudiant, Explorateur marin, Océanographe Jotaro est un personnage fictif du manga japonais JoJo's Bizarre Adventure, et le protagoniste de la Partie 3. Il porte une tenue reconnaissable : une veste d'uniforme scolaire longue comme un trench, avec des chaînes jaunes au col. Il porte aussi un chapeau caractéristique qui, bien que déchiré à l'arrière, semble souvent se confondre avec ses cheveux. Alors qu'ils sont d'abord montrés comme totalement distincts, les publications ultérieures rendent plus incertain l'endroit où son chapeau et ses cheveux se rejoignent réellement. Son chapeau est très probablement une casquette d'étudiant japonais, normalement portée avec le gakuran avant les années 1970. Il est aussi connu pour son tempérament vif et son caractère soupe au lait. Il est le seul JoJo à apparaître dans cinq parties différentes. Jotaro est le fils de Holy Kujo et le petit-fils de Joseph Joestar. Lorsque Jotaro apparaît pour la première fois, il se rend à la police parce qu'il croit que son Stand est un esprit maléfique qui le possède. Pour le démontrer, il vole une arme à un gardien de prison et tente de se tirer une balle dans la tête — une main fantôme émerge de son bras et attrape la balle, mais seule Holy voit la main. Cet acte lui vaut naturellement la peur généralisée des gardiens et des autres prisonniers. Joseph vient en aide à Jotaro avec Muhammad Avdol. Un bref combat s'ensuit à cause de la rébellion de Jotaro,",
+      "len": 1668,
+      "descFrSource": null
+    },
+    "kaidou": {
+      "id": "c9ff56bb-846b-49a6-8378-ecfb86439397",
+      "slug": "kaidou",
+      "name": "Kaidou",
+      "universe": "One Piece",
+      "type": "character",
+      "descFr": "Kaido est le capitaine des Pirates aux Cent Bêtes et l'un des Empereurs, le troisième à être mentionné par son nom. Kaido est connu comme la « créature la plus forte du monde ». Le nom de Kaido est mentionné pour la première fois par Gecko Moria peu après que celui-ci a obtenu l'ombre de Luffy. Son titre est révélé juste après que les Chapeau de Paille ont vaincu Moria. On dit qu'il possède une armée de 500 utilisateurs de Fruits du Démon Zoan artificiels. Prime :",
+      "len": 468,
+      "descFrSource": null
+    },
+    "kakuzu": {
+      "id": "37f7df63-9b34-49d9-bfd8-25116a758ddd",
+      "slug": "kakuzu",
+      "name": "Kakuzu",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Un ninja déserteur de Takigakure et le partenaire de Hidan. Kakuzu est un individu cupide, hiérarchisant les choses selon leur valeur et considérant l'argent comme la seule chose sur laquelle il peut compter. La source de revenus préférée de Kakuzu est la collecte de primes tout en accomplissant d'autres missions, allant jusqu'à supporter la religion de Hidan puisqu'elle lui permet de collecter des primes plus rapidement. Son passé de chasseur de primes semble étendu, car il est en bons termes avec un collecteur de primes et paraît même avoir mémorisé les informations et la valeur de certaines des primes les plus dangereuses. Cette vision de l'argent a amené Kakuzu à se désigner comme le « Trésorier de l'Akatsuki », bien qu'on ignore s'il s'agit d'un poste réel. Kakuzu a aussi son propre banquier et comptable personnel. Malgré son attachement à l'argent, il fait passer les ordres du chef de l'Akatsuki avant toute occasion de profit. Kakuzu déteste profondément le fait de devoir avoir un coéquipier en tant que membre de l'Akatsuki, en partie à cause de son habitude de tuer quiconque se trouve près de lui (partenaires inclus) lorsqu'il est enragé. Ayant tué tous ses partenaires précédents pour cette raison, Kakuzu fut associé à Hidan. Ni Kakuzu ni Hidan ne sont friands",
+      "len": 1287,
+      "descFrSource": null
+    },
+    "kale": {
+      "id": "84f00192-3723-4e63-92da-aaab4f43eb93",
+      "slug": "kale",
+      "name": "Kale",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Kale est une Saïyenne de l'Univers 6 et un membre de l'équipe de l'Univers 6. Elle fait partie de la bande de Caulifla. Elle est souvent méprisée par les Saïyens de l'Univers 6, en particulier par Cabba, qui la réprimande souvent pour sa trop grande nervosité. Cabba apprend bientôt à Kale comment libérer sa colère afin d'accéder à la forme Super Saïyen. Cependant, en raison du stress accumulé de Kale, elle parvient à utiliser un état « berserker » de cette forme. (Source : Dragon Ball Wikia)",
+      "len": 496,
+      "descFrSource": null
+    },
+    "kami": {
+      "id": "d38ac972-6578-4979-be84-445bace16c39",
+      "slug": "kami",
+      "name": "Kami",
+      "universe": "Dragon Ball",
+      "type": "character",
+      "descFr": "Il est respectueusement connu en japonais sous le nom de Kami-sama, un titre signifiant « Dieu ». Kami était la moitié bonne du Namek qui devint le Dieu de la Terre, sa moitié maléfique devenant le Roi Piccolo (Piccolo Daimaô). Dans l'anime, il concourut contre Garlic pour le poste et l'emporta. 300 ans plus tard, le fils de Garlic, Garlic Jr., nourrissant une rancune tenace, tenta à deux reprises de se battre pour le titre et perdit. Il veilla ensuite sur la planète pendant des siècles pour assurer sa sécurité. Voyant que le rejeton de son autre moitié, Piccolo, menaçait la planète, il se rend sur Terre en secret et participe au Tenka-ichi Budôkai en possédant un humain. Après avoir atteint les demi-finales, il affronte Piccolo, tentant de le piéger dans une bouteille à l'aide du Mafûba. Piccolo parvient à contrer en inversant l'attaque, piégeant Kami lui-même dans la bouteille. Il avale ensuite la bouteille pour la mettre en sécurité avant de perdre Kami lors de son match contre Son Goku. Durant la saga des Cyborgs, Kami accepta de fusionner et de se réunir à Piccolo pour qu'ils fassent le poids face aux Cyborgs. Source : Wikipedia",
+      "len": 1151,
+      "descFrSource": null
+    },
+    "kankuro": {
+      "id": "27359066-29fb-4bc5-8cf2-081218265795",
+      "slug": "kankuro",
+      "name": "Kankurō",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "N° d'enregistrement ninja : 54-002 Signe astrologique : Taureau Taille : 165 cm (I) ; 175 cm (II) Poids : 61,2 kg (I) ; 61,2 kg (II) Cheveux : bruns Yeux : noirs Rang : Genin (I) ; Jônin (II) Aime : les steaks hachés, collectionner les marionnettes N'aime pas : les épinards, les enfants Kankurô se caractérise d'abord par son apparente aversion pour les enfants, comme on le voit lorsqu'il est visiblement irrité en présence de quelqu'un de plus jeune que lui. Cela semble toutefois avoir disparu avec le temps. C'est particulièrement évident lorsqu'il est avec Gaara, qu'il est contraint de supporter en raison de la peur que son jeune frère lui inspire. Malgré leurs différences apparentes, Gaara et Kankurô deviennent très proches au fil de l'ellipse temporelle, Gaara commençant à se confier à Kankurô et lui partageant ses rêves de vouloir risquer sa vie pour protéger Sunagakure. Ainsi, Kankurô est devenu très protecteur envers Gaara, prêt à défier quiconque rabaisse Gaara en sa présence. Lorsque Gaara est capturé par l'Akatsuki, Kankurô se précipite au secours de son frère pour tenter de le sauver et, même après avoir été presque tué en conséquence, il ne faiblit pas dans sa détermination à retrouver Gaara. Kankurô s'est montré adversaire plutôt violent et brutal, laissant souvent ses adversaires dans un état extrê",
+      "len": 1331,
+      "descFrSource": null
+    },
+    "kiba-inuzuka": {
+      "id": "fac8015b-09bd-4e63-af30-b97e3e2bf524",
+      "slug": "kiba-inuzuka",
+      "name": "Kiba Inuzuka",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Taille : 151,2 cm (Partie I), 169,1 cm (Partie II) Équipe : Équipe Kurenai (Kurenai, Shino, Hinata, Kiba) Affiliation : Konohagakure Kiba Inuzuka est l'un des principaux personnages secondaires de la série. C'est un ninja de niveau Chûnin de Konohagakure et un membre du clan Inuzuka, dresseurs de chiens, ainsi qu'un membre de l'équipe de Chûnin, l'Équipe Kurenai, aux côtés de Shino Aburame et Hinata Hyûga. On voit généralement Kiba accompagné de son partenaire, Akamaru, avec qui il combat en collaboration. Kiba est souvent colérique et impulsif (en net contraste avec ses coéquipiers Shino et Hinata) et peut être enclin à commettre des erreurs lorsqu'il s'agite au combat. Le fait qu'il apprécie le combat, ainsi que son habitude d'afficher un sourire joyeux face à un adversaire particulièrement fort, indique qu'il est prêt à risquer sa vie pour une mission, et qu'il est plutôt assoiffé de sang. Il tient profondément à Akamaru et est prêt à faire tout le nécessaire pour le protéger. Et, malgré son attitude plutôt bourrue, nombre des actes de Kiba révèlent qu'il est très proche de sa grande sœur, Hana Inuzuka, et qu'il reste farouchement loyal au clan Inuzuka. La personnalité et le style de jutsu de Kiba sont encore renforcés par son apparence sauvage. Bien que clairement humain,",
+      "len": 1296,
+      "descFrSource": null
+    },
+    "kimimaro": {
+      "id": "33ff71fe-f232-4bcc-95c1-7387c9d92011",
+      "slug": "kimimaro",
+      "name": "Kimimaro",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Kimimaro était le cinquième membre du Quatuor du Son, changeant ainsi temporairement le nom de leur groupe en Quintette du Son. Les quatre membres d'origine furent contraints de l'accepter contre leur gré, car les capacités de combat de Kimimaro dépassaient à elles seules l'ensemble de leurs compétences réunies. Il était le seul survivant du clan Kaguya, qui pouvait manipuler la structure squelettique de son corps. Le clan Kaguya fut anéanti lorsqu'il attaqua Kirigakure, apparemment sans autre raison que le désir de tuer. Ayant sous-estimé les défenses de leur adversaire, ils furent massacrés jusqu'au dernier, seul Kimimaro survivant. NOTE : Bien que certains fans croient que son nom complet était Kimimaro Kaguya, le second databook ne donne son nom que comme Kimimaro. Kimimaro était désigné par Orochimaru comme le membre le plus puissant du clan, doté de « capacités que même ce clan belliqueux redoutait ». Pour cette raison, il fut enfermé dans une cage la majeure partie de sa vie, n'étant relâché qu'occasionnellement lorsqu'il fallait combattre d'autres clans. Comme beaucoup des plus proches serviteurs d'Orochimaru, Kimimaro fut marqué d'un sceau maudit, qui lui confère une plus grande puissance au prix de son libre arbitre. Dans sa forme de niveau 2, son apparence ressemble à celle d'un dinosaure, avec une peau sombre",
+      "len": 1342,
+      "descFrSource": null
+    },
+    "king-vegeta": {
+      "id": "7a507114-d849-442c-a2a7-d49b2deccf6f",
+      "slug": "king-vegeta",
+      "name": "King Vegeta",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Le roi Vegeta était le roi des Saïyens, et il est mentionné plusieurs fois dans le manga, mais n'apparaît que dans des épisodes de remplissage et des films. Considéré comme ayant été le Saïyen le plus puissant, il fut, dans le manga, surpassé par son propre enfant, également nommé Vegeta. Avant l'attaque de la planète Vegeta, il comprit que Freezer craignait les Saïyens, et il coordonna un assaut contre Freezer. Selon le filler de l'anime, sa tentative d'attaquer Freezer échoua et il fut facilement tué. Les Saïyens d'élite qui le suivaient furent eux aussi vaincus par Freezer. Dans le film Broly le Super Guerrier, il ordonna que Broly et son père Paragus soient tués, car il craignait la puissance anormalement élevée de Broly. Le roi Vegeta n'apparaît que dans les spéciaux de l'anime, le film Broly le Super Guerrier, et dans quelques scènes originales de la série animée. Son apparence n'est jamais montrée ni décrite dans le manga, mais il est brièvement mentionné dans un dialogue de Freezer à Vegeta dans le manga original. (Source : Wikipedia)",
+      "len": 1058,
+      "descFrSource": null
+    },
+    "kisame-hoshigaki": {
+      "id": "5b9a8424-3d05-4c09-9ec0-940676716f1f",
+      "slug": "kisame-hoshigaki",
+      "name": "Kisame Hoshigaki",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Taille : 195 cm Affiliation : Akatsuki Kisame Hoshigaki est un ninja déserteur de Kirigakure et fait équipe avec Itachi Uchiha. Il s'entend considérablement mieux avec Itachi que la plupart des membres de l'Akatsuki avec leurs propres partenaires, faisant immédiatement ce qu'Itachi lui demande et veillant toujours sur son bien-être. Son ancien pays, le Pays de l'Eau, le recherche désormais pour avoir comploté de renverser son gouvernement et pour son implication dans de nombreux assassinats. Lorsqu'il était encore loyal à Kirigakure, il était l'un des Sept Épéistes de la Brume, un groupe de ninjas maniant des armes particulièrement grandes au combat. Kisame a une apparence distinctive de requin, avec une peau bleu pâle, de petits yeux blancs, des structures faciales évoquant des branchies et des dents triangulaires acérées. Même son nom, Kisame, signifie « requin démon ». Ses qualités de requin se retrouvent dans le type de techniques qu'il utilise au combat, car il façonne souvent des masses d'eau en formes de requins qui attaquent ensuite ses adversaires. S'il n'y a pas de source d'eau là où il combat, Kisame peut utiliser la Technique de l'Eau : Onde de Choc Explosive pour créer l'équivalent d'un lac d'eau à utiliser pour ses attaques. On note aussi que Kisame possède un",
+      "len": 1294,
+      "descFrSource": null
+    },
+    "konkichi": {
+      "id": "861b4ee7-2497-4651-a3c1-5f8b1f8b8ca3",
+      "slug": "konkichi",
+      "name": "Konkichi",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Konkichi est un fauteur de troubles que Son Goku sauve dans la forêt de Yahhoy. Konkichi est apparu dans « Par où passe l'île Papaye ? ». Il traita Goku comme un ami proche après que Goku lui eut sauvé la vie et l'appela « grand frère ». Ce que Goku ignorait, c'est que Konkichi était un voleur et qu'il avait tenté, sans succès, de voler à Goku un billet d'avion pour l'île Papaye. En cherchant de l'argent pour le billet de Goku, ils tombèrent tous deux à l'improviste sur Uranai Baba, qui était au courant des agissements de Konkichi. Konkichi s'enfuit en réalisant que Baba était au courant de ses mauvaises actions, mais fut rattrapé par les trois mêmes types qu'auparavant. Ils le forcèrent à cambrioler une banque et à en porter le chapeau tandis que les trois types filaient sans encombre. Goku découvrit bientôt la vérité sur Konkichi, qui fuyait les trois types parce qu'ils avaient menacé de le tabasser du fait qu'il leur devait de l'argent. Konkichi expliqua à Goku qu'il avait changé et n'était plus un voleur. Goku appréhenda les responsables de l'avoir accusé à tort du braquage, et Konkichi décida de changer de vie et de devenir enseignant. (Source : Dragon Ball Encyclopedia)",
+      "len": 1194,
+      "descFrSource": null
+    },
+    "kosuke-maruboshi": {
+      "id": "2d09ab58-deaa-4a42-8dd9-e7ca79e89610",
+      "slug": "kosuke-maruboshi",
+      "name": "Kosuke Maruboshi",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Kosuke Maruboshi est un genin de Konoha, que les autres surnommaient le Genin Éternel (万年下忍, Mannen Genin). Kosuke est genin depuis plus de cinquante ans, d'où ce surnom de Genin Éternel. Alors qu'il n'était encore qu'un enfant, il prit une décision imprudente qui coûta la vie à ses coéquipiers. Honteux de cela, il estima qu'il n'était pas digne d'être promu au-delà du rang de genin. Malgré cela, il continua à s'entraîner ardûment pour améliorer ses compétences, chose sur laquelle Tobirama Senju avait insisté auprès de lui. Durant sa vie de ninja, il servit sous le Deuxième, le Troisième et le Quatrième Hokage, et désormais apparemment même sous la Cinquième Hokage. À d'autres moments, il combattit aux côtés de Jiraiya et de Sakumo Hatake. Kosuke est un homme âgé, ses cheveux jadis noirs désormais grisonnants, qu'il porte en une courte queue-de-cheval. Il porte une chemise en armure de mailles sous un court kimono marron sans manches, ainsi qu'un pantalon gris. On le voit habituellement avec le sourire aux lèvres. Il transporte une poêle en métal qu'il utilise à de multiples fins, allant de la cuisine en mission à l'arme au combat. Il porte aussi une louche et un sabre engainé horizontalement au bas de son dos. Bien que son rang officiel",
+      "len": 1257,
+      "descFrSource": null
+    },
+    "kurapika": {
+      "id": "e82d5386-a6f0-4d9c-b0f1-b6c6b7ba816f",
+      "slug": "kurapika",
+      "name": "Kurapika",
+      "universe": "Hunter x Hunter",
+      "type": "character",
+      "descFr": "Sexe : masculin. Âge : 17 ans (au début) ; 19 ans (actuel). Taille : 171 cm. Poids : 59 kg. Anniversaire : 4 avril. Signe astrologique : Bélier. Couleur des cheveux : blond. Couleur des yeux : bleu (1999) ; marron (manga et 2011) ; écarlate (en colère). Groupe sanguin : AB. Type de Nen : Matérialisation ; Spécialisation (quand ses yeux deviennent écarlates). Capacités : Chaîne Sacrée, Chaîne de Sourcier, Prison de Chaînes, Chaîne du Jugement. Kurapika est un membre du clan Kurta, massacré par la Brigade Fantôme (les Araignées) quatre ans avant l'Examen Hunter. Le clan Kurta était un peuple isolé dont les yeux devenaient écarlates sous l'effet de la colère ou de l'excitation. Ces yeux écarlates étaient réputés magnifiques, comptant parmi les sept plus belles choses au monde. À cause de cela, le clan Kurta fut constamment pourchassé et finalement massacré. Les yeux des membres du clan furent tous arrachés lors du massacre. Kurapika est jusqu'à présent le seul survivant connu, le cœur tourné vers la vengeance. Il aspire à se venger de la Brigade Fantôme et à récupérer les yeux des membres de son clan. Malgré un cœur empli de haine, Kurapika est très bon et loyal envers ses amis. C'est une personne extrêmement intelligente mais en même temps téméraire. Kurapika appartient au groupe Nen de la matérialisation et, par sa détermination, il a accru la puissance de sa capacité Nen au point de la rendre redoutable contre la Brigade Fantôme. Kurapika peut matérialiser une arme unique — cinq chaînes qui s'étendent de chaque doigt de sa main droite. Certains des doigts ont été spécialement conçus pour infliger la vengea",
+      "len": 1633,
+      "descFrSource": null
+    },
+    "majin-buu": {
+      "id": "7a913123-87e4-405e-8c24-3208cf55c983",
+      "slug": "majin-buu",
+      "name": "Majin Buu",
+      "universe": "Dragon Ball",
+      "type": "character",
+      "descFr": "Buu est introduit dans la série durant la saga Buu sous la forme d'une créature rose dodue à l'air innocent, semblable à un génie. Plus tard dans la série, on révèle que la forme originelle de Buu est une forme d'enfant plus svelte (« le Buu du Mal Pur ») ; cependant, sa nature et sa forme avaient été altérées après qu'il eut assimilé le dieu doux et dodu (le Daï Kaïoshin) dans son corps. Le créateur de Buu, un sorcier nommé Bibidi, avait utilisé Buu pour faire la guerre aux Kaïoshins. Buu parvint à assimiler deux des quatre Kaïoshins, le second étant celui qui altéra sa nature pour le rendre innocent. Avant d'assimiler le second Kaïoshin, il avait tué le troisième Kaïoshin. Après que Bibidi eut scellé Buu, Bibidi fut tué par le quatrième Kaïoshin, et Buu fut transporté sur la planète Terre où il resta dormant pendant cinq millions d'années jusqu'à ce qu'il soit réveillé par le fils de Bibidi, Babidi, durant les événements de Dragon Ball. Buu a de nombreux avatars dans la série. Quand il émerge pour la première fois de sa coque, il est grand et rond, et sa personnalité est naïve et innocente. La première forme de Buu tue Babidi, mais se lie vite d'amitié avec un humain nommé Mr. Satan, puis avec un chiot que Buu trouve et guérit après avoir décidé de partir en carnage meurtrier. Après avoir réalisé que le chiot l'aime bien, Buu le nomme Bee. Malgré ce revirement soudain de Buu, deux hommes armés détruisent sa maison et tentent de tuer Bee et Mr. Satan. Sous l'effet de sa rage contre les tireurs, la colère de Buu se manifeste sous la forme d'un autre Buu (« le Buu de la Colère Pure »). Après un combat",
+      "len": 1627,
+      "descFrSource": null
+    },
+    "menma-namikaze": {
+      "id": "62ab01e1-95ea-4b49-b0a7-246025612b65",
+      "slug": "menma-namikaze",
+      "name": "Menma Namikaze",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Apparition à l'épisode 427. Menma Namikaze est un descendant du clan Uzumaki dans le rêve de Tsukuyomi Infini de Tenten. La vie de Menma fut très différente de celle de Naruto Uzumaki, car Menma ne perdit pas ses parents et eut de nombreux amis durant son enfance. À un moment, Kurama fut transféré en toute sécurité de Kushina Uzumaki vers Menma, permettant à Menma de garder sa mère tout en devenant finalement ami avec le Démon à queues. Après avoir été diplômé de l'Académie, Menma devint membre de l'Équipe Kakashi aux côtés de Sakura Haruno et Sasuke Uchiha. Il finit par devenir chûnin. Menma tient davantage de son père, contrairement à Naruto, dont on a dit qu'il avait hérité des traits de caractère de sa mère. Menma est calme, posé, ne parlant que lorsqu'il estime que cela sert un but. Contrairement à Naruto, généralement puéril et enjoué, Menma est mûr et très sérieux. Il fait aussi preuve d'un esprit vif, réfléchissant soigneusement avant d'agir, et capable de discerner la nature profonde de la situation. Sa perspicacité semble faire de lui le plus intelligent de sa promotion, agissant aussi comme le chef de fait du groupe. Tout comme le Sasuke du monde réel, Menma est quelque peu distant, montrant peu de respect lorsqu'il",
+      "len": 1246,
+      "descFrSource": null
+    },
+    "might-guy": {
+      "id": "0355208d-b1e3-4139-b379-9599d957a6f7",
+      "slug": "might-guy",
+      "name": "Might Guy",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Taille : 184 cm Rang : Jônin Il est le chef de l'Équipe Gai, composée de Rock Lee, Neji Hyûga et Tenten. Gai, et par extension Lee, vit sa vie selon sa propre philosophie des « Règles Personnelles », qui consiste à s'imposer des pénalités plus rudes en cas d'échec afin qu'il en ressorte quelque chose de bon. Par exemple, il jura de faire 500 tours de Konoha sur les mains s'il perdait un concours contre Kakashi, et s'exécuta après avoir perdu, même si les gens finirent par ne plus y prêter attention. Il n'hésite pas non plus à faire des choses qu'il n'apprécie pas ou que d'autres trouveraient embarrassantes si cela sert son propre perfectionnement, comme le montre sa conviction qu'on ne peut détester aucun aliment, quels que soient ses ingrédients ou son goût. De plus, Gai accorde une immense valeur à sa jeunesse et déteste l'idée de ne plus être aussi jeune qu'autrefois. Pour remédier à ce problème, il passe beaucoup de temps avec ses jeunes coéquipiers, espérant acquérir un peu de leurs propriétés juvéniles. De même, il se désigne souvent comme la « Noble Bête Verte de Konoha ». Gai est le rival autoproclamé de Kakashi Hatake. Kakashi, cependant, est indifférent à leur rivalité, ce qui agace Gai au plus haut point. Kakashi a aussi l'habitude, involontairement",
+      "len": 1280,
+      "descFrSource": null
+    },
+    "minato-namikaze": {
+      "id": "f04dd964-dadf-4022-a39d-c2639bb9cb43",
+      "slug": "minato-namikaze",
+      "name": "Minato Namikaze",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Taille : 179 cm (5'10\") Minato Namikaze était le Quatrième Hokage de Konohagakure et l'homme responsable d'avoir scellé le Démon-Renard à Neuf Queues à l'intérieur de Naruto Uzumaki à sa naissance. Ce faisant, il y perdit la vie, et avant de mourir il demanda que les villageois ne voient pas Naruto comme le monstre qu'il abritait, souhaitant au contraire qu'il soit considéré comme un héros, une requête ignorée par les villageois. « Namikaze » se traduit littéralement par « Vent des vagues ». « Minato » se traduit par « Havre » ou « Port ». Minato partage un certain nombre de traits avec Naruto, notamment en apparence et en caractère. De telles comparaisons sont fréquentes tout au long de la première partie de la série, ainsi que dans la seconde. La deuxième partie de la série révèle que Naruto est son fils, d'où les comparaisons, né de Kushina Uzumaki. Dans sa jeunesse, Minato, avec deux autres Genin inconnus, fut un élève de Jiraiya. Avant de devenir Hokage, il fut aussi le maître de Kakashi Hatake, Obito Uchiha et Rin. Minato est dit être le plus grand ninja que Konoha ait jamais produit, doté d'un talent naturel qu'on n'avait pas vu depuis de nombreuses années. Il créa plusieurs techniques distinctives, dont le Hiraishin no Jutsu, qui lui permettait essentiellement de se téléporter vers n'importe quel endroit à l'aide de",
+      "len": 1345,
+      "descFrSource": null
+    },
+    "mitsuki": {
+      "id": "3cb33dd2-b790-48ed-adf7-743d61b6b33e",
+      "slug": "mitsuki",
+      "name": "Mitsuki",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Mitsuki fut créé en tant qu'humain synthétique par Orochimaru, cultivé à partir du même embryon qu'au moins un « Mitsuki » plus âgé. Tout comme son « frère », Mitsuki fut nommé d'après « Tsuki » (杯, littéralement : Réceptacle) et le sixième signe du zodiaque chinois, « Mi » (巳, littéralement : Serpent). Orochimaru, en tant que « parent » de Mitsuki, voulait que Mitsuki trouve son indépendance, ayant concocté un complot complexe pour qu'il y parvienne. À la sixième tentative du plan d'Orochimaru, effaçant à chaque fois les souvenirs de la précédente, Mitsuki maîtrisa la Transformation de l'Ermite et décida de se rebeller contre son « parent » et son « grand frère ». Il quitta leur compagnie et partit forger son propre destin lui-même, se faisant désormais appeler « Mitsuki » (巳月) en remplaçant le deuxième caractère par « Tsuki » (月, littéralement : Lune). En découvrant l'existence de Boruto Uzumaki grâce à un cadeau d'Orochimaru, Mitsuki décida de se rendre à Konoha et de se lier d'amitié avec lui afin de trouver sa propre voie dans la vie. Mitsuki a un tempérament très calme et pragmatique. On le voit généralement très enjoué, voire indifférent, face à la situation présente. Sans être conflictuel, il dit librement ce qu'il pense en toute situation et agit",
+      "len": 1275,
+      "descFrSource": null
+    },
+    "musse": {
+      "id": "b49d8757-9058-47b3-a3bf-dc31a2b7436b",
+      "slug": "musse",
+      "name": "Musse",
+      "universe": "One Piece",
+      "type": "character",
+      "descFr": "Musse était la fille de Calgara, sur l'île de Jaya, il y a 400 ans. C'était une Shandia belle et intelligente. Après que leur prêtre mourant eut une « vision », il déclara que le seul moyen d'arrêter la « malédiction » qui frappait leur terre était de sacrifier leur plus belle femme. Musse se rendit de son plein gré à l'autel pour sauver tout son peuple. Juste avant que leur dieu ne la dévore, Montblanc Norland apparut et tua le serpent géant qui tentait de convaincre les Shandias que ce fléau était guérissable et non une malédiction des dieux. Pendant que Norland cherchait le remède, elle et ses hommes furent enfermés dans des cages ; elle parla aux hommes de qui était leur capitaine. Après une course contre la montre, Norland rapporta le remède et les Shandias furent sauvés. Désormais libre et connaissant la vérité, Musse fut plus tard vue sanglotant dans les bras de sa mère à propos des événements survenus. Cependant, sa tribu découvrit que leur forêt, qu'ils tenaient pour sacrée, avait été abattue par Norland et ses hommes, et ils furent de nouveau rejetés par la tribu. Elle expliqua plus tard à l'un des hommes de Norland pourquoi les Shandias le traitaient ainsi, et lorsqu'elle apprit qu'ils avaient rasé la forêt parce qu'elle était à l'origine du fléau dans le village, elle se précipita pour prévenir les villageois. Ceux-ci firent sonner la cloche d'or aussi fort qu'ils le pouvaient pour informer Norland de leur regret, et son père Calgara se précipita vers Norland avant que lui et ses hommes ne prennent la mer afin de lui demander pardon. Trois ans plus tard, elle est mariée à S",
+      "len": 1612,
+      "descFrSource": null
+    },
+    "naruto-uzumaki": {
+      "id": "225adc44-554c-48ed-aa14-0373ba2b5cec",
+      "slug": "naruto-uzumaki",
+      "name": "Naruto Uzumaki",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Taille : 145-180 cm Famille : Minato Namikaze (père), Kushina Uzumaki (mère), Jiraiya (parrain) Né à Konohagakure, le Village Caché de la Feuille, Naruto Uzumaki était destiné à de grandes choses. Le jour de sa naissance, un puissant Démon-Renard à Neuf Queues attaqua son village. D'un simple coup de queue, le Démon-Renard pouvait soulever des tsunamis et réduire des montagnes en miettes. Dans une tentative héroïque de sauver le village de la destruction, le Quatrième Hokage, chef du Village Caché de la Feuille, scella le Démon-Renard dans le corps du nouveau-né Naruto. Ce fut son dernier acte, car le combat contre le renard lui coûta la vie. Malgré le vœu du Quatrième Hokage mourant que Naruto soit considéré comme un héros pour avoir servi de réceptacle au démon (un Jinchûriki), les adultes de Konoha nourrirent une haine féroce envers lui, beaucoup croyant que Naruto et le démon ne faisaient qu'un. Rejeté comme un monstre inhumain, Naruto fut mis à l'écart et ostracisé par les villageois pour des raisons qu'il ne pouvait comprendre. Les enfants de son âge ne pouvaient que suivre l'exemple de leurs parents ; eux aussi finirent par nourrir une haine féroce envers Naruto. Naruto finit par accepter qu'il vivrait et mourrait seul, et sa réponse extérieure fut de",
+      "len": 1278,
+      "descFrSource": null
+    },
+    "natsuki-mogi": {
+      "id": "1df92f07-5253-41f4-a408-6eb9f109b95c",
+      "slug": "natsuki-mogi",
+      "name": "Natsuki Mogi",
+      "universe": "Initial D",
+      "type": "character",
+      "descFr": "L'intérêt amoureux de Takumi. Durant la première saison, durant la deuxième saison, dans le film,",
+      "len": 97,
+      "descFrSource": null
+    },
+    "nine-tailed-naruto-clone": {
+      "id": "95e902d6-adbe-4c97-b85a-c5173d355469",
+      "slug": "nine-tailed-naruto-clone",
+      "name": "Nine-Tailed Naruto Clone",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Taille : 145-180 cm Famille : Minato Namikaze (père), Kushina Uzumaki (mère), Jiraiya (parrain) Né à Konohagakure, le Village Caché de la Feuille, Naruto Uzumaki était destiné à de grandes choses. Le jour de sa naissance, un puissant Démon-Renard à Neuf Queues attaqua son village. D'un simple coup de queue, le Démon-Renard pouvait soulever des tsunamis et réduire des montagnes en miettes. Dans une tentative héroïque de sauver le village de la destruction, le Quatrième Hokage, chef du Village Caché de la Feuille, scella le Démon-Renard dans le corps du nouveau-né Naruto. Ce fut son dernier acte, car le combat contre le renard lui coûta la vie. Malgré le vœu du Quatrième Hokage mourant que Naruto soit considéré comme un héros pour avoir servi de réceptacle au démon (un Jinchûriki), les adultes de Konoha nourrirent une haine féroce envers lui, beaucoup croyant que Naruto et le démon ne faisaient qu'un. Rejeté comme un monstre inhumain, Naruto fut mis à l'écart et ostracisé par les villageois pour des raisons qu'il ne pouvait comprendre. Les enfants de son âge ne pouvaient que suivre l'exemple de leurs parents ; eux aussi finirent par nourrir une haine féroce envers Naruto. Naruto finit par accepter qu'il vivrait et mourrait seul, et sa réponse extérieure fut de",
+      "len": 1278,
+      "descFrSource": null
+    },
+    "piccolo": {
+      "id": "cd070273-479a-4fc1-a573-e9b8f400866b",
+      "slug": "piccolo",
+      "name": "Piccolo",
+      "universe": "Dragon Ball",
+      "type": "character",
+      "descFr": "Race : Namek. Taille : 223,5 cm. Poids : 115,6 kg. Année de naissance : An 753. Nourriture préférée : l'eau (surtout l'eau de la glace fondue de la Zone Nord). Loisir : méditer dans un endroit calme. Véhicule préféré : aucun. Piccolo est un personnage de fiction de la méta-série Dragon Ball. Il est considéré à la fois comme le fils et la réincarnation du Roi Démon Piccolo, engendré pour échapper à une mort certaine des mains de Son Goku. Comme son père, il apparaît sous la forme d'une grande créature humanoïde verte aux oreilles pointues ; on révèle plus tard qu'il fait partie d'une race extraterrestre appelée les Nameks. Piccolo est d'abord dévoré par la vengeance contre Goku, et choisit de le vaincre et de le tuer durant le 23e Tenkaichi Budokai. Après sa défaite de justesse contre Goku, Piccolo est bientôt contraint de former une alliance d'abord difficile avec Goku et ses amis face à des menaces nouvelles et plus dangereuses comme les Saïyens et Freezer. Par nécessité, il prend aussi sur lui d'entraîner l'enfant de Goku, Son Gohan, tissant un lien qui se renforce quand il se sacrifie pour sauver la vie de l'enfant face à Nappa. Après sa résurrection, il rejoint pleinement Goku et les autres dans leurs luttes contre des méchants toujours plus puissants. Piccolo conserve des traces d'impitoyabilité et d'arrogance, mais une fois fusionné avec Kami (Tout-Puissant), toute trace de mal et de haine disparaît, et Piccolo renaît totalement en une âme pure. Piccolo reste un solitaire, préférant se tenir à l'écart des autres. Il a peu à dire sauf si cela concerne le combat, mais il",
+      "len": 1601,
+      "descFrSource": null
+    },
+    "recoome": {
+      "id": "cede7a58-1b0a-4316-8a2c-f83e7b87d508",
+      "slug": "recoome",
+      "name": "Recoome",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Reacoom est un grand extraterrestre musclé à l'apparence humaine, aux cheveux roux. C'est le membre le plus flamboyant du Commando Ginyu, prenant des poses en plein combat encore plus souvent que le Capitaine Ginyu lui-même, et se comportant de façon trompeusement loufoque. Reacoom est pourtant un combattant sadique, et prend plaisir à jouer avec ses adversaires et à les narguer par des railleries avant de les tuer. (Source : Wikipedia)",
+      "len": 440,
+      "descFrSource": null
+    },
+    "rou-kaioshin": {
+      "id": "eca1433a-0709-4665-b809-25095708a2bd",
+      "slug": "rou-kaioshin",
+      "name": "Rou Kaioshin",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Rô Kaiôshin est un Kaiôshin qui sortit de l'épée Z, dans laquelle il avait été emprisonné et cloué au sol par un ancien ennemi, selon lui un « type diablement fort et maléfique ». Il ressemble au Kaiôshin de l'Est, mais avec un visage plus vieux et ridé, et une petite moustache. Son Gohan le libère durant la saga Majin Buu quand il brise l'épée Zêta en tentant de trancher un bloc fait de la matière la plus résistante de l'univers. Après avoir été libéré, il accepta d'aider Gohan à débloquer tout son potentiel afin qu'il puisse vaincre Majin Buu, mais seulement en échange de pouvoir sortir avec une Terrienne. Il y a des siècles, il était plutôt beau selon ses propres critères, mais une sorcière hideuse s'approcha de lui, lui vola l'une de ses Potaras et la mit. Rô Kaiôshin fut instantanément fusionné à jamais avec la sorcière. Bien qu'il ait perdu son allure, il gagna davantage de pouvoir magique. Dans la saga Majin Buu, il sacrifie sa vie pour que Son Goku puisse vivre, et lui donne les Potaras pour fusionner avec Gohan sur Terre. Cependant, comme il résidait déjà au paradis, sa mort n'eut guère d'effet, si ce n'est de produire une auréole au-dessus de sa tête. Dans la saga Bébi de Dragon Ball GT, il aide Goku à devenir bien plus fort en l'aidant à faire repousser sa queue, un processus douloureux impliquant une gigantesque paire de pinces. (Source : Wikipedia)",
+      "len": 1383,
+      "descFrSource": null
+    },
+    "sabo": {
+      "id": "66ba4dc6-2d7b-45fa-9956-6e4ae2c908da",
+      "slug": "sabo",
+      "name": "Sabo",
+      "universe": "One Piece",
+      "type": "character",
+      "descFr": "Anniversaire : 20 mars Il est né dans une famille noble mais a décidé de fuir et de vivre au Gray Terminal, avant de finalement prendre la mer seul. 12 ans avant l'intrigue actuelle, il était un ami d'enfance d'Ace, puis de Luffy également, au point que les trois se considéraient comme des « frères ». Avec Ace et Luffy, le rêve de Sabo était de devenir pirate afin de pouvoir prendre la mer et conquérir la liberté, et il avait prévu avec ses frères de partir en mer à l'âge de 17 ans. Spoilers de l'arc Dressrosa : Spoilers de l'arc Egghead :",
+      "len": 545,
+      "descFrSource": null
+    },
+    "sakura-haruno": {
+      "id": "04a1be10-777e-4043-81a7-d05a55c1ad29",
+      "slug": "sakura-haruno",
+      "name": "Sakura Haruno",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Taille : 149 cm (I) ; 161 cm (II) Rang : Genin (I) ; Chûnin (II) Sakura est la seule ninja féminine de l'Équipe 7. Lorsqu'elle rencontre Naruto pour la première fois, elle est physiquement faible et éprouve un béguin immense pour Sasuke. Elle n'aime pas non plus Naruto. Sa seule qualité est son intelligence : en tant que fille la plus douée de l'académie ninja, elle possède un excellent contrôle du chakra, mais à part cela on pourrait la ranger parmi les kunoichi sans talent exceptionnel. Dans la première partie de l'Examen Chûnin, elle répond facilement aux questions, mais dans la deuxième partie, elle est incapable de vaincre les ninjas du Son qui attaquent Sasuke et Naruto. Elle fait le serment de devenir une meilleure ninja et une meilleure personne. Pour prouver son engagement, elle coupe ses longs cheveux avec un kunai. Dans la troisième partie de l'Examen Chûnin, elle affronte Ino Yamanaka, son ancienne amie mais désormais rivale pour l'affection de Sasuke. Les deux se mettent hors de combat simultanément. Cela transforme leur relation en une rivalité entre amies. Après l'ellipse temporelle, elle est désormais chûnin, ayant été entraînée par Tsunade durant les deux dernières années. C'est désormais une ninja médecin d'une habileté considérable, suffisante pour peut-être un jour surpasser Tsunade. Cela se voit lorsqu'elle est capable de réaliser une opération chirurgicale complexe",
+      "len": 1409,
+      "descFrSource": null
+    },
+    "shen-long": {
+      "id": "1b04cb30-996a-427f-b593-89b2f5ceb7b1",
+      "slug": "shen-long",
+      "name": "Shen Long",
+      "universe": "Dragon Ball",
+      "type": "character",
+      "descFr": "Shenron est le dragon exauceur de vœux (神龍 Kami Ryuu, Dragon Divin) de la Terre. Le Shenron des Black Star Dragon Balls est rouge, contrairement au Shenron de la Terre qui est vert. Shenron peut être invoqué en rassemblant les sept Dragon Balls de la Terre. Shenron peut accorder n'importe quel vœu tant qu'il ne dépasse pas la puissance de son créateur, qui doit être encore en vie (c'est-à-dire Kami ou Dende). À plusieurs reprises dans la série Dragon Ball, Shenron menace de tuer l'invocateur s'il ne formule pas un vœu à temps, ou s'il ne formule aucun vœu du tout. Shenron ne peut pas ramener une personne d'entre les morts plus d'une fois. Les Dragon Balls ne peuvent pas être utilisées pendant 365 jours terrestres après qu'un vœu a été fait, car elles se changent en pierre. Les Dragon Balls de la Terre sont relativement petites, chacune environ de la taille d'une grosse orange, bien plus petites que les Dragon Balls namek, qui ont la taille de ballons de plage. La base de Shenron est une statue de pierre gardée par son créateur. Si Shenron est tué, les Dragon Balls se changent en pierre. La statue se brise également. Si le créateur ou un autre Namek le souhaite, ils peuvent reconstruire la statue pour redonner vie à Shenron et aux Dragon Balls. Cela arriva après que Shenron eut accordé le vœu de jeunesse de Piccolo Daimao. Tant que Kami et Piccolo n'étaient pas fusionnés, Shenron ne pouvait accorder qu'un seul vœu. Après que Dende l'eut ramené à la vie, il put accorder deux vœux (trois si le premier ne ressuscite pas plus d'une personne à la fois). Si l'invocateur le veut, il peut ne faire qu'un seul vœu. Cela fait tourner les Dragon Balls",
+      "len": 1666,
+      "descFrSource": null
+    },
+    "shikamaru-nara": {
+      "id": "927a8de6-5abf-42b1-b04b-79b7e372119c",
+      "slug": "shikamaru-nara",
+      "name": "Shikamaru Nara",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Taille : 170 cm Rang : Genin (I) ; Chûnin (II) ; Hokage (III) Shikamaru est une personne extrêmement peu enthousiaste et, à ce titre, vit sa vie en évitant le travail. Cela tient en partie à sa recherche du moindre effort, car il choisit souvent de faire des choses qu'il ne ferait pas autrement si on le harcèle suffisamment. Pendant son temps libre, il fait généralement la sieste, observe les nuages et joue à des jeux de stratégie comme le Shôgi et le Go. Placé dans une situation où il pourrait avoir à fournir un effort, il tente de trouver un moyen de l'éviter, comme abandonner un combat ou faire semblant d'être occupé par autre chose. Dans les cas où il ne peut éviter ces situations, Shikamaru a tendance à lancer « c'est galère ». Malgré ses tendances paresseuses, Shikamaru est extrêmement intelligent. Son professeur, Asuma, découvrit que Shikamaru avait un QI de plus de 200, et apprit que ses mauvaises notes venaient du fait qu'il trouvait que soulever un crayon représentait trop de travail pour lui. Néanmoins, Shikamaru travaille très bien avec ses coéquipiers, car leurs pères formaient une équipe dans leur jeunesse. L'une des caractéristiques les plus marquantes de Shikamaru est qu'il trouve toutes les femmes autoritaires et « pénibles ». Contrairement à cette opin",
+      "len": 1290,
+      "descFrSource": null
+    },
+    "shino-aburame": {
+      "id": "554f9186-6ee1-4721-a5f0-513b6688a581",
+      "slug": "shino-aburame",
+      "name": "Shino Aburame",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Taille : 161,1 cm (I) ; 175,1 cm (II) Rang : Genin (I) ; Chûnin (II) Shino Aburame est un personnage fasciné par les insectes ; il passe la plupart de son temps libre à les observer et fait souvent des analogies avec les insectes lorsqu'il parle. Outre son goût pour les insectes, Shino se caractérise par sa façon de faire les choses sans émotion, solitaire et posée. Il parle de manière très directe et ne laisse jamais l'émotion interférer avec son jugement, offensant parfois les gens ce faisant. Malgré sa personnalité étrange et ses disputes occasionnelles avec Kiba, Shino a un sens très fort du lien avec ses coéquipiers et alliés. Shino, aux côtés de Hinata Hyûga et Kiba Inuzuka, fait partie de l'Équipe 8, dirigée par Kurenai Yûhi. Au combat, Shino sait tirer grand parti de son intelligence, capable d'utiliser ses aptitudes d'analyse et d'observation pour porter des jugements avisés avec un raisonnement précis. En tant que membre du clan Aburame, Shino fut infusé à la naissance d'une race spéciale d'insectes se nourrissant de chakra. En échange de devenir une ruche vivante, les insectes attaquent les adversaires, généralement pendant qu'il les distrait, et accomplissent d'autres tâches selon ses ordres. Shino a trouvé de nombreux usages à ces insectes et a ainsi imaginé un certain nombre de jut",
+      "len": 1316,
+      "descFrSource": null
+    },
+    "shura": {
+      "id": "9858a3b2-6ea7-4569-882c-5450313bac33",
+      "slug": "shura",
+      "name": "Shura",
+      "universe": "Dragon Ball",
+      "type": "character",
+      "descFr": "Shula (シュラ) est un personnage exclusif à l'anime, un démon à l'apparence humaine avec de longs cheveux noirs, des oreilles pointues et un symbole en forme de « w » sur le front. Il vit ainsi dans le Royaume des Démons, dont il détient le titre de roi et compte parmi les meilleurs combattants. Biographie : Shula est un puissant démon qui parvint à lui seul à ouvrir la gigantesque entrée du Royaume des Démons, et à la maintenir ouverte un certain temps en coinçant son épée maudite dans la porte. Durant cette période, lui et ses nombreux sbires tourmentaient sans cesse un royaume voisin à la tombée de la nuit. Il finit par s'intéresser à la jeune princesse Misa de ce royaume et l'enleva afin de l'épouser. Peu après, le père de Misa, le roi Kress, envoya le jeune Goku à sa poursuite pour récupérer Misa. Lorsque Goku trouve Shula dans le Royaume des Démons, il découvre que celui-ci a organisé une fête pour célébrer sa future épouse. Goku affronte Shula et le défie en combat, ce que Shula accepte. Shula se révèle un combattant rapide et puissant, mais Goku parvient à trouver son point faible. Le Royaume des Démons est un lieu où aucune lumière vive n'a jamais pénétré, et les yeux de Shula s'y étaient habitués. Goku tire un Kamehameha qui aveugle Shula, puis projette le démon contre le mur. Lorsque Shula se relève, il découvre que Goku et Misa s'enfuient et lance ses sbires à leur poursuite, mais deux démons, Melee et Gola, leur barrent la route. Goku réussit à sortir et à sceller à jamais l'entrée du Royaume des Démons. Melee lui explique alors que c'est ainsi que",
+      "len": 1584,
+      "descFrSource": null
+    },
+    "son-goku": {
+      "id": "8a8c462e-8bb0-4dcb-a907-5b36f8701a3a",
+      "slug": "son-goku",
+      "name": "Son Goku",
+      "universe": "Dragon Ball",
+      "type": "character",
+      "descFr": "Race : Saïyen. Taille : 175,3 cm. Poids : 85,4 kg. Année de naissance : An 737. Loisir : combattre des adversaires puissants. Nourriture préférée : tout. Véhicule préféré : Kinto'un (le Nuage Magique). D'abord nommé Kakarot, Goku naît membre d'une race d'extraterrestres appelés les Saïyens. Peu après sa naissance, Goku est envoyé de sa planète natale Vegeta vers la Terre, afin d'en revendre le potentiel sur le marché intergalactique en détruisant toute vie ; Goku est aussi éloigné pour échapper au génocide des Saïyens perpétré par Freezer. Une fois arrivé sur Terre, il est adopté par un vieil homme nommé Gohan (que l'on appellera plus tard grand-père Gohan). Au début, Goku est un enfant très violent à cause de son sang saïyen, mais une blessure à la tête lui cause une grave amnésie et le transforme en un garçon plus doux et innocent. Au début de la série, Goku rencontre Bulma, Yamcha, Oolong et Pu'ar, dont les personnages font écho à ceux du roman La Pérégrination vers l'Ouest de Wu Cheng'en. Il rencontre aussi Krillin, qui devient son meilleur ami, ainsi que d'autres personnages durant sa quête de puissance. Participant à plusieurs Tournois des Arts Martiaux, Goku affronte aussi des ennemis devenus alliés comme Tenshinhan et Chaozu, ainsi que le rejeton du Roi Démon Piccolo nommé Majunior (plus tard nommé simplement Piccolo). Dragon Ball Z se déroule cinq ans après la victoire de Goku contre Piccolo au 23e Tenkaichi Budokai. Il a désormais un fils nommé Son Gohan (nommé d'après grand-père Gohan) qui n'a pas l'amour du combat de son père mais possède un grand po",
+      "len": 1588,
+      "descFrSource": null
+    },
+    "sora": {
+      "id": "7c2a68b2-6cbb-43e2-97bb-e2f2a9fa0790",
+      "slug": "sora",
+      "name": "Sora",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Contexte : On sait peu de choses sur son enfance, seulement qu'un jour il devint fou furieux et ravagea le Temple du Feu, un lieu par ailleurs réputé être une forteresse indestructible. Par la suite, il fut détesté par certains des moines du temple, et se mit bientôt à subir le même traitement qu'un Jinchûriki. Il voulait faire partie des Douze Ninjas Gardiens. Il se déteste à cause de ses pouvoirs et se met en colère quand les gens le dévisagent. Lors de leur première rencontre, il déteste Naruto, mais ensuite ils deviennent amis. Sora n'aime pas recevoir de l'aide des autres, surtout des ninjas. Il ne voulait même pas que l'Équipe Yamato vienne. Partie II, arc filler du Temple du Feu : cet arc commence à cause d'un malentendu ; Naruto Uzumaki se bat contre l'un des moines en formation du Temple du Feu, Sora, qui utilise lui aussi des techniques basées sur le chakra du vent. Après la confusion, les moines et l'Équipe Kakashi se rendent au Temple du Feu. Les moines du temple expliquent que les tombes abritent les fidèles gardes du corps du seigneur féodal du Pays du Feu. Naruto observe Sora s'entraîner avec d'autres moines et se sent offensé en réalisant qu'il se retient. Naruto défie Sora, mais juste au moment où l'affaire est sur le point de devenir sérieuse, un autre moine l'arrête. Naruto se rend compte que Sora",
+      "len": 1337,
+      "descFrSource": null
+    },
+    "ten-shin-han": {
+      "id": "0dd57569-92cf-4b10-af87-3a0b096072c8",
+      "slug": "ten-shin-han",
+      "name": "Ten Shin Han",
+      "universe": "Dragon Ball",
+      "type": "character",
+      "descFr": "Tenshinhan est un personnage de fiction du manga Dragon Ball créé par Akira Toriyama. Entraîné par le rival de l'Ermite Tortue, l'Ermite Grue, il débute comme ennemi de Son Goku mais fait vite la paix et devient un allié. Il est généralement accompagné de Chaozu, son partenaire d'entraînement et meilleur ami, avec qui il peut communiquer par télépathie. Tenshinhan possède une composition physique unique : il a la capacité de faire pousser des bras dans son dos, de se scinder en quatre personnes, et il a un troisième œil sur le front. Durant les premières années de sa vie, Tenshinhan est entré à l'impitoyable École du Style de la Grue où il apprit de puissantes techniques basées sur le ki comme le Dodonpa, le Kikoho et le Taiyo-Ken ; il fut initié à de mortelles techniques d'assassinat par le frère cadet de l'Ermite Grue, Tao Pai Pai. Au moment de son introduction, Tenshinhan est parmi les guerriers les plus puissants de la série, égalé seulement par Goku lui-même. Profondément dévoué aux arts martiaux, reclus et discipliné, Tenshinhan est l'un des humains les plus forts du monde de Dragon Ball. Il combat aux côtés des autres personnages lorsque des menaces majeures surgissent contre la Terre, s'engageant souvent courageusement contre des ennemis bien plus puissants que lui. Comme c'est le cas pour quelques autres personnages des premiers chapitres de Dragon Ball, Tenshinhan fut inspiré d'un personnage de La Pérégrination vers l'Ouest ; son trait unique du troisième œil provient du dieu chinois Erlang Shen. Selon le Daizenshuu tome 7 et la PlayStation 2",
+      "len": 1578,
+      "descFrSource": null
+    },
+    "tsubaki-kurogane": {
+      "id": "46dbc302-a14a-4f47-b7f6-f776e2243c41",
+      "slug": "tsubaki-kurogane",
+      "name": "Tsubaki Kurogane",
+      "universe": "Naruto",
+      "type": "character",
+      "descFr": "Une jeune samouraï du Pays du Fer et la plus récente disciple de Mifune. Elle est actuellement étudiante en échange à Konohagakure, servant comme membre de l'équipe de genins, l'Équipe 15. Très mûre pour son âge, Tsubaki est une jeune fille très déterminée. Disciplinée et dévouée à sa tâche, Tsubaki a adopté une mentalité sérieuse et sans concessions. Elle a un fort attachement aux traditions et aux anciennes voies des samouraïs, ainsi qu'au respect des souhaits de son maître, tirant une grande fierté d'être samouraï et l'assumant ouvertement. En même temps, cette nature déterminée l'a rendue quelque peu arrogante et distante envers les autres. Bien que globalement très respectueuse dans sa façon de s'adresser à ses supérieurs, elle peut se montrer assez condescendante envers tous les autres. Considérant les ninjas de l'ère moderne et paisible comme négligés et manquant d'engagement, elle considère ouvertement sa réaffectation au sein d'une équipe de ninjas comme temporaire et purement une obligation. Cependant, en voyant à quel point sa nouvelle équipe était déterminée à se protéger mutuellement, Tsubaki commença à respecter ce que Konohagakure avait à offrir en matière de soldats. Malgré son attitude habituelle, Tsubaki n'est pas dénuée de certains traits enfantins. S'étant tant consacrée à son entraînement, elle est fascinée",
+      "len": 1349,
+      "descFrSource": null
+    },
+    "utakata": {
+      "id": "7ff5bd33-1715-44aa-b892-0a02f7b961aa",
+      "slug": "utakata",
+      "name": "Utakata",
+      "universe": "Naruto",
+      "type": null,
+      "descFr": "Utakata (ウタカタ) était un ninja de Kirigakure et le Jinchûriki de la Limace à Six Queues. Le Six-Queues a été capturé et scellé par l'Akatsuki, causant la mort de ce Jinchûriki lorsque le démon fut extrait. Utakata combattait en utilisant le ninjutsu des bulles de savon (しゃぼん玉, shabondama) de la lignée des Bulles (バブル系, Baburu-kei) du ninjutsu. (Source : Narutopedia)",
+      "len": 367,
+      "descFrSource": null
+    },
+    "uub": {
+      "id": "2a0e4613-b677-42e9-ae99-3ebe478d8ec5",
+      "slug": "uub",
+      "name": "Uub",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Uub est un enfant introduit au Tournoi Mondial après que Goku a vaincu Majin Buu. Lorsque Buu fut tué, Goku souhaita qu'il puisse se réincarner en une bonne personne afin de pouvoir de nouveau se battre contre lui. Uub est le résultat de ce vœu, d'où son nom (Buu à l'envers donne Uub). Goku décide d'entraîner Uub à la fin de Z, et GT commence avec l'achèvement de l'entraînement d'Uub. Uub a grandi comme un jeune garçon guerrier/fermier. Uub tient ses pouvoirs particuliers du fait qu'il a été créé à partir de Buu. Uub fusionne plus tard avec le Majin Buu originel. Cette transformation n'affecte guère son apparence, mais augmente sa puissance au point d'égaler presque celle de Bébi. Il affronte ensuite Super C-17 puis les dragons maléfiques. (Source : Wikipedia)",
+      "len": 770,
+      "descFrSource": null
+    },
+    "vegeta": {
+      "id": "62de08a9-2be1-4d10-a749-8dbb1b1526c9",
+      "slug": "vegeta",
+      "name": "Vegeta",
+      "universe": "Dragon Ball",
+      "type": "character",
+      "descFr": "Race : Saïyen. Date de naissance : An 732. Taille : 168 cm. Poids : 56 kg. Loisir : s'entraîner. Nourriture préférée : tous types de nourriture. Véhicule préféré : le module spatial. Famille connue : le Roi Vegeta (père), Tarble (frère), Bulma (épouse), Trunks (fils), Bra [Bulla] (fille). Vegeta est un personnage de fiction du manga Dragon Ball, créé par Akira Toriyama. Avec Goku, Gohan et Piccolo, il est l'un des personnages les plus importants de la série, débutant comme méchant avant de devenir un héros incontournable. Vegeta commence hautain, arrogant, imbu de lui-même et impitoyable en tant que prince des Saïyens. Son statut royal lui a fait développer un sentiment de supériorité démesuré et il se place au-dessus de la plupart, sinon de la totalité, des gens qu'il rencontre. Majestueux, égocentrique et empli de fierté, Vegeta fut jadis un guerrier impitoyable, au sang froid, un véritable tueur. Cependant, au fil de l'histoire, il devient une personne capable de se soucier de quelqu'un d'autre que lui-même et de l'aimer. Vegeta fut jadis un jeune membre de l'armée saïyenne, mais après la disparition de sa race, il travailla aux côtés de Nappa et Raditz, directement sous les ordres de Freezer. Il recherche l'immortalité pour régner sur l'univers, mais lorsqu'il apprend de Dodoria que Freezer a détruit sa planète, il décide d'éliminer Freezer (non pour venger sa race, mais pour assurer sa propre domination sur l'univers et se venger de Freezer qui l'avait utilisé à son insu pour servir ses propres objectifs). Il affronte plus tard Freezer avec les personnages principaux sur Namek et meurt dans les combats qui s'ensuivent ; une fois",
+      "len": 1661,
+      "descFrSource": null
+    },
+    "zarbon": {
+      "id": "8f76cf8e-b1b0-4085-acaf-19659a2f171e",
+      "slug": "zarbon",
+      "name": "Zarbon",
+      "universe": "Dragon Ball",
+      "type": null,
+      "descFr": "Zarbon est le bras droit de Freezer et l'un de ses sbires les plus puissants. Il a de longs cheveux verts tressés et porte un diadème et des boucles d'oreilles, ce qui lui donne un aspect plus séduisant parmi les soldats de Freezer. À cause de cela, Zarbon a une haute opinion de lui-même et juge les choses selon leur beauté. Zarbon a la capacité de se transformer en un humanoïde reptilien, augmentant sa force et sa férocité tout en réduisant sa beauté. C'est pourquoi il évite de se transformer autant que possible. Zarbon accompagne Freezer sur la planète Namek où il combat et capture Vegeta. Il fit des apparitions dans les fillers de l'anime de la saga Freezer et conseilla à Freezer de détruire la planète Vegeta dans Baddack contre Freezer. Dans Dragon Ball Z : Budokai Tenkaichi 2, Zarbon apparaît dans un scénario « et si » où il tente d'obtenir les Dragon Balls pour lui-même et de souhaiter une beauté éternelle. Il finit par obtenir son vœu, mais meurt lorsque la planète Namek explose. Son doubleur japonais est Sho Hayami. Dans le doublage d'Ocean Group, il est doublé par Paul Dobson avec un accent australien. Dans le redoublage ultérieur de FUNimation, il est doublé par Christopher Sabat avec un accent britannique. (Source : Wiki)",
+      "len": 1252,
+      "descFrSource": null
+    }
+  }
+}

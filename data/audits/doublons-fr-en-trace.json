@@ -1,0 +1,1990 @@
+{
+  "genere_le": "2026-08-08T06:55:53.896Z",
+  "plan": "data/audits/doublons-fr-en.json",
+  "regle": "Trace complète de CHAQUE fiche (absorbe ET meurt) — ligne akasha_entries, sections, arêtes entrantes/sortantes — prise AVANT toute écriture du chantier. Restauration possible à la main depuis ce fichier.",
+  "fusions": [
+    {
+      "absorbe": "liberation-de-la-lave-yoton",
+      "meurt": "lava-release",
+      "ids": {
+        "absorbe": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+        "meurt": "16753280-2da6-4709-9720-834e8265693f"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+          "slug": "liberation-de-la-lave-yoton",
+          "type": "power",
+          "name": "Libération de la Lave (Yōton)",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Kurotsuchi, Son Gokū et 7 autres.",
+          "description": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Kurotsuchi, Son Gokū et 7 autres.",
+          "image_url": null,
+          "attributes": {
+            "element": "Nature de chakra",
+            "category": "Nature de chakra"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.033003+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "53e371e4-fd5e-4ac9-96b4-68cb65bcff6f",
+            "from_entry": "225adc44-554c-48ed-aa14-0373ba2b5cec",
+            "to_entry": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "c9335964-3380-4800-ba32-6c843cbbe8e8",
+            "from_entry": "7260afa6-1e6b-4ce2-a083-fc0c7df1bba7",
+            "to_entry": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "fcd7bf80-111d-4208-9a2e-dee60c3b8b5c",
+            "from_entry": "6dc0a8f9-d0ec-4302-8754-e5cc1984bbe7",
+            "to_entry": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "ea802c4c-bacf-42c7-9983-c97496df9a8d",
+            "from_entry": "47d05cce-d6fd-40e5-8f19-0817a9b705ab",
+            "to_entry": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "d1ffc91c-1a92-4820-90b6-99ae21d0af2c",
+            "from_entry": "4c7a9704-75e6-46f6-b618-a4ca796557dc",
+            "to_entry": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "7e23b2a5-f5d0-42f7-b9b0-d882ef808c0f",
+            "from_entry": "6083cf02-600f-4db4-af30-07acb9d58e27",
+            "to_entry": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "4417878d-201b-472e-9bf7-34722a228c00",
+            "from_entry": "1b8408f7-a52a-4be7-a711-008bd90b411e",
+            "to_entry": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "da7c8ac9-c0a6-4ce1-a2b4-95de075c90d1",
+            "from_entry": "3e134cb9-d19e-479e-b0d7-b83b7b6ad4e5",
+            "to_entry": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "e7126dd1-9755-4feb-831b-6b39ebfd6c04",
+            "from_entry": "b786edb4-4d89-4555-bc8a-43dba82c1891",
+            "to_entry": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "4e1b8c18-a25e-4b95-882f-b27a51198b9f",
+            "from_entry": "30d50a47-c126-4554-b2b5-8b8d725362e3",
+            "to_entry": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "16753280-2da6-4709-9720-834e8265693f",
+          "slug": "lava-release",
+          "type": "skill",
+          "name": "Lava Release",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Naruto Uzumaki, Kurotsuchi, Son Gokū et 7 autres.",
+          "description": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Naruto Uzumaki, Kurotsuchi, Son Gokū et 7 autres.",
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/5/5c/Kakazan.png/revision/latest/scale-to-width-down/720?cb=20130815161125",
+          "attributes": {
+            "descFr": "Kekkei genkai combinant Feu et Terre, prenant diverses formes selon l'utilisateur. Peut être lave solide/liquide, boue acide, chaux corrosive, caoutchouc vulcanisé ou cendres volcaniques, chacun ayant des propriétés destructrices uniques.",
+            "category": "Kekkei genkai",
+            "discipline": "Kekkei genkai",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "rare",
+          "created_at": "2026-07-02T18:56:56.511452+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "846ca04e-b9f2-49a2-a19d-0037af81fa55",
+            "from_entry": "1b8408f7-a52a-4be7-a711-008bd90b411e",
+            "to_entry": "16753280-2da6-4709-9720-834e8265693f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "021d9510-9465-44c8-ba38-51320e6fc7de",
+            "from_entry": "225adc44-554c-48ed-aa14-0373ba2b5cec",
+            "to_entry": "16753280-2da6-4709-9720-834e8265693f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "e00c56f2-9ced-4dcb-9d18-028945e3e4e6",
+            "from_entry": "7260afa6-1e6b-4ce2-a083-fc0c7df1bba7",
+            "to_entry": "16753280-2da6-4709-9720-834e8265693f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "73b9dfdf-9db9-4ed9-a310-7c23adb65641",
+            "from_entry": "6dc0a8f9-d0ec-4302-8754-e5cc1984bbe7",
+            "to_entry": "16753280-2da6-4709-9720-834e8265693f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "5a8cf64a-28c9-42e5-94f6-a66b6657d57e",
+            "from_entry": "47d05cce-d6fd-40e5-8f19-0817a9b705ab",
+            "to_entry": "16753280-2da6-4709-9720-834e8265693f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "5a156ec2-a0b7-4d51-bbf8-7b57749afd67",
+            "from_entry": "4c7a9704-75e6-46f6-b618-a4ca796557dc",
+            "to_entry": "16753280-2da6-4709-9720-834e8265693f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "f8a1181e-c800-461f-901e-472f3c129f27",
+            "from_entry": "6083cf02-600f-4db4-af30-07acb9d58e27",
+            "to_entry": "16753280-2da6-4709-9720-834e8265693f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "ac0d43ed-55ee-4686-a70b-9e534793da6a",
+            "from_entry": "3e134cb9-d19e-479e-b0d7-b83b7b6ad4e5",
+            "to_entry": "16753280-2da6-4709-9720-834e8265693f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "13282f54-829d-4721-b3f3-3216d9f0e638",
+            "from_entry": "b786edb4-4d89-4555-bc8a-43dba82c1891",
+            "to_entry": "16753280-2da6-4709-9720-834e8265693f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "f85e6152-a075-472f-bfc4-a20e2c9133fe",
+            "from_entry": "30d50a47-c126-4554-b2b5-8b8d725362e3",
+            "to_entry": "16753280-2da6-4709-9720-834e8265693f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "absorbe": "liberation-de-la-glace-hyoton",
+      "meurt": "ice-release",
+      "ids": {
+        "absorbe": "568aed6e-5586-43d2-a499-673eff5cbd2c",
+        "meurt": "ad70aa6c-a339-4496-ad61-5431482dcc9c"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "568aed6e-5586-43d2-a499-673eff5cbd2c",
+          "slug": "liberation-de-la-glace-hyoton",
+          "type": "power",
+          "name": "Libération de la Glace (Hyōton)",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Haku, Ryōgi, Nadare Rōga et 3 autres.",
+          "description": "Nature de chakra de l'univers Naruto — maîtrisée par Haku, Ryōgi, Nadare Rōga et 3 autres.",
+          "image_url": null,
+          "attributes": {
+            "element": "Nature de chakra",
+            "category": "Nature de chakra"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.033003+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "d029091c-1b7d-4525-91e4-a7e6e5016e49",
+            "from_entry": "b7199c84-9df0-45e3-8850-abb619d02a9f",
+            "to_entry": "568aed6e-5586-43d2-a499-673eff5cbd2c",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "65b1a066-8063-448b-93f8-d17010d644ed",
+            "from_entry": "1f8e04a3-a8f0-4fc3-a0eb-1889f17a25d7",
+            "to_entry": "568aed6e-5586-43d2-a499-673eff5cbd2c",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "8595dd3b-4cb8-4f6d-8ac9-01eba85373d5",
+            "from_entry": "a21e43b4-9cbc-4bd2-8810-35ebb986e9e9",
+            "to_entry": "568aed6e-5586-43d2-a499-673eff5cbd2c",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "1997942c-df98-4f48-9120-330a714e3543",
+            "from_entry": "183cb5b7-3656-4a1e-99aa-5038b72af238",
+            "to_entry": "568aed6e-5586-43d2-a499-673eff5cbd2c",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "985316c2-53b3-40a3-bee5-28a3636077a4",
+            "from_entry": "30ae1e2a-062f-48ba-a1b2-26a2464b841d",
+            "to_entry": "568aed6e-5586-43d2-a499-673eff5cbd2c",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "d0d514a3-4f65-4846-bb47-9f945ae79cbd",
+            "from_entry": "00b6b67c-e295-45c4-b97d-d684ced0a920",
+            "to_entry": "568aed6e-5586-43d2-a499-673eff5cbd2c",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "ad70aa6c-a339-4496-ad61-5431482dcc9c",
+          "slug": "ice-release",
+          "type": "skill",
+          "name": "Ice Release",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Haku, Ryōgi, Haku's Mother.",
+          "description": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Haku, Ryōgi, Haku's Mother.",
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/c/c2/Ice_Release.png/revision/latest/scale-to-width-down/720?cb=20170120070228",
+          "attributes": {
+            "descFr": "Kekkei genkai combinant la Water Release et la Wind Release, historiquement maîtrisé par le clan Yuki mais aussi par d'autres utilisateurs comme Haku et Ryōgi. Selon l'utilisateur, la glace créée peut former des miroirs de voyage, des projectiles perçants, ou des gaines renforçant les coups de taijutsu.",
+            "category": "Kekkei genkai",
+            "discipline": "Kekkei genkai",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.575813+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "4b754e65-8973-4445-bac7-7cd877a8d587",
+            "from_entry": "1f8e04a3-a8f0-4fc3-a0eb-1889f17a25d7",
+            "to_entry": "ad70aa6c-a339-4496-ad61-5431482dcc9c",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "04324898-9f21-4479-a082-59fe7593f76c",
+            "from_entry": "a21e43b4-9cbc-4bd2-8810-35ebb986e9e9",
+            "to_entry": "ad70aa6c-a339-4496-ad61-5431482dcc9c",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "d79d0747-56f8-4e80-a1da-32375dd1c9be",
+            "from_entry": "b7199c84-9df0-45e3-8850-abb619d02a9f",
+            "to_entry": "ad70aa6c-a339-4496-ad61-5431482dcc9c",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "absorbe": "liberation-de-la-calcination-shakuton",
+      "meurt": "scorch-release",
+      "ids": {
+        "absorbe": "04ed6517-f649-424d-a97f-dbc1d6d7fe3e",
+        "meurt": "0a0b52fb-2261-4689-a17c-c9d9ef49b822"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "04ed6517-f649-424d-a97f-dbc1d6d7fe3e",
+          "slug": "liberation-de-la-calcination-shakuton",
+          "type": "power",
+          "name": "Libération de la Calcination (Shakuton)",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Pakura.",
+          "description": "Nature de chakra de l'univers Naruto — maîtrisée par Pakura.",
+          "image_url": null,
+          "attributes": {
+            "descFr": "La Libération de la Calcination (Shakuton) est un kekkei genkai de type ninjutsu qui combine les natures de chakra Feu et Vent. Pakura de Suna l'utilise pour évaporer toute l'eau présente dans le corps de sa cible, la réduisant à un cadavre desséché. Dans l'anime, cette technique se révèle faible face aux attaques de type Eau.",
+            "element": "Nature de chakra",
+            "category": "Nature de chakra",
+            "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.033003+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "25f7dd10-f62f-483b-9b1b-0222fa703e02",
+            "from_entry": "8d84357f-0614-4342-b359-6301f3d17229",
+            "to_entry": "04ed6517-f649-424d-a97f-dbc1d6d7fe3e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "0a0b52fb-2261-4689-a17c-c9d9ef49b822",
+          "slug": "scorch-release",
+          "type": "skill",
+          "name": "Scorch Release",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Pakura.",
+          "description": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Pakura.",
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/f/f2/Scorch_Release.png/revision/latest/scale-to-width-down/720?cb=20160121002928",
+          "attributes": {
+            "descFr": "Kekkei genkai de transformation de nature combinant l'Élément Feu et l'Élément Vent, utilisé par Pakura de Sunagakure. Cette technique permet d'évaporer toute l'eau contenue dans le corps de la cible, la laissant desséchée. Elle s'avère cependant vulnérable à l'Élément Eau.",
+            "category": "Kekkei genkai",
+            "discipline": "Kekkei genkai",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.575813+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "03860ced-8af3-4b1a-aeb2-aea6eba7f1c1",
+            "from_entry": "8d84357f-0614-4342-b359-6301f3d17229",
+            "to_entry": "0a0b52fb-2261-4689-a17c-c9d9ef49b822",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "absorbe": "liberation-de-l-ebullition-futton",
+      "meurt": "boil-release",
+      "ids": {
+        "absorbe": "50ee09aa-80c8-42e1-9476-c31c5593848e",
+        "meurt": "49966fd3-a732-404f-808b-f366e823630f"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "50ee09aa-80c8-42e1-9476-c31c5593848e",
+          "slug": "liberation-de-l-ebullition-futton",
+          "type": "power",
+          "name": "Libération de l'Ébullition (Futton)",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Kokuō, Han et 2 autres.",
+          "description": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Kokuō, Han et 2 autres.",
+          "image_url": null,
+          "attributes": {
+            "element": "Nature de chakra",
+            "category": "Nature de chakra"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.033003+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "b3f54b6a-9e23-422a-901e-7001175571b1",
+            "from_entry": "deac2132-97dc-40e4-bd9e-5f38a6d30837",
+            "to_entry": "50ee09aa-80c8-42e1-9476-c31c5593848e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "57e3aea5-f1b1-44c3-928d-ff1010e5d21e",
+            "from_entry": "6083cf02-600f-4db4-af30-07acb9d58e27",
+            "to_entry": "50ee09aa-80c8-42e1-9476-c31c5593848e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "c80a6a95-0e21-4038-8769-31167d8ef0e7",
+            "from_entry": "1e2b66b2-3e09-406a-b121-bb2531883839",
+            "to_entry": "50ee09aa-80c8-42e1-9476-c31c5593848e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "93b33ba6-3c6d-482c-8da4-f1b34e5a045a",
+            "from_entry": "225adc44-554c-48ed-aa14-0373ba2b5cec",
+            "to_entry": "50ee09aa-80c8-42e1-9476-c31c5593848e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "d92e9526-d273-47ab-8948-6186890c3eb9",
+            "from_entry": "a9dff091-d0f0-43c3-8f93-b17e630e2b34",
+            "to_entry": "50ee09aa-80c8-42e1-9476-c31c5593848e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "49966fd3-a732-404f-808b-f366e823630f",
+          "slug": "boil-release",
+          "type": "skill",
+          "name": "Boil Release",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Naruto Uzumaki, Kokuō, Han et 2 autres.",
+          "description": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Naruto Uzumaki, Kokuō, Han et 2 autres.",
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/a/ac/Skilled_Mist.png/revision/latest/scale-to-width-down/720?cb=20150123214353",
+          "attributes": {
+            "descFr": "Kekkei genkai combinant le Style du Feu et le Style de l'Eau qui prend différentes formes selon l'utilisateur. Mei Terumī crée une vapeur corrosive dont l'acidité est contrôlée et peut dissoudre la plupart des substances. Kokuō et ses jinchūriki génèrent de la vapeur en chauffant le chakra à son point d'ébullition, capable de fondre les alentours ou de propulser l'utilisateur.",
+            "category": "Kekkei genkai",
+            "discipline": "Kekkei genkai",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.511452+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "bbec7779-fe16-4e74-90fa-38b3bdb8087b",
+            "from_entry": "225adc44-554c-48ed-aa14-0373ba2b5cec",
+            "to_entry": "49966fd3-a732-404f-808b-f366e823630f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "f860c690-d049-488a-88f6-ead5156e664d",
+            "from_entry": "a9dff091-d0f0-43c3-8f93-b17e630e2b34",
+            "to_entry": "49966fd3-a732-404f-808b-f366e823630f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "a3966402-30f7-402a-91bf-d7f5e6130118",
+            "from_entry": "deac2132-97dc-40e4-bd9e-5f38a6d30837",
+            "to_entry": "49966fd3-a732-404f-808b-f366e823630f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "61e9498b-aebd-4238-ae9d-9ba35260598d",
+            "from_entry": "6083cf02-600f-4db4-af30-07acb9d58e27",
+            "to_entry": "49966fd3-a732-404f-808b-f366e823630f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "07314c84-b3ec-4c0f-9558-1ec9fa6fab21",
+            "from_entry": "1e2b66b2-3e09-406a-b121-bb2531883839",
+            "to_entry": "49966fd3-a732-404f-808b-f366e823630f",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "absorbe": "liberation-de-la-tempete-ranton",
+      "meurt": "storm-release",
+      "ids": {
+        "absorbe": "2ce9cfa6-6d7d-4a70-98d0-8810d85008ae",
+        "meurt": "b9298c8f-9f7e-4675-af1e-53648de5b9a2"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "2ce9cfa6-6d7d-4a70-98d0-8810d85008ae",
+          "slug": "liberation-de-la-tempete-ranton",
+          "type": "power",
+          "name": "Libération de la Tempête (Ranton)",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Madara Uchiha, Darui, Hiruko (missing-nin).",
+          "description": "Nature de chakra de l'univers Naruto — maîtrisée par Madara Uchiha, Darui, Hiruko (missing-nin).",
+          "image_url": null,
+          "attributes": {
+            "element": "Nature de chakra",
+            "category": "Nature de chakra"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.033003+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "d97a0068-73e3-4c0a-b4d5-7ad0153ae2e5",
+            "from_entry": "6b7e7599-8b50-45ab-b229-166fb6b89607",
+            "to_entry": "2ce9cfa6-6d7d-4a70-98d0-8810d85008ae",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "5804c013-5998-41c2-9805-f769bf4da289",
+            "from_entry": "595fc6d6-00b7-42dd-894f-f1a40c70158e",
+            "to_entry": "2ce9cfa6-6d7d-4a70-98d0-8810d85008ae",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "f9539bc1-d3cb-46f5-b0a0-d7169ae710ae",
+            "from_entry": "d9df9a39-6df6-4c81-83a0-463447cfd4f0",
+            "to_entry": "2ce9cfa6-6d7d-4a70-98d0-8810d85008ae",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "b9298c8f-9f7e-4675-af1e-53648de5b9a2",
+          "slug": "storm-release",
+          "type": "skill",
+          "name": "Storm Release",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Madara Uchiha, Darui, Hiruko (missing-nin).",
+          "description": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Madara Uchiha, Darui, Hiruko (missing-nin).",
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/0/06/Ranton_Reiz%C4%81_S%C4%81kasu.png/revision/latest/scale-to-width-down/720?cb=20120705141609",
+          "attributes": {
+            "descFr": "Kekkei genkai combinant le Style de la Foudre et le Style de l'Eau qui manipule des faisceaux d'électricité s'écoulant comme l'eau. Malgré son nom, elle ne contrôle pas les tempêtes réelles mais l'électricité liquide. Elle est utilisée par plusieurs shinobis de Kumogakure, particulièrement Darui, et Hiruko en possède une variante qui produit des nuages orageux chargés de foudre.",
+            "category": "Kekkei genkai",
+            "discipline": "Kekkei genkai",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.511452+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "a329dd5d-86b0-442e-99ed-f0e35a896c11",
+            "from_entry": "6b7e7599-8b50-45ab-b229-166fb6b89607",
+            "to_entry": "b9298c8f-9f7e-4675-af1e-53648de5b9a2",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "6ba20f11-fb64-4e47-b861-0b87999bfaf1",
+            "from_entry": "595fc6d6-00b7-42dd-894f-f1a40c70158e",
+            "to_entry": "b9298c8f-9f7e-4675-af1e-53648de5b9a2",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "a6a90f25-6ed4-415d-98dd-dd78387aef2d",
+            "from_entry": "d9df9a39-6df6-4c81-83a0-463447cfd4f0",
+            "to_entry": "b9298c8f-9f7e-4675-af1e-53648de5b9a2",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "absorbe": "liberation-de-l-explosion-bakuton",
+      "meurt": "explosion-release",
+      "ids": {
+        "absorbe": "71ece741-78dc-4b07-883f-2c4879280117",
+        "meurt": "2dd0d511-8436-4112-b9c4-4b3efb8239e0"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "71ece741-78dc-4b07-883f-2c4879280117",
+          "slug": "liberation-de-l-explosion-bakuton",
+          "type": "power",
+          "name": "Libération de l'Explosion (Bakuton)",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Deidara, Sekiei, Gari.",
+          "description": "Nature de chakra de l'univers Naruto — maîtrisée par Deidara, Sekiei, Gari.",
+          "image_url": null,
+          "attributes": {
+            "element": "Nature de chakra",
+            "category": "Nature de chakra"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.033003+00:00"
+        },
+        "sections": [
+          {
+            "id": 19703,
+            "entry_id": "71ece741-78dc-4b07-883f-2c4879280117",
+            "idx": "1",
+            "titre": "Formes",
+            "texte": "Deidara utilise la Libération de l'Explosion dans son Argile Explosive. Il infuse son argile avec du chakra explosif, créant des bombes de différentes tailles et formes. Gari utilise la Libération de l'Explosion en conjonction avec le taijutsu, lui permettant de porter des coups qui causent à tout ce qu'ils frappent d'exploser de l'intérieur. Dans l'anime, il peut aussi l'utiliser au sol pour créer une onde de choc de terre soulevée et de débris pour déséquilibrer l'ennemi. Il utilise aussi une version moins destructrice de cette technique, créant une bouffée de fumée au lieu d'une explosion. Dans Sasuke Shinden, Sasuke rencontre un homme utilisant la Libération de l'Explosion contrôlé par un genjutsu ; il n'est pas clair si l'homme provient de Kumogakure ou Kirigakure. Comme Gari, l'homme utilise la Libération de l'Explosion pour créer une explosion là où ses coups connectent. Comme l'argile de Deidara, les attaques de l'homme sont facilement anéanties.",
+            "source": "claude-haiku-4-5 (blitz front-2b — traduit de la page Fandom, contre-vérifié)",
+            "created_at": "2026-08-06T19:48:07.177288+00:00"
+          }
+        ],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "1ab9d436-7e96-418e-a50e-3d1aba1e024d",
+            "from_entry": "9f31a928-28cf-4f5c-bc74-298cc379dbbb",
+            "to_entry": "71ece741-78dc-4b07-883f-2c4879280117",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "a34bbcdc-1b97-48b5-b251-32267bf2070b",
+            "from_entry": "a2b96c00-c176-424a-a68d-b20d0f96c402",
+            "to_entry": "71ece741-78dc-4b07-883f-2c4879280117",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "1cddf00e-980e-4c75-8f80-749cc3e62147",
+            "from_entry": "0e42fae3-02d5-45d4-af91-bff7aa545fbe",
+            "to_entry": "71ece741-78dc-4b07-883f-2c4879280117",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "2dd0d511-8436-4112-b9c4-4b3efb8239e0",
+          "slug": "explosion-release",
+          "type": "skill",
+          "name": "Explosion Release",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Deidara, Sekiei, Gari.",
+          "description": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Deidara, Sekiei, Gari.",
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/b/bc/Landmine_Fist.png/revision/latest/scale-to-width-down/720?cb=20150123214706",
+          "attributes": {
+            "descFr": "Kekkei genkai combinant la libération de terre et la libération d'électricité, conférant à l'utilisateur la capacité de canaliser du chakra explosif au combat. Deidara utilise cette nature dans son argile explosive, créant des bombes de formes variées, tandis que Gari l'associe aux techniques de taijutsu pour faire exploser ses coups de poing de l'intérieur. Cette nature est apparemment commune aux ninjas du Explosion Corps d'Iwa.",
+            "category": "Kekkei genkai",
+            "discipline": "Kekkei genkai",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.575813+00:00"
+        },
+        "sections": [
+          {
+            "id": 3337,
+            "entry_id": "2dd0d511-8436-4112-b9c4-4b3efb8239e0",
+            "idx": "1",
+            "titre": "Formes",
+            "texte": "Deidara utilise l'Explosion Release dans son Argile Explosive, infusant l'argile de chakra explosif pour créer des bombes de différentes tailles et formes. Gari utilise l'Explosion Release en conjonction avec le taijutsu, lui permettant de livrer des coups qui font exploser tout ce qu'ils frappent de l'intérieur. Dans l'anime, il peut aussi l'utiliser au sol pour créer une onde de choc de terre et débris retournée pour déstabiliser l'ennemi, ou une version moins destructrice créant un nuage de fumée à la place. Dans Sasuke Shinden, Sasuke rencontre un homme utilisant l'Explosion Release contrôlé par un genjutsu ; on ne sait pas clairement si l'homme provient de Kumogakure ou Kirigakure. Comme Gari, l'homme utilise l'Explosion Release pour créer une explosion partout où ses coups connectent. Cette aptitude héréditaire est facilement neutralisée par le Style de Foudre.",
+            "source": "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)",
+            "created_at": "2026-08-05T18:36:35.425246+00:00"
+          }
+        ],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "301881aa-3d20-451b-aac6-508974391f01",
+            "from_entry": "9f31a928-28cf-4f5c-bc74-298cc379dbbb",
+            "to_entry": "2dd0d511-8436-4112-b9c4-4b3efb8239e0",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "b24b347a-181e-4304-925f-6d8d06d8efeb",
+            "from_entry": "a2b96c00-c176-424a-a68d-b20d0f96c402",
+            "to_entry": "2dd0d511-8436-4112-b9c4-4b3efb8239e0",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "904f7350-cfa8-42d5-82a3-957cbcbaf488",
+            "from_entry": "0e42fae3-02d5-45d4-af91-bff7aa545fbe",
+            "to_entry": "2dd0d511-8436-4112-b9c4-4b3efb8239e0",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "absorbe": "liberation-des-tenebres-meiton",
+      "meurt": "dark-release",
+      "ids": {
+        "absorbe": "b60b12a3-3a92-4dda-8922-d836da7fb08b",
+        "meurt": "416c85d1-8752-40cc-8bb2-d3a8e5f28966"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "b60b12a3-3a92-4dda-8922-d836da7fb08b",
+          "slug": "liberation-des-tenebres-meiton",
+          "type": "power",
+          "name": "Libération des Ténèbres (Meiton)",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Hiruko (missing-nin).",
+          "description": "Nature de chakra de l'univers Naruto — maîtrisée par Hiruko (missing-nin).",
+          "image_url": null,
+          "attributes": {
+            "element": "Nature de chakra",
+            "category": "Nature de chakra"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.033003+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "89758950-5497-4372-81c7-7cbe59ee2a44",
+            "from_entry": "d9df9a39-6df6-4c81-83a0-463447cfd4f0",
+            "to_entry": "b60b12a3-3a92-4dda-8922-d836da7fb08b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "416c85d1-8752-40cc-8bb2-d3a8e5f28966",
+          "slug": "dark-release",
+          "type": "skill",
+          "name": "Dark Release",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Hiruko (missing-nin).",
+          "description": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Hiruko (missing-nin).",
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/e/e4/Dark_release_mark.png/revision/latest/scale-to-width-down/720?cb=20101111163308",
+          "attributes": {
+            "descFr": "Kekkei genkai combinée absorbant, manipulant et libérant le chakra ennemi via une marque spéciale. Technique rare utilisée par le missing-nin Hiruko, obtenue via sa Technique Chimère.",
+            "category": "Kekkei genkai",
+            "discipline": "Kekkei genkai",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.575813+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "2942f2ac-0c7b-4a06-903e-0e4a554cb9d4",
+            "from_entry": "d9df9a39-6df6-4c81-83a0-463447cfd4f0",
+            "to_entry": "416c85d1-8752-40cc-8bb2-d3a8e5f28966",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "absorbe": "liberation-du-cristal-shoton",
+      "meurt": "crystal-release",
+      "ids": {
+        "absorbe": "b83413c5-a46d-4b46-b812-3353c94c81a1",
+        "meurt": "e9afe582-0adf-4026-9440-48801ddd0496"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "b83413c5-a46d-4b46-b812-3353c94c81a1",
+          "slug": "liberation-du-cristal-shoton",
+          "type": "power",
+          "name": "Libération du Cristal (Shōton)",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Guren.",
+          "description": "Nature de chakra de l'univers Naruto — maîtrisée par Guren.",
+          "image_url": null,
+          "attributes": {
+            "element": "Nature de chakra",
+            "category": "Nature de chakra"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.033003+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "c2f759fa-5b42-4b74-a165-6d99a77a4a58",
+            "from_entry": "f6a19879-53ba-48ef-b3e8-76a65ad88d2f",
+            "to_entry": "b83413c5-a46d-4b46-b812-3353c94c81a1",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "e9afe582-0adf-4026-9440-48801ddd0496",
+          "slug": "crystal-release",
+          "type": "skill",
+          "name": "Crystal Release",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Guren.",
+          "description": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Guren.",
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/5/5c/Jade_Crystal_Prison.png/revision/latest/scale-to-width-down/720?cb=20151006202337",
+          "attributes": {
+            "descFr": "Transformation élémentaire rare convertissant toute matière en cristaux colorés (rose, jade, rouge ou bleu). Cristallise les cibles au niveau cellulaire. Vulnérable aux ondes sonores précises et à la Foudre.",
+            "category": "Kekkei genkai",
+            "discipline": "Kekkei genkai",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.575813+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "f819811f-68b1-4a37-ba5a-fbffb6e48f84",
+            "from_entry": "f6a19879-53ba-48ef-b3e8-76a65ad88d2f",
+            "to_entry": "e9afe582-0adf-4026-9440-48801ddd0496",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "absorbe": "liberation-de-l-acier-koton",
+      "meurt": "steel-release",
+      "ids": {
+        "absorbe": "812eb8ab-09e9-4d68-94e8-61125976b786",
+        "meurt": "e362b75a-8be7-479a-9dbf-ef16e04b2c47"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "812eb8ab-09e9-4d68-94e8-61125976b786",
+          "slug": "liberation-de-l-acier-koton",
+          "type": "power",
+          "name": "Libération de l'Acier (Kōton)",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Hiruko (missing-nin).",
+          "description": "Nature de chakra de l'univers Naruto — maîtrisée par Hiruko (missing-nin).",
+          "image_url": null,
+          "attributes": {
+            "descFr": "La Libération de l'Acier (Kōton) est un kekkei genkai correspondant à une transformation combinée de la nature du chakra, dont les éléments constitutifs restent inconnus. Elle permet à des utilisateurs tels que Metoro Konjiki d'Ishigakure de fabriquer des armes en acier, à Hiruko de transformer son corps en acier quasi indestructible après avoir volé cette nature, et à un adepte de la Religion de la Lune Pourpre de créer des armes en acier à partir de l'environnement. Dans le jeu Naruto Mobile, cette nature est suggérée comme résultant de la combinaison simultanée des natures Terre et Foudre.",
+            "element": "Nature de chakra",
+            "category": "Nature de chakra",
+            "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.033003+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "d032b976-76a2-4648-84bd-cdf12c8e6042",
+            "from_entry": "d9df9a39-6df6-4c81-83a0-463447cfd4f0",
+            "to_entry": "812eb8ab-09e9-4d68-94e8-61125976b786",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "e362b75a-8be7-479a-9dbf-ef16e04b2c47",
+          "slug": "steel-release",
+          "type": "skill",
+          "name": "Steel Release",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Hiruko (missing-nin).",
+          "description": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Hiruko (missing-nin).",
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/8/81/Steel_armour.png/revision/latest/scale-to-width-down/720?cb=20100423154647",
+          "attributes": {
+            "descFr": "Kekkei genkai combinant deux natures élémentaires. Hiruko, qui a volé cette aptitude, peut transformer son corps en acier pratiquement indestructible, tandis que d'autres utilisateurs peuvent créer des armes d'acier à partir de leur environnement.",
+            "category": "Kekkei genkai",
+            "discipline": "Kekkei genkai",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.575813+00:00"
+        },
+        "sections": [
+          {
+            "id": 17442,
+            "entry_id": "e362b75a-8be7-479a-9dbf-ef16e04b2c47",
+            "idx": "2",
+            "titre": "Anecdotes",
+            "texte": "Dans Sasuke Shinden, un membre de la Religion de la Lune Pourpre peut créer des armes en acier à partir de son environnement. Sasuke Uchiha la décrit comme une capacité puissante qu'il n'a jamais vue auparavant, mais l'habilité n'est pas davantage expliquée. Dans Naruto Mobile, Steel Release est supposée être créée en combinant simultanément les natures Terre et Foudre.",
+            "source": "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)",
+            "created_at": "2026-08-05T18:40:16.418758+00:00"
+          }
+        ],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "2e112e02-9d4f-48ae-a9bc-c2d4b284d64d",
+            "from_entry": "d9df9a39-6df6-4c81-83a0-463447cfd4f0",
+            "to_entry": "e362b75a-8be7-479a-9dbf-ef16e04b2c47",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "absorbe": "liberation-du-magnetisme-jiton",
+      "meurt": "magnet-release",
+      "ids": {
+        "absorbe": "99a0db2c-7bf0-4426-a648-b42ce8db2948",
+        "meurt": "f0c61aae-9cdb-4ae1-9e7a-e3252b2da379"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "99a0db2c-7bf0-4426-a648-b42ce8db2948",
+          "slug": "liberation-du-magnetisme-jiton",
+          "type": "power",
+          "name": "Libération du Magnétisme (Jiton)",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Gaara, Shinki et 4 autres.",
+          "description": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Gaara, Shinki et 4 autres.",
+          "image_url": null,
+          "attributes": {
+            "element": "Nature de chakra",
+            "category": "Nature de chakra"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.033003+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "aaca69ad-19a8-4dd1-a126-ed8555da5f6c",
+            "from_entry": "b5b33ad2-70c8-44cb-859d-373d464c97f7",
+            "to_entry": "99a0db2c-7bf0-4426-a648-b42ce8db2948",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "3ba9ea43-32d6-4963-ab9c-968c36964314",
+            "from_entry": "7f9d6d41-2af2-4bf4-9cf1-2a568c0ebb75",
+            "to_entry": "99a0db2c-7bf0-4426-a648-b42ce8db2948",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "40be14a7-4e28-4b13-92f6-1bc34eb30a71",
+            "from_entry": "b9309493-3613-4c8f-89c3-5786a8053f95",
+            "to_entry": "99a0db2c-7bf0-4426-a648-b42ce8db2948",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "7b41744a-61e5-4556-989a-4f1e0a311819",
+            "from_entry": "9d76211d-22a1-4b96-86d2-d268aa4894bf",
+            "to_entry": "99a0db2c-7bf0-4426-a648-b42ce8db2948",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T19:18:06.592385+00:00"
+          },
+          {
+            "id": "de6fd9f1-423a-430a-8551-625eddfd43c4",
+            "from_entry": "97bfc552-6236-4d99-a153-a7b72ed2f470",
+            "to_entry": "99a0db2c-7bf0-4426-a648-b42ce8db2948",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "88ffde4d-d49c-44ef-98ee-22074fbc3923",
+            "from_entry": "9c2c2ca4-971b-4d57-8350-8939d49d04ec",
+            "to_entry": "99a0db2c-7bf0-4426-a648-b42ce8db2948",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          },
+          {
+            "id": "4ae51baf-6e01-4ac2-b7fb-b2da49d6e696",
+            "from_entry": "225adc44-554c-48ed-aa14-0373ba2b5cec",
+            "to_entry": "99a0db2c-7bf0-4426-a648-b42ce8db2948",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.180369+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "f0c61aae-9cdb-4ae1-9e7a-e3252b2da379",
+          "slug": "magnet-release",
+          "type": "skill",
+          "name": "Magnet Release",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Naruto Uzumaki, Gaara, Shinki et 4 autres.",
+          "description": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Naruto Uzumaki, Gaara, Shinki et 4 autres.",
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/5/51/Magnet_Release.png/revision/latest?cb=20151031163042",
+          "attributes": {
+            "descFr": "Kekkei genkai combinant Vent et Terre générant une force magnétique appliquée à diverses substances. Permet de contrôler le sable de fer, la poussière d'or ou de magnétiser des armes projectiles.",
+            "category": "Kekkei genkai",
+            "discipline": "Kekkei genkai",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "rare",
+          "created_at": "2026-07-02T18:56:56.511452+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "fb133226-f695-46da-82d2-7cc27ac4f5f7",
+            "from_entry": "225adc44-554c-48ed-aa14-0373ba2b5cec",
+            "to_entry": "f0c61aae-9cdb-4ae1-9e7a-e3252b2da379",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "cd338558-eaac-4d7e-a0ad-cd1a278d3c5e",
+            "from_entry": "b5b33ad2-70c8-44cb-859d-373d464c97f7",
+            "to_entry": "f0c61aae-9cdb-4ae1-9e7a-e3252b2da379",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "e10f408a-0e89-49fd-ae2a-a759946ca37c",
+            "from_entry": "7f9d6d41-2af2-4bf4-9cf1-2a568c0ebb75",
+            "to_entry": "f0c61aae-9cdb-4ae1-9e7a-e3252b2da379",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "ee58dead-6b60-4284-887d-9648310c6784",
+            "from_entry": "b9309493-3613-4c8f-89c3-5786a8053f95",
+            "to_entry": "f0c61aae-9cdb-4ae1-9e7a-e3252b2da379",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "a8f255e2-99ab-4e62-8ce4-69ca56283d2b",
+            "from_entry": "9d76211d-22a1-4b96-86d2-d268aa4894bf",
+            "to_entry": "f0c61aae-9cdb-4ae1-9e7a-e3252b2da379",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T19:18:07.421995+00:00"
+          },
+          {
+            "id": "1294493f-206d-4ad0-b37d-70ff13839644",
+            "from_entry": "97bfc552-6236-4d99-a153-a7b72ed2f470",
+            "to_entry": "f0c61aae-9cdb-4ae1-9e7a-e3252b2da379",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "898d786c-3db3-43ec-ae8c-7ece56776f19",
+            "from_entry": "9c2c2ca4-971b-4d57-8350-8939d49d04ec",
+            "to_entry": "f0c61aae-9cdb-4ae1-9e7a-e3252b2da379",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "absorbe": "liberation-du-bois-mokuton",
+      "meurt": "wood-release",
+      "ids": {
+        "absorbe": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+        "meurt": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+          "slug": "liberation-du-bois-mokuton",
+          "type": "power",
+          "name": "Libération du Bois (Mokuton)",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Madara Uchiha, Orochimaru, Obito Uchiha et 12 autres.",
+          "description": "Nature de chakra de l'univers Naruto — maîtrisée par Madara Uchiha, Orochimaru, Obito Uchiha et 12 autres.",
+          "image_url": null,
+          "attributes": {
+            "element": "Nature de chakra",
+            "category": "Nature de chakra"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.033003+00:00"
+        },
+        "sections": [],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "18ccbf42-f304-4bb2-8dfe-885ff741a2bb",
+            "from_entry": "8fdb0b61-6159-466d-97e9-635f15ac7964",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "e9ee02b2-4340-4da8-97f2-13da97f61276",
+            "from_entry": "bc795047-8e5d-4d31-a59f-c91a2289a177",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "56818c43-f561-44ca-a28a-67b8e46782e7",
+            "from_entry": "6b7e7599-8b50-45ab-b229-166fb6b89607",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "27a38833-2d3d-432c-91ad-a76fa677bbfb",
+            "from_entry": "fdf26386-1145-43c1-9b06-b3061d2be150",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "1c0e1ca6-0697-4ec6-ac94-dddb520de114",
+            "from_entry": "705bebcd-af08-4611-9a02-bb2232ba5419",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "2fd5d603-8c34-4c39-a637-d9c7f9ac9647",
+            "from_entry": "56bfbbdf-44bb-43ec-a06b-0ee69b55f744",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T19:18:06.653232+00:00"
+          },
+          {
+            "id": "e7357928-c6ab-48c8-89b2-a2afcae8df06",
+            "from_entry": "64cdbf63-eed9-4f90-88cc-ba5a18a062da",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "01646f8e-53d2-4a64-b4b7-b6156dda629e",
+            "from_entry": "9cb03eed-8160-4b0d-8038-fe266ce34ff5",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "8f809829-2001-4a3a-b6e7-0a50859d9758",
+            "from_entry": "d1f1167a-f8a8-4dbc-a3f5-0a1c5a048e32",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "73490236-7f22-4419-9a52-f247d4843ff5",
+            "from_entry": "3635f7e2-21d1-432d-a042-298108ea7796",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "e83656fd-b80d-47f2-9ff8-b1b4f69ccf49",
+            "from_entry": "7bb30a4a-a897-4b02-bab0-4bd3a223cca0",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "d39816c1-2508-45eb-af9a-bcfb80d343c7",
+            "from_entry": "a29b97a7-4e95-4f14-a8b9-d3f61fe84035",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "7b4a0e6f-c384-424c-8b7c-982f90bca72d",
+            "from_entry": "1afcd01a-403d-46ed-b93a-144a720d2670",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "0a9648fc-3764-4ba6-8c6d-19e851c058e8",
+            "from_entry": "9d746529-3f46-4347-a775-fb1a53aea2b9",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          },
+          {
+            "id": "0384a184-5f1d-4bc7-b928-474b6893d611",
+            "from_entry": "e8c16ceb-433f-4ed7-abaf-287fcb77a3a1",
+            "to_entry": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.244198+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+          "slug": "wood-release",
+          "type": "power",
+          "name": "Mokuton",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Libération du bois, fusion d'eau et de terre, propre à Hashirama.",
+          "description": "Libération du bois, fusion d'eau et de terre, propre à Hashirama.",
+          "image_url": "/images/akasha/ref/wood-release.webp",
+          "attributes": {
+            "descFr": "La Libération du Bois, ou Mokuton, est une technique de kekkei genkai qui combine les natures Terre et Eau. Elle est célèbre pour avoir été utilisée par Hashirama Senju et permet à l'utilisateur de créer du bois, allant de simples objets à des forêts entières. Cette technique est également capable de manipuler et de supprimer le chakra d'un adversaire, ce qui en fait un outil puissant pour contrôler les démons à queues.",
+            "element": "Bois",
+            "category": "Jutsu",
+            "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo"
+          },
+          "rarity": "legendary",
+          "created_at": "2026-06-28T11:11:31.923448+00:00"
+        },
+        "sections": [
+          {
+            "id": 13026,
+            "entry_id": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "idx": "1",
+            "titre": "Usage",
+            "texte": "Le Mokuton permet à son utilisateur de créer du bois, en convertissant essentiellement son chakra en une source de vie. Les utilisateurs peuvent créer des arbres de différentes tailles et formes, ainsi que des structures en bois allant des cages aux maisons complètes. La végétation peut surgir du corps de l'utilisateur ou pousser à partir de l'environnement. Le Mokuton peut également produire des structures très détaillées et ornées. Les utilisateurs peuvent créer des clones fonctionnels d'eux-mêmes, indiscernables de l'original, et même capables d'exécuter d'autres techniques. Le Mokuton permet également de manipuler, de supprimer et/ou d'absorber le chakra d'une cible, en l'enserrant avec du bois et en contrôlant son chakra jusqu'à ce qu'il soit trop faible pour s'échapper.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:39:07.050439+00:00"
+          },
+          {
+            "id": 13027,
+            "entry_id": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "idx": "2",
+            "titre": "Utilisateurs",
+            "texte": "Hashirama Senju possédait naturellement la libération du bois, étant le seul à avoir maîtrisé cette technique ninjutsu. Aucun de ses descendants n'a hérité de cette capacité. En raison de son utilité, plusieurs tentatives ont été faites pour la reproduire, mais toutes ont échoué. Des décennies après la mort de Hashirama, Orochimaru a prélevé des cellules sur son corps et les a greffées à soixante enfants, mais seul Yamato a survécu. Yamato est devenu le double génétique de Hashirama et peut utiliser la libération du bois, mais de manière moins puissante. Orochimaru a également développé une méthode pour greffer des cellules de Hashirama à des sujets, ce qui a permis à Danzō Shimura et à Madara Uchiha d'utiliser la libération du bois. Kabuto Yakushi a poursuivi les recherches d'Orochimaru, permettant à Madara d'utiliser la libération du bois à une échelle similaire à celle de Hashirama. Moegi Kazamatsuri peut également utiliser la libération du bois, mais la méthode est inconnue. Jura, en tant qu'incarnation d'un Ten-Tails, peut utiliser la libération du bois, ainsi que ses alliés.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:39:07.050439+00:00"
+          },
+          {
+            "id": 13028,
+            "entry_id": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "idx": "3",
+            "titre": "Anecdotes",
+            "texte": "Le Mokuton est une technique de ninjutsu qui consiste à grimper à un arbre et à se camoufler dans le feuillage. Hashirama possédait une capacité de régénération qui guérissait passivement toutes ses blessures, mais il n'a jamais été établi que cette capacité fasse partie de son Kekkei Genkai. Les personnes ayant reçu des tissus génétiques de Hashirama n'ont plus besoin de nourriture ou d'eau pour survivre, mais il est inconnu si ce trait est lié à sa capacité de régénération. De plus, il est inconnu si Naruto a acquis cette capacité d'auto-suffisance ou le Mokuton grâce à son bras artificiel contenant les gènes de Hashirama. Dans l'anime, Hashirama a laissé derrière lui un rouleau détaillant ses techniques de Mokuton, que Danzō a obtenu et donné à Yamato dans l'espoir qu'il parvienne un jour à maîtriser le Mokuton au niveau de Hashirama.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:39:07.050439+00:00"
+          }
+        ],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "e7f70e7a-72de-42c1-93cb-605005f62273",
+            "from_entry": "6b7e7599-8b50-45ab-b229-166fb6b89607",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-06-28T11:11:32.005028+00:00"
+          },
+          {
+            "id": "90f84a09-2e39-4189-aedc-c419d5f361ba",
+            "from_entry": "64cdbf63-eed9-4f90-88cc-ba5a18a062da",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-06-28T11:11:32.005028+00:00"
+          },
+          {
+            "id": "45cd1b00-4651-4bac-bad6-fa415a8efadc",
+            "from_entry": "d1f1167a-f8a8-4dbc-a3f5-0a1c5a048e32",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "fa2fe3e4-344a-46fd-bef5-ac4280d63c2e",
+            "from_entry": "3635f7e2-21d1-432d-a042-298108ea7796",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "30260a6c-4f76-430f-97d5-bc47b5aa3cdd",
+            "from_entry": "7bb30a4a-a897-4b02-bab0-4bd3a223cca0",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "deb83874-76ef-4b20-8cda-1d02dc0feaf5",
+            "from_entry": "a29b97a7-4e95-4f14-a8b9-d3f61fe84035",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "7bdb0984-1c7c-449d-9db3-40bfb9e0a2f2",
+            "from_entry": "1afcd01a-403d-46ed-b93a-144a720d2670",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "fdad5983-0777-408a-b849-994ae4c85184",
+            "from_entry": "9d746529-3f46-4347-a775-fb1a53aea2b9",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "1120c7c7-335d-4457-a4d1-2bc78e9ce71e",
+            "from_entry": "e8c16ceb-433f-4ed7-abaf-287fcb77a3a1",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "f9f50b4f-ff57-4659-adad-cc7dd88fdb4c",
+            "from_entry": "a34d76ce-1760-4a73-9053-167aebac88ad",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-08-01T09:28:13.009623+00:00"
+          },
+          {
+            "id": "916e831f-87b6-4d82-aedc-70ccbfc7ed88",
+            "from_entry": "fdf26386-1145-43c1-9b06-b3061d2be150",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "7d978c2b-cd9b-47c5-8598-613d430cc282",
+            "from_entry": "705bebcd-af08-4611-9a02-bb2232ba5419",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "b9c9ee42-910b-400e-b030-81fb1ff47093",
+            "from_entry": "56bfbbdf-44bb-43ec-a06b-0ee69b55f744",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T19:18:07.421995+00:00"
+          },
+          {
+            "id": "d2f0135a-943e-4586-b903-9e2adc360327",
+            "from_entry": "9cb03eed-8160-4b0d-8038-fe266ce34ff5",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "266c2f81-86f3-4a85-b832-a2e6f9260192",
+            "from_entry": "8fdb0b61-6159-466d-97e9-635f15ac7964",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          },
+          {
+            "id": "ae45f874-3a9f-41c4-9c3a-9eeb77a248a7",
+            "from_entry": "bc795047-8e5d-4d31-a59f-c91a2289a177",
+            "to_entry": "a8cede0f-48c7-4e0e-b682-53d496f3fe5b",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:58.051486+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "absorbe": "shadow-clone",
+      "meurt": "shadow-clone-technique",
+      "ids": {
+        "absorbe": "b03f635c-2866-4a6c-bbe9-b02bbab945a6",
+        "meurt": "1fd80370-45d4-43e6-bf21-11e1ea63051e"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "b03f635c-2866-4a6c-bbe9-b02bbab945a6",
+          "slug": "shadow-clone",
+          "type": "power",
+          "name": "Multiclonage",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Crée des clones tangibles et autonomes, signature de Naruto.",
+          "description": "Crée des clones tangibles et autonomes, signature de Naruto.",
+          "image_url": "/images/akasha/ref/shadow-clone.webp",
+          "attributes": {
+            "descFr": "Technique créant des clones physiquement réels et autonomes qui se partagent le chakra de l'utilisateur. Les clones possèdent les mêmes capacités que l'original et peuvent exécuter des jutsu ; une fois dispersés, ils restituent toutes leurs expériences et leur chakra résiduel à l'original.",
+            "element": "Chakra",
+            "category": "Jutsu",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "rare",
+          "created_at": "2026-06-28T11:11:31.923448+00:00"
+        },
+        "sections": [
+          {
+            "id": 13691,
+            "entry_id": "b03f635c-2866-4a6c-bbe9-b02bbab945a6",
+            "idx": "1",
+            "titre": "Présentation",
+            "texte": "Cette technique permet à l'utilisateur de créer une ou plusieurs copies de lui-même. Le chakra de l'utilisateur est réparti de manière égale entre lui-même et ses clones : la création d'un clone lui donnera la moitié de son chakra, la création de deux clones donnera à chacun un tiers de son chakra, et ainsi de suite. Selon la quantité de chakra que l'utilisateur possède et le nombre de clones qu'il crée, cette déplétion rapide de ses réserves peut être dangereuse. C'est pourquoi, en général, seuls les ninjas de niveau jōnin ou supérieur peuvent utiliser en toute sécurité la technique standard de clonage. La technique de clonage multiple, qui crée des centaines de clones par rapport aux dizaines de la version standard, est considérée comme trop dangereuse pour être utilisée. Naruto Uzumaki est une exception à cette règle, car il a accès au chakra de la queue de renard à neuf queues, ce qui lui permet de créer des centaines de clones sans risque. Les clones de l'ombre sont physiquement réels et possèdent les mêmes vêtements, dommages et transformations que l'utilisateur au moment de leur création. La plupart des outils et armes sont copiés lors de la création des clones, mais certaines constructions de chakra et technologies compliquées ne seront pas dupliquées. Puisqu'ils sont visuellement identiques et possèdent le même chakra que l'utilisateur, les clones de l'ombre sont indiscernables de l'original, même avec un dōjutsu, bien qu'il existe une exception notable avec Madara Uchiha, qui peut identifier les clones de l'ombre en utilisant son Rinnegan. Une fois créés, les clones de l'ombre peuvent servir à plusieurs fins. Ils peuvent être utilisés comme leurres, soit en occupant les adversaires, soit en cachant l'identité de l'original. S'il suffisamment de clones de l'ombre sont créés, ils peuvent submerger un adversaire, le clouer au sol ou l'attaquer de plusieurs directions. Les clones de l'ombre possèdent les mêmes souvenirs que l'utilisateur et réagiront aux obstacles imprévus de la même manière que l'utilisateur dans les mêmes circonstances. Puisqu'ils ont leur propre chakra, les clones de l'ombre peuvent effectuer d'autres techniques, y compris créer d'autres clones de l'ombre. Les clones de l'ombre se dispersent généralement lorsqu'ils sont frappés avec force, mais ils ont montré qu'ils pouvaient résister aux blessures pendant un certain temps. Lorsque la tâche d'un clone est terminée, il peut se disperser lui-même ou être dispersé par son utilisateur. Une fois dispersé, les expériences et le chakra restant du clone sont transférés à l'utilisateur. Les expériences partagées rendent les clones de l'ombre utiles pour la collecte de renseignements : un clone de l'ombre peut être envoyé dans un territoire hostile, collecter des informations sans mettre l'utilisateur en danger, et se disperser lorsqu'il a terminé, transférant ainsi ce qu'il a appris. Alternativement, les clones de l'ombre peuvent reconnaître une zone, se disperser lorsqu'ils ont trouvé ce qu'ils cherchaient pour informer l'utilisateur de l'emplacement de la cible. Kakashi Hatake a découvert que les clones de l'ombre peuvent également accélérer les périodes d'entraînement. Par exemple, en s'entraînant aux côtés d'un clone de l'ombre pendant une heure, l'utilisateur aura deux heures d'expérience d'entraînement une fois le clone dispersé. En utilisant des centaines de clones, un entraînement qui prendrait normalement des semaines ou des mois peut être terminé en quelques heures. Mais en raison de la quantité de chakra nécessaire pour créer un seul clone de l'ombre, et de l'ardeur de l'entraînement lui-même, même sans clones de l'ombre, seul Naruto peut s'entraîner de cette façon. Naruto est effectivement capable d'utiliser efficacement cette raccourci, mais les expériences combinées viennent avec une fatigue mentale combinée, nécessitant qu'il prenne des pauses régulières. Bien qu'ils soient séparés, les clones de l'ombre maintiennent de petits liens entre eux et leur original, destinés à permettre à l'utilisateur de rétablir le contrôle lorsqu'il est nécessaire. Les utilisateurs peuvent exploiter ce lien pour relier leurs clones, provoquant des changements dans leur propre chakra qui s'étendent à tous les autres. Lorsqu'un utilisateur et/ou ses clones effectuent des tâches qui nécessitent de la concentration, ils ne peuvent avoir plus de quelques clones de l'ombre actifs à la fois. Dans la novélisation de Boruto : Naruto the Movie, Naruto est conscient de ce que font tous ses clones de l'ombre autour de Konohagakure. Bien qu'il puisse avoir plusieurs conversations simultanément, il a du mal à se concentrer sur une chose et l'original Naruto devient de plus en plus tendu plus longtemps les clones de l'ombre sont actifs ; il boit du café et des suppléments d'énergie pour rester éveillé, mais dès que sa concentration fléchit, son clone de l'ombre se disperse.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:39:17.987298+00:00"
+          },
+          {
+            "id": 13692,
+            "entry_id": "b03f635c-2866-4a6c-bbe9-b02bbab945a6",
+            "idx": "2",
+            "titre": "Anecdotes",
+            "texte": "Le sceau de main pour la Shadow Clone Technique est similaire à celui du Roi Singe Sun Wukong, un choix approprié puisque Naruto a été basé sur le roman classique « Journey to the West » où Sun Wukong utilise des répliques de lui-même au combat. Dans une interview du Naruto 10th Anniversary Chronicle Book Mini (2009), Masashi Kishimoto révéla que la technique fut lourdement inspirée par la technique « Prism of Seven » de Suzaku dans YuYu Hakusho, trouvant le concept des après-images solides hautement innovant. Madara Uchiha utilisa une shadow clone pour simuler sa propre mort, une ruse qui ne fut jamais découverte lors des siècles qui suivirent. Sasuke perçoit l'utilisation extensive des shadow clones par Naruto comme une façon symbolique d'éviter la solitude existentielle.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:39:17.987298+00:00"
+          }
+        ],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "308a42a9-41d3-4929-b1b3-695c0996e5d6",
+            "from_entry": "225adc44-554c-48ed-aa14-0373ba2b5cec",
+            "to_entry": "b03f635c-2866-4a6c-bbe9-b02bbab945a6",
+            "relation": "maitrise",
+            "created_at": "2026-06-28T11:11:32.005028+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+          "slug": "shadow-clone-technique",
+          "type": "power",
+          "name": "Shadow Clone Technique",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Technique interdite créant des clones physiques et autonomes qui partagent le chakra de l'utilisateur et transmettent leur expérience en se dissipant.",
+          "description": "Technique interdite créant des clones physiques et autonomes qui partagent le chakra de l'utilisateur et transmettent leur expérience en se dissipant.",
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/0/07/Tobirama_creating_Shadow_Clones.png/revision/latest/scale-to-width-down/720?cb=20140904190251",
+          "attributes": {
+            "descFr": "Technique de clone créée par Tobirama Senju qui crée des copies physiques réelles de l'utilisateur. Le chakra de ce dernier est divisé équitablement entre lui et ses clones, ce qui peut être dangereux selon le nombre d'exemplaires créés. La version Multiple Shadow Clone Technique, produisant des centaines de clones, est interdite sauf pour Naruto qui dispose du chakra du Neuf-Queues.",
+            "element": "Ninjutsu",
+            "category": "Jutsu",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "epic",
+          "created_at": "2026-07-02T18:56:56.108286+00:00"
+        },
+        "sections": [
+          {
+            "id": 2278,
+            "entry_id": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "idx": "1",
+            "titre": "Vue d'ensemble",
+            "texte": "Cette technique permet de créer une ou plusieurs copies physiquement réelles de l'utilisateur. Le chakra se divise équitablement : une clone reçoit la moitié, deux clones un tiers chacune, et ainsi de suite. Cette déplétion rapide rend la technique dangereuse pour les faibles réserves, seuls les jōnin minimum la maîtrisant normalement. La Technique des Clones d'Ombre Multiples, créant des centaines de copies, reste interdite ; Naruto constitue une exception grâce aux réserves colosses de la Neuf-Queues. Les clones possèdent vêtements et transformations identiques à l'original, la plupart des armes se reproduisent mais chakra construits et technologie complexe non. Visuellement indiscernables même par dōjutsu, seul Madara avec son Rinnegan les différencie. Les clones servent de leurres, écrans ou attaquants massifs, possèdent la mémoire complète de l'original et peuvent lancer jutsu ou créer d'autres clones. Dispersées après coup sévère, elles restituent expériences et chakra résiduel à l'original.",
+            "source": "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)",
+            "created_at": "2026-08-05T18:36:19.101402+00:00"
+          }
+        ],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "b8e183bd-7c3f-44c7-921b-24a7015d6136",
+            "from_entry": "225adc44-554c-48ed-aa14-0373ba2b5cec",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "c3f3af7e-6810-478e-b00e-f0b1e202e1f1",
+            "from_entry": "3f0c1e5a-e2b2-4085-bf1a-d8b944d50d3a",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "c3190d6c-0971-47dd-8f1b-2d1dc249147a",
+            "from_entry": "6b7e7599-8b50-45ab-b229-166fb6b89607",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "8ab42121-169c-4da8-a434-61f9cf984570",
+            "from_entry": "526ebcd7-98ae-46f8-8484-f65f156269ba",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "9c80ad5a-b785-48b2-a1ea-7fa26b0e2814",
+            "from_entry": "fdf26386-1145-43c1-9b06-b3061d2be150",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "4f7a251d-0f30-48ea-b477-fd743a33ef59",
+            "from_entry": "224a3b03-3460-4df6-9331-6c3d92f2dc54",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "89c54e89-1c4f-4af6-9002-f4e8616dcfdd",
+            "from_entry": "194878b5-1e24-426a-b680-cf13e38bdcf4",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "f516bbbc-bebe-4310-a0a3-6d40749164e8",
+            "from_entry": "e00ac3d4-7422-44a1-89fb-f2b4fb2cfbe4",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "5e499109-3282-4051-9963-d69a0aba5954",
+            "from_entry": "3eefa5c1-e20e-4007-88d1-40973066b330",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "ef03e37d-5b42-4179-b062-e460c15e65c7",
+            "from_entry": "5f55b703-49cd-4f1e-96be-65dcf5af7763",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "8ded15ad-6ba9-4a58-9693-6c5b128ba1d8",
+            "from_entry": "9f31a928-28cf-4f5c-bc74-298cc379dbbb",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "91bb7d5b-e0a7-4368-ba2e-e911ad706133",
+            "from_entry": "fac8015b-09bd-4e63-af30-b97e3e2bf524",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "e928808a-6d21-4c63-b894-9c7913247ea4",
+            "from_entry": "927a8de6-5abf-42b1-b04b-79b7e372119c",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "87b5ff24-fd3e-4c0a-878d-00268b225d8f",
+            "from_entry": "3d13a84e-90c8-4da0-8f01-ff2de381a39e",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T19:18:06.713775+00:00"
+          },
+          {
+            "id": "684b6291-3fb4-40a2-862d-abe697740008",
+            "from_entry": "d2745642-5bfd-4d5e-b245-2c8f6addd637",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "00976cce-198f-4162-9000-24fd2f15ad99",
+            "from_entry": "1fd8633c-6e76-460d-8cf8-4669236cb566",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "f193b811-b9a4-4d79-ae11-cf7517f883bd",
+            "from_entry": "3cb33dd2-b790-48ed-adf7-743d61b6b33e",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "001a30ac-37e3-477b-9115-1ba9d3ad227d",
+            "from_entry": "f04dd964-dadf-4022-a39d-c2639bb9cb43",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "86d5886f-2985-4911-8cf5-a81313473cd7",
+            "from_entry": "cf0b9fc8-06d7-44d3-9eb0-21e62b705275",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "d14d0ca6-7c0a-42be-bdde-67b40be2b02b",
+            "from_entry": "2a616cc5-739a-47cb-9fa9-f2f4e2a971b7",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "0bd8d1cd-5d8e-4a71-b86c-a5dcd98b597b",
+            "from_entry": "dd23eb7c-2c51-4af9-af28-f721171df7ec",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "f88d4fd1-f00b-4025-9586-9c72ae1cef4c",
+            "from_entry": "6ccf137f-93cf-4a0c-b7a1-d80543c5fb97",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "b2313f24-985d-4fd2-bfc4-6da0db301588",
+            "from_entry": "ae0b42d8-5c78-4992-b8a5-e478b0573ad3",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "052561f6-7b04-4531-ab84-4a48885b7fdd",
+            "from_entry": "e1564416-3402-4dd1-8118-44334c7cc9bf",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "43b80a15-7344-4a23-8280-6f42deb1c19d",
+            "from_entry": "3ef5c909-e299-43dc-a5e0-392776ce3f29",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "af5445b1-d75c-4886-8fcd-9e34251ef1d0",
+            "from_entry": "85103f6b-dd5c-4887-a8a7-bbfdd67aeea6",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "f201d877-b90f-4787-8f99-7602ba44ba89",
+            "from_entry": "d92dfd59-445b-47b3-8c53-8a5b38051d15",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "ac28af58-709b-4c89-a4e0-cc6639bec12d",
+            "from_entry": "16d044ce-cdcf-4093-b061-3dc1daf78047",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "97c0d58e-8457-4656-88d0-10a79e52a9b1",
+            "from_entry": "e6a95788-0aaa-4b2a-8426-5d118c098575",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "23af12ef-145d-410d-bcb4-4c11e6685623",
+            "from_entry": "954c1b4c-b98f-4df8-9e50-076868530e49",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "c6f67d20-5b6e-4a7b-b053-6ef06816d011",
+            "from_entry": "595fc6d6-00b7-42dd-894f-f1a40c70158e",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "0c331620-5def-4ea3-9c40-b6e7f9ebba6b",
+            "from_entry": "f738a60c-4353-4c43-b918-7c90f17e17e1",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "6d1f6c5a-0dfa-44bd-99b6-a81a94b95cf8",
+            "from_entry": "53c1aa6b-af7b-43be-9474-ddcaaad5864a",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "0176e6e4-ece5-4809-a562-9cfe69c901e7",
+            "from_entry": "c28b6f07-5130-4e9c-bb25-82460e60d7bc",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "9f59982a-1c49-4da3-a193-de9719c13a7f",
+            "from_entry": "ce82c75e-cce5-449e-bd8a-8bf974af165f",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "6982d0f4-b0c3-4980-9f18-a7ac36cbc608",
+            "from_entry": "feb175ff-69e3-4a05-9186-2ce3e1df77fc",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "5c264b73-48ed-4506-be98-1ccd397d3109",
+            "from_entry": "bfa0e6e7-d8e1-44af-af4f-ed0d51da8c15",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-08-01T09:28:13.009623+00:00"
+          },
+          {
+            "id": "56de5f07-01cd-42d7-9445-a8352efca3da",
+            "from_entry": "0245b88c-b099-43a4-8b3d-e39619fb6978",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "c1d1a48a-b91f-4435-8e89-ed821d4fcf9b",
+            "from_entry": "edf79785-c81a-4254-9e8e-3d02c9b7b323",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "85dce306-46d9-4ea5-86fb-fed4da10414e",
+            "from_entry": "24799a1d-a973-4e64-a735-4eb7df799beb",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          },
+          {
+            "id": "6186c6ea-ceed-41c5-9872-7d5e41f9677a",
+            "from_entry": "d7046194-0ec5-4f72-ac91-2ee81689648c",
+            "to_entry": "1fd80370-45d4-43e6-bf21-11e1ea63051e",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.305603+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "absorbe": "edo-tensei",
+      "meurt": "summoning-impure-world-reincarnation",
+      "ids": {
+        "absorbe": "5027d00e-8679-482e-8fe1-768722bd14de",
+        "meurt": "2b98ca1c-a05d-442f-97b2-4f6e01114049"
+      },
+      "avant_absorbe": {
+        "entry": {
+          "id": "5027d00e-8679-482e-8fe1-768722bd14de",
+          "slug": "edo-tensei",
+          "type": "power",
+          "name": "Edo Tensei",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Technique interdite de réincarnation qui rappelle les morts au combat.",
+          "description": "Technique interdite de réincarnation qui rappelle les morts au combat.",
+          "image_url": "/images/akasha/ref/edo-tensei.webp",
+          "attributes": {
+            "descFr": "Le *Summoning: Impure World Reincarnation* est un kinjutsu de rang S, classé comme ninjutsu supplémentaire et spatio-temporel, créé par Tobirama Senju puis perfectionné par Orochimaru et Kabuto Yakushi. Il réincarne les défunts en liant leur âme à un réceptacle vivant, leur restituant leurs capacités et souvenirs, mais les soumettant à la volonté de l’invocateur via un talisman cérébral. Les sclères noircies ou grisées trahissent le degré de contrôle exercé, tandis que la technique exige un échantillon d’ADN du défunt et un sacrifice humain.",
+            "element": "Interdit",
+            "category": "Jutsu",
+            "descFrSource": "mistral/mistral-large-latest"
+          },
+          "rarity": "legendary",
+          "created_at": "2026-06-28T11:11:31.923448+00:00"
+        },
+        "sections": [
+          {
+            "id": 5970,
+            "entry_id": "5027d00e-8679-482e-8fe1-768722bd14de",
+            "idx": "2",
+            "titre": "Contrôle",
+            "texte": "Le seul jugement qu'un utilisateur doit exercer pour la Réincarnation du Monde Impur est de déterminer jusqu'à quel point il doit contrôler l'âme réincarnée. Après avoir effectué la technique pour la première fois, l'utilisateur ne peut que restreindre les mouvements de l'âme. En général, ce contrôle limité ne pose pas de problème pour l'invocateur, qui peut généralement « désactiver » la réincarnation et la placer dans un cercueil pour le stockage et le transport jusqu'à ce qu'elle soit nécessaire. Cependant, lorsque la Réincarnation du Monde Impur parfaite est utilisée pour ramener quelqu'un à la vie, il existe une possibilité que l'âme réincarnée soit suffisamment forte pour résister à ce contrôle. Pour contrôler réellement les actions de l'âme réincarnée, l'utilisateur doit implanter un talisman spécial dans le cerveau de l'âme réincarnée. La conception du talisman détermine la force du contrôle : à son niveau le plus bas, l'âme réincarnée conserve sa personnalité, lui donnant la liberté d'aborder une tâche donnée comme elle le souhaite, tant qu'elle exécute globalement les ordres de l'invocateur. À son niveau le plus élevé, la personnalité de l'âme réincarnée est entièrement éliminée, et l'invocateur contrôle toutes ses actions. Le niveau de contrôle choisi peut avoir des implications sur la capacité de l'âme réincarnée à prendre des décisions et à agir de manière autonome.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:37:16.287892+00:00"
+          },
+          {
+            "id": 5971,
+            "entry_id": "5027d00e-8679-482e-8fe1-768722bd14de",
+            "idx": "3",
+            "titre": "Caractéristiques",
+            "texte": "Lorsqu'ils sont invoqués pour la première fois, les corps des réincarnés apparaissent gris et présentent des signes de dégradation mineure, tels que des fissures et d'autres imperfections. Le maître de l'invocation peut choisir de rajeunir la réincarnation tout en implantant son talisman de contrôle, ce qui restaure leur teint et réduit certaines des imperfections, bien que cela soit purement esthétique et que les signes de dégradation n'affectent pas leurs capacités. Une caractéristique inhérente aux corps réincarnés est la sclérotique assombrie, avec une âme qui conserve sa personnalité ayant des sclérotiques grises et une âme avec une personnalité supprimée ayant des sclérotiques noires. Un individu réincarné possède toutes les capacités qu'il avait lorsqu'il était en vie, y compris les kekkei genkai et les kekkei tōta, ainsi que tous les souvenirs qu'il avait lorsqu'il était vivant, bien que ses souvenirs du Pure Land ne soient pas accessibles. Ils sont également restaurés physiquement dans l'état où ils se trouvaient au moment de leur mort, y compris certaines déficiences physiques qu'ils pourraient avoir, comme les jambes endommagées de Nagato, bien que Itachi ait été restauré avec une vision parfaite plutôt que la vision dégradante qu'il avait lors des dernières étapes de sa vie. D'autres exceptions existent également : les maladies qu'ils avaient ne sont pas conservées, ni les dommages physiques qui ont contribué à leur mort. Il existe une certaine incohérence quant à savoir si la matière étrangère au corps est restaurée ou non : Hanzō conserve la glande à venin du salamandre noir, mais Madara Uchiha n'avait pas accès au matériel génétique de Hashirama Senju lorsqu'il a été réanimé et Kabuto a donc greffé des cellules de Hashirama recréées artificiellement sur le corps réincarné de Madara pour restaurer ces capacités. Les vêtements sont reproduits conformément à ce qu'ils portaient lorsqu'ils sont morts, bien que cela soit uniquement un aspect superficiel de leur corps réincarné ; les armures n'offrent aucune protection réelle, étant de la même matière cendreuse que le reste de leur corps. Les membres réincarnés d'Akatsuki sont cependant équipés de manteaux différents de ceux qu'ils portaient auparavant. Les armes ne sont généralement pas conservées et doivent être récupérées par l'invocateur ; les épéistes de la brume réincarnés n'ont accès qu'aux épées que Kabuto peut acquérir. Une exception semble être les outils précieux des frères Gold et Silver, qui sont toujours apparemment stockés à l'intérieur des corps des frères. La grande majorité des réincarnés ont pu atteindre le même niveau de puissance qu'ils avaient lorsqu'ils étaient vivants, comme Mū. Cependant, quelques-uns des réincarnés, comme Madara Uchiha, ont vu leurs capacités limitées par la technique. Par exemple, même avec la réincarnation impure du monde parfaite, le corps réincarné de Madara est lié avec succès par l'art du sage : la porte du grand dieu, que Madara brise facilement dès qu'il est restauré à la vie. De même, il existe certaines choses que un corps réincarné ne peut simplement pas faire, comme accéder à toutes les capacités du Rinnegan ou devenir le jinchūriki de la queue de dix. ",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:37:16.287892+00:00"
+          },
+          {
+            "id": 5972,
+            "entry_id": "5027d00e-8679-482e-8fe1-768722bd14de",
+            "idx": "4",
+            "titre": "Améliorations",
+            "texte": "L'une des principales avantages de la Réincarnation de l'Impure Monde est qu'elle accorde des corps immortels à ceux qui sont réincarnés. Toute blessure qu'ils subissent se régénérera avec le temps et, à condition que la blessure ne soit pas trop invalidante, ils peuvent continuer à attaquer même avant que leur corps ne se soit complètement rétabli. Les corps réincarnés ne saignent pas, sauf dans les cas où le sang est nécessaire pour effectuer la Technique d'Invocation. Une deuxième avantager est le ravitaillement illimité de leurs réserves de chakra épuisées dont disposent les individus réincarnés ; ils peuvent se battre éternellement et effectuer des jutsu physiquement éprouvants ou intensifs en chakra sans problème, sachant que leurs réserves actuelles se rempliront infiniment. Les corps réincarnés peuvent être améliorés pour aller au-delà de leur apogée. Lorsque Madara Uchiha a été ramené, Kabuto a soumis son corps à une évolution sélective, combinant les meilleures caractéristiques de différents moments de sa vie. Les individus réincarnés sont immunisés contre le Tsukuyomi infini.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:37:16.287892+00:00"
+          },
+          {
+            "id": 5973,
+            "entry_id": "5027d00e-8679-482e-8fe1-768722bd14de",
+            "idx": "7",
+            "titre": "Orochimaru",
+            "texte": "Orochimaru a tenté d'utiliser l'Edo Tensei pour réincarner Minato Namikaze pendant la bataille de Konoha, mais a échoué car l'âme de Minato ne se trouvait pas dans le monde pur. Dans l'anime, on voit également des tentatives de réincarnation d'Orochimaru, notamment celle d'Osoi et du Troisième Kazekage. Les sacrifices utilisés pour ces réincarnations incluent des clones de White Zetsu et des ninjas de Konohagakure.",
+            "source": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+            "created_at": "2026-08-05T18:37:16.287892+00:00"
+          }
+        ],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "07187ab2-db85-4b26-aa1a-1a937399160c",
+            "from_entry": "fdf26386-1145-43c1-9b06-b3061d2be150",
+            "to_entry": "5027d00e-8679-482e-8fe1-768722bd14de",
+            "relation": "maitrise",
+            "created_at": "2026-06-28T11:11:32.005028+00:00"
+          }
+        ]
+      },
+      "avant_meurt": {
+        "entry": {
+          "id": "2b98ca1c-a05d-442f-97b2-4f6e01114049",
+          "slug": "summoning-impure-world-reincarnation",
+          "type": "power",
+          "name": "Summoning: Impure World Reincarnation",
+          "is_fiction": true,
+          "universe": "Naruto",
+          "summary": "Technique interdite qui ramène les morts sous forme de pantins immortels contrôlés par des sceaux, grâce à leur ADN prélevé.",
+          "description": "Technique interdite qui ramène les morts sous forme de pantins immortels contrôlés par des sceaux, grâce à leur ADN prélevé.",
+          "image_url": "https://static.wikia.nocookie.net/naruto/images/0/03/Hokage_reincarnated.png/revision/latest/scale-to-width-down/720?cb=20140612141309",
+          "attributes": {
+            "descFr": "Jutsu S-rank interdite ressuscitant un mort en liant son âme à un vivant servant de vaisseau. L'utilisateur contrôle entièrement le réanimé via des sceaux et requiert l'ADN du défunt (ou ses résidus : sang, organe) pour accomplir le scellement. Créée par Tobirama Senju, cette technique fut déclarée kinjutsu.",
+            "element": "Invocation",
+            "category": "Jutsu",
+            "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+          },
+          "rarity": "common",
+          "created_at": "2026-07-02T18:56:56.177226+00:00"
+        },
+        "sections": [
+          {
+            "id": 3183,
+            "entry_id": "2b98ca1c-a05d-442f-97b2-4f6e01114049",
+            "idx": "1",
+            "titre": "Utilisation",
+            "texte": "Avant de réaliser la Réincarnation du Monde Impur, l'utilisateur doit acquérir l'ADN de la personne à réincarner, soit via profanation de tombe, soit via des taches de sang ou organes salvagés après la mort. Un sacrifiant vivant est impérativement nécessaire pour servir de réceptacle physique à l'âme réincarnée. Si l'âme est disponible dans le Monde Impur (cas des quatre premiers Hokage libérés de l'estomac du Shinigami), elle peut être réincarnée sans délai. Les réincarnations peuvent être rappelées de manière similaire, un cercueil les enveloppant pour le retour et le stockage jusqu'à réactivation.",
+            "source": "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)",
+            "created_at": "2026-08-05T18:36:31.993222+00:00"
+          },
+          {
+            "id": 3184,
+            "entry_id": "2b98ca1c-a05d-442f-97b2-4f6e01114049",
+            "idx": "2",
+            "titre": "Contrôle",
+            "texte": "L'utilisateur choisit le niveau de contrôle à exercer sur l'âme réincarnée après la première invocation. Initialement, seuls les mouvements peuvent être restreints, mais avec la Réincarnation perfectionné, l'âme peut devenir assez forte pour résister totalement. Un talisman spécial, généralement attaché à un kunai, doit être inséré dans le cerveau de la réincarnation pour un contrôle réel des actions. Au niveau basique, l'âme garde sa personnalité complète, offrant une liberté tactique mais risquant des sous-actions malveillantes ou sabotage. Au niveau maximal, la personnalité est éliminée et l'utilisateur contrôle toutes les actions, garantissant obéissance absolue mais limitant la capacité d'adaptation autonome.",
+            "source": "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)",
+            "created_at": "2026-08-05T18:36:31.993222+00:00"
+          },
+          {
+            "id": 3185,
+            "entry_id": "2b98ca1c-a05d-442f-97b2-4f6e01114049",
+            "idx": "3",
+            "titre": "Attributs",
+            "texte": "Le corps réincarné apparaît initialement gris et en décomposition légère, marque visible d'asphyxie physique, mais peut être rajeuni durant le processus de contrôle si désiré. Une caractéristique inévitable est l'assombrissement de la sclérotique : grise pour les âmes gardant leur personnalité, noire pour les personnalités supprimées. L'individu réincarné possède toutes ses capacités de vie, y compris kekkei genkai et kekkei tōta, ainsi que tous ses souvenirs sauf ceux du Monde Pur inaccessible. Il est restauré physiquement tel qu'à la mort, y compris certains handicaps physiques comme les jambes endommagées de Nagato, sauf exception remarquable. Les maladies et dégâts contribuant à la mort ne sont pas conservés dans la réincarnation.",
+            "source": "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)",
+            "created_at": "2026-08-05T18:36:31.993222+00:00"
+          },
+          {
+            "id": 3186,
+            "entry_id": "2b98ca1c-a05d-442f-97b2-4f6e01114049",
+            "idx": "4",
+            "titre": "Améliorations",
+            "texte": "La Réincarnation du Monde Impur confère l'immortalité corps physique ; les dégâts se régénèrent continuellement et le combattant persiste même avant récupération complète. Aucun saignement naturel n'intervient sauf si le sang est requis spécifiquement pour une invocation. Les réserves de chakra se remplissent infiniment, permettant des techniques ordinairement trop coûteuses sans épuisement. Le corps peut être amélioré « au-delà du prime » en combinant les meilleurs attributs de différents stades de la vie ; Madara Uchiha fut restauré à sa prime physique et conserva ses capacités tardives incluant l'ADN d'Hashirama Senju greffé ainsi que des dōjutsu abandonnés. Les jinchūriki réincarnés regagnent leurs bêtes à queues scellées dans leurs corps.",
+            "source": "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)",
+            "created_at": "2026-08-05T18:36:31.993222+00:00"
+          },
+          {
+            "id": 3187,
+            "entry_id": "2b98ca1c-a05d-442f-97b2-4f6e01114049",
+            "idx": "5",
+            "titre": "Contre-mesures",
+            "texte": "Tuer le summoner ne libère pas la Réincarnation du Monde Impur et est généralement inadvisé. Trois méthodes garanties existent pour terminer définitivement la technique. Une méthode moins fiable mais égale est de permettre à l'âme réincarnée une satisfaction émotionnelle donnant une clôture psychologique, libérant son influence et son contrôle. Les âmes libérées se désintègrent en poussière, laissant le corps du sacrifiant gisant dans les débris. La liaison des corps réincarnés empêchant tous les mouvements, suivie d'un sceau sur les liens, est également efficace pour les neutraliser. Yin-Yang Release et Vérité-Seeking Balls annulent complètement la régénération et tuent effectivement les réincarnations.",
+            "source": "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)",
+            "created_at": "2026-08-05T18:36:31.993222+00:00"
+          },
+          {
+            "id": 3188,
+            "entry_id": "2b98ca1c-a05d-442f-97b2-4f6e01114049",
+            "idx": "6",
+            "titre": "Réincarnés Connus",
+            "texte": "Plusieurs ninjas et shinobi ont été réincarnés via cette technique par Orochimaru et Kabuto Yakushi. Orochimaru réincarna notamment Hashirama Senju, Hiruzen Sarutobi et Minato Namikaze pour une attaque directe sur Konoha, bien que Minato échoua car son âme n'était pas au Monde Pur. Kabuto réincarna une vaste armée comprenant des shinobi des Villages Cachés de Kumo, Kiri, Iwa, Oto, Taki et Ame, ainsi que des individus de diverses organisations. Les réincarnations incluaient Asuma Sarutobi, Deidara, Itachi Uchiha, Madara Uchiha, Nagato, Sasori et de nombreux autres ninjas d'élite.",
+            "source": "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)",
+            "created_at": "2026-08-05T18:36:31.993222+00:00"
+          },
+          {
+            "id": 3189,
+            "entry_id": "2b98ca1c-a05d-442f-97b2-4f6e01114049",
+            "idx": "7",
+            "titre": "Orochimaru",
+            "texte": "Orochimaru réincarna Hashirama Senju avec Kin Tsuchi ou un clone White Zetsu comme sacrifiant, Hiruzen Sarutobi avec un clone White Zetsu, et Minato Namikaze également avec un clone White Zetsu. Il tenta aussi de réincarner Tobirama Senju. Durant l'Attaque du Déploiement Feuille, Orochimaru échoua à réincarner Minato Namikaze car son âme ne résidait pas dans le Monde Pur, rendant la technique inefficace. Diverses autres tentatives incluaient Osoi de Kumogakure et d'autres shinobi dans des contextes anime-exclusifs.",
+            "source": "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)",
+            "created_at": "2026-08-05T18:36:31.993222+00:00"
+          },
+          {
+            "id": 3190,
+            "entry_id": "2b98ca1c-a05d-442f-97b2-4f6e01114049",
+            "idx": "8",
+            "titre": "Kabuto Yakushi",
+            "texte": "Kabuto Yakushi réincarna une armée considérable comprenant A de Kumogakure, Ameyuri Ringo, Asuma Sarutobi, Chiyo de Sunagakure, Deidara, Fū de Takigakure, Gari, Gengetsu Hōzuki, Ginkaku, Haku, Han, Hanzō, Itachi Uchiha, Jinpachi Munashi, Jinin Akebino, Kakuzu, Kimimaro, Kinkaku, Kushimaru Kuriarare, Madara Uchiha, Mangetsu Hōzuki, Mū, Nagato, Pakura, Rasa, Rōshi, Sasori et Toroi. Certaines réincarnations étaient accidentelles comme Chūkaku et Heiji, tandis que Kabuto deploie ces forces pour désorganiser les défenses adverses durant la Quatrième Guerre Shinobi Mondiale.",
+            "source": "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)",
+            "created_at": "2026-08-05T18:36:31.993222+00:00"
+          }
+        ],
+        "relations_sortantes": [],
+        "relations_entrantes": [
+          {
+            "id": "9aabb1e7-c2a2-4590-85cd-81e760c85c03",
+            "from_entry": "fdf26386-1145-43c1-9b06-b3061d2be150",
+            "to_entry": "2b98ca1c-a05d-442f-97b2-4f6e01114049",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.489449+00:00"
+          },
+          {
+            "id": "51f5fabf-ceb8-479b-8daf-e8dd6d1a09cf",
+            "from_entry": "9136c425-155a-4f7a-8ce8-4f2707699a4e",
+            "to_entry": "2b98ca1c-a05d-442f-97b2-4f6e01114049",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.489449+00:00"
+          },
+          {
+            "id": "cdb0dda7-423d-485a-871d-0ebe22480f7e",
+            "from_entry": "5f55b703-49cd-4f1e-96be-65dcf5af7763",
+            "to_entry": "2b98ca1c-a05d-442f-97b2-4f6e01114049",
+            "relation": "maitrise",
+            "created_at": "2026-07-02T18:56:57.489449+00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
