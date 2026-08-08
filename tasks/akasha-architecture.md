@@ -563,6 +563,61 @@ rien** et s'arrêteront au bandeau. C'est acceptable et mesuré.
 Ferme **C3-3**, avec un périmètre plus large que prévu (tous les types orphelins, pas seulement
 Power) et un volume plus juste (2 600, pas 3 200).
 
+> **Vérification finale LOT 2 — 08/08/2026, recompte indépendant post-vague (3ᵉ passe).**
+> Population qui atteint RÉELLEMENT `EntityZone`, recomptée **deux fois, indépendamment** (une
+> réplique de la logique de routage de `page.tsx` ; une seconde passe qui rejoue la VRAIE fonction
+> `deriveShape` sur les vraies relations/sections de chaque fiche, via `tsx`) : **2 599 fiches** —
+> power 1 699, artifact 398, place 325, profession 98, skill 79 ; par univers Naruto 1 775,
+> One Piece 568, Dragon Ball 160, JoJo 49, Bleach 25, Initial D 11, HxH 7, Death Note 4. Identique,
+> chiffre par chiffre, à la mesure indépendante de la vague précédente. Le plan initial annonçait
+> 2 600 (One Piece 569) : écart de 1 sur OP, dans le bruit du corpus qui bouge en continu.
+> Fréquence des modules sur cette population EXACTE (calculée avec la vraie fonction) : `identity`
+> 100 %, `relations` 90,8 % (2 359), `sections` 29,0 % (754 — jamais rapporté avant cette passe),
+> `axis` 10,4 % (270), `orbit` 0,8 % (21), `timeline` 0 %, `stats` 0 %. Isolées (0 arête) :
+> **240 (9,2 %)**, dont 17 avec axe peuplé (repli 2c) et 223 sans aucun axe (bandeau seul) — pas
+> les « 57 » de l'estimation initiale, qui mesurait un critère plus étroit (0 relation ET 0 section
+> ET 0 bio) sur la population plus large de 2 600 ; les deux chiffres restent vrais, sur des
+> définitions différentes.
+>
+> **Lecture de 8 fiches réelles, en lecteur.** `wano`, `karakura`, `goku-ssj`, `star-platinum`,
+> `gungi`, `wammys-house` (6/8) parlent désormais EXACTEMENT le même langage que `CharacterZone` /
+> `OrganizationZone` — même panneau « CANAL », même rendu `orbit` (puits + anneau) dès que le seuil
+> de 12 est franchi (`wano` 15 membres, `karakura` 51). **La promesse du LOT 2 est tenue pour ces
+> cas**, vérifiée à l'écran, pas seulement en base.
+>
+> **Défaut trouvé par l'épreuve précédente — RECONFIRMÉ, NON RÉPARÉ, et plus étendu qu'annoncé.**
+> `konohagakure` et `ninja-medical` (2/8 des fiches ouvertes) ne parlent PAS ce langage :
+> `app/learn/akasha/[slug]/page.tsx` teste `attributes.eras` non vide (branche `EraZone`, ~ligne
+> 182) **avant** la branche `EntityZone` (~ligne 200) — toute fiche EntityZone-éligible qui porte
+> des `eras` est détournée vers `EraZone` et **n'exécute jamais `deriveShape`** : zéro `relations`,
+> zéro `orbit`, et une régression supplémentaire trouvée en relisant le code de cette branche —
+> zéro **« Voir aussi »** (`EraZone` ne monte pas `<SimilarSection>`, contrairement à la branche
+> `EntityZone`, ligne 243). 14 fiches sont concernées au total. Parmi elles, en réappliquant le VRAI
+> seuil `aUneAppartenanceDense` (>12 membres `habite`/`appartient` de personnage), **5 fiches
+> auraient dû recevoir le module `orbit` — pas 4** : `konohagakure` (449 membres), `grand-line`
+> (101), `soul-society` (93), `hueco-mundo` (30), **et `ninja-medical` (40, profession — absente du
+> compte de l'épreuve, qui s'était restreinte au type `place`)**. Vérifié en rendu réel : la page
+> `ninja-medical` affiche un rouleau temporel puis s'arrête net — aucune trace de « Exercé par »,
+> aucun SVG orbit, aucun « Voir aussi » dans le HTML servi (grep sur la page complète). **Non
+> réparé dans cette vague** : le correctif consiste à faire porter la garde `eras` par
+> `deriveShape` lui-même (ou à tester `eras` seulement pour les fiches qui n'ont par ailleurs aucune
+> autre capacité riche), pas à réordonner deux `if` indépendants qui s'ignorent.
+>
+> **Trouvaille annexe, hors architecture LOT 2 mais vue en lisant les 8 fiches en lecteur** :
+> `goku-ssj` (Dragon Ball) affiche encore, dans son panneau CANAL, le texte `summary` brut
+> « Transformation de puissance (Ki 3 Billion). ». La décision de Dan (§8, Q4, « retirer ») a bien
+> vidé `attributes.ki` (0 fiche Dragon Ball le porte, reconfirmé indépendamment), mais n'a jamais
+> touché la colonne SQL `summary`, qui répète le même chiffre non canon avec la même faute
+> d'échelle FR (« Billion ») que la décision visait à faire disparaître. Résiduel de données, pas un
+> bug de rendu LOT 2 — candidat pour LOT 6, pas traité ici.
+>
+> Build : `npm run build` — **309/309 pages, TypeScript 0 erreur, sortie propre** (serveur dev
+> arrêté proprement, build lancé seul, dev relancé et revérifié sain ensuite — aucune régression
+> introduite par l'arrêt/redémarrage). `scripts/ops-sonde-schema.mjs` : **✓ schéma conforme**, les
+> deux bases. Tests : **34/34 PASS**, ré-exécutés, non retouchés. Aucun commit, aucune modification
+> de code — `git status --short` identique à l'état de départ (`page.tsx` modifié + 3 nouveaux
+> fichiers, `next-env.d.ts` régénéré par le build, rien d'autre), HEAD toujours à `5fc0d3f3`.
+
 ---
 
 ### LOT 3 — « Le vocabulaire des mondes » · **1 semaine · dépend de 1b** (parallélisable avec 2)
@@ -726,8 +781,27 @@ le pipeline usine.
   « aucune pastille en absolu » deux lignes au-dessus d'un `position: 'absolute', top: 4, right: 4`
   bien réel sur la pastille de rareté — code non modifié depuis la dernière revue, **toujours
   présent** à cette vérification.
-- **LOT 2 (`EntityZone`, `deriveShape`)** — ❌ **non commencé** : ni `lib/akasha/shape.ts` ni
-  `components/akasha/zone/EntityZone.tsx` n'existent dans le dépôt à ce jour.
+- **LOT 2 (`EntityZone`, `deriveShape`)** — ⚠️ **livré, mais avec un défaut d'aiguillage confirmé et
+  non réparé** : `lib/akasha/shape.ts` et `components/akasha/zone/EntityZone.tsx` existent et sont
+  montés dans `page.tsx`, à la place de la branche fallback comme prévu. Population réelle mesurée
+  (recomptée deux fois, indépendamment) : **2 599 fiches** — power 1 699, artifact 398, place 325,
+  profession 98, skill 79 ; par univers Naruto 1 775, One Piece 568, Dragon Ball 160, JoJo 49,
+  Bleach 25, Initial D 11, HxH 7, Death Note 4 (quasi identique aux 2 600 du plan). Vérifié EN
+  LECTEUR sur 8 fiches ouvertes couvrant les 8 univers : 6/8 (`wano`, `karakura`, `goku-ssj`,
+  `star-platinum`, `gungi`, `wammys-house`) parlent désormais exactement le même langage que
+  `CharacterZone`/`OrganizationZone` — la promesse du lot est tenue pour ces cas. **Mais** 2/8
+  (`konohagakure`, `ninja-medical`) ne l'atteignent jamais : le test `attributes.eras` de la branche
+  `EraZone` passe AVANT `EntityZone` dans `page.tsx` et intercepte 14 fiches EntityZone-éligibles —
+  dont **5** (pas 4, correction sur le compte de l'épreuve précédente qui s'était restreinte au type
+  `place`) auraient dû recevoir le module `orbit` : `konohagakure` (449 membres), `grand-line`
+  (101), `soul-society` (93), `hueco-mundo` (30), `ninja-medical` (40, profession). Ces 14 fiches
+  perdent aussi leur « Voir aussi » (`EraZone` ne monte pas `<SimilarSection>`). Détail complet et
+  méthode de mesure : §7, LOT 2, note de vérification du 08/08/2026. **Reste à faire avant de
+  fermer réellement LOT 2** : faire porter la garde `eras` par `deriveShape` lui-même (ou ne router
+  vers `EraZone` que si la fiche n'a par ailleurs aucune autre capacité riche), pour que ces 14
+  fiches — et en particulier les 5 candidates `orbit` — rejoignent le même langage que le reste du
+  lot. `npm run build` (309/309, 0 erreur TS) et `scripts/ops-sonde-schema.mjs` (conforme) vérifiés
+  verts ce jour.
 - **LOT 3a (profil relationnel du sous-ensemble)** — ❌ **non fait** : aucune occurrence de
   « profil relationnel » dans le code de la page d'axe ni de `listAxisCounts`.
 - **LOT 3c (extension des vitrines)** — ❌ **non fait**, voir Q7 ci-dessus.

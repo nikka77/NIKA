@@ -2,20 +2,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getEntryBySlug, listSharedVoice, listSimilar, popularityRank } from '@/lib/akasha/queries';
-import { TYPE_META, RARITY_META, universeMeta, type AkashaType } from '@/lib/akasha/types';
+import { getEntryBySlug, listEntries, listSharedVoice, listSimilar, popularityRank } from '@/lib/akasha/queries';
+import { TYPE_META, universeMeta, type AkashaType, type AkashaEntryCard } from '@/lib/akasha/types';
 import { flavorExcerpt } from '@/lib/akasha/flavor';
-import { universeHubSlug, taxonomyByName, hubVisual } from '@/lib/akasha/universe-taxonomy';
+import { universeHubSlug, taxonomyByName, hubVisual, axisLabel } from '@/lib/akasha/universe-taxonomy';
+import { deriveShape } from '@/lib/akasha/shape';
 import { SITE_URL } from '@/lib/site';
 import AkashaList from '@/components/akasha/AkashaList';
 import UniverseShell from '@/components/akasha/UniverseShell';
-import EntityBadge from '@/components/akasha/EntityBadge';
 import EntityAttributes from '@/components/akasha/EntityAttributes';
-import EntityRelations from '@/components/akasha/EntityRelations';
-import Markdown from '@/components/akasha/Markdown';
 import CharacterZone from '@/components/akasha/zone/CharacterZone';
 import OrganizationZone from '@/components/akasha/zone/OrganizationZone';
 import EraZone from '@/components/akasha/zone/EraZone';
+import EntityZone, { type AxisNeighbors } from '@/components/akasha/zone/EntityZone';
 import DossierSections from '@/components/akasha/DossierSections';
 import Crumbs from '@/components/akasha/Crumbs';
 
@@ -57,7 +56,6 @@ export default async function AkashaEntryPage({ params }: Props) {
   // Chrome du monde (1b) : kanji + motif canon de l'univers de l'entrée — config, zéro requête.
   const worldKanji = entry.universe ? taxonomyByName(entry.universe)?.kanji : undefined;
   const worldVis = entry.universe ? hubVisual(universeHubSlug(entry.universe) ?? '') : undefined;
-  const worldColor = entry.universe ? universeMeta(entry.universe).color : m.color;
 
   // Personnages → fiche « ZONE » (refonte lot 1) : surface vivante + panneau canal re-scopable.
   if (entry.type === 'character') {
@@ -199,155 +197,51 @@ export default async function AkashaEntryPage({ params }: Props) {
     );
   }
 
+  // Reste de la fiche (lieux, artefacts, métiers, pouvoirs/compétences hors « Attaque ») →
+  // EntityZone (refonte LOT 2b) : composition par CAPACITÉS réelles (deriveShape, LOT 2a), plus de
+  // 4ᵉ gabarit typé. Point de montage identique à celui documenté par le plan (« à la place de la
+  // branche fallback, ~ligne 196 ») — même schéma que les branches Organisation/Ères ci-dessus :
+  // la zone porte portrait + canal, la page monte sections/attributs/voir-aussi en pleine largeur.
+  const shape = deriveShape(entry);
+
+  // LOT 2c — le repli des isolées. Calculé ICI (Server Component), jamais dans la zone (client) :
+  // une fiche SANS AUCUNE arête mais avec un axe canon peuplé montre des voisins qui PARTAGENT
+  // cette valeur d'axe — construits depuis les ATTRIBUTS via `listEntries` (même requête que le
+  // registre filtré), jamais depuis une relation inventée. `estPeuplee` n'étant pas exportée de
+  // lib/akasha/shape.ts (fonction pure scellée par le LOT 2a, non retouchée ici), la même garde
+  // (chaîne non vide / tableau non vide) est répétée localement.
+  let axisNeighbors: AxisNeighbors | null = null;
+  if (shape.includes('axis') && !shape.includes('relations') && entry.universe) {
+    const attrs = entry.attributes as Record<string, unknown>;
+    const populated = (v: unknown) => (typeof v === 'string' ? v.trim() !== '' : Array.isArray(v) ? v.length > 0 : false);
+    const axis = taxonomyByName(entry.universe)?.axes.find((ax) => populated(attrs[ax.attr]));
+    const raw = axis ? attrs[axis.attr] : null;
+    const value = typeof raw === 'string' ? raw : Array.isArray(raw) && typeof raw[0] === 'string' ? (raw[0] as string) : null;
+    if (axis && value) {
+      const { entries: siblings } = await listEntries({ universe: entry.universe, attr: axis.attr, val: value });
+      const neighbors: AkashaEntryCard[] = siblings.filter((e) => e.slug !== entry.slug).slice(0, 6);
+      if (neighbors.length > 0) {
+        axisNeighbors = { attr: axis.attr, label: axisLabel(entry.universe, axis.attr) ?? axis.label, value, entries: neighbors };
+      }
+    }
+  }
+
   return (
     <main>
-      {/* ── BANDEAU ───────────────────────────────────────────── */}
-      <UniverseShell color={worldColor} heroGradient={worldVis?.heroGradient} bgPattern={worldVis?.bgPattern} kanji={worldKanji} padding="clamp(2rem,5vw,3.2rem) 1.4rem 1.8rem">
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <Crumbs universe={entry.universe} category={category} name={entry.name} />
-
-          <div style={{ display: 'flex', gap: '1.4rem', flexWrap: 'wrap', alignItems: 'flex-start', marginTop: '1.1rem' }}>
-            {/* Visuel */}
-            <div
-              style={{
-                width: 120,
-                height: 120,
-                borderRadius: 16,
-                overflow: 'hidden',
-                flexShrink: 0,
-                background: `linear-gradient(135deg, ${m.color}40, ${m.color}10)`,
-                border: `1px solid ${m.color}40`,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              {entry.image_url ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={entry.image_url} alt={entry.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              ) : (
-                <span aria-hidden style={{ fontSize: 48, opacity: 0.6 }}>
-                  {m.icon}
-                </span>
-              )}
-            </div>
-
-            <div style={{ flex: 1, minWidth: 240 }}>
-              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', marginBottom: 10 }}>
-                <EntityBadge type={entry.type} />
-                {entry.rarity && (
-                  <span
-                    style={{
-                      fontFamily: 'var(--fo)',
-                      fontSize: 10.5,
-                      fontWeight: 700,
-                      letterSpacing: '0.05em',
-                      textTransform: 'uppercase',
-                      padding: '3px 9px',
-                      borderRadius: 20,
-                      color: RARITY_META[entry.rarity].color,
-                      background: `${RARITY_META[entry.rarity].color}14`,
-                      border: `1px solid ${RARITY_META[entry.rarity].color}55`,
-                    }}
-                  >
-                    {RARITY_META[entry.rarity].label}
-                  </span>
-                )}
-              </div>
-
-              <h1
-                style={{
-                  fontFamily: 'var(--fe)',
-                  fontSize: 'clamp(30px,6vw,56px)',
-                  fontWeight: 900,
-                  fontStyle: 'italic',
-                  textTransform: 'uppercase',
-                  color: 'var(--td)',
-                  lineHeight: 0.9,
-                  margin: 0,
-                }}
-              >
-                {entry.name}
-              </h1>
-
-              {entry.universe && (
-                <div style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)', marginTop: 8, display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
-                  {universeHubSlug(entry.universe) ? (
-                    <Link href={`/learn/akasha/u/${universeHubSlug(entry.universe)}`} style={{ color: 'var(--td2)', textDecoration: 'none', fontWeight: 700 }}>
-                      {entry.universe} ↗
-                    </Link>
-                  ) : (
-                    <span>{entry.universe}</span>
-                  )}
-                  {typeof (entry.attributes as Record<string, unknown>).category === 'string' && (
-                    <Link
-                      href={`/learn/akasha?universe=${encodeURIComponent(entry.universe)}&cat=${encodeURIComponent((entry.attributes as Record<string, unknown>).category as string)}`}
-                      style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: '#0EA878', textDecoration: 'none', background: 'rgba(14,168,120,0.10)', border: '1px solid rgba(14,168,120,0.35)', borderRadius: 20, padding: '2px 10px' }}
-                    >
-                      ◈ Collection : {(entry.attributes as Record<string, unknown>).category as string}
-                    </Link>
-                  )}
-                </div>
-              )}
-
-              {entry.summary && (
-                <p style={{ fontFamily: 'var(--fo)', fontSize: 15, color: 'var(--td2)', lineHeight: 1.65, margin: '0.9rem 0 0', maxWidth: 560 }}>
-                  {entry.summary}
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-      </UniverseShell>
-
-      {/* ── CORPS ─────────────────────────────────────────────── */}
-      <div
-        style={{
-          maxWidth: 900,
-          margin: '0 auto',
-          padding: 'clamp(1.6rem,4vw,2.6rem) 1.4rem clamp(3rem,7vw,5rem)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '2.2rem',
-        }}
-      >
-        {(() => {
-          // Bio VF canon (descFr) : affichée EN PLUS de la description build quand elle est
-          // nettement plus riche — les 3 315 fiches traduites cessent d'être des coquilles vides.
-          const descFrVal = typeof (entry.attributes as Record<string, unknown>).descFr === 'string'
-            ? ((entry.attributes as Record<string, unknown>).descFr as string).trim() : null;
-          const richer = descFrVal && descFrVal.length > (entry.description?.length ?? 0) + 40;
-          // La description est déjà affichée en sous-titre du bandeau (entry.summary) quand les
-          // deux champs sont synchronisés (cas de la majorité des fiches) → éviter la répétition.
-          const descDiffersFromSummary = !!entry.description && entry.description.trim() !== (entry.summary ?? '').trim();
-          if (!descDiffersFromSummary && !richer) return null;
-          return (
-            <section>
-              <h2 className="akasha-section-title">Description</h2>
-              {descDiffersFromSummary && <Markdown source={entry.description!} />}
-              {richer && (
-                <p style={{ fontFamily: 'var(--fo)', fontSize: 14.5, color: 'var(--td2)', lineHeight: 1.7, margin: entry.description ? '0.8rem 0 0' : 0, whiteSpace: 'pre-line' }}>
-                  {descFrVal}
-                </p>
-              )}
-            </section>
-          );
-        })()}
-
-        {/* Le DOSSIER (05/08) — le gabarit générique (lieux, artefacts, techniques hors
-            attaque, professions) n'affichait JAMAIS les sections : c'était le plus gros
-            contingent des 791 fiches muettes. */}
+      <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
+        <Crumbs universe={entry.universe} category={category} name={entry.name} />
+        <EntityZone entry={entry} axisNeighbors={axisNeighbors} />
+        {/* Le DOSSIER (05/08) — même point de montage que les branches Organisation/Ères :
+            la zone porte le portrait+canal, la page monte les sections en pleine largeur. */}
         <DossierSections
           sections={(entry.attributes as Record<string, unknown>).sections}
           accent={(entry.universe && universeMeta(entry.universe)?.color) || m.color}
-          style={{ marginBottom: 24 }}
+          style={{ marginTop: 28 }}
         />
-
-        <EntityAttributes type={entry.type} attributes={entry.attributes} universe={entry.universe} />
-
-        <EntityRelations out={entry.relationsOut} incoming={entry.relationsIn} />
-
-        <SimilarSection universe={entry.universe} cat={category} type={entry.type} excludeSlug={entry.slug} />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', marginTop: 28 }}>
+          <EntityAttributes type={entry.type} attributes={entry.attributes} universe={entry.universe} />
+          <SimilarSection universe={entry.universe} cat={category} type={entry.type} excludeSlug={entry.slug} />
+        </div>
       </div>
     </main>
   );
