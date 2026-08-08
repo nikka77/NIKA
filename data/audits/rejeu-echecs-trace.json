@@ -1,16 +1,16 @@
 {
  "chantier": "rejeu des échecs",
- "quand": "2026-08-08T05:49:53.199Z",
+ "quand": "2026-08-08T05:54:39.339Z",
  "dry": false,
- "examinees": 2802,
+ "examinees": 2002,
  "familles": [
   {
-   "cle": "quota transitoire",
-   "n": 437
+   "cle": "corruption (refus juste)",
+   "n": 85
   },
   {
-   "cle": "corruption (refus juste)",
-   "n": 86
+   "cle": "quota transitoire",
+   "n": 179
   },
   {
    "cle": "motif non classé",
@@ -22,7 +22,7 @@
   },
   {
    "cle": "lot d'arbitrage (schéma corrigé)",
-   "n": 342
+   "n": 343
   },
   {
    "cle": "schéma non respecté",
@@ -30,4027 +30,5723 @@
   },
   {
    "cle": "guichet fermé",
-   "n": 1712
+   "n": 1171
   },
   {
    "cle": "réseau",
-   "n": 3
+   "n": 2
   }
  ],
  "rejoues": [
   {
-   "id": 24,
-   "type": "fiche_section",
-   "slug": "cell"
-  },
-  {
-   "id": 161,
-   "type": "fiche_section",
-   "slug": "chi-chi"
-  },
-  {
-   "id": 215,
-   "type": "fiche_section",
-   "slug": "erasa"
-  },
-  {
-   "id": 240,
-   "type": "fiche_section",
-   "slug": "freeza"
-  },
-  {
-   "id": 329,
+   "id": 332,
    "type": "fiche_section",
    "slug": "killua-zoldyck"
   },
   {
-   "id": 331,
-   "type": "fiche_section",
-   "slug": "kurapika"
-  },
-  {
-   "id": 333,
+   "id": 334,
    "type": "fiche_section",
    "slug": "gon-freecss"
   },
   {
-   "id": 360,
-   "type": "fiche_section",
-   "slug": "hisoka"
-  },
-  {
-   "id": 3514,
-   "type": "akasha_relations",
-   "slug": "welfin"
-  },
-  {
-   "id": 3515,
-   "type": "akasha_relations",
-   "slug": "tomoko-higashikata"
-  },
-  {
-   "id": 3517,
-   "type": "akasha_relations",
-   "slug": "oolong"
-  },
-  {
-   "id": 3523,
-   "type": "akasha_relations",
-   "slug": "paulie"
-  },
-  {
-   "id": 3534,
-   "type": "akasha_relations",
-   "slug": "sengoku"
-  },
-  {
-   "id": 4434,
-   "type": "fiche_section",
-   "slug": "ryosuke-takahashi"
-  },
-  {
-   "id": 4459,
-   "type": "fiche_section",
-   "slug": "shingo-shoji"
-  },
-  {
-   "id": 4461,
-   "type": "fiche_section",
-   "slug": "takeshi-nakazato"
-  },
-  {
-   "id": 4479,
-   "type": "fiche_section",
-   "slug": "sayuki"
-  },
-  {
-   "id": 4483,
-   "type": "fiche_section",
-   "slug": "yuichi-tachibana"
-  },
-  {
-   "id": 4491,
-   "type": "fiche_section",
-   "slug": "kenji"
-  },
-  {
-   "id": 4492,
-   "type": "fiche_section",
-   "slug": "kenta-nakamura"
-  },
-  {
-   "id": 4501,
+   "id": 4503,
    "type": "fiche_section",
    "slug": "mako-sato"
   },
   {
-   "id": 4506,
-   "type": "fiche_section",
-   "slug": "keisuke-takahashi"
-  },
-  {
-   "id": 4508,
-   "type": "fiche_section",
-   "slug": "hiroshi-fumihiro"
-  },
-  {
-   "id": 4509,
-   "type": "fiche_section",
-   "slug": "papa"
-  },
-  {
-   "id": 4523,
-   "type": "fiche_section",
-   "slug": "miki"
-  },
-  {
-   "id": 4524,
+   "id": 4526,
    "type": "fiche_section",
    "slug": "kyoichi-sudo"
   },
   {
-   "id": 4525,
+   "id": 4532,
+   "type": "fiche_section",
+   "slug": "miki"
+  },
+  {
+   "id": 4534,
    "type": "fiche_section",
    "slug": "rx7-fd"
   },
   {
-   "id": 4545,
+   "id": 4546,
    "type": "fiche_section",
    "slug": "lancer-evo3"
   },
   {
-   "id": 4547,
+   "id": 4550,
    "type": "fiche_section",
    "slug": "kai-kogashiwa"
   },
   {
-   "id": 4556,
-   "type": "fiche_section",
-   "slug": "sileighty"
-  },
-  {
-   "id": 4588,
-   "type": "fiche_section",
-   "slug": "redsuns"
-  },
-  {
-   "id": 4604,
-   "type": "fiche_section",
-   "slug": "hideki-ryuuga"
-  },
-  {
-   "id": 4605,
+   "id": 4606,
    "type": "fiche_section",
    "slug": "shingo-midou"
   },
   {
-   "id": 4623,
+   "id": 4624,
    "type": "fiche_section",
    "slug": "wataru-akiyama"
   },
   {
-   "id": 4644,
-   "type": "arbitrage_claude",
-   "slug": null
-  },
-  {
-   "id": 4645,
-   "type": "arbitrage_claude",
-   "slug": null
-  },
-  {
-   "id": 4646,
-   "type": "arbitrage_claude",
-   "slug": null
-  },
-  {
-   "id": 4647,
-   "type": "arbitrage_claude",
-   "slug": null
-  },
-  {
-   "id": 4648,
-   "type": "arbitrage_claude",
-   "slug": null
-  },
-  {
-   "id": 4649,
-   "type": "arbitrage_claude",
-   "slug": null
-  },
-  {
-   "id": 4650,
-   "type": "arbitrage_claude",
-   "slug": null
-  },
-  {
-   "id": 4651,
-   "type": "arbitrage_claude",
-   "slug": null
-  },
-  {
-   "id": 4652,
-   "type": "arbitrage_claude",
-   "slug": null
-  },
-  {
-   "id": 4653,
-   "type": "arbitrage_claude",
-   "slug": null
-  },
-  {
-   "id": 4675,
-   "type": "akasha_attrs",
-   "slug": "ten-shin-han"
-  },
-  {
-   "id": 4676,
-   "type": "akasha_attrs",
-   "slug": "jinzouningen-18-gou"
-  },
-  {
-   "id": 4677,
-   "type": "akasha_attrs",
-   "slug": "jinzouningen-17-gou"
-  },
-  {
-   "id": 4678,
-   "type": "akasha_attrs",
-   "slug": "muten-roushi"
-  },
-  {
-   "id": 4679,
-   "type": "fiche_artefact",
-   "slug": "kusanagi"
-  },
-  {
-   "id": 4681,
-   "type": "akasha_attrs",
-   "slug": "kame-sennin"
-  },
-  {
-   "id": 4682,
-   "type": "akasha_relations",
-   "slug": "doflamingo-donquixote"
-  },
-  {
-   "id": 4683,
-   "type": "akasha_attrs",
-   "slug": "jinzouningen-19-gou"
-  },
-  {
-   "id": 4684,
-   "type": "akasha_attrs",
-   "slug": "touta-matsuda"
-  },
-  {
-   "id": 4685,
-   "type": "akasha_relations",
-   "slug": "gokuu-black"
-  },
-  {
-   "id": 4686,
-   "type": "akasha_attrs",
-   "slug": "gokuu-black"
-  },
-  {
-   "id": 4687,
-   "type": "fiche_lieu",
-   "slug": "drum-island"
-  },
-  {
-   "id": 4688,
-   "type": "akasha_attrs",
-   "slug": "itou-shiroba"
-  },
-  {
-   "id": 4690,
-   "type": "akasha_relations",
-   "slug": "yasunaga"
-  },
-  {
-   "id": 4692,
-   "type": "akasha_relations",
-   "slug": "daril-ghiroza"
-  },
-  {
-   "id": 4693,
-   "type": "akasha_relations",
-   "slug": "kyousuke-higuchi"
-  },
-  {
-   "id": 4694,
-   "type": "akasha_relations",
-   "slug": "ellickson-gardner"
-  },
-  {
-   "id": 4695,
-   "type": "akasha_relations",
-   "slug": "hideki-ryuuga"
-  },
-  {
-   "id": 4696,
-   "type": "fandom_descfr",
-   "slug": "ginzou-kaneboshi"
-  },
-  {
-   "id": 4697,
-   "type": "akasha_attrs",
-   "slug": "ginzou-kaneboshi"
-  },
-  {
-   "id": 4699,
-   "type": "akasha_attrs",
-   "slug": "kyousuke-higuchi"
-  },
-  {
-   "id": 4700,
-   "type": "akasha_attrs",
-   "slug": "kiichirou-osoreda"
-  },
-  {
-   "id": 4701,
-   "type": "fiche_lexique",
-   "slug": "cellule-kira"
-  },
-  {
-   "id": 4702,
-   "type": "fiche_lieu",
-   "slug": "monde-shinigami"
-  },
-  {
-   "id": 4703,
-   "type": "fiche_technique",
-   "slug": "oeil-de-shinigami"
-  },
-  {
-   "id": 4706,
-   "type": "akasha_relations",
-   "slug": "itou-shiroba"
-  },
-  {
-   "id": 4707,
-   "type": "akasha_relations",
-   "slug": "touta-matsuda"
-  },
-  {
-   "id": 4709,
-   "type": "fiche_lieu",
-   "slug": "tenchi-bridge"
-  },
-  {
-   "id": 4710,
-   "type": "fiche_lieu",
-   "slug": "valley-of-end"
-  },
-  {
-   "id": 4711,
+   "id": 4789,
    "type": "fiche_lieu",
    "slug": "mont-usui"
   },
   {
-   "id": 4714,
-   "type": "akasha_attrs",
-   "slug": "hideki-ryuuga"
-  },
-  {
-   "id": 4715,
-   "type": "akasha_relations",
-   "slug": "jinzouningen-19-gou"
-  },
-  {
-   "id": 4716,
-   "type": "akasha_relations",
-   "slug": "kiichirou-osoreda"
-  },
-  {
-   "id": 4717,
-   "type": "akasha_relations",
-   "slug": "kyoko"
-  },
-  {
-   "id": 4718,
-   "type": "akasha_attrs",
-   "slug": "noriko"
-  },
-  {
-   "id": 4719,
-   "type": "akasha_relations",
-   "slug": "shingo-midou"
-  },
-  {
-   "id": 4720,
-   "type": "akasha_attrs",
-   "slug": "gokuu-jr-son"
-  },
-  {
-   "id": 4721,
-   "type": "fiche_lexique",
-   "slug": "gotei-13-bleach"
-  },
-  {
-   "id": 4722,
-   "type": "akasha_relations",
-   "slug": "noriko"
-  },
-  {
-   "id": 4723,
-   "type": "fiche_lexique",
-   "slug": "spk"
-  },
-  {
-   "id": 4724,
-   "type": "fandom_descfr",
-   "slug": "hell-fighter-17-gou"
-  },
-  {
-   "id": 4725,
-   "type": "fiche_lexique",
-   "slug": "douze-ninjas-gardiens"
-  },
-  {
-   "id": 4727,
-   "type": "fiche_lexique",
-   "slug": "quatres-empereurs"
-  },
-  {
-   "id": 4728,
-   "type": "fiche_lexique",
-   "slug": "ile-celeste"
-  },
-  {
-   "id": 4729,
-   "type": "fiche_lexique",
-   "slug": "association-hunters"
-  },
-  {
-   "id": 4730,
-   "type": "akasha_relations",
-   "slug": "muten-roushi"
-  },
-  {
-   "id": 4731,
-   "type": "akasha_relations",
-   "slug": "jinzouningen-18-gou"
-  },
-  {
-   "id": 4732,
-   "type": "akasha_relations",
-   "slug": "kame-sennin"
-  },
-  {
-   "id": 4733,
-   "type": "fiche_lexique",
-   "slug": "mont-myoboku"
-  },
-  {
-   "id": 4735,
-   "type": "fiche_lexique",
-   "slug": "examen-hunter"
-  },
-  {
-   "id": 4746,
-   "type": "fiche_lieu",
-   "slug": "salle-esprit-temps"
-  },
-  {
-   "id": 4747,
-   "type": "fiche_lieu",
-   "slug": "fishman-island"
-  },
-  {
-   "id": 4751,
-   "type": "fiche_lieu",
-   "slug": "mary-geoise"
-  },
-  {
-   "id": 4752,
-   "type": "fiche_lieu",
-   "slug": "sabaody"
-  },
-  {
-   "id": 4753,
-   "type": "fiche_lieu",
-   "slug": "wano"
-  },
-  {
-   "id": 4765,
-   "type": "akasha_attrs",
-   "slug": "pu-ar"
-  },
-  {
-   "id": 4766,
-   "type": "akasha_relations",
-   "slug": "jinzouningen-16-gou"
-  },
-  {
-   "id": 4767,
-   "type": "fiche_lieu",
-   "slug": "fake-namek"
-  },
-  {
-   "id": 4769,
-   "type": "akasha_attrs",
-   "slug": "north-kaio"
-  },
-  {
-   "id": 4770,
-   "type": "akasha_relations",
-   "slug": "piccolo-daimao"
-  },
-  {
-   "id": 4771,
-   "type": "akasha_attrs",
-   "slug": "kuugo-ginjou"
-  },
-  {
-   "id": 4772,
-   "type": "akasha_attrs",
-   "slug": "norland-montblanc"
-  },
-  {
-   "id": 4773,
-   "type": "fiche_lieu",
-   "slug": "new-vegeta"
-  },
-  {
-   "id": 4774,
-   "type": "fiche_lieu",
-   "slug": "univers-2"
-  },
-  {
-   "id": 4775,
-   "type": "akasha_relations",
-   "slug": "chaozu"
-  },
-  {
-   "id": 4791,
-   "type": "fiche_lexique",
-   "slug": "joestar"
-  },
-  {
-   "id": 4859,
+   "id": 4860,
    "type": "fiche_section",
    "slug": "meruem"
   },
   {
-   "id": 4861,
+   "id": 4862,
    "type": "fiche_section",
    "slug": "chrollo-lucilfer"
   },
   {
-   "id": 4867,
+   "id": 4868,
    "type": "fiche_section",
    "slug": "leorio"
   },
   {
-   "id": 4879,
+   "id": 4881,
    "type": "fiche_section",
    "slug": "feitan"
   },
   {
-   "id": 4880,
+   "id": 4882,
    "type": "fiche_section",
    "slug": "isaac-netero"
   },
   {
-   "id": 4895,
-   "type": "fiche_section",
-   "slug": "neferpitou"
-  },
-  {
-   "id": 4943,
-   "type": "fiche_section",
-   "slug": "komugi"
-  },
-  {
-   "id": 5015,
-   "type": "fiche_section",
-   "slug": "shaiapouf"
-  },
-  {
-   "id": 5037,
-   "type": "fiche_section",
-   "slug": "pakunoda"
-  },
-  {
-   "id": 5049,
-   "type": "fiche_section",
-   "slug": "shalnark-ryuseih"
-  },
-  {
-   "id": 5107,
+   "id": 5118,
    "type": "fiche_section",
    "slug": "joseph-joestar"
   },
   {
-   "id": 5129,
-   "type": "fiche_section",
-   "slug": "jotaro-kujo"
-  },
-  {
-   "id": 5150,
+   "id": 5151,
    "type": "fiche_section",
    "slug": "yoshikage-kira"
   },
   {
-   "id": 5233,
+   "id": 5237,
    "type": "fiche_section",
    "slug": "guido-mista"
   },
   {
-   "id": 5240,
-   "type": "fiche_section",
-   "slug": "jonathan-joestar"
-  },
-  {
-   "id": 5261,
+   "id": 5262,
    "type": "fiche_section",
    "slug": "narancia-ghirga"
   },
   {
-   "id": 5281,
-   "type": "fiche_section",
-   "slug": "koichi-hirose"
-  },
-  {
-   "id": 5282,
-   "type": "fiche_section",
-   "slug": "enrico-pucci"
-  },
-  {
-   "id": 5304,
+   "id": 5327,
    "type": "fiche_section",
    "slug": "weather-report"
   },
   {
-   "id": 5305,
-   "type": "fiche_section",
-   "slug": "diavolo"
-  },
-  {
-   "id": 5326,
-   "type": "fiche_section",
-   "slug": "iggy"
-  },
-  {
-   "id": 5348,
-   "type": "fiche_section",
-   "slug": "muhammad-avdol"
-  },
-  {
-   "id": 5366,
-   "type": "fiche_section",
-   "slug": "narciso-anasui"
-  },
-  {
-   "id": 5368,
-   "type": "fiche_section",
-   "slug": "pannacotta-fugo"
-  },
-  {
-   "id": 5384,
-   "type": "fiche_section",
-   "slug": "risotto-nero"
-  },
-  {
-   "id": 5392,
-   "type": "fiche_section",
-   "slug": "lisa-lisa"
-  },
-  {
-   "id": 5497,
-   "type": "fiche_section",
-   "slug": "ulquiorra"
-  },
-  {
-   "id": 5567,
-   "type": "fiche_section",
-   "slug": "retsu-unohana"
-  },
-  {
-   "id": 5585,
-   "type": "fiche_section",
-   "slug": "shuuhei-hisagi"
-  },
-  {
-   "id": 5602,
+   "id": 5603,
    "type": "fiche_section",
    "slug": "coyote-starrk"
   },
   {
-   "id": 5616,
-   "type": "fiche_section",
-   "slug": "ikkaku-madarame"
-  },
-  {
-   "id": 5646,
-   "type": "fiche_section",
-   "slug": "vegeta"
-  },
-  {
-   "id": 5650,
-   "type": "fiche_section",
-   "slug": "gokuu-black"
-  },
-  {
-   "id": 5651,
-   "type": "fiche_section",
-   "slug": "freezer"
-  },
-  {
-   "id": 5743,
+   "id": 5744,
    "type": "fiche_section",
    "slug": "bonolenov-ndongo"
   },
   {
-   "id": 5747,
+   "id": 5749,
    "type": "fiche_section",
    "slug": "genthru"
   },
   {
-   "id": 5748,
+   "id": 5750,
    "type": "fiche_section",
    "slug": "milluki-zoldyck"
   },
   {
-   "id": 5754,
+   "id": 5755,
    "type": "fiche_section",
    "slug": "hina"
   },
   {
-   "id": 5758,
+   "id": 5759,
    "type": "fiche_section",
    "slug": "zazan"
   },
   {
-   "id": 5761,
-   "type": "fiche_section",
-   "slug": "list"
-  },
-  {
-   "id": 5765,
-   "type": "fiche_section",
-   "slug": "mizaistom-nana"
-  },
-  {
-   "id": 5769,
+   "id": 5770,
    "type": "fiche_section",
    "slug": "tsubone"
   },
   {
-   "id": 5771,
-   "type": "fiche_section",
-   "slug": "baise"
-  },
-  {
-   "id": 5774,
+   "id": 5775,
    "type": "fiche_section",
    "slug": "frog"
   },
   {
-   "id": 5776,
+   "id": 5781,
    "type": "fiche_section",
-   "slug": "goreinu"
+   "slug": "kastro"
   },
   {
-   "id": 5777,
-   "type": "fiche_section",
-   "slug": "franklin-bordeaux"
-  },
-  {
-   "id": 5779,
+   "id": 5782,
    "type": "fiche_section",
    "slug": "leol"
   },
   {
-   "id": 5780,
+   "id": 5783,
    "type": "fiche_section",
-   "slug": "kastro"
+   "slug": "goreinu"
   },
   {
-   "id": 5789,
-   "type": "fiche_section",
-   "slug": "basho"
-  },
-  {
-   "id": 5807,
-   "type": "fiche_section",
-   "slug": "turtle"
-  },
-  {
-   "id": 5827,
-   "type": "fiche_section",
-   "slug": "riehlvelt"
-  },
-  {
-   "id": 5828,
-   "type": "fiche_section",
-   "slug": "shinji-hirako"
-  },
-  {
-   "id": 5830,
+   "id": 5831,
    "type": "fiche_section",
    "slug": "mayuri-kurotsuchi"
   },
   {
-   "id": 5834,
+   "id": 5832,
    "type": "fiche_section",
-   "slug": "juushirou-ukitake"
+   "slug": "shuuhei-hisagi"
   },
   {
-   "id": 5837,
-   "type": "fiche_section",
-   "slug": "yumichika-ayasegawa"
-  },
-  {
-   "id": 5838,
-   "type": "fiche_section",
-   "slug": "momo-hinamori"
-  },
-  {
-   "id": 5839,
-   "type": "fiche_section",
-   "slug": "sajin-komamura"
-  },
-  {
-   "id": 5840,
-   "type": "fiche_section",
-   "slug": "kaien-shiba"
-  },
-  {
-   "id": 5842,
-   "type": "fiche_section",
-   "slug": "mashiro-kuna"
-  },
-  {
-   "id": 5845,
-   "type": "fiche_section",
-   "slug": "lisa-yadoumaru"
-  },
-  {
-   "id": 5850,
-   "type": "fiche_section",
-   "slug": "nemu-kurotsuchi"
-  },
-  {
-   "id": 5852,
-   "type": "fiche_section",
-   "slug": "kaname-tousen"
-  },
-  {
-   "id": 5853,
+   "id": 5854,
    "type": "fiche_section",
    "slug": "nanao-ise"
   },
   {
-   "id": 5855,
-   "type": "fiche_section",
-   "slug": "isane-kotetsu"
-  },
-  {
-   "id": 5862,
+   "id": 5864,
    "type": "fiche_section",
    "slug": "baraggan-louisenbairn"
   },
   {
-   "id": 5872,
-   "type": "fiche_section",
-   "slug": "aaroniero-arruruerie"
-  },
-  {
-   "id": 5880,
-   "type": "fiche_section",
-   "slug": "shuusuke-amagai"
-  },
-  {
-   "id": 5888,
-   "type": "fiche_section",
-   "slug": "hachigen-ushouda"
-  },
-  {
-   "id": 5889,
-   "type": "fiche_section",
-   "slug": "kouga-kuchiki"
-  },
-  {
-   "id": 5890,
+   "id": 5891,
    "type": "fiche_section",
    "slug": "franceska-mila-rose"
   },
   {
-   "id": 5893,
+   "id": 5894,
    "type": "fiche_section",
    "slug": "jackie-tristan"
   },
   {
-   "id": 5921,
+   "id": 5947,
    "type": "fiche_section",
-   "slug": "biscuit-krueger"
+   "slug": "komugi"
   },
   {
-   "id": 5945,
-   "type": "fiche_section",
-   "slug": "alluka-zoldyck"
-  },
-  {
-   "id": 8291,
-   "type": "fiche_section",
-   "slug": "north-kaio"
-  },
-  {
-   "id": 8308,
-   "type": "fiche_section",
-   "slug": "binolt"
-  },
-  {
-   "id": 8756,
-   "type": "fiche_section",
-   "slug": "zald"
-  },
-  {
-   "id": 8902,
-   "type": "fiche_section",
-   "slug": "phinks-magkav"
-  },
-  {
-   "id": 8924,
+   "id": 8931,
    "type": "fiche_section",
    "slug": "menthuthuyoupi"
   },
   {
-   "id": 9142,
+   "id": 9241,
    "type": "fiche_section",
-   "slug": "razor"
+   "slug": "shaiapouf"
   },
   {
-   "id": 9535,
-   "type": "fiche_section",
-   "slug": "shura"
-  },
-  {
-   "id": 9681,
-   "type": "fiche_section",
-   "slug": "liu-xing-long"
-  },
-  {
-   "id": 9682,
-   "type": "fiche_section",
-   "slug": "hell-fighter-17-gou"
-  },
-  {
-   "id": 9929,
-   "type": "fiche_section",
-   "slug": "gowasu"
-  },
-  {
-   "id": 10003,
-   "type": "fiche_section",
-   "slug": "kefla"
-  },
-  {
-   "id": 10354,
-   "type": "fiche_section",
-   "slug": "moro"
-  },
-  {
-   "id": 10526,
-   "type": "fiche_section",
-   "slug": "salza"
-  },
-  {
-   "id": 11115,
-   "type": "fiche_section",
-   "slug": "shunsui-kyoraku"
-  },
-  {
-   "id": 11284,
+   "id": 11310,
    "type": "fiche_section",
    "slug": "atk-bl-hakka-no-togame"
   },
   {
-   "id": 11334,
+   "id": 11336,
    "type": "fiche_section",
    "slug": "vizard"
   },
   {
-   "id": 11604,
-   "type": "fiche_section",
-   "slug": "akira-otoishi"
-  },
-  {
-   "id": 11725,
-   "type": "fiche_section",
-   "slug": "straizo"
-  },
-  {
-   "id": 11942,
-   "type": "fiche_section",
-   "slug": "yoshihiro-kira"
-  },
-  {
-   "id": 12015,
-   "type": "fiche_section",
-   "slug": "giorno-s-stepfather"
-  },
-  {
-   "id": 12064,
+   "id": 12066,
    "type": "fiche_section",
    "slug": "weather-report-jojo-s-bizarre-adventure"
   },
   {
-   "id": 12186,
+   "id": 12430,
    "type": "fiche_section",
-   "slug": "soft-and-wet"
+   "slug": "jotaro-kujo"
   },
   {
-   "id": 12334,
+   "id": 12516,
    "type": "fiche_section",
-   "slug": "morioh"
+   "slug": "vegeta"
   },
   {
-   "id": 12652,
+   "id": 12528,
    "type": "fiche_section",
-   "slug": "pu-ar"
+   "slug": "freezer"
   },
   {
-   "id": 13187,
-   "type": "fiche_section",
-   "slug": "atk-db-give-me-energy"
-  },
-  {
-   "id": 13314,
-   "type": "fiche_section",
-   "slug": "atk-db-life-link"
-  },
-  {
-   "id": 13421,
-   "type": "fiche_section",
-   "slug": "gotenks-ssj"
-  },
-  {
-   "id": 13721,
-   "type": "fiche_section",
-   "slug": "broly"
-  },
-  {
-   "id": 13745,
-   "type": "fiche_section",
-   "slug": "appule"
-  },
-  {
-   "id": 13762,
+   "id": 13769,
    "type": "fiche_section",
    "slug": "bibidi"
   },
   {
-   "id": 13816,
+   "id": 13817,
    "type": "fiche_section",
    "slug": "portgas-d-ace"
   },
   {
-   "id": 13936,
-   "type": "fiche_section",
-   "slug": "buggy"
-  },
-  {
-   "id": 13937,
-   "type": "fiche_section",
-   "slug": "boa-hancock"
-  },
-  {
-   "id": 14006,
+   "id": 14009,
    "type": "fiche_section",
    "slug": "future-trunks"
   },
   {
-   "id": 14033,
-   "type": "fiche_section",
-   "slug": "guldo"
-  },
-  {
-   "id": 14200,
+   "id": 14201,
    "type": "fiche_section",
    "slug": "nappa"
   },
   {
-   "id": 14249,
+   "id": 14849,
    "type": "fiche_section",
-   "slug": "pan"
+   "slug": "liu-xing-long"
   },
   {
-   "id": 14402,
-   "type": "fiche_section",
-   "slug": "yakon"
-  },
-  {
-   "id": 14630,
-   "type": "fiche_section",
-   "slug": "mother"
-  },
-  {
-   "id": 14633,
-   "type": "fiche_section",
-   "slug": "mai"
-  },
-  {
-   "id": 15089,
-   "type": "fiche_section",
-   "slug": "frost"
-  },
-  {
-   "id": 15209,
-   "type": "fiche_section",
-   "slug": "kale"
-  },
-  {
-   "id": 15376,
+   "id": 15377,
    "type": "fiche_section",
    "slug": "potage"
   },
   {
-   "id": 15544,
+   "id": 15610,
    "type": "fiche_section",
-   "slug": "toppo"
+   "slug": "moro"
   },
   {
-   "id": 15569,
-   "type": "fiche_section",
-   "slug": "vados"
-  },
-  {
-   "id": 16154,
-   "type": "fiche_section",
-   "slug": "black-maria"
-  },
-  {
-   "id": 16241,
-   "type": "fiche_section",
-   "slug": "bobbin"
-  },
-  {
-   "id": 16265,
-   "type": "fiche_section",
-   "slug": "boo"
-  },
-  {
-   "id": 17632,
+   "id": 17633,
    "type": "fiche_section",
    "slug": "kelly-funk"
   },
   {
-   "id": 17657,
-   "type": "fiche_section",
-   "slug": "g-8-head-custodian"
-  },
-  {
-   "id": 18089,
-   "type": "fiche_section",
-   "slug": "henzo"
-  },
-  {
-   "id": 18617,
-   "type": "fiche_section",
-   "slug": "juki"
-  },
-  {
-   "id": 18641,
-   "type": "fiche_section",
-   "slug": "kaidou"
-  },
-  {
-   "id": 18737,
-   "type": "fiche_section",
-   "slug": "karma"
-  },
-  {
-   "id": 18857,
-   "type": "fiche_section",
-   "slug": "kiwi"
-  },
-  {
-   "id": 19073,
-   "type": "fiche_section",
-   "slug": "kuzan"
-  },
-  {
-   "id": 19192,
-   "type": "fiche_section",
-   "slug": "linlin-s-father"
-  },
-  {
-   "id": 19193,
-   "type": "fiche_section",
-   "slug": "linlin-s-mother"
-  },
-  {
-   "id": 19211,
-   "type": "fiche_section",
-   "slug": "loan-shark-of-water-7"
-  },
-  {
-   "id": 19624,
-   "type": "fiche_section",
-   "slug": "kisame-hoshigaki"
-  },
-  {
-   "id": 20512,
+   "id": 20513,
    "type": "fiche_section",
    "slug": "hebiichigo"
   },
   {
-   "id": 20609,
-   "type": "fiche_section",
-   "slug": "chino"
+   "id": 34817,
+   "type": "akasha_relations",
+   "slug": "iwana-otogakure"
   },
   {
-   "id": 21135,
-   "type": "fiche_section",
-   "slug": "kinkaku-naruto"
+   "id": 34818,
+   "type": "akasha_relations",
+   "slug": "iwana-citizen"
   },
   {
-   "id": 21449,
-   "type": "fiche_section",
+   "id": 34819,
+   "type": "akasha_relations",
+   "slug": "iyashi"
+  },
+  {
+   "id": 34820,
+   "type": "akasha_relations",
+   "slug": "ittan"
+  },
+  {
+   "id": 34821,
+   "type": "akasha_relations",
+   "slug": "iwazo"
+  },
+  {
+   "id": 34822,
+   "type": "akasha_relations",
+   "slug": "iwashi-tatami"
+  },
+  {
+   "id": 34824,
+   "type": "akasha_relations",
+   "slug": "ivlenkov"
+  },
+  {
+   "id": 34825,
+   "type": "akasha_relations",
+   "slug": "iyan-eno-chinode"
+  },
+  {
+   "id": 34826,
+   "type": "akasha_relations",
+   "slug": "iwatobi"
+  },
+  {
+   "id": 34827,
+   "type": "akasha_relations",
+   "slug": "jabari"
+  },
+  {
+   "id": 34828,
+   "type": "akasha_relations",
+   "slug": "j"
+  },
+  {
+   "id": 34829,
+   "type": "akasha_relations",
+   "slug": "jaggy"
+  },
+  {
+   "id": 34830,
+   "type": "akasha_relations",
+   "slug": "jaki"
+  },
+  {
+   "id": 34831,
+   "type": "akasha_relations",
+   "slug": "jalmack"
+  },
+  {
+   "id": 34832,
+   "type": "akasha_relations",
+   "slug": "jako-ryudoin"
+  },
+  {
+   "id": 34833,
+   "type": "akasha_relations",
+   "slug": "ittetsu"
+  },
+  {
+   "id": 34834,
+   "type": "akasha_relations",
+   "slug": "iwa-doctor"
+  },
+  {
+   "id": 34835,
+   "type": "akasha_relations",
+   "slug": "jack"
+  },
+  {
+   "id": 34836,
+   "type": "akasha_relations",
+   "slug": "jako"
+  },
+  {
+   "id": 34839,
+   "type": "akasha_relations",
+   "slug": "jero"
+  },
+  {
+   "id": 34840,
+   "type": "akasha_relations",
+   "slug": "jarul"
+  },
+  {
+   "id": 34841,
+   "type": "akasha_relations",
+   "slug": "jean-ango"
+  },
+  {
+   "id": 34842,
+   "type": "akasha_relations",
+   "slug": "janmaru-tataru"
+  },
+  {
+   "id": 34843,
+   "type": "akasha_relations",
+   "slug": "janto"
+  },
+  {
+   "id": 34844,
+   "type": "akasha_relations",
+   "slug": "jibiki"
+  },
+  {
+   "id": 34845,
+   "type": "akasha_relations",
+   "slug": "jewel"
+  },
+  {
+   "id": 34846,
+   "type": "akasha_relations",
+   "slug": "janemba"
+  },
+  {
+   "id": 34847,
+   "type": "akasha_relations",
+   "slug": "jimei"
+  },
+  {
+   "id": 34848,
+   "type": "akasha_relations",
+   "slug": "jerry"
+  },
+  {
+   "id": 34849,
+   "type": "akasha_relations",
+   "slug": "jigra"
+  },
+  {
+   "id": 34850,
+   "type": "akasha_relations",
+   "slug": "jibuemon"
+  },
+  {
+   "id": 34851,
+   "type": "akasha_relations",
    "slug": "jiji"
   },
   {
-   "id": 21472,
-   "type": "fiche_section",
-   "slug": "ada"
+   "id": 34852,
+   "type": "akasha_relations",
+   "slug": "jibachi"
   },
   {
-   "id": 22193,
-   "type": "fiche_section",
-   "slug": "mozu"
+   "id": 34853,
+   "type": "akasha_relations",
+   "slug": "jessica"
   },
   {
-   "id": 22745,
-   "type": "fiche_section",
-   "slug": "pirate-captain-500-hostages"
+   "id": 34854,
+   "type": "akasha_relations",
+   "slug": "jingo-kumano"
   },
   {
-   "id": 22793,
-   "type": "fiche_section",
-   "slug": "porche"
+   "id": 34855,
+   "type": "akasha_relations",
+   "slug": "jin"
   },
   {
-   "id": 22807,
-   "type": "fiche_section",
-   "slug": "grus-prince"
+   "id": 34856,
+   "type": "akasha_relations",
+   "slug": "jirobo"
   },
   {
-   "id": 22863,
-   "type": "fiche_section",
-   "slug": "queen"
+   "id": 34857,
+   "type": "akasha_relations",
+   "slug": "jiro-naruto"
   },
   {
-   "id": 22882,
-   "type": "fiche_section",
+   "id": 34858,
+   "type": "akasha_relations",
+   "slug": "jiro"
+  },
+  {
+   "id": 34859,
+   "type": "akasha_relations",
+   "slug": "jiga"
+  },
+  {
+   "id": 34860,
+   "type": "akasha_relations",
+   "slug": "jin-kaminari"
+  },
+  {
+   "id": 34861,
+   "type": "akasha_relations",
+   "slug": "jobo"
+  },
+  {
+   "id": 34862,
+   "type": "akasha_relations",
+   "slug": "jj"
+  },
+  {
+   "id": 34863,
+   "type": "akasha_relations",
+   "slug": "jomae-village-head"
+  },
+  {
+   "id": 34864,
+   "type": "akasha_relations",
+   "slug": "joconde-charlotte"
+  },
+  {
+   "id": 34865,
+   "type": "akasha_relations",
+   "slug": "jiron"
+  },
+  {
+   "id": 34866,
+   "type": "akasha_relations",
+   "slug": "joe-bunny"
+  },
+  {
+   "id": 34992,
+   "type": "akasha_relations",
+   "slug": "jorul"
+  },
+  {
+   "id": 34998,
+   "type": "akasha_relations",
+   "slug": "jorge"
+  },
+  {
+   "id": 35001,
+   "type": "akasha_relations",
+   "slug": "jose-one-piece"
+  },
+  {
+   "id": 35002,
+   "type": "akasha_relations",
+   "slug": "joseki"
+  },
+  {
+   "id": 35003,
+   "type": "akasha_relations",
+   "slug": "ju-peter-shepherd"
+  },
+  {
+   "id": 35004,
+   "type": "akasha_relations",
+   "slug": "jujumaru"
+  },
+  {
+   "id": 35005,
+   "type": "akasha_relations",
+   "slug": "judy"
+  },
+  {
+   "id": 35006,
+   "type": "akasha_relations",
+   "slug": "jugo"
+  },
+  {
+   "id": 35007,
+   "type": "akasha_relations",
+   "slug": "joscarpone-charlotte"
+  },
+  {
+   "id": 35009,
+   "type": "akasha_relations",
+   "slug": "joseph"
+  },
+  {
+   "id": 35012,
+   "type": "akasha_relations",
+   "slug": "julius"
+  },
+  {
+   "id": 35013,
+   "type": "akasha_relations",
+   "slug": "junan"
+  },
+  {
+   "id": 35014,
+   "type": "akasha_relations",
+   "slug": "kabu"
+  },
+  {
+   "id": 35015,
+   "type": "akasha_relations",
+   "slug": "k"
+  },
+  {
+   "id": 35016,
+   "type": "akasha_relations",
+   "slug": "jumper"
+  },
+  {
+   "id": 35017,
+   "type": "akasha_relations",
+   "slug": "kabure-tokisuki"
+  },
+  {
+   "id": 35018,
+   "type": "akasha_relations",
+   "slug": "kaba-shinshi"
+  },
+  {
+   "id": 35019,
+   "type": "akasha_relations",
+   "slug": "kagari"
+  },
+  {
+   "id": 35020,
+   "type": "akasha_relations",
+   "slug": "juzo-biwa"
+  },
+  {
+   "id": 35021,
+   "type": "akasha_relations",
+   "slug": "junsai"
+  },
+  {
+   "id": 35022,
+   "type": "akasha_relations",
+   "slug": "kaede-yoshino"
+  },
+  {
+   "id": 35023,
+   "type": "akasha_relations",
+   "slug": "juki"
+  },
+  {
+   "id": 35026,
+   "type": "akasha_relations",
+   "slug": "kagari-cultist"
+  },
+  {
+   "id": 35027,
+   "type": "akasha_relations",
+   "slug": "kage-anbu"
+  },
+  {
+   "id": 35028,
+   "type": "akasha_relations",
+   "slug": "kaguya-otsutsuki"
+  },
+  {
+   "id": 35029,
+   "type": "akasha_relations",
+   "slug": "kagura-game"
+  },
+  {
+   "id": 35030,
+   "type": "akasha_relations",
+   "slug": "kabuto-s-sensei"
+  },
+  {
+   "id": 35031,
+   "type": "akasha_relations",
+   "slug": "jushiro-ukitake"
+  },
+  {
+   "id": 35032,
+   "type": "akasha_relations",
+   "slug": "kadar"
+  },
+  {
+   "id": 35033,
+   "type": "akasha_relations",
+   "slug": "kaguya-clan-patriarch"
+  },
+  {
+   "id": 35034,
+   "type": "akasha_relations",
+   "slug": "kagero"
+  },
+  {
+   "id": 35035,
+   "type": "akasha_relations",
+   "slug": "kamakiri-ikeno"
+  },
+  {
+   "id": 35036,
+   "type": "akasha_relations",
+   "slug": "kairiken"
+  },
+  {
+   "id": 35037,
+   "type": "akasha_relations",
+   "slug": "kakko"
+  },
+  {
+   "id": 35038,
+   "type": "akasha_relations",
+   "slug": "kakukaku"
+  },
+  {
+   "id": 35039,
+   "type": "akasha_relations",
+   "slug": "kako"
+  },
+  {
+   "id": 35040,
+   "type": "akasha_relations",
+   "slug": "kakesu"
+  },
+  {
+   "id": 35041,
+   "type": "akasha_relations",
+   "slug": "kaji"
+  },
+  {
+   "id": 35042,
+   "type": "akasha_relations",
+   "slug": "kajiki"
+  },
+  {
+   "id": 35043,
+   "type": "akasha_relations",
+   "slug": "kakunoshin"
+  },
+  {
+   "id": 35044,
+   "type": "akasha_relations",
+   "slug": "kakui"
+  },
+  {
+   "id": 35045,
+   "type": "akasha_relations",
+   "slug": "kakuzu-s-partner"
+  },
+  {
+   "id": 35046,
+   "type": "akasha_relations",
+   "slug": "kamakirigirl"
+  },
+  {
+   "id": 35047,
+   "type": "akasha_relations",
+   "slug": "kakoi"
+  },
+  {
+   "id": 35048,
+   "type": "akasha_relations",
+   "slug": "kajika"
+  },
+  {
+   "id": 35051,
+   "type": "akasha_relations",
+   "slug": "kamatari"
+  },
+  {
+   "id": 35052,
+   "type": "akasha_relations",
+   "slug": "kamekichi"
+  },
+  {
+   "id": 35053,
+   "type": "akasha_relations",
+   "slug": "kamira"
+  },
+  {
+   "id": 35054,
+   "type": "akasha_relations",
+   "slug": "kamonegi"
+  },
+  {
+   "id": 35056,
+   "type": "akasha_relations",
+   "slug": "kamata"
+  },
+  {
+   "id": 35057,
+   "type": "akasha_relations",
+   "slug": "kaito-kawanami"
+  },
+  {
+   "id": 35058,
+   "type": "akasha_relations",
+   "slug": "kamikiri"
+  },
+  {
+   "id": 35059,
+   "type": "akasha_relations",
+   "slug": "kamyu-s-fellow-wrestler"
+  },
+  {
+   "id": 35060,
+   "type": "akasha_relations",
+   "slug": "kamyu-s-fellow-swordsman"
+  },
+  {
+   "id": 35183,
+   "type": "akasha_relations",
+   "slug": "kandachi"
+  },
+  {
+   "id": 35196,
+   "type": "akasha_relations",
+   "slug": "kaneshiro"
+  },
+  {
+   "id": 35197,
+   "type": "akasha_relations",
+   "slug": "kanezenny"
+  },
+  {
+   "id": 35199,
+   "type": "akasha_relations",
+   "slug": "kanna-carpenter"
+  },
+  {
+   "id": 35200,
+   "type": "akasha_relations",
+   "slug": "kanjuurou-kurozumi"
+  },
+  {
+   "id": 35201,
+   "type": "akasha_relations",
+   "slug": "kanoe"
+  },
+  {
+   "id": 35202,
+   "type": "akasha_relations",
+   "slug": "kanabun"
+  },
+  {
+   "id": 35203,
+   "type": "akasha_relations",
+   "slug": "kanna"
+  },
+  {
+   "id": 35204,
+   "type": "akasha_relations",
+   "slug": "kande-inabikari"
+  },
+  {
+   "id": 35206,
+   "type": "akasha_relations",
+   "slug": "kanzaburou-akudai"
+  },
+  {
+   "id": 35207,
+   "type": "akasha_relations",
+   "slug": "kanpo"
+  },
+  {
+   "id": 35208,
+   "type": "akasha_relations",
+   "slug": "kaori"
+  },
+  {
+   "id": 35209,
+   "type": "akasha_relations",
+   "slug": "kashike"
+  },
+  {
+   "id": 35210,
+   "type": "akasha_relations",
+   "slug": "kasagoba"
+  },
+  {
+   "id": 35211,
+   "type": "akasha_relations",
+   "slug": "karoni"
+  },
+  {
+   "id": 35212,
+   "type": "akasha_relations",
+   "slug": "karma"
+  },
+  {
+   "id": 35213,
+   "type": "akasha_relations",
+   "slug": "karasuki"
+  },
+  {
+   "id": 35214,
+   "type": "akasha_relations",
+   "slug": "kanpu"
+  },
+  {
+   "id": 35215,
+   "type": "akasha_relations",
+   "slug": "kanoto"
+  },
+  {
+   "id": 35216,
+   "type": "akasha_relations",
+   "slug": "karin-kagura"
+  },
+  {
+   "id": 35217,
+   "type": "akasha_relations",
+   "slug": "kasuga-nara"
+  },
+  {
+   "id": 35218,
+   "type": "akasha_relations",
+   "slug": "kasa"
+  },
+  {
+   "id": 35219,
+   "type": "akasha_relations",
+   "slug": "kashii"
+  },
+  {
+   "id": 35220,
+   "type": "akasha_relations",
+   "slug": "karyu"
+  },
+  {
+   "id": 35221,
+   "type": "akasha_relations",
+   "slug": "kasumi"
+  },
+  {
+   "id": 35222,
+   "type": "akasha_relations",
+   "slug": "kato-charlotte"
+  },
+  {
+   "id": 35223,
+   "type": "akasha_relations",
+   "slug": "kasumi-castle-dusk"
+  },
+  {
+   "id": 35224,
+   "type": "akasha_relations",
+   "slug": "kazami"
+  },
+  {
+   "id": 35225,
+   "type": "akasha_relations",
+   "slug": "kawarama-senju"
+  },
+  {
+   "id": 35226,
+   "type": "akasha_relations",
+   "slug": "karenbana"
+  },
+  {
+   "id": 35227,
+   "type": "akasha_relations",
+   "slug": "kayui"
+  },
+  {
+   "id": 35228,
+   "type": "akasha_relations",
+   "slug": "kayo"
+  },
+  {
+   "id": 35230,
+   "type": "akasha_relations",
+   "slug": "keith"
+  },
+  {
+   "id": 35231,
+   "type": "akasha_relations",
+   "slug": "kebi"
+  },
+  {
+   "id": 35232,
+   "type": "akasha_relations",
+   "slug": "kazenbo"
+  },
+  {
+   "id": 35233,
+   "type": "akasha_relations",
+   "slug": "kibin"
+  },
+  {
+   "id": 35234,
+   "type": "akasha_relations",
+   "slug": "kazan"
+  },
+  {
+   "id": 35235,
+   "type": "akasha_relations",
+   "slug": "keiri"
+  },
+  {
+   "id": 35236,
+   "type": "akasha_relations",
+   "slug": "kiho"
+  },
+  {
+   "id": 35237,
+   "type": "akasha_relations",
+   "slug": "kendiyo-haritsu"
+  },
+  {
+   "id": 35238,
+   "type": "akasha_relations",
+   "slug": "kelly-funk"
+  },
+  {
+   "id": 35239,
+   "type": "akasha_relations",
+   "slug": "kiev"
+  },
+  {
+   "id": 35240,
+   "type": "akasha_relations",
+   "slug": "kentauros"
+  },
+  {
+   "id": 35241,
+   "type": "akasha_relations",
+   "slug": "kess"
+  },
+  {
+   "id": 35242,
+   "type": "akasha_relations",
+   "slug": "kie"
+  },
+  {
+   "id": 35243,
+   "type": "akasha_relations",
+   "slug": "kegon"
+  },
+  {
+   "id": 35244,
+   "type": "akasha_relations",
+   "slug": "kikyou"
+  },
+  {
+   "id": 35245,
+   "type": "akasha_relations",
+   "slug": "kikunojo"
+  },
+  {
+   "id": 35246,
+   "type": "akasha_relations",
+   "slug": "kin-actor"
+  },
+  {
+   "id": 35247,
+   "type": "akasha_relations",
+   "slug": "kinbo"
+  },
+  {
+   "id": 35248,
+   "type": "akasha_relations",
+   "slug": "kedama"
+  },
+  {
+   "id": 35249,
+   "type": "akasha_relations",
+   "slug": "kimel"
+  },
+  {
+   "id": 35251,
+   "type": "akasha_relations",
+   "slug": "kiji"
+  },
+  {
+   "id": 35252,
+   "type": "akasha_relations",
+   "slug": "kiku"
+  },
+  {
+   "id": 35254,
+   "type": "akasha_relations",
+   "slug": "kinderella"
+  },
+  {
+   "id": 35383,
+   "type": "akasha_relations",
+   "slug": "king-of-hell"
+  },
+  {
+   "id": 35384,
+   "type": "akasha_relations",
+   "slug": "kinga"
+  },
+  {
+   "id": 35391,
+   "type": "akasha_relations",
+   "slug": "kingdew"
+  },
+  {
+   "id": 35392,
+   "type": "akasha_relations",
+   "slug": "kinoko"
+  },
+  {
+   "id": 35393,
+   "type": "akasha_relations",
+   "slug": "kinoto"
+  },
+  {
+   "id": 35394,
+   "type": "akasha_relations",
+   "slug": "kintoki"
+  },
+  {
+   "id": 35395,
+   "type": "akasha_relations",
+   "slug": "kinshiki-otsutsuki"
+  },
+  {
+   "id": 35396,
+   "type": "akasha_relations",
+   "slug": "kinkaku"
+  },
+  {
+   "id": 35397,
+   "type": "akasha_relations",
+   "slug": "kiri-ninja"
+  },
+  {
+   "id": 35400,
+   "type": "akasha_relations",
+   "slug": "kirintauros"
+  },
+  {
+   "id": 35401,
+   "type": "akasha_relations",
+   "slug": "kiri-villager"
+  },
+  {
+   "id": 35402,
+   "type": "akasha_relations",
+   "slug": "kobuna"
+  },
+  {
+   "id": 35403,
+   "type": "akasha_relations",
+   "slug": "ko-hyuga"
+  },
+  {
+   "id": 35404,
+   "type": "akasha_relations",
+   "slug": "kirisame"
+  },
+  {
+   "id": 35405,
+   "type": "akasha_relations",
+   "slug": "kisegawa"
+  },
+  {
+   "id": 35406,
+   "type": "akasha_relations",
+   "slug": "kitton"
+  },
+  {
+   "id": 35407,
+   "type": "akasha_relations",
+   "slug": "kisuke-s-wife"
+  },
+  {
+   "id": 35408,
+   "type": "akasha_relations",
+   "slug": "kito"
+  },
+  {
+   "id": 35409,
+   "type": "akasha_relations",
+   "slug": "kobanza"
+  },
+  {
+   "id": 35410,
+   "type": "akasha_relations",
+   "slug": "kita-no-kaioushin"
+  },
+  {
+   "id": 35411,
+   "type": "akasha_relations",
+   "slug": "kobushi-saiki"
+  },
+  {
+   "id": 35413,
+   "type": "akasha_relations",
+   "slug": "koda"
+  },
+  {
+   "id": 35414,
+   "type": "akasha_relations",
+   "slug": "kohada"
+  },
+  {
+   "id": 35415,
+   "type": "akasha_relations",
+   "slug": "kokage-yanagikage"
+  },
+  {
+   "id": 35416,
+   "type": "akasha_relations",
+   "slug": "koji-suna"
+  },
+  {
+   "id": 35417,
+   "type": "akasha_relations",
+   "slug": "koito"
+  },
+  {
+   "id": 35418,
+   "type": "akasha_relations",
+   "slug": "kirisaki"
+  },
+  {
+   "id": 35419,
+   "type": "akasha_relations",
+   "slug": "kiseru-gankubi"
+  },
+  {
+   "id": 35420,
+   "type": "akasha_relations",
+   "slug": "kiyoyasu-kagetsu"
+  },
+  {
+   "id": 35421,
+   "type": "akasha_relations",
+   "slug": "kiyoi-yotsuki"
+  },
+  {
+   "id": 35422,
+   "type": "akasha_relations",
+   "slug": "kohari-umino"
+  },
+  {
+   "id": 35424,
+   "type": "akasha_relations",
+   "slug": "komame"
+  },
+  {
+   "id": 35425,
+   "type": "akasha_relations",
+   "slug": "komachi"
+  },
+  {
+   "id": 35426,
+   "type": "akasha_relations",
+   "slug": "kokuo"
+  },
+  {
+   "id": 35427,
+   "type": "akasha_relations",
+   "slug": "kokuyo-puppeteer"
+  },
+  {
+   "id": 35428,
+   "type": "akasha_relations",
+   "slug": "kongo"
+  },
+  {
+   "id": 35429,
+   "type": "akasha_relations",
+   "slug": "komori"
+  },
+  {
+   "id": 35430,
+   "type": "akasha_relations",
+   "slug": "konbu"
+  },
+  {
+   "id": 35431,
+   "type": "akasha_relations",
+   "slug": "komaza"
+  },
+  {
+   "id": 35432,
+   "type": "akasha_relations",
+   "slug": "konoha-astronomer"
+  },
+  {
+   "id": 35433,
+   "type": "akasha_relations",
+   "slug": "komei"
+  },
+  {
+   "id": 35434,
+   "type": "akasha_relations",
+   "slug": "komane"
+  },
+  {
+   "id": 35436,
+   "type": "akasha_relations",
+   "slug": "korega"
+  },
+  {
+   "id": 35437,
+   "type": "akasha_relations",
+   "slug": "kontsuchi"
+  },
+  {
+   "id": 35438,
+   "type": "akasha_relations",
+   "slug": "korogi"
+  },
+  {
+   "id": 35439,
+   "type": "akasha_relations",
+   "slug": "kop"
+  },
+  {
+   "id": 35440,
+   "type": "akasha_relations",
+   "slug": "koshi-falcon"
+  },
+  {
+   "id": 35441,
+   "type": "akasha_relations",
+   "slug": "komushi"
+  },
+  {
+   "id": 35442,
+   "type": "akasha_relations",
+   "slug": "kokuri"
+  },
+  {
+   "id": 35443,
+   "type": "akasha_relations",
+   "slug": "komugi-naruto"
+  },
+  {
+   "id": 35444,
+   "type": "akasha_relations",
+   "slug": "kokuyo"
+  },
+  {
+   "id": 35445,
+   "type": "akasha_relations",
+   "slug": "konashi-nerikiri"
+  },
+  {
+   "id": 35446,
+   "type": "akasha_relations",
+   "slug": "korobi"
+  },
+  {
+   "id": 35447,
+   "type": "akasha_relations",
+   "slug": "kosuke-scientist"
+  },
+  {
+   "id": 35448,
+   "type": "akasha_relations",
+   "slug": "kosho"
+  },
+  {
+   "id": 35579,
+   "type": "akasha_relations",
+   "slug": "kotaro-fuma"
+  },
+  {
+   "id": 35585,
+   "type": "akasha_relations",
+   "slug": "kotatsu"
+  },
+  {
+   "id": 35586,
+   "type": "akasha_relations",
+   "slug": "kouzaburou-shimotsuki"
+  },
+  {
+   "id": 35587,
+   "type": "akasha_relations",
+   "slug": "koyuki-kazahana"
+  },
+  {
+   "id": 35588,
+   "type": "akasha_relations",
+   "slug": "koze"
+  },
+  {
+   "id": 35590,
+   "type": "akasha_relations",
+   "slug": "kota"
+  },
+  {
+   "id": 35591,
+   "type": "akasha_relations",
+   "slug": "koza-kubisaki"
+  },
+  {
+   "id": 35592,
+   "type": "akasha_relations",
+   "slug": "kousaku-kawajiri"
+  },
+  {
+   "id": 35593,
+   "type": "akasha_relations",
+   "slug": "kumadori-naruto"
+  },
+  {
+   "id": 35594,
+   "type": "akasha_relations",
+   "slug": "kunyun"
+  },
+  {
+   "id": 35595,
+   "type": "akasha_relations",
+   "slug": "kunugi-mokume"
+  },
+  {
+   "id": 35596,
+   "type": "akasha_relations",
+   "slug": "kurama"
+  },
+  {
+   "id": 35597,
+   "type": "akasha_relations",
+   "slug": "kureyo-kairo"
+  },
+  {
+   "id": 35598,
+   "type": "akasha_relations",
+   "slug": "kurenai-yuhi"
+  },
+  {
+   "id": 35599,
+   "type": "akasha_relations",
+   "slug": "kumagoro"
+  },
+  {
+   "id": 35600,
+   "type": "akasha_relations",
+   "slug": "kujaku-naruto"
+  },
+  {
+   "id": 35601,
+   "type": "akasha_relations",
+   "slug": "kuen"
+  },
+  {
+   "id": 35602,
+   "type": "akasha_relations",
+   "slug": "kuni"
+  },
+  {
+   "id": 35603,
+   "type": "akasha_relations",
+   "slug": "kumade-toriichi"
+  },
+  {
+   "id": 35604,
+   "type": "akasha_relations",
+   "slug": "kozuchi"
+  },
+  {
+   "id": 35605,
+   "type": "akasha_relations",
+   "slug": "kurobane"
+  },
+  {
+   "id": 35606,
+   "type": "akasha_relations",
+   "slug": "kui-dotonbori"
+  },
+  {
+   "id": 35607,
+   "type": "akasha_relations",
+   "slug": "kuroma-tatsushiro"
+  },
+  {
+   "id": 35608,
+   "type": "akasha_relations",
+   "slug": "kuromarimo"
+  },
+  {
+   "id": 35609,
+   "type": "akasha_relations",
+   "slug": "ku"
+  },
+  {
+   "id": 35610,
+   "type": "akasha_relations",
+   "slug": "kurozuka"
+  },
+  {
+   "id": 35611,
+   "type": "akasha_relations",
+   "slug": "kurobachi"
+  },
+  {
+   "id": 35612,
+   "type": "akasha_relations",
+   "slug": "kusuma"
+  },
+  {
+   "id": 35613,
+   "type": "akasha_relations",
+   "slug": "kukai"
+  },
+  {
+   "id": 35614,
+   "type": "akasha_relations",
+   "slug": "kura-kageno"
+  },
+  {
+   "id": 35615,
+   "type": "akasha_relations",
+   "slug": "kusabi"
+  },
+  {
+   "id": 35616,
+   "type": "akasha_relations",
+   "slug": "kussaku"
+  },
+  {
+   "id": 35619,
+   "type": "akasha_relations",
+   "slug": "kyuji"
+  },
+  {
+   "id": 35620,
+   "type": "akasha_relations",
+   "slug": "kyo"
+  },
+  {
+   "id": 35621,
+   "type": "akasha_relations",
+   "slug": "kusushi"
+  },
+  {
+   "id": 35622,
+   "type": "akasha_relations",
+   "slug": "kuwa-yokohori"
+  },
+  {
+   "id": 35624,
+   "type": "akasha_relations",
+   "slug": "lacroix"
+  },
+  {
+   "id": 35625,
+   "type": "akasha_relations",
+   "slug": "kyukyu"
+  },
+  {
+   "id": 35627,
+   "type": "akasha_relations",
+   "slug": "kyusuke"
+  },
+  {
+   "id": 35628,
+   "type": "akasha_relations",
+   "slug": "kyodaigumo"
+  },
+  {
+   "id": 35629,
+   "type": "akasha_relations",
+   "slug": "kusuna"
+  },
+  {
+   "id": 35630,
+   "type": "akasha_relations",
+   "slug": "kyoho-fuefuki"
+  },
+  {
+   "id": 35631,
+   "type": "akasha_relations",
+   "slug": "lago"
+  },
+  {
+   "id": 35632,
+   "type": "akasha_relations",
+   "slug": "kyuroku-wagarashi"
+  },
+  {
+   "id": 35633,
+   "type": "akasha_relations",
+   "slug": "laskey"
+  },
+  {
+   "id": 35634,
+   "type": "akasha_relations",
+   "slug": "lars-alexandersson"
+  },
+  {
+   "id": 35635,
+   "type": "akasha_relations",
+   "slug": "lando"
+  },
+  {
+   "id": 35636,
+   "type": "akasha_relations",
+   "slug": "laurin-charlotte"
+  },
+  {
+   "id": 35637,
+   "type": "akasha_relations",
+   "slug": "latarza"
+  },
+  {
+   "id": 35638,
+   "type": "akasha_relations",
+   "slug": "kusune"
+  },
+  {
+   "id": 35639,
+   "type": "akasha_relations",
+   "slug": "lady-tree"
+  },
+  {
+   "id": 35640,
+   "type": "akasha_relations",
+   "slug": "kyoya"
+  },
+  {
+   "id": 35641,
+   "type": "akasha_relations",
+   "slug": "lemo"
+  },
+  {
+   "id": 35642,
+   "type": "akasha_relations",
+   "slug": "ledgic"
+  },
+  {
+   "id": 35765,
+   "type": "akasha_relations",
+   "slug": "leonero"
+  },
+  {
+   "id": 35776,
+   "type": "akasha_relations",
+   "slug": "lily-one-piece"
+  },
+  {
+   "id": 35779,
+   "type": "akasha_relations",
+   "slug": "lili-nefertari-d"
+  },
+  {
+   "id": 35780,
+   "type": "akasha_relations",
+   "slug": "limejuice"
+  },
+  {
+   "id": 35781,
+   "type": "akasha_relations",
+   "slug": "lina-and-sayo-s-father"
+  },
+  {
+   "id": 35782,
+   "type": "akasha_relations",
+   "slug": "lina"
+  },
+  {
+   "id": 35783,
+   "type": "akasha_relations",
+   "slug": "linaria"
+  },
+  {
+   "id": 35784,
+   "type": "akasha_relations",
+   "slug": "lines"
+  },
+  {
+   "id": 35785,
+   "type": "akasha_relations",
+   "slug": "lemuria"
+  },
+  {
+   "id": 35786,
+   "type": "akasha_relations",
+   "slug": "lightning-daimyo"
+  },
+  {
+   "id": 35790,
+   "type": "akasha_relations",
+   "slug": "loan-shark-of-water-7"
+  },
+  {
+   "id": 35791,
+   "type": "akasha_relations",
+   "slug": "luigia"
+  },
+  {
+   "id": 35792,
+   "type": "akasha_relations",
+   "slug": "loupe-highland"
+  },
+  {
+   "id": 35793,
+   "type": "akasha_relations",
+   "slug": "lippo"
+  },
+  {
+   "id": 35794,
+   "type": "akasha_relations",
+   "slug": "lulis"
+  },
+  {
+   "id": 35795,
+   "type": "akasha_relations",
+   "slug": "machvise"
+  },
+  {
+   "id": 35796,
+   "type": "akasha_relations",
+   "slug": "macro"
+  },
+  {
+   "id": 35797,
+   "type": "akasha_relations",
+   "slug": "lord-slug"
+  },
+  {
+   "id": 35798,
+   "type": "akasha_relations",
+   "slug": "mabo"
+  },
+  {
+   "id": 35799,
+   "type": "akasha_relations",
+   "slug": "luca-one-piece"
+  },
+  {
+   "id": 35800,
+   "type": "akasha_relations",
+   "slug": "lion-turtle"
+  },
+  {
+   "id": 35801,
+   "type": "akasha_relations",
+   "slug": "madaisuki-mizuta"
+  },
+  {
+   "id": 35802,
+   "type": "akasha_relations",
+   "slug": "lucas-thalassa"
+  },
+  {
+   "id": 35803,
+   "type": "akasha_relations",
+   "slug": "mahiru"
+  },
+  {
+   "id": 35804,
+   "type": "akasha_relations",
+   "slug": "maha"
+  },
+  {
+   "id": 35805,
+   "type": "akasha_relations",
+   "slug": "maidy"
+  },
+  {
+   "id": 35806,
+   "type": "akasha_relations",
+   "slug": "lunuganga"
+  },
+  {
+   "id": 35807,
+   "type": "akasha_relations",
+   "slug": "maen-nara"
+  },
+  {
+   "id": 35808,
+   "type": "akasha_relations",
+   "slug": "madam-shijimi"
+  },
+  {
+   "id": 35809,
+   "type": "akasha_relations",
+   "slug": "mai-kagetsu"
+  },
+  {
+   "id": 35810,
+   "type": "akasha_relations",
+   "slug": "makaro-akimichi"
+  },
+  {
+   "id": 35811,
+   "type": "akasha_relations",
+   "slug": "maria-napole"
+  },
+  {
+   "id": 35812,
+   "type": "akasha_relations",
+   "slug": "mani"
+  },
+  {
+   "id": 35813,
+   "type": "akasha_relations",
+   "slug": "manboshi"
+  },
+  {
+   "id": 35814,
+   "type": "akasha_relations",
+   "slug": "maraikoh"
+  },
+  {
+   "id": 35815,
+   "type": "akasha_relations",
+   "slug": "makibi"
+  },
+  {
+   "id": 35816,
+   "type": "akasha_relations",
+   "slug": "mari"
+  },
+  {
+   "id": 35817,
+   "type": "akasha_relations",
+   "slug": "maria-negikuma"
+  },
+  {
+   "id": 35818,
+   "type": "akasha_relations",
+   "slug": "makino-naruto"
+  },
+  {
+   "id": 35820,
+   "type": "akasha_relations",
+   "slug": "malice"
+  },
+  {
+   "id": 35821,
+   "type": "akasha_relations",
+   "slug": "margarita"
+  },
+  {
+   "id": 35822,
+   "type": "akasha_relations",
+   "slug": "mangetsu-hozuki"
+  },
+  {
+   "id": 35823,
+   "type": "akasha_relations",
+   "slug": "marie"
+  },
+  {
+   "id": 35824,
+   "type": "akasha_relations",
+   "slug": "marnier-charlotte"
+  },
+  {
+   "id": 35825,
+   "type": "akasha_relations",
+   "slug": "marin"
+  },
+  {
+   "id": 35826,
+   "type": "akasha_relations",
+   "slug": "marui"
+  },
+  {
+   "id": 35827,
+   "type": "akasha_relations",
+   "slug": "maroi"
+  },
+  {
+   "id": 35828,
+   "type": "akasha_relations",
+   "slug": "marilyn"
+  },
+  {
+   "id": 35830,
+   "type": "akasha_relations",
+   "slug": "mamushi"
+  },
+  {
+   "id": 35831,
+   "type": "akasha_relations",
+   "slug": "makinami-senka"
+  },
+  {
+   "id": 35832,
+   "type": "akasha_relations",
+   "slug": "marble-charlotte"
+  },
+  {
+   "id": 35833,
+   "type": "akasha_relations",
+   "slug": "maruta"
+  },
+  {
+   "id": 35834,
+   "type": "akasha_relations",
+   "slug": "maruten-akimichi"
+  },
+  {
+   "id": 35835,
+   "type": "akasha_relations",
+   "slug": "masako"
+  },
+  {
+   "id": 35836,
+   "type": "akasha_relations",
+   "slug": "masazo-kinoto"
+  },
+  {
+   "id": 35964,
+   "type": "akasha_relations",
+   "slug": "mash-charlotte"
+  },
+  {
+   "id": 35969,
+   "type": "akasha_relations",
+   "slug": "mashikatta-uraya"
+  },
+  {
+   "id": 35970,
+   "type": "akasha_relations",
+   "slug": "mascarpone-charlotte"
+  },
+  {
+   "id": 35971,
+   "type": "akasha_relations",
+   "slug": "massui"
+  },
+  {
+   "id": 35973,
+   "type": "akasha_relations",
+   "slug": "mashikaku"
+  },
+  {
+   "id": 35975,
+   "type": "akasha_relations",
+   "slug": "mato"
+  },
+  {
+   "id": 35977,
+   "type": "akasha_relations",
+   "slug": "matsu"
+  },
+  {
+   "id": 35978,
+   "type": "akasha_relations",
+   "slug": "matsuba"
+  },
+  {
+   "id": 35979,
+   "type": "akasha_relations",
+   "slug": "master-puppet"
+  },
+  {
+   "id": 35983,
+   "type": "akasha_relations",
+   "slug": "maynard"
+  },
+  {
+   "id": 35984,
+   "type": "akasha_relations",
+   "slug": "mawaritosuki-mizuta"
+  },
+  {
+   "id": 35985,
+   "type": "akasha_relations",
+   "slug": "mayushika"
+  },
+  {
+   "id": 35986,
+   "type": "akasha_relations",
+   "slug": "mecha-kurama"
+  },
+  {
+   "id": 35987,
+   "type": "akasha_relations",
+   "slug": "mawashi-dokuraku"
+  },
+  {
+   "id": 35988,
+   "type": "akasha_relations",
+   "slug": "matthew"
+  },
+  {
+   "id": 35989,
+   "type": "akasha_relations",
+   "slug": "matsuri-konoha"
+  },
+  {
+   "id": 35990,
+   "type": "akasha_relations",
+   "slug": "menma-anime"
+  },
+  {
+   "id": 35991,
+   "type": "akasha_relations",
+   "slug": "meadows"
+  },
+  {
+   "id": 35993,
+   "type": "akasha_relations",
+   "slug": "maujii"
+  },
+  {
+   "id": 35994,
+   "type": "akasha_relations",
+   "slug": "menma-uzumaki"
+  },
+  {
+   "id": 35995,
+   "type": "akasha_relations",
+   "slug": "mekao"
+  },
+  {
+   "id": 35996,
+   "type": "akasha_relations",
+   "slug": "meno-ninja"
+  },
+  {
+   "id": 35997,
+   "type": "akasha_relations",
+   "slug": "messenger-lizard"
+  },
+  {
+   "id": 35998,
+   "type": "akasha_relations",
+   "slug": "meta-cooler"
+  },
+  {
+   "id": 35999,
+   "type": "akasha_relations",
+   "slug": "methiop"
+  },
+  {
+   "id": 36000,
+   "type": "akasha_relations",
+   "slug": "menis"
+  },
+  {
+   "id": 36001,
+   "type": "akasha_relations",
+   "slug": "medazeppi"
+  },
+  {
+   "id": 36002,
+   "type": "akasha_relations",
+   "slug": "mazuma-izuno"
+  },
+  {
+   "id": 36003,
+   "type": "akasha_relations",
+   "slug": "merus"
+  },
+  {
+   "id": 36004,
+   "type": "akasha_relations",
+   "slug": "meno"
+  },
+  {
+   "id": 36005,
+   "type": "akasha_relations",
+   "slug": "michy"
+  },
+  {
+   "id": 36006,
+   "type": "akasha_relations",
+   "slug": "midnight-blade"
+  },
+  {
+   "id": 36007,
+   "type": "akasha_relations",
+   "slug": "mikazuki-naruto"
+  },
+  {
+   "id": 36009,
+   "type": "akasha_relations",
+   "slug": "midori"
+  },
+  {
+   "id": 36010,
+   "type": "akasha_relations",
+   "slug": "mihar"
+  },
+  {
+   "id": 36011,
+   "type": "akasha_relations",
+   "slug": "migaki"
+  },
+  {
+   "id": 36012,
+   "type": "akasha_relations",
+   "slug": "mezu-missing-nin"
+  },
+  {
+   "id": 36013,
+   "type": "akasha_relations",
+   "slug": "mijin"
+  },
+  {
+   "id": 36014,
+   "type": "akasha_relations",
+   "slug": "midori-game"
+  },
+  {
+   "id": 36015,
+   "type": "akasha_relations",
+   "slug": "mighty-mask"
+  },
+  {
+   "id": 36016,
+   "type": "akasha_relations",
+   "slug": "michizo-manaka"
+  },
+  {
+   "id": 36017,
+   "type": "akasha_relations",
+   "slug": "mibuna"
+  },
+  {
+   "id": 36019,
+   "type": "akasha_relations",
+   "slug": "milky"
+  },
+  {
+   "id": 36020,
+   "type": "akasha_relations",
+   "slug": "mikoshi"
+  },
+  {
+   "id": 36021,
+   "type": "akasha_relations",
+   "slug": "minchey"
+  },
+  {
+   "id": 36022,
+   "type": "akasha_relations",
+   "slug": "minoichi"
+  },
+  {
+   "id": 36023,
+   "type": "akasha_relations",
+   "slug": "mikazuki"
+  },
+  {
+   "id": 36026,
+   "type": "akasha_relations",
+   "slug": "midare"
+  },
+  {
+   "id": 36027,
+   "type": "akasha_relations",
+   "slug": "mimi-inuzuka"
+  },
+  {
+   "id": 36028,
+   "type": "akasha_relations",
+   "slug": "minamo-funato"
+  },
+  {
+   "id": 36029,
+   "type": "akasha_relations",
+   "slug": "minoji"
+  },
+  {
+   "id": 36030,
+   "type": "akasha_relations",
+   "slug": "minokoala"
+  },
+  {
+   "id": 36162,
+   "type": "akasha_relations",
+   "slug": "minorhinoceros"
+  },
+  {
+   "id": 36163,
+   "type": "akasha_relations",
+   "slug": "miru"
+  },
+  {
+   "id": 36164,
+   "type": "akasha_relations",
+   "slug": "misery"
+  },
+  {
+   "id": 36165,
+   "type": "akasha_relations",
+   "slug": "mishoin-cashible"
+  },
+  {
+   "id": 36166,
+   "type": "akasha_relations",
+   "slug": "minotia"
+  },
+  {
+   "id": 36167,
+   "type": "akasha_relations",
+   "slug": "miroku"
+  },
+  {
+   "id": 36168,
+   "type": "akasha_relations",
+   "slug": "minoruba"
+  },
+  {
+   "id": 36169,
+   "type": "akasha_relations",
+   "slug": "minotaurus"
+  },
+  {
+   "id": 36170,
+   "type": "akasha_relations",
+   "slug": "miss-friday"
+  },
+  {
+   "id": 36171,
+   "type": "akasha_relations",
+   "slug": "misuno"
+  },
+  {
+   "id": 36175,
+   "type": "akasha_relations",
+   "slug": "miyagi"
+  },
+  {
+   "id": 36176,
+   "type": "akasha_relations",
+   "slug": "mitoku"
+  },
+  {
+   "id": 36177,
+   "type": "akasha_relations",
+   "slug": "mitsuboshi"
+  },
+  {
+   "id": 36178,
+   "type": "akasha_relations",
+   "slug": "mitate"
+  },
+  {
+   "id": 36179,
+   "type": "akasha_relations",
+   "slug": "mizunoto"
+  },
+  {
+   "id": 36180,
+   "type": "akasha_relations",
+   "slug": "mizuira"
+  },
+  {
+   "id": 36181,
+   "type": "akasha_relations",
+   "slug": "mizunoe"
+  },
+  {
+   "id": 36182,
+   "type": "akasha_relations",
+   "slug": "mizerka"
+  },
+  {
+   "id": 36183,
+   "type": "akasha_relations",
+   "slug": "mobile-charlotte"
+  },
+  {
+   "id": 36184,
+   "type": "akasha_relations",
+   "slug": "moguranmaru"
+  },
+  {
+   "id": 36185,
+   "type": "akasha_relations",
+   "slug": "mogusa"
+  },
+  {
+   "id": 36186,
+   "type": "akasha_relations",
+   "slug": "mizore-fuyukuma"
+  },
+  {
+   "id": 36187,
+   "type": "akasha_relations",
+   "slug": "mo"
+  },
+  {
+   "id": 36188,
+   "type": "akasha_relations",
+   "slug": "mocdonald"
+  },
+  {
+   "id": 36189,
+   "type": "akasha_relations",
+   "slug": "momiji"
+  },
+  {
+   "id": 36190,
+   "type": "akasha_relations",
+   "slug": "momiji-tanzaku"
+  },
+  {
+   "id": 36191,
+   "type": "akasha_relations",
+   "slug": "mochi"
+  },
+  {
+   "id": 36192,
+   "type": "akasha_relations",
+   "slug": "momo-ninneko"
+  },
+  {
+   "id": 36193,
+   "type": "akasha_relations",
+   "slug": "momoshiki-otsutsuki"
+  },
+  {
+   "id": 36194,
+   "type": "akasha_relations",
+   "slug": "monjii"
+  },
+  {
+   "id": 36195,
+   "type": "akasha_relations",
+   "slug": "mohji"
+  },
+  {
+   "id": 36196,
+   "type": "akasha_relations",
+   "slug": "mitsuo"
+  },
+  {
+   "id": 36197,
+   "type": "akasha_relations",
+   "slug": "monju"
+  },
+  {
+   "id": 36198,
+   "type": "akasha_relations",
+   "slug": "monga"
+  },
+  {
+   "id": 36204,
+   "type": "akasha_relations",
+   "slug": "moro"
+  },
+  {
+   "id": 36205,
+   "type": "akasha_relations",
+   "slug": "moroi"
+  },
+  {
+   "id": 36206,
+   "type": "akasha_relations",
+   "slug": "mountain-ricky"
+  },
+  {
+   "id": 36208,
+   "type": "akasha_relations",
+   "slug": "moryo"
+  },
+  {
+   "id": 36209,
+   "type": "akasha_relations",
+   "slug": "monzaemon-chikamatsu"
+  },
+  {
+   "id": 36210,
+   "type": "akasha_relations",
+   "slug": "moore"
+  },
+  {
+   "id": 36211,
+   "type": "akasha_relations",
+   "slug": "moyle"
+  },
+  {
+   "id": 36212,
+   "type": "akasha_relations",
+   "slug": "moqueca"
+  },
+  {
+   "id": 36213,
+   "type": "akasha_relations",
+   "slug": "morio"
+  },
+  {
+   "id": 36214,
+   "type": "akasha_relations",
+   "slug": "mozuku-criminal"
+  },
+  {
+   "id": 36215,
+   "type": "akasha_relations",
+   "slug": "mozuku"
+  },
+  {
+   "id": 36216,
+   "type": "akasha_relations",
+   "slug": "mozuku-land-of-calm-seas"
+  },
+  {
+   "id": 36217,
+   "type": "akasha_relations",
+   "slug": "motzel"
+  },
+  {
+   "id": 36218,
+   "type": "akasha_relations",
+   "slug": "monnosuke-tsurue"
+  },
+  {
+   "id": 36219,
+   "type": "akasha_relations",
+   "slug": "moscato-charlotte"
+  },
+  {
+   "id": 36220,
+   "type": "akasha_relations",
+   "slug": "mr-11"
+  },
+  {
+   "id": 36221,
+   "type": "akasha_relations",
+   "slug": "moodie"
+  },
+  {
+   "id": 36222,
+   "type": "akasha_relations",
+   "slug": "mr-mellow"
+  },
+  {
+   "id": 36223,
+   "type": "akasha_relations",
+   "slug": "mr-shimizu"
+  },
+  {
+   "id": 36224,
+   "type": "akasha_relations",
+   "slug": "mr-momora"
+  },
+  {
+   "id": 36585,
+   "type": "akasha_relations",
+   "slug": "nono-yakushi"
+  },
+  {
+   "id": 36806,
+   "type": "akasha_relations",
+   "slug": "poker"
+  },
+  {
+   "id": 36807,
+   "type": "akasha_relations",
+   "slug": "poco-s-father"
+  },
+  {
+   "id": 36808,
+   "type": "akasha_relations",
+   "slug": "pochi"
+  },
+  {
+   "id": 36939,
+   "type": "akasha_relations",
+   "slug": "potcha"
+  },
+  {
+   "id": 36941,
+   "type": "akasha_relations",
+   "slug": "poro"
+  },
+  {
+   "id": 36942,
+   "type": "akasha_relations",
+   "slug": "porchemy"
+  },
+  {
+   "id": 36943,
+   "type": "akasha_relations",
+   "slug": "poppy"
+  },
+  {
+   "id": 36945,
+   "type": "akasha_relations",
+   "slug": "potato"
+  },
+  {
+   "id": 36959,
+   "type": "akasha_relations",
+   "slug": "raijin-naruto"
+  },
+  {
+   "id": 36960,
+   "type": "akasha_relations",
+   "slug": "pudding"
+  },
+  {
+   "id": 36961,
+   "type": "akasha_relations",
+   "slug": "raideen"
+  },
+  {
+   "id": 36962,
+   "type": "akasha_relations",
+   "slug": "pythagoras"
+  },
+  {
+   "id": 36963,
+   "type": "akasha_relations",
+   "slug": "rabbitman"
+  },
+  {
+   "id": 36964,
+   "type": "akasha_relations",
+   "slug": "quincy-one-piece"
+  },
+  {
+   "id": 36965,
+   "type": "akasha_relations",
+   "slug": "raimei"
+  },
+  {
+   "id": 36966,
+   "type": "akasha_relations",
    "slug": "race"
   },
   {
-   "id": 22913,
-   "type": "fiche_section",
-   "slug": "raizou"
+   "id": 36967,
+   "type": "akasha_relations",
+   "slug": "raijin"
   },
   {
-   "id": 23247,
-   "type": "fiche_section",
-   "slug": "jaygarcia-saturn"
+   "id": 36968,
+   "type": "akasha_relations",
+   "slug": "puzzle"
   },
   {
-   "id": 23873,
-   "type": "fiche_section",
+   "id": 36969,
+   "type": "akasha_relations",
+   "slug": "raisin-charlotte"
+  },
+  {
+   "id": 36970,
+   "type": "akasha_relations",
+   "slug": "ramba"
+  },
+  {
+   "id": 36971,
+   "type": "akasha_relations",
+   "slug": "rakuda"
+  },
+  {
+   "id": 36972,
+   "type": "akasha_relations",
+   "slug": "princess-snake"
+  },
+  {
+   "id": 36973,
+   "type": "akasha_relations",
+   "slug": "prodi"
+  },
+  {
+   "id": 36974,
+   "type": "akasha_relations",
+   "slug": "ramen"
+  },
+  {
+   "id": 36975,
+   "type": "akasha_relations",
+   "slug": "rampo"
+  },
+  {
+   "id": 36976,
+   "type": "akasha_relations",
+   "slug": "ran"
+  },
+  {
+   "id": 36977,
+   "type": "akasha_relations",
+   "slug": "prime-minister"
+  },
+  {
+   "id": 36978,
+   "type": "akasha_relations",
+   "slug": "ran-kunoichi"
+  },
+  {
+   "id": 36980,
+   "type": "akasha_relations",
+   "slug": "ran-sogi"
+  },
+  {
+   "id": 36981,
+   "type": "akasha_relations",
+   "slug": "ratel"
+  },
+  {
+   "id": 36982,
+   "type": "akasha_relations",
+   "slug": "renga"
+  },
+  {
+   "id": 36983,
+   "type": "akasha_relations",
+   "slug": "redwolf"
+  },
+  {
+   "id": 36984,
+   "type": "akasha_relations",
+   "slug": "reki"
+  },
+  {
+   "id": 36985,
+   "type": "akasha_relations",
+   "slug": "rapanui-pasqua"
+  },
+  {
+   "id": 36986,
+   "type": "akasha_relations",
+   "slug": "reck"
+  },
+  {
+   "id": 36987,
+   "type": "akasha_relations",
+   "slug": "ranke"
+  },
+  {
+   "id": 36988,
+   "type": "akasha_relations",
+   "slug": "rashii"
+  },
+  {
+   "id": 36989,
+   "type": "akasha_relations",
+   "slug": "rasa"
+  },
+  {
+   "id": 36990,
+   "type": "akasha_relations",
+   "slug": "reuder"
+  },
+  {
+   "id": 36991,
+   "type": "akasha_relations",
+   "slug": "raspberry"
+  },
+  {
+   "id": 36992,
+   "type": "akasha_relations",
+   "slug": "red-king"
+  },
+  {
+   "id": 36994,
+   "type": "akasha_relations",
+   "slug": "renga-kokubo"
+  },
+  {
+   "id": 36995,
+   "type": "akasha_relations",
+   "slug": "ribrianne"
+  },
+  {
+   "id": 36996,
+   "type": "akasha_relations",
+   "slug": "riehlvelt"
+  },
+  {
+   "id": 36997,
+   "type": "akasha_relations",
+   "slug": "riichi-ninja"
+  },
+  {
+   "id": 36998,
+   "type": "akasha_relations",
+   "slug": "rice-rice"
+  },
+  {
+   "id": 36999,
+   "type": "akasha_relations",
+   "slug": "rikumaru"
+  },
+  {
+   "id": 37000,
+   "type": "akasha_relations",
+   "slug": "ranka"
+  },
+  {
+   "id": 37001,
+   "type": "akasha_relations",
+   "slug": "reto"
+  },
+  {
+   "id": 37002,
+   "type": "akasha_relations",
+   "slug": "riichi"
+  },
+  {
+   "id": 37004,
+   "type": "akasha_relations",
+   "slug": "rint"
+  },
+  {
+   "id": 37322,
+   "type": "akasha_relations",
+   "slug": "samidare"
+  },
+  {
+   "id": 37332,
+   "type": "akasha_relations",
+   "slug": "samidare-amaashi"
+  },
+  {
+   "id": 37336,
+   "type": "akasha_relations",
+   "slug": "san-s-bird"
+  },
+  {
+   "id": 37337,
+   "type": "akasha_relations",
+   "slug": "samosa"
+  },
+  {
+   "id": 37339,
+   "type": "akasha_relations",
+   "slug": "samurai-batts"
+  },
+  {
+   "id": 37340,
+   "type": "akasha_relations",
+   "slug": "sandayu"
+  },
+  {
+   "id": 37341,
+   "type": "akasha_relations",
+   "slug": "sangoro"
+  },
+  {
+   "id": 37342,
+   "type": "akasha_relations",
+   "slug": "sandayu-asama"
+  },
+  {
+   "id": 37343,
+   "type": "akasha_relations",
+   "slug": "sana"
+  },
+  {
+   "id": 37347,
+   "type": "akasha_relations",
+   "slug": "sara-s-daughter"
+  },
+  {
+   "id": 37348,
+   "type": "akasha_relations",
+   "slug": "sasori-s-father"
+  },
+  {
+   "id": 37349,
+   "type": "akasha_relations",
+   "slug": "sarutobi"
+  },
+  {
+   "id": 37350,
+   "type": "akasha_relations",
+   "slug": "satori-naruto"
+  },
+  {
+   "id": 37351,
+   "type": "akasha_relations",
+   "slug": "sanzui-unabara"
+  },
+  {
+   "id": 37352,
+   "type": "akasha_relations",
+   "slug": "sauce"
+  },
+  {
+   "id": 37353,
+   "type": "akasha_relations",
+   "slug": "sato"
+  },
+  {
+   "id": 37354,
+   "type": "akasha_relations",
+   "slug": "sarahebi"
+  },
+  {
+   "id": 37355,
+   "type": "akasha_relations",
+   "slug": "sasori-s-mother"
+  },
+  {
+   "id": 37356,
+   "type": "akasha_relations",
+   "slug": "sarai"
+  },
+  {
+   "id": 37357,
+   "type": "akasha_relations",
+   "slug": "satetsu"
+  },
+  {
+   "id": 37358,
+   "type": "akasha_relations",
+   "slug": "sao"
+  },
+  {
+   "id": 37359,
+   "type": "akasha_relations",
+   "slug": "sara"
+  },
+  {
+   "id": 37360,
+   "type": "akasha_relations",
+   "slug": "santa-yamanaka"
+  },
+  {
+   "id": 37361,
+   "type": "akasha_relations",
+   "slug": "sayu-joge"
+  },
+  {
+   "id": 37362,
+   "type": "akasha_relations",
+   "slug": "sayo"
+  },
+  {
+   "id": 37363,
+   "type": "akasha_relations",
+   "slug": "scarlet-blaze"
+  },
+  {
+   "id": 37364,
+   "type": "akasha_relations",
+   "slug": "sazanka"
+  },
+  {
+   "id": 37365,
+   "type": "akasha_relations",
+   "slug": "saya"
+  },
+  {
+   "id": 37366,
+   "type": "akasha_relations",
+   "slug": "sawatari"
+  },
+  {
+   "id": 37367,
+   "type": "akasha_relations",
+   "slug": "sazanami-senka"
+  },
+  {
+   "id": 37369,
+   "type": "akasha_relations",
+   "slug": "seiren-funato"
+  },
+  {
+   "id": 37370,
+   "type": "akasha_relations",
+   "slug": "scimitarta"
+  },
+  {
+   "id": 37371,
+   "type": "akasha_relations",
+   "slug": "schollzo"
+  },
+  {
+   "id": 37372,
+   "type": "akasha_relations",
+   "slug": "seito"
+  },
+  {
+   "id": 37373,
+   "type": "akasha_relations",
+   "slug": "seki"
+  },
+  {
+   "id": 37374,
+   "type": "akasha_relations",
+   "slug": "sekiei-s-partner"
+  },
+  {
+   "id": 37375,
+   "type": "akasha_relations",
+   "slug": "seaquant"
+  },
+  {
+   "id": 37376,
+   "type": "akasha_relations",
+   "slug": "sen"
+  },
+  {
+   "id": 37377,
+   "type": "akasha_relations",
+   "slug": "sekki"
+  },
+  {
+   "id": 37378,
+   "type": "akasha_relations",
+   "slug": "scorpionlady"
+  },
+  {
+   "id": 37379,
+   "type": "akasha_relations",
+   "slug": "seizou-harugasaki"
+  },
+  {
+   "id": 37380,
+   "type": "akasha_relations",
+   "slug": "seagull-guns-nozdon"
+  },
+  {
+   "id": 37381,
+   "type": "akasha_relations",
+   "slug": "semimaru-kurozumi"
+  },
+  {
+   "id": 37382,
+   "type": "akasha_relations",
+   "slug": "sekiei-spectator"
+  },
+  {
+   "id": 37383,
+   "type": "akasha_relations",
+   "slug": "sengi-guild-agent"
+  },
+  {
+   "id": 37384,
+   "type": "akasha_relations",
+   "slug": "sentoki"
+  },
+  {
+   "id": 37385,
+   "type": "akasha_relations",
+   "slug": "seto"
+  },
+  {
+   "id": 37386,
+   "type": "akasha_relations",
+   "slug": "seramu"
+  },
+  {
+   "id": 37387,
+   "type": "akasha_relations",
+   "slug": "setsuna"
+  },
+  {
+   "id": 37388,
+   "type": "akasha_relations",
+   "slug": "sennorikyuru"
+  },
+  {
+   "id": 37390,
+   "type": "akasha_relations",
+   "slug": "sekka"
+  },
+  {
+   "id": 37391,
+   "type": "akasha_relations",
+   "slug": "setsuna-uchiha"
+  },
+  {
+   "id": 37392,
+   "type": "akasha_relations",
+   "slug": "shabadaba"
+  },
+  {
+   "id": 37393,
+   "type": "akasha_relations",
+   "slug": "shachmono-tocino"
+  },
+  {
+   "id": 37520,
+   "type": "akasha_relations",
+   "slug": "shalria-rosward"
+  },
+  {
+   "id": 37527,
+   "type": "akasha_relations",
+   "slug": "shanba"
+  },
+  {
+   "id": 37531,
+   "type": "akasha_relations",
+   "slug": "shao-long-hyoga"
+  },
+  {
+   "id": 37532,
+   "type": "akasha_relations",
+   "slug": "sheela"
+  },
+  {
+   "id": 37533,
+   "type": "akasha_relations",
+   "slug": "sharinguru"
+  },
+  {
+   "id": 37534,
+   "type": "akasha_relations",
+   "slug": "sheepshead"
+  },
+  {
+   "id": 37535,
+   "type": "akasha_relations",
+   "slug": "sherman-priest"
+  },
+  {
+   "id": 37536,
+   "type": "akasha_relations",
+   "slug": "shi-buta"
+  },
+  {
+   "id": 37537,
+   "type": "akasha_relations",
+   "slug": "shamon"
+  },
+  {
+   "id": 37538,
+   "type": "akasha_relations",
+   "slug": "shinno"
+  },
+  {
+   "id": 37539,
+   "type": "akasha_relations",
+   "slug": "shimeji"
+  },
+  {
+   "id": 37540,
+   "type": "akasha_relations",
+   "slug": "shinga"
+  },
+  {
+   "id": 37541,
+   "type": "akasha_relations",
+   "slug": "shinku-yuhi"
+  },
+  {
+   "id": 37542,
+   "type": "akasha_relations",
+   "slug": "shinobu-mibu"
+  },
+  {
+   "id": 37543,
+   "type": "akasha_relations",
+   "slug": "shin-jaiya"
+  },
+  {
+   "id": 37544,
+   "type": "akasha_relations",
+   "slug": "shiba-kusagakure"
+  },
+  {
+   "id": 37545,
+   "type": "akasha_relations",
+   "slug": "shine"
+  },
+  {
+   "id": 37546,
+   "type": "akasha_relations",
+   "slug": "shibito-azuma"
+  },
+  {
+   "id": 37547,
+   "type": "akasha_relations",
+   "slug": "shinigami-naruto"
+  },
+  {
+   "id": 37548,
+   "type": "akasha_relations",
+   "slug": "shinosuke"
+  },
+  {
+   "id": 37549,
+   "type": "akasha_relations",
+   "slug": "shibai-otsutsuki"
+  },
+  {
+   "id": 37550,
+   "type": "akasha_relations",
+   "slug": "shio"
+  },
+  {
+   "id": 37551,
+   "type": "akasha_relations",
+   "slug": "shirabe"
+  },
+  {
+   "id": 37552,
+   "type": "akasha_relations",
+   "slug": "shion"
+  },
+  {
+   "id": 37553,
+   "type": "akasha_relations",
+   "slug": "shioyaki"
+  },
+  {
+   "id": 37554,
+   "type": "akasha_relations",
+   "slug": "shiro"
+  },
+  {
+   "id": 37555,
+   "type": "akasha_relations",
+   "slug": "shinta"
+  },
+  {
+   "id": 37556,
+   "type": "akasha_relations",
+   "slug": "shiro-land-of-ancestors"
+  },
+  {
+   "id": 37557,
+   "type": "akasha_relations",
+   "slug": "shimon-hijiri"
+  },
+  {
+   "id": 37558,
+   "type": "akasha_relations",
+   "slug": "shinayakana"
+  },
+  {
+   "id": 37559,
+   "type": "akasha_relations",
+   "slug": "shiin"
+  },
+  {
+   "id": 37560,
+   "type": "akasha_relations",
+   "slug": "shiba"
+  },
+  {
+   "id": 37561,
+   "type": "akasha_relations",
+   "slug": "shinta-seko"
+  },
+  {
+   "id": 37564,
+   "type": "akasha_relations",
+   "slug": "shito-akimichi"
+  },
+  {
+   "id": 37565,
+   "type": "akasha_relations",
+   "slug": "shiso"
+  },
+  {
+   "id": 37566,
+   "type": "akasha_relations",
+   "slug": "shiromari"
+  },
+  {
+   "id": 37567,
+   "type": "akasha_relations",
+   "slug": "shivercalero-donquixote"
+  },
+  {
+   "id": 37568,
+   "type": "akasha_relations",
+   "slug": "shitemanna-ishigo"
+  },
+  {
+   "id": 37569,
+   "type": "akasha_relations",
+   "slug": "shizuku"
+  },
+  {
+   "id": 37570,
+   "type": "akasha_relations",
+   "slug": "shiro-naruto"
+  },
+  {
+   "id": 37571,
+   "type": "akasha_relations",
+   "slug": "shu"
+  },
+  {
+   "id": 37572,
+   "type": "akasha_relations",
+   "slug": "shu-lord"
+  },
+  {
+   "id": 37573,
+   "type": "akasha_relations",
+   "slug": "shosa"
+  },
+  {
+   "id": 37574,
+   "type": "akasha_relations",
+   "slug": "shopkeeper-hanji"
+  },
+  {
+   "id": 37575,
+   "type": "akasha_relations",
+   "slug": "sho"
+  },
+  {
+   "id": 37576,
+   "type": "akasha_relations",
+   "slug": "shizuku-taki"
+  },
+  {
+   "id": 37577,
+   "type": "akasha_relations",
+   "slug": "shishio"
+  },
+  {
+   "id": 37578,
+   "type": "akasha_relations",
+   "slug": "shu-naruto"
+  },
+  {
+   "id": 37579,
+   "type": "akasha_relations",
+   "slug": "shugesh"
+  },
+  {
+   "id": 37580,
+   "type": "akasha_relations",
+   "slug": "shukaku"
+  },
+  {
+   "id": 37581,
+   "type": "akasha_relations",
+   "slug": "shura"
+  },
+  {
+   "id": 37582,
+   "type": "akasha_relations",
+   "slug": "shoseki"
+  },
+  {
+   "id": 37583,
+   "type": "akasha_relations",
+   "slug": "shojoji"
+  },
+  {
+   "id": 37584,
+   "type": "akasha_relations",
+   "slug": "shunsui-kyoraku"
+  },
+  {
+   "id": 37585,
+   "type": "akasha_relations",
+   "slug": "shura-naruto"
+  },
+  {
+   "id": 37586,
+   "type": "akasha_relations",
+   "slug": "shuutai"
+  },
+  {
+   "id": 37719,
+   "type": "akasha_relations",
+   "slug": "shuzo"
+  },
+  {
+   "id": 37722,
+   "type": "akasha_relations",
+   "slug": "sind-s-father"
+  },
+  {
+   "id": 37724,
+   "type": "akasha_relations",
+   "slug": "sind"
+  },
+  {
+   "id": 37729,
+   "type": "akasha_relations",
+   "slug": "sky-ninja-executive"
+  },
+  {
+   "id": 37730,
+   "type": "akasha_relations",
+   "slug": "snack-charlotte"
+  },
+  {
+   "id": 37731,
+   "type": "akasha_relations",
+   "slug": "smooge"
+  },
+  {
+   "id": 37732,
+   "type": "akasha_relations",
+   "slug": "skull"
+  },
+  {
+   "id": 37735,
+   "type": "akasha_relations",
+   "slug": "sosetsu-kazahana"
+  },
+  {
+   "id": 37736,
+   "type": "akasha_relations",
+   "slug": "sota"
+  },
+  {
+   "id": 37737,
+   "type": "akasha_relations",
+   "slug": "spoil"
+  },
+  {
+   "id": 37738,
+   "type": "akasha_relations",
+   "slug": "sosha-amino"
+  },
+  {
+   "id": 37739,
+   "type": "akasha_relations",
+   "slug": "sora-orphan"
+  },
+  {
+   "id": 37740,
+   "type": "akasha_relations",
+   "slug": "sphinx"
+  },
+  {
+   "id": 37741,
+   "type": "akasha_relations",
+   "slug": "sound-daimyo"
+  },
+  {
+   "id": 37742,
+   "type": "akasha_relations",
+   "slug": "spopovich"
+  },
+  {
+   "id": 37743,
+   "type": "akasha_relations",
+   "slug": "spirit-beast"
+  },
+  {
+   "id": 37745,
+   "type": "akasha_relations",
+   "slug": "spartan"
+  },
+  {
+   "id": 37748,
+   "type": "akasha_relations",
+   "slug": "sozu"
+  },
+  {
+   "id": 37749,
+   "type": "akasha_relations",
+   "slug": "soma"
+  },
+  {
+   "id": 37750,
+   "type": "akasha_relations",
+   "slug": "speed-jiru"
+  },
+  {
+   "id": 37751,
+   "type": "akasha_relations",
+   "slug": "stainless"
+  },
+  {
+   "id": 37752,
+   "type": "akasha_relations",
+   "slug": "spandine"
+  },
+  {
+   "id": 37753,
+   "type": "akasha_relations",
+   "slug": "spiel"
+  },
+  {
+   "id": 37754,
+   "type": "akasha_relations",
+   "slug": "stansen"
+  },
+  {
+   "id": 37755,
+   "type": "akasha_relations",
+   "slug": "soul-tao"
+  },
+  {
+   "id": 37756,
+   "type": "akasha_relations",
+   "slug": "steve-mason"
+  },
+  {
+   "id": 37757,
+   "type": "akasha_relations",
+   "slug": "strawberry"
+  },
+  {
+   "id": 37758,
+   "type": "akasha_relations",
+   "slug": "stroganoff"
+  },
+  {
+   "id": 37759,
+   "type": "akasha_relations",
+   "slug": "suiu"
+  },
+  {
+   "id": 37760,
+   "type": "akasha_relations",
+   "slug": "suke"
+  },
+  {
+   "id": 37761,
+   "type": "akasha_relations",
+   "slug": "sumire-citizen"
+  },
+  {
+   "id": 37762,
+   "type": "akasha_relations",
+   "slug": "suleiman"
+  },
+  {
+   "id": 37763,
+   "type": "akasha_relations",
+   "slug": "sumashi"
+  },
+  {
+   "id": 37764,
+   "type": "akasha_relations",
+   "slug": "suiren-kiri"
+  },
+  {
+   "id": 37765,
+   "type": "akasha_relations",
+   "slug": "suigetsu-hozuki"
+  },
+  {
+   "id": 37766,
+   "type": "akasha_relations",
+   "slug": "suien"
+  },
+  {
+   "id": 37767,
+   "type": "akasha_relations",
+   "slug": "suguro"
+  },
+  {
+   "id": 37768,
+   "type": "akasha_relations",
+   "slug": "sukima"
+  },
+  {
+   "id": 37769,
+   "type": "akasha_relations",
+   "slug": "stomp"
+  },
+  {
+   "id": 37773,
+   "type": "akasha_relations",
+   "slug": "sunbell"
+  },
+  {
+   "id": 37774,
+   "type": "akasha_relations",
+   "slug": "susuki-land-of-demons"
+  },
+  {
+   "id": 37775,
+   "type": "akasha_relations",
+   "slug": "susuki"
+  },
+  {
+   "id": 37776,
+   "type": "akasha_relations",
+   "slug": "suna-assassin-captain"
+  },
+  {
+   "id": 37777,
+   "type": "akasha_relations",
+   "slug": "sukeza"
+  },
+  {
+   "id": 37778,
+   "type": "akasha_relations",
+   "slug": "sukune"
+  },
+  {
+   "id": 37779,
+   "type": "akasha_relations",
+   "slug": "suiko"
+  },
+  {
+   "id": 37780,
+   "type": "akasha_relations",
+   "slug": "suname"
+  },
+  {
+   "id": 37781,
+   "type": "akasha_relations",
+   "slug": "suzaku-minister"
+  },
+  {
+   "id": 37782,
+   "type": "akasha_relations",
+   "slug": "sutton"
+  },
+  {
+   "id": 37907,
+   "type": "akasha_relations",
+   "slug": "suzu-sogi"
+  },
+  {
+   "id": 37908,
+   "type": "akasha_relations",
+   "slug": "suzaku-nara"
+  },
+  {
+   "id": 37914,
+   "type": "akasha_relations",
+   "slug": "suzumebachi-naruto"
+  },
+  {
+   "id": 37919,
+   "type": "akasha_relations",
+   "slug": "suzuran"
+  },
+  {
+   "id": 37921,
+   "type": "akasha_relations",
+   "slug": "taiki"
+  },
+  {
+   "id": 37922,
+   "type": "akasha_relations",
+   "slug": "tablet-charlotte"
+  },
+  {
+   "id": 37923,
+   "type": "akasha_relations",
+   "slug": "taiken-chin"
+  },
+  {
+   "id": 37924,
+   "type": "akasha_relations",
+   "slug": "tadaichi"
+  },
+  {
+   "id": 37925,
+   "type": "akasha_relations",
+   "slug": "taiko-uchiha"
+  },
+  {
+   "id": 37931,
+   "type": "akasha_relations",
+   "slug": "takajo-torikai"
+  },
+  {
+   "id": 37932,
+   "type": "akasha_relations",
+   "slug": "taizo"
+  },
+  {
+   "id": 37933,
+   "type": "akasha_relations",
+   "slug": "takishi"
+  },
+  {
+   "id": 37934,
+   "type": "akasha_relations",
+   "slug": "tajiki"
+  },
+  {
+   "id": 37935,
+   "type": "akasha_relations",
+   "slug": "takao"
+  },
+  {
+   "id": 37936,
+   "type": "akasha_relations",
+   "slug": "tajio"
+  },
+  {
+   "id": 37937,
+   "type": "akasha_relations",
+   "slug": "tamagon"
+  },
+  {
+   "id": 37938,
+   "type": "akasha_relations",
+   "slug": "tamae"
+  },
+  {
+   "id": 37939,
+   "type": "akasha_relations",
+   "slug": "tamachibi"
+  },
+  {
+   "id": 37940,
+   "type": "akasha_relations",
+   "slug": "taisa-amagiri"
+  },
+  {
+   "id": 37941,
+   "type": "akasha_relations",
+   "slug": "taku"
+  },
+  {
+   "id": 37942,
+   "type": "akasha_relations",
+   "slug": "takamaru"
+  },
+  {
+   "id": 37943,
+   "type": "akasha_relations",
+   "slug": "take"
+  },
+  {
+   "id": 37944,
+   "type": "akasha_relations",
+   "slug": "tami"
+  },
+  {
+   "id": 37945,
+   "type": "akasha_relations",
+   "slug": "takanami-senka"
+  },
+  {
+   "id": 37946,
+   "type": "akasha_relations",
+   "slug": "taji"
+  },
+  {
+   "id": 37947,
+   "type": "akasha_relations",
+   "slug": "taiseki"
+  },
+  {
+   "id": 37948,
+   "type": "akasha_relations",
+   "slug": "tango"
+  },
+  {
+   "id": 37949,
+   "type": "akasha_relations",
+   "slug": "tamao"
+  },
+  {
+   "id": 37950,
+   "type": "akasha_relations",
+   "slug": "tanishi"
+  },
+  {
+   "id": 37951,
+   "type": "akasha_relations",
+   "slug": "tansui"
+  },
+  {
+   "id": 37952,
+   "type": "akasha_relations",
+   "slug": "tanzo"
+  },
+  {
+   "id": 37953,
+   "type": "akasha_relations",
+   "slug": "taro-naruto"
+  },
+  {
+   "id": 37954,
+   "type": "akasha_relations",
+   "slug": "tapion"
+  },
+  {
+   "id": 37955,
+   "type": "akasha_relations",
+   "slug": "tararan"
+  },
+  {
+   "id": 37956,
+   "type": "akasha_relations",
+   "slug": "taroimo"
+  },
+  {
+   "id": 37957,
+   "type": "akasha_relations",
+   "slug": "tasuki"
+  },
+  {
+   "id": 37958,
+   "type": "akasha_relations",
+   "slug": "taro"
+  },
+  {
+   "id": 37959,
+   "type": "akasha_relations",
+   "slug": "tate"
+  },
+  {
+   "id": 37960,
+   "type": "akasha_relations",
+   "slug": "tatsuji"
+  },
+  {
+   "id": 37961,
+   "type": "akasha_relations",
+   "slug": "taruho"
+  },
+  {
+   "id": 37962,
+   "type": "akasha_relations",
+   "slug": "taruto"
+  },
+  {
+   "id": 37963,
+   "type": "akasha_relations",
+   "slug": "tea-daimyo"
+  },
+  {
+   "id": 37964,
+   "type": "akasha_relations",
+   "slug": "team-goji-leader"
+  },
+  {
+   "id": 37965,
+   "type": "akasha_relations",
+   "slug": "tayori-kuroyagi"
+  },
+  {
+   "id": 37966,
+   "type": "akasha_relations",
+   "slug": "tatsunami"
+  },
+  {
+   "id": 37967,
+   "type": "akasha_relations",
+   "slug": "tegata-ringana"
+  },
+  {
+   "id": 37968,
+   "type": "akasha_relations",
+   "slug": "tea-iv"
+  },
+  {
+   "id": 37969,
+   "type": "akasha_relations",
+   "slug": "tanmen"
+  },
+  {
+   "id": 37970,
+   "type": "akasha_relations",
+   "slug": "tatsufusa-enjouji"
+  },
+  {
+   "id": 37971,
+   "type": "akasha_relations",
+   "slug": "tanuki-shigaraki"
+  },
+  {
+   "id": 37972,
+   "type": "akasha_relations",
+   "slug": "tatewaki"
+  },
+  {
+   "id": 37973,
+   "type": "akasha_relations",
+   "slug": "tatsuma-aburame"
+  },
+  {
+   "id": 37974,
+   "type": "akasha_relations",
+   "slug": "teacher"
+  },
+  {
+   "id": 37975,
+   "type": "akasha_relations",
+   "slug": "teguse"
+  },
+  {
+   "id": 37976,
+   "type": "akasha_relations",
+   "slug": "tekkan"
+  },
+  {
+   "id": 38036,
+   "type": "akasha_relations",
+   "slug": "jolyne-s-mother"
+  },
+  {
+   "id": 38049,
+   "type": "akasha_relations",
+   "slug": "akahoshi"
+  },
+  {
+   "id": 38050,
+   "type": "akasha_relations",
+   "slug": "akino"
+  },
+  {
+   "id": 38051,
+   "type": "akasha_relations",
+   "slug": "alice"
+  },
+  {
+   "id": 38052,
+   "type": "akasha_relations",
+   "slug": "akihiro"
+  },
+  {
+   "id": 38053,
+   "type": "akasha_relations",
+   "slug": "agari-kaisen"
+  },
+  {
+   "id": 38054,
+   "type": "akasha_relations",
+   "slug": "amaru"
+  },
+  {
+   "id": 38055,
+   "type": "akasha_relations",
+   "slug": "anba"
+  },
+  {
+   "id": 38056,
+   "type": "akasha_relations",
+   "slug": "araumi-funato"
+  },
+  {
+   "id": 38057,
+   "type": "akasha_relations",
+   "slug": "ashimaru"
+  },
+  {
+   "id": 38058,
+   "type": "akasha_relations",
+   "slug": "beekeeper"
+  },
+  {
+   "id": 38059,
+   "type": "akasha_relations",
+   "slug": "bakezo"
+  },
+  {
+   "id": 38060,
+   "type": "akasha_relations",
+   "slug": "antique-shop-owner"
+  },
+  {
+   "id": 38061,
+   "type": "akasha_relations",
+   "slug": "aniki"
+  },
+  {
+   "id": 38062,
+   "type": "akasha_relations",
+   "slug": "akumai"
+  },
+  {
+   "id": 38063,
+   "type": "akasha_relations",
+   "slug": "bird-masked-anbu-member"
+  },
+  {
+   "id": 38064,
+   "type": "akasha_relations",
+   "slug": "biyo-s-father"
+  },
+  {
+   "id": 38065,
+   "type": "akasha_relations",
+   "slug": "blue-b"
+  },
+  {
+   "id": 38066,
+   "type": "akasha_relations",
+   "slug": "bon-chari-seller"
+  },
+  {
+   "id": 38067,
+   "type": "akasha_relations",
+   "slug": "black-zetsu"
+  },
+  {
+   "id": 38068,
+   "type": "akasha_relations",
+   "slug": "breed"
+  },
+  {
+   "id": 38069,
+   "type": "akasha_relations",
+   "slug": "buriko-nekoka"
+  },
+  {
+   "id": 38070,
+   "type": "akasha_relations",
+   "slug": "bunpuku"
+  },
+  {
+   "id": 38071,
+   "type": "akasha_relations",
+   "slug": "angila"
+  },
+  {
+   "id": 38072,
+   "type": "akasha_relations",
+   "slug": "ange"
+  },
+  {
+   "id": 38073,
+   "type": "akasha_relations",
+   "slug": "caramel"
+  },
+  {
+   "id": 38074,
+   "type": "akasha_relations",
+   "slug": "mummy-mee"
+  },
+  {
+   "id": 38075,
+   "type": "akasha_relations",
+   "slug": "noko"
+  },
+  {
+   "id": 38076,
+   "type": "akasha_relations",
+   "slug": "butsuma-senju"
+  },
+  {
+   "id": 38077,
+   "type": "akasha_relations",
+   "slug": "otoha"
+  },
+  {
+   "id": 38078,
+   "type": "akasha_relations",
+   "slug": "otokaze"
+  },
+  {
+   "id": 38079,
+   "type": "akasha_relations",
+   "slug": "otsutsuki-clan-patriarch"
+  },
+  {
+   "id": 38080,
+   "type": "akasha_relations",
+   "slug": "normande-charlotte"
+  },
+  {
+   "id": 38081,
+   "type": "akasha_relations",
+   "slug": "cameo"
+  },
+  {
+   "id": 38082,
+   "type": "akasha_relations",
+   "slug": "bushidora-ambitious"
+  },
+  {
+   "id": 38083,
+   "type": "akasha_relations",
+   "slug": "namua"
+  },
+  {
+   "id": 38084,
+   "type": "akasha_relations",
+   "slug": "part"
+  },
+  {
+   "id": 38085,
+   "type": "akasha_relations",
+   "slug": "neon-asakusa"
+  },
+  {
+   "id": 38086,
+   "type": "akasha_relations",
+   "slug": "nanafushi"
+  },
+  {
+   "id": 38087,
+   "type": "akasha_relations",
+   "slug": "pekkori"
+  },
+  {
+   "id": 38088,
+   "type": "akasha_relations",
+   "slug": "nue"
+  },
+  {
+   "id": 38089,
+   "type": "akasha_relations",
+   "slug": "pekoms-mother"
+  },
+  {
+   "id": 38090,
+   "type": "akasha_relations",
+   "slug": "roddy"
+  },
+  {
+   "id": 38091,
+   "type": "akasha_relations",
+   "slug": "piegero"
+  },
+  {
+   "id": 38092,
+   "type": "akasha_relations",
+   "slug": "pekoms-father"
+  },
+  {
+   "id": 38093,
+   "type": "akasha_relations",
+   "slug": "penjira"
+  },
+  {
+   "id": 38094,
+   "type": "akasha_relations",
+   "slug": "pirozhki"
+  },
+  {
+   "id": 38095,
+   "type": "akasha_relations",
+   "slug": "rittonto"
+  },
+  {
+   "id": 38096,
+   "type": "akasha_relations",
+   "slug": "pomsky"
+  },
+  {
+   "id": 38097,
+   "type": "akasha_relations",
+   "slug": "rokuroshi"
+  },
+  {
+   "id": 38098,
+   "type": "akasha_relations",
+   "slug": "tempura-uzuki"
+  },
+  {
+   "id": 38099,
+   "type": "akasha_relations",
+   "slug": "temui"
+  },
+  {
+   "id": 38100,
+   "type": "akasha_relations",
+   "slug": "roshio"
+  },
+  {
+   "id": 38101,
+   "type": "akasha_relations",
+   "slug": "ryogi"
+  },
+  {
+   "id": 38102,
+   "type": "akasha_relations",
+   "slug": "temujin"
+  },
+  {
+   "id": 38103,
+   "type": "akasha_relations",
+   "slug": "ten-tails"
+  },
+  {
+   "id": 38104,
+   "type": "akasha_relations",
+   "slug": "ten-long-hyoga"
+  },
+  {
+   "id": 38105,
+   "type": "akasha_relations",
+   "slug": "roji"
+  },
+  {
+   "id": 38106,
+   "type": "akasha_relations",
+   "slug": "sadoru"
+  },
+  {
+   "id": 38107,
+   "type": "akasha_relations",
+   "slug": "tekuno-kanden"
+  },
+  {
+   "id": 38162,
+   "type": "akasha_relations",
+   "slug": "teo"
+  },
+  {
+   "id": 38163,
+   "type": "akasha_relations",
+   "slug": "tenzo-iburi-clan"
+  },
+  {
+   "id": 38164,
+   "type": "akasha_relations",
+   "slug": "tensei"
+  },
+  {
+   "id": 38165,
+   "type": "akasha_relations",
+   "slug": "tezuna"
+  },
+  {
+   "id": 38166,
+   "type": "akasha_relations",
+   "slug": "tetsuru"
+  },
+  {
+   "id": 38167,
+   "type": "akasha_relations",
+   "slug": "tezutsu-mikawa"
+  },
+  {
+   "id": 38168,
+   "type": "akasha_relations",
+   "slug": "the-preecho"
+  },
+  {
+   "id": 38169,
+   "type": "akasha_relations",
+   "slug": "tequila-wolf-prison-chief"
+  },
+  {
+   "id": 38170,
+   "type": "akasha_relations",
+   "slug": "terai"
+  },
+  {
+   "id": 38171,
+   "type": "akasha_relations",
+   "slug": "tenzen-s-bodyguard"
+  },
+  {
+   "id": 38172,
+   "type": "akasha_relations",
+   "slug": "tenzen-daikoku"
+  },
+  {
+   "id": 38174,
+   "type": "akasha_relations",
+   "slug": "teru"
+  },
+  {
+   "id": 38177,
+   "type": "akasha_relations",
+   "slug": "tenga"
+  },
+  {
+   "id": 38179,
+   "type": "akasha_relations",
+   "slug": "terubo"
+  },
+  {
+   "id": 38185,
+   "type": "akasha_relations",
+   "slug": "three-headed-guardian-beast"
+  },
+  {
+   "id": 38186,
+   "type": "akasha_relations",
+   "slug": "tilestone"
+  },
+  {
+   "id": 38187,
+   "type": "akasha_relations",
+   "slug": "tobi-zetsu"
+  },
+  {
+   "id": 38188,
+   "type": "akasha_relations",
+   "slug": "togare"
+  },
+  {
+   "id": 38189,
+   "type": "akasha_relations",
+   "slug": "tobei-kagetsu"
+  },
+  {
+   "id": 38190,
+   "type": "akasha_relations",
+   "slug": "togari"
+  },
+  {
+   "id": 38191,
+   "type": "akasha_relations",
+   "slug": "titi-nefertari"
+  },
+  {
+   "id": 38192,
+   "type": "akasha_relations",
+   "slug": "tokara"
+  },
+  {
+   "id": 38193,
+   "type": "akasha_relations",
+   "slug": "toka-senju"
+  },
+  {
+   "id": 38194,
+   "type": "akasha_relations",
+   "slug": "tightrope-walking-funan-bros-beanie-hat"
+  },
+  {
+   "id": 38195,
+   "type": "akasha_relations",
+   "slug": "tiger-masked-anbu-member"
+  },
+  {
+   "id": 38196,
+   "type": "akasha_relations",
+   "slug": "toki-shinobazu"
+  },
+  {
+   "id": 38197,
+   "type": "akasha_relations",
+   "slug": "tokijiro"
+  },
+  {
+   "id": 38198,
+   "type": "akasha_relations",
+   "slug": "tightrope-walking-funan-bros-chubby"
+  },
+  {
+   "id": 38199,
+   "type": "akasha_relations",
+   "slug": "tobimaru"
+  },
+  {
+   "id": 38200,
+   "type": "akasha_relations",
+   "slug": "tokuma-hyuga"
+  },
+  {
+   "id": 38201,
+   "type": "akasha_relations",
+   "slug": "tokikake"
+  },
+  {
+   "id": 38202,
+   "type": "akasha_relations",
+   "slug": "toma"
+  },
+  {
+   "id": 38203,
+   "type": "akasha_relations",
+   "slug": "three-haimaru-brothers"
+  },
+  {
+   "id": 38204,
+   "type": "akasha_relations",
+   "slug": "tofu"
+  },
+  {
+   "id": 38205,
+   "type": "akasha_relations",
+   "slug": "this-daimyo"
+  },
+  {
+   "id": 38206,
+   "type": "akasha_relations",
+   "slug": "tonbee"
+  },
+  {
+   "id": 38207,
+   "type": "akasha_relations",
+   "slug": "tomozo"
+  },
+  {
+   "id": 38208,
+   "type": "akasha_relations",
+   "slug": "tonsuke"
+  },
+  {
+   "id": 38209,
+   "type": "akasha_relations",
+   "slug": "toneri-otsutsuki"
+  },
+  {
+   "id": 38210,
+   "type": "akasha_relations",
+   "slug": "tomari"
+  },
+  {
+   "id": 38211,
+   "type": "akasha_relations",
+   "slug": "topknot"
+  },
+  {
+   "id": 38212,
+   "type": "akasha_relations",
+   "slug": "tomaru-minakura"
+  },
+  {
+   "id": 38213,
+   "type": "akasha_relations",
+   "slug": "topakka-renona"
+  },
+  {
+   "id": 38214,
+   "type": "akasha_relations",
+   "slug": "tomeo"
+  },
+  {
+   "id": 38216,
+   "type": "akasha_relations",
+   "slug": "tonika-village-head"
+  },
+  {
+   "id": 38217,
+   "type": "akasha_relations",
+   "slug": "tora"
+  },
+  {
+   "id": 38269,
+   "type": "akasha_relations",
+   "slug": "tritobu"
+  },
+  {
+   "id": 38270,
+   "type": "akasha_relations",
+   "slug": "towa"
+  },
+  {
+   "id": 38271,
+   "type": "akasha_relations",
+   "slug": "tristan"
+  },
+  {
+   "id": 38272,
+   "type": "akasha_relations",
+   "slug": "tsubaki-anime"
+  },
+  {
+   "id": 38274,
+   "type": "akasha_relations",
+   "slug": "tsubaki-game"
+  },
+  {
+   "id": 38275,
+   "type": "akasha_relations",
+   "slug": "tsubaki-parent"
+  },
+  {
+   "id": 38276,
+   "type": "akasha_relations",
+   "slug": "tsubute-futaba"
+  },
+  {
+   "id": 38277,
+   "type": "akasha_relations",
+   "slug": "tosa"
+  },
+  {
+   "id": 38278,
+   "type": "akasha_relations",
+   "slug": "tsubusa"
+  },
+  {
+   "id": 38279,
+   "type": "akasha_relations",
    "slug": "totts"
   },
   {
-   "id": 24065,
-   "type": "fiche_section",
-   "slug": "niji-vinsmoke"
-  },
-  {
-   "id": 24389,
-   "type": "fiche_section",
-   "slug": "zunesha"
-  },
-  {
-   "id": 32779,
-   "type": "akasha_relations",
-   "slug": "dango-mitsuki"
-  },
-  {
-   "id": 32780,
-   "type": "akasha_relations",
-   "slug": "daisy"
-  },
-  {
-   "id": 32781,
-   "type": "akasha_relations",
-   "slug": "dango"
-  },
-  {
-   "id": 32784,
-   "type": "akasha_relations",
-   "slug": "datsuji"
-  },
-  {
-   "id": 32785,
-   "type": "akasha_relations",
-   "slug": "daore-dotonbori"
-  },
-  {
-   "id": 32786,
-   "type": "akasha_relations",
-   "slug": "danzo-shimura"
-  },
-  {
-   "id": 32787,
-   "type": "akasha_relations",
-   "slug": "daimaru"
-  },
-  {
-   "id": 32788,
-   "type": "akasha_relations",
-   "slug": "daruma-izuno"
-  },
-  {
-   "id": 32795,
-   "type": "akasha_relations",
-   "slug": "disonasu"
-  },
-  {
-   "id": 32796,
-   "type": "akasha_relations",
-   "slug": "dias-devil"
-  },
-  {
-   "id": 32797,
-   "type": "akasha_relations",
-   "slug": "dive"
-  },
-  {
-   "id": 32798,
-   "type": "akasha_relations",
-   "slug": "delacuaji"
-  },
-  {
-   "id": 32799,
-   "type": "akasha_relations",
-   "slug": "diesel"
-  },
-  {
-   "id": 32800,
-   "type": "akasha_relations",
-   "slug": "desunen-ix-ahho"
-  },
-  {
-   "id": 32801,
-   "type": "akasha_relations",
-   "slug": "dobon"
-  },
-  {
-   "id": 32802,
-   "type": "akasha_relations",
-   "slug": "dogya"
-  },
-  {
-   "id": 32803,
-   "type": "akasha_relations",
-   "slug": "dobby-ibadonbo"
-  },
-  {
-   "id": 32804,
-   "type": "akasha_relations",
-   "slug": "doberman"
-  },
-  {
-   "id": 32805,
-   "type": "akasha_relations",
-   "slug": "doki"
-  },
-  {
-   "id": 32806,
-   "type": "akasha_relations",
-   "slug": "dodai"
-  },
-  {
-   "id": 32809,
-   "type": "akasha_relations",
-   "slug": "dokku"
-  },
-  {
-   "id": 32810,
-   "type": "akasha_relations",
-   "slug": "dolce-charlotte"
-  },
-  {
-   "id": 32811,
-   "type": "akasha_relations",
-   "slug": "dengaku"
-  },
-  {
-   "id": 32812,
-   "type": "akasha_relations",
-   "slug": "dokan"
-  },
-  {
-   "id": 32814,
-   "type": "akasha_relations",
-   "slug": "doshin"
-  },
-  {
-   "id": 32815,
-   "type": "akasha_relations",
-   "slug": "donannoyo"
-  },
-  {
-   "id": 32816,
-   "type": "akasha_relations",
-   "slug": "doran-s-father"
-  },
-  {
-   "id": 32817,
-   "type": "akasha_relations",
-   "slug": "don-kee"
-  },
-  {
-   "id": 32818,
-   "type": "akasha_relations",
-   "slug": "doseki-ganryu"
-  },
-  {
-   "id": 32819,
-   "type": "akasha_relations",
-   "slug": "dore"
-  },
-  {
-   "id": 32820,
-   "type": "akasha_relations",
-   "slug": "dolltaki"
-  },
-  {
-   "id": 32821,
-   "type": "akasha_relations",
-   "slug": "don"
-  },
-  {
-   "id": 32822,
-   "type": "akasha_relations",
-   "slug": "doringo"
-  },
-  {
-   "id": 32823,
-   "type": "akasha_relations",
-   "slug": "doran"
-  },
-  {
-   "id": 32950,
-   "type": "akasha_relations",
-   "slug": "doshu-goetsu"
-  },
-  {
-   "id": 32951,
-   "type": "akasha_relations",
-   "slug": "dosun"
-  },
-  {
-   "id": 32952,
-   "type": "akasha_relations",
-   "slug": "dotaku"
-  },
-  {
-   "id": 32953,
-   "type": "akasha_relations",
-   "slug": "doto-akimichi"
-  },
-  {
-   "id": 32973,
-   "type": "akasha_relations",
-   "slug": "du-feld"
-  },
-  {
-   "id": 32974,
-   "type": "akasha_relations",
-   "slug": "doto-kazahana"
-  },
-  {
-   "id": 32975,
-   "type": "akasha_relations",
-   "slug": "dr-fishbonen"
-  },
-  {
-   "id": 32976,
-   "type": "akasha_relations",
-   "slug": "earth-prison-golem"
-  },
-  {
-   "id": 32977,
-   "type": "akasha_relations",
-   "slug": "dream-s-mother"
-  },
-  {
-   "id": 32978,
-   "type": "akasha_relations",
-   "slug": "dragee-charlotte"
-  },
-  {
-   "id": 32979,
-   "type": "akasha_relations",
-   "slug": "eagle-masked-anbu-member"
-  },
-  {
-   "id": 32980,
-   "type": "akasha_relations",
-   "slug": "dread-lion"
-  },
-  {
-   "id": 32981,
-   "type": "akasha_relations",
-   "slug": "drug-peclo"
-  },
-  {
-   "id": 32982,
-   "type": "akasha_relations",
-   "slug": "dr-flappe"
-  },
-  {
-   "id": 32983,
-   "type": "akasha_relations",
-   "slug": "dream"
-  },
-  {
-   "id": 32984,
-   "type": "akasha_relations",
-   "slug": "eliza"
-  },
-  {
-   "id": 32985,
-   "type": "akasha_relations",
-   "slug": "eiki-fuma"
-  },
-  {
-   "id": 32986,
-   "type": "akasha_relations",
-   "slug": "ebizo"
-  },
-  {
-   "id": 32987,
-   "type": "akasha_relations",
-   "slug": "eccoli"
-  },
-  {
-   "id": 32988,
-   "type": "akasha_relations",
-   "slug": "egana"
-  },
-  {
-   "id": 32989,
-   "type": "akasha_relations",
-   "slug": "eho-norimaki"
-  },
-  {
-   "id": 32990,
-   "type": "akasha_relations",
-   "slug": "effiler-charlotte"
-  },
-  {
-   "id": 32991,
-   "type": "akasha_relations",
-   "slug": "earth-daimyo"
-  },
-  {
-   "id": 32995,
-   "type": "akasha_relations",
-   "slug": "esta-s-boyfriend"
-  },
-  {
-   "id": 32996,
-   "type": "akasha_relations",
-   "slug": "enra"
-  },
-  {
-   "id": 32997,
-   "type": "akasha_relations",
-   "slug": "emiru"
-  },
-  {
-   "id": 32998,
-   "type": "akasha_relations",
-   "slug": "emina"
-  },
-  {
-   "id": 32999,
-   "type": "akasha_relations",
-   "slug": "ereki-kaminarimon"
-  },
-  {
-   "id": 33000,
-   "type": "akasha_relations",
-   "slug": "elmy"
-  },
-  {
-   "id": 33001,
-   "type": "akasha_relations",
-   "slug": "en-no-gyoja"
-  },
-  {
-   "id": 33002,
-   "type": "akasha_relations",
-   "slug": "epoida"
-  },
-  {
-   "id": 33003,
-   "type": "akasha_relations",
-   "slug": "emi"
-  },
-  {
-   "id": 33004,
-   "type": "akasha_relations",
-   "slug": "f"
-  },
-  {
-   "id": 33005,
-   "type": "akasha_relations",
-   "slug": "fabre"
-  },
-  {
-   "id": 33007,
-   "type": "akasha_relations",
-   "slug": "enchu-nara"
-  },
-  {
-   "id": 33008,
-   "type": "akasha_relations",
-   "slug": "esta"
-  },
-  {
-   "id": 33009,
-   "type": "akasha_relations",
-   "slug": "enzo-tenro"
-  },
-  {
-   "id": 33010,
-   "type": "akasha_relations",
-   "slug": "erimaki-sharo"
-  },
-  {
-   "id": 33011,
-   "type": "akasha_relations",
-   "slug": "fang-daimyo"
-  },
-  {
-   "id": 33012,
-   "type": "akasha_relations",
-   "slug": "fanfan"
-  },
-  {
-   "id": 33013,
-   "type": "akasha_relations",
-   "slug": "fasha"
-  },
-  {
-   "id": 33014,
-   "type": "akasha_relations",
-   "slug": "ensui-nara"
-  },
-  {
-   "id": 33015,
-   "type": "akasha_relations",
-   "slug": "father-styx"
-  },
-  {
-   "id": 33016,
-   "type": "akasha_relations",
-   "slug": "faust"
-  },
-  {
-   "id": 33017,
-   "type": "akasha_relations",
-   "slug": "flapper"
-  },
-  {
-   "id": 33018,
-   "type": "akasha_relations",
-   "slug": "faz"
-  },
-  {
-   "id": 33019,
-   "type": "akasha_relations",
-   "slug": "finamore"
-  },
-  {
-   "id": 33020,
-   "type": "akasha_relations",
-   "slug": "fillonce"
-  },
-  {
-   "id": 33023,
-   "type": "akasha_relations",
-   "slug": "fire-daimyo-part-i-ii"
-  },
-  {
-   "id": 33161,
-   "type": "akasha_relations",
-   "slug": "footbianco"
-  },
-  {
-   "id": 33162,
-   "type": "akasha_relations",
-   "slug": "fox-masked-anbu-member"
-  },
-  {
-   "id": 33163,
-   "type": "akasha_relations",
-   "slug": "fossa"
-  },
-  {
-   "id": 33164,
-   "type": "akasha_relations",
-   "slug": "fourtricks"
-  },
-  {
-   "id": 33171,
-   "type": "akasha_relations",
-   "slug": "fudo"
-  },
-  {
-   "id": 33172,
-   "type": "akasha_relations",
-   "slug": "fugo"
-  },
-  {
-   "id": 33173,
-   "type": "akasha_relations",
-   "slug": "fugar"
-  },
-  {
-   "id": 33174,
-   "type": "akasha_relations",
-   "slug": "fujin"
-  },
-  {
-   "id": 33175,
-   "type": "akasha_relations",
-   "slug": "francois"
-  },
-  {
-   "id": 33176,
-   "type": "akasha_relations",
-   "slug": "fugai"
-  },
-  {
-   "id": 33177,
-   "type": "akasha_relations",
-   "slug": "fugi"
-  },
-  {
-   "id": 33178,
-   "type": "akasha_relations",
-   "slug": "fuga"
-  },
-  {
-   "id": 33179,
-   "type": "akasha_relations",
-   "slug": "fu"
-  },
-  {
-   "id": 33180,
-   "type": "akasha_relations",
-   "slug": "fuka"
-  },
-  {
-   "id": 33181,
-   "type": "akasha_relations",
-   "slug": "fujin-naruto"
-  },
-  {
-   "id": 33182,
-   "type": "akasha_relations",
-   "slug": "fuki-land-of-sound"
-  },
-  {
-   "id": 33183,
-   "type": "akasha_relations",
-   "slug": "funamushi"
-  },
-  {
-   "id": 33184,
-   "type": "akasha_relations",
-   "slug": "fukurokumaru"
-  },
-  {
-   "id": 33186,
-   "type": "akasha_relations",
-   "slug": "fuki"
-  },
-  {
-   "id": 33187,
-   "type": "akasha_relations",
-   "slug": "fubuki-kakuyoku"
-  },
-  {
-   "id": 33188,
-   "type": "akasha_relations",
-   "slug": "frost-daimyo"
-  },
-  {
-   "id": 33189,
-   "type": "akasha_relations",
-   "slug": "fuku"
-  },
-  {
-   "id": 33190,
-   "type": "akasha_relations",
-   "slug": "fukuemon"
-  },
-  {
-   "id": 33191,
-   "type": "akasha_relations",
-   "slug": "fukuyokana"
-  },
-  {
-   "id": 33192,
-   "type": "akasha_relations",
-   "slug": "fukusuke-hikyakuya"
-  },
-  {
-   "id": 33193,
-   "type": "akasha_relations",
-   "slug": "fuguki-suikazan"
-  },
-  {
-   "id": 33194,
-   "type": "akasha_relations",
-   "slug": "fuza"
-  },
-  {
-   "id": 33195,
-   "type": "akasha_relations",
-   "slug": "furofuki"
-  },
-  {
-   "id": 33196,
-   "type": "akasha_relations",
-   "slug": "furui"
-  },
-  {
-   "id": 33197,
-   "type": "akasha_relations",
-   "slug": "g-8-marine-officer-blond"
-  },
-  {
-   "id": 33198,
-   "type": "akasha_relations",
-   "slug": "fuyumeg-charlotte"
-  },
-  {
-   "id": 33199,
-   "type": "akasha_relations",
-   "slug": "fuso"
-  },
-  {
-   "id": 33200,
-   "type": "akasha_relations",
-   "slug": "futsu"
-  },
-  {
-   "id": 33201,
-   "type": "akasha_relations",
-   "slug": "fuyo"
-  },
-  {
-   "id": 33203,
-   "type": "akasha_relations",
-   "slug": "futaba"
-  },
-  {
-   "id": 33205,
-   "type": "akasha_relations",
-   "slug": "g-8-head-custodian"
-  },
-  {
-   "id": 33206,
-   "type": "akasha_relations",
-   "slug": "g-8-marine-officer-gray"
-  },
-  {
-   "id": 33207,
-   "type": "akasha_relations",
-   "slug": "furrari"
-  },
-  {
-   "id": 33208,
-   "type": "akasha_relations",
-   "slug": "funari"
-  },
-  {
-   "id": 33209,
-   "type": "akasha_relations",
-   "slug": "g-8-sous-chef"
-  },
-  {
-   "id": 33210,
-   "type": "akasha_relations",
-   "slug": "gale"
-  },
-  {
-   "id": 33211,
-   "type": "akasha_relations",
-   "slug": "gal"
-  },
-  {
-   "id": 33212,
-   "type": "akasha_relations",
-   "slug": "gamagoro"
-  },
-  {
-   "id": 33213,
-   "type": "akasha_relations",
-   "slug": "fundaru"
-  },
-  {
-   "id": 33214,
-   "type": "akasha_relations",
-   "slug": "futa-kagetsu"
-  },
-  {
-   "id": 33216,
-   "type": "akasha_relations",
-   "slug": "futami"
-  },
-  {
-   "id": 33217,
-   "type": "akasha_relations",
-   "slug": "gaku-inuzuka"
-  },
-  {
-   "id": 33218,
-   "type": "akasha_relations",
-   "slug": "gancho"
-  },
-  {
-   "id": 33219,
-   "type": "akasha_relations",
-   "slug": "gambo"
-  },
-  {
-   "id": 33220,
-   "type": "akasha_relations",
-   "slug": "gando"
-  },
-  {
-   "id": 33221,
-   "type": "akasha_relations",
-   "slug": "gamisaras"
-  },
-  {
-   "id": 33222,
-   "type": "akasha_relations",
-   "slug": "gamamichi"
-  },
-  {
-   "id": 33223,
-   "type": "akasha_relations",
-   "slug": "gameru"
-  },
-  {
-   "id": 33224,
-   "type": "akasha_relations",
-   "slug": "gamatama"
-  },
-  {
-   "id": 33225,
-   "type": "akasha_relations",
-   "slug": "gamariki"
-  },
-  {
-   "id": 33432,
-   "type": "akasha_relations",
-   "slug": "ganmi-aremo"
-  },
-  {
-   "id": 33435,
-   "type": "akasha_relations",
-   "slug": "ganryu"
-  },
-  {
-   "id": 33436,
-   "type": "akasha_relations",
-   "slug": "gangaru"
-  },
-  {
-   "id": 33437,
-   "type": "akasha_relations",
-   "slug": "ganno"
-  },
-  {
-   "id": 33446,
-   "type": "akasha_relations",
-   "slug": "garuda"
-  },
-  {
-   "id": 33447,
-   "type": "akasha_relations",
-   "slug": "garudan"
-  },
-  {
-   "id": 33448,
-   "type": "akasha_relations",
-   "slug": "garakuta-gang-leader"
-  },
-  {
-   "id": 33449,
-   "type": "akasha_relations",
-   "slug": "gantetsu-iwagakure"
-  },
-  {
-   "id": 33450,
-   "type": "akasha_relations",
-   "slug": "garashi-tono"
-  },
-  {
-   "id": 33451,
-   "type": "akasha_relations",
-   "slug": "gatekeeper"
-  },
-  {
-   "id": 33452,
-   "type": "akasha_relations",
-   "slug": "gattenshochinosukeo"
-  },
-  {
-   "id": 33453,
-   "type": "akasha_relations",
-   "slug": "gato"
-  },
-  {
-   "id": 33454,
-   "type": "akasha_relations",
-   "slug": "gazeru"
-  },
-  {
-   "id": 33455,
-   "type": "akasha_relations",
-   "slug": "gatz"
-  },
-  {
-   "id": 33456,
-   "type": "akasha_relations",
-   "slug": "gatherine"
-  },
-  {
-   "id": 33458,
-   "type": "akasha_relations",
-   "slug": "ganryu-spade-pirates"
-  },
-  {
-   "id": 33459,
-   "type": "akasha_relations",
-   "slug": "gekko"
-  },
-  {
-   "id": 33460,
-   "type": "akasha_relations",
-   "slug": "gekomatsu"
-  },
-  {
-   "id": 33461,
-   "type": "akasha_relations",
-   "slug": "gen-yumaru"
-  },
-  {
-   "id": 33462,
-   "type": "akasha_relations",
-   "slug": "genbu-minister"
-  },
-  {
-   "id": 33464,
-   "type": "akasha_relations",
-   "slug": "garogai"
-  },
-  {
-   "id": 33468,
-   "type": "akasha_relations",
-   "slug": "gensui-amagiri"
-  },
-  {
-   "id": 33469,
-   "type": "akasha_relations",
-   "slug": "giant-anteater"
-  },
-  {
-   "id": 33470,
-   "type": "akasha_relations",
-   "slug": "giant-centipede"
-  },
-  {
-   "id": 33471,
-   "type": "akasha_relations",
-   "slug": "gengo"
-  },
-  {
-   "id": 33472,
-   "type": "akasha_relations",
-   "slug": "genzo"
-  },
-  {
-   "id": 33473,
-   "type": "akasha_relations",
-   "slug": "giant-bee"
-  },
-  {
-   "id": 33474,
-   "type": "akasha_relations",
-   "slug": "geronimo"
-  },
-  {
-   "id": 33475,
-   "type": "akasha_relations",
-   "slug": "giant-clam"
-  },
-  {
-   "id": 33476,
-   "type": "akasha_relations",
-   "slug": "gengetsu-hozuki"
-  },
-  {
-   "id": 33477,
-   "type": "akasha_relations",
-   "slug": "genie"
-  },
-  {
-   "id": 33478,
-   "type": "akasha_relations",
-   "slug": "genrin"
-  },
-  {
-   "id": 33479,
-   "type": "akasha_relations",
-   "slug": "gennai"
-  },
-  {
-   "id": 33480,
-   "type": "akasha_relations",
-   "slug": "gensho-ryudoin"
-  },
-  {
-   "id": 33481,
-   "type": "akasha_relations",
-   "slug": "giant-marlin"
-  },
-  {
-   "id": 33482,
-   "type": "akasha_relations",
-   "slug": "giant-drill-beaked-bird"
-  },
-  {
-   "id": 33483,
-   "type": "akasha_relations",
-   "slug": "george-mach"
-  },
-  {
-   "id": 33484,
-   "type": "akasha_relations",
-   "slug": "giant-eagle"
-  },
-  {
-   "id": 33485,
-   "type": "akasha_relations",
-   "slug": "giant-crustacean"
-  },
-  {
-   "id": 33486,
-   "type": "akasha_relations",
-   "slug": "giant-insect"
-  },
-  {
-   "id": 33487,
-   "type": "akasha_relations",
-   "slug": "giant-corpse-crab"
-  },
-  {
-   "id": 33488,
-   "type": "akasha_relations",
-   "slug": "giant-multi-headed-dog"
-  },
-  {
-   "id": 33489,
-   "type": "akasha_relations",
-   "slug": "giant-panda"
-  },
-  {
-   "id": 33490,
-   "type": "akasha_relations",
-   "slug": "genmai"
-  },
-  {
-   "id": 33491,
-   "type": "akasha_relations",
-   "slug": "genji"
-  },
-  {
-   "id": 33492,
-   "type": "akasha_relations",
-   "slug": "giant-snake-tailed-chameleon"
-  },
-  {
-   "id": 33493,
-   "type": "akasha_relations",
-   "slug": "giant-squid"
-  },
-  {
-   "id": 33494,
-   "type": "akasha_relations",
-   "slug": "gina"
-  },
-  {
-   "id": 33495,
-   "type": "akasha_relations",
-   "slug": "giant-rhino"
-  },
-  {
-   "id": 33497,
+   "id": 38280,
    "type": "akasha_relations",
-   "slug": "ginger"
+   "slug": "tora-anbu"
   },
   {
-   "id": 33498,
+   "id": 38281,
    "type": "akasha_relations",
-   "slug": "giberson"
+   "slug": "toroi-genin"
   },
   {
-   "id": 33499,
+   "id": 38282,
    "type": "akasha_relations",
-   "slug": "gine"
+   "slug": "trampire"
   },
   {
-   "id": 33670,
+   "id": 38283,
    "type": "fiche_technique",
-   "slug": "atk-db-giant-throw"
+   "slug": "atk-op-soul-solid"
   },
   {
-   "id": 33682,
+   "id": 38291,
+   "type": "akasha_relations",
+   "slug": "tsuchinoe"
+  },
+  {
+   "id": 38292,
+   "type": "akasha_relations",
+   "slug": "tsuchinoto"
+  },
+  {
+   "id": 38293,
+   "type": "akasha_relations",
+   "slug": "tsuzumi"
+  },
+  {
+   "id": 38294,
+   "type": "akasha_relations",
+   "slug": "tsunagorou"
+  },
+  {
+   "id": 38295,
+   "type": "akasha_relations",
+   "slug": "tsurushi-hachiya"
+  },
+  {
+   "id": 38297,
+   "type": "akasha_relations",
+   "slug": "tsukino"
+  },
+  {
+   "id": 38298,
+   "type": "akasha_relations",
+   "slug": "tsuchino"
+  },
+  {
+   "id": 38299,
+   "type": "akasha_relations",
+   "slug": "tsukino-s-father"
+  },
+  {
+   "id": 38300,
+   "type": "akasha_relations",
+   "slug": "tsunokkov"
+  },
+  {
+   "id": 38301,
+   "type": "akasha_relations",
+   "slug": "tsuzumi-cultist"
+  },
+  {
+   "id": 38302,
+   "type": "akasha_relations",
+   "slug": "tsukushi"
+  },
+  {
+   "id": 38303,
+   "type": "akasha_relations",
+   "slug": "tsuzumi-sarugaku"
+  },
+  {
+   "id": 38304,
+   "type": "akasha_relations",
+   "slug": "turles"
+  },
+  {
+   "id": 38305,
+   "type": "akasha_relations",
+   "slug": "ubau"
+  },
+  {
+   "id": 38306,
+   "type": "akasha_relations",
+   "slug": "ubau-naruto"
+  },
+  {
+   "id": 38307,
+   "type": "akasha_relations",
+   "slug": "ugatsu"
+  },
+  {
+   "id": 38308,
+   "type": "akasha_relations",
+   "slug": "uhei"
+  },
+  {
+   "id": 38309,
+   "type": "akasha_relations",
+   "slug": "tsukiko-kagetsu"
+  },
+  {
+   "id": 38310,
+   "type": "akasha_relations",
+   "slug": "tsukune"
+  },
+  {
+   "id": 38311,
+   "type": "akasha_relations",
+   "slug": "tsukiyo"
+  },
+  {
+   "id": 38312,
+   "type": "akasha_relations",
+   "slug": "tsumonsieur-kamaya"
+  },
+  {
+   "id": 38313,
+   "type": "akasha_relations",
+   "slug": "tsuchigumo-chief"
+  },
+  {
+   "id": 38315,
+   "type": "akasha_relations",
+   "slug": "uk"
+  },
+  {
+   "id": 38316,
+   "type": "akasha_relations",
+   "slug": "ultimate-summoning-beast"
+  },
+  {
+   "id": 38317,
+   "type": "akasha_relations",
+   "slug": "umibozu"
+  },
+  {
+   "id": 38318,
+   "type": "akasha_relations",
+   "slug": "ukon"
+  },
+  {
+   "id": 38319,
+   "type": "akasha_relations",
+   "slug": "uni"
+  },
+  {
+   "id": 38320,
+   "type": "akasha_relations",
+   "slug": "unagi"
+  },
+  {
+   "id": 38321,
+   "type": "akasha_relations",
+   "slug": "umit"
+  },
+  {
+   "id": 38322,
+   "type": "akasha_relations",
+   "slug": "ultraking"
+  },
+  {
+   "id": 38323,
+   "type": "akasha_relations",
+   "slug": "uo"
+  },
+  {
+   "id": 38324,
+   "type": "akasha_relations",
+   "slug": "ukkari"
+  },
+  {
+   "id": 38325,
+   "type": "akasha_relations",
+   "slug": "uholisia"
+  },
+  {
+   "id": 38326,
+   "type": "akasha_relations",
+   "slug": "umi-tsugaru"
+  },
+  {
+   "id": 38327,
+   "type": "akasha_relations",
+   "slug": "urashiki-otsutsuki"
+  },
+  {
+   "id": 38328,
+   "type": "akasha_relations",
+   "slug": "urashima"
+  },
+  {
+   "id": 38329,
+   "type": "akasha_relations",
+   "slug": "unmo-samidare"
+  },
+  {
+   "id": 38330,
+   "type": "akasha_relations",
+   "slug": "unkai-kurama"
+  },
+  {
+   "id": 38331,
+   "type": "akasha_relations",
+   "slug": "urakaku"
+  },
+  {
+   "id": 38426,
+   "type": "akasha_relations",
+   "slug": "white-zetsu"
+  },
+  {
+   "id": 38517,
+   "type": "akasha_relations",
+   "slug": "yuu-s-father"
+  },
+  {
+   "id": 38518,
+   "type": "akasha_relations",
+   "slug": "zansuru"
+  },
+  {
+   "id": 38519,
+   "type": "akasha_relations",
+   "slug": "zangya"
+  },
+  {
+   "id": 38520,
+   "type": "akasha_relations",
+   "slug": "zadie"
+  },
+  {
+   "id": 38521,
+   "type": "akasha_relations",
+   "slug": "zaji-gambler"
+  },
+  {
+   "id": 38522,
+   "type": "akasha_relations",
+   "slug": "zangirimaru"
+  },
+  {
+   "id": 38523,
+   "type": "akasha_relations",
+   "slug": "zenza"
+  },
+  {
+   "id": 38524,
+   "type": "akasha_relations",
+   "slug": "zabo"
+  },
+  {
+   "id": 38525,
+   "type": "akasha_relations",
+   "slug": "zo-naruto"
+  },
+  {
+   "id": 38526,
+   "type": "akasha_relations",
+   "slug": "zotto"
+  },
+  {
+   "id": 38527,
+   "type": "akasha_relations",
+   "slug": "zangei"
+  },
+  {
+   "id": 38528,
+   "type": "akasha_relations",
+   "slug": "zanki"
+  },
+  {
+   "id": 38529,
+   "type": "akasha_relations",
+   "slug": "zaba"
+  },
+  {
+   "id": 38530,
+   "type": "akasha_relations",
+   "slug": "zurako-ahho"
+  },
+  {
+   "id": 38531,
+   "type": "akasha_relations",
+   "slug": "zosui"
+  },
+  {
+   "id": 38532,
+   "type": "akasha_relations",
+   "slug": "yuya"
+  },
+  {
+   "id": 38533,
+   "type": "akasha_relations",
+   "slug": "zero-tails"
+  },
+  {
+   "id": 39023,
+   "type": "fiche_lieu",
+   "slug": "namakura-island"
+  },
+  {
+   "id": 39299,
+   "type": "akasha_relations",
+   "slug": "saori"
+  },
+  {
+   "id": 39303,
+   "type": "fandom_descfr",
+   "slug": "zenji"
+  },
+  {
+   "id": 39313,
+   "type": "akasha_relations",
+   "slug": "neferpitou"
+  },
+  {
+   "id": 39329,
+   "type": "akasha_relations",
+   "slug": "caulifla"
+  },
+  {
+   "id": 39335,
+   "type": "akasha_relations",
+   "slug": "shizuka-joestar"
+  },
+  {
+   "id": 39337,
+   "type": "akasha_relations",
+   "slug": "koji"
+  },
+  {
+   "id": 39343,
+   "type": "fandom_descfr",
+   "slug": "messina"
+  },
+  {
+   "id": 39349,
+   "type": "fandom_descfr",
+   "slug": "nickes"
+  },
+  {
+   "id": 39351,
+   "type": "fandom_descfr",
+   "slug": "mozuku-land-of-calm-seas"
+  },
+  {
+   "id": 39375,
+   "type": "fandom_descfr",
+   "slug": "jingo-kumano"
+  },
+  {
+   "id": 39404,
+   "type": "akasha_attrs",
+   "slug": "kazeshini"
+  },
+  {
+   "id": 39408,
+   "type": "akasha_attrs",
+   "slug": "sode-no-shirayuki"
+  },
+  {
+   "id": 39411,
+   "type": "akasha_relations",
+   "slug": "kazeshini"
+  },
+  {
+   "id": 39412,
+   "type": "akasha_attrs",
+   "slug": "misaomaru-kanonji"
+  },
+  {
+   "id": 39416,
+   "type": "akasha_relations",
+   "slug": "sode-no-shirayuki"
+  },
+  {
+   "id": 39418,
+   "type": "akasha_relations",
+   "slug": "15th-generation-s-higashi-no-kaioshin"
+  },
+  {
+   "id": 39419,
+   "type": "akasha_attrs",
+   "slug": "15th-generation-s-higashi-no-kaioshin"
+  },
+  {
+   "id": 39428,
+   "type": "akasha_relations",
+   "slug": "misaomaru-kanonji"
+  },
+  {
+   "id": 39430,
+   "type": "akasha_attrs",
+   "slug": "tenkaichi-budokai-announcer"
+  },
+  {
+   "id": 39433,
+   "type": "fandom_descfr",
+   "slug": "abe"
+  },
+  {
+   "id": 39434,
+   "type": "akasha_relations",
+   "slug": "tenkaichi-budokai-announcer"
+  },
+  {
+   "id": 39435,
+   "type": "akasha_relations",
+   "slug": "abe"
+  },
+  {
+   "id": 39436,
+   "type": "akasha_attrs",
+   "slug": "umikame"
+  },
+  {
+   "id": 39437,
+   "type": "fandom_descfr",
+   "slug": "enya-geil"
+  },
+  {
+   "id": 39438,
+   "type": "akasha_attrs",
+   "slug": "shen"
+  },
+  {
+   "id": 39439,
+   "type": "akasha_relations",
+   "slug": "reiichi-oshima"
+  },
+  {
+   "id": 39440,
+   "type": "akasha_relations",
+   "slug": "san-xing-long"
+  },
+  {
+   "id": 39441,
+   "type": "akasha_relations",
+   "slug": "umikame"
+  },
+  {
+   "id": 39444,
+   "type": "akasha_relations",
+   "slug": "dr-wheelo"
+  },
+  {
+   "id": 39766,
+   "type": "akasha_relations",
+   "slug": "ivan-x"
+  },
+  {
+   "id": 39882,
+   "type": "fiche_technique",
+   "slug": "vegeta-ssjb"
+  },
+  {
+   "id": 39883,
+   "type": "fiche_technique",
+   "slug": "atk-db-accel-dance"
+  },
+  {
+   "id": 39884,
+   "type": "fiche_technique",
+   "slug": "atk-db-rush-blade"
+  },
+  {
+   "id": 39906,
+   "type": "fiche_technique",
+   "slug": "ink-creation"
+  },
+  {
+   "id": 39907,
+   "type": "fiche_technique",
+   "slug": "freezer-perfect-form"
+  },
+  {
+   "id": 39908,
+   "type": "fiche_technique",
+   "slug": "atk-op-kabuto"
+  },
+  {
+   "id": 39931,
+   "type": "fiche_technique",
+   "slug": "atk-db-mouth-energy-wave"
+  },
+  {
+   "id": 39932,
+   "type": "fiche_technique",
+   "slug": "evasion-technique"
+  },
+  {
+   "id": 39966,
+   "type": "fiche_technique",
+   "slug": "atk-db-photon-bomber"
+  },
+  {
+   "id": 39968,
+   "type": "fiche_technique",
+   "slug": "atk-db-solar-flare-x100"
+  },
+  {
+   "id": 39969,
+   "type": "fiche_technique",
+   "slug": "atk-db-another-end"
+  },
+  {
+   "id": 39970,
+   "type": "fiche_technique",
+   "slug": "atk-db-spirit-bomb-absorption"
+  },
+  {
+   "id": 39971,
+   "type": "fiche_technique",
+   "slug": "atk-db-multiple-kamehameha"
+  },
+  {
+   "id": 39972,
+   "type": "fiche_technique",
+   "slug": "atk-db-super-destructo-disc"
+  },
+  {
+   "id": 39973,
+   "type": "fiche_technique",
+   "slug": "atk-db-max-power-kamehameha"
+  },
+  {
+   "id": 39974,
+   "type": "fiche_technique",
+   "slug": "atk-db-heat-dome-attack"
+  },
+  {
+   "id": 39975,
+   "type": "fiche_technique",
+   "slug": "atk-db-quiet-rage"
+  },
+  {
+   "id": 39976,
+   "type": "fiche_technique",
+   "slug": "atk-db-taunt"
+  },
+  {
+   "id": 39977,
+   "type": "fiche_technique",
+   "slug": "atk-db-buster-cannon"
+  },
+  {
+   "id": 39978,
+   "type": "fiche_technique",
+   "slug": "atk-db-zanku-fist"
+  },
+  {
+   "id": 39979,
+   "type": "fiche_technique",
+   "slug": "atk-db-rush-attack"
+  },
+  {
+   "id": 39980,
+   "type": "fiche_technique",
+   "slug": "the-world"
+  },
+  {
+   "id": 39981,
+   "type": "fiche_technique",
+   "slug": "white-light-blade"
+  },
+  {
+   "id": 39983,
+   "type": "fiche_technique",
+   "slug": "atk-db-light-sword"
+  },
+  {
+   "id": 39984,
+   "type": "fiche_technique",
+   "slug": "atk-db-ki-smoke-bomb"
+  },
+  {
+   "id": 39985,
+   "type": "fiche_technique",
+   "slug": "gold-experience-requiem"
+  },
+  {
+   "id": 39986,
+   "type": "fiche_technique",
+   "slug": "whitesnake"
+  },
+  {
+   "id": 39987,
+   "type": "fiche_technique",
+   "slug": "magicians-red"
+  },
+  {
+   "id": 39988,
+   "type": "fiche_technique",
+   "slug": "lightning-release-pulverising-lightning-rod"
+  },
+  {
+   "id": 39989,
+   "type": "fiche_technique",
+   "slug": "booby-trap"
+  },
+  {
+   "id": 39990,
+   "type": "fiche_technique",
+   "slug": "super-saiyan"
+  },
+  {
+   "id": 39991,
+   "type": "fiche_technique",
+   "slug": "bouncy-bouncy-technique"
+  },
+  {
+   "id": 39993,
+   "type": "fiche_technique",
+   "slug": "atk-db-tri-beam"
+  },
+  {
+   "id": 39995,
+   "type": "fiche_technique",
+   "slug": "atk-db-brave-slash"
+  },
+  {
+   "id": 39999,
+   "type": "fiche_technique",
+   "slug": "summoning-impure-world-reincarnation"
+  },
+  {
+   "id": 40000,
+   "type": "fiche_technique",
+   "slug": "ultra-instinct"
+  },
+  {
+   "id": 40001,
+   "type": "fiche_technique",
+   "slug": "fire-release-blast-wave-wild-dance"
+  },
+  {
+   "id": 40002,
+   "type": "fiche_technique",
+   "slug": "kaio-ken"
+  },
+  {
+   "id": 40004,
+   "type": "fiche_technique",
+   "slug": "summoning-technique-shinigami-snake"
+  },
+  {
+   "id": 40018,
+   "type": "akasha_attrs",
+   "slug": "nova"
+  },
+  {
+   "id": 40686,
+   "type": "akasha_relations",
+   "slug": "ran-fuan"
+  },
+  {
+   "id": 40687,
+   "type": "akasha_relations",
+   "slug": "nikochan-s-servant"
+  },
+  {
+   "id": 40688,
+   "type": "akasha_relations",
+   "slug": "mojito"
+  },
+  {
+   "id": 40690,
+   "type": "akasha_relations",
+   "slug": "shantza"
+  },
+  {
+   "id": 40705,
+   "type": "akasha_relations",
+   "slug": "abi-s-father"
+  },
+  {
+   "id": 40706,
+   "type": "akasha_relations",
+   "slug": "ami"
+  },
+  {
+   "id": 40707,
+   "type": "akasha_relations",
+   "slug": "yogengyo"
+  },
+  {
+   "id": 40708,
+   "type": "akasha_relations",
+   "slug": "shuu-kannogi"
+  },
+  {
+   "id": 40709,
+   "type": "akasha_relations",
+   "slug": "berry-good"
+  },
+  {
+   "id": 40710,
+   "type": "akasha_relations",
+   "slug": "arack"
+  },
+  {
+   "id": 40711,
+   "type": "akasha_relations",
+   "slug": "bollarator"
+  },
+  {
+   "id": 40712,
+   "type": "akasha_relations",
+   "slug": "doughty-lip"
+  },
+  {
+   "id": 40713,
+   "type": "akasha_relations",
+   "slug": "damon"
+  },
+  {
+   "id": 40714,
+   "type": "akasha_relations",
+   "slug": "dold-iii-riku"
+  },
+  {
+   "id": 40734,
+   "type": "akasha_relations",
+   "slug": "gu"
+  },
+  {
+   "id": 40735,
+   "type": "akasha_relations",
+   "slug": "hopp"
+  },
+  {
+   "id": 40736,
+   "type": "akasha_relations",
+   "slug": "ill"
+  },
+  {
+   "id": 41347,
+   "type": "fiche_technique",
+   "slug": "eternal-mangekyo-sharingan"
+  },
+  {
+   "id": 41348,
+   "type": "fiche_technique",
+   "slug": "scary-monsters"
+  },
+  {
+   "id": 41349,
+   "type": "fiche_technique",
+   "slug": "vegetto-ssjb"
+  },
+  {
+   "id": 41350,
+   "type": "fiche_technique",
+   "slug": "tailed-beast-sealing"
+  },
+  {
+   "id": 41352,
+   "type": "fiche_technique",
+   "slug": "earth-release-swamp-of-the-underworld"
+  },
+  {
+   "id": 41353,
+   "type": "fiche_technique",
+   "slug": "earth-release-golem-technique"
+  },
+  {
+   "id": 41354,
+   "type": "fiche_technique",
+   "slug": "atk-db-give-me-energy"
+  },
+  {
+   "id": 41355,
+   "type": "fiche_technique",
+   "slug": "aerosmith"
+  },
+  {
+   "id": 41356,
+   "type": "fiche_technique",
+   "slug": "gogeta-ssj"
+  },
+  {
+   "id": 41361,
+   "type": "fiche_technique",
+   "slug": "summoning-technique-shiromari"
+  },
+  {
+   "id": 41379,
+   "type": "fiche_technique",
+   "slug": "ranmaru-s-kekkei-genkai"
+  },
+  {
+   "id": 41380,
+   "type": "fiche_technique",
+   "slug": "beast-human-needle-senbon"
+  },
+  {
+   "id": 41478,
+   "type": "fiche_technique",
+   "slug": "area-scanning-technique"
+  },
+  {
+   "id": 41492,
+   "type": "fiche_technique",
+   "slug": "thunder-sabre"
+  },
+  {
+   "id": 41493,
+   "type": "fiche_technique",
+   "slug": "cocoon"
+  },
+  {
+   "id": 41494,
+   "type": "fiche_technique",
+   "slug": "fire-release-heavenly-prison"
+  },
+  {
+   "id": 41495,
+   "type": "fiche_technique",
+   "slug": "barrier-shattering-technique"
+  },
+  {
+   "id": 41496,
+   "type": "fiche_technique",
+   "slug": "wind-release-dust-cloud-technique"
+  },
+  {
+   "id": 41497,
+   "type": "fiche_technique",
+   "slug": "soul-body-separation-technique"
+  },
+  {
+   "id": 41498,
+   "type": "fiche_technique",
+   "slug": "bee-honey-technique"
+  },
+  {
+   "id": 41499,
+   "type": "fiche_technique",
+   "slug": "red-secret-technique-machinery-triangles"
+  },
+  {
+   "id": 41500,
+   "type": "fiche_technique",
+   "slug": "iai-beheading"
+  },
+  {
+   "id": 41501,
+   "type": "fiche_technique",
+   "slug": "samurai-sabre-technique"
+  },
+  {
+   "id": 41502,
+   "type": "fiche_technique",
+   "slug": "haze-ninja-art-forbidden-technique-ephemeral-life"
+  },
+  {
+   "id": 41503,
+   "type": "fiche_technique",
+   "slug": "haze-ninja-art-forbidden-technique-afterlife-opening-gate"
+  },
+  {
+   "id": 41504,
+   "type": "fiche_technique",
+   "slug": "sealing-technique-crimson-seal"
+  },
+  {
+   "id": 41506,
+   "type": "fiche_technique",
+   "slug": "summoning-technique-doki"
+  },
+  {
+   "id": 41507,
+   "type": "fiche_technique",
+   "slug": "monkey-flame-arson"
+  },
+  {
+   "id": 41508,
+   "type": "fiche_technique",
+   "slug": "genjutsu-ghost-fire"
+  },
+  {
+   "id": 41511,
+   "type": "fiche_technique",
+   "slug": "altering-terrain-technique"
+  },
+  {
+   "id": 41512,
+   "type": "fiche_technique",
+   "slug": "spinning-snake-thorn"
+  },
+  {
+   "id": 41513,
+   "type": "fiche_technique",
+   "slug": "secret-sword-moonlight"
+  },
+  {
+   "id": 41514,
+   "type": "fiche_technique",
+   "slug": "eighty-gods-vacuum-attack"
+  },
+  {
+   "id": 41515,
+   "type": "fiche_technique",
+   "slug": "viscous-water-mass"
+  },
+  {
+   "id": 41516,
+   "type": "fiche_technique",
+   "slug": "rockslide-genjutsu"
+  },
+  {
+   "id": 41517,
+   "type": "fiche_technique",
+   "slug": "nine-masked-beasts"
+  },
+  {
+   "id": 41518,
+   "type": "fiche_technique",
+   "slug": "dharma-power-silhouette"
+  },
+  {
+   "id": 41519,
+   "type": "fiche_technique",
+   "slug": "soaring-strings"
+  },
+  {
+   "id": 41520,
+   "type": "fiche_technique",
+   "slug": "polarised-sand-formation-hot-sand-camouflage"
+  },
+  {
+   "id": 41521,
+   "type": "fiche_technique",
+   "slug": "lava-release-planet-branding-blast"
+  },
+  {
+   "id": 41525,
+   "type": "fiche_technique",
+   "slug": "summoning-technique-giant-eagle"
+  },
+  {
+   "id": 41526,
+   "type": "fiche_technique",
+   "slug": "longsword-ninja-art-earth-spider-sewing"
+  },
+  {
+   "id": 41527,
+   "type": "fiche_technique",
+   "slug": "earth-release-underground-split"
+  },
+  {
+   "id": 41528,
+   "type": "fiche_technique",
+   "slug": "tailed-beast-removal-technique"
+  },
+  {
+   "id": 41529,
+   "type": "fiche_technique",
+   "slug": "object-manipulation-technique"
+  },
+  {
+   "id": 41530,
+   "type": "fiche_technique",
+   "slug": "earth-release-rock-lodging-destruction"
+  },
+  {
+   "id": 41531,
+   "type": "fiche_technique",
+   "slug": "mysterious-peacock-method"
+  },
+  {
+   "id": 41532,
+   "type": "fiche_technique",
+   "slug": "summoning-technique-hozuki-castle-s-ninken"
+  },
+  {
+   "id": 41536,
+   "type": "fiche_technique",
+   "slug": "ryumyaku-chakra-control"
+  },
+  {
+   "id": 41537,
+   "type": "fiche_technique",
+   "slug": "frying-pan-attack"
+  },
+  {
+   "id": 41538,
+   "type": "fiche_technique",
+   "slug": "amenosubaruboshinomikoto-gyokko"
+  },
+  {
+   "id": 41539,
+   "type": "fiche_technique",
+   "slug": "atk-bl-shunko"
+  },
+  {
+   "id": 41540,
+   "type": "fiche_technique",
+   "slug": "iron-sand-gathering-assault"
+  },
+  {
+   "id": 41541,
+   "type": "fiche_technique",
+   "slug": "atk-bl-kageoni"
+  },
+  {
+   "id": 41545,
+   "type": "fiche_technique",
+   "slug": "water-release-hiding-in-drizzle-technique"
+  },
+  {
+   "id": 41548,
+   "type": "fiche_technique",
+   "slug": "sand-cloak-technique"
+  },
+  {
+   "id": 41551,
+   "type": "fiche_technique",
+   "slug": "atk-bl-tsugi-no-mai-hakuren"
+  },
+  {
+   "id": 41552,
+   "type": "fiche_technique",
+   "slug": "earth-release-sand-dance"
+  },
+  {
+   "id": 41553,
+   "type": "fiche_technique",
+   "slug": "atk-db-change-the-future"
+  },
+  {
+   "id": 41554,
+   "type": "fiche_technique",
+   "slug": "water-release-blood-conversion-technique"
+  },
+  {
+   "id": 41555,
+   "type": "fiche_technique",
+   "slug": "amenotejikara"
+  },
+  {
+   "id": 41556,
+   "type": "fiche_technique",
+   "slug": "summoning-technique-nuiba"
+  },
+  {
+   "id": 41561,
+   "type": "fiche_technique",
+   "slug": "puppet-father-and-mother"
+  },
+  {
+   "id": 41562,
+   "type": "fiche_technique",
+   "slug": "magnet-release-conserving-bee-twin-blades"
+  },
+  {
+   "id": 41563,
+   "type": "fiche_technique",
+   "slug": "hundred-blooming-flowers-technique"
+  },
+  {
+   "id": 41564,
+   "type": "fiche_technique",
+   "slug": "atk-db-paralyze-beam"
+  },
+  {
+   "id": 41565,
+   "type": "fiche_technique",
+   "slug": "crimson-earth"
+  },
+  {
+   "id": 41566,
+   "type": "fiche_technique",
+   "slug": "yomito-s-transformation-technique"
+  },
+  {
+   "id": 41567,
+   "type": "fiche_technique",
+   "slug": "leaf-rising-wind"
+  },
+  {
+   "id": 41570,
+   "type": "fiche_technique",
+   "slug": "black-secret-technique-machine-one-shot"
+  },
+  {
+   "id": 41572,
+   "type": "fiche_technique",
+   "slug": "thousand-flying-water-needles-of-death"
+  },
+  {
+   "id": 41573,
+   "type": "fiche_technique",
+   "slug": "wind-release-toad-oil-bullet"
+  },
+  {
+   "id": 41574,
+   "type": "fiche_technique",
+   "slug": "senbon-shower"
+  },
+  {
+   "id": 41575,
+   "type": "fiche_technique",
+   "slug": "ultimately-hard-absolute-defence-shield-of-shukaku"
+  },
+  {
+   "id": 41576,
+   "type": "fiche_technique",
+   "slug": "ninja-tools-barrier-reverse-fish-scales-formation"
+  },
+  {
+   "id": 41577,
+   "type": "fiche_technique",
+   "slug": "atk-op-rokushiki"
+  },
+  {
+   "id": 41578,
+   "type": "fiche_technique",
+   "slug": "gentle-step-spiralling-twin-lion-fists"
+  },
+  {
+   "id": 41579,
+   "type": "fiche_technique",
+   "slug": "desert-layered-imperial-funeral-seal"
+  },
+  {
+   "id": 41580,
+   "type": "fiche_technique",
+   "slug": "wood-release-underground-roots-technique"
+  },
+  {
+   "id": 41583,
+   "type": "fiche_technique",
+   "slug": "compression-rasengan"
+  },
+  {
+   "id": 41584,
+   "type": "fiche_technique",
+   "slug": "barrier-talisman-armoured-eye"
+  },
+  {
+   "id": 41593,
+   "type": "fiche_technique",
+   "slug": "telegram-flash"
+  },
+  {
+   "id": 41594,
+   "type": "fiche_technique",
+   "slug": "black-secret-technique-salamander"
+  },
+  {
+   "id": 41595,
+   "type": "fiche_technique",
+   "slug": "silent-killing"
+  },
+  {
+   "id": 41596,
+   "type": "fiche_technique",
+   "slug": "shadow-imitation-field-technique"
+  },
+  {
+   "id": 41597,
+   "type": "fiche_technique",
+   "slug": "ice-release-ten-thousand-ice-petals"
+  },
+  {
+   "id": 41598,
+   "type": "fiche_technique",
+   "slug": "multiple-infinite-embraces"
+  },
+  {
+   "id": 41599,
+   "type": "fiche_technique",
+   "slug": "trunks-ssj"
+  },
+  {
+   "id": 41600,
+   "type": "fiche_technique",
+   "slug": "ice-release-frozen-capturing-field"
+  },
+  {
+   "id": 41620,
+   "type": "fiche_technique",
+   "slug": "akuta"
+  },
+  {
+   "id": 41621,
+   "type": "fiche_technique",
+   "slug": "atk-db-masenko-beam-cannon"
+  },
+  {
+   "id": 41622,
+   "type": "fiche_technique",
+   "slug": "atk-bl-gokei"
+  },
+  {
+   "id": 41623,
+   "type": "fiche_technique",
+   "slug": "tailed-beast-rasengan"
+  },
+  {
+   "id": 41625,
+   "type": "fiche_technique",
+   "slug": "atk-bl-shukei-hakuteiken"
+  },
+  {
+   "id": 41627,
+   "type": "fiche_technique",
+   "slug": "wind-release-affinity-anime-only"
+  },
+  {
+   "id": 42020,
+   "type": "akasha_relations",
+   "slug": "osome"
+  },
+  {
+   "id": 42042,
+   "type": "akasha_relations",
+   "slug": "shandorian-chief"
+  },
+  {
+   "id": 42458,
+   "type": "fiche_technique",
+   "slug": "wind-release-bursting-compressed-air"
+  },
+  {
+   "id": 42459,
+   "type": "fiche_technique",
+   "slug": "dustless-bewildering-cover"
+  },
+  {
+   "id": 42460,
+   "type": "fiche_technique",
+   "slug": "six-paths-chibaku-tensei"
+  },
+  {
+   "id": 42461,
+   "type": "fiche_technique",
+   "slug": "limbo-border-jail"
+  },
+  {
+   "id": 42462,
+   "type": "fiche_technique",
+   "slug": "summoning-crushing-toad-stomach"
+  },
+  {
+   "id": 42463,
+   "type": "fiche_technique",
+   "slug": "drilling-hand-of-sage-lightning"
+  },
+  {
+   "id": 42861,
+   "type": "akasha_relations",
+   "slug": "third-hoshikage"
+  },
+  {
+   "id": 42863,
+   "type": "akasha_relations",
+   "slug": "wind-daimyo-part-i"
+  },
+  {
+   "id": 42865,
+   "type": "akasha_relations",
+   "slug": "usakkov"
+  },
+  {
+   "id": 42866,
+   "type": "akasha_relations",
+   "slug": "vincent"
+  },
+  {
+   "id": 42949,
+   "type": "fiche_technique",
+   "slug": "wind-release-great-breakthrough"
+  },
+  {
+   "id": 42950,
+   "type": "fiche_technique",
+   "slug": "c3"
+  },
+  {
+   "id": 42951,
+   "type": "fiche_technique",
+   "slug": "atk-db-hellzone-plunge"
+  },
+  {
+   "id": 42952,
+   "type": "fiche_technique",
+   "slug": "kiss"
+  },
+  {
+   "id": 42953,
+   "type": "fiche_technique",
+   "slug": "eight-trigrams-sealing-style"
+  },
+  {
+   "id": 42954,
+   "type": "fiche_technique",
+   "slug": "transformation-adamantine-staff"
+  },
+  {
+   "id": 42955,
+   "type": "fiche_technique",
+   "slug": "dead-demon-consuming-seal"
+  },
+  {
+   "id": 42956,
+   "type": "fiche_technique",
+   "slug": "heal-bite"
+  },
+  {
+   "id": 45620,
+   "type": "toilettage_fr",
+   "slug": "mello"
+  },
+  {
+   "id": 45645,
    "type": "fiche_technique",
    "slug": "atk-db-demonic-rush"
   },
   {
-   "id": 33684,
+   "id": 45646,
    "type": "fiche_technique",
    "slug": "atk-db-final-strike"
   },
   {
-   "id": 33719,
+   "id": 45649,
+   "type": "fiche_technique",
+   "slug": "atk-db-giant-throw"
+  },
+  {
+   "id": 45721,
    "type": "fiche_technique",
    "slug": "wind-release-verdant-mountain-gale"
   },
   {
-   "id": 33720,
+   "id": 45741,
    "type": "fiche_technique",
    "slug": "flashing-bell-beams"
   },
   {
-   "id": 33746,
-   "type": "fiche_technique",
-   "slug": "atk-db-black-frieza"
-  },
-  {
-   "id": 33754,
-   "type": "fiche_technique",
-   "slug": "atk-op-shigan"
-  },
-  {
-   "id": 33755,
-   "type": "fiche_technique",
-   "slug": "tengai-shinsei"
-  },
-  {
-   "id": 33756,
-   "type": "fiche_technique",
-   "slug": "atk-op-rankyaku"
-  },
-  {
-   "id": 33757,
-   "type": "fiche_technique",
-   "slug": "atk-op-gura-gura-no-mi-quake"
-  },
-  {
-   "id": 33758,
-   "type": "fiche_technique",
-   "slug": "atk-op-kokuto-yoru-slash"
-  },
-  {
-   "id": 33763,
-   "type": "fiche_technique",
-   "slug": "atk-db-perfect-shot"
-  },
-  {
-   "id": 33767,
-   "type": "fiche_technique",
-   "slug": "wooden-men-possession-turnover-manipulation-technique"
-  },
-  {
-   "id": 33768,
-   "type": "fiche_technique",
-   "slug": "future-telling"
-  },
-  {
-   "id": 33769,
-   "type": "fiche_technique",
-   "slug": "earth-release-earth-wave-technique"
-  },
-  {
-   "id": 33780,
-   "type": "fiche_technique",
-   "slug": "kamui-shuriken"
-  },
-  {
-   "id": 33782,
-   "type": "fiche_technique",
-   "slug": "atk-op-soru"
-  },
-  {
-   "id": 33783,
-   "type": "fiche_technique",
-   "slug": "atk-op-tekkai"
-  },
-  {
-   "id": 33784,
-   "type": "fiche_technique",
-   "slug": "atk-db-solar-kamehameha"
-  },
-  {
-   "id": 33785,
-   "type": "fiche_technique",
-   "slug": "atk-bl-some-no-mai-tsukishiro"
-  },
-  {
-   "id": 33787,
-   "type": "fiche_technique",
-   "slug": "atk-bl-final-getsuga-tensho"
-  },
-  {
-   "id": 33819,
-   "type": "akasha_relations",
-   "slug": "speedwagon-foundation-ship-captain"
-  },
-  {
-   "id": 33821,
-   "type": "akasha_relations",
-   "slug": "perospero-charlotte"
-  },
-  {
-   "id": 33822,
-   "type": "akasha_relations",
-   "slug": "condor"
-  },
-  {
-   "id": 33826,
-   "type": "akasha_relations",
-   "slug": "pappug"
-  },
-  {
-   "id": 33827,
-   "type": "akasha_relations",
-   "slug": "momonga"
-  },
-  {
-   "id": 33829,
-   "type": "akasha_relations",
-   "slug": "speedwagon-foundation-agent"
-  },
-  {
-   "id": 33830,
-   "type": "akasha_relations",
-   "slug": "toyohiro-kanedaichi"
-  },
-  {
-   "id": 33831,
-   "type": "akasha_relations",
-   "slug": "abdullah"
-  },
-  {
-   "id": 33832,
-   "type": "akasha_relations",
-   "slug": "asta"
-  },
-  {
-   "id": 33834,
-   "type": "akasha_relations",
-   "slug": "chen"
-  },
-  {
-   "id": 33836,
-   "type": "akasha_relations",
-   "slug": "jinin-akebino"
-  },
-  {
-   "id": 33837,
-   "type": "akasha_relations",
-   "slug": "kastro"
-  },
-  {
-   "id": 33839,
-   "type": "akasha_relations",
-   "slug": "yuuichi-shibata"
-  },
-  {
-   "id": 33840,
-   "type": "akasha_relations",
-   "slug": "obotchaman"
-  },
-  {
-   "id": 33841,
-   "type": "akasha_relations",
-   "slug": "goreinu"
-  },
-  {
-   "id": 33842,
-   "type": "akasha_relations",
-   "slug": "baru-uchiha"
-  },
-  {
-   "id": 33843,
-   "type": "akasha_relations",
-   "slug": "toko"
-  },
-  {
-   "id": 33844,
-   "type": "akasha_relations",
-   "slug": "zala"
-  },
-  {
-   "id": 33845,
-   "type": "akasha_relations",
-   "slug": "koltopi-tounofmaill"
-  },
-  {
-   "id": 33847,
-   "type": "akasha_relations",
-   "slug": "porunga"
-  },
-  {
-   "id": 33848,
-   "type": "akasha_relations",
-   "slug": "haredas"
-  },
-  {
-   "id": 33849,
-   "type": "akasha_relations",
-   "slug": "sedokan"
-  },
-  {
-   "id": 33850,
-   "type": "akasha_relations",
-   "slug": "tajima-uchiha"
-  },
-  {
-   "id": 33851,
-   "type": "akasha_relations",
-   "slug": "donatella-una"
-  },
-  {
-   "id": 33852,
-   "type": "akasha_relations",
-   "slug": "chizuru-honshou"
-  },
-  {
-   "id": 33853,
-   "type": "akasha_relations",
-   "slug": "gismonda"
-  },
-  {
-   "id": 33854,
-   "type": "akasha_relations",
-   "slug": "ginnosuke"
-  },
-  {
-   "id": 33855,
-   "type": "akasha_relations",
-   "slug": "giovanni"
-  },
-  {
-   "id": 33856,
-   "type": "akasha_relations",
-   "slug": "ginkaku"
-  },
-  {
-   "id": 33857,
-   "type": "akasha_relations",
-   "slug": "girarin"
-  },
-  {
-   "id": 33858,
-   "type": "akasha_relations",
-   "slug": "giolla"
-  },
-  {
-   "id": 33859,
-   "type": "akasha_relations",
-   "slug": "ginji"
-  },
-  {
-   "id": 33861,
-   "type": "akasha_relations",
-   "slug": "gladiator-hera"
-  },
-  {
-   "id": 33862,
-   "type": "akasha_relations",
-   "slug": "gloriosa"
-  },
-  {
-   "id": 33863,
-   "type": "akasha_relations",
-   "slug": "gokai"
-  },
-  {
-   "id": 33864,
-   "type": "akasha_relations",
-   "slug": "goldberg"
-  },
-  {
-   "id": 33865,
-   "type": "akasha_relations",
-   "slug": "goji"
-  },
-  {
-   "id": 33866,
-   "type": "akasha_relations",
-   "slug": "goo"
-  },
-  {
-   "id": 33867,
-   "type": "akasha_relations",
-   "slug": "googly-eyed"
-  },
-  {
-   "id": 33868,
-   "type": "akasha_relations",
-   "slug": "gitai"
-  },
-  {
-   "id": 33869,
-   "type": "akasha_relations",
-   "slug": "gorobe"
-  },
-  {
-   "id": 33870,
-   "type": "akasha_relations",
-   "slug": "goode"
-  },
-  {
-   "id": 33871,
-   "type": "akasha_relations",
-   "slug": "gongoro-kamakura"
-  },
-  {
-   "id": 33872,
-   "type": "akasha_relations",
-   "slug": "goen-jean"
-  },
-  {
-   "id": 33873,
-   "type": "akasha_relations",
-   "slug": "goshiki"
-  },
-  {
-   "id": 33874,
-   "type": "akasha_relations",
-   "slug": "gora"
-  },
-  {
-   "id": 33875,
-   "type": "akasha_relations",
-   "slug": "goki"
-  },
-  {
-   "id": 33877,
-   "type": "akasha_relations",
-   "slug": "gothic-newscaster"
-  },
-  {
-   "id": 33878,
-   "type": "akasha_relations",
-   "slug": "gotty"
-  },
-  {
-   "id": 33879,
-   "type": "akasha_relations",
-   "slug": "goza"
-  },
-  {
-   "id": 33880,
-   "type": "akasha_relations",
-   "slug": "gonbee"
-  },
-  {
-   "id": 33881,
-   "type": "akasha_relations",
-   "slug": "goteitaishi"
-  },
-  {
-   "id": 33882,
-   "type": "akasha_relations",
-   "slug": "gotta"
-  },
-  {
-   "id": 33883,
-   "type": "akasha_relations",
-   "slug": "gosunkugi"
-  },
-  {
-   "id": 34030,
-   "type": "akasha_relations",
-   "slug": "grandma-hakkake"
-  },
-  {
-   "id": 34031,
-   "type": "akasha_relations",
-   "slug": "grabar"
-  },
-  {
-   "id": 34032,
-   "type": "akasha_relations",
-   "slug": "gram"
-  },
-  {
-   "id": 34038,
-   "type": "akasha_relations",
-   "slug": "guarana"
-  },
-  {
-   "id": 34040,
-   "type": "akasha_relations",
-   "slug": "granolah"
-  },
-  {
-   "id": 34045,
-   "type": "akasha_relations",
-   "slug": "guren-prisoner"
-  },
-  {
-   "id": 34046,
-   "type": "akasha_relations",
-   "slug": "guillotine"
-  },
-  {
-   "id": 34047,
-   "type": "akasha_relations",
-   "slug": "gyogyo"
-  },
-  {
-   "id": 34048,
-   "type": "akasha_relations",
-   "slug": "gyoro"
-  },
-  {
-   "id": 34049,
-   "type": "akasha_relations",
-   "slug": "gyokuro-chabashira"
-  },
-  {
-   "id": 34050,
-   "type": "akasha_relations",
-   "slug": "gray-fly"
-  },
-  {
-   "id": 34052,
-   "type": "akasha_relations",
-   "slug": "hamlet"
-  },
-  {
-   "id": 34053,
-   "type": "akasha_relations",
-   "slug": "gyuki"
-  },
-  {
-   "id": 34054,
-   "type": "akasha_relations",
-   "slug": "hagoromo-otsutsuki"
-  },
-  {
-   "id": 34055,
-   "type": "akasha_relations",
-   "slug": "haido"
-  },
-  {
-   "id": 34056,
-   "type": "akasha_relations",
-   "slug": "gyoru"
-  },
-  {
-   "id": 34057,
-   "type": "akasha_relations",
-   "slug": "hack"
-  },
-  {
-   "id": 34058,
-   "type": "akasha_relations",
-   "slug": "hakui"
-  },
-  {
-   "id": 34059,
-   "type": "akasha_relations",
-   "slug": "hakui-medic"
-  },
-  {
-   "id": 34060,
-   "type": "akasha_relations",
-   "slug": "hamaki-mimura"
-  },
-  {
-   "id": 34061,
-   "type": "akasha_relations",
-   "slug": "hainosuke"
-  },
-  {
-   "id": 34063,
-   "type": "akasha_relations",
-   "slug": "haguruma"
-  },
-  {
-   "id": 34065,
-   "type": "akasha_relations",
-   "slug": "hammond"
-  },
-  {
-   "id": 34066,
-   "type": "akasha_relations",
-   "slug": "haie"
-  },
-  {
-   "id": 34067,
-   "type": "akasha_relations",
-   "slug": "hamura-otsutsuki"
-  },
-  {
-   "id": 34068,
-   "type": "akasha_relations",
-   "slug": "hamura-otsutsuki-golem"
-  },
-  {
-   "id": 34069,
-   "type": "akasha_relations",
-   "slug": "hangan"
-  },
-  {
-   "id": 34070,
-   "type": "akasha_relations",
-   "slug": "hanabi-hyuga"
-  },
-  {
-   "id": 34071,
-   "type": "akasha_relations",
-   "slug": "hana-student"
-  },
-  {
-   "id": 34072,
-   "type": "akasha_relations",
-   "slug": "hakkaku"
-  },
-  {
-   "id": 34073,
-   "type": "akasha_relations",
-   "slug": "hachidai"
-  },
-  {
-   "id": 34074,
-   "type": "akasha_relations",
-   "slug": "haku-s-father"
-  },
-  {
-   "id": 34075,
-   "type": "akasha_relations",
-   "slug": "hana-kaka"
-  },
-  {
-   "id": 34076,
-   "type": "akasha_relations",
-   "slug": "hanzo-one-piece"
-  },
-  {
-   "id": 34077,
-   "type": "akasha_relations",
-   "slug": "hareji"
-  },
-  {
-   "id": 34078,
-   "type": "akasha_relations",
-   "slug": "happa-yamao"
-  },
-  {
-   "id": 34079,
-   "type": "akasha_relations",
-   "slug": "haruna"
-  },
-  {
-   "id": 34080,
-   "type": "akasha_relations",
-   "slug": "hardy"
-  },
-  {
-   "id": 34081,
-   "type": "akasha_relations",
-   "slug": "happygun"
-  },
-  {
-   "id": 34082,
-   "type": "akasha_relations",
-   "slug": "harisenbon"
-  },
-  {
-   "id": 34083,
-   "type": "akasha_relations",
-   "slug": "hanzo-naruto"
-  },
-  {
-   "id": 34084,
-   "type": "akasha_relations",
-   "slug": "harumeg-charlotte"
-  },
-  {
-   "id": 34085,
-   "type": "akasha_relations",
-   "slug": "hara"
-  },
-  {
-   "id": 34086,
-   "type": "akasha_relations",
-   "slug": "harine"
-  },
-  {
-   "id": 34088,
-   "type": "akasha_relations",
-   "slug": "hatchiyack"
-  },
-  {
-   "id": 34089,
-   "type": "akasha_relations",
-   "slug": "hato"
-  },
-  {
-   "id": 34090,
-   "type": "akasha_relations",
-   "slug": "haruta"
-  },
-  {
-   "id": 34091,
-   "type": "akasha_relations",
-   "slug": "hatcha"
-  },
-  {
-   "id": 34092,
-   "type": "akasha_relations",
-   "slug": "hanzaki"
-  },
-  {
-   "id": 34093,
-   "type": "akasha_relations",
-   "slug": "haori"
-  },
-  {
-   "id": 34094,
-   "type": "akasha_relations",
-   "slug": "haru"
-  },
-  {
-   "id": 34095,
-   "type": "akasha_relations",
-   "slug": "harika-aburame"
-  },
-  {
-   "id": 34096,
-   "type": "akasha_relations",
-   "slug": "hassaku-onomichi"
-  },
-  {
-   "id": 34097,
-   "type": "akasha_relations",
-   "slug": "harusame"
-  },
-  {
-   "id": 34266,
-   "type": "akasha_relations",
-   "slug": "hayate-gekko"
-  },
-  {
-   "id": 34267,
-   "type": "akasha_relations",
-   "slug": "hayase"
-  },
-  {
-   "id": 34268,
-   "type": "akasha_relations",
-   "slug": "hawkman"
-  },
-  {
-   "id": 34280,
-   "type": "akasha_relations",
-   "slug": "head-ninja-of-kumogakure"
-  },
-  {
-   "id": 34282,
-   "type": "akasha_relations",
-   "slug": "heki"
-  },
-  {
-   "id": 34283,
-   "type": "akasha_relations",
-   "slug": "herb"
-  },
-  {
-   "id": 34284,
-   "type": "akasha_relations",
-   "slug": "heita-momoyama"
-  },
-  {
-   "id": 34285,
-   "type": "akasha_relations",
-   "slug": "hera"
-  },
-  {
-   "id": 34288,
-   "type": "akasha_relations",
-   "slug": "heiji"
-  },
-  {
-   "id": 34289,
-   "type": "akasha_relations",
-   "slug": "hebihime"
-  },
-  {
-   "id": 34290,
-   "type": "akasha_relations",
-   "slug": "higuma"
-  },
-  {
-   "id": 34291,
-   "type": "akasha_relations",
-   "slug": "hidero"
-  },
-  {
-   "id": 34292,
-   "type": "akasha_relations",
-   "slug": "higurashi-kurozumi"
-  },
-  {
-   "id": 34293,
-   "type": "akasha_relations",
-   "slug": "hiashi-hyuga"
-  },
-  {
-   "id": 34294,
-   "type": "akasha_relations",
-   "slug": "hihimaru"
-  },
-  {
-   "id": 34295,
-   "type": "akasha_relations",
-   "slug": "himeyuri"
-  },
-  {
-   "id": 34296,
-   "type": "akasha_relations",
-   "slug": "high-fat-charlotte"
-  },
-  {
-   "id": 34297,
-   "type": "akasha_relations",
-   "slug": "hewitt"
-  },
-  {
-   "id": 34298,
-   "type": "akasha_relations",
-   "slug": "hikoichi"
-  },
-  {
-   "id": 34299,
-   "type": "akasha_relations",
-   "slug": "hikaru"
-  },
-  {
-   "id": 34300,
-   "type": "akasha_relations",
-   "slug": "himatsu"
-  },
-  {
-   "id": 34301,
-   "type": "akasha_relations",
-   "slug": "himuro"
-  },
-  {
-   "id": 34302,
-   "type": "akasha_relations",
-   "slug": "hinata-hyuga"
-  },
-  {
-   "id": 34303,
-   "type": "akasha_relations",
-   "slug": "hinoki"
-  },
-  {
-   "id": 34304,
-   "type": "akasha_relations",
-   "slug": "hip"
-  },
-  {
-   "id": 34305,
-   "type": "akasha_relations",
-   "slug": "hidayu"
-  },
-  {
-   "id": 34306,
-   "type": "akasha_relations",
-   "slug": "hibari-naruto"
-  },
-  {
-   "id": 34307,
-   "type": "akasha_relations",
-   "slug": "hidari"
-  },
-  {
-   "id": 34308,
-   "type": "akasha_relations",
-   "slug": "hibari-kamakura"
-  },
-  {
-   "id": 34309,
-   "type": "akasha_relations",
-   "slug": "hikaku-uchiha"
-  },
-  {
-   "id": 34310,
-   "type": "akasha_relations",
-   "slug": "hinata-and-hanabi-s-mother"
-  },
-  {
-   "id": 34311,
-   "type": "akasha_relations",
-   "slug": "hinoto"
-  },
-  {
-   "id": 34312,
-   "type": "akasha_relations",
-   "slug": "hinoe"
-  },
-  {
-   "id": 34313,
-   "type": "akasha_relations",
-   "slug": "himushi"
-  },
-  {
-   "id": 34315,
-   "type": "akasha_relations",
-   "slug": "hiro-gomon"
-  },
-  {
-   "id": 34316,
-   "type": "akasha_relations",
-   "slug": "hippie"
-  },
-  {
-   "id": 34317,
-   "type": "akasha_relations",
-   "slug": "hippo-boss"
-  },
-  {
-   "id": 34318,
-   "type": "akasha_relations",
-   "slug": "hisen"
-  },
-  {
-   "id": 34319,
-   "type": "akasha_relations",
-   "slug": "hishaku"
-  },
-  {
-   "id": 34320,
-   "type": "akasha_relations",
-   "slug": "hiruko-missing-nin"
-  },
-  {
-   "id": 34321,
-   "type": "akasha_relations",
-   "slug": "hocha"
-  },
-  {
-   "id": 34322,
-   "type": "akasha_relations",
-   "slug": "hizashi-hyuga"
-  },
-  {
-   "id": 34323,
-   "type": "akasha_relations",
-   "slug": "hiruko-shinobi"
-  },
-  {
-   "id": 34324,
-   "type": "akasha_relations",
-   "slug": "hishita"
-  },
-  {
-   "id": 34325,
-   "type": "akasha_relations",
-   "slug": "hirudegarn"
-  },
-  {
-   "id": 34326,
-   "type": "akasha_relations",
-   "slug": "hocker"
-  },
-  {
-   "id": 34327,
-   "type": "akasha_relations",
-   "slug": "hitsugisukan"
-  },
-  {
-   "id": 34329,
-   "type": "akasha_relations",
-   "slug": "hisame"
-  },
-  {
-   "id": 34330,
-   "type": "akasha_relations",
-   "slug": "hoki-takumi"
-  },
-  {
-   "id": 34331,
-   "type": "akasha_relations",
-   "slug": "hoheto-hyuga"
-  },
-  {
-   "id": 34332,
-   "type": "akasha_relations",
-   "slug": "hoki-taketori"
-  },
-  {
-   "id": 34333,
-   "type": "akasha_relations",
-   "slug": "hoichi"
-  },
-  {
-   "id": 34334,
-   "type": "akasha_relations",
-   "slug": "hoki-watari"
-  },
-  {
-   "id": 34335,
-   "type": "akasha_relations",
-   "slug": "hoki-takigakure"
-  },
-  {
-   "id": 34336,
-   "type": "akasha_relations",
-   "slug": "hitode"
-  },
-  {
-   "id": 34337,
-   "type": "akasha_relations",
-   "slug": "hiruga"
-  },
-  {
-   "id": 34338,
-   "type": "akasha_relations",
-   "slug": "holy"
-  },
-  {
-   "id": 34486,
-   "type": "akasha_relations",
-   "slug": "hotei"
-  },
-  {
-   "id": 34487,
-   "type": "akasha_relations",
-   "slug": "horseman"
-  },
-  {
-   "id": 34488,
-   "type": "akasha_relations",
-   "slug": "hosei"
-  },
-  {
-   "id": 34489,
-   "type": "akasha_relations",
-   "slug": "hosho"
-  },
-  {
-   "id": 34490,
-   "type": "akasha_relations",
-   "slug": "honner"
-  },
-  {
-   "id": 34491,
-   "type": "akasha_relations",
-   "slug": "hototogisu"
-  },
-  {
-   "id": 34497,
-   "type": "akasha_relations",
-   "slug": "hound"
-  },
-  {
-   "id": 34499,
-   "type": "akasha_relations",
-   "slug": "hublot"
-  },
-  {
-   "id": 34500,
-   "type": "akasha_relations",
-   "slug": "howling-gab"
-  },
-  {
-   "id": 34501,
-   "type": "akasha_relations",
-   "slug": "humphrey"
-  },
-  {
-   "id": 34502,
-   "type": "akasha_relations",
-   "slug": "hozuki-castle-s-ninken"
-  },
-  {
-   "id": 34503,
-   "type": "akasha_relations",
-   "slug": "hotarubi"
-  },
-  {
-   "id": 34504,
-   "type": "akasha_relations",
-   "slug": "hot-water-daimyo"
-  },
-  {
-   "id": 34505,
-   "type": "akasha_relations",
-   "slug": "hotaru-kanisawa"
-  },
-  {
-   "id": 34506,
-   "type": "akasha_relations",
-   "slug": "human-path-character"
-  },
-  {
-   "id": 34508,
-   "type": "akasha_relations",
-   "slug": "ibusu"
-  },
-  {
-   "id": 34509,
-   "type": "akasha_relations",
-   "slug": "ichigen"
-  },
-  {
-   "id": 34510,
-   "type": "akasha_relations",
-   "slug": "ideaman"
-  },
-  {
-   "id": 34511,
-   "type": "akasha_relations",
-   "slug": "ibushi"
-  },
-  {
-   "id": 34512,
-   "type": "akasha_relations",
-   "slug": "ian"
-  },
-  {
-   "id": 34513,
-   "type": "akasha_relations",
-   "slug": "hyoi-yorishiro"
-  },
-  {
-   "id": 34514,
-   "type": "akasha_relations",
-   "slug": "ibuse"
-  },
-  {
-   "id": 34515,
-   "type": "akasha_relations",
-   "slug": "hyoutauros"
-  },
-  {
-   "id": 34516,
-   "type": "akasha_relations",
-   "slug": "ichirota-oniyuzu"
-  },
-  {
-   "id": 34517,
-   "type": "akasha_relations",
-   "slug": "ichi"
-  },
-  {
-   "id": 34518,
-   "type": "akasha_relations",
-   "slug": "iggy-naruto"
-  },
-  {
-   "id": 34519,
-   "type": "akasha_relations",
-   "slug": "hyuga-elder"
-  },
-  {
-   "id": 34520,
-   "type": "akasha_relations",
-   "slug": "hyo"
-  },
-  {
-   "id": 34521,
-   "type": "akasha_relations",
-   "slug": "hyouzou"
-  },
-  {
-   "id": 34522,
-   "type": "akasha_relations",
-   "slug": "ikaros-much"
-  },
-  {
-   "id": 34523,
-   "type": "akasha_relations",
-   "slug": "indigo"
-  },
-  {
-   "id": 34524,
-   "type": "akasha_relations",
-   "slug": "ikkyu-madoka"
-  },
-  {
-   "id": 34525,
-   "type": "akasha_relations",
-   "slug": "inbi"
-  },
-  {
-   "id": 34526,
-   "type": "akasha_relations",
-   "slug": "indra-otsutsuki"
-  },
-  {
-   "id": 34527,
-   "type": "akasha_relations",
-   "slug": "hyogo"
-  },
-  {
-   "id": 34528,
-   "type": "akasha_relations",
-   "slug": "ibara"
-  },
-  {
-   "id": 34529,
-   "type": "akasha_relations",
-   "slug": "ikkaku-umino"
-  },
-  {
-   "id": 34530,
-   "type": "akasha_relations",
-   "slug": "inaho"
-  },
-  {
-   "id": 34532,
-   "type": "akasha_relations",
-   "slug": "inukai"
-  },
-  {
-   "id": 34533,
-   "type": "akasha_relations",
-   "slug": "iroha-hyuga"
-  },
-  {
-   "id": 34534,
-   "type": "akasha_relations",
-   "slug": "inori"
-  },
-  {
-   "id": 34535,
-   "type": "akasha_relations",
-   "slug": "inoichibannosuke"
-  },
-  {
-   "id": 34536,
-   "type": "akasha_relations",
-   "slug": "io-bamboo-village"
-  },
-  {
-   "id": 34537,
-   "type": "akasha_relations",
-   "slug": "ipponume"
-  },
-  {
-   "id": 34538,
-   "type": "akasha_relations",
-   "slug": "iroha-genin"
-  },
-  {
-   "id": 34539,
-   "type": "akasha_relations",
-   "slug": "isa"
-  },
-  {
-   "id": 34540,
-   "type": "akasha_relations",
-   "slug": "inhel"
-  },
-  {
-   "id": 34541,
-   "type": "akasha_relations",
-   "slug": "io"
-  },
-  {
-   "id": 34542,
-   "type": "akasha_relations",
-   "slug": "ishidate"
-  },
-  {
-   "id": 34543,
-   "type": "akasha_relations",
-   "slug": "io-medical-nin"
-  },
-  {
-   "id": 34544,
-   "type": "akasha_relations",
-   "slug": "iori"
-  },
-  {
-   "id": 34545,
-   "type": "akasha_relations",
-   "slug": "isari-funato"
-  },
-  {
-   "id": 34546,
-   "type": "akasha_relations",
-   "slug": "ishikawa"
-  },
-  {
-   "id": 34547,
-   "type": "akasha_relations",
-   "slug": "isaac-jr-moon"
-  },
-  {
-   "id": 34548,
-   "type": "akasha_relations",
-   "slug": "inomatsu"
-  },
-  {
-   "id": 34683,
-   "type": "fiche_technique",
-   "slug": "sword-of-kusanagi-longsword-of-the-sky"
-  },
-  {
-   "id": 34684,
-   "type": "fiche_technique",
-   "slug": "summoning-triple-rashomon"
-  },
-  {
-   "id": 34685,
-   "type": "fiche_technique",
-   "slug": "earth-release-shadow-clone"
-  },
-  {
-   "id": 34687,
-   "type": "fiche_technique",
-   "slug": "gelel-laser"
-  },
-  {
-   "id": 34690,
-   "type": "fiche_technique",
-   "slug": "mystic-safety-bell-seal-release"
-  },
-  {
-   "id": 34692,
-   "type": "fiche_technique",
-   "slug": "atk-db-gigantic-rock-throw"
-  },
-  {
-   "id": 34696,
-   "type": "fiche_technique",
-   "slug": "sandstorm-barrier"
-  },
-  {
-   "id": 34697,
-   "type": "fiche_technique",
-   "slug": "blood-needle"
-  },
-  {
-   "id": 34698,
-   "type": "fiche_technique",
-   "slug": "temple-of-nirvana-technique"
-  },
-  {
-   "id": 34699,
-   "type": "fiche_technique",
-   "slug": "chakra-entity"
-  },
-  {
-   "id": 34700,
-   "type": "fiche_technique",
-   "slug": "insect-webbing"
-  },
-  {
-   "id": 34701,
-   "type": "fiche_technique",
-   "slug": "wind-release-flag-current"
-  },
-  {
-   "id": 34702,
-   "type": "fiche_technique",
-   "slug": "ice-release-earthen-consecutive-chains-of-ice"
-  },
-  {
-   "id": 34703,
-   "type": "fiche_technique",
-   "slug": "transparent-escape-technique"
-  },
-  {
-   "id": 34704,
-   "type": "fiche_technique",
-   "slug": "sound-wave-technique"
-  },
-  {
-   "id": 34706,
-   "type": "fiche_technique",
-   "slug": "atk-db-golden-death-beam"
-  },
-  {
-   "id": 34707,
-   "type": "fiche_technique",
-   "slug": "atk-db-death-laser"
-  },
-  {
-   "id": 34708,
-   "type": "fiche_technique",
-   "slug": "atk-db-combined-masenko"
-  },
-  {
-   "id": 34709,
-   "type": "fiche_technique",
-   "slug": "atk-db-amazing-impact"
-  },
-  {
-   "id": 34712,
-   "type": "fiche_technique",
-   "slug": "atk-db-brave-punisher"
-  },
-  {
-   "id": 34714,
+   "id": 45742,
    "type": "fiche_technique",
    "slug": "atk-bl-kamisori-benihime"
   },
   {
-   "id": 34715,
-   "type": "fiche_technique",
-   "slug": "gohan-ultimate"
-  },
-  {
-   "id": 34719,
-   "type": "fiche_technique",
-   "slug": "toad-sword-beheading"
-  },
-  {
-   "id": 34720,
-   "type": "fiche_technique",
-   "slug": "atk-db-energy-palm"
-  },
-  {
-   "id": 34721,
-   "type": "fiche_technique",
-   "slug": "atk-bl-utsusemi"
-  },
-  {
-   "id": 34722,
-   "type": "fiche_technique",
-   "slug": "atk-db-dirty-fireworks"
-  },
-  {
-   "id": 34723,
-   "type": "fiche_technique",
-   "slug": "chakra-liquid"
-  },
-  {
-   "id": 34724,
-   "type": "fiche_technique",
-   "slug": "blinding-bubbles-technique"
-  },
-  {
-   "id": 34725,
-   "type": "fiche_technique",
-   "slug": "protective-sphere-of-light"
-  },
-  {
-   "id": 34726,
-   "type": "fiche_technique",
-   "slug": "transmission-wood"
-  },
-  {
-   "id": 34727,
-   "type": "fiche_technique",
-   "slug": "combination-transformation"
-  },
-  {
-   "id": 34728,
-   "type": "fiche_technique",
-   "slug": "atk-bl-bushogoma"
-  },
-  {
-   "id": 34729,
-   "type": "fiche_technique",
-   "slug": "parasitic-destruction-insect-technique"
-  },
-  {
-   "id": 34730,
-   "type": "fiche_technique",
-   "slug": "water-release-tearing-torrent"
-  },
-  {
-   "id": 34731,
-   "type": "fiche_technique",
-   "slug": "super-buu"
-  },
-  {
-   "id": 34734,
-   "type": "fiche_technique",
-   "slug": "gotenks-ssj3"
-  },
-  {
-   "id": 34735,
-   "type": "fiche_technique",
-   "slug": "fire-release-great-flame-technique"
-  },
-  {
-   "id": 34736,
+   "id": 45743,
    "type": "fiche_technique",
    "slug": "atk-bl-cero-metralleta"
   },
   {
-   "id": 34737,
+   "id": 45744,
    "type": "fiche_technique",
-   "slug": "atk-bl-garra-de-la-pantera"
+   "slug": "atk-bl-utsusemi"
   },
   {
-   "id": 34738,
-   "type": "fiche_technique",
-   "slug": "frog-kata"
-  },
-  {
-   "id": 34739,
-   "type": "fiche_technique",
-   "slug": "barrier-releasing-technique"
-  },
-  {
-   "id": 34740,
-   "type": "fiche_technique",
-   "slug": "gotenks-ssj"
-  },
-  {
-   "id": 34741,
-   "type": "fiche_technique",
-   "slug": "atk-db-final-god-explosion"
-  },
-  {
-   "id": 34742,
-   "type": "fiche_technique",
-   "slug": "atk-db-instant-kamehameha"
-  },
-  {
-   "id": 34744,
-   "type": "fiche_technique",
-   "slug": "fire-release-ash-pile-burning"
-  },
-  {
-   "id": 34745,
-   "type": "fiche_technique",
-   "slug": "atk-db-fire-breath"
-  },
-  {
-   "id": 34746,
-   "type": "fiche_technique",
-   "slug": "sage-art-wood-release-true-several-thousand-hands"
-  },
-  {
-   "id": 34747,
-   "type": "fiche_technique",
-   "slug": "frog-strike"
-  },
-  {
-   "id": 34748,
-   "type": "fiche_technique",
-   "slug": "fire-release-blazing-meteors"
-  },
-  {
-   "id": 34752,
-   "type": "fiche_technique",
-   "slug": "shrine-seal"
-  },
-  {
-   "id": 34753,
-   "type": "fiche_technique",
-   "slug": "gogeta-ssjb"
-  },
-  {
-   "id": 34754,
-   "type": "fiche_technique",
-   "slug": "gogeta-ssj4"
-  },
-  {
-   "id": 34755,
-   "type": "fiche_technique",
-   "slug": "majin-buu-gotenks"
-  },
-  {
-   "id": 34756,
-   "type": "fiche_technique",
-   "slug": "majin-buu-gohan"
-  },
-  {
-   "id": 34757,
-   "type": "fiche_technique",
-   "slug": "fire-release-fire-dragon-bullet"
-  },
-  {
-   "id": 34758,
-   "type": "fiche_technique",
-   "slug": "atk-db-forced-spirit-fission"
-  },
-  {
-   "id": 34759,
-   "type": "fiche_technique",
-   "slug": "atk-db-jumping-energy-wave"
-  },
-  {
-   "id": 34760,
-   "type": "fiche_technique",
-   "slug": "super-janemba"
-  },
-  {
-   "id": 34761,
-   "type": "fiche_technique",
-   "slug": "multiple-string-light-formation"
-  },
-  {
-   "id": 34762,
-   "type": "fiche_technique",
-   "slug": "lightning-burial-banquet-of-lightning"
-  },
-  {
-   "id": 34763,
-   "type": "fiche_technique",
-   "slug": "lightning-strike-armour"
-  },
-  {
-   "id": 34764,
-   "type": "fiche_technique",
-   "slug": "mutually-multiplying-explosive-tags"
-  },
-  {
-   "id": 34765,
-   "type": "fiche_technique",
-   "slug": "atk-db-perfect-combination"
-  },
-  {
-   "id": 34766,
-   "type": "fiche_technique",
-   "slug": "atk-db-final-burst-cannon"
-  },
-  {
-   "id": 34767,
-   "type": "fiche_technique",
-   "slug": "atk-db-spirit-control"
-  },
-  {
-   "id": 34768,
-   "type": "fiche_technique",
-   "slug": "boruto-stream"
-  },
-  {
-   "id": 34769,
-   "type": "fiche_technique",
-   "slug": "origami-replacement-technique"
-  },
-  {
-   "id": 34770,
-   "type": "fiche_technique",
-   "slug": "flying-thunder-formation-technique"
-  },
-  {
-   "id": 34771,
-   "type": "fiche_technique",
-   "slug": "susanoo-captive-slash"
-  },
-  {
-   "id": 34772,
-   "type": "fiche_technique",
-   "slug": "surging-fire-wild-dance"
-  },
-  {
-   "id": 34773,
-   "type": "fiche_technique",
-   "slug": "flying-thunder-god-mutually-instantaneous-revolving-technique"
-  },
-  {
-   "id": 34774,
-   "type": "fiche_technique",
-   "slug": "black-iron-fist"
-  },
-  {
-   "id": 34775,
-   "type": "fiche_technique",
-   "slug": "student-and-teacher-rasengan"
-  },
-  {
-   "id": 34776,
-   "type": "fiche_technique",
-   "slug": "super-compression-rasengan"
-  },
-  {
-   "id": 34777,
-   "type": "fiche_technique",
-   "slug": "susanoo-chidori"
-  },
-  {
-   "id": 34778,
-   "type": "fiche_technique",
-   "slug": "contract-seal"
-  },
-  {
-   "id": 34779,
-   "type": "fiche_technique",
-   "slug": "claw-creation-technique"
-  },
-  {
-   "id": 34780,
+   "id": 45767,
    "type": "fiche_technique",
    "slug": "temporal-rewind"
-  },
-  {
-   "id": 34781,
-   "type": "fiche_technique",
-   "slug": "twin-rising-dragons"
-  },
-  {
-   "id": 34782,
-   "type": "fiche_technique",
-   "slug": "spiked-human-bullet-tank"
-  },
-  {
-   "id": 34783,
-   "type": "fiche_technique",
-   "slug": "atk-db-finger-blitz-barrage"
-  },
-  {
-   "id": 34784,
-   "type": "fiche_technique",
-   "slug": "earth-release-practice-brick-technique"
-  },
-  {
-   "id": 34785,
-   "type": "fiche_technique",
-   "slug": "water-release-four-sharks-rain"
-  },
-  {
-   "id": 34786,
-   "type": "fiche_technique",
-   "slug": "susanoo-great-fireball-technique"
-  },
-  {
-   "id": 34787,
-   "type": "fiche_technique",
-   "slug": "susanoo-fist"
-  },
-  {
-   "id": 34788,
-   "type": "fiche_technique",
-   "slug": "summoning-technique-baku"
-  },
-  {
-   "id": 34790,
-   "type": "fiche_technique",
-   "slug": "atk-db-genocide-breaker"
-  },
-  {
-   "id": 34791,
-   "type": "fiche_technique",
-   "slug": "atk-db-finish-buster"
-  },
-  {
-   "id": 34792,
-   "type": "fiche_technique",
-   "slug": "atk-db-magic-materialization"
-  },
-  {
-   "id": 34793,
-   "type": "fiche_technique",
-   "slug": "water-release-water-forge-technique"
-  },
-  {
-   "id": 34794,
-   "type": "fiche_technique",
-   "slug": "lightning-release-chakra-mode"
-  },
-  {
-   "id": 34795,
-   "type": "fiche_technique",
-   "slug": "sound-four-summoning-four-beasts-encirclement-formation"
-  },
-  {
-   "id": 34796,
-   "type": "fiche_technique",
-   "slug": "wind-waves"
-  },
-  {
-   "id": 34797,
-   "type": "fiche_technique",
-   "slug": "wind-release-vacuum-wave"
-  },
-  {
-   "id": 34798,
-   "type": "fiche_technique",
-   "slug": "water-release-cold-sky-water-attack"
-  },
-  {
-   "id": 34799,
-   "type": "fiche_technique",
-   "slug": "wood-release-nativity-of-a-sea-of-trees"
-  },
-  {
-   "id": 34800,
-   "type": "fiche_technique",
-   "slug": "atk-db-final-galick-cannon"
-  },
-  {
-   "id": 34801,
-   "type": "fiche_technique",
-   "slug": "sword-of-kagutsuchi"
-  },
-  {
-   "id": 34803,
-   "type": "fiche_technique",
-   "slug": "atk-db-galaxy-breaker"
-  },
-  {
-   "id": 34804,
-   "type": "fiche_technique",
-   "slug": "atk-db-scattering-bullet"
-  },
-  {
-   "id": 34805,
-   "type": "akasha_relations",
-   "slug": "islewan"
-  },
-  {
-   "id": 34806,
-   "type": "fiche_technique",
-   "slug": "atk-db-god-final-kamehameha"
-  },
-  {
-   "id": 34807,
-   "type": "akasha_relations",
-   "slug": "isoka"
-  },
-  {
-   "id": 34808,
-   "type": "akasha_relations",
-   "slug": "itachi-s-crow"
-  },
-  {
-   "id": 34809,
-   "type": "akasha_relations",
-   "slug": "isshiki-otsutsuki"
-  },
-  {
-   "id": 34810,
-   "type": "fiche_technique",
-   "slug": "conch-cannon"
-  },
-  {
-   "id": 34811,
-   "type": "akasha_relations",
-   "slug": "isono"
-  },
-  {
-   "id": 34812,
-   "type": "fiche_technique",
-   "slug": "thousand-bee-stings-technique"
-  },
-  {
-   "id": 34815,
-   "type": "akasha_relations",
-   "slug": "iwaji"
-  },
-  {
-   "id": 34816,
-   "type": "akasha_relations",
-   "slug": "iwakyo"
   }
  ],
  "ecartes": [
-  {
-   "id": 50,
-   "type": "fiche_section",
-   "slug": "yamcha",
-   "motif": "corruption (refus juste)"
-  },
   {
    "id": 59,
    "type": "fiche_section",
    "slug": "ten-shin-han",
    "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 216,
+   "type": "fiche_section",
+   "slug": "erasa",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 336,
+   "type": "fiche_section",
+   "slug": "kurapika",
+   "motif": "déjà en attente"
   },
   {
    "id": 355,
@@ -4095,6 +5791,30 @@
    "motif": "déjà en attente"
   },
   {
+   "id": 4440,
+   "type": "fiche_section",
+   "slug": "ryosuke-takahashi",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4444,
+   "type": "fiche_section",
+   "slug": "ryosuke-takahashi",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4445,
+   "type": "fiche_section",
+   "slug": "ryosuke-takahashi",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4460,
+   "type": "fiche_section",
+   "slug": "shingo-shoji",
+   "motif": "déjà en attente"
+  },
+  {
    "id": 4468,
    "type": "fiche_section",
    "slug": "natsuki-mogi",
@@ -4107,9 +5827,45 @@
    "motif": "déjà en attente"
   },
   {
+   "id": 4480,
+   "type": "fiche_section",
+   "slug": "sayuki",
+   "motif": "déjà en attente"
+  },
+  {
    "id": 4481,
    "type": "fiche_section",
    "slug": "natsuki-mogi",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4482,
+   "type": "fiche_section",
+   "slug": "sayuki",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4484,
+   "type": "fiche_section",
+   "slug": "sayuki",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4485,
+   "type": "fiche_section",
+   "slug": "sayuki",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4486,
+   "type": "fiche_section",
+   "slug": "yuichi-tachibana",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4507,
+   "type": "fiche_section",
+   "slug": "takeshi-nakazato",
    "motif": "déjà en attente"
   },
   {
@@ -4287,10 +6043,76 @@
    "motif": "lot d'arbitrage (schéma corrigé)"
   },
   {
+   "id": 4821,
+   "type": "fiche_section",
+   "slug": "hisoka",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4822,
+   "type": "fiche_section",
+   "slug": "hisoka",
+   "motif": "déjà en attente"
+  },
+  {
    "id": 4823,
    "type": "arbitrage_claude_lot",
    "slug": null,
    "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 4824,
+   "type": "fiche_section",
+   "slug": "hisoka",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4825,
+   "type": "fiche_section",
+   "slug": "hisoka",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4826,
+   "type": "fiche_section",
+   "slug": "hisoka",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4827,
+   "type": "fiche_section",
+   "slug": "kurapika",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4839,
+   "type": "fiche_section",
+   "slug": "kurapika",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4841,
+   "type": "fiche_section",
+   "slug": "kurapika",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4842,
+   "type": "fiche_section",
+   "slug": "kurapika",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4843,
+   "type": "fiche_section",
+   "slug": "kurapika",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4844,
+   "type": "fiche_section",
+   "slug": "kurapika",
+   "motif": "déjà en attente"
   },
   {
    "id": 4869,
@@ -4581,10 +6403,22 @@
    "motif": "lot d'arbitrage (schéma corrigé)"
   },
   {
+   "id": 5652,
+   "type": "fiche_section",
+   "slug": "freeza",
+   "motif": "déjà en attente"
+  },
+  {
    "id": 5665,
    "type": "fiche_section",
    "slug": "jinzouningen-18-gou",
    "motif": "motif non classé"
+  },
+  {
+   "id": 5666,
+   "type": "fiche_section",
+   "slug": "cell",
+   "motif": "déjà en attente"
   },
   {
    "id": 5667,
@@ -6597,6 +8431,12 @@
    "motif": "lot d'arbitrage (schéma corrigé)"
   },
   {
+   "id": 12619,
+   "type": "fiche_section",
+   "slug": "chi-chi",
+   "motif": "déjà en attente"
+  },
+  {
    "id": 12626,
    "type": "arbitrage_claude_lot",
    "slug": null,
@@ -6807,6 +8647,12 @@
    "motif": "corruption (refus juste)"
   },
   {
+   "id": 13673,
+   "type": "fiche_section",
+   "slug": "cell",
+   "motif": "déjà en attente"
+  },
+  {
    "id": 13716,
    "type": "fiche_section",
    "slug": "ten-shin-han",
@@ -6831,6 +8677,12 @@
    "motif": "déjà en attente"
   },
   {
+   "id": 13864,
+   "type": "fiche_section",
+   "slug": "chi-chi",
+   "motif": "déjà en attente"
+  },
+  {
    "id": 13932,
    "type": "fiche_section",
    "slug": "crocodile",
@@ -6846,6 +8698,18 @@
    "id": 13961,
    "type": "fiche_section",
    "slug": "sabo",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 13985,
+   "type": "fiche_section",
+   "slug": "erasa",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 14008,
+   "type": "fiche_section",
+   "slug": "freeza",
    "motif": "déjà en attente"
   },
   {
@@ -8368,6 +10232,12 @@
   },
   {
    "id": 59206,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 59440,
    "type": "arbitrage_claude_lot",
    "slug": null,
    "motif": "lot d'arbitrage (schéma corrigé)"

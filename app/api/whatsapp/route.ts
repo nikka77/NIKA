@@ -37,8 +37,18 @@ export async function POST(req: Request) {
   if (!secret) return NextResponse.json({ error: 'secret absent' }, { status: 500 });
   const attendue = 'sha256=' + createHmac('sha256', secret).update(brut).digest('hex');
   const a = Buffer.from(signature), b = Buffer.from(attendue);
-  if (a.length !== b.length || !timingSafeEqual(a, b))
+  if (a.length !== b.length || !timingSafeEqual(a, b)) {
+    // UN REFUS SILENCIEUX EST INDISCERNABLE D'UN SILENCE (08/08/2026). Dan n'a plus reçu de
+    // réponse pendant quatre jours ; la file du secrétaire était vide et son journal muet — donc
+    // impossible de savoir si Meta n'appelait plus, ou si le webhook rejetait ses appels. On
+    // consigne le refus (métadonnées seulement, jamais le corps signé) : la question se tranche
+    // alors d'un coup d'œil dans ops_notes.
+    await supabase.from('ops_notes').insert({
+      source: 'wa_webhook', done: false,
+      content: `signature REFUSÉE — reçue « ${signature.slice(0, 16)}… » (${signature.length} car.), attendue ${attendue.length} car. Le secret d'application de Vercel ne correspond pas à celui de l'app Meta.`,
+    });
     return NextResponse.json({ error: 'signature invalide' }, { status: 401 });
+  }
 
   let corps: {
     entry?: Array<{ changes?: Array<{ value?: {
@@ -60,9 +70,14 @@ export async function POST(req: Request) {
   if (echecs.length) {
     const supa = admin();
     if (supa) {
-      await supa.from('ops_notes').insert(echecs.map((st) => ({
-        note: `whatsapp NON LIVRÉ (${st.id?.slice(-8) ?? '?'}) : ${(st.errors ?? []).map((e) => `${e.code} ${e.title ?? e.message ?? ''}`).join(' · ').slice(0, 200) || 'sans détail'}`,
+      // `content`, pas `note` : la table n'a JAMAIS eu de colonne `note` (08/08). Cet insert
+      // échouait donc à chaque fois, et son erreur n'était pas lue — les échecs de livraison
+      // WhatsApp, précisément ce qu'on voulait ne plus perdre, se perdaient en silence.
+      const { error: errNote } = await supa.from('ops_notes').insert(echecs.map((st) => ({
+        source: 'wa_echec', done: false,
+        content: `whatsapp NON LIVRÉ (${st.id?.slice(-8) ?? '?'}) : ${(st.errors ?? []).map((e) => `${e.code} ${e.title ?? e.message ?? ''}`).join(' · ').slice(0, 200) || 'sans détail'}`,
       })));
+      if (errNote) console.error('ops_notes (échec livraison) :', errNote.message);
     }
   }
 
@@ -74,13 +89,35 @@ export async function POST(req: Request) {
   // expéditeurs sont ignorés (200 quand même : Meta re-livre sinon, inutilement).
   const de_dan = messages.filter((m) => m.from && process.env.WHATSAPP_TO?.replace('+', '') === m.from);
 
+  // ÉCARTÉ ≠ ABSENT (08/08) : un message reçu mais rejeté par ce filtre partait avec un 200 et ne
+  // laissait aucune trace. Si WHATSAPP_TO est mal renseigné côté Vercel — vide, ou dans un autre
+  // format que celui de Meta — TOUS les messages de Dan disparaissent poliment. On consigne donc
+  // ce qu'on a comparé, sans jamais publier le numéro en clair.
+  const ecartes = messages.filter((m) => !de_dan.includes(m));
+  if (ecartes.length) {
+    const attendu = process.env.WHATSAPP_TO?.replace('+', '') ?? '';
+    await supabase.from('ops_notes').insert({
+      source: 'wa_webhook', done: false,
+      content: `${ecartes.length} message(s) ÉCARTÉ(S) : expéditeur « …${(ecartes[0].from ?? '').slice(-4)} » `
+        + `≠ WHATSAPP_TO « ${attendu ? '…' + attendu.slice(-4) : '(VIDE — variable absente côté Vercel)'} ».`,
+    });
+  }
+
   if (de_dan.length) {
-    await supabase.rpc('ops_chat_send_batch', {
+    const { error: errFile } = await supabase.rpc('ops_chat_send_batch', {
       messages: de_dan.map((m) => ({
         type: 'whatsapp_reponse',
         payload: { de: m.from, texte: m.text!.body, message_id: m.id, recu_a: m.timestamp },
       })),
     });
+    // Une mise en file qui échoue sans être lue, c'est un message perdu de plus.
+    if (errFile) {
+      console.error('ops_chat_send_batch :', errFile.message);
+      await supabase.from('ops_notes').insert({
+        source: 'wa_webhook', done: false,
+        content: `mise en file IMPOSSIBLE pour ${de_dan.length} message(s) : ${errFile.message.slice(0, 180)}`,
+      });
+    }
   }
 
   // Toujours 200 : Meta coupe les webhooks qui échouent trop souvent.
