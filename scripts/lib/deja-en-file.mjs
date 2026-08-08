@@ -31,6 +31,13 @@ export async function dejaEnFile(sb, types = null) {
   for (let d = 0; ; d += 1000) {
     let q = sb.from('agent_results').select('target_slug')
       .eq('review_status', 'pending')
+      // SEULES LES PRODUCTIONS COMPTENT (08/08). Ce garde répond à « ce travail est-il déjà fait
+      // et en attente de relecture ? ». Une ligne `failed` ou `refused` n'est PAS du travail en
+      // attente : c'est une impasse. Les compter revenait à condamner définitivement toute entité
+      // ayant échoué une fois — y compris pour une cause depuis réparée. Mesuré le jour même :
+      // sur 2 152 tâches redevenues rejouables, 2 142 étaient bloquées par leur propre échec, et
+      // les remplisseurs ne trouvaient plus AUCUN candidat.
+      .in('status', ['done', 'suspect'])
       .order('id', { ascending: true })
       .range(d, d + 999);
     if (liste) q = q.in('task_type', liste);

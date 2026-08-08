@@ -1,0 +1,8376 @@
+{
+ "chantier": "rejeu des échecs",
+ "quand": "2026-08-08T05:49:53.199Z",
+ "dry": false,
+ "examinees": 2802,
+ "familles": [
+  {
+   "cle": "quota transitoire",
+   "n": 437
+  },
+  {
+   "cle": "corruption (refus juste)",
+   "n": 86
+  },
+  {
+   "cle": "motif non classé",
+   "n": 66
+  },
+  {
+   "cle": "CLI claude absent",
+   "n": 19
+  },
+  {
+   "cle": "lot d'arbitrage (schéma corrigé)",
+   "n": 342
+  },
+  {
+   "cle": "schéma non respecté",
+   "n": 137
+  },
+  {
+   "cle": "guichet fermé",
+   "n": 1712
+  },
+  {
+   "cle": "réseau",
+   "n": 3
+  }
+ ],
+ "rejoues": [
+  {
+   "id": 24,
+   "type": "fiche_section",
+   "slug": "cell"
+  },
+  {
+   "id": 161,
+   "type": "fiche_section",
+   "slug": "chi-chi"
+  },
+  {
+   "id": 215,
+   "type": "fiche_section",
+   "slug": "erasa"
+  },
+  {
+   "id": 240,
+   "type": "fiche_section",
+   "slug": "freeza"
+  },
+  {
+   "id": 329,
+   "type": "fiche_section",
+   "slug": "killua-zoldyck"
+  },
+  {
+   "id": 331,
+   "type": "fiche_section",
+   "slug": "kurapika"
+  },
+  {
+   "id": 333,
+   "type": "fiche_section",
+   "slug": "gon-freecss"
+  },
+  {
+   "id": 360,
+   "type": "fiche_section",
+   "slug": "hisoka"
+  },
+  {
+   "id": 3514,
+   "type": "akasha_relations",
+   "slug": "welfin"
+  },
+  {
+   "id": 3515,
+   "type": "akasha_relations",
+   "slug": "tomoko-higashikata"
+  },
+  {
+   "id": 3517,
+   "type": "akasha_relations",
+   "slug": "oolong"
+  },
+  {
+   "id": 3523,
+   "type": "akasha_relations",
+   "slug": "paulie"
+  },
+  {
+   "id": 3534,
+   "type": "akasha_relations",
+   "slug": "sengoku"
+  },
+  {
+   "id": 4434,
+   "type": "fiche_section",
+   "slug": "ryosuke-takahashi"
+  },
+  {
+   "id": 4459,
+   "type": "fiche_section",
+   "slug": "shingo-shoji"
+  },
+  {
+   "id": 4461,
+   "type": "fiche_section",
+   "slug": "takeshi-nakazato"
+  },
+  {
+   "id": 4479,
+   "type": "fiche_section",
+   "slug": "sayuki"
+  },
+  {
+   "id": 4483,
+   "type": "fiche_section",
+   "slug": "yuichi-tachibana"
+  },
+  {
+   "id": 4491,
+   "type": "fiche_section",
+   "slug": "kenji"
+  },
+  {
+   "id": 4492,
+   "type": "fiche_section",
+   "slug": "kenta-nakamura"
+  },
+  {
+   "id": 4501,
+   "type": "fiche_section",
+   "slug": "mako-sato"
+  },
+  {
+   "id": 4506,
+   "type": "fiche_section",
+   "slug": "keisuke-takahashi"
+  },
+  {
+   "id": 4508,
+   "type": "fiche_section",
+   "slug": "hiroshi-fumihiro"
+  },
+  {
+   "id": 4509,
+   "type": "fiche_section",
+   "slug": "papa"
+  },
+  {
+   "id": 4523,
+   "type": "fiche_section",
+   "slug": "miki"
+  },
+  {
+   "id": 4524,
+   "type": "fiche_section",
+   "slug": "kyoichi-sudo"
+  },
+  {
+   "id": 4525,
+   "type": "fiche_section",
+   "slug": "rx7-fd"
+  },
+  {
+   "id": 4545,
+   "type": "fiche_section",
+   "slug": "lancer-evo3"
+  },
+  {
+   "id": 4547,
+   "type": "fiche_section",
+   "slug": "kai-kogashiwa"
+  },
+  {
+   "id": 4556,
+   "type": "fiche_section",
+   "slug": "sileighty"
+  },
+  {
+   "id": 4588,
+   "type": "fiche_section",
+   "slug": "redsuns"
+  },
+  {
+   "id": 4604,
+   "type": "fiche_section",
+   "slug": "hideki-ryuuga"
+  },
+  {
+   "id": 4605,
+   "type": "fiche_section",
+   "slug": "shingo-midou"
+  },
+  {
+   "id": 4623,
+   "type": "fiche_section",
+   "slug": "wataru-akiyama"
+  },
+  {
+   "id": 4644,
+   "type": "arbitrage_claude",
+   "slug": null
+  },
+  {
+   "id": 4645,
+   "type": "arbitrage_claude",
+   "slug": null
+  },
+  {
+   "id": 4646,
+   "type": "arbitrage_claude",
+   "slug": null
+  },
+  {
+   "id": 4647,
+   "type": "arbitrage_claude",
+   "slug": null
+  },
+  {
+   "id": 4648,
+   "type": "arbitrage_claude",
+   "slug": null
+  },
+  {
+   "id": 4649,
+   "type": "arbitrage_claude",
+   "slug": null
+  },
+  {
+   "id": 4650,
+   "type": "arbitrage_claude",
+   "slug": null
+  },
+  {
+   "id": 4651,
+   "type": "arbitrage_claude",
+   "slug": null
+  },
+  {
+   "id": 4652,
+   "type": "arbitrage_claude",
+   "slug": null
+  },
+  {
+   "id": 4653,
+   "type": "arbitrage_claude",
+   "slug": null
+  },
+  {
+   "id": 4675,
+   "type": "akasha_attrs",
+   "slug": "ten-shin-han"
+  },
+  {
+   "id": 4676,
+   "type": "akasha_attrs",
+   "slug": "jinzouningen-18-gou"
+  },
+  {
+   "id": 4677,
+   "type": "akasha_attrs",
+   "slug": "jinzouningen-17-gou"
+  },
+  {
+   "id": 4678,
+   "type": "akasha_attrs",
+   "slug": "muten-roushi"
+  },
+  {
+   "id": 4679,
+   "type": "fiche_artefact",
+   "slug": "kusanagi"
+  },
+  {
+   "id": 4681,
+   "type": "akasha_attrs",
+   "slug": "kame-sennin"
+  },
+  {
+   "id": 4682,
+   "type": "akasha_relations",
+   "slug": "doflamingo-donquixote"
+  },
+  {
+   "id": 4683,
+   "type": "akasha_attrs",
+   "slug": "jinzouningen-19-gou"
+  },
+  {
+   "id": 4684,
+   "type": "akasha_attrs",
+   "slug": "touta-matsuda"
+  },
+  {
+   "id": 4685,
+   "type": "akasha_relations",
+   "slug": "gokuu-black"
+  },
+  {
+   "id": 4686,
+   "type": "akasha_attrs",
+   "slug": "gokuu-black"
+  },
+  {
+   "id": 4687,
+   "type": "fiche_lieu",
+   "slug": "drum-island"
+  },
+  {
+   "id": 4688,
+   "type": "akasha_attrs",
+   "slug": "itou-shiroba"
+  },
+  {
+   "id": 4690,
+   "type": "akasha_relations",
+   "slug": "yasunaga"
+  },
+  {
+   "id": 4692,
+   "type": "akasha_relations",
+   "slug": "daril-ghiroza"
+  },
+  {
+   "id": 4693,
+   "type": "akasha_relations",
+   "slug": "kyousuke-higuchi"
+  },
+  {
+   "id": 4694,
+   "type": "akasha_relations",
+   "slug": "ellickson-gardner"
+  },
+  {
+   "id": 4695,
+   "type": "akasha_relations",
+   "slug": "hideki-ryuuga"
+  },
+  {
+   "id": 4696,
+   "type": "fandom_descfr",
+   "slug": "ginzou-kaneboshi"
+  },
+  {
+   "id": 4697,
+   "type": "akasha_attrs",
+   "slug": "ginzou-kaneboshi"
+  },
+  {
+   "id": 4699,
+   "type": "akasha_attrs",
+   "slug": "kyousuke-higuchi"
+  },
+  {
+   "id": 4700,
+   "type": "akasha_attrs",
+   "slug": "kiichirou-osoreda"
+  },
+  {
+   "id": 4701,
+   "type": "fiche_lexique",
+   "slug": "cellule-kira"
+  },
+  {
+   "id": 4702,
+   "type": "fiche_lieu",
+   "slug": "monde-shinigami"
+  },
+  {
+   "id": 4703,
+   "type": "fiche_technique",
+   "slug": "oeil-de-shinigami"
+  },
+  {
+   "id": 4706,
+   "type": "akasha_relations",
+   "slug": "itou-shiroba"
+  },
+  {
+   "id": 4707,
+   "type": "akasha_relations",
+   "slug": "touta-matsuda"
+  },
+  {
+   "id": 4709,
+   "type": "fiche_lieu",
+   "slug": "tenchi-bridge"
+  },
+  {
+   "id": 4710,
+   "type": "fiche_lieu",
+   "slug": "valley-of-end"
+  },
+  {
+   "id": 4711,
+   "type": "fiche_lieu",
+   "slug": "mont-usui"
+  },
+  {
+   "id": 4714,
+   "type": "akasha_attrs",
+   "slug": "hideki-ryuuga"
+  },
+  {
+   "id": 4715,
+   "type": "akasha_relations",
+   "slug": "jinzouningen-19-gou"
+  },
+  {
+   "id": 4716,
+   "type": "akasha_relations",
+   "slug": "kiichirou-osoreda"
+  },
+  {
+   "id": 4717,
+   "type": "akasha_relations",
+   "slug": "kyoko"
+  },
+  {
+   "id": 4718,
+   "type": "akasha_attrs",
+   "slug": "noriko"
+  },
+  {
+   "id": 4719,
+   "type": "akasha_relations",
+   "slug": "shingo-midou"
+  },
+  {
+   "id": 4720,
+   "type": "akasha_attrs",
+   "slug": "gokuu-jr-son"
+  },
+  {
+   "id": 4721,
+   "type": "fiche_lexique",
+   "slug": "gotei-13-bleach"
+  },
+  {
+   "id": 4722,
+   "type": "akasha_relations",
+   "slug": "noriko"
+  },
+  {
+   "id": 4723,
+   "type": "fiche_lexique",
+   "slug": "spk"
+  },
+  {
+   "id": 4724,
+   "type": "fandom_descfr",
+   "slug": "hell-fighter-17-gou"
+  },
+  {
+   "id": 4725,
+   "type": "fiche_lexique",
+   "slug": "douze-ninjas-gardiens"
+  },
+  {
+   "id": 4727,
+   "type": "fiche_lexique",
+   "slug": "quatres-empereurs"
+  },
+  {
+   "id": 4728,
+   "type": "fiche_lexique",
+   "slug": "ile-celeste"
+  },
+  {
+   "id": 4729,
+   "type": "fiche_lexique",
+   "slug": "association-hunters"
+  },
+  {
+   "id": 4730,
+   "type": "akasha_relations",
+   "slug": "muten-roushi"
+  },
+  {
+   "id": 4731,
+   "type": "akasha_relations",
+   "slug": "jinzouningen-18-gou"
+  },
+  {
+   "id": 4732,
+   "type": "akasha_relations",
+   "slug": "kame-sennin"
+  },
+  {
+   "id": 4733,
+   "type": "fiche_lexique",
+   "slug": "mont-myoboku"
+  },
+  {
+   "id": 4735,
+   "type": "fiche_lexique",
+   "slug": "examen-hunter"
+  },
+  {
+   "id": 4746,
+   "type": "fiche_lieu",
+   "slug": "salle-esprit-temps"
+  },
+  {
+   "id": 4747,
+   "type": "fiche_lieu",
+   "slug": "fishman-island"
+  },
+  {
+   "id": 4751,
+   "type": "fiche_lieu",
+   "slug": "mary-geoise"
+  },
+  {
+   "id": 4752,
+   "type": "fiche_lieu",
+   "slug": "sabaody"
+  },
+  {
+   "id": 4753,
+   "type": "fiche_lieu",
+   "slug": "wano"
+  },
+  {
+   "id": 4765,
+   "type": "akasha_attrs",
+   "slug": "pu-ar"
+  },
+  {
+   "id": 4766,
+   "type": "akasha_relations",
+   "slug": "jinzouningen-16-gou"
+  },
+  {
+   "id": 4767,
+   "type": "fiche_lieu",
+   "slug": "fake-namek"
+  },
+  {
+   "id": 4769,
+   "type": "akasha_attrs",
+   "slug": "north-kaio"
+  },
+  {
+   "id": 4770,
+   "type": "akasha_relations",
+   "slug": "piccolo-daimao"
+  },
+  {
+   "id": 4771,
+   "type": "akasha_attrs",
+   "slug": "kuugo-ginjou"
+  },
+  {
+   "id": 4772,
+   "type": "akasha_attrs",
+   "slug": "norland-montblanc"
+  },
+  {
+   "id": 4773,
+   "type": "fiche_lieu",
+   "slug": "new-vegeta"
+  },
+  {
+   "id": 4774,
+   "type": "fiche_lieu",
+   "slug": "univers-2"
+  },
+  {
+   "id": 4775,
+   "type": "akasha_relations",
+   "slug": "chaozu"
+  },
+  {
+   "id": 4791,
+   "type": "fiche_lexique",
+   "slug": "joestar"
+  },
+  {
+   "id": 4859,
+   "type": "fiche_section",
+   "slug": "meruem"
+  },
+  {
+   "id": 4861,
+   "type": "fiche_section",
+   "slug": "chrollo-lucilfer"
+  },
+  {
+   "id": 4867,
+   "type": "fiche_section",
+   "slug": "leorio"
+  },
+  {
+   "id": 4879,
+   "type": "fiche_section",
+   "slug": "feitan"
+  },
+  {
+   "id": 4880,
+   "type": "fiche_section",
+   "slug": "isaac-netero"
+  },
+  {
+   "id": 4895,
+   "type": "fiche_section",
+   "slug": "neferpitou"
+  },
+  {
+   "id": 4943,
+   "type": "fiche_section",
+   "slug": "komugi"
+  },
+  {
+   "id": 5015,
+   "type": "fiche_section",
+   "slug": "shaiapouf"
+  },
+  {
+   "id": 5037,
+   "type": "fiche_section",
+   "slug": "pakunoda"
+  },
+  {
+   "id": 5049,
+   "type": "fiche_section",
+   "slug": "shalnark-ryuseih"
+  },
+  {
+   "id": 5107,
+   "type": "fiche_section",
+   "slug": "joseph-joestar"
+  },
+  {
+   "id": 5129,
+   "type": "fiche_section",
+   "slug": "jotaro-kujo"
+  },
+  {
+   "id": 5150,
+   "type": "fiche_section",
+   "slug": "yoshikage-kira"
+  },
+  {
+   "id": 5233,
+   "type": "fiche_section",
+   "slug": "guido-mista"
+  },
+  {
+   "id": 5240,
+   "type": "fiche_section",
+   "slug": "jonathan-joestar"
+  },
+  {
+   "id": 5261,
+   "type": "fiche_section",
+   "slug": "narancia-ghirga"
+  },
+  {
+   "id": 5281,
+   "type": "fiche_section",
+   "slug": "koichi-hirose"
+  },
+  {
+   "id": 5282,
+   "type": "fiche_section",
+   "slug": "enrico-pucci"
+  },
+  {
+   "id": 5304,
+   "type": "fiche_section",
+   "slug": "weather-report"
+  },
+  {
+   "id": 5305,
+   "type": "fiche_section",
+   "slug": "diavolo"
+  },
+  {
+   "id": 5326,
+   "type": "fiche_section",
+   "slug": "iggy"
+  },
+  {
+   "id": 5348,
+   "type": "fiche_section",
+   "slug": "muhammad-avdol"
+  },
+  {
+   "id": 5366,
+   "type": "fiche_section",
+   "slug": "narciso-anasui"
+  },
+  {
+   "id": 5368,
+   "type": "fiche_section",
+   "slug": "pannacotta-fugo"
+  },
+  {
+   "id": 5384,
+   "type": "fiche_section",
+   "slug": "risotto-nero"
+  },
+  {
+   "id": 5392,
+   "type": "fiche_section",
+   "slug": "lisa-lisa"
+  },
+  {
+   "id": 5497,
+   "type": "fiche_section",
+   "slug": "ulquiorra"
+  },
+  {
+   "id": 5567,
+   "type": "fiche_section",
+   "slug": "retsu-unohana"
+  },
+  {
+   "id": 5585,
+   "type": "fiche_section",
+   "slug": "shuuhei-hisagi"
+  },
+  {
+   "id": 5602,
+   "type": "fiche_section",
+   "slug": "coyote-starrk"
+  },
+  {
+   "id": 5616,
+   "type": "fiche_section",
+   "slug": "ikkaku-madarame"
+  },
+  {
+   "id": 5646,
+   "type": "fiche_section",
+   "slug": "vegeta"
+  },
+  {
+   "id": 5650,
+   "type": "fiche_section",
+   "slug": "gokuu-black"
+  },
+  {
+   "id": 5651,
+   "type": "fiche_section",
+   "slug": "freezer"
+  },
+  {
+   "id": 5743,
+   "type": "fiche_section",
+   "slug": "bonolenov-ndongo"
+  },
+  {
+   "id": 5747,
+   "type": "fiche_section",
+   "slug": "genthru"
+  },
+  {
+   "id": 5748,
+   "type": "fiche_section",
+   "slug": "milluki-zoldyck"
+  },
+  {
+   "id": 5754,
+   "type": "fiche_section",
+   "slug": "hina"
+  },
+  {
+   "id": 5758,
+   "type": "fiche_section",
+   "slug": "zazan"
+  },
+  {
+   "id": 5761,
+   "type": "fiche_section",
+   "slug": "list"
+  },
+  {
+   "id": 5765,
+   "type": "fiche_section",
+   "slug": "mizaistom-nana"
+  },
+  {
+   "id": 5769,
+   "type": "fiche_section",
+   "slug": "tsubone"
+  },
+  {
+   "id": 5771,
+   "type": "fiche_section",
+   "slug": "baise"
+  },
+  {
+   "id": 5774,
+   "type": "fiche_section",
+   "slug": "frog"
+  },
+  {
+   "id": 5776,
+   "type": "fiche_section",
+   "slug": "goreinu"
+  },
+  {
+   "id": 5777,
+   "type": "fiche_section",
+   "slug": "franklin-bordeaux"
+  },
+  {
+   "id": 5779,
+   "type": "fiche_section",
+   "slug": "leol"
+  },
+  {
+   "id": 5780,
+   "type": "fiche_section",
+   "slug": "kastro"
+  },
+  {
+   "id": 5789,
+   "type": "fiche_section",
+   "slug": "basho"
+  },
+  {
+   "id": 5807,
+   "type": "fiche_section",
+   "slug": "turtle"
+  },
+  {
+   "id": 5827,
+   "type": "fiche_section",
+   "slug": "riehlvelt"
+  },
+  {
+   "id": 5828,
+   "type": "fiche_section",
+   "slug": "shinji-hirako"
+  },
+  {
+   "id": 5830,
+   "type": "fiche_section",
+   "slug": "mayuri-kurotsuchi"
+  },
+  {
+   "id": 5834,
+   "type": "fiche_section",
+   "slug": "juushirou-ukitake"
+  },
+  {
+   "id": 5837,
+   "type": "fiche_section",
+   "slug": "yumichika-ayasegawa"
+  },
+  {
+   "id": 5838,
+   "type": "fiche_section",
+   "slug": "momo-hinamori"
+  },
+  {
+   "id": 5839,
+   "type": "fiche_section",
+   "slug": "sajin-komamura"
+  },
+  {
+   "id": 5840,
+   "type": "fiche_section",
+   "slug": "kaien-shiba"
+  },
+  {
+   "id": 5842,
+   "type": "fiche_section",
+   "slug": "mashiro-kuna"
+  },
+  {
+   "id": 5845,
+   "type": "fiche_section",
+   "slug": "lisa-yadoumaru"
+  },
+  {
+   "id": 5850,
+   "type": "fiche_section",
+   "slug": "nemu-kurotsuchi"
+  },
+  {
+   "id": 5852,
+   "type": "fiche_section",
+   "slug": "kaname-tousen"
+  },
+  {
+   "id": 5853,
+   "type": "fiche_section",
+   "slug": "nanao-ise"
+  },
+  {
+   "id": 5855,
+   "type": "fiche_section",
+   "slug": "isane-kotetsu"
+  },
+  {
+   "id": 5862,
+   "type": "fiche_section",
+   "slug": "baraggan-louisenbairn"
+  },
+  {
+   "id": 5872,
+   "type": "fiche_section",
+   "slug": "aaroniero-arruruerie"
+  },
+  {
+   "id": 5880,
+   "type": "fiche_section",
+   "slug": "shuusuke-amagai"
+  },
+  {
+   "id": 5888,
+   "type": "fiche_section",
+   "slug": "hachigen-ushouda"
+  },
+  {
+   "id": 5889,
+   "type": "fiche_section",
+   "slug": "kouga-kuchiki"
+  },
+  {
+   "id": 5890,
+   "type": "fiche_section",
+   "slug": "franceska-mila-rose"
+  },
+  {
+   "id": 5893,
+   "type": "fiche_section",
+   "slug": "jackie-tristan"
+  },
+  {
+   "id": 5921,
+   "type": "fiche_section",
+   "slug": "biscuit-krueger"
+  },
+  {
+   "id": 5945,
+   "type": "fiche_section",
+   "slug": "alluka-zoldyck"
+  },
+  {
+   "id": 8291,
+   "type": "fiche_section",
+   "slug": "north-kaio"
+  },
+  {
+   "id": 8308,
+   "type": "fiche_section",
+   "slug": "binolt"
+  },
+  {
+   "id": 8756,
+   "type": "fiche_section",
+   "slug": "zald"
+  },
+  {
+   "id": 8902,
+   "type": "fiche_section",
+   "slug": "phinks-magkav"
+  },
+  {
+   "id": 8924,
+   "type": "fiche_section",
+   "slug": "menthuthuyoupi"
+  },
+  {
+   "id": 9142,
+   "type": "fiche_section",
+   "slug": "razor"
+  },
+  {
+   "id": 9535,
+   "type": "fiche_section",
+   "slug": "shura"
+  },
+  {
+   "id": 9681,
+   "type": "fiche_section",
+   "slug": "liu-xing-long"
+  },
+  {
+   "id": 9682,
+   "type": "fiche_section",
+   "slug": "hell-fighter-17-gou"
+  },
+  {
+   "id": 9929,
+   "type": "fiche_section",
+   "slug": "gowasu"
+  },
+  {
+   "id": 10003,
+   "type": "fiche_section",
+   "slug": "kefla"
+  },
+  {
+   "id": 10354,
+   "type": "fiche_section",
+   "slug": "moro"
+  },
+  {
+   "id": 10526,
+   "type": "fiche_section",
+   "slug": "salza"
+  },
+  {
+   "id": 11115,
+   "type": "fiche_section",
+   "slug": "shunsui-kyoraku"
+  },
+  {
+   "id": 11284,
+   "type": "fiche_section",
+   "slug": "atk-bl-hakka-no-togame"
+  },
+  {
+   "id": 11334,
+   "type": "fiche_section",
+   "slug": "vizard"
+  },
+  {
+   "id": 11604,
+   "type": "fiche_section",
+   "slug": "akira-otoishi"
+  },
+  {
+   "id": 11725,
+   "type": "fiche_section",
+   "slug": "straizo"
+  },
+  {
+   "id": 11942,
+   "type": "fiche_section",
+   "slug": "yoshihiro-kira"
+  },
+  {
+   "id": 12015,
+   "type": "fiche_section",
+   "slug": "giorno-s-stepfather"
+  },
+  {
+   "id": 12064,
+   "type": "fiche_section",
+   "slug": "weather-report-jojo-s-bizarre-adventure"
+  },
+  {
+   "id": 12186,
+   "type": "fiche_section",
+   "slug": "soft-and-wet"
+  },
+  {
+   "id": 12334,
+   "type": "fiche_section",
+   "slug": "morioh"
+  },
+  {
+   "id": 12652,
+   "type": "fiche_section",
+   "slug": "pu-ar"
+  },
+  {
+   "id": 13187,
+   "type": "fiche_section",
+   "slug": "atk-db-give-me-energy"
+  },
+  {
+   "id": 13314,
+   "type": "fiche_section",
+   "slug": "atk-db-life-link"
+  },
+  {
+   "id": 13421,
+   "type": "fiche_section",
+   "slug": "gotenks-ssj"
+  },
+  {
+   "id": 13721,
+   "type": "fiche_section",
+   "slug": "broly"
+  },
+  {
+   "id": 13745,
+   "type": "fiche_section",
+   "slug": "appule"
+  },
+  {
+   "id": 13762,
+   "type": "fiche_section",
+   "slug": "bibidi"
+  },
+  {
+   "id": 13816,
+   "type": "fiche_section",
+   "slug": "portgas-d-ace"
+  },
+  {
+   "id": 13936,
+   "type": "fiche_section",
+   "slug": "buggy"
+  },
+  {
+   "id": 13937,
+   "type": "fiche_section",
+   "slug": "boa-hancock"
+  },
+  {
+   "id": 14006,
+   "type": "fiche_section",
+   "slug": "future-trunks"
+  },
+  {
+   "id": 14033,
+   "type": "fiche_section",
+   "slug": "guldo"
+  },
+  {
+   "id": 14200,
+   "type": "fiche_section",
+   "slug": "nappa"
+  },
+  {
+   "id": 14249,
+   "type": "fiche_section",
+   "slug": "pan"
+  },
+  {
+   "id": 14402,
+   "type": "fiche_section",
+   "slug": "yakon"
+  },
+  {
+   "id": 14630,
+   "type": "fiche_section",
+   "slug": "mother"
+  },
+  {
+   "id": 14633,
+   "type": "fiche_section",
+   "slug": "mai"
+  },
+  {
+   "id": 15089,
+   "type": "fiche_section",
+   "slug": "frost"
+  },
+  {
+   "id": 15209,
+   "type": "fiche_section",
+   "slug": "kale"
+  },
+  {
+   "id": 15376,
+   "type": "fiche_section",
+   "slug": "potage"
+  },
+  {
+   "id": 15544,
+   "type": "fiche_section",
+   "slug": "toppo"
+  },
+  {
+   "id": 15569,
+   "type": "fiche_section",
+   "slug": "vados"
+  },
+  {
+   "id": 16154,
+   "type": "fiche_section",
+   "slug": "black-maria"
+  },
+  {
+   "id": 16241,
+   "type": "fiche_section",
+   "slug": "bobbin"
+  },
+  {
+   "id": 16265,
+   "type": "fiche_section",
+   "slug": "boo"
+  },
+  {
+   "id": 17632,
+   "type": "fiche_section",
+   "slug": "kelly-funk"
+  },
+  {
+   "id": 17657,
+   "type": "fiche_section",
+   "slug": "g-8-head-custodian"
+  },
+  {
+   "id": 18089,
+   "type": "fiche_section",
+   "slug": "henzo"
+  },
+  {
+   "id": 18617,
+   "type": "fiche_section",
+   "slug": "juki"
+  },
+  {
+   "id": 18641,
+   "type": "fiche_section",
+   "slug": "kaidou"
+  },
+  {
+   "id": 18737,
+   "type": "fiche_section",
+   "slug": "karma"
+  },
+  {
+   "id": 18857,
+   "type": "fiche_section",
+   "slug": "kiwi"
+  },
+  {
+   "id": 19073,
+   "type": "fiche_section",
+   "slug": "kuzan"
+  },
+  {
+   "id": 19192,
+   "type": "fiche_section",
+   "slug": "linlin-s-father"
+  },
+  {
+   "id": 19193,
+   "type": "fiche_section",
+   "slug": "linlin-s-mother"
+  },
+  {
+   "id": 19211,
+   "type": "fiche_section",
+   "slug": "loan-shark-of-water-7"
+  },
+  {
+   "id": 19624,
+   "type": "fiche_section",
+   "slug": "kisame-hoshigaki"
+  },
+  {
+   "id": 20512,
+   "type": "fiche_section",
+   "slug": "hebiichigo"
+  },
+  {
+   "id": 20609,
+   "type": "fiche_section",
+   "slug": "chino"
+  },
+  {
+   "id": 21135,
+   "type": "fiche_section",
+   "slug": "kinkaku-naruto"
+  },
+  {
+   "id": 21449,
+   "type": "fiche_section",
+   "slug": "jiji"
+  },
+  {
+   "id": 21472,
+   "type": "fiche_section",
+   "slug": "ada"
+  },
+  {
+   "id": 22193,
+   "type": "fiche_section",
+   "slug": "mozu"
+  },
+  {
+   "id": 22745,
+   "type": "fiche_section",
+   "slug": "pirate-captain-500-hostages"
+  },
+  {
+   "id": 22793,
+   "type": "fiche_section",
+   "slug": "porche"
+  },
+  {
+   "id": 22807,
+   "type": "fiche_section",
+   "slug": "grus-prince"
+  },
+  {
+   "id": 22863,
+   "type": "fiche_section",
+   "slug": "queen"
+  },
+  {
+   "id": 22882,
+   "type": "fiche_section",
+   "slug": "race"
+  },
+  {
+   "id": 22913,
+   "type": "fiche_section",
+   "slug": "raizou"
+  },
+  {
+   "id": 23247,
+   "type": "fiche_section",
+   "slug": "jaygarcia-saturn"
+  },
+  {
+   "id": 23873,
+   "type": "fiche_section",
+   "slug": "totts"
+  },
+  {
+   "id": 24065,
+   "type": "fiche_section",
+   "slug": "niji-vinsmoke"
+  },
+  {
+   "id": 24389,
+   "type": "fiche_section",
+   "slug": "zunesha"
+  },
+  {
+   "id": 32779,
+   "type": "akasha_relations",
+   "slug": "dango-mitsuki"
+  },
+  {
+   "id": 32780,
+   "type": "akasha_relations",
+   "slug": "daisy"
+  },
+  {
+   "id": 32781,
+   "type": "akasha_relations",
+   "slug": "dango"
+  },
+  {
+   "id": 32784,
+   "type": "akasha_relations",
+   "slug": "datsuji"
+  },
+  {
+   "id": 32785,
+   "type": "akasha_relations",
+   "slug": "daore-dotonbori"
+  },
+  {
+   "id": 32786,
+   "type": "akasha_relations",
+   "slug": "danzo-shimura"
+  },
+  {
+   "id": 32787,
+   "type": "akasha_relations",
+   "slug": "daimaru"
+  },
+  {
+   "id": 32788,
+   "type": "akasha_relations",
+   "slug": "daruma-izuno"
+  },
+  {
+   "id": 32795,
+   "type": "akasha_relations",
+   "slug": "disonasu"
+  },
+  {
+   "id": 32796,
+   "type": "akasha_relations",
+   "slug": "dias-devil"
+  },
+  {
+   "id": 32797,
+   "type": "akasha_relations",
+   "slug": "dive"
+  },
+  {
+   "id": 32798,
+   "type": "akasha_relations",
+   "slug": "delacuaji"
+  },
+  {
+   "id": 32799,
+   "type": "akasha_relations",
+   "slug": "diesel"
+  },
+  {
+   "id": 32800,
+   "type": "akasha_relations",
+   "slug": "desunen-ix-ahho"
+  },
+  {
+   "id": 32801,
+   "type": "akasha_relations",
+   "slug": "dobon"
+  },
+  {
+   "id": 32802,
+   "type": "akasha_relations",
+   "slug": "dogya"
+  },
+  {
+   "id": 32803,
+   "type": "akasha_relations",
+   "slug": "dobby-ibadonbo"
+  },
+  {
+   "id": 32804,
+   "type": "akasha_relations",
+   "slug": "doberman"
+  },
+  {
+   "id": 32805,
+   "type": "akasha_relations",
+   "slug": "doki"
+  },
+  {
+   "id": 32806,
+   "type": "akasha_relations",
+   "slug": "dodai"
+  },
+  {
+   "id": 32809,
+   "type": "akasha_relations",
+   "slug": "dokku"
+  },
+  {
+   "id": 32810,
+   "type": "akasha_relations",
+   "slug": "dolce-charlotte"
+  },
+  {
+   "id": 32811,
+   "type": "akasha_relations",
+   "slug": "dengaku"
+  },
+  {
+   "id": 32812,
+   "type": "akasha_relations",
+   "slug": "dokan"
+  },
+  {
+   "id": 32814,
+   "type": "akasha_relations",
+   "slug": "doshin"
+  },
+  {
+   "id": 32815,
+   "type": "akasha_relations",
+   "slug": "donannoyo"
+  },
+  {
+   "id": 32816,
+   "type": "akasha_relations",
+   "slug": "doran-s-father"
+  },
+  {
+   "id": 32817,
+   "type": "akasha_relations",
+   "slug": "don-kee"
+  },
+  {
+   "id": 32818,
+   "type": "akasha_relations",
+   "slug": "doseki-ganryu"
+  },
+  {
+   "id": 32819,
+   "type": "akasha_relations",
+   "slug": "dore"
+  },
+  {
+   "id": 32820,
+   "type": "akasha_relations",
+   "slug": "dolltaki"
+  },
+  {
+   "id": 32821,
+   "type": "akasha_relations",
+   "slug": "don"
+  },
+  {
+   "id": 32822,
+   "type": "akasha_relations",
+   "slug": "doringo"
+  },
+  {
+   "id": 32823,
+   "type": "akasha_relations",
+   "slug": "doran"
+  },
+  {
+   "id": 32950,
+   "type": "akasha_relations",
+   "slug": "doshu-goetsu"
+  },
+  {
+   "id": 32951,
+   "type": "akasha_relations",
+   "slug": "dosun"
+  },
+  {
+   "id": 32952,
+   "type": "akasha_relations",
+   "slug": "dotaku"
+  },
+  {
+   "id": 32953,
+   "type": "akasha_relations",
+   "slug": "doto-akimichi"
+  },
+  {
+   "id": 32973,
+   "type": "akasha_relations",
+   "slug": "du-feld"
+  },
+  {
+   "id": 32974,
+   "type": "akasha_relations",
+   "slug": "doto-kazahana"
+  },
+  {
+   "id": 32975,
+   "type": "akasha_relations",
+   "slug": "dr-fishbonen"
+  },
+  {
+   "id": 32976,
+   "type": "akasha_relations",
+   "slug": "earth-prison-golem"
+  },
+  {
+   "id": 32977,
+   "type": "akasha_relations",
+   "slug": "dream-s-mother"
+  },
+  {
+   "id": 32978,
+   "type": "akasha_relations",
+   "slug": "dragee-charlotte"
+  },
+  {
+   "id": 32979,
+   "type": "akasha_relations",
+   "slug": "eagle-masked-anbu-member"
+  },
+  {
+   "id": 32980,
+   "type": "akasha_relations",
+   "slug": "dread-lion"
+  },
+  {
+   "id": 32981,
+   "type": "akasha_relations",
+   "slug": "drug-peclo"
+  },
+  {
+   "id": 32982,
+   "type": "akasha_relations",
+   "slug": "dr-flappe"
+  },
+  {
+   "id": 32983,
+   "type": "akasha_relations",
+   "slug": "dream"
+  },
+  {
+   "id": 32984,
+   "type": "akasha_relations",
+   "slug": "eliza"
+  },
+  {
+   "id": 32985,
+   "type": "akasha_relations",
+   "slug": "eiki-fuma"
+  },
+  {
+   "id": 32986,
+   "type": "akasha_relations",
+   "slug": "ebizo"
+  },
+  {
+   "id": 32987,
+   "type": "akasha_relations",
+   "slug": "eccoli"
+  },
+  {
+   "id": 32988,
+   "type": "akasha_relations",
+   "slug": "egana"
+  },
+  {
+   "id": 32989,
+   "type": "akasha_relations",
+   "slug": "eho-norimaki"
+  },
+  {
+   "id": 32990,
+   "type": "akasha_relations",
+   "slug": "effiler-charlotte"
+  },
+  {
+   "id": 32991,
+   "type": "akasha_relations",
+   "slug": "earth-daimyo"
+  },
+  {
+   "id": 32995,
+   "type": "akasha_relations",
+   "slug": "esta-s-boyfriend"
+  },
+  {
+   "id": 32996,
+   "type": "akasha_relations",
+   "slug": "enra"
+  },
+  {
+   "id": 32997,
+   "type": "akasha_relations",
+   "slug": "emiru"
+  },
+  {
+   "id": 32998,
+   "type": "akasha_relations",
+   "slug": "emina"
+  },
+  {
+   "id": 32999,
+   "type": "akasha_relations",
+   "slug": "ereki-kaminarimon"
+  },
+  {
+   "id": 33000,
+   "type": "akasha_relations",
+   "slug": "elmy"
+  },
+  {
+   "id": 33001,
+   "type": "akasha_relations",
+   "slug": "en-no-gyoja"
+  },
+  {
+   "id": 33002,
+   "type": "akasha_relations",
+   "slug": "epoida"
+  },
+  {
+   "id": 33003,
+   "type": "akasha_relations",
+   "slug": "emi"
+  },
+  {
+   "id": 33004,
+   "type": "akasha_relations",
+   "slug": "f"
+  },
+  {
+   "id": 33005,
+   "type": "akasha_relations",
+   "slug": "fabre"
+  },
+  {
+   "id": 33007,
+   "type": "akasha_relations",
+   "slug": "enchu-nara"
+  },
+  {
+   "id": 33008,
+   "type": "akasha_relations",
+   "slug": "esta"
+  },
+  {
+   "id": 33009,
+   "type": "akasha_relations",
+   "slug": "enzo-tenro"
+  },
+  {
+   "id": 33010,
+   "type": "akasha_relations",
+   "slug": "erimaki-sharo"
+  },
+  {
+   "id": 33011,
+   "type": "akasha_relations",
+   "slug": "fang-daimyo"
+  },
+  {
+   "id": 33012,
+   "type": "akasha_relations",
+   "slug": "fanfan"
+  },
+  {
+   "id": 33013,
+   "type": "akasha_relations",
+   "slug": "fasha"
+  },
+  {
+   "id": 33014,
+   "type": "akasha_relations",
+   "slug": "ensui-nara"
+  },
+  {
+   "id": 33015,
+   "type": "akasha_relations",
+   "slug": "father-styx"
+  },
+  {
+   "id": 33016,
+   "type": "akasha_relations",
+   "slug": "faust"
+  },
+  {
+   "id": 33017,
+   "type": "akasha_relations",
+   "slug": "flapper"
+  },
+  {
+   "id": 33018,
+   "type": "akasha_relations",
+   "slug": "faz"
+  },
+  {
+   "id": 33019,
+   "type": "akasha_relations",
+   "slug": "finamore"
+  },
+  {
+   "id": 33020,
+   "type": "akasha_relations",
+   "slug": "fillonce"
+  },
+  {
+   "id": 33023,
+   "type": "akasha_relations",
+   "slug": "fire-daimyo-part-i-ii"
+  },
+  {
+   "id": 33161,
+   "type": "akasha_relations",
+   "slug": "footbianco"
+  },
+  {
+   "id": 33162,
+   "type": "akasha_relations",
+   "slug": "fox-masked-anbu-member"
+  },
+  {
+   "id": 33163,
+   "type": "akasha_relations",
+   "slug": "fossa"
+  },
+  {
+   "id": 33164,
+   "type": "akasha_relations",
+   "slug": "fourtricks"
+  },
+  {
+   "id": 33171,
+   "type": "akasha_relations",
+   "slug": "fudo"
+  },
+  {
+   "id": 33172,
+   "type": "akasha_relations",
+   "slug": "fugo"
+  },
+  {
+   "id": 33173,
+   "type": "akasha_relations",
+   "slug": "fugar"
+  },
+  {
+   "id": 33174,
+   "type": "akasha_relations",
+   "slug": "fujin"
+  },
+  {
+   "id": 33175,
+   "type": "akasha_relations",
+   "slug": "francois"
+  },
+  {
+   "id": 33176,
+   "type": "akasha_relations",
+   "slug": "fugai"
+  },
+  {
+   "id": 33177,
+   "type": "akasha_relations",
+   "slug": "fugi"
+  },
+  {
+   "id": 33178,
+   "type": "akasha_relations",
+   "slug": "fuga"
+  },
+  {
+   "id": 33179,
+   "type": "akasha_relations",
+   "slug": "fu"
+  },
+  {
+   "id": 33180,
+   "type": "akasha_relations",
+   "slug": "fuka"
+  },
+  {
+   "id": 33181,
+   "type": "akasha_relations",
+   "slug": "fujin-naruto"
+  },
+  {
+   "id": 33182,
+   "type": "akasha_relations",
+   "slug": "fuki-land-of-sound"
+  },
+  {
+   "id": 33183,
+   "type": "akasha_relations",
+   "slug": "funamushi"
+  },
+  {
+   "id": 33184,
+   "type": "akasha_relations",
+   "slug": "fukurokumaru"
+  },
+  {
+   "id": 33186,
+   "type": "akasha_relations",
+   "slug": "fuki"
+  },
+  {
+   "id": 33187,
+   "type": "akasha_relations",
+   "slug": "fubuki-kakuyoku"
+  },
+  {
+   "id": 33188,
+   "type": "akasha_relations",
+   "slug": "frost-daimyo"
+  },
+  {
+   "id": 33189,
+   "type": "akasha_relations",
+   "slug": "fuku"
+  },
+  {
+   "id": 33190,
+   "type": "akasha_relations",
+   "slug": "fukuemon"
+  },
+  {
+   "id": 33191,
+   "type": "akasha_relations",
+   "slug": "fukuyokana"
+  },
+  {
+   "id": 33192,
+   "type": "akasha_relations",
+   "slug": "fukusuke-hikyakuya"
+  },
+  {
+   "id": 33193,
+   "type": "akasha_relations",
+   "slug": "fuguki-suikazan"
+  },
+  {
+   "id": 33194,
+   "type": "akasha_relations",
+   "slug": "fuza"
+  },
+  {
+   "id": 33195,
+   "type": "akasha_relations",
+   "slug": "furofuki"
+  },
+  {
+   "id": 33196,
+   "type": "akasha_relations",
+   "slug": "furui"
+  },
+  {
+   "id": 33197,
+   "type": "akasha_relations",
+   "slug": "g-8-marine-officer-blond"
+  },
+  {
+   "id": 33198,
+   "type": "akasha_relations",
+   "slug": "fuyumeg-charlotte"
+  },
+  {
+   "id": 33199,
+   "type": "akasha_relations",
+   "slug": "fuso"
+  },
+  {
+   "id": 33200,
+   "type": "akasha_relations",
+   "slug": "futsu"
+  },
+  {
+   "id": 33201,
+   "type": "akasha_relations",
+   "slug": "fuyo"
+  },
+  {
+   "id": 33203,
+   "type": "akasha_relations",
+   "slug": "futaba"
+  },
+  {
+   "id": 33205,
+   "type": "akasha_relations",
+   "slug": "g-8-head-custodian"
+  },
+  {
+   "id": 33206,
+   "type": "akasha_relations",
+   "slug": "g-8-marine-officer-gray"
+  },
+  {
+   "id": 33207,
+   "type": "akasha_relations",
+   "slug": "furrari"
+  },
+  {
+   "id": 33208,
+   "type": "akasha_relations",
+   "slug": "funari"
+  },
+  {
+   "id": 33209,
+   "type": "akasha_relations",
+   "slug": "g-8-sous-chef"
+  },
+  {
+   "id": 33210,
+   "type": "akasha_relations",
+   "slug": "gale"
+  },
+  {
+   "id": 33211,
+   "type": "akasha_relations",
+   "slug": "gal"
+  },
+  {
+   "id": 33212,
+   "type": "akasha_relations",
+   "slug": "gamagoro"
+  },
+  {
+   "id": 33213,
+   "type": "akasha_relations",
+   "slug": "fundaru"
+  },
+  {
+   "id": 33214,
+   "type": "akasha_relations",
+   "slug": "futa-kagetsu"
+  },
+  {
+   "id": 33216,
+   "type": "akasha_relations",
+   "slug": "futami"
+  },
+  {
+   "id": 33217,
+   "type": "akasha_relations",
+   "slug": "gaku-inuzuka"
+  },
+  {
+   "id": 33218,
+   "type": "akasha_relations",
+   "slug": "gancho"
+  },
+  {
+   "id": 33219,
+   "type": "akasha_relations",
+   "slug": "gambo"
+  },
+  {
+   "id": 33220,
+   "type": "akasha_relations",
+   "slug": "gando"
+  },
+  {
+   "id": 33221,
+   "type": "akasha_relations",
+   "slug": "gamisaras"
+  },
+  {
+   "id": 33222,
+   "type": "akasha_relations",
+   "slug": "gamamichi"
+  },
+  {
+   "id": 33223,
+   "type": "akasha_relations",
+   "slug": "gameru"
+  },
+  {
+   "id": 33224,
+   "type": "akasha_relations",
+   "slug": "gamatama"
+  },
+  {
+   "id": 33225,
+   "type": "akasha_relations",
+   "slug": "gamariki"
+  },
+  {
+   "id": 33432,
+   "type": "akasha_relations",
+   "slug": "ganmi-aremo"
+  },
+  {
+   "id": 33435,
+   "type": "akasha_relations",
+   "slug": "ganryu"
+  },
+  {
+   "id": 33436,
+   "type": "akasha_relations",
+   "slug": "gangaru"
+  },
+  {
+   "id": 33437,
+   "type": "akasha_relations",
+   "slug": "ganno"
+  },
+  {
+   "id": 33446,
+   "type": "akasha_relations",
+   "slug": "garuda"
+  },
+  {
+   "id": 33447,
+   "type": "akasha_relations",
+   "slug": "garudan"
+  },
+  {
+   "id": 33448,
+   "type": "akasha_relations",
+   "slug": "garakuta-gang-leader"
+  },
+  {
+   "id": 33449,
+   "type": "akasha_relations",
+   "slug": "gantetsu-iwagakure"
+  },
+  {
+   "id": 33450,
+   "type": "akasha_relations",
+   "slug": "garashi-tono"
+  },
+  {
+   "id": 33451,
+   "type": "akasha_relations",
+   "slug": "gatekeeper"
+  },
+  {
+   "id": 33452,
+   "type": "akasha_relations",
+   "slug": "gattenshochinosukeo"
+  },
+  {
+   "id": 33453,
+   "type": "akasha_relations",
+   "slug": "gato"
+  },
+  {
+   "id": 33454,
+   "type": "akasha_relations",
+   "slug": "gazeru"
+  },
+  {
+   "id": 33455,
+   "type": "akasha_relations",
+   "slug": "gatz"
+  },
+  {
+   "id": 33456,
+   "type": "akasha_relations",
+   "slug": "gatherine"
+  },
+  {
+   "id": 33458,
+   "type": "akasha_relations",
+   "slug": "ganryu-spade-pirates"
+  },
+  {
+   "id": 33459,
+   "type": "akasha_relations",
+   "slug": "gekko"
+  },
+  {
+   "id": 33460,
+   "type": "akasha_relations",
+   "slug": "gekomatsu"
+  },
+  {
+   "id": 33461,
+   "type": "akasha_relations",
+   "slug": "gen-yumaru"
+  },
+  {
+   "id": 33462,
+   "type": "akasha_relations",
+   "slug": "genbu-minister"
+  },
+  {
+   "id": 33464,
+   "type": "akasha_relations",
+   "slug": "garogai"
+  },
+  {
+   "id": 33468,
+   "type": "akasha_relations",
+   "slug": "gensui-amagiri"
+  },
+  {
+   "id": 33469,
+   "type": "akasha_relations",
+   "slug": "giant-anteater"
+  },
+  {
+   "id": 33470,
+   "type": "akasha_relations",
+   "slug": "giant-centipede"
+  },
+  {
+   "id": 33471,
+   "type": "akasha_relations",
+   "slug": "gengo"
+  },
+  {
+   "id": 33472,
+   "type": "akasha_relations",
+   "slug": "genzo"
+  },
+  {
+   "id": 33473,
+   "type": "akasha_relations",
+   "slug": "giant-bee"
+  },
+  {
+   "id": 33474,
+   "type": "akasha_relations",
+   "slug": "geronimo"
+  },
+  {
+   "id": 33475,
+   "type": "akasha_relations",
+   "slug": "giant-clam"
+  },
+  {
+   "id": 33476,
+   "type": "akasha_relations",
+   "slug": "gengetsu-hozuki"
+  },
+  {
+   "id": 33477,
+   "type": "akasha_relations",
+   "slug": "genie"
+  },
+  {
+   "id": 33478,
+   "type": "akasha_relations",
+   "slug": "genrin"
+  },
+  {
+   "id": 33479,
+   "type": "akasha_relations",
+   "slug": "gennai"
+  },
+  {
+   "id": 33480,
+   "type": "akasha_relations",
+   "slug": "gensho-ryudoin"
+  },
+  {
+   "id": 33481,
+   "type": "akasha_relations",
+   "slug": "giant-marlin"
+  },
+  {
+   "id": 33482,
+   "type": "akasha_relations",
+   "slug": "giant-drill-beaked-bird"
+  },
+  {
+   "id": 33483,
+   "type": "akasha_relations",
+   "slug": "george-mach"
+  },
+  {
+   "id": 33484,
+   "type": "akasha_relations",
+   "slug": "giant-eagle"
+  },
+  {
+   "id": 33485,
+   "type": "akasha_relations",
+   "slug": "giant-crustacean"
+  },
+  {
+   "id": 33486,
+   "type": "akasha_relations",
+   "slug": "giant-insect"
+  },
+  {
+   "id": 33487,
+   "type": "akasha_relations",
+   "slug": "giant-corpse-crab"
+  },
+  {
+   "id": 33488,
+   "type": "akasha_relations",
+   "slug": "giant-multi-headed-dog"
+  },
+  {
+   "id": 33489,
+   "type": "akasha_relations",
+   "slug": "giant-panda"
+  },
+  {
+   "id": 33490,
+   "type": "akasha_relations",
+   "slug": "genmai"
+  },
+  {
+   "id": 33491,
+   "type": "akasha_relations",
+   "slug": "genji"
+  },
+  {
+   "id": 33492,
+   "type": "akasha_relations",
+   "slug": "giant-snake-tailed-chameleon"
+  },
+  {
+   "id": 33493,
+   "type": "akasha_relations",
+   "slug": "giant-squid"
+  },
+  {
+   "id": 33494,
+   "type": "akasha_relations",
+   "slug": "gina"
+  },
+  {
+   "id": 33495,
+   "type": "akasha_relations",
+   "slug": "giant-rhino"
+  },
+  {
+   "id": 33497,
+   "type": "akasha_relations",
+   "slug": "ginger"
+  },
+  {
+   "id": 33498,
+   "type": "akasha_relations",
+   "slug": "giberson"
+  },
+  {
+   "id": 33499,
+   "type": "akasha_relations",
+   "slug": "gine"
+  },
+  {
+   "id": 33670,
+   "type": "fiche_technique",
+   "slug": "atk-db-giant-throw"
+  },
+  {
+   "id": 33682,
+   "type": "fiche_technique",
+   "slug": "atk-db-demonic-rush"
+  },
+  {
+   "id": 33684,
+   "type": "fiche_technique",
+   "slug": "atk-db-final-strike"
+  },
+  {
+   "id": 33719,
+   "type": "fiche_technique",
+   "slug": "wind-release-verdant-mountain-gale"
+  },
+  {
+   "id": 33720,
+   "type": "fiche_technique",
+   "slug": "flashing-bell-beams"
+  },
+  {
+   "id": 33746,
+   "type": "fiche_technique",
+   "slug": "atk-db-black-frieza"
+  },
+  {
+   "id": 33754,
+   "type": "fiche_technique",
+   "slug": "atk-op-shigan"
+  },
+  {
+   "id": 33755,
+   "type": "fiche_technique",
+   "slug": "tengai-shinsei"
+  },
+  {
+   "id": 33756,
+   "type": "fiche_technique",
+   "slug": "atk-op-rankyaku"
+  },
+  {
+   "id": 33757,
+   "type": "fiche_technique",
+   "slug": "atk-op-gura-gura-no-mi-quake"
+  },
+  {
+   "id": 33758,
+   "type": "fiche_technique",
+   "slug": "atk-op-kokuto-yoru-slash"
+  },
+  {
+   "id": 33763,
+   "type": "fiche_technique",
+   "slug": "atk-db-perfect-shot"
+  },
+  {
+   "id": 33767,
+   "type": "fiche_technique",
+   "slug": "wooden-men-possession-turnover-manipulation-technique"
+  },
+  {
+   "id": 33768,
+   "type": "fiche_technique",
+   "slug": "future-telling"
+  },
+  {
+   "id": 33769,
+   "type": "fiche_technique",
+   "slug": "earth-release-earth-wave-technique"
+  },
+  {
+   "id": 33780,
+   "type": "fiche_technique",
+   "slug": "kamui-shuriken"
+  },
+  {
+   "id": 33782,
+   "type": "fiche_technique",
+   "slug": "atk-op-soru"
+  },
+  {
+   "id": 33783,
+   "type": "fiche_technique",
+   "slug": "atk-op-tekkai"
+  },
+  {
+   "id": 33784,
+   "type": "fiche_technique",
+   "slug": "atk-db-solar-kamehameha"
+  },
+  {
+   "id": 33785,
+   "type": "fiche_technique",
+   "slug": "atk-bl-some-no-mai-tsukishiro"
+  },
+  {
+   "id": 33787,
+   "type": "fiche_technique",
+   "slug": "atk-bl-final-getsuga-tensho"
+  },
+  {
+   "id": 33819,
+   "type": "akasha_relations",
+   "slug": "speedwagon-foundation-ship-captain"
+  },
+  {
+   "id": 33821,
+   "type": "akasha_relations",
+   "slug": "perospero-charlotte"
+  },
+  {
+   "id": 33822,
+   "type": "akasha_relations",
+   "slug": "condor"
+  },
+  {
+   "id": 33826,
+   "type": "akasha_relations",
+   "slug": "pappug"
+  },
+  {
+   "id": 33827,
+   "type": "akasha_relations",
+   "slug": "momonga"
+  },
+  {
+   "id": 33829,
+   "type": "akasha_relations",
+   "slug": "speedwagon-foundation-agent"
+  },
+  {
+   "id": 33830,
+   "type": "akasha_relations",
+   "slug": "toyohiro-kanedaichi"
+  },
+  {
+   "id": 33831,
+   "type": "akasha_relations",
+   "slug": "abdullah"
+  },
+  {
+   "id": 33832,
+   "type": "akasha_relations",
+   "slug": "asta"
+  },
+  {
+   "id": 33834,
+   "type": "akasha_relations",
+   "slug": "chen"
+  },
+  {
+   "id": 33836,
+   "type": "akasha_relations",
+   "slug": "jinin-akebino"
+  },
+  {
+   "id": 33837,
+   "type": "akasha_relations",
+   "slug": "kastro"
+  },
+  {
+   "id": 33839,
+   "type": "akasha_relations",
+   "slug": "yuuichi-shibata"
+  },
+  {
+   "id": 33840,
+   "type": "akasha_relations",
+   "slug": "obotchaman"
+  },
+  {
+   "id": 33841,
+   "type": "akasha_relations",
+   "slug": "goreinu"
+  },
+  {
+   "id": 33842,
+   "type": "akasha_relations",
+   "slug": "baru-uchiha"
+  },
+  {
+   "id": 33843,
+   "type": "akasha_relations",
+   "slug": "toko"
+  },
+  {
+   "id": 33844,
+   "type": "akasha_relations",
+   "slug": "zala"
+  },
+  {
+   "id": 33845,
+   "type": "akasha_relations",
+   "slug": "koltopi-tounofmaill"
+  },
+  {
+   "id": 33847,
+   "type": "akasha_relations",
+   "slug": "porunga"
+  },
+  {
+   "id": 33848,
+   "type": "akasha_relations",
+   "slug": "haredas"
+  },
+  {
+   "id": 33849,
+   "type": "akasha_relations",
+   "slug": "sedokan"
+  },
+  {
+   "id": 33850,
+   "type": "akasha_relations",
+   "slug": "tajima-uchiha"
+  },
+  {
+   "id": 33851,
+   "type": "akasha_relations",
+   "slug": "donatella-una"
+  },
+  {
+   "id": 33852,
+   "type": "akasha_relations",
+   "slug": "chizuru-honshou"
+  },
+  {
+   "id": 33853,
+   "type": "akasha_relations",
+   "slug": "gismonda"
+  },
+  {
+   "id": 33854,
+   "type": "akasha_relations",
+   "slug": "ginnosuke"
+  },
+  {
+   "id": 33855,
+   "type": "akasha_relations",
+   "slug": "giovanni"
+  },
+  {
+   "id": 33856,
+   "type": "akasha_relations",
+   "slug": "ginkaku"
+  },
+  {
+   "id": 33857,
+   "type": "akasha_relations",
+   "slug": "girarin"
+  },
+  {
+   "id": 33858,
+   "type": "akasha_relations",
+   "slug": "giolla"
+  },
+  {
+   "id": 33859,
+   "type": "akasha_relations",
+   "slug": "ginji"
+  },
+  {
+   "id": 33861,
+   "type": "akasha_relations",
+   "slug": "gladiator-hera"
+  },
+  {
+   "id": 33862,
+   "type": "akasha_relations",
+   "slug": "gloriosa"
+  },
+  {
+   "id": 33863,
+   "type": "akasha_relations",
+   "slug": "gokai"
+  },
+  {
+   "id": 33864,
+   "type": "akasha_relations",
+   "slug": "goldberg"
+  },
+  {
+   "id": 33865,
+   "type": "akasha_relations",
+   "slug": "goji"
+  },
+  {
+   "id": 33866,
+   "type": "akasha_relations",
+   "slug": "goo"
+  },
+  {
+   "id": 33867,
+   "type": "akasha_relations",
+   "slug": "googly-eyed"
+  },
+  {
+   "id": 33868,
+   "type": "akasha_relations",
+   "slug": "gitai"
+  },
+  {
+   "id": 33869,
+   "type": "akasha_relations",
+   "slug": "gorobe"
+  },
+  {
+   "id": 33870,
+   "type": "akasha_relations",
+   "slug": "goode"
+  },
+  {
+   "id": 33871,
+   "type": "akasha_relations",
+   "slug": "gongoro-kamakura"
+  },
+  {
+   "id": 33872,
+   "type": "akasha_relations",
+   "slug": "goen-jean"
+  },
+  {
+   "id": 33873,
+   "type": "akasha_relations",
+   "slug": "goshiki"
+  },
+  {
+   "id": 33874,
+   "type": "akasha_relations",
+   "slug": "gora"
+  },
+  {
+   "id": 33875,
+   "type": "akasha_relations",
+   "slug": "goki"
+  },
+  {
+   "id": 33877,
+   "type": "akasha_relations",
+   "slug": "gothic-newscaster"
+  },
+  {
+   "id": 33878,
+   "type": "akasha_relations",
+   "slug": "gotty"
+  },
+  {
+   "id": 33879,
+   "type": "akasha_relations",
+   "slug": "goza"
+  },
+  {
+   "id": 33880,
+   "type": "akasha_relations",
+   "slug": "gonbee"
+  },
+  {
+   "id": 33881,
+   "type": "akasha_relations",
+   "slug": "goteitaishi"
+  },
+  {
+   "id": 33882,
+   "type": "akasha_relations",
+   "slug": "gotta"
+  },
+  {
+   "id": 33883,
+   "type": "akasha_relations",
+   "slug": "gosunkugi"
+  },
+  {
+   "id": 34030,
+   "type": "akasha_relations",
+   "slug": "grandma-hakkake"
+  },
+  {
+   "id": 34031,
+   "type": "akasha_relations",
+   "slug": "grabar"
+  },
+  {
+   "id": 34032,
+   "type": "akasha_relations",
+   "slug": "gram"
+  },
+  {
+   "id": 34038,
+   "type": "akasha_relations",
+   "slug": "guarana"
+  },
+  {
+   "id": 34040,
+   "type": "akasha_relations",
+   "slug": "granolah"
+  },
+  {
+   "id": 34045,
+   "type": "akasha_relations",
+   "slug": "guren-prisoner"
+  },
+  {
+   "id": 34046,
+   "type": "akasha_relations",
+   "slug": "guillotine"
+  },
+  {
+   "id": 34047,
+   "type": "akasha_relations",
+   "slug": "gyogyo"
+  },
+  {
+   "id": 34048,
+   "type": "akasha_relations",
+   "slug": "gyoro"
+  },
+  {
+   "id": 34049,
+   "type": "akasha_relations",
+   "slug": "gyokuro-chabashira"
+  },
+  {
+   "id": 34050,
+   "type": "akasha_relations",
+   "slug": "gray-fly"
+  },
+  {
+   "id": 34052,
+   "type": "akasha_relations",
+   "slug": "hamlet"
+  },
+  {
+   "id": 34053,
+   "type": "akasha_relations",
+   "slug": "gyuki"
+  },
+  {
+   "id": 34054,
+   "type": "akasha_relations",
+   "slug": "hagoromo-otsutsuki"
+  },
+  {
+   "id": 34055,
+   "type": "akasha_relations",
+   "slug": "haido"
+  },
+  {
+   "id": 34056,
+   "type": "akasha_relations",
+   "slug": "gyoru"
+  },
+  {
+   "id": 34057,
+   "type": "akasha_relations",
+   "slug": "hack"
+  },
+  {
+   "id": 34058,
+   "type": "akasha_relations",
+   "slug": "hakui"
+  },
+  {
+   "id": 34059,
+   "type": "akasha_relations",
+   "slug": "hakui-medic"
+  },
+  {
+   "id": 34060,
+   "type": "akasha_relations",
+   "slug": "hamaki-mimura"
+  },
+  {
+   "id": 34061,
+   "type": "akasha_relations",
+   "slug": "hainosuke"
+  },
+  {
+   "id": 34063,
+   "type": "akasha_relations",
+   "slug": "haguruma"
+  },
+  {
+   "id": 34065,
+   "type": "akasha_relations",
+   "slug": "hammond"
+  },
+  {
+   "id": 34066,
+   "type": "akasha_relations",
+   "slug": "haie"
+  },
+  {
+   "id": 34067,
+   "type": "akasha_relations",
+   "slug": "hamura-otsutsuki"
+  },
+  {
+   "id": 34068,
+   "type": "akasha_relations",
+   "slug": "hamura-otsutsuki-golem"
+  },
+  {
+   "id": 34069,
+   "type": "akasha_relations",
+   "slug": "hangan"
+  },
+  {
+   "id": 34070,
+   "type": "akasha_relations",
+   "slug": "hanabi-hyuga"
+  },
+  {
+   "id": 34071,
+   "type": "akasha_relations",
+   "slug": "hana-student"
+  },
+  {
+   "id": 34072,
+   "type": "akasha_relations",
+   "slug": "hakkaku"
+  },
+  {
+   "id": 34073,
+   "type": "akasha_relations",
+   "slug": "hachidai"
+  },
+  {
+   "id": 34074,
+   "type": "akasha_relations",
+   "slug": "haku-s-father"
+  },
+  {
+   "id": 34075,
+   "type": "akasha_relations",
+   "slug": "hana-kaka"
+  },
+  {
+   "id": 34076,
+   "type": "akasha_relations",
+   "slug": "hanzo-one-piece"
+  },
+  {
+   "id": 34077,
+   "type": "akasha_relations",
+   "slug": "hareji"
+  },
+  {
+   "id": 34078,
+   "type": "akasha_relations",
+   "slug": "happa-yamao"
+  },
+  {
+   "id": 34079,
+   "type": "akasha_relations",
+   "slug": "haruna"
+  },
+  {
+   "id": 34080,
+   "type": "akasha_relations",
+   "slug": "hardy"
+  },
+  {
+   "id": 34081,
+   "type": "akasha_relations",
+   "slug": "happygun"
+  },
+  {
+   "id": 34082,
+   "type": "akasha_relations",
+   "slug": "harisenbon"
+  },
+  {
+   "id": 34083,
+   "type": "akasha_relations",
+   "slug": "hanzo-naruto"
+  },
+  {
+   "id": 34084,
+   "type": "akasha_relations",
+   "slug": "harumeg-charlotte"
+  },
+  {
+   "id": 34085,
+   "type": "akasha_relations",
+   "slug": "hara"
+  },
+  {
+   "id": 34086,
+   "type": "akasha_relations",
+   "slug": "harine"
+  },
+  {
+   "id": 34088,
+   "type": "akasha_relations",
+   "slug": "hatchiyack"
+  },
+  {
+   "id": 34089,
+   "type": "akasha_relations",
+   "slug": "hato"
+  },
+  {
+   "id": 34090,
+   "type": "akasha_relations",
+   "slug": "haruta"
+  },
+  {
+   "id": 34091,
+   "type": "akasha_relations",
+   "slug": "hatcha"
+  },
+  {
+   "id": 34092,
+   "type": "akasha_relations",
+   "slug": "hanzaki"
+  },
+  {
+   "id": 34093,
+   "type": "akasha_relations",
+   "slug": "haori"
+  },
+  {
+   "id": 34094,
+   "type": "akasha_relations",
+   "slug": "haru"
+  },
+  {
+   "id": 34095,
+   "type": "akasha_relations",
+   "slug": "harika-aburame"
+  },
+  {
+   "id": 34096,
+   "type": "akasha_relations",
+   "slug": "hassaku-onomichi"
+  },
+  {
+   "id": 34097,
+   "type": "akasha_relations",
+   "slug": "harusame"
+  },
+  {
+   "id": 34266,
+   "type": "akasha_relations",
+   "slug": "hayate-gekko"
+  },
+  {
+   "id": 34267,
+   "type": "akasha_relations",
+   "slug": "hayase"
+  },
+  {
+   "id": 34268,
+   "type": "akasha_relations",
+   "slug": "hawkman"
+  },
+  {
+   "id": 34280,
+   "type": "akasha_relations",
+   "slug": "head-ninja-of-kumogakure"
+  },
+  {
+   "id": 34282,
+   "type": "akasha_relations",
+   "slug": "heki"
+  },
+  {
+   "id": 34283,
+   "type": "akasha_relations",
+   "slug": "herb"
+  },
+  {
+   "id": 34284,
+   "type": "akasha_relations",
+   "slug": "heita-momoyama"
+  },
+  {
+   "id": 34285,
+   "type": "akasha_relations",
+   "slug": "hera"
+  },
+  {
+   "id": 34288,
+   "type": "akasha_relations",
+   "slug": "heiji"
+  },
+  {
+   "id": 34289,
+   "type": "akasha_relations",
+   "slug": "hebihime"
+  },
+  {
+   "id": 34290,
+   "type": "akasha_relations",
+   "slug": "higuma"
+  },
+  {
+   "id": 34291,
+   "type": "akasha_relations",
+   "slug": "hidero"
+  },
+  {
+   "id": 34292,
+   "type": "akasha_relations",
+   "slug": "higurashi-kurozumi"
+  },
+  {
+   "id": 34293,
+   "type": "akasha_relations",
+   "slug": "hiashi-hyuga"
+  },
+  {
+   "id": 34294,
+   "type": "akasha_relations",
+   "slug": "hihimaru"
+  },
+  {
+   "id": 34295,
+   "type": "akasha_relations",
+   "slug": "himeyuri"
+  },
+  {
+   "id": 34296,
+   "type": "akasha_relations",
+   "slug": "high-fat-charlotte"
+  },
+  {
+   "id": 34297,
+   "type": "akasha_relations",
+   "slug": "hewitt"
+  },
+  {
+   "id": 34298,
+   "type": "akasha_relations",
+   "slug": "hikoichi"
+  },
+  {
+   "id": 34299,
+   "type": "akasha_relations",
+   "slug": "hikaru"
+  },
+  {
+   "id": 34300,
+   "type": "akasha_relations",
+   "slug": "himatsu"
+  },
+  {
+   "id": 34301,
+   "type": "akasha_relations",
+   "slug": "himuro"
+  },
+  {
+   "id": 34302,
+   "type": "akasha_relations",
+   "slug": "hinata-hyuga"
+  },
+  {
+   "id": 34303,
+   "type": "akasha_relations",
+   "slug": "hinoki"
+  },
+  {
+   "id": 34304,
+   "type": "akasha_relations",
+   "slug": "hip"
+  },
+  {
+   "id": 34305,
+   "type": "akasha_relations",
+   "slug": "hidayu"
+  },
+  {
+   "id": 34306,
+   "type": "akasha_relations",
+   "slug": "hibari-naruto"
+  },
+  {
+   "id": 34307,
+   "type": "akasha_relations",
+   "slug": "hidari"
+  },
+  {
+   "id": 34308,
+   "type": "akasha_relations",
+   "slug": "hibari-kamakura"
+  },
+  {
+   "id": 34309,
+   "type": "akasha_relations",
+   "slug": "hikaku-uchiha"
+  },
+  {
+   "id": 34310,
+   "type": "akasha_relations",
+   "slug": "hinata-and-hanabi-s-mother"
+  },
+  {
+   "id": 34311,
+   "type": "akasha_relations",
+   "slug": "hinoto"
+  },
+  {
+   "id": 34312,
+   "type": "akasha_relations",
+   "slug": "hinoe"
+  },
+  {
+   "id": 34313,
+   "type": "akasha_relations",
+   "slug": "himushi"
+  },
+  {
+   "id": 34315,
+   "type": "akasha_relations",
+   "slug": "hiro-gomon"
+  },
+  {
+   "id": 34316,
+   "type": "akasha_relations",
+   "slug": "hippie"
+  },
+  {
+   "id": 34317,
+   "type": "akasha_relations",
+   "slug": "hippo-boss"
+  },
+  {
+   "id": 34318,
+   "type": "akasha_relations",
+   "slug": "hisen"
+  },
+  {
+   "id": 34319,
+   "type": "akasha_relations",
+   "slug": "hishaku"
+  },
+  {
+   "id": 34320,
+   "type": "akasha_relations",
+   "slug": "hiruko-missing-nin"
+  },
+  {
+   "id": 34321,
+   "type": "akasha_relations",
+   "slug": "hocha"
+  },
+  {
+   "id": 34322,
+   "type": "akasha_relations",
+   "slug": "hizashi-hyuga"
+  },
+  {
+   "id": 34323,
+   "type": "akasha_relations",
+   "slug": "hiruko-shinobi"
+  },
+  {
+   "id": 34324,
+   "type": "akasha_relations",
+   "slug": "hishita"
+  },
+  {
+   "id": 34325,
+   "type": "akasha_relations",
+   "slug": "hirudegarn"
+  },
+  {
+   "id": 34326,
+   "type": "akasha_relations",
+   "slug": "hocker"
+  },
+  {
+   "id": 34327,
+   "type": "akasha_relations",
+   "slug": "hitsugisukan"
+  },
+  {
+   "id": 34329,
+   "type": "akasha_relations",
+   "slug": "hisame"
+  },
+  {
+   "id": 34330,
+   "type": "akasha_relations",
+   "slug": "hoki-takumi"
+  },
+  {
+   "id": 34331,
+   "type": "akasha_relations",
+   "slug": "hoheto-hyuga"
+  },
+  {
+   "id": 34332,
+   "type": "akasha_relations",
+   "slug": "hoki-taketori"
+  },
+  {
+   "id": 34333,
+   "type": "akasha_relations",
+   "slug": "hoichi"
+  },
+  {
+   "id": 34334,
+   "type": "akasha_relations",
+   "slug": "hoki-watari"
+  },
+  {
+   "id": 34335,
+   "type": "akasha_relations",
+   "slug": "hoki-takigakure"
+  },
+  {
+   "id": 34336,
+   "type": "akasha_relations",
+   "slug": "hitode"
+  },
+  {
+   "id": 34337,
+   "type": "akasha_relations",
+   "slug": "hiruga"
+  },
+  {
+   "id": 34338,
+   "type": "akasha_relations",
+   "slug": "holy"
+  },
+  {
+   "id": 34486,
+   "type": "akasha_relations",
+   "slug": "hotei"
+  },
+  {
+   "id": 34487,
+   "type": "akasha_relations",
+   "slug": "horseman"
+  },
+  {
+   "id": 34488,
+   "type": "akasha_relations",
+   "slug": "hosei"
+  },
+  {
+   "id": 34489,
+   "type": "akasha_relations",
+   "slug": "hosho"
+  },
+  {
+   "id": 34490,
+   "type": "akasha_relations",
+   "slug": "honner"
+  },
+  {
+   "id": 34491,
+   "type": "akasha_relations",
+   "slug": "hototogisu"
+  },
+  {
+   "id": 34497,
+   "type": "akasha_relations",
+   "slug": "hound"
+  },
+  {
+   "id": 34499,
+   "type": "akasha_relations",
+   "slug": "hublot"
+  },
+  {
+   "id": 34500,
+   "type": "akasha_relations",
+   "slug": "howling-gab"
+  },
+  {
+   "id": 34501,
+   "type": "akasha_relations",
+   "slug": "humphrey"
+  },
+  {
+   "id": 34502,
+   "type": "akasha_relations",
+   "slug": "hozuki-castle-s-ninken"
+  },
+  {
+   "id": 34503,
+   "type": "akasha_relations",
+   "slug": "hotarubi"
+  },
+  {
+   "id": 34504,
+   "type": "akasha_relations",
+   "slug": "hot-water-daimyo"
+  },
+  {
+   "id": 34505,
+   "type": "akasha_relations",
+   "slug": "hotaru-kanisawa"
+  },
+  {
+   "id": 34506,
+   "type": "akasha_relations",
+   "slug": "human-path-character"
+  },
+  {
+   "id": 34508,
+   "type": "akasha_relations",
+   "slug": "ibusu"
+  },
+  {
+   "id": 34509,
+   "type": "akasha_relations",
+   "slug": "ichigen"
+  },
+  {
+   "id": 34510,
+   "type": "akasha_relations",
+   "slug": "ideaman"
+  },
+  {
+   "id": 34511,
+   "type": "akasha_relations",
+   "slug": "ibushi"
+  },
+  {
+   "id": 34512,
+   "type": "akasha_relations",
+   "slug": "ian"
+  },
+  {
+   "id": 34513,
+   "type": "akasha_relations",
+   "slug": "hyoi-yorishiro"
+  },
+  {
+   "id": 34514,
+   "type": "akasha_relations",
+   "slug": "ibuse"
+  },
+  {
+   "id": 34515,
+   "type": "akasha_relations",
+   "slug": "hyoutauros"
+  },
+  {
+   "id": 34516,
+   "type": "akasha_relations",
+   "slug": "ichirota-oniyuzu"
+  },
+  {
+   "id": 34517,
+   "type": "akasha_relations",
+   "slug": "ichi"
+  },
+  {
+   "id": 34518,
+   "type": "akasha_relations",
+   "slug": "iggy-naruto"
+  },
+  {
+   "id": 34519,
+   "type": "akasha_relations",
+   "slug": "hyuga-elder"
+  },
+  {
+   "id": 34520,
+   "type": "akasha_relations",
+   "slug": "hyo"
+  },
+  {
+   "id": 34521,
+   "type": "akasha_relations",
+   "slug": "hyouzou"
+  },
+  {
+   "id": 34522,
+   "type": "akasha_relations",
+   "slug": "ikaros-much"
+  },
+  {
+   "id": 34523,
+   "type": "akasha_relations",
+   "slug": "indigo"
+  },
+  {
+   "id": 34524,
+   "type": "akasha_relations",
+   "slug": "ikkyu-madoka"
+  },
+  {
+   "id": 34525,
+   "type": "akasha_relations",
+   "slug": "inbi"
+  },
+  {
+   "id": 34526,
+   "type": "akasha_relations",
+   "slug": "indra-otsutsuki"
+  },
+  {
+   "id": 34527,
+   "type": "akasha_relations",
+   "slug": "hyogo"
+  },
+  {
+   "id": 34528,
+   "type": "akasha_relations",
+   "slug": "ibara"
+  },
+  {
+   "id": 34529,
+   "type": "akasha_relations",
+   "slug": "ikkaku-umino"
+  },
+  {
+   "id": 34530,
+   "type": "akasha_relations",
+   "slug": "inaho"
+  },
+  {
+   "id": 34532,
+   "type": "akasha_relations",
+   "slug": "inukai"
+  },
+  {
+   "id": 34533,
+   "type": "akasha_relations",
+   "slug": "iroha-hyuga"
+  },
+  {
+   "id": 34534,
+   "type": "akasha_relations",
+   "slug": "inori"
+  },
+  {
+   "id": 34535,
+   "type": "akasha_relations",
+   "slug": "inoichibannosuke"
+  },
+  {
+   "id": 34536,
+   "type": "akasha_relations",
+   "slug": "io-bamboo-village"
+  },
+  {
+   "id": 34537,
+   "type": "akasha_relations",
+   "slug": "ipponume"
+  },
+  {
+   "id": 34538,
+   "type": "akasha_relations",
+   "slug": "iroha-genin"
+  },
+  {
+   "id": 34539,
+   "type": "akasha_relations",
+   "slug": "isa"
+  },
+  {
+   "id": 34540,
+   "type": "akasha_relations",
+   "slug": "inhel"
+  },
+  {
+   "id": 34541,
+   "type": "akasha_relations",
+   "slug": "io"
+  },
+  {
+   "id": 34542,
+   "type": "akasha_relations",
+   "slug": "ishidate"
+  },
+  {
+   "id": 34543,
+   "type": "akasha_relations",
+   "slug": "io-medical-nin"
+  },
+  {
+   "id": 34544,
+   "type": "akasha_relations",
+   "slug": "iori"
+  },
+  {
+   "id": 34545,
+   "type": "akasha_relations",
+   "slug": "isari-funato"
+  },
+  {
+   "id": 34546,
+   "type": "akasha_relations",
+   "slug": "ishikawa"
+  },
+  {
+   "id": 34547,
+   "type": "akasha_relations",
+   "slug": "isaac-jr-moon"
+  },
+  {
+   "id": 34548,
+   "type": "akasha_relations",
+   "slug": "inomatsu"
+  },
+  {
+   "id": 34683,
+   "type": "fiche_technique",
+   "slug": "sword-of-kusanagi-longsword-of-the-sky"
+  },
+  {
+   "id": 34684,
+   "type": "fiche_technique",
+   "slug": "summoning-triple-rashomon"
+  },
+  {
+   "id": 34685,
+   "type": "fiche_technique",
+   "slug": "earth-release-shadow-clone"
+  },
+  {
+   "id": 34687,
+   "type": "fiche_technique",
+   "slug": "gelel-laser"
+  },
+  {
+   "id": 34690,
+   "type": "fiche_technique",
+   "slug": "mystic-safety-bell-seal-release"
+  },
+  {
+   "id": 34692,
+   "type": "fiche_technique",
+   "slug": "atk-db-gigantic-rock-throw"
+  },
+  {
+   "id": 34696,
+   "type": "fiche_technique",
+   "slug": "sandstorm-barrier"
+  },
+  {
+   "id": 34697,
+   "type": "fiche_technique",
+   "slug": "blood-needle"
+  },
+  {
+   "id": 34698,
+   "type": "fiche_technique",
+   "slug": "temple-of-nirvana-technique"
+  },
+  {
+   "id": 34699,
+   "type": "fiche_technique",
+   "slug": "chakra-entity"
+  },
+  {
+   "id": 34700,
+   "type": "fiche_technique",
+   "slug": "insect-webbing"
+  },
+  {
+   "id": 34701,
+   "type": "fiche_technique",
+   "slug": "wind-release-flag-current"
+  },
+  {
+   "id": 34702,
+   "type": "fiche_technique",
+   "slug": "ice-release-earthen-consecutive-chains-of-ice"
+  },
+  {
+   "id": 34703,
+   "type": "fiche_technique",
+   "slug": "transparent-escape-technique"
+  },
+  {
+   "id": 34704,
+   "type": "fiche_technique",
+   "slug": "sound-wave-technique"
+  },
+  {
+   "id": 34706,
+   "type": "fiche_technique",
+   "slug": "atk-db-golden-death-beam"
+  },
+  {
+   "id": 34707,
+   "type": "fiche_technique",
+   "slug": "atk-db-death-laser"
+  },
+  {
+   "id": 34708,
+   "type": "fiche_technique",
+   "slug": "atk-db-combined-masenko"
+  },
+  {
+   "id": 34709,
+   "type": "fiche_technique",
+   "slug": "atk-db-amazing-impact"
+  },
+  {
+   "id": 34712,
+   "type": "fiche_technique",
+   "slug": "atk-db-brave-punisher"
+  },
+  {
+   "id": 34714,
+   "type": "fiche_technique",
+   "slug": "atk-bl-kamisori-benihime"
+  },
+  {
+   "id": 34715,
+   "type": "fiche_technique",
+   "slug": "gohan-ultimate"
+  },
+  {
+   "id": 34719,
+   "type": "fiche_technique",
+   "slug": "toad-sword-beheading"
+  },
+  {
+   "id": 34720,
+   "type": "fiche_technique",
+   "slug": "atk-db-energy-palm"
+  },
+  {
+   "id": 34721,
+   "type": "fiche_technique",
+   "slug": "atk-bl-utsusemi"
+  },
+  {
+   "id": 34722,
+   "type": "fiche_technique",
+   "slug": "atk-db-dirty-fireworks"
+  },
+  {
+   "id": 34723,
+   "type": "fiche_technique",
+   "slug": "chakra-liquid"
+  },
+  {
+   "id": 34724,
+   "type": "fiche_technique",
+   "slug": "blinding-bubbles-technique"
+  },
+  {
+   "id": 34725,
+   "type": "fiche_technique",
+   "slug": "protective-sphere-of-light"
+  },
+  {
+   "id": 34726,
+   "type": "fiche_technique",
+   "slug": "transmission-wood"
+  },
+  {
+   "id": 34727,
+   "type": "fiche_technique",
+   "slug": "combination-transformation"
+  },
+  {
+   "id": 34728,
+   "type": "fiche_technique",
+   "slug": "atk-bl-bushogoma"
+  },
+  {
+   "id": 34729,
+   "type": "fiche_technique",
+   "slug": "parasitic-destruction-insect-technique"
+  },
+  {
+   "id": 34730,
+   "type": "fiche_technique",
+   "slug": "water-release-tearing-torrent"
+  },
+  {
+   "id": 34731,
+   "type": "fiche_technique",
+   "slug": "super-buu"
+  },
+  {
+   "id": 34734,
+   "type": "fiche_technique",
+   "slug": "gotenks-ssj3"
+  },
+  {
+   "id": 34735,
+   "type": "fiche_technique",
+   "slug": "fire-release-great-flame-technique"
+  },
+  {
+   "id": 34736,
+   "type": "fiche_technique",
+   "slug": "atk-bl-cero-metralleta"
+  },
+  {
+   "id": 34737,
+   "type": "fiche_technique",
+   "slug": "atk-bl-garra-de-la-pantera"
+  },
+  {
+   "id": 34738,
+   "type": "fiche_technique",
+   "slug": "frog-kata"
+  },
+  {
+   "id": 34739,
+   "type": "fiche_technique",
+   "slug": "barrier-releasing-technique"
+  },
+  {
+   "id": 34740,
+   "type": "fiche_technique",
+   "slug": "gotenks-ssj"
+  },
+  {
+   "id": 34741,
+   "type": "fiche_technique",
+   "slug": "atk-db-final-god-explosion"
+  },
+  {
+   "id": 34742,
+   "type": "fiche_technique",
+   "slug": "atk-db-instant-kamehameha"
+  },
+  {
+   "id": 34744,
+   "type": "fiche_technique",
+   "slug": "fire-release-ash-pile-burning"
+  },
+  {
+   "id": 34745,
+   "type": "fiche_technique",
+   "slug": "atk-db-fire-breath"
+  },
+  {
+   "id": 34746,
+   "type": "fiche_technique",
+   "slug": "sage-art-wood-release-true-several-thousand-hands"
+  },
+  {
+   "id": 34747,
+   "type": "fiche_technique",
+   "slug": "frog-strike"
+  },
+  {
+   "id": 34748,
+   "type": "fiche_technique",
+   "slug": "fire-release-blazing-meteors"
+  },
+  {
+   "id": 34752,
+   "type": "fiche_technique",
+   "slug": "shrine-seal"
+  },
+  {
+   "id": 34753,
+   "type": "fiche_technique",
+   "slug": "gogeta-ssjb"
+  },
+  {
+   "id": 34754,
+   "type": "fiche_technique",
+   "slug": "gogeta-ssj4"
+  },
+  {
+   "id": 34755,
+   "type": "fiche_technique",
+   "slug": "majin-buu-gotenks"
+  },
+  {
+   "id": 34756,
+   "type": "fiche_technique",
+   "slug": "majin-buu-gohan"
+  },
+  {
+   "id": 34757,
+   "type": "fiche_technique",
+   "slug": "fire-release-fire-dragon-bullet"
+  },
+  {
+   "id": 34758,
+   "type": "fiche_technique",
+   "slug": "atk-db-forced-spirit-fission"
+  },
+  {
+   "id": 34759,
+   "type": "fiche_technique",
+   "slug": "atk-db-jumping-energy-wave"
+  },
+  {
+   "id": 34760,
+   "type": "fiche_technique",
+   "slug": "super-janemba"
+  },
+  {
+   "id": 34761,
+   "type": "fiche_technique",
+   "slug": "multiple-string-light-formation"
+  },
+  {
+   "id": 34762,
+   "type": "fiche_technique",
+   "slug": "lightning-burial-banquet-of-lightning"
+  },
+  {
+   "id": 34763,
+   "type": "fiche_technique",
+   "slug": "lightning-strike-armour"
+  },
+  {
+   "id": 34764,
+   "type": "fiche_technique",
+   "slug": "mutually-multiplying-explosive-tags"
+  },
+  {
+   "id": 34765,
+   "type": "fiche_technique",
+   "slug": "atk-db-perfect-combination"
+  },
+  {
+   "id": 34766,
+   "type": "fiche_technique",
+   "slug": "atk-db-final-burst-cannon"
+  },
+  {
+   "id": 34767,
+   "type": "fiche_technique",
+   "slug": "atk-db-spirit-control"
+  },
+  {
+   "id": 34768,
+   "type": "fiche_technique",
+   "slug": "boruto-stream"
+  },
+  {
+   "id": 34769,
+   "type": "fiche_technique",
+   "slug": "origami-replacement-technique"
+  },
+  {
+   "id": 34770,
+   "type": "fiche_technique",
+   "slug": "flying-thunder-formation-technique"
+  },
+  {
+   "id": 34771,
+   "type": "fiche_technique",
+   "slug": "susanoo-captive-slash"
+  },
+  {
+   "id": 34772,
+   "type": "fiche_technique",
+   "slug": "surging-fire-wild-dance"
+  },
+  {
+   "id": 34773,
+   "type": "fiche_technique",
+   "slug": "flying-thunder-god-mutually-instantaneous-revolving-technique"
+  },
+  {
+   "id": 34774,
+   "type": "fiche_technique",
+   "slug": "black-iron-fist"
+  },
+  {
+   "id": 34775,
+   "type": "fiche_technique",
+   "slug": "student-and-teacher-rasengan"
+  },
+  {
+   "id": 34776,
+   "type": "fiche_technique",
+   "slug": "super-compression-rasengan"
+  },
+  {
+   "id": 34777,
+   "type": "fiche_technique",
+   "slug": "susanoo-chidori"
+  },
+  {
+   "id": 34778,
+   "type": "fiche_technique",
+   "slug": "contract-seal"
+  },
+  {
+   "id": 34779,
+   "type": "fiche_technique",
+   "slug": "claw-creation-technique"
+  },
+  {
+   "id": 34780,
+   "type": "fiche_technique",
+   "slug": "temporal-rewind"
+  },
+  {
+   "id": 34781,
+   "type": "fiche_technique",
+   "slug": "twin-rising-dragons"
+  },
+  {
+   "id": 34782,
+   "type": "fiche_technique",
+   "slug": "spiked-human-bullet-tank"
+  },
+  {
+   "id": 34783,
+   "type": "fiche_technique",
+   "slug": "atk-db-finger-blitz-barrage"
+  },
+  {
+   "id": 34784,
+   "type": "fiche_technique",
+   "slug": "earth-release-practice-brick-technique"
+  },
+  {
+   "id": 34785,
+   "type": "fiche_technique",
+   "slug": "water-release-four-sharks-rain"
+  },
+  {
+   "id": 34786,
+   "type": "fiche_technique",
+   "slug": "susanoo-great-fireball-technique"
+  },
+  {
+   "id": 34787,
+   "type": "fiche_technique",
+   "slug": "susanoo-fist"
+  },
+  {
+   "id": 34788,
+   "type": "fiche_technique",
+   "slug": "summoning-technique-baku"
+  },
+  {
+   "id": 34790,
+   "type": "fiche_technique",
+   "slug": "atk-db-genocide-breaker"
+  },
+  {
+   "id": 34791,
+   "type": "fiche_technique",
+   "slug": "atk-db-finish-buster"
+  },
+  {
+   "id": 34792,
+   "type": "fiche_technique",
+   "slug": "atk-db-magic-materialization"
+  },
+  {
+   "id": 34793,
+   "type": "fiche_technique",
+   "slug": "water-release-water-forge-technique"
+  },
+  {
+   "id": 34794,
+   "type": "fiche_technique",
+   "slug": "lightning-release-chakra-mode"
+  },
+  {
+   "id": 34795,
+   "type": "fiche_technique",
+   "slug": "sound-four-summoning-four-beasts-encirclement-formation"
+  },
+  {
+   "id": 34796,
+   "type": "fiche_technique",
+   "slug": "wind-waves"
+  },
+  {
+   "id": 34797,
+   "type": "fiche_technique",
+   "slug": "wind-release-vacuum-wave"
+  },
+  {
+   "id": 34798,
+   "type": "fiche_technique",
+   "slug": "water-release-cold-sky-water-attack"
+  },
+  {
+   "id": 34799,
+   "type": "fiche_technique",
+   "slug": "wood-release-nativity-of-a-sea-of-trees"
+  },
+  {
+   "id": 34800,
+   "type": "fiche_technique",
+   "slug": "atk-db-final-galick-cannon"
+  },
+  {
+   "id": 34801,
+   "type": "fiche_technique",
+   "slug": "sword-of-kagutsuchi"
+  },
+  {
+   "id": 34803,
+   "type": "fiche_technique",
+   "slug": "atk-db-galaxy-breaker"
+  },
+  {
+   "id": 34804,
+   "type": "fiche_technique",
+   "slug": "atk-db-scattering-bullet"
+  },
+  {
+   "id": 34805,
+   "type": "akasha_relations",
+   "slug": "islewan"
+  },
+  {
+   "id": 34806,
+   "type": "fiche_technique",
+   "slug": "atk-db-god-final-kamehameha"
+  },
+  {
+   "id": 34807,
+   "type": "akasha_relations",
+   "slug": "isoka"
+  },
+  {
+   "id": 34808,
+   "type": "akasha_relations",
+   "slug": "itachi-s-crow"
+  },
+  {
+   "id": 34809,
+   "type": "akasha_relations",
+   "slug": "isshiki-otsutsuki"
+  },
+  {
+   "id": 34810,
+   "type": "fiche_technique",
+   "slug": "conch-cannon"
+  },
+  {
+   "id": 34811,
+   "type": "akasha_relations",
+   "slug": "isono"
+  },
+  {
+   "id": 34812,
+   "type": "fiche_technique",
+   "slug": "thousand-bee-stings-technique"
+  },
+  {
+   "id": 34815,
+   "type": "akasha_relations",
+   "slug": "iwaji"
+  },
+  {
+   "id": 34816,
+   "type": "akasha_relations",
+   "slug": "iwakyo"
+  }
+ ],
+ "ecartes": [
+  {
+   "id": 50,
+   "type": "fiche_section",
+   "slug": "yamcha",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 59,
+   "type": "fiche_section",
+   "slug": "ten-shin-han",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 355,
+   "type": "fiche_section",
+   "slug": "isaac-netero",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 380,
+   "type": "fiche_section",
+   "slug": "neferpitou",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 3516,
+   "type": "akasha_relations",
+   "slug": "magellan",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 3518,
+   "type": "akasha_relations",
+   "slug": "baby",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 3522,
+   "type": "akasha_relations",
+   "slug": "yagura-karatachi",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 3526,
+   "type": "akasha_relations",
+   "slug": "samui",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 3948,
+   "type": "akasha_relations",
+   "slug": "sakumo-hatake",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4468,
+   "type": "fiche_section",
+   "slug": "natsuki-mogi",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4469,
+   "type": "fiche_section",
+   "slug": "natsuki-mogi",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4481,
+   "type": "fiche_section",
+   "slug": "natsuki-mogi",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4539,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "motif non classé"
+  },
+  {
+   "id": 4544,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "motif non classé"
+  },
+  {
+   "id": 4555,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "motif non classé"
+  },
+  {
+   "id": 4654,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4655,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4656,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4657,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4658,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4659,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4660,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4661,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4662,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4663,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4664,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4665,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4666,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4667,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4668,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4669,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 4670,
+   "type": "arbitrage_claude",
+   "slug": null,
+   "motif": "motif non classé"
+  },
+  {
+   "id": 4698,
+   "type": "akasha_relations",
+   "slug": "ginzou-kaneboshi",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 4768,
+   "type": "akasha_relations",
+   "slug": "zenou",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4790,
+   "type": "akasha_relations",
+   "slug": "jinzouningen-8-gou",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 4796,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 4797,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 4801,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 4802,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 4803,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 4804,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 4823,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 4869,
+   "type": "fiche_section",
+   "slug": "leorio",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 4884,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 4905,
+   "type": "fiche_section",
+   "slug": "neferpitou",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 4927,
+   "type": "fiche_section",
+   "slug": "biscuit-krueger",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 4942,
+   "type": "fiche_section",
+   "slug": "komugi",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 4944,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 4957,
+   "type": "fiche_section",
+   "slug": "ging-freecss",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 4969,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 4971,
+   "type": "fiche_section",
+   "slug": "knuckle-bine",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 4988,
+   "type": "fiche_section",
+   "slug": "knuckle-bine",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 4989,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5011,
+   "type": "fiche_section",
+   "slug": "pariston-hill",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5033,
+   "type": "fiche_section",
+   "slug": "zeno-zoldyck",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5046,
+   "type": "fiche_section",
+   "slug": "shalnark-ryuseih",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5068,
+   "type": "fiche_section",
+   "slug": "canary",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5069,
+   "type": "fiche_section",
+   "slug": "canary",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5084,
+   "type": "fiche_section",
+   "slug": "tonpa",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5105,
+   "type": "fiche_section",
+   "slug": "beans",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5190,
+   "type": "fiche_section",
+   "slug": "bruno-bucciarati",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5219,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5252,
+   "type": "fiche_section",
+   "slug": "okuyasu-nijimura",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5263,
+   "type": "fiche_section",
+   "slug": "okuyasu-nijimura",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5272,
+   "type": "fiche_section",
+   "slug": "koichi-hirose",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5330,
+   "type": "fiche_section",
+   "slug": "rudol-von-stroheim",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5364,
+   "type": "fiche_section",
+   "slug": "narciso-anasui",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5391,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5415,
+   "type": "fiche_section",
+   "slug": "reimi-sugimoto",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5417,
+   "type": "fiche_section",
+   "slug": "hol-horse",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5418,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5420,
+   "type": "fiche_section",
+   "slug": "hol-horse",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5437,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5465,
+   "type": "fiche_section",
+   "slug": "rukia-kuchiki",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5469,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5473,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5485,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5489,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5499,
+   "type": "fiche_section",
+   "slug": "grimmjow",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5500,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5505,
+   "type": "fiche_section",
+   "slug": "shunsui-jirou-sakuranosuke-kyouraku",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5509,
+   "type": "fiche_section",
+   "slug": "grimmjow",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5510,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5526,
+   "type": "fiche_section",
+   "slug": "renji-abarai",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5553,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5568,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5569,
+   "type": "fiche_section",
+   "slug": "kon",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5600,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5618,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5630,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5665,
+   "type": "fiche_section",
+   "slug": "jinzouningen-18-gou",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5667,
+   "type": "fiche_section",
+   "slug": "beerus",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5674,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5689,
+   "type": "fiche_section",
+   "slug": "meleoron",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5693,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5712,
+   "type": "fiche_section",
+   "slug": "pokkle",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5717,
+   "type": "fiche_section",
+   "slug": "gyro",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5728,
+   "type": "fiche_section",
+   "slug": "mito-freecss",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5736,
+   "type": "fiche_section",
+   "slug": "cheadle-yorkshire",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5737,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5742,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5746,
+   "type": "fiche_section",
+   "slug": "hanzo",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5757,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5766,
+   "type": "fiche_section",
+   "slug": "koala",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5767,
+   "type": "fiche_section",
+   "slug": "colt",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5768,
+   "type": "fiche_section",
+   "slug": "pike",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5778,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5785,
+   "type": "fiche_section",
+   "slug": "basho",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5786,
+   "type": "fiche_section",
+   "slug": "leol",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5787,
+   "type": "fiche_section",
+   "slug": "leol",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5788,
+   "type": "fiche_section",
+   "slug": "kikyo-zoldyck",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5790,
+   "type": "fiche_section",
+   "slug": "rammot",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5791,
+   "type": "fiche_section",
+   "slug": "koltopi-tounofmaill",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5792,
+   "type": "fiche_section",
+   "slug": "asta",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5793,
+   "type": "fiche_section",
+   "slug": "binolt",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5794,
+   "type": "fiche_section",
+   "slug": "sub",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5795,
+   "type": "fiche_section",
+   "slug": "yunju",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5796,
+   "type": "fiche_section",
+   "slug": "agon",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5797,
+   "type": "fiche_section",
+   "slug": "gereta",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5798,
+   "type": "fiche_section",
+   "slug": "breath-of-archangel",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5800,
+   "type": "fiche_section",
+   "slug": "kanzai",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5801,
+   "type": "fiche_section",
+   "slug": "bara",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5802,
+   "type": "fiche_section",
+   "slug": "bara",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5803,
+   "type": "fiche_section",
+   "slug": "bara",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5804,
+   "type": "fiche_section",
+   "slug": "abengane",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5805,
+   "type": "fiche_section",
+   "slug": "small-bear",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5806,
+   "type": "fiche_section",
+   "slug": "pig",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5808,
+   "type": "fiche_section",
+   "slug": "zebro",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5809,
+   "type": "fiche_section",
+   "slug": "kiriko",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5810,
+   "type": "fiche_section",
+   "slug": "zebro",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5811,
+   "type": "fiche_section",
+   "slug": "puhat",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5812,
+   "type": "fiche_section",
+   "slug": "bat",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5813,
+   "type": "fiche_section",
+   "slug": "bat",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5814,
+   "type": "fiche_section",
+   "slug": "ming-jol-ik",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5815,
+   "type": "fiche_section",
+   "slug": "marcos",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5816,
+   "type": "fiche_section",
+   "slug": "nickes",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5817,
+   "type": "fiche_section",
+   "slug": "linssen",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5818,
+   "type": "fiche_section",
+   "slug": "saiyuu",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5819,
+   "type": "fiche_section",
+   "slug": "tsezguerra",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5820,
+   "type": "fiche_section",
+   "slug": "cluck",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5821,
+   "type": "fiche_section",
+   "slug": "saccho-kobayakawa",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5822,
+   "type": "fiche_section",
+   "slug": "saccho-kobayakawa",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5823,
+   "type": "fiche_section",
+   "slug": "rhino",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5824,
+   "type": "fiche_section",
+   "slug": "gungi",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5825,
+   "type": "fiche_section",
+   "slug": "bushidora-ambitious",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5826,
+   "type": "fiche_section",
+   "slug": "sengi-guild-agent",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5829,
+   "type": "fiche_section",
+   "slug": "uryu-ishida",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5835,
+   "type": "fiche_section",
+   "slug": "genryusai-yamamoto",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5843,
+   "type": "fiche_section",
+   "slug": "ryuuken-ishida",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5844,
+   "type": "fiche_section",
+   "slug": "ryuuken-ishida",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5847,
+   "type": "fiche_section",
+   "slug": "ryuuken-ishida",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5848,
+   "type": "fiche_section",
+   "slug": "ryuuken-ishida",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5849,
+   "type": "fiche_section",
+   "slug": "ryuuken-ishida",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5856,
+   "type": "fiche_section",
+   "slug": "ururu-tsumugiya",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5858,
+   "type": "fiche_section",
+   "slug": "keigo-asano",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5859,
+   "type": "fiche_section",
+   "slug": "ururu-tsumugiya",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5860,
+   "type": "fiche_section",
+   "slug": "ururu-tsumugiya",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5861,
+   "type": "fiche_section",
+   "slug": "keigo-asano",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5865,
+   "type": "fiche_section",
+   "slug": "ururu-tsumugiya",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5867,
+   "type": "fiche_section",
+   "slug": "wonderweiss-margela",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 5868,
+   "type": "fiche_section",
+   "slug": "yuzu-kurosaki",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5869,
+   "type": "fiche_section",
+   "slug": "lilynette-gingerback",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5871,
+   "type": "fiche_section",
+   "slug": "aaroniero-arruruerie",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5873,
+   "type": "fiche_section",
+   "slug": "nozomi-kujo",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5875,
+   "type": "fiche_section",
+   "slug": "ganju-shiba",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5876,
+   "type": "fiche_section",
+   "slug": "yukio-hans-vorarlberna",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5877,
+   "type": "fiche_section",
+   "slug": "shuusuke-amagai",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5878,
+   "type": "fiche_section",
+   "slug": "hisana-kuchiki",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5881,
+   "type": "fiche_section",
+   "slug": "ikumi-unagiya",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5882,
+   "type": "fiche_section",
+   "slug": "charlotte-chuhlhourne",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 5883,
+   "type": "fiche_section",
+   "slug": "roujuurou-otoribashi",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5884,
+   "type": "fiche_section",
+   "slug": "roujuurou-otoribashi",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5885,
+   "type": "fiche_section",
+   "slug": "mizuiro-kojima",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5886,
+   "type": "fiche_section",
+   "slug": "mizuiro-kojima",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5887,
+   "type": "fiche_section",
+   "slug": "hachigen-ushouda",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 5895,
+   "type": "fiche_section",
+   "slug": "ging-freecss",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 5896,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5919,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5946,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 5995,
+   "type": "fiche_section",
+   "slug": "king-vegeta",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 6042,
+   "type": "fiche_section",
+   "slug": "mighty-mask",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 6045,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 6056,
+   "type": "fiche_section",
+   "slug": "balda",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 6057,
+   "type": "fiche_section",
+   "slug": "bara",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 6066,
+   "type": "fiche_section",
+   "slug": "baro",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 8246,
+   "type": "fiche_section",
+   "slug": "muten-roushi",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 8247,
+   "type": "fiche_section",
+   "slug": "mr-popo",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 8254,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8284,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8288,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8289,
+   "type": "fiche_section",
+   "slug": "nappa",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 8290,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8312,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8338,
+   "type": "fiche_section",
+   "slug": "binolt",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 8339,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8363,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8366,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8371,
+   "type": "fiche_section",
+   "slug": "otokosuki",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 8383,
+   "type": "fiche_section",
+   "slug": "oolong",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 8384,
+   "type": "fiche_section",
+   "slug": "otokosuki",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 8412,
+   "type": "fiche_section",
+   "slug": "piiza",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 8415,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8417,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8465,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8508,
+   "type": "fiche_section",
+   "slug": "princess-snake",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 8512,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8514,
+   "type": "fiche_section",
+   "slug": "pui-pui",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 8518,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8529,
+   "type": "fiche_section",
+   "slug": "sharpner",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 8586,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8678,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8719,
+   "type": "fiche_section",
+   "slug": "ming-jol-ik",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 8742,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8799,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8823,
+   "type": "fiche_section",
+   "slug": "kiriko",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 8832,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8855,
+   "type": "fiche_section",
+   "slug": "latarza",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 8864,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8909,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8974,
+   "type": "fiche_section",
+   "slug": "fanfan",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 8975,
+   "type": "fiche_section",
+   "slug": "drum",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 8976,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8977,
+   "type": "fiche_section",
+   "slug": "gala",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 8980,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8981,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 8991,
+   "type": "fiche_section",
+   "slug": "general-blue",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 8993,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9001,
+   "type": "fiche_section",
+   "slug": "general-blue",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 9005,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9007,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9009,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9010,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9011,
+   "type": "fiche_section",
+   "slug": "general-blue",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 9015,
+   "type": "fiche_section",
+   "slug": "mizaistom-nana",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9016,
+   "type": "fiche_section",
+   "slug": "teradein-neutral",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9019,
+   "type": "fiche_section",
+   "slug": "nanika",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9021,
+   "type": "fiche_section",
+   "slug": "bonolenov-ndongo",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 9023,
+   "type": "fiche_section",
+   "slug": "nickes",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9027,
+   "type": "fiche_section",
+   "slug": "bonolenov-ndongo",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9028,
+   "type": "fiche_section",
+   "slug": "bonolenov-ndongo",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 9030,
+   "type": "fiche_section",
+   "slug": "sanbica-norton",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9032,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9033,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9034,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9037,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9039,
+   "type": "fiche_section",
+   "slug": "bonolenov-ndongo",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 9045,
+   "type": "fiche_section",
+   "slug": "neon-nostrade",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9046,
+   "type": "fiche_section",
+   "slug": "light-nostrade",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9047,
+   "type": "fiche_section",
+   "slug": "light-nostrade",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 9048,
+   "type": "fiche_section",
+   "slug": "sister-ortho",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9049,
+   "type": "fiche_section",
+   "slug": "neon-nostrade",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9055,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9056,
+   "type": "fiche_section",
+   "slug": "neon-nostrade",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9058,
+   "type": "fiche_section",
+   "slug": "sister-ortho",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9063,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9064,
+   "type": "fiche_section",
+   "slug": "neon-nostrade",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9077,
+   "type": "fiche_section",
+   "slug": "peggy",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9080,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9087,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9089,
+   "type": "fiche_section",
+   "slug": "pike",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9091,
+   "type": "fiche_section",
+   "slug": "pig",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 9099,
+   "type": "fiche_section",
+   "slug": "puhat",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 9101,
+   "type": "fiche_section",
+   "slug": "ponzu",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9105,
+   "type": "fiche_section",
+   "slug": "puhat",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9106,
+   "type": "fiche_section",
+   "slug": "ponzu",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9110,
+   "type": "fiche_section",
+   "slug": "rammot",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9115,
+   "type": "fiche_section",
+   "slug": "pyon",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9118,
+   "type": "fiche_section",
+   "slug": "rhino",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 9122,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9124,
+   "type": "fiche_section",
+   "slug": "riehlvelt",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 9128,
+   "type": "fiche_section",
+   "slug": "shalnark-ryuseih",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9137,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9139,
+   "type": "fiche_section",
+   "slug": "razor",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9140,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9141,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9174,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "motif non classé"
+  },
+  {
+   "id": 9205,
+   "type": "fiche_section",
+   "slug": "saiyuu",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 9236,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9237,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9309,
+   "type": "fiche_section",
+   "slug": "piano",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 9323,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9380,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9502,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9517,
+   "type": "fiche_section",
+   "slug": "sherman-priest",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9518,
+   "type": "fiche_section",
+   "slug": "shura",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 9523,
+   "type": "fiche_section",
+   "slug": "sherman-priest",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9524,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9534,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9558,
+   "type": "fiche_section",
+   "slug": "staff-officer-black",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 9559,
+   "type": "fiche_section",
+   "slug": "staff-officer-black",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9574,
+   "type": "fiche_section",
+   "slug": "yuichi-tachibana",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 9590,
+   "type": "fiche_section",
+   "slug": "akio",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9593,
+   "type": "fiche_section",
+   "slug": "papa",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9596,
+   "type": "fiche_section",
+   "slug": "miki",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 9597,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9611,
+   "type": "fiche_section",
+   "slug": "giru",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9612,
+   "type": "fiche_section",
+   "slug": "midori-yamabuki",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9614,
+   "type": "fiche_section",
+   "slug": "baby",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9631,
+   "type": "fiche_section",
+   "slug": "baby",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 9632,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9633,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9634,
+   "type": "fiche_section",
+   "slug": "baby",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 9653,
+   "type": "fiche_section",
+   "slug": "gale",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9657,
+   "type": "fiche_section",
+   "slug": "dr-myu",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9668,
+   "type": "fiche_section",
+   "slug": "ledgic",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9679,
+   "type": "fiche_section",
+   "slug": "mutchy-motchy",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 9703,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9738,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9772,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9851,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9873,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9876,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9911,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9956,
+   "type": "fiche_section",
+   "slug": "jiren",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 9975,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 9976,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10008,
+   "type": "fiche_section",
+   "slug": "koitsukai",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10009,
+   "type": "fiche_section",
+   "slug": "sanka-ku",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 10013,
+   "type": "fiche_section",
+   "slug": "sanka-ku",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10019,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10025,
+   "type": "fiche_section",
+   "slug": "koitsukai",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10027,
+   "type": "fiche_section",
+   "slug": "sanka-ku",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 10028,
+   "type": "fiche_section",
+   "slug": "kunshi",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10040,
+   "type": "fiche_section",
+   "slug": "liquiir",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10041,
+   "type": "fiche_section",
+   "slug": "lilibeu",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10046,
+   "type": "fiche_section",
+   "slug": "liquiir",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10049,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10061,
+   "type": "fiche_section",
+   "slug": "maji-kayo",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10063,
+   "type": "fiche_section",
+   "slug": "majora",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10069,
+   "type": "fiche_section",
+   "slug": "maki",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10073,
+   "type": "fiche_section",
+   "slug": "methiop",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10089,
+   "type": "fiche_section",
+   "slug": "monaka",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10090,
+   "type": "fiche_section",
+   "slug": "monna",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 10093,
+   "type": "fiche_section",
+   "slug": "monaka",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10098,
+   "type": "fiche_section",
+   "slug": "murichim",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10100,
+   "type": "fiche_section",
+   "slug": "murichim",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10108,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10109,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10118,
+   "type": "fiche_section",
+   "slug": "oregano",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10125,
+   "type": "fiche_section",
+   "slug": "panchia",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10126,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10127,
+   "type": "fiche_section",
+   "slug": "panchia",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10128,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10139,
+   "type": "fiche_section",
+   "slug": "potage",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10140,
+   "type": "fiche_section",
+   "slug": "pell",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10149,
+   "type": "fiche_section",
+   "slug": "pirina",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 10150,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10151,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10179,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10180,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10242,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10273,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10286,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10312,
+   "type": "fiche_section",
+   "slug": "zenou",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 10335,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10353,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10392,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10406,
+   "type": "fiche_section",
+   "slug": "hirudegarn",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 10410,
+   "type": "fiche_section",
+   "slug": "janemba",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 10451,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10523,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10525,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10550,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10579,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10619,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10620,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10667,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10673,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10733,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10764,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10765,
+   "type": "fiche_section",
+   "slug": "jidanbou-ikkanzaka",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 10791,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 10976,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11004,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11038,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11064,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11283,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11301,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11306,
+   "type": "fiche_section",
+   "slug": "atk-bl-final-getsuga-tensho",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 11307,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11308,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11311,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11317,
+   "type": "fiche_section",
+   "slug": "medazeppi",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 11326,
+   "type": "fiche_section",
+   "slug": "vizard",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 11328,
+   "type": "fiche_section",
+   "slug": "battikaroa",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 11335,
+   "type": "fiche_section",
+   "slug": "vizard",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 11345,
+   "type": "fiche_section",
+   "slug": "bulbous-g",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 11354,
+   "type": "fiche_section",
+   "slug": "seizou-harugasaki",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 11358,
+   "type": "fiche_section",
+   "slug": "bulbous-g",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 11381,
+   "type": "fiche_section",
+   "slug": "shinigami",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 11383,
+   "type": "fiche_section",
+   "slug": "heita-momoyama",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 11490,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11516,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11548,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11585,
+   "type": "fiche_section",
+   "slug": "akira-otoishi",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 11601,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11613,
+   "type": "fiche_section",
+   "slug": "tizzano",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 11634,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11646,
+   "type": "fiche_section",
+   "slug": "toshikazu-hazamada",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 11660,
+   "type": "fiche_section",
+   "slug": "george-joestar-ii",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 11699,
+   "type": "fiche_section",
+   "slug": "steely-dan",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 11702,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11726,
+   "type": "fiche_section",
+   "slug": "keichou-nijimura",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 11895,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11907,
+   "type": "fiche_section",
+   "slug": "arabia-fats",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 11912,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11973,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 11976,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12084,
+   "type": "fiche_section",
+   "slug": "stand",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 12093,
+   "type": "fiche_section",
+   "slug": "the-hand",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 12097,
+   "type": "fiche_section",
+   "slug": "stone-free",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 12245,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12263,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12315,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12333,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12398,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12437,
+   "type": "fiche_section",
+   "slug": "yuri",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 12438,
+   "type": "fiche_section",
+   "slug": "tierry-morello",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 12440,
+   "type": "fiche_section",
+   "slug": "raye-penber",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 12446,
+   "type": "fiche_section",
+   "slug": "itou-shiroba",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 12449,
+   "type": "fiche_section",
+   "slug": "naomi-misora",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 12517,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12548,
+   "type": "fiche_section",
+   "slug": "yamcha",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 12576,
+   "type": "fiche_section",
+   "slug": "hit",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 12590,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12618,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12626,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12651,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12698,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12725,
+   "type": "fiche_section",
+   "slug": "son-gohan",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 12730,
+   "type": "fiche_section",
+   "slug": "giru",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 12768,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12787,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12894,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12899,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 12916,
+   "type": "fiche_section",
+   "slug": "copy-vegeta",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 13060,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13163,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13175,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13201,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13214,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13300,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13305,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13312,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13313,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13338,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13355,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13382,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13390,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13414,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13415,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13416,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13417,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13418,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13419,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13420,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13439,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13444,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13446,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 13481,
+   "type": "fiche_section",
+   "slug": "super-janemba",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 13540,
+   "type": "fiche_section",
+   "slug": "templo-movil-del-rey-de-todo",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 13716,
+   "type": "fiche_section",
+   "slug": "ten-shin-han",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 13718,
+   "type": "fiche_section",
+   "slug": "yamcha",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 13792,
+   "type": "fiche_section",
+   "slug": "roronoa-zoro",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 13793,
+   "type": "fiche_section",
+   "slug": "sanji",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 13932,
+   "type": "fiche_section",
+   "slug": "crocodile",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 13959,
+   "type": "fiche_section",
+   "slug": "sabo",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 13961,
+   "type": "fiche_section",
+   "slug": "sabo",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 14801,
+   "type": "fiche_section",
+   "slug": "baby",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 14911,
+   "type": "fiche_section",
+   "slug": "basil",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 14993,
+   "type": "fiche_section",
+   "slug": "ain",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 15165,
+   "type": "fiche_section",
+   "slug": "jiren",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 15521,
+   "type": "fiche_section",
+   "slug": "jaco-teirimentenpibosshi",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 15581,
+   "type": "fiche_section",
+   "slug": "zenou",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 15669,
+   "type": "fiche_section",
+   "slug": "hirudegarn",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 15680,
+   "type": "fiche_section",
+   "slug": "janemba",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 16108,
+   "type": "fiche_section",
+   "slug": "bingo",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 16240,
+   "type": "fiche_section",
+   "slug": "bogard",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 16489,
+   "type": "fiche_section",
+   "slug": "chabo",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 17191,
+   "type": "fiche_section",
+   "slug": "desire",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 17639,
+   "type": "fiche_section",
+   "slug": "g-8-head-custodian",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 17641,
+   "type": "fiche_section",
+   "slug": "g-8-marine-officer-blond",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 17654,
+   "type": "fiche_section",
+   "slug": "g-8-marine-officer-gray",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 17658,
+   "type": "fiche_section",
+   "slug": "g-8-sous-chef",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 18034,
+   "type": "fiche_section",
+   "slug": "hatcha",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 18083,
+   "type": "fiche_section",
+   "slug": "heppoko",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 18409,
+   "type": "fiche_section",
+   "slug": "iwatobi",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 18443,
+   "type": "fiche_section",
+   "slug": "jaki",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 18953,
+   "type": "fiche_section",
+   "slug": "oden-kozuki",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 19008,
+   "type": "fiche_section",
+   "slug": "kunyun",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 19061,
+   "type": "fiche_section",
+   "slug": "kyo",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 19097,
+   "type": "fiche_section",
+   "slug": "kyros",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 19102,
+   "type": "fiche_section",
+   "slug": "lady-tree",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 19383,
+   "type": "fiche_section",
+   "slug": "itachi-uchiha",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 19396,
+   "type": "fiche_section",
+   "slug": "kakashi-hatake",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 19423,
+   "type": "fiche_section",
+   "slug": "gaara",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 19482,
+   "type": "fiche_section",
+   "slug": "sasori",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 19553,
+   "type": "fiche_section",
+   "slug": "kushina-uzumaki",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 19841,
+   "type": "fiche_section",
+   "slug": "gamabunta",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 19888,
+   "type": "fiche_section",
+   "slug": "might-duy",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 20009,
+   "type": "fiche_section",
+   "slug": "naori-uchiha",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 20255,
+   "type": "fiche_section",
+   "slug": "yashamaru",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 20505,
+   "type": "fiche_section",
+   "slug": "naka-uchiha",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 20956,
+   "type": "fiche_section",
+   "slug": "shinko-inari",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 20957,
+   "type": "fiche_section",
+   "slug": "kigiri",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 20995,
+   "type": "fiche_section",
+   "slug": "kankitsu-akitsuki",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 21241,
+   "type": "fiche_section",
+   "slug": "karura",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 21287,
+   "type": "fiche_section",
+   "slug": "spiralling-ring",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 21455,
+   "type": "fiche_section",
+   "slug": "gathering-of-the-snakes",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 21542,
+   "type": "fiche_section",
+   "slug": "yome",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 21756,
+   "type": "fiche_section",
+   "slug": "chakra-scalpel",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 21792,
+   "type": "fiche_section",
+   "slug": "daytime-tiger",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 21889,
+   "type": "fiche_section",
+   "slug": "carol-masterson",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 22010,
+   "type": "fiche_section",
+   "slug": "misery",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 22697,
+   "type": "fiche_section",
+   "slug": "penguin",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 22918,
+   "type": "fiche_section",
+   "slug": "randolph",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 23013,
+   "type": "fiche_section",
+   "slug": "ririka",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 23060,
+   "type": "fiche_section",
+   "slug": "rokki",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 23176,
+   "type": "fiche_section",
+   "slug": "sadi",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 23568,
+   "type": "fiche_section",
+   "slug": "spiel",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 23861,
+   "type": "fiche_section",
+   "slug": "totts",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 24282,
+   "type": "fiche_section",
+   "slug": "yorki",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 24339,
+   "type": "fiche_section",
+   "slug": "zanki",
+   "motif": "corruption (refus juste)"
+  },
+  {
+   "id": 26331,
+   "type": "akasha_relations",
+   "slug": "farmer",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 26949,
+   "type": "akasha_relations",
+   "slug": "shyarly",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 26955,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 26956,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 26957,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 26958,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 26959,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 26960,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 26961,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 26974,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27132,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27227,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27230,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27307,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27308,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27309,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27310,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27311,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27456,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27483,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 27536,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27537,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27538,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27539,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27540,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27541,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27542,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27555,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27643,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27705,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27736,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27805,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27806,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27807,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27808,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 27890,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28006,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28011,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28012,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28013,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28014,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28015,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28016,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28017,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28034,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28137,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28252,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28253,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28358,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28387,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28388,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28389,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28390,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28391,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28407,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28408,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28409,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28436,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28441,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28442,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28459,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "motif non classé"
+  },
+  {
+   "id": 28460,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28534,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28566,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28567,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28568,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28574,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28589,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28594,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28617,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28623,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28638,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28654,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28662,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28676,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28677,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28678,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28679,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28680,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28681,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28682,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28683,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28684,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28685,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28686,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28687,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28688,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28689,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28690,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28691,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28692,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28693,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28694,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28695,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28696,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28697,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28698,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28699,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 28700,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28701,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28714,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28725,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28741,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28755,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28766,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28789,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28805,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28852,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28854,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28885,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28886,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28901,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28902,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28911,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28912,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28916,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28920,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28921,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28922,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28923,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28924,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28925,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28926,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "motif non classé"
+  },
+  {
+   "id": 28927,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28928,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28929,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28930,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 28931,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "CLI claude absent"
+  },
+  {
+   "id": 29460,
+   "type": "akasha_relations",
+   "slug": "lily-enstomach",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 31554,
+   "type": "akasha_relations",
+   "slug": "yajirobee",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 33465,
+   "type": "akasha_relations",
+   "slug": "garo",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 33466,
+   "type": "akasha_relations",
+   "slug": "gari",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 33467,
+   "type": "akasha_relations",
+   "slug": "genbu",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 33824,
+   "type": "akasha_relations",
+   "slug": "naori-uchiha",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 33828,
+   "type": "akasha_relations",
+   "slug": "jozu",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 33838,
+   "type": "akasha_relations",
+   "slug": "kinoko-sarada",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 33846,
+   "type": "akasha_relations",
+   "slug": "naka-uchiha",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 36584,
+   "type": "akasha_relations",
+   "slug": "nowaki",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 38383,
+   "type": "akasha_relations",
+   "slug": "uroko-kurama",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 38385,
+   "type": "akasha_relations",
+   "slug": "uzu",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 38394,
+   "type": "akasha_relations",
+   "slug": "urbain-san",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 38402,
+   "type": "akasha_relations",
+   "slug": "vinegar",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 38407,
+   "type": "akasha_relations",
+   "slug": "yagura-anime",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 38428,
+   "type": "akasha_relations",
+   "slug": "yokaze",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 38430,
+   "type": "akasha_relations",
+   "slug": "yaoki",
+   "motif": "motif non classé"
+  },
+  {
+   "id": 38438,
+   "type": "akasha_relations",
+   "slug": "yazaemon",
+   "motif": "schéma non respecté"
+  },
+  {
+   "id": 39301,
+   "type": "akasha_relations",
+   "slug": "den",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 39308,
+   "type": "akasha_relations",
+   "slug": "sabo",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 39309,
+   "type": "akasha_relations",
+   "slug": "boss",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 39310,
+   "type": "fandom_descfr",
+   "slug": "giant-ox",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 39311,
+   "type": "fandom_descfr",
+   "slug": "hit",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 39314,
+   "type": "akasha_relations",
+   "slug": "master",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 39316,
+   "type": "akasha_relations",
+   "slug": "hit",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 39319,
+   "type": "akasha_relations",
+   "slug": "chouchou",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 39327,
+   "type": "akasha_relations",
+   "slug": "menchi",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 39336,
+   "type": "akasha_relations",
+   "slug": "pedro",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 39355,
+   "type": "akasha_relations",
+   "slug": "giant-ox",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 39385,
+   "type": "akasha_relations",
+   "slug": "zangetsu",
+   "motif": "déjà en attente"
+  },
+  {
+   "id": 42278,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 42279,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 42280,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 42281,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 42282,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 53966,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 54354,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 54557,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 54673,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 55768,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 55944,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 56472,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 56764,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 56765,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 56997,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 57175,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 57876,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58041,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58323,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58324,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58325,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58538,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58539,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58540,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58541,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58680,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58770,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58771,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58772,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58926,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58927,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58928,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 58929,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 59191,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 59199,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 59201,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 59202,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 59203,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 59204,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 59205,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  },
+  {
+   "id": 59206,
+   "type": "arbitrage_claude_lot",
+   "slug": null,
+   "motif": "lot d'arbitrage (schéma corrigé)"
+  }
+ ]
+}
