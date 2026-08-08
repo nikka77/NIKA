@@ -45,3 +45,7 @@ tsconfig.tsbuildinfo
 
 # Instantanés du corpus (voir scripts/ops-instantane.mjs) — jamais dans le dépôt
 nika-instantanes/
+
+# sauvegardes de .env.local (contiennent des clés — jamais versionnées)
+.env.local.*
+*.avant-jeton

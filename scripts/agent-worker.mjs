@@ -819,13 +819,28 @@ TASK_TYPES.whatsapp_reponse = {
   },
   // Schéma PLAT : le mode strict (Groq/OpenAI) exige que chaque propriété soit requise —
   // les optionnels imbriqués sont refusés (HTTP 400 constaté le 27/07). « aucun »/0 = neutre.
+  // TOLÉRANT SUR LA FORME, STRICT SUR LE FOND (08/08). La seule chose qui compte ici est
+  // `reponse` : c'est ce que Dan lit. Un modèle qui écrit « Claude » au lieu de « claude », ou
+  // « aucune » au lieu de « rien », faisait échouer TOUT le message — Dan n'avait alors aucune
+  // réponse, pour un détail d'étiquette. Les champs de routage retombent donc sur leur valeur
+  // neutre au lieu de faire tomber l'ensemble ; la commande, elle, reste strictement validée
+  // (une action mal comprise ne doit JAMAIS être exécutée par défaut).
   zod: z.object({
     reponse: z.string().min(1),
-    interlocuteur: z.enum(['secretaire', 'claude', 'gemini']),
-    escalade: z.boolean(),
-    commande_action: z.enum(['rien', 'etat', 'lot']),
-    commande_role: z.enum(['aucun', 'attrs', 'relations', 'bios', 'technique', 'artefact', 'lieu', 'lexique']),
-    commande_quantite: z.number().int(),
+    interlocuteur: z.preprocess((v) => {
+      const t = String(v ?? '').toLowerCase().trim();
+      return ['secretaire', 'claude', 'gemini'].includes(t) ? t : 'secretaire';
+    }, z.enum(['secretaire', 'claude', 'gemini'])),
+    escalade: z.preprocess((v) => v === true || v === 'true', z.boolean()),
+    commande_action: z.preprocess((v) => {
+      const t = String(v ?? '').toLowerCase().trim();
+      return ['rien', 'etat', 'lot'].includes(t) ? t : 'rien';
+    }, z.enum(['rien', 'etat', 'lot'])),
+    commande_role: z.preprocess((v) => {
+      const t = String(v ?? '').toLowerCase().trim();
+      return ['aucun', 'attrs', 'relations', 'bios', 'technique', 'artefact', 'lieu', 'lexique'].includes(t) ? t : 'aucun';
+    }, z.enum(['aucun', 'attrs', 'relations', 'bios', 'technique', 'artefact', 'lieu', 'lexique'])),
+    commande_quantite: z.preprocess((v) => (Number.isFinite(Number(v)) ? Math.trunc(Number(v)) : 0), z.number().int()),
   }),
   schema: {
     type: 'object',
@@ -959,7 +974,10 @@ const MARQUES_CORRUPTION = [
   /[a-z][A-Z]{2,}[a-z]/,                                    // « ZdécoE », « VfrmutifL »
 ];
 const sentLaCorruption = (texte) => MARQUES_CORRUPTION.some((m) => m.test(String(texte ?? '')));
-const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 1_000, akasha_relations: 3_000, fiche_section: 1_600, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500, toilettage_fr: 2_400 };
+// fiche_section relevé de 1 600 à 2 600 le 08/08 : 32 sections par heure mouraient sur
+// « sortie coupée au plafond de tokens » ou « coupée en pleine phrase » — l'usine nommait
+// elle-même le remède dans son message d'erreur, personne ne le lisait.
+const NUM_PREDICT = { akasha_attrs: 700, fandom_descfr: 500, flavor_akasha: 300, review_local: 1_000, akasha_relations: 3_000, fiche_section: 2_600, fiche_technique: 400, fiche_artefact: 400, fiche_lieu: 400, fiche_lexique: 400, whatsapp_reponse: 500, toilettage_fr: 2_400 };
 const TIMEOUT_MS = 420_000;  // articles longs (Zoro) + preuves : 240 s ne suffisait pas
 
 /* ── Rotation de couloirs (L23, 01/08) ──────────────────────────────
