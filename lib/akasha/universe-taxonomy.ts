@@ -311,7 +311,7 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
   },
 ];
 
-// ─── Identité visuelle du hub (dégradé signature, motif de fond canon, rangs de collectionneur) ───
+// ─── Identité visuelle du hub (dégradé signature, motif de fond canon) ───
 export interface HubVisual {
   /** Dégradé bi-teinte du hero (2-3 stops CSS). */
   heroGradient: string;
@@ -321,8 +321,6 @@ export interface HubVisual {
   signature?: 'villages' | 'bounties' | 'powerscale' | 'gotei' | 'nen' | 'jojo' | 'passes' | 'kiraduel';
   /** Carte-monde plein cadre montée EN TÊTE du hub (lot 3a — plus de if slug === dans la page). */
   map?: 'op-world' | 'db-cosmos';
-  /** Rangs de collectionneur (du plus bas au plus haut) déblocables selon le % de complétion. */
-  ranks: string[];
 }
 
 // Petit motif SVG répétable encodé data-URI (currentColor via une couleur passée à la volée dans le hub).
@@ -334,51 +332,43 @@ export const HUB_VISUAL: Record<string, HubVisual> = {
     heroGradient: 'linear-gradient(160deg, #2A1206 0%, #E8623A22 42%, var(--bg) 100%)',
     bgPattern: svg("<circle cx='30' cy='30' r='10' fill='none' stroke='%23E8623A' stroke-width='2'/><circle cx='30' cy='30' r='2.5' fill='%23E8623A'/><circle cx='30' cy='16' r='2' fill='%23E8623A'/>"),
     signature: 'villages',
-    ranks: ['Académie', 'Genin', 'Chūnin', 'Jōnin', 'Anbu', 'Kage'],
   },
   'one-piece': {
     heroGradient: 'linear-gradient(160deg, #06182E 0%, #D63C3C22 45%, var(--bg) 100%)',
     bgPattern: svg("<path d='M0 40 q15 -12 30 0 t30 0' fill='none' stroke='%23D63C3C' stroke-width='2'/><path d='M0 52 q15 -12 30 0 t30 0' fill='none' stroke='%23D63C3C' stroke-width='1.5'/>"),
     signature: 'bounties',
     map: 'op-world',
-    ranks: ['Mousse', 'Pirate', 'Supernova', 'Corsaire', 'Yonko', 'Roi des Pirates'],
   },
   'dragon-ball': {
     heroGradient: 'linear-gradient(160deg, #2A1C02 0%, #F2A93B22 42%, var(--bg) 100%)',
     bgPattern: svg("<circle cx='30' cy='30' r='13' fill='none' stroke='%23F2A93B' stroke-width='2'/><path d='M30 22 l2.4 4.9 5.4 .8-3.9 3.8 .9 5.4-4.8-2.5-4.8 2.5 .9-5.4-3.9-3.8 5.4-.8z' fill='%23F2A93B'/>"),
     signature: 'powerscale',
     map: 'db-cosmos',
-    ranks: ['Terrien', 'Combattant', 'Guerrier Z', 'Super Saiyan', 'Dieu', 'Ultra Instinct'],
   },
   bleach: {
     heroGradient: 'linear-gradient(160deg, #0A1420 0%, #5A88B022 45%, var(--bg) 100%)',
     bgPattern: svg("<path d='M30 8 L38 30 L30 52 L22 30 Z' fill='none' stroke='%235A88B0' stroke-width='1.6'/>"),
     signature: 'gotei',
-    ranks: ['Âme errante', 'Recrue', 'Siège', 'Lieutenant', 'Capitaine', 'Capitaine-Commandant'],
   },
   'hunter-x-hunter': {
     heroGradient: 'linear-gradient(160deg, #06220F 0%, #3FA35C22 45%, var(--bg) 100%)',
     bgPattern: svg("<polygon points='30,10 47,20 47,40 30,50 13,40 13,20' fill='none' stroke='%233FA35C' stroke-width='1.6'/>"),
     signature: 'nen',
-    ranks: ['Novice', 'Apprenti Nen', 'Hunter', 'Nen-utilisateur', 'Maître', 'Zodiaque'],
   },
   jojo: {
     heroGradient: 'linear-gradient(160deg, #1A0A2A 0%, #8E44AD22 45%, var(--bg) 100%)',
     bgPattern: svg("<circle cx='18' cy='18' r='5' fill='%238E44AD'/><circle cx='42' cy='42' r='5' fill='%238E44AD'/><circle cx='42' cy='18' r='3' fill='%238E44AD'/><circle cx='18' cy='42' r='3' fill='%238E44AD'/>"),
     signature: 'jojo',
-    ranks: ['Passant', 'Utilisateur', 'JoBro', 'Stand User', 'Requiem', 'Joestar'],
   },
   'initial-d': {
     heroGradient: 'linear-gradient(160deg, #061826 0%, #0094D422 45%, var(--bg) 100%)',
     bgPattern: svg("<path d='M8 40 L52 20 M8 48 L52 28' stroke='%230094D4' stroke-width='2' stroke-dasharray='6 5'/>"),
     signature: 'passes',
-    ranks: ['Débutant', 'Amateur', 'Pilote de col', 'As local', 'Légende', 'Fantôme d’Akina'],
   },
   'death-note': {
     heroGradient: 'linear-gradient(160deg, #14141A 0%, #8A8F9822 45%, var(--bg) 100%)',
     bgPattern: svg("<path d='M0 15 H60 M0 30 H60 M0 45 H60' stroke='%238A8F98' stroke-width='1'/><path d='M14 0 V60' stroke='%23D63C3C' stroke-width='1'/>"),
     signature: 'kiraduel',
-    ranks: ['Civil', 'Suspect', 'Enquêteur', 'Détective', 'L', 'Dieu du Nouveau Monde'],
   },
 };
 
