@@ -103,6 +103,18 @@ export async function POST(req: Request) {
     });
   }
 
+  // LA FENÊTRE S'OUVRE À LA RÉCEPTION, PAS À LA RÉPONSE (08/08). `fenetreOuverte()` se fondait sur
+  // le dernier ÉCHANGE réussi (ops_notes/whatsapp) : quand la réponse échouait — ce qui est
+  // précisément arrivé quatre jours durant — le système croyait Dan injoignable et parquait tout,
+  // alors qu'il venait d'écrire. On enregistre donc la réception elle-même, qu'on sache y répondre
+  // ou non.
+  if (de_dan.length) {
+    await supabase.from('ops_notes').insert({
+      source: 'wa_entrant', done: true,
+      content: JSON.stringify({ a: de_dan[de_dan.length - 1].timestamp, n: de_dan.length }),
+    });
+  }
+
   if (de_dan.length) {
     const { error: errFile } = await supabase.rpc('ops_chat_send_batch', {
       messages: de_dan.map((m) => ({

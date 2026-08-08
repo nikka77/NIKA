@@ -10,12 +10,17 @@ const sb = clientOps();
 
 /** La fenêtre de service est-elle sûrement ouverte ? (marge d'1 h par défaut sur les 24 h) */
 export async function fenetreOuverte(margeHeures = 1) {
-  const { data } = await sb.from('ops_notes').select('content').eq('source', 'whatsapp')
-    .order('id', { ascending: false }).limit(1);
-  try {
-    const a = Number(JSON.parse(data?.[0]?.content ?? '{}').a ?? 0);
-    return a > 0 && Date.now() / 1000 - a < (24 - margeHeures) * 3600;
-  } catch { return false; }
+  // On lit la RÉCEPTION (`wa_entrant`, écrit par le webhook à chaque message de Dan) autant que
+  // l'échange réussi (`whatsapp`). Se fonder sur le seul échange réussi rendait le système aveugle
+  // exactement quand il était en panne : quatre jours durant, les réponses échouaient, aucun
+  // échange ne s'enregistrait, et tout partait au parc « fenêtre fermée » alors que Dan écrivait.
+  const { data } = await sb.from('ops_notes').select('content')
+    .in('source', ['whatsapp', 'wa_entrant'])
+    .order('id', { ascending: false }).limit(5);
+  const derniere = (data ?? []).reduce((max, n) => {
+    try { return Math.max(max, Number(JSON.parse(n.content ?? '{}').a ?? 0)); } catch { return max; }
+  }, 0);
+  return derniere > 0 && Date.now() / 1000 - derniere < (24 - margeHeures) * 3600;
 }
 
 export async function envoyerTexteBrut(texte, vers = process.env.WHATSAPP_TO) {
