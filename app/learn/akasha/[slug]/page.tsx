@@ -72,6 +72,16 @@ export default async function AkashaEntryPage({ params }: Props) {
         <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
           <Crumbs universe={entry.universe} category={typeof (entry.attributes as Record<string, unknown>).category === 'string' ? ((entry.attributes as Record<string, unknown>).category as string) : null} name={entry.name} />
           <CharacterZone entry={entry} popRank={popRank} sharedVoice={sharedVoice} />
+          {/* Le DOSSIER (C3-2) — déplacé hors de CharacterZone : il vivait comme 3ᵉ enfant de
+              `.ak-zone-grid` avec `gridColumn:'1/-1'`, ce qui cassait l'auto-placement CSS Grid et
+              repoussait le canal sous le dossier sur 85,6 % des fiches personnage (celles qui ONT
+              un dossier). Même point de montage que les branches Organisation/Ères/Entité
+              ci-dessous, qui n'ont jamais eu ce bug. Zéro changement de donnée. */}
+          <DossierSections
+            sections={(entry.attributes as Record<string, unknown>).sections}
+            accent={(entry.universe && universeMeta(entry.universe)?.color) || m.color}
+            style={{ marginTop: 28 }}
+          />
         </div>
       </main>
     );

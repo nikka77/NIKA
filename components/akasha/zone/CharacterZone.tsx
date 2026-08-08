@@ -3,7 +3,7 @@
 // Remplace la composition carte TCG + dossier 9 onglets : UNE surface vivante (portrait grand
 // format piloté par la frise d'arcs + grappes interactives) et UN panneau canal qui se re-scope
 // à chaque sélection. Esprit AAA×Apple : grande typo, air, hairlines — tokens NIKA existants.
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import ArcFrieze from '../ArcFrieze';
 import DatabookRadar, { type Stats } from '../DatabookRadar';
@@ -12,6 +12,7 @@ import { RARITY_META, universeMeta, universeWordmark, type AkashaEntryDetail } f
 import { ALLOWED_FILTER_ATTRS, universeHubSlug } from '@/lib/akasha/universe-taxonomy';
 import { normalizeForms } from '@/lib/akasha/forms';
 import { ZoneProvider, useZone, type ZoneSelection } from './zone-context';
+import { CanalRegion, ChipLink } from './zone-ui';
 
 const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
 const list = (v: unknown): string[] =>
@@ -40,6 +41,9 @@ export default function CharacterZone({ entry, popRank, sharedVoice }: { entry: 
 function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; popRank?: number | null; sharedVoice?: SharedVoice[] }) {
   const { sel, select } = useZone();
   const [formIdx, setFormIdx] = useState(0);
+  // Définition réelle de la source du portrait, lue au chargement (voir le plafond ×2 plus bas).
+  const [natif, setNatif] = useState<{ w: number; h: number } | null>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   const a = entry.attributes as Record<string, unknown>;
   const um = entry.universe ? universeMeta(entry.universe) : null;
@@ -56,6 +60,13 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
   // Une forme sans visuel est LÉGITIME (décision 06/08) : pas de repli sur l'image de base —
   // le portrait rend une tuile stylisée (dégradé d'accent + initiale du label en Bebas).
   const portrait = str(f.url) ?? str(f.idle) ?? (hasCurated ? null : entry.image_url);
+  // `onLoad` NE SUFFIT PAS : l'image est rendue côté serveur et le navigateur l'a souvent finie
+  // avant que React n'attache l'écouteur — l'événement n'arrive alors jamais. On relit donc la
+  // définition à la main quand l'image est déjà `complete`.
+  useEffect(() => {
+    const el = imgRef.current;
+    if (el?.complete && el.naturalWidth) setNatif({ w: el.naturalWidth, h: el.naturalHeight });
+  }, [portrait]);
   const formLabel = str(f.label) ?? `Forme ${formIdx + 1}`;
   const initiale = (formLabel.match(/\p{L}|\p{N}/u)?.[0] ?? '◆').toUpperCase();
 
@@ -146,14 +157,31 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
           </div>
         )}
 
-        {/* Portrait grand format — évolue avec la frise. */}
-        <div style={{ position: 'relative', width: '100%', maxWidth: 560, aspectRatio: '4/5', borderRadius: 18, overflow: 'hidden', border: '1px solid var(--bd2)', background: 'var(--bg2)', boxShadow: `0 40px 90px -50px ${accent}88` }}>
+        {/* Portrait full-bleed (C3-2) — bord à bord de la colonne surface, plus de maxWidth:560
+            qui le faisait flotter plus étroit que sa propre colonne de grille. La frise juste
+            dessous suit la même largeur (déjà « alignée sur le portrait » avant C3-2 : ce couplage
+            est ce qu'il fallait préserver, pas la valeur 560 elle-même). */}
+        <div style={{ position: 'relative', width: '100%', aspectRatio: '4/5', borderRadius: 18, overflow: 'hidden', border: '1px solid var(--bd2)', background: 'var(--bg2)', boxShadow: `0 40px 90px -50px ${accent}88` }}>
           {portrait ? (
             <>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img aria-hidden src={portrait} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(26px) brightness(0.45) saturate(1.1)', transform: 'scale(1.25)' }} />
+              {/* PLAFOND DE DÉFINITION (×2 la source). Le cadre reste bord à bord — c'est l'image
+                  NETTE qui refuse d'être étirée au-delà du double de sa définition native, et se
+                  centre dans son propre halo flou. Mesuré le 08/08 : 6 des 8 têtes d'affiche ont
+                  une source MyAnimeList 225×350, qu'un cadre de 729 px agrandissait ×2,6 — les
+                  contours devenaient cotonneux au moment même où le portrait gagnait en présence.
+                  Naruto (1440×1076) et Goku restent inchangés : leur source mérite la pleine
+                  largeur. Le plafond s'applique à l'image seule, jamais au cadre : rien ne bouge
+                  sous elle au chargement (aucun décalage de mise en page). */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={portrait} alt={entry.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain' }} />
+              <img ref={imgRef} src={portrait} alt={entry.name}
+                onLoad={(e) => setNatif({ w: e.currentTarget.naturalWidth, h: e.currentTarget.naturalHeight })}
+                style={{
+                  position: 'absolute', inset: 0, margin: 'auto', width: '100%', height: '100%', objectFit: 'contain',
+                  maxWidth: natif ? `min(100%, ${natif.w * 2}px)` : '100%',
+                  maxHeight: natif ? `min(100%, ${natif.h * 2}px)` : '100%',
+                }} />
             </>
           ) : hasCurated ? (
             /* Tuile stylisée pleine surface — forme légitime sans visuel : même conteneur, aucune casse. */
@@ -169,7 +197,7 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
         </div>
 
         {forms.length > 1 && (
-          <div style={{ marginTop: 18, maxWidth: 560 }}>
+          <div style={{ marginTop: 18 }}>
             <ArcFrieze forms={forms} sel={formIdx} onSelect={onForm} color={accent} />
           </div>
         )}
@@ -179,16 +207,16 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
           {(atkRels.length > 0 || jutsuPlain.length > 0) && (
             <Grappe title={`Techniques · ${atkRels.length + jutsuPlain.length}`} accent={accent}>
               {atkRels.slice(0, 14).map((r) => (
-                <ChipBtn key={r.id} accent={accent} active={sel?.kind === 'technique' && sel.name === r.target.name}
+                <ChipLink key={r.id} accent={accent} active={sel?.kind === 'technique' && sel.name === r.target.name}
                   onClick={() => select({ kind: 'technique', name: r.target.name, slug: r.target.slug, signature: r.target.is_signature === 'true' })}>
                   {r.target.is_signature === 'true' && <span aria-hidden style={{ color: accent }}>★ </span>}{r.target.name}
-                </ChipBtn>
+                </ChipLink>
               ))}
               {jutsuPlain.slice(0, Math.max(0, 18 - atkRels.length)).map((j) => (
-                <ChipBtn key={j} accent={accent} active={sel?.kind === 'technique' && sel.name === j}
+                <ChipLink key={j} accent={accent} active={sel?.kind === 'technique' && sel.name === j}
                   onClick={() => select({ kind: 'technique', name: j })}>
                   {j}
-                </ChipBtn>
+                </ChipLink>
               ))}
               {atkRels.length + jutsuPlain.length > 18 && (
                 <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', alignSelf: 'center' }}>+ {atkRels.length + jutsuPlain.length - 18} autres</span>
@@ -199,12 +227,12 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
           {family.length > 0 && (
             <Grappe title={`Famille · ${family.length}`} accent={accent}>
               {family.map((m, i) => (
-                <ChipBtn key={i} accent={accent} active={sel?.kind === 'famille' && sel.name === m.name}
+                <ChipLink key={i} accent={accent} active={sel?.kind === 'famille' && sel.name === m.name}
                   onClick={() => select({ kind: 'famille', rel: m.rel, name: m.name, slug: m.slug })}>
                   {/* Le databook donne le lien précis (père, sœur…) ; le graphe ne sait que
                       « famille » — inutile de le répéter sous un titre qui le dit déjà. */}
                   {m.rel !== 'famille' && <span style={{ color: 'var(--td3)', fontWeight: 400 }}>{familyLabel(m.rel)} · </span>}{m.name}
-                </ChipBtn>
+                </ChipLink>
               ))}
             </Grappe>
           )}
@@ -212,10 +240,10 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
           {liens.length > 0 && (
             <Grappe title={`Liens · ${liens.length}`} accent={accent}>
               {liens.map((l, i) => (
-                <ChipBtn key={i} accent={accent} active={sel?.kind === 'famille' && sel.name === l.name}
+                <ChipLink key={i} accent={accent} active={sel?.kind === 'famille' && sel.name === l.name}
                   onClick={() => select({ kind: 'famille', rel: l.label, name: l.name, slug: l.slug })}>
                   <span style={{ color: 'var(--td3)', fontWeight: 400 }}>{l.label} · </span>{l.name}
-                </ChipBtn>
+                </ChipLink>
               ))}
             </Grappe>
           )}
@@ -223,38 +251,27 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
           {belong.length > 0 && (
             <Grappe title="Appartenances" accent={accent}>
               {belong.map((b, i) => (
-                <ChipBtn key={i} accent={accent} active={sel?.kind === 'appartenance' && sel.value === b.value}
+                <ChipLink key={i} accent={accent} active={sel?.kind === 'appartenance' && sel.value === b.value}
                   onClick={() => select({ kind: 'appartenance', attr: b.attr, label: b.label, value: b.value })}>
                   <span style={{ color: 'var(--td3)', fontWeight: 400 }}>{b.label} · </span>{b.value}
-                </ChipBtn>
+                </ChipLink>
               ))}
             </Grappe>
           )}
         </div>
       </section>
 
-      {/* ── LE DOSSIER (L26, 01/08) — les sections longues, écrites une par agent sur le
-          découpage du wiki. Elles vivent ICI et pas seulement sur la page générique : un
-          PERSONNAGE rend CharacterZone et n'atteint jamais le bas de la page (même piège que
-          les relations ce matin — Misa Amane avait 6 sections en base et une fiche muette). */}
-      {(() => {
-        const sections = (a.sections as { i?: string; titre?: string; texte?: string }[] | undefined);
-        if (!Array.isArray(sections) || !sections.length) return null;
-        return (
-          <section className="ak-dossier" style={{ gridColumn: '1 / -1', marginTop: 28 }}>
-            {sections.filter((s) => s?.titre && s?.texte).map((s, i) => (
-              <div key={s.i ?? i} style={{ marginBottom: 22 }}>
-                <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: accent, marginBottom: 9 }}>
-                  {s.titre}
-                </div>
-                <p style={{ fontFamily: 'var(--fo)', fontSize: 14.5, color: 'var(--td2)', lineHeight: 1.75, margin: 0, whiteSpace: 'pre-line' }}>
-                  {s.texte}
-                </p>
-              </div>
-            ))}
-          </section>
-        );
-      })()}
+      {/* ── LE DOSSIER ─ retiré d'ici (C3-2, préalable de mise en page). Il vivait comme 3ᵉ enfant
+          de `.ak-zone-grid` avec `gridColumn:'1/-1'` : sur 85,6 % des fiches (celles qui ONT un
+          dossier), ça cassait l'auto-placement CSS Grid sparse et repoussait le canal sous le
+          dossier, en pleine largeur, au lieu de la colonne 380px à côté du portrait — mesuré en
+          direct sur les 8 têtes d'affiche des 8 univers, dont naruto-uzumaki lui-même. Monté
+          maintenant par `app/learn/akasha/[slug]/page.tsx` via `<DossierSections>`, APRÈS
+          `<CharacterZone>` — exactement le point de montage déjà utilisé par OrganizationZone et
+          EraZone, qui n'ont jamais eu ce bug parce que leur dossier n'a jamais vécu dans leur
+          propre grille. Zéro changement de donnée : mêmes sections, même accent, même styles —
+          `DossierSections` est un copier-coller à l'identique de ce bloc (composant déjà partagé
+          par les 3 autres gabarits depuis le 05/08). */}
 
       {/* ── CANAL ───────────────────────────────────────────── */}
       <aside className="ak-canal" aria-live="polite">
@@ -272,15 +289,6 @@ function Grappe({ title, accent, children }: { title: string; accent: string; ch
       <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: accent, marginBottom: 10 }}>{title}</div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>{children}</div>
     </div>
-  );
-}
-
-function ChipBtn({ accent, active, onClick, children }: { accent: string; active?: boolean; onClick: () => void; children: React.ReactNode }) {
-  return (
-    <button type="button" onClick={onClick} aria-pressed={!!active} className="ak-tab"
-      style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, padding: '6px 12px', borderRadius: 9, cursor: 'pointer', border: `1px solid ${active ? accent : 'var(--bd2)'}`, background: active ? `${accent}1C` : 'var(--bg2)', color: active ? accent : 'var(--td2)', transition: 'all .15s' }}>
-      {children}
-    </button>
   );
 }
 
@@ -309,7 +317,7 @@ function Canal({ entry, accent, f, fstr, fStats, sharedVoice }: {
     : 'Forme';
 
   return (
-    <div style={{ border: '1px solid var(--bd)', borderTop: `2px solid ${accent}`, borderRadius: 14, background: 'var(--bg2)', padding: '16px 18px 18px' }}>
+    <CanalRegion accent={accent}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, borderBottom: '1px solid var(--bd)', paddingBottom: 10, marginBottom: 14 }}>
         <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--td3)' }}>
           Canal · <span style={{ color: accent }}>{scope}</span>
@@ -327,7 +335,7 @@ function Canal({ entry, accent, f, fstr, fStats, sharedVoice }: {
       {sel?.kind === 'technique' && <TechniquePanel sel={sel} accent={accent} />}
       {sel?.kind === 'famille' && <FamillePanel sel={sel} accent={accent} />}
       {sel?.kind === 'appartenance' && <AppartenancePanel sel={sel} accent={accent} universe={entry.universe} />}
-    </div>
+    </CanalRegion>
   );
 }
 

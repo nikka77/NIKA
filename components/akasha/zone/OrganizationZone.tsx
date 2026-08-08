@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { RARITY_META, universeMeta, universeWordmark, type AkashaEntryDetail } from '@/lib/akasha/types';
 import { universeHubSlug } from '@/lib/akasha/universe-taxonomy';
 import { ZoneProvider, useZone, type ZoneSelection } from './zone-context';
+import { CanalRegion, ChipLink } from './zone-ui';
 
 const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
 const fav = (v: unknown): number => (typeof v === 'string' ? Number(v) || 0 : typeof v === 'number' ? v : 0);
@@ -134,11 +135,10 @@ function ZoneInner({ entry }: { entry: AkashaEntryDetail }) {
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
               {rest.map((mb) => (
-                <button key={mb.slug} type="button" onClick={() => pick(mb, 'Membre')} className="ak-tab"
-                  aria-pressed={sel?.kind === 'membre' && sel.slug === mb.slug}
-                  style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, padding: '6px 12px', borderRadius: 9, cursor: 'pointer', border: `1px solid ${sel?.kind === 'membre' && sel.slug === mb.slug ? accent : 'var(--bd2)'}`, background: sel?.kind === 'membre' && sel.slug === mb.slug ? `${accent}1C` : 'var(--bg2)', color: sel?.kind === 'membre' && sel.slug === mb.slug ? accent : 'var(--td2)' }}>
+                <ChipLink key={mb.slug} accent={accent} active={sel?.kind === 'membre' && sel.slug === mb.slug}
+                  onClick={() => pick(mb, 'Membre')}>
                   {mb.name}
-                </button>
+                </ChipLink>
               ))}
             </div>
           </div>
@@ -151,10 +151,9 @@ function ZoneInner({ entry }: { entry: AkashaEntryDetail }) {
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
               {arsenal.map((it) => (
-                <Link key={it.slug} href={`/learn/akasha/${it.slug}`} className="ak-tab"
-                  style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, padding: '6px 12px', borderRadius: 9, textDecoration: 'none', border: '1px solid rgba(212,160,23,0.4)', background: 'rgba(212,160,23,0.08)', color: '#D4A017' }}>
+                <ChipLink key={it.slug} accent="#D4A017" href={`/learn/akasha/${it.slug}`}>
                   {it.name}
-                </Link>
+                </ChipLink>
               ))}
             </div>
           </div>
@@ -190,7 +189,7 @@ function Canal({ entry, accent, scope, prime, memberCount }: { entry: AkashaEntr
   const membre = sel?.kind === 'membre' ? sel : null;
 
   return (
-    <div style={{ border: '1px solid var(--bd)', borderTop: `2px solid ${accent}`, borderRadius: 14, background: 'var(--bg2)', padding: '16px 18px 18px' }}>
+    <CanalRegion accent={accent}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, borderBottom: '1px solid var(--bd)', paddingBottom: 10, marginBottom: 14 }}>
         <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--td3)' }}>
           Canal · <span style={{ color: accent }}>{membre ? membre.role ?? 'Membre' : 'Identité'}</span>
@@ -231,6 +230,6 @@ function Canal({ entry, accent, scope, prime, memberCount }: { entry: AkashaEntr
           {bio && <p style={{ fontFamily: 'var(--fo)', fontSize: 13.5, lineHeight: 1.75, color: 'var(--td2)', whiteSpace: 'pre-line', margin: 0 }}>{bio}</p>}
         </div>
       )}
-    </div>
+    </CanalRegion>
   );
 }
