@@ -3,6 +3,7 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/site';
 import { UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
+import { COLLECTION_SHOWCASES } from '@/lib/akasha/collections';
 import { createClient } from '@/lib/supabase/server';
 
 export const revalidate = 86400; // 1 jour
@@ -13,9 +14,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/learn/akasha`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
     { url: `${SITE_URL}/learn/akasha/wanted`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${SITE_URL}/learn/akasha/tops`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
-    { url: `${SITE_URL}/learn/akasha/c/fruits-du-demon`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
-    { url: `${SITE_URL}/learn/akasha/c/armurerie-meito`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
   ];
+
+  // LES VITRINES SE LISENT DEPUIS LEUR SOURCE, PAS D'UNE LISTE RECOPIÉE (LOT 3c, 08/08). Les deux
+  // premières étaient écrites en dur ici ; quand le lot 3 en a ajouté trois, elles sont restées
+  // invisibles du sitemap — une liste parallèle prend toujours du retard sur celle qui fait foi.
+  for (const c of COLLECTION_SHOWCASES) {
+    out.push({ url: `${SITE_URL}/learn/akasha/c/${c.slug}`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 });
+  }
 
   // Hubs + axes long-tail — page DÉDIÉE (a un vrai generateMetadata + canonical), pas la version
   // query-string du registre qui duplique le même contenu sans title/description propres.

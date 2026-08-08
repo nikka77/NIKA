@@ -7,8 +7,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SITE_URL } from '@/lib/site';
-import { listEntries, listAxisCounts } from '@/lib/akasha/queries';
-import { taxonomyBySlug, hubVisual, axisValueLabel, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
+import { listEntries, listAxisCounts, axisRelationalProfile } from '@/lib/akasha/queries';
+import { taxonomyBySlug, hubVisual, axisValueLabel, isDirtyAxis, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { universeMeta } from '@/lib/akasha/types';
 import AkashaList from '@/components/akasha/AkashaList';
 import UniverseShell from '@/components/akasha/UniverseShell';
@@ -19,11 +19,15 @@ export const revalidate = 3600; // ISR 1 h
 type Props = { params: Promise<{ slug: string; axis: string; value: string }>; searchParams?: Promise<Record<string, string | undefined>> };
 const SUB_ATTRS = new Set(['clan', 'rank', 'generation']); // sous-filtres d'une page village (Naruto)
 
-// Pré-génère les valeurs CURÉES de chaque axe (les plus visitées) ; le reste se génère à la demande (ISR).
+// Pré-génère les valeurs CURÉES de chaque axe CURÉ (les plus visitées) ; le reste se génère à la
+// demande (ISR, `dynamicParams` par défaut à `true` — jamais redéfini ici). LOT 3b : les axes
+// « sales » (isDirtyAxis) ne sont plus pré-générés — masquage silencieux, pas un blocage de route,
+// voir le commentaire de `DIRTY_AXES` dans universe-taxonomy.ts.
 export function generateStaticParams() {
   const out: { slug: string; axis: string; value: string }[] = [];
   for (const u of UNIVERSE_TAXONOMY) {
     for (const ax of u.axes) {
+      if (isDirtyAxis(u.name, ax.attr)) continue;
       for (const v of ax.values) out.push({ slug: u.slug, axis: ax.attr, value: encodeURIComponent(v.v) });
     }
   }
@@ -46,7 +50,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const label = axisValueLabel(r.taxo.name, r.axisDef.attr, r.val);
   return {
     title: `${label} — ${r.axisDef.label} de ${r.taxo.name} | AKASHA`,
-    description: `Tous les ${r.axisDef.label.toLowerCase()} « ${label} » de l'univers ${r.taxo.name} dans le registre AKASHA, classés par popularité.`,
+    // ACCORD DE GENRE : lu depuis la taxonomie (champ `genre`), jamais deviné — une heuristique
+    // sur la terminaison se trompait dans les deux sens (« Tous les races », « Toutes les villages »).
+    description: `${r.axisDef.genre === 'f' ? 'Toutes les' : 'Tous les'} ${r.axisDef.label.toLowerCase()} « ${label} » de l'univers ${r.taxo.name} dans le registre AKASHA, classés par popularité.`,
     alternates: { canonical: `${SITE_URL}/learn/akasha/u/${r.slug}/${r.axisDef.attr}/${encodeURIComponent(r.val)}` },
   };
 }
@@ -67,10 +73,17 @@ export default async function AxisValuePage({ params, searchParams }: Props) {
   const subAttr = subFilterOn && sp.attr2 && SUB_ATTRS.has(sp.attr2) ? sp.attr2 : undefined;
   const subVal = subAttr && sp.val2 ? sp.val2 : undefined;
   const subAxes = subFilterOn ? taxo.axes.filter((a) => SUB_ATTRS.has(a.attr)) : [];
-  // Facettes DU village : ne proposer que les clans/rangs/générations réellement présents (avec compte).
-  const facets = subFilterOn ? await listAxisCounts(taxo.name, ['clan', 'rank', 'generation'], axisDef.attr, val) : null;
-
-  const { entries, total } = await listEntries({ universe: taxo.name, attr: axisDef.attr, val, attr2: subAttr, val2: subVal, sort: 'pop' });
+  // Facettes DU village, profil relationnel du sous-ensemble (LOT 3a) et roster : 3 requêtes
+  // indépendantes, en PARALLÈLE (avant : facettes puis roster, séquentiel).
+  const [facets, profile, entriesResult] = await Promise.all([
+    // Facettes DU village : ne proposer que les clans/rangs/générations réellement présents (avec compte).
+    subFilterOn ? listAxisCounts(taxo.name, ['clan', 'rank', 'generation'], axisDef.attr, val) : Promise.resolve(null),
+    // Profil relationnel DU SOUS-ENSEMBLE de base (attr=val) — jamais recalculé sur un sous-filtre
+    // (attr2/val2) : la question posée est celle de la page d'axe, pas d'un affinage ponctuel.
+    axisRelationalProfile(taxo.name, axisDef.attr, val),
+    listEntries({ universe: taxo.name, attr: axisDef.attr, val, attr2: subAttr, val2: subVal, sort: 'pop' }),
+  ]);
+  const { entries, total } = entriesResult;
   if (total === 0 && !subVal) notFound();
 
   const basePath = `/learn/akasha/u/${taxo.slug}/${axisDef.attr}/${encodeURIComponent(val)}`;
@@ -163,6 +176,38 @@ export default async function AxisValuePage({ params, searchParams }: Props) {
               Voir les {total} entrées →
             </Link>
           </div>
+        )}
+
+        {/* ── PROFIL RELATIONNEL DU SOUS-ENSEMBLE (LOT 3a) — le chiffre qu'aucun wiki ne calcule :
+             quelles relations sociales traversent ce groupe, vers quelles AUTRES valeurs du même
+             axe, en quelle densité. Absent si trop peu d'arêtes pour être parlant (voir
+             axisRelationalProfile, REL_PROFILE_MIN_TOTAL) — un chiffre creux vaut moins que rien. ── */}
+        {profile && (
+          <section style={{ marginTop: '2.6rem' }}>
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--td3)', marginBottom: 10 }}>
+              Profil relationnel <span style={{ color: 'var(--td3)', fontWeight: 400 }}>· {profile.total} {profile.total > 1 ? 'liens sociaux' : 'lien social'}</span>
+            </div>
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)', lineHeight: 1.6, marginBottom: 14 }}>
+              <strong style={{ color: tint }}>{profile.internalPct}&nbsp;%</strong> de ces liens (allié, ennemi, rival, famille, mentorat) restent à l'intérieur du groupe
+              {profile.types[0] && <> · le plus fréquent : <strong style={{ color: tint }}>{profile.types[0].label}</strong> ({profile.types[0].count})</>}.
+            </div>
+            {profile.external.length > 0 && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--td3)' }}>
+                  Vers quels autres {axisDef.label.toLowerCase()}
+                </div>
+                {profile.external.map((x) => (
+                  <Link key={x.value} href={`/learn/akasha/u/${taxo.slug}/${axisDef.attr}/${encodeURIComponent(x.value)}`} style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: 'var(--td2)', width: 150, flexShrink: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{x.label}</span>
+                    <span style={{ flex: 1, height: 6, borderRadius: 3, background: 'var(--bd)', overflow: 'hidden' }}>
+                      <span style={{ display: 'block', height: '100%', width: `${Math.max(4, x.pct)}%`, background: tint, borderRadius: 3 }} />
+                    </span>
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: 'var(--td3)', width: 56, textAlign: 'right', flexShrink: 0 }}>{x.count} · {x.pct}&nbsp;%</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </section>
         )}
 
         {/* ── VALEURS SŒURS (même axe) ─────────────────────── */}

@@ -12,7 +12,8 @@ import type {
 } from './types';
 import { FAMILY_FIELD } from './types';
 import { lireSections } from './sections';
-import { ALLOWED_FILTER_ATTRS, taxonomyByName } from './universe-taxonomy';
+import { ALLOWED_FILTER_ATTRS, axisValueLabel, taxonomyByName } from './universe-taxonomy';
+import { libelle } from './relation-labels';
 
 const PAGE_SIZE = 24;
 // descFr (bio VF canon) projeté pour le FLAVOR TEXT des cartes (1re phrase, cf. lib/akasha/flavor.ts).
@@ -539,6 +540,109 @@ export async function listAxisCounts(
   return out;
 }
 
+// ── PROFIL RELATIONNEL DU SOUS-ENSEMBLE (LOT 3a) ────────────────────────────
+// Restreint aux 6 relations « sociales » perso→perso : les autres natures (maitrise/possede/
+// exerce/habite/appartient) pointent vers des fiches qui ne portent quasi jamais l'axe consulté
+// (un pouvoir n'a pas de village) — les compter gonflerait le total sans rien dire de la mise en
+// relation du sous-ensemble.
+const SOCIAL_RELATIONS = ['allie', 'ennemi', 'rival', 'famille', 'mentor', 'eleve'];
+// Sous ce total d'arêtes, le chiffre est trop creux pour être « parlant » — même logique que le
+// seuil de page d'axe (tasks/akasha-hierarchies.md, « une valeur curée à moins de 5 fiches ne
+// reçoit pas de route L2 ») : un chiffre creux vaut moins que pas de chiffre.
+const REL_PROFILE_MIN_TOTAL = 5;
+
+export interface AxisRelationalProfile {
+  /** Arêtes sociales DISTINCTES touchant le sous-ensemble (dédupliquées, une seule fois même si
+   *  les deux bouts appartiennent au sous-ensemble). */
+  total: number;
+  /** Dont les deux bouts restent DANS le sous-ensemble (cohésion interne). */
+  internal: number;
+  internalPct: number;
+  /** Les natures de lien les plus fréquentes, libellé FR direction-correct (lib/akasha/relation-labels.ts). */
+  types: { label: string; count: number }[];
+  /** Les AUTRES valeurs du MÊME axe les plus atteintes (« vers qui ») — jamais le sous-ensemble lui-même. */
+  external: { value: string; label: string; count: number; pct: number }[];
+}
+
+type RelProbeRow = { id: string; relation: string; other: { v: string | null } | null };
+
+/** Profil relationnel du sous-ensemble d'une page d'axe (`/u/[slug]/[axis]/[value]`) — extension
+ *  de la famille de requêtes autour de `listAxisCounts` : pour un sous-ensemble filtré (ex. les
+ *  92 ninjas de Kumogakure), QUELLES relations le traversent, VERS QUI (quelles autres valeurs du
+ *  même axe), en quelle DENSITÉ. Le seul chiffre du LOT 3 qu'aucun wiki source ne calcule.
+ *
+ *  Fonction SŒUR de `listAxisCounts`, pas une greffe dans son CORPS : `listAxisCounts` est sur le
+ *  chemin chaud du hub (fast-path `scanUniverse`, mutualisé et caché, réparé la veille) — y ajouter
+ *  une jointure sur `akasha_relations` y coûterait pour une page (le hub) qui ne le demande jamais.
+ *  Cette fonction n'est appelée QUE par la page d'axe.
+ *
+ *  Coût mesuré 08/08/2026 (probe direct, hors rendu) sur la plus grosse valeur d'axe du corpus —
+ *  village Konohagakure, 1 867 fiches — : 2 requêtes PARALLÈLES (~250 ms cumulées), ~900 lignes de
+ *  8 colonnes chacune (~110 Ko) — jamais un scan de `akasha_entries`, jamais l'IN d'une liste
+ *  d'identifiants (filtre poussé côté PostgREST via l'embed `!inner`).
+ *
+ *  Direction NON décorative (lib/akasha/relation-labels.ts) : une arête où le sous-ensemble est
+ *  `from_entry` se lit « sortante » (entrant=false), une où il est `to_entry` se lit « entrante »
+ *  (entrant=true) — jamais le même libellé dans les deux sens. */
+export async function axisRelationalProfile(
+  universe: string, attr: string, val: string,
+): Promise<AxisRelationalProfile | null> {
+  const supabase = await createClient();
+  if (!supabase) return null;
+
+  // Deux requêtes : le sous-ensemble en `from_entry` (arêtes « sortantes ») et en `to_entry`
+  // (« entrantes »). `!inner` pousse le filtre attribut côté serveur ; `other` projette juste la
+  // valeur du MÊME axe côté opposé (jamais l'attribut complet — coût minimal).
+  const outSel = `id, relation, other:akasha_entries!akasha_relations_to_entry_fkey(v:attributes->>${attr}), source:akasha_entries!akasha_relations_from_entry_fkey!inner(_x:id)`;
+  const inSel = `id, relation, other:akasha_entries!akasha_relations_from_entry_fkey(v:attributes->>${attr}), target:akasha_entries!akasha_relations_to_entry_fkey!inner(_x:id)`;
+
+  const [{ data: outRows }, { data: inRows }] = await Promise.all([
+    supabase.from('akasha_relations').select(outSel)
+      .eq('source.universe', universe).eq(`source.attributes->>${attr}`, val)
+      .in('relation', SOCIAL_RELATIONS),
+    supabase.from('akasha_relations').select(inSel)
+      .eq('target.universe', universe).eq(`target.attributes->>${attr}`, val)
+      .in('relation', SOCIAL_RELATIONS),
+  ]);
+
+  // Dédup par id d'arête : une arête interne (les deux bouts dans le sous-ensemble) apparaît dans
+  // les DEUX requêtes — ne jamais la compter deux fois.
+  const merged = new Map<string, { relation: string; entrant: boolean; other: string | null }>();
+  for (const r of (outRows as unknown as RelProbeRow[] | null) ?? [])
+    merged.set(r.id, { relation: r.relation, entrant: false, other: r.other?.v ?? null });
+  for (const r of (inRows as unknown as RelProbeRow[] | null) ?? [])
+    if (!merged.has(r.id)) merged.set(r.id, { relation: r.relation, entrant: true, other: r.other?.v ?? null });
+
+  const total = merged.size;
+  if (total < REL_PROFILE_MIN_TOTAL) return null; // trop creux — on renonce plutôt que d'afficher un chiffre qui ne dit rien
+
+  let internal = 0;
+  const typeCounts = new Map<string, number>();
+  const externalCounts = new Map<string, number>();
+  for (const { relation, entrant, other } of merged.values()) {
+    const label = libelle(relation, entrant);
+    typeCounts.set(label, (typeCounts.get(label) ?? 0) + 1);
+    if (other === val) internal++;
+    else if (other) externalCounts.set(other, (externalCounts.get(other) ?? 0) + 1);
+  }
+
+  const types = [...typeCounts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([label, count]) => ({ label, count }));
+
+  const external = [...externalCounts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(([value, count]) => ({
+      value, label: axisValueLabel(universe, attr, value), count,
+      pct: Math.round((count / total) * 100),
+    }));
+
+  return { total, internal, internalPct: Math.round((internal / total) * 100), types, external };
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 /** « Voir aussi » : entrées de la même collection (sinon même type) du même univers,
  *  hors l'entrée courante, les plus rares d'abord. */
 export async function listSimilar(
@@ -649,12 +753,31 @@ export async function listCollectionEntries(
   const supabase = await createClient();
   if (!supabase) return [];
   const cols = subAttr ? `${CARD_COLS}, sub:attributes->>${subAttr}` : CARD_COLS;
-  let q = supabase.from('akasha_entries').select(cols).eq('attributes->>category', category);
-  if (universe) q = q.eq('universe', universe);
-  if (requireSub && subAttr) q = q.not(`attributes->>${subAttr}`, 'is', null);
-  q = q.order('name', { ascending: true }).range(0, cap - 1);
-  const { data } = await q;
-  return (data as (AkashaEntryCard & { sub?: string | null })[] | null) ?? [];
+
+  let countQ = supabase.from('akasha_entries').select('id', { count: 'exact', head: true }).eq('attributes->>category', category);
+  if (universe) countQ = countQ.eq('universe', universe);
+  if (requireSub && subAttr) countQ = countQ.not(`attributes->>${subAttr}`, 'is', null);
+  const { count } = await countQ;
+  const total = Math.min(count ?? 0, cap);
+  if (!total) return [];
+
+  // PostgREST plafonne CHAQUE requête à 1000 lignes quel que soit le `.range()` demandé (même
+  // limite que `scanUniverse` ci-dessus) : au-delà, une seule requête tronquait en silence
+  // (08/08 — le Grimoire des Jutsu, 1408 fiches, coupait à 1000 avant ce correctif, cap ou pas).
+  // Pagination parallèle par fenêtres de 1000 sur un ordre stable (id) ; tri par nom réappliqué
+  // après concaténation (PostgREST ne garantit l'ordre que DANS une fenêtre, pas entre elles).
+  const PAGE = 1000;
+  const pages = Math.ceil(total / PAGE);
+  const results = await Promise.all(
+    Array.from({ length: pages }, (_, i) => {
+      let q = supabase.from('akasha_entries').select(cols).eq('attributes->>category', category);
+      if (universe) q = q.eq('universe', universe);
+      if (requireSub && subAttr) q = q.not(`attributes->>${subAttr}`, 'is', null);
+      return q.order('id', { ascending: true }).range(i * PAGE, Math.min((i + 1) * PAGE, total) - 1);
+    }),
+  );
+  const rows = results.flatMap((r) => (r.data as (AkashaEntryCard & { sub?: string | null })[] | null) ?? []);
+  return rows.sort((a, b) => a.name.localeCompare(b.name, 'fr'));
 }
 
 /** CLASSEMENT (L7) : top N par un attribut NUMÉRIQUE stocké en JSONB (favorites, ki…). Carte + valeur. */

@@ -36,7 +36,9 @@ export default async function CollectionShowcasePage({ params }: Props) {
   const m = universeMeta(c.universe);
   const vis = hubVisual(universeHubSlug(c.universe) ?? '');
   const kanji = taxonomyByName(c.universe)?.kanji;
-  const items = await listCollectionEntries(c.category, c.subAttr, { universe: c.universe, requireSub: c.requireSub, cap: 500 });
+  // cap volontairement large (même convention que listUniverseIndex) : le Grimoire des Jutsu
+  // porte à lui seul 1 408 fiches — un cap à 500 en tronquait silencieusement 908 (08/08).
+  const items = await listCollectionEntries(c.category, c.subAttr, { universe: c.universe, requireSub: c.requireSub, cap: 1500 });
   if (items.length === 0) notFound();
 
   // Regroupe par sous-type dans l'ordre curé ; le reste (hors sections) → « Autres ».

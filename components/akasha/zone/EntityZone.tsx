@@ -22,6 +22,7 @@ import {
 import { universeHubSlug, taxonomyByName, ALLOWED_FILTER_ATTRS } from '@/lib/akasha/universe-taxonomy';
 import { registryHref } from '@/lib/akasha/href';
 import { deriveShape, ORBIT_MIN_MEMBERS, type AkashaModule } from '@/lib/akasha/shape';
+import { libelle } from '@/lib/akasha/relation-labels';
 import { ZoneProvider, useZone } from './zone-context';
 
 const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
@@ -44,35 +45,10 @@ const PRIMARY_RELATION: Partial<Record<AkashaType, { rels: string[]; label: stri
   place: { rels: ['habite', 'appartient'], label: 'Habité par' },
 };
 
-// Libellés FR de toutes les autres natures de lien rencontrées sur ce corpus (mesuré 08/08/2026 :
-// appartient, maitrise, habite, exerce, possede, allie, ennemi, rival, famille, mentor, eleve,
-// + 4 relations Dragon Ball à faible volume). Une relation absente de cette liste garde son nom
-// brut plutôt que de disparaître silencieusement — jamais un lien perdu par oubli de dictionnaire.
-const RELATION_LABELS: Record<string, string> = {
-  maitrise: 'Maîtrise', possede: 'Possède', exerce: 'Exerce', habite: 'Habite',
-  appartient: 'Appartient à', allie: 'Allié', ennemi: 'Ennemi', rival: 'Rival',
-  mentor: 'Mentor', eleve: 'Élève', famille: 'Famille',
-  jumeau: 'Jumeau', ange: 'Ange gardien', kaio_shin: 'Kaiō shin', dieu_destruction: 'Dieu de la destruction',
-};
-
-// LE SENS N'EST PAS DÉCORATIF (08/08). Une arête a une direction, et la même étiquette lue à
-// l'envers dit le contraire de la vérité : la fiche « Fruit du Démon » reçoit 210 arêtes
-// `appartient` ENTRANTES depuis les fruits individuels, et les afficher « Appartient à » lui
-// faisait déclarer qu'elle appartient à chacun d'eux — l'inverse exact du canon. Les relations
-// réflexives (allié, ennemi, rival, famille, jumeau) se lisent pareil dans les deux sens et
-// gardent donc leur libellé ; les autres prennent leur forme passive.
-const RELATIONS_REFLEXIVES = new Set(['allie', 'ennemi', 'rival', 'famille', 'jumeau']);
-const RELATION_LABELS_ENTRANT: Record<string, string> = {
-  maitrise: 'Maîtrisé par', possede: 'Possédé par', exerce: 'Exercé par', habite: 'Habité par',
-  appartient: 'Regroupe', mentor: 'Élève', eleve: 'Mentor',
-  ange: 'Ange gardien de', kaio_shin: 'Kaiō shin de', dieu_destruction: 'Dieu de la destruction de',
-};
-/** Le libellé d'une arête vue depuis la fiche COURANTE, selon le sens où elle la traverse. */
-const libelle = (relation: string, entrant: boolean) => (
-  !entrant || RELATIONS_REFLEXIVES.has(relation)
-    ? RELATION_LABELS[relation] ?? relation
-    : RELATION_LABELS_ENTRANT[relation] ?? RELATION_LABELS[relation] ?? relation
-);
+// Les deux dictionnaires directionnels (RELATION_LABELS, RELATION_LABELS_ENTRANT) et `libelle()`
+// vivent désormais dans lib/akasha/relation-labels.ts (LOT 3a, server-safe) — le profil relationnel
+// des pages d'axe (lib/akasha/queries.ts) les réutilise pour ne jamais lire une arête à l'envers.
+// SOURCE UNIQUE : ne pas redéclarer ces libellés ici.
 
 // Garde-fou de volume du LOT 2b : au-delà de 12 éléments dans une grappe, replier en « + N autres ».
 // Réutilise EXACTEMENT ORBIT_MIN_MEMBERS (lib/akasha/shape.ts) — les deux gardes partagent

@@ -802,12 +802,90 @@ le pipeline usine.
   fiches — et en particulier les 5 candidates `orbit` — rejoignent le même langage que le reste du
   lot. `npm run build` (309/309, 0 erreur TS) et `scripts/ops-sonde-schema.mjs` (conforme) vérifiés
   verts ce jour.
-- **LOT 3a (profil relationnel du sous-ensemble)** — ❌ **non fait** : aucune occurrence de
-  « profil relationnel » dans le code de la page d'axe ni de `listAxisCounts`.
-- **LOT 3c (extension des vitrines)** — ❌ **non fait**, voir Q7 ci-dessus.
+### LOT 3 — vérification finale du 08/08/2026 (recompte indépendant, 3ᵉ passe après 3a/3b/3c/3d)
+
+Build : `npm run build` — **288/288 pages, TypeScript 0 erreur, sortie propre** (dev arrêté
+proprement pour le build seul, relancé et revérifié sain ensuite). `scripts/ops-sonde-schema.mjs` :
+**✓ schéma conforme**, les deux bases. Tests `lib/akasha/shape.test.ts` : **34/34 PASS**. Tous les
+chiffres ci-dessous ont été recomptés indépendamment (requêtes DB directes + lecture de la page
+rendue, HTML brut ou `get_page_text` navigateur), pas repris des rapports de chantier tels quels —
+plusieurs écarts ont été trouvés et sont documentés.
+
+- **LOT 3a (profil relationnel du sous-ensemble)** — ✅ **FAIT et vérifié EN LECTEUR** :
+  `/u/naruto/village/Konohagakure` affiche « PROFIL RELATIONNEL · 667 LIENS SOCIAUX », « 49 % »,
+  « Ennemi (233) » et 5 villages externes avec pourcentage (Oto 28·4 %, Kiri 28·4 %, Suna 27·4 %,
+  Kumo 15·2 %, Iwa 12·2 %) — les 7 chiffres recalculés à la main depuis `akasha_relations`
+  correspondent au chiffre près. Seuil `REL_PROFILE_MIN_TOTAL = 5` respecté : `/u/naruto/village/
+  Takigakure` (1 seule fiche, Kakuzu) n'affiche aucune section « Profil relationnel ». **Écart
+  corrigé sur le chiffrage du chantier** : son résumé annonçait Konohagakure comme « 1867 fiches,
+  le plus gros sous-ensemble du corpus » pour justifier le choix du cas testé — recompte
+  indépendant (deux méthodes) donne **441 fiches**, confirmé aussi à l'écran (« 441 entrées »).
+  L'écart ne s'explique par aucune autre lecture plausible du corpus ; sans conséquence
+  fonctionnelle (les 7 chiffres produits PAR la fonctionnalité sont exacts), mais le chiffrage de
+  contexte du chantier était faux et n'a pas été recopié tel quel ici. Le seuil de 5 reste un choix
+  arbitraire non calibré (réutilisé d'une règle de génération de route à un usage d'affichage
+  différent) — assumé, pas mesuré empiriquement.
+- **LOT 3b (masquage des 3 axes sales)** — ✅ **FAIT et vérifié EN LECTEUR** : 0 occurrence de
+  « Clans »/« Organisations » sur `/u/naruto` (42 chips retirés au total : 28 sur le hub Naruto,
+  14 sur le hub One Piece), `generateStaticParams` réduit de 120 à 95 (−25) sur la route d'axe.
+  Masquage bien **silencieux, jamais un blocage de route** : `/u/naruto/village/Konohagakure`
+  (curé), `/u/naruto/clan/Uchiha` (sale, curé) et `/u/one-piece/crew/L'équipage du Chapeau de
+  Paille` (sale, curé) répondent tous 200 avec contenu correct.
+- **LOT 3c (extension des vitrines 2 → 5)** — ✅ **fait pour les chiffres, incomplet pour la
+  découvrabilité**. Les 5 compteurs vérifiés EXACTS par recomptage DB indépendant : fruits-du-demon
+  211, armurerie-meito 14, grimoire-jutsu 1408, arsenal-ninja 190, stands-jojo 44. Bug de
+  troncature PostgREST corrigé : le Grimoire des Jutsu passait de 1000/1408 fiches visibles à
+  1408/1408 (vérifié à l'écran : « 1408 entrées », 8 chips de section dont **Senjutsu (15)** —
+  le rapport de chantier n'en citait que 7 + « Autres », lecture incomplète de sa propre page).
+  `c/stands-jojo` vérifié visuellement (navigateur) : rendu propre, sections par partie peuplées
+  (42/44), aucune pastille en position absolue sur une vignette (les `position:absolute` présents
+  sont des fonds d'image plein cadre `inset:0`, pas des badges de coin — le motif banni n'est pas
+  reproduit). **Renoncé dans cette vague : la découvrabilité des 3 nouvelles vitrines.** Elles ne
+  sont référencées ni dans `app/learn/akasha/page.tsx` (qui ne linke toujours que les 2 anciennes,
+  vérifié par lecture directe du fichier — un rapport de chantier antérieur affirmait à tort que
+  même les 2 anciennes n'étaient linkées nulle part) ni dans `app/sitemap.ts` (qui référence
+  seulement `fruits-du-demon` et `armurerie-meito`). Les 3 nouvelles pages n'existent donc que par
+  URL directe ou par leur propre SEO (`generateStaticParams`) — accessibles, mais pas découvrables
+  depuis le site. À faire dans un lot de suivi, pas traité ici. Écart mineur noté : le diff de
+  `lib/akasha/collections.ts` fait **+71 lignes** (recompté via `git diff --stat`), pas +76 comme
+  annoncé.
 - **LOT 3d (Takigakure, typo Konohagure, Bleach 4 mondes, dédoublonnage Gotei 13/Nelliel)** —
-  **partiel** : la fiche mal orthographiée « Konohagure » n'existe plus en base (seule
-  « Konohagakure » existe) — conforme, sans certitude sur si c'était déjà le cas avant ce plan.
-  Gotei 13 dédoublonné (confirmé, via le chantier `doublets-conteneurs`, Q1 de
-  `akasha-hierarchies.md`). **Takigakure n'est toujours pas dans les chips de l'axe `village`**
-  (7 valeurs curées, pas 8) malgré une fiche `takigakure` existante en base — non fait.
+  ✅ **exécuté et vérifié EN LECTEUR pour 3 des 4 volets, 1 volet livré en base mais invisible au
+  rendu.** Takigakure : 8ᵉ valeur d'axe `village` désormais dans les chips ET résout en page dédiée
+  (`/u/naruto/village/Takigakure`, 1 entrée Kakuzu) — corrigé, confirmé. Nelliel : fusion vérifiée
+  en direct, `/nelliel-tu-oderschvank` renvoie 308 vers `/nelliel` qui répond 200 ; Gotei 13 était
+  déjà fusionné avant cette vague (chantier `doublets-conteneurs`). Sabres : les 2 arêtes `possede`
+  posées s'affichent sur la page rendue avec le bon libellé directionnel (`/yoru` → « Possédé par ·
+  1 » → Dracule Mihawk, `/wado-ichimonji` → Roronoa Zoro). Bleach 4 mondes : les chiffres écrits en
+  base sont exacts (recompte indépendant identique au script : Soul Society 69, Terre·Karakura 59,
+  Hueco Mundo 42, Wandenreich 3, 119/292 personnages sans monde ; 140 arêtes `habite` — pas 141
+  comme annoncé, écart mineur non expliqué avec certitude, probablement une arête dédupliquée par la
+  fusion Nelliel) **mais `attributes.monde` n'est consommé nulle part dans le rendu** : vérifié par
+  grep (0 occurrence de lecture de `.monde` dans `components/akasha`, `app/learn/akasha`,
+  `lib/akasha`) et en lecteur sur `/nnoitra-gilga` (Hueco Mundo) — le champ n'apparaît que dans le
+  payload RSC embarqué, jamais dans le texte visible de la page. `BleachWorldsMap.tsx` continue de
+  calculer ses compteurs par monde depuis `race`, exactement comme avant ce chantier. **Renoncé
+  dans cette vague : câbler `monde` comme axe filtrable ou l'afficher sur la fiche** — la donnée est
+  correcte et en base, mais invisible pour un visiteur. À faire dans un lot de suivi.
+
+**Défaut non réparé, trouvé par l'épreuve indépendante et confirmé ici** (hors périmètre strict de
+LOT 3, mais touché par lui) : deux URLs malformées avec double encodage (`/u/naruto/village/%25%25%25`,
+`/c/%25%25%25`) renvoient un **crash HTTP 500** (« failed to decode param », erreur du routeur
+Next.js) au lieu d'un 404 gracieux — reproduit 3× de suite, déterministe, confirmé sur ce même
+poste. La fiche `/[slug]` (même segment malformé) ne crashe pas — le défaut est localisé aux routes
+`u/[slug]/[axis]/[value]` et `c/[slug]`, le territoire exact touché par 3a/3b/3c. Séparément, et de
+façon plus large : **toute valeur d'axe/fiche/vitrine inexistante répond HTTP 200** (avec le bon
+panneau « 404 · PAGE INTROUVABLE » affiché, donc pas trompeur visuellement, mais le code HTTP ment
+aux moteurs de recherche et au monitoring) — vérifié à nouveau ici sur 3 URLs inventées, systémique,
+préexistant, **pas corrigé dans cette vague** bien que la page d'axe ait été modifiée deux fois par
+3a/3b. Signalé comme dette, pas comme régression introduite par LOT 3.
+
+**Défaut de process noté pour mémoire** : `data/audits/lot3d-corrections-trace.json` (présent dans
+le dépôt) ne prouve, à la lecture, que la 2ᵉ/3ᵉ exécution du script (idempotente, 173 lignes déjà à
+jour, 0 mutation) — pas la 1ʳᵉ exécution qui a réellement écrit en base. Le script écrase le même
+chemin de fichier à chaque relance (pas d'horodatage dans le nom) ; la trace de la vraie 1ʳᵉ écriture
+n'existe donc plus nulle part sur disque, vérifié en lisant le fichier intégralement. Les chiffres
+finaux restent corrects (recomptés indépendamment ci-dessus), mais la fenêtre d'auditabilité voulue
+par la règle « TRACE AVANT toute écriture » a été refermée par les relances de vérification
+elles-mêmes — à corriger pour tout prochain script du même genre (nom de fichier horodaté, ou trace
+figée après le premier `--write`).

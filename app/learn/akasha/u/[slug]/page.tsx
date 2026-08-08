@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SITE_URL } from '@/lib/site';
-import { hubVisual, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
+import { hubVisual, isDirtyAxis, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { RARITY_META, TYPE_META, universeMeta, universeWordmark, universeBanner } from '@/lib/akasha/types';
 import { countUniverse, getEntriesBySlugs, getFullEntriesBySlugs, listAxisCounts, listBounties, listCategoryCounts, listEntries, listEvolutive, listStars, listUniverseIndex, universeInsights } from '@/lib/akasha/queries';
 import AkashaList from '@/components/akasha/AkashaList';
@@ -129,6 +129,9 @@ export default async function UniverseHubPage({ params }: Props) {
   if (total === 0 && stars.length === 0 && piliers.length === 0) notFound();
 
   // Valeurs de `crew` One Piece qui sont en fait des LIEUX/organisations (bruit de mining) → hors axe Équipages.
+  // INERTES depuis le LOT 3b (isDirtyAxis masque tout l'axe `crew`/`clan` en amont, voir plus bas) —
+  // gardées pour la mémoire de curation : à réactiver quand ces 2 axes seront curés (LOT 6) et
+  // retireront de DIRTY_AXES (lib/akasha/universe-taxonomy.ts).
   const OP_NON_CREW = new Set(['Skypiea', 'Alabasta', 'Pays des Wa', 'Royaume de Goa', 'Armée Révolutionnaire', 'Cipher Pol',
     'Enies Lobby', 'Water Seven', 'Dressrosa', 'Punk Hazard', 'Jaya', 'Little Garden', 'Whisky Peak', 'Thriller Bark', 'Ohara', 'Loguetown',
     'Île des hommes-poissons', 'Impel Down', 'Zo', 'Archipel Conomi', 'Île de Drum', 'Archipel des Sabaody', 'Archipel des Gecko',
@@ -145,7 +148,12 @@ export default async function UniverseHubPage({ params }: Props) {
   const compact = total < 250;
 
   // Axes affichables : valeurs curées avec data d'abord, puis les valeurs « découvertes » (hors config) par volume.
+  // LOT 3b : les axes SALES (isDirtyAxis) ne sont plus proposés en chips — masquage silencieux,
+  // jamais un blocage de route (la page d'axe elle-même reste servie pour ces clés, voir
+  // universe-taxonomy.ts). Exclus AVANT le calcul des chips : la surface signature (HubSignature)
+  // ne lit ni `clan`, ni `organization`, ni `crew` — rien d'autre n'en dépend.
   const axesAll = taxo.axes
+    .filter((axis) => !isDirtyAxis(taxo.name, axis.attr))
     .map((axis) => {
       const counts = axisCounts.get(axis.attr) ?? new Map<string, number>();
       const curated = axis.values

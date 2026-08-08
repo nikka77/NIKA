@@ -69,6 +69,10 @@ const nextConfig = {
       { source: '/learn/akasha/ile-des-animaux-etranges', destination: '/learn/akasha/island-of-rare-animals', permanent: true },
       { source: '/learn/akasha/pays-des-wa', destination: '/learn/akasha/wano', permanent: true },
       { source: '/learn/akasha/zo', destination: '/learn/akasha/zou', permanent: true },
+      // 08/08/2026 — LOT 3d, doublon de personnage Bleach fusionné (scripts/akasha-lot3d-corrections.mjs,
+      // data/audits/lot3d-corrections-trace.json). Gotei 13/Nelliel étaient les deux dédoublonnages
+      // demandés ; Gotei 13 l.54 ci-dessus était déjà fait, seul Nelliel restait.
+      { source: '/learn/akasha/nelliel-tu-oderschvank', destination: '/learn/akasha/nelliel', permanent: true },
     ];
   },
 };

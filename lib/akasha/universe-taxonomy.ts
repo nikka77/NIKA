@@ -15,6 +15,12 @@ export interface AxisValue {
 }
 
 export interface UniverseAxis {
+  /** Genre grammatical du LIBELLÉ, pour les phrases générées (« Tous les villages » / « Toutes
+   *  les organisations »). Déclaré plutôt que deviné : une heuristique sur la terminaison se
+   *  trompait dans les deux sens le 08/08 — « Tous les races », « Toutes les villages ». Le
+   *  français ne se déduit pas d'un suffixe, et un champ oublié se voit à la relecture alors
+   *  qu'une règle fausse passe inaperçue. Défaut : masculin. */
+  genre?: 'm' | 'f';
   /** Clé JSONB dans attributes (village, crew, partie…). */
   attr: string;
   label: string;
@@ -55,6 +61,11 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
           { v: 'Iwagakure', l: 'Iwa', tint: '#B07A3A', badge: '🪨' },
           { v: 'Amegakure', l: 'Ame', tint: '#5C6B8A', badge: '🌧️' },
           { v: 'Otogakure', l: 'Oto', tint: '#8E44AD', badge: '🎵' },
+          // 08/08 (LOT 3d) : 8e valeur, oubliée du curatif initial. Fiche `takigakure` déjà en
+          // base (type place), 1 personnage porte déjà l'attribut (Kakuzu) — mesuré avant d'agir
+          // (data/audits/lot3d-corrections-trace.json). Pas de typo « Konohagure » trouvée nulle
+          // part dans le corpus (slug, nom, ni valeur d'attribut village) : ce volet était déjà sain.
+          { v: 'Takigakure', l: 'Taki', tint: '#3F8E7A', badge: '💧' },
         ],
       },
       {
@@ -67,7 +78,7 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
       {
         // Valeurs alignées sur scripts/lib/akasha-axes.mjs (vocabulaire des agents : Root, pas
         // « Racine (Anbu) ») — le backfill data/audits/backfill-organization-naruto.json remplit l'axe.
-        attr: 'organization', label: 'Organisations', icon: '☁️',
+        attr: 'organization', label: 'Organisations', genre: 'f', icon: '☁️',
         values: [
           { v: 'Akatsuki', tint: '#C0392B', badge: '☁️' },
           { v: 'Taka', tint: '#6E5A8E', badge: '🦅' },
@@ -88,7 +99,7 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
         ],
       },
       {
-        attr: 'generation', label: 'Générations', icon: '🧬',
+        attr: 'generation', label: 'Générations', genre: 'f', icon: '🧬',
         values: [
           { v: 'Fondateurs' }, { v: 'Sannin' }, { v: 'Génération de Kakashi' },
           { v: 'Konoha 11' }, { v: 'Nouvelle ère' },
@@ -105,7 +116,7 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
     tagline: 'Équipages, primes et Fruits du Démon — la course au trésor.',
     axes: [
       {
-        attr: 'faction', label: 'Factions', icon: '⚖️',
+        attr: 'faction', label: 'Factions', genre: 'f', icon: '⚖️',
         values: [
           { v: 'Pirate', l: 'Pirates' }, { v: 'Marine' }, { v: 'Gouvernement Mondial' },
           { v: 'Révolutionnaire', l: 'Révolutionnaires' }, { v: 'Civil', l: 'Civils' },
@@ -157,7 +168,7 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
     tagline: 'Races guerrières, transformations et sagas — la quête des sept boules.',
     axes: [
       {
-        attr: 'race', label: 'Races', icon: '🧬',
+        attr: 'race', label: 'Races', genre: 'f', icon: '🧬',
         values: [
           { v: 'Saiyan', l: 'Saiyans' }, { v: 'Human', l: 'Humains' }, { v: 'Namekian', l: 'Nameks' },
           { v: 'Android', l: 'Androïdes' }, { v: 'Majin' }, { v: 'Frieza Race', l: 'Race de Freezer' },
@@ -165,7 +176,7 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
         ],
       },
       {
-        attr: 'saga', label: 'Sagas', icon: '📖',
+        attr: 'saga', label: 'Sagas', genre: 'f', icon: '📖',
         values: [
           { v: 'Saga Saiyan' }, { v: 'Saga Namek' }, { v: 'Saga Cell' },
           { v: 'Saga Buu' }, { v: 'Saga Super' },
@@ -181,10 +192,26 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
     tagline: 'Shinigami, Hollows et zanpakutō — la guerre des âmes.',
     axes: [
       {
-        attr: 'race', label: 'Races spirituelles', icon: '👻',
+        attr: 'race', label: 'Races spirituelles', genre: 'f', icon: '👻',
         values: [
           { v: 'Shinigami' }, { v: 'Hollow' }, { v: 'Arrancar' }, { v: 'Quincy' },
           { v: 'Humain', l: 'Humains' }, { v: 'Fullbringer' }, { v: 'Visored' },
+        ],
+      },
+      {
+        // LES QUATRE MONDES (LOT 3d, 08/08). Décision de Dan : Bleach ne s'organise pas autour du
+        // seul cercle du Gotei mais de ses QUATRE MONDES. L'axe est peuplé depuis les arêtes
+        // `habite`, pas déclaré à la main — 173 personnages sur 292 en portent un. Wandenreich
+        // n'en compte que 3 : c'est le canon (l'empire Quincy n'apparaît qu'en dernier arc et
+        // presque personne n'y « habite »), pas un trou de curation — on le montre tel quel
+        // plutôt que de gonfler la valeur pour faire joli.
+        // Libellé SANS article : il est réemployé dans des phrases générées (« Tous les mondes
+        // “Soul Society” de l'univers Bleach ») où « Les quatre mondes » donnait « Tous les les
+        // quatre mondes ». Un libellé est un NOM, pas une phrase.
+        attr: 'monde', label: 'Mondes', icon: '🌍',
+        values: [
+          { v: 'Soul Society' }, { v: 'Terre · Karakura' },
+          { v: 'Hueco Mundo' }, { v: 'Wandenreich' },
         ],
       },
       {
@@ -222,7 +249,7 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
     tagline: 'Une lignée, des Stands et un siècle de bizarrerie.',
     axes: [
       {
-        attr: 'partie', label: 'Parties', icon: '🎭',
+        attr: 'partie', label: 'Parties', genre: 'f', icon: '🎭',
         values: [
           { v: 'Partie 1-2', l: '1-2 · Origines (Hamon)' },
           { v: 'Partie 3', l: '3 · Stardust Crusaders' },
@@ -243,7 +270,7 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
     tagline: 'Cols, écuries et duels nocturnes — la légende du drift.',
     axes: [
       {
-        attr: 'affiliation', label: 'Écuries', icon: '🏁',
+        attr: 'affiliation', label: 'Écuries', genre: 'f', icon: '🏁',
         // 08/08 : « Akagi RedSuns » dé-curée de ce filtre — 0 fiche ne porte ce SCALAIRE (page
         // d'axe fantôme), alors que la fiche groupe « redsuns » existe et porte bien 4 arêtes
         // `appartient` (Ryosuke, Keisuke, Kenta Nakamura, Hiroshi Fumihiro) : ces 4 pilotes sont
@@ -378,6 +405,25 @@ export function universeHubSlug(name: string | null | undefined): string | undef
 export const ALLOWED_FILTER_ATTRS: ReadonlySet<string> = new Set(
   UNIVERSE_TAXONOMY.flatMap((u) => u.axes.map((a) => a.attr)),
 );
+
+/** Axes « sales » (LOT 3b) — mesuré 08/08/2026, la MAJORITÉ des valeurs réelles en base tombent
+ *  hors de la petite liste curée ci-dessus (alias/romanisations non normalisés) : `clan` Naruto
+ *  (39 valeurs hors curation sur 48, 114 fiches), `organization` Naruto (117/125, 348 fiches),
+ *  `crew` One Piece (39/46, 161 fiches). Le curateur d'alias existe (`lib/ops/agents.ts`, LOT 6)
+ *  mais n'a pas encore tourné sur ces 3 axes.
+ *  Tant que ce n'est pas fait, ces axes ne sont plus PROPOSÉS : ni pré-générés
+ *  (`generateStaticParams` de la page d'axe), ni en rail de chips sur le hub. MASQUAGE SILENCIEUX,
+ *  JAMAIS UN BLOCAGE DE ROUTE — la clé reste déclarée dans `axes` ci-dessus, donc une URL de page
+ *  d'axe déjà partagée (curée ou non) continue de répondre via le fallback ISR
+ *  (`dynamicParams` reste à `true`, non redéfini dans ces deux pages). On cesse de proposer, on
+ *  n'interdit pas. */
+const DIRTY_AXES: ReadonlySet<string> = new Set(['Naruto:clan', 'Naruto:organization', 'One Piece:crew']);
+
+/** Un axe (univers + attribut) est-il trop sale pour être PROPOSÉ (chip, pré-génération) ?
+ *  N'affecte jamais la résolution de route elle-même — voir le commentaire de `DIRTY_AXES`. */
+export function isDirtyAxis(universe: string, attr: string): boolean {
+  return DIRTY_AXES.has(`${universe}:${attr}`);
+}
 
 /** Libellé FR d'une valeur d'axe (retombe sur la valeur brute). */
 export function axisValueLabel(universe: string, attr: string, value: string): string {
