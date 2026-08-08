@@ -1,0 +1,183 @@
+{
+  "genere_le": "2026-08-08T14:33:39.012Z",
+  "chantier": "sources-concurrentes — une information, un seul endroit",
+  "depot": "/Users/macbookprom1pro/dev/NIKA",
+  "fichiers": {
+    "trace_avant": "data/audits/sources-doubles-trace.json",
+    "execution": "data/audits/sources-doubles-execution.json",
+    "rapport": "data/audits/sources-doubles-rapport.json"
+  },
+  "point1_jutsu": {
+    "regle_appliquee": "L'arête maitrise fait foi. attributes.jutsu vérifié fiche par fiche puis purgé intégralement sur les 23 fiches concernées (Naruto uniquement).",
+    "mesure": {
+      "fiches_concernees": 23,
+      "noms_total": 661,
+      "couverts_par_arete": 644,
+      "orphelins": 17
+    },
+    "orphelins_documentes": [
+      {
+        "fiche": "neji-hyuga",
+        "nom": "The Springtime of Youth wiki has an article about this topic:",
+        "categorie": "artefact de scraping (texte de désambiguïsation wiki, jamais un jutsu)"
+      },
+      {
+        "fiche": "neji-hyuga",
+        "nom": "Neji Hyūga",
+        "categorie": "auto-référence (le nom du personnage lui-même, bug d'import)"
+      },
+      {
+        "fiche": "naruto-uzumaki",
+        "nom": "Shadow Clone Technique",
+        "categorie": "fiche de base manquante (seules les variantes composées ont une fiche, ex. Multiple Shadow Clone Technique)"
+      },
+      {
+        "fiche": "itachi-uchiha",
+        "nom": "Shadow Clone Technique",
+        "categorie": "fiche de base manquante (seules les variantes composées ont une fiche, ex. Multiple Shadow Clone Technique)"
+      },
+      {
+        "fiche": "killer-b",
+        "nom": "Shadow Clone Technique",
+        "categorie": "fiche de base manquante (seules les variantes composées ont une fiche, ex. Multiple Shadow Clone Technique)"
+      },
+      {
+        "fiche": "sasuke-uchiha",
+        "nom": "Shadow Clone Technique",
+        "categorie": "fiche de base manquante (seules les variantes composées ont une fiche, ex. Multiple Shadow Clone Technique)"
+      },
+      {
+        "fiche": "kakashi-hatake",
+        "nom": "Shadow Clone Technique",
+        "categorie": "fiche de base manquante (seules les variantes composées ont une fiche, ex. Multiple Shadow Clone Technique)"
+      },
+      {
+        "fiche": "nagato",
+        "nom": "The Springtime of Youth wiki has an article about this topic:",
+        "categorie": "artefact de scraping (texte de désambiguïsation wiki, jamais un jutsu)"
+      },
+      {
+        "fiche": "madara-uchiha",
+        "nom": "Shadow Clone Technique",
+        "categorie": "fiche de base manquante (seules les variantes composées ont une fiche, ex. Multiple Shadow Clone Technique)"
+      },
+      {
+        "fiche": "shikamaru-nara",
+        "nom": "Shadow Clone Technique",
+        "categorie": "fiche de base manquante (seules les variantes composées ont une fiche, ex. Multiple Shadow Clone Technique)"
+      },
+      {
+        "fiche": "jiraiya",
+        "nom": "Shadow Clone Technique",
+        "categorie": "fiche de base manquante (seules les variantes composées ont une fiche, ex. Multiple Shadow Clone Technique)"
+      },
+      {
+        "fiche": "tsunade",
+        "nom": "Shadow Clone Technique",
+        "categorie": "fiche de base manquante (seules les variantes composées ont une fiche, ex. Multiple Shadow Clone Technique)"
+      },
+      {
+        "fiche": "minato-namikaze",
+        "nom": "Shadow Clone Technique",
+        "categorie": "fiche de base manquante (seules les variantes composées ont une fiche, ex. Multiple Shadow Clone Technique)"
+      },
+      {
+        "fiche": "kurama",
+        "nom": "The Springtime of Youth wiki has an article about this topic:",
+        "categorie": "artefact de scraping (texte de désambiguïsation wiki, jamais un jutsu)"
+      },
+      {
+        "fiche": "gyuki",
+        "nom": "The Springtime of Youth wiki has an article about this topic:",
+        "categorie": "artefact de scraping (texte de désambiguïsation wiki, jamais un jutsu)"
+      },
+      {
+        "fiche": "orochimaru",
+        "nom": "Shadow Clone Technique",
+        "categorie": "fiche de base manquante (seules les variantes composées ont une fiche, ex. Multiple Shadow Clone Technique)"
+      },
+      {
+        "fiche": "orochimaru",
+        "nom": "Summoning: Impure World Reincarnation",
+        "categorie": "fiche cible manquante"
+      }
+    ],
+    "action": "attributes.jutsu retiré des 23 fiches ; attributes.descFr, family, etc. intacts (contrôlé par égalité canonique avant écriture).",
+    "resultat": {
+      "purges": 23,
+      "sautes_concurrence": 0
+    },
+    "impact_visuel_verifie": {
+      "constat": "components/akasha/zone/CharacterZone.tsx l.67 lisait DÉJÀ attributes.jutsu en repli (jutsuPlain = noms NON couverts par une arête maitrise), rendu en chips cliquables dans la grappe « Techniques » (l.179-196), plafonné à 18 éléments cumulés avec les arêtes. CharacterCard.tsx (l.98,199,201) lit aussi a.jutsu mais n'est monté sur AUCUNE route app/ — code mort, zéro impact.",
+      "fiches_avec_effet_visuel_reel": [
+        {
+          "slug": "neji-hyuga",
+          "avant": "2 chips (texte de scraping + auto-référence)",
+          "apres": "0 chip — les deux étaient du bruit, amélioration"
+        },
+        {
+          "slug": "nagato",
+          "avant": "1 chip (texte de scraping)",
+          "apres": "0 chip — bruit supprimé, amélioration"
+        },
+        {
+          "slug": "kurama",
+          "avant": "1 chip (texte de scraping)",
+          "apres": "0 chip — bruit supprimé, amélioration"
+        },
+        {
+          "slug": "gyuki",
+          "avant": "1 chip (texte de scraping)",
+          "apres": "0 chip — bruit supprimé, amélioration"
+        },
+        {
+          "slug": "shikamaru-nara",
+          "avant": "1 chip « Shadow Clone Technique » (non cliquable vers une fiche : select() sans slug)",
+          "apres": "0 chip — SEULE régression visible réelle du lot 1, sur un nom déjà sans fiche cible"
+        }
+      ],
+      "fiches_sans_effet_visuel": "18 des 23 fiches ont ≥ 18 arêtes maitrise (le plafond d'affichage à 18 tronquait déjà jutsuPlain à 0 avant la purge) — aucun changement visible."
+    }
+  },
+  "point2_description": {
+    "regle_appliquee": "Grep du code : app/learn/akasha/[slug]/page.tsx lit entry.description en repli conditionnel (descDiffersFromSummary), déjà conçu pour ignorer le doublon. NULL appliqué uniquement où description === summary octet pour octet ; conservé partout où le texte diffère.",
+    "mesure": {
+      "fiches_total": 7674,
+      "identiques_avant": 6959,
+      "differentes_conservees": 28,
+      "deja_null_avant": 659,
+      "deux_null": 28
+    },
+    "resultat": {
+      "VIDE": 6959
+    },
+    "anomalies_trouvees_hors_scope": [
+      {
+        "fiche": "inner-former",
+        "universe": "Naruto",
+        "probleme": "description porte le texte d'une AUTRE entité que celle décrite par summary — contenu réellement rendu en Markdown sur la fiche publique (app/learn/akasha/[slug]/page.tsx l.328), donc bug visible, pas seulement latent",
+        "summary": "Rang supérieur de l organisation secrète Kara : chaque Inner supervise une région donnée, porte un chiffre romain tatoué sur le visage et une cape noire à doublure colorée. Tous sont des cyborgs porteurs de l ADN de Shibai Ōtsutsuki, considérés comme l ossature de l organisation — sans eux, les Outers cesseraient de fonctionner.",
+        "description_actuelle": "Personnalité intérieure de Sakura Haruno donnant voix à ses pensées refoulées et à son agressivité, effacée après son évolution."
+      },
+      {
+        "fiche": "zerhogie",
+        "universe": "Death Note",
+        "probleme": "description porte le texte d'une AUTRE entité que celle décrite par summary — contenu réellement rendu en Markdown sur la fiche publique (app/learn/akasha/[slug]/page.tsx l.328), donc bug visible, pas seulement latent",
+        "summary": "Dieu de la Mort de rang 5 au crochet spectaculaire et au casque de plumes, apparu dans le databook officiel (tome 13).",
+        "description_actuelle": "Agent du FBI en poste au Japon, chargé de surveiller un cadre du groupe Yotsuba avant d'être tué avec ses collègues par Kyousuke Higuchi."
+      }
+    ]
+  },
+  "point3_ki": {
+    "regle_appliquee": "Zéro stat estimée (règle Dan). Retrait total, sans exception : Luffy/Zoro sont hors Dragon Ball et ne portent pas ce champ, donc aucun conflit avec leur exception.",
+    "mesure": {
+      "fiches_concernees": 60,
+      "echelle_fr_fautive": 29
+    },
+    "action": "attributes.ki retiré des 60 fiches Dragon Ball ; rendu visible auparavant via CharacterZone.tsx l.366 (push('Ki', str(a.ki))) — la ligne de stat disparaît de la fiche.",
+    "resultat": {
+      "retires": 60,
+      "sautes_concurrence": 0
+    }
+  }
+}

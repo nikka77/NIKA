@@ -17,6 +17,16 @@
 > ⚠ Une vague parallèle travaille sur les SURFACES et le PARCOURS. Ce document traite les
 > HIÉRARCHIES et la STRUCTURE INTERNE. Points de contact signalés par ⚠ **COLLISION**.
 
+> **Vérification finale — 08/08/2026, 17h34 CEST.** Recompte indépendant : **7 637 fiches ·
+> 16 383 arêtes · 19 108 sections**, 8 univers. Écarts vs les 7 674/16 387/19 183 (ou 19 188 selon
+> `akasha-architecture.md` — **incohérence entre les deux documents, notée ici** : les deux ont été
+> mesurés « ce jour » à des instants différents, l'écart de 5 sections entre eux est dans le même
+> ordre de grandeur que la dérive continue de l'usine documentée partout dans ce fichier) tous
+> expliqués et recoupés de façon croisée dans `akasha-architecture.md` §0. Détail par univers,
+> vérifié en direct sur `/learn/akasha` : Naruto 3 305→**3 308**, One Piece 2 270→**2 231**,
+> Bleach 386→**385**, Dragon Ball/JoJo/HxH/Death Note/Initial D **inchangés**. `npx tsc --noEmit` :
+> 0 erreur. `next build` : 309/309 pages, exit 0. `scripts/ops-sonde-schema.mjs` : conforme.
+
 ---
 
 ## 0. Les sept arbitrages, en une page
@@ -709,6 +719,9 @@ se recompte, il ne s'affirme pas.
 
 ## 8. À trancher par Dan — questions fermées
 
+> **08/08/2026 — Dan tranche « go tout » : les options en gras (les recommandations) sont
+> DÉCIDÉES.** Statut d'exécution vérifié indépendamment (base + code) juste sous le tableau.
+
 | # | Question | Options | Enjeu chiffré |
 |---|---|---|---|
 | **Q1** | Fusionner les **25 doublets de conteneurs** (23 One Piece + Gotei 13 + Buggy/Baggy) en gardant le twin `place` et en redirigeant le slug abandonné ? | **oui** / non / oui mais garder le twin `status` | Sans ça, `east-blue` affiche 77 membres d'un côté et 0 de l'autre. Bloque tout effectif agrégé. |
@@ -719,6 +732,51 @@ se recompte, il ne s'affirme pas.
 | **Q6** | Confirmer que **Bleach `division`, JoJo `partie`, DB `saga`** restent des **axes purs sans fiches** ? | **oui, confirmé** / non, ficher | 119 fiches qui n'ajouteraient **aucun** parent nouveau et ouvriraient autant de pages vides. |
 | **Q7** | Appliquer le **seuil < 5 fiches → pas de route L2** (DB Majin/Angel, Bleach divisions, JoJo Parties 7-8, Initial D écuries) **maintenant** ou après fusion des deux vagues ? | maintenant / **après fusion** | Touche `generateStaticParams` — risque de 404 sur un lien que la vague surfaces vient de poser. |
 | **Q8** | Sortir `sections` de `attributes` (A5) **avant** ou **après** la fusion avec la vague surfaces ? | avant / **après** | Change la forme du retour de `getEntryBySlug`, consommé par `DossierSections` à 4 endroits. |
+
+### Statut d'exécution, vérifié le 08/08/2026 (recompte + lecture directe du code et des pages)
+
+- **Q1 — DÉCIDÉ ET EXÉCUTÉ.** 41 groupes / 42 fiches perdantes fusionnées (chantier
+  `doublets-conteneurs`), twin `place` gardé, 42 redirections 308 dans `next.config.js` — testé en
+  direct : `/learn/akasha/skypiea` → 308 → `/learn/akasha/skypiea-lieu`, contenu enrichi des
+  relations et sections du perdant. ⚠️ **Défaut trouvé à la lecture** : la fusion de sections ne
+  déduplique que sur **titre exact**. Sur `skypiea-lieu`, le dossier affiche désormais côte à côte
+  « Porte du Ciel » (FR, migré) et « Heaven's Gate » (EN, déjà présent) qui racontent le même
+  fait, de même « Île des Anges »/« Angel Island » et « Parc Wagomuland »/« Wagomuland » — contenu
+  factuellement redondant sous deux titres, visible en lecture réelle, non couvert par la mesure
+  « 79 sections doublons ignorées » de l'audit (qui ne voit que les titres identiques).
+- **Q2 — DÉCIDÉ ET EXÉCUTÉ.** 0 fiche avec `attributes.jutsu` en base, sur l'ensemble du corpus.
+  Sur `naruto-uzumaki` : compteur affiché « Techniques · 105 » = exactement le compte indépendant
+  des arêtes `maitrise` sortantes (105, requêté directement) — cohérent, plus de double compte.
+- **Q3 — DÉCIDÉ, NON EXÉCUTÉ.** `app/learn/akasha/[slug]/page.tsx` (l.103) teste toujours
+  littéralement `category === 'Attaque'`, aucun repli par `maitrise` entrante. Reste à faire.
+- **Q4 — DÉCIDÉ, EXÉCUTÉ À 2/3.** `gouvernement-mondial` et `civil` créées et vérifiées en base et
+  en page. La 3ᵉ (Armée Révolutionnaire) existe déjà en base sous un nom désaligné, non rapprochée
+  — à corriger par alias, pas par une fiche neuve. **⚠️ Défaut trouvé à la lecture, sur les 2
+  fiches créées** : `gouvernement-mondial` et `civil` affichent toutes deux « **0 membre au
+  registre — Aucun membre relié dans le registre pour l'instant** », alors que l'audit
+  `parents-manquants` revendique 24 et 137 personnages « résolus » sur ces fiches. Cette
+  résolution est un **appariement par attribut** (`attributes.faction` ≈ nom de la fiche), pas une
+  arête `akasha_relations` — et `OrganizationZone.tsx`, le composant qui rend la page, ne lit
+  **que** `relationsIn.filter(r => r.relation === 'appartient')`. Aucune arête n'a été créée : le
+  lecteur qui visite ces fiches ne voit aucun des personnages que l'audit dit leur avoir
+  rattachés. C'est exactement le rôle non encore construit de `containerOf()`/`membersOf()`
+  (§7, étape 2 de ce document) : tant qu'il n'est pas écrit et branché dans `OrganizationZone`,
+  toute fiche-parent créée par appariement d'axe reste une coquille vide à l'écran.
+- **Q5 — DÉCIDÉ, EXÉCUTÉ PARTIELLEMENT, CONFORMITÉ AU SEUIL NON VÉRIFIABLE ICI.** 3 fiches créées
+  (Sarutobi, Kagetsu, Izuno) — **même défaut « 0 membre » que Q4**, confirmé en direct sur
+  `/learn/akasha/clan-sarutobi` (0 membre affiché ; « Sarutobi » n'est même pas une valeur curée de
+  l'axe `clan` Naruto, donc pas de page L2 de repli non plus). Le rapport `parents-manquants` note
+  lui-même 3 valeurs restées sans fiche malgré ≥ 3 personnages (Fūma Land of Sound 7, Kazekage 5,
+  Shirogane 4), écartées « pour un motif distinct chacune » — motifs non vérifiés individuellement
+  dans le budget de cette relecture ; à recroiser si Dan y attache de l'importance.
+- **Q6 — DÉCIDÉ : oui, confirmé.** Statu quo, rien à exécuter. Vérifié : aucune fiche
+  `division`/`partie`/`saga` n'existe en base pour ces 3 axes, conforme.
+- **Q7 — DÉCIDÉ (après fusion) — la fusion des deux vagues, c'est cette vérification-ci : reste à
+  exécuter.** `generateStaticParams` de `u/[slug]/[axis]/[value]/page.tsx` génère toujours toutes
+  les valeurs curées sans filtrer par effectif — pas encore fait.
+- **Q8 — DÉCIDÉ (après fusion) — même remarque que Q7 : reste à exécuter.** Dans
+  `lib/akasha/queries.ts` (l.262), la fusion en mémoire `attributes: { ...e.attributes, sections }`
+  est toujours en place ; aucune des 4 étapes de l'ordre retenu (§3, arbitrage A5) n'a commencé.
 
 ---
 

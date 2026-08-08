@@ -11,6 +11,7 @@ import { listEntries, listAxisCounts } from '@/lib/akasha/queries';
 import { taxonomyBySlug, hubVisual, axisValueLabel, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { universeMeta } from '@/lib/akasha/types';
 import AkashaList from '@/components/akasha/AkashaList';
+import UniverseShell from '@/components/akasha/UniverseShell';
 import { VillageEmblem, ClanCrest, RankBadge, GenerationBadge } from '@/components/akasha/NarutoIcons';
 
 export const revalidate = 3600; // ISR 1 h
@@ -79,9 +80,8 @@ export default async function AxisValuePage({ params, searchParams }: Props) {
 
   return (
     <main>
-      <div style={{ position: 'relative', overflow: 'hidden', background: vis?.heroGradient ?? `linear-gradient(160deg, ${m.color}22, var(--bg) 70%)`, borderBottom: '1px solid var(--bd)', padding: 'clamp(1.8rem,4vw,3rem) 1.4rem 1.5rem' }}>
-        {vis && <div className="ak-hub-pattern" style={{ ['--ak-bg' as string]: vis.bgPattern }} aria-hidden />}
-        <div style={{ maxWidth: 1000, margin: '0 auto', position: 'relative' }}>
+      <UniverseShell color={m.color} heroGradient={vis?.heroGradient} bgPattern={vis?.bgPattern} kanji={taxo.kanji} padding="clamp(1.8rem,4vw,3rem) 1.4rem 1.5rem">
+        <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           {/* Fil d'Ariane hub */}
           <nav aria-label="Fil d'Ariane" style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap', marginBottom: 14, fontFamily: 'var(--fo)', fontSize: 11.5, fontWeight: 700 }}>
             <Link href="/learn/akasha" style={{ color: 'var(--td3)', textDecoration: 'none' }}>← Registre</Link>
@@ -113,7 +113,7 @@ export default async function AxisValuePage({ params, searchParams }: Props) {
             <strong style={{ color: tint }}>{total}</strong> {total > 1 ? 'entrées' : 'entrée'} · classées par popularité{subLabel && <> · filtré : <strong style={{ color: tint }}>{subLabel}</strong></>}
           </div>
         </div>
-      </div>
+      </UniverseShell>
 
       <div style={{ maxWidth: 1000, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.2rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
         {/* ── SOUS-FILTRES (clan / rang / génération) — réorg hub : filtrer les ninjas du village ── */}

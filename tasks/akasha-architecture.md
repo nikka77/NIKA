@@ -19,7 +19,40 @@
 Tout ce qui suit est mesuré ce jour par scans paginés directs (`clientSite`, `.range()` par lots
 de 1000) sur les 3 tables, et par lecture du code réel — pas recopié d'un rapport.
 
-| Fait | Chiffre mesuré | Ce que ça corrige |
+> **Vérification finale — 08/08/2026, 17h34 CEST, recompte indépendant post-vague.**
+> Corpus RE-mesuré : **7 637 fiches · 16 383 arêtes · 19 108 sections · 828 sans image ·
+> 454 sans `descFr`**. Écarts vs les 7 674/16 387/19 188 mesurés en tête de ce document,
+> expliqués pièce par pièce :
+> - **Fiches −37** = −42 (fusion des 25 doublets de conteneurs, chantier `doublets-conteneurs`,
+>   exécuté 16:29-16:42) + 5 (5 fiches-parent insérées par `parents-manquants` : Gouvernement
+>   Mondial, Civil, Clan Sarutobi, Clan Kagetsu, Clan Izuno). Confirmé de façon croisée et
+>   indépendante par les compteurs PAR UNIVERS affichés en direct sur `/learn/akasha`
+>   (Naruto 3 305→**3 308** = +3 exactement les 3 insertions Naruto ; Bleach 386→**385** = −1
+>   exactement la fusion Gotei 13 ; One Piece 2 270→**2 231** = +2 insertions −41 doublets OP,
+>   soit 41 des 42 fiches perdantes hors Bleach ; Dragon Ball, JoJo, HxH, Death Note, Initial D
+>   **inchangés au chiffre près**, aucun chantier ne les a touchés).
+> - **Arêtes −4** = exactement les « 4 doublons d'arêtes supprimés » documentés par l'exécution
+>   du chantier doublets. Aucun écart résiduel.
+> - **Sections −80**, attendu −79 (79 sections de fiches perdantes supprimées par cascade,
+>   61 migrées vers le survivant à effet net nul) : écart de 1, dans le bruit de l'usine qui
+>   tourne en continu.
+> - **Sans image −12** (840→828) : −16 (fiches perdantes qui n'avaient pas d'image, mesuré en
+>   relisant `before.losers[].entry.image_url` sur les 42 fiches de la trace du chantier
+>   doublets) + 5 (les 5 fiches insérées n'ont aucune, vérifié directement en base) = −11 attendu,
+>   écart de 1, bruit d'usine.
+> - **Sans descFr −14** (468→454) : −4 (fiches perdantes sans descFr, même méthode) + 0 (les
+>   5 fiches insérées ont TOUTES un `descFr` dès la création, vérifié en base — pas d'ajout au
+>   passif) = −4 attendu, **écart résiduel de 10 non expliqué par les 3 chantiers de cette vague**.
+>   Hypothèse retenue, non prouvée à la minute près : l'usine (`agent-worker.mjs`) a continué
+>   à écrire des `descFr` sur des fiches préexistantes pendant l'heure écoulée entre les traces
+>   (16:30) et cette vérification (17:34) — cohérent avec le fait que `descFr` est le SEUL des
+>   trois chantiers de cette vague dont la valeur peut être écrite en continu par un pipeline tiers
+>   qui n'est jamais interrogé ni arrêté ici.
+> Build (`next build`) : **309/309 pages, exit 0** — recompté indépendamment, identique au
+> chiffre rapporté. `npx tsc --noEmit` : 0 erreur. `scripts/ops-sonde-schema.mjs` : conforme,
+> les deux bases.
+
+| Fait | Chiffre mesuré (au lancement du plan) | Ce que ça corrige |
 |---|---|---|
 | Corpus | 7 674 fiches · 16 387 arêtes · 19 188 sections · 8 univers | conforme au brief |
 | Composants `components/akasha/**.tsx` | **44** (27 racine + 13 `hub/` + 4 `zone/`) | le brief dit 29 : il ne comptait pas les sous-dossiers |
@@ -614,37 +647,93 @@ le pipeline usine.
 
 ## 8. À trancher par Dan — questions fermées
 
+> **08/08/2026 — Dan tranche « go tout » : les recommandations écrites ci-dessous font foi et
+> sont DÉCIDÉES.** Statut d'exécution vérifié indépendamment, en clair après chaque décision.
+
 1. **Repli générique de hub.** Le fallback « grille du monde » (pour un univers sans carte
    bespoke) : on le construit maintenant, ou à l'arrivée d'un 9ᵉ univers réel ?
    → **[Maintenant] / [À l'arrivée d'un 9ᵉ]** — *ma recommandation : à l'arrivée.*
+   **DÉCIDÉ : à l'arrivée d'un 9ᵉ univers.** Rien à faire aujourd'hui (LOT 7, conditionnel) —
+   vérifié : aucun composant de repli générique dans `components/akasha/` à ce jour, conforme.
 
 2. **Le geste central.** Ce plan est un plan de **cohérence**, pas de nouveauté : il n'ajoute aucun
    nouveau moment waouh, il fait disparaître un site à deux vitesses. Est-ce bien ce que tu
    attendais, ou veux-tu qu'on réserve du budget pour une surface inédite ?
    → **[Cohérence d'abord, conforme] / [Je veux aussi une surface inédite]**
+   **Pas de recommandation écrite pour celle-ci** — je ne l'ai donc pas tranchée moi-même en
+   appliquant « go tout » (il n'y a rien à appliquer sans texte à suivre). **Reste ouverte,
+   à trancher explicitement par Dan.**
 
 3. **`EraZone` ne sert que 14 fiches** (et non 37). On la garde en zone autonome, ou on la fond en
    simple module `timeline` d'`EntityZone` au lot 5 ?
    → **[Garder autonome] / [Fondre en module]** — *ma recommandation : fondre, mais au lot 5.*
+   **DÉCIDÉ : fondre en module `timeline`, au LOT 5** (pas avant — dépend de `EntityZone`, LOT 2,
+   non encore construit). Vérifié : `EraZone` existe toujours telle quelle en composant autonome
+   (`components/akasha/zone/EraZone.tsx`), conforme à « pas avant le lot 5 ».
 
 4. **`ki` Dragon Ball** : 60 valeurs de power level non canon (fan-made), dont 29 avec une échelle
    française fautive (« Milliard/Billion »). On les marque « estimé », ou on les retire ?
    → **[Marquer « estimé »] / [Retirer]** — *ma recommandation : retirer ; les seules stats
    estimées que tu as autorisées sont Luffy/Zoro, nommément.*
+   **DÉCIDÉ ET EXÉCUTÉ : retiré.** Vérifié indépendamment (chantier `sources-doubles`, point 3) :
+   0 fiche Dragon Ball porte encore `attributes.ki` en base, sur 60 avant, 0 saut de concurrence
+   au recomptage.
 
 5. **Images non-personnage One Piece** (48,2 % de couverture : Navire 62,6 %, Pouvoir 30,7 %).
    On lance d'abord la sonde gratuite `pageimages` du wiki, jamais lancée sur ces types, avant tout
    crédit Higgsfield ?
    → **[Oui, sonde gratuite d'abord] / [Non, laisser en tuiles stylisées]**
+   **Pas de « ma recommandation » explicite formulée ici**, mais le corps du texte (§6.2) traite
+   déjà « oui, sonde gratuite d'abord » comme acquis (« à épuiser avant tout crédit Higgsfield »).
+   Par cohérence interne du document, **je retiens DÉCIDÉ : oui, sonde gratuite d'abord** — **non
+   exécuté à ce jour** (LOT 6, back, aucune trace d'un script `pageimages` non-personnage OP dans
+   `data/audits/` ni `scripts/`).
 
 6. **`total_prime` d'équipage One Piece** : 33 des 84 valeurs sont littéralement « inconnu Berrys ».
    Dans un classement, on masque la ligne, ou on affiche « inconnu » explicitement ?
    → **[Masquer] / [Afficher « inconnu »]** — *dans les deux cas, jamais convertir en 0.*
+   **Pas de recommandation écrite entre les deux options** (seule la garde commune — jamais 0 —
+   est tranchée). **Reste ouverte** ; la garde « jamais convertir en 0 » est, elle, DÉCIDÉE et à
+   respecter dès l'implémentation du classement.
 
 7. **Vitrines `/c/`** : on étend de 2 à 4-6 catégories (Jutsu, Attaque, Arme & outil, Métier), ou
    on reste à 2 et le reste passe par le registre filtrable ?
    → **[Étendre à 4-6] / [Rester à 2]**
+   **Pas de « ma recommandation » écrite ici non plus**, mais LOT 3-3c traite déjà l'extension à
+   4-6 comme le plan retenu (« Jutsu 1 408 … Attaque 659 … Arme & outil 228 … Métier 99 »). Par
+   cohérence interne, **je retiens DÉCIDÉ : étendre à 4-6** — **non exécuté à ce jour** :
+   `lib/akasha/collections.ts` porte toujours exactement 2 vitrines (`fruits-du-demon`,
+   `armurerie-meito`), vérifié en lisant le fichier.
 
 8. **Outil « Chemin » (BFS entre deux fiches d'un même univers).** Je l'ai écarté contre l'avis
    d'un juge (§1.1, arbitrage D). Tu confirmes, ou tu le veux en lot conditionnel après le lot 5 ?
    → **[Confirmé, parqué] / [Lot conditionnel après 5]**
+   **DÉCIDÉ : confirmé, parqué.** Le corps du document (§1.1-D, LOT 7) traite déjà ce rejet comme
+   acquis (« l'outil Chemin/BFS reste parqué ») ; aucune trace de code d'un tel outil, conforme.
+
+### État d'exécution des LOTS, vérifié le 08/08/2026 (recompte + lecture directe du code)
+
+- **LOT 1a (`HubInsights`/`CountUp` SSR)** — ✅ **FAIT, vérifié en HTML brut sans JS** :
+  `curl http://localhost:3000/learn/akasha/u/naruto` renvoie littéralement `<span>1 337</span>`
+  pour le compteur Personnages (pas `0`) dans le HTML servi, avant toute hydratation.
+- **LOT 1b (`UniverseShell`)** — ✅ **FAIT**, monté et vérifié en lecture réelle sur `u/naruto`,
+  `skypiea-lieu`, `gouvernement-mondial`, `clan-sarutobi` : même chrome (kanji, accent) sur les
+  quatre.
+- **LOT 1c (zéro carte)** — ✅ **très majoritairement fait** : `c/fruits-du-demon` ne porte plus
+  aucun `borderRadius:12` (0 occurrence sur la page complète, vérifié par grep du HTML rendu).
+  ⚠️ **Régression trouvée à la relecture** : la variante `strip` d'`AkashaList`
+  (`components/akasha/AkashaList.tsx`, fonction `Strip`, ~ligne 90) commente
+  « aucune pastille en absolu » deux lignes au-dessus d'un `position: 'absolute', top: 4, right: 4`
+  bien réel sur la pastille de rareté — code non modifié depuis la dernière revue, **toujours
+  présent** à cette vérification.
+- **LOT 2 (`EntityZone`, `deriveShape`)** — ❌ **non commencé** : ni `lib/akasha/shape.ts` ni
+  `components/akasha/zone/EntityZone.tsx` n'existent dans le dépôt à ce jour.
+- **LOT 3a (profil relationnel du sous-ensemble)** — ❌ **non fait** : aucune occurrence de
+  « profil relationnel » dans le code de la page d'axe ni de `listAxisCounts`.
+- **LOT 3c (extension des vitrines)** — ❌ **non fait**, voir Q7 ci-dessus.
+- **LOT 3d (Takigakure, typo Konohagure, Bleach 4 mondes, dédoublonnage Gotei 13/Nelliel)** —
+  **partiel** : la fiche mal orthographiée « Konohagure » n'existe plus en base (seule
+  « Konohagakure » existe) — conforme, sans certitude sur si c'était déjà le cas avant ce plan.
+  Gotei 13 dédoublonné (confirmé, via le chantier `doublets-conteneurs`, Q1 de
+  `akasha-hierarchies.md`). **Takigakure n'est toujours pas dans les chips de l'axe `village`**
+  (7 valeurs curées, pas 8) malgré une fiche `takigakure` existante en base — non fait.

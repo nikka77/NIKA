@@ -1,0 +1,1485 @@
+{
+  "chantier": "parents-manquants",
+  "horodatage": "2026-08-08T14:30:41.854Z",
+  "methodologie": {
+    "portee": "OP: axe faction (attributes.faction) sur type=character, universe=One Piece. Naruto: axe clan (attributes.clan) sur type=character, universe=Naruto.",
+    "resolutionParent": "heuristique de mesure (containerOf() n'existe pas encore en code, cf akasha-hierarchies.md §7 étape 2) : nom exact OU 'Clan '+valeur == nom fiche OU slugify(valeur) == slug fiche, parmi type IN ('status','place') du même univers.",
+    "scan": "clientSite(), scans paginés par range() (head PostgREST plafonne à 1000 lignes, cf hiérarchies annexe règle 6)."
+  },
+  "totaux": {
+    "opCharacters": 1449,
+    "narutoCharacters": 1337,
+    "opEntriesTotal": 2270,
+    "narutoEntriesTotal": 3305
+  },
+  "distributionFactionOP": {
+    "Pirate": 295,
+    "Civil": 137,
+    "Révolutionnaire": 9,
+    "Marine": 50,
+    "Gouvernement Mondial": 24
+  },
+  "distributionClanNaruto_top": {
+    "Uchiha": 27,
+    "Ōtsutsuki": 15,
+    "Uzumaki": 12,
+    "Hyūga": 12,
+    "Funato": 11,
+    "Inuzuka": 11,
+    "Akimichi": 11,
+    "Nara": 10,
+    "Senju": 8,
+    "Yamanaka": 8,
+    "Kamizuru": 8,
+    "Tsuchigumo": 7,
+    "Fūma (Land of Sound)": 7,
+    "Aburame": 6,
+    "Kagetsu Family": 5,
+    "Kazekage": 5,
+    "Sarutobi": 5,
+    "Shirogane": 4,
+    "Izuno": 4,
+    "Kurama": 4,
+    "Fūma": 3,
+    "Hōzuki": 3,
+    "Iburi": 3,
+    "Shiin": 2,
+    "Hoshigaki": 2,
+    "Tenrō": 2,
+    "Yuki": 2,
+    "Wagarashi Family": 2,
+    "Kaguya": 2,
+    "Wasabi Family": 2,
+    "Chinoike": 2,
+    "Amagiri": 2,
+    "Lee": 2,
+    "Ryū": 2,
+    "Karatachi Family": 2,
+    "Yoimura": 2,
+    "Rinha": 2,
+    "Kazekage Clan": 1,
+    "Hatake": 1,
+    "Onikuma": 1,
+    "Jūgo's": 1,
+    "Yotsuki": 1,
+    "Hirasaka": 1,
+    "Hatake Clan": 1,
+    "Shimura": 1,
+    "Kedōin": 1,
+    "Sarutobi Clan": 1,
+    "Yota's": 1
+  },
+  "ciblesOP": {
+    "Gouvernement Mondial": [
+      {
+        "id": "f9e53e94-149f-4d56-ad4f-5c24a7eed34c",
+        "slug": "spandine",
+        "name": "Spandine"
+      },
+      {
+        "id": "351c6a20-f2ed-4b32-880c-374f316b9499",
+        "slug": "guernica",
+        "name": "Guernica"
+      },
+      {
+        "id": "3f9c0bc0-8e4c-4f49-bf4b-13b333cbdc95",
+        "slug": "pell-one-piece",
+        "name": "Pell"
+      },
+      {
+        "id": "cd2f650a-4d1d-4629-8b75-495829493f1c",
+        "slug": "charlos-rosward",
+        "name": "Charlos Rosward"
+      },
+      {
+        "id": "94a4b4cc-580b-4383-9a0f-9f2000d21563",
+        "slug": "stussy-buckingham",
+        "name": "Stussy Buckingham"
+      },
+      {
+        "id": "2928d2df-e9e3-47cb-a05f-edcdd1a53f3c",
+        "slug": "nekomamushi",
+        "name": "Nekomamushi"
+      },
+      {
+        "id": "a95388de-c772-41af-b7c6-a199fe3aa8eb",
+        "slug": "kalifa",
+        "name": "Kalifa"
+      },
+      {
+        "id": "0b430bb5-94c8-4d62-8b37-a5862a2c0bae",
+        "slug": "kumadori",
+        "name": "Kumadori"
+      },
+      {
+        "id": "af84d012-95db-4fef-8a33-1ce8ee47593d",
+        "slug": "gunko-manmayer",
+        "name": "Gunko Manmayer"
+      },
+      {
+        "id": "71bb8e67-2131-41b2-a24b-81cfd1425ab9",
+        "slug": "maha",
+        "name": "Maha"
+      },
+      {
+        "id": "8330dc7c-7867-4a77-97c4-6d9ae888c5d6",
+        "slug": "magellan",
+        "name": "Magellan"
+      },
+      {
+        "id": "aba77b33-6e42-4d64-a77b-2ecfcf93f8a4",
+        "slug": "crocodile",
+        "name": "Crocodile"
+      },
+      {
+        "id": "81b4ac70-e0b1-4539-a997-3b6c8d831ae3",
+        "slug": "sadi",
+        "name": "Sadi"
+      },
+      {
+        "id": "24448cf0-6b08-457b-8ba1-d71075e71733",
+        "slug": "nero",
+        "name": "Nero"
+      },
+      {
+        "id": "76046988-d2e8-47af-b993-58815e2a1d45",
+        "slug": "loki",
+        "name": "Loki"
+      },
+      {
+        "id": "1dc85924-b874-41f7-8ea7-ba3ce4ff63a8",
+        "slug": "jerry",
+        "name": "Jerry"
+      },
+      {
+        "id": "3b707199-7f5e-4e54-bec1-69e91083705f",
+        "slug": "lucci-rob",
+        "name": "Lucci Rob"
+      },
+      {
+        "id": "8958eaf4-deee-432b-b0b5-a972e26f3f70",
+        "slug": "ulti",
+        "name": "Ulti"
+      },
+      {
+        "id": "aaac1b58-ce3d-4ad8-b386-b8f65ec73d25",
+        "slug": "blueno",
+        "name": "Blueno"
+      },
+      {
+        "id": "9380c0aa-2f31-41fb-b9eb-43b1fa11befc",
+        "slug": "hannyabal",
+        "name": "Hannyabal"
+      },
+      {
+        "id": "74c740ad-ff8b-4285-8b83-6aed1015ffcb",
+        "slug": "wanze",
+        "name": "Wanze"
+      },
+      {
+        "id": "1914fea3-7f29-49c6-b18f-7aa7df73ec32",
+        "slug": "spandam",
+        "name": "Spandam"
+      },
+      {
+        "id": "0cb2b8bc-41cd-48c7-9b7b-b7dc1a6953ae",
+        "slug": "kaku",
+        "name": "Kaku"
+      },
+      {
+        "id": "9228e26a-46a5-4fa4-8190-841d3fe07d93",
+        "slug": "imu",
+        "name": "Imu"
+      }
+    ],
+    "Civil": [
+      {
+        "id": "24dfc5d1-11c3-4ec7-b306-a8e176be64ed",
+        "slug": "giovanni",
+        "name": "Giovanni"
+      },
+      {
+        "id": "9ca253fe-e661-4bef-ba14-83211d1ee012",
+        "slug": "okiku",
+        "name": "Okiku"
+      },
+      {
+        "id": "640de425-9ceb-45d6-b725-d5fb04460a3d",
+        "slug": "higuma",
+        "name": "Higuma"
+      },
+      {
+        "id": "e6427651-44c2-4e3f-8550-2b5376054219",
+        "slug": "fukaboshi",
+        "name": "Fukaboshi"
+      },
+      {
+        "id": "8f837eaa-dccf-4a19-8e17-0bdbf3a6283c",
+        "slug": "gatz",
+        "name": "Gatz"
+      },
+      {
+        "id": "3b65ba84-cd54-4b3e-a5c0-bc00c3756200",
+        "slug": "absalom",
+        "name": "Absalom"
+      },
+      {
+        "id": "40271957-15fe-4c8a-a9c6-d5fecea61205",
+        "slug": "dorry",
+        "name": "Dorry"
+      },
+      {
+        "id": "81dcd7fe-7836-4653-80e7-390e8666bf62",
+        "slug": "nako",
+        "name": "Nako"
+      },
+      {
+        "id": "5842453d-46b4-45b4-8955-02b18bf09e53",
+        "slug": "zeff",
+        "name": "Zeff"
+      },
+      {
+        "id": "cdd93eb8-4029-4cec-9034-f689647188f7",
+        "slug": "reiju-vinsmoke",
+        "name": "Reiju Vinsmoke"
+      },
+      {
+        "id": "72a359fa-b53a-497b-b5c9-f013208ade8b",
+        "slug": "wanda",
+        "name": "Wanda"
+      },
+      {
+        "id": "a01247ac-bf8a-4807-ae87-2a737359140b",
+        "slug": "kinemon",
+        "name": "Kinemon"
+      },
+      {
+        "id": "12c8a52f-9660-4635-bad1-b8e09db9346d",
+        "slug": "vivi-nefertari",
+        "name": "Vivi Nefertari"
+      },
+      {
+        "id": "90bd571b-a82c-4cf0-a349-e2b45e17e1cb",
+        "slug": "shyarly",
+        "name": "Shyarly"
+      },
+      {
+        "id": "96c2897b-07c9-4cab-ac62-6a8a19549703",
+        "slug": "ivan-x",
+        "name": "Ivan X"
+      },
+      {
+        "id": "8f931f73-3176-4c5b-a293-7702e48797af",
+        "slug": "otama",
+        "name": "Otama"
+      },
+      {
+        "id": "f61d28a6-3904-4e3d-8afd-ce2e0033f3c5",
+        "slug": "boss",
+        "name": "Boss"
+      },
+      {
+        "id": "dfdf36d8-88c1-4baf-be75-cb0104416145",
+        "slug": "kinderella",
+        "name": "Kinderella"
+      },
+      {
+        "id": "664365a2-d66c-4c46-844f-782dd9b144cc",
+        "slug": "toki-kozuki",
+        "name": "Toki Kozuki"
+      },
+      {
+        "id": "b05aac9f-d149-4f8e-9c8e-d38fd9b7ff1d",
+        "slug": "apis",
+        "name": "Apis"
+      },
+      {
+        "id": "70847cd3-0819-4368-b092-7175efc9356a",
+        "slug": "woop-slap",
+        "name": "Woop Slap"
+      },
+      {
+        "id": "b4afd9af-e8e2-4c2d-8fde-cb358cb3c674",
+        "slug": "carrot",
+        "name": "Carrot"
+      },
+      {
+        "id": "018def73-49e2-4302-890c-2793fad728d7",
+        "slug": "chouchou",
+        "name": "Chouchou"
+      },
+      {
+        "id": "294864cf-4977-477b-927c-db942da39834",
+        "slug": "kuromarimo",
+        "name": "Kuromarimo"
+      },
+      {
+        "id": "02da4a41-b922-4834-a142-124fbda8851c",
+        "slug": "saul-jaguar-d",
+        "name": "Saul Jaguar D."
+      },
+      {
+        "id": "61dfcdea-9628-417e-a3cc-cbe83cf2d79f",
+        "slug": "morgans",
+        "name": "Morgans"
+      },
+      {
+        "id": "c42c8954-6a24-45ef-8862-ab8c6652c4f4",
+        "slug": "magra",
+        "name": "Magra"
+      },
+      {
+        "id": "0889238e-ddb1-45f5-8a19-95e4c8a496be",
+        "slug": "stelly",
+        "name": "Stelly"
+      },
+      {
+        "id": "c5c82239-b355-4c26-81e9-6daed116c10c",
+        "slug": "orochi-kurozumi",
+        "name": "Orochi Kurozumi"
+      },
+      {
+        "id": "a4479a7c-5a52-48df-ac30-073ebae336af",
+        "slug": "cobra-nefertari",
+        "name": "Cobra Nefertari"
+      },
+      {
+        "id": "3b2a08b8-973c-4518-b9f3-f805d70df237",
+        "slug": "aisa",
+        "name": "Aisa"
+      },
+      {
+        "id": "3ae67cb1-4da1-48b5-ba40-8d153c60a49b",
+        "slug": "laki",
+        "name": "Laki"
+      },
+      {
+        "id": "45ffedc6-0187-44b0-a020-b9c71425a336",
+        "slug": "braham",
+        "name": "Braham"
+      },
+      {
+        "id": "772a4ba8-defe-4db5-a72d-e55325e31a9b",
+        "slug": "wiper",
+        "name": "Wiper"
+      },
+      {
+        "id": "76a860cd-ff72-4c0c-b1e9-63d71930e52d",
+        "slug": "sora-vinsmoke",
+        "name": "Sora Vinsmoke"
+      },
+      {
+        "id": "a1e41b39-a263-4df6-acf6-4cd7437abd11",
+        "slug": "kamakiri",
+        "name": "Kamakiri"
+      },
+      {
+        "id": "a2aca48b-b63f-4bd1-8e5d-6a2cdafe2a34",
+        "slug": "conis",
+        "name": "Conis"
+      },
+      {
+        "id": "ac734cfb-80ae-41fa-883d-1273dabe331b",
+        "slug": "pagaya",
+        "name": "Pagaya"
+      },
+      {
+        "id": "0bee7645-dbbe-4a34-9f55-2a41f2a776f4",
+        "slug": "hikoichi",
+        "name": "Hikoichi"
+      },
+      {
+        "id": "cd6829af-5eba-40de-bc45-641c71c8f431",
+        "slug": "calgara",
+        "name": "Calgara"
+      },
+      {
+        "id": "ef940776-1922-41b9-ad62-d51aafe89737",
+        "slug": "satori",
+        "name": "Satori"
+      },
+      {
+        "id": "066b287c-22cd-409d-9480-a84c2631b0f0",
+        "slug": "semimaru-kurozumi",
+        "name": "Semimaru Kurozumi"
+      },
+      {
+        "id": "ee05c408-1391-4e5a-b85c-58efe3992b4a",
+        "slug": "tenguyama-hitetsu",
+        "name": "Tenguyama Hitetsu"
+      },
+      {
+        "id": "65519066-9fe0-4149-b3c8-1342dc10b11a",
+        "slug": "sukiyaki-kozuki",
+        "name": "Sukiyaki Kozuki"
+      },
+      {
+        "id": "70b92f92-e942-484b-9d53-a6b877b101f3",
+        "slug": "shinobu",
+        "name": "Shinobu"
+      },
+      {
+        "id": "0273401a-1b73-4364-91be-cbccdf683c56",
+        "slug": "dogra",
+        "name": "Dogra"
+      },
+      {
+        "id": "b8081879-4c70-4f7c-962a-1539790be210",
+        "slug": "toto",
+        "name": "Toto"
+      },
+      {
+        "id": "dc484cc6-f0aa-4841-81fd-99e7e015ece8",
+        "slug": "ramen",
+        "name": "Ramen"
+      },
+      {
+        "id": "c053a169-9a2d-491a-9967-4301bbceaac8",
+        "slug": "cowboy",
+        "name": "Cowboy"
+      },
+      {
+        "id": "c3253f32-fbef-49ed-bd8c-f71af46bfa71",
+        "slug": "kyros",
+        "name": "Kyros"
+      },
+      {
+        "id": "4ac908e6-b1a0-4dd8-9a02-7efeb9444f73",
+        "slug": "rebecca",
+        "name": "Rebecca"
+      },
+      {
+        "id": "b4d4d072-c918-4f47-a4f8-cd61d5ee6f58",
+        "slug": "didit",
+        "name": "Didit"
+      },
+      {
+        "id": "8d8372a4-c773-4bf4-a49b-63f4b1312f3f",
+        "slug": "dold-iii-riku",
+        "name": "Dold III Riku"
+      },
+      {
+        "id": "6ff9fad0-24d0-4583-a58b-019be87c03d5",
+        "slug": "dadan-curly",
+        "name": "Dadan Curly"
+      },
+      {
+        "id": "710c0949-bbd7-440b-b6b3-8d8fa52770d5",
+        "slug": "minorhinoceros",
+        "name": "Minorhinoceros"
+      },
+      {
+        "id": "bd816498-084e-4c80-a94f-a9b214eb9bb0",
+        "slug": "megalo",
+        "name": "Megalo"
+      },
+      {
+        "id": "a026721f-4d72-4392-87bf-095e05f5ed25",
+        "slug": "kaya",
+        "name": "Kaya"
+      },
+      {
+        "id": "bd69ca92-4f4d-4d8a-9ea0-dcf50e59302b",
+        "slug": "minokoala",
+        "name": "Minokoala"
+      },
+      {
+        "id": "2ce7d92d-3333-42fc-b27b-e816883c6887",
+        "slug": "tank-lepanto",
+        "name": "Tank Lepanto"
+      },
+      {
+        "id": "5717f9e7-aca7-4124-8976-4e35e26d62a8",
+        "slug": "mozu",
+        "name": "Mozu"
+      },
+      {
+        "id": "ee8666c0-75b6-4e39-995e-66f749d26cd8",
+        "slug": "kokoro",
+        "name": "Kokoro"
+      },
+      {
+        "id": "88d57303-a81c-4796-b23f-429ceb233a04",
+        "slug": "cook-tom",
+        "name": "Cook Tom"
+      },
+      {
+        "id": "5910f1b8-796b-4e12-b861-c9b1d99b7845",
+        "slug": "saldeath",
+        "name": "Saldeath"
+      },
+      {
+        "id": "066b7924-5af4-4d8f-855d-648ec9f943ec",
+        "slug": "paulie",
+        "name": "Paulie"
+      },
+      {
+        "id": "604bc6dd-b634-4a66-8ca3-eb6edf1b425f",
+        "slug": "duval",
+        "name": "Duval"
+      },
+      {
+        "id": "4b7460a7-16a6-46ba-9b7c-c9a1067bca37",
+        "slug": "chess",
+        "name": "Chess"
+      },
+      {
+        "id": "a5100238-d889-4a71-8906-aa1f3c97ba5d",
+        "slug": "shakuyaku",
+        "name": "Shakuyaku"
+      },
+      {
+        "id": "1a2adbb8-a971-4d60-8fa8-469a224dfa5c",
+        "slug": "kerville",
+        "name": "Kerville"
+      },
+      {
+        "id": "8df4553a-6326-490b-835a-577179f09d28",
+        "slug": "boodle",
+        "name": "Boodle"
+      },
+      {
+        "id": "670bd67f-eaa0-47df-8a79-0b9a0afab046",
+        "slug": "shirahoshi",
+        "name": "Shirahoshi"
+      },
+      {
+        "id": "0f72fe85-e103-4e7d-839c-c65489103272",
+        "slug": "cabaji",
+        "name": "Cabaji"
+      },
+      {
+        "id": "11ebde6f-776a-4430-80da-3f110934a521",
+        "slug": "titi-nefertari",
+        "name": "Titi Nefertari"
+      },
+      {
+        "id": "d16519ec-e72d-44aa-94ea-9abc236d2024",
+        "slug": "crocus",
+        "name": "Crocus"
+      },
+      {
+        "id": "156329c7-9090-4f56-9178-8a51343926de",
+        "slug": "and",
+        "name": "And"
+      },
+      {
+        "id": "18a6fab3-e672-4f2b-a7c7-8179178749c2",
+        "slug": "chimney",
+        "name": "Chimney"
+      },
+      {
+        "id": "a81538cd-9271-478a-ba5e-a13d5e53e51d",
+        "slug": "oimo",
+        "name": "Oimo"
+      },
+      {
+        "id": "d3283908-fcf8-4b03-be33-3fb5b9d19bf6",
+        "slug": "dagama",
+        "name": "Dagama"
+      },
+      {
+        "id": "af84cfd7-1b0a-4007-8d1b-2933df4e5228",
+        "slug": "domino",
+        "name": "Domino"
+      },
+      {
+        "id": "42fefaaa-b6cc-4980-a825-faca466866d8",
+        "slug": "toko",
+        "name": "Toko"
+      },
+      {
+        "id": "7e81f6ec-a14c-4591-967d-447b2b3768c5",
+        "slug": "elizabello-ii",
+        "name": "Elizabello II"
+      },
+      {
+        "id": "afd5971c-a99b-437a-b53a-e87acf1a8d9b",
+        "slug": "tom",
+        "name": "Tom"
+      },
+      {
+        "id": "e0625115-6424-462b-95e0-4af7bf4843c0",
+        "slug": "wapol",
+        "name": "Wapol"
+      },
+      {
+        "id": "74d8939b-61e5-464a-992d-9053f1e09c99",
+        "slug": "outlook-iii",
+        "name": "Outlook III"
+      },
+      {
+        "id": "6e25d78d-077b-4dac-a95b-c7c340174cac",
+        "slug": "tonjit",
+        "name": "Tonjit"
+      },
+      {
+        "id": "92daf579-094a-4991-9a1c-0618b2a7bddc",
+        "slug": "miss-monday",
+        "name": "Miss Monday"
+      },
+      {
+        "id": "04c4d4ed-dd3e-48e7-ba74-568df46fd3b6",
+        "slug": "haredas",
+        "name": "Haredas"
+      },
+      {
+        "id": "5c8b0930-1bb1-454c-afa9-30d537a2d381",
+        "slug": "viola",
+        "name": "Viola"
+      },
+      {
+        "id": "5254d5f3-2adf-486f-84d0-94b8246321ba",
+        "slug": "iceburg",
+        "name": "Iceburg"
+      },
+      {
+        "id": "9d31a33e-3fad-4d3f-a8d0-312b7cbc98ee",
+        "slug": "olvia-nico",
+        "name": "Olvia Nico"
+      },
+      {
+        "id": "78b58b34-b756-4378-9493-34df72ef936e",
+        "slug": "yatappe",
+        "name": "Yatappe"
+      },
+      {
+        "id": "1b5d272a-809e-46fb-8392-f61cabf7e43e",
+        "slug": "heracles",
+        "name": "Heracles"
+      },
+      {
+        "id": "0d06d090-1979-41ec-8adf-3c859bcee7ea",
+        "slug": "yonji-vinsmoke",
+        "name": "Yonji Vinsmoke"
+      },
+      {
+        "id": "3cf092ae-0439-42ab-970a-b7e0a5c20933",
+        "slug": "banchina",
+        "name": "Banchina"
+      },
+      {
+        "id": "b04a135f-67f0-4295-be51-2f94e6d1e18c",
+        "slug": "hyogoro",
+        "name": "Hyogoro"
+      },
+      {
+        "id": "58044bde-e631-4afe-8466-d29f744aa383",
+        "slug": "judge-vinsmoke",
+        "name": "Judge Vinsmoke"
+      },
+      {
+        "id": "498096cc-0170-4c0f-9029-125b18d83e5b",
+        "slug": "hiluluk",
+        "name": "Hiluluk"
+      },
+      {
+        "id": "29cbe37d-6ec3-4bc5-a874-f09c594d764d",
+        "slug": "shura-one-piece",
+        "name": "Shura"
+      },
+      {
+        "id": "82a5b0ff-da00-4bb6-b498-66d533668454",
+        "slug": "rouge-portgas-d",
+        "name": "Rouge Portgas D."
+      },
+      {
+        "id": "287caefc-8f8a-4fde-ac47-b1f6bab335c4",
+        "slug": "bas",
+        "name": "Bas"
+      },
+      {
+        "id": "2a6d3057-588f-4131-87dd-dafb0a348756",
+        "slug": "higurashi-kurozumi",
+        "name": "Higurashi Kurozumi"
+      },
+      {
+        "id": "ad5c0070-aa37-4eb1-b72e-bafff4c2f66a",
+        "slug": "niji-vinsmoke",
+        "name": "Niji Vinsmoke"
+      },
+      {
+        "id": "de9083e1-3a68-404c-9a9b-f288c4d87a8a",
+        "slug": "tonoyasu",
+        "name": "Tonoyasu"
+      },
+      {
+        "id": "700fdb15-74e9-449e-b24e-7eb5cc5400c6",
+        "slug": "kureha",
+        "name": "Kureha"
+      },
+      {
+        "id": "68699147-8e18-42ba-87b1-596abd4993d6",
+        "slug": "gedatsu",
+        "name": "Gedatsu"
+      },
+      {
+        "id": "2d829b2c-44f1-4bca-b100-d637208b498a",
+        "slug": "lulu-peeply",
+        "name": "Lulu Peeply"
+      },
+      {
+        "id": "afae8a3b-da54-421d-9987-9d0e3db0dd38",
+        "slug": "ichiji-vinsmoke",
+        "name": "Ichiji Vinsmoke"
+      },
+      {
+        "id": "c5073ba2-f76c-4bd3-bff5-e24d3d81b028",
+        "slug": "norland-montblanc",
+        "name": "Norland Montblanc"
+      },
+      {
+        "id": "a807e2fd-8912-4f3c-8860-1d644d24e935",
+        "slug": "scarlett",
+        "name": "Scarlett"
+      },
+      {
+        "id": "e2591c94-3f47-4f25-9f09-e2bf6391203b",
+        "slug": "tilestone",
+        "name": "Tilestone"
+      },
+      {
+        "id": "62118198-2a63-4bb8-9f5a-ab818f354665",
+        "slug": "kuina",
+        "name": "Kuina"
+      },
+      {
+        "id": "e7bc0cd7-10d8-4947-94ae-eedabb96d427",
+        "slug": "omasa",
+        "name": "Omasa"
+      },
+      {
+        "id": "9109f662-9ee1-46e9-b7bb-500201d8e95c",
+        "slug": "yosaku",
+        "name": "Yosaku"
+      },
+      {
+        "id": "35e80bc1-8021-4894-b174-3d1a9e95cde7",
+        "slug": "patty",
+        "name": "Patty"
+      },
+      {
+        "id": "3edd6894-e1e7-4778-bdba-dc388f7ef061",
+        "slug": "amazon",
+        "name": "Amazon"
+      },
+      {
+        "id": "e019b71a-b7e7-40ce-a236-068908608dda",
+        "slug": "marianne",
+        "name": "Marianne"
+      },
+      {
+        "id": "7fab963a-4412-4ffe-b95c-3ab4b2c9f32c",
+        "slug": "kiwi",
+        "name": "Kiwi"
+      },
+      {
+        "id": "ac2737ee-6489-4a37-81a2-82cd1ae87542",
+        "slug": "master",
+        "name": "Master"
+      },
+      {
+        "id": "d9c3d5b0-2518-416a-8ad8-b2eefb19a528",
+        "slug": "captain-of-the-lady-mary",
+        "name": "Captain of the Lady Mary"
+      },
+      {
+        "id": "f5ddd86b-77af-42a9-ae78-355fe7f81c77",
+        "slug": "clover-clou-d",
+        "name": "Clover Clou D"
+      },
+      {
+        "id": "047e526a-5954-40ae-92a2-1a829a975fc4",
+        "slug": "komurasaki",
+        "name": "Komurasaki"
+      },
+      {
+        "id": "e80eb249-1e6e-4d92-bcf2-13d7dab8a2c2",
+        "slug": "laboon",
+        "name": "Laboon"
+      },
+      {
+        "id": "f1aa40e1-fb90-4275-a56f-5be02ab16dad",
+        "slug": "chaka",
+        "name": "Chaka"
+      },
+      {
+        "id": "9e1d80b6-f483-43f2-8174-4b857f5915fa",
+        "slug": "disco",
+        "name": "Disco"
+      },
+      {
+        "id": "f2cc2144-3a9d-4c94-807a-d61217e88504",
+        "slug": "neptune",
+        "name": "Neptune"
+      },
+      {
+        "id": "a513c880-b89f-417c-9fb4-97e8aee82646",
+        "slug": "pierre",
+        "name": "Pierre"
+      },
+      {
+        "id": "39e0ccd1-4b6b-470b-aaa0-919330456373",
+        "slug": "stomp",
+        "name": "Stomp"
+      },
+      {
+        "id": "a0bf7285-29ea-4e8b-9d2e-0323451fe147",
+        "slug": "tanaka",
+        "name": "Tanaka"
+      },
+      {
+        "id": "0cd5ce80-3b40-42e3-b62a-613690d29813",
+        "slug": "merry",
+        "name": "Merry"
+      },
+      {
+        "id": "18847d6e-5d45-4749-b11a-15d9f9a5f9e1",
+        "slug": "nojiko",
+        "name": "Nojiko"
+      },
+      {
+        "id": "3f2894e5-60af-41a5-a065-5119b978568f",
+        "slug": "chabo",
+        "name": "Chabo"
+      },
+      {
+        "id": "d8a4ee88-4fb7-45e7-9379-0819712ee6be",
+        "slug": "hogback",
+        "name": "Hogback"
+      },
+      {
+        "id": "dae6d947-dcbe-4cf4-84ba-c7b65385dfee",
+        "slug": "jalmack",
+        "name": "Jalmack"
+      },
+      {
+        "id": "df653ad0-1d64-488b-87c5-360b5b3a5af9",
+        "slug": "igaram",
+        "name": "Igaram"
+      },
+      {
+        "id": "dffbd67b-f2c9-4e4a-80c6-e746c4c16e40",
+        "slug": "otohime",
+        "name": "Otohime"
+      },
+      {
+        "id": "9ca3e0f8-de35-4fe2-90d3-628602aa7e49",
+        "slug": "gonbe",
+        "name": "Gonbe"
+      },
+      {
+        "id": "56c5fba0-e138-4863-ac52-101d16307396",
+        "slug": "makino",
+        "name": "Makino"
+      },
+      {
+        "id": "65ab30bd-f713-49b9-93d4-9b1139e04164",
+        "slug": "den",
+        "name": "Den"
+      }
+    ],
+    "Révolutionnaire": [
+      {
+        "id": "f5ce0f46-f740-47a1-9457-b914ba05590e",
+        "slug": "ivankov-emporio",
+        "name": "Ivankov Emporio"
+      },
+      {
+        "id": "66ba4dc6-2d7b-45fa-9956-6e4ae2c908da",
+        "slug": "sabo",
+        "name": "Sabo"
+      },
+      {
+        "id": "c8791466-fe39-4c58-9062-ab38743e4882",
+        "slug": "koala-one-piece",
+        "name": "Koala"
+      },
+      {
+        "id": "d430b97a-ed9c-495b-b1b8-7bd8738a2ab1",
+        "slug": "lindbergh",
+        "name": "Lindbergh"
+      },
+      {
+        "id": "82816c40-14ee-421a-b0fb-b3ea26d8b309",
+        "slug": "morley",
+        "name": "Morley"
+      },
+      {
+        "id": "754cfa16-d1be-40f4-8712-8bf45ada1569",
+        "slug": "inazuma",
+        "name": "Inazuma"
+      },
+      {
+        "id": "a4209fd3-1b9a-4c52-ae91-c5645cab63e3",
+        "slug": "kuma-bartholomew",
+        "name": "Kuma Bartholomew"
+      },
+      {
+        "id": "cda9dc83-9f31-4ea7-9332-3fe7a8e873e2",
+        "slug": "dragon-monkey-d",
+        "name": "Dragon Monkey D."
+      },
+      {
+        "id": "e4c29812-b9dc-4082-a615-83d5282c1880",
+        "slug": "belo-betty",
+        "name": "Belo Betty"
+      }
+    ]
+  },
+  "ciblesNaruto": {
+    "Sarutobi": [
+      {
+        "id": "a5eca0ff-4916-4bbf-a4ae-aee962a7bc9d",
+        "slug": "biwako-sarutobi",
+        "name": "Biwako Sarutobi"
+      },
+      {
+        "id": "554493c4-ab77-4db3-8300-a394908e8bf8",
+        "slug": "kurenai-yuhi",
+        "name": "Kurenai Yūhi"
+      },
+      {
+        "id": "cab30636-d62a-4a69-add8-a24634eb4b45",
+        "slug": "asuma-sarutobi",
+        "name": "Asuma Sarutobi"
+      },
+      {
+        "id": "1fd8633c-6e76-460d-8cf8-4669236cb566",
+        "slug": "konohamaru-sarutobi",
+        "name": "Konohamaru Sarutobi"
+      },
+      {
+        "id": "e1564416-3402-4dd1-8118-44334c7cc9bf",
+        "slug": "hiruzen-sarutobi",
+        "name": "Hiruzen Sarutobi"
+      }
+    ],
+    "Sarutobi Clan": [
+      {
+        "id": "e68c272d-ceaf-4cca-93fa-1c9e52ebb717",
+        "slug": "mirai-sarutobi",
+        "name": "Mirai Sarutobi"
+      }
+    ],
+    "Kagetsu Family": [
+      {
+        "id": "f878f679-ca26-4a47-a78e-ba5a8ac542b3",
+        "slug": "kiyoyasu-kagetsu",
+        "name": "Kiyoyasu Kagetsu"
+      },
+      {
+        "id": "7b3d63cd-eca6-414f-8e04-8af1c0736b68",
+        "slug": "futa-kagetsu",
+        "name": "Fūta Kagetsu"
+      },
+      {
+        "id": "41aefa0a-3114-4a09-89f3-c8bf298892e7",
+        "slug": "tobei-kagetsu",
+        "name": "Tōbei Kagetsu"
+      },
+      {
+        "id": "60552799-e71b-4084-87e2-89d5489304f2",
+        "slug": "tsukiko-kagetsu",
+        "name": "Tsukiko Kagetsu"
+      },
+      {
+        "id": "f4e34eaa-a7ea-43c4-bdfb-53e9615a56ec",
+        "slug": "mai-kagetsu",
+        "name": "Mai Kagetsu"
+      }
+    ],
+    "Izuno": [
+      {
+        "id": "e9a0fa80-a5d5-4155-8690-4d275a30a425",
+        "slug": "daruma-izuno",
+        "name": "Daruma Izuno"
+      },
+      {
+        "id": "676b4ea3-ca8a-4d7c-90c4-8f6018b88f34",
+        "slug": "wasabi-izuno",
+        "name": "Wasabi Izuno"
+      },
+      {
+        "id": "74bc617f-c4c0-4c79-af44-b369dd39a13f",
+        "slug": "mazuma-izuno",
+        "name": "Mazuma Izuno"
+      },
+      {
+        "id": "10cbadfa-c30a-403e-ab38-a541531eea28",
+        "slug": "amagi-izuno",
+        "name": "Amagi Izuno"
+      }
+    ],
+    "Shirogane": [
+      {
+        "id": "ff8007a4-1382-441b-b30e-959fcd3d2921",
+        "slug": "master-puppet",
+        "name": "Master Puppet"
+      },
+      {
+        "id": "ed491355-d2d3-4cf9-95eb-ae5c7b6a23e1",
+        "slug": "gando",
+        "name": "Gandō"
+      },
+      {
+        "id": "930fcbf3-d354-4047-9042-cb58cb0ad37d",
+        "slug": "ibushi",
+        "name": "Ibushi"
+      },
+      {
+        "id": "f300b1b1-af6f-4b82-85d3-e8476e54e511",
+        "slug": "meno-ninja",
+        "name": "Menō (ninja)"
+      }
+    ],
+    "Fūma (Land of Sound)": [
+      {
+        "id": "85819e31-9cef-473e-80f1-7e6802b7748a",
+        "slug": "kagero",
+        "name": "Kagerō"
+      },
+      {
+        "id": "25b43d07-deae-4591-9e4c-69bacd582161",
+        "slug": "sasame",
+        "name": "Sasame"
+      },
+      {
+        "id": "1ea902c1-480a-4c96-83da-bf13f72f9e2e",
+        "slug": "hanzaki",
+        "name": "Hanzaki"
+      },
+      {
+        "id": "69025da6-7b94-4265-aea9-b9dd9e37026b",
+        "slug": "kamikiri",
+        "name": "Kamikiri"
+      },
+      {
+        "id": "acee4ef2-3e45-410f-b6bf-9505e1a6e4f5",
+        "slug": "arashi",
+        "name": "Arashi"
+      },
+      {
+        "id": "9a17db73-4614-483b-afa3-0f5c4e3086fa",
+        "slug": "jigumo",
+        "name": "Jigumo"
+      },
+      {
+        "id": "e1b85443-6ee0-4260-a089-e75cfecf3c96",
+        "slug": "kotohime",
+        "name": "Kotohime"
+      }
+    ],
+    "Kazekage": [
+      {
+        "id": "9d76211d-22a1-4b96-86d2-d268aa4894bf",
+        "slug": "rasa-naruto",
+        "name": "Rasa"
+      },
+      {
+        "id": "601abfb2-04f7-4af2-88c7-7b932a9d9245",
+        "slug": "temari",
+        "name": "Temari"
+      },
+      {
+        "id": "27359066-29fb-4bc5-8cf2-081218265795",
+        "slug": "kankuro",
+        "name": "Kankurō"
+      },
+      {
+        "id": "85b69a0a-91f4-45b2-80a4-202c31177813",
+        "slug": "karura",
+        "name": "Karura"
+      },
+      {
+        "id": "7f9d6d41-2af2-4bf4-9cf1-2a568c0ebb75",
+        "slug": "shinki",
+        "name": "Shinki"
+      }
+    ],
+    "Kazekage Clan": [
+      {
+        "id": "b5b33ad2-70c8-44cb-859d-373d464c97f7",
+        "slug": "gaara",
+        "name": "Gaara"
+      }
+    ]
+  },
+  "fichesExistantesPertinentes": [
+    {
+      "id": "aed14fa9-6506-46ef-92cf-942f8c32116d",
+      "slug": "armee-revolutionnaire",
+      "name": "Armée Révolutionnaire",
+      "type": "status",
+      "universe": "One Piece",
+      "attributes": {
+        "scope": "Équipage pirate",
+        "descFr": "L'Armée Révolutionnaire est une organisation militaire dirigée par Monkey D. Dragon, dont l'objectif principal est de renverser le Gouvernement Mondial et de libérer les îles opprimées par ses lois. Elle recrute des esclaves libérés, des personnes opprimées et des rebelles de royaumes libérés, et se finance en pillant les Marines ou en recevant le soutien de royaumes sous leur influence. L'Armée Révolutionnaire a également pour but de stockpiler des armes pour renforcer sa puissance militaire, et a notamment saisi les armes fabriquées sur Dressrosa après l'arrestation de Donquixote Doflamingo.",
+        "category": "Équipage",
+        "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+      },
+      "image_url": "https://static.wikia.nocookie.net/onepiece/images/2/27/Revolutionary_Army_Infobox.png/revision/latest?cb=20190131083517",
+      "rarity": "rare"
+    },
+    {
+      "id": "e966f364-2f93-4d6a-b180-f787fee82750",
+      "slug": "fuma",
+      "name": "Clan Fūma",
+      "type": "status",
+      "universe": "Naruto",
+      "attributes": {
+        "bio": "Le Clan Fūma était une lignée de ninjas établie dans le Pays des Rizières, la région où Orochimaru fonderait plus tard le Village du Son (Otogakure). Le clan est réputé pour sa maîtrise des armes de jet, au point d'avoir donné son nom au gigantesque Fūma Shuriken, une étoile d'acier à quatre lames que l'on manie à deux mains. Autrefois uni, le clan s'est fracturé en deux factions rivales qu'Orochimaru, promettant force et prestige, a savamment dressées l'une contre l'autre. La guerre intestine qui s'ensuivit décima la lignée : les guerriers s'entretuèrent et les survivants furent réduits à l'état de pions ou de cobayes au service du Son. Arashi, un membre de la faction ralliée à Orochimaru, se retrouva possédé par une âme corrompue implantée par le Sannin. Seule la jeune Sasame, refusant la fatalité, cherche de l'aide auprès de Naruto et de son équipe pour arracher les siens à cette emprise et retrouver son cousin. Le Clan Fūma incarne ainsi la tragédie des maisons mineures broyées par l'ambition des grands.",
+        "eras": [
+          {
+            "img": "/images/akasha/ref/fuma.webp",
+            "event": "Le clan Fūma prospère dans le Pays des Rizières, réputé pour sa maîtrise du gigantesque shuriken Fūma.",
+            "label": "L'Âge d'Unité",
+            "leader": "Anciens du clan",
+            "period": "Avant la scission",
+            "threat": "Fūma Shuriken manié à pleine puissance",
+            "summary": "Une maison de guerriers unis, redoutée pour ses armes de jet et l'étoile d'acier qui porte son nom."
+          },
+          {
+            "img": "/images/akasha/ref/fuma.webp",
+            "event": "Orochimaru promet gloire et puissance, puis dresse les deux factions l'une contre l'autre.",
+            "label": "La Scission",
+            "leader": "Deux factions rivales",
+            "period": "Arrivée d'Orochimaru",
+            "threat": "Guerre intestine attisée par Orochimaru",
+            "summary": "Séduit par les promesses du Sannin, le clan se déchire de l'intérieur et sombre dans la guerre fratricide."
+          },
+          {
+            "img": "/images/akasha/ref/fuma.webp",
+            "event": "Les guerriers s'entretuent ; les survivants deviennent pions du Son, et Arashi se retrouve possédé par une âme implantée par Orochimaru.",
+            "label": "La Décimation",
+            "leader": "Arashi Fūma (possédé)",
+            "period": "Sous l'emprise du Son",
+            "threat": "Possession et asservissement par Orochimaru",
+            "summary": "La lignée s'effondre ; ceux qui restent sont réduits à l'état d'outils au service du Sannin."
+          },
+          {
+            "img": "/images/akasha/ref/fuma.webp",
+            "event": "Sasame sollicite l'aide de Naruto et de son équipe pour retrouver son cousin Arashi et briser l'emprise d'Orochimaru sur son clan.",
+            "label": "L'Ultime Héritière",
+            "leader": "Sasame Fūma",
+            "period": "Arc du Pays des Rizières",
+            "threat": "Arashi possédé, au service d'Orochimaru",
+            "summary": "Refusant l'extinction de son clan, Sasame se dresse pour libérer Arashi et honorer la mémoire des Fūma."
+          }
+        ],
+        "facts": [
+          {
+            "label": "Symbole",
+            "value": "Le gigantesque shuriken Fūma à quatre lames"
+          },
+          {
+            "label": "Région",
+            "value": "Pays des Rizières (site futur d'Otogakure)"
+          },
+          {
+            "label": "Statut",
+            "value": "Quasi éteint — décimé de l'intérieur"
+          },
+          {
+            "label": "Arme signature",
+            "value": "Fūma Shuriken (風魔手裏剣)"
+          },
+          {
+            "label": "Manipulateur",
+            "value": "Orochimaru, qui monta les deux factions l'une contre l'autre"
+          },
+          {
+            "label": "Héritière notable",
+            "value": "Sasame Fūma"
+          }
+        ],
+        "kanji": "風魔一族",
+        "quote": {
+          "text": "Notre clan ne s'est pas effondré à cause d'un ennemi venu de l'extérieur... il s'est effondré parce que nous nous sommes entre-déchirés. C'est ça, le vrai poison d'Orochimaru.",
+          "author": "Sasame Fūma"
+        },
+        "scope": "Clan",
+        "descFr": "Le clan Fūma est un groupe de shinobis originaire du Pays des Rizières, affilié à Konohagakure et apparenté de loin au clan Uchiha. Réputé pour son agressivité au combat, il se distingue par l'usage d'un shuriken géant à quatre lames, symbole de sa renommée. Bien que dépourvu du Sharingan, le clan possédait une connaissance approfondie du chakra avant de décliner face à la montée en puissance des autres nations ninjas.",
+        "trivia": [
+          "Le nom « Fūma » (風魔) signifie littéralement « démon du vent » — une référence au clan de ninjas Fūma de l'histoire japonaise réelle, mené par Fūma Kotarō.",
+          "Le Fūma Shuriken n'est pas exclusif au clan : Sasuke, Zaku ou encore de nombreux ninjas l'emploient, mais c'est cette lignée qui lui a laissé son nom.",
+          "Le clan Fūma apparaît dans l'arc filler du Pays des Rizières (anime), lors de la quête de Sasame pour retrouver son cousin Arashi et libérer les siens.",
+          "Sasame fait équipe avec Naruto, Sakura, Jiraiya et Chōji dans sa quête, cherchant à sauver son clan de l'emprise d'Orochimaru.",
+          "Le drame du clan illustre la méthode favorite d'Orochimaru : ne pas conquérir de front, mais infiltrer et corrompre de l'intérieur."
+        ],
+        "category": "Clan",
+        "abilities": [
+          "Maniement du Fūma Shuriken géant à quatre lames",
+          "Techniques de lancer d'armes coordonnées à plusieurs shurikens",
+          "Combos de shurikens démultipliés en vol",
+          "Guérilla et embuscades propres aux clans de l'ombre",
+          "Manipulation d'armes de jet à longue portée",
+          "Combat de clan articulé autour de la maîtrise des lames de jet"
+        ],
+        "rosterLabel": "Membres",
+        "descFrSource": "mistral/mistral-large-latest"
+      },
+      "image_url": "/images/akasha/ref/fuma.webp",
+      "rarity": "rare"
+    },
+    {
+      "id": "46e444ad-0a72-497d-9c04-88b30591dc9e",
+      "slug": "karatachi",
+      "name": "Clan Karatachi",
+      "type": "status",
+      "universe": "Naruto",
+      "attributes": {
+        "bio": "Le clan Karatachi est une lignée de Kirigakure dont le nom reste attaché à la légende noire du « Village de la Brume Sanglante ». Sa figure majeure, Yagura Karatachi, devint Quatrième Mizukage et jinchūriki d'Isobu, le Trois-Queues, comptant parmi les rares hôtes à dompter pleinement leur bijū. Manipulé à son insu par Obito Uchiha — agissant sous le masque de Madara — au moyen d'un genjutsu du Sharingan, Yagura présida à une ère de terreur : à l'Académie, on imposait aux élèves de s'entretuer pour valider l'examen, et les déserteurs étaient traqués sans merci. Après la fin de son règne, la Brume entreprit lentement de tourner cette page sanglante. Une génération plus tard, Kagura, présenté comme le petit-fils de Yagura, brillant et hanté par son ascendance, hérita d'Hiramekarei et fut compté parmi les nouveaux Sept Épéistes de la Brume — cherchant à racheter un nom que le passé avait couvert de sang.",
+        "eras": [
+          {
+            "img": "/images/akasha/ref/karatachi.webp",
+            "event": "Yagura, jinchūriki d'Isobu, prend la tête de Kirigakure et impose un régime de terreur.",
+            "label": "L'âge de la Brume Sanglante",
+            "leader": "Yagura Karatachi",
+            "period": "Règne du Quatrième Mizukage",
+            "threat": "Le genjutsu du Sharingan d'Obito, qui asservit le Mizukage à distance",
+            "summary": "Sous emprise, Yagura instaure les rituels sanglants de l'Académie et la chasse aux déserteurs, forgeant le surnom de « Village de la Brume Sanglante »."
+          },
+          {
+            "img": "/images/akasha/ref/karatachi.webp",
+            "event": "Le règne de Yagura s'achève et Kirigakure amorce sa lente sortie de l'ère sanglante.",
+            "label": "La fin du règne",
+            "leader": "Yagura Karatachi",
+            "period": "Après la chute du Yondaime Mizukage",
+            "threat": "Le poids d'un héritage de terreur que le village cherche à effacer",
+            "summary": "La Brume tente de tourner la page ; le nom Karatachi demeure marqué par le souvenir d'un Mizukage dont la volonté avait été confisquée."
+          },
+          {
+            "img": "/images/akasha/ref/karatachi.webp",
+            "event": "Yagura est ramené par l'Edo Tensei et brièvement asservi par Tobi comme l'un de ses Chemins.",
+            "label": "L'écho de la guerre",
+            "leader": "Yagura réincarné",
+            "period": "Quatrième Grande Guerre Shinobi",
+            "threat": "Le contrôle que Tobi impose au Mizukage ressuscité avant qu'il ne recouvre sa volonté",
+            "summary": "L'ombre de Yagura hante encore le champ de bataille, symbole d'un jinchūriki dont la volonté fut confisquée jusque dans la mort."
+          },
+          {
+            "img": "/images/akasha/ref/karatachi.webp",
+            "event": "Kagura, descendant de Yagura, hérite d'Hiramekarei et rejoint les nouveaux Sept Épéistes de la Brume.",
+            "label": "La rédemption de la lame",
+            "leader": "Kagura Karatachi",
+            "period": "Ère Boruto",
+            "threat": "Shizuma Hoshigaki, qui manipule Kagura pour raviver la Brume Sanglante",
+            "summary": "Hanté par son sang, Kagura refuse de reproduire la tyrannie attribuée à son aïeul et choisit de porter le nom Karatachi vers la paix plutôt que vers la peur."
+          }
+        ],
+        "facts": [
+          {
+            "label": "Village",
+            "value": "Kirigakure (Pays de l'Eau)"
+          },
+          {
+            "label": "Symbole",
+            "value": "Le blason de Kirigakure — la lignée n'a pas d'emblème propre et se confond avec le Village Caché de la Brume"
+          },
+          {
+            "label": "Figure majeure",
+            "value": "Yagura Karatachi, Quatrième Mizukage"
+          },
+          {
+            "label": "Bijū lié",
+            "value": "Isobu, le Sanbi (Trois-Queues) — dont Yagura fut le jinchūriki"
+          },
+          {
+            "label": "Héritier",
+            "value": "Kagura Karatachi, descendant de Yagura, à l'ère Boruto"
+          },
+          {
+            "label": "Épée portée",
+            "value": "Hiramekarei, maniée par Kagura chez les Sept Épéistes de la Brume"
+          }
+        ],
+        "quote": {
+          "text": "Je suis le petit-fils du Quatrième Mizukage... et pourtant je refuse d'être l'homme que mon sang me destine à devenir.",
+          "author": "Kagura Karatachi"
+        },
+        "scope": "Clan",
+        "descFr": "Cette famille de Kirigakure a produit des shinobis renommés, dont Yagura qui devint le Quatrième Mizukage. Il utilisa la peur pour gouverner le village et renforça la réputation de Kirigakure en tant que « Village de la Brume Sanglante ». En raison du règne tyrannique de Yagura, ses descendants furent tenus à distance par les villageois, même après l'époque sanglante.",
+        "trivia": [
+          "Yagura Karatachi comptait parmi les rares jinchūriki capables de dompter pleinement leur bijū, maniant la puissance d'Isobu sans en perdre le contrôle.",
+          "La tyrannie de Yagura fut orchestrée à distance par Obito Uchiha, qui le contrôlait au moyen d'un genjutsu du Sharingan — Yagura n'était pas un despote de sa propre volonté.",
+          "Durant la Quatrième Grande Guerre Shinobi, Yagura est ramené par l'Edo Tensei et brièvement asservi par Tobi comme l'un de ses Chemins avant de recouvrer sa volonté.",
+          "À l'ère Boruto, Kagura est présenté comme un descendant de Yagura, ce qui alimente sa hantise de reproduire les crimes de son aïeul.",
+          "Enfant, Kagura perdit le contrôle lors d'un entraînement au sabre et blessa gravement ses camarades, ce qui le laissa terrifié à l'idée de manier une lame."
+        ],
+        "category": "Clan",
+        "abilities": [
+          "Contrôle du jinchūriki d'Isobu le Sanbi, dompté par Yagura",
+          "Ninjutsu de l'Eau (Suiton) et techniques offensives de Yagura",
+          "Maniement du bâton de combat à crochet de Yagura",
+          "Kenjutsu d'élite au sein des Sept Épéistes de la Brume (Kagura)",
+          "Maîtrise d'Hiramekarei, sabre à chakra à double poignée",
+          "Autorité de Kage — direction du Village Caché de la Brume (Yagura)",
+          "Talent de prodige transmis de génération en génération"
+        ],
+        "rosterLabel": "Membres",
+        "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+      },
+      "image_url": "/images/akasha/ref/karatachi.webp",
+      "rarity": "epic"
+    },
+    {
+      "id": "63531d0a-9cb9-42cb-b052-10053c31633c",
+      "slug": "kurama-clan",
+      "name": "Clan Kurama",
+      "type": "status",
+      "universe": "Naruto",
+      "attributes": {
+        "bio": "Autrefois clan reconnu de Konohagakure, le Clan Kurama tirait sa renommée d'une maîtrise du genjutsu sans égale. Son kekkei genkai, le contrôle des cinq sens, est un don redoutable : les illusions de ses porteurs ne trompent plus seulement l'esprit, elles trompent le corps lui-même. Le cerveau de la victime, persuadé de brûler ou d'être blessé, matérialise réellement les effets de l'illusion — au point que ces genjutsu peuvent tuer. Mais ce pouvoir porte sa propre malédiction : sans un contrôle rigoureux, il engendre une seconde personnalité, Ido, entité malveillante née du subconscient qui peut prendre le dessus et tout détruire. Terrifié par son propre sang, le clan s'est éteint peu à peu, cessant de former des ninjas. Sa dernière héritière, Yakumo, née d'un corps fragile mais d'un talent immense, canalise ses visions par la peinture. Son histoire, du sceau posé par Kurenai à l'assaut mené par son oncle Unkai, résume tout le drame Kurama : un pouvoir trop grand pour ceux qui le portent.",
+        "eras": [
+          {
+            "img": "/images/akasha/ref/kurama-clan.webp",
+            "event": "Le clan s'établit à Konohagakure et bâtit sa réputation sur une maîtrise du genjutsu inégalée.",
+            "label": "L'âge d'or du genjutsu",
+            "leader": "Anciens du Clan Kurama",
+            "period": "Passé du clan à Konoha",
+            "threat": "Genjutsu matérialisé — l'illusion qui devient réalité",
+            "summary": "Les Kurama comptent parmi les clans de genjutsu réputés du village, connus pour des illusions si puissantes qu'elles franchissent la frontière du réel."
+          },
+          {
+            "img": "/images/akasha/ref/kurama-clan.webp",
+            "event": "Effrayé par les dérives de son kekkei genkai, le clan cesse peu à peu de former des shinobi et s'éteint lentement.",
+            "label": "Le déclin maudit",
+            "leader": "Murakumo Kurama, branche principale",
+            "period": "Générations suivantes",
+            "threat": "Ido — la seconde personnalité née du don",
+            "summary": "Le pouvoir de rendre les illusions réelles menace ses propres porteurs en éveillant une entité destructrice ; le clan, terrifié par son sang, sombre dans l'oubli."
+          },
+          {
+            "img": "/images/akasha/ref/kurama-clan.webp",
+            "event": "Yakumo naît avec un don immense mais un corps fragile ; incapable de le maîtriser, elle déclenche l'incendie qui tue ses parents.",
+            "label": "L'héritière Yakumo",
+            "leader": "Murakumo Kurama",
+            "period": "Enfance de Yakumo",
+            "threat": "Illusions incontrôlées et éveil d'Ido",
+            "summary": "Dernière de la branche principale, Yakumo peint ses visions ; son talent lui échappe et fait d'elle un danger pour tous, à commencer par les siens."
+          },
+          {
+            "img": "/images/akasha/ref/kurama-clan.webp",
+            "event": "Sur ordre du Troisième Hokage, Kurenai devient la tutrice de Yakumo, puis scelle ses capacités pour protéger le village.",
+            "label": "Le sceau de Kurenai",
+            "leader": "Kurenai Yūhi (tutrice)",
+            "period": "Formation à Konoha",
+            "threat": "Le sceau qui menace de céder",
+            "summary": "Kurenai, experte en genjutsu, tente de guider Yakumo puis se résout à sceller son pouvoir, la privant de son rêve de devenir kunoichi."
+          },
+          {
+            "img": "/images/akasha/ref/kurama-clan.webp",
+            "event": "Le sceau cède, Ido se déchaîne ; Unkai mène les Kurama pour tuer Yakumo, avant que Naruto, Hinata et Kurenai n'interviennent.",
+            "label": "L'assaut du clan",
+            "leader": "Unkai Kurama, oncle de Yakumo",
+            "period": "Arc du Clan Kurama (anime)",
+            "threat": "Ido déchaîné, menace pour Konoha entière",
+            "summary": "Craignant l'anéantissement du village, l'oncle de Yakumo tente de la supprimer ; Naruto la sauve et Kurenai l'aide enfin à dompter Ido."
+          }
+        ],
+        "facts": [
+          {
+            "label": "Village",
+            "value": "Konohagakure (Pays du Feu)"
+          },
+          {
+            "label": "Spécialité",
+            "value": "Genjutsu — illusions rendues physiquement réelles"
+          },
+          {
+            "label": "Kekkei genkai",
+            "value": "Contrôle des cinq sens : les effets d'une illusion (feu, blessures) affectent réellement le corps de la victime"
+          },
+          {
+            "label": "Menace interne",
+            "value": "Ido — seconde personnalité née du don mal maîtrisé"
+          },
+          {
+            "label": "Statut",
+            "value": "Clan en déclin, ne forme presque plus de shinobi"
+          },
+          {
+            "label": "Héritière",
+            "value": "Yakumo Kurama, dernière de la branche principale"
+          },
+          {
+            "label": "Apparition",
+            "value": "Personnage et arc exclusifs à l'anime (Naruto)"
+          }
+        ],
+        "kanji": "鞍馬一族",
+        "quote": {
+          "text": "Nos illusions ne trompent pas seulement l'œil : elles blessent la chair. Voilà pourquoi notre don est aussi notre malédiction.",
+          "author": "Unkai Kurama"
+        },
+        "scope": "Clan",
+        "descFr": "Le clan Kurama est une lignée de Konohagakure spécialisée dans le genjutsu, dont le kekkei genkai permet à ses membres les plus doués de matérialiser leurs illusions au point d’en faire une arme mortelle. Cette puissance, incontrôlable, engendre chez son porteur une seconde personnalité destructrice, réduisant progressivement l’influence du clan au sein du village. Ses représentants notables incluent Murakumo, ancien chef, et Yakumo, dernière héritière marquée par ce don.",
+        "trivia": [
+          "Le kekkei genkai du clan, le contrôle des cinq sens, permet de tromper directement le corps : la victime d'une illusion en subit réellement les blessures, ce qui rend ces genjutsu potentiellement mortels.",
+          "Yakumo canalise son don à travers la peinture : elle représente ses visions sur la toile, où l'illusion prend forme avant de se matérialiser.",
+          "Ayant perdu le contrôle de son pouvoir enfant, Yakumo déclencha l'incendie qui coûta la vie à ses parents, Murakumo et Uroko Kurama.",
+          "Ido, entité née de la part la plus sombre du subconscient de Yakumo, protégea d'abord la jeune fille avant de menacer de ravager Konoha.",
+          "C'est le Troisième Hokage qui confia Yakumo à Kurenai Yūhi, experte en genjutsu, comme tutrice spéciale.",
+          "Craignant que le don de Yakumo n'anéantisse le clan et le village, Unkai et les Kurama ne cherchèrent pas à s'en emparer, mais à la supprimer.",
+          "L'histoire du Clan Kurama est un arc de remplissage exclusif à l'anime du premier Naruto, situé après l'échec de la mission de récupération de Sasuke (épisodes 203 à 207)."
+        ],
+        "category": "Clan",
+        "abilities": [
+          "Genjutsu matérialisé : les effets d'une illusion (feu, blessures) deviennent physiquement réels",
+          "Contrôle des cinq sens : le kekkei genkai qui trompe le corps autant que l'esprit",
+          "Illusions potentiellement mortelles, capables de tuer par la seule force de l'esprit",
+          "Maîtrise du genjutsu réputée, héritage du clan (le talent de Yakumo est comparé à celui de Kurenai)",
+          "Peinture comme catalyseur : la toile où Yakumo projette et déclenche ses illusions",
+          "Ido : manifestation démoniaque du subconscient, puissance incontrôlée et destructrice"
+        ],
+        "rosterLabel": "Membres",
+        "descFrSource": "mistral/mistral-large-latest"
+      },
+      "image_url": "/images/akasha/ref/kurama-clan.webp",
+      "rarity": "rare"
+    },
+    {
+      "id": "17031794-7a9e-4bb4-a45b-6937bb3c6f36",
+      "slug": "marine",
+      "name": "Marine",
+      "type": "status",
+      "universe": "One Piece",
+      "attributes": {
+        "scope": "Force mondiale",
+        "descFr": "Les Marines, ou Kaigun, sont les forces militaires navales du Gouvernement Mondial, chargées de l'application de la loi maritime et de la guerre navale. Ils sont présents sur toutes les mers connues, avec une forte concentration sur la Grand Line, où se trouve leur quartier général. Ils sont l'un des Trois Grands Pouvoirs, aux côtés des Quatre Empereurs et des Sept Grands Corsaires, et sont souvent antagonistes dans la série, notamment dans les arcs Romance Dawn, Loguetown, Enies Lobby, et Marineford.",
+        "category": "Organisation",
+        "roman_name": "Kaigun",
+        "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+      },
+      "image_url": "https://static.wikia.nocookie.net/onepiece/images/d/dc/Marines_Infobox.png/revision/latest/scale-to-width-down/720?cb=20210110121711",
+      "rarity": "rare"
+    },
+    {
+      "id": "da96ac48-09df-4f10-beb0-fcf0286d9200",
+      "slug": "sarutobi",
+      "name": "Sarutobi",
+      "type": "character",
+      "universe": "One Piece",
+      "attributes": {
+        "crew": "L’équipage aux Cent Bêtes",
+        "role": "Personnage secondaire",
+        "descFr": "Première apparition : Épisode 925. Sarutobi est un ninja et un membre des Pirates aux Cent Bêtes. Il était auparavant membre de l'Orochi Oniwabanshu qui servait le shogun du Pays de Wano, Kurozumi Orochi. En raison de ses actes et de son rôle, il est un antagoniste mineur de l'arc du Pays de Wano.",
+        "descRaw": "Debut: Episode 925 Sarutobi is a ninja and a member of the Beasts Pirates. He previously was a member of the Orochi Oniwabanshu which served the shogun of Wano Country, Kurozumi Orochi. Due to his actions and role, he is a minor antagonist in the Wano Country Arc. (Source: One Piece Wiki)",
+        "faction": "Pirate",
+        "descLang": "en",
+        "occupation": "Samuraïs",
+        "voiceActors": {
+          "en": [
+            "Chris Niosi"
+          ],
+          "jp": [
+            "Keiji Hirai"
+          ]
+        }
+      },
+      "image_url": "https://cdn.myanimelist.net/images/characters/9/595652.webp?s=34f1c7079c1d2a1d5674f9b7e5f3e8ab",
+      "rarity": "common"
+    }
+  ]
+}

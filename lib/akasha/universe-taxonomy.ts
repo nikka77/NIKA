@@ -143,7 +143,11 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
         ],
       },
     ],
-    piliers: ['grand-line', 'one-piece-tresor', 'thousand-sunny', 'chapeau-de-paille'],
+    // 08/08/2026 : 'chapeau-de-paille' fusionné dans 'l-equipage-du-chapeau-de-paille'
+    // (doublet de conteneurs, cf. data/audits/doublets-conteneurs-trace.json) — slug survivant
+    // gardé ici car 3x plus riche (123 arêtes contre 10) et déjà référencé en dur ailleurs
+    // (app/learn/akasha/u/[slug]/page.tsx:106).
+    piliers: ['grand-line', 'one-piece-tresor', 'thousand-sunny', 'l-equipage-du-chapeau-de-paille'],
     extras: [{ href: '/learn/akasha/wanted', label: 'Most Wanted — le classement des primes', icon: '🏴‍☠️' }],
   },
   {
@@ -240,8 +244,15 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
     axes: [
       {
         attr: 'affiliation', label: 'Écuries', icon: '🏁',
+        // 08/08 : « Akagi RedSuns » dé-curée de ce filtre — 0 fiche ne porte ce SCALAIRE (page
+        // d'axe fantôme), alors que la fiche groupe « redsuns » existe et porte bien 4 arêtes
+        // `appartient` (Ryosuke, Keisuke, Kenta Nakamura, Hiroshi Fumihiro) : ces 4 pilotes sont
+        // modélisés en affiliation ACTUELLE unique (Project D) et le filtre ne lit que ce champ
+        // scalaire, pas le graphe de relations. Rien n'est perdu : la page /redsuns et ses 4
+        // arêtes restent intactes. Réouvrir seulement si le modèle passe au multi-affiliation ou
+        // si le filtre apprend à lire les relations. Voir data/audits/petits-univers.json.
         values: [
-          { v: 'Project D' }, { v: 'Akagi RedSuns' }, { v: 'Myogi NightKids' },
+          { v: 'Project D' }, { v: 'Myogi NightKids' },
           { v: 'Akina SpeedStars' }, { v: 'Impact Blue' }, { v: 'Team Emperor' },
         ],
       },

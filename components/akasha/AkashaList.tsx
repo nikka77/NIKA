@@ -4,15 +4,20 @@
 // sélection AAA / Linear) + panneau d'aperçu sticky qui se re-scope au survol/clic. La rangée
 // est un vrai lien (SSR/SEO intacts) ; l'aperçu par défaut est la première entrée.
 // Mobile (< 980px) : rangées seules, navigation directe.
+// `variant: 'strip'` (lot 1c) — même vocabulaire sans boîte-carte pour les grappes secondaires
+// (piliers de hub, voyages dans le temps, « voir aussi », vitrines de collection) : un rail
+// horizontal de rangées compactes, sans panneau d'aperçu. AUCUN composant de plus (règle de la maison).
 import { useState } from 'react';
 import Link from 'next/link';
 import { RARITY_META, TYPE_META, universeMeta, universeWordmark, type AkashaEntryCard } from '@/lib/akasha/types';
 import { flavorText } from '@/lib/akasha/flavor';
 
-export default function AkashaList({ entries }: { entries: AkashaEntryCard[] }) {
+export default function AkashaList({ entries, variant = 'list' }: { entries: AkashaEntryCard[]; variant?: 'list' | 'strip' }) {
   const [idx, setIdx] = useState(0);
   const sel = entries[Math.min(idx, entries.length - 1)];
   if (!entries.length) return null;
+
+  if (variant === 'strip') return <Strip entries={entries} />;
 
   return (
     <div className="ak-list-grid">
@@ -60,6 +65,52 @@ export default function AkashaList({ entries }: { entries: AkashaEntryCard[] }) 
 
       {/* ── L'APERÇU (sticky, re-scopé au survol) ───────────── */}
       {sel && <Preview key={sel.slug} entry={sel} />}
+    </div>
+  );
+}
+
+/** Rail horizontal de rangées compactes — même hairline que la liste, sans panneau d'aperçu.
+ *  Pas de boîte (aucun `border` plein, aucun `borderRadius: 12`, aucune pastille en absolu) :
+ *  vignette arrondie type avatar, nom, point-univers. */
+function Strip({ entries }: { entries: AkashaEntryCard[] }) {
+  return (
+    <div role="list" className="hero-domabar ak-strip" style={{ display: 'flex', gap: 12, overflowX: 'auto', paddingBottom: 6 }}>
+      {entries.map((e) => {
+        const uni = e.universe ? universeMeta(e.universe) : null;
+        const rar = e.rarity ? RARITY_META[e.rarity] : null;
+        return (
+          <Link key={e.slug} role="listitem" href={`/learn/akasha/${e.slug}`} className="ak-strip-item">
+            <span className="ak-strip-thumb" aria-hidden style={{ ['--tc' as string]: TYPE_META[e.type].color }}>
+              {e.image_url ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={e.image_url} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />
+              ) : (
+                <span style={{ width: 12, height: 12, transform: 'rotate(45deg)', borderRadius: 3, background: TYPE_META[e.type].color, display: 'block' }} />
+              )}
+              {/* PAS DE PASTILLE EN POSITION ABSOLUE ICI (08/08). Une vignette + une pastille de
+                  rareté posée dans son coin, c'est exactement la signature de la « boîte-carte »
+                  que ce lot devait faire disparaître — la variante `strip` la réintroduisait au
+                  moment même où elle remplaçait AkashaMosaic. La rareté se dit dans le filet du
+                  nom, en typographie, pas en décoration flottante. */}
+            </span>
+            <span className="ak-strip-name">
+              {e.name}
+              {rar && rar !== RARITY_META.common && (
+                // La rareté DANS la ligne, en typographie : elle se lit, elle ne décore pas.
+                <span style={{ marginLeft: 6, fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: rar.color }}>
+                  {rar.label}
+                </span>
+              )}
+            </span>
+            {uni && (
+              <span className="ak-strip-uni">
+                <span aria-hidden style={{ width: 5, height: 5, borderRadius: '50%', background: uni.color, display: 'inline-block', flexShrink: 0 }} />
+                {e.universe}
+              </span>
+            )}
+          </Link>
+        );
+      })}
     </div>
   );
 }

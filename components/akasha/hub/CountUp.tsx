@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 export default function CountUp({ to, duration = 900 }: { to: number; duration?: number }) {
-  const [n, setN] = useState(0);
+  const [n, setN] = useState<number | null>(null);
   const ref = useRef<HTMLSpanElement | null>(null);
   const done = useRef(false);
 
@@ -30,5 +30,5 @@ export default function CountUp({ to, duration = 900 }: { to: number; duration?:
     return () => io.disconnect();
   }, [to, duration]);
 
-  return <span ref={ref}>{n.toLocaleString('fr-FR')}</span>;
+  return <span ref={ref}>{(n ?? to).toLocaleString('fr-FR')}</span>;
 }

@@ -1,0 +1,473 @@
+{
+  "chantier": "Doublets de conteneurs AKASHA",
+  "date": "2026-08-08",
+  "methode": "Mesure indépendante (pas le rapport) : (1) correspondance exacte de nom normalisé (accents/parenthèses ôtés) parmi type IN (place,status) ; (2) préfixes locatifs FR (\"île de\", \"royaume de\"...) ; (3) distance de Levenshtein <=2 sur le nom-noyau ; (4) recoupement des statuts catégorie=Équipage contre les fiches place du même univers par mots-clés ; (5) similarité de Jaccard sur les tokens restants. Chaque paire retenue prouvée par nom (identique ou variante orthographique documentée), fichier image wiki identique quand présent des deux côtés, et cohérence du sujet dans descFr.",
+  "resultat_25_rapport": "Les \"25 groupes\" cités par tasks/akasha-hierarchies.md §2.5 sont CONFIRMÉS À L'IDENTIQUE par mesure indépendante : 23 paires place/status One Piece + Gotei 13 (Bleach) + Buggy's/Baggy's Delivery (One Piece, status+status).",
+  "trouvaille": "La mesure indépendante (au-delà du texte du rapport) a trouvé 16 GROUPES SUPPLÉMENTAIRES non cités par le rapport, portant le total mesuré à 41 groupes / 42 fiches perdantes fusionnées (un groupe — Royaume de Lvneel — est un TRIPLE, pas une paire).",
+  "groupes_fusionnes": [
+    {
+      "survivor": "skypiea-lieu",
+      "losers": [
+        "skypiea"
+      ],
+      "motif": "Nom exact \"Skypiea\" ; descFr même sujet (nation céleste) ; loser cat=Équipage à tort.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "loguetown-lieu",
+      "losers": [
+        "loguetown"
+      ],
+      "motif": "Nom exact \"Loguetown\" ; MÊME image wiki Loguetown_Infobox.png des deux côtés.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "little-garden-lieu",
+      "losers": [
+        "little-garden"
+      ],
+      "motif": "Nom exact \"Little Garden\" ; MÊME image wiki Little_Garden_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "water-seven-lieu",
+      "losers": [
+        "water-seven"
+      ],
+      "motif": "Nom exact \"Water Seven\" ; descFr même sujet (ville des charpentiers).",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "drum-island",
+      "losers": [
+        "ile-de-drum"
+      ],
+      "motif": "Nom \"Île de Drum\" ~ \"Île de Drum (Sakura)\" ; MÊME image Drum_Island_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "fishman-island",
+      "losers": [
+        "ile-des-hommes-poissons"
+      ],
+      "motif": "Nom exact \"Île des hommes-poissons\" ; MÊME image Fish-Man_Island_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "dressrosa-lieu",
+      "losers": [
+        "dressrosa"
+      ],
+      "motif": "Nom exact \"Dressrosa\" ; MÊME image Dressrosa_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "shimotsuki-village",
+      "losers": [
+        "village-de-shimotsuki"
+      ],
+      "motif": "Nom exact \"Village de Shimotsuki\" ; descFr identique (dojo Isshin, Zoro, Kuina).",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "germa-kingdom",
+      "losers": [
+        "royaume-de-germa"
+      ],
+      "motif": "Nom exact \"Royaume de Germa\" ; MÊME image Germa_Kingdom_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "alabasta-lieu",
+      "losers": [
+        "alabasta"
+      ],
+      "motif": "Nom exact \"Alabasta\" ; MÊME image Arabasta_Kingdom_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "enies-lobby-lieu",
+      "losers": [
+        "enies-lobby"
+      ],
+      "motif": "Nom exact \"Enies Lobby\" ; MÊME image Enies_Lobby_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "east-blue",
+      "losers": [
+        "east-blue-one-piece"
+      ],
+      "motif": "Nom exact \"East Blue\" ; MÊME image East_Blue_Infobox.png ; loser cat=Saga à tort (même mer décrite).",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "goa-kingdom",
+      "losers": [
+        "royaume-de-goa"
+      ],
+      "motif": "Nom exact \"Royaume de Goa\" ; MÊME image Goa_Kingdom_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "green-bit-op",
+      "losers": [
+        "green-bit"
+      ],
+      "motif": "Nom exact \"Green Bit\" ; MÊME image Green_Bit_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "impel-down-lieu",
+      "losers": [
+        "impel-down"
+      ],
+      "motif": "Nom exact \"Impel Down\" ; MÊME image Impel_Down_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "lvneel-kingdom",
+      "losers": [
+        "royaume-de-lvneel",
+        "royaume-de-luvneel"
+      ],
+      "motif": "TRIPLE : \"Royaume de Lvneel\" (exact) + \"Royaume de Luvneel\" (variante orthographique, distance=1) ; mêmes faits (Mont Blanc Noland).",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "ohara-lieu",
+      "losers": [
+        "ohara"
+      ],
+      "motif": "Nom exact \"Ohara\" ; MÊME image Ohara_After_the_Buster_Call.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "punk-hazard-lieu",
+      "losers": [
+        "punk-hazard"
+      ],
+      "motif": "Nom exact \"Punk Hazard\" ; MÊME image Punk_Hazard_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "reverse-mountain-lieu",
+      "losers": [
+        "reverse-mountain"
+      ],
+      "motif": "Nom exact \"Reverse Mountain\" ; MÊME image Reverse_Mountain_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "long-ring-long-land-op",
+      "losers": [
+        "long-ring-long-land"
+      ],
+      "motif": "Nom exact \"Long Ring Long Land\" ; MÊME image Long_Ring_Long_Land_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "thriller-bark-lieu",
+      "losers": [
+        "thriller-bark"
+      ],
+      "motif": "Nom exact \"Thriller Bark\" ; MÊME image Thriller_Bark_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "weatheria-op",
+      "losers": [
+        "weatheria"
+      ],
+      "motif": "Nom exact \"Weatheria\" ; MÊME image Weatheria_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "prodence-kingdom",
+      "losers": [
+        "royaume-de-prodence"
+      ],
+      "motif": "Nom exact \"Royaume de Prodence\" ; MÊME image Prodence_Kingdom_Infobox.png.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "gotei-13",
+      "losers": [
+        "gotei-13-bleach"
+      ],
+      "motif": "Nom \"Gotei 13\" ~ \"Gotei 13 (Treize Divisions de la Cour)\" ; descFr même sujet ; survivor 47 arêtes + image vs 0.",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "buggy-s-delivery",
+      "losers": [
+        "baggy-s-delivery"
+      ],
+      "motif": "Nom exact \"Buggy\\u2019s Delivery\" ; MÊME image Buggy%27s_Delivery_Infobox.png ; \"Buggy\" = orthographe canonique du site (3 autres fiches \"buggy-*\", 0 autre \"baggy-*\").",
+      "origine": "cité par le rapport (25)"
+    },
+    {
+      "survivor": "mogaro-kingdom",
+      "losers": [
+        "royaume-de-mogalo"
+      ],
+      "motif": "\"Royaume de Mogaro\" ~ \"Royaume de Mogalo\" (distance=1) ; descFr identique (frères Funk).",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "boin-archipelago",
+      "losers": [
+        "archipel-de-boing"
+      ],
+      "motif": "\"Archipel Boin\" ~ \"Archipel de Boing\" (distance=1) ; descFr identique (plantes carnivores Stomach Baron, Usopp).",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "elbaf",
+      "losers": [
+        "erbaf"
+      ],
+      "motif": "\"Elbaf\" ~ \"Erbaf\" (distance=1) ; survivor déjà cat=Lieu correct, loser descFr vide.",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "l-equipage-des-maquereaux",
+      "losers": [
+        "l-equipage-des-marquereaux"
+      ],
+      "motif": "PREUVE FAIBLE : \"Maquereaux\" ~ \"Marquereaux\" (distance=1), descFr vide des deux côtés ; fusionné par cohérence du motif (même signature que Buggy/Baggy), pas par recoupement textuel.",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "shells-town-op",
+      "losers": [
+        "shells-town"
+      ],
+      "motif": "PLACE+PLACE (pas place/status) : \"Shells Town\" (orthographe wiki correcte, 7 arêtes habite) vs \"Shell Town\" (0 arête). MÊME image Shells_Town_Infobox.png. Survivor gardé pour la richesse de données malgré le slug moins soigné.",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "sabaody",
+      "losers": [
+        "archipel-des-sabaody"
+      ],
+      "motif": "\"Archipel Sabaody\" ~ \"Archipel des Sabaody\" ; descFr même sujet (mangrove, dernière escale avant Nouveau Monde).",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "baterilla-island",
+      "losers": [
+        "baterilla"
+      ],
+      "motif": "Nom \"Île de Baterilla\" ~ \"Baterilla\" ; MÊME image Baterilla_Infobox.png ; descFr identique (naissance d\\u2019Ace).",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "baratie-lieu",
+      "losers": [
+        "baratie"
+      ],
+      "motif": "Nom \"Le Baratie\" ~ \"Baratie\" ; ABSORBE image Baratie_Infobox.png (survivor n\\u2019en avait aucune).",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "l-equipage-du-chapeau-de-paille",
+      "losers": [
+        "chapeau-de-paille"
+      ],
+      "motif": "\"L\\u2019équipage du Chapeau de Paille\" ~ \"Équipage du Chapeau de Paille\" ; MÊME sujet (équipage de Luffy) ; survivor 123 arêtes (fiche la + riche du corpus OP) vs 10 ; survivor déjà référencé en dur dans app/learn/akasha/u/[slug]/page.tsx:106.",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "conomi-islands",
+      "losers": [
+        "archipel-conomi"
+      ],
+      "motif": "\"Îles Conomi\" ~ \"Archipel Conomi\" ; MÊME image Conomi_Islands_Infobox.png.",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "gecko-islands",
+      "losers": [
+        "archipel-des-gecko"
+      ],
+      "motif": "\"Îles Gecko\" ~ \"Archipel des Gecko\" ; MÊME image Gecko_Islands_Infobox.png ; descFr identique (village de Syrup, Usopp).",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "twin-cape",
+      "losers": [
+        "cap-des-jumeaux"
+      ],
+      "motif": "\"Caps Jumeaux\" ~ \"Cap des Jumeaux\" ; MÊME image Twin_Cape_Infobox.png.",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "cactus-island",
+      "losers": [
+        "ile-aux-cactus"
+      ],
+      "motif": "\"Île Cactus\" ~ \"Île aux cactus\" ; MÊME image Cactus_Island_Infobox.png ; descFr identique (Whisky Peak).",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "island-of-rare-animals",
+      "losers": [
+        "ile-des-animaux-etranges"
+      ],
+      "motif": "\"Île des animaux rares\" ~ \"Île des animaux étranges\" ; MÊME image Island_of_Rare_Animals_Infobox.png ; descFr identique (Gaimon).",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "wano",
+      "losers": [
+        "pays-des-wa"
+      ],
+      "motif": "\"Pays de Wano\" ~ \"Pays des Wa\" ; descFr identique (clan Kouzuki) ; ABSORBE 15 arêtes du loser (survivor en avait 0).",
+      "origine": "trouvaille indépendante (hors rapport)"
+    },
+    {
+      "survivor": "zou",
+      "losers": [
+        "zo"
+      ],
+      "motif": "\"Zou\" ~ \"Zo\" (slug tronqué) ; descFr QUASI-IDENTIQUE mot pour mot (Zunesha, duché de Mokomo, Minks).",
+      "origine": "trouvaille indépendante (hors rapport)"
+    }
+  ],
+  "categorie_seule_corrigee": [
+    {
+      "slug": "royaume-de-tontatta",
+      "de": "Équipage",
+      "vers": "Lieu",
+      "motif": "Royaume des nains Tontatta (Dressrosa) — aucune fiche place jumelle trouvée."
+    },
+    {
+      "slug": "archipel-des-argao",
+      "de": "Équipage",
+      "vers": "Lieu",
+      "motif": "Archipel de l\\u2019East Blue abritant Orange Town — aucune fiche place jumelle trouvée."
+    },
+    {
+      "slug": "source-de-l-insouciance",
+      "de": "Équipage",
+      "vers": "Lieu",
+      "motif": "Lieu cité dans le canon (Fontaine/Source) — aucune fiche place jumelle trouvée."
+    },
+    {
+      "slug": "pays-des-fleurs",
+      "de": "Équipage",
+      "vers": "Lieu",
+      "motif": "Kano Country — distinct de \"Colline aux fleurs\" (flower-hill), aucune fiche place jumelle trouvée pour ce royaume précis."
+    }
+  ],
+  "paires_rejetees_documentees": [
+    {
+      "a": "sphinx-island",
+      "b": "sphinx-one-piece",
+      "reason": "FAUX AMI : \"Île Sphinx\" = île natale de Barbe Blanche (Nouveau Monde) ; \"Sphinx\" = créature gardienne d\\u2019Impel Down (Beast Hell). Deux sujets canon différents, nom partagé par coïncidence."
+    },
+    {
+      "a": "l-equipage-des-nouveaux-hommes-poissons",
+      "b": "fishman-island",
+      "reason": "Chevauchement lexical seul (\"hommes-poissons\") : un équipage de pirates (Hody Jones) vs l\\u2019île elle-même. Entités différentes."
+    },
+    {
+      "a": "water-seven-lieu",
+      "b": "water-seven-cp9",
+      "reason": "La ville vs le regroupement narratif \"Water Seven / CP9\" (catégorie Saga) — sujets différents."
+    },
+    {
+      "a": "dressrosa-lieu",
+      "b": "dressrosa-alliance-pirate",
+      "reason": "L\\u2019île vs l\\u2019alliance formée pendant l\\u2019arc (catégorie Saga) — sujets différents."
+    },
+    {
+      "a": "marineford",
+      "b": "marine",
+      "reason": "Le lieu (base navale) vs l\\u2019organisation (Marine mondiale) — sujets différents, pas un doublon."
+    },
+    {
+      "a": "new-marineford",
+      "b": "marineford",
+      "reason": "Marineford avant/après reconstruction — deux états narratifs distincts du canon, pas un doublon d\\u2019import."
+    },
+    {
+      "a": "neo-marine",
+      "b": "marine",
+      "reason": "Faction dissidente (amiral Z) vs organisation mère — entités différentes."
+    },
+    {
+      "a": "l-equipage-des-geants",
+      "b": "nouvel-equipage-des-geants",
+      "reason": "descFr explicite : \"héritier spirituel... un siècle plus tôt\" — succession narrative, pas le même équipage."
+    },
+    {
+      "a": "baroque-works",
+      "b": "anciens-membres-du-baroque-works",
+      "reason": "L\\u2019organisation vs le roster \"anciens membres\" — objets différents (liste vs entité)."
+    },
+    {
+      "a": "cipher-pol",
+      "b": "anciens-membres-du-cipher-pol",
+      "reason": "Même motif que Baroque Works — pas un doublon."
+    },
+    {
+      "a": "anciens-membres-de-la-marine",
+      "b": "marine",
+      "reason": "Roster \"anciens membres\" vs organisation — pas un doublon."
+    },
+    {
+      "a": "chapeau-de-paille/l-equipage-du-chapeau-de-paille",
+      "b": "faux-equipage-du-chapeau-de-paille",
+      "reason": "Le vrai équipage (fusionné, cf. groupe ci-dessus) vs les usurpateurs de Demalo Black — sujets différents."
+    },
+    {
+      "a": "candy",
+      "b": "l-equipage-des-candys",
+      "reason": "Faux positif de sous-chaîne — sujets différents."
+    },
+    {
+      "a": "black",
+      "b": "royaume-malefique-de-black-drum",
+      "reason": "Faux positif de sous-chaîne — sujets différents."
+    }
+  ],
+  "execution": {
+    "relations_reassignees": 174,
+    "relations_doublons_supprimees": 4,
+    "sections_migrees": 61,
+    "sections_doublons_ignorees": 79,
+    "fiches_supprimees": 42,
+    "redirects_ajoutees_next_config": 42
+  },
+  "categorie_equipage_op": {
+    "avant": 142,
+    "apres": 99,
+    "delta": 43,
+    "detail": "39 fiches Équipage supprimées via fusion (leur jumelle place a survécu) + 4 corrections de catégorie seule (sans fiche jumelle).",
+    "residuel_99": "77 confirmées équipages/crews par motif de nom (L’équipage de../Les Pirates..) + ~22 organisations diverses (Cipher Pol, Armée Révolutionnaire, Baroque Works, Dragons Célestes, Néo Marine, flottes, rosters \"anciens membres\"...) mal étiquetées \"Équipage\" au sens strict mais PAS des îles — hors du périmètre explicite de ce chantier (îles ≠ équipage). 1 anomalie de TYPE (bigaro : un personnage typé status au lieu de character) signalée mais non corrigée (hors scope)."
+  },
+  "fichiers_code_modifies": [
+    "next.config.js — 42 redirections 308 /learn/akasha/<slug-abandonné> -> /learn/akasha/<slug-survivant>",
+    "lib/akasha/universe-taxonomy.ts:146 — pilier One Piece repointé de \"chapeau-de-paille\" (supprimé) vers \"l-equipage-du-chapeau-de-paille\" (survivant, 130 arêtes)"
+  ],
+  "verification_croisee": {
+    "entries_avant": 7674,
+    "entries_apres_mesure": 7637,
+    "note_ecart": "7674-42=7632 attendu, 7637 mesuré : écart de +5 imputable à l'usine qui tourne en continu (insertions concurrentes pendant la fenêtre de travail, confirmé par 0 des 42 slugs perdants encore présents et par le delta EXACT des relations qui, lui, correspond au chiffre attendu).",
+    "relations_avant": 16387,
+    "relations_apres": 16383,
+    "relations_delta_attendu": -4,
+    "relations_delta_mesure": -4,
+    "doublons_exacts_restants": 0,
+    "dangling_relations_verifiees": 0,
+    "tsc_noEmit": "PASS (0 erreur)",
+    "pages_verifiees_navigateur": [
+      "/learn/akasha/east-blue",
+      "/learn/akasha/l-equipage-du-chapeau-de-paille",
+      "/learn/akasha/wano",
+      "/learn/akasha/skypiea (redirige 308 -> skypiea-lieu)"
+    ]
+  }
+}

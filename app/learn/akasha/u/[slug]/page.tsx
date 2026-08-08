@@ -8,8 +8,8 @@ import { SITE_URL } from '@/lib/site';
 import { hubVisual, taxonomyBySlug, UNIVERSE_TAXONOMY } from '@/lib/akasha/universe-taxonomy';
 import { RARITY_META, TYPE_META, universeMeta, universeWordmark, universeBanner } from '@/lib/akasha/types';
 import { countUniverse, getEntriesBySlugs, getFullEntriesBySlugs, listAxisCounts, listBounties, listCategoryCounts, listEntries, listEvolutive, listStars, listUniverseIndex, universeInsights } from '@/lib/akasha/queries';
-import AkashaMosaic from '@/components/akasha/AkashaMosaic';
-import HubHalo from '@/components/akasha/hub/HubHalo';
+import AkashaList from '@/components/akasha/AkashaList';
+import UniverseShell from '@/components/akasha/UniverseShell';
 import Reveal from '@/components/akasha/hub/Reveal';
 import ShareButton from '@/components/akasha/hub/ShareButton';
 import HubInsights from '@/components/akasha/hub/HubInsights';
@@ -169,19 +169,8 @@ export default async function UniverseHubPage({ params }: Props) {
   return (
     <main>
       {/* ── HERO UNIVERS ─────────────────────────────────────── */}
-      <div className="ak-hub-grain" style={{ background: vis?.heroGradient ?? `linear-gradient(180deg, ${m.color}2E 0%, ${m.color}0C 55%, var(--bg) 100%)`, borderBottom: '1px solid var(--bd)', padding: 'clamp(2.2rem,5vw,3.6rem) 1.4rem 1.8rem', position: 'relative', overflow: 'hidden' }}>
-        {universeBanner(taxo.name) && (
-          <>
-            <div aria-hidden style={{ position: 'absolute', inset: 0, backgroundImage: `url(${universeBanner(taxo.name)})`, backgroundSize: 'cover', backgroundPosition: 'center 32%', zIndex: 0 }} />
-            <div aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(90deg, color-mix(in srgb, var(--bg) 94%, transparent) 0%, color-mix(in srgb, var(--bg) 66%, transparent) 40%, color-mix(in srgb, var(--bg) 20%, transparent) 72%, transparent 100%), linear-gradient(180deg, color-mix(in srgb, var(--bg) 64%, transparent) 0%, transparent 32%, color-mix(in srgb, var(--bg) 82%, transparent) 84%, var(--bg) 100%)' }} />
-          </>
-        )}
-        {vis && <div className="ak-hub-pattern" aria-hidden style={{ ['--ak-bg' as string]: vis.bgPattern, zIndex: 1 }} />}
-        <HubHalo color={m.color} />
-        <div className="ak-kanji-drift" aria-hidden style={{ position: 'absolute', top: '-0.3em', right: '-0.05em', fontFamily: 'var(--fe)', fontSize: 'clamp(120px,26vw,300px)', fontWeight: 900, color: `${m.color}14`, lineHeight: 1, pointerEvents: 'none', userSelect: 'none' }}>
-          {taxo.kanji}
-        </div>
-        <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 2 }}>
+      <UniverseShell color={m.color} heroGradient={vis?.heroGradient} bgPattern={vis?.bgPattern} kanji={taxo.kanji} banner={universeBanner(taxo.name)}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <nav aria-label="Fil d'Ariane" style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--td3)', display: 'flex', gap: 6, flexWrap: 'wrap' }}>
             <Link href="/learn" style={{ color: 'var(--td3)', textDecoration: 'none' }}>Learn</Link>
             <span aria-hidden>›</span>
@@ -229,7 +218,7 @@ export default async function UniverseHubPage({ params }: Props) {
             <ShareButton title={`${taxo.name} — AKASHA`} text={taxo.tagline} color={m.color} />
           </div>
         </div>
-      </div>
+      </UniverseShell>
 
       {/* ── SURFACE SIGNATURE PLEIN CADRE (lot 3a) : la carte du monde EST la porte d'entrée ── */}
       {(vis?.map || vis?.signature) && (
@@ -272,7 +261,7 @@ export default async function UniverseHubPage({ params }: Props) {
               <span>Voyages dans le temps</span>
               <span style={{ color: 'var(--td3)', letterSpacing: '0.03em' }}>{evolutive.length} lieux & artefacts évolutifs</span>
             </div>
-            <AkashaMosaic entries={evolutive} />
+            <AkashaList entries={evolutive} variant="strip" />
           </Reveal>
         )}
 
@@ -366,7 +355,7 @@ export default async function UniverseHubPage({ params }: Props) {
             <div style={sectionTitle}>
               <span>Les piliers de {taxo.name}</span>
             </div>
-            <AkashaMosaic entries={piliers} />
+            <AkashaList entries={piliers} variant="strip" />
           </Reveal>
         )}
 

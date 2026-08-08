@@ -5,9 +5,10 @@ import { notFound } from 'next/navigation';
 import { getEntryBySlug, listSharedVoice, listSimilar, popularityRank } from '@/lib/akasha/queries';
 import { TYPE_META, RARITY_META, universeMeta, type AkashaType } from '@/lib/akasha/types';
 import { flavorExcerpt } from '@/lib/akasha/flavor';
-import { universeHubSlug } from '@/lib/akasha/universe-taxonomy';
+import { universeHubSlug, taxonomyByName, hubVisual } from '@/lib/akasha/universe-taxonomy';
 import { SITE_URL } from '@/lib/site';
-import AkashaMosaic from '@/components/akasha/AkashaMosaic';
+import AkashaList from '@/components/akasha/AkashaList';
+import UniverseShell from '@/components/akasha/UniverseShell';
 import EntityBadge from '@/components/akasha/EntityBadge';
 import EntityAttributes from '@/components/akasha/EntityAttributes';
 import EntityRelations from '@/components/akasha/EntityRelations';
@@ -53,6 +54,10 @@ export default async function AkashaEntryPage({ params }: Props) {
   const category = typeof (entry.attributes as Record<string, unknown>).category === 'string'
     ? ((entry.attributes as Record<string, unknown>).category as string)
     : null;
+  // Chrome du monde (1b) : kanji + motif canon de l'univers de l'entrée — config, zéro requête.
+  const worldKanji = entry.universe ? taxonomyByName(entry.universe)?.kanji : undefined;
+  const worldVis = entry.universe ? hubVisual(universeHubSlug(entry.universe) ?? '') : undefined;
+  const worldColor = entry.universe ? universeMeta(entry.universe).color : m.color;
 
   // Personnages → fiche « ZONE » (refonte lot 1) : surface vivante + panneau canal re-scopable.
   if (entry.type === 'character') {
@@ -108,7 +113,7 @@ export default async function AkashaEntryPage({ params }: Props) {
       .sort((a, b) => (Number(b.target.favorites) || 0) - (Number(a.target.favorites) || 0));
     return (
       <main>
-        <div style={{ background: `linear-gradient(180deg, ${accent}26 0%, ${accent}08 45%, var(--bg) 100%)`, borderBottom: '1px solid var(--bd)', padding: 'clamp(2rem,5vw,3rem) 1.4rem 1.6rem' }}>
+        <UniverseShell color={accent} heroGradient={worldVis?.heroGradient} bgPattern={worldVis?.bgPattern} kanji={worldKanji} padding="clamp(2rem,5vw,3rem) 1.4rem 1.6rem">
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <Crumbs universe={entry.universe} category={category} name={entry.name} />
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center', marginBottom: 8 }}>
@@ -137,7 +142,7 @@ export default async function AkashaEntryPage({ params }: Props) {
               </p>
             )}
           </div>
-        </div>
+        </UniverseShell>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(1.6rem,4vw,2.4rem) 1.4rem clamp(3rem,7vw,5rem)', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           {users.length > 0 && (
             <section>
@@ -197,13 +202,7 @@ export default async function AkashaEntryPage({ params }: Props) {
   return (
     <main>
       {/* ── BANDEAU ───────────────────────────────────────────── */}
-      <div
-        style={{
-          background: `linear-gradient(180deg, ${m.color}24 0%, ${m.color}08 45%, var(--bg) 100%)`,
-          borderBottom: '1px solid var(--bd)',
-          padding: 'clamp(2rem,5vw,3.2rem) 1.4rem 1.8rem',
-        }}
-      >
+      <UniverseShell color={worldColor} heroGradient={worldVis?.heroGradient} bgPattern={worldVis?.bgPattern} kanji={worldKanji} padding="clamp(2rem,5vw,3.2rem) 1.4rem 1.8rem">
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <Crumbs universe={entry.universe} category={category} name={entry.name} />
 
@@ -299,7 +298,7 @@ export default async function AkashaEntryPage({ params }: Props) {
             </div>
           </div>
         </div>
-      </div>
+      </UniverseShell>
 
       {/* ── CORPS ─────────────────────────────────────────────── */}
       <div
@@ -361,7 +360,7 @@ async function SimilarSection({ universe, cat, type, excludeSlug }: { universe: 
   return (
     <section>
       <h2 className="akasha-section-title">Voir aussi{cat ? ` — ${cat}` : ''}</h2>
-      <AkashaMosaic entries={similar} />
+      <AkashaList entries={similar} variant="strip" />
     </section>
   );
 }

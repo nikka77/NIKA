@@ -1,0 +1,1022 @@
+{
+  "started_at": "2026-08-08T14:37:10.012Z",
+  "groups": [
+    {
+      "survivorSlug": "skypiea-lieu",
+      "loserSlugs": [
+        "skypiea"
+      ],
+      "motif": "Nom exact \"Skypiea\" ; descFr même sujet (nation céleste) ; loser cat=Équipage à tort.",
+      "steps": [
+        {
+          "loserSlug": "skypiea",
+          "sectionsMigrated": 3,
+          "sectionsSkippedDup": 1,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 18,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "loguetown-lieu",
+      "loserSlugs": [
+        "loguetown"
+      ],
+      "motif": "Nom exact \"Loguetown\" ; MÊME image wiki Loguetown_Infobox.png des deux côtés.",
+      "steps": [
+        {
+          "loserSlug": "loguetown",
+          "sectionsMigrated": 2,
+          "sectionsSkippedDup": 2,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 3,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "little-garden-lieu",
+      "loserSlugs": [
+        "little-garden"
+      ],
+      "motif": "Nom exact \"Little Garden\" ; MÊME image wiki Little_Garden_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "little-garden",
+          "sectionsMigrated": 2,
+          "sectionsSkippedDup": 2,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 1,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "water-seven-lieu",
+      "loserSlugs": [
+        "water-seven"
+      ],
+      "motif": "Nom exact \"Water Seven\" ; descFr même sujet (ville des charpentiers).",
+      "steps": [
+        {
+          "loserSlug": "water-seven",
+          "sectionsMigrated": 4,
+          "sectionsSkippedDup": 1,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 7,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "drum-island",
+      "loserSlugs": [
+        "ile-de-drum"
+      ],
+      "motif": "Nom \"Île de Drum\" ~ \"Île de Drum (Sakura)\" ; MÊME image Drum_Island_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "ile-de-drum",
+          "sectionsMigrated": 2,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 4,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "fishman-island",
+      "loserSlugs": [
+        "ile-des-hommes-poissons"
+      ],
+      "motif": "Nom exact \"Île des hommes-poissons\" ; MÊME image Fish-Man_Island_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "ile-des-hommes-poissons",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 7,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "dressrosa-lieu",
+      "loserSlugs": [
+        "dressrosa"
+      ],
+      "motif": "Nom exact \"Dressrosa\" ; MÊME image Dressrosa_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "dressrosa",
+          "sectionsMigrated": 3,
+          "sectionsSkippedDup": 3,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 7,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "shimotsuki-village",
+      "loserSlugs": [
+        "village-de-shimotsuki"
+      ],
+      "motif": "Nom exact \"Village de Shimotsuki\" ; descFr identique (dojo Isshin, Zoro, Kuina).",
+      "steps": [
+        {
+          "loserSlug": "village-de-shimotsuki",
+          "sectionsMigrated": 3,
+          "sectionsSkippedDup": 2,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 1,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "germa-kingdom",
+      "loserSlugs": [
+        "royaume-de-germa"
+      ],
+      "motif": "Nom exact \"Royaume de Germa\" ; MÊME image Germa_Kingdom_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "royaume-de-germa",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 6,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 6,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "alabasta-lieu",
+      "loserSlugs": [
+        "alabasta"
+      ],
+      "motif": "Nom exact \"Alabasta\" ; MÊME image Arabasta_Kingdom_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "alabasta",
+          "sectionsMigrated": 2,
+          "sectionsSkippedDup": 3,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 11,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "enies-lobby-lieu",
+      "loserSlugs": [
+        "enies-lobby"
+      ],
+      "motif": "Nom exact \"Enies Lobby\" ; MÊME image Enies_Lobby_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "enies-lobby",
+          "sectionsMigrated": 1,
+          "sectionsSkippedDup": 1,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 3,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "east-blue",
+      "loserSlugs": [
+        "east-blue-one-piece"
+      ],
+      "motif": "Nom exact \"East Blue\" ; MÊME image East_Blue_Infobox.png ; loser cat=Saga à tort (même mer décrite).",
+      "steps": [
+        {
+          "loserSlug": "east-blue-one-piece",
+          "sectionsMigrated": 3,
+          "sectionsSkippedDup": 2,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 0,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "goa-kingdom",
+      "loserSlugs": [
+        "royaume-de-goa"
+      ],
+      "motif": "Nom exact \"Royaume de Goa\" ; MÊME image Goa_Kingdom_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "royaume-de-goa",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 5,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 9,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "green-bit-op",
+      "loserSlugs": [
+        "green-bit"
+      ],
+      "motif": "Nom exact \"Green Bit\" ; MÊME image Green_Bit_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "green-bit",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 1,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 0,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "impel-down-lieu",
+      "loserSlugs": [
+        "impel-down"
+      ],
+      "motif": "Nom exact \"Impel Down\" ; MÊME image Impel_Down_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "impel-down",
+          "sectionsMigrated": 2,
+          "sectionsSkippedDup": 5,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 19,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "lvneel-kingdom",
+      "loserSlugs": [
+        "royaume-de-lvneel",
+        "royaume-de-luvneel"
+      ],
+      "motif": "TRIPLE : \"Royaume de Lvneel\" (exact) + \"Royaume de Luvneel\" (variante orthographique, distance=1) ; mêmes faits (Mont Blanc Noland).",
+      "steps": [
+        {
+          "loserSlug": "royaume-de-lvneel",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 2,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 1,
+          "relInDupDropped": 0
+        },
+        {
+          "loserSlug": "royaume-de-luvneel",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 2,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 4,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "ohara-lieu",
+      "loserSlugs": [
+        "ohara"
+      ],
+      "motif": "Nom exact \"Ohara\" ; MÊME image Ohara_After_the_Buster_Call.png.",
+      "steps": [
+        {
+          "loserSlug": "ohara",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 4,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 3,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "punk-hazard-lieu",
+      "loserSlugs": [
+        "punk-hazard"
+      ],
+      "motif": "Nom exact \"Punk Hazard\" ; MÊME image Punk_Hazard_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "punk-hazard",
+          "sectionsMigrated": 4,
+          "sectionsSkippedDup": 1,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 2,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "reverse-mountain-lieu",
+      "loserSlugs": [
+        "reverse-mountain"
+      ],
+      "motif": "Nom exact \"Reverse Mountain\" ; MÊME image Reverse_Mountain_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "reverse-mountain",
+          "sectionsMigrated": 1,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 0,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "long-ring-long-land-op",
+      "loserSlugs": [
+        "long-ring-long-land"
+      ],
+      "motif": "Nom exact \"Long Ring Long Land\" ; MÊME image Long_Ring_Long_Land_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "long-ring-long-land",
+          "sectionsMigrated": 1,
+          "sectionsSkippedDup": 2,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 1,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "thriller-bark-lieu",
+      "loserSlugs": [
+        "thriller-bark"
+      ],
+      "motif": "Nom exact \"Thriller Bark\" ; MÊME image Thriller_Bark_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "thriller-bark",
+          "sectionsMigrated": 3,
+          "sectionsSkippedDup": 4,
+          "relOutReassigned": 1,
+          "relOutDupDropped": 0,
+          "relInReassigned": 5,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "weatheria-op",
+      "loserSlugs": [
+        "weatheria"
+      ],
+      "motif": "Nom exact \"Weatheria\" ; MÊME image Weatheria_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "weatheria",
+          "sectionsMigrated": 1,
+          "sectionsSkippedDup": 1,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 1,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "prodence-kingdom",
+      "loserSlugs": [
+        "royaume-de-prodence"
+      ],
+      "motif": "Nom exact \"Royaume de Prodence\" ; MÊME image Prodence_Kingdom_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "royaume-de-prodence",
+          "sectionsMigrated": 1,
+          "sectionsSkippedDup": 1,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 2,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "gotei-13",
+      "loserSlugs": [
+        "gotei-13-bleach"
+      ],
+      "motif": "Nom \"Gotei 13\" ~ \"Gotei 13 (Treize Divisions de la Cour)\" ; descFr même sujet ; survivor 47 arêtes + image vs 0.",
+      "steps": [
+        {
+          "loserSlug": "gotei-13-bleach",
+          "sectionsMigrated": 1,
+          "sectionsSkippedDup": 7,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 0,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "buggy-s-delivery",
+      "loserSlugs": [
+        "baggy-s-delivery"
+      ],
+      "motif": "Nom exact \"Buggy\\u2019s Delivery\" ; MÊME image Buggy%27s_Delivery_Infobox.png ; \"Buggy\" = orthographe canonique du site (3 autres fiches \"buggy-*\", 0 autre \"baggy-*\").",
+      "steps": [
+        {
+          "loserSlug": "baggy-s-delivery",
+          "sectionsMigrated": 1,
+          "sectionsSkippedDup": 5,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 10,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "mogaro-kingdom",
+      "loserSlugs": [
+        "royaume-de-mogalo"
+      ],
+      "motif": "\"Royaume de Mogaro\" ~ \"Royaume de Mogalo\" (distance=1) ; descFr identique (frères Funk).",
+      "steps": [
+        {
+          "loserSlug": "royaume-de-mogalo",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 2,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "boin-archipelago",
+      "loserSlugs": [
+        "archipel-de-boing"
+      ],
+      "motif": "\"Archipel Boin\" ~ \"Archipel de Boing\" (distance=1) ; descFr identique (plantes carnivores Stomach Baron, Usopp).",
+      "steps": [
+        {
+          "loserSlug": "archipel-de-boing",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 1,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "elbaf",
+      "loserSlugs": [
+        "erbaf"
+      ],
+      "motif": "\"Elbaf\" ~ \"Erbaf\" (distance=1) ; survivor déjà cat=Lieu correct, loser descFr vide.",
+      "steps": [
+        {
+          "loserSlug": "erbaf",
+          "sectionsMigrated": 2,
+          "sectionsSkippedDup": 1,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 2,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "l-equipage-des-maquereaux",
+      "loserSlugs": [
+        "l-equipage-des-marquereaux"
+      ],
+      "motif": "PREUVE FAIBLE : \"Maquereaux\" ~ \"Marquereaux\" (distance=1), descFr vide des deux côtés ; fusionné par cohérence du motif (même signature que Buggy/Baggy), pas par recoupement textuel.",
+      "steps": [
+        {
+          "loserSlug": "l-equipage-des-marquereaux",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 0,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "shells-town-op",
+      "loserSlugs": [
+        "shells-town"
+      ],
+      "motif": "PLACE+PLACE (pas place/status) : \"Shells Town\" (orthographe wiki correcte, 7 arêtes habite) vs \"Shell Town\" (0 arête). MÊME image Shells_Town_Infobox.png. Survivor gardé pour la richesse de données malgré le slug moins soigné.",
+      "steps": [
+        {
+          "loserSlug": "shells-town",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 1,
+          "relInReassigned": 0,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "sabaody",
+      "loserSlugs": [
+        "archipel-des-sabaody"
+      ],
+      "motif": "\"Archipel Sabaody\" ~ \"Archipel des Sabaody\" ; descFr même sujet (mangrove, dernière escale avant Nouveau Monde).",
+      "steps": [
+        {
+          "loserSlug": "archipel-des-sabaody",
+          "sectionsMigrated": 2,
+          "sectionsSkippedDup": 4,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 3,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "baterilla-island",
+      "loserSlugs": [
+        "baterilla"
+      ],
+      "motif": "Nom \"Île de Baterilla\" ~ \"Baterilla\" ; MÊME image Baterilla_Infobox.png ; descFr identique (naissance d\\u2019Ace).",
+      "steps": [
+        {
+          "loserSlug": "baterilla",
+          "sectionsMigrated": 1,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 1,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "baratie-lieu",
+      "loserSlugs": [
+        "baratie"
+      ],
+      "motif": "Nom \"Le Baratie\" ~ \"Baratie\" ; ABSORBE image Baratie_Infobox.png (survivor n\\u2019en avait aucune).",
+      "steps": [
+        {
+          "loserSlug": "baratie",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 5,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 3,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "image_url<-baratie"
+      ]
+    },
+    {
+      "survivorSlug": "l-equipage-du-chapeau-de-paille",
+      "loserSlugs": [
+        "chapeau-de-paille"
+      ],
+      "motif": "\"L\\u2019équipage du Chapeau de Paille\" ~ \"Équipage du Chapeau de Paille\" ; MÊME sujet (équipage de Luffy) ; survivor 123 arêtes (fiche la + riche du corpus OP) vs 10 ; survivor déjà référencé en dur dans app/learn/akasha/u/[slug]/page.tsx:106.",
+      "steps": [
+        {
+          "loserSlug": "chapeau-de-paille",
+          "sectionsMigrated": 8,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 7,
+          "relInDupDropped": 3
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "conomi-islands",
+      "loserSlugs": [
+        "archipel-conomi"
+      ],
+      "motif": "\"Îles Conomi\" ~ \"Archipel Conomi\" ; MÊME image Conomi_Islands_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "archipel-conomi",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 4,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "gecko-islands",
+      "loserSlugs": [
+        "archipel-des-gecko"
+      ],
+      "motif": "\"Îles Gecko\" ~ \"Archipel des Gecko\" ; MÊME image Gecko_Islands_Infobox.png ; descFr identique (village de Syrup, Usopp).",
+      "steps": [
+        {
+          "loserSlug": "archipel-des-gecko",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 3,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "twin-cape",
+      "loserSlugs": [
+        "cap-des-jumeaux"
+      ],
+      "motif": "\"Caps Jumeaux\" ~ \"Cap des Jumeaux\" ; MÊME image Twin_Cape_Infobox.png.",
+      "steps": [
+        {
+          "loserSlug": "cap-des-jumeaux",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 2,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "cactus-island",
+      "loserSlugs": [
+        "ile-aux-cactus"
+      ],
+      "motif": "\"Île Cactus\" ~ \"Île aux cactus\" ; MÊME image Cactus_Island_Infobox.png ; descFr identique (Whisky Peak).",
+      "steps": [
+        {
+          "loserSlug": "ile-aux-cactus",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 3,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 1,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "island-of-rare-animals",
+      "loserSlugs": [
+        "ile-des-animaux-etranges"
+      ],
+      "motif": "\"Île des animaux rares\" ~ \"Île des animaux étranges\" ; MÊME image Island_of_Rare_Animals_Infobox.png ; descFr identique (Gaimon).",
+      "steps": [
+        {
+          "loserSlug": "ile-des-animaux-etranges",
+          "sectionsMigrated": 0,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 0,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": [
+        "category<-Lieu(defaut place)"
+      ]
+    },
+    {
+      "survivorSlug": "wano",
+      "loserSlugs": [
+        "pays-des-wa"
+      ],
+      "motif": "\"Pays de Wano\" ~ \"Pays des Wa\" ; descFr identique (clan Kouzuki) ; ABSORBE 15 arêtes du loser (survivor en avait 0).",
+      "steps": [
+        {
+          "loserSlug": "pays-des-wa",
+          "sectionsMigrated": 5,
+          "sectionsSkippedDup": 0,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 15,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    },
+    {
+      "survivorSlug": "zou",
+      "loserSlugs": [
+        "zo"
+      ],
+      "motif": "\"Zou\" ~ \"Zo\" (slug tronqué) ; descFr QUASI-IDENTIQUE mot pour mot (Zunesha, duché de Mokomo, Minks).",
+      "steps": [
+        {
+          "loserSlug": "zo",
+          "sectionsMigrated": 3,
+          "sectionsSkippedDup": 3,
+          "relOutReassigned": 0,
+          "relOutDupDropped": 0,
+          "relInReassigned": 4,
+          "relInDupDropped": 0
+        }
+      ],
+      "attrPatchApplied": []
+    }
+  ],
+  "categoryFixes": [
+    {
+      "slug": "royaume-de-tontatta",
+      "from": "Équipage",
+      "to": "Lieu"
+    },
+    {
+      "slug": "archipel-des-argao",
+      "from": "Équipage",
+      "to": "Lieu"
+    },
+    {
+      "slug": "source-de-l-insouciance",
+      "from": "Équipage",
+      "to": "Lieu"
+    },
+    {
+      "slug": "pays-des-fleurs",
+      "from": "Équipage",
+      "to": "Lieu"
+    }
+  ],
+  "redirects": [
+    {
+      "from": "skypiea",
+      "to": "skypiea-lieu"
+    },
+    {
+      "from": "loguetown",
+      "to": "loguetown-lieu"
+    },
+    {
+      "from": "little-garden",
+      "to": "little-garden-lieu"
+    },
+    {
+      "from": "water-seven",
+      "to": "water-seven-lieu"
+    },
+    {
+      "from": "ile-de-drum",
+      "to": "drum-island"
+    },
+    {
+      "from": "ile-des-hommes-poissons",
+      "to": "fishman-island"
+    },
+    {
+      "from": "dressrosa",
+      "to": "dressrosa-lieu"
+    },
+    {
+      "from": "village-de-shimotsuki",
+      "to": "shimotsuki-village"
+    },
+    {
+      "from": "royaume-de-germa",
+      "to": "germa-kingdom"
+    },
+    {
+      "from": "alabasta",
+      "to": "alabasta-lieu"
+    },
+    {
+      "from": "enies-lobby",
+      "to": "enies-lobby-lieu"
+    },
+    {
+      "from": "east-blue-one-piece",
+      "to": "east-blue"
+    },
+    {
+      "from": "royaume-de-goa",
+      "to": "goa-kingdom"
+    },
+    {
+      "from": "green-bit",
+      "to": "green-bit-op"
+    },
+    {
+      "from": "impel-down",
+      "to": "impel-down-lieu"
+    },
+    {
+      "from": "royaume-de-lvneel",
+      "to": "lvneel-kingdom"
+    },
+    {
+      "from": "royaume-de-luvneel",
+      "to": "lvneel-kingdom"
+    },
+    {
+      "from": "ohara",
+      "to": "ohara-lieu"
+    },
+    {
+      "from": "punk-hazard",
+      "to": "punk-hazard-lieu"
+    },
+    {
+      "from": "reverse-mountain",
+      "to": "reverse-mountain-lieu"
+    },
+    {
+      "from": "long-ring-long-land",
+      "to": "long-ring-long-land-op"
+    },
+    {
+      "from": "thriller-bark",
+      "to": "thriller-bark-lieu"
+    },
+    {
+      "from": "weatheria",
+      "to": "weatheria-op"
+    },
+    {
+      "from": "royaume-de-prodence",
+      "to": "prodence-kingdom"
+    },
+    {
+      "from": "gotei-13-bleach",
+      "to": "gotei-13"
+    },
+    {
+      "from": "baggy-s-delivery",
+      "to": "buggy-s-delivery"
+    },
+    {
+      "from": "royaume-de-mogalo",
+      "to": "mogaro-kingdom"
+    },
+    {
+      "from": "archipel-de-boing",
+      "to": "boin-archipelago"
+    },
+    {
+      "from": "erbaf",
+      "to": "elbaf"
+    },
+    {
+      "from": "l-equipage-des-marquereaux",
+      "to": "l-equipage-des-maquereaux"
+    },
+    {
+      "from": "shells-town",
+      "to": "shells-town-op"
+    },
+    {
+      "from": "archipel-des-sabaody",
+      "to": "sabaody"
+    },
+    {
+      "from": "baterilla",
+      "to": "baterilla-island"
+    },
+    {
+      "from": "baratie",
+      "to": "baratie-lieu"
+    },
+    {
+      "from": "chapeau-de-paille",
+      "to": "l-equipage-du-chapeau-de-paille"
+    },
+    {
+      "from": "archipel-conomi",
+      "to": "conomi-islands"
+    },
+    {
+      "from": "archipel-des-gecko",
+      "to": "gecko-islands"
+    },
+    {
+      "from": "cap-des-jumeaux",
+      "to": "twin-cape"
+    },
+    {
+      "from": "ile-aux-cactus",
+      "to": "cactus-island"
+    },
+    {
+      "from": "ile-des-animaux-etranges",
+      "to": "island-of-rare-animals"
+    },
+    {
+      "from": "pays-des-wa",
+      "to": "wano"
+    },
+    {
+      "from": "zo",
+      "to": "zou"
+    }
+  ]
+}
