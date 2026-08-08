@@ -1,0 +1,103 @@
+{
+  "chantier": "description-colonne",
+  "fait_le": "2026-08-08T21:00:00.000Z",
+  "mandat": "Mesurer ce que porte réellement akasha_entries.description après le nettoyage partiel du 08/08 (chantier sources-doubles, 14:33 UTC) + les 5 insertions parents-manquants du même jour. Lecture seule — clientSite(), scan paginé complet (range), aucune écriture DB.",
+  "sources_citees": [
+    "requête directe akasha_entries (33 lignes non-nulles, lues intégralement une par une)",
+    "data/audits/sources-doubles-rapport.json §point2_description (chantier qui a vidé 6959 fiches le 08/08 14:33 UTC)",
+    "data/audits/parents-manquants-insertions.json (5 fiches créées le 08/08, description=summary à l'insertion)",
+    "scripts/build-akasha-universes.mjs:492, scripts/akasha-db-cure.mjs:10, scripts/akasha-db-places.mjs:27, scripts/build-akasha-naruto.mjs:684 — les 4 seeders d'origine qui écrivent `description: summary` (ou `description ?? summary`) à la création : la colonne n'a JAMAIS été un canal de contenu distinct, elle est une COPIE FIGÉE de summary au moment du seed",
+    "scripts/ops-reparer-curation-0708.mjs:78-85 (§2bis) — 28 fiches type=place vidées le 07/08 pour une raison différente (résumé contradictoire post-retypage)",
+    "grep exhaustif app/learn/akasha/**, components/akasha/**, lib/akasha/*.ts (queries.ts CARD_COLS, flavor.ts) — AUCUNE lecture de `entry.description` ou `.description` sur une entrée akasha n'existe dans le code actuel ; seuls des faux positifs sans rapport (OnePieceMap.tsx lit `OpwIsland.description`, un type de données de carte statique sans rapport avec la colonne SQL). queries.ts:233 fait `select('*')` dans getEntryBySlug donc la colonne EST chargée en mémoire, mais rien ne la consomme en aval. flavor.ts (extrait long / méta SEO) lit exclusivement `attributes.descFr`, jamais `description`."
+  ],
+  "comptes_globaux": {
+    "total_fiches": 7636,
+    "description_null": 7603,
+    "description_non_null": 33,
+    "pourcentage_non_null": 0.43
+  },
+  "comparaison_avant_apres_nettoyage_0808": {
+    "avant_mesure_dans_tasks_akasha-architecture.md_16h06": {
+      "total_fiches": 7674,
+      "description_identique_a_summary": 6987,
+      "pourcentage": "91 %"
+    },
+    "chantier_sources-doubles_14h33_UTC": {
+      "regle_appliquee": "NULL uniquement si description === summary octet pour octet (comparaison stricte, jamais approximative)",
+      "identiques_avant": 6959,
+      "vides_par_le_chantier": 6959,
+      "differentes_conservees": 28,
+      "deja_null_avant": 659
+    },
+    "apres_5fc0d3f3_17h51_meme_journee": {
+      "note": "Le même commit qui exécute sources-doubles crée aussi 5 fiches parents-manquants (gouvernement-mondial, civil, clan-sarutobi, kagetsu, izuno) via le même patron de seed historique (description: summary) — donc 5 NOUVEAUX doublons apparaissent le jour même où les 6959 anciens sont vidés.",
+      "total_non_null_actuel": 33,
+      "reconciliation": "28 (conservées par sources-doubles, différentes de summary à cet instant) + 5 (créées après, identiques à summary) = 33 — exact"
+    }
+  },
+  "classification_manuelle_des_33_fiches_non_nulles": {
+    "methode": "Lues une par une (< 20 aurait suffi au seuil de la maison ; 33 lues quand même par prudence). Chaque ligne comparée à summary ET à attributes.descFr.",
+    "categorie_A_doublon_exact_summary": {
+      "compte": 5,
+      "definition": "description === summary octet pour octet, à l'instant présent",
+      "slugs": ["kagetsu", "izuno", "clan-sarutobi", "gouvernement-mondial", "civil"],
+      "origine": "5 fiches créées le 08/08 par le chantier parents-manquants (data/audits/parents-manquants-insertions.json), seedées avec description=summary — même défaut que les 6959 déjà nettoyés, jamais repassé par la règle de nettoyage",
+      "verdict": "candidates immédiates au NULL, sous la MÊME règle stricte déjà validée et appliquée (description === summary) — zéro perte d'information, zéro impact visuel (la colonne n'est lue nulle part)"
+    },
+    "categorie_B_gabarit_generique_fossile": {
+      "compte": 23,
+      "definition": "texte-gabarit générique {Type} de {Univers}. — reproduction figée du placeholder de summary tel qu'il existait AU MOMENT DU SEED, avant que le pipeline de curation ne régénère un summary plus riche. Ne porte aucune information distinctive sur la fiche.",
+      "sous_repartition": {
+        "One Piece — Personnage secondaire de One Piece.": 21,
+        "Dragon Ball — Personnage secondaire de Dragon Ball.": 1,
+        "Naruto — Organisation de l'univers Naruto.": 1
+      },
+      "slugs_one_piece": ["andre", "tank-lepanto", "brew", "dagama", "bobby-funk", "elizabello-ii", "gedatsu", "kinga", "bonk-punch", "boo", "kelly-funk", "dragon-monkey-d", "building-snake", "ain", "bins", "kotori", "billy", "marble-charlotte", "benten-jigoku", "abdullah", "jeet"],
+      "slugs_dragon_ball": ["spopovitch"],
+      "slugs_naruto": ["shuku-village"],
+      "preuve_fossile": "Sur les 22 personnages, le summary ACTUEL (généré plus tard par le pipeline de curation) est une phrase informative distincte (ex. jeet : summary = « Jeet forme avec Abdullah un duo de pirates reliés par une ceinture, participant au tournoi du Colisée de Corrida à Dressrosa. »), tandis que description est restée figée sur le texte-gabarit d'origine — non identique à summary (donc pas capté par la règle stricte du 08/08), mais tout aussi vide de contenu réel.",
+      "verdict": "vidage recommandé, PAS dans ce lot — nécessite une règle élargie (motif littéral, pas égalité stricte) : `description ILIKE 'Personnage secondaire de %.' OR description ILIKE 'Organisation de l''univers %.'` (ou équivalent regex par univers/type). Sous 23 cas, lus un par un ci-dessus — aucun n'a été trouvé porteur d'un fait vérifiable au-delà du gabarit."
+    },
+    "categorie_C_anomalie_entite_differente": {
+      "compte": 2,
+      "definition": "description décrit une AUTRE entité que celle nommée par la fiche/summary — bug de contenu, pas un doublon",
+      "slugs": ["inner-former", "zerhogie"],
+      "detail": {
+        "inner-former": {
+          "universe": "Naruto",
+          "summary": "Rang supérieur de l'organisation secrète Kara : chaque Inner supervise une région donnée…",
+          "description": "Personnalité intérieure de Sakura Haruno donnant voix à ses pensées refoulées et à son agressivité, effacée après son évolution.",
+          "diagnostic": "homonymie probable : « Inner » (rang Kara, Boruto) vs « Inner Sakura » (personnalité intérieure, Naruto classique) — deux concepts canon distincts partageant un nom proche, confondus au seed"
+        },
+        "zerhogie": {
+          "universe": "Death Note",
+          "summary": "Dieu de la Mort de rang 5 au crochet spectaculaire et au casque de plumes, apparu dans le databook officiel (tome 13).",
+          "description": "Agent du FBI en poste au Japon, chargé de surveiller un cadre du groupe Yotsuba avant d'être tué avec ses collègues par Kyousuke Higuchi.",
+          "diagnostic": "texte d'une fiche humaine (agent FBI mort dans l'arc Yotsuba) collé sur la fiche du Dieu de la Mort homonyme — confusion d'entité au seed, pas de rapport avec le sujet réel de la fiche"
+        }
+      },
+      "deja_documente": "data/audits/sources-doubles-rapport.json §point2_description.anomalies_trouvees_hors_scope — trouvé et signalé EXPLICITEMENT comme hors scope par le chantier du 08/08, non corrigé depuis",
+      "verdict": "NE PAS vider par une règle générale (le texte n'est pas un doublon inerte, c'est une DONNÉE FAUSSE sur la mauvaise fiche) — nécessite une correction ciblée à la source (vérifier si le contenu appartient à une fiche existante ailleurs, ou doit être supprimé). Hors périmètre de ce lot ; à signaler séparément."
+    },
+    "categorie_D_contenu_reel_distinct": {
+      "compte": 3,
+      "definition": "prose française originale, différente de summary ET de descFr, apportant une information non redondante — le SEUL sous-ensemble qui corresponde à ce que le commentaire de migration prétend depuis l'origine (« contenu long markdown »), à une échelle de 0,04 % du corpus",
+      "slugs": ["getsuga-tensho", "karakura", "vizard"],
+      "universe": "Bleach (les 3)",
+      "verdict": "à CONSERVER — seul contenu editorial réel de la colonne. Mais actuellement invisible sur le site (voir constat de rendu ci-dessous) : écrit, jamais livré."
+    }
+  },
+  "constat_de_rendu": {
+    "regle_maison": "« ÉCRIRE UNE DONNÉE N'EST PAS LA LIVRER : termine par où est-ce que ça SE VOIT ? »",
+    "resultat": "NULLE PART, pour AUCUNE des 33 fiches. Grep exhaustif (app/learn/akasha/**, components/akasha/**, lib/akasha/*.ts) : zéro lecture de `entry.description`/`.description` sur une entrée akasha dans le code front actuel. La colonne est chargée par `getEntryBySlug` (`select('*')`, lib/akasha/queries.ts:233) mais jamais consommée en aval. Le repli conditionnel `descDiffersFromSummary` documenté dans data/audits/sources-doubles-rapport.json (référence à l.328 de l'ancienne version de app/learn/akasha/[slug]/page.tsx) a disparu du fichier depuis — la réécriture du front lots 2-4 (commits 5aaec734, 091bface, 3f325b32, tous du 08/08 après-midi/soir) a retiré ce point de montage sans que la colonne elle-même n'ait été traitée côté données.",
+    "consequence": "Les 3 fiches Bleach à contenu réel (catégorie D) ne sont AUJOURD'HUI visibles nulle part sur /learn/akasha malgré leur description soignée. Et vider la colonne aujourd'hui — même intégralement — n'aurait AUCUN impact visuel immédiat, dans un sens comme dans l'autre."
+  },
+  "reponse_a_la_question_du_mandat": {
+    "faut_il_vider_entierement_la_colonne": "PAS EN UN SEUL GESTE. Les 33 fiches non-nulles couvrent 3 statuts différents qui appellent 3 traitements différents (voir catégories A-D) ; les traiter d'un même geste ferait disparaître les 3 fiches à contenu réel (catégorie D) en même temps que les doublons inertes (A, B).",
+    "condition_pour_vider_categorie_A_5_fiches": "immédiat, même règle déjà validée et appliquée le 08/08 (description === summary octet pour octet) — zéro nouveau jugement, zéro risque",
+    "condition_pour_vider_categorie_B_23_fiches": "nécessite d'élargir la règle du littéral exact à un motif de gabarit (regex par type+univers) — proposé ci-dessus, PAS exécuté dans ce lot, sous le seuil des 20 cas relu un par un ici",
+    "condition_pour_categorie_C_2_fiches": "NE PAS vider par une règle de colonne — c'est un bug de contenu mal placé, pas un doublon ; à corriger à la source ou signaler séparément",
+    "condition_pour_categorie_D_3_fiches": "NE JAMAIS vider sans migration préalable — c'est le seul contenu que le commentaire de migration a toujours prétendu documenter ; à faire vivre ailleurs (attributes.descFr, ou une section akasha_sections) AVANT toute suppression, sans quoi ce texte est perdu définitivement",
+    "trajectoire_recommandee_hors_lot": "1) vider A (5, safe) ; 2) élargir puis exécuter B (23, safe après lecture — déjà faite ici) ; 3) migrer D vers descFr ou sections PUIS vider (3, jamais avant migration) ; 4) traiter C comme un bug de contenu à part, pas via cette colonne. Après ces 4 étapes : description à 0 fiche non-nulle sur 7 636 → seul candidat légitime à une dépréciation complète de la colonne (DROP COLUMN), décision qui reste de Dan."
+  }
+}

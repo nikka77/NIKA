@@ -73,11 +73,28 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
         values: [
           { v: 'Uchiha' }, { v: 'Uzumaki' }, { v: 'Senju' }, { v: 'Hyūga' }, { v: 'Nara' },
           { v: 'Akimichi' }, { v: 'Yamanaka' }, { v: 'Inuzuka' }, { v: 'Ōtsutsuki' },
+          // 08/08 — CURATION DES AXES SALES : 36 clans canon promus depuis le masquage LOT 3b,
+          // chacun vérifié contre naruto.fandom.com (data/audits/curation-axes-sales.json). L'axe
+          // est désormais 100% curé (45/45 valeurs distinctes, 228/228 fiches) → retiré de
+          // DIRTY_AXES plus bas.
+          { v: 'Funato' }, { v: 'Kamizuru' }, { v: 'Tsuchigumo' }, { v: 'Fūma (Land of Sound)' },
+          { v: 'Aburame' }, { v: 'Kagetsu Family' }, { v: 'Kazekage' }, { v: 'Sarutobi' },
+          { v: 'Izuno' }, { v: 'Kurama' }, { v: 'Shirogane' }, { v: 'Hōzuki' }, { v: 'Iburi' },
+          { v: 'Fūma' }, { v: 'Shiin' }, { v: 'Hoshigaki' }, { v: 'Tenrō' }, { v: 'Yuki' },
+          { v: 'Wagarashi Family' }, { v: 'Kaguya' }, { v: 'Wasabi Family' }, { v: 'Chinoike' },
+          { v: 'Amagiri' }, { v: 'Lee', l: 'Clan Lee' }, { v: 'Ryū', l: 'Clan Ryū' },
+          { v: 'Karatachi Family' }, { v: 'Yoimura' }, { v: 'Rinha' }, { v: 'Hatake' },
+          { v: 'Onikuma' }, { v: "Jūgo's", l: 'Clan de Jūgo' }, { v: 'Yotsuki' },
+          { v: 'Hirasaka' }, { v: 'Shimura' }, { v: 'Kedōin' }, { v: "Yota's", l: 'Clan de Yota' },
         ],
       },
       {
         // Valeurs alignées sur scripts/lib/akasha-axes.mjs (vocabulaire des agents : Root, pas
         // « Racine (Anbu) ») — le backfill data/audits/backfill-organization-naruto.json remplit l'axe.
+        // Axe TOUJOURS SALE (voir DIRTY_AXES plus bas) — seule une correction ponctuelle sourcée
+        // a été reportée ici le 08/08 (data/audits/curation-axes-sales.json), le reste de l'audit
+        // (72 équipes genin, 9 divisions de guerre, familles, gangs…) reste hors de cette liste :
+        // une autre nature d'axe, pas une promotion qui manquait.
         attr: 'organization', label: 'Organisations', genre: 'f', icon: '☁️',
         values: [
           { v: 'Akatsuki', tint: '#C0392B', badge: '☁️' },
@@ -86,6 +103,7 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
           { v: 'Root', l: 'Racine', tint: '#5B6D5B', badge: '🌱' },
           { v: 'Sound Four', l: 'Quatuor du Son', tint: '#8E44AD', badge: '🎵' },
           { v: 'Sept Épéistes de la Brume', tint: '#5A88B0', badge: '🗡️' },
+          { v: 'Nouveaux Sept Épéistes de la Brume', tint: '#5A88B0', badge: '🗡️' },
           { v: 'Konoha 11', tint: '#3FA35C', badge: '🍃' },
           { v: 'Douze Ninjas Gardiens', tint: '#B8912F', badge: '🛡️' },
           { v: 'Police militaire de Konoha', l: 'Police de Konoha', tint: '#4A5A7A', badge: '🚔' },
@@ -135,6 +153,22 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
           { v: 'L’équipage de Don Quichotte', l: 'Don Quichotte' },
           { v: 'L’équipage du Heart', l: 'Heart (Law)' },
           { v: 'L’équipage des Pirates Roger', l: 'Pirates de Roger' },
+          // 08/08 — CURATION DES AXES SALES : 22 équipages promus depuis le masquage LOT 3b, dont
+          // « L’équipage de Macro » (créé par un renommage — « L’équipage des Maquereaux » ne
+          // correspondait à aucune source, mistraduction probable de Macro/Maquereau) et
+          // « L’équipage des Pirates du Soleil » (fondateur Tiger Fisher réintégré, il portait la
+          // même valeur fautive). Le reste (Marine, Cipher Pol, alliances de plusieurs équipages…)
+          // documenté comme bruit hors axe dans data/audits/curation-axes-sales.json, PAS promu.
+          { v: 'L’équipage de Barbe Noire' }, { v: 'L’équipage du Roux' },
+          { v: 'Faux équipage du Chapeau de Paille' },
+          { v: 'L’équipage des Nouveaux Hommes-Poissons' }, { v: 'L’équipage du Lion d’Or' },
+          { v: 'L’équipage de Thriller Bark' }, { v: 'L’équipage des Pirates Kuja' },
+          { v: 'L’équipage du Fire Tank' }, { v: 'L’équipage de Kid' }, { v: 'L’équipage de Foxy' },
+          { v: 'L’équipage du Chat Noir' }, { v: 'L’équipage d’Arlong' }, { v: 'L’équipage du Bluejam' },
+          { v: 'L’équipage de Krieg' }, { v: 'L’équipage des Pirates du Soleil' },
+          { v: 'L’équipage de Caribou' }, { v: 'L’équipage des Pirates Volants' },
+          { v: 'L’équipage des Pirates Rocks' }, { v: 'L’équipage des Moines Dépravés' },
+          { v: 'L’équipage de Buggy' }, { v: 'L’équipage du Rumbar' }, { v: 'L’équipage de Macro' },
         ],
       },
       {
@@ -402,18 +436,22 @@ export const ALLOWED_FILTER_ATTRS: ReadonlySet<string> = new Set(
   UNIVERSE_TAXONOMY.flatMap((u) => u.axes.map((a) => a.attr)),
 );
 
-/** Axes « sales » (LOT 3b) — mesuré 08/08/2026, la MAJORITÉ des valeurs réelles en base tombent
- *  hors de la petite liste curée ci-dessus (alias/romanisations non normalisés) : `clan` Naruto
- *  (39 valeurs hors curation sur 48, 114 fiches), `organization` Naruto (117/125, 348 fiches),
- *  `crew` One Piece (39/46, 161 fiches). Le curateur d'alias existe (`lib/ops/agents.ts`, LOT 6)
- *  mais n'a pas encore tourné sur ces 3 axes.
- *  Tant que ce n'est pas fait, ces axes ne sont plus PROPOSÉS : ni pré-générés
- *  (`generateStaticParams` de la page d'axe), ni en rail de chips sur le hub. MASQUAGE SILENCIEUX,
- *  JAMAIS UN BLOCAGE DE ROUTE — la clé reste déclarée dans `axes` ci-dessus, donc une URL de page
- *  d'axe déjà partagée (curée ou non) continue de répondre via le fallback ISR
- *  (`dynamicParams` reste à `true`, non redéfini dans ces deux pages). On cesse de proposer, on
- *  n'interdit pas. */
-const DIRTY_AXES: ReadonlySet<string> = new Set(['Naruto:clan', 'Naruto:organization', 'One Piece:crew']);
+/** Axes « sales » (LOT 3b, 08/08/2026) — masquage silencieux (chip + pré-génération), jamais un
+ *  blocage de route (la clé reste déclarée dans `axes`, le fallback ISR répond quand même).
+ *
+ *  CURATION DU 08/08/2026 (data/audits/curation-axes-sales.json) — deux des trois retirés :
+ *  · `clan` Naruto : 100% curé (45/45 valeurs, 228/228 fiches) — RETIRÉ. Les 39 valeurs sales
+ *    d'alors étaient TOUTES des clans canon réels (vérifiés contre naruto.fandom.com), juste
+ *    absents de la liste ; zéro bruit.
+ *  · `crew` One Piece : 76,3% curé (273/358 fiches) — RETIRÉ. Les 12 valeurs encore hors liste
+ *    (Marine, Cipher Pol, alliances de plusieurs équipages, un journal…) sont réelles mais
+ *    structurellement PAS des équipages — documentées comme bruit, jamais promues ni supprimées.
+ *  · `organization` Naruto : 27,5% curé (129/469 fiches) — RESTE SALE. Le champ mélange, sous une
+ *    seule clé JSONB, des catégories de nature différente (organisations permanentes — le sens
+ *    visé par la liste curée — vs ~72 équipes genin éphémères, 9 divisions de guerre temporaires,
+ *    familles, gangs locaux…). Un renommage ne répare pas un problème de modèle de données ; voir
+ *    l'audit pour le détail et la recommandation (scinder l'extraction, pas cette liste). */
+const DIRTY_AXES: ReadonlySet<string> = new Set(['Naruto:organization']);
 
 /** Un axe (univers + attribut) est-il trop sale pour être PROPOSÉ (chip, pré-génération) ?
  *  N'affecte jamais la résolution de route elle-même — voir le commentaire de `DIRTY_AXES`. */

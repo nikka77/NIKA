@@ -119,7 +119,14 @@ async function imagesDuLot(api, titres) {
 
 // Fichiers-parasites : un wiki peut rendre son propre logo ou une pastille de maintenance comme
 // « image principale ». Aucune de celles-là ne dit quoi que ce soit du sujet.
-const FICHIER_PARASITE = /(site-?logo|wiki-?wordmark|wordmark|favicon|placeholder|no[-_]?image|nophoto|question[-_]?mark|spoiler|under[-_]?construction|stub|ambox|icon[-_]?wiki)/i;
+// `no[-_]?pic(ture)?[-_]?avail(able)?` AJOUTÉ le 08/08 : trou trouvé en repassant la sonde sur
+// One Piece — le carton standard Fandom « NoPicAvailable.png » (600×600, hôte attendu, taille
+// suffisante) passait TOUTES les autres épreuves de `imageAcceptable` et n'était filtré par AUCUN
+// des motifs existants (« no[-_]?image » exige le mot « image », pas « pic »). C'est le même piège
+// que la réparation du 07/08 avait nettoyé en base (22 lignes, ops-reparer-curation-0708.mjs) sans
+// jamais corriger la garde qui l'avait laissé passer : rejoué tel quel, ce script aurait reposé
+// 25 nouveaux cartons vides sur 36 « trouvés » (mesuré en --dry le 08/08, avant ce correctif).
+const FICHIER_PARASITE = /(site-?logo|wiki-?wordmark|wordmark|favicon|placeholder|no[-_]?image|no[-_]?pic(?:ture)?[-_]?avail(?:able)?|nophoto|question[-_]?mark|spoiler|under[-_]?construction|stub|ambox|icon[-_]?wiki)/i;
 const HOTE_ATTENDU = 'static.wikia.nocookie.net';
 
 /** LE PIÈGE SVG (leçon #65). Sur un fichier vectoriel, pageimages ne rend souvent AUCUNE vignette

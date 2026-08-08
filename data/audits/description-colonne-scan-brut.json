@@ -1,0 +1,455 @@
+{
+  "chantier": "audit-description-colonne (scan brut, reproductible)",
+  "fait_le": "2026-08-08T21:47:45.615Z",
+  "voir_aussi": "data/audits/description-colonne-trace.json — trace définitive avec lecture manuelle et verdict",
+  "source": "clientSite() → akasha_entries, scan paginé complet (range), lecture seule",
+  "comptes": {
+    "total_fiches": 7636,
+    "description_vide_ou_null": 7603,
+    "description_non_vide": 33,
+    "A_doublon_exact_summary": 5,
+    "B_gabarit_generique_fossile": 23,
+    "C_anomalie_entite_differente": 2,
+    "D_contenu_reel_distinct": 3,
+    "doublon_exact_descFr": 0
+  },
+  "pourcentages_sur_total": {
+    "vide": 99.57,
+    "A_doublon_exact_summary": 0.07,
+    "B_gabarit_generique_fossile": 0.3,
+    "C_anomalie_entite_differente": 0.03,
+    "D_contenu_reel_distinct": 0.04
+  },
+  "par_univers": {
+    "Naruto": {
+      "vide": 3303,
+      "A_doublon_exact_summary": 3,
+      "C_anomalie_entite_differente": 1,
+      "B_gabarit_generique_fossile": 1
+    },
+    "One Piece": {
+      "vide": 2208,
+      "B_gabarit_generique_fossile": 21,
+      "A_doublon_exact_summary": 2
+    },
+    "Bleach": {
+      "vide": 381,
+      "D_contenu_reel_distinct": 3
+    },
+    "Initial D": {
+      "vide": 44
+    },
+    "Dragon Ball": {
+      "vide": 1136,
+      "B_gabarit_generique_fossile": 1
+    },
+    "JoJo's Bizarre Adventure": {
+      "vide": 233
+    },
+    "Hunter x Hunter": {
+      "vide": 215
+    },
+    "Death Note": {
+      "vide": 83,
+      "C_anomalie_entite_differente": 1
+    }
+  },
+  "detail_non_vide": [
+    {
+      "slug": "clan-sarutobi",
+      "name": "Clan Sarutobi",
+      "universe": "Naruto",
+      "type": "status",
+      "classe": "A_doublon_exact_summary",
+      "desc_len": 122,
+      "summary_len": 122,
+      "descFr_len": 710,
+      "description_extrait": "Le clan fondateur qui a donné Konoha son Troisième Hokage — gardien de la Volonté du Feu et de la tradition Ino-Shika-Chō.",
+      "summary_extrait": "Le clan fondateur qui a donné Konoha son Troisième Hokage — gardien de la Volonté du Feu et de la tradition Ino-Shika-Chō."
+    },
+    {
+      "slug": "ain",
+      "name": "Ain",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 115,
+      "descFr_len": 675,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Ain est une agente liée à Saint Jaygarcia Saturn apparue lors de l'arc Egghead, capable de geler ce qu'elle touche."
+    },
+    {
+      "slug": "inner-former",
+      "name": "Inner  (Former)",
+      "universe": "Naruto",
+      "type": "profession",
+      "classe": "C_anomalie_entite_differente",
+      "desc_len": 128,
+      "summary_len": 330,
+      "descFr_len": 0,
+      "description_extrait": "Personnalité intérieure de Sakura Haruno donnant voix à ses pensées refoulées et à son agressivité, effacée après son évolution.",
+      "summary_extrait": "Rang supérieur de l organisation secrète Kara : chaque Inner supervise une région donnée, porte un chiffre romain tatoué sur le visage et une cape noire à doublure colorée. Tous sont des cyborgs porte"
+    },
+    {
+      "slug": "getsuga-tensho",
+      "name": "Getsuga Tenshō",
+      "universe": "Bleach",
+      "type": "power",
+      "classe": "D_contenu_reel_distinct",
+      "desc_len": 171,
+      "summary_len": 66,
+      "descFr_len": 175,
+      "description_extrait": "Le **Getsuga Tenshō** condense le reiatsu sur le fil du zanpakutō puis le libère en une vague dévastatrice. Sa portée et sa densité augmentent avec la maîtrise du porteur.",
+      "summary_extrait": "Une onde tranchante d’énergie spirituelle projetée depuis la lame."
+    },
+    {
+      "slug": "jeet",
+      "name": "Jeet",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 125,
+      "descFr_len": 785,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Jeet forme avec Abdullah un duo de pirates reliés par une ceinture, participant au tournoi du Colisée de Corrida à Dressrosa."
+    },
+    {
+      "slug": "spopovitch",
+      "name": "Spopovitch",
+      "universe": "Dragon Ball",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 37,
+      "summary_len": 155,
+      "descFr_len": 1100,
+      "description_extrait": "Personnage secondaire de Dragon Ball.",
+      "summary_extrait": "Combattant humain gonfle par la magie de Babidi. Au Tournoi Mondial, il massacre Videl sans pitie avant de siphonner l'energie de Gohan pour reveiller Boo."
+    },
+    {
+      "slug": "bins",
+      "name": "Bins",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 121,
+      "descFr_len": 695,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Bins est un personnage mineur de One Piece, mentionné de façon ponctuelle sans que son rôle soit développé dans le récit."
+    },
+    {
+      "slug": "tank-lepanto",
+      "name": "Tank Lepanto",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 141,
+      "descFr_len": 803,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Tank Lepanto est un personnage secondaire de One Piece dont le nom évoque un combattant robuste, sans rôle développé dans le récit principal."
+    },
+    {
+      "slug": "karakura",
+      "name": "Karakura",
+      "universe": "Bleach",
+      "type": "place",
+      "classe": "D_contenu_reel_distinct",
+      "desc_len": 202,
+      "summary_len": 61,
+      "descFr_len": 325,
+      "description_extrait": "**Karakura** est une ville paisible en apparence, mais sa forte concentration de reiatsu y attire les Hollows. Elle devient l'un des théâtres centraux de la guerre contre les ennemis de la Soul Societ",
+      "summary_extrait": "Ville japonaise riche en énergie spirituelle, foyer d’Ichigo."
+    },
+    {
+      "slug": "gedatsu",
+      "name": "Gedatsu",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 132,
+      "descFr_len": 644,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Gedatsu est un agent de Baroque Works affronté par Zoro à Alabasta, capable de faire léviter ses adversaires grâce à un gaz spécial."
+    },
+    {
+      "slug": "bobby-funk",
+      "name": "Bobby Funk",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 133,
+      "descFr_len": 863,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Bobby Funk est un membre de l'équipage des Pirates Foxy, opposé aux Chapeaux de Paille lors du Davy Back Fight à Long Ring Long Land."
+    },
+    {
+      "slug": "elizabello-ii",
+      "name": "Elizabello II",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 150,
+      "descFr_len": 770,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Elizabello II, roi du royaume de Prodence, participe au tournoi du Colisée de Corrida à Dressrosa grâce à son coup de poing dévastateur nommé One Man."
+    },
+    {
+      "slug": "izuno",
+      "name": "Clan Izuno",
+      "universe": "Naruto",
+      "type": "status",
+      "classe": "A_doublon_exact_summary",
+      "desc_len": 131,
+      "summary_len": 131,
+      "descFr_len": 560,
+      "description_extrait": "Une famille aisée de Konoha au ninjutsu inspiré des chats, dont les légendes maison se sont enjolivées de génération en génération.",
+      "summary_extrait": "Une famille aisée de Konoha au ninjutsu inspiré des chats, dont les légendes maison se sont enjolivées de génération en génération."
+    },
+    {
+      "slug": "bonk-punch",
+      "name": "Bonk Punch",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 123,
+      "descFr_len": 1137,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Bonk Punch est un personnage ou surnom à consonance comique associé à l'univers One Piece, sans fiche canonique développée."
+    },
+    {
+      "slug": "andre",
+      "name": "Andre",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 110,
+      "descFr_len": 560,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Andre est un personnage secondaire de One Piece, mentionné ponctuellement sans développement narratif notable."
+    },
+    {
+      "slug": "kelly-funk",
+      "name": "Kelly Funk",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 128,
+      "descFr_len": 443,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Kelly Funk est un membre de l'équipage des Pirates Foxy, apparu comme adversaire des Chapeaux de Paille lors du Davy Back Fight."
+    },
+    {
+      "slug": "vizard",
+      "name": "Vizard",
+      "universe": "Bleach",
+      "type": "status",
+      "classe": "D_contenu_reel_distinct",
+      "desc_len": 211,
+      "summary_len": 76,
+      "descFr_len": 486,
+      "description_extrait": "Les **Vizard** sont d'anciens Shinigami capables d'invoquer un masque de Hollow pour décupler leur puissance. Ce statut, longtemps marginalisé, confère une force redoutable au prix d'un contrôle de so",
+      "summary_extrait": "Shinigami ayant acquis les pouvoirs d’un Hollow — un statut hybride et rare."
+    },
+    {
+      "slug": "zerhogie",
+      "name": "Zerhogie",
+      "universe": "Death Note",
+      "type": "character",
+      "classe": "C_anomalie_entite_differente",
+      "desc_len": 137,
+      "summary_len": 118,
+      "descFr_len": 380,
+      "description_extrait": "Agent du FBI en poste au Japon, chargé de surveiller un cadre du groupe Yotsuba avant d'être tué avec ses collègues par Kyousuke Higuchi.",
+      "summary_extrait": "Dieu de la Mort de rang 5 au crochet spectaculaire et au casque de plumes, apparu dans le databook officiel (tome 13)."
+    },
+    {
+      "slug": "benten-jigoku",
+      "name": "Benten Jigoku",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 151,
+      "descFr_len": 445,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Benten Jigoku est un personnage ou une technique de l'univers One Piece dont le nom emprunte à la mythologie japonaise, sans détails canoniques précis."
+    },
+    {
+      "slug": "civil",
+      "name": "Civil",
+      "universe": "One Piece",
+      "type": "status",
+      "classe": "A_doublon_exact_summary",
+      "desc_len": 159,
+      "summary_len": 159,
+      "descFr_len": 803,
+      "description_extrait": "La classification par défaut de tout personnage qui ne porte l'étendard d'aucune faction organisée — ni pirate, ni Marine, ni Gouvernement, ni révolutionnaire.",
+      "summary_extrait": "La classification par défaut de tout personnage qui ne porte l'étendard d'aucune faction organisée — ni pirate, ni Marine, ni Gouvernement, ni révolutionnaire."
+    },
+    {
+      "slug": "abdullah",
+      "name": "Abdullah",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 137,
+      "descFr_len": 622,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Abdullah forme avec Jeet un duo de pirates reliés par une ceinture à la taille, participant au tournoi du Colisée de Corrida à Dressrosa."
+    },
+    {
+      "slug": "kinga",
+      "name": "Kinga",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 106,
+      "descFr_len": 12,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Kinga est un personnage mineur de One Piece, mentionné sans que son parcours soit précisé dans l'histoire."
+    },
+    {
+      "slug": "brew",
+      "name": "Brew",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 135,
+      "descFr_len": 537,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Brew est un personnage secondaire de One Piece dont le nom à consonance anglophone n'est associé à aucun rôle détaillé dans l'histoire."
+    },
+    {
+      "slug": "marble-charlotte",
+      "name": "Marble Charlotte",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 142,
+      "descFr_len": 483,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Marble Charlotte est l'un des très nombreux enfants de Charlotte Big Mom, dont l'existence est mentionnée sans développement narratif notable."
+    },
+    {
+      "slug": "shuku-village",
+      "name": "Shuku Village",
+      "universe": "Naruto",
+      "type": "status",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 33,
+      "summary_len": 0,
+      "descFr_len": 0,
+      "description_extrait": "Organisation de l'univers Naruto.",
+      "summary_extrait": ""
+    },
+    {
+      "slug": "dragon-monkey-d",
+      "name": "Dragon Monkey D.",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 135,
+      "descFr_len": 605,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Monkey D. Dragon est le chef de l'Armée Révolutionnaire et le père de Luffy, une figure mystérieuse rarement montrée en pleine lumière."
+    },
+    {
+      "slug": "dagama",
+      "name": "Dagama",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 153,
+      "descFr_len": 464,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Dagama, de son nom complet Vasco Shot Dagama, est un membre de l'équipage de Big Mom réputé pour sa carrure imposante et sa grande consommation d'alcool."
+    },
+    {
+      "slug": "boo",
+      "name": "Boo",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 100,
+      "descFr_len": 478,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Boo est un personnage mineur de One Piece, mentionné brièvement sans que son parcours soit détaillé."
+    },
+    {
+      "slug": "gouvernement-mondial",
+      "name": "Gouvernement Mondial",
+      "universe": "One Piece",
+      "type": "status",
+      "classe": "A_doublon_exact_summary",
+      "desc_len": 158,
+      "summary_len": 158,
+      "descFr_len": 925,
+      "description_extrait": "L'autorité politique qui gouverne la quasi-totalité du monde connu — dont la Marine n'est que le bras armé, et dont le vrai sommet du pouvoir reste un secret.",
+      "summary_extrait": "L'autorité politique qui gouverne la quasi-totalité du monde connu — dont la Marine n'est que le bras armé, et dont le vrai sommet du pouvoir reste un secret."
+    },
+    {
+      "slug": "billy",
+      "name": "Billy",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 128,
+      "descFr_len": 496,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Billy est un personnage secondaire de l'univers One Piece dont l'apparition reste brève et les informations canoniques limitées."
+    },
+    {
+      "slug": "building-snake",
+      "name": "Building Snake",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 133,
+      "descFr_len": 422,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Building Snake est un personnage secondaire de One Piece dont le nom évoque un combattant imposant, sans rôle détaillé dans le récit."
+    },
+    {
+      "slug": "kotori",
+      "name": "Kotori",
+      "universe": "One Piece",
+      "type": "character",
+      "classe": "B_gabarit_generique_fossile",
+      "desc_len": 35,
+      "summary_len": 121,
+      "descFr_len": 747,
+      "description_extrait": "Personnage secondaire de One Piece.",
+      "summary_extrait": "Kotori est un personnage secondaire de One Piece portant un nom d'origine japonaise, sans rôle narratif approfondi connu."
+    },
+    {
+      "slug": "kagetsu",
+      "name": "Clan Kagetsu",
+      "universe": "Naruto",
+      "type": "status",
+      "classe": "A_doublon_exact_summary",
+      "desc_len": 149,
+      "summary_len": 149,
+      "descFr_len": 612,
+      "description_extrait": "Une famille de marchands d'herbes du Pays du Feu, devenue riche puis austère — jusqu'à ce que son chef simule sa propre mort pour lui rendre le rire.",
+      "summary_extrait": "Une famille de marchands d'herbes du Pays du Feu, devenue riche puis austère — jusqu'à ce que son chef simule sa propre mort pour lui rendre le rire."
+    }
+  ]
+}

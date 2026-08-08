@@ -1,0 +1,25 @@
+{
+  "started_at": "2026-08-08T22:37:27.738Z",
+  "write": false,
+  "mesure": {
+    "note": "Mesuré sur measure-run avant garde (raw, mot-clé + première-phrase seule, sans garde saga) : 37 candidats saga bruts — 29 retenus, 7 vérifiés manuellement FAUX (18,9 %) et 1 indécidable. Marron, Erasa, Paikuhan, Maron, Piiza, Suno, Tao Pai Pai ont été FAUSSEMENT retenus (désattribution : borne temporelle avant/après, réapparition/caméo secondaire, ou aparté parenthétique sur la non-canonicité) ; Mezu, lui, porte DEUX sagas propres et tombe sur la branche d'ambiguïté, pas sur la garde. Après ajout de la garde : 0 faux sur les 29 retenus, relecture manuelle EXHAUSTIVE des 37 candidats (pas un échantillon). Race : 13 candidats bruts, 13 vérifiés corrects à la main (0 %) — mais ce taux ne porte que sur les fiches SANS race, et C-18, déjà renseignée, aurait été mal extraite (« humaine cybernétique » → Human au lieu d'Android). Chiffres recomptés le 09/08 par scripts/audit-race-saga-preuves.mjs ; preuves ligne-à-ligne dans dragon-ball-race-saga-preuves.json."
+  },
+  "plan": {
+    "totalCharacters": 473,
+    "noDescFr": 6,
+    "race": {
+      "already": 105,
+      "extracted": 0,
+      "byValue": {},
+      "offTaxonomy": [],
+      "rows": []
+    },
+    "saga": {
+      "already": 128,
+      "extracted": 0,
+      "byValue": {},
+      "offTaxonomy": [],
+      "rows": []
+    }
+  }
+}

@@ -656,12 +656,209 @@ C3-2 : canal en région à filet supérieur, chips en liens-compteurs, portrait 
 qui marche et que Dan a validé. Conditions : comparaison avant/après sur la fiche Naruto Uzumaki,
 univers par univers, **et aucune fusion des trois composants** (voir §1.1, arbitrage B).
 
+> **Vérification finale LOT 5 — 08/08/2026, contre-vérification indépendante post-vague.**
+> **⚠️ PARTIELLEMENT LIVRABLE — une des trois zones porte une régression confirmée, à corriger avant
+> commit.** Trois fichiers modifiés + un nouveau (`components/akasha/zone/zone-ui.tsx`, primitives
+> `CanalRegion`/`ChipLink`) : `app/learn/akasha/[slug]/page.tsx` (+10/−0),
+> `components/akasha/zone/CharacterZone.tsx` (+76/−55), `components/akasha/zone/OrganizationZone.tsx`
+> (+17/−19). Aucune fusion des trois composants — `CharacterZone.tsx`, `OrganizationZone.tsx`,
+> `EraZone.tsx` restent trois fichiers distincts, conforme à l'arbitrage B (§1.1). `EraZone.tsx`
+> confirmé **non touché** (absent de `git diff --name-only`).
+>
+> **CharacterZone — LIVRABLE, avec une réserve éditoriale à trancher par Dan (pas un bug de code).**
+> Grille `.ak-zone-grid` mesurée en direct à 1440 px sur `naruto-uzumaki` : exactement 2 enfants
+> (SECTION 729 px à x=150, ASIDE.ak-canal 380 px à x=906, même ligne), le dossier de sections devient
+> un bloc séparé de 1135 px sous la grille — le bug de placement CSS Grid documenté par l'audit LOT 2
+> (`gridColumn:1/-1` intercalé en 3ᵉ enfant) est réellement corrigé, vérifié par
+> `getBoundingClientRect`, pas seulement lu au diff. Canal en filet supérieur confirmé
+> (`borderTop: 2px solid <accent>`, `borderRadius: 0`, fond transparent — zéro boîte). Chips en
+> liens-compteurs confirmées (`.ak-tab` sans bordure ni fond, soulignement à l'accent seulement
+> quand actif). Mécanique de re-scope testée par un clic réel (`dispatchEvent`, pas une coordonnée
+> souris) sur « Rival · Sasuke Uchiha » : `aria-pressed` passe à `true`, bordure et couleur passent à
+> l'accent, le canal affiche « Rival / Sasuke Uchiha / Ouvrir la fiche → » — rien n'est perdu du
+> « seul vrai levier de curiosité » que l'arbitrage D protège.
+> Réserve : le portrait full-bleed (+30 %, 560→729 px) est un vrai gain de présence pour les univers
+> à source nette (Naruto : wikia 1440×1076 ; Goku : dragonball-api 870×1959, tous deux vérifiés par
+> `naturalWidth`/`naturalHeight`), **mais pour 6 des 8 têtes d'affiche testées** (Luffy, Ichigo,
+> Jotaro, Killua, L, Takumi), le portrait est la même vignette 240×240 « idle » que la frise de
+> formes, maintenant étirée à ~727-909 px (×3 à ×3,8 sa taille native) — vérifié en direct sur Luffy
+> (`natW/natH: 240×240`, rendu à 909×1136,9 px). Le flou que ça produit préexistait à 560 px ; le
+> geste C3-2 le rend structurellement plus visible sur la majorité du corpus testé, à l'exact opposé
+> de la cible « menu de jeu AAA ». **Ce n'est pas un défaut de ce diff (le code fait ce qu'il doit),
+> c'est un défaut de source d'image que ce diff rend plus voyant** — à trancher explicitement par
+> Dan (limiter le full-bleed aux univers à bonne source ? accepter tel quel ? remplacer les vignettes
+> idle par de vraies images sur ces 6 univers, hors périmètre de ce lot ?).
+>
+> **OrganizationZone — RÉGRESSION CONFIRMÉE, NE PAS COMMITER TEL QUEL.** Grille et canal sains
+> (729 px / 380 px, filet supérieur, zéro régression structurelle), puits SVG en orbite intact —
+> aucune tentative de forcer un « full-bleed » sur un élément qui n'en tire rien, exactement la
+> bonne décision. **Mais** la couleur or `#D4A017` de la grappe « Arsenal & navires » est **perdue** :
+> vérifié en direct sur `/learn/akasha/l-equipage-du-chapeau-de-paille`, les 10 `<a class="ak-tab">`
+> (Thousand Sunny, Vogue Merry, etc.) rendent tous `color: rgb(122, 144, 168)` (`var(--td2)`, gris
+> neutre) — **zéro** occurrence de `#D4A017` dans leurs styles calculés, sur les 10. Cause racine
+> lue dans `zone-ui.tsx` : `ChipLink` calcule `color: active ? accent : 'var(--td2)'`, mais le site
+> d'appel `OrganizationZone.tsx` (grappe Arsenal) passe `href` sans jamais passer `active` — un lien
+> de navigation pure n'est jamais « sélectionné », donc l'accent or n'est jamais appliqué, ni au
+> repos ni jamais. C'est le seul site d'appel `href`-based de `ChipLink` dans tout le diff (les
+> 12 autres passent `active` et fonctionnent comme prévu, y compris les chips « Membres » du même
+> composant). Correctif nécessaire avant de considérer cette zone livrée : `ChipLink` doit distinguer
+> « lien statique toujours à l'accent » (cas Arsenal) de « sélection re-scopable » (cas Membres/
+> Techniques), par exemple une prop dédiée plutôt que de surcharger `active` pour les deux usages.
+>
+> **Verdict : LOT 5 partiellement livrable.** CharacterZone : livrable, réserve éditoriale à trancher
+> (pas bloquante côté code). OrganizationZone : **pas livrable en l'état** — la régression de couleur
+> doit être corrigée avant tout commit. EraZone : correctement laissée intacte, c'est l'issue « ou
+> pas du tout » prévue par le plan pour une zone à faible rendement (14 fiches, déjà promise à une
+> fusion `timeline` — §8, question 3) — pas un renoncement, une décision assumée.
+>
+> Build : `npm run build` — **294/294 pages, TypeScript 0 erreur, sortie propre** (dev arrêté proprement
+> pour le build seul, relancé et revérifié sain ensuite). `scripts/ops-sonde-schema.mjs` :
+> **✓ schéma conforme**, les deux bases. `lib/akasha/shape.test.ts` : **34/34 PASS**
+> (`./node_modules/.bin/tsx --test`), non retouchés par ce lot. Aucun commit, aucune modification de
+> code effectuée pendant cette vérification — `git status --short` sur les fichiers du lot identique
+> à l'état de départ (3 fichiers modifiés + `zone-ui.tsx` nouveau + `next-env.d.ts` régénéré par le
+> build ; des écritures parallèles de scripts d'audit back — `data/audits/images-fandom*.json`,
+> `scripts/audit-description-colonne.mjs` — sont apparues pendant cette session, non liées à ce lot,
+> attribuables à un démon `ops` du dépôt qui tourne en continu, hors périmètre de cette vérification).
+
 ---
 
 ### LOT 6 — Back et données · **continu, parallèle, jamais bloquant**
 Curation d'alias des 3 axes sales · sonde `pageimages` gratuite sur les types non-personnage
 d'One Piece · commentaire correctif sur la colonne `description` dans la migration SQL ·
 extraction `race`/`saga` depuis `descFr` (Dragon Ball). **Aucun lot front n'attend celui-ci.**
+
+> **Vérification finale LOT 6 — 09/08/2026, contre-vérification indépendante post-vague, recompte
+> intégral du corpus fait de zéro (requête paginée fraîche sur les 7 636 fiches, aucun chiffre
+> repris tel quel d'un audit précédent).** **✅ LIVRABLE, aucune donnée fausse trouvée** — les
+> quatre chantiers (`axes-sales`, `images-op`, `race-saga-db`, `dette-sql`) ont chacun leurs
+> chiffres opérationnels reconfirmés **exacts à la décimale**. Les défauts qui subsistent sont tous
+> des défauts de **preuve/documentation**, jamais de **donnée** : voir « Plafonds définitifs »
+> ci-dessous.
+>
+> **Recompte indépendant, par univers (fiches / avec image / axes curés)** — 8 univers,
+> 7 636 fiches au total, 6 818 avec image (89,3 %) :
+>
+> | Univers | Fiches | Perso | Non-perso | Image (%) | Image non-perso (%) |
+> |---|---:|---:|---:|---:|---:|
+> | Naruto | 3 308 | 1 337 | 1 971 | 90,8 % | 84,5 % |
+> | One Piece | 2 231 | 1 449 | 782 | 82,0 % | **48,7 %** |
+> | Dragon Ball | 1 137 | 473 | 664 | 96,5 % | 94,0 % |
+> | Bleach | 384 | 292 | 92 | 83,6 % | 31,5 % |
+> | JoJo's Bizarre Adventure | 233 | 179 | 54 | 97,4 % | 88,9 % |
+> | Hunter x Hunter | 215 | 203 | 12 | 100,0 % | 100,0 % |
+> | Death Note | 84 | 74 | 10 | 98,8 % | 90,0 % |
+> | Initial D | 44 | 26 | 18 | 95,5 % | 88,9 % |
+>
+> Somme des 8 lignes = 7 636, exact (aucune fiche hors des 8 univers déclarés dans
+> `UNIVERSE_TAXONOMY` — vérifié, zéro `universe` orphelin). One Piece non-personnage
+> **782 fiches, 381 avec image = 48,7 %** — identique au chiffre du chantier `images-op` (aucune
+> dérive du corpus depuis son écriture). 0/7 636 URL `NoPicAvailable` en base (tous univers, pas
+> seulement One Piece).
+>
+> **Axes curés, recomptés par requête directe (JSONB `attributes`, pas relecture d'audit)** :
+>
+> | Univers:axe | Valeurs curées présentes / distinctes en base | Fiches curées / fiches portant l'axe | Statut `DIRTY_AXES` |
+> |---|---:|---:|---|
+> | Naruto:clan | 45 / 45 | 228 / 228 = **100,0 %** | propre |
+> | Naruto:organization | 9 / 124 | 129 / 469 = **27,5 %** | **SALE (masqué)** |
+> | Naruto:rank | 7 / 10 | 470 / 473 = 99,4 % | propre |
+> | One Piece:crew | 29 / 41 | 273 / 358 = **76,3 %** | propre |
+> | Dragon Ball:race | 7 / 11 | 101 / 105 curées (105/473 = 22,2 % portent l'axe) | propre |
+> | Dragon Ball:saga | 5 / 5 | 128 / 128 = 100,0 % (128/473 = 27,1 % portent l'axe) | propre |
+>
+> Les trois lignes touchées par `axes-sales` (clan, organization, crew) tombent **exactement** sur
+> les chiffres du chantier — 45/45, 129/469=27,5 %, 273/358=76,3 %. `DIRTY_AXES`
+> (`lib/akasha/universe-taxonomy.ts`) ne contient plus que `'Naruto:organization'`, vérifié dans le
+> fichier ET dans le rendu (`/learn/akasha/u/naruto` n'expose aucun `href=".../organization/…"`,
+> alors que les 45 chips `clan` et les chips `crew` One Piece sont bien cliquables en direct).
+> Dragon Ball : `race` 105/473 (9,2 % du corpus univers) et `saga` 128/473 (11,3 %) confirmés à la
+> décimale contre le chantier `race-saga-db`. Description : **7 636 fiches, 33 non-NULL (0,43 %)**
+> — identique au chantier `dette-sql`, y compris le compte total du corpus.
+>
+> **Vérification #2 — aucun fichier de zone touché par ce lot.** `git diff --stat -- components/
+> akasha/zone/ app/learn/akasha/` : **sortie vide**, confirmé deux fois (avant et après le build de
+> cette vérification). Le lot 5 est déjà commité (`5f9a83ac`, HEAD) donc ses fichiers de zone
+> n'apparaissent plus dans le diff de travail ; ce lot 6, purement back/data, n'a rien ajouté à
+> `components/akasha/zone/` ni à `app/learn/akasha/[slug]/` — confirmé par lecture des 4 scripts du
+> lot (`ops-curer-axes-sales.mjs`, `ops-images-fandom.mjs`, `audit-description-colonne.mjs`,
+> `akasha-db-race-saga-extraction.mjs`) : aucun n'importe ni ne touche de fichier front.
+>
+> Build : `npm run build` — **368/368 pages, TypeScript 0 erreur, sortie propre** (dev arrêté
+> proprement pour lancer le build seul, relancé et revérifié sain ensuite — `curl` 200 sur
+> `/learn/akasha` et `/learn/akasha/u/naruto` après redémarrage). `scripts/ops-sonde-schema.mjs` :
+> **✓ schéma conforme**, les deux bases (`agent_results`, `ops_notes`, `ops_workers`, `ops_quotas`,
+> les deux RPC, `akasha_entries`, `akasha_relations`, les trois invariants de données). Tests :
+> `node_modules/.bin/tsx --test lib/akasha/shape.test.ts` → **34/34 PASS**, non retouchés par ce lot.
+> Aucun commit, aucune écriture en base effectuée pendant cette vérification.
+>
+> **Plafonds définitifs** — limites connues, actées ci-dessous, **pas à rouvrir** dans une future
+> vague LOT 6 sans décision explicite de Dan :
+> 1. **`Naruto:organization` reste SALE** (27,5 % curé, 129/469) — le champ mélange sous une seule
+>    clé JSONB des organisations permanentes et ~72 équipes genin éphémères + 9 divisions de guerre
+>    temporaires ; un renommage ne répare pas un problème de modèle de données. Nécessite de scinder
+>    l'extraction (hors périmètre back-only de ce lot), pas de rouvrir la liste curée.
+> 2. **La liste curée `Naruto:organization` déclare 10 valeurs dont 1 (« Taka ») a 0 fiche en base**
+>    à ce jour — confirmé par requête directe. Le chiffre qui fait foi est `fichesCurees` (129/469),
+>    pas la taille de la liste déclarée.
+> 3. **`kimimaro` reste auto-contradictoire à l'écran** (vérifié en direct, `/learn/akasha/
+>    kimimaro`, 09/08/2026) : le champ structuré affiche « Organisation · Sound Four », la phrase
+>    adjacente (son propre `descFr`) dit « cinquième membre du Quatuor du Son… Quintette du Son ».
+>    Cause : aucune valeur « Sound Five » dans la taxonomie curée, donc l'unique alias disponible
+>    (Sound Four) est forcé. Assumé, pas corrigé — à trancher par Dan si une 11ᵉ valeur curée est
+>    souhaitée.
+> 4. **Commentaire faux non corrigé** : `scripts/lib/akasha-axes.mjs` ligne 46 annonce encore
+>    « l'axe passe à 76,8 % curé » pour `One Piece:crew` — le chiffre réel, mesuré deux fois
+>    indépendamment (base ce jour + trace du chantier), est **76,3 %**. Écart cosmétique, aucun
+>    impact sur la donnée ni sur `DIRTY_AXES`.
+> 5. **`supabase/migrations/akasha.sql` diffère de +25/−1, pas +26/−1** comme annoncé par le
+>    chantier `dette-sql` (`git diff --numstat`, vérifié). Écart d'une ligne, sans conséquence sur
+>    le contenu (le commentaire correctif SQL est présent et exact).
+> 6. **`data/audits/dragon-ball-race-saga-trace.json` est VIDE** (`write:false`, `race.rows:[]`,
+>    `saga.rows:[]`) — écrasé par le re-run d'idempotence du chantier lui-même après l'écriture
+>    réelle (le script écrit toujours sur le même chemin, dry-run ou `--write`). La preuve
+>    ligne-à-ligne d'origine (slug, valeur posée, phrase-preuve) n'existe plus nulle part (fichier
+>    non versionné, `git log` vide sur ce chemin). Reconstruit indépendamment ce jour par
+>    re-projection de la regex d'extraction contre les `descFr` actuels : **0 divergence sur les
+>    totaux** (105/473 race, 128/473 saga, aux 4 exceptions pré-existantes et non écrites par ce
+>    chantier près : Giru/Umikame/Jaco Teirimentenpibosshi/Higashi no Kaioshin portent des races
+>    hors-taxonomie — « Machine Mutant », « Turtle », « Alien », « Glind » — jamais touchées par ce
+>    lot). La preuve phrase-par-phrase d'origine reste irrécupérable.
+> 7. **Incohérence arithmétique non résolue** dans la note du chantier `race-saga-db` : « 8 faux
+>    vérifiés à la main » pour la garde `saga`, mais seulement 7 noms listés (Marron, Erasa,
+>    Paikuhan, Maron, Piiza, Suno, Tao Pai Pai). Un 8ᵉ cas plausible existe (`mezu`, rejeté par la
+>    garde d'ambiguïté — deux sagas mentionnées sans signal négatif — pas par fausseté) mais n'est
+>    cité nulle part. Sans la trace d'origine (détruite, plafond précédent), impossible de trancher
+>    si le total de candidats bruts était 36 ou 37 — n'affecte aucune écriture réelle (les 29 lignes
+>    posées restent, elles, vérifiées à 0 divergence).
+> 8. **Deux images posées par `images-op` ne s'affichent jamais sur leur propre fiche** —
+>    `l-equipage-du-chapeau-de-paille` et `pays-des-fleurs` (toutes deux `type=status`) : `image_url`
+>    non-NULL confirmé en base, mais 0 occurrence de leur URL parmi les `<img>` réellement rendus de
+>    `/learn/akasha/l-equipage-du-chapeau-de-paille` (29 balises `<img>` sur la page, vérifié aucune
+>    ne pointe vers l'image posée). `OrganizationZone` ne lit `entry.image_url` que pour les membres
+>    liés (le « puits »), jamais pour le portrait du collectif lui-même — décision de design du
+>    lot 4b, préexistante, **pas un bug introduit par ce lot**. Ces deux images restent visibles
+>    ailleurs (og:image, listes, recherche — confirmé par lecture de code, non re-testé en détail ce
+>    jour). **Pas de fichier de zone touché pour documenter ceci** — conforme à la consigne.
+> 9. **312/411 candidats One Piece sans image restent sans page wiki**, 30 avec page mais sans image
+>    d'infobox — plafond gratuit atteint (sonde `pageimages` épuisée pour ces cas). Toute
+>    amélioration ultérieure suppose une source différente ou du budget Higgsfield — hors périmètre
+>    « gratuit d'abord » de ce lot.
+>
+> **Ce qui reste, explicitement, après cette vérification** :
+> - Corriger le commentaire « 76,8 % » → « 76,3 % » dans `scripts/lib/akasha-axes.mjs` (1 ligne,
+>   cosmétique, aucune urgence).
+> - Faire écrire à `scripts/akasha-db-race-saga-extraction.mjs` un fichier de trace distinct par run
+>   (horodaté ou suffixé `-write` / `-check`) au lieu d'écraser systématiquement le même chemin —
+>   pour que la prochaine vague ne perde plus la preuve ligne-à-ligne après un simple contrôle
+>   d'idempotence.
+> - Décision Dan en attente : ajouter « Sound Five » à la taxonomie curée `organization` (Naruto),
+>   ou assumer définitivement le mapping forcé sur `kimimaro` et les fiches similaires.
+> - Scinder le modèle de données `Naruto:organization` (permanent vs éphémère) reste un chantier à
+>   part entière, non commencé, hors périmètre « back continu » de ce lot.
+> - Le rendu du portrait des `status` collectifs (plafond 8) est une question de zone de fiche —
+>   **signalée ici, pas traitée** : toute correction toucherait `components/akasha/zone/
+>   OrganizationZone.tsx`, hors périmètre de ce lot par consigne explicite.
 
 ---
 
@@ -980,3 +1177,102 @@ LOT 3, non touchés ici ; le routage `EraZone`/`EntityZone` reste celui de LOT 2
 (qui portait déjà 45 arêtes en §6.5 et en LOT 4 avant cette vague, `git diff` à vide sur ces
 lignes) — la vraie mesure du jour est 50, écart expliqué en détail dans le commentaire de
 `JoestarTree.tsx`.
+
+### LOT 5 — vérification finale du 08/08/2026 (C3-2 : canal filet supérieur, chips liens-compteurs, portrait full-bleed)
+
+**⚠️ LOT 5 PARTIELLEMENT LIVRABLE — pas de commit tant que la régression OrganizationZone n'est pas
+corrigée.** C'est l'issue « lot partiel et sûr » que la consigne de lancement anticipait explicitement
+plutôt qu'un lot complet qui abîme une zone validée. Détail complet, mesures brutes et méthode :
+voir la note de vérification insérée directement sous la description du LOT 5 en §7. Résumé :
+
+- **CharacterZone** — ✅ **livrable**. Grille réparée (mesurée `getBoundingClientRect` à 1440 px :
+  section 729 px + aside 380 px sur la même ligne, dossier en bloc séparé 1135 px), canal en filet
+  supérieur confirmé (zéro boîte), chips en liens-compteurs confirmées, re-scope testé par clic réel
+  (DOM `dispatchEvent`) et intact. **Réserve éditoriale non bloquante, à trancher par Dan** : le
+  portrait full-bleed (+30 %) est un vrai gain sur les univers à source nette (Naruto, Goku), mais
+  agrandit un flou préexistant sur 6/8 têtes d'affiche testées dont la source réelle est la vignette
+  240×240 de la frise de formes (Luffy, Ichigo, Jotaro, Killua, L, Takumi) — un défaut de source
+  d'image rendu plus visible par le geste de mise en page, pas un bug introduit par ce diff.
+- **OrganizationZone** — ❌ **pas livrable en l'état**. Grille et canal sains, puits SVG intact
+  (aucun full-bleed forcé où il n'y a rien à en tirer — la bonne décision). **Régression confirmée
+  en direct** (styles calculés, pas au diff) : les 10 chips « Arsenal & navires » de
+  `l-equipage-du-chapeau-de-paille` rendent `color: rgb(122,144,168)` au lieu de l'or `#D4A017`
+  attendu — `ChipLink` (`zone-ui.tsx`) n'applique l'accent que si `active` est passé, et le seul site
+  d'appel `href`-based du diff (grappe Arsenal) ne le passe jamais. Correctif nécessaire avant tout
+  commit de cette zone : distinguer, dans `ChipLink`, le lien statique toujours-à-l'accent (Arsenal)
+  de la sélection re-scopable (Membres/Techniques) plutôt que de surcharger la même prop `active`
+  pour les deux usages.
+- **EraZone** — ✅ **correctement laissée intacte** (vieille carte à coins arrondis + vieux chips
+  pilule, confirmé en styles calculés, zéro diff sur le fichier) : l'issue « ou pas du tout » prévue
+  par le plan pour une zone à faible rendement (14 fiches, 0,18 % du corpus) déjà promise à une
+  fusion en module `timeline` (§8, question 3) — assumé, pas un renoncement.
+- **Aucune fusion des trois composants** — conforme à l'arbitrage B (§1.1) : `CharacterZone.tsx`,
+  `OrganizationZone.tsx`, `EraZone.tsx` restent trois fichiers ; `zone-ui.tsx` est un nouveau fichier
+  de deux primitives partagées, pas une 4ᵉ zone.
+
+Build : `npm run build` — **294/294 pages, TypeScript 0 erreur**. `scripts/ops-sonde-schema.mjs` :
+**✓ conforme**, les deux bases. `lib/akasha/shape.test.ts` : **34/34 PASS**. Aucun commit effectué
+pendant cette vérification.
+
+---
+
+### LOT 6 — vérification finale du 09/08/2026 (curation axes sales · sonde images OP · commentaire
+SQL description · extraction race/saga Dragon Ball)
+
+**✅ LOT 6 LIVRABLE — recompte intégral du corpus fait de zéro, les quatre chantiers reconfirmés
+exacts à la décimale, aucune correction nécessaire avant commit.** Détail complet, méthode et
+plafonds définitifs : voir la note de vérification insérée directement sous la description du
+LOT 6 en §7. Résumé :
+
+- **`axes-sales`** — ✅ **livrable**. Naruto:clan 45/45 valeurs, 228/228 fiches = 100,0 % (retiré de
+  `DIRTY_AXES`, confirmé dans le code et dans le rendu de `/learn/akasha/u/naruto`). One
+  Piece:crew 29/41 valeurs, 273/358 fiches = 76,3 % (retiré). Naruto:organization reste à 27,5 %
+  (129/469), **volontairement laissé SALE** — problème de modèle de données, pas de liste. Réserve
+  documentée, pas bloquante : commentaire de code encore faux (« 76,8 % » au lieu de 76,3 %), une
+  valeur curée déclarée sans fiche (« Taka »), un cas éditorial auto-contradictoire (`kimimaro`).
+- **`images-op`** — ✅ **livrable**. One Piece non-personnage 782 fiches, 381 avec image = 48,7 %
+  (+10 images nettes, 1 renullée après contrôle à l'œil). 0/7 636 `NoPicAvailable` en base. Réserve
+  documentée, pas bloquante : 2 des 10 images posées (statuts collectifs) ne s'affichent jamais sur
+  leur propre fiche — défaut de rendu **préexistant** (lot 4b), confirmé en direct, hors périmètre
+  d'un lot back-only.
+- **`race-saga-db`** — ✅ **livrable sur la donnée**, ⚠️ **trace de preuve perdue**. Dragon Ball
+  race 105/473 (9,2 % du corpus), saga 128/473 (11,3 %) — confirmés à la décimale par re-projection
+  indépendante de la regex d'extraction. **Mais** la trace `dragon-ball-race-saga-trace.json` a été
+  écrasée par le propre re-run d'idempotence du script après l'écriture réelle : la preuve
+  ligne-à-ligne des 13+29 écritures n'existe plus. Une incohérence arithmétique mineure (8 faux
+  annoncés, 7 nommés) reste également non résolue. Aucune de ces deux réserves ne remet en cause les
+  chiffres eux-mêmes, reconfirmés indépendamment ce jour.
+- **`dette-sql`** — ✅ **livrable**. Commentaire correctif posé sur `akasha_entries.description`
+  (migration + `COMMENT ON COLUMN`), 0 écriture DB, 0 fichier front touché. 7 636 fiches, 33
+  non-NULL (0,43 %) confirmés à la décimale. Diff mesuré +25/−1 (pas +26/−1 comme annoncé —
+  écart d'une ligne, cosmétique).
+- **Aucun fichier de zone touché** — `git diff --stat -- components/akasha/zone/ app/learn/
+  akasha/` : sortie vide, vérifié deux fois pendant cette vérification (avant et après le build).
+
+Build : `npm run build` — **368/368 pages, TypeScript 0 erreur, sortie propre** (dev arrêté proprement
+pour le build seul, relancé et revérifié sain ensuite — `curl` 200 confirmé après redémarrage).
+`scripts/ops-sonde-schema.mjs` : **✓ schéma conforme**, les deux bases. `lib/akasha/shape.test.ts` :
+**34/34 PASS**, non retouchés par ce lot. Aucun commit, aucune écriture en base effectuée pendant
+cette vérification.
+
+---
+
+## 9. État du plan complet (lots 1-7), au 09/08/2026
+
+Vue d'ensemble après la vague LOT 6, tous les chiffres recomptés indépendamment le jour même (voir
+le détail et la méthode dans chaque section LOT ci-dessus) :
+
+| Lot | Statut | Reste à faire |
+|---|---|---|
+| **LOT 1** — socle honnête | ✅ Fait (1a, 1b) · ⚠️ 1c très majoritairement fait | Régression trouvée à la relecture : pastille `position:absolute` toujours présente sur la variante `strip` d'`AkashaList` malgré le commentaire « aucune pastille en absolu » — non corrigée à ce jour |
+| **LOT 2** — `EntityZone`/`deriveShape`, 2 599 fiches | ⚠️ Livré, défaut d'aiguillage confirmé et non réparé | 14 fiches (dont 5 candidates `orbit` : `konohagakure`, `grand-line`, `soul-society`, `hueco-mundo`, `ninja-medical`) interceptées par la branche `EraZone` avant `EntityZone` — perdent `relations`, `orbit` et « Voir aussi ». Correctif : faire porter la garde `eras` par `deriveShape` lui-même |
+| **LOT 3** — vocabulaire des mondes | ✅ 3a, 3b faits · ⚠️ 3c fait pour les chiffres, pas la découvrabilité · ⚠️ 3d fait pour 3/4 volets | Les 3 nouvelles vitrines non linkées depuis `/learn/akasha` ni `sitemap.ts` ; `attributes.monde` (Bleach) en base mais jamais rendu ; crash HTTP 500 sur URL à double encodage sur les routes d'axe/vitrine ; HTTP 200 systémique sur ressource inexistante |
+| **LOT 4** — rangs Naruto, arbre Joestar | ✅ Fait, les 2 défauts + le défaut de traçabilité trouvés ont été réparés dans la même vague | Rien de connu |
+| **LOT 5** — dé-cartage des zones validées | ⚠️ Partiellement livrable — voir ci-dessus | **Bloquant avant commit** : régression couleur or `ChipLink` sur `OrganizationZone`. Non bloquant mais à trancher par Dan : qualité du portrait full-bleed sur les univers à source basse résolution |
+| **LOT 6** — back et données, continu | ✅ Livrable — voir ci-dessus (vérification du 09/08/2026) | Corriger le commentaire « 76,8 % » → « 76,3 % » (`scripts/lib/akasha-axes.mjs`, cosmétique) ; faire écrire au script d'extraction Dragon Ball une trace distincte par run (ne plus s'auto-écraser) ; décision Dan en attente sur « Sound Five » (Naruto:organization) ; scinder le modèle `Naruto:organization` reste un chantier séparé, non commencé ; rendu du portrait des `status` collectifs — signalé, zone de fiche hors périmètre de ce lot |
+| **LOT 7** — repli générique de hub + 9ᵉ univers | ⏸️ Non commencé, conditionnel | Décidé : à l'arrivée d'un 9ᵉ univers réel, pas avant — conforme, rien à faire aujourd'hui |
+
+**Questions encore ouvertes pour Dan** (§8) : Q2 (réserver du budget pour une surface inédite, au-delà
+de la cohérence) et Q6 (masquer vs afficher « inconnu » pour `total_prime` manquant) n'ont toujours
+aucune recommandation écrite à appliquer — restent à trancher explicitement, indépendamment de
+l'avancement des lots.

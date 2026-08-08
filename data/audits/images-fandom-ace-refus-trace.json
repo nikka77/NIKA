@@ -1,0 +1,17 @@
+{
+ "chantier": "images-fandom (One Piece, non-personnage)",
+ "pris_le": "2026-08-08T21:42:40.273Z",
+ "motif": "Le sabre « Ace » (type artifact, meito Saijo Ô Wazamono) a été résolu par ops-images-fandom.mjs sur la page wiki « Portgas D. Ace » (le PERSONNAGE) via le témoin « nom ≡ titre ». Même mécanisme, même entité que le défaut confirmé et réparé le 07/08 (ops-reparer-curation-0708.mjs, section 3) — la garde par titre seul ne distingue pas un objet nommé d’après une personne de la page de cette personne. Résolu ici AVANT publication (dry-run relu à l’œil avant le passage en écriture), et non pas réparé après coup.",
+ "avant": {
+  "id": "8265a377-ad62-44db-ba26-f93003e8569b",
+  "slug": "ace",
+  "name": "Ace",
+  "type": "artifact",
+  "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/4f/Portgas_D._Ace_Anime_Infobox.png/revision/latest/scale-to-width-down/431?cb=20240629132600"
+ },
+ "apres": {
+  "id": "8265a377-ad62-44db-ba26-f93003e8569b",
+  "slug": "ace",
+  "image_url": null
+ }
+}

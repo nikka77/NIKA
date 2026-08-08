@@ -20,7 +20,20 @@ CREATE TABLE IF NOT EXISTS akasha_entries (
   is_fiction  boolean NOT NULL DEFAULT true,
   universe    text,                              -- source/univers ("One Piece", "Bleach", "Histoire / réel"…)
   summary     text,                              -- résumé court (cartes)
-  description text,                              -- contenu long (markdown)
+  description text,                              -- ⚠ PAS le contenu long : historiquement une
+                                                   -- COPIE de `summary` posée par les seeders au
+                                                   -- moment de la création (scripts/build-akasha-
+                                                   -- naruto.mjs, build-akasha-universes.mjs, etc.),
+                                                   -- jamais régénérée depuis. Le vrai contenu long
+                                                   -- vit dans `attributes->>'descFr'`. Mesuré le
+                                                   -- 08/08/2026 (data/audits/description-colonne-
+                                                   -- trace.json) : 99,6 % NULL après nettoyage
+                                                   -- partiel du jour ; sur les 33 fiches restantes,
+                                                   -- 5 doublons frais, 23 gabarits génériques
+                                                   -- fossiles, 2 bugs (texte d'une autre entité),
+                                                   -- 3 seulement portent un vrai texte distinct.
+                                                   -- Colonne non lue par le front actuel — repli
+                                                   -- disparu lors de la refonte du 08/08.
   image_url   text,
   attributes  jsonb NOT NULL DEFAULT '{}',       -- attributs spécifiques au type
   rarity      text
@@ -40,6 +53,17 @@ DROP POLICY IF EXISTS "Service role all akasha_entries" ON akasha_entries;
 
 CREATE POLICY "Public read akasha_entries"      ON akasha_entries FOR SELECT USING (true);
 CREATE POLICY "Service role all akasha_entries" ON akasha_entries FOR ALL USING (auth.role() = 'service_role');
+
+-- Vérité de la colonne `description`, pour quiconque lit le schéma sans ouvrir ce fichier.
+-- Corrige le commentaire inline posé à la création (qui disait « contenu long markdown » — faux).
+-- Idempotent : COMMENT ON COLUMN peut être rejoué sans risque.
+COMMENT ON COLUMN akasha_entries.description IS
+  'PAS le contenu long — c''était une copie figée de summary posée au seed, jamais régénérée. '
+  'Le contenu long réel vit dans attributes->>''descFr''. Mesuré 08/08/2026 '
+  '(data/audits/description-colonne-trace.json) : 99,6% NULL ; sur les fiches restantes, '
+  'essentiellement des doublons de summary ou des gabarits génériques figés au seed, '
+  'quelques anomalies de contenu (texte d''une autre entité), et une poignée seulement '
+  'de vrai texte distinct. Colonne non lue par le front actuel.';
 
 -- ─── RELATIONS (liens entre entités) ─────────────────────────────────
 CREATE TABLE IF NOT EXISTS akasha_relations (

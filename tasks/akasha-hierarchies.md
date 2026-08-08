@@ -250,6 +250,20 @@ selon la cause :
 3. **La fiche est vide de tout** (305 fiches, 4,0 %). Ni descFr, ni description, ni dossier. Elles
    gardent socle + image + « Voir aussi ». Rien d'autre. Voir §3.
 
+   ⚠ **Correction (08/08/2026, chantier `description-colonne`)** : `description` ne doit **plus**
+   servir de signal dans ce test. Mesuré : la colonne est non-NULL sur 33 fiches seulement (0,4 % du
+   corpus) et **le front actuel ne la lit nulle part** (grep exhaustif `app/learn/akasha/**`,
+   `components/akasha/**`, `lib/akasha/*.ts` — le repli conditionnel qui la rendait a disparu
+   pendant la refonte du front du 08/08, sans que la donnée elle-même n'ait été traitée). Un
+   `description` non-NULL n'implique donc plus « la fiche a un contenu visible ». **Cas réel qui le
+   démontre** : `shuku-village` (Naruto, `status`) porte `description = "Organisation de l'univers
+   Naruto."` (un gabarit générique fossile, pas un fait) alors que `summary`, `attributes.descFr`,
+   ses sections et ses arêtes sont tous à zéro — elle est *fonctionnellement* aussi vide que n'importe
+   quelle fiche à 305, mais la lettre du test ci-dessus ("ni description") l'exclurait à tort de ce
+   compte. Détail et 32 autres cas classés : `data/audits/description-colonne-trace.json`. **Test
+   corrigé** : *vide de tout* = ni descFr, ni dossier (sections), ni arête — `description` retiré du
+   test tant qu'elle n'est pas re-branchée à un rendu.
+
 **Ce qu'on ne fait pas** : créer les 13 fiches « division Bleach », les 7 « Partie JoJo », les 99
 « saga Dragon Ball ». Elles n'ajouteraient **aucun** parent nouveau — l'axe scalaire fait déjà le
 travail de filtre. Ce serait exactement le « modèle à sept niveaux que personne ne peuple ».

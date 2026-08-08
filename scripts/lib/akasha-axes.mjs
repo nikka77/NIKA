@@ -20,23 +20,40 @@ export const expertFor = (universe) =>
 export const AXES = {
   'Naruto': {
     village: ['Konohagakure', 'Sunagakure', 'Kirigakure', 'Kumogakure', 'Iwagakure', 'Amegakure', 'Otogakure'],
+    // 08/08 : synchronisé sur lib/akasha/universe-taxonomy.ts après la curation des axes sales
+    // (data/audits/curation-axes-sales.json) — l'axe `clan` est désormais 100% curé (45 valeurs).
     clan: ['Uchiha', 'Uzumaki', 'Senju', 'Hyūga', 'Nara', 'Akimichi', 'Yamanaka', 'Inuzuka', 'Ōtsutsuki',
-      // Valeurs canon reportées par la normalisation des axes du 06/08 (data/audits/normalisation-axes.json).
       // ⚠ « Fūma » (générique) et « Fūma (Land of Sound) » sont DEUX clans canon distincts — ne jamais fusionner.
-      'Fūma', 'Fūma (Land of Sound)', 'Karatachi Family', 'Kazekage', 'Wagarashi Family', 'Wasabi Family'],
+      'Funato', 'Kamizuru', 'Tsuchigumo', 'Fūma (Land of Sound)', 'Aburame', 'Kagetsu Family', 'Kazekage',
+      'Sarutobi', 'Izuno', 'Kurama', 'Shirogane', 'Hōzuki', 'Iburi', 'Fūma', 'Shiin', 'Hoshigaki', 'Tenrō',
+      'Yuki', 'Wagarashi Family', 'Kaguya', 'Wasabi Family', 'Chinoike', 'Amagiri', 'Lee', 'Ryū',
+      'Karatachi Family', 'Yoimura', 'Rinha', 'Hatake', 'Onikuma', "Jūgo's", 'Yotsuki', 'Hirasaka',
+      'Shimura', 'Kedōin', "Yota's"],
     rank: ['Academy Student', 'Genin', 'Chūnin', 'Tokubetsu Jōnin', 'Jōnin', 'Anbu', 'Kage'],
     // L20 (demande Dan) : dès que ~8 fiches porteront la même organisation, l'expert de
     // niche correspondant (« Expert Akatsuki ») naîtra tout seul au prochain scan.
-    organization: ['Akatsuki', 'Taka', 'Kara', 'Root'],
+    // 08/08 : complété aux 10 valeurs de lib/akasha/universe-taxonomy.ts (5 manquaient déjà avant
+    // ce chantier — trouvé en resynchronisant le miroir) + « Nouveaux Sept Épéistes de la Brume »
+    // (curation des axes sales). L'axe reste SALE dans son ensemble (voir DIRTY_AXES et l'audit) :
+    // ce miroir ne fait que suivre la liste curée, il ne prétend pas que l'axe est propre.
+    organization: ['Akatsuki', 'Taka', 'Kara', 'Root', 'Sound Four', 'Sept Épéistes de la Brume',
+      'Nouveaux Sept Épéistes de la Brume', 'Konoha 11', 'Douze Ninjas Gardiens', 'Police militaire de Konoha'],
   },
   'One Piece': {
     faction: ['Pirate', 'Marine', 'Gouvernement Mondial', 'Révolutionnaire', 'Civil'],
+    // 08/08 : synchronisé sur lib/akasha/universe-taxonomy.ts après la curation des axes sales
+    // (data/audits/curation-axes-sales.json) — « L’équipage des Maquereaux » retiré (mistraduction,
+    // scindé en Macro / Pirates du Soleil), 22 valeurs ajoutées, l'axe passe à 76,3% curé
+    // (273 fiches sur 358 — chiffre remesuré le 09/08, le 76,8 % d'origine était une coquille).
     crew: ['L’équipage du Chapeau de Paille', 'L’équipage de Big Mom', 'L’équipage aux Cent Bêtes',
       'L’équipage de Barbe Blanche', 'L’équipage de Don Quichotte', 'L’équipage du Heart', 'L’équipage des Pirates Roger',
-      // Valeurs canon reportées par la normalisation des axes du 06/08 (data/audits/normalisation-axes.json).
       'L’équipage de Barbe Noire', 'L’équipage du Roux', 'L’équipage du Lion d’Or', 'L’équipage de Krieg',
-      'L’équipage de Thriller Bark', 'L’équipage des Pirates Kuja', 'L’équipage des Maquereaux',
-      'Faux équipage du Chapeau de Paille'],
+      'L’équipage de Thriller Bark', 'L’équipage des Pirates Kuja', 'Faux équipage du Chapeau de Paille',
+      'L’équipage des Nouveaux Hommes-Poissons', 'L’équipage du Fire Tank', 'L’équipage de Kid',
+      'L’équipage de Foxy', 'L’équipage du Chat Noir', 'L’équipage d’Arlong', 'L’équipage du Bluejam',
+      'L’équipage des Pirates du Soleil', 'L’équipage de Caribou', 'L’équipage des Pirates Volants',
+      'L’équipage des Pirates Rocks', 'L’équipage des Moines Dépravés', 'L’équipage de Buggy',
+      'L’équipage du Rumbar', 'L’équipage de Macro'],
     fruit_type: ['Paramecia', 'Logia', 'Zoan', 'Zoan Antique', 'Zoan Mythique', 'Smile'],
   },
   'Dragon Ball': {

@@ -1,0 +1,132 @@
+{
+ "genere_le": "2026-08-08",
+ "chantier": "Curation des 3 axes sales masqués au LOT 3b (DIRTY_AXES, lib/akasha/universe-taxonomy.ts)",
+ "methode": "Distinct + comptage mesuré en base (clientSite, pagination .range() par 1000) sur attributes.<axe>. Classification par valeur : (a) VARIANTE de graphie d'une valeur déjà curée → repliée par renommage en base (trace + script dans le dépôt, data/audits/curation-axes-sales-trace.json + scripts/ops-curer-axes-sales.mjs) ; (b) valeur RÉELLE vérifiée contre le wiki Fandom (action=parse avec redirections, repli recherche à recouvrement de mots — même méthode que scripts/ops-curer-alias.mjs) et assez peuplée → promue dans lib/akasha/universe-taxonomy.ts (et son miroir scripts/lib/akasha-axes.mjs) ; (c) BRUIT (mauvais champ, granularité hors de propos, ou entité non-crew/non-org malgré son nom) → laissée en base telle quelle, documentée ici, jamais supprimée (règle ajout-seulement).",
+ "axes": [
+  {
+   "universe": "Naruto", "axe": "clan",
+   "avant": { "distinct": 48, "curatedDistinct": 9, "dirtyDistinct": 39, "fichesTotal": 228, "fichesCurees": 114, "fichesSales": 114 },
+   "variantes": [
+    { "de": "Sarutobi Clan", "vers": "Sarutobi", "nFiches": 1, "fiche": "mirai-sarutobi", "motif": "doublon de graphie — 5 fiches portaient déjà « Sarutobi » (convention corpus : nom nu sans « Clan »)" },
+    { "de": "Hatake Clan", "vers": "Hatake", "nFiches": 1, "fiche": "sakumo-hatake", "motif": "doublon de graphie — 1 fiche portait déjà « Hatake » (Kakashi)" },
+    { "de": "Kazekage Clan", "vers": "Kazekage", "nFiches": 1, "fiche": "gaara", "motif": "doublon de graphie — 5 fiches portaient déjà « Kazekage » (même correction que le lot du 06/08, cf. normalisation-axes.json, appliquée alors à 1 fiche différente, celle-ci était retombée dans la sale entre-temps)" }
+   ],
+   "promues": [
+    { "v": "Funato", "url": "https://naruto.fandom.com/wiki/Funato_Clan", "nFiches": 11 },
+    { "v": "Kamizuru", "url": "https://naruto.fandom.com/wiki/Kamizuru_Clan", "nFiches": 8 },
+    { "v": "Tsuchigumo", "url": "https://naruto.fandom.com/wiki/Tsuchigumo_Clan", "nFiches": 7 },
+    { "v": "Fūma (Land of Sound)", "url": "https://naruto.fandom.com/wiki/F%C5%ABma_Clan_(Land_of_Sound)", "nFiches": 7 },
+    { "v": "Aburame", "url": "https://naruto.fandom.com/wiki/Aburame_Clan", "nFiches": 6 },
+    { "v": "Kagetsu Family", "url": "https://naruto.fandom.com/wiki/Kagetsu_Family", "nFiches": 5, "note": "fiche-parent « Clan Kagetsu » déjà insérée (chantier parents-manquants)" },
+    { "v": "Kazekage", "url": "https://naruto.fandom.com/wiki/Kazekage_Clan", "nFiches": 6, "note": "5 avant repli + 1 « Kazekage Clan » repliée (Gaara)" },
+    { "v": "Sarutobi", "url": "https://naruto.fandom.com/wiki/Sarutobi_Clan", "nFiches": 6, "note": "5 avant repli + 1 « Sarutobi Clan » repliée ; fiche-parent « Clan Sarutobi » déjà insérée" },
+    { "v": "Izuno", "url": "https://naruto.fandom.com/wiki/Izuno_Clan", "nFiches": 4, "note": "fiche-parent « Clan Izuno » déjà insérée" },
+    { "v": "Kurama", "url": "https://naruto.fandom.com/wiki/Kurama_Clan", "nFiches": 4, "note": "vérifié « Kurama Clan », DISTINCT de la page du bijū Kurama — désambiguïsation confirmée par requête directe" },
+    { "v": "Shirogane", "url": "https://naruto.fandom.com/wiki/Shirogane_Clan", "nFiches": 4 },
+    { "v": "Hōzuki", "url": "https://naruto.fandom.com/wiki/H%C5%8Dzuki_Clan", "nFiches": 3 },
+    { "v": "Iburi", "url": "https://naruto.fandom.com/wiki/Iburi_Clan", "nFiches": 3 },
+    { "v": "Fūma", "url": "https://naruto.fandom.com/wiki/F%C5%ABma_(disambiguation)", "nFiches": 3, "note": "clan générique, DISTINCT de Fūma (Land of Sound) — déjà vérifié au 06/08 (normalisation-axes.json)" },
+    { "v": "Shiin", "url": "https://naruto.fandom.com/wiki/Shiin_Clan", "nFiches": 2, "note": "vérifié « Shiin Clan », DISTINCT de la page perso homonyme" },
+    { "v": "Hoshigaki", "url": "https://naruto.fandom.com/wiki/Hoshigaki_Clan", "nFiches": 2 },
+    { "v": "Tenrō", "url": "https://naruto.fandom.com/wiki/Tenr%C5%8D_Clan", "nFiches": 2 },
+    { "v": "Yuki", "url": "https://naruto.fandom.com/wiki/Yuki_Clan", "nFiches": 2 },
+    { "v": "Wagarashi Family", "url": "https://naruto.fandom.com/wiki/Wagarashi_Family", "nFiches": 2 },
+    { "v": "Kaguya", "l": "Kaguya", "url": "https://naruto.fandom.com/wiki/Kaguya_Clan", "nFiches": 2, "note": "vérifié « Kaguya Clan », DISTINCT de la page perso Kaguya Ōtsutsuki" },
+    { "v": "Wasabi Family", "url": "https://naruto.fandom.com/wiki/Wasabi_Family", "nFiches": 2 },
+    { "v": "Chinoike", "url": "https://naruto.fandom.com/wiki/Chinoike_Clan", "nFiches": 2 },
+    { "v": "Amagiri", "url": "https://naruto.fandom.com/wiki/Amagiri_Clan", "nFiches": 2 },
+    { "v": "Lee", "l": "Clan Lee", "url": "https://naruto.fandom.com/wiki/Lee_Clan", "nFiches": 2, "note": "vérifié « Lee Clan » (Boruto), DISTINCT de la page perso Rock Lee" },
+    { "v": "Ryū", "l": "Clan Ryū", "url": "https://naruto.fandom.com/wiki/Ry%C5%AB_Clan", "nFiches": 2, "note": "vérifié « Ryū Clan », DISTINCT de la page perso homonyme" },
+    { "v": "Karatachi Family", "url": "https://naruto.fandom.com/wiki/Karatachi_Family", "nFiches": 2 },
+    { "v": "Yoimura", "url": "https://naruto.fandom.com/wiki/Yoimura_Clan", "nFiches": 2, "note": "vérifié « Yoimura Clan » directement, DISTINCT de la page perso Remon Yoimura (repli initial trompeur)" },
+    { "v": "Rinha", "url": "https://naruto.fandom.com/wiki/Rinha_Clan", "nFiches": 2 },
+    { "v": "Hatake", "url": "https://naruto.fandom.com/wiki/Hatake_Clan", "nFiches": 2, "note": "1 avant repli + 1 « Hatake Clan » repliée (Kakashi)" },
+    { "v": "Onikuma", "url": "https://naruto.fandom.com/wiki/Onikuma_Clan", "nFiches": 1 },
+    { "v": "Jūgo's", "l": "Clan de Jūgo", "url": "https://naruto.fandom.com/wiki/J%C5%ABgo's_Clan", "nFiches": 1, "note": "titre wiki réel « Jūgo's Clan » (clan sans nom propre, associé au sceau maudit) — pas une troncature, déjà la bonne graphie corpus" },
+    { "v": "Yotsuki", "url": "https://naruto.fandom.com/wiki/Yotsuki_Clan", "nFiches": 1 },
+    { "v": "Hirasaka", "url": "https://naruto.fandom.com/wiki/Hirasaka_Clan", "nFiches": 1 },
+    { "v": "Shimura", "url": "https://naruto.fandom.com/wiki/Shimura_Clan", "nFiches": 1 },
+    { "v": "Kedōin", "url": "https://naruto.fandom.com/wiki/Ked%C5%8Din_Clan", "nFiches": 1 },
+    { "v": "Yota's", "l": "Clan de Yota", "url": "https://naruto.fandom.com/wiki/Yota's_Clan", "nFiches": 1, "note": "titre wiki réel « Yota's Clan » — même remarque que Jūgo's" }
+   ],
+   "bruit": [],
+   "apres": { "distinct": 45, "curatedDistinct": 45, "dirtyDistinct": 0, "fichesTotal": 228, "fichesCurees": 228, "fichesSales": 0 },
+   "decision": "RETIRÉ de DIRTY_AXES — 100% curé après 3 renommages (repli de graphie) et 36 promotions (toutes vérifiées contre naruto.fandom.com). Zéro bruit trouvé : les 39 valeurs sales étaient TOUTES des clans canon réels, seulement absents de la petite liste curée initiale."
+  },
+  {
+   "universe": "One Piece", "axe": "crew",
+   "avant": { "distinct": 41, "curatedDistinct": 7, "dirtyDistinct": 34, "fichesTotal": 358, "fichesCurees": 198, "fichesSales": 160 },
+   "variantes": [
+    { "de": "L’équipage des Maquereaux", "vers": "L’équipage de Macro", "nFiches": 1, "fiche": "macro",
+      "motif": "« Maquereaux » n'existe sur aucune source — mistraduction probable (Macro/Maquereau) ; le résumé de la fiche dit lui-même « chef des Macro Fishman Pirates » — vérifié https://onepiece.fandom.com/wiki/Macro_Pirates" },
+    { "de": "L’équipage des Maquereaux", "vers": "L’équipage des Pirates du Soleil", "nFiches": 1, "fiche": "tiger-fisher",
+      "motif": "le résumé de la fiche dit lui-même « chef légendaire des Pirates du Soleil » ; 2 fiches (Praline Charlotte, Aladdin) portaient déjà cette valeur — Tiger Fisher (Fisher Tiger) en est le fondateur canon" }
+   ],
+   "promues": [
+    { "v": "L’équipage de Barbe Noire", "nFiches": 10 }, { "v": "L’équipage du Roux", "nFiches": 9 },
+    { "v": "Faux équipage du Chapeau de Paille", "nFiches": 8 },
+    { "v": "L’équipage des Nouveaux Hommes-Poissons", "nFiches": 5 }, { "v": "L’équipage du Lion d’Or", "nFiches": 5 },
+    { "v": "L’équipage de Thriller Bark", "nFiches": 4 }, { "v": "L’équipage des Pirates Kuja", "nFiches": 4 },
+    { "v": "L’équipage du Fire Tank", "nFiches": 4 }, { "v": "L’équipage de Kid", "nFiches": 3 },
+    { "v": "L’équipage de Foxy", "nFiches": 3 }, { "v": "L’équipage du Chat Noir", "nFiches": 3 },
+    { "v": "L’équipage d’Arlong", "nFiches": 2 }, { "v": "L’équipage du Bluejam", "nFiches": 2 },
+    { "v": "L’équipage de Krieg", "nFiches": 2 }, { "v": "L’équipage des Pirates du Soleil", "nFiches": 3, "note": "2 avant repli + Tiger Fisher replié" },
+    { "v": "L’équipage de Caribou", "nFiches": 2 }, { "v": "L’équipage des Pirates Volants", "nFiches": 1 },
+    { "v": "L’équipage des Pirates Rocks", "nFiches": 1 },
+    { "v": "L’équipage des Moines Dépravés", "url": "https://onepiece.fandom.com/wiki/Fallen_Monk_Pirates", "nFiches": 1, "note": "= Fallen Monk Pirates (équipage d'Urouge), vérifié" },
+    { "v": "L’équipage de Buggy", "nFiches": 1 }, { "v": "L’équipage du Rumbar", "nFiches": 1 },
+    { "v": "L’équipage de Macro", "url": "https://onepiece.fandom.com/wiki/Macro_Pirates", "nFiches": 1, "note": "créé par le renommage ci-dessus" }
+   ],
+   "bruit": [
+    { "v": "Marine", "nFiches": 29, "motif": "faction (déjà couverte par l'axe `faction` curé), pas un équipage — champ mal renseigné pour tout militaire de la Marine" },
+    { "v": "Armada du Chapeau de Paille", "nFiches": 17, "motif": "ALLIANCE de 7 équipages distincts (Straw Hat Grand Fleet), pas UN équipage — structurellement hors du grain de cet axe, comme « Ligue des Primates » ci-dessous ; candidat à un futur axe « alliances », pas inventé ici" },
+    { "v": "Armée Révolutionnaire", "nFiches": 8, "motif": "faction politique, pas un équipage pirate" },
+    { "v": "Cipher Pol", "nFiches": 8, "motif": "agence de renseignement du Gouvernement Mondial — {{Organization Box}} sur le wiki source, pas {{Crew Box}}" },
+    { "v": "Royaume de Germa", "nFiches": 6, "motif": "nation/armée (empire militaire Vinsmoke), pas un équipage" },
+    { "v": "Anciens membres du Cipher Pol", "nFiches": 5, "motif": "même motif que Cipher Pol, plus un méta-tag d'ancienneté" },
+    { "v": "Néo Marine", "nFiches": 3, "motif": "réorganisation post-ellipse de la Marine — même motif que Marine" },
+    { "v": "Anciens membres du Baroque Works", "nFiches": 3, "motif": "organisation criminelle (agence, pas équipage), plus méta-tag d'ancienneté" },
+    { "v": "Ligue des Primates", "nFiches": 2, "motif": "= Saruyama Alliance, ALLIANCE de 2 équipages (Masira Pirates + Shoujou Pirates) sous 3 capitaines — même motif structurel que l'Armada du Chapeau de Paille, vérifié https://onepiece.fandom.com/wiki/Saruyama_Alliance" },
+    { "v": "Buggy's Delivery", "nFiches": 2, "motif": "organisation mercenaire de Buggy — {{Organization Box}} sur le wiki source (pas {{Crew Box}}), vérifié https://onepiece.fandom.com/wiki/Buggy%27s_Delivery ; réintégrée depuis dans le Cross Guild" },
+    { "v": "Anciens membres de la Marine", "nFiches": 1, "motif": "même motif que Marine, plus méta-tag" },
+    { "v": "World Economic Journal", "nFiches": 1, "motif": "un journal, pas une organisation ni un équipage — mauvais champ" }
+   ],
+   "apres": { "distinct": 41, "curatedDistinct": 29, "dirtyDistinct": 12, "fichesTotal": 358, "fichesCurees": 273, "fichesSales": 85 },
+   "decision": "RETIRÉ de DIRTY_AXES — 76,3% curé (273/358), et les 12 valeurs sales restantes (85 fiches) sont toutes des factions/organisations RÉELLES mais structurellement hors axe (Marine, agences gouvernementales, alliances de plusieurs équipages, un journal) — aucune n'est une variante ratée ni un équipage manquant. Le masquage silencieux protégeait contre une majorité de bruit ; la majorité est maintenant curée, et le reste est documenté plutôt que deviné."
+  },
+  {
+   "universe": "Naruto", "axe": "organization",
+   "avant": { "distinct": 125, "curatedDistinct": 9, "dirtyDistinct": 117, "fichesTotal": 469, "fichesCurees": 121, "fichesSales": 348 },
+   "variantes": [
+    { "de": "Sound Five", "vers": "Sound Four", "nFiches": 1, "fiche": "kimimaro",
+      "motif": "le résumé de la fiche dit lui-même « cinquième membre du Quatuor du Son » — Kimimaro rejoint un groupe déjà curé, ce n'est pas une 5e organisation" }
+   ],
+   "promues": [
+    { "v": "Nouveaux Sept Épéistes de la Brume", "de": "New Seven Ninja Swordsmen", "nFiches": 7,
+      "motif": "génération SUCCESSEUR distincte des Sept Épéistes de la Brume déjà curés — le résumé d'une des fiches le dit explicitement (« fait partie des Nouveaux Sept Épéistes de la Brume ») ; renommé en français pour cohérence avec la valeur curée sœur" }
+   ],
+   "bruit": [
+    { "categorie": "équipes genin / squads ad hoc", "nValeurs": 72, "nFichesApprox": 190,
+      "exemples": ["Team 7", "Team Kakashi", "Team Guren", "Team Suien", "Team Dosu", "Team 40"],
+      "motif": "des dizaines de cellules à 2-4 membres formées pour UNE mission ou UN arc — vraies, mais d'une granularité totalement différente des 9 organisations déjà curées (Akatsuki, Root…) ; en faire des puces de navigation submergerait le hub sous ~70 entrées quasi-vides" },
+    { "categorie": "divisions de guerre (4e Guerre Shinobi)", "nValeurs": 9, "nFichesApprox": 34,
+      "exemples": ["First Division", "Second Division", "Third Division", "Fourth Division", "Fifth Division", "Intelligence Division", "Sensor Division", "Cypher Division", "Logistical Support and Medical Division"],
+      "motif": "unités MILITAIRES TEMPORAIRES d'un seul arc (la guerre), pas des organisations permanentes ; « Third Division » (9 fiches) et « Corps médical » (9 fiches) lus intégralement — quasi tous des personnages secondaires mineurs sans poids narratif propre, contrairement à Akatsuki/Root" },
+    { "categorie": "familles / fratries étiquetées organisation", "nValeurs": 7, "nFichesApprox": 20,
+      "exemples": ["Kurosuki Family", "Three Sand Siblings", "Shirogane Three", "Haze Quadruplets", "Three Brothers", "Gold and Silver Brothers", "Three Ryūdōin Brothers"],
+      "motif": "relèvent sémantiquement de la FAMILLE, pas de l'organisation — un champ mal aligné, pas une organisation manquante" },
+    { "categorie": "gangs et bandes mineures", "nValeurs": 8, "nFichesApprox": 30,
+      "exemples": ["Magaki Group", "Byakuya Gang", "Mujina Bandits", "Moya Triad", "Akagi Gang", "Jako's Gang", "Haido's Knights", "Gatō Company"],
+      "motif": "réelles mais de portée locale/filler, sans le poids narratif des 9 organisations curées" },
+    { "categorie": "institutions qui sont des LIEUX, pas des organisations", "nValeurs": 2, "nFichesApprox": 10,
+      "exemples": ["Fire Temple", "Konoha Orphanage"],
+      "motif": "même erreur de champ que les lieux retirés de l'axe crew One Piece au 06/08 — un lieu de résidence/service n'est pas une organisation" },
+    { "categorie": "reste (conseils, escortes, formations récurrentes…)", "nValeurs": 19, "nFichesApprox": 63,
+      "exemples": ["Konoha Council", "Suna Council", "Kumo Council", "Ino–Shika–Chō", "Hokage Guard Platoon", "Leaf's Anbu", "Watari Ninja"],
+      "motif": "hétérogène — non passé en revue fiche par fiche (hors budget de ce chantier), laissé sale plutôt que classé au jugé" }
+   ],
+   "apres": { "distinct": 124, "curatedDistinct": 10, "dirtyDistinct": 114, "fichesTotal": 469, "fichesCurees": 129, "fichesSales": 340 },
+   "decision": "RESTE SALE — 27,5% curé (129/469), en hausse de seulement 1,7 point malgré les 2 corrections sourcées appliquées. Le champ `organization` de Naruto mélange, sous UNE clé JSONB, des catégories de nature très différente (organisations politiques/criminelles permanentes — le sens visé par les 9 valeurs curées — équipes genin éphémères, divisions de guerre temporaires, familles, gangs locaux, institutions-lieux). Une passe de renommage ne peut pas régler un problème de MODÈLE DE DONNÉES : les 72 « Team X » ne sont pas du bruit à supprimer ni des organisations à promouvoir, elles appartiennent à un axe d'une autre nature (une future clé `team`/`equipe`, hors scope ici — je ne l'invente pas). Recommandation pour un prochain chantier : trancher au niveau du pipeline d'extraction (scripts/lib/akasha-axes.mjs) plutôt qu'au niveau de la liste curée."
+  }
+ ]
+}
