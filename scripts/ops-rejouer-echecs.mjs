@@ -38,6 +38,13 @@ function famille(err, type) {
   if (/corruption|charabia|langue étrang/i.test(s)) return { cle: 'corruption (refus juste)', rejouable: false };
   if (/\bclaude\b/i.test(s) && /introuv|absent|ENOENT|not found/i.test(s)) return { cle: 'CLI claude absent', rejouable: false };
   if (/expected.*number|invalid_type/i.test(s) && /arbitrage/.test(type)) return { cle: 'lot d\'arbitrage (schéma corrigé)', rejouable: AVEC_ARBITRAGES };
+  // PLAFOND DE JETONS RELEVÉ le 08/08 (fiche_section 1 600 → 2 600) : les sections mortes sur
+  // « titre » ou « texte » coupé sont redevenues produisibles. Leur cause est fermée, pas contournée.
+  if (/fiche_section/.test(type) && /custom|too_small|coupée|plafond/i.test(s)) return { cle: 'section coupée (plafond relevé)', rejouable: true };
+  // Le CLI répondait en prose faute de jeton valide — jeton régénéré le 08/08.
+  if (/Command failed: claude/i.test(s)) return { cle: 'CLI claude (jeton régénéré)', rejouable: true };
+  // Source momentanément injoignable : l'absence de réponse n'est pas une absence de source.
+  if (/fandom injoignable|saturé|HTTP 5\d\d/i.test(s)) return { cle: 'source ou couloir saturé', rejouable: true };
   if (/schema|zod|invalid_type|too_small|parse/i.test(s)) return { cle: 'schéma non respecté', rejouable: false };
   return { cle: 'motif non classé', rejouable: false };
 }
