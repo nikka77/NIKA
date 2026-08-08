@@ -1183,9 +1183,21 @@ function journaliserQuotaReel(fournisseur, modele, headers) {
     + ` · réarmement req ${headers.get('x-ratelimit-reset-requests') ?? '?'}`);
 }
 async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
+  // LA CLÉ DU COULOIR DOIT ÊTRE LA MÊME PARTOUT (08/08/2026, cause racine d'une nuit entière).
+  // DeepInfra et Google manquaient à cette liste : `fournisseur` valait donc `null`, et la clé
+  // retombait sur le seul nom du modèle — « meta-llama/Llama-3.3-70B-Instruct-Turbo » là où le
+  // couloir s'appelle « deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo ». Deux conséquences,
+  // toutes deux invisibles : ces couloirs n'ont JAMAIS eu de comptabilité de quota
+  // (quotaReserver recevait null), et surtout la mise à l'écart après un échec marquait une clé
+  // que personne ne consultait — DeepInfra, en 402 depuis la veille, était donc retenté
+  // indéfiniment. 22 relectures reportées en douze minutes pour cette seule raison, et trois
+  // arrêts de l'étage de jugement que j'ai « réparés » trois fois sans toucher la cause.
+  // Une liste de correspondances qui ne couvre pas tous les cas ne rate pas bruyamment : elle
+  // rend un `null` que le reste du code accepte poliment.
   const fournisseur = url.includes('api.groq.com') ? 'groq' : url.includes('cerebras') ? 'cerebras'
     : url.includes('nvidia.com') ? 'nvidia' : url.includes('mistral.ai') ? 'mistral'
-    : url.includes('openrouter.ai') ? 'openrouter' : null;
+    : url.includes('openrouter.ai') ? 'openrouter' : url.includes('deepinfra.com') ? 'deepinfra'
+    : url.includes('googleapis.com') ? 'gemini' : null;
   await quotaReserver(fournisseur ? `${fournisseur}/${modele}` : null, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900);
   const modeJson = MODES_JSON[modele] ?? 'json_schema';
   let msgs = modeJson === 'json_object'
