@@ -28,7 +28,7 @@ cd "$(dirname "$0")/.."
 # de descendre. Un couloir dont on sait qu'il est fermé n'a rien à faire dans une rotation ;
 # à re-créditer chez le fournisseur pour le réarmer.
 JUGE=${JUDGE_MODEL:-openrouter/google/gemma-4-26b-a4b-it:free,mistral/mistral-small-latest,nvidia/nvidia/nemotron-3-super-120b-a12b,groq/llama-3.3-70b-versatile,openrouter/mistralai/mistral-small-24b-instruct-2501,anthropic/claude-haiku-4-5}
-CONC=${NIKA_CONC_JUGES:-12}
+CONC=${NIKA_CONC_JUGES:-20}
 
 # RÉATTRIBUTION AU VOL DU JURY (07/08) — une relecture porte, dans sa charge utile, le jury décidé
 # à son ENRÔLEMENT. Retirer un couloir mort de la liste ci-dessus ne libère donc pas celles qui
@@ -43,8 +43,15 @@ CONC=${NIKA_CONC_JUGES:-12}
 # se terminaient bien (« ✓ done »), mais AUCUN dossier ne se bouclait, ce qui ne se voit pas dans
 # le journal. gemini/gemma-4-31b-it porte 11 500 req/jour et n'en avait consommé que 45.
 # Deux familles distinctes : Meta pour le premier juge, Google pour le second.
-FORCE_JURY=${NIKA_FORCE_JURY:-groq/llama-3.3-70b-versatile,gemini/gemma-4-31b-it}
+# RETIRÉ PAR DÉFAUT le 08/08 — ce contournement a fait son temps. Il servait à décoller les
+# relectures collées à un couloir mort ; depuis que la clé d'un couloir est la MÊME pour le
+# marquer et pour le relire (correctif du 08/08), la substitution ordinaire fait ce travail
+# toute seule. Or il entonnait TOUT le trafic dans DEUX couloirs, chacun plafonné à 24 requêtes
+# par minute : mesuré 154 substitutions pour 67 succès en dix minutes, soit 6,7 jugements par
+# minute alors que six couloirs étaient ouverts. Un contournement qu'on oublie de retirer
+# devient un goulot. Le remettre pour une campagne précise : NIKA_FORCE_JURY=a,b
+FORCE_JURY=${NIKA_FORCE_JURY:-}
 
-echo "⚖️  étage de jugement — couloir review_local · jury ${JUGE} · réattribution ${FORCE_JURY} · ${CONC} de front"
+echo "⚖️  étage de jugement — couloir review_local · jury ${JUGE} · réattribution ${FORCE_JURY:-(aucune)} · ${CONC} de front"
 exec "${PRIO[@]}" node --env-file=.env.local scripts/agent-worker.mjs \
-  --loop --types=review_local --juge="$JUGE" --force-jury="$FORCE_JURY" --conc="$CONC"
+  --loop --types=review_local --juge="$JUGE" ${FORCE_JURY:+--force-jury="$FORCE_JURY"} --conc="$CONC"
