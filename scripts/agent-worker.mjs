@@ -1381,7 +1381,21 @@ async function callModel(type, payload, modeleImpose) {
         // 500 jetons coupaient la réponse au troisième et le JSON tronqué partait en erreur de parsing.
         model: sansCouloir(model), max_tokens: Math.max(500, 240 * reste.length + 400),
         system: [{ type: 'text', text: systeme, cache_control: { type: 'ephemeral' } }],
-        messages: [{ role: 'user', content: reste.join('\n') || systeme }],
+        // LA CONSIGNE JSON MANQUAIT SUR CE SEUL CHEMIN (08/08). L'API Anthropic n'a ni
+        // `response_format` ni `json_schema` : sans consigne explicite, le modèle répond
+        // naturellement — en prose. Pour un arbitrage, le prompt d'origine réclame déjà du JSON et
+        // ça passait ; pour le CHAT, non — et chaque « Claude ici… » de Dan mourait sur
+        // « SyntaxError: Unexpected token 'J', "J'ai pas v"… is not valid JSON », sans réponse ni
+        // trace visible. Quatre jours de silence pour une consigne absente. On la pose ici, en
+        // miroir du mode `json_object` des chemins OpenAI-compatibles.
+        messages: [
+          { role: 'user', content: `${reste.join('\n') || systeme}
+\nRéponds UNIQUEMENT par un objet JSON conforme à ce schéma (mêmes clés, mêmes types, AUCUN texte hors JSON, ne recopie pas le schéma) :
+${JSON.stringify(schema)}` },
+          // Pré-remplir la réponse par « { » interdit au modèle de commencer par une phrase :
+          // c'est le moyen le plus sûr d'obtenir du JSON chez Anthropic.
+          { role: 'assistant', content: '{' },
+        ],
       }),
     });
     const corpsA = await rA.text();
@@ -1395,16 +1409,46 @@ async function callModel(type, payload, modeleImpose) {
       let cliOk = false;
       try { await execFile('claude', ['--version'], { timeout: 8_000 }); cliOk = true; } catch { /* pas de CLI ici */ }
       if (!cliOk) throw new PlafondJourError(`anthropic/${sansCouloir(model)}`, 'solde API épuisé, pas de CLI — console.anthropic.com');
-      const { stdout } = await execFile('claude',
-        ['-p', String(messages[0].content), '--model', sansCouloir(model)],
-        { timeout: 180_000, maxBuffer: 4 * 1024 * 1024, env: (({ ANTHROPIC_API_KEY: _cle, ...e }) => e)(process.env) });
-      raw = stdout;
+      // LE REPLI CLI RECEVAIT UN PROMPT AMPUTÉ (08/08). Il ne passait que `messages[0].content`
+      // — le SYSTÈME — en perdant `reste`, c'est-à-dire le message réel de Dan, et sans aucune
+      // consigne de format. Le CLI répondait donc en prose (« J'ai pas vu… »), le parseur strict
+      // levait « Unexpected token 'J' », et le message mourait sans réponse ni trace lisible.
+      // C'est CE chemin qui servait en réalité, l'API Anthropic étant à sec depuis des jours :
+      // le correctif posé sur la branche API ne l'aurait jamais atteint.
+      const invite = `${systeme}\n\n${reste.join('\n')}`
+        + `\n\nRéponds UNIQUEMENT par un objet JSON conforme à ce schéma (mêmes clés, mêmes types,`
+        + ` AUCUN texte hors JSON, pas de bloc de code, ne recopie pas le schéma) :\n${JSON.stringify(schema)}`;
+      // stdin FERMÉ : sans cela le CLI attend trois secondes un tube qui ne viendra pas
+      // (« Warning: no stdin data received ») — connu depuis le 27/07, jamais appliqué ici.
+      const { spawn } = await import('node:child_process');
+      const sortie = await new Promise((res, rej) => {
+        const ch = spawn('claude', ['-p', invite, '--model', sansCouloir(model), '--output-format', 'text'],
+          { stdio: ['ignore', 'pipe', 'pipe'], env: (({ ANTHROPIC_API_KEY: _cle, ...e }) => e)(process.env) });
+        let out = '', err = '';
+        ch.stdout.on('data', (d) => { out += d; });
+        ch.stderr.on('data', (d) => { err += d; });
+        const t = setTimeout(() => { ch.kill(); rej(new Error('timeout 180 s')); }, 180_000);
+        ch.on('close', () => { clearTimeout(t); res(out + err); });
+        ch.on('error', (e) => { clearTimeout(t); rej(e); });
+      });
+      // SESSION EXPIRÉE = GUICHET FERMÉ, PAS TÂCHE FAUTIVE (08/08). Le CLI répond alors en PROSE
+      // (« Failed to authenticate: OAuth session expired ») ; cette prose partait droit au parseur
+      // strict, qui levait « Unexpected token 'F' » et marquait la tâche en échec. Résultat vécu :
+      // chaque « Claude ici… » de Dan mourait sans réponse, alors qu'il suffisait de laisser la
+      // rotation servir Groq ou Gemini. Une panne d'authentification ne rend pas la tâche mauvaise.
+      if (/OAuth session expired|Failed to authenticate|Invalid API key|credit balance/i.test(sortie)) {
+        throw new PlafondJourError(`anthropic/${sansCouloir(model)}`,
+          'session CLI expirée — régénérer avec `claude setup-token` puis CLAUDE_CODE_OAUTH_TOKEN dans .env.local (les 2 copies)',
+          DUREE_FACTURATION);
+      }
+      raw = sortie;
     }
     else if (rA.status === 429) throw new PlafondJourError(`anthropic/${sansCouloir(model)}`, 'limite de débit Anthropic');
     else if (!rA.ok) throw new Error(`anthropic ${rA.status}: ${corpsA.slice(0, 160)}`);
     else {
       const jA = JSON.parse(corpsA);
-      raw = jA?.content?.find((b) => b.type === 'text')?.text ?? '';
+      // La réponse reprend là où on l'a arrêtée : l'accolade ouvrante est de NOTRE côté.
+      raw = '{' + (jA?.content?.find((b) => b.type === 'text')?.text ?? '');
     }
     // Haiku commente volontiers APRÈS son JSON (« Voilà mon verdict… ») : on clampe à l'objet
     // le plus externe avant le parseur strict — même filet que pour les penseurs Qwen.
