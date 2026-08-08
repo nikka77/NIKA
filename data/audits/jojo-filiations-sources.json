@@ -1,0 +1,17 @@
+{
+  "chantier": "LOT 4b — sources des filiations posées",
+  "quand": "2026-08-08",
+  "pourquoi": "Le contre-vérificateur a relevé, à juste titre, que la filiation Straizo → Lisa Lisa avait été ÉCRITE EN BASE sans que sa source figure dans la trace. La consigne du lot était explicite : « jamais une filiation inventée pour combler un trou visuel ». Vérification faite après coup, la filiation est CANON — mais une donnée juste sans sa preuve reste une donnée non auditable. Ce fichier répare la traçabilité, il ne réécrit rien.",
+  "filiations": [
+    {
+      "de": "straizo",
+      "vers": "lisa-lisa",
+      "lien": "adoptive_father",
+      "canon": true,
+      "source": "https://jojowiki.com/Lisa_Lisa — « she was subsequently adopted by the Ripple user Straizo and learned the art of Ripple from him until her 18th birthday » ; confirmé par https://jojo.fandom.com/wiki/Straizo (père adoptif de Lisa Lisa).",
+      "verifie_le": "2026-08-08",
+      "verifie_par": "recherche web croisée sur les deux wikis de référence, après signalement du contre-vérificateur"
+    }
+  ],
+  "regle": "Toute filiation posée en base doit porter son URL de source et l'extrait qui la prouve, DANS la trace du chantier qui l'écrit — pas dans un fichier de rattrapage comme celui-ci. Une généalogie est le lieu du corpus où une erreur se propage le plus loin : elle déplace tous les descendants."
+}

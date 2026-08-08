@@ -1,0 +1,257 @@
+{
+  "started_at": "2026-08-08T19:20:06.280Z",
+  "write": false,
+  "resolvedSlugs": [
+    "george-joestar-ii",
+    "holy-kuujou",
+    "joseph-joestar",
+    "lisa-lisa",
+    "roses",
+    "shizuka-joestar",
+    "straizo",
+    "suzie-q"
+  ],
+  "removeRoses": {
+    "status": "a-retirer",
+    "rows": [
+      {
+        "id": "25e94015-dc74-44bb-998c-379deaae4cb4",
+        "from_entry": "c15cc00e-b78a-4b1f-851a-59a1c9930a66",
+        "to_entry": "fdf250da-cf4b-4ca4-aee7-23fcb8d0d221",
+        "relation": "famille"
+      }
+    ],
+    "motif": "Roses est le majordome/chauffeur des Joestar (infobox: affiliation=Joestar Family, occupation=Butler, AUCUN champ family) — pas un lien de sang ni d'adoption."
+  },
+  "missingEdges": [
+    {
+      "fromSlug": "lisa-lisa",
+      "toSlug": "george-joestar-ii",
+      "motif": "Épouse — infobox Lisa Lisa \"George Joestar II (husband)\" / infobox George Joestar II \"Elizabeth Joestar (Wife)\".",
+      "fromId": "2ec17839-348a-44a5-9da8-22aa84f8b624",
+      "toId": "3141d52b-206b-4a39-a71c-4d4dbe15be8d",
+      "fromName": "Lisa Lisa",
+      "toName": "George Joestar II",
+      "status": "a-poser"
+    },
+    {
+      "fromSlug": "joseph-joestar",
+      "toSlug": "lisa-lisa",
+      "motif": "Mère — infobox Lisa Lisa \"Joseph Joestar (son)\" ; texte : \"Lisa Lisa is the wife of George Joestar II and the mother of Joseph Joestar\".",
+      "fromId": "3225fd94-a540-45f0-8a2a-7c0385b8f912",
+      "toId": "2ec17839-348a-44a5-9da8-22aa84f8b624",
+      "fromName": "Joseph Joestar",
+      "toName": "Lisa Lisa",
+      "status": "a-poser"
+    },
+    {
+      "fromSlug": "suzie-q",
+      "toSlug": "joseph-joestar",
+      "motif": "Épouse — infobox Suzi Q \"Joseph Joestar (husband)\".",
+      "fromId": "2192d5cb-8cc9-479a-8ec9-1461ae7d773f",
+      "toId": "3225fd94-a540-45f0-8a2a-7c0385b8f912",
+      "fromName": "Suzie Q",
+      "toName": "Joseph Joestar",
+      "status": "a-poser"
+    },
+    {
+      "fromSlug": "holy-kuujou",
+      "toSlug": "suzie-q",
+      "motif": "Mère — infobox Suzi Q \"Holy Kujo (daughter)\" ; confirmé infobox Jotaro Kujo \"Suzi Q (Grandmother)\".",
+      "fromId": "fdf250da-cf4b-4ca4-aee7-23fcb8d0d221",
+      "toId": "2192d5cb-8cc9-479a-8ec9-1461ae7d773f",
+      "fromName": "Holy Kuujou",
+      "toName": "Suzie Q",
+      "status": "a-poser"
+    },
+    {
+      "fromSlug": "shizuka-joestar",
+      "toSlug": "joseph-joestar",
+      "motif": "Fille adoptive — infobox Shizuka Joestar \"Joseph Joestar (Adoptive father)\" / infobox Suzi Q \"Shizuka Joestar (adoptive daughter)\".",
+      "fromId": "34f91ebf-f88d-40aa-9f9e-0e374c101d8d",
+      "toId": "3225fd94-a540-45f0-8a2a-7c0385b8f912",
+      "fromName": "Shizuka Joestar",
+      "toName": "Joseph Joestar",
+      "status": "a-poser"
+    }
+  ],
+  "attrPatch": [
+    {
+      "slug": "joseph-joestar",
+      "status": "a-ecrire",
+      "id": "3225fd94-a540-45f0-8a2a-7c0385b8f912",
+      "current": [
+        {
+          "rel": "grandmother",
+          "name": "Erina Joestar"
+        },
+        {
+          "rel": "ancestor",
+          "name": "Jonathan Joestar",
+          "slug": "jonathan-joestar"
+        },
+        {
+          "rel": "wife",
+          "name": "Suzi Q"
+        },
+        {
+          "rel": "daughter",
+          "name": "Holy Kujo"
+        },
+        {
+          "rel": "son",
+          "name": "Josuke Higashikata",
+          "slug": "josuke-higashikata"
+        }
+      ],
+      "next": [
+        {
+          "rel": "grandmother",
+          "name": "Erina Joestar"
+        },
+        {
+          "rel": "ancestor",
+          "name": "Jonathan Joestar",
+          "slug": "jonathan-joestar"
+        },
+        {
+          "rel": "wife",
+          "name": "Suzi Q"
+        },
+        {
+          "rel": "daughter",
+          "name": "Holy Kujo"
+        },
+        {
+          "rel": "son",
+          "name": "Josuke Higashikata",
+          "slug": "josuke-higashikata"
+        },
+        {
+          "rel": "mother",
+          "name": "Lisa Lisa",
+          "slug": "lisa-lisa"
+        }
+      ]
+    },
+    {
+      "slug": "george-joestar-ii",
+      "status": "a-ecrire",
+      "id": "3141d52b-206b-4a39-a71c-4d4dbe15be8d",
+      "current": [],
+      "next": [
+        {
+          "rel": "father",
+          "name": "Jonathan Joestar",
+          "slug": "jonathan-joestar"
+        },
+        {
+          "rel": "mother",
+          "name": "Erina Joestar",
+          "slug": "erina-pendleton"
+        },
+        {
+          "rel": "wife",
+          "name": "Lisa Lisa",
+          "slug": "lisa-lisa"
+        },
+        {
+          "rel": "son",
+          "name": "Joseph Joestar",
+          "slug": "joseph-joestar"
+        }
+      ]
+    },
+    {
+      "slug": "lisa-lisa",
+      "status": "a-ecrire",
+      "id": "2ec17839-348a-44a5-9da8-22aa84f8b624",
+      "current": [],
+      "next": [
+        {
+          "rel": "adoptive_father",
+          "name": "Straizo",
+          "slug": "straizo"
+        },
+        {
+          "rel": "husband",
+          "name": "George Joestar II",
+          "slug": "george-joestar-ii"
+        },
+        {
+          "rel": "son",
+          "name": "Joseph Joestar",
+          "slug": "joseph-joestar"
+        }
+      ]
+    },
+    {
+      "slug": "suzie-q",
+      "status": "a-ecrire",
+      "id": "2192d5cb-8cc9-479a-8ec9-1461ae7d773f",
+      "current": [],
+      "next": [
+        {
+          "rel": "husband",
+          "name": "Joseph Joestar",
+          "slug": "joseph-joestar"
+        },
+        {
+          "rel": "daughter",
+          "name": "Holy Kujo",
+          "slug": "holy-kuujou"
+        },
+        {
+          "rel": "adoptive_daughter",
+          "name": "Shizuka Joestar",
+          "slug": "shizuka-joestar"
+        }
+      ]
+    },
+    {
+      "slug": "holy-kuujou",
+      "status": "a-ecrire",
+      "id": "fdf250da-cf4b-4ca4-aee7-23fcb8d0d221",
+      "current": [],
+      "next": [
+        {
+          "rel": "father",
+          "name": "Sadao Kujo"
+        },
+        {
+          "rel": "mother",
+          "name": "Suzi Q",
+          "slug": "suzie-q"
+        },
+        {
+          "rel": "son",
+          "name": "Jotaro Kujo",
+          "slug": "jotaro-kujo"
+        },
+        {
+          "rel": "half_brother",
+          "name": "Josuke Higashikata",
+          "slug": "josuke-higashikata"
+        }
+      ]
+    },
+    {
+      "slug": "shizuka-joestar",
+      "status": "a-ecrire",
+      "id": "34f91ebf-f88d-40aa-9f9e-0e374c101d8d",
+      "current": [],
+      "next": [
+        {
+          "rel": "adoptive_father",
+          "name": "Joseph Joestar",
+          "slug": "joseph-joestar"
+        },
+        {
+          "rel": "adoptive_mother",
+          "name": "Suzi Q",
+          "slug": "suzie-q"
+        }
+      ]
+    }
+  ]
+}

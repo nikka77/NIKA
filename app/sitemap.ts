@@ -14,6 +14,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/learn/akasha`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
     { url: `${SITE_URL}/learn/akasha/wanted`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${SITE_URL}/learn/akasha/tops`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${SITE_URL}/learn/akasha/u/naruto/rangs`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${SITE_URL}/learn/akasha/u/jojo/arbre`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
   ];
 
   // LES VITRINES SE LISENT DEPUIS LEUR SOURCE, PAS D'UNE LISTE RECOPIÉE (LOT 3c, 08/08). Les deux

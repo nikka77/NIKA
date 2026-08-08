@@ -889,3 +889,94 @@ finaux restent corrects (recomptés indépendamment ci-dessus), mais la fenêtre
 par la règle « TRACE AVANT toute écriture » a été refermée par les relances de vérification
 elles-mêmes — à corriger pour tout prochain script du même genre (nom de fichier horodaté, ou trace
 figée après le premier `--write`).
+
+### LOT 4 — vérification finale du 08/08/2026 (4a rangs Naruto, 4b arbre Joestar)
+
+✅ **LOT 4 FAIT, les deux surfaces sont en ligne, découvrables depuis leur hub et le sitemap** —
+avec trois défauts confirmés par l'épreuve indépendante et **réparés dans cette vague** (pas
+enterrés), plus un défaut de traçabilité rétroactivement documenté. Zéro image nouvelle, zéro
+donnée nouvelle en base pour 4a ; pour 4b, seule la trace manquante a été ajoutée, aucune écriture
+en base n'a eu lieu dans cette passe. `npm run build` : **294/294 pages, TypeScript 0 erreur**
+(dev laissé tourner, aucun conflit rencontré). `scripts/ops-sonde-schema.mjs` : **✓ conforme**, les
+deux bases. `lib/akasha/shape.test.ts` : **34/34 PASS**. Tous les chiffres ci-dessous viennent
+d'une requête DB directe (pagination complète, pas de `LIMIT` implicite de PostgREST) ou de
+`get_page_text` sur la page réellement rendue — aucun n'est repris d'un rapport de chantier tel
+quel.
+
+**4a — Échelle des rangs Naruto** (`app/learn/akasha/u/naruto/rangs/page.tsx`).
+Recompte indépendant sur `akasha_entries` (univers Naruto, 3 308 fiches à ce jour) :
+**473 fiches avec `rank` non vide**, réparties en **410 sur les six paliers canon** (Academy
+Student 55, Genin 114, Chūnin 75, Tokubetsu Jōnin 19, Jōnin 117, Kage 30) + **59 en annexe Anbu**
+(affectation, pas un grade) + **4 hors échelle à une seule fiche chacune** (Sannin/orochimaru,
+Head Ninja/head-ninja-of-kumogakure, S-rank/kisame-hoshigaki, **S-rank Missing-nin/kakuzu**).
+410 + 59 + 4 = 473, exact. Vérifié sur la page rendue après correction : `/u/naruto/rank/Jōnin`
+et `/u/naruto/rank/Tokubetsu Jōnin` (les deux extrêmes de taille) répondent 200 avec les bons
+comptes (117 et 19), pagination cohérente, `/kakuzu` répond 200 avec portrait.
+Trois défauts trouvés par l'épreuve, tous réparés ici :
+1. **Kakuzu manquait** de `HORS_ECHELLE` (page bloquée à « 3 fiches », affichant 472 personnages
+   classables au lieu de 473) — ajouté avec sa propre justification (même famille que Kisame :
+   classification de danger sur un missing-nin, formulation de fiche différente). Le total « N
+   fiches » de l'encart est désormais **calculé depuis `HORS_ECHELLE.length`** au lieu d'être
+   recopié en toutes lettres dans la prose (« Trois fiches… ») — corrige la classe de bug, pas
+   seulement l'occurrence : un futur cinquième cas hors échelle ne pourra plus faire dériver le
+   texte du chiffre réel.
+2. **Fait non vérifiable gravé en dur** : l'encart Anbu affirmait « Kakashi, capitaine Anbu à
+   14 ans ». Recherche croisée (Narutopedia, ANBU Legacy, threads databook) : les sources
+   convergent sur Kakashi rejoignant l'Anbu à 13 ans, sans âge de capitainat documenté de façon
+   fiable à 14 ; le titre de « plus jeune capitaine Anbu » documenté du canon revient plutôt à
+   Itachi Uchiha (13 ans). Retiré : le texte cite maintenant un fait vérifié directement contre le
+   corpus (la fiche `kakashi-hatake` porte `rank: "Jōnin"`, pas `"Anbu"` — exactement le point
+   structurel illustré : rester Jōnin à l'état civil), sans plus asserter d'âge précis invérifiable.
+3. **Accord manquant** : « Voir les 55 élève de l'académie → » (devrait être « élèves »). Corrigé
+   en ajoutant un champ `labelPlural` explicite sur le seul palier dont le libellé est un nom
+   commun français réel — les cinq autres (Genin, Chūnin, Tokubetsu Jōnin, Jōnin, Kage) restent des
+   emprunts invariants, non touchés.
+Non-défaut clarifié : un rapport de vague antérieur citait « Jōnin 118→119 en cours de vague » —
+le chiffre affiché n'a jamais été faux ni codé en dur (`listAxisCounts` interroge la base à chaque
+rendu, ISR 1 h) ; c'est la prose d'un rapport intermédiaire qui était déjà périmée au moment
+d'être écrite. Rien à corriger côté code.
+
+**4b — Arbre Joestar** (`app/learn/akasha/u/jojo/arbre/page.tsx`,
+`components/akasha/hub/JoestarTree.tsx`). Recompte indépendant par parcours en largeur non dirigé
+sur `akasha_relations` (relation = `famille`, les deux bouts dans l'univers JoJo, 233 fiches) :
+**50 arêtes**, formant **12 composantes connexes** — pas 7 ni 9 comme deux décomptes précédents
+l'avaient tour à tour affirmé. La composante contenant `jonathan-joestar` compte exactement
+**18 fiches** (celles rendues sur l'arbre, aucune de plus, aucune de moins) ; les **11 autres**
+composantes, toutes hors de cet arbre, sont : Nijimura (2), Kawajiri (2), Zeppeli (2), Kira (2),
+Polnareff (2), Una (3), Hirose (2), Hommes-Piliers (4), Poco (3), Geil (2), Weather Report/Enrico
+Pucci (2) — 26 fiches au total hors arbre. Deux défauts trouvés par l'épreuve, tous deux réparés :
+1. Le texte réellement affiché au lecteur (« Ce que cet arbre ne montre pas ») disait **« Sept
+   autres petits groupes familiaux… (Nijimura, Kawajiri, Zeppeli, Kira, Polnareff, Una,
+   Hirose…) »** — sous-comptait de quatre groupes entiers, dont un de quatre personnages canon
+   connus (les Hommes-Piliers de Battle Tendency). Hommes-Piliers et Poco étaient déjà nommés dans
+   le commentaire interne de `JoestarTree.tsx` mais jamais reportés dans le texte visiteur ; Geil
+   et Weather Report/Pucci n'apparaissaient nulle part, ni commentaire ni texte affiché — preuve
+   que la mesure d'origine était incomplète, pas juste mal recopiée. Corrigé aux deux endroits (le
+   paragraphe rendu ET les deux commentaires de fichier) : « onze », liste complète, chiffre
+   recoupé par une deuxième méthode de comptage indépendante (les deux s'accordent sur 12
+   composantes).
+2. La relation `attributes.family` de `lisa-lisa` vers Straizo (`adoptive_father`) avait été
+   écrite en base sans le commentaire `motif`/citation que porte systématiquement chaque autre
+   entrée du même fichier (`scripts/akasha-jojo-family-tree-fixes.mjs`) — rupture ponctuelle de la
+   règle maison « TRACE AVANT toute écriture en base ». Vérifié : **le fait lui-même est exact**
+   (recherche croisée jojo.fandom.com — Lisa Lisa/Elizabeth Joestar, recueillie bébé sur un navire
+   en perdition par Erina Joestar, adoptée et formée au Hamon par Straizo jusqu'à ses 18 ans) ;
+   aucune correction de donnée n'était nécessaire. La trace manquante a été ajoutée
+   rétroactivement dans le script, avec la source — documentation réparée, écriture en base non
+   rejouée (elle datait d'avant cette vague).
+Confirmé sans changement nécessaire (recompte indépendant, cohérent avec l'épreuve) : les 18
+fiches de l'arbre ont toutes un portrait ; 5 filiations tirées au hasard dans l'arbre correspondent
+au canon ; la branche Sadao Kujo (absent du corpus) est déclarée honnêtement à deux endroits ; rien
+n'est masqué. Les deux surfaces restent reliées depuis leur hub (`universe-taxonomy.ts`, champ
+`extras`) et listées dans `app/sitemap.ts` — vérifié cette fois par un vrai chemin de clic dans le
+navigateur (hub Naruto → « L'échelle des rangs → », hub JoJo → « L'arbre Joestar → »), pas
+seulement par inspection de `<a href>`.
+
+**Renoncé dans cette vague, assumé** : aucune image nouvelle, aucune extension au-delà des deux
+surfaces prévues par le plan, aucun retour sur les défauts déjà documentés et hors périmètre de
+LOT 4 (le crash 500 sur URL malformée et le HTTP 200 sur valeur d'axe inexistante restent ceux de
+LOT 3, non touchés ici ; le routage `EraZone`/`EntityZone` reste celui de LOT 2). Le désaccord
+« 35 arêtes famille » cité dans la consigne de lancement de cette tâche ne vient pas de ce document
+(qui portait déjà 45 arêtes en §6.5 et en LOT 4 avant cette vague, `git diff` à vide sur ces
+lignes) — la vraie mesure du jour est 50, écart expliqué en détail dans le commentaire de
+`JoestarTree.tsx`.

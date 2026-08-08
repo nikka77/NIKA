@@ -108,6 +108,9 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
     ],
     // NB : le pilier du clan Uchiha est la fiche `uchiha` (« Clan Uchiha ») — `clan-uchiha` n'existe pas en base.
     piliers: ['naruto-uzumaki', 'konohagakure', 'sharingan', 'rasengan', 'uchiha', 'samehada', 'ninja-medical'],
+    // LOT 4a : échelle des rangs (route en dur /u/naruto/rangs, même mécanique que le CTA « Most
+    // Wanted » ci-dessous pour One Piece) — surface bespoke, pas une page d'axe générique.
+    extras: [{ href: '/learn/akasha/u/naruto/rangs', label: 'L’échelle des rangs', icon: '🎖️' }],
   },
   {
     name: 'One Piece',
@@ -262,6 +265,9 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
       },
     ],
     piliers: ['joestar', 'stand', 'masque-de-pierre', 'fleche-du-stand'],
+    // LOT 4b : arbre généalogique (route en dur /u/jojo/arbre, même mécanique que « rangs » pour
+    // Naruto ci-dessus) — surface bespoke, pas une page d'axe générique.
+    extras: [{ href: '/learn/akasha/u/jojo/arbre', label: 'L’arbre Joestar', icon: '🌳' }],
   },
   {
     name: 'Initial D',
