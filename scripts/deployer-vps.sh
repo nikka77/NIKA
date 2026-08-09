@@ -11,7 +11,11 @@
 # Ce script fait donc les deux, et AFFICHE l'âge de chaque service après coup : un service plus
 # vieux que le dernier commit est un service qui ment sur la version qu'il exécute.
 #
-# Usage (depuis le Mac) : ssh root@100.75.38.126 'bash -s' < scripts/deployer-vps.sh
+# NE PAS L'APPELER DIRECTEMENT PAR SSH : le 09/08, Tailscale a fermé la connexion avant que ce
+# script ne démarre, et `ssh` a rendu 0 — un déploiement jamais fait, annoncé réussi. Passer par
+# `bash scripts/deployer.sh`, qui exige la SENTINELLE de fin ci-dessous avant de conclure.
+#
+# Usage (depuis le Mac) : bash scripts/deployer.sh
 set -u
 DEPOT=/home/nika/NIKA
 UNITES="nika-usine nika-juges nika-secretaire nika-arbitre"
@@ -45,4 +49,7 @@ for u in $UNITES; do
   fi
 done
 [ "$ECART" = 0 ] && echo "✓ tout tourne sur la version courante" || echo "⚠ au moins un service n'est pas à jour"
+# SENTINELLE — seule preuve que ce script a bien tourné jusqu'au bout sur le VPS. Le lanceur
+# (scripts/deployer.sh) refuse de conclure au succès sans elle : un canal muet ne vaut pas un oui.
+echo "DEPLOIEMENT-TERMINE $COMMIT"
 exit $ECART
