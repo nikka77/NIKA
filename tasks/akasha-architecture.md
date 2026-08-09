@@ -862,11 +862,25 @@ extraction `race`/`saga` depuis `descFr` (Dragon Ball). **Aucun lot front n'atte
 
 ---
 
-### LOT 7 — Différé, conditionnel
+### LOT 7 — LIVRÉ le 09/08/2026 (Dan : « go lot 7 », par WhatsApp)
 Repli générique de hub (« grille du monde ») pour un univers sans géographie curée, **et le test
 du 9ᵉ univers** : ajouter une entrée dans `UNIVERSE_TAXONOMY` doit suffire, sans écrire un seul
-composant de fiche. À construire à l'arrivée d'un 9ᵉ univers réel, pas avant (§8, question 1).
-**L'outil Chemin/BFS reste parqué** (§1.1, arbitrage D).
+composant de fiche. **L'outil Chemin/BFS reste parqué** (§1.1, arbitrage D).
+
+**Ce qui a été fait**, en levant la condition « pas avant le 9ᵉ univers » sur demande de Dan :
+· `lib/akasha/hub-surface.ts` — `deriveHubSurfaces` choisit la porte d'entrée par CAPACITÉ (carte
+  déclarée → signature déclarée → repli), jamais par slug. Même discipline que `deriveShape` du
+  LOT 2 : la fonction ne reçoit pas d'identité d'univers, elle ne peut donc pas en dépendre.
+· `components/akasha/hub/HubWorldGrid.tsx` — la grille, en langage v2 « zéro carte » : filets
+  horizontaux, chiffre en Bebas italique, barre proportionnelle. La première case pèse deux
+  colonnes. Aucune boîte, aucun coin arrondi.
+· `lib/akasha/hub-surface.test.ts` — 14 tests, dont la non-régression sur les huit univers réels
+  (leur porte est relue dans `HUB_VISUAL`, pas recopiée) et le 9ᵉ univers simulé sans entrée
+  `HUB_VISUAL`.
+· Éprouvé À L'ÉCRAN, pas seulement en test : la signature de Death Note a été retirée le temps
+  d'ouvrir son hub — la grille est montée sur l'axe Camps (6 valeurs, 42 fiches) — puis remise, et
+  le hub est revenu au duel Kira. Un composant qui ne rend nulle part n'est pas livré ; celui-ci a
+  été vu.
 
 ---
 

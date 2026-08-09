@@ -18,6 +18,8 @@ import HubSignature from '@/components/akasha/hub/HubSignature';
 import OnePieceMap from '@/components/akasha/hub/OnePieceMap';
 import DragonBallCards from '@/components/akasha/hub/DragonBallCards';
 import DragonBallCosmos from '@/components/akasha/hub/DragonBallCosmos';
+import HubWorldGrid from '@/components/akasha/hub/HubWorldGrid';
+import { deriveHubSurfaces, attrsConsommesParLaPorte } from '@/lib/akasha/hub-surface';
 import { VillageEmblem, ClanCrest, RankBadge, GenerationBadge } from '@/components/akasha/NarutoIcons';
 import { opAxisIcon } from '@/components/akasha/OnePieceIcons';
 import { dbAxisIcon } from '@/components/akasha/DragonBallIcons';
@@ -170,7 +172,13 @@ export default async function UniverseHubPage({ params }: Props) {
       return { ...axis, chips: [...curated, ...extras] };
     })
     .filter((axis) => axis.chips.length > 0);
-  const axes = axesAll.filter((axis) => !sigAttrs.includes(axis.attr));
+  // LOT 7 — la porte d'entrée est choisie par CAPACITÉ, jamais par slug : carte déclarée, sinon
+  // signature déclarée, sinon « la grille du monde » sur l'axe le mieux peuplé. Un 9ᵉ univers
+  // obtient ainsi une porte le jour de son arrivée, sans une ligne de plus ici
+  // (lib/akasha/hub-surface.ts, prouvé par hub-surface.test.ts).
+  const portes = deriveHubSurfaces({ map: vis?.map, signature: vis?.signature, axes: axesAll });
+  const attrsPorte = attrsConsommesParLaPorte(portes);
+  const axes = axesAll.filter((axis) => !sigAttrs.includes(axis.attr) && !attrsPorte.includes(axis.attr));
 
   const sectionTitle = { fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase' as const, color: m.color, marginBottom: 10, display: 'flex', alignItems: 'center', gap: 8 };
 
@@ -229,11 +237,18 @@ export default async function UniverseHubPage({ params }: Props) {
       </UniverseShell>
 
       {/* ── SURFACE SIGNATURE PLEIN CADRE (lot 3a) : la carte du monde EST la porte d'entrée ── */}
-      {(vis?.map || vis?.signature) && (
+      {portes.length > 0 && (
         <div className="ak-world-enter" style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(1.2rem,2.5vw,1.8rem) 1.4rem 0', display: 'flex', flexDirection: 'column', gap: '1.6rem' }}>
-          {vis?.map === 'op-world' && <OnePieceMap color={m.color} yonkoLive={yonkoLive} />}
-          {vis?.map === 'db-cosmos' && <DragonBallCosmos color={m.color} />}
-          {vis?.signature && <HubSignature signature={vis.signature} axes={axesAll} universe={taxo.name} color={m.color} bounties={bounties} />}
+          {portes.map((porte) => {
+            if (porte.kind === 'map') {
+              return porte.map === 'op-world'
+                ? <OnePieceMap key="op-world" color={m.color} yonkoLive={yonkoLive} />
+                : <DragonBallCosmos key="db-cosmos" color={m.color} />;
+            }
+            if (porte.kind === 'signature') return <HubSignature key={porte.signature} signature={porte.signature} axes={axesAll} universe={taxo.name} color={m.color} bounties={bounties} />;
+            const axe = axesAll.find((a) => a.attr === porte.attr);
+            return axe ? <HubWorldGrid key={porte.attr} label={porte.label} attr={porte.attr} cells={axe.chips} universeSlug={taxo.slug} color={m.color} /> : null;
+          })}
         </div>
       )}
 

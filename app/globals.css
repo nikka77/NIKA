@@ -1154,3 +1154,49 @@ ul { list-style: none; }
   display: flex; align-items: center; gap: 5px; font-family: var(--fo); font-size: 10px; font-weight: 600;
   color: var(--td3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
+
+/* ── LA GRILLE DU MONDE (lot 7) ── porte d'entrée d'un univers sans géographie curée.
+   Langage v2 « zéro carte » : aucune boîte, aucun coin arrondi, aucun fond plein sur la case.
+   Le maillage se dit par le fond de la grille qui transparaît dans le `gap: 1px` — un filet, pas
+   une bordure ; c'est la même grammaire que les hairlines de `.ak-list-row`. */
+.ak-worldgrid-cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 2px 16px;
+  text-decoration: none;
+  border-top: 2px solid color-mix(in srgb, var(--wc) 55%, transparent);
+  transition: background 0.18s ease, border-top-color 0.18s ease;
+}
+.ak-worldgrid-cell:hover,
+.ak-worldgrid-cell:focus-visible { border-top-color: var(--wc); }
+.ak-worldgrid-cell:hover .ak-worldgrid-l,
+.ak-worldgrid-cell:focus-visible .ak-worldgrid-l { color: var(--td); }
+.ak-worldgrid-n {
+  font-family: var(--fe);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(26px, 3.4vw, 44px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  color: var(--wc);
+  font-variant-numeric: tabular-nums;
+}
+.ak-worldgrid-l {
+  font-family: var(--fo);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--td2);
+  line-height: 1.25;
+}
+/* Le poids relatif, en typographie de trait : la longueur du filet EST la donnée. */
+.ak-worldgrid-bar {
+  margin-top: 8px;
+  height: 2px;
+  width: var(--wp, 0%);
+  background: color-mix(in srgb, var(--wc) 60%, transparent);
+}
+@media (max-width: 640px) {
+  .ak-worldgrid-cell { padding: 12px 2px 14px; }
+}
