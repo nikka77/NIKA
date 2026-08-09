@@ -14,8 +14,15 @@ export async function fenetreOuverte(margeHeures = 1) {
   // l'échange réussi (`whatsapp`). Se fonder sur le seul échange réussi rendait le système aveugle
   // exactement quand il était en panne : quatre jours durant, les réponses échouaient, aucun
   // échange ne s'enregistrait, et tout partait au parc « fenêtre fermée » alors que Dan écrivait.
+  //
+  // ET `wa_fenetre` (09/08/2026), qui manquait — c'est la trace posée quand un message « Claude
+  // ici » est routé vers la session. Les messages qui M'ÉTAIENT ADRESSÉS étaient donc exactement
+  // ceux qui ne comptaient pas comme preuve de réception : Dan écrivait, je voyais son message, et
+  // ma réponse partait au parc « fenêtre fermée » alors qu'elle venait de s'ouvrir. `wa_entrant`
+  // ne compense pas : il est écrit par le webhook Vercel, dont le correctif n'est pas déployé.
+  // Toute note qui PROUVE une réception ouvre la fenêtre — peu importe qui l'a écrite.
   const { data } = await sb.from('ops_notes').select('content')
-    .in('source', ['whatsapp', 'wa_entrant'])
+    .in('source', ['whatsapp', 'wa_entrant', 'wa_fenetre'])
     .order('id', { ascending: false }).limit(5);
   const derniere = (data ?? []).reduce((max, n) => {
     try { return Math.max(max, Number(JSON.parse(n.content ?? '{}').a ?? 0)); } catch { return max; }
