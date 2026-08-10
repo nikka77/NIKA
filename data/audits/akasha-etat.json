@@ -1,0 +1,291 @@
+{
+ "chantier": "état des lieux AKASHA",
+ "quand": "2026-08-10T07:49:03.553Z",
+ "total": 7632,
+ "relations": 16388,
+ "sections": 19099,
+ "global": {
+  "sansImage": 818,
+  "sansDescFr": 454,
+  "sansResume": 29,
+  "resumeRemplissage": 420,
+  "isolees": 951,
+  "sansDossier": 2862,
+  "descriptionRedondante": 5,
+  "descriptionAbsente": 7599
+ },
+ "parUnivers": {
+  "Naruto": {
+   "fiches": 3308,
+   "sansImage": 305,
+   "sansDescFr": 167,
+   "sansResume": 29,
+   "resumeRemplissage": 6,
+   "sansDossier": 1895,
+   "isolees": 117,
+   "axes": [
+    {
+     "attr": "village",
+     "label": "Villages",
+     "fiches": 756,
+     "valeurs": 8,
+     "horsListe": 0
+    },
+    {
+     "attr": "clan",
+     "label": "Clans",
+     "fiches": 230,
+     "valeurs": 45,
+     "horsListe": 0
+    },
+    {
+     "attr": "organization",
+     "label": "Organisations",
+     "fiches": 221,
+     "valeurs": 40,
+     "horsListe": 0
+    },
+    {
+     "attr": "equipe",
+     "label": "Équipes",
+     "fiches": 189,
+     "valeurs": 66,
+     "horsListe": 0
+    },
+    {
+     "attr": "division",
+     "label": "Divisions de la Guerre",
+     "fiches": 61,
+     "valeurs": 18,
+     "horsListe": 0
+    },
+    {
+     "attr": "rank",
+     "label": "Rangs ninja",
+     "fiches": 473,
+     "valeurs": 11,
+     "horsListe": 4
+    },
+    {
+     "attr": "generation",
+     "label": "Générations",
+     "fiches": 49,
+     "valeurs": 5,
+     "horsListe": 0
+    }
+   ]
+  },
+  "Bleach": {
+   "fiches": 382,
+   "sansImage": 63,
+   "sansDescFr": 14,
+   "sansResume": 0,
+   "resumeRemplissage": 0,
+   "sansDossier": 111,
+   "isolees": 46,
+   "axes": [
+    {
+     "attr": "race",
+     "label": "Races spirituelles",
+     "fiches": 100,
+     "valeurs": 10,
+     "horsListe": 3
+    },
+    {
+     "attr": "monde",
+     "label": "Mondes",
+     "fiches": 171,
+     "valeurs": 4,
+     "horsListe": 0
+    },
+    {
+     "attr": "division",
+     "label": "Gotei 13",
+     "fiches": 47,
+     "valeurs": 13,
+     "horsListe": 0
+    }
+   ]
+  },
+  "Hunter x Hunter": {
+   "fiches": 215,
+   "sansImage": 0,
+   "sansDescFr": 0,
+   "sansResume": 0,
+   "resumeRemplissage": 0,
+   "sansDossier": 21,
+   "isolees": 31,
+   "axes": [
+    {
+     "attr": "nen",
+     "label": "Types de Nen",
+     "fiches": 51,
+     "valeurs": 6,
+     "horsListe": 0
+    }
+   ]
+  },
+  "JoJo's Bizarre Adventure": {
+   "fiches": 233,
+   "sansImage": 6,
+   "sansDescFr": 0,
+   "sansResume": 0,
+   "resumeRemplissage": 1,
+   "sansDossier": 37,
+   "isolees": 49,
+   "axes": [
+    {
+     "attr": "partie",
+     "label": "Parties",
+     "fiches": 221,
+     "valeurs": 7,
+     "horsListe": 0
+    }
+   ]
+  },
+  "Dragon Ball": {
+   "fiches": 1137,
+   "sansImage": 40,
+   "sansDescFr": 61,
+   "sansResume": 0,
+   "resumeRemplissage": 410,
+   "sansDossier": 333,
+   "isolees": 148,
+   "axes": [
+    {
+     "attr": "race",
+     "label": "Races",
+     "fiches": 105,
+     "valeurs": 11,
+     "horsListe": 4
+    },
+    {
+     "attr": "saga",
+     "label": "Sagas",
+     "fiches": 128,
+     "valeurs": 5,
+     "horsListe": 0
+    }
+   ]
+  },
+  "One Piece": {
+   "fiches": 2229,
+   "sansImage": 401,
+   "sansDescFr": 210,
+   "sansResume": 0,
+   "resumeRemplissage": 3,
+   "sansDossier": 455,
+   "isolees": 539,
+   "axes": [
+    {
+     "attr": "faction",
+     "label": "Factions",
+     "fiches": 515,
+     "valeurs": 5,
+     "horsListe": 0
+    },
+    {
+     "attr": "crew",
+     "label": "Équipages",
+     "fiches": 358,
+     "valeurs": 41,
+     "horsListe": 12
+    },
+    {
+     "attr": "fruit_type",
+     "label": "Types de Fruit du Démon",
+     "fiches": 279,
+     "valeurs": 7,
+     "horsListe": 1
+    },
+    {
+     "attr": "meito_grade",
+     "label": "Grades de sabre (Meito)",
+     "fiches": 14,
+     "valeurs": 3,
+     "horsListe": 0
+    }
+   ]
+  },
+  "Initial D": {
+   "fiches": 44,
+   "sansImage": 2,
+   "sansDescFr": 2,
+   "sansResume": 0,
+   "resumeRemplissage": 0,
+   "sansDossier": 2,
+   "isolees": 10,
+   "axes": [
+    {
+     "attr": "affiliation",
+     "label": "Écuries",
+     "fiches": 18,
+     "valeurs": 5,
+     "horsListe": 0
+    },
+    {
+     "attr": "col",
+     "label": "Cols",
+     "fiches": 23,
+     "valeurs": 5,
+     "horsListe": 0
+    }
+   ]
+  },
+  "Death Note": {
+   "fiches": 84,
+   "sansImage": 1,
+   "sansDescFr": 0,
+   "sansResume": 0,
+   "resumeRemplissage": 0,
+   "sansDossier": 8,
+   "isolees": 11,
+   "axes": [
+    {
+     "attr": "camp",
+     "label": "Camps",
+     "fiches": 42,
+     "valeurs": 6,
+     "horsListe": 0
+    }
+   ]
+  }
+ },
+ "parType": {
+  "character": {
+   "fiches": 4031,
+   "sansImage": 0,
+   "isolees": 663
+  },
+  "power": {
+   "fiches": 2359,
+   "sansImage": 418,
+   "isolees": 30
+  },
+  "place": {
+   "fiches": 333,
+   "sansImage": 83,
+   "isolees": 104
+  },
+  "status": {
+   "fiches": 330,
+   "sansImage": 87,
+   "isolees": 51
+  },
+  "skill": {
+   "fiches": 80,
+   "sansImage": 17,
+   "isolees": 2
+  },
+  "artifact": {
+   "fiches": 400,
+   "sansImage": 127,
+   "isolees": 99
+  },
+  "profession": {
+   "fiches": 99,
+   "sansImage": 86,
+   "isolees": 2
+  }
+ }
+}
