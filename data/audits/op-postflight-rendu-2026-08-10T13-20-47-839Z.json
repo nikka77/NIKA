@@ -1,0 +1,2211 @@
+{
+ "quand": "2026-08-10T13:21:16.638Z",
+ "base": "http://localhost:3000",
+ "traceLue": "data/audits/isolees-html-one-piece-trace-2026-08-10T13-18-05-781Z.json",
+ "ecritEnBase": false,
+ "fichesDesisolees": 84,
+ "pagesOuvertes": 84,
+ "seVoient": 84,
+ "muettes": 0,
+ "aretesTraceAbsentesDeLaBase": 0,
+ "resultats": [
+  {
+   "slug": "tokijiro",
+   "nom": "Tokijiro",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/tokijiro",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "yuu",
+   "nom": "Yuu",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Loguetown",
+     "versSlug": "loguetown-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/yuu",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Loguetown",
+     "versSlug": "loguetown-lieu",
+     "versType": "place",
+     "chip": "Réside · Loguetown",
+     "attendu": "Réside · Loguetown"
+    }
+   ]
+  },
+  {
+   "slug": "jibuemon",
+   "nom": "Jibuemon",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/jibuemon",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "pythagoras",
+   "nom": "Pythagoras",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Marine",
+     "versSlug": "marine",
+     "versType": "status"
+    },
+    {
+     "relation": "habite",
+     "vers": "Egghead",
+     "versSlug": "egghead",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/pythagoras",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Marine",
+     "versSlug": "marine",
+     "versType": "status",
+     "chip": "Appartient à · Marine",
+     "attendu": "Appartient à · Marine"
+    },
+    {
+     "relation": "habite",
+     "vers": "Egghead",
+     "versSlug": "egghead",
+     "versType": "place",
+     "chip": "Réside · Egghead",
+     "attendu": "Réside · Egghead"
+    }
+   ]
+  },
+  {
+   "slug": "genrin",
+   "nom": "Genrin",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/genrin",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "kimi",
+   "nom": "Île Jaune d'Œuf",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kimi",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "potato-op",
+   "nom": "Île Patate",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/potato-op",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "jiro",
+   "nom": "Jiro",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage du Phoenix",
+     "versSlug": "l-equipage-du-phoenix",
+     "versType": "status"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Pirate",
+     "versSlug": "pirate",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/jiro",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage du Phoenix",
+     "versSlug": "l-equipage-du-phoenix",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage du Phoenix",
+     "attendu": "Appartient à · L’équipage du Phoenix"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Pirate",
+     "versSlug": "pirate",
+     "versType": "profession",
+     "chip": "Exerce · Pirate",
+     "attendu": "Exerce · Pirate"
+    }
+   ]
+  },
+  {
+   "slug": "jiron",
+   "nom": "Jiron",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Armée Révolutionnaire",
+     "versSlug": "armee-revolutionnaire",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/jiron",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Armée Révolutionnaire",
+     "versSlug": "armee-revolutionnaire",
+     "versType": "status",
+     "chip": "Appartient à · Armée Révolutionnaire",
+     "attendu": "Appartient à · Armée Révolutionnaire"
+    }
+   ]
+  },
+  {
+   "slug": "inoichibannosuke",
+   "nom": "Inoichibannosuke",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/inoichibannosuke",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "sennorikyuru",
+   "nom": "Sennorikyuru",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/sennorikyuru",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "yuya",
+   "nom": "Yuya",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/yuya",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Réside · Water Seven",
+     "attendu": "Réside · Water Seven"
+    }
+   ]
+  },
+  {
+   "slug": "kobe",
+   "nom": "Kobe",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Marine",
+     "versSlug": "marine",
+     "versType": "status"
+    },
+    {
+     "relation": "appartient",
+     "vers": "L’équipage d’Alvida",
+     "versSlug": "l-equipage-d-alvida",
+     "versType": "status"
+    },
+    {
+     "relation": "habite",
+     "vers": "Shells Town",
+     "versSlug": "shells-town-op",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kobe",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Marine",
+     "versSlug": "marine",
+     "versType": "status",
+     "chip": "Appartient à · Marine",
+     "attendu": "Appartient à · Marine"
+    },
+    {
+     "relation": "appartient",
+     "vers": "L’équipage d’Alvida",
+     "versSlug": "l-equipage-d-alvida",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage d’Alvida",
+     "attendu": "Appartient à · L’équipage d’Alvida"
+    },
+    {
+     "relation": "habite",
+     "vers": "Shells Town",
+     "versSlug": "shells-town-op",
+     "versType": "place",
+     "chip": "Réside · Shells Town",
+     "attendu": "Réside · Shells Town"
+    }
+   ]
+  },
+  {
+   "slug": "kinbo",
+   "nom": "Kinbo",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kinbo",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "noah",
+   "nom": "Noah",
+   "type": "artifact",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Île des Hommes-Poissons",
+     "versSlug": "fishman-island",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/noah",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Île des Hommes-Poissons",
+     "versSlug": "fishman-island",
+     "versType": "place",
+     "chip": "Appartient à · Île des Hommes-Poissons",
+     "attendu": "Appartient à · Île des Hommes-Poissons"
+    }
+   ]
+  },
+  {
+   "slug": "kuni",
+   "nom": "Kuni",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kuni",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "azuki",
+   "nom": "Azuki",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/azuki",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "linaria",
+   "nom": "Linaria",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage du Roux",
+     "versSlug": "l-equipage-du-roux",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/linaria",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage du Roux",
+     "versSlug": "l-equipage-du-roux",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage du Roux",
+     "attendu": "Appartient à · L’équipage du Roux"
+    }
+   ]
+  },
+  {
+   "slug": "tanega",
+   "nom": "Île Graine",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/tanega",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "bingo",
+   "nom": "Bingo",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/bingo",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "loving",
+   "nom": "Île Amour",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/loving",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "anba",
+   "nom": "Anba",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/anba",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "cheese",
+   "nom": "Île Fromage",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/cheese",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "100-island",
+   "nom": "Île 100 %",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/100-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "jelly",
+   "nom": "Île Gelée",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/jelly",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "kibo",
+   "nom": "Île Levure",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kibo",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "yukiryu-island",
+   "nom": "Île Yukiryu",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Grand Line",
+     "versSlug": "grand-line",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/yukiryu-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Grand Line",
+     "versSlug": "grand-line",
+     "versType": "place",
+     "chip": "Appartient à · Grand Line",
+     "attendu": "Appartient à · Grand Line"
+    }
+   ]
+  },
+  {
+   "slug": "koito",
+   "nom": "Koito",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/koito",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "footbianco",
+   "nom": "Footbianco",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/footbianco",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Réside · Water Seven",
+     "attendu": "Réside · Water Seven"
+    }
+   ]
+  },
+  {
+   "slug": "kinko",
+   "nom": "Île Coffre",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kinko",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "kop",
+   "nom": "Kop",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kop",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Réside · Water Seven",
+     "attendu": "Réside · Water Seven"
+    }
+   ]
+  },
+  {
+   "slug": "sutton",
+   "nom": "Sutton",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage du Phoenix",
+     "versSlug": "l-equipage-du-phoenix",
+     "versType": "status"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Pirate",
+     "versSlug": "pirate",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/sutton",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage du Phoenix",
+     "versSlug": "l-equipage-du-phoenix",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage du Phoenix",
+     "attendu": "Appartient à · L’équipage du Phoenix"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Pirate",
+     "versSlug": "pirate",
+     "versType": "profession",
+     "chip": "Exerce · Pirate",
+     "attendu": "Exerce · Pirate"
+    }
+   ]
+  },
+  {
+   "slug": "monder-charlotte",
+   "nom": "Monder Charlotte",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Pirate",
+     "versSlug": "pirate",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/monder-charlotte",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Pirate",
+     "versSlug": "pirate",
+     "versType": "profession",
+     "chip": "Exerce · Pirate",
+     "attendu": "Exerce · Pirate"
+    }
+   ]
+  },
+  {
+   "slug": "jam",
+   "nom": "Île Confiture",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/jam",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "tibany",
+   "nom": "Tibany",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Kedétrav",
+     "versSlug": "momoiro-island",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/tibany",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Kedétrav",
+     "versSlug": "momoiro-island",
+     "versType": "place",
+     "chip": "Réside · Kedétrav",
+     "attendu": "Réside · Kedétrav"
+    }
+   ]
+  },
+  {
+   "slug": "mekao",
+   "nom": "Mekao",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Marine",
+     "versSlug": "marine",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/mekao",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Marine",
+     "versSlug": "marine",
+     "versType": "status",
+     "chip": "Appartient à · Marine",
+     "attendu": "Appartient à · Marine"
+    }
+   ]
+  },
+  {
+   "slug": "white-tiger",
+   "nom": "White Tiger",
+   "type": "artifact",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Néo Marine",
+     "versSlug": "neo-marine",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/white-tiger",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Néo Marine",
+     "versSlug": "neo-marine",
+     "versType": "status",
+     "chip": "Appartient à · Néo Marine",
+     "attendu": "Appartient à · Néo Marine"
+    }
+   ]
+  },
+  {
+   "slug": "fruits",
+   "nom": "Fruits",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/fruits",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "kamekichi",
+   "nom": "Kamekichi",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kamekichi",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "chihaya",
+   "nom": "Chihaya",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/chihaya",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "hidayu",
+   "nom": "Hidayu",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/hidayu",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "bouche",
+   "nom": "Bouche",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/bouche",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "dago",
+   "nom": "Dago",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/dago",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Réside · Water Seven",
+     "attendu": "Réside · Water Seven"
+    }
+   ]
+  },
+  {
+   "slug": "fugar",
+   "nom": "Fugar",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage du Roux",
+     "versSlug": "l-equipage-du-roux",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/fugar",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage du Roux",
+     "versSlug": "l-equipage-du-roux",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage du Roux",
+     "attendu": "Appartient à · L’équipage du Roux"
+    }
+   ]
+  },
+  {
+   "slug": "gatherine",
+   "nom": "Gatherine",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Gouvernement Mondial",
+     "versSlug": "gouvernement-mondial",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/gatherine",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Gouvernement Mondial",
+     "versSlug": "gouvernement-mondial",
+     "versType": "status",
+     "chip": "Appartient à · Gouvernement Mondial",
+     "attendu": "Appartient à · Gouvernement Mondial"
+    }
+   ]
+  },
+  {
+   "slug": "sanshoku",
+   "nom": "Île Tricolore",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/sanshoku",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "ukon",
+   "nom": "Ukon",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/ukon",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "hanko",
+   "nom": "Hanko",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/hanko",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "scrap-island",
+   "nom": "Île Scrap",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/scrap-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Appartient à · Water Seven",
+     "attendu": "Appartient à · Water Seven"
+    }
+   ]
+  },
+  {
+   "slug": "funwari",
+   "nom": "Île Moelleuse",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/funwari",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "iyan-eno-chinode",
+   "nom": "Iyan'eno Chinode",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "World Economic Journal",
+     "versSlug": "world-economic-journal",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/iyan-eno-chinode",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "World Economic Journal",
+     "versSlug": "world-economic-journal",
+     "versType": "status",
+     "chip": "Appartient à · World Economic Journal",
+     "attendu": "Appartient à · World Economic Journal"
+    }
+   ]
+  },
+  {
+   "slug": "ginnosuke",
+   "nom": "Ginnosuke",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/ginnosuke",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "hara",
+   "nom": "Hara",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/hara",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "zaba",
+   "nom": "Zaba",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage des Pirates du Sables",
+     "versSlug": "l-equipage-des-pirates-du-sables",
+     "versType": "status"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Pirate",
+     "versSlug": "pirate",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/zaba",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage des Pirates du Sables",
+     "versSlug": "l-equipage-des-pirates-du-sables",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage des Pirates du Sables",
+     "attendu": "Appartient à · L’équipage des Pirates du Sables"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Pirate",
+     "versSlug": "pirate",
+     "versType": "profession",
+     "chip": "Exerce · Pirate",
+     "attendu": "Exerce · Pirate"
+    }
+   ]
+  },
+  {
+   "slug": "humphrey",
+   "nom": "Humphrey",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Archipel Sabaody",
+     "versSlug": "sabaody",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/humphrey",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Archipel Sabaody",
+     "versSlug": "sabaody",
+     "versType": "place",
+     "chip": "Réside · Archipel Sabaody",
+     "attendu": "Réside · Archipel Sabaody"
+    }
+   ]
+  },
+  {
+   "slug": "acacia",
+   "nom": "Acacia",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Dressrosa",
+     "versSlug": "dressrosa-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/acacia",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Dressrosa",
+     "versSlug": "dressrosa-lieu",
+     "versType": "place",
+     "chip": "Appartient à · Dressrosa",
+     "attendu": "Appartient à · Dressrosa"
+    }
+   ]
+  },
+  {
+   "slug": "inukai",
+   "nom": "Inukai",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/inukai",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "pekkori",
+   "nom": "Pekkori",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Île Namakura",
+     "versSlug": "namakura-island",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/pekkori",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Île Namakura",
+     "versSlug": "namakura-island",
+     "versType": "place",
+     "chip": "Réside · Île Namakura",
+     "attendu": "Réside · Île Namakura"
+    }
+   ]
+  },
+  {
+   "slug": "jorge",
+   "nom": "Jorge",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Gouvernement Mondial",
+     "versSlug": "gouvernement-mondial",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/jorge",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Gouvernement Mondial",
+     "versSlug": "gouvernement-mondial",
+     "versType": "status",
+     "chip": "Appartient à · Gouvernement Mondial",
+     "attendu": "Appartient à · Gouvernement Mondial"
+    }
+   ]
+  },
+  {
+   "slug": "moore",
+   "nom": "Moore",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Marine",
+     "versSlug": "marine",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/moore",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Marine",
+     "versSlug": "marine",
+     "versType": "status",
+     "chip": "Appartient à · Marine",
+     "attendu": "Appartient à · Marine"
+    }
+   ]
+  },
+  {
+   "slug": "mishoin-cashible",
+   "nom": "Mishoin Cashible",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/mishoin-cashible",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Réside · Water Seven",
+     "attendu": "Réside · Water Seven"
+    }
+   ]
+  },
+  {
+   "slug": "dotaku",
+   "nom": "Dotaku",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/dotaku",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "ange",
+   "nom": "Ange",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Elbaf",
+     "versSlug": "elbaf",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/ange",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Elbaf",
+     "versSlug": "elbaf",
+     "versType": "place",
+     "chip": "Réside · Elbaf",
+     "attendu": "Réside · Elbaf"
+    }
+   ]
+  },
+  {
+   "slug": "tate",
+   "nom": "Tate",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Barbe Blanche",
+     "versSlug": "l-equipage-de-barbe-blanche",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/tate",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Barbe Blanche",
+     "versSlug": "l-equipage-de-barbe-blanche",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Barbe Blanche",
+     "attendu": "Appartient à · L’équipage de Barbe Blanche"
+    }
+   ]
+  },
+  {
+   "slug": "suke",
+   "nom": "Suke",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/suke",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "rainbase",
+   "nom": "Rainbase",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Alabasta",
+     "versSlug": "alabasta-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/rainbase",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Alabasta",
+     "versSlug": "alabasta-lieu",
+     "versType": "place",
+     "chip": "Appartient à · Alabasta",
+     "attendu": "Appartient à · Alabasta"
+    }
+   ]
+  },
+  {
+   "slug": "package",
+   "nom": "Île Paquet",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/package",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "komugi-op",
+   "nom": "Île Blé",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/komugi-op",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "happa-yamao",
+   "nom": "Happa Yamao",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/happa-yamao",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Réside · Water Seven",
+     "attendu": "Réside · Water Seven"
+    }
+   ]
+  },
+  {
+   "slug": "sho",
+   "nom": "Sho",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/sho",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Réside · Water Seven",
+     "attendu": "Réside · Water Seven"
+    }
+   ]
+  },
+  {
+   "slug": "kumagoro",
+   "nom": "Kumagoro",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kumagoro",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "tete-de-maquereau",
+   "nom": "Tête-de-Maquereau",
+   "type": "artifact",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Baratie",
+     "versSlug": "baratie-one-piece",
+     "versType": "artifact"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/tete-de-maquereau",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Baratie",
+     "versSlug": "baratie-one-piece",
+     "versType": "artifact",
+     "chip": "Appartient à · Baratie",
+     "attendu": "Appartient à · Baratie"
+    }
+   ]
+  },
+  {
+   "slug": "tomozo",
+   "nom": "Tomozo",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/tomozo",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "nuts",
+   "nom": "Île aux Noix",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/nuts",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "L’équipage de Big Mom",
+     "versSlug": "l-equipage-de-big-mom",
+     "versType": "status",
+     "chip": "Appartient à · L’équipage de Big Mom",
+     "attendu": "Appartient à · L’équipage de Big Mom"
+    }
+   ]
+  },
+  {
+   "slug": "kibin",
+   "nom": "Kibin",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Marine",
+     "versSlug": "marine",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kibin",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Marine",
+     "versSlug": "marine",
+     "versType": "status",
+     "chip": "Appartient à · Marine",
+     "attendu": "Appartient à · Marine"
+    }
+   ]
+  },
+  {
+   "slug": "kyukyu",
+   "nom": "Kyukyu",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kyukyu",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Réside · Water Seven",
+     "attendu": "Réside · Water Seven"
+    }
+   ]
+  },
+  {
+   "slug": "mato",
+   "nom": "Mato",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Elbaf",
+     "versSlug": "elbaf",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/mato",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Elbaf",
+     "versSlug": "elbaf",
+     "versType": "place",
+     "chip": "Réside · Elbaf",
+     "attendu": "Réside · Elbaf"
+    }
+   ]
+  },
+  {
+   "slug": "gattenshochinosukeo",
+   "nom": "Gattenshochinosukeo",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/gattenshochinosukeo",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "kisegawa",
+   "nom": "Kisegawa",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kisegawa",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "rakuda",
+   "nom": "Rakuda",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/rakuda",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "elumalu",
+   "nom": "Elumalu",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Alabasta",
+     "versSlug": "alabasta-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/elumalu",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Alabasta",
+     "versSlug": "alabasta-lieu",
+     "versType": "place",
+     "chip": "Appartient à · Alabasta",
+     "attendu": "Appartient à · Alabasta"
+    }
+   ]
+  },
+  {
+   "slug": "kakukaku",
+   "nom": "Kakukaku",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kakukaku",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Réside · Water Seven",
+     "attendu": "Réside · Water Seven"
+    }
+   ]
+  },
+  {
+   "slug": "kakunoshin",
+   "nom": "Kakunoshin",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kakunoshin",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Pays de Wano",
+     "versSlug": "wano",
+     "versType": "place",
+     "chip": "Réside · Pays de Wano",
+     "attendu": "Réside · Pays de Wano"
+    }
+   ]
+  },
+  {
+   "slug": "schollzo",
+   "nom": "Schollzo",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/schollzo",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Réside · Water Seven",
+     "attendu": "Réside · Water Seven"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1152 @@
+{
+ "quand": "2026-08-10T13:01:54.389Z",
+ "instantane": "/private/tmp/claude-501/-Users-macbookprom1pro-Library-Mobile-Documents-com-apple-CloudDocs-NIKA/17f2db71-7c38-4eb1-aad2-72e629329d0d/scratchpad/corpus-2026-08-10T12-54-38Z.json",
+ "socle": {
+  "fiches": 7654,
+  "aretes": 16788
+ },
+ "imageUrlParGabarit": {
+  "EntityZone": 2110,
+  "CharacterZone": 4030,
+  "Attaque": 504,
+  "OrganizationZone": 260,
+  "rendue": [
+   "CharacterZone",
+   "EntityZone"
+  ],
+  "jamaisRendue": [
+   "OrganizationZone",
+   "Attaque"
+  ]
+ },
+ "clesMuettes": [
+  {
+   "cle": "descFrSource",
+   "peuplees": 4167,
+   "vues": 0,
+   "muettes": 4167,
+   "muettesParGabarit": {
+    "EntityZone": 2153,
+    "CharacterZone": 1140,
+    "Attaque": 565,
+    "OrganizationZone": 309
+   },
+   "exemples": [
+    "ninja-info-cards (artifact/EntityZone) = deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "hikaru (character/CharacterZone) = deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "marchen (artifact/EntityZone) = deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo"
+   ]
+  },
+  {
+   "cle": "descLang",
+   "peuplees": 3284,
+   "vues": 0,
+   "muettes": 3284,
+   "muettesParGabarit": {
+    "CharacterZone": 3046,
+    "EntityZone": 238
+   },
+   "exemples": [
+    "gou-koga (character/CharacterZone) = en",
+    "fruit-de-la-force (power/EntityZone) = fr",
+    "homing-donquixote (character/CharacterZone) = en"
+   ]
+  },
+  {
+   "cle": "descRaw",
+   "peuplees": 3279,
+   "vues": 0,
+   "muettes": 3279,
+   "muettesParGabarit": {
+    "CharacterZone": 3046,
+    "EntityZone": 233
+   },
+   "exemples": [
+    "gou-koga (character/CharacterZone) = Gou Koga is a large and bulky man who resembles a punkish biker with s",
+    "fruit-de-la-force (power/EntityZone) = C'est un fruit qui permet à celui qui l'a mangé de d'acquérir une forc",
+    "homing-donquixote (character/CharacterZone) = Donquixote Homing is the deceased husband of Matriarch and father of D"
+   ]
+  },
+  {
+   "cle": "role",
+   "peuplees": 2678,
+   "vues": 0,
+   "muettes": 2678,
+   "muettesParGabarit": {
+    "CharacterZone": 2678
+   },
+   "exemples": [
+    "gou-koga (character/CharacterZone) = Personnage secondaire",
+    "homing-donquixote (character/CharacterZone) = Personnage secondaire",
+    "daifugo (character/CharacterZone) = Personnage secondaire"
+   ]
+  },
+  {
+   "cle": "sex",
+   "peuplees": 1268,
+   "vues": 0,
+   "muettes": 1268,
+   "muettesParGabarit": {
+    "CharacterZone": 1268
+   },
+   "exemples": [
+    "hikaru (character/CharacterZone) = Male",
+    "tsukushi (character/CharacterZone) = Male",
+    "yuga (character/CharacterZone) = Male"
+   ]
+  },
+  {
+   "cle": "source",
+   "peuplees": 659,
+   "vues": 0,
+   "muettes": 659,
+   "muettesParGabarit": {
+    "Attaque": 659
+   },
+   "exemples": [
+    "atk-db-justice-pose-1 (power/Attaque) = fandom",
+    "atk-db-chou-maretsugeki (power/Attaque) = fandom",
+    "atk-db-ki-sense (power/Attaque) = fandom"
+   ]
+  },
+  {
+   "cle": "occupation",
+   "peuplees": 440,
+   "vues": 0,
+   "muettes": 440,
+   "muettesParGabarit": {
+    "CharacterZone": 440
+   },
+   "exemples": [
+    "pearl (character/CharacterZone) = Captaine (2e bataillon)",
+    "chouchou (character/CharacterZone) = Propriétaire d'un magasin",
+    "mascarpone-charlotte (character/CharacterZone) = Officier"
+   ]
+  },
+  {
+   "cle": "equipe",
+   "peuplees": 187,
+   "vues": 0,
+   "muettes": 187,
+   "muettesParGabarit": {
+    "CharacterZone": 187
+   },
+   "exemples": [
+    "yuga (character/CharacterZone) = Haze Quadruplets",
+    "might-guy (character/CharacterZone) = Team Chōza",
+    "chocho-akimichi (character/CharacterZone) = Team 10"
+   ]
+  },
+  {
+   "cle": "monde",
+   "peuplees": 171,
+   "vues": 0,
+   "muettes": 171,
+   "muettesParGabarit": {
+    "CharacterZone": 171
+   },
+   "exemples": [
+    "gou-koga (character/CharacterZone) = Terre · Karakura",
+    "jidanbou-ikkanzaka (character/CharacterZone) = Soul Society",
+    "menoly-mallia (character/CharacterZone) = Hueco Mundo"
+   ]
+  },
+  {
+   "cle": "saga",
+   "peuplees": 128,
+   "vues": 0,
+   "muettes": 128,
+   "muettesParGabarit": {
+    "CharacterZone": 128
+   },
+   "exemples": [
+    "pui-pui (character/CharacterZone) = Saga Buu",
+    "iwne (character/CharacterZone) = Saga Super",
+    "yakon (character/CharacterZone) = Saga Buu"
+   ]
+  },
+  {
+   "cle": "roman_name",
+   "peuplees": 380,
+   "vues": 297,
+   "muettes": 83,
+   "muettesParGabarit": {
+    "OrganizationZone": 83
+   },
+   "exemples": [
+    "l-equipage-des-maquereaux (status/OrganizationZone) = Makuro Ichimi",
+    "l-equipage-de-ganzack (status/OrganizationZone) = Gyanzakku Kaizokudan",
+    "l-equipage-aux-cent-betes (status/OrganizationZone) = Hyakujū Kaizokudan"
+   ]
+  },
+  {
+   "cle": "descFrPurgee",
+   "peuplees": 72,
+   "vues": 0,
+   "muettes": 72,
+   "muettesParGabarit": {
+    "CharacterZone": 62,
+    "EntityZone": 8,
+    "Attaque": 1,
+    "OrganizationZone": 1
+   },
+   "exemples": [
+    "fu-yamanaka (character/CharacterZone) = texte d'ino-yamanaka retiré le 08/08 (contamination) — à re-rédiger de",
+    "frog (character/CharacterZone) = balayage anti-corruption 03/08",
+    "sakon (power/EntityZone) = biographie du ninja Sakon retirée le 10/08 — la fiche est typée pouvoi"
+   ]
+  },
+  {
+   "cle": "fruit_type",
+   "peuplees": 280,
+   "vues": 210,
+   "muettes": 70,
+   "muettesParGabarit": {
+    "CharacterZone": 70
+   },
+   "exemples": [
+    "galdino (character/CharacterZone) = Paramecia",
+    "kaku (character/CharacterZone) = Zoan",
+    "monkey-d-luffy (character/CharacterZone) = Paramecia"
+   ]
+  },
+  {
+   "cle": "trivia",
+   "peuplees": 47,
+   "vues": 0,
+   "muettes": 47,
+   "muettesParGabarit": {
+    "OrganizationZone": 23,
+    "CharacterZone": 19,
+    "EntityZone": 5
+   },
+   "exemples": [
+    "hozuki (status/OrganizationZone) = [\"Le nom « Hōzuki » (鬼灯) désigne l'alkékenge, ou « lanterne chinoise »",
+    "monkey-d-luffy (character/CharacterZone) = [\"Son « Gomu Gomu no Mi » est en réalité le Hito Hito no Mi modèle Nik",
+    "aburame (status/OrganizationZone) = [\"Le clan Aburame fonde toute son identité sur le lien entomologique :"
+   ]
+  },
+  {
+   "cle": "powerLevel",
+   "peuplees": 41,
+   "vues": 0,
+   "muettes": 41,
+   "muettesParGabarit": {
+    "CharacterZone": 41
+   },
+   "exemples": [
+    "toma (character/CharacterZone) = Saiyan de classe inférieure (~1 500 d'unités)",
+    "lakasei (character/CharacterZone) = Sbire de Turles, combine sa puissance avec Rasin",
+    "spopovitch (character/CharacterZone) = Humain dope par la magie de Babidi"
+   ]
+  },
+  {
+   "cle": "facts",
+   "peuplees": 35,
+   "vues": 0,
+   "muettes": 35,
+   "muettesParGabarit": {
+    "OrganizationZone": 23,
+    "EntityZone": 12
+   },
+   "exemples": [
+    "hozuki (status/OrganizationZone) = [{\"label\":\"Village\",\"value\":\"Kirigakure (Village Caché de la Brume)\"},",
+    "cahier-de-la-mort (artifact/EntityZone) = [{\"label\":\"Nature\",\"value\":\"Cahier d'un dieu de la mort (shinigami)\"},",
+    "aburame (status/OrganizationZone) = [{\"label\":\"Village\",\"value\":\"Konohagakure (Pays du Feu)\"},{\"label\":\"Sy"
+   ]
+  },
+  {
+   "cle": "abilities",
+   "peuplees": 27,
+   "vues": 0,
+   "muettes": 27,
+   "muettesParGabarit": {
+    "OrganizationZone": 23,
+    "EntityZone": 4
+   },
+   "exemples": [
+    "hozuki (status/OrganizationZone) = [\"Technique d'Hydrification — liquéfier son corps en eau pour esquiver",
+    "aburame (status/OrganizationZone) = [\"Symbiose avec les kikaichū, insectes vivant dans le corps de l'hôte\"",
+    "shimura (status/OrganizationZone) = [\"Doctrine de la Racine (Ne) : réseau d'agents ANBU clandestins, sans "
+   ]
+  },
+  {
+   "cle": "rosterLabel",
+   "peuplees": 26,
+   "vues": 0,
+   "muettes": 26,
+   "muettesParGabarit": {
+    "OrganizationZone": 23,
+    "EntityZone": 3
+   },
+   "exemples": [
+    "hozuki (status/OrganizationZone) = Membres",
+    "aburame (status/OrganizationZone) = Membres",
+    "shimura (status/OrganizationZone) = Membres"
+   ]
+  },
+  {
+   "cle": "eras",
+   "peuplees": 37,
+   "vues": 14,
+   "muettes": 23,
+   "muettesParGabarit": {
+    "OrganizationZone": 23
+   },
+   "exemples": [
+    "hozuki (status/OrganizationZone) = [{\"img\":\"/images/akasha/ref/hozuki.webp\",\"event\":\"Gengetsu Hōzuki devi",
+    "aburame (status/OrganizationZone) = [{\"img\":\"/images/akasha/ref/aburame.webp\",\"event\":\"Transmission du pac",
+    "shimura (status/OrganizationZone) = [{\"img\":\"/images/akasha/ref/shimura.webp\",\"event\":\"Danzō est formé par"
+   ]
+  },
+  {
+   "cle": "quote",
+   "peuplees": 37,
+   "vues": 14,
+   "muettes": 23,
+   "muettesParGabarit": {
+    "OrganizationZone": 23
+   },
+   "exemples": [
+    "hozuki (status/OrganizationZone) = {\"text\":\"Ton épée me traverse ? Alors tranche l'eau, et regarde-la se ",
+    "aburame (status/OrganizationZone) = {\"text\":\"Un ninja ne doit pas gaspiller ses mots. Comme mes insectes, ",
+    "shimura (status/OrganizationZone) = {\"text\":\"Un shinobi doit lire l'instant sous la surface. Ce qui protèg"
+   ]
+  },
+  {
+   "cle": "import_source",
+   "peuplees": 22,
+   "vues": 0,
+   "muettes": 22,
+   "muettesParGabarit": {
+    "CharacterZone": 22
+   },
+   "exemples": [
+    "gyro (character/CharacterZone) = 3164",
+    "ururu-tsumugiya (character/CharacterZone) = 2727",
+    "bonney-jewelry (character/CharacterZone) = 788"
+   ]
+  },
+  {
+   "cle": "gallery",
+   "peuplees": 22,
+   "vues": 0,
+   "muettes": 22,
+   "muettesParGabarit": {
+    "CharacterZone": 22
+   },
+   "exemples": [
+    "might-guy (character/CharacterZone) = [\"https://static.wikia.nocookie.net/naruto/images/3/31/Might_Guy.png\",",
+    "sakura-haruno (character/CharacterZone) = [\"https://static.wikia.nocookie.net/naruto/images/6/64/Sakura_Part_1.p",
+    "neji-hyuga (character/CharacterZone) = [\"https://static.wikia.nocookie.net/naruto/images/7/7e/Neji_Part_I.png"
+   ]
+  },
+  {
+   "cle": "titles",
+   "peuplees": 22,
+   "vues": 0,
+   "muettes": 22,
+   "muettesParGabarit": {
+    "CharacterZone": 22
+   },
+   "exemples": [
+    "monkey-d-luffy (character/CharacterZone) = [\"Chapeau de Paille\",\"Cinquième Empereur\",\"Joy Boy\"]",
+    "naruto-uzumaki (character/CharacterZone) = [\"Ninja hyperactif imprévisible n°1\",\"L'Enfant de la Prophétie\",\"Le Sa",
+    "itachi-uchiha (character/CharacterZone) = [\"Le génie du clan Uchiha\",\"Itachi de l'Illusion\",\"Le héros de l'ombre"
+   ]
+  },
+  {
+   "cle": "natureType",
+   "peuplees": 21,
+   "vues": 0,
+   "muettes": 21,
+   "muettesParGabarit": {
+    "CharacterZone": 21
+   },
+   "exemples": [
+    "might-guy (character/CharacterZone) = [\"Fire Release\",\"Lightning Release\"]",
+    "sakura-haruno (character/CharacterZone) = [\"Earth Release\",\"Water Release\",\"Fire Release\",\"Yin Release\",\"Yang Re",
+    "neji-hyuga (character/CharacterZone) = [\"Fire Release\",\"Earth Release\",\"Water Release\"]"
+   ]
+  },
+  {
+   "cle": "debut",
+   "peuplees": 20,
+   "vues": 0,
+   "muettes": 20,
+   "muettesParGabarit": {
+    "CharacterZone": 20
+   },
+   "exemples": [
+    "might-guy (character/CharacterZone) = Naruto — chapitre 38",
+    "sakura-haruno (character/CharacterZone) = Naruto — chapitre 3",
+    "neji-hyuga (character/CharacterZone) = Naruto — chapitre 36"
+   ]
+  },
+  {
+   "cle": "debutAll",
+   "peuplees": 20,
+   "vues": 0,
+   "muettes": 20,
+   "muettesParGabarit": {
+    "CharacterZone": 20
+   },
+   "exemples": [
+    "might-guy (character/CharacterZone) = {\"ova\":\"Finally a clash! Jōnin vs. Genin!! Indiscriminate Grand Melee ",
+    "sakura-haruno (character/CharacterZone) = {\"ova\":\"Find the Four-Leaf Red Clover!\",\"game\":\"Naruto: Konoha Ninpōch",
+    "neji-hyuga (character/CharacterZone) = {\"ova\":\"Hidden Leaf Village Grand Sports Festival!\",\"game\":\"Naruto: Ko"
+   ]
+  },
+  {
+   "cle": "sourceUrl",
+   "peuplees": 20,
+   "vues": 0,
+   "muettes": 20,
+   "muettesParGabarit": {
+    "CharacterZone": 20
+   },
+   "exemples": [
+    "might-guy (character/CharacterZone) = https://naruto.fandom.com/wiki/Might_Guy",
+    "sakura-haruno (character/CharacterZone) = https://naruto.fandom.com/wiki/Sakura_Haruno",
+    "neji-hyuga (character/CharacterZone) = https://naruto.fandom.com/wiki/Neji_Hy%C5%ABga"
+   ]
+  },
+  {
+   "cle": "villageSlug",
+   "peuplees": 20,
+   "vues": 0,
+   "muettes": 20,
+   "muettesParGabarit": {
+    "CharacterZone": 20
+   },
+   "exemples": [
+    "might-guy (character/CharacterZone) = konohagakure",
+    "sakura-haruno (character/CharacterZone) = konohagakure",
+    "neji-hyuga (character/CharacterZone) = konohagakure"
+   ]
+  },
+  {
+   "cle": "quotes",
+   "peuplees": 19,
+   "vues": 0,
+   "muettes": 19,
+   "muettesParGabarit": {
+    "CharacterZone": 19
+   },
+   "exemples": [
+    "monkey-d-luffy (character/CharacterZone) = [\"Je serai le Roi des Pirates !\",\"Bien sûr que je vais peut-être mouri",
+    "naruto-uzumaki (character/CharacterZone) = [\"Crois-le ! (Dattebayo !)\",\"Quand on protège quelque chose de vraimen",
+    "itachi-uchiha (character/CharacterZone) = [\"Pardonne-moi, Sasuke… ce sera la dernière fois.\",\"Les hommes vivent "
+   ]
+  },
+  {
+   "cle": "status",
+   "peuplees": 21,
+   "vues": 2,
+   "muettes": 19,
+   "muettesParGabarit": {
+    "CharacterZone": 19
+   },
+   "exemples": [
+    "monkey-d-luffy (character/CharacterZone) = Vivant — Empereur",
+    "naruto-uzumaki (character/CharacterZone) = Vivant",
+    "itachi-uchiha (character/CharacterZone) = Décédé"
+   ]
+  },
+  {
+   "cle": "personality",
+   "peuplees": 19,
+   "vues": 0,
+   "muettes": 19,
+   "muettesParGabarit": {
+    "CharacterZone": 19
+   },
+   "exemples": [
+    "monkey-d-luffy (character/CharacterZone) = Simple, glouton, d'une loyauté absolue. Luffy ne réfléchit pas — il re",
+    "naruto-uzumaki (character/CharacterZone) = Hyperactif, bruyant et impulsif, Naruto cache sous ses pitreries la bl",
+    "itachi-uchiha (character/CharacterZone) = Calme, doux et d'une intelligence terrifiante, Itachi est un pacifiste"
+   ]
+  },
+  {
+   "cle": "team",
+   "peuplees": 18,
+   "vues": 0,
+   "muettes": 18,
+   "muettesParGabarit": {
+    "CharacterZone": 18
+   },
+   "exemples": [
+    "might-guy (character/CharacterZone) = [\"Team Chōza\",\"Team Guy\",\"Third Division\"]",
+    "sakura-haruno (character/CharacterZone) = [\"Team Kakashi\",\"Konoha 11  (Anime only)\",\"Team Asuma  (Anime only)\",\"",
+    "neji-hyuga (character/CharacterZone) = [\"Team Guy\",\"Sasuke Recovery Team\",\"Konoha 11  (Anime only)\",\"Star Gua"
+   ]
+  },
+  {
+   "cle": "tools",
+   "peuplees": 18,
+   "vues": 0,
+   "muettes": 18,
+   "muettesParGabarit": {
+    "CharacterZone": 18
+   },
+   "exemples": [
+    "might-guy (character/CharacterZone) = [\"Bow & Arrow\",\"Kusarigama\",\"Nunchaku\",\"Sōshūga\"]",
+    "sakura-haruno (character/CharacterZone) = [\"Antidote\",\"Konoha Chakra Blade\",\"Lightning Barrel\",\"Military Rations",
+    "naruto-uzumaki (character/CharacterZone) = [\"Kunai\",\"Shuriken\",\"Fūma Shuriken\",\"Flying Thunder God Kunai\"]"
+   ]
+  },
+  {
+   "cle": "col",
+   "peuplees": 23,
+   "vues": 5,
+   "muettes": 18,
+   "muettesParGabarit": {
+    "CharacterZone": 18
+   },
+   "exemples": [
+    "shouichi (character/CharacterZone) = Mont Myōgi",
+    "kenta-nakamura (character/CharacterZone) = Mont Akagi",
+    "itsuki-takeuchi (character/CharacterZone) = Mont Akina"
+   ]
+  },
+  {
+   "cle": "classification",
+   "peuplees": 17,
+   "vues": 0,
+   "muettes": 17,
+   "muettesParGabarit": {
+    "CharacterZone": 17
+   },
+   "exemples": [
+    "sakura-haruno (character/CharacterZone) = [\"Ninja médical\"]",
+    "naruto-uzumaki (character/CharacterZone) = [\"Jinchūriki\",\"Ermite (Sage)\",\"Type Capteur\"]",
+    "itachi-uchiha (character/CharacterZone) = [\"Rang S\",\"Déserteur (Nukenin)\"]"
+   ]
+  },
+  {
+   "cle": "kanji",
+   "peuplees": 30,
+   "vues": 14,
+   "muettes": 16,
+   "muettesParGabarit": {
+    "OrganizationZone": 16
+   },
+   "exemples": [
+    "hozuki (status/OrganizationZone) = 鬼灯一族",
+    "aburame (status/OrganizationZone) = 油女一族",
+    "shimura (status/OrganizationZone) = 志村一族"
+   ]
+  },
+  {
+   "cle": "clanSlug",
+   "peuplees": 12,
+   "vues": 0,
+   "muettes": 12,
+   "muettesParGabarit": {
+    "CharacterZone": 12
+   },
+   "exemples": [
+    "neji-hyuga (character/CharacterZone) = hyuga",
+    "naruto-uzumaki (character/CharacterZone) = uzumaki",
+    "hinata-hyuga (character/CharacterZone) = hyuga"
+   ]
+  },
+  {
+   "cle": "kekkeiGenkai",
+   "peuplees": 9,
+   "vues": 0,
+   "muettes": 9,
+   "muettesParGabarit": {
+    "CharacterZone": 9
+   },
+   "exemples": [
+    "neji-hyuga (character/CharacterZone) = [\"Byakugan\"]",
+    "hinata-hyuga (character/CharacterZone) = [\"Byakugan\"]",
+    "itachi-uchiha (character/CharacterZone) = [\"Sharingan\"]"
+   ]
+  },
+  {
+   "cle": "signature",
+   "peuplees": 9,
+   "vues": 0,
+   "muettes": 9,
+   "muettesParGabarit": {
+    "CharacterZone": 9
+   },
+   "exemples": [
+    "naruto-uzumaki (character/CharacterZone) = [\"Rasengan\",\"Multiclonage\",\"Bijūdama\"]",
+    "itachi-uchiha (character/CharacterZone) = [\"Amaterasu\",\"Susanoo\"]",
+    "sasuke-uchiha (character/CharacterZone) = [\"Chidori\",\"Amaterasu\",\"Susanoo\"]"
+   ]
+  },
+  {
+   "cle": "descFrRetiree",
+   "peuplees": 6,
+   "vues": 0,
+   "muettes": 6,
+   "muettesParGabarit": {
+    "EntityZone": 5,
+    "OrganizationZone": 1
+   },
+   "exemples": [
+    "inner-former (profession/EntityZone) = 04/08 contrôle de nature — « Inner (Former) » est un rang de Kara ; la",
+    "chunin-exams-assistant (profession/EntityZone) = 04/08 contrôle de nature — décrit l examen chūnin et invente une « uni",
+    "summoning-technique-hozuki-castle-s-ninken (power/EntityZone) = 04/08 contrôle de nature — texte générique sur l invocation, pas un mo"
+   ]
+  },
+  {
+   "cle": "purgeAudit",
+   "peuplees": 3,
+   "vues": 0,
+   "muettes": 3,
+   "muettesParGabarit": {
+    "CharacterZone": 3
+   },
+   "exemples": [
+    "reiichi-oshima (character/CharacterZone) = 03/08 : sections et descFr décrivaient Dark Rukia (mauvaise page liée)",
+    "hol-horse (character/CharacterZone) = 04/08 audit de clôture : descFr non sourcée ou charabia — purgé, à re-",
+    "orihime-inoue (character/CharacterZone) = 04/08 audit de clôture : descFr non sourcée ou charabia — purgé, à re-"
+   ]
+  },
+  {
+   "cle": "squad",
+   "peuplees": 3,
+   "vues": 0,
+   "muettes": 3,
+   "muettesParGabarit": {
+    "CharacterZone": 3
+   },
+   "exemples": [
+    "naruto-uzumaki (character/CharacterZone) = {\"name\":\"Équipe 7 · Team Kakashi\",\"members\":[{\"rel\":\"Sensei\",\"name\":\"K",
+    "sasuke-uchiha (character/CharacterZone) = {\"name\":\"Équipe 7\",\"members\":[{\"rel\":\"Sensei\",\"name\":\"Kakashi Hatake\",",
+    "kakashi-hatake (character/CharacterZone) = {\"name\":\"Équipe 7 (sensei)\",\"members\":[{\"rel\":\"Élève\",\"name\":\"Naruto U"
+   ]
+  },
+  {
+   "cle": "sectionsSource",
+   "peuplees": 3,
+   "vues": 0,
+   "muettes": 3,
+   "muettesParGabarit": {
+    "CharacterZone": 2,
+    "EntityZone": 1
+   },
+   "exemples": [
+    "yuri (character/CharacterZone) = deepinfra/Qwen/Qwen3-32B",
+    "detective (profession/EntityZone) = deepinfra/Qwen/Qwen3-32B",
+    "light-s-teacher (character/CharacterZone) = deepinfra/Qwen/Qwen3-32B"
+   ]
+  },
+  {
+   "cle": "descFrImpossible",
+   "peuplees": 2,
+   "vues": 0,
+   "muettes": 2,
+   "muettesParGabarit": {
+    "EntityZone": 1,
+    "OrganizationZone": 1
+   },
+   "exemples": [
+    "inner-former (profession/EntityZone) = curé à la main le 05/08 : le rang « Inner » n a pas de page propre — i",
+    "yuhi (status/OrganizationZone) = curé à la main le 05/08 : le clan Yūhi n a pas de page sur le wiki Nar"
+   ]
+  },
+  {
+   "cle": "rank",
+   "peuplees": 474,
+   "vues": 473,
+   "muettes": 1,
+   "muettesParGabarit": {
+    "OrganizationZone": 1
+   },
+   "exemples": [
+    "vizard (status/OrganizationZone) = Hybride Shinigami-Hollow"
+   ]
+  },
+  {
+   "cle": "resumeCorrige",
+   "peuplees": 1,
+   "vues": 0,
+   "muettes": 1,
+   "muettesParGabarit": {
+    "EntityZone": 1
+   },
+   "exemples": [
+    "inner-former (profession/EntityZone) = résumé d origine remplacé le 05/08 : il décrivait Inner Sakura (techni"
+   ]
+  },
+  {
+   "cle": "animations",
+   "peuplees": 1,
+   "vues": 0,
+   "muettes": 1,
+   "muettesParGabarit": {
+    "CharacterZone": 1
+   },
+   "exemples": [
+    "naruto-uzumaki (character/CharacterZone) = [{\"src\":\"/images/akasha/naruto/multiclonage-anim.webp\",\"label\":\"Multic"
+   ]
+  },
+  {
+   "cle": "tailedBeast",
+   "peuplees": 1,
+   "vues": 0,
+   "muettes": 1,
+   "muettesParGabarit": {
+    "CharacterZone": 1
+   },
+   "exemples": [
+    "naruto-uzumaki (character/CharacterZone) = Kurama"
+   ]
+  }
+ ],
+ "aretes": [
+  {
+   "relation": "appartient",
+   "total": 4305,
+   "sortantRendu": 4200,
+   "entrantRendu": 3087,
+   "aucunBout": 7,
+   "trousOut": {
+    "OrganizationZone": 97,
+    "Attaque": 8
+   },
+   "trousIn": {
+    "CharacterZone": 1199,
+    "OrganizationZone": 19
+   },
+   "exemples": [
+    "police-militaire-de-konoha (status/OrganizationZone) —appartient→ uchiha (status/OrganizationZone)",
+    "taka (status/OrganizationZone) —appartient→ akatsuki (status/OrganizationZone)",
+    "ame-orphans (status/OrganizationZone) —appartient→ akatsuki (status/OrganizationZone)"
+   ]
+  },
+  {
+   "relation": "famille",
+   "total": 1186,
+   "sortantRendu": 1186,
+   "entrantRendu": 4,
+   "aucunBout": 0,
+   "trousOut": {},
+   "trousIn": {
+    "CharacterZone": 1171,
+    "OrganizationZone": 11
+   },
+   "exemples": []
+  },
+  {
+   "relation": "possede",
+   "total": 696,
+   "sortantRendu": 4,
+   "entrantRendu": 681,
+   "aucunBout": 15,
+   "trousOut": {
+    "CharacterZone": 691,
+    "OrganizationZone": 1
+   },
+   "trousIn": {
+    "CharacterZone": 15
+   },
+   "exemples": [
+    "sasori (character/CharacterZone) —possede→ komushi (character/CharacterZone)",
+    "jinpachi-munashi (character/CharacterZone) —possede→ shibuki (character/CharacterZone)",
+    "kankuro (character/CharacterZone) —possede→ sasori (character/CharacterZone)"
+   ]
+  },
+  {
+   "relation": "maitrise",
+   "total": 5113,
+   "sortantRendu": 4934,
+   "entrantRendu": 5103,
+   "aucunBout": 0,
+   "trousOut": {
+    "OrganizationZone": 179
+   },
+   "trousIn": {
+    "CharacterZone": 10
+   },
+   "exemples": []
+  },
+  {
+   "relation": "allie",
+   "total": 1482,
+   "sortantRendu": 1482,
+   "entrantRendu": 1376,
+   "aucunBout": 0,
+   "trousOut": {},
+   "trousIn": {
+    "OrganizationZone": 106
+   },
+   "exemples": []
+  },
+  {
+   "relation": "ennemi",
+   "total": 1432,
+   "sortantRendu": 1432,
+   "entrantRendu": 1353,
+   "aucunBout": 0,
+   "trousOut": {},
+   "trousIn": {
+    "OrganizationZone": 79
+   },
+   "exemples": []
+  },
+  {
+   "relation": "exerce",
+   "total": 645,
+   "sortantRendu": 645,
+   "entrantRendu": 614,
+   "aucunBout": 0,
+   "trousOut": {},
+   "trousIn": {
+    "OrganizationZone": 30,
+    "CharacterZone": 1
+   },
+   "exemples": []
+  },
+  {
+   "relation": "habite",
+   "total": 1402,
+   "sortantRendu": 1396,
+   "entrantRendu": 1394,
+   "aucunBout": 0,
+   "trousOut": {
+    "Attaque": 3,
+    "OrganizationZone": 3
+   },
+   "trousIn": {
+    "CharacterZone": 1,
+    "OrganizationZone": 7
+   },
+   "exemples": []
+  },
+  {
+   "relation": "ange",
+   "total": 10,
+   "sortantRendu": 10,
+   "entrantRendu": 0,
+   "aucunBout": 0,
+   "trousOut": {},
+   "trousIn": {
+    "CharacterZone": 10
+   },
+   "exemples": []
+  },
+  {
+   "relation": "dieu_destruction",
+   "total": 8,
+   "sortantRendu": 8,
+   "entrantRendu": 0,
+   "aucunBout": 0,
+   "trousOut": {},
+   "trousIn": {
+    "CharacterZone": 8
+   },
+   "exemples": []
+  },
+  {
+   "relation": "kaio_shin",
+   "total": 8,
+   "sortantRendu": 8,
+   "entrantRendu": 0,
+   "aucunBout": 0,
+   "trousOut": {},
+   "trousIn": {
+    "CharacterZone": 8
+   },
+   "exemples": []
+  },
+  {
+   "relation": "mentor",
+   "total": 249,
+   "sortantRendu": 249,
+   "entrantRendu": 247,
+   "aucunBout": 0,
+   "trousOut": {},
+   "trousIn": {
+    "OrganizationZone": 2
+   },
+   "exemples": []
+  },
+  {
+   "relation": "eleve",
+   "total": 48,
+   "sortantRendu": 48,
+   "entrantRendu": 48,
+   "aucunBout": 0,
+   "trousOut": {},
+   "trousIn": {},
+   "exemples": []
+  },
+  {
+   "relation": "rival",
+   "total": 192,
+   "sortantRendu": 192,
+   "entrantRendu": 192,
+   "aucunBout": 0,
+   "trousOut": {},
+   "trousIn": {},
+   "exemples": []
+  },
+  {
+   "relation": "jumeau",
+   "total": 12,
+   "sortantRendu": 12,
+   "entrantRendu": 12,
+   "aucunBout": 0,
+   "trousOut": {},
+   "trousIn": {},
+   "exemples": []
+  }
+ ],
+ "aretesNulPart": 22,
+ "exemplesNulPart": [
+  "sasori —possede→ komushi",
+  "jinpachi-munashi —possede→ shibuki",
+  "police-militaire-de-konoha —appartient→ uchiha",
+  "taka —appartient→ akatsuki",
+  "kankuro —possede→ sasori",
+  "ichirota-oniyuzu —possede→ shibuki",
+  "ichigo-kurosaki —possede→ zangetsu",
+  "shuuhei-hisagi —possede→ kazeshini",
+  "sasori —possede→ third-kazekage",
+  "killer-b —possede→ gyuki",
+  "ame-orphans —appartient→ akatsuki",
+  "police-militaire-de-konoha —appartient→ fuma",
+  "impure-world-reincarnation-allied-forces —appartient→ akatsuki",
+  "naruto-uzumaki —possede→ kurama",
+  "izuru-kira —possede→ wabisuke",
+  "white-zetsu-army —appartient→ akatsuki",
+  "rangiku-matsumoto —possede→ haineko",
+  "mangetsu-hozuki —possede→ shibuki",
+  "surprise-attack-and-diversion-platoon —appartient→ akatsuki",
+  "byakuya-kuchiki —possede→ senbonzakura",
+  "rukia-kuchiki —possede→ sode-no-shirayuki",
+  "gaara —possede→ shukaku"
+ ],
+ "fichesSansAucuneAreteRendue": {
+  "total": 86,
+  "parGabarit": {
+   "CharacterZone · character": 67,
+   "OrganizationZone · status": 11,
+   "Attaque · power": 8
+  },
+  "exemples": [
+   {
+    "slug": "shiro",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "merus",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 8,
+    "rendues": 0
+   },
+   {
+    "slug": "dore",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "akimichi",
+    "type": "status",
+    "gabarit": "OrganizationZone",
+    "portees": 13,
+    "rendues": 0
+   },
+   {
+    "slug": "haruna",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 3,
+    "rendues": 0
+   },
+   {
+    "slug": "shinosuke",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "tanishi",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 3,
+    "rendues": 0
+   },
+   {
+    "slug": "campacino-achino",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 2,
+    "rendues": 0
+   },
+   {
+    "slug": "yamanaka",
+    "type": "status",
+    "gabarit": "OrganizationZone",
+    "portees": 12,
+    "rendues": 0
+   },
+   {
+    "slug": "gancho",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 2,
+    "rendues": 0
+   },
+   {
+    "slug": "sukune",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 3,
+    "rendues": 0
+   },
+   {
+    "slug": "manboshi",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 2,
+    "rendues": 0
+   },
+   {
+    "slug": "atk-bl-hado-31-shakkaho",
+    "type": "power",
+    "gabarit": "Attaque",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "tsuchigumo",
+    "type": "status",
+    "gabarit": "OrganizationZone",
+    "portees": 2,
+    "rendues": 0
+   },
+   {
+    "slug": "jessica",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "kedoin",
+    "type": "status",
+    "gabarit": "OrganizationZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "yotsuki",
+    "type": "status",
+    "gabarit": "OrganizationZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "lil-achino",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 2,
+    "rendues": 0
+   },
+   {
+    "slug": "ilforte-grantz",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 3,
+    "rendues": 0
+   },
+   {
+    "slug": "kedama",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "garlic-junior",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "funato",
+    "type": "status",
+    "gabarit": "OrganizationZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "gameru",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "yamaarashi",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "equipage-de-bellamy",
+    "type": "status",
+    "gabarit": "OrganizationZone",
+    "portees": 2,
+    "rendues": 0
+   },
+   {
+    "slug": "kamizuru",
+    "type": "status",
+    "gabarit": "OrganizationZone",
+    "portees": 5,
+    "rendues": 0
+   },
+   {
+    "slug": "tomoko-higashikata",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 2,
+    "rendues": 0
+   },
+   {
+    "slug": "jose-one-piece",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "minatomo",
+    "type": "character",
+    "gabarit": "CharacterZone",
+    "portees": 1,
+    "rendues": 0
+   },
+   {
+    "slug": "hozuki",
+    "type": "status",
+    "gabarit": "OrganizationZone",
+    "portees": 6,
+    "rendues": 0
+   }
+  ]
+ },
+ "troncaturesCharacterZone": {
+  "techniquesAuDela14": 66,
+  "liensAuDela24": 14,
+  "appartenancesAuDela12": 9
+ }
+}

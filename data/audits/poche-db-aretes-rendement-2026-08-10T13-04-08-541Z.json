@@ -1,0 +1,710 @@
+{
+ "chantier": "chantier 4 — étape B : rendement champ par champ (wiki Dragon Ball → notre corpus)",
+ "quand": "2026-08-10T13:04:17.464Z",
+ "mode": "MESURE (lecture seule, réseau)",
+ "isolees": 146,
+ "pagesSourcesLues": 59,
+ "ciblesBrutes": 531,
+ "tableau": [
+  {
+   "champ": "user",
+   "cibles": 53,
+   "resolues": 19,
+   "fichesSources": 4,
+   "fichesResolues": 3,
+   "rendement": 35.8,
+   "typesCible": {
+    "character": 19
+   },
+   "refus": {
+    "cible sans équivalent en base": 34
+   },
+   "exemples": [
+    {
+     "de": "Scouter",
+     "deType": "artifact",
+     "cible": "Guldo",
+     "vers": "Guldo",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Scouter"
+    },
+    {
+     "de": "Scouter",
+     "deType": "artifact",
+     "cible": "Bulma",
+     "vers": "Bulma",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Scouter"
+    },
+    {
+     "de": "Scouter",
+     "deType": "artifact",
+     "cible": "Vegeta",
+     "vers": "Vegeta",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Scouter"
+    },
+    {
+     "de": "Scouter",
+     "deType": "artifact",
+     "cible": "Bardock",
+     "vers": "Bardock",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Scouter"
+    },
+    {
+     "de": "Scouter",
+     "deType": "artifact",
+     "cible": "Fasha",
+     "vers": "Fasha",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Scouter"
+    },
+    {
+     "de": "Scouter",
+     "deType": "artifact",
+     "cible": "Raditz",
+     "vers": "Raditz",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Scouter"
+    },
+    {
+     "de": "Scouter",
+     "deType": "artifact",
+     "cible": "Nappa",
+     "vers": "Nappa",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Scouter"
+    },
+    {
+     "de": "Scouter",
+     "deType": "artifact",
+     "cible": "Turles",
+     "vers": "Turles",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Scouter"
+    }
+   ]
+  },
+  {
+   "champ": "address",
+   "cibles": 16,
+   "resolues": 7,
+   "fichesSources": 16,
+   "fichesResolues": 7,
+   "rendement": 43.8,
+   "typesCible": {
+    "place": 7
+   },
+   "refus": {
+    "cible sans équivalent en base": 9
+   },
+   "exemples": [
+    {
+     "de": "Yogengyo",
+     "deType": "character",
+     "cible": "Beerus' Planet",
+     "vers": "Monde de Beerus",
+     "versType": "place",
+     "pont": "nom identique",
+     "titreSource": "Oracle Fish"
+    },
+    {
+     "de": "Meta-Cooler",
+     "deType": "character",
+     "cible": "Big Gete Star",
+     "vers": "Big Gete Star",
+     "versType": "place",
+     "pont": "nom identique",
+     "titreSource": "Meta-Cooler"
+    },
+    {
+     "de": "Gora",
+     "deType": "character",
+     "cible": "Demon Realm",
+     "vers": "Royaume des Démons",
+     "versType": "place",
+     "pont": "nom identique",
+     "titreSource": "Gola"
+    },
+    {
+     "de": "Shura",
+     "deType": "character",
+     "cible": "Demon Realm",
+     "vers": "Royaume des Démons",
+     "versType": "place",
+     "pont": "nom identique",
+     "titreSource": "Shula"
+    },
+    {
+     "de": "Tapion",
+     "deType": "character",
+     "cible": "Konats",
+     "vers": "Konats",
+     "versType": "place",
+     "pont": "nom identique",
+     "titreSource": "Tapion"
+    },
+    {
+     "de": "Minotia",
+     "deType": "character",
+     "cible": "Konats",
+     "vers": "Konats",
+     "versType": "place",
+     "pont": "nom identique",
+     "titreSource": "Minotia"
+    },
+    {
+     "de": "Hatchiyack",
+     "deType": "character",
+     "cible": "Dark Planet",
+     "vers": "Planète Sombre",
+     "versType": "place",
+     "pont": "nom identique",
+     "titreSource": "Hatchiyack"
+    }
+   ]
+  },
+  {
+   "champ": "famconnect",
+   "cibles": 20,
+   "resolues": 6,
+   "fichesSources": 12,
+   "fichesResolues": 4,
+   "rendement": 30,
+   "typesCible": {
+    "character": 6
+   },
+   "refus": {
+    "cible sans équivalent en base": 14
+   },
+   "exemples": [
+    {
+     "de": "Yogengyo",
+     "deType": "character",
+     "cible": "Beerus",
+     "vers": "Beerus",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Oracle Fish"
+    },
+    {
+     "de": "Yogengyo",
+     "deType": "character",
+     "cible": "Whis",
+     "vers": "Whis",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Oracle Fish"
+    },
+    {
+     "de": "Hirudegarn",
+     "deType": "character",
+     "cible": "Tapion",
+     "vers": "Tapion",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Hirudegarn"
+    },
+    {
+     "de": "Hirudegarn",
+     "deType": "character",
+     "cible": "Minotia",
+     "vers": "Minotia",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Hirudegarn"
+    },
+    {
+     "de": "Tapion",
+     "deType": "character",
+     "cible": "Minotia",
+     "vers": "Minotia",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Tapion"
+    },
+    {
+     "de": "Minotia",
+     "deType": "character",
+     "cible": "Tapion",
+     "vers": "Tapion",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Minotia"
+    }
+   ]
+  },
+  {
+   "champ": "mentors",
+   "cibles": 6,
+   "resolues": 3,
+   "fichesSources": 5,
+   "fichesResolues": 3,
+   "rendement": 50,
+   "typesCible": {
+    "character": 3
+   },
+   "refus": {
+    "cible sans équivalent en base": 3
+   },
+   "exemples": [
+    {
+     "de": "Toppo",
+     "deType": "character",
+     "cible": "Marcarita",
+     "vers": "Marcarita",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Top"
+    },
+    {
+     "de": "Pirozhki",
+     "deType": "character",
+     "cible": "Mr. Satan",
+     "vers": "Mr. Satan",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Pirozhki"
+    },
+    {
+     "de": "Vermoud",
+     "deType": "character",
+     "cible": "Marcarita",
+     "vers": "Marcarita",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Belmod"
+    }
+   ]
+  },
+  {
+   "champ": "altname",
+   "cibles": 22,
+   "resolues": 2,
+   "fichesSources": 13,
+   "fichesResolues": 2,
+   "rendement": 9.1,
+   "typesCible": {
+    "character": 2
+   },
+   "refus": {
+    "cible sans équivalent en base": 20
+   },
+   "exemples": [
+    {
+     "de": "Shen",
+     "deType": "character",
+     "cible": "Kami",
+     "vers": "Kami",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Hero"
+    },
+    {
+     "de": "Toppo",
+     "deType": "character",
+     "cible": "Frieza",
+     "vers": "Freezer",
+     "versType": "character",
+     "pont": "lien interlangue",
+     "titreSource": "Top"
+    }
+   ]
+  },
+  {
+   "champ": "similar",
+   "cibles": 18,
+   "resolues": 2,
+   "fichesSources": 5,
+   "fichesResolues": 2,
+   "rendement": 11.1,
+   "typesCible": {
+    "power": 1,
+    "artifact": 1
+   },
+   "refus": {
+    "cible sans équivalent en base": 16
+   },
+   "exemples": [
+    {
+     "de": "Scouter",
+     "deType": "artifact",
+     "cible": "Ki Sense",
+     "vers": "Ki Sense",
+     "versType": "power",
+     "pont": "nom identique",
+     "titreSource": "Scouter"
+    },
+    {
+     "de": "Metamo-Ring",
+     "deType": "artifact",
+     "cible": "Potara",
+     "vers": "Potaras (boucles de fusion)",
+     "versType": "artifact",
+     "pont": "nom identique",
+     "titreSource": "Metamo-Ring"
+    }
+   ]
+  },
+  {
+   "champ": "inventor",
+   "cibles": 11,
+   "resolues": 2,
+   "fichesSources": 4,
+   "fichesResolues": 2,
+   "rendement": 18.2,
+   "typesCible": {
+    "status": 1,
+    "character": 1
+   },
+   "refus": {
+    "cible sans équivalent en base": 9
+   },
+   "exemples": [
+    {
+     "de": "Scouter",
+     "deType": "artifact",
+     "cible": "Capsule Corporation",
+     "vers": "Capsule Corporation",
+     "versType": "status",
+     "pont": "nom identique",
+     "titreSource": "Scouter"
+    },
+    {
+     "de": "Metamo-Ring",
+     "deType": "artifact",
+     "cible": "Bulma",
+     "vers": "Bulma",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Metamo-Ring"
+    }
+   ]
+  },
+  {
+   "champ": "counterparts",
+   "cibles": 7,
+   "resolues": 2,
+   "fichesSources": 5,
+   "fichesResolues": 2,
+   "rendement": 28.6,
+   "typesCible": {
+    "character": 2
+   },
+   "refus": {
+    "cible sans équivalent en base": 5
+   },
+   "exemples": [
+    {
+     "de": "Brianne de Chateau",
+     "deType": "character",
+     "cible": "Zirloin",
+     "vers": "Zirloin",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Ribrianne"
+    },
+    {
+     "de": "Meta-Cooler",
+     "deType": "character",
+     "cible": "Cooler",
+     "vers": "Cooler",
+     "versType": "character",
+     "pont": "nom identique",
+     "titreSource": "Meta-Cooler"
+    }
+   ]
+  },
+  {
+   "champ": "homeworld",
+   "cibles": 3,
+   "resolues": 2,
+   "fichesSources": 2,
+   "fichesResolues": 1,
+   "rendement": 66.7,
+   "typesCible": {
+    "place": 2
+   },
+   "refus": {
+    "cible sans équivalent en base": 1
+   },
+   "exemples": [
+    {
+     "de": "Pteranodon",
+     "deType": "character",
+     "cible": "Earth",
+     "vers": "Terre",
+     "versType": "place",
+     "pont": "nom identique",
+     "titreSource": "Pterodactyl"
+    },
+    {
+     "de": "Pteranodon",
+     "deType": "character",
+     "cible": "Sadala",
+     "vers": "Planète Sadala",
+     "versType": "place",
+     "pont": "nom identique",
+     "titreSource": "Pterodactyl"
+    }
+   ]
+  },
+  {
+   "champ": "occupation",
+   "cibles": 20,
+   "resolues": 1,
+   "fichesSources": 14,
+   "fichesResolues": 1,
+   "rendement": 5,
+   "typesCible": {
+    "place": 1
+   },
+   "refus": {
+    "cible sans équivalent en base": 18,
+    "page cible absente du wiki": 1
+   },
+   "exemples": [
+    {
+     "de": "Dai Kaio",
+     "deType": "character",
+     "cible": "Universe 7",
+     "vers": "Univers 7",
+     "versType": "place",
+     "pont": "lien interlangue",
+     "titreSource": "Grand Kai"
+    }
+   ]
+  },
+  {
+   "champ": "students",
+   "cibles": 5,
+   "resolues": 1,
+   "fichesSources": 1,
+   "fichesResolues": 1,
+   "rendement": 20,
+   "typesCible": {
+    "character": 1
+   },
+   "refus": {
+    "cible sans équivalent en base": 4
+   },
+   "exemples": [
+    {
+     "de": "Mutaito",
+     "deType": "character",
+     "cible": "Master Shen",
+     "vers": "Tsuru-Sennin",
+     "versType": "character",
+     "pont": "lien interlangue",
+     "titreSource": "Master Mutaito"
+    }
+   ]
+  },
+  {
+   "champ": "date of death",
+   "cibles": 72,
+   "resolues": 0,
+   "fichesSources": 38,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 72
+   },
+   "exemples": []
+  },
+  {
+   "champ": "allegiance",
+   "cibles": 61,
+   "resolues": 0,
+   "fichesSources": 33,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "page cible absente du wiki": 2,
+    "cible sans équivalent en base": 59
+   },
+   "exemples": []
+  },
+  {
+   "champ": "race",
+   "cibles": 51,
+   "resolues": 0,
+   "fichesSources": 41,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 51
+   },
+   "exemples": []
+  },
+  {
+   "champ": "anime debut",
+   "cibles": 45,
+   "resolues": 0,
+   "fichesSources": 43,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 45
+   },
+   "exemples": []
+  },
+  {
+   "champ": "manga debut",
+   "cibles": 34,
+   "resolues": 0,
+   "fichesSources": 32,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 34
+   },
+   "exemples": []
+  },
+  {
+   "champ": "game debut",
+   "cibles": 29,
+   "resolues": 0,
+   "fichesSources": 29,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 29
+   },
+   "exemples": []
+  },
+  {
+   "champ": "movie debut",
+   "cibles": 20,
+   "resolues": 0,
+   "fichesSources": 20,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 20
+   },
+   "exemples": []
+  },
+  {
+   "champ": "date of birth",
+   "cibles": 14,
+   "resolues": 0,
+   "fichesSources": 10,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 14
+   },
+   "exemples": []
+  },
+  {
+   "champ": "debut",
+   "cibles": 10,
+   "resolues": 0,
+   "fichesSources": 5,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 10
+   },
+   "exemples": []
+  },
+  {
+   "champ": "aniname",
+   "cibles": 4,
+   "resolues": 0,
+   "fichesSources": 2,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 4
+   },
+   "exemples": []
+  },
+  {
+   "champ": "diet",
+   "cibles": 3,
+   "resolues": 0,
+   "fichesSources": 1,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 2,
+    "page cible absente du wiki": 1
+   },
+   "exemples": []
+  },
+  {
+   "champ": "class",
+   "cibles": 3,
+   "resolues": 0,
+   "fichesSources": 3,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 3
+   },
+   "exemples": []
+  },
+  {
+   "champ": "manganame",
+   "cibles": 2,
+   "resolues": 0,
+   "fichesSources": 1,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 2
+   },
+   "exemples": []
+  },
+  {
+   "champ": "alias",
+   "cibles": 1,
+   "resolues": 0,
+   "fichesSources": 1,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 1
+   },
+   "exemples": []
+  },
+  {
+   "champ": "average height",
+   "cibles": 1,
+   "resolues": 0,
+   "fichesSources": 1,
+   "fichesResolues": 0,
+   "rendement": 0,
+   "typesCible": {},
+   "refus": {
+    "cible sans équivalent en base": 1
+   },
+   "exemples": []
+  }
+ ]
+}

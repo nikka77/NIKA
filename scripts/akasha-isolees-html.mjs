@@ -86,6 +86,35 @@ const WIKIS_HTML = {
     // avec le nom de champ de ce wiki-ci.
     champRomaji: 'rōmaji',
   },
+  // PORTAGE DU 10/08 (vague 5) — la plus grosse poche du corpus : 451 isolées, 59 % du reste.
+  // `champs` renseigné APRÈS mesure (--explore) et non avant : voir le commentaire du champ.
+  // CHOIX DES CHAMPS, MESURÉ (--explore, trace isolees-html-one-piece-explore-2026-08-10T13-03-*)
+  // sur 249 pages rendues et 1 061 cibles brutes. Retenus, et pourquoi les autres ne le sont pas —
+  // le critère n'est pas le rendement, c'est la VÉRITÉ de la phrase que `natureDe` va écrire :
+  //   · affiliation (128 liens) · occupation (73) · residence (81) · region (51) : les quatre
+  //     seuls dont la phrase produite est exacte — « appartient à », « exerce », « réside »,
+  //     « appartient à » pour une île dans sa mer.
+  //   · `origin` (10 liens, 6 résolus) ÉCARTÉ : notre vocabulaire n'a pas « originaire de », et
+  //     `natureDe` en ferait « Réside ». Un lieu de NAISSANCE n'est pas une résidence — la fiche
+  //     dirait le contraire du canon pour tout personnage qui a quitté son île.
+  //   · `owner` (34 liens, 14 résolus, TOUS des personnes) ÉCARTÉ : la phrase juste serait
+  //     « Mihawk POSSÈDE le Navire-Cercueil », donc une arête de sens INVERSE et de nature
+  //     `possede` — un autre chantier, pas un champ de plus dans celui-ci.
+  //   · `captain` ÉCARTÉ, et il porte sa propre preuve : « L'équipage des Candys → Candy » tombe
+  //     sur une de nos fiches de type `place` nommée Candy, pas sur le capitaine.
+  //   · `outcome`, `location`, `commanders`, `other`, `extra1` ÉCARTÉS : ils ne viennent que de la
+  //     fiche « Guerre au Sommet » et diraient « la guerre appartient à Portgas D. Ace ».
+  //   · `dfname` ÉCARTÉ : la phrase juste est « maîtrise », pas « appartient ».
+  //   · `first` (447 liens !), `eva`, `jva`, `ename`, `bounty`, `price`, `duration` : chapitres,
+  //     épisodes, comédiens, unités monétaires — hors périmètre encyclopédique, 0 fiche en base.
+  'One Piece': {
+    hote: 'onepiece.fandom.com',
+    champs: ['affiliation', 'occupation', 'residence', 'region'],
+    // Le libellé du rōmaji sur ce wiki est la clé `data-source` de la portable infobox : `rname`
+    // (240 occurrences relevées sur les 249 pages rendues). « Romanized Name » est le libellé
+    // AFFICHÉ, que `lignesInfobox` ne voit pas en forme B — mesuré, 0 pont avec l'autre valeur.
+    champRomaji: 'rname',
+  },
 };
 
 const cfg = WIKIS_HTML[UNIVERS];
@@ -106,17 +135,32 @@ if (!cfg) throw new Error(`univers « ${UNIVERS} » absent de WIKIS_HTML`);
  *
  * Les deux fichiers restent la seule source : rien n'est deviné ici, et une paire absente reste
  * une fiche non traitée — jamais une fiche rapprochée « au plus proche ». */
-const aliasSource = (() => {
-  try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data/alias-cures.json'), 'utf8'))[UNIVERS] ?? {}; }
+// Le sens SOURCE a maintenant DEUX fichiers, et il les cumule :
+//  · data/alias-cures.json           — les paires sondées par ops-curer-alias.mjs le 02/08.
+//  · data/alias-sources-<univers>.json — le registre bâti par scripts/akasha-alias-sources.mjs
+//    (témoins : notre `descFrSource` qui nomme sa page d'origine, et l'interlangue `en` déclaré par
+//    le wiki FRANÇAIS). Sur One Piece, 186 des 451 isolées n'étaient CHERCHABLES sous aucun de
+//    leurs trois titres — mesuré, pas supposé (data/audits/isolees-op-sonde-source-*.json).
+// Le premier fichier garde la priorité : il a été sondé contre le wiki réel, le second est plus
+// jeune. Une clé absente des deux reste une fiche non traitée — jamais une fiche rapprochée.
+const lireAlias = (fichier, extraire) => {
+  try { return extraire(JSON.parse(fs.readFileSync(path.join(ROOT, fichier), 'utf8'))[UNIVERS] ?? {}); }
   catch { return {}; }
-})();
+};
+const aliasCures = lireAlias('data/alias-cures.json', (o) => o);
+const aliasSourcesRegistre = lireAlias(
+  `data/alias-sources-${UNIVERS.toLowerCase().replace(/\W+/g, '-')}.json`,
+  (o) => Object.fromEntries(Object.entries(o).map(([nom, v]) => [nom, v.titreWiki])),
+);
+const aliasSource = { ...aliasSourcesRegistre, ...aliasCures };
 const aliasCible = (() => {
   const f = path.join(ROOT, `data/alias-cibles-${UNIVERS.toLowerCase().replace(/\W+/g, '-')}.json`);
   try { return JSON.parse(fs.readFileSync(f, 'utf8'))[UNIVERS] ?? {}; }
   catch { return {}; }
 })();
-console.log(`alias : ${Object.keys(aliasSource).length} paires au SENS SOURCE (nos noms → wiki, data/alias-cures.json)`
-  + ` · ${Object.keys(aliasCible).length} au SENS CIBLE (wiki → nos fiches, data/alias-cibles-${UNIVERS.toLowerCase()}.json)`);
+console.log(`alias : ${Object.keys(aliasSource).length} paires au SENS SOURCE `
+  + `(${Object.keys(aliasCures).length} de data/alias-cures.json + ${Object.keys(aliasSourcesRegistre).length} du registre de sources)`
+  + ` · ${Object.keys(aliasCible).length} au SENS CIBLE (wiki → nos fiches, data/alias-cibles-${UNIVERS.toLowerCase().replace(/\W+/g, '-')}.json)`);
 
 const page = async (t, s) => {
   const out = [];
@@ -173,11 +217,25 @@ const detague = (s) => String(s ?? '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;|
   .replace(/\s+/g, ' ').trim();
 
 /** Les cibles d'un fragment de HTML : uniquement les liens INTERNES d'article.
- *  Le titre vient du `href` (`/wiki/Land_of_Fire`), jamais du texte du lien. */
+ *  Le titre vient du `href` (`/wiki/Land_of_Fire`), jamais du texte du lien.
+ *
+ *  QUALIFICATEUR « (former) » — resserrage du 10/08 (vague 5), mesuré : 1 défaut sur les 20 cas
+ *  relus avant écriture. La fiche « Kobe » sortait « exerce Pirate » alors que Koby est capitaine
+ *  de la Marine : le wiki écrit, dans le champ `occupation`,
+ *      <a href="/wiki/Pirate">Pirate</a> Ship Caretaker (former)
+ *  et rien, dans le titre du lien, ne dit que c'est révolu. Nos libellés sont au PRÉSENT
+ *  (« Appartient à », « Exerce », « Réside ») : écrire une appartenance passée au présent, c'est
+ *  affirmer le contraire du canon (leçon du 10/08 sur le sens des arêtes). On lit donc le texte
+ *  qui SUIT chaque lien, jusqu'au lien suivant — c'est là que le wiki accroche ses qualificateurs —
+ *  et on refuse la cible s'il y annonce un état révolu. Le champ garde ses autres cibles. */
 const NS_EXCLUS = /^(File|Image|Category|Template|Help|User|Talk|Special|Project|Module|MediaWiki|Forum|Blog|Infobox)\s*:/i;
+const REVOLU = /\(\s*(former|formerly|ex-)/i;
 function ciblesDuHtml(fragment) {
   const out = new Map();      // titre → { titre, ancre, libelle }
-  for (const m of String(fragment ?? '').matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
+  const src = String(fragment ?? '');
+  const liens = [...src.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)];
+  for (let i = 0; i < liens.length; i++) {
+    const m = liens[i];
     const attrs = m[1];
     if (/\bclass="[^"]*\b(extiw|external|new)\b/i.test(attrs)) continue;   // interwiki / lien rouge
     const href = /href="([^"]*)"/i.exec(attrs)?.[1] ?? '';
@@ -188,7 +246,10 @@ function ciblesDuHtml(fragment) {
     try { titre = decodeURIComponent(brut.split('#')[0]).replace(/_/g, ' ').trim(); } catch { continue; }
     const ancre = brut.includes('#') ? decodeURIComponent(brut.split('#').slice(1).join('#')).replace(/_/g, ' ') : null;
     if (!titre || NS_EXCLUS.test(titre)) continue;
-    if (!out.has(titre)) out.set(titre, { titre, ancre, libelle: detague(m[2]) || null });
+    const finLien = m.index + m[0].length;
+    const suite = detague(src.slice(finLien, liens[i + 1] ? liens[i + 1].index : src.length));
+    if (REVOLU.test(suite)) { out.set(titre, { titre, ancre, libelle: detague(m[2]) || null, revolu: suite.slice(0, 60) }); continue; }
+    if (!out.has(titre) || out.get(titre).revolu) out.set(titre, { titre, ancre, libelle: detague(m[2]) || null });
   }
   return [...out.values()];
 }
@@ -305,7 +366,7 @@ const natureDe = (source, cible) => {
 };
 
 /* ═══ Saut 1 — identifier la page de chaque isolée, sans se tromper de page ═══════════════════ */
-const journal = { pageAbsente: [], redirectionSection: [], pagePartagee: [], sansInfobox: [], sansChampUtile: [], cibleRefusee: [] };
+const journal = { pageAbsente: [], redirectionSection: [], pagePartagee: [], sansInfobox: [], sansChampUtile: [], cibleRefusee: [], qualificateurRevolu: [] };
 
 console.log(`\n→ résolution des ${lot.length} titres sur ${cfg.hote} (redirections + fragments)…`);
 // SENS SOURCE : on demande au wiki le titre ANGLAIS quand une paire curée existe. `titreDemande`
@@ -351,6 +412,7 @@ for (let i = 0; i < aLire.length; i++) {
   let n = 0;
   for (const l of lignes) {
     for (const c of ciblesDuHtml(l.html)) {
+      if (c.revolu) { journal.qualificateurRevolu.push(`${e.name} --${l.champ}--> ${c.titre} (« ${c.revolu} »)`); continue; }
       brut.push({
         e, champ: l.champ, ...c,
         url: `https://${cfg.hote}/wiki/${encodeURIComponent(r.titre.replace(/ /g, '_'))}`,
@@ -363,7 +425,7 @@ for (let i = 0; i < aLire.length; i++) {
   await dormir(200);              // courtoisie envers le wiki
 }
 console.log('');
-console.log(`  cibles brutes : ${brut.length}`);
+console.log(`  cibles brutes : ${brut.length} · ${journal.qualificateurRevolu.length} refusées pour qualificateur révolu « (former…) »`);
 console.log(`  libellés d'infobox rencontrés (top 25) : `
   + [...libellesGlobaux.entries()].sort((a, b) => b[1] - a[1]).slice(0, 25).map(([k, v]) => `${k}=${v}`).join(' · '));
 

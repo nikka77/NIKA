@@ -33,9 +33,15 @@
 //
 // N'ÉCRIT RIEN EN BASE. Sort un fichier de registre + une trace horodatée dans data/audits/.
 //
+// PORTAGE DU 10/08 (vague 5) : le script est désormais PARAMÉTRÉ PAR UNIVERS. Rien de la mécanique
+// n'a changé — seuls l'hôte du wiki, son jumeau francophone, le fichier de sortie et le GISEMENT
+// (la trace de sonde d'où l'on tire les titres orphelins) deviennent des arguments. T4 reste
+// spécifique à Narutopedia : lui seul range ses infobox dans une page « Infobox:<Titre> ».
+//
 // Usage :
 //   node --env-file=.env.local scripts/akasha-alias-registre.mjs --sonde   (mesure, n'écrit pas le registre)
 //   node --env-file=.env.local scripts/akasha-alias-registre.mjs           (écrit data/alias-cibles-naruto.json)
+//   … --univers="One Piece" --trace=data/audits/isolees-html-one-piece-sonde-<horodate>.json
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -44,11 +50,28 @@ import { norm } from './audit-isolees-fandom.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const db = clientSite();
+const ARG = (n, d) => process.argv.find((a) => a.startsWith(`--${n}=`))?.split('=').slice(1).join('=') ?? d;
 const SONDE = process.argv.includes('--sonde');
 const HORODATE = new Date().toISOString().replace(/[:.]/g, '-');
-const UNIVERS = 'Naruto';
-const HOTE = 'naruto.fandom.com';
-const HOTE_FR = 'naruto.fandom.com/fr';
+const UNIVERS = ARG('univers', 'Naruto');
+/** Un wiki anglais, son jumeau francophone, et le gisement par défaut (la trace de sonde de
+ *  l'univers). `t4` dit si le témoin « précédent mesuré » sait lire ce wiki : il ne sait lire que
+ *  la convention Semantic MediaWiki de Narutopedia (pages « Infobox:<Titre> »). */
+const WIKIS = {
+  Naruto: {
+    hote: 'naruto.fandom.com', hoteFr: 'naruto.fandom.com/fr', t4: true,
+    trace: 'data/audits/isolees-html-naruto-sonde-2026-08-10T11-25-57-440Z.json',
+  },
+  'One Piece': {
+    hote: 'onepiece.fandom.com', hoteFr: 'onepiece.fandom.com/fr', t4: false,
+    trace: null,
+  },
+};
+const cfg = WIKIS[UNIVERS];
+if (!cfg) throw new Error(`univers « ${UNIVERS} » absent de WIKIS`);
+const HOTE = cfg.hote;
+const HOTE_FR = cfg.hoteFr;
+const SORTIE = `data/alias-cibles-${UNIVERS.toLowerCase().replace(/\W+/g, '-')}.json`;
 const UA = { 'User-Agent': 'NIKA-AKASHA/1.0 (audit graphe, contact tulbured06@gmail.com)' };
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -121,7 +144,8 @@ for (const e of entries) {
 
 /* ═══ Le gisement : les titres que la vague 3 n'a pas su résoudre, relus dans sa trace ════════
    On ne réinvente pas la liste : on la reprend telle qu'elle a été MESURÉE. */
-const TRACE_V3 = 'data/audits/isolees-html-naruto-sonde-2026-08-10T11-25-57-440Z.json';
+const TRACE_V3 = ARG('trace', cfg.trace);
+if (!TRACE_V3) throw new Error('aucun gisement : passer --trace=data/audits/isolees-html-…-sonde-….json');
 const v3 = JSON.parse(fs.readFileSync(path.join(ROOT, TRACE_V3), 'utf8'));
 const cibles = new Map();
 for (const x of v3.echecs) {
@@ -132,7 +156,7 @@ for (const x of v3.echecs) {
 // « Summon » vient du champ `classification`, que la vague 3 n'avait pas déclaré : il est dans sa
 // trace d'exploration, pas dans sa trace d'échecs. On l'ajoute nommément — c'est la cible la plus
 // citée de tout le lot (14 liens mesurés le 10/08 à 08:52).
-if (!cibles.has('Summon')) cibles.set('Summon', { titre: 'Summon', liens: 14, champs: new Set(['classification']), sources: ['(trace explore 08-52)'] });
+if (UNIVERS === 'Naruto' && !cibles.has('Summon')) cibles.set('Summon', { titre: 'Summon', liens: 14, champs: new Set(['classification']), sources: ['(trace explore 08-52)'] });
 
 const liste = [...cibles.values()].sort((a, b) => b.liens - a.liens);
 console.log(`\n→ ${liste.length} titres cibles orphelins · ${liste.reduce((s, c) => s + c.liens, 0)} liens`);
@@ -304,7 +328,7 @@ for (const c of liste) {
    de cette exacte population. Suivre le soft redirect écrirait « Giant Panda appartient à
    Summoning Technique » — un lien dans le bon champ mais un fait du mauvais type (leçon du
    10/08 sur le champ `users`). Le tiroir par défaut est celui qui existait. */
-const summon = verdicts.find((v) => v.titre === 'Summon');
+const summon = cfg.t4 ? verdicts.find((v) => v.titre === 'Summon') : null;
 if (summon) {
   const cible = entries.find((e) => e.universe === UNIVERS && e.slug === 'creature-invoquee');
   if (cible) {
@@ -355,11 +379,11 @@ fs.writeFileSync(trace, JSON.stringify({
 console.log(`\ntrace AVANT écriture : ${path.relative(ROOT, trace)}`);
 
 if (SONDE) { console.log('--sonde : registre non écrit.'); process.exit(0); }
-const fichier = path.join(ROOT, 'data/alias-cibles-naruto.json');
+const fichier = path.join(ROOT, SORTIE);
 fs.writeFileSync(fichier, JSON.stringify({
   _lisezMoi: 'Registre titre-de-wiki → fiche AKASHA. Chaque paire porte son témoin et son adresse. '
     + 'Construit par scripts/akasha-alias-registre.mjs le ' + new Date().toISOString().slice(0, 10)
     + '. Ne pas éditer à la main : relancer le script, qui redemande chaque témoin à la source.',
-  Naruto: registre,
+  [UNIVERS]: registre,
 }, null, 1) + '\n');
 console.log(`registre écrit : ${path.relative(ROOT, fichier)} (${Object.keys(registre).length} paires)`);

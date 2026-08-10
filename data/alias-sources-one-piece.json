@@ -1,0 +1,110 @@
+{
+ "_lisezMoi": "Registre SOURCE : nom de NOTRE fiche → titre sur onepiece.fandom.com. Chaque paire porte son témoin et l'adresse qui le prouve. Construit par scripts/akasha-alias-sources.mjs le 2026-08-10. Ne pas éditer à la main : relancer le script, qui redemande chaque témoin à la source.",
+ "One Piece": {
+  "Île Obscuria": {
+   "titreWiki": "Kuraigana Island",
+   "slug": "kuraigana-island",
+   "type": "place",
+   "temoin": "S2 interlangue",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%8Ele%20Obscuria rend la page « Île Obscuria » et déclare en = « Kuraigana Island » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Kuraigana_Island"
+  },
+  "Navire-Cercueil": {
+   "titreWiki": "Hitsugibune",
+   "slug": "navire-cercueil",
+   "type": "artifact",
+   "temoin": "S1 provenance",
+   "preuve": "notre fiche porte attributes.descFrSource = « …https://onepiece.fandom.com/fr/wiki/Navire-Cercueil » ; https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Navire-Cercueil rend la page « Navire-Cercueil » et déclare en = « Coffin Boat » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Hitsugibune (elle-même redirigée depuis « Coffin Boat »)"
+  },
+  "Saga Finale": {
+   "titreWiki": "Final Saga",
+   "slug": "saga-finale",
+   "type": "status",
+   "temoin": "S2 interlangue",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Saga%20Finale rend la page « Saga Finale » et déclare en = « Final Saga » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Final_Saga"
+  },
+  "Île Jaune d'Œuf": {
+   "titreWiki": "Kimi Island",
+   "slug": "kimi",
+   "type": "place",
+   "temoin": "S2 interlangue",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%8Ele%20Jaune%20d'%C5%92uf rend la page « Île Jaune d'Œuf » et déclare en = « Kimi Island » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Kimi_Island"
+  },
+  "Île Patate": {
+   "titreWiki": "Potato Island",
+   "slug": "potato-op",
+   "type": "place",
+   "temoin": "S1 provenance",
+   "preuve": "notre fiche porte attributes.descFrSource = « …https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Patate » ; https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%8Ele%20Patate rend la page « Île Patate » et déclare en = « Potato Island » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Potato_Island"
+  },
+  "Abellon": {
+   "titreWiki": "Aveyron",
+   "slug": "abellon",
+   "type": "character",
+   "temoin": "S2 interlangue",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Abellon rend la page « Abellon » et déclare en = « Aveyron » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Aveyron"
+  },
+  "Île de Road Star": {
+   "titreWiki": "Lodestar Island",
+   "slug": "loadestar-island",
+   "type": "place",
+   "temoin": "S2 interlangue",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%8Ele%20de%20Road%20Star rend la page « Île de Road Star » et déclare en = « Lodestar Island » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Lodestar_Island"
+  },
+  "Royaume de Flevance": {
+   "titreWiki": "Flevance",
+   "slug": "flevance-kingdom",
+   "type": "place",
+   "temoin": "S2 interlangue",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Royaume%20de%20Flevance rend la page « Flevance » (redirection dure depuis « Royaume de Flevance ») et déclare en = « Flevance » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Flevance"
+  },
+  "Île 100 %": {
+   "titreWiki": "100% Island",
+   "slug": "100-island",
+   "type": "place",
+   "temoin": "S1 provenance",
+   "preuve": "notre fiche porte attributes.descFrSource = « …https://onepiece.fandom.com/fr/wiki/%C3%8Ele_100%25 » ; https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%8Ele%20100%25 rend la page « Île 100% » et déclare en = « 100% Island » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/100%25_Island"
+  },
+  "Île Gelée": {
+   "titreWiki": "Jelly Island",
+   "slug": "jelly",
+   "type": "place",
+   "temoin": "S1 provenance",
+   "preuve": "notre fiche porte attributes.descFrSource = « …https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Gel%C3%A9e » ; https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%8Ele%20Gel%C3%A9e rend la page « Île Gelée » et déclare en = « Jelly Island » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Jelly_Island"
+  },
+  "L’équipage des Candys": {
+   "titreWiki": "Candy Pirates",
+   "slug": "l-equipage-des-candys",
+   "type": "status",
+   "temoin": "S1 provenance",
+   "preuve": "notre fiche porte attributes.descFrSource = « …https://onepiece.fandom.com/fr/wiki/%C3%89quipage_des_Candys » ; https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%89quipage%20des%20Candys rend la page « Équipage des Candys » et déclare en = « Candy Pirates » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Candy_Pirates"
+  },
+  "Hobbit": {
+   "titreWiki": "Orbit",
+   "slug": "hobbit",
+   "type": "artifact",
+   "temoin": "S1 provenance",
+   "preuve": "notre fiche porte attributes.descFrSource = « …https://onepiece.fandom.com/fr/wiki/Hobbit » ; https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Hobbit rend la page « Hobbit » et déclare en = « Orbit » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Orbit"
+  },
+  "Tête-de-Maquereau": {
+   "titreWiki": "Sabagashira I",
+   "slug": "tete-de-maquereau",
+   "type": "artifact",
+   "temoin": "S2 interlangue",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=T%C3%AAte-de-Maquereau rend la page « Sabagashira I » (redirection dure depuis « Tête-de-Maquereau ») et déclare en = « Sabagashira I » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Sabagashira_I"
+  },
+  "Ruskaina": {
+   "titreWiki": "Rusukaina",
+   "slug": "rusukaina",
+   "type": "place",
+   "temoin": "S2 interlangue",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Ruskaina rend la page « Ruskaina » et déclare en = « Rusukaina » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Rusukaina"
+  },
+  "Village de Kuen": {
+   "titreWiki": "Kuen Village",
+   "slug": "kuen-village",
+   "type": "place",
+   "temoin": "S2 interlangue",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Village%20de%20Kuen rend la page « Village de Kuen » et déclare en = « Kuen Village » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Kuen_Village"
+  }
+ }
+}

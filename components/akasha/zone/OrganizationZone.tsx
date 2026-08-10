@@ -1,9 +1,23 @@
 'use client';
 // components/akasha/zone/OrganizationZone.tsx — fiche ORGANISATION « organigramme-zone » (lot 4b).
-// Les 402 status (équipages, clans, organisations) passent du gabarit générique le plus pauvre au
+// Les status (équipages, clans, organisations) passent du gabarit générique le plus pauvre au
 // plus spectaculaire : le collectif comme PUITS — figure centrale au cœur, premier cercle en orbite
 // (taille/éclat = favorites), équipage complet en grappe ; prime totale en héros pour One Piece.
 // Surface | canal re-scopable (contrat zone-context), membres via relations « appartient ».
+//
+// ENSEIGNE (10/08/2026) — le puits représente le collectif par le visage de ses MEMBRES et ne
+// lisait jamais `entry.image_url` : le visuel du collectif LUI-MÊME (pavillon, blason, photo de
+// groupe) était en base et ne se voyait qu'en liste, en mosaïque, en recherche et dans l'image
+// OpenGraph. Même défaut que les 3 830 arêtes de personnages réparées le même soir : la donnée
+// existe, la page ne la lit pas. Mesuré sur le corpus paginé le 10/08 (7 654 fiches, 16 788
+// arêtes) : le corpus compte 333 fiches `status` — et non les 402 qu'annonçait la ligne 3 de cet
+// en-tête — dont 260 portent un visuel. 221 d'entre elles ont AUSSI des membres : le puits garde
+// donc tout son sens, il lui manquait l'enseigne au-dessus. Les 39 restantes n'affichaient qu'un
+// « Aucun membre relié » ; elles reçoivent le visuel en grand, à la place du puits vide.
+// Contrôle avant/après : 0/9 puis 9/9 fiches de 6 univers rendent leur propre visuel dans une
+// balise <img> SERVIE (scripts/akasha-verif-visuel-status-rendu.mjs — la charge RSC porte l'URL
+// dans les DEUX états, un grep de l'URL ne prouve donc rien).
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { RARITY_META, universeMeta, universeWordmark, type AkashaEntryDetail } from '@/lib/akasha/types';
 import { universeHubSlug } from '@/lib/akasha/universe-taxonomy';
@@ -35,6 +49,7 @@ function ZoneInner({ entry }: { entry: AkashaEntryDetail }) {
   const rar = entry.rarity ? RARITY_META[entry.rarity] : null;
   const scope = str(a.scope) ?? 'Organisation';
   const prime = primeMd(a.total_prime);
+  const enseigne = str(entry.image_url);
 
   // Membres (personnages « appartient » entrants), triés par popularité — la masse du puits.
   const members = entry.relationsIn
@@ -70,6 +85,14 @@ function ZoneInner({ entry }: { entry: AkashaEntryDetail }) {
               : <span style={chip('var(--td3)')}>{inner}</span>;
           })()}
         </div>
+        {/* L'ENSEIGNE, au-dessus du nom : c'est l'identité VISUELLE du collectif (son pavillon,
+            son blason, sa photo de groupe) — pas un membre. Elle ne s'affiche en compact que
+            lorsque le puits a de la matière ; sans membre elle prend la place du puits, plus bas. */}
+        {enseigne && leader && (
+          <div style={{ marginBottom: 14 }}>
+            <Enseigne src={enseigne} nom={entry.name} accent={accent} hauteur={128} />
+          </div>
+        )}
         <h1 style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(32px,5.5vw,68px)', lineHeight: 0.9, letterSpacing: '-0.01em', color: 'var(--td)', margin: '0 0 10px' }}>
           {entry.name}
         </h1>
@@ -123,6 +146,14 @@ function ZoneInner({ entry }: { entry: AkashaEntryDetail }) {
               );
             })}
           </div>
+        ) : enseigne ? (
+          /* PUITS VIDE, MAIS LE COLLECTIF A UN VISAGE. 39 fiches mesurées (10/08) portent un
+             visuel sans aucun membre relié : elles n'affichaient qu'une phrase d'excuse alors que
+             leur pavillon dormait en base. Le compte honnête (« 0 membre au registre ») est déjà
+             dit juste au-dessus — la phrase ne disait rien de plus. */
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Enseigne src={enseigne} nom={entry.name} accent={accent} hauteur={288} />
+          </div>
         ) : (
           <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td3)' }}>Aucun membre relié dans le registre pour l'instant.</p>
         )}
@@ -164,6 +195,55 @@ function ZoneInner({ entry }: { entry: AkashaEntryDetail }) {
       <aside className="ak-canal" aria-live="polite">
         <Canal entry={entry} accent={accent} scope={scope} prime={prime} memberCount={members.length} />
       </aside>
+    </div>
+  );
+}
+
+/** L'ENSEIGNE d'un collectif — le cadre suit la NATURE du visuel, pas l'inverse.
+ *
+ *  Mesuré sur les 260 visuels `status` téléchargés le 10/08 (aucun échec, aucun carton d'erreur
+ *  300 × 171) : ils se répartissent en trois natures qui n'appellent pas le même cadre —
+ *  112 en 16:9 ou plus large (photos de groupe et plans de série : « Ep373OriginalCaptains »,
+ *  « Team_8 », « Allied_Shinobi_Forces »), 54 carrés (les blasons de clan de
+ *  /images/akasha/ref/*.webp et les symboles de wiki) et 49 pavillons nommés « Jolly Roger ».
+ *  Un cadre à ratio fixe trancherait la moitié du corpus : en `cover` il décapiterait les photos
+ *  de groupe, en `contain` il laisserait un pavillon carré flotter dans deux bandes vides.
+ *
+ *  D'où l'invariant retenu : c'est la HAUTEUR qui est fixe, la largeur suit l'image
+ *  (`height:100%; width:auto`) — même grammaire que le wordmark d'univers juste au-dessus dans ce
+ *  fichier. Un blason carré devient un médaillon, une photo 16:9 devient une bande, rien n'est
+ *  jamais rogné et rien ne bouge verticalement au chargement.
+ *
+ *  Halo flou de l'image sur elle-même : repris tel quel de CharacterZone. Il porte les 39 visuels
+ *  à canal alpha (pavillons détourés), qui sans lui flotteraient sur le fond de page.
+ *
+ *  PLAFOND ×2 (leçon du 08/08 : « éprouver un agrandissement sur la PIRE source, pas sur la fiche
+ *  de référence »). La plus petite source du corpus fait 149 px de haut, donc la variante compacte
+ *  (128) n'agrandit JAMAIS, et la variante pleine (288) reste sous le double pour tout le corpus
+ *  sauf ces quelques miniatures — que le plafond ramène à leur définition. Il s'applique à
+ *  l'IMAGE, jamais au cadre. */
+function Enseigne({ src, nom, accent, hauteur }: { src: string; nom: string; accent: string; hauteur: number }) {
+  const [natif, setNatif] = useState<{ w: number; h: number } | null>(null);
+  const ref = useRef<HTMLImageElement>(null);
+  // `onLoad` ne suffit pas : l'image est rendue côté serveur et le navigateur l'a souvent finie
+  // avant que React n'attache l'écouteur — même correctif que CharacterZone.
+  useEffect(() => {
+    const el = ref.current;
+    if (el?.complete && el.naturalWidth) setNatif({ w: el.naturalWidth, h: el.naturalHeight });
+  }, [src]);
+  const h = natif ? Math.min(hauteur, natif.h * 2) : hauteur;
+  return (
+    <div style={{
+      position: 'relative', display: 'inline-flex', height: h, maxWidth: '100%',
+      borderRadius: 14, overflow: 'hidden', border: '1px solid var(--bd2)', background: 'var(--bg2)',
+      boxShadow: `0 26px 60px -46px ${accent}AA`,
+    }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img aria-hidden src={src} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(22px) brightness(0.45) saturate(1.1)', transform: 'scale(1.35)' }} />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img ref={ref} src={src} alt={nom}
+        onLoad={(e) => setNatif({ w: e.currentTarget.naturalWidth, h: e.currentTarget.naturalHeight })}
+        style={{ position: 'relative', height: '100%', width: 'auto', maxWidth: '100%', objectFit: 'contain', display: 'block' }} />
     </div>
   );
 }

@@ -1,0 +1,135 @@
+{
+ "chantier": "chantier 4 — étape C : arêtes prédiquées extraites de NOS descFr (isolées Dragon Ball)",
+ "quand": "2026-08-10T13:06:35.168Z",
+ "mode": "MESURE (lecture seule)",
+ "isolees": 146,
+ "avecDescFr": 130,
+ "nomsUniquesIndexes": 1133,
+ "motifs": [
+  {
+   "nom": "membre",
+   "re": "/\\b(?:membre|membres)\\s+(?:le plus [a-z]+\\s+)?(?:du|de la|de l|des)\\s+$/",
+   "relation": "appartient",
+   "typesCible": [
+    "organization",
+    "status",
+    "group"
+   ]
+  },
+  {
+   "nom": "fait partie",
+   "re": "/\\bfait partie\\s+(?:du|de la|de l|des)\\s+$/",
+   "relation": "appartient",
+   "typesCible": [
+    "organization",
+    "status",
+    "group"
+   ]
+  },
+  {
+   "nom": "sbire/serviteur",
+   "re": "/\\b(?:sbire|sbires|serviteur|serviteurs|homme de main|assistant|assistante|majordome)\\s+(?:du|de la|de l|des|de)\\s+$/",
+   "relation": "appartient",
+   "typesCible": [
+    "character",
+    "organization",
+    "status"
+   ]
+  },
+  {
+   "nom": "eleve",
+   "re": "/\\b(?:eleve|eleves|disciple|disciples|apprenti|apprentis)\\s+(?:du|de la|de l|des|de)\\s+$/",
+   "relation": "eleve",
+   "typesCible": [
+    "character"
+   ]
+  },
+  {
+   "nom": "maitre/mentor",
+   "re": "/\\b(?:maitre|maitres|mentor|mentors|entraineur|entraineurs)\\s+(?:du|de la|de l|des|de)\\s+$/",
+   "relation": "mentor",
+   "typesCible": [
+    "character"
+   ]
+  },
+  {
+   "nom": "habite village/planete",
+   "re": "/\\b(?:du|de la|de l|des|le|la)\\s+(?:village|planete|ile|royaume|cite|ville)\\s+$/",
+   "relation": "habite",
+   "typesCible": [
+    "place"
+   ]
+  },
+  {
+   "nom": "reside a",
+   "re": "/\\b(?:reside|vit|habite|demeure|originaire)\\s+(?:a|au|sur|dans|dans le|dans la|de|du)\\s+$/",
+   "relation": "habite",
+   "typesCible": [
+    "place"
+   ]
+  }
+ ],
+ "trouvees": 5,
+ "parMotif": {
+  "habite village/planete": 4,
+  "eleve": 1
+ },
+ "fichesSorties": 5,
+ "candidats": [
+  {
+   "deSlug": "hirudegarn",
+   "de": "Hirudegarn",
+   "deType": "character",
+   "motif": "habite village/planete",
+   "relation": "habite",
+   "versSlug": "konats",
+   "vers": "Konats",
+   "versType": "place",
+   "phrase": "Ressuscité par le groupe de magiciens noirs appelé les Kashvar sur la planète Konats, il était autrefois transformé en pierre par une épée enchantée et scellé dans un temple ancestral."
+  },
+  {
+   "deSlug": "tsuru-sennin",
+   "de": "Tsuru-Sennin",
+   "deType": "character",
+   "motif": "eleve",
+   "relation": "eleve",
+   "versSlug": "kame-sennin",
+   "vers": "Kamé Sennin",
+   "versType": "character",
+   "phrase": "Au 22e Tenkaichi Budokai, il inscrivit ses deux meilleurs élèves, Tenshinhan et Chiaotzu, pour affronter les élèves de Kame-Sennin : Goku, Krilin et Yamcha."
+  },
+  {
+   "deSlug": "daiz",
+   "de": "Daiz",
+   "deType": "character",
+   "motif": "habite village/planete",
+   "relation": "habite",
+   "versSlug": "kabocha",
+   "vers": "Kabocha",
+   "versType": "place",
+   "phrase": "Daiz est le prince de la dynastie Pukinpa sur la planète Kabocha, mais il a été recruté par le corps de choc de Turles."
+  },
+  {
+   "deSlug": "tapion",
+   "de": "Tapion",
+   "deType": "character",
+   "motif": "habite village/planete",
+   "relation": "habite",
+   "versSlug": "konats",
+   "vers": "Konats",
+   "versType": "place",
+   "phrase": "Originaire de la planète Konats, il a collaboré avec son frère cadet Minotia pour arrêter le monstre colossal Hirudegarn en jouant des flûtes magiques ancestrales (Hero's Flutes)."
+  },
+  {
+   "deSlug": "minotia",
+   "de": "Minotia",
+   "deType": "character",
+   "motif": "habite village/planete",
+   "relation": "habite",
+   "versSlug": "konats",
+   "vers": "Konats",
+   "versType": "place",
+   "phrase": "Minotia est le frère cadet de Tapion, tous deux originaires de la planète Konats et héros légendaires de leur peuple."
+  }
+ ]
+}

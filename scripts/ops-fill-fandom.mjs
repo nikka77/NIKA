@@ -5,7 +5,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
 import { WIKIS } from './lib/fandom.mjs';
-import { dejaEnFile } from './lib/deja-en-file.mjs';
+import { dejaEnFile, refusesParLaGarde } from './lib/deja-en-file.mjs';
 
 const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
@@ -26,7 +26,10 @@ if (error) { console.error(error.message); process.exit(1); }
 // IDEMPOTENCE (07/08) : sans ce filtre, ce script recommandait toutes les 20 minutes les fiches
 // qui attendaient déjà d'être relues — 97 productions pour la seule `anton-the-great`.
 const dejaVus = await dejaEnFile(supabase, 'fandom_descfr');
-const candidates = (data ?? []).filter((c) => !dejaVus.has(c.slug)).slice(0, LIMIT);
+// Et celles qu'une garde a refusées sur le fond : une page Fandom absente ne le devient pas
+// moins en la redemandant toutes les 20 minutes (11 682 refus pour 419 entités le 10/08).
+const refusees = await refusesParLaGarde(supabase, 'fandom_descfr');
+const candidates = (data ?? []).filter((c) => !(dejaVus.has(c.slug) || refusees.has(c.slug))).slice(0, LIMIT);
 console.log(`${candidates.length} fiches retenues (sans descFr, univers avec wiki) :`);
 for (const c of candidates)
   console.log(`  · ${String(c.attributes?.favorites ?? 0).padStart(5)} fav — ${c.name} [${c.universe}]`);

@@ -1,0 +1,1233 @@
+{
+  "quand": "2026-08-10T13:17:54.978Z",
+  "mode": "MESURE (lecture seule)",
+  "question": "Avant d’écrire summary : qui le LIT pour ces 132 fiches ?",
+  "lecteursDeSummary": {
+    "components/akasha/CharacterCard.tsx:101": "f.summary ?? entry.summary — rendu INCONDITIONNEL (ne regarde pas descFr). Alimenté par app/learn/akasha/u/[slug]/page.tsx:93 → top 48 par popularité.",
+    "components/akasha/AkashaList.tsx:124": "flavor ?? entry.summary — summary seulement si flavorText(descFr) est null",
+    "components/akasha/AkashaMosaic.tsx:39": "idem liste",
+    "app/learn/akasha/[slug]/page.tsx:40": "flavorExcerpt(descFr) ?? `nom — summary` (méta description)",
+    "components/akasha/zone/CharacterZone.tsx:395": "bio = a.bio || a.descFr || summary",
+    "lib/akasha/queries.ts:134": "recherche : or(name, universe, summary, descFr) — summary cherchable mais descFr aussi"
+  },
+  "creux": 121,
+  "visibles": {
+    "carteTCGhubDragonBall": 2,
+    "listeOuMosaique": 7,
+    "metaDescription": 7,
+    "bioDeLaFiche": 7,
+    "auMoinsUnEndroit": 9
+  },
+  "detail": [
+    {
+      "slug": "mira-kun",
+      "name": "Mira-kun",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 417,
+      "flavor": "Bandages est le combattant momie de Baba."
+    },
+    {
+      "slug": "recoome",
+      "name": "Recoome",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 419,
+      "flavor": "Reacoom est un grand extraterrestre musclé à l'apparence humaine, aux cheveux roux."
+    },
+    {
+      "slug": "babidi",
+      "name": "Babidi",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 141,
+      "flavor": "Babidi était déterminé à ressusciter Majin Buu afin de poursuivre l'œuvre de son père, à savoir conquérir l'univers, et ainsi le rendre fier."
+    },
+    {
+      "slug": "mermaid",
+      "name": "Mermaid",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 197,
+      "flavor": "Son Goku trouva une sirène alors qu'il cherchait l'exemple de la femme idéale selon Tortue Géniale."
+    },
+    {
+      "slug": "rabbit-gang-member-2",
+      "name": "Rabbit Gang Member 2",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 163,
+      "flavor": "Après avoir été battu, il est abandonné sur la Lune pour y piler du mochi."
+    },
+    {
+      "slug": "puck",
+      "name": "Puck",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 219,
+      "flavor": "Puck s'en prend d'abord à Goku Jr., mais il l'accompagne ensuite dans un voyage à la recherche d'une Dragon Ball."
+    },
+    {
+      "slug": "debu",
+      "name": "Debu",
+      "carte": false,
+      "liste": true,
+      "meta": true,
+      "fiche": true,
+      "descFrLen": 0,
+      "flavor": null
+    },
+    {
+      "slug": "rabbit-gang-member-1",
+      "name": "Rabbit Gang Member 1",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 163,
+      "flavor": "Après avoir été battu, il est abandonné sur la Lune pour y piler du mochi."
+    },
+    {
+      "slug": "tsukutsun-tsun",
+      "name": "Tsukutsun Tsun",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 86,
+      "flavor": "C'est un artiste martial qui devient le petit ami d'Akane."
+    },
+    {
+      "slug": "sonpara",
+      "name": "Sonpara",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 833,
+      "flavor": "Son Para est un mercenaire appartenant au culte Luud, frère de Bon Para et Don Para, formant les Para Brothers."
+    },
+    {
+      "slug": "anton-the-great",
+      "name": "Anton the Great",
+      "carte": false,
+      "liste": true,
+      "meta": true,
+      "fiche": true,
+      "descFrLen": 0,
+      "flavor": null
+    },
+    {
+      "slug": "gozu",
+      "name": "Gozu",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 757,
+      "flavor": "Goz est un ogre masculin chargé de l'enfer aux côtés de Mez, sous l'autorité du roi Yemma, qui demeure le seul être plus fort que lui dans ce royaume."
+    },
+    {
+      "slug": "cranberry",
+      "name": "Cranberry",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 354,
+      "flavor": "Il faisait partie de ceux, sur la Planète Freezer 79, choisis par Dodoria et Zarbon pour envahir Namek."
+    },
+    {
+      "slug": "yogengyo",
+      "name": "Yogengyo",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1053,
+      "flavor": "L'Oracle Fish est un poisson bleu sapient, de race Fish, appartenant aux dieux de la destruction et résidant sur la planète de Beerus en tant…"
+    },
+    {
+      "slug": "van-zant",
+      "name": "Van Zant",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 490,
+      "flavor": "Van Zant est un personnage fou, non nommé dans le manga Dragon Ball mais nommé dans l'anime Dragon Ball Z."
+    },
+    {
+      "slug": "choco",
+      "name": "Choco",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 104,
+      "flavor": "Cocoa est le troisième plus âgé des neuf enfants de Mousse et Eclair, dans l'épisode 128 de Dragon Ball."
+    },
+    {
+      "slug": "punta",
+      "name": "Punta",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 809,
+      "flavor": "Punta (aussi romanisé Puntar ou Pintar) est un compétiteur du Championnat d'Arts Martiaux Mondial de grande taille et corpulent à peau marron, vêtu…"
+    },
+    {
+      "slug": "idasamama",
+      "name": "Idasamama",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 97,
+      "flavor": "Spectatrice du 25e Tenkaichi Budokai, où ses deux fils sont concurrents dans la catégorie junior."
+    },
+    {
+      "slug": "shuuku",
+      "name": "Shuuku",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 140,
+      "flavor": "Creampuff (Crepe dans le doublage anglais de Funimation) est l'aîné des neuf enfants de Mousse et Éclair, dans l'épisode 128 de Dragon Ball."
+    },
+    {
+      "slug": "sanzoku-kuma",
+      "name": "Sanzoku Kuma",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 371,
+      "flavor": "Le tout premier vrai combat de Goku est contre cet ours, qui refuse de reculer après que Goku a menacé de le combattre s'il ne les laissait pas…"
+    },
+    {
+      "slug": "cymbal",
+      "name": "Cymbal",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 335,
+      "flavor": "Après un bref combat, Yajirobé tranche Cymbal en deux et le mange."
+    },
+    {
+      "slug": "sorbet",
+      "name": "Sorbet",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 543,
+      "flavor": "Sorbet est un antagoniste secondaire de Dragon Ball Z : La Résurrection de F."
+    },
+    {
+      "slug": "kurikinton-soramame",
+      "name": "Kurikinton Soramame",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 130,
+      "flavor": "C'est un tireur habile qui ressemble à l'acteur américain Clint Eastwood."
+    },
+    {
+      "slug": "gala",
+      "name": "Gala",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 163,
+      "flavor": "On le voit toujours aux côtés de Pagos et il fait souvent détruire leur voiture de police par Arale par accident."
+    },
+    {
+      "slug": "shuu",
+      "name": "Shuu",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 628,
+      "flavor": "L'homme de main ninja de l'Empereur Pilaf, qui est apparemment un chien humanoïde."
+    },
+    {
+      "slug": "zald",
+      "name": "Zald",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 651,
+      "flavor": "Salt est l'un des démons de l'Étoile de Makyo qui sert Garlic Junior aux côtés des autres membres des Spice Boys."
+    },
+    {
+      "slug": "sharpner",
+      "name": "Sharpner",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 772,
+      "flavor": "Il tourmente Son Gohan quelque temps à l'école, mais devient ensuite son ami après avoir été témoin de ses prouesses athlétiques."
+    },
+    {
+      "slug": "vodka",
+      "name": "Vodka",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 470,
+      "flavor": "Ce malfrat terrien dirige le gang Vodka et porte un costume vert clair assorti d'un chapeau."
+    },
+    {
+      "slug": "blind-boy",
+      "name": "Blind Boy",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 73,
+      "flavor": "C'est un garçon aveugle qui a rencontré Majin Boo et a été guéri par lui."
+    },
+    {
+      "slug": "cell-games-announcer",
+      "name": "Cell Games Announcer",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1173,
+      "flavor": "Jimmy Firecracker est le présentateur de ZTV qui commentait en direct le Cell Game."
+    },
+    {
+      "slug": "danpara",
+      "name": "Danpara",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 772,
+      "flavor": "Dan Para, également connu sous le nom de Don Para, est un mercenaire appartenant au culte Luud et l'un des trois frères Para, aux côtés de Bon Para…"
+    },
+    {
+      "slug": "tagoma",
+      "name": "Tagoma",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 659,
+      "flavor": "Tagoma est un antagoniste secondaire de Dragon Ball Z : La Résurrection de F."
+    },
+    {
+      "slug": "garlic-junior",
+      "name": "Garlic Junior",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1469,
+      "flavor": "Garlic Junior est un démon qui apparaît dans Dragon Ball Z : À la poursuite de Garlic, et fut le principal méchant durant une saga de remplissage de…"
+    },
+    {
+      "slug": "zunoo",
+      "name": "Zunoo",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 62,
+      "flavor": "Zunoo est un personnage mystérieux qui sait tout de l'univers."
+    },
+    {
+      "slug": "gyumao",
+      "name": "Gyumao",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1217,
+      "flavor": "Gyumao est inspiré de Niúmówáng (« Roi Démon-Bœuf », « Seigneur Diable-Bœuf » ou « Tyran-Bœuf »), un personnage du roman chinois La Pérégrination…"
+    },
+    {
+      "slug": "jinzouningen-8-gou",
+      "name": "Jinzouningen 8-gou",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 843,
+      "flavor": "C-8 est le premier androïde de la série, et le huitième de la série d'androïdes construits par le Dr Gero."
+    },
+    {
+      "slug": "karoni",
+      "name": "Karoni",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 105,
+      "flavor": "L'un des meilleurs élèves de Monsieur Satan, un séducteur qui exécute l'Attaque de la Belle Rose Volante."
+    },
+    {
+      "slug": "c6",
+      "name": "#C6",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 198,
+      "flavor": "Après être resté prisonnier pendant trente ans, C-6 rencontre Gohan après que celui-ci est tombé par accident dans les ruines, et l'aide à s'échapper."
+    },
+    {
+      "slug": "koku-ou",
+      "name": "Koku-Ou",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 155,
+      "flavor": "Le roi Furry, appelé simplement le Roi dans la version japonaise, est un chien anthropomorphe qui est l'actuel roi de la Terre durant la série Dragon…"
+    },
+    {
+      "slug": "gajira-norimaki",
+      "name": "Gajira Norimaki",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1439,
+      "flavor": "Une créature ailée aux cheveux verts, semblable à un chérubin, éclose d'un œuf ramené par Senbei d'un voyage dans le temps ; plus tard, elles se…"
+    },
+    {
+      "slug": "dabura",
+      "name": "Dabura",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 398,
+      "flavor": "Dabra est le roi d'un Royaume des Démons, et le bras droit de Babidi, placé sous son contrôle par un sortilège."
+    },
+    {
+      "slug": "shi-buta",
+      "name": "Shi-Buta",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 561,
+      "flavor": "Cochon est un habitant du village des Pingouins, un cochon anthropomorphe."
+    },
+    {
+      "slug": "bora",
+      "name": "Bora",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 121,
+      "flavor": "Un puissant autochtone qui vit au pied de la Tour Karin avec son fils Upa."
+    },
+    {
+      "slug": "namu",
+      "name": "Namu",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1673,
+      "flavor": "Namu apparaît pour la première fois au 21e Tenka-ichi Budôkai, combattant Ran Fuan."
+    },
+    {
+      "slug": "guldo",
+      "name": "Guldo",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 287,
+      "flavor": "Guldo est le membre le plus petit et le moins puissant physiquement de l'équipe."
+    },
+    {
+      "slug": "other-world-budokai-announcer",
+      "name": "Other World Budokai Announcer",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1171,
+      "flavor": "L'homme qui présente chaque Tenkaichi Budokai depuis le début de Dragon Ball jusqu'à la fin de Dragon Ball Z."
+    },
+    {
+      "slug": "otokosuki",
+      "name": "Otokosuki",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 171,
+      "flavor": "C'est un homme musclé qui participe au 28e Tenkaichi Budokai."
+    },
+    {
+      "slug": "girl",
+      "name": "Girl",
+      "carte": false,
+      "liste": true,
+      "meta": true,
+      "fiche": true,
+      "descFrLen": 0,
+      "flavor": null
+    },
+    {
+      "slug": "paikuhan",
+      "name": "Paikuhan",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1041,
+      "flavor": "Pikkon est le meilleur combattant du Kaiô de l'Ouest, mort depuis un temps indéterminé."
+    },
+    {
+      "slug": "rom",
+      "name": "Rom",
+      "carte": false,
+      "liste": true,
+      "meta": true,
+      "fiche": true,
+      "descFrLen": 0,
+      "flavor": null
+    },
+    {
+      "slug": "tenkaichi-budokai-announcer",
+      "name": "Tenkaichi Budokai Announcer",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1188,
+      "flavor": "L'homme qui présente chaque Tenkaichi Budokai du début de Dragon Ball à la fin de Dragon Ball Z."
+    },
+    {
+      "slug": "upa",
+      "name": "Upa",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 903,
+      "flavor": "Le fils de Bora, il accompagne Son Goku un court moment durant la saga de la Voyante Baba afin de récupérer toutes les Dragon Balls pour pouvoir…"
+    },
+    {
+      "slug": "umikame",
+      "name": "Umikame",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1179,
+      "flavor": "Ami et compagnon de longue date de Muten-Rôshi, cette bonne et adorable tortue vit à Kame House avec le vieil ermite."
+    },
+    {
+      "slug": "yakon",
+      "name": "Yakon",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1194,
+      "flavor": "Yakon est un personnage de l'anime et du manga Dragon Ball Z."
+    },
+    {
+      "slug": "bacterian",
+      "name": "Bacterian",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 864,
+      "flavor": "Un énorme concurrent crasseux du 21e Tenka-ichi Budôkai qui ne s'est jamais lavé ni brossé les dents depuis le jour de sa naissance."
+    },
+    {
+      "slug": "babaro",
+      "name": "Babaro",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 185,
+      "flavor": "Bavarois (Creampuff — ses amis l'appellent Puff — dans le doublage anglais Funimation) est le quatrième plus âgé des neuf enfants de Mousse et…"
+    },
+    {
+      "slug": "antique-shop-owner",
+      "name": "Antique Shop Owner",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1266,
+      "flavor": "Le Propriétaire du Magasin d'Antiquités est un personnage mineur d'abord vu dans l'anime Dragon Ball, durant la saga de l'Armée du Ruban Rouge."
+    },
+    {
+      "slug": "bisuke",
+      "name": "Bisuke",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 150,
+      "flavor": "Biscuit (Jam dans le doublage anglais Funimation) est le cinquième plus jeune des neuf enfants de Mousse et Eclair, dans l'épisode 128 de Dragon Ball."
+    },
+    {
+      "slug": "chuu-lee-s-mother",
+      "name": "Chuu Lee's Mother",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 156,
+      "flavor": "Elle ressemble à la villageoise de « La Furie d'InoShikaCho », ainsi qu'à la Chichi vieillie de la ligne temporelle du Trunks du futur."
+    },
+    {
+      "slug": "chapa-o",
+      "name": "Chapa-O",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 165,
+      "flavor": "Compétiteur réputé pour sa force, il perd contre Son Goku lors des tours préliminaires des 22e et 23e Tenkaichi Budokai."
+    },
+    {
+      "slug": "ran-fuan",
+      "name": "Ran Fuan",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1306,
+      "flavor": "Une compétitrice du 21e Tenkaichi Budokai qui utilise comme arme le fait d'être une femme « sans défense »."
+    },
+    {
+      "slug": "general-blue",
+      "name": "General Blue",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 931,
+      "flavor": "Il possédait une technique psychique spéciale lui permettant de paralyser temporairement les gens pour qu'ils ne puissent plus bouger (appelée…"
+    },
+    {
+      "slug": "gora",
+      "name": "Gora",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1292,
+      "flavor": "Gola est un personnage fictif de la série animée Dragon Ball."
+    },
+    {
+      "slug": "ten-long-hyoga",
+      "name": "Ten Long Hyoga",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1650,
+      "flavor": "Sky Dragon est un maître d'arts martiaux et le chef de l'École du Croc de la Panthère avec son frère Rising Dragon."
+    },
+    {
+      "slug": "kinkaku",
+      "name": "Kinkaku",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 821,
+      "flavor": "« Corne d'Or ») est un personnage qui apparaît dans l'épisode de Dragon Ball « Terror et Plague »."
+    },
+    {
+      "slug": "shao-long-hyoga",
+      "name": "Shao Long Hyoga",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1513,
+      "flavor": "Rising Dragon est le frère du maître d'arts martiaux Sky Dragon."
+    },
+    {
+      "slug": "milkman",
+      "name": "Milkman",
+      "carte": false,
+      "liste": true,
+      "meta": true,
+      "fiche": true,
+      "descFrLen": 0,
+      "flavor": null
+    },
+    {
+      "slug": "mezu",
+      "name": "Mezu",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 535,
+      "flavor": "Mez est un ogre de grande taille, responsable de l'administration de l'Enfer aux côtés de Goz."
+    },
+    {
+      "slug": "penguin-village-junior-high-principal",
+      "name": "Penguin Village Junior High Principal",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 164,
+      "flavor": "Il est ami avec Senbei et se comporte parfois de façon loufoque, comme rouler à roulettes dans les couloirs de l'école."
+    },
+    {
+      "slug": "sergeant-metallic",
+      "name": "Sergeant Metallic",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 922,
+      "flavor": "De toute la Tour Muscle, le deuxième défi de Goku — passer le sergent Metallic (alias Full Metal Jacket) — fut de loin la tâche la plus difficile."
+    },
+    {
+      "slug": "mother",
+      "name": "Mother",
+      "carte": false,
+      "liste": true,
+      "meta": true,
+      "fiche": true,
+      "descFrLen": 0,
+      "flavor": null
+    },
+    {
+      "slug": "shura",
+      "name": "Shura",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1539,
+      "flavor": "Shula (シュラ) est un personnage exclusif à l'anime, un démon à l'apparence humaine avec de longs cheveux noirs, des oreilles pointues et un symbole en…"
+    },
+    {
+      "slug": "staff-officer-black",
+      "name": "Staff Officer Black",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1052,
+      "flavor": "D'une voix douce et à l'esprit vif, Black exécute les ordres du Commandant Red et informe Red de la situation actuelle avec les officiers restants du…"
+    },
+    {
+      "slug": "bisshu",
+      "name": "Bisshu",
+      "carte": false,
+      "liste": true,
+      "meta": true,
+      "fiche": true,
+      "descFrLen": 0,
+      "flavor": null
+    },
+    {
+      "slug": "turbo-norimaki",
+      "name": "Turbo Norimaki",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 253,
+      "flavor": "Premier fils de Senbei et Midori, qui est presque tué par des extraterrestres puis ressuscité par eux, ce qui lui confère au passage de nombreux…"
+    },
+    {
+      "slug": "tarou-soramame",
+      "name": "Tarou Soramame",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 217,
+      "flavor": "Après avoir obtenu son diplôme du lycée, il devient policier (parce qu'il est autorisé à porter une arme et des lunettes noires en permanence)."
+    },
+    {
+      "slug": "colonel-violet",
+      "name": "Colonel Violet",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1261,
+      "flavor": "Colonel Violet est une terrienne féminine, seule officière confirmée de l'Armée du Ruban Rouge, apparaissant brièvement dans le manga lors de la…"
+    },
+    {
+      "slug": "ginkaku",
+      "name": "Ginkaku",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 937,
+      "flavor": "« Corne d'Argent ») est un personnage qui apparaît dans l'épisode de Dragon Ball « Terror et Plague »."
+    },
+    {
+      "slug": "akane-kimidori",
+      "name": "Akane Kimidori",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 102,
+      "flavor": "Elle est appelée « Akani-chin » par Arale au lieu d'« Akane-chan »."
+    },
+    {
+      "slug": "pagos",
+      "name": "Pagos",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 141,
+      "flavor": "Leur voiture de police est souvent détruite accidentellement par Arale."
+    },
+    {
+      "slug": "muuri",
+      "name": "Muuri",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 565,
+      "flavor": "Muri est l'aîné d'un village namek qui est le foyer de Dende."
+    },
+    {
+      "slug": "grandma-oharu",
+      "name": "Grandma Oharu",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 86,
+      "flavor": "Mamie Haru est une vieille femme qui travaille au bureau de tabac du Village Pingouin."
+    },
+    {
+      "slug": "jewel",
+      "name": "Jewel",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 450,
+      "flavor": "Jewel est un personnage de l'univers Dragon Ball, connu pour avoir participé au 24e et 25e Tournoi des Arts Martiaux Mondiaux."
+    },
+    {
+      "slug": "daishinkan",
+      "name": "Daishinkan",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 525,
+      "flavor": "Le Grand Prêtre est un homme de petite taille à la peau bleu pâle, aux yeux violets et aux cheveux blancs plaqués en arrière."
+    },
+    {
+      "slug": "gingaou",
+      "name": "Gingaou",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 324,
+      "flavor": "Le Roi Galactique est le roi de la Voie lactée."
+    },
+    {
+      "slug": "bonpara",
+      "name": "Bonpara",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 719,
+      "flavor": "Bon Para est un mercenaire masculin appartenant au culte Luud, frère de Don Para et Son Para, formant le trio des Para Brothers."
+    },
+    {
+      "slug": "suno",
+      "name": "Suno",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 785,
+      "flavor": "Une fillette de 9 ans qui vit au village de Jingle."
+    },
+    {
+      "slug": "parzan",
+      "name": "Parzan",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 95,
+      "flavor": "Un extraterrestre originaire de la même planète que Suppaman, qui se proclame roi de la jungle."
+    },
+    {
+      "slug": "copy-vegeta",
+      "name": "Copy Vegeta",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 619,
+      "flavor": "Duplicate Vegeta, également connu sous le nom de Copy-Vegeta, est un clone de Vegeta créé par les Commeson, une race extraterrestre."
+    },
+    {
+      "slug": "watagash",
+      "name": "Watagash",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 221,
+      "flavor": "Il prit possession du corps de Barry Kahn, dont l'esprit était rempli de rage envers Gohan."
+    },
+    {
+      "slug": "dolphin",
+      "name": "Dolphin",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 185,
+      "flavor": "Ce dauphin possède la capacité de communiquer en utilisant le dialecte humain."
+    },
+    {
+      "slug": "koichiarator",
+      "name": "Koichiarator",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 485,
+      "flavor": "Koicéareta est le résultat de la fusion de trois robots, Borareta, Koitsukai et Pancéa, orchestrée par Paparoni sur ordre de Mule."
+    },
+    {
+      "slug": "paresu",
+      "name": "Paresu",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 478,
+      "flavor": "Paris est une jeune fille à qui Son Goten propose un rendez-vous lorsqu'il est laissé de côté durant la recherche des Dragon Balls de l'Étoile Noire."
+    },
+    {
+      "slug": "poperu",
+      "name": "Poperu",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 459,
+      "flavor": "Au début de Dragon Ball GT, Poperu et Pan sortaient ensemble et éprouvaient des sentiments amoureux."
+    },
+    {
+      "slug": "piegero",
+      "name": "Piegero",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 580,
+      "flavor": "Pigero est un jeune orphelin de 15 ans qui rencontre Gohan alors qu'il s'entraîne avec Piccolo pour affronter les Saiyans."
+    },
+    {
+      "slug": "lime",
+      "name": "Lime",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 110,
+      "flavor": "Lime est un personnage de remplissage de la série animée Dragon Ball Z que Gohan rencontre avant le Cell Game."
+    },
+    {
+      "slug": "maron",
+      "name": "Maron",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 1015,
+      "flavor": "Maron est un personnage exclusif à l'anime qui apparaît pour la première fois dans la saga de Garlic Jr."
+    },
+    {
+      "slug": "maki",
+      "name": "Maki",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 370,
+      "flavor": "Elle porte une robe rose et un chapeau vert offert par Mai."
+    },
+    {
+      "slug": "saichourou",
+      "name": "Saichourou",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 825,
+      "flavor": "Guru est le Namek le plus vieux et le plus sage encore en vie et est l'un des trois seuls survivants d'un bouleversement climatique cataclysmique…"
+    },
+    {
+      "slug": "kibitoshin",
+      "name": "Kibitoshin",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 789,
+      "flavor": "Kibito Kai est le résultat de la fusion Potara entre Shin et son serviteur Kibito, héritant des caractéristiques physiques de chacun, notamment le…"
+    },
+    {
+      "slug": "colonel-silver",
+      "name": "Colonel Silver",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 596,
+      "flavor": "Ce colonel de l'Armée du Red Ribbon incarne un officier supérieur au tempérament mesuré, privilégiant l'interrogatoire à la violence immédiate."
+    },
+    {
+      "slug": "nikochan-s-servant",
+      "name": "Nikochan's Servant",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 181,
+      "flavor": "Il est bien plus intelligent que Nikochan et tente de le mettre en garde contre ses mauvaises idées, mais Nikochan ne l'écoute pas."
+    },
+    {
+      "slug": "obotchaman",
+      "name": "Obotchaman",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 279,
+      "flavor": "Il devient plus tard un intérêt amoureux pour Arale."
+    },
+    {
+      "slug": "cynthia",
+      "name": "Cynthia",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 472,
+      "flavor": "Elle se montre quelque peu aguicheuse lorsque Piccolo la rencontre, mais dès qu'il démarre la voiture et prend la route, elle se transforme en…"
+    },
+    {
+      "slug": "aoi-kimidori",
+      "name": "Aoi Kimidori",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 45,
+      "flavor": "La sœur aînée d'Akane, qui travaille au café."
+    },
+    {
+      "slug": "sergeant-murasaki",
+      "name": "Sergeant Murasaki",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 765,
+      "flavor": "Bien qu'il soit intelligent, le Sergent Murasaki (Sergent Purple dans le manga Viz) perd contre Goku après un combat long, laborieux et quelque peu…"
+    },
+    {
+      "slug": "farmer",
+      "name": "Farmer",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 218,
+      "flavor": "Le Fermier (un éleveur d'autruches) fut le premier humain à rencontrer le guerrier Saïyen Raditz à son arrivée sur Terre, et la première personne à…"
+    },
+    {
+      "slug": "kinoko-sarada",
+      "name": "Kinoko Sarada",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 189,
+      "flavor": "Une petite enfant du village Pingouin qui se déplace à tricycle et qui est généralement agacée par Arale et le reste des habitants."
+    },
+    {
+      "slug": "peasuke-soramame",
+      "name": "Peasuke Soramame",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 360,
+      "flavor": "Le petit frère de Taro, qui porte toujours un bonnet en forme d'animal."
+    },
+    {
+      "slug": "referee",
+      "name": "Referee",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 71,
+      "flavor": "L'arbitre est le présentateur du ring pour le Tournoi des Destructeurs."
+    },
+    {
+      "slug": "monaka",
+      "name": "Monaka",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 287,
+      "flavor": "Monaka est un personnage que le Dieu de la Destruction Beerus a affronté à un moment donné dans le passé."
+    },
+    {
+      "slug": "midori-yamabuki",
+      "name": "Midori Yamabuki",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 550,
+      "flavor": "Après une longue période d'amour non réciproque et de malentendus embarrassés, Senbei la demande en mariage en croyant qu'elle ne peut pas l'entendre."
+    },
+    {
+      "slug": "old-witch",
+      "name": "Old Witch",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 750,
+      "flavor": "Uranai Baba est une vieille sorcière qui pratique la voyance depuis plus de 500 ans."
+    },
+    {
+      "slug": "gokuu-black",
+      "name": "Gokuu Black",
+      "carte": true,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 633,
+      "flavor": "Dans le futur, il arrive sur Terre et se déchaîne, laissant l'humanité au bord de l'extinction."
+    },
+    {
+      "slug": "ackman",
+      "name": "Ackman",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 79,
+      "flavor": "Un petit enfant démoniaque de 200 ans qui est le fils du Seigneur des Ténèbres."
+    },
+    {
+      "slug": "tama",
+      "name": "Tama",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 529,
+      "flavor": "Un petit chat noir, animal de compagnie du Dr Briefs qu'on voit toujours assis sur son épaule."
+    },
+    {
+      "slug": "giran",
+      "name": "Giran",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 686,
+      "flavor": "Un énorme monstre Pteranodon qui affronte Son Goku au 21e Tenkaichi Budokai et déclare forfait."
+    },
+    {
+      "slug": "kokuen-no-ryuu",
+      "name": "Kokuen no Ryuu",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 522,
+      "flavor": "Black Smoke Shenron est un dragon éternel de pure méchanceté, responsable de la création des sept redoutables Dragons Maléfiques."
+    },
+    {
+      "slug": "gattai-zamasu",
+      "name": "Gattai Zamasu",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 502,
+      "flavor": "Résultat de la fusion par les boucles Potara entre Goku Black et Future Zamasu, il incarne l'antagoniste final de la saga de Trunks du futur."
+    },
+    {
+      "slug": "jinzouningen-17-gou",
+      "name": "Jinzouningen 17-gou",
+      "carte": true,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 433,
+      "flavor": "L'Humain Artificiel n°17, C-17 dans les adaptations anglaises, est un personnage de fiction qui apparaît pour la première fois dans le manga Dragon…"
+    },
+    {
+      "slug": "burter",
+      "name": "Burter",
+      "carte": false,
+      "liste": false,
+      "meta": false,
+      "fiche": false,
+      "descFrLen": 424,
+      "flavor": "Butta est le membre le plus grand de l'équipe."
+    }
+  ]
+}

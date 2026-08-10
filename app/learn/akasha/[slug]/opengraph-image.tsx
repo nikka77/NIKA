@@ -1,8 +1,16 @@
 // app/learn/akasha/[slug]/opengraph-image.tsx — og:image « carte à jouer » générée par fiche :
 // chaque partage WhatsApp/Discord/X affiche une mini-carte AKASHA (visuel, nom, rareté, univers).
+//
+// Le visuel passe par `visuelOg` (lib/akasha/og-visuel.ts) et JAMAIS par `entry.image_url` brut.
+// Mesuré le 10/08/2026, images ouvertes et regardées : les CDN du registre servent du WebP que
+// satori refuse (cadre vide sur 6 783 fiches à URL distante, une seule exception sondée), et un
+// chemin relatif le fait JETER, ce qui tue la réponse entière — 121 fiches ne rendaient rien du
+// tout, pas même une carte. `visuelOg` rend `null` quand rien n'est servable, et on retombe ici
+// sur la tuile à icône : un repli vaut mieux qu'un cadre vide.
 import { ImageResponse } from 'next/og';
 import { getEntryBySlug } from '@/lib/akasha/queries';
 import { RARITY_META, TYPE_META, universeMeta } from '@/lib/akasha/types';
+import { visuelOg } from '@/lib/akasha/og-visuel';
 
 export const runtime = 'nodejs';
 export const alt = 'Carte AKASHA';
@@ -18,6 +26,7 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
   const rar = entry?.rarity ? RARITY_META[entry.rarity] : null;
   const um = entry?.universe ? universeMeta(entry.universe) : null;
   const accent = rar?.color ?? m.color;
+  const visuel = await visuelOg(entry?.image_url);
 
   return new ImageResponse(
     (
@@ -49,7 +58,11 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
         {/* colonne texte */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '64px 24px 64px 72px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 14, color: '#8f7bf0', fontSize: 26, fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase' }}>
-            ✦ AKASHA · le registre
+            {/* La police embarquée par @vercel/og (Geist-Regular.ttf, 726 glyphes) n'a NI ✦
+                U+2726 NI ◆ U+25C6 : ils sortaient en carré barré sur chaque carte partagée.
+                Vérifié dans la table cmap du fichier de police, puis à l'œil sur le rendu.
+                • U+2022, ● U+25CF, ▲ U+25B2 et · U+00B7 y sont, eux. */}
+            • AKASHA · le registre
           </div>
           <div style={{ display: 'flex', color: '#F4F6FB', fontSize: name.length > 18 ? 74 : 96, fontWeight: 800, fontStyle: 'italic', textTransform: 'uppercase', lineHeight: 1.02, marginTop: 18, maxWidth: 700 }}>
             {name}
@@ -60,7 +73,7 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
             </div>
             {rar && (
               <div style={{ display: 'flex', alignItems: 'center', color: rar.color, background: `${rar.color}22`, border: `2px solid ${rar.color}`, borderRadius: 999, padding: '8px 24px', fontSize: 26, fontWeight: 700 }}>
-                ◆ {rar.label}
+                • {rar.label}
               </div>
             )}
           </div>
@@ -86,11 +99,11 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
               boxShadow: `0 30px 80px -20px ${accent}`,
             }}
           >
-            {entry?.image_url ? (
+            {visuel ? (
               // Image ENTIÈRE centrée sur le cadre dégradé (Satori ne supporte pas filter:blur → contain
               // plutôt que le fond flouté, mais même intention : sujet centré, jamais rogné).
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={entry.image_url} alt="" width={340} height={470} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
+              <img src={visuel} alt="" width={340} height={470} style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
             ) : (
               <div style={{ display: 'flex', fontSize: 150 }}>{m.icon}</div>
             )}

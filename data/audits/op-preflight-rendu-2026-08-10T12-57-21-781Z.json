@@ -1,0 +1,62 @@
+{
+ "quand": "2026-08-10T12:57:26.357Z",
+ "base": "http://localhost:3000",
+ "ecritEnBase": false,
+ "resultats": [
+  {
+   "type": "character",
+   "fiche": "Nami",
+   "slug": "nami",
+   "relation": "appartient",
+   "cible": "L’équipage d’Arlong",
+   "cibleSlug": "l-equipage-d-arlong",
+   "url": "http://localhost:3000/learn/akasha/nami",
+   "chipRendu": "Appartient à · L’équipage d’Arlong",
+   "nomPresentDansLeTexte": true
+  },
+  {
+   "type": "power",
+   "fiche": "Fruit du Canidé, version Tanuki",
+   "slug": "fruit-du-canide-version-tanuki",
+   "relation": "appartient",
+   "cible": "Fruit du Démon",
+   "cibleSlug": "fruit-du-demon",
+   "url": "http://localhost:3000/learn/akasha/fruit-du-canide-version-tanuki",
+   "chipRendu": "Appartient à · Fruit du Démon",
+   "nomPresentDansLeTexte": true
+  },
+  {
+   "type": "place",
+   "fiche": "Loguetown",
+   "slug": "loguetown-lieu",
+   "relation": "appartient",
+   "cible": "East Blue",
+   "cibleSlug": "east-blue",
+   "url": "http://localhost:3000/learn/akasha/loguetown-lieu",
+   "chipRendu": "Appartient à · East Blue",
+   "nomPresentDansLeTexte": true
+  },
+  {
+   "type": "skill",
+   "fiche": "Haki de l'Observation",
+   "slug": "haki-de-l-observation",
+   "relation": "appartient",
+   "cible": "Haki",
+   "cibleSlug": "haki",
+   "url": "http://localhost:3000/learn/akasha/haki-de-l-observation",
+   "chipRendu": "Appartient à · Haki",
+   "nomPresentDansLeTexte": true
+  },
+  {
+   "type": "artifact",
+   "fiche": "Thousand Sunny",
+   "slug": "thousand-sunny",
+   "relation": "appartient",
+   "cible": "L’équipage du Chapeau de Paille",
+   "cibleSlug": "l-equipage-du-chapeau-de-paille",
+   "url": "http://localhost:3000/learn/akasha/thousand-sunny",
+   "chipRendu": "Appartient à · L’équipage du Chapeau de Paille",
+   "nomPresentDansLeTexte": true
+  }
+ ]
+}

@@ -46,16 +46,16 @@ for (const e of avecImage) {
 
 // 3. Le puits de membres a-t-il de la matière ? (arêtes `appartient` entrantes de personnages —
 //    exactement ce que lit OrganizationZone). On lit le graphe, paginé lui aussi.
-const aretes = await lireTout(db, 'akasha_relations', 'source_id,target_id,relation');
+const aretes = await lireTout(db, 'akasha_relations', 'from_entry,to_entry,relation');
 console.log(`arêtes paginées : ${aretes.length}`);
 const typeParId = new Map(toutes.map((e) => [e.id, e.type]));
 const membresParStatus = new Map(); // id status -> Set(id personnage)
 for (const r of aretes) {
   if (r.relation !== 'appartient') continue;
-  if (typeParId.get(r.source_id) !== 'character') continue;
-  if (typeParId.get(r.target_id) !== 'status') continue;
-  if (!membresParStatus.has(r.target_id)) membresParStatus.set(r.target_id, new Set());
-  membresParStatus.get(r.target_id).add(r.source_id);
+  if (typeParId.get(r.from_entry) !== 'character') continue;
+  if (typeParId.get(r.to_entry) !== 'status') continue;
+  if (!membresParStatus.has(r.to_entry)) membresParStatus.set(r.to_entry, new Set());
+  membresParStatus.get(r.to_entry).add(r.from_entry);
 }
 const nbMembres = (e) => membresParStatus.get(e.id)?.size ?? 0;
 

@@ -1,0 +1,4328 @@
+{
+ "chantier": "chantier 4 — étape A : rendement CHAMP PAR CHAMP du wiki Dragon Ball sur les isolées",
+ "quand": "2026-08-10T13:01:37.582Z",
+ "mode": "MESURE (lecture seule, réseau)",
+ "hote": "dragonball.fandom.com",
+ "temoinGoku": "servi",
+ "base": {
+  "fiches": 7654,
+  "aretes": 16788,
+  "isoleesDragonBall": 146
+ },
+ "resolution": {
+  "titresCandidats": 163,
+  "pagesParTitreDirect": 59,
+  "sansPageParTitre": 87,
+  "rechercheListSearch": 87,
+  "rechercheSansAucunHit": 0
+ },
+ "gabarits": {
+  "Character Infobox": 52,
+  "Infobox Technique": 5,
+  "Race Infobox2": 2
+ },
+ "champs": {
+  "anime debut": {
+   "fiches": 46,
+   "avecLien": 43,
+   "liens": 45,
+   "exemples": [
+    {
+     "de": "Angela",
+     "titre": "Angela",
+     "gabarit": "Character Infobox",
+     "valeur": "\"[[Gohan's First Date]]\"",
+     "cibles": [
+      "Gohan's First Date"
+     ]
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "\"[[Enter King Piccolo]]\"",
+     "cibles": [
+      "Enter King Piccolo"
+     ]
+    },
+    {
+     "de": "Tanmen",
+     "titre": "Tanmen",
+     "gabarit": "Character Infobox",
+     "valeur": "\"[[The Rampage of InoShikaCho]]\"",
+     "cibles": [
+      "The Rampage of InoShikaCho"
+     ]
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "\"[[The Time Has Come! To the Null Realm with the Universes on the Line!]]\"",
+     "cibles": [
+      "The Time Has Come! To the Null Realm with the Universes on the Line!"
+     ]
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "\"[[Which Universe Will Win Their Place? The Mighty Warriors Gradually Assemble!]]\"",
+     "cibles": [
+      "Which Universe Will Win Their Place? The Mighty Warriors Gradually Assemble!"
+     ]
+    },
+    {
+     "de": "Damon",
+     "titre": "Damom",
+     "gabarit": "Character Infobox",
+     "valeur": "Invisible: \"[[The Time Has Come! To the Null Realm with the Universes on the Line!]]\"<br>Visible: \"[[Unavoidable? The Ferocity of a Stealth Attack!]]\"",
+     "cibles": [
+      "The Time Has Come! To the Null Realm with the Universes on the Line!",
+      "Unavoidable? The Ferocity of a Stealth Attack!"
+     ]
+    }
+   ]
+  },
+  "race": {
+   "fiches": 42,
+   "avecLien": 41,
+   "liens": 51,
+   "exemples": [
+    {
+     "de": "Angela",
+     "titre": "Angela",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Earthling]]",
+     "cibles": [
+      "Earthling"
+     ]
+    },
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Demon Clan|Demonic]] [[Namekian]] {{small|([[Warrior-type Namekian]])}}<ref>''[[Dragon Ball Legends]]'', 2018</ref>",
+     "cibles": [
+      "Demon Clan",
+      "Namekian",
+      "Warrior-type Namekian",
+      "Dragon Ball Legends"
+     ]
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Earthling|Human-type Earthling]]",
+     "cibles": [
+      "Earthling"
+     ]
+    },
+    {
+     "de": "Tanmen",
+     "titre": "Tanmen",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Earthling]]",
+     "cibles": [
+      "Earthling"
+     ]
+    },
+    {
+     "de": "Damon",
+     "titre": "Damom",
+     "gabarit": "Character Infobox",
+     "valeur": "Bug person",
+     "cibles": []
+    },
+    {
+     "de": "Cranberry",
+     "titre": "Cranberry",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Cranberry's race]]",
+     "cibles": [
+      "Cranberry's race"
+     ]
+    }
+   ]
+  },
+  "date of death": {
+   "fiches": 39,
+   "avecLien": 38,
+   "liens": 72,
+   "exemples": [
+    {
+     "de": "Angela",
+     "titre": "Angela",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Age 774|May 8, Age 774]]<br>[[Age 779]]",
+     "cibles": [
+      "Age 774",
+      "Age 779"
+     ]
+    },
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Age 762]]<ref>Based on information given in ''[[Daizenshuu 6]]'', 1995</ref>",
+     "cibles": [
+      "Age 762",
+      "Daizenshuu 6"
+     ]
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "After [[Age 461]]",
+     "cibles": [
+      "Age 461"
+     ]
+    },
+    {
+     "de": "Tanmen",
+     "titre": "Tanmen",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Age 774|May 8, Age 774]]<br>[[Age 779]]",
+     "cibles": [
+      "Age 774",
+      "Age 779"
+     ]
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Age 780]]",
+     "cibles": [
+      "Age 780"
+     ]
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Age 780]]",
+     "cibles": [
+      "Age 780"
+     ]
+    }
+   ]
+  },
+  "allegiance": {
+   "fiches": 33,
+   "avecLien": 33,
+   "liens": 61,
+   "exemples": [
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Slug's Demon Clan]]<br/>[[Kings of Destruction]]<br/>[[Dark Empire|Time Breakers]]<ref name=\"XV2\">''[[Dragon Ball Xenoverse 2]]'', 2016</ref><br>[[Team 8]]<br",
+     "cibles": [
+      "Slug's Demon Clan",
+      "Kings of Destruction",
+      "Dark Empire",
+      "Dragon Ball Xenoverse 2",
+      "Team 8",
+      "Berserkers"
+     ]
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Mutaito Training Academy]]",
+     "cibles": [
+      "Mutaito Training Academy"
+     ]
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Team Universe 10]]",
+     "cibles": [
+      "Team Universe 10"
+     ]
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Kamikaze Fireballs]]<ref name=\"ToeiWeb\">{{cite web|url=http://www.toei-anim.co.jp/tv/dragon_s/chara/chapter4/no02.html|title=U2 profiles|work=toei-anim.co}}</",
+     "cibles": [
+      "Kamikaze Fireballs",
+      "Team Universe 2"
+     ]
+    },
+    {
+     "de": "Damon",
+     "titre": "Damom",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Team Universe 4]]",
+     "cibles": [
+      "Team Universe 4"
+     ]
+    },
+    {
+     "de": "Cranberry",
+     "titre": "Cranberry",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Frieza Force]] {{Former}}<br>[[Moro Corps]]",
+     "cibles": [
+      "Frieza Force",
+      "Moro Corps"
+     ]
+    }
+   ]
+  },
+  "manga debut": {
+   "fiches": 35,
+   "avecLien": 32,
+   "liens": 34,
+   "exemples": [
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "\"[[Vs. Cumber]]\"",
+     "cibles": [
+      "Vs. Cumber"
+     ]
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "\"[[The Death of Kuririn]]\"",
+     "cibles": [
+      "The Death of Kuririn"
+     ]
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "\"[[Universe Survival! The Tournament of Power Begins!!]]\"",
+     "cibles": [
+      "Universe Survival! The Tournament of Power Begins!!"
+     ]
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "\"[[Universe Survival! The Tournament of Power Begins!!]]\"",
+     "cibles": [
+      "Universe Survival! The Tournament of Power Begins!!"
+     ]
+    },
+    {
+     "de": "Damon",
+     "titre": "Damom",
+     "gabarit": "Character Infobox",
+     "valeur": "Invisible: \"[[Universe Survival! The Tournament of Power Begins!!]]\"<br>Visible: \"[[Quirky Competitors]]\"",
+     "cibles": [
+      "Universe Survival! The Tournament of Power Begins!!",
+      "Quirky Competitors"
+     ]
+    },
+    {
+     "de": "Cranberry",
+     "titre": "Cranberry",
+     "gabarit": "Character Infobox",
+     "valeur": "\"[[Planet Namek, Cold and Dark]]\"",
+     "cibles": [
+      "Planet Namek, Cold and Dark"
+     ]
+    }
+   ]
+  },
+  "game debut": {
+   "fiches": 30,
+   "avecLien": 29,
+   "liens": 29,
+   "exemples": [
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "''[[Dragon Ball Z Side Story: Plan to Eradicate the Saiyans (video game)|Dragon Ball Z Side Story: Plan to Eradicate the Saiyans]]''",
+     "cibles": [
+      "Dragon Ball Z Side Story: Plan to Eradicate the Saiyans (video game)"
+     ]
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "''[[Dragon Ball Z: Dokkan Battle]]''",
+     "cibles": [
+      "Dragon Ball Z: Dokkan Battle"
+     ]
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "''[[Dragon Ball Heroes]]''",
+     "cibles": [
+      "Dragon Ball Heroes"
+     ]
+    },
+    {
+     "de": "Yogengyo",
+     "titre": "Oracle Fish",
+     "gabarit": "Character Infobox",
+     "valeur": "''[[Dragon Ball: Zenkai Battle]]''",
+     "cibles": [
+      "Dragon Ball: Zenkai Battle"
+     ]
+    },
+    {
+     "de": "Meta-Cooler",
+     "titre": "Meta-Cooler",
+     "gabarit": "Character Infobox",
+     "valeur": "''[[Dragon Ball Z 2 V]]''",
+     "cibles": [
+      "Dragon Ball Z 2 V"
+     ]
+    },
+    {
+     "de": "Erasa",
+     "titre": "Erasa",
+     "gabarit": "Character Infobox",
+     "valeur": "''[[Dragon Ball Z: Buu's Fury]]''",
+     "cibles": [
+      "Dragon Ball Z: Buu's Fury"
+     ]
+    }
+   ]
+  },
+  "movie debut": {
+   "fiches": 22,
+   "avecLien": 20,
+   "liens": 20,
+   "exemples": [
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "''[[Dragon Ball Z: Lord Slug]]''",
+     "cibles": [
+      "Dragon Ball Z: Lord Slug"
+     ]
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "''[[Dragon Ball Super: Broly]]''",
+     "cibles": [
+      "Dragon Ball Super: Broly"
+     ]
+    },
+    {
+     "de": "Yogengyo",
+     "titre": "Oracle Fish",
+     "gabarit": "Character Infobox",
+     "valeur": "''[[Dragon Ball Z: Battle of Gods]]''",
+     "cibles": [
+      "Dragon Ball Z: Battle of Gods"
+     ]
+    },
+    {
+     "de": "Meta-Cooler",
+     "titre": "Meta-Cooler",
+     "gabarit": "Character Infobox",
+     "valeur": "''[[Dragon Ball Z: The Return of Cooler]]''",
+     "cibles": [
+      "Dragon Ball Z: The Return of Cooler"
+     ]
+    },
+    {
+     "de": "Erasa",
+     "titre": "Erasa",
+     "gabarit": "Character Infobox",
+     "valeur": "''[[Dragon Ball Z: Wrath of the Dragon]]''",
+     "cibles": [
+      "Dragon Ball Z: Wrath of the Dragon"
+     ]
+    },
+    {
+     "de": "Janemba",
+     "titre": "Janemba",
+     "gabarit": "Character Infobox",
+     "valeur": "''[[Dragon Ball Z: Fusion Reborn]]''",
+     "cibles": [
+      "Dragon Ball Z: Fusion Reborn"
+     ]
+    }
+   ]
+  },
+  "address": {
+   "fiches": 19,
+   "avecLien": 16,
+   "liens": 16,
+   "exemples": [
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Planet Cruiser]]",
+     "cibles": [
+      "Planet Cruiser"
+     ]
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Mutaito's Training Grounds]]",
+     "cibles": [
+      "Mutaito's Training Grounds"
+     ]
+    },
+    {
+     "de": "Yogengyo",
+     "titre": "Oracle Fish",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Beerus' Planet]]",
+     "cibles": [
+      "Beerus' Planet"
+     ]
+    },
+    {
+     "de": "Meta-Cooler",
+     "titre": "Meta-Cooler",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Big Gete Star]]",
+     "cibles": [
+      "Big Gete Star"
+     ]
+    },
+    {
+     "de": "Erasa",
+     "titre": "Erasa",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Satan City]]",
+     "cibles": [
+      "Satan City"
+     ]
+    },
+    {
+     "de": "Sharpner",
+     "titre": "Sharpner",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Satan City]]",
+     "cibles": [
+      "Satan City"
+     ]
+    }
+   ]
+  },
+  "occupation": {
+   "fiches": 31,
+   "avecLien": 14,
+   "liens": 20,
+   "exemples": [
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "Space Conqueror<br/>[[Demon Clan#Namekian|Demon Clansmen]]<br>Intergalactic Criminal<ref name=\"XV2\"/>",
+     "cibles": [
+      "Demon Clan"
+     ]
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Martial Arts]] teacher",
+     "cibles": [
+      "Martial Arts"
+     ]
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Martial Artist]]",
+     "cibles": [
+      "Martial Artist"
+     ]
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "Idol<br>Leader of the [[Kamikaze Fireballs]]<br>Leader of [[Team Universe 2]]",
+     "cibles": [
+      "Kamikaze Fireballs",
+      "Team Universe 2"
+     ]
+    },
+    {
+     "de": "Cranberry",
+     "titre": "Cranberry",
+     "gabarit": "Character Infobox",
+     "valeur": "Soldier {{Former}}<br>Elite Soldier (claim only; {{Former}})",
+     "cibles": []
+    },
+    {
+     "de": "Yogengyo",
+     "titre": "Oracle Fish",
+     "gabarit": "Character Infobox",
+     "valeur": "Oracle<br>Pet",
+     "cibles": []
+    }
+   ]
+  },
+  "altname": {
+   "fiches": 37,
+   "avecLien": 13,
+   "liens": 22,
+   "exemples": [
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "Slugg<br>Subjugator of Stars<ref name=\"Dokkan\">''[[Dragon Ball Z: Dokkan Battle]]'', 2015</ref><br>Kaiser of the Cosmos<ref name=\"Dokkan\"/><br>Nefarious Super N",
+     "cibles": [
+      "Dragon Ball Z: Dokkan Battle"
+     ]
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "Lord Mutaito",
+     "cibles": []
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "Briana Shato<br>Magical Girl<br>Ribrianne",
+     "cibles": []
+    },
+    {
+     "de": "Yogengyo",
+     "titre": "Oracle Fish",
+     "gabarit": "Character Infobox",
+     "valeur": "Prophecy Fish<br>Prophetic Fish<br>Seer",
+     "cibles": []
+    },
+    {
+     "de": "Meta-Cooler",
+     "titre": "Meta-Cooler",
+     "gabarit": "Character Infobox",
+     "valeur": "Metal Cooler<ref name=\"XV2\">''[[Dragon Ball Xenoverse 2]]'', 2016</ref><ref name=\"Legends\">''[[Dragon Ball Legends]]'', 2018</ref><ref name=\"SDBHWM\">''[[Super D",
+     "cibles": [
+      "Dragon Ball Xenoverse 2",
+      "Dragon Ball Legends",
+      "Super Dragon Ball Heroes: World Mission",
+      "Dragon Ball Z: Dokkan Battle",
+      "Meta-Cooler Core",
+      "Speedy dub"
+     ]
+    },
+    {
+     "de": "Erasa",
+     "titre": "Erasa",
+     "gabarit": "Character Infobox",
+     "valeur": "Eraza<br>Eresa<br>Eliza",
+     "cibles": []
+    }
+   ]
+  },
+  "famconnect": {
+   "fiches": 14,
+   "avecLien": 12,
+   "liens": 20,
+   "exemples": [
+    {
+     "de": "Yogengyo",
+     "titre": "Oracle Fish",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Beerus]] (owner)<br>[[Whis]] (caretaker)",
+     "cibles": [
+      "Beerus",
+      "Whis"
+     ]
+    },
+    {
+     "de": "Meta-Cooler",
+     "titre": "Meta-Cooler",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Meta-Cooler Core]] (creator)",
+     "cibles": [
+      "Meta-Cooler Core"
+     ]
+    },
+    {
+     "de": "Shen",
+     "titre": "Hero",
+     "gabarit": "Character Infobox",
+     "valeur": "[[List of tertiary characters#Hero's Son|Son]]",
+     "cibles": [
+      "List of tertiary characters"
+     ]
+    },
+    {
+     "de": "Janemba",
+     "titre": "Janemba",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Saike Demon]] (host)<br/>[[Janemba's Majin Vegeta]] (creation)<ref name=\"SB\"/>",
+     "cibles": [
+      "Saike Demon",
+      "Janemba's Majin Vegeta"
+     ]
+    },
+    {
+     "de": "Zald",
+     "titre": "Salt",
+     "gabarit": "Character Infobox",
+     "valeur": "Sister<ref>''[[Dragon Ball Z]]'' episode 111, \"[[Fight With Piccolo]]\"</ref>",
+     "cibles": [
+      "Dragon Ball Z",
+      "Fight With Piccolo"
+     ]
+    },
+    {
+     "de": "Hirudegarn",
+     "titre": "Hirudegarn",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Tapion]] (top-half's host)<br>[[Minotia]] (bottom-half's host)",
+     "cibles": [
+      "Tapion",
+      "Minotia"
+     ]
+    }
+   ]
+  },
+  "date of birth": {
+   "fiches": 10,
+   "avecLien": 10,
+   "liens": 14,
+   "exemples": [
+    {
+     "de": "Angela",
+     "titre": "Angela",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Age 756]]",
+     "cibles": [
+      "Age 756"
+     ]
+    },
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Age 261]]",
+     "cibles": [
+      "Age 261"
+     ]
+    },
+    {
+     "de": "Meta-Cooler",
+     "titre": "Meta-Cooler",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Age 767]]",
+     "cibles": [
+      "Age 767"
+     ]
+    },
+    {
+     "de": "Erasa",
+     "titre": "Erasa",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Age 756]]",
+     "cibles": [
+      "Age 756"
+     ]
+    },
+    {
+     "de": "Janemba",
+     "titre": "Janemba",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Age 774]]",
+     "cibles": [
+      "Age 774"
+     ]
+    },
+    {
+     "de": "Sharpner",
+     "titre": "Sharpner",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Age 756]]",
+     "cibles": [
+      "Age 756"
+     ]
+    }
+   ]
+  },
+  "counterparts": {
+   "fiches": 5,
+   "avecLien": 5,
+   "liens": 7,
+   "exemples": [
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Xeno Lord Slug]]",
+     "cibles": [
+      "Xeno Lord Slug"
+     ]
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Sifu Norris/Dragonball Evolution|Sifu Norris]]",
+     "cibles": [
+      "Sifu Norris/Dragonball Evolution"
+     ]
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Zirloin]]",
+     "cibles": [
+      "Zirloin"
+     ]
+    },
+    {
+     "de": "Meta-Cooler",
+     "titre": "Meta-Cooler",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Cooler]]<br/>[[Future Cooler]]<br/>Future Meta-Cooler",
+     "cibles": [
+      "Cooler",
+      "Future Cooler"
+     ]
+    },
+    {
+     "de": "Janemba",
+     "titre": "Janemba",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Future Janemba]]<br/>[[Xeno Janemba]]",
+     "cibles": [
+      "Future Janemba",
+      "Xeno Janemba"
+     ]
+    }
+   ]
+  },
+  "debut": {
+   "fiches": 5,
+   "avecLien": 5,
+   "liens": 10,
+   "exemples": [
+    {
+     "de": "Scouter",
+     "titre": "Scouter",
+     "gabarit": "Infobox Technique",
+     "valeur": "Manga: \"[[The Mysterious Warrior From Space]]\"<br>Anime: \"[[The New Threat]]\"",
+     "cibles": [
+      "The Mysterious Warrior From Space",
+      "The New Threat"
+     ]
+    },
+    {
+     "de": "Metamo-Ring",
+     "titre": "Metamo-Ring",
+     "gabarit": "Infobox Technique",
+     "valeur": "Game: ''[[Dragon Ball Fusions]]''",
+     "cibles": [
+      "Dragon Ball Fusions"
+     ]
+    },
+    {
+     "de": "Katchin",
+     "titre": "Katchin",
+     "gabarit": "Infobox Technique",
+     "valeur": "Manga: \"[[The Zeta Sword (second manga chapter)|The Zeta Sword]]<br>Anime: \"[[Out from the Broken Sword]]\"",
+     "cibles": [
+      "The Zeta Sword (second manga chapter)",
+      "Out from the Broken Sword"
+     ]
+    },
+    {
+     "de": "Pudding",
+     "titre": "Pudding",
+     "gabarit": "Infobox Technique",
+     "valeur": "Film: ''[[Dragon Ball Z: Battle of Gods]]''<br>Anime: \"[[Don't Anger the Destroyer! A Heart-Pounding Birthday Party]]\"",
+     "cibles": [
+      "Dragon Ball Z: Battle of Gods",
+      "Don't Anger the Destroyer! A Heart-Pounding Birthday Party"
+     ]
+    },
+    {
+     "de": "Super Dragon Balls",
+     "titre": "Super Dragon Ball",
+     "gabarit": "Infobox Technique",
+     "valeur": "Manga: \"[[Tournament Preparation]]\"<br>Anime: \"[[Combat Matches Are a Go! The Captain Is Someone Stronger Than Goku]]\"<br>Game: ''[[Dragon Ball Heroes]]''",
+     "cibles": [
+      "Tournament Preparation",
+      "Combat Matches Are a Go! The Captain Is Someone Stronger Than Goku",
+      "Dragon Ball Heroes"
+     ]
+    }
+   ]
+  },
+  "similar": {
+   "fiches": 5,
+   "avecLien": 5,
+   "liens": 18,
+   "exemples": [
+    {
+     "de": "Scouter",
+     "titre": "Scouter",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''[[Scout-Scope]]<br>[[Sunglasses]]<br>[[3D Scan Mode]]<br>[[Dragon Radar]]<ref name=\"BoZ\">''[[Dragon Ball Z: Battle of Z]]'', 2014</ref><br>[[Ki Sense]]<br>[[",
+     "cibles": [
+      "Scout-Scope",
+      "Sunglasses",
+      "3D Scan Mode",
+      "Dragon Radar",
+      "Dragon Ball Z: Battle of Z",
+      "Ki Sense",
+      "Energy Meter"
+     ]
+    },
+    {
+     "de": "Metamo-Ring",
+     "titre": "Metamo-Ring",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''[[Hero Switch]]<br>[[Potara]]'''",
+     "cibles": [
+      "Hero Switch",
+      "Potara"
+     ]
+    },
+    {
+     "de": "Katchin",
+     "titre": "Katchin",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''[[Kachi Katchin]]'''",
+     "cibles": [
+      "Kachi Katchin"
+     ]
+    },
+    {
+     "de": "Pudding",
+     "titre": "Pudding",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''[[Candy]]'''",
+     "cibles": [
+      "Candy"
+     ]
+    },
+    {
+     "de": "Super Dragon Balls",
+     "titre": "Super Dragon Ball",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''[[Earth Dragon Ball]]<br>[[Namekian Dragon Ball]]<br>[[Demon Realm Dragon Ball]]<br>[[Cerealian Dragon Ball]]<br>[[Dark Dragon Ball]]<br>[[Special Dragon Bal",
+     "cibles": [
+      "Earth Dragon Ball",
+      "Namekian Dragon Ball",
+      "Demon Realm Dragon Ball",
+      "Cerealian Dragon Ball",
+      "Dark Dragon Ball",
+      "Special Dragon Ball",
+      "Black Star Dragon Ball"
+     ]
+    }
+   ]
+  },
+  "mentors": {
+   "fiches": 5,
+   "avecLien": 5,
+   "liens": 6,
+   "exemples": [
+    {
+     "de": "Toppo",
+     "titre": "Top",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Belmod]]<br>[[Marcarita]]",
+     "cibles": [
+      "Belmod",
+      "Marcarita"
+     ]
+    },
+    {
+     "de": "Pirozhki",
+     "titre": "Pirozhki",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Mr. Satan]]",
+     "cibles": [
+      "Mr. Satan"
+     ]
+    },
+    {
+     "de": "Vermoud",
+     "titre": "Belmod",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Marcarita]] (attendant)",
+     "cibles": [
+      "Marcarita"
+     ]
+    },
+    {
+     "de": "Tapion",
+     "titre": "Tapion",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Konatsian Wizard]]",
+     "cibles": [
+      "Konatsian Wizard"
+     ]
+    },
+    {
+     "de": "Minotia",
+     "titre": "Minotia",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Konatsian Wizard]]",
+     "cibles": [
+      "Konatsian Wizard"
+     ]
+    }
+   ]
+  },
+  "user": {
+   "fiches": 5,
+   "avecLien": 4,
+   "liens": 53,
+   "exemples": [
+    {
+     "de": "Scouter",
+     "titre": "Scouter",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''Tuffles<ref name=\"2014Saikyo7\"/><br>[[Saiyan Army]]<br>[[Team Bardock]]<br>[[Team Dodoria]]<br>[[Frieza's Elite]]<br>[[King Vegeta's Elite]]<br>[[Frieza Forc",
+     "cibles": [
+      "Saiyan Army",
+      "Team Bardock",
+      "Team Dodoria",
+      "Frieza's Elite",
+      "King Vegeta's Elite",
+      "Frieza Force",
+      "Ginyu Force",
+      "Guldo",
+      "Cooler's Armored Squadron",
+      "Turles Crusher Corps.",
+      "Bulma",
+      "Vegeta",
+      "Tarble",
+      "Bardock",
+      "Fasha",
+      "Raditz",
+      "Nappa",
+      "Turles",
+      "Frieza",
+      "Abo",
+      "Kado",
+      "Sorbet",
+      "Tagoma",
+      "Lemo",
+      "Cheelai",
+      "Kuruzo",
+      "Time Patrol",
+      "Dragon Ball Xenoverse",
+      "Taino",
+      "Future Warrior",
+      "Future Warrior (Xenoverse 2)",
+      "Dragon Ball Xenoverse 2",
+      "Xeno Trunks",
+      "Beat"
+     ]
+    },
+    {
+     "de": "Metamo-Ring",
+     "titre": "Metamo-Ring",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''Many Fighters'''",
+     "cibles": []
+    },
+    {
+     "de": "Katchin",
+     "titre": "Katchin",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''[[Dr. Arinsu]]<br>[[Shin]]/[[Future Shin]]<br>[[Fused Zamasu]]<br>[[Future Zamasu]]<ref>''[[Dragon Ball: Sparking! Zero]]'', 2024</ref>'''",
+     "cibles": [
+      "Dr. Arinsu",
+      "Shin",
+      "Future Shin",
+      "Fused Zamasu",
+      "Future Zamasu",
+      "Dragon Ball: Sparking! Zero"
+     ]
+    },
+    {
+     "de": "Pudding",
+     "titre": "Pudding",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''[[Good Buu]]<br>[[Whis]]<br>[[Beerus]]<ref name=\"XV2\">''[[Dragon Ball Xenoverse 2]]'', 2016</ref><br>[[Champa]]<ref name=\"XV2\"/><br>[[Goku]]<ref name=\"XV2\"/>",
+     "cibles": [
+      "Good Buu",
+      "Whis",
+      "Beerus",
+      "Dragon Ball Xenoverse 2",
+      "Champa",
+      "Goku",
+      "Majin family",
+      "Future Warrior (Xenoverse 2)"
+     ]
+    },
+    {
+     "de": "Super Dragon Balls",
+     "titre": "Super Dragon Ball",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''[[Beerus]]<br>[[Zamasu]]<br>[[Future Zamasu]]<br>[[Android 17]]<br>[[Aeos]]'''",
+     "cibles": [
+      "Beerus",
+      "Zamasu",
+      "Future Zamasu",
+      "Android 17",
+      "Aeos"
+     ]
+    }
+   ]
+  },
+  "inventor": {
+   "fiches": 4,
+   "avecLien": 4,
+   "liens": 11,
+   "exemples": [
+    {
+     "de": "Scouter",
+     "titre": "Scouter",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''[[Tuffles]]<ref name=\"2014Saikyo7\">''[[Saikyō Jump]]'' #7, 2014</ref><br>[[Kikono]]<ref name=\"DBSFILM\">{{cite web|url=https://twitter.com/Herms98/status/1027",
+     "cibles": [
+      "Tuffles",
+      "Saikyō Jump",
+      "Kikono",
+      "Capsule Corporation",
+      "Dragon Ball Heroes",
+      "Dragon Ball Heroes Promotional Trailers",
+      "Dragon Ball Heroes",
+      "Dragon Ball Heroes Promotional Trailers"
+     ]
+    },
+    {
+     "de": "Metamo-Ring",
+     "titre": "Metamo-Ring",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''[[Bulma]]'''",
+     "cibles": [
+      "Bulma"
+     ]
+    },
+    {
+     "de": "Pudding",
+     "titre": "Pudding",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''[[Earthling]]s'''",
+     "cibles": [
+      "Earthling"
+     ]
+    },
+    {
+     "de": "Super Dragon Balls",
+     "titre": "Super Dragon Ball",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''[[Zalama]]'''",
+     "cibles": [
+      "Zalama"
+     ]
+    }
+   ]
+  },
+  "class": {
+   "fiches": 5,
+   "avecLien": 3,
+   "liens": 3,
+   "exemples": [
+    {
+     "de": "Scouter",
+     "titre": "Scouter",
+     "gabarit": "Infobox Technique",
+     "valeur": "Scanning technology",
+     "cibles": []
+    },
+    {
+     "de": "Metamo-Ring",
+     "titre": "Metamo-Ring",
+     "gabarit": "Infobox Technique",
+     "valeur": "[[Fusion]] Device",
+     "cibles": [
+      "Fusion"
+     ]
+    },
+    {
+     "de": "Katchin",
+     "titre": "Katchin",
+     "gabarit": "Infobox Technique",
+     "valeur": "Metal",
+     "cibles": []
+    },
+    {
+     "de": "Pudding",
+     "titre": "Pudding",
+     "gabarit": "Infobox Technique",
+     "valeur": "[[Food]]",
+     "cibles": [
+      "Food"
+     ]
+    },
+    {
+     "de": "Super Dragon Balls",
+     "titre": "Super Dragon Ball",
+     "gabarit": "Infobox Technique",
+     "valeur": "Artifacts/[[Dragon Ball (object)|Dragon Balls]]",
+     "cibles": [
+      "Dragon Ball (object)"
+     ]
+    }
+   ]
+  },
+  "aniname": {
+   "fiches": 28,
+   "avecLien": 2,
+   "liens": 4,
+   "exemples": [
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "Lord Slug",
+     "cibles": []
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "Master Mutaito",
+     "cibles": []
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "Dyrasem",
+     "cibles": []
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "Brianne de Chateau",
+     "cibles": []
+    },
+    {
+     "de": "Damon",
+     "titre": "Damom",
+     "gabarit": "Character Infobox",
+     "valeur": "Damon<br>Damom",
+     "cibles": []
+    },
+    {
+     "de": "Erasa",
+     "titre": "Erasa",
+     "gabarit": "Character Infobox",
+     "valeur": "Erasa",
+     "cibles": []
+    }
+   ]
+  },
+  "homeworld": {
+   "fiches": 2,
+   "avecLien": 2,
+   "liens": 3,
+   "exemples": [
+    {
+     "de": "Obake",
+     "titre": "Ghost",
+     "gabarit": "Race Infobox2",
+     "valeur": "[[Other World]]",
+     "cibles": [
+      "Other World"
+     ]
+    },
+    {
+     "de": "Pteranodon",
+     "titre": "Pterodactyl",
+     "gabarit": "Race Infobox2",
+     "valeur": "[[Earth]]<br>[[Sadala]]",
+     "cibles": [
+      "Earth",
+      "Sadala"
+     ]
+    }
+   ]
+  },
+  "manganame": {
+   "fiches": 13,
+   "avecLien": 1,
+   "liens": 2,
+   "exemples": [
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "Mutaito",
+     "cibles": []
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "Jirasen",
+     "cibles": []
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "Ribrianne",
+     "cibles": []
+    },
+    {
+     "de": "Damon",
+     "titre": "Damom",
+     "gabarit": "Character Infobox",
+     "valeur": "Damon",
+     "cibles": []
+    },
+    {
+     "de": "Shen",
+     "titre": "Hero",
+     "gabarit": "Character Infobox",
+     "valeur": "Shen",
+     "cibles": []
+    },
+    {
+     "de": "Toppo",
+     "titre": "Top",
+     "gabarit": "Character Infobox",
+     "valeur": "Toppo",
+     "cibles": []
+    }
+   ]
+  },
+  "alias": {
+   "fiches": 3,
+   "avecLien": 1,
+   "liens": 1,
+   "exemples": [
+    {
+     "de": "Scouter",
+     "titre": "Scouter",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''Meter<br>Scanner<br>Portable Computer<ref>Turles refers to his scouter as a \"portable computer\" in the Bridge Entertainment version of ''[[Dragon Ball Z: The",
+     "cibles": [
+      "Dragon Ball Z: The Tree of Might"
+     ]
+    },
+    {
+     "de": "Metamo-Ring",
+     "titre": "Metamo-Ring",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''Mega-boring'''",
+     "cibles": []
+    },
+    {
+     "de": "Super Dragon Balls",
+     "titre": "Super Dragon Ball",
+     "gabarit": "Infobox Technique",
+     "valeur": "'''Wish Planets'''",
+     "cibles": []
+    }
+   ]
+  },
+  "average height": {
+   "fiches": 2,
+   "avecLien": 1,
+   "liens": 1,
+   "exemples": [
+    {
+     "de": "Obake",
+     "titre": "Ghost",
+     "gabarit": "Race Infobox2",
+     "valeur": "Roughly 3–4 feet",
+     "cibles": []
+    },
+    {
+     "de": "Pteranodon",
+     "titre": "Pterodactyl",
+     "gabarit": "Race Infobox2",
+     "valeur": "From the size of a [[bird]] up to 20 feet long",
+     "cibles": [
+      "bird"
+     ]
+    }
+   ]
+  },
+  "students": {
+   "fiches": 1,
+   "avecLien": 1,
+   "liens": 5,
+   "exemples": [
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "[[Master Roshi]]<br>[[Master Shen]]<br>[[Mercenary Tao]]<ref name=\"DBep129\">''[[Dragon Ball (anime)|Dragon Ball]]'' episode 129, \"[[The Time Room]]\"</ref>",
+     "cibles": [
+      "Master Roshi",
+      "Master Shen",
+      "Mercenary Tao",
+      "Dragon Ball (anime)",
+      "The Time Room"
+     ]
+    }
+   ]
+  },
+  "diet": {
+   "fiches": 1,
+   "avecLien": 1,
+   "liens": 3,
+   "exemples": [
+    {
+     "de": "Pteranodon",
+     "titre": "Pterodactyl",
+     "gabarit": "Race Infobox2",
+     "valeur": "Meat ([[Earthling]]s and [[Animal]]s)<br>[[Fish]]",
+     "cibles": [
+      "Earthling",
+      "Animal",
+      "Fish"
+     ]
+    }
+   ]
+  },
+  "image": {
+   "fiches": 59,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Angela",
+     "titre": "Angela",
+     "gabarit": "Character Infobox",
+     "valeur": "File:Angela DBZ Ep 202 001.png",
+     "cibles": []
+    },
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "File:Lord Slug - Lord Slug - 007.png",
+     "cibles": []
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "<gallery>\nMaster Mutaito.png",
+     "cibles": []
+    },
+    {
+     "de": "Tanmen",
+     "titre": "Tanmen",
+     "gabarit": "Character Infobox",
+     "valeur": "Tanmen cc.png",
+     "cibles": []
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "<tabber>",
+     "cibles": []
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "<tabber>",
+     "cibles": []
+    }
+   ]
+  },
+  "japname": {
+   "fiches": 58,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Angela",
+     "titre": "Angela",
+     "gabarit": "Character Infobox",
+     "valeur": "エンジェラ",
+     "cibles": []
+    },
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "スラッグ",
+     "cibles": []
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "{{ruby|武|む}}{{ruby|泰|たい}}{{ruby|斗|と}}",
+     "cibles": []
+    },
+    {
+     "de": "Tanmen",
+     "titre": "Tanmen",
+     "gabarit": "Character Infobox",
+     "valeur": "タンメン",
+     "cibles": []
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "ジラセン",
+     "cibles": []
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "リブリアン",
+     "cibles": []
+    }
+   ]
+  },
+  "romname": {
+   "fiches": 58,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Angela",
+     "titre": "Angela",
+     "gabarit": "Character Infobox",
+     "valeur": "Enjera",
+     "cibles": []
+    },
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "Suraggu",
+     "cibles": []
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "Mutaito",
+     "cibles": []
+    },
+    {
+     "de": "Tanmen",
+     "titre": "Tanmen",
+     "gabarit": "Character Infobox",
+     "valeur": "Tanmen",
+     "cibles": []
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "Jirasen",
+     "cibles": []
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "Riburian",
+     "cibles": []
+    }
+   ]
+  },
+  "appears in": {
+   "fiches": 56,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Angela",
+     "titre": "Angela",
+     "gabarit": "Character Infobox",
+     "valeur": "{{DB Series|DBZ}}",
+     "cibles": []
+    },
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "{{DB Series|DBZ|SDBH}}",
+     "cibles": []
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "{{DB Series|DB|DBS}}",
+     "cibles": []
+    },
+    {
+     "de": "Tanmen",
+     "titre": "Tanmen",
+     "gabarit": "Character Infobox",
+     "valeur": "{{DB Series|DB}}",
+     "cibles": []
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "{{DB Series|DBS}}",
+     "cibles": []
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "{{DB Series|DBS}}",
+     "cibles": []
+    }
+   ]
+  },
+  "refname": {
+   "fiches": 54,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Angela",
+     "titre": "Angela",
+     "gabarit": "Character Infobox",
+     "valeur": "Angela",
+     "cibles": []
+    },
+    {
+     "de": "Lord Slug",
+     "titre": "Lord Slug",
+     "gabarit": "Character Infobox",
+     "valeur": "Lord Slug",
+     "cibles": []
+    },
+    {
+     "de": "Mutaito",
+     "titre": "Master Mutaito",
+     "gabarit": "Character Infobox",
+     "valeur": "Master Mutaito",
+     "cibles": []
+    },
+    {
+     "de": "Tanmen",
+     "titre": "Tanmen",
+     "gabarit": "Character Infobox",
+     "valeur": "Tanmen",
+     "cibles": []
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "Dyrasem",
+     "cibles": []
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "Ribrianne",
+     "cibles": []
+    }
+   ]
+  },
+  "gender": {
+   "fiches": 46,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Angela",
+     "titre": "Angela",
+     "gabarit": "Character Infobox",
+     "valeur": "Female",
+     "cibles": []
+    },
+    {
+     "de": "Tanmen",
+     "titre": "Tanmen",
+     "gabarit": "Character Infobox",
+     "valeur": "Female",
+     "cibles": []
+    },
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "Male",
+     "cibles": []
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "Female",
+     "cibles": []
+    },
+    {
+     "de": "Damon",
+     "titre": "Damom",
+     "gabarit": "Character Infobox",
+     "valeur": "Male",
+     "cibles": []
+    },
+    {
+     "de": "Cranberry",
+     "titre": "Cranberry",
+     "gabarit": "Character Infobox",
+     "valeur": "Male",
+     "cibles": []
+    }
+   ]
+  },
+  "anime": {
+   "fiches": 9,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "[[file:U10 Prettyboy.png]]",
+     "cibles": []
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "[[File:Brianne at Tournament.png]]",
+     "cibles": []
+    },
+    {
+     "de": "Damon",
+     "titre": "Damom",
+     "gabarit": "Character Infobox",
+     "valeur": "[[File:DamomDBS.png]]",
+     "cibles": []
+    },
+    {
+     "de": "Jilcol",
+     "titre": "Zircor",
+     "gabarit": "Character Infobox",
+     "valeur": "[[file:Jilcol Focus.png]]",
+     "cibles": []
+    },
+    {
+     "de": "The Preecho",
+     "titre": "Za Priccio",
+     "gabarit": "Character Infobox",
+     "valeur": "[[file:The Preecho.png]]",
+     "cibles": []
+    },
+    {
+     "de": "Gamisaras",
+     "titre": "Gamisalas",
+     "gabarit": "Character Infobox",
+     "valeur": "[[File:Gamisaras-cropped.png]]",
+     "cibles": []
+    }
+   ]
+  },
+  "manga": {
+   "fiches": 9,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Jirasen",
+     "titre": "Dyrasem",
+     "gabarit": "Character Infobox",
+     "valeur": "[[File:Jirasen.PNG]]\n</tabber>",
+     "cibles": []
+    },
+    {
+     "de": "Brianne de Chateau",
+     "titre": "Ribrianne",
+     "gabarit": "Character Infobox",
+     "valeur": "[[File:Ribrianne manga.png]]\n</tabber>",
+     "cibles": []
+    },
+    {
+     "de": "Damon",
+     "titre": "Damom",
+     "gabarit": "Character Infobox",
+     "valeur": "[[File:Damon manga.png]]\n</tabber>",
+     "cibles": []
+    },
+    {
+     "de": "Jilcol",
+     "titre": "Zircor",
+     "gabarit": "Character Infobox",
+     "valeur": "[[File:Jilkol.PNG]]\n</tabber>",
+     "cibles": []
+    },
+    {
+     "de": "The Preecho",
+     "titre": "Za Priccio",
+     "gabarit": "Character Infobox",
+     "valeur": "[[File:The preecho.PNG]]\n</tabber>",
+     "cibles": []
+    },
+    {
+     "de": "Gamisaras",
+     "titre": "Gamisalas",
+     "gabarit": "Character Infobox",
+     "valeur": "[[File:Gamisaras.png]]\n</tabber>",
+     "cibles": []
+    }
+   ]
+  },
+  "name": {
+   "fiches": 5,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Scouter",
+     "titre": "Scouter",
+     "gabarit": "Infobox Technique",
+     "valeur": "Scouter",
+     "cibles": []
+    },
+    {
+     "de": "Metamo-Ring",
+     "titre": "Metamo-Ring",
+     "gabarit": "Infobox Technique",
+     "valeur": "Metamo-Ring",
+     "cibles": []
+    },
+    {
+     "de": "Katchin",
+     "titre": "Katchin",
+     "gabarit": "Infobox Technique",
+     "valeur": "Katchin",
+     "cibles": []
+    },
+    {
+     "de": "Pudding",
+     "titre": "Pudding",
+     "gabarit": "Infobox Technique",
+     "valeur": "Pudding",
+     "cibles": []
+    },
+    {
+     "de": "Super Dragon Balls",
+     "titre": "Super Dragon Ball",
+     "gabarit": "Infobox Technique",
+     "valeur": "Super Dragon Ball",
+     "cibles": []
+    }
+   ]
+  },
+  "color": {
+   "fiches": 3,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Scouter",
+     "titre": "Scouter",
+     "gabarit": "Infobox Technique",
+     "valeur": "{{color|99FF66}} or {{color|007FFF}} or {{color|DE3421}} or {{color|FFFF00}} or {{color|7D26CD}}",
+     "cibles": []
+    },
+    {
+     "de": "Katchin",
+     "titre": "Katchin",
+     "gabarit": "Infobox Technique",
+     "valeur": "{{color|000000}}",
+     "cibles": []
+    },
+    {
+     "de": "Super Dragon Balls",
+     "titre": "Super Dragon Ball",
+     "gabarit": "Infobox Technique",
+     "valeur": "{{color|FF7000}} & {{color|C90016}}",
+     "cibles": []
+    }
+   ]
+  },
+  "sapience level": {
+   "fiches": 1,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Obake",
+     "titre": "Ghost",
+     "gabarit": "Race Infobox2",
+     "valeur": "[[Wikipedia:Sentience#Science fiction|Sapient]]",
+     "cibles": []
+    }
+   ]
+  },
+  "height": {
+   "fiches": 1,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Granolah",
+     "titre": "Granolah",
+     "gabarit": "Character Infobox",
+     "valeur": "Around 175 to 180 cm<ref name=\"AugInt\">{{cite web|url=https://en.dragon-ball-official.com/news/01_1283.html|title=Toyotarou interview|publisher=en.dragon-ball-o",
+     "cibles": []
+    }
+   ]
+  },
+  "weight": {
+   "fiches": 1,
+   "avecLien": 0,
+   "liens": 0,
+   "exemples": [
+    {
+     "de": "Granolah",
+     "titre": "Granolah",
+     "gabarit": "Character Infobox",
+     "valeur": "Around 56 to 62 kg<ref name=\"AugInt\"/>",
+     "cibles": []
+    }
+   ]
+  }
+ },
+ "fichesLues": [
+  {
+   "slug": "angela",
+   "name": "Angela",
+   "type": "character",
+   "titreWiki": "Angela",
+   "titreDemande": "Angela",
+   "gabarit": "Character Infobox",
+   "nbChamps": 14,
+   "fr": "Angela"
+  },
+  {
+   "slug": "lord-slug",
+   "name": "Lord Slug",
+   "type": "character",
+   "titreWiki": "Lord Slug",
+   "titreDemande": "Lord Slug",
+   "gabarit": "Character Infobox",
+   "nbChamps": 17,
+   "fr": null
+  },
+  {
+   "slug": "mutaito",
+   "name": "Mutaito",
+   "type": "character",
+   "titreWiki": "Master Mutaito",
+   "titreDemande": "Mutaito",
+   "gabarit": "Character Infobox",
+   "nbChamps": 19,
+   "fr": null
+  },
+  {
+   "slug": "tanmen",
+   "name": "Tanmen",
+   "type": "character",
+   "titreWiki": "Tanmen",
+   "titreDemande": "Tanmen",
+   "gabarit": "Character Infobox",
+   "nbChamps": 12,
+   "fr": null
+  },
+  {
+   "slug": "jirasen",
+   "name": "Jirasen",
+   "type": "character",
+   "titreWiki": "Dyrasem",
+   "titreDemande": "Jirasen",
+   "gabarit": "Character Infobox",
+   "nbChamps": 20,
+   "fr": null
+  },
+  {
+   "slug": "brianne-de-chateau",
+   "name": "Brianne de Chateau",
+   "type": "character",
+   "titreWiki": "Ribrianne",
+   "titreDemande": "Brianne de Chateau",
+   "gabarit": "Character Infobox",
+   "nbChamps": 23,
+   "fr": null
+  },
+  {
+   "slug": "damon",
+   "name": "Damon",
+   "type": "character",
+   "titreWiki": "Damom",
+   "titreDemande": "Damon",
+   "gabarit": "Character Infobox",
+   "nbChamps": 20,
+   "fr": null
+  },
+  {
+   "slug": "cranberry",
+   "name": "Cranberry",
+   "type": "character",
+   "titreWiki": "Cranberry",
+   "titreDemande": "Cranberry",
+   "gabarit": "Character Infobox",
+   "nbChamps": 16,
+   "fr": null
+  },
+  {
+   "slug": "yogengyo",
+   "name": "Yogengyo",
+   "type": "character",
+   "titreWiki": "Oracle Fish",
+   "titreDemande": "Yogengyo",
+   "gabarit": "Character Infobox",
+   "nbChamps": 19,
+   "fr": null
+  },
+  {
+   "slug": "meta-cooler",
+   "name": "Meta-Cooler",
+   "type": "character",
+   "titreWiki": "Meta-Cooler",
+   "titreDemande": "Meta-Cooler",
+   "gabarit": "Character Infobox",
+   "nbChamps": 18,
+   "fr": null
+  },
+  {
+   "slug": "erasa",
+   "name": "Erasa",
+   "type": "character",
+   "titreWiki": "Erasa",
+   "titreDemande": "Erasa",
+   "gabarit": "Character Infobox",
+   "nbChamps": 17,
+   "fr": null
+  },
+  {
+   "slug": "shen",
+   "name": "Shen",
+   "type": "character",
+   "titreWiki": "Hero",
+   "titreDemande": "Shen",
+   "gabarit": "Character Infobox",
+   "nbChamps": 15,
+   "fr": null
+  },
+  {
+   "slug": "janemba",
+   "name": "Janemba",
+   "type": "character",
+   "titreWiki": "Janemba",
+   "titreDemande": "Janemba",
+   "gabarit": "Character Infobox",
+   "nbChamps": 18,
+   "fr": "Janemba"
+  },
+  {
+   "slug": "cheelai",
+   "name": "Cheelai",
+   "type": "character",
+   "titreWiki": "Cheelai",
+   "titreDemande": "Cheelai",
+   "gabarit": "Character Infobox",
+   "nbChamps": 18,
+   "fr": "Cheelai"
+  },
+  {
+   "slug": "scouter",
+   "name": "Scouter",
+   "type": "artifact",
+   "titreWiki": "Scouter",
+   "titreDemande": "Scouter",
+   "gabarit": "Infobox Technique",
+   "nbChamps": 12,
+   "fr": null
+  },
+  {
+   "slug": "toppo",
+   "name": "Toppo",
+   "type": "character",
+   "titreWiki": "Top",
+   "titreDemande": "Toppo",
+   "gabarit": "Character Infobox",
+   "nbChamps": 17,
+   "fr": null
+  },
+  {
+   "slug": "zald",
+   "name": "Zald",
+   "type": "character",
+   "titreWiki": "Salt",
+   "titreDemande": "Zald",
+   "gabarit": "Character Infobox",
+   "nbChamps": 15,
+   "fr": null
+  },
+  {
+   "slug": "hirudegarn",
+   "name": "Hirudegarn",
+   "type": "character",
+   "titreWiki": "Hirudegarn",
+   "titreDemande": "Hirudegarn",
+   "gabarit": "Character Infobox",
+   "nbChamps": 17,
+   "fr": null
+  },
+  {
+   "slug": "sharpner",
+   "name": "Sharpner",
+   "type": "character",
+   "titreWiki": "Sharpner",
+   "titreDemande": "Sharpner",
+   "gabarit": "Character Infobox",
+   "nbChamps": 17,
+   "fr": null
+  },
+  {
+   "slug": "jilcol",
+   "name": "Jilcol",
+   "type": "character",
+   "titreWiki": "Zircor",
+   "titreDemande": "Jilcol",
+   "gabarit": "Character Infobox",
+   "nbChamps": 20,
+   "fr": null
+  },
+  {
+   "slug": "dai-kaio",
+   "name": "Dai Kaio",
+   "type": "character",
+   "titreWiki": "Grand Kai",
+   "titreDemande": "Dai Kaio",
+   "gabarit": "Character Infobox",
+   "nbChamps": 17,
+   "fr": null
+  },
+  {
+   "slug": "the-preecho",
+   "name": "The Preecho",
+   "type": "character",
+   "titreWiki": "Za Priccio",
+   "titreDemande": "The Preecho",
+   "gabarit": "Character Infobox",
+   "nbChamps": 20,
+   "fr": null
+  },
+  {
+   "slug": "gamisaras",
+   "name": "Gamisaras",
+   "type": "character",
+   "titreWiki": "Gamisalas",
+   "titreDemande": "Gamisaras",
+   "gabarit": "Character Infobox",
+   "nbChamps": 20,
+   "fr": null
+  },
+  {
+   "slug": "obake",
+   "name": "Obake",
+   "type": "character",
+   "titreWiki": "Ghost",
+   "titreDemande": "Obake",
+   "gabarit": "Race Infobox2",
+   "nbChamps": 8,
+   "fr": null
+  },
+  {
+   "slug": "pirozhki",
+   "name": "Pirozhki",
+   "type": "character",
+   "titreWiki": "Pirozhki",
+   "titreDemande": "Pirozhki",
+   "gabarit": "Character Infobox",
+   "nbChamps": 15,
+   "fr": null
+  },
+  {
+   "slug": "antique-shop-owner",
+   "name": "Antique Shop Owner",
+   "type": "character",
+   "titreWiki": "Antique Shop Owner",
+   "titreDemande": "Antique Shop Owner",
+   "gabarit": "Character Infobox",
+   "nbChamps": 9,
+   "fr": null
+  },
+  {
+   "slug": "grandma-hakkake",
+   "name": "Grandma Hakkake",
+   "type": "character",
+   "titreWiki": "Grandma Hakkake",
+   "titreDemande": "Grandma Hakkake",
+   "gabarit": "Character Infobox",
+   "nbChamps": 13,
+   "fr": null
+  },
+  {
+   "slug": "gora",
+   "name": "Gora",
+   "type": "character",
+   "titreWiki": "Gola",
+   "titreDemande": "Gora",
+   "gabarit": "Character Infobox",
+   "nbChamps": 13,
+   "fr": null
+  },
+  {
+   "slug": "kinkaku",
+   "name": "Kinkaku",
+   "type": "character",
+   "titreWiki": "Terror",
+   "titreDemande": "Kinkaku",
+   "gabarit": "Character Infobox",
+   "nbChamps": 14,
+   "fr": null
+  },
+  {
+   "slug": "panput",
+   "name": "Panput",
+   "type": "character",
+   "titreWiki": "Pamput",
+   "titreDemande": "Panput",
+   "gabarit": "Character Infobox",
+   "nbChamps": 18,
+   "fr": null
+  },
+  {
+   "slug": "pteranodon",
+   "name": "Pteranodon",
+   "type": "character",
+   "titreWiki": "Pterodactyl",
+   "titreDemande": "Pteranodon",
+   "gabarit": "Race Infobox2",
+   "nbChamps": 8,
+   "fr": null
+  },
+  {
+   "slug": "shura",
+   "name": "Shura",
+   "type": "character",
+   "titreWiki": "Shula",
+   "titreDemande": "Shura",
+   "gabarit": "Character Infobox",
+   "nbChamps": 16,
+   "fr": null
+  },
+  {
+   "slug": "shantza",
+   "name": "Shantza",
+   "type": "character",
+   "titreWiki": "Xiangca",
+   "titreDemande": "Shantza",
+   "gabarit": "Character Infobox",
+   "nbChamps": 20,
+   "fr": "Shantsa"
+  },
+  {
+   "slug": "chao",
+   "name": "Chao",
+   "type": "character",
+   "titreWiki": "Chao",
+   "titreDemande": "Chao",
+   "gabarit": "Character Infobox",
+   "nbChamps": 13,
+   "fr": null
+  },
+  {
+   "slug": "daiz",
+   "name": "Daiz",
+   "type": "character",
+   "titreWiki": "Daiz",
+   "titreDemande": "Daiz",
+   "gabarit": "Character Infobox",
+   "nbChamps": 17,
+   "fr": null
+  },
+  {
+   "slug": "ginkaku",
+   "name": "Ginkaku",
+   "type": "character",
+   "titreWiki": "Plague",
+   "titreDemande": "Ginkaku",
+   "gabarit": "Character Infobox",
+   "nbChamps": 14,
+   "fr": null
+  },
+  {
+   "slug": "katopesla",
+   "name": "Katopesla",
+   "type": "character",
+   "titreWiki": "Catopesra",
+   "titreDemande": "Katopesla",
+   "gabarit": "Character Infobox",
+   "nbChamps": 19,
+   "fr": null
+  },
+  {
+   "slug": "grandma-oharu",
+   "name": "Grandma Oharu",
+   "type": "character",
+   "titreWiki": "Old Woman Spring",
+   "titreDemande": "Grandma Oharu",
+   "gabarit": "Character Infobox",
+   "nbChamps": 17,
+   "fr": null
+  },
+  {
+   "slug": "jewel",
+   "name": "Jewel",
+   "type": "character",
+   "titreWiki": "Jewel",
+   "titreDemande": "Jewel",
+   "gabarit": "Character Infobox",
+   "nbChamps": 15,
+   "fr": null
+  },
+  {
+   "slug": "metamo-ring",
+   "name": "Metamo-Ring",
+   "type": "artifact",
+   "titreWiki": "Metamo-Ring",
+   "titreDemande": "Metamo-Ring",
+   "gabarit": "Infobox Technique",
+   "nbChamps": 10,
+   "fr": null
+  },
+  {
+   "slug": "vermoud",
+   "name": "Vermoud",
+   "type": "character",
+   "titreWiki": "Belmod",
+   "titreDemande": "Vermoud",
+   "gabarit": "Character Infobox",
+   "nbChamps": 19,
+   "fr": null
+  },
+  {
+   "slug": "lemo",
+   "name": "Lemo",
+   "type": "character",
+   "titreWiki": "Lemo",
+   "titreDemande": "Lemo",
+   "gabarit": "Character Infobox",
+   "nbChamps": 12,
+   "fr": null
+  },
+  {
+   "slug": "lemuria",
+   "name": "Lemuria",
+   "type": "character",
+   "titreWiki": "Lemlia",
+   "titreDemande": "Lemuria",
+   "gabarit": "Character Infobox",
+   "nbChamps": 15,
+   "fr": null
+  },
+  {
+   "slug": "katchin",
+   "name": "Katchin",
+   "type": "artifact",
+   "titreWiki": "Katchin",
+   "titreDemande": "Katchin",
+   "gabarit": "Infobox Technique",
+   "nbChamps": 14,
+   "fr": null
+  },
+  {
+   "slug": "granolah",
+   "name": "Granolah",
+   "type": "character",
+   "titreWiki": "Granolah",
+   "titreDemande": "Granolah",
+   "gabarit": "Character Infobox",
+   "nbChamps": 16,
+   "fr": "Granolah"
+  },
+  {
+   "slug": "pudding",
+   "name": "Pudding",
+   "type": "character",
+   "titreWiki": "Pudding",
+   "titreDemande": "Pudding",
+   "gabarit": "Infobox Technique",
+   "nbChamps": 14,
+   "fr": null
+  },
+  {
+   "slug": "fanfan",
+   "name": "Fanfan",
+   "type": "character",
+   "titreWiki": "Fanfan",
+   "titreDemande": "Fanfan",
+   "gabarit": "Character Infobox",
+   "nbChamps": 14,
+   "fr": null
+  },
+  {
+   "slug": "tapion",
+   "name": "Tapion",
+   "type": "character",
+   "titreWiki": "Tapion",
+   "titreDemande": "Tapion",
+   "gabarit": "Character Infobox",
+   "nbChamps": 20,
+   "fr": null
+  },
+  {
+   "slug": "minotia",
+   "name": "Minotia",
+   "type": "character",
+   "titreWiki": "Minotia",
+   "titreDemande": "Minotia",
+   "gabarit": "Character Infobox",
+   "nbChamps": 17,
+   "fr": null
+  },
+  {
+   "slug": "dr-flappe",
+   "name": "Dr. Flappe",
+   "type": "character",
+   "titreWiki": "Dr. Flappe",
+   "titreDemande": "Dr. Flappe",
+   "gabarit": "Character Infobox",
+   "nbChamps": 15,
+   "fr": null
+  },
+  {
+   "slug": "colonel-silver",
+   "name": "Colonel Silver",
+   "type": "character",
+   "titreWiki": "Colonel Silver",
+   "titreDemande": "Colonel Silver",
+   "gabarit": "Character Infobox",
+   "nbChamps": 19,
+   "fr": null
+  },
+  {
+   "slug": "zangya",
+   "name": "Zangya",
+   "type": "character",
+   "titreWiki": "Zangya",
+   "titreDemande": "Zangya",
+   "gabarit": "Character Infobox",
+   "nbChamps": 17,
+   "fr": "Zangya"
+  },
+  {
+   "slug": "angila",
+   "name": "Angila",
+   "type": "character",
+   "titreWiki": "Angila",
+   "titreDemande": "Angila",
+   "gabarit": "Character Infobox",
+   "nbChamps": 17,
+   "fr": null
+  },
+  {
+   "slug": "trampire",
+   "name": "Trampire",
+   "type": "character",
+   "titreWiki": "Trampire",
+   "titreDemande": "Trampire",
+   "gabarit": "Character Infobox",
+   "nbChamps": 17,
+   "fr": null
+  },
+  {
+   "slug": "farmer",
+   "name": "Farmer",
+   "type": "character",
+   "titreWiki": "Farmer",
+   "titreDemande": "Farmer",
+   "gabarit": "Character Infobox",
+   "nbChamps": 14,
+   "fr": null
+  },
+  {
+   "slug": "kinoko-sarada",
+   "name": "Kinoko Sarada",
+   "type": "character",
+   "titreWiki": "Kinoko Sarada",
+   "titreDemande": "Kinoko Sarada",
+   "gabarit": "Character Infobox",
+   "nbChamps": 15,
+   "fr": null
+  },
+  {
+   "slug": "referee",
+   "name": "Referee",
+   "type": "character",
+   "titreWiki": "Referee",
+   "titreDemande": "Referee",
+   "gabarit": "Character Infobox",
+   "nbChamps": 20,
+   "fr": null
+  },
+  {
+   "slug": "super-dragon-balls",
+   "name": "Super Dragon Balls",
+   "type": "artifact",
+   "titreWiki": "Super Dragon Ball",
+   "titreDemande": "Super Dragon Balls",
+   "gabarit": "Infobox Technique",
+   "nbChamps": 12,
+   "fr": null
+  },
+  {
+   "slug": "hatchiyack",
+   "name": "Hatchiyack",
+   "type": "character",
+   "titreWiki": "Hatchiyack",
+   "titreDemande": "Hatchiyack",
+   "gabarit": "Character Infobox",
+   "nbChamps": 19,
+   "fr": null
+  }
+ ],
+ "recherche": [
+  {
+   "slug": "eclair",
+   "name": "Eclair",
+   "hits": [
+    "List of tertiary characters",
+    "Secret of the Woods",
+    "Fyler"
+   ]
+  },
+  {
+   "slug": "mafuba-flacon",
+   "name": "Bidon du Mafûba",
+   "hits": [
+    "French dub",
+    "Magic Ball of Buu",
+    "Dabura"
+   ]
+  },
+  {
+   "slug": "radar-dragon",
+   "name": "Radar du Dragon",
+   "hits": [
+    "Dragon Radar",
+    "Global Dragon Radar",
+    "Super Dragon Radar"
+   ]
+  },
+  {
+   "slug": "veste-lestee",
+   "name": "Vêtements lestés",
+   "hits": [
+    "Weighted Clothing",
+    "Gi",
+    "Battle Armor"
+   ]
+  },
+  {
+   "slug": "enma-dai-ou",
+   "name": "Enma Dai-Ou",
+   "hits": [
+    "King Yemma",
+    "Future King Yemma",
+    "Check-In Station"
+   ]
+  },
+  {
+   "slug": "mermaid",
+   "name": "Mermaid",
+   "hits": [
+    "Mermaid's Tear",
+    "List of tertiary characters",
+    "List of Influences on Popular Culture"
+   ]
+  },
+  {
+   "slug": "rabbit-gang-member-2",
+   "name": "Rabbit Gang Member 2",
+   "hits": [
+    "Rabbit Mob",
+    "Monster Carrot's Henchmen",
+    "Monster Carrot"
+   ]
+  },
+  {
+   "slug": "rou-kaioshin",
+   "name": "Rou Kaioshin",
+   "hits": [
+    "Roh",
+    "Old Kai",
+    "Grand Supreme Kai"
+   ]
+  },
+  {
+   "slug": "korinto",
+   "name": "Korinto",
+   "hits": [
+    "Korin",
+    "List of tertiary characters",
+    "Krillin"
+   ]
+  },
+  {
+   "slug": "debu",
+   "name": "Debu",
+   "hits": [
+    "Dende",
+    "Dabura",
+    "Kid Buu"
+   ]
+  },
+  {
+   "slug": "mousse",
+   "name": "Mousse",
+   "hits": [
+    "List of tertiary characters",
+    "Secret of the Woods",
+    "Yaochun"
+   ]
+  },
+  {
+   "slug": "rabbit-gang-member-1",
+   "name": "Rabbit Gang Member 1",
+   "hits": [
+    "Rabbit Mob",
+    "Monster Carrot's Henchmen",
+    "Monster Carrot"
+   ]
+  },
+  {
+   "slug": "imperfect-form",
+   "name": "Imperfect Form",
+   "hits": [
+    "Cell/Power and Abilities",
+    "Imperfect Cell Saga",
+    "Cell/Misc"
+   ]
+  },
+  {
+   "slug": "semi-perfect-form",
+   "name": "Semi Perfect Form",
+   "hits": [
+    "Cell/Power and Abilities",
+    "Cell/Misc",
+    "Bio-Android"
+   ]
+  },
+  {
+   "slug": "senzu",
+   "name": "Haricots Senzu",
+   "hits": [
+    "Senzu Bean",
+    "Future Korin",
+    "Korin"
+   ]
+  },
+  {
+   "slug": "kinto-un",
+   "name": "Nuage Magique (Kinto-un)",
+   "hits": [
+    "Flying Nimbus",
+    "Dark Nimbus",
+    "Enormous Nimbus"
+   ]
+  },
+  {
+   "slug": "potara",
+   "name": "Potaras (boucles de fusion)",
+   "hits": [
+    "Potara",
+    "Fusion",
+    "Fusion Dance"
+   ]
+  },
+  {
+   "slug": "templo-movil-del-rey-de-todo",
+   "name": "Palais de Zeno",
+   "hits": [
+    "Zeno's Palace",
+    "Zeno",
+    "Mobile Temple of Zeno (Throne)"
+   ]
+  },
+  {
+   "slug": "eau-ultra-divine",
+   "name": "Eau Ultra Divine",
+   "hits": [
+    "Ultra Divine Water",
+    "Poison",
+    "The Superest Super Water!!!"
+   ]
+  },
+  {
+   "slug": "choco",
+   "name": "Choco",
+   "hits": [
+    "Chocolay",
+    "Candy",
+    "Chocolate Kamehameha"
+   ]
+  },
+  {
+   "slug": "chico",
+   "name": "Chico",
+   "hits": [
+    "Chico Torture",
+    "List of tertiary characters",
+    "Plight of the Children"
+   ]
+  },
+  {
+   "slug": "idasamama",
+   "name": "Idasamama",
+   "hits": [
+    "Idasam",
+    "Dragon Ball Daima",
+    "Tagoma"
+   ]
+  },
+  {
+   "slug": "shuuku",
+   "name": "Shuuku",
+   "hits": [
+    "Shugesh",
+    "Otokosuki",
+    "Future Shu"
+   ]
+  },
+  {
+   "slug": "minami-no-kaioushin",
+   "name": "Minami no Kaioushin",
+   "hits": [
+    "South Supreme Kai",
+    "Shin",
+    "Grand Supreme Kai"
+   ]
+  },
+  {
+   "slug": "kita-no-kaioushin",
+   "name": "Kita no Kaioushin",
+   "hits": [
+    "North Supreme Kai",
+    "Shin",
+    "Grand Supreme Kai"
+   ]
+  },
+  {
+   "slug": "chuu-lee",
+   "name": "Chuu Lee",
+   "hits": [
+    "Chuu Lee's House",
+    "List of tertiary characters",
+    "Quicker Than Lightning"
+   ]
+  },
+  {
+   "slug": "crepe",
+   "name": "Crepe",
+   "hits": [
+    "List of tertiary characters",
+    "Frieza",
+    "Pan"
+   ]
+  },
+  {
+   "slug": "baton-magique",
+   "name": "Bâton Magique (Nyoi-bô)",
+   "hits": [
+    "Power Pole",
+    "The Niyoi-bo's Secret",
+    "French dub"
+   ]
+  },
+  {
+   "slug": "z-epee",
+   "name": "Z-Sword (Épée Zeta)",
+   "hits": [
+    "Z Sword",
+    "The Zeta Sword",
+    "The Zeta Sword (second manga chapter)"
+   ]
+  },
+  {
+   "slug": "boule-4-etoiles",
+   "name": "Boule à quatre étoiles",
+   "hits": [
+    "Dragon Ball (object)",
+    "Earth Dragon Ball",
+    "Black Star Dragon Ball"
+   ]
+  },
+  {
+   "slug": "noppo",
+   "name": "Noppo",
+   "hits": [
+    "Mr. Popo",
+    "Takao Koyama",
+    "Papoi"
+   ]
+  },
+  {
+   "slug": "epee-de-trunks",
+   "name": "Épée de Trunks (Brave Sword)",
+   "hits": [
+    "Brave Sword",
+    "Future Trunks' Sword",
+    "Brave Sword Attack"
+   ]
+  },
+  {
+   "slug": "blind-boy",
+   "name": "Blind Boy",
+   "hits": [
+    "Tommy",
+    "Boo World",
+    "Return to Other World"
+   ]
+  },
+  {
+   "slug": "cell-games-announcer",
+   "name": "Cell Games Announcer",
+   "hits": [
+    "Jimmy Firecracker",
+    "World Tournament Announcer",
+    "Cell Games"
+   ]
+  },
+  {
+   "slug": "karoni",
+   "name": "Karoni",
+   "hits": [
+    "Caroni",
+    "Pirozhki",
+    "Korin"
+   ]
+  },
+  {
+   "slug": "c6",
+   "name": "#C6",
+   "hits": [
+    "C-6",
+    "The Strangest Robot",
+    "Masenko"
+   ]
+  },
+  {
+   "slug": "koku-ou",
+   "name": "Koku-Ou",
+   "hits": [
+    "Kuu-Zen-Zetsu-Go",
+    "Dragon Ball (manga)",
+    "List of Influences on Popular Culture"
+   ]
+  },
+  {
+   "slug": "shi-buta",
+   "name": "Shi-Buta",
+   "hits": [
+    "Burter",
+    "Mr. Pig",
+    "Jiang Shi"
+   ]
+  },
+  {
+   "slug": "other-world-budokai-announcer",
+   "name": "Other World Budokai Announcer",
+   "hits": [
+    "Alien Announcer",
+    "Future World Tournament Announcer",
+    "World Tournament Announcer"
+   ]
+  },
+  {
+   "slug": "girl",
+   "name": "Girl",
+   "hits": [
+    "Who's That Girl?",
+    "Viola",
+    "Gine"
+   ]
+  },
+  {
+   "slug": "rom",
+   "name": "Rom",
+   "hits": [
+    "Rom (Xenoverse 3)",
+    "Dragon Ball Z: Collectible CD Picture Cards",
+    "Dragon Ball Z: Gekitō Tenkaichi Budōkai"
+   ]
+  },
+  {
+   "slug": "tenkaichi-budokai-announcer",
+   "name": "Tenkaichi Budokai Announcer",
+   "hits": [
+    "Future World Tournament Announcer",
+    "Alien Announcer",
+    "World Tournament Announcer"
+   ]
+  },
+  {
+   "slug": "umikame",
+   "name": "Umikame",
+   "hits": [
+    "Turtle",
+    "Future Turtle",
+    "The Turtle is Spotted!"
+   ]
+  },
+  {
+   "slug": "babaro",
+   "name": "Babaro",
+   "hits": [
+    "Bora",
+    "Dabura",
+    "Bardock"
+   ]
+  },
+  {
+   "slug": "bisuke",
+   "name": "Bisuke",
+   "hits": [
+    "List of tertiary characters",
+    "Shugesh",
+    "Konkichi"
+   ]
+  },
+  {
+   "slug": "chuu-lee-s-mother",
+   "name": "Chuu Lee's Mother",
+   "hits": [
+    "Chuu Lee's House",
+    "List of tertiary characters",
+    "Bulma Leigh"
+   ]
+  },
+  {
+   "slug": "cookie",
+   "name": "Cookie",
+   "hits": [
+    "Cookie Beam",
+    "Meal Time",
+    "Candy"
+   ]
+  },
+  {
+   "slug": "donuts",
+   "name": "Donuts",
+   "hits": [
+    "Galactic Donut",
+    "Super Donut Chain",
+    "List of tertiary characters"
+   ]
+  },
+  {
+   "slug": "ten-long-hyoga",
+   "name": "Ten Long Hyoga",
+   "hits": [
+    "Sky Dragon",
+    "And So, Ten Years Later... A Long-Awaited World Martial Arts Tournament!",
+    "Rising Dragon"
+   ]
+  },
+  {
+   "slug": "shao-long-hyoga",
+   "name": "Shao Long Hyoga",
+   "hits": [
+    "Rising Dragon",
+    "Mercenary Tao",
+    "Haze Shenron"
+   ]
+  },
+  {
+   "slug": "jasmine",
+   "name": "Jasmine",
+   "hits": [
+    "List of tertiary characters",
+    "Ginger",
+    "Mint"
+   ]
+  },
+  {
+   "slug": "milkman",
+   "name": "Milkman",
+   "hits": [
+    "Milk Delivery",
+    "Milk Run",
+    "List of Dragon Ball Z Kai episodes"
+   ]
+  },
+  {
+   "slug": "oonaan",
+   "name": "Oonaan",
+   "hits": [
+    "List of tertiary characters",
+    "Annin",
+    "An Azuki"
+   ]
+  },
+  {
+   "slug": "suke-san",
+   "name": "Suke-san",
+   "hits": [
+    "See-Through the Invisible Man",
+    "Dragon Ball (manga)",
+    "Otokosuki"
+   ]
+  },
+  {
+   "slug": "bisshu",
+   "name": "Bisshu",
+   "hits": [
+    "Bizu",
+    "Beerus",
+    "Bikal"
+   ]
+  },
+  {
+   "slug": "tsuru-sennin",
+   "name": "Tsuru-Sennin",
+   "hits": [
+    "Tsuru-Sen'nin",
+    "Master Shen",
+    "Tenshinhan vs. Taopaipai"
+   ]
+  },
+  {
+   "slug": "zeri",
+   "name": "Zeri",
+   "hits": [
+    "Zeni",
+    "Zaripai",
+    "Zarbon"
+   ]
+  },
+  {
+   "slug": "san-xing-long",
+   "name": "San Xing Long",
+   "hits": [
+    "Shadow Dragon",
+    "Syn Shenron",
+    "Oceanus Shenron"
+   ]
+  },
+  {
+   "slug": "si-xing-long",
+   "name": "Si Xing Long",
+   "hits": [
+    "Shadow Dragon",
+    "Rage Shenron",
+    "Syn Shenron"
+   ]
+  },
+  {
+   "slug": "gasshu",
+   "name": "Gasshu",
+   "hits": [
+    "Spice",
+    "Gas",
+    "Shugesh"
+   ]
+  },
+  {
+   "slug": "capsule-hoi-poi",
+   "name": "Capsule Hoi-Poi",
+   "hits": [
+    "Capsule",
+    "Capsule House",
+    "Capsule Corporation"
+   ]
+  },
+  {
+   "slug": "nameless-planet",
+   "name": "Planète Sans Nom",
+   "hits": [
+    "Nameless Planet",
+    "List of Planets",
+    "Namek"
+   ]
+  },
+  {
+   "slug": "prison-planet",
+   "name": "Planète Prison",
+   "hits": [
+    "Prison Planet",
+    "Prison Planet (volume)",
+    "Prison Planet (chapter)"
+   ]
+  },
+  {
+   "slug": "gingaou",
+   "name": "Gingaou",
+   "hits": [
+    "Plague",
+    "Terror and Plague",
+    "Terror"
+   ]
+  },
+  {
+   "slug": "bansho-sen",
+   "name": "Éventail Bashō (Bansho-sen)",
+   "hits": [
+    "Bansho Fan",
+    "Fanning the Flame",
+    "Bansho Spa"
+   ]
+  },
+  {
+   "slug": "anneau-du-temps",
+   "name": "Anneau du Temps",
+   "hits": [
+    "Time Ring",
+    "Time Machine",
+    "Hyperbolic Time Chamber"
+   ]
+  },
+  {
+   "slug": "graine-de-larbre-de-force",
+   "name": "Graine de l'Arbre de Force",
+   "hits": [
+    "Tree of Might",
+    "French dub",
+    "Fruit of the Tree of Might (Demon Realm)"
+   ]
+  },
+  {
+   "slug": "ocarina-de-tapion",
+   "name": "Ocarina de Tapion",
+   "hits": [
+    "Hero's Flute",
+    "Tapion",
+    "Dragon Ball Z: Wrath of the Dragon"
+   ]
+  },
+  {
+   "slug": "epee-de-lespoir",
+   "name": "Épée de l'Espoir",
+   "hits": [
+    "Sword of Hope",
+    "Sword of Hope from Across Time",
+    "Brave Sword"
+   ]
+  },
+  {
+   "slug": "dogi-ecole-tortue",
+   "name": "Dogi de l'École Tortue",
+   "hits": [
+    "Gi",
+    "Dogidogi",
+    "Turtle School"
+   ]
+  },
+  {
+   "slug": "cape-turban-piccolo",
+   "name": "Cape & turban lestés de Piccolo",
+   "hits": [
+    "Demon Clothes",
+    "Weighted Clothing",
+    "Piccolo"
+   ]
+  },
+  {
+   "slug": "machine-a-remonter-le-temps",
+   "name": "Machine à remonter le temps",
+   "hits": [
+    "Time Machine",
+    "The Time Machine",
+    "Time Machine Quest"
+   ]
+  },
+  {
+   "slug": "dolphin",
+   "name": "Dolphin",
+   "hits": [
+    "Animal",
+    "Dragon Ball Super Divers",
+    "In Search of Kame-Sen'nin"
+   ]
+  },
+  {
+   "slug": "poperu",
+   "name": "Poperu",
+   "hits": [
+    "A Devastating Wish",
+    "Bon Para",
+    "Sean Broadhurst"
+   ]
+  },
+  {
+   "slug": "super-shen-long",
+   "name": "Super Shen Long",
+   "hits": [
+    "Super Shenron",
+    "Ultimate Shenron",
+    "Syn Shenron"
+   ]
+  },
+  {
+   "slug": "piegero",
+   "name": "Piegero",
+   "hits": [
+    "Pigero",
+    "Plight of the Children",
+    "Escape from Piccolo"
+   ]
+  },
+  {
+   "slug": "dr-wheelo",
+   "name": "Docteur Wheelo",
+   "hits": [
+    "Dr. Wheelo",
+    "Dr. Wheelo's Fortress",
+    "Dr. Kochin"
+   ]
+  },
+  {
+   "slug": "nikochan-s-servant",
+   "name": "Nikochan's Servant",
+   "hits": [
+    "King Nikochan",
+    "King Nikochan's servant",
+    "King Nikochan's spaceship"
+   ]
+  },
+  {
+   "slug": "android-13",
+   "name": "C-13",
+   "hits": [
+    "Android 13",
+    "Dragon Ball Z: Super Android 13!",
+    "Dragon Ball Z: Super Android 13! (Quotes)"
+   ]
+  },
+  {
+   "slug": "armure-saiyan",
+   "name": "Armure de combat Saiyan",
+   "hits": [
+    "Battle Armor",
+    "Energy Shield",
+    "Battle Jacket"
+   ]
+  },
+  {
+   "slug": "vaisseau-capsule-corp",
+   "name": "Vaisseau Capsule Corp",
+   "hits": [
+    "Capsule Corporation Spaceship",
+    "Capsule",
+    "Race to Capsule Corp."
+   ]
+  },
+  {
+   "slug": "dragon-balls-de-namek",
+   "name": "Dragon Balls de Namek",
+   "hits": [
+    "Namekian Dragon Ball",
+    "Namek Saga",
+    "Namekian"
+   ]
+  },
+  {
+   "slug": "snake-way-guide",
+   "name": "Snake Way Guide",
+   "hits": [
+    "Snake Way",
+    "Snake Way (volume)",
+    "Princess Snake"
+   ]
+  },
+  {
+   "slug": "vaisseau-attaque-saiyan",
+   "name": "Vaisseau d'attaque Saiyan",
+   "hits": [
+    "Attack Ball",
+    "Dragon Ball Z: Attack of the Saiyans",
+    "Saiyan-Tuffle war"
+   ]
+  },
+  {
+   "slug": "dragon-balls",
+   "name": "Dragon Balls",
+   "hits": [
+    "Dragon Ball (object)",
+    "Earth Dragon Ball",
+    "Dragon Ball (manga)"
+   ]
+  },
+  {
+   "slug": "dragon-balls-etoile-noire",
+   "name": "Dragon Balls Étoile Noire",
+   "hits": [
+    "Black Star Dragon Ball",
+    "Dragon Ball (object)",
+    "Dark Dragon Ball"
+   ]
+  },
+  {
+   "slug": "salle-esprit-temps",
+   "name": "Salle de l'Esprit et du Temps",
+   "hits": [
+    "The Room of Spirit and Time",
+    "Hyperbolic Time Chamber",
+    "Dragon Ball Room"
+   ]
+  }
+ ],
+ "pagesRecherchees": [
+  {
+   "titre": "Old Kai",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Dende",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Imperfect Cell Saga",
+   "trouvee": true,
+   "gabarit": "Arc infobox"
+  },
+  {
+   "titre": "Korin",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Fusion",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Dabura",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Krillin",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "King Yemma",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Senzu Bean",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Dragon Radar",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Monster Carrot",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Fusion Dance",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Potara",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Grand Supreme Kai",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Flying Nimbus",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Kid Buu",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Magic Ball of Buu",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "Ultra Divine Water",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Check-In Station",
+   "trouvee": true,
+   "gabarit": "Location Infobox"
+  },
+  {
+   "titre": "Weighted Clothing",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Secret of the Woods",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "Dark Nimbus",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Chocolate Kamehameha",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "List of Influences on Popular Culture",
+   "trouvee": true,
+   "gabarit": "cite web"
+  },
+  {
+   "titre": "Rabbit Mob",
+   "trouvee": true,
+   "gabarit": "Faction Infobox"
+  },
+  {
+   "titre": "List of tertiary characters",
+   "trouvee": true,
+   "gabarit": "cite web"
+  },
+  {
+   "titre": "Mermaid's Tear",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Battle Armor",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Candy",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Yaochun",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Global Dragon Radar",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Enormous Nimbus",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Chico Torture",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "The Superest Super Water!!!",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "Gi",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Bio-Android",
+   "trouvee": true,
+   "gabarit": "Race Infobox2"
+  },
+  {
+   "titre": "Future Korin",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Poison",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Chocolay",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Super Dragon Radar",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Zeno",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Zeno's Palace",
+   "trouvee": true,
+   "gabarit": "Planet Infobox"
+  },
+  {
+   "titre": "French dub",
+   "trouvee": true,
+   "gabarit": "cite web"
+  },
+  {
+   "titre": "Roh",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Mobile Temple of Zeno (Throne)",
+   "trouvee": true,
+   "gabarit": "Location Infobox"
+  },
+  {
+   "titre": "Fyler",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Monster Carrot's Henchmen",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Cell/Power and Abilities",
+   "trouvee": true,
+   "gabarit": "nihongo"
+  },
+  {
+   "titre": "Cell/Misc",
+   "trouvee": true,
+   "gabarit": null
+  },
+  {
+   "titre": "Future King Yemma",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Dragon Ball (manga)",
+   "trouvee": true,
+   "gabarit": "Animanga"
+  },
+  {
+   "titre": "Dragon Ball (object)",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Shin",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Frieza",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Pan",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Burter",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Mr. Popo",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "World Tournament Announcer",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Cell Games",
+   "trouvee": true,
+   "gabarit": "Conflict Infobox"
+  },
+  {
+   "titre": "Shugesh",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "North Supreme Kai",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "South Supreme Kai",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Papoi",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Power Pole",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Z Sword",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Black Star Dragon Ball",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Masenko",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Otokosuki",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Jimmy Firecracker",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Caroni",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Pirozhki",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Return to Other World",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "Tommy",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Quicker Than Lightning",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "Mr. Pig",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "The Strangest Robot",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "Plight of the Children",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "Alien Announcer",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Future Trunks' Sword",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Brave Sword",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Idasam",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Brave Sword Attack",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "C-6",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Who's That Girl?",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "Jiang Shi",
+   "trouvee": true,
+   "gabarit": "Race Infobox2"
+  },
+  {
+   "titre": "Chuu Lee's House",
+   "trouvee": true,
+   "gabarit": "Location Infobox"
+  },
+  {
+   "titre": "Takao Koyama",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "The Niyoi-bo's Secret",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "The Zeta Sword",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "The Zeta Sword (second manga chapter)",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "Future World Tournament Announcer",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Gine",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Viola",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Kuu-Zen-Zetsu-Go",
+   "trouvee": true,
+   "gabarit": null
+  },
+  {
+   "titre": "Tagoma",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Future Shu",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Boo World",
+   "trouvee": true,
+   "gabarit": null
+  },
+  {
+   "titre": "Earth Dragon Ball",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Dragon Ball Daima",
+   "trouvee": true,
+   "gabarit": "Animanga"
+  },
+  {
+   "titre": "Rom (Xenoverse 3)",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Mercenary Tao",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Zarbon",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Namek",
+   "trouvee": true,
+   "gabarit": "Planet Infobox"
+  },
+  {
+   "titre": "Bardock",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Konkichi",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Bora",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Syn Shenron",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Master Shen",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Tsuru-Sen'nin",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "Galactic Donut",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "List of Planets",
+   "trouvee": true,
+   "gabarit": "Scroll box"
+  },
+  {
+   "titre": "Ginger",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Spice",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Haze Shenron",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Rage Shenron",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Oceanus Shenron",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Bizu",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Capsule Corporation",
+   "trouvee": true,
+   "gabarit": "Location Infobox"
+  },
+  {
+   "titre": "Shadow Dragon",
+   "trouvee": true,
+   "gabarit": "Faction Infobox"
+  },
+  {
+   "titre": "Capsule",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Bulma Leigh",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Meal Time",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "Annin",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Turtle",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Milk Delivery",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "Dragon Ball Z: Gekitō Tenkaichi Budōkai",
+   "trouvee": true,
+   "gabarit": "Infobox CVG"
+  },
+  {
+   "titre": "Sky Dragon",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Zeni",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "See-Through the Invisible Man",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Rising Dragon",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Capsule House",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "List of Dragon Ball Z Kai episodes",
+   "trouvee": true,
+   "gabarit": "English Episode list"
+  },
+  {
+   "titre": "Future Turtle",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Mint",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Super Donut Chain",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Milk Run",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "The Turtle is Spotted!",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "Tenshinhan vs. Taopaipai",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "Beerus",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "An Azuki",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Zaripai",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "And So, Ten Years Later... A Long-Awaited World Martial Arts Tournament!",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "Nameless Planet",
+   "trouvee": true,
+   "gabarit": "Planet Infobox"
+  },
+  {
+   "titre": "Bikal",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Prison Planet",
+   "trouvee": true,
+   "gabarit": "Planet Infobox"
+  },
+  {
+   "titre": "Prison Planet (chapter)",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "Dragon Ball Z: Collectible CD Picture Cards",
+   "trouvee": true,
+   "gabarit": "Infobox CVG"
+  },
+  {
+   "titre": "Gas",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Prison Planet (volume)",
+   "trouvee": true,
+   "gabarit": "Volume Infobox"
+  },
+  {
+   "titre": "Cookie Beam",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Namek Saga",
+   "trouvee": true,
+   "gabarit": "Arc infobox"
+  },
+  {
+   "titre": "Piccolo",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Tapion",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Android 13",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Hyperbolic Time Chamber",
+   "trouvee": true,
+   "gabarit": "Location Infobox"
+  },
+  {
+   "titre": "Namekian",
+   "trouvee": true,
+   "gabarit": "Race Infobox2"
+  },
+  {
+   "titre": "Snake Way",
+   "trouvee": true,
+   "gabarit": "Location Infobox"
+  },
+  {
+   "titre": "Ultimate Shenron",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Dragon Ball Z: Super Android 13!",
+   "trouvee": true,
+   "gabarit": "Infobox Film"
+  },
+  {
+   "titre": "Dragon Ball Z: Wrath of the Dragon",
+   "trouvee": true,
+   "gabarit": "Infobox Film"
+  },
+  {
+   "titre": "Dr. Wheelo",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Escape from Piccolo",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "Race to Capsule Corp.",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "Dr. Kochin",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Namekian Dragon Ball",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Bansho Fan",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Time Machine",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Terror and Plague",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "A Devastating Wish",
+   "trouvee": true,
+   "gabarit": "EpisodeInfobox"
+  },
+  {
+   "titre": "Energy Shield",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Turtle School",
+   "trouvee": true,
+   "gabarit": "Location Infobox"
+  },
+  {
+   "titre": "Animal",
+   "trouvee": true,
+   "gabarit": "Race Infobox2"
+  },
+  {
+   "titre": "Bon Para",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "King Nikochan",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Pigero",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Hero's Flute",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Terror",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Plague",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Tree of Might",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "King Nikochan's servant",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Bansho Spa",
+   "trouvee": true,
+   "gabarit": "Location Infobox"
+  },
+  {
+   "titre": "In Search of Kame-Sen'nin",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "King Nikochan's spaceship",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Capsule Corporation Spaceship",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Dr. Wheelo's Fortress",
+   "trouvee": true,
+   "gabarit": "Location Infobox"
+  },
+  {
+   "titre": "Battle Jacket",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Time Machine Quest",
+   "trouvee": true,
+   "gabarit": null
+  },
+  {
+   "titre": "Fanning the Flame",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "The Time Machine",
+   "trouvee": true,
+   "gabarit": "Chapter Infobox"
+  },
+  {
+   "titre": "Snake Way (volume)",
+   "trouvee": true,
+   "gabarit": "Infobox Film"
+  },
+  {
+   "titre": "Dragon Ball Z: Super Android 13! (Quotes)",
+   "trouvee": true,
+   "gabarit": null
+  },
+  {
+   "titre": "Super Shenron",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Time Ring",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Fruit of the Tree of Might (Demon Realm)",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Sword of Hope",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Demon Clothes",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Dogidogi",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Sean Broadhurst",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Dragon Ball Super Divers",
+   "trouvee": true,
+   "gabarit": "Infobox CVG"
+  },
+  {
+   "titre": "Sword of Hope from Across Time",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Princess Snake",
+   "trouvee": true,
+   "gabarit": "Character Infobox"
+  },
+  {
+   "titre": "Saiyan-Tuffle war",
+   "trouvee": true,
+   "gabarit": "Conflict Infobox"
+  },
+  {
+   "titre": "Attack Ball",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Dragon Ball Z: Attack of the Saiyans",
+   "trouvee": true,
+   "gabarit": "Infobox CVG"
+  },
+  {
+   "titre": "The Room of Spirit and Time",
+   "trouvee": true,
+   "gabarit": "Volume Infobox"
+  },
+  {
+   "titre": "Dark Dragon Ball",
+   "trouvee": true,
+   "gabarit": "Infobox Technique"
+  },
+  {
+   "titre": "Dragon Ball Room",
+   "trouvee": true,
+   "gabarit": "cite web"
+  }
+ ]
+}

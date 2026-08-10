@@ -80,9 +80,18 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
   // Famille : le databook curé d'abord (il porte le lien précis — père, sœur, parrain…), puis
   // les arêtes « famille » du graphe pour les milliers de fiches qui n'ont pas de databook.
   // Dédup par nom : une même personne ne doit pas apparaître deux fois sous deux sources.
+  //
+  // LES DEUX SENS (10/08/2026). `famille` est déclarée RÉFLEXIVE dans le dictionnaire commun
+  // (lib/akasha/relation-labels.ts, RELATIONS_REFLEXIVES) : « X est de la famille de Y » se lit
+  // à l'identique chez Y. Elle ne se lisait pourtant que dans le sens SORTANT — le même demi-lien
+  // que celui réparé le 07/08 sur allié/ennemi/rival, sur la grappe d'à côté. Mesuré sur le corpus
+  // paginé (7 654 fiches, 16 788 arêtes) : 289 personnages gagnent 586 proches, dont 158 qui
+  // n'avaient AUCUNE grappe Famille — Ichigo ne nommait ni Isshin ni Karin ni Yuzu (0 → 8),
+  // Vegeta ni Bulma ni Trunks (0 → 11), Son Goku ni Chichi ni Gohan ni Bardock (0 → 7). Aucune
+  // fiche ne perd une seule ligne : ce bloc n'ajoute que des noms absents du Set de dédup.
   const family = familyList(a.family);
   const nomsFamille = new Set(family.map((m) => m.name.toLowerCase()));
-  for (const r of entry.relationsOut) {
+  for (const r of [...entry.relationsOut, ...entry.relationsIn]) {
     if (r.relation !== 'famille' || nomsFamille.has(r.target.name.toLowerCase())) continue;
     nomsFamille.add(r.target.name.toLowerCase());
     family.push({ rel: 'famille', name: r.target.name, slug: r.target.slug });

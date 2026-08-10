@@ -1,0 +1,76 @@
+{
+ "chantier": "chantier 4 — étape C : arêtes prédiquées extraites de NOS descFr (isolées Dragon Ball)",
+ "quand": "2026-08-10T13:05:33.633Z",
+ "mode": "MESURE (lecture seule)",
+ "isolees": 146,
+ "avecDescFr": 130,
+ "nomsUniquesIndexes": 1133,
+ "motifs": [
+  {
+   "nom": "membre",
+   "re": "/\\b(membre|membres)\\s+(?:le plus [a-zà-ÿ]+\\s+)?(?:du|de la|de l['’]|des)\\s+$/i",
+   "relation": "appartient",
+   "typesCible": [
+    "organization",
+    "status",
+    "group"
+   ]
+  },
+  {
+   "nom": "fait partie",
+   "re": "/\\bfait partie\\s+(?:du|de la|de l['’]|des)\\s+$/i",
+   "relation": "appartient",
+   "typesCible": [
+    "organization",
+    "status",
+    "group"
+   ]
+  },
+  {
+   "nom": "sbire/serviteur",
+   "re": "/\\b(?:sbires?|serviteurs?|homme de main|assistante?|majordome)\\s+(?:du|de la|de l['’]|des|de)\\s+$/i",
+   "relation": "appartient",
+   "typesCible": [
+    "character",
+    "organization",
+    "status"
+   ]
+  },
+  {
+   "nom": "eleve",
+   "re": "/\\b(?:élèves?|disciples?|apprentis?)\\s+(?:du|de la|de l['’]|des|de)\\s+$/i",
+   "relation": "eleve",
+   "typesCible": [
+    "character"
+   ]
+  },
+  {
+   "nom": "maitre/mentor",
+   "re": "/\\b(?:maîtres?|mentors?|entraîneurs?)\\s+(?:du|de la|de l['’]|des|de)\\s+$/i",
+   "relation": "mentor",
+   "typesCible": [
+    "character"
+   ]
+  },
+  {
+   "nom": "habite village/planete",
+   "re": "/\\b(?:du|de la|de l['’]|des)\\s+(?:village|planète|île|royaume|cité|ville)\\s+$/i",
+   "relation": "habite",
+   "typesCible": [
+    "place"
+   ]
+  },
+  {
+   "nom": "reside a",
+   "re": "/\\b(?:réside|vit|habite|demeure)\\s+(?:à|au|sur|dans|dans le|dans la)\\s+$/i",
+   "relation": "habite",
+   "typesCible": [
+    "place"
+   ]
+  }
+ ],
+ "trouvees": 0,
+ "parMotif": {},
+ "fichesSorties": 0,
+ "candidats": []
+}

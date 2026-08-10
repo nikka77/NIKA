@@ -1,0 +1,5125 @@
+{
+ "quand": "2026-08-10T12:56:54.938Z",
+ "fichiersScannes": 334,
+ "lecteurs": {
+  "descFr": [
+   {
+    "fichier": "app/api/ops/audit/route.ts",
+    "ligne": 130,
+    "commentaire": false,
+    "texte": "} else { delete patch.descFr; delete patch.descFrSource; }"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 368,
+    "commentaire": false,
+    "texte": "patch.descFr = row.result?.descFr;"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 386,
+    "commentaire": false,
+    "texte": "patch.descFr = row.result.texte;"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 31,
+    "commentaire": false,
+    "texte": "const descFr = typeof (entry.attributes as Record<string, unknown>).descFr === 'string'"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 32,
+    "commentaire": false,
+    "texte": "? ((entry.attributes as Record<string, unknown>).descFr as string) : null;"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 116,
+    "commentaire": false,
+    "texte": "const descFrVal = typeof attrs.descFr === 'string' ? (attrs.descFr as string).trim() : null;"
+   },
+   {
+    "fichier": "app/learn/akasha/api/search/route.ts",
+    "ligne": 100,
+    "commentaire": false,
+    "texte": "snippet: snippet(r.descFr, q),"
+   },
+   {
+    "fichier": "app/ops/audit/AuditPanel.tsx",
+    "ligne": 62,
+    "commentaire": false,
+    "texte": "const attrs = f && !rel && !f.result?.descFr"
+   },
+   {
+    "fichier": "app/ops/audit/AuditPanel.tsx",
+    "ligne": 116,
+    "commentaire": false,
+    "texte": "{f.result?.descFr && ("
+   },
+   {
+    "fichier": "app/ops/audit/AuditPanel.tsx",
+    "ligne": 118,
+    "commentaire": false,
+    "texte": "{f.result.descFr}"
+   },
+   {
+    "fichier": "app/ops/pieces.tsx",
+    "ligne": 202,
+    "commentaire": false,
+    "texte": "{!attrs && r.result?.descFr && ("
+   },
+   {
+    "fichier": "app/ops/pieces.tsx",
+    "ligne": 204,
+    "commentaire": false,
+    "texte": "{compact ? r.result.descFr.slice(0, 110) + '…' : r.result.descFr}"
+   },
+   {
+    "fichier": "components/akasha/AkashaList.tsx",
+    "ligne": 123,
+    "commentaire": false,
+    "texte": "const flavor = flavorText(entry.descFr);"
+   },
+   {
+    "fichier": "components/akasha/AkashaMosaic.tsx",
+    "ligne": 38,
+    "commentaire": false,
+    "texte": "const flavor = flavorText(entry.descFr);"
+   },
+   {
+    "fichier": "components/akasha/DidYouKnow.tsx",
+    "ligne": 13,
+    "commentaire": false,
+    "texte": "const fact = flavorExcerpt(entry.descFr, 220);"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 132,
+    "commentaire": false,
+    "texte": "'descRaw', 'descLang', 'descFr', 'is_signature', 'source',"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 395,
+    "commentaire": false,
+    "texte": "const bio = str(a.bio) || str(a.descFr) || entry.summary;"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 149,
+    "commentaire": false,
+    "texte": "const bio = str(a.bio) || str(a.descFr) || entry.summary;"
+   },
+   {
+    "fichier": "components/akasha/zone/OrganizationZone.tsx",
+    "ligne": 188,
+    "commentaire": false,
+    "texte": "const bio = str(a.bio) || str(a.descFr) || entry.summary;"
+   },
+   {
+    "fichier": "lib/akasha/schema.ts",
+    "ligne": 89,
+    "commentaire": true,
+    "texte": "// `attributes.descFr`, le dossier détaillé dans la table `akasha_sections`."
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 33,
+    "commentaire": true,
+    "texte": "*  texte — déjà couvert par `descFr`."
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 34,
+    "commentaire": true,
+    "texte": "*  Le texte long réel vit dans `attributes.descFr` (7 178 fiches) et dans la table"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 36,
+    "commentaire": true,
+    "texte": "*  http://localhost:3000/learn/akasha/vizard le 10/08/2026 — la fiche affiche `descFr` puis les"
+   }
+  ],
+  "descFrSource": [
+   {
+    "fichier": "app/api/ops/audit/route.ts",
+    "ligne": 130,
+    "commentaire": false,
+    "texte": "} else { delete patch.descFr; delete patch.descFrSource; }"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 369,
+    "commentaire": false,
+    "texte": "patch.descFrSource = row.model;"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 387,
+    "commentaire": false,
+    "texte": "patch.descFrSource = `${row.model} (toilettage)`;"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 124,
+    "commentaire": true,
+    "texte": "// sur la page publique — c'est ainsi que 3 861 fiches ont publié `descFrSource` (« claude-haiku-4-5"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 134,
+    "commentaire": false,
+    "texte": "'descFrSource', 'sectionsSource', 'import_source', 'sourceUrl', 'purgeAudit',"
+   }
+  ],
+  "category": [
+   {
+    "fichier": "app/admin/pois/page.tsx",
+    "ligne": 69,
+    "commentaire": false,
+    "texte": "const color = catColors[poi.category] || '#5A88B0';"
+   },
+   {
+    "fichier": "app/admin/pois/page.tsx",
+    "ligne": 78,
+    "commentaire": false,
+    "texte": "{poi.category}"
+   },
+   {
+    "fichier": "app/api/news/moderate/route.ts",
+    "ligne": 13,
+    "commentaire": false,
+    "texte": "\"category\": \"local|auto|food|sea|general\""
+   },
+   {
+    "fichier": "app/api/reviews/import/route.ts",
+    "ligne": 161,
+    "commentaire": false,
+    "texte": ".eq('category', issue.category)"
+   },
+   {
+    "fichier": "app/api/reviews/import/route.ts",
+    "ligne": 177,
+    "commentaire": false,
+    "texte": "category: issue.category,"
+   },
+   {
+    "fichier": "app/api/reviews/route.ts",
+    "ligne": 99,
+    "commentaire": false,
+    "texte": ".eq('category', issue.category)"
+   },
+   {
+    "fichier": "app/api/reviews/route.ts",
+    "ligne": 117,
+    "commentaire": false,
+    "texte": "category: issue.category,"
+   },
+   {
+    "fichier": "app/carte/page.tsx",
+    "ligne": 54,
+    "commentaire": false,
+    "texte": "const marker = new maplibregl.Marker({ element: markerEl(poi.category) })"
+   },
+   {
+    "fichier": "app/carte/page.tsx",
+    "ligne": 56,
+    "commentaire": false,
+    "texte": "markersRef.current.push({ marker, cat: poi.category });"
+   },
+   {
+    "fichier": "app/carte/page.tsx",
+    "ligne": 89,
+    "commentaire": false,
+    "texte": "category: newPoi.category,"
+   },
+   {
+    "fichier": "app/carte/page.tsx",
+    "ligne": 146,
+    "commentaire": false,
+    "texte": "<select value={newPoi.category} onChange={e => setNewPoi(n => ({ ...n, category: e.target.value }))} style={inputStyle}>"
+   },
+   {
+    "fichier": "app/carte/poi/[id]/page.tsx",
+    "ligne": 31,
+    "commentaire": false,
+    "texte": "const color = catColors[poi.category] || '#5A88B0';"
+   },
+   {
+    "fichier": "app/carte/poi/[id]/page.tsx",
+    "ligne": 32,
+    "commentaire": false,
+    "texte": "const icon = catIcons[poi.category] || '📍';"
+   },
+   {
+    "fichier": "app/carte/poi/[id]/page.tsx",
+    "ligne": 47,
+    "commentaire": false,
+    "texte": "{poi.category}"
+   },
+   {
+    "fichier": "app/food/afroweek06/FoodClient.tsx",
+    "ligne": 125,
+    "commentaire": false,
+    "texte": "const tabItems = activeTab === 'all' ? itemsWithStock : itemsWithStock.filter(i => i.category === activeTab)"
+   },
+   {
+    "fichier": "app/food/afroweek06/FoodClient.tsx",
+    "ligne": 128,
+    "commentaire": false,
+    "texte": "items.some(i => i.category === t)"
+   },
+   {
+    "fichier": "app/food/afroweek06/FoodClient.tsx",
+    "ligne": 300,
+    "commentaire": false,
+    "texte": "const catItems = tabItems.filter(i => i.category === cat)"
+   },
+   {
+    "fichier": "app/food/afroweek06/page.tsx",
+    "ligne": 40,
+    "commentaire": false,
+    "texte": ".order('category')"
+   },
+   {
+    "fichier": "app/food/rakomoriafood/RakoClient.tsx",
+    "ligne": 164,
+    "commentaire": false,
+    "texte": "const standardMains = itemsWithStock.filter(i => i.category === 'main' && !RMR_SLUGS.has(i.slug))"
+   },
+   {
+    "fichier": "app/food/rakomoriafood/RakoClient.tsx",
+    "ligne": 167,
+    "commentaire": false,
+    "texte": "const normalSides = itemsWithStock.filter(i => i.category === 'side' && !BUNDLE_SLUGS.has(i.slug))"
+   },
+   {
+    "fichier": "app/food/rakomoriafood/RakoClient.tsx",
+    "ligne": 168,
+    "commentaire": false,
+    "texte": "const drinks = itemsWithStock.filter(i => i.category === 'drink')"
+   },
+   {
+    "fichier": "app/food/rakomoriafood/page.tsx",
+    "ligne": 40,
+    "commentaire": false,
+    "texte": ".order('category')"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 52,
+    "commentaire": false,
+    "texte": "const category = typeof (entry.attributes as Record<string, unknown>).category === 'string'"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 53,
+    "commentaire": false,
+    "texte": "? ((entry.attributes as Record<string, unknown>).category as string)"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 72,
+    "commentaire": false,
+    "texte": "<Crumbs universe={entry.universe} category={typeof (entry.attributes as Record<string, unknown>).category === 'string' ? ((entry.attributes as Record<"
+   },
+   {
+    "fichier": "app/learn/akasha/c/[slug]/page.tsx",
+    "ligne": 41,
+    "commentaire": false,
+    "texte": "const items = await listCollectionEntries(c.category, c.subAttr, { universe: c.universe, requireSub: c.requireSub, cap: 1500 });"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 354,
+    "commentaire": false,
+    "texte": "const icon = CAT_ICON[c.category];"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 357,
+    "commentaire": false,
+    "texte": "key={c.category}"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 358,
+    "commentaire": false,
+    "texte": "href={registryHref(taxo.name, { cat: c.category })}"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 366,
+    "commentaire": false,
+    "texte": "{c.category}"
+   },
+   {
+    "fichier": "app/news/new/page.tsx",
+    "ligne": 37,
+    "commentaire": false,
+    "texte": "category: modData.category || 'general',"
+   },
+   {
+    "fichier": "app/news/page.tsx",
+    "ligne": 106,
+    "commentaire": false,
+    "texte": "const catStyle = CAT_STYLES[item.category || 'general'] || CAT_STYLES.general;"
+   },
+   {
+    "fichier": "app/news/page.tsx",
+    "ligne": 117,
+    "commentaire": false,
+    "texte": "{item.category || 'Général'}"
+   },
+   {
+    "fichier": "app/pro/reviews/page.tsx",
+    "ligne": 230,
+    "commentaire": false,
+    "texte": "{CATEGORY_LABELS[issue.category] ?? issue.category}"
+   },
+   {
+    "fichier": "app/profil/ProfilHub.tsx",
+    "ligne": 155,
+    "commentaire": false,
+    "texte": "{pois.length ? <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>{pois.map(p => <Row key={p.id} left={`📍 ${p.name}`} sub={`${p.catego"
+   },
+   {
+    "fichier": "app/profil/[id]/page.tsx",
+    "ligne": 101,
+    "commentaire": false,
+    "texte": "<div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.4rem' "
+   },
+   {
+    "fichier": "app/rent/page.tsx",
+    "ligne": 132,
+    "commentaire": false,
+    "texte": "{/* TODO(filtre cat.) : vrai filtrage quand les listings porteront un champ `category`."
+   },
+   {
+    "fichier": "components/akasha/AkashaList.tsx",
+    "ligne": 54,
+    "commentaire": false,
+    "texte": "{e.category && <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>· {e.category}</span>}"
+   },
+   {
+    "fichier": "components/akasha/AkashaMosaic.tsx",
+    "ligne": 35,
+    "commentaire": false,
+    "texte": "const tint = (entry.category && CATEGORY_TINT[entry.category]) || m.color;"
+   },
+   {
+    "fichier": "components/akasha/AkashaMosaic.tsx",
+    "ligne": 36,
+    "commentaire": false,
+    "texte": "const icon = entry.category ? CATEGORY_ICON[entry.category] : undefined;"
+   },
+   {
+    "fichier": "components/akasha/AkashaMosaic.tsx",
+    "ligne": 90,
+    "commentaire": false,
+    "texte": "{entry.category && entry.type !== 'character' && ("
+   },
+   {
+    "fichier": "components/akasha/AkashaMosaic.tsx",
+    "ligne": 92,
+    "commentaire": false,
+    "texte": "◈ {entry.category}"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 120,
+    "commentaire": true,
+    "texte": "// `category` est en chip « ◈ Collection » ; descRaw/descLang = matière de traduction (jamais affichés"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 131,
+    "commentaire": false,
+    "texte": "'category', 'rosterLabel', 'eras', 'facts', 'quote', 'bio', 'trivia', 'abilities',"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 144,
+    "commentaire": true,
+    "texte": "// Tautologie mesurée sur 73 fiches : `element` et `category` portent la même valeur"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 146,
+    "commentaire": false,
+    "texte": "if (k === 'element' && String(val) === String(attributes.category)) continue;"
+   },
+   {
+    "fichier": "components/azur/ProviderCard.tsx",
+    "ligne": 79,
+    "commentaire": false,
+    "texte": "const icon = CATEGORY_ICON[provider.category || ''] || '🌊'"
+   },
+   {
+    "fichier": "components/food/DishCard.tsx",
+    "ligne": 40,
+    "commentaire": false,
+    "texte": "const isFeatured = item.featured || item.category === 'main'"
+   },
+   {
+    "fichier": "components/food/DishCard.tsx",
+    "ligne": 44,
+    "commentaire": false,
+    "texte": "background: CATEGORY_BG[item.category] ?? '#1c1c1c',"
+   },
+   {
+    "fichier": "components/food/DishCard.tsx",
+    "ligne": 50,
+    "commentaire": false,
+    "texte": "border: `1px solid ${outOfStock ? '#2a2a2a' : CATEGORY_BORDER[item.category] ?? '#2a2a2a'}`,"
+   },
+   {
+    "fichier": "lib/akasha/collections.ts",
+    "ligne": 10,
+    "commentaire": false,
+    "texte": "category: string;      // attributes.category"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 44,
+    "commentaire": false,
+    "texte": "category: r.category ?? null,"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 291,
+    "commentaire": true,
+    "texte": "/** Compte d'entrées par CATÉGORIE (attributes.category) dans le scope courant (univers / type)."
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 300,
+    "commentaire": false,
+    "texte": "const c = row.category?.trim();"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 305,
+    "commentaire": false,
+    "texte": ".sort((a, b) => b.count - a.count || a.category.localeCompare(b.category, 'fr'));"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 321,
+    "commentaire": false,
+    "texte": "const c = row.category?.trim();"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 328,
+    "commentaire": false,
+    "texte": ".sort((a, b) => b.count - a.count || a.category.localeCompare(b.category, 'fr'));"
+   },
+   {
+    "fichier": "lib/claude/review-analyzer.ts",
+    "ligne": 46,
+    "commentaire": false,
+    "texte": "\"category\": \"proprete|bruit|wifi|equipements|hote|localisation|rapport_qualite_prix|securite\","
+   },
+   {
+    "fichier": "lib/food.ts",
+    "ligne": 107,
+    "commentaire": true,
+    "texte": "// À terme : colonnes DB food_providers.category / featured / rank (puis fusion avec `pros`)."
+   },
+   {
+    "fichier": "lib/food.ts",
+    "ligne": 138,
+    "commentaire": false,
+    "texte": "category: meta.category,"
+   }
+  ],
+  "voiceActors": [
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 66,
+    "commentaire": false,
+    "texte": "const va = (entry.attributes as Record<string, unknown>).voiceActors as { jp?: string[] } | undefined;"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 398,
+    "commentaire": false,
+    "texte": "const voice = a.voiceActors && typeof a.voiceActors === 'object' ? (a.voiceActors as { jp?: string[]; en?: string[] }) : null;"
+   }
+  ],
+  "descLang": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 132,
+    "commentaire": false,
+    "texte": "'descRaw', 'descLang', 'descFr', 'is_signature', 'source',"
+   }
+  ],
+  "descRaw": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 132,
+    "commentaire": false,
+    "texte": "'descRaw', 'descLang', 'descFr', 'is_signature', 'source',"
+   }
+  ],
+  "role": [
+   {
+    "fichier": "app/api/niko/route.ts",
+    "ligne": 165,
+    "commentaire": false,
+    "texte": ".filter((m: { role?: unknown; content?: unknown }) => m && typeof m.content === 'string' && (m.role === 'user' || m.role === 'assistant'))"
+   },
+   {
+    "fichier": "app/api/niko/route.ts",
+    "ligne": 166,
+    "commentaire": false,
+    "texte": ".map((m: { role: string; content: string }) => ({ role: m.role as 'user' | 'assistant', content: m.content.slice(0, 4000) }));"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 101,
+    "commentaire": false,
+    "texte": "w.role === 'agents' && Date.now() - new Date(w.derniere_activite as string).getTime() < 180_000);"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 143,
+    "commentaire": false,
+    "texte": "role: w.role as string,"
+   },
+   {
+    "fichier": "app/niko/NikoChat.tsx",
+    "ligne": 162,
+    "commentaire": false,
+    "texte": "<div key={i} style={{ display: 'flex', flexDirection: msg.role === 'user' ? 'row-reverse' : 'row', gap: 10, alignItems: 'flex-end' }}>"
+   },
+   {
+    "fichier": "app/niko/NikoChat.tsx",
+    "ligne": 163,
+    "commentaire": false,
+    "texte": "{msg.role === 'assistant' && ("
+   },
+   {
+    "fichier": "app/niko/NikoChat.tsx",
+    "ligne": 170,
+    "commentaire": false,
+    "texte": "background: msg.role === 'user' ? 'var(--az)' : 'var(--bg2)',"
+   },
+   {
+    "fichier": "app/niko/NikoChat.tsx",
+    "ligne": 171,
+    "commentaire": false,
+    "texte": "border: msg.role === 'user' ? 'none' : '1px solid var(--bd)',"
+   },
+   {
+    "fichier": "app/niko/NikoChat.tsx",
+    "ligne": 172,
+    "commentaire": false,
+    "texte": "borderRadius: msg.role === 'user' ? '16px 16px 4px 16px' : '16px 16px 16px 4px',"
+   },
+   {
+    "fichier": "app/niko/NikoChat.tsx",
+    "ligne": 175,
+    "commentaire": false,
+    "texte": "color: msg.role === 'user' ? '#fff' : 'var(--td)',"
+   },
+   {
+    "fichier": "app/niko/NikoChat.tsx",
+    "ligne": 178,
+    "commentaire": false,
+    "texte": "{msg.content || (msg.role === 'assistant' && loading && i === messages.length - 1 ? ("
+   },
+   {
+    "fichier": "app/ops/AgentsPanel.tsx",
+    "ligne": 63,
+    "commentaire": false,
+    "texte": "{a.role}"
+   },
+   {
+    "fichier": "app/ops/OpsBoard.tsx",
+    "ligne": 156,
+    "commentaire": false,
+    "texte": "const vivant = (state?.flotte ?? []).some((n) => n.role === 'agents' && ageNoeud(n) < 180);"
+   },
+   {
+    "fichier": "app/ops/OpsBoard.tsx",
+    "ligne": 233,
+    "commentaire": false,
+    "texte": "<span style={{ color: 'var(--td3)' }}> · {n.role}</span>"
+   },
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 128,
+    "commentaire": false,
+    "texte": "{(clan || str(a.role)) && ("
+   },
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 129,
+    "commentaire": false,
+    "texte": "<div style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', marginTop: 4 }}>{clan ? `Clan ${clan}` : str(a.role)}</div>"
+   },
+   {
+    "fichier": "components/akasha/hub/DragonBallCosmos.tsx",
+    "ligne": 270,
+    "commentaire": false,
+    "texte": "? <Link key={t.role} href={`/learn/akasha/${t.slug}`} style={trioChip}>{t.icon} <b style={{ fontWeight: 800, color: 'var(--td)' }}>{t.name}</b> <span "
+   },
+   {
+    "fichier": "components/akasha/hub/DragonBallCosmos.tsx",
+    "ligne": 271,
+    "commentaire": false,
+    "texte": ": <span key={t.role} style={{ ...trioChip, color: 'var(--td3)' }}>{t.icon} <b style={{ fontWeight: 800 }}>{t.name}</b> <span style={{ opacity: 0.6, fo"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 530,
+    "commentaire": false,
+    "texte": ": sel.kind === 'membre' ? (sel.role ?? 'Membre')"
+   },
+   {
+    "fichier": "components/akasha/zone/OrganizationZone.tsx",
+    "ligne": 195,
+    "commentaire": false,
+    "texte": "Canal · <span style={{ color: accent }}>{membre ? membre.role ?? 'Membre' : 'Identité'}</span>"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 192,
+    "commentaire": false,
+    "texte": "{ key: 'role', label: 'Rôle' },"
+   }
+  ],
+  "favorites": [
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 62,
+    "commentaire": false,
+    "texte": "const fav = typeof (entry.attributes as Record<string, unknown>).favorites === 'number'"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 63,
+    "commentaire": false,
+    "texte": "? ((entry.attributes as Record<string, unknown>).favorites as number) : 0;"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 120,
+    "commentaire": false,
+    "texte": ".sort((a, b) => (Number(b.target.favorites) || 0) - (Number(a.target.favorites) || 0));"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 170,
+    "commentaire": false,
+    "texte": "{Number(r.target.favorites) > 0 && ("
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 171,
+    "commentaire": false,
+    "texte": "<span style={{ display: 'block', fontFamily: 'var(--fo)', fontSize: 10, color: 'var(--td3)' }}>★ {Number(r.target.favorites).toLocaleString('fr-FR')} "
+   },
+   {
+    "fichier": "app/learn/akasha/tops/page.tsx",
+    "ligne": 21,
+    "commentaire": false,
+    "texte": "listTopByAttr('favorites', { limit: 15 }),"
+   },
+   {
+    "fichier": "components/akasha/hub/HubInsights.tsx",
+    "ligne": 35,
+    "commentaire": false,
+    "texte": "const maxFav = topFav[0]?.favorites || 1;"
+   },
+   {
+    "fichier": "components/akasha/hub/HubInsights.tsx",
+    "ligne": 90,
+    "commentaire": false,
+    "texte": "<div style={{ height: '100%', width: `${Math.max(6, (s.favorites / maxFav) * 100)}%`, background: color, borderRadius: 3 }} />"
+   },
+   {
+    "fichier": "components/akasha/hub/HubInsights.tsx",
+    "ligne": 93,
+    "commentaire": false,
+    "texte": "<span style={{ fontFamily: 'ui-monospace, monospace', fontSize: 11, fontWeight: 700, color: 'var(--td3)', flexShrink: 0 }}>★ {s.favorites.toLocaleStri"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 140,
+    "commentaire": false,
+    "texte": "const favN = typeof a.favorites === 'number' ? (a.favorites as number) : null;"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 198,
+    "commentaire": false,
+    "texte": ".map((r) => ({ slug: r.target.slug, name: r.target.name, img: r.target.image_url, favorites: fav(r.target.favorites) }))"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 199,
+    "commentaire": false,
+    "texte": ".sort((x, y) => y.favorites - x.favorites)"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 247,
+    "commentaire": false,
+    "texte": "const pickMembre = (mb: Membre, role: string) => select({ kind: 'membre', slug: mb.slug, name: mb.name, img: mb.img, favorites: mb.favorites, role });"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 590,
+    "commentaire": false,
+    "texte": "{typeof sel.favorites === 'number' && sel.favorites > 0 && ("
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 591,
+    "commentaire": false,
+    "texte": "<div style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: accent, marginBottom: 12, fontVariantNumeric: 'tabular-nums' }}>★ {sel.fa"
+   },
+   {
+    "fichier": "components/akasha/zone/OrganizationZone.tsx",
+    "ligne": 42,
+    "commentaire": false,
+    "texte": ".map((r) => ({ slug: r.target.slug, name: r.target.name, img: r.target.image_url, favorites: fav(r.target.favorites) }))"
+   },
+   {
+    "fichier": "components/akasha/zone/OrganizationZone.tsx",
+    "ligne": 43,
+    "commentaire": false,
+    "texte": ".sort((x, y) => y.favorites - x.favorites);"
+   },
+   {
+    "fichier": "components/akasha/zone/OrganizationZone.tsx",
+    "ligne": 53,
+    "commentaire": false,
+    "texte": "select({ kind: 'membre', slug: m.slug, name: m.name, img: m.img, favorites: m.favorites, role });"
+   },
+   {
+    "fichier": "components/akasha/zone/OrganizationZone.tsx",
+    "ligne": 214,
+    "commentaire": false,
+    "texte": "{typeof membre.favorites === 'number' && membre.favorites > 0 && ("
+   },
+   {
+    "fichier": "components/akasha/zone/OrganizationZone.tsx",
+    "ligne": 215,
+    "commentaire": false,
+    "texte": "<div style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: accent, marginBottom: 12, fontVariantNumeric: 'tabular-nums' }}>★ {membre"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 442,
+    "commentaire": false,
+    "texte": "topFav.sort((a, b) => b.favorites - a.favorites);"
+   }
+  ],
+  "element": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 144,
+    "commentaire": true,
+    "texte": "// Tautologie mesurée sur 73 fiches : `element` et `category` portent la même valeur"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 146,
+    "commentaire": false,
+    "texte": "if (k === 'element' && String(val) === String(attributes.category)) continue;"
+   },
+   {
+    "fichier": "lib/akasha/collections.ts",
+    "ligne": 53,
+    "commentaire": true,
+    "texte": "// Mesuré 08/08 : category='Jutsu' = 1408 fiches, 100% Naruto, groupées par `attributes.element`"
+   },
+   {
+    "fichier": "lib/akasha/collections.ts",
+    "ligne": 62,
+    "commentaire": false,
+    "texte": "subAttr: 'element',"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 157,
+    "commentaire": false,
+    "texte": "'Jutsu': 'element',"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 158,
+    "commentaire": false,
+    "texte": "'Fruit du Démon': 'element',"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 218,
+    "commentaire": false,
+    "texte": "{ key: 'element', label: 'Élément' },"
+   }
+  ],
+  "sex": [],
+  "village": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 76,
+    "commentaire": false,
+    "texte": "const subFilterOn = taxo.slug === 'naruto' && axisDef.attr === 'village';"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 111,
+    "commentaire": false,
+    "texte": "{taxo.slug === 'naruto' && (axisDef.attr === 'village' || axisDef.attr === 'clan' || axisDef.attr === 'rank' || axisDef.attr === 'generation') && ("
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 113,
+    "commentaire": false,
+    "texte": "{axisDef.attr === 'village'"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 146,
+    "commentaire": false,
+    "texte": "villages: ['village'], nen: ['nen'], jojo: ['partie'], passes: ['col'],"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 305,
+    "commentaire": false,
+    "texte": ": taxo.slug === 'naruto' && axis.attr === 'village'"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 260,
+    "commentaire": false,
+    "texte": "case 'villages': { const a = axis('village'); return a ? <VillageMap axis={a} universe={universe} color={color} /> : null; }"
+   },
+   {
+    "fichier": "components/akasha/hub/NarutoWorldMap.tsx",
+    "ligne": 13,
+    "commentaire": true,
+    "texte": "// Kanji + teinte des villages mineurs (chips sous la carte) — teintes alignées sur l'axe `village`"
+   },
+   {
+    "fichier": "components/akasha/hub/NarutoWorldMap.tsx",
+    "ligne": 59,
+    "commentaire": false,
+    "texte": "onClick={() => go(c.village)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(c.village); } }}>"
+   },
+   {
+    "fichier": "components/akasha/hub/NarutoWorldMap.tsx",
+    "ligne": 67,
+    "commentaire": false,
+    "texte": "{counts?.[c.village] ? ("
+   },
+   {
+    "fichier": "components/akasha/hub/NarutoWorldMap.tsx",
+    "ligne": 68,
+    "commentaire": false,
+    "texte": "<text x={c.cx} y={c.cy + 50} textAnchor=\"middle\" fontFamily=\"var(--fo)\" fontWeight=\"800\" fontSize={17} fill=\"#9FE8C4\" stroke=\"#1A2230\" strokeWidth={5}"
+   },
+   {
+    "fichier": "components/akasha/hub/NarutoWorldMap.tsx",
+    "ligne": 82,
+    "commentaire": false,
+    "texte": "onClick={() => go(v.village)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(v.village); } }}>"
+   },
+   {
+    "fichier": "components/akasha/hub/NarutoWorldMap.tsx",
+    "ligne": 110,
+    "commentaire": false,
+    "texte": "<a key={c.key} href={villageHref(c.village)} onMouseEnter={() => setHover(c.key)} onMouseLeave={() => setHover(null)}"
+   },
+   {
+    "fichier": "components/akasha/hub/NarutoWorldMap.tsx",
+    "ligne": 113,
+    "commentaire": false,
+    "texte": "{counts?.[c.village] ? <span style={{ fontSize: 10, fontWeight: 800, color: c.color, background: 'rgba(5,12,23,0.45)', borderRadius: 20, padding: '1px"
+   },
+   {
+    "fichier": "components/akasha/hub/NarutoWorldMap.tsx",
+    "ligne": 120,
+    "commentaire": false,
+    "texte": "<a key={v.key} href={villageHref(v.village)} onMouseEnter={() => setHover(v.key)} onMouseLeave={() => setHover(null)}"
+   },
+   {
+    "fichier": "components/akasha/hub/NarutoWorldMap.tsx",
+    "ligne": 123,
+    "commentaire": false,
+    "texte": "{counts?.[v.village] ? <span style={{ fontSize: 10, fontWeight: 800, color: t, background: 'rgba(5,12,23,0.45)', borderRadius: 20, padding: '1px 6px' "
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 26,
+    "commentaire": false,
+    "texte": "['clan', 'Clan'], ['village', 'Village'], ['organization', 'Organisation'], ['crew', 'Équipage'],"
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 3,
+    "commentaire": true,
+    "texte": "// viewBox 0 0 1500 882. Clic pays/village → registre filtré par `village`."
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 13,
+    "commentaire": false,
+    "texte": "\"village\": \"Konohagakure\","
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 27,
+    "commentaire": false,
+    "texte": "\"village\": \"Sunagakure\","
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 41,
+    "commentaire": false,
+    "texte": "\"village\": \"Iwagakure\","
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 55,
+    "commentaire": false,
+    "texte": "\"village\": \"Kumogakure\","
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 69,
+    "commentaire": false,
+    "texte": "\"village\": \"Kirigakure\","
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 89,
+    "commentaire": false,
+    "texte": "\"village\": \"Otogakure\","
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 99,
+    "commentaire": false,
+    "texte": "\"village\": \"Amegakure\","
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 55,
+    "commentaire": false,
+    "texte": "attr: 'village', label: 'Villages', icon: '🏯',"
+   },
+   {
+    "fichier": "lib/store.ts",
+    "ligne": 66,
+    "commentaire": false,
+    "texte": "const city = a.city || a.town || a.village || a.municipality || a.suburb;"
+   }
+  ],
+  "discipline": [
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 115,
+    "commentaire": false,
+    "texte": "const discipline = typeof attrs.discipline === 'string' ? (attrs.discipline as string) : null;"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 221,
+    "commentaire": false,
+    "texte": "{ key: 'discipline', label: 'Discipline' },"
+   }
+  ],
+  "age": [
+   {
+    "fichier": "components/akasha/ArcFrieze.tsx",
+    "ligne": 29,
+    "commentaire": false,
+    "texte": "const age = str(f.age);"
+   },
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 93,
+    "commentaire": false,
+    "texte": "const ageRaw = f.age ?? (hasCurated ? null : str(a.age));"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 401,
+    "commentaire": false,
+    "texte": "push('Âge', fstr(f.age, a.age));"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 464,
+    "commentaire": false,
+    "texte": "{str(f.age) && <Row k=\"Âge\" v={str(f.age)!} />}"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 291,
+    "commentaire": false,
+    "texte": "{etape && (str(etape.label) || str(etape.period) || str(etape.age)) && ("
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 294,
+    "commentaire": false,
+    "texte": "{(str(etape.period) ?? str(etape.age)) && <span style={{ color: 'var(--td3)' }}> · {str(etape.period) ?? str(etape.age)}</span>}"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 557,
+    "commentaire": false,
+    "texte": "{etape && !str(etape.period) && str(etape.age) && <Row k=\"Période\" v={str(etape.age)!} />}"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 412,
+    "commentaire": false,
+    "texte": ".map((r) => ({ ...r, ageValue: parseInt(String(r.age).match(/\\d+/)?.[0] ?? '', 10) || 0 }))"
+   }
+  ],
+  "source": [
+   {
+    "fichier": "app/api/ops/audit/route.ts",
+    "ligne": 43,
+    "commentaire": false,
+    "texte": "const { data } = await supabase.from('ops_notes').select('content').eq('source', 'audit');"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 132,
+    "commentaire": false,
+    "texte": "'descRaw', 'descLang', 'descFr', 'is_signature', 'source',"
+   },
+   {
+    "fichier": "lib/akasha/relations.ts",
+    "ligne": 343,
+    "commentaire": false,
+    "texte": ".from('ops_notes').select('id, content, done').eq('source', SOURCE_JOURNAL).range(debut, debut + 999);"
+   }
+  ],
+  "faction": [
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 27,
+    "commentaire": false,
+    "texte": "['faction', 'Faction'], ['division', 'Division'], ['camp', 'Camp'], ['partie', 'Partie'],"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 110,
+    "commentaire": false,
+    "texte": "{ attr: 'faction', label: 'Factions', values: [{ v: 'A' }, { v: 'B' }, { v: 'C' }, { v: 'D' }, { v: 'E' }] },"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 115,
+    "commentaire": false,
+    "texte": "const s = deriveHubSurfaces({ axes: [{ attr: 'faction', label: 'Factions', chips }] });"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 280,
+    "commentaire": false,
+    "texte": "attr: 'faction', label: 'Factions', genre: 'f', icon: '⚖️',"
+   }
+  ],
+  "rank": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 20,
+    "commentaire": false,
+    "texte": "const SUB_ATTRS = new Set(['clan', 'rank', 'generation']); // sous-filtres d'une page village (Naruto)"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 84,
+    "commentaire": false,
+    "texte": "subFilterOn ? listAxisCounts(taxo.name, ['clan', 'rank', 'generation'], axisDef.attr, val) : Promise.resolve(null),"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 111,
+    "commentaire": false,
+    "texte": "{taxo.slug === 'naruto' && (axisDef.attr === 'village' || axisDef.attr === 'clan' || axisDef.attr === 'rank' || axisDef.attr === 'generation') && ("
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 117,
+    "commentaire": false,
+    "texte": ": axisDef.attr === 'rank'"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 155,
+    "commentaire": false,
+    "texte": ": ax.attr === 'rank' ? <RankBadge value={v.v} size={20} />"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 307,
+    "commentaire": false,
+    "texte": ": taxo.slug === 'naruto' && axis.attr === 'rank'"
+   },
+   {
+    "fichier": "app/learn/akasha/u/naruto/rangs/page.tsx",
+    "ligne": 4,
+    "commentaire": true,
+    "texte": "// donnée nouvelle — l'axe `rank` existe déjà (universe-taxonomy.ts), 473 personnages mesurés."
+   },
+   {
+    "fichier": "app/learn/akasha/u/naruto/rangs/page.tsx",
+    "ligne": 15,
+    "commentaire": true,
+    "texte": "//    portent une valeur de `rank` qui n'est ni un grade ni une affectation (titre honorifique,"
+   },
+   {
+    "fichier": "app/learn/akasha/u/naruto/rangs/page.tsx",
+    "ligne": 46,
+    "commentaire": true,
+    "texte": "// Voie de promotion canon, dans l'ordre — vérifiée contre l'axe `rank` déjà curé"
+   },
+   {
+    "fichier": "app/learn/akasha/u/naruto/rangs/page.tsx",
+    "ligne": 84,
+    "commentaire": true,
+    "texte": "// Fiches dont le champ `rank` porte une valeur hors échelle — mesurées (node/ops), pas devinées."
+   },
+   {
+    "fichier": "app/learn/akasha/u/naruto/rangs/page.tsx",
+    "ligne": 98,
+    "commentaire": true,
+    "texte": "// Sho p. 262). Il est donc désormais dans l’axe `rank` curé — mais il reste hors de CETTE"
+   },
+   {
+    "fichier": "app/learn/akasha/u/naruto/rangs/page.tsx",
+    "ligne": 121,
+    "commentaire": false,
+    "texte": "listAxisCounts(UNIVERSE, ['rank']),"
+   },
+   {
+    "fichier": "app/learn/akasha/u/naruto/rangs/page.tsx",
+    "ligne": 122,
+    "commentaire": false,
+    "texte": "Promise.all(RUNGS.map((r) => listEntries({ universe: UNIVERSE, attr: 'rank', val: r.v, sort: 'pop' }))),"
+   },
+   {
+    "fichier": "app/learn/akasha/u/naruto/rangs/page.tsx",
+    "ligne": 123,
+    "commentaire": false,
+    "texte": "listEntries({ universe: UNIVERSE, attr: 'rank', val: 'Anbu', sort: 'pop' }),"
+   },
+   {
+    "fichier": "app/learn/akasha/u/naruto/rangs/page.tsx",
+    "ligne": 127,
+    "commentaire": false,
+    "texte": "const rankCounts = counts.get('rank') ?? new Map<string, number>();"
+   },
+   {
+    "fichier": "app/learn/akasha/u/naruto/rangs/page.tsx",
+    "ligne": 163,
+    "commentaire": false,
+    "texte": "const label = axisValueLabel(UNIVERSE, 'rank', r.v);"
+   },
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 90,
+    "commentaire": false,
+    "texte": "const rank = f.rank ?? str(a.rank);"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 28,
+    "commentaire": false,
+    "texte": "['race', 'Race'], ['nen', 'Nen'], ['generation', 'Génération'], ['rank', 'Rang'],"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 212,
+    "commentaire": false,
+    "texte": "{ key: 'rank', label: 'Rang' },"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 244,
+    "commentaire": false,
+    "texte": "attr: 'rank', label: 'Rangs ninja', icon: '🎖️',"
+   },
+   {
+    "fichier": "lib/food.ts",
+    "ligne": 140,
+    "commentaire": false,
+    "texte": "rank: meta.rank,"
+   },
+   {
+    "fichier": "lib/food.ts",
+    "ligne": 149,
+    "commentaire": false,
+    "texte": "return (featured.length ? featured : all).sort((a, b) => a.rank - b.rank);"
+   },
+   {
+    "fichier": "lib/food.ts",
+    "ligne": 155,
+    "commentaire": false,
+    "texte": "return all.sort((a, b) => a.rank - b.rank);"
+   }
+  ],
+  "occupation": [],
+  "family": [
+   {
+    "fichier": "components/akasha/hub/JoestarTree.tsx",
+    "ligne": 29,
+    "commentaire": true,
+    "texte": "// habitant le corps volé de Jonathan (attributes.family de giorno-giovanna : father→DIO,"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 83,
+    "commentaire": false,
+    "texte": "const family = familyList(a.family);"
+   }
+  ],
+  "material": [
+   {
+    "fichier": "lib/akasha/collections.ts",
+    "ligne": 77,
+    "commentaire": true,
+    "texte": "// `attributes.material` porte en réalité un TYPE d'arme (pas un matériau) — champ mal nommé"
+   },
+   {
+    "fichier": "lib/akasha/collections.ts",
+    "ligne": 89,
+    "commentaire": false,
+    "texte": "subAttr: 'material',"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 159,
+    "commentaire": false,
+    "texte": "'Arme & outil': 'material',"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 203,
+    "commentaire": false,
+    "texte": "{ key: 'material', label: 'Matière' },"
+   }
+  ],
+  "roman_name": [],
+  "crew": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 117,
+    "commentaire": false,
+    "texte": "const crewCounts = axisCounts.get('crew');"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 133,
+    "commentaire": true,
+    "texte": "// Valeurs de `crew` One Piece qui sont en fait des LIEUX/organisations (bruit de mining) → hors axe Équipages."
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 134,
+    "commentaire": true,
+    "texte": "// INERTES depuis le LOT 3b (isDirtyAxis masque tout l'axe `crew`/`clan` en amont, voir plus bas) —"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 156,
+    "commentaire": true,
+    "texte": "// ne lit ni `clan`, ni `organization`, ni `crew` — rien d'autre n'en dépend."
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 165,
+    "commentaire": false,
+    "texte": "const skip = taxo.slug === 'one-piece' && axis.attr === 'crew' ? OP_NON_CREW"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 26,
+    "commentaire": false,
+    "texte": "['clan', 'Clan'], ['village', 'Village'], ['organization', 'Organisation'], ['crew', 'Équipage'],"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 31,
+    "commentaire": false,
+    "texte": "const s = deriveHubSurfaces({ map: 'op-world', axes: [axe('crew', 20, 300)] });"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 287,
+    "commentaire": false,
+    "texte": "attr: 'crew', label: 'Équipages', icon: '🏴‍☠️',"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 615,
+    "commentaire": true,
+    "texte": "*  · `crew` One Piece : 76,3% curé (273/358 fiches) — RETIRÉ. Les 12 valeurs encore hors liste"
+   }
+  ],
+  "scope": [
+   {
+    "fichier": "components/akasha/zone/OrganizationZone.tsx",
+    "ligne": 36,
+    "commentaire": false,
+    "texte": "const scope = str(a.scope) ?? 'Organisation';"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 213,
+    "commentaire": false,
+    "texte": "{ key: 'scope', label: 'Portée' },"
+   }
+  ],
+  "region": [
+   {
+    "fichier": "components/akasha/hub/DragonBallCosmos.tsx",
+    "ligne": 14,
+    "commentaire": false,
+    "texte": "const planetsOf = (num: number) => DB_GALLERY.filter((g) => regionUniv(g.region) === num);"
+   },
+   {
+    "fichier": "components/akasha/hub/OnePieceMap.tsx",
+    "ligne": 20,
+    "commentaire": false,
+    "texte": "const REGIONS = [...new Set(OP_WORLD.islands.map((i) => i.region))];"
+   },
+   {
+    "fichier": "components/akasha/hub/OnePieceMap.tsx",
+    "ligne": 56,
+    "commentaire": false,
+    "texte": "const [filter, setFilter] = useState<{ kind: 'region' | 'arc'; value: string } | null>(null);"
+   },
+   {
+    "fichier": "components/akasha/hub/OnePieceMap.tsx",
+    "ligne": 75,
+    "commentaire": false,
+    "texte": "if (filter.kind === 'region' ? i.region === filter.value : i.arcs.includes(filter.value)) s.add(i.id);"
+   },
+   {
+    "fichier": "components/akasha/hub/OnePieceMap.tsx",
+    "ligne": 85,
+    "commentaire": false,
+    "texte": "...OP_WORLD.islands.filter((i) => hit(i.name)).map((i) => ({ kind: 'island' as const, id: i.id, name: i.name, x: i.x, y: i.y, region: i.region })),"
+   },
+   {
+    "fichier": "components/akasha/hub/OnePieceMap.tsx",
+    "ligne": 86,
+    "commentaire": false,
+    "texte": "...OP_WORLD.poi.filter((p) => hit(p.name)).map((p) => ({ kind: 'poi' as const, id: p.id, name: p.name, x: p.x, y: p.y, region: p.region })),"
+   },
+   {
+    "fichier": "components/akasha/hub/OnePieceMap.tsx",
+    "ligne": 139,
+    "commentaire": false,
+    "texte": "<span>{r.kind === 'poi' ? '◆ ' : ''}{r.name}</span><span style={{ color: 'var(--td3)', fontSize: 10.5 }}>{r.region}</span>"
+   },
+   {
+    "fichier": "components/akasha/hub/OnePieceMap.tsx",
+    "ligne": 145,
+    "commentaire": false,
+    "texte": "<select value={filter?.kind === 'region' ? filter.value : ''} onChange={(e) => setFilter(e.target.value ? { kind: 'region', value: e.target.value } : "
+   },
+   {
+    "fichier": "components/akasha/hub/OnePieceMap.tsx",
+    "ligne": 276,
+    "commentaire": false,
+    "texte": "<span style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, padding: '2px 8px', borderRadius: 999, background: 'var(--su2)', color: 'var("
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 97,
+    "commentaire": false,
+    "texte": "{\"slug\":\"alpha-planete\",\"name\":\"Alpha\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/alpha-planete.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 98,
+    "commentaire": false,
+    "texte": "{\"slug\":\"arlia\",\"name\":\"Arlia\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/arlia.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 99,
+    "commentaire": false,
+    "texte": "{\"slug\":\"babari\",\"name\":\"Babari\",\"region\":\"Univers 10\",\"img\":\"https://dragonball-api.com/planetas/Planeta_Babari.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 100,
+    "commentaire": false,
+    "texte": "{\"slug\":\"batapi\",\"name\":\"Batapi\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/batapi.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 101,
+    "commentaire": false,
+    "texte": "{\"slug\":\"beehay\",\"name\":\"Beehay\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/beehay.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 102,
+    "commentaire": false,
+    "texte": "{\"slug\":\"big-gete-star\",\"name\":\"Big Gete Star\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/big-gete-star.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 103,
+    "commentaire": false,
+    "texte": "{\"slug\":\"makyo-star\",\"name\":\"Étoile Makyo\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/makyo-star.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 104,
+    "commentaire": false,
+    "texte": "{\"slug\":\"fake-namek\",\"name\":\"Faux Namek\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/fake-namek.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 105,
+    "commentaire": false,
+    "texte": "{\"slug\":\"frieza-448\",\"name\":\"Freezer n°448\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/frieza-448.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 106,
+    "commentaire": false,
+    "texte": "{\"slug\":\"frieza-79\",\"name\":\"Freezer n°79\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/frieza-79.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 107,
+    "commentaire": false,
+    "texte": "{\"slug\":\"gelbo\",\"name\":\"Gelbo\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/gelbo.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 108,
+    "commentaire": false,
+    "texte": "{\"slug\":\"hera-planete\",\"name\":\"Héra\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/hera-planete.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 109,
+    "commentaire": false,
+    "texte": "{\"slug\":\"imecka\",\"name\":\"Imecka\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/imecka.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 110,
+    "commentaire": false,
+    "texte": "{\"slug\":\"jung\",\"name\":\"Jung\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/jung.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 111,
+    "commentaire": false,
+    "texte": "{\"slug\":\"jupiter\",\"name\":\"Jupiter\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/jupiter.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 112,
+    "commentaire": false,
+    "texte": "{\"slug\":\"kanassa\",\"name\":\"Kanassa\",\"region\":\"Univers 7\",\"img\":\"https://dragonball-api.com/planetas/800px-PlanetKannasa.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 113,
+    "commentaire": false,
+    "texte": "{\"slug\":\"konats\",\"name\":\"Konats\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/konats.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 114,
+    "commentaire": false,
+    "texte": "{\"slug\":\"luud\",\"name\":\"Luud\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/luud.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 115,
+    "commentaire": false,
+    "texte": "{\"slug\":\"m-2\",\"name\":\"M-2\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/m-2.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 116,
+    "commentaire": false,
+    "texte": "{\"slug\":\"mars\",\"name\":\"Mars\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/mars.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 117,
+    "commentaire": false,
+    "texte": "{\"slug\":\"meat\",\"name\":\"Meat\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/meat.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 118,
+    "commentaire": false,
+    "texte": "{\"slug\":\"metamor\",\"name\":\"Metamor\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/metamor.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 119,
+    "commentaire": false,
+    "texte": "{\"slug\":\"arak-planet\",\"name\":\"Monde d'Arak\",\"region\":\"Univers 5\",\"img\":\"/images/akasha/db/planets/arak-planet.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 120,
+    "commentaire": false,
+    "texte": "{\"slug\":\"beerus-planet\",\"name\":\"Monde de Beerus\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/beerus-planet.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 121,
+    "commentaire": false,
+    "texte": "{\"slug\":\"belmod-planet\",\"name\":\"Monde de Belmod\",\"region\":\"Univers 11\",\"img\":\"/images/akasha/db/planets/belmod-planet.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 122,
+    "commentaire": false,
+    "texte": "{\"slug\":\"sacred-world-of-the-kai\",\"name\":\"Monde Sacré des Kaïō\",\"region\":\"Autre Monde\",\"img\":\"/images/akasha/db/planets/sacred-world-of-the-kai.webp\"}"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 123,
+    "commentaire": false,
+    "texte": "{\"slug\":\"monmaasu\",\"name\":\"Monmaasu\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/monmaasu.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 124,
+    "commentaire": false,
+    "texte": "{\"slug\":\"new-namek\",\"name\":\"Nouveau Namek\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/new-namek.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 125,
+    "commentaire": false,
+    "texte": "{\"slug\":\"new-vegeta\",\"name\":\"Nouvelle Vegeta\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/new-vegeta.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 126,
+    "commentaire": false,
+    "texte": "{\"slug\":\"heaven\",\"name\":\"Paradis\",\"region\":\"Autre Monde\",\"img\":\"/images/akasha/db/planets/heaven.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 127,
+    "commentaire": false,
+    "texte": "{\"slug\":\"pital\",\"name\":\"Pital\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/pital.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 128,
+    "commentaire": false,
+    "texte": "{\"slug\":\"ankoku\",\"name\":\"Planète Ankoku\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/ankoku.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 129,
+    "commentaire": false,
+    "texte": "{\"slug\":\"cereal\",\"name\":\"Planète Cereal\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/cereal.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 130,
+    "commentaire": false,
+    "texte": "{\"slug\":\"cretaceous\",\"name\":\"Planète Cretaceous\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/cretaceous.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 131,
+    "commentaire": false,
+    "texte": "{\"slug\":\"grand-kai-planet\",\"name\":\"Planète du Grand Kaïō\",\"region\":\"Autre Monde\",\"img\":\"/images/akasha/db/planets/grand-kai-planet.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 132,
+    "commentaire": false,
+    "texte": "{\"slug\":\"king-cold-planet\",\"name\":\"Planète du Roi Cold\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/king-cold-planet.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 133,
+    "commentaire": false,
+    "texte": "{\"slug\":\"king-kai-planet\",\"name\":\"Planète du Roi Kaïō\",\"region\":\"Autre Monde\",\"img\":\"/images/akasha/db/planets/king-kai-planet.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 134,
+    "commentaire": false,
+    "texte": "{\"slug\":\"namek\",\"name\":\"Planète Namek\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/namek.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 135,
+    "commentaire": false,
+    "texte": "{\"slug\":\"prison-planet\",\"name\":\"Planète Prison\",\"region\":\"Multivers\",\"img\":\"/images/akasha/db/planets/prison-planet.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 136,
+    "commentaire": false,
+    "texte": "{\"slug\":\"sadala\",\"name\":\"Planète Sadala\",\"region\":\"Univers 6\",\"img\":\"/images/akasha/db/planets/sadala.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 137,
+    "commentaire": false,
+    "texte": "{\"slug\":\"nameless-planet\",\"name\":\"Planète Sans Nom\",\"region\":\"Multivers\",\"img\":\"/images/akasha/db/planets/nameless-planet.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 138,
+    "commentaire": false,
+    "texte": "{\"slug\":\"dark-planet\",\"name\":\"Planète Sombre\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/dark-planet.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 139,
+    "commentaire": false,
+    "texte": "{\"slug\":\"vegeta-planete\",\"name\":\"Planète Vegeta\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/vegeta-planete.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 140,
+    "commentaire": false,
+    "texte": "{\"slug\":\"polaris\",\"name\":\"Polaris\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/polaris.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 141,
+    "commentaire": false,
+    "texte": "{\"slug\":\"demon-realm\",\"name\":\"Royaume des Démons\",\"region\":\"Royaume des Démons\",\"img\":\"/images/akasha/db/planets/demon-realm.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 142,
+    "commentaire": false,
+    "texte": "{\"slug\":\"rudeeze\",\"name\":\"Rudeeze\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/rudeeze.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 143,
+    "commentaire": false,
+    "texte": "{\"slug\":\"shamo\",\"name\":\"Shamo\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/shamo.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 144,
+    "commentaire": false,
+    "texte": "{\"slug\":\"tech-tech\",\"name\":\"Tech-Tech\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/tech-tech.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 145,
+    "commentaire": false,
+    "texte": "{\"slug\":\"earth\",\"name\":\"Terre\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/earth.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 146,
+    "commentaire": false,
+    "texte": "{\"slug\":\"tigere\",\"name\":\"Tigere\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/tigere.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 147,
+    "commentaire": false,
+    "texte": "{\"slug\":\"vampa\",\"name\":\"Vampa\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/vampa.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 148,
+    "commentaire": false,
+    "texte": "{\"slug\":\"yardrat\",\"name\":\"Yardrat\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/yardrat.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/db-cosmos.ts",
+    "ligne": 149,
+    "commentaire": false,
+    "texte": "{\"slug\":\"zoon\",\"name\":\"Zoon\",\"region\":\"Univers 7\",\"img\":\"/images/akasha/db/planets/zoon.webp\"},"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 198,
+    "commentaire": false,
+    "texte": "{ key: 'region', label: 'Région' },"
+   }
+  ],
+  "origin": [
+   {
+    "fichier": "app/connexion/page.tsx",
+    "ligne": 36,
+    "commentaire": false,
+    "texte": "options: { redirectTo: `${window.location.origin}/dashboard` },"
+   },
+   {
+    "fichier": "app/inscription/page.tsx",
+    "ligne": 60,
+    "commentaire": false,
+    "texte": "await supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: `${window.location.origin}/profil` } });"
+   },
+   {
+    "fichier": "app/mot-de-passe-oublie/page.tsx",
+    "ligne": 19,
+    "commentaire": false,
+    "texte": "redirectTo: `${window.location.origin}/dashboard`,"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 204,
+    "commentaire": false,
+    "texte": "{ key: 'origin', label: 'Origine' },"
+   }
+  ],
+  "fruit_type": [
+   {
+    "fichier": "lib/akasha/collections.ts",
+    "ligne": 25,
+    "commentaire": false,
+    "texte": "subAttr: 'fruit_type',"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 315,
+    "commentaire": false,
+    "texte": "attr: 'fruit_type', label: 'Types de Fruit du Démon', icon: '🍎',"
+   }
+  ],
+  "clan": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 20,
+    "commentaire": false,
+    "texte": "const SUB_ATTRS = new Set(['clan', 'rank', 'generation']); // sous-filtres d'une page village (Naruto)"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 84,
+    "commentaire": false,
+    "texte": "subFilterOn ? listAxisCounts(taxo.name, ['clan', 'rank', 'generation'], axisDef.attr, val) : Promise.resolve(null),"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 111,
+    "commentaire": false,
+    "texte": "{taxo.slug === 'naruto' && (axisDef.attr === 'village' || axisDef.attr === 'clan' || axisDef.attr === 'rank' || axisDef.attr === 'generation') && ("
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 115,
+    "commentaire": false,
+    "texte": ": axisDef.attr === 'clan'"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 154,
+    "commentaire": false,
+    "texte": "{ax.attr === 'clan' ? <ClanCrest slug={v.v} name={v.l ?? v.v} size={20} />"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 134,
+    "commentaire": true,
+    "texte": "// INERTES depuis le LOT 3b (isDirtyAxis masque tout l'axe `crew`/`clan` en amont, voir plus bas) —"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 156,
+    "commentaire": true,
+    "texte": "// ne lit ni `clan`, ni `organization`, ni `crew` — rien d'autre n'en dépend."
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 166,
+    "commentaire": false,
+    "texte": ": taxo.slug === 'naruto' && axis.attr === 'clan' ? NARUTO_NON_CLAN : null;"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 303,
+    "commentaire": false,
+    "texte": "const emblem = taxo.slug === 'naruto' && axis.attr === 'clan'"
+   },
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 76,
+    "commentaire": false,
+    "texte": "const clan = str(a.clan);"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 26,
+    "commentaire": false,
+    "texte": "['clan', 'Clan'], ['village', 'Village'], ['organization', 'Organisation'], ['crew', 'Équipage'],"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 72,
+    "commentaire": false,
+    "texte": "attr: 'clan', label: 'Clans', icon: '⛩️',"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 612,
+    "commentaire": true,
+    "texte": "*  · `clan` Naruto : 100% curé (45/45 valeurs, 228/228 fiches) — RETIRÉ. Les 39 valeurs sales"
+   }
+  ],
+  "organization": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 156,
+    "commentaire": true,
+    "texte": "// ne lit ni `clan`, ni `organization`, ni `crew` — rien d'autre n'en dépend."
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 26,
+    "commentaire": false,
+    "texte": "['clan', 'Clan'], ['village', 'Village'], ['organization', 'Organisation'], ['crew', 'Équipage'],"
+   },
+   {
+    "fichier": "lib/akasha/miroir-axes.test.ts",
+    "ligne": 9,
+    "commentaire": true,
+    "texte": "//   · au 08/08, cinq valeurs d'`organization` manquaient au miroir depuis un moment ;"
+   },
+   {
+    "fichier": "lib/akasha/miroir-axes.test.ts",
+    "ligne": 68,
+    "commentaire": true,
+    "texte": "// « Konoha 11 » était déclarée à la fois en `organization` et en `equipe` après la scission du"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 100,
+    "commentaire": false,
+    "texte": "attr: 'organization', label: 'Organisations', genre: 'f', icon: '☁️',"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 146,
+    "commentaire": true,
+    "texte": "// ÉQUIPES (10/08/2026) — sorties de `organization` : une escouade de trois genin sous un"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 618,
+    "commentaire": true,
+    "texte": "*  · `organization` Naruto : 27,5% curé (129/469 fiches) — RESTE SALE. Le champ mélange, sous une"
+   }
+  ],
+  "partie": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 146,
+    "commentaire": false,
+    "texte": "villages: ['village'], nen: ['nen'], jojo: ['partie'], passes: ['col'],"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 263,
+    "commentaire": false,
+    "texte": "case 'jojo': { const a = axis('partie'); return a ? <Frieze axis={a} universe={universe} color={color} title=\"La lignée Joestar — les parties\" iconFor"
+   },
+   {
+    "fichier": "components/akasha/hub/JoestarTree.tsx",
+    "ligne": 206,
+    "commentaire": false,
+    "texte": "{row.partie && ("
+   },
+   {
+    "fichier": "components/akasha/hub/JoestarTree.tsx",
+    "ligne": 208,
+    "commentaire": false,
+    "texte": "{row.partie}"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 27,
+    "commentaire": false,
+    "texte": "['faction', 'Faction'], ['division', 'Division'], ['camp', 'Camp'], ['partie', 'Partie'],"
+   },
+   {
+    "fichier": "lib/akasha/collections.ts",
+    "ligne": 102,
+    "commentaire": true,
+    "texte": "// `attributes.partie` (42/44, 2 nulles → Autres). Volume plus modeste que les 4 autres"
+   },
+   {
+    "fichier": "lib/akasha/collections.ts",
+    "ligne": 103,
+    "commentaire": true,
+    "texte": "// vitrines, mais réutilise le libellé DÉJÀ curé dans UNIVERSE_TAXONOMY (axe `partie` du hub"
+   },
+   {
+    "fichier": "lib/akasha/collections.ts",
+    "ligne": 112,
+    "commentaire": false,
+    "texte": "subAttr: 'partie',"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 455,
+    "commentaire": false,
+    "texte": "attr: 'partie', label: 'Parties', genre: 'f', icon: '🎭',"
+   }
+  ],
+  "birthdate": [
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 405,
+    "commentaire": false,
+    "texte": "push('Naissance', str(a.birthdate));"
+   }
+  ],
+  "race": [
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 239,
+    "commentaire": false,
+    "texte": "Promise.race([p, new Promise<null>((r) => setTimeout(() => r(null), 6_000))]);"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 147,
+    "commentaire": false,
+    "texte": "kiraduel: ['camp'], gotei: ['race', 'division'], powerscale: ['saga'], bounties: [],"
+   },
+   {
+    "fichier": "components/akasha/hub/DragonBallCards.tsx",
+    "ligne": 25,
+    "commentaire": false,
+    "texte": "for (const e of entries) { const r = (e.attributes as Record<string, unknown>)?.race; if (typeof r === 'string') m.set(r, (m.get(r) || 0) + 1); }"
+   },
+   {
+    "fichier": "components/akasha/hub/DragonBallCards.tsx",
+    "ligne": 30,
+    "commentaire": false,
+    "texte": "const list = useMemo(() => (race ? entries.filter((e) => (e.attributes as Record<string, unknown>)?.race === race) : entries), [race, entries]);"
+   },
+   {
+    "fichier": "components/akasha/hub/DragonBallCards.tsx",
+    "ligne": 54,
+    "commentaire": false,
+    "texte": "const icon = r ? dbAxisIcon('race', r, 20) : null;"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 265,
+    "commentaire": false,
+    "texte": "if (universe === 'Bleach') return <BleachWorldsMap raceAxis={axis('race')} divisionAxis={axis('division')} universe={universe} color={color} />;"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 28,
+    "commentaire": false,
+    "texte": "['race', 'Race'], ['nen', 'Nen'], ['generation', 'Génération'], ['rank', 'Rang'],"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 193,
+    "commentaire": false,
+    "texte": "{ key: 'race', label: 'Espèce / Race' },"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 348,
+    "commentaire": false,
+    "texte": "attr: 'race', label: 'Races', genre: 'f', icon: '🧬',"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 382,
+    "commentaire": false,
+    "texte": "attr: 'race', label: 'Races spirituelles', genre: 'f', icon: '👻',"
+   }
+  ],
+  "equipe": [
+   {
+    "fichier": "app/tools/livraison/page.tsx",
+    "ligne": 17,
+    "commentaire": false,
+    "texte": "type Tab = 'kit' | 'equipe' | 'colis' | 'avis';"
+   },
+   {
+    "fichier": "app/tools/livraison/page.tsx",
+    "ligne": 20,
+    "commentaire": false,
+    "texte": "{ key: 'equipe', label: 'Équipe', icon: '📋' },"
+   },
+   {
+    "fichier": "app/tools/livraison/page.tsx",
+    "ligne": 65,
+    "commentaire": false,
+    "texte": "{tab === 'equipe' && <EquipeSection />}"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 48,
+    "commentaire": false,
+    "texte": "const s = deriveHubSurfaces({ axes: [axe('equipe', 8, 120, 'Équipes'), axe('poste', 5, 40, 'Postes')] });"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 50,
+    "commentaire": false,
+    "texte": "assert.deepEqual(s[0], { kind: 'world-grid', attr: 'equipe', label: 'Équipes', valeurs: 8, fiches: 120 });"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 73,
+    "commentaire": false,
+    "texte": "const s = deriveHubSurfaces({ axes: [axe('equipe', 8, 120)] });"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 74,
+    "commentaire": false,
+    "texte": "assert.deepEqual(attrsConsommesParLaPorte(s), ['equipe']);"
+   },
+   {
+    "fichier": "lib/akasha/miroir-axes.test.ts",
+    "ligne": 68,
+    "commentaire": true,
+    "texte": "// « Konoha 11 » était déclarée à la fois en `organization` et en `equipe` après la scission du"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 96,
+    "commentaire": true,
+    "texte": "// répondent pas à la même question. Les escouades sont parties dans `equipe`, les unités de"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 148,
+    "commentaire": false,
+    "texte": "attr: 'equipe', label: 'Équipes', genre: 'f', icon: '🤝',"
+   }
+  ],
+  "monde": [
+   {
+    "fichier": "app/stay/[slug]/[city]/page.tsx",
+    "ligne": 11,
+    "commentaire": false,
+    "texte": "'maldives': 'Maldives', 'alpes': 'Alpes', 'bali': 'Bali', 'france': 'France', 'monde': 'Monde',"
+   },
+   {
+    "fichier": "app/stay/[slug]/[city]/page.tsx",
+    "ligne": 75,
+    "commentaire": false,
+    "texte": "{ slug: 'monde', city: 'islande' },"
+   },
+   {
+    "fichier": "app/stay/[slug]/[city]/page.tsx",
+    "ligne": 76,
+    "commentaire": false,
+    "texte": "{ slug: 'monde', city: 'maldives' },"
+   },
+   {
+    "fichier": "app/stay/[slug]/[city]/page.tsx",
+    "ligne": 77,
+    "commentaire": false,
+    "texte": "{ slug: 'monde', city: 'bali' },"
+   },
+   {
+    "fichier": "lib/akasha/miroir-axes.test.ts",
+    "ligne": 11,
+    "commentaire": true,
+    "texte": "//     `meito_grade` et `monde` carrément absents comme axes, `Akagi RedSuns` présent côté miroir et"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 414,
+    "commentaire": false,
+    "texte": "attr: 'monde', label: 'Mondes', icon: '🌍',"
+   },
+   {
+    "fichier": "lib/food.ts",
+    "ligne": 109,
+    "commentaire": false,
+    "texte": "afroweek06: { category: 'monde', featured: 'sponsored', rank: 1 },"
+   },
+   {
+    "fichier": "lib/food.ts",
+    "ligne": 110,
+    "commentaire": false,
+    "texte": "rakomoriafood: { category: 'monde', featured: 'popular', rank: 2 },"
+   }
+  ],
+  "is_signature": [
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 114,
+    "commentaire": false,
+    "texte": "const isSig = attrs.is_signature === true || attrs.is_signature === 'true';"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 132,
+    "commentaire": false,
+    "texte": "'descRaw', 'descLang', 'descFr', 'is_signature', 'source',"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 76,
+    "commentaire": false,
+    "texte": ".sort((x, y) => (x.target.is_signature === 'true' ? 0 : 1) - (y.target.is_signature === 'true' ? 0 : 1));"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 239,
+    "commentaire": false,
+    "texte": "onClick={() => select({ kind: 'technique', name: r.target.name, slug: r.target.slug, signature: r.target.is_signature === 'true' })}>"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 240,
+    "commentaire": false,
+    "texte": "{r.target.is_signature === 'true' && <span aria-hidden style={{ color: accent }}>★ </span>}{r.target.name}"
+   }
+  ],
+  "saga": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 147,
+    "commentaire": false,
+    "texte": "kiraduel: ['camp'], gotei: ['race', 'division'], powerscale: ['saga'], bounties: [],"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 262,
+    "commentaire": false,
+    "texte": "case 'powerscale': { const a = axis('saga'); return a ? <Frieze axis={a} universe={universe} color={color} title=\"La saga des puissances\" iconFor={(v)"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 366,
+    "commentaire": false,
+    "texte": "attr: 'saga', label: 'Sagas', genre: 'f', icon: '📖',"
+   }
+  ],
+  "fruit": [
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 407,
+    "commentaire": false,
+    "texte": "push('Fruit', str(a.fruit));"
+   }
+  ],
+  "division": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 147,
+    "commentaire": false,
+    "texte": "kiraduel: ['camp'], gotei: ['race', 'division'], powerscale: ['saga'], bounties: [],"
+   },
+   {
+    "fichier": "components/akasha/MoreUniverseIcons.tsx",
+    "ligne": 72,
+    "commentaire": false,
+    "texte": "if (slug === 'bleach' && attr === 'division') return <GoteiSeal value={value} size={size} />;"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 265,
+    "commentaire": false,
+    "texte": "if (universe === 'Bleach') return <BleachWorldsMap raceAxis={axis('race')} divisionAxis={axis('division')} universe={universe} color={color} />;"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 266,
+    "commentaire": false,
+    "texte": "const a = axis('division'); return a ? <Gotei13 axis={a} universe={universe} color={color} /> : null;"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 27,
+    "commentaire": false,
+    "texte": "['faction', 'Faction'], ['division', 'Division'], ['camp', 'Camp'], ['partie', 'Partie'],"
+   },
+   {
+    "fichier": "lib/akasha/miroir-axes.test.ts",
+    "ligne": 70,
+    "commentaire": true,
+    "texte": "// L'homonymie reste permise ENTRE univers (`division` existe chez Naruto et chez Bleach)."
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 97,
+    "commentaire": true,
+    "texte": "// la Quatrième Guerre dans `division` (scripts/ops-scinder-axe-organization.mjs, trace :"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 220,
+    "commentaire": true,
+    "texte": "// taille. Homonymie assumée avec l'axe `division` de Bleach : les axes sont par univers."
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 221,
+    "commentaire": false,
+    "texte": "attr: 'division', label: 'Divisions de la Guerre', genre: 'f', icon: '⚔️',"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 421,
+    "commentaire": false,
+    "texte": "attr: 'division', label: 'Gotei 13', icon: '⚔️',"
+   }
+  ],
+  "bounty": [
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 406,
+    "commentaire": false,
+    "texte": "push('Prime', str(a.bounty));"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 385,
+    "commentaire": false,
+    "texte": ".map((r) => ({ ...r, bountyValue: parseInt(String(r.bounty).replace(/[^\\d]/g, ''), 10) || 0 }))"
+   }
+  ],
+  "boat_class": [],
+  "sector": [
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 208,
+    "commentaire": false,
+    "texte": "{ key: 'sector', label: 'Secteur' },"
+   }
+  ],
+  "total_prime": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 124,
+    "commentaire": false,
+    "texte": "prime: primeMd((bySlug.get(c.slug)?.attributes as Record<string, unknown> | undefined)?.total_prime),"
+   },
+   {
+    "fichier": "components/akasha/zone/OrganizationZone.tsx",
+    "ligne": 37,
+    "commentaire": false,
+    "texte": "const prime = primeMd(a.total_prime);"
+   }
+  ],
+  "forms": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 92,
+    "commentaire": true,
+    "texte": "// Cartes TCG du hub Dragon Ball : top persos par popularité (entités complètes → attribut `forms`)."
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 138,
+    "commentaire": false,
+    "texte": "'sections', 'forms', 'statLabels', 'gallery', 'animations', 'quotes',"
+   },
+   {
+    "fichier": "components/akasha/hub/DragonBallCards.tsx",
+    "ligne": 5,
+    "commentaire": true,
+    "texte": "// injectées dans l'attribut `forms` font évoluer image, puissance et données de la carte)."
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 91,
+    "commentaire": true,
+    "texte": "*  `forms` (url/idle/age/arc). Le module lit les deux plutôt que les seules `eras` — sinon une"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 92,
+    "commentaire": true,
+    "texte": "*  fiche à `forms` monterait `timeline` sans rien rendre, c'est-à-dire le « module fantôme » que"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 94,
+    "commentaire": true,
+    "texte": "*  0 fiche de cette population porte des `forms` — la branche existe pour la CAPACITÉ, pas pour un"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 103,
+    "commentaire": true,
+    "texte": "*  elles qui portent les quatre lignes du canal (les `forms` n'en ont aucune). */"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 104,
+    "commentaire": false,
+    "texte": "function lireChronologie(attributes: Record<string, unknown>): { etapes: Etape[]; source: 'eras' | 'forms' | null } {"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 110,
+    "commentaire": false,
+    "texte": "if (forms.length) return { etapes: forms, source: 'forms' };"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 315,
+    "commentaire": false,
+    "texte": "pixelated={chronoSource === 'forms'}"
+   },
+   {
+    "fichier": "lib/akasha/db-forms.ts",
+    "ligne": 2,
+    "commentaire": true,
+    "texte": "// Injecté dans l'attribut `forms` des entités via scripts/akasha-db-forms.ts (cartes TCG)."
+   },
+   {
+    "fichier": "lib/akasha/forms.ts",
+    "ligne": 16,
+    "commentaire": false,
+    "texte": "const raw = Array.isArray(attributes.forms) ? (attributes.forms as CharacterForm[]) : [];"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 285,
+    "commentaire": true,
+    "texte": "/** Entités COMPLÈTES (avec `attributes`, donc les `forms`) pour une liste de slugs, dans l'ordre"
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 153,
+    "commentaire": true,
+    "texte": "/** `timeline` : `attributes.forms` OU `attributes.eras` non vide — jamais les deux exigés (Death"
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 154,
+    "commentaire": true,
+    "texte": "*  Note a des `eras` sans `forms` ; la plupart des personnages à formes n'ont pas d'`eras`). */"
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 156,
+    "commentaire": false,
+    "texte": "return aDesElementsObjets(attributes.forms) || aDesElementsObjets(attributes.eras);"
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 171,
+    "commentaire": true,
+    "texte": "*  ailleurs, même quand `attributes.forms[i].stats` existe réellement. Mesuré le 08/08/2026 :"
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 181,
+    "commentaire": false,
+    "texte": "const forms = Array.isArray(attributes.forms) ? attributes.forms : [];"
+   }
+  ],
+  "descFrPurgee": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 136,
+    "commentaire": false,
+    "texte": "'descFrRetiree', 'descFrImpossible', 'descFrPurgee', 'resumeCorrige',"
+   }
+  ],
+  "nindo": [
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 396,
+    "commentaire": false,
+    "texte": "const nindo = str(a.nindo);"
+   }
+  ],
+  "nindoLabel": [
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 397,
+    "commentaire": false,
+    "texte": "const nindoLabel = str(a.nindoLabel) ?? 'Credo';"
+   }
+  ],
+  "bio": [
+   {
+    "fichier": "app/api/profile/route.ts",
+    "ligne": 18,
+    "commentaire": false,
+    "texte": "if (typeof body.bio === 'string') patch.bio = body.bio.trim().slice(0, 140); // 140 chars max"
+   },
+   {
+    "fichier": "app/profil/ProfilHub.tsx",
+    "ligne": 49,
+    "commentaire": false,
+    "texte": "const [form, setForm] = useState({ full_name: me.full_name ?? '', city: me.city ?? '', bio: me.bio ?? '' });"
+   },
+   {
+    "fichier": "app/profil/ProfilHub.tsx",
+    "ligne": 235,
+    "commentaire": false,
+    "texte": "<label style={fieldLbl}>Bio <span style={{ color: 'var(--td3)' }}>({form.bio.length}/140)</span></label>"
+   },
+   {
+    "fichier": "app/profil/ProfilHub.tsx",
+    "ligne": 236,
+    "commentaire": false,
+    "texte": "<textarea value={form.bio} onChange={e => setForm(f => ({ ...f, bio: e.target.value.slice(0, 140) }))} rows={2} placeholder=\"En une phrase…\" style={{ "
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 131,
+    "commentaire": false,
+    "texte": "'category', 'rosterLabel', 'eras', 'facts', 'quote', 'bio', 'trivia', 'abilities',"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 395,
+    "commentaire": false,
+    "texte": "const bio = str(a.bio) || str(a.descFr) || entry.summary;"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 149,
+    "commentaire": false,
+    "texte": "const bio = str(a.bio) || str(a.descFr) || entry.summary;"
+   },
+   {
+    "fichier": "components/akasha/zone/OrganizationZone.tsx",
+    "ligne": 188,
+    "commentaire": false,
+    "texte": "const bio = str(a.bio) || str(a.descFr) || entry.summary;"
+   }
+  ],
+  "affiliation": [
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 119,
+    "commentaire": false,
+    "texte": "for (const aff of list(a.affiliation).slice(0, 3)) belong.push({ attr: 'affiliation', label: 'Affiliation', value: aff });"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 194,
+    "commentaire": false,
+    "texte": "{ key: 'affiliation', label: 'Affiliation' },"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 479,
+    "commentaire": false,
+    "texte": "attr: 'affiliation', label: 'Écuries', genre: 'f', icon: '🏁',"
+   }
+  ],
+  "nen": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 146,
+    "commentaire": false,
+    "texte": "villages: ['village'], nen: ['nen'], jojo: ['partie'], passes: ['col'],"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 54,
+    "commentaire": false,
+    "texte": "<span style={{ height: 34, display: 'flex', alignItems: 'center' }}>{moreAxisIcon('hunter-x-hunter', 'nen', c.v, 34)}</span>"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 259,
+    "commentaire": false,
+    "texte": "case 'nen': { const a = axis('nen'); return a ? <NenWheel axis={a} universe={universe} color={color} /> : null; }"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 28,
+    "commentaire": false,
+    "texte": "['race', 'Race'], ['nen', 'Nen'], ['generation', 'Génération'], ['rank', 'Rang'],"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 36,
+    "commentaire": false,
+    "texte": "const s = deriveHubSurfaces({ signature: 'nen', axes: [axe('nen', 6, 90)] });"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 37,
+    "commentaire": false,
+    "texte": "assert.deepEqual(s, [{ kind: 'signature', signature: 'nen' }]);"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.ts",
+    "ligne": 23,
+    "commentaire": false,
+    "texte": "export type HubSignature = 'villages' | 'bounties' | 'powerscale' | 'gotei' | 'nen' | 'jojo' | 'passes' | 'kiraduel';"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 439,
+    "commentaire": false,
+    "texte": "attr: 'nen', label: 'Types de Nen', icon: '💠',"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 446,
+    "commentaire": false,
+    "texte": "piliers: ['nen', 'brigade-fantome', 'association-hunters', 'zoldyck'],"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 530,
+    "commentaire": false,
+    "texte": "signature?: 'villages' | 'bounties' | 'powerscale' | 'gotei' | 'nen' | 'jojo' | 'passes' | 'kiraduel';"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 565,
+    "commentaire": false,
+    "texte": "signature: 'nen',"
+   }
+  ],
+  "generation": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 20,
+    "commentaire": false,
+    "texte": "const SUB_ATTRS = new Set(['clan', 'rank', 'generation']); // sous-filtres d'une page village (Naruto)"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 84,
+    "commentaire": false,
+    "texte": "subFilterOn ? listAxisCounts(taxo.name, ['clan', 'rank', 'generation'], axisDef.attr, val) : Promise.resolve(null),"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 111,
+    "commentaire": false,
+    "texte": "{taxo.slug === 'naruto' && (axisDef.attr === 'village' || axisDef.attr === 'clan' || axisDef.attr === 'rank' || axisDef.attr === 'generation') && ("
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 309,
+    "commentaire": false,
+    "texte": ": taxo.slug === 'naruto' && axis.attr === 'generation'"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 28,
+    "commentaire": false,
+    "texte": "['race', 'Race'], ['nen', 'Nen'], ['generation', 'Génération'], ['rank', 'Rang'],"
+   },
+   {
+    "fichier": "lib/akasha/miroir-axes.test.ts",
+    "ligne": 10,
+    "commentaire": true,
+    "texte": "//   · au 10/08, un audit en a trouvé SIX autres d'un coup — `Takigakure` absent, `generation`,"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 260,
+    "commentaire": false,
+    "texte": "attr: 'generation', label: 'Générations', genre: 'f', icon: '🧬',"
+   }
+  ],
+  "trivia": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 131,
+    "commentaire": false,
+    "texte": "'category', 'rosterLabel', 'eras', 'facts', 'quote', 'bio', 'trivia', 'abilities',"
+   }
+  ],
+  "camp": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 147,
+    "commentaire": false,
+    "texte": "kiraduel: ['camp'], gotei: ['race', 'division'], powerscale: ['saga'], bounties: [],"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 180,
+    "commentaire": false,
+    "texte": "const medal = (v: string, size = 40) => moreAxisIcon('death-note', 'camp', v, size);"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 269,
+    "commentaire": false,
+    "texte": "case 'kiraduel': { const a = axis('camp'); return a ? <KiraDuel axis={a} universe={universe} /> : null; }"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 27,
+    "commentaire": false,
+    "texte": "['faction', 'Faction'], ['division', 'Division'], ['camp', 'Camp'], ['partie', 'Partie'],"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 59,
+    "commentaire": false,
+    "texte": "const s = deriveHubSurfaces({ axes: [axe('camp', WORLD_GRID_MIN_VALEURS - 1, 500)] });"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 64,
+    "commentaire": false,
+    "texte": "const s = deriveHubSurfaces({ axes: [axe('camp', 10, WORLD_GRID_MIN_FICHES - 1)] });"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 512,
+    "commentaire": false,
+    "texte": "attr: 'camp', label: 'Camps', icon: '♟️',"
+   }
+  ],
+  "powerLevel": [],
+  "eras": [
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 190,
+    "commentaire": true,
+    "texte": "// BRANCHE `eras` SUPPRIMÉE le 10/08/2026 (§8 question 3, dernier reste du LOT 5). Elle testait"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 191,
+    "commentaire": true,
+    "texte": "// `attributes.eras` non vide et détournait 14 fiches vers `EraZone` AVANT que `deriveShape` soit"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 195,
+    "commentaire": true,
+    "texte": "// monté par CAPACITÉ. Ne pas réintroduire d'aiguillage sur `attributes.eras` ici : c'est"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 131,
+    "commentaire": false,
+    "texte": "'category', 'rosterLabel', 'eras', 'facts', 'quote', 'bio', 'trivia', 'abilities',"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 15,
+    "commentaire": true,
+    "texte": "// formes), jamais sur un type ni sur un nom de composant. Ce que la branche `eras` de page.tsx"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 90,
+    "commentaire": true,
+    "texte": "*  `aUneChronologie` (lib/akasha/shape.ts) : `eras` (img/period/event/leader/threat/summary) et"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 91,
+    "commentaire": true,
+    "texte": "*  `forms` (url/idle/age/arc). Le module lit les deux plutôt que les seules `eras` — sinon une"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 102,
+    "commentaire": true,
+    "texte": "/** Chronologie de l'entrée + sa provenance. Les `eras` priment : quand les deux existent, ce sont"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 104,
+    "commentaire": false,
+    "texte": "function lireChronologie(attributes: Record<string, unknown>): { etapes: Etape[]; source: 'eras' | 'forms' | null } {"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 105,
+    "commentaire": false,
+    "texte": "const eras = Array.isArray(attributes.eras)"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 106,
+    "commentaire": false,
+    "texte": "? (attributes.eras as unknown[]).filter((e): e is Etape => e !== null && typeof e === 'object')"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 108,
+    "commentaire": false,
+    "texte": "if (eras.length) return { etapes: eras, source: 'eras' };"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 305,
+    "commentaire": false,
+    "texte": "chronoSource === 'eras'"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 312,
+    "commentaire": false,
+    "texte": "heading={chronoSource === 'eras' ? `◆ Chronologie — ${etapes.length} ères` : undefined}"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 458,
+    "commentaire": true,
+    "texte": "/** Pages évolutives d'un univers (entités portant `attributes.eras`) — la vitrine « Voyages dans le temps ». */"
+   },
+   {
+    "fichier": "lib/akasha/shape.test.ts",
+    "ligne": 147,
+    "commentaire": true,
+    "texte": "// `app/learn/akasha/[slug]/page.tsx` aiguillait sur `attributes.eras` AVANT d'appeler"
+   },
+   {
+    "fichier": "lib/akasha/shape.test.ts",
+    "ligne": 151,
+    "commentaire": true,
+    "texte": "// échoue si quelqu'un fait de `eras` une garde d'exclusion plutôt qu'une capacité de plus."
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 71,
+    "commentaire": true,
+    "texte": "// grand-line, soul-society, marineford, morioh, namek et hueco-mundo portaient `eras` et partaient"
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 153,
+    "commentaire": true,
+    "texte": "/** `timeline` : `attributes.forms` OU `attributes.eras` non vide — jamais les deux exigés (Death"
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 154,
+    "commentaire": true,
+    "texte": "*  Note a des `eras` sans `forms` ; la plupart des personnages à formes n'ont pas d'`eras`). */"
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 156,
+    "commentaire": false,
+    "texte": "return aDesElementsObjets(attributes.forms) || aDesElementsObjets(attributes.eras);"
+   }
+  ],
+  "quote": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 131,
+    "commentaire": false,
+    "texte": "'category', 'rosterLabel', 'eras', 'facts', 'quote', 'bio', 'trivia', 'abilities',"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 171,
+    "commentaire": false,
+    "texte": "const quote = a.quote && typeof a.quote === 'object' ? (a.quote as { text?: string; author?: string }) : null;"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 321,
+    "commentaire": false,
+    "texte": "cette population (mesuré 10/08 : `attributes.quote.text` peuplé sur 14/2 612). Sans ce"
+   }
+  ],
+  "facts": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 131,
+    "commentaire": false,
+    "texte": "'category', 'rosterLabel', 'eras', 'facts', 'quote', 'bio', 'trivia', 'abilities',"
+   }
+  ],
+  "kanji": [
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 56,
+    "commentaire": false,
+    "texte": "const worldKanji = entry.universe ? taxonomyByName(entry.universe)?.kanji : undefined;"
+   },
+   {
+    "fichier": "app/learn/akasha/c/[slug]/page.tsx",
+    "ligne": 38,
+    "commentaire": false,
+    "texte": "const kanji = taxonomyByName(c.universe)?.kanji;"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx",
+    "ligne": 100,
+    "commentaire": false,
+    "texte": "<UniverseShell color={m.color} heroGradient={vis?.heroGradient} bgPattern={vis?.bgPattern} kanji={taxo.kanji} padding=\"clamp(1.8rem,4vw,3rem) 1.4rem 1"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/opengraph-image.tsx",
+    "ligne": 23,
+    "commentaire": false,
+    "texte": "<div style={{ position: 'absolute', top: -80, right: -20, fontSize: 460, fontWeight: 900, color: `${m.color}22`, display: 'flex', lineHeight: 1 }}>{ta"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 188,
+    "commentaire": false,
+    "texte": "<UniverseShell color={m.color} heroGradient={vis?.heroGradient} bgPattern={vis?.bgPattern} kanji={taxo.kanji} banner={universeBanner(taxo.name)}>"
+   },
+   {
+    "fichier": "app/learn/akasha/u/jojo/arbre/page.tsx",
+    "ligne": 61,
+    "commentaire": false,
+    "texte": "<UniverseShell color={m.color} heroGradient={vis?.heroGradient} bgPattern={vis?.bgPattern} kanji={taxo.kanji} padding=\"clamp(1.8rem,4vw,3rem) 1.4rem 1"
+   },
+   {
+    "fichier": "app/learn/akasha/u/naruto/rangs/page.tsx",
+    "ligne": 135,
+    "commentaire": false,
+    "texte": "<UniverseShell color={m.color} heroGradient={vis?.heroGradient} bgPattern={vis?.bgPattern} kanji={taxo.kanji} padding=\"clamp(1.8rem,4vw,3rem) 1.4rem 1"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 84,
+    "commentaire": true,
+    "texte": "// inventée : 13 sur konohagakure, 4 sur samehada. `kanji` reste tel quel, c'est un mot français."
+   },
+   {
+    "fichier": "components/akasha/NarutoIcons.tsx",
+    "ligne": 130,
+    "commentaire": false,
+    "texte": "{slug === 'konohagakure' ? <KonohaLeaf size={size} color={v.color} /> : v.kanji}"
+   },
+   {
+    "fichier": "components/akasha/UniverseShell.tsx",
+    "ligne": 26,
+    "commentaire": true,
+    "texte": "/** Kanji/glyphe en filigrane (UniverseTaxonomy.kanji). Absent → pas de filigrane. */"
+   },
+   {
+    "fichier": "components/akasha/hub/BleachWorldsMap.tsx",
+    "ligne": 78,
+    "commentaire": false,
+    "texte": "<span aria-hidden style={{ position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)', fontFamily: 'var(--fe)', fontWeight: 900, fontS"
+   },
+   {
+    "fichier": "components/akasha/hub/NarutoWorldMap.tsx",
+    "ligne": 112,
+    "commentaire": false,
+    "texte": "<span style={{ fontFamily: 'var(--fe)' }}>{c.kanji}</span> {c.villageName}"
+   },
+   {
+    "fichier": "components/akasha/hub/NarutoWorldMap.tsx",
+    "ligne": 122,
+    "commentaire": false,
+    "texte": "<span style={{ fontFamily: 'var(--fe)' }}>{MINOR_VILLAGE_META[v.key]?.kanji ?? '里'}</span> {v.name}"
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 12,
+    "commentaire": false,
+    "texte": "\"kanji\": \"火\","
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 26,
+    "commentaire": false,
+    "texte": "\"kanji\": \"風\","
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 40,
+    "commentaire": false,
+    "texte": "\"kanji\": \"土\","
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 54,
+    "commentaire": false,
+    "texte": "\"kanji\": \"雷\","
+   },
+   {
+    "fichier": "lib/akasha/naruto-world.ts",
+    "ligne": 68,
+    "commentaire": false,
+    "texte": "\"kanji\": \"水\","
+   }
+  ],
+  "abilities": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 131,
+    "commentaire": false,
+    "texte": "'category', 'rosterLabel', 'eras', 'facts', 'quote', 'bio', 'trivia', 'abilities',"
+   }
+  ],
+  "rosterLabel": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 131,
+    "commentaire": false,
+    "texte": "'category', 'rosterLabel', 'eras', 'facts', 'quote', 'bio', 'trivia', 'abilities',"
+   }
+  ],
+  "col": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 146,
+    "commentaire": false,
+    "texte": "villages: ['village'], nen: ['nen'], jojo: ['partie'], passes: ['col'],"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 246,
+    "commentaire": false,
+    "texte": "<span style={{ height: 32, display: 'flex', alignItems: 'center', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.6))' }}>{moreAxisIcon('initial-d', 'col'"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 268,
+    "commentaire": false,
+    "texte": "case 'passes': { const a = axis('col'); return a ? <PassRoad axis={a} universe={universe} color={color} /> : null; }"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 496,
+    "commentaire": false,
+    "texte": "attr: 'col', label: 'Cols', icon: '⛰️',"
+   }
+  ],
+  "import_source": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 134,
+    "commentaire": false,
+    "texte": "'descFrSource', 'sectionsSource', 'import_source', 'sourceUrl', 'purgeAudit',"
+   }
+  ],
+  "gallery": [
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 78,
+    "commentaire": false,
+    "texte": "const gallery = list(a.gallery);"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 138,
+    "commentaire": false,
+    "texte": "'sections', 'forms', 'statLabels', 'gallery', 'animations', 'quotes',"
+   },
+   {
+    "fichier": "components/azur/ProviderCard.tsx",
+    "ligne": 107,
+    "commentaire": false,
+    "texte": "const galleries = theme.exclu.filter(e => e.gallery?.length)"
+   },
+   {
+    "fichier": "components/azur/ProviderCard.tsx",
+    "ligne": 140,
+    "commentaire": false,
+    "texte": "<div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 600, color: '#fff', marginBottom: 7, textShadow: SHADOW }}>{g.icon} {g.label} · {g.ga"
+   },
+   {
+    "fichier": "components/azur/ProviderCard.tsx",
+    "ligne": 142,
+    "commentaire": false,
+    "texte": "{g.gallery!.map(b => ("
+   }
+  ],
+  "titles": [],
+  "natureType": [
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 77,
+    "commentaire": false,
+    "texte": "const baseNatures = list(a.natureType);"
+   }
+  ],
+  "status": [
+   {
+    "fichier": "app/admin/news/page.tsx",
+    "ligne": 79,
+    "commentaire": false,
+    "texte": "{(!a.status || a.status === 'pending') && ("
+   },
+   {
+    "fichier": "app/admin/page.tsx",
+    "ligne": 32,
+    "commentaire": false,
+    "texte": "admin ? admin.from('pois').select('*', { count: 'exact', head: true }).eq('status', 'pending') : Promise.resolve({ count: 0 }),"
+   },
+   {
+    "fichier": "app/admin/sms/page.tsx",
+    "ligne": 49,
+    "commentaire": false,
+    "texte": "<div style={{ fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, color: statusColor[log.status] || 'var(--td3)', background: `${statusColor[log.s"
+   },
+   {
+    "fichier": "app/admin/sms/page.tsx",
+    "ligne": 50,
+    "commentaire": false,
+    "texte": "{log.status}"
+   },
+   {
+    "fichier": "app/admin/stats/page.tsx",
+    "ligne": 46,
+    "commentaire": false,
+    "texte": "const { data: revenueData } = await admin.from('orders').select('amount').eq('status', 'delivered');"
+   },
+   {
+    "fichier": "app/admin/stats/page.tsx",
+    "ligne": 48,
+    "commentaire": false,
+    "texte": "const { data: revenueMonthData } = await admin.from('orders').select('amount').eq('status', 'delivered').gte('created_at', startOfMonth);"
+   },
+   {
+    "fichier": "app/api/admin/news/[id]/route.ts",
+    "ligne": 18,
+    "commentaire": false,
+    "texte": "const allowed = ['status'];"
+   },
+   {
+    "fichier": "app/api/admin/news/route.ts",
+    "ligne": 17,
+    "commentaire": false,
+    "texte": "const status = searchParams.get('status');"
+   },
+   {
+    "fichier": "app/api/admin/news/route.ts",
+    "ligne": 19,
+    "commentaire": false,
+    "texte": "if (status && status !== 'all') query = query.eq('status', status);"
+   },
+   {
+    "fichier": "app/api/admin/pois/route.ts",
+    "ligne": 18,
+    "commentaire": false,
+    "texte": "const status = searchParams.get('status') || 'pending';"
+   },
+   {
+    "fichier": "app/api/admin/pois/route.ts",
+    "ligne": 20,
+    "commentaire": false,
+    "texte": "const { data: pois, error } = await admin.from('pois').select('*').eq('status', status).order('created_at', { ascending: false });"
+   },
+   {
+    "fichier": "app/api/gmb/route.ts",
+    "ligne": 43,
+    "commentaire": false,
+    "texte": "if (data.status !== 'OK') {"
+   },
+   {
+    "fichier": "app/api/niko/route.ts",
+    "ligne": 110,
+    "commentaire": false,
+    "texte": "if (!res.ok || !res.body) throw new Error(`anthropic ${res.status}: ${await res.text().catch(() => '')}`);"
+   },
+   {
+    "fichier": "app/api/ops/audit/route.ts",
+    "ligne": 63,
+    "commentaire": false,
+    "texte": ".in('status', ['done', 'suspect'])"
+   },
+   {
+    "fichier": "app/api/ops/pile/route.ts",
+    "ligne": 29,
+    "commentaire": false,
+    "texte": "relire: { titre: 'À relire', filtre: (q: any) => q.eq('review_status', 'pending').eq('status', 'done') },"
+   },
+   {
+    "fichier": "app/api/ops/pile/route.ts",
+    "ligne": 30,
+    "commentaire": false,
+    "texte": "douteuses: { titre: 'Preuve douteuse', filtre: (q: any) => q.eq('review_status', 'pending').eq('status', 'suspect') },"
+   },
+   {
+    "fichier": "app/api/ops/pile/route.ts",
+    "ligne": 31,
+    "commentaire": false,
+    "texte": "ecartees: { titre: 'Écartées par les gardes', filtre: (q: any) => q.eq('review_status', 'pending').eq('status', 'refused') },"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 42,
+    "commentaire": false,
+    "texte": "bac((q: any) => q.eq('review_status', 'pending').eq('status', 'done')),"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 43,
+    "commentaire": false,
+    "texte": "bac((q: any) => q.eq('review_status', 'pending').eq('status', 'suspect')),"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 44,
+    "commentaire": false,
+    "texte": "bac((q: any) => q.eq('review_status', 'pending').eq('status', 'refused')),"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 48,
+    "commentaire": false,
+    "texte": "const { count: nEchecs } = await bac((q: any) => q.eq('review_status', 'pending').eq('status', 'failed'));"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 52,
+    "commentaire": false,
+    "texte": ".eq('review_status', 'pending').in('status', ['done', 'suspect']),"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 55,
+    "commentaire": false,
+    "texte": ".eq('auto2_verdict', 'valide').eq('status', 'done')"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 222,
+    "commentaire": false,
+    "texte": ".in('status', ['done', 'suspect']);   // une heure de refus de garde ne doit pas s'afficher verte"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 313,
+    "commentaire": false,
+    "texte": ".eq('status', 'done')"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 333,
+    "commentaire": false,
+    "texte": ".eq('status', 'failed')"
+   },
+   {
+    "fichier": "app/api/reviews/import/route.ts",
+    "ligne": 162,
+    "commentaire": false,
+    "texte": ".eq('status', 'open')"
+   },
+   {
+    "fichier": "app/api/reviews/route.ts",
+    "ligne": 100,
+    "commentaire": false,
+    "texte": ".eq('status', 'open')"
+   },
+   {
+    "fichier": "app/api/whatsapp/route.ts",
+    "ligne": 69,
+    "commentaire": false,
+    "texte": ".filter((st) => st.status === 'failed');"
+   },
+   {
+    "fichier": "app/carte/poi/[id]/page.tsx",
+    "ligne": 20,
+    "commentaire": false,
+    "texte": "const { data: poi } = await supabase.from('pois').select('*, users(username, level_name)').eq('id', id).eq('status', 'approved').single();"
+   },
+   {
+    "fichier": "app/food/afroweek06/FoodClient.tsx",
+    "ligne": 90,
+    "commentaire": false,
+    "texte": "setLiveStatus((payload.new as { status: 'open' | 'closed' | 'sold_out' }).status)"
+   },
+   {
+    "fichier": "app/food/afroweek06/checkout/page.tsx",
+    "ligne": 101,
+    "commentaire": false,
+    "texte": "if (!session || session.status !== 'open') {"
+   },
+   {
+    "fichier": "app/food/afroweek06/page.tsx",
+    "ligne": 62,
+    "commentaire": false,
+    "texte": "? (session.status as 'open' | 'closed' | 'sold_out')"
+   },
+   {
+    "fichier": "app/food/afroweek06/track/[orderId]/page.tsx",
+    "ligne": 107,
+    "commentaire": false,
+    "texte": "initialStatus={typedOrder.status as 'pending' | 'confirmed' | 'preparing' | 'delivering' | 'delivered' | 'cancelled'}"
+   },
+   {
+    "fichier": "app/food/afroweek06/track/[orderId]/page.tsx",
+    "ligne": 118,
+    "commentaire": false,
+    "texte": "initialStatus={delivery.status}"
+   },
+   {
+    "fichier": "app/food/dashboard/orders/page.tsx",
+    "ligne": 63,
+    "commentaire": false,
+    "texte": "query = query.in('status', ACTIVE_STATUSES)"
+   },
+   {
+    "fichier": "app/food/dashboard/orders/page.tsx",
+    "ligne": 75,
+    "commentaire": false,
+    "texte": "status:           raw.status as OrderStatus,"
+   },
+   {
+    "fichier": "app/food/dashboard/orders/page.tsx",
+    "ligne": 112,
+    "commentaire": false,
+    "texte": ".filter(o => filter === 'all' || ACTIVE_STATUSES.includes(o.status as OrderStatus))"
+   },
+   {
+    "fichier": "app/food/dashboard/page.tsx",
+    "ligne": 43,
+    "commentaire": false,
+    "texte": "acc[o.status] = (acc[o.status] ?? 0) + 1"
+   },
+   {
+    "fichier": "app/food/dashboard/page.tsx",
+    "ligne": 61,
+    "commentaire": false,
+    "texte": "sessionStatus={(session?.status ?? null) as 'open' | 'closed' | 'sold_out' | null}"
+   },
+   {
+    "fichier": "app/food/dashboard/stock/page.tsx",
+    "ligne": 81,
+    "commentaire": false,
+    "texte": "Session : <span className={`food-status-pill ${session.status}`} style={{ fontSize: 11, marginLeft: 6 }}>{session.status}</span>"
+   },
+   {
+    "fichier": "app/food/driver/delivery/[id]/page.tsx",
+    "ligne": 160,
+    "commentaire": false,
+    "texte": "initialStatus={delivery.status}"
+   },
+   {
+    "fichier": "app/food/driver/delivery/[id]/page.tsx",
+    "ligne": 167,
+    "commentaire": false,
+    "texte": "{delivery.status === 'delivering' && ("
+   },
+   {
+    "fichier": "app/food/page.tsx",
+    "ligne": 39,
+    "commentaire": false,
+    "texte": "sessionByProvider[(s as { provider_id: string; status: string }).provider_id] = (s as { provider_id: string; status: string }).status;"
+   },
+   {
+    "fichier": "app/food/page.tsx",
+    "ligne": 189,
+    "commentaire": false,
+    "texte": "<NightProviderCard key={e.provider.id} provider={e.provider} status={e.status} />"
+   },
+   {
+    "fichier": "app/food/rakomoriafood/RakoClient.tsx",
+    "ligne": 113,
+    "commentaire": false,
+    "texte": "(p) => setLiveStatus((p.new as { status: 'open' | 'closed' | 'sold_out' }).status))"
+   },
+   {
+    "fichier": "app/food/rakomoriafood/page.tsx",
+    "ligne": 62,
+    "commentaire": false,
+    "texte": "sessionStatus={(session?.status ?? 'closed') as 'open' | 'closed' | 'sold_out'}"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 90,
+    "commentaire": false,
+    "texte": "if (entry.type === 'status') {"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 261,
+    "commentaire": false,
+    "texte": "{(['character', 'place', 'artifact', 'power', 'skill', 'status', 'profession'] as const).filter((t) => insights.byType[t]).map((t) => ("
+   },
+   {
+    "fichier": "app/ops/OpsBoard.tsx",
+    "ligne": 54,
+    "commentaire": false,
+    "texte": "if (!r.ok) throw new Error(String(r.status));"
+   },
+   {
+    "fichier": "app/ops/OpsBoard.tsx",
+    "ligne": 83,
+    "commentaire": false,
+    "texte": "if (!r.ok) throw new Error(String(r.status));"
+   },
+   {
+    "fichier": "app/ops/OpsBoard.tsx",
+    "ligne": 106,
+    "commentaire": false,
+    "texte": "if (!r.ok) throw new Error(String(r.status));"
+   },
+   {
+    "fichier": "app/ops/OpsBoard.tsx",
+    "ligne": 117,
+    "commentaire": false,
+    "texte": "const pending = state?.results.filter((r) => r.review_status === 'pending' && r.status === 'done') ?? [];"
+   },
+   {
+    "fichier": "app/ops/OpsBoard.tsx",
+    "ligne": 119,
+    "commentaire": false,
+    "texte": "const suspect = state?.results.filter((r) => r.review_status === 'pending' && r.status === 'suspect') ?? [];"
+   },
+   {
+    "fichier": "app/ops/OpsBoard.tsx",
+    "ligne": 121,
+    "commentaire": false,
+    "texte": "(r) => r.review_status === 'pending' && r.status !== 'done' && r.status !== 'suspect',"
+   },
+   {
+    "fichier": "app/ops/pieces.tsx",
+    "ligne": 223,
+    "commentaire": false,
+    "texte": "disabled={busy || (r.status !== 'done' && r.status !== 'suspect')}"
+   },
+   {
+    "fichier": "app/ops/pieces.tsx",
+    "ligne": 224,
+    "commentaire": false,
+    "texte": "style={btn(OK, busy || (r.status !== 'done' && r.status !== 'suspect'))}>✓ Appliquer</button>"
+   },
+   {
+    "fichier": "app/ops/pile/PileClient.tsx",
+    "ligne": 39,
+    "commentaire": false,
+    "texte": "if (!r.ok) throw new Error(String(r.status));"
+   },
+   {
+    "fichier": "app/ops/pile/PileClient.tsx",
+    "ligne": 63,
+    "commentaire": false,
+    "texte": "if (!r.ok) throw new Error(String(r.status));"
+   },
+   {
+    "fichier": "app/pro/commandes/page.tsx",
+    "ligne": 37,
+    "commentaire": false,
+    "texte": "<div key={order.id} style={{ background: 'var(--bg2)', border: `1px solid ${statusColor[order.status] || 'var(--bd)'}22`, borderRadius: 10, padding: '"
+   },
+   {
+    "fichier": "app/pro/commandes/page.tsx",
+    "ligne": 48,
+    "commentaire": false,
+    "texte": "<div style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, padding: '3px 10px', borderRadius: 20, background: `${statusColor[order.status]}"
+   },
+   {
+    "fichier": "app/pro/commandes/page.tsx",
+    "ligne": 49,
+    "commentaire": false,
+    "texte": "{statusLabel[order.status] || order.status}"
+   },
+   {
+    "fichier": "app/pro/dashboard/page.tsx",
+    "ligne": 104,
+    "commentaire": false,
+    "texte": "<div style={{ fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, color: statusColor[order.status] || 'var(--td2)' }}>{order.status}</div>"
+   },
+   {
+    "fichier": "app/pro/reviews/page.tsx",
+    "ligne": 105,
+    "commentaire": false,
+    "texte": "const openIssues = issues.filter(i => i.status === 'open');"
+   },
+   {
+    "fichier": "app/pro/stats/page.tsx",
+    "ligne": 24,
+    "commentaire": false,
+    "texte": "const delivered = orders?.filter(o => o.status === 'delivered') || [];"
+   },
+   {
+    "fichier": "app/pro/stats/page.tsx",
+    "ligne": 30,
+    "commentaire": false,
+    "texte": "pending: orders?.filter(o => o.status === 'pending').length || 0,"
+   },
+   {
+    "fichier": "app/pro/stats/page.tsx",
+    "ligne": 31,
+    "commentaire": false,
+    "texte": "confirmed: orders?.filter(o => o.status === 'confirmed').length || 0,"
+   },
+   {
+    "fichier": "app/pro/stats/page.tsx",
+    "ligne": 33,
+    "commentaire": false,
+    "texte": "cancelled: orders?.filter(o => o.status === 'cancelled').length || 0,"
+   },
+   {
+    "fichier": "app/profil/ProfilHub.tsx",
+    "ligne": 138,
+    "commentaire": false,
+    "texte": "{orders.slice(0, 3).map(o => <Row key={o.id} left={proName(o)} sub={fmtDate(o.created_at)} right={statusLabel[o.status] || o.status} rightColor={statu"
+   },
+   {
+    "fichier": "app/profil/ProfilHub.tsx",
+    "ligne": 151,
+    "commentaire": false,
+    "texte": "{orders.length ? <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>{orders.map(o => <Row key={o.id} left={proName(o)} sub={fmtDate(o.c"
+   },
+   {
+    "fichier": "app/profil/ProfilHub.tsx",
+    "ligne": 155,
+    "commentaire": false,
+    "texte": "{pois.length ? <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>{pois.map(p => <Row key={p.id} left={`📍 ${p.name}`} sub={`${p.catego"
+   },
+   {
+    "fichier": "app/profil/[id]/page.tsx",
+    "ligne": 24,
+    "commentaire": false,
+    "texte": "supabase.from('pois').select('*').eq('creator_id', id).eq('status', 'approved').order('created_at', { ascending: false }).limit(6),"
+   },
+   {
+    "fichier": "app/serv/DevisRequest.tsx",
+    "ligne": 33,
+    "commentaire": false,
+    "texte": "if (r.status === 401) { setState('auth'); return; }"
+   },
+   {
+    "fichier": "components/akasha/hub/DragonBallCosmos.tsx",
+    "ligne": 286,
+    "commentaire": false,
+    "texte": "{selRich && <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 700, color: 'var(--td3)', background: 'var(--su2)', borderRadius: 20, p"
+   },
+   {
+    "fichier": "components/akasha/hub/HubInsights.tsx",
+    "ligne": 10,
+    "commentaire": false,
+    "texte": "const TYPE_ORDER: AkashaType[] = ['character', 'power', 'skill', 'artifact', 'place', 'status', 'profession'];"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSearch.tsx",
+    "ligne": 45,
+    "commentaire": false,
+    "texte": "<div role=\"status\" style={{ position: 'absolute', top: '100%', left: 0, right: 0, marginTop: 6, background: 'var(--bg2)', border: '1px solid var(--bd2"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 48,
+    "commentaire": true,
+    "texte": "*  maîtrisée par un personnage). `character`/`status` n'atteignent jamais cette zone."
+   },
+   {
+    "fichier": "components/food/OrderCard.tsx",
+    "ligne": 46,
+    "commentaire": false,
+    "texte": "const [status, setStatus] = useState<OrderStatus>(order.status)"
+   },
+   {
+    "fichier": "components/food/TrackingTimeline.tsx",
+    "ligne": 37,
+    "commentaire": false,
+    "texte": "setStatus((payload.new as { status: OrderStatus }).status)"
+   },
+   {
+    "fichier": "components/food/TrackingTimeline.tsx",
+    "ligne": 57,
+    "commentaire": false,
+    "texte": "<div key={step.status} className={`food-timeline-step ${stepState}`}>"
+   },
+   {
+    "fichier": "components/food/delivery/DeliveryTimeline.tsx",
+    "ligne": 45,
+    "commentaire": false,
+    "texte": "setStatus(row.status)"
+   },
+   {
+    "fichier": "components/food/delivery/DispatchPanel.tsx",
+    "ligne": 48,
+    "commentaire": false,
+    "texte": ".in('status', ['confirmed', 'preparing', 'delivering'])"
+   },
+   {
+    "fichier": "components/food/delivery/DispatchPanel.tsx",
+    "ligne": 61,
+    "commentaire": false,
+    "texte": "status:           o.status,"
+   },
+   {
+    "fichier": "components/food/delivery/DispatchPanel.tsx",
+    "ligne": 155,
+    "commentaire": false,
+    "texte": "color: delivery.status === 'delivered' ? '#34d399' : 'var(--food-brand)',"
+   },
+   {
+    "fichier": "components/food/delivery/DispatchPanel.tsx",
+    "ligne": 156,
+    "commentaire": false,
+    "texte": "background: delivery.status === 'delivered' ? 'rgba(16,185,129,0.1)' : 'rgba(216,90,48,0.1)',"
+   },
+   {
+    "fichier": "components/food/delivery/DispatchPanel.tsx",
+    "ligne": 157,
+    "commentaire": false,
+    "texte": "border: `1px solid ${delivery.status === 'delivered' ? 'rgba(16,185,129,0.25)' : 'rgba(216,90,48,0.25)'}`,"
+   },
+   {
+    "fichier": "components/food/delivery/DispatchPanel.tsx",
+    "ligne": 160,
+    "commentaire": false,
+    "texte": "{delivery.status}"
+   },
+   {
+    "fichier": "components/food/delivery/DispatchPanel.tsx",
+    "ligne": 187,
+    "commentaire": false,
+    "texte": "{hasDriver && !delivery?.status?.startsWith('delivered') && ("
+   },
+   {
+    "fichier": "components/food/delivery/DriverDashboard.tsx",
+    "ligne": 49,
+    "commentaire": false,
+    "texte": ".not('status', 'in', '(delivered,failed)')"
+   },
+   {
+    "fichier": "components/food/delivery/DriverDashboard.tsx",
+    "ligne": 57,
+    "commentaire": false,
+    "texte": "status:           d.status,"
+   },
+   {
+    "fichier": "components/food/delivery/DriverDashboard.tsx",
+    "ligne": 116,
+    "commentaire": false,
+    "texte": "const action = STATUS_LABELS[delivery.status]"
+   },
+   {
+    "fichier": "components/food/delivery/DriverDashboard.tsx",
+    "ligne": 117,
+    "commentaire": false,
+    "texte": "const nextStatus = STATUS_NEXT[delivery.status]"
+   },
+   {
+    "fichier": "components/food/delivery/DriverDashboard.tsx",
+    "ligne": 150,
+    "commentaire": false,
+    "texte": "{delivery.status}"
+   },
+   {
+    "fichier": "components/food/delivery/DriverDashboard.tsx",
+    "ligne": 184,
+    "commentaire": false,
+    "texte": "{delivery.status === 'delivering' && ("
+   },
+   {
+    "fichier": "components/home/FoodModule.tsx",
+    "ligne": 262,
+    "commentaire": false,
+    "texte": "<NightProviderCard provider={selected.provider} status={selected.status} compact />"
+   },
+   {
+    "fichier": "components/home/GpsBeacon.tsx",
+    "ligne": 10,
+    "commentaire": false,
+    "texte": "const status = useLocationStore(s => s.status);"
+   },
+   {
+    "fichier": "components/home/Hero.tsx",
+    "ligne": 112,
+    "commentaire": false,
+    "texte": "const status = useLocationStore(s => s.status);"
+   },
+   {
+    "fichier": "components/home/Hero.tsx",
+    "ligne": 145,
+    "commentaire": false,
+    "texte": "if (useLocationStore.getState().status === 'idle') useLocationStore.getState().locate();"
+   },
+   {
+    "fichier": "lib/akasha/schema.ts",
+    "ligne": 102,
+    "commentaire": false,
+    "texte": "z.object({ type: z.literal('status'), attributes: statusAttrs.default({}), ...base }),"
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 80,
+    "commentaire": true,
+    "texte": "// 08/08 additionnait les arêtes de membership dont la cible n'est PAS un personnage — 45 `status`,"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 9,
+    "commentaire": false,
+    "texte": "'status',"
+   },
+   {
+    "fichier": "lib/food.ts",
+    "ligne": 131,
+    "commentaire": false,
+    "texte": "for (const s of (sessions || []) as { provider_id: string; status: string }[]) statusById[s.provider_id] = s.status;"
+   },
+   {
+    "fichier": "lib/store.ts",
+    "ligne": 92,
+    "commentaire": false,
+    "texte": "if (get().status === 'locating') return;"
+   }
+  ],
+  "debut": [
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 220,
+    "commentaire": false,
+    "texte": "{str(a.debut) && <span style={{ fontFamily: 'var(--fo)', fontSize: 9.5, color: 'var(--td3)' }}>{str(a.debut)}</span>}"
+   }
+  ],
+  "height": [
+   {
+    "fichier": "components/akasha/CardFx.tsx",
+    "ligne": 15,
+    "commentaire": false,
+    "texte": "const py = Math.min(1, Math.max(0, (clientY - r.top) / r.height));"
+   },
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 95,
+    "commentaire": false,
+    "texte": "const height = f.height ?? (hasCurated ? null : str(a.height));"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 402,
+    "commentaire": false,
+    "texte": "push('Taille', fstr(f.height, a.height));"
+   },
+   {
+    "fichier": "components/home/AutoModule.tsx",
+    "ligne": 664,
+    "commentaire": false,
+    "texte": "const x = (clientX - r.left) * (W / r.width), y = (clientY - r.top) * (H / r.height);"
+   },
+   {
+    "fichier": "lib/akasha/useMapZoomPanSvg.ts",
+    "ligne": 32,
+    "commentaire": false,
+    "texte": "const px = (e.clientX - rect.left) / rect.width, py = (e.clientY - rect.top) / rect.height;"
+   },
+   {
+    "fichier": "lib/akasha/useMapZoomPanSvg.ts",
+    "ligne": 57,
+    "commentaire": false,
+    "texte": "return { fx: (cx - r.left) / r.width, fy: (cy - r.top) / r.height, rw: r.width, rh: r.height };"
+   },
+   {
+    "fichier": "lib/liquid-glass.js",
+    "ligne": 33,
+    "commentaire": false,
+    "texte": "c.width = c.height = 4;"
+   },
+   {
+    "fichier": "lib/liquid-glass.js",
+    "ligne": 46,
+    "commentaire": false,
+    "texte": "svg.setAttribute(\"height\", \"0\");"
+   },
+   {
+    "fichier": "lib/liquid-glass.js",
+    "ligne": 63,
+    "commentaire": false,
+    "texte": "canvas.height = h;"
+   },
+   {
+    "fichier": "lib/liquid-glass.js",
+    "ligne": 100,
+    "commentaire": false,
+    "texte": "filter.setAttribute(\"height\", \"100%\");"
+   },
+   {
+    "fichier": "lib/liquid-glass.js",
+    "ligne": 206,
+    "commentaire": false,
+    "texte": "parts.feImage.setAttribute(\"height\", h);"
+   }
+  ],
+  "weight": [
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 96,
+    "commentaire": false,
+    "texte": "const weight = f.weight ?? (hasCurated ? null : str(a.weight));"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 403,
+    "commentaire": false,
+    "texte": "push('Poids', fstr(f.weight, a.weight));"
+   }
+  ],
+  "debutAll": [],
+  "bloodType": [
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 404,
+    "commentaire": false,
+    "texte": "push('Sang', str(a.bloodType));"
+   }
+  ],
+  "sourceUrl": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 134,
+    "commentaire": false,
+    "texte": "'descFrSource', 'sectionsSource', 'import_source', 'sourceUrl', 'purgeAudit',"
+   }
+  ],
+  "villageSlug": [
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 74,
+    "commentaire": false,
+    "texte": "const villageSlug = str(a.villageSlug);"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 140,
+    "commentaire": false,
+    "texte": "'villageSlug', 'clanSlug',"
+   }
+  ],
+  "quotes": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 138,
+    "commentaire": false,
+    "texte": "'sections', 'forms', 'statLabels', 'gallery', 'animations', 'quotes',"
+   }
+  ],
+  "personality": [],
+  "team": [],
+  "tools": [
+   {
+    "fichier": "components/home/Hero.tsx",
+    "ligne": 74,
+    "commentaire": false,
+    "texte": "{ id: 'tools', domain: 'tools', place: 'Partout sur la Côte', services: ['Convertisseur', 'Météo & marées', 'Parkings', 'Numéros utiles'], center: [7."
+   },
+   {
+    "fichier": "components/home/Hero.tsx",
+    "ligne": 351,
+    "commentaire": false,
+    "texte": ") : scene.domain === 'tools' ? ("
+   },
+   {
+    "fichier": "lib/constants.ts",
+    "ligne": 53,
+    "commentaire": false,
+    "texte": "{ slug: 'tools', label: 'TOOLS', icon: '🧰', num: '10', color: '#12B8CC', desc: 'Outils pratiques' },"
+   }
+  ],
+  "classification": [
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 91,
+    "commentaire": false,
+    "texte": "const classification = f.classification ?? list(a.classification);"
+   }
+  ],
+  "meito_grade": [
+   {
+    "fichier": "lib/akasha/collections.ts",
+    "ligne": 43,
+    "commentaire": false,
+    "texte": "subAttr: 'meito_grade',"
+   },
+   {
+    "fichier": "lib/akasha/miroir-axes.test.ts",
+    "ligne": 11,
+    "commentaire": true,
+    "texte": "//     `meito_grade` et `monde` carrément absents comme axes, `Akagi RedSuns` présent côté miroir et"
+   },
+   {
+    "fichier": "lib/akasha/universe-taxonomy.ts",
+    "ligne": 326,
+    "commentaire": false,
+    "texte": "attr: 'meito_grade', label: 'Grades de sabre (Meito)', icon: '⚔️',"
+   }
+  ],
+  "god": [
+   {
+    "fichier": "components/akasha/hub/DragonBallCosmos.tsx",
+    "ligne": 180,
+    "commentaire": false,
+    "texte": "<Link href={`/learn/akasha/${u.godSlug}`} title={`💥 ${u.god} — Dieu de la Destruction`} style={{ display: 'block', width: 20, height: 20, borderRadiu"
+   },
+   {
+    "fichier": "components/akasha/hub/DragonBallCosmos.tsx",
+    "ligne": 182,
+    "commentaire": false,
+    "texte": "<img src={u.godImg} alt={u.god} loading=\"lazy\" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />"
+   },
+   {
+    "fichier": "components/akasha/hub/DragonBallCosmos.tsx",
+    "ligne": 242,
+    "commentaire": false,
+    "texte": "{ role: 'Dieu de la Destruction', icon: '💥', name: enteredU.god, slug: enteredU.godSlug },"
+   }
+  ],
+  "kai": [
+   {
+    "fichier": "components/akasha/hub/DragonBallCosmos.tsx",
+    "ligne": 244,
+    "commentaire": false,
+    "texte": "{ role: 'Kaïō Shin', icon: '🔮', name: enteredU.kai, slug: enteredU.kaiSlug },"
+   }
+  ],
+  "twin": [
+   {
+    "fichier": "components/akasha/hub/DragonBallCosmos.tsx",
+    "ligne": 261,
+    "commentaire": false,
+    "texte": "<span style={{ fontFamily: 'var(--fo)', fontSize: 10, fontWeight: 700, color: 'var(--td3)' }}>↔ Jumeau {enteredU.twin}</span>"
+   }
+  ],
+  "angel": [
+   {
+    "fichier": "components/akasha/hub/DragonBallCosmos.tsx",
+    "ligne": 186,
+    "commentaire": false,
+    "texte": "<Link href={`/learn/akasha/${u.angelSlug}`} title={`😇 ${u.angel} — Ange`} style={{ display: 'block', width: 20, height: 20, borderRadius: '50%', over"
+   },
+   {
+    "fichier": "components/akasha/hub/DragonBallCosmos.tsx",
+    "ligne": 188,
+    "commentaire": false,
+    "texte": "<img src={u.angelImg} alt={u.angel} loading=\"lazy\" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />"
+   },
+   {
+    "fichier": "components/akasha/hub/DragonBallCosmos.tsx",
+    "ligne": 243,
+    "commentaire": false,
+    "texte": "{ role: 'Ange', icon: '😇', name: enteredU.angel, slug: enteredU.angelSlug },"
+   }
+  ],
+  "statLabels": [
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 161,
+    "commentaire": false,
+    "texte": "statLabels={(a.statLabels as Record<string, string> | undefined) ?? null}"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 138,
+    "commentaire": false,
+    "texte": "'sections', 'forms', 'statLabels', 'gallery', 'animations', 'quotes',"
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 343,
+    "commentaire": false,
+    "texte": "const statLabels = ((entry.attributes as Record<string, unknown>).statLabels as Partial<Record<keyof Stats, string>> | undefined) ?? null;"
+   }
+  ],
+  "clanSlug": [
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 75,
+    "commentaire": false,
+    "texte": "const clanSlug = str(a.clanSlug);"
+   },
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 140,
+    "commentaire": false,
+    "texte": "'villageSlug', 'clanSlug',"
+   }
+  ],
+  "kekkeiGenkai": [
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 97,
+    "commentaire": false,
+    "texte": "const kekkei = f.kekkeiGenkai ?? list(a.kekkeiGenkai);"
+   }
+  ],
+  "signature": [
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 89,
+    "commentaire": false,
+    "texte": "const bounties = vis?.signature === 'bounties' ? await listBounties(8) : [];"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 149,
+    "commentaire": false,
+    "texte": "const sigAttrs = vis?.signature ? SIGNATURE_ATTRS[vis.signature] ?? [] : [];"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 179,
+    "commentaire": false,
+    "texte": "const portes = deriveHubSurfaces({ map: vis?.map, signature: vis?.signature, axes: axesAll });"
+   },
+   {
+    "fichier": "app/learn/akasha/u/[slug]/page.tsx",
+    "ligne": 248,
+    "commentaire": false,
+    "texte": "if (porte.kind === 'signature') return <HubSignature key={porte.signature} signature={porte.signature} axes={axesAll} universe={taxo.name} color={m.co"
+   },
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 99,
+    "commentaire": false,
+    "texte": "const signature = f.signature ?? list(a.signature);"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 2,
+    "commentaire": true,
+    "texte": "// (vis.signature). 100 % serveur (RSC) : hexagone du Nen, carte des villages, échelle des primes,"
+   },
+   {
+    "fichier": "components/akasha/hub/HubSignature.tsx",
+    "ligne": 256,
+    "commentaire": false,
+    "texte": "export default function HubSignature({ signature, axes, universe, color, bounties }: { signature: HubVisual['signature']; axes: AxisView[]; universe: "
+   },
+   {
+    "fichier": "components/akasha/zone/CharacterZone.tsx",
+    "ligne": 479,
+    "commentaire": false,
+    "texte": "{sel.signature && <div style={{ fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: a"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 37,
+    "commentaire": false,
+    "texte": "assert.deepEqual(s, [{ kind: 'signature', signature: 'nen' }]);"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 42,
+    "commentaire": false,
+    "texte": "assert.deepEqual(s.map((x) => x.kind), ['map', 'signature']);"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 89,
+    "commentaire": false,
+    "texte": "const s = deriveHubSurfaces({ map: vis.map, signature: vis.signature, axes: [axe('x', 30, 900)] });"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 92,
+    "commentaire": false,
+    "texte": "...(vis.signature ? [{ kind: 'signature', signature: vis.signature }] : []),"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.test.ts",
+    "ligne": 101,
+    "commentaire": false,
+    "texte": "assert.ok(vis.map || vis.signature, `${slug} n'a ni carte ni signature — il dépend donc du repli`);"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.ts",
+    "ligne": 27,
+    "commentaire": false,
+    "texte": "| { kind: 'signature'; signature: HubSignature }"
+   },
+   {
+    "fichier": "lib/akasha/hub-surface.ts",
+    "ligne": 54,
+    "commentaire": false,
+    "texte": "if (input.signature) surfaces.push({ kind: 'signature', signature: input.signature });"
+   }
+  ],
+  "blade_type": [],
+  "descFrRetiree": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 136,
+    "commentaire": false,
+    "texte": "'descFrRetiree', 'descFrImpossible', 'descFrPurgee', 'resumeCorrige',"
+   }
+  ],
+  "purgeAudit": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 134,
+    "commentaire": false,
+    "texte": "'descFrSource', 'sectionsSource', 'import_source', 'sourceUrl', 'purgeAudit',"
+   }
+  ],
+  "squad": [],
+  "sectionsSource": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 134,
+    "commentaire": false,
+    "texte": "'descFrSource', 'sectionsSource', 'import_source', 'sourceUrl', 'purgeAudit',"
+   }
+  ],
+  "descFrImpossible": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 136,
+    "commentaire": false,
+    "texte": "'descFrRetiree', 'descFrImpossible', 'descFrPurgee', 'resumeCorrige',"
+   }
+  ],
+  "resumeCorrige": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 136,
+    "commentaire": false,
+    "texte": "'descFrRetiree', 'descFrImpossible', 'descFrPurgee', 'resumeCorrige',"
+   }
+  ],
+  "cost": [
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 217,
+    "commentaire": false,
+    "texte": "{ key: 'cost', label: 'Coût' },"
+   }
+  ],
+  "range": [
+   {
+    "fichier": "app/api/ops/pile/route.ts",
+    "ligne": 59,
+    "commentaire": false,
+    "texte": "const { data, error } = await q.order('id', { ascending: false }).range(page * PAR_PAGE, page * PAR_PAGE + PAR_PAGE - 1);"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 249,
+    "commentaire": false,
+    "texte": ".select('entry_id').order('id').range(d, d + 999);"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 256,
+    "commentaire": false,
+    "texte": ".select('id, universe, type').order('id').range(d, d + 999);"
+   },
+   {
+    "fichier": "app/azur/prestataires/[slug]/ProviderDetail.tsx",
+    "ligne": 262,
+    "commentaire": false,
+    "texte": "<input type=\"range\" min={1} max={provider.capacity_max || 10} value={persons} onChange={e => setPersons(parseInt(e.target.value))} style={{ width: '10"
+   },
+   {
+    "fichier": "app/learn/akasha/random/route.ts",
+    "ligne": 25,
+    "commentaire": false,
+    "texte": "const { count } = await base().range(0, 0);"
+   },
+   {
+    "fichier": "app/learn/akasha/random/route.ts",
+    "ligne": 29,
+    "commentaire": false,
+    "texte": "const { data } = await base().order('id', { ascending: true }).range(idx, idx);"
+   },
+   {
+    "fichier": "app/sitemap.ts",
+    "ligne": 44,
+    "commentaire": false,
+    "texte": "const { data } = await supabase.from('akasha_entries').select('slug').range(from, from + 999);"
+   },
+   {
+    "fichier": "components/home/AutoModule.tsx",
+    "ligne": 448,
+    "commentaire": false,
+    "texte": "<input type=\"range\" min={PRICE_MIN} max={PRICE_MAX} step={5} value={priceMax} onChange={e => setPriceMax(Number(e.target.value))} aria-label=\"Budget m"
+   },
+   {
+    "fichier": "components/home/AzurModule.tsx",
+    "ligne": 142,
+    "commentaire": false,
+    "texte": "<input type=\"range\" min={BOAT_PRICE_MIN} max={BOAT_PRICE_MAX} step={10} value={priceMax} onChange={e => setPriceMax(Number(e.target.value))} aria-labe"
+   },
+   {
+    "fichier": "components/home/RentModule.tsx",
+    "ligne": 96,
+    "commentaire": false,
+    "texte": "<input type=\"range\" min={5} max={GEAR_PRICE_MAX} step={5} value={priceMax} onChange={e => setPriceMax(Number(e.target.value))} aria-label=\"Budget maxi"
+   },
+   {
+    "fichier": "components/home/ServModule.tsx",
+    "ligne": 115,
+    "commentaire": false,
+    "texte": "<input type=\"range\" min={PRO_PRICE_MIN} max={PRO_PRICE_MAX} step={1} value={priceMax} onChange={e => setPriceMax(Number(e.target.value))} aria-label=\""
+   },
+   {
+    "fichier": "components/home/StayModule.tsx",
+    "ligne": 185,
+    "commentaire": false,
+    "texte": "<input type=\"range\" min={PMIN} max={PMAX} step={isRent ? 5 : 50_000} value={priceMax} onChange={e => setPriceMax(Number(e.target.value))} aria-label=\""
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 66,
+    "commentaire": false,
+    "texte": ".range(i * PAGE, (i + 1) * PAGE - 1),"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 145,
+    "commentaire": false,
+    "texte": "const { data, count } = await q.range(from, from + pageSize - 1);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 195,
+    "commentaire": false,
+    "texte": ").range(w.localFrom, w.localFrom + w.take - 1),"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 315,
+    "commentaire": false,
+    "texte": "let q: any = supabase.from('akasha_entries').select('category:attributes->>category').range(from, from + PAGE - 1);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 350,
+    "commentaire": false,
+    "texte": ".range(from, from + PAGE - 1);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 379,
+    "commentaire": false,
+    "texte": ".range(from, from + PAGE - 1);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 406,
+    "commentaire": false,
+    "texte": ".range(from, from + PAGE - 1);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 532,
+    "commentaire": false,
+    "texte": "const { data } = await q.range(from, from + PAGE - 1);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 669,
+    "commentaire": false,
+    "texte": ".range(0, limit - 1);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 732,
+    "commentaire": false,
+    "texte": "const { data } = await base().order('slug', { ascending: true }).range(idx, idx);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 769,
+    "commentaire": true,
+    "texte": "// PostgREST plafonne CHAQUE requête à 1000 lignes quel que soit le `.range()` demandé (même"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 781,
+    "commentaire": false,
+    "texte": "return q.order('id', { ascending: true }).range(i * PAGE, Math.min((i + 1) * PAGE, total) - 1);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 801,
+    "commentaire": false,
+    "texte": "q = q.order(`attributes->${numAttr}`, { ascending: false, nullsFirst: false }).range(0, limit - 1);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 815,
+    "commentaire": false,
+    "texte": "const { data } = await supabase.from('akasha_entries').select('universe').range(from, from + PAGE - 1);"
+   },
+   {
+    "fichier": "lib/akasha/relations.ts",
+    "ligne": 146,
+    "commentaire": false,
+    "texte": ".range(debut, debut + 999);"
+   },
+   {
+    "fichier": "lib/akasha/relations.ts",
+    "ligne": 343,
+    "commentaire": false,
+    "texte": ".from('ops_notes').select('id, content, done').eq('source', SOURCE_JOURNAL).range(debut, debut + 999);"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 216,
+    "commentaire": false,
+    "texte": "{ key: 'range', label: 'Portée' },"
+   }
+  ],
+  "animations": [
+   {
+    "fichier": "components/akasha/EntityAttributes.tsx",
+    "ligne": 138,
+    "commentaire": false,
+    "texte": "'sections', 'forms', 'statLabels', 'gallery', 'animations', 'quotes',"
+   }
+  ],
+  "tailedBeast": [],
+  "clans": [],
+  "motto": [],
+  "hokage": [],
+  "leader": [
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 558,
+    "commentaire": false,
+    "texte": "{etape && str(etape.leader) && <Row k={eraLabels.leader} v={str(etape.leader)!} />}"
+   }
+  ],
+  "symbol": [
+   {
+    "fichier": "components/food/delivery/DriverMap.tsx",
+    "ligne": 103,
+    "commentaire": false,
+    "texte": "type: 'symbol',"
+   }
+  ],
+  "founded": [],
+  "founders": [],
+  "landmarks": [],
+  "population": [],
+  "leaderTitle": [],
+  "villageRank": [],
+  "climate": [
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 199,
+    "commentaire": false,
+    "texte": "{ key: 'climate', label: 'Climat' },"
+   }
+  ],
+  "coordinates": [
+   {
+    "fichier": "app/food/afroweek06/checkout/page.tsx",
+    "ligne": 114,
+    "commentaire": false,
+    "texte": "const coords = (await geoRes.json())?.features?.[0]?.geometry?.coordinates"
+   },
+   {
+    "fichier": "components/home/Hero.tsx",
+    "ligne": 239,
+    "commentaire": false,
+    "texte": "if (f?.geometry?.coordinates) setAutoDest({ lng: f.geometry.coordinates[0], lat: f.geometry.coordinates[1], label: f.properties?.label || t });"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 200,
+    "commentaire": false,
+    "texte": "{ key: 'coordinates', label: 'Coordonnées' },"
+   }
+  ],
+  "type": [
+   {
+    "fichier": "app/api/news/moderate/route.ts",
+    "ligne": 51,
+    "commentaire": false,
+    "texte": "const rawText = message.content.find((b) => b.type === 'text')?.text ?? '';"
+   },
+   {
+    "fichier": "app/api/niko/route.ts",
+    "ligne": 129,
+    "commentaire": false,
+    "texte": "if (ev.type === 'content_block_start' && typeof ev.index === 'number' && ev.content_block) {"
+   },
+   {
+    "fichier": "app/api/niko/route.ts",
+    "ligne": 130,
+    "commentaire": false,
+    "texte": "blocks[ev.index] = { type: ev.content_block.type, text: '', id: ev.content_block.id, name: ev.content_block.name, json: '' };"
+   },
+   {
+    "fichier": "app/api/niko/route.ts",
+    "ligne": 131,
+    "commentaire": false,
+    "texte": "} else if (ev.type === 'content_block_delta' && typeof ev.index === 'number' && ev.delta) {"
+   },
+   {
+    "fichier": "app/api/niko/route.ts",
+    "ligne": 133,
+    "commentaire": false,
+    "texte": "if (ev.delta.type === 'text_delta' && ev.delta.text) { b.text += ev.delta.text; onText(ev.delta.text); }"
+   },
+   {
+    "fichier": "app/api/niko/route.ts",
+    "ligne": 134,
+    "commentaire": false,
+    "texte": "else if (ev.delta.type === 'input_json_delta' && ev.delta.partial_json) { b.json += ev.delta.partial_json; }"
+   },
+   {
+    "fichier": "app/api/niko/route.ts",
+    "ligne": 135,
+    "commentaire": false,
+    "texte": "} else if (ev.type === 'message_delta' && ev.delta?.stop_reason) {"
+   },
+   {
+    "fichier": "app/api/niko/route.ts",
+    "ligne": 145,
+    "commentaire": false,
+    "texte": "if (b.type === 'text' && b.text) content.push({ type: 'text', text: b.text });"
+   },
+   {
+    "fichier": "app/api/niko/route.ts",
+    "ligne": 146,
+    "commentaire": false,
+    "texte": "else if (b.type === 'tool_use' && b.id && b.name) {"
+   },
+   {
+    "fichier": "app/api/ops/claude/route.ts",
+    "ligne": 40,
+    "commentaire": false,
+    "texte": "if (e.type === 'assistant') {"
+   },
+   {
+    "fichier": "app/api/ops/claude/route.ts",
+    "ligne": 42,
+    "commentaire": false,
+    "texte": "if (bloc.type === 'text' && bloc.text) push({ k: 'texte', v: bloc.text });"
+   },
+   {
+    "fichier": "app/api/ops/claude/route.ts",
+    "ligne": 43,
+    "commentaire": false,
+    "texte": "if (bloc.type === 'tool_use') push({ k: 'outil', v: bloc.name });"
+   },
+   {
+    "fichier": "app/api/ops/claude/route.ts",
+    "ligne": 45,
+    "commentaire": false,
+    "texte": "} else if (e.type === 'result') {"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 115,
+    "commentaire": false,
+    "texte": "const dernier = recents.find((r) => r.task_type === a.type);"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 116,
+    "commentaire": false,
+    "texte": "const file = enFile.get(a.type) ?? 0;"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 129,
+    "commentaire": false,
+    "texte": "if (a.type === 'claude_console') action = 'prêt — tape une consigne ci-dessous';"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 130,
+    "commentaire": false,
+    "texte": "if (a.type === 'hhem_ancrage') {"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 260,
+    "commentaire": false,
+    "texte": "if (r.type === 'character') m.persos++; else m.autres++;"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 268,
+    "commentaire": false,
+    "texte": "base().eq('type', 'character'),"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 269,
+    "commentaire": false,
+    "texte": "base().eq('type', 'character').not('attributes->>descFr', 'is', null),"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 270,
+    "commentaire": false,
+    "texte": "base().neq('type', 'character'),"
+   },
+   {
+    "fichier": "app/api/ops/state/route.ts",
+    "ligne": 271,
+    "commentaire": false,
+    "texte": "base().neq('type', 'character').not('attributes->>descFr', 'is', null),"
+   },
+   {
+    "fichier": "app/api/reviews/import/route.ts",
+    "ligne": 109,
+    "commentaire": false,
+    "texte": "? `${listing.name} (type: ${listing.type}) — ${listing.description ?? ''}`"
+   },
+   {
+    "fichier": "app/api/reviews/route.ts",
+    "ligne": 36,
+    "commentaire": false,
+    "texte": "? `${listing.name} (type: ${listing.type}) — ${listing.description ?? ''}`"
+   },
+   {
+    "fichier": "app/api/sms/route.ts",
+    "ligne": 105,
+    "commentaire": false,
+    "texte": "const rawText = message.content.find((b) => b.type === 'text')?.text ?? '';"
+   },
+   {
+    "fichier": "app/api/stripe/webhook/route.ts",
+    "ligne": 22,
+    "commentaire": false,
+    "texte": "if (event.type === 'checkout.session.completed') {"
+   },
+   {
+    "fichier": "app/api/whatsapp/route.ts",
+    "ligne": 86,
+    "commentaire": false,
+    "texte": ".filter((m) => m.type === 'text' && m.text?.body);"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/opengraph-image.tsx",
+    "ligne": 17,
+    "commentaire": false,
+    "texte": "const m = entry ? TYPE_META[entry.type] : TYPE_META.character;"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 28,
+    "commentaire": false,
+    "texte": "const m = TYPE_META[entry.type];"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 51,
+    "commentaire": false,
+    "texte": "const m = TYPE_META[entry.type];"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 60,
+    "commentaire": false,
+    "texte": "if (entry.type === 'character') {"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 90,
+    "commentaire": false,
+    "texte": "if (entry.type === 'status') {"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 110,
+    "commentaire": false,
+    "texte": "if ((entry.type === 'power' || entry.type === 'skill') && category === 'Attaque') {"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 119,
+    "commentaire": false,
+    "texte": ".filter((r) => r.relation === 'maitrise' && r.target.type === 'character')"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 183,
+    "commentaire": false,
+    "texte": "<EntityAttributes type={entry.type} attributes={entry.attributes} universe={entry.universe} />"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 184,
+    "commentaire": false,
+    "texte": "<SimilarSection universe={entry.universe} cat={category} type={entry.type} excludeSlug={entry.slug} />"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 241,
+    "commentaire": false,
+    "texte": "<EntityAttributes type={entry.type} attributes={entry.attributes} universe={entry.universe} />"
+   },
+   {
+    "fichier": "app/learn/akasha/[slug]/page.tsx",
+    "ligne": 242,
+    "commentaire": false,
+    "texte": "<SimilarSection universe={entry.universe} cat={category} type={entry.type} excludeSlug={entry.slug} />"
+   },
+   {
+    "fichier": "app/learn/akasha/api/search/route.ts",
+    "ligne": 90,
+    "commentaire": false,
+    "texte": "const arr = byType.get(r.type) ?? [];"
+   },
+   {
+    "fichier": "app/learn/akasha/api/search/route.ts",
+    "ligne": 92,
+    "commentaire": false,
+    "texte": "byType.set(r.type, arr);"
+   },
+   {
+    "fichier": "app/learn/akasha/page.tsx",
+    "ligne": 55,
+    "commentaire": false,
+    "texte": "const type = asAkashaType(sp.type);"
+   },
+   {
+    "fichier": "app/learn/akasha/page.tsx",
+    "ligne": 130,
+    "commentaire": false,
+    "texte": "{type && <input type=\"hidden\" name=\"type\" value={type} />}"
+   },
+   {
+    "fichier": "app/ops/AgentsPanel.tsx",
+    "ligne": 49,
+    "commentaire": false,
+    "texte": "<article key={a.type} style={{"
+   },
+   {
+    "fichier": "app/pro/inscription/page.tsx",
+    "ligne": 13,
+    "commentaire": false,
+    "texte": "const initialDomain = searchParams?.get('domain') || searchParams?.get('type') || 'auto';"
+   },
+   {
+    "fichier": "app/pro/reviews/import/ImportClient.tsx",
+    "ligne": 84,
+    "commentaire": false,
+    "texte": "<option key={l.id} value={l.id}>{l.name}{l.type ? ` · ${l.type}` : ''}</option>"
+   },
+   {
+    "fichier": "app/pro/reviews/page.tsx",
+    "ligne": 169,
+    "commentaire": false,
+    "texte": "{listing.type}"
+   },
+   {
+    "fichier": "app/profil/ProfilHub.tsx",
+    "ligne": 175,
+    "commentaire": false,
+    "texte": "{creditTx.length ? <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>{creditTx.map(c => <Row key={c.id} left={c.type === 'purchase' ? "
+   },
+   {
+    "fichier": "app/stay/HeroSlideshow.tsx",
+    "ligne": 69,
+    "commentaire": false,
+    "texte": "const theme = BG_BY_TYPE[slide.type] ?? { bg: 'linear-gradient(135deg,#060F1E,#0A1628)', accent: 'var(--amber)' };"
+   },
+   {
+    "fichier": "app/stay/HeroSlideshow.tsx",
+    "ligne": 70,
+    "commentaire": false,
+    "texte": "const icon = ICON_BY_TYPE[slide.type] ?? '🏡';"
+   },
+   {
+    "fichier": "app/stay/WowFilter.tsx",
+    "ligne": 95,
+    "commentaire": false,
+    "texte": "return f.types.includes(l.type);"
+   },
+   {
+    "fichier": "app/stay/WowFilter.tsx",
+    "ligne": 117,
+    "commentaire": false,
+    "texte": ": listings.filter(l => f.byCountry ? l.country === f.byCountry : f.types.includes(l.type)).length;"
+   },
+   {
+    "fichier": "app/stay/WowFilter.tsx",
+    "ligne": 152,
+    "commentaire": false,
+    "texte": "const icon = ICON_BY_TYPE[l.type] ?? '🏡';"
+   },
+   {
+    "fichier": "app/stay/WowFilter.tsx",
+    "ligne": 173,
+    "commentaire": false,
+    "texte": "objectPosition: CARD_OBJECT_POS_SLUG[l.slug] ?? CARD_OBJECT_POS[l.type] ?? '50% 40%',"
+   },
+   {
+    "fichier": "app/stay/[slug]/[city]/page.tsx",
+    "ligne": 149,
+    "commentaire": false,
+    "texte": "<div style={{ fontFamily: 'var(--fo)', fontSize: 11, color: 'var(--td3)', marginBottom: '0.5rem' }}>📍 {l.type} · {l.guests} pers.</div>"
+   },
+   {
+    "fichier": "app/stay/[slug]/page.tsx",
+    "ligne": 75,
+    "commentaire": false,
+    "texte": "l.type.replace(/-/g, ' '),"
+   },
+   {
+    "fichier": "app/stay/[slug]/page.tsx",
+    "ligne": 77,
+    "commentaire": false,
+    "texte": "`${l.type.replace(/-/g, ' ')} location`,"
+   },
+   {
+    "fichier": "app/stay/[slug]/page.tsx",
+    "ligne": 157,
+    "commentaire": false,
+    "texte": "const icon = TYPE_ICONS[l.type] ?? '🏡';"
+   },
+   {
+    "fichier": "app/stay/[slug]/page.tsx",
+    "ligne": 191,
+    "commentaire": false,
+    "texte": "{l.type.replace(/-/g, ' ')}"
+   },
+   {
+    "fichier": "app/stay/page.tsx",
+    "ligne": 123,
+    "commentaire": false,
+    "texte": "type: l.type,"
+   },
+   {
+    "fichier": "app/stay/page.tsx",
+    "ligne": 139,
+    "commentaire": false,
+    "texte": "type: l.type,"
+   },
+   {
+    "fichier": "app/stay/theme/[theme]/page.tsx",
+    "ligne": 141,
+    "commentaire": false,
+    "texte": "return wowData.listings.filter(l => types.includes(l.type));"
+   },
+   {
+    "fichier": "app/stay/theme/[theme]/page.tsx",
+    "ligne": 224,
+    "commentaire": false,
+    "texte": "const icon = ICON_BY_TYPE[l.type] ?? '🏡';"
+   },
+   {
+    "fichier": "app/wallet/page.tsx",
+    "ligne": 103,
+    "commentaire": false,
+    "texte": "{txTypeLabel[tx.type] || tx.type}"
+   },
+   {
+    "fichier": "app/wallet/page.tsx",
+    "ligne": 109,
+    "commentaire": false,
+    "texte": "<div style={{ fontFamily: 'var(--fn)', fontSize: 22, color: txTypeColor[tx.type] || 'var(--td)' }}>"
+   },
+   {
+    "fichier": "app/wallet/page.tsx",
+    "ligne": 110,
+    "commentaire": false,
+    "texte": "{tx.type === 'spend' ? '-' : '+'}{Math.abs(tx.amount)}"
+   },
+   {
+    "fichier": "components/AccessCTA.tsx",
+    "ligne": 16,
+    "commentaire": false,
+    "texte": "nom: form.nom, email: form.email, type: form.type,"
+   },
+   {
+    "fichier": "components/AccessCTA.tsx",
+    "ligne": 54,
+    "commentaire": false,
+    "texte": "value={form.type} onChange={e => setForm(f => ({ ...f, type: e.target.value }))}"
+   },
+   {
+    "fichier": "components/akasha/AkashaFilters.tsx",
+    "ligne": 18,
+    "commentaire": false,
+    "texte": "const isActive = (tab.type ?? undefined) === active;"
+   },
+   {
+    "fichier": "components/akasha/AkashaFilters.tsx",
+    "ligne": 22,
+    "commentaire": false,
+    "texte": "href={registryHref({ ...keep, universe, search, type: tab.type ?? undefined })}"
+   },
+   {
+    "fichier": "components/akasha/AkashaList.tsx",
+    "ligne": 45,
+    "commentaire": false,
+    "texte": "<span style={{ width: 10, height: 10, transform: 'rotate(45deg)', borderRadius: 2, background: TYPE_META[e.type].color, display: 'block', margin: 'aut"
+   },
+   {
+    "fichier": "components/akasha/AkashaList.tsx",
+    "ligne": 83,
+    "commentaire": false,
+    "texte": "<span className=\"ak-strip-thumb\" aria-hidden style={{ ['--tc' as string]: TYPE_META[e.type].color }}>"
+   },
+   {
+    "fichier": "components/akasha/AkashaList.tsx",
+    "ligne": 88,
+    "commentaire": false,
+    "texte": "<span style={{ width: 12, height: 12, transform: 'rotate(45deg)', borderRadius: 3, background: TYPE_META[e.type].color, display: 'block' }} />"
+   },
+   {
+    "fichier": "components/akasha/AkashaList.tsx",
+    "ligne": 140,
+    "commentaire": false,
+    "texte": "<span style={{ fontFamily: 'var(--fo)', fontSize: 9, fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: TYPE_META[entry.type"
+   },
+   {
+    "fichier": "components/akasha/AkashaList.tsx",
+    "ligne": 141,
+    "commentaire": false,
+    "texte": "{TYPE_META[entry.type].label}"
+   },
+   {
+    "fichier": "components/akasha/AkashaMosaic.tsx",
+    "ligne": 34,
+    "commentaire": false,
+    "texte": "const m = TYPE_META[entry.type];"
+   },
+   {
+    "fichier": "components/akasha/AkashaMosaic.tsx",
+    "ligne": 90,
+    "commentaire": false,
+    "texte": "{entry.category && entry.type !== 'character' && ("
+   },
+   {
+    "fichier": "components/akasha/CategoryRail.tsx",
+    "ligne": 14,
+    "commentaire": false,
+    "texte": "if (type) p.set('type', type);"
+   },
+   {
+    "fichier": "components/akasha/CharacterCard.tsx",
+    "ligne": 72,
+    "commentaire": false,
+    "texte": "const m = TYPE_META[entry.type];"
+   },
+   {
+    "fichier": "components/akasha/EntityRelations.tsx",
+    "ligne": 18,
+    "commentaire": false,
+    "texte": "const m = TYPE_META[rel.target.type];"
+   },
+   {
+    "fichier": "components/akasha/FilterBar.tsx",
+    "ligne": 11,
+    "commentaire": false,
+    "texte": "const t = asAkashaType(f.type);"
+   },
+   {
+    "fichier": "components/akasha/FilterBar.tsx",
+    "ligne": 14,
+    "commentaire": false,
+    "texte": "if (t) chips.push({ key: 'type', label: `${TYPE_META[t].icon} ${TYPE_META[t].plural}`, color: TYPE_META[t].color, without: { ...f, type: undefined, pa"
+   },
+   {
+    "fichier": "components/akasha/OmniSearch.tsx",
+    "ligne": 88,
+    "commentaire": false,
+    "texte": "<div key={g.type} style={{ padding: '4px 0 10px' }}>"
+   },
+   {
+    "fichier": "components/akasha/UniverseRail.tsx",
+    "ligne": 12,
+    "commentaire": false,
+    "texte": "if (type) p.set('type', type);"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 143,
+    "commentaire": false,
+    "texte": "const m = TYPE_META[entry.type];"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 158,
+    "commentaire": false,
+    "texte": "const eraLabels = ERA_LABELS[entry.type] ?? ERA_LABELS_DEFAUT;"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 181,
+    "commentaire": false,
+    "texte": "const primary = PRIMARY_RELATION[entry.type];"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 197,
+    "commentaire": false,
+    "texte": ".filter((r) => primaryRels.has(r.relation) && r.target.type === 'character')"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 214,
+    "commentaire": false,
+    "texte": "const isOrbit = has('orbit') && entry.type === 'place';"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 223,
+    "commentaire": false,
+    "texte": ".filter((r) => !(primaryRels.has(r.relation) && r.target.type === 'character'))"
+   },
+   {
+    "fichier": "components/akasha/zone/EntityZone.tsx",
+    "ligne": 458,
+    "commentaire": false,
+    "texte": "<span aria-hidden style={{ fontSize: 13, opacity: 0.7 }}>{TYPE_META[n.type].icon}</span>"
+   },
+   {
+    "fichier": "components/akasha/zone/OrganizationZone.tsx",
+    "ligne": 41,
+    "commentaire": false,
+    "texte": ".filter((r) => r.relation === 'appartient' && r.target.type === 'character')"
+   },
+   {
+    "fichier": "components/akasha/zone/OrganizationZone.tsx",
+    "ligne": 49,
+    "commentaire": false,
+    "texte": ".filter((r) => r.relation === 'appartient' && r.target.type === 'artifact')"
+   },
+   {
+    "fichier": "components/home/AutoModule.tsx",
+    "ligne": 225,
+    "commentaire": false,
+    "texte": "setVehicles(v => [...v, { id, label: form.label.trim(), plate: form.plate.trim().toUpperCase(), type: form.type }]);"
+   },
+   {
+    "fichier": "components/home/AutoModule.tsx",
+    "ligne": 236,
+    "commentaire": false,
+    "texte": "(types.length === 0 || types.includes(v.type)) &&"
+   },
+   {
+    "fichier": "components/home/AutoModule.tsx",
+    "ligne": 271,
+    "commentaire": false,
+    "texte": "<span style={{ fontSize: 16 }}>{vicon(v.type)}</span>"
+   },
+   {
+    "fichier": "components/home/AutoModule.tsx",
+    "ligne": 284,
+    "commentaire": false,
+    "texte": "const a = form.type === t.key;"
+   },
+   {
+    "fichier": "components/home/AutoModule.tsx",
+    "ligne": 478,
+    "commentaire": false,
+    "texte": "const tm = typeMeta(v.type);"
+   },
+   {
+    "fichier": "components/home/StayModule.tsx",
+    "ligne": 484,
+    "commentaire": false,
+    "texte": "<Thumb grad=\"linear-gradient(135deg,rgba(224,112,56,.28),rgba(8,104,160,.18))\" emoji={WOW_TYPE_EMOJI[w.type] || '🏠'} img={w.cover} h={120} />"
+   },
+   {
+    "fichier": "lib/akasha/href.ts",
+    "ligne": 22,
+    "commentaire": false,
+    "texte": "if (f.type) p.set('type', f.type);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 42,
+    "commentaire": false,
+    "texte": "id: r.id, slug: r.slug, type: r.type, name: r.name, is_fiction: r.is_fiction,"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 125,
+    "commentaire": false,
+    "texte": "if (type) q = q.eq('type', type);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 316,
+    "commentaire": false,
+    "texte": "if (type) q = q.eq('type', type);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 377,
+    "commentaire": false,
+    "texte": ".eq('type', 'character')"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 403,
+    "commentaire": false,
+    "texte": ".eq('type', 'character')"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 436,
+    "commentaire": false,
+    "texte": "byType[r.type] = (byType[r.type] ?? 0) + 1;"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 453,
+    "commentaire": false,
+    "texte": ".map((r) => ({ s: r.slug, n: r.name, t: r.type }))"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 488,
+    "commentaire": false,
+    "texte": ".filter((r) => r.type === 'character' && r.image_url && r.rarity != null && r.rarity in bucket)"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 672,
+    "commentaire": false,
+    "texte": "else q = q.eq('type', type);"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 692,
+    "commentaire": false,
+    "texte": ".eq('type', 'character')"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 705,
+    "commentaire": false,
+    "texte": ".eq('type', 'character')"
+   },
+   {
+    "fichier": "lib/akasha/queries.ts",
+    "ligne": 800,
+    "commentaire": false,
+    "texte": "if (type) q = q.eq('type', type);"
+   },
+   {
+    "fichier": "lib/akasha/relations.ts",
+    "ligne": 164,
+    "commentaire": false,
+    "texte": "const e: EntreeIndexee = { id: l.id, slug: l.slug, name: l.name, type: l.type };"
+   },
+   {
+    "fichier": "lib/akasha/relations.ts",
+    "ligne": 196,
+    "commentaire": false,
+    "texte": "const e: EntreeIndexee = { id: l.id, slug: l.slug, name: l.name, type: l.type };"
+   },
+   {
+    "fichier": "lib/akasha/relations.ts",
+    "ligne": 223,
+    "commentaire": false,
+    "texte": "if (attendu === 'character' && c.type !== 'character') return null;"
+   },
+   {
+    "fichier": "lib/akasha/relations.ts",
+    "ligne": 224,
+    "commentaire": false,
+    "texte": "if (attendu === 'groupe' && c.type === 'character') return null;"
+   },
+   {
+    "fichier": "lib/akasha/schema.ts",
+    "ligne": 97,
+    "commentaire": false,
+    "texte": "export const akashaEntrySchema = z.discriminatedUnion('type', ["
+   },
+   {
+    "fichier": "lib/akasha/shape.test.ts",
+    "ligne": 3,
+    "commentaire": true,
+    "texte": "// absent), et un test qui échoue si quelqu'un rebranche un aiguillage par `type`."
+   },
+   {
+    "fichier": "lib/akasha/shape.test.ts",
+    "ligne": 230,
+    "commentaire": true,
+    "texte": "// ─── Le test qui doit échouer si quelqu'un rebranche un aiguillage par `type` ──"
+   },
+   {
+    "fichier": "lib/akasha/shape.test.ts",
+    "ligne": 232,
+    "commentaire": false,
+    "texte": "test('AUCUN aiguillage par type — deux entrées aux capacités identiques mais de `type` différent produisent EXACTEMENT le même shape', () => {"
+   },
+   {
+    "fichier": "lib/akasha/shape.test.ts",
+    "ligne": 234,
+    "commentaire": true,
+    "texte": "// AkashaEntryDetail), avec un `type` DIFFÉRENT et TOUT LE RESTE identique. `ShapeEntry` ne"
+   },
+   {
+    "fichier": "lib/akasha/shape.test.ts",
+    "ligne": 235,
+    "commentaire": true,
+    "texte": "// déclarant pas de champ `type`, deriveShape ne peut structurellement pas le lire — ce test"
+   },
+   {
+    "fichier": "lib/akasha/shape.test.ts",
+    "ligne": 237,
+    "commentaire": true,
+    "texte": "// `if (entry.type === 'character') …` en élargissant le contrat, ce test romprait."
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 3,
+    "commentaire": true,
+    "texte": "// `type`. C'est tout l'enjeu (cf. tasks/akasha-architecture.md, LOT 2a) : un aiguillage par `type`"
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 6,
+    "commentaire": true,
+    "texte": "// champ `type` — il est structurellement impossible d'écrire `entry.type === …` dans ce fichier."
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 42,
+    "commentaire": true,
+    "texte": "// Absence délibérée de `type` : voir le commentaire d'en-tête. Une relation ne porte, elle aussi,"
+   },
+   {
+    "fichier": "lib/akasha/shape.ts",
+    "ligne": 165,
+    "commentaire": false,
+    "texte": "(r) => MEMBERSHIP_RELATIONS.has(r.relation) && r.target.type === 'character',"
+   },
+   {
+    "fichier": "lib/akasha/types.ts",
+    "ligne": 52,
+    "commentaire": false,
+    "texte": "'id' | 'slug' | 'type' | 'name' | 'is_fiction' | 'universe' | 'summary' | 'image_url' | 'rarity'"
+   },
+   {
+    "fichier": "lib/claude/review-analyzer.ts",
+    "ligne": 98,
+    "commentaire": false,
+    "texte": "const rawText = message.content[0].type === 'text' ? message.content[0].text : '';"
+   },
+   {
+    "fichier": "lib/devis/schema.ts",
+    "ligne": 42,
+    "commentaire": false,
+    "texte": "export const ligneSchema = z.discriminatedUnion('type', [ligneMaterielSchema, ligneMainOeuvreSchema]);"
+   },
+   {
+    "fichier": "lib/devis/schema.ts",
+    "ligne": 78,
+    "commentaire": false,
+    "texte": "if (l.type === 'main_oeuvre' && l.taux_horaire !== l.prix_unitaire_ht) {"
+   },
+   {
+    "fichier": "lib/liquid-glass.js",
+    "ligne": 130,
+    "commentaire": false,
+    "texte": "cm.setAttribute(\"type\", \"matrix\");"
+   }
+  ],
+  "bearer": [],
+  "wielders": []
+ }
+}

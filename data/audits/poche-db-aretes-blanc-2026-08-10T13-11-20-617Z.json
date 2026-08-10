@@ -1,0 +1,988 @@
+{
+ "chantier": "chantier 4 — arêtes des isolées Dragon Ball (infobox dragonball.fandom.com)",
+ "quand": "2026-08-10T13:11:39.087Z",
+ "mode": "à blanc",
+ "base": {
+  "fiches": 7654,
+  "aretes": 16788,
+  "isoleesDragonBall": 146,
+  "pagesSourcesLues": 59
+ },
+ "champs": {
+  "address": {
+   "relation": "habite",
+   "typesCible": [
+    "place"
+   ],
+   "sens": "sortant"
+  },
+  "homeworld": {
+   "relation": "habite",
+   "typesCible": [
+    "place"
+   ],
+   "sens": "sortant"
+  },
+  "mentors": {
+   "relation": "mentor",
+   "typesCible": [
+    "character"
+   ],
+   "sens": "sortant"
+  },
+  "students": {
+   "relation": "eleve",
+   "typesCible": [
+    "character"
+   ],
+   "sens": "sortant"
+  },
+  "famconnect": {
+   "relation": "famille",
+   "typesCible": [
+    "character"
+   ],
+   "sens": "sortant",
+   "exigeParente": true
+  },
+  "user": {
+   "relation": "possede",
+   "typesCible": [
+    "character"
+   ],
+   "sens": "entrant",
+   "typesSource": [
+    "artifact"
+   ]
+  }
+ },
+ "aretes": [
+  {
+   "deSlug": "mutaito",
+   "de": "Mutaito",
+   "deType": "character",
+   "relation": "eleve",
+   "versSlug": "tsuru-sennin",
+   "vers": "Tsuru-Sennin",
+   "versType": "character",
+   "isoleeSortie": "mutaito",
+   "champ": "students",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Master Mutaito",
+   "pont": "P2 lien interlangue",
+   "preuve": "https://dragonball.fandom.com/wiki/Master%20Mutaito — infobox {{Character Infobox}}, students = « [[Master Shen]] » ; pont P2 lien interlangue : dragonball.fandom.com déclare fr = « Tsuru Sennin » pour la page « Master Shen »"
+  },
+  {
+   "deSlug": "mutaito",
+   "de": "Mutaito",
+   "deType": "character",
+   "relation": "eleve",
+   "versSlug": "tao-pai-pai",
+   "vers": "Tao Pai Pai",
+   "versType": "character",
+   "isoleeSortie": "mutaito",
+   "champ": "students",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Master Mutaito",
+   "pont": "P4 même page",
+   "preuve": "https://dragonball.fandom.com/wiki/Master%20Mutaito — infobox {{Character Infobox}}, students = « [[Mercenary Tao]]<ref name=\"DBep129\">''[[Dragon Ball (anime)|Dragon Ball]]'' episode 129, \"[[The Time Room]]\"</ref> » ; pont P4 même page : [[Mercenary Tao]] et notre fiche « Tao Pai Pai » atteignent la même page « Mercenary Tao » (redirection dure, sans fragment)"
+  },
+  {
+   "deSlug": "yogengyo",
+   "de": "Yogengyo",
+   "deType": "character",
+   "relation": "habite",
+   "versSlug": "beerus-planet",
+   "vers": "Monde de Beerus",
+   "versType": "place",
+   "isoleeSortie": "yogengyo",
+   "champ": "address",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Oracle Fish",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Oracle%20Fish — infobox {{Character Infobox}}, address = « [[Beerus' Planet]] » ; pont P1 nom identique : « Beerus' Planet » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "meta-cooler",
+   "de": "Meta-Cooler",
+   "deType": "character",
+   "relation": "habite",
+   "versSlug": "big-gete-star",
+   "vers": "Big Gete Star",
+   "versType": "place",
+   "isoleeSortie": "meta-cooler",
+   "champ": "address",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Meta-Cooler",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Meta-Cooler — infobox {{Character Infobox}}, address = « [[Big Gete Star]] » ; pont P1 nom identique : « Big Gete Star » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "guldo",
+   "de": "Guldo",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Ginyu Force]] <small>(sans [[Guldo]])</small> » ; pont P1 nom identique : « Guldo » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "bulma",
+   "de": "Bulma",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Bulma]] » ; pont P1 nom identique : « Bulma » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "vegeta",
+   "de": "Vegeta",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Vegeta]] » ; pont P1 nom identique : « Vegeta » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "bardock",
+   "de": "Bardock",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Bardock]] » ; pont P1 nom identique : « Bardock » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "fasha",
+   "de": "Fasha",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Fasha]] » ; pont P1 nom identique : « Fasha » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "raditz",
+   "de": "Raditz",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Raditz]] » ; pont P1 nom identique : « Raditz » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "nappa",
+   "de": "Nappa",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Nappa]] » ; pont P1 nom identique : « Nappa » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "turles",
+   "de": "Turles",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Turles]] » ; pont P1 nom identique : « Turles » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "freezer",
+   "de": "Freezer",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P2 lien interlangue",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Frieza]] » ; pont P2 lien interlangue : dragonball.fandom.com déclare fr = « Freezer » pour la page « Frieza »"
+  },
+  {
+   "deSlug": "sorbet",
+   "de": "Sorbet",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Sorbet]] » ; pont P1 nom identique : « Sorbet » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "tagoma",
+   "de": "Tagoma",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Tagoma]] » ; pont P1 nom identique : « Tagoma » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "lemo",
+   "de": "Lemo",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Lemo]] » ; pont P1 nom identique : « Lemo » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "cheelai",
+   "de": "Cheelai",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "scouter",
+   "vers": "Scouter",
+   "versType": "artifact",
+   "isoleeSortie": "scouter",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Scouter",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Scouter — infobox {{Infobox Technique}}, user = « [[Cheelai]] » ; pont P1 nom identique : « Cheelai » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "toppo",
+   "de": "Toppo",
+   "deType": "character",
+   "relation": "mentor",
+   "versSlug": "vermoud",
+   "vers": "Vermoud",
+   "versType": "character",
+   "isoleeSortie": "toppo",
+   "champ": "mentors",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Top",
+   "pont": "P4 même page",
+   "preuve": "https://dragonball.fandom.com/wiki/Top — infobox {{Character Infobox}}, mentors = « [[Belmod]] » ; pont P4 même page : [[Belmod]] et notre fiche « Vermoud » atteignent la même page « Belmod » (redirection dure, sans fragment)"
+  },
+  {
+   "deSlug": "toppo",
+   "de": "Toppo",
+   "deType": "character",
+   "relation": "mentor",
+   "versSlug": "marcarita",
+   "vers": "Marcarita",
+   "versType": "character",
+   "isoleeSortie": "toppo",
+   "champ": "mentors",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Top",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Top — infobox {{Character Infobox}}, mentors = « [[Marcarita]] » ; pont P1 nom identique : « Marcarita » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "pirozhki",
+   "de": "Pirozhki",
+   "deType": "character",
+   "relation": "mentor",
+   "versSlug": "mr-satan",
+   "vers": "Mr. Satan",
+   "versType": "character",
+   "isoleeSortie": "pirozhki",
+   "champ": "mentors",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Pirozhki",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Pirozhki — infobox {{Character Infobox}}, mentors = « [[Mr. Satan]] » ; pont P1 nom identique : « Mr. Satan » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "gora",
+   "de": "Gora",
+   "deType": "character",
+   "relation": "habite",
+   "versSlug": "demon-realm",
+   "vers": "Royaume des Démons",
+   "versType": "place",
+   "isoleeSortie": "gora",
+   "champ": "address",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Gola",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Gola — infobox {{Character Infobox}}, address = « [[Demon Realm]] » ; pont P1 nom identique : « Demon Realm » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "pteranodon",
+   "de": "Pteranodon",
+   "deType": "character",
+   "relation": "habite",
+   "versSlug": "earth",
+   "vers": "Terre",
+   "versType": "place",
+   "isoleeSortie": "pteranodon",
+   "champ": "homeworld",
+   "gabarit": "Race Infobox2",
+   "titreWiki": "Pterodactyl",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Pterodactyl — infobox {{Race Infobox2}}, homeworld = « [[Earth]] » ; pont P1 nom identique : « Earth » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "pteranodon",
+   "de": "Pteranodon",
+   "deType": "character",
+   "relation": "habite",
+   "versSlug": "sadala",
+   "vers": "Planète Sadala",
+   "versType": "place",
+   "isoleeSortie": "pteranodon",
+   "champ": "homeworld",
+   "gabarit": "Race Infobox2",
+   "titreWiki": "Pterodactyl",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Pterodactyl — infobox {{Race Infobox2}}, homeworld = « [[Sadala]] » ; pont P1 nom identique : « Sadala » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "shura",
+   "de": "Shura",
+   "deType": "character",
+   "relation": "habite",
+   "versSlug": "demon-realm",
+   "vers": "Royaume des Démons",
+   "versType": "place",
+   "isoleeSortie": "shura",
+   "champ": "address",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Shula",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Shula — infobox {{Character Infobox}}, address = « [[Demon Realm]] » ; pont P1 nom identique : « Demon Realm » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "vermoud",
+   "de": "Vermoud",
+   "deType": "character",
+   "relation": "mentor",
+   "versSlug": "marcarita",
+   "vers": "Marcarita",
+   "versType": "character",
+   "isoleeSortie": "vermoud",
+   "champ": "mentors",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Belmod",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Belmod — infobox {{Character Infobox}}, mentors = « [[Marcarita]] (attendant) » ; pont P1 nom identique : « Marcarita » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "tapion",
+   "de": "Tapion",
+   "deType": "character",
+   "relation": "habite",
+   "versSlug": "konats",
+   "vers": "Konats",
+   "versType": "place",
+   "isoleeSortie": "tapion",
+   "champ": "address",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Tapion",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Tapion — infobox {{Character Infobox}}, address = « [[Konats]] » ; pont P1 nom identique : « Konats » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "tapion",
+   "de": "Tapion",
+   "deType": "character",
+   "relation": "famille",
+   "versSlug": "minotia",
+   "vers": "Minotia",
+   "versType": "character",
+   "isoleeSortie": "tapion",
+   "champ": "famconnect",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Tapion",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Tapion — infobox {{Character Infobox}}, famconnect = « [[Minotia]] (younger brother) » ; pont P1 nom identique : « Minotia » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "minotia",
+   "de": "Minotia",
+   "deType": "character",
+   "relation": "habite",
+   "versSlug": "konats",
+   "vers": "Konats",
+   "versType": "place",
+   "isoleeSortie": "minotia",
+   "champ": "address",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Minotia",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Minotia — infobox {{Character Infobox}}, address = « [[Konats]] » ; pont P1 nom identique : « Konats » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "minotia",
+   "de": "Minotia",
+   "deType": "character",
+   "relation": "famille",
+   "versSlug": "tapion",
+   "vers": "Tapion",
+   "versType": "character",
+   "isoleeSortie": "minotia",
+   "champ": "famconnect",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Minotia",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Minotia — infobox {{Character Infobox}}, famconnect = « [[Tapion]] (brother) » ; pont P1 nom identique : « Tapion » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "beerus",
+   "de": "Beerus",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "super-dragon-balls",
+   "vers": "Super Dragon Balls",
+   "versType": "artifact",
+   "isoleeSortie": "super-dragon-balls",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Super Dragon Ball",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Super%20Dragon%20Ball — infobox {{Infobox Technique}}, user = « '''[[Beerus]] » ; pont P1 nom identique : « Beerus » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "zamasu",
+   "de": "Zamasu",
+   "deType": "character",
+   "relation": "possede",
+   "versSlug": "super-dragon-balls",
+   "vers": "Super Dragon Balls",
+   "versType": "artifact",
+   "isoleeSortie": "super-dragon-balls",
+   "champ": "user",
+   "gabarit": "Infobox Technique",
+   "titreWiki": "Super Dragon Ball",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Super%20Dragon%20Ball — infobox {{Infobox Technique}}, user = « [[Zamasu]] » ; pont P1 nom identique : « Zamasu » est le nom de notre fiche"
+  },
+  {
+   "deSlug": "hatchiyack",
+   "de": "Hatchiyack",
+   "deType": "character",
+   "relation": "habite",
+   "versSlug": "dark-planet",
+   "vers": "Planète Sombre",
+   "versType": "place",
+   "isoleeSortie": "hatchiyack",
+   "champ": "address",
+   "gabarit": "Character Infobox",
+   "titreWiki": "Hatchiyack",
+   "pont": "P1 nom identique",
+   "preuve": "https://dragonball.fandom.com/wiki/Hatchiyack — infobox {{Character Infobox}}, address = « [[Dark Planet|Evil Castle, Dark Planet]] » ; pont P1 nom identique : « Dark Planet » est le nom de notre fiche"
+  }
+ ],
+ "refuses": [
+  {
+   "de": "Lord Slug",
+   "deSlug": "lord-slug",
+   "champ": "address",
+   "cible": "Planet Cruiser",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Mutaito",
+   "deSlug": "mutaito",
+   "champ": "address",
+   "cible": "Mutaito's Training Grounds",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Mutaito",
+   "deSlug": "mutaito",
+   "champ": "students",
+   "cible": "Master Roshi",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Mutaito",
+   "deSlug": "mutaito",
+   "champ": "students",
+   "cible": "Dragon Ball (anime)",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Mutaito",
+   "deSlug": "mutaito",
+   "champ": "students",
+   "cible": "The Time Room",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Yogengyo",
+   "deSlug": "yogengyo",
+   "champ": "famconnect",
+   "cible": "Beerus",
+   "motif": "parenté non dite dans « [[Beerus]] (owner) »"
+  },
+  {
+   "de": "Yogengyo",
+   "deSlug": "yogengyo",
+   "champ": "famconnect",
+   "cible": "Whis",
+   "motif": "parenté non dite dans « [[Whis]] (caretaker) »"
+  },
+  {
+   "de": "Meta-Cooler",
+   "deSlug": "meta-cooler",
+   "champ": "famconnect",
+   "cible": "Meta-Cooler Core",
+   "motif": "parenté non dite dans « [[Meta-Cooler Core]] (creator) »"
+  },
+  {
+   "de": "Erasa",
+   "deSlug": "erasa",
+   "champ": "address",
+   "cible": "Satan City",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Shen",
+   "deSlug": "shen",
+   "champ": "famconnect",
+   "cible": "List of tertiary characters",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Janemba",
+   "deSlug": "janemba",
+   "champ": "famconnect",
+   "cible": "Saike Demon",
+   "motif": "parenté non dite dans « [[Saike Demon]] (host) »"
+  },
+  {
+   "de": "Janemba",
+   "deSlug": "janemba",
+   "champ": "famconnect",
+   "cible": "Janemba's Majin Vegeta",
+   "motif": "parenté non dite dans « [[Janemba's Majin Vegeta]] (creation)<ref name=\"SB\"/> »"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Saiyan Army",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Team Bardock",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Team Dodoria",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Frieza's Elite",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "King Vegeta's Elite",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Frieza Force",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Ginyu Force",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Cooler's Armored Squadron",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Turles Crusher Corps.",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Tarble",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Abo",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Kado",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Kuruzo",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Time Patrol",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Dragon Ball Xenoverse",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Taino",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Future Warrior",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Future Warrior (Xenoverse 2)",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Dragon Ball Xenoverse 2",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Xeno Trunks",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Scouter",
+   "deSlug": "scouter",
+   "champ": "user",
+   "cible": "Beat",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Zald",
+   "deSlug": "zald",
+   "champ": "famconnect",
+   "cible": "Dragon Ball Z",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Zald",
+   "deSlug": "zald",
+   "champ": "famconnect",
+   "cible": "Fight With Piccolo",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Hirudegarn",
+   "deSlug": "hirudegarn",
+   "champ": "famconnect",
+   "cible": "Tapion",
+   "motif": "parenté non dite dans « [[Tapion]] (top-half's host) »"
+  },
+  {
+   "de": "Hirudegarn",
+   "deSlug": "hirudegarn",
+   "champ": "famconnect",
+   "cible": "Minotia",
+   "motif": "parenté non dite dans « [[Minotia]] (bottom-half's host) »"
+  },
+  {
+   "de": "Sharpner",
+   "deSlug": "sharpner",
+   "champ": "address",
+   "cible": "Satan City",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Dai Kaio",
+   "deSlug": "dai-kaio",
+   "champ": "address",
+   "cible": "Grand Kai's Planet",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Obake",
+   "deSlug": "obake",
+   "champ": "homeworld",
+   "cible": "Other World",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Grandma Hakkake",
+   "deSlug": "grandma-hakkake",
+   "champ": "address",
+   "cible": "Mount Frappe",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Vermoud",
+   "deSlug": "vermoud",
+   "champ": "address",
+   "cible": "Belmod's Planet",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Lemuria",
+   "deSlug": "lemuria",
+   "champ": "famconnect",
+   "cible": "Atla",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Katchin",
+   "deSlug": "katchin",
+   "champ": "user",
+   "cible": "Dr. Arinsu",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Katchin",
+   "deSlug": "katchin",
+   "champ": "user",
+   "cible": "Shin",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Katchin",
+   "deSlug": "katchin",
+   "champ": "user",
+   "cible": "Future Shin",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Katchin",
+   "deSlug": "katchin",
+   "champ": "user",
+   "cible": "Fused Zamasu",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Katchin",
+   "deSlug": "katchin",
+   "champ": "user",
+   "cible": "Future Zamasu",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Katchin",
+   "deSlug": "katchin",
+   "champ": "user",
+   "cible": "Dragon Ball: Sparking! Zero",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Granolah",
+   "deSlug": "granolah",
+   "champ": "famconnect",
+   "cible": "Flayk",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Granolah",
+   "deSlug": "granolah",
+   "champ": "famconnect",
+   "cible": "Muezli",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Granolah",
+   "deSlug": "granolah",
+   "champ": "famconnect",
+   "cible": "Dragon Ball Super (manga)",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Granolah",
+   "deSlug": "granolah",
+   "champ": "famconnect",
+   "cible": "Bardock, Father of Goku",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Granolah",
+   "deSlug": "granolah",
+   "champ": "famconnect",
+   "cible": "Monaito",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Tapion",
+   "deSlug": "tapion",
+   "champ": "mentors",
+   "cible": "Konatsian Wizard",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Minotia",
+   "deSlug": "minotia",
+   "champ": "mentors",
+   "cible": "Konatsian Wizard",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Dr. Flappe",
+   "deSlug": "dr-flappe",
+   "champ": "address",
+   "cible": "Dr. Flappe's house",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Dr. Flappe",
+   "deSlug": "dr-flappe",
+   "champ": "famconnect",
+   "cible": "Android 8",
+   "motif": "parenté non dite dans « [[Android 8]] (co-creation) »"
+  },
+  {
+   "de": "Farmer",
+   "deSlug": "farmer",
+   "champ": "address",
+   "cible": "Spinach Wastes",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Super Dragon Balls",
+   "deSlug": "super-dragon-balls",
+   "champ": "user",
+   "cible": "Future Zamasu",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Super Dragon Balls",
+   "deSlug": "super-dragon-balls",
+   "champ": "user",
+   "cible": "Android 17",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Super Dragon Balls",
+   "deSlug": "super-dragon-balls",
+   "champ": "user",
+   "cible": "Aeos",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "de": "Hatchiyack",
+   "deSlug": "hatchiyack",
+   "champ": "famconnect",
+   "cible": "Dr. Lychee",
+   "motif": "parenté non dite dans « [[Dr. Lychee]] (creator) »"
+  }
+ ],
+ "motifsRefus": {
+  "cible sans équivalent en base": 54,
+  "parenté non dite dans …": 9
+ }
+}

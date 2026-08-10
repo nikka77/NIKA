@@ -1,0 +1,1515 @@
+{
+ "chantier": "chantier 5 — inventaire base vs site",
+ "quand": "2026-08-10T13:09:43.948Z",
+ "nature": "DIAGNOSTIC. Aucune écriture en base. Lectures Supabase paginées par 1000 avec .order(id).",
+ "sources": {
+  "visibilite": "data/audits/chantier5-visibilite-2026-08-10T13-01-52Z.json",
+  "liensPerdus": "data/audits/chantier5-liens-perdus-2026-08-10T13-05-33Z.json",
+  "inventaire": "data/audits/chantier5-inventaire-2026-08-10T12-55-26Z.json"
+ },
+ "socle": {
+  "fiches": 7654,
+  "aretes": 16788,
+  "sections": 19084,
+  "aretesOrphelines": 0
+ },
+ "colonnes": {
+  "akasha_entries": [
+   "id",
+   "slug",
+   "type",
+   "name",
+   "is_fiction",
+   "universe",
+   "summary",
+   "description",
+   "image_url",
+   "attributes",
+   "rarity",
+   "created_at"
+  ],
+  "akasha_relations": [
+   "id",
+   "from_entry",
+   "to_entry",
+   "relation",
+   "created_at"
+  ],
+  "akasha_sections": [
+   "id",
+   "entry_id",
+   "idx",
+   "titre",
+   "texte",
+   "source",
+   "created_at"
+  ]
+ },
+ "colonnesRemplissage": {
+  "akasha_entries": {
+   "id": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "slug": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "type": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "name": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "is_fiction": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "universe": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "summary": {
+    "peuplees": 7637,
+    "vides": 17
+   },
+   "description": {
+    "peuplees": 33,
+    "vides": 7621
+   },
+   "image_url": {
+    "peuplees": 6904,
+    "vides": 750
+   },
+   "attributes": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "rarity": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "created_at": {
+    "peuplees": 7654,
+    "vides": 0
+   }
+  },
+  "akasha_relations": {
+   "id": {
+    "peuplees": 16788,
+    "vides": 0
+   },
+   "from_entry": {
+    "peuplees": 16788,
+    "vides": 0
+   },
+   "to_entry": {
+    "peuplees": 16788,
+    "vides": 0
+   },
+   "relation": {
+    "peuplees": 16788,
+    "vides": 0
+   },
+   "created_at": {
+    "peuplees": 16788,
+    "vides": 0
+   }
+  },
+  "akasha_sections": {
+   "id": {
+    "peuplees": 19084,
+    "vides": 0
+   },
+   "entry_id": {
+    "peuplees": 19084,
+    "vides": 0
+   },
+   "idx": {
+    "peuplees": 19084,
+    "vides": 0
+   },
+   "titre": {
+    "peuplees": 19084,
+    "vides": 0
+   },
+   "texte": {
+    "peuplees": 19084,
+    "vides": 0
+   },
+   "source": {
+    "peuplees": 19084,
+    "vides": 0
+   },
+   "created_at": {
+    "peuplees": 19084,
+    "vides": 0
+   }
+  }
+ },
+ "gabarits": {
+  "EntityZone": 2631,
+  "EntityZone · artifact": 400,
+  "CharacterZone": 4031,
+  "CharacterZone · character": 4031,
+  "EntityZone · power": 1700,
+  "gabarit Attaque": 659,
+  "gabarit Attaque · power": 659,
+  "OrganizationZone": 333,
+  "OrganizationZone · status": 333,
+  "EntityZone · profession": 99,
+  "EntityZone · place": 352,
+  "EntityZone · skill": 80
+ },
+ "imageUrlParGabarit": {
+  "EntityZone": 2110,
+  "CharacterZone": 4030,
+  "Attaque": 504,
+  "OrganizationZone": 260,
+  "rendue": [
+   "CharacterZone",
+   "EntityZone"
+  ],
+  "jamaisRendue": [
+   "OrganizationZone",
+   "Attaque"
+  ]
+ },
+ "clesAttributesMuettes": [
+  {
+   "donnee": "attributes.descFrSource",
+   "combien": 4167,
+   "muettes": 4167,
+   "gabaritsMuets": {
+    "EntityZone": 2153,
+    "CharacterZone": 1140,
+    "Attaque": 565,
+    "OrganizationZone": 309
+   },
+   "parType": {
+    "artifact": 307,
+    "character": 1140,
+    "power": 2006,
+    "status": 309,
+    "profession": 42,
+    "place": 328,
+    "skill": 35
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "ninja-info-cards (artifact/EntityZone) = deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "hikaru (character/CharacterZone) = deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "marchen (artifact/EntityZone) = deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo"
+   ]
+  },
+  {
+   "donnee": "attributes.descLang",
+   "combien": 3284,
+   "muettes": 3284,
+   "gabaritsMuets": {
+    "CharacterZone": 3046,
+    "EntityZone": 238
+   },
+   "parType": {
+    "character": 3046,
+    "power": 204,
+    "skill": 9,
+    "artifact": 19,
+    "place": 6
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "gou-koga (character/CharacterZone) = en",
+    "fruit-de-la-force (power/EntityZone) = fr",
+    "homing-donquixote (character/CharacterZone) = en"
+   ]
+  },
+  {
+   "donnee": "attributes.descRaw",
+   "combien": 3279,
+   "muettes": 3279,
+   "gabaritsMuets": {
+    "CharacterZone": 3046,
+    "EntityZone": 233
+   },
+   "parType": {
+    "character": 3046,
+    "power": 204,
+    "skill": 9,
+    "artifact": 19,
+    "place": 1
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "gou-koga (character/CharacterZone) = Gou Koga is a large and bulky man who resembles a punkish biker with s",
+    "fruit-de-la-force (power/EntityZone) = C'est un fruit qui permet à celui qui l'a mangé de d'acquérir une forc",
+    "homing-donquixote (character/CharacterZone) = Donquixote Homing is the deceased husband of Matriarch and father of D"
+   ]
+  },
+  {
+   "donnee": "attributes.role",
+   "combien": 2678,
+   "muettes": 2678,
+   "gabaritsMuets": {
+    "CharacterZone": 2678
+   },
+   "parType": {
+    "character": 2678
+   },
+   "nature": "matière",
+   "exemples": [
+    "gou-koga (character/CharacterZone) = Personnage secondaire",
+    "homing-donquixote (character/CharacterZone) = Personnage secondaire",
+    "daifugo (character/CharacterZone) = Personnage secondaire"
+   ]
+  },
+  {
+   "donnee": "attributes.sex",
+   "combien": 1268,
+   "muettes": 1268,
+   "gabaritsMuets": {
+    "CharacterZone": 1268
+   },
+   "parType": {
+    "character": 1268
+   },
+   "nature": "matière, mais en anglais brut",
+   "exemples": [
+    "hikaru (character/CharacterZone) = Male",
+    "tsukushi (character/CharacterZone) = Male",
+    "yuga (character/CharacterZone) = Male"
+   ]
+  },
+  {
+   "donnee": "attributes.source",
+   "combien": 659,
+   "muettes": 659,
+   "gabaritsMuets": {
+    "Attaque": 659
+   },
+   "parType": {
+    "power": 659
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "atk-db-justice-pose-1 (power/Attaque) = fandom",
+    "atk-db-chou-maretsugeki (power/Attaque) = fandom",
+    "atk-db-ki-sense (power/Attaque) = fandom"
+   ]
+  },
+  {
+   "donnee": "attributes.occupation",
+   "combien": 440,
+   "muettes": 440,
+   "gabaritsMuets": {
+    "CharacterZone": 440
+   },
+   "parType": {
+    "character": 440
+   },
+   "nature": "matière",
+   "exemples": [
+    "pearl (character/CharacterZone) = Captaine (2e bataillon)",
+    "chouchou (character/CharacterZone) = Propriétaire d'un magasin",
+    "mascarpone-charlotte (character/CharacterZone) = Officier"
+   ]
+  },
+  {
+   "donnee": "attributes.equipe",
+   "combien": 187,
+   "muettes": 187,
+   "gabaritsMuets": {
+    "CharacterZone": 187
+   },
+   "parType": {
+    "character": 187
+   },
+   "nature": "matière",
+   "exemples": [
+    "yuga (character/CharacterZone) = Haze Quadruplets",
+    "might-guy (character/CharacterZone) = Team Chōza",
+    "chocho-akimichi (character/CharacterZone) = Team 10"
+   ]
+  },
+  {
+   "donnee": "attributes.monde",
+   "combien": 171,
+   "muettes": 171,
+   "gabaritsMuets": {
+    "CharacterZone": 171
+   },
+   "parType": {
+    "character": 171
+   },
+   "nature": "matière",
+   "exemples": [
+    "gou-koga (character/CharacterZone) = Terre · Karakura",
+    "jidanbou-ikkanzaka (character/CharacterZone) = Soul Society",
+    "menoly-mallia (character/CharacterZone) = Hueco Mundo"
+   ]
+  },
+  {
+   "donnee": "attributes.saga",
+   "combien": 128,
+   "muettes": 128,
+   "gabaritsMuets": {
+    "CharacterZone": 128
+   },
+   "parType": {
+    "character": 128
+   },
+   "nature": "matière",
+   "exemples": [
+    "pui-pui (character/CharacterZone) = Saga Buu",
+    "iwne (character/CharacterZone) = Saga Super",
+    "yakon (character/CharacterZone) = Saga Buu"
+   ]
+  },
+  {
+   "donnee": "attributes.roman_name",
+   "combien": 380,
+   "muettes": 83,
+   "gabaritsMuets": {
+    "OrganizationZone": 83
+   },
+   "parType": {
+    "artifact": 109,
+    "power": 185,
+    "status": 83,
+    "skill": 3
+   },
+   "nature": "matière",
+   "exemples": [
+    "l-equipage-des-maquereaux (status/OrganizationZone) = Makuro Ichimi",
+    "l-equipage-de-ganzack (status/OrganizationZone) = Gyanzakku Kaizokudan",
+    "l-equipage-aux-cent-betes (status/OrganizationZone) = Hyakujū Kaizokudan"
+   ]
+  },
+  {
+   "donnee": "attributes.descFrPurgee",
+   "combien": 72,
+   "muettes": 72,
+   "gabaritsMuets": {
+    "CharacterZone": 62,
+    "EntityZone": 8,
+    "Attaque": 1,
+    "OrganizationZone": 1
+   },
+   "parType": {
+    "character": 62,
+    "power": 2,
+    "artifact": 3,
+    "profession": 3,
+    "skill": 1,
+    "status": 1
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "fu-yamanaka (character/CharacterZone) = texte d'ino-yamanaka retiré le 08/08 (contamination) — à re-rédiger de",
+    "frog (character/CharacterZone) = balayage anti-corruption 03/08",
+    "sakon (power/EntityZone) = biographie du ninja Sakon retirée le 10/08 — la fiche est typée pouvoi"
+   ]
+  },
+  {
+   "donnee": "attributes.fruit_type",
+   "combien": 280,
+   "muettes": 70,
+   "gabaritsMuets": {
+    "CharacterZone": 70
+   },
+   "parType": {
+    "power": 210,
+    "character": 70
+   },
+   "nature": "matière",
+   "exemples": [
+    "galdino (character/CharacterZone) = Paramecia",
+    "kaku (character/CharacterZone) = Zoan",
+    "monkey-d-luffy (character/CharacterZone) = Paramecia"
+   ]
+  },
+  {
+   "donnee": "attributes.trivia",
+   "combien": 47,
+   "muettes": 47,
+   "gabaritsMuets": {
+    "OrganizationZone": 23,
+    "CharacterZone": 19,
+    "EntityZone": 5
+   },
+   "parType": {
+    "status": 23,
+    "character": 19,
+    "place": 1,
+    "skill": 1,
+    "profession": 1,
+    "artifact": 1,
+    "power": 1
+   },
+   "nature": "matière",
+   "exemples": [
+    "hozuki (status/OrganizationZone) = [\"Le nom « Hōzuki » (鬼灯) désigne l'alkékenge, ou « lanterne chinoise »",
+    "monkey-d-luffy (character/CharacterZone) = [\"Son « Gomu Gomu no Mi » est en réalité le Hito Hito no Mi modèle Nik",
+    "aburame (status/OrganizationZone) = [\"Le clan Aburame fonde toute son identité sur le lien entomologique :"
+   ]
+  },
+  {
+   "donnee": "attributes.powerLevel",
+   "combien": 41,
+   "muettes": 41,
+   "gabaritsMuets": {
+    "CharacterZone": 41
+   },
+   "parType": {
+    "character": 41
+   },
+   "nature": "matière",
+   "exemples": [
+    "toma (character/CharacterZone) = Saiyan de classe inférieure (~1 500 d'unités)",
+    "lakasei (character/CharacterZone) = Sbire de Turles, combine sa puissance avec Rasin",
+    "spopovitch (character/CharacterZone) = Humain dope par la magie de Babidi"
+   ]
+  },
+  {
+   "donnee": "attributes.facts",
+   "combien": 35,
+   "muettes": 35,
+   "gabaritsMuets": {
+    "OrganizationZone": 23,
+    "EntityZone": 12
+   },
+   "parType": {
+    "status": 23,
+    "artifact": 2,
+    "place": 7,
+    "skill": 1,
+    "profession": 1,
+    "power": 1
+   },
+   "nature": "matière",
+   "exemples": [
+    "hozuki (status/OrganizationZone) = [{\"label\":\"Village\",\"value\":\"Kirigakure (Village Caché de la Brume)\"},",
+    "cahier-de-la-mort (artifact/EntityZone) = [{\"label\":\"Nature\",\"value\":\"Cahier d'un dieu de la mort (shinigami)\"},",
+    "aburame (status/OrganizationZone) = [{\"label\":\"Village\",\"value\":\"Konohagakure (Pays du Feu)\"},{\"label\":\"Sy"
+   ]
+  },
+  {
+   "donnee": "attributes.abilities",
+   "combien": 27,
+   "muettes": 27,
+   "gabaritsMuets": {
+    "OrganizationZone": 23,
+    "EntityZone": 4
+   },
+   "parType": {
+    "status": 23,
+    "skill": 1,
+    "profession": 1,
+    "artifact": 1,
+    "power": 1
+   },
+   "nature": "matière",
+   "exemples": [
+    "hozuki (status/OrganizationZone) = [\"Technique d'Hydrification — liquéfier son corps en eau pour esquiver",
+    "aburame (status/OrganizationZone) = [\"Symbiose avec les kikaichū, insectes vivant dans le corps de l'hôte\"",
+    "shimura (status/OrganizationZone) = [\"Doctrine de la Racine (Ne) : réseau d'agents ANBU clandestins, sans "
+   ]
+  },
+  {
+   "donnee": "attributes.rosterLabel",
+   "combien": 26,
+   "muettes": 26,
+   "gabaritsMuets": {
+    "OrganizationZone": 23,
+    "EntityZone": 3
+   },
+   "parType": {
+    "status": 23,
+    "skill": 1,
+    "profession": 1,
+    "power": 1
+   },
+   "nature": "matière",
+   "exemples": [
+    "hozuki (status/OrganizationZone) = Membres",
+    "aburame (status/OrganizationZone) = Membres",
+    "shimura (status/OrganizationZone) = Membres"
+   ]
+  },
+  {
+   "donnee": "attributes.eras",
+   "combien": 37,
+   "muettes": 23,
+   "gabaritsMuets": {
+    "OrganizationZone": 23
+   },
+   "parType": {
+    "status": 23,
+    "artifact": 3,
+    "place": 8,
+    "skill": 1,
+    "profession": 1,
+    "power": 1
+   },
+   "nature": "matière",
+   "exemples": [
+    "hozuki (status/OrganizationZone) = [{\"img\":\"/images/akasha/ref/hozuki.webp\",\"event\":\"Gengetsu Hōzuki devi",
+    "aburame (status/OrganizationZone) = [{\"img\":\"/images/akasha/ref/aburame.webp\",\"event\":\"Transmission du pac",
+    "shimura (status/OrganizationZone) = [{\"img\":\"/images/akasha/ref/shimura.webp\",\"event\":\"Danzō est formé par"
+   ]
+  },
+  {
+   "donnee": "attributes.quote",
+   "combien": 37,
+   "muettes": 23,
+   "gabaritsMuets": {
+    "OrganizationZone": 23
+   },
+   "parType": {
+    "status": 23,
+    "artifact": 3,
+    "place": 8,
+    "skill": 1,
+    "profession": 1,
+    "power": 1
+   },
+   "nature": "matière",
+   "exemples": [
+    "hozuki (status/OrganizationZone) = {\"text\":\"Ton épée me traverse ? Alors tranche l'eau, et regarde-la se ",
+    "aburame (status/OrganizationZone) = {\"text\":\"Un ninja ne doit pas gaspiller ses mots. Comme mes insectes, ",
+    "shimura (status/OrganizationZone) = {\"text\":\"Un shinobi doit lire l'instant sous la surface. Ce qui protèg"
+   ]
+  },
+  {
+   "donnee": "attributes.import_source",
+   "combien": 22,
+   "muettes": 22,
+   "gabaritsMuets": {
+    "CharacterZone": 22
+   },
+   "parType": {
+    "character": 22
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "gyro (character/CharacterZone) = 3164",
+    "ururu-tsumugiya (character/CharacterZone) = 2727",
+    "bonney-jewelry (character/CharacterZone) = 788"
+   ]
+  },
+  {
+   "donnee": "attributes.gallery",
+   "combien": 22,
+   "muettes": 22,
+   "gabaritsMuets": {
+    "CharacterZone": 22
+   },
+   "parType": {
+    "character": 22
+   },
+   "nature": "matière",
+   "exemples": [
+    "might-guy (character/CharacterZone) = [\"https://static.wikia.nocookie.net/naruto/images/3/31/Might_Guy.png\",",
+    "sakura-haruno (character/CharacterZone) = [\"https://static.wikia.nocookie.net/naruto/images/6/64/Sakura_Part_1.p",
+    "neji-hyuga (character/CharacterZone) = [\"https://static.wikia.nocookie.net/naruto/images/7/7e/Neji_Part_I.png"
+   ]
+  },
+  {
+   "donnee": "attributes.titles",
+   "combien": 22,
+   "muettes": 22,
+   "gabaritsMuets": {
+    "CharacterZone": 22
+   },
+   "parType": {
+    "character": 22
+   },
+   "nature": "matière",
+   "exemples": [
+    "monkey-d-luffy (character/CharacterZone) = [\"Chapeau de Paille\",\"Cinquième Empereur\",\"Joy Boy\"]",
+    "naruto-uzumaki (character/CharacterZone) = [\"Ninja hyperactif imprévisible n°1\",\"L'Enfant de la Prophétie\",\"Le Sa",
+    "itachi-uchiha (character/CharacterZone) = [\"Le génie du clan Uchiha\",\"Itachi de l'Illusion\",\"Le héros de l'ombre"
+   ]
+  },
+  {
+   "donnee": "attributes.natureType",
+   "combien": 21,
+   "muettes": 21,
+   "gabaritsMuets": {
+    "CharacterZone": 21
+   },
+   "parType": {
+    "character": 21
+   },
+   "nature": "matière, mais en anglais brut",
+   "exemples": [
+    "might-guy (character/CharacterZone) = [\"Fire Release\",\"Lightning Release\"]",
+    "sakura-haruno (character/CharacterZone) = [\"Earth Release\",\"Water Release\",\"Fire Release\",\"Yin Release\",\"Yang Re",
+    "neji-hyuga (character/CharacterZone) = [\"Fire Release\",\"Earth Release\",\"Water Release\"]"
+   ]
+  },
+  {
+   "donnee": "attributes.debut",
+   "combien": 20,
+   "muettes": 20,
+   "gabaritsMuets": {
+    "CharacterZone": 20
+   },
+   "parType": {
+    "character": 20
+   },
+   "nature": "matière",
+   "exemples": [
+    "might-guy (character/CharacterZone) = Naruto — chapitre 38",
+    "sakura-haruno (character/CharacterZone) = Naruto — chapitre 3",
+    "neji-hyuga (character/CharacterZone) = Naruto — chapitre 36"
+   ]
+  },
+  {
+   "donnee": "attributes.debutAll",
+   "combien": 20,
+   "muettes": 20,
+   "gabaritsMuets": {
+    "CharacterZone": 20
+   },
+   "parType": {
+    "character": 20
+   },
+   "nature": "matière",
+   "exemples": [
+    "might-guy (character/CharacterZone) = {\"ova\":\"Finally a clash! Jōnin vs. Genin!! Indiscriminate Grand Melee ",
+    "sakura-haruno (character/CharacterZone) = {\"ova\":\"Find the Four-Leaf Red Clover!\",\"game\":\"Naruto: Konoha Ninpōch",
+    "neji-hyuga (character/CharacterZone) = {\"ova\":\"Hidden Leaf Village Grand Sports Festival!\",\"game\":\"Naruto: Ko"
+   ]
+  },
+  {
+   "donnee": "attributes.sourceUrl",
+   "combien": 20,
+   "muettes": 20,
+   "gabaritsMuets": {
+    "CharacterZone": 20
+   },
+   "parType": {
+    "character": 20
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "might-guy (character/CharacterZone) = https://naruto.fandom.com/wiki/Might_Guy",
+    "sakura-haruno (character/CharacterZone) = https://naruto.fandom.com/wiki/Sakura_Haruno",
+    "neji-hyuga (character/CharacterZone) = https://naruto.fandom.com/wiki/Neji_Hy%C5%ABga"
+   ]
+  },
+  {
+   "donnee": "attributes.villageSlug",
+   "combien": 20,
+   "muettes": 20,
+   "gabaritsMuets": {
+    "CharacterZone": 20
+   },
+   "parType": {
+    "character": 20
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "might-guy (character/CharacterZone) = konohagakure",
+    "sakura-haruno (character/CharacterZone) = konohagakure",
+    "neji-hyuga (character/CharacterZone) = konohagakure"
+   ]
+  },
+  {
+   "donnee": "attributes.quotes",
+   "combien": 19,
+   "muettes": 19,
+   "gabaritsMuets": {
+    "CharacterZone": 19
+   },
+   "parType": {
+    "character": 19
+   },
+   "nature": "matière",
+   "exemples": [
+    "monkey-d-luffy (character/CharacterZone) = [\"Je serai le Roi des Pirates !\",\"Bien sûr que je vais peut-être mouri",
+    "naruto-uzumaki (character/CharacterZone) = [\"Crois-le ! (Dattebayo !)\",\"Quand on protège quelque chose de vraimen",
+    "itachi-uchiha (character/CharacterZone) = [\"Pardonne-moi, Sasuke… ce sera la dernière fois.\",\"Les hommes vivent "
+   ]
+  },
+  {
+   "donnee": "attributes.status",
+   "combien": 21,
+   "muettes": 19,
+   "gabaritsMuets": {
+    "CharacterZone": 19
+   },
+   "parType": {
+    "character": 19,
+    "place": 1,
+    "artifact": 1
+   },
+   "nature": "matière",
+   "exemples": [
+    "monkey-d-luffy (character/CharacterZone) = Vivant — Empereur",
+    "naruto-uzumaki (character/CharacterZone) = Vivant",
+    "itachi-uchiha (character/CharacterZone) = Décédé"
+   ]
+  },
+  {
+   "donnee": "attributes.personality",
+   "combien": 19,
+   "muettes": 19,
+   "gabaritsMuets": {
+    "CharacterZone": 19
+   },
+   "parType": {
+    "character": 19
+   },
+   "nature": "matière",
+   "exemples": [
+    "monkey-d-luffy (character/CharacterZone) = Simple, glouton, d'une loyauté absolue. Luffy ne réfléchit pas — il re",
+    "naruto-uzumaki (character/CharacterZone) = Hyperactif, bruyant et impulsif, Naruto cache sous ses pitreries la bl",
+    "itachi-uchiha (character/CharacterZone) = Calme, doux et d'une intelligence terrifiante, Itachi est un pacifiste"
+   ]
+  },
+  {
+   "donnee": "attributes.team",
+   "combien": 18,
+   "muettes": 18,
+   "gabaritsMuets": {
+    "CharacterZone": 18
+   },
+   "parType": {
+    "character": 18
+   },
+   "nature": "matière, mais en anglais brut",
+   "exemples": [
+    "might-guy (character/CharacterZone) = [\"Team Chōza\",\"Team Guy\",\"Third Division\"]",
+    "sakura-haruno (character/CharacterZone) = [\"Team Kakashi\",\"Konoha 11  (Anime only)\",\"Team Asuma  (Anime only)\",\"",
+    "neji-hyuga (character/CharacterZone) = [\"Team Guy\",\"Sasuke Recovery Team\",\"Konoha 11  (Anime only)\",\"Star Gua"
+   ]
+  },
+  {
+   "donnee": "attributes.tools",
+   "combien": 18,
+   "muettes": 18,
+   "gabaritsMuets": {
+    "CharacterZone": 18
+   },
+   "parType": {
+    "character": 18
+   },
+   "nature": "matière, mais en anglais brut",
+   "exemples": [
+    "might-guy (character/CharacterZone) = [\"Bow & Arrow\",\"Kusarigama\",\"Nunchaku\",\"Sōshūga\"]",
+    "sakura-haruno (character/CharacterZone) = [\"Antidote\",\"Konoha Chakra Blade\",\"Lightning Barrel\",\"Military Rations",
+    "naruto-uzumaki (character/CharacterZone) = [\"Kunai\",\"Shuriken\",\"Fūma Shuriken\",\"Flying Thunder God Kunai\"]"
+   ]
+  },
+  {
+   "donnee": "attributes.col",
+   "combien": 23,
+   "muettes": 18,
+   "gabaritsMuets": {
+    "CharacterZone": 18
+   },
+   "parType": {
+    "character": 18,
+    "place": 5
+   },
+   "nature": "matière",
+   "exemples": [
+    "shouichi (character/CharacterZone) = Mont Myōgi",
+    "kenta-nakamura (character/CharacterZone) = Mont Akagi",
+    "itsuki-takeuchi (character/CharacterZone) = Mont Akina"
+   ]
+  },
+  {
+   "donnee": "attributes.classification",
+   "combien": 17,
+   "muettes": 17,
+   "gabaritsMuets": {
+    "CharacterZone": 17
+   },
+   "parType": {
+    "character": 17
+   },
+   "nature": "matière",
+   "exemples": [
+    "sakura-haruno (character/CharacterZone) = [\"Ninja médical\"]",
+    "naruto-uzumaki (character/CharacterZone) = [\"Jinchūriki\",\"Ermite (Sage)\",\"Type Capteur\"]",
+    "itachi-uchiha (character/CharacterZone) = [\"Rang S\",\"Déserteur (Nukenin)\"]"
+   ]
+  },
+  {
+   "donnee": "attributes.kanji",
+   "combien": 30,
+   "muettes": 16,
+   "gabaritsMuets": {
+    "OrganizationZone": 16
+   },
+   "parType": {
+    "status": 16,
+    "artifact": 3,
+    "place": 8,
+    "skill": 1,
+    "profession": 1,
+    "power": 1
+   },
+   "nature": "matière",
+   "exemples": [
+    "hozuki (status/OrganizationZone) = 鬼灯一族",
+    "aburame (status/OrganizationZone) = 油女一族",
+    "shimura (status/OrganizationZone) = 志村一族"
+   ]
+  },
+  {
+   "donnee": "attributes.clanSlug",
+   "combien": 12,
+   "muettes": 12,
+   "gabaritsMuets": {
+    "CharacterZone": 12
+   },
+   "parType": {
+    "character": 12
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "neji-hyuga (character/CharacterZone) = hyuga",
+    "naruto-uzumaki (character/CharacterZone) = uzumaki",
+    "hinata-hyuga (character/CharacterZone) = hyuga"
+   ]
+  },
+  {
+   "donnee": "attributes.kekkeiGenkai",
+   "combien": 9,
+   "muettes": 9,
+   "gabaritsMuets": {
+    "CharacterZone": 9
+   },
+   "parType": {
+    "character": 9
+   },
+   "nature": "matière",
+   "exemples": [
+    "neji-hyuga (character/CharacterZone) = [\"Byakugan\"]",
+    "hinata-hyuga (character/CharacterZone) = [\"Byakugan\"]",
+    "itachi-uchiha (character/CharacterZone) = [\"Sharingan\"]"
+   ]
+  },
+  {
+   "donnee": "attributes.signature",
+   "combien": 9,
+   "muettes": 9,
+   "gabaritsMuets": {
+    "CharacterZone": 9
+   },
+   "parType": {
+    "character": 9
+   },
+   "nature": "matière",
+   "exemples": [
+    "naruto-uzumaki (character/CharacterZone) = [\"Rasengan\",\"Multiclonage\",\"Bijūdama\"]",
+    "itachi-uchiha (character/CharacterZone) = [\"Amaterasu\",\"Susanoo\"]",
+    "sasuke-uchiha (character/CharacterZone) = [\"Chidori\",\"Amaterasu\",\"Susanoo\"]"
+   ]
+  },
+  {
+   "donnee": "attributes.descFrRetiree",
+   "combien": 6,
+   "muettes": 6,
+   "gabaritsMuets": {
+    "EntityZone": 5,
+    "OrganizationZone": 1
+   },
+   "parType": {
+    "profession": 2,
+    "power": 2,
+    "skill": 1,
+    "status": 1
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "inner-former (profession/EntityZone) = 04/08 contrôle de nature — « Inner (Former) » est un rang de Kara ; la",
+    "chunin-exams-assistant (profession/EntityZone) = 04/08 contrôle de nature — décrit l examen chūnin et invente une « uni",
+    "summoning-technique-hozuki-castle-s-ninken (power/EntityZone) = 04/08 contrôle de nature — texte générique sur l invocation, pas un mo"
+   ]
+  },
+  {
+   "donnee": "attributes.purgeAudit",
+   "combien": 3,
+   "muettes": 3,
+   "gabaritsMuets": {
+    "CharacterZone": 3
+   },
+   "parType": {
+    "character": 3
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "reiichi-oshima (character/CharacterZone) = 03/08 : sections et descFr décrivaient Dark Rukia (mauvaise page liée)",
+    "hol-horse (character/CharacterZone) = 04/08 audit de clôture : descFr non sourcée ou charabia — purgé, à re-",
+    "orihime-inoue (character/CharacterZone) = 04/08 audit de clôture : descFr non sourcée ou charabia — purgé, à re-"
+   ]
+  },
+  {
+   "donnee": "attributes.squad",
+   "combien": 3,
+   "muettes": 3,
+   "gabaritsMuets": {
+    "CharacterZone": 3
+   },
+   "parType": {
+    "character": 3
+   },
+   "nature": "matière",
+   "exemples": [
+    "naruto-uzumaki (character/CharacterZone) = {\"name\":\"Équipe 7 · Team Kakashi\",\"members\":[{\"rel\":\"Sensei\",\"name\":\"K",
+    "sasuke-uchiha (character/CharacterZone) = {\"name\":\"Équipe 7\",\"members\":[{\"rel\":\"Sensei\",\"name\":\"Kakashi Hatake\",",
+    "kakashi-hatake (character/CharacterZone) = {\"name\":\"Équipe 7 (sensei)\",\"members\":[{\"rel\":\"Élève\",\"name\":\"Naruto U"
+   ]
+  },
+  {
+   "donnee": "attributes.sectionsSource",
+   "combien": 3,
+   "muettes": 3,
+   "gabaritsMuets": {
+    "CharacterZone": 2,
+    "EntityZone": 1
+   },
+   "parType": {
+    "character": 2,
+    "profession": 1
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "yuri (character/CharacterZone) = deepinfra/Qwen/Qwen3-32B",
+    "detective (profession/EntityZone) = deepinfra/Qwen/Qwen3-32B",
+    "light-s-teacher (character/CharacterZone) = deepinfra/Qwen/Qwen3-32B"
+   ]
+  },
+  {
+   "donnee": "attributes.descFrImpossible",
+   "combien": 2,
+   "muettes": 2,
+   "gabaritsMuets": {
+    "EntityZone": 1,
+    "OrganizationZone": 1
+   },
+   "parType": {
+    "profession": 1,
+    "status": 1
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "inner-former (profession/EntityZone) = curé à la main le 05/08 : le rang « Inner » n a pas de page propre — i",
+    "yuhi (status/OrganizationZone) = curé à la main le 05/08 : le clan Yūhi n a pas de page sur le wiki Nar"
+   ]
+  },
+  {
+   "donnee": "attributes.rank",
+   "combien": 474,
+   "muettes": 1,
+   "gabaritsMuets": {
+    "OrganizationZone": 1
+   },
+   "parType": {
+    "character": 473,
+    "status": 1
+   },
+   "nature": "matière",
+   "exemples": [
+    "vizard (status/OrganizationZone) = Hybride Shinigami-Hollow"
+   ]
+  },
+  {
+   "donnee": "attributes.resumeCorrige",
+   "combien": 1,
+   "muettes": 1,
+   "gabaritsMuets": {
+    "EntityZone": 1
+   },
+   "parType": {
+    "profession": 1
+   },
+   "nature": "plomberie légitime",
+   "exemples": [
+    "inner-former (profession/EntityZone) = résumé d origine remplacé le 05/08 : il décrivait Inner Sakura (techni"
+   ]
+  },
+  {
+   "donnee": "attributes.animations",
+   "combien": 1,
+   "muettes": 1,
+   "gabaritsMuets": {
+    "CharacterZone": 1
+   },
+   "parType": {
+    "character": 1
+   },
+   "nature": "matière",
+   "exemples": [
+    "naruto-uzumaki (character/CharacterZone) = [{\"src\":\"/images/akasha/naruto/multiclonage-anim.webp\",\"label\":\"Multic"
+   ]
+  },
+  {
+   "donnee": "attributes.tailedBeast",
+   "combien": 1,
+   "muettes": 1,
+   "gabaritsMuets": {
+    "CharacterZone": 1
+   },
+   "parType": {
+    "character": 1
+   },
+   "nature": "matière",
+   "exemples": [
+    "naruto-uzumaki (character/CharacterZone) = Kurama"
+   ]
+  }
+ ],
+ "naturesAretes": [
+  {
+   "relation": "maitrise",
+   "total": 5113,
+   "paires": {
+    "character→power": 4732,
+    "status→power": 173,
+    "character→skill": 185,
+    "character→artifact": 5,
+    "skill→character": 7,
+    "character→character": 3,
+    "status→skill": 5,
+    "power→skill": 2,
+    "status→artifact": 1
+   }
+  },
+  {
+   "relation": "appartient",
+   "total": 4305,
+   "paires": {
+    "character→character": 1198,
+    "character→status": 1983,
+    "place→place": 95,
+    "status→place": 90,
+    "power→power": 283,
+    "character→place": 448,
+    "artifact→place": 8,
+    "skill→status": 2,
+    "artifact→status": 82,
+    "artifact→artifact": 18,
+    "profession→place": 10,
+    "power→place": 6,
+    "character→profession": 54,
+    "character→artifact": 5,
+    "power→status": 5,
+    "artifact→character": 1,
+    "place→status": 1,
+    "status→status": 7,
+    "character→power": 2,
+    "skill→skill": 3,
+    "profession→status": 4
+   }
+  },
+  {
+   "relation": "allie",
+   "total": 1482,
+   "paires": {
+    "character→character": 1335,
+    "character→artifact": 16,
+    "character→status": 106,
+    "character→place": 19,
+    "character→power": 4,
+    "artifact→character": 1,
+    "power→character": 1
+   }
+  },
+  {
+   "relation": "ennemi",
+   "total": 1432,
+   "paires": {
+    "character→character": 1334,
+    "character→status": 79,
+    "character→place": 10,
+    "character→artifact": 2,
+    "character→power": 3,
+    "character→skill": 4
+   }
+  },
+  {
+   "relation": "habite",
+   "total": 1402,
+   "paires": {
+    "character→place": 1386,
+    "character→character": 1,
+    "skill→status": 2,
+    "character→status": 5,
+    "place→place": 1,
+    "power→place": 3,
+    "status→place": 3,
+    "artifact→place": 1
+   }
+  },
+  {
+   "relation": "famille",
+   "total": 1186,
+   "paires": {
+    "character→character": 1048,
+    "character→status": 11,
+    "skill→character": 112,
+    "artifact→character": 3,
+    "profession→character": 5,
+    "character→artifact": 2,
+    "character→place": 2,
+    "power→character": 3
+   }
+  },
+  {
+   "relation": "possede",
+   "total": 696,
+   "paires": {
+    "character→artifact": 676,
+    "character→character": 15,
+    "profession→artifact": 3,
+    "power→artifact": 1,
+    "status→artifact": 1
+   }
+  },
+  {
+   "relation": "exerce",
+   "total": 645,
+   "paires": {
+    "character→profession": 612,
+    "character→status": 28,
+    "profession→status": 1,
+    "character→place": 2,
+    "skill→status": 1,
+    "character→character": 1
+   }
+  },
+  {
+   "relation": "mentor",
+   "total": 249,
+   "paires": {
+    "character→character": 246,
+    "character→place": 1,
+    "character→status": 2
+   }
+  },
+  {
+   "relation": "rival",
+   "total": 192,
+   "paires": {
+    "character→character": 192
+   }
+  },
+  {
+   "relation": "eleve",
+   "total": 48,
+   "paires": {
+    "character→character": 48
+   }
+  },
+  {
+   "relation": "jumeau",
+   "total": 12,
+   "paires": {
+    "place→place": 12
+   }
+  },
+  {
+   "relation": "ange",
+   "total": 10,
+   "paires": {
+    "place→character": 10
+   }
+  },
+  {
+   "relation": "dieu_destruction",
+   "total": 8,
+   "paires": {
+    "place→character": 8
+   }
+  },
+  {
+   "relation": "kaio_shin",
+   "total": 8,
+   "paires": {
+    "place→character": 8
+   }
+  }
+ ],
+ "aretesPerdues": {
+  "total": 2709,
+  "fiches": 1110,
+  "tableau": [
+   {
+    "relation": "appartient",
+    "sens": "entrant",
+    "gabarit": "CharacterZone",
+    "aretesPerdues": 914,
+    "fichesTouchees": 476,
+    "exemples": [
+     "gou-koga (character) ← appartient dalk (character)",
+     "sphinx (character) ← appartient marco (character)",
+     "sphinx (character) ← appartient basilisk (character)"
+    ]
+   },
+   {
+    "relation": "possede",
+    "sens": "sortant",
+    "gabarit": "CharacterZone",
+    "aretesPerdues": 684,
+    "fichesTouchees": 351,
+    "exemples": [
+     "yuga (character) → possede tanto (artifact)",
+     "doto-kazahana (character) → possede hexagonal-crystal (artifact)",
+     "doto-kazahana (character) → possede mechanical-kunai-thrower (artifact)"
+    ]
+   },
+   {
+    "relation": "famille",
+    "sens": "entrant",
+    "gabarit": "CharacterZone",
+    "aretesPerdues": 545,
+    "fichesTouchees": 265,
+    "exemples": [
+     "paparoni (character) ← famille anilaza (character)",
+     "paparoni (character) ← famille panchia (character)",
+     "shinosuke (character) ← famille shinobu (character)"
+    ]
+   },
+   {
+    "relation": "maitrise",
+    "sens": "sortant",
+    "gabarit": "OrganizationZone",
+    "aretesPerdues": 179,
+    "fichesTouchees": 47,
+    "exemples": [
+     "hozuki (status) → maitrise water-release-great-water-arm-technique (power)",
+     "hozuki (status) → maitrise water-release-tate-eboshi (power)",
+     "hozuki (status) → maitrise hydrification-technique (power)"
+    ]
+   },
+   {
+    "relation": "allie",
+    "sens": "entrant",
+    "gabarit": "OrganizationZone",
+    "aretesPerdues": 100,
+    "fichesTouchees": 13,
+    "exemples": [
+     "l-equipage-du-roux (status) ← allie oven-charlotte (character)",
+     "armada-du-chapeau-de-paille (status) ← allie cotton (character)",
+     "armada-du-chapeau-de-paille (status) ← allie pellini (character)"
+    ]
+   },
+   {
+    "relation": "appartient",
+    "sens": "sortant",
+    "gabarit": "OrganizationZone",
+    "aretesPerdues": 97,
+    "fichesTouchees": 92,
+    "exemples": [
+     "konoha-council (status) → appartient konohagakure (place)",
+     "new-seven-ninja-swordsmen (status) → appartient kirigakure (place)",
+     "a-b-combo (status) → appartient kumogakure (place)"
+    ]
+   },
+   {
+    "relation": "ennemi",
+    "sens": "entrant",
+    "gabarit": "OrganizationZone",
+    "aretesPerdues": 78,
+    "fichesTouchees": 33,
+    "exemples": [
+     "l-equipage-aux-cent-betes (status) ← ennemi omasa (character)",
+     "l-equipage-aux-cent-betes (status) ← ennemi bariete (character)",
+     "l-equipage-aux-cent-betes (status) ← ennemi yatappe (character)"
+    ]
+   },
+   {
+    "relation": "exerce",
+    "sens": "entrant",
+    "gabarit": "OrganizationZone",
+    "aretesPerdues": 19,
+    "fichesTouchees": 5,
+    "exemples": [
+     "hokage (status) ← exerce astronomer (profession)",
+     "hokage (status) ← exerce hiruzen-sarutobi (character)",
+     "hokage (status) ← exerce tobirama-senju (character)"
+    ]
+   },
+   {
+    "relation": "appartient",
+    "sens": "entrant",
+    "gabarit": "OrganizationZone",
+    "aretesPerdues": 18,
+    "fichesTouchees": 9,
+    "exemples": [
+     "kara (status) ← appartient doctor (profession)",
+     "scientific-ninja-weapons-team (status) ← appartient katasuke-tono-s-assistant (profession)",
+     "ame-orphans (status) ← appartient nagato-pain (power)"
+    ]
+   },
+   {
+    "relation": "possede",
+    "sens": "entrant",
+    "gabarit": "CharacterZone",
+    "aretesPerdues": 13,
+    "fichesTouchees": 11,
+    "exemples": [
+     "komushi (character) ← possede sasori (character)",
+     "wabisuke (character) ← possede izuru-kira (character)",
+     "haineko (character) ← possede rangiku-matsumoto (character)"
+    ]
+   },
+   {
+    "relation": "ange",
+    "sens": "entrant",
+    "gabarit": "CharacterZone",
+    "aretesPerdues": 10,
+    "fichesTouchees": 10,
+    "exemples": [
+     "vados (character) ← ange univers-6 (place)",
+     "awamo (character) ← ange univers-1 (place)",
+     "sour (character) ← ange univers-2 (place)"
+    ]
+   },
+   {
+    "relation": "maitrise",
+    "sens": "entrant",
+    "gabarit": "CharacterZone",
+    "aretesPerdues": 8,
+    "fichesTouchees": 2,
+    "exemples": [
+     "monkey-d-luffy (character) ← maitrise gear-4-gear-fourth (skill)",
+     "monkey-d-luffy (character) ← maitrise gear-4-gear-fourth-snake-man (skill)",
+     "monkey-d-luffy (character) ← maitrise gear-2-gear-second (skill)"
+    ]
+   },
+   {
+    "relation": "kaio_shin",
+    "sens": "entrant",
+    "gabarit": "CharacterZone",
+    "aretesPerdues": 8,
+    "fichesTouchees": 8,
+    "exemples": [
+     "ill (character) ← kaio_shin univers-8 (place)",
+     "roh (character) ← kaio_shin univers-9 (place)",
+     "pell (character) ← kaio_shin univers-2 (place)"
+    ]
+   },
+   {
+    "relation": "dieu_destruction",
+    "sens": "entrant",
+    "gabarit": "CharacterZone",
+    "aretesPerdues": 8,
+    "fichesTouchees": 8,
+    "exemples": [
+     "arack (character) ← dieu_destruction univers-5 (place)",
+     "geene (character) ← dieu_destruction univers-12 (place)",
+     "quitela (character) ← dieu_destruction univers-4 (place)"
+    ]
+   },
+   {
+    "relation": "appartient",
+    "sens": "sortant",
+    "gabarit": "Attaque",
+    "aretesPerdues": 8,
+    "fichesTouchees": 8,
+    "exemples": [
+     "atk-bl-bakudo-99-kin (power) → appartient kido (power)",
+     "atk-bl-bakudo-61-rikujokoro (power) → appartient kido (power)",
+     "atk-bl-bakudo-81-danku (power) → appartient kido (power)"
+    ]
+   },
+   {
+    "relation": "famille",
+    "sens": "entrant",
+    "gabarit": "OrganizationZone",
+    "aretesPerdues": 6,
+    "fichesTouchees": 5,
+    "exemples": [
+     "aburame (status) ← famille muta-aburame (character)",
+     "kaguya (status) ← famille kimimaro (character)",
+     "senju (status) ← famille mito-uzumaki (character)"
+    ]
+   },
+   {
+    "relation": "habite",
+    "sens": "entrant",
+    "gabarit": "OrganizationZone",
+    "aretesPerdues": 4,
+    "fichesTouchees": 2,
+    "exemples": [
+     "sphinx-one-piece (status) ← habite oide (character)",
+     "capsule-corp (status) ← habite trunks-ssj (skill)",
+     "capsule-corp (status) ← habite oolong (character)"
+    ]
+   },
+   {
+    "relation": "habite",
+    "sens": "sortant",
+    "gabarit": "OrganizationZone",
+    "aretesPerdues": 3,
+    "fichesTouchees": 1,
+    "exemples": [
+     "saiyan (status) → habite sadala (place)",
+     "saiyan (status) → habite vegeta-planete (place)",
+     "saiyan (status) → habite univers-7 (place)"
+    ]
+   },
+   {
+    "relation": "habite",
+    "sens": "sortant",
+    "gabarit": "Attaque",
+    "aretesPerdues": 3,
+    "fichesTouchees": 2,
+    "exemples": [
+     "atk-op-franky-radical-hip (power) → habite karakuri-island (place)",
+     "atk-op-ashura (power) → habite kuri (place)",
+     "atk-op-ashura (power) → habite grand-line (place)"
+    ]
+   },
+   {
+    "relation": "mentor",
+    "sens": "entrant",
+    "gabarit": "OrganizationZone",
+    "aretesPerdues": 1,
+    "fichesTouchees": 1,
+    "exemples": [
+     "association-hunters (status) ← mentor senritsu (character)"
+    ]
+   },
+   {
+    "relation": "exerce",
+    "sens": "entrant",
+    "gabarit": "CharacterZone",
+    "aretesPerdues": 1,
+    "fichesTouchees": 1,
+    "exemples": [
+     "kazekage (character) ← exerce rasa (character)"
+    ]
+   },
+   {
+    "relation": "habite",
+    "sens": "entrant",
+    "gabarit": "CharacterZone",
+    "aretesPerdues": 1,
+    "fichesTouchees": 1,
+    "exemples": [
+     "chocolat (character) ← habite choco-police (character)"
+    ]
+   },
+   {
+    "relation": "possede",
+    "sens": "sortant",
+    "gabarit": "OrganizationZone",
+    "aretesPerdues": 1,
+    "fichesTouchees": 1,
+    "exemples": [
+     "flotte-yonta-maria (status) → possede yonta-maria (artifact)"
+    ]
+   }
+  ]
+ }
+}

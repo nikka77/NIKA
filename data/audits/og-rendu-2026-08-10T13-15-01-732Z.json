@@ -1,0 +1,835 @@
+{
+  "horodatage": "2026-08-10T13:16:28.688Z",
+  "base": "http://localhost:3000",
+  "seuils": {
+    "SEUIL_VIDE": 800,
+    "SEUIL_PHOTO": 6000
+  },
+  "echantillon": 82,
+  "parVerdict": {
+    "visuel": 43,
+    "icone ou dessin plat": 39
+  },
+  "resultats": [
+    {
+      "slug": "ninja-info-cards",
+      "universe": "Naruto",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/6/63/Ninja_Info_Cards.png/revision/latest/scale-to-width-down/720?cb=20240918030751",
+      "couleurs": 21353,
+      "verdict": "visuel",
+      "octets": 299278,
+      "ms": 491
+    },
+    {
+      "slug": "aosa",
+      "universe": "Naruto",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/2/2f/Aosa.png",
+      "couleurs": 14184,
+      "verdict": "visuel",
+      "octets": 281941,
+      "ms": 1133
+    },
+    {
+      "slug": "marui",
+      "universe": "Naruto",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/2/2e/Marui.png",
+      "couleurs": 20988,
+      "verdict": "visuel",
+      "octets": 305017,
+      "ms": 1353
+    },
+    {
+      "slug": "yoshino-nara",
+      "universe": "Naruto",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/9/9f/Yoshino_Nara.png",
+      "couleurs": 10386,
+      "verdict": "visuel",
+      "octets": 242705,
+      "ms": 1093
+    },
+    {
+      "slug": "diver-down",
+      "universe": "JoJo's Bizarre Adventure",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/jjba/images/e/ee/DiveP.png/revision/latest?cb=20230225230735",
+      "couleurs": 76208,
+      "verdict": "visuel",
+      "octets": 450625,
+      "ms": 1245
+    },
+    {
+      "slug": "water-release-hiding-in-drizzle-technique",
+      "universe": "Naruto",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/a/a7/Suiren_using_Water_Release.png/revision/latest/scale-to-width-down/720?cb=20150319114519",
+      "couleurs": 41858,
+      "verdict": "visuel",
+      "octets": 341873,
+      "ms": 1778
+    },
+    {
+      "slug": "akane",
+      "universe": "Naruto",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/a/aa/Akane.png",
+      "couleurs": 16311,
+      "verdict": "visuel",
+      "octets": 278293,
+      "ms": 1098
+    },
+    {
+      "slug": "sansho",
+      "universe": "Naruto",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/6/6f/Sansh%C5%8D.png",
+      "couleurs": 26458,
+      "verdict": "visuel",
+      "octets": 313164,
+      "ms": 1302
+    },
+    {
+      "slug": "sealing-technique-tiger-vision-staring-bullet",
+      "universe": "Naruto",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/b/bf/Koshi_Tandan1.png/revision/latest/scale-to-width-down/720?cb=20130718135920",
+      "couleurs": 12100,
+      "verdict": "visuel",
+      "octets": 250322,
+      "ms": 1370
+    },
+    {
+      "slug": "janemba",
+      "universe": "Dragon Ball",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/dragonball/images/b/bf/Myth.jpg/revision/latest?cb=20170104141124",
+      "couleurs": 48450,
+      "verdict": "visuel",
+      "octets": 389719,
+      "ms": 1664
+    },
+    {
+      "slug": "taro-naruto",
+      "universe": "Naruto",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/3/39/Taro.png",
+      "couleurs": 24555,
+      "verdict": "visuel",
+      "octets": 295161,
+      "ms": 1049
+    },
+    {
+      "slug": "fruit-du-canide-version-loup-divin",
+      "universe": "One Piece",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/onepiece/images/1/1d/Inu_Inu_no_Mi%2C_Model_Okuchi_no_Makami_Infobox.png/revision/latest?cb=20221120062131",
+      "couleurs": 31522,
+      "verdict": "visuel",
+      "octets": 381911,
+      "ms": 1002
+    },
+    {
+      "slug": "wood-release-smothering-binding-technique",
+      "universe": "Naruto",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/2/26/Smothering_Binding_Technique.png/revision/latest/scale-to-width-down/720?cb=20160128071453",
+      "couleurs": 13097,
+      "verdict": "visuel",
+      "octets": 272226,
+      "ms": 1489
+    },
+    {
+      "slug": "atk-db-double-death-saucer",
+      "universe": "Dragon Ball",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/dragonball/images/4/43/Double_Death_Saucer.png/revision/latest/scale-to-width-down/720?cb=20250321215715",
+      "couleurs": 33291,
+      "verdict": "visuel",
+      "octets": 318969,
+      "ms": 1779
+    },
+    {
+      "slug": "weatheria-op",
+      "universe": "One Piece",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/onepiece/images/e/e5/Weatheria_Infobox.png/revision/latest/scale-to-width-down/720?cb=20171008165842",
+      "couleurs": 36266,
+      "verdict": "visuel",
+      "octets": 333072,
+      "ms": 1924
+    },
+    {
+      "slug": "gou-koga",
+      "universe": "Bleach",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/7/41195.webp?s=18ec692f9f9c64e5bd708e3fad954e84",
+      "couleurs": 41708,
+      "verdict": "visuel",
+      "octets": 449809,
+      "ms": 3633
+    },
+    {
+      "slug": "chibi",
+      "universe": "Dragon Ball",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/7/238175.webp?s=715489f7a884f92310d4bbf6a34c11b2",
+      "couleurs": 19116,
+      "verdict": "visuel",
+      "octets": 263677,
+      "ms": 6301
+    },
+    {
+      "slug": "poperu",
+      "universe": "Dragon Ball",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/16/161759.webp?s=bf9455a9c5b3a1f56fc265f9a526cca0",
+      "couleurs": 31370,
+      "verdict": "visuel",
+      "octets": 358767,
+      "ms": 1423
+    },
+    {
+      "slug": "a-o",
+      "universe": "One Piece",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/12/369203.webp?s=efd534c1758e8333daf0f319a37ff091",
+      "couleurs": 36118,
+      "verdict": "visuel",
+      "octets": 374629,
+      "ms": 421
+    },
+    {
+      "slug": "page-one",
+      "universe": "One Piece",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/11/476813.webp?s=3397707a289f69e092fd2b7906527294",
+      "couleurs": 21670,
+      "verdict": "visuel",
+      "octets": 309260,
+      "ms": 511
+    },
+    {
+      "slug": "olibu",
+      "universe": "Dragon Ball",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/6/274559.webp?s=7e1af6b6e16012233832cf6d7c70c544",
+      "couleurs": 51897,
+      "verdict": "visuel",
+      "octets": 453125,
+      "ms": 313
+    },
+    {
+      "slug": "montb-charlotte",
+      "universe": "One Piece",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/15/412550.webp?s=c1673d5909f5be40490dfe89cf01cbe6",
+      "couleurs": 47642,
+      "verdict": "visuel",
+      "octets": 440586,
+      "ms": 311
+    },
+    {
+      "slug": "amadob",
+      "universe": "One Piece",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/3/369562.webp?s=778f809e9e3d23c86ca2ee9668147483",
+      "couleurs": 44686,
+      "verdict": "visuel",
+      "octets": 422083,
+      "ms": 336
+    },
+    {
+      "slug": "kanzai",
+      "universe": "Hunter x Hunter",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/4/260111.webp?s=938683dcb7f80300e230104de371d950",
+      "couleurs": 56488,
+      "verdict": "visuel",
+      "octets": 460122,
+      "ms": 430
+    },
+    {
+      "slug": "nashi",
+      "universe": "One Piece",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/4/595350.webp?s=324fb022f97bad931a359548568fac1b",
+      "couleurs": 58274,
+      "verdict": "visuel",
+      "octets": 447735,
+      "ms": 317
+    },
+    {
+      "slug": "dio-brando",
+      "universe": "JoJo's Bizarre Adventure",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/8/330539.webp?s=2e40251bbb48a09a41d2c89016da80f4",
+      "couleurs": 92248,
+      "verdict": "visuel",
+      "octets": 573007,
+      "ms": 293
+    },
+    {
+      "slug": "cioccolata",
+      "universe": "JoJo's Bizarre Adventure",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/4/379441.webp?s=3e562f61316b344de88970e61bd8dba4",
+      "couleurs": 46164,
+      "verdict": "visuel",
+      "octets": 447644,
+      "ms": 874
+    },
+    {
+      "slug": "queen",
+      "universe": "One Piece",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/14/401501.webp?s=e603843abbba984544b51eb28908f41d",
+      "couleurs": 40431,
+      "verdict": "visuel",
+      "octets": 397119,
+      "ms": 395
+    },
+    {
+      "slug": "tibany",
+      "universe": "One Piece",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/14/68839.webp?s=27174be0a7eadc1a5ff9be27188e9eed",
+      "couleurs": 39141,
+      "verdict": "visuel",
+      "octets": 433900,
+      "ms": 289
+    },
+    {
+      "slug": "leorio",
+      "universe": "Hunter x Hunter",
+      "hote": "cdn.myanimelist.net",
+      "image_url": "https://cdn.myanimelist.net/images/characters/11/549311.webp?s=ba86161de766b11580c7fbdf23849cbc",
+      "couleurs": 66687,
+      "verdict": "visuel",
+      "octets": 505856,
+      "ms": 374
+    },
+    {
+      "slug": "hozuki",
+      "universe": "Naruto",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/ref/hozuki.webp",
+      "couleurs": 9497,
+      "verdict": "visuel",
+      "octets": 218363,
+      "ms": 251
+    },
+    {
+      "slug": "aburame",
+      "universe": "Naruto",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/ref/aburame.webp",
+      "couleurs": 11715,
+      "verdict": "visuel",
+      "octets": 236435,
+      "ms": 301
+    },
+    {
+      "slug": "cereal",
+      "universe": "Dragon Ball",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/db/planets/cereal.webp",
+      "couleurs": 49382,
+      "verdict": "visuel",
+      "octets": 412363,
+      "ms": 288
+    },
+    {
+      "slug": "namek",
+      "universe": "Dragon Ball",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/db/planets/namek.webp",
+      "couleurs": 54941,
+      "verdict": "visuel",
+      "octets": 362431,
+      "ms": 302
+    },
+    {
+      "slug": "belmod-planet",
+      "universe": "Dragon Ball",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/db/planets/belmod-planet.webp",
+      "couleurs": 52725,
+      "verdict": "visuel",
+      "octets": 344952,
+      "ms": 281
+    },
+    {
+      "slug": "inuzuka",
+      "universe": "Naruto",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/ref/inuzuka.webp",
+      "couleurs": 10520,
+      "verdict": "visuel",
+      "octets": 214011,
+      "ms": 264
+    },
+    {
+      "slug": "univers-6",
+      "universe": "Dragon Ball",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/db/universes/univers-6.webp",
+      "couleurs": 27669,
+      "verdict": "visuel",
+      "octets": 251243,
+      "ms": 382
+    },
+    {
+      "slug": "univers-1",
+      "universe": "Dragon Ball",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/db/universes/univers-1.webp",
+      "couleurs": 41564,
+      "verdict": "visuel",
+      "octets": 378385,
+      "ms": 274
+    },
+    {
+      "slug": "jung",
+      "universe": "Dragon Ball",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/db/planets/jung.webp",
+      "couleurs": 41925,
+      "verdict": "visuel",
+      "octets": 314709,
+      "ms": 278
+    },
+    {
+      "slug": "luud",
+      "universe": "Dragon Ball",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/db/planets/luud.webp",
+      "couleurs": 42069,
+      "verdict": "visuel",
+      "octets": 328266,
+      "ms": 263
+    },
+    {
+      "slug": "kedoin",
+      "universe": "Naruto",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/ref/kedoin.webp",
+      "couleurs": 4794,
+      "verdict": "icone ou dessin plat",
+      "octets": 182105,
+      "ms": 277
+    },
+    {
+      "slug": "shamo",
+      "universe": "Dragon Ball",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/db/planets/shamo.webp",
+      "couleurs": 46292,
+      "verdict": "visuel",
+      "octets": 316750,
+      "ms": 270
+    },
+    {
+      "slug": "nameless-planet",
+      "universe": "Dragon Ball",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/db/planets/nameless-planet.webp",
+      "couleurs": 14943,
+      "verdict": "visuel",
+      "octets": 279311,
+      "ms": 300
+    },
+    {
+      "slug": "nara",
+      "universe": "Naruto",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/ref/nara.webp",
+      "couleurs": 1594,
+      "verdict": "icone ou dessin plat",
+      "octets": 161532,
+      "ms": 330
+    },
+    {
+      "slug": "kusanagi",
+      "universe": "Naruto",
+      "hote": "(relatif)",
+      "image_url": "/images/akasha/ref/kusanagi.webp",
+      "couleurs": 9954,
+      "verdict": "visuel",
+      "octets": 196689,
+      "ms": 289
+    },
+    {
+      "slug": "vegeta-mega-instinc-evil",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/transformaciones/vegeta mega instinto.webp",
+      "couleurs": 2035,
+      "verdict": "icone ou dessin plat",
+      "octets": 174424,
+      "ms": 391
+    },
+    {
+      "slug": "gogeta-ssj",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/transformaciones/gogeta_ssj_render_2_by_ssjrose890_de2z0ra-pre.webp",
+      "couleurs": 2035,
+      "verdict": "icone ou dessin plat",
+      "octets": 171949,
+      "ms": 315
+    },
+    {
+      "slug": "babari",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/planetas/Planeta_Babari.webp",
+      "couleurs": 1976,
+      "verdict": "icone ou dessin plat",
+      "octets": 161350,
+      "ms": 282
+    },
+    {
+      "slug": "gogeta-ssj4",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/transformaciones/GOGETA SSJ4.webp",
+      "couleurs": 2035,
+      "verdict": "icone ou dessin plat",
+      "octets": 172628,
+      "ms": 257
+    },
+    {
+      "slug": "otro-mundo",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/planetas/otro mundo.webp",
+      "couleurs": 1962,
+      "verdict": "icone ou dessin plat",
+      "octets": 152731,
+      "ms": 272
+    },
+    {
+      "slug": "vegeta",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/characters/vegeta_normal.webp",
+      "couleurs": 1414,
+      "verdict": "icone ou dessin plat",
+      "octets": 153606,
+      "ms": 320
+    },
+    {
+      "slug": "zarbon-monster",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/transformaciones/zarbon monster.webp",
+      "couleurs": 2035,
+      "verdict": "icone ou dessin plat",
+      "octets": 175980,
+      "ms": 590
+    },
+    {
+      "slug": "vegetto-ssjb",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/transformaciones/VEGITO SSJB.webp",
+      "couleurs": 2035,
+      "verdict": "icone ou dessin plat",
+      "octets": 171498,
+      "ms": 508
+    },
+    {
+      "slug": "kanassa",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/planetas/800px-PlanetKannasa.webp",
+      "couleurs": 1962,
+      "verdict": "icone ou dessin plat",
+      "octets": 153920,
+      "ms": 320
+    },
+    {
+      "slug": "mr-satan",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/characters/Mr_Satan_DBSuper.webp",
+      "couleurs": 1020,
+      "verdict": "icone ou dessin plat",
+      "octets": 146640,
+      "ms": 290
+    },
+    {
+      "slug": "gotenks-ssj",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/transformaciones/gotenks ssj.webp",
+      "couleurs": 2035,
+      "verdict": "icone ou dessin plat",
+      "octets": 172584,
+      "ms": 353
+    },
+    {
+      "slug": "imperfect-form",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/transformaciones/cell imperfect.webp",
+      "couleurs": 2035,
+      "verdict": "icone ou dessin plat",
+      "octets": 171157,
+      "ms": 312
+    },
+    {
+      "slug": "majin-buu-gohan",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/transformaciones/Super_Buu_Gohan_Absorbido.webp",
+      "couleurs": 2035,
+      "verdict": "icone ou dessin plat",
+      "octets": 176642,
+      "ms": 282
+    },
+    {
+      "slug": "vegeta-ssj",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/transformaciones/vegeta SSJ (2).webp",
+      "couleurs": 2035,
+      "verdict": "icone ou dessin plat",
+      "octets": 170159,
+      "ms": 316
+    },
+    {
+      "slug": "trunks-rage",
+      "universe": "Dragon Ball",
+      "hote": "dragonball-api.com",
+      "image_url": "https://dragonball-api.com/transformaciones/trunks ssj iracundo.webp",
+      "couleurs": 2035,
+      "verdict": "icone ou dessin plat",
+      "octets": 170572,
+      "ms": 315
+    },
+    {
+      "slug": "atk-bl-nake-benihime",
+      "universe": "Bleach",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/bleach/images/8/82/NakeBenihime.gif/revision/latest?cb=20160417004442&path-prefix=en",
+      "couleurs": 1271,
+      "verdict": "icone ou dessin plat",
+      "octets": 160819,
+      "ms": 576
+    },
+    {
+      "slug": "atk-bl-gran-rey-cero",
+      "universe": "Bleach",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest?cb=20160426182414&path-prefix=en",
+      "couleurs": 1271,
+      "verdict": "icone ou dessin plat",
+      "octets": 165021,
+      "ms": 5551
+    },
+    {
+      "slug": "atk-bl-desgarron",
+      "universe": "Bleach",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest?cb=20160427172717&path-prefix=en",
+      "couleurs": 1271,
+      "verdict": "icone ou dessin plat",
+      "octets": 163010,
+      "ms": 6205
+    },
+    {
+      "slug": "mont-myogi",
+      "universe": "Initial D",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/initiald/images/e/e7/S_myogi.gif/revision/latest?cb=20130729044838",
+      "couleurs": 5895,
+      "verdict": "icone ou dessin plat",
+      "octets": 184002,
+      "ms": 1181
+    },
+    {
+      "slug": "atk-bl-utsusemi",
+      "universe": "Bleach",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest?cb=20260805223647&path-prefix=fr",
+      "couleurs": 1271,
+      "verdict": "icone ou dessin plat",
+      "octets": 159731,
+      "ms": 3797
+    },
+    {
+      "slug": "kido",
+      "universe": "Bleach",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest?cb=20160222153316&path-prefix=en",
+      "couleurs": 1218,
+      "verdict": "icone ou dessin plat",
+      "octets": 140824,
+      "ms": 4494
+    },
+    {
+      "slug": "atk-bl-kageoni",
+      "universe": "Bleach",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/bleach/images/e/e3/Kageoni.gif/revision/latest/scale-to-width-down/480?cb=20250916212408&path-prefix=fr",
+      "couleurs": 1271,
+      "verdict": "icone ou dessin plat",
+      "octets": 159806,
+      "ms": 808
+    },
+    {
+      "slug": "atk-bl-shunko",
+      "universe": "Bleach",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest?cb=20170122063759&path-prefix=en",
+      "couleurs": 1271,
+      "verdict": "icone ou dessin plat",
+      "octets": 159484,
+      "ms": 5202
+    },
+    {
+      "slug": "atk-bl-cero",
+      "universe": "Bleach",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest?cb=20250324112655&path-prefix=en",
+      "couleurs": 1271,
+      "verdict": "icone ou dessin plat",
+      "octets": 157424,
+      "ms": 1204
+    },
+    {
+      "slug": "atk-bl-garra-de-la-pantera",
+      "universe": "Bleach",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest?cb=20160426192854&path-prefix=en",
+      "couleurs": 1271,
+      "verdict": "icone ou dessin plat",
+      "octets": 164393,
+      "ms": 514
+    },
+    {
+      "slug": "fruit-de-la-teleportation",
+      "universe": "One Piece",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/onepiece/images/5/5e/Wapu_Wapu_no_Mi.gif/revision/latest?cb=20240215015054",
+      "couleurs": 1218,
+      "verdict": "icone ou dessin plat",
+      "octets": 148253,
+      "ms": 334
+    },
+    {
+      "slug": "atk-bl-kurohitsugi",
+      "universe": "Bleach",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest?cb=20160304195411&path-prefix=en",
+      "couleurs": 1271,
+      "verdict": "icone ou dessin plat",
+      "octets": 161944,
+      "ms": 6944
+    },
+    {
+      "slug": "navire-brise-glace-de-whitey-bay",
+      "universe": "One Piece",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/onepiece/images/d/dd/Navire_Brise_Glace_de_Whitey_Bay_Anime_Infobox.gif/revision/latest?cb=20121225052935&path-prefix=fr",
+      "couleurs": 1547,
+      "verdict": "icone ou dessin plat",
+      "octets": 158118,
+      "ms": 902
+    },
+    {
+      "slug": "atk-bl-higa-zekko",
+      "universe": "Bleach",
+      "hote": "static.wikia.nocookie.net",
+      "image_url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest?cb=20160304184000&path-prefix=en",
+      "couleurs": 1271,
+      "verdict": "icone ou dessin plat",
+      "octets": 161098,
+      "ms": 747
+    },
+    {
+      "slug": "fruit-de-la-force",
+      "universe": "One Piece",
+      "hote": "(sans visuel)",
+      "image_url": null,
+      "couleurs": 1218,
+      "verdict": "icone ou dessin plat",
+      "octets": 147667,
+      "ms": 248
+    },
+    {
+      "slug": "atk-bl-soo-zabimaru",
+      "universe": "Bleach",
+      "hote": "(sans visuel)",
+      "image_url": null,
+      "couleurs": 1271,
+      "verdict": "icone ou dessin plat",
+      "octets": 166467,
+      "ms": 240
+    },
+    {
+      "slug": "leader-of-nadeshiko-village",
+      "universe": "Naruto",
+      "hote": "(sans visuel)",
+      "image_url": null,
+      "couleurs": 1355,
+      "verdict": "icone ou dessin plat",
+      "octets": 165470,
+      "ms": 368
+    },
+    {
+      "slug": "summoning-technique-nuiba",
+      "universe": "Naruto",
+      "hote": "(sans visuel)",
+      "image_url": null,
+      "couleurs": 1273,
+      "verdict": "icone ou dessin plat",
+      "octets": 166740,
+      "ms": 241
+    },
+    {
+      "slug": "sceau-de-suppression-du-chakra",
+      "universe": "Naruto",
+      "hote": "(sans visuel)",
+      "image_url": null,
+      "couleurs": 1567,
+      "verdict": "icone ou dessin plat",
+      "octets": 173397,
+      "ms": 231
+    },
+    {
+      "slug": "terrorist",
+      "universe": "Naruto",
+      "hote": "(sans visuel)",
+      "image_url": null,
+      "couleurs": 1355,
+      "verdict": "icone ou dessin plat",
+      "octets": 156775,
+      "ms": 218
+    },
+    {
+      "slug": "fruit-du-volatile-version-faucon",
+      "universe": "One Piece",
+      "hote": "(sans visuel)",
+      "image_url": null,
+      "couleurs": 1218,
+      "verdict": "icone ou dessin plat",
+      "octets": 156217,
+      "ms": 248
+    },
+    {
+      "slug": "flail",
+      "universe": "Naruto",
+      "hote": "(sans visuel)",
+      "image_url": null,
+      "couleurs": 1567,
+      "verdict": "icone ou dessin plat",
+      "octets": 153288,
+      "ms": 259
+    }
+  ]
+}

@@ -12,7 +12,7 @@
 // Usage : node --env-file=.env.local scripts/ops-fill-tronquees.mjs [--dry] [--limit=50] [--universe="Naruto"]
 import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
-import { dejaEnFile } from './lib/deja-en-file.mjs';
+import { dejaEnFile, refusesParLaGarde } from './lib/deja-en-file.mjs';
 
 const supabase = clientOps();
 const DRY = process.argv.includes('--dry');
@@ -49,12 +49,14 @@ for (let debut = 0; ; debut += 1000) {
 // PAGINÉ (07/08) : un `.select()` nu plafonne à 1 000 lignes chez PostgREST — le garde ne
 // voyait que le premier millier d'une pile de 11 000 et laissait repartir tout le reste.
 const dejaEnReview = await dejaEnFile(supabase);
+// Voir scripts/lib/deja-en-file.mjs : un refus de garde est une impasse, pas un aléa.
+const refusees = await refusesParLaGarde(supabase);
 
 const coupees = data.filter((e) => {
   const d = String(e.attributes?.descFr ?? '').trim();
   if (!d || d.length < 40) return false;
   if (FIN_OK.test(d) || META_FINALE.test(d)) return false;
-  return TACHE_POUR[e.type] && !dejaEnReview.has(e.slug);
+  return TACHE_POUR[e.type] && !(dejaEnReview.has(e.slug) || refusees.has(e.slug));
 });
 
 console.log(`${coupees.length} fiche(s) coupée(s) en pleine phrase${UNIVERSE ? ` (${UNIVERSE})` : ''}`);

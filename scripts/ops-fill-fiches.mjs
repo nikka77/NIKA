@@ -5,7 +5,7 @@
 // l'univers rédige, la chaîne de contrôle (garde → juge → review Dan) est la même que partout.
 import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
-import { dejaEnFile } from './lib/deja-en-file.mjs';
+import { dejaEnFile, refusesParLaGarde } from './lib/deja-en-file.mjs';
 import { ROLES, typesFor } from './lib/akasha-roles.mjs';
 
 const supabase = clientOps();
@@ -40,9 +40,11 @@ if (error) { console.error(error.message); process.exit(1); }
 // PAGINÉ (07/08) : un `.select()` nu plafonne à 1 000 lignes chez PostgREST — le garde ne
 // voyait que le premier millier d'une pile de 11 000 et laissait repartir tout le reste.
 const dejaEnReview = await dejaEnFile(supabase, ROLE);
+// Voir scripts/lib/deja-en-file.mjs : un refus de garde est une impasse, pas un aléa.
+const refusees = await refusesParLaGarde(supabase, ROLE);
 
 const candidates = (data ?? [])
-  .filter((e) => !dejaEnReview.has(e.slug))   // descFr déjà écarté en SQL
+  .filter((e) => !(dejaEnReview.has(e.slug) || refusees.has(e.slug)))   // descFr déjà écarté en SQL
   .slice(0, LIMIT);
 
 console.log(`${ROLES[ROLE].nom} — ${candidates.length} fiche(s) à rédiger :`);

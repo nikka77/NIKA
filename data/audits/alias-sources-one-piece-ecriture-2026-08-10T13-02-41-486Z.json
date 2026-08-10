@@ -1,0 +1,2394 @@
+{
+ "chantier": "registre d'alias SOURCE (notre fiche → titre de wiki), One Piece",
+ "quand": "2026-08-10T13:02:54.453Z",
+ "mode": "écriture du registre",
+ "ecritEnBase": false,
+ "wikis": {
+  "en": "onepiece.fandom.com",
+  "fr": "onepiece.fandom.com/fr"
+ },
+ "mesure": {
+  "fiches": 7654,
+  "aretes": 16788,
+  "isolees": 764,
+  "isoleesUnivers": 451
+ },
+ "dejaCherchables": 253,
+ "aTraiter": 198,
+ "curees": 15,
+ "parTemoin": {
+  "S2 interlangue": 9,
+  "S1 provenance": 6
+ },
+ "parTypeCure": {
+  "place": 9,
+  "artifact": 3,
+  "status": 2,
+  "character": 1
+ },
+ "motifsEchec": {
+  "S2 interlangue : «…» absente de onepiece.fandom.com/fr": 174,
+  "S2 interlangue : «…» redirige vers une SECTION (…) — refusé": 2,
+  "S2 interlangue → «…» REFUSÉ : cette page anglaise est réclamée par 4 de nos fiches — elle n'en identifie aucune": 4,
+  "S2 interlangue : interlangue en = «…», mais cette page est absente de onepiece.fandom.com — refusé": 1,
+  "S2 interlangue : interlangue en = «…» désigne une SECTION d'un autre article — refusé": 1,
+  "S1 provenance : «…» existe sur onepiece.fandom.com/fr mais ne déclare aucun interlangue en": 1
+ },
+ "verdicts": [
+  {
+   "nom": "Île Obscuria",
+   "slug": "kuraigana-island",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": "S2 interlangue",
+   "titreEn": "Kuraigana Island",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%8Ele%20Obscuria rend la page « Île Obscuria » et déclare en = « Kuraigana Island » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Kuraigana_Island",
+   "journal": []
+  },
+  {
+   "nom": "Navire-Cercueil",
+   "slug": "navire-cercueil",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": "S1 provenance",
+   "titreEn": "Hitsugibune",
+   "preuve": "notre fiche porte attributes.descFrSource = « …https://onepiece.fandom.com/fr/wiki/Navire-Cercueil » ; https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Navire-Cercueil rend la page « Navire-Cercueil » et déclare en = « Coffin Boat » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Hitsugibune (elle-même redirigée depuis « Coffin Boat »)",
+   "journal": []
+  },
+  {
+   "nom": "Tokoyaki 8",
+   "slug": "tokoyaki-8",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Tokoyaki 8 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Visio-Dial",
+   "slug": "visio-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Visio-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Hydro-Dial",
+   "slug": "hydro-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Hydro-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Breath-Dial",
+   "slug": "breath-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Breath-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Spéro-Dial",
+   "slug": "spero-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Spéro-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Konpira",
+   "slug": "konpira",
+   "type": "artifact",
+   "motifInitial": "redirection vers section (Gion#Weapons)",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Konpira » redirige vers une SECTION (Gion#Weapons) — refusé"
+   ]
+  },
+  {
+   "nom": "Eisen-Dial",
+   "slug": "eisen-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Eisen-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Heat-Dial",
+   "slug": "heat-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Heat-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Flavor-Dial",
+   "slug": "flavor-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Flavor-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Flash-Dial",
+   "slug": "flash-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Flash-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Flamme-Dial",
+   "slug": "flamme-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Flamme-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Jet-Dial",
+   "slug": "jet-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Jet-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Lampe-Dial",
+   "slug": "lampe-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Lampe-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Reject-Dia",
+   "slug": "reject-dia",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Reject-Dia » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Milky-Dial",
+   "slug": "milky-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Milky-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Impact-Dial",
+   "slug": "impact-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Impact-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Audio-Dial",
+   "slug": "audio-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Audio-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Diial des Ténèbres",
+   "slug": "diial-des-tenebres",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Diial des Ténèbres » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Thunder-Dial",
+   "slug": "thunder-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Thunder-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Jet-Board",
+   "slug": "jet-board",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Jet-Board » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Jet Shoes",
+   "slug": "jet-shoes",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Jet Shoes » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Dressrosa / Alliance Pirate",
+   "slug": "dressrosa-alliance-pirate",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Dressrosa / Alliance Pirate » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Saga Finale",
+   "slug": "saga-finale",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": "S2 interlangue",
+   "titreEn": "Final Saga",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Saga%20Finale rend la page « Saga Finale » et déclare en = « Final Saga » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Final_Saga",
+   "journal": []
+  },
+  {
+   "nom": "Île Jaune d'Œuf",
+   "slug": "kimi",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": "S2 interlangue",
+   "titreEn": "Kimi Island",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%8Ele%20Jaune%20d'%C5%92uf rend la page « Île Jaune d'Œuf » et déclare en = « Kimi Island » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Kimi_Island",
+   "journal": [
+    "S1 provenance : « Île Jaune d » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Île Patate",
+   "slug": "potato-op",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": "S1 provenance",
+   "titreEn": "Potato Island",
+   "preuve": "notre fiche porte attributes.descFrSource = « …https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Patate » ; https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%8Ele%20Patate rend la page « Île Patate » et déclare en = « Potato Island » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Potato_Island",
+   "journal": []
+  },
+  {
+   "nom": "Newkama Force #1",
+   "slug": "newkama-force-1",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Newkama Force #1 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Kendiyo Haritsu",
+   "slug": "kendiyo-haritsu",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Kendiyo Haritsu » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Orenami Fan (O)",
+   "slug": "orenami-fan-o",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Orenami Fan (O) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Bongou",
+   "slug": "bongou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Bongou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Dr. Fishbonen",
+   "slug": "dr-fishbonen",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Dr. Fishbonen » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Hongou",
+   "slug": "hongou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Hongou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Abellon",
+   "slug": "abellon",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": "S2 interlangue",
+   "titreEn": "Aveyron",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Abellon rend la page « Abellon » et déclare en = « Aveyron » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Aveyron",
+   "journal": []
+  },
+  {
+   "nom": "Banzaburou",
+   "slug": "banzaburou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Banzaburou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Goen Jean",
+   "slug": "goen-jean",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Goen Jean » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Chou",
+   "slug": "chou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Chou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Kaba Shinshi",
+   "slug": "kaba-shinshi",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Kaba Shinshi » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Axe-Dial",
+   "slug": "axe-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Axe-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Kamijirou",
+   "slug": "kamijirou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Kamijirou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Contrôle-Dial",
+   "slug": "controle-dial",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Contrôle-Dial » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "King (500 Hostages)",
+   "slug": "king-500-hostages",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « King (500 Hostages) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Futoru",
+   "slug": "futoru",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Futoru » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Burn-Blade",
+   "slug": "burn-blade",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Burn-Blade » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Newkama Force #4",
+   "slug": "newkama-force-4",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Newkama Force #4 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Orenami Fan (V)",
+   "slug": "orenami-fan-v",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Orenami Fan (V) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Alvida Pirate (S Tattoo)",
+   "slug": "alvida-pirate-s-tattoo",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Alvida Pirate (S Tattoo) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Detamaruka Shin",
+   "slug": "detamaruka-shin",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Detamaruka Shin » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "L’équipage des Pirates Yes",
+   "slug": "l-equipage-des-pirates-yes",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « L’équipage des Pirates Yes » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Unit 55 Troop Leader",
+   "slug": "unit-55-troop-leader",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Unit 55 Troop Leader » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Île de Road Star",
+   "slug": "loadestar-island",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": "S2 interlangue",
+   "titreEn": "Lodestar Island",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%8Ele%20de%20Road%20Star rend la page « Île de Road Star » et déclare en = « Lodestar Island » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Lodestar_Island",
+   "journal": []
+  },
+  {
+   "nom": "Royaume de Flevance",
+   "slug": "flevance-kingdom",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": "S2 interlangue",
+   "titreEn": "Flevance",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Royaume%20de%20Flevance rend la page « Flevance » (redirection dure depuis « Royaume de Flevance ») et déclare en = « Flevance » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Flevance",
+   "journal": []
+  },
+  {
+   "nom": "Sky-Arrows",
+   "slug": "sky-arrows",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Sky-Arrows » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Acrobatic Fuwas #1",
+   "slug": "acrobatic-fuwas-1",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Acrobatic Fuwas #1 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Acrobatic Fuwas #3",
+   "slug": "acrobatic-fuwas-3",
+   "type": "character",
+   "motifInitial": "redirection vers section (Buggy Pirates#Acrobatic Fuwas)",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Acrobatic Fuwas #3 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Urbain-san",
+   "slug": "urbain-san",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Urbain-san » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Burn-Bazooka",
+   "slug": "burn-bazooka",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Burn-Bazooka » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Nouveau Marineford",
+   "slug": "new-marineford",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Nouveau Marineford » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Arrow",
+   "slug": "arrow",
+   "type": "character",
+   "motifInitial": "redirection vers section (Tsumegeri Guards#Arrow)",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue → « Tsumegeri Guards » REFUSÉ : cette page anglaise est réclamée par 4 de nos fiches — elle n'en identifie aucune"
+   ],
+   "temoinEcarte": "S2 interlangue"
+  },
+  {
+   "nom": "Banbaji",
+   "slug": "banbaji",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Banbaji » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Barto Club's Grandma",
+   "slug": "barto-club-s-grandma",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Barto Club's Grandma » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Bon Chari Seller",
+   "slug": "bon-chari-seller",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Bon Chari Seller » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Kamyu's Fellow Boxer",
+   "slug": "kamyu-s-fellow-boxer",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Kamyu's Fellow Boxer » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Bungou",
+   "slug": "bungou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Bungou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Biscuits",
+   "slug": "biscuits",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Biscuits » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Biyo's Father",
+   "slug": "biyo-s-father",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Biyo's Father » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Ice",
+   "slug": "ice",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Ice » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Île 100 %",
+   "slug": "100-island",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": "S1 provenance",
+   "titreEn": "100% Island",
+   "preuve": "notre fiche porte attributes.descFrSource = « …https://onepiece.fandom.com/fr/wiki/%C3%8Ele_100%25 » ; https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%8Ele%20100%25 rend la page « Île 100% » et déclare en = « 100% Island » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/100%25_Island",
+   "journal": []
+  },
+  {
+   "nom": "Gu",
+   "slug": "gu",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : interlangue en = « Gu », mais cette page est absente de onepiece.fandom.com — refusé"
+   ]
+  },
+  {
+   "nom": "Margarine",
+   "slug": "margarine",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Margarine » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Yuu's Father",
+   "slug": "yuu-s-father",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Yuu's Father » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Île Gelée",
+   "slug": "jelly",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": "S1 provenance",
+   "titreEn": "Jelly Island",
+   "preuve": "notre fiche porte attributes.descFrSource = « …https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Gel%C3%A9e » ; https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%8Ele%20Gel%C3%A9e rend la page « Île Gelée » et déclare en = « Jelly Island » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Jelly_Island",
+   "journal": []
+  },
+  {
+   "nom": "Black Cat Pirate (Hammer)",
+   "slug": "black-cat-pirate-hammer",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Black Cat Pirate (Hammer) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Tsunagorou",
+   "slug": "tsunagorou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Tsunagorou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Milk",
+   "slug": "milk",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Milk » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Cook Shinpachi",
+   "slug": "cook-shinpachi",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Cook Shinpachi » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Decalvan Brother (A)",
+   "slug": "decalvan-brother-a",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Decalvan Brother (A) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Rosy Life Rider (Headband)",
+   "slug": "rosy-life-rider-headband",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Rosy Life Rider (Headband) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Kamyu's Fellow Wrestler",
+   "slug": "kamyu-s-fellow-wrestler",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Kamyu's Fellow Wrestler » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Kojurou",
+   "slug": "kojurou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Kojurou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Jack-in-the-Box",
+   "slug": "jack-in-the-box",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Jack-in-the-Box » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Pirate au foyer",
+   "slug": "pirate-au-foyer",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Pirate au foyer » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Village caché des nuages",
+   "slug": "hidden-cloud-village",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Village caché des nuages » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Île Pucci",
+   "slug": "pucci-island",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Île Pucci » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Kamyu's Fellow Swordsman",
+   "slug": "kamyu-s-fellow-swordsman",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Kamyu's Fellow Swordsman » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Lami Trafalgar",
+   "slug": "lami-trafalgar",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Lami Trafalgar » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Royaume de Centaurea",
+   "slug": "centaurea-kingdom",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Royaume de Centaurea » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Acrobatic Fuwas #4",
+   "slug": "acrobatic-fuwas-4",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Acrobatic Fuwas #4 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Colline aux fleurs",
+   "slug": "flower-hill",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Colline aux fleurs » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Tsujigirou Tooyama",
+   "slug": "tsujigirou-tooyama",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Tsujigirou Tooyama » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "L’équipage des Pirates Schneider",
+   "slug": "l-equipage-des-pirates-schneider",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « L’équipage des Pirates Schneider » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Île d'Hiver",
+   "slug": "winter-island",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Île d'Hiver » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Buggy Ball Attendant",
+   "slug": "buggy-ball-attendant",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Buggy Ball Attendant » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Unique",
+   "slug": "unique",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Unique » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Look-out of the Lady Mary",
+   "slug": "look-out-of-the-lady-mary",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Look-out of the Lady Mary » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Stool",
+   "slug": "stool",
+   "type": "character",
+   "motifInitial": "redirection vers section (Cocoa Weed#Stool)",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Stool » redirige vers une SECTION (Cocoa Weed#Stool) — refusé"
+   ]
+  },
+  {
+   "nom": "Linlin's Mother",
+   "slug": "linlin-s-mother",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Linlin's Mother » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Matoryou Hime-tachi",
+   "slug": "matoryou-hime-tachi",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Matoryou Hime-tachi » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Acrobatic Fuwas #2",
+   "slug": "acrobatic-fuwas-2",
+   "type": "character",
+   "motifInitial": "redirection vers section (Buggy Pirates#Acrobatic Fuwas)",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Acrobatic Fuwas #2 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Notice Town",
+   "slug": "notice-town",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Notice Town » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Hou-ban Taichou",
+   "slug": "hou-ban-taichou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Hou-ban Taichou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Piepie",
+   "slug": "piepie",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Piepie » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Topping",
+   "slug": "topping",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Topping » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Kung Fu Dugong",
+   "slug": "kung-fu-dugong",
+   "type": "character",
+   "motifInitial": "redirection vers section (Animal Species/Arabasta Saga#Kung-Fu Dugongs)",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Kung Fu Dugong » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Epée d'Ohm",
+   "slug": "epee-d-ohm",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Epée d'Ohm » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "L’équipage de Diez Barrels",
+   "slug": "l-equipage-de-diez-barrels",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « L’équipage de Diez Barrels » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Forêt de la Séduction",
+   "slug": "seducing-woods",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Forêt de la Séduction » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Sweet City",
+   "slug": "sweet-city",
+   "type": "place",
+   "motifInitial": "redirection vers section (Whole Cake Island#Sweet City)",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : interlangue en = « Whole Cake Island#Sweet City » désigne une SECTION d'un autre article — refusé"
+   ]
+  },
+  {
+   "nom": "Newkama Force #2",
+   "slug": "newkama-force-2",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Newkama Force #2 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Announcer Ikkaku",
+   "slug": "announcer-ikkaku",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Announcer Ikkaku » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Poripori",
+   "slug": "poripori",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Poripori » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Ohana",
+   "slug": "ohana",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Ohana » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Homing's Wife",
+   "slug": "homing-s-wife",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Homing's Wife » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Yakigashi",
+   "slug": "yakigashi",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Yakigashi » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Kagerou",
+   "slug": "kagerou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Kagerou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Pastor Zombie",
+   "slug": "pastor-zombie",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Pastor Zombie » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Pastor Zombie's Assistant",
+   "slug": "pastor-zombie-s-assistant",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Pastor Zombie's Assistant » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Ville du Château",
+   "slug": "castle-town",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Ville du Château » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Village des Aînés",
+   "slug": "elderly-village",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Village des Aînés » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Église",
+   "slug": "church",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Église » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Red Hair Pirate (Chain)",
+   "slug": "red-hair-pirate-chain",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Red Hair Pirate (Chain) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Doran's Father",
+   "slug": "doran-s-father",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Doran's Father » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Brahm",
+   "slug": "brahm",
+   "type": "character",
+   "motifInitial": "redirection vers section (Tsumegeri Guards#Brahm)",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue → « Tsumegeri Guards » REFUSÉ : cette page anglaise est réclamée par 4 de nos fiches — elle n'en identifie aucune"
+   ],
+   "temoinEcarte": "S2 interlangue"
+  },
+  {
+   "nom": "Abi's Mother",
+   "slug": "abi-s-mother",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Abi's Mother » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Rokuroshi's' Assistant",
+   "slug": "rokuroshi-s-assistant",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Rokuroshi's' Assistant » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Pirate Captain (500 Hostages)",
+   "slug": "pirate-captain-500-hostages",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Pirate Captain (500 Hostages) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Rosy Life Rider (Blond)",
+   "slug": "rosy-life-rider-blond",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Rosy Life Rider (Blond) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "G-8 Head Custodian",
+   "slug": "g-8-head-custodian",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « G-8 Head Custodian » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Shopkeeper Hanji",
+   "slug": "shopkeeper-hanji",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Shopkeeper Hanji » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Short Vassal (500 Hostages)",
+   "slug": "short-vassal-500-hostages",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Short Vassal (500 Hostages) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Sind's Father",
+   "slug": "sind-s-father",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Sind's Father » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Cook Billy",
+   "slug": "cook-billy",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Cook Billy » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Dancer on the Lady Mary",
+   "slug": "dancer-on-the-lady-mary",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Dancer on the Lady Mary » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Deigorou",
+   "slug": "deigorou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Deigorou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Decalvan Brother (B)",
+   "slug": "decalvan-brother-b",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Decalvan Brother (B) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Superhuman Domingos #1",
+   "slug": "superhuman-domingos-1",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Superhuman Domingos #1 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Superhuman Domingos #3",
+   "slug": "superhuman-domingos-3",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Superhuman Domingos #3 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Superhuman Domingos #2",
+   "slug": "superhuman-domingos-2",
+   "type": "character",
+   "motifInitial": "redirection vers section (Buggy Pirates#Superhuman Domingos)",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Superhuman Domingos #2 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Tall Vassal (500 Hostages)",
+   "slug": "tall-vassal-500-hostages",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Tall Vassal (500 Hostages) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Dream's Mother",
+   "slug": "dream-s-mother",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Dream's Mother » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Tabuhachirou",
+   "slug": "tabuhachirou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Tabuhachirou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Monnosuke Tsurue",
+   "slug": "monnosuke-tsurue",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Monnosuke Tsurue » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Foxy Pirates' Referee",
+   "slug": "foxy-pirates-referee",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Foxy Pirates' Referee » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "G-8 Marine Officer (Blond)",
+   "slug": "g-8-marine-officer-blond",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « G-8 Marine Officer (Blond) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Shitemanna Ishigo",
+   "slug": "shitemanna-ishigo",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Shitemanna Ishigo » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Furishirou Waruno",
+   "slug": "furishirou-waruno",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Furishirou Waruno » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "L’équipage des Pirates à la Moustache",
+   "slug": "l-equipage-des-pirates-a-la-moustache",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « L’équipage des Pirates à la Moustache » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Newkama Force #5",
+   "slug": "newkama-force-5",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Newkama Force #5 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Juujirou",
+   "slug": "juujirou",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Juujirou » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Hyota",
+   "slug": "hyota",
+   "type": "character",
+   "motifInitial": "redirection vers section (Tsumegeri Guards#Hyota)",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue → « Tsumegeri Guards » REFUSÉ : cette page anglaise est réclamée par 4 de nos fiches — elle n'en identifie aucune"
+   ],
+   "temoinEcarte": "S2 interlangue"
+  },
+  {
+   "nom": "Kureyo Kairo",
+   "slug": "kureyo-kairo",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Kureyo Kairo » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Goode",
+   "slug": "goode",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Goode » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "L’équipage du Capitaine Usopp",
+   "slug": "l-equipage-du-capitaine-usopp",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « L’équipage du Capitaine Usopp » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "L’équipage ASL",
+   "slug": "l-equipage-asl",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « L’équipage ASL » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "L’équipage des Candys",
+   "slug": "l-equipage-des-candys",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": "S1 provenance",
+   "titreEn": "Candy Pirates",
+   "preuve": "notre fiche porte attributes.descFrSource = « …https://onepiece.fandom.com/fr/wiki/%C3%89quipage_des_Candys » ; https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=%C3%89quipage%20des%20Candys rend la page « Équipage des Candys » et déclare en = « Candy Pirates » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Candy_Pirates",
+   "journal": []
+  },
+  {
+   "nom": "l’équipage de Ganzack",
+   "slug": "l-equipage-de-ganzack",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S1 provenance : « L » absente de onepiece.fandom.com/fr",
+    "S2 interlangue : « l’équipage de Ganzack » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "L’équipage Amigo",
+   "slug": "l-equipage-amigo",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « L’équipage Amigo » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Isshi 1",
+   "slug": "isshi-1",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Isshi 1 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Koala Zombie",
+   "slug": "koala-zombie",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Koala Zombie » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Linlin's Father",
+   "slug": "linlin-s-father",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Linlin's Father » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "L’équipage des Pirates Treasure",
+   "slug": "l-equipage-des-pirates-treasure",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « L’équipage des Pirates Treasure » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Mayor of the Desert Village",
+   "slug": "mayor-of-the-desert-village",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Mayor of the Desert Village » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Barrel",
+   "slug": "barrel",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue → « Tsumegeri Guards » REFUSÉ : cette page anglaise est réclamée par 4 de nos fiches — elle n'en identifie aucune"
+   ],
+   "temoinEcarte": "S2 interlangue"
+  },
+  {
+   "nom": "18th Fleet Gallery Head Chef",
+   "slug": "18th-fleet-gallery-head-chef",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « 18th Fleet Gallery Head Chef » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Sally Nantokanette",
+   "slug": "sally-nantokanette",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Sally Nantokanette » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Orenami Fan (L)",
+   "slug": "orenami-fan-l",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Orenami Fan (L) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Oyame",
+   "slug": "oyame",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Oyame » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Frères Voleurs",
+   "slug": "freres-voleurs",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Frères Voleurs » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Equipage de Bigalo",
+   "slug": "equipage-de-bigalo",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Equipage de Bigalo » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Equipage de Pandaman",
+   "slug": "equipage-de-pandaman",
+   "type": "status",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Equipage de Pandaman » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Law & Lami's Father",
+   "slug": "law-lami-s-father",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Law & Lami's Father » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Sanshita",
+   "slug": "sanshita",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Sanshita » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Esta's Boyfriend",
+   "slug": "esta-s-boyfriend",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Esta's Boyfriend » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Tailor Zombie",
+   "slug": "tailor-zombie",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Tailor Zombie » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Tall Risky Brother",
+   "slug": "tall-risky-brother",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Tall Risky Brother » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Tightrope Walking Funan Bros (Ginger)",
+   "slug": "tightrope-walking-funan-bros-ginger",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Tightrope Walking Funan Bros (Ginger) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Joe Bunny",
+   "slug": "joe-bunny",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Joe Bunny » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Hobbit",
+   "slug": "hobbit",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": "S1 provenance",
+   "titreEn": "Orbit",
+   "preuve": "notre fiche porte attributes.descFrSource = « …https://onepiece.fandom.com/fr/wiki/Hobbit » ; https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Hobbit rend la page « Hobbit » et déclare en = « Orbit » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Orbit",
+   "journal": []
+  },
+  {
+   "nom": "Kanishitoru Sukoshiba",
+   "slug": "kanishitoru-sukoshiba",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Kanishitoru Sukoshiba » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Buggy Pirate (Victim)",
+   "slug": "buggy-pirate-victim",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Buggy Pirate (Victim) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Tall Marley Brother",
+   "slug": "tall-marley-brother",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Tall Marley Brother » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Bateau de Pandaman",
+   "slug": "bateau-de-pandaman",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S1 provenance : « Bateau de Pandaman » existe sur onepiece.fandom.com/fr mais ne déclare aucun interlangue en"
+   ]
+  },
+  {
+   "nom": "Tête-de-Maquereau",
+   "slug": "tete-de-maquereau",
+   "type": "artifact",
+   "motifInitial": "aucune page",
+   "temoin": "S2 interlangue",
+   "titreEn": "Sabagashira I",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=T%C3%AAte-de-Maquereau rend la page « Sabagashira I » (redirection dure depuis « Tête-de-Maquereau ») et déclare en = « Sabagashira I » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Sabagashira_I",
+   "journal": [
+    "S1 provenance : « Sabagashira I » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Kanzaburou Akudai",
+   "slug": "kanzaburou-akudai",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Kanzaburou Akudai » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Lina and Sayo's Father",
+   "slug": "lina-and-sayo-s-father",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Lina and Sayo's Father » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Riley Brother #2",
+   "slug": "riley-brother-2",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Riley Brother #2 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Newkama Force #6",
+   "slug": "newkama-force-6",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Newkama Force #6 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Riley Brother #1",
+   "slug": "riley-brother-1",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Riley Brother #1 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Short Marley Brother",
+   "slug": "short-marley-brother",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Short Marley Brother » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Rotund Risky Brother",
+   "slug": "rotund-risky-brother",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Rotund Risky Brother » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "G-8 Sous Chef",
+   "slug": "g-8-sous-chef",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « G-8 Sous Chef » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "G-8 Marine Officer (Gray)",
+   "slug": "g-8-marine-officer-gray",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « G-8 Marine Officer (Gray) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Chintarou Giro",
+   "slug": "chintarou-giro",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Chintarou Giro » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Newkama Force #3",
+   "slug": "newkama-force-3",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Newkama Force #3 » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Alvida Pirate (Horned)",
+   "slug": "alvida-pirate-horned",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Alvida Pirate (Horned) » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Hockera Achino",
+   "slug": "hockera-achino",
+   "type": "character",
+   "motifInitial": "aucune page",
+   "temoin": null,
+   "titreEn": null,
+   "preuve": null,
+   "journal": [
+    "S2 interlangue : « Hockera Achino » absente de onepiece.fandom.com/fr"
+   ]
+  },
+  {
+   "nom": "Ruskaina",
+   "slug": "rusukaina",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": "S2 interlangue",
+   "titreEn": "Rusukaina",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Ruskaina rend la page « Ruskaina » et déclare en = « Rusukaina » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Rusukaina",
+   "journal": []
+  },
+  {
+   "nom": "Village de Kuen",
+   "slug": "kuen-village",
+   "type": "place",
+   "motifInitial": "aucune page",
+   "temoin": "S2 interlangue",
+   "titreEn": "Kuen Village",
+   "preuve": "https://onepiece.fandom.com/fr/api.php?action=query&prop=langlinks&lllang=en&titles=Village%20de%20Kuen rend la page « Village de Kuen » et déclare en = « Kuen Village » ; page vérifiée présente sur https://onepiece.fandom.com/wiki/Kuen_Village",
+   "journal": []
+  }
+ ]
+}

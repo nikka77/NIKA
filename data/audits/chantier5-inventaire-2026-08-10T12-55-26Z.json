@@ -1,0 +1,4203 @@
+{
+ "quand": "2026-08-10T12:55:26.525Z",
+ "instantane": "/private/tmp/claude-501/-Users-macbookprom1pro-Library-Mobile-Documents-com-apple-CloudDocs-NIKA/17f2db71-7c38-4eb1-aad2-72e629329d0d/scratchpad/corpus-2026-08-10T12-54-38Z.json",
+ "socle": {
+  "fiches": 7654,
+  "aretes": 16788,
+  "sections": 19084,
+  "aretesOrphelines": 0
+ },
+ "colonnes": {
+  "akasha_entries": [
+   "id",
+   "slug",
+   "type",
+   "name",
+   "is_fiction",
+   "universe",
+   "summary",
+   "description",
+   "image_url",
+   "attributes",
+   "rarity",
+   "created_at"
+  ],
+  "akasha_relations": [
+   "id",
+   "from_entry",
+   "to_entry",
+   "relation",
+   "created_at"
+  ],
+  "akasha_sections": [
+   "id",
+   "entry_id",
+   "idx",
+   "titre",
+   "texte",
+   "source",
+   "created_at"
+  ]
+ },
+ "colonnesRemplissage": {
+  "akasha_entries": {
+   "id": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "slug": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "type": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "name": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "is_fiction": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "universe": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "summary": {
+    "peuplees": 7637,
+    "vides": 17
+   },
+   "description": {
+    "peuplees": 33,
+    "vides": 7621
+   },
+   "image_url": {
+    "peuplees": 6904,
+    "vides": 750
+   },
+   "attributes": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "rarity": {
+    "peuplees": 7654,
+    "vides": 0
+   },
+   "created_at": {
+    "peuplees": 7654,
+    "vides": 0
+   }
+  },
+  "akasha_relations": {
+   "id": {
+    "peuplees": 16788,
+    "vides": 0
+   },
+   "from_entry": {
+    "peuplees": 16788,
+    "vides": 0
+   },
+   "to_entry": {
+    "peuplees": 16788,
+    "vides": 0
+   },
+   "relation": {
+    "peuplees": 16788,
+    "vides": 0
+   },
+   "created_at": {
+    "peuplees": 16788,
+    "vides": 0
+   }
+  },
+  "akasha_sections": {
+   "id": {
+    "peuplees": 19084,
+    "vides": 0
+   },
+   "entry_id": {
+    "peuplees": 19084,
+    "vides": 0
+   },
+   "idx": {
+    "peuplees": 19084,
+    "vides": 0
+   },
+   "titre": {
+    "peuplees": 19084,
+    "vides": 0
+   },
+   "texte": {
+    "peuplees": 19084,
+    "vides": 0
+   },
+   "source": {
+    "peuplees": 19084,
+    "vides": 0
+   },
+   "created_at": {
+    "peuplees": 19084,
+    "vides": 0
+   }
+  }
+ },
+ "sectionsSource": {
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)": 4107,
+  "openrouter/mistralai/mistral-small-24b-instruct-2501": 6279,
+  "claude-haiku (finisseur) · initiald.fandom.com (Mitsubishi Lancer Evolution III GSR (CE9A), Kyoichi Sudo's Mitsubishi Lancer Evolution)": 3,
+  "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo": 6713,
+  "mistral/mistral-large-latest": 1231,
+  "nvidia/nvidia/nemotron-3-super-120b-a12b": 84,
+  "claude-haiku (finisseur) · Usui Pass page - Fandom Initial D wiki": 2,
+  "deepinfra/mistralai/Mistral-Small-24B-Instruct-2501": 46,
+  "deepinfra/Qwen/Qwen3-32B": 54,
+  "claude-haiku (finisseur) · initiald.fandom.com/wiki/Initial_D_Arcade_Stage_Ver._2,initiald.fandom.com/wiki/Team_Emperor": 1,
+  "claude-haiku (finisseur) · Shinigami page - Fandom Death Note wiki": 10,
+  "claude-haiku-4-5 (blitz fenêtre 02/08 — traduit de la page Fandom, contre-vérifié)": 30,
+  "fusion FR/EN du 08/08 — contenu repris de la fiche « Summoning: Impure World Reincarnation » (traduit, contre-vérifié)": 2,
+  "claude-haiku (finisseur) · Mount Myōgi page - Fandom Initial D wiki": 1,
+  "claude-haiku (finisseur) · L (character)": 2,
+  "claude-haiku (finisseur) · initiald.fandom.com/wiki/Akina, initiald.fandom.com/wiki/Ryosuke_Takahashi, initiald.fandom.com/wiki/Sayuki": 2,
+  "claude-haiku (finisseur) · Shinigami": 1,
+  "claude-haiku (finisseur) · initiald.fandom.com/wiki/Sayuki, initiald.fandom.com/wiki/Beyond_Impact_Blue_Part_2, initiald.fandom.com/wiki/Mako_Sato": 1,
+  "claude-haiku (finisseur) · deathnote.fandom.com/wiki/Yotsuba_Group": 1,
+  "claude-haiku (finisseur) · Usui Pass": 3,
+  "claude-haiku (finisseur) · deathnote.fandom.com (chapters: Misunderstanding, Creation)": 2,
+  "claude-haiku (finisseur) · initiald.fandom.com (Keiichi Tsuchiya, Chapter 044)": 2,
+  "claude-haiku-4-5 (blitz front-2b — traduit de la page Fandom, contre-vérifié)": 305,
+  "connecteur-techniques-op (traduit de la page Fandom, contre-vérifié)": 120,
+  "anthropic/claude-haiku-4-5": 21,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis skypiea]": 3,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis loguetown]": 2,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis little-garden]": 2,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis water-seven]": 4,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis ile-de-drum]": 2,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis dressrosa]": 3,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis village-de-shimotsuki]": 3,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis alabasta]": 2,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis enies-lobby]": 1,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis east-blue-one-piece]": 3,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis impel-down]": 2,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis punk-hazard]": 4,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis reverse-mountain]": 1,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis long-ring-long-land]": 1,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis thriller-bark]": 3,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis weatheria]": 1,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis royaume-de-prodence]": 1,
+  "openrouter/mistralai/mistral-small-24b-instruct-2501 [fusion doublon depuis gotei-13-bleach]": 1,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis baggy-s-delivery]": 1,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis erbaf]": 2,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis archipel-des-sabaody]": 2,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis baterilla]": 1,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis chapeau-de-paille]": 8,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis pays-des-wa]": 5,
+  "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis zo]": 3
+ },
+ "rarites": {
+  "common": 5780,
+  "rare": 1260,
+  "epic": 490,
+  "legendary": 124
+ },
+ "is_fiction": {
+  "true": 7654
+ },
+ "parType": {
+  "artifact": 400,
+  "character": 4031,
+  "power": 2359,
+  "status": 333,
+  "profession": 99,
+  "place": 352,
+  "skill": 80
+ },
+ "parGabarit": {
+  "EntityZone": 2631,
+  "EntityZone · artifact": 400,
+  "CharacterZone": 4031,
+  "CharacterZone · character": 4031,
+  "EntityZone · power": 1700,
+  "gabarit Attaque": 659,
+  "gabarit Attaque · power": 659,
+  "OrganizationZone": 333,
+  "OrganizationZone · status": 333,
+  "EntityZone · profession": 99,
+  "EntityZone · place": 352,
+  "EntityZone · skill": 80
+ },
+ "clesAttributes": [
+  {
+   "cle": "descFr",
+   "fiches": 7259,
+   "peuplees": 7259,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "artifact": 324,
+    "character": 4008,
+    "power": 2198,
+    "status": 309,
+    "profession": 42,
+    "place": 334,
+    "skill": 44
+   },
+   "parUnivers": {
+    "Naruto": 3168,
+    "One Piece": 2072,
+    "Bleach": 367,
+    "Initial D": 42,
+    "Dragon Ball": 1078,
+    "JoJo's Bizarre Adventure": 233,
+    "Hunter x Hunter": 215,
+    "Death Note": 84
+   },
+   "exemples": [
+    {
+     "slug": "ninja-info-cards",
+     "valeur": "Les Ninja Info Cards sont un outil ninja permettant de stocker des informations grâce à l'"
+    },
+    {
+     "slug": "hikaru",
+     "valeur": "Hikaru est un shinobi de Kumogakure et capitaine du navire qui escortait la délégation de "
+    },
+    {
+     "slug": "marchen",
+     "valeur": "Le Märchen est un petit navire utilisé par Monkey D. Luffy dans la première version de Rom"
+    }
+   ]
+  },
+  {
+   "cle": "descFrSource",
+   "fiches": 4167,
+   "peuplees": 4167,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "artifact": 307,
+    "character": 1140,
+    "power": 2006,
+    "status": 309,
+    "profession": 42,
+    "place": 328,
+    "skill": 35
+   },
+   "parUnivers": {
+    "Naruto": 2620,
+    "One Piece": 532,
+    "Initial D": 28,
+    "Dragon Ball": 731,
+    "Bleach": 102,
+    "JoJo's Bizarre Adventure": 81,
+    "Hunter x Hunter": 39,
+    "Death Note": 34
+   },
+   "exemples": [
+    {
+     "slug": "ninja-info-cards",
+     "valeur": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo"
+    },
+    {
+     "slug": "hikaru",
+     "valeur": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo"
+    },
+    {
+     "slug": "marchen",
+     "valeur": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo"
+    }
+   ]
+  },
+  {
+   "cle": "category",
+   "fiches": 3530,
+   "peuplees": 3530,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "artifact": 400,
+    "power": 2358,
+    "status": 332,
+    "profession": 99,
+    "place": 220,
+    "skill": 80,
+    "character": 41
+   },
+   "parUnivers": {
+    "Naruto": 1993,
+    "One Piece": 649,
+    "Initial D": 18,
+    "Dragon Ball": 705,
+    "Bleach": 89,
+    "JoJo's Bizarre Adventure": 54,
+    "Hunter x Hunter": 12,
+    "Death Note": 10
+   },
+   "exemples": [
+    {
+     "slug": "ninja-info-cards",
+     "valeur": "Arme & outil"
+    },
+    {
+     "slug": "marchen",
+     "valeur": "Navire"
+    },
+    {
+     "slug": "empty-cicada-shell-technique",
+     "valeur": "Jutsu"
+    }
+   ]
+  },
+  {
+   "cle": "voiceActors",
+   "fiches": 3530,
+   "peuplees": 3530,
+   "formes": [
+    "object"
+   ],
+   "parType": {
+    "character": 3530
+   },
+   "parUnivers": {
+    "Naruto": 1111,
+    "Bleach": 285,
+    "One Piece": 1272,
+    "JoJo's Bizarre Adventure": 166,
+    "Dragon Ball": 420,
+    "Hunter x Hunter": 192,
+    "Death Note": 61,
+    "Initial D": 23
+   },
+   "exemples": [
+    {
+     "slug": "hikaru",
+     "valeur": "{\"en\":[],\"jp\":[\"Shinobu Matsumoto\"]}"
+    },
+    {
+     "slug": "gou-koga",
+     "valeur": "{\"en\":[\"Richard Epcar\",\"Frédéric Souterelle\"],\"jp\":[\"Tohru Furusawa\"]}"
+    },
+    {
+     "slug": "tsukushi",
+     "valeur": "{\"en\":[],\"jp\":[\"Kanji Suzumori\"]}"
+    }
+   ]
+  },
+  {
+   "cle": "descLang",
+   "fiches": 3284,
+   "peuplees": 3284,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 3046,
+    "power": 204,
+    "skill": 9,
+    "artifact": 19,
+    "place": 6
+   },
+   "parUnivers": {
+    "Bleach": 278,
+    "One Piece": 1578,
+    "Naruto": 614,
+    "Dragon Ball": 387,
+    "Hunter x Hunter": 186,
+    "Death Note": 56,
+    "JoJo's Bizarre Adventure": 166,
+    "Initial D": 19
+   },
+   "exemples": [
+    {
+     "slug": "gou-koga",
+     "valeur": "en"
+    },
+    {
+     "slug": "fruit-de-la-force",
+     "valeur": "fr"
+    },
+    {
+     "slug": "homing-donquixote",
+     "valeur": "en"
+    }
+   ]
+  },
+  {
+   "cle": "descRaw",
+   "fiches": 3279,
+   "peuplees": 3279,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 3046,
+    "power": 204,
+    "skill": 9,
+    "artifact": 19,
+    "place": 1
+   },
+   "parUnivers": {
+    "Bleach": 278,
+    "One Piece": 1578,
+    "Naruto": 614,
+    "Dragon Ball": 382,
+    "Hunter x Hunter": 186,
+    "Death Note": 56,
+    "JoJo's Bizarre Adventure": 166,
+    "Initial D": 19
+   },
+   "exemples": [
+    {
+     "slug": "gou-koga",
+     "valeur": "Gou Koga is a large and bulky man who resembles a punkish biker with spiky orange hair. Ev"
+    },
+    {
+     "slug": "fruit-de-la-force",
+     "valeur": "C'est un fruit qui permet à celui qui l'a mangé de d'acquérir une force herculéenne."
+    },
+    {
+     "slug": "homing-donquixote",
+     "valeur": "Donquixote Homing is the deceased husband of Matriarch and father of Doflamingo and Rosina"
+    }
+   ]
+  },
+  {
+   "cle": "role",
+   "fiches": 2678,
+   "peuplees": 2678,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 2678
+   },
+   "parUnivers": {
+    "Bleach": 290,
+    "One Piece": 1449,
+    "JoJo's Bizarre Adventure": 179,
+    "Dragon Ball": 434,
+    "Hunter x Hunter": 203,
+    "Naruto": 23,
+    "Death Note": 74,
+    "Initial D": 26
+   },
+   "exemples": [
+    {
+     "slug": "gou-koga",
+     "valeur": "Personnage secondaire"
+    },
+    {
+     "slug": "homing-donquixote",
+     "valeur": "Personnage secondaire"
+    },
+    {
+     "slug": "daifugo",
+     "valeur": "Personnage secondaire"
+    }
+   ]
+  },
+  {
+   "cle": "favorites",
+   "fiches": 1966,
+   "peuplees": 1966,
+   "formes": [
+    "number"
+   ],
+   "parType": {
+    "character": 1966
+   },
+   "parUnivers": {
+    "Bleach": 250,
+    "One Piece": 608,
+    "JoJo's Bizarre Adventure": 158,
+    "Naruto": 375,
+    "Dragon Ball": 329,
+    "Hunter x Hunter": 175,
+    "Death Note": 50,
+    "Initial D": 21
+   },
+   "exemples": [
+    {
+     "slug": "gou-koga",
+     "valeur": "7"
+    },
+    {
+     "slug": "homing-donquixote",
+     "valeur": "1"
+    },
+    {
+     "slug": "messina",
+     "valeur": "3"
+    }
+   ]
+  },
+  {
+   "cle": "element",
+   "fiches": 1700,
+   "peuplees": 1700,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "power": 1700
+   },
+   "parUnivers": {
+    "Naruto": 1439,
+    "One Piece": 211,
+    "JoJo's Bizarre Adventure": 44,
+    "Bleach": 3,
+    "Dragon Ball": 3
+   },
+   "exemples": [
+    {
+     "slug": "empty-cicada-shell-technique",
+     "valeur": "Ninjutsu"
+    },
+    {
+     "slug": "fruit-de-la-force",
+     "valeur": "Fruit du Démon · Paramecia"
+    },
+    {
+     "slug": "corpse-clone-technique",
+     "valeur": "Ninjutsu"
+    }
+   ]
+  },
+  {
+   "cle": "sex",
+   "fiches": 1268,
+   "peuplees": 1268,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 1268
+   },
+   "parUnivers": {
+    "Naruto": 1268
+   },
+   "exemples": [
+    {
+     "slug": "hikaru",
+     "valeur": "Male"
+    },
+    {
+     "slug": "tsukushi",
+     "valeur": "Male"
+    },
+    {
+     "slug": "yuga",
+     "valeur": "Male"
+    }
+   ]
+  },
+  {
+   "cle": "village",
+   "fiches": 756,
+   "peuplees": 756,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 756
+   },
+   "parUnivers": {
+    "Naruto": 756
+   },
+   "exemples": [
+    {
+     "slug": "hikaru",
+     "valeur": "Kumogakure"
+    },
+    {
+     "slug": "taji",
+     "valeur": "Konohagakure"
+    },
+    {
+     "slug": "bunpuku",
+     "valeur": "Sunagakure"
+    }
+   ]
+  },
+  {
+   "cle": "discipline",
+   "fiches": 749,
+   "peuplees": 749,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "power": 669,
+    "skill": 80
+   },
+   "parUnivers": {
+    "Dragon Ball": 546,
+    "One Piece": 109,
+    "Naruto": 28,
+    "Bleach": 61,
+    "Hunter x Hunter": 2,
+    "JoJo's Bizarre Adventure": 1,
+    "Death Note": 1,
+    "Initial D": 1
+   },
+   "exemples": [
+    {
+     "slug": "atk-db-justice-pose-1",
+     "valeur": "Technique"
+    },
+    {
+     "slug": "atk-db-chou-maretsugeki",
+     "valeur": "Technique"
+    },
+    {
+     "slug": "atk-db-ki-sense",
+     "valeur": "Technique"
+    }
+   ]
+  },
+  {
+   "cle": "age",
+   "fiches": 733,
+   "peuplees": 733,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 733
+   },
+   "parUnivers": {
+    "Naruto": 437,
+    "One Piece": 296
+   },
+   "exemples": [
+    {
+     "slug": "hikaru",
+     "valeur": "26"
+    },
+    {
+     "slug": "tsukushi",
+     "valeur": "23"
+    },
+    {
+     "slug": "taji",
+     "valeur": "23"
+    }
+   ]
+  },
+  {
+   "cle": "source",
+   "fiches": 659,
+   "peuplees": 659,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "power": 659
+   },
+   "parUnivers": {
+    "Dragon Ball": 501,
+    "One Piece": 98,
+    "Bleach": 60
+   },
+   "exemples": [
+    {
+     "slug": "atk-db-justice-pose-1",
+     "valeur": "fandom"
+    },
+    {
+     "slug": "atk-db-chou-maretsugeki",
+     "valeur": "fandom"
+    },
+    {
+     "slug": "atk-db-ki-sense",
+     "valeur": "fandom"
+    }
+   ]
+  },
+  {
+   "cle": "faction",
+   "fiches": 515,
+   "peuplees": 515,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 515
+   },
+   "parUnivers": {
+    "One Piece": 515
+   },
+   "exemples": [
+    {
+     "slug": "pearl",
+     "valeur": "Pirate"
+    },
+    {
+     "slug": "chouchou",
+     "valeur": "Civil"
+    },
+    {
+     "slug": "mascarpone-charlotte",
+     "valeur": "Pirate"
+    }
+   ]
+  },
+  {
+   "cle": "rank",
+   "fiches": 474,
+   "peuplees": 474,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 473,
+    "status": 1
+   },
+   "parUnivers": {
+    "Naruto": 473,
+    "Bleach": 1
+   },
+   "exemples": [
+    {
+     "slug": "hikaru",
+     "valeur": "Chūnin"
+    },
+    {
+     "slug": "taji",
+     "valeur": "Anbu"
+    },
+    {
+     "slug": "suika",
+     "valeur": "Jōnin"
+    }
+   ]
+  },
+  {
+   "cle": "occupation",
+   "fiches": 440,
+   "peuplees": 440,
+   "formes": [
+    "array",
+    "string"
+   ],
+   "parType": {
+    "character": 440
+   },
+   "parUnivers": {
+    "One Piece": 421,
+    "Naruto": 19
+   },
+   "exemples": [
+    {
+     "slug": "pearl",
+     "valeur": "Captaine (2e bataillon)"
+    },
+    {
+     "slug": "chouchou",
+     "valeur": "Propriétaire d'un magasin"
+    },
+    {
+     "slug": "mascarpone-charlotte",
+     "valeur": "Officier"
+    }
+   ]
+  },
+  {
+   "cle": "family",
+   "fiches": 405,
+   "peuplees": 405,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "character": 405
+   },
+   "parUnivers": {
+    "Naruto": 389,
+    "JoJo's Bizarre Adventure": 16
+   },
+   "exemples": [
+    {
+     "slug": "yuga",
+     "valeur": "[{\"rel\":\"brother\",\"name\":\"Yoruga\",\"slug\":\"yoruga\"}]"
+    },
+    {
+     "slug": "doto-kazahana",
+     "valeur": "[{\"rel\":\"niece\",\"name\":\"Koyuki Kazahana\",\"slug\":\"koyuki-kazahana\"},{\"rel\":\"brother\",\"name\""
+    },
+    {
+     "slug": "yubeshi",
+     "valeur": "[{\"rel\":\"grandfather\",\"name\":\"Ohagi\",\"slug\":\"ohagi\"},{\"rel\":\"husband\",\"name\":\"Sabure\",\"slu"
+    }
+   ]
+  },
+  {
+   "cle": "material",
+   "fiches": 384,
+   "peuplees": 384,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "artifact": 384
+   },
+   "parUnivers": {
+    "Naruto": 190,
+    "One Piece": 154,
+    "Initial D": 5,
+    "Bleach": 18,
+    "Death Note": 1,
+    "Dragon Ball": 14,
+    "JoJo's Bizarre Adventure": 2
+   },
+   "exemples": [
+    {
+     "slug": "ninja-info-cards",
+     "valeur": "Outil ninja"
+    },
+    {
+     "slug": "marchen",
+     "valeur": "Navire Pirate"
+    },
+    {
+     "slug": "lancer-evo3",
+     "valeur": "CE9A · 4G63T"
+    }
+   ]
+  },
+  {
+   "cle": "roman_name",
+   "fiches": 380,
+   "peuplees": 380,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "artifact": 109,
+    "power": 185,
+    "status": 83,
+    "skill": 3
+   },
+   "parUnivers": {
+    "One Piece": 380
+   },
+   "exemples": [
+    {
+     "slug": "marchen",
+     "valeur": "Meruhen-gō"
+    },
+    {
+     "slug": "fruit-de-la-force",
+     "valeur": "Riki Riki no Mi"
+    },
+    {
+     "slug": "fruit-du-ph-nix",
+     "valeur": "Tori Tori no Mi"
+    }
+   ]
+  },
+  {
+   "cle": "crew",
+   "fiches": 358,
+   "peuplees": 358,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 358
+   },
+   "parUnivers": {
+    "One Piece": 358
+   },
+   "exemples": [
+    {
+     "slug": "pearl",
+     "valeur": "L’équipage de Krieg"
+    },
+    {
+     "slug": "mascarpone-charlotte",
+     "valeur": "L’équipage de Big Mom"
+    },
+    {
+     "slug": "shiki",
+     "valeur": "L’équipage du Lion d’Or"
+    }
+   ]
+  },
+  {
+   "cle": "scope",
+   "fiches": 333,
+   "peuplees": 333,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "status": 333
+   },
+   "parUnivers": {
+    "Naruto": 194,
+    "One Piece": 113,
+    "Dragon Ball": 2,
+    "Hunter x Hunter": 5,
+    "JoJo's Bizarre Adventure": 4,
+    "Initial D": 5,
+    "Bleach": 5,
+    "Death Note": 5
+   },
+   "exemples": [
+    {
+     "slug": "konoha-council",
+     "valeur": "Organisation"
+    },
+    {
+     "slug": "clan-sarutobi",
+     "valeur": "Clan"
+    },
+    {
+     "slug": "hozuki",
+     "valeur": "Clan"
+    }
+   ]
+  },
+  {
+   "cle": "region",
+   "fiches": 308,
+   "peuplees": 308,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "place": 308
+   },
+   "parUnivers": {
+    "Hunter x Hunter": 4,
+    "Naruto": 16,
+    "One Piece": 190,
+    "Dragon Ball": 83,
+    "Initial D": 6,
+    "Death Note": 2,
+    "Bleach": 4,
+    "JoJo's Bizarre Adventure": 3
+   },
+   "exemples": [
+    {
+     "slug": "mont-kukuru",
+     "valeur": "Domaine Zoldyck"
+    },
+    {
+     "slug": "mountains-graveyard",
+     "valeur": "Pays du Son"
+    },
+    {
+     "slug": "seducing-woods",
+     "valeur": "New World"
+    }
+   ]
+  },
+  {
+   "cle": "origin",
+   "fiches": 283,
+   "peuplees": 283,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "artifact": 283
+   },
+   "parUnivers": {
+    "Naruto": 188,
+    "One Piece": 79,
+    "Bleach": 16
+   },
+   "exemples": [
+    {
+     "slug": "ninja-info-cards",
+     "valeur": "Univers Naruto"
+    },
+    {
+     "slug": "marchen",
+     "valeur": "L’équipage du Chapeau de Paille"
+    },
+    {
+     "slug": "sode-no-shirayuki-bleach",
+     "valeur": "Lame de Rukia Kuchiki"
+    }
+   ]
+  },
+  {
+   "cle": "fruit_type",
+   "fiches": 280,
+   "peuplees": 280,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "power": 210,
+    "character": 70
+   },
+   "parUnivers": {
+    "One Piece": 280
+   },
+   "exemples": [
+    {
+     "slug": "fruit-de-la-force",
+     "valeur": "Paramecia"
+    },
+    {
+     "slug": "fruit-du-ph-nix",
+     "valeur": "Zoan Mythique"
+    },
+    {
+     "slug": "fruit-glisse-glisse",
+     "valeur": "Paramecia"
+    }
+   ]
+  },
+  {
+   "cle": "clan",
+   "fiches": 230,
+   "peuplees": 230,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 230
+   },
+   "parUnivers": {
+    "Naruto": 230
+   },
+   "exemples": [
+    {
+     "slug": "kiyoi-yotsuki",
+     "valeur": "Yotsuki"
+    },
+    {
+     "slug": "fu-yamanaka",
+     "valeur": "Yamanaka"
+    },
+    {
+     "slug": "ishikawa",
+     "valeur": "Kamizuru"
+    }
+   ]
+  },
+  {
+   "cle": "organization",
+   "fiches": 227,
+   "peuplees": 227,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 227
+   },
+   "parUnivers": {
+    "Naruto": 227
+   },
+   "exemples": [
+    {
+     "slug": "victor",
+     "valeur": "Kara"
+    },
+    {
+     "slug": "amado-sanzu",
+     "valeur": "Kara"
+    },
+    {
+     "slug": "fu-yamanaka",
+     "valeur": "Root"
+    }
+   ]
+  },
+  {
+   "cle": "partie",
+   "fiches": 221,
+   "peuplees": 221,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 179,
+    "power": 42
+   },
+   "parUnivers": {
+    "JoJo's Bizarre Adventure": 221
+   },
+   "exemples": [
+    {
+     "slug": "messina",
+     "valeur": "Partie 1-2"
+    },
+    {
+     "slug": "gold-experience",
+     "valeur": "Partie 5"
+    },
+    {
+     "slug": "c-moon",
+     "valeur": "Partie 6"
+    }
+   ]
+  },
+  {
+   "cle": "birthdate",
+   "fiches": 216,
+   "peuplees": 216,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 216
+   },
+   "parUnivers": {
+    "Naruto": 216
+   },
+   "exemples": [
+    {
+     "slug": "bunpuku",
+     "valeur": "9 février"
+    },
+    {
+     "slug": "fu-yamanaka",
+     "valeur": "20 août"
+    },
+    {
+     "slug": "ishikawa",
+     "valeur": "6 mai"
+    }
+   ]
+  },
+  {
+   "cle": "race",
+   "fiches": 208,
+   "peuplees": 208,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 208
+   },
+   "parUnivers": {
+    "Dragon Ball": 105,
+    "Bleach": 100,
+    "Naruto": 3
+   },
+   "exemples": [
+    {
+     "slug": "toma",
+     "valeur": "Saiyan"
+    },
+    {
+     "slug": "menoly-mallia",
+     "valeur": "Arrancar"
+    },
+    {
+     "slug": "sosuke-aizen",
+     "valeur": "Shinigami"
+    }
+   ]
+  },
+  {
+   "cle": "equipe",
+   "fiches": 187,
+   "peuplees": 187,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 187
+   },
+   "parUnivers": {
+    "Naruto": 187
+   },
+   "exemples": [
+    {
+     "slug": "yuga",
+     "valeur": "Haze Quadruplets"
+    },
+    {
+     "slug": "might-guy",
+     "valeur": "Team Chōza"
+    },
+    {
+     "slug": "chocho-akimichi",
+     "valeur": "Team 10"
+    }
+   ]
+  },
+  {
+   "cle": "monde",
+   "fiches": 171,
+   "peuplees": 171,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 171
+   },
+   "parUnivers": {
+    "Bleach": 171
+   },
+   "exemples": [
+    {
+     "slug": "gou-koga",
+     "valeur": "Terre · Karakura"
+    },
+    {
+     "slug": "jidanbou-ikkanzaka",
+     "valeur": "Soul Society"
+    },
+    {
+     "slug": "menoly-mallia",
+     "valeur": "Hueco Mundo"
+    }
+   ]
+  },
+  {
+   "cle": "is_signature",
+   "fiches": 170,
+   "peuplees": 170,
+   "formes": [
+    "boolean"
+   ],
+   "parType": {
+    "power": 170
+   },
+   "parUnivers": {
+    "Dragon Ball": 20,
+    "One Piece": 98,
+    "Bleach": 52
+   },
+   "exemples": [
+    {
+     "slug": "atk-db-scattering-bullet",
+     "valeur": "true"
+    },
+    {
+     "slug": "atk-op-jujika",
+     "valeur": "true"
+    },
+    {
+     "slug": "atk-bl-nake-benihime",
+     "valeur": "true"
+    }
+   ]
+  },
+  {
+   "cle": "saga",
+   "fiches": 128,
+   "peuplees": 128,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 128
+   },
+   "parUnivers": {
+    "Dragon Ball": 128
+   },
+   "exemples": [
+    {
+     "slug": "pui-pui",
+     "valeur": "Saga Buu"
+    },
+    {
+     "slug": "iwne",
+     "valeur": "Saga Super"
+    },
+    {
+     "slug": "yakon",
+     "valeur": "Saga Buu"
+    }
+   ]
+  },
+  {
+   "cle": "fruit",
+   "fiches": 113,
+   "peuplees": 113,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 113
+   },
+   "parUnivers": {
+    "One Piece": 113
+   },
+   "exemples": [
+    {
+     "slug": "shiki",
+     "valeur": "Fruit Flottant"
+    },
+    {
+     "slug": "kabu",
+     "valeur": "Fruit de l'Insecte, version Scarabée-Rhinocéros"
+    },
+    {
+     "slug": "semimaru-kurozumi",
+     "valeur": "Fruit de la Barrière"
+    }
+   ]
+  },
+  {
+   "cle": "division",
+   "fiches": 112,
+   "peuplees": 112,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 112
+   },
+   "parUnivers": {
+    "Bleach": 47,
+    "Naruto": 65
+   },
+   "exemples": [
+    {
+     "slug": "sosuke-aizen",
+     "valeur": "5ᵉ division"
+    },
+    {
+     "slug": "kiri-ninja",
+     "valeur": "Surprise Attack Division"
+    },
+    {
+     "slug": "szayel-aporro-grantz",
+     "valeur": "8ᵉ division"
+    }
+   ]
+  },
+  {
+   "cle": "bounty",
+   "fiches": 101,
+   "peuplees": 101,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 101
+   },
+   "parUnivers": {
+    "One Piece": 101
+   },
+   "exemples": [
+    {
+     "slug": "urouge",
+     "valeur": "108.000.000 Berrys"
+    },
+    {
+     "slug": "gambia",
+     "valeur": "670.000.000 Berrys"
+    },
+    {
+     "slug": "porchemy",
+     "valeur": "3.400.000 Berrys"
+    }
+   ]
+  },
+  {
+   "cle": "boat_class",
+   "fiches": 99,
+   "peuplees": 99,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "artifact": 99
+   },
+   "parUnivers": {
+    "One Piece": 99
+   },
+   "exemples": [
+    {
+     "slug": "marchen",
+     "valeur": "Navire Pirate"
+    },
+    {
+     "slug": "santa-maria",
+     "valeur": "Navire Pirate"
+    },
+    {
+     "slug": "fier-baril",
+     "valeur": "Navire de Course"
+    }
+   ]
+  },
+  {
+   "cle": "sector",
+   "fiches": 99,
+   "peuplees": 99,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "profession": 99
+   },
+   "parUnivers": {
+    "Naruto": 94,
+    "Death Note": 1,
+    "Initial D": 1,
+    "Bleach": 1,
+    "One Piece": 1,
+    "Hunter x Hunter": 1
+   },
+   "exemples": [
+    {
+     "slug": "voleur",
+     "valeur": "Métier ninja"
+    },
+    {
+     "slug": "mizukage",
+     "valeur": "Métier ninja"
+    },
+    {
+     "slug": "ninshu-follower",
+     "valeur": "Métier ninja"
+    }
+   ]
+  },
+  {
+   "cle": "total_prime",
+   "fiches": 81,
+   "peuplees": 81,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "status": 81
+   },
+   "parUnivers": {
+    "One Piece": 81
+   },
+   "exemples": [
+    {
+     "slug": "l-equipage-des-maquereaux",
+     "valeur": "inconnu Berrys"
+    },
+    {
+     "slug": "l-equipage-de-ganzack",
+     "valeur": "inconnu Berrys"
+    },
+    {
+     "slug": "l-equipage-aux-cent-betes",
+     "valeur": "11.179.100.000 Berrys"
+    }
+   ]
+  },
+  {
+   "cle": "forms",
+   "fiches": 78,
+   "peuplees": 78,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "character": 78
+   },
+   "parUnivers": {
+    "Naruto": 37,
+    "One Piece": 14,
+    "Dragon Ball": 19,
+    "JoJo's Bizarre Adventure": 2,
+    "Initial D": 1,
+    "Bleach": 1,
+    "Death Note": 2,
+    "Hunter x Hunter": 2
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "[{\"age\":\"26–27 ans\",\"arc\":\"Examens Chūnin\",\"rank\":\"Jōnin\",\"label\":\"Jōnin de Konoha\",\"stats"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "[{\"age\":\"12 ans\",\"arc\":\"Pays des Vagues → Examens Chūnin\",\"rank\":\"Genin\",\"label\":\"Genin de"
+    },
+    {
+     "slug": "monkey-d-luffy",
+     "valeur": "[{\"age\":\"17 ans\",\"arc\":\"Romance Dawn → Arlong Park\",\"idle\":\"/images/akasha/universes/idle/"
+    }
+   ]
+  },
+  {
+   "cle": "descFrPurgee",
+   "fiches": 72,
+   "peuplees": 72,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 62,
+    "power": 2,
+    "artifact": 3,
+    "profession": 3,
+    "skill": 1,
+    "status": 1
+   },
+   "parUnivers": {
+    "Naruto": 36,
+    "Hunter x Hunter": 7,
+    "JoJo's Bizarre Adventure": 3,
+    "Initial D": 1,
+    "Bleach": 5,
+    "One Piece": 13,
+    "Dragon Ball": 7
+   },
+   "exemples": [
+    {
+     "slug": "fu-yamanaka",
+     "valeur": "texte d'ino-yamanaka retiré le 08/08 (contamination) — à re-rédiger depuis la page de Fū Y"
+    },
+    {
+     "slug": "frog",
+     "valeur": "balayage anti-corruption 03/08"
+    },
+    {
+     "slug": "sakon",
+     "valeur": "biographie du ninja Sakon retirée le 10/08 — la fiche est typée pouvoir (catégorie Jutsu) "
+    }
+   ]
+  },
+  {
+   "cle": "nindo",
+   "fiches": 64,
+   "peuplees": 64,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 64
+   },
+   "parUnivers": {
+    "Naruto": 33,
+    "One Piece": 14,
+    "Dragon Ball": 9,
+    "JoJo's Bizarre Adventure": 2,
+    "Initial D": 1,
+    "Bleach": 1,
+    "Death Note": 2,
+    "Hunter x Hunter": 2
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "La Force de la Jeunesse ! Vivre chaque jour sans le moindre regret."
+    },
+    {
+     "slug": "monkey-d-luffy",
+     "valeur": "Je serai le Roi des Pirates !"
+    },
+    {
+     "slug": "haku",
+     "valeur": "C'est quand une personne a quelque chose d'important à protéger… qu'elle peut devenir véri"
+    }
+   ]
+  },
+  {
+   "cle": "nindoLabel",
+   "fiches": 63,
+   "peuplees": 63,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 63
+   },
+   "parUnivers": {
+    "Naruto": 32,
+    "One Piece": 14,
+    "Dragon Ball": 9,
+    "JoJo's Bizarre Adventure": 2,
+    "Initial D": 1,
+    "Bleach": 1,
+    "Death Note": 2,
+    "Hunter x Hunter": 2
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "Credo · la fougue de la jeunesse"
+    },
+    {
+     "slug": "monkey-d-luffy",
+     "valeur": "Rêve · sa promesse"
+    },
+    {
+     "slug": "haku",
+     "valeur": "Credo · la vraie force (ch. 21)"
+    }
+   ]
+  },
+  {
+   "cle": "bio",
+   "fiches": 60,
+   "peuplees": 60,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "status": 23,
+    "place": 12,
+    "artifact": 3,
+    "character": 19,
+    "skill": 1,
+    "profession": 1,
+    "power": 1
+   },
+   "parUnivers": {
+    "Naruto": 39,
+    "Death Note": 3,
+    "One Piece": 4,
+    "Bleach": 3,
+    "JoJo's Bizarre Adventure": 3,
+    "Dragon Ball": 3,
+    "Initial D": 3,
+    "Hunter x Hunter": 2
+   },
+   "exemples": [
+    {
+     "slug": "hozuki",
+     "valeur": "Le clan Hōzuki est une lignée guerrière de Kirigakure dont les membres maîtrisent la Techn"
+    },
+    {
+     "slug": "mountains-graveyard",
+     "valeur": "Plaine désolée jonchée d'ossements gigantesques, le Cimetière des Monts servit de repaire "
+    },
+    {
+     "slug": "cahier-de-la-mort",
+     "valeur": "La Death Note est un cahier appartenant à un dieu de la mort : quiconque y inscrit le nom "
+    }
+   ]
+  },
+  {
+   "cle": "affiliation",
+   "fiches": 52,
+   "peuplees": 52,
+   "formes": [
+    "array",
+    "string"
+   ],
+   "parType": {
+    "character": 52
+   },
+   "parUnivers": {
+    "Naruto": 20,
+    "Initial D": 18,
+    "Bleach": 14
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "[\"Forces Shinobi Alliées\",\"Konohagakure\"]"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "[\"Forces Shinobi Alliées\",\"Konohagakure\",\"Shikkotsu Forest\"]"
+    },
+    {
+     "slug": "shouichi",
+     "valeur": "Myogi NightKids"
+    }
+   ]
+  },
+  {
+   "cle": "nen",
+   "fiches": 51,
+   "peuplees": 51,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 51
+   },
+   "parUnivers": {
+    "Hunter x Hunter": 51
+   },
+   "exemples": [
+    {
+     "slug": "knuckle-bine",
+     "valeur": "Émission"
+    },
+    {
+     "slug": "zushi",
+     "valeur": "Renforcement"
+    },
+    {
+     "slug": "bonolenov-ndongo",
+     "valeur": "Matérialisation"
+    }
+   ]
+  },
+  {
+   "cle": "generation",
+   "fiches": 50,
+   "peuplees": 50,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 50
+   },
+   "parUnivers": {
+    "Naruto": 50
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "Génération de Kakashi"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "Konoha 11"
+    },
+    {
+     "slug": "chocho-akimichi",
+     "valeur": "Nouvelle ère"
+    }
+   ]
+  },
+  {
+   "cle": "trivia",
+   "fiches": 47,
+   "peuplees": 47,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "status": 23,
+    "character": 19,
+    "place": 1,
+    "skill": 1,
+    "profession": 1,
+    "artifact": 1,
+    "power": 1
+   },
+   "parUnivers": {
+    "Naruto": 35,
+    "One Piece": 2,
+    "JoJo's Bizarre Adventure": 2,
+    "Initial D": 1,
+    "Bleach": 1,
+    "Death Note": 2,
+    "Dragon Ball": 2,
+    "Hunter x Hunter": 2
+   },
+   "exemples": [
+    {
+     "slug": "hozuki",
+     "valeur": "[\"Le nom « Hōzuki » (鬼灯) désigne l'alkékenge, ou « lanterne chinoise », plante dont le cal"
+    },
+    {
+     "slug": "monkey-d-luffy",
+     "valeur": "[\"Son « Gomu Gomu no Mi » est en réalité le Hito Hito no Mi modèle Nika, fruit mythique tr"
+    },
+    {
+     "slug": "aburame",
+     "valeur": "[\"Le clan Aburame fonde toute son identité sur le lien entomologique : ses membres vivent "
+    }
+   ]
+  },
+  {
+   "cle": "camp",
+   "fiches": 42,
+   "peuplees": 42,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 42
+   },
+   "parUnivers": {
+    "Death Note": 42
+   },
+   "exemples": [
+    {
+     "slug": "kiyomi-takada",
+     "valeur": "Kira"
+    },
+    {
+     "slug": "mello",
+     "valeur": "Wammy’s House"
+    },
+    {
+     "slug": "yonegoro-nusumi",
+     "valeur": "Kira"
+    }
+   ]
+  },
+  {
+   "cle": "powerLevel",
+   "fiches": 41,
+   "peuplees": 41,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 41
+   },
+   "parUnivers": {
+    "Dragon Ball": 41
+   },
+   "exemples": [
+    {
+     "slug": "toma",
+     "valeur": "Saiyan de classe inférieure (~1 500 d'unités)"
+    },
+    {
+     "slug": "lakasei",
+     "valeur": "Sbire de Turles, combine sa puissance avec Rasin"
+    },
+    {
+     "slug": "spopovitch",
+     "valeur": "Humain dope par la magie de Babidi"
+    }
+   ]
+  },
+  {
+   "cle": "eras",
+   "fiches": 37,
+   "peuplees": 37,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "status": 23,
+    "artifact": 3,
+    "place": 8,
+    "skill": 1,
+    "profession": 1,
+    "power": 1
+   },
+   "parUnivers": {
+    "Naruto": 28,
+    "Death Note": 1,
+    "Bleach": 2,
+    "Dragon Ball": 1,
+    "One Piece": 2,
+    "JoJo's Bizarre Adventure": 1,
+    "Initial D": 2
+   },
+   "exemples": [
+    {
+     "slug": "hozuki",
+     "valeur": "[{\"img\":\"/images/akasha/ref/hozuki.webp\",\"event\":\"Gengetsu Hōzuki devient le Deuxième Mizu"
+    },
+    {
+     "slug": "cahier-de-la-mort",
+     "valeur": "[{\"event\":\"Un shinigami désœuvré laisse tomber son cahier dans le monde humain ; un lycéen"
+    },
+    {
+     "slug": "aburame",
+     "valeur": "[{\"img\":\"/images/akasha/ref/aburame.webp\",\"event\":\"Transmission du pacte de symbiose avec "
+    }
+   ]
+  },
+  {
+   "cle": "quote",
+   "fiches": 37,
+   "peuplees": 37,
+   "formes": [
+    "object"
+   ],
+   "parType": {
+    "status": 23,
+    "artifact": 3,
+    "place": 8,
+    "skill": 1,
+    "profession": 1,
+    "power": 1
+   },
+   "parUnivers": {
+    "Naruto": 28,
+    "Death Note": 1,
+    "Bleach": 2,
+    "Dragon Ball": 1,
+    "One Piece": 2,
+    "JoJo's Bizarre Adventure": 1,
+    "Initial D": 2
+   },
+   "exemples": [
+    {
+     "slug": "hozuki",
+     "valeur": "{\"text\":\"Ton épée me traverse ? Alors tranche l'eau, et regarde-la se recoller.\",\"author\":"
+    },
+    {
+     "slug": "cahier-de-la-mort",
+     "valeur": "{\"text\":\"L'humain dont le nom sera écrit dans ce carnet mourra.\",\"author\":\"Première règle "
+    },
+    {
+     "slug": "aburame",
+     "valeur": "{\"text\":\"Un ninja ne doit pas gaspiller ses mots. Comme mes insectes, il agit dans le sile"
+    }
+   ]
+  },
+  {
+   "cle": "facts",
+   "fiches": 35,
+   "peuplees": 35,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "status": 23,
+    "artifact": 2,
+    "place": 7,
+    "skill": 1,
+    "profession": 1,
+    "power": 1
+   },
+   "parUnivers": {
+    "Naruto": 26,
+    "Death Note": 1,
+    "Bleach": 2,
+    "Dragon Ball": 1,
+    "One Piece": 2,
+    "JoJo's Bizarre Adventure": 1,
+    "Initial D": 2
+   },
+   "exemples": [
+    {
+     "slug": "hozuki",
+     "valeur": "[{\"label\":\"Village\",\"value\":\"Kirigakure (Village Caché de la Brume)\"},{\"label\":\"Aptitude\","
+    },
+    {
+     "slug": "cahier-de-la-mort",
+     "valeur": "[{\"label\":\"Nature\",\"value\":\"Cahier d'un dieu de la mort (shinigami)\"},{\"label\":\"Origine\",\""
+    },
+    {
+     "slug": "aburame",
+     "valeur": "[{\"label\":\"Village\",\"value\":\"Konohagakure (Pays du Feu)\"},{\"label\":\"Symbiote\",\"value\":\"Kik"
+    }
+   ]
+  },
+  {
+   "cle": "kanji",
+   "fiches": 30,
+   "peuplees": 30,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "status": 16,
+    "artifact": 3,
+    "place": 8,
+    "skill": 1,
+    "profession": 1,
+    "power": 1
+   },
+   "parUnivers": {
+    "Naruto": 21,
+    "Death Note": 1,
+    "Bleach": 2,
+    "Dragon Ball": 1,
+    "One Piece": 2,
+    "JoJo's Bizarre Adventure": 1,
+    "Initial D": 2
+   },
+   "exemples": [
+    {
+     "slug": "hozuki",
+     "valeur": "鬼灯一族"
+    },
+    {
+     "slug": "cahier-de-la-mort",
+     "valeur": "デスノート"
+    },
+    {
+     "slug": "aburame",
+     "valeur": "油女一族"
+    }
+   ]
+  },
+  {
+   "cle": "abilities",
+   "fiches": 27,
+   "peuplees": 27,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "status": 23,
+    "skill": 1,
+    "profession": 1,
+    "artifact": 1,
+    "power": 1
+   },
+   "parUnivers": {
+    "Naruto": 27
+   },
+   "exemples": [
+    {
+     "slug": "hozuki",
+     "valeur": "[\"Technique d'Hydrification — liquéfier son corps en eau pour esquiver et se recomposer\",\""
+    },
+    {
+     "slug": "aburame",
+     "valeur": "[\"Symbiose avec les kikaichū, insectes vivant dans le corps de l'hôte\",\"Absorption et drai"
+    },
+    {
+     "slug": "shimura",
+     "valeur": "[\"Doctrine de la Racine (Ne) : réseau d'agents ANBU clandestins, sans nom ni émotion, sous"
+    }
+   ]
+  },
+  {
+   "cle": "rosterLabel",
+   "fiches": 26,
+   "peuplees": 26,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "status": 23,
+    "skill": 1,
+    "profession": 1,
+    "power": 1
+   },
+   "parUnivers": {
+    "Naruto": 26
+   },
+   "exemples": [
+    {
+     "slug": "hozuki",
+     "valeur": "Membres"
+    },
+    {
+     "slug": "aburame",
+     "valeur": "Membres"
+    },
+    {
+     "slug": "shimura",
+     "valeur": "Membres"
+    }
+   ]
+  },
+  {
+   "cle": "col",
+   "fiches": 23,
+   "peuplees": 23,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 18,
+    "place": 5
+   },
+   "parUnivers": {
+    "Initial D": 23
+   },
+   "exemples": [
+    {
+     "slug": "shouichi",
+     "valeur": "Mont Myōgi"
+    },
+    {
+     "slug": "kenta-nakamura",
+     "valeur": "Mont Akagi"
+    },
+    {
+     "slug": "itsuki-takeuchi",
+     "valeur": "Mont Akina"
+    }
+   ]
+  },
+  {
+   "cle": "import_source",
+   "fiches": 22,
+   "peuplees": 22,
+   "formes": [
+    "number"
+   ],
+   "parType": {
+    "character": 22
+   },
+   "parUnivers": {
+    "Hunter x Hunter": 5,
+    "Bleach": 3,
+    "One Piece": 9,
+    "Initial D": 1,
+    "Naruto": 4
+   },
+   "exemples": [
+    {
+     "slug": "gyro",
+     "valeur": "3164"
+    },
+    {
+     "slug": "ururu-tsumugiya",
+     "valeur": "2727"
+    },
+    {
+     "slug": "bonney-jewelry",
+     "valeur": "788"
+    }
+   ]
+  },
+  {
+   "cle": "gallery",
+   "fiches": 22,
+   "peuplees": 22,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "character": 22
+   },
+   "parUnivers": {
+    "Naruto": 22
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "[\"https://static.wikia.nocookie.net/naruto/images/3/31/Might_Guy.png\",\"https://static.wiki"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "[\"https://static.wikia.nocookie.net/naruto/images/6/64/Sakura_Part_1.png\",\"https://static."
+    },
+    {
+     "slug": "neji-hyuga",
+     "valeur": "[\"https://static.wikia.nocookie.net/naruto/images/7/7e/Neji_Part_I.png\",\"https://static.wi"
+    }
+   ]
+  },
+  {
+   "cle": "titles",
+   "fiches": 22,
+   "peuplees": 22,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "character": 22
+   },
+   "parUnivers": {
+    "One Piece": 2,
+    "Naruto": 10,
+    "JoJo's Bizarre Adventure": 2,
+    "Initial D": 1,
+    "Bleach": 1,
+    "Death Note": 2,
+    "Dragon Ball": 2,
+    "Hunter x Hunter": 2
+   },
+   "exemples": [
+    {
+     "slug": "monkey-d-luffy",
+     "valeur": "[\"Chapeau de Paille\",\"Cinquième Empereur\",\"Joy Boy\"]"
+    },
+    {
+     "slug": "naruto-uzumaki",
+     "valeur": "[\"Ninja hyperactif imprévisible n°1\",\"L'Enfant de la Prophétie\",\"Le Sauveur de ce monde\",\""
+    },
+    {
+     "slug": "itachi-uchiha",
+     "valeur": "[\"Le génie du clan Uchiha\",\"Itachi de l'Illusion\",\"Le héros de l'ombre\"]"
+    }
+   ]
+  },
+  {
+   "cle": "natureType",
+   "fiches": 21,
+   "peuplees": 21,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "character": 21
+   },
+   "parUnivers": {
+    "Naruto": 21
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "[\"Fire Release\",\"Lightning Release\"]"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "[\"Earth Release\",\"Water Release\",\"Fire Release\",\"Yin Release\",\"Yang Release\"]"
+    },
+    {
+     "slug": "neji-hyuga",
+     "valeur": "[\"Fire Release\",\"Earth Release\",\"Water Release\"]"
+    }
+   ]
+  },
+  {
+   "cle": "status",
+   "fiches": 21,
+   "peuplees": 21,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 19,
+    "place": 1,
+    "artifact": 1
+   },
+   "parUnivers": {
+    "One Piece": 2,
+    "Naruto": 9,
+    "JoJo's Bizarre Adventure": 2,
+    "Initial D": 1,
+    "Bleach": 1,
+    "Death Note": 2,
+    "Dragon Ball": 2,
+    "Hunter x Hunter": 2
+   },
+   "exemples": [
+    {
+     "slug": "monkey-d-luffy",
+     "valeur": "Vivant — Empereur"
+    },
+    {
+     "slug": "naruto-uzumaki",
+     "valeur": "Vivant"
+    },
+    {
+     "slug": "konohagakure",
+     "valeur": "Prospère"
+    }
+   ]
+  },
+  {
+   "cle": "debut",
+   "fiches": 20,
+   "peuplees": 20,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 20
+   },
+   "parUnivers": {
+    "Naruto": 20
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "Naruto — chapitre 38"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "Naruto — chapitre 3"
+    },
+    {
+     "slug": "neji-hyuga",
+     "valeur": "Naruto — chapitre 36"
+    }
+   ]
+  },
+  {
+   "cle": "height",
+   "fiches": 20,
+   "peuplees": 20,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 20
+   },
+   "parUnivers": {
+    "Naruto": 20
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "184cm"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "148.5cm - 150.1cm"
+    },
+    {
+     "slug": "neji-hyuga",
+     "valeur": "159.2cm - 160.1cm"
+    }
+   ]
+  },
+  {
+   "cle": "weight",
+   "fiches": 20,
+   "peuplees": 20,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 20
+   },
+   "parUnivers": {
+    "Naruto": 20
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "76kg"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "35.4kg - 35.9kg"
+    },
+    {
+     "slug": "neji-hyuga",
+     "valeur": "45.8kg - 46.8kg"
+    }
+   ]
+  },
+  {
+   "cle": "debutAll",
+   "fiches": 20,
+   "peuplees": 20,
+   "formes": [
+    "object"
+   ],
+   "parType": {
+    "character": 20
+   },
+   "parUnivers": {
+    "Naruto": 20
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "{\"ova\":\"Finally a clash! Jōnin vs. Genin!! Indiscriminate Grand Melee Tournament Meeting!!"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "{\"ova\":\"Find the Four-Leaf Red Clover!\",\"game\":\"Naruto: Konoha Ninpōchō\",\"anime\":\"Naruto —"
+    },
+    {
+     "slug": "neji-hyuga",
+     "valeur": "{\"ova\":\"Hidden Leaf Village Grand Sports Festival!\",\"game\":\"Naruto: Konoha Ninpōchō\",\"anim"
+    }
+   ]
+  },
+  {
+   "cle": "bloodType",
+   "fiches": 20,
+   "peuplees": 20,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 20
+   },
+   "parUnivers": {
+    "Naruto": 20
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "B"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "O"
+    },
+    {
+     "slug": "neji-hyuga",
+     "valeur": "O"
+    }
+   ]
+  },
+  {
+   "cle": "sourceUrl",
+   "fiches": 20,
+   "peuplees": 20,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 20
+   },
+   "parUnivers": {
+    "Naruto": 20
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "https://naruto.fandom.com/wiki/Might_Guy"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "https://naruto.fandom.com/wiki/Sakura_Haruno"
+    },
+    {
+     "slug": "neji-hyuga",
+     "valeur": "https://naruto.fandom.com/wiki/Neji_Hy%C5%ABga"
+    }
+   ]
+  },
+  {
+   "cle": "villageSlug",
+   "fiches": 20,
+   "peuplees": 20,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 20
+   },
+   "parUnivers": {
+    "Naruto": 20
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "konohagakure"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "konohagakure"
+    },
+    {
+     "slug": "neji-hyuga",
+     "valeur": "konohagakure"
+    }
+   ]
+  },
+  {
+   "cle": "quotes",
+   "fiches": 19,
+   "peuplees": 19,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "character": 19
+   },
+   "parUnivers": {
+    "One Piece": 2,
+    "Naruto": 7,
+    "JoJo's Bizarre Adventure": 2,
+    "Initial D": 1,
+    "Bleach": 1,
+    "Death Note": 2,
+    "Dragon Ball": 2,
+    "Hunter x Hunter": 2
+   },
+   "exemples": [
+    {
+     "slug": "monkey-d-luffy",
+     "valeur": "[\"Je serai le Roi des Pirates !\",\"Bien sûr que je vais peut-être mourir. Mais je me battra"
+    },
+    {
+     "slug": "naruto-uzumaki",
+     "valeur": "[\"Crois-le ! (Dattebayo !)\",\"Quand on protège quelque chose de vraiment précieux… on devie"
+    },
+    {
+     "slug": "itachi-uchiha",
+     "valeur": "[\"Pardonne-moi, Sasuke… ce sera la dernière fois.\",\"Les hommes vivent prisonniers de leurs"
+    }
+   ]
+  },
+  {
+   "cle": "personality",
+   "fiches": 19,
+   "peuplees": 19,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 19
+   },
+   "parUnivers": {
+    "One Piece": 2,
+    "Naruto": 7,
+    "JoJo's Bizarre Adventure": 2,
+    "Initial D": 1,
+    "Bleach": 1,
+    "Death Note": 2,
+    "Dragon Ball": 2,
+    "Hunter x Hunter": 2
+   },
+   "exemples": [
+    {
+     "slug": "monkey-d-luffy",
+     "valeur": "Simple, glouton, d'une loyauté absolue. Luffy ne réfléchit pas — il ressent. Il tend la ma"
+    },
+    {
+     "slug": "naruto-uzumaki",
+     "valeur": "Hyperactif, bruyant et impulsif, Naruto cache sous ses pitreries la blessure d'un enfant s"
+    },
+    {
+     "slug": "itachi-uchiha",
+     "valeur": "Calme, doux et d'une intelligence terrifiante, Itachi est un pacifiste qui a porté les cri"
+    }
+   ]
+  },
+  {
+   "cle": "team",
+   "fiches": 18,
+   "peuplees": 18,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "character": 18
+   },
+   "parUnivers": {
+    "Naruto": 18
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "[\"Team Chōza\",\"Team Guy\",\"Third Division\"]"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "[\"Team Kakashi\",\"Konoha 11  (Anime only)\",\"Team Asuma  (Anime only)\",\"Kazekage Rescue Team"
+    },
+    {
+     "slug": "neji-hyuga",
+     "valeur": "[\"Team Guy\",\"Sasuke Recovery Team\",\"Konoha 11  (Anime only)\",\"Star Guard Team  (Anime only"
+    }
+   ]
+  },
+  {
+   "cle": "tools",
+   "fiches": 18,
+   "peuplees": 18,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "character": 18
+   },
+   "parUnivers": {
+    "Naruto": 18
+   },
+   "exemples": [
+    {
+     "slug": "might-guy",
+     "valeur": "[\"Bow & Arrow\",\"Kusarigama\",\"Nunchaku\",\"Sōshūga\"]"
+    },
+    {
+     "slug": "sakura-haruno",
+     "valeur": "[\"Antidote\",\"Konoha Chakra Blade\",\"Lightning Barrel\",\"Military Rations Pill\",\"Poison\",\"Sen"
+    },
+    {
+     "slug": "naruto-uzumaki",
+     "valeur": "[\"Kunai\",\"Shuriken\",\"Fūma Shuriken\",\"Flying Thunder God Kunai\"]"
+    }
+   ]
+  },
+  {
+   "cle": "classification",
+   "fiches": 17,
+   "peuplees": 17,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "character": 17
+   },
+   "parUnivers": {
+    "Naruto": 17
+   },
+   "exemples": [
+    {
+     "slug": "sakura-haruno",
+     "valeur": "[\"Ninja médical\"]"
+    },
+    {
+     "slug": "naruto-uzumaki",
+     "valeur": "[\"Jinchūriki\",\"Ermite (Sage)\",\"Type Capteur\"]"
+    },
+    {
+     "slug": "itachi-uchiha",
+     "valeur": "[\"Rang S\",\"Déserteur (Nukenin)\"]"
+    }
+   ]
+  },
+  {
+   "cle": "meito_grade",
+   "fiches": 14,
+   "peuplees": 14,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "artifact": 14
+   },
+   "parUnivers": {
+    "One Piece": 14
+   },
+   "exemples": [
+    {
+     "slug": "yamaoroshi",
+     "valeur": "Ryo Wazamono"
+    },
+    {
+     "slug": "yubashiri",
+     "valeur": "Ryo Wazamono"
+    },
+    {
+     "slug": "shigure",
+     "valeur": "Ryo Wazamono"
+    }
+   ]
+  },
+  {
+   "cle": "god",
+   "fiches": 12,
+   "peuplees": 12,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "place": 12
+   },
+   "parUnivers": {
+    "Dragon Ball": 12
+   },
+   "exemples": [
+    {
+     "slug": "univers-4",
+     "valeur": "Quitela"
+    },
+    {
+     "slug": "univers-7",
+     "valeur": "Beerus"
+    },
+    {
+     "slug": "univers-2",
+     "valeur": "Heles"
+    }
+   ]
+  },
+  {
+   "cle": "kai",
+   "fiches": 12,
+   "peuplees": 12,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "place": 12
+   },
+   "parUnivers": {
+    "Dragon Ball": 12
+   },
+   "exemples": [
+    {
+     "slug": "univers-4",
+     "valeur": "Cae"
+    },
+    {
+     "slug": "univers-7",
+     "valeur": "Shin"
+    },
+    {
+     "slug": "univers-2",
+     "valeur": "Pell"
+    }
+   ]
+  },
+  {
+   "cle": "twin",
+   "fiches": 12,
+   "peuplees": 12,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "place": 12
+   },
+   "parUnivers": {
+    "Dragon Ball": 12
+   },
+   "exemples": [
+    {
+     "slug": "univers-4",
+     "valeur": "Univers 9"
+    },
+    {
+     "slug": "univers-7",
+     "valeur": "Univers 6"
+    },
+    {
+     "slug": "univers-2",
+     "valeur": "Univers 11"
+    }
+   ]
+  },
+  {
+   "cle": "angel",
+   "fiches": 12,
+   "peuplees": 12,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "place": 12
+   },
+   "parUnivers": {
+    "Dragon Ball": 12
+   },
+   "exemples": [
+    {
+     "slug": "univers-4",
+     "valeur": "Cognac"
+    },
+    {
+     "slug": "univers-7",
+     "valeur": "Whis"
+    },
+    {
+     "slug": "univers-2",
+     "valeur": "Sour"
+    }
+   ]
+  },
+  {
+   "cle": "statLabels",
+   "fiches": 12,
+   "peuplees": 12,
+   "formes": [
+    "object"
+   ],
+   "parType": {
+    "character": 12
+   },
+   "parUnivers": {
+    "One Piece": 2,
+    "JoJo's Bizarre Adventure": 2,
+    "Initial D": 1,
+    "Bleach": 1,
+    "Death Note": 2,
+    "Dragon Ball": 2,
+    "Hunter x Hunter": 2
+   },
+   "exemples": [
+    {
+     "slug": "monkey-d-luffy",
+     "valeur": "{\"end\":\"END\",\"for\":\"FOR\",\"gen\":\"AGI\",\"int\":\"INT\",\"nin\":\"PUI\",\"sce\":\"ESP\",\"tai\":\"TEC\",\"vit\""
+    },
+    {
+     "slug": "jotaro-kujo",
+     "valeur": "{\"end\":\"END\",\"for\":\"FOR\",\"gen\":\"AGI\",\"int\":\"INT\",\"nin\":\"PUI\",\"sce\":\"ESP\",\"tai\":\"TEC\",\"vit\""
+    },
+    {
+     "slug": "takumi-fujiwara",
+     "valeur": "{\"end\":\"END\",\"for\":\"FOR\",\"gen\":\"AGI\",\"int\":\"INT\",\"nin\":\"PUI\",\"sce\":\"ESP\",\"tai\":\"TEC\",\"vit\""
+    }
+   ]
+  },
+  {
+   "cle": "clanSlug",
+   "fiches": 12,
+   "peuplees": 12,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 12
+   },
+   "parUnivers": {
+    "Naruto": 12
+   },
+   "exemples": [
+    {
+     "slug": "neji-hyuga",
+     "valeur": "hyuga"
+    },
+    {
+     "slug": "naruto-uzumaki",
+     "valeur": "uzumaki"
+    },
+    {
+     "slug": "hinata-hyuga",
+     "valeur": "hyuga"
+    }
+   ]
+  },
+  {
+   "cle": "kekkeiGenkai",
+   "fiches": 9,
+   "peuplees": 9,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "character": 9
+   },
+   "parUnivers": {
+    "Naruto": 9
+   },
+   "exemples": [
+    {
+     "slug": "neji-hyuga",
+     "valeur": "[\"Byakugan\"]"
+    },
+    {
+     "slug": "hinata-hyuga",
+     "valeur": "[\"Byakugan\"]"
+    },
+    {
+     "slug": "itachi-uchiha",
+     "valeur": "[\"Sharingan\"]"
+    }
+   ]
+  },
+  {
+   "cle": "signature",
+   "fiches": 9,
+   "peuplees": 9,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "character": 9
+   },
+   "parUnivers": {
+    "Naruto": 9
+   },
+   "exemples": [
+    {
+     "slug": "naruto-uzumaki",
+     "valeur": "[\"Rasengan\",\"Multiclonage\",\"Bijūdama\"]"
+    },
+    {
+     "slug": "itachi-uchiha",
+     "valeur": "[\"Amaterasu\",\"Susanoo\"]"
+    },
+    {
+     "slug": "sasuke-uchiha",
+     "valeur": "[\"Chidori\",\"Amaterasu\",\"Susanoo\"]"
+    }
+   ]
+  },
+  {
+   "cle": "blade_type",
+   "fiches": 8,
+   "peuplees": 8,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "artifact": 8
+   },
+   "parUnivers": {
+    "One Piece": 8
+   },
+   "exemples": [
+    {
+     "slug": "shirauo",
+     "valeur": "Nodachi"
+    },
+    {
+     "slug": "murakumogiri",
+     "valeur": "Naginata"
+    },
+    {
+     "slug": "enma",
+     "valeur": "Katana"
+    }
+   ]
+  },
+  {
+   "cle": "descFrRetiree",
+   "fiches": 6,
+   "peuplees": 6,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "profession": 2,
+    "power": 2,
+    "skill": 1,
+    "status": 1
+   },
+   "parUnivers": {
+    "Naruto": 6
+   },
+   "exemples": [
+    {
+     "slug": "inner-former",
+     "valeur": "04/08 contrôle de nature — « Inner (Former) » est un rang de Kara ; la page est « Inner Sa"
+    },
+    {
+     "slug": "chunin-exams-assistant",
+     "valeur": "04/08 contrôle de nature — décrit l examen chūnin et invente une « unité d élite » absente"
+    },
+    {
+     "slug": "summoning-technique-hozuki-castle-s-ninken",
+     "valeur": "04/08 contrôle de nature — texte générique sur l invocation, pas un mot des ninken de la p"
+    }
+   ]
+  },
+  {
+   "cle": "purgeAudit",
+   "fiches": 3,
+   "peuplees": 3,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 3
+   },
+   "parUnivers": {
+    "Bleach": 2,
+    "JoJo's Bizarre Adventure": 1
+   },
+   "exemples": [
+    {
+     "slug": "reiichi-oshima",
+     "valeur": "03/08 : sections et descFr décrivaient Dark Rukia (mauvaise page liée) — purgé, à re-produ"
+    },
+    {
+     "slug": "hol-horse",
+     "valeur": "04/08 audit de clôture : descFr non sourcée ou charabia — purgé, à re-produire"
+    },
+    {
+     "slug": "orihime-inoue",
+     "valeur": "04/08 audit de clôture : descFr non sourcée ou charabia — purgé, à re-produire"
+    }
+   ]
+  },
+  {
+   "cle": "squad",
+   "fiches": 3,
+   "peuplees": 3,
+   "formes": [
+    "object"
+   ],
+   "parType": {
+    "character": 3
+   },
+   "parUnivers": {
+    "Naruto": 3
+   },
+   "exemples": [
+    {
+     "slug": "naruto-uzumaki",
+     "valeur": "{\"name\":\"Équipe 7 · Team Kakashi\",\"members\":[{\"rel\":\"Sensei\",\"name\":\"Kakashi Hatake\",\"slug"
+    },
+    {
+     "slug": "sasuke-uchiha",
+     "valeur": "{\"name\":\"Équipe 7\",\"members\":[{\"rel\":\"Sensei\",\"name\":\"Kakashi Hatake\",\"slug\":\"kakashi-hata"
+    },
+    {
+     "slug": "kakashi-hatake",
+     "valeur": "{\"name\":\"Équipe 7 (sensei)\",\"members\":[{\"rel\":\"Élève\",\"name\":\"Naruto Uzumaki\",\"slug\":\"naru"
+    }
+   ]
+  },
+  {
+   "cle": "sectionsSource",
+   "fiches": 3,
+   "peuplees": 3,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 2,
+    "profession": 1
+   },
+   "parUnivers": {
+    "Death Note": 3
+   },
+   "exemples": [
+    {
+     "slug": "yuri",
+     "valeur": "deepinfra/Qwen/Qwen3-32B"
+    },
+    {
+     "slug": "detective",
+     "valeur": "deepinfra/Qwen/Qwen3-32B"
+    },
+    {
+     "slug": "light-s-teacher",
+     "valeur": "deepinfra/Qwen/Qwen3-32B"
+    }
+   ]
+  },
+  {
+   "cle": "descFrImpossible",
+   "fiches": 2,
+   "peuplees": 2,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "profession": 1,
+    "status": 1
+   },
+   "parUnivers": {
+    "Naruto": 2
+   },
+   "exemples": [
+    {
+     "slug": "inner-former",
+     "valeur": "curé à la main le 05/08 : le rang « Inner » n a pas de page propre — il est décrit dans la"
+    },
+    {
+     "slug": "yuhi",
+     "valeur": "curé à la main le 05/08 : le clan Yūhi n a pas de page sur le wiki Naruto — « Yūhi Clan » "
+    }
+   ]
+  },
+  {
+   "cle": "resumeCorrige",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "profession": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "inner-former",
+     "valeur": "résumé d origine remplacé le 05/08 : il décrivait Inner Sakura (technique de Sakura Haruno"
+    }
+   ]
+  },
+  {
+   "cle": "cost",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "power": 1
+   },
+   "parUnivers": {
+    "Bleach": 1
+   },
+   "exemples": [
+    {
+     "slug": "getsuga-tensho",
+     "valeur": "Énergie spirituelle (reiatsu)"
+    }
+   ]
+  },
+  {
+   "cle": "range",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "power": 1
+   },
+   "parUnivers": {
+    "Bleach": 1
+   },
+   "exemples": [
+    {
+     "slug": "getsuga-tensho",
+     "valeur": "Moyenne à longue"
+    }
+   ]
+  },
+  {
+   "cle": "animations",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "character": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "naruto-uzumaki",
+     "valeur": "[{\"src\":\"/images/akasha/naruto/multiclonage-anim.webp\",\"label\":\"Multiclonage\"},{\"src\":\"/im"
+    }
+   ]
+  },
+  {
+   "cle": "tailedBeast",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "character": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "naruto-uzumaki",
+     "valeur": "Kurama"
+    }
+   ]
+  },
+  {
+   "cle": "clans",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "konohagakure",
+     "valeur": "[{\"name\":\"Senju\",\"slug\":\"senju\"},{\"name\":\"Uchiha\",\"slug\":\"uchiha\"},{\"name\":\"Uzumaki\",\"slug"
+    }
+   ]
+  },
+  {
+   "cle": "motto",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "konohagakure",
+     "valeur": "La Volonté du Feu"
+    }
+   ]
+  },
+  {
+   "cle": "hokage",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "konohagakure",
+     "valeur": "[{\"n\":\"Iᵉʳ\",\"name\":\"Hashirama Senju\",\"note\":\"Fondateur · maître du Mokuton\",\"slug\":\"hashir"
+    }
+   ]
+  },
+  {
+   "cle": "leader",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "object"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "konohagakure",
+     "valeur": "{\"name\":\"Naruto Uzumaki\",\"slug\":\"naruto-uzumaki\"}"
+    }
+   ]
+  },
+  {
+   "cle": "symbol",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "konohagakure",
+     "valeur": "La feuille"
+    }
+   ]
+  },
+  {
+   "cle": "founded",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "konohagakure",
+     "valeur": "Fin de l'ère des Guerres Claniques"
+    }
+   ]
+  },
+  {
+   "cle": "founders",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "konohagakure",
+     "valeur": "[{\"name\":\"Hashirama Senju\",\"slug\":\"hashirama-senju\"},{\"name\":\"Madara Uchiha\",\"slug\":\"madar"
+    }
+   ]
+  },
+  {
+   "cle": "landmarks",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "konohagakure",
+     "valeur": "[\"Monument des Hokage\",\"Tour de l'Hokage\",\"Académie des ninjas\",\"Forêt de la Mort (terrain"
+    }
+   ]
+  },
+  {
+   "cle": "population",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "konohagakure",
+     "valeur": "Plusieurs dizaines de milliers d'habitants"
+    }
+   ]
+  },
+  {
+   "cle": "leaderTitle",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "konohagakure",
+     "valeur": "Septième Hokage"
+    }
+   ]
+  },
+  {
+   "cle": "villageRank",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "konohagakure",
+     "valeur": "L'un des Cinq Grands Villages"
+    }
+   ]
+  },
+  {
+   "cle": "climate",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Bleach": 1
+   },
+   "exemples": [
+    {
+     "slug": "karakura",
+     "valeur": "Tempéré"
+    }
+   ]
+  },
+  {
+   "cle": "coordinates",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "object"
+   ],
+   "parType": {
+    "place": 1
+   },
+   "parUnivers": {
+    "Bleach": 1
+   },
+   "exemples": [
+    {
+     "slug": "karakura",
+     "valeur": "{\"lat\":35,\"lng\":139}"
+    }
+   ]
+  },
+  {
+   "cle": "type",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "artifact": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "samehada",
+     "valeur": "L'une des Sept Épées des Sept Épéistes de la Brume"
+    }
+   ]
+  },
+  {
+   "cle": "bearer",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "string"
+   ],
+   "parType": {
+    "artifact": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "samehada",
+     "valeur": "Kisame Hoshigaki"
+    }
+   ]
+  },
+  {
+   "cle": "wielders",
+   "fiches": 1,
+   "peuplees": 1,
+   "formes": [
+    "array"
+   ],
+   "parType": {
+    "artifact": 1
+   },
+   "parUnivers": {
+    "Naruto": 1
+   },
+   "exemples": [
+    {
+     "slug": "samehada",
+     "valeur": "[{\"name\":\"Fuguki Suikazan\",\"note\":\"Premier porteur connu · l'un des Sept Épéistes\"},{\"name"
+    }
+   ]
+  }
+ ],
+ "naturesAretes": [
+  {
+   "relation": "maitrise",
+   "total": 5113,
+   "sortantParType": {
+    "character": 4925,
+    "status": 179,
+    "skill": 7,
+    "power": 2
+   },
+   "entrantParType": {
+    "power": 4905,
+    "skill": 192,
+    "artifact": 6,
+    "character": 10
+   },
+   "paires": {
+    "character→power": 4732,
+    "status→power": 173,
+    "character→skill": 185,
+    "character→artifact": 5,
+    "skill→character": 7,
+    "character→character": 3,
+    "status→skill": 5,
+    "power→skill": 2,
+    "status→artifact": 1
+   },
+   "exemples": [
+    "isobu (character) → shadow-stroke (power)",
+    "kabuto-yakushi (character) → chakra-scalpel (power)"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "total": 4305,
+   "sortantParType": {
+    "character": 3690,
+    "place": 96,
+    "status": 97,
+    "power": 294,
+    "artifact": 109,
+    "skill": 5,
+    "profession": 14
+   },
+   "entrantParType": {
+    "character": 1199,
+    "status": 2084,
+    "place": 657,
+    "power": 285,
+    "artifact": 23,
+    "profession": 54,
+    "skill": 3
+   },
+   "paires": {
+    "character→character": 1198,
+    "character→status": 1983,
+    "place→place": 95,
+    "status→place": 90,
+    "power→power": 283,
+    "character→place": 448,
+    "artifact→place": 8,
+    "skill→status": 2,
+    "artifact→status": 82,
+    "artifact→artifact": 18,
+    "profession→place": 10,
+    "power→place": 6,
+    "character→profession": 54,
+    "character→artifact": 5,
+    "power→status": 5,
+    "artifact→character": 1,
+    "place→status": 1,
+    "status→status": 7,
+    "character→power": 2,
+    "skill→skill": 3,
+    "profession→status": 4
+   },
+   "exemples": [
+    "ten-tails-kara (character) → isshiki-otsutsuki (character)",
+    "jabari (character) → cipher-pol (status)"
+   ]
+  },
+  {
+   "relation": "allie",
+   "total": 1482,
+   "sortantParType": {
+    "character": 1480,
+    "artifact": 1,
+    "power": 1
+   },
+   "entrantParType": {
+    "character": 1337,
+    "artifact": 16,
+    "status": 106,
+    "place": 19,
+    "power": 4
+   },
+   "paires": {
+    "character→character": 1335,
+    "character→artifact": 16,
+    "character→status": 106,
+    "character→place": 19,
+    "character→power": 4,
+    "artifact→character": 1,
+    "power→character": 1
+   },
+   "exemples": [
+    "sasuke-uchiha (character) → naruto-uzumaki (character)",
+    "kid-eustass (character) → trafalgar-law (character)"
+   ]
+  },
+  {
+   "relation": "ennemi",
+   "total": 1432,
+   "sortantParType": {
+    "character": 1432
+   },
+   "entrantParType": {
+    "character": 1334,
+    "status": 79,
+    "place": 10,
+    "artifact": 2,
+    "power": 3,
+    "skill": 4
+   },
+   "paires": {
+    "character→character": 1334,
+    "character→status": 79,
+    "character→place": 10,
+    "character→artifact": 2,
+    "character→power": 3,
+    "character→skill": 4
+   },
+   "exemples": [
+    "mui (character) → kazan (character)",
+    "tamaki (character) → sasuke-uchiha (character)"
+   ]
+  },
+  {
+   "relation": "habite",
+   "total": 1402,
+   "sortantParType": {
+    "character": 1392,
+    "skill": 2,
+    "place": 1,
+    "power": 3,
+    "status": 3,
+    "artifact": 1
+   },
+   "entrantParType": {
+    "place": 1394,
+    "character": 1,
+    "status": 7
+   },
+   "paires": {
+    "character→place": 1386,
+    "character→character": 1,
+    "skill→status": 2,
+    "character→status": 5,
+    "place→place": 1,
+    "power→place": 3,
+    "status→place": 3,
+    "artifact→place": 1
+   },
+   "exemples": [
+    "inabi-uchiha (character) → konohagakure (place)",
+    "poppy (character) → amazon-lily (place)"
+   ]
+  },
+  {
+   "relation": "famille",
+   "total": 1186,
+   "sortantParType": {
+    "character": 1063,
+    "skill": 112,
+    "artifact": 3,
+    "profession": 5,
+    "power": 3
+   },
+   "entrantParType": {
+    "character": 1171,
+    "status": 11,
+    "artifact": 2,
+    "place": 2
+   },
+   "paires": {
+    "character→character": 1048,
+    "character→status": 11,
+    "skill→character": 112,
+    "artifact→character": 3,
+    "profession→character": 5,
+    "character→artifact": 2,
+    "character→place": 2,
+    "power→character": 3
+   },
+   "exemples": [
+    "anato (character) → mia (character)",
+    "yoruga (character) → hiruga (character)"
+   ]
+  },
+  {
+   "relation": "possede",
+   "total": 696,
+   "sortantParType": {
+    "character": 691,
+    "profession": 3,
+    "power": 1,
+    "status": 1
+   },
+   "entrantParType": {
+    "artifact": 681,
+    "character": 15
+   },
+   "paires": {
+    "character→artifact": 676,
+    "character→character": 15,
+    "profession→artifact": 3,
+    "power→artifact": 1,
+    "status→artifact": 1
+   },
+   "exemples": [
+    "haku (character) → senbon (artifact)",
+    "kotohime (character) → poison (artifact)"
+   ]
+  },
+  {
+   "relation": "exerce",
+   "total": 645,
+   "sortantParType": {
+    "character": 643,
+    "profession": 1,
+    "skill": 1
+   },
+   "entrantParType": {
+    "profession": 612,
+    "status": 30,
+    "place": 2,
+    "character": 1
+   },
+   "paires": {
+    "character→profession": 612,
+    "character→status": 28,
+    "profession→status": 1,
+    "character→place": 2,
+    "skill→status": 1,
+    "character→character": 1
+   },
+   "exemples": [
+    "shion (character) → priestess (profession)",
+    "shino-aburame (character) → genin-exams-proctor (profession)"
+   ]
+  },
+  {
+   "relation": "mentor",
+   "total": 249,
+   "sortantParType": {
+    "character": 249
+   },
+   "entrantParType": {
+    "character": 246,
+    "place": 1,
+    "status": 2
+   },
+   "paires": {
+    "character→character": 246,
+    "character→place": 1,
+    "character→status": 2
+   },
+   "exemples": [
+    "homura-mitokado (character) → tobirama-senju (character)",
+    "hiruzen-sarutobi (character) → hashirama-senju (character)"
+   ]
+  },
+  {
+   "relation": "rival",
+   "total": 192,
+   "sortantParType": {
+    "character": 192
+   },
+   "entrantParType": {
+    "character": 192
+   },
+   "paires": {
+    "character→character": 192
+   },
+   "exemples": [
+    "razor (character) → gon-freecss (character)",
+    "riruka-dokugamine (character) → ichigo-kurosaki (character)"
+   ]
+  },
+  {
+   "relation": "eleve",
+   "total": 48,
+   "sortantParType": {
+    "character": 48
+   },
+   "entrantParType": {
+    "character": 48
+   },
+   "paires": {
+    "character→character": 48
+   },
+   "exemples": [
+    "karin (character) → yajirobe (character)",
+    "hiruzen-sarutobi (character) → orochimaru (character)"
+   ]
+  },
+  {
+   "relation": "jumeau",
+   "total": 12,
+   "sortantParType": {
+    "place": 12
+   },
+   "entrantParType": {
+    "place": 12
+   },
+   "paires": {
+    "place→place": 12
+   },
+   "exemples": [
+    "univers-12 (place) → univers-1 (place)",
+    "univers-6 (place) → univers-7 (place)"
+   ]
+  },
+  {
+   "relation": "ange",
+   "total": 10,
+   "sortantParType": {
+    "place": 10
+   },
+   "entrantParType": {
+    "character": 10
+   },
+   "paires": {
+    "place→character": 10
+   },
+   "exemples": [
+    "univers-8 (place) → korn (character)",
+    "univers-6 (place) → vados (character)"
+   ]
+  },
+  {
+   "relation": "dieu_destruction",
+   "total": 8,
+   "sortantParType": {
+    "place": 8
+   },
+   "entrantParType": {
+    "character": 8
+   },
+   "paires": {
+    "place→character": 8
+   },
+   "exemples": [
+    "univers-5 (place) → arack (character)",
+    "univers-7 (place) → beerus (character)"
+   ]
+  },
+  {
+   "relation": "kaio_shin",
+   "total": 8,
+   "sortantParType": {
+    "place": 8
+   },
+   "entrantParType": {
+    "character": 8
+   },
+   "paires": {
+    "place→character": 8
+   },
+   "exemples": [
+    "univers-10 (place) → gowasu (character)",
+    "univers-9 (place) → roh (character)"
+   ]
+  }
+ ],
+ "gabaritNatureSens": [
+  {
+   "gabarit": "CharacterZone",
+   "relation": "appartient",
+   "sens": "sortant",
+   "fiches": 2090
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "maitrise",
+   "sens": "entrant",
+   "fiches": 1678
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "habite",
+   "sens": "sortant",
+   "fiches": 1253
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "ennemi",
+   "sens": "sortant",
+   "fiches": 982
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "maitrise",
+   "sens": "sortant",
+   "fiches": 940
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "allie",
+   "sens": "sortant",
+   "fiches": 931
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "allie",
+   "sens": "entrant",
+   "fiches": 699
+  },
+  {
+   "gabarit": "gabarit Attaque",
+   "relation": "maitrise",
+   "sens": "entrant",
+   "fiches": 651
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "appartient",
+   "sens": "entrant",
+   "fiches": 637
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "famille",
+   "sens": "entrant",
+   "fiches": 624
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "famille",
+   "sens": "sortant",
+   "fiches": 611
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "exerce",
+   "sens": "sortant",
+   "fiches": 588
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "ennemi",
+   "sens": "entrant",
+   "fiches": 523
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "appartient",
+   "sens": "sortant",
+   "fiches": 494
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "possede",
+   "sens": "sortant",
+   "fiches": 356
+  },
+  {
+   "gabarit": "OrganizationZone",
+   "relation": "appartient",
+   "sens": "entrant",
+   "fiches": 280
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "mentor",
+   "sens": "sortant",
+   "fiches": 236
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "possede",
+   "sens": "entrant",
+   "fiches": 212
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "rival",
+   "sens": "sortant",
+   "fiches": 171
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "mentor",
+   "sens": "entrant",
+   "fiches": 162
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "habite",
+   "sens": "entrant",
+   "fiches": 129
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "rival",
+   "sens": "entrant",
+   "fiches": 125
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "appartient",
+   "sens": "entrant",
+   "fiches": 124
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "exerce",
+   "sens": "entrant",
+   "fiches": 99
+  },
+  {
+   "gabarit": "OrganizationZone",
+   "relation": "appartient",
+   "sens": "sortant",
+   "fiches": 92
+  },
+  {
+   "gabarit": "OrganizationZone",
+   "relation": "maitrise",
+   "sens": "sortant",
+   "fiches": 47
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "eleve",
+   "sens": "entrant",
+   "fiches": 40
+  },
+  {
+   "gabarit": "OrganizationZone",
+   "relation": "ennemi",
+   "sens": "entrant",
+   "fiches": 33
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "eleve",
+   "sens": "sortant",
+   "fiches": 29
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "ennemi",
+   "sens": "entrant",
+   "fiches": 15
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "allie",
+   "sens": "entrant",
+   "fiches": 15
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "famille",
+   "sens": "sortant",
+   "fiches": 14
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "possede",
+   "sens": "entrant",
+   "fiches": 13
+  },
+  {
+   "gabarit": "OrganizationZone",
+   "relation": "allie",
+   "sens": "entrant",
+   "fiches": 13
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "jumeau",
+   "sens": "sortant",
+   "fiches": 12
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "jumeau",
+   "sens": "entrant",
+   "fiches": 12
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "ange",
+   "sens": "sortant",
+   "fiches": 10
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "ange",
+   "sens": "entrant",
+   "fiches": 10
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "maitrise",
+   "sens": "sortant",
+   "fiches": 9
+  },
+  {
+   "gabarit": "OrganizationZone",
+   "relation": "famille",
+   "sens": "entrant",
+   "fiches": 8
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "dieu_destruction",
+   "sens": "sortant",
+   "fiches": 8
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "dieu_destruction",
+   "sens": "entrant",
+   "fiches": 8
+  },
+  {
+   "gabarit": "gabarit Attaque",
+   "relation": "appartient",
+   "sens": "sortant",
+   "fiches": 8
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "kaio_shin",
+   "sens": "sortant",
+   "fiches": 8
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "kaio_shin",
+   "sens": "entrant",
+   "fiches": 8
+  },
+  {
+   "gabarit": "OrganizationZone",
+   "relation": "exerce",
+   "sens": "entrant",
+   "fiches": 6
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "habite",
+   "sens": "sortant",
+   "fiches": 4
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "maitrise",
+   "sens": "entrant",
+   "fiches": 3
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "famille",
+   "sens": "entrant",
+   "fiches": 3
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "possede",
+   "sens": "sortant",
+   "fiches": 3
+  },
+  {
+   "gabarit": "OrganizationZone",
+   "relation": "habite",
+   "sens": "entrant",
+   "fiches": 2
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "exerce",
+   "sens": "sortant",
+   "fiches": 2
+  },
+  {
+   "gabarit": "OrganizationZone",
+   "relation": "mentor",
+   "sens": "entrant",
+   "fiches": 2
+  },
+  {
+   "gabarit": "gabarit Attaque",
+   "relation": "habite",
+   "sens": "sortant",
+   "fiches": 2
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "allie",
+   "sens": "sortant",
+   "fiches": 2
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "habite",
+   "sens": "entrant",
+   "fiches": 1
+  },
+  {
+   "gabarit": "EntityZone",
+   "relation": "mentor",
+   "sens": "entrant",
+   "fiches": 1
+  },
+  {
+   "gabarit": "OrganizationZone",
+   "relation": "habite",
+   "sens": "sortant",
+   "fiches": 1
+  },
+  {
+   "gabarit": "OrganizationZone",
+   "relation": "possede",
+   "sens": "sortant",
+   "fiches": 1
+  },
+  {
+   "gabarit": "CharacterZone",
+   "relation": "exerce",
+   "sens": "entrant",
+   "fiches": 1
+  }
+ ]
+}

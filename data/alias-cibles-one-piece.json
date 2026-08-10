@@ -1,0 +1,208 @@
+{
+ "_lisezMoi": "Registre titre-de-wiki → fiche AKASHA. Chaque paire porte son témoin et son adresse. Construit par scripts/akasha-alias-registre.mjs le 2026-08-10. Ne pas éditer à la main : relancer le script, qui redemande chaque témoin à la source.",
+ "One Piece": {
+  "Wano Country": {
+   "slug": "wano",
+   "nom": "Pays de Wano",
+   "type": "place",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Wano%20Country déclare fr = « Pays des Wa » ; https://onepiece.fandom.com/fr/wiki/Wano y redirige ; égal (après normalisation) à la parenthèse de notre fiche Pays de Wano (wano, type place)"
+  },
+  "Big Mom Pirates": {
+   "slug": "l-equipage-de-big-mom",
+   "nom": "L’équipage de Big Mom",
+   "type": "status",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Big%20Mom%20Pirates déclare fr = « L'Équipage de Big Mom » ; égal (après normalisation) à le nom de notre fiche L’équipage de Big Mom (l-equipage-de-big-mom, type status)"
+  },
+  "Water 7": {
+   "slug": "water-seven-lieu",
+   "nom": "Water Seven",
+   "type": "place",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Water%207 déclare fr = « Water Seven » ; égal (après normalisation) à le nom de notre fiche Water Seven (water-seven-lieu, type place)"
+  },
+  "Marines": {
+   "slug": "marine",
+   "nom": "Marine",
+   "type": "status",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Marines déclare fr = « Marine » ; égal (après normalisation) à le nom de notre fiche Marine (marine, type status)"
+  },
+  "Phoenix Pirates": {
+   "slug": "l-equipage-du-phoenix",
+   "nom": "L’équipage du Phoenix",
+   "type": "status",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Phoenix%20Pirates déclare fr = « L'Équipage du Phoénix » ; égal (après normalisation) à le nom de notre fiche L’équipage du Phoenix (l-equipage-du-phoenix, type status)"
+  },
+  "Aunt": {
+   "slug": "aunt",
+   "nom": "Aunt",
+   "type": "character",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Aunt déclare fr = « Aunt » ; égal (après normalisation) à le nom de notre fiche Aunt (aunt, type character)"
+  },
+  "Red Hair Pirates": {
+   "slug": "l-equipage-du-roux",
+   "nom": "L’équipage du Roux",
+   "type": "status",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Red%20Hair%20Pirates déclare fr = « L'Équipage du Roux » ; égal (après normalisation) à le nom de notre fiche L’équipage du Roux (l-equipage-du-roux, type status)"
+  },
+  "World Government": {
+   "slug": "gouvernement-mondial",
+   "nom": "Gouvernement Mondial",
+   "type": "status",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=World%20Government déclare fr = « Gouvernement Mondial » ; égal (après normalisation) à le nom de notre fiche Gouvernement Mondial (gouvernement-mondial, type status)"
+  },
+  "Elbaph": {
+   "slug": "elbaf",
+   "nom": "Elbaf",
+   "type": "place",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Elbaph déclare fr = « Erbaf » ; https://onepiece.fandom.com/fr/wiki/Elbaf y redirige ; égal (après normalisation) à le nom de notre fiche Elbaf (elbaf, type place)"
+  },
+  "Whitebeard Pirates": {
+   "slug": "l-equipage-de-barbe-blanche",
+   "nom": "L’équipage de Barbe Blanche",
+   "type": "status",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Whitebeard%20Pirates déclare fr = « L'Équipage de Barbe Blanche » ; égal (après normalisation) à le nom de notre fiche L’équipage de Barbe Blanche (l-equipage-de-barbe-blanche, type status)"
+  },
+  "Arabasta": {
+   "slug": "alabasta-lieu",
+   "nom": "Alabasta",
+   "type": "place",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Arabasta déclare fr = « Alabasta » ; égal (après normalisation) à le nom de notre fiche Alabasta (alabasta-lieu, type place)"
+  },
+  "Revolutionary Army": {
+   "slug": "armee-revolutionnaire",
+   "nom": "Armée Révolutionnaire",
+   "type": "status",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Revolutionary%20Army déclare fr = « Armée Révolutionnaire » ; égal (après normalisation) à le nom de notre fiche Armée Révolutionnaire (armee-revolutionnaire, type status)"
+  },
+  "Alvida Pirates": {
+   "slug": "l-equipage-d-alvida",
+   "nom": "L’équipage d’Alvida",
+   "type": "status",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Alvida%20Pirates déclare fr = « L'Équipage d'Alvida » ; égal (après normalisation) à le nom de notre fiche L’équipage d’Alvida (l-equipage-d-alvida, type status)"
+  },
+  "Okobore Town": {
+   "slug": "kuri",
+   "nom": "Kuri",
+   "type": "place",
+   "temoin": "T1 redirection dure",
+   "preuve": "https://onepiece.fandom.com/wiki/Okobore_Town redirige vers « Kuri » ; notre fiche de ce nom : Kuri (kuri, type place)"
+  },
+  "Fish-Man Island": {
+   "slug": "fishman-island",
+   "nom": "Île des Hommes-Poissons",
+   "type": "place",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Fish-Man%20Island déclare fr = « Île des Hommes-Poissons » ; égal (après normalisation) à le nom de notre fiche Île des Hommes-Poissons (fishman-island, type place)"
+  },
+  "Yosaku": {
+   "slug": "yosaku",
+   "nom": "Yosaku",
+   "type": "character",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Yosaku déclare fr = « Yosaku » ; égal (après normalisation) à le nom de notre fiche Yosaku (yosaku, type character)"
+  },
+  "Johnny": {
+   "slug": "johnny",
+   "nom": "Johnny",
+   "type": "character",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Johnny déclare fr = « Johnny » ; égal (après normalisation) à le nom de notre fiche Johnny (johnny, type character)"
+  },
+  "Brownbeard": {
+   "slug": "chadros-higelyges",
+   "nom": "Chadros Higelyges",
+   "type": "character",
+   "temoin": "T1 redirection dure",
+   "preuve": "https://onepiece.fandom.com/wiki/Brownbeard redirige vers « Chadros Higelyges » ; notre fiche de ce nom : Chadros Higelyges (chadros-higelyges, type character)"
+  },
+  "Edward Newgate": {
+   "slug": "barbe-blanche",
+   "nom": "Edward Newgate · Barbe Blanche",
+   "type": "character",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Edward%20Newgate déclare fr = « Edward Newgate » ; https://onepiece.fandom.com/fr/wiki/Barbe_Blanche y redirige ; égal (après normalisation) à la parenthèse de notre fiche Edward Newgate · Barbe Blanche (barbe-blanche, type character)"
+  },
+  "Neo Marines": {
+   "slug": "neo-marine",
+   "nom": "Néo Marine",
+   "type": "status",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Neo%20Marines déclare fr = « Néo-Marine » ; égal (après normalisation) à le nom de notre fiche Néo Marine (neo-marine, type status)"
+  },
+  "Sankan Kingdom": {
+   "slug": "vincent",
+   "nom": "Vincent",
+   "type": "character",
+   "temoin": "T1 redirection dure",
+   "preuve": "https://onepiece.fandom.com/wiki/Sankan_Kingdom redirige vers « Vincent » ; notre fiche de ce nom : Vincent (vincent, type character)"
+  },
+  "World Economy News Paper": {
+   "slug": "world-economic-journal",
+   "nom": "World Economic Journal",
+   "type": "status",
+   "temoin": "T3 alias-cures",
+   "preuve": "data/alias-cures.json (Naruto) porte « World Economic Journal » → « World Economy News Paper », paire sondée contre le wiki par scripts/ops-curer-alias.mjs ; notre fiche : World Economic Journal (world-economic-journal, type status)"
+  },
+  "Barbar Pirates": {
+   "slug": "l-equipage-des-pirates-du-sables",
+   "nom": "L’équipage des Pirates du Sables",
+   "type": "status",
+   "temoin": "T3 alias-cures",
+   "preuve": "data/alias-cures.json (Naruto) porte « L’équipage des Pirates du Sables » → « Barbar Pirates », paire sondée contre le wiki par scripts/ops-curer-alias.mjs ; notre fiche : L’équipage des Pirates du Sables (l-equipage-des-pirates-du-sables, type status)"
+  },
+  "Sabaody Archipelago": {
+   "slug": "sabaody",
+   "nom": "Archipel Sabaody",
+   "type": "place",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Sabaody%20Archipelago déclare fr = « Archipel des Sabaody » ; https://onepiece.fandom.com/fr/wiki/Sabaody y redirige ; égal (après normalisation) à la parenthèse de notre fiche Archipel Sabaody (sabaody, type place)"
+  },
+  "Arabasta Kingdom": {
+   "slug": "alabasta-lieu",
+   "nom": "Alabasta",
+   "type": "place",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Arabasta%20Kingdom déclare fr = « Alabasta » ; égal (après normalisation) à le nom de notre fiche Alabasta (alabasta-lieu, type place)"
+  },
+  "Caesar Clown": {
+   "slug": "caesar-clown",
+   "nom": "Caesar Clown",
+   "type": "character",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Caesar%20Clown déclare fr = « César Clown » ; https://onepiece.fandom.com/fr/wiki/Caesar_Clown y redirige ; égal (après normalisation) à le nom de notre fiche Caesar Clown (caesar-clown, type character)"
+  },
+  "Gild Tesoro": {
+   "slug": "gild-tesoro",
+   "nom": "Gild Tesoro",
+   "type": "character",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Gild%20Tesoro déclare fr = « Gild Tesoro » ; égal (après normalisation) à le nom de notre fiche Gild Tesoro (gild-tesoro, type character)"
+  },
+  "Egana": {
+   "slug": "egana",
+   "nom": "Egana",
+   "type": "character",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Egana déclare fr = « Egana » ; égal (après normalisation) à le nom de notre fiche Egana (egana, type character)"
+  },
+  "Henzo": {
+   "slug": "henzo",
+   "nom": "Henzo",
+   "type": "character",
+   "temoin": "T2 interlangue",
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Henzo déclare fr = « Henzo » ; égal (après normalisation) à le nom de notre fiche Henzo (henzo, type character)"
+  }
+ }
+}

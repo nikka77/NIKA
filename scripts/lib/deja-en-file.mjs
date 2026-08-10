@@ -50,3 +50,55 @@ export async function dejaEnFile(sb, types = null) {
   }
   return vus;
 }
+
+/** Entités qu'une GARDE a refusées sur le fond, et qu'il est inutile de recommander.
+ *
+ *  POURQUOI (10/08/2026)
+ *  Le garde ci-dessus ne compte que les productions en attente — décision du 08/08, et elle était
+ *  juste : compter les `failed` condamnait à vie toute entité ayant heurté un couloir fermé. Mais
+ *  elle a laissé une porte ouverte que personne n'a refermée : un `refused` ne bloque rien non
+ *  plus. Or un refus n'est pas un échec. Un échec dit « le transport a lâché », un refus dit
+ *  « la garde a regardé le contenu et il ne convient pas » : page Fandom absente, article d'une
+ *  AUTRE entité, page d'œuvre ou de liste. Aucune de ces causes ne se répare en réessayant.
+ *
+ *  Mesuré ce jour, et c'est ce qui a motivé cette fonction : 11 682 refus en 24 heures pour
+ *  419 entités distinctes — soit 78 tentatives chacune, une toutes les 20 minutes, indéfiniment.
+ *  L'usine passait 88 % de son temps, et de ses quotas, à redemander ce qu'elle venait de refuser.
+ *
+ *  LE QUARANTAINE SE LÈVE. Ces entités redeviennent commandables dès qu'un chantier répare la
+ *  cause — un alias curé, une page créée. Il suffit de clore leurs lignes de refus
+ *  (`review_status` ≠ 'pending'), ce que fait scripts/ops-lever-quarantaine.mjs.
+ *
+ *  @param {import('@supabase/supabase-js').SupabaseClient} sb  base de TRAVAIL (clientOps)
+ *  @param {string|string[]|null} types  type(s) de tâche ; null = tous
+ *  @returns {Promise<Set<string>>} */
+export async function refusesParLaGarde(sb, types = null) {
+  const vus = new Set();
+  const liste = types == null ? null : (Array.isArray(types) ? types : [types]);
+  for (let d = 0; ; d += 1000) {
+    // PAS DE FILTRE SUR `review_status`, et c'est le cœur du correctif. Premier essai : j'avais
+    // recopié le `.eq('review_status', 'pending')` du garde voisin — il ne voyait alors que 167
+    // lignes sur 47 991. Les refus sont CLOS à la seconde où ils sont écrits (100 % en `rejected`,
+    // mesuré) : chercher un refus « en attente » revient à chercher ce qui n'existe pas. Un refus
+    // est un fait acquis, pas un dossier ouvert.
+    let q = sb.from('agent_results').select('target_slug, error')
+      .eq('status', 'refused')
+      .order('id', { ascending: true }).range(d, d + 999);
+    if (liste) q = q.in('task_type', liste);
+    const { data, error } = await q;
+    if (error) throw new Error(`garde des refus indisponible : ${error.message}`);
+    for (const r of data ?? []) if (r.target_slug && !leve(r.error)) vus.add(r.target_slug);
+    if ((data?.length ?? 0) < 1000) break;
+  }
+  return vus;
+}
+
+/** Une ligne `refused` qui ne refuse PLUS rien.
+ *  Deux cas, et le second m'a sauté aux yeux en lisant les motifs réels : le marqueur de levée
+ *  (« ↻ »), et surtout les 1 846 lignes dont le motif dit « relancée en production » — un alias
+ *  curé, une source retrouvée. Celles-là sont des SUCCÈS enregistrés dans la colonne des refus.
+ *  Les compter aurait mis en quarantaine les entités qu'un chantier venait justement de réparer. */
+function leve(motif) {
+  const m = String(motif ?? '');
+  return m.startsWith('↻') || /relanc[ée]e? en production/i.test(m);
+}

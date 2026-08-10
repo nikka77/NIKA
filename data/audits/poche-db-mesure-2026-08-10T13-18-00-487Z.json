@@ -1,0 +1,380 @@
+{
+  "quand": "2026-08-10T13:18:04.869Z",
+  "mode": "MESURE (lecture seule)",
+  "corpus": {
+    "fiches": 7654,
+    "aretes": 16819
+  },
+  "isolees": {
+    "total": 747,
+    "parUnivers": {
+      "JoJo's Bizarre Adventure": 49,
+      "Dragon Ball": 129,
+      "Bleach": 42,
+      "One Piece": 451,
+      "Hunter x Hunter": 22,
+      "Naruto": 39,
+      "Initial D": 5,
+      "Death Note": 10
+    }
+  },
+  "resumesCreux": {
+    "total": 231,
+    "parUnivers": {
+      "Naruto": 110,
+      "Dragon Ball": 121
+    },
+    "motif": "/^(personnage|lieu|objet|technique|créature|groupe)\\s+(secondaire|mineur|de l'univers)[^.]{0,60}\\.?$/i"
+  },
+  "sansResume": 17,
+  "dragonBall": {
+    "fiches": 1137,
+    "isolees": 129,
+    "creux": 121,
+    "creuxEtIsolee": 42,
+    "isoleesParType": {
+      "character": 95,
+      "artifact": 28,
+      "skill": 2,
+      "place": 4
+    },
+    "creuxParType": {
+      "character": 121
+    },
+    "isoleesAvecDescFr": 113,
+    "creuxAvecDescFr": 114,
+    "clefsAttributsIsolees": {
+      "descFr": 113,
+      "role": 86,
+      "voiceActors": 84,
+      "descRaw": 76,
+      "descLang": 76,
+      "category": 43,
+      "descFrSource": 42,
+      "favorites": 40,
+      "material": 13,
+      "powerLevel": 9,
+      "race": 7,
+      "saga": 6,
+      "region": 4,
+      "descFrPurgee": 2,
+      "discipline": 2
+    },
+    "clefsAttributsCreux": {
+      "role": 121,
+      "voiceActors": 115,
+      "descFr": 114,
+      "descRaw": 98,
+      "descLang": 98,
+      "favorites": 88,
+      "descFrSource": 24,
+      "saga": 16,
+      "race": 13,
+      "descFrPurgee": 2,
+      "forms": 1,
+      "nindo": 1,
+      "nindoLabel": 1
+    }
+  },
+  "echantillonIsolees": [
+    {
+      "slug": "angela",
+      "name": "Angela",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "favorites",
+        "voiceActors",
+        "descFrSource"
+      ]
+    },
+    {
+      "slug": "lord-slug",
+      "name": "Lord Slug",
+      "type": "character",
+      "attrs": [
+        "race",
+        "descFr",
+        "category",
+        "powerLevel",
+        "descFrSource"
+      ]
+    },
+    {
+      "slug": "eclair",
+      "name": "Eclair",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "voiceActors"
+      ]
+    },
+    {
+      "slug": "mafuba-flacon",
+      "name": "Bidon du Mafûba",
+      "type": "artifact",
+      "attrs": [
+        "category",
+        "material"
+      ]
+    },
+    {
+      "slug": "radar-dragon",
+      "name": "Radar du Dragon",
+      "type": "artifact",
+      "attrs": [
+        "descFr",
+        "category",
+        "material",
+        "descFrSource"
+      ]
+    },
+    {
+      "slug": "veste-lestee",
+      "name": "Vêtements lestés",
+      "type": "artifact",
+      "attrs": [
+        "category",
+        "material"
+      ]
+    },
+    {
+      "slug": "enma-dai-ou",
+      "name": "Enma Dai-Ou",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "favorites",
+        "voiceActors"
+      ]
+    },
+    {
+      "slug": "mermaid",
+      "name": "Mermaid",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "favorites",
+        "voiceActors"
+      ]
+    },
+    {
+      "slug": "rabbit-gang-member-2",
+      "name": "Rabbit Gang Member 2",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "voiceActors"
+      ]
+    },
+    {
+      "slug": "tanmen",
+      "name": "Tanmen",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "voiceActors"
+      ]
+    },
+    {
+      "slug": "rou-kaioshin",
+      "name": "Rou Kaioshin",
+      "type": "character",
+      "attrs": [
+        "role",
+        "saga",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "favorites",
+        "voiceActors",
+        "descFrSource"
+      ]
+    },
+    {
+      "slug": "jirasen",
+      "name": "Jirasen",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "favorites",
+        "voiceActors"
+      ]
+    },
+    {
+      "slug": "korinto",
+      "name": "Korinto",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "voiceActors"
+      ]
+    },
+    {
+      "slug": "brianne-de-chateau",
+      "name": "Brianne de Chateau",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "favorites",
+        "voiceActors"
+      ]
+    },
+    {
+      "slug": "damon",
+      "name": "Damon",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "favorites",
+        "voiceActors"
+      ]
+    },
+    {
+      "slug": "debu",
+      "name": "Debu",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descRaw",
+        "descLang",
+        "voiceActors",
+        "descFrPurgee"
+      ]
+    },
+    {
+      "slug": "mousse",
+      "name": "Mousse",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "voiceActors"
+      ]
+    },
+    {
+      "slug": "rabbit-gang-member-1",
+      "name": "Rabbit Gang Member 1",
+      "type": "character",
+      "attrs": [
+        "role",
+        "descFr",
+        "descRaw",
+        "descLang",
+        "voiceActors"
+      ]
+    },
+    {
+      "slug": "imperfect-form",
+      "name": "Imperfect Form",
+      "type": "skill",
+      "attrs": [
+        "category",
+        "discipline"
+      ]
+    },
+    {
+      "slug": "semi-perfect-form",
+      "name": "Semi Perfect Form",
+      "type": "skill",
+      "attrs": [
+        "category",
+        "discipline"
+      ]
+    }
+  ],
+  "echantillonCreux": [
+    {
+      "slug": "mira-kun",
+      "name": "Mira-kun",
+      "summary": "Personnage secondaire de Dragon Ball.",
+      "descFr": "Bandages est le combattant momie de Baba. Il combattit en troisième position, et son premier adversaire fut Yamcha. Bandages le vainquit, mais fut ensuite battu par Goku. Lui et Akkuman reviennent plus tard donner leur énergie à Goku pour qu'il puisse vaincre Majin Boo (croyant aider Mr. Satan). Le mot mirra est le portugais pour la myrrhe, l'onguent d'embaumement, et en est venu à signifier « mom"
+    },
+    {
+      "slug": "recoome",
+      "name": "Recoome",
+      "summary": "Personnage secondaire de Dragon Ball.",
+      "descFr": "Reacoom est un grand extraterrestre musclé à l'apparence humaine, aux cheveux roux. C'est le membre le plus flamboyant du Commando Ginyu, prenant des poses en plein combat encore plus souvent que le Capitaine Ginyu lui-même, et se comportant de façon trompeusement loufoque. Reacoom est pourtant un combattant sadique, et prend plaisir à jouer avec ses adversaires et à les narguer par des railleries"
+    },
+    {
+      "slug": "babidi",
+      "name": "Babidi",
+      "summary": "Personnage secondaire de Dragon Ball.",
+      "descFr": "Babidi était déterminé à ressusciter Majin Buu afin de poursuivre l'œuvre de son père, à savoir conquérir l'univers, et ainsi le rendre fier."
+    },
+    {
+      "slug": "mermaid",
+      "name": "Mermaid",
+      "summary": "Personnage secondaire de Dragon Ball.",
+      "descFr": "Son Goku trouva une sirène alors qu'il cherchait l'exemple de la femme idéale selon Tortue Géniale. Offensée par les intentions de Tortue Géniale, la sirène le frappa avant de replonger sous l'eau."
+    },
+    {
+      "slug": "rabbit-gang-member-2",
+      "name": "Rabbit Gang Member 2",
+      "summary": "Personnage secondaire de Dragon Ball.",
+      "descFr": "Un membre du Gang des Lapins qui terrorise un village que traverse l'équipage du Dragon. Après avoir été battu, il est abandonné sur la Lune pour y piler du mochi."
+    },
+    {
+      "slug": "puck",
+      "name": "Puck",
+      "summary": "Personnage secondaire de Dragon Ball.",
+      "descFr": "Puck s'en prend d'abord à Goku Jr., mais il l'accompagne ensuite dans un voyage à la recherche d'une Dragon Ball. On le voit aussi dans le dernier épisode de Dragon Ball GT, discutant avec Pan, la grand-mère de Goku Jr."
+    },
+    {
+      "slug": "debu",
+      "name": "Debu",
+      "summary": "Personnage secondaire de Dragon Ball.",
+      "descFr": ""
+    },
+    {
+      "slug": "rabbit-gang-member-1",
+      "name": "Rabbit Gang Member 1",
+      "summary": "Personnage secondaire de Dragon Ball.",
+      "descFr": "Un membre du Gang des Lapins qui terrorise un village que traverse l'équipage du Dragon. Après avoir été battu, il est abandonné sur la Lune pour y piler du mochi."
+    },
+    {
+      "slug": "tsukutsun-tsun",
+      "name": "Tsukutsun Tsun",
+      "summary": "Personnage secondaire de Dragon Ball.",
+      "descFr": "Le fils de la famille Tsun. C'est un artiste martial qui devient le petit ami d'Akane."
+    },
+    {
+      "slug": "sonpara",
+      "name": "Sonpara",
+      "summary": "Personnage secondaire de Dragon Ball.",
+      "descFr": "Son Para est un mercenaire appartenant au culte Luud, frère de Bon Para et Don Para, formant les Para Brothers. Dans la saga Black Star Dragon Ball de Dragon Ball GT, lui et ses frères volent une Dragon Ball noire à Goku, Pan et Trunks, puis tentent de la remettre au cardinal Mutchy Mutchy avant d'être défaits par Pan et transformés en poupées absorbées par Luud. Lors de la saga Shadow Dragon, il "
+    }
+  ]
+}

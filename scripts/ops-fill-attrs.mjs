@@ -3,7 +3,7 @@
 // Usage : node --env-file=.env.local scripts/ops-fill-attrs.mjs [--dry] [--limit=20] [--universe="Naruto"]
 import { createClient } from '@supabase/supabase-js';
 import { clientOps, clientSite } from '../lib/ops/db.mjs';
-import { dejaEnFile } from './lib/deja-en-file.mjs';
+import { dejaEnFile, refusesParLaGarde } from './lib/deja-en-file.mjs';
 import { AXES } from './lib/akasha-axes.mjs';
 
 const supabase = clientOps();
@@ -25,10 +25,12 @@ if (error) { console.error(error.message); process.exit(1); }
 // PAGINÉ (07/08) : un `.select()` nu plafonne à 1 000 lignes chez PostgREST — le garde ne
 // voyait que le premier millier d'une pile de 11 000 et laissait repartir tout le reste.
 const dejaEnReview = await dejaEnFile(supabase, 'akasha_attrs');
+// Voir scripts/lib/deja-en-file.mjs : un refus de garde est une impasse, pas un aléa.
+const refusees = await refusesParLaGarde(supabase, 'akasha_attrs');
 
 // une fiche est candidate si AU MOINS un axe de son univers est vide
 const manquants = (e) => Object.keys(AXES[e.universe] ?? {}).filter((a) => !e.attributes?.[a]);
-const candidates = (data ?? []).filter((e) => manquants(e).length && !dejaEnReview.has(e.slug)).slice(0, LIMIT);
+const candidates = (data ?? []).filter((e) => manquants(e).length && !(dejaEnReview.has(e.slug) || refusees.has(e.slug))).slice(0, LIMIT);
 
 console.log(`${candidates.length} fiches avec des axes manquants :`);
 for (const c of candidates)

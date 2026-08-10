@@ -1,0 +1,3321 @@
+{
+ "chantier": "registre d'alias titre-de-wiki → fiche (vague 4)",
+ "quand": "2026-08-10T13:11:53.568Z",
+ "mode": "écriture du registre",
+ "ecritEnBase": false,
+ "sourceDuGisement": "data/audits/isolees-html-one-piece-sonde-2026-08-10T13-07-46-652Z.json",
+ "mesure": {
+  "fiches": 7654,
+  "aretes": 16788,
+  "isolees": 764,
+  "isoleesNaruto": 451
+ },
+ "ciblesOrphelines": 109,
+ "liensOrphelins": 319,
+ "curees": 29,
+ "liensCures": 95,
+ "verdicts": [
+  {
+   "titre": "Wano Country",
+   "liens": 28,
+   "champs": [
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Tokijiro",
+    "Jibuemon",
+    "Genrin",
+    "Inoichibannosuke"
+   ],
+   "wiki": {
+    "titreRendu": "Wano Country",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Pays des Wa",
+    "categories": [
+     "Four Emperors Territories",
+     "New World Locations",
+     "Regimes"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "7e751588-4b5b-4b9b-970a-7a57bbd0e0c4",
+    "slug": "wano",
+    "name": "Pays de Wano",
+    "type": "place",
+    "universe": "One Piece",
+    "summary": "Le pays fermé des samouraïs, sous le joug de l'empereur Kaido et du shogun Orochi.",
+    "attributes": {
+     "descFr": "Le Pays de Wano, isolé du Gouvernement mondial, est un archipel montagneux du Nouveau Monde, jadis prospère sous l’autorité du clan Kouzuki. Ses plateaux escarpés, ceints de cascades infranchissables, abritent une nature autrefois luxuriante, aujourd’hui ravagée par les usines d’armes des Pirates aux Cent Bêtes. Libéré après la chute de Kaido et d’Orochi, il retrouve son shogun légitime, Momonosuke, sous la protection symbolique des Pirates au Chapeau de paille.",
+     "region": "Grand Line · Nouveau Monde",
+     "category": "Lieu",
+     "descFrSource": "mistral/mistral-large-latest"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Wano%20Country déclare fr = « Pays des Wa » ; https://onepiece.fandom.com/fr/wiki/Wano y redirige ; égal (après normalisation) à la parenthèse de notre fiche Pays de Wano (wano, type place)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Flower Capital",
+   "liens": 21,
+   "champs": [
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Tokijiro",
+    "Genrin",
+    "Sennorikyuru",
+    "Otaka"
+   ],
+   "wiki": {
+    "titreRendu": "Flower Capital",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Capitale des Fleurs",
+    "categories": [
+     "Poneglyph Locations",
+     "Towns and Cities",
+     "Wano Country Regions"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Big Mom Pirates",
+   "liens": 19,
+   "champs": [
+    "affiliation",
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Île Jaune d'Œuf",
+    "Île Patate",
+    "Île Graine",
+    "Île Amour"
+   ],
+   "wiki": {
+    "titreRendu": "Big Mom Pirates",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "L'Équipage de Big Mom",
+    "categories": [
+     "Antagonist Groups",
+     "Featured Articles",
+     "Four Emperors Groups",
+     "New World Pirate Crews",
+     "Pirate Fleets",
+     "Underworld Groups"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "ad5260d5-204c-429c-9a75-394d95d19d31",
+    "slug": "l-equipage-de-big-mom",
+    "name": "L’équipage de Big Mom",
+    "type": "status",
+    "universe": "One Piece",
+    "summary": "Équipage de pirates.",
+    "attributes": {
+     "scope": "Équipage pirate",
+     "descFr": "Les Pirates de Big Mom sont une puissante équipe de pirates dirigée par Charlotte Linlin, alias Big Mom, anciennement l'un des Quatre Empereurs. Ils contrôlent la nation de Totto Land, avec leur base d'opérations sur l'île principale, Whole Cake Island. Leur organisation repose sur une hiérarchie complexe, avec Big Mom en tant que capitaine, les Trois Commandants Sucrés comme officiers supérieurs, et une multitude de soldats, incluant des membres de la famille Charlotte et divers autres combattants.",
+     "category": "Équipage",
+     "roman_name": "Biggu Mamu Kaizokudan",
+     "total_prime": "11.121.500.000 Berrys",
+     "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Big%20Mom%20Pirates déclare fr = « L'Équipage de Big Mom » ; égal (après normalisation) à le nom de notre fiche L’équipage de Big Mom (l-equipage-de-big-mom, type status)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Totto Land",
+   "liens": 14,
+   "champs": [
+    "region"
+   ],
+   "sourcesExemples": [
+    "Île Jaune d'Œuf",
+    "Île Patate",
+    "Île Graine",
+    "Île Amour"
+   ],
+   "wiki": {
+    "titreRendu": "Totto Land",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Archipel Totto Land",
+    "categories": [
+     "Archipelagos",
+     "Four Emperors Territories",
+     "New World Locations",
+     "Regimes"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Paradise",
+   "liens": 11,
+   "champs": [
+    "region"
+   ],
+   "sourcesExemples": [
+    "Île Obscuria",
+    "San Faldo",
+    "Île Kyuka",
+    "Renaisse"
+   ],
+   "wiki": {
+    "titreRendu": "Paradise",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Grand Line/Paradis",
+    "categories": [
+     "Oceans"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Water 7",
+   "liens": 11,
+   "champs": [
+    "residence",
+    "region"
+   ],
+   "sourcesExemples": [
+    "Yuya",
+    "Footbianco",
+    "Kop",
+    "Dago"
+   ],
+   "wiki": {
+    "titreRendu": "Water 7",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Water Seven",
+    "categories": [
+     "Citation Needed",
+     "Sea Train Route",
+     "Towns and Cities"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "35bc8d88-b2ba-4223-aea3-632d88832873",
+    "slug": "water-seven-lieu",
+    "name": "Water Seven",
+    "type": "place",
+    "universe": "One Piece",
+    "summary": "La cité de l'eau aux canaux et chantiers navals, berceau du Thousand Sunny et de la crise Cipher Pol.",
+    "attributes": {
+     "descFr": "Ville-archipel de Paradis, Water Seven se distingue par ses canaux sinueux et son architecture étagée en terrasses, évoquant une fontaine monumentale. Ses chantiers navals, réunis sous la bannière de la Galley-La, en font le cœur de la construction navale du monde, où naquit le Thousand Sunny. Les habitants y circulent à dos de taureaux marins, tandis que les docks et les bars bruissent de rumeurs et d’intrigues, comme lors de l’affrontement avec le Cipher Pol 9.",
+     "region": "Grand Line · Paradis",
+     "category": "Lieu",
+     "descFrSource": "mistral/mistral-large-latest"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Water%207 déclare fr = « Water Seven » ; égal (après normalisation) à le nom de notre fiche Water Seven (water-seven-lieu, type place)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "New World",
+   "liens": 11,
+   "champs": [
+    "region"
+   ],
+   "sourcesExemples": [
+    "Île de Road Star",
+    "Île Risky Red",
+    "Île Fromage",
+    "Île Foodvalten"
+   ],
+   "wiki": {
+    "titreRendu": "New World",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Nouveau Monde",
+    "categories": [
+     "Oceans"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "King (Title)",
+   "liens": 10,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Furrari",
+    "Beer VI",
+    "Mari",
+    "Moqueca"
+   ],
+   "wiki": {
+    "titreRendu": "Royal",
+    "redirigeVers": "Royal",
+    "softRedirect": null,
+    "fr": null,
+    "categories": [
+     "Society and Culture"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Levely",
+   "liens": 9,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Furrari",
+    "Mari",
+    "Moqueca",
+    "Nashi"
+   ],
+   "wiki": {
+    "titreRendu": "Levely",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Levely",
+    "categories": [
+     "Events",
+     "Flashback Introduction",
+     "World Government"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Archaeologist",
+   "liens": 8,
+   "champs": [
+    "affiliation",
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Gram",
+    "Gram",
+    "Hocha",
+    "Hocha"
+   ],
+   "wiki": {
+    "titreRendu": "Archaeologist",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Archéologue",
+    "categories": [
+     "History",
+     "Occupations"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Bounty Hunter",
+   "liens": 8,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Footbianco",
+    "Kop",
+    "Dago",
+    "Guarana"
+   ],
+   "wiki": {
+    "titreRendu": "Bounty Hunter",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Chasseurs de Primes",
+    "categories": [
+     "Occupations"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Shandia",
+   "liens": 6,
+   "champs": [
+    "affiliation",
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Herb",
+    "Mayushika",
+    "Mayushika",
+    "Seto"
+   ],
+   "wiki": {
+    "titreRendu": "Shandia",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Shandias",
+    "categories": [
+     "Citation Needed",
+     "Races and Tribes"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Underworld",
+   "liens": 5,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Giberson",
+    "Jigra",
+    "Du Feld",
+    "Drug Peclo"
+   ],
+   "wiki": {
+    "titreRendu": "Underworld",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Pègre",
+    "categories": [
+     "Society and Culture"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Kouzuki Family",
+   "liens": 5,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Jibuemon",
+    "Hidayu",
+    "Ukon",
+    "Dotaku"
+   ],
+   "wiki": {
+    "titreRendu": "Kouzuki Family",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Famille Kozuki",
+    "categories": [
+     "Wano Country Families"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Samurai",
+   "liens": 5,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Jibuemon",
+    "Hidayu",
+    "Ukon",
+    "Dotaku"
+   ],
+   "wiki": {
+    "titreRendu": "Samurai",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Samouraï",
+    "categories": [
+     "Occupations"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Marines",
+   "liens": 5,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Pythagoras",
+    "Kobe",
+    "Mekao",
+    "Moore"
+   ],
+   "wiki": {
+    "titreRendu": "Marines",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Marine",
+    "categories": [
+     "Antagonist Groups",
+     "Fleets",
+     "World Government Groups"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "17031794-7a9e-4bb4-a45b-6937bb3c6f36",
+    "slug": "marine",
+    "name": "Marine",
+    "type": "status",
+    "universe": "One Piece",
+    "summary": "Le bras armé du Gouvernement Mondial — l'éternel poursuivant des pirates, de la Justice Absolue aux héros du peuple.",
+    "attributes": {
+     "scope": "Force mondiale",
+     "descFr": "Les Marines, ou Kaigun, sont les forces militaires navales du Gouvernement Mondial, chargées de l'application de la loi maritime et de la guerre navale. Ils sont présents sur toutes les mers connues, avec une forte concentration sur la Grand Line, où se trouve leur quartier général. Ils sont l'un des Trois Grands Pouvoirs, aux côtés des Quatre Empereurs et des Sept Grands Corsaires, et sont souvent antagonistes dans la série, notamment dans les arcs Romance Dawn, Loguetown, Enies Lobby, et Marineford.",
+     "category": "Organisation",
+     "roman_name": "Kaigun",
+     "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Marines déclare fr = « Marine » ; égal (après normalisation) à le nom de notre fiche Marine (marine, type status)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Pirate Captain",
+   "liens": 5,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Quatres Empereurs",
+    "Linaria",
+    "Hippie",
+    "Gally"
+   ],
+   "wiki": {
+    "titreRendu": "Pirate Captain",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Capitaine Pirate",
+    "categories": [
+     "Lists",
+     "Positions"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "North Blue",
+   "liens": 5,
+   "champs": [
+    "residence",
+    "region"
+   ],
+   "sourcesExemples": [
+    "Jiron",
+    "Île Downs",
+    "Île de Rubeck",
+    "Rakesh"
+   ],
+   "wiki": {
+    "titreRendu": "North Blue",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "North Blue",
+    "categories": [
+     "Flashback Introduction Locations",
+     "Oceans"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Ninja-Pirate-Mink-Samurai Alliance",
+   "liens": 5,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Hareji",
+    "Hidayu",
+    "Ukon",
+    "Zangirimaru"
+   ],
+   "wiki": {
+    "titreRendu": "Ninja-Pirate-Mink-Samurai Alliance",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Alliance des Ninjas-Pirates-Minks-Samouraïs",
+    "categories": [
+     "Alliances",
+     "Citation Needed",
+     "Fleets",
+     "Former Groups"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Little East Blue",
+   "liens": 4,
+   "champs": [
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Luigia",
+    "Fabre",
+    "Mendou",
+    "Mitsuboshi"
+   ],
+   "wiki": {
+    "titreRendu": "Little East Blue",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Little East Blue",
+    "categories": [
+     "Non-Canon Paradise Islands",
+     "Pages With Empty Sections"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Franky Family",
+   "liens": 4,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Footbianco",
+    "Kop",
+    "Dago",
+    "Schollzo"
+   ],
+   "wiki": {
+    "titreRendu": "Franky Family",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Franky Family",
+    "categories": [
+     "Antagonist Groups",
+     "Underworld Groups"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Doctor",
+   "liens": 4,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Tegata Ringana",
+    "Hou",
+    "Tate",
+    "Kyukyu"
+   ],
+   "wiki": {
+    "titreRendu": "Doctor",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Docteur",
+    "categories": [
+     "Occupations"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Cook",
+   "liens": 3,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Sennorikyuru",
+    "Mitsuboshi",
+    "Shuutai"
+   ],
+   "wiki": {
+    "titreRendu": "Cook",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Cuisinier",
+    "categories": [
+     "Occupations"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Cidre Guild",
+   "liens": 3,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Guarana",
+    "Ginger",
+    "Cidre"
+   ],
+   "wiki": {
+    "titreRendu": "Cidre Guild",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Guilde de Cidre",
+    "categories": [
+     "Non-Canon Antagonist Groups"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Thriller Bark Pirates",
+   "liens": 3,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Zombie Lola",
+    "Jigorou",
+    "MocDonald"
+   ],
+   "wiki": {
+    "titreRendu": "Thriller Bark Pirates",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": null,
+    "categories": [
+     "Antagonist Groups",
+     "Seven Warlords of the Sea Groups",
+     "West Blue Pirate Crews"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Zombies",
+   "liens": 3,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Zombie Lola",
+    "Jigorou",
+    "MocDonald"
+   ],
+   "wiki": {
+    "titreRendu": "Zombies",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Zombies",
+    "categories": [
+     "Artificial Races",
+     "Devil Fruit By-Products"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Niho Navy",
+   "liens": 2,
+   "champs": [
+    "affiliation",
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Uholisia",
+    "Chichilisia"
+   ],
+   "wiki": {
+    "titreRendu": "Niho Navy",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Nihou Navy",
+    "categories": [
+     "Articles Without an Infobox Image",
+     "Fleets"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Nagagutsu Kingdom",
+   "liens": 2,
+   "champs": [
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Furrari",
+    "Tritobu"
+   ],
+   "wiki": {
+    "titreRendu": "Nagagutsu Kingdom",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": null,
+    "categories": [
+     "Articles Without an Infobox Image",
+     "East Blue Locations",
+     "Mentioned Only World Government Kingdoms"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Phoenix Pirates",
+   "liens": 2,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Jiro",
+    "Sutton"
+   ],
+   "wiki": {
+    "titreRendu": "Phoenix Pirates",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "L'Équipage du Phoénix",
+    "categories": [
+     "Non-Canon Pirate Crews"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "aaec0e30-2ec5-4f4a-9207-0c5fbab72f03",
+    "slug": "l-equipage-du-phoenix",
+    "name": "L’équipage du Phoenix",
+    "type": "status",
+    "universe": "One Piece",
+    "summary": "Équipage de pirates.",
+    "attributes": {
+     "scope": "Équipage pirate",
+     "descFr": "L'équipage du Phoenix (フェニックス海賊団) est un Équipages Pirates qui apparaît premièrement dans l'arc hors-série, l'Arc Chasseurs de Glace. Ils sont actuellement d'anciens pirates, qui ont été privés de leur drapeau par la famille Accino qui les a contraints à devenir leurs soldats. Leur capitaine se nomme Puzzle. Durant leur voyage dans le Nouveau Monde, ils ont été vaincus par un puissant adversaire et le vice-capitaine, Vigaro, mourut en protégeant son équipage.",
+     "category": "Équipage",
+     "roman_name": "Fenikkusu Kaizokudan",
+     "total_prime": "100.000.000 Berrys",
+     "descFrSource": "wiki FR onepiece.fandom.com/fr — « L'Équipage du Phoénix » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/L'%C3%89quipage_du_Pho%C3%A9nix"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Phoenix%20Pirates déclare fr = « L'Équipage du Phoénix » ; égal (après normalisation) à le nom de notre fiche L’équipage du Phoenix (l-equipage-du-phoenix, type status)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Aunt",
+   "liens": 2,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Yuya",
+    "Sho"
+   ],
+   "wiki": {
+    "titreRendu": "Aunt",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Aunt",
+    "categories": [
+     "Non-Canon Female Characters",
+     "Non-Canon Humans",
+     "Non-Canon Water 7 Residents"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "8af5c72f-9605-4b80-a833-11688e748e66",
+    "slug": "aunt",
+    "name": "Aunt",
+    "type": "character",
+    "universe": "One Piece",
+    "summary": "Aunt est un personnage secondaire désigné par son lien familial de tante plutôt que par un prénom propre.",
+    "attributes": {
+     "role": "Personnage secondaire",
+     "descFr": "Tatie, ou « Tantine », est une femme présente uniquement dans l'anime, qui vit à Water 7. Elle est au centre d'un épisode de remplissage impliquant Zoro. Comme Franky, elle prend soin des sans-abri, mais tandis que Franky a formé un groupe de chasseurs de primes, elle possède un orphelinat. Ses enfants adoptifs l'appellent « Maman ». C'est une femme corpulente aux cheveux orange, avec de petits yeux et un petit nez, mais un grand visage. Elle porte un haut jaune court à motifs de fleurs avec un pantalon noir pour l'accompagner. Première apparition : Épisode 318",
+     "descRaw": "Aunt or \"Auntie\", is an anime only woman who lives in Water 7. She is the focus of a filler episode involving Zoro. Like Franky, she takes care of homeless people, but while Franky formed a group of bounty hunters, she owns an orphanage. She is called \"Mama\" by her adopted children. She is a large, orange haired woman with small eyes and nose, but a large face. She wears sort yellow top with flower pattern with black pants to go with it. First Appearance: Episode 318 (Source: One Piece Wiki)",
+     "descLang": "en",
+     "voiceActors": {
+      "en": [
+       "Laurie Steele",
+       "Céline Duhamel"
+      ],
+      "jp": [
+       "Ai Satou"
+      ]
+     }
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Aunt déclare fr = « Aunt » ; égal (après normalisation) à le nom de notre fiche Aunt (aunt, type character)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "153rd Branch",
+   "liens": 2,
+   "champs": [
+    "affiliation",
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Kobe",
+    "Kobe"
+   ],
+   "wiki": {
+    "titreRendu": "153rd Branch",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "153e Branche",
+    "categories": [
+     "Antagonist Groups",
+     "East Blue Locations",
+     "Marine Groups",
+     "Marine Locations"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Captain (Marine Rank)",
+   "liens": 2,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Kobe",
+    "Moore"
+   ],
+   "wiki": {
+    "titreRendu": "Captain (Marine Rank)",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Capitaine (Marine)",
+    "categories": [
+     "Marine",
+     "Positions"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Marine Ranks",
+   "liens": 2,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Kobe",
+    "Kibin"
+   ],
+   "wiki": {
+    "titreRendu": "Marine Ranks",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Marine#Grades de la Marine",
+    "categories": [
+     "Lists",
+     "Marine",
+     "Occupations"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Sky Island",
+   "liens": 2,
+   "champs": [
+    "region"
+   ],
+   "sourcesExemples": [
+    "Île Céleste",
+    "Ballon Terminal"
+   ],
+   "wiki": {
+    "titreRendu": "Sky Island",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Îles Célestes",
+    "categories": [
+     "Articles Without an Infobox",
+     "Sky Islands",
+     "Terms"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Kyoshiro Family",
+   "liens": 2,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Kuni",
+    "Suke"
+   ],
+   "wiki": {
+    "titreRendu": "Kyoshiro Family",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Famille Kyoshiro",
+    "categories": [
+     "Underworld Groups"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Red Hair Pirates",
+   "liens": 2,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Linaria",
+    "Fugar"
+   ],
+   "wiki": {
+    "titreRendu": "Red Hair Pirates",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "L'Équipage du Roux",
+    "categories": [
+     "East Blue Pirate Crews",
+     "Four Emperors Groups",
+     "Pirate Fleets"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "1a24766a-33a7-4fc3-9ee8-0ac43c09b80d",
+    "slug": "l-equipage-du-roux",
+    "name": "L’équipage du Roux",
+    "type": "status",
+    "universe": "One Piece",
+    "summary": "Équipage de pirates.",
+    "attributes": {
+     "scope": "Équipage pirate",
+     "descFr": "L’équipage du Roux, dirigé par Shanks, l’un des Quatre Empereurs, est l’une des quatre flottes pirates les plus puissantes du Nouveau Monde. Leur chef, ancien membre de l’équipage de Gol D. Roger, inspire une loyauté absolue parmi ses hommes, dont le second, Benn Beckman, et des officiers aux rôles spécialisés. Protégeant plusieurs îles, dont Foosha, ils incarnent une force équilibrée et redoutée, capable d’intimider même les créatures marines.",
+     "category": "Équipage",
+     "roman_name": "Akagami Kaizokudan",
+     "total_prime": "4.142.900.000 Berrys",
+     "descFrSource": "mistral/mistral-large-latest"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Red%20Hair%20Pirates déclare fr = « L'Équipage du Roux » ; égal (après normalisation) à le nom de notre fiche L’équipage du Roux (l-equipage-du-roux, type status)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "G-8",
+   "liens": 2,
+   "champs": [
+    "affiliation",
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Mekao",
+    "Mekao"
+   ],
+   "wiki": {
+    "titreRendu": "G-8",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": null,
+    "categories": [
+     "Grand Line Marine Bases",
+     "Marine Groups",
+     "Non-Canon Antagonist Groups",
+     "Non-Canon Paradise Locations"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Shipwright",
+   "liens": 2,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Mekao",
+    "Gattenshochinosukeo"
+   ],
+   "wiki": {
+    "titreRendu": "Shipwright",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": null,
+    "categories": [
+     "Occupations"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Ruluka Government",
+   "liens": 2,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Reik",
+    "Phillip"
+   ],
+   "wiki": {
+    "titreRendu": "Ruluka Government",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Gouvernement de Ruluka",
+    "categories": [
+     "Non-Canon Antagonist Groups",
+     "Non-Canon Former Groups"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Thriller Bark Victim's Association",
+   "liens": 2,
+   "champs": [
+    "affiliation",
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Spoil",
+    "Spoil"
+   ],
+   "wiki": {
+    "titreRendu": "Thriller Bark Victim's Association",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Association des Victimes de Thriller Bark",
+    "categories": [
+     "Groups"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Officer",
+   "liens": 2,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Guarana",
+    "Ginger"
+   ],
+   "wiki": {
+    "titreRendu": "Officer",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": null,
+    "categories": [
+     "Positions"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "World Government",
+   "liens": 2,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Gatherine",
+    "Jorge"
+   ],
+   "wiki": {
+    "titreRendu": "World Government",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Gouvernement Mondial",
+    "categories": [
+     "Antagonist Groups",
+     "Featured Articles",
+     "World Government"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "f1ec6164-23e7-4a63-a18a-edd274b359ea",
+    "slug": "gouvernement-mondial",
+    "name": "Gouvernement Mondial",
+    "type": "status",
+    "universe": "One Piece",
+    "summary": "L'autorité politique qui gouverne la quasi-totalité du monde connu — dont la Marine n'est que le bras armé, et dont le vrai sommet du pouvoir reste un secret.",
+    "attributes": {
+     "scope": "Pouvoir politique mondial",
+     "descFr": "Le Gouvernement Mondial est l'organisation politique qui réunit la quasi-totalité des nations connues du monde de One Piece, fondée il y a environ 800 ans par vingt lignées royales rassemblées à Mary Geoise. Il est officiellement dirigé par le Conseil des Cinq Doyens, tandis qu'une entité mystérieuse nommée Imu détiendrait en secret un pouvoir quasi absolu au sommet de sa hiérarchie. Son bras armé, la Marine, fait appliquer sa loi sur l'ensemble des mers sous l'autorité d'un Amiral-en-Chef épaulé de quatre Amiraux, pendant que les branches clandestines du Cipher Pol veillent sur ses intérêts et que les Chevaliers Célestes protègent les Dragons Célestes, résidents privilégiés de Mary Geoise. Le Gouvernement interdit et réprime sévèrement toute recherche sur le Siècle Oublié, une période de l'histoire mondiale effacée huit à neuf cents ans plus tôt, en particulier l'étude des Ponéglyphes qui pourraient la révéler.",
+     "category": "Organisation",
+     "descFrSource": "claude-sonnet-5 (synthèse WebSearch/Wikipédia FR — Fandom inaccessible en fetch direct, 402 systématique), 08/08/2026"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=World%20Government déclare fr = « Gouvernement Mondial » ; égal (après normalisation) à le nom de notre fiche Gouvernement Mondial (gouvernement-mondial, type status)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Prince",
+   "liens": 2,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Vincent",
+    "Tritobu"
+   ],
+   "wiki": {
+    "titreRendu": "Royal",
+    "redirigeVers": "Royal",
+    "softRedirect": null,
+    "fr": null,
+    "categories": [
+     "Society and Culture"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Elbaph",
+   "liens": 2,
+   "champs": [
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Ange",
+    "Mato"
+   ],
+   "wiki": {
+    "titreRendu": "Elbaph",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Erbaf",
+    "categories": [
+     "Flashback Introduction Locations",
+     "New World Islands"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "ca8cb2a4-3765-438c-a747-67633b33b12d",
+    "slug": "elbaf",
+    "name": "Elbaf",
+    "type": "place",
+    "universe": "One Piece",
+    "summary": "La terre légendaire des géants guerriers, où le combat et la fierté décident de tout.",
+    "attributes": {
+     "descFr": "Elbaph est une nation du Nouveau Monde habitée par des géants, non affiliée au Gouvernement Mondial. Farouchement indépendante, cette nation est réputée pour sa culture guerrière et est considérée comme le pays le plus puissant du monde en raison de ses guerriers redoutables.",
+     "region": "Grand Line · Nouveau Monde",
+     "category": "Lieu",
+     "descFrSource": "claude-haiku-4-5 (rédacteur sans-source) · mentions : Elbaph, Elbaph Arc, Episode 1155"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Elbaph déclare fr = « Erbaf » ; https://onepiece.fandom.com/fr/wiki/Elbaf y redirige ; égal (après normalisation) à le nom de notre fiche Elbaf (elbaf, type place)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Whitebeard Pirates",
+   "liens": 2,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Tate",
+    "Île Sphinx"
+   ],
+   "wiki": {
+    "titreRendu": "Whitebeard Pirates",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "L'Équipage de Barbe Blanche",
+    "categories": [
+     "Featured Articles",
+     "Former Pirate Crews",
+     "Four Emperors Groups",
+     "Pirate Fleets"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "fb1dd034-0285-44b3-b692-23bebed69542",
+    "slug": "l-equipage-de-barbe-blanche",
+    "name": "L’équipage de Barbe Blanche",
+    "type": "status",
+    "universe": "One Piece",
+    "summary": "Équipage de pirates.",
+    "attributes": {
+     "scope": "Équipage pirate",
+     "descFr": "L’équipage de Barbe Blanche, dirigé par Edward Newgate, est l'un des plus puissants de l'univers de One Piece, ayant été considéré comme le plus fort des Quatre Empereurs. Composé de divisions distinctes, chaque dirigée par un commandant puissant, l'équipage contrôlait plusieurs territoires dans le Nouveau Monde, dont l'Île des Hommes-Poissons. Après la mort de Barbe Blanche et de Portgas D. Ace lors de la Guerre de Marineford, l'équipage a perdu beaucoup de son influence, et ses membres restants ont été traqués par Edward Weevil et Miss Buckin, se proclamant héritiers de Barbe Blanche.",
+     "category": "Équipage",
+     "roman_name": "Shirohige Kaizokudan",
+     "total_prime": "7.480.000.000 Berrys",
+     "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Whitebeard%20Pirates déclare fr = « L'Équipage de Barbe Blanche » ; égal (après normalisation) à le nom de notre fiche L’équipage de Barbe Blanche (l-equipage-de-barbe-blanche, type status)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Arabasta",
+   "liens": 2,
+   "champs": [
+    "region"
+   ],
+   "sourcesExemples": [
+    "Rainbase",
+    "Elumalu"
+   ],
+   "wiki": {
+    "titreRendu": "Arabasta Kingdom",
+    "redirigeVers": "Arabasta Kingdom",
+    "softRedirect": null,
+    "fr": "Alabasta",
+    "categories": [
+     "Twenty Kingdoms"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "51e77641-3219-4917-8e1b-d2072044f4c4",
+    "slug": "alabasta-lieu",
+    "name": "Alabasta",
+    "type": "place",
+    "universe": "One Piece",
+    "summary": "Le royaume désertique de la princesse Vivi, déchiré par la guerre civile orchestrée par Crocodile.",
+    "attributes": {
+     "descFr": "Royaume désertique de Paradise, Alabasta est un vaste territoire traversé par le fleuve Sandora et parsemé de cités aux architectures inspirées de l'Égypte antique, de l'Inde et du Moyen-Orient. Gouverné par la famille Nefertari, il abrite le ponéglyphe révélant l'emplacement de Pluton et fut le théâtre d'une guerre civile orchestrée par Crocodile. Sa capitale, Alubarna, domine le pays depuis un promontoire rocheux, tandis que des villes comme Nanohana ou Yuba incarnent sa diversité culturelle et historique.",
+     "region": "Grand Line · Paradis",
+     "category": "Lieu",
+     "descFrSource": "mistral/mistral-large-latest"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Arabasta déclare fr = « Alabasta » ; égal (après normalisation) à le nom de notre fiche Alabasta (alabasta-lieu, type place)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Calm Belt",
+   "liens": 2,
+   "champs": [
+    "residence",
+    "region"
+   ],
+   "sourcesExemples": [
+    "Topknot",
+    "Ruskaina"
+   ],
+   "wiki": {
+    "titreRendu": "Calm Belt",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Calm Belt",
+    "categories": [
+     "Oceans"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Dracule Mihawk",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Navire-Cercueil"
+   ],
+   "wiki": {
+    "titreRendu": "Dracule Mihawk",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Mihawk",
+    "categories": [
+     "Armament Haki Users",
+     "Characters Aged 40–49",
+     "Cross Guild",
+     "Dagger Users",
+     "East Blue Saga Antagonists",
+     "Featured Articles",
+     "Four Emperors Officers",
+     "Humans",
+     "Karai Bari Residents",
+     "Male Characters",
+     "Observation Haki Users",
+     "Seven Warlords of the Sea",
+     "Summit War Saga Antagonists",
+     "Swordsmen"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": "Dracule Mihawk (dracule-mihawk)"
+  },
+  {
+   "titre": "Rain Dinners",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Ultraking"
+   ],
+   "wiki": {
+    "titreRendu": "Rain Dinners",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Rain Dinners",
+    "categories": [
+     "Arabasta Locations",
+     "Articles Without References",
+     "Bars and Restaurants"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "SSG",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Pythagoras"
+   ],
+   "wiki": {
+    "titreRendu": "SSG",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "SSG",
+    "categories": [
+     "Marine Groups"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Three Great Powers",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Quatres Empereurs"
+   ],
+   "wiki": {
+    "titreRendu": "Three Great Powers",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Trois Grands Pouvoirs",
+    "categories": [
+     "Terms"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Organ Dealing Assassination Group",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Jigra"
+   ],
+   "wiki": {
+    "titreRendu": "Organ Dealing Assassination Group",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Organ Dealing Assassination Group",
+    "categories": [
+     "Non-Canon Antagonist Groups",
+     "Underworld Groups"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Revolutionary Army",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Jiron"
+   ],
+   "wiki": {
+    "titreRendu": "Revolutionary Army",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Armée Révolutionnaire",
+    "categories": [
+     "Military Forces"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "aed14fa9-6506-46ef-92cf-942f8c32116d",
+    "slug": "armee-revolutionnaire",
+    "name": "Armée Révolutionnaire",
+    "type": "status",
+    "universe": "One Piece",
+    "summary": "Équipage de pirates.",
+    "attributes": {
+     "scope": "Équipage pirate",
+     "descFr": "L'Armée Révolutionnaire est une organisation militaire dirigée par Monkey D. Dragon, dont l'objectif principal est de renverser le Gouvernement Mondial et de libérer les îles opprimées par ses lois. Elle recrute des esclaves libérés, des personnes opprimées et des rebelles de royaumes libérés, et se finance en pillant les Marines ou en recevant le soutien de royaumes sous leur influence. L'Armée Révolutionnaire a également pour but de stockpiler des armes pour renforcer sa puissance militaire, et a notamment saisi les armes fabriquées sur Dressrosa après l'arrestation de Donquixote Doflamingo.",
+     "category": "Équipage",
+     "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Revolutionary%20Army déclare fr = « Armée Révolutionnaire » ; égal (après normalisation) à le nom de notre fiche Armée Révolutionnaire (armee-revolutionnaire, type status)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "SWORD",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Kobe"
+   ],
+   "wiki": {
+    "titreRendu": "SWORD",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "SWORD",
+    "categories": [
+     "Marine Groups"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Alvida Pirates",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Kobe"
+   ],
+   "wiki": {
+    "titreRendu": "Alvida Pirates",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "L'Équipage d'Alvida",
+    "categories": [
+     "Antagonist Groups",
+     "East Blue Pirate Crews",
+     "Former Pirate Crews"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "4e19b9ea-4f77-4985-b849-885735b9dbe7",
+    "slug": "l-equipage-d-alvida",
+    "name": "L’équipage d’Alvida",
+    "type": "status",
+    "universe": "One Piece",
+    "summary": "Équipage de pirates.",
+    "attributes": {
+     "scope": "Équipage pirate",
+     "category": "Équipage",
+     "roman_name": "Arubida Kaizokudan",
+     "total_prime": "5.000.000 Berrys"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Alvida%20Pirates déclare fr = « L'Équipage d'Alvida » ; égal (après normalisation) à le nom de notre fiche L’équipage d’Alvida (l-equipage-d-alvida, type status)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Okobore Town",
+   "liens": 1,
+   "champs": [
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Kinbo"
+   ],
+   "wiki": {
+    "titreRendu": "Kuri",
+    "redirigeVers": "Kuri",
+    "softRedirect": null,
+    "fr": "Kuri",
+    "categories": [
+     "Wano Country Regions"
+    ]
+   },
+   "temoin": "T1 redirection dure",
+   "fiche": {
+    "id": "67afbf04-9724-4953-b273-9bd18888c13b",
+    "slug": "kuri",
+    "name": "Kuri",
+    "type": "place",
+    "universe": "One Piece",
+    "summary": "Région de Wano jadis livrée aux brigands, que Kozuki Oden ramena à l'ordre. Sous Orochi, ses usines la souillèrent, ne laissant que le misérable hameau d'Okobore.",
+    "attributes": {
+     "descFr": "Région de Wano autrefois gouvernée par Kozuki Oden, puis tombée sous le contrôle des Beasts Pirates. Sous le règne d'Orochi, elle devint un territoire pollué par les usines d'armes, réduisant ses habitants à la misère.",
+     "region": "New World",
+     "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/wiki/Okobore_Town redirige vers « Kuri » ; notre fiche de ce nom : Kuri (kuri, type place)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Roshwan Kingdom",
+   "liens": 1,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Beer VI"
+   ],
+   "wiki": {
+    "titreRendu": "Roshwan Kingdom",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Royaume de Roshwan",
+    "categories": [
+     "Articles Without an Infobox Image",
+     "Mentioned Only World Government Kingdoms",
+     "South Blue Locations"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Fish-Man Island",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Noah"
+   ],
+   "wiki": {
+    "titreRendu": "Fish-Man Island",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Île des Hommes-Poissons",
+    "categories": [
+     "Featured Articles",
+     "Four Emperors Territories",
+     "Grand Line Islands",
+     "Sea Floor Locations"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "725f24b3-f450-4c3b-88f6-6203fb09ff65",
+    "slug": "fishman-island",
+    "name": "Île des Hommes-Poissons",
+    "type": "place",
+    "universe": "One Piece",
+    "summary": "Le royaume sous-marin de 10 000 mètres de fond, sous la Red Line, patrie de Jinbe.",
+    "attributes": {
+     "descFr": "L'Île des Hommes-Poissons, également connue sous le nom de Gyojin-tō, est un royaume sous-marin situé 10 000 mètres sous la surface de la mer, directement sous la Red Line. Elle est la patrie de nombreux Hommes-Poissons et Sirènes, et est gouvernée par le Royaume de Ryugu, dirigé par le roi Neptune. L'île est célèbre pour son paradis sous-marin et ses distinctions sociales entre les différentes espèces et classes, ainsi que pour son rôle crucial comme porte d'entrée vers le Nouveau Monde pour ceux qui ne souhaitent pas traverser la Red Line. Elle abrite également des lieux emblématiques tels que le Palais de Ryugu et le Dojo de Karaté des Hommes-Poissons, et a été protégée par des pirates célèbres comme Edward Newgate et Fisher Tiger.",
+     "region": "Grand Line · Paradis",
+     "category": "Lieu",
+     "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Fish-Man%20Island déclare fr = « Île des Hommes-Poissons » ; égal (après normalisation) à le nom de notre fiche Île des Hommes-Poissons (fishman-island, type place)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Hyougoro Family",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Otaka"
+   ],
+   "wiki": {
+    "titreRendu": "Hyougoro Family",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Famille Hyogoro",
+    "categories": [
+     "Former Groups",
+     "Underworld Groups"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Night Butterfly Pirates",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Linaria"
+   ],
+   "wiki": {
+    "titreRendu": "Night Butterfly Pirates",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Équipage des papillons",
+    "categories": [
+     "Articles Without an Infobox Image"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Yosaku",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Bounty Maru"
+   ],
+   "wiki": {
+    "titreRendu": "Yosaku",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Yosaku",
+    "categories": [
+     "Characters Aged 20–29",
+     "Cocoyasi Village Residents",
+     "Fishermen",
+     "Former Bounty Hunters",
+     "Humans",
+     "Male Characters",
+     "Swordsmen"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "9109f662-9ee1-46e9-b7bb-500201d8e95c",
+    "slug": "yosaku",
+    "name": "Yosaku",
+    "type": "character",
+    "universe": "One Piece",
+    "summary": "Le partenaire de Johnny et son compagnon chasseur de primes pirate. Bien qu'il manie une épée, il a rarement l'occasion de montrer son habileté avec, en raison du niveau des pirates qu'il rencontre après avoir croisé Luffy. Lui et Johnny rencontrent Luffy et sa bande juste après l'arc des « Pirates du Chat Noir », lorsque la minuscule île sur laquelle ils se trouvent est bombardée par le Vogue Merry, tandis que l'équipage teste ses nouveaux canons. Après avoir été tous deux montés à bord, le scorbut de Yosaku est soigné, et ils restent un moment sur le Vogue Merry (leur propre bateau ayant été détruit par les tirs de canon). Ils accompagnent les Chapeaux de Paille tout au long des arcs « Don Krieg » et « Arlong Park », après quoi ils décident de rester à Cocoyashi Village pour aider les villageois. Yosaku et Johnny semblent tous deux connaître Zoro depuis plusieurs années avant qu'il ne rejoigne les Chapeaux de Paille. Dans l'anime, la façon dont ils ont rencontré Zoro est montrée dans un rêve que fait Zoro.",
+    "attributes": {
+     "age": "26 ans",
+     "role": "Personnage secondaire",
+     "descFr": "Le partenaire de Johnny et son compagnon chasseur de primes pirate. Bien qu'il manie une épée, il a rarement l'occasion de montrer son habileté avec, en raison du niveau des pirates qu'il rencontre après avoir croisé Luffy. Lui et Johnny rencontrent Luffy et sa bande juste après l'arc des « Pirates du Chat Noir », lorsque la minuscule île sur laquelle ils se trouvent est bombardée par le Vogue Merry, tandis que l'équipage teste ses nouveaux canons. Après avoir été tous deux montés à bord, le scorbut de Yosaku est soigné, et ils restent un moment sur le Vogue Merry (leur propre bateau ayant été détruit par les tirs de canon). Ils accompagnent les Chapeaux de Paille tout au long des arcs « Don Krieg » et « Arlong Park », après quoi ils décident de rester à Cocoyashi Village pour aider les villageois. Yosaku et Johnny semblent tous deux connaître Zoro depuis plusieurs années avant qu'il ne rejoigne les Chapeaux de Paille. Dans l'anime, la façon dont ils ont rencontré Zoro est montrée dans un rêve que fait Zoro.",
+     "descRaw": "Johnny's partner &amp; fellow pirate bounty hunter. Though he wields a sword, he rarely gets to show his skill with it due to the level of the pirates he encounters after meeting Luffy. He and Johnny first meet Luffy &amp; co. just after the \"Black cat pirates\" arc, when the tiny island he and Johnny are on is blasted by the Going merry while the crew is testing their new cannons. After they're both brought on board, Yosaku's bout of scurvy is cured, and they stay on the Going Merry for a while (since their boat was destroyed in the cannon blast). They tag along with the Straw Hats throughout the \"Don Krieg\" &amp; \"Arlong Park\" arcs, after which they decide to remain behind at Cocoyashi village to help out the villagers. Both Yosaku and Johnny seem to know Zoro from several years before he joined the Straw Hats. In the anime, how they met Zoro is shown in a dream Zoro has.",
+     "faction": "Civil",
+     "descLang": "en",
+     "favorites": 5,
+     "occupation": "Pêcheur",
+     "voiceActors": {
+      "en": [
+       "Wayne Grayson",
+       "Josh Martin"
+      ],
+      "jp": [
+       "Yasuhiko Tokuyama"
+      ]
+     }
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Yosaku déclare fr = « Yosaku » ; égal (après normalisation) à le nom de notre fiche Yosaku (yosaku, type character)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Johnny",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Bounty Maru"
+   ],
+   "wiki": {
+    "titreRendu": "Johnny",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Johnny",
+    "categories": [
+     "Characters Aged 20–29",
+     "Cocoyasi Village Residents",
+     "Fishermen",
+     "Former Bounty Hunters",
+     "Humans",
+     "Male Characters",
+     "Swordsmen"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "eb055ac0-1e84-4108-a2de-5d08b42f6f0d",
+    "slug": "johnny",
+    "name": "Johnny",
+    "type": "character",
+    "universe": "One Piece",
+    "summary": "Chasseur de primes et ami de Roronoa Zoro, formant un duo avec Yosaku, croisant régulièrement la route des Chapeaux de Paille.",
+    "attributes": {
+     "role": "Personnage secondaire",
+     "descFr": "Johnny est insouciant et bon vivant, tout comme Yosaku. Johnny tend à être le plus sérieux du duo, même s'il lui arrive de faire le pitre avec Yosaku de temps à autre. Johnny est aussi quelque peu simplet. Il a également un énorme côté froussard, comme on le voit lorsqu'il abandonna volontiers Zoro pour filer se mettre à l'abri avec Usopp.",
+     "descRaw": "Johnny is happy-go-lucky, much like Yosaku. Jonny tends to be the more serious of the pair, though he acts being silly around Yosaku from time to time. Johnny is also dimwitted to some extent. He also has a huge cowardly side to him, as seen when he willingly abandoned Zoro to run off to safety with Usopp.",
+     "descLang": "en",
+     "favorites": 10,
+     "voiceActors": {
+      "en": [
+       "Christopher Ayres",
+       "Dan Green"
+      ],
+      "jp": [
+       "Masaya Takatsuka"
+      ]
+     }
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Johnny déclare fr = « Johnny » ; égal (après normalisation) à le nom de notre fiche Johnny (johnny, type character)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Foods/Beverages",
+   "liens": 1,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Caramel"
+   ],
+   "wiki": {
+    "titreRendu": "Foods/Beverages",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": null,
+    "categories": [
+     "Articles Without an Infobox",
+     "Lists",
+     "Society and Culture",
+     "Subpages"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Brownbeard",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Île Foodvalten"
+   ],
+   "wiki": {
+    "titreRendu": "Chadros Higelyges",
+    "redirigeVers": "Chadros Higelyges",
+    "softRedirect": null,
+    "fr": "Chadros Higelyges",
+    "categories": [
+     "Centaurs",
+     "Characters Aged 40–49",
+     "Dressrosa Saga Antagonists",
+     "Former Pirate Captains",
+     "Former Pirates",
+     "Former Rulers",
+     "Humans",
+     "Male Characters",
+     "Marine Prisoners",
+     "Swordsmen"
+    ]
+   },
+   "temoin": "T1 redirection dure",
+   "fiche": {
+    "id": "69512fae-fc86-4230-adb8-e44bc9799ea9",
+    "slug": "chadros-higelyges",
+    "name": "Chadros Higelyges",
+    "type": "character",
+    "universe": "One Piece",
+    "summary": "Chadros Higelyges est un personnage secondaire probablement lié aux hautes sphères du Gouvernement Mondial, à l'histoire peu détaillée.",
+    "attributes": {
+     "role": "Personnage secondaire",
+     "descFr": "Barbe Brune est un homme très grand et corpulent, qui semble mesurer environ trois fois la taille et quatre fois la largeur d'un humain normal. Il possède une longue barbe brune, avec trois tresses distinctement entretenues, ainsi qu'une moustache. Il porte un grand manteau par-dessus une chemise ouverte qui ne semble lui arriver qu'aux épaules. Il laisse sa poitrine nue, avec ce qui ressemble à une grande ceinture de catch ornée de son pavillon. Ses cheveux semblent sortir du sommet de son tricorne et sont tressés en arrière. Après la mort de Barbe Blanche, il partit et prit le contrôle de Foodvalten, l'une des îles du Nouveau Monde autrefois sous sa protection. Cependant, peu de temps après avoir revendiqué l'île, Barbe Brune finit par tomber sur les Pirates de Hawkins. Basil Hawkins irrita nonchalamment Barbe Brune en lui demandant son nom. Barbe Brune se mit alors à se vanter fièrement de sa prime de « plus de 80 millions » et de sa gloire. Hawkins lui répondit que son nom sonnait ridicule puis, dégainant son épée et se préparant à combattre, déclara qu'il « voyait l'ombre de la mort planer sur lui ». Il perdit ses jambes après avoir été vaincu, lui et son équipage, par Basil Hawkins. Après cette défaite, lui et son équipage arrivèrent à Punk Hazard et se virent doter de jambes artificielles par Caesar Clown. Ses jambes furent ensuite remplacées par des jambes d'alligator grâce au pouvoir du Fruit du Démon de Trafalgar Law, faisant de lui un centaure-alligator et lui permettant de remarcher.",
+     "descRaw": "Brownbeard is a very large, overweight man who appears to be roughly three times the height and four times the width of a normal human. He possesses a long brown beard, with three distinctly kept braids, as well as a mustache. He wears a large coat, over an open shirt, that seems to only reach to his shoulders. He leaves his chest bare, with something that appears to be a large wrestling belt with his jolly roger on it. His hair appears to come out of the top of his tricorne, and is braided back. After Whitebeard's death he went off and took control of Foodvalten, one of the New World islands formerly under his protection. However, not too long after making his claim, Brownbeard ended up encountering the Hawkins Pirates. Basil Hawkins casually angered Brownbeard by asking what his name was. Brownbeard then started ranting proudly about his \"over 80 million\" bounty and glory. Hawkins proceeded to say that Brownbeard's name sounds ridiculous and then, as Hawkins drew his sword and prepared to fight, he states that \"he sees the shadow of death upon him\". He lost his legs after he and his crew were defeated by Basil Hawkins. After the defeat, he and his crew came to Punk Hazard and they were given aritifical legs by Caesar Clown. His legs would then be replaced by aligator legs with Trafalgar Law's Devil Fruit ability, making him an aligator centaur and allowing him to walk again. (Source: One Piece Wikia)",
+     "descLang": "en",
+     "favorites": 6,
+     "voiceActors": {
+      "en": [
+       "Patrick Pellegrin",
+       "Randy E. Aguebor"
+      ],
+      "jp": [
+       "Yasuhiko Tokuyama",
+       "Kazunari Tanaka",
+       "Masashi Sugawara"
+      ]
+     }
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/wiki/Brownbeard redirige vers « Chadros Higelyges » ; notre fiche de ce nom : Chadros Higelyges (chadros-higelyges, type character)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Edward Newgate",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Île Foodvalten"
+   ],
+   "wiki": {
+    "titreRendu": "Edward Newgate",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Edward Newgate",
+    "categories": []
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "e299e002-35fc-4a3c-9795-3bb7a302386c",
+    "slug": "barbe-blanche",
+    "name": "Edward Newgate · Barbe Blanche",
+    "type": "character",
+    "universe": "One Piece",
+    "summary": "L'Empereur qui considérait son équipage comme ses fils — mort debout à Marineford, sans une fuite au dos.",
+    "attributes": {
+     "crew": "L’équipage de Barbe Blanche",
+     "role": "L'Homme le plus fort du monde",
+     "forms": [
+      {
+       "age": "26–30 ans",
+       "arc": "Flashbacks God Valley / Elbaph",
+       "label": "Jeune Newgate — Pirates de Rocks",
+       "caption": "Longs cheveux blonds flottants, gilet gris ouvert et bandana noir, sans sa moustache légendaire (chap. 576) ; à 26 ans chez les Pirates de Rocks, la moustache en croissant désormais formée, manteau noir et baudrier portant son naginata (chap. 1154)."
+      },
+      {
+       "age": "36 ans",
+       "arc": "Flashback God Valley",
+       "label": "Capitaine des Pirates de Barbe Blanche",
+       "height": "6,66 m",
+       "caption": "À 36 ans (chap. 1096) : bandana rayé noir et rouge sous un chapeau de pirate blanc frappé de son Jolly Roger, chemise noire sous son manteau blanc de capitaine et ceinture jaune."
+      },
+      {
+       "age": "52 ans",
+       "arc": "Chapitre 0 — Strong World",
+       "label": "L'Homme le plus fort du monde",
+       "height": "6,66 m",
+       "caption": "À 52 ans (chap. 0, p. 22) : chapeau blanc et jaune à son emblème porté sur un bandana noir, il reçoit Shiki après son évasion d'Impel Down — depuis la mort de Roger, il est « l'Homme le plus fort du monde », le plus proche du One Piece."
+      },
+      {
+       "age": "72 ans",
+       "arc": "Guerre au Sommet de Marineford",
+       "label": "Marineford — le dernier combat",
+       "height": "6,66 m",
+       "caption": "Vieilli, le visage creusé, branché à des machines médicales hors des combats ; il tombe debout face à Akainu et Barbe Noire, le corps criblé — mais en 72 ans de vie, pas une seule blessure dans le dos, car il n'a jamais fui (chap. 576, p. 15–17)."
+      }
+     ],
+     "nindo": "Le One Piece… existe bel et bien !",
+     "bounty": "5.046.000.000 Berrys",
+     "descFr": "Taille : 666 cm Affiliation : Pirates de Barbe Blanche (ancien/décédé) ; Sphinx (ancien) ; Pirates de Rocks (ancien) Poste : Capitaine (Pirates de Barbe Blanche) ; Empereur (l'un des 4 Empereurs du Nouveau Monde) Fruit du Démon : Gura Gura no Mi (Fruit des Séismes) Type de Fruit du Démon : Paramecia Prime : 5 046 000 000 Edward Newgate, également connu sous le nom de Barbe Blanche, est le capitaine des Pirates de Barbe Blanche. Il fait partie des Empereurs, les 4 empereurs du Nouveau Monde, aux côtés de Big Mom, Barbe Noire, Kaido et Shanks le Roux. Les Empereurs font partie des San Dai Seiryoku, les Trois Grandes Puissances. Les deux autres grandes puissances sont le Quartier Général de la Marine et les Grands Corsaires, les sept guerriers des mers. On dit que Barbe Blanche est l'homme le plus fort du monde et le pirate le plus proche d'obtenir le trésor légendaire, le One Piece. On raconte que Barbe Blanche livrait autrefois de nombreuses batailles au défunt Seigneur des Pirates, Gold Roger, et qu'il était considéré comme son égal par le passé. Barbe Blanche semble avoir quelques problèmes de santé, découlant peut-être de son âge avancé ou de ses affrontements féroces avec d'autres grands pirates au temps de sa jeunesse. Il est toujours entouré d'infirmières et branché à des tubes intraveineux. Mais malgré...",
+     "descRaw": "Height: 666 cm (21'10\") Affiliation: Whitebeard Pirates (former/deceased); Sphinx (former); Rocks Pirates (former) Position: Captain (Whitebeard Pirates); Yonko (one of the 4 emperors of the New World) Devil Fruit: Gura Gura no Mi (Tremor-Tremor Fruit) Devil Fruit Type: Paramecia Bounty: 5,046,000,000 Edward Newgate, also known as Whitebeard, is the captain of the Whitebeard Pirates. He is part of the Yonko, the 4 emperors of the New World, alongside Big Mom, Blackbeard, Kaido and Red-haired Shanks. The Yonko are part of the San Dai Seiryoku, the Three Great Powers. The other two great powers are the Marine Headquarters and the Shichibukai, the seven warlords of the sea. Whitebeard is said to be the strongest man in the world and the pirate closest to obtaining the legendary treasure, One Piece. It is said that Whitebeard used to have numerous battles with the late Pirate King, Gol D. Roger, and was marked as his equal in the past. Whitebeard appears to have some health problems, possibly stemming from his advanced age or from his ferocious encounters with other great pirates during his earlier days. He is always surrounded by nurses and is hooked up to intravenous tubes. But despi",
+     "faction": "Pirate",
+     "descLang": "en",
+     "favorites": 4041,
+     "fruit_type": "Paramecia",
+     "nindoLabel": "Dernier mot · son héritage",
+     "voiceActors": {
+      "en": [
+       "R. Bruce Elliott",
+       "Marc Alfos"
+      ],
+      "jp": [
+       "Kinryuu Arimoto",
+       "Ryuuzaburou Ootomo"
+      ]
+     }
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Edward%20Newgate déclare fr = « Edward Newgate » ; https://onepiece.fandom.com/fr/wiki/Barbe_Blanche y redirige ; égal (après normalisation) à la parenthèse de notre fiche Edward Newgate · Barbe Blanche (barbe-blanche, type character)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "MADS",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Du Feld"
+   ],
+   "wiki": {
+    "titreRendu": "MADS",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "MADS",
+    "categories": []
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Charlotte Family",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Monder Charlotte"
+   ],
+   "wiki": {
+    "titreRendu": "Charlotte Family",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Famille Charlotte",
+    "categories": [
+     "Antagonist Groups",
+     "Charlotte Family",
+     "Families"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Okama",
+   "liens": 1,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Tibany"
+   ],
+   "wiki": {
+    "titreRendu": "Okama",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Okama",
+    "categories": [
+     "Terms"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Navarone Island",
+   "liens": 1,
+   "champs": [
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Mekao"
+   ],
+   "wiki": {
+    "titreRendu": "Navarone Island",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Navarone",
+    "categories": [
+     "Non-Canon Paradise Islands"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Queen (Title)",
+   "liens": 1,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Morollon"
+   ],
+   "wiki": {
+    "titreRendu": "Royal",
+    "redirigeVers": "Royal",
+    "softRedirect": null,
+    "fr": null,
+    "categories": [
+     "Society and Culture"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Tajine Kingdom",
+   "liens": 1,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Morollon"
+   ],
+   "wiki": {
+    "titreRendu": "Tajine Kingdom",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Royaume de Tajine",
+    "categories": []
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Endurance Curry Pirates",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Hippie"
+   ],
+   "wiki": {
+    "titreRendu": "Endurance Curry Pirates",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": null,
+    "categories": []
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Neo Marines",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "White Tiger"
+   ],
+   "wiki": {
+    "titreRendu": "Neo Marines",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Néo-Marine",
+    "categories": [
+     "Citation Needed",
+     "Fleets",
+     "Non-Canon Antagonist Groups",
+     "Non-Canon Former Groups",
+     "Non-Canon Military Forces"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "7a71b758-96bd-4c28-8a88-7d02960d486e",
+    "slug": "neo-marine",
+    "name": "Néo Marine",
+    "type": "status",
+    "universe": "One Piece",
+    "summary": "Équipage de pirates.",
+    "attributes": {
+     "scope": "Équipage pirate",
+     "descFr": "Les Neo Marines sont une faction dissidente de l'armée des Marines, fondée par l'amiral Z. Composée de Marines mécontents de la manière dont leurs anciens collègues gèrent les pirates, cette organisation radicale vise à exterminer tous les pirates du Nouveau Monde. Leur ambition ultime, le Grand Reboot, consiste à utiliser les Dyna Stones pour détruire les trois Endpoints et libérer suffisamment de magma souterrain pour anéantir le Nouveau Monde, malgré leur statut de criminels.",
+     "category": "Équipage",
+     "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Neo%20Marines déclare fr = « Néo-Marine » ; égal (après normalisation) à le nom de notre fiche Néo Marine (neo-marine, type status)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Randolph Theater",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Ed"
+   ],
+   "wiki": {
+    "titreRendu": "Randolph Theater",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": null,
+    "categories": [
+     "Non-Canon Ships"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Dynamo Team",
+   "liens": 1,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Reik"
+   ],
+   "wiki": {
+    "titreRendu": "Dynamo Team",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Dynamo Team",
+    "categories": [
+     "Candidates for merger",
+     "Non-Canon Antagonist Groups",
+     "Non-Canon Former Groups",
+     "Ruluka Island Residents"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "WCI 31",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Bouche"
+   ],
+   "wiki": {
+    "titreRendu": "WCI 31",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "WCI 31",
+    "categories": []
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Shishano Kingdom",
+   "liens": 1,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Taco"
+   ],
+   "wiki": {
+    "titreRendu": "Shishano Kingdom",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Royaume de Shishano",
+    "categories": []
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Gally Pirates",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Gally"
+   ],
+   "wiki": {
+    "titreRendu": "Gally Pirates",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": null,
+    "categories": [
+     "East Blue Pirate Crews",
+     "Non-Canon Antagonist Groups",
+     "OVA Antagonists",
+     "One-Shot Antagonists",
+     "Romance Dawn Story Characters"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Admiral (Fleet Captain)",
+   "liens": 1,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Chichilisia"
+   ],
+   "wiki": {
+    "titreRendu": "Admiral (Fleet Captain)",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": null,
+    "categories": [
+     "Positions"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Umit Shipping",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Umit"
+   ],
+   "wiki": {
+    "titreRendu": "Umit Shipping",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Umit Shipping",
+    "categories": []
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Social Club",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Fugar"
+   ],
+   "wiki": {
+    "titreRendu": "Social Club",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": null,
+    "categories": []
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Sankan Kingdom",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Vincent"
+   ],
+   "wiki": {
+    "titreRendu": "Vincent",
+    "redirigeVers": "Vincent",
+    "softRedirect": null,
+    "fr": null,
+    "categories": []
+   },
+   "temoin": "T1 redirection dure",
+   "fiche": {
+    "id": "3dcd987e-5391-40fa-ba89-e685286c1d7e",
+    "slug": "vincent",
+    "name": "Vincent",
+    "type": "character",
+    "universe": "One Piece",
+    "summary": "Vincent est un personnage secondaire d'One Piece dont le rôle exact dans l'intrigue reste peu documenté.",
+    "attributes": {
+     "role": "Personnage secondaire",
+     "descFr": "Première apparition : épisode 957. Vincent est le prince du Royaume de Sankan (サンカン王国).",
+     "descRaw": "Debut: Episode 957 Vincent is the prince of the Sankan Kingdom (サンカン王国). (Source: One Piece Wiki) No voice actors have been added to this character. Help improve our database by searching for a voice actor, and adding this character to their roles .",
+     "descLang": "en"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/wiki/Sankan_Kingdom redirige vers « Vincent » ; notre fiche de ce nom : Vincent (vincent, type character)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "World Economy News Paper",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Iyan'eno Chinode"
+   ],
+   "wiki": {
+    "titreRendu": "World Economy News Paper",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Journaux#World Economic News Paper",
+    "categories": []
+   },
+   "temoin": "T3 alias-cures",
+   "fiche": {
+    "id": "3b72b73d-55d7-406b-a98f-d5801c6bbb23",
+    "slug": "world-economic-journal",
+    "name": "World Economic Journal",
+    "type": "status",
+    "universe": "One Piece",
+    "summary": "Équipage de pirates.",
+    "attributes": {
+     "scope": "Équipage pirate",
+     "descFr": "Le World Economy News Paper, ou WE News, est un journal d'information mondial distribué via des News Coo, dirigé par Morgans, un empereur de l'Underworld. Il couvre une vaste gamme de sujets, y compris la piraterie, les conflits locaux et internationaux, et les activités révolutionnaires, ce qui en fait une source d'information essentielle pour des personnages comme Nami et Nico Robin. Cependant, malgré sa réputation, le journal est prêt à fabriquer et à manipuler des histoires pour le profit, reflétant la nature douteuse de son président, Morgans, qui a des liens avec des organisations comme Germa 66 et les Big Mom Pirates.",
+     "category": "Équipage",
+     "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+    }
+   },
+   "preuve": "data/alias-cures.json (Naruto) porte « World Economic Journal » → « World Economy News Paper », paire sondée contre le wiki par scripts/ops-curer-alias.mjs ; notre fiche : World Economic Journal (world-economic-journal, type status)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Newspaper",
+   "liens": 1,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Iyan'eno Chinode"
+   ],
+   "wiki": {
+    "titreRendu": "Newspaper",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Journaux",
+    "categories": [
+     "Literature"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Barbar Pirates",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Zaba"
+   ],
+   "wiki": {
+    "titreRendu": "Barbar Pirates",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "L'Équipage des Pirates du Sable",
+    "categories": [
+     "Non-Canon Grand Line Pirate Crews",
+     "Pages With Empty Sections"
+    ]
+   },
+   "temoin": "T3 alias-cures",
+   "fiche": {
+    "id": "91173001-952b-4bf6-8f3f-e18470a82616",
+    "slug": "l-equipage-des-pirates-du-sables",
+    "name": "L’équipage des Pirates du Sables",
+    "type": "status",
+    "universe": "One Piece",
+    "summary": "Équipage de pirates.",
+    "attributes": {
+     "scope": "Équipage pirate",
+     "descFr": "Les Barbar Pirates sont une bande de pirates des sables du royaume d'Arabasta, connue pour naviguer dans le désert à l'aide de leurs traîneaux de sable et pour porter de petits parapluies sur la tête. Leur capitaine, Barbarossa, mène l'équipage qui fréquente les affrontements avec les bandits du désert tout en cherchant de la nourriture et de l'eau ; après que Luffy ait accidentellement endommagé leur embarcation, il promet de leur fournir du bois pour la réparer.",
+     "category": "Équipage",
+     "roman_name": "Barubaru Dan",
+     "total_prime": "inconnu Berrys",
+     "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b"
+    }
+   },
+   "preuve": "data/alias-cures.json (Naruto) porte « L’équipage des Pirates du Sables » → « Barbar Pirates », paire sondée contre le wiki par scripts/ops-curer-alias.mjs ; notre fiche : L’équipage des Pirates du Sables (l-equipage-des-pirates-du-sables, type status)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Ido",
+   "liens": 1,
+   "champs": [
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Kamyu"
+   ],
+   "wiki": {
+    "titreRendu": "Ido",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Ido",
+    "categories": [
+     "Arabasta Locations",
+     "Non-Canon Paradise Locations",
+     "Non-Canon Towns and Cities"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "South Blue",
+   "liens": 1,
+   "champs": [
+    "region"
+   ],
+   "sourcesExemples": [
+    "Île du Karaté"
+   ],
+   "wiki": {
+    "titreRendu": "South Blue",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "South Blue",
+    "categories": [
+     "Articles Without an Infobox Image",
+     "Oceans"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Nefertari Family",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Hou"
+   ],
+   "wiki": {
+    "titreRendu": "Nefertari Family",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Famille Nefertari",
+    "categories": []
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Sabaody Archipelago",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Humphrey"
+   ],
+   "wiki": {
+    "titreRendu": "Sabaody Archipelago",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Archipel des Sabaody",
+    "categories": [
+     "Archipelagos",
+     "Featured Articles",
+     "Forests and Jungles",
+     "Paradise Islands"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "40351e8a-df23-4529-aa83-a140bd8404fb",
+    "slug": "sabaody",
+    "name": "Archipel Sabaody",
+    "type": "place",
+    "universe": "One Piece",
+    "summary": "La forêt de mangroves à bulles, dernière escale avant le Nouveau Monde et lieu de la séparation de l'équipage.",
+    "attributes": {
+     "descFr": "L'Archipel Sabaody, situé dans le Paradise, est une immense forêt de mangroves composée de 79 arbres géants appelés Yarukiman Mangrove, servant d'îles habitables. C'est la dernière escale avant le Nouveau Monde, où l'équipage au Chapeau de Paille s'est séparé et plus tard réuni. L'archipel est également connu pour son commerce florissant et son marché d'esclaves, soutenu par les Nobles Célestes, ainsi que pour la présence de groupes de chasseurs d'esclaves comme les Rosy Life Riders.",
+     "region": "Grand Line · Paradis",
+     "category": "Lieu",
+     "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Sabaody%20Archipelago déclare fr = « Archipel des Sabaody » ; https://onepiece.fandom.com/fr/wiki/Sabaody y redirige ; égal (après normalisation) à la parenthèse de notre fiche Archipel Sabaody (sabaody, type place)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Arabasta Kingdom",
+   "liens": 1,
+   "champs": [
+    "region"
+   ],
+   "sourcesExemples": [
+    "Tamarisk"
+   ],
+   "wiki": {
+    "titreRendu": "Arabasta Kingdom",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Alabasta",
+    "categories": [
+     "Twenty Kingdoms"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "51e77641-3219-4917-8e1b-d2072044f4c4",
+    "slug": "alabasta-lieu",
+    "name": "Alabasta",
+    "type": "place",
+    "universe": "One Piece",
+    "summary": "Le royaume désertique de la princesse Vivi, déchiré par la guerre civile orchestrée par Crocodile.",
+    "attributes": {
+     "descFr": "Royaume désertique de Paradise, Alabasta est un vaste territoire traversé par le fleuve Sandora et parsemé de cités aux architectures inspirées de l'Égypte antique, de l'Inde et du Moyen-Orient. Gouverné par la famille Nefertari, il abrite le ponéglyphe révélant l'emplacement de Pluton et fut le théâtre d'une guerre civile orchestrée par Crocodile. Sa capitale, Alubarna, domine le pays depuis un promontoire rocheux, tandis que des villes comme Nanohana ou Yuba incarnent sa diversité culturelle et historique.",
+     "region": "Grand Line · Paradis",
+     "category": "Lieu",
+     "descFrSource": "mistral/mistral-large-latest"
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Arabasta%20Kingdom déclare fr = « Alabasta » ; égal (après normalisation) à le nom de notre fiche Alabasta (alabasta-lieu, type place)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Caesar Clown",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Kirintauros"
+   ],
+   "wiki": {
+    "titreRendu": "Caesar Clown",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "César Clown",
+    "categories": [
+     "Characters Aged 50–59",
+     "Donquixote Pirates",
+     "Dressrosa Saga Antagonists",
+     "Explosive Users",
+     "Featured Articles",
+     "Fighters Who Use Technology",
+     "Former Marine Prisoners",
+     "Former Marines",
+     "Former Pirates",
+     "Humans",
+     "Logia Devil Fruit Users",
+     "MADS",
+     "Male Characters",
+     "NEO MADS",
+     "Punk Hazard Staff"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "933cbbe7-d0ea-4bb8-a316-cf459738f294",
+    "slug": "caesar-clown",
+    "name": "Caesar Clown",
+    "type": "character",
+    "universe": "One Piece",
+    "summary": "Savant fou et ancien responsable de Punk Hazard, créateur du gaz mortel Shinokuni, allié puis ennemi de Doflamingo avant de rejoindre Vegapunk.",
+    "attributes": {
+     "crew": "L’équipage de Don Quichotte",
+     "role": "Personnage secondaire",
+     "bounty": "300.000.000 Berrys",
+     "descFr": "Fruit du Démon : Gasu Gasu no Mi Caesar Clown, également appelé « Master » par ses sous-fifres, est un ancien collègue de Vegapunk et le principal antagoniste de l'arc de Punk Hazard. Caesar est le plus grand expert en armes de destruction massive et un savant fou avec une prime de 300 000 000 de berrys sur sa tête. Il semble nourrir une rancune envers Vegapunk, ainsi qu'une personnalité quelque peu rationnelle, comme le montre le fait qu'il se soit caché de la Marine au lieu de tenter de la combattre immédiatement, qu'il ait fait confiance à la déduction de Monet selon laquelle les Chapeau de Paille pourraient être plus puissants que ne le laissent croire leurs primes, et qu'il ait attendu l'approbation de Joker pour faire passer ses actions pour des accidents avant de lancer ses attaques. Caesar est aussi une personne plutôt économe, car il ne voulait pas gaspiller le poison en l'éliminant, mais l'a plutôt collecté, conservé et compressé dans Smiley. Smoker a déclaré qu'il était un « sacré taré ». C'est une personne très orgueilleuse, allant jusqu'à dire que son travail d'il y a quatre ans sur l'arme de destruction massive à l'origine de l'incident de Punk Hazard n'était pas un échec, mais au contraire un grand succès, laissant deviner un complexe de supériorité. Contrairement à la plupart des utilisateurs de Logia, Caesar garde le pouvoir de son Fruit du Démon activé en permanence et est soit totalement, soit partiellement transformé en gaz. Il a un rire distinctif, « Shurororororo ».",
+     "descRaw": "Devil Fruit: Gasu Gasu no Mi Caesar Clown, also referred to as \"Master\" by his underlings, is a former colleague of Vegapunk and the main antagonist of the Punk Hazard Arc. Caesar is the leading expert on mass-murder weapons and is a mad scientist with a bounty of 300,000,000 beli on his head. He appears to have a grudge against Vegapunk, as well as a somewhat rational personality, as shown when he hid from the Marines instead of trying to fight them immediately, as well as trusting Monet's deduction that the Straw Hats might be more powerful than their bounties claim and waiting for Joker's approval to make his actions look like accidents, before starting attacks. Caesar is also a rather economizing person, as he didn't want to waste the poison, by clearing it off but rather collected, saved and compressed it into Smiley. It was stated by Smoker that he was one \"crazy bastard\". He is a very prideful person, going as far to say that his work four years ago on the mass murdering weapon that caused the Punk Hazard incident was not a failure, but instead was a great success, hinting at a superiority complex. Unlike most Logia users, Caesar keeps his Devil Fruit power activated all the time and is either completely or partly turned into gas. He has a distinct laugh of \"Shurororororo\".",
+     "faction": "Pirate",
+     "descLang": "en",
+     "favorites": 163,
+     "fruit_type": "Logia",
+     "voiceActors": {
+      "en": [
+       "Jerry Jewell",
+       "Benoît Rivillon"
+      ],
+      "jp": [
+       "Ryusei Nakao"
+      ]
+     }
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Caesar%20Clown déclare fr = « César Clown » ; https://onepiece.fandom.com/fr/wiki/Caesar_Clown y redirige ; égal (après normalisation) à le nom de notre fiche Caesar Clown (caesar-clown, type character)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Centaur Patrol Unit",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Kirintauros"
+   ],
+   "wiki": {
+    "titreRendu": "Centaur Patrol Unit",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Unité de Patrouille Centaure",
+    "categories": []
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Animal Species/Water 7 Saga",
+   "liens": 1,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Mishoin Cashible"
+   ],
+   "wiki": {
+    "titreRendu": "Animal Species/Water 7 Saga",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Animaux/Saga Water 7",
+    "categories": [
+     "Animal Species Subpages"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "The Collection Party",
+   "liens": 1,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Phillip"
+   ],
+   "wiki": {
+    "titreRendu": "Collection Party",
+    "redirigeVers": "Collection Party",
+    "softRedirect": null,
+    "fr": "Collection Party",
+    "categories": [
+     "Candidates for merger",
+     "Non-Canon Antagonist Groups",
+     "Non-Canon Former Groups",
+     "Non-Canon Military Forces",
+     "Ruluka Island Residents"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Walrus School",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Ange"
+   ],
+   "wiki": {
+    "titreRendu": "Walrus School",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": null,
+    "categories": []
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Eigis Kingdom",
+   "liens": 1,
+   "champs": [
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Tea IV"
+   ],
+   "wiki": {
+    "titreRendu": "Eigis Kingdom",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Royaume d'Aegis",
+    "categories": []
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Coral Hill",
+   "liens": 1,
+   "champs": [
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Togare"
+   ],
+   "wiki": {
+    "titreRendu": "Coral Hill",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Coral Hill",
+    "categories": [
+     "Articles Without an Infobox",
+     "Fish-Man Island Locations",
+     "Location Stubs",
+     "Towns and Cities"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Pucci",
+   "liens": 1,
+   "champs": [
+    "residence"
+   ],
+   "sourcesExemples": [
+    "Happa Yamao"
+   ],
+   "wiki": {
+    "titreRendu": "Pucci",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Pucci",
+    "categories": [
+     "Articles Without an Infobox Image",
+     "Cover Story Introduction Locations",
+     "Sea Train Route",
+     "Towns and Cities"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Bobby (Non-Canon)",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Big Runner"
+   ],
+   "wiki": {
+    "titreRendu": "Bobby (Non-Canon)",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Bobby (Film)",
+    "categories": [
+     "Dead End Race Participants",
+     "Non-Canon Giants",
+     "Non-Canon Male Characters",
+     "Non-Canon Pirates"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Pogo",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Big Runner"
+   ],
+   "wiki": {
+    "titreRendu": "Pogo",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Pogo",
+    "categories": [
+     "Dead End Race Participants",
+     "Non-Canon Giants",
+     "Non-Canon Male Characters",
+     "Non-Canon Pirates"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Willy",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Web Panic"
+   ],
+   "wiki": {
+    "titreRendu": "Willy",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Willy",
+    "categories": [
+     "Dead End Race Participants",
+     "Featured Articles",
+     "Non-Canon Club Users",
+     "Non-Canon Fish-Men",
+     "Non-Canon Male Characters",
+     "Non-Canon Pirate Captains"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Carina",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Gran Tesoro"
+   ],
+   "wiki": {
+    "titreRendu": "Carina",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Carina",
+    "categories": [
+     "Characters Aged 10–19",
+     "Gran Tesoro Staff",
+     "Non-Canon Characters Designed by Oda",
+     "Non-Canon Female Characters",
+     "Non-Canon Humans",
+     "Non-Canon Performers",
+     "Non-Canon Thieves",
+     "Singers",
+     "Special 11 Characters"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Gild Tesoro",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Gran Tesoro"
+   ],
+   "wiki": {
+    "titreRendu": "Gild Tesoro",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Gild Tesoro",
+    "categories": [
+     "Awakened Paramecia Devil Fruit Users",
+     "Characters Aged 40–49",
+     "Citation Needed",
+     "Former Mary Geoise Slaves",
+     "Gran Tesoro Staff",
+     "Movie 13 Antagonists",
+     "Non-Canon Armament Haki Users",
+     "Non-Canon Business Managers",
+     "Non-Canon Characters Designed by Oda",
+     "Non-Canon Former Slaves",
+     "Non-Canon Humans",
+     "Non-Canon Male Characters",
+     "Non-Canon Marine Prisoners",
+     "Non-Canon Paramecia Devil Fruit Users",
+     "Non-Canon Performers",
+     "Singers",
+     "Special 11 Characters"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "d6ff76d8-a7d9-4be7-9a08-ed61e1a59e7e",
+    "slug": "gild-tesoro",
+    "name": "Gild Tesoro",
+    "type": "character",
+    "universe": "One Piece",
+    "summary": "Gild Tesoro est un homme aux cheveux verts plaqués en arrière, vêtu d'un costume et d'un pantalon roses. Il porte une très grande cicatrice en forme d'étoile dans le dos et est le Roi du Casino, à la tête de Gran Tesoro, la plus grande cité de divertissement du monde.",
+    "attributes": {
+     "age": "41 ans",
+     "role": "Personnage secondaire",
+     "fruit": "Fruit de l'Or",
+     "descFr": "Gild Tesoro est un homme aux cheveux verts plaqués en arrière, vêtu d'un costume et d'un pantalon roses. Il porte une très grande cicatrice en forme d'étoile dans le dos et est le Roi du Casino, à la tête de Gran Tesoro, la plus grande cité de divertissement du monde.",
+     "descRaw": "Gild Tesoro is a man with slicked-back green hair who wears a pink suit and pants. He has a very large star-shaped scar on his back and is the Casino King who is in charge of Gran Tesoro, the largest entertainment city in the world.",
+     "faction": "Pirate",
+     "descLang": "en",
+     "favorites": 14,
+     "fruit_type": "Paramecia",
+     "occupation": "Propriétaire",
+     "voiceActors": {
+      "en": [
+       "Dallas Reid",
+       "Keith Silverstein"
+      ],
+      "jp": [
+       "Takahiro Sakurai"
+      ]
+     }
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Gild%20Tesoro déclare fr = « Gild Tesoro » ; égal (après normalisation) à le nom de notre fiche Gild Tesoro (gild-tesoro, type character)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Red Line",
+   "liens": 1,
+   "champs": [
+    "region"
+   ],
+   "sourcesExemples": [
+    "Reverse Mountain"
+   ],
+   "wiki": {
+    "titreRendu": "Red Line",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Red Line",
+    "categories": [
+     "Landmarks",
+     "Red Line Locations"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Galley-La Company",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Alice"
+   ],
+   "wiki": {
+    "titreRendu": "Galley-La Company",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Galley-La Company",
+    "categories": [
+     "Antagonist Groups",
+     "Brands"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Egana",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Margarita"
+   ],
+   "wiki": {
+    "titreRendu": "Egana",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Egana",
+    "categories": [
+     "Humans",
+     "Male Characters",
+     "West Blue Residents"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "41875752-99d1-4c79-a502-54dced01f045",
+    "slug": "egana",
+    "name": "Egana",
+    "type": "character",
+    "universe": "One Piece",
+    "summary": "Egana est un personnage secondaire dont le rôle précis dans l'univers de One Piece demeure incertain.",
+    "attributes": {
+     "role": "Personnage secondaire",
+     "descFr": "Première apparition : épisode 375. Egana est l'employeuse de Margarita.",
+     "descRaw": "Debut: Episode 375 Egana is Margarita's employer. (Source: One Piece Wiki)",
+     "descLang": "en",
+     "voiceActors": {
+      "en": [
+       "Emmanuel Fouquet"
+      ],
+      "jp": [
+       "Takahiro Fujimoto"
+      ]
+     }
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Egana déclare fr = « Egana » ; égal (après normalisation) à le nom de notre fiche Egana (egana, type character)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Henzo",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "H-1"
+   ],
+   "wiki": {
+    "titreRendu": "Henzo",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Henzo",
+    "categories": [
+     "Non-Canon Humans",
+     "Non-Canon Male Characters",
+     "Non-Canon Scientists",
+     "Pumpkin Pirates"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "6bd27268-38b4-4fe0-840d-eab8b672a155",
+    "slug": "henzo",
+    "name": "Henzo",
+    "type": "character",
+    "universe": "One Piece",
+    "summary": "Henzo est un personnage secondaire de l'univers One Piece, dont l'apparition ponctuelle n'est pas davantage développée dans le récit.",
+    "attributes": {
+     "role": "Personnage secondaire",
+     "descFr": "Henzo est un scientifique qui étudiait la Brume Arc-en-ciel.",
+     "descRaw": "Henzo is a scientist who was researching the Rainbow Mist.",
+     "descLang": "en",
+     "favorites": 1,
+     "voiceActors": {
+      "en": [
+       "Luci Christian",
+       "R. Bruce Elliott"
+      ],
+      "jp": [
+       "Cho",
+       "Masumi Kageyama"
+      ]
+     }
+    }
+   },
+   "preuve": "https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Henzo déclare fr = « Henzo » ; égal (après normalisation) à le nom de notre fiche Henzo (henzo, type character)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Poseidon",
+   "liens": 1,
+   "champs": [
+    "affiliation"
+   ],
+   "sourcesExemples": [
+    "Topknot"
+   ],
+   "wiki": {
+    "titreRendu": "Poseidon",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Poseidon",
+    "categories": [
+     "Female Characters",
+     "Living Weapons",
+     "Merfolk",
+     "Princesses"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Sniper",
+   "liens": 1,
+   "champs": [
+    "occupation"
+   ],
+   "sourcesExemples": [
+    "Jean Ango"
+   ],
+   "wiki": {
+    "titreRendu": "Sniper",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Tireur d'Élite",
+    "categories": [
+     "Citation Needed",
+     "Occupations"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  }
+ ]
+}

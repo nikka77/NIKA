@@ -1,0 +1,281 @@
+{
+ "quand": "2026-08-10T13:05:34.235Z",
+ "instantane": "/private/tmp/claude-501/-Users-macbookprom1pro-Library-Mobile-Documents-com-apple-CloudDocs-NIKA/17f2db71-7c38-4eb1-aad2-72e629329d0d/scratchpad/corpus-2026-08-10T12-54-38Z.json",
+ "methode": "une arête est PERDUE quand le nom de son autre bout n'apparaît nulle part dans ce que la zone rend pour cette fiche (dédup par nom, comme le composant)",
+ "socle": {
+  "fiches": 7654,
+  "aretes": 16788
+ },
+ "total": 2709,
+ "fichesUniques": 1110,
+ "tableau": [
+  {
+   "relation": "appartient",
+   "sens": "entrant",
+   "gabarit": "CharacterZone",
+   "aretesPerdues": 914,
+   "fichesTouchees": 476,
+   "exemples": [
+    "gou-koga (character) ← appartient dalk (character)",
+    "sphinx (character) ← appartient marco (character)",
+    "sphinx (character) ← appartient basilisk (character)"
+   ]
+  },
+  {
+   "relation": "possede",
+   "sens": "sortant",
+   "gabarit": "CharacterZone",
+   "aretesPerdues": 684,
+   "fichesTouchees": 351,
+   "exemples": [
+    "yuga (character) → possede tanto (artifact)",
+    "doto-kazahana (character) → possede hexagonal-crystal (artifact)",
+    "doto-kazahana (character) → possede mechanical-kunai-thrower (artifact)"
+   ]
+  },
+  {
+   "relation": "famille",
+   "sens": "entrant",
+   "gabarit": "CharacterZone",
+   "aretesPerdues": 545,
+   "fichesTouchees": 265,
+   "exemples": [
+    "paparoni (character) ← famille anilaza (character)",
+    "paparoni (character) ← famille panchia (character)",
+    "shinosuke (character) ← famille shinobu (character)"
+   ]
+  },
+  {
+   "relation": "maitrise",
+   "sens": "sortant",
+   "gabarit": "OrganizationZone",
+   "aretesPerdues": 179,
+   "fichesTouchees": 47,
+   "exemples": [
+    "hozuki (status) → maitrise water-release-great-water-arm-technique (power)",
+    "hozuki (status) → maitrise water-release-tate-eboshi (power)",
+    "hozuki (status) → maitrise hydrification-technique (power)"
+   ]
+  },
+  {
+   "relation": "allie",
+   "sens": "entrant",
+   "gabarit": "OrganizationZone",
+   "aretesPerdues": 100,
+   "fichesTouchees": 13,
+   "exemples": [
+    "l-equipage-du-roux (status) ← allie oven-charlotte (character)",
+    "armada-du-chapeau-de-paille (status) ← allie cotton (character)",
+    "armada-du-chapeau-de-paille (status) ← allie pellini (character)"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "sortant",
+   "gabarit": "OrganizationZone",
+   "aretesPerdues": 97,
+   "fichesTouchees": 92,
+   "exemples": [
+    "konoha-council (status) → appartient konohagakure (place)",
+    "new-seven-ninja-swordsmen (status) → appartient kirigakure (place)",
+    "a-b-combo (status) → appartient kumogakure (place)"
+   ]
+  },
+  {
+   "relation": "ennemi",
+   "sens": "entrant",
+   "gabarit": "OrganizationZone",
+   "aretesPerdues": 78,
+   "fichesTouchees": 33,
+   "exemples": [
+    "l-equipage-aux-cent-betes (status) ← ennemi omasa (character)",
+    "l-equipage-aux-cent-betes (status) ← ennemi bariete (character)",
+    "l-equipage-aux-cent-betes (status) ← ennemi yatappe (character)"
+   ]
+  },
+  {
+   "relation": "exerce",
+   "sens": "entrant",
+   "gabarit": "OrganizationZone",
+   "aretesPerdues": 19,
+   "fichesTouchees": 5,
+   "exemples": [
+    "hokage (status) ← exerce astronomer (profession)",
+    "hokage (status) ← exerce hiruzen-sarutobi (character)",
+    "hokage (status) ← exerce tobirama-senju (character)"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "entrant",
+   "gabarit": "OrganizationZone",
+   "aretesPerdues": 18,
+   "fichesTouchees": 9,
+   "exemples": [
+    "kara (status) ← appartient doctor (profession)",
+    "scientific-ninja-weapons-team (status) ← appartient katasuke-tono-s-assistant (profession)",
+    "ame-orphans (status) ← appartient nagato-pain (power)"
+   ]
+  },
+  {
+   "relation": "possede",
+   "sens": "entrant",
+   "gabarit": "CharacterZone",
+   "aretesPerdues": 13,
+   "fichesTouchees": 11,
+   "exemples": [
+    "komushi (character) ← possede sasori (character)",
+    "wabisuke (character) ← possede izuru-kira (character)",
+    "haineko (character) ← possede rangiku-matsumoto (character)"
+   ]
+  },
+  {
+   "relation": "ange",
+   "sens": "entrant",
+   "gabarit": "CharacterZone",
+   "aretesPerdues": 10,
+   "fichesTouchees": 10,
+   "exemples": [
+    "vados (character) ← ange univers-6 (place)",
+    "awamo (character) ← ange univers-1 (place)",
+    "sour (character) ← ange univers-2 (place)"
+   ]
+  },
+  {
+   "relation": "maitrise",
+   "sens": "entrant",
+   "gabarit": "CharacterZone",
+   "aretesPerdues": 8,
+   "fichesTouchees": 2,
+   "exemples": [
+    "monkey-d-luffy (character) ← maitrise gear-4-gear-fourth (skill)",
+    "monkey-d-luffy (character) ← maitrise gear-4-gear-fourth-snake-man (skill)",
+    "monkey-d-luffy (character) ← maitrise gear-2-gear-second (skill)"
+   ]
+  },
+  {
+   "relation": "kaio_shin",
+   "sens": "entrant",
+   "gabarit": "CharacterZone",
+   "aretesPerdues": 8,
+   "fichesTouchees": 8,
+   "exemples": [
+    "ill (character) ← kaio_shin univers-8 (place)",
+    "roh (character) ← kaio_shin univers-9 (place)",
+    "pell (character) ← kaio_shin univers-2 (place)"
+   ]
+  },
+  {
+   "relation": "dieu_destruction",
+   "sens": "entrant",
+   "gabarit": "CharacterZone",
+   "aretesPerdues": 8,
+   "fichesTouchees": 8,
+   "exemples": [
+    "arack (character) ← dieu_destruction univers-5 (place)",
+    "geene (character) ← dieu_destruction univers-12 (place)",
+    "quitela (character) ← dieu_destruction univers-4 (place)"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "sortant",
+   "gabarit": "Attaque",
+   "aretesPerdues": 8,
+   "fichesTouchees": 8,
+   "exemples": [
+    "atk-bl-bakudo-99-kin (power) → appartient kido (power)",
+    "atk-bl-bakudo-61-rikujokoro (power) → appartient kido (power)",
+    "atk-bl-bakudo-81-danku (power) → appartient kido (power)"
+   ]
+  },
+  {
+   "relation": "famille",
+   "sens": "entrant",
+   "gabarit": "OrganizationZone",
+   "aretesPerdues": 6,
+   "fichesTouchees": 5,
+   "exemples": [
+    "aburame (status) ← famille muta-aburame (character)",
+    "kaguya (status) ← famille kimimaro (character)",
+    "senju (status) ← famille mito-uzumaki (character)"
+   ]
+  },
+  {
+   "relation": "habite",
+   "sens": "entrant",
+   "gabarit": "OrganizationZone",
+   "aretesPerdues": 4,
+   "fichesTouchees": 2,
+   "exemples": [
+    "sphinx-one-piece (status) ← habite oide (character)",
+    "capsule-corp (status) ← habite trunks-ssj (skill)",
+    "capsule-corp (status) ← habite oolong (character)"
+   ]
+  },
+  {
+   "relation": "habite",
+   "sens": "sortant",
+   "gabarit": "OrganizationZone",
+   "aretesPerdues": 3,
+   "fichesTouchees": 1,
+   "exemples": [
+    "saiyan (status) → habite sadala (place)",
+    "saiyan (status) → habite vegeta-planete (place)",
+    "saiyan (status) → habite univers-7 (place)"
+   ]
+  },
+  {
+   "relation": "habite",
+   "sens": "sortant",
+   "gabarit": "Attaque",
+   "aretesPerdues": 3,
+   "fichesTouchees": 2,
+   "exemples": [
+    "atk-op-franky-radical-hip (power) → habite karakuri-island (place)",
+    "atk-op-ashura (power) → habite kuri (place)",
+    "atk-op-ashura (power) → habite grand-line (place)"
+   ]
+  },
+  {
+   "relation": "mentor",
+   "sens": "entrant",
+   "gabarit": "OrganizationZone",
+   "aretesPerdues": 1,
+   "fichesTouchees": 1,
+   "exemples": [
+    "association-hunters (status) ← mentor senritsu (character)"
+   ]
+  },
+  {
+   "relation": "exerce",
+   "sens": "entrant",
+   "gabarit": "CharacterZone",
+   "aretesPerdues": 1,
+   "fichesTouchees": 1,
+   "exemples": [
+    "kazekage (character) ← exerce rasa (character)"
+   ]
+  },
+  {
+   "relation": "habite",
+   "sens": "entrant",
+   "gabarit": "CharacterZone",
+   "aretesPerdues": 1,
+   "fichesTouchees": 1,
+   "exemples": [
+    "chocolat (character) ← habite choco-police (character)"
+   ]
+  },
+  {
+   "relation": "possede",
+   "sens": "sortant",
+   "gabarit": "OrganizationZone",
+   "aretesPerdues": 1,
+   "fichesTouchees": 1,
+   "exemples": [
+    "flotte-yonta-maria (status) → possede yonta-maria (artifact)"
+   ]
+  }
+ ]
+}
