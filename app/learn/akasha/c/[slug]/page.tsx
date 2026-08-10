@@ -23,10 +23,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const c = showcaseBySlug(slug);
   if (!c) return { title: 'Collection introuvable — AKASHA' };
+  const url = `${SITE_URL}/learn/akasha/c/${slug}`;
+  const title = `${c.title} — ${c.universe} | AKASHA`;
+  const ogTitle = `${c.title} — ${c.universe}`;
+  // Sans ces deux blocs, la page héritait de l'openGraph de app/layout.tsx : les 5 collections du
+  // plan de site partageaient la carte « NIKA — La super-app de la Côte d'Azur ». Mesuré au rendu
+  // le 10/08/2026, cf. data/audits/meta-partage-routes-voisines-*.
   return {
-    title: `${c.title} — ${c.universe} | AKASHA`,
+    title,
     description: c.tagline,
-    alternates: { canonical: `${SITE_URL}/learn/akasha/c/${slug}` },
+    alternates: { canonical: url },
+    openGraph: { title: ogTitle, description: c.tagline, url, siteName: 'AKASHA — le registre', locale: 'fr_FR', type: 'article' },
+    twitter: { card: 'summary_large_image', title: ogTitle, description: c.tagline },
   };
 }
 

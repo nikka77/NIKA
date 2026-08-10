@@ -34,11 +34,23 @@ import { RankBadge } from '@/components/akasha/NarutoIcons';
 
 export const revalidate = 3600; // ISR 1 h — mêmes données que le rail de chips du hub Naruto
 
+// Voir app/learn/akasha/wanted/page.tsx : `alternates` et `description` étaient bien propres à la
+// page, mais sans bloc `openGraph` Next hérite EN ENTIER de celui du layout racine — la carte de
+// partage vendait « NIKA — La super-app de la Côte d'Azur ». Ce segment `u/naruto` est littéral :
+// il ne descend PAS de `u/[slug]`, et n'hérite donc ni de son generateMetadata ni de son
+// opengraph-image. Mesuré en demandant la page le 10/08/2026.
+const OG_TITRE = 'L’échelle des rangs — Naruto';
+const DESCRIPTION = 'De l’Académie au Kage : les six grades canon de la hiérarchie shinobi de Konoha, et où se classent les personnages du registre AKASHA.';
+
 export const metadata: Metadata = {
   title: 'L’échelle des rangs — Naruto | AKASHA · NIKA LEARN',
-  description:
-    'De l’Académie au Kage : les six grades canon de la hiérarchie shinobi de Konoha, et où se classent les personnages du registre AKASHA.',
+  description: DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/learn/akasha/u/naruto/rangs` },
+  openGraph: {
+    title: OG_TITRE, description: DESCRIPTION, url: `${SITE_URL}/learn/akasha/u/naruto/rangs`,
+    siteName: 'AKASHA — le registre', locale: 'fr_FR', type: 'website',
+  },
+  twitter: { card: 'summary_large_image', title: OG_TITRE, description: DESCRIPTION },
 };
 
 const UNIVERSE = 'Naruto';

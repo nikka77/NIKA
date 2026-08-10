@@ -27,11 +27,22 @@ import JoestarTree from '@/components/akasha/hub/JoestarTree';
 
 export const revalidate = 3600; // ISR 1 h — même rythme que le hub JoJo
 
+// Voir app/learn/akasha/wanted/page.tsx : sans bloc `openGraph`, Next hérite en entier de celui du
+// layout racine et la carte de partage vendait « NIKA — La super-app de la Côte d'Azur ». Le
+// segment `u/jojo` est littéral : il ne descend PAS de `u/[slug]` et n'hérite donc pas de son
+// opengraph-image. Mesuré en demandant la page le 10/08/2026.
+const OG_TITRE = 'L’arbre Joestar — JoJo’s Bizarre Adventure';
+const DESCRIPTION = 'Six générations, une lignée de sang et d’adoption : de Jonathan Joestar (Phantom Blood) à Jolyne Cujoh (Stone Ocean), la généalogie complète des Joestar dans le registre AKASHA.';
+
 export const metadata: Metadata = {
   title: 'L’arbre Joestar — JoJo’s Bizarre Adventure | AKASHA · NIKA LEARN',
-  description:
-    'Six générations, une lignée de sang et d’adoption : de Jonathan Joestar (Phantom Blood) à Jolyne Cujoh (Stone Ocean), la généalogie complète des Joestar dans le registre AKASHA.',
+  description: DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/learn/akasha/u/jojo/arbre` },
+  openGraph: {
+    title: OG_TITRE, description: DESCRIPTION, url: `${SITE_URL}/learn/akasha/u/jojo/arbre`,
+    siteName: 'AKASHA — le registre', locale: 'fr_FR', type: 'website',
+  },
+  twitter: { card: 'summary_large_image', title: OG_TITRE, description: DESCRIPTION },
 };
 
 const UNIVERSE = "JoJo's Bizarre Adventure";

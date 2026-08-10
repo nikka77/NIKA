@@ -59,8 +59,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, type: 'website', siteName: 'NIKA' },
-    twitter: { card: 'summary_large_image', title, description },
+    // `siteName` aligné sur les quatre autres routes AKASHA (10/08) : la carte de partage affiche
+    // le nom du site SOUS le titre, et « NIKA » y contredisait le « AKASHA » du titre. Le suffixe
+    // « | AKASHA · NIKA » est retiré du og:title pour la même raison — il reste dans <title>, où
+    // c'est Google qui le lit et où la marque a sa place.
+    openGraph: { title: `${taxo.name} — ${total} entrées`, description, url, type: 'website', siteName: 'AKASHA — le registre', locale: 'fr_FR' },
+    twitter: { card: 'summary_large_image', title: `${taxo.name} — ${total} entrées`, description },
   };
 }
 

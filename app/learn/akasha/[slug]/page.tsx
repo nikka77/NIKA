@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getEntryBySlug, listEntries, listSharedVoice, listSimilar, popularityRank } from '@/lib/akasha/queries';
 import { TYPE_META, universeMeta, type AkashaType, type AkashaEntryCard } from '@/lib/akasha/types';
-import { flavorExcerpt } from '@/lib/akasha/flavor';
+import { flavorExcerpt, clampText } from '@/lib/akasha/flavor';
 import { universeHubSlug, taxonomyByName, hubVisual, axisLabel } from '@/lib/akasha/universe-taxonomy';
 import { deriveShape } from '@/lib/akasha/shape';
 import { SITE_URL } from '@/lib/site';
@@ -21,25 +21,112 @@ export const revalidate = 3600; // ISR 1 h — page la plus visitée du domaine,
 
 type Props = { params: Promise<{ slug: string }> };
 
+/** Un fait PROPRE à la fiche, tiré des arêtes que sa page affiche déjà — jamais inventé, jamais
+ *  déduit : chaque valeur est une ligne d'`akasha_relations` dont la cible porte ce nom.
+ *
+ *  Pourquoi seulement les arêtes, et pas les attributs : mesuré le 10/08/2026 sur les 336 fiches
+ *  dont la méta description était identique à celle d'une autre à un nom près, trois variantes ont
+ *  été simulées avant d'écrire une ligne de correctif —
+ *    B (arêtes seules)                 : 165 fiches distinguées, suffixe posé sur 212
+ *    A (arêtes + n'importe quel attribut) : 166, suffixe posé sur 333
+ *    C (arêtes + attributs intrinsèques)  : 167, suffixe posé sur 238
+ *  Les attributs achètent DEUX fiches et collent « Personnage secondaire. » à 121 d'entre elles :
+ *  écarté sur le chiffre, pas sur le goût. Traces : data/audits/meta-partage-simulation-{A,B,C}-*. */
+function faitPropre(entry: Awaited<ReturnType<typeof getEntryBySlug>>): string | null {
+  if (!entry) return null;
+  const cibles = (rels: typeof entry.relationsIn, kind: string) =>
+    [...new Set(rels.filter((r) => r.relation === kind).map((r) => r.target?.name).filter(Boolean))];
+  // Attaques et techniques : le porteur est LE fait qui les sépare (416 arêtes `maitrise` sur ce lot).
+  // Libellé au féminin comme le gabarit « Attaque » de cette même page (« Maîtrisée par · N »).
+  if (entry.type === 'power' || entry.type === 'skill') {
+    const par = cibles(entry.relationsIn, 'maitrise');
+    if (par.length) return `Maîtrisée par ${par.slice(0, 2).join(' et ')}`;
+  }
+  const SORTANTES: [string, string][] = [['appartient', 'Appartient à'], ['habite', 'Réside à'], ['exerce', 'Exerce']];
+  for (const [rel, label] of SORTANTES) {
+    const n = cibles(entry.relationsOut, rel);
+    if (n.length) return `${label} ${n.slice(0, 2).join(' et ')}`;
+  }
+  return null;
+}
+
+/** Compose « socle + fait propre » SOUS une borne, dans le bon ORDRE : le fait est posé d'abord,
+ *  la borne se paie sur le socle.
+ *
+ *  Ce qu'il y avait avant : `clampText(socle + '. ' + fait + '.', 165)`. La borne coupant par la
+ *  QUEUE, elle mangeait d'abord le suffixe qu'elle était censée protéger. Mesuré le 10/08/2026 en
+ *  rejouant la composition sur les 7 698 fiches paginées puis en DEMANDANT les pages : le fait
+ *  propre était posé sur 498 fiches et coupé sur 105 d'entre elles (21,1 %) — `dynamic-action`
+ *  servait « … Maîtrisée par Might… », `komurasaki` « … Appartient à Toko et… ».
+ *  Traces : data/audits/chantier3-descriptions-*, data/audits/chantier3-controle-rejeu-*.
+ *
+ *  Le plancher n'a jamais à jouer aujourd'hui : mesuré sur les 498 faits posés, le plus long fait
+ *  65 caractères, donc le budget laissé au socle ne descend pas sous 98. Il est là pour le jour où
+ *  un nom à rallonge entrerait dans le corpus — mieux vaut alors une description tronquée qu'une
+ *  fiche réduite à son seul suffixe.
+ *
+ *  Le `.replace(/\s+/g,' ').trim()` n'est pas cosmétique : l'ancien code faisait TOUJOURS passer la
+ *  chaîne entière par clampText, qui normalise les blancs. En sortant du clamp on perdait ce
+ *  service — simulé sur le corpus, trois noms du registre portent un blanc parasite (« Earth
+ *  Release  (Presumed) », « Wind Release  (Affinity; Anime only) », « Fruit du démon artificiel de
+ *  Végapunk » avec une espace de tête) et la description SORTAIT avec. Le correctif était en train
+ *  d'introduire trois régressions pour en réparer cent cinq. */
+const PLANCHER_SOCLE = 60;
+function borner(socle: string, fait: string | null, max: number): string {
+  if (!fait) return clampText(socle, max);
+  const base = socle.replace(/\s+/g, ' ').trim().replace(/[\s.·—-]+$/, '');
+  const queue = ` ${fait.replace(/\s+/g, ' ').trim()}.`;
+  if (base.length + 1 + queue.length <= max) return `${base}.${queue}`;
+  const budget = max - queue.length;
+  if (budget < PLANCHER_SOCLE) return clampText(`${base}.${queue}`, max);
+  // clampText finit sur « … ». Quand la coupe tombe juste après un point de fin de phrase, on
+  // servait « … chapitre 500.… Réside à Konohagakure. » (constaté sur /learn/akasha/taji) : on
+  // retire le point, l'ellipse suffit. Correction locale à cette composition — `clamp` est partagé
+  // avec les extraits de cartes et de listes, on ne le touche pas d'ici.
+  return `${clampText(base, budget).replace(/([.!?])…$/, '…')}${queue}`;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  // `getEntryBySlug` est cache() : cet appel est le MÊME que celui de la page et de l'image OG.
+  // Les relations lues plus bas ne coûtent donc aucune requête supplémentaire.
   const entry = await getEntryBySlug(slug);
   if (!entry) return { title: 'Entité introuvable — AKASHA' };
   const m = TYPE_META[entry.type];
-  // SEO : la bio VF canon (descFr) donne une méta description UNIQUE et riche aux 3 315 fiches
-  // traduites — bien mieux que le summary générique (« Personnage secondaire de… »).
+  const url = `${SITE_URL}/learn/akasha/${entry.slug}`;
+  // SEO : la bio VF canon (descFr) donne une méta description UNIQUE et riche. Mesuré le
+  // 10/08/2026 en rejouant ce code sur les 7 654 fiches paginées : 6 909 fiches y trouvent une
+  // phrase de prose, 740 retombent sur `summary`, 5 sur le gabarit.
   const descFr = typeof (entry.attributes as Record<string, unknown>).descFr === 'string'
     ? ((entry.attributes as Record<string, unknown>).descFr as string) : null;
-  // Le summary générique (« Personnage secondaire de One Piece — Marine. ») se répète à l'identique
-  // sur des centaines de fiches du même type/univers → méta description dupliquée aux yeux de Google.
-  // Préfixer par le NOM (toujours unique) garantit une description distincte par fiche même sans descFr.
+  const prose = flavorExcerpt(descFr, 155);
+  // Le summary générique (« Attaque de One Piece — attaque signature. ») se répète à l'identique
+  // sur des centaines de fiches : 336 fiches (4,39 %) portaient une description identique à celle
+  // d'une autre à un nom près, en 81 groupes dont un de 80. Le nom en préfixe ne suffit PAS —
+  // Google déduplique sur le corps de la phrase. D'où le fait propre, ajouté seulement quand la
+  // fiche n'a pas de prose à offrir (sinon il redirait ce que la prose dit déjà mieux).
+  const fait = prose ? null : faitPropre(entry);
+  const socle = entry.summary
+    ? `${entry.name} — ${entry.summary}`
+    : `${entry.name}, ${m.label.toLowerCase()} du registre AKASHA${entry.universe ? ` (${entry.universe})` : ''}.`;
+
+  const description = prose ?? borner(socle, fait, 165);
+  // La carte de partage montre 2 à 3 lignes de plus que Google : on lui sert la version longue.
+  const ogDescription = flavorExcerpt(descFr, 200) ?? borner(socle, fait, 200);
+  // og:title — le NOM d'abord, puis le type et le monde. Sans lui, WhatsApp, Discord, X et
+  // l'aperçu Google affichaient « NIKA — La super-app de la Côte d'Azur » sur les 7 654 fiches :
+  // hérité du openGraph de app/layout.tsx, que ce fichier ne redéfinissait pas (mesuré sur 22
+  // fiches servies, 22 fois la même chaîne — data/audits/meta-partage-rendu-*).
+  const ogTitle = `${entry.name} — ${m.label}${entry.universe ? ` · ${entry.universe}` : ''}`;
   return {
     title: `${entry.name} — ${m.label} | AKASHA`,
-    description:
-      flavorExcerpt(descFr, 155) ??
-      (entry.summary ? `${entry.name} — ${entry.summary}` : null) ??
-      `${entry.name}, ${m.label.toLowerCase()} du registre AKASHA${entry.universe ? ` (${entry.universe})` : ''}.`,
-    alternates: { canonical: `${SITE_URL}/learn/akasha/${entry.slug}` },
+    description,
+    alternates: { canonical: url },
+    // `images` volontairement absent des deux blocs : c'est ce qui laisse Next injecter
+    // l'image du fichier voisin opengraph-image.tsx (réparée par la vague 5). La déclarer ici
+    // l'écraserait et lui ferait perdre son empreinte de cache.
+    openGraph: { title: ogTitle, description: ogDescription, url, siteName: 'AKASHA — le registre', locale: 'fr_FR', type: 'article' },
+    twitter: { card: 'summary_large_image', title: ogTitle, description: ogDescription },
   };
 }
 

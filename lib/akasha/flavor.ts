@@ -40,6 +40,13 @@ export function flavorExcerpt(descFr: string | null | undefined, max = 155): str
   return prose ? clamp(prose, max) : null;
 }
 
+/** Borne publique — le repli `summary` des méta descriptions n'était borné par RIEN : mesuré le
+ *  10/08/2026 sur les 7 654 fiches du registre, la plus longue faisait 467 caractères et 54
+ *  dépassaient 160 (data/audits/meta-partage-recensement-2026-08-10T14-04-41-491Z.json). */
+export function clampText(s: string, max: number): string {
+  return clamp(s, max);
+}
+
 function clamp(s: string, max: number): string {
   const t = s.replace(/\s+/g, ' ').trim();
   if (t.length <= max) return t;

@@ -2,14 +2,31 @@
 // triées par montant. La page la plus One Piece possible : parchemin, DEAD OR ALIVE, Berrys.
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/site';
 import { listBounties } from '@/lib/akasha/queries';
 
 export const revalidate = 3600; // ISR 1 h
 
+// La carte de partage était celle de la RACINE du site. Next fusionne les métadonnées champ par
+// champ : cette page déclarait `title` et `description` mais pas `openGraph`, elle héritait donc
+// EN ENTIER de l'`openGraph` d'app/layout.tsx. Mesuré en demandant la page le 10/08/2026 —
+// og:title « NIKA — La super-app de la Côte d'Azur », og:description « VTC, food, logements
+// insolites, bateaux… » (data/audits/chantier3-sonde-fixes-2026-08-10T18-51-36-383Z.json). Le
+// suffixe de marque reste dans <title>, que Google lit, et sort de og:title, que lisent WhatsApp,
+// Discord et X — même convention que /learn/akasha, /u/[slug] et /c/[slug].
+const OG_TITRE = 'Most Wanted — les primes de One Piece';
+const DESCRIPTION =
+  'Le classement des primes One Piece : Empereurs, Supernovæ et pirates du Nouveau Monde triés par montant en Berrys — en avis de recherche.';
+
 export const metadata: Metadata = {
   title: 'Most Wanted — les primes de One Piece | AKASHA · NIKA LEARN',
-  description:
-    'Le classement des primes One Piece : Empereurs, Supernovæ et pirates du Nouveau Monde triés par montant en Berrys — en avis de recherche.',
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/learn/akasha/wanted` },
+  openGraph: {
+    title: OG_TITRE, description: DESCRIPTION, url: `${SITE_URL}/learn/akasha/wanted`,
+    siteName: 'AKASHA — le registre', locale: 'fr_FR', type: 'website',
+  },
+  twitter: { card: 'summary_large_image', title: OG_TITRE, description: DESCRIPTION },
 };
 
 const ACCENT = '#D63C3C';

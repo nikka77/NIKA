@@ -21,6 +21,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { RARITY_META, universeMeta, universeWordmark, type AkashaEntryDetail } from '@/lib/akasha/types';
 import { universeHubSlug } from '@/lib/akasha/universe-taxonomy';
+import { autresAretes } from '@/lib/akasha/relation-labels';
 import { ZoneProvider, useZone, type ZoneSelection } from './zone-context';
 import { CanalRegion, ChipLink } from './zone-ui';
 
@@ -63,6 +64,28 @@ function ZoneInner({ entry }: { entry: AkashaEntryDetail }) {
   const arsenal = entry.relationsIn
     .filter((r) => r.relation === 'appartient' && r.target.type === 'artifact')
     .map((r) => ({ slug: r.target.slug, name: r.target.name }));
+
+  // ── LE RESTE DES ARÊTES (10/08/2026) — voir lib/akasha/relation-labels.ts, `autresAretes`.
+  // Cette zone ne lisait QUE `relationsIn`, et seulement `appartient` : une arête SORTANTE écrite
+  // sur une fiche organisation n'avait aucun point de rendu, dans aucune grappe. Mesuré sur le
+  // corpus paginé (16 910 arêtes) : 550 demi-arêtes de fiches `status` tombaient dans le vide,
+  // dont 280 sortantes — les 16 techniques du clan Aburame, les 13 du clan Hyūga, l'appartenance
+  // de Team Guy à Konohagakure — et 270 entrantes d'une autre nature qu'`appartient` : les 8
+  // Hokage qui EXERCENT la fonction Hokage n'étaient nommés nulle part sur sa fiche, et
+  // l'équipage du Chapeau de Paille recevait 104 arêtes alliées/ennemies muettes. 159 fiches
+  // gagnent cette grappe.
+  // Le sens vient de `libelle()` et de lui seul : « Maîtrise · Byakugan » sortant, « Exercé par ·
+  // Tsunade » entrant. Poser le libellé sortant sur l'arête entrante ferait dire à la fiche Hokage
+  // qu'elle exerce Tsunade — la faute exacte du 08/08 sur « Fruit du Démon ».
+  const autresTous = autresAretes(
+    entry.relationsOut,
+    entry.relationsIn,
+    // Ce que le puits et l'arsenal montrent déjà, et rien d'autre : `appartient` entrant depuis un
+    // personnage (membres) ou depuis un artefact (arsenal).
+    (relation, entrant, target) =>
+      entrant && relation === 'appartient' && (target.type === 'character' || target.type === 'artifact'),
+  );
+  const autres = autresTous.slice(0, 12);
 
   const pick = (m: { slug: string; name: string; img?: string | null; favorites: number }, role: string) =>
     select({ kind: 'membre', slug: m.slug, name: m.name, img: m.img, favorites: m.favorites, role });
@@ -186,6 +209,28 @@ function ZoneInner({ entry }: { entry: AkashaEntryDetail }) {
                   {it.name}
                 </ChipLink>
               ))}
+            </div>
+          </div>
+        )}
+
+        {/* TOUT LE RESTE DU GRAPHE, DANS LES DEUX SENS. Chips de NAVIGATION (href), pas de
+            re-scope : le canal de cette zone ne connaît qu'un panneau « membre » (photo + favoris),
+            qui ne sait rien dire d'une technique ni d'un lieu. Même geste que l'arsenal juste
+            au-dessus, qui navigue déjà. Le compteur du titre est le TOTAL, la coupe est dite. */}
+        {autres.length > 0 && (
+          <div style={{ marginTop: 22, maxWidth: 640 }}>
+            <div style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: accent, marginBottom: 10 }}>
+              Autres liens · {autresTous.length}
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
+              {autres.map((x) => (
+                <ChipLink key={`${x.target.slug}|${x.label}`} accent={accent} href={`/learn/akasha/${x.target.slug}`} title={x.label}>
+                  <span style={{ color: 'var(--td3)', fontWeight: 400 }}>{x.label} · </span>{x.target.name}
+                </ChipLink>
+              ))}
+              {autresTous.length > autres.length && (
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', alignSelf: 'center' }}>+ {autresTous.length - autres.length} autres</span>
+              )}
             </div>
           </div>
         )}

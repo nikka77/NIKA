@@ -48,6 +48,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const r = await resolve(params);
   if (!r) return { title: 'Introuvable — AKASHA' };
   const label = axisValueLabel(r.taxo.name, r.axisDef.attr, r.val);
+  const url = `${SITE_URL}/learn/akasha/u/${r.slug}/${r.axisDef.attr}/${encodeURIComponent(r.val)}`;
+  const ogTitle = `${label} — ${r.axisDef.label} de ${r.taxo.name}`;
+  const desc = `${r.axisDef.genre === 'f' ? 'Toutes les' : 'Tous les'} ${r.axisDef.label.toLowerCase()} « ${label} » de l'univers ${r.taxo.name} dans le registre AKASHA, class${r.axisDef.genre === 'f' ? 'ées' : 'és'} par popularité.`;
   return {
     title: `${label} — ${r.axisDef.label} de ${r.taxo.name} | AKASHA`,
     // ACCORD DE GENRE : lu depuis la taxonomie (champ `genre`), jamais deviné — une heuristique
@@ -56,8 +59,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // « Toutes les divisions de la guerre … classés par popularité » sur les 189 pages d'axe
     // féminines mesurées le 10/08 (organization, equipe, division, generation, faction, race,
     // saga, partie, affiliation).
-    description: `${r.axisDef.genre === 'f' ? 'Toutes les' : 'Tous les'} ${r.axisDef.label.toLowerCase()} « ${label} » de l'univers ${r.taxo.name} dans le registre AKASHA, class${r.axisDef.genre === 'f' ? 'ées' : 'és'} par popularité.`,
-    alternates: { canonical: `${SITE_URL}/learn/akasha/u/${r.slug}/${r.axisDef.attr}/${encodeURIComponent(r.val)}` },
+    description: desc,
+    alternates: { canonical: url },
+    // Les 304 pages d'axe du plan de site héritaient de l'openGraph de app/layout.tsx : même
+    // carte de partage « super-app de la Côte d'Azur » pour toutes. Mesuré au rendu le 10/08/2026.
+    openGraph: { title: ogTitle, description: desc, url, siteName: 'AKASHA — le registre', locale: 'fr_FR', type: 'website' },
+    twitter: { card: 'summary_large_image', title: ogTitle, description: desc },
   };
 }
 

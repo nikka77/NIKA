@@ -23,12 +23,19 @@ type SearchParams = { type?: string; universe?: string; cat?: string; fam?: stri
 // (/learn/akasha/u/[slug]/[axis]/[value], qui a son propre generateMetadata) → canonical vers
 // elle plutôt que de laisser 108+ combinaisons de query-string partager le même <title> statique.
 export async function generateMetadata({ searchParams }: { searchParams?: Promise<SearchParams> }): Promise<Metadata> {
+  const description =
+    'Akasha : le registre universel NIKA. Personnages, lieux, artefacts, métiers, statuts, pouvoirs et compétences — réels ou imaginés, reliés entre eux.';
   const base: Metadata = {
     title: 'AKASHA — Le registre de tout ce qui existe | NIKA LEARN',
-    description:
-      'Akasha : le registre universel NIKA. Personnages, lieux, artefacts, métiers, statuts, pouvoirs et compétences — réels ou imaginés, reliés entre eux.',
+    description,
     keywords: ['akasha', 'registre', 'lore', 'wiki', 'personnages', 'univers', 'NIKA learn'],
     alternates: { canonical: `${SITE_URL}/learn/akasha` },
+    // La porte d'entrée du registre partageait elle aussi la carte générique de app/layout.tsx.
+    openGraph: {
+      title: 'AKASHA — Le registre de tout ce qui existe',
+      description, url: `${SITE_URL}/learn/akasha`, siteName: 'AKASHA — le registre', locale: 'fr_FR', type: 'website',
+    },
+    twitter: { card: 'summary_large_image', title: 'AKASHA — Le registre de tout ce qui existe', description },
   };
   const sp = (await searchParams) ?? {};
   const universe = (sp.universe ?? '').trim();

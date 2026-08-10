@@ -4,14 +4,27 @@
 // numériquement — exclu volontairement.
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/site';
 import { listTopByAttr, listBounties, listAges } from '@/lib/akasha/queries';
 import Leaderboard, { type LeaderRow } from '@/components/akasha/Leaderboard';
 
 export const revalidate = 3600;
 
+// Voir le commentaire de app/learn/akasha/wanted/page.tsx : sans bloc `openGraph`, Next hérite en
+// entier de celui du layout racine et la carte de partage vendait « NIKA — La super-app de la Côte
+// d'Azur ». Mesuré en demandant la page le 10/08/2026.
+const OG_TITRE = 'Les Records — classements AKASHA';
+const DESCRIPTION = 'Les classements du registre AKASHA : personnages les plus populaires, plus grosses primes de One Piece, doyens et benjamins. Tout data-driven, tous univers confondus.';
+
 export const metadata: Metadata = {
   title: 'Les Records — classements AKASHA | NIKA LEARN',
-  description: 'Les classements du registre AKASHA : personnages les plus populaires, plus grosses primes de One Piece, doyens et benjamins. Tout data-driven, tous univers confondus.',
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/learn/akasha/tops` },
+  openGraph: {
+    title: OG_TITRE, description: DESCRIPTION, url: `${SITE_URL}/learn/akasha/tops`,
+    siteName: 'AKASHA — le registre', locale: 'fr_FR', type: 'website',
+  },
+  twitter: { card: 'summary_large_image', title: OG_TITRE, description: DESCRIPTION },
 };
 
 const fmt = (n: number) => n.toLocaleString('fr-FR');
