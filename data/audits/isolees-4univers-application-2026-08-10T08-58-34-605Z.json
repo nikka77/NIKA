@@ -1,0 +1,515 @@
+{
+ "chantier": "sortie des isolées JoJo/Bleach/HxH/Death Note par infobox Fandom",
+ "quand": "2026-08-10T08:58:34.606Z",
+ "mode": "application",
+ "base": {
+  "fiches": 7632,
+  "aretes": 16699,
+  "isolees": 848
+ },
+ "parUnivers": {
+  "JoJo's Bizarre Adventure": {
+   "hote": "jojo.fandom.com",
+   "isolees": 49,
+   "ciblesBrutes": 4,
+   "aretes": 0,
+   "isoleesSorties": 0
+  },
+  "Bleach": {
+   "hote": "bleach.fandom.com",
+   "isolees": 45,
+   "ciblesBrutes": 18,
+   "aretes": 5,
+   "isoleesSorties": 3
+  },
+  "Hunter x Hunter": {
+   "hote": "hunterxhunter.fandom.com",
+   "isolees": 31,
+   "ciblesBrutes": 30,
+   "aretes": 10,
+   "isoleesSorties": 8
+  },
+  "Death Note": {
+   "hote": "deathnote.fandom.com",
+   "isolees": 11,
+   "ciblesBrutes": 3,
+   "aretes": 1,
+   "isoleesSorties": 1
+  }
+ },
+ "aretes": [
+  {
+   "univers": "Bleach",
+   "deSlug": "izaemon-toudou",
+   "de": "Izaemon Toudou",
+   "relation": "appartient",
+   "versSlug": "gotei-13",
+   "vers": "Gotei 13",
+   "versType": "status",
+   "champ": "previous affiliation",
+   "gabarit": "Bleach Wiki:Character Template (Ninth Division)",
+   "titreWiki": "Izaemon Tōdō",
+   "aliasRomanisation": "Izaemon Tōdō",
+   "pont": "nom identique",
+   "preuve": "bleach.fandom.com/wiki/Izaemon%20T%C5%8Dd%C5%8D — infobox {{Bleach Wiki:Character Template (Ninth Division)}}, previous affiliation = [[Gotei 13]] ; « Gotei 13 » est le nom de notre fiche"
+  },
+  {
+   "univers": "Bleach",
+   "deSlug": "izaemon-toudou",
+   "de": "Izaemon Toudou",
+   "relation": "habite",
+   "versSlug": "soul-society",
+   "vers": "Soul Society",
+   "versType": "place",
+   "champ": "previous affiliation",
+   "gabarit": "Bleach Wiki:Character Template (Ninth Division)",
+   "titreWiki": "Izaemon Tōdō",
+   "aliasRomanisation": "Izaemon Tōdō",
+   "pont": "nom identique",
+   "preuve": "bleach.fandom.com/wiki/Izaemon%20T%C5%8Dd%C5%8D — infobox {{Bleach Wiki:Character Template (Ninth Division)}}, previous affiliation = [[Soul Society]] ; « Soul Society » est le nom de notre fiche"
+  },
+  {
+   "univers": "Bleach",
+   "deSlug": "izaemon-toudou",
+   "de": "Izaemon Toudou",
+   "relation": "exerce",
+   "versSlug": "shinigami",
+   "vers": "Shinigami",
+   "versType": "profession",
+   "champ": "profession",
+   "gabarit": "Bleach Wiki:Character Template (Ninth Division)",
+   "titreWiki": "Izaemon Tōdō",
+   "aliasRomanisation": "Izaemon Tōdō",
+   "pont": "nom identique",
+   "preuve": "bleach.fandom.com/wiki/Izaemon%20T%C5%8Dd%C5%8D — infobox {{Bleach Wiki:Character Template (Ninth Division)}}, profession = [[Shinigami]] ; « Shinigami » est le nom de notre fiche"
+  },
+  {
+   "univers": "Bleach",
+   "deSlug": "rurichiyo-kasumiouji",
+   "de": "Rurichiyo Kasumiouji",
+   "relation": "habite",
+   "versSlug": "soul-society",
+   "vers": "Soul Society",
+   "versType": "place",
+   "champ": "affiliation",
+   "gabarit": "Bleach Wiki:Character Template (Soul Society Dweller)",
+   "titreWiki": "Rurichiyo Kasumiōji",
+   "aliasRomanisation": "Rurichiyo Kasumiōji",
+   "pont": "nom identique",
+   "preuve": "bleach.fandom.com/wiki/Rurichiyo%20Kasumi%C5%8Dji — infobox {{Bleach Wiki:Character Template (Soul Society Dweller)}}, affiliation = [[Soul Society]] ; « Soul Society » est le nom de notre fiche"
+  },
+  {
+   "univers": "Bleach",
+   "deSlug": "shuu-kannogi",
+   "de": "Shuu Kannogi",
+   "relation": "habite",
+   "versSlug": "soul-society",
+   "vers": "Soul Society",
+   "versType": "place",
+   "champ": "base of operations",
+   "gabarit": "Bleach Wiki:Character Template (Soul Society Dweller)",
+   "titreWiki": "Shū Kannogi",
+   "aliasRomanisation": null,
+   "pont": "nom identique",
+   "preuve": "bleach.fandom.com/wiki/Sh%C5%AB%20Kannogi — infobox {{Bleach Wiki:Character Template (Soul Society Dweller)}}, base of operations = [[Soul Society]] ; « Soul Society » est le nom de notre fiche"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "deSlug": "boki",
+   "de": "Boki",
+   "relation": "maitrise",
+   "versSlug": "nen",
+   "vers": "Nen",
+   "versType": "skill",
+   "champ": "type",
+   "gabarit": "Hunterpedia:Character",
+   "titreWiki": "Small Beetle",
+   "aliasRomanisation": null,
+   "pont": "nom identique",
+   "preuve": "hunterxhunter.fandom.com/wiki/Small%20Beetle — infobox {{Hunterpedia:Character}}, type = [[Nen]] ; « Nen » est le nom de notre fiche"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "deSlug": "buhara",
+   "de": "Buhara",
+   "relation": "appartient",
+   "versSlug": "association-hunters",
+   "vers": "Association des Hunters",
+   "versType": "status",
+   "champ": "affiliation",
+   "gabarit": "Hunterpedia:Character",
+   "titreWiki": "Buhara",
+   "aliasRomanisation": null,
+   "pont": "lien interlangue",
+   "preuve": "hunterxhunter.fandom.com/wiki/Buhara — infobox {{Hunterpedia:Character}}, affiliation = [[Hunter Association]] ; pont « lien interlangue » : hunterxhunter.fandom.com déclare le lien interlangue fr de « Hunter Association » : « Association Hunter » ; notre fiche porte « Association des Hunters »"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "deSlug": "cluck",
+   "de": "Cluck",
+   "relation": "appartient",
+   "versSlug": "association-hunters",
+   "vers": "Association des Hunters",
+   "versType": "status",
+   "champ": "affiliation",
+   "gabarit": "Hunterpedia:Character",
+   "titreWiki": "Cluck",
+   "aliasRomanisation": null,
+   "pont": "lien interlangue",
+   "preuve": "hunterxhunter.fandom.com/wiki/Cluck — infobox {{Hunterpedia:Character}}, affiliation = [[Hunter Association]] ; pont « lien interlangue » : hunterxhunter.fandom.com déclare le lien interlangue fr de « Hunter Association » : « Association Hunter » ; notre fiche porte « Association des Hunters »"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "deSlug": "kastro",
+   "de": "Kastro",
+   "relation": "habite",
+   "versSlug": "tour-celeste",
+   "vers": "Tour Céleste",
+   "versType": "place",
+   "champ": "previous occupation",
+   "gabarit": "Hunterpedia:Character",
+   "titreWiki": "Kastro",
+   "aliasRomanisation": null,
+   "pont": "lien interlangue",
+   "preuve": "hunterxhunter.fandom.com/wiki/Kastro — infobox {{Hunterpedia:Character}}, previous occupation = [[Heavens Arena]] ; pont « lien interlangue » : hunterxhunter.fandom.com déclare le lien interlangue fr de « Heavens Arena » : « Tour céleste » ; notre fiche porte « Tour Céleste »"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "deSlug": "kastro",
+   "de": "Kastro",
+   "relation": "maitrise",
+   "versSlug": "nen",
+   "vers": "Nen",
+   "versType": "skill",
+   "champ": "type",
+   "gabarit": "Hunterpedia:Character",
+   "titreWiki": "Kastro",
+   "aliasRomanisation": null,
+   "pont": "nom identique",
+   "preuve": "hunterxhunter.fandom.com/wiki/Kastro — infobox {{Hunterpedia:Character}}, type = [[Nen]] ; « Nen » est le nom de notre fiche"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "deSlug": "latarza",
+   "de": "Latarza",
+   "relation": "habite",
+   "versSlug": "greed-island",
+   "vers": "Greed Island",
+   "versType": "place",
+   "champ": "previous occupation",
+   "gabarit": "Hunterpedia:Character",
+   "titreWiki": "Latarza",
+   "aliasRomanisation": null,
+   "pont": "nom identique",
+   "preuve": "hunterxhunter.fandom.com/wiki/Latarza — infobox {{Hunterpedia:Character}}, previous occupation = [[Greed Island]] ; « Greed Island » est le nom de notre fiche"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "deSlug": "riehlvelt",
+   "de": "Riehlvelt",
+   "relation": "habite",
+   "versSlug": "tour-celeste",
+   "vers": "Tour Céleste",
+   "versType": "place",
+   "champ": "occupation",
+   "gabarit": "Hunterpedia:Character",
+   "titreWiki": "Riehlvelt",
+   "aliasRomanisation": null,
+   "pont": "lien interlangue",
+   "preuve": "hunterxhunter.fandom.com/wiki/Riehlvelt — infobox {{Hunterpedia:Character}}, occupation = [[Heavens Arena]] ; pont « lien interlangue » : hunterxhunter.fandom.com déclare le lien interlangue fr de « Heavens Arena » : « Tour céleste » ; notre fiche porte « Tour Céleste »"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "deSlug": "shachmono-tocino",
+   "de": "Shachmono Tocino",
+   "relation": "appartient",
+   "versSlug": "association-hunters",
+   "vers": "Association des Hunters",
+   "versType": "status",
+   "champ": "previous affiliation",
+   "gabarit": "Hunterpedia:Character",
+   "titreWiki": "Shachmono Tocino",
+   "aliasRomanisation": null,
+   "pont": "lien interlangue",
+   "preuve": "hunterxhunter.fandom.com/wiki/Shachmono%20Tocino — infobox {{Hunterpedia:Character}}, previous affiliation = [[Hunter Association]] ; pont « lien interlangue » : hunterxhunter.fandom.com déclare le lien interlangue fr de « Hunter Association » : « Association Hunter » ; notre fiche porte « Association des Hunters »"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "deSlug": "shachmono-tocino",
+   "de": "Shachmono Tocino",
+   "relation": "maitrise",
+   "versSlug": "nen",
+   "vers": "Nen",
+   "versType": "skill",
+   "champ": "type",
+   "gabarit": "Hunterpedia:Character",
+   "titreWiki": "Shachmono Tocino",
+   "aliasRomanisation": null,
+   "pont": "nom identique",
+   "preuve": "hunterxhunter.fandom.com/wiki/Shachmono%20Tocino — infobox {{Hunterpedia:Character}}, type = [[Nen]] ; « Nen » est le nom de notre fiche"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "deSlug": "togari",
+   "de": "Togari",
+   "relation": "appartient",
+   "versSlug": "association-hunters",
+   "vers": "Association des Hunters",
+   "versType": "status",
+   "champ": "previous affiliation",
+   "gabarit": "Hunterpedia:Character",
+   "titreWiki": "Togari",
+   "aliasRomanisation": null,
+   "pont": "lien interlangue",
+   "preuve": "hunterxhunter.fandom.com/wiki/Togari — infobox {{Hunterpedia:Character}}, previous affiliation = [[Hunter Association]] ; pont « lien interlangue » : hunterxhunter.fandom.com déclare le lien interlangue fr de « Hunter Association » : « Association Hunter » ; notre fiche porte « Association des Hunters »"
+  },
+  {
+   "univers": "Death Note",
+   "deSlug": "daril-ghiroza",
+   "de": "Daril Ghiroza",
+   "relation": "appartient",
+   "versSlug": "dieu-de-la-mort",
+   "vers": "Dieu de la Mort",
+   "versType": "status",
+   "champ": "species",
+   "gabarit": "Shinigami2",
+   "titreWiki": "Daril Ghiroza",
+   "aliasRomanisation": null,
+   "pont": "source citée en base",
+   "preuve": "deathnote.fandom.com/wiki/Daril%20Ghiroza — infobox {{Shinigami2}}, species = [[Shinigami]] ; pont « source citée en base » : notre fiche « Dieu de la Mort » déclare descFrSource = « claude-haiku (finisseur 02/08) · Shinigami », qui nomme la page « Shinigami »"
+  }
+ ],
+ "refuses": [
+  {
+   "univers": "JoJo's Bizarre Adventure",
+   "de": "Cameo",
+   "champ": "stand",
+   "cible": "Judgement",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "JoJo's Bizarre Adventure",
+   "de": "Gray Fly",
+   "champ": "stand",
+   "cible": "Tower of Gray",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "JoJo's Bizarre Adventure",
+   "de": "Masazo Kinoto",
+   "champ": "stand",
+   "cible": "Cheap Trick",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "JoJo's Bizarre Adventure",
+   "de": "Toyohiro Kanedaichi",
+   "champ": "stand",
+   "cible": "Super Fly",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Bleach",
+   "de": "Goethe",
+   "champ": "race",
+   "cible": "Doll",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Bleach",
+   "de": "Haru",
+   "champ": "race",
+   "cible": "Human",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Bleach",
+   "de": "Heita Momoyama",
+   "champ": "race",
+   "cible": "Plus",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Bleach",
+   "de": "Izaemon Toudou",
+   "champ": "race",
+   "cible": "Soul",
+   "motif": "page cible absente du wiki"
+  },
+  {
+   "univers": "Bleach",
+   "de": "Izaemon Toudou",
+   "champ": "base of operations",
+   "cible": "Seireitei",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Bleach",
+   "de": "Rurichiyo Kasumiouji",
+   "champ": "affiliation",
+   "cible": "Kasumiōji Clan",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Bleach",
+   "de": "Rurichiyo Kasumiouji",
+   "champ": "race",
+   "cible": "Soul",
+   "motif": "page cible absente du wiki"
+  },
+  {
+   "univers": "Bleach",
+   "de": "Rurichiyo Kasumiouji",
+   "champ": "base of operations",
+   "cible": "Seireitei",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Bleach",
+   "de": "Shuu Kannogi",
+   "champ": "affiliation",
+   "cible": "Kasumiōji Clan",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Bleach",
+   "de": "Shuu Kannogi",
+   "champ": "race",
+   "cible": "Soul",
+   "motif": "page cible absente du wiki"
+  },
+  {
+   "univers": "Bleach",
+   "de": "Shuu Kannogi",
+   "champ": "base of operations",
+   "cible": "Seireitei",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Boki",
+   "champ": "previous affiliation",
+   "cible": "Zazan",
+   "motif": "cible personne refusée (Zazan)"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Boki",
+   "champ": "previous affiliation",
+   "cible": "Zazan's Squad",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Boki",
+   "champ": "previous occupation",
+   "cible": "Chimera Ants",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Boki",
+   "champ": "previous occupation",
+   "cible": "Zazan's Squad",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Cluck",
+   "champ": "affiliation",
+   "cible": "Zodiacs",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Cluck",
+   "champ": "occupation",
+   "cible": "Zodiacs",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Coco Loo",
+   "champ": "occupation",
+   "cible": "Lamentation Tours",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Hishita",
+   "champ": "previous occupation",
+   "cible": "Zoldyck Family",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Matthew",
+   "champ": "previous occupation",
+   "cible": "287th Hunter Exam",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Riehlvelt",
+   "champ": "type",
+   "cible": "Emission",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Riehlvelt",
+   "champ": "type",
+   "cible": "Hunter × Hunter Battle Collection",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Riehlvelt",
+   "champ": "type",
+   "cible": "List of Hunter × Hunter Video Games",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Sedokan",
+   "champ": "affiliation",
+   "cible": "Trick Tower",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Sengi Guild Agent",
+   "champ": "affiliation",
+   "cible": "Sengi Guild",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Shachmono Tocino",
+   "champ": "previous affiliation",
+   "cible": "Nostrade Family",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Hunter x Hunter",
+   "de": "Togari",
+   "champ": "previous occupation",
+   "cible": "Hunter Exam",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Death Note",
+   "de": "Kyoko",
+   "champ": "species",
+   "cible": "Human",
+   "motif": "cible sans équivalent en base"
+  },
+  {
+   "univers": "Death Note",
+   "de": "Yasunaga",
+   "champ": "species",
+   "cible": "Human",
+   "motif": "cible sans équivalent en base"
+  }
+ ]
+}

@@ -1,0 +1,548 @@
+{
+  "mesureLe": "2026-08-10T09:11:00.715Z",
+  "corpus": 7632,
+  "parZone": {
+    "CharacterZone": 4031,
+    "EntityZone": 2612,
+    "Attaque": 659,
+    "OrganizationZone": 330
+  },
+  "detail": [
+    {
+      "slug": "konohagakure",
+      "type": "place",
+      "universe": "Naruto",
+      "eres": 5,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline",
+        "orbit"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 18,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline",
+          "orbit"
+        ],
+        "figuresCliquables": 21,
+        "autresLiensCliquables": 12,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations",
+        "orbit"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "grand-line",
+      "type": "place",
+      "universe": "One Piece",
+      "eres": 4,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline",
+        "orbit"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 18,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline",
+          "orbit"
+        ],
+        "figuresCliquables": 21,
+        "autresLiensCliquables": 3,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations",
+        "orbit"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "soul-society",
+      "type": "place",
+      "universe": "Bleach",
+      "eres": 4,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline",
+        "orbit"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 18,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline",
+          "orbit"
+        ],
+        "figuresCliquables": 21,
+        "autresLiensCliquables": 0,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations",
+        "orbit"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "ninja-medical",
+      "type": "profession",
+      "universe": "Naruto",
+      "eres": 4,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline",
+        "orbit"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 0,
+        "dossier": false,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline",
+          "orbit"
+        ],
+        "figuresCliquables": 2,
+        "autresLiensCliquables": 12,
+        "dossier": false,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations",
+        "orbit"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "hueco-mundo",
+      "type": "place",
+      "universe": "Bleach",
+      "eres": 4,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline",
+        "orbit"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 18,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline",
+          "orbit"
+        ],
+        "figuresCliquables": 21,
+        "autresLiensCliquables": 1,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations",
+        "orbit"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "morioh",
+      "type": "place",
+      "universe": "JoJo's Bizarre Adventure",
+      "eres": 4,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 6,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline"
+        ],
+        "figuresCliquables": 6,
+        "autresLiensCliquables": 0,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "mont-akina",
+      "type": "place",
+      "universe": "Initial D",
+      "eres": 4,
+      "shape": [
+        "identity",
+        "axis",
+        "relations",
+        "timeline"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 6,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "axis",
+          "relations",
+          "timeline"
+        ],
+        "figuresCliquables": 6,
+        "autresLiensCliquables": 0,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "axis",
+        "relations"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "marineford",
+      "type": "place",
+      "universe": "One Piece",
+      "eres": 4,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 1,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline"
+        ],
+        "figuresCliquables": 1,
+        "autresLiensCliquables": 0,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "sharingan",
+      "type": "skill",
+      "universe": "Naruto",
+      "eres": 5,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 0,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline"
+        ],
+        "figuresCliquables": 12,
+        "autresLiensCliquables": 2,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "rasengan",
+      "type": "power",
+      "universe": "Naruto",
+      "eres": 5,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 0,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline"
+        ],
+        "figuresCliquables": 8,
+        "autresLiensCliquables": 0,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "samehada",
+      "type": "artifact",
+      "universe": "Naruto",
+      "eres": 4,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 0,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline"
+        ],
+        "figuresCliquables": 6,
+        "autresLiensCliquables": 1,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "namek",
+      "type": "place",
+      "universe": "Dragon Ball",
+      "eres": 4,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 0,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline"
+        ],
+        "figuresCliquables": 0,
+        "autresLiensCliquables": 1,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "ae86-trueno",
+      "type": "artifact",
+      "universe": "Initial D",
+      "eres": 4,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 0,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline"
+        ],
+        "figuresCliquables": 2,
+        "autresLiensCliquables": 0,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations"
+      ],
+      "perdu": null
+    },
+    {
+      "slug": "cahier-de-la-mort",
+      "type": "artifact",
+      "universe": "Death Note",
+      "eres": 4,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "avant": {
+        "modules": [
+          "identity",
+          "timeline"
+        ],
+        "figuresCliquables": 0,
+        "dossier": true,
+        "attributs": false,
+        "voirAussi": false
+      },
+      "apres": {
+        "modules": [
+          "identity",
+          "relations",
+          "timeline"
+        ],
+        "figuresCliquables": 3,
+        "autresLiensCliquables": 0,
+        "dossier": true,
+        "attributs": true,
+        "voirAussi": true
+      },
+      "gagne": [
+        "relations"
+      ],
+      "perdu": null
+    }
+  ]
+}

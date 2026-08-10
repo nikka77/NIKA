@@ -1,0 +1,929 @@
+{
+  "mesureLe": "2026-08-10T08:44:29.616Z",
+  "corpus": 7632,
+  "brancheePage": 37,
+  "capaciteTimeline": 37,
+  "detail": [
+    {
+      "slug": "konohagakure",
+      "name": "Konohagakure",
+      "type": "place",
+      "universe": "Naruto",
+      "eras": 5,
+      "erasObjets": 5,
+      "erasImages": 5,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 511,
+      "relOut": 0,
+      "figuresEraZone": 441,
+      "membresOrbit": 449,
+      "sections": 5,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline",
+        "orbit"
+      ],
+      "perdu": [
+        "relations",
+        "sections",
+        "orbit"
+      ]
+    },
+    {
+      "slug": "grand-line",
+      "name": "Grand Line",
+      "type": "place",
+      "universe": "One Piece",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 115,
+      "relOut": 0,
+      "figuresEraZone": 112,
+      "membresOrbit": 112,
+      "sections": 6,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline",
+        "orbit"
+      ],
+      "perdu": [
+        "relations",
+        "sections",
+        "orbit"
+      ]
+    },
+    {
+      "slug": "soul-society",
+      "name": "Soul Society",
+      "type": "place",
+      "universe": "Bleach",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 93,
+      "relOut": 0,
+      "figuresEraZone": 42,
+      "membresOrbit": 93,
+      "sections": 8,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline",
+        "orbit"
+      ],
+      "perdu": [
+        "relations",
+        "sections",
+        "orbit"
+      ]
+    },
+    {
+      "slug": "ninja-medical",
+      "name": "Ninja médical",
+      "type": "profession",
+      "universe": "Naruto",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 42,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 40,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline",
+        "orbit"
+      ],
+      "perdu": [
+        "relations",
+        "orbit"
+      ]
+    },
+    {
+      "slug": "hueco-mundo",
+      "name": "Hueco Mundo",
+      "type": "place",
+      "universe": "Bleach",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 31,
+      "relOut": 0,
+      "figuresEraZone": 29,
+      "membresOrbit": 30,
+      "sections": 2,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline",
+        "orbit"
+      ],
+      "perdu": [
+        "relations",
+        "sections",
+        "orbit"
+      ]
+    },
+    {
+      "slug": "uchiha",
+      "name": "Clan Uchiha",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 5,
+      "erasObjets": 5,
+      "erasImages": 5,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 35,
+      "relOut": 12,
+      "figuresEraZone": 0,
+      "membresOrbit": 26,
+      "sections": 1,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline",
+        "orbit"
+      ],
+      "perdu": [
+        "relations",
+        "sections",
+        "orbit"
+      ]
+    },
+    {
+      "slug": "morioh",
+      "name": "Morioh",
+      "type": "place",
+      "universe": "JoJo's Bizarre Adventure",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 6,
+      "relOut": 0,
+      "figuresEraZone": 6,
+      "membresOrbit": 6,
+      "sections": 9,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline"
+      ],
+      "perdu": [
+        "relations",
+        "sections"
+      ]
+    },
+    {
+      "slug": "mont-akina",
+      "name": "Mont Akina",
+      "type": "place",
+      "universe": "Initial D",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 6,
+      "relOut": 0,
+      "figuresEraZone": 6,
+      "membresOrbit": 6,
+      "sections": 2,
+      "shape": [
+        "identity",
+        "axis",
+        "relations",
+        "sections",
+        "timeline"
+      ],
+      "perdu": [
+        "axis",
+        "relations",
+        "sections"
+      ]
+    },
+    {
+      "slug": "aburame",
+      "name": "Clan Aburame",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 6,
+      "relOut": 16,
+      "figuresEraZone": 0,
+      "membresOrbit": 5,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "iburi",
+      "name": "Clan Iburi",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 3,
+      "erasObjets": 3,
+      "erasImages": 3,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 3,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 3,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "hatake",
+      "name": "Clan Hatake",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 2,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 2,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "hoshigaki",
+      "name": "Clan Hoshigaki",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 3,
+      "erasObjets": 3,
+      "erasImages": 3,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 2,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 2,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "kaguya",
+      "name": "Clan Kaguya",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 2,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 1,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "fuma",
+      "name": "Clan Fūma",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 4,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 1,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "otsutsuki",
+      "name": "Clan Ōtsutsuki",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 5,
+      "erasObjets": 5,
+      "erasImages": 5,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 1,
+      "relOut": 11,
+      "figuresEraZone": 0,
+      "membresOrbit": 1,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "shimura",
+      "name": "Clan Shimura",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 3,
+      "erasObjets": 3,
+      "erasImages": 3,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 1,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 1,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "marineford",
+      "name": "Marineford",
+      "type": "place",
+      "universe": "One Piece",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 1,
+      "relOut": 0,
+      "figuresEraZone": 1,
+      "membresOrbit": 1,
+      "sections": 4,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline"
+      ],
+      "perdu": [
+        "relations",
+        "sections"
+      ]
+    },
+    {
+      "slug": "sharingan",
+      "name": "Sharingan",
+      "type": "skill",
+      "universe": "Naruto",
+      "eras": 5,
+      "erasObjets": 5,
+      "erasImages": 5,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 27,
+      "relOut": 1,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 2,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline"
+      ],
+      "perdu": [
+        "relations",
+        "sections"
+      ]
+    },
+    {
+      "slug": "rasengan",
+      "name": "Rasengan",
+      "type": "power",
+      "universe": "Naruto",
+      "eras": 5,
+      "erasObjets": 5,
+      "erasImages": 5,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 8,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 5,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline"
+      ],
+      "perdu": [
+        "relations",
+        "sections"
+      ]
+    },
+    {
+      "slug": "samehada",
+      "name": "Samehada",
+      "type": "artifact",
+      "universe": "Naruto",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 6,
+      "relOut": 1,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 2,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline"
+      ],
+      "perdu": [
+        "relations",
+        "sections"
+      ]
+    },
+    {
+      "slug": "namek",
+      "name": "Planète Namek",
+      "type": "place",
+      "universe": "Dragon Ball",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 0,
+      "relOut": 1,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 8,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline"
+      ],
+      "perdu": [
+        "relations",
+        "sections"
+      ]
+    },
+    {
+      "slug": "ae86-trueno",
+      "name": "Toyota AE86 Trueno",
+      "type": "artifact",
+      "universe": "Initial D",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 2,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 6,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline"
+      ],
+      "perdu": [
+        "relations",
+        "sections"
+      ]
+    },
+    {
+      "slug": "yamanaka",
+      "name": "Clan Yamanaka",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 3,
+      "relOut": 9,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "funato",
+      "name": "Clan Funato",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 5,
+      "erasObjets": 5,
+      "erasImages": 5,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 1,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "akimichi",
+      "name": "Clan Akimichi",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 5,
+      "erasObjets": 5,
+      "erasImages": 5,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 0,
+      "relOut": 13,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "kamizuru",
+      "name": "Clan Kamizuru",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 3,
+      "erasObjets": 3,
+      "erasImages": 3,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 0,
+      "relOut": 5,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "inuzuka",
+      "name": "Clan Inuzuka",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 1,
+      "relOut": 11,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "hozuki",
+      "name": "Clan Hōzuki",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 0,
+      "relOut": 6,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "kurama-clan",
+      "name": "Clan Kurama",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 5,
+      "erasObjets": 5,
+      "erasImages": 5,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 0,
+      "relOut": 1,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "chinoike",
+      "name": "Clan Chinoike",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 5,
+      "erasObjets": 5,
+      "erasImages": 5,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 0,
+      "relOut": 1,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "yotsuki",
+      "name": "Clan Yotsuki",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 3,
+      "erasObjets": 3,
+      "erasImages": 3,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 1,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "tsuchigumo",
+      "name": "Clan Tsuchigumo",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 3,
+      "erasObjets": 3,
+      "erasImages": 3,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 1,
+      "relOut": 1,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "karatachi",
+      "name": "Clan Karatachi",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 4,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 0,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "timeline"
+      ],
+      "perdu": []
+    },
+    {
+      "slug": "kedoin",
+      "name": "Clan Kedōin",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 3,
+      "erasObjets": 3,
+      "erasImages": 3,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 0,
+      "relOut": 1,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "relations",
+        "timeline"
+      ],
+      "perdu": [
+        "relations"
+      ]
+    },
+    {
+      "slug": "yuhi",
+      "name": "Clan Yūhi",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 3,
+      "erasObjets": 3,
+      "erasImages": 3,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 0,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "timeline"
+      ],
+      "perdu": []
+    },
+    {
+      "slug": "cahier-de-la-mort",
+      "name": "Death Note",
+      "type": "artifact",
+      "universe": "Death Note",
+      "eras": 4,
+      "erasObjets": 4,
+      "erasImages": 0,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 3,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 8,
+      "shape": [
+        "identity",
+        "relations",
+        "sections",
+        "timeline"
+      ],
+      "perdu": [
+        "relations",
+        "sections"
+      ]
+    },
+    {
+      "slug": "terumi",
+      "name": "Clan Terumī",
+      "type": "status",
+      "universe": "Naruto",
+      "eras": 3,
+      "erasObjets": 3,
+      "erasImages": 3,
+      "quote": true,
+      "imageUrl": true,
+      "relIn": 0,
+      "relOut": 0,
+      "figuresEraZone": 0,
+      "membresOrbit": 0,
+      "sections": 0,
+      "shape": [
+        "identity",
+        "timeline"
+      ],
+      "perdu": []
+    }
+  ]
+}

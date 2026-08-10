@@ -142,6 +142,25 @@ test('timeline — un tableau de non-objets (ex. ["texte"]) ne compte pas', () =
   assert.ok(!deriveShape(entry({ attributes: { forms: ['texte', null] } })).includes('timeline'));
 });
 
+test('timeline — une chronologie N’EXCLUT PAS les autres modules (le cas konohagakure)', () => {
+  // La fusion d'EraZone en module `timeline` (10/08/2026, §8 q3) existe POUR ce cas. Avant elle,
+  // `app/learn/akasha/[slug]/page.tsx` aiguillait sur `attributes.eras` AVANT d'appeler
+  // deriveShape : une fiche à ères n'obtenait donc rien d'autre que son rouleau temporel. Mesuré en
+  // base le 10/08, konohagakure porte 5 ères, un village canon, 5 sections et 449 arêtes de
+  // membership entrantes de personnage — les cinq modules ci-dessous, `timeline` COMPRIS. Ce test
+  // échoue si quelqu'un fait de `eras` une garde d'exclusion plutôt qu'une capacité de plus.
+  const shape = deriveShape(entry({
+    universe: 'Naruto',
+    attributes: {
+      village: 'Konohagakure',
+      eras: [{ label: 'Fondation' }, { label: 'Ère moderne' }],
+      sections: [{ i: '1', titre: 'Origines', texte: 'Un texte.' }],
+    },
+    relationsIn: membres(449, 'habite'),
+  }));
+  assert.deepEqual(shape, ['identity', 'axis', 'relations', 'sections', 'timeline', 'orbit']);
+});
+
 // ─── orbit ─────────────────────────────────────────────────────────────
 
 function membres(n: number, relation = 'habite', targetType: AkashaType = 'character'): ShapeRelation[] {

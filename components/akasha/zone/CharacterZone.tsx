@@ -161,6 +161,15 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
             qui le faisait flotter plus étroit que sa propre colonne de grille. La frise juste
             dessous suit la même largeur (déjà « alignée sur le portrait » avant C3-2 : ce couplage
             est ce qu'il fallait préserver, pas la valeur 560 elle-même). */}
+        {/* NI PORTRAIT NI FORME CURÉE → PAS DE CADRE DU TOUT (10/08/2026).
+            La branche de repli rendait `null` À L'INTÉRIEUR du cadre : un rectangle bordé de
+            729 × 912 px, vide, au milieu de la fiche. Constaté sur `sara-s-daughter`, seule fiche
+            de personnage sans visuel du corpus — son image de wiki a disparu et la fille de Sāra
+            n'en a pas d'autre (lui poser le portrait de sa MÈRE serait exactement l'erreur réparée
+            le 09/08 sur quatre têtes d'affiche). Une case vide se voit et s'accepte ; un cadre vide
+            promet une image qui ne viendra pas. Le reste de la fiche — nom, canal, grappes, dossier
+            — remonte alors naturellement. */}
+        {(portrait || hasCurated) && (
         <div style={{ position: 'relative', width: '100%', aspectRatio: '4/5', borderRadius: 18, overflow: 'hidden', border: '1px solid var(--bd2)', background: 'var(--bg2)', boxShadow: `0 40px 90px -50px ${accent}88` }}>
           {portrait ? (
             <>
@@ -195,6 +204,7 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
             </div>
           )}
         </div>
+        )}
 
         {forms.length > 1 && (
           <div style={{ marginTop: 18 }}>

@@ -1,0 +1,305 @@
+{
+ "chantier": "CHANTIER 6 — contrôles A (doublon) et B (vingt cas)",
+ "quand": "2026-08-10T08:45:27.668Z",
+ "ecritEnBase": "RIEN — audit en lecture seule",
+ "A_recouvrementDescFrEtSections": {
+  "fichesMesurees": 3898,
+  "commentaire": "part des trigrammes de descFr déjà présents dans les sections de la MÊME fiche",
+  "p10": 0,
+  "mediane": 0.07563025210084033,
+  "p90": 0.21649484536082475,
+  "auDessusDe_0_5": 11,
+  "auDessusDe_0_3": 150,
+  "auDessusDe_0_1": 1518,
+  "dixPlusRecouvrantes": [
+   {
+    "slug": "aya-tsuji",
+    "type": "character",
+    "universe": "JoJo's Bizarre Adventure",
+    "r": 0.7222222222222222
+   },
+   {
+    "slug": "pui-pui",
+    "type": "character",
+    "universe": "Dragon Ball",
+    "r": 0.7027027027027027
+   },
+   {
+    "slug": "water-daimyo",
+    "type": "character",
+    "universe": "Naruto",
+    "r": 0.625
+   },
+   {
+    "slug": "roses",
+    "type": "character",
+    "universe": "JoJo's Bizarre Adventure",
+    "r": 0.6097560975609756
+   },
+   {
+    "slug": "jean-ango",
+    "type": "character",
+    "universe": "One Piece",
+    "r": 0.5888888888888889
+   },
+   {
+    "slug": "scolippi",
+    "type": "character",
+    "universe": "JoJo's Bizarre Adventure",
+    "r": 0.5641025641025641
+   },
+   {
+    "slug": "gancho",
+    "type": "character",
+    "universe": "One Piece",
+    "r": 0.5454545454545454
+   },
+   {
+    "slug": "hishita",
+    "type": "character",
+    "universe": "Hunter x Hunter",
+    "r": 0.5037593984962406
+   },
+   {
+    "slug": "menis",
+    "type": "character",
+    "universe": "Bleach",
+    "r": 0.5029940119760479
+   },
+   {
+    "slug": "brindo-achino",
+    "type": "character",
+    "universe": "One Piece",
+    "r": 0.5
+   }
+  ],
+  "dixMoinsRecouvrantes": [
+   {
+    "slug": "gold-experience",
+    "type": "power",
+    "universe": "JoJo's Bizarre Adventure",
+    "r": 0
+   },
+   {
+    "slug": "pearl",
+    "type": "character",
+    "universe": "One Piece",
+    "r": 0
+   },
+   {
+    "slug": "victor",
+    "type": "character",
+    "universe": "Naruto",
+    "r": 0
+   },
+   {
+    "slug": "goki",
+    "type": "character",
+    "universe": "One Piece",
+    "r": 0
+   },
+   {
+    "slug": "gyro",
+    "type": "character",
+    "universe": "Hunter x Hunter",
+    "r": 0
+   },
+   {
+    "slug": "fake-namek",
+    "type": "place",
+    "universe": "Dragon Ball",
+    "r": 0
+   },
+   {
+    "slug": "atk-db-scattering-bullet",
+    "type": "power",
+    "universe": "Dragon Ball",
+    "r": 0
+   },
+   {
+    "slug": "kiba",
+    "type": "character",
+    "universe": "One Piece",
+    "r": 0
+   },
+   {
+    "slug": "atk-db-energy-palm",
+    "type": "power",
+    "universe": "Dragon Ball",
+    "r": 0
+   },
+   {
+    "slug": "hina-naruto",
+    "type": "character",
+    "universe": "Naruto",
+    "r": 0
+   }
+  ]
+ },
+ "B_vingtCas": {
+  "populationRiche": 177,
+  "pasDEchantillonnage": 8.85,
+  "cas": [
+   {
+    "slug": "15th-generation-s-higashi-no-kaioshin",
+    "name": "15th Generation's Higashi no Kaioshin",
+    "type": "character",
+    "universe": "Dragon Ball",
+    "longueur": 752,
+    "texteEntier": "Le Kaïoshin de l'Est est le souverain suprême du Quadrant Est de l'Univers, avec ses meilleurs amis, et sous son supérieur, le Daï Kaïoshin (Grand Kaïoshin Suprême). Il est petit, à la peau violette et aux cheveux blancs, vêtu d'une tenue de Kaïo élégante et toujours accompagné de son garde du corps et ami éternellement loyal, Kibito. Le Kaïoshin de l'Est survécut à l'assaut de Majin Buu sur le Monde des Kaïoshins pour devenir le seul Kaïoshin survivant, sauvé par son garde du corps. Le Kaïoshin de l'Est mentionne qu'il était le plus faible des quatre Kaïoshins. Par la suite, on l'appelle généralement seulement Kaïoshin, puisqu'il n'y en a plus d'autres avec qui le confondre. Durant la saga Buu, il fusionne avec Kibito pour former Kibitoshin."
+   },
+   {
+    "slug": "ashisogi-jizo",
+    "name": "Ashisogi Jizo",
+    "type": "character",
+    "universe": "Bleach",
+    "longueur": 617,
+    "texteEntier": "Mayuri Kurotsuchi est le capitaine de la 12e Division du Gotei 13 et le deuxième président de l'Institut de Recherche des Shinigamis. Il a pour lieutenant actuel Akon, après avoir été précédemment associé à Nemu Kurotsuchi, sa création artificielle. Mayuri a également servi comme 3e siège de la 12e Division sous les ordres de Kisuke Urahara. Son apparence distinctive, marquée par un maquillage blanc et noir, et ses changements de style vestimentaire reflètent ses différentes phases de recherche et de développement, notamment lors de son entrée dans le Hueco Mundo et après les invasions de l'Aizen et de Yhwach."
+   },
+   {
+    "slug": "atk-db-emperor-s-sign",
+    "name": "Emperor's Sign",
+    "type": "power",
+    "universe": "Dragon Ball",
+    "longueur": 825,
+    "texteEntier": "L'Empereur's Sign est une pose de combat (Fighting Pose) inventée par Frieza, apparue pour la première fois dans le film Dragon Ball Z: Résurrection « F ». Dans ce film, Frieza l'utilise pour inspirer ses alliés, et dans les jeux Dragon Ball Xenoverse et Xenoverse 2 elle constitue une Super Compétence accessible également au Future Warrior lors de l'entraînement de Frieza. Selon la race de l'utilisateur, la technique génère une aura de couleur spécifique (rouge pour les Saiyans augmentant l'attaque des alliés, jaune pour les Terrans restaurant le ki, verte pour les Majins restaurant l'endurance, bleu clair pour les Namekians restaurant progressivement la santé, et bleu marine pour la race de Frieza augmentant la vitesse de déplacement), voire un effet de soin pour les Namekians rappelant leur capacité de guérison."
+   },
+   {
+    "slug": "chuu-lee",
+    "name": "Chuu Lee",
+    "type": "character",
+    "universe": "Dragon Ball",
+    "longueur": 610,
+    "texteEntier": "Chuu Lee est une fille qui vit dans une maison au pied du mont Rumble. Goku rencontre Chuu Lee pendant les trois années où il s'est entraîné sous Kami. Elle a sauvé Goku après qu'il a été frappé par la foudre et a perdu connaissance. Chuu Lee garde un oisillon nommé Pippi comme animal de compagnie, et le choyait. Un jour, Pippi partit quelque part au loin. Alors que Chuu Lee attendait son retour sur le toit, elle sentit simplement quand il revint, même si l'oiseau ne fut ni vu ni entendu de nouveau. De cela, Goku apprit l'art de sentir la présence de quelqu'un, une chose qui lui serait utile à l'avenir."
+   },
+   {
+    "slug": "danpara",
+    "name": "Danpara",
+    "type": "character",
+    "universe": "Dragon Ball",
+    "longueur": 772,
+    "texteEntier": "Dan Para, également connu sous le nom de Don Para, est un mercenaire appartenant au culte Luud et l'un des trois frères Para, aux côtés de Bon Para et Son Para. Lors de la saga des Boules de Dragon Noires de Dragon Ball GT, il vole avec ses frères une Boule de Dragon Noire destinée à Goku, Pan et Trunks, puis tente de récupérer la seconde Boule en utilisant la technique Para Para Boogie pour affaiblir leurs adversaires. Défait par Trunks, il est transformé en poupée et absorbé par Luud avant d'être libéré lorsque le culte est détruit par une attaque combinée Kamehameha de Goku et Pan. Dans la saga des Dragons d'Ombre, il fournit de l'énergie à Goku pour son Super Ultra Spirit Bomb, maîtrisant également la télépathie pour communiquer et lire les pensées d'autrui."
+   },
+   {
+    "slug": "first-hoshikage",
+    "name": "Premier Hoshikage",
+    "type": "character",
+    "universe": "Naruto",
+    "longueur": 897,
+    "texteEntier": "Il était le fondateur et premier Hoshikage de Hoshigakure, ayant découvert il y a environ deux cents ans une étoile tombée (météorite) dotée de pouvoirs mystiques dans le Pays des Ours. En créant le village, il visait à former des shinobi de renom et à obtenir le statut de grand village caché, ignorant les effets secondaires de l'entraînement avec l'étoile qui provoquaient l'implosion du chakra chez certains habitants. Il portait l'habit traditionnel du Hoshikage : un chapeau, un haori, un kimono pourpre longue longueur ceinturé d'une ceinture blanche, et semblait être un homme d'âge moyen avec une moustache grise. Grâce à son rang de Kage, il était vraisemblablement un shinobi très puissant, ayant découvert comment exploiter le chakra de l'étoile qui a rendu Hoshigakure célèbre, bien qu'il reste incertain s'il échappait aux effets néfastes ou maîtrisait la Méthode du Paon Mystérieux."
+   },
+   {
+    "slug": "genkidama",
+    "name": "Genkidama",
+    "type": "power",
+    "universe": "Dragon Ball",
+    "longueur": 662,
+    "texteEntier": "Le Genkidama, ou Bombe Spirituelle, est une technique inventée par le Roi Kaio qui consiste à rassembler l'énergie vitale de tous les êtres vivants alentour pour former une sphère d'énergie dévastatrice. Elle a été utilisée notamment par Son Goku contre Freezer dans l'épisode spécial Real 4-D, contre Turles dans l'arbre de puissance et contre Lord Slug, tandis que Future Trunks a rassemblé l'énergie de ses alliés pour créer une Bombe Spirituelle qu'il a ensuite absorbée lors de son combat contre Fused Zamasu. Bien que seuls Goku, Krillin et Gohan soient connus pour l'avoir réellement lancée, d'autres personnages comme Cell ont affirmé pouvoir l'utiliser."
+   },
+   {
+    "slug": "haze-ninja-art-forbidden-technique-ephemeral-life",
+    "name": "Haze Ninja Art: Forbidden Technique: Ephemeral Life",
+    "type": "power",
+    "universe": "Naruto",
+    "longueur": 690,
+    "texteEntier": "Le Haze Ninja Art: Forbidden Technique: Ephemeral Life est un kinjutsu, technique ninjutsu barrière de classe supplémentaire. Par une succession de huit sceaux manuels, l'utilisateur sacrifie sa propre vie et se transforme en gemme rouge qui fusionne avec un spectre invoqué, le transmutant en un colossal golem entouré d'une barrière imperméable. Ce colosse possède une résistance remarquable aux techniques renforcées par le chakra et se déplace avec une rapidité disproportionnée à sa taille, tout en drainant l'énergie vitale des créatures vivantes dans la barrière pour se régénérer. Sa seule vulnérabilité est la gemme rouge centrale : sa destruction anéantit le golem et la barrière."
+   },
+   {
+    "slug": "ilforte-grantz",
+    "name": "Ilforte Grantz",
+    "type": "character",
+    "universe": "Bleach",
+    "longueur": 1685,
+    "texteEntier": "Date de naissance : 22 juin Signe du zodiaque : Cancer Taille : 185 cm Poids : 67 kg I. Histoire Ilforte était un Menos de classe Gillian, des années avant qu'Aizen ne prenne le contrôle de Las Noches et n'atteigne le Hueco Mundo avec le Hōgyoku. Ilforte faisait partie du groupe de Gillians avancés mené par Shawlong Kūfang et entraîné par Edrad Liones, Nakim et D-Roy ; outre lui-même, Ilforte forma un partenariat pour dévorer autant de Hollows que possible et progresser dans la classe des Menos Grande, afin d'éviter de rétrograder sur une simple échelle évolutive en tant que Gillians. Après un temps, ils trouvèrent un puissant Adjuchas nommé Grimmjow Jaegerjaquez, en forme de panthère, qui parvint à blesser D-Roy avant même que celui-ci puisse attaquer ; Shawlong, en tant que meneur, s'agenouilla devant Grimmjow (suivi par tous les autres) et lui demanda d'être leur roi, afin que sous sa direction ils atteignent la classe la plus puissante des Menos, les Vasto Lorde. Après un temps de chasse et de prédation de Hollows, Ilforte et les autres réalisent que leur développement s'est arrêté après avoir mangé plus de 3 000 Hollows ; tous le constatent, et Ilforte note qu'après le millième Hollow leur puissance a cessé d'augmenter, sauf pour Grimmjow qui ne semble pas prêt à s'arrêter et méprise les lâches. Shawlong demande alors qu'ils cessent de manger pour figer leur développement et ainsi éviter de rétrograder sur l'échelle évolutive ; Grimmjow accepta. II. Première apparition dans Bleach Ilforte Grantz est un Arrancar sarcastique et efféminé aux longs cheveux blonds. Ce qui reste de son masque de Hollow est au sommet de sa tête et ressemble à un heaume brisé."
+   },
+   {
+    "slug": "kamyu-s-fellow-boxer",
+    "name": "Kamyu's Fellow Boxer",
+    "type": "character",
+    "universe": "One Piece",
+    "longueur": 707,
+    "texteEntier": "Première apparition : Épisode 99. Camus mena un groupe de trois autres amis dans leurs voyages d'un village à l'autre afin d'obtenir de la nourriture gratuite en se faisant passer pour des membres de l'Armée Rebelle. Le premier est un homme petit et légèrement bronzé, à la tête ronde, aux petites oreilles et au nez large en forme de groin. Il a d'épaisses lèvres violettes, des dents arrondies et de larges épaules. Il porte des lunettes roses, un bonnet d'hiver vert, des gants de boxe rouges et une ceinture de champion de boxe. Il porte aussi un peignoir de boxe orange à liseré rose, un maillot de corps violet à col plongeant, un short rouge avec une ceinture verte et des chaussures rouges à lacets."
+   },
+   {
+    "slug": "komei",
+    "name": "Kōmei",
+    "type": "character",
+    "universe": "Naruto",
+    "longueur": 898,
+    "texteEntier": "Kōmei est le stratège du Pays des Oiseaux et a été considéré comme candidat au poste de daimyō après la mort du précédent titulaire, mais il n'a pas été choisi afin d'éviter un conflit. Il porte les cheveux noirs courts et dégarnis avec une mèche de chaque côté atteignant le coin de sa bouche, des yeux marron clair, un petit chapeau blanc, un kimono blanc à manches longues et présente deux cicatrices sur la poitrine qui descendent jusqu'à l'abdomen. Kōmei maîtrise le maniement de l'épée et possède des connaissances des arts du samouraï, comme le montre son intention de pratiquer le seppuku. Lors de la mission d'extermination du Guerrier Maudit, il a d'abord été soupçonné d'être à l'origine de l'apparition du guerrier maudit, mais l'équipe de Naruto a découvert son innocence et, après avoir été libéré par Naruto déguisé, il a aidé les shinobi à découvrir la vérité derrière ce phénomène."
+   },
+   {
+    "slug": "lava-release-rubber-ball",
+    "name": "Lava Release: Rubber Ball",
+    "type": "power",
+    "universe": "Naruto",
+    "longueur": 712,
+    "texteEntier": "Le Lava Release: Rubber Ball est un ninjutsu Kekkei Genkai de nature Lave, classé comme technique défensive, ayant une portée courte (0‑5 m) et nécessitant le sceau de main Bird. L'utilisateur projette une boule de lave creuse et caoutchouteuse qui absorbe et dissipe l'impact d'un coup, se déformant ou rebondissant lorsqu'elle est frappée, permettant de protéger un objet ou de servir de feinte pour le retirer discrètement. Dans ses variantes, Karyū crée des boules plus sombres et plus solides, utilisables comme projectiles à distance dont la taille et les dégâts dépendent du chakra investi, tandis que Dodai peut les employer offensivement en les faisant ricocher ou en s'en servant comme masse écrasante."
+   },
+   {
+    "slug": "mizunoe",
+    "name": "Mizunoe",
+    "type": "character",
+    "universe": "Naruto",
+    "longueur": 639,
+    "texteEntier": "Mizunoe est un ancien membre de la faction Anbu Root de Konohagakure. Il a été chargé par Danzō d'assassiner Hiruzen pour l'empêcher de retrouver son poste de Hokage. Lors de cette mission, il a affronté Kakashi déguisé en Anbu, ce qui a entraîné l'échec de la mission. Mizunoe est décrit comme extrêmement loyal à Danzō et prêt à exécuter ses ordres sans hésitation. Il est également caractérisé par sa grande taille et ses cheveux noirs coupés court, ainsi que par son habillement standard d'Anbu avec un masque à marques jaunes. En tant qu'Anbu, Mizunoe est considéré comme un shinobi puissant, utilisant un sabre comme arme principale."
+   },
+   {
+    "slug": "noriko",
+    "name": "Noriko",
+    "type": "character",
+    "universe": "Death Note",
+    "longueur": 1229,
+    "texteEntier": "Elle est une amie de Misa Amane. Elle apparaît au chapitre 48 « Give-and-Take ». Durant l'enquête sur Yotsuba, Misa n'a le droit d'aller nulle part sans être escortée par Mogi. Misa contacte discrètement Nori et organise une rencontre. Misa joue dans un grand film. Le lendemain, après un tournage en extérieur, elle demande à pouvoir utiliser les toilettes pour dames d'un hôpital local. Dans une cabine l'attend Nori, déguisée en infirmière. Les deux filles échangent rapidement leurs vêtements et leurs perruques. Misa a expliqué à Nori qu'elle veut aller à un rendez-vous mais ne peut avoir beaucoup d'intimité en raison de son statut de célébrité. Nori est ravie de porter les vêtements de Misa — ce qui indique qu'elle est une fan de Misa, un mannequin et une actrice célèbre. Vêtue de la tenue d'infirmière et portant une perruque noire, Misa s'en va alors, passant devant Mogi et partant faire un tour en voiture avec Higuchi, dans l'intention de le démasquer comme le Kira de Yotsuba. Nori, de son côté, s'approche de Mogi qui, réalisant qu'il a été berné, donne rapidement l'alerte au reste de la cellule d'enquête sur Kira, laquelle doit attendre le retour de Misa dans la soirée — avec la preuve que Higuchi est Kira."
+   },
+   {
+    "slug": "ran-fuan",
+    "name": "Ran Fuan",
+    "type": "character",
+    "universe": "Dragon Ball",
+    "longueur": 1306,
+    "texteEntier": "Une compétitrice du 21e Tenkaichi Budokai qui utilise comme arme le fait d'être une femme « sans défense ». Par exemple, elle pousse un cri lorsqu'on s'apprête à la frapper, ce qui fait hésiter l'adversaire, et durant ce laps de temps, elle assène un coup de poing ou de pied dévastateur. Si cette technique échoue, elle se déshabille et tente de choquer ou d'embarrasser son adversaire. Namu ne parvient à la vaincre qu'en fermant les yeux et en l'attaquant sans « poser le regard sur sa chair féminine ». Dans le manga, sa photo apparaît brièvement sur l'une des listes d'images comme l'une des nombreuses cibles de la mission de Tambourine, chargé de tuer les artistes martiaux durant la saga de Piccolo, bien qu'on ignore si Ran Fuan fut tuée ; étant donné qu'elle n'était plus apparue dans le manga ou l'anime après le Budokai, on peut supposer sans risque que Tambourine fut arrêté avant de pouvoir la tuer. Dans le doublage américain, le déshabillage a été supprimé. À la place, on montre la scène de l'une des attaques ratées de Namu, suivie de son pied qui tressaute pour indiquer qu'elle a été assommée. Curieusement, cela n'est pas censuré dans les résumés, qui la montrent clairement en sous-vêtements. Les mots Ran et Fuan signifient en japonais « lingerie » et « sous-vêtements de maintien »."
+   },
+   {
+    "slug": "saichourou",
+    "name": "Saichourou",
+    "type": "character",
+    "universe": "Dragon Ball",
+    "longueur": 825,
+    "texteEntier": "Guru est le Namek le plus vieux et le plus sage encore en vie et est l'un des trois seuls survivants d'un bouleversement climatique cataclysmique survenu plusieurs centaines d'années avant les événements de la série. Guru est l'un des deux survivants connus d'un bouleversement climatique cataclysmique sur Namek plusieurs centaines d'années avant les événements de la série (les autres étant Kami et le Roi Piccolo, qui ne faisaient jadis qu'un seul être avant que Kami ne se sépare de son mal intérieur). Guru est réputé pour avoir sauvé la race namek après le bouleversement climatique, en pondant des œufs et en perpétuant son espèce. Au cours de sa vie, il engendra 109 enfants, dont son garde du corps Nail et le jeune Dende. Il n'est pas nommé dans la version japonaise originale et n'est désigné que comme « l'Aîné »."
+   },
+   {
+    "slug": "shen",
+    "name": "Shen",
+    "type": "character",
+    "universe": "Dragon Ball",
+    "longueur": 1120,
+    "texteEntier": "C'est l'alias sous lequel Kami (le Tout-Puissant) s'inscrit au 23e Tenkaichi Budokai. Il possède le corps d'un type à l'air typiquement ringard pour se déguiser afin de pouvoir vaincre Piccolo (Ma Junior) aux yeux du public. Son nom est un jeu de mots sur la première partie du nom du dragon terrestre, Shenlong, et signifie « Dieu » (la seconde partie signifie « dragon »). Kami participe au budokai avec son âme dans le corps d'un ringard afin de vaincre Piccolo. Kami le fait parce que Mr. Popo a dit à Son Goku que si Piccolo meurt, Kami meurt aussi ; Kami craint donc que Goku ne tue pas Piccolo. Kami tente de vaincre Piccolo avec le « Mafuba » mais cela se retourne contre lui et Shen manque d'être capturé dans une bouteille ; mais Kami refuse de sacrifier l'humain et quitte le corps avant qu'il ne soit pris. L'humain se réveille sans aucun souvenir des événements et se retrouve à recevoir des ovations de « beau combat » et « bel essai » de la foule. Croyant qu'il avait sombré dans une sévère beuverie (au saké), il fuit de honte, pour finalement tomber sur son fils, si fier de son père, le grand guerrier."
+   },
+   {
+    "slug": "surprise-attack-and-diversion-platoon",
+    "name": "Surprise Attack and Diversion Platoon",
+    "type": "status",
+    "universe": "Naruto",
+    "longueur": 697,
+    "texteEntier": "Le Surprise Attack and Diversion Platoon est une unité de l'Akatsuki formée par Kabuto Yakushi au début de la Quatrième Grande Guerre Shinobi, composée des shinobi réincarnés Chūkichi, Deidara, Sasori et Shin. Sa mission consiste à mener une frappe aérienne contre les forces alliées shinobi, avec Deidara et Sasori chargés de l'offensive grâce à leurs pièges et explosifs, tandis que Chūkichi assure la détection et Shin le renfort. Le refus de Chūkichi de suivre les ordres entraîne l'effacement de sa personnalité, et après le combat contre le Parti d'Infiltration et de Reconnaissance, il établit ultérieurement le contact avec d'autres groupes de shinobi réincarnés pour obtenir des renforts."
+   },
+   {
+    "slug": "temujin-s-continent",
+    "name": "Temujin's Continent",
+    "type": "place",
+    "universe": "Naruto",
+    "longueur": 730,
+    "texteEntier": "Ce continent sans nom, présenté dans le film Naruto : La Légende de la Pierre de Gelel, est décrit comme étant ravagé par la guerre et dont l'esthétique s'inspire de l'Europe post-médiévale et de la Mésoamérique. Temujin et Haido y sont originaires ; la Pierre de Gelel y est connue de façon très ésotérique, car un clan y a migré après avoir été décimé sur le continent principal. Naruto et Temujin y rencontrent les restes de ce clan, qui voyagent en caravane en se présentant comme des peuples nomades. Seule la lignée royale de ce lieu peut sceller la Veine de Gelel, tandis que ses habitants, ignorant totalement le chakra, emploient des techniques nommées en anglais, témoignant de leur isolement vis-à-vis du monde shinobi."
+   },
+   {
+    "slug": "wabisuke",
+    "name": "Wabisuke",
+    "type": "character",
+    "universe": "Bleach",
+    "longueur": 661,
+    "texteEntier": "Le Zanpakutō d'Izuru Kira. L'esprit de Wabisuke prend la forme d'un homme émacié et torse nu. Il porte une grosse boule de métal sur l'épaule gauche et le Shikai d'Izuru dans la main droite. Son pantalon ressemble à celui du shihakushō d'un Shinigami, mais noué avec des chaînes plutôt qu'un obi. On le voit toujours la tête baissée, laissant ses cheveux couvrir entièrement son visage. L'esprit porte aussi une grande tablette de pierre enchaînée à son corps qui semble le tirer vers le bas ; cela reflète les capacités de Wabisuke, qui doublent le poids de ceux qui sont frappés par sa lame. Vu dans l'arc des Récits Inconnus des Zanpakutō (anime uniquement)."
+   }
+  ]
+ }
+}

@@ -1,26 +1,40 @@
 'use client';
 // components/akasha/zone/EntityZone.tsx — fiche « entité secondaire » (LOT 2b, refonte AKASHA).
 // Remplace le gabarit générique historique pour les fiches power/artifact/place/profession/skill
-// qui n'atteignent aucune des trois zones dédiées (personnage, organisation, à ères) — mesuré
-// 08/08/2026 : 2 599 fiches (Naruto 1 775, One Piece 568, Dragon Ball 160, JoJo 49, Bleach 25,
-// Initial D 11, HxH 7, Death Note 4). MÊME grammaire — surface vivante + canal re-scopable, posée
-// sur le MÊME `zone-context` que CharacterZone/OrganizationZone/EraZone (NON TOUCHÉES, ni le
-// contexte ni les trois zones) — composée cette fois par CAPACITÉS (lib/akasha/shape.ts, LOT 2a)
-// plutôt que par un 4ᵉ gabarit typé : un module absent des capacités RÉELLES de l'entrée n'est
-// jamais monté, jamais un état vide déguisé (tasks/akasha-architecture.md §1, renoncement 4).
+// qui n'atteignent aucune des deux zones dédiées (personnage, organisation) — mesuré 10/08/2026 :
+// 2 612 fiches (2 598 + les 14 à ères reprises ci-dessous). MÊME grammaire — surface vivante +
+// canal re-scopable, posée sur le MÊME `zone-context` que CharacterZone/OrganizationZone (NON
+// TOUCHÉES, ni le contexte ni les deux zones) — composée cette fois par CAPACITÉS
+// (lib/akasha/shape.ts, LOT 2a) plutôt que par un gabarit typé : un module absent des capacités
+// RÉELLES de l'entrée n'est jamais monté, jamais un état vide déguisé
+// (tasks/akasha-architecture.md §1, renoncement 4).
+//
+// FUSION D'ERAZONE (10/08/2026, §8 question 3 « fondre en module `timeline`, au LOT 5 » — dernier
+// reste du lot 5). `components/akasha/zone/EraZone.tsx` est SUPPRIMÉE : son rouleau temporel vit
+// désormais ici en module `timeline`, monté par `deriveShape` sur la CAPACITÉ (des ères ou des
+// formes), jamais sur un type ni sur un nom de composant. Ce que la branche `eras` de page.tsx
+// coûtait aux 14 fiches qu'elle interceptait, mesuré fiche par fiche le 10/08 : aucune `relations`,
+// aucun `orbit`, aucun `axis`, aucun bloc « Attributs », aucun « Voir aussi » — konohagakure
+// (449 membres) et grand-line (112) étaient précisément les deux cas d'école du seuil `orbit` que
+// le commentaire de shape.ts citait sans qu'ils empruntent jamais ce chemin (tasks/lessons.md,
+// 08/08). Ce que ce module rend et qu'EntityZone n'avait pas : le portrait piloté par la frise, la
+// citation encadrée, les quatre lignes d'ère dans le canal.
 //
 // Zéro requête neuve pour le canal (getEntryBySlug joint déjà tout) — le canal lit la relation
 // ENTRANTE pertinente au TYPE (maitrise/pouvoir, possede/artefact, exerce/métier, habite/lieu).
 // Seule exception, EXPLICITEMENT hors du canal : `axisNeighbors` (LOT 2c, repli des isolées) est
 // calculé côté page (Server Component) via `listEntries`, la même requête déjà utilisée par le
 // registre pour filtrer par axe — jamais une relation inventée, jamais un nouveau point d'accès.
+import { useState } from 'react';
 import Link from 'next/link';
+import ArcFrieze from '../ArcFrieze';
 import {
   RARITY_META, TYPE_META, universeMeta, universeWordmark,
   type AkashaEntryDetail, type AkashaEntryCard, type AkashaType,
 } from '@/lib/akasha/types';
 import { universeHubSlug, taxonomyByName, ALLOWED_FILTER_ATTRS } from '@/lib/akasha/universe-taxonomy';
 import { registryHref } from '@/lib/akasha/href';
+import { normalizeForms } from '@/lib/akasha/forms';
 import { deriveShape, ORBIT_MIN_MEMBERS, type AkashaModule } from '@/lib/akasha/shape';
 import { libelle } from '@/lib/akasha/relation-labels';
 import { ZoneProvider, useZone } from './zone-context';
@@ -55,6 +69,48 @@ const PRIMARY_RELATION: Partial<Record<AkashaType, { rels: string[]; label: stri
 // délibérément la même ligne (voir le commentaire de shape.ts à ce sujet).
 const GRAPPE_CAP = ORBIT_MIN_MEMBERS;
 
+/** Les trois champs libres d'une ère n'ont pas le même SENS selon la nature de l'entité : le
+ *  « dirigeant » d'un village est le « porteur » d'une arme et le « maître » d'un pouvoir. Table
+ *  reprise telle quelle d'EraZone (elle-même héritière de l'ancien PlaceView).
+ *  Ce n'est PAS un aiguillage de composition — `deriveShape` a déjà décidé que le module
+ *  `timeline` se monte, sur la seule présence d'une chronologie ; le type ne choisit ici que le MOT
+ *  en tête de ligne, exactement comme `PRIMARY_RELATION` ci-dessus choisit « Maîtrisé par » ou
+ *  « Possédé par ». Défaut = `place`, le cas le plus fréquent des fiches à ères (8 des 14). */
+const ERA_LABELS: Partial<Record<AkashaType, { leader: string; event: string; threat: string }>> = {
+  artifact: { leader: 'Porteur', event: 'Fait marquant', threat: 'Particularité' },
+  profession: { leader: 'Figure', event: 'Technique clé', threat: 'Exigence' },
+  status: { leader: 'Figure', event: 'Événement', threat: 'Dōjutsu' },
+  power: { leader: 'Maître', event: 'Forme', threat: 'Rang' },
+  skill: { leader: 'Porteur', event: 'Éveil', threat: 'Pouvoir' },
+  place: { leader: 'Dirigeant', event: 'Événement', threat: 'Menace' },
+};
+const ERA_LABELS_DEFAUT = ERA_LABELS.place!;
+
+/** Une étape de la chronologie, dans le vocabulaire commun aux deux sources qu'accepte
+ *  `aUneChronologie` (lib/akasha/shape.ts) : `eras` (img/period/event/leader/threat/summary) et
+ *  `forms` (url/idle/age/arc). Le module lit les deux plutôt que les seules `eras` — sinon une
+ *  fiche à `forms` monterait `timeline` sans rien rendre, c'est-à-dire le « module fantôme » que
+ *  shape.ts proscrit en toutes lettres. Mesuré le 10/08/2026 sur le corpus paginé (7 632 fiches) :
+ *  0 fiche de cette population porte des `forms` — la branche existe pour la CAPACITÉ, pas pour un
+ *  cas courant, et c'est bien pour ça qu'elle doit exister avant qu'une fiche en porte. */
+interface Etape {
+  label?: unknown; img?: unknown; url?: unknown; idle?: unknown;
+  period?: unknown; age?: unknown; event?: unknown; arc?: unknown;
+  leader?: unknown; threat?: unknown; summary?: unknown;
+}
+
+/** Chronologie de l'entrée + sa provenance. Les `eras` priment : quand les deux existent, ce sont
+ *  elles qui portent les quatre lignes du canal (les `forms` n'en ont aucune). */
+function lireChronologie(attributes: Record<string, unknown>): { etapes: Etape[]; source: 'eras' | 'forms' | null } {
+  const eras = Array.isArray(attributes.eras)
+    ? (attributes.eras as unknown[]).filter((e): e is Etape => e !== null && typeof e === 'object')
+    : [];
+  if (eras.length) return { etapes: eras, source: 'eras' };
+  const forms = normalizeForms(attributes) as Etape[];
+  if (forms.length) return { etapes: forms, source: 'forms' };
+  return { etapes: [], source: null };
+}
+
 export interface AxisNeighbors {
   attr: string;
   label: string;
@@ -75,6 +131,10 @@ export default function EntityZone({ entry, axisNeighbors }: { entry: AkashaEntr
 
 function ZoneInner({ entry, axisNeighbors }: { entry: AkashaEntryDetail; axisNeighbors?: AxisNeighbors | null }) {
   const { sel, select } = useZone();
+  // Étape courante de la frise. État LOCAL et non `ZoneSelection` : la frise ne re-scope pas le
+  // canal sur un panneau à part, elle change ce que le canal montre DÉJÀ par défaut — c'est ce qui
+  // fait qu'un seul geste pilote le portrait ET le canal (comportement d'EraZone, préservé).
+  const [etapeIdx, setEtapeIdx] = useState(0);
 
   const shape = deriveShape(entry);
   const has = (mod: AkashaModule) => shape.includes(mod);
@@ -88,14 +148,58 @@ function ZoneInner({ entry, axisNeighbors }: { entry: AkashaEntryDetail; axisNei
   const initiale = (entry.name.match(/\p{L}|\p{N}/u)?.[0] ?? '◆').toUpperCase();
   const bio = str(a.bio) || str(a.descFr) || entry.summary;
 
+  // ── Module `timeline` (fusion d'EraZone) : la frise, le portrait d'époque, les lignes du canal.
+  // `has('timeline')` et une chronologie non vide disent la MÊME chose (mêmes gardes, cf.
+  // `aDesElementsObjets` dans shape.ts) — on exige les deux pour que le module ne puisse pas se
+  // monter sans matière si l'une des deux dérivait un jour.
+  const { etapes, source: chronoSource } = lireChronologie(a);
+  const timeline = has('timeline') && etapes.length > 0;
+  const etape: Etape | null = timeline ? etapes[Math.min(etapeIdx, etapes.length - 1)] ?? null : null;
+  const eraLabels = ERA_LABELS[entry.type] ?? ERA_LABELS_DEFAUT;
+  // L'illustration d'époque prime sur le portrait de la fiche ; à défaut (cahier-de-la-mort : 4
+  // ères, 0 image) on retombe sur `image_url`, exactement comme le faisait EraZone.
+  const portrait = (etape ? str(etape.img) ?? str(etape.url) ?? str(etape.idle) : null) ?? entry.image_url;
+  // Cadre PAYSAGE quand une chronologie pilote le portrait — le 4/3 du portrait générique
+  // enfermerait une illustration large dans deux bandes vides. Mêmes valeurs qu'EraZone
+  // (16/10, 640 px) : ce chantier fusionne, il ne re-dessine pas.
+  // (Le commentaire d'origine annonçait « les 61 illustrations d'ère du corpus, toutes en
+  // 1100×613 ». Recompté le 10/08 : 36 fiches portent une illustration d'ère, pour 78 fichiers
+  // distincts — et je n'ai pas mesuré leurs dimensions une par une. Un chiffre inventé dans un
+  // commentaire se croit d'autant mieux qu'il est précis ; celui-là ne fondait pas le choix de
+  // ratio, qui tient tout seul.)
+  const cadre = timeline ? { ratio: '16/10', max: 640 } : { ratio: '4/3', max: 560 };
+  const quote = a.quote && typeof a.quote === 'object' ? (a.quote as { text?: string; author?: string }) : null;
+
+  const onEtape = (i: number) => {
+    setEtapeIdx(i);
+    // Ramener le canal à son panneau par défaut : c'est LUI qui porte les lignes de l'étape, donc
+    // sans ce retour la frise piloterait le portrait sans que le canal suive (EraZone, l. 58).
+    select(null);
+  };
+
   // ── Réseau (niveau 4) : la relation pertinente au type, puis tout le reste. ──
   const primary = PRIMARY_RELATION[entry.type];
   const primaryRels = new Set(primary?.rels ?? []);
+  // DÉDOUBLONNAGE PAR SLUG, obligatoire : `primary.rels` peut contenir DEUX relations (`place` lit
+  // habite ET appartient), et un personnage porte parfois les deux vers le même lieu. Trois
+  // conséquences, toutes visibles : le compteur du titre affichait des ARÊTES pour des PERSONNES
+  // (« Habité par · 449 » pour 443 personnes sur konohagakure), React recevait deux enfants de même
+  // `key` (avertissement « children duplicated and/or omitted » relevé en console le 10/08 sur
+  // konohagakure, soul-society et hueco-mundo), et le puits `orbit` pouvait montrer deux fois le
+  // même visage. Mesuré sur le corpus paginé : 16 fiches concernées — 3 arrivent ici par la fusion
+  // d'EraZone, les 13 autres (sunagakure, karakura, kirigakure, loguetown-lieu…) portaient déjà le
+  // défaut. On garde la première occurrence : le tri par popularité passe AVANT, et les deux
+  // occurrences sont de toute façon la même personne.
   const primaryMembers: Membre[] = primary
-    ? entry.relationsIn
-        .filter((r) => primaryRels.has(r.relation) && r.target.type === 'character')
-        .map((r) => ({ slug: r.target.slug, name: r.target.name, img: r.target.image_url, favorites: fav(r.target.favorites) }))
-        .sort((x, y) => y.favorites - x.favorites)
+    ? [
+        ...new Map(
+          entry.relationsIn
+            .filter((r) => primaryRels.has(r.relation) && r.target.type === 'character')
+            .map((r) => ({ slug: r.target.slug, name: r.target.name, img: r.target.image_url, favorites: fav(r.target.favorites) }))
+            .sort((x, y) => y.favorites - x.favorites)
+            .map((mb) => [mb.slug, mb] as const),
+        ).values(),
+      ]
     : [];
   const primarySlugs = new Set(primaryMembers.map((mb) => mb.slug));
 
@@ -169,21 +273,59 @@ function ZoneInner({ entry, axisNeighbors }: { entry: AkashaEntryDetail; axisNei
           {entry.name}
         </h1>
 
-        {/* Niveau 1 — Signe : portrait, ou tuile générée (initiale + dégradé d'accent). */}
-        <div style={{ position: 'relative', width: '100%', maxWidth: 560, aspectRatio: '4/3', borderRadius: 18, overflow: 'hidden', border: '1px solid var(--bd2)', background: 'var(--bg2)', boxShadow: `0 40px 90px -50px ${accent}88` }}>
-          {entry.image_url ? (
+        {/* Niveau 1 — Signe : portrait (ou illustration de l'étape courante), sinon tuile générée. */}
+        <div style={{ position: 'relative', width: '100%', maxWidth: cadre.max, aspectRatio: cadre.ratio, borderRadius: 18, overflow: 'hidden', border: '1px solid var(--bd2)', background: 'var(--bg2)', boxShadow: `0 40px 90px -50px ${accent}88` }}>
+          {portrait ? (
             <>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img aria-hidden src={entry.image_url} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(26px) brightness(0.45) saturate(1.1)', transform: 'scale(1.25)' }} />
+              <img aria-hidden src={portrait} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(26px) brightness(0.45) saturate(1.1)', transform: 'scale(1.25)' }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={entry.image_url} alt={entry.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain' }} />
+              <img src={portrait} alt={etape ? `${entry.name} — ${str(etape.label) ?? ''}` : entry.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain' }} />
             </>
           ) : (
             <div aria-hidden style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(145deg, ${accent} 0%, ${accent}66 55%, ${accent}22 100%)` }}>
               <span style={{ fontFamily: 'var(--fn)', fontWeight: 900, fontSize: 'clamp(80px,15vw,150px)', lineHeight: 1, color: '#fff', textShadow: '0 10px 50px rgba(3,7,15,0.5)' }}>{initiale}</span>
             </div>
           )}
+          {/* Cartouche de l'étape, en pied d'image — dit lequel des N moments on regarde. */}
+          {etape && (str(etape.label) || str(etape.period) || str(etape.age)) && (
+            <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: '26px 16px 12px', background: 'linear-gradient(180deg, transparent, rgba(3,7,15,0.85))', fontFamily: 'var(--fo)', fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--td2)' }}>
+              {str(etape.label)}
+              {(str(etape.period) ?? str(etape.age)) && <span style={{ color: 'var(--td3)' }}> · {str(etape.period) ?? str(etape.age)}</span>}
+            </div>
+          )}
         </div>
+
+        {/* Module `timeline` — la frise. Une seule étape ne se pilote pas : le cartouche du portrait
+            et les lignes du canal la disent déjà (même seuil qu'EraZone et que CharacterZone). */}
+        {timeline && etapes.length > 1 && (
+          <div style={{ marginTop: 18, maxWidth: cadre.max }}>
+            <ArcFrieze
+              forms={etapes.map((e) =>
+                chronoSource === 'eras'
+                  ? { label: e.label, url: e.img, age: e.period, arc: e.event }
+                  : (e as Record<string, unknown>),
+              )}
+              sel={Math.min(etapeIdx, etapes.length - 1)}
+              onSelect={onEtape}
+              color={accent}
+              heading={chronoSource === 'eras' ? `◆ Chronologie — ${etapes.length} ères` : undefined}
+              // Le rendu « sprite » (contain + pixelated) ne vaut que pour les vignettes idle des
+              // formes ; les illustrations d'ère sont des images pleines, en cover net.
+              pixelated={chronoSource === 'forms'}
+            />
+          </div>
+        )}
+
+        {/* La citation encadrée — présente sur les 14 fiches à ères et NULLE PART ailleurs dans
+            cette population (mesuré 10/08 : `attributes.quote.text` peuplé sur 14/2 612). Sans ce
+            bloc, la fusion aurait effacé la seule voix canon de ces fiches. */}
+        {quote?.text && (
+          <blockquote style={{ margin: '20px 0 0', maxWidth: cadre.max, padding: '12px 16px', borderLeft: `2px solid ${accent}`, background: `${accent}0D`, borderRadius: '0 10px 10px 0' }}>
+            <p style={{ margin: 0, fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 700, fontSize: 15.5, lineHeight: 1.45, color: 'var(--td)' }}>{quote.text}</p>
+            {quote.author && <div style={{ marginTop: 5, fontFamily: 'var(--fo)', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: accent }}>{quote.author}</div>}
+          </blockquote>
+        )}
 
         {/* Niveau 2 — Rattachements : axes canon peuplés, cliquables → canal re-scopé. */}
         {belong.length > 0 && (
@@ -239,9 +381,25 @@ function ZoneInner({ entry, axisNeighbors }: { entry: AkashaEntryDetail; axisNei
                 );
               })}
             </div>
+            {/* Le reste du collectif, en chips pliées sous le puits. Cette ligne ne disait qu'un
+                NOMBRE (« + 440 autres au registre », un texte mort) : sur les 4 fiches à ères qui
+                atteignent ce puits, la fusion aurait alors fait passer le lecteur de 18 figures
+                cliquables (grappe « Figures du lieu » d'EraZone) à 9 — une perte nette. Avec ce
+                repli, il en atteint 21 (1 puits + 8 anneau + 12 chips) et le compteur résiduel reste
+                honnête. Gain collatéral pour les 21 fiches `orbit` déjà en place. */}
             {orbitRest.length > 0 && (
-              <div style={{ marginTop: 16, fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', textAlign: 'center' }}>
-                + {orbitRest.length} autres au registre
+              <div style={{ marginTop: 18 }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, justifyContent: 'center' }}>
+                  {orbitRest.slice(0, GRAPPE_CAP).map((mb) => (
+                    <ChipBtn key={mb.slug} accent={accent} active={sel?.kind === 'membre' && sel.slug === mb.slug}
+                      onClick={() => pickMembre(mb, 'Figure liée')}>
+                      {mb.name}
+                    </ChipBtn>
+                  ))}
+                  {orbitRest.length > GRAPPE_CAP && (
+                    <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', alignSelf: 'center' }}>+ {orbitRest.length - GRAPPE_CAP} autres au registre</span>
+                  )}
+                </div>
               </div>
             )}
           </div>
@@ -310,7 +468,8 @@ function ZoneInner({ entry, axisNeighbors }: { entry: AkashaEntryDetail; axisNei
 
       {/* ── CANAL ───────────────────────────────────────────── */}
       <aside className="ak-canal" aria-live="polite">
-        <Canal entry={entry} accent={accent} bio={bio} primary={primary} primaryCount={primaryMembers.length} />
+        <Canal entry={entry} accent={accent} bio={bio} primary={primary} primaryCount={primaryMembers.length}
+          etape={etape} eraLabels={eraLabels} />
       </aside>
     </div>
   );
@@ -356,16 +515,23 @@ function CanalTitle({ children }: { children: React.ReactNode }) {
   return <div style={{ fontFamily: 'var(--fe)', fontStyle: 'italic', fontWeight: 900, textTransform: 'uppercase', fontSize: 22, lineHeight: 1.05, color: 'var(--td)', marginBottom: 12 }}>{children}</div>;
 }
 
-function Canal({ entry, accent, bio, primary, primaryCount }: {
+function Canal({ entry, accent, bio, primary, primaryCount, etape, eraLabels }: {
   entry: AkashaEntryDetail; accent: string; bio: string | null;
   primary?: { rels: string[]; label: string }; primaryCount: number;
+  /** Étape courante du module `timeline`, ou null quand l'entrée n'a pas de chronologie. */
+  etape: Etape | null;
+  eraLabels: { leader: string; event: string; threat: string };
 }) {
   const { sel, select } = useZone();
-  const scope: string = sel === null ? 'Identité'
+  const resume = etape ? str(etape.summary) : null;
+  // Le panneau par défaut s'annonce par le nom de l'ÉTAPE quand il y en a une : c'est ce qui rend
+  // visible qu'un clic sur la frise a bougé le canal, et pas seulement l'image (EraZone, l. 165).
+  const scope: string = sel === null ? (etape ? str(etape.label) ?? 'Identité' : 'Identité')
     : sel.kind === 'membre' ? (sel.role ?? 'Membre')
     : sel.kind === 'famille' ? sel.rel
     : sel.kind === 'appartenance' ? sel.label
     : 'Identité';
+  const retour = etape ? '↩ L’ère' : '↩ Identité';
 
   return (
     <div style={{ border: '1px solid var(--bd)', borderTop: `2px solid ${accent}`, borderRadius: 14, background: 'var(--bg2)', padding: '16px 18px 18px' }}>
@@ -376,7 +542,7 @@ function Canal({ entry, accent, bio, primary, primaryCount }: {
         {sel !== null && (
           <button type="button" onClick={() => select(null)} className="ak-tab"
             style={{ fontFamily: 'var(--fo)', fontSize: 10.5, fontWeight: 700, padding: '3px 10px', borderRadius: 14, border: '1px solid var(--bd2)', background: 'transparent', color: 'var(--td3)', cursor: 'pointer' }}>
-            ↩ Identité
+            {retour}
           </button>
         )}
       </div>
@@ -384,12 +550,29 @@ function Canal({ entry, accent, bio, primary, primaryCount }: {
       {sel === null && (
         <div>
           <div style={{ marginBottom: 14 }}>
+            {/* Les lignes de l'ÉTAPE en tête : ce sont elles que la frise pilote. Les lignes
+                d'identité restent DESSOUS, jamais remplacées — la fusion ajoute, elle n'échange
+                pas. Sur une entrée sans chronologie, ce bloc est identique à ce qu'il était. */}
+            {etape && str(etape.period) && <Row k="Période" v={str(etape.period)!} />}
+            {etape && !str(etape.period) && str(etape.age) && <Row k="Période" v={str(etape.age)!} />}
+            {etape && str(etape.leader) && <Row k={eraLabels.leader} v={str(etape.leader)!} />}
+            {etape && str(etape.event) && <Row k={eraLabels.event} v={str(etape.event)!} />}
+            {etape && str(etape.arc) && !str(etape.event) && <Row k={eraLabels.event} v={str(etape.arc)!} />}
+            {etape && str(etape.threat) && <Row k={eraLabels.threat} v={str(etape.threat)!} />}
             {entry.universe && <Row k="Univers" v={entry.universe} />}
             {primary && primaryCount > 0 && <Row k={primary.label} v={String(primaryCount)} />}
           </div>
-          {bio ? (
-            <p style={{ fontFamily: 'var(--fo)', fontSize: 13.5, lineHeight: 1.75, color: 'var(--td2)', whiteSpace: 'pre-line', margin: 0 }}>{bio}</p>
-          ) : (
+          {resume && (
+            <p style={{ fontFamily: 'var(--fo)', fontSize: 13.5, lineHeight: 1.75, color: 'var(--td2)', whiteSpace: 'pre-line', margin: '0 0 14px' }}>{resume}</p>
+          )}
+          {/* La bio passe au second plan quand l'étape a déjà son récit (elle raconte la fiche, pas
+              le moment) — et disparaît si elle répète mot pour mot ce résumé. */}
+          {bio && bio !== resume && (
+            <p style={resume
+              ? { fontFamily: 'var(--fo)', fontSize: 12.5, lineHeight: 1.7, color: 'var(--td3)', whiteSpace: 'pre-line', margin: 0 }
+              : { fontFamily: 'var(--fo)', fontSize: 13.5, lineHeight: 1.75, color: 'var(--td2)', whiteSpace: 'pre-line', margin: 0 }}>{bio}</p>
+          )}
+          {!resume && !bio && (
             <p style={{ fontFamily: 'var(--fo)', fontSize: 12.5, lineHeight: 1.6, color: 'var(--td3)', margin: 0 }}>Aucune biographie au registre pour l&rsquo;instant.</p>
           )}
         </div>

@@ -1,0 +1,73 @@
+{
+ "chantier": "CHANTIER 6 — les fiches sans dossier (aucune section dans akasha_sections)",
+ "quand": "2026-08-10T08:52:00Z",
+ "verdict": "PAS DE GISEMENT — aucune section écrite, aucune ligne touchée en base",
+ "ecritEnBase": "RIEN. Ni akasha_sections, ni akasha_entries, ni aucune autre table.",
+
+ "recompte": {
+  "commentaire": "Comptes serveur (head:true) + pagination ordonnée par id. Le carnet annonçait 2 862.",
+  "fiches": 7632,
+  "lignesDansAkashaSections": 19099,
+  "fichesAvecDossier": 4776,
+  "fichesSansDossier": 2856,
+  "ecartAvecLeCarnet": -6,
+  "causeDeLEcart": "scripts/audit-akasha-etat.mjs paginait sans .order() — le total reste juste (19 099) mais l'ensemble des entry_id distincts ne l'est pas : 4 772 sans order contre 4 778 avec, sur trois essais concordants. 7 632 − (4 772 − 2 fantômes) = 2 862 ; 7 632 − 4 776 = 2 856. Corrigé dans le script (non relancé)."
+ },
+
+ "questionPosee": "Parmi les fiches sans dossier, combien ont un attributes.descFr assez riche (> 600 c) pour justifier un découpage ?",
+ "reponse": {
+  "sansDossierAvecDescFrSup600": 177,
+  "partDeLaPopulation": "6,2 %",
+  "sansDossierAvecDescFrSup1000": 39,
+  "sansDossierAvecDescFrSup2000": 0,
+  "sansDossierSansAucunDescFr": 297,
+  "distributionDesLongueurs": { "vide": 297, "1-200": 431, "201-400": 1245, "401-600": 706, "601-1000": 138, "1001-2000": 39, "2001+": 0 },
+  "lecture": "La médiane du corpus sans dossier tombe dans la tranche 201-400 c — deux ou trois phrases. Aucun texte ne dépasse 2 000 c."
+ },
+
+ "pourquoiLeDecoupageEstRefuse": [
+  {
+   "raison": "Les titres devraient venir du texte ; le texte n'en porte aucun",
+   "preuve": "Sur les 177 textes riches : 0 intertitre wiki (== X ==), 0 intertitre markdown, 0 ligne en gras, 0 texte à deux paragraphes. 177 sur 177 sont un bloc de prose SANS AUCUN saut de ligne.",
+   "trace": "data/audits/sans-dossier-trace-2026-08-10T08-44-28-368Z.json → marqueursDeDecoupeSurLesRiches"
+  },
+  {
+   "raison": "Taux d'erreur mesuré à la main, très au-dessus du plafond de 5 %",
+   "preuve": "20 textes tirés à pas régulier dans les 177, lus en entier. UN SEUL porte des intertitres explicites (ilforte-grantz : « I. Histoire », « II. Première apparition dans Bleach »). Trois sont discutables (danpara, ran-fuan, kamyu-s-fellow-boxer : un changement de saga ou de support). Seize sont un bloc que rien n'articule. La règle large « > 600 c ⇒ découper » fabriquerait donc des titres dans 16 à 19 cas sur 20 : 80 à 95 % d'erreur.",
+   "trace": "data/audits/sans-dossier-recoupe-2026-08-10T08-45-27-668Z.json → B_vingtCas (les 20 textes entiers)"
+  },
+  {
+   "raison": "La règle resserrée au maximum ne trouve qu'UNE fiche dans tout le corpus",
+   "preuve": "Critère : au moins deux repères de numérotation inline distincts (I. II. … ou 1. 2. …) suivis d'une majuscule — un invariant structurel, pas une liste de titres attendus. Sur les 2 559 fiches sans dossier qui ont un descFr : 1 candidat (ilforte-grantz). Témoin sur les fiches déjà dotées d'un dossier : 1 — la règle est précise, elle n'attrape pas de bruit.",
+   "trace": "data/audits/sans-dossier-intertitres-2026-08-10T08-46-52-764Z.json"
+  },
+  {
+   "raison": "Écrire ces sections afficherait le MÊME texte deux fois sur la page",
+   "preuve": "descFr est rendu EN ENTIER comme bio du canal (CharacterZone l.379, EntityZone l.391, gabarit Attaque l.148) et DossierSections rend les sections juste en dessous. La consigne interdit de toucher attributes (une seule colonne, la mienne) : descFr resterait donc en place. Recouvrement mesuré entre descFr et sections sur les 3 898 fiches qui ont les deux : médiane 0,076 — ce sont deux textes DISTINCTS, et c'est pour ça qu'ils coexistent sans gêne aujourd'hui.",
+   "verifieSurLaPage": "http://localhost:3000/learn/akasha/aya-tsuji (recouvrement 0,722) montre le défaut en vrai : le canal dit « Aya Tsuji est une esthéticienne talentueuse qui a obtenu son diplôme de cosmétique en Angleterre, inspirée par l'histoire de Cendrillon » et la section « Histoire », 30 cm plus bas, redit « Aya Tsuji est une esthéticienne talentueuse qui a obtenu son diplôme de cosmétologie en Angleterre, inspirée par l'histoire de Cendrillon ». 11 fiches sont au-dessus de 0,5 de recouvrement, 150 au-dessus de 0,3."
+  },
+  {
+   "raison": "Le format cible ne tient pas dans la matière disponible",
+   "preuve": "Un dossier existant fait 4 sections médianes de 648 c chacune, soit ~2 600 c. Les 177 « riches » font 601 à 1 685 c AU TOTAL — de quoi remplir une section, pas un dossier.",
+   "trace": "data/audits/sans-dossier-trace-2026-08-10T08-44-28-368Z.json → anatomieDesSectionsExistantes"
+  }
+ ],
+
+ "trouvaillesLaterales": [
+  {
+   "quoi": "15 sections rattachées à une fiche qui n'existe plus — invisibles sur toute page",
+   "detail": "entry_id 0f7ffcde-38ad-42fd-b753-5a3a75a066d3 (5 sections, Shunsui Kyōraku) et 2ee26a98-2b25-468a-baec-edea614ade1f (10 sections, Jūshirō Ukitake), écrites le 05/08. Les fiches survivantes shunsui-kyoraku (c2f8b5cb) et jushiro-ukitake (a489b13a) ont leur propre dossier (10 et 11 sections) : rien n'est perdu pour le lecteur, ce sont des résidus d'une fusion de doublons. Effet : ils gonflent le compte « 19 099 sections » de 15 et « fiches avec dossier » de 2.",
+   "consequence": "La contrainte on delete cascade de supabase/migrations/akasha_sections.sql n'a pas joué — la base live diverge probablement de la migration (leçon du 25/06). Non corrigé : ce n'est pas ma colonne."
+  },
+  {
+   "quoi": "ashisogi-jizo : le descFr raconte quelqu'un d'autre",
+   "detail": "La fiche est le zanpakutō de Mayuri Kurotsuchi (typée character), mais son descFr décrit Mayuri lui-même. Repéré en lisant les 20 cas à la main. Non corrigé : c'est attributes, pas ma colonne."
+  },
+  {
+   "quoi": "Infobox recopiée en prose, visible par le lecteur",
+   "detail": "ilforte-grantz s'ouvre, à l'écran, sur « Date de naissance : 22 juin Signe du zodiaque : Cancer Taille : 185 cm Poids : 67 kg I. Histoire Ilforte était… » — l'intertitre « I. Histoire » et l'infobox aplatie sont servis tels quels dans le canal. C'est le défaut déjà consigné le 02/08 (583 cas), pas un manque de dossier."
+  }
+ ],
+
+ "cequiResteVraiDuChantier6": "Les 2 856 fiches sans dossier ne sont pas un chantier de découpage : leur texte n'existe pas encore (297 sans aucun descFr) ou tient en deux phrases (2 382 sous 600 c). Ce sont des fiches à ÉCRIRE depuis une source citable — le travail que fait l'usine — pas des fiches à redécouper. Le chantier tel que le carnet le formule n'a pas d'objet."
+}

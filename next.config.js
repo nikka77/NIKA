@@ -4,7 +4,19 @@ const nextConfig = {
   // .nosync : exclut le dossier de build de la sync iCloud Drive en LOCAL
   // (iCloud corrompt le cache Turbopack — manifests supprimés en plein write).
   // Sur Vercel (env VERCEL=1), garder ".next" car le builder l'attend en dur.
-  distDir: process.env.VERCEL ? '.next' : '.next.nosync',
+  //
+  // NIKA_DIST_DIR (10/08/2026) : le seul moyen de lancer un `next build` de contrôle SANS tuer le
+  // serveur de dev. Les deux partagent sinon `.next.nosync` et le build corrompt ses chunks —
+  // panne déjà payée le 12/06 (« pages sans hydratation, 404 sur error.js/page.js »), dont la leçon
+  // dit « stopper le dev d'abord, OU builder dans un dossier séparé ». Cette variable rend la
+  // seconde branche possible, ce qui compte quand plusieurs chantiers travaillent en parallèle sur
+  // le même dépôt : personne n'a le droit d'arrêter le serveur des autres. Valeur par défaut
+  // INCHANGÉE — sans la variable, rien ne bouge, ni en local ni sur Vercel.
+  // ⚠ À SAVOIR : `next build` RÉÉCRIT `next-env.d.ts` et la clause `include` de `tsconfig.json`
+  // pour pointer vers le dossier qu'on lui donne. Après un build alternatif, restaurer les deux
+  // (`git checkout -- next-env.d.ts tsconfig.json`) et supprimer le dossier — sinon TypeScript
+  // cherche ses types de routes dans un répertoire qui n'existe plus, pour tout le monde.
+  distDir: process.env.NIKA_DIST_DIR ?? (process.env.VERCEL ? '.next' : '.next.nosync'),
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: '*.supabase.co' },

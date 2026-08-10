@@ -1,0 +1,409 @@
+{
+ "chantier": "images vague 2 — égalité de titre normalisé (EN + FR, 6 wikis francophones)",
+ "passe_le": "2026-08-10T08:53:53.512Z",
+ "mode": "à blanc",
+ "plafond_octets": 307200,
+ "compte_croise": {
+  "candidats": 40,
+  "trouves": 0,
+  "refus_collision": 0,
+  "refus_collision_interne": 0,
+  "refus_nature": 0,
+  "refus_fichier": 0,
+  "refus_poids_ou_charge": 2,
+  "refus_homonymie": 0,
+  "refus_redirection": 0,
+  "refus_nature_titre": 0,
+  "page_sans_image": 10,
+  "sans_titre_egal": 28,
+  "posees": 0,
+  "deja_remplies_entre_temps": 0,
+  "echecs_ecriture": 0
+ },
+ "posees_detail": [],
+ "doublons_probables": [],
+ "refuses_par_les_gardes": [
+  {
+   "slug": "atk-bl-bushogoma",
+   "name": "Bushogoma",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "refus-poids-ou-charge",
+   "pourquoi": "HTTP 504",
+   "titre_resolu": "Bushōgoma",
+   "url_visee": "https://static.wikia.nocookie.net/bleach/images/9/96/Bushogoma.gif/revision/latest?cb=20250916211606&path-prefix=fr"
+  },
+  {
+   "slug": "atk-bl-kamisori-benihime",
+   "name": "Kamisori Benihime",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "refus-poids-ou-charge",
+   "pourquoi": "465 Ko même en 480 px (webp) — le CDN ne sait pas l'alléger",
+   "titre_resolu": "Kamisori, Benihime",
+   "url_visee": "https://static.wikia.nocookie.net/bleach/images/1/10/Kamisori.gif/revision/latest?cb=20160814213708&path-prefix=fr"
+  }
+ ],
+ "restees_sans_image": [
+  {
+   "slug": "arbalete",
+   "name": "Arbalète",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "sans-image",
+   "pourquoi": "la page existe mais n’a pas d’image d’infobox",
+   "titre_resolu": "Arbalète"
+  },
+  {
+   "slug": "atk-bl-benihime",
+   "name": "Benihime",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-image",
+   "pourquoi": "la page existe mais n’a pas d’image d’infobox",
+   "titre_resolu": "Benihime"
+  },
+  {
+   "slug": "atk-bl-cero-metralleta",
+   "name": "Cero Metralleta",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-image",
+   "pourquoi": "la page existe mais n’a pas d’image d’infobox",
+   "titre_resolu": "Cero Metralleta"
+  },
+  {
+   "slug": "adamantine-staff",
+   "name": "Adamantine Staff",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "sans-image",
+   "pourquoi": "la page existe mais n’a pas d’image d’infobox",
+   "titre_resolu": "Adamantine Staff"
+  },
+  {
+   "slug": "arcose",
+   "name": "Arcose",
+   "universe": "Dragon Ball",
+   "type": "place",
+   "etat": "sans-image",
+   "pourquoi": "la page existe mais n’a pas d’image d’infobox",
+   "titre_resolu": "Arcose"
+  },
+  {
+   "slug": "atk-bl-gokei",
+   "name": "Gokei",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-image",
+   "pourquoi": "la page existe mais n’a pas d’image d’infobox",
+   "titre_resolu": "Gōkei"
+  },
+  {
+   "slug": "atk-bl-guncho-tsurara",
+   "name": "Guncho Tsurara",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-image",
+   "pourquoi": "la page existe mais n’a pas d’image d’infobox",
+   "titre_resolu": "Gunchō Tsurara"
+  },
+  {
+   "slug": "atk-bl-hyoten-hyakkaso",
+   "name": "Hyoten Hyakkaso",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-image",
+   "pourquoi": "la page existe mais n’a pas d’image d’infobox",
+   "titre_resolu": "Hyōten Hyakkasō"
+  },
+  {
+   "slug": "100-island",
+   "name": "Île 100 %",
+   "universe": "One Piece",
+   "type": "place",
+   "etat": "sans-image",
+   "pourquoi": "fichier de maintenance du wiki : « Image_Non_Disponible.png »",
+   "titre_resolu": "Île 100%"
+  },
+  {
+   "slug": "accountant",
+   "name": "Accountant",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "ace",
+   "name": "Ace",
+   "universe": "One Piece",
+   "type": "artifact",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "actor",
+   "name": "Actor",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "actress",
+   "name": "Actress",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "adamantine-attacking-chains",
+   "name": "Adamantine Attacking Chains",
+   "universe": "Naruto",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "akatsuki-spy",
+   "name": "Akatsuki spy",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anbu-captain",
+   "name": "Anbu Captain",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anbu-captain-former",
+   "name": "Anbu Captain  (Former)",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anciens-membres-de-la-marine",
+   "name": "Anciens membres de la Marine",
+   "universe": "One Piece",
+   "type": "status",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anciens-membres-du-baroque-works",
+   "name": "Anciens membres du Baroque Works",
+   "universe": "One Piece",
+   "type": "status",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anciens-membres-du-cipher-pol",
+   "name": "Anciens membres du Cipher Pol",
+   "universe": "One Piece",
+   "type": "status",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "arc-et-fleches",
+   "name": "Arc et flèches",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "sans-image",
+   "pourquoi": "la page existe mais n’a pas d’image d’infobox",
+   "titre_resolu": "Arc et Flèches"
+  },
+  {
+   "slug": "archipel-des-argao",
+   "name": "Archipel des Argao",
+   "universe": "One Piece",
+   "type": "status",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "astronomer",
+   "name": "Astronomer",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bakudo-61-rikujokoro",
+   "name": "Bakudo 61 Rikujokoro",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bakudo-81-danku",
+   "name": "Bakudo 81 Danku",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bakudo-99-kin",
+   "name": "Bakudo 99 Kin",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bankai-kannonbiraki-benihime-aratame",
+   "name": "Bankai Kannonbiraki Benihime Aratame",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bushogoma",
+   "name": "Bushogoma",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "refus-poids-ou-charge",
+   "pourquoi": "HTTP 504",
+   "titre_resolu": "Bushōgoma"
+  },
+  {
+   "slug": "atk-bl-daiguren-hyorinmaru",
+   "name": "Daiguren Hyorinmaru",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-final-getsuga-tensho",
+   "name": "Final Getsuga Tensho",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-flash-cry",
+   "name": "Flash Cry",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-31-shakkaho",
+   "name": "Hado 31 Shakkaho",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-33-sokatsui",
+   "name": "Hado 33 Sokatsui",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-63-raikoho",
+   "name": "Hado 63 Raikoho",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-73-soren-sokatsui",
+   "name": "Hado 73 Soren Sokatsui",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-90-kurohitsugi",
+   "name": "Hado 90 Kurohitsugi",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hakka-no-togame",
+   "name": "Hakka no Togame",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hihio-zabimaru",
+   "name": "Hihio Zabimaru",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hyorinmaru",
+   "name": "Hyorinmaru",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-titre-egal",
+   "pourquoi": "aucun wiki ne porte d’article dont le titre soit notre nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-kamisori-benihime",
+   "name": "Kamisori Benihime",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "refus-poids-ou-charge",
+   "pourquoi": "465 Ko même en 480 px (webp) — le CDN ne sait pas l'alléger",
+   "titre_resolu": "Kamisori, Benihime"
+  }
+ ]
+}

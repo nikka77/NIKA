@@ -1,0 +1,109 @@
+{
+ "chantier": "mesure — fiches sans visuel (vague 2)",
+ "quand": "2026-08-10T08:43:50.389Z",
+ "total_fiches": 7632,
+ "avec_visuel": 6851,
+ "sans_visuel": 781,
+ "sans_visuel_par_univers": {
+  "One Piece": 371,
+  "Naruto": 302,
+  "Bleach": 59,
+  "Dragon Ball": 40,
+  "JoJo's Bizarre Adventure": 6,
+  "Initial D": 2,
+  "Death Note": 1
+ },
+ "sans_visuel_par_type": {
+  "power": 414,
+  "artifact": 105,
+  "profession": 86,
+  "status": 83,
+  "place": 77,
+  "skill": 16
+ },
+ "atk": {
+  "total_sans_visuel": 155,
+  "avec_gabarit_attaque": 155,
+  "sans_gabarit_attaque": 0,
+  "exemples_sans_gabarit": [],
+  "par_univers": {
+   "One Piece": 83,
+   "Bleach": 44,
+   "Dragon Ball": 28
+  }
+ },
+ "attaques_hors_prefixe_atk": {
+  "combien": 0,
+  "exemples": []
+ },
+ "neuf_fiches_nommees_vague1": [
+  {
+   "slug": "detective",
+   "name": "Détective",
+   "universe": "Death Note",
+   "type": "profession",
+   "image_url": null
+  },
+  {
+   "slug": "le-caire",
+   "name": "Le Caire",
+   "universe": "JoJo's Bizarre Adventure",
+   "type": "place",
+   "image_url": null
+  },
+  {
+   "slug": "fleche-du-stand",
+   "name": "Flèche du Stand",
+   "universe": "JoJo's Bizarre Adventure",
+   "type": "artifact",
+   "image_url": null
+  },
+  {
+   "slug": "masque-de-pierre",
+   "name": "Masque de Pierre",
+   "universe": "JoJo's Bizarre Adventure",
+   "type": "artifact",
+   "image_url": null
+  },
+  {
+   "slug": "pilote-de-toge",
+   "name": "Pilote de tōge",
+   "universe": "Initial D",
+   "type": "profession",
+   "image_url": null
+  },
+  {
+   "slug": "onde-hamon",
+   "name": "Onde (Hamon)",
+   "universe": "JoJo's Bizarre Adventure",
+   "type": "skill",
+   "image_url": null
+  },
+  {
+   "slug": "drift",
+   "name": "Drift",
+   "universe": "Initial D",
+   "type": "skill",
+   "image_url": null
+  },
+  {
+   "slug": "fondation-speedwagon",
+   "name": "Fondation Speedwagon",
+   "universe": "JoJo's Bizarre Adventure",
+   "type": "status",
+   "image_url": null
+  },
+  {
+   "slug": "stand-requiem",
+   "name": "Stand Requiem",
+   "universe": "JoJo's Bizarre Adventure",
+   "type": "power",
+   "image_url": null
+  }
+ ],
+ "univers_sans_connecteur_fr": {
+  "JoJo's Bizarre Adventure": 6,
+  "Initial D": 2,
+  "Death Note": 1
+ }
+}

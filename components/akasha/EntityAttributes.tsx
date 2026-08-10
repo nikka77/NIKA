@@ -6,10 +6,29 @@ import { ATTRIBUTE_FIELDS, type AkashaType } from '@/lib/akasha/types';
 import { ALLOWED_FILTER_ATTRS } from '@/lib/akasha/universe-taxonomy';
 import { registryHref } from '@/lib/akasha/href';
 
+/** Une entité NOMMÉE se lit par son nom, jamais par son enveloppe. Le corpus stocke des listes
+ *  d'entités en objets `{ name, slug?, note?, n? }` — les clans, les Hokage et les fondateurs de
+ *  Konohagakure, les porteurs de Samehada. Sans cette garde, `String(objet)` rendait littéralement
+ *  « [object Object] » en liste, et « name: Naruto Uzumaki · slug: naruto-uzumaki » en valeur
+ *  simple. Ajoutée le 10/08/2026 : la fusion d'EraZone en module `timeline` a fait monter le bloc
+ *  « Attributs » sur 14 fiches qui ne l'avaient jamais eu, et 2 d'entre elles (konohagakure,
+ *  samehada) auraient publié ce déchet — mesuré sur le corpus paginé, ce sont les 2 SEULES de toute
+ *  la population qui rend ce bloc. Les 3 566 autres porteuses d'objets (voiceActors, family) sont
+ *  des personnages, dont le gabarit ne monte pas ce composant : aucune ne change d'apparence. */
+function nomme(v: unknown): string | null {
+  if (!v || typeof v !== 'object' || Array.isArray(v)) return null;
+  const n = (v as Record<string, unknown>).name;
+  return typeof n === 'string' && n.trim() ? n.trim() : null;
+}
+
 function formatValue(value: unknown): string | null {
   if (value == null) return null;
   if (Array.isArray(value)) {
-    const s = value.filter((v) => v != null && v !== '').map(String).join(' · ');
+    const s = value
+      .filter((v) => v != null && v !== '')
+      .map((v) => nomme(v) ?? String(v))
+      .filter((v) => v !== '[object Object]') // objet sans `name` : on n'imprime pas son enveloppe
+      .join(' · ');
     return s || null;
   }
   if (typeof value === 'object') {
@@ -17,6 +36,8 @@ function formatValue(value: unknown): string | null {
     if (typeof o.lat === 'number' && typeof o.lng === 'number') {
       return `${o.lat.toFixed(4)}, ${o.lng.toFixed(4)}`;
     }
+    const parNom = nomme(o);
+    if (parNom) return parNom;
     const parts = Object.entries(o).map(([k, v]) => `${k}: ${String(v)}`);
     return parts.length ? parts.join(' · ') : null;
   }
@@ -55,6 +76,27 @@ const EXTRA_LABELS_FR: Record<string, string> = {
   camp: 'Camp',
   col: 'Col',
   source: 'Source',
+  // Clés des fiches à ères, devenues visibles le 10/08/2026 : la fusion d'EraZone en module
+  // `timeline` fait monter ce bloc sur 14 fiches qui ne l'avaient jamais eu, et leur `attributes`
+  // est resté en anglais (import de wikis). Sans ces 15 lignes, la page publiait « MOTTO »,
+  // « FOUNDERS », « LEADERTITLE », « WIELDERS » — le repli snake_case, contraire à la règle
+  // « textes en français toujours » (CLAUDE.md). Toutes mesurées sur les 14 fiches, aucune
+  // inventée : 13 sur konohagakure, 4 sur samehada. `kanji` reste tel quel, c'est un mot français.
+  motto: 'Devise',
+  symbol: 'Symbole',
+  founded: 'Fondation',
+  founders: 'Fondateurs',
+  landmarks: 'Lieux notables',
+  population: 'Population',
+  leader: 'Dirigeant',
+  leaderTitle: 'Titre du dirigeant',
+  villageRank: 'Rang du village',
+  clans: 'Clans',
+  hokage: 'Hokage',
+  wielders: 'Porteurs',
+  bearer: 'Porteur actuel',
+  status: 'État',
+  type: 'Nature',
 };
 
 export default function EntityAttributes({

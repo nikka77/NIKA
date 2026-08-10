@@ -1,0 +1,548 @@
+{
+ "chantier": "poids réel des visuels servis",
+ "quand": "2026-08-10T08:56:53.327Z",
+ "seuil_octets": 307200,
+ "urls_distinctes": 6700,
+ "mesurees": 6683,
+ "non_mesurees": [
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/7/73/Alubarna_Infobox.png/revision/latest?cb=20130509025622",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "alubarna"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/6/67/Angel_Island_Infobox.png/revision/latest?cb=20130225040532",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "angel-island"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/3/3d/Cactus_Island_Infobox.png/revision/latest?cb=20130206043847",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "cactus-island"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/0/04/Elumalu_Infobox.png/revision/latest?cb=20130509025622",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "elumalu"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/c/cb/Gecko_Islands_Infobox.png/revision/latest?cb=20130211043558",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "gecko-islands"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/3/38/Gosa_Village_Infobox.png/revision/latest?cb=20130523044223",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "gosa-village"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/6/6d/Lulusia_Kingdom_Infobox.png/revision/latest?cb=20221106195723",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "lulusia-kingdom"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/e/e6/Mirror_Ball_Island_Infobox.png/revision/latest?cb=20130424055639",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "mirror-ball-island"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/0/08/Mock_Town_Infobox.png/revision/latest?cb=20130512170607",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "mock-town"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/naruto/images/a/a9/Monzaemon_Symbol.svg/revision/latest?cb=20090510230648",
+   "statut": 200,
+   "motif": null,
+   "fiches": [
+    "monzaemon-chikamatsu"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/0/02/Nanohana_Infobox.png/revision/latest?cb=20130509025623",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "nanohana"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/2/22/Rainbase_Infobox.png/revision/latest?cb=20130509025623",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "rainbase"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/naruto/images/f/f1/S%C4%81ra%27s_Daughter.png",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "sara-s-daughter"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/8/88/Shift_Station_Infobox.png/revision/latest?cb=20130521005422",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "shift-station"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/5/53/Shimotsuki_Village_Infobox.png/revision/latest?cb=20130403031408",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "shimotsuki-village"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/a/a6/Twin_Cape_Infobox.png/revision/latest?cb=20130206043847",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "twin-cape"
+   ]
+  },
+  {
+   "url": "https://static.wikia.nocookie.net/onepiece/images/e/e2/Upper_Yard_Infobox.png/revision/latest?cb=20130225040533",
+   "statut": 404,
+   "motif": "HTTP 404",
+   "fiches": [
+    "upper-yard"
+   ]
+  }
+ ],
+ "fiches_avec_url_distante": 6730,
+ "fiches_image_locale": 121,
+ "total_octets": 308989214,
+ "distribution": {
+  "50–100 Ko": 1059,
+  "100–300 Ko": 645,
+  "< 50 Ko": 4936,
+  "512 Ko–1 Mo": 9,
+  "300–512 Ko": 21,
+  "> 2 Mo": 7,
+  "1–2 Mo": 6
+ },
+ "au_dessus_du_seuil": 43,
+ "fiches_touchees_par_une_lourde": 43,
+ "lourdes": [
+  {
+   "octets": 3493520,
+   "poids": "3412 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "atk-bl-desgarron"
+   ],
+   "url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest?cb=20160427172717&path-prefix=en"
+  },
+  {
+   "octets": 3276224,
+   "poids": "3199 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "atk-bl-higa-zekko"
+   ],
+   "url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest?cb=20160304184000&path-prefix=en"
+  },
+  {
+   "octets": 2813320,
+   "poids": "2747 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "atk-bl-gran-rey-cero"
+   ],
+   "url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest?cb=20160426182414&path-prefix=en"
+  },
+  {
+   "octets": 2624846,
+   "poids": "2563 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "atk-bl-kurohitsugi"
+   ],
+   "url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest?cb=20160304195411&path-prefix=en"
+  },
+  {
+   "octets": 2496946,
+   "poids": "2438 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "atk-bl-shunko"
+   ],
+   "url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest?cb=20170122063759&path-prefix=en"
+  },
+  {
+   "octets": 2183966,
+   "poids": "2133 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "atk-bl-utsusemi"
+   ],
+   "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest?cb=20260805223647&path-prefix=fr"
+  },
+  {
+   "octets": 2004628,
+   "poids": "1958 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "atk-bl-cero"
+   ],
+   "url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest?cb=20250324112655&path-prefix=en"
+  },
+  {
+   "octets": 1938258,
+   "poids": "1893 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "kido"
+   ],
+   "url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest?cb=20160222153316&path-prefix=en"
+  },
+  {
+   "octets": 1753642,
+   "poids": "1713 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "atk-bl-garra-de-la-pantera"
+   ],
+   "url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest?cb=20160426192854&path-prefix=en"
+  },
+  {
+   "octets": 1249448,
+   "poids": "1220 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "gogeta-ssjb-evolved"
+   ],
+   "url": "https://dragonball-api.com/transformaciones/gogeta__bm__ssb_evolution___1__con_aura__by_ssjrose890_df682g0-fullview.webp"
+  },
+  {
+   "octets": 1177774,
+   "poids": "1150 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "bojack"
+   ],
+   "url": "https://static.wikia.nocookie.net/dragonball/images/2/29/Bojack.BojackUnbound.png/revision/latest?cb=20230626181902"
+  },
+  {
+   "octets": 1094378,
+   "poids": "1069 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "atk-bl-kageoni"
+   ],
+   "url": "https://static.wikia.nocookie.net/bleach/images/e/e3/Kageoni.gif/revision/latest/scale-to-width-down/720?cb=20250916212408&path-prefix=fr"
+  },
+  {
+   "octets": 1021046,
+   "poids": "997 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "trunks-ssj3"
+   ],
+   "url": "https://dragonball-api.com/transformaciones/trunks ssj3.webp"
+  },
+  {
+   "octets": 903210,
+   "poids": "882 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "meta-cooler"
+   ],
+   "url": "https://static.wikia.nocookie.net/dragonball/images/6/6e/The_Return_of_Cooler_-_A_new_Meta-Cooler_appears_before_Goku_%26_Vegeta.png/revision/latest?cb=20230626184623"
+  },
+  {
+   "octets": 776370,
+   "poids": "758 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "monde-shinigami"
+   ],
+   "url": "https://static.wikia.nocookie.net/deathnote/images/8/8a/ShinigamiRealmFamily.jpeg/revision/latest?cb=20250713082019"
+  },
+  {
+   "octets": 773822,
+   "poids": "756 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "lancer-evo3"
+   ],
+   "url": "https://static.wikia.nocookie.net/initiald/images/7/7d/Emperor_Lan_Evo_III_Manga.png/revision/latest?cb=20200714153419"
+  },
+  {
+   "octets": 747732,
+   "poids": "730 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "r32-gtr"
+   ],
+   "url": "https://static.wikia.nocookie.net/initiald/images/8/85/Nightkids_R32_manga.png/revision/latest?cb=20200628155945"
+  },
+  {
+   "octets": 631408,
+   "poids": "617 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "navire-brise-glace-de-whitey-bay"
+   ],
+   "url": "https://static.wikia.nocookie.net/onepiece/images/d/dd/Navire_Brise_Glace_de_Whitey_Bay_Anime_Infobox.gif/revision/latest?cb=20121225052935&path-prefix=fr"
+  },
+  {
+   "octets": 559702,
+   "poids": "547 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "fruit-de-la-teleportation"
+   ],
+   "url": "https://static.wikia.nocookie.net/onepiece/images/5/5e/Wapu_Wapu_no_Mi.gif/revision/latest?cb=20240215015054"
+  },
+  {
+   "octets": 557560,
+   "poids": "544 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "cumber"
+   ],
+   "url": "https://static.wikia.nocookie.net/dragonball/images/9/96/Kanba_full.png/revision/latest?cb=20231016033751"
+  },
+  {
+   "octets": 551146,
+   "poids": "538 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "machine-a-remonter-le-temps"
+   ],
+   "url": "https://static.wikia.nocookie.net/dragonball/images/5/56/Time_Machine_DBS_Ep_68_001.png/revision/latest?cb=20180818194439"
+  },
+  {
+   "octets": 533724,
+   "poids": "521 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "android-13"
+   ],
+   "url": "https://static.wikia.nocookie.net/dragonball/images/3/35/Android_13_-_Super_Android_13_-_005.png/revision/latest?cb=20240906012340"
+  },
+  {
+   "octets": 476072,
+   "poids": "465 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "freezer-3rd-form"
+   ],
+   "url": "https://dragonball-api.com/transformaciones/Freezer_3.webp"
+  },
+  {
+   "octets": 453460,
+   "poids": "443 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "broly"
+   ],
+   "url": "https://dragonball-api.com/transformaciones/Broly_DBS_Base.webp"
+  },
+  {
+   "octets": 434420,
+   "poids": "424 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "epee-de-lespoir"
+   ],
+   "url": "https://static.wikia.nocookie.net/dragonball/images/2/2f/UR_SS_Future_Trunks_%28Super%29_HD.png/revision/latest?cb=20210406133417"
+  },
+  {
+   "octets": 434170,
+   "poids": "424 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "rx7-fd"
+   ],
+   "url": "https://static.wikia.nocookie.net/initiald/images/c/c5/Keisuke_Redsuns_Spec_I_Manga.png/revision/latest?cb=20200608014525"
+  },
+  {
+   "octets": 429084,
+   "poids": "419 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "sarada-uchiha"
+   ],
+   "url": "https://static.wikia.nocookie.net/naruto/images/9/9a/Sarada_Infobox.png"
+  },
+  {
+   "octets": 423918,
+   "poids": "414 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "goa-kingdom"
+   ],
+   "url": "https://static.wikia.nocookie.net/onepiece/images/7/77/Goa_Kingdom_Infobox.png/revision/latest?cb=20240828010131"
+  },
+  {
+   "octets": 417412,
+   "poids": "408 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "lord-slug"
+   ],
+   "url": "https://static.wikia.nocookie.net/dragonball/images/8/88/Lord_Slug_-_Lord_Slug_-_007.png/revision/latest?cb=20250308100918"
+  },
+  {
+   "octets": 383976,
+   "poids": "375 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "capsule-hoi-poi"
+   ],
+   "url": "https://static.wikia.nocookie.net/dragonball/images/d/d7/CapsulesEp09.png/revision/latest?cb=20250306091426"
+  },
+  {
+   "octets": 383658,
+   "poids": "375 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "purple-haze"
+   ],
+   "url": "https://static.wikia.nocookie.net/jjba/images/1/1c/PurpleHaze.png/revision/latest?cb=20150429070459"
+  },
+  {
+   "octets": 383050,
+   "poids": "374 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "nue"
+   ],
+   "url": "https://static.wikia.nocookie.net/naruto/images/1/1c/Nue.png"
+  },
+  {
+   "octets": 372360,
+   "poids": "364 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "sticky-fingers"
+   ],
+   "url": "https://static.wikia.nocookie.net/jjba/images/d/dd/StickyFingers.png/revision/latest?cb=20150428184345"
+  },
+  {
+   "octets": 352818,
+   "poids": "345 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "ashimaru"
+   ],
+   "url": "https://static.wikia.nocookie.net/naruto/images/9/92/Ashimaru.png"
+  },
+  {
+   "octets": 352708,
+   "poids": "344 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "kinshiki-otsutsuki"
+   ],
+   "url": "https://static.wikia.nocookie.net/naruto/images/c/ca/Kinshiki.png"
+  },
+  {
+   "octets": 344196,
+   "poids": "336 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "lakasei"
+   ],
+   "url": "https://static.wikia.nocookie.net/dragonball/images/0/09/The_Tree_of_Might_-_Lakasei_looking_in_the_crater_for_the_Seed_of_Might.png/revision/latest?cb=20240202233241"
+  },
+  {
+   "octets": 338904,
+   "poids": "331 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "atk-bl-nake-benihime"
+   ],
+   "url": "https://static.wikia.nocookie.net/bleach/images/8/82/NakeBenihime.gif/revision/latest?cb=20160417004442&path-prefix=en"
+  },
+  {
+   "octets": 327522,
+   "poids": "320 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "mary-geoise"
+   ],
+   "url": "https://static.wikia.nocookie.net/onepiece/images/b/b7/Mary_Geoise_Infobox.png/revision/latest?cb=20190519084915"
+  },
+  {
+   "octets": 326458,
+   "poids": "319 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "kuroma-tatsushiro"
+   ],
+   "url": "https://static.wikia.nocookie.net/naruto/images/3/34/Kuroma_Tatsushiro.png"
+  },
+  {
+   "octets": 321712,
+   "poids": "314 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "bansho-sen"
+   ],
+   "url": "https://static.wikia.nocookie.net/dragonball/images/0/01/Bansho_Fan.png/revision/latest?cb=20241216171040"
+  },
+  {
+   "octets": 314484,
+   "poids": "307 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "ten-tails-kara"
+   ],
+   "url": "https://static.wikia.nocookie.net/naruto/images/5/54/Kara%27s_Ten-Tails.png"
+  },
+  {
+   "octets": 310658,
+   "poids": "303 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "son-goku"
+   ],
+   "url": "https://dragonball-api.com/characters/goku_normal.webp"
+  },
+  {
+   "octets": 307380,
+   "poids": "300 Ko",
+   "type": "image/webp",
+   "fiches": [
+    "vegeta-ssj"
+   ],
+   "url": "https://dragonball-api.com/transformaciones/vegeta SSJ (2).webp"
+  }
+ ]
+}

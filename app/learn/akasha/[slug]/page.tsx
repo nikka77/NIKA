@@ -13,7 +13,6 @@ import UniverseShell from '@/components/akasha/UniverseShell';
 import EntityAttributes from '@/components/akasha/EntityAttributes';
 import CharacterZone from '@/components/akasha/zone/CharacterZone';
 import OrganizationZone from '@/components/akasha/zone/OrganizationZone';
-import EraZone from '@/components/akasha/zone/EraZone';
 import EntityZone, { type AxisNeighbors } from '@/components/akasha/zone/EntityZone';
 import DossierSections from '@/components/akasha/DossierSections';
 import Crumbs from '@/components/akasha/Crumbs';
@@ -188,26 +187,16 @@ export default async function AkashaEntryPage({ params }: Props) {
     );
   }
 
-  // Entités à ères chronologiques (lieux, artefacts…) → « rouleau temporel » (refonte lot 4c).
-  if (Array.isArray((entry.attributes as Record<string, unknown>).eras) && ((entry.attributes as Record<string, unknown>).eras as unknown[]).length > 0) {
-    return (
-      <main>
-        <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(1.4rem,3vw,2.4rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
-          <Crumbs universe={entry.universe} category={category} name={entry.name} />
-          <EraZone entry={entry} />
-          {/* Le DOSSIER (05/08) — même réparation que la branche status : le rouleau temporel
-              raconte les ères, les sections racontent le reste, les deux coexistent. */}
-          <DossierSections
-            sections={(entry.attributes as Record<string, unknown>).sections}
-            accent={(entry.universe && universeMeta(entry.universe)?.color) || m.color}
-            style={{ marginTop: 28 }}
-          />
-        </div>
-      </main>
-    );
-  }
+  // BRANCHE `eras` SUPPRIMÉE le 10/08/2026 (§8 question 3, dernier reste du LOT 5). Elle testait
+  // `attributes.eras` non vide et détournait 14 fiches vers `EraZone` AVANT que `deriveShape` soit
+  // seulement appelé : elles n'avaient donc ni `relations`, ni `orbit`, ni `axis`, ni « Attributs »,
+  // ni « Voir aussi » — dont `konohagakure` (449 membres) et `grand-line` (112), les deux cas
+  // d'école du seuil `orbit`. Le rouleau temporel est désormais le module `timeline` d'`EntityZone`,
+  // monté par CAPACITÉ. Ne pas réintroduire d'aiguillage sur `attributes.eras` ici : c'est
+  // `deriveShape` qui décide, et lui seul (lib/akasha/shape.ts).
 
-  // Reste de la fiche (lieux, artefacts, métiers, pouvoirs/compétences hors « Attaque ») →
+  // Reste de la fiche (lieux, artefacts, métiers, pouvoirs/compétences hors « Attaque »), fiches à
+  // ères comprises →
   // EntityZone (refonte LOT 2b) : composition par CAPACITÉS réelles (deriveShape, LOT 2a), plus de
   // 4ᵉ gabarit typé. Point de montage identique à celui documenté par le plan (« à la place de la
   // branche fallback, ~ligne 196 ») — même schéma que les branches Organisation/Ères ci-dessus :

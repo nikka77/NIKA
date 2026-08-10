@@ -67,14 +67,18 @@ export interface ShapeEntry {
 // 32 à 6-12 (le garde-fou de 2b suffit) — puis un décrochage à 25 fiches au-delà de 12, dont
 // plusieurs dans la centaine (grand-line 104, soul-society 93, konohagakure 503).
 //
-// ⚠ NUANCE DE ROUTAGE (relevée à l'épreuve du LOT 2, 08/08) : Konohagakure, grand-line,
-// soul-society, marineford, morioh, namek et hueco-mundo portent `eras` et sont donc servies par
-// EraZone AVANT d'atteindre EntityZone — les trois exemples cités ci-dessus, les plus
-// spectaculaires, n'empruntent PAS ce chemin aujourd'hui. Ils restent le bon argument pour le
-// seuil (la mesure vaut, elle vient du corpus entier) mais ne sont pas des cas d'école du module
-// `orbit` tel qu'il est monté : les 21 fiches qui le déclenchent réellement sont plus modestes.
-// Le repli d'EraZone dans un module `timeline` est prévu au LOT 5 ; ce jour-là, ces sept fiches
-// rejoindront le chemin commun et le module `orbit` prendra tout son sens.
+// ✔ NUANCE DE ROUTAGE LEVÉE le 10/08/2026. Elle disait, depuis le 08/08, que Konohagakure,
+// grand-line, soul-society, marineford, morioh, namek et hueco-mundo portaient `eras` et partaient
+// donc dans EraZone avant d'atteindre EntityZone : les exemples les plus spectaculaires de ce
+// commentaire n'empruntaient PAS le chemin qu'il décrit (tasks/lessons.md, 08/08 — « un
+// commentaire faux coûte le temps de le croire »). La fusion d'EraZone en module `timeline`
+// (§8 q3, dernier reste du LOT 5) a supprimé cette branche : ces fiches passent maintenant par
+// `deriveShape` comme les autres. Recompté sur le corpus paginé le 10/08 : konohagakure monte
+// `orbit` à 449 membres `habite`/`appartient` de personnage, grand-line à 112, soul-society à 93,
+// hueco-mundo à 30 — les exemples ci-dessus sont désormais vrais SUR CE CHEMIN, pas seulement en
+// base. (Le compte de konohagakure est passé de 503 à 449 entre les deux mesures : le total de
+// 08/08 additionnait les arêtes de membership dont la cible n'est PAS un personnage — 45 `status`,
+// 7 `profession`, 1 `power`, 1 `artifact` — que cette garde a toujours exclues.)
 export const ORBIT_MIN_MEMBERS = 12;
 
 // Relations qui signifient « appartenance à un collectif », jamais « usage » ou « mastery » — une
@@ -138,8 +142,10 @@ function aDesSectionsLisibles(attributes: Record<string, unknown>): boolean {
 }
 
 /** Un tableau (forms/eras) compte comme « non vide » s'il contient au moins un ÉLÉMENT-OBJET —
- *  même garde que `normalizeForms` (lib/akasha/forms.ts) et le filtre de `EraZone.tsx` :
- *  `[null, null]` ou `["texte"]` ne sont pas des formes/ères exploitables. */
+ *  même garde que `normalizeForms` (lib/akasha/forms.ts) et que `lireChronologie`, le lecteur du
+ *  module `timeline` (components/akasha/zone/EntityZone.tsx) : `[null, null]` ou `["texte"]` ne
+ *  sont pas des formes/ères exploitables. Les deux DOIVENT rester d'accord — une garde plus large
+ *  ici que là-bas monterait un module sans matière. */
 function aDesElementsObjets(value: unknown): boolean {
   return Array.isArray(value) && value.some((x) => x !== null && typeof x === 'object');
 }

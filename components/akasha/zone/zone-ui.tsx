@@ -5,9 +5,14 @@
 // §1.1) autorise explicitement : les trois zones restent trois fichiers, mais elles peuvent
 // partager les DEUX primitives que C3-2 nomme (le canal en région à filet supérieur, le chip en
 // lien-compteur minimal) plutôt que de redupliquer un 3ᵉ objet de style identique.
-// EraZone NE consomme PAS ce fichier : jugée non digne d'être touchée par C3-2 (14 fiches, 0,18 %
-// du corpus, ET déjà promise à une fusion dans EntityZone « au LOT 5 » — §8 question 3 — la
-// restyler maintenant serait un pari sur l'ordre d'exécution des deux chantiers du même lot).
+// EraZone ne consommait PAS ce fichier : jugée non digne d'être touchée par C3-2 (14 fiches,
+// 0,18 % du corpus, ET déjà promise à une fusion dans EntityZone « au LOT 5 » — §8 question 3 —
+// la restyler alors aurait été un pari sur l'ordre d'exécution des deux chantiers du même lot).
+// Le pari était bon : le 10/08 la fusion a eu lieu et le fichier a été SUPPRIMÉ. Ses 14 fiches
+// sont servies par EntityZone, qui n'a pas non plus été dé-cartée par C3-2 — son canal reste donc
+// une carte (border 4 côtés + radius 14), contrairement à CharacterZone et OrganizationZone.
+// C'est la dernière carte du langage v2, et elle porte maintenant 2 612 fiches : le chantier qui
+// la dé-cartera aura un blast-radius bien plus large que celui du LOT 5.
 import Link from 'next/link';
 
 /** Canal ex-carte → région : plus de boîte (border 4 côtés + radius + fond plein), seulement le

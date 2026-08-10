@@ -19,7 +19,7 @@
 | 7 | **Colonne `description`** | **vide sur 7 599 / 7 632** ; redit `summary` sur 5 | Colonne morte que le schéma présente comme le texte long — un architecte concevrait autour |
 | 8 | **Fiches sans résumé du tout** | **29** | Rangée sans sous-titre |
 | 9 | **Groupes d'images partagées non lus** | **37** sur 41 | C'est ce tri qui a sorti les 4 portraits usurpés le 09/08 |
-| 10 | **EraZone → module `timeline` d'EntityZone** | 14 fiches | Décidé au §8 q3 « au LOT 5 », jamais fait — dernier reste du lot 5 |
+| ~~10~~ | ~~**EraZone → module `timeline` d'EntityZone**~~ | ~~14 fiches~~ | **FAIT le 10/08** — `EraZone.tsx` supprimée, branche `eras` de `page.tsx` retirée ; les 14 gagnent `relations` (14/14), `orbit` (5), `axis` (1), « Attributs » et « Voir aussi ». Traces : `data/audits/erazone-*` |
 
 ## Règles de conduite pour tout agent qui prend une ligne
 

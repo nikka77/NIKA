@@ -1,0 +1,130 @@
+{
+ "chantier": "réparation des visuels morts (404 du CDN et SVG bruts)",
+ "passe_le": "2026-08-10T09:00:01.053Z",
+ "mode": "à blanc",
+ "source": "data/audits/poids-visuels-2026-08-10T08-48-37-835Z.json",
+ "compte": {
+  "suspects": 17,
+  "morts_confirmes": 1,
+  "svg_bruts": 0,
+  "intacts": 16,
+  "remplacees": 1,
+  "mises_a_null": 0,
+  "ecrites": 0,
+  "nulls_ecrits": 0,
+  "echecs_ecriture": 0
+ },
+ "intacts": [
+  {
+   "slug": "alubarna",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/7/73/Alubarna_Infobox.png/revision/latest?cb=20130509025622",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "angel-island",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/6/67/Angel_Island_Infobox.png/revision/latest?cb=20130225040532",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "cactus-island",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/3/3d/Cactus_Island_Infobox.png/revision/latest?cb=20130206043847",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "elumalu",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/0/04/Elumalu_Infobox.png/revision/latest?cb=20130509025622",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "gecko-islands",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/c/cb/Gecko_Islands_Infobox.png/revision/latest?cb=20130211043558",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "gosa-village",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/3/38/Gosa_Village_Infobox.png/revision/latest?cb=20130523044223",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "lulusia-kingdom",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/6/6d/Lulusia_Kingdom_Infobox.png/revision/latest?cb=20221106195723",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "mirror-ball-island",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/e/e6/Mirror_Ball_Island_Infobox.png/revision/latest?cb=20130424055639",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "mock-town",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/0/08/Mock_Town_Infobox.png/revision/latest?cb=20130512170607",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "nanohana",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/0/02/Nanohana_Infobox.png/revision/latest?cb=20130509025623",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "rainbase",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/2/22/Rainbase_Infobox.png/revision/latest?cb=20130509025623",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "sara-s-daughter",
+   "url": "https://static.wikia.nocookie.net/naruto/images/f/f1/S%C4%81ra%27s_Daughter.png",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "shift-station",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/8/88/Shift_Station_Infobox.png/revision/latest?cb=20130521005422",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "shimotsuki-village",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/5/53/Shimotsuki_Village_Infobox.png/revision/latest?cb=20130403031408",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "twin-cape",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/a/a6/Twin_Cape_Infobox.png/revision/latest?cb=20130206043847",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "upper-yard",
+   "url": "https://static.wikia.nocookie.net/onepiece/images/e/e2/Upper_Yard_Infobox.png/revision/latest?cb=20130225040533",
+   "statut_head": 404,
+   "verdict": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  }
+ ],
+ "journal": [
+  {
+   "slug": "monzaemon-chikamatsu",
+   "name": "Monzaemon Chikamatsu",
+   "universe": "Naruto",
+   "type": "character",
+   "avant": "https://static.wikia.nocookie.net/naruto/images/a/a9/Monzaemon_Symbol.svg/revision/latest?cb=20090510230648",
+   "preuve_mort": "GET → octets illisibles (5346 o)",
+   "apres": "https://static.wikia.nocookie.net/naruto/images/b/b0/Monzaemon_Symbole.svg/revision/latest/scale-to-width-down/720?cb=20170809182021&path-prefix=fr",
+   "preuve": "titre fr « Monzaemon Chikamatsu » ≡ notre nom",
+   "dimensions_reelles": "810×810 webp",
+   "octets": 1130,
+   "verdict": "remplacée"
+  }
+ ]
+}

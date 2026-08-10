@@ -1,0 +1,94 @@
+{
+ "chantier": "réparation des visuels morts",
+ "pris_le": "2026-08-10T08:59:58.781Z",
+ "mode": "à blanc",
+ "colonne": "image_url",
+ "source": "data/audits/poids-visuels-2026-08-10T08-48-37-835Z.json",
+ "avant": [
+  {
+   "slug": "monzaemon-chikamatsu",
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/a/a9/Monzaemon_Symbol.svg/revision/latest?cb=20090510230648",
+   "verdict_lecture": "GET → octets illisibles (5346 o)"
+  },
+  {
+   "slug": "alubarna",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/7/73/Alubarna_Infobox.png/revision/latest?cb=20130509025622",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "angel-island",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/67/Angel_Island_Infobox.png/revision/latest?cb=20130225040532",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "cactus-island",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/3/3d/Cactus_Island_Infobox.png/revision/latest?cb=20130206043847",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "elumalu",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/0/04/Elumalu_Infobox.png/revision/latest?cb=20130509025622",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "gecko-islands",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/c/cb/Gecko_Islands_Infobox.png/revision/latest?cb=20130211043558",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "gosa-village",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/3/38/Gosa_Village_Infobox.png/revision/latest?cb=20130523044223",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "lulusia-kingdom",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/6d/Lulusia_Kingdom_Infobox.png/revision/latest?cb=20221106195723",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "mirror-ball-island",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/e/e6/Mirror_Ball_Island_Infobox.png/revision/latest?cb=20130424055639",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "mock-town",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/0/08/Mock_Town_Infobox.png/revision/latest?cb=20130512170607",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "nanohana",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/0/02/Nanohana_Infobox.png/revision/latest?cb=20130509025623",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "rainbase",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/2/22/Rainbase_Infobox.png/revision/latest?cb=20130509025623",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "sara-s-daughter",
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/f/f1/S%C4%81ra%27s_Daughter.png",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "shift-station",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/8/88/Shift_Station_Infobox.png/revision/latest?cb=20130521005422",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "shimotsuki-village",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/5/53/Shimotsuki_Village_Infobox.png/revision/latest?cb=20130403031408",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "twin-cape",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/a/a6/Twin_Cape_Infobox.png/revision/latest?cb=20130206043847",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  },
+  {
+   "slug": "upper-yard",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/e/e2/Upper_Yard_Infobox.png/revision/latest?cb=20130225040533",
+   "verdict_lecture": "panne réseau (HTTP 404) — à retenter, PAS condamnée"
+  }
+ ]
+}

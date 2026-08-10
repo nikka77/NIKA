@@ -17,10 +17,17 @@ import { UNIVERSE_TAXONOMY } from '../lib/akasha/universe-taxonomy.ts';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const db = clientSite();
 
+// `.order('id')` N'EST PAS DÉCORATIF (constaté le 10/08/2026, chantier 6). Paginer par
+// LIMIT/OFFSET sans ORDER BY laisse au moteur le droit de renvoyer les lignes dans n'importe quel
+// ordre entre deux pages : des lignes se répètent, d'autres ne sortent jamais. Le TOTAL, lui, reste
+// juste (chaque page rend bien 1000 lignes) — c'est ce qui rend la faute invisible. Mesuré sur
+// akasha_sections, trois essais concordants : 19 099 lignes dans les deux cas, mais 4 772 fiches
+// distinctes sans `order` contre 4 778 avec. D'où le « 2 862 fiches sans dossier » du carnet, qui
+// en compte 2 856 — six fiches déclarées muettes alors qu'elles ont un dossier.
 const page = async (table, sel) => {
   const out = [];
   for (let d = 0; ; d += 1000) {
-    const { data, error } = await db.from(table).select(sel).range(d, d + 999);
+    const { data, error } = await db.from(table).select(sel).order('id').range(d, d + 999);
     if (error) throw new Error(`${table}: ${error.message}`);
     out.push(...(data ?? []));
     if ((data?.length ?? 0) < 1000) break;

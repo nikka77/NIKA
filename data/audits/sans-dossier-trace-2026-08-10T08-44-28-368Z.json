@@ -1,0 +1,507 @@
+{
+ "chantier": "CHANTIER 6 — fiches sans dossier : y a-t-il de la matière ?",
+ "quand": "2026-08-10T08:44:28.368Z",
+ "ecritEnBase": "RIEN — audit en lecture seule",
+ "totaux": {
+  "fiches": 7632,
+  "sectionsExistantes": 19099,
+  "fichesAvecDossier": 4776,
+  "fichesSansDossier": 2856,
+  "carnetAnnoncait": 2862
+ },
+ "gisement": {
+  "sansDossierEtDescFrVide": 297,
+  "sansDossierEtDescFrSup600": 177,
+  "sansDossierEtDescFrSup1000": 39,
+  "sansDossierEtDescFrSup2000": 0,
+  "distribution": [
+   {
+    "tranche": "vide",
+    "n": 297
+   },
+   {
+    "tranche": "1-200",
+    "n": 431
+   },
+   {
+    "tranche": "201-400",
+    "n": 1245
+   },
+   {
+    "tranche": "401-600",
+    "n": 706
+   },
+   {
+    "tranche": "601-1000",
+    "n": 138
+   },
+   {
+    "tranche": "1001-2000",
+    "n": 39
+   },
+   {
+    "tranche": "2001-5000",
+    "n": 0
+   },
+   {
+    "tranche": "5001+",
+    "n": 0
+   }
+  ]
+ },
+ "marqueursDeDecoupeSurLesRiches": {
+  "total": 177,
+  "avecIntertitreWiki": 0,
+  "avecIntertitreMarkdown": 0,
+  "avecLigneEnGras": 0,
+  "auMoins2Paragraphes": 0,
+  "auMoins3Paragraphes": 0,
+  "unSeulBlocSansSautDeLigne": 177
+ },
+ "parUnivers": {
+  "Naruto": {
+   "fiches": 1895,
+   "sansDescFr": 154,
+   "riches600": 56,
+   "longueurMediane": 306
+  },
+  "One Piece": {
+   "fiches": 449,
+   "sansDescFr": 100,
+   "riches600": 36,
+   "longueurMediane": 167
+  },
+  "Dragon Ball": {
+   "fiches": 333,
+   "sansDescFr": 28,
+   "riches600": 49,
+   "longueurMediane": 389
+  },
+  "Bleach": {
+   "fiches": 111,
+   "sansDescFr": 13,
+   "riches600": 27,
+   "longueurMediane": 290
+  },
+  "JoJo's Bizarre Adventure": {
+   "fiches": 37,
+   "sansDescFr": 0,
+   "riches600": 5,
+   "longueurMediane": 247
+  },
+  "Hunter x Hunter": {
+   "fiches": 21,
+   "sansDescFr": 0,
+   "riches600": 3,
+   "longueurMediane": 262
+  },
+  "Death Note": {
+   "fiches": 8,
+   "sansDescFr": 0,
+   "riches600": 1,
+   "longueurMediane": 425
+  },
+  "Initial D": {
+   "fiches": 2,
+   "sansDescFr": 2,
+   "riches600": 0,
+   "longueurMediane": 0
+  }
+ },
+ "parType": {
+  "power": {
+   "fiches": 1531,
+   "sansDescFr": 73,
+   "riches600": 33,
+   "longueurMediane": 281
+  },
+  "character": {
+   "fiches": 579,
+   "sansDescFr": 13,
+   "riches600": 107,
+   "longueurMediane": 377
+  },
+  "artifact": {
+   "fiches": 256,
+   "sansDescFr": 86,
+   "riches600": 10,
+   "longueurMediane": 314
+  },
+  "status": {
+   "fiches": 227,
+   "sansDescFr": 29,
+   "riches600": 20,
+   "longueurMediane": 439
+  },
+  "place": {
+   "fiches": 155,
+   "sansDescFr": 30,
+   "riches600": 7,
+   "longueurMediane": 335
+  },
+  "profession": {
+   "fiches": 79,
+   "sansDescFr": 49,
+   "riches600": 0,
+   "longueurMediane": 0
+  },
+  "skill": {
+   "fiches": 29,
+   "sansDescFr": 17,
+   "riches600": 0,
+   "longueurMediane": 0
+  }
+ },
+ "anatomieDesSectionsExistantes": {
+  "sections": 19099,
+  "fiches": 4778,
+  "sectionsParFiche": {
+   "min": 1,
+   "mediane": 4,
+   "p90": 8,
+   "max": 12
+  },
+  "longueurTexte": {
+   "min": 125,
+   "p10": 378,
+   "mediane": 648,
+   "p90": 1570,
+   "max": 9726
+  },
+  "formesDIdx": {
+   "entier": 19075,
+   "autre": 24
+  },
+  "sources": {
+   "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo": 6718,
+   "openrouter/mistralai/mistral-small-24b-instruct-2501": 6289,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)": 4107,
+   "mistral/mistral-large-latest": 1231,
+   "claude-haiku-4-5 (blitz front-2b — traduit de la page Fandom, contre-vérifié)": 305,
+   "connecteur-techniques-op (traduit de la page Fandom, contre-vérifié)": 120,
+   "nvidia/nvidia/nemotron-3-super-120b-a12b": 84,
+   "deepinfra/Qwen/Qwen3-32B": 54,
+   "deepinfra/mistralai/Mistral-Small-24B-Instruct-2501": 46,
+   "claude-haiku-4-5 (blitz fenêtre 02/08 — traduit de la page Fandom, contre-vérifié)": 30,
+   "anthropic/claude-haiku-4-5": 21,
+   "claude-haiku (finisseur) · Shinigami page - Fandom Death Note wiki": 10,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis chapeau-de-paille]": 8,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis pays-des-wa]": 5,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis water-seven]": 4,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis punk-hazard]": 4,
+   "claude-haiku (finisseur) · initiald.fandom.com (Mitsubishi Lancer Evolution III GSR (CE9A), Kyoichi Sudo's Mitsubishi Lancer Evolution)": 3,
+   "claude-haiku (finisseur) · Usui Pass": 3,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis skypiea]": 3,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis dressrosa]": 3,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis village-de-shimotsuki]": 3,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis east-blue-one-piece]": 3,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis thriller-bark]": 3,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis zo]": 3,
+   "claude-haiku (finisseur) · Usui Pass page - Fandom Initial D wiki": 2,
+   "fusion FR/EN du 08/08 — contenu repris de la fiche « Summoning: Impure World Reincarnation » (traduit, contre-vérifié)": 2,
+   "claude-haiku (finisseur) · L (character)": 2,
+   "claude-haiku (finisseur) · initiald.fandom.com/wiki/Akina, initiald.fandom.com/wiki/Ryosuke_Takahashi, initiald.fandom.com/wiki/Sayuki": 2,
+   "claude-haiku (finisseur) · deathnote.fandom.com (chapters: Misunderstanding, Creation)": 2,
+   "claude-haiku (finisseur) · initiald.fandom.com (Keiichi Tsuchiya, Chapter 044)": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis loguetown]": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis little-garden]": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis ile-de-drum]": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis alabasta]": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis impel-down]": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis erbaf]": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis archipel-des-sabaody]": 2,
+   "claude-haiku (finisseur) · initiald.fandom.com/wiki/Initial_D_Arcade_Stage_Ver._2,initiald.fandom.com/wiki/Team_Emperor": 1,
+   "claude-haiku (finisseur) · Mount Myōgi page - Fandom Initial D wiki": 1,
+   "claude-haiku (finisseur) · Shinigami": 1,
+   "claude-haiku (finisseur) · initiald.fandom.com/wiki/Sayuki, initiald.fandom.com/wiki/Beyond_Impact_Blue_Part_2, initiald.fandom.com/wiki/Mako_Sato": 1,
+   "claude-haiku (finisseur) · deathnote.fandom.com/wiki/Yotsuba_Group": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis enies-lobby]": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis reverse-mountain]": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis long-ring-long-land]": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis weatheria]": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis royaume-de-prodence]": 1,
+   "openrouter/mistralai/mistral-small-24b-instruct-2501 [fusion doublon depuis gotei-13-bleach]": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis baggy-s-delivery]": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis baterilla]": 1
+  },
+  "titresLesPlusFrequents": [
+   [
+    "Apparence",
+    2114
+   ],
+   [
+    "Personnalité",
+    1887
+   ],
+   [
+    "Histoire",
+    1174
+   ],
+   [
+    "Capacités",
+    876
+   ],
+   [
+    "Anecdotes",
+    641
+   ],
+   [
+    "Capacités et pouvoirs",
+    575
+   ],
+   [
+    "Contexte",
+    357
+   ],
+   [
+    "Relations",
+    355
+   ],
+   [
+    "Intrigue",
+    345
+   ],
+   [
+    "Passé",
+    327
+   ],
+   [
+    "Biographie",
+    326
+   ],
+   [
+    "Apparitions dans les jeux vidéo",
+    303
+   ],
+   [
+    "Utilisation",
+    246
+   ],
+   [
+    "Partie II",
+    205
+   ],
+   [
+    "Dragon Ball Super",
+    169
+   ],
+   [
+    "Ninjutsu",
+    162
+   ],
+   [
+    "Partie I",
+    154
+   ],
+   [
+    "Pouvoirs et capacités",
+    152
+   ],
+   [
+    "Ennemis",
+    151
+   ],
+   [
+    "Nouvelle Ère",
+    141
+   ],
+   [
+    "Vue d'ensemble",
+    115
+   ],
+   [
+    "Saga du Pays de Wano",
+    115
+   ],
+   [
+    "Aperçu",
+    114
+   ],
+   [
+    "Dragon Ball Z",
+    111
+   ],
+   [
+    "Saga de Whole Cake Island",
+    93
+   ],
+   [
+    "Apparitions dans d'autres médias",
+    91
+   ],
+   [
+    "Famille",
+    86
+   ],
+   [
+    "Capacités physiques",
+    84
+   ],
+   [
+    "Saga de la Guerre au Sommet",
+    82
+   ],
+   [
+    "Techniques et capacités spéciales",
+    79
+   ],
+   [
+    "Armes",
+    77
+   ],
+   [
+    "Super Dragon Ball Heroes",
+    76
+   ],
+   [
+    "Différences entre l'anime et le manga",
+    75
+   ],
+   [
+    "Saga de Dressrosa",
+    73
+   ],
+   [
+    "Puissance",
+    72
+   ],
+   [
+    "Apparitions cinématographiques",
+    72
+   ],
+   [
+    "Techniques",
+    71
+   ],
+   [
+    "Dragon Ball",
+    67
+   ],
+   [
+    "Citations",
+    66
+   ],
+   [
+    "Zanpakutō",
+    66
+   ]
+  ],
+  "titresDistincts": 2531
+ },
+ "coexistence": {
+  "avecDossier": 4776,
+  "avecDossierEtDescFr": 4619,
+  "avecDossierEtDescFrLong600": 1161,
+  "avecDossierSansDescFr": 157
+ },
+ "echantillonRiches": [
+  {
+   "slug": "konoha-council",
+   "name": "Konoha Council",
+   "type": "status",
+   "universe": "Naruto",
+   "longueurDescFr": 795,
+   "paragraphes": 1,
+   "extrait": "Le Conseil de Konoha est un organe consultatif composé de Homura Mitokado, Danzō Shimura et Koharu Utatane, chargé d'assister le Hokage dans la gouvernance du village afin que les décisions servent les intérêts de Konoha et de ses habitants. Forts de plusieurs décennies d'expérience, ils possèdent u"
+  },
+  {
+   "slug": "kuzuryuu",
+   "name": "Kuzuryuu",
+   "type": "character",
+   "universe": "Bleach",
+   "longueurDescFr": 1560,
+   "paragraphes": 1,
+   "extrait": "Kuzuryuu est introduit durant l'arc du Capitaine Amagai en tant que l'un des assassins de Gyōkaku Kumoi. Il fait partie de l'escouade d'assassins chargée de capturer Rurichiyo Kasumiōji sous les ordres de Hanza Nukui. Il affronte Uryū Ishida. Il l'interroge sur son usage du shunpo, et Ishida révèle "
+  },
+  {
+   "slug": "atk-db-ki-sense",
+   "name": "Ki Sense",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "longueurDescFr": 1170,
+   "paragraphes": 1,
+   "extrait": "La détection du ki, également appelée lecture du ki ou perception du ki, est une capacité innée de nombreux combattants permettant de détecter et localiser la signature énergétique d'un individu, même lorsqu'il est dissimulé ou hors de vue. Elle peut toutefois être rendue inefficace par une variatio"
+  },
+  {
+   "slug": "clan-sarutobi",
+   "name": "Clan Sarutobi",
+   "type": "status",
+   "universe": "Naruto",
+   "longueurDescFr": 710,
+   "paragraphes": 1,
+   "extrait": "Le clan Sarutobi est l'un des clans influents de Konohagakure, présent dès la fondation du village aux côtés des Senju et des Uchiha au sortir de l'ère des Royaumes combattants. Il a donné au village certaines de ses figures les plus marquantes, à commencer par Hiruzen Sarutobi, devenu Troisième Hok"
+  },
+  {
+   "slug": "daimyo-seigneur",
+   "name": "Daimyō (seigneur)",
+   "type": "status",
+   "universe": "Naruto",
+   "longueurDescFr": 619,
+   "paragraphes": 1,
+   "extrait": "Le daimyō est le chef politique d'un pays, responsable de toutes les décisions concernant son territoire, y compris les alliances, le budget annuel et les privilèges accordés au village ninja sous sa protection. Il détient le pouvoir politique le plus élevé, ce qui lui permet de nommer ou de destitu"
+  },
+  {
+   "slug": "l-equipage-aux-cent-betes",
+   "name": "L’équipage aux Cent Bêtes",
+   "type": "status",
+   "universe": "One Piece",
+   "longueurDescFr": 667,
+   "paragraphes": 1,
+   "extrait": "Les Pirates aux Cent Bêtes, également connus sous le nom de Beasts Pirates, sont une organisation pirate extrêmement puissante et infâme dirigée par Kaidou, anciennement l'un des Quatre Empereurs. Basés à Wano, ils ont consolidé leur pouvoir grâce à une alliance avec le shogun Kurozumi Orochi. Leur "
+  },
+  {
+   "slug": "shadow-senbon",
+   "name": "Shadow Senbon",
+   "type": "power",
+   "universe": "Naruto",
+   "longueurDescFr": 603,
+   "paragraphes": 1,
+   "extrait": "Shadow Senbon est un ninjutsu offensif classé également comme shurikenjutsu, efficace à courte et moyenne portée (0-10 m). Le praticien lance simultanément des senbon munis de cloches et des senbon silencieux, comptant sur le bruit des cloches pour détourner l’attention de l’adversaire et le toucher"
+  },
+  {
+   "slug": "reiichi-oshima",
+   "name": "Reiichi Oshima",
+   "type": "character",
+   "universe": "Bleach",
+   "longueurDescFr": 794,
+   "paragraphes": 1,
+   "extrait": "Reiichi Ōshima est un élève masculin de Karakura High School, ayant auparavant fréquenté le collège Togata Junior High School. Lors du premier jour de cours, il fait partie d'un groupe qui s'oppose à Ichigo Kurosaki et Yasutora Sado, puis il confronte Ichigo sur le toit du lycée au sujet de la coule"
+  },
+  {
+   "slug": "rurichiyo-kasumiouji",
+   "name": "Rurichiyo Kasumiouji",
+   "type": "character",
+   "universe": "Bleach",
+   "longueurDescFr": 1023,
+   "paragraphes": 1,
+   "extrait": "C'est la princesse de la famille noble Kasumiōji. Sa famille, selon Yoruichi Shihōin, se situe juste en dessous des quatre grandes familles nobles en rang, précisant que leur situation est un peu « particulière ». Elle a l'apparence d'une petite enfant et le comportement typique d'une princesse, s'a"
+  },
+  {
+   "slug": "kano-country",
+   "name": "Pays de Kano",
+   "type": "place",
+   "universe": "One Piece",
+   "longueurDescFr": 715,
+   "paragraphes": 1,
+   "extrait": "Le Pays de Kano, situé dans le West Blue, évoque une cité chinoise antique avec ses bâtiments à l'architecture traditionnelle et ses hautes aiguilles de roche entourant la ville. Berceau de la famille Chinjao et de la Happo Navy, il a été engagé dans une guerre contre un autre État dont l'approvisio"
+  },
+  {
+   "slug": "first-hoshikage",
+   "name": "Premier Hoshikage",
+   "type": "character",
+   "universe": "Naruto",
+   "longueurDescFr": 897,
+   "paragraphes": 1,
+   "extrait": "Il était le fondateur et premier Hoshikage de Hoshigakure, ayant découvert il y a environ deux cents ans une étoile tombée (météorite) dotée de pouvoirs mystiques dans le Pays des Ours. En créant le village, il visait à former des shinobi de renom et à obtenir le statut de grand village caché, ignor"
+  },
+  {
+   "slug": "first-division",
+   "name": "First Division",
+   "type": "status",
+   "universe": "Naruto",
+   "longueurDescFr": 670,
+   "paragraphes": 1,
+   "extrait": "La First Division est un bataillon des Forces Shinobi Alliées dirigé par Darui de Kumogakure, composé de plusieurs milliers de shinobi et de samouraïs spécialisés principalement dans le combat à moyenne distance et le bukijutsu. Elle regroupe notamment Chōza Akimichi, Atsui, Kotetsu Hagane, Hiashi H"
+  }
+ ]
+}

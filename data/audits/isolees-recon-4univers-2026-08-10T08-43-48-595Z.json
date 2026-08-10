@@ -1,0 +1,2839 @@
+{
+ "quand": "2026-08-10T08:43:48.593Z",
+ "totalFiches": 7632,
+ "totalAretes": 16699,
+ "totalIsolees": 848,
+ "parUnivers": {
+  "JoJo's Bizarre Adventure": {
+   "isolees": 49,
+   "types": {
+    "character": 46,
+    "artifact": 1,
+    "place": 1,
+    "status": 1
+   },
+   "clefsAttributs": {
+    "descFr": 49,
+    "role": 46,
+    "partie": 46,
+    "voiceActors": 44,
+    "descRaw": 36,
+    "descLang": 36,
+    "favorites": 30,
+    "descFrSource": 15,
+    "category": 3,
+    "descFrPurgee": 1,
+    "material": 1,
+    "region": 1,
+    "scope": 1
+   },
+   "fiches": [
+    {
+     "slug": "class-representative",
+     "name": "Class Representative",
+     "type": "character",
+     "summary": "Déléguée de classe non nommée, personnage secondaire de l'arc scolaire de Diamond is Unbre",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "La représentante de classe est une élève qui fréquente les mêmes cours que Koichi Hirose, Okuyasu Nijimura et Josuke Higashikata. Lors de la poursuite acharnée de Yukako Yamagishi envers Koichi, elle devient victime d'une attaque où Yukako plante ses cheveux sur elle, la laissant bâillonnée et les yeux bandés tandis que ses cheveux brûlent. Elle est sauvée par Okuyasu qui utilise son Stand The Hand pour éteindre l'incendie et la libérer.",
+      "partie": "Partie 4",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "Maureen Price"
+       ],
+       "jp": [
+        "Sanae Kobayashi"
+       ]
+      },
+      "descFrSource": "claude-haiku-4-5 (rédacteur sans-source) · mentions : Yukako Yamagishi Falls in Love, Part 1 (Episode), List of JoJo's Bizarre Adventure episodes/Episode 51 to 100, JoJo's Bizarre Adventure: Diamond is Unbreakable"
+     }
+    },
+    {
+     "slug": "gray-fly",
+     "name": "Gray Fly",
+     "type": "character",
+     "summary": "Premier Stand ennemi affronté par le groupe de Jotaro Kujo, dissimulé en insecte à bord de",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "C'est un antagoniste mineur de la Partie III : Stardust Crusaders. Gray Fly apparaît comme un vieil homme avec une coiffure en fer à cheval et l'empreinte d'un lucane sur la langue. Il paraît normal au premier abord, mais il est purement et simplement mauvais, ayant adopté un mode opératoire consistant à tuer ses victimes en leur tranchant la langue avec son Stand. Sa personnalité sadique le pousse à tuer des gens juste pour le plaisir. Il est connu comme un utilisateur de Stand qui provoque de multiples accidents et tue des gens pour leur voler leurs objets de valeur. Kakyoin note que Dio n'a pas eu besoin d'utiliser une spore pour le contrôler, ce qui signifie qu'il a probablement simplement été engagé pour tuer le groupe Joestar.",
+      "partie": "Partie 3",
+      "descRaw": "He is a minor antagonist in Part III: Stardust Crusaders. Gray Fly appears as an old man with a horseshoe hair style, and an imprint of a stag beetle on his tongue. He seems normal at first but is plain evil, taking up a modus operandi of killing his victims by cutting off their tongues with his Stand. His sadistic personality drives him to kill people just for fun. He has been known as a stand user who causes multiple accidents and kills people to steal their valuables. Kakyoin notes that Dio didn't need to use a spore to control him, so he was probably just hired to kill the Joestar group. (Source: JoJo's Bizarre Encyclopedia)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Patrick Préjean"
+       ],
+       "jp": [
+        "Katsumi Chou"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "akemi",
+     "name": "Akemi",
+     "type": "character",
+     "summary": "Personnage apparaissant ponctuellement dans l'univers de JoJo's Bizarre Adventure, sans qu",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "L'une des groupies de Yuya Fungami.",
+      "partie": "Partie 4",
+      "descRaw": "One of Yuya Fungami's Fangirls.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Deneen Melody"
+       ],
+       "jp": [
+        "Aoi Koga"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "mikitaka-s-mother",
+     "name": "Mikitaka's Mother",
+     "type": "character",
+     "summary": "Figure maternelle évoquée en lien avec les origines extraterrestres de Mikitaka Hasekura d",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Une femme prétendant être la mère de Mikitaka.",
+      "partie": "Partie 4",
+      "descRaw": "A woman claiming to be Mikitaka's mother.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Kaitlyn Robrock",
+        "Catherine Privat"
+       ],
+       "jp": [
+        "Saori Terai"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "tomoko-s-catcaller",
+     "name": "Tomoko's Catcaller",
+     "type": "character",
+     "summary": "Individu importunant Tomoko Higashikata dans les rues de Morioh, épisode secondaire illust",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Un homme quelconque qui aborde Tomoko Higashikata alors qu'elle marche dans la rue. Il tente de paraître amical, tout en bavant devant elle. En réponse, elle lui écrase le visage contre la portière de sa propre voiture, lui faisant sauter les dents. Il exige alors que Ryohei Higashikata l'arrête, ce que celui-ci refuse.",
+      "partie": "Partie 4",
+      "descRaw": "A random man who accosts Tomoko Higashikata as she walks down the street. He attempts to seem friendly, all the while drooling over her. In response, she slams his face down into his own car door knocking out his teeth. He then demands Ryohei Higashikata arrest her, who refuses. (Source: JoJo's Bizarre Encyclopedia)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Charles Germain"
+       ],
+       "jp": []
+      }
+     }
+    },
+    {
+     "slug": "giorno-s-mother",
+     "name": "Giorno's Mother",
+     "type": "character",
+     "summary": "La mère de Giorno, Mela Ghirga, éleva seule son fils après avoir été abandonnée par Dio Br",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Mère biologique de Giorno Giovanna, cette femme japonaise est l'une des rares personnes à avoir quitté DIO en vie, pour des raisons demeurées inexpliquées. Belle mais profondément négligente, elle abandonne régulièrement son jeune enfant seul à la maison pour sortir. Lorsque Giorno atteint quatre ans, elle épouse un homme italien et s'installe avec son fils en Italie.",
+      "partie": "Partie 5",
+      "favorites": 7,
+      "voiceActors": {
+       "en": [
+        "Jade Dennis"
+       ],
+       "jp": [
+        "Mariko Higashiuchi"
+       ]
+      },
+      "descFrSource": "claude-haiku-4-5 (rédacteur sans-source) · mentions : Bucciarati Is Coming, Part 2 (Chapter), Bucciarati Is Coming (Episode), Bucciarati Is Coming (story arc)"
+     }
+    },
+    {
+     "slug": "truck-driver",
+     "name": "Truck Driver",
+     "type": "character",
+     "summary": "Le chauffeur de camion est un personnage secondaire anonyme, croisé ponctuellement au fil ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Un chauffeur de camion utilisé par Sale afin de piéger Guido Mista.",
+      "partie": "Partie 5",
+      "descRaw": "A truck driver used by Sale in order to trap Guido Mista.",
+      "descLang": "en",
+      "favorites": 9,
+      "voiceActors": {
+       "en": [
+        "Jarred Kjack"
+       ],
+       "jp": [
+        "Kouichi Souma"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "minako-okura",
+     "name": "Minako Okura",
+     "type": "character",
+     "summary": "Habitante de Morioh apparaissant brièvement dans Diamond is Unbreakable, sans développemen",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Minako Okura est un personnage tertiaire apparaissant dans la quatrième partie de la série JoJo's Bizarre Adventure, Diamond is Unbreakable. Au cours d'une enquête, Hayato Kawajiri la voit, elle et son petit ami Satoru Nakae, se faire tuer par Yoshikage Kira.",
+      "partie": "Partie 4",
+      "descRaw": "Minako Okura is a tertiary character featured in the fourth part of the JoJo's Bizarre Adventure series, Diamond is Unbreakable. During an investigation, Hayato Kawajiri witnesses her and her boyfriend Satoru Nakae being killed by Yoshikage Kira. (Source: Jojo's Bizarre Encyclopedia)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Laure Sagols"
+       ],
+       "jp": [
+        "Ayaka Asai"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "speedwagon-foundation-agent",
+     "name": "Speedwagon Foundation Agent",
+     "type": "character",
+     "summary": "Membre du personnel de la Speedwagon Foundation, organisation fondée par Robert E. O. Spee",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Un agent de la Fondation Speedwagon qui se rend à Morioh. Il rend visite à Jotaro sur la plage privée du Morioh Grand Hotel et l'informe que Joseph Joestar arrivera au port de la ville le lendemain.",
+      "partie": "Partie 4",
+      "descRaw": "An agent of the Speedwagon Foundation who comes to Morioh. He visits Jotaro at Morioh Grand Hotel's private beach and informs him that Joseph Joestar will be arriving at the town's harbor on the following day. (Source: Speedwagon Wiki)",
+      "descLang": "en",
+      "favorites": 8,
+      "voiceActors": {
+       "en": [
+        "David Vincent",
+        "Christophe Laubion"
+       ],
+       "jp": [
+        "Ryuunosuke Watanuki"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "sorbet-jojo-s-bizarre-adventure",
+     "name": "Sorbet",
+     "type": "character",
+     "summary": "Homme de main de Passione formant avec Gelato un duo d'assassins envoyé éliminer Trish Una",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Un membre décédé de Passione, et par extension de La Squadra di Esecuzione, qui fut exécuté par le Boss parce qu'il avait tenté de le démasquer.",
+      "partie": "Partie 5",
+      "descRaw": "A deceased member of Passione and by extension La Squadra di Esecuzione who was executed by the Boss because hey tried to unmask him. (Source: JoJo's Wiki)",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Sean Chiplock"
+       ],
+       "jp": [
+        "Yoshihito Sasaki"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "gelato",
+     "name": "Gelato",
+     "type": "character",
+     "summary": "Homme de main de Passione formant avec Sorbet un duo d'assassins envoyé éliminer Trish Una",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Gelato est un membre décédé de Passione et, par extension, de La Squadra di Esecuzione, qui fut exécuté par le Boss parce qu'ils avaient tenté de le démasquer. Aucun doubleur n'a été renseigné pour ce personnage.",
+      "partie": "Partie 5",
+      "descRaw": "Gelato is a deceased member of Passione and by extension La Squadra di Esecuzione who was executed by the Boss because they tried to unmask him. (Source: JoJo's Wiki) No voice actors have been added to this character. Help improve our database by searching for a voice actor, and adding this character to their roles .",
+      "descLang": "en",
+      "favorites": 5
+     }
+    },
+    {
+     "slug": "josuke-s-saviour",
+     "name": "Josuke's Saviour",
+     "type": "character",
+     "summary": "Homme ayant sauvé le bébé Josuke Higashikata d'un accident de la route, à l'origine du pro",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Un délinquant qui vint en aide à la mère de Josuke lorsque sa voiture fut bloquée dans une tempête de neige alors que Josuke avait une forte fièvre, lui sauvant la vie. Aucun doubleur n'a été ajouté à ce personnage.",
+      "partie": "Partie 4",
+      "descRaw": "A delinquent who aided Josuke's mother when her car was stuck in a snowstorm and Josuke had a severe fever, saving him. No voice actors have been added to this character. Help improve our database by searching for a voice actor, and adding this character to their roles .",
+      "descLang": "en",
+      "favorites": 22
+     }
+    },
+    {
+     "slug": "centipede-shoes-store-owner",
+     "name": "Centipede Shoes Store Owner",
+     "type": "character",
+     "summary": "Commerçant tenant une boutique de chaussures associée à un mille-pattes, personnage second",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Le vieux propriétaire du magasin Centipede Shoes. Jotaro et Koichi se rendent dans sa boutique et lui demandent s'il a vu des vêtements dotés de boutons ressemblant à celui que Yoshikage Kira a perdu en se battant avec Shigechi.",
+      "partie": "Partie 4",
+      "descRaw": "The elderly owner of Centipede Shoes. Jotaro and Koichi visit his shop and ask if he's seen any clothing that have buttons resembling the one Yoshikage Kira lost when fighting with Shigechi.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Christopher Corey Smith",
+        "Fabrice de La Villehervé"
+       ],
+       "jp": [
+        "Shinya Fukumatsu"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "satoru-nakae",
+     "name": "Satoru Nakae",
+     "type": "character",
+     "summary": "Figure secondaire liée à l'environnement de Morioh dans Diamond is Unbreakable, dont le rô",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Satoru Nakae est un personnage tertiaire présent dans la quatrième partie de la série JoJo's Bizarre Adventure, Diamond is Unbreakable. Durant l'enquête, Hayato Kawajiri le vit, lui et sa petite amie Minako Okura, se faire tuer par Yoshikage Kira.",
+      "partie": "Partie 4",
+      "descRaw": "Satoru Nakae is a tertiary character featured in the fourth part of the JoJo's Bizarre Adventure series, Diamond is Unbreakable. During the investigation, Hayato Kawajiri witnessed him and his girlfriend Minako Okura being killed by Yoshikage Kira. (Source: JoJo's Bizarre Encyclopedia)",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Guillaume Pevée"
+       ],
+       "jp": [
+        "Tasuku Hatanaka"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "father-nijimura",
+     "name": "Father Nijimura",
+     "type": "character",
+     "summary": "Père d'Okuyasu et Keicho Nijimura, homme corrompu ayant accepté l'argent de Yoshikage Kira",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Father Nijimura est le patriarche de la famille Nijimura. Il subit des transformations monstrueuses et regénère un bras, victime des violences de son propre fils, Keicho. Il conserve toutefois les souvenirs des moments heureux de sa famille. Il apparaît pour la dernière fois en compagnie d'un nouvel animal de compagnie.",
+      "partie": "Partie 4",
+      "descRaw": "The father of Okuyasu and Keichou Nijimura. According to the 2017 live-action movie, his name is Mansaku (万作).",
+      "descLang": "en",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "Kellen Goff"
+       ],
+       "jp": [
+        "Naomi Kusumi"
+       ]
+      },
+      "descFrPurgee": "balayage anti-corruption 03/08",
+      "descFrSource": "claude-haiku-4-5 (rédacteur sans-source) · mentions : Mansaku Nijimura, Families"
+     }
+    },
+    {
+     "slug": "speedwagon-foundation-ship-captain",
+     "name": "Speedwagon Foundation Ship Captain",
+     "type": "character",
+     "summary": "Capitaine au service de la Speedwagon Foundation, chargé du transport maritime des membres",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Le capitaine du navire à bord duquel Joseph Joestar voyage jusqu'à Morioh.",
+      "partie": "Partie 4",
+      "descRaw": "The captain manning the ship on which Joseph Joestar travels to Morioh.",
+      "descLang": "en",
+      "favorites": 11,
+      "voiceActors": {
+       "en": [
+        "David Vincent"
+       ],
+       "jp": [
+        "Isamu Yuusen"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "reiko",
+     "name": "Reiko",
+     "type": "character",
+     "summary": "Personnage secondaire de l'univers de JoJo's Bizarre Adventure, dont l'identité et le rôle",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "L'une des trois groupies de Yuya Fungami. Elle porte un tatouage « HIGHWAY STAR » sur l'un de ses bras.",
+      "partie": "Partie 4",
+      "descRaw": "One of the three fangirls of Yuya Fungami. She has a \"HIGHWAY STAR\" tattoo on one of her arms.",
+      "descLang": "en",
+      "favorites": 5,
+      "voiceActors": {
+       "en": [
+        "Farrah Grabi"
+       ],
+       "jp": [
+        "Minami Shinoda"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "yoshie",
+     "name": "Yoshie",
+     "type": "character",
+     "summary": "Personnage dont l'identité exacte au sein de Diamond is Unbreakable reste peu précisée dan",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "L'une des trois groupies de Yuya Fungami. Elle porte un tatouage « HIGHWAY STAR » sur l'un de ses bras.",
+      "partie": "Partie 4",
+      "descRaw": "One of the three fangirls of Yuya Fungami. She has a \"HIGHWAY STAR\" tattoo on one of her arms.",
+      "descLang": "en",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "Myrddrina Antoni"
+       ],
+       "jp": [
+        "Juri Kimura"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "mela-ghirga",
+     "name": "Mela Ghirga",
+     "type": "character",
+     "summary": "Mela Ghirga est la mère biologique de Giorno Giovanna, séduite puis abandonnée par Dio Bra",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "La mère de Narancia Ghirga n'est mentionnée que dans un flash-back, où l'on apprend qu'elle est morte en 1994 d'une infection oculaire, alors que Narancia n'avait que 10 ans. Bien que la propre infection oculaire de Narancia n'ait été qu'une simple coïncidence survenue après un passage à tabac par des policiers, tous ses amis étaient convaincus qu'elle était contagieuse et qu'il l'avait attrapée de sa mère. Narancia lui-même finit par croire à la rumeur et fut terrifié à l'idée de mourir à tout moment, seul. L'anime indique sa date de naissance et sa date de décès comme étant respectivement le 21 septembre 1958 et le 16 janvier 1994.",
+      "partie": "Partie 5",
+      "descRaw": "Narancia Ghirga's mother is only mentioned in a flashback, where it is stated that she died in 1994 from an eye infection when Narancia was only 10 years old. Despite the fact that Narancia's own eye infection was a mere coincidence after being beaten up by police officers, all of his friends were convinced that it was contagious and that he got it from his mother. Narancia himself began to believe the rumor and was frightened that he would die at any time, all alone. The anime shows her date of birth and date of death to be respectively September 21, 1958 and January 16, 1994.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Tiana Camacho"
+       ],
+       "jp": [
+        "Serika Hiromatsu"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "abbacchio-s-partner",
+     "name": "Abbacchio's Partner",
+     "type": "character",
+     "summary": "Ancien coéquipier de Leone Abbacchio dans la police, impliqué dans le faux témoignage qui ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "C'était le coéquipier d'Abbacchio à l'époque où il était encore policier.",
+      "partie": "Partie 5",
+      "descRaw": "He was Abbacchio's partner back when he was still a police officer.",
+      "descLang": "en",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "Jarred Kjack"
+       ],
+       "jp": [
+        "Ikuji Nose"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "blackmailing-criminal",
+     "name": "Blackmailing Criminal",
+     "type": "character",
+     "summary": "Malfaiteur secondaire de la saga dont l'activité repose sur le chantage exercé envers ses ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Ce petit malfrat apparaît dans le flash-back sur la jeunesse de Leone Abbacchio, au chapitre 45 de Vento Aureo : lorsqu'Abbacchio, policier corrompu, le prend en flagrant délit de cambriolage, l'homme le fait chanter en le menaçant de révéler le pot-de-vin qu'il a accepté. Il dégaine ensuite une arme sur Abbacchio, mais c'est le coéquipier de ce dernier qui meurt en s'interposant — un drame qui pousse Abbacchio à rejoindre Passione et lui fait perdre toute empathie pour la mort d'autrui.",
+      "partie": "Partie 5",
+      "voiceActors": {
+       "en": [
+        "Jarred Kjack"
+       ],
+       "jp": [
+        "Yukitoshi Tokumoto"
+       ]
+      },
+      "descFrSource": "sondage manuel 08/08 (chantier petits univers) · https://jojo.fandom.com/wiki/Man_in_the_Mirror_and_Purple_Haze,_Part_6_(Chapter)"
+     }
+    },
+    {
+     "slug": "monica-ultello",
+     "name": "Monica Ultello",
+     "type": "character",
+     "summary": "Personnage secondaire à l'apparition limitée dans la saga JoJo's Bizarre Adventure.",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "La doctoresse Monica Ultello est la femme qui a pratiqué l'autopsie de Diavolo, dossier numéro 68, lors de sa deuxième mort, après qu'il eut été poignardé et tué par un toxicomane sur le Tibre.",
+      "partie": "Partie 5",
+      "descRaw": "Doctor Monica Ultello is the woman who performed an autopsy on Diavolo, file number 68, as his second death after he was cut and killed by a drug addict on Tiber river.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Julia McIlvaine"
+       ],
+       "jp": [
+        "Airi Ohtsu"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "masazo-kinoto",
+     "name": "Masazo Kinoto",
+     "type": "character",
+     "summary": "Vieil homme de JoJolion doté du Stand King Nothing, capable de détecter le danger invisibl",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Masazo est un architecte discret et timide, mais un peu cupide. Son Stand, Cheap Trick, le maintient constamment dans la peur, lui disant qu'il mourrait si quiconque voyait son dos.",
+      "partie": "Partie 4",
+      "descRaw": "Masazo is a quiet and timid architect, but a little greedy. His Stand, Cheap Trick, constantly keeps him afraid, telling Masazo he would die if anyone saw his back.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Emma Martello",
+        "Jean-Michel Vaubien"
+       ],
+       "jp": [
+        "Makoto Ishii"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "bruno-s-mother",
+     "name": "Bruno's Mother",
+     "type": "character",
+     "summary": "Mère de Bruno Bucciarati, remariée et distante de son fils, évoquée brièvement dans son pa",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Révélée dans le flash-back sur la jeunesse de Bruno Bucciarati, au chapitre 78 de Vento Aureo, la mère de Bruno se sépare de son mari alors que l'enfant a sept ans ; comprenant que son fils choisisse de rester avec un père dévasté par le divorce, elle en est fière et ne le revoit plus que chaque Noël. Bruno perdra ensuite son père, laissé pour mort par des trafiquants de drogue, ce qui le poussera à intégrer Passione.",
+      "partie": "Partie 5",
+      "voiceActors": {
+       "en": [
+        "Nicole Gose",
+        "Barbara Delsol"
+       ],
+       "jp": [
+        "Haruka Shimizu"
+       ]
+      },
+      "descFrSource": "sondage manuel 08/08 (chantier petits univers) · https://jojo.fandom.com/wiki/Bruno_Bucciarati's_Youth_(Chapter)"
+     }
+    },
+    {
+     "slug": "cameo",
+     "name": "Cameo",
+     "type": "character",
+     "summary": "Terme désignant une apparition brève de personnage secondaire au sein de la saga, sans dév",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Cameo est l'un des sbires de Dio et l'utilisateur du Stand « Judgement ». Il passe la majeure partie du combat enterré sous terre pour éviter d'être repéré par Polnareff et Avdol.",
+      "partie": "Partie 3",
+      "descRaw": "Cameo is one of Dio's henchmen, and the user of the stand \"Judgement\". He spends most of the fight buried underground to avoid being caught by Polnareff and Avdul.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Thierry Buisson",
+        "Stephen Mendel"
+       ],
+       "jp": [
+        "Kinryuu Arimoto"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "banker",
+     "name": "Banker",
+     "type": "character",
+     "summary": "Rôle générique incarné par un employé de banque croisé au détour d'une scène secondaire de",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Un employé de banque ordinaire, de petite taille, travaillant à Morioh.",
+      "partie": "Partie 4",
+      "descRaw": "An ordinary bank clerk of small stature working in Morioh.",
+      "descLang": "en",
+      "favorites": 2,
+      "voiceActors": {
+       "en": [
+        "Christopher Corey Smith",
+        "Jean-Claude Donda"
+       ],
+       "jp": [
+        "Yoshinori Fujita"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "paramedic",
+     "name": "Paramedic",
+     "type": "character",
+     "summary": "Rôle générique incarné par un secouriste intervenant brièvement lors d'une scène d'urgence",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Un ambulancier dépêché sur place lorsqu'un signalement d'explosion parvient à l'hôpital.",
+      "partie": "Partie 4",
+      "descRaw": "A paramedic who is dispatched when a report of an explosion is received at the hospital.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Agathe Quelquejay"
+       ],
+       "jp": [
+        "Yuuko Iida"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "female-guard",
+     "name": "Female Guard",
+     "type": "character",
+     "summary": "Gardienne non nommée de la prison de Green Dolphin Street, personnage secondaire de Stone ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Une gardienne travaillant dans la prison où Polpo est détenu.",
+      "partie": "Partie 5",
+      "descRaw": "A female guard working in the prison where Polpo is detained.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Jade Dennis"
+       ],
+       "jp": [
+        "Toa Yukinari"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "jolyne-s-mother",
+     "name": "Jolyne's Mother",
+     "type": "character",
+     "summary": "Épouse de Jotaro Kujo et mère de Jolyne Cujoh, personnage secondaire de l'arc familial de ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Mère de Jolyne Cujoh, cette femme américaine apparaît rarement dans Stone Ocean et demeure peu développée narrativement. Aimante et dévouée, elle chérit sa fille en l'absence de Jotaro, jouissant du privilège d'être la seule personne autorisée à l'appeler par le surnom familial « JoJo ».",
+      "partie": "Partie 6",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "Caitlin Glass",
+        "Emmanuelle Bodin"
+       ],
+       "jp": [
+        "Hitomi Nabatame"
+       ]
+      },
+      "descFrSource": "claude-haiku-4-5 (rédacteur sans-source) · mentions : SO Chapter 75, Jolyne Cujoh, Stone Ocean (story arc)"
+     }
+    },
+    {
+     "slug": "teacher",
+     "name": "Teacher",
+     "type": "character",
+     "summary": "Rôle générique incarné par diverses figures d'autorité scolaire croisées au fil des différ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "L'un des professeurs de Fugo à l'université, qui fut battu par un jeune Fugo à l'aide d'une encyclopédie de 4 kilos.",
+      "partie": "Partie 5",
+      "descRaw": "One of Fugo's teachers at the university, whom was beaten by a young Fugo with a 4-kilo encyclopedia.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Armen Taylor"
+       ],
+       "jp": [
+        "Jirou Saitou"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "yoshioka",
+     "name": "Yoshioka",
+     "type": "character",
+     "summary": "Figure secondaire de JoJo's Bizarre Adventure dont la fonction narrative demeure discrète ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Yoshioka est un homme d'affaires que l'on voit parler à son patron sur son téléphone portable. On lui demande de « faire comme prévu » à la réception d'un appel important une minute plus tard. Cet appel devait ouvrir une opportunité commerciale d'une valeur d'un milliard de yens. S'il ratait l'appel, Yoshioka serait renvoyé par son patron. Visiblement nerveux, Yoshioka accepte, mais son téléphone est aussitôt volé par Josuke. Ignorant ce qui vient de se passer, il continue de parler à sa main avant de remarquer que son téléphone a disparu, puis se lamente sur la perte d'un milliard de yens et de son emploi. Comme Josuke avait serré le téléphone trop fort, celui-ci a fini par se briser.",
+      "partie": "Partie 4",
+      "descRaw": "Yoshioka is a businessman who is seen talking to his boss on his cellphone. He is instructed to \"do as planned\" when receiving an important call one minute later. The call would grant a business opportunity worth one billion yen. If he missed the call, Yoshioka would be fired by his boss. Seemingly nervous, Yoshioka agrees but his phone is stolen by Josuke immediately. Unaware of what just happened, he continues talking to his hand before he notices his phone is gone, and is then anguished over the loss of one billion yen and his job. As Josuke grabbed the phone too hard, it ended up breaking. (Source: Jojo's Bizarre Encyclopedia)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Jonathan Darona"
+       ],
+       "jp": [
+        "Tarou Kiuchi"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "giorno-s-stepfather",
+     "name": "Giorno's Stepfather",
+     "type": "character",
+     "summary": "Le beau-père violent de Giorno est affronté par le jeune garçon, qui manifeste déjà une dé",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Le beau-père de Giorno Giovanna est une figure qui abuse régulièrement du jeune garçon. Cependant, après que Giorno ait sauvé un gangster — identifié plus tard comme Bruno Bucciarati — en mentant à quatre hommes qui le recherchaient, le beau-père cesse d'abuser de lui. Cette transformation marque un tournant crucial : la communauté traite désormais Giorno avec respect, et le garçon découvre sa raison d'être à travers la confiance qu'il a apprise de cet homme.",
+      "partie": "Partie 5",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "DW McCann",
+        "Thierry Mercier"
+       ],
+       "jp": [
+        "Hinata Tadokoro"
+       ]
+      },
+      "descFrSource": "claude-haiku-4-5 (rédacteur sans-source) · mentions : Bucciarati Is Coming, Part 2 (Chapter), Bucciarati Is Coming (story arc), Gold Experience, Part 3 (Chapter)"
+     }
+    },
+    {
+     "slug": "fleche-du-stand",
+     "name": "Flèche du Stand",
+     "type": "artifact",
+     "summary": "Taillée dans une météorite, elle éveille le Stand de ceux qu'elle transperce — ou les tue.",
+     "attrs": {
+      "descFr": "La Flèche du Stand est taillée dans une météorite ancienne. Lorsqu'elle transperce quelqu'un, elle éveille son Stand — le pouvoir psychique latent — ou l'élimine s'il ne survit pas à la métamorphose. Elle est l'instrument du destin des porteurs de Stand.",
+      "category": "Relique",
+      "material": "Pointe météorique",
+      "descFrSource": "claude-haiku (blitz 03/08) · Bow and Arrow (JoJo Wiki)"
+     }
+    },
+    {
+     "slug": "disfigured-delinquent",
+     "name": "Disfigured Delinquent",
+     "type": "character",
+     "summary": "Délinquant au visage marqué, personnage secondaire croisé dans l'arc de Morioh de Diamond ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Ces quatre délinquants sont des élèves de dernière année du lycée de Josuke Higashikata, connus pour arpenter Morioh en malmenant les nouveaux. Ils exigent que Koichi Hirose et Josuke les saluent conformément aux « règles du lycée », faute de quoi ils finiraient à l'hôpital comme trois gars qui avaient refusé de le faire auparavant. Quand Josuke les ignore parce qu'il est occupé à essayer de vaincre sa peur des reptiles en s'approchant d'une tortue, l'un des délinquants attrape la tortue et la jette, brisant sa carapace. Josuke essayait de ne pas attirer l'attention et va jusqu'à s'excuser, mais décide de riposter après que l'un d'eux se moque de sa coiffure. Il utilise aussitôt Crazy Diamond pour frapper le visage du gars, « réparant » son nez en une forme différente. Les délinquants prennent alors la fuite, craignant de se faire tabasser.",
+      "partie": "Partie 4",
+      "descRaw": "These four delinquents are seniors at Josuke Higashikata's school known for walking around Morioh bullying freshmen. They demand that Koichi Hirose and Josuke greet them as part of the \"the rules of school\" or they would end up in the hospital just like three guys who previously refused to do it. When Josuke ignores them because he was busy trying to conquer his fear of reptiles by getting close to a turtle, one of the delinquents grabs the turtle and throws it away, smashing its shell open. Josuke was trying not to attract attention and even apologizes, but decides to retaliate after one of them mocks his hair. He immediately uses Crazy Diamond to punch the guy's face, \"fixing\" his nose into a different shape. The delinquents then run away in fear of getting beaten up. (Source: JoJo's Bizarre Encyclopedia)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Nicolas Duquenoy"
+       ],
+       "jp": [
+        "Isamu Yuusen"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "anita",
+     "name": "Anita",
+     "type": "character",
+     "summary": "Personnage secondaire mineur de l'œuvre d'Araki, dont l'apparition reste ponctuelle et peu",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Anita est une femme de la haute société assise dans le même train que Melone. Elle est arrogante et gâtée, se plaignant du bruit des autres passagers et les traitant de paysans. Melone lui demande comment elle se porte et fouille dans son sac pour trouver une pièce d'identité, découvrant qu'elle a 24 ans et est née le 10 mars 1977. Elle le gifle et dit qu'elle va appeler la sécurité, mais Melone lui lèche le doigt et détermine qu'elle est de groupe sanguin O, et qu'elle est aussi plutôt forte pour une femme de son âge. Anita révèle que sa famille a de solides relations au sein de la police et du gouvernement et ne laisserait pas passer ce que Melone a fait. Melone découvre qu'elle a une mauvaise compatibilité avec Bruno Bucciarati et qu'elle est aussi fumeuse et buveuse, ce qui fait d'elle un parent parfait pour Baby Face avec l'ADN de Bucciarati. En trois minutes et trois secondes, elle « conçoit » le Stand homoncule, probablement dans sa tête ou son cou, qui apprend rapidement de son langage vulgaire après qu'elle a exprimé son intention de vouloir assassiner Melone et insulté le contrôleur du train. Baby Face urine plus tard partout dans le dos d'Anita, la poussant à croire que le train est sale.",
+      "partie": "Partie 5",
+      "descRaw": "Anita is an upper class woman sitting in the same train as Melone. She's arrogant and spoiled, as she complains about the noise from other passengers and calls them peasants. Melone asks how her health is and snoops through her bag to find an ID, discovering that she's 24 years old and was born on March 10, 1977. She slaps him and says she's going to call security, but Melone licks her finger and determines that she has an O blood type, and is also rather strong for a woman her age. Anita reveals that her family has high connections with the police and government and wouldn't let what Melone did slide. Melone finds out that she has bad compatibility with Bruno Bucciarati and is also a smoker that drinks, making her a perfect parent for Baby Face along with Bucciarati's DNA. In three minutes and three seconds, she \"conceives\" the homunculus Stand, likely in in her head or neck, which quickly learns from her vulgar language after she states her intent of wanting to murder Melone and insults the train conductor. Baby Face later urinates all over Anita's back, causing her to believe that the train is filthy. Just as she runs out of the train to find a witness in order to sue the railwa",
+      "descLang": "en",
+      "favorites": 2,
+      "voiceActors": {
+       "en": [
+        "Nicole Gose",
+        "Sandra Valentin"
+       ],
+       "jp": [
+        "Riho Sugiyama"
+       ]
+      },
+      "descFrSource": "inconnu (coupée en pleine phrase — tronquée proprement à la dernière phrase complète, chantier textes-coupes 08/08)"
+     }
+    },
+    {
+     "slug": "paolo-bucciarati",
+     "name": "Paolo Bucciarati",
+     "type": "character",
+     "summary": "Figure paternelle de Bruno Bucciarati, mentionnée succinctement dans le passé familial du ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Paolo Bucciarati était le père de Bruno Bucciarati.",
+      "partie": "Partie 5",
+      "descRaw": "Paolo Bucciarati was Bruno Bucciarati's father.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Armen Taylor"
+       ],
+       "jp": [
+        "Shinnosuke Ogami"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "lawyer",
+     "name": "Lawyer",
+     "type": "character",
+     "summary": "L'avocat est un personnage secondaire mineur, apparaissant ponctuellement sans rôle dévelo",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "L'avocat de la défense corrompu de Jolyne Cujoh, qui la rencontre pour la première fois au centre de détention.",
+      "partie": "Partie 6",
+      "descRaw": "The corrupt defense attorney of Jolyne Cujoh who first meets with her in the detention center. (Source: JoJo's Bizarre Encyclopedia)",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Stéphane Pouplard",
+        "Michael Schwalbe"
+       ],
+       "jp": [
+        "Hidenori Takahashi"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "man-x",
+     "name": "Man X",
+     "type": "character",
+     "summary": "Man X est un personnage secondaire non identifié précisément, désigné uniquement par ce su",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Taille : 195 cm Joseph Joestar débute comme un jeune Anglais à New York, avec sa grand-mère Erina. Cependant, une attaque de Straits et la disparition de Robert Edward O. Speedwagon l'entraînent bientôt dans la grande chaîne d'événements.",
+      "partie": "Partie 5",
+      "descRaw": "Height: 195 cm (6'5\") Joseph Joestar begins as a young Englishman in New York, with his grandmother Erina. However, an attack by Straits and the disappearance of Robert Edward O Speedwagon soon involve him in the greater chain of events.",
+      "descLang": "en",
+      "favorites": 17,
+      "voiceActors": {
+       "en": [
+        "Armen Taylor"
+       ],
+       "jp": [
+        "Hiroshi Shirokuma"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "mrs-menini",
+     "name": "Mrs. Menini",
+     "type": "character",
+     "summary": "Mrs. Menini est un personnage secondaire mineur, apparaissant brièvement dans l'intrigue s",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Une vieille femme du quartier de Bruno qui le connaît bien et le respecte en tant que gangster honorable.",
+      "partie": "Partie 5",
+      "descRaw": "An old woman from Bruno's neighbourhood who is well acquainted with the later and respects him as an honorable gangster.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Cindy Robinson",
+        "Marie-Christine Darah"
+       ],
+       "jp": [
+        "Namiko Morimoto"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "le-caire",
+     "name": "Le Caire",
+     "type": "place",
+     "summary": "Le bout du voyage de 50 jours : la ville où Dio attend, et où le temps s'arrête.",
+     "attrs": {
+      "descFr": "Le Caire est le terme du voyage de cinquante jours entrepris par Jotaro Kujo et ses compagnons dans Stardust Crusaders à travers l'Asie : c'est là, en Égypte, que Dio Brando les attend depuis son réveil, pour l'affrontement final contre son Stand The World, capable d'arrêter le temps.",
+      "region": "Égypte",
+      "category": "Lieu",
+      "descFrSource": "sondage manuel 08/08 (chantier petits univers) — connaissance générale de l'œuvre, aucune page Fandom dédiée trouvée"
+     }
+    },
+    {
+     "slug": "kempo-fighter",
+     "name": "Kempo Fighter",
+     "type": "character",
+     "summary": "Le combattant de kempo est un personnage secondaire mineur, affronté ponctuellement par un",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Le combattant de kempo anonyme est un allié tertiaire apparaissant dans la première partie de la série JoJo's Bizarre Adventure, Phantom Blood. Il tente initialement de dévaliser Jonathan Joestar dans Ogre Street aux côtés de Robert E. O. Speedwagon et de Tattoo.",
+      "partie": "Partie 1-2",
+      "descRaw": "The unnamed Kempo Fighter is a tertiary ally featured in the first part of the JoJo's Bizarre Adventure series, Phantom Blood. He originally tries to rob Jonathan Joestar in Ogre Street alongside Robert E. O. Speedwagon and Tattoo. (Source: JoJo's Bizarre Encyclopedia)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [],
+       "jp": [
+        "Itaru Yamamoto"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "school-nurse",
+     "name": "School Nurse",
+     "type": "character",
+     "summary": "Infirmière scolaire non nommée, personnage secondaire de l'arc de Morioh dans Diamond is U",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Personnage sans nom de Stardust Crusaders, l'infirmière scolaire est grièvement blessée lors du violent affrontement entre Jotaro Kujo et Noriaki Kakyoin au chapitre 119. L'infirmerie et les étages supérieurs de l'école subissent des dégâts considérables durant l'assaut de Hierophant Green, faisant d'elle une victime collatérale de ce combat.",
+      "partie": "Partie 3",
+      "voiceActors": {
+       "en": [],
+       "jp": [
+        "Ayumi Tsunematsu"
+       ]
+      },
+      "descFrSource": "claude-haiku-4-5 (rédacteur sans-source) · mentions : Noriaki Kakyoin, Part 2 (Chapter), Episode 2 (OVA), Noriaki Kakyoin (story arc)"
+     }
+    },
+    {
+     "slug": "sardinian-fortune-teller",
+     "name": "Sardinian Fortune Teller",
+     "type": "character",
+     "summary": "La diseuse de bonne aventure sarde prédit dans Vento Aureo le destin funeste réservé à Dia",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Dans le chapitre 102 de Vento Aureo, un diseur de bonne aventure sarde aborde Vinegar Doppio et lui propose une divination ; entraîné dans une ruelle sombre, il perçoit des détails troublants sur son passé avant d'assister, terrifié, à sa métamorphose en Diavolo. Sommé de lire l'avenir sur une photo de Risotto Nero, il annonce que les deux hommes se croiseront bientôt — juste avant que Diavolo ne le tue pour le faire taire.",
+      "partie": "Partie 5",
+      "voiceActors": {
+       "en": [
+        "Joe J. Thomas"
+       ],
+       "jp": [
+        "Hiroshi Naka"
+       ]
+      },
+      "descFrSource": "sondage manuel 08/08 (chantier petits univers) · https://jojo.fandom.com/wiki/Storm_Warning_in_Sardinia_Island!_(Chapter)"
+     }
+    },
+    {
+     "slug": "hommes-du-pilier",
+     "name": "Hommes du Pilier",
+     "type": "status",
+     "summary": "Les surhommes aztèques endormis dans la pierre, créateurs du Masque — l'Onde est leur seul",
+     "attrs": {
+      "scope": "Race ancienne",
+      "descFr": "Les Hommes du Pilier sont une race d’êtres surhumains aztèques, quasi éteinte, dont la physiologie leur confère force, intelligence et longévité exceptionnelles. Dotés de cornes frontales symbolisant leur honneur, ils maîtrisent la manipulation corporelle et absorbent leurs proies par contact, tout en étant vulnérables à l’Onde et aux rayons solaires. Réveillés en 1938, Kars, Esidisi, Wamuu et Santana cherchent la Pierre Rouge d’Aja pour accéder à l’état de « forme ultime », invulnérable. Leur hiérarchie et leurs pouvoirs élémentaires en font des adversaires redoutables dans *Battle Tendency*.",
+      "category": "Race & espèce",
+      "descFrSource": "mistral/mistral-large-latest"
+     }
+    },
+    {
+     "slug": "butler",
+     "name": "Butler",
+     "type": "character",
+     "summary": "Majordome non nommé, personnage secondaire à l'apparition ponctuelle dans l'œuvre d'Araki.",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Butler est une occupation dans l'univers JoJo's Bizarre Adventure. Des personnages comme Roses, butler de la famille Joestar pendant trente ans, ou Ikkyu, au service des Dieux de la Montagne, incarnent ce rôle. Les butlers assument des responsabilités variées, du service domestique à la protection personnelle, démontrant une grande dévotion envers leurs maîtres.",
+      "partie": "Partie 1-2",
+      "favorites": 4,
+      "voiceActors": {
+       "en": [],
+       "jp": [
+        "Shinobu Matsumoto"
+       ]
+      },
+      "descFrSource": "claude-haiku-4-5 (rédacteur sans-source) · mentions : Roses, Ikkyu, Dio Brando the Invader, Part 4 (Chapter)"
+     }
+    },
+    {
+     "slug": "father-styx",
+     "name": "Father Styx",
+     "type": "character",
+     "summary": "Le Père Styx est un personnage secondaire mineur, figure religieuse apparaissant ponctuell",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Le père Styx est un personnage tertiaire apparaissant dans la première partie de la série JoJo's Bizarre Adventure, Phantom Blood. Styx est un prêtre alcoolique qui embarque pour un voyage vers le Mexique dans le cadre d'une mission. À bord du navire, il découvre le cercueil de Dio Brando.",
+      "partie": "Partie 1-2",
+      "descRaw": "Father Styx is a tertiary character featured in the first part of the JoJo's Bizarre Adventure series, Phantom Blood. Styx is an alcoholic priest who boards a voyage to Mexico for a mission. While on the ship, he discovers Dio Brando's coffin. (Source: JoJo's Bizarre Encyclopedia)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Christopher Hackney"
+       ],
+       "jp": [
+        "Masayuki Katou"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "old-janitor",
+     "name": "Old Janitor",
+     "type": "character",
+     "summary": "Le vieux concierge est un personnage secondaire anonyme, croisé ponctuellement au fil de l",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Un vieux concierge que l'on voit travailler devant les dortoirs du collège du collège-lycée de Naples, où vit Giorno Giovanna.",
+      "partie": "Partie 5",
+      "descRaw": "An old janitor who is shown working outside the middle school dorms of Naples Middle-High School, where Giorno Giovanna lives.",
+      "descLang": "en",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "William Frederick Knight"
+       ],
+       "jp": [
+        "Minoru Inaba"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "toyohiro-kanedaichi",
+     "name": "Toyohiro Kanedaichi",
+     "type": "character",
+     "summary": "Jeune garçon blessé guéri par le Stand Crazy Diamond de Josuke Higashikata, l'une des prem",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Kanedaichi est présenté comme un ermite menant une vie solitaire dans un ancien pylône de transmission désaffecté depuis 3 ans. Il affirme l'avoir acheté et y vivre depuis. En réalité, il était prisonnier à l'intérieur de son propre Stand, Superfly, et s'y était aménagé un logement tout en préparant son évasion. Il se comporta de manière paisible afin que Josuke Higashikata entre dans son pylône sans se méfier d'un Stand ennemi. Il y vécut cependant très longtemps, car il développa des callosités assez épaisses et solides pour supporter son poids, ouvrir des bouteilles et faire toutes sortes de choses.",
+      "partie": "Partie 4",
+      "descRaw": "Kanedaichi is introduced as a hermit living a lonesome life in an old, retired transmission tower for 3 years. He claims to have bought it and living in there since then. He was actually trapped within it by his own stand Superfly and had built a home while preparing to escape. He acted peaceful so Josuke Higashikata would enter his tower without worrying about an enemy stand. He did however live there for a long time, as he grew calluses thick and strong enough to support his weight, open bottles and a variety of things. (Source: Jojo's Bizarre Adventure Wikia)",
+      "descLang": "en",
+      "favorites": 7,
+      "voiceActors": {
+       "en": [
+        "Sean Chiplock",
+        "Jim Redler"
+       ],
+       "jp": [
+        "Kouichi Toochika"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "family-club-vendor",
+     "name": "Family Club Vendor",
+     "type": "character",
+     "summary": "Vendeur non nommé d'une supérette de quartier, personnage secondaire de l'arc de Morioh da",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Vendeur non nommé d'une supérette de quartier dans l'arc de Morioh de Diamond is Unbreakable, personnage secondaire sans développement propre au-delà de cette apparition.",
+      "partie": "Partie 4",
+      "voiceActors": {
+       "en": [
+        "Thierry Ragueneau"
+       ],
+       "jp": [
+        "Shinobu Matsumoto"
+       ]
+      },
+      "descFrSource": "sondage manuel 08/08 (chantier petits univers) — connaissance générale de l'œuvre, aucune page Fandom dédiée trouvée"
+     }
+    }
+   ]
+  },
+  "Bleach": {
+   "isolees": 45,
+   "types": {
+    "character": 45
+   },
+   "clefsAttributs": {
+    "role": 45,
+    "voiceActors": 44,
+    "descFr": 41,
+    "descRaw": 38,
+    "descLang": 38,
+    "favorites": 32,
+    "descFrSource": 6,
+    "purgeAudit": 1,
+    "race": 1,
+    "monde": 1
+   },
+   "fiches": [
+    {
+     "slug": "gegetsuburi",
+     "name": "Gegetsuburi",
+     "type": "character",
+     "summary": "Gegetsuburi est l'esprit incarné du Zanpakutō de Marechiyo Ōmaeda. Comme son ancien parten",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Gegetsuburi est l'esprit incarné du Zanpakutō de Marechiyo Ōmaeda. Comme son ancien partenaire, il a une passion pour les crackers, qu'on le voit régulièrement grignoter. Gegetsuburi semble éprouver beaucoup d'hostilité envers Ōmaeda, sa raison de quitter son partenaire étant une vengeance pour le fait que sa propre apparence physique reflète celle d'Ōmaeda. Il a aussi une grande fierté, insistant pour que son partenaire ajoute un suffixe honorifique en « -san ».",
+      "descRaw": "Gegetsuburi is the manifested spirit of Marechiyo Ōmaeda's Zanpakutō. Like his former partner, he has a passion for crackers as he is seen regularly eating them. Gegetsuburi seems to have much hostility to Ōmaeda as his reason for leaving his partner is retribution for his own physical appearance being a reflection of Ōmaeda's. He also has great pride in himself, insisting that his partner add an honorific of \"san\"",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Lucas Bléger",
+        "Lex Lang"
+       ],
+       "jp": [
+        "Shouto Kashii"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "koukichirou-takezoe",
+     "name": "Koukichirou Takezoe",
+     "type": "character",
+     "summary": "7e siège de la 10e Division sous les ordres du capitaine Hitsugaya. On ne sait pas grand-c",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "7e siège de la 10e Division sous les ordres du capitaine Hitsugaya. On ne sait pas grand-chose de Kōkichirō, si ce n'est qu'il est mentionné en passant lorsque Hitsugaya et Matsumoto discutent de l'implication de Gin Ichimaru dans le meurtre d'Aizen.",
+      "descRaw": "7th Seat in 10th Division under Captain Hitsugaya. Not much is known about Kōkichirō, except being mentioned in passing as Hitsugaya and Matsumoto were discussing Gin Ichimaru's involvement in Aizen's murder.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Dan Woren"
+       ],
+       "jp": [
+        "Kenichi Mochizuki"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "reiichi-oshima",
+     "name": "Reiichi Oshima",
+     "type": "character",
+     "summary": "Une brute du lycée de Karakura qui tenta de forcer Ichigo Kurosaki à changer la couleur de",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Reiichi Ōshima est un élève masculin de Karakura High School, ayant auparavant fréquenté le collège Togata Junior High School. Lors du premier jour de cours, il fait partie d'un groupe qui s'oppose à Ichigo Kurosaki et Yasutora Sado, puis il confronte Ichigo sur le toit du lycée au sujet de la couleur de ses cheveux, ce qui dégénère en une altercation où, après avoir enfilé des poings américains, il est projeté contre un mur par Yasutora Sado. Plus tard, il est montré en train de regarder l'émission télévisée de Don Kanonji tandis qu'Ichigo se précipite devant la caméra. Bien qu'il n'apparaisse jamais dans la série animée, son nom est cité par Misato Ochi dans les épisodes 65 et 110, et les informations complémentaires indiquent que sa première apparition animée serait l'épisode 227.",
+      "descRaw": "A bully at Karakura High School who tried to force Ichigo Kurosaki to change his hair color. When Ichigo refused, he decided to teach him a lesson by beating him up. However, a timely assist by Chad ended in Oshima's defeat. Reiichi also makes a brief appearance watching Don Kanonji's TV show, witnessing Ichigo rush out on camera. He never appeared in the anime.",
+      "descLang": "en",
+      "favorites": 2,
+      "purgeAudit": "03/08 : sections et descFr décrivaient Dark Rukia (mauvaise page liée) — purgé, à re-produire avec garde d identité",
+      "voiceActors": {
+       "en": [
+        "Yannick Bellissard",
+        "Travis Willingham"
+       ],
+       "jp": [
+        "Yutaka Aoyama"
+       ]
+      },
+      "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b"
+     }
+    },
+    {
+     "slug": "misaomaru-kanonji",
+     "name": "Misaomaru Kanonji",
+     "type": "character",
+     "summary": "Don Kanonji est un médium populaire qui anime une émission de télévision intitulée « Ghost",
+     "attrs": {
+      "race": "Humain",
+      "role": "Personnage secondaire",
+      "monde": "Terre · Karakura",
+      "descFr": "Don Kanonji est un médium populaire qui anime une émission de télévision intitulée « Ghost Bust » (« Chasseur d'Esprits ») regardée par 25 % de la population japonaise. Ses phrases fétiches sont « Ça sent le mauvais esprit ! » et « Les esprits sont toujours avec vous ». Son émission consiste à se débarrasser des fantômes et à envoyer leur âme au paradis. La méthode initiale de Kanonji pour ce faire transforme en réalité de force les âmes en Hollows, sans qu'il ne s'en rende jamais compte. Ichigo Kurosaki lui signale son erreur, ce qui lui vaut le titre de « disciple n°1 » pour son aide. Depuis, Kanonji n'apparaît presque plus que dans les chapitres bonus, où on le voit avoir formé un groupe de chasseurs de Hollows appelé les Super-héros de Karakura, composé des sœurs Kurosaki et des enfants de la boutique Urahara, afin de faire remonter l'audience déclinante de son émission. Avec leur aide et sa « Golden Kanonball » (une petite boule de lumière dorée qui se déplace lentement et explose avec une puissance surprenante), ils ont réussi à maintenir la présence des Hollows à un minimum dans la ville de Karakura. Il apparaît une fois de plus dans l'arc de la « Fausse Karakura » quand Aizen acculent Tatsuki et ses amis. Outre le fait d'amuser Aizen, il est bien sûr inutile, sauf pour aider Tatsuki et ses amis à fuir Aizen, et cela n'arrive qu'après que Rangiku lui a hurlé dessus et l'y a presque physiquement forcé. Chanson-thème : « Suite de L'Arlésienne n°2 » de Georges Bizet.",
+      "descRaw": "Don Kanonji is a popular spirit medium who has a television show called Ghost Bust (English: \"Spirit Hunter\") that is watched by 25% of Japan's population. His catch phrases are \"Smells like bad spirits!\" and \"Spirits are always with you\" His show consists of getting rid of ghosts and sending their spirits to heaven. Kanonji's initial method of doing so forcefully turns souls into hollows, though he never realizes this. Ichigo Kurosaki informs him of his mistake, earning the title of \"#1 Disciple\" for his help. Since then Kanonji has appeared almost exclusively in omake chapters, where he is shown to have formed a hollow-fighting group called the Karakura Superheroes, which consists of the Kurosaki sisters and the children at the Urahara Shop, to get the show's declining ratings up. With their help and his \"Golden Kanonball\" (a tiny ball of golden light that moves slowly and explodes with surprising power), they have succeeded in keeping the hollow presence in Karakura Town to a minimum. He appears once more in the \"Fake Karakura Town\" arc when Aizen corners Tatsuki and her friends. Aside from amusing Aizen, he is of course useless, except for helping Tatsuki and her friends run away from Aizen, and that only happens after Rangiku screams at him and all but physically forces him to do so. Theme song: \"L'Arlesienne Suite #2\" by George Bizet",
+      "descLang": "en",
+      "favorites": 44,
+      "voiceActors": {
+       "en": [
+        "Michael Sorich",
+        "Patrick Pellegrin"
+       ],
+       "jp": [
+        "Shigeru Chiba"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "mahana-natsui",
+     "name": "Mahana Natsui",
+     "type": "character",
+     "summary": "Une amie d'Orihime Inoue et de Tatsuki Arisawa. Elle a des cheveux bruns bouclés et ne sai",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Une amie d'Orihime Inoue et de Tatsuki Arisawa. Elle a des cheveux bruns bouclés et ne sait souvent pas de quoi elle parle, ce qui met parfois ses amies dans l'embarras. Elle a tendance à être curieuse, comme le montre le moment où toutes les filles déjeunent ensemble. Elle demanda à Rukia Kuchiki si elle éprouvait des sentiments amoureux pour Ichigo Kurosaki, ce que Rukia nia. Elle est actuellement endormie avec le reste des habitants de Karakura, dans la Soul Society.",
+      "descRaw": "A friend of Orihime Inoue and Tatsuki Arisawa. She has curly brown hair, and she often doesn't know what she's talking about, which sometimes causes embarrassment to her friends. She has a tendency to be curious, which is shown when all the girls are having lunch. She asked Rukia Kuchiki if she had any romantic feelings for Ichigo Kurosaki, a statement Rukia denies. She is currently asleep with the rest of Karakura town in the Soul Society.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Michelle Ruff"
+       ],
+       "jp": [
+        "Kayo Noumi"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "suzumebachi",
+     "name": "Suzumebachi",
+     "type": "character",
+     "summary": "Suzumebachi est l'esprit manifesté du Zanpakutō de Soifon, que l'on voit durant l'arc des ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Suzumebachi est l'esprit manifesté du Zanpakutō de Soifon, que l'on voit durant l'arc des Contes Inconnus du Zanpakutō.",
+      "descRaw": "Suzumebachi is the manifested spirit of Soifon's Zanpakutō that is seen during the Zanpakutō Unknown Tales arc.",
+      "descLang": "en",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "Stephanie Sheh",
+        "Caroline Combes"
+       ],
+       "jp": [
+        "Ayumi Tsuji"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "zabimaru-male",
+     "name": "Zabimaru (Male)",
+     "type": "character",
+     "summary": "L'esprit de Zabimaru prend la forme de deux personnes : une femme adulte et un petit garço",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "L'esprit de Zabimaru prend la forme de deux personnes : une femme adulte et un petit garçon, rattaché à la taille de la femme par une chaîne noire reliée à un collier à son cou. Le jeune garçon a les yeux bleus et des cheveux cramoisis à hauteur de mâchoire. Il porte une robe semblable à celle d'un prêtre, coupée court pour révéler une grande partie de son ventre, avec de longues manches qui s'étendent bien au-delà de ses mains. Il a une queue de serpent sur laquelle il aime se tenir en équilibre pour s'asseoir dans les airs.",
+      "descRaw": "Zabimaru's spirit takes the form of a two people: an adult woman and a small boy, attached to the female's waist by a black chain that is connected to a collar on his neck. The young boy has blue eyes and jaw-length crimson hair. He wears a robe similar to a pries's that is cut short to reveal much of his stomach, with long sleeves that extend well past his hands. He has a snake's tail on which he often balances on to sit in the air. (Source: Bleach Wikia)",
+      "descLang": "en",
+      "favorites": 6,
+      "voiceActors": {
+       "en": [
+        "Lucille Boudonnat",
+        "Bruno Moury"
+       ],
+       "jp": [
+        "Asami Sanada"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "staff-a",
+     "name": "Staff A",
+     "type": "character",
+     "summary": "Nom de crédit générique utilisé pour un intervenant non identifié dans un contenu bonus de",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "voiceActors": {
+       "en": [
+        "Bastien Bourlé"
+       ],
+       "jp": [
+        "Keiichi Takahashi"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "heita-toujouin",
+     "name": "Heita Toujouin",
+     "type": "character",
+     "summary": "Comme les autres garçons du groupe, il est plutôt superficiel et considère Karin, la plus ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Comme les autres garçons du groupe, il est plutôt superficiel et considère Karin, la plus forte et la plus intelligente du groupe, comme leur chef.",
+      "descRaw": "Like the other boys of the group, he is quite shallow, and views Karin, who was the strongest and smartest of the group, as their leader.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Derek Stephen Prince"
+       ],
+       "jp": [
+        "Asami Sanada"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "mareyo-oomaeda",
+     "name": "Mareyo Oomaeda",
+     "type": "character",
+     "summary": "Mareyo Ōmaeda est la fille de Marenoshin et la sœur de Marechiyo Ōmaeda.",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Mareyo Ōmaeda est la fille de Marenoshin et la sœur de Marechiyo Ōmaeda.",
+      "descRaw": "Mareyo Oomaeda is the daughter of Marenoshin and sister of Marechiyo Oomaeda. (Source: Bleach Wiki)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Carrie Savage"
+       ],
+       "jp": [
+        "Saki Fujita"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "ashisogi-jizo",
+     "name": "Ashisogi Jizo",
+     "type": "character",
+     "summary": "Ashisogi Jizō est le Zanpakutō de Mayuri. Ksitigarbha est un bodhisattva qui veille sur le",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Mayuri Kurotsuchi est le capitaine de la 12e Division du Gotei 13 et le deuxième président de l'Institut de Recherche des Shinigamis. Il a pour lieutenant actuel Akon, après avoir été précédemment associé à Nemu Kurotsuchi, sa création artificielle. Mayuri a également servi comme 3e siège de la 12e Division sous les ordres de Kisuke Urahara. Son apparence distinctive, marquée par un maquillage blanc et noir, et ses changements de style vestimentaire reflètent ses différentes phases de recherche et de développement, notamment lors de son entrée dans le Hueco Mundo et après les invasions de l'Aizen et de Yhwach.",
+      "descRaw": "Ashisogi Jizo is Mayuri's Zanpakutō. Ksitigarbha is a bodhisattva that watches over children and the underworld. In Japan, where he is known as Jizo, he looks rather like a baby dressed as a Buddhist monk. In Zanpakutō form, Ashisogi Jizo has what looks like a giant baby's head on it. Its hilt is wrapped in cloth, and has several spiky protrusions sticking out right below the blade, which appear to resemble leaves. Shikai Bankai",
+      "descLang": "en",
+      "favorites": 8,
+      "voiceActors": {
+       "en": [],
+       "jp": [
+        "Fumiko Orikasa"
+       ]
+      },
+      "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+     }
+    },
+    {
+     "slug": "boomerang-toujuu",
+     "name": "Boomerang Toujuu",
+     "type": "character",
+     "summary": "Appellation renvoyant à une arme de jet courbe apparue dans un contenu dérivé de Bleach, d",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "voiceActors": {
+       "en": [
+        "Gwen Lebret",
+        "Keith Silverstein"
+       ],
+       "jp": [
+        "Jun Konno"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "father",
+     "name": "Father",
+     "type": "character",
+     "summary": "Désignation familière d'Isshin Kurosaki dans son rôle de père d'Ichigo, avant la révélatio",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "« Father » ou « Père » est un arc narratif crucial de Bleach où Ichigo affrontera l'essence même de ses origines. Cet arc révèle les secrets familiaux d'Ichigo et la véritable nature de ses pouvoirs.",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [],
+       "jp": [
+        "Keijin Okuda"
+       ]
+      },
+      "descFrSource": "claude-haiku (blitz 03/08) · BATTLE FIELD BURNING"
+     }
+    },
+    {
+     "slug": "hisagomaru",
+     "name": "Hisagomaru",
+     "type": "character",
+     "summary": "Hisagomaru est l'esprit manifesté du Zanpakutō de Hanatarō Yamada, que l'on voit durant la",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Hisagomaru est l'esprit manifesté du Zanpakutō de Hanatarō Yamada, que l'on voit durant la campagne des Tōjū, exclusive à l'anime. Hisagomaru est un simple robot-jouet à peu près aussi grand qu'un enfant de trois ans. Il a un corps cylindrique avec deux bras et deux jambes et des plaques plates pour mains et pieds. Sa tête est parfaitement ronde, avec un œil normal et l'autre remplacé par une jauge qui se remplit à mesure qu'il soigne les gens, tout comme celle de sa forme d'épée. Sa poitrine peut s'ouvrir pour révéler un énorme canon. Tout comme son partenaire, Hisagomaru est très timide et peu sûr de lui. Contrairement aux autres esprits de Zanpakutō manifestés par Muramasa, Hisagomaru n'a aucun désir personnel ni grief envers Hanatarō. En fait, lorsque Muramasa le força à se matérialiser, il tenta continuellement de retourner à sa forme d'épée, sombrant dans un profond désespoir (et se cachant) après avoir cru qu'Hanatarō l'avait abandonné.",
+      "descRaw": "Hisagomaru is the manifested spirit of Hanatarō Yamada's Zanpakutō who is seen during the anime-exclusive Tōjū Campaign. Hisagomaru is a simple toy robot about as tall as a three-year-old child. He has a cylindrical body with two arms and two legs and flat plates for hands and feet. Hisagomaru's head is perfectly round, with one normal eye and the other replaced with a gauge which will fill as he heals people, much like the one on his sword form. His chest can open up to reveal an enormous cannon. Much like his partner, Hisagomaru is very timid and insecure. Unlike the other Zanpakutō spirits manifested by Muramasa, Hisagomaru has no personal desires or problems against Hanatarō. In fact, when Muramasa forced him to materialize, he continually attempted to return to his sword form, going into great despair (and into hiding) after thinking Hanatarō had abandoned him. (Source: Bleach Wiki)",
+      "descLang": "en",
+      "favorites": 2,
+      "voiceActors": {
+       "en": [
+        "Claudine Grémy",
+        "Colleen O'Shaughnessey"
+       ],
+       "jp": [
+        "Rie Nakagawa"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "rurichiyo-kasumiouji",
+     "name": "Rurichiyo Kasumiouji",
+     "type": "character",
+     "summary": "C'est la princesse de la famille noble Kasumiōji. Sa famille, selon Yoruichi Shihōin, se s",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "C'est la princesse de la famille noble Kasumiōji. Sa famille, selon Yoruichi Shihōin, se situe juste en dessous des quatre grandes familles nobles en rang, précisant que leur situation est un peu « particulière ». Elle a l'apparence d'une petite enfant et le comportement typique d'une princesse, s'attendant à ce que ses exigences soient satisfaites rapidement et piquant des colères quand on l'ignore. Elle a aussi l'habitude particulière de parler d'elle-même au pluriel de majesté. Sa mère est morte en la mettant au monde, tandis que son père est récemment décédé de maladie. Elle s'installe à côté de chez Ichigo et commence à fréquenter son école avec ses deux gardes du corps, Kenryū et Enryū. Ceux-ci ont évité de lui dire qu'elle est visée par une tentative d'assassinat de l'un des chefs de son clan, Kumoi Gyōkaku, de peur de l'inquiéter. En déplacement, on la fait porter un chapeau à voile qui supprime sa pression spirituelle (même s'il tombe assez souvent), afin d'empêcher les autres de sentir sa présence.",
+      "descRaw": "Is the princess of the Kasumiouji noble family. Her family, according to Yoruichi Shihouin, is just below the four great noble families in status, commenting that their circumstances are a bit \"special\". She appears to be a small child and has an attitude typical of a princess, expecting her demands to be met quickly and throwing tantrums when ignored. She also has a peculiar habit of referring to herself with the royal we. Her mother died giving birth to her, while her father recently passed away due to illness. She takes up residence next door to Ichigo and begins attending his school with her two bodyguards, Kenryuu and Enryuu. Kenryuu and Enryuu have refrained from telling her that she is being targeted for assassination by one of her clan leaders, Kumoi Gyoukaku, due to fear of her worrying. While traveling, she is made to wear a veil-like hat that suppresses her spiritual pressure (even though it falls off quite frequently), to prevent others from sensing her presence.",
+      "descLang": "en",
+      "favorites": 2,
+      "voiceActors": {
+       "en": [
+        "Eden Riegel",
+        "Gwenäelle Julien"
+       ],
+       "jp": [
+        "Reiko Takagi"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "kuroud",
+     "name": "Kuroud",
+     "type": "character",
+     "summary": "Également connu sous les noms de Claude ou Cloud, Kuroud est un homme à lunettes doté d'un",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Également connu sous les noms de Claude ou Cloud, Kuroud est un homme à lunettes doté d'une moustache et d'une chevelure bicolore (noire à droite, jaune à gauche). Il porte un haut-de-forme gris, un costume et une cravate multicolores, ainsi que des bottes brun foncé, ce qui lui donne l'allure d'un directeur de cirque. Son corps de peluche est un sac à main en forme de lapin. Il fait équipe avec Orihime Inoue. Il possède la capacité de changer de forme et peut alors reproduire les aptitudes d'autrui (bien qu'il ne puisse en reproduire le niveau de puissance). Il est plutôt lâche et terrorisé par les serpents. Sa loquacité et ses agissements servent souvent de ressort comique. Il est aussi quelque peu pervers, à l'instar de Kon, ou du moins reconnaissant de l'occasion d'être porté par de jolies femmes (être un sac à main aide en ce sens). Rukia semble l'apprécier car, sous sa forme de peluche, il ressemble à Chappy le lapin.",
+      "descRaw": "Also known as Claude or Cloud, Kuroud is a bespectacled man with a mustache and two-tone hair color (black to the right, yellow to the left). He wears a gray top hat, multi-colored suit and tie, as well as dark brown boots, giving him an appearance similar to a circus manager. His plushie body is a rabbit-esque purse. He is partnered with Orihime Inoue. He has the ability to shapeshift, and can replicate the abilities of others when he does so (although he can't replicate the power levels of said abilities). He is somewhat cowardly and is terrified of snakes. His longwindedness and actions often provide comic relief. He is also somewhat perverted, like Kon, or at the very least is thankful for the opportunity to be held by attractive women (being a purse helps in this regard). Rukia seems to like him because he resembles Chappy the Rabbit in his stuffed animal form. (Source: Wikipedia)",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Michael McConnohie",
+        "Lucas Bléger"
+       ],
+       "jp": [
+        "Nobuo Tobita"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "middle-school-player",
+     "name": "Middle School Player",
+     "type": "character",
+     "summary": "Apparaît dans l'épisode 132. Dispute un match de football contre Karin et ses amis.",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Apparaît dans l'épisode 132. Dispute un match de football contre Karin et ses amis.",
+      "descRaw": "Appears in episode 132. Plays a soccer match against Karin and her friends.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Richard Cansino",
+        "Vic Mignogna"
+       ],
+       "jp": [
+        "Takuma Terashima"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "mr-pork",
+     "name": "Mr.Pork",
+     "type": "character",
+     "summary": "Surnom à tonalité comique apparu dans un contenu annexe de Bleach, dont la fonction précis",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Mr. Pork est une peluche contenant un membre de la Yakuza kidnappé que Riruka Dokugamine a placée dans sa maison de poupées magique. Il revêt l'apparence d'un homme gras aux cheveux noirs courts, porteur de grosses lunettes et d'une fine moustache, et se transforme en une créature hybride aux traits porcins capable de combattre férocement.",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "Kirk Thornton"
+       ],
+       "jp": [
+        "Nobuaki Kanemitsu"
+       ]
+      },
+      "descFrSource": "claude-haiku (blitz 03/08) · Mr. Pork"
+     }
+    },
+    {
+     "slug": "staff-b",
+     "name": "Staff B",
+     "type": "character",
+     "summary": "Nom de crédit générique désignant un second intervenant non identifié dans un contenu bonu",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "voiceActors": {
+       "en": [
+        "Gwen Lebret"
+       ],
+       "jp": [
+        "Ryuu Yamaguchi"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "staff-c",
+     "name": "Staff C",
+     "type": "character",
+     "summary": "Nom de crédit générique désignant un troisième intervenant non identifié dans un contenu b",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "voiceActors": {
+       "en": [
+        "Philippe Naman"
+       ],
+       "jp": [
+        "Mahito Funaki"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "izaemon-toudou",
+     "name": "Izaemon Toudou",
+     "type": "character",
+     "summary": "Izaemon Tōdō (藤堂 為左衛門, Tōdō Izaemon) était le 6e siège de la 9e Division du Gotei 13 et se",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Izaemon Tōdō (藤堂 為左衛門, Tōdō Izaemon) était le 6e siège de la 9e Division du Gotei 13 et servait sous son capitaine Kensei Muguruma. Apparence : Tōdō porte ses cheveux noirs en une haute queue de cheval et arbore une sorte de couvre-chef. Il affiche généralement un air sérieux et s'habille comme les autres membres de la 9e Division, avec l'uniforme standard des Shinigami et une veste blanche qu'il porte par-dessus, avec un col montant jusqu'au cou. Histoire : arc « Turn Back the Pendulum ». Tōdō fut d'abord présenté lorsque Kensei Muguruma et d'autres officiers gradés de la 9e Division furent envoyés enquêter sur la disparition d'habitants du Rukongai. Lui et les autres membres de la 9e Division furent vus sauvant un jeune Shūhei Hisagi et ses amis d'un Hollow. Après la bataille, ils apprirent de Mashiro Kuna (absente durant le combat) qu'il manquait aussi des Shinigami. Kensei fit le lien entre le nombre de shihakushō vides trouvés par Kuna et le nombre de membres d'une avant-garde envoyée enquêter plus tôt. Réalisant la gravité de la situation, Kensei envoya Tōdō chercher un chercheur de la 12e Division pour enquêter sur la possibilité qu'un agent pathogène en soit la cause. Tōdō parvint à pénétrer dans le labo de la 12e Division et à faire assigner par le capitaine Urahara la lieutenante Hiyori pour aider. Plus tard dans la nuit, il revint au camp avec Kaname Tōsen, faisant remarquer son retard tandis que Shinobu Eishima et Tōsen montaient la garde à l'extérieur...",
+      "descRaw": "Izaemon Toudou (藤堂 為左衛門, Tōdō Izaemon) was the 6th seat of the 9th Division in the Gotei 13 and served under his Captain Muguruma Kensei. Appearance: Toudou wears his black hair in a high ponytail and wears some sort of headgear. He usually has a serious look on his face and dresses like the other members of the 9th Division, with the standard Shinigami uniform and a white jacket that he wears over his Shinigami uniform with a collar that reaches up to his neck. History: Turn Back the Pendulum arc Toudou was first introduced when Muguruma Kensei and other high ranking seated officers of the 9th Division were sent to investigate the disappearance of the Rukongai residents. He and the other 9th Division members were seen saving a young Hisagi Shuuhei and his friends from a Hollow. After the battle, they learned from Kuna Mashiro (who was absent during the fight) that there were missing Shinigami as well. Kensei connected the number of empty shihakushou that Kuna found with the number of members in a vanguard that was sent to investigate earlier. Realizing the seriousness of the situation, Kensei sent Toudou out to retrieve a researcher of the 12th Division to investigate the possibility of some pathogen being the cause. Toudou was able to successfully enter the 12th Division's lab and have Captain Urahara assign Lieutenant Hiyori to go help. Later in the night, he returned to the camp with Tousen Kaname, remarking on his lateness as Shinobu Eishima and Tousen stood guard outsid",
+      "descLang": "en",
+      "favorites": 2,
+      "voiceActors": {
+       "en": [
+        "J.B. Blanc"
+       ],
+       "jp": [
+        "Keiichi Takahashi"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "kei-uehara",
+     "name": "Kei Uehara",
+     "type": "character",
+     "summary": "Comme les autres garçons du groupe, il est plutôt superficiel et considère Karin, la plus ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Comme les autres garçons du groupe, il est plutôt superficiel et considère Karin, la plus forte et la plus intelligente du groupe, comme leur chef.",
+      "descRaw": "Like the other boys of the group, he is quite shallow, and views Karin, who was the strongest and smartest of the group, as their leader.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Quinton Flynn"
+       ],
+       "jp": [
+        "Ayumi Sena"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "shuu-kannogi",
+     "name": "Shuu Kannogi",
+     "type": "character",
+     "summary": "Shū Kannogi (菅ノ木 愁, Kannogi Shū), introduit durant l'arc du nouveau capitaine Shūsuke Amag",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Shū Kannogi (菅ノ木 愁, Kannogi Shū), introduit durant l'arc du nouveau capitaine Shūsuke Amagai, est le fiancé de Rurichiyo Kasumiōji. Kumoi le nomma chef de famille afin de pouvoir contrôler le clan en devenant intendant. Shū n'est pas aussi aventureux que Rurichiyo, qu'il appelle « Ruri-chan », et n'a jamais mis le pied hors du manoir, si ce n'est dans sa chaise à porteurs. Lorsqu'il découvre que la Rurichiyo présente au mariage était une imposture, il décide d'aider Rukia et Ichigo en se faisant passer pour leur otage. Il voyage alors principalement sur le dos d'Ichigo. En voyant Ichigo combattre le capitaine Shūsuke Amagai, il intervient en se plaçant entre eux pour les arrêter et supplier Amagai d'écouter, ce que ce dernier accepte, finissant par les aider. Il aime Rurichiyo et fait de son mieux pour la protéger et la sauver. Il semble se sentir en sécurité aux côtés d'Ichigo et de Rukia, en qui il a confiance.",
+      "descRaw": "Shuu Kannogi (菅ノ木 愁, Kannogi Shuu) introduced during The New Captain Shūsuke Amagai arc, he is the fiancé of Lurichiyo Kasumiōji. Kumoi made him family chief because he can then control the clan, becoming clan retainer. Shuu is not as adventurous as Lurichiyo, whom he calls \"Luri-chan\", and has never set foot out of the manor except in his ported chair. When he discovers that the Lurichiyo at the wedding was a fake, he decided to help Rukia and Ichigo out by pretending being their hostage. He then mainly traveled on Ichigo's back. When he saw Ichigo fighting with the Captain Shūsuke Amagai, he intervened by placing himself between them to stop them and beg Amagai to listen, which he accepted and ultimatly helped them. He loves Lurichiyo and tries his best to protect and save her. He seems to to feel safe by Ichigo and Rukia's side as he trusts them.",
+      "descLang": "en",
+      "favorites": 2,
+      "voiceActors": {
+       "en": [
+        "Brianne Siddall",
+        "Philippe Naman"
+       ],
+       "jp": [
+        "Tsubasa Yonaga"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "goethe",
+     "name": "Goethe",
+     "type": "character",
+     "summary": "Nom d'emprunt à consonance germanique, cohérent avec l'univers Quincy du Wandenreich, mais",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Goethe est le Doll de Yoshino Sōma, une Bount avec laquelle il entretient une relation de confiance particulièrement forte, fondée sur un lien maternel. Il maîtrise des attaques par projection de boules de feu et peut se détacher et se rattacher ses membres lors du combat. La connexion entre Goethe et Yoshino se distingue par leur disposition mutuelle à mourir ensemble ; lorsque le crest de Goethe a été brisé, ils ont pu se lier physiquement pour éviter une mort immédiate.",
+      "voiceActors": {
+       "en": [
+        "Jochen Hägele",
+        "Richard Epcar"
+       ],
+       "jp": [
+        "Tomokazu Sugita"
+       ]
+      },
+      "descFrSource": "claude-haiku-4-5 (rédacteur sans-source) · mentions : Yoshino Sōma, Ririn/Image Gallery, Bount and Quincy"
+     }
+    },
+    {
+     "slug": "minazuki",
+     "name": "Minazuki",
+     "type": "character",
+     "summary": "Minazuki est l'esprit manifesté du Zanpakutō de Retsu Unohana, que l'on voit durant la Réb",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Minazuki est l'esprit manifesté du Zanpakutō de Retsu Unohana, que l'on voit durant la Rébellion des Zanpakutō, exclusive à l'anime. L'esprit de Minazuki prend la forme d'une silhouette humanoïde élancée couverte de bandages et portant une très longue capuche vert clair (rappelant l'apparence de la forme Shikai libérée). À cause de ces bandages, on ignore s'il est de sexe masculin ou féminin.",
+      "descRaw": "Minazuki is the manifested spirit of Retsu Unohana's Zanpakutō that is seen during the anime-exclusive Zanpakutō Rebellion. Minazuki's spirit takes the form of a slim humanoid figure covered in bandages and wearing a very long light green hood (resembling the look of the released Shikai form). Due to its bandages, it is unknown whether it is male or female. (Source: Bleach Wiki) No voice actors have been added to this character. Help improve our database by searching for a voice actor, and adding this character to their roles .",
+      "descLang": "en",
+      "favorites": 2
+     }
+    },
+    {
+     "slug": "baigon",
+     "name": "Baigon",
+     "type": "character",
+     "summary": "Une partie du pouvoir d'Orihime. Baigon est un esprit masculin chauve portant un masque qu",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Une partie du pouvoir d'Orihime. Baigon est un esprit masculin chauve portant un masque qui couvre le bas de son visage. Il est costaud et possède un grand corps. Il est capable de protéger Orihime des attaques aux côtés de Hinagiku et Lily.",
+      "descRaw": "Part of Orihime's power. Baigon is a bald male spirit with a mask that covers the bottom of his face. He is brawny and has a large body. He is capable of shielding Orihime from attacks along with Hinagiku and Lily",
+      "descLang": "en",
+      "favorites": 2,
+      "voiceActors": {
+       "en": [
+        "Liam O'Brien",
+        "Frédéric Souterelle"
+       ],
+       "jp": [
+        "Kiyoyuki Yanada"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "ayame",
+     "name": "Ayame",
+     "type": "character",
+     "summary": "Une partie du pouvoir d'Orihime. Ayame est un esprit féminin timide, couvert d'une robe pl",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Une partie du pouvoir d'Orihime. Ayame est un esprit féminin timide, couvert d'une robe plus grande que son corps. Elle est capable de soigner avec l'aide de Shun'ō.",
+      "descRaw": "Part of Orihime's power. Ayame is a shy female spirit covered in a dress larger than her body. She is capable of healing together with Shun'ou.",
+      "descLang": "en",
+      "favorites": 8,
+      "voiceActors": {
+       "en": [
+        "Philece Sampler"
+       ],
+       "jp": [
+        "Ayumi Sena"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "hinagiku",
+     "name": "Hinagiku",
+     "type": "character",
+     "summary": "L'un des six esprits d'Orihime Inoue. Il apparaît comme un homme chauve à l'allure de gobe",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "L'un des six esprits d'Orihime Inoue. Il apparaît comme un homme chauve à l'allure de gobelin, avec une seule lunette et une sangle sur l'œil gauche. Il forme le bouclier d'Orihime aux côtés de Baigon et Lily.",
+      "descRaw": "One of Inoue Orihime's six spirits. He appears as a bald goblin-looking man with a single goggle and strap over his left eye. Forms Orihime's shield along with Baigon and Lily.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Kirk Thornton",
+        "Bruno Moury"
+       ],
+       "jp": [
+        "Daisuke Kishio"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "daiji-hirasago",
+     "name": "Daiji Hirasago",
+     "type": "character",
+     "summary": "Daiji Hirasago est le chef des voyous de Kusajishi qui aide Ganju Shiba à attaquer la base",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Daiji Hirasago est le chef des voyous de Kusajishi qui aide Ganju Shiba à attaquer la base des Bounts à Kusajishi. Il se fait appeler le Taureau de Kusajishi, Hirasago Daiji-sama. Il n'a été introduit que brièvement dans la série (on le trouve à l'épisode 97).",
+      "descRaw": "Daiji Hirasago is the leader of the bullies of Kusajishi who helps Ganju Shiba attack the Bount base at Kusajishi. Calls himself the Kusajishi Bull, Hirasago Daiji-sama. He was shortly introduced into the series (can be found in episode 97).",
+      "descLang": "en",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "Richard Cansino",
+        "Nicolas Beaucaire"
+       ],
+       "jp": [
+        "Susumu Chiba"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "jibakurai",
+     "name": "Jibakurai",
+     "type": "character",
+     "summary": "Il apparaît d'abord comme un demi-Hollow enchaîné à l'hôpital. Don Kanonji le transforma a",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Il apparaît d'abord comme un demi-Hollow enchaîné à l'hôpital. Don Kanonji le transforma accidentellement en lui retirant sa Chaîne du Destin. Sa forme de Hollow ressemble à une grenouille. Ichigo Kurosaki parvint à tuer le Hollow et à réparer l'erreur de Don Kanonji. Son attaque principale est un crachat visqueux qui colle et solidifie tout ce à quoi il s'attache. Il s'en sert pour coller l'épée d'Ichigo à ses propres mains ainsi qu'à la rambarde du toit de l'hôpital.",
+      "descRaw": "First appeared as a Demi-Hollow that was chained at the hospital. Don Kanonji accidentally transformed him by removing his Chain of Fate. His Hollow form resembles a frog. Ichigo Kurosaki managed to kill the Hollow and clean up Don Kanonji's mistake. His main attack is a spitting slime that bonds and solidifies whatever it attaches to. He uses this to bond Ichigo's sword to both his own hands and to the guard rail of the hospital roof.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Wally Wingert",
+        "Marc-Antoine Frédéric"
+       ],
+       "jp": [
+        "Susumu Chiba"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "torue",
+     "name": "Torue",
+     "type": "character",
+     "summary": "Torue est un membre de l'Institut de Recherche et Développement des Shinigami, spécialisé ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Torue est un membre de l'Institut de Recherche et Développement des Shinigami, spécialisé dans la capture de personnes. Torue est une femme aux formes généreuses qui porte l'uniforme réglementaire du S.R.D.I. Elle a de longs cheveux violets, des yeux verts, de grandes lèvres et une peau pâle.",
+      "descRaw": "Torue is a member of the Shinigami Research and Development Institute who is specialized in capturing people. Torue is a curvaceous woman who wears the standard uniform of the S.R.D.I.. She has long, purple hair, green eyes and large lips with pale skin. (Source: Bleach Wiki)",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Karen Strassman"
+       ],
+       "jp": [
+        "Yuka Keichou"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "hyourinmaru",
+     "name": "Hyourinmaru",
+     "type": "character",
+     "summary": "Hyōrinmaru est l'esprit manifesté du Zanpakutō de Tōshirō Hitsugaya, que l'on voit durant ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Hyōrinmaru est l'esprit manifesté du Zanpakutō de Tōshirō Hitsugaya, que l'on voit durant l'arc des Contes Inconnus des Zanpakutō. Hyōrinmaru apparaît sous les traits d'un grand jeune homme aux longs cheveux sauvages vert sarcelle, avec un X bleu glacé au centre du visage et des yeux clairs comme la glace. Sous sa forme humaine, Hyōrinmaru apparaît comme un homme stoïque et silencieux, vêtu d'amples habits de samouraï, avec une chaîne autour de la taille (semblable à sa forme de Zanpakutō) et un ornement doré terne sur la poitrine (semblable au motif de l'écharpe de Hitsugaya). Ses bras et ses jambes sont recouverts de glace, comme ceux de Tōshirō quand il utilise le Bankai, et il a une queue préhensile à la pointe glacée. À tout moment, Hyōrinmaru peut prendre la forme d'un gigantesque dragon serpentin bleu glacé, aux grandes ailes et à la voix retentissante.",
+      "descRaw": "Hyourinmaru is the manifested spirit of Toshiro Hitsugaya's Zanpakuto that is seen during the Zanpakuto Unknown Tales arc. Hyourinmaru's appears as a tall, young man with long, wild, teal green hair, an icy blue X across the center of his face, and ice clear eyes. In his human form, Hyourinmaru appears as a stoic and silent man dressed in loose samurai-like garments a chain around his waist (similar to his Zanpakuto form) and a dull gold adornment on his chest (similar to the design on Hitsugaya's sash). His arms and legs are covered in ice, similar to Toshiro when using Bankai and has a prehensile tail with an icy tip. At any time, Hyōrinmaru can take the form of a gigantic, icy blue, serpentine dragon with large wings and an echoing voice. (Source: Bleach Wiki)",
+      "descLang": "en",
+      "favorites": 42,
+      "voiceActors": {
+       "en": [
+        "Travis Willingham",
+        "Antoine Tomé"
+       ],
+       "jp": [
+        "Kenji Hamada"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "lily",
+     "name": "Lily",
+     "type": "character",
+     "summary": "Lily est un esprit féminin aux cheveux rose vif, portant des lunettes jaunes transparentes",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Lily est un esprit féminin aux cheveux rose vif, portant des lunettes jaunes transparentes et un maillot de bain string bleu. C'est l'une des fées d'Orihime qui manifeste son pouvoir. Elle a un tatouage dans le dos. Elle est capable de protéger Orihime des attaques, avec l'aide de Baigon et Hinagiku.",
+      "descRaw": "Lily is a female spirit with bright pink hair, transparent yellow goggles, and a blue thong bathing suit. She is one of Orihime's fairies who manifests her power. She has a tattoo on her backside. She is capable of shielding Orihime from attacks along with Baigon and Hinagiku.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Kate Higgins",
+        "Isabelle Volpé"
+       ],
+       "jp": [
+        "Rie Kugimiya"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "taichi-miyamoto",
+     "name": "Taichi Miyamoto",
+     "type": "character",
+     "summary": "Le fidèle numéro 1 de Ganju et un bon cuisinier.",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Le fidèle numéro 1 de Ganju et un bon cuisinier.",
+      "descRaw": "Ganju's No. 1 follower and a good cook.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Liam O'Brien"
+       ],
+       "jp": [
+        "Kousuke Okano"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "gengorou-onabara",
+     "name": "Gengorou Onabara",
+     "type": "character",
+     "summary": "Gengorō Ōnabara était le professeur principal des élèves de première année (dont Momo Hina",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Gengorō Ōnabara était le professeur principal des élèves de première année (dont Momo Hinamori, Renji Abarai et Izuru Kira) à l'Académie des Shinigami.",
+      "descRaw": "Gengorō Ōnabara was the Head Teacher of the first graders (including Momo Hinamori, Renji Abarai and Izuru Kira) at Shinigami Academy.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "J.B. Blanc"
+       ],
+       "jp": [
+        "Kousei Hirota"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "sadatomo-saionji",
+     "name": "Sadatomo Saionji",
+     "type": "character",
+     "summary": "Le membre le plus menaçant du gang, bien que cela ne veuille pas dire grand-chose. Il port",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Le membre le plus menaçant du gang, bien que cela ne veuille pas dire grand-chose. Il porte une chemise beige terne et chevauche un sanglier nommé Connie, doté d'une unique corne sanglée à son front.",
+      "descRaw": "Most menacing member of the gang, although that's not saying much. He wears a drab looking beige shirt and rides a boar called Connie with a single horn strapped to its forehead.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Michael Sorich"
+       ],
+       "jp": [
+        "Tarusuke Shingaki"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "mitsuru-ishino",
+     "name": "Mitsuru Ishino",
+     "type": "character",
+     "summary": "C'est un homme aux sourcils en forme de larme qui arbore une grande coupe afro maintenue à",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "C'est un homme aux sourcils en forme de larme qui arbore une grande coupe afro maintenue à l'aide d'un bandeau violet. Son sanglier arbore une petite touffe de poils blonds bouclés et s'appelle Sonny. Il est décrit comme n'ayant absolument aucun sens du rythme.",
+      "descRaw": "He is a man with teardrop eyebrows who sports a large Afro haircut held up with the help of a purple headband. His boar has a small patch of curly blond hair, and is called Sonny. Characterized as having absolutely no sense of rhythm. (Source: Bleach Wikia)",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Dan Woren"
+       ],
+       "jp": [
+        "Tomokazu Seki"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "tsubaki",
+     "name": "Tsubaki",
+     "type": "character",
+     "summary": "Tsubaki est un esprit masculin fougueux, le seul des Shun Shun Rikka capable d'attaque dir",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Tsubaki est un esprit masculin fougueux, le seul des Shun Shun Rikka capable d'attaque directe. Il frappe souvent quiconque l'agace (y compris Orihime). Comme il est avant tout tourné vers l'attaque, il est vulnérable aux contre-attaques et a été blessé à plusieurs reprises. Plus la colère et l'intention meurtrière d'Orihime sont fortes, plus il devient puissant. Cependant, la nature timide d'Orihime limite sa puissance globale et a contribué à ses blessures par le passé. À un moment, Tsubaki fut tué par l'Espada Yammy Llargo, qui le broya en menus morceaux. Orihime en fut bouleversée, et comme les morceaux étaient trop petits pour être retrouvés, elle ne put ramener Tsubaki. Mais grâce à sa rencontre avec Hachi, qui affirma que les pouvoirs d'Orihime étaient semblables aux siens, Tsubaki est restauré par Hachi malgré l'absence de tout morceau de lui.",
+      "descRaw": "Tsubaki is a fiery male spirit who is the only Shun Shun Rikka capable of direct attack. He often strikes anyone who gets on his nerves (including Orihime). Because he is primarily focused on attacking, he is vulnerable to counter-attacks and has been injured several times. The stronger Orihime's anger and killing intent, the more powerful he becomes. However, Orihime's timid nature limits his overall power and has contributed to his injuries in the past. At one point, Tsubaki was killed by the Espada Yammy Riyalgo, who crushed Tsubaki into tiny pieces. Orihime was distraught by this, and since the pieces were too small to find, she couldn't bring Tsubaki back. But due to meeting Hachi, who said Orihime's powers were similar to his, Tsubaki is restored by Hachi despite having no pieces of him",
+      "descLang": "en",
+      "favorites": 6,
+      "voiceActors": {
+       "en": [
+        "Wally Wingert",
+        "Nicolas Beaucaire"
+       ],
+       "jp": [
+        "Toshiyuki Morikawa"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "tobiume",
+     "name": "Tobiume",
+     "type": "character",
+     "summary": "C'est le Zanpakutō de Momo Hinamori sous forme physique. L'esprit de Tobiume est celui d'u",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "C'est le Zanpakutō de Momo Hinamori sous forme physique. L'esprit de Tobiume est celui d'une petite fille vêtue de vêtements japonais traditionnels. Elle porte deux grosses cloches rondes, comme celles utilisées dans les temples, attachées à la longue ceinture rose qui entoure son corps. Elle a de longs cheveux noirs et porte une épingle à cheveux d'une forme semblable au shikai de Momo. Avec Sode no Shirayuki, elle est l'un des esprits les plus doux montrés jusqu'à présent, s'excusant auprès de ses adversaires durant son attaque et, avant de se rebeller, elle avait consolé Momo Hinamori durant la dépression causée par Aizen. Une fois libérée, la lame de Tobiume se redresse et produit plusieurs excroissances en forme de jitte sur toute sa longueur. Sous cette forme, Tobiume sert de foyer à la puissance spirituelle de Hinamori, la concentrant en salves d'énergie capables de cratériser des sols et de percer des murs. Elle peut aussi comprimer sa puissance en boules d'énergie massives et les lancer depuis la pointe de la lame. Pour compléter son Zanpakutō basé sur le kidō, Hinamori est réputée douée en sorts de kidō également, capable de combiner des capacités de kidō avec son propre Zanpakutō pour venir à bout de trois puissants Arrancars à la fois.",
+      "descRaw": "She is Hinamori Momo's Zanpakuto in physical form. Tobiume's spirit is that of a small girl dressed in traditional Japanese clothing. She carries two large round bells, such as the ones used in temples, tied to the long pink sash that encircles her body. She has long black hair and wears a hairpin in a shape, similar to Momo's shikai, in it. Along with Sode no Shirayuki, she is one of the most gentle spirits shown so far, apologizing to her opponents during her attack and, before revolting, she indeed consoled Momo Hinamori during her depression caused by Aizen. When released, Tobiume's blade straightens and produces several jitte-like prongs along its length. In this form, Tobiume acts as a focus for Hinamori's spiritual power, concentrating it into energy bursts capable of cratering floors and breaching walls. She can also compress her power into massive energy balls and toss them from the blade's tip. To complement her kidō-based zanpakutō, Hinamori is noted to be talented with kidō spells as well, able to combine kidō abilities with her own zanpakutō to easily deal with three powerful Arrancar at once.",
+      "descLang": "en",
+      "favorites": 6,
+      "voiceActors": {
+       "en": [
+        "Michelle Ruff",
+        "Emma Darmon"
+       ],
+       "jp": [
+        "Ayumi Fujimura"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "zabimaru-female",
+     "name": "Zabimaru (Female)",
+     "type": "character",
+     "summary": "L'esprit de Zabimaru prend la forme de deux personnes : une femme adulte et un petit garço",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "L'esprit de Zabimaru prend la forme de deux personnes : une femme adulte et un petit garçon, rattaché à la taille de la femme par une chaîne noire reliée à un collier à son cou. La femme a une fourrure vert foncé qui couvre la majeure partie de son corps, à l'exception du bas de son abdomen et de sa poitrine. Elle a les yeux verts, de longs cheveux couleur rose (d'une teinte semblable à la fourrure qui apparaît autour des épaules de Renji en Bankai) qui descendent sous ses genoux, et des marques noires dans les cheveux évoquant les tatouages de Renji.",
+      "descRaw": "Zabimaru's spirit takes the form of a two people: an adult woman and a small boy, attached to the female's waist by a black chain that is connected to a collar on his neck. The female has dark green fur that covers most of her body, except for her inner abdomen and chest. She has green eyes, long, rose-colored hair (of similar color as the fur cowl that appears around Renji's shoulders in Bankai) that goes past her knees, and black markings in her hair that bear a resemblance to Renji's tattoos. (Source: Bleach Wikia)",
+      "descLang": "en",
+      "favorites": 13,
+      "voiceActors": {
+       "en": [
+        "Mary Elizabeth McGlynn",
+        "Philippe Sax"
+       ],
+       "jp": [
+        "Mitsuki Saiga"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "shun-ou",
+     "name": "Shun'ou",
+     "type": "character",
+     "summary": "Une partie du pouvoir d'Orihime. Shun'ō est un jeune esprit masculin amical (qui apparaît ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Une partie du pouvoir d'Orihime. Shun'ō est un jeune esprit masculin amical (qui apparaît comme féminin dans l'anime) portant un chignon (topknot). Lui et Tsubaki sont généralement ceux qui parlent à Orihime. Il est capable de soigner de concert avec Ayame.",
+      "descRaw": "Part of Orihime's Power. Shun'ō is a friendly young male spirit (who appears to be female in the anime) with a topknot. He and Tsubaki are usually the ones who talk to Orihime. He is capable of healing together with Ayame.",
+      "descLang": "en",
+      "favorites": 2,
+      "voiceActors": {
+       "en": [
+        "Dorothy Elias-Fahn",
+        "Nikie Lescot"
+       ],
+       "jp": [
+        "Junko Noda"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "heita-momoyama",
+     "name": "Heita Momoyama",
+     "type": "character",
+     "summary": "En sortant de la boulangerie où il travaillait, il croise Yumichika Ayasegawa, Hanatarō Ya",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Heita Momoyama est un Plus, esprit d'un boulanger décédé après un accident de voiture devant sa boutique. Il guide Yumichika Ayasegawa, Hanatarō Yamada et Rin Tsubokura dans la confection d'un gâteau destiné à sa mère, utilisant la cuisine rénovée du magasin d'Urahara. Son désir de voir sa mère goûter sa recette déclenche une crise de désespoir, libérant un Reiatsu qui attire un Menos Grande. Hanatarō parvient à le stabiliser en soignant sa blessure métaphysique, liée à son attachement terrestre. Grâce à une machine de Rin, Heita communique enfin avec sa mère, qui accepte de manger le gâteau, apaisant ainsi son âme.",
+      "descRaw": "While walking out of the bakery he used to work he runs in to Yumichika Ayasegawa, Hanatarō Yamada, and Rin Tsubokura. Upon finding him to be an earth bound plus Yumichika states that it would be too dangerous to leave him as such and prepares to perform a Konsō on him. Heita is saved by both Hantaro and Rin. The four move to a nearby river bend and Rin comments on how long Heita's Chain extends. As Heita tells them the events of his death and his desire for his mother to eat one of his cakes he requests that they bake a cake in his place. Rin immediately accepts the request to which Hanatarō replies that he just wants to eat the cake. The group then travel to the Urahara Shop in which Kisuke Urahara permits the use of his recently remodeled kitchen. As the three begin to bake the test cake Heita instructs them on the process such as telling Hanatarō how to properly stir the eggs, telling Rin to control his taste-testing and telling Yumichika to cut the Strawberry smaller but not too small when the latter begins to frantically chop them. As the group complete their first cake, Heita tells them that they must see how it tastes and if the taste is right they will make another one just like it. As none of his three assistants has ever eaten cake before (there are no cakes in Soul Society) Ururu Tsumugiya offers her help. Heita tells the group to start over again (the taste subjects, Yasutora Sado and Renji Abarai both had a bad reaction to it). The team continues to make many mo",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Jean-François Pagès",
+        "Michael Sorich"
+       ],
+       "jp": [
+        "Shouto Kashii"
+       ]
+      },
+      "descFrSource": "mistral/mistral-large-latest"
+     }
+    },
+    {
+     "slug": "satoda",
+     "name": "Satoda",
+     "type": "character",
+     "summary": "Satoda est un élève du lycée de Karakura et le vice-président du club de football de l'éta",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Satoda est un élève du lycée de Karakura et le vice-président du club de football de l'établissement. Il parvient à recruter Ichigo Kurosaki comme gardien de but durant sa dernière année de lycée. Première apparition manga : volume 49, chapitre 425. Première apparition anime : épisode 343.",
+      "descRaw": "Satoda is a student at Karakura High School and the VP of the Soccer Club there. He successfully recruits Ichigo Kurosaki as the goalkeeper during Ichigo's senior year. Manga Debut: Volume 49, Chapter 425 Anime Debut: Episode 343 (Source: Bleach Wikia)",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Nicolas Kellermann",
+        "Grant George"
+       ],
+       "jp": [
+        "Jun Oosuka"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "haru",
+     "name": "Haru",
+     "type": "character",
+     "summary": "Haru est une femme âgée capable de voir les esprits. Par le passé, lorsque Tōshirō Hitsuga",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Haru est une femme âgée capable de voir les esprits. Par le passé, lorsque Tōshirō Hitsugaya fut affecté au Monde des Humains pour éliminer des Hollows et acquérir de l'expérience, elle le rencontra et commença à veiller sur lui. Première apparition : épisode 316.",
+      "descRaw": "Haru is an elderly woman who can see spirits. In the past, when Toushiro Hitsugaya was assigned to the Human World to dispatch Hollows and to gain experience, she met him and started to look after him. First appearance : episode 316. (Source: Bleach Wiki)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Cathy Cerdà",
+        "Kate Higgins"
+       ],
+       "jp": [
+        "Akiko Takeguchi"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "kenji-yamashita",
+     "name": "Kenji Yamashita",
+     "type": "character",
+     "summary": "Kenji est un homme blond avec une mèche de cheveux dressée au-dessus du front. Il chevauch",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Kenji est un homme blond avec une mèche de cheveux dressée au-dessus du front. Il chevauche un sanglier à la crête violette nommé Mindy. On ne le voit jamais sans ses lunettes de soleil. Le croquis de volume du chapitre 77 le décrit comme le pire aussi bien en pugilat qu'en disputes.",
+      "descRaw": "Kenji is a blond man with a tuft of hair rising above his forehead. He rides a boar with a violet mohawk called Mindy. He is never seen without his sunglasses. The volume sketch of chapter 77 characterizes him as being the worst in fist fights as well as in arguments. (Source: Bleach Wikia)",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Yuri Lowenthal"
+       ],
+       "jp": [
+        "Kiyotaka Furushima"
+       ]
+      }
+     }
+    }
+   ]
+  },
+  "Hunter x Hunter": {
+   "isolees": 31,
+   "types": {
+    "character": 29,
+    "place": 1,
+    "status": 1
+   },
+   "clefsAttributs": {
+    "descFr": 31,
+    "role": 29,
+    "descRaw": 27,
+    "descLang": 27,
+    "voiceActors": 26,
+    "favorites": 18,
+    "descFrSource": 5,
+    "category": 2,
+    "region": 1,
+    "descFrPurgee": 1,
+    "scope": 1
+   },
+   "fiches": [
+    {
+     "slug": "cluck",
+     "name": "Cluck",
+     "type": "character",
+     "summary": "C'est une Hunter et un membre des Zodiaques portant le nom de code « Poule ».",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "C'est une Hunter et un membre des Zodiaques portant le nom de code « Poule ».",
+      "descRaw": "She is a Hunter and a member of the Zodiacs with the codename \"Chicken\".",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Jeannie Tirado",
+        "Nayéli Forest"
+       ],
+       "jp": [
+        "Megumi Han"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "brovuda",
+     "name": "Brovuda",
+     "type": "character",
+     "summary": "Brovuda est un Chimera Ant à base de homard et un ancien chef d'escouade.",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Brovuda est un Chimera Ant à base de homard et un ancien chef d'escouade.",
+      "descRaw": "Brovuda is a lobster-based Chimera Ant and former Squadron Leader.",
+      "descLang": "en",
+      "favorites": 9,
+      "voiceActors": {
+       "en": [
+        "Chris Cason",
+        "Christophe Seugnet"
+       ],
+       "jp": [
+        "Yuuya Murakami"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "tour-celeste",
+     "name": "Tour Céleste",
+     "type": "place",
+     "summary": "L'arène-gratte-ciel où l'on grimpe étage par étage à la force des poings — l'école du Nen ",
+     "attrs": {
+      "descFr": "La Tour Céleste, également connue sous le nom de Tenkū Tōgijō, est une arène de combat en forme de tour qui attire les guerriers du monde entier. Avec ses 251 étages et 991 mètres de hauteur, elle est le quatrième bâtiment le plus haut du monde. Les combattants qui y participent peuvent gagner de l'argent et de la gloire en gravissant les étages, mais les étages supérieurs à 200 sont réservés aux utilisateurs de Nen, une forme d'énergie spirituelle. C'est là que Gon et Killua ont appris les bases du Nen avec l'aide de Wing.",
+      "region": "Arène de 251 étages",
+      "category": "Lieu",
+      "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo"
+     }
+    },
+    {
+     "slug": "gozu-hunter-x-hunter",
+     "name": "Gozu",
+     "type": "character",
+     "summary": "Gozu était un guerrier fort et puissant, capable de couper un arbre en deux avec sa seule ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Gozu était un guerrier fort et puissant, capable de couper un arbre en deux avec sa seule lance de chasse et sa force presque surhumaine. En tant que Guerrier Bianu, Gozu tirait une grande fierté de sa force et souhaitait mourir au combat.",
+      "descRaw": "Gozu was a strong and mighty warrior, capable of cutting a tree in two with only the use of his spear hunter and his almost superhuman strength. As a Bianu Warrior, Gozu held great pride in his strength and wanted to die in battle.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Richard Epcar"
+       ],
+       "jp": [
+        "Kouichi Nagano"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "kyuu",
+     "name": "Kyuu",
+     "type": "character",
+     "summary": "Kyuu est le participant n°105 du 287e Examen Hunter. Kyuu est l'un des 24 candidats à parv",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Kyuu est le participant n°105 du 287e Examen Hunter. Kyuu est l'un des 24 candidats à parvenir à la 4e épreuve de l'Examen Hunter sur l'île Zevil. Son badge est la cible désignée de Pokkle, qui le paralyse avec l'une de ses flèches empoisonnées puis lui prend son badge. Le voyant gisant sans défense sur le sol, Gon le bande et le déplace vers un endroit où il pourra attendre en sécurité que les effets du poison se dissipent. Kyuu réapparaît dans cet arc pour passer le 288e Examen Hunter, mais échoue en étant mis KO par Killua.",
+      "descRaw": "Kyuu is participant #105 in the 287th Hunter Examination. Kyuu is one of the 24 Examinees to make it to the 4th phase of the Hunter Exam on Zevil Island. His badge is the designated target of Pokkle, who paralyzes him with one of his poisoned arrows then takes the badge. Seeing him lying helpless on the ground, Gon bandages him and moves him to a place where he can wait safely until the effects of the poison disappear. Kyuu appears again in this arc to take the 288th Hunter Examination only to fail, by being knocked out by Killua. (Source: Hunter x Hunter Wikia)",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Kyle Hebert"
+       ],
+       "jp": [
+        "Daisuke Namikawa"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "no-0",
+     "name": "No. 0",
+     "type": "character",
+     "summary": "Membre officieux des « Treize Démons » de Razor, le n°0 est une invocation non utilisée po",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Membre officieux des « Treize Démons » de Razor, le n°0 est une invocation non utilisée pour les combats mais servant plutôt d'arbitre. Bien qu'il soit une création du Nen de Razor, il semble impartial dans ses jugements et paraît même doté de son propre esprit.",
+      "descRaw": "The unofficial member of Razor's \"Thirteen Devils\", no. 0 is a summon not used for battles but rather to act as a referee. Despite being a creation of Razor's nen, he appears to be fair in judging and to even have a mind of his own.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Jon Allen"
+       ],
+       "jp": [
+        "Tomoya Kawai"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "brother-ortho",
+     "name": "Brother Ortho",
+     "type": "character",
+     "summary": "Fourmi Chimère qui réside dans un lac souterrain de la République de Gorteau de l'Est avec",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Fourmi Chimère qui réside dans un lac souterrain de la République de Gorteau de l'Est avec sa sœur.",
+      "descRaw": "Chimera Ant who resides in an underwater lake in the Republic of East Gorteau with his sister. (Source: Hunter x Hunter Wikia)",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Martin Billany"
+       ],
+       "jp": [
+        "Masaki Aizawa"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "riehlvelt",
+     "name": "Riehlvelt",
+     "type": "character",
+     "summary": "C'est l'un des trois combattants qui défient Gon et Killua au 200e étage de l'Arène des Ci",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "C'est l'un des trois combattants qui défient Gon et Killua au 200e étage de l'Arène des Cieux. Ayant atteint le 200e étage sans utiliser le Nen, il fut « initié » après avoir été attaqué par une aura malveillante et paralysé à partir de la taille. Il combat avec ses deux fouets, les Serpents Jumeaux (Serpents de Tonnerre) qui intègrent également une décharge électrique d'environ 1 000 000 de volts.",
+      "descRaw": "He's one of the three fighters that challenge Gon and Killua on the 200th floor of Heavens Arena. Having reached the 200th floor without the use of Nen, he was \"initiated\" after being attacked with a malicious aura attack and paralyzed from the waist down. He fights with his two whips, the Twin Snake (Thunder Snakes) which also have an electric shock built-in about 1,000,000 volts of electricity.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Sean Chiplock",
+        "Adrien Solis"
+       ],
+       "jp": [
+        "Ichitaro Ai"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "pyro",
+     "name": "Pyro",
+     "type": "character",
+     "summary": "Un membre du clan Kurta et un ami d'enfance de Kurapika. Son nom a été révélé pour la prem",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Un membre du clan Kurta et un ami d'enfance de Kurapika. Son nom a été révélé pour la première fois pour le film Phantom Rouge.",
+      "descRaw": "A member of the Kurta tribe and Kurapika's childhood friend. His name was revealed for the first time for the Phantom Rouge movie.",
+      "descLang": "en",
+      "favorites": 9
+     }
+    },
+    {
+     "slug": "sengi-guild-agent",
+     "name": "Sengi Guild Agent",
+     "type": "character",
+     "summary": "L'Agent de la Guilde Sengi est un agent de recrutement travaillant dans la Guilde Sengi so",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "L'Agent de la Guilde Sengi est un agent de recrutement travaillant dans la Guilde Sengi souterraine, qui engage des Hunters nouveaux et anciens pour diverses missions.",
+      "descRaw": "The Sengi Guild Agent is an employment agent working in the underground Sengi Guild which hires new and old Hunters for various jobs. (Source: Hunterpedia)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Mari Devon"
+       ],
+       "jp": [
+        "Youko Soumi"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "rock-climber",
+     "name": "Rock Climber",
+     "type": "character",
+     "summary": "Le 86e candidat de l'examen des Hunters. En tant que grimpeur, il tente de descendre la To",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Le 86e candidat de l'examen des Hunters. En tant que grimpeur, il tente de descendre la Tour des Épreuves en escalade, mais il est capturé et dévoré vivant par des Bêtes Volantes à Six Pattes.",
+      "descRaw": "The 86th contestant of the Hunter Exam. As a rock climber, he tries to climb down the Trick Tower, but gets captured and eaten alive by some Six-legged Flying Beasts.",
+      "descLang": "en",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "Paul St. Peter"
+       ],
+       "jp": []
+      }
+     }
+    },
+    {
+     "slug": "hishita",
+     "name": "Hishita",
+     "type": "character",
+     "summary": "Hishita est un majordome de la Famille Zoldyck. Hishita apparaît pour la première fois lor",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Hishita est un majordome de la Famille Zoldyck. Hishita apparaît pour la première fois lorsque Gon, Kurapika et Leorio viennent à la Montagne Kukuroo pour libérer Killua de l'emprise de sa famille. Avec les autres majordomes, il les accueille au manoir des majordomes puis joue à un jeu de devinettes avec les invités indésirables, où la vie de Canary est en jeu. Plus tard, Killua contacte Canary pour qu'elle demande à Hishita d'envoyer des voitures à trois endroits précis, dont un près de l'hôpital où Gon se rétablit. Hishita attend Killua et Alluka à l'endroit désigné et reçoit l'ordre de conduire jusqu'à l'hôpital situé à 60 kilomètres. Lorsque les Hommes-Aiguilles d'Illumi affrontent Hishita, Killua et Alluka, Killua ordonne à Hishita de les faire sortir de là.",
+      "descRaw": "Hishita is a male butler of the Zoldyck Family. Hishita first appears when Gon, Kurapika and Leorio come to Kukuroo Mountain to free Killua from the control of his family. He along with the other butlers, meets them at the butlers' mansion and then plays a guessing game with the uninvited guests in which Canary's life is at stake. Later, Killua contacts Canary to have her get Hishita to send cars to three locations he specified, including one near the hospital where Gon is recuperating. Hishita waits for Killua and Alluka at the designated location and he is told to drive to the hospital 60 kilometers away. When Illumi's Needle Humans confront the Hishita, Killua, and Alluka, Killua orders Hishita to get them out of there. (Source: Hunter x Hunter Wiki)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Jean-Pierre Leblan"
+       ],
+       "jp": [
+        "Takuma Suzuki"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "koltopi-tounofmaill",
+     "name": "Koltopi Tounofmaill",
+     "type": "character",
+     "summary": "Ce qui est le plus frappant chez Koltopi, c'est son apparence hagarde. Une crinière épaiss",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Ce qui est le plus frappant chez Koltopi, c'est son apparence hagarde. Une crinière épaisse et désordonnée retombe sur son visage, masquant tout sauf un aperçu occasionnel de son globe oculaire. Capacité de nen : Gallery Fake — « Main Gauche Divine, Main Droite Démoniaque ». Lorsque Koltopi touche un objet de sa main gauche, sa capacité de nen lui permet d'en créer une réplique exacte avec sa main droite. Il ne peut pas répliquer d'êtres vivants autrement que comme des objets inanimés (ce qui rend probable qu'il ait créé les faux cadavres de ses camarades), et Koltopi est également incapable de répliquer le nen d'un autre utilisateur. Les répliques qu'il crée disparaissent au bout de 24 heures, quelle que soit leur taille. Cependant, avant leur disparition, Koltopi est capable de suivre les mouvements de chaque objet copié (à condition qu'il puisse toucher les originaux). Dans l'arc de l'Expédition du Continent Noir, Chrollo utilise la capacité Gallery Fake lors de son combat contre Hisoka, ce qui suggère que Koltopi la lui a prêtée.",
+      "descRaw": "The most distinctive thing about Koltopi is his haggard appearance. A thick and messy mane of hair flops down his face, obscuring everything except for an occasional glimpse of his eyeball. Nen Ability: Gallery Fake - \"Divine Left Hand, Demonic Right Hand\" When Koltopi touches an object with his left hand, his nen ability allows him to make an exact replica of that object with his right hand. He cannot replicate living things except as inanimate objects (making it likely that he created the fake corpses of his fellow members), and Koltopi is also unable to replicate another user's nen. The replicas that he creates vanish after 24 hours, regardless of their size. However, before their disappearance, Koltopi is able to track the movements of each and every copied object (providing that he can touch the originals). In the Dark Continent Expedition arc, Chrollo is using his Gallery Fake ability during his fight with Hisoka, implying that Koltopi lent him this ability.",
+      "descLang": "en",
+      "favorites": 4,
+      "voiceActors": {
+       "en": [
+        "Tony Oliver",
+        "Adrien Solis"
+       ],
+       "jp": [
+        "Shinya Hamazoe"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "coco-loo",
+     "name": "Coco Loo",
+     "type": "character",
+     "summary": "Coco Loo (ココルー, Kokoru) est la guide touristique du bus qui emmène Gon, Kurapika et Leorio",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Coco Loo est la guide touristique du bus de Lamentation Tours qui emmène Gon, Kurapika et Leorio à la Porte des Épreuves. Elle est connue pour sa silhouette voluptueuse et son apparence changeante entre les adaptations de 1999 et 2011. Coco Loo fournit des informations détaillées sur le Mont Kukuroo, notamment sur la famille Zoldyck, une famille d'assassins réputée. Elle est également décrite comme une personne enjouée, souvent souriante et énergique, ce qui contraste avec les informations sombres qu'elle partage sur la région.",
+      "descRaw": "Coco Loo (ココルー, Kokoru) is the tour guide on the bus that takes Gon, Kurapika and Leorio to the Testing Gate. (Source: Hunterpedia)",
+      "descLang": "en",
+      "favorites": 4,
+      "voiceActors": {
+       "en": [
+        "Reba Buhr"
+       ],
+       "jp": [
+        "Miki Nagasawa"
+       ]
+      },
+      "descFrPurgee": "balayage anti-corruption 03/08",
+      "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+     }
+    },
+    {
+     "slug": "shachmono-tocino",
+     "name": "Shachmono Tocino",
+     "type": "character",
+     "summary": "Shachmono est l'un des gardes du corps de Neon. C'est l'un des deux espions du test de Kur",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Shachmono est l'un des gardes du corps de Neon. C'est l'un des deux espions du test de Kurapika. Shachmono est un Hunter professionnel. Il appartient au groupe Émission. Son hatsu est la capacité d'invoquer 11 assassins faits de Nen. Ils ne peuvent s'éloigner que de quelques mètres et n'obéissent qu'à des ordres simples.",
+      "descRaw": "Shachmono is one of Neon's bodyguards. He is one of the two spies in Kurapika's test. Shachmono is a professional hunter. He is from the Emission group. His hatsu is the ability to summon 11 assassin's made out of nen. They can wander only several meters and only respond to simple commands.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Derek Stephen Prince"
+       ],
+       "jp": [
+        "Takeharu Oonishi"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "boki",
+     "name": "Boki",
+     "type": "character",
+     "summary": "Boki (ボキ, Boki) est une Fourmi Chimère ressemblant à un scarabée.",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Boki (ボキ, Boki) est une Fourmi Chimère ressemblant à un scarabée.",
+      "descRaw": "Boki (ボキ, Boki) is a beetle-like Chimera Ant.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Ted Sroka"
+       ],
+       "jp": [
+        "Kouki Miyata"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "fukurou",
+     "name": "Fukurou",
+     "type": "character",
+     "summary": "Owl est l'un des membres les plus précieux de la communauté mafieuse et un membre des Bête",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Owl est l'un des membres les plus précieux de la communauté mafieuse et un membre des Bêtes de l'Ombre, la garde d'élite des Dix Dons.",
+      "descRaw": "Owl is one of the most valuable members of the Mafia community and a member of the Shadow Beasts, the elite guard of the Ten Dons.",
+      "descLang": "en",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "Greg Chun"
+       ],
+       "jp": [
+        "Masahiro Yamanaka"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "sister-ortho",
+     "name": "Sister Ortho",
+     "type": "character",
+     "summary": "Sister Ortho est un personnage secondaire présenté comme une religieuse, dont le rôle exac",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Sister Ortho forme, avec son frère, la paire de Fourmis Chimères surnommée les « frère et sœur Ortho », rencontrée dans un lac souterrain de la République d'Est Gorteau durant l'arc des Fourmis Chimères. Très proche et confiante envers son frère, elle assiste fièrement à son combat contre Killua, qui affronte leur technique Nen conjointe Dart de Darts avant de les vaincre tous les deux.",
+      "voiceActors": {
+       "en": [
+        "Xanthe Huynh"
+       ],
+       "jp": [
+        "Makiko Ohmoto"
+       ]
+      },
+      "descFrSource": "sondage manuel 08/08 (chantier petits univers) · https://hunterxhunter.fandom.com/wiki/Ortho_Siblings"
+     }
+    },
+    {
+     "slug": "cookie-hunter-x-hunter",
+     "name": "Cookie",
+     "type": "character",
+     "summary": "Biscuit invoque une masseuse qu'elle appelle Cookie (クッキィちゃん, Kukkyi-chan), qui utilise di",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Biscuit invoque une masseuse qu'elle appelle Cookie (クッキィちゃん, Kukkyi-chan), qui utilise différentes techniques de massage et une lotion transmutée par le nen pour soulager la fatigue et redonner de la vitalité à quiconque elle masse. Elle peut aussi brûler l'excès de graisse et soigner l'arthrite, les tensions musculaires et les articulations bloquées. Elle est particulièrement utile pour l'entraînement et la récupération, ainsi que pour traiter les maux liés à l'âge. Bien qu'un seul massage ait été montré jusqu'à présent, selon Biscuit il en existe bien d'autres, notamment le massage du cartilage, le massage de la tête et le massage par roulement.",
+      "descRaw": "Biscuit summons a masseuse she calls Cookie (クッキィちゃん, Kukkyi-chan) which uses different massaging techniques and a Nen-transmuted lotion to relieve fatigue and restore vitality to anyone it massages. It can also burn off excess fat and cure arthritis, muscle tension and locked joints. It is particularly useful for training/recovery purposes and to treat aging ailments. Although only one massage has been shown so far, according to Biscuit there are a lot more, some of which are cartilage massage, head massage, and roll massage. (Source: Hunter x Hunter Wiki) No voice actors have been added to this character. Help improve our database by searching for a voice actor, and adding this character to their roles .",
+      "descLang": "en",
+      "favorites": 4
+     }
+    },
+    {
+     "slug": "buhara",
+     "name": "Buhara",
+     "type": "character",
+     "summary": "L'un des examinateurs de la deuxième étape de l'examen des Hunters, aux côtés de Menchi. B",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "L'un des examinateurs de la deuxième étape de l'examen des Hunters, aux côtés de Menchi. Buhara est un chasseur épicurien, une figure massive dotée d'un gros ventre et d'un appétit encore plus grand. Le naturel décontracté de Buhara contraste avec celui, très exigeant, de Menchi.",
+      "descRaw": "One of the second stage examiners during the Hunter exam, along with Menchi. Buhara is an epicurean hunter, and is a hulking figure with a large potbelly and an even larger appetite. Buhara's easy-going nature contrasts with Menchi's highly selective one.",
+      "descLang": "en",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "Tom Fahn",
+        "Jean-Pierre Leblan"
+       ],
+       "jp": [
+        "Junichi Kanemaru"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "200th-floor-receptionist",
+     "name": "200th Floor Receptionist",
+     "type": "character",
+     "summary": "Humaine. Sexe : féminin. Couleur des yeux : violet. Couleur des cheveux : bleu pétrole. Un",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Humaine. Sexe : féminin. Couleur des yeux : violet. Couleur des cheveux : bleu pétrole. Une femme que Gon et Killua ont rencontrée au 200e étage.",
+      "descRaw": "Human Gender: Female Eye colour: Purple Hair colour: Petrol A woman who Gon and Killua met on the 200th floor",
+      "descLang": "en",
+      "favorites": 6,
+      "voiceActors": {
+       "en": [
+        "Hannah Alcorn"
+       ],
+       "jp": [
+        "Yuka Terasaki"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "sedokan",
+     "name": "Sedokan",
+     "type": "character",
+     "summary": "Sedokan est l'un des prisonniers de la Tour des Épreuves opposés à Gon. Il a été condamné ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Sedokan est l'un des prisonniers de la Tour des Épreuves opposés à Gon. Il a été condamné pour attentats à la bombe en série et ne possède pas beaucoup de force physique, mais il est très rusé et astucieux.",
+      "descRaw": "Sedokan is one of the prisoners in the Trick Tower pitted against Gon. He was convicted of serial bombing and does not have much physical prowess, yet is very crafty and cunning.",
+      "descLang": "en",
+      "favorites": 6,
+      "voiceActors": {
+       "en": [
+        "Lucien Dodge",
+        "Olivier Podesta"
+       ],
+       "jp": [
+        "Motoki Takagi"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "latarza",
+     "name": "Latarza",
+     "type": "character",
+     "summary": "Latarza est un joueur de Greed Island qui s'en prend aux nouveaux joueurs. Il porte un déb",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Latarza est un joueur de Greed Island qui s'en prend aux nouveaux joueurs. Il porte un débardeur, un pantalon ample et un casque audio. Ses cheveux crépus sont noués en plusieurs touffes dressées sur le sommet de sa tête. Quand Killua vient d'entrer dans le jeu, Latarza lui lance la carte de sort Trace puis fuit aussitôt vers la cité de Masadora à l'aide de la carte de sort Return lorsqu'il sent que ce gamin est dangereux. Le tatouage sur son épaule droite « 雷 » est le kanji pour Tonnerre, tandis que celui sur son épaule gauche « 風 » est le kanji pour Vent.",
+      "descRaw": "Latarza is a Greed Island player who preys on new players. He wears a tanktop, baggy pants and a pair of headphones. His afro-textured hair is tied into a number of upright bunches on top of his head. When Killua has just entered the game, Latarza casts the spell card Trace on him then immediately flees to Masadora city using the Return spell card when he feels that the kid is dangerous. The tattoo on his right shoulder \"雷\" is the kanji for Thunder, while the one on his left shoulder \"風\" is the kanji for Wind.",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "DW McCann"
+       ],
+       "jp": [
+        "Tetsuya Motomura"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "gereta",
+     "name": "Gereta",
+     "type": "character",
+     "summary": "Candidat n°384 lors de l'examen des Hunters. Il est doué pour traquer les animaux et est u",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Candidat n°384 lors de l'examen des Hunters. Il est doué pour traquer les animaux et est un candidat récurrent à l'examen. Son arme est une sarbacane avec des fléchettes enduites d'un poison neurologique qui immobilise ses victimes. Il peut traquer sa proie et rester tapi dans l'ombre sans être détecté, jusqu'à ce que l'occasion se présente et qu'il porte le coup fatal.",
+      "descRaw": "Examinee #384 during the Hunter exam. He is adept in hunting down animals, and is a frequent candidate for the Exam. His weapon is a blowpipe with darts laced with a neurological poison that immobilizes victims. He can track down his victim and lie undetected in the shadows, until opportunity strikes before he makes the deadly move.",
+      "descLang": "en",
+      "favorites": 2,
+      "voiceActors": {
+       "en": [
+        "Ray Chase",
+        "Antoine Tomé"
+       ],
+       "jp": [
+        "Nobuaki Kanemitsu"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "kastro",
+     "name": "Kastro",
+     "type": "character",
+     "summary": "C'est un combattant éminent de l'Arène Céleste et une célébrité apparente. Il vit au 200e ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "C'est un combattant éminent de l'Arène Céleste et une célébrité apparente. Il vit au 200e étage en tant que combattant, pratique les arts martiaux et est très habile au combat à mains nues. Il avait accumulé assez de victoires pour devenir Maître d'Étage. Deux ans plus tôt, Kastro fut vaincu par Hisoka à l'Arène Céleste, sa seule défaite. Après cela, il s'entraîne avec acharnement pour améliorer son nen, remporte neuf victoires puis défie Hisoka pour sa dixième.",
+      "descRaw": "He is a prominent fighter in the Heavens Arena and an apparent celebrity. Lives on the 200th floor as a fighter, uses martial arts and is very skillful in hand-to-hand combat. He had accumulated enough wins to become a Floor Master. Two years ago, Kastro was defeated by Hisoka in the Heavens Arena making it his only loss. After this, he trains rigorously to improve his Nen and gains nine wins and then challenges Hisoka for his tenth.",
+      "descLang": "en",
+      "favorites": 5,
+      "voiceActors": {
+       "en": [
+        "Kevin M. Connolly",
+        "Bruno Méyère"
+       ],
+       "jp": [
+        "Tokuyoshi Kawashima"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "gothic-newscaster",
+     "name": "Gothic Newscaster",
+     "type": "character",
+     "summary": "La Présentatrice Gothique est une présentatrice qui a rapporté l'incident survenu dans la ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "La Présentatrice Gothique est une présentatrice qui a rapporté l'incident survenu dans la ville de Pata impliquant l'ancien Chef d'Escadron Cheetu.",
+      "descRaw": "The Gothic Newscaster is a newscaster that reported the incident in Pata City involving the former Squadron Leader Cheetu. (Source: Hunterpedia)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Cindy Robinson"
+       ],
+       "jp": [
+        "Miho Miyagawa"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "examen-hunter",
+     "name": "Examen de Hunter",
+     "type": "status",
+     "summary": "L'épreuve annuelle aux phases mortelles qui ne délivre qu'une poignée de licences par an.",
+     "attrs": {
+      "scope": "Épreuve",
+      "descFr": "L'Examen de Hunter est une épreuve annuelle organisée par l'Association des Hunters, destinée à sélectionner les membres d'une élite explorant l'inconnu et protégeant l'humanité. Composé de phases variables et souvent mortelles, il évalue les candidats sur leurs capacités physiques, leur acuité mentale et leur potentiel global. Seule une infime fraction des millions de postulants accède aux épreuves finales, où la maîtrise du Nen ou des compétences exceptionnelles constitue un avantage décisif.",
+      "category": "Titre & rang",
+      "descFrSource": "mistral/mistral-large-latest"
+     }
+    },
+    {
+     "slug": "supa",
+     "name": "Supa",
+     "type": "character",
+     "summary": "Candidate n°80 lors de l'examen des Hunters. C'était une tireuse d'élite experte à la quat",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Candidate n°80 lors de l'examen des Hunters. C'était une tireuse d'élite experte à la quatrième épreuve et l'une des rares participantes féminines de l'examen des Hunters auquel Gon et les autres concouraient. Là, elle tenta de tuer sa cible, Gitarakuru, mais fut elle-même tuée en représailles. (Uniquement dans l'anime original) Durant l'« étape bonus » après la Tour des Épreuves, Sniper fut choisie par Hanzo pour manœuvrer les canons principaux du navire, dégageant le vaisseau des rochers avec une visée précise, ce qui montre qu'elle est bien familière de diverses formes d'armes à feu.",
+      "descRaw": "Examinee #80 during the Hunter Exam. She was an expert sniper at the fourth exam and one of the few female contestants in the Hunter Exam Gon and the other's competed in. There, she attempted to kill her target, Gitarakuru, but was herself killed in retaliation. (Original-only) During the 'Bonus Stage' after Trick Tower, Sniper was chosen by Hanzo to operate the ship's main guns, blasting the vessel free from the rocks with precise aim, which shows she's well acquainted with various forms of firearms.",
+      "descLang": "en",
+      "favorites": 2
+     }
+    },
+    {
+     "slug": "togari",
+     "name": "Togari",
+     "type": "character",
+     "summary": "Togari est un ancien examinateur Hunter qui revient au 287e Examen Hunter. Il apparaît lor",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Togari est un ancien examinateur Hunter qui revient au 287e Examen Hunter. Il apparaît lors de la troisième épreuve de l'examen où il affronte Hisoka, non pas en tant qu'examinateur mais pour se venger de ce dernier, qui lui avait laissé deux cicatrices au visage lors de l'examen précédent. Durant le combat, Togari montre à Hisoka à quel point il a perfectionné ses talents de combattant, étant capable de manier quatre couteaux en même temps.",
+      "descRaw": "Togari is a former Hunter examiner, who returns at the 287th hunter exam. He appears during the third phase of the exam where he confronts Hisoka, not as examiner but to take revenge for Hisoka giving him the two scars on his face from the previous exam. During the battle Togari shows Hisoka how much he has improved his fighting skills being able to use four knives at the same time,",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Joshua Tomar"
+       ],
+       "jp": [
+        "Takuma Suzuki"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "matthew",
+     "name": "Matthew",
+     "type": "character",
+     "summary": "Matthew était un candidat au 287e Examen Hunter. Matthew surprend les instructions données",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Matthew était un candidat au 287e Examen Hunter. Matthew surprend les instructions données par le Capitaine à Gon et ses amis au port de Dolle et se met à les suivre. En chemin, ils sont forcés de s'arrêter dans une ruelle déserte par la Dame aux Questions et une bande de gens masqués. La vieille femme leur pose une question à dilemme, à laquelle ils doivent répondre en 5 secondes seulement. Matthew intervient soudain et se porte volontaire pour répondre en premier afin de tendre des pièges. Il donne sa réponse à la vieille femme et, en retour, celle-ci le laisse passer ; cependant, le chemin est faux et, selon Kurapika, Matthew est attaqué et probablement tué par un monstre.",
+      "descRaw": "Matthew was an applicant for the 287th Hunter Examination. Matthew overhears the instructions of the Captain to Gon and his friends in Dolle Harbor and stalks them. On the way, they are forced to stop in a desolated alley by the Quizzing Lady and a bunch of masked people. The old lady asks them a dilemmatic quiz, for them to answer in 5 seconds only. Matthew suddenly steps in and volunteers to answers first in order for him to set traps. He gives the old lady his answer and in return the lady lets him through; however, the path is false, and, according to Kurapika, Matthew is attacked and possibly killed by a monster. (Source: Hunter x Hunter Wikia)",
+      "descLang": "en",
+      "voiceActors": {
+       "en": [
+        "Lucien Dodge"
+       ],
+       "jp": []
+      }
+     }
+    },
+    {
+     "slug": "abe",
+     "name": "Abe",
+     "type": "character",
+     "summary": "Abe, alias Abengane, est un Hunter de la Liste noire réputé pour sa maîtrise de l'exorcism",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Abengane, alias Abengane, est un Hunter de la Liste noire spécialisé dans l'exorcisme des afflictions liées au Nen. Il participe à l'arc Greed Island en tant que joueur recruté par Battera, rejoignant l'alliance de Nickes pour tenter d'obtenir la carte rare « Angel's Breath ». Durant cette aventure, il démontre son intelligence logique et son calme face aux dangers, notamment lors de l'attaque de Genthru qui active des bombes Nen dans le refuge de l'alliance.",
+      "favorites": 3,
+      "voiceActors": {
+       "en": [
+        "Barbara Goodson",
+        "Pascale Jacquemont"
+       ],
+       "jp": [
+        "Hisako Kyouda"
+       ]
+      },
+      "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b"
+     }
+    }
+   ]
+  },
+  "Death Note": {
+   "isolees": 11,
+   "types": {
+    "character": 11
+   },
+   "clefsAttributs": {
+    "role": 11,
+    "descFr": 11,
+    "descFrSource": 10,
+    "voiceActors": 7,
+    "favorites": 5,
+    "descRaw": 4,
+    "descLang": 4,
+    "camp": 1,
+    "sectionsSource": 1
+   },
+   "fiches": [
+    {
+     "slug": "kyoko",
+     "name": "Kyoko",
+     "type": "character",
+     "summary": "Kyoko est un personnage ponctuel de Death Note, apparu brièvement sans développement narra",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Kyoko est une étudiante féminine inscrite à l'université To‑Oh, où elle suit ses cours en même temps que Light Yagami et L. Elle arbore des lunettes ovales et une coupe courte au carré, portant tantôt un blazer noir sur une chemise blanche lors de la cérémonie d'entrée, tantôt un pull vert à capuche gris sur une chemise blanche sur le campus, puis une robe courte couleur terre d'ombre sur un haut noir à manches longues. Durant la cérémonie d'entrée, elle déclare préférer le discours de celui qu'elle connaît sous le nom d'emprunt Hideki Ryuga (L), tandis que son amie juge Light plus séduisant. On la retrouve ensuite près du court de tennis où elle remarque que L tient son rang malgré la réputation de champion de tennis de Light, enfin lors de la visite de Misa Amane sur le campus, elle se précipite pour rencontrer la célèbre idole en se présentant comme une admiratrice, provoquant un attroupement autour d'elles.",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [
+        "Alexa Devine"
+       ],
+       "jp": [
+        "Kanako Kondou"
+       ]
+      },
+      "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b"
+     }
+    },
+    {
+     "slug": "carl-darlingbin",
+     "name": "Carl Darlingbin",
+     "type": "character",
+     "summary": "Après la fondation du SPK, Ratt sortit devant leur QG et demanda à un citoyen de lui prête",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Carl Darlingbin est un officier du FBI membre du SPK (Special Provision for Kira), la cellule anti-Kira fondée par Near avec l’appui du président des États-Unis. Son nom figure dans le databook officiel Death Note 13: How to Read parmi les agents de l’unité. Comme la plupart des membres du SPK, il compte parmi les victimes de la purge déclenchée lorsque les identités des agents furent livrées à Kira par la taupe de Mello.",
+      "descRaw": "After the founding of the SPK, Ratt walked outside their HQ and asked a citizen to borrow his phone so that he could inform Mello with information on the Death Note that he had found. Ratt was briefly seen being ordered by Steve Mason to get John McEnroe to pick up Soichiro Yagami and his daughter Sayu, who was kidnapped by Mello and the Mafia as a trade for the Death Note. After Mello obtained the notebook, he used it to kill Ratt, along with half of the other SPK members, by making him commit suicide by shooting himself in the head with a gun. No voice actors have been added to this character. Help improve our database by searching for a voice actor, and adding this character to their roles .",
+      "descLang": "en",
+      "descFrSource": "claude-fable (arbitrage manuel 02/08/2026) · Death Note 13: How to Read · https://deathnote.fandom.com/wiki/Special_Provision_for_Kira"
+     }
+    },
+    {
+     "slug": "zerhogie",
+     "name": "Zerhogie",
+     "type": "character",
+     "summary": "Dieu de la Mort de rang 5 au crochet spectaculaire et au casque de plumes, apparu dans le ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Zerhogie est un Dieu de la Mort de rang 5, reconnaissable à l’énorme crochet qu’il porte à la main gauche et à son casque de plumes. Son corps est dépourvu d’os, ce qui lui donne une silhouette singulière même parmi les Shinigami. Curieux de nature, il apprécie les choses légères et déteste l’humidité. Il apparaît dans le tome 13 de Death Note, le databook officiel de la série.",
+      "voiceActors": {
+       "en": [
+        "Mohad Sanou",
+        "John Novak"
+       ],
+       "jp": []
+      },
+      "descFrSource": "claude-fable (arbitrage manuel 02/08/2026) · https://deathnote.fandom.com/fr/wiki/Zerhogie"
+     }
+    },
+    {
+     "slug": "noriko",
+     "name": "Noriko",
+     "type": "character",
+     "summary": "Elle est une amie de Misa Amane. Elle apparaît au chapitre 48 « Give-and-Take ». Durant l'",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Elle est une amie de Misa Amane. Elle apparaît au chapitre 48 « Give-and-Take ». Durant l'enquête sur Yotsuba, Misa n'a le droit d'aller nulle part sans être escortée par Mogi. Misa contacte discrètement Nori et organise une rencontre. Misa joue dans un grand film. Le lendemain, après un tournage en extérieur, elle demande à pouvoir utiliser les toilettes pour dames d'un hôpital local. Dans une cabine l'attend Nori, déguisée en infirmière. Les deux filles échangent rapidement leurs vêtements et leurs perruques. Misa a expliqué à Nori qu'elle veut aller à un rendez-vous mais ne peut avoir beaucoup d'intimité en raison de son statut de célébrité. Nori est ravie de porter les vêtements de Misa — ce qui indique qu'elle est une fan de Misa, un mannequin et une actrice célèbre. Vêtue de la tenue d'infirmière et portant une perruque noire, Misa s'en va alors, passant devant Mogi et partant faire un tour en voiture avec Higuchi, dans l'intention de le démasquer comme le Kira de Yotsuba. Nori, de son côté, s'approche de Mogi qui, réalisant qu'il a été berné, donne rapidement l'alerte au reste de la cellule d'enquête sur Kira, laquelle doit attendre le retour de Misa dans la soirée — avec la preuve que Higuchi est Kira.",
+      "descRaw": "She is a friend of Misa Amane. She features in chapter 48 \"Give-and-Take\". During the Yotsuba investigation, Misa is not allowed to go anywhere without being escorted by Mogi. Misa discreetly contacts Nori and arranges a meeting. Misa is appearing in a major film. The next day, after a location shoot, she asks to be allowed to use the ladies' room in a local hospital. Waiting in a cubicle is Nori who is dressed as a nurse. The two girls quickly swap clothes and wigs. Misa has told Nori that she wants to go out on a date but cannot get much privacy due to her celebrity status. Nori is thrilled to be wearing Misa's clothes — indicating that she is a fan of Misa, a well-known model and actress. Dressed in the nurse outfit and wearing a black wig, Misa then leaves, slipping past Mogi and going out for a drive with Higuchi, intending to expose him as the Yotsuba Kira. Nori meanwhile approaches Mogi who, realizing that he has been tricked, quickly raises the alarm with the rest of the Kira Task Force, who have to wait until Misa returns in the evening — with evidence that Higushi is Kira.",
+      "descLang": "en",
+      "favorites": 1,
+      "voiceActors": {
+       "en": [],
+       "jp": [
+        "Kanako Kondou"
+       ]
+      }
+     }
+    },
+    {
+     "slug": "ginzou-kaneboshi",
+     "name": "Ginzou Kaneboshi",
+     "type": "character",
+     "summary": "Criminel japonais dont le nom compte parmi les toutes premières victimes de Kira, mortes d",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Ginzou Kaneboshi est le président d'une grande compagnie financière, mais aussi usurier opérant par des méthodes immorales. Choisi par Kyousuke Higuchi comme cible appropriée pour que Misa démontre ses pouvoirs de second Kira, Kaneboshi est finalement tué par Rem en utilisant le Death Note, confirmant l'identité du second Kira à Higuchi.",
+      "descFrSource": "claude-haiku (finisseur 02/08) · deathnote.fandom.com (Ginzo Kaneboshi page)"
+     }
+    },
+    {
+     "slug": "itou-shiroba",
+     "name": "Itou Shiroba",
+     "type": "character",
+     "summary": "Itou Shiroba est un personnage de l'univers Death Note apparu de façon épisodique, sans in",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Ito Shiroba est un policier à moto affecté à la circulation dans l'univers Death Note. Lors de l'arrestation de Kyosuke Higuchi, il subit une mort accidentelle provoquée par le Death Note après que Higuchi ait utilisé ses yeux de Shinigami pour obtenir son nom et l'ait inscrit dans le carnet. Son décès pousse Ryuzaki à comprendre que Higuchi peut tuer simplement en regardant une personne, ce qui entraîne la mise en place de précautions supplémentaires. Dans l'adaptation télévisée, le personnage apparaît sous un nom différent interprété par Yusei Nishimura, et sa durée de vie est indiquée comme 6923781.",
+      "voiceActors": {
+       "en": [
+        "Ted Cole"
+       ],
+       "jp": [
+        "Ooki Sugiyama"
+       ]
+      },
+      "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b"
+     }
+    },
+    {
+     "slug": "larry-conners",
+     "name": "Larry Conners",
+     "type": "character",
+     "summary": "Il est membre du SPK et officier du FBI. McEnroe apparaît pour la première fois au début d",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Larry Conners est un officier du FBI rattaché au SPK (Special Provision for Kira), l’unité d’élite anti-Kira dirigée par Near depuis New York. Nommé dans le databook officiel Death Note 13: How to Read, il fait partie des agents dont l’identité fut compromise lorsque la taupe de Mello livra les noms et visages des membres du SPK — une fuite qui coûta la vie à la quasi-totalité de l’unité.",
+      "descRaw": "He is an SPK member and FBI officer. McEnroe first appears at the beginning of the Near-Mello story arc when he is sent to the Japanese National Police Agency HQ in order to request that the Death Note that they have is handed over to the United States government, and thus the SPK. Soichiro Yagami, Deputy Director of the NPA, accuses the FBI of being involved in the kidnapping of Kanichi Takimura, the head of the NPA, but McEnroe persuades him that this is not the case and they agree to work together in order to rescue Takimura. Takimura is later found dead and Mello kidnaps Yagami's daughter Sayu, leaving her father with little choice but to go to America and hand the Death Note over to the Mafia. After the exchange is made, McEnroe picks the Yagamis up by helicopter but then takes them to a building in Los Angeles where Near questions them about the kidnappers. Death Note: How to Read 13 reveals that McEnroe survived the killing of the SPK agents by the use of the Death Note (see Chapter 66 \"Death\") but he is not seen again in the manga. (Source: Death Note Wiki)",
+      "descLang": "en",
+      "favorites": 4,
+      "voiceActors": {
+       "en": [
+        "Ted Cole",
+        "Antoine Schoumsky"
+       ],
+       "jp": [
+        "Motoi Koyanagi"
+       ]
+      },
+      "descFrSource": "claude-fable (arbitrage manuel 02/08/2026) · Death Note 13: How to Read · https://deathnote.fandom.com/wiki/Special_Provision_for_Kira"
+     }
+    },
+    {
+     "slug": "hideki-ryuuga",
+     "name": "Hideki Ryuuga",
+     "type": "character",
+     "summary": "Nom d'emprunt utilisé par L pour s'inscrire à l'université To-Oh sous une fausse identité ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Hideki Ryuga est une star japonaise de la pop et acteur, connu pour sa propre émission télévisée et caractérisé par ses cheveux jaune-vert en désordre qui lui retombent sur les yeux ainsi que par sa silhouette élancée et grande, considérée comme attractive par de nombreuses femmes. Bien qu'il apparaisse initialement seulement à la télévision, son nom est emprunté par L comme alias lors de la cérémonie d'entrée à l'université To-Oh, sous prétexte de tester Light Yagami, sachant que l'utilisation de ce nom dans le Death Note pousserait Light à imaginer le vrai visage de Ryuga et à tuer involontairement la star, révélant ainsi son identité de Kira. Plus tard dans l'histoire, Ryuga joue effectivement un rôle lorsqu'il tourne un film où Misa Amane tient le rôle de son intérêt amoureux ; Misa refuse de l'embrasser par fidélité à Light, ce qui irrite le réalisateur. Sa dernière apparition connue se déroule lors du festival de musique pop de NHN, où il est présenté par Kiyomi Takada aux côtés du casting de sa prochaine série Ryouma Sakamoto, dans laquelle il incarnera le personnage titre Ryouma, tandis qu'Ami Hamazaki jouera son intérêt amoureux.",
+      "favorites": 2,
+      "voiceActors": {
+       "en": [
+        "Paul Dobson"
+       ],
+       "jp": [
+        "Kensuke Nishi"
+       ]
+      },
+      "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b"
+     }
+    },
+    {
+     "slug": "yasunaga",
+     "name": "Yasunaga",
+     "type": "character",
+     "summary": "Personnage mineur de Death Note dont l'apparition reste brève, sans développement notable ",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Yasunaga est le capitaine de l'équipe de tennis de l'université To‑Oh, étudiant en licence. Il possède des cheveux bruns courts, des yeux noirs et porte des lunettes à verres jaunes. Lors d'une discussion avec plusieurs filles, il apprend par un coéquipier que Hideki Ryuga et Light jouent au tennis sans autorisation et se rend sur le terrain pour les en empêcher. Après avoir observé leur niveau de jeu, il abandonne son intention de les repousser et décide de les convaincre de rejoindre l'équipe de tennis. Son nom n'apparaît pas dans la traduction officielle Viz du manga.",
+      "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b"
+     }
+    },
+    {
+     "slug": "daril-ghiroza",
+     "name": "Daril Ghiroza",
+     "type": "character",
+     "summary": "Shinigami femelle de rang 3 conçue par Takeshi Obata sur le modèle de Ryuk, à l'apparence ",
+     "attrs": {
+      "camp": "Shinigami",
+      "role": "Personnage secondaire",
+      "descFr": "Daril Ghiroza est une shinigami femelle décrite comme possédant une apparence plus orthodoxe et asiatique, avec une intelligence notée 8/10 et un rang de 3 parmi les shinigamis. Elle occupe son temps à empiler des squelettes humains, affectionne les accessoires métalliques, évite les lieux lumineux et n'éprouve aucun intérêt pour le monde humain, préférant rester dans le royaume des shinigamis où elle joue. Son rire caractéristique est qualifié de maladroit, et son nombre de tués est de 8/10 malgré son faible niveau d'initiative et d'empathie (2/10 chacune). Lors de sa conception, Obata l'a modellée sur le design de Ryuk en visant un rang supérieur, mais elle n'a pas été choisie pour apparaître sur Terre car son rang élevé la rendait inadaptée à être « poussée autour » par un humain, ce qui a finalement réjoui l'auteur vu la complexité de ses détails.",
+      "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b"
+     }
+    },
+    {
+     "slug": "light-s-teacher",
+     "name": "Light's Teacher",
+     "type": "character",
+     "summary": "Le professeur d'anglais de Light au lycée est un personnage secondaire qui apparaît au tou",
+     "attrs": {
+      "role": "Personnage secondaire",
+      "descFr": "Le professeur d'anglais de Light Yagami est un personnage mineur qui ouvre la série : dans la scène inaugurale du manga (chapitre « Boredom ») comme de l'anime (épisode « Rebirth »), il l'interroge en pleine rêverie pour lui faire traduire un passage, que Light résout sans effort. Son rôle reste discret, mais les textes qu'il fait lire en classe préfigurent sans le savoir des événements de la suite de l'histoire.",
+      "descRaw": "Light's high school English teacher is a minor character who appears early on in the anime and manga. (Source: Death Note Wiki)",
+      "descLang": "en",
+      "favorites": 2,
+      "voiceActors": {
+       "en": [
+        "Sébastien Finck",
+        "Brian Dobson"
+       ],
+       "jp": [
+        "Yasunori Masutani"
+       ]
+      },
+      "descFrSource": "sondage manuel 08/08 (chantier petits univers) · https://deathnote.fandom.com/wiki/English_teacher",
+      "sectionsSource": "deepinfra/Qwen/Qwen3-32B"
+     }
+    }
+   ]
+  }
+ }
+}

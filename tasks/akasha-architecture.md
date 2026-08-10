@@ -934,8 +934,18 @@ le pipeline usine.
    simple module `timeline` d'`EntityZone` au lot 5 ?
    → **[Garder autonome] / [Fondre en module]** — *ma recommandation : fondre, mais au lot 5.*
    **DÉCIDÉ : fondre en module `timeline`, au LOT 5** (pas avant — dépend de `EntityZone`, LOT 2,
-   non encore construit). Vérifié : `EraZone` existe toujours telle quelle en composant autonome
-   (`components/akasha/zone/EraZone.tsx`), conforme à « pas avant le lot 5 ».
+   non encore construit).
+   → **FAIT le 10/08/2026.** `components/akasha/zone/EraZone.tsx` est **supprimée** (206 lignes) et
+   la branche `attributes.eras` de `app/learn/akasha/[slug]/page.tsx` avec elle : le rouleau
+   temporel est le module `timeline` d'`EntityZone`, monté par `deriveShape` sur la CAPACITÉ. Les
+   14 fiches rejoignent le chemin commun — `EntityZone` sert maintenant **2 612** fiches
+   (2 598 + 14, recompté sur le corpus paginé). Ce que ce détour leur coûtait, mesuré fiche par
+   fiche : `relations` sur 14/14, `orbit` sur 5, `axis` sur 1 (`mont-akina`), plus le bloc
+   « Attributs » et le « Voir aussi » sur les 14. Rien n'est perdu en échange, vérifié à l'écran sur
+   les 14 : les figures cliquables passent de 18 à 21 sur les quatre fiches à puits (le compteur
+   mort « + N autres au registre » est devenu douze chips), et de 0 à 2-12 sur les six qui n'en
+   avaient aucune. Traces : `data/audits/erazone-recensement-*.json` (avant) et
+   `data/audits/erazone-fusion-apres-*.json` (après), scripts homonymes dans `scripts/`.
 
 4. **`ki` Dragon Ball** : 60 valeurs de power level non canon (fan-made), dont 29 avec une échelle
    française fautive (« Milliard/Billion »). On les marque « estimé », ou on les retire ?

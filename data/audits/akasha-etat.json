@@ -1,28 +1,28 @@
 {
  "chantier": "état des lieux AKASHA",
- "quand": "2026-08-10T08:09:48.526Z",
+ "quand": "2026-08-10T09:52:17.488Z",
  "total": 7632,
- "relations": 16699,
+ "relations": 16731,
  "sections": 19099,
  "global": {
-  "sansImage": 788,
+  "sansImage": 772,
   "sansDescFr": 454,
   "sansResume": 29,
   "resumeRemplissage": 289,
-  "isolees": 848,
-  "sansDossier": 2862,
+  "isolees": 818,
+  "sansDossier": 2856,
   "descriptionRedondante": 5,
   "descriptionAbsente": 7599
  },
  "parUnivers": {
   "Naruto": {
    "fiches": 3308,
-   "sansImage": 302,
+   "sansImage": 300,
    "sansDescFr": 167,
    "sansResume": 29,
    "resumeRemplissage": 2,
    "sansDossier": 1895,
-   "isolees": 110,
+   "isolees": 93,
    "axes": [
     {
      "attr": "village",
@@ -41,15 +41,15 @@
     {
      "attr": "organization",
      "label": "Organisations",
-     "fiches": 224,
+     "fiches": 225,
      "valeurs": 42,
-     "horsListe": 1
+     "horsListe": 2
     },
     {
      "attr": "equipe",
      "label": "Équipes",
-     "fiches": 189,
-     "valeurs": 66,
+     "fiches": 177,
+     "valeurs": 65,
      "horsListe": 0
     },
     {
@@ -63,8 +63,8 @@
      "attr": "rank",
      "label": "Rangs ninja",
      "fiches": 473,
-     "valeurs": 11,
-     "horsListe": 3
+     "valeurs": 10,
+     "horsListe": 2
     },
     {
      "attr": "generation",
@@ -75,106 +75,13 @@
     }
    ]
   },
-  "Bleach": {
-   "fiches": 382,
-   "sansImage": 59,
-   "sansDescFr": 14,
-   "sansResume": 0,
-   "resumeRemplissage": 0,
-   "sansDossier": 111,
-   "isolees": 45,
-   "axes": [
-    {
-     "attr": "race",
-     "label": "Races spirituelles",
-     "fiches": 100,
-     "valeurs": 10,
-     "horsListe": 0
-    },
-    {
-     "attr": "monde",
-     "label": "Mondes",
-     "fiches": 171,
-     "valeurs": 4,
-     "horsListe": 0
-    },
-    {
-     "attr": "division",
-     "label": "Gotei 13",
-     "fiches": 47,
-     "valeurs": 13,
-     "horsListe": 0
-    }
-   ]
-  },
-  "Hunter x Hunter": {
-   "fiches": 215,
-   "sansImage": 0,
-   "sansDescFr": 0,
-   "sansResume": 0,
-   "resumeRemplissage": 0,
-   "sansDossier": 21,
-   "isolees": 31,
-   "axes": [
-    {
-     "attr": "nen",
-     "label": "Types de Nen",
-     "fiches": 51,
-     "valeurs": 6,
-     "horsListe": 0
-    }
-   ]
-  },
-  "JoJo's Bizarre Adventure": {
-   "fiches": 233,
-   "sansImage": 6,
-   "sansDescFr": 0,
-   "sansResume": 0,
-   "resumeRemplissage": 0,
-   "sansDossier": 37,
-   "isolees": 49,
-   "axes": [
-    {
-     "attr": "partie",
-     "label": "Parties",
-     "fiches": 221,
-     "valeurs": 7,
-     "horsListe": 0
-    }
-   ]
-  },
-  "Dragon Ball": {
-   "fiches": 1137,
-   "sansImage": 40,
-   "sansDescFr": 61,
-   "sansResume": 0,
-   "resumeRemplissage": 285,
-   "sansDossier": 333,
-   "isolees": 146,
-   "axes": [
-    {
-     "attr": "race",
-     "label": "Races",
-     "fiches": 105,
-     "valeurs": 11,
-     "horsListe": 2
-    },
-    {
-     "attr": "saga",
-     "label": "Sagas",
-     "fiches": 128,
-     "valeurs": 5,
-     "horsListe": 0
-    }
-   ]
-  },
   "One Piece": {
    "fiches": 2229,
-   "sansImage": 378,
+   "sansImage": 366,
    "sansDescFr": 210,
    "sansResume": 0,
    "resumeRemplissage": 2,
-   "sansDossier": 455,
+   "sansDossier": 449,
    "isolees": 451,
    "axes": [
     {
@@ -207,6 +114,38 @@
     }
    ]
   },
+  "Bleach": {
+   "fiches": 382,
+   "sansImage": 59,
+   "sansDescFr": 14,
+   "sansResume": 0,
+   "resumeRemplissage": 0,
+   "sansDossier": 111,
+   "isolees": 42,
+   "axes": [
+    {
+     "attr": "race",
+     "label": "Races spirituelles",
+     "fiches": 100,
+     "valeurs": 10,
+     "horsListe": 0
+    },
+    {
+     "attr": "monde",
+     "label": "Mondes",
+     "fiches": 171,
+     "valeurs": 4,
+     "horsListe": 0
+    },
+    {
+     "attr": "division",
+     "label": "Gotei 13",
+     "fiches": 47,
+     "valeurs": 13,
+     "horsListe": 0
+    }
+   ]
+  },
   "Initial D": {
    "fiches": 44,
    "sansImage": 2,
@@ -232,6 +171,67 @@
     }
    ]
   },
+  "Dragon Ball": {
+   "fiches": 1137,
+   "sansImage": 40,
+   "sansDescFr": 61,
+   "sansResume": 0,
+   "resumeRemplissage": 285,
+   "sansDossier": 333,
+   "isolees": 146,
+   "axes": [
+    {
+     "attr": "race",
+     "label": "Races",
+     "fiches": 105,
+     "valeurs": 11,
+     "horsListe": 2
+    },
+    {
+     "attr": "saga",
+     "label": "Sagas",
+     "fiches": 128,
+     "valeurs": 5,
+     "horsListe": 0
+    }
+   ]
+  },
+  "JoJo's Bizarre Adventure": {
+   "fiches": 233,
+   "sansImage": 4,
+   "sansDescFr": 0,
+   "sansResume": 0,
+   "resumeRemplissage": 0,
+   "sansDossier": 37,
+   "isolees": 49,
+   "axes": [
+    {
+     "attr": "partie",
+     "label": "Parties",
+     "fiches": 221,
+     "valeurs": 7,
+     "horsListe": 0
+    }
+   ]
+  },
+  "Hunter x Hunter": {
+   "fiches": 215,
+   "sansImage": 0,
+   "sansDescFr": 0,
+   "sansResume": 0,
+   "resumeRemplissage": 0,
+   "sansDossier": 21,
+   "isolees": 22,
+   "axes": [
+    {
+     "attr": "nen",
+     "label": "Types de Nen",
+     "fiches": 51,
+     "valeurs": 6,
+     "horsListe": 0
+    }
+   ]
+  },
   "Death Note": {
    "fiches": 84,
    "sansImage": 1,
@@ -239,7 +239,7 @@
    "sansResume": 0,
    "resumeRemplissage": 0,
    "sansDossier": 8,
-   "isolees": 11,
+   "isolees": 10,
    "axes": [
     {
      "attr": "camp",
@@ -252,39 +252,39 @@
   }
  },
  "parType": {
+  "artifact": {
+   "fiches": 400,
+   "sansImage": 99,
+   "isolees": 96
+  },
   "character": {
    "fiches": 4031,
-   "sansImage": 0,
-   "isolees": 581
+   "sansImage": 1,
+   "isolees": 569
   },
   "power": {
    "fiches": 2359,
    "sansImage": 414,
-   "isolees": 30
-  },
-  "place": {
-   "fiches": 333,
-   "sansImage": 77,
-   "isolees": 95
+   "isolees": 13
   },
   "status": {
    "fiches": 330,
-   "sansImage": 83,
+   "sansImage": 78,
    "isolees": 42
-  },
-  "skill": {
-   "fiches": 80,
-   "sansImage": 16,
-   "isolees": 2
-  },
-  "artifact": {
-   "fiches": 400,
-   "sansImage": 112,
-   "isolees": 96
   },
   "profession": {
    "fiches": 99,
    "sansImage": 86,
+   "isolees": 2
+  },
+  "place": {
+   "fiches": 333,
+   "sansImage": 78,
+   "isolees": 94
+  },
+  "skill": {
+   "fiches": 80,
+   "sansImage": 16,
    "isolees": 2
   }
  }
