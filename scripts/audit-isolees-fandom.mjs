@@ -113,19 +113,41 @@ export async function wikitextes(hote, titres) {
     if (!r.ok) { console.error(`  ✗ ${hote} lot ${i}: HTTP ${r.status}`); continue; }
     const j = await r.json();
     // `normalized` + `redirects` : le titre demandé n'est pas forcément celui rendu.
-    const alias = new Map();
+    // PLUSIEURS TITRES DEMANDÉS PEUVENT TOMBER SUR LA MÊME PAGE, et cette table doit donc les
+    // garder TOUS (10/08/2026). Elle associait un seul titre demandé à chaque titre rendu : quand
+    // deux demandes convergeaient, la seconde écrasait la première et le premier titre ressortait
+    // « page absente » alors que la page avait bien été lue. Mesuré à l'API : « Bounty Hunters »
+    // redirige vers « Bounty Hunter » et l'a mangé ; « Prince » a mangé « King (Title) » et
+    // « Queen (Title) ». Quinze liens perdus sur une seule passe, dont les quatre d'une fiche
+    // créée le jour même pour eux. Une perte SILENCIEUSE : rien ne distingue, côté appelant, la
+    // page qui n'existe pas de celle qu'on a effacée de la table.
+    const alias = new Map();   // titre RENDU → [titres DEMANDÉS]
     const fragments = new Map();
-    for (const n of j.query?.normalized ?? []) alias.set(n.to, n.from);
+    const ajouter = (rendu, demande) => alias.set(rendu, [...(alias.get(rendu) ?? []), demande]);
+    for (const n of j.query?.normalized ?? []) ajouter(n.to, n.from);
     for (const n of j.query?.redirects ?? []) {
-      alias.set(n.to, alias.get(n.from) ?? n.from);
+      // Le titre d'où part la redirection peut lui-même être le résultat d'une normalisation :
+      // on reprend alors les demandes qu'il portait, et on libère sa clé.
+      const demandes = alias.get(n.from) ?? [n.from];
+      alias.delete(n.from);
+      for (const d of demandes) ajouter(n.to, d);
       // `tofragment` = la redirection vise une SECTION. La page atteinte parle alors d'autre chose :
       // « Konpira » (le sabre) redirige vers « Gion#Weapons » — l'infobox lue serait celle de Gion.
-      if (n.tofragment) fragments.set(alias.get(n.to) ?? n.to, `${n.to}#${n.tofragment}`);
+      if (n.tofragment) for (const d of demandes) fragments.set(d, `${n.to}#${n.tofragment}`);
     }
+    // Un titre DEMANDÉ TEL QUEL n'apparaît ni dans `normalized` ni dans `redirects` : il faut donc
+    // l'ajouter à la main quand il figure dans le lot. Sans cette ligne, demander à la fois
+    // « Bounty Hunter » et « Bounty Hunters » ne rendait QUE le second — le premier, pourtant
+    // servi par la même page, ressortait absent (constaté en vérifiant le correctif ci-dessus,
+    // avant de le croire réparé).
+    const duLot = new Set(lot);
     for (const p of j.query?.pages ?? []) {
-      const demande = alias.get(p.title) ?? p.title;
-      if (p.missing || !p.revisions?.[0]) { out.set(demande, null); continue; }
-      out.set(demande, { titre: p.title, texte: p.revisions[0].slots.main.content, fragment: fragments.get(demande) ?? null });
+      const demandes = [...new Set([...(alias.get(p.title) ?? []), ...(duLot.has(p.title) ? [p.title] : [])])];
+      if (!demandes.length) demandes.push(p.title);
+      for (const demande of demandes) {
+        if (p.missing || !p.revisions?.[0]) { out.set(demande, null); continue; }
+        out.set(demande, { titre: p.title, texte: p.revisions[0].slots.main.content, fragment: fragments.get(demande) ?? null });
+      }
     }
     process.stdout.write(`\r  ${hote} : ${Math.min(i + 50, titres.length)}/${titres.length}`);
     await new Promise((r2) => setTimeout(r2, 250));   // courtoisie envers le wiki
