@@ -74,7 +74,11 @@ const CACHE = path.join(os.tmpdir(), 'nika-akasha-fandom-html');
 const WIKIS_HTML = {
   Naruto: {
     hote: 'naruto.fandom.com',
-    champs: ['affiliation', 'team', 'clan', 'occupation', 'partner',
+    //   · `classification` AJOUTÉ le 10/08 (vague 4) : c'est le champ le plus cité des isolées
+    //     restantes (12 des 42 pages rendues le portent), et sa valeur dominante « Summon » a
+    //     désormais une cible attestée — « Créature invoquée », déjà au bout de 40 arêtes
+    //     « appartient ». Il était écarté jusqu'ici faute de cible, pas faute de valeur.
+    champs: ['affiliation', 'team', 'clan', 'occupation', 'partner', 'classification',
       'jutsu type', 'jutsu classification', 'parent jutsu'],
     // Pont rōmaji : nos natures élémentaires sont nommées en français avec le rōmaji entre
     // parenthèses — « Libération de la Glace (Hyōton) ». La page « Ice Release » du wiki porte
@@ -86,6 +90,33 @@ const WIKIS_HTML = {
 
 const cfg = WIKIS_HTML[UNIVERS];
 if (!cfg) throw new Error(`univers « ${UNIVERS} » absent de WIKIS_HTML`);
+
+/* ═══ LES DEUX SENS DE L'ALIAS (vague 4, 10/08) ══════════════════════════════════════════════
+ * La vague 3 s'est arrêtée sur un mur qu'elle a nommé sans le franchir : NOS NOMS SONT FRANÇAIS.
+ * Le mur a deux versants, et le second n'avait pas été mesuré :
+ *
+ *  · SENS CIBLE  — « Lightning Release » n'existe pas chez nous, « Libération de la Foudre
+ *    (Raiton) » si. 20 liens sur 40 étaient perdus là. → data/alias-cibles-naruto.json,
+ *    construit par scripts/akasha-alias-registre.mjs, une preuve par paire.
+ *  · SENS SOURCE — 16 de nos 58 isolées Naruto ne sont même pas CHERCHABLES : le script demande
+ *    au wiki anglais une page « Vallée de la Fin », « Clan Karatachi », « Pont Tenchi »… qui
+ *    n'existe évidemment pas, range la fiche dans `journal.pageAbsente` et n'en dit rien de plus.
+ *    data/alias-cures.json porte DÉJÀ la paire pour 6 d'entre elles, sondée contre le wiki réel
+ *    par ops-curer-alias.mjs le 02/08. Il suffisait de la lire.
+ *
+ * Les deux fichiers restent la seule source : rien n'est deviné ici, et une paire absente reste
+ * une fiche non traitée — jamais une fiche rapprochée « au plus proche ». */
+const aliasSource = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data/alias-cures.json'), 'utf8'))[UNIVERS] ?? {}; }
+  catch { return {}; }
+})();
+const aliasCible = (() => {
+  const f = path.join(ROOT, `data/alias-cibles-${UNIVERS.toLowerCase().replace(/\W+/g, '-')}.json`);
+  try { return JSON.parse(fs.readFileSync(f, 'utf8'))[UNIVERS] ?? {}; }
+  catch { return {}; }
+})();
+console.log(`alias : ${Object.keys(aliasSource).length} paires au SENS SOURCE (nos noms → wiki, data/alias-cures.json)`
+  + ` · ${Object.keys(aliasCible).length} au SENS CIBLE (wiki → nos fiches, data/alias-cibles-${UNIVERS.toLowerCase()}.json)`);
 
 const page = async (t, s) => {
   const out = [];
@@ -234,12 +265,20 @@ for (let passe = 0; passe < 3; passe++) {
     if (!deja.candidats.some((c) => c.id === e.id)) deja.candidats.push(e);
   }
 }
+/* Index par slug : le registre d'alias désigne sa fiche par SLUG, pas par nom — un slug est unique
+   en base, un nom ne l'est pas. C'est ce qui distingue un alias curé d'une résolution par libellé. */
+const parSlug = new Map(entries.map((e) => [e.slug, e]));
 const resoudre = (univers, valeur) => {
   const cle = norm(valeur);
   if (!cle) return null;
   const t = index.get(univers)?.get(cle);
-  if (!t) return null;
-  return t.candidats.length === 1 ? t.candidats[0] : null;   // homonyme non départagé → on renonce
+  if (t) return t.candidats.length === 1 ? t.candidats[0] : null;   // homonyme non départagé → on renonce
+  // 4e passe : le registre d'alias CURÉ. Il arrive en dernier, jamais avant l'égalité de nom —
+  // un alias corrige ce que la base ne dit pas, il ne remplace pas ce qu'elle dit.
+  if (univers !== UNIVERS) return null;
+  const a = aliasCible[valeur] ?? aliasCible[String(valeur ?? '').trim()];
+  const f = a && parSlug.get(a.slug);
+  return f && f.universe === univers ? f : null;
 };
 
 /* Index des PARENTHÈSES de nos noms : « Libération de la Glace (Hyōton) » → clé « hyoton ».
@@ -269,17 +308,24 @@ const natureDe = (source, cible) => {
 const journal = { pageAbsente: [], redirectionSection: [], pagePartagee: [], sansInfobox: [], sansChampUtile: [], cibleRefusee: [] };
 
 console.log(`\n→ résolution des ${lot.length} titres sur ${cfg.hote} (redirections + fragments)…`);
-const pagesSource = await wikitextes(cfg.hote, lot.map((e) => e.name));
+// SENS SOURCE : on demande au wiki le titre ANGLAIS quand une paire curée existe. `titreDemande`
+// garde la correspondance dans les deux sens — la réponse du wiki est indexée sur ce qu'on a
+// demandé, pas sur le nom de notre fiche.
+const titreDemande = (e) => aliasSource[e.name] ?? e.name;
+const parAlias = lot.filter((e) => aliasSource[e.name]);
+if (parAlias.length) console.log(`  ${parAlias.length} fiche(s) demandées sous leur titre anglais curé : `
+  + parAlias.map((e) => `« ${e.name} » → « ${aliasSource[e.name]} »`).join(' · '));
+const pagesSource = await wikitextes(cfg.hote, lot.map(titreDemande));
 
 // GARDE 2 — une page réclamée par PLUSIEURS de nos fiches n'identifie aucune d'elles.
 const compteurPage = new Map();
-for (const e of lot) { const p = pagesSource.get(e.name); if (p) compteurPage.set(p.titre, (compteurPage.get(p.titre) ?? 0) + 1); }
+for (const e of lot) { const p = pagesSource.get(titreDemande(e)); if (p) compteurPage.set(p.titre, (compteurPage.get(p.titre) ?? 0) + 1); }
 
 const aLire = [];
 let wikitexteNu = 0;
 for (const e of lot) {
-  const p = pagesSource.get(e.name);
-  if (!p) { journal.pageAbsente.push(e.name); continue; }
+  const p = pagesSource.get(titreDemande(e));
+  if (!p) { journal.pageAbsente.push(aliasSource[e.name] ? `${e.name} (demandée « ${aliasSource[e.name]} »)` : e.name); continue; }
   // GARDE 1 — redirection vers une SECTION : la page atteinte n'est pas celle de notre fiche.
   // « Konpira » renvoie vers « Gion#Weapons » ; l'infobox lue serait celle de Gion.
   if (p.fragment) { journal.redirectionSection.push(`${e.name} → ${p.fragment}`); continue; }

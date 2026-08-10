@@ -1,0 +1,96 @@
+{
+ "chantier": "chantier 5 — vague 4 : inspection du SITE (ce que le lecteur voit), pas de la base",
+ "quand": "2026-08-10T11:45:00Z",
+ "nature": "Diagnostic par ouverture de pages sur http://localhost:3000. Deux corrections d'affichage seulement (triviales et vérifiées à l'écran). Aucun commit, aucune écriture en base.",
+ "socle_mesure": {
+  "fiches_lues_paginees": 7654,
+  "sections_comptees": 19084,
+  "relations_comptees": 16769,
+  "pages_ouvertes": 243,
+  "pages_axe_testees": 325,
+  "url_locales_verifiees": 158,
+  "image_url_distantes_testees": 240
+ },
+ "constats": [
+  {
+   "id": "S1",
+   "titre": "Les 3 nouveaux rails Naruto affichent 108 libellés sur 123 en anglais brut",
+   "url": "/learn/akasha/u/naruto",
+   "mesure": { "organisations": "28/40", "equipes": "64/65", "divisions": "16/18", "total": "108/123 (88 %)" },
+   "preuve": "innerText des puces lu dans le navigateur : « Konoha Torture and Interrogation Force », « Wandering Ninja Clan », « Legendary Stupid Brothers », « Surprise Attack and Diversion Platoon » — à côté de « Sept Épéistes de la Brume », « Douze Ninjas Gardiens », « Corps médical ». Un seul libellé de l'axe Équipes n'est pas anglais : « Ino–Shika–Chō ».",
+   "propagation": "h1, <title> et méta-description des 123 pages d'axe correspondantes : /learn/akasha/u/naruto/division/Counter-Terrorism%20Division → <title> « Counter-Terrorism Division — Divisions de la Guerre de Naruto | AKASHA »."
+  },
+  {
+   "id": "S2",
+   "titre": "notFound() rend une page VIDE en HTTP 200 dans tout AKASHA (soft-404)",
+   "url": "/learn/akasha/u/naruto/organization/Taka · /learn/akasha/<slug-inexistant>",
+   "mesure": { "statut": 200, "texte_html_hors_script": "892 car (barre + pied uniquement)", "main": "absent du HTML servi" },
+   "preuve": "curl -D- → « HTTP/1.1 200 OK ». <title> « Taka — Organisations de Naruto | AKASHA » et méta-description complète. Le bloc 404 n'arrive que dans un chunk de streaming tardif : à l'écran, avec JS, le lecteur voit bien « 404 PAGE INTROUVABLE » (capture prise). Une route qui n'existe pas du tout (/zzz-nexiste-pas-du-tout) rend, elle, un vrai 404.",
+   "deja_connu": "next.config.js documente le cas /learn/akasha/pays-des-fleurs (10/08) et le contourne par une redirection ; la cause générale n'est pas traitée."
+  },
+  {
+   "id": "S3",
+   "titre": "624 fiches (8,2 %) affichent un résumé strictement identique à celui d'une autre fiche",
+   "mesure": { "textes_partages": 55, "fiches": 624 },
+   "preuve": "« Personnage secondaire de Dragon Ball. » sur 132 fiches · « Équipage de pirates. » sur 99 · « Attaque de One Piece — attaque signature. » sur 98 · « Navire Pirate de One Piece. » sur 64 · « Coquillage-outil de Skypiea. » sur 32. Ce texte est le seul paragraphe du canal Identité : /learn/akasha/impact-dial et /learn/akasha/breath-dial rendent 183 caractères de contenu, mot pour mot les mêmes."
+  },
+  {
+   "id": "S4",
+   "titre": "Le type `power` est le plus pauvre du site, et c'est le 2e type par le volume",
+   "mesure": { "mediane_contenu_dans_main": { "power": 537, "profession": 571, "artifact": 701, "status": 858, "place": 1139, "character": 2689, "skill": 3009 }, "echantillon": "30 fiches par type, tirage déterministe (graine 20260810)" },
+   "preuve": "/learn/akasha/summoning-crushing-toad-stomach : fil d'Ariane + titre + « Maîtrisé par · 1 · Jiraiya » + une phrase + « Attributs · Élément : Invocation ». 331 caractères. power compte 2 359 fiches."
+  },
+  {
+   "id": "S5",
+   "titre": "Quatre hubs sur huit tombent dans un gabarit compact appauvri",
+   "mesure": { "contenu_dans_main": { "naruto": 4852, "one-piece": 4727, "dragon-ball": 2372, "bleach": 1701, "jojo": 1185, "initial-d": 1143, "hunter-x-hunter": 1009, "death-note": 955 }, "liens_de_fiche": { "naruto": 206, "death-note": 18 } },
+   "preuve": "Blocs rendus sur /learn/akasha/u/death-note : « Le duel · Collections · Explorer un autre monde ». Absents : « # Le monde en chiffres », « ◆ Composition du panthéon », « 🔥 Les plus aimés », « ✚ Derniers arrivés » — tous présents sur Naruto/One Piece/Dragon Ball/Bleach. Cause : `const compact = total < 250` dans app/learn/akasha/u/[slug]/page.tsx ; HxH 215, JoJo 233, Initial D 44, Death Note 84."
+  },
+  {
+   "id": "S6",
+   "titre": "« Kazekage » est proposé comme CLAN sur le hub Naruto, alors que le code dit le contraire",
+   "url": "/learn/akasha/u/naruto",
+   "mesure": { "puce_rendue": "« K Kazekage 6 »", "position": "rail Clans, 16e puce" },
+   "preuve": "app/learn/akasha/u/[slug]/page.tsx déclare `const NARUTO_NON_CLAN = new Set(['Kazekage'])` avec le commentaire « un TITRE miné à tort comme clan Naruto → hors axe Clans ». Le filtre n'est appliqué qu'aux valeurs `extras` ; or 'Kazekage' figure dans les valeurs CURÉES de l'axe clan (lib/akasha/universe-taxonomy.ts l.81). La garde ne s'exécute donc jamais.",
+   "action": "décrit, non corrigé : retirer une puce est une décision de curation, pas une correction d'affichage."
+  },
+  {
+   "id": "S7",
+   "titre": "CORRIGÉ — le monogramme de clan prenait l'initiale de l'article",
+   "url": "/learn/akasha/u/naruto · /learn/akasha/u/naruto/clan/J%C5%ABgo's",
+   "avant": "puces « D Clan de Jūgo 2 » et « D Clan de Yota 1 » ; médaillon « D » sur la page d'axe",
+   "apres": "« J Clan de Jūgo 2 », « Y Clan de Yota 1 » ; médaillon « J ». Relu dans le DOM après rechargement.",
+   "fichier": "components/akasha/NarutoIcons.tsx (ClanCrest) — la regex retirait « Clan » mais pas « de/du/des/d' »",
+   "non_regression": "Clan Lee → L, Clan Ryū → R, Kazekage → K : inchangés."
+  },
+  {
+   "id": "S8",
+   "titre": "CORRIGÉ — 189 pages d'axe portaient un accord faux dans leur méta-description",
+   "avant": "« Toutes les divisions de la guerre « Counter-Terrorism Division » … classés par popularité. »",
+   "apres": "« … classées par popularité. » — vérifié sur division/Counter-Terrorism Division et partie/Partie 3 ; village/Konohagakure reste « classés » (masculin, correct).",
+   "mesure": { "pages_concernees": 189, "sur": 325, "axes_feminins": ["organization","equipe","division","generation","faction","race","saga","partie","affiliation"] },
+   "fichier": "app/learn/akasha/u/[slug]/[axis]/[value]/page.tsx — `genre` était lu pour « Toutes les » puis oublié pour « classés »"
+  }
+ ],
+ "verifie_et_SAIN": {
+  "pages_axe": "325 URL /u/<univers>/<axe>/<valeur> testées (les 323 paires réellement portées par une fiche + les valeurs curées) : 325 réponses 200, 0 404, 0 page listant moins de fiches que la base n'en compte.",
+  "responsive_390px": "19 pages mesurées dans un iframe de 390 px : scrollWidth du document = 386 px partout, aucun débordement horizontal. Les seuls éléments dépassant sont le carrousel de domaines du pied de site (translaté hors cadre, global au site) et le filigrane décoratif .ak-kanji-drift (392 px, sans effet sur le scroll).",
+  "images": "158 URL locales référencées par les pages balayées : 0 morte. 240 image_url distantes tirées au sort (wikia 4058, myanimelist 2632, dragonball-api 64, local 121) : 240 réponses 200, 0 échec.",
+  "console": "0 erreur, 0 avertissement captés sur 8 pages (écoute error + unhandledrejection + console.error/warn posée à l'événement load). Réserve : une erreur survenant AVANT load échappe à cette sonde.",
+  "lenteur": "Rien d'anormal après stabilisation : fiche 0,19–0,45 s, page d'axe 0,16–0,29 s, hub 0,85–1,03 s, registre 0,87 s (3 mesures chacune). Les 3,4 s vues au premier balayage ne se reproduisent pas — c'était la charge concurrente des autres chantiers."
+ },
+ "non_conclu": [
+  "Les captures d'écran sous la ligne de flottaison reviennent noires alors que le DOM contient bien le contenu au même endroit (opacity 1, ak-reveal is-in, elementFromPoint rend les bonnes puces) : c'est le panneau navigateur qui ne peint pas, pas la page. Ne pas en conclure une bande vide.",
+  "Aucune mesure de Lighthouse / poids réseau / CLS : hors périmètre de cette passe."
+ ],
+ "traces": [
+  "data/audits/chantier5-site-echantillon-2026-08-10T11-19-30-152Z.json",
+  "data/audits/chantier5-site-balayage-2026-08-10T11-22-41-796Z.json",
+  "data/audits/chantier5-site-assets-2026-08-10T11-25-37-135Z.json",
+  "data/audits/chantier5-site-images-distantes-2026-08-10T11-26-56-288Z.json",
+  "data/audits/chantier5-site-axes-2026-08-10T11-30-25-386Z.json",
+  "data/audits/chantier5-site-rails-2026-08-10T11-36-57-334Z.json",
+  "data/audits/chantier5-site-contenu-2026-08-10T11-39-55-664Z.json",
+  "data/audits/chantier5-site-doublons-texte-2026-08-10T11-40-43-814Z.json"
+ ]
+}

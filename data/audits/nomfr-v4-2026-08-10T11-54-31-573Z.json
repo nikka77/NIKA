@@ -1,0 +1,591 @@
+{
+ "chantier": "images — le nom français déclaré par le wiki (vague 4)",
+ "passe_le": "2026-08-10T11:55:45.259Z",
+ "mode": "à blanc",
+ "plafond_octets": 307200,
+ "compte_croise": {
+  "candidats": 60,
+  "trouves": 1,
+  "refus_parasite": 1,
+  "refus_fichier": 0,
+  "refus_nature": 0,
+  "refus_nature_titre": 0,
+  "refus_charge": 0,
+  "refus_poids": 0,
+  "refus_collision": 0,
+  "refus_collision_interne": 0,
+  "article_sans_image": 0,
+  "sans_declaration": 54,
+  "sans_resultat": 4,
+  "pannes": 0,
+  "posees": 0,
+  "deja": 0,
+  "echecs": 0
+ },
+ "posees_detail": [
+  {
+   "slug": "ace",
+   "name": "Ace",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titre_wiki": "Ace (Épée)",
+   "cle_de_nommage": "nom",
+   "preuve_nom": "| nom               = Ace",
+   "preuve_image": "| image             = [[Fichier:Ace (Épée) Infobox.png|270px]]",
+   "preuve_fichier": "mots communs : ace, epee",
+   "nature_verifiee": "non-personnage (2 catégories)",
+   "fichier": "Ace (Épée) Infobox.png",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/f/f9/Ace_%28%C3%89p%C3%A9e%29_Infobox.png/revision/latest/scale-to-width-down/720?cb=20210701080223&path-prefix=fr",
+   "largeur": 720,
+   "definition_reelle": "720×151 webp",
+   "octets": 24970,
+   "source": "1666×349 image/png 866 Ko"
+  }
+ ],
+ "refuses_par_les_gardes": [
+  {
+   "slug": "100-island",
+   "name": "Île 100 %",
+   "type": "place",
+   "universe": "One Piece",
+   "etat": "refus-parasite",
+   "titre_wiki": "Île 100%",
+   "fichier": "Image Non Disponible.png",
+   "preuve_nom": "| nom               = Île 100%",
+   "pourquoi": "« Image Non Disponible.png » est un carton du wiki"
+  }
+ ],
+ "restees_sans_image": [
+  {
+   "slug": "100-island",
+   "name": "Île 100 %",
+   "universe": "One Piece",
+   "type": "place",
+   "etat": "refus-parasite",
+   "pourquoi": "« Image Non Disponible.png » est un carton du wiki",
+   "titre_resolu": "Île 100%"
+  },
+  {
+   "slug": "accountant",
+   "name": "Accountant",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-resultat",
+   "pourquoi": "la recherche du wiki francophone ne rend aucun article",
+   "titre_resolu": null
+  },
+  {
+   "slug": "actor",
+   "name": "Actor",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Tomaru | Rang E | Itachi et Sasuke (homonymie)) ne déclare « Actor » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "actress",
+   "name": "Actress",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Musique | Hinoko | Tomaru) ne déclare « Actress » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "adamantine-attacking-chains",
+   "name": "Adamantine Attacking Chains",
+   "universe": "Naruto",
+   "type": "power",
+   "etat": "sans-resultat",
+   "pourquoi": "la recherche du wiki francophone ne rend aucun article",
+   "titre_resolu": null
+  },
+  {
+   "slug": "adamantine-staff",
+   "name": "Adamantine Staff",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Le Nindô de Konohamaru | Un ninja formidable...!! | Jin no Sho) ne déclare « Adamantine Staff » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "akatsuki-spy",
+   "name": "Akatsuki spy",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (L'Espion d'Akatsuki !! | Sur les traces de Sasuke !! (tome) | Liste des Tomes) ne déclare « Akatsuki spy » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anbu-captain",
+   "name": "Anbu Captain",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Minoichi | Yûra | Inomatsu) ne déclare « Anbu Captain » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anbu-captain-former",
+   "name": "Anbu Captain  (Former)",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Commandant de l'Anbu | Anbu | Baku (Anbu)) ne déclare « Anbu Captain  (Former) » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anciens-membres-de-la-marine",
+   "name": "Anciens membres de la Marine",
+   "universe": "One Piece",
+   "type": "status",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Marine | Amiral | Néo-Marine) ne déclare « Anciens membres de la Marine » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anciens-membres-du-baroque-works",
+   "name": "Anciens membres du Baroque Works",
+   "universe": "One Piece",
+   "type": "status",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Baroque Works | La nouvelle mission de Miss Goldenweek : refonder Baroque Works | Daz Bonez) ne déclare « Anciens membres du Baroque Works » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anciens-membres-du-cipher-pol",
+   "name": "Anciens membres du Cipher Pol",
+   "universe": "One Piece",
+   "type": "status",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Cipher Pol | CP9 | CP-AIGIS0) ne déclare « Anciens membres du Cipher Pol » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "angel-island",
+   "name": "Angel Island",
+   "universe": "One Piece",
+   "type": "place",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Skypiea | Épisode 190 | Milky Road) ne déclare « Angel Island » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "arbalete",
+   "name": "Arbalète",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Arbalète | Tekuno Kanden | Nan) ne déclare « Arbalète » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "arc-et-fleches",
+   "name": "Arc et flèches",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Arc et Flèche | Arc et Flèches | Arc de Guerre de l'Araignée - Scission Terrible) ne déclare « Arc et flèches » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "archipel-des-argao",
+   "name": "Archipel des Argao",
+   "universe": "One Piece",
+   "type": "status",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Archipel des Orgao | Archipel des Sabaody | Archipel des Gekko) ne déclare « Archipel des Argao » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "arcose",
+   "name": "Arcose",
+   "universe": "Dragon Ball",
+   "type": "place",
+   "etat": "sans-resultat",
+   "pourquoi": "la recherche du wiki francophone ne rend aucun article",
+   "titre_resolu": null
+  },
+  {
+   "slug": "astronomer",
+   "name": "Astronomer",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Astronome de Konoha) ne déclare « Astronomer » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bakudo-61-rikujokoro",
+   "name": "Bakudo 61 Rikujokoro",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Rikujôkôrô | Chapitre 142 | Chapitre 266) ne déclare « Bakudo 61 Rikujokoro » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bakudo-81-danku",
+   "name": "Bakudo 81 Danku",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Hyōga Seiran | Chapitre -98 | Hyapporankan) ne déclare « Bakudo 81 Danku » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bakudo-99-kin",
+   "name": "Bakudo 99 Kin",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Chapitre -100 | Enkôsen | Tenran) ne déclare « Bakudo 99 Kin » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bankai-kannonbiraki-benihime-aratame",
+   "name": "Bankai Kannonbiraki Benihime Aratame",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Kisuke Urahara | Chapitre 665 | Bankai) ne déclare « Bankai Kannonbiraki Benihime Aratame » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-benihime",
+   "name": "Benihime",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Benihime | Nake, Benihime | Tsuppane, Benihime) ne déclare « Benihime » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bushogoma",
+   "name": "Bushogoma",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Bushōgoma) ne déclare « Bushogoma » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-cero-metralleta",
+   "name": "Cero Metralleta",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Cero Metralleta | Chapitre 362 | Chapitre 276) ne déclare « Cero Metralleta » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-daiguren-hyorinmaru",
+   "name": "Daiguren Hyorinmaru",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Tôshirô Hitsugaya) ne déclare « Daiguren Hyorinmaru » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-final-getsuga-tensho",
+   "name": "Final Getsuga Tensho",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Getsuga Jûjishô | Épisode 387 | Chapitre 420) ne déclare « Final Getsuga Tensho » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-flash-cry",
+   "name": "Flash Cry",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Shunkô) ne déclare « Flash Cry » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-gokei",
+   "name": "Gokei",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Gōkei | Chapitre 301) ne déclare « Gokei » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-guncho-tsurara",
+   "name": "Guncho Tsurara",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Chapitre 358 | Chapitre 668 | Tôshirô Hitsugaya) ne déclare « Guncho Tsurara » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-31-shakkaho",
+   "name": "Hado 31 Shakkaho",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Tome 31 à 40 | Yasutora Sado/Galerie | Chapitre 551) ne déclare « Hado 31 Shakkaho » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-33-sokatsui",
+   "name": "Hado 33 Sokatsui",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Sôkatsui | Sôren Sôkatsui | Chapitre 635) ne déclare « Hado 33 Sokatsui » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-63-raikoho",
+   "name": "Hado 63 Raikoho",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Raikōhō | Yasutora Sado/Galerie | Sôren Sôkatsui) ne déclare « Hado 63 Raikoho » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-73-soren-sokatsui",
+   "name": "Hado 73 Soren Sokatsui",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Sôren Sôkatsui | Sôren sôkatsui | Chapitre 177) ne déclare « Hado 73 Soren Sokatsui » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-90-kurohitsugi",
+   "name": "Hado 90 Kurohitsugi",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Sôren Sôkatsui | Hiryū Gekizoku Shinten Raihō | Hachigyō Sōgai) ne déclare « Hado 90 Kurohitsugi » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hakka-no-togame",
+   "name": "Hakka no Togame",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Chapitre 569 | Bankai | Mots-Clés) ne déclare « Hakka no Togame » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hihio-zabimaru",
+   "name": "Hihio Zabimaru",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Hihiō | Hikotsu Taihō | Sōō Zabimaru, Zaga Teppō) ne déclare « Hihio Zabimaru » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hyorinmaru",
+   "name": "Hyorinmaru",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Tôshirô Hitsugaya | Esprit Zanpakutō | Hyōten Hyakkasō) ne déclare « Hyorinmaru » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hyoten-hyakkaso",
+   "name": "Hyoten Hyakkaso",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Hyōten Hyakkasō) ne déclare « Hyoten Hyakkaso » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-kamisori-benihime",
+   "name": "Kamisori Benihime",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Kamisori, Benihime | Hiasobi, Benihime, Juzutsunagi | Shibari, Benihime) ne déclare « Kamisori Benihime » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-katen-kyokotsu",
+   "name": "Katen Kyokotsu",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Bushōgoma | Chapitre 649 | Esprit Zanpakutō) ne déclare « Katen Kyokotsu » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-kendo",
+   "name": "Kendo",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Chapitre 311 | Higher Than The Moon | Mizuho Asano) ne déclare « Kendo » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-konjiki-ashisogi-jizo",
+   "name": "Konjiki Ashisogi Jizo",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Ashisogi Jizô, Kyôdo Yon | Lames rétractables | Protocole d'autodestruction) ne déclare « Konjiki Ashisogi Jizo » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-kyoka-suigetsu",
+   "name": "Kyoka Suigetsu",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Kanzen Saimin | Sôsuke Aizen | Higonyûdô) ne déclare « Kyoka Suigetsu » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-lanza-del-relampago",
+   "name": "Lanza del Relampago",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Lanza del Relámpago | Cero Oscuras | Chapitre 351) ne déclare « Lanza del Relampago » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-los-lobos",
+   "name": "Los Lobos",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Colmillo | Cero Metralleta | Chapitre 361) ne déclare « Los Lobos » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-minazuki",
+   "name": "Minazuki",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Retsu Unohana | Chapitre 154 | Chapitre 526) ne déclare « Minazuki » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-nozarashi",
+   "name": "Nozarashi",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Kenpachi Zaraki | Chapitre 577 | Chapitre 576) ne déclare « Nozarashi » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-ryodan",
+   "name": "Ryodan",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-resultat",
+   "pourquoi": "la recherche du wiki francophone ne rend aucun article",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-santa-teresa",
+   "name": "Santa Teresa",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Chapitre 309) ne déclare « Santa Teresa » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-segunda-etapa",
+   "name": "Segunda Etapa",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Cero Oscuras | Bleach: Soul Resurrección) ne déclare « Segunda Etapa » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-senbonzakura",
+   "name": "Senbonzakura",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Byakuya Kuchiki | Chapitre 569 | Senkei) ne déclare « Senbonzakura » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-senbonzakura-kageyoshi",
+   "name": "Senbonzakura Kageyoshi",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Byakuya Kuchiki | Senkei | Gōkei) ne déclare « Senbonzakura Kageyoshi » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-sennen-hyoro",
+   "name": "Sennen Hyoro",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Sennen Hyōrō) ne déclare « Sennen Hyoro » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-shukei-hakuteiken",
+   "name": "Shukei Hakuteiken",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Shūkei: Hakuteiken) ne déclare « Shukei Hakuteiken » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-some-no-mai-tsukishiro",
+   "name": "Some no Mai Tsukishiro",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Connexion de Corde de Glace | San no mai: Shirafune | Tsugi no mai: Hakuren) ne déclare « Some no Mai Tsukishiro » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-soo-zabimaru",
+   "name": "Soo Zabimaru",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Sōō Zabimaru, Zaga Teppō | Hihiō | Hikotsu Taihō) ne déclare « Soo Zabimaru » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-suzumushi",
+   "name": "Suzumushi",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (La Mirada | Chapitre 146 | Bankai) ne déclare « Suzumushi » comme nom",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-suzumushi-tsuishiki-enma-korogi",
+   "name": "Suzumushi Tsuishiki Enma Korogi",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-declaration",
+   "pourquoi": "aucune des pages proposées (Chapitre 146 | Bankai | Ashisogi Jizô, Kyôdo Yon) ne déclare « Suzumushi Tsuishiki Enma Korogi » comme nom",
+   "titre_resolu": null
+  }
+ ]
+}

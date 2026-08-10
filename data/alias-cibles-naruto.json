@@ -1,0 +1,33 @@
+{
+ "_lisezMoi": "Registre titre-de-wiki → fiche AKASHA. Chaque paire porte son témoin et son adresse. Construit par scripts/akasha-alias-registre.mjs le 2026-08-10. Ne pas éditer à la main : relancer le script, qui redemande chaque témoin à la source.",
+ "Naruto": {
+  "Summon": {
+   "slug": "creature-invoquee",
+   "nom": "Créature invoquée",
+   "type": "status",
+   "temoin": "T4 précédent mesuré",
+   "preuve": "notre graphe porte déjà 40 arêtes « appartient » vers Créature invoquée (creature-invoquee) ; sur 20 de leurs sources relues sur naruto.fandom.com, 20 portent « classification=Summon » dans leur page Infobox: (100 %) ; et https://naruto.fandom.com/wiki/Summon est un « {{soft redirect|Summoning Technique}} », donc un titre de classification que le wiki n'a pas doté d'article"
+  },
+  "Lightning Release": {
+   "slug": "liberation-de-la-foudre-raiton",
+   "nom": "Libération de la Foudre (Raiton)",
+   "type": "power",
+   "temoin": "T2 interlangue",
+   "preuve": "https://naruto.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Lightning%20Release déclare fr = « Raiton » ; égal (après normalisation) à la parenthèse de notre fiche Libération de la Foudre (Raiton) (liberation-de-la-foudre-raiton, type power)"
+  },
+  "Water Release": {
+   "slug": "liberation-de-l-eau-suiton",
+   "nom": "Libération de l'Eau (Suiton)",
+   "type": "power",
+   "temoin": "T2 interlangue",
+   "preuve": "https://naruto.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Water%20Release déclare fr = « Suiton » ; égal (après normalisation) à la parenthèse de notre fiche Libération de l'Eau (Suiton) (liberation-de-l-eau-suiton, type power)"
+  },
+  "Wind Release": {
+   "slug": "liberation-du-vent-futon",
+   "nom": "Libération du Vent (Fūton)",
+   "type": "power",
+   "temoin": "T2 interlangue",
+   "preuve": "https://naruto.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Wind%20Release déclare fr = « Fûton » ; égal (après normalisation) à la parenthèse de notre fiche Libération du Vent (Fūton) (liberation-du-vent-futon, type power)"
+  }
+ }
+}

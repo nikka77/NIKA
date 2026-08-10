@@ -1,0 +1,528 @@
+{
+ "chantier": "chantier 4 — incohérences déclaré/dit",
+ "quand": "2026-08-10T11:37:25.309Z",
+ "ecrire": false,
+ "socle": {
+  "fiches": 7654,
+  "aretes": 16788
+ },
+ "C1": [
+  {
+   "slug": "gran-tesero",
+   "type": "place",
+   "avant": "Équipage de pirates.",
+   "apres": "Le Gran Tesoro est un navire massif abritant une métropole, considéré comme la plus grande ville de divertissement au monde.",
+   "geste": "réécrit depuis sa première phrase",
+   "phrasePreuve": "Le Gran Tesoro est un navire massif abritant une métropole, considéré comme la plus grande ville de divertissement au monde."
+  },
+  {
+   "slug": "royaume-malefique-de-black-drum",
+   "type": "place",
+   "avant": "Équipage de pirates.",
+   "apres": "Le Royaume maléfique de Black Drum est le royaume dirigé par Wapol, accompagné de son épouse Kinderella et de son chien Hakowan, situé dans le Sud Bleu et caractérisé par un immense château et un…",
+   "geste": "réécrit depuis sa première phrase",
+   "phrasePreuve": "Le Royaume maléfique de Black Drum est le royaume dirigé par Wapol, accompagné de son épouse Kinderella et de son chien Hakowan, situé dans le Sud Bleu et caractérisé par un immense château et un ciel souvent orageux."
+  },
+  {
+   "slug": "source-de-l-insouciance",
+   "type": "status",
+   "avant": "Équipage de pirates.",
+   "apres": null,
+   "geste": "vidé (rien d’extractible)",
+   "phrasePreuve": "(descFr vide)"
+  },
+  {
+   "slug": "archipel-des-argao",
+   "type": "status",
+   "avant": "Équipage de pirates.",
+   "apres": null,
+   "geste": "vidé (rien d’extractible)",
+   "phrasePreuve": "L'archipel des Organ Islands, situé dans l'East Blue, abrite la ville d'Orange Town."
+  },
+  {
+   "slug": "iile-de-la-couronne",
+   "type": "place",
+   "avant": "Équipage de pirates.",
+   "apres": null,
+   "geste": "vidé (rien d’extractible)",
+   "phrasePreuve": "L'île O-Kan, située dans l'univers de One Piece, est connue pour ses fontaines qui, lors de la désignation d'un nouveau roi des animaux, jaillissent en formant une couronne."
+  },
+  {
+   "slug": "ile-de-mecha",
+   "type": "place",
+   "avant": "Équipage de pirates.",
+   "apres": null,
+   "geste": "vidé (rien d’extractible)",
+   "phrasePreuve": "Mecha Island, également connue sous le nom de Meka Shima, est une île non-canonique située dans la première moitié de la Grand Line, célèbre pour abriter le Géant Soldat Mécanique du Château Karakuri."
+  },
+  {
+   "slug": "elegia",
+   "type": "place",
+   "avant": "Équipage de pirates.",
+   "apres": "Elegia est un archipel qui sert de lieu principal pour le film One Piece Film: Red, où se déroule le festival de musique live d'Uta.",
+   "geste": "réécrit depuis sa première phrase",
+   "phrasePreuve": "Elegia est un archipel qui sert de lieu principal pour le film One Piece Film: Red, où se déroule le festival de musique live d'Uta."
+  },
+  {
+   "slug": "ile-d-asuka",
+   "type": "place",
+   "avant": "Équipage de pirates.",
+   "apres": null,
+   "geste": "vidé (rien d’extractible)",
+   "phrasePreuve": "L'île d'Asuka, située dans le Paradise, est une île non canonique qui sert de cadre principal au film 'The Cursed Holy Sword'."
+  },
+  {
+   "slug": "royaume-de-tontatta",
+   "type": "status",
+   "avant": "Équipage de pirates.",
+   "apres": "Le Royaume de Tontatta (トンタッタ王国, Tontatta Ōkoku) est le territoire du peuple des Nains de l'île de Green Bit.",
+   "geste": "réécrit depuis sa première phrase",
+   "phrasePreuve": "Le Royaume de Tontatta (トンタッタ王国, Tontatta Ōkoku) est le territoire du peuple des Nains de l'île de Green Bit."
+  },
+  {
+   "slug": "la-lune",
+   "type": "place",
+   "avant": "Équipage de pirates.",
+   "apres": "La lune, ou Tsuki, est un corps céleste géant qui orbite autour de la planète Bleue et constitue la principale source de lumière naturelle la nuit.",
+   "geste": "réécrit depuis sa première phrase",
+   "phrasePreuve": "La lune, ou Tsuki, est un corps céleste géant qui orbite autour de la planète Bleue et constitue la principale source de lumière naturelle la nuit."
+  }
+ ],
+ "C2": [
+  {
+   "slug": "bikochu-search-team",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 5,
+   "livre": 6,
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Shino Aburame, Hinata Hyūga et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Shino Aburame, Hinata Hyūga et 3 autres.",
+   "preuve": "6 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "massue",
+   "type": "artifact",
+   "relation": "possede",
+   "promis": 5,
+   "livre": 4,
+   "avant": "Arme / outil de l'univers Naruto — porté par Tenten, Yagura Karatachi, Banna et 2 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Tenten, Yagura Karatachi, Banna et 1 autre.",
+   "preuve": "4 arête(s) « possede » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "eight-man-squad",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 9,
+   "livre": 10,
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Kakashi Hatake, Yamato et 6 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Kakashi Hatake, Yamato et 7 autres.",
+   "preuve": "10 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "kara",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 20,
+   "livre": 26,
+   "avant": "Organisation de l'univers Naruto — réunit Koji Kashin, Victor, Kawaki et 17 autres.",
+   "apres": "Organisation de l'univers Naruto — réunit Koji Kashin, Victor, Kawaki et 23 autres.",
+   "preuve": "26 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "kama",
+   "type": "artifact",
+   "relation": "possede",
+   "promis": 11,
+   "livre": 12,
+   "avant": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Tenten, Sasori et 8 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Tenten, Sasori et 9 autres.",
+   "preuve": "12 arête(s) « possede » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "scientific-ninja-weapons-team",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 5,
+   "livre": 6,
+   "avant": "Groupe de l'univers Naruto — réunit Akita Inuzuka, Sumire Kakei, Amado Sanzu et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Akita Inuzuka, Sumire Kakei, Amado Sanzu et 3 autres.",
+   "preuve": "6 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "ame-orphans",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 4,
+   "livre": 7,
+   "avant": "Groupe de l'univers Naruto — réunit Jiraiya, Konan, Nagato et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Jiraiya, Konan, Nagato et 4 autres.",
+   "preuve": "7 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "team-two",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 5,
+   "livre": 6,
+   "avant": "Groupe de l'univers Naruto — réunit Yamato, Rock Lee, Tenten et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Yamato, Rock Lee, Tenten et 3 autres.",
+   "preuve": "6 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "liberation-du-vent-futon",
+   "type": "power",
+   "relation": "maitrise",
+   "promis": 89,
+   "livre": 40,
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 86 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 37 autres.",
+   "preuve": "40 arête(s) « maitrise » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "sabre",
+   "type": "artifact",
+   "relation": "possede",
+   "promis": 141,
+   "livre": 40,
+   "avant": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Madara Uchiha, Kakashi Hatake et 138 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Madara Uchiha, Kakashi Hatake et 37 autres.",
+   "preuve": "40 arête(s) « possede » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "fifth-division",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 8,
+   "livre": 9,
+   "avant": "Groupe de l'univers Naruto — réunit Shino Aburame, Ino Yamanaka, Kiba Inuzuka et 5 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Shino Aburame, Ino Yamanaka, Kiba Inuzuka et 6 autres.",
+   "preuve": "9 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "team-8",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 5,
+   "livre": 6,
+   "avant": "Groupe de l'univers Naruto — réunit Shino Aburame, Hinata Hyūga, Kiba Inuzuka et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Shino Aburame, Hinata Hyūga, Kiba Inuzuka et 3 autres.",
+   "preuve": "6 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "gantelet-shinobi",
+   "type": "artifact",
+   "relation": "possede",
+   "promis": 8,
+   "livre": 9,
+   "avant": "Arme / outil de l'univers Naruto — porté par Konohamaru Sarutobi, Boruto Uzumaki, Victor et 5 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Konohamaru Sarutobi, Boruto Uzumaki, Victor et 6 autres.",
+   "preuve": "9 arête(s) « possede » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "liberation-du-feu-katon",
+   "type": "power",
+   "relation": "maitrise",
+   "promis": 107,
+   "livre": 40,
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 104 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 37 autres.",
+   "preuve": "40 arête(s) « maitrise » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "liberation-de-l-eau-suiton",
+   "type": "power",
+   "relation": "maitrise",
+   "promis": 153,
+   "livre": 40,
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 150 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 37 autres.",
+   "preuve": "40 arête(s) « maitrise » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "liberation-du-yang",
+   "type": "power",
+   "relation": "maitrise",
+   "promis": 51,
+   "livre": 40,
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Kakashi Hatake et 48 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Kakashi Hatake et 37 autres.",
+   "preuve": "40 arête(s) « maitrise » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "team-7",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 5,
+   "livre": 6,
+   "avant": "Groupe de l'univers Naruto — réunit Konohamaru Sarutobi, Mitsuki, Boruto Uzumaki et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Konohamaru Sarutobi, Mitsuki, Boruto Uzumaki et 3 autres.",
+   "preuve": "6 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "force-shinobi-alliee",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 120,
+   "livre": 42,
+   "avant": "Organisation de l'univers Naruto — réunit Naruto Uzumaki, Kakashi Hatake, Gaara et 117 autres.",
+   "apres": "Organisation de l'univers Naruto — réunit Naruto Uzumaki, Kakashi Hatake, Gaara et 39 autres.",
+   "preuve": "42 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "liberation-de-la-terre-doton",
+   "type": "power",
+   "relation": "maitrise",
+   "promis": 116,
+   "livre": 40,
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 113 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 37 autres.",
+   "preuve": "40 arête(s) « maitrise » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "logistical-support-and-medical-division",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 6,
+   "livre": 7,
+   "avant": "Groupe de l'univers Naruto — réunit Shizune, Yūgao Uzuki, Iō (medical-nin) et 3 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Shizune, Yūgao Uzuki, Iō (medical-nin) et 4 autres.",
+   "preuve": "7 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "tanto",
+   "type": "artifact",
+   "relation": "possede",
+   "promis": 43,
+   "livre": 41,
+   "avant": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Kakashi Hatake, Itachi Uchiha et 40 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Kakashi Hatake, Itachi Uchiha et 38 autres.",
+   "preuve": "41 arête(s) « possede » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "sound-four",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 5,
+   "livre": 6,
+   "avant": "Groupe de l'univers Naruto — réunit Sasuke Uchiha, Tayuya, Jirōbō et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Sasuke Uchiha, Tayuya, Jirōbō et 3 autres.",
+   "preuve": "6 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "sasuke-recovery-team",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 6,
+   "livre": 7,
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Chōji Akimichi, Kiba Inuzuka et 3 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Chōji Akimichi, Kiba Inuzuka et 4 autres.",
+   "preuve": "7 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "liberation-du-yin",
+   "type": "power",
+   "relation": "maitrise",
+   "promis": 120,
+   "livre": 40,
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 117 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 37 autres.",
+   "preuve": "40 arête(s) « maitrise » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "liberation-du-bois-mokuton",
+   "type": "power",
+   "relation": "maitrise",
+   "promis": 15,
+   "livre": 16,
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Madara Uchiha, Orochimaru, Obito Uchiha et 12 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Madara Uchiha, Orochimaru, Obito Uchiha et 13 autres.",
+   "preuve": "16 arête(s) « maitrise » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "mangekyo-sharingan",
+   "type": "skill",
+   "relation": "maitrise",
+   "promis": 15,
+   "livre": 16,
+   "avant": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Kakashi Hatake, Obito Uchiha, Itachi Uchiha et 12 autres.",
+   "apres": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Kakashi Hatake, Obito Uchiha, Itachi Uchiha et 13 autres.",
+   "preuve": "16 arête(s) « maitrise » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "akatsuki",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 32,
+   "livre": 44,
+   "avant": "Organisation de l'univers Naruto — réunit Sasuke Uchiha, Madara Uchiha, Orochimaru et 29 autres.",
+   "apres": "Organisation de l'univers Naruto — réunit Sasuke Uchiha, Madara Uchiha, Orochimaru et 41 autres.",
+   "preuve": "44 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "konoha-11",
+   "type": "status",
+   "relation": "appartient",
+   "promis": 13,
+   "livre": 14,
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Rock Lee, Sakura Haruno et 10 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Rock Lee, Sakura Haruno et 11 autres.",
+   "preuve": "14 arête(s) « appartient » entrantes comptées sur le graphe paginé"
+  },
+  {
+   "slug": "liberation-de-la-foudre-raiton",
+   "type": "power",
+   "relation": "maitrise",
+   "promis": 91,
+   "livre": 40,
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Kakashi Hatake et 88 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Kakashi Hatake et 37 autres.",
+   "preuve": "40 arête(s) « maitrise » entrantes comptées sur le graphe paginé"
+  }
+ ],
+ "C3": [
+  {
+   "slug": "shun",
+   "type": "character",
+   "motif": "texte de haruna-naruto (« Haruna était la fille du daimyō du Pays des Légumes. ») retiré le 10/08 — Shun est un autre personnage",
+   "descFrRetire": "Haruna était la fille du daimyō du Pays des Légumes.",
+   "resumeRetire": "Haruna était la fille du daimyō du Pays des Légumes."
+  },
+  {
+   "slug": "girl",
+   "type": "character",
+   "motif": "biographie de ribrianne (« Ribrianne est une guerrière de l’Univers 2… ») retirée le 10/08",
+   "descFrRetire": "Ribrianne est une guerrière de l'Univers 2, et la cheffe des Kamikaze Fireballs.",
+   "resumeRetire": null
+  },
+  {
+   "slug": "madillo-man",
+   "type": "character",
+   "motif": "texte de babanuki (« Babanuki est un Headliner de l’équipage des Cent Bêtes… ») retiré le 10/08",
+   "descFrRetire": "Babanuki est un Headliner de l'équipage des Cent Bêtes qui sert de gardien de la Mine des Prisonniers dans la région d'Udon, au Pays de Wa.",
+   "resumeRetire": null
+  },
+  {
+   "slug": "king-naruto",
+   "type": "character",
+   "motif": "texte du Quatre Queues Son Gokû (« …Démon à queues scellé en Rôshi d’Iwagakure ») retiré le 10/08 — la fiche est « King »",
+   "descFrRetire": "Son Gokû, plus communément appelé le Quatre Queues (Yonbi), est un Démon à queues scellé en Rôshi d'Iwagakure. Il fut capturé par Kisame Hoshigaki, puis extrait et scellé par l'Akatsuki.",
+   "resumeRetire": "Son Gokû, plus communément appelé le Quatre Queues (Yonbi), est un Démon à queues scellé en Rôshi d'Iwagakure. Il fut capturé par Kisame Hoshigaki, puis extrait et scellé par l'Akatsuki."
+  },
+  {
+   "slug": "three-giant-snakes",
+   "type": "character",
+   "motif": "texte d’Isobu le Trois Queues retiré le 10/08 — la fiche est « Three Giant Snakes », une invocation d’Orochimaru",
+   "descFrRetire": "Isobu, plus communément appelé le Trois Queues (Sanbi), est un Démon à queues qui était autrefois scellé en Yagura de Kirigakure. Il fut capturé par Deidara et Tobi, puis scellé par l'Akatsuki.",
+   "resumeRetire": "Isobu, plus communément appelé le Trois Queues (Sanbi), est un Démon à queues qui était autrefois scellé en Yagura de Kirigakure. Il fut capturé par Deidara et Tobi, puis scellé par l'Akatsuki."
+  },
+  {
+   "slug": "manda-ii",
+   "type": "character",
+   "motif": "texte de manda retiré le 10/08 (il nomme Manda II comme le CLONE de son sujet : « surpassé en taille par son clone, Manda II »)",
+   "descFrRetire": "Manda est l'invocation personnelle d'Orochimaru. Manda était le plus grand serpent du monde, avant d'être récemment surpassé en taille par son clone, Manda II. Il domine aisément les bâtiments, les arbres et les grandes ",
+   "resumeRetire": "Manda est l'invocation personnelle d'Orochimaru. Manda était le plus grand serpent du monde, avant d'être récemment surpassé en taille par son clone, Manda II. Il domine aisément les bâtiments, les arbres et les grandes "
+  },
+  {
+   "slug": "atk-bl-flash-cry",
+   "type": "power",
+   "motif": "texte du Shunkō retiré le 10/08 — atk-bl-shunko porte déjà cette technique",
+   "descFrRetire": "Shunkō est une technique hybride de Hakuda et de Kidō considérée comme la forme la plus élevée du Hakuda. Elle permet d'injecter du Kidō dans les bras et les jambes, pouvant se manifester sous forme de vent, de foudre ou",
+   "resumeRetire": null
+  },
+  {
+   "slug": "ashisogi-jizo",
+   "type": "character",
+   "motif": "biographie de mayuri-kurotsuchi retirée le 10/08 — la fiche est son Zanpakutō, ce que dit d’ailleurs son propre résumé",
+   "descFrRetire": "Mayuri Kurotsuchi est le capitaine de la 12e Division du Gotei 13 et le deuxième président de l'Institut de Recherche des Shinigamis. Il a pour lieutenant actuel Akon, après avoir été précédemment associé à Nemu Kurotsuc",
+   "resumeRetire": null
+  },
+  {
+   "slug": "majin-buu-gohan",
+   "type": "skill",
+   "motif": "texte de super-buu (absorption de Good Buu par Evil Buu) retiré le 10/08 — la fiche est la forme d’APRÈS l’absorption de Gohan",
+   "descFrRetire": "Super Buu est la forme résultant de l'absorption de Good Buu par Evil Buu, ce qui lui confère une puissance et une capacité mentale considérablement accrues. Cette forme est marquée par une impatience extrême et des accè",
+   "resumeRetire": null
+  },
+  {
+   "slug": "cultist",
+   "type": "profession",
+   "motif": "biographie de l’individu Tsuzumi retirée le 10/08 — la fiche est un MÉTIER, et son résumé le définit correctement",
+   "descFrRetire": "Tsuzumi est un adepte d'un culte lié aux Ōtsutsuki, caractérisé par son fanatisme et sa loyauté envers Boro. Il est conscient de certains secrets du culte, notamment l'utilisation de virus pour recruter de nouveaux membr",
+   "resumeRetire": null
+  },
+  {
+   "slug": "carpenter",
+   "type": "profession",
+   "motif": "biographie de l’individu Kanna retirée le 10/08 — la fiche est un MÉTIER, et son résumé le définit correctement",
+   "descFrRetire": "Kanna est le charpentier en chef actuel de Konohagakure, héritant cette position de son père qui occupait le poste trente ans auparavant. Il a supervisé la reconstruction de tout le village après les destructions, engage",
+   "resumeRetire": null
+  },
+  {
+   "slug": "bodyguard",
+   "type": "profession",
+   "motif": "biographie d’un individu (« Le garde du corps de Tenzen Daikoku… ») retirée le 10/08 — la fiche est un MÉTIER",
+   "descFrRetire": "Le garde du corps de Tenzen Daikoku est un shinobi originaire du Pays des Vagues, chargé de la protection rapprochée de son employeur. Il est connu pour son maniement expert du Kubikiribōchō, l'épée de Zabuza Momochi, et",
+   "resumeRetire": null
+  },
+  {
+   "slug": "ile-celeste",
+   "type": "status",
+   "motif": "description du LIEU Skypiea retirée le 10/08 — skypiea-lieu la porte déjà ; cette fiche est la saga",
+   "descFrRetire": "Skypiea est une nation céleste située au-dessus de Paradise, considérée comme une légende par ses habitants. Sa monnaie unique, l'extol, et son utilisation des dials, des objets rares dans le monde marin, distinguent cet",
+   "resumeRetire": null
+  },
+  {
+   "slug": "captain-of-the-lady-mary",
+   "type": "character",
+   "motif": "description du NAVIRE Lady Mary retirée le 10/08 — la fiche est son capitaine",
+   "descFrRetire": "Première apparition : Épisode 1 Le Lady Mary est un navire propre à l'anime qu'Alvida et son équipage ont tenté de piller. Nami se trouvait aussi à bord. Le plan pour dévaliser le navire a été déjoué par Luffy.",
+   "resumeRetire": null
+  },
+  {
+   "slug": "sakon",
+   "type": "power",
+   "motif": "biographie du ninja Sakon retirée le 10/08 — la fiche est typée pouvoir (catégorie Jutsu) et reçoit une arête « maitrise »",
+   "descFrRetire": "Sakon est un ninja d'Otogakure et apparent leader des Quatre du Son, vivant en partageant son corps avec son frère jumeau aîné Ukon. Grâce à leur kekkei genkai unique, les deux frères peuvent fonctionner en fusionnés, av",
+   "resumeRetire": "Sakon, ninja d'Oto membre des Quatre du Son, porte en lui son frère jumeau Ukon, capable d'émerger de son corps au combat."
+  },
+  {
+   "slug": "kiba-naruto",
+   "type": "artifact",
+   "motif": "biographie de Kiba Inuzuka retirée le 10/08 — la fiche est l’ARME Kiba (sabre foudroyant des Sept Épéistes)",
+   "descFrRetire": "Kiba est un membre du clan Inuzuka et un membre de l'équipe Kurenai. Il est connu pour son attitude impulsée et son tempérament colérique, mais il est également très loyal envers ses camarades et fera tout pour les proté",
+   "resumeRetire": null
+  },
+  {
+   "slug": "sabre",
+   "type": "artifact",
+   "motif": "texte d’une technique de la Pierre de Gelel retiré le 10/08 — la fiche est l’arme générique « Sabre »",
+   "descFrRetire": "Technique utilisant l'énergie de la Pierre de Gelel où l'utilisateur accumule une grande quantité d'énergie électrique dans son poing et la projette en coup frappant. Puissante au point de transpercer le Bouclier de Sabl",
+   "resumeRetire": null
+  },
+  {
+   "slug": "lance",
+   "type": "artifact",
+   "motif": "texte d’un ninjutsu de coopération Terre/Foudre retiré le 10/08 — la fiche est l’arme générique « Lance »",
+   "descFrRetire": "Ninjutsu de coopération exécuté conjointement par des utilisateurs d'Élément Terre et d'Élément Foudre. L'utilisateur d'Élément Terre crée une lance de terre qui est lancée au sol, puis l'utilisateur d'Élément Foudre l'é",
+   "resumeRetire": null
+  }
+ ],
+ "C4": [
+  {
+   "slug": "kano-country",
+   "cle": "scope",
+   "avant": "Équipage pirate",
+   "apres": "(retiré)",
+   "preuve": "type place · category « Lieu » · descFr « Le Pays de Kano, situé dans le West Blue, évoque une cité chinoise antique… » — et la fusion du 09/08 (scripts/ops-fusionner-doublons.mjs) a gardé cette fiche CONTRE un doublon typé équipage. Rendu vérifié : le bloc « Attributs » de /learn/akasha/kano-country affichait « scope · Équipage pirate »."
+  },
+  {
+   "slug": "suiren",
+   "cle": "village",
+   "avant": "Amegakure",
+   "apres": "Kirigakure",
+   "preuve": "sa propre prose : « Suiren (スイレン, Suiren) était une kunoichi de Kirigakure. » — et la fiche suiren-kiri, rédigée par une autre source, dit la même chose : « Suiren était une kunoichi de Kirigakure et membre de l’équipe de Ganryū. »"
+  }
+ ],
+ "refus": []
+}

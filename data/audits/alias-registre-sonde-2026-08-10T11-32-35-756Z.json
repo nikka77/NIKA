@@ -1,0 +1,503 @@
+{
+ "chantier": "registre d'alias titre-de-wiki → fiche (vague 4)",
+ "quand": "2026-08-10T11:32:42.535Z",
+ "mode": "sonde",
+ "ecritEnBase": false,
+ "sourceDuGisement": "data/audits/isolees-html-naruto-sonde-2026-08-10T11-25-57-440Z.json",
+ "mesure": {
+  "fiches": 7654,
+  "aretes": 16769,
+  "isolees": 783,
+  "isoleesNaruto": 58
+ },
+ "ciblesOrphelines": 14,
+ "liensOrphelins": 40,
+ "curees": 4,
+ "liensCures": 20,
+ "verdicts": [
+  {
+   "titre": "Summon",
+   "liens": 14,
+   "champs": [
+    "classification"
+   ],
+   "sourcesExemples": [
+    "(trace explore 08-52)"
+   ],
+   "wiki": {
+    "titreRendu": "Summon",
+    "redirigeVers": null,
+    "softRedirect": "Summoning Technique",
+    "fr": null,
+    "categories": [
+     "Soft redirects"
+    ]
+   },
+   "temoin": "T4 précédent mesuré",
+   "fiche": {
+    "id": "cb90ae4e-2ef8-4842-bf1d-a68bc1dfb2e3",
+    "slug": "creature-invoquee",
+    "name": "Créature invoquée",
+    "type": "status",
+    "universe": "Naruto",
+    "summary": "Animal ou entité lié par un pacte d'invocation à un ninja, à l'image de Gamabunta, le crapaud invoqué par Jiraiya et Naruto.",
+    "attributes": {
+     "scope": "Classification",
+     "category": "Classification"
+    }
+   },
+   "preuve": "notre graphe porte déjà 40 arêtes « appartient » vers Créature invoquée (creature-invoquee) ; sur 20 de leurs sources relues sur naruto.fandom.com, 20 portent « classification=Summon » dans leur page Infobox: (100 %) ; et https://naruto.fandom.com/wiki/Summon est un « {{soft redirect|Summoning Technique}} », donc un titre de classification que le wiki n'a pas doté d'article",
+   "ficheChezNous": null,
+   "precedent": {
+    "applicable": true,
+    "aretes": 40,
+    "relus": 20,
+    "conformes": 20,
+    "taux": 1,
+    "detail": [
+     {
+      "fiche": "Manda",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Doki",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Gamaken",
+      "valeur": "Summon,",
+      "conforme": true
+     },
+     {
+      "fiche": "Giant Drill-Beaked Bird",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Guruko",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Giant Clam",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Aoda",
+      "valeur": "Summon~Sasuke Uchiha",
+      "conforme": true
+     },
+     {
+      "fiche": "Mecha-Kurama",
+      "valeur": "Summon~Orochimaru",
+      "conforme": true
+     },
+     {
+      "fiche": "Fukuemon",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Gamagorō",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Pakkun",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Gamakichi",
+      "valeur": "Sage, Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Gamatatsu",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Gama",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Shima",
+      "valeur": "Sage, Summon,",
+      "conforme": true
+     },
+     {
+      "fiche": "Akino",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Demonic Statue of the Outer Path",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Urushi (summon)",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Ūhei",
+      "valeur": "Summon",
+      "conforme": true
+     },
+     {
+      "fiche": "Conch King",
+      "valeur": "Summon",
+      "conforme": true
+     }
+    ]
+   },
+   "temoinEcarte": "T1 redirection douce → Summoning Technique (écarté : le soft redirect vise l'article de la TECHNIQUE, pas le tiroir de classification)"
+  },
+  {
+   "titre": "Ninjutsu",
+   "liens": 9,
+   "champs": [
+    "jutsu classification"
+   ],
+   "sourcesExemples": [
+    "Sealing Technique: Rōen Kodon",
+    "Lightning Release: Thunder",
+    "Lightning Release: Tiger Scissors",
+    "Water Release: Angry Bitter Rain"
+   ],
+   "wiki": {
+    "titreRendu": "Ninjutsu",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Ninjutsu",
+    "categories": [
+     "Jutsu Type"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Lightning Release",
+   "liens": 4,
+   "champs": [
+    "jutsu type"
+   ],
+   "sourcesExemples": [
+    "Lightning Release: Thunder",
+    "Lightning Release: Tiger Scissors",
+    "Lightning Release: Electric Shock Needles",
+    "Lightning Release: Pulverising Lightning Rod"
+   ],
+   "wiki": {
+    "titreRendu": "Lightning Release",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Raiton",
+    "categories": [
+     "Chakra Natures"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "f601ba34-3ccc-4fcd-afe1-3c085930db5f",
+    "slug": "liberation-de-la-foudre-raiton",
+    "name": "Libération de la Foudre (Raiton)",
+    "type": "power",
+    "universe": "Naruto",
+    "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Kakashi Hatake et 88 autres.",
+    "attributes": {
+     "element": "Nature de chakra",
+     "category": "Nature de chakra"
+    }
+   },
+   "preuve": "https://naruto.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Lightning%20Release déclare fr = « Raiton » ; égal (après normalisation) à la parenthèse de notre fiche Libération de la Foudre (Raiton) (liberation-de-la-foudre-raiton, type power)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Fūinjutsu",
+   "liens": 2,
+   "champs": [
+    "jutsu classification"
+   ],
+   "sourcesExemples": [
+    "Sealing Technique: Rōen Kodon",
+    "Kido's Juinjutsu"
+   ],
+   "wiki": {
+    "titreRendu": "Fūinjutsu",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Fûinjutsu",
+    "categories": [
+     "Jutsu Type"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Bukijutsu",
+   "liens": 2,
+   "champs": [
+    "jutsu classification"
+   ],
+   "sourcesExemples": [
+    "Lightning Release: Pulverising Lightning Rod",
+    "Wind Release: Bursting Compressed Air"
+   ],
+   "wiki": {
+    "titreRendu": "Bukijutsu",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Bukijutsu",
+    "categories": [
+     "Jutsu Type"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Hiden",
+   "liens": 1,
+   "champs": [
+    "jutsu classification"
+   ],
+   "sourcesExemples": [
+    "Sealing Technique: Rōen Kodon"
+   ],
+   "wiki": {
+    "titreRendu": "Hiden",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Hiden",
+    "categories": [
+     "Jutsu Type"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Barrier Ninjutsu",
+   "liens": 1,
+   "champs": [
+    "jutsu classification"
+   ],
+   "sourcesExemples": [
+    "Lightning Release: Tiger Scissors"
+   ],
+   "wiki": {
+    "titreRendu": "Barrier Ninjutsu",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Barrière Ninjutsu",
+    "categories": [
+     "Jutsu Type"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Water Release",
+   "liens": 1,
+   "champs": [
+    "jutsu type"
+   ],
+   "sourcesExemples": [
+    "Water Release: Angry Bitter Rain"
+   ],
+   "wiki": {
+    "titreRendu": "Water Release",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Suiton",
+    "categories": [
+     "Chakra Natures"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "52c2bd60-5600-4ed3-ba30-294d24786b8c",
+    "slug": "liberation-de-l-eau-suiton",
+    "name": "Libération de l'Eau (Suiton)",
+    "type": "power",
+    "universe": "Naruto",
+    "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 150 autres.",
+    "attributes": {
+     "element": "Nature de chakra",
+     "category": "Nature de chakra"
+    }
+   },
+   "preuve": "https://naruto.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Water%20Release déclare fr = « Suiton » ; égal (après normalisation) à la parenthèse de notre fiche Libération de l'Eau (Suiton) (liberation-de-l-eau-suiton, type power)",
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Genjutsu",
+   "liens": 1,
+   "champs": [
+    "jutsu classification"
+   ],
+   "sourcesExemples": [
+    "Hypnotic Genjutsu: Wild Beast Communication"
+   ],
+   "wiki": {
+    "titreRendu": "Genjutsu",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Genjutsu",
+    "categories": [
+     "Jutsu Type"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Yin Release",
+   "liens": 1,
+   "champs": [
+    "jutsu type"
+   ],
+   "sourcesExemples": [
+    "Hypnotic Genjutsu: Wild Beast Communication"
+   ],
+   "wiki": {
+    "titreRendu": "Yin Release",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Inton",
+    "categories": [
+     "Chakra Natures"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Juinjutsu",
+   "liens": 1,
+   "champs": [
+    "jutsu classification"
+   ],
+   "sourcesExemples": [
+    "Kido's Juinjutsu"
+   ],
+   "wiki": {
+    "titreRendu": "Juinjutsu",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Juinjutsu",
+    "categories": [
+     "Jutsu Type"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Chakra Flow",
+   "liens": 1,
+   "champs": [
+    "jutsu classification"
+   ],
+   "sourcesExemples": [
+    "Lightning Release: Pulverising Lightning Rod"
+   ],
+   "wiki": {
+    "titreRendu": "Chakra Flow",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Flux de Chakra",
+    "categories": [
+     "Jutsu Type"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Shurikenjutsu",
+   "liens": 1,
+   "champs": [
+    "jutsu classification"
+   ],
+   "sourcesExemples": [
+    "Wind Release: Bursting Compressed Air"
+   ],
+   "wiki": {
+    "titreRendu": "Shurikenjutsu",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Shurikenjutsu",
+    "categories": [
+     "Jutsu Type"
+    ]
+   },
+   "temoin": null,
+   "fiche": null,
+   "preuve": null,
+   "ficheChezNous": null
+  },
+  {
+   "titre": "Wind Release",
+   "liens": 1,
+   "champs": [
+    "jutsu type"
+   ],
+   "sourcesExemples": [
+    "Wind Release: Bursting Compressed Air"
+   ],
+   "wiki": {
+    "titreRendu": "Wind Release",
+    "redirigeVers": null,
+    "softRedirect": null,
+    "fr": "Fûton",
+    "categories": [
+     "Chakra Natures"
+    ]
+   },
+   "temoin": "T2 interlangue",
+   "fiche": {
+    "id": "3ff07529-a0f8-4b11-939c-c868f1a0be2a",
+    "slug": "liberation-du-vent-futon",
+    "name": "Libération du Vent (Fūton)",
+    "type": "power",
+    "universe": "Naruto",
+    "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 86 autres.",
+    "attributes": {
+     "element": "Nature de chakra",
+     "category": "Nature de chakra"
+    }
+   },
+   "preuve": "https://naruto.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Wind%20Release déclare fr = « Fûton » ; égal (après normalisation) à la parenthèse de notre fiche Libération du Vent (Fūton) (liberation-du-vent-futon, type power)",
+   "ficheChezNous": null
+  }
+ ]
+}

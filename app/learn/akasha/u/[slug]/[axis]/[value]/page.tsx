@@ -52,7 +52,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${label} — ${r.axisDef.label} de ${r.taxo.name} | AKASHA`,
     // ACCORD DE GENRE : lu depuis la taxonomie (champ `genre`), jamais deviné — une heuristique
     // sur la terminaison se trompait dans les deux sens (« Tous les races », « Toutes les villages »).
-    description: `${r.axisDef.genre === 'f' ? 'Toutes les' : 'Tous les'} ${r.axisDef.label.toLowerCase()} « ${label} » de l'univers ${r.taxo.name} dans le registre AKASHA, classés par popularité.`,
+    // …et l'accord va JUSQU'AU BOUT de la phrase : « classés » restait masculin en dur, donc
+    // « Toutes les divisions de la guerre … classés par popularité » sur les 189 pages d'axe
+    // féminines mesurées le 10/08 (organization, equipe, division, generation, faction, race,
+    // saga, partie, affiliation).
+    description: `${r.axisDef.genre === 'f' ? 'Toutes les' : 'Tous les'} ${r.axisDef.label.toLowerCase()} « ${label} » de l'univers ${r.taxo.name} dans le registre AKASHA, class${r.axisDef.genre === 'f' ? 'ées' : 'és'} par popularité.`,
     alternates: { canonical: `${SITE_URL}/learn/akasha/u/${r.slug}/${r.axisDef.attr}/${encodeURIComponent(r.val)}` },
   };
 }
@@ -123,7 +127,7 @@ export default async function AxisValuePage({ params, searchParams }: Props) {
             {label}
           </h1>
           <div style={{ fontFamily: 'var(--fo)', fontSize: 13.5, color: 'var(--td2)', marginTop: 10 }}>
-            <strong style={{ color: tint }}>{total}</strong> {total > 1 ? 'entrées' : 'entrée'} · classées par popularité{subLabel && <> · filtré : <strong style={{ color: tint }}>{subLabel}</strong></>}
+            <strong style={{ color: tint }}>{total}</strong> {total > 1 ? 'entrées' : 'entrée'} · {total > 1 ? 'classées' : 'classée'} par popularité{subLabel && <> · filtré : <strong style={{ color: tint }}>{subLabel}</strong></>}
           </div>
         </div>
       </UniverseShell>

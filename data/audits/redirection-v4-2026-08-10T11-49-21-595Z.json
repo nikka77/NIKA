@@ -1,0 +1,277 @@
+{
+ "chantier": "images — redirection + le fichier porte notre nom (vague 4)",
+ "passe_le": "2026-08-10T11:50:23.003Z",
+ "mode": "à blanc",
+ "plafond_octets": 307200,
+ "compte": {
+  "candidats": 773,
+  "pages_atteintes": 330,
+  "pages_avec_fichier_infobox": 56,
+  "fichiers_portant_notre_nom": 10,
+  "trouves": 3,
+  "refus": 7,
+  "posees": 0,
+  "deja": 0,
+  "echecs": 0
+ },
+ "detail": [
+  {
+   "slug": "fier-baril",
+   "name": "Fier Baril",
+   "type": "artifact",
+   "universe": "One Piece",
+   "etat": "trouve",
+   "wiki": "fr",
+   "titre_wiki": "Baril Tiger",
+   "fichier": "Fier Baril.png",
+   "preuve_wikitext": "| image             = [[Fichier:Fier Baril.png|250px]]",
+   "preuve_temoin": "le fichier d'infobox de « Baril Tiger » s'appelle « Fier Baril.png » et contient notre nom « Fier Baril »",
+   "essais": [
+    {
+     "largeur": 720,
+     "resultat": "50 Ko · 720×387 webp"
+    }
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/6c/Fier_Baril.png/revision/latest/scale-to-width-down/720?cb=20131116140614&path-prefix=fr",
+   "definition_reelle": "720×387 webp",
+   "octets": 51210,
+   "source": "950×510 image/png 597 Ko",
+   "pourquoi": null
+  },
+  {
+   "slug": "haki-des-rois",
+   "name": "Haki des Rois",
+   "type": "skill",
+   "universe": "One Piece",
+   "etat": "trouve",
+   "wiki": "fr",
+   "titre_wiki": "Haki/Haki des Rois",
+   "fichier": "Haki des Rois de Shanks.png",
+   "preuve_wikitext": "| image            = [[Fichier:Haki des Rois de Shanks.png|270px]]",
+   "preuve_temoin": "le fichier d'infobox de « Haki/Haki des Rois » s'appelle « Haki des Rois de Shanks.png » et contient notre nom « Haki des Rois »",
+   "essais": [
+    {
+     "largeur": 720,
+     "resultat": "200 Ko · 720×821 webp"
+    }
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/65/Haki_des_Rois_de_Shanks.png/revision/latest/scale-to-width-down/720?cb=20161229000839&path-prefix=fr",
+   "definition_reelle": "720×821 webp",
+   "octets": 204942,
+   "source": "721×822 image/png 751 Ko",
+   "pourquoi": null
+  },
+  {
+   "slug": "navire-de-galdino",
+   "name": "Navire de Galdino",
+   "type": "artifact",
+   "universe": "One Piece",
+   "etat": "trouve",
+   "wiki": "fr",
+   "titre_wiki": "Chiryaku Ten'nen Maru",
+   "fichier": "Navire_de_Galdino_Anime_Infobox.png",
+   "preuve_wikitext": "| image             = [[Fichier:Navire_de_Galdino_Anime_Infobox.png|270px]]",
+   "preuve_temoin": "le fichier d'infobox de « Chiryaku Ten'nen Maru » s'appelle « Navire_de_Galdino_Anime_Infobox.png » et contient notre nom « Navire de Galdino »",
+   "essais": [
+    {
+     "largeur": 720,
+     "resultat": "15 Ko · 230×173 webp"
+    }
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/0/02/Navire_de_Galdino_Anime_Infobox.png/revision/latest?cb=20130306092541&path-prefix=fr",
+   "definition_reelle": "230×173 webp",
+   "octets": 15152,
+   "source": "230×173 image/png 81 Ko",
+   "pourquoi": null
+  },
+  {
+   "slug": "atk-bl-cero-metralleta",
+   "name": "Cero Metralleta",
+   "type": "power",
+   "universe": "Bleach",
+   "etat": "refus-poids",
+   "wiki": "en",
+   "titre_wiki": "Cero Metralleta",
+   "fichier": "CeroMetralleta.gif",
+   "preuve_wikitext": "|image= [[Image:CeroMetralleta.gif|190px]]",
+   "preuve_temoin": "le fichier d'infobox de « Cero Metralleta » s'appelle « CeroMetralleta.gif » et contient notre nom « Cero Metralleta »",
+   "essais": [
+    {
+     "largeur": 720,
+     "resultat": "3013 Ko · 190×108 webp"
+    },
+    {
+     "largeur": 480,
+     "resultat": "3013 Ko · 190×108 webp"
+    }
+   ],
+   "image_url": null,
+   "definition_reelle": null,
+   "octets": null,
+   "source": null,
+   "pourquoi": "3013 Ko même à 720 px — au-dessus du plafond de 300 Ko"
+  },
+  {
+   "slug": "atk-bl-guncho-tsurara",
+   "name": "Guncho Tsurara",
+   "type": "power",
+   "universe": "Bleach",
+   "etat": "refus-poids",
+   "wiki": "en",
+   "titre_wiki": "Gunchō Tsurara",
+   "fichier": "GunchoTsurara.gif",
+   "preuve_wikitext": "|image= [[Image:GunchoTsurara.gif|190px]]",
+   "preuve_temoin": "le fichier d'infobox de « Gunchō Tsurara » s'appelle « GunchoTsurara.gif » et contient notre nom « Guncho Tsurara »",
+   "essais": [
+    {
+     "largeur": 720,
+     "resultat": "2794 Ko · 190×108 webp"
+    },
+    {
+     "largeur": 480,
+     "resultat": "2794 Ko · 190×108 webp"
+    }
+   ],
+   "image_url": null,
+   "definition_reelle": null,
+   "octets": null,
+   "source": null,
+   "pourquoi": "2794 Ko même à 720 px — au-dessus du plafond de 300 Ko"
+  },
+  {
+   "slug": "atk-bl-hyoten-hyakkaso",
+   "name": "Hyoten Hyakkaso",
+   "type": "power",
+   "universe": "Bleach",
+   "etat": "refus-poids",
+   "wiki": "en",
+   "titre_wiki": "Hyōten Hyakkasō",
+   "fichier": "HyōtenHyakkasō.gif",
+   "preuve_wikitext": "|image= [[Image:HyōtenHyakkasō.gif|190px]]",
+   "preuve_temoin": "le fichier d'infobox de « Hyōten Hyakkasō » s'appelle « HyōtenHyakkasō.gif » et contient notre nom « Hyoten Hyakkaso »",
+   "essais": [
+    {
+     "largeur": 720,
+     "resultat": "2884 Ko · 190×108 webp"
+    },
+    {
+     "largeur": 480,
+     "resultat": "2884 Ko · 190×108 webp"
+    }
+   ],
+   "image_url": null,
+   "definition_reelle": null,
+   "octets": null,
+   "source": null,
+   "pourquoi": "2884 Ko même à 720 px — au-dessus du plafond de 300 Ko"
+  },
+  {
+   "slug": "atk-bl-lanza-del-relampago",
+   "name": "Lanza del Relampago",
+   "type": "power",
+   "universe": "Bleach",
+   "etat": "refus-poids",
+   "wiki": "en",
+   "titre_wiki": "Lanza del Relámpago",
+   "fichier": "LanzaDelRelámpago.gif",
+   "preuve_wikitext": "|image= [[Image:LanzaDelRelámpago.gif|190px]]",
+   "preuve_temoin": "le fichier d'infobox de « Lanza del Relámpago » s'appelle « LanzaDelRelámpago.gif » et contient notre nom « Lanza del Relampago »",
+   "essais": [
+    {
+     "largeur": 720,
+     "resultat": "2674 Ko · 190×108 webp"
+    },
+    {
+     "largeur": 480,
+     "resultat": "2674 Ko · 190×108 webp"
+    }
+   ],
+   "image_url": null,
+   "definition_reelle": null,
+   "octets": null,
+   "source": null,
+   "pourquoi": "2674 Ko même à 720 px — au-dessus du plafond de 300 Ko"
+  },
+  {
+   "slug": "atk-bl-ryodan",
+   "name": "Ryodan",
+   "type": "power",
+   "universe": "Bleach",
+   "etat": "refus-poids",
+   "wiki": "en",
+   "titre_wiki": "Ryōdan",
+   "fichier": "Ryōdan.gif",
+   "preuve_wikitext": "|image= [[Image:Ryōdan.gif|190px]]",
+   "preuve_temoin": "le fichier d'infobox de « Ryōdan » s'appelle « Ryōdan.gif » et contient notre nom « Ryodan »",
+   "essais": [
+    {
+     "largeur": 720,
+     "resultat": "3332 Ko · 190×108 webp"
+    },
+    {
+     "largeur": 480,
+     "resultat": "3332 Ko · 190×108 webp"
+    }
+   ],
+   "image_url": null,
+   "definition_reelle": null,
+   "octets": null,
+   "source": null,
+   "pourquoi": "3332 Ko même à 720 px — au-dessus du plafond de 300 Ko"
+  },
+  {
+   "slug": "atk-bl-sennen-hyoro",
+   "name": "Sennen Hyoro",
+   "type": "power",
+   "universe": "Bleach",
+   "etat": "refus-poids",
+   "wiki": "en",
+   "titre_wiki": "Sennen Hyōrō",
+   "fichier": "SennenHyōrō.gif",
+   "preuve_wikitext": "|image= [[Image:SennenHyōrō.gif|190px]]",
+   "preuve_temoin": "le fichier d'infobox de « Sennen Hyōrō » s'appelle « SennenHyōrō.gif » et contient notre nom « Sennen Hyoro »",
+   "essais": [
+    {
+     "largeur": 720,
+     "resultat": "2694 Ko · 190×108 webp"
+    },
+    {
+     "largeur": 480,
+     "resultat": "2694 Ko · 190×108 webp"
+    }
+   ],
+   "image_url": null,
+   "definition_reelle": null,
+   "octets": null,
+   "source": null,
+   "pourquoi": "2694 Ko même à 720 px — au-dessus du plafond de 300 Ko"
+  },
+  {
+   "slug": "shunpo",
+   "name": "Shunpo",
+   "type": "skill",
+   "universe": "Bleach",
+   "etat": "refus-poids",
+   "wiki": "en",
+   "titre_wiki": "Hohō",
+   "fichier": "Shunpo.gif",
+   "preuve_wikitext": "|image = [[Image:Shunpo.gif|190px]]",
+   "preuve_temoin": "le fichier d'infobox de « Hohō » s'appelle « Shunpo.gif » et contient notre nom « Shunpo »",
+   "essais": [
+    {
+     "largeur": 720,
+     "resultat": "3178 Ko · 190×143 webp"
+    },
+    {
+     "largeur": 480,
+     "resultat": "3178 Ko · 190×143 webp"
+    }
+   ],
+   "image_url": null,
+   "definition_reelle": null,
+   "octets": null,
+   "source": null,
+   "pourquoi": "3178 Ko même à 720 px — au-dessus du plafond de 300 Ko"
+  }
+ ]
+}

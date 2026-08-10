@@ -1,0 +1,4723 @@
+{
+ "chantier": "recensement des visuels (vague 4)",
+ "quand": "2026-08-10T11:19:09.406Z",
+ "fiches_total": 7654,
+ "avec_visuel": 6875,
+ "sans_visuel": 779,
+ "url_distante": 6754,
+ "image_locale": 121,
+ "urls_distinctes": 6724,
+ "sans_visuel_par_univers": {
+  "One Piece": 366,
+  "Naruto": 307,
+  "Bleach": 59,
+  "Dragon Ball": 40,
+  "JoJo's Bizarre Adventure": 4,
+  "Initial D": 2,
+  "Death Note": 1
+ },
+ "sans_visuel_par_univers_type": {
+  "One Piece · power": 214,
+  "Naruto · power": 126,
+  "Naruto · profession": 84,
+  "One Piece · place": 55,
+  "One Piece · artifact": 45,
+  "Bleach · power": 44,
+  "One Piece · status": 43,
+  "Naruto · artifact": 39,
+  "Naruto · status": 37,
+  "Dragon Ball · power": 29,
+  "Naruto · place": 16,
+  "Bleach · artifact": 13,
+  "Dragon Ball · place": 10,
+  "One Piece · skill": 9,
+  "Naruto · skill": 4,
+  "Dragon Ball · artifact": 1,
+  "Death Note · profession": 1,
+  "Initial D · skill": 1,
+  "JoJo's Bizarre Adventure · artifact": 1,
+  "Bleach · place": 1,
+  "JoJo's Bizarre Adventure · place": 1,
+  "JoJo's Bizarre Adventure · skill": 1,
+  "Initial D · profession": 1,
+  "Naruto · character": 1,
+  "Bleach · skill": 1,
+  "JoJo's Bizarre Adventure · power": 1
+ },
+ "sans_visuel_liste": [
+  {
+   "slug": "100-island",
+   "name": "Île 100 %",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "accountant",
+   "name": "Accountant",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ace",
+   "name": "Ace",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "actor",
+   "name": "Actor",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "actress",
+   "name": "Actress",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "adamantine-attacking-chains",
+   "name": "Adamantine Attacking Chains",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "adamantine-staff",
+   "name": "Adamantine Staff",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "akatsuki-spy",
+   "name": "Akatsuki spy",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "anbu-captain",
+   "name": "Anbu Captain",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "anbu-captain-former",
+   "name": "Anbu Captain  (Former)",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "anciens-membres-de-la-marine",
+   "name": "Anciens membres de la Marine",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "anciens-membres-du-baroque-works",
+   "name": "Anciens membres du Baroque Works",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "anciens-membres-du-cipher-pol",
+   "name": "Anciens membres du Cipher Pol",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "angel-island",
+   "name": "Angel Island",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "arbalete",
+   "name": "Arbalète",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "arc-et-fleches",
+   "name": "Arc et flèches",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "archipel-des-argao",
+   "name": "Archipel des Argao",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "arcose",
+   "name": "Arcose",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "astronomer",
+   "name": "Astronomer",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "atk-bl-bakudo-61-rikujokoro",
+   "name": "Bakudo 61 Rikujokoro",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-bakudo-81-danku",
+   "name": "Bakudo 81 Danku",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-bakudo-99-kin",
+   "name": "Bakudo 99 Kin",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-bankai-kannonbiraki-benihime-aratame",
+   "name": "Bankai Kannonbiraki Benihime Aratame",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-benihime",
+   "name": "Benihime",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-bushogoma",
+   "name": "Bushogoma",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-cero-metralleta",
+   "name": "Cero Metralleta",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-daiguren-hyorinmaru",
+   "name": "Daiguren Hyorinmaru",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-final-getsuga-tensho",
+   "name": "Final Getsuga Tensho",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-flash-cry",
+   "name": "Flash Cry",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-gokei",
+   "name": "Gokei",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-guncho-tsurara",
+   "name": "Guncho Tsurara",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-hado-31-shakkaho",
+   "name": "Hado 31 Shakkaho",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-hado-33-sokatsui",
+   "name": "Hado 33 Sokatsui",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-hado-63-raikoho",
+   "name": "Hado 63 Raikoho",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-hado-73-soren-sokatsui",
+   "name": "Hado 73 Soren Sokatsui",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-hado-90-kurohitsugi",
+   "name": "Hado 90 Kurohitsugi",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-hakka-no-togame",
+   "name": "Hakka no Togame",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-hihio-zabimaru",
+   "name": "Hihio Zabimaru",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-hyorinmaru",
+   "name": "Hyorinmaru",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-hyoten-hyakkaso",
+   "name": "Hyoten Hyakkaso",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-kamisori-benihime",
+   "name": "Kamisori Benihime",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-katen-kyokotsu",
+   "name": "Katen Kyokotsu",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-kendo",
+   "name": "Kendo",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-konjiki-ashisogi-jizo",
+   "name": "Konjiki Ashisogi Jizo",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-kyoka-suigetsu",
+   "name": "Kyoka Suigetsu",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-lanza-del-relampago",
+   "name": "Lanza del Relampago",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-los-lobos",
+   "name": "Los Lobos",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-minazuki",
+   "name": "Minazuki",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-nozarashi",
+   "name": "Nozarashi",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-ryodan",
+   "name": "Ryodan",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-santa-teresa",
+   "name": "Santa Teresa",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-segunda-etapa",
+   "name": "Segunda Etapa",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-senbonzakura",
+   "name": "Senbonzakura",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-senbonzakura-kageyoshi",
+   "name": "Senbonzakura Kageyoshi",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-sennen-hyoro",
+   "name": "Sennen Hyoro",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-shukei-hakuteiken",
+   "name": "Shukei Hakuteiken",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-some-no-mai-tsukishiro",
+   "name": "Some no Mai Tsukishiro",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-soo-zabimaru",
+   "name": "Soo Zabimaru",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-suzumushi",
+   "name": "Suzumushi",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-suzumushi-tsuishiki-enma-korogi",
+   "name": "Suzumushi Tsuishiki Enma Korogi",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-tensa-zangetsu",
+   "name": "Tensa Zangetsu",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-tsugi-no-mai-hakuren",
+   "name": "Tsugi no Mai Hakuren",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-bl-zabimaru",
+   "name": "Zabimaru",
+   "type": "power",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "atk-db-arrow-knee",
+   "name": "Arrow Knee",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-autonomous-ultra-instinct",
+   "name": "Autonomous Ultra Instinct",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-berserk-dragon-fist",
+   "name": "Berserk Dragon Fist",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-blast-1",
+   "name": "Blast 1",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-blinding-blitz",
+   "name": "Blinding Blitz",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-blow-strike",
+   "name": "Blow Strike",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-chaotic-time-impact",
+   "name": "Chaotic Time Impact",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-demon-pursuit-attack",
+   "name": "Demon Pursuit Attack",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-dragon-assault",
+   "name": "Dragon Assault",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-dragon-hammer-strike",
+   "name": "Dragon Hammer Strike",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-dragon-smash",
+   "name": "Dragon Smash",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-evil-rise-strike",
+   "name": "Evil Rise Strike",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-eyes-of-fear",
+   "name": "Eyes of Fear",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-final-galick-rush",
+   "name": "Final Galick Rush",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-flash-destructo-disc",
+   "name": "Flash Destructo-Disc",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-gigantic-flame",
+   "name": "Gigantic Flame",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-guided-masenko",
+   "name": "Guided Masenko",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-hi-speed-destructo-disc",
+   "name": "Hi-Speed Destructo-Disc",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-hyper-galick-gun",
+   "name": "Hyper Galick Gun",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-impact-strike",
+   "name": "Impact Strike",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-justice-rush",
+   "name": "Justice Rush",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-justice-tempest",
+   "name": "Justice Tempest",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-limit-breaker-burning-attack",
+   "name": "Limit Breaker Burning Attack",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-limit-breaker-masenko",
+   "name": "Limit Breaker Masenko",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-orin-combo",
+   "name": "Orin Combo",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-super-afterimage",
+   "name": "Super Afterimage",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-super-back-jump",
+   "name": "Super Back Jump",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-db-super-burning-attack",
+   "name": "Super Burning Attack",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "atk-op-arm-point",
+   "name": "Arm Point",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-bajrang-gun",
+   "name": "Bajrang Gun",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-bien-cuit-grill-shot",
+   "name": "Bien Cuit Grill Shot",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-buraikan",
+   "name": "Buraikan",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-buzz-cut-mochi",
+   "name": "Buzz Cut Mochi",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-cien-fleur",
+   "name": "Cien Fleur",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-clutch",
+   "name": "Clutch",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-cold-nezumi-zeppyo",
+   "name": "Cold Nezumi Zeppyo",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-concasse",
+   "name": "Concasse",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-conqueror-s-haki-clash",
+   "name": "Conqueror's Haki Clash",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-counter-shock",
+   "name": "Counter Shock",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-coup-de-vent",
+   "name": "Coup de Vent",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-cyclone-tempo",
+   "name": "Cyclone Tempo",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-dai-enkai-entei",
+   "name": "Dai Enkai Entei",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-demonio-fleur",
+   "name": "Demonio Fleur",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-divine-departure",
+   "name": "Divine Departure",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-enkai",
+   "name": "Enkai",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-firebird-star",
+   "name": "Firebird Star",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-franky-radical-hip",
+   "name": "Franky Radical Hip",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gamma-knife",
+   "name": "Gamma Knife",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gear-fifth",
+   "name": "Gear Fifth",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gear-fourth",
+   "name": "Gear Fourth",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gear-second",
+   "name": "Gear Second",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gigantesco-mano",
+   "name": "Gigantesco Mano",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-bazooka",
+   "name": "Gomu Gomu no Bazooka",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-elephant-gun",
+   "name": "Gomu Gomu no Elephant Gun",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-gatling",
+   "name": "Gomu Gomu no Gatling",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-king-kong-gun",
+   "name": "Gomu Gomu no King Kong Gun",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-pistolet",
+   "name": "Gomu Gomu no Pistolet",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-red-hawk",
+   "name": "Gomu Gomu no Red Hawk",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-guard-point",
+   "name": "Guard Point",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gura-gura-no-mi-quake",
+   "name": "Gura Gura no Mi Quake",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-gura-gura-quake",
+   "name": "Gura Gura Quake",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-hanauta-sancho-yahazu-giri",
+   "name": "Hanauta Sancho Yahazu Giri",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-hiken",
+   "name": "Hiken",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-horn-point",
+   "name": "Horn Point",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-impact-dial",
+   "name": "Impact Dial",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-injection-shot",
+   "name": "Injection Shot",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-jujika",
+   "name": "Jujika",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-k-room",
+   "name": "K-Room",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-kaen-boshi",
+   "name": "Kaen Boshi",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-karakusagawara-seiken",
+   "name": "Karakusagawara Seiken",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-king-of-hell",
+   "name": "King of Hell",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-kokuto-yoru-slash",
+   "name": "Kokuto Yoru Slash",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-kung-fu-point",
+   "name": "Kung Fu Point",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-kurouzu",
+   "name": "Kurouzu",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-kyokaen",
+   "name": "Kyokaen",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-liberation",
+   "name": "Liberation",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-midori-boshi",
+   "name": "Midori Boshi",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-mil-fleur",
+   "name": "Mil Fleur",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-mirage-tempo",
+   "name": "Mirage Tempo",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-mochi-tsuki",
+   "name": "Mochi Tsuki",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-monster-point",
+   "name": "Monster Point",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-mouton-shot",
+   "name": "Mouton Shot",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-nemuriuta-flanc",
+   "name": "Nemuriuta Flanc",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-oni-giri",
+   "name": "Oni Giri",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-onigawara-seiken",
+   "name": "Onigawara Seiken",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-party-table-kick-course",
+   "name": "Party Table Kick Course",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-poele-a-frire",
+   "name": "Poele à Frire",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-power-mochi",
+   "name": "Power Mochi",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-puncture-wille",
+   "name": "Puncture Wille",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-purgatory-oni-giri",
+   "name": "Purgatory Oni Giri",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-radical-beam",
+   "name": "Radical Beam",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-red-roc",
+   "name": "Red Roc",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-rokushiki",
+   "name": "Rokushiki",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-room",
+   "name": "Room",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-ryu-no-ibuki",
+   "name": "Ryu no Ibuki",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-ryu-no-kagizume",
+   "name": "Ryu no Kagizume",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-samehada-shotei",
+   "name": "Samehada Shotei",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-santoryu-ougi-sanzen-sekai",
+   "name": "Santoryu Ougi Sanzen Sekai",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-shambles",
+   "name": "Shambles",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-shishi-sonson",
+   "name": "Shishi Sonson",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-spider-net",
+   "name": "Spider Net",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-strong-right",
+   "name": "Strong Right",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-swallow-bond-avant",
+   "name": "Swallow Bond Avant",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-tatsumaki",
+   "name": "Tatsumaki",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-thunder-lance-tempo",
+   "name": "Thunder Lance Tempo",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-thunderbolt-tempo",
+   "name": "Thunderbolt Tempo",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-tora-gari",
+   "name": "Tora Gari",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-weapons-left",
+   "name": "Weapons Left",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-yarinami",
+   "name": "Yarinami",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-zan-giri-mochi",
+   "name": "Zan Giri Mochi",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "atk-op-zeus-breath",
+   "name": "Zeus Breath",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "audio-dial",
+   "name": "Audio-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "axe",
+   "name": "Axe",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "axe-dial",
+   "name": "Axe-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ballywood-kingdom",
+   "name": "Royaume de Ballywood",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "bandit",
+   "name": "Bandit",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "banna",
+   "name": "Banna",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "barrier-puppets",
+   "name": "Barrier Puppets",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "bateaux-a-dials",
+   "name": "Bateaux à Dials",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "baton-bo",
+   "name": "Bâton bō",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "beast-human-fury-kicks",
+   "name": "Beast-Human Fury Kicks",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "beast-human-needle-senbon",
+   "name": "Beast-Human Needle Senbon",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "benihime",
+   "name": "Benihime",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "benisu-island",
+   "name": "Benisu Island",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "bigaro",
+   "name": "Bigaro",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "biscuits",
+   "name": "Biscuits",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "black",
+   "name": "Black",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "bodyguard",
+   "name": "Bodyguard",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "boule-4-etoiles",
+   "name": "Boule à quatre étoiles",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "breath-dial",
+   "name": "Breath-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "brench",
+   "name": "Brench",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "briss-kingdom",
+   "name": "Royaume de Briss",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "businessman",
+   "name": "Businessman",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "captain-of-the-konoha-military-police-force",
+   "name": "Captain of the Konoha Military Police Force",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "caretaker",
+   "name": "Caretaker",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "caretaker-of-the-konoha-orphanage",
+   "name": "Caretaker of the Konoha Orphanage",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "carpenter",
+   "name": "Carpenter",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "castle-town",
+   "name": "Ville du Château",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "cat-food-clone",
+   "name": "Cat Food Clone",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "centaurea-kingdom",
+   "name": "Royaume de Centaurea",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ceramic-village",
+   "name": "Ceramic Village",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "chaine-kusari",
+   "name": "Chaîne kusari",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "chakra-entity",
+   "name": "Chakra Entity",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "chakra-levitation-technique",
+   "name": "Chakra Levitation Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "chakra-threads",
+   "name": "Chakra Threads",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "chasseur-de-primes",
+   "name": "Chasseur de primes",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "chikamatsu-collection",
+   "name": "Chikamatsu Collection",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "chunin-exam-proctor",
+   "name": "Chūnin Exam Proctor",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "chunin-exams-assistant",
+   "name": "Chūnin Exams Assistant",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "church",
+   "name": "Église",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "circus-performer",
+   "name": "Circus performer",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "civil",
+   "name": "Civil",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "clan-sarutobi",
+   "name": "Clan Sarutobi",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "claw-grime",
+   "name": "Claw Grime",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "clone-du-fruit-de-la-passion",
+   "name": "Clone du fruit de la passion",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "clone-du-fruit-des-coussinets",
+   "name": "Clone du fruit des Coussinets",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "clone-du-fruit-du-barbotage",
+   "name": "Clone du fruit du Barbotage",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "clone-du-fruit-du-tailladant",
+   "name": "Clone du fruit du tailladant",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "cocoyasi",
+   "name": "Village de Cocoyasi",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "communications-team",
+   "name": "Communications Team",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "construction-worker",
+   "name": "Construction worker",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "controle-dial",
+   "name": "Contrôle-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "corps-medical",
+   "name": "Corps médical",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "councillor",
+   "name": "Councillor",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "counter-terrorism-division",
+   "name": "Counter-Terrorism Division",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "creature-invoquee",
+   "name": "Créature invoquée",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "criminalminer-former",
+   "name": "CriminalMiner (former)",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "crystal-barrier-technique",
+   "name": "Crystal Barrier Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "cultist",
+   "name": "Cultist",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "daidai-village",
+   "name": "Daidai Village",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "daimyo-s-bodyguard",
+   "name": "Daimyō's Bodyguard",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "daimyo-seigneur",
+   "name": "Daimyō (seigneur)",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "destroying-axe-fist",
+   "name": "Destroying Axe Fist",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "detective",
+   "name": "Détective",
+   "type": "profession",
+   "universe": "Death Note"
+  },
+  {
+   "slug": "deul-kingdom",
+   "name": "Royaume de Deul",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "diial-des-tenebres",
+   "name": "Diial des Ténèbres",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "dispositif-du-sceau-maudit",
+   "name": "Dispositif du Sceau Maudit",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "disruption-cube",
+   "name": "Disruption Cube",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "doctor",
+   "name": "Doctor",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "dorakiya",
+   "name": "Dorakiya",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "downs-island",
+   "name": "Île Downs",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "dressrosa-alliance-pirate",
+   "name": "Dressrosa / Alliance Pirate",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "drift",
+   "name": "Drift",
+   "type": "skill",
+   "universe": "Initial D"
+  },
+  {
+   "slug": "earth-release-presumed",
+   "name": "Earth Release  (Presumed)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "earth-release-while-chakra-enhanced",
+   "name": "Earth Release  (While chakra enhanced)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "echo-technique",
+   "name": "Echo Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "eight-tails",
+   "name": "Eight-Tails",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "eight-trigrams-sixteen-palms",
+   "name": "Eight Trigrams Sixteen Palms",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "eisen-dial",
+   "name": "Eisen-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "elderly-village",
+   "name": "Village des Aînés",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "elemental-puppets",
+   "name": "Elemental Puppets",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "elite-bodyguard",
+   "name": "Elite Bodyguard",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "epee-d-ohm",
+   "name": "Epée d'Ohm",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "equipage-de-bigalo",
+   "name": "Equipage de Bigalo",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "equipage-de-pandaman",
+   "name": "Equipage de Pandaman",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ermite-sage",
+   "name": "Ermite (Sage)",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "eternal-mangekyo-sharingan",
+   "name": "Eternal Mangekyō Sharingan",
+   "type": "skill",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "examinateur-de-l-examen-chunin",
+   "name": "Examinateur de l'examen chūnin",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "explosion-corps",
+   "name": "Explosion Corps",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "farmer-naruto",
+   "name": "Farmer",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "fier-baril",
+   "name": "Fier Baril",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fifth-hokage-s-assistant",
+   "name": "Fifth Hokage's Assistant",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "fifth-kazekage-s-bodyguard",
+   "name": "Fifth Kazekage's Bodyguard",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "fils-d-acier",
+   "name": "Fils d'acier",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "fire-release-water-mist",
+   "name": "Fire Release: Water Mist",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "fire-release-while-chakra-enhanced",
+   "name": "Fire Release  (While chakra enhanced)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "fisherman",
+   "name": "Fisherman",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "flail",
+   "name": "Flail",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "flamme-dial",
+   "name": "Flamme-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "flash-dial",
+   "name": "Flash-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "flavor-dial",
+   "name": "Flavor-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "flea-shuriken",
+   "name": "Flea Shuriken",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "fleche-du-stand",
+   "name": "Flèche du Stand",
+   "type": "artifact",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "flevance-kingdom",
+   "name": "Royaume de Flevance",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "foodvalten-island",
+   "name": "Île Foodvalten",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "foosha",
+   "name": "Village de Fushia",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "foret-shikkotsu",
+   "name": "Forêt Shikkotsu",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "four-ninja-animal-warriors",
+   "name": "Four Ninja Animal Warriors",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "frauce-kingdom",
+   "name": "Royaume de Frauce",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "freres-voleurs",
+   "name": "Frères Voleurs",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit",
+   "name": "Fruit",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-l-amour",
+   "name": "Fruit de l'amour",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-l-araignee-version-rosamygale-grauvogeli",
+   "name": "Fruit de l'Araignée, version Rosamygale grauvogeli",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-l-art",
+   "name": "Fruit de l'Art",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-l-uf",
+   "name": "Fruit de l’Œuf",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-la-chauve-souris-vampire-modele-fruit-bat",
+   "name": "Fruit de la chauve-souris / vampire (modèle fruit-bat)",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-la-chauve-souris-version-vampire",
+   "name": "Fruit de la Chauve-Souris, version Vampire",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-la-copie",
+   "name": "Fruit de la Copie",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-la-dissolution",
+   "name": "Fruit de la Dissolution",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-la-force",
+   "name": "Fruit de la force",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-la-magie",
+   "name": "Fruit de la Magie",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-la-necromancie",
+   "name": "Fruit de la Nécromancie",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-la-passion",
+   "name": "Fruit de la passion",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-de-la-salamandre-version-axolotl",
+   "name": "Fruit de la Salamandre, version Axolotl",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-bonbon",
+   "name": "Fruit du Bonbon",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-bovin-version-bison",
+   "name": "Fruit du Bovin, version Bison",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-bovin-version-lama",
+   "name": "Fruit du Bovin, version Lama",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-bruleur",
+   "name": "Fruit du Brûleur",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-canide-version-tanuki",
+   "name": "Fruit du Canidé, version Tanuki",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-cheval",
+   "name": "Fruit du Cheval",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-cuistot",
+   "name": "Fruit du Cuistot",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-dans-le-mille",
+   "name": "Fruit du Dans-le-mille",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-demon",
+   "name": "Fruit du Démon",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-demon-artificiel-de-vegapunk",
+   "name": " Fruit du démon artificiel de Végapunk",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-dinosaure-version-allosaurus",
+   "name": "Fruit du Dinosaure, version Allosaurus",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-dinosaure-version-brachiosaure",
+   "name": "Fruit du Dinosaure, version Brachiosaure",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-dinosaure-version-pachycephalosaurus",
+   "name": "Fruit du Dinosaure, version Pachycephalosaurus",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-dinosaure-version-pteranodon",
+   "name": "Fruit du Dinosaure, version Ptéranodon",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-dinosaure-version-spinosaurus",
+   "name": "Fruit du Dinosaure, version Spinosaurus",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-dinosaure-version-triceratops",
+   "name": "Fruit du Dinosaure, version Tricératops",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-dresseur",
+   "name": "Fruit du Dresseur",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-felin-version-leopard",
+   "name": "Fruit du Félin, version Léopard",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-felin-version-tigre-a-dents-de-sabre",
+   "name": "Fruit du Félin, version Tigre à dents de sabre",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-fil",
+   "name": "Fruit du Fil",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-filet",
+   "name": "Fruit du Filet",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-flocon",
+   "name": "Fruit du Flocon",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-fourneau",
+   "name": "Fruit du Fourneau",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-gaz",
+   "name": "Fruit du Gaz",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-givre",
+   "name": "Fruit du Givre",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-glouton",
+   "name": "Fruit du Glouton",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-joujou",
+   "name": "Fruit du Joujou",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-kilo-kilo",
+   "name": "Fruit du Kilo-Kilo",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-lien",
+   "name": "Fruit du Lien",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-livre",
+   "name": "Fruit du Livre",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-livreur",
+   "name": "Fruit du Livreur",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-magma",
+   "name": "Fruit du Magma",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-marais",
+   "name": "Fruit du Marais",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-millet",
+   "name": "Fruit du Millet",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-miroir",
+   "name": "Fruit du Miroir",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-murmure",
+   "name": "Fruit du Murmure",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-nain",
+   "name": "Fruit du Nain",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-pachyderme",
+   "name": "Fruit du Pachyderme",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-pachyderme-version-mammouth",
+   "name": "Fruit du Pachyderme, version Mammouth",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-paf-paf",
+   "name": "Fruit du Paf-Paf",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-papier",
+   "name": "Fruit du Papier",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-parchemin",
+   "name": "Fruit du Parchemin",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-passe-muraille",
+   "name": "Fruit du Passe-Muraille",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-pinceau",
+   "name": "Fruit du Pinceau",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-plus-plus",
+   "name": "Fruit du Plus-Plus",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-poison",
+   "name": "Fruit du Poison",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-poisse-poisse",
+   "name": "Fruit du Poisse-Poisse",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-poisson-version-dragon-azur",
+   "name": "Fruit du Poisson, version Dragon azur",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-portier",
+   "name": "Fruit du Portier",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-potele",
+   "name": "Fruit du Potelé",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-pousse-pousse",
+   "name": "Fruit du Pousse-Pousse",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-presse-presse",
+   "name": "Fruit du Presse-Presse",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-regard",
+   "name": "Fruit du Regard",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-reptile-version-anaconda",
+   "name": "Fruit du Reptile, version Anaconda",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-reptile-version-cobra-royal",
+   "name": "Fruit du Reptile, version Cobra Royal",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-reptile-version-dragon-a-huit-tetes",
+   "name": "Fruit du Reptile, version Dragon à huit têtes",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-ressort",
+   "name": "Fruit du Ressort",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-riz-gluant",
+   "name": "Fruit du Riz Gluant",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-sequestre",
+   "name": "Fruit du Séquestre",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-slash-slash",
+   "name": "Fruit du Slash-Slash",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-sommeil",
+   "name": "Fruit du Sommeil",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-son",
+   "name": "Fruit du Son",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-tchou-tchou",
+   "name": "Fruit du Tchou-Tchou",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-temps",
+   "name": "Fruit du Temps",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-tir",
+   "name": "Fruit du Tir",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-tonne-tonne",
+   "name": "Fruit du Tonne-Tonne",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-tournis",
+   "name": "Fruit du tournis",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-tremblement",
+   "name": "Fruit du Tremblement",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-vetement",
+   "name": "Fruit du Vêtement",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-volatile-version-albatros",
+   "name": "Fruit du Volatile, version Albatros",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-volatile-version-faucon",
+   "name": "Fruit du Volatile, version Faucon",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-volatile-version-nue",
+   "name": "Fruit du Volatile, version Nue",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-du-vole-au-vent",
+   "name": "Fruit du Vole-au-Vent",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-etincelant",
+   "name": "Fruit Étincelant",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-flottant",
+   "name": "Fruit Flottant",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-fouisseur",
+   "name": "Fruit Fouisseur",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-fumigene",
+   "name": "Fruit Fumigène",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-glisse-glisse",
+   "name": "Fruit Glisse-Glisse",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-incassable",
+   "name": "Fruit Incassable",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-luminescent",
+   "name": "Fruit Luminescent",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-ramollo",
+   "name": "Fruit Ramollo",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-tailladant",
+   "name": "Fruit Tailladant",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruit-touffu-touffu",
+   "name": "Fruit Touffu-Touffu",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fruits",
+   "name": "Fruits",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fulguro-fruit",
+   "name": "Fulguro-Fruit",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "futoru",
+   "name": "Futoru",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "gambler",
+   "name": "Gambler",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "gantelet-shinobi",
+   "name": "Gantelet shinobi",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "gathering-of-the-snakes",
+   "name": "Gathering of the Snakes",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "gato-s-bodyguard-mercenary",
+   "name": "Gatō's bodyguard  (Mercenary)",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "gear-2-gear-second",
+   "name": "Gear 2 / Gear Second",
+   "type": "skill",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "gear-3-gear-third",
+   "name": "Gear 3 / Gear Third",
+   "type": "skill",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "gear-4-gear-fourth",
+   "name": "Gear 4 / Gear Fourth",
+   "type": "skill",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "gear-4-gear-fourth-bound-man",
+   "name": "Gear 4 / Gear Fourth : Bound Man",
+   "type": "skill",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "gear-4-gear-fourth-snake-man",
+   "name": "Gear 4 / Gear Fourth : Snake Man",
+   "type": "skill",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "gear-4-gear-fourth-tank-man",
+   "name": "Gear 4 / Gear Fourth : Tank Man",
+   "type": "skill",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "genbu-island",
+   "name": "Genbu, la Tortue-île",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "genin-exams-proctor",
+   "name": "Genin Exams Proctor",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "genkidama",
+   "name": "Genkidama",
+   "type": "power",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "gentle-step-spiralling-twin-lion-fists",
+   "name": "Gentle Step Spiralling Twin Lion Fists",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "gran-tesero",
+   "name": "Gran Tesero",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "grelot",
+   "name": "Grelot",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "guard",
+   "name": "Guard",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "haineko-bleach",
+   "name": "Haineko",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "haki-de-l-armement",
+   "name": "Haki de l'Armement",
+   "type": "skill",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "haki-de-l-observation",
+   "name": "Haki de l'Observation",
+   "type": "skill",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "haki-des-rois",
+   "name": "Haki des Rois",
+   "type": "skill",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "harem-no-tango",
+   "name": "Harem no Tango",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "head-monk",
+   "name": "Head Monk",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "head-of-the-nara-clan",
+   "name": "Head of the Nara Clan",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "head-of-the-uchiha-clan",
+   "name": "Head of the Uchiha Clan",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "heart-acceleration-technique",
+   "name": "Heart Acceleration Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "heat-dial",
+   "name": "Heat-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hidden-cloud-village",
+   "name": "Village caché des nuages",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hito-hito-no-mi-modele-nika",
+   "name": "Hito Hito no Mi, modèle Nika",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hokage-s-assistant",
+   "name": "Hokage's Assistant",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "hostess",
+   "name": "Hostess",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "housewife",
+   "name": "Housewife",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "howling-wolf-village",
+   "name": "Howling Wolf Village",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "hundred-puppet-army",
+   "name": "Hundred Puppet Army",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "hydro-dial",
+   "name": "Hydro-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hyorinmaru",
+   "name": "Hyōrinmaru",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "hypnotic-genjutsu-wild-beast-communication",
+   "name": "Hypnotic Genjutsu: Wild Beast Communication",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ice",
+   "name": "Ice",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ice-breaking-fist",
+   "name": "Ice-Breaking Fist",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ice-release-earthen-consecutive-chains-of-ice",
+   "name": "Ice Release: Earthen Consecutive Chains of Ice",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ice-release-ice-breaking-sledgehammer",
+   "name": "Ice Release: Ice-Breaking Sledgehammer",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ice-sword-technique",
+   "name": "Ice Sword Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ile-celeste",
+   "name": "Île Céleste",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "impact-dial",
+   "name": "Impact-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "inner",
+   "name": "Inner",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ino-saku-sai",
+   "name": "Ino–Saku–Sai",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ino-shika-cho",
+   "name": "Ino–Shika–Chō",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "instructor",
+   "name": "Instructor",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ippou-say",
+   "name": "Ippou-Say",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ishi-terrorists",
+   "name": "Ishi Terrorists",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ishigakure",
+   "name": "Ishigakure",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "isshiki-s-dojutsu",
+   "name": "Isshiki's Dōjutsu",
+   "type": "skill",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "izuno",
+   "name": "Clan Izuno",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "jam",
+   "name": "Île Confiture",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "jelly",
+   "name": "Île Gelée",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "jet-board",
+   "name": "Jet-Board",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "jet-dial",
+   "name": "Jet-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "jet-shoes",
+   "name": "Jet Shoes",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "jo",
+   "name": "Jō",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "kabocha",
+   "name": "Kabocha",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "kagetsu",
+   "name": "Clan Kagetsu",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "kaji-king-i-ii",
+   "name": "Kaji King I & II",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kama-rift",
+   "name": "Kāma Rift",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "kanabun-gang",
+   "name": "Gang Kanabun",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "kani-crane",
+   "name": "Kani Crane",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "karakura",
+   "name": "Karakura",
+   "type": "place",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "karate-island",
+   "name": "Île du Karaté",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "katar",
+   "name": "Katar",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "katasuke-tono-s-assistant",
+   "name": "Katasuke Tōno's Assistant",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "katen-kyokotsu",
+   "name": "Katen Kyōkotsu",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "ketsuryugan",
+   "name": "Ketsuryūgan",
+   "type": "skill",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "kibo",
+   "name": "Île Levure",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kido-s-juinjutsu",
+   "name": "Kido's Juinjutsu",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "kimi",
+   "name": "Île Jaune d'Œuf",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kinko",
+   "name": "Île Coffre",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kogarashi",
+   "name": "kogarashi",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kuwa",
+   "name": "Kuwa",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "kyoka-suigetsu",
+   "name": "Kyōka Suigetsu",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "l-equipage-amigo",
+   "name": "L’équipage Amigo",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-asl",
+   "name": "L’équipage ASL",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-d-alvida",
+   "name": "L’équipage d’Alvida",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-d-expedition",
+   "name": "L’équipage d’Expédition",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-de-caribou",
+   "name": "L’équipage de Caribou",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-de-diez-barrels",
+   "name": "L’équipage de Diez Barrels",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-de-ganzack",
+   "name": "l’équipage de Ganzack",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-de-hakahoka",
+   "name": "L’équipage de Hakahoka",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-de-roshio",
+   "name": "L’équipage de Roshio",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-acumates",
+   "name": "L’équipage des Acumates",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-candys",
+   "name": "L’équipage des Candys",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-cuisiniers",
+   "name": "L’équipage des Cuisiniers",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-gros-casques",
+   "name": "L’équipage des Gros Casques",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-maquereaux",
+   "name": "L'Équipage des Maquereaux",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-pirates-a-la-moustache",
+   "name": "L’équipage des Pirates à la Moustache",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-pirates-kuja",
+   "name": "L’équipage des Pirates Kuja",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-pirates-roger",
+   "name": "L’équipage des Pirates Roger",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-pirates-schneider",
+   "name": "L’équipage des Pirates Schneider",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-pirates-treasure",
+   "name": "L’équipage des Pirates Treasure",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-pirates-yes",
+   "name": "L’équipage des Pirates Yes",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-du-bluejam",
+   "name": "L’équipage du Bluejam",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-du-capitaine-usopp",
+   "name": "L’équipage du Capitaine Usopp",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-du-croissant-de-lune",
+   "name": "L’équipage du Croissant de Lune",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-du-new-age",
+   "name": "l’équipage du New Age",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-tearoom",
+   "name": "L’équipage Tearoom",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "labyrinth-barrier",
+   "name": "Labyrinth Barrier",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "lampe-dial",
+   "name": "Lampe-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "lance",
+   "name": "Lance",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "land-of-bean-jam",
+   "name": "Pays de la Pâte de Haricot",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "land-of-honey",
+   "name": "Pays du Miel",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "land-of-lightning",
+   "name": "Pays de la Foudre",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "land-of-mountains",
+   "name": "Pays des Montagnes",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "land-of-woods",
+   "name": "Pays des Bois",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "lava-release-expanding-flame-rings",
+   "name": "Lava Release: Expanding Flame Rings",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "le-caire",
+   "name": "Le Caire",
+   "type": "place",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "leader-of-kara",
+   "name": "Leader of Kara",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "leader-of-nadeshiko-village",
+   "name": "Leader of Nadeshiko Village",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "leaf-flash-kick",
+   "name": "Leaf Flash Kick",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "leaf-s-anbu",
+   "name": "Leaf's Anbu",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "liberation-de-l-eau-suiton",
+   "name": "Libération de l'Eau (Suiton)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "liberation-de-la-foudre-raiton",
+   "name": "Libération de la Foudre (Raiton)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "liberation-de-la-terre-doton",
+   "name": "Libération de la Terre (Doton)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "liberation-du-feu-katon",
+   "name": "Libération du Feu (Katon)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "liberation-du-vent-futon",
+   "name": "Libération du Vent (Fūton)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "liberation-du-yang",
+   "name": "Libération du Yang",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "liberation-du-yin",
+   "name": "Libération du Yin",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "liberation-du-yin-yang",
+   "name": "Libération du Yin-Yang",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "lightning-release-affinity-anime-only",
+   "name": "Lightning Release  (Affinity; Anime only)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "lightning-release-electric-shock-needles",
+   "name": "Lightning Release: Electric Shock Needles",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "lightning-release-thunder",
+   "name": "Lightning Release: Thunder",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "lightning-release-tiger-scissors",
+   "name": "Lightning Release: Tiger Scissors",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "lightning-tackle",
+   "name": "Lightning Tackle",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "liqueur",
+   "name": "Liqueur",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "loan-collector",
+   "name": "Loan Collector",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "look-special",
+   "name": "Look Spécial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "lorentz-gun",
+   "name": "Lorentz Gun",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "loving",
+   "name": "Île Amour",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "magnet-release-lightning-god-self",
+   "name": "Magnet Release: Lightning God Self",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "magneto-fruit",
+   "name": "Magnéto-Fruit",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "majiatsuka-kingdom",
+   "name": "Royaume de Majiatsuka",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "margarine",
+   "name": "Margarine",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "massue",
+   "name": "Massue",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "master-of-the-hozuki-castle",
+   "name": "Master of the Hōzuki Castle",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "medicinal-herb-salesman",
+   "name": "Medicinal Herb Salesman",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "medicinal-herb-saleswomen",
+   "name": "Medicinal Herb Saleswomen",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "memory-blocking-technique",
+   "name": "Memory Blocking Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "mercenaire",
+   "name": "Mercenaire",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "messenger-hawk",
+   "name": "Messenger Hawk",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "milenge",
+   "name": "Milenge",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "milk",
+   "name": "Milk",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "milky-dial",
+   "name": "Milky-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "miner",
+   "name": "Miner",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "minister",
+   "name": "Minister",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "mogaro-kingdom",
+   "name": "Royaume de Mogaro",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "monk",
+   "name": "Monk",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "mother-ship",
+   "name": "Mother Ship",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "mountains-graveyard",
+   "name": "Cimetière des Monts",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "mud-release",
+   "name": "Mud Release",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "mud-release-bottomless-mud-hole",
+   "name": "Mud Release: Bottomless Mud Hole",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "mud-release-landslide",
+   "name": "Mud Release: Landslide",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "mud-release-mud-doll",
+   "name": "Mud Release: Mud Doll",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "mud-release-muddy-water-wall",
+   "name": "Mud Release: Muddy Water Wall",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "mystoria-island",
+   "name": "Île Mystoria",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "nagato-pain",
+   "name": "Nagato, Pain",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "nanimonai-island",
+   "name": "Île Sans Rien",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "navire-d-hina",
+   "name": "Navire d’Hina",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "navire-de-galdino",
+   "name": "Navire de Galdino",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "navire-de-la-marine",
+   "name": "Navire de la Marine",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "navire-de-pudding-pudding",
+   "name": "Navire de Pudding Pudding",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "navire-des-maquereaux",
+   "name": "Navire des Maquereaux",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "navire-du-g-5",
+   "name": "Navire du G-5",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "new-moon-flower-perfume",
+   "name": "New Moon Flower Perfume",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ninja-deserteur-missing-nin",
+   "name": "Ninja déserteur (Missing-nin)",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ninja-mercenaire",
+   "name": "Ninja mercenaire",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ninshu-follower",
+   "name": "Ninshū Follower",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "nitro-fruit",
+   "name": "Nitro-Fruit",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "notice-town",
+   "name": "Notice Town",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "nozarashi",
+   "name": "Nozarashi",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "nunchaku",
+   "name": "Nunchaku",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "nurse",
+   "name": "Nurse",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ombrelle",
+   "name": "Ombrelle",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "onde-hamon",
+   "name": "Onde (Hamon)",
+   "type": "skill",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "one-piece-tresor",
+   "name": "Le One Piece",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "orbs-of-light",
+   "name": "Orbs of Light",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "oto",
+   "name": "Oto",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "otogakure-spy",
+   "name": "Otogakure spy",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "outer",
+   "name": "Outer",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "oyakata-bune",
+   "name": "Oyakata Bune",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "parasitic-destruction-insect-technique-giant-insect-kidaichu-kikaichu",
+   "name": "Parasitic Destruction Insect Technique (Giant Insect, Kidaichū, Kikaichū)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "parasitic-destruction-insect-technique-kikaichu",
+   "name": "Parasitic Destruction Insect Technique (Kikaichū)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "parasitic-destruction-insect-technique-kikaichu-rinkaichu",
+   "name": "Parasitic Destruction Insect Technique (Kikaichū, Rinkaichū)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "parasitic-destruction-insect-technique-kikaichu-shokaichu",
+   "name": "Parasitic Destruction Insect Technique (Kikaichū, Shōkaichū)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "parasitic-destruction-insect-technique-kochu",
+   "name": "Parasitic Destruction Insect Technique (Kochū)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "parasitic-destruction-insect-technique-rinkaichu",
+   "name": "Parasitic Destruction Insect Technique (Rinkaichū)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "pastry-chef",
+   "name": "Pastry chef",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "personal-guard",
+   "name": "Personal Guard",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "piepie",
+   "name": "Piepie",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "pilote-de-toge",
+   "name": "Pilote de tōge",
+   "type": "profession",
+   "universe": "Initial D"
+  },
+  {
+   "slug": "pilule-d-eveil",
+   "name": "Pilule d'éveil",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "pilule-de-rations-militaires",
+   "name": "Pilule de rations militaires",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "pirate-au-foyer",
+   "name": "Pirate au foyer",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "pirate-de-l-espace",
+   "name": "Pirate de l’Espace",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "pirate-des-fleches-rouges",
+   "name": "Pirate des flèches rouges",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "pirate-naruto",
+   "name": "Pirate",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "poids-d-entrainement",
+   "name": "Poids d'entraînement",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "polestar-islands",
+   "name": "Îles Polestar",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "police-militaire-de-konoha",
+   "name": "Police militaire de Konoha",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "poripori",
+   "name": "Poripori",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "portail-spatio-temporel",
+   "name": "Portail spatio-temporel",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "priest",
+   "name": "Priest",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "priestess",
+   "name": "Priestess",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "princess",
+   "name": "Princess",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "prisoner",
+   "name": "Prisoner",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "professeur-de-l-academie",
+   "name": "Professeur de l'Académie",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "pseudo-jinchuriki",
+   "name": "Pseudo-Jinchūriki",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "pucci-island",
+   "name": "Île Pucci",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "puppet-brigade",
+   "name": "Puppet Brigade",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "puppet-puppet-is-not-in-the-list-anbu-cooking-nin-daimyo-hunter-nin-jinchuriki-medical-nin-mercenary-ninja-missing-nin-ninja-monk-pseudo-jinchuriki-of-allowed-values-for-the-classification-property",
+   "name": "Puppet\"Puppet\" is not in the list (ANBU, Cooking-nin, Daimyō, Hunter-nin, Jinchūriki, Medical-nin, Mercenary Ninja, Missing-nin, Ninja monk, Pseudo-Jinchūriki, ...) of allowed values for the \"Classification\" property.",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "pyro-fruit",
+   "name": "Pyro-Fruit",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "queen-of-roran",
+   "name": "Queen of Rōran",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ramen-chef",
+   "name": "Ramen chef",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "reflection-shinjutsu",
+   "name": "Reflection Shinjutsu",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "reject-dia",
+   "name": "Reject-Dia",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "rinha-clan-s-kekkei-genkai",
+   "name": "Rinha Clan's Kekkei Genkai",
+   "type": "skill",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "risky-red-island",
+   "name": "Île Risky Red",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "rokumitsu",
+   "name": "Rokumitsu",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ryuha-armament-alliance",
+   "name": "Ryūha Armament Alliance",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ryujin-jakka",
+   "name": "Ryūjin Jakka",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "sabre",
+   "name": "Sabre",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "san-faldo",
+   "name": "San Faldo",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "sand-castle-wolf-horn",
+   "name": "Sand Castle Wolf Horn",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "sand-sword",
+   "name": "Sand Sword",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "sannin-legendaire",
+   "name": "Sannin légendaire",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "sanshoku",
+   "name": "Île Tricolore",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "sara-s-daughter",
+   "name": "Sāra's Daughter",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "sasori-s-subordinate",
+   "name": "Sasori's subordinate",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "sasumata",
+   "name": "Sasumata",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "scalpel",
+   "name": "Scalpel",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "sceau-de-suppression-du-chakra",
+   "name": "Sceau de suppression du chakra",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "scientific-ninja-weapons-team",
+   "name": "Scientific Ninja Weapons Team",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "scientifique",
+   "name": "Scientifique",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "sealing-technique-roen-kodon",
+   "name": "Sealing Technique: Rōen Kodon",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "sealing-technique-vitality-seal-formation",
+   "name": "Sealing Technique: Vitality Seal Formation",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "seducing-woods",
+   "name": "Forêt de la Séduction",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "self-seal-technique",
+   "name": "Self-Seal Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "senbonzakura-bleach",
+   "name": "Senbonzakura",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "senior",
+   "name": "Senior",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "sensing-barrier-pass-technique",
+   "name": "Sensing Barrier Pass Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "shakujo",
+   "name": "Shakujō",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "shichibukai",
+   "name": "Shichibukai",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "shield",
+   "name": "Shield",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "shinso",
+   "name": "Shinsō",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "shion-s-bodyguard",
+   "name": "Shion's bodyguard",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "shirogane-three",
+   "name": "Shirogane Three",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "shop-owner",
+   "name": "Shop owner",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "shopkeeper",
+   "name": "Shopkeeper",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "shuigu",
+   "name": "Shuigu",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "shuku-village",
+   "name": "Shuku Village",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "shunpo",
+   "name": "Shunpo",
+   "type": "skill",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "sixis-island",
+   "name": "Île Sixis",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "sky-arrows",
+   "name": "Sky-Arrows",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "slingshot",
+   "name": "Slingshot",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "slug",
+   "name": "Planète Slug",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "smile-d-hippopotame",
+   "name": "SMILE d'hippopotame",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-caiman",
+   "name": "SMILE de caïman",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-carlin",
+   "name": "SMILE de carlin",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-chauve-souris",
+   "name": "SMILE de chauve-souris",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-cheval",
+   "name": "SMILE de cheval",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-gazelle",
+   "name": "SMILE de gazelle",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-l-alpaga",
+   "name": "SMILE de l'alpaga",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-l-autruche",
+   "name": "SMILE de l'autruche",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-l-ecureuil-volant",
+   "name": "SMILE de l'écureuil volant",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-l-elephant",
+   "name": "SMILE de l'éléphant",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-l-heterodon",
+   "name": "SMILE de l'hétérodon",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-la-crotale",
+   "name": "SMILE de la crotale",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-la-girafe",
+   "name": "SMILE de la girafe",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-lapin",
+   "name": "SMILE de lapin",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-lion",
+   "name": "SMILE de lion",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-mouton",
+   "name": "SMILE de mouton",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-serpent",
+   "name": "SMILE de serpent",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-de-souris",
+   "name": "SMILE de souris",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-du-coq",
+   "name": "SMILE du coq",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-du-gorille",
+   "name": "SMILE du gorille",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-du-scorpion",
+   "name": "SMILE du scorpion",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-du-serpent-blanc",
+   "name": "SMILE du serpent blanc",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-du-singe",
+   "name": "SMILE du singe",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "smile-du-tatou",
+   "name": "SMILE du tatou",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "snack",
+   "name": "Snack",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "sogyo-no-kotowari",
+   "name": "Sōgyo no Kotowari",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "soulbane",
+   "name": "Soulbane",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "source-de-l-insouciance",
+   "name": "Source de l'insouciance",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "spero-dial",
+   "name": "Spéro-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "spirit-reflection-technique",
+   "name": "Spirit Reflection Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "spy",
+   "name": "Spy",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "stand-requiem",
+   "name": "Stand Requiem",
+   "type": "power",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "steel-release-steel-projectile",
+   "name": "Steel Release: Steel Projectile",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "steel-release-steel-shield-technique",
+   "name": "Steel Release: Steel Shield Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-baku",
+   "name": "Summoning Technique (Baku)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-bat",
+   "name": "Summoning Technique (Bat)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-bee",
+   "name": "Summoning Technique (Bee)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-conch-king",
+   "name": "Summoning Technique (Conch King)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-crow",
+   "name": "Summoning Technique (Crow)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-demonic-statue-of-the-outer-path-kurama",
+   "name": "Summoning Technique (Demonic Statue of the Outer Path, Kurama)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-doki",
+   "name": "Summoning Technique (Doki)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-giant-eagle",
+   "name": "Summoning Technique (Giant Eagle)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-giant-insect-kidaichu-kikaichu",
+   "name": "Summoning Technique (Giant Insect, Kidaichū, Kikaichū)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-giant-rhino-giant-snake-tailed-chameleon-hawk-ninken-slug",
+   "name": "Summoning Technique (Giant Rhino, Giant Snake-Tailed Chameleon, Hawk, Ninken, Slug)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-hawk-snake",
+   "name": "Summoning Technique (Hawk, Snake)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-hozuki-castle-s-ninken",
+   "name": "Summoning Technique (Hōzuki Castle's Ninken)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-ibuse",
+   "name": "Summoning Technique (Ibuse)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-kamatari",
+   "name": "Summoning Technique (Kamatari)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-konenmaru-rainenmaru",
+   "name": "Summoning Technique (Konenmaru, Rainenmaru)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-leech",
+   "name": "Summoning Technique (Leech)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-moguranmaru",
+   "name": "Summoning Technique (Moguranmaru)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-monkey-king-enma-shinigami",
+   "name": "Summoning Technique (Monkey King: Enma, Shinigami)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-monkey-toad",
+   "name": "Summoning Technique (Monkey, Toad)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-ninken",
+   "name": "Summoning Technique (Ninken)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-ninken-toad",
+   "name": "Summoning Technique (Ninken, Toad)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-nuiba",
+   "name": "Summoning Technique (Nuiba)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-piranha-shark",
+   "name": "Summoning Technique (Piranha, Shark)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-ryurimaru",
+   "name": "Summoning Technique (Ryūrimaru)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-shark",
+   "name": "Summoning Technique (Shark)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-shinigami-snake",
+   "name": "Summoning Technique (Shinigami, Snake)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-shinigami-toad",
+   "name": "Summoning Technique (Shinigami, Toad)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-shiromari",
+   "name": "Summoning Technique (Shiromari)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-slug",
+   "name": "Summoning Technique (Slug)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-snake",
+   "name": "Summoning Technique (Snake)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-spider",
+   "name": "Summoning Technique (Spider)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-toad",
+   "name": "Summoning Technique (Toad)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-tortoise",
+   "name": "Summoning Technique (Tortoise)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "summoning-technique-umibozu",
+   "name": "Summoning Technique (Umibōzu)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "suzumebachi-bleach",
+   "name": "Suzumebachi",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "tailed-beast-drug",
+   "name": "Tailed Beast Drug",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "tailed-beast-shockwave",
+   "name": "Tailed Beast Shockwave",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "tanega",
+   "name": "Île Graine",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "team-10",
+   "name": "Team 10",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "team-7",
+   "name": "Team 7",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "team-hiruzen",
+   "name": "Team Hiruzen",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "team-jiraiya",
+   "name": "Team Jiraiya",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "team-one",
+   "name": "Team One",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "team-shu",
+   "name": "Team Shū",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "team-three",
+   "name": "Team Three",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "team-two",
+   "name": "Team Two",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "temujin-s-continent",
+   "name": "Temujin's Continent",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "terrorist",
+   "name": "Terrorist",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "tessen",
+   "name": "Tessen",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "tete-de-maquereau",
+   "name": "Tête-de-Maquereau",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "thief-former",
+   "name": "Thief  (Former)",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "this-article-is-a-stub-you-can-help-the-narutopedia-by-expanding-it-or-perhaps-you-could-contribute-to-the-discussion-on-the-topic",
+   "name": "This article is a stub. You can help the Narutopedia by expanding it, or perhaps you could contribute to the discussion on the topic.",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "this-article-is-about-the-serial-killer-for-the-genin-see-samidare",
+   "name": "This article is about the serial killer. For the genin, see Samidare.",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "three-section-staff",
+   "name": "Three-Section Staff",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "thunder-dial",
+   "name": "Thunder-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "toad-elder",
+   "name": "Toad Elder",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "todokama",
+   "name": "Todokama",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "tokoyaki-8",
+   "name": "Tokoyaki 8",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "tool-creation-technique",
+   "name": "Tool Creation Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "topping",
+   "name": "Topping",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "toroa-island",
+   "name": "Île de Toroa",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "traveller",
+   "name": "Traveller",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "travesti-fruit",
+   "name": "Travesti-Fruit",
+   "type": "power",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "tree-felling-village",
+   "name": "Tree Felling Village",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "type-sensoriel",
+   "name": "Type sensoriel",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "unique",
+   "name": "Unique",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "village-gate-guard",
+   "name": "Village Gate Guard",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "visio-dial",
+   "name": "Visio-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "voleur",
+   "name": "Voleur",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "wabisuke-bleach",
+   "name": "Wabisuke",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "wagarashi-family",
+   "name": "Clan Wagarashi",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "wagashi",
+   "name": "Wagashi",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "waiter",
+   "name": "Waiter",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "waitress",
+   "name": "Waitress",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "water-release-angry-bitter-rain",
+   "name": "Water Release: Angry Bitter Rain",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "water-release-hail-barrage",
+   "name": "Water Release: Hail Barrage",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "water-release-lotus-light-rupture",
+   "name": "Water Release: Lotus Light Rupture",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "water-release-rapid-thunder-whip-technique",
+   "name": "Water Release: Rapid Thunder Whip Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "water-release-transform-at-will",
+   "name": "Water Release: Transform-at-Will",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "water-release-water-armour",
+   "name": "Water Release: Water Armour",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "water-release-water-blade-technique",
+   "name": "Water Release: Water Blade Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "water-release-water-weapons",
+   "name": "Water Release: Water Weapons",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "water-release-while-chakra-enhanced",
+   "name": "Water Release  (While chakra enhanced)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "water-seven-cp9",
+   "name": "Water Seven / CP9",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "whip",
+   "name": "Whip",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "white-light-blade",
+   "name": "White Light Blade",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "wind-release-affinity-anime-only",
+   "name": "Wind Release  (Affinity; Anime only)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "wind-release-bursting-compressed-air",
+   "name": "Wind Release: Bursting Compressed Air",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "wind-release-flashing-fireworks",
+   "name": "Wind Release: Flashing Fireworks",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "wind-release-multi-layered-gale",
+   "name": "Wind Release: Multi-Layered Gale",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "wind-release-while-chakra-enhanced",
+   "name": "Wind Release  (While chakra enhanced)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "winter-island",
+   "name": "Île d'Hiver",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "wood-release-underground-roots-technique",
+   "name": "Wood Release: Underground Roots Technique",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "yakigashi",
+   "name": "Yakigashi",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "yamaoroshi",
+   "name": "Yamaoroshi",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "yonko",
+   "name": "Yonkō",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "yotsuba-island-region",
+   "name": "Région des îles Yotsuba",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "yukigakure",
+   "name": "Yukigakure",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "zabimaru",
+   "name": "Zabimaru",
+   "type": "artifact",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "zabuza-s-subordinate",
+   "name": "Zabuza's subordinate",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "zalt",
+   "name": "Zalt",
+   "type": "place",
+   "universe": "Dragon Ball"
+  }
+ ]
+}

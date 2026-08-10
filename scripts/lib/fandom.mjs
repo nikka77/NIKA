@@ -215,7 +215,7 @@ export function cleanWikitext(wt) {
 const CACHE_DIR = join(homedir(), '.cache', 'nika', 'fandom') + '/';
 
 /** Mots significatifs d'un nom : sans accents, sans particules ni ponctuation. */
-const nameWords = (s) =>
+export const nameWords = (s) =>
   new Set(
     (s ?? '')
       .normalize('NFD').replace(/[̀-ͯ]/g, '')
@@ -248,7 +248,7 @@ const skeleton = (w) =>
     .replace(/(.)\1+/g, '$1');                    // doublements
 
 // Deux mots se correspondent s'ils sont égaux, ou assez longs et de même squelette.
-const sameWord = (w, x) => w === x || (w.length >= 5 && x.length >= 5 && skeleton(w) === skeleton(x));
+export const sameWord = (w, x) => w === x || (w.length >= 5 && x.length >= 5 && skeleton(w) === skeleton(x));
 
 export function sameEntityName(name, title) {
   const a = nameWords(name), b = nameWords(title);

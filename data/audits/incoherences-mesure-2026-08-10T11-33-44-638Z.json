@@ -1,0 +1,6735 @@
+{
+ "chantier": "chantier 4 — incohérences entre ce qu'une fiche déclare et ce qu'elle dit",
+ "quand": "2026-08-10T11:33:48.697Z",
+ "nature": "DIAGNOSTIC. Aucune écriture. Lectures Supabase paginées par 1000 avec .order('id').",
+ "socle": {
+  "fiches": 7654,
+  "aretes": 16769
+ },
+ "F4_resumeQuiPromet": {
+  "fichesAvecLaFormule": 129,
+  "nonTenues": 29,
+  "lignes": [
+   {
+    "slug": "bikochu-search-team",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 2,
+    "promis": 5,
+    "livre": 6,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Shino Aburame, Hinata Hyūga et 2 autres."
+   },
+   {
+    "slug": "massue",
+    "type": "artifact",
+    "relation": "possede",
+    "nomsCites": 3,
+    "nAnnonce": 2,
+    "promis": 5,
+    "livre": 4,
+    "ecart": 1,
+    "aUnDescFr": false,
+    "resumeVisible": true,
+    "summary": "Arme / outil de l'univers Naruto — porté par Tenten, Yagura Karatachi, Banna et 2 autres."
+   },
+   {
+    "slug": "eight-man-squad",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 6,
+    "promis": 9,
+    "livre": 10,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Kakashi Hatake, Yamato et 6 autres."
+   },
+   {
+    "slug": "kara",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 17,
+    "promis": 20,
+    "livre": 26,
+    "ecart": -6,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Organisation de l'univers Naruto — réunit Koji Kashin, Victor, Kawaki et 17 autres."
+   },
+   {
+    "slug": "kama",
+    "type": "artifact",
+    "relation": "possede",
+    "nomsCites": 3,
+    "nAnnonce": 8,
+    "promis": 11,
+    "livre": 12,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Tenten, Sasori et 8 autres."
+   },
+   {
+    "slug": "scientific-ninja-weapons-team",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 2,
+    "promis": 5,
+    "livre": 6,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Groupe de l'univers Naruto — réunit Akita Inuzuka, Sumire Kakei, Amado Sanzu et 2 autres."
+   },
+   {
+    "slug": "ame-orphans",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 1,
+    "promis": 4,
+    "livre": 7,
+    "ecart": -3,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Groupe de l'univers Naruto — réunit Jiraiya, Konan, Nagato et 1 autre."
+   },
+   {
+    "slug": "team-two",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 2,
+    "promis": 5,
+    "livre": 6,
+    "ecart": -1,
+    "aUnDescFr": false,
+    "resumeVisible": true,
+    "summary": "Groupe de l'univers Naruto — réunit Yamato, Rock Lee, Tenten et 2 autres."
+   },
+   {
+    "slug": "liberation-du-vent-futon",
+    "type": "power",
+    "relation": "maitrise",
+    "nomsCites": 3,
+    "nAnnonce": 86,
+    "promis": 89,
+    "livre": 40,
+    "ecart": 49,
+    "aUnDescFr": false,
+    "resumeVisible": true,
+    "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 86 autres."
+   },
+   {
+    "slug": "sabre",
+    "type": "artifact",
+    "relation": "possede",
+    "nomsCites": 3,
+    "nAnnonce": 138,
+    "promis": 141,
+    "livre": 40,
+    "ecart": 101,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Madara Uchiha, Kakashi Hatake et 138 autres."
+   },
+   {
+    "slug": "fifth-division",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 5,
+    "promis": 8,
+    "livre": 9,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Groupe de l'univers Naruto — réunit Shino Aburame, Ino Yamanaka, Kiba Inuzuka et 5 autres."
+   },
+   {
+    "slug": "team-8",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 2,
+    "promis": 5,
+    "livre": 6,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Groupe de l'univers Naruto — réunit Shino Aburame, Hinata Hyūga, Kiba Inuzuka et 2 autres."
+   },
+   {
+    "slug": "gantelet-shinobi",
+    "type": "artifact",
+    "relation": "possede",
+    "nomsCites": 3,
+    "nAnnonce": 5,
+    "promis": 8,
+    "livre": 9,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Arme / outil de l'univers Naruto — porté par Konohamaru Sarutobi, Boruto Uzumaki, Victor et 5 autres."
+   },
+   {
+    "slug": "liberation-du-feu-katon",
+    "type": "power",
+    "relation": "maitrise",
+    "nomsCites": 3,
+    "nAnnonce": 104,
+    "promis": 107,
+    "livre": 40,
+    "ecart": 67,
+    "aUnDescFr": false,
+    "resumeVisible": true,
+    "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 104 autres."
+   },
+   {
+    "slug": "liberation-de-l-eau-suiton",
+    "type": "power",
+    "relation": "maitrise",
+    "nomsCites": 3,
+    "nAnnonce": 150,
+    "promis": 153,
+    "livre": 40,
+    "ecart": 113,
+    "aUnDescFr": false,
+    "resumeVisible": true,
+    "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 150 autres."
+   },
+   {
+    "slug": "liberation-du-yang",
+    "type": "power",
+    "relation": "maitrise",
+    "nomsCites": 3,
+    "nAnnonce": 48,
+    "promis": 51,
+    "livre": 40,
+    "ecart": 11,
+    "aUnDescFr": false,
+    "resumeVisible": true,
+    "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Kakashi Hatake et 48 autres."
+   },
+   {
+    "slug": "team-7",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 2,
+    "promis": 5,
+    "livre": 6,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Groupe de l'univers Naruto — réunit Konohamaru Sarutobi, Mitsuki, Boruto Uzumaki et 2 autres."
+   },
+   {
+    "slug": "force-shinobi-alliee",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 117,
+    "promis": 120,
+    "livre": 42,
+    "ecart": 78,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Organisation de l'univers Naruto — réunit Naruto Uzumaki, Kakashi Hatake, Gaara et 117 autres."
+   },
+   {
+    "slug": "liberation-de-la-terre-doton",
+    "type": "power",
+    "relation": "maitrise",
+    "nomsCites": 3,
+    "nAnnonce": 113,
+    "promis": 116,
+    "livre": 40,
+    "ecart": 76,
+    "aUnDescFr": false,
+    "resumeVisible": true,
+    "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 113 autres."
+   },
+   {
+    "slug": "logistical-support-and-medical-division",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 3,
+    "promis": 6,
+    "livre": 7,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Groupe de l'univers Naruto — réunit Shizune, Yūgao Uzuki, Iō (medical-nin) et 3 autres."
+   },
+   {
+    "slug": "tanto",
+    "type": "artifact",
+    "relation": "possede",
+    "nomsCites": 3,
+    "nAnnonce": 40,
+    "promis": 43,
+    "livre": 41,
+    "ecart": 2,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Kakashi Hatake, Itachi Uchiha et 40 autres."
+   },
+   {
+    "slug": "sound-four",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 2,
+    "promis": 5,
+    "livre": 6,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Groupe de l'univers Naruto — réunit Sasuke Uchiha, Tayuya, Jirōbō et 2 autres."
+   },
+   {
+    "slug": "sasuke-recovery-team",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 3,
+    "promis": 6,
+    "livre": 7,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Chōji Akimichi, Kiba Inuzuka et 3 autres."
+   },
+   {
+    "slug": "liberation-du-yin",
+    "type": "power",
+    "relation": "maitrise",
+    "nomsCites": 3,
+    "nAnnonce": 117,
+    "promis": 120,
+    "livre": 40,
+    "ecart": 80,
+    "aUnDescFr": false,
+    "resumeVisible": true,
+    "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 117 autres."
+   },
+   {
+    "slug": "liberation-du-bois-mokuton",
+    "type": "power",
+    "relation": "maitrise",
+    "nomsCites": 3,
+    "nAnnonce": 12,
+    "promis": 15,
+    "livre": 16,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Madara Uchiha, Orochimaru, Obito Uchiha et 12 autres."
+   },
+   {
+    "slug": "mangekyo-sharingan",
+    "type": "skill",
+    "relation": "maitrise",
+    "nomsCites": 3,
+    "nAnnonce": 12,
+    "promis": 15,
+    "livre": 16,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Kakashi Hatake, Obito Uchiha, Itachi Uchiha et 12 autres."
+   },
+   {
+    "slug": "akatsuki",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 29,
+    "promis": 32,
+    "livre": 44,
+    "ecart": -12,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Organisation de l'univers Naruto — réunit Sasuke Uchiha, Madara Uchiha, Orochimaru et 29 autres."
+   },
+   {
+    "slug": "konoha-11",
+    "type": "status",
+    "relation": "appartient",
+    "nomsCites": 3,
+    "nAnnonce": 10,
+    "promis": 13,
+    "livre": 14,
+    "ecart": -1,
+    "aUnDescFr": true,
+    "resumeVisible": false,
+    "summary": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Rock Lee, Sakura Haruno et 10 autres."
+   },
+   {
+    "slug": "liberation-de-la-foudre-raiton",
+    "type": "power",
+    "relation": "maitrise",
+    "nomsCites": 3,
+    "nAnnonce": 88,
+    "promis": 91,
+    "livre": 40,
+    "ecart": 51,
+    "aUnDescFr": false,
+    "resumeVisible": true,
+    "summary": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Kakashi Hatake et 88 autres."
+   }
+  ]
+ },
+ "F1_resumeDunAutreGenre": {
+  "fichesAuGabaritEquipage": 109,
+  "prouveesLieu": 8,
+  "lignes": [
+   {
+    "slug": "l-equipage-des-maquereaux",
+    "name": "L'Équipage des Maquereaux",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un trio de 3 Hommes-Poissons esclavagist",
+    "phrasePreuve": "L'Équipage des Maquereaux (マクロ一味, Makuro Ichimi) fut un trio de 3 Hommes-Poissons esclavagistes qui étaient connus pour avoir tenté de kidnapper 31 fois la sirène Camie."
+   },
+   {
+    "slug": "l-equipage-de-ganzack",
+    "name": "l’équipage de Ganzack",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "l-equipage-aux-cent-betes",
+    "name": "L’équipage aux Cent Bêtes",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une organisation pirate extrêmement puis",
+    "phrasePreuve": "Les Pirates aux Cent Bêtes, également connus sous le nom de Beasts Pirates, sont une organisation pirate extrêmement puissante et infâme dirigée par Kaidou, anciennement l'un des Quatre Empereurs."
+   },
+   {
+    "slug": "l-equipage-du-lion-d-or",
+    "name": "L’équipage du Lion d’Or",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une équipe de pirates notoirement puissa",
+    "phrasePreuve": "Les Pirates du Lion d'Or, dirigés par Shiki le Lion d'Or, sont une équipe de pirates notoirement puissante, connue pour avoir terrorisé les mers il y a vingt-cinq ans avec la plus grande flotte de pirates de la Grand Lin"
+   },
+   {
+    "slug": "pirate-moustachus",
+    "name": "Pirate Moustachus",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates non canon apparu ",
+    "phrasePreuve": "Les Pirate Moustachus sont un équipage de pirates non canon apparu dans le sixième film de *One Piece*, dirigé par leur capitaine Brief."
+   },
+   {
+    "slug": "faux-equipage-du-chapeau-de-paille",
+    "name": "Faux Equipage du Chapeau de Paille",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un groupe de pirates formé par Demalo Bl",
+    "phrasePreuve": "Le Faux Équipage du Chapeau de Paille est un groupe de pirates formé par Demalo Black pour usurper l'identité des véritables Chapeau de Paille et profiter de leur notoriété."
+   },
+   {
+    "slug": "dragon-celestes",
+    "name": "Dragon Célestes",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "les descendants aristocratiques de dix-n",
+    "phrasePreuve": "Les World Nobles, également appelés les Dragons Célestes, sont les descendants aristocratiques de dix-neuf des vingt premiers souverains qui ont fondé le Gouvernement Mondial."
+   },
+   {
+    "slug": "l-equipage-de-zenny",
+    "name": "L’équipage de Zenny",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une équipe de pirates composée principal",
+    "phrasePreuve": "L’équipage de Zenny est une équipe de pirates composée principalement de chèvres, sous le commandement de Zenny."
+   },
+   {
+    "slug": "l-equipage-des-moines-depraves",
+    "name": "L’équipage des Moines Dépravés",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un groupe de pirates rookie célèbre, dir",
+    "phrasePreuve": "L'équipage des Moines Dépravés est un groupe de pirates rookie célèbre, dirigé par Urouge, faisant partie de la Pire Génération."
+   },
+   {
+    "slug": "l-equipage-du-roux",
+    "name": "L’équipage du Roux",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "l’une des quatre flottes pirates les plu",
+    "phrasePreuve": "L’équipage du Roux, dirigé par Shanks, l’un des Quatre Empereurs, est l’une des quatre flottes pirates les plus puissantes du Nouveau Monde."
+   },
+   {
+    "slug": "l-equipage-des-candys",
+    "name": "L’équipage des Candys",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "gran-tesero",
+    "name": "Gran Tesero",
+    "type": "place",
+    "category": "Lieu",
+    "scope": null,
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un navire massif abritant une métropole,",
+    "phrasePreuve": "Le Gran Tesoro est un navire massif abritant une métropole, considéré comme la plus grande ville de divertissement au monde."
+   },
+   {
+    "slug": "sphinx-one-piece",
+    "name": "Sphinx",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un gigantesque sphinx qui sert de gardie",
+    "phrasePreuve": "Le Sphinx est un gigantesque sphinx qui sert de gardien de niveau 2 de la prison d'Impel Down, également connu sous le nom de Beast Hell."
+   },
+   {
+    "slug": "l-armada-pirate-de-don-krieg",
+    "name": "L’armada Pirate de Don Krieg",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une flotte de pirates de l'East Blue dir",
+    "phrasePreuve": "L’armada Pirate de Don Krieg, également connue sous le nom de Krieg Pirates, est une flotte de pirates de l'East Blue dirigée par Don Krieg."
+   },
+   {
+    "slug": "armada-du-chapeau-de-paille",
+    "name": "Armada du Chapeau de Paille",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une flotte de pirates formée par sept éq",
+    "phrasePreuve": "La Grand Fleet du Chapeau de Paille est une flotte de pirates formée par sept équipages qui ont juré de servir sous les ordres des Chapeau de Paille."
+   },
+   {
+    "slug": "l-equipage-amigo",
+    "name": "L’équipage Amigo",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "l-equipage-du-capitaine-usopp",
+    "name": "L’équipage du Capitaine Usopp",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Usopp, tireur d'élite et officier supérieur, appartient à l'équipage du chapeau de paille et fait partie de sa grande flotte."
+   },
+   {
+    "slug": "freres-voleurs",
+    "name": "Frères Voleurs",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "buggy-s-delivery",
+    "name": "Buggy's Delivery",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une organisation mercenaire fondée par B",
+    "phrasePreuve": "Buggy's Delivery est une organisation mercenaire fondée par Buggy le Clown Étoilé, active dans le Nouveau Monde."
+   },
+   {
+    "slug": "l-equipage-des-spade",
+    "name": "L’équipage des Spade",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "l'ancien équipage de pirates de Portgas ",
+    "phrasePreuve": "Les Pirates des Spades, ou Supēdo Kaizokudan, sont l'ancien équipage de pirates de Portgas D."
+   },
+   {
+    "slug": "world-economic-journal",
+    "name": "World Economic Journal",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un journal d'information mondial distrib",
+    "phrasePreuve": "Le World Economy News Paper, ou WE News, est un journal d'information mondial distribué via des News Coo, dirigé par Morgans, un empereur de l'Underworld."
+   },
+   {
+    "slug": "l-equipage-du-bliking",
+    "name": "L’équipage du Bliking",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une équipe de pirates qui ont fui l'île ",
+    "phrasePreuve": "Les Pirates du Bliking, dirigés par Wapol, sont une équipe de pirates qui ont fui l'île Drum lorsque les Pirates de Barbe Noire ont attaqué."
+   },
+   {
+    "slug": "equipage-de-bigalo",
+    "name": "Equipage de Bigalo",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "l-equipage-du-on-air",
+    "name": "L’équipage du On-Air",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un groupe de pirates notoire, dirigé par",
+    "phrasePreuve": "L’équipage du On-Air est un groupe de pirates notoire, dirigé par Scratchmen Apoo, qui a été découvert sur l'archipel de Sabaody."
+   },
+   {
+    "slug": "pirate-de-l-espace",
+    "name": "Pirate de l’Espace",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Dans l'univers de One Piece, le terme « pirate de l'espace » n'apparaît pas dans les sources canoniques ; l'article traite exclusivement des pirates qui sillonnent les mers de la planète bleue."
+   },
+   {
+    "slug": "l-equipage-des-magnifiques-pirates",
+    "name": "L’équipage des Magnifiques Pirates",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates dirigé par Cavend",
+    "phrasePreuve": "Les Magnifiques Pirates, également connus sous le nom de Utsukushiki Kaizoku-dan, sont un équipage de pirates dirigé par Cavendish."
+   },
+   {
+    "slug": "l-equipage-de-kid",
+    "name": "L’équipage de Kid",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Équipage infâme et notable de rookie mené par Eustass Kid, introduit à Sabaody comme partie de la Worst Generation."
+   },
+   {
+    "slug": "royaume-malefique-de-black-drum",
+    "name": "Royaume maléfique de Black Drum",
+    "type": "place",
+    "category": "Lieu",
+    "scope": null,
+    "prouveUnLieu": true,
+    "parQuoi": "copule",
+    "genreLu": "le royaume dirigé par Wapol, accompagné ",
+    "phrasePreuve": "Le Royaume maléfique de Black Drum est le royaume dirigé par Wapol, accompagné de son épouse Kinderella et de son chien Hakowan, situé dans le Sud Bleu et caractérisé par un immense château et un ciel souvent orageux."
+   },
+   {
+    "slug": "source-de-l-insouciance",
+    "name": "Source de l'insouciance",
+    "type": "status",
+    "category": "Lieu",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "l-equipage-des-pirates-trump",
+    "name": "L’équipage des Pirates Trump",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates de l'East Blue di",
+    "phrasePreuve": "Les Trump Pirates sont un équipage de pirates de l'East Blue dirigé par les Trump Siblings, un groupe de capitaines aux thèmes animaliers et de cartes à jouer mené par Bear King."
+   },
+   {
+    "slug": "l-equipage-d-alvida",
+    "name": "L’équipage d’Alvida",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "l-equipage-des-pirates-yes",
+    "name": "L’équipage des Pirates Yes",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates originaire de l'E",
+    "phrasePreuve": "Les Yes Pirates sont un équipage de pirates originaire de l'East Blue, placé sous le commandement du capitaine Billy, surnommé « Billy the Orca Killer »."
+   },
+   {
+    "slug": "l-equipage-de-rocks",
+    "name": "L’équipage de Rocks",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Équipage légendaire dirigé par Rocks D."
+   },
+   {
+    "slug": "l-equipage-du-new-age",
+    "name": "l’équipage du New Age",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "pirate-au-foyer",
+    "name": "Pirate au foyer",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "equipage-de-pandaman",
+    "name": "Equipage de Pandaman",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "archipel-des-argao",
+    "name": "Archipel des Argao",
+    "type": "status",
+    "category": "Lieu",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": true,
+    "parQuoi": "sujet",
+    "genreLu": null,
+    "phrasePreuve": "L'archipel des Organ Islands, situé dans l'East Blue, abrite la ville d'Orange Town."
+   },
+   {
+    "slug": "l-equipage-de-diez-barrels",
+    "name": "L’équipage de Diez Barrels",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Diez Barrels était autrefois un officier de la Marine qui a déserté pour devenir pirate et captain de l'équipage des Barrels Pirates opérant dans le North Blue."
+   },
+   {
+    "slug": "iile-de-la-couronne",
+    "name": "IÎle de la couronne",
+    "type": "place",
+    "category": "Lieu",
+    "scope": null,
+    "prouveUnLieu": true,
+    "parQuoi": "sujet",
+    "genreLu": "connue pour ses fontaines qui, lors de l",
+    "phrasePreuve": "L'île O-Kan, située dans l'univers de One Piece, est connue pour ses fontaines qui, lors de la désignation d'un nouveau roi des animaux, jaillissent en formant une couronne."
+   },
+   {
+    "slug": "l-equipage-des-acumates",
+    "name": "L’équipage des Acumates",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates dirigé par Devil ",
+    "phrasePreuve": "Les Acumates sont un équipage de pirates dirigé par Devil Dias, un capitaine avec une prime de 60 000 000."
+   },
+   {
+    "slug": "l-equipage-asl",
+    "name": "L’équipage ASL",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "ile-de-mecha",
+    "name": "Île de Mecha",
+    "type": "place",
+    "category": "Lieu",
+    "scope": null,
+    "prouveUnLieu": true,
+    "parQuoi": "copule",
+    "genreLu": "une île non-canonique située dans la pre",
+    "phrasePreuve": "Mecha Island, également connue sous le nom de Meka Shima, est une île non-canonique située dans la première moitié de la Grand Line, célèbre pour abriter le Géant Soldat Mécanique du Château Karakuri."
+   },
+   {
+    "slug": "l-equipage-des-geants",
+    "name": "L’équipage des Géants",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage pirate originaire d'Erbaf qu",
+    "phrasePreuve": "L'Équipage des Géants est un équipage pirate originaire d'Erbaf qui sévissait il y a 100 ans sur Grand Line."
+   },
+   {
+    "slug": "pirate-des-fleches-rouges",
+    "name": "Pirate des flèches rouges",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates apparu exclusivem",
+    "phrasePreuve": "Les Red Arrows Pirates sont un équipage de pirates apparu exclusivement dans le sixième film One Piece, placé sous le commandement du baron Omatsuri et actif durant l'époque de Gol D."
+   },
+   {
+    "slug": "elegia",
+    "name": "Elegia",
+    "type": "place",
+    "category": "Lieu",
+    "scope": null,
+    "prouveUnLieu": true,
+    "parQuoi": "copule",
+    "genreLu": "un archipel qui sert de lieu principal p",
+    "phrasePreuve": "Elegia est un archipel qui sert de lieu principal pour le film One Piece Film: Red, où se déroule le festival de musique live d'Uta."
+   },
+   {
+    "slug": "l-equipage-de-gasparde",
+    "name": "L’équipage de Gasparde",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une bande de pirates apparue dans le qua",
+    "phrasePreuve": "L’équipage de Gasparde est une bande de pirates apparue dans le quatrième film de One Piece, dirigée par l'ancien officier de la Marine, « Général » Gasparde, et son bras droit, Needless."
+   },
+   {
+    "slug": "l-equipage-de-barbe-brune",
+    "name": "L’équipage de Barbe Brune",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un groupe de pirates opérant dans le Nou",
+    "phrasePreuve": "L’équipage de Barbe Brune, dirigé par Chadros Higelyges, est un groupe de pirates opérant dans le Nouveau Monde."
+   },
+   {
+    "slug": "l-equipage-de-barbe-noire",
+    "name": "L’équipage de Barbe Noire",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une flotte de pirates extrêmement infâme",
+    "phrasePreuve": "L’équipage de Barbe Noire est une flotte de pirates extrêmement infâme et puissante dirigée par Marshall D."
+   },
+   {
+    "slug": "nouvel-equipage-des-geants",
+    "name": "Nouvel Equipage des Géants",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Équipage de géants mené par Hajrudin, héritier spirituel des Pirates Guerriers Géants disparus un siècle plus tôt."
+   },
+   {
+    "slug": "neo-marine",
+    "name": "Néo Marine",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une faction dissidente de l'armée des Ma",
+    "phrasePreuve": "Les Neo Marines sont une faction dissidente de l'armée des Marines, fondée par l'amiral Z."
+   },
+   {
+    "slug": "l-equipage-de-don-quichotte",
+    "name": "L’équipage de Don Quichotte",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "L’équipage de Don Quichotte, dirigé par le pirate Donquixote Doflamingo, était une puissante organisation qui gouvernait le royaume de Dressrosa."
+   },
+   {
+    "slug": "l-equipage-des-pirates-treasure",
+    "name": "L’équipage des Pirates Treasure",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates chasseurs de trés",
+    "phrasePreuve": "Les Pirates Treasure sont un équipage de pirates chasseurs de trésors mené par Mad Treasure."
+   },
+   {
+    "slug": "bigaro",
+    "name": "Bigaro",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un pirate qui a participé à la Dead End ",
+    "phrasePreuve": "Bigaro, également connu sous le nom de Bigalo the Hanged Man, est un pirate qui a participé à la Dead End Race."
+   },
+   {
+    "slug": "l-equipage-du-clown",
+    "name": "L’équipage du Clown",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Équipage de pirates dirigé par Buggy, ancien apprenti des Roger Pirates."
+   },
+   {
+    "slug": "l-equipage-de-foxy",
+    "name": "L’équipage de Foxy",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates dirigé par Foxy l",
+    "phrasePreuve": "Les Pirates de Foxy sont un équipage de pirates dirigé par Foxy le Renard d'Argent."
+   },
+   {
+    "slug": "l-equipage-de-mad-treasure",
+    "name": "L'Équipage de Mad Treasure",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une bande de chasseurs de richesses mené",
+    "phrasePreuve": "L’équipage de Mad Treasure, les Pirates Trésors, est une bande de chasseurs de richesses menée par un capitaine obsédé par la quête de butins."
+   },
+   {
+    "slug": "l-equipage-des-pirates-du-sables",
+    "name": "L’équipage des Pirates du Sables",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une bande de pirates des sables du royau",
+    "phrasePreuve": "Les Barbar Pirates sont une bande de pirates des sables du royaume d'Arabasta, connue pour naviguer dans le désert à l'aide de leurs traîneaux de sable et pour porter de petits parapluies sur la tête."
+   },
+   {
+    "slug": "l-equipage-des-pirates-volants",
+    "name": "L’équipage des Pirates Volants",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates poissons opérant ",
+    "phrasePreuve": "Les Pirates Volants, dirigés par Vander Decken IX, sont un équipage de pirates poissons opérant sous l'eau, terrorisant les citoyens de l'île des Hommes-Poissons."
+   },
+   {
+    "slug": "l-equipage-de-roshio",
+    "name": "L’équipage de Roshio",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "le capitaine de l'équipage du même nom, ",
+    "phrasePreuve": "Roshio, surnommé « l'Exécuteur », est le capitaine de l'équipage du même nom, actif à Mock Town avec une prime de 42 000 000 de berries."
+   },
+   {
+    "slug": "l-equipage-du-hearth",
+    "name": "L’équipage du Hearth",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une équipe de pirates notoire et renommé",
+    "phrasePreuve": "Les Pirates du Cœur sont une équipe de pirates notoire et renommée originaire du North Blue, dirigée par Trafalgar D."
+   },
+   {
+    "slug": "esclave",
+    "name": "Esclave",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une pratique consistant à posséder, trai",
+    "phrasePreuve": "L'esclavage, ou Dorei-sei, est une pratique consistant à posséder, traiter et échanger des personnes contre leur gré, principalement pour les exploiter comme main-d'œuvre."
+   },
+   {
+    "slug": "flotte-yonta-maria",
+    "name": "Flotte Yonta Maria",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une imposante armada de cinquante-six na",
+    "phrasePreuve": "La Flotte Yonta Maria est une imposante armada de cinquante-six navires dirigée par Orlumbus, intégrée à la Grande Flotte du Chapeau de Paille après la chute de Don Quichotte Doflamingo."
+   },
+   {
+    "slug": "l-equipage-de-bonney",
+    "name": "L’équipage de Bonney",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Équipage rookie originaire du South Blue mené par Jewelry Bonney, introduit à Sabaody comme partie de la Worst Generation."
+   },
+   {
+    "slug": "baroque-works",
+    "name": "Baroque Works",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un syndicat criminel créé par le chef de",
+    "phrasePreuve": "Baroque Works est un syndicat criminel créé par le chef de guerre Crocodile pour déstabiliser et conquérir le royaume d'Arabasta."
+   },
+   {
+    "slug": "xxx-gym-martial-arts-alliances",
+    "name": "XXX Gym Martial Arts Alliances",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Les Ideo Pirates, anciennement connus sous le nom d'XXX Gym Martial Arts Alliance, forment un petit équipage de quatre pirates dirigé par le boxeur Ideo et rattaché comme quatrième vaisseau de la Grande Flotte du Chapeau"
+   },
+   {
+    "slug": "l-equipage-du-phoenix",
+    "name": "L’équipage du Phoenix",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un Équipages Pirates qui apparaît premiè",
+    "phrasePreuve": "L'équipage du Phoenix (フェニックス海賊団) est un Équipages Pirates qui apparaît premièrement dans l'arc hors-série, l'Arc Chasseurs de Glace."
+   },
+   {
+    "slug": "l-equipage-des-gros-casques",
+    "name": "L’équipage des Gros Casques",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "l-equipage-de-big-mom",
+    "name": "L’équipage de Big Mom",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une puissante équipe de pirates dirigée ",
+    "phrasePreuve": "Les Pirates de Big Mom sont une puissante équipe de pirates dirigée par Charlotte Linlin, alias Big Mom, anciennement l'un des Quatre Empereurs."
+   },
+   {
+    "slug": "armee-revolutionnaire",
+    "name": "Armée Révolutionnaire",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une organisation militaire dirigée par M",
+    "phrasePreuve": "L'Armée Révolutionnaire est une organisation militaire dirigée par Monkey D."
+   },
+   {
+    "slug": "la-flotte-de-happou",
+    "name": "La Flotte de Happou",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates dirigé par la fam",
+    "phrasePreuve": "La Flotte de Happou, également connue sous le nom de Happo Navy, est un équipage de pirates dirigé par la famille Chinjao du pays de Kano."
+   },
+   {
+    "slug": "l-equipage-de-drake",
+    "name": "L’équipage de Drake",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage reconnu de pirates infâmes e",
+    "phrasePreuve": "L'équipage de Drake est un équipage reconnu de pirates infâmes et notables découvert sur l'archipel Sabaody durant le temps où l'équipage de Chapeau de paille y était."
+   },
+   {
+    "slug": "l-equipage-du-croissant-de-lune",
+    "name": "L’équipage du Croissant de Lune",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "l-equipage-des-tulipes",
+    "name": "L’équipage des Tulipes",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates apparu dans l'his",
+    "phrasePreuve": "Les Tulipes sont un équipage de pirates apparu dans l'histoire secondaire de Jango."
+   },
+   {
+    "slug": "equipage-de-bellamy",
+    "name": "Equipage de Bellamy",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une bande de pirates dirigée par Bellamy",
+    "phrasePreuve": "L'Équipage de Bellamy est une bande de pirates dirigée par Bellamy le Hyène, connue pour sa cruauté et son arrogance."
+   },
+   {
+    "slug": "ile-d-asuka",
+    "name": "Île d'Asuka",
+    "type": "place",
+    "category": "Lieu",
+    "scope": null,
+    "prouveUnLieu": true,
+    "parQuoi": "copule",
+    "genreLu": "une île non canonique qui sert de cadre ",
+    "phrasePreuve": "L'île d'Asuka, située dans le Paradise, est une île non canonique qui sert de cadre principal au film 'The Cursed Holy Sword'."
+   },
+   {
+    "slug": "l-equipage-de-bartolomeo",
+    "name": "L’équipage de Bartolomeo",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates dirigé par Bartol",
+    "phrasePreuve": "Le Barto Club, également connu sous le nom de Baruto Kurabu, est un équipage de pirates dirigé par Bartolomeo, membre de la flotte de la Grand Fleet de Luffy."
+   },
+   {
+    "slug": "l-equipage-des-pirates-du-soleil",
+    "name": "L’équipage des Pirates du Soleil",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Équipage formé par le feu Fisher Tiger, composé originellement de poissons-hommes autrefois esclaves des Nobles Célestes, liberés par Tiger."
+   },
+   {
+    "slug": "l-equipage-des-nouveaux-hommes-poissons",
+    "name": "L’équipage des Nouveaux Hommes-Poissons",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates dirigé par Hody J",
+    "phrasePreuve": "Les Nouveaux Hommes-Poissons sont un équipage de pirates dirigé par Hody Jones, composé principalement de poissons-humains, de sirènes, de bêtes marines et d'humains esclaves."
+   },
+   {
+    "slug": "l-equipage-d-expedition",
+    "name": "L’équipage d’Expédition",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "l-equipage-du-chat-noir",
+    "name": "L’équipage du Chat Noir",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un groupe de pirates de l’East Blue, aut",
+    "phrasePreuve": "L’équipage du Chat Noir est un groupe de pirates de l’East Blue, autrefois dirigé par le rusé Kuro, puis par son ancien second Jango."
+   },
+   {
+    "slug": "l-equipage-d-arlong",
+    "name": "L’équipage d’Arlong",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une bande de pirates hommes-poissons dir",
+    "phrasePreuve": "L’équipage d’Arlong est une bande de pirates hommes-poissons dirigée par Arlong, ancien membre des Pirates du Soleil, qui méprise les humains et domine plusieurs villages de l’East Blue, dont Cocoyasi."
+   },
+   {
+    "slug": "l-equipage-de-bayan",
+    "name": "L’équipage de Bayan",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirate dans One Piece, ap",
+    "phrasePreuve": "L'Équipage de Bayan (バイアン 海賊 団, Baian Kaizoku-dan) est un équipage de pirate dans One Piece, apparaissant dans Épisode Spécial 2."
+   },
+   {
+    "slug": "les-pirates-a-la-citrouille",
+    "name": "Les Pirates à la citrouille",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage d'enfants apparu dans l'anim",
+    "phrasePreuve": "Les Pirates à la citrouille sont un équipage d'enfants apparu dans l'anime, vivant sur l'île de Ruluka il y a cinquante ans."
+   },
+   {
+    "slug": "ligue-des-primates",
+    "name": "Ligue des Primates",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "une alliance de pirates composée de troi",
+    "phrasePreuve": "La Ligue des Primates, ou Saruyama Rengō-gun, est une alliance de pirates composée de trois capitaines : Mont Blanc Cricket, Masira et Shoujou."
+   },
+   {
+    "slug": "anciens-membres-de-la-marine",
+    "name": "Anciens membres de la Marine",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "l-equipage-de-hakahoka",
+    "name": "L’équipage de Hakahoka",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un groupe de pirates dont Okome occupe l",
+    "phrasePreuve": "L'équipage de Hakahoka est un groupe de pirates dont Okome occupe le poste de second."
+   },
+   {
+    "slug": "l-equipage-du-fire-tank",
+    "name": "L’équipage du Fire Tank",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Équipage rookie originaire du West Blue mené par Capone Bege, introduit à Sabaody comme partie de la Worst Generation."
+   },
+   {
+    "slug": "l-equipage-des-cuisiniers",
+    "name": "L’équipage des Cuisiniers",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Ancien équipage pirate du Red-Leg Zeff créé il y a plus de 22 ans."
+   },
+   {
+    "slug": "l-equipage-du-chapeau-de-paille",
+    "name": "L’équipage du Chapeau de Paille",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "dirigé par Monkey D.",
+    "phrasePreuve": "L'équipage du Chapeau de Paille, originaire du East Blue, est dirigé par Monkey D."
+   },
+   {
+    "slug": "anciens-membres-du-baroque-works",
+    "name": "Anciens membres du Baroque Works",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Syndicat criminel créé par le Warlord Crocodile pour déstabiliser et conquérir le Royaume d'Arabasta, en vue d'acquérir l'arme ancienne Pluton."
+   },
+   {
+    "slug": "l-equipage-des-pirates-roger",
+    "name": "L’équipage des Pirates Roger",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "L'équipage des Pirates Roger était le célèbre équipage du Roi des Pirates, Gol D."
+   },
+   {
+    "slug": "l-equipage-des-fleches-rouges",
+    "name": "L’équipage des Flèches Rouges",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates apparu dans le si",
+    "phrasePreuve": "Les Flèches Rouges sont un équipage de pirates apparu dans le sixième film de One Piece."
+   },
+   {
+    "slug": "cipher-pol",
+    "name": "Cipher Pol",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Le Cipher Pol désigne une série d'agences secrètes du Gouvernement mondial, chargées d’enquêtes, d’espionnage et d’assassinats."
+   },
+   {
+    "slug": "l-equipage-des-pirates-schneider",
+    "name": "L’équipage des Pirates Schneider",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "composé du capitaine Schneider et de son",
+    "phrasePreuve": "L'équipage des Pirates Schneider, apparu dans le film One Piece 3D: Straw Hat Chase, est composé du capitaine Schneider et de son chien Buzz, qui a consommé le Fruit du Démon Tori Tori no Mi, modèle Aigle."
+   },
+   {
+    "slug": "l-equipage-de-hawkins",
+    "name": "L’équipage de Hawkins",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Équipage rookie de pirates originaires du North Blue mené par Basil Hawkins, introduit à Sabaody comme partie de la Worst Generation."
+   },
+   {
+    "slug": "l-equipage-de-gyro",
+    "name": "L’équipage de Gyro",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "l-equipage-tearoom",
+    "name": "L’équipage Tearoom",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "l-equipage-du-rumbar",
+    "name": "L’équipage du Rumbar",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un groupe de pirates originaire du West ",
+    "phrasePreuve": "L’équipage du Rumbar est un groupe de pirates originaire du West Blue, connu pour avoir sauvé et élevé un bébé baleine nommé Laboon."
+   },
+   {
+    "slug": "anciens-membres-du-cipher-pol",
+    "name": "Anciens membres du Cipher Pol",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Série d'agences secrètes qui effectuent investigations, espionnage et assassinats au service du Gouvernement Mondial."
+   },
+   {
+    "slug": "royaume-de-tontatta",
+    "name": "Royaume de Tontatta",
+    "type": "status",
+    "category": "Lieu",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": true,
+    "parQuoi": "copule",
+    "genreLu": "le territoire du peuple des Nains de l'î",
+    "phrasePreuve": "Le Royaume de Tontatta (トンタッタ王国, Tontatta Ōkoku) est le territoire du peuple des Nains de l'île de Green Bit."
+   },
+   {
+    "slug": "l-equipage-des-pirates-kuja",
+    "name": "L’équipage des Pirates Kuja",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Les Pirates Kuja forment un équipage exclusivement féminin originaire d'Amazon Lily, dirigé par l'impératrice Boa Hancock et ses sœurs cadettes Boa Sandersonia et Boa Marigold, toutes sélectionnées parmi les femmes les p"
+   },
+   {
+    "slug": "l-equipage-du-rolling",
+    "name": "L’équipage du Rolling",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates dirigé par Charlo",
+    "phrasePreuve": "Les Rolling Pirates sont un équipage de pirates dirigé par Charlotte Lola, la 23ème fille de la famille Charlotte."
+   },
+   {
+    "slug": "l-equipage-du-bluejam",
+    "name": "L’équipage du Bluejam",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates dirigé par Blueja",
+    "phrasePreuve": "Les Pirates de Bluejam sont un équipage de pirates dirigé par Bluejam, qui ont utilisé Gray Terminal comme base d'opérations."
+   },
+   {
+    "slug": "l-equipage-de-wetton",
+    "name": "L’équipage de Wetton",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": null
+   },
+   {
+    "slug": "l-equipage-des-fanged-toad",
+    "name": "L’équipage des Fanged Toad",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un équipage de pirates originaires de Pa",
+    "phrasePreuve": "Les Pirates des Fanged Toad sont un équipage de pirates originaires de Paradise, dirigé par Kibagaeru."
+   },
+   {
+    "slug": "l-equipage-des-pirates-a-la-moustache",
+    "name": "L’équipage des Pirates à la Moustache",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": null,
+    "phrasePreuve": "Équipage de pirates apparu dans le sixième film, dirigé par le capitaine Brief et composé de membres arborant tous une moustache identique."
+   },
+   {
+    "slug": "l-equipage-de-barbe-blanche",
+    "name": "L’équipage de Barbe Blanche",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "l'un des plus puissants de l'univers de ",
+    "phrasePreuve": "L’équipage de Barbe Blanche, dirigé par Edward Newgate, est l'un des plus puissants de l'univers de One Piece, ayant été considéré comme le plus fort des Quatre Empereurs."
+   },
+   {
+    "slug": "la-lune",
+    "name": "La lune",
+    "type": "place",
+    "category": "Lieu",
+    "scope": null,
+    "prouveUnLieu": true,
+    "parQuoi": "copule",
+    "genreLu": "un corps céleste géant qui orbite autour",
+    "phrasePreuve": "La lune, ou Tsuki, est un corps céleste géant qui orbite autour de la planète Bleue et constitue la principale source de lumière naturelle la nuit."
+   },
+   {
+    "slug": "l-equipage-de-caribou",
+    "name": "L’équipage de Caribou",
+    "type": "status",
+    "category": "Équipage",
+    "scope": "Équipage pirate",
+    "prouveUnLieu": false,
+    "parQuoi": null,
+    "genreLu": "un pirate rookie originaire du North Blu",
+    "phrasePreuve": "Caribou, surnommé « Wet‑Haired Caribou », est un pirate rookie originaire du North Blue, doté d'une prime de 210 000 000 et co‑capitaine de l'équipage des Caribou Pirates aux côtés de son frère Coribou."
+   }
+  ]
+ },
+ "F2_attributIncoherent": {
+  "cleDunAutreType": 670,
+  "villageContreditParLaProse": 8,
+  "cles": [
+   {
+    "slug": "atk-db-justice-pose-1",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-chou-maretsugeki",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-ki-sense",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-fierce-combination-gohan",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-embodied-light",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-fury-golden-frieza",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-scattering-bullet",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-psychic-rock-throw",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-energy-palm",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "liberation-de-la-calcination-shakuton",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kekkei genkai"
+   },
+   {
+    "slug": "atk-db-elite-assault",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-cold-family-power",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-jujika",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-father-son-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dragon-break-rush",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-rush-blade",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-evil-flight-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-blaster",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-nake-benihime",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-hyper-masenko",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "kano-country",
+    "type": "place",
+    "cle": "scope",
+    "cleDuType": "status",
+    "valeur": "Équipage pirate"
+   },
+   {
+    "slug": "atk-db-dark-death-ball",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-shukei-hakuteiken",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-death-ball",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-gran-rey-cero",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-emperor-s-death-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-lightning-sword-slash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-destructo-disc-hexa-blade",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-takaoni",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-demonic-destruction",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-golden-death-blaster",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-flash-blade",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-hyper-galick-gun",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-cloning",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-spirit-bomb-super-saiyan",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dragon-blast",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-explosive-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-golden-great-ape",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-shima-yurai",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-galick-impact",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-rokuogan",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-body-change",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-explosive-madan",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-birthing-cell-juniors",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-drunken-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-zabimaru",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-bl-katen-kyokotsu",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-op-gear-second",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-red-roc",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-eye-flash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-orin-combo",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-franky-radical-hip",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-bl-hakka-no-togame",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-dash-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-inexperienced-power-up",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-great-ape",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-family-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-gomu-gomu-no-gatling",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-chou-makouhou-barrage",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-father-son-rebellion-trigger",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-heavenly-sunlight",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-energy-unleashed",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-kamehameha-return",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-infinity-bullet",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-crazy-finger-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-monster-point",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-shigan",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-psycho-crash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-imprisonment-ball",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-darkness-eye-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-arcane-shot",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-exploding-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-hi-tension",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dragon-punch",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-burst-rush",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-puncture-wille",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-justice-kick",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-delta-storm",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-divine-departure",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-absolute-evil",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-soo-zabimaru",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-gravity-impact",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-psychokinesis",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-god-breaker",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-paralyze-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-finger-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-all-out",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-senbonzakura-kageyoshi",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-eyes-of-fear",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "liberation-de-la-tempete-ranton",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kekkei genkai"
+   },
+   {
+    "slug": "atk-db-risking-it-all-for-a-friend",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-power",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-quiet-rage",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-tatsumaki",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-energy-shield",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-burst-cannon",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-kokuto-yoru-slash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-photon-bomber",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-justice-rush",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-flash-cry",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-super-back-jump",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-justice-tempest",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-daiguren-hyorinmaru",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-prelude-to-perfect-form",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-rokushiki",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-rapid-fire",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-hope-slash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-samehada-shotei",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-bl-hyorinmaru",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-farting",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-absorption",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-blaster",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-nemuriuta-flanc",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-concasse",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-bl-los-lobos",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-big-bang-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-reverse-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-energy-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-nelson-special-beam-cannon",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-psychic-move",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-earthling-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-bankai-kannonbiraki-benihime-aratame",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-bl-desgarron",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-ki-transfer",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-finish-buster",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-shining-slash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dual-tech",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-galick-rush",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-desastre-claw",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-karakusagawara-seiken",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-dimension-breaker",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-kaen-boshi",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-burning-heart",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-barrage-death-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dragon-smash-rush",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-guncho-tsurara",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-burning-storm",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-bakudo-99-kin",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kidō"
+   },
+   {
+    "slug": "atk-db-double-galick-cannon",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-genocide-breaker",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-negative-power-rain",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-burst-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-divine-lasso",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-life-link",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-ex-dragon-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-demonio-fleur",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-father-son-galick-gun",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-fierce-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-regeneration",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-lightning-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-explosive-combination",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-cien-fleur",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-instant-rise",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-evil-shot",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-combined-masenko",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-backslap",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-demon-flash-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-impact-dial",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-backflip",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-ryu-no-ibuki",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-bl-ashisogi-jizo",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-op-spider-net",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-angry-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-master-and-disciple-special-beam-cannon",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-instant-transmission",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-burning-breaker",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-demon-wolf-crane",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-gigantesco-mano",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-gigantic-rock-throw",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-cyclone-tempo",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-earth-guardian-blast",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-blow-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-finger-blitz-barrage",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-maximum-blow",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-galactic-swing",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-zeus-breath",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-golden-death-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dash-power",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-doppelganger",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-shining-sword-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-god-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-k-room",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-evolved-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-body-destruction",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-multi-form",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-force-edge",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-sennen-hyoro",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-tri-form",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-shining-divider",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-brutal-buster",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-cosmic-circle",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-power-mochi",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-ashura",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "liberation-de-l-ebullition-futton",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kekkei genkai"
+   },
+   {
+    "slug": "atk-db-golden-death-ball",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-sode-no-shirayuki",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-energy-landmine",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-heat-dome-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-special-beam-cannon",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-feel-the-pain-of-the-namekians",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "liberation-de-la-glace-hyoton",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kekkei genkai"
+   },
+   {
+    "slug": "atk-op-buraikan",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-invisible-eye-blast",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-super-galick-gun",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-strike-vegeta",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-giant-form-serpent-demon-clan",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-bojutsu",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-power-death-bullet",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dark-king",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-high-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-hi-speed-destructo-disc",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-healing",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-apocalyptic-burst",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-sphere",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-suzumushi-tsuishiki-enma-korogi",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-op-purgatory-oni-giri",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-bl-kyoka-suigetsu",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-op-bajrang-gun",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-bio-impact",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-father-son-final-flash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-divine-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-body-change-special",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-ghost-king",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-assault",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-pressure-point-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-hyoten-hyakkaso",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-ki-blast",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-laser",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dragon-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-raid",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-mystic-flasher",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dragon-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-another-end",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-super-explosive-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-spirit-shot",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-diable-jambe",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-kamehame-fever",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-judgement-ray",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-charging-ultra-buu-buu-volleyball",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-rengeki",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-super-burning-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-swallow-bond-avant",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-ki-explosion",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-utsusemi",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-full-power-father-son-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-illusion",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-emperor-s-edge",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-change-the-future",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-spirit-saucer",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-destroy-the-planet",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-all-clear",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-thunderbolt-tempo",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-final-galick-cannon",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-freeze-storm",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-gura-gura-no-mi-quake",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-brave-slash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-demon-whip-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-ifrit-jambe",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-hellzone-plunge",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-evil-containment-wave-reflection",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-evil-whirlwind",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-multiple-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-cyclone-jump",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-gomu-gomu-no-bazooka",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-bl-benihime",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-bl-some-no-mai-tsukishiro",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-feet-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-energy-punch",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-great-saiyaman-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-it-s-just-getting-exciting",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-cell-junior-dance",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-spike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-shishi-sonson",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-death-defying-combination",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-tora-gari",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-cosmic-rush",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-portal-opening",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "liberation-de-l-explosion-bakuton",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kekkei genkai"
+   },
+   {
+    "slug": "atk-db-explosive-breath-cannon",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-ground-slash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-solar-flare-x100",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-energy-of-destruction",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-big-bang-burst",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-meteor-impact-team-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-chasing-bullet",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-demon-fusion-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-blast-1",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-demonic-rush",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-antenna-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-kamisori-benihime",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-justice-judgment",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-soru",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-far-seeing-arts",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-kung-fu-point",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-deadly-dance",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-flash-destructo-disc",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-meteor-crash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-evil-aura",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-power-stance",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-great-namekian",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-psycho-bomb",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-force-impact",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dead-end-crush",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-evil-containment-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-amazing-impact",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-continuous-energy-bullet",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-galick-blazer",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-rise-to-action",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-power-up",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "liberation-de-la-lave-yoton",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kekkei genkai"
+   },
+   {
+    "slug": "atk-db-dragon-hammer",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-team-work-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-garlic-fire",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-mouth-energy-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-brave-sword-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-persuasion",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-galaxy-breaker",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-ki-smoke-bomb",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "liberation-de-l-acier-koton",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kekkei genkai"
+   },
+   {
+    "slug": "atk-db-hyper-explosive-demon-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-power-up-to-the-very-limit",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-unlock-potential",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-power-final-explosion",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-bad-ring-laser",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-rankyaku",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-clutch",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-dragon-smash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-destructive-wind",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-extreme-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-gomu-gomu-no-king-kong-gun",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-double-axe-handle",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-hihio-zabimaru",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-emperor-s-sign",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-bending-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-furious-galick-gun",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-segunda-etapa",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-saiyan-beyond-god",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-solar-flare",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-weapons-left",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-continuous-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-power-energy-blast-volley",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-makosen",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-kageoni",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-op-hanauta-sancho-yahazu-giri",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-bl-bakudo-61-rikujokoro",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kidō"
+   },
+   {
+    "slug": "atk-op-kurouzu",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-chaotic-time-impact",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-baked-sphere",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-selflessness-state",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-beyond-god-instant-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-saucer",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-hiken",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-solar-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-big-bang-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-eye-laser",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-blind-meteor",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-nozarashi",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-bl-shunko",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-strike-for-the-future",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-bullet",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-heavy-finish",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-buster-cannon",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-cero",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-gamma-burst-flash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-geppo",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-spirit-bomb-absorption",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dragon-assault",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-chain-destructo-disc",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-rush-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-impact",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-comet",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-arrow-knee",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-headbutt",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-angry-blow",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-gomu-gomu-no-pistolet",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-demon-cannon",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-icarus",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-fire-breath",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-light-grenade",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-namekian-fusion",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-i-m-here-to-kill-you",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-taunt",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "liberation-du-magnetisme-jiton",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kekkei genkai"
+   },
+   {
+    "slug": "atk-db-full-power-energy-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-evil-rise-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-charged-ki-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-blow",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-spread-shot-retreat",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-power-energy-ball",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-celestial-whirlwind",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-gokei",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-big-bang-ray",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-kendo",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-hail-frieza",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-fusion-spirit-bomb",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-crushing-in-hands",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-gomu-gomu-no-elephant-gun",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-dragon-storm",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-blast-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-god-final-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-brave-punisher",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-enma",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-dirty-fireworks",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-buster-blade",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-break-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-cold-nezumi-zeppyo",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-demon-rend",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-storm",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-justice-finishing-pose",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-spirit-control",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-direct-smash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-earth-breaker",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-buzz-cut-mochi",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-energy-rings",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-s-sun-flare-destructo-disc",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-autonomous-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-galick-doom",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-gear-third",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-explosive-demon-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-god-explosion",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-hidden-potential",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-fork",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-bakudo-81-danku",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kidō"
+   },
+   {
+    "slug": "atk-db-crazy-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-tsugi-no-mai-hakuren",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-face-slap",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-double-masenko",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-energy-absorption",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-garra-de-la-pantera",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-op-oni-giri",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-god-final-flash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-super-elbow-smash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-solid-hammer",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-garlic-buster",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-saiyan-power",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-perfect-barrier",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-meteor-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-power-masenko",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-aero-blast",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-mil-fleur",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-black-frieza",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-jumping-energy-wave",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-liberation",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-bear-hug",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-double-tsuibikidan",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-strong-right",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-golden-death-slicer",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-explosion",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-grudgeless-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-large-spirit-bomb",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-kiai-defibrillation",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-can-you-follow-me",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-power-death-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-max-power-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-flash-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-destructive-dragon-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-blazing-rush",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-flying-kick",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-bushogoma",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "liberation-des-tenebres-meiton",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kekkei genkai"
+   },
+   {
+    "slug": "atk-db-clean-kick",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-charge-final-flash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-double-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-final-getsuga-tensho",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-demon-hand",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-blinding-blitz",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-finish-sign",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-tensa-zangetsu",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "liberation-du-cristal-shoton",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kekkei genkai"
+   },
+   {
+    "slug": "atk-op-counter-shock",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-zanku-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-gear-fourth",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-rage-saucer",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-fingertip-ball",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-flash-saber",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-spirit-ball",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-big-bang-crash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-autonomous-ultra-instinct",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-lift-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-gigantic-flame",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-cannon",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-earth-destroying-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-hell-s-buster",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-super-buster-cannon",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-gekizturanma",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-bien-cuit-grill-shot",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-heroic-combo",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-mimicry",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-brotherhood-galick-gun",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-explosive-demon-impact",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-give-me-energy",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-forced-spirit-fission",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-mochi-tsuki",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-dai-enkai-entei",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-bl-minazuki",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-magic-materialization",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-meditation",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-explosive-demon-wave-illusion",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dragonthrow",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-killquick",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-galick-gun",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-rapid-sword-stream",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-perfect-shot",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-masenko",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-destructo-disc-triple-blade",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-justice-flash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-masenko-beam-cannon",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-high-speed-rush",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-power-charge",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-king-of-hell",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-false-courage",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dragon-blitz",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-justice-slash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-android-barrier",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dragon-dash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-fighting-pose",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-hado-63-raikoho",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kidō"
+   },
+   {
+    "slug": "atk-db-galactic-donut",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-point-blank-galick-gun",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-supernova",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-evil-saiyan",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-special-beam-charge",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-ka-blam-slicer",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-super-afterimage",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-powerhouse",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-gamma-knife",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-room",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-dust-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-absolute-rush",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-spirit-tri-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-crash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-cage-of-light",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-backstrike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-rapid-shot",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-justice-punch",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-evil-explosion",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-cero-oscuras",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-op-mirage-tempo",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-final-flash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-it-hurts",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-instant-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-power-blitz",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-energy-meteor",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-atomic-blast",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-perfect-combination",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-phantom-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-kabuto",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-dark-impact",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-arm-point",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-bl-hado-33-sokatsui",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kidō"
+   },
+   {
+    "slug": "atk-db-arm-break",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-berserk-dragon-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-bloody-sauce",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-renzoku-energy-barrage",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dragon-hammer-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-demon-pursuit-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-kiai",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-electric-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dark-magic",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-impact-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-thunder-lance-tempo",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-soul-solid",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-accel-dance",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-kurohitsugi",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-afterimage-technique",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-firebird-star",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-bl-konjiki-ashisogi-jizo",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-balloon-technique",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-beast",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-hado-73-soren-sokatsui",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kidō"
+   },
+   {
+    "slug": "atk-op-onigawara-seiken",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-divination",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-intense-soul-impact",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-hellzone-grenade",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-guided-masenko",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-double-death-saucer",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-impulse-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-senbonzakura",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-gekiretsu-madan",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-great-death-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dodon-ray",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-gear-fifth",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-light-sword",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-zan-giri-mochi",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-nova-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-limit-breaker-burning-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-senkei",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-bl-lanza-del-relampago",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-aura-of-a-god",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-super-masenko",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-tekkai",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-shining-blow",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-limit-breaker-masenko",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-outsider-shot",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-coup-de-vent",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-spirit-bomb",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-cataclysmic-orb",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-solar-flare-reflection",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-eight-arm-fist",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-super-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-kyokaen",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-bl-cero-metralleta",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-fourth-transformation",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-clean-filter",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-orange-piccolo",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-beerus-ball",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-afterimage-strike",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-bluff-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-gomu-gomu-no-red-hawk",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-party-table-kick-course",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-dragon-claw",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-dual-destructo-disc",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-frieza-stance",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-poele-a-frire",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-full-energy-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-santa-teresa",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-op-enkai",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-earth-splitting-galick-gun",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-kanzen-saimin",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-crusher-knee-kick",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-break",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-maximum-masenko",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-super-destructo-disc",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-recoome-ultra-fighting-bomber",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-death-junk",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-hado-90-kurohitsugi",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kidō"
+   },
+   {
+    "slug": "atk-db-flight",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-burning-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-quad-siege",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-injection-shot",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-energy-punch-frieza",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-golden-supernova",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-ryu-no-kagizume",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-super-saiyan",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-dirty-slash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-form-change",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-higa-zekko",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-op-gura-gura-quake",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-golden-frieza",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-fusion-dance",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-nelson",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-howl",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-ryodan",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-db-destructo-disc",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-emperor-s-blast",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-giant-throw",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-final-shine-attack",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-energy-slash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-horn-point",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-tri-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-conqueror-s-haki-clash",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-double-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-double-demon-burst",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-bros-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-bl-hado-31-shakkaho",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Kidō"
+   },
+   {
+    "slug": "atk-bl-suzumushi",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique de Zanpakutō"
+   },
+   {
+    "slug": "atk-op-midori-boshi",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-dual-masenko",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-full-power-rush",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-db-giant-form",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-yarinami",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-radical-beam",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-guard-point",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-santoryu-ougi-sanzen-sekai",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-db-justice-kamehameha",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Technique"
+   },
+   {
+    "slug": "atk-op-mouton-shot",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   },
+   {
+    "slug": "atk-op-shambles",
+    "type": "power",
+    "cle": "discipline",
+    "cleDuType": "skill",
+    "valeur": "Attaque"
+   }
+  ],
+  "villages": [
+   {
+    "slug": "kosuke",
+    "village": "Kirigakure",
+    "texteNomme": [
+     "Konohagakure"
+    ],
+    "phrasePreuve": "Kosuke Maruboshi est un genin de Konoha que l'on surnommait le Genin de Dix Mille Ans (万年下忍, Mannen Genin)."
+   },
+   {
+    "slug": "kimimaro",
+    "village": "Otogakure",
+    "texteNomme": [
+     "Kirigakure"
+    ],
+    "phrasePreuve": "Kimimaro était le cinquième membre du Quatuor du Son, changeant ainsi temporairement le nom de leur groupe en Quintette du Son."
+   },
+   {
+    "slug": "genji",
+    "village": "Kirigakure",
+    "texteNomme": [
+     "Konohagakure",
+     "Sunagakure"
+    ],
+    "phrasePreuve": "Genji est un Ancien de Kiri."
+   },
+   {
+    "slug": "suiren",
+    "village": "Amegakure",
+    "texteNomme": [
+     "Kirigakure",
+     "Kumogakure",
+     "Iwagakure"
+    ],
+    "phrasePreuve": "Suiren (スイレン, Suiren) était une kunoichi de Kirigakure."
+   },
+   {
+    "slug": "king-naruto",
+    "village": "Kumogakure",
+    "texteNomme": [
+     "Iwagakure"
+    ],
+    "phrasePreuve": "Son Gokû, plus communément appelé le Quatre Queues (Yonbi), est un Démon à queues scellé en Rôshi d'Iwagakure."
+   },
+   {
+    "slug": "toroi",
+    "village": "Kumogakure",
+    "texteNomme": [
+     "Sunagakure"
+    ],
+    "phrasePreuve": "Toroi était un shinobi renommé de Kumo."
+   },
+   {
+    "slug": "three-giant-snakes",
+    "village": "Otogakure",
+    "texteNomme": [
+     "Kirigakure"
+    ],
+    "phrasePreuve": "Isobu, plus communément appelé le Trois Queues (Sanbi), est un Démon à queues qui était autrefois scellé en Yagura de Kirigakure."
+   },
+   {
+    "slug": "mecha-kurama",
+    "village": "Otogakure",
+    "texteNomme": [
+     "Konohagakure"
+    ],
+    "phrasePreuve": "Mecha-Kurama est une réplique mécanisée de Kurama créée par Orochimaru pour détruire Konohagakure."
+   }
+  ]
+ },
+ "F3_texteContamine": {
+  "candidats": 23,
+  "lignes": [
+   {
+    "slug": "paikuhan",
+    "name": "Paikuhan",
+    "type": "character",
+    "universe": "Dragon Ball",
+    "sujetDuTexte": "Pikkon",
+    "fichesDeCeNom": [
+     {
+      "slug": "pikkon",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Pikkon est le meilleur combattant du Kaiô de l'Ouest, mort depuis un temps indéterminé.",
+    "descFrSource": null
+   },
+   {
+    "slug": "kosuke",
+    "name": "Kosuke",
+    "type": "character",
+    "universe": "Naruto",
+    "sujetDuTexte": "Kosuke Maruboshi",
+    "fichesDeCeNom": [
+     {
+      "slug": "kosuke-maruboshi",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": true,
+    "phrasePreuve": "Kosuke Maruboshi est un genin de Konoha que l'on surnommait le Genin de Dix Mille Ans (万年下忍, Mannen Genin).",
+    "descFrSource": null
+   },
+   {
+    "slug": "hibari-naruto",
+    "name": "Hibari",
+    "type": "character",
+    "universe": "Naruto",
+    "sujetDuTexte": "Hibari Kamakura",
+    "fichesDeCeNom": [
+     {
+      "slug": "hibari-kamakura",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": true,
+    "phrasePreuve": "Hibari Kamakura est une actrice de Konoha et la mère d'Osuka.",
+    "descFrSource": null
+   },
+   {
+    "slug": "summoning-technique-kamatari",
+    "name": "Summoning Technique (Kamatari)",
+    "type": "power",
+    "universe": "Naruto",
+    "sujetDuTexte": "Kamatari",
+    "fichesDeCeNom": [
+     {
+      "slug": "kamatari",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Kamatari est un summon de grande taille, une belette à fourrure blanche avec un cache-œil vert foncé sur son œil gauche, capable de trancher tout sur son passage avec sa faucille géante.",
+    "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo"
+   },
+   {
+    "slug": "manda-ii",
+    "name": "Manda II",
+    "type": "character",
+    "universe": "Naruto",
+    "sujetDuTexte": "Manda",
+    "fichesDeCeNom": [
+     {
+      "slug": "manda",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": true,
+    "phrasePreuve": "Manda est l'invocation personnelle d'Orochimaru.",
+    "descFrSource": null
+   },
+   {
+    "slug": "old-witch",
+    "name": "Old Witch",
+    "type": "character",
+    "universe": "Dragon Ball",
+    "sujetDuTexte": "Uranai Baba",
+    "fichesDeCeNom": [
+     {
+      "slug": "uranai-baba",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Uranai Baba est une vieille sorcière qui pratique la voyance depuis plus de 500 ans.",
+    "descFrSource": null
+   },
+   {
+    "slug": "setsuna",
+    "name": "Setsuna",
+    "type": "character",
+    "universe": "Naruto",
+    "sujetDuTexte": "Setsuna Uchiha",
+    "fichesDeCeNom": [
+     {
+      "slug": "setsuna-uchiha",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": true,
+    "phrasePreuve": "Setsuna Uchiha était un membre du clan Uchiha sous le règne du Second Hokage.",
+    "descFrSource": null
+   },
+   {
+    "slug": "amino",
+    "name": "Amino",
+    "type": "character",
+    "universe": "Naruto",
+    "sujetDuTexte": "Sôsha Amino",
+    "fichesDeCeNom": [
+     {
+      "slug": "sosha-amino",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": true,
+    "phrasePreuve": "Sôsha Amino est une élève de l'Académie de Konohagakure.",
+    "descFrSource": null
+   },
+   {
+    "slug": "madillo-man",
+    "name": "Madillo-Man",
+    "type": "character",
+    "universe": "One Piece",
+    "sujetDuTexte": "Babanuki",
+    "fichesDeCeNom": [
+     {
+      "slug": "babanuki",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Babanuki est un Headliner de l'équipage des Cent Bêtes qui sert de gardien de la Mine des Prisonniers dans la région d'Udon, au Pays de Wa.",
+    "descFrSource": null
+   },
+   {
+    "slug": "tsurugi",
+    "name": "Tsurugi",
+    "type": "character",
+    "universe": "Naruto",
+    "sujetDuTexte": "Misumi Tsurugi",
+    "fichesDeCeNom": [
+     {
+      "slug": "misumi-tsurugi",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": true,
+    "phrasePreuve": "Misumi Tsurugi est un membre de l'équipe de genin de Kabuto.",
+    "descFrSource": null
+   },
+   {
+    "slug": "cultist",
+    "name": "Cultist",
+    "type": "profession",
+    "universe": "Naruto",
+    "sujetDuTexte": "Tsuzumi",
+    "fichesDeCeNom": [
+     {
+      "slug": "tsuzumi",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Tsuzumi est un adepte d'un culte lié aux Ōtsutsuki, caractérisé par son fanatisme et sa loyauté envers Boro.",
+    "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo"
+   },
+   {
+    "slug": "koji",
+    "name": "Kōji",
+    "type": "character",
+    "universe": "Naruto",
+    "sujetDuTexte": "Koji Kashin",
+    "fichesDeCeNom": [
+     {
+      "slug": "koji-kashin",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": true,
+    "phrasePreuve": "Koji Kashin est un « Inner » de l'organisation Kara, chargé du secteur situé aux confins du Pays du Feu.",
+    "descFrSource": null
+   },
+   {
+    "slug": "carpenter",
+    "name": "Carpenter",
+    "type": "profession",
+    "universe": "Naruto",
+    "sujetDuTexte": "Kanna",
+    "fichesDeCeNom": [
+     {
+      "slug": "kanna",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Kanna est le charpentier en chef actuel de Konohagakure, héritant cette position de son père qui occupait le poste trente ans auparavant.",
+    "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+   },
+   {
+    "slug": "kobe",
+    "name": "Kobe",
+    "type": "character",
+    "universe": "One Piece",
+    "sujetDuTexte": "Koby",
+    "fichesDeCeNom": [
+     {
+      "slug": "koby",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Koby est un capitaine de la Marine appartenant à l'unité spéciale SWORD, formé par le vice-amiral Garp après avoir été libéré de l'esclavage chez les pirates d'Alvida par Monkey D.",
+    "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b"
+   },
+   {
+    "slug": "masshikaku",
+    "name": "Masshikaku",
+    "type": "character",
+    "universe": "One Piece",
+    "sujetDuTexte": "Mashikaku",
+    "fichesDeCeNom": [
+     {
+      "slug": "mashikaku",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Mashikaku est un personnage anime-only apparu lors de l'arc Long Ring Long Land, où il intègre les rangs des Foxy Pirates.",
+    "descFrSource": "claude-haiku-4-5 (rédacteur sans-source) · mentions : Mashikaku (Non-Canon), Mashikaku, Funimation/Voice Actors"
+   },
+   {
+    "slug": "shun",
+    "name": "Shun",
+    "type": "character",
+    "universe": "Naruto",
+    "sujetDuTexte": "Haruna",
+    "fichesDeCeNom": [
+     {
+      "slug": "haruna-naruto",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": true,
+    "phrasePreuve": "Haruna était la fille du daimyō du Pays des Légumes.",
+    "descFrSource": null
+   },
+   {
+    "slug": "ashisogi-jizo",
+    "name": "Ashisogi Jizo",
+    "type": "character",
+    "universe": "Bleach",
+    "sujetDuTexte": "Mayuri Kurotsuchi",
+    "fichesDeCeNom": [
+     {
+      "slug": "mayuri-kurotsuchi",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Mayuri Kurotsuchi est le capitaine de la 12e Division du Gotei 13 et le deuxième président de l'Institut de Recherche des Shinigamis.",
+    "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+   },
+   {
+    "slug": "piccolo-orange",
+    "name": "Piccolo Orange",
+    "type": "skill",
+    "universe": "Dragon Ball",
+    "sujetDuTexte": "Orange Piccolo",
+    "fichesDeCeNom": [
+     {
+      "slug": "atk-db-orange-piccolo",
+      "type": "power"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Orange Piccolo est une transformation de puissance utilisée par Piccolo, caractérisée par une peau orange, des yeux rouges et une musculature accrue.",
+    "descFrSource": "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo"
+   },
+   {
+    "slug": "majin-buu-gohan",
+    "name": "Majin Buu (Gohan)",
+    "type": "skill",
+    "universe": "Dragon Ball",
+    "sujetDuTexte": "Super Buu",
+    "fichesDeCeNom": [
+     {
+      "slug": "super-buu",
+      "type": "skill"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Super Buu est la forme résultant de l'absorption de Good Buu par Evil Buu, ce qui lui confère une puissance et une capacité mentale considérablement accrues.",
+    "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+   },
+   {
+    "slug": "ashina",
+    "name": "Ashina",
+    "type": "character",
+    "universe": "Naruto",
+    "sujetDuTexte": "Ashina Uzumaki",
+    "fichesDeCeNom": [
+     {
+      "slug": "ashina-uzumaki",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": true,
+    "phrasePreuve": "Ashina Uzumaki était le chef du clan Uzumaki à l'époque de la fondation de Konoha.",
+    "descFrSource": null
+   },
+   {
+    "slug": "girl",
+    "name": "Girl",
+    "type": "character",
+    "universe": "Dragon Ball",
+    "sujetDuTexte": "Ribrianne",
+    "fichesDeCeNom": [
+     {
+      "slug": "ribrianne",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Ribrianne est une guerrière de l'Univers 2, et la cheffe des Kamikaze Fireballs.",
+    "descFrSource": null
+   },
+   {
+    "slug": "ile-celeste",
+    "name": "Île Céleste",
+    "type": "status",
+    "universe": "One Piece",
+    "sujetDuTexte": "Skypiea",
+    "fichesDeCeNom": [
+     {
+      "slug": "skypiea-lieu",
+      "type": "place"
+     }
+    ],
+    "resumeDitLaMemeChose": false,
+    "phrasePreuve": "Skypiea est une nation céleste située au-dessus de Paradise, considérée comme une légende par ses habitants.",
+    "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+   },
+   {
+    "slug": "agari",
+    "name": "Agari",
+    "type": "character",
+    "universe": "Naruto",
+    "sujetDuTexte": "Agari Kaisen",
+    "fichesDeCeNom": [
+     {
+      "slug": "agari-kaisen",
+      "type": "character"
+     }
+    ],
+    "resumeDitLaMemeChose": true,
+    "phrasePreuve": "Agari Kaisen est le chef du clan Kedôin et un vieil ami de Tsunade.",
+    "descFrSource": null
+   }
+  ]
+ }
+}

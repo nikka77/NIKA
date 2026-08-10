@@ -52,6 +52,7 @@ import {
   fetchFandomProse, libelleNu,
   sameEntityName, sameEntityBySlug, titreStrictementEgal, titrePlusRiche,
   pageDOeuvre, pagePlusGenerale, formeCourteAttestee,
+  nameWords, sameWord,
 } from './lib/fandom.mjs';
 
 const arg = (n, d = null) => process.argv.find((a) => a.startsWith(`--${n}=`))?.split('=').slice(1).join('=') ?? d;
@@ -115,6 +116,33 @@ const ARTICLES = new Set(['l', 'd', 'des', 'un', 'une', 'et', 'a', 'au', 'aux', 
 const jetons = (s) => new Set(String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '')
   .toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/)
   .filter((w) => w && !['the', 'of', 'de', 'du', 'la', 'le', 'les', 's'].includes(w)));
+/** LE TITRE INTRODUIT-IL UN MOT PORTEUR QUE NOUS N'AVONS PAS ? (vague 4, 10/08)
+ *
+ *  `titreEnrichi` posait la question en COMPTANT les mots. Le contrôle des 27 lui a trouvé deux
+ *  trous, et les deux ont écrit une fiche sur le texte d'une autre :
+ *    · « Clan Yūhi » (notre lignée) est tombé sur « Kurenaï Yûhi » — la KUNOICHI. Deux mots des
+ *      deux côtés : le décompte ne voyait rien, alors que le titre échange « clan » contre un
+ *      PRÉNOM. On allait servir la biographie de Kurenai sur la fiche de son clan, qui a déjà sa
+ *      propre `bio` et ses ères.
+ *    · « Liberation » (une attaque) est tombé sur « Tambours de la Libération » — le son qui
+ *      retentit à l'avènement de Joy Boy, pas une attaque. Le décompte a été neutralisé par notre
+ *      propre slug : `atk-op-liberation` pèse trois jetons (`atk`, `op`, `liberation`) contre deux
+ *      au titre, et la condition « le titre a plus de mots que le slug » est tombée à faux.
+ *
+ *  On pose donc la question sur les ENSEMBLES, pas sur les tailles : un mot porteur du titre qui
+ *  ne répond à aucun mot de notre nom NI de notre slug est un changement de sujet. La comparaison
+ *  emprunte `sameWord` au connecteur — le même repli de romanisation qui fait tenir « Gyanzack »
+ *  pour « Ganzack » et « Bungo » pour « Bungou ». Pas une seconde règle parallèle : la sienne.
+ *
+ *  Exemptions, toutes attestées par la source elle-même : titre rigoureusement égal, redirection
+ *  de notre nom déclarée par le wiki, et pont interlangue symétrique — là, le titre est une
+ *  TRADUCTION, et compter ses mots contre les nôtres n'a aucun sens. */
+function titreAjouteUnMotPorteur(nom, slug, titre) {
+  const notres = [...nameWords(nom), ...nameWords(String(slug).replace(/-/g, ' '))];
+  const ajoutes = [...nameWords(titre)].filter((t) => !notres.some((w) => sameWord(w, t)));
+  return ajoutes.length ? ajoutes : null;
+}
+
 function titreAmputeDuNom(nom, titre) {
   const n = jetons(nom), t = jetons(titre);
   if (!n.size || !t.size || t.size >= n.size) return false;
@@ -131,6 +159,63 @@ function sansBloc(html, tag) {
   do { avant = s; s = s.replace(re, ' '); } while (s !== avant && ++tours < 8);
   return s;
 }
+/** LA BARRE D'ONGLETS N'EST PAS L'ARTICLE (vague 4, 10/08 — défaut trouvé par le contre-vérificateur
+ *  de la vague 3).
+ *
+ *  `battle-franky` avait avalé le chrome de navigation de sa page source : « Battle Franky BF-36
+ *  BF-37 BF-38 Les Battles Franky (バトルフランキー…) ». Le HTML rendu est ce que le wiki AFFICHE —
+ *  donc il contient aussi ce avec quoi on NAVIGUE, et rien dans le texte ne dit lequel est lequel.
+ *
+ *  On ne la reconnaît PAS par sa classe (`article-tabs` ici, `wds-tabs` ailleurs, autre chose
+ *  demain — une liste de classes ne couvre que le cas d'hier). On la reconnaît par sa FORME : une
+ *  liste dont les items ne contiennent QUE des étiquettes de liens. De la prose porte toujours du
+ *  texte hors des liens ; une barre d'onglets, jamais. Le lien de l'onglet courant n'est pas un
+ *  `<a>` mais un `<strong class="mw-selflink">` — il compte comme lien, sans quoi la barre paraît
+ *  à 25 % « hors liens » et passe.
+ *
+ *  @returns {{html:string, retires:string[]}} le HTML sans ses listes de navigation, et ce qu'on a
+ *  retiré — la trace doit pouvoir montrer ce qu'une garde a mangé, pas seulement qu'elle a mordu. */
+function sansNavigation(html) {
+  const retires = [];
+  let s = html;
+  for (const tag of ['ul', 'ol']) {
+    // Scanner à profondeur, et non regex non gourmande : une liste imbriquée refermerait le bloc
+    // trop tôt et laisserait la moitié du chrome derrière (défaut jumeau de `sansBloc`).
+    for (let garde = 0; garde < 200; garde++) {
+      const ouvre = new RegExp(`<${tag}\\b[^>]*>`, 'gi');
+      let debut = -1, fin = -1;
+      let m; ouvre.lastIndex = 0;
+      while ((m = ouvre.exec(s))) {
+        let prof = 1; let i = m.index + m[0].length;
+        const re = new RegExp(`<${tag}\\b[^>]*>|<\\/${tag}\\s*>`, 'gi'); re.lastIndex = i;
+        let x;
+        while (prof > 0 && (x = re.exec(s))) { prof += x[0][1] === '/' ? -1 : 1; i = x.index + x[0].length; }
+        if (prof !== 0) break;
+        const bloc = s.slice(m.index, i);
+        if (estNavigation(bloc)) { debut = m.index; fin = i; break; }
+      }
+      if (debut < 0) break;
+      retires.push(detag(s.slice(debut, fin)).slice(0, 120));
+      s = s.slice(0, debut) + ' ' + s.slice(fin);
+    }
+  }
+  return { html: s, retires };
+}
+function estNavigation(bloc) {
+  const items = (bloc.match(/<li\b/gi) ?? []).length;
+  if (items < 2) return false;                                   // un item isolé n'est pas une barre
+  const total = detag(bloc);
+  if (!total) return false;
+  const horsLiens = detag(bloc
+    .replace(/<a\b[^>]*>[\s\S]*?<\/a>/gi, ' ')
+    .replace(/<strong\b[^>]*class="[^"]*selflink[^"]*"[^>]*>[\s\S]*?<\/strong>/gi, ' '));
+  return horsLiens.length <= 0.15 * total.length;
+}
+
+/** Marqueur de lien interlangue laissé nu dans le corps (« en:Katar », vu sur les redirections
+ *  douces du wiki Naruto FR) : c'est de la plomberie de wiki, pas une phrase. */
+const MARQUEUR_INTERLANGUE = /^[a-z]{2,3}:\S+$/;
+
 const ENTITES = { nbsp: ' ', amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", '#39': "'", '#160': ' ', '#91': '[', '#93': ']', '#95': '_' };
 const detag = (h) => h
   .replace(/<sup\b[^>]*class="[^"]*reference[^"]*"[^>]*>[\s\S]*?<\/sup>/gi, '')   // appels de note
@@ -172,6 +257,9 @@ function chapeauHtml(html) {
   // notes de renvoi en tête d'article.
   h = h.replace(/<div\b[^>]*class="[^"]*(dablink|hatnote|notice)[^"]*"[^>]*>[\s\S]*?<\/div>/gi, ' ');
   for (const t of ['aside', 'table', 'figure', 'center', 'style']) h = sansBloc(h, t);
+  // Les barres d'onglets partent AVANT le découpage en blocs : une fois détaguées, « BF-36 » et
+  // « Les Battles Franky sont… » sont deux chaînes de texte que plus rien ne distingue.
+  const nav = sansNavigation(h); h = nav.html;
   // Le chapeau s'arrête au premier titre de section — ou au sommaire, qui le précède parfois.
   const bornes = [h.search(/<h[23]\b/i), h.indexOf('<div id="toc"'), h.indexOf('id="toc"')]
     .filter((i) => i > 0);
@@ -180,14 +268,18 @@ function chapeauHtml(html) {
   // la définition qui la suit se retrouvent dans la même phrase, et aucun filtre ne peut les
   // séparer (cas `wabisuke-bleach` du contrôle des 20).
   h = h.replace(/<\/(p|div|i|em|small|center|dd|dt|li|blockquote)>|<br\s*\/?>/gi, ' ¶ ');
-  const blocs = detag(h).split('¶').map((b) => b.trim()).filter(Boolean);
+  const blocs = detag(h).split('¶').map((b) => b.trim())
+    .filter((b) => b && !MARQUEUR_INTERLANGUE.test(b));
   // Le renvoi ne se retire qu'en TÊTE : plus loin, « Pour la… » peut appartenir à la prose.
   while (blocs.length && RENVOI.test(blocs[0])) blocs.shift();
   // Le marqueur de bloc a fait son travail, il laisse une espace là où il n'y en avait pas :
   // « (マクロ一味, Makuro Ichimi ) », le nom romanisé vivant dans son propre <i>. Une espace avant
   // « ) », « , » ou « . » est toujours fautive en français — contrairement à celle qui précède
   // « : », « ; », « ! », « ? », « » », qui est la règle : on ne touche qu'aux trois premières.
-  return blocs.join(' ').replace(/\s+([),.])/g, '$1').split(/(?<=[.!?])\s+/);
+  return {
+    phrases: blocs.join(' ').replace(/\s+([),.])/g, '$1').split(/(?<=[.!?])\s+/),
+    navRetiree: nav.retires,
+  };
 }
 
 /** Coupe à la dernière phrase entière sous `max`. On ne tronque JAMAIS en plein mot : un texte
@@ -212,10 +304,41 @@ const motsNus = (s) => new Set(String(s ?? '').normalize('NFD').replace(/[̀-ͯ]
  *  que la page et son titre ont divergé (fusion, renommage) — et alors la correspondance déclarée
  *  entre les deux langues n'est plus de un à un. Cas mesuré : notre « Chakra Threads » arrivait
  *  sur la page FR « Marionnettisme », dont le chapeau définit les « Techniques de Marionnettiste »
- *  (Kugutsu no Jutsu) : deux techniques distinctes côté anglais, fondues en une côté français. */
-function nommeSonSujet(texte, nom, titre) {
-  const dans = motsNus(texte); const cibles = [...motsNus(nom), ...motsNus(titre)];
-  return cibles.length === 0 || cibles.some((m) => dans.has(m));
+ *  (Kugutsu no Jutsu) : deux techniques distinctes côté anglais, fondues en une côté français.
+ *
+ *  ── RESSERRAGE DE LA VAGUE 4 (10/08) ────────────────────────────────────────────────────────
+ *  Telle qu'écrite le matin, la garde acceptait qu'UN SEUL mot du libellé figure dans le texte, et
+ *  elle mélangeait les mots du NOM avec ceux du TITRE : « Fier Baril » était réputé nommé parce que
+ *  le mot « baril » traînait dans le texte, et un chapeau qui ne parlait que de sa propre page
+ *  passait pour nommer NOTRE fiche. Un mot commun n'est pas un nom — c'est la leçon du 10/08
+ *  (« une MENTION n'est pas une IDENTITÉ »), appliquée ici à l'intérieur du texte.
+ *
+ *  Un libellé est désormais attesté de deux façons, toutes deux entières :
+ *    · sa forme COMPLÈTE apparaît dans le texte (repliée : casse, accents, ponctuation) — c'est le
+ *      cas normal, « Les Battles Franky sont… » atteste « Battle Franky » ;
+ *    · ou TOUS ses mots porteurs y sont, dispersés — « Technique du Parchemin de Communication »
+ *      reste attestée par « cette technique de communication par parchemin ».
+ *  Un seul mot sur deux ne suffit plus, et chaque libellé se juge SÉPARÉMENT. */
+const replie = (s) => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '')
+  .toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+function atteste(texte, libelle) {
+  const l = replie(libelle); if (!l) return null;             // rien à prouver : la garde se tait
+  const t = replie(texte);
+  if (t.includes(l)) return true;                             // la forme entière est là
+  const mots = [...motsNus(libelle)];
+  if (!mots.length) return null;
+  const dans = motsNus(texte);
+  // Le PLURIEL est la même chose au pluriel : le wiki écrit « Les Battles Franky sont des armes »
+  // là où notre fiche s'appelle « Battle Franky ». Mesuré sur la batterie : sans ce repli, la
+  // garde déclarait non attesté le texte qui commence par le nom de la fiche. Un « s » final n'est
+  // pas un mot porteur de plus — c'est le seul repli admis ici, aucun rapprochement phonétique.
+  const present = (m) => dans.has(m) || dans.has(`${m}s`) || (m.endsWith('s') && dans.has(m.slice(0, -1)));
+  return mots.every(present);
+}
+/** Le texte nomme-t-il l'un des libellés fournis ? `null` si aucun libellé n'était jugeable. */
+function nommeSonSujet(texte, ...libelles) {
+  const verdicts = libelles.map((l) => atteste(texte, l)).filter((v) => v !== null);
+  return verdicts.length === 0 ? true : verdicts.some(Boolean);
 }
 
 // ══════════════════════════════════════════════════════════════════════════════════════════════
@@ -241,8 +364,18 @@ async function main() {
   }
   const vide = (x) => typeof x !== 'string' || !x.trim();
   const sansDescFr = corpus.filter((l) => vide(l.attributes?.descFr));
-  let cible = sansDescFr.filter((l) => API_FR[l.universe] && temoins[l.universe].repond);
-  console.log(`corpus ${corpus.length} · sans descFr ${sansDescFr.length} · traitables ${cible.length}`);
+  // UNE CASE VIDÉE EXPRÈS N'EST PAS UNE CASE À REMPLIR (vague 4, 10/08).
+  // Pendant que ce chantier tournait, une autre vague a retiré 16 `descFr` en laissant le motif
+  // dans `descFrPurgee` : « biographie du ninja Sakon retirée — la fiche est typée pouvoir »,
+  // « description du LIEU Skypiea retirée — cette fiche est la saga ». Ce sont exactement les
+  // fiches dont la page évidente du wiki décrit AUTRE CHOSE : mes routes y retomberaient tête
+  // baissée et je déferais, en croyant remplir, un travail qui vient d'être fait. Le marqueur est
+  // une consigne de la base ; on la lit avant d'écrire.
+  const purgees = sansDescFr.filter((l) => l.attributes?.descFrPurgee);
+  let cible = sansDescFr.filter((l) => API_FR[l.universe] && temoins[l.universe].repond
+    && !l.attributes?.descFrPurgee);
+  console.log(`corpus ${corpus.length} · sans descFr ${sansDescFr.length}`
+    + ` · vidées exprès (descFrPurgee, laissées telles quelles) ${purgees.length} · traitables ${cible.length}`);
   // `--slugs=` : rejouer les cas d'une batterie de garde sur le CODE DE PRODUCTION lui-même, pas
   // sur une copie (leçon du 07/08 : un test qui recopie la garde ne teste que sa copie).
   const seuls = arg('slugs')?.split(',').map((x) => x.trim()).filter(Boolean);
@@ -285,14 +418,38 @@ async function main() {
       } catch { /* le connecteur EN est faillible : son échec n'arrête pas le lot */ }
     }
 
+    // ── 4e ROUTE : DEMANDER À LA SOURCE (vague 4, 10/08) ─────────────────────────────────────
+    // `action=parse&page=<titre>` échoue dès que le LIBELLÉ n'est pas EXACTEMENT le titre : un
+    // échec n'y prouve donc pas l'absence de la page, seulement que notre libellé n'est pas son
+    // titre (leçon du 10/08 : « ne conclus pas d'un silence »). La vague 3 a écrit « sans page
+    // FR » 330 fois sur cette seule foi. On redemande donc à la source par SA recherche.
+    //
+    // Ce n'est PAS la réhabilitation de la recherche plein texte comme preuve — c'est elle qui a
+    // produit toutes les fautes d'identité de l'usine. Elle TROUVE, elle ne prouve rien : le
+    // titre qu'elle rend passe ensuite l'échelle de preuve inchangée (titre égal, même nom, slug
+    // égal, redirection déclarée). Un résultat qui ne la franchit pas est refusé comme un autre.
+    if (!p) {
+      const j = await jget(`${API_FR[f.universe]}?action=query&list=search&srlimit=6&srnamespace=0`
+        + `&srsearch=${encodeURIComponent(f.name)}&format=json&formatversion=2`);
+      await dort(160);
+      const titres = (j?.query?.search ?? []).map((x) => x.title);
+      if (titres.length) r.rechercheFr = titres;
+      // On ne garde que le premier titre qui franchit DÉJÀ une preuve de nom : inutile de
+      // télécharger une page qu'on refusera ensuite, et ça évite d'ouvrir six pages par fiche.
+      const retenu = titres.find((t) => titreStrictementEgal(f.name, t))
+        ?? titres.find((t) => sameEntityName(f.name, t) || sameEntityBySlug(f.slug, t));
+      if (retenu) { p = await pageFr(f.universe, retenu); if (p) route = 'recherche-fr'; }
+    }
+
     if (!p) { r.etat = 'sans-page-fr'; res.push(r); continue; }
 
     r.route = route; r.titreFr = p.titre; if (pontEn) r.pontEn = pontEn;
     r.url = `${HOTE_FR(f.universe)}/wiki/${encodeURIComponent(p.titre.replace(/ /g, '_'))}`;
     r.redirections = p.redirections; r.sections = p.sections.slice(0, 10);
 
-    const paras = chapeauHtml(p.html);
-    const texte = paras.join(' ').replace(/\s+/g, ' ').trim();
+    const chap = chapeauHtml(p.html);
+    const texte = chap.phrases.join(' ').replace(/\s+/g, ' ').trim();
+    if (chap.navRetiree.length) r.navRetiree = chap.navRetiree;   // ce que la garde a mangé
     const att = { redirections: p.redirections, sections: p.sections };
 
     const fragment = p.redirections.find((x) => x.tofragment) ?? null;
@@ -303,12 +460,36 @@ async function main() {
     // Conserving Bee Twin Blades » par « Jiton - Shuriken Magnétique », qui est la technique d'un
     // AUTRE ninja. Un pont à une chance sur deux n'est pas une preuve : la route reste, la preuve
     // doit venir du nom, du slug ou d'une redirection déclarée — les quatre témoins déjà payés.
+    //
+    // CORRECTION DU 10/08 (vague 4) : le second de ces deux « faux » n'en est pas un. La page EN
+    // « Magnet Release: Conserving Bee Twin Blades » porte `users=Toroi` dans son infobox (source
+    // citée : Fourth Databook, page 319) et son chapeau est mot pour mot celui de la page FR
+    // « Jiton - Shuriken Magnétique » (« the user is able to magnetise anything they touch » /
+    // « l'utilisateur est capable de magnétiser tout ce qu'il touche »). Le pont était juste ; ce
+    // qui est faux, c'est NOTRE résumé, qui attribue la technique au Troisième Kazekage. Un
+    // verdict porté sur une page sans l'ouvrir se transmet ensuite de commentaire en commentaire.
     r.allerRetour = route === 'langlink'
       ? Boolean(pontEn?.retour && libelleNu(pontEn.retour) === libelleNu(pontEn.titreEn)) : null;
+    //
+    // ── CE QUE LA VAGUE 4 AJOUTE : LE PONT SYMÉTRIQUE SUR TITRE EN ÉGAL ────────────────────────
+    // Le refus ci-dessus jetait 39 fiches d'un coup, et en les relisant le partage est net : la
+    // faute n'est JAMAIS dans le pont, elle est toujours en amont, quand le connecteur anglais
+    // a résolu notre nom vers une page qui n'est pas la nôtre — « Chakra Threads » vers la page
+    // EN « Puppet Technique », « Team Hiruzen » vers « Sannin », « Tool Creation Technique » vers
+    // « Furious Smelting ». Là où le titre anglais est EXACTEMENT notre nom, le pont ne fait que
+    // suivre ce que les deux wikis déclarent l'un de l'autre, et il rend la traduction littérale
+    // du même objet (« Beeswax Clone » → « Clone de Cire d'Abeille »).
+    // La chaîne est alors faite de trois maillons DÉCLARÉS, aucun deviné : notre nom ≡ le titre
+    // EN (égalité de libellé sur le wiki de l'univers), le wiki EN déclare sa page FR, la page FR
+    // redéclare la même page EN (aller-retour). C'est le pont interlangue de la leçon du 10/08,
+    // pris entier au lieu d'à moitié. Sans l'égalité de titre EN, le refus reste.
+    r.pontTitreEnEgal = route === 'langlink'
+      ? Boolean(pontEn?.titreEn && titreStrictementEgal(f.name, pontEn.titreEn)) : null;
     r.identite = titreStrictementEgal(f.name, p.titre) ? 'titre-egal'
       : sameEntityName(f.name, p.titre) ? 'meme-nom'
         : sameEntityBySlug(f.slug, p.titre) ? 'slug-egal'
-          : formeCourteAttestee(f.name, p.titre, att) ? 'redirection-declaree' : null;
+          : formeCourteAttestee(f.name, p.titre, att) ? 'redirection-declaree'
+            : (r.allerRetour && r.pontTitreEnEgal) ? 'pont-interlangue-symetrique' : null;
     // PARENTHÈSE DE DÉSAMBIGUÏSATION — la faute des deux Bleach du contrôle des 20 : notre
     // artefact « Wabisuke » (le sabre) tombait sur « Wabisuke (Esprit Zanpakutō) », la page de
     // l'ESPRIT, et `sameEntityName` disait oui puisque tous nos mots y sont. `titrePlusRiche`
@@ -324,9 +505,17 @@ async function main() {
     // une égalité de libellé. Sans témoin, un ajout de mots est un CHANGEMENT DE SUJET (« … en
     // France », « … de la Marine ») aussi souvent qu'une glose, et rien dans le libellé ne les
     // sépare. On exige donc l'attestation, comme partout ailleurs dans ce chantier.
-    r.titreEnrichi = jetons(p.titre).size > jetons(f.name).size
-      && jetons(p.titre).size > jetons(String(f.slug).replace(/-/g, ' ')).size
-      && r.identite !== 'titre-egal' && r.identite !== 'redirection-declaree';
+    // Exemption du pont symétrique : compter les mots n'a de sens qu'entre deux libellés de la MÊME
+    // langue. « Beeswax Clone » (2 mots) contre « Clone de Cire d'Abeille » (4) n'est pas un titre
+    // qui s'enrichit, c'est le même nom traduit — et l'attestation, ici, c'est le lien interlangue
+    // déclaré des deux côtés, pas le décompte des mots.
+    const attesteLeTitre = r.identite === 'titre-egal' || r.identite === 'redirection-declaree'
+      || r.identite === 'pont-interlangue-symetrique';
+    r.motsAjoutes = attesteLeTitre ? null : titreAjouteUnMotPorteur(f.name, f.slug, p.titre);
+    r.titreEnrichi = Boolean(r.motsAjoutes)
+      || (jetons(p.titre).size > jetons(f.name).size
+        && jetons(p.titre).size > jetons(String(f.slug).replace(/-/g, ' ')).size
+        && !attesteLeTitre);
     r.oeuvre = pageDOeuvre(p.titre, texte);
     r.homonymie = HOMONYMIE.test(p.titre);
     // Vaut pour les TROIS routes : « Navire du G-5 » arrivait sur la page « G-5 », qui est la base
@@ -336,8 +525,11 @@ async function main() {
         : `titre amputé d'un mot porteur : « ${p.titre} » ne dit pas « ${f.name} »`);
     r.longueur = texte.length;
     r.natureDeLieu = f.type === 'place' ? MOTS_DE_LIEU.test(texte) : null;
+    // Les deux libellés sont désormais jugés SÉPARÉMENT — les fondre, c'était laisser un chapeau
+    // qui ne parle que de sa propre page attester NOTRE nom.
+    r.nommeSonNom = atteste(texte, f.name);
+    r.nommeSonTitre = atteste(texte, p.titre);
     r.nommeSujet = nommeSonSujet(texte, f.name, p.titre);
-    r.nommeSonTitre = nommeSonSujet(texte, '', p.titre);
 
     r.etat = !r.identite ? (route === 'langlink' ? 'pont-nu-sans-preuve-de-nom' : 'identite-refusee')
       : fragment ? 'redirection-de-section'
@@ -350,7 +542,16 @@ async function main() {
               // des Wa. » (35 signes) est une définition juste et complète, et un seuil haut la
               // jetterait au motif qu'elle est brève (leçon du 10/08 sur les seuils de longueur).
               // Ce plancher n'écarte que les pages vides et les redirections douces.
-              : texte.length < 45 ? 'chapeau-trop-court'
+              //
+              // VAGUE 4 — le plancher de 45 signes était trop haut d'exactement une fiche : sur les
+              // 5 qu'il a refusées, 3 rendaient 0 signe (« Massue », « Arbalète », « Scalpel » sont
+              // des REDIRECTIONS DOUCES vers Wikipédia, mesuré à la main sur naruto.fandom.com/fr),
+              // 1 rendait « en:Katar » (8 signes, un marqueur interlangue nu, désormais filtré), et
+              // la cinquième était « Kibi est une région du Pays des Wa. » — 35 signes, la
+              // définition complète que le commentaire ci-dessus donne justement en exemple.
+              // On descend à 30 signes et on demande 5 mots : une phrase, pas un fragment. Aucune
+              // des quatre pages vraiment vides ne repasse.
+              : (texte.length < 30 || texte.split(/\s+/).length < 5) ? 'chapeau-trop-court'
                 : (route === 'langlink' && !r.nommeSonTitre) ? 'pont-page-derivee'
                   : r.natureDeLieu === false ? 'lieu-decrit-comme-autre-chose'
                     : 'candidat';
@@ -388,6 +589,7 @@ async function main() {
     chantier: 'descFr depuis le wiki francophone', mode: DRY ? 'dry' : 'application',
     quand: new Date().toISOString(), temoins, corpus: corpus.length,
     sansDescFr: sansDescFr.length, cible: cible.length, compte,
+    purgeesParUneAutreVague: purgees.map((l) => ({ slug: l.slug, motif: l.attributes.descFrPurgee })),
     disputees: disputees.map(([k, v]) => ({ page: k, fiches: v })), cas: res,
   }, null, 1));
   console.log(`trace → ${chemin}`);
@@ -402,24 +604,41 @@ async function main() {
       .filter((c) => c.etat === 'candidat' && c.descFr)
     : candidats;
   console.log(`\nÉCRITURE de ${liste.length} description(s)`);
-  let posees = 0, deja = 0, absentes = 0, echecs = 0; const journal = [];
+  let posees = 0, deja = 0, absentes = 0, echecs = 0, appauvries = 0; const journal = [];
   for (const c of liste) {
-    const { data, error } = await s.from('akasha_entries').select('id,attributes')
+    const { data, error } = await s.from('akasha_entries').select('id,attributes,summary')
       .eq('slug', c.slug).eq('universe', c.universe).limit(2);
     if (error) { echecs++; continue; }
     if (!data?.length) { absentes++; continue; }
     if (data.length > 1) { echecs++; console.log(`  ✗ ${c.slug} : ${data.length} lignes pour ce slug`); continue; }
     const e = data[0];
     if (typeof e.attributes?.descFr === 'string' && e.attributes.descFr.trim()) { deja++; continue; }
+    // GARDE D'ENRICHISSEMENT — rapatriée ici le 10/08 (vague 4).
+    // Elle vivait UNIQUEMENT dans `descfr-appliquer-fr.mjs`, l'étape de décision. Or ce script-ci
+    // sait écrire tout seul (`--appliquer --candidats=…`) : j'ai emprunté ce chemin et posé 25
+    // textes sans jamais passer devant elle. Neuf cachaient un résumé plus riche que le texte
+    // extrait — dont `sweet-city`, l'exemple que l'en-tête de l'autre script donne justement. Il a
+    // fallu reprendre huit fiches (`data/audits/descfr-v4-reprise-*`).
+    // Une garde qui ne vit que sur UN des deux chemins d'écriture ne garde rien : le second chemin
+    // est exactement celui qu'on emprunte quand on est pressé.
+    const resume = typeof e.summary === 'string' ? e.summary.trim() : '';
+    const neufs = [...motsNus(c.descFr)].filter((m) => !motsNus(resume).has(m));
+    if (resume && (c.descFr.length < resume.length || neufs.length < 3)) {
+      appauvries++;
+      console.log(`  · ${c.slug} : laissé tel quel — le résumé en place (${resume.length} signes)`
+        + ` est plus riche que le texte extrait (${c.descFr.length}, ${neufs.length} mots neufs)`);
+      continue;
+    }
     const attributes = { ...(e.attributes ?? {}), descFr: c.descFr, descFrSource: c.descFrSource };
     const { error: err2 } = await s.from('akasha_entries').update({ attributes }).eq('id', e.id);
     if (err2) { echecs++; console.log(`  ✗ ${c.slug} : ${err2.message}`); continue; }
     posees++; journal.push({ slug: c.slug, id: e.id, url: c.url, route: c.route, longueur: c.descFr.length });
     if (posees % 25 === 0) console.log(`  … ${posees} posées`);
   }
-  console.log(`FINAL — ${posees} posée(s) · ${deja} déjà décrite(s) · ${absentes} introuvable(s) · ${echecs} échec(s)`);
+  console.log(`FINAL — ${posees} posée(s) · ${deja} déjà décrite(s) · ${absentes} introuvable(s)`
+    + ` · ${appauvries} laissée(s) au résumé plus riche · ${echecs} échec(s)`);
   await writeFile(new URL(`../data/audits/descfr-wiki-fr-journal-${horodatage}.json`, import.meta.url),
-    JSON.stringify({ quand: new Date().toISOString(), posees, deja, absentes, echecs, journal }, null, 1));
+    JSON.stringify({ quand: new Date().toISOString(), posees, deja, absentes, appauvries, echecs, journal }, null, 1));
 }
 
 await main();

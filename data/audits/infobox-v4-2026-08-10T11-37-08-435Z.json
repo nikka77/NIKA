@@ -1,0 +1,627 @@
+{
+ "chantier": "images — relecture de l’infobox quand pageimages se tait (vague 4)",
+ "passe_le": "2026-08-10T11:37:22.839Z",
+ "mode": "à blanc",
+ "plafond_octets": 307200,
+ "echelle": [
+  720,
+  480
+ ],
+ "compte_croise": {
+  "candidats": 60,
+  "trouves": 0,
+  "refus_parasite": 1,
+  "refus_fichier": 0,
+  "refus_nature": 0,
+  "refus_nature_titre": 0,
+  "refus_charge": 0,
+  "refus_poids": 4,
+  "refus_collision": 0,
+  "refus_collision_interne": 0,
+  "article_sans_image": 13,
+  "sans_page": 42,
+  "posees": 0,
+  "deja_remplies_entre_temps": 0,
+  "echecs_ecriture": 0
+ },
+ "posees_detail": [],
+ "refuses_par_les_gardes": [
+  {
+   "slug": "100-island",
+   "name": "Île 100 %",
+   "type": "place",
+   "universe": "One Piece",
+   "etat": "refus-parasite",
+   "titre_wiki": "Île 100%",
+   "fichier": "Image Non Disponible.png",
+   "preuve_wikitext": "| image             = [[Fichier:Image Non Disponible.png|270px]]",
+   "pourquoi": "« Image Non Disponible.png » est un carton ou un pictogramme du wiki, pas une illustration du sujet"
+  },
+  {
+   "slug": "atk-bl-lanza-del-relampago",
+   "name": "Lanza del Relampago",
+   "type": "power",
+   "universe": "Bleach",
+   "etat": "refus-poids",
+   "titre_wiki": "Lanza del Relámpago",
+   "fichier": "Lanza del Relámpago (anime).gif",
+   "preuve_wikitext": "|image1 = [[Fichier:Lanza del Relámpago (anime).gif|190px]]",
+   "pourquoi": "2674 Ko même à 720 px — au-dessus du plafond de 300 Ko"
+  },
+  {
+   "slug": "atk-bl-guncho-tsurara",
+   "name": "Guncho Tsurara",
+   "type": "power",
+   "universe": "Bleach",
+   "etat": "refus-poids",
+   "titre_wiki": "Gunchō Tsurara",
+   "fichier": "GunchoTsurara.gif",
+   "preuve_wikitext": "|image= [[Image:GunchoTsurara.gif|190px]]",
+   "pourquoi": "2794 Ko même à 720 px — au-dessus du plafond de 300 Ko"
+  },
+  {
+   "slug": "atk-bl-ryodan",
+   "name": "Ryodan",
+   "type": "power",
+   "universe": "Bleach",
+   "etat": "refus-poids",
+   "titre_wiki": "Ryōdan",
+   "fichier": "Ryōdan.gif",
+   "preuve_wikitext": "|image= [[Image:Ryōdan.gif|190px]]",
+   "pourquoi": "3332 Ko même à 720 px — au-dessus du plafond de 300 Ko"
+  },
+  {
+   "slug": "atk-bl-some-no-mai-tsukishiro",
+   "name": "Some no Mai Tsukishiro",
+   "type": "power",
+   "universe": "Bleach",
+   "etat": "refus-poids",
+   "titre_wiki": "Some no mai, Tsukishiro",
+   "fichier": "SomeNoMaiTsukishiro.gif",
+   "preuve_wikitext": "|image= [[Image:SomeNoMaiTsukishiro.gif|190px]]",
+   "pourquoi": "1262 Ko même à 720 px — au-dessus du plafond de 300 Ko"
+  }
+ ],
+ "restees_sans_image": [
+  {
+   "slug": "100-island",
+   "name": "Île 100 %",
+   "universe": "One Piece",
+   "type": "place",
+   "etat": "refus-parasite",
+   "pourquoi": "« Image Non Disponible.png » est un carton ou un pictogramme du wiki, pas une illustration du sujet",
+   "titre_resolu": "Île 100%"
+  },
+  {
+   "slug": "arbalete",
+   "name": "Arbalète",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Arbalète » (43 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Arbalète"
+  },
+  {
+   "slug": "arc-et-fleches",
+   "name": "Arc et flèches",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Arc et Flèches » (45 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Arc et Flèches"
+  },
+  {
+   "slug": "atk-bl-benihime",
+   "name": "Benihime",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Benihime » (429 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Benihime"
+  },
+  {
+   "slug": "atk-bl-bushogoma",
+   "name": "Bushogoma",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Bushōgoma » (1690 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Bushōgoma"
+  },
+  {
+   "slug": "atk-bl-cero-metralleta",
+   "name": "Cero Metralleta",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Cero Metralleta » (1381 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Cero Metralleta"
+  },
+  {
+   "slug": "atk-bl-gokei",
+   "name": "Gokei",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Gōkei » (2069 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Gōkei"
+  },
+  {
+   "slug": "atk-bl-hyoten-hyakkaso",
+   "name": "Hyoten Hyakkaso",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Hyōten Hyakkasō » (939 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Hyōten Hyakkasō"
+  },
+  {
+   "slug": "atk-bl-kamisori-benihime",
+   "name": "Kamisori Benihime",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Kamisori, Benihime » (826 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Kamisori, Benihime"
+  },
+  {
+   "slug": "atk-bl-katen-kyokotsu",
+   "name": "Katen Kyokotsu",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Katen Kyokotsu » (361 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Katen Kyokotsu"
+  },
+  {
+   "slug": "atk-bl-lanza-del-relampago",
+   "name": "Lanza del Relampago",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "refus-poids",
+   "pourquoi": "2674 Ko même à 720 px — au-dessus du plafond de 300 Ko",
+   "titre_resolu": "Lanza del Relámpago"
+  },
+  {
+   "slug": "atk-bl-sennen-hyoro",
+   "name": "Sennen Hyoro",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Sennen Hyōrō » (599 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Sennen Hyōrō"
+  },
+  {
+   "slug": "atk-bl-shukei-hakuteiken",
+   "name": "Shukei Hakuteiken",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Shūkei: Hakuteiken » (2334 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Shūkei: Hakuteiken"
+  },
+  {
+   "slug": "adamantine-staff",
+   "name": "Adamantine Staff",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Adamantine Staff » (282 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Adamantine Staff"
+  },
+  {
+   "slug": "arcose",
+   "name": "Arcose",
+   "universe": "Dragon Ball",
+   "type": "place",
+   "etat": "article-sans-image",
+   "pourquoi": "l’article « Arcose » (627 caractères) ne nomme aucun fichier dans un paramètre d’image de son infobox",
+   "titre_resolu": "Arcose"
+  },
+  {
+   "slug": "atk-bl-guncho-tsurara",
+   "name": "Guncho Tsurara",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "refus-poids",
+   "pourquoi": "2794 Ko même à 720 px — au-dessus du plafond de 300 Ko",
+   "titre_resolu": "Gunchō Tsurara"
+  },
+  {
+   "slug": "atk-bl-ryodan",
+   "name": "Ryodan",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "refus-poids",
+   "pourquoi": "3332 Ko même à 720 px — au-dessus du plafond de 300 Ko",
+   "titre_resolu": "Ryōdan"
+  },
+  {
+   "slug": "atk-bl-some-no-mai-tsukishiro",
+   "name": "Some no Mai Tsukishiro",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "refus-poids",
+   "pourquoi": "1262 Ko même à 720 px — au-dessus du plafond de 300 Ko",
+   "titre_resolu": "Some no mai, Tsukishiro"
+  },
+  {
+   "slug": "accountant",
+   "name": "Accountant",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "ace",
+   "name": "Ace",
+   "universe": "One Piece",
+   "type": "artifact",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "actor",
+   "name": "Actor",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "actress",
+   "name": "Actress",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "adamantine-attacking-chains",
+   "name": "Adamantine Attacking Chains",
+   "universe": "Naruto",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "akatsuki-spy",
+   "name": "Akatsuki spy",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anbu-captain",
+   "name": "Anbu Captain",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anbu-captain-former",
+   "name": "Anbu Captain  (Former)",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anciens-membres-de-la-marine",
+   "name": "Anciens membres de la Marine",
+   "universe": "One Piece",
+   "type": "status",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anciens-membres-du-baroque-works",
+   "name": "Anciens membres du Baroque Works",
+   "universe": "One Piece",
+   "type": "status",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "anciens-membres-du-cipher-pol",
+   "name": "Anciens membres du Cipher Pol",
+   "universe": "One Piece",
+   "type": "status",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "angel-island",
+   "name": "Angel Island",
+   "universe": "One Piece",
+   "type": "place",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "archipel-des-argao",
+   "name": "Archipel des Argao",
+   "universe": "One Piece",
+   "type": "status",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "astronomer",
+   "name": "Astronomer",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bakudo-61-rikujokoro",
+   "name": "Bakudo 61 Rikujokoro",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bakudo-81-danku",
+   "name": "Bakudo 81 Danku",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bakudo-99-kin",
+   "name": "Bakudo 99 Kin",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-bankai-kannonbiraki-benihime-aratame",
+   "name": "Bankai Kannonbiraki Benihime Aratame",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-daiguren-hyorinmaru",
+   "name": "Daiguren Hyorinmaru",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-final-getsuga-tensho",
+   "name": "Final Getsuga Tensho",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-flash-cry",
+   "name": "Flash Cry",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-31-shakkaho",
+   "name": "Hado 31 Shakkaho",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-33-sokatsui",
+   "name": "Hado 33 Sokatsui",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-63-raikoho",
+   "name": "Hado 63 Raikoho",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-73-soren-sokatsui",
+   "name": "Hado 73 Soren Sokatsui",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hado-90-kurohitsugi",
+   "name": "Hado 90 Kurohitsugi",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hakka-no-togame",
+   "name": "Hakka no Togame",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hihio-zabimaru",
+   "name": "Hihio Zabimaru",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-hyorinmaru",
+   "name": "Hyorinmaru",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-kendo",
+   "name": "Kendo",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-konjiki-ashisogi-jizo",
+   "name": "Konjiki Ashisogi Jizo",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-kyoka-suigetsu",
+   "name": "Kyoka Suigetsu",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-los-lobos",
+   "name": "Los Lobos",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-minazuki",
+   "name": "Minazuki",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-nozarashi",
+   "name": "Nozarashi",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-santa-teresa",
+   "name": "Santa Teresa",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-segunda-etapa",
+   "name": "Segunda Etapa",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-senbonzakura",
+   "name": "Senbonzakura",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-senbonzakura-kageyoshi",
+   "name": "Senbonzakura Kageyoshi",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-soo-zabimaru",
+   "name": "Soo Zabimaru",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-suzumushi",
+   "name": "Suzumushi",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  },
+  {
+   "slug": "atk-bl-suzumushi-tsuishiki-enma-korogi",
+   "name": "Suzumushi Tsuishiki Enma Korogi",
+   "universe": "Bleach",
+   "type": "power",
+   "etat": "sans-page",
+   "pourquoi": "aucune page dont le titre égale notre nom, ni en français ni en anglais",
+   "titre_resolu": null
+  }
+ ]
+}

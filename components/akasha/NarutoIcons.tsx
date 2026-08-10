@@ -159,7 +159,10 @@ export function ClanCrest({ slug, name, size = 30 }: { slug?: string | null; nam
   if (s === 'uzumaki') return <UzumakiSwirl size={size} />;
   if (s === 'uchiha') return <UchihaFan size={size} />;
   if (!slug && !name) return null;
-  const initial = (name ?? slug ?? '?').replace(/^clan\s+/i, '').charAt(0).toUpperCase();
+  // Le monogramme prend l'initiale du NOM du clan, pas celle de l'article : « Clan de Jūgo » et
+  // « Clan de Yota » affichaient tous deux un « D » (mesuré le 10/08 sur /learn/akasha/u/naruto,
+  // puces « D Clan de Jūgo 2 » et « D Clan de Yota 1 »). On retire aussi l'article après « Clan ».
+  const initial = (name ?? slug ?? '?').replace(/^clan\s+(?:de\s+|du\s+|des\s+|d['’]\s*)?/i, '').charAt(0).toUpperCase();
   return (
     <span
       title={name ?? slug ?? undefined}

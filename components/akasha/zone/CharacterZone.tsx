@@ -118,6 +118,24 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
   }
   for (const aff of list(a.affiliation).slice(0, 3)) belong.push({ attr: 'affiliation', label: 'Affiliation', value: aff });
 
+  // APPARTENANCES VENUES DU GRAPHE (10/08/2026). Le commentaire d'à côté affirmait que les arêtes
+  // `appartient` / `habite` / `exerce` étaient « déjà rendues par la grappe Appartenances » — c'est
+  // vrai des seules qui doublent un ATTRIBUT. Mesuré ce soir : 3 830 arêtes de personnages n'ont
+  // aucun attribut jumeau et ne se voyaient donc NULLE PART sur la fiche. Nico Robin ne disait ni
+  // Baroque Works ni Ohara ; Ichigo ne disait pas les Vizard ; les 19 fiches désisolées le soir
+  // même affichaient le vide. Une arête écrite n'est pas une arête lue.
+  // Elles rejoignent la même grappe, mais elles pointent vers une FICHE et non vers un axe : le
+  // canal les ouvre au lieu de les filtrer. Le libellé dit la nature du lien, pas la clé technique.
+  const NATURES_APPARTENANCE: Record<string, string> = {
+    appartient: 'Appartient à', habite: 'Réside', exerce: 'Exerce',
+  };
+  const dejaDit = new Set(belong.map((b) => b.value.toLowerCase()));
+  const appartenancesLiees = entry.relationsOut
+    .filter((r) => NATURES_APPARTENANCE[r.relation] && !dejaDit.has(r.target.name.toLowerCase()))
+    .map((r) => ({ label: NATURES_APPARTENANCE[r.relation], name: r.target.name, slug: r.target.slug }))
+    .filter((x, i, tab) => tab.findIndex((y) => y.name === x.name) === i)
+    .slice(0, 12);
+
   const fStats = f.stats && typeof f.stats === 'object' ? (f.stats as Stats) : undefined;
   const favN = typeof a.favorites === 'number' ? (a.favorites as number) : null;
 
@@ -258,12 +276,18 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
             </Grappe>
           )}
 
-          {belong.length > 0 && (
+          {(belong.length > 0 || appartenancesLiees.length > 0) && (
             <Grappe title="Appartenances" accent={accent}>
               {belong.map((b, i) => (
                 <ChipLink key={i} accent={accent} active={sel?.kind === 'appartenance' && sel.value === b.value}
                   onClick={() => select({ kind: 'appartenance', attr: b.attr, label: b.label, value: b.value })}>
                   <span style={{ color: 'var(--td3)', fontWeight: 400 }}>{b.label} · </span>{b.value}
+                </ChipLink>
+              ))}
+              {appartenancesLiees.map((x, i) => (
+                <ChipLink key={`g${i}`} accent={accent} active={sel?.kind === 'famille' && sel.name === x.name}
+                  onClick={() => select({ kind: 'famille', rel: x.label, name: x.name, slug: x.slug })}>
+                  <span style={{ color: 'var(--td3)', fontWeight: 400 }}>{x.label} · </span>{x.name}
                 </ChipLink>
               ))}
             </Grappe>

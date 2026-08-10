@@ -12,7 +12,7 @@
 
 | # | Chantier | Mesure au 10/08 | Où ça se voit |
 |---|---|---|---|
-| 1 | **Fiches isolées** — aucune arête, ni entrante ni sortante | **783** au 10/08 20 h (951 le matin) · One Piece 451, Dragon Ball 146, Naruto 58 | Le canal n'a rien à montrer, la navigation « un saut à la fois » s'arrête net |
+| 1 | **Fiches isolées** — aucune arête, ni entrante ni sortante | **764** au 10/08 après la vague 4 (783 avant, 951 le matin) · One Piece 451, Dragon Ball 146, JoJo 49, Bleach 42, **Naruto 39** (58 avant) · ⚠️ 12 des 19 désisolées n'affichent RIEN sur leur propre fiche : `CharacterZone` ne lit pas `relationsOut` (cf. plafond en bas de page) | Le canal n'a rien à montrer, la navigation « un saut à la fois » s'arrête net |
 | 2 | **Résumés de remplissage** — « Personnage secondaire de Dragon Ball. » | 420 → **133** au 10/08 (vague 1 : 131 · vague 2 : 175) · reste 129 en Dragon Ball, dont **78 dont le texte nomme la fiche autrement** (« Recoome »/« Reacoom ») | ⚠️ la colonne `où ça se voit` de cette ligne était FAUSSE : `lib/akasha/flavor.ts` sert `flavorText(descFr)` AVANT `summary` en liste, en mosaïque et en méta description, et la recherche fouille déjà `descFr`. Mesuré : sur 175 résumés écrits, **2** changent la liste/la méta, **5** changent une carte TCG du hub Dragon Ball (`CharacterCard`, seul lecteur direct de `summary`) |
 | 3 | **Fiches sans visuel** | **779** au 10/08 20 h (818 le matin) | Rangée muette en liste, hub, recherche, classement, image OpenGraph |
 | 4 | **Fiches sans texte FR** (`descFr`) | **401** au 10/08 20 h (454 le matin) | Fiche sans corps : titre, attributs, rien à lire |
@@ -45,3 +45,32 @@ Forme sans image = tuile stylisée conservée · zéro NOUVELLE stat estimée ·
 leurs stats marquées « estimé » · stats post-databook omises · radar réservé aux databooks canon
 Naruto · **gamification supprimée** (14/07) · Bleach = carte des 4 mondes · **DA en pause** :
 prototyper en vrai code, jamais de maquettes générées.
+
+## Plafond mesuré le 10/08 (vague 4) — une arête écrite n'est pas une arête lue
+
+`app/learn/akasha/[slug]/page.tsx` route `type === 'character'` vers **`CharacterZone`**, qui ne
+passe pas par `deriveShape` : sa grappe « Appartenances » se construit depuis `attributes`
+(`BELONG_ATTRS` + `affiliation`), jamais depuis `relationsOut`, et son bloc « liens » n'accepte que
+`allie · mentor · eleve · ennemi · rival`. **Une arête `appartient` partant d'un personnage est donc
+invisible sur sa propre fiche.** Mesuré : 4 031 personnages, dont **3 509 porteurs d'au moins une
+arête**, tous concernés. Vérifié à la main le 10/08 : `/learn/akasha/giant-panda` et
+`/learn/akasha/king-of-hell` ne contiennent pas « Créature invoquée » dans leur markup rendu, alors
+que `/learn/akasha/creature-invoquee` affiche bien ses 52 membres ; `/learn/akasha/genbu-island`
+(place) et `/learn/akasha/wind-release-bursting-compressed-air` (power), eux, affichent
+« Autres liens · 1 — Appartient à · … ».
+
+Second point relevé au passage sur `/learn/akasha/creature-invoquee` : l'en-tête annonce
+**52 membres au registre** et la grappe en liste **43** — 9 membres ne sont ni affichés ni repliés
+derrière un « + N autres ». Même famille que le compteur mort de konohagakure (leçon du 10/08).
+
+## Registre d'alias (vague 4)
+
+`data/alias-cibles-naruto.json` — titre de wiki → fiche, **une preuve redemandable par paire**.
+Construit par `scripts/akasha-alias-registre.mjs` (relançable : il redemande chaque témoin à la
+source). Quatre témoins, aucune distance de chaînes : `T1` redirection dure **ou douce**
+(`{{soft redirect|…}}`), `T2` interlangue (`prop=langlinks` du wiki EN + redirections du wiki FR,
+égalité stricte après `norm` avec le nom / la parenthèse / le `roman_name` / le slug), `T3` paire
+déjà confirmée dans `data/alias-cures.json`, `T4` précédent du graphe **mesuré** (≥ 10 arêtes en
+place + tirage de 20 sources relues sur le wiki, seuil 95 %).
+`data/alias-cures.json` sert désormais aussi **dans le sens source** (nos noms français → titre
+anglais) : c'est ce qui rend 6 de nos isolées cherchables sur le wiki.
