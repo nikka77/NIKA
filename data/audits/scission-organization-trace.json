@@ -1,0 +1,1357 @@
+{
+ "chantier": "scission de l’axe organization (Naruto)",
+ "quand": "2026-08-10T07:45:21.284Z",
+ "write": true,
+ "avant": {
+  "valeurs": 124,
+  "fiches": 471
+ },
+ "plan": {
+  "equipe": [
+   {
+    "valeur": "Konoha 11",
+    "fiches": 12,
+    "regle": "les onze genin de Konoha — promotion, pas institution",
+    "slugs": [
+     "naruto-uzumaki",
+     "sakura-haruno",
+     "hinata-hyuga",
+     "akamaru",
+     "choji-akimichi",
+     "neji-hyuga",
+     "rock-lee",
+     "tenten",
+     "koji",
+     "shikamaru-nara",
+     "ino-yamanaka",
+     "kiba-inuzuka"
+    ]
+   },
+   {
+    "valeur": "Team Guren",
+    "fiches": 5,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "kiho",
+     "nurari",
+     "guren",
+     "kigiri",
+     "rinji"
+    ]
+   },
+   {
+    "valeur": "Four Celestial Symbols Men",
+    "fiches": 4,
+    "regle": "fratrie ou petit groupe compté dans son nom",
+    "slugs": [
+     "kujaku-naruto",
+     "hoki-takumi",
+     "suiko",
+     "ryugan"
+    ]
+   },
+   {
+    "valeur": "Team 15",
+    "fiches": 4,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "hanabi-hyuga",
+     "namida-suzumeno",
+     "wasabi-izuno",
+     "tsubaki-kurogane"
+    ]
+   },
+   {
+    "valeur": "Infiltration and Reconnaissance Party",
+    "fiches": 4,
+    "regle": "détachement d’infiltration, formé pour une mission",
+    "slugs": [
+     "tokuma-hyuga",
+     "dango-mitsuki",
+     "muta-aburame",
+     "ranka"
+    ]
+   },
+   {
+    "valeur": "Gang of Four",
+    "fiches": 4,
+    "regle": "quatuor de shinobi d’Otogakure",
+    "slugs": [
+     "gitai",
+     "kusuna",
+     "shizuku",
+     "setsuna"
+    ]
+   },
+   {
+    "valeur": "Team Oboro",
+    "fiches": 4,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "mubi",
+     "kagari",
+     "oboro",
+     "aoi-rokusho"
+    ]
+   },
+   {
+    "valeur": "Team 5",
+    "fiches": 4,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "iwabee-yuino",
+     "metal-lee",
+     "denki-kaminarimon",
+     "udon-ise"
+    ]
+   },
+   {
+    "valeur": "Haze Quadruplets",
+    "fiches": 4,
+    "regle": "quatuor de genin d’Amegakure",
+    "slugs": [
+     "asaka",
+     "hiruga",
+     "yuga",
+     "yoruga"
+    ]
+   },
+   {
+    "valeur": "Hiruko's Team",
+    "fiches": 4,
+    "regle": "escouade nommée d’après son chef",
+    "slugs": [
+     "ichi",
+     "ni",
+     "hiruko-missing-nin",
+     "san"
+    ]
+   },
+   {
+    "valeur": "Team Suien",
+    "fiches": 4,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "hisame",
+     "suien",
+     "kirisame",
+     "murasame"
+    ]
+   },
+   {
+    "valeur": "Team 7",
+    "fiches": 4,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "mitsuki",
+     "tamaki",
+     "boruto-uzumaki",
+     "sarada-uchiha"
+    ]
+   },
+   {
+    "valeur": "Team Dosu",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "dosu-kinuta",
+     "kin-tsuchi",
+     "zaku-abumi"
+    ]
+   },
+   {
+    "valeur": "Three Sand Siblings",
+    "fiches": 3,
+    "regle": "fratrie ou petit groupe compté dans son nom",
+    "slugs": [
+     "gaara",
+     "baki",
+     "temari"
+    ]
+   },
+   {
+    "valeur": "Three Brothers",
+    "fiches": 3,
+    "regle": "fratrie ou petit groupe compté dans son nom",
+    "slugs": [
+     "iwaji",
+     "iwakyo",
+     "iwazo"
+    ]
+   },
+   {
+    "valeur": "Team 25",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "hako-kuroi",
+     "renga-kokubo",
+     "hoki-taketori"
+    ]
+   },
+   {
+    "valeur": "Team Samui",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "samui",
+     "karui",
+     "omoi"
+    ]
+   },
+   {
+    "valeur": "Team 40",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "enko-onikuma",
+     "tsuru-itoi",
+     "doshu-goetsu"
+    ]
+   },
+   {
+    "valeur": "Team Bandō",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "kiji",
+     "bando",
+     "sada"
+    ]
+   },
+   {
+    "valeur": "Team Ajisai",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "ajisai",
+     "fuyo",
+     "suiren"
+    ]
+   },
+   {
+    "valeur": "Team Kazami",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "burami",
+     "kazami",
+     "muyami"
+    ]
+   },
+   {
+    "valeur": "Team Fū",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "fu",
+     "kegon",
+     "yoro"
+    ]
+   },
+   {
+    "valeur": "Four Ninja Animal Warriors",
+    "fiches": 3,
+    "regle": "fratrie ou petit groupe compté dans son nom",
+    "slugs": [
+     "condor",
+     "giant-anteater",
+     "boxing-kangaroos"
+    ]
+   },
+   {
+    "valeur": "Team Shira",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "sen",
+     "yome",
+     "shira"
+    ]
+   },
+   {
+    "valeur": "Dotō's Three-Man-Team",
+    "fiches": 3,
+    "regle": "escouade nommée d’après son chef",
+    "slugs": [
+     "fubuki-kakuyoku",
+     "mizore-fuyukuma",
+     "nadare-roga"
+    ]
+   },
+   {
+    "valeur": "Furido's 4-Man Team",
+    "fiches": 3,
+    "regle": "escouade de quatre nommée d’après son chef",
+    "slugs": [
+     "fudo",
+     "fuen",
+     "fuka"
+    ]
+   },
+   {
+    "valeur": "Team Ganryū",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "ganryu",
+     "junsai",
+     "suiren-kiri"
+    ]
+   },
+   {
+    "valeur": "Team Shinki",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "yodo",
+     "araya",
+     "shinki"
+    ]
+   },
+   {
+    "valeur": "Three Ryūdōin Brothers",
+    "fiches": 3,
+    "regle": "fratrie ou petit groupe compté dans son nom",
+    "slugs": [
+     "gensho-ryudoin",
+     "rokkaku-ryudoin",
+     "jako-ryudoin"
+    ]
+   },
+   {
+    "valeur": "Team Ameno",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "ameno",
+     "koji-suna",
+     "shishio"
+    ]
+   },
+   {
+    "valeur": "Team 2",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "tenma-izumo",
+     "yuki-minazuki",
+     "shinko-inari"
+    ]
+   },
+   {
+    "valeur": "Ino–Shika–Chō",
+    "fiches": 3,
+    "regle": "trio de formation canon (Yamanaka-Nara-Akimichi)",
+    "slugs": [
+     "inoichi-yamanaka",
+     "shikaku-nara",
+     "choza-akimichi"
+    ]
+   },
+   {
+    "valeur": "Gold and Silver Brothers",
+    "fiches": 3,
+    "regle": "duo Kinkaku-Ginkaku de Kumogakure",
+    "slugs": [
+     "kinkaku-naruto",
+     "ginkaku-naruto",
+     "a-first-raikage"
+    ]
+   },
+   {
+    "valeur": "Team Komugi",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "inaho",
+     "komugi-naruto",
+     "gennai"
+    ]
+   },
+   {
+    "valeur": "Team Saya",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "mamushi",
+     "sana",
+     "saya"
+    ]
+   },
+   {
+    "valeur": "Team Sajin",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "mijin",
+     "mujin",
+     "sajin-genin"
+    ]
+   },
+   {
+    "valeur": "Team Matsuri",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "mikoshi",
+     "yukata",
+     "matsuri"
+    ]
+   },
+   {
+    "valeur": "Team Shibire",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "minoji",
+     "shibire",
+     "tanzo"
+    ]
+   },
+   {
+    "valeur": "Three Senka Brothers",
+    "fiches": 3,
+    "regle": "fratrie ou petit groupe compté dans son nom",
+    "slugs": [
+     "sazanami-senka",
+     "takanami-senka",
+     "makinami-senka"
+    ]
+   },
+   {
+    "valeur": "Team Shigure",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "midare",
+     "shigure-naruto",
+     "baiu"
+    ]
+   },
+   {
+    "valeur": "Team Yurui",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "tarui",
+     "toroi-genin",
+     "yurui"
+    ]
+   },
+   {
+    "valeur": "Team Goji",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "team-goji-leader",
+     "datsuji",
+     "goji"
+    ]
+   },
+   {
+    "valeur": "Shirogane Three",
+    "fiches": 3,
+    "regle": "trio de marionnettes du clan Shirogane",
+    "slugs": [
+     "gando",
+     "ibushi",
+     "meno-ninja"
+    ]
+   },
+   {
+    "valeur": "Team Kajika",
+    "fiches": 3,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "yamame",
+     "iwana-otogakure",
+     "kajika"
+    ]
+   },
+   {
+    "valeur": "Team Jiraiya",
+    "fiches": 2,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "jiraiya",
+     "minato-namikaze"
+    ]
+   },
+   {
+    "valeur": "Team Chōza",
+    "fiches": 2,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "might-guy",
+     "ebisu"
+    ]
+   },
+   {
+    "valeur": "Team Orochimaru",
+    "fiches": 2,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "anko-mitarashi",
+     "kabuto-s-sensei"
+    ]
+   },
+   {
+    "valeur": "Team Kabuto",
+    "fiches": 2,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "misumi-tsurugi",
+     "yoroi-akado"
+    ]
+   },
+   {
+    "valeur": "Legendary Stupid Brothers",
+    "fiches": 2,
+    "regle": "duo comique de l’arc du Pays des Vagues",
+    "slugs": [
+     "fujin-naruto",
+     "raijin-naruto"
+    ]
+   },
+   {
+    "valeur": "Eight-Tails Subduing Team",
+    "fiches": 2,
+    "regle": "escouade formée pour capturer Hachibi",
+    "slugs": [
+     "furui",
+     "a-third-raikage"
+    ]
+   },
+   {
+    "valeur": "Team Ebisu",
+    "fiches": 2,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "moegi-kazamatsuri",
+     "konohamaru-sarutobi"
+    ]
+   },
+   {
+    "valeur": "Escort Unit",
+    "fiches": 2,
+    "regle": "escouade d’escorte, formée pour une mission",
+    "slugs": [
+     "kagami-uchiha",
+     "torifu-akimichi"
+    ]
+   },
+   {
+    "valeur": "Exploding-Till-You-Eat",
+    "fiches": 2,
+    "regle": "duo de l’Akatsuki (nom de code d’équipe)",
+    "slugs": [
+     "daore-dotonbori",
+     "kui-dotonbori"
+    ]
+   },
+   {
+    "valeur": "A–B Combo",
+    "fiches": 2,
+    "regle": "duo de combat (A et Killer B)",
+    "slugs": [
+     "killer-b",
+     "a-fourth-raikage"
+    ]
+   },
+   {
+    "valeur": "Sealing Team",
+    "fiches": 2,
+    "regle": "escouade de scellement de la Quatrième Guerre",
+    "slugs": [
+     "maki-naruto",
+     "nonota"
+    ]
+   },
+   {
+    "valeur": "Demon Brothers",
+    "fiches": 2,
+    "regle": "duo de déserteurs de Kiri, arc du Pays des Vagues",
+    "slugs": [
+     "meizu",
+     "gozu-naruto"
+    ]
+   },
+   {
+    "valeur": "Team 10",
+    "fiches": 2,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "chocho-akimichi",
+     "shikadai-nara"
+    ]
+   },
+   {
+    "valeur": "Two Great Sage Toads",
+    "fiches": 2,
+    "regle": "fratrie ou petit groupe compté dans son nom",
+    "slugs": [
+     "shima",
+     "fukasaku"
+    ]
+   },
+   {
+    "valeur": "Team Hiruzen",
+    "fiches": 1,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "tsunade"
+    ]
+   },
+   {
+    "valeur": "Team Ro",
+    "fiches": 1,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "yugao-uzuki"
+    ]
+   },
+   {
+    "valeur": "Honoured Siblings",
+    "fiches": 1,
+    "regle": "fratrie de l’arc du Pays du Riz",
+    "slugs": [
+     "ebizo"
+    ]
+   },
+   {
+    "valeur": "Team 8",
+    "fiches": 1,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "kurenai-yuhi"
+    ]
+   },
+   {
+    "valeur": "Team Kakashi",
+    "fiches": 1,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "menma-namikaze"
+    ]
+   },
+   {
+    "valeur": "Team Minato",
+    "fiches": 1,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "rin-nohara"
+    ]
+   },
+   {
+    "valeur": "Team Tobirama",
+    "fiches": 1,
+    "regle": "préfixe « Team » — escouade nommée d’après son chef ou son numéro",
+    "slugs": [
+     "tobirama-senju"
+    ]
+   },
+   {
+    "valeur": "Daimyō Protection Squad",
+    "fiches": 1,
+    "regle": "escouade de protection du daimyō",
+    "slugs": [
+     "mei-terumi"
+    ]
+   }
+  ],
+  "division": [
+   {
+    "valeur": "Third Division",
+    "fiches": 9,
+    "regle": "suffixe « Division » — unité de la Force Shinobi Alliée",
+    "slugs": [
+     "yurui-anime",
+     "monga",
+     "kayui",
+     "santa-yamanaka",
+     "tajiki",
+     "ensui-nara",
+     "ran-kunoichi",
+     "ruka",
+     "nurui"
+    ]
+   },
+   {
+    "valeur": "Corps médical",
+    "fiches": 9,
+    "regle": "corps médical de la Force Shinobi Alliée",
+    "slugs": [
+     "ugai",
+     "hosho",
+     "kanpo",
+     "kusushi",
+     "migaki",
+     "iyashi",
+     "mitate",
+     "mogusa",
+     "kito"
+    ]
+   },
+   {
+    "valeur": "Force Shinobi Alliée",
+    "fiches": 5,
+    "regle": "l’armée alliée elle-même",
+    "slugs": [
+     "daen-nara",
+     "hashirama-senju",
+     "katsuyu",
+     "gamakichi",
+     "tetsu"
+    ]
+   },
+   {
+    "valeur": "Logistical Support and Medical Division",
+    "fiches": 5,
+    "regle": "suffixe « Division » — unité de la Force Shinobi Alliée",
+    "slugs": [
+     "io-medical-nin",
+     "tonton",
+     "yokaze",
+     "sukui",
+     "hakui-medic"
+    ]
+   },
+   {
+    "valeur": "Fifth Division",
+    "fiches": 4,
+    "regle": "suffixe « Division » — unité de la Force Shinobi Alliée",
+    "slugs": [
+     "mifune",
+     "hana-inuzuka",
+     "okisuke",
+     "three-haimaru-brothers"
+    ]
+   },
+   {
+    "valeur": "Allied Mothers Force",
+    "fiches": 4,
+    "regle": "unité alliée de la Quatrième Guerre",
+    "slugs": [
+     "mebuki-haruno",
+     "choji-s-mother",
+     "ino-s-mother",
+     "yoshino-nara"
+    ]
+   },
+   {
+    "valeur": "Impure World Reincarnation Allied Forces",
+    "fiches": 4,
+    "regle": "les réincarnés opposés à l’alliance",
+    "slugs": [
+     "chukaku",
+     "heiji",
+     "osoi",
+     "daimaru"
+    ]
+   },
+   {
+    "valeur": "Surprise Attack Division",
+    "fiches": 4,
+    "regle": "suffixe « Division » — unité de la Force Shinobi Alliée",
+    "slugs": [
+     "hoheto-hyuga",
+     "kiri-ninja",
+     "zaji",
+     "ittan"
+    ]
+   },
+   {
+    "valeur": "Second Division",
+    "fiches": 4,
+    "regle": "suffixe « Division » — unité de la Force Shinobi Alliée",
+    "slugs": [
+     "kitsuchi",
+     "kurotsuchi",
+     "shun",
+     "natsu"
+    ]
+   },
+   {
+    "valeur": "First Division",
+    "fiches": 3,
+    "regle": "suffixe « Division » — unité de la Force Shinobi Alliée",
+    "slugs": [
+     "atsui",
+     "rashii",
+     "hiashi-hyuga"
+    ]
+   },
+   {
+    "valeur": "Intelligence Division",
+    "fiches": 2,
+    "regle": "suffixe « Division » — unité de la Force Shinobi Alliée",
+    "slugs": [
+     "aoba-yamashiro",
+     "tenga"
+    ]
+   },
+   {
+    "valeur": "Fourth Division",
+    "fiches": 2,
+    "regle": "suffixe « Division » — unité de la Force Shinobi Alliée",
+    "slugs": [
+     "sagan",
+     "tessa"
+    ]
+   },
+   {
+    "valeur": "Surprise Attack and Diversion Platoon",
+    "fiches": 1,
+    "regle": "peloton de la Force Shinobi Alliée",
+    "slugs": [
+     "chukichi"
+    ]
+   },
+   {
+    "valeur": "Twenty Platoons",
+    "fiches": 1,
+    "regle": "découpage de la Force Shinobi Alliée",
+    "slugs": [
+     "riichi-ninja"
+    ]
+   },
+   {
+    "valeur": "Sensor Division",
+    "fiches": 1,
+    "regle": "suffixe « Division » — unité de la Force Shinobi Alliée",
+    "slugs": [
+     "kussaku"
+    ]
+   },
+   {
+    "valeur": "Counter-Terrorism Division",
+    "fiches": 1,
+    "regle": "suffixe « Division » — unité de la Force Shinobi Alliée",
+    "slugs": [
+     "kankuro"
+    ]
+   },
+   {
+    "valeur": "Cypher Division",
+    "fiches": 1,
+    "regle": "suffixe « Division » — unité de la Force Shinobi Alliée",
+    "slugs": [
+     "miru"
+    ]
+   },
+   {
+    "valeur": "Explosion Corps",
+    "fiches": 1,
+    "regle": "corps d’explosifs de la Force Shinobi Alliée",
+    "slugs": [
+     "gari"
+    ]
+   }
+  ],
+  "organization": [
+   {
+    "valeur": "Akatsuki",
+    "fiches": 38,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "obito-uchiha",
+     "itachi-uchiha",
+     "sasuke-uchiha",
+     "madara-uchiha",
+     "white-zetsu",
+     "suzuran",
+     "orochimaru",
+     "juzo-biwa",
+     "daibutsu",
+     "tobi-zetsu",
+     "jugo",
+     "himeyuri",
+     "nazuna",
+     "kie",
+     "kyusuke",
+     "chibi-naruto",
+     "mukade",
+     "nagato",
+     "raimei",
+     "shin-uchiha",
+     "kakuzu",
+     "karin-naruto",
+     "suigetsu-hozuki",
+     "ginji",
+     "yahiko",
+     "yura",
+     "black-zetsu",
+     "zangei",
+     "demonic-statue-of-the-outer-path",
+     "sasori",
+     "kakuzu-s-partner",
+     "konan",
+     "deidara",
+     "kyoya",
+     "hidan",
+     "yugito-nii",
+     "utakata",
+     "kisame-hoshigaki"
+    ]
+   },
+   {
+    "valeur": "Root",
+    "fiches": 24,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "kakashi-hatake",
+     "mizunoe",
+     "hinoto",
+     "kanoe",
+     "kanoto",
+     "kinoto",
+     "hinoe",
+     "tatsuma-aburame",
+     "tanuki-shigaraki",
+     "terai",
+     "tsuchinoe",
+     "tsuchinoto",
+     "nono-yakushi",
+     "sai-naruto",
+     "mizunoto",
+     "yamato-naruto",
+     "shin",
+     "hyo",
+     "kabuto-yakushi",
+     "hiruzen-sarutobi",
+     "danzo-shimura",
+     "torune-aburame",
+     "shino-aburame",
+     "fu-yamanaka"
+    ]
+   },
+   {
+    "valeur": "Kara",
+    "fiches": 20,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "ada",
+     "amado-sanzu",
+     "boro",
+     "daemon",
+     "jigen",
+     "garo",
+     "kiseru-gankubi",
+     "oga",
+     "deepa",
+     "delta",
+     "code",
+     "victor-s-secretary",
+     "ao",
+     "iwa-doctor",
+     "koji-kashin",
+     "garashi-tono",
+     "victor",
+     "kawaki",
+     "bug",
+     "isshiki-otsutsuki"
+    ]
+   },
+   {
+    "valeur": "Sept Épéistes de la Brume",
+    "fiches": 9,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "mangetsu-hozuki",
+     "chojuro",
+     "jinin-akebino",
+     "jinpachi-munashi",
+     "kushimaru-kuriarare",
+     "raiga-kurosuki",
+     "zabuza-momochi",
+     "ameyuri-ringo",
+     "fuguki-suikazan"
+    ]
+   },
+   {
+    "valeur": "Police militaire de Konoha",
+    "fiches": 9,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "taiko-uchiha",
+     "inabi-uchiha",
+     "setsuna-uchiha",
+     "tekka-uchiha",
+     "yashiro-uchiha",
+     "kotaro-fuma",
+     "yakumi-uchiha",
+     "fugaku-uchiha",
+     "shisui-uchiha"
+    ]
+   },
+   {
+    "valeur": "Nouveaux Sept Épéistes de la Brume",
+    "fiches": 7,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "shizuma-hoshigaki",
+     "hebiichigo",
+     "ichirota-oniyuzu",
+     "hassaku-onomichi",
+     "kyoho-fuefuki",
+     "buntan-kurosuki",
+     "kagura-karatachi"
+    ]
+   },
+   {
+    "valeur": "Douze Ninjas Gardiens",
+    "fiches": 7,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "chiriku",
+     "nauma",
+     "asuma-sarutobi",
+     "tou",
+     "seito",
+     "kazuma",
+     "kitane"
+    ]
+   },
+   {
+    "valeur": "Konoha Barrier Team",
+    "fiches": 6,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "kohan-yamanaka",
+     "izumo-kamizuki",
+     "kakoi",
+     "kotetsu-hagane",
+     "tasuki",
+     "inojin-yamanaka"
+    ]
+   },
+   {
+    "valeur": "Magaki Group",
+    "fiches": 5,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "akaboshi",
+     "chushin",
+     "nango",
+     "shiranami",
+     "benten"
+    ]
+   },
+   {
+    "valeur": "Konoha Orphanage",
+    "fiches": 5,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "terubo",
+     "keiri",
+     "harine",
+     "kanpu",
+     "urushi"
+    ]
+   },
+   {
+    "valeur": "Analysis Team",
+    "fiches": 5,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "mawashi-dokuraku",
+     "kumadori-naruto",
+     "oyone",
+     "shimon-hijiri",
+     "tonbo-tobitake"
+    ]
+   },
+   {
+    "valeur": "Haido's Knights",
+    "fiches": 5,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "fugai",
+     "ranke",
+     "haido",
+     "temujin",
+     "kamira"
+    ]
+   },
+   {
+    "valeur": "Fire Temple",
+    "fiches": 5,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "ichigen",
+     "sentoki",
+     "bansai",
+     "sora",
+     "zenza"
+    ]
+   },
+   {
+    "valeur": "Sound Four",
+    "fiches": 5,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "jirobo",
+     "sakon-and-ukon",
+     "tayuya",
+     "kidomaru",
+     "kimimaro"
+    ]
+   },
+   {
+    "valeur": "Scientific Ninja Weapons Team",
+    "fiches": 4,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "akita-inuzuka",
+     "katasuke-tono",
+     "sumire-kakei",
+     "kosuke-scientist"
+    ]
+   },
+   {
+    "valeur": "Gatō Company",
+    "fiches": 4,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "kusabi",
+     "zori",
+     "waraji",
+     "gato"
+    ]
+   },
+   {
+    "valeur": "Shinobazu",
+    "fiches": 4,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "shura-naruto",
+     "gantetsu",
+     "monju",
+     "toki-shinobazu"
+    ]
+   },
+   {
+    "valeur": "Suna Council",
+    "fiches": 4,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "joseki",
+     "sajo",
+     "ryusa",
+     "goza"
+    ]
+   },
+   {
+    "valeur": "Hokage Guard Platoon",
+    "fiches": 3,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "raido-namiashi",
+     "iwashi-tatami",
+     "genma-shiranui"
+    ]
+   },
+   {
+    "valeur": "Moya Triad",
+    "fiches": 3,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "ya",
+     "aniki",
+     "mo"
+    ]
+   },
+   {
+    "valeur": "Byakuya Gang",
+    "fiches": 3,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "ryogi",
+     "gekko",
+     "oko"
+    ]
+   },
+   {
+    "valeur": "Mujina Bandits",
+    "fiches": 3,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "kokuri",
+     "shojoji",
+     "tsukiyo"
+    ]
+   },
+   {
+    "valeur": "Leaf's Anbu",
+    "fiches": 3,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "doshin",
+     "hakui",
+     "shinga"
+    ]
+   },
+   {
+    "valeur": "Enlightened Ones",
+    "fiches": 3,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "gengo",
+     "minoichi",
+     "komori"
+    ]
+   },
+   {
+    "valeur": "Wandering Ninja Clan",
+    "fiches": 3,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "ishidate",
+     "karenbana",
+     "kongo"
+    ]
+   },
+   {
+    "valeur": "Watari Ninja",
+    "fiches": 3,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "hokushin",
+     "hoki-watari",
+     "nagare"
+    ]
+   },
+   {
+    "valeur": "Lightning Group",
+    "fiches": 3,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "nowaki",
+     "chino",
+     "karyu"
+    ]
+   },
+   {
+    "valeur": "Janin",
+    "fiches": 3,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "renga",
+     "jiga",
+     "ruiga"
+    ]
+   },
+   {
+    "valeur": "Konoha Torture and Interrogation Force",
+    "fiches": 3,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "ibiki-morino",
+     "shinobu-mibu",
+     "mozuku"
+    ]
+   },
+   {
+    "valeur": "Konoha Cryptanalysis Team",
+    "fiches": 3,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "shiho",
+     "yurika",
+     "mitoku"
+    ]
+   },
+   {
+    "valeur": "Kumo Council",
+    "fiches": 2,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "c",
+     "darui"
+    ]
+   },
+   {
+    "valeur": "Jako's Gang",
+    "fiches": 2,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "suguro",
+     "jako"
+    ]
+   },
+   {
+    "valeur": "Konoha Council",
+    "fiches": 2,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "homura-mitokado",
+     "koharu-utatane"
+    ]
+   },
+   {
+    "valeur": "Kumo Barrier Team",
+    "fiches": 2,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "iroha-hyuga",
+     "moroi"
+    ]
+   },
+   {
+    "valeur": "Kumo Spectators",
+    "fiches": 2,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "sekiei-spectator",
+     "sekiei-s-partner"
+    ]
+   },
+   {
+    "valeur": "Communications Team",
+    "fiches": 2,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "tango",
+     "dodai"
+    ]
+   },
+   {
+    "valeur": "Akagi Gang",
+    "fiches": 2,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "senta",
+     "bunzo"
+    ]
+   },
+   {
+    "valeur": "Ghost Army",
+    "fiches": 2,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "yomi",
+     "moryo"
+    ]
+   },
+   {
+    "valeur": "Kurosuki Family",
+    "fiches": 2,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "karashi",
+     "ranmaru"
+    ]
+   },
+   {
+    "valeur": "Konoha Special Mission Platoon",
+    "fiches": 1,
+    "regle": "aucune règle ne la reconnaît — reste où elle était",
+    "slugs": [
+     "shizune"
+    ]
+   }
+  ]
+ },
+ "deplacees": 250
+}

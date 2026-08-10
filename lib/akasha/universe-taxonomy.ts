@@ -90,11 +90,13 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
       },
       {
         // Valeurs alignées sur scripts/lib/akasha-axes.mjs (vocabulaire des agents : Root, pas
-        // « Racine (Anbu) ») — le backfill data/audits/backfill-organization-naruto.json remplit l'axe.
-        // Axe TOUJOURS SALE (voir DIRTY_AXES plus bas) — seule une correction ponctuelle sourcée
-        // a été reportée ici le 08/08 (data/audits/curation-axes-sales.json), le reste de l'audit
-        // (72 équipes genin, 9 divisions de guerre, familles, gangs…) reste hors de cette liste :
-        // une autre nature d'axe, pas une promotion qui manquait.
+        // « Racine (Anbu) »).
+        // AXE PROPRE DEPUIS LE 10/08/2026. Il portait 124 valeurs et restait masqué : une seule clé
+        // y rangeait trois natures étrangères — l'Akatsuki (38 fiches) et « Team 40 » (3 fiches) ne
+        // répondent pas à la même question. Les escouades sont parties dans `equipe`, les unités de
+        // la Quatrième Guerre dans `division` (scripts/ops-scinder-axe-organization.mjs, trace :
+        // data/audits/scission-organization-trace.json — 250 fiches déplacées, aucune supprimée).
+        // Ne restent ici que des organisations au sens propre : permanentes, on y adhère.
         attr: 'organization', label: 'Organisations', genre: 'f', icon: '☁️',
         values: [
           { v: 'Akatsuki', tint: '#C0392B', badge: '☁️' },
@@ -107,6 +109,137 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
           { v: 'Konoha 11', tint: '#3FA35C', badge: '🍃' },
           { v: 'Douze Ninjas Gardiens', tint: '#B8912F', badge: '🛡️' },
           { v: 'Police militaire de Konoha', l: 'Police de Konoha', tint: '#4A5A7A', badge: '🚔' },
+          { v: "Akagi Gang" },
+          { v: "Analysis Team" },
+          { v: "Byakuya Gang" },
+          { v: "Communications Team" },
+          { v: "Enlightened Ones" },
+          { v: "Fire Temple" },
+          { v: "Gatō Company" },
+          { v: "Ghost Army" },
+          { v: "Haido's Knights" },
+          { v: "Hokage Guard Platoon" },
+          { v: "Jako's Gang" },
+          { v: "Janin" },
+          { v: "Konoha Barrier Team" },
+          { v: "Konoha Council" },
+          { v: "Konoha Cryptanalysis Team" },
+          { v: "Konoha Orphanage" },
+          { v: "Konoha Special Mission Platoon" },
+          { v: "Konoha Torture and Interrogation Force" },
+          { v: "Kumo Barrier Team" },
+          { v: "Kumo Council" },
+          { v: "Kumo Spectators" },
+          { v: "Kurosuki Family" },
+          { v: "Leaf's Anbu" },
+          { v: "Lightning Group" },
+          { v: "Magaki Group" },
+          { v: "Moya Triad" },
+          { v: "Mujina Bandits" },
+          { v: "Scientific Ninja Weapons Team" },
+          { v: "Shinobazu" },
+          { v: "Suna Council" },
+          { v: "Wandering Ninja Clan" },
+          { v: "Watari Ninja" },
+        ],
+      },
+      {
+        // ÉQUIPES (10/08/2026) — sorties de `organization` : une escouade de trois genin sous un
+        // chef n'est pas une institution, et 73 d'entre elles noyaient l'Akatsuki dans le même rail.
+        attr: 'equipe', label: 'Équipes', genre: 'f', icon: '🤝',
+        values: [
+          { v: "A–B Combo" },
+          { v: "Daimyō Protection Squad" },
+          { v: "Demon Brothers" },
+          { v: "Dotō's Three-Man-Team" },
+          { v: "Eight-Tails Subduing Team" },
+          { v: "Escort Unit" },
+          { v: "Exploding-Till-You-Eat" },
+          { v: "Four Celestial Symbols Men" },
+          { v: "Four Ninja Animal Warriors" },
+          { v: "Furido's 4-Man Team" },
+          { v: "Gang of Four" },
+          { v: "Gold and Silver Brothers" },
+          { v: "Haze Quadruplets" },
+          { v: "Hiruko's Team" },
+          { v: "Honoured Siblings" },
+          { v: "Infiltration and Reconnaissance Party" },
+          { v: "Ino–Shika–Chō" },
+          { v: "Konoha 11" },
+          { v: "Legendary Stupid Brothers" },
+          { v: "Sealing Team" },
+          { v: "Shirogane Three" },
+          { v: "Team 10" },
+          { v: "Team 15" },
+          { v: "Team 2" },
+          { v: "Team 25" },
+          { v: "Team 40" },
+          { v: "Team 5" },
+          { v: "Team 7" },
+          { v: "Team 8" },
+          { v: "Team Ajisai" },
+          { v: "Team Ameno" },
+          { v: "Team Bandō" },
+          { v: "Team Chōza" },
+          { v: "Team Dosu" },
+          { v: "Team Ebisu" },
+          { v: "Team Fū" },
+          { v: "Team Ganryū" },
+          { v: "Team Goji" },
+          { v: "Team Guren" },
+          { v: "Team Hiruzen" },
+          { v: "Team Jiraiya" },
+          { v: "Team Kabuto" },
+          { v: "Team Kajika" },
+          { v: "Team Kakashi" },
+          { v: "Team Kazami" },
+          { v: "Team Komugi" },
+          { v: "Team Matsuri" },
+          { v: "Team Minato" },
+          { v: "Team Oboro" },
+          { v: "Team Orochimaru" },
+          { v: "Team Ro" },
+          { v: "Team Sajin" },
+          { v: "Team Samui" },
+          { v: "Team Saya" },
+          { v: "Team Shibire" },
+          { v: "Team Shigure" },
+          { v: "Team Shinki" },
+          { v: "Team Shira" },
+          { v: "Team Suien" },
+          { v: "Team Tobirama" },
+          { v: "Team Yurui" },
+          { v: "Three Brothers" },
+          { v: "Three Ryūdōin Brothers" },
+          { v: "Three Sand Siblings" },
+          { v: "Three Senka Brothers" },
+          { v: "Two Great Sage Toads" },
+        ],
+      },
+      {
+        // DIVISIONS DE LA QUATRIÈME GUERRE (10/08/2026) — elles n'existent que pendant le conflit
+        // et mêlent tous les villages : c'est ce qui les distingue d'un corps permanent, pas leur
+        // taille. Homonymie assumée avec l'axe `division` de Bleach : les axes sont par univers.
+        attr: 'division', label: 'Divisions de la Guerre', genre: 'f', icon: '⚔️',
+        values: [
+          { v: "Allied Mothers Force" },
+          { v: "Corps médical" },
+          { v: "Counter-Terrorism Division" },
+          { v: "Cypher Division" },
+          { v: "Explosion Corps" },
+          { v: "Fifth Division" },
+          { v: "First Division" },
+          { v: "Force Shinobi Alliée" },
+          { v: "Fourth Division" },
+          { v: "Impure World Reincarnation Allied Forces" },
+          { v: "Intelligence Division" },
+          { v: "Logistical Support and Medical Division" },
+          { v: "Second Division" },
+          { v: "Sensor Division" },
+          { v: "Surprise Attack Division" },
+          { v: "Surprise Attack and Diversion Platoon" },
+          { v: "Third Division" },
+          { v: "Twenty Platoons" },
         ],
       },
       {
@@ -451,7 +584,7 @@ export const ALLOWED_FILTER_ATTRS: ReadonlySet<string> = new Set(
  *    visé par la liste curée — vs ~72 équipes genin éphémères, 9 divisions de guerre temporaires,
  *    familles, gangs locaux…). Un renommage ne répare pas un problème de modèle de données ; voir
  *    l'audit pour le détail et la recommandation (scinder l'extraction, pas cette liste). */
-const DIRTY_AXES: ReadonlySet<string> = new Set(['Naruto:organization']);
+const DIRTY_AXES: ReadonlySet<string> = new Set([]);
 
 /** Un axe (univers + attribut) est-il trop sale pour être PROPOSÉ (chip, pré-génération) ?
  *  N'affecte jamais la résolution de route elle-même — voir le commentaire de `DIRTY_AXES`. */

@@ -36,8 +36,40 @@ export const AXES = {
     // ce chantier — trouvé en resynchronisant le miroir) + « Nouveaux Sept Épéistes de la Brume »
     // (curation des axes sales). L'axe reste SALE dans son ensemble (voir DIRTY_AXES et l'audit) :
     // ce miroir ne fait que suivre la liste curée, il ne prétend pas que l'axe est propre.
-    organization: ['Akatsuki', 'Taka', 'Kara', 'Root', 'Sound Four', 'Sept Épéistes de la Brume',
-      'Nouveaux Sept Épéistes de la Brume', 'Konoha 11', 'Douze Ninjas Gardiens', 'Police militaire de Konoha'],
+    // 10/08 : l'axe a été SCINDÉ par nature (scripts/ops-scinder-axe-organization.mjs). Une escouade
+    // n'est pas une institution : `equipe` et `division` sont deux clés à part entière, et les
+    // agents doivent pouvoir les produire — sinon l'usine réécrirait tout dans `organization`.
+    organization: [
+      'Akagi Gang', 'Akatsuki', 'Analysis Team', 'Byakuya Gang', 'Communications Team', 'Douze Ninjas Gardiens',
+      'Enlightened Ones', 'Fire Temple', 'Gatō Company', 'Ghost Army', "Haido's Knights", 'Hokage Guard Platoon',
+      "Jako's Gang", 'Janin', 'Kara', 'Konoha Barrier Team', 'Konoha Council', 'Konoha Cryptanalysis Team',
+      'Konoha Orphanage', 'Konoha Special Mission Platoon', 'Konoha Torture and Interrogation Force',
+      'Kumo Barrier Team', 'Kumo Council', 'Kumo Spectators', 'Kurosuki Family', "Leaf's Anbu", 'Lightning Group',
+      'Magaki Group', 'Moya Triad', 'Mujina Bandits', 'Nouveaux Sept Épéistes de la Brume',
+      'Police militaire de Konoha', 'Root', 'Scientific Ninja Weapons Team', 'Sept Épéistes de la Brume',
+      'Shinobazu', 'Sound Four', 'Suna Council', 'Wandering Ninja Clan', 'Watari Ninja'
+    ],
+    equipe: [
+      'A–B Combo', 'Daimyō Protection Squad', 'Demon Brothers', "Dotō's Three-Man-Team",
+      'Eight-Tails Subduing Team', 'Escort Unit', 'Exploding-Till-You-Eat', 'Four Celestial Symbols Men',
+      'Four Ninja Animal Warriors', "Furido's 4-Man Team", 'Gang of Four', 'Gold and Silver Brothers',
+      'Haze Quadruplets', "Hiruko's Team", 'Honoured Siblings', 'Infiltration and Reconnaissance Party',
+      'Ino–Shika–Chō', 'Konoha 11', 'Legendary Stupid Brothers', 'Sealing Team', 'Shirogane Three', 'Team 10',
+      'Team 15', 'Team 2', 'Team 25', 'Team 40', 'Team 5', 'Team 7', 'Team 8', 'Team Ajisai', 'Team Ameno',
+      'Team Bandō', 'Team Chōza', 'Team Dosu', 'Team Ebisu', 'Team Fū', 'Team Ganryū', 'Team Goji', 'Team Guren',
+      'Team Hiruzen', 'Team Jiraiya', 'Team Kabuto', 'Team Kajika', 'Team Kakashi', 'Team Kazami', 'Team Komugi',
+      'Team Matsuri', 'Team Minato', 'Team Oboro', 'Team Orochimaru', 'Team Ro', 'Team Sajin', 'Team Samui',
+      'Team Saya', 'Team Shibire', 'Team Shigure', 'Team Shinki', 'Team Shira', 'Team Suien', 'Team Tobirama',
+      'Team Yurui', 'Three Brothers', 'Three Ryūdōin Brothers', 'Three Sand Siblings', 'Three Senka Brothers',
+      'Two Great Sage Toads'
+    ],
+    division: [
+      'Allied Mothers Force', 'Corps médical', 'Counter-Terrorism Division', 'Cypher Division', 'Explosion Corps',
+      'Fifth Division', 'First Division', 'Force Shinobi Alliée', 'Fourth Division',
+      'Impure World Reincarnation Allied Forces', 'Intelligence Division',
+      'Logistical Support and Medical Division', 'Second Division', 'Sensor Division', 'Surprise Attack Division',
+      'Surprise Attack and Diversion Platoon', 'Third Division', 'Twenty Platoons'
+    ],
   },
   'One Piece': {
     faction: ['Pirate', 'Marine', 'Gouvernement Mondial', 'Révolutionnaire', 'Civil'],
