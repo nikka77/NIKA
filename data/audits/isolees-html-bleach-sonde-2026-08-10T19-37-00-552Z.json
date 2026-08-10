@@ -1,0 +1,816 @@
+{
+ "chantier": "sortir les isolées Bleach par l'infobox RENDUE",
+ "quand": "2026-08-10T19:37:31.265Z",
+ "mode": "sonde",
+ "hote": "bleach.fandom.com",
+ "champs": [
+  "affiliation",
+  "base of operations",
+  "profession"
+ ],
+ "avant": {
+  "fiches": 7698,
+  "aretes": 17071,
+  "isoleesTotales": 546,
+  "isoleesUnivers": 40
+ },
+ "pagesLues": 47,
+ "wikitexteInfoboxNue": 0,
+ "libellesInfobox": {
+  "race": 46,
+  "gender": 46,
+  "anime debut": 46,
+  "japanese voice": 46,
+  "english voice": 46,
+  "base of operations": 40,
+  "manga debut": 36,
+  "education": 27,
+  "affiliation": 26,
+  "birthday": 25,
+  "relatives": 25,
+  "height": 24,
+  "weight": 23,
+  "spanish voice": 23,
+  "image": 23,
+  "occupation": 22,
+  "video game debut": 19,
+  "age": 14,
+  "blood type": 13,
+  "partner": 11,
+  "shikai": 10,
+  "bankai": 10,
+  "profession": 9,
+  "previous affiliation": 8,
+  "position": 8,
+  "previous team": 7,
+  "signature skill": 7,
+  "previous partner": 7,
+  "previous position": 6,
+  "previous division": 5,
+  "team": 5,
+  "previous occupation": 4,
+  "division": 4,
+  "kanji": 2,
+  "master": 2,
+  "spirit weapon": 2,
+  "epithet": 1,
+  "vollstandig": 1,
+  "fullbring": 1
+ },
+ "ciblesBrutes": 118,
+ "attendu": {
+  "aretes": 0,
+  "isoleesSorties": 0
+ },
+ "parNature": {},
+ "parChamp": {},
+ "motifsEchec": {
+  "aucune fiche Bleach nommée «…»": 94
+ },
+ "journal": {
+  "pageAbsente": [
+   "Koukichirou Takezoe",
+   "Zabimaru (Male)",
+   "Staff A",
+   "Heita Toujouin",
+   "Mareyo Oomaeda",
+   "Boomerang Toujuu",
+   "Kuroud",
+   "Middle School Player",
+   "Mr.Pork",
+   "Staff B",
+   "Staff C",
+   "Gengorou Onabara",
+   "Zabimaru (Female)"
+  ],
+  "redirectionSection": [
+   "Gegetsuburi → Marechiyo Ōmaeda#Zanpakutō",
+   "Mahana Natsui → Karakura High School Students#Mahana Natsui",
+   "Suzumebachi → Suì-Fēng#Zanpakutō",
+   "Father → BATTLE FIELD BURNING#673. Father",
+   "Hisagomaru → Hanatarō Yamada#Zanpakutō",
+   "Kei Uehara → Karin Kurosaki's Friends#Kei Uehara",
+   "Baigon → Orihime Inoue#Baigon",
+   "Ayame → Orihime Inoue#Ayame",
+   "Hinagiku → Orihime Inoue#Hinagiku",
+   "Daiji Hirasago → Kusajishi Bull's Gang#Daiji Hirasago",
+   "Jibakurai → Soul#Jibakurai",
+   "Torue → Miscellaneous Shinigami#Torue",
+   "Lily → Orihime Inoue#Lily",
+   "Taichi Miyamoto → Ganju's Gang#Taichi Miyamoto",
+   "Sadatomo Saionji → Ganju's Gang#Sadatomo Saionji",
+   "Mitsuru Ishino → Ganju's Gang#Mitsuru Ishino",
+   "Tsubaki → Orihime Inoue#Tsubaki",
+   "Shun'ou → Orihime Inoue#Shun'ō",
+   "Satoda → Karakura High School Students#Satoda",
+   "Kenji Yamashita → Ganju's Gang#Kenji Yamashita"
+  ],
+  "pagePartagee": [],
+  "sansInfobox": [
+   "Karakura"
+  ],
+  "sansChampUtile": [
+   "Reiichi Oshima",
+   "Goethe",
+   "Heita Momoyama",
+   "Haru",
+   "Mizuho Asano",
+   "Goethe"
+  ],
+  "cibleRefusee": [],
+  "qualificateurRevolu": [
+   "Uryū Ishida --base of operations--> Soul Society (« (formerly) »)",
+   "Masaki Kurosaki --base of operations--> Karakura Town (« Ishida House (formerly) »)"
+  ],
+  "pageDAutrui": [
+   "Ashisogi Jizo → « Mayuri Kurotsuchi », qui EST notre fiche mayuri-kurotsuchi (character)",
+   "Hyourinmaru → « Tōshirō Hitsugaya », qui EST notre fiche toshiro-hitsugaya (character)"
+  ],
+  "citantsPlafonnes": 0,
+  "fragmentSansCible": [
+   "Gegetsuburi → Marechiyo Ōmaeda#Zanpakutō (page de ramassage : aucune fiche de ce nom)",
+   "Mahana Natsui → Karakura High School Students#Mahana Natsui (page de ramassage : aucune fiche de ce nom)",
+   "Suzumebachi → Suì-Fēng#Zanpakutō (page de ramassage : aucune fiche de ce nom)",
+   "Father → BATTLE FIELD BURNING#673. Father (page de ramassage : aucune fiche de ce nom)",
+   "Hisagomaru → Hanatarō Yamada#Zanpakutō (page de ramassage : aucune fiche de ce nom)",
+   "Kei Uehara → Karin Kurosaki's Friends#Kei Uehara (page de ramassage : aucune fiche de ce nom)",
+   "Daiji Hirasago → Kusajishi Bull's Gang#Daiji Hirasago (page de ramassage : aucune fiche de ce nom)",
+   "Jibakurai → Soul#Jibakurai (page de ramassage : aucune fiche de ce nom)",
+   "Torue → Miscellaneous Shinigami#Torue (page de ramassage : aucune fiche de ce nom)",
+   "Taichi Miyamoto → Ganju's Gang#Taichi Miyamoto (page de ramassage : aucune fiche de ce nom)",
+   "Sadatomo Saionji → Ganju's Gang#Sadatomo Saionji (page de ramassage : aucune fiche de ce nom)",
+   "Mitsuru Ishino → Ganju's Gang#Mitsuru Ishino (page de ramassage : aucune fiche de ce nom)",
+   "Satoda → Karakura High School Students#Satoda (page de ramassage : aucune fiche de ce nom)",
+   "Kenji Yamashita → Ganju's Gang#Kenji Yamashita (page de ramassage : aucune fiche de ce nom)"
+  ],
+  "fragmentRefuse": [
+   "Baigon → Orihime Inoue#Baigon (section dans l'article d'un personnage, aucune relation nommée)",
+   "Ayame → Orihime Inoue#Ayame (section dans l'article d'un personnage, aucune relation nommée)",
+   "Hinagiku → Orihime Inoue#Hinagiku (section dans l'article d'un personnage, aucune relation nommée)",
+   "Lily → Orihime Inoue#Lily (section dans l'article d'un personnage, aucune relation nommée)",
+   "Tsubaki → Orihime Inoue#Tsubaki (section dans l'article d'un personnage, aucune relation nommée)",
+   "Shun'ou → Orihime Inoue#Shun'ō (section dans l'article d'un personnage, aucune relation nommée)"
+  ]
+ },
+ "candidats": [],
+ "echecs": [
+  {
+   "de": "Misaomaru Kanonji",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Misaomaru Kanonji",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Ururu Tsumugiya",
+   "champ": "affiliation",
+   "titreWiki": "Urahara Shop",
+   "libelle": "Urahara Shop",
+   "motif": "aucune fiche Bleach nommée « Urahara Shop »"
+  },
+  {
+   "de": "Ururu Tsumugiya",
+   "champ": "base of operations",
+   "titreWiki": "Urahara Shop",
+   "libelle": "Urahara Shop",
+   "motif": "aucune fiche Bleach nommée « Urahara Shop »"
+  },
+  {
+   "de": "Ururu Tsumugiya",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Kisuke Urahara",
+   "champ": "affiliation",
+   "titreWiki": "Urahara Shop",
+   "libelle": "Urahara Shop",
+   "motif": "aucune fiche Bleach nommée « Urahara Shop »"
+  },
+  {
+   "de": "Kisuke Urahara",
+   "champ": "base of operations",
+   "titreWiki": "Urahara Shop",
+   "libelle": "Urahara Shop",
+   "motif": "aucune fiche Bleach nommée « Urahara Shop »"
+  },
+  {
+   "de": "Kisuke Urahara",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Isshin Kurosaki",
+   "champ": "affiliation",
+   "titreWiki": "Kurosaki Clinic",
+   "libelle": "Kurosaki Clinic",
+   "motif": "aucune fiche Bleach nommée « Kurosaki Clinic »"
+  },
+  {
+   "de": "Isshin Kurosaki",
+   "champ": "base of operations",
+   "titreWiki": "Kurosaki Clinic",
+   "libelle": "Kurosaki Clinic",
+   "motif": "aucune fiche Bleach nommée « Kurosaki Clinic »"
+  },
+  {
+   "de": "Isshin Kurosaki",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Orihime Inoue",
+   "champ": "affiliation",
+   "titreWiki": "Kurosaki Clinic",
+   "libelle": "Kurosaki Clinic",
+   "motif": "aucune fiche Bleach nommée « Kurosaki Clinic »"
+  },
+  {
+   "de": "Orihime Inoue",
+   "champ": "affiliation",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Orihime Inoue",
+   "champ": "base of operations",
+   "titreWiki": "Kurosaki Clinic",
+   "libelle": "Kurosaki Clinic",
+   "motif": "aucune fiche Bleach nommée « Kurosaki Clinic »"
+  },
+  {
+   "de": "Orihime Inoue",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Kon",
+   "champ": "base of operations",
+   "titreWiki": "Kurosaki Clinic",
+   "libelle": "Kurosaki Clinic",
+   "motif": "aucune fiche Bleach nommée « Kurosaki Clinic »"
+  },
+  {
+   "de": "Kon",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Kon",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Yoruichi Shihōin",
+   "champ": "affiliation",
+   "titreWiki": "Shihōin Clan",
+   "libelle": "Shihōin Clan",
+   "motif": "aucune fiche Bleach nommée « Shihōin Clan »"
+  },
+  {
+   "de": "Yoruichi Shihōin",
+   "champ": "base of operations",
+   "titreWiki": "Urahara Shop",
+   "libelle": "Urahara Shop",
+   "motif": "aucune fiche Bleach nommée « Urahara Shop »"
+  },
+  {
+   "de": "Yoruichi Shihōin",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Uryū Ishida",
+   "champ": "affiliation",
+   "titreWiki": "Karakura Hospital",
+   "libelle": "Karakura Hospital",
+   "motif": "aucune fiche Bleach nommée « Karakura Hospital »"
+  },
+  {
+   "de": "Uryū Ishida",
+   "champ": "affiliation",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Uryū Ishida",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Uryū Ishida",
+   "champ": "base of operations",
+   "titreWiki": "Silbern",
+   "libelle": "Silbern",
+   "motif": "aucune fiche Bleach nommée « Silbern »"
+  },
+  {
+   "de": "Yasutora « Chad » Sado",
+   "champ": "affiliation",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Yasutora « Chad » Sado",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Karin Kurosaki",
+   "champ": "affiliation",
+   "titreWiki": "Kurosaki Clinic",
+   "libelle": "Kurosaki Clinic",
+   "motif": "aucune fiche Bleach nommée « Kurosaki Clinic »"
+  },
+  {
+   "de": "Karin Kurosaki",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Masaki Kurosaki",
+   "champ": "affiliation",
+   "titreWiki": "Kurosaki Family",
+   "libelle": "Kurosaki Family",
+   "motif": "aucune fiche Bleach nommée « Kurosaki Family »"
+  },
+  {
+   "de": "Masaki Kurosaki",
+   "champ": "base of operations",
+   "titreWiki": "Kurosaki Clinic",
+   "libelle": "Kurosaki Clinic",
+   "motif": "aucune fiche Bleach nommée « Kurosaki Clinic »"
+  },
+  {
+   "de": "Tatsuki Arisawa",
+   "champ": "affiliation",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Tatsuki Arisawa",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Tatsuki Arisawa",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Yuzu Kurosaki",
+   "champ": "affiliation",
+   "titreWiki": "Kurosaki Clinic",
+   "libelle": "Kurosaki Clinic",
+   "motif": "aucune fiche Bleach nommée « Kurosaki Clinic »"
+  },
+  {
+   "de": "Yuzu Kurosaki",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Keigo Asano",
+   "champ": "affiliation",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Keigo Asano",
+   "champ": "base of operations",
+   "titreWiki": "Naruki City",
+   "libelle": "Naruki City",
+   "motif": "aucune fiche Bleach nommée « Naruki City »"
+  },
+  {
+   "de": "Keigo Asano",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Mizuiro Kojima",
+   "champ": "affiliation",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Mizuiro Kojima",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Mizuiro Kojima",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Tessai Tsukabishi",
+   "champ": "affiliation",
+   "titreWiki": "Urahara Shop",
+   "libelle": "Urahara Shop",
+   "motif": "aucune fiche Bleach nommée « Urahara Shop »"
+  },
+  {
+   "de": "Tessai Tsukabishi",
+   "champ": "base of operations",
+   "titreWiki": "Urahara Shop",
+   "libelle": "Urahara Shop",
+   "motif": "aucune fiche Bleach nommée « Urahara Shop »"
+  },
+  {
+   "de": "Tessai Tsukabishi",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Jinta Hanakari",
+   "champ": "affiliation",
+   "titreWiki": "Urahara Shop",
+   "libelle": "Urahara Shop",
+   "motif": "aucune fiche Bleach nommée « Urahara Shop »"
+  },
+  {
+   "de": "Jinta Hanakari",
+   "champ": "base of operations",
+   "titreWiki": "Urahara Shop",
+   "libelle": "Urahara Shop",
+   "motif": "aucune fiche Bleach nommée « Urahara Shop »"
+  },
+  {
+   "de": "Jinta Hanakari",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Ririn",
+   "champ": "affiliation",
+   "titreWiki": "Urahara Shop",
+   "libelle": "Urahara Shop",
+   "motif": "aucune fiche Bleach nommée « Urahara Shop »"
+  },
+  {
+   "de": "Ririn",
+   "champ": "base of operations",
+   "titreWiki": "Urahara Shop",
+   "libelle": "Urahara Shop",
+   "motif": "aucune fiche Bleach nommée « Urahara Shop »"
+  },
+  {
+   "de": "Ririn",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Ririn",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Michiru Ogawa",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Michiru Ogawa",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Misato Ochi",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Misato Ochi",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Harutoki Ide",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Harutoki Ide",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Kagine",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Kagine",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Hashigami",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Hashigami",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Kaneda",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Kaneda",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Ino",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Ino",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Miyuki",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Miyuki",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Shinji Iijima",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Shinji Iijima",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Yokochini",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Yokochini",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Mai Suzuki",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Mai Suzuki",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Ikumi Unagiya",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Ikumi Unagiya",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Obuta",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Obuta",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Kaoru Unagiya",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Kaoru Unagiya",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Ichigo Kurosaki",
+   "champ": "affiliation",
+   "titreWiki": "Kurosaki Clinic",
+   "libelle": "Kurosaki Clinic",
+   "motif": "aucune fiche Bleach nommée « Kurosaki Clinic »"
+  },
+  {
+   "de": "Ichigo Kurosaki",
+   "champ": "affiliation",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Ichigo Kurosaki",
+   "champ": "base of operations",
+   "titreWiki": "Kurosaki Clinic",
+   "libelle": "Kurosaki Clinic",
+   "motif": "aucune fiche Bleach nommée « Kurosaki Clinic »"
+  },
+  {
+   "de": "Ichigo Kurosaki",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Haruko",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Haruko",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Ken",
+   "champ": "base of operations",
+   "titreWiki": "Karakura Town",
+   "libelle": "Karakura Town",
+   "motif": "aucune fiche Bleach nommée « Karakura Town »"
+  },
+  {
+   "de": "Ken",
+   "champ": "base of operations",
+   "titreWiki": "Human World",
+   "libelle": "Human World",
+   "motif": "aucune fiche Bleach nommée « Human World »"
+  },
+  {
+   "de": "Rangiku Matsumoto",
+   "champ": "base of operations",
+   "titreWiki": "Seireitei",
+   "libelle": "Seireitei",
+   "motif": "aucune fiche Bleach nommée « Seireitei »"
+  },
+  {
+   "de": "Rukia Kuchiki",
+   "champ": "base of operations",
+   "titreWiki": "Seireitei",
+   "libelle": "Seireitei",
+   "motif": "aucune fiche Bleach nommée « Seireitei »"
+  },
+  {
+   "de": "Zennosuke Kurumadani",
+   "champ": "base of operations",
+   "titreWiki": "Seireitei",
+   "libelle": "Seireitei",
+   "motif": "aucune fiche Bleach nommée « Seireitei »"
+  },
+  {
+   "de": "Rin Tsubokura",
+   "champ": "affiliation",
+   "titreWiki": "Shinigami Research and Development Institute",
+   "libelle": "S.R.D.I.",
+   "motif": "aucune fiche Bleach nommée « Shinigami Research and Development Institute »"
+  },
+  {
+   "de": "Rin Tsubokura",
+   "champ": "base of operations",
+   "titreWiki": "Shinigami Research and Development Institute",
+   "libelle": "S.R.D.I.",
+   "motif": "aucune fiche Bleach nommée « Shinigami Research and Development Institute »"
+  },
+  {
+   "de": "Rin Tsubokura",
+   "champ": "base of operations",
+   "titreWiki": "Seireitei",
+   "libelle": "Seireitei",
+   "motif": "aucune fiche Bleach nommée « Seireitei »"
+  }
+ ]
+}

@@ -1,0 +1,122 @@
+{
+  "chantier": "capture d'écran du cadre du visuel et remesure sur les pixels reçus",
+  "quand": "2026-08-10T14:43:33.946Z",
+  "base": "http://localhost:3000",
+  "etiquette": "apres",
+  "lignes": [
+    {
+      "slug": "clan-sarutobi",
+      "src": "http://localhost:3000/images/akasha/glyphes/sarutobi-symbole.webp",
+      "definition": "512×512",
+      "cadre": {
+        "x": 293,
+        "y": 325,
+        "width": 288,
+        "height": 288
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/clan-sarutobi-apres.png",
+      "mesure_capture": {
+        "contraste_max": 17.919,
+        "couverture_1_5": 0.2855,
+        "couverture_2": 0.2203,
+        "mediane": 1.392,
+        "verdict": "lisible"
+      }
+    },
+    {
+      "slug": "monzaemon-chikamatsu",
+      "src": "http://localhost:3000/images/akasha/glyphes/monzaemon-symbol.webp",
+      "definition": "512×512",
+      "cadre": {
+        "x": 72,
+        "y": 371,
+        "width": 729,
+        "height": 912
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/monzaemon-chikamatsu-apres.png",
+      "mesure_capture": {
+        "contraste_max": 18.191,
+        "couverture_1_5": 0.6346,
+        "couverture_2": 0.4182,
+        "mediane": 1.856,
+        "verdict": "lisible"
+      }
+    },
+    {
+      "slug": "four-symbols-seal",
+      "src": "http://localhost:3000/images/akasha/glyphes/four-symbols-seal.webp",
+      "definition": "512×512",
+      "cadre": {
+        "x": 72,
+        "y": 297,
+        "width": 560,
+        "height": 420
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/four-symbols-seal-apres.png",
+      "mesure_capture": {
+        "contraste_max": 18.224,
+        "couverture_1_5": 0.2972,
+        "couverture_2": 0.1397,
+        "mediane": 1.332,
+        "verdict": "lisible"
+      }
+    },
+    {
+      "slug": "izuno",
+      "src": "http://localhost:3000/images/akasha/glyphes/izuno-symbole.webp",
+      "definition": "512×512",
+      "cadre": {
+        "x": 72,
+        "y": 215,
+        "width": 128,
+        "height": 128
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/izuno-apres.png",
+      "mesure_capture": {
+        "contraste_max": 15.905,
+        "couverture_1_5": 0.1528,
+        "couverture_2": 0.136,
+        "mediane": 1.129,
+        "verdict": "lisible"
+      }
+    },
+    {
+      "slug": "calorie-control",
+      "src": "http://localhost:3000/images/akasha/glyphes/akimichi-symbol-old.webp",
+      "definition": "512×512",
+      "cadre": {
+        "x": 72,
+        "y": 297,
+        "width": 560,
+        "height": 420
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/calorie-control-apres.png",
+      "mesure_capture": {
+        "contraste_max": 18.126,
+        "couverture_1_5": 0.2669,
+        "couverture_2": 0.1678,
+        "mediane": 1.317,
+        "verdict": "lisible"
+      }
+    },
+    {
+      "slug": "eight-trigrams-sealing-style",
+      "src": "http://localhost:3000/images/akasha/glyphes/four-symbols-seal.webp",
+      "definition": "512×512",
+      "cadre": {
+        "x": 72,
+        "y": 362,
+        "width": 560,
+        "height": 420
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/eight-trigrams-sealing-style-apres.png",
+      "mesure_capture": {
+        "contraste_max": 18.224,
+        "couverture_1_5": 0.2972,
+        "couverture_2": 0.1397,
+        "mediane": 1.332,
+        "verdict": "lisible"
+      }
+    }
+  ]
+}

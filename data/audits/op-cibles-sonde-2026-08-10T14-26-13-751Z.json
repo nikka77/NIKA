@@ -1,0 +1,2395 @@
+{
+ "chantier": "Créer les fiches One Piece que des isolées citent et qui manquent (vague 6, 10/08/2026)",
+ "quand": "2026-08-10T14:26:20.450Z",
+ "mode": "sonde",
+ "collecte": "op-cibles-collecte-2026-08-10T14-07-32-897Z.json",
+ "avant": {
+  "fiches": 7654,
+  "aretes": 16910,
+  "onePiece": 2229,
+  "isoleesOnePiece": 366
+ },
+ "regles": {
+  "type": "Le type est choisi par la NATURE de la cible, pas par le champ qui la cite — mais il est vérifié contre la phrase que `natureDe` va écrire : profession → « Exerce », place depuis un personnage → « Réside », tout le reste → « Appartient à ». Une cible d'affiliation typée `place` ferait dire « réside » à un employé ; une cible d'occupation typée `profession` ferait dire « exerce Zombies » à un zombie. Les deux cas ont été retypés.",
+  "nom": "Le nom est (a) la forme attestée par la PROSE du corpus One Piece — summary et attributes.descFr, jamais un dump de attributes — avec sa phrase-preuve relue une par une (trace op-noms-preuve-*.json) ; à défaut (b) le titre français DÉCLARÉ par la source en interlangue (prop=langlinks&lllang=fr) ; à défaut (c) le titre canonique anglais. La relecture des phrases a écarté « Paradis » (8 fiches, mais « Paradis Okama » d'Impel Down) au profit de « Paradise » (27 fiches, toutes au bon sens), et « Pègre » (0 fiche) au profit de « Underworld » (2 fiches, « l'un des empereurs de l'Underworld »).",
+  "slug": "slug = titre canonique du wiki anglais slugifié. C'est lui qui fait tomber le lien d'infobox : norm('flower-capital') === norm('Flower Capital'). Un slug déjà pris est un refus, pas un contournement.",
+  "texte": "summary et descFr traduisent l'introduction de la page Fandom, phrase par phrase. Le paragraphe anglais d'origine est conservé dans la trace de collecte, en regard de chaque fiche. Aucune phrase qui ne soit pas dans la source.",
+  "image": "image_url = prop=pageimages, SAUF si l'URL ou le nom de fichier désigne une entité que le corpus possède déjà : on laisse alors la case vide plutôt que d'usurper un visuel."
+ },
+ "attendu": {
+  "fichesCreees": 44,
+  "isoleesSortables": 82
+ },
+ "aInserer": [
+  {
+   "ligne": {
+    "slug": "paradise",
+    "type": "place",
+    "name": "Paradise",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Première moitié de la Grand Line, ainsi nommée par les pirates qui fuient le Nouveau Monde.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/40/Paradise_Infobox.png/revision/latest?cb=20150727235046",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Paradise est le nom que les pirates fuyant le Nouveau Monde ont donné à la première moitié de la Grand Line : comparée à ce qui les attendait, « la première moitié est un paradis ». Elle est située entre l'East Blue et le South Blue, et va du Twin Cape à Mariejois. C'est le décor de presque toute la première moitié de One Piece.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Paradise, 10/08/2026)",
+     "region": "Grand Line"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Paradise",
+    "titreDemande": "Paradise",
+    "titreCanonique": "Paradise",
+    "resolution": "norm('paradise') === norm('Paradise') → « paradise »",
+    "nom": "« Paradise » ×27 dans la prose One Piece ; sabaody (descFr) : « L'Archipel Sabaody, situé dans le Paradise, est une immense forêt de mangroves » ; la forme « Paradis » a été écartée après relecture (8 fiches, dont « Paradis Okama » d'Impel Down)",
+    "attestationMesuree": {
+     "fiches": 27,
+     "exemples": [
+      "east-blue·descFr : L'East Blue constitue la partie orientale de la Blue Sea, séparée du North Blue par la Red Line et du South Blue par la moitié Paradise de la Grand Line.",
+      "sabaody·descFr : L'Archipel Sabaody, situé dans le Paradise, est une immense forêt de mangroves composée de 79 arbres géants appelés Yarukiman Mangrove, servant d'îles habitables."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "Paradise is the name of the first half of the Grand Line given by pirates fleeing the New World, compared to which \"the first half is a paradise\". It is located between the East and South Blue, and goes from the Twin Cape to Mary Geoise.",
+     "It is the overarching setting of most of the first half of One Piece."
+    ],
+    "categoriesSource": [
+     "Oceans"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/4/40/Paradise_Infobox.png/revision/latest?cb=20150727235046",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un place : « Appartient à · Paradise »"
+    ],
+    "liens": 11,
+    "gainIsolees": 11,
+    "citeePar": [
+     "Île Obscuria [place/kuraigana-island]",
+     "San Faldo [place/san-faldo]",
+     "Île Kyuka [place/kyuka-island]",
+     "Renaisse [place/renaisse]",
+     "Île Ukkari [place/ukkari-island]",
+     "Île de Mecha [place/ile-de-mecha]",
+     "IÎle de la couronne [place/iile-de-la-couronne]",
+     "Île Banaro [place/banaro-island]",
+     "Île d'Asuka [place/ile-d-asuka]",
+     "St Poplar [place/st-poplar]",
+     "Île Sans Rien [place/nanimonai-island]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "new-world",
+    "type": "place",
+    "name": "Nouveau Monde",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Seconde moitié de la Grand Line, décor de la seconde moitié de One Piece.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/8/8e/New_World_Infobox.png/revision/latest?cb=20220801005012",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Le Nouveau Monde désigne la seconde moitié de la Grand Line ; c'est le décor principal de la seconde moitié de One Piece. Il s'étend entre le West Blue et le North Blue, et entre l'Île des Hommes-Poissons et l'autre versant de la Reverse Mountain. Les seuls à l'avoir entièrement exploré sont Gol D. Roger et son équipage.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/New_World, 10/08/2026)",
+     "region": "Grand Line"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/New_World",
+    "titreDemande": "New World",
+    "titreCanonique": "New World",
+    "resolution": "norm('new-world') === norm('New World') → « new world »",
+    "nom": "« Nouveau Monde » ×94 dans la prose One Piece ; dressrosa-lieu (descFr) : « Royaume du Nouveau Monde aux allures espagnoles, Dressrosa se distingue par ses champs de fleurs » ; la forme anglaise « New World » n'apparaît dans aucune prose",
+    "attestationMesuree": {
+     "fiches": 94,
+     "exemples": [
+      "buggy-s-delivery·descFr : Buggy's Delivery est une organisation mercenaire fondée par Buggy le Clown Étoilé, active dans le Nouveau Monde.",
+      "dressrosa-lieu·descFr : Royaume du Nouveau Monde aux allures espagnoles, Dressrosa se distingue par ses champs de fleurs, son colisée de Corrida et ses femmes au tempérament passionné."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The New World refers to the second half of the Grand Line and is the main setting of the second half of One Piece. It is located between West and North Blue, and Fish-Man Island and the other side of Reverse Mountain. The only known people to have fully explored it are Gol D. Roger and his crew."
+    ],
+    "categoriesSource": [
+     "Oceans"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/8/8e/New_World_Infobox.png/revision/latest?cb=20220801005012",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un place : « Appartient à · Nouveau Monde »"
+    ],
+    "liens": 11,
+    "gainIsolees": 9,
+    "citeePar": [
+     "Île de Road Star [place/loadestar-island]",
+     "Île Risky Red [place/risky-red-island]",
+     "Île Foodvalten [place/foodvalten-island]",
+     "Île Winner [place/winner-island]",
+     "Île Broc Coli [place/broc-coli-island]",
+     "Laugh Tale [place/laugh-tale]",
+     "Île d'Applenine [place/applenine-island]",
+     "Île Mystoria [place/mystoria-island]",
+     "Île Sphinx [place/sphinx-island]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "levely",
+    "type": "status",
+    "name": "Levely",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Conseil quadriennal du Gouvernement Mondial, où cinquante dirigeants débattent des affaires du monde.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/a/a7/Cobra_Yells_at_Wapol.png/revision/latest?cb=20230213184839",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "Le Levely est un conseil quadriennal tenu par le Gouvernement Mondial, qui réunit cinquante dirigeants du monde pour débattre de questions d'importance internationale.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Levely, 10/08/2026)",
+     "scope": "Conseil mondial"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Levely",
+    "titreDemande": "Levely",
+    "titreCanonique": "Levely",
+    "resolution": "norm('levely') === norm('Levely') → « levely »",
+    "nom": "« Levely » ×23 dans la prose One Piece ; furrari (descFr) : « Furrari est le roi du Royaume de Nagagutsu et l'un des cinquante monarques ayant participé au Levely »",
+    "attestationMesuree": {
+     "fiches": 23,
+     "exemples": [
+      "furrari·descFr : Furrari est le roi du Royaume de Nagagutsu et l'un des cinquante monarques ayant participé au Levely.",
+      "saga-finale·descFr : La Saga Finale marque le onzième et ultime arc narratif de *One Piece*, entamé après le Levely et la chute du royaume de Lulusia."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "The Levely is a quadrennial council held by the World Government, which assembles fifty world leaders to discuss items of international importance."
+    ],
+    "categoriesSource": [
+     "Events",
+     "Flashback Introduction",
+     "World Government"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/a/a7/Cobra_Yells_at_Wapol.png/revision/latest?cb=20230213184839",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Levely »"
+    ],
+    "liens": 9,
+    "gainIsolees": 9,
+    "citeePar": [
+     "Furrari [character/furrari]",
+     "Mari [character/mari]",
+     "Moqueca [character/moqueca]",
+     "Nashi [character/nashi]",
+     "Couran [character/couran]",
+     "Samosa [character/samosa]",
+     "Tea IV [character/tea-iv]",
+     "Tritobu [character/tritobu]",
+     "Stroganoff [character/stroganoff]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "shandia",
+    "type": "status",
+    "name": "Shandias",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Tribu venue de la Lune, installée sur Jaya puis réfugiée à Skypiea.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/9/92/Shandia_Infobox.png/revision/latest?cb=20230311220149",
+    "attributes": {
+     "category": "Classification",
+     "descFr": "Les Shandias sont une tribu originaire de la Lune, qui vécut ensuite sur Jaya. Ils résident aujourd'hui à Skypiea.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Shandia, 10/08/2026)",
+     "scope": "Peuple"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Shandia",
+    "titreDemande": "Shandia",
+    "titreCanonique": "Shandia",
+    "resolution": "norm('shandia') === norm('Shandia') → « shandia »",
+    "nom": "« Shandias » ×11 dans la prose One Piece ; mayushika (summary) : « Mayushika est l'un des guerriers shandias qui combattirent Ener » ; forme également déclarée par la source en interlangue fr",
+    "attestationMesuree": {
+     "fiches": 11,
+     "exemples": [
+      "mayushika·summary : Mayushika est l'un des guerriers shandias qui combattirent Ener.",
+      "hidden-cloud-village·summary : Refuge des Shandias niché dans Upper Yard, bâti après que leur peuple fut projeté dans le ciel."
+     ]
+    },
+    "interlangueFrRedemande": "Shandias",
+    "nomCanonique": false,
+    "texteSource": [
+     "The Shandia is a tribe of people originating from the Moon and later lived on Jaya. They currently reside within Skypiea."
+    ],
+    "categoriesSource": [
+     "Races and Tribes"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/9/92/Shandia_Infobox.png/revision/latest?cb=20230311220149",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Shandias »"
+    ],
+    "liens": 6,
+    "gainIsolees": 5,
+    "citeePar": [
+     "Herb [character/herb]",
+     "Mayushika [character/mayushika]",
+     "Seto [character/seto]",
+     "Musse [character/musse]",
+     "Shandorian Chief [character/shandorian-chief]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "underworld",
+    "type": "status",
+    "name": "Underworld",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Réseau d'affaires et d'institutions illégales qui échappe au Gouvernement Mondial.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/e/ec/Underworld_Infobox.png/revision/latest?cb=20141206191350",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "L'Underworld est un ensemble interconnecté d'affaires, d'institutions et de relations illégales qui échappent au contrôle du Gouvernement Mondial. De telles activités peuvent exister partout, mais les plus vastes et les plus notoires sont installées dans le Nouveau Monde.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Underworld, 10/08/2026)",
+     "scope": "Réseau criminel"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Underworld",
+    "titreDemande": "Underworld",
+    "titreCanonique": "Underworld",
+    "resolution": "norm('underworld') === norm('Underworld') → « underworld »",
+    "nom": "« Underworld » ×2 dans la prose One Piece ; morgans (summary) : « “Big News” Morgans est le président du World Economic Journal et l'un des empereurs de l'Underworld » ; la forme « Pègre » déclarée par la source n'apparaît dans aucune prose du corpus",
+    "attestationMesuree": {
+     "fiches": 2,
+     "exemples": [
+      "morgans·summary : « Big News » Morgans est le président du World Economic Journal et l'un des empereurs de l'Underworld.",
+      "world-economic-journal·descFr : Le World Economy News Paper, ou WE News, est un journal d'information mondial distribué via des News Coo, dirigé par Morgans, un empereur de l'Underworld."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "The Underworld is an interlinked collection of illegal businesses, institutions, and connections that elude the World Government's control. While such operations may exist anywhere, the largest and most infamous is based mainly in the New World."
+    ],
+    "categoriesSource": [
+     "Society and Culture"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/e/ec/Underworld_Infobox.png/revision/latest?cb=20141206191350",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Underworld »"
+    ],
+    "liens": 5,
+    "gainIsolees": 5,
+    "citeePar": [
+     "Giberson [character/giberson]",
+     "Jigra [character/jigra]",
+     "Du Feld [character/du-feld]",
+     "Drug Peclo [character/drug-peclo]",
+     "Umit [character/umit]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "archaeologist",
+    "type": "profession",
+    "name": "Archéologue",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Savant qui quitte le cabinet pour le terrain, à la recherche des vestiges de l'antiquité.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/5/5a/Archaeologist.png/revision/latest?cb=20240920022041",
+    "attributes": {
+     "category": "Métier",
+     "descFr": "Un archéologue est un savant d'un genre particulier, qui sort des limites de l'étude pour aller sur le terrain découvrir les vestiges de l'antiquité et les examiner de première main. Sa quête est la compréhension des civilisations disparues : il rassemble les indices des ruines et des écrits anciens pour mettre au jour l'histoire perdue du monde.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Archaeologist, 10/08/2026)"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Archaeologist",
+    "titreDemande": "Archaeologist",
+    "titreCanonique": "Archaeologist",
+    "resolution": "norm('archaeologist') === norm('Archaeologist') → « archaeologist »",
+    "nom": "« Archéologue » ×4 dans la prose One Piece ; nico-robin (summary) : « La dernière archéologue d'Ohara, seule à savoir lire les Ponéglyphes »",
+    "attestationMesuree": {
+     "fiches": 4,
+     "exemples": [
+      "busshiri·descFr : Busshiri était un archéologue d'Ohara, connu pour son dévouement envers ses recherches.",
+      "nico-robin·summary : La dernière archéologue d'Ohara, seule à savoir lire les Ponéglyphes — l'enfant que le monde a voulu effacer."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "An archaeologist is a particular type of scholar who steps beyond the confines of study and ventures out into the field to discover the remnants of antiquity and study them first-hand. Their pursuit is the understanding of long-vanished civilizations, piecing together evidence from ancient ruins and scripts to uncover the lost history of the world."
+    ],
+    "categoriesSource": [
+     "History",
+     "Occupations"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/5/5a/Archaeologist.png/revision/latest?cb=20240920022041",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Exerce · Archéologue »"
+    ],
+    "liens": 8,
+    "gainIsolees": 4,
+    "citeePar": [
+     "Gram [character/gram]",
+     "Hocha [character/hocha]",
+     "Rint [character/rint]",
+     "Zadie [character/zadie]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "bounty-hunter",
+    "type": "profession",
+    "name": "Chasseur de primes",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Professionnel qui traque les criminels recherchés pour toucher le montant de leur prime.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/48/Zoro_vs._100_Bounty_Hunters.png/revision/latest?cb=20250130013318",
+    "attributes": {
+     "category": "Métier",
+     "descFr": "Les chasseurs de primes sont des professionnels qui vivent de la traque des criminels recherchés : ils les capturent — ou les tuent — en échange du montant de leur prime.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Bounty_Hunter, 10/08/2026)"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Bounty_Hunter",
+    "titreDemande": "Bounty Hunter",
+    "titreCanonique": "Bounty Hunter",
+    "resolution": "norm('bounty-hunter') === norm('Bounty Hunter') → « bounty hunter »",
+    "nom": "« Chasseur de primes » ×16 dans la prose One Piece ; carol-masterson (descFr) : « Carol est la fille de Daddy Masterson, un chasseur de primes résidant à Loguetown »",
+    "attestationMesuree": {
+     "fiches": 16,
+     "exemples": [
+      "terry-gilteo·summary : Personnage secondaire, probablement un antagoniste ou un chasseur de primes mineur peu documenté dans l'œuvre.",
+      "carol-masterson·descFr : Carol est la fille de Daddy Masterson, un chasseur de primes résidant à Loguetown, où elle fréquente une boutique de lunettes."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "Bounty hunters are professionals that pursue wanted criminals for a living, capturing (and/or killing) them in exchange for their bounty prices."
+    ],
+    "categoriesSource": [
+     "Occupations"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/4/48/Zoro_vs._100_Bounty_Hunters.png/revision/latest?cb=20250130013318",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Exerce · Chasseur de primes »"
+    ],
+    "liens": 8,
+    "gainIsolees": 4,
+    "citeePar": [
+     "Guarana [character/guarana]",
+     "Ginger [character/ginger]",
+     "Jean Ango [character/jean-ango]",
+     "Cidre [character/cidre]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "north-blue",
+    "type": "place",
+    "name": "North Blue",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Océan du nord de la Blue Sea, séparé de l'East Blue par la Red Line.",
+    "description": null,
+    "image_url": null,
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Le North Blue est l'océan qui forme la partie nord de la Blue Sea, elle-même découpée par la Red Line et la Grand Line. Il est séparé de l'East Blue par la Red Line, et du West Blue par la moitié Nouveau Monde de la Grand Line. On le sait berceau de Sanji, le cuisinier de l'équipage du Chapeau de Paille, membre de la famille Vinsmoke qui régna jadis sur la région ; de l'explorateur légendaire Mont Blanc Noland et de ses descendants ; des amiraux Sakazuki et Borsalino ; et de trois membres de la Pire Génération, Trafalgar Law, Basil Hawkins et X Drake. L'équipage de Donquixote Doflamingo y a également vu le jour.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/North_Blue, 10/08/2026)"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/North_Blue",
+    "titreDemande": "North Blue",
+    "titreCanonique": "North Blue",
+    "resolution": "norm('north-blue') === norm('North Blue') → « north blue »",
+    "nom": "« North Blue » ×29 dans la prose One Piece ; spider-miles (summary) : « Bourg portuaire de North Blue jonché de ferraille et d'ordures »",
+    "attestationMesuree": {
+     "fiches": 29,
+     "exemples": [
+      "east-blue·descFr : L'East Blue constitue la partie orientale de la Blue Sea, séparée du North Blue par la Red Line et du South Blue par la moitié Paradise de la Grand Line.",
+      "spider-miles·summary : Bourg portuaire de North Blue jonché de ferraille et d'ordures, qui abrita le repaire de l'équipage de Doflamingo à l'époque où Law y grandissait parmi les hors-la-loi."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "The North Blue is the ocean which makes up the north part of the Blue Sea split by the Red Line and the Grand Line. It is separated from the East Blue by the Red Line and the West Blue by the New World half of the Grand Line.",
+     "It is known to be the birthplace of the Straw Hat Pirates' cook, Sanji, who also happens to be part of the Vinsmoke Family (which once ruled the region in the past); the legendary explorer Mont Blanc Noland and his descendants; Marine Admirals Sakazuki and Borsalino, and three members of the Worst Generation: Trafalgar Law, Basil Hawkins, and X Drake. The Donquixote Pirates crew, led by former Warlord of the Sea Donquixote Doflamingo, was also started in this sea, where it achieved infamy. Other notable pirate crews include the Bellamy Pirates and the Caribou Pirates.",
+     "The goggles that Usopp bought in Loguetown are said to be a new model from the North Blue. Popular literature includes Liar Noland and Sora, Warrior of the Sea."
+    ],
+    "categoriesSource": [
+     "Flashback Introduction Locations",
+     "Oceans"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/f/f5/North_Blue_Infobox.png/revision/latest?cb=20150809121628",
+    "imageRefusee": "fichier « North_Blue_Infobox.png » déjà porté par une autre fiche",
+    "phrasesProduites": [
+     "depuis un place : « Appartient à · North Blue »"
+    ],
+    "liens": 5,
+    "gainIsolees": 4,
+    "citeePar": [
+     "Île Downs [place/downs-island]",
+     "Île de Rubeck [place/rubeck-island]",
+     "Rakesh [place/rakesh]",
+     "Village de Kuen [place/kuen-village]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "little-east-blue",
+    "type": "place",
+    "name": "Little East Blue",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Île hors canon peuplée de colons venus de l'East Blue, dont le maire est Fabre.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/66/Little_East_Blue_Infobox.png/revision/latest?cb=20100901185847",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "L'île de Kansorn (カンソーン島, Kansōn-tō), mieux connue sous le nom de Little East Blue, est une île hors canon habitée par des colons venus de l'East Blue. Son maire est Fabre.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Little_East_Blue, 10/08/2026)"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Little_East_Blue",
+    "titreDemande": "Little East Blue",
+    "titreCanonique": "Little East Blue",
+    "resolution": "norm('little-east-blue') === norm('Little East Blue') → « little east blue »",
+    "nom": "« Little East Blue » ×9 dans la prose One Piece ; fabre (descFr) : « Fabre est le maire de Little East Blue, un homme âgé au visage ridé et au grand sourire »",
+    "attestationMesuree": {
+     "fiches": 9,
+     "exemples": [
+      "luigia·descFr : Luigia est une vieille femme qui vit dans une grande maison dans la région de Little East Blue, dont l'apparence rappelle à Usopp la demeure de Kaya.",
+      "orenami-fan-o·descFr : Le Fan-club Orenami est un club de fans qui idolâtrent Nami, formé de quatre garçons de Little East Blue."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "Kansorn Island (カンソーン島, Kansōn-tō), better known as Little East Blue, is a non-canon island inhabited by settlers from East Blue. Its mayor is Fabre."
+    ],
+    "categoriesSource": [
+     "Non-Canon Paradise Islands",
+     "Pages With Empty Sections"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/6/66/Little_East_Blue_Infobox.png/revision/latest?cb=20100901185847",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Réside · Little East Blue »"
+    ],
+    "liens": 4,
+    "gainIsolees": 4,
+    "citeePar": [
+     "Luigia [character/luigia]",
+     "Fabre [character/fabre]",
+     "Mendou [character/mendou]",
+     "Mitsuboshi [character/mitsuboshi]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "pirate-captain",
+    "type": "profession",
+    "name": "Capitaine pirate",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Titre porté par celui qui commande un équipage pirate en mer.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/3/37/Pirate_Captain.png/revision/latest?cb=20230330171408",
+    "attributes": {
+     "category": "Métier",
+     "descFr": "Le titre de capitaine pirate est donné à celui qui a la haute main sur un équipage de pirates en mer.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Pirate_Captain, 10/08/2026)"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Pirate_Captain",
+    "titreDemande": "Pirate Captain",
+    "titreCanonique": "Pirate Captain",
+    "resolution": "norm('pirate-captain') === norm('Pirate Captain') → « pirate captain »",
+    "nom": "« Capitaine pirate » ×28 dans la prose One Piece ; islewan (summary) : « Islewan est un tristement célèbre capitaine pirate du Nouveau Monde qui a servi Barbe Blanche »",
+    "attestationMesuree": {
+     "fiches": 28,
+     "exemples": [
+      "dobon·summary : Capitaine pirate apparu dans Romance Dawn, récit court publié par Eiichiro Oda en 1996, précurseur de la série One Piece.",
+      "kendiyo-haritsu·descFr : Haritsu Kendiyo est un capitaine pirate dont l'équipage fut capturé par les Kid Pirates alors qu'ils tentaient de fuir le Nouveau Monde pour retourner à Paradise."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The title of Pirate Captain is the title given to an individual in control of a pirate crew at sea."
+    ],
+    "categoriesSource": [
+     "Lists",
+     "Positions"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/3/37/Pirate_Captain.png/revision/latest?cb=20230330171408",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un status : « Exerce · Capitaine pirate »",
+     "depuis un character : « Exerce · Capitaine pirate »"
+    ],
+    "liens": 5,
+    "gainIsolees": 3,
+    "citeePar": [
+     "Quatres Empereurs [status/quatres-empereurs]",
+     "Hippie [character/hippie]",
+     "Gally [character/gally]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "cidre-guild",
+    "type": "status",
+    "name": "Guilde de Cidre",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Organisation de chasseurs de primes dirigée par Cidre.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/4c/Cidre_Guild_Infobox.png/revision/latest?cb=20200430213855",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "La Guilde de Cidre est une organisation de chasse aux primes dirigée par Cidre.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Cidre_Guild, 10/08/2026)",
+     "scope": "Organisation criminelle"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Cidre_Guild",
+    "titreDemande": "Cidre Guild",
+    "titreCanonique": "Cidre Guild",
+    "resolution": "norm('cidre-guild') === norm('Cidre Guild') → « cidre guild »",
+    "nom": "aucune forme attestée dans la prose du corpus ; nom déclaré par la source en interlangue fr — https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Cidre%20Guild rend « Guilde de Cidre »",
+    "attestationMesuree": {
+     "fiches": 0,
+     "exemples": []
+    },
+    "interlangueFrRedemande": "Guilde de Cidre",
+    "nomCanonique": false,
+    "texteSource": [
+     "The Cidre Guild is a bounty hunting organization led by Cidre."
+    ],
+    "categoriesSource": [
+     "Non-Canon Antagonist Groups"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/4/4c/Cidre_Guild_Infobox.png/revision/latest?cb=20200430213855",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Guilde de Cidre »"
+    ],
+    "liens": 3,
+    "gainIsolees": 3,
+    "citeePar": [
+     "Guarana [character/guarana]",
+     "Ginger [character/ginger]",
+     "Cidre [character/cidre]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "thriller-bark-pirates",
+    "type": "status",
+    "name": "Thriller Bark Pirates",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Second équipage de Gecko Moria, antagoniste principal de l'arc Thriller Bark.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/e/e1/Thriller_Bark%27s_Jolly_Roger.png/revision/latest?cb=20141006182310",
+    "attributes": {
+     "category": "Équipage",
+     "descFr": "Les Thriller Bark Pirates sont le second équipage commandé par Gecko Moria, ancien Grand Corsaire. Ils forment le groupe antagoniste principal de l'arc Thriller Bark.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Thriller_Bark_Pirates, 10/08/2026)",
+     "scope": "Équipage pirate"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Thriller_Bark_Pirates",
+    "titreDemande": "Thriller Bark Pirates",
+    "titreCanonique": "Thriller Bark Pirates",
+    "resolution": "norm('thriller-bark-pirates') === norm('Thriller Bark Pirates') → « thriller bark pirates »",
+    "nom": "aucune forme française attestée ni déclarée par la source (pas d'interlangue fr) : titre canonique du wiki conservé. Le sujet, lui, est attesté — absalom (summary) : « Il commande la section soldat des zombies de Thriller Bark »",
+    "attestationMesuree": {
+     "fiches": 2,
+     "exemples": [
+      "thriller-bark-one-piece·descFr : Le Thriller Bark est le plus grand navire du monde de One Piece, anciennement utilisé par les Thriller Bark Pirates, dirigé par le Warlord Gecko Moria.",
+      "gyoro·descFr : Membre des Thriller Bark Pirates."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "The Thriller Bark Pirates is the second pirate crew captained by the former Warlord, Gecko Moria.",
+     "They are the main antagonist group in the Thriller Bark Arc."
+    ],
+    "categoriesSource": [
+     "Antagonist Groups",
+     "Seven Warlords of the Sea Groups",
+     "West Blue Pirate Crews"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/e/e1/Thriller_Bark%27s_Jolly_Roger.png/revision/latest?cb=20141006182310",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Thriller Bark Pirates »"
+    ],
+    "liens": 3,
+    "gainIsolees": 3,
+    "citeePar": [
+     "Zombie Lola [character/zombie-lola]",
+     "Jigorou [character/jigorou]",
+     "MocDonald [character/mocdonald]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "zombies",
+    "type": "status",
+    "name": "Zombies",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Cadavres rendus mobiles par une ombre insufflée grâce au Kage Kage no Mi.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/b/b0/Zombies_Infobox.png/revision/latest?cb=20130703191719",
+    "attributes": {
+     "category": "Classification",
+     "descFr": "Les zombies sont des cadavres capables de se mouvoir seuls et d'agir comme des êtres conscients. Connus des superstitions et de la littérature du monde entier, ils peuvent être créés pour de bon par au moins un moyen : l'insufflation d'une ombre dans un corps, grâce au Kage Kage no Mi. Gecko Moria, actuel porteur de ce fruit, en a créé plus d'un millier comme subordonnés. La plupart peuplaient son île-navire, Thriller Bark, et mêlaient humains, animaux et créatures étranges. Pour en obtenir de plus puissants, Moria s'attacha les services du docteur Hogback, dont l'art médical les transformait en assemblages cousus qu'il appelait des marios (没人形（マリオ）, littéralement « poupées de mort »).",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Zombies, 10/08/2026)",
+     "scope": "Créatures artificielles"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Zombies",
+    "titreDemande": "Zombies",
+    "titreCanonique": "Zombies",
+    "resolution": "norm('zombies') === norm('Zombies') → « zombies »",
+    "nom": "« Zombies » ×13 dans la prose One Piece ; kaba-shinshi (descFr) : « Il était le commandant adjoint des Zombies Sauvages »",
+    "attestationMesuree": {
+     "fiches": 13,
+     "exemples": [
+      "absalom·summary : Il commande la section soldat des zombies de Thriller Bark, et ses subordonnés ont tendance à se moquer de sa nature perverse, le surnommant « Erosalom » (Perv-salom).",
+      "kaba-shinshi·descFr : Il était le commandant adjoint des Zombies Sauvages."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "Zombies are corpses capable of self-movement and other sentient actions. Well-known in superstitions and literature throughout the world, they can be created in actuality through at least one method: infusing corpses with shadows via the Kage Kage no Mi.",
+     "Gecko Moria, the current wielder of the Kage Kage no Mi, is known to have created over one thousand zombies as subordinates. The vast majority of these inhabited his island-ship of Thriller Bark, and comprised a mix of humans, wildlife, and strange creatures that resembled beasts and monsters commonly found in mythology and horror stories. To create more powerful zombies, Moria enlisted the services of Dr. Hogback, who used his medical expertise to enhance them into stitched up creations he called marios (没人形（マリオ）, Mario, literally meaning \"Death Doll\"; VIZ and Funimation dub: \"Marionettes\").",
+     "The zombies of Thriller Bark were commanded by the Mysterious Four, which consisted of Moria, Dr. Hogback, Absalom, and Perona. While Hogback, Absalom, and Perona had a varying degree of command over the creatures, Moria alone had absolute control over all of the zombies."
+    ],
+    "categoriesSource": [
+     "Artificial Races",
+     "Devil Fruit By-Products"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/b/b0/Zombies_Infobox.png/revision/latest?cb=20130703191719",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Zombies »"
+    ],
+    "liens": 3,
+    "gainIsolees": 3,
+    "citeePar": [
+     "Zombie Lola [character/zombie-lola]",
+     "Jigorou [character/jigorou]",
+     "MocDonald [character/mocdonald]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "flower-capital",
+    "type": "place",
+    "name": "Capitale des Fleurs",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Région du Pays de Wano placée sous l'autorité du shogun Kozuki Momonosuke.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/3/30/Flower_Capital_Infobox.png/revision/latest?cb=20230219071109",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "La Capitale des Fleurs est une région du Pays de Wano placée sous l'autorité du shogun Kozuki Momonosuke. Elle fut auparavant sous celle des shoguns Kurozumi Orochi et Kozuki Sukiyaki.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Flower_Capital, 10/08/2026)"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Flower_Capital",
+    "titreDemande": "Flower Capital",
+    "titreCanonique": "Flower Capital",
+    "resolution": "norm('flower-capital') === norm('Flower Capital') → « flower capital »",
+    "nom": "« Capitale des Fleurs » ×28 dans la prose One Piece ; bongou (descFr) : « Bongō est un ancien marchand de bois et voleur de tombes originaire de la Capitale des Fleurs »",
+    "attestationMesuree": {
+     "fiches": 28,
+     "exemples": [
+      "tokijiro·descFr : Tokijiro est un habitant de la capitale des Fleurs du pays de Wano, connu pour avoir possédé les plans de la forteresse de Kaidou sur Onigashima.",
+      "bongou·descFr : Bongō est un ancien marchand de bois et voleur de tombes originaire de la Capitale des Fleurs, exilé à Ebisu Town après avoir été escroqué par la courtisane Komurasaki, qui lui a fait croire qu'elle v…"
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The Flower Capital is a region of Wano Country under the rule of the shogun Kouzuki Momonosuke. It was formerly under the rules of shoguns Kurozumi Orochi and Kouzuki Sukiyaki."
+    ],
+    "categoriesSource": [
+     "Poneglyph Locations",
+     "Towns and Cities",
+     "Wano Country Regions"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/3/30/Flower_Capital_Infobox.png/revision/latest?cb=20230219071109",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Réside · Capitale des Fleurs »"
+    ],
+    "liens": 21,
+    "gainIsolees": 2,
+    "citeePar": [
+     "Otaka [character/otaka]",
+     "Hareji [character/hareji]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "ninja-pirate-mink-samurai-alliance",
+    "type": "status",
+    "name": "Alliance Ninja-Pirate-Mink-Samouraï",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Alliance formée contre Kaidou, des Chapeaux de Paille aux Minks en passant par la famille Kozuki.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/f/f0/Ninja-Pirate-Mink-Samurai_Alliance_Infobox.png/revision/latest?cb=20181007180536",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "L'Alliance Ninja-Pirate-Mink-Samouraï, d'abord appelée alliance du Chapeau de Paille et des Heart Pirates, fut nouée entre l'équipage du Chapeau de Paille et les Heart Pirates, avant de s'élargir à la famille Kozuki et à la tribu des Minks. Son but était d'abattre Kaidou, l'un des Quatre Empereurs : elle y parvint au terme d'une bataille totale qui mit fin à son grand dessein. La mission accomplie, l'alliance fut officiellement dissoute et chacun reprit sa route.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Ninja-Pirate-Mink-Samurai_Alliance, 10/08/2026)",
+     "scope": "Alliance"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Ninja-Pirate-Mink-Samurai_Alliance",
+    "titreDemande": "Ninja-Pirate-Mink-Samurai Alliance",
+    "titreCanonique": "Ninja-Pirate-Mink-Samurai Alliance",
+    "resolution": "norm('ninja-pirate-mink-samurai-alliance') === norm('Ninja-Pirate-Mink-Samurai Alliance') → « ninja pirate mink samurai alliance »",
+    "nom": "« Alliance Ninja-Pirate-Mink-Samouraï » attestée dans la prose ; yamato (descFr) : « Affiliation : Alliance Ninja-Pirate-Mink-Samouraï ; Pirates aux Cent Bêtes »",
+    "attestationMesuree": {
+     "fiches": 14,
+     "exemples": [
+      "yamato·summary : Âge : 28 Date de naissance : 3 novembre Taille : 263 cm Affiliation : Alliance Ninja-Pirate-Mink-Samouraï ; Pirates aux Cent Bêtes",
+      "bisley·descFr : Lors du Raid sur Onigashima, il fut apprivoisé par le pouvoir du Kibi Kibi no Mi et rejoignit le camp de l'Alliance Ninja-Pirate-Mink-Samouraï."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The Ninja-Pirate-Mink-Samurai Alliance, originally Straw Hat-Heart Alliance, was an alliance first formed between the Straw Hat Pirates and Heart Pirates, but later on expanded to the Kouzuki Family and the Mink Tribe. Their goal was to take down Kaidou of the Four Emperors, which succeeded during an all-out battle and put an end to Kaidou's master plan.",
+     "Upon the conclusion of their mission, the alliance officially disbanded with the groups going their separate ways: the two Worst Generation crews left Wano and continued their quests of finding the One Piece; the Kouzuki Family regained their shogunate over the country after twenty years, with Momonosuke as the new shogun; Inuarashi and Nekomamushi stay in Wano as vassals and pass their leadership of the Mink Tribe to Carrot."
+    ],
+    "categoriesSource": [
+     "Alliances",
+     "Fleets",
+     "Former Groups"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/f/f0/Ninja-Pirate-Mink-Samurai_Alliance_Infobox.png/revision/latest?cb=20181007180536",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Alliance Ninja-Pirate-Mink-Samouraï »"
+    ],
+    "liens": 5,
+    "gainIsolees": 2,
+    "citeePar": [
+     "Hareji [character/hareji]",
+     "Zangirimaru [character/zangirimaru]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "cook",
+    "type": "profession",
+    "name": "Cuisinier",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Métier de celui qui sait apprêter les aliments crus pour la table.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/61/Cook.png/revision/latest?cb=20180409034735",
+    "attributes": {
+     "category": "Métier",
+     "descFr": "Un cuisinier, ou chef (料理人, Ryōrinin), est quelqu'un qui sait apprêter les aliments crus pour la table. Comme ce savoir-faire est utile à presque toute entreprise, on trouve des cuisiniers chez les pirates et les autres criminels, chez les forces de l'ordre comme la Marine, et dans quantité d'établissements civils.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Cook, 10/08/2026)"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Cook",
+    "titreDemande": "Cook",
+    "titreCanonique": "Cook",
+    "resolution": "norm('cook') === norm('Cook') → « cook »",
+    "nom": "« Cuisinier » ×24 dans la prose One Piece ; kyuji (descFr) : « Kyuji est un cuisinier de la Marine, l'époux de Koda et le père de Moda »",
+    "attestationMesuree": {
+     "fiches": 24,
+     "exemples": [
+      "sennorikyuru·descFr : Sennorikyuru est le maître des cérémonies du thé et est considéré comme le meilleur cuisinier du Pays de Wano.",
+      "cook-shinpachi·summary : Cuisinier nommé Shinpachi, personnage secondaire évoluant dans la vie quotidienne du pays de Wano."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "A cook, or chef (料理人, Ryōrinin), is an individual skilled in preparing raw foods for consumption.",
+     "Since their skills are needed for virtually any enterprise, cooks may be found among pirates and other criminals, law enforcers such as the Marines, or any number of civilian establishments."
+    ],
+    "categoriesSource": [
+     "Occupations"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/6/61/Cook.png/revision/latest?cb=20180409034735",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Exerce · Cuisinier »"
+    ],
+    "liens": 3,
+    "gainIsolees": 2,
+    "citeePar": [
+     "Mitsuboshi [character/mitsuboshi]",
+     "Shuutai [character/shuutai]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "niho-navy",
+    "type": "status",
+    "name": "Nihou Navy",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Flotte menée par Chichilisia, qui devait rejoindre la Happo Navy.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/d/d5/NoPicAvailable.png/revision/latest?cb=20210110135101",
+    "attributes": {
+     "category": "Équipage",
+     "descFr": "La Nihou Navy est une flotte menée par Chichilisia, qui prévoyait d'unir ses forces à celles de la Happo Navy jusqu'à ce que Sai rompe ses fiançailles.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Niho_Navy, 10/08/2026)",
+     "scope": "Flotte"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Niho_Navy",
+    "titreDemande": "Niho Navy",
+    "titreCanonique": "Niho Navy",
+    "resolution": "norm('niho-navy') === norm('Niho Navy') → « niho navy »",
+    "nom": "aucune forme attestée dans la prose du corpus ; nom déclaré par la source en interlangue fr — https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Niho%20Navy rend « Nihou Navy »",
+    "attestationMesuree": {
+     "fiches": 0,
+     "exemples": []
+    },
+    "interlangueFrRedemande": "Nihou Navy",
+    "nomCanonique": false,
+    "texteSource": [
+     "The Niho Navy is a fleet led by Chichilisia that planned to join forces with the Happo Navy until Sai called off his engagement."
+    ],
+    "categoriesSource": [
+     "Fleets"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/d/d5/NoPicAvailable.png/revision/latest?cb=20210110135101",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Nihou Navy »"
+    ],
+    "liens": 2,
+    "gainIsolees": 2,
+    "citeePar": [
+     "Uholisia [character/uholisia]",
+     "Chichilisia [character/chichilisia]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "nagagutsu-kingdom",
+    "type": "place",
+    "name": "Royaume de Nagagutsu",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Nation de l'East Blue affiliée au Gouvernement Mondial, gouvernée par le roi Furrari.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/d/d5/NoPicAvailable.png/revision/latest?cb=20210110135101",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Le Royaume de Nagagutsu est une nation de l'East Blue affiliée au Gouvernement Mondial, gouvernée par le roi Furrari. Il abrite également le siège de la marque de mode Nyornyo Nyarmani.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Nagagutsu_Kingdom, 10/08/2026)",
+     "region": "East Blue"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Nagagutsu_Kingdom",
+    "titreDemande": "Nagagutsu Kingdom",
+    "titreCanonique": "Nagagutsu Kingdom",
+    "resolution": "norm('nagagutsu-kingdom') === norm('Nagagutsu Kingdom') → « nagagutsu kingdom »",
+    "nom": "« Royaume de Nagagutsu » attesté ×2 dans la prose One Piece ; tritobu (descFr) : « Tritobu est le prince du Royaume de Nagagutsu »",
+    "attestationMesuree": {
+     "fiches": 2,
+     "exemples": [
+      "furrari·descFr : Furrari est le roi du Royaume de Nagagutsu et l'un des cinquante monarques ayant participé au Levely.",
+      "tritobu·descFr : Tritobu est le prince du Royaume de Nagagutsu."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The Nagagutsu Kingdom is a World Government-affiliated nation in the East Blue that is ruled by King Furarri.",
+     "It is also the headquarters of the Nyornyo Nyarmani fashion brand."
+    ],
+    "categoriesSource": [
+     "East Blue Locations",
+     "Mentioned Only World Government Kingdoms"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/d/d5/NoPicAvailable.png/revision/latest?cb=20210110135101",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Réside · Royaume de Nagagutsu »"
+    ],
+    "liens": 2,
+    "gainIsolees": 2,
+    "citeePar": [
+     "Furrari [character/furrari]",
+     "Tritobu [character/tritobu]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "ruluka-government",
+    "type": "status",
+    "name": "Gouvernement de Ruluka",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Gouvernement propre à l'anime, installé sur l'île de Ruluka et dirigé par Wetton.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/d/d1/Ruluka_Government_Infobox.png/revision/latest?cb=20130916212401",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "Le Gouvernement de Ruluka est un gouvernement propre à l'anime, qui existait sur l'île de Ruluka, quelque part dans la première moitié de la Grand Line. Il était dirigé par Wetton, alors maire de Ruluka et ancien capitaine pirate.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Ruluka_Government, 10/08/2026)",
+     "scope": "Gouvernement"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Ruluka_Government",
+    "titreDemande": "Ruluka Government",
+    "titreCanonique": "Ruluka Government",
+    "resolution": "norm('ruluka-government') === norm('Ruluka Government') → « ruluka government »",
+    "nom": "« Gouvernement de Ruluka » attesté dans la prose ; reik (summary) : « Reik, haut responsable anime-only du gouvernement de Ruluka, fils de Flip et petit-fils de Wetton »",
+    "attestationMesuree": {
+     "fiches": 1,
+     "exemples": [
+      "reik·summary : Reik, haut responsable anime-only du gouvernement de Ruluka, fils de Flip et petit-fils de Wetton, combattant grâce à une armure électrique."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The Ruluka Government is an anime-only government that existed on the island of Ruluka, somewhere in the first half of the Grand Line. It was headed by Wetton, then-mayor of Ruluka and former pirate captain."
+    ],
+    "categoriesSource": [
+     "Non-Canon Antagonist Groups",
+     "Non-Canon Former Groups"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/d/d1/Ruluka_Government_Infobox.png/revision/latest?cb=20130916212401",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Gouvernement de Ruluka »"
+    ],
+    "liens": 2,
+    "gainIsolees": 2,
+    "citeePar": [
+     "Reik [character/reik]",
+     "Phillip [character/phillip]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "officer",
+    "type": "profession",
+    "name": "Officier",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Membre haut placé d'un groupe — hors Marine — qui commande les rangs inférieurs.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/0/00/Donquixote_Pirates_Wake_up%21.png/revision/latest?cb=20140323093342",
+    "attributes": {
+     "category": "Métier",
+     "descFr": "Un officier est un membre haut placé d'un groupe quelconque, la Marine exceptée, qui commande les membres de rang inférieur.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Officer, 10/08/2026)"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Officer",
+    "titreDemande": "Officer",
+    "titreCanonique": "Officer",
+    "resolution": "norm('officer') === norm('Officer') → « officer »",
+    "nom": "« Officier » ×64 dans la prose One Piece ; building-snake (descFr) : « Building Snake est un membre important des Red Hair Pirates, en tant qu'officier supérieur et navigateur »",
+    "attestationMesuree": {
+     "fiches": 64,
+     "exemples": [
+      "building-snake·descFr : Building Snake est un membre important des Red Hair Pirates, en tant qu'officier supérieur et navigateur.",
+      "comil·summary : Les réunions administratives de Komir sont gâchées par un café amer, comme Ace le constate de ses propres yeux lorsqu'il infiltre la base en se faisant passer pour un officier de la Marine."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "An Officer is a high-ranking member of any group, excluding the Marines, that commands lower-ranking members."
+    ],
+    "categoriesSource": [
+     "Positions"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/0/00/Donquixote_Pirates_Wake_up%21.png/revision/latest?cb=20140323093342",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Exerce · Officier »"
+    ],
+    "liens": 2,
+    "gainIsolees": 2,
+    "citeePar": [
+     "Guarana [character/guarana]",
+     "Ginger [character/ginger]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "calm-belt",
+    "type": "place",
+    "name": "Calm Belt",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Les deux bandes d'océan sans vent qui bordent la Grand Line au nord et au sud.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/68/Calm_Belt_Infobox.png/revision/latest?cb=20230320215926",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Les Calm Belts sont deux étendues d'océan qui bordent la Grand Line au nord et au sud.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Calm_Belt, 10/08/2026)"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Calm_Belt",
+    "titreDemande": "Calm Belt",
+    "titreCanonique": "Calm Belt",
+    "resolution": "norm('calm-belt') === norm('Calm Belt') → « calm belt »",
+    "nom": "« Calm Belt » ×4 dans la prose One Piece ; impel-down-lieu (descFr) : « Impel Down est une prison sous-marine à six niveaux d'enfer contrôlée par le Gouvernement Mondial, située dans la Calm Belt »",
+    "attestationMesuree": {
+     "fiches": 4,
+     "exemples": [
+      "perfume-yuda·descFr : Il dispose de deux Yuda attelés à l'avant pour naviguer dans le Calm Belt, ainsi que de roues à aubes à l'arrière et porte le kanji « Kuja » sur sa voile de poupe.",
+      "impel-down-lieu·descFr : Impel Down est une prison sous-marine à six niveaux d'enfer contrôlée par le Gouvernement Mondial, située dans la Calm Belt."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "The Calm Belts are two areas of ocean that border the north and south of the Grand Line."
+    ],
+    "categoriesSource": [
+     "Oceans"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/6/68/Calm_Belt_Infobox.png/revision/latest?cb=20230320215926",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Réside · Calm Belt »",
+     "depuis un place : « Appartient à · Calm Belt »"
+    ],
+    "liens": 2,
+    "gainIsolees": 2,
+    "citeePar": [
+     "Topknot [character/topknot]",
+     "Ruskaina [place/rusukaina]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "totto-land",
+    "type": "place",
+    "name": "Archipel Totto Land",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Archipel du Nouveau Monde, territoire de Big Mom autour de Whole Cake Island.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/b/b8/Totto_Land_Infobox.png/revision/latest?cb=20170423124116",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Totto Land est un archipel du Nouveau Monde. Il constitue le territoire principal de Big Mom, ancienne Empereur, et de son équipage, et s'étend autour de Whole Cake Island ; on y navigue avec un Log Pose du Nouveau Monde. Selon Pekoms, il est tenu pour une grande et puissante nation, dont Big Mom, en reine, veut faire une utopie réunissant toutes les races du monde. Totto Land est le décor général de l'arc de Whole Cake Island.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Totto_Land, 10/08/2026)",
+     "region": "New World"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Totto_Land",
+    "titreDemande": "Totto Land",
+    "titreCanonique": "Totto Land",
+    "resolution": "norm('totto-land') === norm('Totto Land') → « totto land »",
+    "nom": "« Archipel Totto Land » ×7 dans la prose One Piece ; loving (descFr) : « L'Île Amour est l'une des 34 îles entourant Whole Cake Island et une des îles faisant partie de l'Archipel Totto Land »",
+    "attestationMesuree": {
+     "fiches": 7,
+     "exemples": [
+      "kimi·descFr : L'Île Jaune d'Œuf est une île située dans le Nouveau Monde, c'est l'une des 34 îles voisines de l'Archipel Totto Land, sous le commandement de Big Mom.",
+      "potato-op·descFr : L'Île Patate est une île située dans le Nouveau Monde, c'est l'une des 34 îles voisines de Whole Cake Island, sous le commandement de Big Mom, formant l'Archipel Totto Land."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "Totto Land is an archipelago in the New World. It constitutes the main territory of one of the former Emperors, Big Mom, and her crew, the Big Mom Pirates, which extends around Whole Cake Island. It is navigable with a New World Log Pose.",
+     "According to Pekoms, it is considered one large, powerful nation, and Big Mom as its queen wants it to become a utopia that unifies all races of the world.",
+     "Totto Land is the general setting for the Whole Cake Island Arc."
+    ],
+    "categoriesSource": [
+     "Archipelagos",
+     "Four Emperors Territories",
+     "New World Locations",
+     "Regimes"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/b/b8/Totto_Land_Infobox.png/revision/latest?cb=20170423124116",
+    "imageRefusee": null,
+    "phrasesProduites": [],
+    "liens": 14,
+    "gainIsolees": 0,
+    "citeePar": []
+   }
+  },
+  {
+   "ligne": {
+    "slug": "kouzuki-family",
+    "type": "status",
+    "name": "Famille Kozuki",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Famille qui régna sur le Pays de Wano et inventa les Ponéglyphes.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/b/bc/Kouzuki_Family_Portrait.png/revision/latest?cb=20210215233410",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "La famille Kozuki est une puissante famille qui régna sur le Pays de Wano jusqu'à sa chute, il y a vingt ans, aux mains de Kurozumi Orochi épaulé par Kaidou. Elle existe depuis des siècles : c'est à elle que l'on doit l'invention des Ponéglyphes, et elle noua des liens étroits avec le peuple du Duché de Mokomo, sur Zou. Après la défaite de Kaidou et d'Orochi lors du raid sur Onigashima, la famille Kozuki a retrouvé le shogunat de Wano, sous la conduite de Kozuki Momonosuke.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Kouzuki_Family, 10/08/2026)",
+     "scope": "Famille"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Kouzuki_Family",
+    "titreDemande": "Kouzuki Family",
+    "titreCanonique": "Kouzuki Family",
+    "resolution": "norm('kouzuki-family') === norm('Kouzuki Family') → « kouzuki family »",
+    "nom": "« Famille Kozuki » ×13 dans la prose One Piece ; inuarashi (descFr) : « Lui et Nekomamushi servent de vassaux à la Famille Kozuki du Pays de Wano »",
+    "attestationMesuree": {
+     "fiches": 13,
+     "exemples": [
+      "inuarashi·descFr : Lui et Nekomamushi servent de vassaux à la Famille Kozuki du Pays de Wano.",
+      "otama·descFr : C'est une tisseuse de kasa et une kunoichi en formation qui suit la famille Kozuki."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The Kouzuki Family is a powerful family that ruled over Wano Country until their downfall twenty years ago at the hands of Kurozumi Orochi aided by Kaidou. The family has existed for centuries being responsible for the original invention of the Poneglyphs and formed close ties with the people of the Mokomo Dukedom on Zou.",
+     "After Kaidou and Orochi's defeats during the Raid on Onigashima, the Kouzuki family regained their position in the shogunate of Wano, led by Kouzuki Momonosuke."
+    ],
+    "categoriesSource": [
+     "Wano Country Families"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/b/bc/Kouzuki_Family_Portrait.png/revision/latest?cb=20210215233410",
+    "imageRefusee": null,
+    "phrasesProduites": [],
+    "liens": 5,
+    "gainIsolees": 0,
+    "citeePar": []
+   }
+  },
+  {
+   "ligne": {
+    "slug": "franky-family",
+    "type": "status",
+    "name": "Franky Family",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Cinquantaine de démolisseurs de navires et chasseurs de primes de Water 7, réunis par Franky.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/b/b6/Franky_Family_Infobox.png/revision/latest?cb=20221108053922",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "La Franky Family est un groupe d'au moins cinquante démolisseurs de navires et chasseurs de primes de Water 7, réunis sous la conduite de Cutty Flam, mieux connu sous le nom de Franky.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Franky_Family, 10/08/2026)",
+     "scope": "Groupe"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Franky_Family",
+    "titreDemande": "Franky Family",
+    "titreCanonique": "Franky Family",
+    "resolution": "norm('franky-family') === norm('Franky Family') → « franky family »",
+    "nom": "« Franky Family » ×7 dans la prose One Piece ; kop (descFr) : « Kop est un membre de la Franky Family, un groupe basé à Water 7 »",
+    "attestationMesuree": {
+     "fiches": 7,
+     "exemples": [
+      "franky·descFr : Âge : 34 ; 36 Date de naissance : 9 mars Signe : Poissons Taille : 225 cm Affiliation : Équipage du Chapeau de Paille ; Franky Family (ancien) ; Ouvriers de Tom (ancien) Poste : Charpentier Fruit du D…",
+      "kop·descFr : Kop est un membre de la Franky Family, un groupe basé à Water 7."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "The Franky Family is a group of at least fifty ship dismantlers and Bounty Hunters from Water 7, brought together under the leadership of Cutty Flam (better known as Franky)."
+    ],
+    "categoriesSource": [
+     "Antagonist Groups",
+     "Underworld Groups"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/b/b6/Franky_Family_Infobox.png/revision/latest?cb=20221108053922",
+    "imageRefusee": null,
+    "phrasesProduites": [],
+    "liens": 4,
+    "gainIsolees": 0,
+    "citeePar": []
+   }
+  },
+  {
+   "ligne": {
+    "slug": "thriller-bark-victim-s-association",
+    "type": "status",
+    "name": "Association des Victimes de Thriller Bark",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Groupe formé par ceux à qui Gecko Moria avait volé leur ombre.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/e/e6/Thriller_Bark_Victim%27s_Association_Infobox.png/revision/latest?cb=20140917050311",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "L'Association des Victimes de Thriller Bark est un groupe de personnes qui se sont unies après s'être fait voler leur ombre par Gecko Moria, ancien Grand Corsaire.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Thriller_Bark_Victim%27s_Association, 10/08/2026)",
+     "scope": "Groupe"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Thriller_Bark_Victim%27s_Association",
+    "titreDemande": "Thriller Bark Victim's Association",
+    "titreCanonique": "Thriller Bark Victim's Association",
+    "resolution": "norm('thriller-bark-victim-s-association') === norm('Thriller Bark Victim's Association') → « thriller bark victim s association »",
+    "nom": "« Association des Victimes de Thriller Bark » ×2 dans la prose One Piece ; spoil (descFr) : « Président de l'Association des Victimes de Thriller Bark »",
+    "attestationMesuree": {
+     "fiches": 2,
+     "exemples": [
+      "lola-charlotte·descFr : Elle fait partie d'un groupe de victimes de Moria qui se sont unies, l'Association des Victimes de Thriller Bark.",
+      "spoil·descFr : Président de l'Association des Victimes de Thriller Bark."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The Thriller Bark Victim's Association is a group of people that banded together after having their shadows stolen by the former Warlord of the Sea, Gecko Moria."
+    ],
+    "categoriesSource": [
+     "Groups"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/e/e6/Thriller_Bark_Victim%27s_Association_Infobox.png/revision/latest?cb=20140917050311",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Association des Victimes de Thriller Bark »"
+    ],
+    "liens": 2,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Spoil [character/spoil]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "rain-dinners",
+    "type": "status",
+    "name": "Rain Dinners",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Casino, restaurant et complexe de Rainbase, propriété de Crocodile.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/a/a7/Rain_Dinners_Infobox.png/revision/latest?cb=20230131162303",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Rain Dinners était un casino, un restaurant et un complexe de loisirs appartenant à Crocodile, à Rainbase. C'est le plus grand bâtiment de la ville, en forme de pyramide, surmonté d'un crocodile doré. Le casino était gardé par les Mercenaires Koala ; Miss All Sunday en était la gérante et Ultraking le gérant adjoint.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Rain_Dinners, 10/08/2026)",
+     "scope": "Établissement"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Rain_Dinners",
+    "titreDemande": "Rain Dinners",
+    "titreCanonique": "Rain Dinners",
+    "resolution": "norm('rain-dinners') === norm('Rain Dinners') → « rain dinners »",
+    "nom": "« Rain Dinners » ×2 dans la prose One Piece ; rainbase (summary) : « Cité d'Alabasta surnommée la ville des rêves, Rainbase attire les joueurs vers le casino Rain Dinners »",
+    "attestationMesuree": {
+     "fiches": 2,
+     "exemples": [
+      "ultraking·descFr : Ultraking est un personnage de l'univers One Piece, qui occupe le poste d'adjoint au manager du casino Rain Dinners à Rainbase pendant l'arc Arabasta.",
+      "rainbase·summary : Cité d'Alabasta surnommée la ville des rêves, Rainbase attire les joueurs vers le casino Rain Dinners, vitrine dorée derrière laquelle Crocodile tramait ses manœuvres."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "Rain Dinners was a casino, restaurant, and resort owned by Crocodile in Rainbase. The building is the largest in the city and is in the shape of a pyramid, with a golden crocodile statue at the top. The casino was guarded by the Koala Mercenaries and the manager of the casino was Miss All Sunday, while the assistant manager was Ultraking."
+    ],
+    "categoriesSource": [
+     "Arabasta Locations",
+     "Bars and Restaurants"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/a/a7/Rain_Dinners_Infobox.png/revision/latest?cb=20230131162303",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Rain Dinners »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Ultraking [character/ultraking]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "three-great-powers",
+    "type": "status",
+    "name": "Trois Grands Pouvoirs",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Les trois plus grandes forces militaires de la Blue Sea, dont l'équilibre tenait la paix du monde.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/5/5b/Three_Great_Powers_Infobox.png/revision/latest?cb=20210110112645",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "Les Trois Grands Pouvoirs sont les trois plus grandes forces militaires de la Blue Sea : le Quartier Général de la Marine, les Quatre Empereurs et, jusqu'à leur abolition, les Sept Grands Corsaires. C'est l'équilibre entre eux qui maintenait la paix du monde. Lors du dernier Levely, le Gouvernement Mondial a aboli le système des Grands Corsaires, jugeant que le projet Seraphim du SSG le rendrait caduc.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Three_Great_Powers, 10/08/2026)",
+     "scope": "Équilibre mondial"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Three_Great_Powers",
+    "titreDemande": "Three Great Powers",
+    "titreCanonique": "Three Great Powers",
+    "resolution": "norm('three-great-powers') === norm('Three Great Powers') → « three great powers »",
+    "nom": "« Trois Grands Pouvoirs » ×2 dans la prose One Piece ; marine (descFr) : « Ils sont l'un des Trois Grands Pouvoirs, aux côtés des Quatre Empereurs et des Sept Grands Corsaires »",
+    "attestationMesuree": {
+     "fiches": 2,
+     "exemples": [
+      "quatres-empereurs·descFr : Bien qu'ils agissent indépendamment, leur présence collective constitue l'un des Trois Grands Pouvoirs qui maintiennent l'équilibre mondial face au Gouvernement Mondial et à la Marine.",
+      "marine·descFr : Ils sont l'un des Trois Grands Pouvoirs, aux côtés des Quatre Empereurs et des Sept Grands Corsaires, et sont souvent antagonistes dans la série, notamment dans les arcs Romance Dawn, Loguetown, Enies…"
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The Three Great Powers are the three greatest military forces on the Blue Sea, consisting of the Marine Headquarters, the Four Emperors and formerly the Seven Warlords of the Sea. The balance between them is what maintained world peace. They were first hinted to by Yosaku when explaining how Jinbe unleashed Arlong in the East Blue to Luffy and Sanji.",
+     "As of the latest Levely, the Seven Warlords of the Sea were abolished by the World Government, who believed that the SSG's new Seraphim project would be enough to render the Warlord system obsolete."
+    ],
+    "categoriesSource": [
+     "Terms"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/5/5b/Three_Great_Powers_Infobox.png/revision/latest?cb=20210110112645",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un status : « Appartient à · Trois Grands Pouvoirs »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Quatres Empereurs [status/quatres-empereurs]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "organ-dealing-assassination-group",
+    "type": "status",
+    "name": "Organ Dealing Assassination Group",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Groupe d'assassins hors canon associé au trafiquant d'organes Jigra.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/a/a1/Organ_Dealing_Assassination_Group_Infobox.png/revision/latest?cb=20180422140833",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "L'Organ Dealing Assassination Group est un groupe d'assassins hors canon, associé au trafiquant d'organes Jigra.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Organ_Dealing_Assassination_Group, 10/08/2026)",
+     "scope": "Organisation criminelle"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Organ_Dealing_Assassination_Group",
+    "titreDemande": "Organ Dealing Assassination Group",
+    "titreCanonique": "Organ Dealing Assassination Group",
+    "resolution": "norm('organ-dealing-assassination-group') === norm('Organ Dealing Assassination Group') → « organ dealing assassination group »",
+    "nom": "aucune forme française attestée ; la source déclare en interlangue fr le même titre — https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Organ%20Dealing%20Assassination%20Group rend « Organ Dealing Assassination Group »",
+    "attestationMesuree": {
+     "fiches": 0,
+     "exemples": []
+    },
+    "interlangueFrRedemande": "Organ Dealing Assassination Group",
+    "nomCanonique": true,
+    "texteSource": [
+     "The Organ Dealing Assassination Group is a non-canon group of assassins who were associated with the organ trader Jigra."
+    ],
+    "categoriesSource": [
+     "Non-Canon Antagonist Groups",
+     "Underworld Groups"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/a/a1/Organ_Dealing_Assassination_Group_Infobox.png/revision/latest?cb=20180422140833",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Organ Dealing Assassination Group »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Jigra [character/jigra]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "roshwan-kingdom",
+    "type": "place",
+    "name": "Royaume de Roshwan",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Nation du South Blue, gouvernée par le roi Beer VI.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/d/d5/NoPicAvailable.png/revision/latest?cb=20210110135101",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Le Royaume de Roshwan est une nation du South Blue, gouvernée par le roi Beer VI.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Roshwan_Kingdom, 10/08/2026)",
+     "region": "South Blue"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Roshwan_Kingdom",
+    "titreDemande": "Roshwan Kingdom",
+    "titreCanonique": "Roshwan Kingdom",
+    "resolution": "norm('roshwan-kingdom') === norm('Roshwan Kingdom') → « roshwan kingdom »",
+    "nom": "« Royaume de Roshwan » ×2 dans la prose One Piece ; beer-vi (descFr) : « Beer VI est le roi du Royaume de Roshwan »",
+    "attestationMesuree": {
+     "fiches": 2,
+     "exemples": [
+      "beer-vi·descFr : Beer VI est le roi du Royaume de Roshwan.",
+      "matoryou-hime-tachi·descFr : Les Princesses Matriochka sont les princesses du Royaume de Roshwan."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The Roshwan Kingdom is a nation in the South Blue, ruled by King Beer VI."
+    ],
+    "categoriesSource": [
+     "Mentioned Only World Government Kingdoms",
+     "South Blue Locations"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/d/d5/NoPicAvailable.png/revision/latest?cb=20210110135101",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Réside · Royaume de Roshwan »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Beer VI [character/beer-vi]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "hyougoro-family",
+    "type": "status",
+    "name": "Famille Hyogoro",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Groupe yakuza mené par Hyogoro, actif jadis dans la Capitale des Fleurs.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/d/d3/Hyougoro_Family_Infobox.png/revision/latest?cb=20230826203703",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "La Famille Hyogoro était un groupe yakuza mené par Hyogoro, actif il y a plusieurs décennies dans la Capitale des Fleurs du Pays de Wano.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Hyougoro_Family, 10/08/2026)",
+     "scope": "Famille"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Hyougoro_Family",
+    "titreDemande": "Hyougoro Family",
+    "titreCanonique": "Hyougoro Family",
+    "resolution": "norm('hyougoro-family') === norm('Hyougoro Family') → « hyougoro family »",
+    "nom": "aucune forme attestée dans la prose du corpus ; nom déclaré par la source en interlangue fr — https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Hyougoro%20Family rend « Famille Hyogoro »",
+    "attestationMesuree": {
+     "fiches": 0,
+     "exemples": []
+    },
+    "interlangueFrRedemande": "Famille Hyogoro",
+    "nomCanonique": false,
+    "texteSource": [
+     "The Hyougoro Family was a yakuza group led by Hyougoro that was active in the Flower Capital of Wano Country decades ago."
+    ],
+    "categoriesSource": [
+     "Former Groups",
+     "Underworld Groups"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/d/d3/Hyougoro_Family_Infobox.png/revision/latest?cb=20230826203703",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Famille Hyogoro »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Otaka [character/otaka]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "tajine-kingdom",
+    "type": "place",
+    "name": "Royaume de Tajine",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Nation gouvernée par la reine Mororon.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/d/d5/NoPicAvailable.png/revision/latest?cb=20210110135101",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Le Royaume de Tajine est une nation située quelque part dans le monde, gouvernée par la reine Mororon.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Tajine_Kingdom, 10/08/2026)"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Tajine_Kingdom",
+    "titreDemande": "Tajine Kingdom",
+    "titreCanonique": "Tajine Kingdom",
+    "resolution": "norm('tajine-kingdom') === norm('Tajine Kingdom') → « tajine kingdom »",
+    "nom": "« Royaume de Tajine » attesté dans la prose ; morollon (summary) : « Mororon est la reine du royaume de Tajine »",
+    "attestationMesuree": {
+     "fiches": 1,
+     "exemples": [
+      "morollon·summary : Mororon est la reine du royaume de Tajine."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The Tajine Kingdom is a nation somewhere in the world that is ruled by Queen Mororon."
+    ],
+    "categoriesSource": [
+     "Mentioned Only World Government Kingdoms"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/d/d5/NoPicAvailable.png/revision/latest?cb=20210110135101",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Réside · Royaume de Tajine »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Morollon [character/morollon]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "endurance-curry-pirates",
+    "type": "status",
+    "name": "Endurance Curry Pirates",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Équipage né d'un concours de lecteurs du Weekly Shonen Jump en 2000, canonisé en 2024.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/1/1b/Endurance_Curry_Pirates_Original_Designs.png/revision/latest?cb=20250109164625",
+    "attributes": {
+     "category": "Équipage",
+     "descFr": "Les Endurance Curry Pirates sont un équipage de pirates né d'un concours de lecteurs du Weekly Shonen Jump, en 2000. Dessiné par Eiichiro Oda avec Nobuhiro Watsuki, auteur de Kenshin le vagabond, et Hiroyuki Takei, auteur de Shaman King, l'équipage a fini par entrer dans le canon de One Piece vingt-quatre ans plus tard, au chapitre 1122.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Endurance_Curry_Pirates, 10/08/2026)",
+     "scope": "Équipage pirate"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Endurance_Curry_Pirates",
+    "titreDemande": "Endurance Curry Pirates",
+    "titreCanonique": "Endurance Curry Pirates",
+    "resolution": "norm('endurance-curry-pirates') === norm('Endurance Curry Pirates') → « endurance curry pirates »",
+    "nom": "« Endurance Curry Pirates » ×2 dans la prose One Piece ; hippie (descFr) : « Hippie le Skull Curry est le capitaine des Endurance Curry Pirates »",
+    "attestationMesuree": {
+     "fiches": 2,
+     "exemples": [
+      "hippie·descFr : Hippie le Skull Curry est le capitaine des Endurance Curry Pirates.",
+      "hiro-gomon·descFr : Hiro Gomon est un membre des Endurance Curry Pirates."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "The Endurance Curry Pirates are a crew of pirates originally created as a response to a reader contest featured in Weekly Shonen Jump in the year 2000. Designed by Eiichiro Oda together with Nobuhiro Watsuki, the author of Rurouni Kenshin, and Hiroyuki Takei, the author of Shaman King, the crew would eventually be canonized into One Piece 24 years later in Chapter 1122."
+    ],
+    "categoriesSource": [
+     "Pirate Crews"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/1/1b/Endurance_Curry_Pirates_Original_Designs.png/revision/latest?cb=20250109164625",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Endurance Curry Pirates »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Hippie [character/hippie]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "randolph-theater",
+    "type": "status",
+    "name": "Randolph Theater",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Troupe de théâtre apparue dans l'Épisode Spécial 3, jadis propriété de Randolph.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/c/c7/Randolph%27s_Theater_Anime_Infobox.png/revision/latest?cb=20131117232115",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "Le Randolph Theater est une troupe de théâtre apparue dans l'Épisode Spécial 3. La troupe appartenait à Randolph avant qu'il ne se retire.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Randolph_Theater, 10/08/2026)",
+     "scope": "Troupe"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Randolph_Theater",
+    "titreDemande": "Randolph Theater",
+    "titreCanonique": "Randolph Theater",
+    "resolution": "norm('randolph-theater') === norm('Randolph Theater') → « randolph theater »",
+    "nom": "aucune forme française attestée ni déclarée par la source (pas d'interlangue fr) : titre canonique du wiki conservé",
+    "attestationMesuree": {
+     "fiches": 0,
+     "exemples": []
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "Randolph Theater is a theater troupe that debuted in Episode Special 3. The troupe was owned by Randolph before his retirement."
+    ],
+    "categoriesSource": [
+     "Non-Canon Ships"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/c/c7/Randolph%27s_Theater_Anime_Infobox.png/revision/latest?cb=20131117232115",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Randolph Theater »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Ed [character/ed]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "shishano-kingdom",
+    "type": "place",
+    "name": "Royaume de Shishano",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Nation gouvernée par le roi Tacos.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/d/d5/NoPicAvailable.png/revision/latest?cb=20210110135101",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Le Royaume de Shishano est une nation située quelque part dans le monde, gouvernée par le roi Tacos.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Shishano_Kingdom, 10/08/2026)"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Shishano_Kingdom",
+    "titreDemande": "Shishano Kingdom",
+    "titreCanonique": "Shishano Kingdom",
+    "resolution": "norm('shishano-kingdom') === norm('Shishano Kingdom') → « shishano kingdom »",
+    "nom": "« Royaume de Shishano » attesté dans la prose ; taco (descFr) : « Tacos est le roi du Royaume de Shishano »",
+    "attestationMesuree": {
+     "fiches": 1,
+     "exemples": [
+      "taco·descFr : Tacos est le roi du Royaume de Shishano."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The Shishano Kingdom is a nation somewhere in the world that is ruled by King Tacos."
+    ],
+    "categoriesSource": [
+     "Mentioned Only World Government Kingdoms"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/d/d5/NoPicAvailable.png/revision/latest?cb=20210110135101",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Réside · Royaume de Shishano »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Taco [character/taco]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "gally-pirates",
+    "type": "status",
+    "name": "Gally Pirates",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Équipage de l'East Blue commandé par Gally « Croissant de Lune ».",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/46/Gally_Pirates%27_Jolly_Roger.png/revision/latest?cb=20130103121655",
+    "attributes": {
+     "category": "Équipage",
+     "descFr": "Les Gally Pirates sont un équipage de pirates actif dans l'East Blue, commandé par Gally « Croissant de Lune ». Ils sont d'abord apparus dans le one-shot pilote Romance Dawn, version 1, comme antagonistes principaux, avant de faire une apparition durant l'arc de Whole Cake Island.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Gally_Pirates, 10/08/2026)",
+     "scope": "Équipage pirate"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Gally_Pirates",
+    "titreDemande": "Gally Pirates",
+    "titreCanonique": "Gally Pirates",
+    "resolution": "norm('gally-pirates') === norm('Gally Pirates') → « gally pirates »",
+    "nom": "aucune forme française attestée ni déclarée par la source (pas d'interlangue fr) : titre canonique du wiki conservé",
+    "attestationMesuree": {
+     "fiches": 0,
+     "exemples": []
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "The Gally Pirates are a pirate crew active in the East Blue, commanded by \"Crescent-Moon\" Gally.",
+     "They initially appeared in the pilot one-shot Romance Dawn, Version 1, as the main antagonists, before making a cameo during the Whole Cake Island Arc."
+    ],
+    "categoriesSource": [
+     "East Blue Pirate Crews",
+     "Non-Canon Antagonist Groups",
+     "OVA Antagonists",
+     "One-Shot Antagonists",
+     "Romance Dawn Story Characters"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/4/46/Gally_Pirates%27_Jolly_Roger.png/revision/latest?cb=20130103121655",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Gally Pirates »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Gally [character/gally]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "umit-shipping",
+    "type": "status",
+    "name": "Umit Shipping",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Compagnie de transport maritime présidée par Umit, empereur de l'Underworld.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/62/Umit_Shipping_Infobox.png/revision/latest?cb=20260405161620",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "Umit Shipping est une compagnie de transport maritime présidée par Umit, empereur de l'Underworld.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Umit_Shipping, 10/08/2026)",
+     "scope": "Compagnie"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Umit_Shipping",
+    "titreDemande": "Umit Shipping",
+    "titreCanonique": "Umit Shipping",
+    "resolution": "norm('umit-shipping') === norm('Umit Shipping') → « umit shipping »",
+    "nom": "aucune forme attestée dans la prose du corpus ; la source déclare en interlangue fr le même titre — https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Umit%20Shipping rend « Umit Shipping »",
+    "attestationMesuree": {
+     "fiches": 0,
+     "exemples": []
+    },
+    "interlangueFrRedemande": "Umit Shipping",
+    "nomCanonique": true,
+    "texteSource": [
+     "Umit Shipping is a maritime transportation company presided by the Underworld Emperor Umit."
+    ],
+    "categoriesSource": [
+     "Fleets",
+     "Underworld Groups"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/6/62/Umit_Shipping_Infobox.png/revision/latest?cb=20260405161620",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Umit Shipping »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Umit [character/umit]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "south-blue",
+    "type": "place",
+    "name": "South Blue",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Océan du sud de la Blue Sea, séparé de l'East Blue par la moitié Paradise de la Grand Line.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/6f/Summit_War_South_Blue.png/revision/latest?cb=20241023071909",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Le South Blue est l'océan qui forme la partie sud de la Blue Sea, elle-même découpée par la Red Line et la Grand Line. Il est séparé du West Blue par la Red Line, et de l'East Blue par la moitié Paradise de la Grand Line. On le sait berceau de Franky, le charpentier de l'équipage du Chapeau de Paille ; de Portgas D. Ace, le fils du Roi des Pirates ; des anciens amiraux Sengoku et Kuzan, ainsi que de l'amiral en exercice Aramaki ; de Bartholomew Kuma, ancien Grand Corsaire, révolutionnaire et roi ; et de trois membres de la Pire Génération, Eustass Kid, son second Killer et Jewelry Bonney.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/South_Blue, 10/08/2026)"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/South_Blue",
+    "titreDemande": "South Blue",
+    "titreCanonique": "South Blue",
+    "resolution": "norm('south-blue') === norm('South Blue') → « south blue »",
+    "nom": "« South Blue » ×18 dans la prose One Piece ; baterilla-island (descFr) : « Île tropicale du South Blue, Baterilla abrite des plages bordées de palmiers »",
+    "attestationMesuree": {
+     "fiches": 18,
+     "exemples": [
+      "east-blue·descFr : L'East Blue constitue la partie orientale de la Blue Sea, séparée du North Blue par la Red Line et du South Blue par la moitié Paradise de la Grand Line.",
+      "baterilla-island·summary : Île de South Blue où Portgas D."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "The South Blue is the ocean which makes up the south part of the Blue Sea split by the Red Line and the Grand Line. It is separated from the West Blue by the Red Line and the East Blue by the Paradise half of the Grand Line.",
+     "It is known as the birthplace of the Straw Hat Pirates' shipwright, Franky; the son of the Pirate King, Portgas D. Ace; former Marine Admirals, Sengoku and Kuzan, as well as current Admiral Aramaki; former Warlord of the Sea, Revolutionary, and King, Bartholomew Kuma; and three members of the Worst Generation: Eustass Kid, his subordinate Killer, and Jewelry Bonney. The Foxy Pirates are also a notable pirate crew hailing from this sea.",
+     "This sea is home to many forms of large and exotic wildlife, such as gigantic birds, Blue-Finned Elephant Tunas, Super Sparrows and even Gryphons. The Revolutionary Army also has a deep presence in the region, with the organization being involved in the toppling of multiple regimes, including the Sorbet Kingdom, Tumi and Centaurea."
+    ],
+    "categoriesSource": [
+     "Oceans"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/6/6f/Summit_War_South_Blue.png/revision/latest?cb=20241023071909",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un place : « Appartient à · South Blue »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Île du Karaté [place/karate-island]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "nefertari-family",
+    "type": "status",
+    "name": "Famille Nefertari",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Lignée royale d'Alabasta, l'une des vingt familles fondatrices du Gouvernement Mondial.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/7/73/Nefertari_Family_Infobox.png/revision/latest?cb=20240622144051",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "La famille Nefertari est un clan de sang royal qui règne sur le Royaume d'Alabasta depuis au moins huit cents ans, et l'une des vingt familles royales à qui l'on doit la fondation du Gouvernement Mondial. Bien que ce soit un secret largement gardé, y compris au sein de la famille, ses membres portent aussi l'initiale D.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Nefertari_Family, 10/08/2026)",
+     "scope": "Famille"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Nefertari_Family",
+    "titreDemande": "Nefertari Family",
+    "titreCanonique": "Nefertari Family",
+    "resolution": "norm('nefertari-family') === norm('Nefertari Family') → « nefertari family »",
+    "nom": "« Famille Nefertari » attestée dans la prose ; alabasta-lieu (descFr) : « Gouverné par la famille Nefertari, il abrite le ponéglyphe révélant l'emplacement de Pluton »",
+    "attestationMesuree": {
+     "fiches": 1,
+     "exemples": [
+      "alabasta-lieu·descFr : Gouverné par la famille Nefertari, il abrite le ponéglyphe révélant l'emplacement de Pluton et fut le théâtre d'une guerre civile orchestrée par Crocodile."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "The Nefertari Family is a royal bloodline clan that has ruled the Arabasta Kingdom for at least eight hundred years, and one of the twenty royal families credited with founding the World Government. Although a widely kept secret, even among members of their own family, they also have the middle initial D."
+    ],
+    "categoriesSource": [
+     "Families"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/7/73/Nefertari_Family_Infobox.png/revision/latest?cb=20240622144051",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Famille Nefertari »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Hou [character/hou-one-piece]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "collection-party",
+    "type": "status",
+    "name": "Collection Party",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Force paramilitaire de collecte de l'impôt du gouvernement de Ruluka, menée par Flip.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/64/Collection_Party_Infobox.png/revision/latest?cb=20130511055214",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "La Collection Party était une force paramilitaire chargée de lever l'impôt pour le Gouvernement de Ruluka, montrée dans l'arc de l'île de Ruluka, propre à l'anime. Le groupe était mené par Flip.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Collection_Party, 10/08/2026)",
+     "scope": "Force paramilitaire"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Collection_Party",
+    "titreDemande": "Collection Party",
+    "titreCanonique": "Collection Party",
+    "resolution": "norm('collection-party') === norm('Collection Party') → « collection party »",
+    "nom": "aucune forme attestée dans la prose du corpus ; la source déclare en interlangue fr le même titre — https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Collection%20Party rend « Collection Party »",
+    "attestationMesuree": {
+     "fiches": 0,
+     "exemples": []
+    },
+    "interlangueFrRedemande": "Collection Party",
+    "nomCanonique": true,
+    "texteSource": [
+     "The Collection Party was a tax collecting paramilitary force from the Ruluka Government, shown in the anime-only Ruluka Island Arc. The group was led by Flip."
+    ],
+    "categoriesSource": [
+     "Candidates for merger",
+     "Non-Canon Antagonist Groups",
+     "Non-Canon Former Groups",
+     "Non-Canon Military Forces",
+     "Ruluka Island Residents"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/6/64/Collection_Party_Infobox.png/revision/latest?cb=20130511055214",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Collection Party »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Phillip [character/phillip]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "eigis-kingdom",
+    "type": "place",
+    "name": "Royaume d’Aegis",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Nation de la Grand Line gouvernée par le roi Tea IV, secouée par la révolution des Huit Nations (Eight-Nation Revolution).",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/c/ca/Eigis_Kingdom_Ship.png/revision/latest?cb=20240922021632",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Le Royaume d'Aegis est une nation située quelque part sur la Grand Line, gouvernée par le roi Tea IV. Ses habitants ont pris part à la révolution des Huit Nations (Eight-Nation Revolution), se soulevant contre leurs monarques.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Eigis_Kingdom, 10/08/2026)",
+     "region": "Grand Line"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Eigis_Kingdom",
+    "titreDemande": "Eigis Kingdom",
+    "titreCanonique": "Eigis Kingdom",
+    "resolution": "norm('eigis-kingdom') === norm('Eigis Kingdom') → « eigis kingdom »",
+    "nom": "aucune forme attestée dans la prose du corpus ; nom déclaré par la source en interlangue fr — https://onepiece.fandom.com/api.php?action=query&prop=langlinks&lllang=fr&titles=Eigis%20Kingdom rend « Royaume d'Aegis »",
+    "attestationMesuree": {
+     "fiches": 0,
+     "exemples": []
+    },
+    "interlangueFrRedemande": "Royaume d'Aegis",
+    "nomCanonique": false,
+    "texteSource": [
+     "The Eigis Kingdom is a nation somewhere on the Grand Line that is ruled by King Tea IV. The citizens of the kingdom participated in the Eight-Nation Revolution, rebelling against their monarchs."
+    ],
+    "categoriesSource": [
+     "Mentioned Only Grand Line Locations",
+     "Mentioned Only World Government Kingdoms"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/c/ca/Eigis_Kingdom_Ship.png/revision/latest?cb=20240922021632",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Réside · Royaume d’Aegis »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Tea IV [character/tea-iv]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "coral-hill",
+    "type": "place",
+    "name": "Coral Hill",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Ville portuaire de l'Île des Hommes-Poissons.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/1/15/Mermaid_Caf%C3%A9.png/revision/latest?cb=20130226121129",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "Coral Hill (サンゴが丘, Sango ga Oka) est une ville portuaire de l'Île des Hommes-Poissons.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Coral_Hill, 10/08/2026)"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Coral_Hill",
+    "titreDemande": "Coral Hill",
+    "titreCanonique": "Coral Hill",
+    "resolution": "norm('coral-hill') === norm('Coral Hill') → « coral hill »",
+    "nom": "« Coral Hill » attesté dans la prose ; togare (descFr) : « Togare est un Homme-Poisson qui vit à Coral Hill »",
+    "attestationMesuree": {
+     "fiches": 1,
+     "exemples": [
+      "togare·descFr : Togare est un Homme-Poisson qui vit à Coral Hill."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "Coral Hill (サンゴが丘, Sango ga Oka) is a port town on Fish-Man Island."
+    ],
+    "categoriesSource": [
+     "Fish-Man Island Locations",
+     "Towns and Cities"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/1/15/Mermaid_Caf%C3%A9.png/revision/latest?cb=20130226121129",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Réside · Coral Hill »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Togare [character/togare]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "red-line",
+    "type": "place",
+    "name": "Red Line",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Continent en anneau qui ceinture la planète et sépare les quatre mers.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/e/ea/Red_Line_Infobox.png/revision/latest?cb=20260323224330",
+    "attributes": {
+     "category": "Lieu",
+     "descFr": "La Red Line est un vaste continent en forme d'anneau qui ceinture toute la Blue Planet. Elle sert de frontière entre l'East Blue et le South Blue d'un côté, le North Blue et le West Blue de l'autre, et sépare également les deux moitiés de la Grand Line. Les géants d'Elbaf la nomment « le serpent taché de sang » (血に染まるヘビ, chi ni somaru hebi). Elle est presque inhabitée, à la grande exception de Mariejois, capitale du Gouvernement Mondial.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Red_Line, 10/08/2026)"
+    },
+    "rarity": "common"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Red_Line",
+    "titreDemande": "Red Line",
+    "titreCanonique": "Red Line",
+    "resolution": "norm('red-line') === norm('Red Line') → « red line »",
+    "nom": "« Red Line » ×8 dans la prose One Piece ; mary-geoise (summary) : « La Terre Sainte au sommet de la Red Line, siège des Dragons Célestes et des Cinq Doyens »",
+    "attestationMesuree": {
+     "fiches": 8,
+     "exemples": [
+      "east-blue·descFr : L'East Blue constitue la partie orientale de la Blue Sea, séparée du North Blue par la Red Line et du South Blue par la moitié Paradise de la Grand Line.",
+      "mary-geoise·summary : La Terre Sainte au sommet de la Red Line, siège des Dragons Célestes et des Cinq Doyens."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "The Red Line is a vast ring-like continent that wraps around the entire Blue Planet. It serves as a border separating the East and South Blues from the North and West Blues on both sides, as well as separating the two halves of the Grand Line. The Red Line is known to the giants of Elbaph as the \"bloodstained snake\" (血に染まるヘビ, chi ni somaru hebi).",
+     "It is mostly uninhabited, with the major exception of being home to the World Government's capital, Mary Geoise."
+    ],
+    "categoriesSource": [
+     "Landmarks",
+     "Red Line Locations"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/e/ea/Red_Line_Infobox.png/revision/latest?cb=20260323224330",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un place : « Appartient à · Red Line »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Reverse Mountain [place/reverse-mountain-lieu]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "galley-la-company",
+    "type": "status",
+    "name": "Galley-La Company",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Grande compagnie de charpentiers navals de Water 7, dirigée par Iceburg.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/0/02/Galley-La_Company_Infobox.png/revision/latest?cb=20161029194329",
+    "attributes": {
+     "category": "Organisation",
+     "descFr": "La Galley-La Company est une compagnie réputée de charpentiers navals. Établie depuis sept ans, elle construit des navires pour les particuliers et les pirates comme pour le Gouvernement Mondial. Water 7, l'île où elle est installée, passe pour abriter les meilleurs charpentiers du monde. La compagnie est dirigée par Iceburg, maire de Water 7 et aîné des apprentis du légendaire charpentier Tom.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Galley-La_Company, 10/08/2026)",
+     "scope": "Compagnie"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Galley-La_Company",
+    "titreDemande": "Galley-La Company",
+    "titreCanonique": "Galley-La Company",
+    "resolution": "norm('galley-la-company') === norm('Galley-La Company') → « galley la company »",
+    "nom": "« Galley-La Company » ×7 dans la prose One Piece ; paulie (summary) : « Paulie est un charpentier de la Galley-La Company à Water Seven »",
+    "attestationMesuree": {
+     "fiches": 7,
+     "exemples": [
+      "thousand-sunny·descFr : C'est un navire de type Brigantine Sloop conçu et construit par Franky avec l'aide d'Icebarg, Yokuzuna et le reste des ouvriers de la Galley-La Company.",
+      "paulie·summary : Paulie est un charpentier de la Galley-La Company à Water Seven, reconnaissable à son long nez, qui combat aux côtés des Chapeaux de paille à Enies Lobby."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": true,
+    "texteSource": [
+     "The Galley-La Company is a prominent company of shipwrights. The company, which has been established for seven years, builds ships for citizens and pirates, as well as for the World Government. Water 7, the island the company is on, is said to be the home of the best shipwrights in the world. The company is led by Iceburg, the mayor of Water 7 and the elder apprentice of the legendary shipwright Tom."
+    ],
+    "categoriesSource": [
+     "Antagonist Groups",
+     "Brands"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/0/02/Galley-La_Company_Infobox.png/revision/latest?cb=20161029194329",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Appartient à · Galley-La Company »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Alice [character/alice]"
+    ]
+   }
+  },
+  {
+   "ligne": {
+    "slug": "sniper",
+    "type": "profession",
+    "name": "Tireur d’élite",
+    "is_fiction": true,
+    "universe": "One Piece",
+    "summary": "Combattant expert dans le maniement et l'entretien des armes à distance.",
+    "description": null,
+    "image_url": "https://static.wikia.nocookie.net/onepiece/images/2/29/Sniper_Infobox.png/revision/latest?cb=20240211094805",
+    "attributes": {
+     "category": "Métier",
+     "descFr": "Un tireur d'élite est quelqu'un d'habile à manier les armes à distance, autant qu'à les entretenir.",
+     "descFrSource": "claude-opus-5 (traduit de l'introduction de https://onepiece.fandom.com/wiki/Sniper, 10/08/2026)"
+    },
+    "rarity": "rare"
+   },
+   "preuve": {
+    "source": "https://onepiece.fandom.com/wiki/Sniper",
+    "titreDemande": "Sniper",
+    "titreCanonique": "Sniper",
+    "resolution": "norm('sniper') === norm('Sniper') → « sniper »",
+    "nom": "« Tireur d'élite » ×9 dans la prose One Piece ; usopp (summary) : « Le tireur d'élite le plus menteur des mers : ses 8 000 hommes n'existent pas »",
+    "attestationMesuree": {
+     "fiches": 9,
+     "exemples": [
+      "carol-masterson·descFr : Lors de l'arc de Loguetown, elle achète une paire de lunettes pour son père dans la même échoppe où Usopp cherche à s'en procurer une, puis informe son père de la présence du tireur d'élite après qu'i…",
+      "syrup-village·descFr : Théâtre de l'arc éponyme, ce lieu marque le départ du tireur d'élite vers la piraterie."
+     ]
+    },
+    "interlangueFrRedemande": null,
+    "nomCanonique": false,
+    "texteSource": [
+     "A Sniper is a person adept at using, as well as maintaining, ranged weaponry."
+    ],
+    "categoriesSource": [
+     "Occupations"
+    ],
+    "imageSource": "https://static.wikia.nocookie.net/onepiece/images/2/29/Sniper_Infobox.png/revision/latest?cb=20240211094805",
+    "imageRefusee": null,
+    "phrasesProduites": [
+     "depuis un character : « Exerce · Tireur d’élite »"
+    ],
+    "liens": 1,
+    "gainIsolees": 1,
+    "citeePar": [
+     "Jean Ango [character/jean-ango]"
+    ]
+   }
+  }
+ ],
+ "refuses": [],
+ "ecarteesDAvance": [
+  {
+   "titre": "Sky Island",
+   "gainIsolees": 2,
+   "motif": "DOUBLON — la source déclare l'interlangue fr « Îles Célestes » et notre corpus porte déjà « Île Céleste » (status/ile-celeste). Le témoin E2 de akasha-op-doublons-sonde.mjs (pluriel réduit) l'a retrouvée ; l'égalité de chaînes de la vague 3 ne l'aurait pas vue."
+  },
+  {
+   "titre": "Doctor",
+   "gainIsolees": 2,
+   "motif": "RÉSOLUTION — le slug « doctor » est déjà porté par Naruto/profession/doctor. Un autre slug (« doctor-op ») rendrait la fiche inatteignable par le lien d'infobox : c'est un refus, pas un contournement."
+  },
+  {
+   "titre": "Samurai",
+   "gainIsolees": 0,
+   "motif": "RÉSOLUTION — le slug « samurai » est déjà porté par Naruto/status/samurai (même remarque)."
+  },
+  {
+   "titre": "Admiral (Fleet Captain)",
+   "gainIsolees": 1,
+   "motif": "HOMONYME — la seule forme française attestée est « Amiral » (×83 dans la prose), et ces 83 occurrences désignent toutes le grade de la MARINE, que la source distingue explicitement de ce titre (« given to an individual outside of the Marines »). Un nom juste au mauvais sujet est un fait faux."
+  },
+  {
+   "titre": "Ido",
+   "gainIsolees": 1,
+   "motif": "SANS MATIÈRE — la page ne rend aucun paragraphe d'introduction et le nom n'est attesté nulle part dans la prose. Rien à traduire, donc rien à écrire."
+  },
+  {
+   "titre": "Dynamo Team",
+   "gainIsolees": 1,
+   "motif": "SANS MATIÈRE — idem : aucun paragraphe d'introduction rendu par la source."
+  },
+  {
+   "titre": "Foods/Beverages",
+   "gainIsolees": 1,
+   "motif": "HORS PÉRIMÈTRE — la page est une LISTE (« This article covers the different beverages found within the series »), pas une entité."
+  },
+  {
+   "titre": "Animal Species/Water 7 Saga",
+   "gainIsolees": 0,
+   "motif": "HORS PÉRIMÈTRE — sous-page de liste."
+  },
+  {
+   "titre": "Bobby (Non-Canon)",
+   "gainIsolees": 1,
+   "motif": "CIBLE PERSONNAGE — akasha-isolees-html.mjs refuse toute cible de type `character` (« une appartenance n'est jamais une personne ») : créer la fiche ne poserait aucune arête. Le lien vient du champ `affiliation` d'un NAVIRE et voudrait dire « possédé par », d'une autre nature."
+  },
+  {
+   "titre": "Pogo",
+   "gainIsolees": 1,
+   "motif": "CIBLE PERSONNAGE — idem."
+  },
+  {
+   "titre": "Willy",
+   "gainIsolees": 1,
+   "motif": "CIBLE PERSONNAGE — idem."
+  },
+  {
+   "titre": "Carina",
+   "gainIsolees": 1,
+   "motif": "CIBLE PERSONNAGE — idem."
+  },
+  {
+   "titre": "Poseidon",
+   "gainIsolees": 1,
+   "motif": "CIBLE PERSONNAGE — la source le classe dans « Female Characters / Merfolk / Princesses » (le pouvoir s'incarne dans Shirahoshi)."
+  }
+ ]
+}

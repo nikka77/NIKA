@@ -1,0 +1,1518 @@
+{
+  "horodate": "2026-08-10T21:06:11.887Z",
+  "batterie_de_la_garde": [
+    {
+      "cas": "chatte/chat — le cas mesuré du démonstrateur",
+      "attendu": true,
+      "mord": true,
+      "ok": true,
+      "contradictions": [
+        {
+          "espece": "genre-oppose-sur-la-meme-tete",
+          "preuve_fiche": "Fukurokumaru est un chat summon de taille humaine au pelage blanc immaculé, portant un collier rouge.",
+          "preuve_section": "Fukurokumaru est une chatte blanche de taille humaine, au collier rouge orné d’une clochette dorée.",
+          "detail": "« null chat » (fiche) contre « null chatte » (section)"
+        }
+      ]
+    },
+    {
+      "cas": "nature — la fiche est un lieu, la section décrit un homme",
+      "attendu": true,
+      "mord": true,
+      "ok": true,
+      "contradictions": [
+        {
+          "espece": "natures-incompatibles",
+          "preuve_fiche": "Kibi est une région du Pays des Wa.",
+          "preuve_section": "Kibi est un ninja du village de Konoha qui participa à l’examen chûnin.",
+          "detail": "la fiche se définit comme lieu et la section comme personne"
+        },
+        {
+          "espece": "nature-contre-le-type-declare",
+          "preuve_fiche": "type = « place » (colonne de la base)",
+          "preuve_section": "Kibi est un ninja du village de Konoha qui participa à l’examen chûnin.",
+          "detail": "type place → nature attendue « lieu », la section définit « null ninja » (personne)"
+        }
+      ]
+    },
+    {
+      "cas": "témoin NÉGATIF — deux textes concordants ne doivent PAS être refusés",
+      "attendu": false,
+      "mord": false,
+      "ok": true,
+      "contradictions": []
+    },
+    {
+      "cas": "témoin NÉGATIF — deux définitions différentes mais compatibles",
+      "attendu": false,
+      "mord": false,
+      "ok": true,
+      "contradictions": []
+    },
+    {
+      "cas": "sexe déclaré contre la définition de la section",
+      "attendu": true,
+      "mord": true,
+      "ok": true,
+      "contradictions": [
+        {
+          "espece": "sexe-declare-contre-definition",
+          "preuve_fiche": "attributes.sex = « Male »",
+          "preuve_section": "Shinta est une femme d’un abord franc, qui dit aussitôt ce qu’elle pense.",
+          "detail": "sexe déclaré male, la section définit « null femme »"
+        }
+      ]
+    }
+  ],
+  "temoins_hote": {
+    "One Piece": {
+      "titre": "Monkey D. Luffy",
+      "repond": true,
+      "sections": 7
+    },
+    "Naruto": {
+      "titre": "Naruto Uzumaki",
+      "repond": true,
+      "sections": 92
+    },
+    "Bleach": {
+      "titre": "Ichigo Kurosaki",
+      "repond": true,
+      "sections": 33
+    },
+    "Dragon Ball": {
+      "titre": "Son Goku",
+      "repond": true,
+      "sections": 74
+    }
+  },
+  "population": {
+    "sans_dossier_univers_a_wiki_fr": 2848,
+    "echantillon": 40
+  },
+  "compte": {
+    "page sans prose exploitable": 7,
+    "refus": 16,
+    "candidat": 17
+  },
+  "rendement": "42.5 %",
+  "mediane_caracteres_des_candidats": 405,
+  "cas": [
+    {
+      "slug": "blood-increasing-pill",
+      "name": "Blood Increasing Pill",
+      "type": "artifact",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Pilule de Croissance Sanguine",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Pilule_de_Croissance_Sanguine",
+      "refus": null,
+      "descFr_len": 256,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 0,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "lacueva",
+      "name": "Lacueva",
+      "type": "character",
+      "universe": "One Piece",
+      "route": "langlink",
+      "titreFr": "Lacuba",
+      "identite": null,
+      "url": "https://onepiece.fandom.com/fr/wiki/Lacuba",
+      "refus": "pont nu sans preuve de nom",
+      "descFr_len": 495,
+      "etat": "refus"
+    },
+    {
+      "slug": "temujin-s-continent",
+      "name": "Temujin's Continent",
+      "type": "place",
+      "universe": "Naruto",
+      "route": "recherche-fr",
+      "titreFr": "Continent de Temujin",
+      "identite": "meme-nom",
+      "url": "https://naruto.fandom.com/fr/wiki/Continent_de_Temujin",
+      "refus": null,
+      "descFr_len": 730,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 0,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "six-red-yang-formation",
+      "name": "Six Red Yang Formation",
+      "type": "power",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Hexaèdre aux Faces Écarlates",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Hexa%C3%A8dre_aux_Faces_%C3%89carlates",
+      "refus": null,
+      "descFr_len": 482,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "car": 463
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 2,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 463,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "niveau": 2,
+          "ancre": "Anecdotes",
+          "texte": "Lorsqu'Obito utilisa cette technique dans le manga, la Sphère de Vérité derrière sa main droite disparut définitivement, impliquant qu'elle fut convertie en tige noire pour former la barrière. Cependant, dans l'anime, l'orbe demeura sur sa main suite à l'activation de cette technique.\nLe Quatrième Databook ne fait mention d'aucune Sphère de Vérité impliquée avec cette technique, déclarant à la place que celle-ci nécessite les récepteurs de chakra du Rinnegan."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "genin-exams-proctor",
+      "name": "Genin Exams Proctor",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "mangekyo-sharingan",
+      "name": "Mangekyō Sharingan",
+      "type": "skill",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Mangekyô Sharingan",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/Mangeky%C3%B4_Sharingan",
+      "refus": null,
+      "descFr_len": 487,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Description",
+          "car": 3246
+        },
+        {
+          "idx": "2",
+          "titre": "Mangekyô Sharingan Éternel",
+          "car": 896
+        },
+        {
+          "idx": "3.1",
+          "titre": "Itachi Uchiwa",
+          "car": 1028
+        },
+        {
+          "idx": "3.2",
+          "titre": "Obito Uchiwa",
+          "car": 1991
+        },
+        {
+          "idx": "3.3",
+          "titre": "Madara Uchiwa",
+          "car": 938
+        },
+        {
+          "idx": "3.4",
+          "titre": "Izuna Uchiwa",
+          "car": 418
+        },
+        {
+          "idx": "3.5",
+          "titre": "Sasuke Uchiwa",
+          "car": 998
+        },
+        {
+          "idx": "3.6",
+          "titre": "Sarada Uchiwa",
+          "car": 343
+        },
+        {
+          "idx": "3.7",
+          "titre": "Shisui Uchiwa",
+          "car": 1510
+        },
+        {
+          "idx": "3.8",
+          "titre": "Indra Ôtsutsuki",
+          "car": 372
+        },
+        {
+          "idx": "3.9",
+          "titre": "Shin Uchiwa",
+          "car": 512
+        },
+        {
+          "idx": "3.10",
+          "titre": "Fugaku Uchiwa",
+          "car": 297
+        },
+        {
+          "idx": "3.11",
+          "titre": "Hagoromo Ôtsutsuki",
+          "car": 444
+        },
+        {
+          "idx": "5",
+          "titre": "Anecdotes",
+          "car": 2304
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 20,
+        "intertitres_declares": 19,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 14,
+      "caracteres": 15297,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Description",
+          "niveau": 2,
+          "ancre": "Description",
+          "texte": "Contrairement au Sharingan classique, le Mangekyô Sharingan est une pupille à l'apparence unique pour chaque utilisateur, bien que tous aient une apparence semblable à celle d'un moulin à vent. Cette pupille est initialement éveillée suite à un traumatisme lié à la perte d'un être cher. Le clan Uchiwa a historiquement mal interprété ce critère d'éveil, pensant que l'utilisateur doit être responsable de la mort de cet être cher. Pour cette raison, ils ont développé une pratique qui consiste à tuer leurs amis les plus proches, afin d'éveiller le Mangekyô Sharingan. Le Mangekyô Sharingan d'Obito s'est immédiatement éveillé après que Rin ait été assassinée sous ses yeux, alors que dans Naruto Jinraiden, le Mangekyô Sharingan de Sasuke ne s'est éveillé que plusieurs semaines après.\nLe Mangekyô Sharingan conserve toutes les capacités génériques du Sharingan. En plus de cela, il confère de puissantes capacités qui diffèrent entre chaque œil, bien qu'elles puissent être de nature similaire ; Sasuke et Itachi ont accès aux flammes noires d'Amaterasu, bien que la mesure dans laquelle ils peuvent les utiliser diffère. Les capacités d'un Mangekyô Sharingan peuvent ne pas être les mêmes pour les deux yeux d'un seul utilisateur, car Itachi possède Amaterasu dans un œil et Tsukuyomi dans l'autre. De plus, une capacité est toujours liée à l'usage de l'œil droit, une autre à l'œil gauche et la dernière aux deux yeux simultanément. Lorsqu'un utilisateur éveille le Mangekyô Sharingan dans ses deux yeux, il devient capable d'utiliser Susanô, même sans eux. En plus des techniques uniques, le tomoe droit (直巴, choku tomoe) du Mangekyô Sharingan de Sasuke et de Madara leur confère une plus grande fluidité dans leurs mouvements lors des combats. Madara pouvait sentir cette forme de tomoe et en déduisit plus tard, que lui et Sasuke étaient liés par un lien plus fort que celui du sang.\nComme tout dôjutsu, le Mangekyô Sharingan peut être greffé à une personne qui n'est pas membre du clan Uchiwa, lui accordant toutes ses capacités, bien qu'avec des exigences de chakra plus fortes. Les capacités d'un Mangekyô Sharingan peuvent également être programmées pour s'activer dans certaines circonstances, soit aux yeux de l'utilisateur, soit dans la cible de son choix ; cette programmation reste même après la mort.\nL'utilisation du Mangekyô Sharingan provoque une sensation que les ninjas sensoriels peuvent ressentir, bien qu'elle ne montre pas quelle technique est en cours d'exécution. Même pour les détenteurs naturels, l'utilisation des capacités du Mangekyô Sharingan peut causer une grande pression sur l'utilisateur. Elle draine une quantité considérable de chakra lors de l'activation et du maintien du dôjutsu et encore plus à travers chaque technique utilisée. Plus encore, elle peut causer des dommages considérables à leur être, provoquant dans leur corps une douleur atroce et une détérioration de leur vision jusqu'à ce que la sur-utilisation de cette pupille les rende aveugles.\nLe Mangekyô Sharingan octroie également à son utilisateur la possibilité de lire et de décoder la stèle de pierre du clan Uchiwa. Selon Obito, le Mangekyô Sharingan peut décoder davantage celle-ci, plus que le Sharingan mais moins que le Rinnegan."
+        },
+        {
+          "idx": "2",
+          "titre": "Mangekyô Sharingan Éternel",
+          "niveau": 2,
+          "ancre": "Mangekyô_Sharingan_Éternel",
+          "texte": "Après aveuglement, leur vision peut être restaurée en transplantant le Mangekyô Sharingan d'un parent proche, idéalement un frère ou une sœur, ce qui a pour effet d'éveiller le Mangekyô Sharingan Éternel (永遠の万華鏡写輪眼, Eien no Mangekyô Sharingan). Contrairement aux autres greffes, cette seconde évolution permet à l'utilisateur de conserver ses techniques d'origine en plus d'accéder à celles des nouveaux yeux. Bien que les motifs des deux Mangekyô Sharingan fusionnent, ils sont toujours les yeux du propriétaire précédent et réagissent donc à certaines techniques qui visent le Mangekyô Sharingan du propriétaire d'origine. De plus, l'utilisateur ne subit plus d'effets secondaires négatifs en l'utilisant, réduisant même le drainage de chakra à un niveau incroyablement minimal. Selon Madara, le Mangekyô Sharingan Éternel est la preuve qu'un Uchiwa continua à avancer malgré de grandes pertes."
+        },
+        {
+          "idx": "3.1",
+          "titre": "Itachi Uchiwa",
+          "niveau": 3,
+          "ancre": "Itachi_Uchiwa",
+          "texte": "Itachi Uchiwa éveilla le Mangekyô Sharingan après le suicide de son meilleur ami, Shisui Uchiwa, peu avant le Massacre du Clan Uchiwa. Avec son Mangekyô Sharingan gauche, il pouvait utiliser Tsukuyomi, un genjutsu extrêmement puissant qui déforme la perception du temps de la victime. Avec son Mangekyô Sharingan droit, il pouvait utiliser Amaterasu, créant des flammes noires inextinguibles au point focal de l'utilisateur. À partir du moment où il éveilla ses deux Mangekyô Sharingan, il pouvait utiliser le Susanô. Étant donné que Tsukuyomi et Amaterasu utilisaient de grandes quantités de chakra, combinés à sa maladie finale, l'utilisation répétée des capacités du Mangekyô Sharingan sur une courte période était particulièrement débilitante pour Itachi, de sorte qu'après l'avoir utilisé trois fois en une journée, il dut même désactiver son Sharingan normal pour économiser son énergie. Quelque temps après la mort d'Itachi, désireux d'avoir le pouvoir de tuer Naruto, Sasuke Uchiwa se fit transplanter les yeux d'Itachi."
+        },
+        {
+          "idx": "3.2",
+          "titre": "Obito Uchiwa",
+          "niveau": 3,
+          "ancre": "Obito_Uchiwa",
+          "texte": "Obito Uchiwa éveilla le Mangekyô Sharingan après la mort de Rin Nohara lors de la Troisième Grande Guerre Shinobi ; Obito lui-même n'avait que son œil droit à l'époque, mais l'événement provoqua l'éveil simultané de son Mangekyô Sharingan et celui de Kakashi Hatake, qui autrefois, était l'œil gauche d'Obito. Les deux yeux permettent l'utilisation de Kamui, capables de déplacer des cibles dans un espace vers la Dimension du Kamui, bien que de manières différentes. L'œil droit est capable d'utiliser Kamui à courte portée, téléportant l'utilisateur et/ou ceux avec qui il est en contact. En n'y téléportant que des parties de son corps, l'utilisateur peut en effet traverser la matière sans problème. L'œil gauche, quant à lui, est capable d'utiliser le Kamui à longue portée, créant un tourbillon autour d'une cible qui la téléporte, également capable de produire une force d'attraction pour attirer d'autres cibles suffisamment proche. L'œil gauche peut également cibler l'utilisateur lui-même pour une téléportation complète. Durant la Quatrième Grande Guerre Shinobi, il fut découvert que chaque œil est imperméable au Kamui de l'autre.\nMadara Uchiwa arracha l'œil de Kakashi afin de retrouver Obito dans la dimension du Kamui. Arrivé dans la dimension, il échangea l'œil contre le Rinnegan d'Obito, rendant les deux yeux à leur propriétaire d'origine, qui était actuellement possédé par Zetsu Noir. Pendant cette brève période, Zetsu Noir fut capable d'accéder aux deux pouvoirs du Mangekyô Sharingan d'Obito. Après qu'Obito fut libéré du contrôle de Zetsu Noir, il utilisa ses deux yeux en les combinant efficacement par la suite pour retrouver Sasuke dans l'une des dimensions de Kaguya Ôtsutsuki. Peu de temps après, ses deux yeux furent détruits quand il fut tué par Kaguya Ôtsutsuki. Son esprit revint brièvement dans le monde des vivants et habita Kakashi, manifestant les deux Mangekyô Sharingan avec leurs capacités respectives à travers Kakashi et, par extension, le Susanô."
+        },
+        {
+          "idx": "3.3",
+          "titre": "Madara Uchiwa",
+          "niveau": 3,
+          "ancre": "Madara_Uchiwa",
+          "texte": "Madara Uchiwa fut le premier Uchiwa à éveiller le Mangekyô Sharingan. On ne sait pas quelles étaient les capacités individuelles de chacun de ses yeux, mais il pouvait utiliser Susanô. Le tomoe droit de son Mangekyô Sharingan lui conféra une plus grande fluidité dans ses mouvements lors des combats. Lorsque Madara abusa de son Mangekyô Sharingan, lors de l'Époque de la Guerre des Provinces, il devint aveugle, ce qui poussa son frère, Izuna Uchiwa, à léguer à Madara ses deux yeux, lui accordant ainsi le Mangekyô Sharingan Éternel.\nÀ la fin de sa vie, les yeux de Madara se changèrent en Rinnegan grâce aux cellules de Hashirama qu'il s'était greffé, qu'il transplanta à Nagato lorsqu'il était enfant. Pendant la Quatrième Grande Guerre Shinobi, Obito utilisa le Rinnegan gauche de Madara, parce que le fait d'utiliser les deux était trop éprouvant pour lui. Finalement, les deux yeux furent restitués à Madara après sa réincarnation."
+        },
+        {
+          "idx": "3.4",
+          "titre": "Izuna Uchiwa",
+          "niveau": 3,
+          "ancre": "Izuna_Uchiwa",
+          "texte": "Izuna Uchiwa éveilla son Mangekyô Sharingan peu de temps après celui de Madara. On ne sait pas quelles étaient les capacités individuelles de chacun de ses yeux. Avant de mourir, Izuna confia ses yeux à Madara afin de restaurer sa vision et ainsi protéger le clan Uchiwa de l'extinction. Bien qu'Izuna donna ses yeux volontairement, Madara était populairement soupçonné d'avoir pris les yeux contre la volonté d'Izuna."
+        },
+        {
+          "idx": "3.5",
+          "titre": "Sasuke Uchiwa",
+          "niveau": 3,
+          "ancre": "Sasuke_Uchiwa",
+          "texte": "Sasuke Uchiwa éveilla son Mangekyô Sharingan après la mort de son frère aîné, Itachi Uchiwa. Avec son Mangekyô Sharingan gauche, il peut lancer Amaterasu. Avec son Mangekyô Sharingan droit, il peut façonner les flammes ou les éteindre. Étant donné qu'il a éveillé ses deux Mangekyô Sharingan, il peut utiliser le Susanô. Le tomoe droit de son Mangekyô Sharingan lui confère une plus grande fluidité dans ses mouvements lors des combats. Sasuke fut d'abord réticent à l'idée de transplanter les yeux d'Itachi et à obtenir le Mangekyô Sharingan Éternel, affirmant que sa vue était différente de celle d'Itachi. Plus tard, il décida qu'il avait besoin d'une augmentation de force pour tuer Naruto Uzumaki et suite à une grave détérioration de sa vue due à leur sur-utilisation, Sasuke accepta la greffe des yeux de son frère.\nAprès avoir acquis la moitié du chakra de Hagoromo Ôtsutsuki, l'œil gauche de Sasuke évolua davantage, cette fois en un Rinnegan, qu'il est évidemment incapable de désactiver."
+        },
+        {
+          "idx": "3.6",
+          "titre": "Sarada Uchiwa",
+          "niveau": 3,
+          "ancre": "Sarada_Uchiwa",
+          "texte": "Sarada Uchiwa éveilla son Mangekyô Sharingan lorsque Boruto fut accusé d'avoir tué le Septième Hokage en raison du souhait de Kawaki, craignant en larmes pour la sécurité de Boruto. Lors de son combat contre Ryû, Sarada utilisa le pouvoir du Magekyô Sharingan qui consite à créer un tunnel spatio-temporel qui aspira la Limaille de Fer de Ryû."
+        },
+        {
+          "idx": "3.7",
+          "titre": "Shisui Uchiwa",
+          "niveau": 3,
+          "ancre": "Shisui_Uchiwa",
+          "texte": "Shisui Uchiwa éveilla son Mangekyô Sharingan après avoir « laissé mourir son ami ». Avec chacun de ses yeux, il pouvait utiliser Kotoamatsukami, un puissant genjutsu qui manipule les pensées d'une cible si parfaitement que personne, y compris la cible, n'aurait la moindre idée qu'il est contrôlé. Cependant, cette technique ne peut être utilisée avec le même œil qu'après un certain temps de récupération. Dans l'anime, l'éveil du Mangekyô Sharingan dans les deux yeux lui permit d'utiliser le Susanô.\nLorsque Shisui tenta d'utiliser Kotoamatsukami afin d'éviter le Massacre du Clan Uchiwa, son Mangekyô Sharingan droit fut volé par Danzô Shimura, qui estima que le plan de Shisui était futile et qu'il souhaitait protéger le village à sa manière. Craignant que Danzô ne prenne aussi son autre œil, Shisui le confia à son meilleur ami, Itachi Uchiwa, et le pria de l'utiliser pour sauver Konoha. Danzô transplanta l'œil qu'il avait volé en lui-même et l'utilisa au fil des années pour manipuler les autres, en utilisant le chakra de Hashirama Senju pour réduire le temps de recharge de Kotoamatsukami. Danzô détruisit l'œil avant sa mort afin que personne d'autre ne puisse l'obtenir. Itachi transplanta l'œil qui lui fut donné dans un corbeau qu'il prévoyait d'utiliser pour ré-allier son frère, Sasuke, avec Konoha. Il l'utilisa sur lui-même à la place, afin de se libérer de l'emprise qu'exerçait Kabuto Yakushi sur lui. Itachi incinéra ensuite le corbeau pour que personne d'autre ne puisse obtenir l'œil."
+        },
+        {
+          "idx": "3.8",
+          "titre": "Indra Ôtsutsuki",
+          "niveau": 3,
+          "ancre": "Indra_Ôtsutsuki",
+          "texte": "Dans le manga, Indra Ôtsutsuki fut le premier utilisateur du Mangekyô Sharingan. Les capacités individuelles de chacun de ses yeux étaient inconnues, mais il était capable d'utiliser Susanô. Dans l'anime, il éveilla son Mangekyô Sharingan après avoir tué ses deux disciples. Avec son œil gauche, il était capable d'utiliser Hinokagutsuchi pour produire des flammes noires."
+        },
+        {
+          "idx": "3.9",
+          "titre": "Shin Uchiwa",
+          "niveau": 3,
+          "ancre": "Shin_Uchiwa",
+          "texte": "Cette forme de Mangekyô Sharingan était uniquement partagée entre plusieurs individus (mais connectés). Avec son œil droit, Shin Uchiwa était capable de manipuler par télékinésie tous les objets après les avoir marqués d'une marque spéciale qu'il place par contact direct avec sa main. Les clones de Shin, étant génétiquement identiques à lui, possédaient la même forme de Mangekyô Sharingan et les mêmes pouvoirs télékinétiques. Une créature partage également la même conception du Mangekyô Sharingan avec Shin."
+        },
+        {
+          "idx": "3.10",
+          "titre": "Fugaku Uchiwa",
+          "niveau": 3,
+          "ancre": "Fugaku_Uchiwa",
+          "texte": "Dans l'anime, Fugaku Uchiwa éveilla son Mangekyô Sharingan après avoir été témoin du sacrifice de son cher ami lors de la Troisième Grande Guerre Shinobi. Bien qu'on ne sache pas grand chose sur son Mangekyô Sharingan, Fugaku était convaincu qu'il était suffisamment puissant pour contrôler Kyûbi."
+        },
+        {
+          "idx": "3.11",
+          "titre": "Hagoromo Ôtsutsuki",
+          "niveau": 3,
+          "ancre": "Hagoromo_Ôtsutsuki",
+          "texte": "Dans l'anime, Hagoromo Ôtsutsuki éveilla ce pouvoir après avoir risqué la vie de son frère Hamura pour le débarrasser du contrôle qu'exerçait Kaguya sur lui ; cependant, la conception de son Mangekyô Sharingan est inconnue car ses yeux ont évolué en Rinnegan en même temps. Bien que les techniques individuelles de ses yeux soient inconnues, il réussit à créer un corps complet unique et massif — Susanô, qui avait à peu près la taille de Jûbi."
+        },
+        {
+          "idx": "5",
+          "titre": "Anecdotes",
+          "niveau": 2,
+          "ancre": "Anecdotes",
+          "texte": "À l'origine, dans l'anime, Itachi Uchiwa fut montré en utilisant des techniques exclusives au Mangekyô Sharingan sans l'avoir activé. Cela fut expliqué par le fait que Kishimoto n'avait pas encore révélé l'apparition du Mangekyô Sharingan dans le manga. La véritable forme du Mangekyô Sharingan fut vue pour la première fois sur Itachi, pendant que Sasuke se souvenait des événements qui avaient conduit au Massacre du clan Uchiwa alors qu'il combattait Naruto Uzumaki dans la Vallée de la Fin.\nBien qu'il ait largement utilisé son Mangekyô Sharingan pendant plus d'une décennie, Obito n'avait jamais présenté de signes de fatigue ou de détérioration de la vue. Cela provient peut-être du fait qu'il possède l'ADN de Hashirama Senju.\nLes manières dont un individu obtient le Mangekyô Sharingan sont presque parallèles à la façon dont un Uchiwa éveille son Sharingan classique pour la première fois, car les deux ont besoin d'émotions intenses pour les éveiller. Alors que le Sharingan nécessite simplement une émotion intense de toute sorte, le Mangekyô Sharingan, quant à lui, exige qu'une personne soit traumatisée par la mort d'un être cher.\nDans le manga, le Mangekyô Sharingan de Sasuke Uchiwa est le seul à avoir un schéma de couleurs inversé, avec une forme rouge et des iris noirs.\nSi une personne a du mal à se sentir attristée ou non par la mort d'une personne, elle ressentira une irritation des yeux, qui s'atténuera au fil du temps ou finira par éveiller le Mangekyô Sharingan, si elle finit par ressentir une véritable tristesse.\nDans le manga, le Mangekyô Sharingan d'Indra possède une forme tourbillonnante. Cela fut également représenté et adapté dans l'anime. Cependant, plus tard dans l'anime, son Mangekyô Sharingan possède la même forme que celui de Sasuke.\nDans l'artwork de Boruto, Sarada est représentée avec un dôjutsu qui rappelle le Mangekyô Sharingan.\nBien que le Mangekyô Sharingan de Fugaku soit un secret, sa forme fut représentée dans un livre à la Bibliothèque de Konoha.\nIl est laissé entendre que le tomoe droit du Mangekyô Sharingan est connecté à Indra car Madara (à juste titre) supposa que Sasuke et lui partageaient des liens au-delà du sang en raison de l'éveil du tomoe droit du Mangekyô Sharingan, même s'il n'était pas en mesure de déterminer leur lien précis."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "l-equipage-d-expedition",
+      "name": "L’équipage d’Expédition",
+      "type": "status",
+      "universe": "One Piece",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "soshuga",
+      "name": "Sōshūga",
+      "type": "artifact",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Sôshûga",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/S%C3%B4sh%C3%BBga",
+      "refus": null,
+      "descFr_len": 359,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Nunchaku de Gaï",
+          "car": 535
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 3,
+        "intertitres_declares": 2,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 535,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Nunchaku de Gaï",
+          "niveau": 2,
+          "ancre": "Nunchaku_de_Gaï",
+          "texte": "Chaque poignée de ces armes est minutieusement sculptée en forme de créature ressemblant à un dragon oriental, avec des écailles gravées sur leur longueur et une tête près de la base de la poignée, tout en semblant être reliée par une longueur de corde torsadée.\nLes armes furent utilisées pour la première fois durant les dernières phases de la Quatrième Grande Guerre Shinobi mais, au cours de la confrontation avec Tobi, elles furent rapidement absorbées par ce dernier. Après la guerre, Gaï maniait à nouveau une paire de nunchaku."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "azami",
+      "name": "Azami",
+      "type": "character",
+      "universe": "Naruto",
+      "route": "titre-exact",
+      "titreFr": "Azami",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/Azami",
+      "refus": null,
+      "descFr_len": 420,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Histoire",
+          "car": 401
+        },
+        {
+          "idx": "2",
+          "titre": "Personnalité",
+          "car": 216
+        },
+        {
+          "idx": "3",
+          "titre": "Apparence",
+          "car": 246
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 3,
+        "intertitres_declares": 3,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 3,
+      "caracteres": 863,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Histoire",
+          "niveau": 2,
+          "ancre": "Histoire",
+          "texte": "Elle fut la seule qui était persuadée que son grand-père était toujours en vie. Lorsqu'elle rencontra Naruto, Rock Lee et Tenten devant la tombe de son grand-père, ceux-ci lui demandèrent si elle maîtrisait les techniques de son grand-père, elle leur répondit avec conviction que celui-ci était vivant, et qu'à chaque fois qu'elle mettait des boulettes de riz sur sa tombe, celui-ci venait les manger."
+        },
+        {
+          "idx": "2",
+          "titre": "Personnalité",
+          "niveau": 2,
+          "ancre": "Personnalité",
+          "texte": "C'est une petite fille optimiste, douce et dévouée. Elle n'avait jamais cru une seule fois que son grand-père était mort, ceci est montré par le fait qu'elle lui mettait chaque jour des boulettes de riz sur sa tombe."
+        },
+        {
+          "idx": "3",
+          "titre": "Apparence",
+          "niveau": 2,
+          "ancre": "Apparence",
+          "texte": "Azami est une jeune fille aux cheveux marron clair coiffés en queue de cheval et des franges latérales à longueur d'épaule. Elle a aussi des yeux gris et de fins sourcils. Elle porte une veste jaune et noire avec un haut col et un pantalon rouge."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "frauce-kingdom",
+      "name": "Royaume de Frauce",
+      "type": "place",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Royaume de Frauce",
+      "identite": "titre-egal",
+      "url": "https://onepiece.fandom.com/fr/wiki/Royaume_de_Frauce",
+      "refus": null,
+      "descFr_len": 157,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 6,
+        "intertitres_declares": 4,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "tailed-beast-ball-rasenshuriken",
+      "name": "Tailed Beast Ball Rasenshuriken",
+      "type": "power",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Orbe Shuriken Démoniaque",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Orbe_Shuriken_D%C3%A9moniaque",
+      "refus": null,
+      "descFr_len": 233,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 2,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "caretaker-of-the-konoha-orphanage",
+      "name": "Caretaker of the Konoha Orphanage",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": "recherche-fr",
+      "titreFr": "Konoha",
+      "identite": "meme-nom",
+      "url": "https://naruto.fandom.com/fr/wiki/Konoha",
+      "refus": "page plus générale — page plus générale que l'entité : « Konoha » ne couvre pas « Caretaker of the Konoha Orphanage »",
+      "descFr_len": 408,
+      "etat": "refus"
+    },
+    {
+      "slug": "sakon-and-ukon-s-kekkei-genkai",
+      "name": "Sakon and Ukon's Kekkei Genkai",
+      "type": "skill",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 184,
+      "etat": "refus"
+    },
+    {
+      "slug": "sannin-legendaire",
+      "name": "Sannin légendaire",
+      "type": "status",
+      "universe": "Naruto",
+      "route": "recherche-fr",
+      "titreFr": "Sannin",
+      "identite": "meme-nom",
+      "url": "https://naruto.fandom.com/fr/wiki/Sannin",
+      "refus": "page plus générale — page plus générale que l'entité : « Sannin » ne couvre pas « Sannin légendaire »",
+      "descFr_len": 547,
+      "etat": "refus"
+    },
+    {
+      "slug": "bateau-a-dials",
+      "name": "Bateau à Dials",
+      "type": "artifact",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Bateau à Dials",
+      "identite": "titre-egal",
+      "url": "https://onepiece.fandom.com/fr/wiki/Bateau_%C3%A0_Dials",
+      "refus": null,
+      "descFr_len": 566,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Usage",
+          "car": 397
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 2,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 397,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Usage",
+          "niveau": 2,
+          "ancre": "Usage",
+          "texte": "En raison de son poids, un bateau à Dial est très lent par rapport à un Waver (qui est beaucoup plus petit). Pour compenser sa taille, un grand Breath Dial peut être utilisé pour déplacer le bateau de manière plus efficace. Grâce à cela le Corbeau a pu déplacer le Vogue Merry sur la Milky Road en utilisant deux Breath Dial malgré qu'il soit plus petit que l'ancien bateau des Chapeaux de Paille."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "satetsu",
+      "name": "Satetsu",
+      "type": "character",
+      "universe": "Naruto",
+      "route": "titre-exact",
+      "titreFr": "Satetsu",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/Satetsu",
+      "refus": null,
+      "descFr_len": 441,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Apparence",
+          "car": 141
+        },
+        {
+          "idx": "2.1",
+          "titre": "Invasion de Konoha.",
+          "car": 213
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 5,
+        "intertitres_declares": 4,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 2,
+      "caracteres": 354,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Apparence",
+          "niveau": 2,
+          "ancre": "Apparence",
+          "texte": "Satetsu est un homme chauve avec des yeux sombres et une barbiche. Il porte le gilet de protection standard de Suna et une paire de sandales."
+        },
+        {
+          "idx": "2.1",
+          "titre": "Invasion de Konoha.",
+          "niveau": 3,
+          "ancre": "Invasion_de_Konoha.",
+          "texte": "Satetsu fut l'un des nombreux ninjas à parcourir le Pays du Vent, à la recherche du Quatrième Kazekage. Il fut l'un des premiers à découvrir le corps en décomposition du quatrième du nom et de ses gardes du corps."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "takigakure",
+      "name": "Takigakure",
+      "type": "place",
+      "universe": "Naruto",
+      "route": "titre-exact",
+      "titreFr": "Taki",
+      "identite": "redirection-declaree",
+      "url": "https://naruto.fandom.com/fr/wiki/Taki",
+      "refus": null,
+      "descFr_len": 508,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Histoire",
+          "car": 1743
+        },
+        {
+          "idx": "2.1",
+          "titre": "Cachette de l'Eau des Héros",
+          "car": 149
+        },
+        {
+          "idx": "2.2",
+          "titre": "Grottes de la cascade",
+          "car": 186
+        },
+        {
+          "idx": "2.3",
+          "titre": "Résidence du chef du village",
+          "car": 434
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 6,
+        "intertitres_declares": 5,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 4,
+      "caracteres": 2512,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Histoire",
+          "niveau": 2,
+          "ancre": "Histoire",
+          "texte": "Au moment de la formation du village, le village chargea Kakuzu d'assassiner Hashirama Senju, le premier Hokage. Face à la puissance de l'utilisateur du Mokuton, Kakuzu revint en échec. Malgré le grand danger auquel il a été confronté durant la mission, ce qui l'attendait lors son retour dans son village fut la stigmatisation et la punition sévère associées à l'échec de l'objectif. Le village imputa la faute au shinobi qui avait mis sa vie en jeu pour son village. Kakuzu en vint à tenir une haine violente envers Taki, et décida alors de s'échapper de son emprisonnement. Dans sa fuite du village, Kakuzu tua les anciens du village, prit leur cœur et s'enfuit, connaissant les techniques interdites les plus prisées du village.\nHashirama Senju offrit Nanabi au village comme un gage de paix, ce qui en fait le seul village en dehors des cinq grands villages à détenir un bijû. Ce bijû fut à un moment donné scellé dans Fû, qui fut finalement capturée par l'Akatsuki, et extrait, entraînant la mort de son jinchûriki. Dans l'anime, Deidara dit à Naruto que Fû avait été haïe et délaissée par son village, et que les citoyens étaient heureux qu'elle ait été capturée et tuée.\nDans l'anime, on voit que Taki est construit autour d'un grand arbre. Il a aussi une grande chute d'eau comme point de repère. Le village est reconnu pour être capable de produire l'Eau des Héros tous les cent ans, qui donne à celui qui la boit dix fois son niveau de chakra ordinaire ; cependant, la tension dû à son utilisation peut devenir fatale, semblable aux stéroïdes.\nAprès la déclaration de la Quatrième Grande Guerre Ninja par Tobi, Kabuto Yakushi assassina trois ninjas de Taki afin de tester son contrôle sur ses nouveaux pouvoirs hérités d'Orochimaru."
+        },
+        {
+          "idx": "2.1",
+          "titre": "Cachette de l'Eau des Héros",
+          "niveau": 3,
+          "ancre": "Cachette_de_l'Eau_des_Héros",
+          "texte": "L'Eau des Héros est cachée dans une petite structure en forme de pavillon, située profondément dans les racines du grand arbre, au centre du village."
+        },
+        {
+          "idx": "2.2",
+          "titre": "Grottes de la cascade",
+          "niveau": 3,
+          "ancre": "Grottes_de_la_cascade",
+          "texte": "Dans l'anime, pour accéder au village, il faut passer par un système de grottes sous-marines, sous la grande cascade. La sortie du système de grottes mène au grand lac au milieu de Taki."
+        },
+        {
+          "idx": "2.3",
+          "titre": "Résidence du chef du village",
+          "niveau": 3,
+          "ancre": "Résidence_du_chef_du_village",
+          "texte": "Dans l'anime, Shibuki, le chef du village, réside dans une petite cabane en bois, qui est construite près de quelques arbres, qui a un signe avec un kanji pour Taki (滝, signifiant littéralement : Cascade) au-dessus de l'entrée. L'intérieur semble plutôt spartiate, car il ne contient pas beaucoup d'espace ou de meubles nécessaires, comme une table ou des chaises. Le chef du village est plutôt assis sur une estrade surélevée au sol."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "elbow",
+      "name": "Elbow",
+      "type": "power",
+      "universe": "Naruto",
+      "route": "titre-exact",
+      "titreFr": "Elbow",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/Elbow",
+      "refus": null,
+      "descFr_len": 274,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "car": 332
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 2,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 332,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "niveau": 2,
+          "ancre": "Anecdotes",
+          "texte": "Comme beaucoup de techniques du Quatrième Raikage, la technique Raiton - Lariat de son frère Killer B et le Ranton - Laser Circus de Darui, cette technique a un nom anglais avec des kanji qui se rapprochent de la prononciation. Habituellement, les kanji seraient prononcés « omoryûbaku », « jûryûbaku », « omoryûbô » ou « jûryûbô »."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "captain-of-the-konoha-military-police-force",
+      "name": "Captain of the Konoha Military Police Force",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": "recherche-fr",
+      "titreFr": "Konoha",
+      "identite": "meme-nom",
+      "url": "https://naruto.fandom.com/fr/wiki/Konoha",
+      "refus": "page plus générale — page plus générale que l'entité : « Konoha » ne couvre pas « Captain of the Konoha Military Police Force »",
+      "descFr_len": 407,
+      "etat": "refus"
+    },
+    {
+      "slug": "tenseigan",
+      "name": "Tenseigan",
+      "type": "skill",
+      "universe": "Naruto",
+      "route": "titre-exact",
+      "titreFr": "Tenseigan",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/Tenseigan",
+      "refus": null,
+      "descFr_len": 343,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 1,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "team-saya",
+      "name": "Team Saya",
+      "type": "status",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Équipe Saya",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/%C3%89quipe_Saya",
+      "refus": null,
+      "descFr_len": 148,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 0,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "look-special",
+      "name": "Look Spécial",
+      "type": "artifact",
+      "universe": "One Piece",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "morollon",
+      "name": "Morollon",
+      "type": "character",
+      "universe": "One Piece",
+      "route": "langlink",
+      "titreFr": "Mororon",
+      "identite": "meme-nom",
+      "url": "https://onepiece.fandom.com/fr/wiki/Mororon",
+      "refus": "identité sur squelette phonétique seul — « Mororon » n'a aucun mot commun avec « Morollon »",
+      "descFr_len": 42,
+      "etat": "refus"
+    },
+    {
+      "slug": "judo-island",
+      "name": "Île du Judo",
+      "type": "place",
+      "universe": "One Piece",
+      "route": "slug",
+      "titreFr": "Judo Island",
+      "identite": "slug-egal",
+      "url": "https://onepiece.fandom.com/fr/wiki/Judo_Island",
+      "refus": null,
+      "descFr_len": 427,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Géographie",
+          "car": 177
+        },
+        {
+          "idx": "2",
+          "titre": "Histoire",
+          "car": 153
+        },
+        {
+          "idx": "3",
+          "titre": "Futilités",
+          "car": 157
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 5,
+        "intertitres_declares": 3,
+        "manques": []
+      },
+      "retirees_pour_redondance": [
+        {
+          "titre": "Histoire",
+          "motif": "1 mot(s) plein(s) neuf(s) — déjà dit par le texte servi"
+        }
+      ],
+      "contradictions": [],
+      "retenues": 2,
+      "caracteres": 334,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Géographie",
+          "niveau": 2,
+          "ancre": "Géographie",
+          "texte": "On sait peu de choses sur la géographie de l'île, mais l'île abrite une montagne escarpée avec un sommet apparemment plat. Le mot \"Ju\" (柔) est gravé sur le flanc de la montagne."
+        },
+        {
+          "idx": "3",
+          "titre": "Futilités",
+          "niveau": 2,
+          "ancre": "Futilités",
+          "texte": "L'île suit le même thème que l'Île Karaté, où Jerry a maîtrisé l'art de la boxe et pas du Karaté. Sur Judo Island, on apprend à maîtriser le tennis de table."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "wind-release-whirlwind-fist",
+      "name": "Wind Release: Whirlwind Fist",
+      "type": "power",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Fûton - Poing Tourbillon",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/F%C3%BBton_-_Poing_Tourbillon",
+      "refus": null,
+      "descFr_len": 328,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "car": 169
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 1,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 169,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "niveau": 2,
+          "ancre": "Anecdotes",
+          "texte": "Dans Naruto Shippûden: Ultimate Ninja 5, Asuma frappe son adversaire avec une grande rafale de vent qui est imprégnée de flammes, rendant la technique plus destructrice."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "construction-worker",
+      "name": "Construction worker",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "kurama-clan-s-kekkei-genkai",
+      "name": "Kurama Clan's Kekkei Genkai",
+      "type": "skill",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 451,
+      "etat": "refus"
+    },
+    {
+      "slug": "counter-terrorism-division",
+      "name": "Counter-Terrorism Division",
+      "type": "status",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 223,
+      "etat": "refus"
+    },
+    {
+      "slug": "handheld-kunai-launcher",
+      "name": "Handheld Kunai Launcher",
+      "type": "artifact",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Lance-Kunaï Portatif",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Lance-Kuna%C3%AF_Portatif",
+      "refus": null,
+      "descFr_len": 376,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "car": 183
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 3,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 183,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "niveau": 2,
+          "ancre": "Anecdotes",
+          "texte": "Cette arme semble suivre le design classique des armes à projectiles de Naruto ; Bien qu'il présente de fortes similitudes avec une mitrailleuse, il lance des kunaï au lieu de balles."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "mermaid",
+      "name": "Mermaid",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 197,
+      "etat": "refus"
+    },
+    {
+      "slug": "raijin-island",
+      "name": "Île Raijin",
+      "type": "place",
+      "universe": "One Piece",
+      "route": "slug",
+      "titreFr": "Île de Raijin",
+      "identite": "meme-nom",
+      "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_de_Raijin",
+      "refus": null,
+      "descFr_len": 348,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Description",
+          "car": 761
+        },
+        {
+          "idx": "3.1.1",
+          "titre": "Arc Post-Marine Ford",
+          "car": 650
+        },
+        {
+          "idx": "3.2.1",
+          "titre": "Arc Punk Hazard",
+          "car": 450
+        },
+        {
+          "idx": "4",
+          "titre": "Futilités",
+          "car": 685
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 9,
+        "intertitres_declares": 8,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 4,
+      "caracteres": 2546,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Description",
+          "niveau": 2,
+          "ancre": "Description",
+          "texte": "L'île semble très petite au niveau superficie. Elle paraît beaucoup moins grande que Punk Hazard ou Little Garden.\nÀ cause du climat qui est très hostile aussi bien aux plantes, animaux et humains, fait que rien n'y vit (aucun être vivant ne peux supporter cet environnement). Il ne semble y avoir que de la roche uniquement.\nC'est l'un des lieux les plus invivables de la série à cause des nombreux éclairs qui s'abattent en permanence sur l'île. C'est peut être un phénomène purement naturel (le climat est très variable sur Grand Line ainsi que dans le Nouveau Monde) comme un phénomène dû à l'homme par exemple à Punk Hazard où il fait une partie chaud et une partie froid à cause du combat d'Aokiji et Akainu qui a influencé les conditions météorologiques."
+        },
+        {
+          "idx": "3.1.1",
+          "titre": "Arc Post-Marine Ford",
+          "niveau": 4,
+          "ancre": "Arc_Post-Marine_Ford",
+          "texte": "Raijin Island a d'abord été considérée comme une halte pour l'Équipage des Moines Dépravés dans le Nouveau Monde. Après qu'Urouge ait constaté qu'il était impossible d'accoster sur l'île, le mât de son navire fût endommagé à cause d'un éclair qui le foudroya. Alors qu'il est intimidé par les éclairs sans fin de l'île, Urouge voit une embarcation avec un peu de lumière se diriger vers son navire avec quelques individus dont on ne voient pas les visages. C'est alors qu'une étrange vieille femme interpelle Urouge, et lui demande s'il est intéressé qu'elle lui fournisse un parapluie. Nous ignorons cependant si elle le faisait gratuitement ou non."
+        },
+        {
+          "idx": "3.2.1",
+          "titre": "Arc Punk Hazard",
+          "niveau": 4,
+          "ancre": "Arc_Punk_Hazard",
+          "texte": "Raijin Island a été visitée par Smoker et ses hommes, car le vice-amiral de la Marine en avait déduit que les Pirates du Chapeau de Paille auraient progressé jusqu'à cet endroit depuis l'Île des Hommes-Poissons, compte tenu du dangereux sens de l'aventure de leur capitaine pour préparer une embuscade. Malheureusement pour lui, il ignorait que les Chapeaux de Paille avaient été attrapés par un White Strom qui les avait attirés près de Punk Hazard."
+        },
+        {
+          "idx": "4",
+          "titre": "Futilités",
+          "niveau": 2,
+          "ancre": "Futilités",
+          "texte": "Weatheria a un livre qui détaille la météo unique de Raijin Island.\nRaiden ou Raijin est le dieu du tonnerre et des éclairs de la mythologie japonaise (Rai veut dire tonnerre et Jin signifie dieu).\nLe climat de l'île semble être basé sur un phénomène atmosphérique localisé au fleuve de Rio Catatumbo au Nord-Ouest du Venezuela appelé Relámpago del Catatumbo (foudre de Catatumbo), où des éclairs très fréquents et puissants illuminent le ciel et frappent 280 fois par heure, 160 nuits par an. Elle est également connue sous le nom de \"tempête éternelle\".\nKasa qui arrive par barque jusqu'au bateau d'Urouge peut faire penser à Charon, le passeur des enfers dans la mythologie grecque."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "water-release-water-fang-bullet",
+      "name": "Water Release: Water Fang Bullet",
+      "type": "power",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Suiton - Balle de Croc d'Eau",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Suiton_-_Balle_de_Croc_d'Eau",
+      "refus": null,
+      "descFr_len": 328,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 1,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "bodyguard",
+      "name": "Bodyguard",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Garde du Corps de Tenzen",
+      "identite": null,
+      "url": "https://naruto.fandom.com/fr/wiki/Garde_du_Corps_de_Tenzen",
+      "refus": "pont nu sans preuve de nom",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "ketsuryugan",
+      "name": "Ketsuryūgan",
+      "type": "skill",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Ketsuryûgan",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/Ketsury%C3%BBgan",
+      "refus": null,
+      "descFr_len": 206,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "car": 405
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 1,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 405,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "niveau": 2,
+          "ancre": "Anecdotes",
+          "texte": "Quand il est écrit 血流 (ketsuryû), signifie « flux sanguin ».\nLa description en apparence et en puissance du genjutsu du Ketsuryûgan est similaire au Kekkei Genkai de Ranmaru dans la Mission d'Élimination de la Famille Kurosuki. On ne sait pas si les deux dôjutsu sont identiques. Toutefois, la représentation du Ketsuryûgan dans l'anime a montré une différence de conception claire entre les deux dôjutsu."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "l-equipage-d-alvida",
+      "name": "L’équipage d’Alvida",
+      "type": "status",
+      "universe": "One Piece",
+      "route": "recherche-fr",
+      "titreFr": "Alvida",
+      "identite": "meme-nom",
+      "url": "https://onepiece.fandom.com/fr/wiki/Alvida",
+      "refus": "page plus générale — page plus générale que l'entité : « Alvida » ne couvre pas « L’équipage d’Alvida »",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "exploding-sphere",
+      "name": "Exploding Sphere",
+      "type": "artifact",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Sphère Explosive",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Sph%C3%A8re_Explosive",
+      "refus": null,
+      "descFr_len": 349,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "car": 290
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 2,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 290,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "niveau": 2,
+          "ancre": "Anecdotes",
+          "texte": "Bien qu'innommée dans l'anime et le manga, elle fut nommée dans Naruto Shippûden: Ultimate Ninja 4.\nDans l'anime, un ninja de Kumo, non-identifié, qui fut réincarné par Kabuto, utilisa des bombes similaires (mais elles étaient plus pointues et n'avaient pas de parchemin explosif sur elle)."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "tomaru-minakura",
+      "name": "Tomaru Minakura",
+      "type": "character",
+      "universe": "Naruto",
+      "route": "titre-exact",
+      "titreFr": "Tomaru Minakura",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/Tomaru_Minakura",
+      "refus": null,
+      "descFr_len": 605,
+      "sections_brutes": [
+        {
+          "idx": "2",
+          "titre": "Apparence",
+          "car": 361
+        },
+        {
+          "idx": "4",
+          "titre": "Anecdotes",
+          "car": 195
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 6,
+        "intertitres_declares": 5,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 2,
+      "caracteres": 556,
+      "sections": [
+        {
+          "idx": "2",
+          "titre": "Apparence",
+          "niveau": 2,
+          "ancre": "Apparence",
+          "texte": "Tomaru porte des cheveux courts et noirs avec une protubérance caractéristique à l'arrière. Ses yeux noirs sont complétés par deux marques sombres. Sur le plan vestimentaire, il opte pour un kimono violet clair à manches courtes avec des plis dans le bas. Autour de la taille, il porte un obi violet associé à un pantalon noir, et des sandales ornent ses pieds."
+        },
+        {
+          "idx": "4",
+          "titre": "Anecdotes",
+          "niveau": 2,
+          "ancre": "Anecdotes",
+          "texte": "Écrit 唐丸, « Tomaru » fait référence à une race japonaise de poulet connue pour sa longue corneille, tandis que le nom de famille Minakura s'écrit avec les kanji signifiant « tout » et « trésor »."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "toroa-island",
+      "name": "Île de Toroa",
+      "type": "place",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Île de Toroa",
+      "identite": "titre-egal",
+      "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_de_Toroa",
+      "refus": null,
+      "descFr_len": 169,
+      "sections_brutes": [
+        {
+          "idx": "2",
+          "titre": "Histoire",
+          "car": 300
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 6,
+        "intertitres_declares": 4,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 300,
+      "sections": [
+        {
+          "idx": "2",
+          "titre": "Histoire",
+          "niveau": 2,
+          "ancre": "Histoire",
+          "texte": "Il n'y a pas beaucoup d'informations concernant l'histoire de cette île, sauf qu'un pirate nommé Byron y est originaire; il était un descendant d'une longue lignée de musiciens. Il a finalement quitté son île et a voyagé sur Grand Line, où il a été capturé et vendu comme esclave aux Nobles Mondiaux."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "fruit-du-riz-gluant",
+      "name": "Fruit du Riz Gluant",
+      "type": "power",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Mochi Mochi no Mi",
+      "identite": "redirection-declaree",
+      "url": "https://onepiece.fandom.com/fr/wiki/Mochi_Mochi_no_Mi",
+      "refus": null,
+      "descFr_len": 422,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Étymologie",
+          "car": 195
+        },
+        {
+          "idx": "2",
+          "titre": "Apparence",
+          "car": 334
+        },
+        {
+          "idx": "3",
+          "titre": "Forces et Faiblesses",
+          "car": 1701
+        },
+        {
+          "idx": "4",
+          "titre": "Usage",
+          "car": 1631
+        },
+        {
+          "idx": "4.1",
+          "titre": "Techniques",
+          "car": 2943
+        },
+        {
+          "idx": "4.1.1",
+          "titre": "Techniques Éveillées",
+          "car": 1546
+        },
+        {
+          "idx": "4.2",
+          "titre": "Techniques hors-série",
+          "car": 1372
+        },
+        {
+          "idx": "4.2.1",
+          "titre": "Techniques hors-série éveillées",
+          "car": 1791
+        },
+        {
+          "idx": "6",
+          "titre": "Futilités",
+          "car": 923
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 14,
+        "intertitres_declares": 10,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 9,
+      "caracteres": 12436,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Étymologie",
+          "niveau": 2,
+          "ancre": "Étymologie",
+          "texte": "\"Mochi\" est le nom d'un gâteau au riz gluant, et peut également être descriptif des choses collantes en général. Les japonais se servent de cette expression pour désigner tout ce qui est visqueux"
+        },
+        {
+          "idx": "2",
+          "titre": "Apparence",
+          "niveau": 2,
+          "ancre": "Apparence",
+          "texte": "Le One Piece Magazine Vol. 14 affiche l'apparence du Mochi Mochi no Mi. Le Fruit est de couleur blanche, et ressemble à une grosse boule montée sur une fine base. Le fruit possède sur lui les spirales classiques des Fruits du Démon. Il a également la tige usuelle des Fruits du Démon, qui est fine et forme une petite boucle à la fin."
+        },
+        {
+          "idx": "3",
+          "titre": "Forces et Faiblesses",
+          "niveau": 2,
+          "ancre": "Forces_et_Faiblesses",
+          "texte": "L'utilisateur a la possibilité de contrôler de grandes quantités de mochi ; le mochi est assez épais pour être utilisé comme une grosse arme contondante et est capable de piéger les gens, même les plus forts, en raison de son caractère collant, surtout s'il est habilité par le Haki de l'Armement. Son épaisseur et sa viscosité sont telles que les tirs de gros calibre sont complètement incapables de le percer.\nBien que de type Paramecia, il a montré les effets d'une puissance réelle de Logia : l'utilisateur actuel a pu se transformer en mochi pour bloquer les balles ou se reformer après que son corps ait été endommagé par une attaque explosive, voir même coupé en deux par une attaque. Jinbe note ce fruit comme un \"Paramecia spécial\". Contrairement à un pouvoir de Logia, le mochi est une substance artificielle au lieu d'un élément ou d'une force de la nature. Cependant, le fruit rend bien l'utilisateur intangible, la raison pour laquelle Charlotte Katakuri doit modifier la forme de son corps est que les attaques de Monkey D. Luffy sont infusées de haki de l'armement qui permet de toucher les personnes intangibles.\nComme avec tous les Fruits du Démon, celui-ci a le potentiel d'être \"éveillé\", ce qui permet à l'utilisateur de transformer le matériel inorganique autour de lui en mochi.\nCependant, le mochi perd beaucoup de son caractère collant si une quantité suffisante de liquide lui est appliquée, permettant à un adversaire piégé de s'en libérer; cela a été vu pour la première fois lorsque Jinbe utilisa le Gyojin Karate pour tremper la jambe de Katakuri, libérant ainsi Luffy pris au piège. Par ailleurs, l'utilisateur est affecté par les faiblesses standard des Fruits du Démon."
+        },
+        {
+          "idx": "4",
+          "titre": "Usage",
+          "niveau": 2,
+          "ancre": "Usage",
+          "texte": "Katakuri utilise son fruit en combat, et est capable de contrôler de petites ou grandes quantités de mochi avec une grande précision. Il a été montré étendre son membre en utilisant du mochi pour diverses tâches. Il étendit sa jambe pour former une arme contondante de type tentaculaire, extrêmement rapide, avec une grande partie imprégnée de Haki pour attaquer Monkey D.Luffy, en caoutchouc, et en même temps le piéger. Il l'a également utilisé pour sauver ses frères et sœurs, en étendant sa main pour sauver Charlotte Brûlée de ses ravisseurs ou sécuriser Charlotte Galette pendant que les Pirates de Big Mom chutaient du Château de Whole Cake.\nIl a également utilisé son fruit pour créer des bouchons d'oreille en mochi afin de supporter le cri de sa mère après que l'image de Mother Caramel a été brisée pendant la Tea Party. Il a distribué ces mêmes bouchons d'oreille à ses frères et sœurs. Il a également utilisé son mochi pour boucher les canons du Big Father de Capone Bege, les faisant exploser lorsqu'ils tiraient.\nIl peut également grâce à ce fruit reproduire les mêmes attaques que Luffy mais en plus efficace. En effet, alors que Luffy donne l'impression d'avoir plusieurs membres avec la vitesse, Katakuri peut créer plusieurs membres avec les mêmes caractéristiques que ceux de Luffy. De même, le gonflement du Gear Third de Luffy est imité chez Katakuri par une grosse quantité de mochi.\nEn tant qu'utilisateur éveillé de Fruit du Démon, Katakuri peut transformer les matériaux inorganiques environnant en mochi, en répandant la substance adhésive pour améliorer son champ d'attaques et capturer ses adversaires."
+        },
+        {
+          "idx": "4.1",
+          "titre": "Techniques",
+          "niveau": 3,
+          "ancre": "Techniques",
+          "texte": "Yanagi Mochi (柳（やなぎ）モチ, Yanagi Mochi signifiant littéralement \"Mochi Saule\") : Katakuri se crée plusieurs longues jambes fines en mochi et frappe son adversaire avec le talon de ses pieds, cette technique est utilisée pour la première fois contre Luffy dans le Mirror World, mais c'est à sa deuxième utilisation que Katakuri nomme cette attaque. Les jambes de Katakuri ressemblent à des branches de saules qui se plient, d'où le nom de la technique. Dans la traduction de Glénat, le nom de cette technique est \"Lanières Gluantes\".\nMochi Tsuki (モチ突（ツキ）, Mochi Tsuki) : Tout en brandissant son trident Mogura, Katakuri tord son bras en mochi à la manière d'une vis, puis relâche la compression en poussant vers l'avant, créant ainsi une poussée perçante puissante, capable de briser les murs et les sols. Lorsque cette technique atteint un être humain, elle peut le déchiqueter, comme lorsque Katakuri a blessé Luffy sur son flanc. Dans la traduction de Glénat, cette technique est nommée \"Lance Pâteuse\" ou \"Vrille-Mochi\".\nKaku Mochi (角（かく）モチ, Kaku Mochi signifiant littéralement \"Coin Mochi\") : Katakuri modifie la forme de ses bras et poings, leur donnant une géométrie très rectangulaire (avec des coins donc) en les imprégnant avec du Haki de l'Armement. Utilisé pour la première fois contre 2 des 3 chefs ayant vu sa véritable forme. Dans la traduction de Glénat, le nom de cette technique est \"Mochi-Cube\".\nNaguri Mochi (ナグリ餅, Naguri Mochi signifiant littéralement \"Battement du Mochi\") : Technique exclusive à l'animé, où après avoir modelé ses bras grâce à sa technique Kaku Mochi, Katakuri assène une rafale de coups de poings à son adversaire, suffisamment efficace et rapide pour contrer le Jet Culverin de Luffy. Dans la VF de l'animé la technique est traduite par \"Coup de poing du Mochi\".\nYaki Mochi (焼（ヤキ）餅（モチ）, Yaki Mochi traduit littéralement par \"Mochi grillé\") : Katakuri donne un coup de poing enduit de Haki à distance, l'avant-bras se détache du corps puis s'enflamme en direction de sa cible. Utilisé pour la première fois contre Luffy. Selon la traduction de Glénat, cette technique s'appelle \"Riz Gluant Enflammé\".\nZan Giri Mochi (斬（ザン）・切（ギリ）・餅（モチ）, Zan Giri Mochi) : Katakuri transforme son corps entier en Mochi et prend la forme d'un donut qui roule rapidement vers l'adversaire, une fois ce dernier à portée de main, Katakuri reprend sa forme normale et, avec la force centrifuge, lui porte un coup de la corde à linge avec son bras qu'il couvre de piques et l'enduit de Haki avec une force considérable, à noter que malgré qu'il soit enduit, son bras est toujours collant. Avec cette même technique, Katakuri peut faire tourner et allonger son bras pour ensuite l'écraser au sol, tout comme la technique Mochi Ginchaku, la force est telle qu'elle crée un cratère lors de l'impact. Utilisé pour la première fois contre Luffy en Snakeman. Dans la traduction de Glénat, cette attaque est nommée \"Perforation Gluante\"."
+        },
+        {
+          "idx": "4.1.1",
+          "titre": "Techniques Éveillées",
+          "niveau": 4,
+          "ancre": "Techniques_Éveillées",
+          "texte": "Nagare Mochi (流（なが）れモチ Nagare Mochi, signifiant littéralement \"Mochi Coulant\") : En utilisant ses pouvoirs éveillés, Katakuri transforme le sol en mochi, augmentant la portée de son champ de capture. Il a d'abord été utilisé pour capturer un Luffy insaisissable. Dans la traduction de Glénat, le nom de cette technique est \"Vague Gluante\".\nKagami Mochi (加々身（かがみ）モチ Kagami Mochi, signifiant littéralement \"Mochi Miroir\") : Katakuri, avec son éveil, transforme des parties du Mirror World en mochi, et les envoient sur son adversaire, enterrant ce dernier jusqu'à ce que suffocation s'en suive. Utilisé pour la première contre Luffy. Le Kagami mochi est un gâteau composé de 2 mochis avec parfois une orange amère par-dessus. Dans la traduction de Glénat, le nom de cette technique est \"Miroirs Mouvants\".\nAmadare Mochi (雨垂（あまだれ）モチ Amadare Mochi, signifiant littéralement \"Mochi Goutte de Pluie\") : Katakuri transforme des parties du Mirror World en fine colonne en mochi et l’envoie sur son adversaire. Utilisé pour la première contre Luffy. Dans la traduction de Glénat, le nom de cette technique est \"Pluie Gluante\".\nMochi Ginchaku (餅（モチ）吟（ギン）着（チャク） Mochi Ginchaku) : Version plus puissante du Chikara Mochi, Katakuri invoque plusieurs donuts en mochi autour de son adversaire puis tous les bras qui sortent foncent et se concentrent sur un même point. Cette technique est si puissante qu'elle laisse un trou béant au sol. Utilisé pour la première fois contre Luffy. Dans la traduction de Glénat, le nom de cette technique est \"Anémone Gluante\"."
+        },
+        {
+          "idx": "4.2",
+          "titre": "Techniques hors-série",
+          "niveau": 3,
+          "ancre": "Techniques_hors-série",
+          "texte": "Tori Mochi (鳥（とり）モチ, Tori Mochi) : Katakuri crée un fin fil de mochi et l'envoie à son adversaire, au contact, un filet se forme et piège l'adversaire. Technique vu uniquement dans l'anime face à Luffy en Gear Fourth. Le nom de la technique est un jeu de mots sur \"鳥もち\" (Torimochi) que l'on pourrait traduire par \"gluau\", il s'agit d'un piège qui consiste à enduire une branche de glu afin de piéger les oiseaux.\nMochi Hadan (モチ刃弾, Mochi Hadan, signifiant littéralement \"Mochi Arme à Feu\") : Katakuri transforme sa main en mochi et la remodèle en pistolet. Il renforce ensuite le bout de son index avec du Haki et le tire sur son adversaire à la vitesse d'une balle. Cette technique a été utilisée pour la première fois sur Luffy. Le nom de la technique est un jeu de mots sur le \"Mochi Hada\" (餅はだ, \"Peau de Mochi\"), un soin de la peau qui la faire luire pour la rendre douce comme une peau de bébé.\nMuso Mochi Hadan (無双モチ刃弾, Musō Mochi Hadan, signifiant littéralement \"Mochi Arme à Feu sans égal\") : Une version améliorée de Mochi Hadan, où Katakuri transforme son bras entier au lieu de la main en mochi et le remodèle en une mitrailleuse renforcée au Haki. De façon similaire, il tire des bouts de mochi renforcés au Haki vers son adversaire, de façon beaucoup plus répétée, à la façon d'une mitrailleuse. Cette technique a été utilisée pour la première fois sur Luffy."
+        },
+        {
+          "idx": "4.2.1",
+          "titre": "Techniques hors-série éveillées",
+          "niveau": 4,
+          "ancre": "Techniques_hors-série_éveillées",
+          "texte": "Kuzu Mochi (九頭モチ, Kuzu Mochi, signifiant littéralement \"Mochi à Neuf Têtes\"): Katakuri utilise ses pouvoirs éveillés pour créer neuf Musō Donuts transformés en Chikara Mochi. Il frappe ensuite son adversaire de façon répétée avec les neuf bras. Cette technique a été utilisée pour la première fois sur Luffy. Le nom de la technique est un jeu de mots sur le \"kuzumochi\" (葛餅), un type de mochi créé avec du kuzuko.\nKashiwa Mochi (拍手モチ, Kashiwa Mochi, signifiant littéralement \"Mochi Applaudissement\") : Katakuri utilise ses pouvoirs éveillés pour créer deux Musō Donuts transformés en Chikara Mochi ressemblant à deux bras géants. Il piège ensuite l'adversaire entre les deux mains et l'écrase, en faisant comme un applaudissement. Cette technique a été utilisée pour la première fois sur Luffy. Le nom de la technique est un jeu de mots sur le \"Kashiwa-mochi\" (葛餅), un mochi enroulé dans une feuille de chêne.\nMuso Kashiwa Mochi (無双拍手モチ, Musō Kashiwa Mochi, signifiant littéralement \"Mochi Applaudissement sans égal\") : Une version améliorée de Kashiwa Mochi, où Katakuri recouvre de Haki de l'Armement les deux bras et écrase l'adversaire entre les bras, comme s'il applaudissait de multiple fois. Cette technique a été utilisée pour la première fois sur Luffy.\nKuri Mochi (栗餅, Kuri Mochi, signifiant littéralement \"Mochi à la Châtaigne\") : Katakuri utilise ses pouvoirs éveillés pour créer un Musō Donuts géant qu'il remodèle pour créer des piques acérées et renforcées au Haki de l'Armement. Il tire ensuite les piques vers l'adversaire pour le transpercer. Cette technique a été utilisée pour la première fois sur Luffy. Le nom de la technique est un jeu de mots sur le \"kurimochi \" (栗餅), qui est un mochi de la forme d'une châtaigne et contenant de la gelée de châtaignes à l'intérieur."
+        },
+        {
+          "idx": "6",
+          "titre": "Futilités",
+          "niveau": 2,
+          "ancre": "Futilités",
+          "texte": "Dans des sketches de Vivre Card, il est révélé que Katakuri aurait dû manger le Kona Kona no Mi (\"Kona\" signifiant Farine), mais cela a été changé. Son rôle de Ministre de la Farine est cependant resté.\nLe Mochi Mochi no Mi est semblable au Beta Beta no Mi, la seule différence est que la substance produite par le Mochi Mochi no Mi est gluante en plus d'être collante, et est similaire au Suna Suna no Mi par rapport à sa faiblesse à l'eau.\nCe fruit a d'abord été introduit comme un Logia dans le Shonen Jump avant d'être qualifié de Paramecia dans le Tome 86.\nO-Tama peut également produire du Mochi grâce à son pouvoir, et son mochi peut apprivoiser les animaux. Katakuri n'a pour l'instant pas montré de capacité similaire.\nKagami Mochi : Gâteau composé de 2 mochis avec une orange amère par-dessus.\nMochi Kinchaku : du Mochi en forme de sac.\nMochitsuki : Cérémonie traditionnelle consistant en la fabrication de mochi."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "akatsuki-spy",
+      "name": "Akatsuki spy",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 394,
+      "etat": "refus"
+    }
+  ]
+}

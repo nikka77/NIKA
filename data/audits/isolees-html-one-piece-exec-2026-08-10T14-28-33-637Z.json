@@ -1,0 +1,648 @@
+{
+ "quand": "2026-08-10T14:29:26.957Z",
+ "tentees": 105,
+ "ecrites": 105,
+ "erreurs": 0,
+ "avant": {
+  "aretes": 16910,
+  "isolees": 706,
+  "isoleesUnivers": 410
+ },
+ "apres": {
+  "aretes": 17015,
+  "isolees": 580,
+  "isoleesUnivers": 284
+ },
+ "fichesDesisolees": [
+  {
+   "name": "Giberson",
+   "slug": "giberson",
+   "type": "character"
+  },
+  {
+   "name": "Île Obscuria",
+   "slug": "kuraigana-island",
+   "type": "place"
+  },
+  {
+   "name": "Uholisia",
+   "slug": "uholisia",
+   "type": "character"
+  },
+  {
+   "name": "Ultraking",
+   "slug": "ultraking",
+   "type": "character"
+  },
+  {
+   "name": "Furrari",
+   "slug": "furrari",
+   "type": "character"
+  },
+  {
+   "name": "Quatres Empereurs",
+   "slug": "quatres-empereurs",
+   "type": "status"
+  },
+  {
+   "name": "Herb",
+   "slug": "herb",
+   "type": "character"
+  },
+  {
+   "name": "Luigia",
+   "slug": "luigia",
+   "type": "character"
+  },
+  {
+   "name": "Fabre",
+   "slug": "fabre",
+   "type": "character"
+  },
+  {
+   "name": "Jigra",
+   "slug": "jigra",
+   "type": "character"
+  },
+  {
+   "name": "Paradise",
+   "slug": "paradise",
+   "type": "place"
+  },
+  {
+   "name": "Nouveau Monde",
+   "slug": "new-world",
+   "type": "place"
+  },
+  {
+   "name": "Levely",
+   "slug": "levely",
+   "type": "status"
+  },
+  {
+   "name": "Shandias",
+   "slug": "shandia",
+   "type": "status"
+  },
+  {
+   "name": "Underworld",
+   "slug": "underworld",
+   "type": "status"
+  },
+  {
+   "name": "Archéologue",
+   "slug": "archaeologist",
+   "type": "profession"
+  },
+  {
+   "name": "Chasseur de primes",
+   "slug": "bounty-hunter",
+   "type": "profession"
+  },
+  {
+   "name": "North Blue",
+   "slug": "north-blue",
+   "type": "place"
+  },
+  {
+   "name": "Little East Blue",
+   "slug": "little-east-blue",
+   "type": "place"
+  },
+  {
+   "name": "Capitaine pirate",
+   "slug": "pirate-captain",
+   "type": "profession"
+  },
+  {
+   "name": "Guilde de Cidre",
+   "slug": "cidre-guild",
+   "type": "status"
+  },
+  {
+   "name": "Thriller Bark Pirates",
+   "slug": "thriller-bark-pirates",
+   "type": "status"
+  },
+  {
+   "name": "Zombies",
+   "slug": "zombies",
+   "type": "status"
+  },
+  {
+   "name": "Capitale des Fleurs",
+   "slug": "flower-capital",
+   "type": "place"
+  },
+  {
+   "name": "Alliance Ninja-Pirate-Mink-Samouraï",
+   "slug": "ninja-pirate-mink-samurai-alliance",
+   "type": "status"
+  },
+  {
+   "name": "Cuisinier",
+   "slug": "cook",
+   "type": "profession"
+  },
+  {
+   "name": "Nihou Navy",
+   "slug": "niho-navy",
+   "type": "status"
+  },
+  {
+   "name": "Royaume de Nagagutsu",
+   "slug": "nagagutsu-kingdom",
+   "type": "place"
+  },
+  {
+   "name": "Gouvernement de Ruluka",
+   "slug": "ruluka-government",
+   "type": "status"
+  },
+  {
+   "name": "Officier",
+   "slug": "officer",
+   "type": "profession"
+  },
+  {
+   "name": "Calm Belt",
+   "slug": "calm-belt",
+   "type": "place"
+  },
+  {
+   "name": "Franky Family",
+   "slug": "franky-family",
+   "type": "status"
+  },
+  {
+   "name": "Association des Victimes de Thriller Bark",
+   "slug": "thriller-bark-victim-s-association",
+   "type": "status"
+  },
+  {
+   "name": "Rain Dinners",
+   "slug": "rain-dinners",
+   "type": "status"
+  },
+  {
+   "name": "Trois Grands Pouvoirs",
+   "slug": "three-great-powers",
+   "type": "status"
+  },
+  {
+   "name": "Organ Dealing Assassination Group",
+   "slug": "organ-dealing-assassination-group",
+   "type": "status"
+  },
+  {
+   "name": "Royaume de Roshwan",
+   "slug": "roshwan-kingdom",
+   "type": "place"
+  },
+  {
+   "name": "Famille Hyogoro",
+   "slug": "hyougoro-family",
+   "type": "status"
+  },
+  {
+   "name": "Royaume de Tajine",
+   "slug": "tajine-kingdom",
+   "type": "place"
+  },
+  {
+   "name": "Endurance Curry Pirates",
+   "slug": "endurance-curry-pirates",
+   "type": "status"
+  },
+  {
+   "name": "Randolph Theater",
+   "slug": "randolph-theater",
+   "type": "status"
+  },
+  {
+   "name": "Royaume de Shishano",
+   "slug": "shishano-kingdom",
+   "type": "place"
+  },
+  {
+   "name": "Gally Pirates",
+   "slug": "gally-pirates",
+   "type": "status"
+  },
+  {
+   "name": "Umit Shipping",
+   "slug": "umit-shipping",
+   "type": "status"
+  },
+  {
+   "name": "South Blue",
+   "slug": "south-blue",
+   "type": "place"
+  },
+  {
+   "name": "Famille Nefertari",
+   "slug": "nefertari-family",
+   "type": "status"
+  },
+  {
+   "name": "Collection Party",
+   "slug": "collection-party",
+   "type": "status"
+  },
+  {
+   "name": "Royaume d’Aegis",
+   "slug": "eigis-kingdom",
+   "type": "place"
+  },
+  {
+   "name": "Coral Hill",
+   "slug": "coral-hill",
+   "type": "place"
+  },
+  {
+   "name": "Red Line",
+   "slug": "red-line",
+   "type": "place"
+  },
+  {
+   "name": "Galley-La Company",
+   "slug": "galley-la-company",
+   "type": "status"
+  },
+  {
+   "name": "Tireur d’élite",
+   "slug": "sniper",
+   "type": "profession"
+  },
+  {
+   "name": "Beer VI",
+   "slug": "beer-vi",
+   "type": "character"
+  },
+  {
+   "name": "Otaka",
+   "slug": "otaka",
+   "type": "character"
+  },
+  {
+   "name": "Île de Road Star",
+   "slug": "loadestar-island",
+   "type": "place"
+  },
+  {
+   "name": "Hareji",
+   "slug": "hareji",
+   "type": "character"
+  },
+  {
+   "name": "Mendou",
+   "slug": "mendou",
+   "type": "character"
+  },
+  {
+   "name": "Île Risky Red",
+   "slug": "risky-red-island",
+   "type": "place"
+  },
+  {
+   "name": "San Faldo",
+   "slug": "san-faldo",
+   "type": "place"
+  },
+  {
+   "name": "Mayushika",
+   "slug": "mayushika",
+   "type": "character"
+  },
+  {
+   "name": "Mari",
+   "slug": "mari",
+   "type": "character"
+  },
+  {
+   "name": "Gram",
+   "slug": "gram",
+   "type": "character"
+  },
+  {
+   "name": "Moqueca",
+   "slug": "moqueca",
+   "type": "character"
+  },
+  {
+   "name": "Île Foodvalten",
+   "slug": "foodvalten-island",
+   "type": "place"
+  },
+  {
+   "name": "Île Kyuka",
+   "slug": "kyuka-island",
+   "type": "place"
+  },
+  {
+   "name": "Renaisse",
+   "slug": "renaisse",
+   "type": "place"
+  },
+  {
+   "name": "Île Winner",
+   "slug": "winner-island",
+   "type": "place"
+  },
+  {
+   "name": "Du Feld",
+   "slug": "du-feld",
+   "type": "character"
+  },
+  {
+   "name": "Île Downs",
+   "slug": "downs-island",
+   "type": "place"
+  },
+  {
+   "name": "Île Broc Coli",
+   "slug": "broc-coli-island",
+   "type": "place"
+  },
+  {
+   "name": "Laugh Tale",
+   "slug": "laugh-tale",
+   "type": "place"
+  },
+  {
+   "name": "Mitsuboshi",
+   "slug": "mitsuboshi",
+   "type": "character"
+  },
+  {
+   "name": "Morollon",
+   "slug": "morollon",
+   "type": "character"
+  },
+  {
+   "name": "Hippie",
+   "slug": "hippie",
+   "type": "character"
+  },
+  {
+   "name": "Ed",
+   "slug": "ed",
+   "type": "character"
+  },
+  {
+   "name": "Nashi",
+   "slug": "nashi",
+   "type": "character"
+  },
+  {
+   "name": "Drug Peclo",
+   "slug": "drug-peclo",
+   "type": "character"
+  },
+  {
+   "name": "Harahettania",
+   "slug": "harahettania",
+   "type": "place"
+  },
+  {
+   "name": "Couran",
+   "slug": "couran",
+   "type": "character"
+  },
+  {
+   "name": "Reik",
+   "slug": "reik",
+   "type": "character"
+  },
+  {
+   "name": "Seto",
+   "slug": "seto",
+   "type": "character"
+  },
+  {
+   "name": "Shuutai",
+   "slug": "shuutai",
+   "type": "character"
+  },
+  {
+   "name": "Spoil",
+   "slug": "spoil",
+   "type": "character"
+  },
+  {
+   "name": "Île Ukkari",
+   "slug": "ukkari-island",
+   "type": "place"
+  },
+  {
+   "name": "Taco",
+   "slug": "taco",
+   "type": "character"
+  },
+  {
+   "name": "Gally",
+   "slug": "gally",
+   "type": "character"
+  },
+  {
+   "name": "Guarana",
+   "slug": "guarana",
+   "type": "character"
+  },
+  {
+   "name": "Chichilisia",
+   "slug": "chichilisia",
+   "type": "character"
+  },
+  {
+   "name": "Umit",
+   "slug": "umit",
+   "type": "character"
+  },
+  {
+   "name": "Samosa",
+   "slug": "samosa",
+   "type": "character"
+  },
+  {
+   "name": "Île de Rubeck",
+   "slug": "rubeck-island",
+   "type": "place"
+  },
+  {
+   "name": "Zombie Lola",
+   "slug": "zombie-lola",
+   "type": "character"
+  },
+  {
+   "name": "Jigorou",
+   "slug": "jigorou",
+   "type": "character"
+  },
+  {
+   "name": "Île de Mecha",
+   "slug": "ile-de-mecha",
+   "type": "place"
+  },
+  {
+   "name": "IÎle de la couronne",
+   "slug": "iile-de-la-couronne",
+   "type": "place"
+  },
+  {
+   "name": "Zangirimaru",
+   "slug": "zangirimaru",
+   "type": "character"
+  },
+  {
+   "name": "Hocha",
+   "slug": "hocha",
+   "type": "character"
+  },
+  {
+   "name": "Île du Karaté",
+   "slug": "karate-island",
+   "type": "place"
+  },
+  {
+   "name": "Hou",
+   "slug": "hou-one-piece",
+   "type": "character"
+  },
+  {
+   "name": "Tamarisk",
+   "slug": "tamarisk",
+   "type": "place"
+  },
+  {
+   "name": "Île d'Applenine",
+   "slug": "applenine-island",
+   "type": "place"
+  },
+  {
+   "name": "Île Banaro",
+   "slug": "banaro-island",
+   "type": "place"
+  },
+  {
+   "name": "Musse",
+   "slug": "musse",
+   "type": "character"
+  },
+  {
+   "name": "Phillip",
+   "slug": "phillip",
+   "type": "character"
+  },
+  {
+   "name": "Rint",
+   "slug": "rint",
+   "type": "character"
+  },
+  {
+   "name": "Shandorian Chief",
+   "slug": "shandorian-chief",
+   "type": "character"
+  },
+  {
+   "name": "Tea IV",
+   "slug": "tea-iv",
+   "type": "character"
+  },
+  {
+   "name": "Togare",
+   "slug": "togare",
+   "type": "character"
+  },
+  {
+   "name": "Île d'Asuka",
+   "slug": "ile-d-asuka",
+   "type": "place"
+  },
+  {
+   "name": "Tritobu",
+   "slug": "tritobu",
+   "type": "character"
+  },
+  {
+   "name": "Île Mystoria",
+   "slug": "mystoria-island",
+   "type": "place"
+  },
+  {
+   "name": "St Poplar",
+   "slug": "st-poplar",
+   "type": "place"
+  },
+  {
+   "name": "Rakesh",
+   "slug": "rakesh",
+   "type": "place"
+  },
+  {
+   "name": "Reverse Mountain",
+   "slug": "reverse-mountain-lieu",
+   "type": "place"
+  },
+  {
+   "name": "Alice",
+   "slug": "alice",
+   "type": "character"
+  },
+  {
+   "name": "Île Sphinx",
+   "slug": "sphinx-island",
+   "type": "place"
+  },
+  {
+   "name": "Ginger",
+   "slug": "ginger",
+   "type": "character"
+  },
+  {
+   "name": "Stroganoff",
+   "slug": "stroganoff",
+   "type": "character"
+  },
+  {
+   "name": "Topknot",
+   "slug": "topknot",
+   "type": "character"
+  },
+  {
+   "name": "Zadie",
+   "slug": "zadie",
+   "type": "character"
+  },
+  {
+   "name": "MocDonald",
+   "slug": "mocdonald",
+   "type": "character"
+  },
+  {
+   "name": "Jean Ango",
+   "slug": "jean-ango",
+   "type": "character"
+  },
+  {
+   "name": "Cidre",
+   "slug": "cidre",
+   "type": "character"
+  },
+  {
+   "name": "Ruskaina",
+   "slug": "rusukaina",
+   "type": "place"
+  },
+  {
+   "name": "Village de Kuen",
+   "slug": "kuen-village",
+   "type": "place"
+  },
+  {
+   "name": "Île Sans Rien",
+   "slug": "nanimonai-island",
+   "type": "place"
+  }
+ ]
+}

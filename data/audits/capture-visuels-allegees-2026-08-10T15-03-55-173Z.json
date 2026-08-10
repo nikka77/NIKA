@@ -1,0 +1,84 @@
+{
+  "chantier": "capture d'écran du cadre du visuel et remesure sur les pixels reçus",
+  "quand": "2026-08-10T15:04:09.559Z",
+  "base": "http://localhost:3000",
+  "etiquette": "allegees",
+  "lignes": [
+    {
+      "slug": "shandia",
+      "src": "https://static.wikia.nocookie.net/onepiece/images/9/92/Shandia_Infobox.png/revision/latest/scale-to-width-down/1024?cb=20230311220149",
+      "definition": "1024×576",
+      "cadre": {
+        "x": 72,
+        "y": 215,
+        "width": 226,
+        "height": 128
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/shandia-allegees.png",
+      "mesure_capture": {
+        "contraste_max": 18.115,
+        "couverture_1_5": 0.899,
+        "couverture_2": 0.86,
+        "mediane": 10.657,
+        "verdict": "lisible"
+      }
+    },
+    {
+      "slug": "officer",
+      "src": "https://static.wikia.nocookie.net/onepiece/images/0/00/Donquixote_Pirates_Wake_up%21.png/revision/latest/scale-to-width-down/1024?cb=20140323093342",
+      "definition": "1024×976",
+      "cadre": {
+        "x": 72,
+        "y": 297,
+        "width": 560,
+        "height": 420
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/officer-allegees.png",
+      "mesure_capture": {
+        "contraste_max": 17.364,
+        "couverture_1_5": 0.7036,
+        "couverture_2": 0.5178,
+        "mediane": 2.151,
+        "verdict": "lisible"
+      }
+    },
+    {
+      "slug": "paradise",
+      "src": "https://static.wikia.nocookie.net/onepiece/images/4/40/Paradise_Infobox.png/revision/latest/scale-to-width-down/1024?cb=20150727235046",
+      "definition": "1024×1023",
+      "cadre": {
+        "x": 72,
+        "y": 297,
+        "width": 560,
+        "height": 420
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/paradise-allegees.png",
+      "mesure_capture": {
+        "contraste_max": 15.878,
+        "couverture_1_5": 0.9831,
+        "couverture_2": 0.9015,
+        "mediane": 7.148,
+        "verdict": "lisible"
+      }
+    },
+    {
+      "slug": "new-world",
+      "src": "https://static.wikia.nocookie.net/onepiece/images/8/8e/New_World_Infobox.png/revision/latest/scale-to-width-down/1024?cb=20220801005012",
+      "definition": "1024×577",
+      "cadre": {
+        "x": 72,
+        "y": 297,
+        "width": 560,
+        "height": 420
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/new-world-allegees.png",
+      "mesure_capture": {
+        "contraste_max": 13.704,
+        "couverture_1_5": 0.9405,
+        "couverture_2": 0.7255,
+        "mediane": 4.22,
+        "verdict": "lisible"
+      }
+    }
+  ]
+}

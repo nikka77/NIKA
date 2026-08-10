@@ -1,0 +1,1515 @@
+{
+  "horodate": "2026-08-10T20:47:32.836Z",
+  "base": "http://localhost:3000",
+  "par_type": {
+    "artifact": {
+      "temoins": 6,
+      "rendent": 6,
+      "muets": []
+    },
+    "character": {
+      "temoins": 8,
+      "rendent": 8,
+      "muets": []
+    },
+    "place": {
+      "temoins": 8,
+      "rendent": 8,
+      "muets": []
+    },
+    "power": {
+      "temoins": 5,
+      "rendent": 5,
+      "muets": []
+    },
+    "profession": {
+      "temoins": 5,
+      "rendent": 5,
+      "muets": []
+    },
+    "skill": {
+      "temoins": 6,
+      "rendent": 6,
+      "muets": []
+    },
+    "status": {
+      "temoins": 8,
+      "rendent": 8,
+      "muets": []
+    }
+  },
+  "resultats": [
+    {
+      "cle": "artifact · Bleach",
+      "slug": "zanpakuto",
+      "type": "artifact",
+      "universe": "Bleach",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 11,
+      "sections_vues": 11,
+      "detail": [
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Asauchi",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Vue d'ensemble",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Shinigami VS. Arrancar Zanpakutō",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Pouvoirs Généraux",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Entraînement au Zanpakutō",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "artifact · Death Note",
+      "slug": "cahier-de-la-mort",
+      "type": "artifact",
+      "universe": "Death Note",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 8,
+      "sections_vues": 8,
+      "detail": [
+        {
+          "titre": "Contexte",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Série et adaptations",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Série manga",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Série animée",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Série de films live-action japonais",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Comédie musicale",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "artifact · Dragon Ball",
+      "slug": "dragon-balls-etoile-noire",
+      "type": "artifact",
+      "universe": "Dragon Ball",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 6,
+      "sections_vues": 6,
+      "detail": [
+        {
+          "titre": "Concept et création",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Aperçu",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Saga des Dragon Balls Étoile Noire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Saga de Baby",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Apparitions dans les jeux vidéo",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Localisation des Dragon Balls Étoile Noire",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "artifact · Initial D",
+      "slug": "lancer-evo3",
+      "type": "artifact",
+      "universe": "Initial D",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 6,
+      "sections_vues": 6,
+      "detail": [
+        {
+          "titre": "Teintes disponibles",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Arcade Stage 1, 2, 3, Special et Street Stage",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Historique et rivalités",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Couleurs",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Extreme Stage",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Pilotes marquants",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "artifact · Naruto",
+      "slug": "gold-dust",
+      "type": "artifact",
+      "universe": "Naruto",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "detail": [
+        {
+          "titre": "Vue d'ensemble",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "artifact · One Piece",
+      "slug": "santa-maria",
+      "type": "artifact",
+      "universe": "One Piece",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "detail": [
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "character · Bleach",
+      "slug": "gou-koga",
+      "type": "character",
+      "universe": "Bleach",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 8,
+      "sections_vues": 8,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Personnalité",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Intrigue",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Arc des Bount (anime seulement)",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Pouvoirs et capacités",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "character · Death Note",
+      "slug": "takuo-shibuimaru",
+      "type": "character",
+      "universe": "Death Note",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 3,
+      "sections_vues": 3,
+      "detail": [
+        {
+          "titre": "Trajet",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Dans d'autres médias",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Film",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "character · Dragon Ball",
+      "slug": "gryll",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 4,
+      "sections_vues": 4,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Personnalité",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Biographie",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Dragon Ball Super",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "character · Hunter x Hunter",
+      "slug": "frog",
+      "type": "character",
+      "universe": "Hunter x Hunter",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 3,
+      "sections_vues": 3,
+      "detail": [
+        {
+          "titre": "Intrigue",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Arc des Fourmis Chimères",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "character · Initial D",
+      "slug": "shouichi",
+      "type": "character",
+      "universe": "Initial D",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "detail": [
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "character · JoJo's Bizarre Adventure",
+      "slug": "messina",
+      "type": "character",
+      "universe": "JoJo's Bizarre Adventure",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "detail": [
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Battle Tendency",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "character · Naruto",
+      "slug": "hikaru",
+      "type": "character",
+      "universe": "Naruto",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 3,
+      "sections_vues": 3,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Partie II",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Quatrième Guerre Mondiale des Shinobi : Compte à rebours",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "character · One Piece",
+      "slug": "homing-donquixote",
+      "type": "character",
+      "universe": "One Piece",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 8,
+      "sections_vues": 8,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Personnalité",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Relations",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Famille",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Nobles du Monde",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Humanité",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "place · Bleach",
+      "slug": "hueco-mundo",
+      "type": "place",
+      "universe": "Bleach",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "detail": [
+        {
+          "titre": "Aperçu global",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Accéder à Hueco Mundo",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "place · Death Note",
+      "slug": "wammys-house",
+      "type": "place",
+      "universe": "Death Note",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 6,
+      "sections_vues": 6,
+      "detail": [
+        {
+          "titre": "Informations",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Personnages liés à la Maison Wammy",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Autres personnages",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Dans Death Note: Another Note",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Dans L: Change the WorLd",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Galerie",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "place · Dragon Ball",
+      "slug": "fake-namek",
+      "type": "place",
+      "universe": "Dragon Ball",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "detail": [
+        {
+          "titre": "Aperçu",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Biographie",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "place · Hunter x Hunter",
+      "slug": "mont-kukuru",
+      "type": "place",
+      "universe": "Hunter x Hunter",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 5,
+      "sections_vues": 5,
+      "detail": [
+        {
+          "titre": "Vue d'ensemble",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Intrigue",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Arc de l'examen de Hunter",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Arc de Yorknew City",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Arc de la 13e élection du président des Chasseurs",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "place · Initial D",
+      "slug": "mont-usui",
+      "type": "place",
+      "universe": "Initial D",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "detail": [
+        {
+          "titre": "Bande-son des jeux",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Géographie et significance",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "place · JoJo's Bizarre Adventure",
+      "slug": "morioh",
+      "type": "place",
+      "universe": "JoJo's Bizarre Adventure",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 9,
+      "sections_vues": 9,
+      "detail": [
+        {
+          "titre": "Backstory",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "S City",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Attractions d'été",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Les lieux emblématiques de Morioh",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Anjuro Rock",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Budo-ga Oka Middle & High School",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "place · Naruto",
+      "slug": "kumogakure",
+      "type": "place",
+      "universe": "Naruto",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "detail": [
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "place · One Piece",
+      "slug": "orange-town",
+      "type": "place",
+      "universe": "One Piece",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 5,
+      "sections_vues": 5,
+      "detail": [
+        {
+          "titre": "Disposition et Localités",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Magasin d'Aliments pour Animaux",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Passé",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Saga de l'East Blue",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "power · Bleach",
+      "slug": "atk-bl-shukei-hakuteiken",
+      "type": "power",
+      "universe": "Bleach",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "detail": [
+        {
+          "titre": "Description",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "power · Dragon Ball",
+      "slug": "atk-db-justice-pose-1",
+      "type": "power",
+      "universe": "Dragon Ball",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "detail": [
+        {
+          "titre": "Apparitions dans les jeux vidéo",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "power · JoJo's Bizarre Adventure",
+      "slug": "gold-experience",
+      "type": "power",
+      "universe": "JoJo's Bizarre Adventure",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 6,
+      "sections_vues": 6,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Capacités",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Life Giver",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Détection de vie",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Chapitres / Episodes",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "power · Naruto",
+      "slug": "blocking-technique-absorption-seal",
+      "type": "power",
+      "universe": "Naruto",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "detail": [
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "power · One Piece",
+      "slug": "fruit-de-la-force",
+      "type": "power",
+      "universe": "One Piece",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 3,
+      "sections_vues": 3,
+      "detail": [
+        {
+          "titre": "Vue d'ensemble",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Fruits du Démon naturels",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "profession · Bleach",
+      "slug": "shinigami",
+      "type": "profession",
+      "universe": "Bleach",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 9,
+      "sections_vues": 9,
+      "detail": [
+        {
+          "titre": "Présentation",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Duties",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Monde des Vivants",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Formation",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Combat",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "profession · Hunter x Hunter",
+      "slug": "chasseur",
+      "type": "profession",
+      "universe": "Hunter x Hunter",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 5,
+      "sections_vues": 5,
+      "detail": [
+        {
+          "titre": "La Profession",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Biens et Propriétés",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Avantages et Communications",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Licence de Hunter",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Hunter Bylaws",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "profession · Initial D",
+      "slug": "pilote-de-toge",
+      "type": "profession",
+      "universe": "Initial D",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "detail": [
+        {
+          "titre": "Culture et équipes",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "L'Art du Tōge",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "profession · Naruto",
+      "slug": "ninshu-follower",
+      "type": "profession",
+      "universe": "Naruto",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "detail": [
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "profession · One Piece",
+      "slug": "pirate",
+      "type": "profession",
+      "universe": "One Piece",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 6,
+      "sections_vues": 6,
+      "detail": [
+        {
+          "titre": "Équipages",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Navires",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Territoires",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Catégories et Classes",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Les Sept Seigneurs de la Guerre",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Les Quatre Empereurs",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "skill · Death Note",
+      "slug": "oeil-de-shinigami",
+      "type": "skill",
+      "universe": "Death Note",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 8,
+      "sections_vues": 8,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Obtention des Œil de Shinigami",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Le marché des yeux",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Capacités",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Restrictions",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Misa Amane",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "skill · Dragon Ball",
+      "slug": "gohan-ultimate",
+      "type": "skill",
+      "universe": "Dragon Ball",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 8,
+      "sections_vues": 8,
+      "detail": [
+        {
+          "titre": "Aperçu",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Utilisation et puissance",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Améliorations",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Évolution",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Apparitions cinématographiques",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "skill · Hunter x Hunter",
+      "slug": "nen",
+      "type": "skill",
+      "universe": "Hunter x Hunter",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 12,
+      "sections_vues": 12,
+      "detail": [
+        {
+          "titre": "Nen and Aura",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Aura Nodes and Awakening",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Apprentissage du Nen et Initiation",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Progression and Potential",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Nen of the Flame",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Propriétés du Nen",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "skill · Initial D",
+      "slug": "drift",
+      "type": "skill",
+      "universe": "Initial D",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "detail": [
+        {
+          "titre": "Maîtres du drift",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Apparitions",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "skill · Naruto",
+      "slug": "byakugan",
+      "type": "skill",
+      "universe": "Naruto",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 3,
+      "sections_vues": 3,
+      "detail": [
+        {
+          "titre": "Vue d'ensemble",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Capacités",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "skill · One Piece",
+      "slug": "gear-4-gear-fourth-snake-man",
+      "type": "skill",
+      "universe": "One Piece",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 8,
+      "sections_vues": 8,
+      "detail": [
+        {
+          "titre": "Vue d'ensemble",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Formes",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Amélioration",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Techniques",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Boundman",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Snakeman",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "status · Bleach",
+      "slug": "hollow",
+      "type": "status",
+      "universe": "Bleach",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 11,
+      "sections_vues": 11,
+      "detail": [
+        {
+          "titre": "Vue d'ensemble",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Transformation Process",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Tendencies",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Destruction",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Pouvoirs",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "status · Death Note",
+      "slug": "yotsuba",
+      "type": "status",
+      "universe": "Death Note",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 7,
+      "sections_vues": 7,
+      "detail": [
+        {
+          "titre": "Rendez-vous de la Mort",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Kira",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Les dirigeants de Yotsuba",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Reiji Namikawa",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Eiichi Takahashi",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Suguru Shimura",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "status · Dragon Ball",
+      "slug": "saiyan",
+      "type": "status",
+      "universe": "Dragon Ball",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 4,
+      "sections_vues": 4,
+      "detail": [
+        {
+          "titre": "Aperçu",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Nom",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Planète natale",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Force militaire",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "status · Hunter x Hunter",
+      "slug": "association-hunters",
+      "type": "status",
+      "universe": "Hunter x Hunter",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 5,
+      "sections_vues": 5,
+      "detail": [
+        {
+          "titre": "La Profession",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Biens et Propriétés",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Avantages et Communications",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Hunter License",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Règlement des Hunters",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "status · Initial D",
+      "slug": "project-d",
+      "type": "status",
+      "universe": "Initial D",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 4,
+      "sections_vues": 4,
+      "detail": [
+        {
+          "titre": "Traversée des régions",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Fondation et Objectifs",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Fondation et objectif stratégique",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Bande-son des jeux",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "status · JoJo's Bizarre Adventure",
+      "slug": "passione",
+      "type": "status",
+      "universe": "JoJo's Bizarre Adventure",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 8,
+      "sections_vues": 8,
+      "detail": [
+        {
+          "titre": "Description",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Hiérarchie",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Policies",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Vento Aureo (Mars–Avril 2001)",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Membres",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "status · Naruto",
+      "slug": "kara",
+      "type": "status",
+      "universe": "Naruto",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 4,
+      "sections_vues": 4,
+      "detail": [
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Isshiki's Kara",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Code's Kara",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "cle": "status · One Piece",
+      "slug": "l-equipage-de-ganzack",
+      "type": "status",
+      "universe": "One Piece",
+      "http": 200,
+      "bloc_ak_dossier": 1,
+      "sections_en_base": 4,
+      "sections_vues": 4,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Aptitudes et Pouvoirs",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Armes",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    }
+  ]
+}

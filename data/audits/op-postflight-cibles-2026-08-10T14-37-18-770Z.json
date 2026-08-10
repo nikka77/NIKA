@@ -1,0 +1,907 @@
+{
+ "quand": "2026-08-10T14:39:18.344Z",
+ "base": "http://localhost:3000",
+ "exec": "data/audits/op-cibles-exec-2026-08-10T14-27-01-596Z.json",
+ "lignes": [
+  {
+   "slug": "paradise",
+   "nom": "Paradise",
+   "entrants": 13,
+   "vus": 12,
+   "verdict": "PARTIEL",
+   "details": [
+    {
+     "citant": "Île Obscuria",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Little East Blue",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "San Faldo",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île Kyuka",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Renaisse",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Harahettania",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île Ukkari",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île de Mecha",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "IÎle de la couronne",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île Banaro",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île d'Asuka",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "St Poplar",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île Sans Rien",
+     "relation": "appartient",
+     "vu": null
+    }
+   ]
+  },
+  {
+   "slug": "new-world",
+   "nom": "Nouveau Monde",
+   "entrants": 9,
+   "vus": 9,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Île de Road Star",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île Risky Red",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île Foodvalten",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île Winner",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île Broc Coli",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Laugh Tale",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île d'Applenine",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île Mystoria",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île Sphinx",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "levely",
+   "nom": "Levely",
+   "entrants": 9,
+   "vus": 9,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Furrari",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Mari",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Moqueca",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Nashi",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Couran",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Samosa",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Tea IV",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Tritobu",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Stroganoff",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    }
+   ]
+  },
+  {
+   "slug": "shandia",
+   "nom": "Shandias",
+   "entrants": 5,
+   "vus": 5,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Herb",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Mayushika",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Seto",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Musse",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Shandorian Chief",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    }
+   ]
+  },
+  {
+   "slug": "underworld",
+   "nom": "Underworld",
+   "entrants": 5,
+   "vus": 5,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Giberson",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Jigra",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Du Feld",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Drug Peclo",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Umit",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    }
+   ]
+  },
+  {
+   "slug": "archaeologist",
+   "nom": "Archéologue",
+   "entrants": 4,
+   "vus": 4,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Gram",
+     "relation": "exerce",
+     "vu": "texte"
+    },
+    {
+     "citant": "Hocha",
+     "relation": "exerce",
+     "vu": "texte"
+    },
+    {
+     "citant": "Rint",
+     "relation": "exerce",
+     "vu": "texte"
+    },
+    {
+     "citant": "Zadie",
+     "relation": "exerce",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "bounty-hunter",
+   "nom": "Chasseur de primes",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Franky Family",
+     "relation": "exerce",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "north-blue",
+   "nom": "North Blue",
+   "entrants": 4,
+   "vus": 4,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Île Downs",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Île de Rubeck",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Rakesh",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Village de Kuen",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "little-east-blue",
+   "nom": "Little East Blue",
+   "entrants": 4,
+   "vus": 4,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Luigia",
+     "relation": "habite",
+     "vu": "texte"
+    },
+    {
+     "citant": "Fabre",
+     "relation": "habite",
+     "vu": "texte"
+    },
+    {
+     "citant": "Mendou",
+     "relation": "habite",
+     "vu": "texte"
+    },
+    {
+     "citant": "Mitsuboshi",
+     "relation": "habite",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "pirate-captain",
+   "nom": "Capitaine pirate",
+   "entrants": 3,
+   "vus": 3,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Quatres Empereurs",
+     "relation": "exerce",
+     "vu": "texte"
+    },
+    {
+     "citant": "Hippie",
+     "relation": "exerce",
+     "vu": "texte"
+    },
+    {
+     "citant": "Gally",
+     "relation": "exerce",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "cidre-guild",
+   "nom": "Guilde de Cidre",
+   "entrants": 3,
+   "vus": 3,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Guarana",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Ginger",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Cidre",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "thriller-bark-pirates",
+   "nom": "Thriller Bark Pirates",
+   "entrants": 3,
+   "vus": 3,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Zombie Lola",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Jigorou",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "MocDonald",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    }
+   ]
+  },
+  {
+   "slug": "zombies",
+   "nom": "Zombies",
+   "entrants": 3,
+   "vus": 3,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Zombie Lola",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    },
+    {
+     "citant": "Jigorou",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "MocDonald",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    }
+   ]
+  },
+  {
+   "slug": "flower-capital",
+   "nom": "Capitale des Fleurs",
+   "entrants": 2,
+   "vus": 2,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Otaka",
+     "relation": "habite",
+     "vu": "texte"
+    },
+    {
+     "citant": "Hareji",
+     "relation": "habite",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "ninja-pirate-mink-samurai-alliance",
+   "nom": "Alliance Ninja-Pirate-Mink-Samouraï",
+   "entrants": 2,
+   "vus": 2,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Hareji",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Zangirimaru",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    }
+   ]
+  },
+  {
+   "slug": "cook",
+   "nom": "Cuisinier",
+   "entrants": 2,
+   "vus": 2,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Mitsuboshi",
+     "relation": "exerce",
+     "vu": "texte"
+    },
+    {
+     "citant": "Shuutai",
+     "relation": "exerce",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "niho-navy",
+   "nom": "Nihou Navy",
+   "entrants": 2,
+   "vus": 2,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Uholisia",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Chichilisia",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "nagagutsu-kingdom",
+   "nom": "Royaume de Nagagutsu",
+   "entrants": 2,
+   "vus": 2,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Furrari",
+     "relation": "habite",
+     "vu": "texte"
+    },
+    {
+     "citant": "Tritobu",
+     "relation": "habite",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "ruluka-government",
+   "nom": "Gouvernement de Ruluka",
+   "entrants": 2,
+   "vus": 2,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Reik",
+     "relation": "appartient",
+     "vu": "texte"
+    },
+    {
+     "citant": "Phillip",
+     "relation": "appartient",
+     "vu": "attribut title/alt"
+    }
+   ]
+  },
+  {
+   "slug": "officer",
+   "nom": "Officier",
+   "entrants": 2,
+   "vus": 2,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Guarana",
+     "relation": "exerce",
+     "vu": "texte"
+    },
+    {
+     "citant": "Ginger",
+     "relation": "exerce",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "calm-belt",
+   "nom": "Calm Belt",
+   "entrants": 2,
+   "vus": 2,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Topknot",
+     "relation": "habite",
+     "vu": "texte"
+    },
+    {
+     "citant": "Ruskaina",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "totto-land",
+   "nom": "Archipel Totto Land",
+   "entrants": 0,
+   "vus": 0,
+   "verdict": "AUCUNE ARÊTE ENTRANTE"
+  },
+  {
+   "slug": "kouzuki-family",
+   "nom": "Famille Kozuki",
+   "entrants": 0,
+   "vus": 0,
+   "verdict": "AUCUNE ARÊTE ENTRANTE"
+  },
+  {
+   "slug": "franky-family",
+   "nom": "Franky Family",
+   "entrants": 0,
+   "vus": 0,
+   "verdict": "AUCUNE ARÊTE ENTRANTE"
+  },
+  {
+   "slug": "thriller-bark-victim-s-association",
+   "nom": "Association des Victimes de Thriller Bark",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Spoil",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "rain-dinners",
+   "nom": "Rain Dinners",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Ultraking",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "three-great-powers",
+   "nom": "Trois Grands Pouvoirs",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Quatres Empereurs",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "organ-dealing-assassination-group",
+   "nom": "Organ Dealing Assassination Group",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Jigra",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "roshwan-kingdom",
+   "nom": "Royaume de Roshwan",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Beer VI",
+     "relation": "habite",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "hyougoro-family",
+   "nom": "Famille Hyogoro",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Otaka",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "tajine-kingdom",
+   "nom": "Royaume de Tajine",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Morollon",
+     "relation": "habite",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "endurance-curry-pirates",
+   "nom": "Endurance Curry Pirates",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Hippie",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "randolph-theater",
+   "nom": "Randolph Theater",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Ed",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "shishano-kingdom",
+   "nom": "Royaume de Shishano",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Taco",
+     "relation": "habite",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "gally-pirates",
+   "nom": "Gally Pirates",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Gally",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "umit-shipping",
+   "nom": "Umit Shipping",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Umit",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "south-blue",
+   "nom": "South Blue",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Île du Karaté",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "nefertari-family",
+   "nom": "Famille Nefertari",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Hou",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "collection-party",
+   "nom": "Collection Party",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Phillip",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "eigis-kingdom",
+   "nom": "Royaume d’Aegis",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Tea IV",
+     "relation": "habite",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "coral-hill",
+   "nom": "Coral Hill",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Togare",
+     "relation": "habite",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "red-line",
+   "nom": "Red Line",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Reverse Mountain",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "galley-la-company",
+   "nom": "Galley-La Company",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Alice",
+     "relation": "appartient",
+     "vu": "texte"
+    }
+   ]
+  },
+  {
+   "slug": "sniper",
+   "nom": "Tireur d’élite",
+   "entrants": 1,
+   "vus": 1,
+   "verdict": "TOUS VUS",
+   "details": [
+    {
+     "citant": "Jean Ango",
+     "relation": "exerce",
+     "vu": "texte"
+    }
+   ]
+  }
+ ]
+}

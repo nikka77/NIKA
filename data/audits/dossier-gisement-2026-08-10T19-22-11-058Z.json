@@ -1,0 +1,458 @@
+{
+  "horodate": "2026-08-10T19:22:25.555Z",
+  "corpus": {
+    "fiches": 7698,
+    "sections": 19084,
+    "avec_dossier": 4776,
+    "sans_dossier": 2922
+  },
+  "couverture_par_type": {
+    "character": {
+      "total": 4031,
+      "avec_dossier": 3452,
+      "sans_dossier": 579,
+      "couverture": "85.6 %"
+    },
+    "power": {
+      "total": 2359,
+      "avec_dossier": 828,
+      "sans_dossier": 1531,
+      "couverture": "35.1 %"
+    },
+    "place": {
+      "total": 367,
+      "avec_dossier": 178,
+      "sans_dossier": 189,
+      "couverture": "48.5 %"
+    },
+    "status": {
+      "total": 356,
+      "avec_dossier": 103,
+      "sans_dossier": 253,
+      "couverture": "28.9 %"
+    },
+    "skill": {
+      "total": 80,
+      "avec_dossier": 51,
+      "sans_dossier": 29,
+      "couverture": "63.7 %"
+    },
+    "artifact": {
+      "total": 400,
+      "avec_dossier": 144,
+      "sans_dossier": 256,
+      "couverture": "36.0 %"
+    },
+    "profession": {
+      "total": 105,
+      "avec_dossier": 20,
+      "sans_dossier": 85,
+      "couverture": "19.0 %"
+    }
+  },
+  "champs_texte_des_sans_dossier": [
+    {
+      "champ": "descFr",
+      "fiches": 2663,
+      "plus_de_600": 179,
+      "plus_de_900": 52,
+      "max": 1685,
+      "exemple_max": {
+        "slug": "ilforte-grantz",
+        "tete": "Date de naissance : 22 juin Signe du zodiaque : Cancer Taille : 185 cm Poids : 67 kg I. Histoire Ilforte était un Menos de classe Gillian, d"
+      },
+      "total_caracteres": 939315,
+      "moyenne": 353
+    },
+    {
+      "champ": "descRaw",
+      "fiches": 461,
+      "plus_de_600": 78,
+      "plus_de_900": 38,
+      "max": 1500,
+      "exemple_max": {
+        "slug": "soi-fon",
+        "tete": "Birthday: February 11 Zodiac: Aquarius Height: 4' 11\" (150 cm) Weight: 38 kg Rank: Captain of Division 2, Commander of the Onmitsukidō (Spec"
+      },
+      "total_caracteres": 157340,
+      "moyenne": 341
+    },
+    {
+      "champ": "bio",
+      "fiches": 27,
+      "plus_de_600": 22,
+      "plus_de_900": 10,
+      "max": 1120,
+      "exemple_max": {
+        "slug": "funato",
+        "tete": "Le Clan Funato est une lignée de pirates du Pays de l'Eau, redoutée pour ses pillages, ses enlèvements et sa maîtrise du combat en pleine me"
+      },
+      "total_caracteres": 22182,
+      "moyenne": 822
+    },
+    {
+      "champ": "descFrImpossible",
+      "fiches": 2,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 300,
+      "exemple_max": {
+        "slug": "yuhi",
+        "tete": "curé à la main le 05/08 : le clan Yūhi n a pas de page sur le wiki Naruto — « Yūhi Clan » redirige sur Kurenai Yūhi (dont l infobox donne d "
+      },
+      "total_caracteres": 471,
+      "moyenne": 236
+    },
+    {
+      "champ": "descFrSource",
+      "fiches": 2215,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 213,
+      "exemple_max": {
+        "slug": "class-representative",
+        "tete": "claude-haiku-4-5 (rédacteur sans-source) · mentions : Yukako Yamagishi Falls in Love, Part 1 (Episode), List of JoJo's Bizarre Adventure epi"
+      },
+      "total_caracteres": 138834,
+      "moyenne": 63
+    },
+    {
+      "champ": "resumeCorrige",
+      "fiches": 1,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 165,
+      "exemple_max": {
+        "slug": "inner-former",
+        "tete": "résumé d origine remplacé le 05/08 : il décrivait Inner Sakura (technique de Sakura Haruno), pas le rang de Kara annoncé par le nom, le type"
+      },
+      "total_caracteres": 165,
+      "moyenne": 165
+    },
+    {
+      "champ": "descFrPurgee",
+      "fiches": 11,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 122,
+      "exemple_max": {
+        "slug": "sakon",
+        "tete": "biographie du ninja Sakon retirée le 10/08 — la fiche est typée pouvoir (catégorie Jutsu) et reçoit une arête « maitrise »"
+      },
+      "total_caracteres": 925,
+      "moyenne": 84
+    },
+    {
+      "champ": "descFrRetiree",
+      "fiches": 4,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 119,
+      "exemple_max": {
+        "slug": "inner-former",
+        "tete": "04/08 contrôle de nature — « Inner (Former) » est un rang de Kara ; la page est « Inner Sakura », homonyme sans rapport"
+      },
+      "total_caracteres": 418,
+      "moyenne": 105
+    },
+    {
+      "champ": "purgeAudit",
+      "fiches": 1,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 115,
+      "exemple_max": {
+        "slug": "reiichi-oshima",
+        "tete": "03/08 : sections et descFr décrivaient Dark Rukia (mauvaise page liée) — purgé, à re-produire avec garde d identité"
+      },
+      "total_caracteres": 115,
+      "moyenne": 115
+    },
+    {
+      "champ": "roman_name",
+      "fiches": 156,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 39,
+      "exemple_max": {
+        "slug": "fruit-du-reptile-version-dragon-a-huit-tetes",
+        "tete": "Hebi Hebi no Mi moderu Yamata no Orochi"
+      },
+      "total_caracteres": 2443,
+      "moyenne": 16
+    },
+    {
+      "champ": "fruit",
+      "fiches": 7,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 38,
+      "exemple_max": {
+        "slug": "king-baum",
+        "tete": "Fruit du Dinosaure, version Ptéranodon"
+      },
+      "total_caracteres": 161,
+      "moyenne": 23
+    },
+    {
+      "champ": "equipe",
+      "fiches": 5,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 37,
+      "exemple_max": {
+        "slug": "dango-mitsuki",
+        "tete": "Infiltration and Reconnaissance Party"
+      },
+      "total_caracteres": 107,
+      "moyenne": 21
+    },
+    {
+      "champ": "powerLevel",
+      "fiches": 2,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 36,
+      "exemple_max": {
+        "slug": "android-21",
+        "tete": "Forme finale, puissance quasi divine"
+      },
+      "total_caracteres": 67,
+      "moyenne": 34
+    },
+    {
+      "champ": "origin",
+      "fiches": 198,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 31,
+      "exemple_max": {
+        "slug": "fier-baril",
+        "tete": "L’équipage du Chapeau de Paille"
+      },
+      "total_caracteres": 3188,
+      "moyenne": 16
+    },
+    {
+      "champ": "crew",
+      "fiches": 9,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 31,
+      "exemple_max": {
+        "slug": "kinemon",
+        "tete": "L'équipage du Chapeau de Paille"
+      },
+      "total_caracteres": 185,
+      "moyenne": 21
+    },
+    {
+      "champ": "element",
+      "fiches": 1326,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 30,
+      "exemple_max": {
+        "slug": "fruit-du-poisson-version-dragon-azur",
+        "tete": "Fruit du Démon · Zoan Mythique"
+      },
+      "total_caracteres": 16217,
+      "moyenne": 12
+    },
+    {
+      "champ": "occupation",
+      "fiches": 13,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 28,
+      "exemple_max": {
+        "slug": "laki",
+        "tete": "Habitant / Tribu des Shandia"
+      },
+      "total_caracteres": 190,
+      "moyenne": 15
+    },
+    {
+      "champ": "organization",
+      "fiches": 25,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 26,
+      "exemple_max": {
+        "slug": "setsuna-uchiha",
+        "tete": "Police militaire de Konoha"
+      },
+      "total_caracteres": 277,
+      "moyenne": 11
+    },
+    {
+      "champ": "scope",
+      "fiches": 253,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 25,
+      "exemple_max": {
+        "slug": "gouvernement-mondial",
+        "tete": "Pouvoir politique mondial"
+      },
+      "total_caracteres": 2986,
+      "moyenne": 12
+    },
+    {
+      "champ": "region",
+      "fiches": 139,
+      "plus_de_600": 0,
+      "plus_de_900": 0,
+      "max": 24,
+      "exemple_max": {
+        "slug": "valley-of-end",
+        "tete": "Frontière du Pays du Feu"
+      },
+      "total_caracteres": 1327,
+      "moyenne": 10
+    }
+  ],
+  "gisement_tous_champs_confondus": {
+    "fiches_sans_dossier": 2922,
+    "dont_un_champ_depasse_600": 203,
+    "dont_un_champ_depasse_900": 63,
+    "quels_champs": {
+      "descFr": 50,
+      "bio": 10,
+      "descRaw": 3
+    },
+    "echantillon": [
+      {
+        "slug": "soi-fon",
+        "type": "character",
+        "champ": "descFr",
+        "len": 1578
+      },
+      {
+        "slug": "io-bamboo-village",
+        "type": "character",
+        "champ": "descFr",
+        "len": 1072
+      },
+      {
+        "slug": "rou-kaioshin",
+        "type": "character",
+        "champ": "descFr",
+        "len": 1362
+      },
+      {
+        "slug": "korinto",
+        "type": "character",
+        "champ": "descFr",
+        "len": 1040
+      },
+      {
+        "slug": "misaomaru-kanonji",
+        "type": "character",
+        "champ": "descFr",
+        "len": 1495
+      },
+      {
+        "slug": "yonka",
+        "type": "character",
+        "champ": "descFr",
+        "len": 1071
+      },
+      {
+        "slug": "yogengyo",
+        "type": "character",
+        "champ": "descFr",
+        "len": 1053
+      },
+      {
+        "slug": "three-headed-guardian-beast",
+        "type": "character",
+        "champ": "descFr",
+        "len": 1357
+      },
+      {
+        "slug": "kinemon",
+        "type": "character",
+        "champ": "descFr",
+        "len": 1641
+      },
+      {
+        "slug": "nova",
+        "type": "character",
+        "champ": "descFr",
+        "len": 1147
+      },
+      {
+        "slug": "shen",
+        "type": "character",
+        "champ": "descFr",
+        "len": 1120
+      },
+      {
+        "slug": "mind-puppet-switch-cursed-seal-technique",
+        "type": "power",
+        "champ": "descFr",
+        "len": 905
+      },
+      {
+        "slug": "ilforte-grantz",
+        "type": "character",
+        "champ": "descFr",
+        "len": 1685
+      },
+      {
+        "slug": "hisagomaru",
+        "type": "character",
+        "champ": "descFr",
+        "len": 957
+      },
+      {
+        "slug": "funato",
+        "type": "status",
+        "champ": "bio",
+        "len": 1120
+      }
+    ]
+  },
+  "source_declaree": {
+    "sans_dossier_avec_une_source": 2224,
+    "par_cle": {
+      "descFrSource": 2215,
+      "source": 205,
+      "sectionsSource": 3
+    },
+    "exemples": [
+      {
+        "slug": "white-secret-technique-secret-art-collection-of-illusions",
+        "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+      },
+      {
+        "slug": "tomaru-minakura",
+        "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b"
+      },
+      {
+        "slug": "atk-db-arrow-knee",
+        "descFrSource": "claude-haiku-4-5 (rédacteur sans-source) · mentions : Arrow Knee",
+        "source": "fandom"
+      },
+      {
+        "slug": "atk-db-final-strike",
+        "descFrSource": "nvidia/nvidia/nemotron-3-super-120b-a12b",
+        "source": "fandom"
+      },
+      {
+        "slug": "lightning-oppression-horizontal",
+        "descFrSource": "claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)"
+      },
+      {
+        "slug": "tengai-shinsei",
+        "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+      }
+    ]
+  },
+  "poids_compare": {
+    "mediane_dossier_des_fiches_qui_en_ont_un": 2346,
+    "mediane_descFr_des_fiches_sans_dossier": 301,
+    "mediane_descFr_des_fiches_avec_dossier": 410
+  }
+}

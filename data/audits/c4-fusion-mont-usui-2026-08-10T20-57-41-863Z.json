@@ -1,0 +1,148 @@
+{
+ "chantier": "chantier 4 — fusion mont-usui → col-usui",
+ "quand": "2026-08-10T20:57:47.563Z",
+ "write": true,
+ "preuve": {
+  "wiki": "initiald.fandom.com api.php?action=query&titles=Usui|Usui Pass|Usui pass&redirects=1 → {\"from\":\"Usui\",\"to\":\"Usui Pass\"} et {\"from\":\"Usui pass\",\"to\":\"Usui Pass\"} : un SEUL article.",
+  "image": "les deux fiches portent https://static.wikia.nocookie.net/initiald/images/4/45/Usui.jpg",
+  "sources": [
+   "claude-haiku (finisseur) · Usui Pass page - Fandom Initial D wiki",
+   "claude-haiku (finisseur) · Usui Pass page - Fandom Initial D wiki",
+   "claude-haiku (finisseur) · Usui Pass",
+   "claude-haiku (finisseur) · Usui Pass",
+   "claude-haiku (finisseur) · Usui Pass"
+  ],
+  "axe": "col-usui porte col=\"Col d’Usui\" ; mont-usui n'a aucun attribut d'axe. Les 5 cols de l'axe : Mont Myōgi, Mont Akina, Col d'Usui, Irohazaka, Mont Akagi."
+ },
+ "avantCorpus": {
+  "fiches": 7698,
+  "sections": 19101,
+  "aretes": 17071,
+  "sectionsOrphelines": 0,
+  "aretesOrphelines": 0
+ },
+ "avant": {
+  "perdant": {
+   "id": "05eed250-98d0-465a-a31f-94592395760d",
+   "slug": "mont-usui",
+   "type": "place",
+   "name": "Mont Usui",
+   "is_fiction": true,
+   "universe": "Initial D",
+   "summary": "Le col sinueux d'Impact Blue, réputé pour son enchaînement C-121 — le territoire de Mako et Sayuki.",
+   "description": null,
+   "image_url": "https://static.wikia.nocookie.net/initiald/images/4/45/Usui.jpg/revision/latest?cb=20150519042607",
+   "attributes": {
+    "descFr": "Le col d'Usui, situé entre les préfectures de Nagano et de Gunma, est une voie de transport majeure depuis au moins le VIIIe siècle. Il est le terrain de prédilection de l'équipe Impact Blue et du Drift King, Keiichi Tsuchiya, et se distingue par ses arches consécutives. Le col est également célèbre pour son circuit C-121, le territoire de Mako et Sayuki.",
+    "region": "Préfecture de Gunma",
+    "category": "Lieu",
+    "descFrSource": "openrouter/mistralai/mistral-small-24b-instruct-2501"
+   },
+   "rarity": "common",
+   "created_at": "2026-07-02T07:22:20.865556+00:00"
+  },
+  "survivant": {
+   "id": "d21fb188-74bd-4347-9abb-8186df51b849",
+   "slug": "col-usui",
+   "type": "place",
+   "name": "Col d’Usui",
+   "is_fiction": true,
+   "universe": "Initial D",
+   "summary": "Le circuit des Impact Blue : virages en C historiques, royaume de la Sileighty de Mako & Sayuki.",
+   "description": null,
+   "image_url": "https://static.wikia.nocookie.net/initiald/images/4/45/Usui.jpg/revision/latest?cb=20150519042607",
+   "attributes": {
+    "col": "Col d’Usui",
+    "descFr": "Le Col d'Usui est un circuit de route de montagne situé dans la préfecture de Kanagawa au Japon, réputé pour ses virages en épingle à cheveux exigeant une maîtrise technique exceptionnelle. C'est le territoire incontesté du duo Impact Blue, composé de Mako Sato et Sayuki, deux des pilotes de tōge les plus redoutables d'Usui. Le col incarne la fusion entre la puissance technique et le courage féminin, défiant les conventions des courses de montagne dominées par les hommes.",
+    "region": "Frontière Gunma / Nagano",
+    "category": "Lieu",
+    "descFrSource": "claude-haiku (finisseur 02/08) · Impact Blue vs the Altezza Guys"
+   },
+   "rarity": "rare",
+   "created_at": "2026-07-04T12:45:45.166016+00:00"
+  },
+  "sectionsPerdant": [
+   {
+    "id": 472,
+    "entry_id": "05eed250-98d0-465a-a31f-94592395760d",
+    "idx": "3",
+    "titre": "Bande-son des jeux",
+    "texte": "La bande-son des jeux Initial D Arcade Stage intègre des titres eurobeat et J-pop produits spécifiquement pour la série. Love Is In Danger (Priscilla) figure dans Arcade Stage, Arcade Stage Ver. 2 (mode Nuit) et Special Stage (mode Nuit), tandis que Don’t Stop The Music (Lou Grant) apparaît dans Arcade Stage Ver. 2 (mode Jour) et Special Stage (mode Jour). Stay (Victoria) est exclusif à Special Stage (version Shin), et Remember Me (Leslie Parrish) accompagne Arcade Stage Ver. 3, Street Stage et Arcade Stage 7 AAX.",
+    "source": "claude-haiku (finisseur) · Usui Pass page - Fandom Initial D wiki",
+    "created_at": "2026-08-05T18:35:49.999278+00:00"
+   },
+   {
+    "id": 473,
+    "entry_id": "05eed250-98d0-465a-a31f-94592395760d",
+    "idx": "fin-2",
+    "titre": "Géographie et significance",
+    "texte": "Le Col d'Usui (碓氷峠, Usui-tōge) est un col montagneux situé entre les préfectures de Nagano et Gunma au Japon, servant depuis le VIIIe siècle de route de transport majeure en Asie centrale. Il est célèbre pour ses arcs-voûtes consécutifs qui dominent l'extérieur de la passe. Le col est le terrain d'entraînement favori d'Impact Blue et du Drift King Keiichi Tsuchiya.",
+    "source": "claude-haiku (finisseur) · Usui Pass page - Fandom Initial D wiki",
+    "created_at": "2026-08-05T18:35:49.999278+00:00"
+   }
+  ],
+  "sectionsSurvivant": [
+   {
+    "id": 16127,
+    "entry_id": "d21fb188-74bd-4347-9abb-8186df51b849",
+    "idx": "fin-1",
+    "titre": "Bastion d'Impact Blue",
+    "texte": "Le Col d'Usui est le domaine de prédilection du duo Impact Blue et de leur Nissan SilEighty, un véhicule hybride associant aérodynamisme et agilité. Mako et Sayuki maintiennent des séries de victoires impressionnantes sur ce circuit sinueux, repoussant les défis des équipes rivales avec une coordination pilote-copilote incomparable. Les virages serrés d'Usui jouent à leur avantage, favorisant la précision et la finesse plutôt que la puissance brute, ce qui leur permet de dominer face à des adversaires techniquement supérieurs.",
+    "source": "claude-haiku (finisseur) · Usui Pass",
+    "created_at": "2026-08-05T18:39:56.383644+00:00"
+   },
+   {
+    "id": 16128,
+    "entry_id": "d21fb188-74bd-4347-9abb-8186df51b849",
+    "idx": "fin-2",
+    "titre": "Jeux et Arcade",
+    "texte": "Usui Pass figure parmi les circuits principaux de la franchise Initial D Arcade Stage depuis ses débuts et les versions PlayStation. Le col est réputé pour son enchaînement distinctive de virages en C, particulièrement la fameuse section C121. Une variation hivernale du circuit a été ajoutée lors de la mise à jour Version 3.00.00 du jeu Initial D The Arcade. Malgré sa dépiction réaliste dans Initial D Special Stage, le col demeure configuré comme un circuit complet dans tous les jeux d'arcade, probablement en raison de sa longueur réelle de 11,6 km.",
+    "source": "claude-haiku (finisseur) · Usui Pass",
+    "created_at": "2026-08-05T18:39:56.383644+00:00"
+   },
+   {
+    "id": 16129,
+    "entry_id": "d21fb188-74bd-4347-9abb-8186df51b849",
+    "idx": "fin-3",
+    "titre": "Caractéristiques et légalité",
+    "texte": "Le Col d'Usui s'étend sur 11,6 kilomètres et se caractérise par une succession de virages en épingle à cheveux, particulièrement remarquables pour l'enchaînement désigné sous le nom de C-121, une série de courbes en C qui constituent un défi majeur pour les pilotes de tōge. Les ponts en arc qui surplombent l'extérieur du col confèrent au circuit un caractère unique et distinctif. Bien que le col existe depuis des siècles comme route de transport stratégique, il est devenu mythique dans la culture des courses de montagne japonaises, servant de terrain de test pour les équipes professionnelles et amateurs cherchant à affiner leurs techniques de drift et de navigation en descente.",
+    "source": "claude-haiku (finisseur) · Usui Pass",
+    "created_at": "2026-08-05T18:39:56.383644+00:00"
+   }
+  ],
+  "aretesPerdant": []
+ },
+ "patchSurvivant": {},
+ "aretes": {
+  "repointees": 0,
+  "jetees": []
+ },
+ "sections": {
+  "reprises": [
+   {
+    "titre": "Bande-son des jeux",
+    "ancienIdx": "3",
+    "nouvelIdx": "fin-4"
+   }
+  ],
+  "supprimees": [
+   {
+    "id": 473,
+    "titre": "Géographie et significance",
+    "motif": "laissée dans la trace : « route de transport majeure en Asie centrale » — le col d'Usui est au Japon"
+   }
+  ]
+ },
+ "apresCorpus": {
+  "fiches": 7697,
+  "sections": 19101,
+  "aretes": 17071,
+  "sectionsOrphelines": 1,
+  "aretesOrphelines": 0
+ },
+ "resteAttacheAuPerdant": {
+  "sections": 1,
+  "aretes": 0
+ },
+ "fait": true
+}

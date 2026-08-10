@@ -1,0 +1,233 @@
+{
+ "chantier": "C3 — ce que le lecteur voit sur une fiche sans descFr",
+ "quand": "2026-08-10T20:57:57.564Z",
+ "base": "http://localhost:3000",
+ "corpus": 7698,
+ "sansDescFr": 395,
+ "avecBio": 2,
+ "avecResume": 388,
+ "muettes": 5,
+ "muettesParUnivers": {
+  "Naruto": 4,
+  "One Piece": 1
+ },
+ "muettesListe": [
+  {
+   "slug": "sakon",
+   "name": "Sakon",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "source-de-l-insouciance",
+   "name": "Source de l'insouciance",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "king-naruto",
+   "name": "King",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "shun",
+   "name": "Shun",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "shuku-village",
+   "name": "Shuku Village",
+   "type": "status",
+   "universe": "Naruto"
+  }
+ ],
+ "longueurResumeMin": 5,
+ "longueurResumeMediane": 66,
+ "longueurResumeMax": 451,
+ "ouvertures": [
+  {
+   "slug": "sakon",
+   "name": "Sakon",
+   "type": "power",
+   "universe": "Naruto",
+   "url": "http://localhost:3000/learn/akasha/sakon",
+   "statut": 200,
+   "aResume": false,
+   "longueurResume": 0,
+   "resumeVisible": false,
+   "mentionVide": true,
+   "resume": ""
+  },
+  {
+   "slug": "source-de-l-insouciance",
+   "name": "Source de l'insouciance",
+   "type": "status",
+   "universe": "One Piece",
+   "url": "http://localhost:3000/learn/akasha/source-de-l-insouciance",
+   "statut": 200,
+   "aResume": false,
+   "longueurResume": 0,
+   "resumeVisible": false,
+   "mentionVide": false,
+   "resume": ""
+  },
+  {
+   "slug": "king-naruto",
+   "name": "King",
+   "type": "character",
+   "universe": "Naruto",
+   "url": "http://localhost:3000/learn/akasha/king-naruto",
+   "statut": 200,
+   "aResume": false,
+   "longueurResume": 0,
+   "resumeVisible": false,
+   "mentionVide": false,
+   "resume": ""
+  },
+  {
+   "slug": "shun",
+   "name": "Shun",
+   "type": "character",
+   "universe": "Naruto",
+   "url": "http://localhost:3000/learn/akasha/shun",
+   "statut": 200,
+   "aResume": false,
+   "longueurResume": 0,
+   "resumeVisible": false,
+   "mentionVide": false,
+   "resume": ""
+  },
+  {
+   "slug": "shuku-village",
+   "name": "Shuku Village",
+   "type": "status",
+   "universe": "Naruto",
+   "url": "http://localhost:3000/learn/akasha/shuku-village",
+   "statut": 200,
+   "aResume": false,
+   "longueurResume": 0,
+   "resumeVisible": false,
+   "mentionVide": false,
+   "resume": ""
+  },
+  {
+   "slug": "voleur",
+   "name": "Voleur",
+   "type": "profession",
+   "universe": "Naruto",
+   "url": "http://localhost:3000/learn/akasha/voleur",
+   "statut": 200,
+   "aResume": true,
+   "longueurResume": 75,
+   "resumeVisible": true,
+   "mentionVide": false,
+   "resume": "Individu vivant de larcins, dérobant biens ou argent au détriment d'autrui."
+  },
+  {
+   "slug": "dynamic-action",
+   "name": "Dynamic Action",
+   "type": "power",
+   "universe": "Naruto",
+   "url": "http://localhost:3000/learn/akasha/dynamic-action",
+   "statut": 200,
+   "aResume": true,
+   "longueurResume": 126,
+   "resumeVisible": true,
+   "mentionVide": false,
+   "resume": "Technique de corps à corps portée dans l'élan du mouvement, une frappe puissante et soudaine visant à surprendre l'adversaire."
+  },
+  {
+   "slug": "fils-d-acier",
+   "name": "Fils d'acier",
+   "type": "artifact",
+   "universe": "Naruto",
+   "url": "http://localhost:3000/learn/akasha/fils-d-acier",
+   "statut": 200,
+   "aResume": true,
+   "longueurResume": 90,
+   "resumeVisible": true,
+   "mentionVide": false,
+   "resume": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Kakashi Hatake, Sarada Uchiha…"
+  },
+  {
+   "slug": "vegeta-mega-instinc-evil",
+   "name": "Vegeta Mega Instinc Evil",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "url": "http://localhost:3000/learn/akasha/vegeta-mega-instinc-evil",
+   "statut": 200,
+   "aResume": true,
+   "longueurResume": 50,
+   "resumeVisible": true,
+   "mentionVide": false,
+   "resume": "Transformation de puissance (Ki 19.84 Septillion)."
+  },
+  {
+   "slug": "seducing-woods",
+   "name": "Forêt de la Séduction",
+   "type": "place",
+   "universe": "One Piece",
+   "url": "http://localhost:3000/learn/akasha/seducing-woods",
+   "statut": 200,
+   "aResume": true,
+   "longueurResume": 170,
+   "resumeVisible": true,
+   "mentionVide": false,
+   "resume": "Forêt périlleuse bordant Whole Cake Island, où des Homies remodèlent le décor pour égarer les intrus. King Baum y régna en maître avant que Lady Tree ne prenne "
+  },
+  {
+   "slug": "atk-op-jujika",
+   "name": "Jujika",
+   "type": "power",
+   "universe": "One Piece",
+   "url": "http://localhost:3000/learn/akasha/atk-op-jujika",
+   "statut": 200,
+   "aResume": true,
+   "longueurResume": 41,
+   "resumeVisible": true,
+   "mentionVide": false,
+   "resume": "Attaque de One Piece — attaque signature."
+  },
+  {
+   "slug": "sweet-city",
+   "name": "Sweet City",
+   "type": "place",
+   "universe": "One Piece",
+   "url": "http://localhost:3000/learn/akasha/sweet-city",
+   "statut": 200,
+   "aResume": true,
+   "longueurResume": 161,
+   "resumeVisible": true,
+   "mentionVide": false,
+   "resume": "Capitale de Totto Land, dressée sur Whole Cake Island. Bâtie en confiseries comestibles, la métropole grouille d'habitants de toutes races et de Homies affairés"
+  },
+  {
+   "slug": "jet-shoes",
+   "name": "Jet Shoes",
+   "type": "artifact",
+   "universe": "One Piece",
+   "url": "http://localhost:3000/learn/akasha/jet-shoes",
+   "statut": 200,
+   "aResume": true,
+   "longueurResume": 28,
+   "resumeVisible": true,
+   "mentionVide": false,
+   "resume": "Coquillage-outil de Skypiea."
+  },
+  {
+   "slug": "massue",
+   "name": "Massue",
+   "type": "artifact",
+   "universe": "Naruto",
+   "url": "http://localhost:3000/learn/akasha/massue",
+   "statut": 200,
+   "aResume": true,
+   "longueurResume": 77,
+   "resumeVisible": true,
+   "mentionVide": false,
+   "resume": "Arme / outil de l'univers Naruto — porté par Tenten, Yagura Karatachi, Banna…"
+  }
+ ]
+}

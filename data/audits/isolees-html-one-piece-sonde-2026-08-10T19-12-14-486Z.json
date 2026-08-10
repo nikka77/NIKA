@@ -1,0 +1,3177 @@
+{
+ "chantier": "sortir les isolées One Piece par l'infobox RENDUE",
+ "quand": "2026-08-10T19:18:46.255Z",
+ "mode": "sonde",
+ "hote": "onepiece.fandom.com",
+ "champs": [
+  "affiliation",
+  "occupation",
+  "residence",
+  "region",
+  "owner",
+  "captain",
+  "dfname"
+ ],
+ "avant": {
+  "fiches": 7698,
+  "aretes": 17044,
+  "isoleesTotales": 555,
+  "isoleesUnivers": 264
+ },
+ "pagesLues": 463,
+ "wikitexteInfoboxNue": 0,
+ "libellesInfobox": {
+  "jname": 349,
+  "ename": 348,
+  "first": 348,
+  "rname": 322,
+  "status": 260,
+  "affiliation": 214,
+  "jva": 196,
+  "occupation": 190,
+  "image": 187,
+  "eva": 186,
+  "residence": 123,
+  "dftype": 110,
+  "dfename": 108,
+  "birth": 107,
+  "origin": 95,
+  "age": 83,
+  "dfname": 82,
+  "dfmeaning": 81,
+  "height": 81,
+  "blood type": 78,
+  "bounty": 47,
+  "type": 46,
+  "epithet": 46,
+  "meaning": 43,
+  "liveaction": 25,
+  "user": 22,
+  "owner": 19,
+  "captain": 17,
+  "grade": 13,
+  "alias": 13,
+  "region": 11,
+  "previous": 10,
+  "extra1": 9,
+  "ship": 9,
+  "fruit": 8,
+  "age2": 5,
+  "leader": 3,
+  "gladiator number": 3,
+  "price": 3,
+  "date": 2,
+  "homeland": 2,
+  "birthname": 2,
+  "residency": 2,
+  "length": 2,
+  "funi eva": 2,
+  "extra2": 2,
+  "features": 2,
+  "population": 2,
+  "transportation": 2,
+  "vol": 1,
+  "chapter": 1,
+  "episode": 1,
+  "duration": 1,
+  "location": 1,
+  "instigator": 1,
+  "factions": 1,
+  "commanders": 1,
+  "other": 1,
+  "outcome": 1,
+  "birthday": 1,
+  "extra3": 1,
+  "extra4": 1,
+  "extra5": 1,
+  "funi eval": 1,
+  "log": 1
+ },
+ "ciblesBrutes": 719,
+ "attendu": {
+  "aretes": 11,
+  "isoleesSorties": 6
+ },
+ "parNature": {
+  "habite": 1,
+  "appartient": 7,
+  "possede": 3
+ },
+ "parChamp": {
+  "residence": 1,
+  "affiliation": 5,
+  "region": 2,
+  "owner": 3
+ },
+ "motifsEchec": {
+  "aucune fiche One Piece nommée «…»": 291,
+  "cible de type personnage (…)": 22,
+  "cible redirigée vers une section (…)": 9
+ },
+ "journal": {
+  "pageAbsente": [
+   "Tokoyaki 8",
+   "Visio-Dial",
+   "Hydro-Dial",
+   "Breath-Dial",
+   "Spéro-Dial",
+   "Eisen-Dial",
+   "Heat-Dial",
+   "Flavor-Dial",
+   "Flash-Dial",
+   "Flamme-Dial",
+   "Jet-Dial",
+   "Lampe-Dial",
+   "Reject-Dia",
+   "Milky-Dial",
+   "Impact-Dial",
+   "Audio-Dial",
+   "Diial des Ténèbres",
+   "Thunder-Dial",
+   "Jet-Board",
+   "Jet Shoes",
+   "Dressrosa / Alliance Pirate",
+   "Newkama Force #1",
+   "Kendiyo Haritsu",
+   "Orenami Fan (O)",
+   "Bongou",
+   "Dr. Fishbonen",
+   "Hongou",
+   "Banzaburou",
+   "Goen Jean",
+   "Chou",
+   "Kaba Shinshi",
+   "Archipel Totto Land",
+   "Famille Kozuki",
+   "Axe-Dial",
+   "Kamijirou",
+   "Contrôle-Dial",
+   "King (500 Hostages)",
+   "Futoru",
+   "Burn-Blade",
+   "Newkama Force #4",
+   "Orenami Fan (V)",
+   "Alvida Pirate (S Tattoo)",
+   "Detamaruka Shin",
+   "L’équipage des Pirates Yes",
+   "Unit 55 Troop Leader",
+   "Sky-Arrows",
+   "Urbain-san",
+   "Burn-Bazooka",
+   "Nouveau Marineford",
+   "Banbaji",
+   "Barto Club's Grandma",
+   "Bon Chari Seller",
+   "Kamyu's Fellow Boxer",
+   "Bungou",
+   "Biscuits",
+   "Biyo's Father",
+   "Ice",
+   "Gu",
+   "Margarine",
+   "Yuu's Father",
+   "Black Cat Pirate (Hammer)",
+   "Tsunagorou",
+   "Milk",
+   "Cook Shinpachi",
+   "Decalvan Brother (A)",
+   "Rosy Life Rider (Headband)",
+   "Kamyu's Fellow Wrestler",
+   "Kojurou",
+   "Jack-in-the-Box",
+   "Pirate au foyer",
+   "Village caché des nuages",
+   "Île Pucci",
+   "Kamyu's Fellow Swordsman",
+   "Lami Trafalgar",
+   "Royaume de Centaurea",
+   "Colline aux fleurs",
+   "Tsujigirou Tooyama",
+   "L’équipage des Pirates Schneider",
+   "Île d'Hiver",
+   "Buggy Ball Attendant",
+   "Unique",
+   "Look-out of the Lady Mary",
+   "Linlin's Mother",
+   "Matoryou Hime-tachi",
+   "Notice Town",
+   "Hou-ban Taichou",
+   "Piepie",
+   "Topping",
+   "Epée d'Ohm",
+   "L’équipage de Diez Barrels",
+   "Forêt de la Séduction",
+   "Newkama Force #2",
+   "Announcer Ikkaku",
+   "Poripori",
+   "Ohana",
+   "Homing's Wife",
+   "Yakigashi",
+   "Kagerou",
+   "Pastor Zombie",
+   "Pastor Zombie's Assistant",
+   "Ville du Château",
+   "Village des Aînés",
+   "Église",
+   "Red Hair Pirate (Chain)",
+   "Doran's Father",
+   "Abi's Mother",
+   "Rokuroshi's' Assistant",
+   "Pirate Captain (500 Hostages)",
+   "Rosy Life Rider (Blond)",
+   "G-8 Head Custodian",
+   "Shopkeeper Hanji",
+   "Short Vassal (500 Hostages)",
+   "Sind's Father",
+   "Cook Billy",
+   "Dancer on the Lady Mary",
+   "Deigorou",
+   "Decalvan Brother (B)",
+   "Tall Vassal (500 Hostages)",
+   "Dream's Mother",
+   "Tabuhachirou",
+   "Monnosuke Tsurue",
+   "Foxy Pirates' Referee",
+   "G-8 Marine Officer (Blond)",
+   "Shitemanna Ishigo",
+   "Furishirou Waruno",
+   "L’équipage des Pirates à la Moustache",
+   "Newkama Force #5",
+   "Juujirou",
+   "Kureyo Kairo",
+   "Goode",
+   "L’équipage du Capitaine Usopp",
+   "L’équipage ASL",
+   "l’équipage de Ganzack",
+   "L’équipage Amigo",
+   "Isshi 1",
+   "Koala Zombie",
+   "Linlin's Father",
+   "L’équipage des Pirates Treasure",
+   "Mayor of the Desert Village",
+   "18th Fleet Gallery Head Chef",
+   "Sally Nantokanette",
+   "Orenami Fan (L)",
+   "Oyame",
+   "Frères Voleurs",
+   "Equipage de Bigalo",
+   "Equipage de Pandaman",
+   "Law & Lami's Father",
+   "Sanshita",
+   "Esta's Boyfriend",
+   "Tailor Zombie",
+   "Tall Risky Brother",
+   "Tightrope Walking Funan Bros (Ginger)",
+   "Joe Bunny",
+   "Kanishitoru Sukoshiba",
+   "Buggy Pirate (Victim)",
+   "Tall Marley Brother",
+   "Bateau de Pandaman",
+   "Kanzaburou Akudai",
+   "Lina and Sayo's Father",
+   "Riley Brother #2",
+   "Newkama Force #6",
+   "Riley Brother #1",
+   "Short Marley Brother",
+   "Rotund Risky Brother",
+   "G-8 Sous Chef",
+   "G-8 Marine Officer (Gray)",
+   "Chintarou Giro",
+   "Newkama Force #3",
+   "Alvida Pirate (Horned)",
+   "Hockera Achino"
+  ],
+  "redirectionSection": [
+   "Acrobatic Fuwas #1 → Buggy Pirates#Acrobatic Fuwas",
+   "Acrobatic Fuwas #3 → Buggy Pirates#Acrobatic Fuwas",
+   "Arrow → Tsumegeri Guards#Arrow",
+   "Acrobatic Fuwas #4 → Buggy Pirates#Acrobatic Fuwas",
+   "Stool → Cocoa Weed#Stool",
+   "Acrobatic Fuwas #2 → Buggy Pirates#Acrobatic Fuwas",
+   "Kung Fu Dugong → Animal Species/Arabasta Saga#Kung-Fu Dugongs",
+   "Brahm → Tsumegeri Guards#Brahm",
+   "Superhuman Domingos #1 → Buggy Pirates#Superhuman Domingos",
+   "Superhuman Domingos #3 → Buggy Pirates#Superhuman Domingos",
+   "Superhuman Domingos #2 → Buggy Pirates#Superhuman Domingos",
+   "Hyota → Tsumegeri Guards#Hyota",
+   "Barrel → Tsumegeri Guards#Barrel",
+   "cible Prince → Royal#Prince and Princess",
+   "cible Groggy Monsters → Foxy Pirates#Groggy Monsters",
+   "cible Groggy Monsters → Foxy Pirates#Groggy Monsters",
+   "cible Groggy Monsters → Foxy Pirates#Groggy Monsters",
+   "cible King (Title) → Royal#King",
+   "cible CP7 → Cipher Pol#CP7",
+   "cible Prince → Royal#Prince and Princess",
+   "cible King (Title) → Royal#King",
+   "cible King (Title) → Royal#King"
+  ],
+  "pagePartagee": [
+   "Bateau à Dials → « Dial Boat » (2 fiches)",
+   "Yonka → « Medaka Mermaid Quintuplets » (4 fiches)",
+   "L’équipage des Flèches Rouges → « Red Arrows Pirates » (2 fiches)",
+   "Iwatobi → « Iwatobi » (2 fiches)",
+   "kogarashi → « Oto and Kogarashi » (2 fiches)",
+   "Royaume de Flevance → « Flevance » (2 fiches)",
+   "Ichika → « Medaka Mermaid Quintuplets » (4 fiches)",
+   "Royaume Whiteland → « Iwatobi » (2 fiches)",
+   "Bateaux à Dials → « Dial Boat » (2 fiches)",
+   "Oto → « Oto and Kogarashi » (2 fiches)",
+   "Bao → « Gyoro, Nin, and Bao » (3 fiches)",
+   "Sanka → « Medaka Mermaid Quintuplets » (4 fiches)",
+   "Nin → « Gyoro, Nin, and Bao » (3 fiches)",
+   "Pirate des flèches rouges → « Red Arrows Pirates » (2 fiches)",
+   "Yonka Two → « Medaka Mermaid Quintuplets » (4 fiches)",
+   "Gyoro → « Gyoro, Nin, and Bao » (3 fiches)",
+   "Ville blanche → « Flevance » (2 fiches)"
+  ],
+  "sansInfobox": [
+   "Shepherd",
+   "Black",
+   "Dream"
+  ],
+  "sansChampUtile": [
+   "Kamonegi",
+   "Saga Finale",
+   "Battle Franky",
+   "Shin Jaiya",
+   "Guerre au Sommet",
+   "Zabo",
+   "Yubashiri",
+   "Rice Rice",
+   "Kanezenny",
+   "Konbu",
+   "Lady Mary",
+   "Lina",
+   "Marilyn",
+   "Minoru Kazeno",
+   "Race",
+   "Doran",
+   "Rittonto",
+   "Nika",
+   "Sind",
+   "Damask",
+   "Suu",
+   "Egana",
+   "Yoshimoto",
+   "La lune",
+   "Kirintauros",
+   "Osome",
+   "Reuder",
+   "Sayo",
+   "Hobbit",
+   "Mukkashimi Tower",
+   "Esta",
+   "Lady Tree",
+   "Île du Judo",
+   "Nouveau Monde",
+   "L’équipage du Roux",
+   "Famille Kozuki",
+   "Paradise",
+   "Levely",
+   "Baratie",
+   "Fruit du Gum-Gum",
+   "Pyro-Fruit",
+   "Fruit de la Barrière",
+   "Fuga",
+   "Fruit du Bistouri",
+   "Nokokuwa Police",
+   "Fruit du Flocon",
+   "Fruit du Château",
+   "Speed",
+   "Dobon",
+   "Babanuki",
+   "Daifugo",
+   "Solitaire",
+   "Bao Huang",
+   "Briscola",
+   "Usunoro",
+   "Bisley",
+   "Travesti-Fruit",
+   "Underworld",
+   "Henzo",
+   "Gina",
+   "Mocha",
+   "Armo-Fruit",
+   "Fruit du Gaz",
+   "Fruit de la Paille",
+   "Fruit du Temps",
+   "Fruit du Son",
+   "Dachoman",
+   "Scorpion",
+   "Samurai Batts",
+   "Farafra",
+   "Kitton",
+   "Famille Nefertari",
+   "Master",
+   "Pound",
+   "Klabautermann",
+   "Umit Shipping",
+   "Fruit du Fil",
+   "Pirate",
+   "Fruit des Âmes",
+   "Rabbitman",
+   "Bearman",
+   "Caimanlady",
+   "Jumper",
+   "Beegirl",
+   "Hawkman",
+   "Ageha Woman",
+   "Koshi Falcon",
+   "Scorpionlady",
+   "Horseman",
+   "Saitank",
+   "Kamakirigirl",
+   "Beetleman",
+   "Redwolf",
+   "Bishonure-onna",
+   "Yamanba",
+   "Fruit Des Éclosions",
+   "Rokuron Dokuron",
+   "Fruit du Ressort",
+   "Fruit du Vole-au-Vent",
+   "Shandias",
+   "Fruit de l'Invisibilité",
+   "Fruit du Marais",
+   "Alliance Ninja-Pirate-Mink-Samouraï",
+   "Fruit de la Résurrection",
+   "Fruit du Vêtement",
+   "Fruit de la Maturation",
+   "Fruit du Parchemin",
+   "Fruit du Millet",
+   "Fruit du Pinceau"
+  ],
+  "cibleRefusee": [
+   "Noko --dfname--> Fruit du Sommeil (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "L’équipage des Candys --captain--> Candy (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Shusui --owner--> Pays de Wano (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Margarita --affiliation--> Egana (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Monkey D. Luffy --dfname--> Nika (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Chimney --affiliation--> Kokoro (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Gonbe --affiliation--> Chimney (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Marie --affiliation--> Judy (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Yoko --affiliation--> Boss (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Chadros Higelyges --affiliation--> Caesar Clown (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Abi --affiliation--> Monkey D. Luffy (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Aunt --affiliation--> Roronoa Zoro (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Ayako --affiliation--> Aunt (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Akihiro --affiliation--> Aunt (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Yuya --affiliation--> Aunt (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Sho --affiliation--> Aunt (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Yosaku --affiliation--> Johnny (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Johnny --affiliation--> Yosaku (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Merry --affiliation--> Kaya (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Crocus --affiliation--> Laboon (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Soul Solid --owner--> Brook (personne, et aucune règle de champ ne couvre ce couple de types)",
+   "Chouchou --affiliation--> Hocker (personne, et aucune règle de champ ne couvre ce couple de types)"
+  ],
+  "qualificateurRevolu": [
+   "Kirintauros --affiliation--> Caesar Clown (« (former); »)",
+   "Kirintauros --affiliation--> Centaur Patrol Unit (« (former) »)",
+   "Gran Tesoro --affiliation--> Gild Tesoro (« (former) »)",
+   "Nidai Kitetsu --owner--> Kotetsu (« (former); »)",
+   "Franky --affiliation--> Franky Family (« (former); »)",
+   "Franky --affiliation--> Tom's Workers (« (former); »)",
+   "Franky --occupation--> Bounty Hunter (« (former) »)",
+   "Franky --residence--> Water 7 (« (former); »)",
+   "Franky --residence--> Karakuri Island (« (former, temporary) »)",
+   "Karoo --affiliation--> Straw Hat Pirates (« (former), »)",
+   "Karoo --affiliation--> Baroque Works (« (former) »)",
+   "Karoo --occupation--> Pirate (« (former) »)",
+   "Brogy --residence--> Little Garden (« (former) »)",
+   "Dorry --residence--> Little Garden (« (former) »)",
+   "Igaram --occupation--> Bounty Hunter (« (former); Mayor of »)",
+   "Kokoro --occupation--> Tom (« (former) »)",
+   "Kokoro --residence--> Fish-Man Island (« (former) »)",
+   "Yokozuna --affiliation--> Tom's Workers (« (former) »)",
+   "Shakuyaku --affiliation--> Kuja Pirates (« (former) »)",
+   "Shakuyaku --occupation--> Pirate Captain (« (former); »)",
+   "Shakuyaku --occupation--> First Mate (« (former); Empress of »)",
+   "Shakuyaku --occupation--> Amazon Lily (« (former) »)",
+   "Shakuyaku --residence--> Hachinosu (« (former) »)",
+   "Shanks --affiliation--> Roger Pirates (« (former); »)",
+   "Shanks --affiliation--> Knights of God (« (former); »)",
+   "Shanks --affiliation--> Figarland Family (« ) (former) »)",
+   "Shanks --occupation--> Pirate Apprentice (« (former); »)",
+   "Shanks --residence--> Mary Geoise (« (former) »)",
+   "Koala --affiliation--> Sun Pirates (« (former); »)",
+   "Koala --affiliation--> Slavery (« (former) »)",
+   "Koala --residence--> Baltigo (« (former); »)",
+   "Koala --residence--> Foolshout Island (« (former); »)",
+   "Koala --residence--> Mary Geoise (« (former); »)",
+   "Rebecca --occupation--> Princess (« Of Dressrosa (former) »)",
+   "Coribou --affiliation--> Fake Straw Hat Crew (« (former, temporary) »)",
+   "Tashigi --affiliation--> Loguetown (« (former) »)",
+   "Tashigi --residence--> Loguetown (« (former) »)",
+   "Koby --affiliation--> 153rd Branch (« (former); »)",
+   "Koby --occupation--> Pirate (« Ship Caretaker (former) »)",
+   "Koby --residence--> 153rd Branch (« ) (former); »)",
+   "Koby --residence--> Goat Island (« (former) »)",
+   "Cavendish --occupation--> Prince (« of the Bourgeois Kingdom (former) »)",
+   "Cavendish --residence--> Bourgeois Kingdom (« (former) »)",
+   "Usopp --residence--> Syrup Village (« (former); »)",
+   "Usopp --residence--> Boin Archipelago (« (former, temporary) »)",
+   "Tom --residence--> Fish-Man Island (« (former) »)",
+   "Marie --occupation--> Doctor (« (former) »)",
+   "Marie --residence--> Sabaody Archipelago (« (former) »)",
+   "Hatchan --affiliation--> Sun Pirates (« (former) »)",
+   "Hatchan --residence--> Fish-Man District (« (former); »)",
+   "Hatchan --residence--> Arlong Park (« (former) »)",
+   "Hack --residence--> Ryugu Kingdom (« (former) »)",
+   "Hack --residence--> Baltigo (« (former) »)",
+   "Big Pan --affiliation--> Foxy Pirates (« (former); »)",
+   "Pickles --affiliation--> Foxy Pirates (« (former); »)",
+   "Mr. 9 --affiliation--> Baroque Works (« (former) »)",
+   "Mr. 9 --occupation--> Officer (« (former); »)",
+   "Disco --affiliation--> Donquixote Doflamingo (« (former); »)",
+   "Kyros --affiliation--> Corrida Colosseum (« (former); »)",
+   "Jinbe --affiliation--> Big Mom Pirates (« (former); »)",
+   "Jinbe --affiliation--> Impel Down (« (former); »)",
+   "Jinbe --occupation--> Pirate Captain (« (former); »)",
+   "Jinbe --residence--> Fish-Man District (« (former) »)",
+   "Miss Monday --occupation--> Officer (« (former); »)",
+   "Chess --affiliation--> Drum Kingdom (« (former) »)",
+   "Kuromarimo --affiliation--> Drum Kingdom (« (former) »)",
+   "Capote --affiliation--> Foxy Pirates (« (former) »)",
+   "Caroline --occupation--> Queen (Title) (« (former) »)",
+   "Sanji --affiliation--> Vinsmoke Family (« (former); »)",
+   "Sanji --occupation--> Prince (« (former); »)",
+   "Sanji --residence--> Baratie (« ) (former); »)",
+   "Sanji --residence--> Momoiro Island (« (former, temporary) »)",
+   "Oimo --residence--> Enies Lobby (« (former) »)",
+   "Oimo --residence--> Water 7 (« (former) »)",
+   "Kashii --residence--> Enies Lobby (« (former) »)",
+   "Kashii --residence--> Water 7 (« (former) »)",
+   "Gan Fall --occupation--> Mercenary (« (former) »)",
+   "Billy --affiliation--> Golden Lion Pirates (« (former), »)",
+   "Billy --residence--> Merveille (« (former) »)",
+   "Pedro --affiliation--> Nox Pirates (« (former) »)",
+   "Pedro --occupation--> Pirate Captain (« (former); »)",
+   "Pedro --occupation--> Explorer (« (former) »)",
+   "Roronoa Zoro --occupation--> Bounty Hunter (« (former) »)",
+   "Roronoa Zoro --residence--> Shimotsuki Village (« (former); »)",
+   "Roronoa Zoro --residence--> Nazawaka City (« (former) (Non-Canon) ≠ ; »)",
+   "Roronoa Zoro --residence--> Kuraigana Island (« (former, temporary) »)",
+   "Iceburg --affiliation--> Tom's Workers (« (former) »)",
+   "Henzo --affiliation--> Pumpkin Pirates (« (former) »)",
+   "Erik --affiliation--> Operation Utopia (« (former) »)",
+   "Erik --residence--> Arabasta Kingdom (« (formerly »)",
+   "Isoka --affiliation--> Pumpkin Pirates (« (former); »)",
+   "Isoka --occupation--> Chore Boy (« (former); »)",
+   "Isoka --occupation--> Pirate (« (former) »)",
+   "Mr. Beans --affiliation--> Baroque Works (« ) (former) »)",
+   "Pukau --affiliation--> Pumpkin Pirates (« (former) »)",
+   "Pukau --occupation--> Chore Boy (« (former) »)",
+   "Pukau --occupation--> Pirate (« (former) »)",
+   "Rongo --affiliation--> Pumpkin Pirates (« (former); »)",
+   "Rongo --occupation--> Chore Boy (« (former) »)",
+   "Rongo --occupation--> Pirate (« (former) »)",
+   "Akibi --affiliation--> Pumpkin Pirates (« (former) »)",
+   "Akibi --occupation--> Chore Boy (« (former); »)",
+   "Happa Yamao --residence--> Pucci (« (former) »)",
+   "Gina --affiliation--> Foxy Pirates (« (former) »)",
+   "Rapanui Pasqua --occupation--> Marine Ranks (« (former) »)",
+   "George Mach --affiliation--> Foxy Pirates (« (former) »)",
+   "Zeff --affiliation--> Cook Pirates (« (former) »)",
+   "Zeff --occupation--> Pirate Captain (« (former) »)",
+   "Yosaku --affiliation--> Roronoa Zoro (« 's band (former) »)",
+   "Yosaku --occupation--> Bounty Hunter (« (former); Fisherman »)",
+   "Johnny --affiliation--> Roronoa Zoro (« 's band (former); »)",
+   "Johnny --occupation--> Bounty Hunter (« (former); Fisherman »)",
+   "Carrot --occupation--> Inuarashi Musketeer Squad (« (former); »)",
+   "Carrot --occupation--> Kingsbird (« (former) »)",
+   "Dellinger --residence--> Spider Miles (« (former); »)",
+   "Dellinger --residence--> Dressrosa (« (former) »)",
+   "Izou --affiliation--> Whitebeard Pirates (« (former); »)",
+   "Izou --occupation--> Whitebeard Pirates (« (former); »)",
+   "Nekomamushi --affiliation--> Roger Pirates (« (former); »)",
+   "Nekomamushi --occupation--> Pirate Apprentice (« (former) »)",
+   "Nekomamushi --residence--> Zou (« ) (Former) »)",
+   "Inuarashi --affiliation--> Roger Pirates (« (former); »)",
+   "Inuarashi --occupation--> Pirate Apprentice (« (former) »)",
+   "Napoleon --affiliation--> Rocks Pirates (« (former) »)",
+   "Itomimizu --affiliation--> Foxy Pirates (« (former) »)",
+   "Scorpion --occupation--> Bounty Hunter (« (former) »)",
+   "Mr. Shimizu --affiliation--> Baroque Works (« ) (former) »)",
+   "Okame --affiliation--> Sand-Sand Clan (« (former) »)",
+   "Kebi --affiliation--> Operation Utopia (« (former); »)",
+   "Kebi --affiliation--> Sand-Sand Clan (« (former) »)",
+   "Natto --affiliation--> Operation Utopia (« (former); »)",
+   "Natto --affiliation--> Sand-Sand Clan (« (former) »)",
+   "Farafra --affiliation--> Rebel Army (« (former) »)",
+   "Mountain Ricky --affiliation--> Foxy Pirates (« (former) »)",
+   "Crocus --affiliation--> Roger Pirates (« (former), »)",
+   "Crocus --occupation--> Pirate (« (former) »)",
+   "Desire --affiliation--> Silver Pirate Alliance (« (former) »)",
+   "Desire --residence--> Silver Mine (« (former) »)",
+   "Pound --affiliation--> Charlotte Family (« (Former) ‡ »)",
+   "Shuzo --affiliation--> Marines (« (former) »)",
+   "Shuzo --occupation--> Marine Ranks (« (former) »)",
+   "Île des Hommes-Poissons --affiliation--> Big Mom Pirates (« (former); »)",
+   "Île des Hommes-Poissons --affiliation--> Whitebeard Pirates (« (former) »)",
+   "Pays de Wano --affiliation--> Beasts Pirates (« (formerly) »)",
+   "Vergo --residence--> Downs (« (former) »)",
+   "Chinjao --occupation--> Pirate (« (former) »)",
+   "Nami --residence--> Oykot Kingdom (« (former) »)",
+   "Nami --residence--> Cocoyasi Village (« (former); »)",
+   "Nami --residence--> Weatheria (« (former, temporary) »)",
+   "Onigashima --affiliation--> Beasts Pirates (« (Formerly) »)",
+   "Nojiko --residence--> Oykot Kingdom (« (former) »)",
+   "Gaimon --occupation--> Pirate (« (former) »)",
+   "Neptune --occupation--> Prince (« (former) »)",
+   "Lindbergh --residence--> Baltigo (« (former); »)",
+   "Lao G --residence--> Spider Miles (« (former); »)",
+   "Lao G --residence--> Dressrosa (« (former) »)"
+  ],
+  "pageDAutrui": [
+   "Île Céleste → « Skypiea », qui EST notre fiche skypiea-lieu (place)"
+  ],
+  "citantsPlafonnes": 844,
+  "chaineTronquee": [
+   "Yubashiri · owner : « Ipponmatsu → Roronoa Zoro &#91; 1 &#93; → Damaged &#91; 2 &#93; » → dernier maillon retenu",
+   "Ame no Habakiri · owner : « Kouzuki Sukiyaki → Kouzuki Oden → Kouzuki Momonosuke » → dernier maillon retenu",
+   "Shusui · owner : « Shimotsuki Ryuma → Roronoa Zoro → Wano Country » → dernier maillon retenu",
+   "Shodai Kitetsu · owner : « Kitetsu → Ethanbaron V. Nusjuro » → dernier maillon retenu",
+   "Sandai Kitetsu · owner : « Kouzuki Sukiyaki → Ipponmatsu → Roronoa Zoro » → dernier maillon retenu",
+   "Wadô Ichimonji · owner : « Shimotsuki Kouzaburou → Koushirou → Kuina → Roronoa Zoro » → dernier maillon retenu",
+   "Kashu · owner : « Mr. 11 → Tashigi » → dernier maillon retenu",
+   "Yamaoroshi · owner : « Billy → Tashigi » → dernier maillon retenu"
+  ],
+  "fragmentSansCible": [
+   "Acrobatic Fuwas #1 → Buggy Pirates#Acrobatic Fuwas (page de ramassage : aucune fiche de ce nom)",
+   "Acrobatic Fuwas #3 → Buggy Pirates#Acrobatic Fuwas (page de ramassage : aucune fiche de ce nom)",
+   "Arrow → Tsumegeri Guards#Arrow (page de ramassage : aucune fiche de ce nom)",
+   "Acrobatic Fuwas #4 → Buggy Pirates#Acrobatic Fuwas (page de ramassage : aucune fiche de ce nom)",
+   "Stool → Cocoa Weed#Stool (page de ramassage : aucune fiche de ce nom)",
+   "Acrobatic Fuwas #2 → Buggy Pirates#Acrobatic Fuwas (page de ramassage : aucune fiche de ce nom)",
+   "Kung Fu Dugong → Animal Species/Arabasta Saga#Kung-Fu Dugongs (page de ramassage : aucune fiche de ce nom)",
+   "Brahm → Tsumegeri Guards#Brahm (page de ramassage : aucune fiche de ce nom)",
+   "Superhuman Domingos #1 → Buggy Pirates#Superhuman Domingos (page de ramassage : aucune fiche de ce nom)",
+   "Superhuman Domingos #3 → Buggy Pirates#Superhuman Domingos (page de ramassage : aucune fiche de ce nom)",
+   "Superhuman Domingos #2 → Buggy Pirates#Superhuman Domingos (page de ramassage : aucune fiche de ce nom)",
+   "Hyota → Tsumegeri Guards#Hyota (page de ramassage : aucune fiche de ce nom)",
+   "Barrel → Tsumegeri Guards#Barrel (page de ramassage : aucune fiche de ce nom)"
+  ]
+ },
+ "candidats": [
+  {
+   "from_entry": "045e5cc5-1103-4512-bcde-7194aec88afb",
+   "to_entry": "90b4ff09-bd94-4fb9-ab6f-aef3ce682c25",
+   "relation": "habite",
+   "sens": "direct",
+   "de": "Urouge",
+   "deSlug": "urouge",
+   "deType": "character",
+   "vers": "Ballon Terminal",
+   "versSlug": "ballom-terminal",
+   "versType": "place",
+   "lue": "Urouge",
+   "gisement": "infobox",
+   "champ": "residence",
+   "titreWiki": "Ballon Terminal",
+   "titreResolu": "Ballon Terminal",
+   "ancre": null,
+   "libelleAffiche": "Ballon Terminal",
+   "voie": "nom direct",
+   "sauveDe": false,
+   "sauveVers": true,
+   "source_url": "https://onepiece.fandom.com/wiki/Urouge",
+   "preuve": "https://onepiece.fandom.com/wiki/Urouge · infobox rendue, ligne « residence : Ballon Terminal [ 3 ] » → lien /wiki/Ballon_Terminal ; fiche One Piece de ce nom : Ballon Terminal (ballom-terminal, type place) ; champ « residence » → nature « habite » (défaut du graphe)"
+  },
+  {
+   "from_entry": "3964790a-5073-4aee-8436-09e090975500",
+   "to_entry": "9c37e749-eee5-4f39-adb6-f693311df8e8",
+   "relation": "appartient",
+   "sens": "direct",
+   "de": "Izou",
+   "deSlug": "izou",
+   "deType": "character",
+   "vers": "Famille Kozuki",
+   "versSlug": "kouzuki-family",
+   "versType": "status",
+   "lue": "Izou",
+   "gisement": "infobox",
+   "champ": "affiliation",
+   "titreWiki": "Kouzuki Family",
+   "titreResolu": "Kouzuki Family",
+   "ancre": null,
+   "libelleAffiche": "Kouzuki Family",
+   "voie": "nom direct",
+   "sauveDe": false,
+   "sauveVers": true,
+   "source_url": "https://onepiece.fandom.com/wiki/Izou",
+   "preuve": "https://onepiece.fandom.com/wiki/Izou · infobox rendue, ligne « affiliation : Whitebeard Pirates (former); [ 1 ] Kouzuki Family ; Ninja-Pirate-Mink-Samurai Alliance » → lien /wiki/Kouzuki_Family ; fiche One Piece de ce nom : Famille Kozuki (kouzuki-family, type status) ; champ « affiliation » → nature « appartient » (défaut du graphe)"
+  },
+  {
+   "from_entry": "2928d2df-e9e3-47cb-a05f-edcdd1a53f3c",
+   "to_entry": "9c37e749-eee5-4f39-adb6-f693311df8e8",
+   "relation": "appartient",
+   "sens": "direct",
+   "de": "Nekomamushi",
+   "deSlug": "nekomamushi",
+   "deType": "character",
+   "vers": "Famille Kozuki",
+   "versSlug": "kouzuki-family",
+   "versType": "status",
+   "lue": "Nekomamushi",
+   "gisement": "infobox",
+   "champ": "affiliation",
+   "titreWiki": "Kouzuki Family",
+   "titreResolu": "Kouzuki Family",
+   "ancre": null,
+   "libelleAffiche": "Kouzuki Family",
+   "voie": "nom direct",
+   "sauveDe": false,
+   "sauveVers": true,
+   "source_url": "https://onepiece.fandom.com/wiki/Nekomamushi",
+   "preuve": "https://onepiece.fandom.com/wiki/Nekomamushi · infobox rendue, ligne « affiliation : Mokomo Dukedom ; Guardians ; [ 1 ] Kouzuki Family ; [ 3 ] Ninja-Pirate-Mink-Samurai Alliance (disbanded); Nine Red Scabbards ; [ 4 ] Roger Pirates (former); Whi » → lien /wiki/Kouzuki_Family ; fiche One Piece de ce nom : Famille Kozuki (kouzuki-family, type status) ; champ « affiliation » → nature « appartient » (défaut du graphe)"
+  },
+  {
+   "from_entry": "42f24166-ff61-43ad-965d-3c99a9cabe7a",
+   "to_entry": "9c37e749-eee5-4f39-adb6-f693311df8e8",
+   "relation": "appartient",
+   "sens": "direct",
+   "de": "Inuarashi",
+   "deSlug": "inuarashi",
+   "deType": "character",
+   "vers": "Famille Kozuki",
+   "versSlug": "kouzuki-family",
+   "versType": "status",
+   "lue": "Inuarashi",
+   "gisement": "infobox",
+   "champ": "affiliation",
+   "titreWiki": "Kouzuki Family",
+   "titreResolu": "Kouzuki Family",
+   "ancre": null,
+   "libelleAffiche": "Kouzuki Family",
+   "voie": "nom direct",
+   "sauveDe": false,
+   "sauveVers": true,
+   "source_url": "https://onepiece.fandom.com/wiki/Inuarashi",
+   "preuve": "https://onepiece.fandom.com/wiki/Inuarashi · infobox rendue, ligne « affiliation : Mokomo Dukedom ; Musketeers ; Kouzuki Family ; [ 3 ] Inuarashi Musketeer Squad ; Ninja-Pirate-Mink-Samurai Alliance (disbanded); Nine Red Scabbards ; [ 4 ] Roge » → lien /wiki/Kouzuki_Family ; fiche One Piece de ce nom : Famille Kozuki (kouzuki-family, type status) ; champ « affiliation » → nature « appartient » (défaut du graphe)"
+  },
+  {
+   "from_entry": "da4d1b3a-8cbb-4e3f-a722-7ebb8ae863e8",
+   "to_entry": "6a854e25-5396-4455-8717-fca583aa2160",
+   "relation": "appartient",
+   "sens": "direct",
+   "de": "Archipel Totto Land",
+   "deSlug": "totto-land",
+   "deType": "place",
+   "vers": "Nouveau Monde",
+   "versSlug": "new-world",
+   "versType": "place",
+   "lue": "Archipel Totto Land",
+   "gisement": "infobox",
+   "champ": "region",
+   "titreWiki": "New World",
+   "titreResolu": "New World",
+   "ancre": null,
+   "libelleAffiche": "New World",
+   "voie": "nom direct",
+   "sauveDe": true,
+   "sauveVers": false,
+   "source_url": "https://onepiece.fandom.com/wiki/Totto_Land",
+   "preuve": "https://onepiece.fandom.com/wiki/Totto_Land · infobox rendue, ligne « region : New World » → lien /wiki/New_World ; fiche One Piece de ce nom : Nouveau Monde (new-world, type place) ; champ « region » → nature « appartient » (défaut du graphe)"
+  },
+  {
+   "from_entry": "da4d1b3a-8cbb-4e3f-a722-7ebb8ae863e8",
+   "to_entry": "ad5260d5-204c-429c-9a75-394d95d19d31",
+   "relation": "appartient",
+   "sens": "direct",
+   "de": "Archipel Totto Land",
+   "deSlug": "totto-land",
+   "deType": "place",
+   "vers": "L’équipage de Big Mom",
+   "versSlug": "l-equipage-de-big-mom",
+   "versType": "status",
+   "lue": "Archipel Totto Land",
+   "gisement": "infobox",
+   "champ": "affiliation",
+   "titreWiki": "Big Mom Pirates",
+   "titreResolu": "Big Mom Pirates",
+   "ancre": null,
+   "libelleAffiche": "Big Mom Pirates",
+   "voie": "nom direct",
+   "sauveDe": true,
+   "sauveVers": false,
+   "source_url": "https://onepiece.fandom.com/wiki/Totto_Land",
+   "preuve": "https://onepiece.fandom.com/wiki/Totto_Land · infobox rendue, ligne « affiliation : Big Mom Pirates » → lien /wiki/Big_Mom_Pirates ; fiche One Piece de ce nom : L’équipage de Big Mom (l-equipage-de-big-mom, type status) ; champ « affiliation » → nature « appartient » (défaut du graphe)"
+  },
+  {
+   "from_entry": "3b2a08b8-973c-4518-b9f3-f805d70df237",
+   "to_entry": "09a7dbf8-9ee4-4677-a6d5-5cd74df7dd9e",
+   "relation": "possede",
+   "sens": "inverse",
+   "de": "Aisa",
+   "deSlug": "aisa",
+   "deType": "character",
+   "vers": "Burn-Blade",
+   "versSlug": "burn-blade",
+   "versType": "artifact",
+   "lue": "Burn-Blade",
+   "gisement": "infobox",
+   "champ": "owner",
+   "titreWiki": "Aisa",
+   "titreResolu": "Aisa",
+   "ancre": null,
+   "libelleAffiche": "Aisa",
+   "voie": "nom direct",
+   "sauveDe": false,
+   "sauveVers": true,
+   "source_url": "https://onepiece.fandom.com/wiki/Burn_Blade",
+   "preuve": "https://onepiece.fandom.com/wiki/Burn_Blade · infobox rendue, ligne « owner : Aisa , Kamakiri » → lien /wiki/Aisa ; fiche One Piece de ce nom : Aisa (aisa, type character) ; champ « owner » → arête INVERSE de nature « possede »"
+  },
+  {
+   "from_entry": "a1e41b39-a263-4df6-acf6-4cd7437abd11",
+   "to_entry": "09a7dbf8-9ee4-4677-a6d5-5cd74df7dd9e",
+   "relation": "possede",
+   "sens": "inverse",
+   "de": "Kamakiri",
+   "deSlug": "kamakiri",
+   "deType": "character",
+   "vers": "Burn-Blade",
+   "versSlug": "burn-blade",
+   "versType": "artifact",
+   "lue": "Burn-Blade",
+   "gisement": "infobox",
+   "champ": "owner",
+   "titreWiki": "Kamakiri",
+   "titreResolu": "Kamakiri",
+   "ancre": null,
+   "libelleAffiche": "Kamakiri",
+   "voie": "nom direct",
+   "sauveDe": false,
+   "sauveVers": true,
+   "source_url": "https://onepiece.fandom.com/wiki/Burn_Blade",
+   "preuve": "https://onepiece.fandom.com/wiki/Burn_Blade · infobox rendue, ligne « owner : Aisa , Kamakiri » → lien /wiki/Kamakiri ; fiche One Piece de ce nom : Kamakiri (kamakiri, type character) ; champ « owner » → arête INVERSE de nature « possede »"
+  },
+  {
+   "from_entry": "a2aca48b-b63f-4bd1-8e5d-6a2cdafe2a34",
+   "to_entry": "f4af0dbf-562e-4e8e-ab74-1ba18fb00a68",
+   "relation": "possede",
+   "sens": "inverse",
+   "de": "Conis",
+   "deSlug": "conis",
+   "deType": "character",
+   "vers": "Burn-Bazooka",
+   "versSlug": "burn-bazooka",
+   "versType": "artifact",
+   "lue": "Burn-Bazooka",
+   "gisement": "infobox",
+   "champ": "owner",
+   "titreWiki": "Conis",
+   "titreResolu": "Conis",
+   "ancre": null,
+   "libelleAffiche": "Conis",
+   "voie": "nom direct",
+   "sauveDe": false,
+   "sauveVers": true,
+   "source_url": "https://onepiece.fandom.com/wiki/Burn_Bazooka",
+   "preuve": "https://onepiece.fandom.com/wiki/Burn_Bazooka · infobox rendue, ligne « owner : Wyper , Conis » → lien /wiki/Conis ; fiche One Piece de ce nom : Conis (conis, type character) ; champ « owner » → arête INVERSE de nature « possede »"
+  },
+  {
+   "from_entry": "a6a81057-76dd-4d8d-a09f-a327f6135c8f",
+   "to_entry": "6a854e25-5396-4455-8717-fca583aa2160",
+   "relation": "appartient",
+   "sens": "direct",
+   "de": "Nouveau Marineford",
+   "deSlug": "new-marineford",
+   "deType": "place",
+   "vers": "Nouveau Monde",
+   "versSlug": "new-world",
+   "versType": "place",
+   "lue": "Nouveau Marineford",
+   "gisement": "infobox",
+   "champ": "region",
+   "titreWiki": "New World",
+   "titreResolu": "New World",
+   "ancre": null,
+   "libelleAffiche": "New World",
+   "voie": "nom direct",
+   "sauveDe": true,
+   "sauveVers": false,
+   "source_url": "https://onepiece.fandom.com/wiki/New_Marineford",
+   "preuve": "https://onepiece.fandom.com/wiki/New_Marineford · infobox rendue, ligne « region : New World » → lien /wiki/New_World ; fiche One Piece de ce nom : Nouveau Monde (new-world, type place) ; champ « region » → nature « appartient » (défaut du graphe)"
+  },
+  {
+   "from_entry": "a6a81057-76dd-4d8d-a09f-a327f6135c8f",
+   "to_entry": "17031794-7a9e-4bb4-a45b-6937bb3c6f36",
+   "relation": "appartient",
+   "sens": "direct",
+   "de": "Nouveau Marineford",
+   "deSlug": "new-marineford",
+   "deType": "place",
+   "vers": "Marine",
+   "versSlug": "marine",
+   "versType": "status",
+   "lue": "Nouveau Marineford",
+   "gisement": "infobox",
+   "champ": "affiliation",
+   "titreWiki": "Marines",
+   "titreResolu": "Marines",
+   "ancre": null,
+   "libelleAffiche": "Marines",
+   "voie": "nom direct",
+   "sauveDe": true,
+   "sauveVers": false,
+   "source_url": "https://onepiece.fandom.com/wiki/New_Marineford",
+   "preuve": "https://onepiece.fandom.com/wiki/New_Marineford · infobox rendue, ligne « affiliation : Marines » → lien /wiki/Marines ; fiche One Piece de ce nom : Marine (marine, type status) ; champ « affiliation » → nature « appartient » (défaut du graphe)"
+  }
+ ],
+ "echecs": [
+  {
+   "de": "L’équipage des Acumates",
+   "champ": "captain",
+   "titreWiki": "Devil Dias",
+   "libelle": "Devil Dias",
+   "motif": "aucune fiche One Piece nommée « Devil Dias »"
+  },
+  {
+   "de": "L’équipage de Bayan",
+   "champ": "captain",
+   "titreWiki": "Bayan",
+   "libelle": "Bayan",
+   "motif": "aucune fiche One Piece nommée « Bayan »"
+  },
+  {
+   "de": "Don Achino",
+   "champ": "dfname",
+   "titreWiki": "Atsu Atsu no Mi",
+   "libelle": "Atsu Atsu no Mi",
+   "motif": "aucune fiche One Piece nommée « Atsu Atsu no Mi »"
+  },
+  {
+   "de": "Caramel",
+   "champ": "occupation",
+   "titreWiki": "Foods/Beverages",
+   "libelle": "Ramune",
+   "motif": "aucune fiche One Piece nommée « Foods/Beverages »"
+  },
+  {
+   "de": "Pirate Moustachus",
+   "champ": "captain",
+   "titreWiki": "Brief",
+   "libelle": "Brief",
+   "motif": "aucune fiche One Piece nommée « Brief »"
+  },
+  {
+   "de": "Shirauo",
+   "champ": "owner",
+   "titreWiki": "Charlotte Amande",
+   "libelle": "Charlotte Amande",
+   "motif": "aucune fiche One Piece nommée « Charlotte Amande »"
+  },
+  {
+   "de": "Noko",
+   "champ": "dfname",
+   "titreWiki": "Nemu Nemu no Mi",
+   "libelle": "Nemu Nemu no Mi",
+   "motif": "cible de type personnage (Fruit du Sommeil)"
+  },
+  {
+   "de": "Ballon Terminal",
+   "champ": "region",
+   "titreWiki": "Sky Island",
+   "libelle": "Sky",
+   "motif": "aucune fiche One Piece nommée « Sky Island »"
+  },
+  {
+   "de": "Tegata Ringana",
+   "champ": "occupation",
+   "titreWiki": "Doctor",
+   "libelle": "Doctor",
+   "motif": "aucune fiche One Piece nommée « Doctor »"
+  },
+  {
+   "de": "L’équipage de Gasparde",
+   "champ": "captain",
+   "titreWiki": "Gasparde",
+   "libelle": "Gasparde",
+   "motif": "aucune fiche One Piece nommée « Gasparde »"
+  },
+  {
+   "de": "Raiu",
+   "champ": "owner",
+   "titreWiki": "Shiryu",
+   "libelle": "Shiryu",
+   "motif": "aucune fiche One Piece nommée « Shiryu »"
+  },
+  {
+   "de": "Vincent",
+   "champ": "occupation",
+   "titreWiki": "Prince",
+   "libelle": "Prince",
+   "motif": "cible redirigée vers une section (Royal#Prince and Princess)"
+  },
+  {
+   "de": "Kamyu",
+   "champ": "residence",
+   "titreWiki": "Ido",
+   "libelle": "Ido",
+   "motif": "aucune fiche One Piece nommée « Ido »"
+  },
+  {
+   "de": "Ame no Habakiri",
+   "champ": "owner",
+   "titreWiki": "Kouzuki Momonosuke",
+   "libelle": "Kouzuki Momonosuke",
+   "motif": "aucune fiche One Piece nommée « Kouzuki Momonosuke »"
+  },
+  {
+   "de": "L’équipage des Tulipes",
+   "champ": "captain",
+   "titreWiki": "Yurikah",
+   "libelle": "Yurikah",
+   "motif": "aucune fiche One Piece nommée « Yurikah »"
+  },
+  {
+   "de": "L’équipage des Candys",
+   "champ": "captain",
+   "titreWiki": "Candy",
+   "libelle": "Candy",
+   "motif": "cible de type personnage (Candy)"
+  },
+  {
+   "de": "Bretzel",
+   "champ": "owner",
+   "titreWiki": "Charlotte Cracker",
+   "libelle": "Charlotte Cracker",
+   "motif": "aucune fiche One Piece nommée « Charlotte Cracker »"
+  },
+  {
+   "de": "Big Runner",
+   "champ": "affiliation",
+   "titreWiki": "Bobby (Non-Canon)",
+   "libelle": "Bobby",
+   "motif": "aucune fiche One Piece nommée « Bobby (Non-Canon) »"
+  },
+  {
+   "de": "Big Runner",
+   "champ": "affiliation",
+   "titreWiki": "Pogo",
+   "libelle": "Pogo",
+   "motif": "aucune fiche One Piece nommée « Pogo »"
+  },
+  {
+   "de": "Web Panic",
+   "champ": "affiliation",
+   "titreWiki": "Willy",
+   "libelle": "Willy",
+   "motif": "aucune fiche One Piece nommée « Willy »"
+  },
+  {
+   "de": "Gran Tesoro",
+   "champ": "affiliation",
+   "titreWiki": "Carina",
+   "libelle": "Carina",
+   "motif": "aucune fiche One Piece nommée « Carina »"
+  },
+  {
+   "de": "Nidai Kitetsu",
+   "champ": "owner",
+   "titreWiki": "Kouzuki Sukiyaki",
+   "libelle": "Kouzuki Sukiyaki",
+   "motif": "aucune fiche One Piece nommée « Kouzuki Sukiyaki »"
+  },
+  {
+   "de": "Shusui",
+   "champ": "owner",
+   "titreWiki": "Wano Country",
+   "libelle": "Wano Country",
+   "motif": "cible de type personnage (Pays de Wano)"
+  },
+  {
+   "de": "Shodai Kitetsu",
+   "champ": "owner",
+   "titreWiki": "Ethanbaron V. Nusjuro",
+   "libelle": "Ethanbaron V. Nusjuro",
+   "motif": "aucune fiche One Piece nommée « Ethanbaron V. Nusjuro »"
+  },
+  {
+   "de": "Margarita",
+   "champ": "affiliation",
+   "titreWiki": "Egana",
+   "libelle": "Egana",
+   "motif": "cible de type personnage (Egana)"
+  },
+  {
+   "de": "L’équipage du On-Air",
+   "champ": "captain",
+   "titreWiki": "Scratchmen Apoo",
+   "libelle": "Scratchmen Apoo",
+   "motif": "aucune fiche One Piece nommée « Scratchmen Apoo »"
+  },
+  {
+   "de": "L’équipage de Zenny",
+   "champ": "captain",
+   "titreWiki": "Zenny",
+   "libelle": "Zenny",
+   "motif": "aucune fiche One Piece nommée « Zenny »"
+  },
+  {
+   "de": "L’équipage des Pirates Trump",
+   "champ": "captain",
+   "titreWiki": "Bear King",
+   "libelle": "Bear King",
+   "motif": "aucune fiche One Piece nommée « Bear King »"
+  },
+  {
+   "de": "L’équipage des Pirates Trump",
+   "champ": "captain",
+   "titreWiki": "Honey Queen",
+   "libelle": "Honey Queen",
+   "motif": "aucune fiche One Piece nommée « Honey Queen »"
+  },
+  {
+   "de": "L’équipage des Pirates Trump",
+   "champ": "captain",
+   "titreWiki": "Pin Joker",
+   "libelle": "Pin Joker",
+   "motif": "aucune fiche One Piece nommée « Pin Joker »"
+  },
+  {
+   "de": "L’équipage des Pirates Trump",
+   "champ": "captain",
+   "titreWiki": "Skunk One",
+   "libelle": "Skunk One",
+   "motif": "aucune fiche One Piece nommée « Skunk One »"
+  },
+  {
+   "de": "L’équipage des Pirates Trump",
+   "champ": "captain",
+   "titreWiki": "Boo Jack",
+   "libelle": "Boo Jack",
+   "motif": "aucune fiche One Piece nommée « Boo Jack »"
+  },
+  {
+   "de": "Dracule Mihawk",
+   "champ": "affiliation",
+   "titreWiki": "Cross Guild",
+   "libelle": "Cross Guild",
+   "motif": "aucune fiche One Piece nommée « Cross Guild »"
+  },
+  {
+   "de": "Dracule Mihawk",
+   "champ": "affiliation",
+   "titreWiki": "Seven Warlords of the Sea",
+   "libelle": "Seven Warlords of the Sea",
+   "motif": "aucune fiche One Piece nommée « Seven Warlords of the Sea »"
+  },
+  {
+   "de": "Dracule Mihawk",
+   "champ": "occupation",
+   "titreWiki": "Seven Warlords of the Sea",
+   "libelle": "Warlord of the Sea",
+   "motif": "aucune fiche One Piece nommée « Seven Warlords of the Sea »"
+  },
+  {
+   "de": "L’équipage de Big Mom",
+   "champ": "captain",
+   "titreWiki": "Charlotte Linlin",
+   "libelle": "Charlotte Linlin",
+   "motif": "aucune fiche One Piece nommée « Charlotte Linlin »"
+  },
+  {
+   "de": "Franky",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Franky",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Grand Fleet",
+   "libelle": "Straw Hat Grand Fleet",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Grand Fleet »"
+  },
+  {
+   "de": "Franky",
+   "champ": "occupation",
+   "titreWiki": "Shipwright",
+   "libelle": "Shipwright",
+   "motif": "aucune fiche One Piece nommée « Shipwright »"
+  },
+  {
+   "de": "Karoo",
+   "champ": "affiliation",
+   "titreWiki": "Royal Guards",
+   "libelle": "Arabasta Kingdom Guard Squad",
+   "motif": "aucune fiche One Piece nommée « Royal Guard »"
+  },
+  {
+   "de": "Karoo",
+   "champ": "affiliation",
+   "titreWiki": "Super Spot-Billed Duck Troops",
+   "libelle": "Super Spot-Billed Duck Troops",
+   "motif": "aucune fiche One Piece nommée « Super Spot-Billed Duck Troops »"
+  },
+  {
+   "de": "Karoo",
+   "champ": "occupation",
+   "titreWiki": "Pet",
+   "libelle": "Pet",
+   "motif": "aucune fiche One Piece nommée « Pet »"
+  },
+  {
+   "de": "Dalton",
+   "champ": "dfname",
+   "titreWiki": "Ushi Ushi no Mi, Model: Bison",
+   "libelle": "Ushi Ushi no Mi, Model: Bison",
+   "motif": "aucune fiche One Piece nommée « Ushi Ushi no Mi, Model: Bison »"
+  },
+  {
+   "de": "Brogy",
+   "champ": "affiliation",
+   "titreWiki": "Giant Warrior Pirates",
+   "libelle": "Giant Warrior Pirates",
+   "motif": "aucune fiche One Piece nommée « Giant Warrior Pirates »"
+  },
+  {
+   "de": "Dorry",
+   "champ": "affiliation",
+   "titreWiki": "Giant Warrior Pirates",
+   "libelle": "Giant Warrior Pirates",
+   "motif": "aucune fiche One Piece nommée « Giant Warrior Pirates »"
+  },
+  {
+   "de": "Porche",
+   "champ": "affiliation",
+   "titreWiki": "Foxy Pirates",
+   "libelle": "Foxy Pirates",
+   "motif": "aucune fiche One Piece nommée « Foxy Pirates »"
+  },
+  {
+   "de": "Porche",
+   "champ": "occupation",
+   "titreWiki": "Combatant",
+   "libelle": "Combatant",
+   "motif": "aucune fiche One Piece nommée « Combatant »"
+  },
+  {
+   "de": "Monkey D. Luffy",
+   "champ": "dfname",
+   "titreWiki": "Nika",
+   "libelle": "Nika",
+   "motif": "cible de type personnage (Nika)"
+  },
+  {
+   "de": "Paulie",
+   "champ": "occupation",
+   "titreWiki": "Shipwright",
+   "libelle": "Shipwright",
+   "motif": "aucune fiche One Piece nommée « Shipwright »"
+  },
+  {
+   "de": "Mekao",
+   "champ": "affiliation",
+   "titreWiki": "G-8",
+   "libelle": "G-8",
+   "motif": "aucune fiche One Piece nommée « G-8 »"
+  },
+  {
+   "de": "Mekao",
+   "champ": "occupation",
+   "titreWiki": "Shipwright",
+   "libelle": "Shipwright",
+   "motif": "aucune fiche One Piece nommée « Shipwright »"
+  },
+  {
+   "de": "Mekao",
+   "champ": "residence",
+   "titreWiki": "Navarone Island",
+   "libelle": "Navarone Island",
+   "motif": "aucune fiche One Piece nommée « Navarone Island »"
+  },
+  {
+   "de": "Mekao",
+   "champ": "residence",
+   "titreWiki": "G-8",
+   "libelle": "G-8",
+   "motif": "aucune fiche One Piece nommée « G-8 »"
+  },
+  {
+   "de": "Hamburg",
+   "champ": "affiliation",
+   "titreWiki": "Foxy Pirates",
+   "libelle": "Foxy Pirates",
+   "motif": "aucune fiche One Piece nommée « Foxy Pirates »"
+  },
+  {
+   "de": "Hamburg",
+   "champ": "affiliation",
+   "titreWiki": "Groggy Monsters",
+   "libelle": "Groggy Monsters",
+   "motif": "cible redirigée vers une section (Foxy Pirates#Groggy Monsters)"
+  },
+  {
+   "de": "Hamburg",
+   "champ": "occupation",
+   "titreWiki": "Combatant",
+   "libelle": "Combatant",
+   "motif": "aucune fiche One Piece nommée « Combatant »"
+  },
+  {
+   "de": "Kaku",
+   "champ": "dfname",
+   "titreWiki": "Ushi Ushi no Mi, Model: Giraffe",
+   "libelle": "Ushi Ushi no Mi, Model: Giraffe",
+   "motif": "aucune fiche One Piece nommée « Ushi Ushi no Mi, Model: Giraffe »"
+  },
+  {
+   "de": "Yamato",
+   "champ": "dfname",
+   "titreWiki": "Inu Inu no Mi, Model: Okuchi no Makami",
+   "libelle": "Inu Inu no Mi, Model: Okuchi no Makami",
+   "motif": "aucune fiche One Piece nommée « Inu Inu no Mi, Model: Okuchi no Makami »"
+  },
+  {
+   "de": "Jack",
+   "champ": "dfname",
+   "titreWiki": "Zou Zou no Mi, Model: Mammoth",
+   "libelle": "Zou Zou no Mi, Model: Mammoth",
+   "motif": "aucune fiche One Piece nommée « Zou Zou no Mi, Model: Mammoth »"
+  },
+  {
+   "de": "Franky Family",
+   "champ": "occupation",
+   "titreWiki": "Shipwright",
+   "libelle": "Shipwrights",
+   "motif": "aucune fiche One Piece nommée « Shipwright »"
+  },
+  {
+   "de": "Kokoro",
+   "champ": "affiliation",
+   "titreWiki": "Tom's Workers",
+   "libelle": "Tom's Workers",
+   "motif": "aucune fiche One Piece nommée « Tom's Workers »"
+  },
+  {
+   "de": "Pell",
+   "champ": "dfname",
+   "titreWiki": "Tori Tori no Mi, Model: Falcon",
+   "libelle": "Tori Tori no Mi, Model: Falcon",
+   "motif": "aucune fiche One Piece nommée « Tori Tori no Mi, Model: Falcon »"
+  },
+  {
+   "de": "Chimney",
+   "champ": "affiliation",
+   "titreWiki": "Kokoro",
+   "libelle": "Kokoro",
+   "motif": "cible de type personnage (Kokoro)"
+  },
+  {
+   "de": "Gonbe",
+   "champ": "affiliation",
+   "titreWiki": "Chimney",
+   "libelle": "Chimney",
+   "motif": "cible de type personnage (Chimney)"
+  },
+  {
+   "de": "Gonbe",
+   "champ": "occupation",
+   "titreWiki": "Pet",
+   "libelle": "Pet",
+   "motif": "aucune fiche One Piece nommée « Pet »"
+  },
+  {
+   "de": "Shoujou",
+   "champ": "affiliation",
+   "titreWiki": "Saruyama Alliance",
+   "libelle": "Saruyama Alliance",
+   "motif": "aucune fiche One Piece nommée « Saruyama Alliance »"
+  },
+  {
+   "de": "Shoujou",
+   "champ": "affiliation",
+   "titreWiki": "Shoujou Pirates",
+   "libelle": "Shoujou Pirates",
+   "motif": "aucune fiche One Piece nommée « Shoujou Pirates »"
+  },
+  {
+   "de": "Shakuyaku",
+   "champ": "affiliation",
+   "titreWiki": "Shakky's Rip-off Bar",
+   "libelle": "Shakky's Rip-off Bar",
+   "motif": "aucune fiche One Piece nommée « Shakky's Rip-off Bar »"
+  },
+  {
+   "de": "Shakuyaku",
+   "champ": "affiliation",
+   "titreWiki": "Kuja",
+   "libelle": "Kuja",
+   "motif": "aucune fiche One Piece nommée « Kuja »"
+  },
+  {
+   "de": "Shanks",
+   "champ": "affiliation",
+   "titreWiki": "Four Emperors",
+   "libelle": "Four Emperors",
+   "motif": "aucune fiche One Piece nommée « Four Emperors »"
+  },
+  {
+   "de": "Shanks",
+   "champ": "affiliation",
+   "titreWiki": "World Noble",
+   "libelle": "World Nobles",
+   "motif": "aucune fiche One Piece nommée « World Noble »"
+  },
+  {
+   "de": "Shanks",
+   "champ": "occupation",
+   "titreWiki": "Four Emperors",
+   "libelle": "Emperor",
+   "motif": "aucune fiche One Piece nommée « Four Emperors »"
+  },
+  {
+   "de": "Koala",
+   "champ": "occupation",
+   "titreWiki": "Fish-Man Karate",
+   "libelle": "Fish-Man Karate",
+   "motif": "aucune fiche One Piece nommée « Fish-Man Karate »"
+  },
+  {
+   "de": "Dressrosa",
+   "champ": "affiliation",
+   "titreWiki": "Riku Family",
+   "libelle": "Riku Family",
+   "motif": "aucune fiche One Piece nommée « Riku Family »"
+  },
+  {
+   "de": "Dressrosa",
+   "champ": "affiliation",
+   "titreWiki": "Donquixote Pirates",
+   "libelle": "Donquixote Pirates",
+   "motif": "aucune fiche One Piece nommée « Donquixote Pirates »"
+  },
+  {
+   "de": "Dressrosa",
+   "champ": "affiliation",
+   "titreWiki": "Donquixote Family",
+   "libelle": "Donquixote Family",
+   "motif": "aucune fiche One Piece nommée « Donquixote Family »"
+  },
+  {
+   "de": "Thousand Sunny",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Masira",
+   "champ": "affiliation",
+   "titreWiki": "Saruyama Alliance",
+   "libelle": "Saruyama Alliance",
+   "motif": "aucune fiche One Piece nommée « Saruyama Alliance »"
+  },
+  {
+   "de": "Masira",
+   "champ": "affiliation",
+   "titreWiki": "Masira Pirates",
+   "libelle": "Masira Pirates",
+   "motif": "aucune fiche One Piece nommée « Masira Pirates »"
+  },
+  {
+   "de": "Stomp",
+   "champ": "affiliation",
+   "titreWiki": "Super Spot-Billed Duck Troops",
+   "libelle": "Super Spot-Billed Duck Troops",
+   "motif": "aucune fiche One Piece nommée « Super Spot-Billed Duck Troops »"
+  },
+  {
+   "de": "Ivan X",
+   "champ": "affiliation",
+   "titreWiki": "Super Spot-Billed Duck Troops",
+   "libelle": "Super Spot-Billed Duck Troops",
+   "motif": "aucune fiche One Piece nommée « Super Spot-Billed Duck Troops »"
+  },
+  {
+   "de": "Cowboy",
+   "champ": "affiliation",
+   "titreWiki": "Super Spot-Billed Duck Troops",
+   "libelle": "Super Spot-Billed Duck Troops",
+   "motif": "aucune fiche One Piece nommée « Super Spot-Billed Duck Troops »"
+  },
+  {
+   "de": "Bourbon Jr.",
+   "champ": "affiliation",
+   "titreWiki": "Super Spot-Billed Duck Troops",
+   "libelle": "Super Spot-Billed Duck Troops",
+   "motif": "aucune fiche One Piece nommée « Super Spot-Billed Duck Troops »"
+  },
+  {
+   "de": "Kentauros",
+   "champ": "affiliation",
+   "titreWiki": "Super Spot-Billed Duck Troops",
+   "libelle": "Super Spot-Billed Duck Troops",
+   "motif": "aucune fiche One Piece nommée « Super Spot-Billed Duck Troops »"
+  },
+  {
+   "de": "Hikoichi",
+   "champ": "affiliation",
+   "titreWiki": "Super Spot-Billed Duck Troops",
+   "libelle": "Super Spot-Billed Duck Troops",
+   "motif": "aucune fiche One Piece nommée « Super Spot-Billed Duck Troops »"
+  },
+  {
+   "de": "Kodama",
+   "champ": "residence",
+   "titreWiki": "Fireworks",
+   "libelle": "Fireworks",
+   "motif": "aucune fiche One Piece nommée « Fireworks »"
+  },
+  {
+   "de": "Coribou",
+   "champ": "affiliation",
+   "titreWiki": "Caribou Pirates",
+   "libelle": "Caribou Pirates",
+   "motif": "aucune fiche One Piece nommée « Caribou Pirates »"
+  },
+  {
+   "de": "Tashigi",
+   "champ": "occupation",
+   "titreWiki": "Captain (Marine Rank)",
+   "libelle": "Captain",
+   "motif": "aucune fiche One Piece nommée « Captain (Marine Rank) »"
+  },
+  {
+   "de": "Tashigi",
+   "champ": "occupation",
+   "titreWiki": "Marine Ranks",
+   "libelle": "Ensign",
+   "motif": "aucune fiche One Piece nommée « Marine Ranks »"
+  },
+  {
+   "de": "Koby",
+   "champ": "affiliation",
+   "titreWiki": "SWORD",
+   "libelle": "SWORD",
+   "motif": "aucune fiche One Piece nommée « SWORD »"
+  },
+  {
+   "de": "Koby",
+   "champ": "occupation",
+   "titreWiki": "Captain (Marine Rank)",
+   "libelle": "Marine Captain",
+   "motif": "aucune fiche One Piece nommée « Captain (Marine Rank) »"
+  },
+  {
+   "de": "Koby",
+   "champ": "occupation",
+   "titreWiki": "Marine Ranks",
+   "libelle": "Master Chief Petty Officer",
+   "motif": "aucune fiche One Piece nommée « Marine Ranks »"
+  },
+  {
+   "de": "Cavendish",
+   "champ": "affiliation",
+   "titreWiki": "Beautiful Pirates",
+   "libelle": "Beautiful Pirates",
+   "motif": "aucune fiche One Piece nommée « Beautiful Pirates »"
+  },
+  {
+   "de": "Cavendish",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Grand Fleet",
+   "libelle": "Straw Hat Grand Fleet",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Grand Fleet »"
+  },
+  {
+   "de": "Cavendish",
+   "champ": "affiliation",
+   "titreWiki": "Bourgeois Kingdom",
+   "libelle": "Bourgeois Kingdom",
+   "motif": "aucune fiche One Piece nommée « Bourgeois Kingdom »"
+  },
+  {
+   "de": "Cavendish",
+   "champ": "occupation",
+   "titreWiki": "Straw Hat Grand Fleet",
+   "libelle": "Straw Hat Grand Fleet",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Grand Fleet »"
+  },
+  {
+   "de": "Kaidou",
+   "champ": "dfname",
+   "titreWiki": "Uo Uo no Mi, Model: Seiryu",
+   "libelle": "Uo Uo no Mi, Model: Seiryu",
+   "motif": "aucune fiche One Piece nommée « Uo Uo no Mi, Model: Seiryu »"
+  },
+  {
+   "de": "King",
+   "champ": "dfname",
+   "titreWiki": "Ryu Ryu no Mi, Model: Pteranodon",
+   "libelle": "Ryu Ryu no Mi, Model: Pteranodon",
+   "motif": "aucune fiche One Piece nommée « Ryu Ryu no Mi, Model: Pteranodon »"
+  },
+  {
+   "de": "Who's Who",
+   "champ": "dfname",
+   "titreWiki": "Neko Neko no Mi, Model: Saber Tiger",
+   "libelle": "Neko Neko no Mi, Model: Saber Tiger",
+   "motif": "aucune fiche One Piece nommée « Neko Neko no Mi, Model: Saber Tiger »"
+  },
+  {
+   "de": "Usopp",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Usopp",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Grand Fleet",
+   "libelle": "Straw Hat Grand Fleet",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Grand Fleet »"
+  },
+  {
+   "de": "Usopp",
+   "champ": "affiliation",
+   "titreWiki": "Usopp Pirates",
+   "libelle": "Usopp Pirates",
+   "motif": "aucune fiche One Piece nommée « Usopp Pirates »"
+  },
+  {
+   "de": "Tom",
+   "champ": "affiliation",
+   "titreWiki": "Tom's Workers",
+   "libelle": "Tom's Workers",
+   "motif": "aucune fiche One Piece nommée « Tom's Workers »"
+  },
+  {
+   "de": "Tom",
+   "champ": "occupation",
+   "titreWiki": "Shipwright",
+   "libelle": "Shipwright",
+   "motif": "aucune fiche One Piece nommée « Shipwright »"
+  },
+  {
+   "de": "Marie",
+   "champ": "affiliation",
+   "titreWiki": "Charlos",
+   "libelle": "Saint Charlos",
+   "motif": "aucune fiche One Piece nommée « Rosward Charlos »"
+  },
+  {
+   "de": "Marie",
+   "champ": "affiliation",
+   "titreWiki": "Judy",
+   "libelle": "Judy",
+   "motif": "cible de type personnage (Judy)"
+  },
+  {
+   "de": "Marie",
+   "champ": "occupation",
+   "titreWiki": "Slavery",
+   "libelle": "Slave",
+   "motif": "aucune fiche One Piece nommée « Slavery »"
+  },
+  {
+   "de": "Hatchan",
+   "champ": "affiliation",
+   "titreWiki": "Takoyaki 8",
+   "libelle": "Takoyaki 8",
+   "motif": "aucune fiche One Piece nommée « Takoyaki 8 »"
+  },
+  {
+   "de": "Hatchan",
+   "champ": "affiliation",
+   "titreWiki": "Arlong Pirates",
+   "libelle": "Arlong Pirates",
+   "motif": "aucune fiche One Piece nommée « Arlong Pirates »"
+  },
+  {
+   "de": "Colisée Corrida",
+   "champ": "affiliation",
+   "titreWiki": "Donquixote Pirates",
+   "libelle": "Donquixote Pirates",
+   "motif": "aucune fiche One Piece nommée « Donquixote Pirates »"
+  },
+  {
+   "de": "Hack",
+   "champ": "occupation",
+   "titreWiki": "Fish-Man Karate",
+   "libelle": "Fish-Man Karate",
+   "motif": "aucune fiche One Piece nommée « Fish-Man Karate »"
+  },
+  {
+   "de": "Hack",
+   "champ": "occupation",
+   "titreWiki": "Fish-Man Jujutsu",
+   "libelle": "Fish-Man Jujutsu",
+   "motif": "aucune fiche One Piece nommée « Fish-Man Jujutsu »"
+  },
+  {
+   "de": "Hack",
+   "champ": "occupation",
+   "titreWiki": "Martial Artist",
+   "libelle": "Martial Artist",
+   "motif": "aucune fiche One Piece nommée « Martial Artist »"
+  },
+  {
+   "de": "Gild Tesoro",
+   "champ": "dfname",
+   "titreWiki": "Goru Goru no Mi",
+   "libelle": "Goru Goru no Mi",
+   "motif": "aucune fiche One Piece nommée « Goru Goru no Mi »"
+  },
+  {
+   "de": "Corbeau",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Thriller Bark Pirates",
+   "champ": "captain",
+   "titreWiki": "Gecko Moria",
+   "libelle": "Gecko Moria",
+   "motif": "aucune fiche One Piece nommée « Gecko Moria »"
+  },
+  {
+   "de": "Big Pan",
+   "champ": "affiliation",
+   "titreWiki": "Groggy Monsters",
+   "libelle": "Groggy Monsters",
+   "motif": "cible redirigée vers une section (Foxy Pirates#Groggy Monsters)"
+  },
+  {
+   "de": "Big Pan",
+   "champ": "occupation",
+   "titreWiki": "Combatant",
+   "libelle": "Combatant",
+   "motif": "aucune fiche One Piece nommée « Combatant »"
+  },
+  {
+   "de": "Pickles",
+   "champ": "affiliation",
+   "titreWiki": "Groggy Monsters",
+   "libelle": "Groggy Monsters",
+   "motif": "cible redirigée vers une section (Foxy Pirates#Groggy Monsters)"
+  },
+  {
+   "de": "Pickles",
+   "champ": "occupation",
+   "titreWiki": "Combatant",
+   "libelle": "Combatant",
+   "motif": "aucune fiche One Piece nommée « Combatant »"
+  },
+  {
+   "de": "Mashikaku",
+   "champ": "occupation",
+   "titreWiki": "Marine Ranks",
+   "libelle": "Chief Petty Officer",
+   "motif": "aucune fiche One Piece nommée « Marine Ranks »"
+  },
+  {
+   "de": "Disco",
+   "champ": "affiliation",
+   "titreWiki": "Human Auctioning House",
+   "libelle": "Human Auctioning House",
+   "motif": "aucune fiche One Piece nommée « Human Auctioning House »"
+  },
+  {
+   "de": "Disco",
+   "champ": "occupation",
+   "titreWiki": "Human Auctioning House",
+   "libelle": "Human Auctioning House",
+   "motif": "aucune fiche One Piece nommée « Human Auctioning House »"
+  },
+  {
+   "de": "Gin",
+   "champ": "affiliation",
+   "titreWiki": "Krieg Pirates",
+   "libelle": "Krieg Pirates",
+   "motif": "aucune fiche One Piece nommée « Krieg Pirates »"
+  },
+  {
+   "de": "Boa Hancock",
+   "champ": "dfname",
+   "titreWiki": "Mero Mero no Mi",
+   "libelle": "Mero Mero no Mi",
+   "motif": "aucune fiche One Piece nommée « Mero Mero no Mi »"
+  },
+  {
+   "de": "Kyros",
+   "champ": "affiliation",
+   "titreWiki": "Riku Family",
+   "libelle": "Riku Family",
+   "motif": "aucune fiche One Piece nommée « Riku Family »"
+  },
+  {
+   "de": "Randolph Theater",
+   "champ": "affiliation",
+   "titreWiki": "Randolph (Non-Canon)",
+   "libelle": "Randolph",
+   "motif": "aucune fiche One Piece nommée « Randolph (Non-Canon) »"
+  },
+  {
+   "de": "Toko",
+   "champ": "affiliation",
+   "titreWiki": "Kouzuki Hiyori",
+   "libelle": "Kouzuki Hiyori",
+   "motif": "aucune fiche One Piece nommée « Kouzuki Hiyori »"
+  },
+  {
+   "de": "Toko",
+   "champ": "affiliation",
+   "titreWiki": "Shimotsuki Family",
+   "libelle": "Shimotsuki Family",
+   "motif": "aucune fiche One Piece nommée « Shimotsuki Family »"
+  },
+  {
+   "de": "Polar Tang",
+   "champ": "affiliation",
+   "titreWiki": "Heart Pirates",
+   "libelle": "Heart Pirates",
+   "motif": "aucune fiche One Piece nommée « Heart Pirates »"
+  },
+  {
+   "de": "Queen",
+   "champ": "dfname",
+   "titreWiki": "Ryu Ryu no Mi, Model: Brachiosaurus",
+   "libelle": "Ryu Ryu no Mi, Model: Brachiosaurus",
+   "motif": "aucune fiche One Piece nommée « Ryu Ryu no Mi, Model: Brachiosaurus »"
+  },
+  {
+   "de": "Jinbe",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Jinbe",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Grand Fleet",
+   "libelle": "Straw Hat Grand Fleet",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Grand Fleet »"
+  },
+  {
+   "de": "Jinbe",
+   "champ": "affiliation",
+   "titreWiki": "Sun Pirates",
+   "libelle": "Sun Pirates",
+   "motif": "aucune fiche One Piece nommée « Sun Pirates »"
+  },
+  {
+   "de": "Jinbe",
+   "champ": "affiliation",
+   "titreWiki": "Seven Warlords of the Sea",
+   "libelle": "Seven Warlords of the Sea",
+   "motif": "aucune fiche One Piece nommée « Seven Warlords of the Sea »"
+  },
+  {
+   "de": "Jinbe",
+   "champ": "affiliation",
+   "titreWiki": "Ryugu Kingdom",
+   "libelle": "Ryugu Kingdom",
+   "motif": "aucune fiche One Piece nommée « Ryugu Kingdom »"
+  },
+  {
+   "de": "Jinbe",
+   "champ": "occupation",
+   "titreWiki": "Helmsman",
+   "libelle": "Helmsman",
+   "motif": "aucune fiche One Piece nommée « Helmsman »"
+  },
+  {
+   "de": "Jinbe",
+   "champ": "occupation",
+   "titreWiki": "Seven Warlords of the Sea",
+   "libelle": "Warlord of the Sea",
+   "motif": "aucune fiche One Piece nommée « Seven Warlords of the Sea »"
+  },
+  {
+   "de": "Jinbe",
+   "champ": "occupation",
+   "titreWiki": "Royal Guard",
+   "libelle": "Soldier",
+   "motif": "aucune fiche One Piece nommée « Royal Guard »"
+  },
+  {
+   "de": "Black Maria",
+   "champ": "dfname",
+   "titreWiki": "Kumo Kumo no Mi, Model: Rosamygale Grauvogeli",
+   "libelle": "Kumo Kumo no Mi, Model: Rosamygale Grauvogeli",
+   "motif": "aucune fiche One Piece nommée « Kumo Kumo no Mi, Model: Rosamygale Grauvogeli »"
+  },
+  {
+   "de": "Sasaki",
+   "champ": "dfname",
+   "titreWiki": "Ryu Ryu no Mi, Model: Triceratops",
+   "libelle": "Ryu Ryu no Mi, Model: Triceratops",
+   "motif": "aucune fiche One Piece nommée « Ryu Ryu no Mi, Model: Triceratops »"
+  },
+  {
+   "de": "Hatcha",
+   "champ": "affiliation",
+   "titreWiki": "Beasts Pirates",
+   "libelle": "Beasts Pirates",
+   "motif": "aucune fiche One Piece nommée « Beasts Pirates »"
+  },
+  {
+   "de": "Hatcha",
+   "champ": "affiliation",
+   "titreWiki": "Numbers",
+   "libelle": "Numbers",
+   "motif": "aucune fiche One Piece nommée « Numbers »"
+  },
+  {
+   "de": "Chess",
+   "champ": "affiliation",
+   "titreWiki": "Bliking Pirates",
+   "libelle": "Bliking Pirates",
+   "motif": "aucune fiche One Piece nommée « Bliking Pirates »"
+  },
+  {
+   "de": "Chess",
+   "champ": "occupation",
+   "titreWiki": "Staff",
+   "libelle": "Staff",
+   "motif": "aucune fiche One Piece nommée « Staff »"
+  },
+  {
+   "de": "Kuromarimo",
+   "champ": "affiliation",
+   "titreWiki": "Bliking Pirates",
+   "libelle": "Bliking Pirates",
+   "motif": "aucune fiche One Piece nommée « Bliking Pirates »"
+  },
+  {
+   "de": "Tilestone",
+   "champ": "occupation",
+   "titreWiki": "Shipwright",
+   "libelle": "Shipwright",
+   "motif": "aucune fiche One Piece nommée « Shipwright »"
+  },
+  {
+   "de": "Capote",
+   "champ": "occupation",
+   "titreWiki": "Combatant",
+   "libelle": "Combatant",
+   "motif": "aucune fiche One Piece nommée « Combatant »"
+  },
+  {
+   "de": "Peterman",
+   "champ": "affiliation",
+   "titreWiki": "Hound Pets",
+   "libelle": "Hound Pets",
+   "motif": "aucune fiche One Piece nommée « Hound Pets »"
+  },
+  {
+   "de": "Kyukyu",
+   "champ": "occupation",
+   "titreWiki": "Doctor",
+   "libelle": "Doctor",
+   "motif": "aucune fiche One Piece nommée « Doctor »"
+  },
+  {
+   "de": "Sanji",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Sanji",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Grand Fleet",
+   "libelle": "Straw Hat Grand Fleet",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Grand Fleet »"
+  },
+  {
+   "de": "Oimo",
+   "champ": "affiliation",
+   "titreWiki": "Giant Warrior Pirates",
+   "libelle": "Giant Warrior Pirates",
+   "motif": "aucune fiche One Piece nommée « Giant Warrior Pirates »"
+  },
+  {
+   "de": "Kashii",
+   "champ": "affiliation",
+   "titreWiki": "Giant Warrior Pirates",
+   "libelle": "Giant Warrior Pirates",
+   "motif": "aucune fiche One Piece nommée « Giant Warrior Pirates »"
+  },
+  {
+   "de": "Gan Fall",
+   "champ": "occupation",
+   "titreWiki": "God (Title)",
+   "libelle": "God",
+   "motif": "aucune fiche One Piece nommée « God (Title) »"
+  },
+  {
+   "de": "Yoko",
+   "champ": "affiliation",
+   "titreWiki": "Boss",
+   "libelle": "Boss",
+   "motif": "cible de type personnage (Boss)"
+  },
+  {
+   "de": "Boss",
+   "champ": "affiliation",
+   "titreWiki": "Golden Lion Pirates",
+   "libelle": "Golden Lion Pirates",
+   "motif": "aucune fiche One Piece nommée « Golden Lion Pirates »"
+  },
+  {
+   "de": "Billy",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Chadros Higelyges",
+   "champ": "affiliation",
+   "titreWiki": "Caesar Clown",
+   "libelle": "Caesar Clown",
+   "motif": "cible de type personnage (Caesar Clown)"
+  },
+  {
+   "de": "Chadros Higelyges",
+   "champ": "affiliation",
+   "titreWiki": "Centaur Patrol Unit",
+   "libelle": "Centaur Patrol Unit",
+   "motif": "aucune fiche One Piece nommée « Centaur Patrol Unit »"
+  },
+  {
+   "de": "Chadros Higelyges",
+   "champ": "affiliation",
+   "titreWiki": "Brownbeard Pirates",
+   "libelle": "Brownbeard Pirates",
+   "motif": "aucune fiche One Piece nommée « Brownbeard Pirates »"
+  },
+  {
+   "de": "Chadros Higelyges",
+   "champ": "occupation",
+   "titreWiki": "Centaur Patrol Unit",
+   "libelle": "Centaur Patrol Unit",
+   "motif": "aucune fiche One Piece nommée « Centaur Patrol Unit »"
+  },
+  {
+   "de": "Pedro",
+   "champ": "affiliation",
+   "titreWiki": "Mokomo Dukedom",
+   "libelle": "Mokomo Dukedom",
+   "motif": "aucune fiche One Piece nommée « Mokomo Dukedom »"
+  },
+  {
+   "de": "Pedro",
+   "champ": "affiliation",
+   "titreWiki": "Guardians",
+   "libelle": "Guardians",
+   "motif": "aucune fiche One Piece nommée « Guardians »"
+  },
+  {
+   "de": "Senor Pink",
+   "champ": "dfname",
+   "titreWiki": "Sui Sui no Mi",
+   "libelle": "Sui Sui no Mi",
+   "motif": "aucune fiche One Piece nommée « Sui Sui no Mi »"
+  },
+  {
+   "de": "Roronoa Zoro",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Roronoa Zoro",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Grand Fleet",
+   "libelle": "Straw Hat Grand Fleet",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Grand Fleet »"
+  },
+  {
+   "de": "Roronoa Zoro",
+   "champ": "affiliation",
+   "titreWiki": "Shimotsuki Family",
+   "libelle": "Shimotsuki Family",
+   "motif": "aucune fiche One Piece nommée « Shimotsuki Family »"
+  },
+  {
+   "de": "Roronoa Zoro",
+   "champ": "occupation",
+   "titreWiki": "Swordsman",
+   "libelle": "Master Swordsman",
+   "motif": "aucune fiche One Piece nommée « Swordsman »"
+  },
+  {
+   "de": "Roronoa Zoro",
+   "champ": "occupation",
+   "titreWiki": "Combatant",
+   "libelle": "Combatant",
+   "motif": "aucune fiche One Piece nommée « Combatant »"
+  },
+  {
+   "de": "Urouge",
+   "champ": "affiliation",
+   "titreWiki": "Fallen Monk Pirates",
+   "libelle": "Fallen Monk Pirates",
+   "motif": "aucune fiche One Piece nommée « Fallen Monk Pirates »"
+  },
+  {
+   "de": "Page One",
+   "champ": "dfname",
+   "titreWiki": "Ryu Ryu no Mi, Model: Spinosaurus",
+   "libelle": "Ryu Ryu no Mi, Model: Spinosaurus",
+   "motif": "aucune fiche One Piece nommée « Ryu Ryu no Mi, Model: Spinosaurus »"
+  },
+  {
+   "de": "Ulti",
+   "champ": "dfname",
+   "titreWiki": "Ryu Ryu no Mi, Model: Pachycephalosaurus",
+   "libelle": "Ryu Ryu no Mi, Model: Pachycephalosaurus",
+   "motif": "aucune fiche One Piece nommée « Ryu Ryu no Mi, Model: Pachycephalosaurus »"
+  },
+  {
+   "de": "Nangi",
+   "champ": "affiliation",
+   "titreWiki": "Beasts Pirates",
+   "libelle": "Beasts Pirates",
+   "motif": "aucune fiche One Piece nommée « Beasts Pirates »"
+  },
+  {
+   "de": "Nangi",
+   "champ": "affiliation",
+   "titreWiki": "Numbers",
+   "libelle": "Numbers",
+   "motif": "aucune fiche One Piece nommée « Numbers »"
+  },
+  {
+   "de": "Jaki",
+   "champ": "affiliation",
+   "titreWiki": "Beasts Pirates",
+   "libelle": "Beasts Pirates",
+   "motif": "aucune fiche One Piece nommée « Beasts Pirates »"
+  },
+  {
+   "de": "Jaki",
+   "champ": "affiliation",
+   "titreWiki": "Numbers",
+   "libelle": "Numbers",
+   "motif": "aucune fiche One Piece nommée « Numbers »"
+  },
+  {
+   "de": "Juki",
+   "champ": "affiliation",
+   "titreWiki": "Beasts Pirates",
+   "libelle": "Beasts Pirates",
+   "motif": "aucune fiche One Piece nommée « Beasts Pirates »"
+  },
+  {
+   "de": "Juki",
+   "champ": "affiliation",
+   "titreWiki": "Numbers",
+   "libelle": "Numbers",
+   "motif": "aucune fiche One Piece nommée « Numbers »"
+  },
+  {
+   "de": "Goki",
+   "champ": "affiliation",
+   "titreWiki": "Beasts Pirates",
+   "libelle": "Beasts Pirates",
+   "motif": "aucune fiche One Piece nommée « Beasts Pirates »"
+  },
+  {
+   "de": "Goki",
+   "champ": "affiliation",
+   "titreWiki": "Numbers",
+   "libelle": "Numbers",
+   "motif": "aucune fiche One Piece nommée « Numbers »"
+  },
+  {
+   "de": "Kunyun",
+   "champ": "affiliation",
+   "titreWiki": "Beasts Pirates",
+   "libelle": "Beasts Pirates",
+   "motif": "aucune fiche One Piece nommée « Beasts Pirates »"
+  },
+  {
+   "de": "Kunyun",
+   "champ": "affiliation",
+   "titreWiki": "Numbers",
+   "libelle": "Numbers",
+   "motif": "aucune fiche One Piece nommée « Numbers »"
+  },
+  {
+   "de": "Inbi",
+   "champ": "affiliation",
+   "titreWiki": "Beasts Pirates",
+   "libelle": "Beasts Pirates",
+   "motif": "aucune fiche One Piece nommée « Beasts Pirates »"
+  },
+  {
+   "de": "Inbi",
+   "champ": "affiliation",
+   "titreWiki": "Numbers",
+   "libelle": "Numbers",
+   "motif": "aucune fiche One Piece nommée « Numbers »"
+  },
+  {
+   "de": "Zanki",
+   "champ": "affiliation",
+   "titreWiki": "Beasts Pirates",
+   "libelle": "Beasts Pirates",
+   "motif": "aucune fiche One Piece nommée « Beasts Pirates »"
+  },
+  {
+   "de": "Zanki",
+   "champ": "affiliation",
+   "titreWiki": "Numbers",
+   "libelle": "Numbers",
+   "motif": "aucune fiche One Piece nommée « Numbers »"
+  },
+  {
+   "de": "Rokki",
+   "champ": "affiliation",
+   "titreWiki": "Beasts Pirates",
+   "libelle": "Beasts Pirates",
+   "motif": "aucune fiche One Piece nommée « Beasts Pirates »"
+  },
+  {
+   "de": "Rokki",
+   "champ": "affiliation",
+   "titreWiki": "Numbers",
+   "libelle": "Numbers",
+   "motif": "aucune fiche One Piece nommée « Numbers »"
+  },
+  {
+   "de": "Kureha",
+   "champ": "affiliation",
+   "titreWiki": "Sakura Kingdom",
+   "libelle": "Sakura Kingdom",
+   "motif": "aucune fiche One Piece nommée « Sakura Kingdom »"
+  },
+  {
+   "de": "Kureha",
+   "champ": "affiliation",
+   "titreWiki": "Isshi-100",
+   "libelle": "Isshi-100",
+   "motif": "aucune fiche One Piece nommée « Isshi-100 »"
+  },
+  {
+   "de": "Kureha",
+   "champ": "occupation",
+   "titreWiki": "Doctor",
+   "libelle": "Doctor",
+   "motif": "aucune fiche One Piece nommée « Doctor »"
+  },
+  {
+   "de": "Kureha",
+   "champ": "occupation",
+   "titreWiki": "Isshi-100",
+   "libelle": "Isshi-100",
+   "motif": "aucune fiche One Piece nommée « Isshi-100 »"
+  },
+  {
+   "de": "Mikazuki",
+   "champ": "affiliation",
+   "titreWiki": "Big Helmet Pirates",
+   "libelle": "Big Helmet Pirates",
+   "motif": "aucune fiche One Piece nommée « Big Helmet Pirates »"
+  },
+  {
+   "de": "Chaka",
+   "champ": "dfname",
+   "titreWiki": "Inu Inu no Mi, Model: Jackal",
+   "libelle": "Inu Inu no Mi, Model: Jackal",
+   "motif": "aucune fiche One Piece nommée « Inu Inu no Mi, Model: Jackal »"
+  },
+  {
+   "de": "Jonathan",
+   "champ": "affiliation",
+   "titreWiki": "G-8",
+   "libelle": "G-8",
+   "motif": "aucune fiche One Piece nommée « G-8 »"
+  },
+  {
+   "de": "Jonathan",
+   "champ": "occupation",
+   "titreWiki": "Vice Admiral",
+   "libelle": "Vice Admiral",
+   "motif": "aucune fiche One Piece nommée « Vice Admiral »"
+  },
+  {
+   "de": "Jonathan",
+   "champ": "residence",
+   "titreWiki": "Navarone Island",
+   "libelle": "Navarone Island",
+   "motif": "aucune fiche One Piece nommée « Navarone Island »"
+  },
+  {
+   "de": "Jonathan",
+   "champ": "residence",
+   "titreWiki": "G-8",
+   "libelle": "G-8",
+   "motif": "aucune fiche One Piece nommée « G-8 »"
+  },
+  {
+   "de": "Jessica",
+   "champ": "affiliation",
+   "titreWiki": "G-8",
+   "libelle": "G-8",
+   "motif": "aucune fiche One Piece nommée « G-8 »"
+  },
+  {
+   "de": "Jessica",
+   "champ": "residence",
+   "titreWiki": "Navarone Island",
+   "libelle": "Navarone Island",
+   "motif": "aucune fiche One Piece nommée « Navarone Island »"
+  },
+  {
+   "de": "Jessica",
+   "champ": "residence",
+   "titreWiki": "G-8",
+   "libelle": "G-8",
+   "motif": "aucune fiche One Piece nommée « G-8 »"
+  },
+  {
+   "de": "Erik",
+   "champ": "residence",
+   "titreWiki": "Suiren",
+   "libelle": "Suiren",
+   "motif": "aucune fiche One Piece nommée « Suiren »"
+  },
+  {
+   "de": "Abi",
+   "champ": "affiliation",
+   "titreWiki": "Aobire",
+   "libelle": "Aobire",
+   "motif": "aucune fiche One Piece nommée « Aobire »"
+  },
+  {
+   "de": "Abi",
+   "champ": "affiliation",
+   "titreWiki": "Monkey D. Luffy",
+   "libelle": "Monkey D. Luffy",
+   "motif": "cible de type personnage (Monkey D. Luffy)"
+  },
+  {
+   "de": "Aunt",
+   "champ": "affiliation",
+   "titreWiki": "Roronoa Zoro",
+   "libelle": "Roronoa Zoro",
+   "motif": "cible de type personnage (Roronoa Zoro)"
+  },
+  {
+   "de": "Potsun",
+   "champ": "occupation",
+   "titreWiki": "Doctor",
+   "libelle": "Doctor",
+   "motif": "aucune fiche One Piece nommée « Doctor »"
+  },
+  {
+   "de": "Taroimo",
+   "champ": "occupation",
+   "titreWiki": "Cyborg",
+   "libelle": "Cyborg",
+   "motif": "aucune fiche One Piece nommée « Cyborgs »"
+  },
+  {
+   "de": "Rapanui Pasqua",
+   "champ": "affiliation",
+   "titreWiki": "Pumpkin Pirates",
+   "libelle": "Pumpkin Pirates",
+   "motif": "aucune fiche One Piece nommée « Pumpkin Pirates »"
+  },
+  {
+   "de": "Ayako",
+   "champ": "affiliation",
+   "titreWiki": "Aunt",
+   "libelle": "Aunt",
+   "motif": "cible de type personnage (Aunt)"
+  },
+  {
+   "de": "Akihiro",
+   "champ": "affiliation",
+   "titreWiki": "Aunt",
+   "libelle": "Aunt",
+   "motif": "cible de type personnage (Aunt)"
+  },
+  {
+   "de": "Yuya",
+   "champ": "affiliation",
+   "titreWiki": "Aunt",
+   "libelle": "Aunt",
+   "motif": "cible de type personnage (Aunt)"
+  },
+  {
+   "de": "Sho",
+   "champ": "affiliation",
+   "titreWiki": "Aunt",
+   "libelle": "Aunt",
+   "motif": "cible de type personnage (Aunt)"
+  },
+  {
+   "de": "Mishoin Cashible",
+   "champ": "occupation",
+   "titreWiki": "Animal Species/Water 7 Saga",
+   "libelle": "Bull",
+   "motif": "aucune fiche One Piece nommée « Animal Species/Water 7 Saga »"
+  },
+  {
+   "de": "Rika",
+   "champ": "affiliation",
+   "titreWiki": "153rd Branch",
+   "libelle": "153rd Branch",
+   "motif": "aucune fiche One Piece nommée « 153rd Branch »"
+  },
+  {
+   "de": "Rika",
+   "champ": "residence",
+   "titreWiki": "153rd Branch",
+   "libelle": "153rd Branch",
+   "motif": "aucune fiche One Piece nommée « 153rd Branch »"
+  },
+  {
+   "de": "Yosaku",
+   "champ": "affiliation",
+   "titreWiki": "Johnny",
+   "libelle": "Johnny",
+   "motif": "cible de type personnage (Johnny)"
+  },
+  {
+   "de": "Johnny",
+   "champ": "affiliation",
+   "titreWiki": "Yosaku",
+   "libelle": "Yosaku",
+   "motif": "cible de type personnage (Yosaku)"
+  },
+  {
+   "de": "Carrot",
+   "champ": "affiliation",
+   "titreWiki": "Mokomo Dukedom",
+   "libelle": "Mokomo Dukedom",
+   "motif": "aucune fiche One Piece nommée « Mokomo Dukedom »"
+  },
+  {
+   "de": "Carrot",
+   "champ": "affiliation",
+   "titreWiki": "Inuarashi Musketeer Squad",
+   "libelle": "Inuarashi Musketeer Squad",
+   "motif": "aucune fiche One Piece nommée « Inuarashi Musketeer Squad »"
+  },
+  {
+   "de": "Loki",
+   "champ": "dfname",
+   "titreWiki": "Ryu Ryu no Mi, Model: Nidhöggr",
+   "libelle": "Ryu Ryu no Mi, Model: Nidhöggr",
+   "motif": "aucune fiche One Piece nommée « Ryu Ryu no Mi, Model: Nidhöggr »"
+  },
+  {
+   "de": "Uta",
+   "champ": "dfname",
+   "titreWiki": "Uta Uta no Mi",
+   "libelle": "Uta Uta no Mi",
+   "motif": "aucune fiche One Piece nommée « Uta Uta no Mi »"
+  },
+  {
+   "de": "Shimashima Shopping",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Shiro Mokuba I",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Mini Merry II",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Tarumanma",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Dellinger",
+   "champ": "affiliation",
+   "titreWiki": "Donquixote Pirates",
+   "libelle": "Donquixote Pirates",
+   "motif": "aucune fiche One Piece nommée « Donquixote Pirates »"
+  },
+  {
+   "de": "Izou",
+   "champ": "occupation",
+   "titreWiki": "Samurai",
+   "libelle": "Samurai",
+   "motif": "aucune fiche One Piece nommée « Samurai »"
+  },
+  {
+   "de": "Nekomamushi",
+   "champ": "affiliation",
+   "titreWiki": "Mokomo Dukedom",
+   "libelle": "Mokomo Dukedom",
+   "motif": "aucune fiche One Piece nommée « Mokomo Dukedom »"
+  },
+  {
+   "de": "Nekomamushi",
+   "champ": "affiliation",
+   "titreWiki": "Guardians",
+   "libelle": "Guardians",
+   "motif": "aucune fiche One Piece nommée « Guardians »"
+  },
+  {
+   "de": "Nekomamushi",
+   "champ": "affiliation",
+   "titreWiki": "Nine Red Scabbards",
+   "libelle": "Nine Red Scabbards",
+   "motif": "aucune fiche One Piece nommée « Nine Red Scabbards »"
+  },
+  {
+   "de": "Nekomamushi",
+   "champ": "occupation",
+   "titreWiki": "Yakuza",
+   "libelle": "Yakuza Boss",
+   "motif": "aucune fiche One Piece nommée « Yakuza »"
+  },
+  {
+   "de": "Nekomamushi",
+   "champ": "occupation",
+   "titreWiki": "Samurai",
+   "libelle": "Samurai",
+   "motif": "aucune fiche One Piece nommée « Samurai »"
+  },
+  {
+   "de": "Inuarashi",
+   "champ": "affiliation",
+   "titreWiki": "Mokomo Dukedom",
+   "libelle": "Mokomo Dukedom",
+   "motif": "aucune fiche One Piece nommée « Mokomo Dukedom »"
+  },
+  {
+   "de": "Inuarashi",
+   "champ": "affiliation",
+   "titreWiki": "Musketeers",
+   "libelle": "Musketeers",
+   "motif": "aucune fiche One Piece nommée « Inuarashi Musketeer Squad »"
+  },
+  {
+   "de": "Inuarashi",
+   "champ": "affiliation",
+   "titreWiki": "Inuarashi Musketeer Squad",
+   "libelle": "Inuarashi Musketeer Squad",
+   "motif": "aucune fiche One Piece nommée « Inuarashi Musketeer Squad »"
+  },
+  {
+   "de": "Inuarashi",
+   "champ": "affiliation",
+   "titreWiki": "Nine Red Scabbards",
+   "libelle": "Nine Red Scabbards",
+   "motif": "aucune fiche One Piece nommée « Nine Red Scabbards »"
+  },
+  {
+   "de": "Inuarashi",
+   "champ": "occupation",
+   "titreWiki": "Daimyo",
+   "libelle": "Daimyo",
+   "motif": "aucune fiche One Piece nommée « Daimyo »"
+  },
+  {
+   "de": "Inuarashi",
+   "champ": "occupation",
+   "titreWiki": "Samurai",
+   "libelle": "Samurai",
+   "motif": "aucune fiche One Piece nommée « Samurai »"
+  },
+  {
+   "de": "Belo Betty",
+   "champ": "dfname",
+   "titreWiki": "Kobu Kobu no Mi",
+   "libelle": "Kobu Kobu no Mi",
+   "motif": "aucune fiche One Piece nommée « Kobu Kobu no Mi »"
+  },
+  {
+   "de": "Sai",
+   "champ": "affiliation",
+   "titreWiki": "Happo Navy",
+   "libelle": "Happo Navy",
+   "motif": "aucune fiche One Piece nommée « Happo Navy »"
+  },
+  {
+   "de": "Sai",
+   "champ": "affiliation",
+   "titreWiki": "Chinjao Family",
+   "libelle": "Chinjao Family",
+   "motif": "aucune fiche One Piece nommée « Chinjao Family »"
+  },
+  {
+   "de": "Sai",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Grand Fleet",
+   "libelle": "Straw Hat Grand Fleet",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Grand Fleet »"
+  },
+  {
+   "de": "Sai",
+   "champ": "occupation",
+   "titreWiki": "Straw Hat Grand Fleet",
+   "libelle": "Straw Hat Grand Fleet",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Grand Fleet »"
+  },
+  {
+   "de": "Sai",
+   "champ": "occupation",
+   "titreWiki": "Admiral (Fleet Captain)",
+   "libelle": "Leader",
+   "motif": "aucune fiche One Piece nommée « Admiral (Fleet Captain) »"
+  },
+  {
+   "de": "Sai",
+   "champ": "occupation",
+   "titreWiki": "Martial Artist",
+   "libelle": "Martial Artist",
+   "motif": "aucune fiche One Piece nommée « Martial Artist »"
+  },
+  {
+   "de": "Toto",
+   "champ": "affiliation",
+   "titreWiki": "Koza",
+   "libelle": "Koza",
+   "motif": "aucune fiche One Piece nommée « Koza »"
+  },
+  {
+   "de": "Toto",
+   "champ": "residence",
+   "titreWiki": "Yuba",
+   "libelle": "Yuba",
+   "motif": "aucune fiche One Piece nommée « Yuba »"
+  },
+  {
+   "de": "Chiqicheetah",
+   "champ": "affiliation",
+   "titreWiki": "Foxy Pirates",
+   "libelle": "Foxy Pirates",
+   "motif": "aucune fiche One Piece nommée « Foxy Pirates »"
+  },
+  {
+   "de": "Girarin",
+   "champ": "affiliation",
+   "titreWiki": "Foxy Pirates",
+   "libelle": "Foxy Pirates",
+   "motif": "aucune fiche One Piece nommée « Foxy Pirates »"
+  },
+  {
+   "de": "Rasa",
+   "champ": "residence",
+   "titreWiki": "Sandora Desert",
+   "libelle": "Sandora Desert",
+   "motif": "aucune fiche One Piece nommée « Sandora Desert »"
+  },
+  {
+   "de": "Tamachibi",
+   "champ": "residence",
+   "titreWiki": "Cocoa Weed",
+   "libelle": "Cocoa Weed",
+   "motif": "aucune fiche One Piece nommée « Cocoa Weed »"
+  },
+  {
+   "de": "Okame",
+   "champ": "affiliation",
+   "titreWiki": "Operation Utopia",
+   "libelle": "Rebel Army",
+   "motif": "aucune fiche One Piece nommée « Operation Utopia »"
+  },
+  {
+   "de": "Odama",
+   "champ": "residence",
+   "titreWiki": "Fireworks Island",
+   "libelle": "Fireworks Island",
+   "motif": "aucune fiche One Piece nommée « Fireworks »"
+  },
+  {
+   "de": "Tibany",
+   "champ": "occupation",
+   "titreWiki": "Okama",
+   "libelle": "Okama",
+   "motif": "aucune fiche One Piece nommée « Okama »"
+  },
+  {
+   "de": "Rokuroshi",
+   "champ": "affiliation",
+   "titreWiki": "Foxy Pirates",
+   "libelle": "Foxy Pirates",
+   "motif": "aucune fiche One Piece nommée « Foxy Pirates »"
+  },
+  {
+   "de": "Merry",
+   "champ": "affiliation",
+   "titreWiki": "Kaya",
+   "libelle": "Kaya",
+   "motif": "cible de type personnage (Kaya)"
+  },
+  {
+   "de": "Crocus",
+   "champ": "affiliation",
+   "titreWiki": "Laboon",
+   "libelle": "Laboon",
+   "motif": "cible de type personnage (Laboon)"
+  },
+  {
+   "de": "Crocus",
+   "champ": "occupation",
+   "titreWiki": "Doctor",
+   "libelle": "Doctor",
+   "motif": "aucune fiche One Piece nommée « Doctor »"
+  },
+  {
+   "de": "Camie",
+   "champ": "affiliation",
+   "titreWiki": "Takoyaki 8",
+   "libelle": "Takoyaki 8",
+   "motif": "aucune fiche One Piece nommée « Takoyaki 8 »"
+  },
+  {
+   "de": "Camie",
+   "champ": "affiliation",
+   "titreWiki": "Criminal",
+   "libelle": "Criminal",
+   "motif": "aucune fiche One Piece nommée « Criminal »"
+  },
+  {
+   "de": "Camie",
+   "champ": "residence",
+   "titreWiki": "Mermaid Cove",
+   "libelle": "Mermaid Cove",
+   "motif": "aucune fiche One Piece nommée « Mermaid Cove »"
+  },
+  {
+   "de": "Duval",
+   "champ": "affiliation",
+   "titreWiki": "Rosy Life Riders",
+   "libelle": "Rosy Life Riders",
+   "motif": "aucune fiche One Piece nommée « Rosy Life Riders »"
+  },
+  {
+   "de": "Catarina Devon",
+   "champ": "dfname",
+   "titreWiki": "Inu Inu no Mi, Model: Kyubi no Kitsune",
+   "libelle": "Inu Inu no Mi, Model: Kyubi no Kitsune",
+   "motif": "aucune fiche One Piece nommée « Inu Inu no Mi, Model: Kyubi no Kitsune »"
+  },
+  {
+   "de": "Elizabello II",
+   "champ": "occupation",
+   "titreWiki": "King (Title)",
+   "libelle": "King",
+   "motif": "cible redirigée vers une section (Royal#King)"
+  },
+  {
+   "de": "Desire",
+   "champ": "affiliation",
+   "titreWiki": "Sweet Pirates",
+   "libelle": "Sweet Pirates",
+   "motif": "aucune fiche One Piece nommée « Sweet Pirates »"
+  },
+  {
+   "de": "Tanaka",
+   "champ": "dfname",
+   "titreWiki": "Nuke Nuke no Mi",
+   "libelle": "Nuke Nuke no Mi",
+   "motif": "aucune fiche One Piece nommée « Nuke Nuke no Mi »"
+  },
+  {
+   "de": "Buena Festa",
+   "champ": "affiliation",
+   "titreWiki": "Festival Pirates",
+   "libelle": "Festival Pirates",
+   "motif": "aucune fiche One Piece nommée « Festival Pirates »"
+  },
+  {
+   "de": "Oro Jackson",
+   "champ": "affiliation",
+   "titreWiki": "Roger Pirates",
+   "libelle": "Roger Pirates",
+   "motif": "aucune fiche One Piece nommée « Roger Pirates »"
+  },
+  {
+   "de": "Gattenshochinosukeo",
+   "champ": "occupation",
+   "titreWiki": "Shipwright",
+   "libelle": "Shipwright",
+   "motif": "aucune fiche One Piece nommée « Shipwright »"
+  },
+  {
+   "de": "Wanze",
+   "champ": "affiliation",
+   "titreWiki": "CP7",
+   "libelle": "CP7",
+   "motif": "cible redirigée vers une section (Cipher Pol#CP7)"
+  },
+  {
+   "de": "Île des Hommes-Poissons",
+   "champ": "affiliation",
+   "titreWiki": "Ryugu Kingdom",
+   "libelle": "Ryugu Kingdom",
+   "motif": "aucune fiche One Piece nommée « Ryugu Kingdom »"
+  },
+  {
+   "de": "Île des Hommes-Poissons",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Pays de Wano",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Vergo",
+   "champ": "affiliation",
+   "titreWiki": "Donquixote Pirates",
+   "libelle": "Donquixote Pirates",
+   "motif": "aucune fiche One Piece nommée « Donquixote Pirates »"
+  },
+  {
+   "de": "Vergo",
+   "champ": "occupation",
+   "titreWiki": "Vice Admiral",
+   "libelle": "Vice Admiral",
+   "motif": "aucune fiche One Piece nommée « Vice Admiral »"
+  },
+  {
+   "de": "Vergo",
+   "champ": "occupation",
+   "titreWiki": "Captain (Marine Rank)",
+   "libelle": "Marine Captain",
+   "motif": "aucune fiche One Piece nommée « Captain (Marine Rank) »"
+  },
+  {
+   "de": "Chinjao",
+   "champ": "affiliation",
+   "titreWiki": "Chinjao Family",
+   "libelle": "Chinjao Family",
+   "motif": "aucune fiche One Piece nommée « Chinjao Family »"
+  },
+  {
+   "de": "Chinjao",
+   "champ": "affiliation",
+   "titreWiki": "Happo Navy",
+   "libelle": "Happo Navy",
+   "motif": "aucune fiche One Piece nommée « Happo Navy »"
+  },
+  {
+   "de": "Chinjao",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Grand Fleet",
+   "libelle": "Straw Hat Grand Fleet",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Grand Fleet »"
+  },
+  {
+   "de": "Chinjao",
+   "champ": "occupation",
+   "titreWiki": "Admiral (Fleet Captain)",
+   "libelle": "Leader",
+   "motif": "aucune fiche One Piece nommée « Admiral (Fleet Captain) »"
+  },
+  {
+   "de": "Sarahebi",
+   "champ": "dfname",
+   "titreWiki": "SMILE",
+   "libelle": "SMILE",
+   "motif": "aucune fiche One Piece nommée « SMILE »"
+  },
+  {
+   "de": "Nami",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Pirates",
+   "libelle": "Straw Hat Pirates",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Pirates »"
+  },
+  {
+   "de": "Nami",
+   "champ": "affiliation",
+   "titreWiki": "Straw Hat Grand Fleet",
+   "libelle": "Straw Hat Grand Fleet",
+   "motif": "aucune fiche One Piece nommée « Straw Hat Grand Fleet »"
+  },
+  {
+   "de": "Nami",
+   "champ": "affiliation",
+   "titreWiki": "Arlong Pirates",
+   "libelle": "Arlong Pirates",
+   "motif": "aucune fiche One Piece nommée « Arlong Pirates »"
+  },
+  {
+   "de": "Nami",
+   "champ": "affiliation",
+   "titreWiki": "Ganzack Pirates",
+   "libelle": "Ganzack Pirates",
+   "motif": "aucune fiche One Piece nommée « Ganzack Pirates »"
+  },
+  {
+   "de": "Nami",
+   "champ": "affiliation",
+   "titreWiki": "Golden Lion Pirates",
+   "libelle": "Golden Lion Pirates",
+   "motif": "aucune fiche One Piece nommée « Golden Lion Pirates »"
+  },
+  {
+   "de": "Nami",
+   "champ": "occupation",
+   "titreWiki": "Navigator",
+   "libelle": "Navigator",
+   "motif": "aucune fiche One Piece nommée « Navigator »"
+  },
+  {
+   "de": "Nami",
+   "champ": "occupation",
+   "titreWiki": "Ninja",
+   "libelle": "Kunoichi",
+   "motif": "aucune fiche One Piece nommée « Ninja »"
+  },
+  {
+   "de": "Burn-Bazooka",
+   "champ": "owner",
+   "titreWiki": "Wyper",
+   "libelle": "Wyper",
+   "motif": "aucune fiche One Piece nommée « Wyper »"
+  },
+  {
+   "de": "Soul Solid",
+   "champ": "owner",
+   "titreWiki": "Brook",
+   "libelle": "Brook",
+   "motif": "cible de type personnage (Brook)"
+  },
+  {
+   "de": "Minatomo (East Blue)",
+   "champ": "affiliation",
+   "titreWiki": "Easter Egg",
+   "libelle": "Easter Egg",
+   "motif": "aucune fiche One Piece nommée « Easter Egg »"
+  },
+  {
+   "de": "Hihimaru",
+   "champ": "affiliation",
+   "titreWiki": "Beasts Pirates",
+   "libelle": "Beasts Pirates",
+   "motif": "aucune fiche One Piece nommée « Beasts Pirates »"
+  },
+  {
+   "de": "Nojiko",
+   "champ": "residence",
+   "titreWiki": "Cocoyasi Village",
+   "libelle": "Cocoyasi Village",
+   "motif": "aucune fiche One Piece nommée « Cocoyasi Village »"
+  },
+  {
+   "de": "Conis",
+   "champ": "affiliation",
+   "titreWiki": "Pumpkin Cafe",
+   "libelle": "Pumpkin Cafe",
+   "motif": "aucune fiche One Piece nommée « Pumpkin Cafe »"
+  },
+  {
+   "de": "Pagaya",
+   "champ": "occupation",
+   "titreWiki": "Dial Boat",
+   "libelle": "Dial Boat",
+   "motif": "aucune fiche One Piece nommée « Dial Boat »"
+  },
+  {
+   "de": "Fukaboshi",
+   "champ": "affiliation",
+   "titreWiki": "Neptune Family",
+   "libelle": "Neptune Family",
+   "motif": "aucune fiche One Piece nommée « Neptune Family »"
+  },
+  {
+   "de": "Fukaboshi",
+   "champ": "occupation",
+   "titreWiki": "Prince",
+   "libelle": "Prince",
+   "motif": "cible redirigée vers une section (Royal#Prince and Princess)"
+  },
+  {
+   "de": "Fukaboshi",
+   "champ": "occupation",
+   "titreWiki": "Ryugu Kingdom",
+   "libelle": "Ryugu Kingdom",
+   "motif": "aucune fiche One Piece nommée « Ryugu Kingdom »"
+  },
+  {
+   "de": "Fukaboshi",
+   "champ": "residence",
+   "titreWiki": "Ryugu Palace",
+   "libelle": "Ryugu Palace",
+   "motif": "aucune fiche One Piece nommée « Ryugu Palace »"
+  },
+  {
+   "de": "Neptune",
+   "champ": "affiliation",
+   "titreWiki": "Neptune Family",
+   "libelle": "Neptune Family",
+   "motif": "aucune fiche One Piece nommée « Neptune Family »"
+  },
+  {
+   "de": "Neptune",
+   "champ": "affiliation",
+   "titreWiki": "Ryugu Kingdom",
+   "libelle": "Ryugu Kingdom",
+   "motif": "aucune fiche One Piece nommée « Ryugu Kingdom »"
+  },
+  {
+   "de": "Neptune",
+   "champ": "occupation",
+   "titreWiki": "King (Title)",
+   "libelle": "King",
+   "motif": "cible redirigée vers une section (Royal#King)"
+  },
+  {
+   "de": "Chouchou",
+   "champ": "affiliation",
+   "titreWiki": "Hocker",
+   "libelle": "Hocker",
+   "motif": "cible de type personnage (Hocker)"
+  },
+  {
+   "de": "Chouchou",
+   "champ": "occupation",
+   "titreWiki": "Pet",
+   "libelle": "Pet",
+   "motif": "aucune fiche One Piece nommée « Pet »"
+  },
+  {
+   "de": "Harald",
+   "champ": "affiliation",
+   "titreWiki": "Knights of God",
+   "libelle": "Knights of God",
+   "motif": "aucune fiche One Piece nommée « Knights of God »"
+  },
+  {
+   "de": "Harald",
+   "champ": "occupation",
+   "titreWiki": "King (Title)",
+   "libelle": "King",
+   "motif": "cible redirigée vers une section (Royal#King)"
+  },
+  {
+   "de": "Harald",
+   "champ": "residence",
+   "titreWiki": "Aurust Castle",
+   "libelle": "Aurust Castle",
+   "motif": "aucune fiche One Piece nommée « Aurust Castle »"
+  },
+  {
+   "de": "Scarlet",
+   "champ": "affiliation",
+   "titreWiki": "Golden Lion Pirates",
+   "libelle": "Golden Lion Pirates",
+   "motif": "aucune fiche One Piece nommée « Golden Lion Pirates »"
+  },
+  {
+   "de": "Scarlet",
+   "champ": "residence",
+   "titreWiki": "Merveille",
+   "libelle": "Merveille",
+   "motif": "aucune fiche One Piece nommée « Merveille »"
+  },
+  {
+   "de": "Big Top",
+   "champ": "affiliation",
+   "titreWiki": "Buggy Pirates",
+   "libelle": "Buggy Pirates",
+   "motif": "aucune fiche One Piece nommée « Buggy Pirates »"
+  },
+  {
+   "de": "Naglfar",
+   "champ": "affiliation",
+   "titreWiki": "New Giant Warrior Pirates",
+   "libelle": "New Giant Warrior Pirates",
+   "motif": "aucune fiche One Piece nommée « New Giant Warrior Pirates »"
+  },
+  {
+   "de": "Perfume Yuda",
+   "champ": "affiliation",
+   "titreWiki": "Kuja Pirates",
+   "libelle": "Kuja Pirates",
+   "motif": "aucune fiche One Piece nommée « Kuja Pirates »"
+  },
+  {
+   "de": "Snapper Head",
+   "champ": "affiliation",
+   "titreWiki": "Sun Pirates",
+   "libelle": "Sun Pirates",
+   "motif": "aucune fiche One Piece nommée « Sun Pirates »"
+  },
+  {
+   "de": "Jaygarcia Saturn",
+   "champ": "affiliation",
+   "titreWiki": "Five Elders",
+   "libelle": "Five Elders",
+   "motif": "aucune fiche One Piece nommée « Five Elders »"
+  },
+  {
+   "de": "Jaygarcia Saturn",
+   "champ": "affiliation",
+   "titreWiki": "World Noble",
+   "libelle": "World Nobles",
+   "motif": "aucune fiche One Piece nommée « World Noble »"
+  },
+  {
+   "de": "Jaygarcia Saturn",
+   "champ": "occupation",
+   "titreWiki": "Scientist",
+   "libelle": "Scientist",
+   "motif": "aucune fiche One Piece nommée « Scientist »"
+  },
+  {
+   "de": "Lao G",
+   "champ": "affiliation",
+   "titreWiki": "Donquixote Pirates",
+   "libelle": "Donquixote Pirates",
+   "motif": "aucune fiche One Piece nommée « Donquixote Pirates »"
+  },
+  {
+   "de": "Kukai",
+   "champ": "affiliation",
+   "titreWiki": "Spade Pirates",
+   "libelle": "Spade Pirates",
+   "motif": "aucune fiche One Piece nommée « Spade Pirates »"
+  },
+  {
+   "de": "Kukai",
+   "champ": "occupation",
+   "titreWiki": "Samurai",
+   "libelle": "Samurai",
+   "motif": "aucune fiche One Piece nommée « Samurai »"
+  },
+  {
+   "de": "Karasu",
+   "champ": "dfname",
+   "titreWiki": "Susu Susu no Mi",
+   "libelle": "Susu Susu no Mi",
+   "motif": "aucune fiche One Piece nommée « Susu Susu no Mi »"
+  },
+  {
+   "de": "Hogback",
+   "champ": "occupation",
+   "titreWiki": "Doctor",
+   "libelle": "Doctor",
+   "motif": "aucune fiche One Piece nommée « Doctor »"
+  }
+ ]
+}

@@ -55,7 +55,7 @@ for (const f of cibles) {
   const url = `${BASE}/learn/akasha/${f.slug}`;
   let html = '', code = 0;
   try {
-    const r = await fetch(url, { signal: AbortSignal.timeout(60_000) });
+    const r = await fetch(url, { signal: AbortSignal.timeout(180_000) });
     code = r.status;
     html = await r.text();
   } catch (e) { code = -1; html = String(e); }
@@ -75,31 +75,38 @@ for (const f of cibles) {
   };
   lignes.push({
     slug: f.slug, type: f.type, universe: f.universe, source: f.source, code,
-    attendu: { title: f.title, description: f.description },
+    attendu: { title: f.title, description: f.description, ogDescription: f.ogDescription ?? null },
     rendu,
     ecart_title: rendu.title !== f.title,
     ecart_description: rendu.description !== f.description,
+    ecart_og_description: f.ogDescription != null && rendu.ogDescription !== f.ogDescription,
+    og_generique: rendu.ogTitle === "NIKA — La super-app de la Côte d'Azur",
+    og_porte_le_nom: !!rendu.ogTitle && rendu.ogTitle.startsWith(f.title.split(' — ')[0]),
+    og_image: !!meta(html, /<meta property="og:image" content="([^"]*)"/),
   });
   process.stderr.write(`\r  ${lignes.length}/${cibles.length} ${f.slug}            `);
 }
 process.stderr.write('\n');
 
-const ko = lignes.filter((l) => l.ecart_title || l.ecart_description);
+const ko = lignes.filter((l) => l.ecart_title || l.ecart_description || l.ecart_og_description);
 const uniq = (k) => [...new Set(lignes.map((l) => l.rendu[k]))];
 const resume = {
   quand: new Date().toISOString(),
   base: BASE,
   n: lignes.length,
   taux_erreur_replique: +(ko.length / lignes.length * 100).toFixed(1),
-  ecarts: ko.map((l) => ({ slug: l.slug, attendu: l.attendu, rendu: { title: l.rendu.title, description: l.rendu.description } })),
-  valeurs_distinctes_og_title: uniq('ogTitle'),
-  valeurs_distinctes_og_description: uniq('ogDescription'),
-  valeurs_distinctes_twitter_title: uniq('twTitle'),
+  ecarts: ko.map((l) => ({ slug: l.slug, attendu: l.attendu, rendu: { title: l.rendu.title, description: l.rendu.description, ogDescription: l.rendu.ogDescription } })),
+  og_generique: lignes.filter((l) => l.og_generique).length,
+  og_titre_porte_le_nom: lignes.filter((l) => l.og_porte_le_nom).length,
+  og_image_presente: lignes.filter((l) => l.og_image).length,
+  og_titres_distincts: new Set(lignes.map((l) => l.rendu.ogTitle)).size,
+  og_descriptions_distinctes: new Set(lignes.map((l) => l.rendu.ogDescription)).size,
   valeurs_distinctes_twitter_card: uniq('twCard'),
   valeurs_distinctes_og_type: uniq('ogType'),
-  valeurs_distinctes_og_url: uniq('ogUrl'),
   valeurs_distinctes_og_site_name: uniq('ogSiteName'),
   valeurs_distinctes_og_image_alt: uniq('ogImageAlt'),
+  og_url_egale_canonical: lignes.filter((l) => l.rendu.ogUrl && l.rendu.ogUrl === l.rendu.canonical).length,
+  twitter_titre_egal_og: lignes.filter((l) => l.rendu.twTitle === l.rendu.ogTitle).length,
   canonical_ok: lignes.filter((l) => l.rendu.canonical?.endsWith(`/learn/akasha/${l.slug}`)).length,
 };
 const stamp = new Date().toISOString().replace(/[:.]/g, '-');

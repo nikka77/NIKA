@@ -1,0 +1,6583 @@
+{
+ "chantier": "C3 — disponibilité de la page sur le wiki FR",
+ "quand": "2026-08-10T20:51:52.757Z",
+ "trace": "data/audits/descfr-wiki-fr-c3v5-complet-2026-08-10T20-43-03-505Z.json",
+ "corpus": 7698,
+ "sansDescFr": 395,
+ "global": {
+  "C2-titres-non-rapproches": 215,
+  "A-page-prouvee": 8,
+  "B-page-refusee": 101,
+  "D-univers-sans-wiki-fr": 2,
+  "C1-aucun-titre": 52,
+  "D-videe-expres": 17
+ },
+ "parUnivers": {
+  "Naruto": {
+   "total": 162,
+   "C2-titres-non-rapproches": 54,
+   "A-page-prouvee": 3,
+   "B-page-refusee": 58,
+   "C1-aucun-titre": 38,
+   "D-videe-expres": 9
+  },
+  "Dragon Ball": {
+   "total": 59,
+   "C2-titres-non-rapproches": 37,
+   "C1-aucun-titre": 4,
+   "A-page-prouvee": 1,
+   "B-page-refusee": 14,
+   "D-videe-expres": 3
+  },
+  "One Piece": {
+   "total": 157,
+   "C2-titres-non-rapproches": 116,
+   "A-page-prouvee": 4,
+   "C1-aucun-titre": 9,
+   "B-page-refusee": 25,
+   "D-videe-expres": 3
+  },
+  "Initial D": {
+   "total": 2,
+   "D-univers-sans-wiki-fr": 2
+  },
+  "Bleach": {
+   "total": 15,
+   "B-page-refusee": 4,
+   "D-videe-expres": 2,
+   "C2-titres-non-rapproches": 8,
+   "C1-aucun-titre": 1
+  }
+ },
+ "motifsRefus": {
+  "chapeau-trop-court": 6,
+  "page-plus-generale": 27,
+  "pont-page-derivee": 22,
+  "parenthese-de-desambiguisation": 3,
+  "titre-enrichi-non-atteste": 12,
+  "page-disputee": 17,
+  "pont-nu-sans-preuve-de-nom": 7,
+  "lieu-decrit-comme-autre-chose": 2,
+  "identite-refusee": 5
+ },
+ "parType": {
+  "profession": {
+   "total": 57,
+   "C2-titres-non-rapproches": 26,
+   "C1-aucun-titre": 23,
+   "B-page-refusee": 5,
+   "D-videe-expres": 3
+  },
+  "power": {
+   "total": 161,
+   "A-page-prouvee": 4,
+   "C2-titres-non-rapproches": 92,
+   "D-videe-expres": 2,
+   "C1-aucun-titre": 16,
+   "B-page-refusee": 47
+  },
+  "artifact": {
+   "total": 76,
+   "C2-titres-non-rapproches": 45,
+   "B-page-refusee": 23,
+   "C1-aucun-titre": 5,
+   "D-videe-expres": 3
+  },
+  "skill": {
+   "total": 36,
+   "C2-titres-non-rapproches": 22,
+   "B-page-refusee": 13,
+   "D-videe-expres": 1
+  },
+  "place": {
+   "total": 18,
+   "C2-titres-non-rapproches": 10,
+   "A-page-prouvee": 3,
+   "B-page-refusee": 5
+  },
+  "character": {
+   "total": 23,
+   "D-univers-sans-wiki-fr": 2,
+   "C1-aucun-titre": 6,
+   "C2-titres-non-rapproches": 7,
+   "D-videe-expres": 7,
+   "A-page-prouvee": 1
+  },
+  "status": {
+   "total": 24,
+   "C1-aucun-titre": 2,
+   "C2-titres-non-rapproches": 13,
+   "B-page-refusee": 8,
+   "D-videe-expres": 1
+  }
+ },
+ "nomsAbimes": [
+  {
+   "slug": "anbu-captain-former",
+   "name": "Anbu Captain  (Former)",
+   "classe": "B-page-refusee"
+  },
+  {
+   "slug": "inner-former",
+   "name": "Inner  (Former)",
+   "classe": "C1-aucun-titre"
+  },
+  {
+   "slug": "puppet-puppet-is-not-in-the-list-anbu-cooking-nin-daimyo-hunter-nin-jinchuriki-medical-nin-mercenary-ninja-missing-nin-ninja-monk-pseudo-jinchuriki-of-allowed-values-for-the-classification-property",
+   "name": "Puppet\"Puppet\" is not in the list (ANBU, Cooking-nin, Daimyō, Hunter-nin, Jinchūriki, Medical-nin, Mercenary Ninja, Missing-nin, Ninja monk, Pseudo-Jinchūriki, ...) of allowed values for the \"Classification\" property.",
+   "classe": "C1-aucun-titre"
+  },
+  {
+   "slug": "criminalminer-former",
+   "name": "CriminalMiner (former)",
+   "classe": "C1-aucun-titre"
+  },
+  {
+   "slug": "earth-release-presumed",
+   "name": "Earth Release  (Presumed)",
+   "classe": "C1-aucun-titre"
+  },
+  {
+   "slug": "gato-s-bodyguard-mercenary",
+   "name": "Gatō's bodyguard  (Mercenary)",
+   "classe": "C2-titres-non-rapproches"
+  },
+  {
+   "slug": "thief-former",
+   "name": "Thief  (Former)",
+   "classe": "C1-aucun-titre"
+  },
+  {
+   "slug": "this-article-is-a-stub-you-can-help-the-narutopedia-by-expanding-it-or-perhaps-you-could-contribute-to-the-discussion-on-the-topic",
+   "name": "This article is a stub. You can help the Narutopedia by expanding it, or perhaps you could contribute to the discussion on the topic.",
+   "classe": "C2-titres-non-rapproches"
+  },
+  {
+   "slug": "wind-release-affinity-anime-only",
+   "name": "Wind Release  (Affinity; Anime only)",
+   "classe": "B-page-refusee"
+  },
+  {
+   "slug": "this-article-is-about-the-serial-killer-for-the-genin-see-samidare",
+   "name": "This article is about the serial killer. For the genin, see Samidare.",
+   "classe": "B-page-refusee"
+  }
+ ],
+ "lignes": [
+  {
+   "slug": "voleur",
+   "name": "Voleur",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Futami",
+    "Les nuits blanches surgissent !",
+    "Le Lieu sacré de Kakashi !!",
+    "Mitsuo",
+    "Tome 1 (Sasuke Retsuden)",
+    "La Bataille du temple d'Okay"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "dynamic-action",
+   "name": "Dynamic Action",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "A-page-prouvee",
+   "etat": "candidat",
+   "route": "titre-exact",
+   "titreFr": "Dynamic Action",
+   "rechercheFr": null,
+   "longueur": 102
+  },
+  {
+   "slug": "fils-d-acier",
+   "name": "Fils d'acier",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Technique de Manipulation de Shuriken",
+    "Ninpô - Prise Meurtrière",
+    "Temari",
+    "Déploiement de la Toile"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "vegeta-mega-instinc-evil",
+   "name": "Vegeta Mega Instinc Evil",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dragon Ball Z : Broly le super guerrier",
+    "Vegeta (SDBH)",
+    "Ego transcendantal",
+    "Copy-Vegeta",
+    "Dragon Ball Z : Fusions",
+    "Bulma"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "mountains-graveyard",
+   "name": "Cimetière des Monts",
+   "type": "place",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Sanctuaire de Modoroki"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "seducing-woods",
+   "name": "Forêt de la Séduction",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Forêt de la tentation",
+    "Chapitre 831",
+    "Forêt du Milieu",
+    "Boss de la Forêt",
+    "Chapitre 874",
+    "Jungle Zone"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-jujika",
+   "name": "Jujika",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Mera Mera no Mi",
+    "Incident de Banaro"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "sweet-city",
+   "name": "Sweet City",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "A-page-prouvee",
+   "etat": "candidat",
+   "route": "titre-exact",
+   "titreFr": "Sweet City",
+   "rechercheFr": null,
+   "longueur": 96
+  },
+  {
+   "slug": "jet-shoes",
+   "name": "Jet Shoes",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Skypiea",
+    "Épisode 414"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "massue",
+   "name": "Massue",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "chapeau-trop-court",
+   "route": "titre-exact",
+   "titreFr": "Massue",
+   "rechercheFr": null,
+   "longueur": 0
+  },
+  {
+   "slug": "kazama-toshiaki",
+   "name": "Kazama Toshiaki",
+   "type": "character",
+   "universe": "Initial D",
+   "classe": "D-univers-sans-wiki-fr",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "caretaker",
+   "name": "Caretaker",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "wood-release-underground-roots-technique",
+   "name": "Wood Release: Underground Roots Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Mokuton - Sépulture de Bois",
+    "Mokuton - Émergence Arborée"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "visio-dial",
+   "name": "Visio-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Bijo Bijo no Mi",
+    "Escargophones"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "milkman",
+   "name": "Milkman",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "sakon",
+   "name": "Sakon",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "anbu-captain-former",
+   "name": "Anbu Captain  (Former)",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Anbu",
+   "rechercheFr": [
+    "Commandant de l'Anbu",
+    "Anbu",
+    "Baku (Anbu)",
+    "Tora (Anbu)",
+    "Kô (Anbu)",
+    "Anbu de la Feuille"
+   ],
+   "longueur": 658
+  },
+  {
+   "slug": "whip",
+   "name": "Whip",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Suiton - Fouet d'Eau",
+    "Suiton - Fouet du Dragon Aqueux",
+    "Suiton - Fouet Aqueux",
+    "Huile de Crapaud",
+    "Modification Physique Souple",
+    "Montée de Foudre"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "inner-former",
+   "name": "Inner  (Former)",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "kibi",
+   "name": "Kibi",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "A-page-prouvee",
+   "etat": "candidat",
+   "route": "titre-exact",
+   "titreFr": "Kibi",
+   "rechercheFr": null,
+   "longueur": 35
+  },
+  {
+   "slug": "clone-du-fruit-de-la-passion",
+   "name": "Clone du fruit de la passion",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Mero Mero no Mi",
+    "Mane Mane no Mi",
+    "Kopi Kopi no Mi",
+    "Peke Peke no Mi",
+    "Hana Hana no Mi",
+    "S-Snake"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-db-golden-great-ape",
+   "name": "Golden Great Ape",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "classe": "A-page-prouvee",
+   "etat": "candidat",
+   "route": "langlink",
+   "titreFr": "Singe géant doré",
+   "rechercheFr": null,
+   "longueur": 98
+  },
+  {
+   "slug": "atk-op-shima-yurai",
+   "name": "Shima Yurai",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "gohan-ssj2",
+   "name": "Gohan SSJ2",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Saiyan 2",
+    "Son Gohan",
+    "Ultimate Gohan",
+    "Son Gohan Beast",
+    "Son Gohan (futur)",
+    "Dragon Ball Z : Rivaux dangereux"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "portail-spatio-temporel",
+   "name": "Portail spatio-temporel",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Kamui",
+    "Dimensions de Kaguya",
+    "Yomotsu Hirasaka",
+    "Le Type qui craint (épisode)",
+    "Kaguya Ôtsutsuki",
+    "Téléportation d'Ôtsutsuki"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "deul-kingdom",
+   "name": "Royaume de Deul",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "A-page-prouvee",
+   "etat": "candidat",
+   "route": "titre-exact",
+   "titreFr": "Royaume de Deul",
+   "rechercheFr": null,
+   "longueur": 152
+  },
+  {
+   "slug": "rapid-fire",
+   "name": "Rapid Fire",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Rafale de Pic",
+   "rechercheFr": null,
+   "longueur": 69
+  },
+  {
+   "slug": "atk-bl-zabimaru",
+   "name": "Zabimaru",
+   "type": "power",
+   "universe": "Bleach",
+   "classe": "B-page-refusee",
+   "etat": "parenthese-de-desambiguisation",
+   "route": "titre-exact",
+   "titreFr": "Zabimaru (Esprit Zanpakutō)",
+   "rechercheFr": null,
+   "longueur": 0
+  },
+  {
+   "slug": "atk-op-red-roc",
+   "name": "Red Roc",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Fruit de Topman Warcury",
+    "Chapitre 1001",
+    "Gomu Gomu no Mi/Gear Third Techniques",
+    "Gomu Gomu no Mi/Gear Second Techniques",
+    "Chapitre 1112",
+    "Monkey D. Luffy/Aptitudes et Compétences"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "mercenaire",
+   "name": "Mercenaire",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "titre-enrichi-non-atteste",
+   "route": "recherche-fr",
+   "titreFr": "Ninja Mercenaire",
+   "rechercheFr": [
+    "Ninja Mercenaire",
+    "Sazanka",
+    "Himushi",
+    "Sadai",
+    "Kajûra",
+    "Un faux Naruto ?"
+   ],
+   "longueur": 493
+  },
+  {
+   "slug": "mafuba-flacon",
+   "name": "Bidon du Mafûba",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Mutaito",
+    "Bibra",
+    "Hirudegân",
+    "Bido",
+    "Tapion",
+    "Dabra"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "gogeta-ssj",
+   "name": "Gogeta SSJ",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gogeta (DBZ/GT)",
+    "Gogeta (DBS)",
+    "Gogeta (Xeno)",
+    "Super Saiyan 4",
+    "Super Saiyan",
+    "Super Dragon Ball Heroes - Big Bang Mission : épisode 18"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-franky-radical-hip",
+   "name": "Franky Radical Hip",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "exploding-sasumata-attack",
+   "name": "Exploding Sasumata Attack",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "A-page-prouvee",
+   "etat": "candidat",
+   "route": "langlink",
+   "titreFr": "Explosion du Sasumata",
+   "rechercheFr": null,
+   "longueur": 87
+  },
+  {
+   "slug": "freezer-3rd-form",
+   "name": "Freezer 3rd Form",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Cooler",
+    "Cooler (Xeno)",
+    "Dragon Ball Z épisode 082",
+    "Ahms",
+    "Frost",
+    "Clones"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-gatling",
+   "name": "Gomu Gomu no Gatling",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gomu Gomu no Mi/Techniques",
+    "Gomu Gomu no Mi/Gear Second Techniques",
+    "Gomu Gomu no Mi/Gear Third Techniques",
+    "Gomu Gomu no Mi",
+    "Gomu Gomu no Mi/Gear Fourth Techniques",
+    "Gomu Gomu no Mi/Autres Techniques"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "heat-dial",
+   "name": "Heat-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Heat Javelin",
+    "Chapitre 257",
+    "Shura",
+    "Bustercall Project",
+    "Hyper Shibireru-kun"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "puppet-puppet-is-not-in-the-list-anbu-cooking-nin-daimyo-hunter-nin-jinchuriki-medical-nin-mercenary-ninja-missing-nin-ninja-monk-pseudo-jinchuriki-of-allowed-values-for-the-classification-property",
+   "name": "Puppet\"Puppet\" is not in the list (ANBU, Cooking-nin, Daimyō, Hunter-nin, Jinchūriki, Medical-nin, Mercenary Ninja, Missing-nin, Ninja monk, Pseudo-Jinchūriki, ...) of allowed values for the \"Classification\" property.",
+   "type": "status",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "kawase-mitsuro",
+   "name": "Kawase Mitsuro",
+   "type": "character",
+   "universe": "Initial D",
+   "classe": "D-univers-sans-wiki-fr",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "ombrelle",
+   "name": "Ombrelle",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "flavor-dial",
+   "name": "Flavor-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Chapitre 263",
+    "Hotori et Kotori",
+    "Épisode 173",
+    "Sanji/Histoire",
+    "Uta"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "ermite-sage",
+   "name": "Ermite (Sage)",
+   "type": "status",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Mode Ermite de Rikudô",
+    "Gamamaru",
+    "La Prophétie du grand Ermite Ôgama",
+    "Mode Ermite (épisode)",
+    "Danger ! Le mode ermite s'est éteint",
+    "Mode Ermite (homonymie)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-monster-point",
+   "name": "Monster Point",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "titre-exact",
+   "titreFr": "Hito Hito no Mi",
+   "rechercheFr": null,
+   "longueur": 437
+  },
+  {
+   "slug": "lampe-dial",
+   "name": "Lampe-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Arsenal d'Usopp",
+    "Vogue Merry"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "reject-dia",
+   "name": "Reject-Dia",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-puncture-wille",
+   "name": "Puncture Wille",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "super-perfect-form",
+   "name": "Super Perfect Form",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Saiyan Full Power",
+    "Super Saiyan Divin",
+    "Super Saiyan Blue",
+    "Super Saiyan Blue maîtrisé",
+    "Dragon Ball Z 2 V",
+    "Super Saiyan légendaire"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "chakra-threads",
+   "name": "Chakra Threads",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-nu-sans-preuve-de-nom",
+   "route": "langlink",
+   "titreFr": "Marionnettisme",
+   "rechercheFr": null,
+   "longueur": 179
+  },
+  {
+   "slug": "atk-op-divine-departure",
+   "name": "Divine Departure",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "criminalminer-former",
+   "name": "CriminalMiner (former)",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "flash-dial",
+   "name": "Flash-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Flash Gun",
+    "Braham",
+    "Chapitre 465",
+    "Chapitre 332",
+    "Arsenal d'Usopp"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "earth-release-presumed",
+   "name": "Earth Release  (Presumed)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "candy",
+   "name": "Candy",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "lieu-decrit-comme-autre-chose",
+   "route": "titre-exact",
+   "titreFr": "Candy",
+   "rechercheFr": null,
+   "longueur": 65
+  },
+  {
+   "slug": "yotsuba-island-region",
+   "name": "Région des îles Yotsuba",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Île Yotsuba",
+    "Shells Town",
+    "Hyoutan Island",
+    "Îles Nanatsu",
+    "Île Paquet",
+    "Île de Souja"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-tatsumaki",
+   "name": "Tatsumaki",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Chapitre 1003",
+    "Uo Uo no Mi, modèle Seiryu",
+    "Santôryû/Anime",
+    "Shuron Hakke",
+    "Épisode 671",
+    "Épisode 66"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "summoning-technique-crow",
+   "name": "Summoning Technique (Crow)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Absorption de l'Âme",
+    "Suiton - Tranchant d'Eau Montant",
+    "Suiton - Évanescence Explosive",
+    "Technique des Spores",
+    "Technique Secrète - Cocon d'Insecte",
+    "Suiton - Bassin de la Cascade"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "professeur-de-l-academie",
+   "name": "Professeur de l'Académie",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Adieu, l'Académie !",
+    "Promotions de l'Académie de Konoha",
+    "Daikoku Funeno",
+    "Mizuki",
+    "Entretien avec le prof !",
+    "Chapitre de Konoha : Iruka, professeur novice"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "pastry-chef",
+   "name": "Pastry chef",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-kokuto-yoru-slash",
+   "name": "Kokuto Yoru Slash",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Yoru",
+   "rechercheFr": [
+    "Yoru",
+    "Kogatana",
+    "Hyper Shibireru-kun",
+    "Honebami Toshiro",
+    "Lames Noires",
+    "Kama Kama no Mi"
+   ],
+   "longueur": 350
+  },
+  {
+   "slug": "atk-bl-flash-cry",
+   "name": "Flash Cry",
+   "type": "power",
+   "universe": "Bleach",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "grelot",
+   "name": "Grelot",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Genjutsu - Clone du Son de Cloche",
+    "Shikamaru le stratège",
+    "Kagura (jeu)",
+    "Test des Clochettes",
+    "Clochettes",
+    "Examen Chûnin (Arc)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-samehada-shotei",
+   "name": "Samehada Shotei",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "arbalete",
+   "name": "Arbalète",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "chapeau-trop-court",
+   "route": "titre-exact",
+   "titreFr": "Arbalète",
+   "rechercheFr": null,
+   "longueur": 0
+  },
+  {
+   "slug": "law-lami-s-father",
+   "name": "Law & Lami's Father",
+   "type": "character",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Trafalgar Lamy",
+    "Chapitre 762",
+    "Chapitre 764",
+    "Mamy Mee et Daddy Dee",
+    "Wolf (Scientifique)",
+    "Laskey"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "l-equipage-amigo",
+   "name": "L’équipage Amigo",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Pirates Amigo",
+    "Équipage du Lion d'Or",
+    "L'Équipage de Naniwa",
+    "Arc Little East Blue",
+    "Corto",
+    "Profession d'équipages"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-nemuriuta-flanc",
+   "name": "Nemuriuta Flanc",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Brook/Aptitudes et Compétences",
+    "Style de l'Escrime"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-concasse",
+   "name": "Concasse",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "trunks-ssj",
+   "name": "Trunks SSJ",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "recherche-fr",
+   "titreFr": "Trunks",
+   "rechercheFr": [
+    "Super Saiyan Rage",
+    "Trunks",
+    "Trunks (futur)",
+    "Trunks (Xeno)",
+    "Arc \"Trunks du futur\"",
+    "Baby Trunks"
+   ],
+   "longueur": 695
+  },
+  {
+   "slug": "scroll-communication-technique",
+   "name": "Scroll Communication Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Technique du Parchemin de Communication",
+   "rechercheFr": null,
+   "longueur": 110
+  },
+  {
+   "slug": "team-two",
+   "name": "Team Two",
+   "type": "status",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "langlink",
+   "titreFr": "Équipe de Recherche d'Orochimaru",
+   "rechercheFr": null,
+   "longueur": 403
+  },
+  {
+   "slug": "gato-s-bodyguard-mercenary",
+   "name": "Gatō's bodyguard  (Mercenary)",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Hitode",
+    "Gasuka",
+    "Aino",
+    "Garde du Corps de Tenzen",
+    "Gatai",
+    "Garyô"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-db-psychic-move",
+   "name": "Psychic Move",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-bl-bankai-kannonbiraki-benihime-aratame",
+   "name": "Bankai Kannonbiraki Benihime Aratame",
+   "type": "power",
+   "universe": "Bleach",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Bankai",
+   "rechercheFr": [
+    "Kisuke Urahara",
+    "Chapitre 665",
+    "Bankai",
+    "Chapitre 664",
+    "Chapitre 205",
+    "Askin Nakk Le Vaar/Histoire"
+   ],
+   "longueur": 219
+  },
+  {
+   "slug": "freres-voleurs",
+   "name": "Frères Voleurs",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Borodo",
+    "Akisu",
+    "Voleurs d'Atamayama",
+    "Doubt Brothers",
+    "Special Episode Luff",
+    "L'Aventure de l'Île de l'Horloge"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "gogeta-ssj4",
+   "name": "Gogeta SSJ4",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gogeta (DBZ/GT)",
+    "Gogeta (Xeno)",
+    "Super Saiyan 4",
+    "Vegetto (Xeno)",
+    "Maximum Kaiôken",
+    "Super Full Power Saiyan 4 Genkai Toppa"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-karakusagawara-seiken",
+   "name": "Karakusagawara Seiken",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gyojin Karate",
+    "Jinbe",
+    "Chapitre 1017"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-kaen-boshi",
+   "name": "Kaen Boshi",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Arsenal d'Usopp/Ginga Pachinko",
+    "Arsenal d'Usopp/Kabuto",
+    "Nakatsugawa Usopp",
+    "Porcupine Spike Man",
+    "Arsenal d'Usopp",
+    "Smack"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "majin-buu-gotenks",
+   "name": "Majin Buu (Gotenks)",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "recherche-fr",
+   "titreFr": "Gotenks",
+   "rechercheFr": [
+    "Majin Boo (mauvais)",
+    "Gotenks",
+    "Saga de Majin Boo",
+    "Gotenks (Xeno)",
+    "Majin Boo",
+    "EX Gotenks"
+   ],
+   "longueur": 120
+  },
+  {
+   "slug": "priestess",
+   "name": "Priestess",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Shion",
+    "Ruiga",
+    "La Valeur d'un monde en paix",
+    "Suiton - Technique de l'Horizon entre Ciel et Mer",
+    "Combats impitoyables"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "lance",
+   "name": "Lance",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "ippou-say",
+   "name": "Ippou-Say",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Catapulte",
+    "Liberal Hind",
+    "Cheval blanc au bois dormant",
+    "Équipage de Bonney",
+    "Brook",
+    "Nami/Personnalité et Relations"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "kuwa",
+   "name": "Kuwa",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "titre-enrichi-non-atteste",
+   "route": "recherche-fr",
+   "titreFr": "Kuwa Yokohori",
+   "rechercheFr": [
+    "Kuwa Yokohori",
+    "Boruto et Mitsuki",
+    "Le Fils du Hokage",
+    "Dan Katô",
+    "Promotions de l'Académie de Konoha"
+   ],
+   "longueur": 78
+  },
+  {
+   "slug": "clone-du-fruit-du-barbotage",
+   "name": "Clone du fruit du Barbotage",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Sui Sui no Mi",
+    "Mane Mane no Mi",
+    "Mono Mono no Mi",
+    "Peke Peke no Mi",
+    "S-Shark",
+    "Kopi Kopi no Mi"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "equipage-de-bigalo",
+   "name": "Equipage de Bigalo",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Buffalo",
+    "L'Équipage de Naniwa",
+    "Hogan",
+    "Honebami Toshiro",
+    "Erik (Géant)",
+    "Granit marin"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-demonio-fleur",
+   "name": "Demonio Fleur",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Hana Hana no Mi",
+    "Chapitre 1021",
+    "Black Maria",
+    "One Piece en Espagne",
+    "SBS Tome 102",
+    "Religion dans le monde de One Piece"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "scientifique",
+   "name": "Scientifique",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "titre-enrichi-non-atteste",
+   "route": "recherche-fr",
+   "titreFr": "Kôsuke (Scientifique)",
+   "rechercheFr": [
+    "Kôsuke (Scientifique)",
+    "Équipe d'Outils Scientifiques Ninjas",
+    "Épée de Kusanagi (Outil Scientifique Ninja)",
+    "Les Outils scientifiques ninjas",
+    "Crapaud (Outil Scientifique Ninja)",
+    "Outil Scientifique Ninja - Orque et Grand Souffle"
+   ],
+   "longueur": 92
+  },
+  {
+   "slug": "anton-the-great",
+   "name": "Anton the Great",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "liberation-du-vent-futon",
+   "name": "Libération du Vent (Fūton)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Fûton - Poussière de Vent",
+    "Fûton - Tornade",
+    "Fûton - Vague de Vide",
+    "Fûton - Tempête de Sauterelles",
+    "Fûton - Percée de Nuage de Sable",
+    "Fûton - Grande Lame du Vent"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "chunin-exams-assistant",
+   "name": "Chūnin Exams Assistant",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Examen Chûnin (Arc)",
+    "Un nouvel examen des chûnins",
+    "Shimon Hijiri",
+    "Shiba (Kusa)",
+    "Yôrô",
+    "Ibiki Morino"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-cien-fleur",
+   "name": "Cien Fleur",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Hana Hana no Mi",
+    "One Piece Attack Motions",
+    "Hands Up !",
+    "Épisode 694",
+    "Chapitre 1148",
+    "Chadros Higelyges"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "farmer-naruto",
+   "name": "Farmer",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Shikazo",
+    "Troisième Mizukage",
+    "Itachi Shinden - Livre de nuit sombre"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-db-demon-flash-strike",
+   "name": "Demon Flash Strike",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Final Shine Attack",
+    "Maximum Final Flash",
+    "Dark Final Flash",
+    "Double Atomic Flash",
+    "Dark King Flash",
+    "Wolfgang Pressure"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-impact-dial",
+   "name": "Impact Dial",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Chapitre 257",
+    "Chapitre 263",
+    "Chapitre 307",
+    "Shura",
+    "Épisode 169"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "sabre",
+   "name": "Sabre",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "team-three",
+   "name": "Team Three",
+   "type": "status",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "langlink",
+   "titreFr": "Équipe de Recherche d'Orochimaru",
+   "rechercheFr": null,
+   "longueur": 403
+  },
+  {
+   "slug": "chunin-exam-proctor",
+   "name": "Chūnin Exam Proctor",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Shimon Hijiri",
+    "Hayate Gekkô",
+    "La Première Épreuve !!",
+    "Ibiki Morino",
+    "Que les épreuves commencent !",
+    "Nouvel Examen de sélection"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-ryu-no-ibuki",
+   "name": "Ryu no Ibuki",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Ryusoken",
+    "Matsuyuki Ibuki",
+    "RYU-HEY",
+    "Souffle Qigong",
+    "Adachi Core",
+    "Haki/Haki de l'Armement"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-spider-net",
+   "name": "Spider Net",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "L'Équipage des Spider Malstrom",
+    "Spider's Café",
+    "Real Spider",
+    "San Faldo",
+    "Atarashi Island",
+    "Royaume de Majiatsuka"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "eight-tails",
+   "name": "Eight-Tails",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-nu-sans-preuve-de-nom",
+   "route": "langlink",
+   "titreFr": "Gyûki",
+   "rechercheFr": null,
+   "longueur": 256
+  },
+  {
+   "slug": "corps-medical",
+   "name": "Corps médical",
+   "type": "status",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Équipe Médicale",
+    "Suiton Médical - Moustiques d'Eau",
+    "Bataille du Col des Campanules",
+    "Un vœu",
+    "Prescription de Renforcement - Injection de Chakra",
+    "Suiton - Méduse Médicale"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "semi-perfect-form",
+   "name": "Semi Perfect Form",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Cell",
+    "Cell Max"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-gigantesco-mano",
+   "name": "Gigantesco Mano",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Hana Hana no Mi",
+    "Chapitre 605",
+    "Épisode 556",
+    "One Piece : Super Grand Battle ! X",
+    "Épisode 928",
+    "Chapitre 933"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "hidden-kunai-mechanism",
+   "name": "Hidden Kunai Mechanism",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Mécanisme de Kunaï Caché",
+   "rechercheFr": null,
+   "longueur": 127
+  },
+  {
+   "slug": "genin-exams-proctor",
+   "name": "Genin Exams Proctor",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Les Rivaux ! (tome)",
+    "Que les épreuves commencent !",
+    "Hayate Gekkô",
+    "La Première Épreuve !!",
+    "Mujin",
+    "Arc Examens de fin d'études"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-cyclone-tempo",
+   "name": "Cyclone Tempo",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Art de la Météo/Baguette Climatique Ultime",
+    "Art de la Météo/Baguette Climatique",
+    "Chapitre 191",
+    "Épisode 173",
+    "Nami/Aptitudes et Compétences",
+    "Gan Forr"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "businessman",
+   "name": "Businessman",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "sealing-trap-explosion",
+   "name": "Sealing Trap Explosion",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-zeus-breath",
+   "name": "Zeus Breath",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Art de la Météo/Nouveau Climat-Tact",
+    "Waver",
+    "Uo Uo no Mi, modèle Seiryu",
+    "Burn Blade",
+    "Épisode 1017"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "liberation-du-feu-katon",
+   "name": "Libération du Feu (Katon)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Katon - Entrave du Feu",
+    "Katon - Feu Follet",
+    "Katon - Pluie de Boules de Feu",
+    "Katon - Lance de Flamme",
+    "Épée du Feu de l'Entrave Céleste",
+    "Katon - Météores de Feu"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-k-room",
+   "name": "K-Room",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Ope Ope no Mi",
+    "Épisode 1093",
+    "Épisode 1066",
+    "ONE PIECE Original Soundtrack - GEAR5",
+    "Chapitre 1064",
+    "Trafalgar D. Water Law/Divers"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "vegeta-ssj4",
+   "name": "Vegeta SSJ4",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "recherche-fr",
+   "titreFr": "Vegeta",
+   "rechercheFr": [
+    "Super Saiyan 4",
+    "Super Full Power Saiyan 4 Genkai Toppa",
+    "Gogeta (DBZ/GT)",
+    "Vegetto (Xeno)",
+    "Vegeta",
+    "Baby Vegeta"
+   ],
+   "longueur": 552
+  },
+  {
+   "slug": "fifth-kazekage-s-bodyguard",
+   "name": "Fifth Kazekage's Bodyguard",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Kazekage...!!",
+   "rechercheFr": [
+    "Équipe de Sauvetage du Kazekage",
+    "Mission de Sauvetage du Kazekage",
+    "Troisième Kazekage (marionnette)",
+    "Kazekage...!!",
+    "Troisième Kazekage",
+    "La Force des cinq Kage"
+   ],
+   "longueur": 80
+  },
+  {
+   "slug": "source-de-l-insouciance",
+   "name": "Source de l'insouciance",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Oups ! Gedatsu au pays de la mer bleue",
+    "Chapitre 348",
+    "Ukkari-Hot-Spring Island",
+    "Chapitre 340",
+    "Chapitre 341",
+    "Chapitre 343"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "noko-op",
+   "name": "Noko",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "lieu-decrit-comme-autre-chose",
+   "route": "titre-exact",
+   "titreFr": "Noko",
+   "rechercheFr": null,
+   "longueur": 656
+  },
+  {
+   "slug": "l-equipage-d-alvida",
+   "name": "L’équipage d’Alvida",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Alvida",
+   "rechercheFr": [
+    "Alliance Baggy et Alvida/Équipage d'Alvida",
+    "Alliance Baggy et Alvida",
+    "Alvida",
+    "Alliance Baggy et Alvida/Équipage du Clown",
+    "Profession d'équipages",
+    "Alliance"
+   ],
+   "longueur": 830
+  },
+  {
+   "slug": "lightning-release-lightning-fang",
+   "name": "Lightning Release: Lightning Fang",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Raiton - Crocs de la Foudre",
+   "rechercheFr": null,
+   "longueur": 91
+  },
+  {
+   "slug": "milky-dial",
+   "name": "Milky-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Bateau à Dials",
+    "Gedatsu",
+    "Kamakiri",
+    "Épisode 173",
+    "Braham"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "disruption-cube",
+   "name": "Disruption Cube",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-nu-sans-preuve-de-nom",
+   "route": "langlink",
+   "titreFr": "Daihakoten",
+   "rechercheFr": null,
+   "longueur": 220
+  },
+  {
+   "slug": "axe",
+   "name": "Axe",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Poing-Hache Destructeur",
+    "Coup de Talon Retourné du Clone",
+    "Bras d'Absorption de Jutsu",
+    "Lancer du Clone"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "freezer-perfect-form-golden",
+   "name": "Freezer Perfect Form (Golden)",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Golden Freezer",
+   "rechercheFr": [
+    "Golden Freezer",
+    "Golden Cooler",
+    "Freezer (Xeno)",
+    "Race de Freezer",
+    "Black Freezer",
+    "Cooler (Xeno)"
+   ],
+   "longueur": 87
+  },
+  {
+   "slug": "atk-op-power-mochi",
+   "name": "Power Mochi",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Épisode 856",
+    "Memo Memo no Mi",
+    "Peke Peke no Mi",
+    "Tama Tama no Mi",
+    "Fuwa Fuwa no Mi",
+    "Soru Soru no Mi"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "look-special",
+   "name": "Look Spécial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Équipage de Foxy",
+    "Jube",
+    "Sexy Foxy",
+    "Cutie Wagon",
+    "Gorilla Puncher 18",
+    "Girarin"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "liberation-de-l-eau-suiton",
+   "name": "Libération de l'Eau (Suiton)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Suiton",
+   "rechercheFr": [
+    "Suiton",
+    "Suiton - Armée de l'Eau",
+    "Suiton - Raz de Marée",
+    "Suiton - Canon Aqueux",
+    "Suiton - Bassin de la Cascade",
+    "Suiton - Fouet d'Eau"
+   ],
+   "longueur": 170
+  },
+  {
+   "slug": "hokage-s-assistant",
+   "name": "Hokage's Assistant",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Assistant du Sculpteur sur Pierre",
+    "Danzô Shimura",
+    "Hatake Kakashi, Hokage",
+    "Sculpteur sur Pierre",
+    "Naruto Uzumaki (épisode)",
+    "Tasuki"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "madillo-man",
+   "name": "Madillo-Man",
+   "type": "character",
+   "universe": "One Piece",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "pirate-naruto",
+   "name": "Pirate",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gokai",
+    "Clan Funato",
+    "Jibiki Funato",
+    "Araumi Funato",
+    "Minamo Funato",
+    "Ubau"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "controle-dial",
+   "name": "Contrôle-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Hyper Shibireru-kun",
+    "Buster Call",
+    "Waver",
+    "Hotori et Kotori",
+    "Gedatsu"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "tool-creation-technique",
+   "name": "Tool Creation Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-nu-sans-preuve-de-nom",
+   "route": "langlink",
+   "titreFr": "Technique de Création d'Outil",
+   "rechercheFr": null,
+   "longueur": 771
+  },
+  {
+   "slug": "ramen-chef",
+   "name": "Ramen chef",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Jingo Kumano",
+    "Pilote du Manga Naruto",
+    "La Recette ultime",
+    "Brûlons les graisses ! Mélangeons, étirons, et à la cuisson !",
+    "Inari, le courage mis à l'épreuve",
+    "L'Unité 10 (tome)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "kiba-naruto",
+   "name": "Kiba",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "personal-guard",
+   "name": "Personal Guard",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Le Vœu de Naruto",
+    "Tenga",
+    "Iwazô",
+    "Tsume Inuzuka",
+    "Zaji",
+    "Nangô"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "zabuza-s-subordinate",
+   "name": "Zabuza's subordinate",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "poison-mist-hell-hundred-continuous-firing",
+   "name": "Poison Mist Hell: Hundred Continuous Firing",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Brouillard Empoisonné - Destruction à l'Aveugle",
+   "rechercheFr": null,
+   "longueur": 317
+  },
+  {
+   "slug": "l-equipage-du-new-age",
+   "name": "l’équipage du New Age",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Équipage de Bellamy",
+    "New Witch's Tongue",
+    "Kukri",
+    "Forces Spéciales Simiesques",
+    "L'Équipage de Don Quichotte Doflamingo",
+    "Équipages Pirates"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "hou-ban-taichou",
+   "name": "Hou-ban Taichou",
+   "type": "character",
+   "universe": "One Piece",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-buraikan",
+   "name": "Buraikan",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gyojin Karate",
+    "Jinbe"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "gathering-of-the-snakes",
+   "name": "Gathering of the Snakes",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-bl-suzumushi-tsuishiki-enma-korogi",
+   "name": "Suzumushi Tsuishiki Enma Korogi",
+   "type": "power",
+   "universe": "Bleach",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Chapitre 146",
+    "Bankai",
+    "Ashisogi Jizô, Kyôdo Yon",
+    "Balgo Parks/Galerie",
+    "Ransōtengai",
+    "Tsurigaki"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-purgatory-oni-giri",
+   "name": "Purgatory Oni Giri",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Santôryû",
+    "Jara Jara no Mi",
+    "Fruit de Jaygarcia Saturn",
+    "Fruit de Ethanbaron V. Nusjuro",
+    "Kurozumi Higurashi",
+    "Âme"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "fifth-hokage-s-assistant",
+   "name": "Fifth Hokage's Assistant",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Assistant du Sculpteur sur Pierre",
+    "Hatake Kakashi, Hokage",
+    "Danzô Shimura",
+    "Je m'appelle Konohamaru",
+    "Le Fils du Hokage",
+    "Naruto Uzumaki (épisode)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "pirate-au-foyer",
+   "name": "Pirate au foyer",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "L'Équipage Tearoom",
+    "Pirates",
+    "Pirates droit devant !",
+    "Capitaine Pirate",
+    "Commandant (Pirate)",
+    "Pirates/Super Rookies"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-bajrang-gun",
+   "name": "Bajrang Gun",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Chapitre 1048",
+    "Uo Uo no Mi, modèle Seiryu"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "equipage-de-pandaman",
+   "name": "Equipage de Pandaman",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Pandaman",
+   "rechercheFr": [
+    "Pandaman",
+    "Bateau de Pandaman",
+    "Pandawoman",
+    "Équipage du Chat Noir",
+    "L'Équipage de Fischer's",
+    "L'Équipage d'Ippon Oubo"
+   ],
+   "longueur": 618
+  },
+  {
+   "slug": "fisherman",
+   "name": "Fisherman",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "ponegliphes",
+   "name": "Ponéglyphes",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "identite-refusee",
+   "route": "titre-exact",
+   "titreFr": "Ponéglyphe",
+   "rechercheFr": null,
+   "longueur": 595
+  },
+  {
+   "slug": "summoning-technique-nuiba",
+   "name": "Summoning Technique (Nuiba)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Nuiba",
+   "rechercheFr": [
+    "Nuiba",
+    "Absorption de l'Âme",
+    "Suiton - Évanescence Explosive",
+    "Suiton - Tranchant d'Eau Montant",
+    "Shima",
+    "Épée de Kusanagi (Outil Scientifique Ninja)"
+   ],
+   "longueur": 151
+  },
+  {
+   "slug": "liberation-du-yang",
+   "name": "Libération du Yang",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Inyôton",
+    "Garyô",
+    "Si tu veux parler dans ton sommeil, dors d'abord",
+    "Naruto Shippûden: Ultimate Ninja Storm 4",
+    "Épée de Kusanagi (Outil Scientifique Ninja)",
+    "Mudrâ"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-db-pressure-point-attack",
+   "name": "Pressure Point Attack",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Wolfgang Pressure",
+    "Toki Tobashi",
+    "Crusher Ball"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "ostrich-whirlwind-attack",
+   "name": "Ostrich Whirlwind Attack",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Ouragan Autruche",
+   "rechercheFr": null,
+   "longueur": 73
+  },
+  {
+   "slug": "anbu-captain",
+   "name": "Anbu Captain",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Minoichi",
+    "Yûra",
+    "Inomatsu",
+    "Tanishi",
+    "La Huitième Vérité",
+    "On recrute !!"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "destroying-axe-fist",
+   "name": "Destroying Axe Fist",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "liberation-de-la-terre-doton",
+   "name": "Libération de la Terre (Doton)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Doton",
+   "rechercheFr": [
+    "Doton - Tourments de la Terre",
+    "Doton",
+    "Doton - Frappe de la Terre",
+    "Doton - Rempart de Terre Mouvant",
+    "Doton - Geôle de Terre",
+    "Doton - Mur de Terre"
+   ],
+   "longueur": 194
+  },
+  {
+   "slug": "jet-dial",
+   "name": "Jet-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Gedatsu",
+    "Waver",
+    "Garde Sacrée",
+    "Shiro Mokuba I",
+    "Chapitre 263"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "liberation-du-yin-yang",
+   "name": "Libération du Yin-Yang",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Inyôton",
+    "Technique des Tsuchigumo - Technique Interdite de Libération de Vie - Création du Ciel et de la Terre",
+    "Doton",
+    "Raiton",
+    "Un printemps écarlate (tome)",
+    "Naruto Shippûden: Ultimate Ninja Storm 4"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-swallow-bond-avant",
+   "name": "Swallow Bond Avant",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Brook/Aptitudes et Compétences",
+    "Style de l'Escrime",
+    "Soul Solid"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "team-hiruzen",
+   "name": "Team Hiruzen",
+   "type": "status",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-nu-sans-preuve-de-nom",
+   "route": "langlink",
+   "titreFr": "Sannin",
+   "rechercheFr": null,
+   "longueur": 189
+  },
+  {
+   "slug": "summoning-technique-doki",
+   "name": "Summoning Technique (Doki)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Doki",
+   "rechercheFr": [
+    "Doki",
+    "Flûte Démoniaque - Mélodie de Manipulation des Guerriers Illusoires",
+    "Absorption de l'Âme",
+    "Suiton - Tranchant d'Eau Montant",
+    "Suiton - Évanescence Explosive",
+    "Doton - Hyper-Croissance Minérale"
+   ],
+   "longueur": 354
+  },
+  {
+   "slug": "staff-a",
+   "name": "Staff A",
+   "type": "character",
+   "universe": "Bleach",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Devorar Pluma"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-db-full-power-father-son-kamehameha",
+   "name": "Full Power Father-Son Kamehameha",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Saiyan Full Power",
+    "Kamé Hamé Ha",
+    "Broly (Full Power)",
+    "Super Full Power Saiyan 4 Genkai Toppa",
+    "Kamé Hamé Ha Père-fils",
+    "Super Saiyan Blue maîtrisé"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "examinateur-de-l-examen-chunin",
+   "name": "Examinateur de l'examen chūnin",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Examen Chûnin (Arc)",
+    "Shimon Hijiri",
+    "Ibiki Morino",
+    "Arc Repassage de l'Examen Chûnin",
+    "Un nouvel examen des chûnins",
+    "L'Examen de sélection des ninjas de moyenne classe !!"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "navire-de-la-marine",
+   "name": "Navire de la Marine",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "recherche-fr",
+   "titreFr": "Marine",
+   "rechercheFr": [
+    "Navires de la Marine",
+    "Bateau épicerie de la Marine",
+    "Navire de Smoker",
+    "Marine",
+    "Navire de Nelson",
+    "Navires Top Secret de Renseignement G-2"
+   ],
+   "longueur": 1767
+  },
+  {
+   "slug": "l-equipage-asl",
+   "name": "L’équipage ASL",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Équipages Pirates",
+    "Grey Terminal",
+    "Sabo",
+    "Koza",
+    "Charlotte Mont-blanc",
+    "Chapitre 1023"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "scalpel",
+   "name": "Scalpel",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "chapeau-trop-court",
+   "route": "titre-exact",
+   "titreFr": "Scalpel",
+   "rechercheFr": null,
+   "longueur": 0
+  },
+  {
+   "slug": "atk-op-thunderbolt-tempo",
+   "name": "Thunderbolt Tempo",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Art de la Météo/Baguette Climatique Ultime",
+    "Art de la Météo/Nouveau Climat-Tact",
+    "Art de la Météo/Baguette Climatique",
+    "Oniri Creations",
+    "Katabuti",
+    "Zappa"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "goku-ssj3",
+   "name": "Goku SSJ3",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Saiyan 3",
+    "Super Saiyan Divin",
+    "Super Saiyan 3: Full Power",
+    "Super Saiyan Blue",
+    "Saiyan surpassant dieu",
+    "Gotenks"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-gura-gura-no-mi-quake",
+   "name": "Gura Gura no Mi Quake",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Gura Gura no Mi",
+   "rechercheFr": [
+    "Gura Gura no Mi",
+    "Guru Guru no Mi",
+    "Yami Yami no Mi",
+    "Nuke Nuke no Mi",
+    "Hito Hito no Mi, modèle Daibutsu",
+    "Hito Hito no Mi (Classification)"
+   ],
+   "longueur": 774
+  },
+  {
+   "slug": "church",
+   "name": "Église",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Royaume de Sorbet",
+    "Leap Out Jewelry",
+    "Chapitre 462",
+    "Deacon",
+    "Alpha",
+    "Totsu"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "spero-dial",
+   "name": "Spéro-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "trunks-ssj3",
+   "name": "Trunks SSJ3",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "recherche-fr",
+   "titreFr": "Trunks",
+   "rechercheFr": [
+    "Super Saiyan 3",
+    "Trunks",
+    "Super Saiyan Rage",
+    "Trunks (Xeno)",
+    "Trunks (futur)",
+    "Gotenks"
+   ],
+   "longueur": 695
+  },
+  {
+   "slug": "impact-dial",
+   "name": "Impact-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Chapitre 257",
+    "Chapitre 263",
+    "Chapitre 307",
+    "Shura",
+    "Épisode 169"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-bazooka",
+   "name": "Gomu Gomu no Bazooka",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gomu Gomu no Mi/Techniques",
+    "Gomu Gomu no Mi/Gear Third Techniques",
+    "Gomu Gomu no Mi/Gear Second Techniques",
+    "Gomu Gomu no Mi/Gear Fourth Techniques",
+    "Gomu Gomu no Mi/Autres Techniques",
+    "Unité Bazooka"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "shadow-rope-technique",
+   "name": "Shadow Rope Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Technique de la Corde Fantôme",
+   "rechercheFr": null,
+   "longueur": 60
+  },
+  {
+   "slug": "kaji-king-i-ii",
+   "name": "Kaji King I & II",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Équipage de Foxy",
+    "Gorilla Puncher 18",
+    "Cui-Cui",
+    "Kill Sassoon",
+    "Great Magni",
+    "Navires"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-shishi-sonson",
+   "name": "Shishi Sonson",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Santôryû/Îttoryû",
+    "Santôryû",
+    "Soul Solid",
+    "Roronoa Zoro/Aptitudes et Compétences",
+    "Épisode 671",
+    "Dragons (Punk Hazard)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "shakujo",
+   "name": "Shakujō",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "nurse",
+   "name": "Nurse",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Otoha",
+    "Hakobe Shigaraki",
+    "Emi",
+    "Inori",
+    "Haie",
+    "La Rencontre, volet 2"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-tora-gari",
+   "name": "Tora Gari",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Santôryû",
+    "Roronoa Zoro/Aptitudes et Compétences",
+    "Sham",
+    "Ryu Ryu no Mi, modèle Ptéranodon",
+    "Le Petit Théâtre de Chapeau de Paille: Dans la Classe du Professeur Shanks",
+    "Figuarts ZERO One Piece"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "accountant",
+   "name": "Accountant",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "harem-no-tango",
+   "name": "Harem no Tango",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Équipage de Foxy",
+    "Sexy Foxy",
+    "Girarin",
+    "Cutie Wagon",
+    "Geena",
+    "Kibagaeru"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "shunpo",
+   "name": "Shunpo",
+   "type": "skill",
+   "universe": "Bleach",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Hirenkyaku",
+    "Clones de Vitesse",
+    "Chapitre 300",
+    "Chapitre 118",
+    "Enkōgawa \"Enryū\" Rusaburō",
+    "Chapitre -105"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "red-secret-technique-machinery-triangles",
+   "name": "Red Secret Technique: Machinery Triangles",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Arcanes Rouges - Triangle Mécanique",
+   "rechercheFr": null,
+   "longueur": 212
+  },
+  {
+   "slug": "zarbon-monster",
+   "name": "Zarbon Monster",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Zabon",
+    "Dragon Ball Z épisode 053",
+    "Blueberry",
+    "Ī Shinron (Xeno)",
+    "Assistants de Yuzun",
+    "Shigeyasu Yamauchi"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "isshi-1",
+   "name": "Isshi 1",
+   "type": "character",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Ishi Ishi no Mi",
+    "Toubibs 100",
+    "Trafalgar Lamy",
+    "Zonao",
+    "Pica",
+    "Ekie"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "new-vegeta",
+   "name": "Nouvelle Vegeta",
+   "type": "place",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "titre-enrichi-non-atteste",
+   "route": "recherche-fr",
+   "titreFr": "Fausse nouvelle Planète Vegeta",
+   "rechercheFr": [
+    "Fausse nouvelle Planète Vegeta",
+    "Vegeta (SDBH)",
+    "Baby Vegeta",
+    "Roi Vegeta",
+    "Planète Vegeta",
+    "Vegeta"
+   ],
+   "longueur": 316
+  },
+  {
+   "slug": "nozarashi",
+   "name": "Nozarashi",
+   "type": "artifact",
+   "universe": "Bleach",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Kenpachi Zaraki",
+    "Chapitre 577",
+    "Chapitre 576",
+    "Chapitre 667",
+    "Épisode 386",
+    "Gremmy Thoumeaux"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-kung-fu-point",
+   "name": "Kung Fu Point",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Hito Hito no Mi",
+    "Tony Tony Chopper/Aptitudes et Compétences",
+    "Rumble Ball",
+    "Tony Tony Chopper/Divers",
+    "Armored Knight",
+    "Épisode 585"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "banbaji",
+   "name": "Banbaji",
+   "type": "character",
+   "universe": "One Piece",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-db-meteor-crash",
+   "name": "Meteor Crash",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Dragon Ball Heroes - Universe Mission!! : chapitre 12",
+    "Kale",
+    "Super Dragon Ball Heroes - Universe Mission!! : tome 02",
+    "Note",
+    "Super Dragon Ball Heroes - Ultra God Mission!!!! : chapitre 15"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "mother-ship",
+   "name": "Mother Ship",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "identite-refusee",
+   "route": "titre-exact",
+   "titreFr": "Équipage de Foxy",
+   "rechercheFr": null,
+   "longueur": 211
+  },
+  {
+   "slug": "sky-arrows",
+   "name": "Sky-Arrows",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Drayke Pirates",
+    "Waford",
+    "L'Équipage Tearoom",
+    "Lance",
+    "Handai Pirates"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "cultist",
+   "name": "Cultist",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "baton-bo",
+   "name": "Bâton bō",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Uô",
+    "Daibutsu",
+    "Sphère de Vérité",
+    "Musique"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "sand-cloak-technique",
+   "name": "Sand Cloak Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Habit de Sable",
+   "rechercheFr": null,
+   "longueur": 232
+  },
+  {
+   "slug": "goku-ssj2",
+   "name": "Goku SSJ2",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Saiyan 2",
+    "Super Saiyan",
+    "Super Saiyan Divin",
+    "Saiyan surpassant dieu",
+    "Goku Black",
+    "Super Saiyan (Berserker)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "gotenks-ssj3",
+   "name": "Gotenks SSJ3",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "recherche-fr",
+   "titreFr": "Gotenks",
+   "rechercheFr": [
+    "Gotenks",
+    "Gotenks (Xeno)",
+    "Super Saiyan 3",
+    "Son Goten",
+    "Majin Boo (mauvais)",
+    "Trunks"
+   ],
+   "longueur": 120
+  },
+  {
+   "slug": "winter-island",
+   "name": "Île d'Hiver",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Festival du Solstice d'Hiver",
+    "Îles Climatiques",
+    "Île d'Applenine",
+    "Épisode de Chopper : Le Miracle des Cerisiers en Hiver",
+    "Tou-Chuka Island",
+    "Big Horn"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "eisen-dial",
+   "name": "Eisen-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Chapitre 269",
+    "Buster Call",
+    "Honebami Toshiro",
+    "Hyper Shibireru-kun",
+    "Eisen Whip"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "summoning-technique-shiromari",
+   "name": "Summoning Technique (Shiromari)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Shiromari",
+   "rechercheFr": [
+    "Shiromari",
+    "Absorption de l'Âme",
+    "Shima",
+    "Suiton - Évanescence Explosive",
+    "Suiton - Tranchant d'Eau Montant",
+    "Technique de Marionnette - Réalisation avec un Corps Humain"
+   ],
+   "longueur": 119
+  },
+  {
+   "slug": "loan-collector",
+   "name": "Loan Collector",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "arc-et-fleches",
+   "name": "Arc et flèches",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "chapeau-trop-court",
+   "route": "recherche-fr",
+   "titreFr": "Arc et Flèches",
+   "rechercheFr": [
+    "Arc et Flèche",
+    "Arc et Flèches",
+    "Arc de Guerre de l'Araignée - Scission Terrible",
+    "Flèche Lumineuse",
+    "Seiren Funato",
+    "Trouver la faille !!"
+   ],
+   "longueur": 0
+  },
+  {
+   "slug": "shield",
+   "name": "Shield",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Bouclier de Chakra",
+    "Fûton - Bouclier du Dieu du Vent",
+    "Drone Espion",
+    "Outils Scientifiques Ninjas Microscopiques",
+    "Tsurukame",
+    "Senpô - Rage Blanche"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "king-naruto",
+   "name": "King",
+   "type": "character",
+   "universe": "Naruto",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-clutch",
+   "name": "Clutch",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Hana Hana no Mi",
+    "Épisode 1044",
+    "Chapitre 643",
+    "Chapitre 477",
+    "Épisode Spécial 2",
+    "Chapitre 429"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "rom",
+   "name": "Rom",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Pigero",
+    "Dragon Ball Z - Gekitô Tenka Ichi Budôkai",
+    "Dragon Ball Z - Idainaru Son Gokû Densetsu",
+    "Dragon Ball Z Gaiden - Shin Saiyan Zetsumetsu Keikaku – Chikyû-Hen –",
+    "Dragon Ball Z: The Legend",
+    "Dragon Ball Z - Shin Butôden"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "flamme-dial",
+   "name": "Flamme-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Charlotte Compo",
+    "Hotori et Kotori",
+    "Épisode 173",
+    "Fuza",
+    "Épisode 206"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "tokoyaki-8",
+   "name": "Tokoyaki 8",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Chapitre 228"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-king-kong-gun",
+   "name": "Gomu Gomu no King Kong Gun",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gomu Gomu no Mi/Gear Fourth Techniques",
+    "Gomu Gomu no Mi/Gear Third Techniques",
+    "Graydle",
+    "Gomu Gomu no Mi/Techniques",
+    "Chapitre 1042",
+    "Chapitre 790"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "navire-des-maquereaux",
+   "name": "Navire des Maquereaux",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Équipage des Maquereaux",
+    "Sabagashira I",
+    "Navires",
+    "Snapper Head",
+    "Zenny (Navire)",
+    "Navire-Cercueil"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "audio-dial",
+   "name": "Audio-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Sanji/Histoire",
+    "One Piece : Unlimited Cruise 1 : Le Trésor sous les Flots/Base de données",
+    "Arc Skypiea",
+    "Stay Tune",
+    "Stan Maley"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "super-janemba",
+   "name": "Super Janemba",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Janemba",
+   "rechercheFr": [
+    "Janemba",
+    "Janenba (Xeno)",
+    "Baby Janenba",
+    "Jâku Oni",
+    "Gogeta (DBZ/GT)",
+    "Dragon Ball Z : Fusions"
+   ],
+   "longueur": 202
+  },
+  {
+   "slug": "thief-former",
+   "name": "Thief  (Former)",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "adamantine-attacking-chains",
+   "name": "Adamantine Attacking Chains",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "tessen",
+   "name": "Tessen",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "titre-enrichi-non-atteste",
+   "route": "recherche-fr",
+   "titreFr": "Tessen Togeito",
+   "rechercheFr": [
+    "Tessen Togeito",
+    "Shuriken",
+    "Pouvoirs surnaturels !!",
+    "Le Retour de Naruto !! (tome)",
+    "Jin no Sho"
+   ],
+   "longueur": 73
+  },
+  {
+   "slug": "atk-op-weapons-left",
+   "name": "Weapons Left",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Battle Franky/BF-37",
+    "Chapitre 467",
+    "Chapitre 452",
+    "Battle Franky/BF-36",
+    "Battle Franky/BF-38",
+    "Épisode 596"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "this-article-is-a-stub-you-can-help-the-narutopedia-by-expanding-it-or-perhaps-you-could-contribute-to-the-discussion-on-the-topic",
+   "name": "This article is a stub. You can help the Narutopedia by expanding it, or perhaps you could contribute to the discussion on the topic.",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Le Sceau brisé",
+    "Shima",
+    "À l'attention de Naruto",
+    "Épée de Kusanagi (Outil Scientifique Ninja)",
+    "Absorption de l'Âme",
+    "Mains de Liens"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-hanauta-sancho-yahazu-giri",
+   "name": "Hanauta Sancho Yahazu Giri",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Soul Solid",
+    "Style de l'Escrime",
+    "Brook/Aptitudes et Compétences",
+    "Yomi Yomi no Mi",
+    "Arc Thriller Bark",
+    "Shimotsuki Ryuma/Forme Zombie"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "carpenter",
+   "name": "Carpenter",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-kurouzu",
+   "name": "Kurouzu",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Incident de Banaro",
+    "Yami Yami no Mi",
+    "Chapitre 1064",
+    "Épisode 1093",
+    "Guide des épisodes/Saga Île Céleste",
+    "Guide des épisodes/Saga Thriller Bark"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "summoning-technique-shark",
+   "name": "Summoning Technique (Shark)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Absorption de l'Âme",
+    "Suiton - Tranchant d'Eau Montant",
+    "Suiton - Évanescence Explosive",
+    "Sphère de Vent d'Attaque Féroce",
+    "Suiton - Technique des Bulles d'Eau",
+    "Technique des Spores"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "shion-s-bodyguard",
+   "name": "Shion's bodyguard",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Emina"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-hiken",
+   "name": "Hiken",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Mera Mera no Mi",
+    "Billions",
+    "Épisode 678",
+    "Chapitre 644",
+    "Portgas D. Ace",
+    "Épisode 1004"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-bl-nozarashi",
+   "name": "Nozarashi",
+   "type": "power",
+   "universe": "Bleach",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Kenpachi Zaraki",
+    "Chapitre 577",
+    "Chapitre 576",
+    "Chapitre 667",
+    "Épisode 386",
+    "Gremmy Thoumeaux"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "vegeta-ssj2",
+   "name": "Vegeta SSJ2",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "recherche-fr",
+   "titreFr": "Vegeta",
+   "rechercheFr": [
+    "Super Saiyan 2",
+    "Gogeta (DBZ/GT)",
+    "Super Saiyan Divin",
+    "Super Saiyan Dai 2 Dankai",
+    "Baby Vegeta",
+    "Vegeta"
+   ],
+   "longueur": 552
+  },
+  {
+   "slug": "summoning-technique-hozuki-castle-s-ninken",
+   "name": "Summoning Technique (Hōzuki Castle's Ninken)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Ninken",
+   "rechercheFr": [
+    "Absorption de l'Âme",
+    "Suigetsu Hôzuki",
+    "Suiton - Tranchant d'Eau Montant",
+    "Suiton - Évanescence Explosive",
+    "Ninken",
+    "Épée de Kusanagi (Outil Scientifique Ninja)"
+   ],
+   "longueur": 1796
+  },
+  {
+   "slug": "flying-nail-mist-soaring",
+   "name": "Flying Nail Mist Soaring",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Ongle Brumeux Essorant Volant",
+   "rechercheFr": null,
+   "longueur": 105
+  },
+  {
+   "slug": "wind-release-affinity-anime-only",
+   "name": "Wind Release  (Affinity; Anime only)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Wind",
+   "rechercheFr": [
+    "Wind",
+    "Sphère de Vent d'Attaque Féroce",
+    "Suiton - Tranchant d'Eau Montant",
+    "Retournement de Vent",
+    "Fûton - Typhon Suprême",
+    "Technique de la Coupe de Vent"
+   ],
+   "longueur": 162
+  },
+  {
+   "slug": "wabisuke-bleach",
+   "name": "Wabisuke",
+   "type": "artifact",
+   "universe": "Bleach",
+   "classe": "B-page-refusee",
+   "etat": "parenthese-de-desambiguisation",
+   "route": "titre-exact",
+   "titreFr": "Wabisuke (Esprit Zanpakutō)",
+   "rechercheFr": null,
+   "longueur": 154
+  },
+  {
+   "slug": "epee-de-lespoir",
+   "name": "Épée de l'Espoir",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Final Hope Slash",
+    "Épée de Shura",
+    "Epée de Tapion",
+    "Épéistes",
+    "Liste des chapitres du manga",
+    "An 774"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "toad-elder",
+   "name": "Toad Elder",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Boruto: Road to B",
+    "La Prophétie du grand Ermite Ôgama",
+    "Celui qui sait",
+    "Un contre un...!!",
+    "Nan"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-pistolet",
+   "name": "Gomu Gomu no Pistolet",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gomu Gomu no Mi/Techniques",
+    "Gomu Gomu no Mi/Gear Second Techniques",
+    "Chimpy",
+    "Gomu Gomu no Mi/Autres Techniques",
+    "Épisode 122",
+    "Gomu Gomu no Mi/Gear Third Techniques"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "sand-stream",
+   "name": "Sand Stream",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Musique",
+    "Ninja (chapitre)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-db-icarus",
+   "name": "Icarus",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Malaiko",
+    "Gila J",
+    "Maître Graham",
+    "Hight Dragon"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "puppet-buzzsaw",
+   "name": "Puppet Buzzsaw",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Scie Circulaire de Marionnette",
+   "rechercheFr": null,
+   "longueur": 195
+  },
+  {
+   "slug": "waitress",
+   "name": "Waitress",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "claw-grime",
+   "name": "Claw Grime",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-elephant-gun",
+   "name": "Gomu Gomu no Elephant Gun",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gomu Gomu no Mi/Gear Third Techniques",
+    "Haki/Haki de l'Armement",
+    "Gomu Gomu no Mi",
+    "Monkey D. Luffy/Aptitudes et Compétences",
+    "Gomu Gomu no Mi/Techniques",
+    "Gomu Gomu no Mi/Gear Second Techniques"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "trunks-ssj2",
+   "name": "Trunks SSJ2",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Saiyan 2",
+    "Super Saiyan Rage",
+    "Arc \"Trunks du futur\"",
+    "Trunks (futur)",
+    "Trunks (Xeno)",
+    "Dragon Ball Z : Rivaux dangereux"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "z-epee",
+   "name": "Z-Sword (Épée Zeta)",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Z Sword",
+   "rechercheFr": [
+    "Z Sword",
+    "Galaxy Spirit Sword",
+    "Spirit Sword",
+    "Epée de Tapion",
+    "Épée de Shura",
+    "Zamasu (futur)"
+   ],
+   "longueur": 779
+  },
+  {
+   "slug": "milk",
+   "name": "Milk",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Île Fromage",
+    "Bone To Be Wild",
+    "J-Stars Victory VS",
+    "Liste des rencontres aléatoires",
+    "Vergo",
+    "4Kids Entertainment"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "eternal-mangekyo-sharingan",
+   "name": "Eternal Mangekyō Sharingan",
+   "type": "skill",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Sharingan…!!",
+   "rechercheFr": [
+    "Mangekyô Sharingan (tome)",
+    "Le Sharingan convoité",
+    "Dôjutsu",
+    "Créature d'Espionnage au Sharingan",
+    "Un nouveau Sharingan !!",
+    "Sharingan…!!"
+   ],
+   "longueur": 76
+  },
+  {
+   "slug": "piercing-showers",
+   "name": "Piercing Showers",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Douche Perçante",
+   "rechercheFr": null,
+   "longueur": 84
+  },
+  {
+   "slug": "dogi-ecole-tortue",
+   "name": "Dogi de l'École Tortue",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dragon Ball chapitre 033",
+    "Tsuru Sennin",
+    "Tortue de mer",
+    "École Tsuru Sen",
+    "Ermites de la Tortue",
+    "Dragon Ball - épisode 049 : Fais attention, Lunch-san"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-cold-nezumi-zeppyo",
+   "name": "Cold Nezumi Zeppyo",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Brook/Aptitudes et Compétences",
+    "Fude Fude no Mi",
+    "Hie Hie no Mi",
+    "Monjii",
+    "Netsu Netsu no Mi",
+    "Modo Modo no Mi"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "terrorist",
+   "name": "Terrorist",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Kunijirô"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-buzz-cut-mochi",
+   "name": "Buzz Cut Mochi",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Mochi Mochi no Mi",
+    "Happy Birthday One Piece Character's"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "team-shu",
+   "name": "Team Shū",
+   "type": "status",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Stagnation",
+    "Sôzu",
+    "Tambour de Formation du Hakke Mécanique"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "gotenks-ssj",
+   "name": "Gotenks SSJ",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "recherche-fr",
+   "titreFr": "Gotenks",
+   "rechercheFr": [
+    "Gotenks",
+    "Gotenks (Xeno)",
+    "Son Goten",
+    "Super Saiyan",
+    "Super Saiyan 3",
+    "Trunks"
+   ],
+   "longueur": 120
+  },
+  {
+   "slug": "shun",
+   "name": "Shun",
+   "type": "character",
+   "universe": "Naruto",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "senbonzakura-bleach",
+   "name": "Senbonzakura",
+   "type": "artifact",
+   "universe": "Bleach",
+   "classe": "B-page-refusee",
+   "etat": "parenthese-de-desambiguisation",
+   "route": "titre-exact",
+   "titreFr": "Senbonzakura (Esprit Zanpakutō)",
+   "rechercheFr": null,
+   "longueur": 74
+  },
+  {
+   "slug": "mother",
+   "name": "Mother",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Mère de Chichi",
+    "Mère de Beat",
+    "Bikini",
+    "Gine",
+    "Rayon Mortel Téléporté",
+    "Snow"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "princess",
+   "name": "Princess",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "titre-enrichi-non-atteste",
+   "route": "recherche-fr",
+   "titreFr": "Naruto Film 1 : Naruto et la Princesse des neiges",
+   "rechercheFr": [
+    "Musique",
+    "La Grande Fuite de Naruto !",
+    "Naruto Film 1 : Naruto et la Princesse des neiges",
+    "Chiyo (princesse)",
+    "Le Paradis des joufflus",
+    "Emi"
+   ],
+   "longueur": 487
+  },
+  {
+   "slug": "new-marineford",
+   "name": "Nouveau Marineford",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "identite-refusee",
+   "route": "slug",
+   "titreFr": "Quartiers Généraux de la Marine/New Marine Ford",
+   "rechercheFr": null,
+   "longueur": 501
+  },
+  {
+   "slug": "katar",
+   "name": "Katar",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "chapeau-trop-court",
+   "route": "titre-exact",
+   "titreFr": "Katar",
+   "rechercheFr": null,
+   "longueur": 0
+  },
+  {
+   "slug": "boomerang-toujuu",
+   "name": "Boomerang Toujuu",
+   "type": "character",
+   "universe": "Bleach",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "hostess",
+   "name": "Hostess",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "staff-c",
+   "name": "Staff C",
+   "type": "character",
+   "universe": "Bleach",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Devorar Pluma"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "kama-rift",
+   "name": "Kāma Rift",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "earth-release-ground-bedrock",
+   "name": "Earth Release: Ground Bedrock",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Doton - Frappe de la Terre",
+   "rechercheFr": null,
+   "longueur": 122
+  },
+  {
+   "slug": "ashisogi-jizo",
+   "name": "Ashisogi Jizo",
+   "type": "character",
+   "universe": "Bleach",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "polestar-islands",
+   "name": "Îles Polestar",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Logue Town",
+    "Île de Road Star",
+    "Liste des rencontres aléatoires",
+    "Set Sail Pirates",
+    "One Piece (Live-Action)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "navire-du-g-5",
+   "name": "Navire du G-5",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "langlink",
+   "titreFr": "G-5",
+   "rechercheFr": null,
+   "longueur": 475
+  },
+  {
+   "slug": "graine-de-larbre-de-force",
+   "name": "Graine de l'Arbre de Force",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Graine de l'Univers",
+    "Shinseiju",
+    "Daïzu",
+    "Arbre d'Enma",
+    "Rakaseï",
+    "Fruits de l'Enseiju"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-oni-giri",
+   "name": "Oni Giri",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Onigiri (Non-Canon)",
+    "Santôryû",
+    "Nourritures et Boissons du Monde de One Piece",
+    "SBS Tome 53",
+    "Narcie",
+    "Koori Oni"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "liberation-du-yin",
+   "name": "Libération du Yin",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Inyôton",
+    "Technique des Tsuchigumo - Technique Interdite de Libération de Vie - Création du Ciel et de la Terre",
+    "Prescription de Renforcement - Injection de Chakra",
+    "Doton",
+    "Emprisonnement des Morts",
+    "Un printemps écarlate (tome)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "circus-performer",
+   "name": "Circus performer",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "sasori-s-subordinate",
+   "name": "Sasori's subordinate",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "construction-worker",
+   "name": "Construction worker",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "boule-4-etoiles",
+   "name": "Boule à quatre étoiles",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dragon Balls Sombres",
+    "Dragon Balls (objet)",
+    "Dragon Ball épisode 001",
+    "Dragon Ball GT : épisode 61",
+    "Saga de l'armée du Red Ribon",
+    "Dragon Ball - Perfect Edition: Tome 10"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-mil-fleur",
+   "name": "Mil Fleur",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Hana Hana no Mi",
+    "IQ",
+    "GP Flowers",
+    "Épisode 556",
+    "Jolisol",
+    "Hito Hito no Mi"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-liberation",
+   "name": "Liberation",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "titre-enrichi-non-atteste",
+   "route": "recherche-fr",
+   "titreFr": "Tambours de la Libération",
+   "rechercheFr": [
+    "Tambours de la Libération",
+    "ONE PIECE Original Soundtrack - GEAR5",
+    "Chapitre 441",
+    "Armée de la Liberté",
+    "Yami Yami no Mi",
+    "Magellan"
+   ],
+   "longueur": 224
+  },
+  {
+   "slug": "summoning-technique-giant-eagle",
+   "name": "Summoning Technique (Giant Eagle)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Suiton - Évanescence Explosive",
+    "Suiton - Tranchant d'Eau Montant",
+    "Invocation Expansive",
+    "Mudrâ",
+    "Technique des Tsuchigumo - Technique Interdite de Libération de Vie - Création du Ciel et de la Terre",
+    "Cible verrouillée"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-strong-right",
+   "name": "Strong Right",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Battle Franky/BF-36",
+    "Battle Franky/BF-37",
+    "Épisode 238",
+    "Satyres",
+    "Épisode 346",
+    "Épisode 341"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "pilule-de-rations-militaires",
+   "name": "Pilule de rations militaires",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Fusil de Piqûre d'Injection"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "diial-des-tenebres",
+   "name": "Diial des Ténèbres",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Chapitre 441",
+    "Épisode 325",
+    "Épisode 865",
+    "Pacte",
+    "Épisode 867"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "dressrosa-alliance-pirate",
+   "name": "Dressrosa / Alliance Pirate",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Saga Dressrosa",
+    "Arc Dressrosa",
+    "Alliance des Ninjas-Pirates-Minks-Samouraïs",
+    "Guide des épisodes/Saga Alliance Pirate",
+    "Alliance Baggy et Alvida/Pirates d'Expédition",
+    "Armada de Chapeau de Paille"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "hidden-cloud-village",
+   "name": "Village caché des nuages",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Chapitre 249",
+    "Mer de Nuages",
+    "Exil sur un Nuage",
+    "Île Nuage",
+    "Village Blacksmith",
+    "Village des Teintures"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "one-piece-tresor",
+   "name": "Le One Piece",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "titre-enrichi-non-atteste",
+   "route": "langlink",
+   "titreFr": "One Piece en France",
+   "rechercheFr": null,
+   "longueur": 533
+  },
+  {
+   "slug": "senior",
+   "name": "Senior",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Sajô",
+    "Kitô",
+    "Doton - Monticule de Pierre",
+    "Shippuden 4eme guerre ninja"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "bisshu",
+   "name": "Bisshu",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "axe-dial",
+   "name": "Axe-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Chapitre 257",
+    "Garde Sacrée",
+    "Chapitre 263",
+    "Chapitre 261",
+    "Clan d'Ener"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-bl-final-getsuga-tensho",
+   "name": "Final Getsuga Tensho",
+   "type": "power",
+   "universe": "Bleach",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Getsuga Jûjishô",
+    "Épisode 387",
+    "Chapitre 420",
+    "Chapitre 421",
+    "Chapitre 460",
+    "Chapitre 419"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "shining-ostrich-kick",
+   "name": "Shining Ostrich Kick",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Shining Kick Autruche",
+   "rechercheFr": null,
+   "longueur": 96
+  },
+  {
+   "slug": "imperfect-form",
+   "name": "Imperfect Form",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dragon Ball Z - Battle of Z",
+    "Cell (futur)",
+    "An 767"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "secret-sword-moonlight",
+   "name": "Secret Sword: Moonlight",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Sabre Secret - Ombre Lunaire",
+   "rechercheFr": null,
+   "longueur": 186
+  },
+  {
+   "slug": "atk-op-counter-shock",
+   "name": "Counter Shock",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Épisode 723",
+    "Chapitre 683",
+    "One Piece Novel Law : L'Heure de Kikoku",
+    "Chapitre 1029",
+    "Electro",
+    "Chapitre 1003"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "pilule-d-eveil",
+   "name": "Pilule d'éveil",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "titre-enrichi-non-atteste",
+   "route": "recherche-fr",
+   "titreFr": "Pilule d'Éveil Mental",
+   "rechercheFr": [
+    "Pilule d'Éveil Mental",
+    "Sans pitié !! (tome)",
+    "Oto versus Konoha !!",
+    "Les Cinq de Konoha + Un",
+    "Sasuke Uchiwa",
+    "Naruto: Ultimate Ninja 3"
+   ],
+   "longueur": 573
+  },
+  {
+   "slug": "atk-op-gear-fourth",
+   "name": "Gear Fourth",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "titre-enrichi-non-atteste",
+   "route": "titre-exact",
+   "titreFr": "Gomu Gomu no Mi/Gear Fourth Techniques",
+   "rechercheFr": null,
+   "longueur": 528
+  },
+  {
+   "slug": "traveller",
+   "name": "Traveller",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "freezer-2nd-form",
+   "name": "Freezer 2nd Form",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Freezer",
+   "rechercheFr": [
+    "Freezer",
+    "Dragon Ball Z - Battle of Z",
+    "Golden Freezer",
+    "Freezer (Xeno)",
+    "Race de Freezer",
+    "Black Freezer"
+   ],
+   "longueur": 285
+  },
+  {
+   "slug": "atk-db-gigantic-flame",
+   "name": "Gigantic Flame",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Dragon Ball Heroes - Big Bang Mission!!! : chapitre 05",
+    "Super Dragon Ball Heroes - Big Bang Mission : épisode 01",
+    "Big Bang Kamé Hamé Ha",
+    "Super Dragon Ball Heroes - Big Bang Mission : épisode 05",
+    "Super Dragon Ball Heroes - Big Bang Mission : épisode 13",
+    "Shroom"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "debu",
+   "name": "Debu",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-bien-cuit-grill-shot",
+   "name": "Bien Cuit Grill Shot",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Techniques de la Jambe Noire/Jambe à la Diable",
+    "Sanji/Aptitudes et Compétences",
+    "King (Calmar géant)",
+    "Chapitre 605",
+    "Chapitre 1028"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "head-of-the-uchiha-clan",
+   "name": "Head of the Uchiha Clan",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Hikaku Uchiwa",
+    "Rai Uchiwa",
+    "Kagami Uchiwa",
+    "Hazuki Uchiwa",
+    "Ashina Uzumaki",
+    "Clan Senju"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "queen-of-roran",
+   "name": "Queen of Rōran",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "fruit",
+   "name": "Fruit",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Fruits du Démon",
+    "Fruits du Démon Artificiels",
+    "Nui Nui no Mi",
+    "Kilo Kilo no Mi",
+    "Gocha Gocha no Mi",
+    "Beri Beri no Mi"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "fruit-du-demon-artificiel-de-vegapunk",
+   "name": " Fruit du démon artificiel de Végapunk",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Vegapunk",
+   "rechercheFr": [
+    "Fruits du Démon Artificiels",
+    "Fruit de Kozuki Momonosuke",
+    "Vegapunk",
+    "SMILE",
+    "Facteur de lignage",
+    "Green Blood"
+   ],
+   "longueur": 1059
+  },
+  {
+   "slug": "katasuke-tono-s-assistant",
+   "name": "Katasuke Tōno's Assistant",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Assistant du Sculpteur sur Pierre",
+    "Kôsuke (Scientifique)",
+    "Tosaka",
+    "Ao (tome)",
+    "Le Bras (épisode)",
+    "Ao (épisode)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-mochi-tsuki",
+   "name": "Mochi Tsuki",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Mochi Mochi no Mi",
+    "Mogura",
+    "Épisode 854",
+    "Toshi Toshi no Mi",
+    "Wanted ! (chanson)",
+    "Kaze wo Sagashite"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "fire-release-exploding-flame-formation",
+   "name": "Fire Release: Exploding Flame Formation",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "A-page-prouvee",
+   "etat": "candidat",
+   "route": "langlink",
+   "titreFr": "Katon - Formation de Flamme Explosive",
+   "rechercheFr": null,
+   "longueur": 92
+  },
+  {
+   "slug": "atk-op-dai-enkai-entei",
+   "name": "Dai Enkai Entei",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Mera Mera no Mi",
+    "Démon du Destin",
+    "Incident de Banaro",
+    "Yami Yami no Mi",
+    "Honebami Toshiro",
+    "Granit marin"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "three-section-staff",
+   "name": "Three-Section Staff",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "l-equipage-d-expedition",
+   "name": "L’équipage d’Expédition",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Alliance Baggy et Alvida/Pirates d'Expédition",
+    "Nouvel Équipage des Géants",
+    "Alliance Baggy et Alvida/Équipage d'Alvida",
+    "Équipage des Géants",
+    "L'Équipage des Announcers",
+    "Pirates Bounties"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "gohan-ssj",
+   "name": "Gohan SSJ",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Saiyan 2",
+    "Son Gohan",
+    "Ultimate Gohan",
+    "Son Gohan Beast",
+    "Son Gohan (futur)",
+    "Super Saiyan"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "arak-planet",
+   "name": "Monde d'Arak",
+   "type": "place",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Ogma",
+    "Planète Kaishin (Univers 7)",
+    "Jerez",
+    "Destruction",
+    "Planète Beerus",
+    "Sidra"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "daimyo-s-bodyguard",
+   "name": "Daimyō's Bodyguard",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "veste-lestee",
+   "name": "Vêtements lestés",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dr. Kôchin"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-king-of-hell",
+   "name": "King of Hell",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gorilla Puncher 18",
+    "Jump Stadium",
+    "Trap",
+    "Scien",
+    "Omatsuri",
+    "Trap Tower"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "thunder-dial",
+   "name": "Thunder-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Art de la Météo/Baguette Climatique Ultime",
+    "Nami/Aptitudes et Compétences",
+    "Souffle Divin",
+    "Ener",
+    "Art de la Météo/Sorcery Climat-Tact"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "summoning-technique-shinigami-snake",
+   "name": "Summoning Technique (Shinigami, Snake)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Sort d'Entrave - Regard du Serpent",
+    "Absorption de l'Âme",
+    "Shima",
+    "Serpent",
+    "Grande Poigne du Serpent Spectral",
+    "Clone Serpent"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "majin-buu-gohan",
+   "name": "Majin Buu (Gohan)",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "oyakata-bune",
+   "name": "Oyakata Bune",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Équipage de Foxy",
+    "Bateau de Pandaman",
+    "Mashikaku (Pirate)",
+    "Pine Peak",
+    "Roba-san Kick 18",
+    "Lombric"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "anciens-membres-de-la-marine",
+   "name": "Anciens membres de la Marine",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "recherche-fr",
+   "titreFr": "Marine",
+   "rechercheFr": [
+    "Marine",
+    "Amiral",
+    "Néo-Marine",
+    "Quartiers Généraux de la Marine/Marine Ford",
+    "Bataille de Marine Ford",
+    "Trois Grands Pouvoirs"
+   ],
+   "longueur": 1767
+  },
+  {
+   "slug": "shuku-village",
+   "name": "Shuku Village",
+   "type": "status",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "creature-invoquee",
+   "name": "Créature invoquée",
+   "type": "status",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Invocation Expansive",
+    "Limace",
+    "Quartet du Son - Invocation - Encerclement des Quatre Monstres",
+    "Ni",
+    "Invocation - Estomac du Crapaud",
+    "Shiromari"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-gamma-knife",
+   "name": "Gamma Knife",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Épisode 722",
+    "Ope Ope no Mi",
+    "Chapitre 781",
+    "Chapitre 1002",
+    "Don Quichotte Doflamingo/Aptitudes et Compétences",
+    "Roule"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-room",
+   "name": "Room",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Ope Ope no Mi",
+    "Chapitre 658",
+    "One Piece x Mercer Labs",
+    "Chapitre 686",
+    "ONE PIECE FILM GOLD Original Soundtrack",
+    "Épisode 1093"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "tailed-beast-shockwave",
+   "name": "Tailed Beast Shockwave",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "yuhi",
+   "name": "Clan Yūhi",
+   "type": "status",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "titre-enrichi-non-atteste",
+   "route": "langlink",
+   "titreFr": "Kurenaï Yûhi",
+   "rechercheFr": null,
+   "longueur": 178
+  },
+  {
+   "slug": "ostrich-rising-dragon-bullet",
+   "name": "Ostrich Rising Dragon Bullet",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Uppercut Dragon de l'Autruche",
+   "rechercheFr": null,
+   "longueur": 185
+  },
+  {
+   "slug": "bungou",
+   "name": "Bungou",
+   "type": "character",
+   "universe": "One Piece",
+   "classe": "A-page-prouvee",
+   "etat": "candidat",
+   "route": "langlink",
+   "titreFr": "Bungo",
+   "rechercheFr": null,
+   "longueur": 101
+  },
+  {
+   "slug": "girl",
+   "name": "Girl",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-mirage-tempo",
+   "name": "Mirage Tempo",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Art de la Météo/Nouveau Climat-Tact",
+    "Art de la Météo/Sorcery Climat-Tact",
+    "Art de la Météo/Baguette Climatique Ultime",
+    "Art de la Météo/Baguette Climatique",
+    "Chapitre 192",
+    "Nami/Aptitudes et Compétences"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "medicinal-herb-salesman",
+   "name": "Medicinal Herb Salesman",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "summoning-technique-spider",
+   "name": "Summoning Technique (Spider)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Absorption de l'Âme",
+    "Suiton - Évanescence Explosive",
+    "Technique des Spores",
+    "Suiton - Tranchant d'Eau Montant",
+    "Sphère de Vent d'Attaque Féroce",
+    "Technique Secrète - Cocon d'Insecte"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "epee-de-trunks",
+   "name": "Épée de Trunks (Brave Sword)",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "recherche-fr",
+   "titreFr": "Trunks",
+   "rechercheFr": [
+    "Epée de Tapion",
+    "Tapion",
+    "Z Sword",
+    "Trunks (Xeno)",
+    "Zamasu fusionné",
+    "Trunks"
+   ],
+   "longueur": 695
+  },
+  {
+   "slug": "atk-op-arm-point",
+   "name": "Arm Point",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Hito Hito no Mi",
+    "Tony Tony Chopper/Aptitudes et Compétences",
+    "Rumble Ball (chanson)",
+    "Chapitre 262",
+    "Chapitre 407",
+    "Chapitre 149"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "angel-island",
+   "name": "Angel Island",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "identite-refusee",
+   "route": "titre-exact",
+   "titreFr": "Skypiea",
+   "rechercheFr": null,
+   "longueur": 297
+  },
+  {
+   "slug": "ostrich-meteor-blast",
+   "name": "Ostrich Meteor Blast",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Explosion Météore Autruche",
+   "rechercheFr": null,
+   "longueur": 185
+  },
+  {
+   "slug": "bodyguard",
+   "name": "Bodyguard",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "vegeta-ssj",
+   "name": "Vegeta SSJ",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "recherche-fr",
+   "titreFr": "Vegeta",
+   "rechercheFr": [
+    "Super Saiyan",
+    "Vegeta (SDBH)",
+    "Vegeta",
+    "Super Saiyan Blue Évolué",
+    "Super Saiyan Divin",
+    "Vegeta (futur)"
+   ],
+   "longueur": 552
+  },
+  {
+   "slug": "goku-ssj",
+   "name": "Goku SSJ",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Saiyan",
+    "Super Saiyan Divin",
+    "Super Saiyan 3",
+    "Faux Super Saiyan",
+    "Super Saiyan Blue",
+    "Son Goku"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "village-gate-guard",
+   "name": "Village Gate Guard",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "goku-ultra-instinc",
+   "name": "Goku Ultra Instinc",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Prémices du réflexe transcendantal",
+    "Réflexe transcendantal (maîtrisé)",
+    "Dragon Ball Super épisode 129",
+    "Jiren",
+    "Dragon Ball Super épisode 116",
+    "Dragon Ball Super (anime)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "captain-of-the-lady-mary",
+   "name": "Captain of the Lady Mary",
+   "type": "character",
+   "universe": "One Piece",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-thunder-lance-tempo",
+   "name": "Thunder Lance Tempo",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Art de la Météo/Baguette Climatique Ultime",
+    "Nami/Aptitudes et Compétences",
+    "Art de la Météo/Baguette Climatique",
+    "Art de la Météo/Nouveau Climat-Tact",
+    "Épisode 296",
+    "Chapitre 191"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "ile-celeste",
+   "name": "Île Céleste",
+   "type": "status",
+   "universe": "One Piece",
+   "classe": "D-videe-expres",
+   "etat": null,
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "chakra-enhancing-music",
+   "name": "Chakra Enhancing Music",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Musique d'Amélioration de Chakra",
+   "rechercheFr": null,
+   "longueur": 90
+  },
+  {
+   "slug": "atk-op-firebird-star",
+   "name": "Firebird Star",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Arsenal d'Usopp/Kabuto",
+    "Arsenal d'Usopp/Kabuto Noir",
+    "Chapitre 674",
+    "One Piece Attack Motions",
+    "Usopp/Aptitudes et Compétences",
+    "Shû"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "gogeta-ssjb",
+   "name": "Gogeta SSJB",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Son Gokû God Fusion",
+    "Super Saiyan Blue",
+    "Super Saiyan Blue Évolué",
+    "Shallot"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-onigawara-seiken",
+   "name": "Onigawara Seiken",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Machi",
+    "Chapitre 1018",
+    "Jinbe",
+    "Who's-Who"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "elderly-village",
+   "name": "Village des Aînés",
+   "type": "place",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Village de Gosa",
+    "Vieillard du Headband Catfish Village",
+    "Village des Teintures",
+    "Headband Catfish Village",
+    "Chapitre 249",
+    "Umeno Nazawa"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "fruit-du-demon",
+   "name": "Fruit du Démon",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "identite-refusee",
+   "route": "titre-exact",
+   "titreFr": "Fruits du Démon",
+   "rechercheFr": null,
+   "longueur": 1687
+  },
+  {
+   "slug": "gentle-step-spiralling-twin-lion-fists",
+   "name": "Gentle Step Spiralling Twin Lion Fists",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "jo",
+   "name": "Jō",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "chapeau-trop-court",
+   "route": "recherche-fr",
+   "titreFr": "Jô",
+   "rechercheFr": [
+    "Jô"
+   ],
+   "longueur": 0
+  },
+  {
+   "slug": "poids-d-entrainement",
+   "name": "Poids d'entraînement",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Poids",
+   "rechercheFr": [
+    "Poids",
+    "Onbu",
+    "Omake",
+    "Un ninja formidable...!! (tome)",
+    "Sasuke Uchiwa",
+    "Gaï Maito"
+   ],
+   "longueur": 463
+  },
+  {
+   "slug": "flail",
+   "name": "Flail",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-gear-fifth",
+   "name": "Gear Fifth",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "titre-enrichi-non-atteste",
+   "route": "titre-exact",
+   "titreFr": "Gomu Gomu no Mi/Gear Fifth Techniques",
+   "rechercheFr": null,
+   "longueur": 780
+  },
+  {
+   "slug": "machine-a-remonter-le-temps",
+   "name": "Machine à remonter le temps",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Time Machine de Bulma",
+    "Anneau du Temps",
+    "Mai (futur)",
+    "Tokuno Shin Ômori",
+    "Dragon Ball Super épisode 063",
+    "Dragon Ball Z épisode 139"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "navire-d-hina",
+   "name": "Navire d’Hina",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Hina",
+   "rechercheFr": [
+    "Bateau d'Hina",
+    "Navires de la Marine",
+    "Hina",
+    "Navire-Cercueil",
+    "Zenny (Navire)",
+    "H-1"
+   ],
+   "longueur": 121
+  },
+  {
+   "slug": "atk-op-zan-giri-mochi",
+   "name": "Zan Giri Mochi",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Mochi Mochi no Mi",
+    "Charlotte Katakuri",
+    "Kona Kona no Mi",
+    "Juku Juku no Mi",
+    "Gocha Gocha no Mi",
+    "Kobu Kobu no Mi"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "trunks-rage",
+   "name": "Trunks Rage",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Saiyan Rage",
+    "Trunks (futur)",
+    "Arc \"Trunks du futur\"",
+    "Zamasu (futur)",
+    "Zamasu fusionné",
+    "Goku Black"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "this-article-is-about-the-serial-killer-for-the-genin-see-samidare",
+   "name": "This article is about the serial killer. For the genin, see Samidare.",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Samidare",
+   "rechercheFr": [
+    "Samidare",
+    "Samidare Amaashi",
+    "Shima",
+    "Arbre Divin Humain",
+    "Sajin (Genin)",
+    "Unmo Samidare"
+   ],
+   "longueur": 51
+  },
+  {
+   "slug": "atk-op-coup-de-vent",
+   "name": "Coup de Vent",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Chapitre 338",
+    "Battle Franky/BF-36",
+    "Danse de l'Épée des Remous",
+    "Battle Franky/BF-37",
+    "Boss",
+    "Chapitre 732"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "goku-ssjb",
+   "name": "Goku SSJB",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Saiyan Blue",
+    "Son Gokû God Fusion",
+    "Super Saiyan Blue (Pouvoir de l'Arbre-Univers)",
+    "Super Saiyan Blue Kaiôken",
+    "Ninku",
+    "Shallot"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-kyokaen",
+   "name": "Kyokaen",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Mera Mera no Mi"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "actress",
+   "name": "Actress",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Musique",
+    "Hinoko",
+    "Tomaru",
+    "Chiyo (princesse)",
+    "Arcanes Lunaires Infinis (homonymie)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "clone-du-fruit-des-coussinets",
+   "name": "Clone du fruit des Coussinets",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Nikyu Nikyu no Mi",
+    "Mane Mane no Mi",
+    "S-Bear",
+    "Peke Peke no Mi",
+    "Kopi Kopi no Mi",
+    "Muchi Muchi no Mi"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "drilling-hand-of-sage-lightning",
+   "name": "Drilling Hand of Sage Lightning",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Foudre Perçante de la Main de l'Ermite",
+   "rechercheFr": null,
+   "longueur": 101
+  },
+  {
+   "slug": "chaine-kusari",
+   "name": "Chaîne kusari",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Chaîne",
+   "rechercheFr": [
+    "Kusari Fûbô",
+    "Chaîne",
+    "Chaînes - Entaille des Crocs Jumeaux",
+    "Furui",
+    "Freedom",
+    "Technique de Création d'Outil"
+   ],
+   "longueur": 222
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-red-hawk",
+   "name": "Gomu Gomu no Red Hawk",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gomu Gomu no Mi/Gear Second Techniques",
+    "Monkey D. Luffy/Aptitudes et Compétences",
+    "Gomu Gomu no Mi/Gear Third Techniques",
+    "Épisode 565",
+    "Haki/Haki de l'Armement",
+    "Gomu Gomu no Mi"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "kani-crane",
+   "name": "Kani Crane",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Équipage de Foxy",
+    "Cutie Wagon",
+    "Gorilla Puncher 18",
+    "Girarin",
+    "Geena",
+    "Kapoty"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "isshiki-s-dojutsu",
+   "name": "Isshiki's Dōjutsu",
+   "type": "skill",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-nu-sans-preuve-de-nom",
+   "route": "langlink",
+   "titreFr": "Kokugan",
+   "rechercheFr": null,
+   "longueur": 573
+  },
+  {
+   "slug": "atk-op-dragon-claw",
+   "name": "Dragon Claw",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "pont-nu-sans-preuve-de-nom",
+   "route": "langlink",
+   "titreFr": "Ryusoken",
+   "rechercheFr": null,
+   "longueur": 179
+  },
+  {
+   "slug": "vegeta-ssjb",
+   "name": "Vegeta SSJB",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Saiyan Blue Évolué",
+    "Super Saiyan Blue",
+    "Son Gokû God Fusion",
+    "Shallot",
+    "Super Saiyan Blue Kaiôken"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "medicinal-herb-saleswomen",
+   "name": "Medicinal Herb Saleswomen",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "housewife",
+   "name": "Housewife",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "team-one",
+   "name": "Team One",
+   "type": "status",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "langlink",
+   "titreFr": "Équipe de Recherche d'Orochimaru",
+   "rechercheFr": null,
+   "longueur": 403
+  },
+  {
+   "slug": "atk-op-poele-a-frire",
+   "name": "Poele à Frire",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Techniques de la Jambe Noire/Jambe à la Diable",
+    "Arsenal d'Usopp",
+    "Charlotte Oven",
+    "Marlon",
+    "Jigoku Benten"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "puppet-imitation-technique",
+   "name": "Puppet Imitation Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Contre-Attaque du Pantin",
+   "rechercheFr": null,
+   "longueur": 170
+  },
+  {
+   "slug": "priest",
+   "name": "Priest",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Course du Kamui - Massacre",
+    "Tome 1 (Sasuke Retsuden)",
+    "Les Ninjas de Suna"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "green-egg-bombs",
+   "name": "Green Egg Bombs",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Bombes Œufs Verts",
+   "rechercheFr": null,
+   "longueur": 123
+  },
+  {
+   "slug": "goku-ssj4",
+   "name": "Goku SSJ4",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Super Saiyan 4",
+    "Super Full Power Saiyan 4 Genkai Toppa",
+    "Super Saiyan Divin",
+    "Gogeta (DBZ/GT)",
+    "Gogeta (Xeno)",
+    "Son Goku (Xeno)"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "breath-dial",
+   "name": "Breath-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials",
+    "Bateau à Dials",
+    "Shooter",
+    "Waver",
+    "Burn Blade",
+    "Shiro Mokuba I"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "chasseur-de-primes",
+   "name": "Chasseur de primes",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Ami ou Ennemi ? Le Chasseur de prime du désert",
+    "Sazanami",
+    "Gatsu",
+    "Anaguma",
+    "Mission de Capture de Gosunkugi",
+    "Michizô Manaka"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "secret-technique-sealing-release",
+   "name": "Secret Technique: Sealing Release",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Technique d'Incorporation",
+    "Technique Secrète - Vol de la Voix",
+    "Secret des Arcanes Blancs - Recueil des Rêves",
+    "Technique de Descellement",
+    "Technique d'Évasion Transparente",
+    "Genjutsu - Clone du Son de Cloche"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-injection-shot",
+   "name": "Injection Shot",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Chapitre 768",
+    "Épisode 707",
+    "Épisode 906",
+    "Chapitre 760",
+    "Ope Ope no Mi",
+    "Le grand trésor de l'île de Tongari"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-ryu-no-kagizume",
+   "name": "Ryu no Kagizume",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Ryusoken",
+    "Inchikin",
+    "Justy",
+    "Haki/Haki de l'Armement",
+    "Sabo"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-gura-gura-quake",
+   "name": "Gura Gura Quake",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gura Gura no Mi",
+    "Suleiman"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "gogeta-ssjb-evolved",
+   "name": "Gogeta SSJB Evolved",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Évolution Sombre",
+    "Gogeta (DBS)",
+    "Gogeta (Xeno)",
+    "Super Saiyan Blue Évolué",
+    "Gokuhan",
+    "Super Dragon Ball Heroes - Universe Mission : épisode 18"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "bandit",
+   "name": "Bandit",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Shinayakana",
+    "Fukuyokana",
+    "Une nouvelle mission !!",
+    "Michizô Manaka",
+    "Shiin",
+    "Tôfû"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "clone-du-fruit-du-tailladant",
+   "name": "Clone du fruit du tailladant",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Supa Supa no Mi",
+    "Mane Mane no Mi",
+    "Peke Peke no Mi",
+    "Kopi Kopi no Mi",
+    "Hana Hana no Mi",
+    "Numa Numa no Mi"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "ostrich-aerial",
+   "name": "Ostrich Aerial",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "pont-page-derivee",
+   "route": "langlink",
+   "titreFr": "Smash Aérien Autruche",
+   "rechercheFr": null,
+   "longueur": 66
+  },
+  {
+   "slug": "liberation-de-la-foudre-raiton",
+   "name": "Libération de la Foudre (Raiton)",
+   "type": "power",
+   "universe": "Naruto",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Raiton",
+   "rechercheFr": [
+    "Raiton",
+    "Raiton - Foudre",
+    "Raiton - Porte du Tonnerre",
+    "Raiton Mode Coopération - Bombe de Foudre",
+    "Raiton - Prison Électrique",
+    "Raiton - Éclairs Foudroyants"
+   ],
+   "longueur": 153
+  },
+  {
+   "slug": "elite-bodyguard",
+   "name": "Elite Bodyguard",
+   "type": "profession",
+   "universe": "Naruto",
+   "classe": "C1-aucun-titre",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": null,
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-horn-point",
+   "name": "Horn Point",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "titre-exact",
+   "titreFr": "Hito Hito no Mi",
+   "rechercheFr": null,
+   "longueur": 437
+  },
+  {
+   "slug": "staff-b",
+   "name": "Staff B",
+   "type": "character",
+   "universe": "Bleach",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Devorar Pluma"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-conqueror-s-haki-clash",
+   "name": "Conqueror's Haki Clash",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-plus-generale",
+   "route": "recherche-fr",
+   "titreFr": "Haki",
+   "rechercheFr": [
+    "Haki/Haki des Rois",
+    "Haki/Haki de l'Armement",
+    "Haki/Haki de l'Observation",
+    "Haki",
+    "Chapitre 1010",
+    "Charlotte Compo"
+   ],
+   "longueur": 1016
+  },
+  {
+   "slug": "hydro-dial",
+   "name": "Hydro-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Dials"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-midori-boshi",
+   "name": "Midori Boshi",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Arsenal d'Usopp/Kabuto Noir",
+    "Horseman",
+    "King (Calmar géant)",
+    "Épisode 674",
+    "Épisode 1000",
+    "Chapitre 1110"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-yarinami",
+   "name": "Yarinami",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Gyojin Karate",
+    "Épisode 561",
+    "Jinbe"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-radical-beam",
+   "name": "Radical Beam",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Battle Franky/BF-37",
+    "Nypers",
+    "Chapitre 1019",
+    "Chapitre 989",
+    "Chapitre 677",
+    "One Piece Film: Gold Épisode 0"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-guard-point",
+   "name": "Guard Point",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "B-page-refusee",
+   "etat": "page-disputee",
+   "route": "titre-exact",
+   "titreFr": "Hito Hito no Mi",
+   "rechercheFr": null,
+   "longueur": 437
+  },
+  {
+   "slug": "atk-op-mouton-shot",
+   "name": "Mouton Shot",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Techniques de la Jambe Noire/Jambe à la Diable",
+    "Sheep's Head",
+    "Sanji/Aptitudes et Compétences",
+    "Chapitre 187",
+    "Techniques de la Jambe Noire/Combinaisons d'Équipe",
+    "Gomu Gomu no Mi/Autres Techniques"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "atk-op-shambles",
+   "name": "Shambles",
+   "type": "power",
+   "universe": "One Piece",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Ope Ope no Mi",
+    "Hyper Shibireru-kun",
+    "Chapitre 781",
+    "SBS Tome 73",
+    "One Piece Super Deformed Figures",
+    "Chapitre 759"
+   ],
+   "longueur": null
+  },
+  {
+   "slug": "dispositif-du-sceau-maudit",
+   "name": "Dispositif du Sceau Maudit",
+   "type": "artifact",
+   "universe": "Naruto",
+   "classe": "C2-titres-non-rapproches",
+   "etat": "sans-page-fr",
+   "route": null,
+   "titreFr": null,
+   "rechercheFr": [
+    "Tosaka",
+    "Mudrâ",
+    "Momo",
+    "Grêle de Poings - Rakshasa",
+    "Rôen-Kodon",
+    "Boruto Uzumaki"
+   ],
+   "longueur": null
+  }
+ ]
+}

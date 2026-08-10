@@ -98,11 +98,17 @@ async function htmlRendu(hote, titre) {
   } catch (err) { return { erreur: String(err?.message ?? err) }; }
 }
 
+/** Les premiers paragraphes de l'article, hors infobox et hors bandeaux.
+ *  ORDRE DES DEUX GESTES, mesuré : il faut RETIRER l'infobox AVANT de couper au premier `<h2>`.
+ *  La portable infobox de ce wiki met son titre dans un `<h2 class="pi-title">` — sur « Paradise »
+ *  il tombe à 2 462 caractères du début, soit avant le moindre paragraphe d'article, et la coupe
+ *  naïve rendait ZÉRO paragraphe sur 67 des 71 pages. Un filtre qui rend zéro doit d'abord prouver
+ *  qu'il sait rendre un : le contrôle `sans intro lue` de ce script est ce témoin. */
 function introDe(html) {
-  let zone = html.split(/<h2\b/i)[0];
-  zone = zone.replace(/<table[\s\S]*?<\/table>/gi, ' ').replace(/<aside[\s\S]*?<\/aside>/gi, ' ')
+  let zone = html.replace(/<table[\s\S]*?<\/table>/gi, ' ').replace(/<aside[\s\S]*?<\/aside>/gi, ' ')
     .replace(/<figure[\s\S]*?<\/figure>/gi, ' ')
     .replace(/<div\b[^>]*class="[^"]*\b(notice|mw-collapsible|toc)\b[^"]*"[\s\S]*?<\/div>/gi, ' ');
+  zone = zone.split(/<h2\b/i)[0];
   return [...zone.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map((m) => detague(m[1])).filter((t) => t.length > 40);
 }
 

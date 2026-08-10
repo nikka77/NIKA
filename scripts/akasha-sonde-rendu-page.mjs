@@ -26,7 +26,10 @@ console.log(`— ${slug} — HTTP ${res.status} — ${texte.length} car. de DOM 
 // exiger « · N » les rendait invisibles à la sonde — la sonde doit chercher ce que le composant
 // ÉCRIT, pas ce qu'on imagine qu'il écrit (leçon du 10/08).
 const grappes = [
-  ...(texte.match(/(Techniques|Famille|Liens|Appartenances|Possède|Autres liens|Membres|Arsenal[^·]*|Maîtris\w+ par|Habité par|Possédé par|Exercé par|Regroupe|Rattachements)\s·\s\d+/g) ?? []),
+  // `\w` est ASCII en JavaScript : « Maîtris\w+ par » ne peut PAS matcher « Maîtrisée par »
+  // (le « é » n'est pas un caractère de mot). Piège payé le 10/08 sur `\bîle` — on écrit la classe
+  // en toutes lettres plutôt que de faire confiance à `\w`.
+  ...(texte.match(/(Techniques|Famille|Liens|Appartenances|Possède|Autres liens|Membres|Arsenal[^·]*|Maîtrisée? par|Habité par|Possédé par|Exercé par|Regroupe|Rattachements)\s·\s\d+/g) ?? []),
   ...['Appartenances', 'Rattachements'].filter((t) => new RegExp(`${t}(?!\\s·\\s\\d)`).test(texte)),
 ];
 console.log(`  grappes : ${grappes.length ? [...new Set(grappes)].join(' | ') : '(aucune)'}`);

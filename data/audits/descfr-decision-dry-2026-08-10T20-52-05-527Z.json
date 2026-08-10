@@ -1,0 +1,183 @@
+{
+ "chantier": "descFr wiki FR — décision",
+ "mode": "dry",
+ "quand": "2026-08-10T20:52:08.262Z",
+ "trace": "data/audits/descfr-wiki-fr-c3v5-complet-2026-08-10T20-43-03-505Z.json",
+ "candidats": 8,
+ "compte": {
+  "plus-pauvre-que-le-resume": 8
+ },
+ "aEcrire": 0,
+ "decisions": [
+  {
+   "slug": "dynamic-action",
+   "name": "Dynamic Action",
+   "universe": "Naruto",
+   "type": "power",
+   "route": "titre-exact",
+   "identite": "titre-egal",
+   "titreFr": "Dynamic Action",
+   "url": "https://naruto.fandom.com/fr/wiki/Dynamic_Action",
+   "longueurTexte": 102,
+   "longueurResume": 126,
+   "motsNeufs": 9,
+   "exemplesNeufs": [
+    "utilisateur",
+    "saute",
+    "vers",
+    "attaque",
+    "avec",
+    "serie",
+    "coups",
+    "poing"
+   ],
+   "verdict": "plus-pauvre-que-le-resume"
+  },
+  {
+   "slug": "sweet-city",
+   "name": "Sweet City",
+   "universe": "One Piece",
+   "type": "place",
+   "route": "titre-exact",
+   "identite": "titre-egal",
+   "titreFr": "Sweet City",
+   "url": "https://onepiece.fandom.com/fr/wiki/Sweet_City",
+   "longueurTexte": 96,
+   "longueurResume": 161,
+   "motsNeufs": 4,
+   "exemplesNeufs": [
+    "sweet",
+    "city",
+    "archipel",
+    "trouvant"
+   ],
+   "verdict": "plus-pauvre-que-le-resume"
+  },
+  {
+   "slug": "kibi",
+   "name": "Kibi",
+   "universe": "One Piece",
+   "type": "place",
+   "route": "titre-exact",
+   "identite": "titre-egal",
+   "titreFr": "Kibi",
+   "url": "https://onepiece.fandom.com/fr/wiki/Kibi",
+   "longueurTexte": 35,
+   "longueurResume": 177,
+   "motsNeufs": 3,
+   "exemplesNeufs": [
+    "kibi",
+    "region",
+    "pays"
+   ],
+   "verdict": "plus-pauvre-que-le-resume"
+  },
+  {
+   "slug": "atk-db-golden-great-ape",
+   "name": "Golden Great Ape",
+   "universe": "Dragon Ball",
+   "type": "power",
+   "route": "langlink",
+   "identite": "pont-interlangue-symetrique",
+   "titreFr": "Singe géant doré",
+   "url": "https://dragonball.fandom.com/fr/wiki/Singe_g%C3%A9ant_dor%C3%A9",
+   "longueurTexte": 98,
+   "longueurResume": 136,
+   "motsNeufs": 4,
+   "exemplesNeufs": [
+    "ogon",
+    "ozaru",
+    "exclusive",
+    "serie"
+   ],
+   "verdict": "plus-pauvre-que-le-resume"
+  },
+  {
+   "slug": "deul-kingdom",
+   "name": "Royaume de Deul",
+   "universe": "One Piece",
+   "type": "place",
+   "route": "titre-exact",
+   "identite": "titre-egal",
+   "titreFr": "Royaume de Deul",
+   "url": "https://onepiece.fandom.com/fr/wiki/Royaume_de_Deul",
+   "longueurTexte": 152,
+   "longueurResume": 166,
+   "motsNeufs": 12,
+   "exemplesNeufs": [
+    "royaume",
+    "deul",
+    "doiru",
+    "okoku",
+    "faisant",
+    "partie",
+    "gouvernement",
+    "mondial"
+   ],
+   "verdict": "plus-pauvre-que-le-resume"
+  },
+  {
+   "slug": "exploding-sasumata-attack",
+   "name": "Exploding Sasumata Attack",
+   "universe": "Naruto",
+   "type": "power",
+   "route": "langlink",
+   "identite": "pont-interlangue-symetrique",
+   "titreFr": "Explosion du Sasumata",
+   "url": "https://naruto.fandom.com/fr/wiki/Explosion_du_Sasumata",
+   "longueurTexte": 87,
+   "longueurResume": 118,
+   "motsNeufs": 4,
+   "exemplesNeufs": [
+    "gamaken",
+    "adversaire",
+    "provoque",
+    "explosions"
+   ],
+   "verdict": "plus-pauvre-que-le-resume"
+  },
+  {
+   "slug": "fire-release-exploding-flame-formation",
+   "name": "Fire Release: Exploding Flame Formation",
+   "universe": "Naruto",
+   "type": "power",
+   "route": "langlink",
+   "identite": "pont-interlangue-symetrique",
+   "titreFr": "Katon - Formation de Flamme Explosive",
+   "url": "https://naruto.fandom.com/fr/wiki/Katon_-_Formation_de_Flamme_Explosive",
+   "longueurTexte": 92,
+   "longueurResume": 111,
+   "motsNeufs": 3,
+   "exemplesNeufs": [
+    "etait",
+    "specialite",
+    "hanzo"
+   ],
+   "verdict": "plus-pauvre-que-le-resume"
+  },
+  {
+   "slug": "bungou",
+   "name": "Bungou",
+   "universe": "One Piece",
+   "type": "character",
+   "route": "langlink",
+   "identite": "meme-nom",
+   "titreFr": "Bungo",
+   "url": "https://onepiece.fandom.com/fr/wiki/Bungo",
+   "longueurTexte": 101,
+   "longueurResume": 102,
+   "motsNeufs": 11,
+   "exemplesNeufs": [
+    "bungo",
+    "etait",
+    "resident",
+    "capitale",
+    "fleurie",
+    "pays",
+    "avant",
+    "etre"
+   ],
+   "verdict": "plus-pauvre-que-le-resume"
+  }
+ ]
+}

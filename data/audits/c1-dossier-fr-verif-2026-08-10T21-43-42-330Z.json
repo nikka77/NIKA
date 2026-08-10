@@ -1,0 +1,706 @@
+{
+  "horodate": "2026-08-10T21:48:12.861Z",
+  "base": "http://localhost:3000",
+  "journal": "data/audits/c1-dossier-fr-journal-2026-08-10T21-06-43-142Z.json",
+  "fiches_ouvertes": 30,
+  "fiches_dont_TOUT_se_voit": 29,
+  "sections_en_base": 79,
+  "sections_vues": 78,
+  "resultats": [
+    {
+      "slug": "marchen",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/M%C3%A4rchen",
+      "http": 200,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "pirate-captain",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/Capitaine_Pirate",
+      "http": 200,
+      "sections_en_base": 5,
+      "sections_vues": 5,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Rôle du capitaine",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Devenir capitaine",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Autorité",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Capitaine Corsaire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Futilités",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "konoha-astronomer",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Astronome_de_Konoha",
+      "http": 200,
+      "sections_en_base": 3,
+      "sections_vues": 2,
+      "tout_vu": false,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Compétences",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "The Last : Naruto le film",
+          "titre_vu": false,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "valley-of-end",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Vall%C3%A9e_de_la_Fin",
+      "http": 200,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "fire-release-great-flame-flower",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Katon_-_Pluie_de_Boules_de_Feu",
+      "http": 200,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "neggy",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/Neggy",
+      "http": 200,
+      "sections_en_base": 4,
+      "sections_vues": 4,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Aptitudes et compétences",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Arc Rêverie",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Futilités",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "pine-peak",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/Pine_Peak",
+      "http": 200,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "desert-wave",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Vague_de_Sable",
+      "http": 200,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "bra",
+      "url_source": "https://dragonball.fandom.com/fr/wiki/Bra",
+      "http": 200,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Caractéristiques et personnalité",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Techniques",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "hobbit",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/Hobbit",
+      "http": 200,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "storm-release-laser-circus",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Ranton_-_Laser_Circus",
+      "http": 200,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "miss-merry-christmas",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/Drophy",
+      "http": 200,
+      "sections_en_base": 7,
+      "sections_vues": 7,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Personnalité",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Aptitudes et Compétences",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Combinaison avec Mr 4",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Arc Alabasta",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "La nouvelle mission de Miss Goldenweek: Refonder Baroque Works",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Futilités",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "hiruko-s-team",
+      "url_source": "https://naruto.fandom.com/fr/wiki/%C3%89quipe_Hiruko",
+      "http": 200,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "spiralling-serial-spheres",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Orbe_Furie",
+      "http": 200,
+      "sections_en_base": 3,
+      "sections_vues": 3,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Usage",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Influence du Senjutsu",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "chakra-blade-straight-line",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Lame_de_Chakra_-_Ligne_Droite",
+      "http": 200,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "explosive-tag-ball",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Boule_de_Parchemins_Explosifs",
+      "http": 200,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "lina",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/Lina",
+      "http": 200,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "sozu",
+      "url_source": "https://naruto.fandom.com/fr/wiki/S%C3%B4zu",
+      "http": 200,
+      "sections_en_base": 4,
+      "sections_vues": 4,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Personnalité",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Recherche de Tsunade",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "black-secret-technique-machine-one-shot",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Technique_de_la_Chambre_Noire",
+      "http": 200,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "genkidama",
+      "url_source": "https://dragonball.fandom.com/fr/wiki/Genki_Dama",
+      "http": 200,
+      "sections_en_base": 9,
+      "sections_vues": 9,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Description",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Appellations",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Le Genki Dama géant",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Le Genki Dama terrestre",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Le Genki Dama dans les films",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Le Genki Dama de Cell",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Le Genki Dama de Trunks du futur",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Jeux vidéo",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Notes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "mammouth",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/Mammouth",
+      "http": 200,
+      "sections_en_base": 3,
+      "sections_vues": 3,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Arc Dressrosa",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Arc Zou",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "renaisse",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/Renaisse",
+      "http": 200,
+      "sections_en_base": 3,
+      "sections_vues": 3,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Arc Little Garden",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Différence Live Action",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Futilité",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "continuous-tailed-beast-balls",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Salve_d'Orbes_D%C3%A9moniaques",
+      "http": 200,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "fruit-du-pousse-pousse",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/Oshi_Oshi_no_Mi",
+      "http": 200,
+      "sections_en_base": 3,
+      "sections_vues": 3,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Forces",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Usage",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Futilités",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "body-recreation-technique",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Technique_de_Recr%C3%A9ation_de_Corps",
+      "http": 200,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "earth-release-resurrection-technique-corpse-soil",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Technique_Doton_de_R%C3%A9surrection_-_Sol_de_Cadavres",
+      "http": 200,
+      "sections_en_base": 1,
+      "sections_vues": 1,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Vue d'ensemble",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "totto-land",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/Archipel_Totto_Land",
+      "http": 200,
+      "sections_en_base": 5,
+      "sections_vues": 5,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Disposition",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Mer",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Tartes",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Futilités",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "harahettania",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/Harahettania",
+      "http": 200,
+      "sections_en_base": 4,
+      "sections_vues": 4,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Habitants",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Géographie",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Histoire",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Futilité",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "okome",
+      "url_source": "https://onepiece.fandom.com/fr/wiki/Okome",
+      "http": 200,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Personnalité",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    },
+    {
+      "slug": "aho-bird",
+      "url_source": "https://naruto.fandom.com/fr/wiki/Oiseau_Ah%C3%B4",
+      "http": 200,
+      "sections_en_base": 2,
+      "sections_vues": 2,
+      "tout_vu": true,
+      "detail": [
+        {
+          "titre": "Apparence",
+          "titre_vu": true,
+          "texte_vu": true
+        },
+        {
+          "titre": "Anecdotes",
+          "titre_vu": true,
+          "texte_vu": true
+        }
+      ]
+    }
+  ]
+}

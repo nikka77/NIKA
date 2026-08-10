@@ -46,6 +46,7 @@ const ARG = (n, d) => process.argv.find((a) => a.startsWith(`--${n}=`))?.split('
 const SONDE = process.argv.includes('--sonde');
 const VERIF = process.argv.includes('--verif');
 const EXPLORE = process.argv.includes('--explore');   // mesure le rendement de TOUS les champs
+const CITANTS = process.argv.includes('--citants');   // + les fiches DÉJÀ connectées qui citent une isolée
 const UNIVERS = ARG('univers', 'Naruto');
 const HORODATE = new Date().toISOString().replace(/[:.]/g, '-');
 const UA = { 'User-Agent': 'NIKA-AKASHA/1.0 (audit graphe, contact tulbured06@gmail.com)' };
@@ -109,12 +110,127 @@ const WIKIS_HTML = {
   //     épisodes, comédiens, unités monétaires — hors périmètre encyclopédique, 0 fiche en base.
   'One Piece': {
     hote: 'onepiece.fandom.com',
-    champs: ['affiliation', 'occupation', 'residence', 'region'],
+    // VAGUE 7 (10/08) — `owner`, `captain` et `dfname` ENTRENT, non plus dans le sens du champ mais
+    // sous les règles de REGLES_CHAMP, qui leur donnent le sens et la nature exacts que la vague 5
+    // avait nommés sans pouvoir les écrire. Mesuré à nouveau sur les 284 isolées restantes
+    // (--explore, 82 pages rendues) : owner 33 liens / 16 résolus (15 vers un personnage),
+    // captain 15 / 3, dfname 3 / 2. Les cibles hors de ces types sont refusées, pas repliées :
+    // « L'équipage des Candys → Candy » tombe sur une fiche de type `place`, et reste dehors.
+    champs: ['affiliation', 'occupation', 'residence', 'region', 'owner', 'captain', 'dfname'],
     // Le libellé du rōmaji sur ce wiki est la clé `data-source` de la portable infobox : `rname`
     // (240 occurrences relevées sur les 249 pages rendues). « Romanized Name » est le libellé
     // AFFICHÉ, que `lignesInfobox` ne voit pas en forme B — mesuré, 0 pont avec l'autre valeur.
     champRomaji: 'rname',
   },
+  // ═══ VAGUE 7 (10/08) — LES SIX UNIVERS QUE CETTE MÉTHODE N'AVAIT JAMAIS TOUCHÉS ═══════════
+  // 257 des 580 isolées restantes y vivent, et aucune n'a jamais vu passer une lecture d'infobox
+  // RENDUE : les vagues 1 à 6 ne sont allées que sur Naruto puis One Piece. Le mur du SENS SOURCE
+  // y est aussi beaucoup plus bas — un nom propre (« Killua Zoldyck », « Ryuk », « Takeshi
+  // Nakazato ») s'écrit pareil dans les deux langues, là où One Piece nous oppose « Île Obscuria ».
+  // `champs` renseigné APRÈS mesure (--explore), jamais avant : voir les commentaires par univers.
+  // CHOIX DES CHAMPS, MESURÉ (--explore du 10/08, 71 pages rendues, 969 cibles brutes,
+  // trace data/audits/isolees-html-dragon-ball-explore-2026-08-10T18-5*.json) :
+  //   · `user` (253 liens, 86 résolus, 84 vers un personnage) ÉCARTÉ APRÈS RELECTURE DES 20 CAS,
+  //     et c'est le refus le plus cher de cette vague : il coûte 81 arêtes et 20 isolées. Le champ
+  //     nomme qui SE SERT de l'objet, pas qui le détient, et notre vocabulaire n'a pas « utilise ».
+  //     Les 20 candidats relus donnaient « Beerus possède les Dragon Balls », « Krillin possède la
+  //     Machine à remonter le temps », « Vegeta possède les Haricots Senzu » : 17 défauts sur 20,
+  //     soit 85 % — dix-sept fois le plafond. C'est mot pour mot la leçon payée sur le champ
+  //     `users` de Naruto : un lien dans le bon champ n'est pas encore un fait du bon type.
+  //     Le contraste avec `owner` (One Piece) est le critère à retenir : `owner` NOMME la
+  //     détention, `user` nomme l'usage — seul le premier a une phrase chez nous.
+  //   · `allegiance` (47 / 1) et `address` (14 / 1) : sens direct, phrase exacte.
+  //   · `inventor` (31 / 8) ÉCARTÉ : « Bulma a INVENTÉ le Metamo-Ring » — notre vocabulaire n'a
+  //     pas « invente », et un inventeur n'est pas un propriétaire.
+  //   · `similar` (82 / 9), `counterparts` (18 / 2), `altname` (4 / 2) ÉCARTÉS : ils disent une
+  //     ressemblance ou une IDENTITÉ (« Shen » = « Kami »), pas un lien entre deux entités.
+  //   · `famconnect` (23 / 3) ÉCARTÉ : sa nature juste est `famille`, réflexive — autre chantier.
+  //   · `ruler` (5 / 3) ÉCARTÉ : « Kami RÈGNE sur la Salle de l'Esprit » n'a pas de nature chez
+  //     nous, et `natureDe` en ferait « appartient ».
+  //   · `appears in` (135), `anime debut` (45), `date of death` (68), `debut` (51), `race` (47) :
+  //     séries, épisodes, dates, espèces — 0 cible en base.
+  'Dragon Ball': {
+    hote: 'dragonball.fandom.com',
+    champs: ['allegiance', 'address'],
+  },
+  // MESURÉ (--explore, 7 pages rendues seulement — 22 des 42 isolées Bleach sont des
+  // redirections vers une SECTION, traitées par le second gisement ci-dessous) :
+  // affiliation 5 / 4 · base of operations 6 / 2 · profession 2 / 2.
+  //   · `partner` (4 / 2) et `previous partner` (3 / 3) ÉCARTÉS : cibles personnes sans nature
+  //     chez nous, et « previous » dit un état révolu jusque dans son nom.
+  //   · `race` (7 / 0), `education`, `division`, `manga/anime debut` : 0 cible en base.
+  Bleach: {
+    hote: 'bleach.fandom.com',
+    champs: ['affiliation', 'base of operations', 'profession'],
+  },
+  // MESURÉ (--explore, 6 pages rendues sur 49 isolées — 10 redirections de section vers
+  // « Minor Characters », qui n'est pas une entité) :
+  //   · `user` (4 liens, 4 résolus) : le champ des MEMBRES d'un groupe (« Hommes du Pilier →
+  //     Kars, Esidisi, Wamuu, Santana »). Arête INVERSE `appartient` — voir REGLES_CHAMP.
+  //   · `stand` (4 / 0) : nature juste `maitrise`, mais 0 cible en base — rien à écrire.
+  //   · `cod` (3 / 1) ÉCARTÉ : « cause of death », aucune nature chez nous.
+  "JoJo's Bizarre Adventure": {
+    hote: 'jojo.fandom.com',
+    champs: ['user'],
+  },
+  // MESURÉ (--explore, 13 pages rendues) : `abilities` 1 / 1 (→ Nen, type skill, nature juste
+  // `maitrise` — voir REGLES_CHAMP). `previous occupation` (7 / 1) ÉCARTÉ : « previous » dit le
+  // révolu dans son nom même. `occupation` (2 / 1) ÉCARTÉ : sa cible résolue est Nen, une
+  // compétence — `natureDe` en ferait « appartient à Nen », qui ne veut rien dire.
+  'Hunter x Hunter': {
+    hote: 'hunterxhunter.fandom.com',
+    champs: ['abilities'],
+  },
+  // MESURÉ (--explore, 6 pages rendues sur 10 isolées) : AUCUN champ ne résout une seule cible.
+  // `species` (6 / 0) ne vise que « Human », `occupation` (1 / 0) une université, `manga`/`anime`
+  // (11 / 0) des chapitres. Ce wiki ne peut RIEN pour nos 10 isolées — c'est la mesure, pas un
+  // renoncement, et la liste reste déclarée pour le jour où ces cibles existeront.
+  'Death Note': { hote: 'deathnote.fandom.com', champs: ['affiliation', 'occupation'] },
+  // MESURÉ (--explore, 3 pages rendues sur 5 isolées) : `alias` (3 / 1) dit une IDENTITÉ, pas un
+  // lien ; `team(s)` (1 / 1) rattache le Mont Usui à l'équipe Impact Blue — une route n'appartient
+  // pas à une écurie. Rien d'exact à écrire.
+  'Initial D': { hote: 'initiald.fandom.com', champs: ['affiliation', 'team', 'occupation'] },
+};
+
+/* ═══ QUAND LE SENS DU CHAMP N'EST PAS LE SENS DE L'ARÊTE (vague 7, 10/08) ════════════════════
+ * `natureDe` suppose que le champ d'infobox se lit dans le sens « notre fiche → la cible ». Quatre
+ * familles de champs disent l'inverse, et les vagues précédentes les ont donc TOUS écartés plutôt
+ * que d'écrire une phrase fausse :
+ *   · `owner` / `user` — le champ nomme QUI porte l'objet. La fiche est l'objet, la phrase juste
+ *     est « Mihawk POSSÈDE le Navire-Cercueil » : sens inverse, nature `possede`.
+ *   · `captain` (One Piece) / `user` (JoJo) — le champ nomme les MEMBRES d'un groupe. La fiche est
+ *     le groupe : « Basil Hawkins APPARTIENT À l'équipage de Hawkins ». Sens inverse, `appartient`.
+ * Deux autres disent le bon sens mais pas la bonne nature :
+ *   · `dfname` (One Piece), `abilities` (Hunter x Hunter) — « maîtrise », jamais « appartient ».
+ *
+ * CHAQUE RÈGLE PORTE SES CONDITIONS DE TYPE, et c'est ce qui a manqué aux vagues précédentes :
+ * « L'équipage des Candys → Candy » tombe sur une de nos fiches de type `place`, « Noko (place)
+ * → Fruit du Sommeil » part d'un lieu. Une règle qui ne vérifie pas les deux bouts écrit un fait
+ * juste dans une phrase fausse. Une cible qui ne satisfait aucune condition est REFUSÉE, jamais
+ * repliée sur le sens direct.
+ *
+ * ⚠️ `possede` A ÉTÉ VÉRIFIÉ AU RENDU AVANT D'ÊTRE ÉCRIT (règle du soir du 10/08) : la fiche
+ * `tenten` affiche « Possède », `yoru` et `thousand-sunny` affichent « Possédé par · 1 ». Les deux
+ * demi-arêtes se voient. Idem `appartient`, la nature la plus rendue du corpus, et `maitrise`. */
+const REGLES_CHAMP = {
+  owner: [{ de: ['artifact', 'place', 'status'], vers: ['character'], sens: 'inverse', nature: 'possede' }],
+  user: [
+    { de: ['artifact'], vers: ['character'], sens: 'inverse', nature: 'possede' },
+    { de: ['status'], vers: ['character'], sens: 'inverse', nature: 'appartient' },
+  ],
+  captain: [{ de: ['status'], vers: ['character'], sens: 'inverse', nature: 'appartient' }],
+  dfname: [{ de: ['character'], vers: ['power'], sens: 'direct', nature: 'maitrise' }],
+  abilities: [{ de: ['character'], vers: ['skill', 'power'], sens: 'direct', nature: 'maitrise' }],
+  // `affiliation` garde son sens direct par défaut ; ce cas-ci ne s'applique QUE lorsque la fiche
+  // est un objet et la cible une personne — « Navire-Cercueil / affiliation : Dracule Mihawk ».
+  affiliation: [
+    { de: ['artifact'], vers: ['character'], sens: 'inverse', nature: 'possede' },
+    // Relu sur les 28 candidats du mode --citants : « Tomeo --appartient--> Lady Mary », où Lady
+    // Mary est un NAVIRE. Le wiki met le nom du bateau dans `affiliation` parce qu'il vaut pour
+    // son équipage ; nous, nous écririons qu'une personne appartient à un objet. Une affiliation
+    // est un groupe, un lieu ou un métier — jamais une chose. Refus explicite, pas repli.
+    { de: ['character'], vers: ['artifact'], refuse: true },
+  ],
 };
 
 const cfg = WIKIS_HTML[UNIVERS];
@@ -230,6 +346,26 @@ const detague = (s) => String(s ?? '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;|
  *  et on refuse la cible s'il y annonce un état révolu. Le champ garde ses autres cibles. */
 const NS_EXCLUS = /^(File|Image|Category|Template|Help|User|Talk|Special|Project|Module|MediaWiki|Forum|Blog|Infobox)\s*:/i;
 const REVOLU = /\(\s*(former|formerly|ex-)/i;
+
+/* UNE SUITE DE PROPRIÉTAIRES N'EST PAS UNE LISTE DE PROPRIÉTAIRES (vague 7, resserrage mesuré).
+ * Le champ `owner` de onepiece.fandom.com écrit la CHAÎNE des détenteurs successifs, séparés par
+ * une flèche : « Kashu / owner : Mr. 11 → Tashigi », « Enma / owner : Shimotsuki Kouzaburou →
+ * Kouzuki Oden → Kouzuki Hiyori → Roronoa Zoro ». Tous sauf le dernier sont des propriétaires
+ * PASSÉS, et nos libellés sont au présent : « Mr. 11 possède Kashu » affirme le contraire du canon
+ * alors que Tashigi la porte. C'est le même défaut que « (former) » (leçon du 10/08), sous une
+ * autre notation — le qualificateur n'est plus un mot, c'est une flèche.
+ * Un seul défaut sur les 20 cas relus, mais il ne se répare pas en resserrant le seuil : il se
+ * répare en lisant la flèche. On garde le DERNIER segment qui contient un lien — « → Damaged » de
+ * Yubashiri n'en contient aucun, et l'on retombe alors sur « Roronoa Zoro », qui est le bon. */
+const FLECHE = /→|&rarr;|&#8594;|-&gt;|->/;
+const CHAMPS_CHAINE = new Set(['owner']);
+function dernierMaillon(src) {
+  const bouts = String(src ?? '').split(FLECHE);
+  if (bouts.length < 2) return src;
+  for (let i = bouts.length - 1; i >= 0; i--) if (/<a\b/i.test(bouts[i])) return bouts[i];
+  return src;
+}
+
 function ciblesDuHtml(fragment) {
   const out = new Map();      // titre → { titre, ancre, libelle }
   const src = String(fragment ?? '');
@@ -365,6 +501,37 @@ const natureDe = (source, cible) => {
   return 'appartient';
 };
 
+/** L'arête que produit un couple (fiche, cible) LU DANS UN CHAMP DONNÉ — ou `null` si aucune
+ *  phrase exacte n'est possible. C'est le SEUL endroit du script qui décide d'un sens, et il
+ *  refuse plutôt que de replier une règle non satisfaite sur le sens direct : un champ inverse
+ *  dont les types ne collent pas ne dit rien, il ne dit pas le contraire. */
+const areteDe = (source, cible, champ) => {
+  const cle = String(champ ?? '').toLowerCase().trim();
+  const regles = REGLES_CHAMP[cle];
+  for (const r of regles ?? []) {
+    if (!r.de.includes(source.type) || !r.vers.includes(cible.type)) continue;
+    if (r.refuse) return null;
+    return r.sens === 'inverse'
+      ? { from: cible, to: source, relation: r.nature, sens: 'inverse', regle: `champ « ${champ} » → arête INVERSE de nature « ${r.nature} »` }
+      : { from: source, to: cible, relation: r.nature, sens: 'direct', regle: `champ « ${champ} » → nature « ${r.nature} »` };
+  }
+  // RESSERRAGE MESURÉ (vague 7, avant toute écriture) : un champ QUI A UNE RÈGLE et dont aucune
+  // condition de type n'est satisfaite doit être REFUSÉ, jamais replié sur le sens direct. Le repli
+  // avait produit deux des quatre défauts des 20 cas relus : « Noko (place) --appartient--> Fruit
+  // du Sommeil » (la règle `dfname` exige une source `character`) et « L'équipage des Candys
+  // --appartient--> Candy (place) » (la règle `captain` exige une cible `character`) — soit
+  // exactement les deux pièges que la vague 5 avait nommés. Le commentaire de REGLES_CHAMP le
+  // promettait déjà ; le code ne le faisait pas.
+  // `affiliation` est la seule exception, et elle est explicite : sa règle ne couvre qu'un cas
+  // PARTICULIER (objet → personne), son sens direct reste valable partout ailleurs.
+  if (regles && cle !== 'affiliation') return null;
+  // Défaut : sens direct, nature lue dans le graphe existant. Une cible PERSONNE n'y a jamais sa
+  // place — une appartenance, une équipe, un clan, un métier, une résidence ne sont jamais quelqu'un.
+  if (cible.type === 'character') return null;
+  const n = natureDe(source, cible);
+  return { from: source, to: cible, relation: n, sens: 'direct', regle: `champ « ${champ} » → nature « ${n} » (défaut du graphe)` };
+};
+
 /* ═══ Saut 1 — identifier la page de chaque isolée, sans se tromper de page ═══════════════════ */
 const journal = { pageAbsente: [], redirectionSection: [], pagePartagee: [], sansInfobox: [], sansChampUtile: [], cibleRefusee: [], qualificateurRevolu: [] };
 
@@ -391,11 +558,88 @@ for (const e of lot) {
   // « Konpira » renvoie vers « Gion#Weapons » ; l'infobox lue serait celle de Gion.
   if (p.fragment) { journal.redirectionSection.push(`${e.name} → ${p.fragment}`); continue; }
   if (compteurPage.get(p.titre) > 1) { journal.pagePartagee.push(`${e.name} → « ${p.titre} » (${compteurPage.get(p.titre)} fiches)`); continue; }
+  // GARDE 3 — LA PAGE D'AUTRUI (vague 7, 10/08, mesurée sur 6 candidats faux avant écriture).
+  // GARDE 1 n'attrape que les redirections vers une SECTION. Une redirection dure SANS fragment
+  // vers la page d'une AUTRE de nos fiches est tout aussi trompeuse et ne se signale nulle part :
+  // le wiki envoie « Ashisogi Jizo » (le zanpakutō de Mayuri) sur la page « Mayuri Kurotsuchi »,
+  // et l'infobox qu'on y lit est celle de MAYURI. Sans cette garde, la fiche du sabre déclarait
+  // « appartient au Gotei 13 », « habite la Soul Society », « exerce Shinigami » — trois faits
+  // vrais de son porteur, faux d'elle. Idem « Hyourinmaru » → « Tōshirō Hitsugaya ».
+  // Le signal est gratuit et il est dans NOTRE corpus : si le titre atteint désigne une fiche à
+  // nous dont l'identifiant diffère, la page n'est pas la nôtre. (Le compteur de GARDE 2 ne le
+  // voit pas : une seule de nos fiches réclame cette page-là.)
+  const proprietaire = resoudre(UNIVERS, p.titre);
+  if (proprietaire && proprietaire.id !== e.id) {
+    journal.pageDAutrui ??= [];
+    journal.pageDAutrui.push(`${e.name} → « ${p.titre} », qui EST notre fiche ${proprietaire.slug} (${proprietaire.type})`);
+    continue;
+  }
   // Mesure de la cause du chantier : l'infobox est-elle vide dans le wikitexte ?
   if (/\{\{\s*Infobox\s*\}\}/i.test(p.texte)) wikitexteNu++;
   aLire.push({ e, titreWiki: p.titre });
 }
 console.log(`  ${aLire.length} pages à rendre · ${wikitexteNu} d'entre elles ont un « {{Infobox}} » NU dans le wikitexte`);
+
+/* ═══ MODE --citants — LE LIEN QUI EXISTE EN PUISSANCE ET QUE PERSONNE NE VIENT POSER ═════════
+ * Ce script ne parcourt que les fiches ISOLÉES. C'est sa raison d'être et c'est aussi son angle
+ * mort, mesuré par la vague 6 : « Archipel Totto Land » est cité par 14 fiches DÉJÀ connectées,
+ * qu'aucune passe ne crawle plus — la fiche cible est née isolée et le restera, non par manque de
+ * source mais parce que personne ne lit la page qui la nomme.
+ *
+ * La réponse évidente — parcourir tout l'univers — coûte 2 273 rendus pour One Piece. Le wiki sait
+ * répondre bien moins cher : `list=backlinks` rend, pour la page d'une de nos isolées, la liste des
+ * pages qui la citent. On n'ouvre alors QUE l'intersection de cette liste avec notre corpus.
+ * Le filtre final est le seul qui compte : on ne garde que les arêtes dont un bout est ENCORE
+ * isolé. Les autres sont peut-être vraies, mais elles ne sont pas ce chantier-ci. */
+async function backlinks(hote, titre) {
+  const out = [];
+  let cont = null;
+  for (let tour = 0; tour < 4; tour++) {
+    const u = `https://${hote}/api.php?action=query&list=backlinks&format=json&formatversion=2`
+      + `&blnamespace=0&bllimit=500&blfilterredir=all&bltitle=${encodeURIComponent(titre)}`
+      + (cont ? `&blcontinue=${encodeURIComponent(cont)}` : '');
+    try {
+      const r = await fetch(u, { headers: UA, signal: AbortSignal.timeout(30_000) });
+      if (!r.ok) break;
+      const j = await r.json();
+      for (const b of j.query?.backlinks ?? []) out.push(b.title);
+      cont = j.continue?.blcontinue;
+      if (!cont) break;
+    } catch { break; }
+  }
+  return out;
+}
+
+if (CITANTS) {
+  const dejaLues = new Set(aLire.map((x) => x.titreWiki));
+  const titresIsolees = [...dejaLues];
+  console.log(`\n→ --citants : qui, dans le corpus, cite les ${titresIsolees.length} pages de nos isolées ?`);
+  const citantsBruts = new Map();          // titre citant → [titres d'isolées qu'il cite]
+  for (let i = 0; i < titresIsolees.length; i++) {
+    process.stdout.write(`\r  backlinks ${i + 1}/${titresIsolees.length}`);
+    for (const b of await backlinks(cfg.hote, titresIsolees[i])) {
+      if (dejaLues.has(b)) continue;                       // une isolée qui en cite une autre : déjà dans le lot
+      citantsBruts.set(b, [...(citantsBruts.get(b) ?? []), titresIsolees[i]]);
+    }
+    await dormir(120);
+  }
+  console.log(`\n  ${citantsBruts.size} pages citantes distinctes sur le wiki`);
+  // On n'ouvre que celles qui SONT une de nos fiches : le reste du wiki ne nous concerne pas.
+  const retenus = [];
+  for (const [titre, cite] of citantsBruts) {
+    const f = resoudre(UNIVERS, titre);
+    if (!f || f.universe !== UNIVERS) continue;
+    retenus.push({ e: f, titreWiki: titre, cite });
+  }
+  retenus.sort((a, b) => b.cite.length - a.cite.length);
+  const PLAFOND = Number(ARG('plafond', 400));
+  const garde = retenus.slice(0, PLAFOND);
+  journal.citantsPlafonnes = retenus.length > PLAFOND ? retenus.length - PLAFOND : 0;
+  console.log(`  ${retenus.length} d'entre elles sont une de NOS fiches ${UNIVERS}`
+    + (journal.citantsPlafonnes ? ` · ${journal.citantsPlafonnes} au-delà du plafond de ${PLAFOND}, NON lues` : '')
+    + ` — ${garde.length} pages ajoutées au lot à rendre`);
+  for (const g of garde) aLire.push({ e: g.e, titreWiki: g.titreWiki });
+}
 
 /* ═══ Saut 2 — lire l'infobox rendue ═════════════════════════════════════════════════════════ */
 const brut = [];                  // { e, champ, titre, ancre, libelle, url, ligne }
@@ -411,7 +655,9 @@ for (let i = 0; i < aLire.length; i++) {
   for (const l of libellesVus) libellesGlobaux.set(l, (libellesGlobaux.get(l) ?? 0) + 1);
   let n = 0;
   for (const l of lignes) {
-    for (const c of ciblesDuHtml(l.html)) {
+    const valeur = CHAMPS_CHAINE.has(l.champ) ? dernierMaillon(l.html) : l.html;
+    if (valeur !== l.html) journal.chaineTronquee ??= [], journal.chaineTronquee.push(`${e.name} · ${l.champ} : « ${l.texte.slice(0, 120)} » → dernier maillon retenu`);
+    for (const c of ciblesDuHtml(valeur)) {
       if (c.revolu) { journal.qualificateurRevolu.push(`${e.name} --${l.champ}--> ${c.titre} (« ${c.revolu} »)`); continue; }
       brut.push({
         e, champ: l.champ, ...c,
@@ -506,29 +752,110 @@ for (const b of brut) {
   const pont = pontRomaji.get(p.titre) ?? pontRomaji.get(b.titre);
   const cible = resoudre(UNIVERS, p.titre) ?? resoudre(UNIVERS, b.titre) ?? pont?.fiche ?? null;
   if (!cible) { echecs.push({ ...b, e: b.e.name, motif: `aucune fiche ${UNIVERS} nommée « ${p.titre} »` }); continue; }
-  // Une appartenance, une équipe, un clan, un métier ne sont JAMAIS une personne.
-  if (cible.type === 'character') { journal.cibleRefusee.push(`${b.e.name} --${b.champ}--> ${cible.name} (personne)`); echecs.push({ ...b, e: b.e.name, motif: `cible de type personnage (${cible.name})` }); continue; }
   if (cible.id === b.e.id) continue;
   if (cible.universe !== b.e.universe) continue;                 // garde-fou inter-univers
-  const relation = natureDe(b.e, cible);
-  const cle = `${b.e.id}|${cible.id}|${relation}`;
+  const a = areteDe(b.e, cible, b.champ);
+  if (!a) { journal.cibleRefusee.push(`${b.e.name} --${b.champ}--> ${cible.name} (personne, et aucune règle de champ ne couvre ce couple de types)`); echecs.push({ ...b, e: b.e.name, motif: `cible de type personnage (${cible.name})` }); continue; }
+  const relation = a.relation;
+  const cle = `${a.from.id}|${a.to.id}|${relation}`;
   if (areteExistante.has(cle) || vues.has(cle)) continue;
   vues.add(cle);
   candidats.push({
-    from_entry: b.e.id, to_entry: cible.id, relation,
-    de: b.e.name, deSlug: b.e.slug, deType: b.e.type,
-    vers: cible.name, versSlug: cible.slug, versType: cible.type,
+    from_entry: a.from.id, to_entry: a.to.id, relation, sens: a.sens,
+    de: a.from.name, deSlug: a.from.slug, deType: a.from.type,
+    vers: a.to.name, versSlug: a.to.slug, versType: a.to.type,
+    lue: b.e.name, gisement: 'infobox',
     champ: b.champ, titreWiki: b.titre, titreResolu: p.titre, ancre: b.ancre, libelleAffiche: b.libelle,
     voie: pont && !resoudre(UNIVERS, p.titre) && !resoudre(UNIVERS, b.titre) ? 'rōmaji' : 'nom direct',
-    sauveDe: estIsolee(b.e.id), sauveVers: estIsolee(cible.id),
+    sauveDe: estIsolee(a.from.id), sauveVers: estIsolee(a.to.id),
     source_url: b.url,
     preuve: `${b.url} · infobox rendue, ligne « ${b.ligne} » → lien /wiki/${b.titre.replace(/ /g, '_')}`
       + (p.titre !== b.titre ? ` (redirige vers « ${p.titre} »)` : '')
       + (pont && !resoudre(UNIVERS, p.titre) && !resoudre(UNIVERS, b.titre)
         ? ` ; ${pont.url} porte « Rōmaji : ${pont.romaji} », égal à la parenthèse de notre fiche`
         : ` ; fiche ${UNIVERS} de ce nom :`)
-      + ` ${cible.name} (${cible.slug}, type ${cible.type})`,
+      + ` ${cible.name} (${cible.slug}, type ${cible.type}) ; ${a.regle}`,
   });
+}
+
+/* ═══ SECOND GISEMENT — LA REDIRECTION DURE VERS UNE SECTION (vague 7, 10/08) ═════════════════
+ * GARDE 1 refuse depuis la vague 4 toute fiche dont le titre redirige vers « Page#Section » : lire
+ * l'infobox de la page atteinte, ce serait prêter à notre fiche celle d'une AUTRE entité. La garde
+ * est juste et elle reste. Mais elle jetait avec l'eau du bain un FAIT que la redirection énonce
+ * elle-même, et qui est le premier gisement des isolées de Bleach (22 des 42) et le troisième de
+ * One Piece (15) : une redirection dure dit « ce dont je parle est traité DANS cet article-là ».
+ *
+ * Deux formes seulement sont retenues, parce que deux seulement portent une phrase exacte :
+ *   · La page atteinte est un GROUPE ou un LIEU de notre corpus — « Acrobatic Fuwas #1 →
+ *     Buggy Pirates#Acrobatic Fuwas », « Arrow → Tsumegeri Guards#Arrow ». La phrase est
+ *     l'appartenance, écrite par `natureDe` comme partout ailleurs.
+ *   · La section s'appelle « Zanpakutō » ou « Weapons » et la page atteinte est un PERSONNAGE —
+ *     « Suzumebachi → Suì-Fēng#Zanpakutō », « Konpira → Gion#Weapons ». Le nom de la section EST
+ *     le nom de la relation ; l'arête est INVERSE et de nature `possede`, exactement les 6 arêtes
+ *     `possede` que Bleach porte déjà (`byakuya-kuchiki → senbonzakura`).
+ *
+ * REFUSÉ, et c'est le cœur de la règle : une section qui porte simplement NOTRE NOM dans l'article
+ * d'un PERSONNAGE (« Baigon → Orihime Inoue#Baigon ») ne nomme aucune relation — elle dit où le
+ * wiki a rangé son paragraphe, pas ce que les deux entités sont l'une pour l'autre. Et les pages
+ * de ramassage (« Minor Characters », « List of tertiary characters », « Miscellaneous Shinigami »)
+ * ne sont pas des entités : elles ne résolvent sur aucune de nos fiches, donc elles ne produisent
+ * rien — la garde est le corpus lui-même, pas une liste de titres à maintenir. */
+const SECTION_POSSESSION = new Set(['zanpakuto', 'zanpakutō', 'weapons', 'weapon', 'sword', 'swords']);
+const fragCand = [];
+for (const e of lot) {
+  const p = pagesSource.get(titreDemande(e));
+  if (!p?.fragment) continue;
+  const [titreCible, ...reste] = p.fragment.split('#');
+  const section = reste.join('#');
+  const cible = resoudre(UNIVERS, titreCible);
+  if (!cible || cible.id === e.id || cible.universe !== e.universe) {
+    journal.fragmentSansCible ??= [];
+    journal.fragmentSansCible.push(`${e.name} → ${p.fragment}${cible ? '' : ' (page de ramassage : aucune fiche de ce nom)'}`);
+    continue;
+  }
+  let a = null;
+  if (cible.type === 'character') {
+    if (SECTION_POSSESSION.has(section.toLowerCase().trim())) a = { from: cible, to: e, relation: 'possede', sens: 'inverse', regle: `section « ${section} » → arête INVERSE de nature « possede »` };
+  } else {
+    const n = natureDe(e, cible);
+    a = { from: e, to: cible, relation: n, sens: 'direct', regle: `page de groupe/lieu → nature « ${n} »` };
+  }
+  if (!a) {
+    journal.fragmentRefuse ??= [];
+    journal.fragmentRefuse.push(`${e.name} → ${p.fragment} (section dans l'article d'un personnage, aucune relation nommée)`);
+    continue;
+  }
+  const cle = `${a.from.id}|${a.to.id}|${a.relation}`;
+  if (areteExistante.has(cle) || vues.has(cle)) continue;
+  vues.add(cle);
+  const c = {
+    from_entry: a.from.id, to_entry: a.to.id, relation: a.relation, sens: a.sens,
+    de: a.from.name, deSlug: a.from.slug, deType: a.from.type,
+    vers: a.to.name, versSlug: a.to.slug, versType: a.to.type,
+    lue: e.name, gisement: 'redirection de section',
+    champ: `redirection → #${section}`, titreWiki: titreDemande(e), titreResolu: titreCible, ancre: section, libelleAffiche: null,
+    voie: 'redirection dure', sauveDe: estIsolee(a.from.id), sauveVers: estIsolee(a.to.id),
+    source_url: `https://${cfg.hote}/wiki/${encodeURIComponent(titreDemande(e).replace(/ /g, '_'))}`,
+    preuve: `https://${cfg.hote}/wiki/${encodeURIComponent(titreDemande(e).replace(/ /g, '_'))}`
+      + ` · le wiki redirige ce titre vers « ${p.fragment} » (redirection DURE, api.php action=query&redirects=1, champ tofragment)`
+      + ` ; fiche ${UNIVERS} nommée « ${titreCible} » : ${cible.name} (${cible.slug}, type ${cible.type}) ; ${a.regle}`,
+  };
+  fragCand.push(c);
+  candidats.push(c);
+}
+console.log(`\n→ second gisement (redirections de section) : ${fragCand.length} arête(s) candidate(s)`
+  + ` · ${journal.fragmentSansCible?.length ?? 0} sans fiche cible · ${journal.fragmentRefuse?.length ?? 0} refusées (section dans un article de personnage)`);
+
+/* En mode --citants, le lot contient des fiches DÉJÀ connectées : leurs infobox produisent quantité
+ * d'arêtes vraies mais hors sujet (« Sanji habite East Blue »). Ce chantier ne pose que ce qui SORT
+ * une fiche de l'isolement — le reste appartient à un chantier d'enrichissement, pas à celui-ci. */
+if (CITANTS) {
+  const avantFiltre = candidats.length;
+  const garde = candidats.filter((c) => estIsolee(c.from_entry) || estIsolee(c.to_entry));
+  candidats.length = 0;
+  candidats.push(...garde);
+  console.log(`\n--citants : ${avantFiltre} arêtes candidates, dont ${garde.length} touchent une fiche ENCORE isolée`
+    + ` (${avantFiltre - garde.length} écartées : vraies peut-être, mais elles ne sortent personne de l'isolement)`);
 }
 
 /* ═══ Bilan mesuré AVANT toute écriture ══════════════════════════════════════════════════════ */
@@ -564,9 +891,10 @@ if (VERIF) {
   console.log('\n=== 20 CAS À RELIRE À LA MAIN ===');
   const pas = Math.max(1, Math.floor(candidats.length / 20));
   for (const c of candidats.filter((_, i) => i % pas === 0).slice(0, 20)) {
-    console.log(`\n· ${c.de} (${c.deType}) --${c.relation}--> ${c.vers} (${c.versType})`);
+    console.log(`\n· ${c.de} (${c.deType}) --${c.relation}--> ${c.vers} (${c.versType})   [sens ${c.sens}, lu sur la fiche « ${c.lue} », gisement ${c.gisement}]`);
     console.log(`  champ « ${c.champ} » · lien [[${c.titreWiki}]]${c.titreResolu !== c.titreWiki ? ` → « ${c.titreResolu} »` : ''} · libellé affiché « ${c.libelleAffiche} »`);
     console.log(`  ${c.source_url}`);
+    console.log(`  preuve : ${c.preuve}`);
   }
 }
 

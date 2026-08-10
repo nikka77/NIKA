@@ -1,0 +1,353 @@
+{
+  "horodate": "2026-08-10T18:49:27.828Z",
+  "duree_ms": 8259,
+  "corpus": {
+    "fiches": 7698,
+    "sections_lignes": 19084,
+    "fiches_avec_dossier_rendu": 4776,
+    "fiches_sans_dossier_rendu": 2922,
+    "fiches_a_sections_toutes_sans_titre": 0
+  },
+  "sans_dossier": {
+    "par_type": {
+      "power": 1531,
+      "character": 579,
+      "artifact": 256,
+      "status": 253,
+      "profession": 85,
+      "place": 189,
+      "skill": 29
+    },
+    "distribution_descFr": {
+      "0-200": 743,
+      "200-400": 1275,
+      "400-600": 725,
+      "600-900": 127,
+      "900-1200": 31,
+      "1200-2000": 21,
+      "2000-4000": 0,
+      "4000-Infinity": 0
+    },
+    "sans_descFr": 259
+  },
+  "avec_dossier": {
+    "par_type": {
+      "character": 3452,
+      "power": 828,
+      "place": 178,
+      "status": 103,
+      "skill": 51,
+      "artifact": 144,
+      "profession": 20
+    }
+  },
+  "question2": {
+    "descFr_sup_900": 52,
+    "ET_rupture_reperable": 9,
+    "sans_rupture": 43,
+    "par_nature_de_rupture": {
+      "marqueurs": 9
+    },
+    "candidats_a_vraie_articulation": 0,
+    "candidats_par_marqueur_seul": 9
+  },
+  "echantillon_candidats": [
+    {
+      "slug": "yogengyo",
+      "name": "Yogengyo",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "len": 1053,
+      "ruptures": [
+        {
+          "nature": "marqueurs",
+          "n": 1,
+          "preuve": [
+            {
+              "marqueur": "Au cours de",
+              "preuve": "ne double ration quotidienne. Au cours de diverses sagas (God of Destruction Beerus, Golden Frieza, "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "izaemon-toudou",
+      "name": "Izaemon Toudou",
+      "type": "character",
+      "universe": "Bleach",
+      "len": 1491,
+      "ruptures": [
+        {
+          "nature": "marqueurs",
+          "n": 4,
+          "preuve": [
+            {
+              "marqueur": "Plus tard",
+              "preuve": "ieutenante Hiyori pour aider. Plus tard dans la nuit, il revint au camp avec Kaname Tōsen, faisant r"
+            },
+            {
+              "marqueur": "Après la",
+              "preuve": "sagi et ses amis d'un Hollow. Après la bataille, ils apprirent de Mashiro Kuna (absente durant le co"
+            },
+            {
+              "marqueur": "Apparence",
+              "preuve": "on capitaine Kensei Muguruma. Apparence : Tōdō porte ses cheveux noirs en une haute queue de cheval "
+            },
+            {
+              "marqueur": "Histoire",
+              "preuve": " un col montant jusqu'au cou. Histoire : arc « Turn Back the Pendulum ». Tōdō fut d'abord présenté l"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "majin-buu",
+      "name": "Majin Buu",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "len": 1611,
+      "ruptures": [
+        {
+          "nature": "marqueurs",
+          "n": 1,
+          "preuve": [
+            {
+              "marqueur": "Plus tard",
+              "preuve": "nocent, semblable à un génie. Plus tard dans la série, on révèle que la forme originelle de Buu est "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "namu",
+      "name": "Namu",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "len": 1673,
+      "ruptures": [
+        {
+          "nature": "marqueurs",
+          "n": 1,
+          "preuve": [
+            {
+              "marqueur": "Plus tard",
+              "preuve": "message à Goku et à ses amis. Plus tard, il est tué par le sbire de Piccolo Daimaô, Tambourine. Il e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "umikame",
+      "name": "Umikame",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "len": 1179,
+      "ruptures": [
+        {
+          "nature": "marqueurs",
+          "n": 1,
+          "preuve": [
+            {
+              "marqueur": "Lors de",
+              "preuve": "ôles importants dans l'anime. Lors de sa première apparition, elle était dans la nature, seule et pe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ran-fuan",
+      "name": "Ran Fuan",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "len": 1306,
+      "ruptures": [
+        {
+          "nature": "marqueurs",
+          "n": 1,
+          "preuve": [
+            {
+              "marqueur": "Dans le manga",
+              "preuve": "gard sur sa chair féminine ». Dans le manga, sa photo apparaît brièvement sur l'une des listes d'ima"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "mohmoo",
+      "name": "Mohmoo",
+      "type": "character",
+      "universe": "One Piece",
+      "len": 983,
+      "ruptures": [
+        {
+          "nature": "marqueurs",
+          "n": 1,
+          "preuve": [
+            {
+              "marqueur": "Plus tard",
+              "preuve": "ur embarcation jusqu'à l'île. Plus tard, durant la bataille à Arlong Park, il est appelé par Hatchan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "pastor-zombie",
+      "name": "Pastor Zombie",
+      "type": "character",
+      "universe": "One Piece",
+      "len": 1152,
+      "ruptures": [
+        {
+          "nature": "marqueurs",
+          "n": 1,
+          "preuve": [
+            {
+              "marqueur": "Plus tard",
+              "preuve": " en vue de la robe de mariée. Plus tard, on le voit dans la salle de cérémonie, chargé de célébrer l"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "higashi-no-kaioshin",
+      "name": "Higashi no Kaioshin",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "len": 965,
+      "ruptures": [
+        {
+          "nature": "marqueurs",
+          "n": 1,
+          "preuve": [
+            {
+              "marqueur": "Par la suite",
+              "preuve": " faible des quatre Kaïoshins. Par la suite, on l'appelle généralement seulement Kaïoshin, puisqu'il "
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "echantillon_sans_rupture": [
+    {
+      "slug": "soi-fon",
+      "len": 1578,
+      "tete": "Anniversaire : 11 février. Signe : Verseau. Taille : 150 cm. Poids : 38 kg. Grade : capitaine de la 2e division, command"
+    },
+    {
+      "slug": "io-bamboo-village",
+      "len": 1072,
+      "tete": "Iō est le chef du Village du Bambou, où il vit avec sa femme et sa fille en vendant des objets fabriqués à partir du bam"
+    },
+    {
+      "slug": "rou-kaioshin",
+      "len": 1362,
+      "tete": "Rô Kaiôshin est un Kaiôshin qui sortit de l'épée Z, dans laquelle il avait été emprisonné et cloué au sol par un ancien "
+    },
+    {
+      "slug": "korinto",
+      "len": 1040,
+      "tete": "Korinto (カリント) est un pêcheur et le grand-père de la famille de Mousse. Il a au moins neuf petits-enfants : Crepe, Cooki"
+    },
+    {
+      "slug": "misaomaru-kanonji",
+      "len": 1495,
+      "tete": "Don Kanonji est un médium populaire qui anime une émission de télévision intitulée « Ghost Bust » (« Chasseur d'Esprits "
+    },
+    {
+      "slug": "yonka",
+      "len": 1071,
+      "tete": "Les Quintuplées Sirènes Medaka (メダカの人魚の五つ子 Medaka no Ningyo no Itsutsu-go) sont cinq minuscules jeunes sirènes amies de "
+    },
+    {
+      "slug": "three-headed-guardian-beast",
+      "len": 1357,
+      "tete": "Le Three-Headed Guardian Beast, scellé à Yumegakure, apparaît dans le jeu Naruto Shippūden: Kizuna Drive sous la forme d"
+    },
+    {
+      "slug": "kinemon",
+      "len": 1641,
+      "tete": "Kinemon le Renard de Feu est un samouraï du Pays de Wano que l'Équipage du Chapeau de Paille retrouva en plusieurs morce"
+    },
+    {
+      "slug": "nova",
+      "len": 1147,
+      "tete": "Plus communément appelé Nova, Noba est un beau jeune homme en manteau de fourrure, avec un bouclier dans le dos et un ma"
+    },
+    {
+      "slug": "shen",
+      "len": 1120,
+      "tete": "C'est l'alias sous lequel Kami (le Tout-Puissant) s'inscrit au 23e Tenkaichi Budokai. Il possède le corps d'un type à l'"
+    },
+    {
+      "slug": "mind-puppet-switch-cursed-seal-technique",
+      "len": 905,
+      "tete": "Mind Puppet Switch Cursed Seal Technique est un jutsu Hiden classé comme Ninjutsu et Juinjutsu, offensif et complémentai"
+    },
+    {
+      "slug": "ilforte-grantz",
+      "len": 1685,
+      "tete": "Date de naissance : 22 juin Signe du zodiaque : Cancer Taille : 185 cm Poids : 67 kg I. Histoire Ilforte était un Menos "
+    },
+    {
+      "slug": "hisagomaru",
+      "len": 957,
+      "tete": "Hisagomaru est l'esprit manifesté du Zanpakutō de Hanatarō Yamada, que l'on voit durant la campagne des Tōjū, exclusive "
+    },
+    {
+      "slug": "rurichiyo-kasumiouji",
+      "len": 1023,
+      "tete": "C'est la princesse de la famille noble Kasumiōji. Sa famille, selon Yoruichi Shihōin, se situe juste en dessous des quat"
+    },
+    {
+      "slug": "kuroud",
+      "len": 937,
+      "tete": "Également connu sous les noms de Claude ou Cloud, Kuroud est un homme à lunettes doté d'une moustache et d'une chevelure"
+    },
+    {
+      "slug": "ichika",
+      "len": 1004,
+      "tete": "Les Quintuplées Sirènes Medaka sont cinq minuscules jeunes sirènes amies de Keimi. Leurs noms sont Ichika, Nika, Sanka, "
+    },
+    {
+      "slug": "sode-no-shirayuki",
+      "len": 1155,
+      "tete": "Elle est le Zanpakutō de Rukia Kuchiki sous forme physique. À la hauteur de son titre de plus beau Zanpakutō de la Soul "
+    },
+    {
+      "slug": "zangetsu",
+      "len": 1579,
+      "tete": "Le Zanpakutō d'Ichigo se nomme Zangetsu (littéralement « lune tranchante »). L'esprit de Zangetsu ressemble à un homme d"
+    },
+    {
+      "slug": "noriko",
+      "len": 1229,
+      "tete": "Elle est une amie de Misa Amane. Elle apparaît au chapitre 48 « Give-and-Take ». Durant l'enquête sur Yotsuba, Misa n'a "
+    },
+    {
+      "slug": "gyumao",
+      "len": 1217,
+      "tete": "Gyumao est inspiré de Niúmówáng (« Roi Démon-Bœuf », « Seigneur Diable-Bœuf » ou « Tyran-Bœuf »), un personnage du roman"
+    }
+  ],
+  "candidats_slugs": [
+    "yogengyo",
+    "izaemon-toudou",
+    "majin-buu",
+    "namu",
+    "umikame",
+    "ran-fuan",
+    "mohmoo",
+    "pastor-zombie",
+    "higashi-no-kaioshin"
+  ],
+  "candidats_avec_paragraphe_slugs": []
+}

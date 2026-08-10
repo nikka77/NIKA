@@ -1,0 +1,3436 @@
+{
+ "chantier": "C3 — pont interlangue pris depuis le wiki FR",
+ "quand": "2026-08-10T20:56:21.080Z",
+ "source": "data/audits/c3-disponibilite-2026-08-10T20-51-52-754Z.json",
+ "temoin": "Beeswax Clone",
+ "sondees": 215,
+ "gagnees": 17,
+ "disputees": [
+  {
+   "page": "Dragon Ball|songohan",
+   "fiches": [
+    "gohan-ssj2",
+    "gohan-ssj"
+   ]
+  },
+  {
+   "page": "Dragon Ball|gogetadbzgt",
+   "fiches": [
+    "gogeta-ssj",
+    "gogeta-ssj4"
+   ]
+  }
+ ],
+ "cas": [
+  {
+   "slug": "voleur",
+   "name": "Voleur",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Futami",
+    "Les nuits blanches surgissent !",
+    "Le Lieu sacré de Kakashi !!",
+    "Mitsuo",
+    "Tome 1 (Sasuke Retsuden)",
+    "La Bataille du temple d'Okay"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "fils-d-acier",
+   "name": "Fils d'acier",
+   "type": "artifact",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Technique de Manipulation de Shuriken",
+    "Ninpô - Prise Meurtrière",
+    "Temari",
+    "Déploiement de la Toile"
+   ],
+   "pagesAvecLanglink": 4,
+   "trouves": []
+  },
+  {
+   "slug": "vegeta-mega-instinc-evil",
+   "name": "Vegeta Mega Instinc Evil",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Dragon Ball Z : Broly le super guerrier",
+    "Vegeta (SDBH)",
+    "Ego transcendantal",
+    "Copy-Vegeta",
+    "Dragon Ball Z : Fusions",
+    "Bulma"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "mountains-graveyard",
+   "name": "Cimetière des Monts",
+   "type": "place",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Sanctuaire de Modoroki"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "seducing-woods",
+   "name": "Forêt de la Séduction",
+   "type": "place",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Forêt de la tentation",
+    "Chapitre 831",
+    "Forêt du Milieu",
+    "Boss de la Forêt",
+    "Chapitre 874",
+    "Jungle Zone"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": [
+    {
+     "titreFr": "Forêt de la tentation",
+     "titreEnDeclare": "Whole Cake Island#The Seducing Woods",
+     "preuve": "titre EN déclaré ≡ notre slug"
+    }
+   ]
+  },
+  {
+   "slug": "atk-op-jujika",
+   "name": "Jujika",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Mera Mera no Mi",
+    "Incident de Banaro"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "jet-shoes",
+   "name": "Jet Shoes",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Skypiea",
+    "Épisode 414"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "wood-release-underground-roots-technique",
+   "name": "Wood Release: Underground Roots Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Mokuton - Sépulture de Bois",
+    "Mokuton - Émergence Arborée"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "visio-dial",
+   "name": "Visio-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Bijo Bijo no Mi",
+    "Escargophones"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "whip",
+   "name": "Whip",
+   "type": "artifact",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Suiton - Fouet d'Eau",
+    "Suiton - Fouet du Dragon Aqueux",
+    "Suiton - Fouet Aqueux",
+    "Huile de Crapaud",
+    "Modification Physique Souple",
+    "Montée de Foudre"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": [
+    {
+     "titreFr": "Suiton - Fouet Aqueux",
+     "titreEnDeclare": "Water Release: Water Whip",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    },
+    {
+     "titreFr": "Suiton - Fouet d'Eau",
+     "titreEnDeclare": "Water Release: Running Water Whip",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    },
+    {
+     "titreFr": "Suiton - Fouet du Dragon Aqueux",
+     "titreEnDeclare": "Water Release: Water Dragon Whip",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "clone-du-fruit-de-la-passion",
+   "name": "Clone du fruit de la passion",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Mero Mero no Mi",
+    "Mane Mane no Mi",
+    "Kopi Kopi no Mi",
+    "Peke Peke no Mi",
+    "Hana Hana no Mi",
+    "S-Snake"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "gohan-ssj2",
+   "name": "Gohan SSJ2",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Saiyan 2",
+    "Son Gohan",
+    "Ultimate Gohan",
+    "Son Gohan Beast",
+    "Son Gohan (futur)",
+    "Dragon Ball Z : Rivaux dangereux"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": [
+    {
+     "titreFr": "Son Gohan",
+     "titreEnDeclare": "Gohan",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "portail-spatio-temporel",
+   "name": "Portail spatio-temporel",
+   "type": "artifact",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Kamui",
+    "Dimensions de Kaguya",
+    "Yomotsu Hirasaka",
+    "Le Type qui craint (épisode)",
+    "Kaguya Ôtsutsuki",
+    "Téléportation d'Ôtsutsuki"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-red-roc",
+   "name": "Red Roc",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Fruit de Topman Warcury",
+    "Chapitre 1001",
+    "Gomu Gomu no Mi/Gear Third Techniques",
+    "Gomu Gomu no Mi/Gear Second Techniques",
+    "Chapitre 1112",
+    "Monkey D. Luffy/Aptitudes et Compétences"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "mafuba-flacon",
+   "name": "Bidon du Mafûba",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Mutaito",
+    "Bibra",
+    "Hirudegân",
+    "Bido",
+    "Tapion",
+    "Dabra"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "gogeta-ssj",
+   "name": "Gogeta SSJ",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Gogeta (DBZ/GT)",
+    "Gogeta (DBS)",
+    "Gogeta (Xeno)",
+    "Super Saiyan 4",
+    "Super Saiyan",
+    "Super Dragon Ball Heroes - Big Bang Mission : épisode 18"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": [
+    {
+     "titreFr": "Gogeta (DBZ/GT)",
+     "titreEnDeclare": "Gogeta",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "freezer-3rd-form",
+   "name": "Freezer 3rd Form",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Cooler",
+    "Cooler (Xeno)",
+    "Dragon Ball Z épisode 082",
+    "Ahms",
+    "Frost",
+    "Clones"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-gatling",
+   "name": "Gomu Gomu no Gatling",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Gomu Gomu no Mi/Techniques",
+    "Gomu Gomu no Mi/Gear Second Techniques",
+    "Gomu Gomu no Mi/Gear Third Techniques",
+    "Gomu Gomu no Mi",
+    "Gomu Gomu no Mi/Gear Fourth Techniques",
+    "Gomu Gomu no Mi/Autres Techniques"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "heat-dial",
+   "name": "Heat-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Heat Javelin",
+    "Chapitre 257",
+    "Shura",
+    "Bustercall Project",
+    "Hyper Shibireru-kun"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "flavor-dial",
+   "name": "Flavor-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Chapitre 263",
+    "Hotori et Kotori",
+    "Épisode 173",
+    "Sanji/Histoire",
+    "Uta"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "ermite-sage",
+   "name": "Ermite (Sage)",
+   "type": "status",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Mode Ermite de Rikudô",
+    "Gamamaru",
+    "La Prophétie du grand Ermite Ôgama",
+    "Mode Ermite (épisode)",
+    "Danger ! Le mode ermite s'est éteint",
+    "Mode Ermite (homonymie)"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "lampe-dial",
+   "name": "Lampe-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Arsenal d'Usopp",
+    "Vogue Merry"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "super-perfect-form",
+   "name": "Super Perfect Form",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Saiyan Full Power",
+    "Super Saiyan Divin",
+    "Super Saiyan Blue",
+    "Super Saiyan Blue maîtrisé",
+    "Dragon Ball Z 2 V",
+    "Super Saiyan légendaire"
+   ],
+   "pagesAvecLanglink": 4,
+   "trouves": []
+  },
+  {
+   "slug": "flash-dial",
+   "name": "Flash-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Flash Gun",
+    "Braham",
+    "Chapitre 465",
+    "Chapitre 332",
+    "Arsenal d'Usopp"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "yotsuba-island-region",
+   "name": "Région des îles Yotsuba",
+   "type": "place",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Île Yotsuba",
+    "Shells Town",
+    "Hyoutan Island",
+    "Îles Nanatsu",
+    "Île Paquet",
+    "Île de Souja"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-tatsumaki",
+   "name": "Tatsumaki",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Chapitre 1003",
+    "Uo Uo no Mi, modèle Seiryu",
+    "Santôryû/Anime",
+    "Shuron Hakke",
+    "Épisode 671",
+    "Épisode 66"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "summoning-technique-crow",
+   "name": "Summoning Technique (Crow)",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Absorption de l'Âme",
+    "Suiton - Tranchant d'Eau Montant",
+    "Suiton - Évanescence Explosive",
+    "Technique des Spores",
+    "Technique Secrète - Cocon d'Insecte",
+    "Suiton - Bassin de la Cascade"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "professeur-de-l-academie",
+   "name": "Professeur de l'Académie",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Adieu, l'Académie !",
+    "Promotions de l'Académie de Konoha",
+    "Daikoku Funeno",
+    "Mizuki",
+    "Entretien avec le prof !",
+    "Chapitre de Konoha : Iruka, professeur novice"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "grelot",
+   "name": "Grelot",
+   "type": "artifact",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Genjutsu - Clone du Son de Cloche",
+    "Shikamaru le stratège",
+    "Kagura (jeu)",
+    "Test des Clochettes",
+    "Clochettes",
+    "Examen Chûnin (Arc)"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "law-lami-s-father",
+   "name": "Law & Lami's Father",
+   "type": "character",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Trafalgar Lamy",
+    "Chapitre 762",
+    "Chapitre 764",
+    "Mamy Mee et Daddy Dee",
+    "Wolf (Scientifique)",
+    "Laskey"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": [
+    {
+     "titreFr": "Trafalgar Lamy",
+     "titreEnDeclare": "Lami",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "l-equipage-amigo",
+   "name": "L’équipage Amigo",
+   "type": "status",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Pirates Amigo",
+    "Équipage du Lion d'Or",
+    "L'Équipage de Naniwa",
+    "Arc Little East Blue",
+    "Corto",
+    "Profession d'équipages"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-nemuriuta-flanc",
+   "name": "Nemuriuta Flanc",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Brook/Aptitudes et Compétences",
+    "Style de l'Escrime"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "gato-s-bodyguard-mercenary",
+   "name": "Gatō's bodyguard  (Mercenary)",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Hitode",
+    "Gasuka",
+    "Aino",
+    "Garde du Corps de Tenzen",
+    "Gatai",
+    "Garyô"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "freres-voleurs",
+   "name": "Frères Voleurs",
+   "type": "status",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Borodo",
+    "Akisu",
+    "Voleurs d'Atamayama",
+    "Doubt Brothers",
+    "Special Episode Luff",
+    "L'Aventure de l'Île de l'Horloge"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "gogeta-ssj4",
+   "name": "Gogeta SSJ4",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Gogeta (DBZ/GT)",
+    "Gogeta (Xeno)",
+    "Super Saiyan 4",
+    "Vegetto (Xeno)",
+    "Maximum Kaiôken",
+    "Super Full Power Saiyan 4 Genkai Toppa"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": [
+    {
+     "titreFr": "Gogeta (DBZ/GT)",
+     "titreEnDeclare": "Gogeta",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "atk-op-karakusagawara-seiken",
+   "name": "Karakusagawara Seiken",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Gyojin Karate",
+    "Jinbe",
+    "Chapitre 1017"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-kaen-boshi",
+   "name": "Kaen Boshi",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Arsenal d'Usopp/Ginga Pachinko",
+    "Arsenal d'Usopp/Kabuto",
+    "Nakatsugawa Usopp",
+    "Porcupine Spike Man",
+    "Arsenal d'Usopp",
+    "Smack"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "priestess",
+   "name": "Priestess",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Shion",
+    "Ruiga",
+    "La Valeur d'un monde en paix",
+    "Suiton - Technique de l'Horizon entre Ciel et Mer",
+    "Combats impitoyables"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "ippou-say",
+   "name": "Ippou-Say",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Catapulte",
+    "Liberal Hind",
+    "Cheval blanc au bois dormant",
+    "Équipage de Bonney",
+    "Brook",
+    "Nami/Personnalité et Relations"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "clone-du-fruit-du-barbotage",
+   "name": "Clone du fruit du Barbotage",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Sui Sui no Mi",
+    "Mane Mane no Mi",
+    "Mono Mono no Mi",
+    "Peke Peke no Mi",
+    "S-Shark",
+    "Kopi Kopi no Mi"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "equipage-de-bigalo",
+   "name": "Equipage de Bigalo",
+   "type": "status",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Buffalo",
+    "L'Équipage de Naniwa",
+    "Hogan",
+    "Honebami Toshiro",
+    "Erik (Géant)",
+    "Granit marin"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-demonio-fleur",
+   "name": "Demonio Fleur",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Hana Hana no Mi",
+    "Chapitre 1021",
+    "Black Maria",
+    "One Piece en Espagne",
+    "SBS Tome 102",
+    "Religion dans le monde de One Piece"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "liberation-du-vent-futon",
+   "name": "Libération du Vent (Fūton)",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Fûton - Poussière de Vent",
+    "Fûton - Tornade",
+    "Fûton - Vague de Vide",
+    "Fûton - Tempête de Sauterelles",
+    "Fûton - Percée de Nuage de Sable",
+    "Fûton - Grande Lame du Vent"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "chunin-exams-assistant",
+   "name": "Chūnin Exams Assistant",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Examen Chûnin (Arc)",
+    "Un nouvel examen des chûnins",
+    "Shimon Hijiri",
+    "Shiba (Kusa)",
+    "Yôrô",
+    "Ibiki Morino"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-cien-fleur",
+   "name": "Cien Fleur",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Hana Hana no Mi",
+    "One Piece Attack Motions",
+    "Hands Up !",
+    "Épisode 694",
+    "Chapitre 1148",
+    "Chadros Higelyges"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "farmer-naruto",
+   "name": "Farmer",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Shikazo",
+    "Troisième Mizukage",
+    "Itachi Shinden - Livre de nuit sombre"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "atk-db-demon-flash-strike",
+   "name": "Demon Flash Strike",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Final Shine Attack",
+    "Maximum Final Flash",
+    "Dark Final Flash",
+    "Double Atomic Flash",
+    "Dark King Flash",
+    "Wolfgang Pressure"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-impact-dial",
+   "name": "Impact Dial",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Chapitre 257",
+    "Chapitre 263",
+    "Chapitre 307",
+    "Shura",
+    "Épisode 169"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "chunin-exam-proctor",
+   "name": "Chūnin Exam Proctor",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Shimon Hijiri",
+    "Hayate Gekkô",
+    "La Première Épreuve !!",
+    "Ibiki Morino",
+    "Que les épreuves commencent !",
+    "Nouvel Examen de sélection"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-ryu-no-ibuki",
+   "name": "Ryu no Ibuki",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Ryusoken",
+    "Matsuyuki Ibuki",
+    "RYU-HEY",
+    "Souffle Qigong",
+    "Adachi Core",
+    "Haki/Haki de l'Armement"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-spider-net",
+   "name": "Spider Net",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "L'Équipage des Spider Malstrom",
+    "Spider's Café",
+    "Real Spider",
+    "San Faldo",
+    "Atarashi Island",
+    "Royaume de Majiatsuka"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "corps-medical",
+   "name": "Corps médical",
+   "type": "status",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Équipe Médicale",
+    "Suiton Médical - Moustiques d'Eau",
+    "Bataille du Col des Campanules",
+    "Un vœu",
+    "Prescription de Renforcement - Injection de Chakra",
+    "Suiton - Méduse Médicale"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "semi-perfect-form",
+   "name": "Semi Perfect Form",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Cell",
+    "Cell Max"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-gigantesco-mano",
+   "name": "Gigantesco Mano",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Hana Hana no Mi",
+    "Chapitre 605",
+    "Épisode 556",
+    "One Piece : Super Grand Battle ! X",
+    "Épisode 928",
+    "Chapitre 933"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "genin-exams-proctor",
+   "name": "Genin Exams Proctor",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Les Rivaux ! (tome)",
+    "Que les épreuves commencent !",
+    "Hayate Gekkô",
+    "La Première Épreuve !!",
+    "Mujin",
+    "Arc Examens de fin d'études"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-cyclone-tempo",
+   "name": "Cyclone Tempo",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Art de la Météo/Baguette Climatique Ultime",
+    "Art de la Météo/Baguette Climatique",
+    "Chapitre 191",
+    "Épisode 173",
+    "Nami/Aptitudes et Compétences",
+    "Gan Forr"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-zeus-breath",
+   "name": "Zeus Breath",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Art de la Météo/Nouveau Climat-Tact",
+    "Waver",
+    "Uo Uo no Mi, modèle Seiryu",
+    "Burn Blade",
+    "Épisode 1017"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "liberation-du-feu-katon",
+   "name": "Libération du Feu (Katon)",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Katon - Entrave du Feu",
+    "Katon - Feu Follet",
+    "Katon - Pluie de Boules de Feu",
+    "Katon - Lance de Flamme",
+    "Épée du Feu de l'Entrave Céleste",
+    "Katon - Météores de Feu"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-k-room",
+   "name": "K-Room",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Ope Ope no Mi",
+    "Épisode 1093",
+    "Épisode 1066",
+    "ONE PIECE Original Soundtrack - GEAR5",
+    "Chapitre 1064",
+    "Trafalgar D. Water Law/Divers"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "source-de-l-insouciance",
+   "name": "Source de l'insouciance",
+   "type": "status",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Oups ! Gedatsu au pays de la mer bleue",
+    "Chapitre 348",
+    "Ukkari-Hot-Spring Island",
+    "Chapitre 340",
+    "Chapitre 341",
+    "Chapitre 343"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "milky-dial",
+   "name": "Milky-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Bateau à Dials",
+    "Gedatsu",
+    "Kamakiri",
+    "Épisode 173",
+    "Braham"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "axe",
+   "name": "Axe",
+   "type": "artifact",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Poing-Hache Destructeur",
+    "Coup de Talon Retourné du Clone",
+    "Bras d'Absorption de Jutsu",
+    "Lancer du Clone"
+   ],
+   "pagesAvecLanglink": 4,
+   "trouves": [
+    {
+     "titreFr": "Poing-Hache Destructeur",
+     "titreEnDeclare": "Destroying Axe Fist",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "atk-op-power-mochi",
+   "name": "Power Mochi",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Épisode 856",
+    "Memo Memo no Mi",
+    "Peke Peke no Mi",
+    "Tama Tama no Mi",
+    "Fuwa Fuwa no Mi",
+    "Soru Soru no Mi"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "look-special",
+   "name": "Look Spécial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Équipage de Foxy",
+    "Jube",
+    "Sexy Foxy",
+    "Cutie Wagon",
+    "Gorilla Puncher 18",
+    "Girarin"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "hokage-s-assistant",
+   "name": "Hokage's Assistant",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Assistant du Sculpteur sur Pierre",
+    "Danzô Shimura",
+    "Hatake Kakashi, Hokage",
+    "Sculpteur sur Pierre",
+    "Naruto Uzumaki (épisode)",
+    "Tasuki"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "pirate-naruto",
+   "name": "Pirate",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Gokai",
+    "Clan Funato",
+    "Jibiki Funato",
+    "Araumi Funato",
+    "Minamo Funato",
+    "Ubau"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "controle-dial",
+   "name": "Contrôle-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Hyper Shibireru-kun",
+    "Buster Call",
+    "Waver",
+    "Hotori et Kotori",
+    "Gedatsu"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "ramen-chef",
+   "name": "Ramen chef",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Jingo Kumano",
+    "Pilote du Manga Naruto",
+    "La Recette ultime",
+    "Brûlons les graisses ! Mélangeons, étirons, et à la cuisson !",
+    "Inari, le courage mis à l'épreuve",
+    "L'Unité 10 (tome)"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "personal-guard",
+   "name": "Personal Guard",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Le Vœu de Naruto",
+    "Tenga",
+    "Iwazô",
+    "Tsume Inuzuka",
+    "Zaji",
+    "Nangô"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "l-equipage-du-new-age",
+   "name": "l’équipage du New Age",
+   "type": "status",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Équipage de Bellamy",
+    "New Witch's Tongue",
+    "Kukri",
+    "Forces Spéciales Simiesques",
+    "L'Équipage de Don Quichotte Doflamingo",
+    "Équipages Pirates"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-buraikan",
+   "name": "Buraikan",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Gyojin Karate",
+    "Jinbe"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "atk-bl-suzumushi-tsuishiki-enma-korogi",
+   "name": "Suzumushi Tsuishiki Enma Korogi",
+   "type": "power",
+   "universe": "Bleach",
+   "titresSondes": [
+    "Chapitre 146",
+    "Bankai",
+    "Ashisogi Jizô, Kyôdo Yon",
+    "Balgo Parks/Galerie",
+    "Ransōtengai",
+    "Tsurigaki"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-purgatory-oni-giri",
+   "name": "Purgatory Oni Giri",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Santôryû",
+    "Jara Jara no Mi",
+    "Fruit de Jaygarcia Saturn",
+    "Fruit de Ethanbaron V. Nusjuro",
+    "Kurozumi Higurashi",
+    "Âme"
+   ],
+   "pagesAvecLanglink": 4,
+   "trouves": []
+  },
+  {
+   "slug": "fifth-hokage-s-assistant",
+   "name": "Fifth Hokage's Assistant",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Assistant du Sculpteur sur Pierre",
+    "Hatake Kakashi, Hokage",
+    "Danzô Shimura",
+    "Je m'appelle Konohamaru",
+    "Le Fils du Hokage",
+    "Naruto Uzumaki (épisode)"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "pirate-au-foyer",
+   "name": "Pirate au foyer",
+   "type": "status",
+   "universe": "One Piece",
+   "titresSondes": [
+    "L'Équipage Tearoom",
+    "Pirates",
+    "Pirates droit devant !",
+    "Capitaine Pirate",
+    "Commandant (Pirate)",
+    "Pirates/Super Rookies"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": [
+    {
+     "titreFr": "Pirates",
+     "titreEnDeclare": "Pirate",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "atk-op-bajrang-gun",
+   "name": "Bajrang Gun",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Chapitre 1048",
+    "Uo Uo no Mi, modèle Seiryu"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "liberation-du-yang",
+   "name": "Libération du Yang",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Inyôton",
+    "Garyô",
+    "Si tu veux parler dans ton sommeil, dors d'abord",
+    "Naruto Shippûden: Ultimate Ninja Storm 4",
+    "Épée de Kusanagi (Outil Scientifique Ninja)",
+    "Mudrâ"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-db-pressure-point-attack",
+   "name": "Pressure Point Attack",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Wolfgang Pressure",
+    "Toki Tobashi",
+    "Crusher Ball"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "anbu-captain",
+   "name": "Anbu Captain",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Minoichi",
+    "Yûra",
+    "Inomatsu",
+    "Tanishi",
+    "La Huitième Vérité",
+    "On recrute !!"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "jet-dial",
+   "name": "Jet-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Gedatsu",
+    "Waver",
+    "Garde Sacrée",
+    "Shiro Mokuba I",
+    "Chapitre 263"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "liberation-du-yin-yang",
+   "name": "Libération du Yin-Yang",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Inyôton",
+    "Technique des Tsuchigumo - Technique Interdite de Libération de Vie - Création du Ciel et de la Terre",
+    "Doton",
+    "Raiton",
+    "Un printemps écarlate (tome)",
+    "Naruto Shippûden: Ultimate Ninja Storm 4"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-swallow-bond-avant",
+   "name": "Swallow Bond Avant",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Brook/Aptitudes et Compétences",
+    "Style de l'Escrime",
+    "Soul Solid"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "staff-a",
+   "name": "Staff A",
+   "type": "character",
+   "universe": "Bleach",
+   "titresSondes": [
+    "Devorar Pluma"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "atk-db-full-power-father-son-kamehameha",
+   "name": "Full Power Father-Son Kamehameha",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Saiyan Full Power",
+    "Kamé Hamé Ha",
+    "Broly (Full Power)",
+    "Super Full Power Saiyan 4 Genkai Toppa",
+    "Kamé Hamé Ha Père-fils",
+    "Super Saiyan Blue maîtrisé"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": [
+    {
+     "titreFr": "Kamé Hamé Ha",
+     "titreEnDeclare": "Kamehameha",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "examinateur-de-l-examen-chunin",
+   "name": "Examinateur de l'examen chūnin",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Examen Chûnin (Arc)",
+    "Shimon Hijiri",
+    "Ibiki Morino",
+    "Arc Repassage de l'Examen Chûnin",
+    "Un nouvel examen des chûnins",
+    "L'Examen de sélection des ninjas de moyenne classe !!"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "l-equipage-asl",
+   "name": "L’équipage ASL",
+   "type": "status",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Équipages Pirates",
+    "Grey Terminal",
+    "Sabo",
+    "Koza",
+    "Charlotte Mont-blanc",
+    "Chapitre 1023"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-thunderbolt-tempo",
+   "name": "Thunderbolt Tempo",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Art de la Météo/Baguette Climatique Ultime",
+    "Art de la Météo/Nouveau Climat-Tact",
+    "Art de la Météo/Baguette Climatique",
+    "Oniri Creations",
+    "Katabuti",
+    "Zappa"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "goku-ssj3",
+   "name": "Goku SSJ3",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Saiyan 3",
+    "Super Saiyan Divin",
+    "Super Saiyan 3: Full Power",
+    "Super Saiyan Blue",
+    "Saiyan surpassant dieu",
+    "Gotenks"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "church",
+   "name": "Église",
+   "type": "place",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Royaume de Sorbet",
+    "Leap Out Jewelry",
+    "Chapitre 462",
+    "Deacon",
+    "Alpha",
+    "Totsu"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "spero-dial",
+   "name": "Spéro-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "impact-dial",
+   "name": "Impact-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Chapitre 257",
+    "Chapitre 263",
+    "Chapitre 307",
+    "Shura",
+    "Épisode 169"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-bazooka",
+   "name": "Gomu Gomu no Bazooka",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Gomu Gomu no Mi/Techniques",
+    "Gomu Gomu no Mi/Gear Third Techniques",
+    "Gomu Gomu no Mi/Gear Second Techniques",
+    "Gomu Gomu no Mi/Gear Fourth Techniques",
+    "Gomu Gomu no Mi/Autres Techniques",
+    "Unité Bazooka"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "kaji-king-i-ii",
+   "name": "Kaji King I & II",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Équipage de Foxy",
+    "Gorilla Puncher 18",
+    "Cui-Cui",
+    "Kill Sassoon",
+    "Great Magni",
+    "Navires"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-shishi-sonson",
+   "name": "Shishi Sonson",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Santôryû/Îttoryû",
+    "Santôryû",
+    "Soul Solid",
+    "Roronoa Zoro/Aptitudes et Compétences",
+    "Épisode 671",
+    "Dragons (Punk Hazard)"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "nurse",
+   "name": "Nurse",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Otoha",
+    "Hakobe Shigaraki",
+    "Emi",
+    "Inori",
+    "Haie",
+    "La Rencontre, volet 2"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-tora-gari",
+   "name": "Tora Gari",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Santôryû",
+    "Roronoa Zoro/Aptitudes et Compétences",
+    "Sham",
+    "Ryu Ryu no Mi, modèle Ptéranodon",
+    "Le Petit Théâtre de Chapeau de Paille: Dans la Classe du Professeur Shanks",
+    "Figuarts ZERO One Piece"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "harem-no-tango",
+   "name": "Harem no Tango",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Équipage de Foxy",
+    "Sexy Foxy",
+    "Girarin",
+    "Cutie Wagon",
+    "Geena",
+    "Kibagaeru"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "shunpo",
+   "name": "Shunpo",
+   "type": "skill",
+   "universe": "Bleach",
+   "titresSondes": [
+    "Hirenkyaku",
+    "Clones de Vitesse",
+    "Chapitre 300",
+    "Chapitre 118",
+    "Enkōgawa \"Enryū\" Rusaburō",
+    "Chapitre -105"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "zarbon-monster",
+   "name": "Zarbon Monster",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Zabon",
+    "Dragon Ball Z épisode 053",
+    "Blueberry",
+    "Ī Shinron (Xeno)",
+    "Assistants de Yuzun",
+    "Shigeyasu Yamauchi"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": [
+    {
+     "titreFr": "Zabon",
+     "titreEnDeclare": "Zarbon",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "isshi-1",
+   "name": "Isshi 1",
+   "type": "character",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Ishi Ishi no Mi",
+    "Toubibs 100",
+    "Trafalgar Lamy",
+    "Zonao",
+    "Pica",
+    "Ekie"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "nozarashi",
+   "name": "Nozarashi",
+   "type": "artifact",
+   "universe": "Bleach",
+   "titresSondes": [
+    "Kenpachi Zaraki",
+    "Chapitre 577",
+    "Chapitre 576",
+    "Chapitre 667",
+    "Épisode 386",
+    "Gremmy Thoumeaux"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-kung-fu-point",
+   "name": "Kung Fu Point",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Hito Hito no Mi",
+    "Tony Tony Chopper/Aptitudes et Compétences",
+    "Rumble Ball",
+    "Tony Tony Chopper/Divers",
+    "Armored Knight",
+    "Épisode 585"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-db-meteor-crash",
+   "name": "Meteor Crash",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Dragon Ball Heroes - Universe Mission!! : chapitre 12",
+    "Kale",
+    "Super Dragon Ball Heroes - Universe Mission!! : tome 02",
+    "Note",
+    "Super Dragon Ball Heroes - Ultra God Mission!!!! : chapitre 15"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "sky-arrows",
+   "name": "Sky-Arrows",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Drayke Pirates",
+    "Waford",
+    "L'Équipage Tearoom",
+    "Lance",
+    "Handai Pirates"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "baton-bo",
+   "name": "Bâton bō",
+   "type": "artifact",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Uô",
+    "Daibutsu",
+    "Sphère de Vérité",
+    "Musique"
+   ],
+   "pagesAvecLanglink": 4,
+   "trouves": []
+  },
+  {
+   "slug": "goku-ssj2",
+   "name": "Goku SSJ2",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Saiyan 2",
+    "Super Saiyan",
+    "Super Saiyan Divin",
+    "Saiyan surpassant dieu",
+    "Goku Black",
+    "Super Saiyan (Berserker)"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "winter-island",
+   "name": "Île d'Hiver",
+   "type": "place",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Festival du Solstice d'Hiver",
+    "Îles Climatiques",
+    "Île d'Applenine",
+    "Épisode de Chopper : Le Miracle des Cerisiers en Hiver",
+    "Tou-Chuka Island",
+    "Big Horn"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "eisen-dial",
+   "name": "Eisen-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Chapitre 269",
+    "Buster Call",
+    "Honebami Toshiro",
+    "Hyper Shibireru-kun",
+    "Eisen Whip"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "shield",
+   "name": "Shield",
+   "type": "artifact",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Bouclier de Chakra",
+    "Fûton - Bouclier du Dieu du Vent",
+    "Drone Espion",
+    "Outils Scientifiques Ninjas Microscopiques",
+    "Tsurukame",
+    "Senpô - Rage Blanche"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": [
+    {
+     "titreFr": "Bouclier de Chakra",
+     "titreEnDeclare": "Mechanical Light Shield Block",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    },
+    {
+     "titreFr": "Fûton - Bouclier du Dieu du Vent",
+     "titreEnDeclare": "Wind Release: Shield of the Wind Count",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "atk-op-clutch",
+   "name": "Clutch",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Hana Hana no Mi",
+    "Épisode 1044",
+    "Chapitre 643",
+    "Chapitre 477",
+    "Épisode Spécial 2",
+    "Chapitre 429"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "rom",
+   "name": "Rom",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Pigero",
+    "Dragon Ball Z - Gekitô Tenka Ichi Budôkai",
+    "Dragon Ball Z - Idainaru Son Gokû Densetsu",
+    "Dragon Ball Z Gaiden - Shin Saiyan Zetsumetsu Keikaku – Chikyû-Hen –",
+    "Dragon Ball Z: The Legend",
+    "Dragon Ball Z - Shin Butôden"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "flamme-dial",
+   "name": "Flamme-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Charlotte Compo",
+    "Hotori et Kotori",
+    "Épisode 173",
+    "Fuza",
+    "Épisode 206"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "tokoyaki-8",
+   "name": "Tokoyaki 8",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Chapitre 228"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-king-kong-gun",
+   "name": "Gomu Gomu no King Kong Gun",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Gomu Gomu no Mi/Gear Fourth Techniques",
+    "Gomu Gomu no Mi/Gear Third Techniques",
+    "Graydle",
+    "Gomu Gomu no Mi/Techniques",
+    "Chapitre 1042",
+    "Chapitre 790"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "navire-des-maquereaux",
+   "name": "Navire des Maquereaux",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Équipage des Maquereaux",
+    "Sabagashira I",
+    "Navires",
+    "Snapper Head",
+    "Zenny (Navire)",
+    "Navire-Cercueil"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "audio-dial",
+   "name": "Audio-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Sanji/Histoire",
+    "One Piece : Unlimited Cruise 1 : Le Trésor sous les Flots/Base de données",
+    "Arc Skypiea",
+    "Stay Tune",
+    "Stan Maley"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-weapons-left",
+   "name": "Weapons Left",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Battle Franky/BF-37",
+    "Chapitre 467",
+    "Chapitre 452",
+    "Battle Franky/BF-36",
+    "Battle Franky/BF-38",
+    "Épisode 596"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "this-article-is-a-stub-you-can-help-the-narutopedia-by-expanding-it-or-perhaps-you-could-contribute-to-the-discussion-on-the-topic",
+   "name": "This article is a stub. You can help the Narutopedia by expanding it, or perhaps you could contribute to the discussion on the topic.",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Le Sceau brisé",
+    "Shima",
+    "À l'attention de Naruto",
+    "Épée de Kusanagi (Outil Scientifique Ninja)",
+    "Absorption de l'Âme",
+    "Mains de Liens"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-hanauta-sancho-yahazu-giri",
+   "name": "Hanauta Sancho Yahazu Giri",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Soul Solid",
+    "Style de l'Escrime",
+    "Brook/Aptitudes et Compétences",
+    "Yomi Yomi no Mi",
+    "Arc Thriller Bark",
+    "Shimotsuki Ryuma/Forme Zombie"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-kurouzu",
+   "name": "Kurouzu",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Incident de Banaro",
+    "Yami Yami no Mi",
+    "Chapitre 1064",
+    "Épisode 1093",
+    "Guide des épisodes/Saga Île Céleste",
+    "Guide des épisodes/Saga Thriller Bark"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "summoning-technique-shark",
+   "name": "Summoning Technique (Shark)",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Absorption de l'Âme",
+    "Suiton - Tranchant d'Eau Montant",
+    "Suiton - Évanescence Explosive",
+    "Sphère de Vent d'Attaque Féroce",
+    "Suiton - Technique des Bulles d'Eau",
+    "Technique des Spores"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "shion-s-bodyguard",
+   "name": "Shion's bodyguard",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Emina"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-hiken",
+   "name": "Hiken",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Mera Mera no Mi",
+    "Billions",
+    "Épisode 678",
+    "Chapitre 644",
+    "Portgas D. Ace",
+    "Épisode 1004"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-bl-nozarashi",
+   "name": "Nozarashi",
+   "type": "power",
+   "universe": "Bleach",
+   "titresSondes": [
+    "Kenpachi Zaraki",
+    "Chapitre 577",
+    "Chapitre 576",
+    "Chapitre 667",
+    "Épisode 386",
+    "Gremmy Thoumeaux"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "epee-de-lespoir",
+   "name": "Épée de l'Espoir",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Final Hope Slash",
+    "Épée de Shura",
+    "Epée de Tapion",
+    "Épéistes",
+    "Liste des chapitres du manga",
+    "An 774"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "toad-elder",
+   "name": "Toad Elder",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Boruto: Road to B",
+    "La Prophétie du grand Ermite Ôgama",
+    "Celui qui sait",
+    "Un contre un...!!",
+    "Nan"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-pistolet",
+   "name": "Gomu Gomu no Pistolet",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Gomu Gomu no Mi/Techniques",
+    "Gomu Gomu no Mi/Gear Second Techniques",
+    "Chimpy",
+    "Gomu Gomu no Mi/Autres Techniques",
+    "Épisode 122",
+    "Gomu Gomu no Mi/Gear Third Techniques"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "sand-stream",
+   "name": "Sand Stream",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Musique",
+    "Ninja (chapitre)"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "atk-db-icarus",
+   "name": "Icarus",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Malaiko",
+    "Gila J",
+    "Maître Graham",
+    "Hight Dragon"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-elephant-gun",
+   "name": "Gomu Gomu no Elephant Gun",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Gomu Gomu no Mi/Gear Third Techniques",
+    "Haki/Haki de l'Armement",
+    "Gomu Gomu no Mi",
+    "Monkey D. Luffy/Aptitudes et Compétences",
+    "Gomu Gomu no Mi/Techniques",
+    "Gomu Gomu no Mi/Gear Second Techniques"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "trunks-ssj2",
+   "name": "Trunks SSJ2",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Saiyan 2",
+    "Super Saiyan Rage",
+    "Arc \"Trunks du futur\"",
+    "Trunks (futur)",
+    "Trunks (Xeno)",
+    "Dragon Ball Z : Rivaux dangereux"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "milk",
+   "name": "Milk",
+   "type": "place",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Île Fromage",
+    "Bone To Be Wild",
+    "J-Stars Victory VS",
+    "Liste des rencontres aléatoires",
+    "Vergo",
+    "4Kids Entertainment"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": [
+    {
+     "titreFr": "Île Fromage",
+     "titreEnDeclare": "Milk Island",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "dogi-ecole-tortue",
+   "name": "Dogi de l'École Tortue",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Dragon Ball chapitre 033",
+    "Tsuru Sennin",
+    "Tortue de mer",
+    "École Tsuru Sen",
+    "Ermites de la Tortue",
+    "Dragon Ball - épisode 049 : Fais attention, Lunch-san"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-cold-nezumi-zeppyo",
+   "name": "Cold Nezumi Zeppyo",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Brook/Aptitudes et Compétences",
+    "Fude Fude no Mi",
+    "Hie Hie no Mi",
+    "Monjii",
+    "Netsu Netsu no Mi",
+    "Modo Modo no Mi"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "terrorist",
+   "name": "Terrorist",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Kunijirô"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-buzz-cut-mochi",
+   "name": "Buzz Cut Mochi",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Mochi Mochi no Mi",
+    "Happy Birthday One Piece Character's"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "team-shu",
+   "name": "Team Shū",
+   "type": "status",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Stagnation",
+    "Sôzu",
+    "Tambour de Formation du Hakke Mécanique"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "mother",
+   "name": "Mother",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Mère de Chichi",
+    "Mère de Beat",
+    "Bikini",
+    "Gine",
+    "Rayon Mortel Téléporté",
+    "Snow"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "staff-c",
+   "name": "Staff C",
+   "type": "character",
+   "universe": "Bleach",
+   "titresSondes": [
+    "Devorar Pluma"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "polestar-islands",
+   "name": "Îles Polestar",
+   "type": "place",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Logue Town",
+    "Île de Road Star",
+    "Liste des rencontres aléatoires",
+    "Set Sail Pirates",
+    "One Piece (Live-Action)"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "graine-de-larbre-de-force",
+   "name": "Graine de l'Arbre de Force",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Graine de l'Univers",
+    "Shinseiju",
+    "Daïzu",
+    "Arbre d'Enma",
+    "Rakaseï",
+    "Fruits de l'Enseiju"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-oni-giri",
+   "name": "Oni Giri",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Onigiri (Non-Canon)",
+    "Santôryû",
+    "Nourritures et Boissons du Monde de One Piece",
+    "SBS Tome 53",
+    "Narcie",
+    "Koori Oni"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "liberation-du-yin",
+   "name": "Libération du Yin",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Inyôton",
+    "Technique des Tsuchigumo - Technique Interdite de Libération de Vie - Création du Ciel et de la Terre",
+    "Prescription de Renforcement - Injection de Chakra",
+    "Doton",
+    "Emprisonnement des Morts",
+    "Un printemps écarlate (tome)"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "boule-4-etoiles",
+   "name": "Boule à quatre étoiles",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Dragon Balls Sombres",
+    "Dragon Balls (objet)",
+    "Dragon Ball épisode 001",
+    "Dragon Ball GT : épisode 61",
+    "Saga de l'armée du Red Ribon",
+    "Dragon Ball - Perfect Edition: Tome 10"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-mil-fleur",
+   "name": "Mil Fleur",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Hana Hana no Mi",
+    "IQ",
+    "GP Flowers",
+    "Épisode 556",
+    "Jolisol",
+    "Hito Hito no Mi"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "summoning-technique-giant-eagle",
+   "name": "Summoning Technique (Giant Eagle)",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Suiton - Évanescence Explosive",
+    "Suiton - Tranchant d'Eau Montant",
+    "Invocation Expansive",
+    "Mudrâ",
+    "Technique des Tsuchigumo - Technique Interdite de Libération de Vie - Création du Ciel et de la Terre",
+    "Cible verrouillée"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-strong-right",
+   "name": "Strong Right",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Battle Franky/BF-36",
+    "Battle Franky/BF-37",
+    "Épisode 238",
+    "Satyres",
+    "Épisode 346",
+    "Épisode 341"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "pilule-de-rations-militaires",
+   "name": "Pilule de rations militaires",
+   "type": "artifact",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Fusil de Piqûre d'Injection"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "diial-des-tenebres",
+   "name": "Diial des Ténèbres",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Chapitre 441",
+    "Épisode 325",
+    "Épisode 865",
+    "Pacte",
+    "Épisode 867"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "dressrosa-alliance-pirate",
+   "name": "Dressrosa / Alliance Pirate",
+   "type": "status",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Saga Dressrosa",
+    "Arc Dressrosa",
+    "Alliance des Ninjas-Pirates-Minks-Samouraïs",
+    "Guide des épisodes/Saga Alliance Pirate",
+    "Alliance Baggy et Alvida/Pirates d'Expédition",
+    "Armada de Chapeau de Paille"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "hidden-cloud-village",
+   "name": "Village caché des nuages",
+   "type": "place",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Chapitre 249",
+    "Mer de Nuages",
+    "Exil sur un Nuage",
+    "Île Nuage",
+    "Village Blacksmith",
+    "Village des Teintures"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "senior",
+   "name": "Senior",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Sajô",
+    "Kitô",
+    "Doton - Monticule de Pierre",
+    "Shippuden 4eme guerre ninja"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "axe-dial",
+   "name": "Axe-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Chapitre 257",
+    "Garde Sacrée",
+    "Chapitre 263",
+    "Chapitre 261",
+    "Clan d'Ener"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-bl-final-getsuga-tensho",
+   "name": "Final Getsuga Tensho",
+   "type": "power",
+   "universe": "Bleach",
+   "titresSondes": [
+    "Getsuga Jûjishô",
+    "Épisode 387",
+    "Chapitre 420",
+    "Chapitre 421",
+    "Chapitre 460",
+    "Chapitre 419"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "imperfect-form",
+   "name": "Imperfect Form",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Dragon Ball Z - Battle of Z",
+    "Cell (futur)",
+    "An 767"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-counter-shock",
+   "name": "Counter Shock",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Épisode 723",
+    "Chapitre 683",
+    "One Piece Novel Law : L'Heure de Kikoku",
+    "Chapitre 1029",
+    "Electro",
+    "Chapitre 1003"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-db-gigantic-flame",
+   "name": "Gigantic Flame",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Dragon Ball Heroes - Big Bang Mission!!! : chapitre 05",
+    "Super Dragon Ball Heroes - Big Bang Mission : épisode 01",
+    "Big Bang Kamé Hamé Ha",
+    "Super Dragon Ball Heroes - Big Bang Mission : épisode 05",
+    "Super Dragon Ball Heroes - Big Bang Mission : épisode 13",
+    "Shroom"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-bien-cuit-grill-shot",
+   "name": "Bien Cuit Grill Shot",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Techniques de la Jambe Noire/Jambe à la Diable",
+    "Sanji/Aptitudes et Compétences",
+    "King (Calmar géant)",
+    "Chapitre 605",
+    "Chapitre 1028"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "head-of-the-uchiha-clan",
+   "name": "Head of the Uchiha Clan",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Hikaku Uchiwa",
+    "Rai Uchiwa",
+    "Kagami Uchiwa",
+    "Hazuki Uchiwa",
+    "Ashina Uzumaki",
+    "Clan Senju"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "fruit",
+   "name": "Fruit",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Fruits du Démon",
+    "Fruits du Démon Artificiels",
+    "Nui Nui no Mi",
+    "Kilo Kilo no Mi",
+    "Gocha Gocha no Mi",
+    "Beri Beri no Mi"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": [
+    {
+     "titreFr": "Fruits du Démon",
+     "titreEnDeclare": "Devil Fruit",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    },
+    {
+     "titreFr": "Fruits du Démon Artificiels",
+     "titreEnDeclare": "Artificial Devil Fruit",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "katasuke-tono-s-assistant",
+   "name": "Katasuke Tōno's Assistant",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Assistant du Sculpteur sur Pierre",
+    "Kôsuke (Scientifique)",
+    "Tosaka",
+    "Ao (tome)",
+    "Le Bras (épisode)",
+    "Ao (épisode)"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-mochi-tsuki",
+   "name": "Mochi Tsuki",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Mochi Mochi no Mi",
+    "Mogura",
+    "Épisode 854",
+    "Toshi Toshi no Mi",
+    "Wanted ! (chanson)",
+    "Kaze wo Sagashite"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-dai-enkai-entei",
+   "name": "Dai Enkai Entei",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Mera Mera no Mi",
+    "Démon du Destin",
+    "Incident de Banaro",
+    "Yami Yami no Mi",
+    "Honebami Toshiro",
+    "Granit marin"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "l-equipage-d-expedition",
+   "name": "L’équipage d’Expédition",
+   "type": "status",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Alliance Baggy et Alvida/Pirates d'Expédition",
+    "Nouvel Équipage des Géants",
+    "Alliance Baggy et Alvida/Équipage d'Alvida",
+    "Équipage des Géants",
+    "L'Équipage des Announcers",
+    "Pirates Bounties"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "gohan-ssj",
+   "name": "Gohan SSJ",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Saiyan 2",
+    "Son Gohan",
+    "Ultimate Gohan",
+    "Son Gohan Beast",
+    "Son Gohan (futur)",
+    "Super Saiyan"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": [
+    {
+     "titreFr": "Son Gohan",
+     "titreEnDeclare": "Gohan",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "arak-planet",
+   "name": "Monde d'Arak",
+   "type": "place",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Ogma",
+    "Planète Kaishin (Univers 7)",
+    "Jerez",
+    "Destruction",
+    "Planète Beerus",
+    "Sidra"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "veste-lestee",
+   "name": "Vêtements lestés",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Dr. Kôchin"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-king-of-hell",
+   "name": "King of Hell",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Gorilla Puncher 18",
+    "Jump Stadium",
+    "Trap",
+    "Scien",
+    "Omatsuri",
+    "Trap Tower"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "thunder-dial",
+   "name": "Thunder-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Art de la Météo/Baguette Climatique Ultime",
+    "Nami/Aptitudes et Compétences",
+    "Souffle Divin",
+    "Ener",
+    "Art de la Météo/Sorcery Climat-Tact"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "summoning-technique-shinigami-snake",
+   "name": "Summoning Technique (Shinigami, Snake)",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Sort d'Entrave - Regard du Serpent",
+    "Absorption de l'Âme",
+    "Shima",
+    "Serpent",
+    "Grande Poigne du Serpent Spectral",
+    "Clone Serpent"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": [
+    {
+     "titreFr": "Serpent",
+     "titreEnDeclare": "Snake",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "oyakata-bune",
+   "name": "Oyakata Bune",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Équipage de Foxy",
+    "Bateau de Pandaman",
+    "Mashikaku (Pirate)",
+    "Pine Peak",
+    "Roba-san Kick 18",
+    "Lombric"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "creature-invoquee",
+   "name": "Créature invoquée",
+   "type": "status",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Invocation Expansive",
+    "Limace",
+    "Quartet du Son - Invocation - Encerclement des Quatre Monstres",
+    "Ni",
+    "Invocation - Estomac du Crapaud",
+    "Shiromari"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-gamma-knife",
+   "name": "Gamma Knife",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Épisode 722",
+    "Ope Ope no Mi",
+    "Chapitre 781",
+    "Chapitre 1002",
+    "Don Quichotte Doflamingo/Aptitudes et Compétences",
+    "Roule"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-room",
+   "name": "Room",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Ope Ope no Mi",
+    "Chapitre 658",
+    "One Piece x Mercer Labs",
+    "Chapitre 686",
+    "ONE PIECE FILM GOLD Original Soundtrack",
+    "Épisode 1093"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-mirage-tempo",
+   "name": "Mirage Tempo",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Art de la Météo/Nouveau Climat-Tact",
+    "Art de la Météo/Sorcery Climat-Tact",
+    "Art de la Météo/Baguette Climatique Ultime",
+    "Art de la Météo/Baguette Climatique",
+    "Chapitre 192",
+    "Nami/Aptitudes et Compétences"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "summoning-technique-spider",
+   "name": "Summoning Technique (Spider)",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Absorption de l'Âme",
+    "Suiton - Évanescence Explosive",
+    "Technique des Spores",
+    "Suiton - Tranchant d'Eau Montant",
+    "Sphère de Vent d'Attaque Féroce",
+    "Technique Secrète - Cocon d'Insecte"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-arm-point",
+   "name": "Arm Point",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Hito Hito no Mi",
+    "Tony Tony Chopper/Aptitudes et Compétences",
+    "Rumble Ball (chanson)",
+    "Chapitre 262",
+    "Chapitre 407",
+    "Chapitre 149"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "goku-ssj",
+   "name": "Goku SSJ",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Saiyan",
+    "Super Saiyan Divin",
+    "Super Saiyan 3",
+    "Faux Super Saiyan",
+    "Super Saiyan Blue",
+    "Son Goku"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": [
+    {
+     "titreFr": "Son Goku",
+     "titreEnDeclare": "Goku",
+     "preuve": "titre EN déclaré = même nom (romanisation)"
+    }
+   ]
+  },
+  {
+   "slug": "goku-ultra-instinc",
+   "name": "Goku Ultra Instinc",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Prémices du réflexe transcendantal",
+    "Réflexe transcendantal (maîtrisé)",
+    "Dragon Ball Super épisode 129",
+    "Jiren",
+    "Dragon Ball Super épisode 116",
+    "Dragon Ball Super (anime)"
+   ],
+   "pagesAvecLanglink": 4,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-thunder-lance-tempo",
+   "name": "Thunder Lance Tempo",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Art de la Météo/Baguette Climatique Ultime",
+    "Nami/Aptitudes et Compétences",
+    "Art de la Météo/Baguette Climatique",
+    "Art de la Météo/Nouveau Climat-Tact",
+    "Épisode 296",
+    "Chapitre 191"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-firebird-star",
+   "name": "Firebird Star",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Arsenal d'Usopp/Kabuto",
+    "Arsenal d'Usopp/Kabuto Noir",
+    "Chapitre 674",
+    "One Piece Attack Motions",
+    "Usopp/Aptitudes et Compétences",
+    "Shû"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "gogeta-ssjb",
+   "name": "Gogeta SSJB",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Son Gokû God Fusion",
+    "Super Saiyan Blue",
+    "Super Saiyan Blue Évolué",
+    "Shallot"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-onigawara-seiken",
+   "name": "Onigawara Seiken",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Machi",
+    "Chapitre 1018",
+    "Jinbe",
+    "Who's-Who"
+   ],
+   "pagesAvecLanglink": 4,
+   "trouves": []
+  },
+  {
+   "slug": "elderly-village",
+   "name": "Village des Aînés",
+   "type": "place",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Village de Gosa",
+    "Vieillard du Headband Catfish Village",
+    "Village des Teintures",
+    "Headband Catfish Village",
+    "Chapitre 249",
+    "Umeno Nazawa"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": [
+    {
+     "titreFr": "Vieillard du Headband Catfish Village",
+     "titreEnDeclare": "Headband Catfish Village Elder",
+     "preuve": "titre EN déclaré ≡ notre slug"
+    }
+   ]
+  },
+  {
+   "slug": "machine-a-remonter-le-temps",
+   "name": "Machine à remonter le temps",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Time Machine de Bulma",
+    "Anneau du Temps",
+    "Mai (futur)",
+    "Tokuno Shin Ômori",
+    "Dragon Ball Super épisode 063",
+    "Dragon Ball Z épisode 139"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-zan-giri-mochi",
+   "name": "Zan Giri Mochi",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Mochi Mochi no Mi",
+    "Charlotte Katakuri",
+    "Kona Kona no Mi",
+    "Juku Juku no Mi",
+    "Gocha Gocha no Mi",
+    "Kobu Kobu no Mi"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "trunks-rage",
+   "name": "Trunks Rage",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Saiyan Rage",
+    "Trunks (futur)",
+    "Arc \"Trunks du futur\"",
+    "Zamasu (futur)",
+    "Zamasu fusionné",
+    "Goku Black"
+   ],
+   "pagesAvecLanglink": 4,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-coup-de-vent",
+   "name": "Coup de Vent",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Chapitre 338",
+    "Battle Franky/BF-36",
+    "Danse de l'Épée des Remous",
+    "Battle Franky/BF-37",
+    "Boss",
+    "Chapitre 732"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "goku-ssjb",
+   "name": "Goku SSJB",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Saiyan Blue",
+    "Son Gokû God Fusion",
+    "Super Saiyan Blue (Pouvoir de l'Arbre-Univers)",
+    "Super Saiyan Blue Kaiôken",
+    "Ninku",
+    "Shallot"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-kyokaen",
+   "name": "Kyokaen",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Mera Mera no Mi"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "actress",
+   "name": "Actress",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Musique",
+    "Hinoko",
+    "Tomaru",
+    "Chiyo (princesse)",
+    "Arcanes Lunaires Infinis (homonymie)"
+   ],
+   "pagesAvecLanglink": 4,
+   "trouves": []
+  },
+  {
+   "slug": "clone-du-fruit-des-coussinets",
+   "name": "Clone du fruit des Coussinets",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Nikyu Nikyu no Mi",
+    "Mane Mane no Mi",
+    "S-Bear",
+    "Peke Peke no Mi",
+    "Kopi Kopi no Mi",
+    "Muchi Muchi no Mi"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-red-hawk",
+   "name": "Gomu Gomu no Red Hawk",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Gomu Gomu no Mi/Gear Second Techniques",
+    "Monkey D. Luffy/Aptitudes et Compétences",
+    "Gomu Gomu no Mi/Gear Third Techniques",
+    "Épisode 565",
+    "Haki/Haki de l'Armement",
+    "Gomu Gomu no Mi"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "kani-crane",
+   "name": "Kani Crane",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Équipage de Foxy",
+    "Cutie Wagon",
+    "Gorilla Puncher 18",
+    "Girarin",
+    "Geena",
+    "Kapoty"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "vegeta-ssjb",
+   "name": "Vegeta SSJB",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Saiyan Blue Évolué",
+    "Super Saiyan Blue",
+    "Son Gokû God Fusion",
+    "Shallot",
+    "Super Saiyan Blue Kaiôken"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-poele-a-frire",
+   "name": "Poele à Frire",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Techniques de la Jambe Noire/Jambe à la Diable",
+    "Arsenal d'Usopp",
+    "Charlotte Oven",
+    "Marlon",
+    "Jigoku Benten"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "priest",
+   "name": "Priest",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Course du Kamui - Massacre",
+    "Tome 1 (Sasuke Retsuden)",
+    "Les Ninjas de Suna"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "goku-ssj4",
+   "name": "Goku SSJ4",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Super Saiyan 4",
+    "Super Full Power Saiyan 4 Genkai Toppa",
+    "Super Saiyan Divin",
+    "Gogeta (DBZ/GT)",
+    "Gogeta (Xeno)",
+    "Son Goku (Xeno)"
+   ],
+   "pagesAvecLanglink": 4,
+   "trouves": []
+  },
+  {
+   "slug": "breath-dial",
+   "name": "Breath-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials",
+    "Bateau à Dials",
+    "Shooter",
+    "Waver",
+    "Burn Blade",
+    "Shiro Mokuba I"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "chasseur-de-primes",
+   "name": "Chasseur de primes",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Ami ou Ennemi ? Le Chasseur de prime du désert",
+    "Sazanami",
+    "Gatsu",
+    "Anaguma",
+    "Mission de Capture de Gosunkugi",
+    "Michizô Manaka"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "secret-technique-sealing-release",
+   "name": "Secret Technique: Sealing Release",
+   "type": "power",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Technique d'Incorporation",
+    "Technique Secrète - Vol de la Voix",
+    "Secret des Arcanes Blancs - Recueil des Rêves",
+    "Technique de Descellement",
+    "Technique d'Évasion Transparente",
+    "Genjutsu - Clone du Son de Cloche"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-injection-shot",
+   "name": "Injection Shot",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Chapitre 768",
+    "Épisode 707",
+    "Épisode 906",
+    "Chapitre 760",
+    "Ope Ope no Mi",
+    "Le grand trésor de l'île de Tongari"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-ryu-no-kagizume",
+   "name": "Ryu no Kagizume",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Ryusoken",
+    "Inchikin",
+    "Justy",
+    "Haki/Haki de l'Armement",
+    "Sabo"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-gura-gura-quake",
+   "name": "Gura Gura Quake",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Gura Gura no Mi",
+    "Suleiman"
+   ],
+   "pagesAvecLanglink": 2,
+   "trouves": []
+  },
+  {
+   "slug": "gogeta-ssjb-evolved",
+   "name": "Gogeta SSJB Evolved",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "titresSondes": [
+    "Évolution Sombre",
+    "Gogeta (DBS)",
+    "Gogeta (Xeno)",
+    "Super Saiyan Blue Évolué",
+    "Gokuhan",
+    "Super Dragon Ball Heroes - Universe Mission : épisode 18"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "bandit",
+   "name": "Bandit",
+   "type": "profession",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Shinayakana",
+    "Fukuyokana",
+    "Une nouvelle mission !!",
+    "Michizô Manaka",
+    "Shiin",
+    "Tôfû"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "clone-du-fruit-du-tailladant",
+   "name": "Clone du fruit du tailladant",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Supa Supa no Mi",
+    "Mane Mane no Mi",
+    "Peke Peke no Mi",
+    "Kopi Kopi no Mi",
+    "Hana Hana no Mi",
+    "Numa Numa no Mi"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "staff-b",
+   "name": "Staff B",
+   "type": "character",
+   "universe": "Bleach",
+   "titresSondes": [
+    "Devorar Pluma"
+   ],
+   "pagesAvecLanglink": 0,
+   "trouves": []
+  },
+  {
+   "slug": "hydro-dial",
+   "name": "Hydro-Dial",
+   "type": "artifact",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Dials"
+   ],
+   "pagesAvecLanglink": 1,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-midori-boshi",
+   "name": "Midori Boshi",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Arsenal d'Usopp/Kabuto Noir",
+    "Horseman",
+    "King (Calmar géant)",
+    "Épisode 674",
+    "Épisode 1000",
+    "Chapitre 1110"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-yarinami",
+   "name": "Yarinami",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Gyojin Karate",
+    "Épisode 561",
+    "Jinbe"
+   ],
+   "pagesAvecLanglink": 3,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-radical-beam",
+   "name": "Radical Beam",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Battle Franky/BF-37",
+    "Nypers",
+    "Chapitre 1019",
+    "Chapitre 989",
+    "Chapitre 677",
+    "One Piece Film: Gold Épisode 0"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-mouton-shot",
+   "name": "Mouton Shot",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Techniques de la Jambe Noire/Jambe à la Diable",
+    "Sheep's Head",
+    "Sanji/Aptitudes et Compétences",
+    "Chapitre 187",
+    "Techniques de la Jambe Noire/Combinaisons d'Équipe",
+    "Gomu Gomu no Mi/Autres Techniques"
+   ],
+   "pagesAvecLanglink": 6,
+   "trouves": []
+  },
+  {
+   "slug": "atk-op-shambles",
+   "name": "Shambles",
+   "type": "power",
+   "universe": "One Piece",
+   "titresSondes": [
+    "Ope Ope no Mi",
+    "Hyper Shibireru-kun",
+    "Chapitre 781",
+    "SBS Tome 73",
+    "One Piece Super Deformed Figures",
+    "Chapitre 759"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  },
+  {
+   "slug": "dispositif-du-sceau-maudit",
+   "name": "Dispositif du Sceau Maudit",
+   "type": "artifact",
+   "universe": "Naruto",
+   "titresSondes": [
+    "Tosaka",
+    "Mudrâ",
+    "Momo",
+    "Grêle de Poings - Rakshasa",
+    "Rôen-Kodon",
+    "Boruto Uzumaki"
+   ],
+   "pagesAvecLanglink": 5,
+   "trouves": []
+  }
+ ]
+}

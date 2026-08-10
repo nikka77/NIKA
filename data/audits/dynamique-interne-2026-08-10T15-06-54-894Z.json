@@ -1,0 +1,477 @@
+{
+  "chantier": "dynamique interne des visuels litigieux, contre témoins tirés du corpus lisible",
+  "quand": "2026-08-10T15:06:56.742Z",
+  "trace_source": "data/audits/lisibilite-visuels-apres-2026-08-10T15-04-21-814Z.json",
+  "lecture": "le contraste contre le fond tranche pour un glyphe sur transparence ; pour une photo opaque c'est la dynamique INTERNE qui dit si l'œil y lit quelque chose",
+  "moyennes": {
+    "litige": 1.441,
+    "témoin lisible": 10.439
+  },
+  "lignes": [
+    {
+      "famille": "litige",
+      "fiches": [
+        "hamura-otsutsuki-golem"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/b/be/Statue_of_the_%C5%8Ctsutsuki_Clan.png",
+      "a_alpha": false,
+      "verdict_fond": "illisible",
+      "contraste_vs_fond": 1.653,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.00752,
+      "luminance_p50": 0.0212,
+      "luminance_p95": 0.04065,
+      "dynamique_interne": 1.576
+    },
+    {
+      "famille": "litige",
+      "fiches": [
+        "summoning-crushing-toad-stomach"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/c/cb/Summoning_Crushing_Toad_Stomach.png/revision/latest/scale-to-width-down/720?cb=20150917042642",
+      "a_alpha": false,
+      "verdict_fond": "illisible",
+      "contraste_vs_fond": 1.706,
+      "pixels_opaques": 36608,
+      "luminance_p05": 0.01069,
+      "luminance_p50": 0.02206,
+      "luminance_p95": 0.03688,
+      "dynamique_interne": 1.432
+    },
+    {
+      "famille": "litige",
+      "fiches": [
+        "gatekeeper"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/5/56/The_Gatekeeper_movie.png",
+      "a_alpha": false,
+      "verdict_fond": "illisible",
+      "contraste_vs_fond": 1.828,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0,
+      "luminance_p50": 0.00405,
+      "luminance_p95": 0.02005,
+      "dynamique_interne": 1.401
+    },
+    {
+      "famille": "litige",
+      "fiches": [
+        "poison-moth-genjutsu"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/0/04/Poison_Moth_Genjutsu_part_2.png/revision/latest/scale-to-width-down/720?cb=20160115105332",
+      "a_alpha": false,
+      "verdict_fond": "illisible",
+      "contraste_vs_fond": 1.917,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.00262,
+      "luminance_p50": 0.00595,
+      "luminance_p95": 0.01457,
+      "dynamique_interne": 1.227
+    },
+    {
+      "famille": "litige",
+      "fiches": [
+        "bo-shadow-clone-technique"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/e/e6/Bo_Shadow_Clone.png/revision/latest/scale-to-width-down/720?cb=20220119031415",
+      "a_alpha": false,
+      "verdict_fond": "illisible",
+      "contraste_vs_fond": 2.035,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.00076,
+      "luminance_p50": 0.00411,
+      "luminance_p95": 0.01249,
+      "dynamique_interne": 1.231
+    },
+    {
+      "famille": "litige",
+      "fiches": [
+        "earth-release-hiding-in-rock-technique"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/8/8f/Doton_Iwagakure_no_Jutsu.png/revision/latest/scale-to-width-down/720?cb=20210906161321",
+      "a_alpha": false,
+      "verdict_fond": "presque illisible",
+      "contraste_vs_fond": 2.082,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.00373,
+      "luminance_p50": 0.01038,
+      "luminance_p95": 0.03273,
+      "dynamique_interne": 1.54
+    },
+    {
+      "famille": "litige",
+      "fiches": [
+        "hiding-in-black-fog-technique"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/f/f1/Black_Fog_Technique.png/revision/latest/scale-to-width-down/720?cb=20220327215150",
+      "a_alpha": false,
+      "verdict_fond": "presque illisible",
+      "contraste_vs_fond": 2.084,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.00517,
+      "luminance_p50": 0.00878,
+      "luminance_p95": 0.02057,
+      "dynamique_interne": 1.279
+    },
+    {
+      "famille": "litige",
+      "fiches": [
+        "sage-art-gate-of-the-great-god"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/c/c3/Sage_Art-_Gate_of_the_Great_God.png/revision/latest/scale-to-width-down/720?cb=20150113025111",
+      "a_alpha": false,
+      "verdict_fond": "presque illisible",
+      "contraste_vs_fond": 2.233,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.00526,
+      "luminance_p50": 0.02393,
+      "luminance_p95": 0.04558,
+      "dynamique_interne": 1.73
+    },
+    {
+      "famille": "litige",
+      "fiches": [
+        "wood-release-great-spear-tree"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/6/64/Obito_killed_kirinin.png/revision/latest/scale-to-width-down/720?cb=20140116131501",
+      "a_alpha": false,
+      "verdict_fond": "presque illisible",
+      "contraste_vs_fond": 3.195,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.00178,
+      "luminance_p50": 0.00483,
+      "luminance_p95": 0.02755,
+      "dynamique_interne": 1.498
+    },
+    {
+      "famille": "litige",
+      "fiches": [
+        "flying-thunder-god-guiding-thunder"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/4/41/Space-Time_Barrier.png/revision/latest/scale-to-width-down/720?cb=20150218014653",
+      "a_alpha": false,
+      "verdict_fond": "presque illisible",
+      "contraste_vs_fond": 2.121,
+      "pixels_opaques": 37120,
+      "luminance_p05": 0.00443,
+      "luminance_p50": 0.00906,
+      "luminance_p95": 0.03632,
+      "dynamique_interne": 1.586
+    },
+    {
+      "famille": "litige",
+      "fiches": [
+        "moryo"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/e/e8/Mouryou2.PNG/revision/latest?cb=20150723214330",
+      "a_alpha": false,
+      "verdict_fond": "presque illisible",
+      "contraste_vs_fond": 2.882,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.00692,
+      "luminance_p50": 0.012,
+      "luminance_p95": 0.02687,
+      "dynamique_interne": 1.351
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "nagato"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/4/46/Nagato.png",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 2.1,
+      "pixels_opaques": 41472,
+      "luminance_p05": 0.00304,
+      "luminance_p50": 0.00785,
+      "luminance_p95": 0.06765,
+      "dynamique_interne": 2.218
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "dust-wind-technique"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/d/d3/Dust_wind_technique.png/revision/latest/scale-to-width-down/720?cb=20240908020024",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 8.826,
+      "pixels_opaques": 49152,
+      "luminance_p05": 0.0638,
+      "luminance_p50": 0.16346,
+      "luminance_p95": 0.34358,
+      "dynamique_interne": 3.459
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "sports-maxx"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/6/494567.webp?s=9c9132d9711fa1de74dfc6eee7dded21",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 11.114,
+      "pixels_opaques": 42240,
+      "luminance_p05": 0.01791,
+      "luminance_p50": 0.19982,
+      "luminance_p95": 0.50249,
+      "dynamique_interne": 8.136
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "atk-db-lightning-sword-slash"
+      ],
+      "url": "https://static.wikia.nocookie.net/dragonball/images/b/b8/ShiningSwordAttack%28mov7%29.png/revision/latest/scale-to-width-down/720?cb=20180426013858",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 12.624,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.00202,
+      "luminance_p50": 0.17501,
+      "luminance_p95": 0.40584,
+      "dynamique_interne": 8.763
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "itachi-s-crow"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/3/37/Sharingan_crow.png",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 13.936,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.04997,
+      "luminance_p50": 0.07639,
+      "luminance_p95": 0.47685,
+      "dynamique_interne": 5.27
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "atk-db-death-raid"
+      ],
+      "url": "https://static.wikia.nocookie.net/dragonball/images/f/fd/Death_Raid.png/revision/latest/scale-to-width-down/720?cb=20250322022256",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 14.736,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.00345,
+      "luminance_p50": 0.13736,
+      "luminance_p95": 0.72606,
+      "dynamique_interne": 14.519
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "futa-kagetsu"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/d/da/Futa_Kagetsu.png",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 15.478,
+      "pixels_opaques": 49152,
+      "luminance_p05": 0.10187,
+      "luminance_p50": 0.57648,
+      "luminance_p95": 0.71944,
+      "dynamique_interne": 5.066
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "amazon-lily"
+      ],
+      "url": "https://static.wikia.nocookie.net/onepiece/images/8/88/Amazon_Lily_Infobox.png/revision/latest/scale-to-width-down/720?cb=20231222074153",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 16.086,
+      "pixels_opaques": 34304,
+      "luminance_p05": 0.17561,
+      "luminance_p50": 0.47114,
+      "luminance_p95": 0.67337,
+      "dynamique_interne": 3.206
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "liberation-du-cristal-shoton"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/5/5c/Jade_Crystal_Prison.png/revision/latest/scale-to-width-down/720?cb=20151006202337",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 16.541,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.01416,
+      "luminance_p50": 0.15505,
+      "luminance_p95": 0.72369,
+      "dynamique_interne": 12.058
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "mizaistom-nana"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/14/252331.webp?s=d69237e0744d226ced3e097fd10d96cc",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 16.794,
+      "pixels_opaques": 42240,
+      "luminance_p05": 0.01472,
+      "luminance_p50": 0.32887,
+      "luminance_p95": 0.84802,
+      "dynamique_interne": 13.875
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "otsutsuki-clan-puppets"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/8/84/Otsutsuki_Clan_Puppets.jpg/revision/latest/scale-to-width-down/720?cb=20211119163947",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 16.983,
+      "pixels_opaques": 36352,
+      "luminance_p05": 0.06125,
+      "luminance_p50": 0.27501,
+      "luminance_p95": 0.64574,
+      "dynamique_interne": 6.254
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "taichi-miyamoto"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/15/83562.webp?s=a28acc72200d65e1af5ba8200fa74b2d",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 17.202,
+      "pixels_opaques": 42240,
+      "luminance_p05": 0.02712,
+      "luminance_p50": 0.0638,
+      "luminance_p95": 0.74903,
+      "dynamique_interne": 10.361
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "ill"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/9/364676.webp?s=b14bce9faab50441b834913aed1bd0c4",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 17.482,
+      "pixels_opaques": 42240,
+      "luminance_p05": 0.01028,
+      "luminance_p50": 0.09945,
+      "luminance_p95": 0.87977,
+      "dynamique_interne": 15.424
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "tornado-lightning"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/b/b0/Tornado_Lightning.png/revision/latest/scale-to-width-down/720?cb=20160215024012",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 17.726,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.00555,
+      "luminance_p50": 0.69012,
+      "luminance_p95": 0.94496,
+      "dynamique_interne": 17.91
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "johnny"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/3/49657.webp?s=38533110fa6b4ab77ca0bc40b447315e",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 17.935,
+      "pixels_opaques": 42240,
+      "luminance_p05": 0.01102,
+      "luminance_p50": 0.31834,
+      "luminance_p95": 0.47844,
+      "dynamique_interne": 8.66
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "mouse-man"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/15/388407.webp?s=b6f1c13b6f9de346301cb5ef41325580",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 18.114,
+      "pixels_opaques": 42240,
+      "luminance_p05": 0.0175,
+      "luminance_p50": 0.15964,
+      "luminance_p95": 0.80364,
+      "dynamique_interne": 12.647
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "multiple-string-light-formation"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/d/d0/Students_Vs_Konohamaru.png/revision/latest/scale-to-width-down/720?cb=20171213103745",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 18.202,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.0076,
+      "luminance_p50": 0.05634,
+      "luminance_p95": 0.6529,
+      "dynamique_interne": 12.204
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "crocodile"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/6/100535.webp?s=3acba3e9944b9f3d1160fff13f6920c3",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 18.224,
+      "pixels_opaques": 42240,
+      "luminance_p05": 0.00433,
+      "luminance_p50": 0.21471,
+      "luminance_p95": 0.9511,
+      "dynamique_interne": 18.426
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "kanezenny"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/6/585578.webp?s=9f741e190dd472ba0dd7fd57a9e72d37",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 18.224,
+      "pixels_opaques": 42240,
+      "luminance_p05": 0.00152,
+      "luminance_p50": 0.89627,
+      "luminance_p95": 1,
+      "dynamique_interne": 20.381
+    },
+    {
+      "famille": "témoin lisible",
+      "fiches": [
+        "project-d"
+      ],
+      "url": "https://static.wikia.nocookie.net/initiald/images/6/65/Project_D_Final_Stage_Eyecatch.png/revision/latest?cb=20210212193222",
+      "a_alpha": false,
+      "verdict_fond": "lisible",
+      "contraste_vs_fond": 18.224,
+      "pixels_opaques": 36864,
+      "luminance_p05": 0.02369,
+      "luminance_p50": 0.14718,
+      "luminance_p95": 0.68222,
+      "dynamique_interne": 9.937
+    }
+  ]
+}

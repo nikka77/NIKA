@@ -1,0 +1,115 @@
+{
+ "chantier": "sortir les isolées Hunter x Hunter par l'infobox RENDUE",
+ "quand": "2026-08-10T19:05:37.593Z",
+ "mode": "sonde",
+ "hote": "hunterxhunter.fandom.com",
+ "champs": [
+  "abilities"
+ ],
+ "avant": {
+  "fiches": 7698,
+  "aretes": 17015,
+  "isoleesTotales": 580,
+  "isoleesUnivers": 22
+ },
+ "pagesLues": 13,
+ "wikitexteInfoboxNue": 0,
+ "libellesInfobox": {
+  "image": 12,
+  "japanese voice": 12,
+  "manga debut": 12,
+  "anime debut": 12,
+  "gender": 12,
+  "eyes": 12,
+  "hair": 12,
+  "status": 12,
+  "english voice": 11,
+  "kana": 9,
+  "rōmaji": 9,
+  "previous occupation": 7,
+  "occupation": 6,
+  "previous affiliation": 4,
+  "type": 4,
+  "affiliation": 3,
+  "also known as": 2,
+  "abilities": 2,
+  "relatives": 1,
+  "kanji": 1
+ },
+ "ciblesBrutes": 1,
+ "attendu": {
+  "aretes": 1,
+  "isoleesSorties": 1
+ },
+ "parNature": {
+  "maitrise": 1
+ },
+ "parChamp": {
+  "abilities": 1
+ },
+ "motifsEchec": {},
+ "journal": {
+  "pageAbsente": [
+   "Brovuda",
+   "Kyuu",
+   "No. 0",
+   "Brother Ortho",
+   "Rock Climber",
+   "Koltopi Tounofmaill",
+   "Sister Ortho",
+   "Gereta"
+  ],
+  "redirectionSection": [
+   "Cookie → Biscuit Krueger#Nen"
+  ],
+  "pagePartagee": [],
+  "sansInfobox": [
+   "Examen de Hunter"
+  ],
+  "sansChampUtile": [
+   "Gozu",
+   "Pyro",
+   "Sengi Guild Agent",
+   "Hishita",
+   "Coco Loo",
+   "Fukurou",
+   "200th Floor Receptionist",
+   "Sedokan",
+   "Gothic Newscaster",
+   "Supa",
+   "Matthew"
+  ],
+  "cibleRefusee": [],
+  "qualificateurRevolu": [],
+  "fragmentRefuse": [
+   "Cookie → Biscuit Krueger#Nen (section dans l'article d'un personnage, aucune relation nommée)"
+  ]
+ },
+ "candidats": [
+  {
+   "from_entry": "debf6bef-16ff-4ad0-9449-fe0c29ecccd6",
+   "to_entry": "747b3838-337b-4c05-80bb-52bb28c48118",
+   "relation": "maitrise",
+   "sens": "direct",
+   "de": "Abe",
+   "deSlug": "abe",
+   "deType": "character",
+   "vers": "Nen",
+   "versSlug": "nen",
+   "versType": "skill",
+   "lue": "Abe",
+   "gisement": "infobox",
+   "champ": "abilities",
+   "titreWiki": "Nen",
+   "titreResolu": "Nen",
+   "ancre": "Exorcism",
+   "libelleAffiche": "Exorcism",
+   "voie": "nom direct",
+   "sauveDe": true,
+   "sauveVers": false,
+   "source_url": "https://hunterxhunter.fandom.com/wiki/Abengane",
+   "preuve": "https://hunterxhunter.fandom.com/wiki/Abengane · infobox rendue, ligne « abilities : Exorcism * » → lien /wiki/Nen ; fiche Hunter x Hunter de ce nom : Nen (nen, type skill) ; champ « abilities » → nature « maitrise »"
+  }
+ ],
+ "echecs": []
+}

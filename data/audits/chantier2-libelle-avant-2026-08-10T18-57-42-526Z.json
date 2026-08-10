@@ -1,0 +1,4062 @@
+{
+ "bilan": {
+  "etiquette": "avant",
+  "mesureLe": "2026-08-10T18:57:57.116Z",
+  "source": "chantier2-detail-2026-08-10T18-50-01-500Z.json",
+  "fiches": 11,
+  "echecs": [],
+  "demiAretes": 1023,
+  "vues": 275,
+  "absentes": 748,
+  "compteurMenteur": [
+   {
+    "slug": "takigakure",
+    "affiche": 1,
+    "vrai": 2
+   },
+   {
+    "slug": "kumogakure",
+    "affiche": 8,
+    "vrai": 9
+   },
+   {
+    "slug": "konohagakure",
+    "affiche": 57,
+    "vrai": 62
+   },
+   {
+    "slug": "otogakure",
+    "affiche": 8,
+    "vrai": 10
+   },
+   {
+    "slug": "amegakure",
+    "affiche": 9,
+    "vrai": 10
+   },
+   {
+    "slug": "ninja-medical",
+    "affiche": 38,
+    "vrai": 40
+   },
+   {
+    "slug": "sunagakure",
+    "affiche": 14,
+    "vrai": 16
+   },
+   {
+    "slug": "kirigakure",
+    "affiche": 8,
+    "vrai": 11
+   },
+   {
+    "slug": "shinigami",
+    "affiche": 12,
+    "vrai": 14
+   },
+   {
+    "slug": "iwagakure",
+    "affiche": 5,
+    "vrai": 6
+   }
+  ],
+  "compteurAbsentAlorsQuIlFaudrait": [
+   {
+    "slug": "hoshigakure",
+    "vrai": 1
+   }
+  ]
+ },
+ "pages": [
+  {
+   "slug": "takigakure",
+   "type": "place",
+   "etat": "ok",
+   "aretes": 16,
+   "vues": 15,
+   "primaires": 14,
+   "primairesVues": 14,
+   "autres": 2,
+   "autresVues": 1,
+   "autresDistinctsVrais": 2,
+   "compteurAffiche": 1,
+   "titres": [
+    {
+     "titre": "Autres liens",
+     "n": 1
+    }
+   ],
+   "restes": [],
+   "absentes": [
+    {
+     "label": "ennemi · kakuzu",
+     "autre": "kakuzu",
+     "primaire": false
+    }
+   ]
+  },
+  {
+   "slug": "kumogakure",
+   "type": "place",
+   "etat": "ok",
+   "aretes": 72,
+   "vues": 29,
+   "primaires": 63,
+   "primairesVues": 21,
+   "autres": 9,
+   "autresVues": 8,
+   "autresDistinctsVrais": 9,
+   "compteurAffiche": 8,
+   "titres": [
+    {
+     "titre": "Autres liens",
+     "n": 8
+    }
+   ],
+   "restes": [],
+   "absentes": [
+    {
+     "label": "don",
+     "autre": "don",
+     "primaire": true
+    },
+    {
+     "label": "armadiko",
+     "autre": "armadiko",
+     "primaire": true
+    },
+    {
+     "label": "sekiei (spectator)",
+     "autre": "sekiei-spectator",
+     "primaire": true
+    },
+    {
+     "label": "a (first raikage)",
+     "autre": "a-first-raikage",
+     "primaire": true
+    },
+    {
+     "label": "yurui (anime)",
+     "autre": "yurui-anime",
+     "primaire": true
+    },
+    {
+     "label": "yurui",
+     "autre": "yurui",
+     "primaire": true
+    },
+    {
+     "label": "kiyoi yotsuki",
+     "autre": "kiyoi-yotsuki",
+     "primaire": true
+    },
+    {
+     "label": "moroi",
+     "autre": "moroi",
+     "primaire": true
+    },
+    {
+     "label": "osoi",
+     "autre": "osoi",
+     "primaire": true
+    },
+    {
+     "label": "genbu",
+     "autre": "genbu",
+     "primaire": true
+    },
+    {
+     "label": "kakui",
+     "autre": "kakui",
+     "primaire": true
+    },
+    {
+     "label": "hikaru",
+     "autre": "hikaru",
+     "primaire": true
+    },
+    {
+     "label": "kayui",
+     "autre": "kayui",
+     "primaire": true
+    },
+    {
+     "label": "chūji",
+     "autre": "chuji",
+     "primaire": true
+    },
+    {
+     "label": "yukai",
+     "autre": "yukai",
+     "primaire": true
+    },
+    {
+     "label": "kintoki",
+     "autre": "kintoki",
+     "primaire": true
+    },
+    {
+     "label": "tajiki",
+     "autre": "tajiki",
+     "primaire": true
+    },
+    {
+     "label": "a (second raikage)",
+     "autre": "a-second-raikage",
+     "primaire": true
+    },
+    {
+     "label": "maroi",
+     "autre": "maroi",
+     "primaire": true
+    },
+    {
+     "label": "kobushi saiki",
+     "autre": "kobushi-saiki",
+     "primaire": true
+    },
+    {
+     "label": "k",
+     "autre": "k",
+     "primaire": true
+    },
+    {
+     "label": "musai",
+     "autre": "musai",
+     "primaire": true
+    },
+    {
+     "label": "furui",
+     "autre": "furui",
+     "primaire": true
+    },
+    {
+     "label": "blue b",
+     "autre": "blue-b",
+     "primaire": true
+    },
+    {
+     "label": "dodai",
+     "autre": "dodai",
+     "primaire": true
+    },
+    {
+     "label": "messenger lizard",
+     "autre": "messenger-lizard",
+     "primaire": true
+    },
+    {
+     "label": "sekiei's partner",
+     "autre": "sekiei-s-partner",
+     "primaire": true
+    },
+    {
+     "label": "tango",
+     "autre": "tango",
+     "primaire": true
+    },
+    {
+     "label": "tezutsu mikawa",
+     "autre": "tezutsu-mikawa",
+     "primaire": true
+    },
+    {
+     "label": "toroi",
+     "autre": "toroi",
+     "primaire": true
+    },
+    {
+     "label": "batta",
+     "autre": "batta",
+     "primaire": true
+    },
+    {
+     "label": "marui",
+     "autre": "marui",
+     "primaire": true
+    },
+    {
+     "label": "ran (kunoichi)",
+     "autre": "ran-kunoichi",
+     "primaire": true
+    },
+    {
+     "label": "j",
+     "autre": "j",
+     "primaire": true
+    },
+    {
+     "label": "tenga",
+     "autre": "tenga",
+     "primaire": true
+    },
+    {
+     "label": "giant squid",
+     "autre": "giant-squid",
+     "primaire": true
+    },
+    {
+     "label": "nurui",
+     "autre": "nurui",
+     "primaire": true
+    },
+    {
+     "label": "hippo boss",
+     "autre": "hippo-boss",
+     "primaire": true
+    },
+    {
+     "label": "rashii",
+     "autre": "rashii",
+     "primaire": true
+    },
+    {
+     "label": "fukuemon",
+     "autre": "fukuemon",
+     "primaire": true
+    },
+    {
+     "label": "allié · yugito nii",
+     "autre": "yugito-nii",
+     "primaire": false
+    },
+    {
+     "label": "head ninja of kumogakure",
+     "autre": "head-ninja-of-kumogakure",
+     "primaire": true
+    },
+    {
+     "label": "f",
+     "autre": "f",
+     "primaire": true
+    }
+   ]
+  },
+  {
+   "slug": "konohagakure",
+   "type": "place",
+   "etat": "ok",
+   "aretes": 511,
+   "vues": 33,
+   "primaires": 449,
+   "primairesVues": 21,
+   "autres": 62,
+   "autresVues": 12,
+   "autresDistinctsVrais": 62,
+   "compteurAffiche": 57,
+   "titres": [
+    {
+     "titre": "Autres liens",
+     "n": 57
+    }
+   ],
+   "restes": [],
+   "absentes": [
+    {
+     "label": "inabi uchiha",
+     "autre": "inabi-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "sabure",
+     "autre": "sabure",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team guy",
+     "autre": "team-guy",
+     "primaire": false
+    },
+    {
+     "label": "taiko uchiha",
+     "autre": "taiko-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "kotetsu hagane",
+     "autre": "kotetsu-hagane",
+     "primaire": true
+    },
+    {
+     "label": "tsukune",
+     "autre": "tsukune",
+     "primaire": true
+    },
+    {
+     "label": "mabo",
+     "autre": "mabo",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · konoha torture and interrogation force",
+     "autre": "konoha-torture-and-interrogation-force",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · team tobirama",
+     "autre": "team-tobirama",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · team 25",
+     "autre": "team-25",
+     "primaire": false
+    },
+    {
+     "label": "ranka",
+     "autre": "ranka",
+     "primaire": true
+    },
+    {
+     "label": "yagura (anime)",
+     "autre": "yagura-anime",
+     "primaire": true
+    },
+    {
+     "label": "iwana akame",
+     "autre": "iwana-akame",
+     "primaire": true
+    },
+    {
+     "label": "iroha hyūga",
+     "autre": "iroha-hyuga",
+     "primaire": true
+    },
+    {
+     "label": "hibari",
+     "autre": "hibari-naruto",
+     "primaire": true
+    },
+    {
+     "label": "metal lee",
+     "autre": "metal-lee",
+     "primaire": true
+    },
+    {
+     "label": "hakui (medic)",
+     "autre": "hakui-medic",
+     "primaire": true
+    },
+    {
+     "label": "izumi uchiha",
+     "autre": "izumi-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "genzō",
+     "autre": "genzo",
+     "primaire": true
+    },
+    {
+     "label": "kōsuke (scientist)",
+     "autre": "kosuke-scientist",
+     "primaire": true
+    },
+    {
+     "label": "tanzō",
+     "autre": "tanzo",
+     "primaire": true
+    },
+    {
+     "label": "gekomatsu",
+     "autre": "gekomatsu",
+     "primaire": true
+    },
+    {
+     "label": "gamatatsu",
+     "autre": "gamatatsu",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · kaima capture team",
+     "autre": "kaima-capture-team",
+     "primaire": false
+    },
+    {
+     "label": "iwashi tatami",
+     "autre": "iwashi-tatami",
+     "primaire": true
+    },
+    {
+     "label": "tokuma hyūga",
+     "autre": "tokuma-hyuga",
+     "primaire": true
+    },
+    {
+     "label": "urushi (summon)",
+     "autre": "urushi-summon",
+     "primaire": true
+    },
+    {
+     "label": "kōta",
+     "autre": "kota",
+     "primaire": true
+    },
+    {
+     "label": "aoi rokushō",
+     "autre": "aoi-rokusho",
+     "primaire": true
+    },
+    {
+     "label": "ibara",
+     "autre": "ibara",
+     "primaire": true
+    },
+    {
+     "label": "futaba",
+     "autre": "futaba",
+     "primaire": true
+    },
+    {
+     "label": "gaku inuzuka",
+     "autre": "gaku-inuzuka",
+     "primaire": true
+    },
+    {
+     "label": "kiseru gankubi",
+     "autre": "kiseru-gankubi",
+     "primaire": true
+    },
+    {
+     "label": "yokaze",
+     "autre": "yokaze",
+     "primaire": true
+    },
+    {
+     "label": "ensui nara",
+     "autre": "ensui-nara",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · eight man squad",
+     "autre": "eight-man-squad",
+     "primaire": false
+    },
+    {
+     "label": "jimei",
+     "autre": "jimei",
+     "primaire": true
+    },
+    {
+     "label": "might duy",
+     "autre": "might-duy",
+     "primaire": true
+    },
+    {
+     "label": "kasumi",
+     "autre": "kasumi",
+     "primaire": true
+    },
+    {
+     "label": "jj",
+     "autre": "jj",
+     "primaire": true
+    },
+    {
+     "label": "tessen togeito",
+     "autre": "tessen-togeito",
+     "primaire": true
+    },
+    {
+     "label": "hayama shirakumo",
+     "autre": "hayama-shirakumo",
+     "primaire": true
+    },
+    {
+     "label": "hamaki mimura",
+     "autre": "hamaki-mimura",
+     "primaire": true
+    },
+    {
+     "label": "takajō torikai",
+     "autre": "takajo-torikai",
+     "primaire": true
+    },
+    {
+     "label": "azure fang",
+     "autre": "azure-fang",
+     "primaire": true
+    },
+    {
+     "label": "maen nara",
+     "autre": "maen-nara",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team 5",
+     "autre": "team-5",
+     "primaire": false
+    },
+    {
+     "label": "daizen matsushige",
+     "autre": "daizen-matsushige",
+     "primaire": true
+    },
+    {
+     "label": "jirō",
+     "autre": "jiro-naruto",
+     "primaire": true
+    },
+    {
+     "label": "ningame",
+     "autre": "ningame",
+     "primaire": true
+    },
+    {
+     "label": "hibari kamakura",
+     "autre": "hibari-kamakura",
+     "primaire": true
+    },
+    {
+     "label": "muta aburame",
+     "autre": "muta-aburame",
+     "primaire": true
+    },
+    {
+     "label": "ankorodō shop owner",
+     "autre": "ankorodo-shop-owner",
+     "primaire": true
+    },
+    {
+     "label": "tatsuma aburame",
+     "autre": "tatsuma-aburame",
+     "primaire": true
+    },
+    {
+     "label": "tenten",
+     "autre": "tenten",
+     "primaire": true
+    },
+    {
+     "label": "sukima",
+     "autre": "sukima",
+     "primaire": true
+    },
+    {
+     "label": "tora (anbu)",
+     "autre": "tora-anbu",
+     "primaire": true
+    },
+    {
+     "label": "matsu",
+     "autre": "matsu",
+     "primaire": true
+    },
+    {
+     "label": "chamaru",
+     "autre": "chamaru",
+     "primaire": true
+    },
+    {
+     "label": "mugino",
+     "autre": "mugino",
+     "primaire": true
+    },
+    {
+     "label": "magire kakuremino",
+     "autre": "magire-kakuremino",
+     "primaire": true
+    },
+    {
+     "label": "keiri",
+     "autre": "keiri",
+     "primaire": true
+    },
+    {
+     "label": "midnight blade",
+     "autre": "midnight-blade",
+     "primaire": true
+    },
+    {
+     "label": "doseki ganryū",
+     "autre": "doseki-ganryu",
+     "primaire": true
+    },
+    {
+     "label": "yakumi uchiha",
+     "autre": "yakumi-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "tamaki",
+     "autre": "tamaki",
+     "primaire": true
+    },
+    {
+     "label": "hayase",
+     "autre": "hayase",
+     "primaire": true
+    },
+    {
+     "label": "fū yamanaka",
+     "autre": "fu-yamanaka",
+     "primaire": true
+    },
+    {
+     "label": "sadoru",
+     "autre": "sadoru",
+     "primaire": true
+    },
+    {
+     "label": "iroha (genin)",
+     "autre": "iroha-genin",
+     "primaire": true
+    },
+    {
+     "label": "sabiru",
+     "autre": "sabiru",
+     "primaire": true
+    },
+    {
+     "label": "suzume",
+     "autre": "suzume",
+     "primaire": true
+    },
+    {
+     "label": "furofuki",
+     "autre": "furofuki",
+     "primaire": true
+    },
+    {
+     "label": "tarō",
+     "autre": "taro-naruto",
+     "primaire": true
+    },
+    {
+     "label": "tobio",
+     "autre": "tobio",
+     "primaire": true
+    },
+    {
+     "label": "tonbo tobitake",
+     "autre": "tonbo-tobitake",
+     "primaire": true
+    },
+    {
+     "label": "kurenai yūhi",
+     "autre": "kurenai-yuhi",
+     "primaire": true
+    },
+    {
+     "label": "tsubaki (anime)",
+     "autre": "tsubaki-anime",
+     "primaire": true
+    },
+    {
+     "label": "nezumi kaitō",
+     "autre": "nezumi-kaito",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · konoha cryptanalysis team",
+     "autre": "konoha-cryptanalysis-team",
+     "primaire": false
+    },
+    {
+     "label": "gamakichi",
+     "autre": "gamakichi",
+     "primaire": true
+    },
+    {
+     "label": "neon asakusa",
+     "autre": "neon-asakusa",
+     "primaire": true
+    },
+    {
+     "label": "ebisu",
+     "autre": "ebisu",
+     "primaire": true
+    },
+    {
+     "label": "riichi (ninja)",
+     "autre": "riichi-ninja",
+     "primaire": true
+    },
+    {
+     "label": "hiashi hyūga",
+     "autre": "hiashi-hyuga",
+     "primaire": true
+    },
+    {
+     "label": "fuki",
+     "autre": "fuki",
+     "primaire": true
+    },
+    {
+     "label": "kae yukiwari",
+     "autre": "kae-yukiwari",
+     "primaire": true
+    },
+    {
+     "label": "kaori",
+     "autre": "kaori",
+     "primaire": true
+    },
+    {
+     "label": "nattō itohiki",
+     "autre": "natto-itohiki",
+     "primaire": true
+    },
+    {
+     "label": "natori",
+     "autre": "natori",
+     "primaire": true
+    },
+    {
+     "label": "hayate gekkō",
+     "autre": "hayate-gekko",
+     "primaire": true
+    },
+    {
+     "label": "sumire kakei",
+     "autre": "sumire-kakei",
+     "primaire": true
+    },
+    {
+     "label": "toshi",
+     "autre": "toshi",
+     "primaire": true
+    },
+    {
+     "label": "himawari uzumaki",
+     "autre": "himawari-uzumaki",
+     "primaire": true
+    },
+    {
+     "label": "terai",
+     "autre": "terai",
+     "primaire": true
+    },
+    {
+     "label": "azami",
+     "autre": "azami",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · star guard team",
+     "autre": "star-guard-team",
+     "primaire": false
+    },
+    {
+     "label": "obito's grandmother",
+     "autre": "obito-s-grandmother",
+     "primaire": true
+    },
+    {
+     "label": "taji",
+     "autre": "taji",
+     "primaire": true
+    },
+    {
+     "label": "daichi",
+     "autre": "daichi",
+     "primaire": true
+    },
+    {
+     "label": "gyokurō chabashira",
+     "autre": "gyokuro-chabashira",
+     "primaire": true
+    },
+    {
+     "label": "biwako sarutobi",
+     "autre": "biwako-sarutobi",
+     "primaire": true
+    },
+    {
+     "label": "tessen togeito",
+     "autre": "tessen-togeito",
+     "primaire": true
+    },
+    {
+     "label": "zaji",
+     "autre": "zaji",
+     "primaire": true
+    },
+    {
+     "label": "hana (student)",
+     "autre": "hana-student",
+     "primaire": true
+    },
+    {
+     "label": "giant anteater",
+     "autre": "giant-anteater",
+     "primaire": true
+    },
+    {
+     "label": "kanna (carpenter)",
+     "autre": "kanna-carpenter",
+     "primaire": true
+    },
+    {
+     "label": "gamabunta",
+     "autre": "gamabunta",
+     "primaire": true
+    },
+    {
+     "label": "tsuru itoi",
+     "autre": "tsuru-itoi",
+     "primaire": true
+    },
+    {
+     "label": "naka uchiha",
+     "autre": "naka-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "renga kokubō",
+     "autre": "renga-kokubo",
+     "primaire": true
+    },
+    {
+     "label": "gama",
+     "autre": "gama",
+     "primaire": true
+    },
+    {
+     "label": "harine",
+     "autre": "harine",
+     "primaire": true
+    },
+    {
+     "label": "shinko inari",
+     "autre": "shinko-inari",
+     "primaire": true
+    },
+    {
+     "label": "kohada",
+     "autre": "kohada",
+     "primaire": true
+    },
+    {
+     "label": "boar-masked anbu member",
+     "autre": "boar-masked-anbu-member",
+     "primaire": true
+    },
+    {
+     "label": "wasabi izuno",
+     "autre": "wasabi-izuno",
+     "primaire": true
+    },
+    {
+     "label": "eiki fūma",
+     "autre": "eiki-fuma",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · four ninja animal warriors",
+     "autre": "four-ninja-animal-warriors",
+     "primaire": false
+    },
+    {
+     "label": "hana kaka",
+     "autre": "hana-kaka",
+     "primaire": true
+    },
+    {
+     "label": "tsuchinoto",
+     "autre": "tsuchinoto",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · sasuke recovery team",
+     "autre": "sasuke-recovery-team",
+     "primaire": false
+    },
+    {
+     "label": "pakkun",
+     "autre": "pakkun",
+     "primaire": true
+    },
+    {
+     "label": "kizashi haruno",
+     "autre": "kizashi-haruno",
+     "primaire": true
+    },
+    {
+     "label": "enra",
+     "autre": "enra",
+     "primaire": true
+    },
+    {
+     "label": "murakumo kurama",
+     "autre": "murakumo-kurama",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team komugi",
+     "autre": "team-komugi",
+     "primaire": false
+    },
+    {
+     "label": "kō hyūga",
+     "autre": "ko-hyuga",
+     "primaire": true
+    },
+    {
+     "label": "shikadai nara",
+     "autre": "shikadai-nara",
+     "primaire": true
+    },
+    {
+     "label": "gazeru",
+     "autre": "gazeru",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team 8",
+     "autre": "team-8",
+     "primaire": false
+    },
+    {
+     "label": "itachi's crow",
+     "autre": "itachi-s-crow",
+     "primaire": true
+    },
+    {
+     "label": "gamariki",
+     "autre": "gamariki",
+     "primaire": true
+    },
+    {
+     "label": "ashina",
+     "autre": "ashina",
+     "primaire": true
+    },
+    {
+     "label": "jin kaminari",
+     "autre": "jin-kaminari",
+     "primaire": true
+    },
+    {
+     "label": "shiro",
+     "autre": "shiro-naruto",
+     "primaire": true
+    },
+    {
+     "label": "hoheto hyūga",
+     "autre": "hoheto-hyuga",
+     "primaire": true
+    },
+    {
+     "label": "harika aburame",
+     "autre": "harika-aburame",
+     "primaire": true
+    },
+    {
+     "label": "teuchi",
+     "autre": "teuchi",
+     "primaire": true
+    },
+    {
+     "label": "nezumi kaitō",
+     "autre": "nezumi-kaito",
+     "primaire": true
+    },
+    {
+     "label": "dōtō akimichi",
+     "autre": "doto-akimichi",
+     "primaire": true
+    },
+    {
+     "label": "torifu akimichi",
+     "autre": "torifu-akimichi",
+     "primaire": true
+    },
+    {
+     "label": "towa",
+     "autre": "towa",
+     "primaire": true
+    },
+    {
+     "label": "akino",
+     "autre": "akino",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · allied mothers force",
+     "autre": "allied-mothers-force",
+     "primaire": false
+    },
+    {
+     "label": "amado sanzu",
+     "autre": "amado-sanzu",
+     "primaire": true
+    },
+    {
+     "label": "inoichi yamanaka",
+     "autre": "inoichi-yamanaka",
+     "primaire": true
+    },
+    {
+     "label": "hashirama senju",
+     "autre": "hashirama-senju",
+     "primaire": true
+    },
+    {
+     "label": "tobirama senju",
+     "autre": "tobirama-senju",
+     "primaire": true
+    },
+    {
+     "label": "shinku yūhi",
+     "autre": "shinku-yuhi",
+     "primaire": true
+    },
+    {
+     "label": "allié · hayama shirakumo",
+     "autre": "hayama-shirakumo",
+     "primaire": false
+    },
+    {
+     "label": "matsuri (konoha)",
+     "autre": "matsuri-konoha",
+     "primaire": true
+    },
+    {
+     "label": "breeze dancer",
+     "autre": "breeze-dancer",
+     "primaire": true
+    },
+    {
+     "label": "hōsei",
+     "autre": "hosei",
+     "primaire": true
+    },
+    {
+     "label": "mitate",
+     "autre": "mitate",
+     "primaire": true
+    },
+    {
+     "label": "hinata hyūga",
+     "autre": "hinata-hyuga",
+     "primaire": true
+    },
+    {
+     "label": "idate morino",
+     "autre": "idate-morino",
+     "primaire": true
+    },
+    {
+     "label": "futsu",
+     "autre": "futsu",
+     "primaire": true
+    },
+    {
+     "label": "kanpō",
+     "autre": "kanpo",
+     "primaire": true
+    },
+    {
+     "label": "konashi nerikiri",
+     "autre": "konashi-nerikiri",
+     "primaire": true
+    },
+    {
+     "label": "kumade toriichi",
+     "autre": "kumade-toriichi",
+     "primaire": true
+    },
+    {
+     "label": "yubeshi",
+     "autre": "yubeshi",
+     "primaire": true
+    },
+    {
+     "label": "hinoto",
+     "autre": "hinoto",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · carpenter",
+     "autre": "carpenter",
+     "primaire": false
+    },
+    {
+     "label": "kumadori",
+     "autre": "kumadori-naruto",
+     "primaire": true
+    },
+    {
+     "label": "iyashi",
+     "autre": "iyashi",
+     "primaire": true
+    },
+    {
+     "label": "daemon",
+     "autre": "daemon",
+     "primaire": true
+    },
+    {
+     "label": "allié · chishima",
+     "autre": "chishima",
+     "primaire": false
+    },
+    {
+     "label": "nonō yakushi",
+     "autre": "nono-yakushi",
+     "primaire": true
+    },
+    {
+     "label": "kusushi",
+     "autre": "kusushi",
+     "primaire": true
+    },
+    {
+     "label": "mebuki haruno",
+     "autre": "mebuki-haruno",
+     "primaire": true
+    },
+    {
+     "label": "yakumo kurama",
+     "autre": "yakumo-kurama",
+     "primaire": true
+    },
+    {
+     "label": "hinoe",
+     "autre": "hinoe",
+     "primaire": true
+    },
+    {
+     "label": "ushi",
+     "autre": "ushi",
+     "primaire": true
+    },
+    {
+     "label": "ehō norimaki",
+     "autre": "eho-norimaki",
+     "primaire": true
+    },
+    {
+     "label": "idate morino",
+     "autre": "idate-morino",
+     "primaire": true
+    },
+    {
+     "label": "neon's mother",
+     "autre": "neon-s-mother",
+     "primaire": true
+    },
+    {
+     "label": "mitoku",
+     "autre": "mitoku",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team 2",
+     "autre": "team-2",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · bikōchū search team",
+     "autre": "bikochu-search-team",
+     "primaire": false
+    },
+    {
+     "label": "shino aburame",
+     "autre": "shino-aburame",
+     "primaire": true
+    },
+    {
+     "label": "menma uzumaki",
+     "autre": "menma-uzumaki",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · two great sage toads",
+     "autre": "two-great-sage-toads",
+     "primaire": false
+    },
+    {
+     "label": "katasuke tōno",
+     "autre": "katasuke-tono",
+     "primaire": true
+    },
+    {
+     "label": "dango mitsuki",
+     "autre": "dango-mitsuki",
+     "primaire": true
+    },
+    {
+     "label": "delta",
+     "autre": "delta",
+     "primaire": true
+    },
+    {
+     "label": "makaro akimichi",
+     "autre": "makaro-akimichi",
+     "primaire": true
+    },
+    {
+     "label": "allié · baku (anbu)",
+     "autre": "baku-anbu",
+     "primaire": false
+    },
+    {
+     "label": "uroko kurama",
+     "autre": "uroko-kurama",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · konoha barrier team",
+     "autre": "konoha-barrier-team",
+     "primaire": false
+    },
+    {
+     "label": "crimson fist",
+     "autre": "crimson-fist",
+     "primaire": true
+    },
+    {
+     "label": "unkai kurama",
+     "autre": "unkai-kurama",
+     "primaire": true
+    },
+    {
+     "label": "ennemi · iwa kunoichi",
+     "autre": "iwa-kunoichi",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · councillor",
+     "autre": "councillor",
+     "primaire": false
+    },
+    {
+     "label": "kagami uchiha",
+     "autre": "kagami-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "sōta",
+     "autre": "sota",
+     "primaire": true
+    },
+    {
+     "label": "ohagi",
+     "autre": "ohagi",
+     "primaire": true
+    },
+    {
+     "label": "ikkaku umino",
+     "autre": "ikkaku-umino",
+     "primaire": true
+    },
+    {
+     "label": "kōtarō fūma",
+     "autre": "kotaro-fuma",
+     "primaire": true
+    },
+    {
+     "label": "tokara",
+     "autre": "tokara",
+     "primaire": true
+    },
+    {
+     "label": "chōza akimichi",
+     "autre": "choza-akimichi",
+     "primaire": true
+    },
+    {
+     "label": "inojin yamanaka",
+     "autre": "inojin-yamanaka",
+     "primaire": true
+    },
+    {
+     "label": "kanoe",
+     "autre": "kanoe",
+     "primaire": true
+    },
+    {
+     "label": "tasuki",
+     "autre": "tasuki",
+     "primaire": true
+    },
+    {
+     "label": "saisu kamano",
+     "autre": "saisu-kamano",
+     "primaire": true
+    },
+    {
+     "label": "mazuma izuno",
+     "autre": "mazuma-izuno",
+     "primaire": true
+    },
+    {
+     "label": "santa yamanaka",
+     "autre": "santa-yamanaka",
+     "primaire": true
+    },
+    {
+     "label": "shinobu mibu",
+     "autre": "shinobu-mibu",
+     "primaire": true
+    },
+    {
+     "label": "hinata and hanabi's mother",
+     "autre": "hinata-and-hanabi-s-mother",
+     "primaire": true
+    },
+    {
+     "label": "chōbee akimichi",
+     "autre": "chobee-akimichi",
+     "primaire": true
+    },
+    {
+     "label": "zō",
+     "autre": "zo-naruto",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team chōza",
+     "autre": "team-choza",
+     "primaire": false
+    },
+    {
+     "label": "kohan yamanaka",
+     "autre": "kohan-yamanaka",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · scientific ninja weapons team",
+     "autre": "scientific-ninja-weapons-team",
+     "primaire": false
+    },
+    {
+     "label": "guruko",
+     "autre": "guruko",
+     "primaire": true
+    },
+    {
+     "label": "terubō",
+     "autre": "terubo",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · katasuke tōno's assistant",
+     "autre": "katasuke-tono-s-assistant",
+     "primaire": false
+    },
+    {
+     "label": "sai",
+     "autre": "sai-naruto",
+     "primaire": true
+    },
+    {
+     "label": "tatsuji",
+     "autre": "tatsuji",
+     "primaire": true
+    },
+    {
+     "label": "ino yamanaka",
+     "autre": "ino-yamanaka",
+     "primaire": true
+    },
+    {
+     "label": "akemaru",
+     "autre": "akemaru",
+     "primaire": true
+    },
+    {
+     "label": "gamaken",
+     "autre": "gamaken",
+     "primaire": true
+    },
+    {
+     "label": "baku",
+     "autre": "baku",
+     "primaire": true
+    },
+    {
+     "label": "boxing kangaroos",
+     "autre": "boxing-kangaroos",
+     "primaire": true
+    },
+    {
+     "label": "shiho",
+     "autre": "shiho",
+     "primaire": true
+    },
+    {
+     "label": "tsuzumi sarugaku",
+     "autre": "tsuzumi-sarugaku",
+     "primaire": true
+    },
+    {
+     "label": "tosaka",
+     "autre": "tosaka",
+     "primaire": true
+    },
+    {
+     "label": "fukasaku",
+     "autre": "fukasaku",
+     "primaire": true
+    },
+    {
+     "label": "fugaku uchiha",
+     "autre": "fugaku-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "izumo kamizuki",
+     "autre": "izumo-kamizuki",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team ro",
+     "autre": "team-ro",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · infiltration and reconnaissance party",
+     "autre": "infiltration-and-reconnaissance-party",
+     "primaire": false
+    },
+    {
+     "label": "baku (anbu)",
+     "autre": "baku-anbu",
+     "primaire": true
+    },
+    {
+     "label": "shikaku nara",
+     "autre": "shikaku-nara",
+     "primaire": true
+    },
+    {
+     "label": "mimi inuzuka",
+     "autre": "mimi-inuzuka",
+     "primaire": true
+    },
+    {
+     "label": "hōshō",
+     "autre": "hosho",
+     "primaire": true
+    },
+    {
+     "label": "naori uchiha",
+     "autre": "naori-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team orochimaru",
+     "autre": "team-orochimaru",
+     "primaire": false
+    },
+    {
+     "label": "ino's mother",
+     "autre": "ino-s-mother",
+     "primaire": true
+    },
+    {
+     "label": "hyūga elder",
+     "autre": "hyuga-elder",
+     "primaire": true
+    },
+    {
+     "label": "iō",
+     "autre": "io",
+     "primaire": true
+    },
+    {
+     "label": "moegi kazamatsuri",
+     "autre": "moegi-kazamatsuri",
+     "primaire": true
+    },
+    {
+     "label": "kisuke's wife",
+     "autre": "kisuke-s-wife",
+     "primaire": true
+    },
+    {
+     "label": "kabuto's sensei",
+     "autre": "kabuto-s-sensei",
+     "primaire": true
+    },
+    {
+     "label": "shio",
+     "autre": "shio",
+     "primaire": true
+    },
+    {
+     "label": "ada",
+     "autre": "ada",
+     "primaire": true
+    },
+    {
+     "label": "akamaru",
+     "autre": "akamaru",
+     "primaire": true
+    },
+    {
+     "label": "suzu sōgi",
+     "autre": "suzu-sogi",
+     "primaire": true
+    },
+    {
+     "label": "jingo kumano",
+     "autre": "jingo-kumano",
+     "primaire": true
+    },
+    {
+     "label": "tadaichi",
+     "autre": "tadaichi",
+     "primaire": true
+    },
+    {
+     "label": "danzō shimura",
+     "autre": "danzo-shimura",
+     "primaire": true
+    },
+    {
+     "label": "kōrogi",
+     "autre": "korogi",
+     "primaire": true
+    },
+    {
+     "label": "hiruko (missing-nin)",
+     "autre": "hiruko-missing-nin",
+     "primaire": true
+    },
+    {
+     "label": "natsu hyūga",
+     "autre": "natsu-hyuga",
+     "primaire": true
+    },
+    {
+     "label": "mogusa",
+     "autre": "mogusa",
+     "primaire": true
+    },
+    {
+     "label": "shimon hijiri",
+     "autre": "shimon-hijiri",
+     "primaire": true
+    },
+    {
+     "label": "mizuki",
+     "autre": "mizuki",
+     "primaire": true
+    },
+    {
+     "label": "tayori kuroyagi",
+     "autre": "tayori-kuroyagi",
+     "primaire": true
+    },
+    {
+     "label": "kohari umino",
+     "autre": "kohari-umino",
+     "primaire": true
+    },
+    {
+     "label": "daen nara",
+     "autre": "daen-nara",
+     "primaire": true
+    },
+    {
+     "label": "okyō",
+     "autre": "okyo",
+     "primaire": true
+    },
+    {
+     "label": "kage (anbu)",
+     "autre": "kage-anbu",
+     "primaire": true
+    },
+    {
+     "label": "allié · amado sanzu",
+     "autre": "amado-sanzu",
+     "primaire": false
+    },
+    {
+     "label": "shōseki",
+     "autre": "shoseki",
+     "primaire": true
+    },
+    {
+     "label": "migaki",
+     "autre": "migaki",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · escort unit",
+     "autre": "escort-unit",
+     "primaire": false
+    },
+    {
+     "label": "yashiro uchiha",
+     "autre": "yashiro-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "kitō",
+     "autre": "kito",
+     "primaire": true
+    },
+    {
+     "label": "homura mitokado",
+     "autre": "homura-mitokado",
+     "primaire": true
+    },
+    {
+     "label": "udon ise",
+     "autre": "udon-ise",
+     "primaire": true
+    },
+    {
+     "label": "shibire",
+     "autre": "shibire",
+     "primaire": true
+    },
+    {
+     "label": "shun",
+     "autre": "shun",
+     "primaire": true
+    },
+    {
+     "label": "nawaki",
+     "autre": "nawaki",
+     "primaire": true
+    },
+    {
+     "label": "hiruzen sarutobi",
+     "autre": "hiruzen-sarutobi",
+     "primaire": true
+    },
+    {
+     "label": "hashirama senju",
+     "autre": "hashirama-senju",
+     "primaire": true
+    },
+    {
+     "label": "chōji's mother",
+     "autre": "choji-s-mother",
+     "primaire": true
+    },
+    {
+     "label": "kaito kawanami",
+     "autre": "kaito-kawanami",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · analysis team",
+     "autre": "analysis-team",
+     "primaire": false
+    },
+    {
+     "label": "ran sōgi",
+     "autre": "ran-sogi",
+     "primaire": true
+    },
+    {
+     "label": "aoi rokushō",
+     "autre": "aoi-rokusho",
+     "primaire": true
+    },
+    {
+     "label": "konoha astronomer",
+     "autre": "konoha-astronomer",
+     "primaire": true
+    },
+    {
+     "label": "komame",
+     "autre": "komame",
+     "primaire": true
+    },
+    {
+     "label": "kokage yanagikage",
+     "autre": "kokage-yanagikage",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team minato",
+     "autre": "team-minato",
+     "primaire": false
+    },
+    {
+     "label": "tsubaki kurogane",
+     "autre": "tsubaki-kurogane",
+     "primaire": true
+    },
+    {
+     "label": "tekuno kanden",
+     "autre": "tekuno-kanden",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · konoha council",
+     "autre": "konoha-council",
+     "primaire": false
+    },
+    {
+     "label": "inomatsu",
+     "autre": "inomatsu",
+     "primaire": true
+    },
+    {
+     "label": "kabure tokisuki",
+     "autre": "kabure-tokisuki",
+     "primaire": true
+    },
+    {
+     "label": "nue",
+     "autre": "nue",
+     "primaire": true
+    },
+    {
+     "label": "kosuke maruboshi",
+     "autre": "kosuke-maruboshi",
+     "primaire": true
+    },
+    {
+     "label": "kanpu",
+     "autre": "kanpu",
+     "primaire": true
+    },
+    {
+     "label": "kinoto",
+     "autre": "kinoto",
+     "primaire": true
+    },
+    {
+     "label": "taku",
+     "autre": "taku",
+     "primaire": true
+    },
+    {
+     "label": "buriko nekoka",
+     "autre": "buriko-nekoka",
+     "primaire": true
+    },
+    {
+     "label": "misumi tsurugi",
+     "autre": "misumi-tsurugi",
+     "primaire": true
+    },
+    {
+     "label": "rin nohara",
+     "autre": "rin-nohara",
+     "primaire": true
+    },
+    {
+     "label": "mikoto uchiha",
+     "autre": "mikoto-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "ibiki morino",
+     "autre": "ibiki-morino",
+     "primaire": true
+    },
+    {
+     "label": "dan katō",
+     "autre": "dan-kato",
+     "primaire": true
+    },
+    {
+     "label": "chen",
+     "autre": "chen",
+     "primaire": true
+    },
+    {
+     "label": "hakui",
+     "autre": "hakui",
+     "primaire": true
+    },
+    {
+     "label": "uō",
+     "autre": "uo",
+     "primaire": true
+    },
+    {
+     "label": "kanoto",
+     "autre": "kanoto",
+     "primaire": true
+    },
+    {
+     "label": "tamae",
+     "autre": "tamae",
+     "primaire": true
+    },
+    {
+     "label": "condor",
+     "autre": "condor",
+     "primaire": true
+    },
+    {
+     "label": "gongorō kamakura",
+     "autre": "gongoro-kamakura",
+     "primaire": true
+    },
+    {
+     "label": "daikoku funeno",
+     "autre": "daikoku-funeno",
+     "primaire": true
+    },
+    {
+     "label": "sukui",
+     "autre": "sukui",
+     "primaire": true
+    },
+    {
+     "label": "ayame",
+     "autre": "ayame-naruto",
+     "primaire": true
+    },
+    {
+     "label": "saō",
+     "autre": "sao",
+     "primaire": true
+    },
+    {
+     "label": "kuromaru",
+     "autre": "kuromaru",
+     "primaire": true
+    },
+    {
+     "label": "unagi",
+     "autre": "unagi",
+     "primaire": true
+    },
+    {
+     "label": "manabu akado",
+     "autre": "manabu-akado",
+     "primaire": true
+    },
+    {
+     "label": "koshō",
+     "autre": "kosho",
+     "primaire": true
+    },
+    {
+     "label": "kōji",
+     "autre": "koji",
+     "primaire": true
+    },
+    {
+     "label": "mizunoto",
+     "autre": "mizunoto",
+     "primaire": true
+    },
+    {
+     "label": "komugi",
+     "autre": "komugi-naruto",
+     "primaire": true
+    },
+    {
+     "label": "mezu (missing-nin)",
+     "autre": "mezu-missing-nin",
+     "primaire": true
+    },
+    {
+     "label": "hako kuroi",
+     "autre": "hako-kuroi",
+     "primaire": true
+    },
+    {
+     "label": "chōchō akimichi",
+     "autre": "chocho-akimichi",
+     "primaire": true
+    },
+    {
+     "label": "ami",
+     "autre": "ami",
+     "primaire": true
+    },
+    {
+     "label": "namida suzumeno",
+     "autre": "namida-suzumeno",
+     "primaire": true
+    },
+    {
+     "label": "satō",
+     "autre": "sato",
+     "primaire": true
+    },
+    {
+     "label": "osuka kamakura",
+     "autre": "osuka-kamakura",
+     "primaire": true
+    },
+    {
+     "label": "ugai",
+     "autre": "ugai",
+     "primaire": true
+    },
+    {
+     "label": "shibi aburame",
+     "autre": "shibi-aburame",
+     "primaire": true
+    },
+    {
+     "label": "ūhei",
+     "autre": "uhei",
+     "primaire": true
+    },
+    {
+     "label": "akita inuzuka",
+     "autre": "akita-inuzuka",
+     "primaire": true
+    },
+    {
+     "label": "karui",
+     "autre": "karui",
+     "primaire": true
+    },
+    {
+     "label": "koharu utatane",
+     "autre": "koharu-utatane",
+     "primaire": true
+    },
+    {
+     "label": "nishi",
+     "autre": "nishi",
+     "primaire": true
+    },
+    {
+     "label": "kagura (game)",
+     "autre": "kagura-game",
+     "primaire": true
+    },
+    {
+     "label": "tomaru",
+     "autre": "tomaru",
+     "primaire": true
+    },
+    {
+     "label": "yurika",
+     "autre": "yurika",
+     "primaire": true
+    },
+    {
+     "label": "urushi",
+     "autre": "urushi",
+     "primaire": true
+    },
+    {
+     "label": "allié · shibire",
+     "autre": "shibire",
+     "primaire": false
+    },
+    {
+     "label": "kisuke maboroshi",
+     "autre": "kisuke-maboroshi",
+     "primaire": true
+    },
+    {
+     "label": "tsubaki (parent)",
+     "autre": "tsubaki-parent",
+     "primaire": true
+    },
+    {
+     "label": "allié · ryuka tenrō",
+     "autre": "ryuka-tenro",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · team 15",
+     "autre": "team-15",
+     "primaire": false
+    },
+    {
+     "label": "gerotora",
+     "autre": "gerotora",
+     "primaire": true
+    },
+    {
+     "label": "tomaru minakura",
+     "autre": "tomaru-minakura",
+     "primaire": true
+    },
+    {
+     "label": "yurito",
+     "autre": "yurito",
+     "primaire": true
+    },
+    {
+     "label": "ōkei",
+     "autre": "okei",
+     "primaire": true
+    },
+    {
+     "label": "hanabi hyūga",
+     "autre": "hanabi-hyuga",
+     "primaire": true
+    },
+    {
+     "label": "iruka umino",
+     "autre": "iruka-umino",
+     "primaire": true
+    },
+    {
+     "label": "taruto",
+     "autre": "taruto",
+     "primaire": true
+    },
+    {
+     "label": "kaede yoshino",
+     "autre": "kaede-yoshino",
+     "primaire": true
+    },
+    {
+     "label": "yuina itomaki",
+     "autre": "yuina-itomaki",
+     "primaire": true
+    },
+    {
+     "label": "temui",
+     "autre": "temui",
+     "primaire": true
+    },
+    {
+     "label": "tiger-masked anbu member",
+     "autre": "tiger-masked-anbu-member",
+     "primaire": true
+    },
+    {
+     "label": "fox-masked anbu member",
+     "autre": "fox-masked-anbu-member",
+     "primaire": true
+    },
+    {
+     "label": "minoji",
+     "autre": "minoji",
+     "primaire": true
+    },
+    {
+     "label": "mizunoe",
+     "autre": "mizunoe",
+     "primaire": true
+    },
+    {
+     "label": "daruma izuno",
+     "autre": "daruma-izuno",
+     "primaire": true
+    },
+    {
+     "label": "mibuna",
+     "autre": "mibuna",
+     "primaire": true
+    },
+    {
+     "label": "tenma izumo",
+     "autre": "tenma-izumo",
+     "primaire": true
+    },
+    {
+     "label": "katsuyu",
+     "autre": "katsuyu",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team ebisu",
+     "autre": "team-ebisu",
+     "primaire": false
+    },
+    {
+     "label": "minoichi",
+     "autre": "minoichi",
+     "primaire": true
+    },
+    {
+     "label": "enko onikuma",
+     "autre": "enko-onikuma",
+     "primaire": true
+    },
+    {
+     "label": "giant insect",
+     "autre": "giant-insect",
+     "primaire": true
+    },
+    {
+     "label": "denki kaminarimon",
+     "autre": "denki-kaminarimon",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · twenty platoons",
+     "autre": "twenty-platoons",
+     "primaire": false
+    },
+    {
+     "label": "yatogo ryūgen",
+     "autre": "yatogo-ryugen",
+     "primaire": true
+    },
+    {
+     "label": "hana inuzuka",
+     "autre": "hana-inuzuka",
+     "primaire": true
+    },
+    {
+     "label": "teyaki uchiha",
+     "autre": "teyaki-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "hyō",
+     "autre": "hyo",
+     "primaire": true
+    },
+    {
+     "label": "gamamaru",
+     "autre": "gamamaru",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team shibire",
+     "autre": "team-shibire",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · team kabuto",
+     "autre": "team-kabuto",
+     "primaire": false
+    },
+    {
+     "label": "uruchi uchiha",
+     "autre": "uruchi-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · kazekage rescue team",
+     "autre": "kazekage-rescue-team",
+     "primaire": false
+    },
+    {
+     "label": "soul tao",
+     "autre": "soul-tao",
+     "primaire": true
+    },
+    {
+     "label": "komachi",
+     "autre": "komachi",
+     "primaire": true
+    },
+    {
+     "label": "anko mitarashi",
+     "autre": "anko-mitarashi",
+     "primaire": true
+    },
+    {
+     "label": "yoshino nara",
+     "autre": "yoshino-nara",
+     "primaire": true
+    },
+    {
+     "label": "three haimaru brothers",
+     "autre": "three-haimaru-brothers",
+     "primaire": true
+    },
+    {
+     "label": "kabuto yakushi",
+     "autre": "kabuto-yakushi",
+     "primaire": true
+    },
+    {
+     "label": "karin kagura",
+     "autre": "karin-kagura",
+     "primaire": true
+    },
+    {
+     "label": "torune aburame",
+     "autre": "torune-aburame",
+     "primaire": true
+    },
+    {
+     "label": "anbu commander",
+     "autre": "anbu-commander",
+     "primaire": true
+    },
+    {
+     "label": "ereki kaminarimon",
+     "autre": "ereki-kaminarimon",
+     "primaire": true
+    },
+    {
+     "label": "kura kageno",
+     "autre": "kura-kageno",
+     "primaire": true
+    },
+    {
+     "label": "kakoi",
+     "autre": "kakoi",
+     "primaire": true
+    },
+    {
+     "label": "amagi izuno",
+     "autre": "amagi-izuno",
+     "primaire": true
+    },
+    {
+     "label": "sayū jōge",
+     "autre": "sayu-joge",
+     "primaire": true
+    },
+    {
+     "label": "midori (game)",
+     "autre": "midori-game",
+     "primaire": true
+    },
+    {
+     "label": "otoha",
+     "autre": "otoha",
+     "primaire": true
+    },
+    {
+     "label": "scarlet blaze",
+     "autre": "scarlet-blaze",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · hokage guard platoon",
+     "autre": "hokage-guard-platoon",
+     "primaire": false
+    },
+    {
+     "label": "stone carver's assistant",
+     "autre": "stone-carver-s-assistant",
+     "primaire": true
+    },
+    {
+     "label": "kande inabikari",
+     "autre": "kande-inabikari",
+     "primaire": true
+    },
+    {
+     "label": "dokan",
+     "autre": "dokan",
+     "primaire": true
+    },
+    {
+     "label": "akkun",
+     "autre": "akkun",
+     "primaire": true
+    },
+    {
+     "label": "raidō namiashi",
+     "autre": "raido-namiashi",
+     "primaire": true
+    },
+    {
+     "label": "eagle-masked anbu member",
+     "autre": "eagle-masked-anbu-member",
+     "primaire": true
+    },
+    {
+     "label": "dōshin",
+     "autre": "doshin",
+     "primaire": true
+    },
+    {
+     "label": "aoda",
+     "autre": "aoda",
+     "primaire": true
+    },
+    {
+     "label": "tami",
+     "autre": "tami",
+     "primaire": true
+    },
+    {
+     "label": "yūgao uzuki",
+     "autre": "yugao-uzuki",
+     "primaire": true
+    },
+    {
+     "label": "shitō akimichi",
+     "autre": "shito-akimichi",
+     "primaire": true
+    },
+    {
+     "label": "enchū nara",
+     "autre": "enchu-nara",
+     "primaire": true
+    },
+    {
+     "label": "gennai",
+     "autre": "gennai",
+     "primaire": true
+    },
+    {
+     "label": "tekka uchiha",
+     "autre": "tekka-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "menma namikaze",
+     "autre": "menma-namikaze",
+     "primaire": true
+    },
+    {
+     "label": "rō",
+     "autre": "ro",
+     "primaire": true
+    },
+    {
+     "label": "mikazuki",
+     "autre": "mikazuki-naruto",
+     "primaire": true
+    },
+    {
+     "label": "shinta",
+     "autre": "shinta",
+     "primaire": true
+    },
+    {
+     "label": "inaho",
+     "autre": "inaho",
+     "primaire": true
+    },
+    {
+     "label": "hizashi hyūga",
+     "autre": "hizashi-hyuga",
+     "primaire": true
+    },
+    {
+     "label": "kunugi mokume",
+     "autre": "kunugi-mokume",
+     "primaire": true
+    },
+    {
+     "label": "nishi (sensor)",
+     "autre": "nishi-sensor",
+     "primaire": true
+    },
+    {
+     "label": "sōsha amino",
+     "autre": "sosha-amino",
+     "primaire": true
+    },
+    {
+     "label": "gamahiro",
+     "autre": "gamahiro",
+     "primaire": true
+    },
+    {
+     "label": "gen katsugi",
+     "autre": "gen-katsugi",
+     "primaire": true
+    },
+    {
+     "label": "sabiru",
+     "autre": "sabiru",
+     "primaire": true
+    },
+    {
+     "label": "bekkō",
+     "autre": "bekko",
+     "primaire": true
+    },
+    {
+     "label": "shiba",
+     "autre": "shiba",
+     "primaire": true
+    },
+    {
+     "label": "aoba yamashiro",
+     "autre": "aoba-yamashiro",
+     "primaire": true
+    },
+    {
+     "label": "neji hyūga",
+     "autre": "neji-hyuga",
+     "primaire": true
+    },
+    {
+     "label": "poochie",
+     "autre": "poochie",
+     "primaire": true
+    },
+    {
+     "label": "menma (anime)",
+     "autre": "menma-anime",
+     "primaire": true
+    },
+    {
+     "label": "mozuku",
+     "autre": "mozuku",
+     "primaire": true
+    },
+    {
+     "label": "bird-masked anbu member",
+     "autre": "bird-masked-anbu-member",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · peddlers escort team",
+     "autre": "peddlers-escort-team",
+     "primaire": false
+    },
+    {
+     "label": "kawaki",
+     "autre": "kawaki",
+     "primaire": true
+    },
+    {
+     "label": "yajirobee",
+     "autre": "yajirobee",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team 40",
+     "autre": "team-40",
+     "primaire": false
+    },
+    {
+     "label": "dōshu goetsu",
+     "autre": "doshu-goetsu",
+     "primaire": true
+    },
+    {
+     "label": "mawashi dokuraku",
+     "autre": "mawashi-dokuraku",
+     "primaire": true
+    },
+    {
+     "label": "tsuchinoe",
+     "autre": "tsuchinoe",
+     "primaire": true
+    },
+    {
+     "label": "haguruma",
+     "autre": "haguruma",
+     "primaire": true
+    },
+    {
+     "label": "tonton",
+     "autre": "tonton",
+     "primaire": true
+    },
+    {
+     "label": "hinoko",
+     "autre": "hinoko",
+     "primaire": true
+    },
+    {
+     "label": "hibachi",
+     "autre": "hibachi",
+     "primaire": true
+    },
+    {
+     "label": "hōki taketori",
+     "autre": "hoki-taketori",
+     "primaire": true
+    },
+    {
+     "label": "kuwa yokohori",
+     "autre": "kuwa-yokohori",
+     "primaire": true
+    },
+    {
+     "label": "iwabee yuino",
+     "autre": "iwabee-yuino",
+     "primaire": true
+    },
+    {
+     "label": "sakumo hatake",
+     "autre": "sakumo-hatake",
+     "primaire": true
+    },
+    {
+     "label": "genma shiranui",
+     "autre": "genma-shiranui",
+     "primaire": true
+    },
+    {
+     "label": "yamato",
+     "autre": "yamato-naruto",
+     "primaire": true
+    },
+    {
+     "label": "konohamaru sarutobi",
+     "autre": "konohamaru-sarutobi",
+     "primaire": true
+    },
+    {
+     "label": "nitora take",
+     "autre": "nitora-take",
+     "primaire": true
+    },
+    {
+     "label": "mirai sarutobi",
+     "autre": "mirai-sarutobi",
+     "primaire": true
+    },
+    {
+     "label": "chōji akimichi",
+     "autre": "choji-akimichi",
+     "primaire": true
+    },
+    {
+     "label": "oyone",
+     "autre": "oyone",
+     "primaire": true
+    },
+    {
+     "label": "yuki (academy student)",
+     "autre": "yuki-academy-student",
+     "primaire": true
+    },
+    {
+     "label": "bisuke",
+     "autre": "bisuke-naruto",
+     "primaire": true
+    },
+    {
+     "label": "shizune",
+     "autre": "shizune",
+     "primaire": true
+    },
+    {
+     "label": "suzaku nara",
+     "autre": "suzaku-nara",
+     "primaire": true
+    },
+    {
+     "label": "watase",
+     "autre": "watase",
+     "primaire": true
+    },
+    {
+     "label": "yoroi akadō",
+     "autre": "yoroi-akado",
+     "primaire": true
+    },
+    {
+     "label": "allié · udon ise",
+     "autre": "udon-ise",
+     "primaire": false
+    },
+    {
+     "label": "tsume inuzuka",
+     "autre": "tsume-inuzuka",
+     "primaire": true
+    },
+    {
+     "label": "gamagorō",
+     "autre": "gamagoro",
+     "primaire": true
+    },
+    {
+     "label": "stone carver",
+     "autre": "stone-carver",
+     "primaire": true
+    },
+    {
+     "label": "shinga",
+     "autre": "shinga",
+     "primaire": true
+    },
+    {
+     "label": "maruten akimichi",
+     "autre": "maruten-akimichi",
+     "primaire": true
+    },
+    {
+     "label": "bull",
+     "autre": "bull",
+     "primaire": true
+    },
+    {
+     "label": "isaribi",
+     "autre": "isaribi",
+     "primaire": true
+    },
+    {
+     "label": "asuma sarutobi",
+     "autre": "asuma-sarutobi",
+     "primaire": true
+    },
+    {
+     "label": "aoneko",
+     "autre": "aoneko",
+     "primaire": true
+    },
+    {
+     "label": "nobori",
+     "autre": "nobori",
+     "primaire": true
+    },
+    {
+     "label": "yūki minazuki",
+     "autre": "yuki-minazuki",
+     "primaire": true
+    },
+    {
+     "label": "kasuga nara",
+     "autre": "kasuga-nara",
+     "primaire": true
+    },
+    {
+     "label": "shin",
+     "autre": "shin",
+     "primaire": true
+    },
+    {
+     "label": "setsuna uchiha",
+     "autre": "setsuna-uchiha",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team kakashi",
+     "autre": "team-kakashi",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · konoha 11",
+     "autre": "konoha-11",
+     "primaire": false
+    },
+    {
+     "label": "shima",
+     "autre": "shima",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · hanabi rescue team",
+     "autre": "hanabi-rescue-team",
+     "primaire": false
+    },
+    {
+     "label": "iō (medical-nin)",
+     "autre": "io-medical-nin",
+     "primaire": true
+    },
+    {
+     "label": "mito uzumaki",
+     "autre": "mito-uzumaki",
+     "primaire": true
+    },
+    {
+     "label": "rikumaru",
+     "autre": "rikumaru",
+     "primaire": true
+    },
+    {
+     "label": "garaga",
+     "autre": "garaga",
+     "primaire": true
+    },
+    {
+     "label": "tanuki shigaraki",
+     "autre": "tanuki-shigaraki",
+     "primaire": true
+    }
+   ]
+  },
+  {
+   "slug": "otogakure",
+   "type": "place",
+   "etat": "ok",
+   "aretes": 46,
+   "vues": 29,
+   "primaires": 36,
+   "primairesVues": 21,
+   "autres": 10,
+   "autresVues": 8,
+   "autresDistinctsVrais": 10,
+   "compteurAffiche": 8,
+   "titres": [
+    {
+     "titre": "Autres liens",
+     "n": 8
+    }
+   ],
+   "restes": [],
+   "absentes": [
+    {
+     "label": "hebihime",
+     "autre": "hebihime",
+     "primaire": true
+    },
+    {
+     "label": "kihō",
+     "autre": "kiho",
+     "primaire": true
+    },
+    {
+     "label": "kyodaigumo",
+     "autre": "kyodaigumo",
+     "primaire": true
+    },
+    {
+     "label": "jūgo",
+     "autre": "jugo",
+     "primaire": true
+    },
+    {
+     "label": "jirōbō",
+     "autre": "jirobo",
+     "primaire": true
+    },
+    {
+     "label": "kasumi (castle dusk)",
+     "autre": "kasumi-castle-dusk",
+     "primaire": true
+    },
+    {
+     "label": "earth prison golem",
+     "autre": "earth-prison-golem",
+     "primaire": true
+    },
+    {
+     "label": "yamame",
+     "autre": "yamame",
+     "primaire": true
+    },
+    {
+     "label": "doki",
+     "autre": "doki",
+     "primaire": true
+    },
+    {
+     "label": "allié · zaku abumi",
+     "autre": "zaku-abumi",
+     "primaire": false
+    },
+    {
+     "label": "amachi",
+     "autre": "amachi",
+     "primaire": true
+    },
+    {
+     "label": "kagerō",
+     "autre": "kagero",
+     "primaire": true
+    },
+    {
+     "label": "mecha-kurama",
+     "autre": "mecha-kurama",
+     "primaire": true
+    },
+    {
+     "label": "iwana (otogakure)",
+     "autre": "iwana-otogakure",
+     "primaire": true
+    },
+    {
+     "label": "kamikiri",
+     "autre": "kamikiri",
+     "primaire": true
+    },
+    {
+     "label": "allié · rinji",
+     "autre": "rinji",
+     "primaire": false
+    },
+    {
+     "label": "umibōzu",
+     "autre": "umibozu",
+     "primaire": true
+    }
+   ]
+  },
+  {
+   "slug": "amegakure",
+   "type": "place",
+   "etat": "ok",
+   "aretes": 42,
+   "vues": 30,
+   "primaires": 32,
+   "primairesVues": 21,
+   "autres": 10,
+   "autresVues": 9,
+   "autresDistinctsVrais": 10,
+   "compteurAffiche": 9,
+   "titres": [
+    {
+     "titre": "Autres liens",
+     "n": 9
+    }
+   ],
+   "restes": [],
+   "absentes": [
+    {
+     "label": "ibuse",
+     "autre": "ibuse",
+     "primaire": true
+    },
+    {
+     "label": "hanzō",
+     "autre": "hanzo-naruto",
+     "primaire": true
+    },
+    {
+     "label": "kagari",
+     "autre": "kagari",
+     "primaire": true
+    },
+    {
+     "label": "allié · shigure",
+     "autre": "shigure-naruto",
+     "primaire": false
+    },
+    {
+     "label": "fusō",
+     "autre": "fuso",
+     "primaire": true
+    },
+    {
+     "label": "yūdachi",
+     "autre": "yudachi",
+     "primaire": true
+    },
+    {
+     "label": "kie",
+     "autre": "kie",
+     "primaire": true
+    },
+    {
+     "label": "hisame",
+     "autre": "hisame",
+     "primaire": true
+    },
+    {
+     "label": "fuyō",
+     "autre": "fuyo",
+     "primaire": true
+    },
+    {
+     "label": "samidare",
+     "autre": "samidare",
+     "primaire": true
+    },
+    {
+     "label": "conch king",
+     "autre": "conch-king",
+     "primaire": true
+    },
+    {
+     "label": "heiji",
+     "autre": "heiji",
+     "primaire": true
+    }
+   ]
+  },
+  {
+   "slug": "ninja-medical",
+   "type": "profession",
+   "etat": "ok",
+   "aretes": 42,
+   "vues": 14,
+   "primaires": 2,
+   "primairesVues": 2,
+   "autres": 40,
+   "autresVues": 12,
+   "autresDistinctsVrais": 40,
+   "compteurAffiche": 38,
+   "titres": [
+    {
+     "titre": "Exercé par",
+     "n": 2
+    },
+    {
+     "titre": "Autres liens",
+     "n": 38
+    }
+   ],
+   "restes": [],
+   "absentes": [
+    {
+     "label": "regroupe · buntan kurosuki",
+     "autre": "buntan-kurosuki",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · shinnō",
+     "autre": "shinno",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · malice",
+     "autre": "malice",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · yubina",
+     "autre": "yubina",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · azure fang",
+     "autre": "azure-fang",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · amachi",
+     "autre": "amachi",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · nonō yakushi",
+     "autre": "nono-yakushi",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · ruka",
+     "autre": "ruka",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · en oyashiro",
+     "autre": "en-oyashiro",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · mogusa",
+     "autre": "mogusa",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · sakura haruno",
+     "autre": "sakura-haruno",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · shin uchiha",
+     "autre": "shin-uchiha",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · ameno",
+     "autre": "ameno",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · aosa",
+     "autre": "aosa",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · hako kuroi",
+     "autre": "hako-kuroi",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · mozuku (land of calm seas)",
+     "autre": "mozuku-land-of-calm-seas",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · yome",
+     "autre": "yome",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · kiseru gankubi",
+     "autre": "kiseru-gankubi",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · rin nohara",
+     "autre": "rin-nohara",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · yomi",
+     "autre": "yomi",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · shizune",
+     "autre": "shizune",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · inojin yamanaka",
+     "autre": "inojin-yamanaka",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · dōshu goetsu",
+     "autre": "doshu-goetsu",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · kitō",
+     "autre": "kito",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · mitate",
+     "autre": "mitate",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · hana inuzuka",
+     "autre": "hana-inuzuka",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · tsunade",
+     "autre": "tsunade",
+     "primaire": false
+    },
+    {
+     "label": "regroupe · yashamaru",
+     "autre": "yashamaru",
+     "primaire": false
+    }
+   ]
+  },
+  {
+   "slug": "sunagakure",
+   "type": "place",
+   "etat": "ok",
+   "aretes": 97,
+   "vues": 34,
+   "primaires": 81,
+   "primairesVues": 22,
+   "autres": 16,
+   "autresVues": 12,
+   "autresDistinctsVrais": 16,
+   "compteurAffiche": 14,
+   "titres": [
+    {
+     "titre": "Autres liens",
+     "n": 14
+    }
+   ],
+   "restes": [],
+   "absentes": [
+    {
+     "label": "sasori's father",
+     "autre": "sasori-s-father",
+     "primaire": true
+    },
+    {
+     "label": "sajō",
+     "autre": "sajo",
+     "primaire": true
+    },
+    {
+     "label": "ebizō",
+     "autre": "ebizo",
+     "primaire": true
+    },
+    {
+     "label": "fugi",
+     "autre": "fugi",
+     "primaire": true
+    },
+    {
+     "label": "komaza",
+     "autre": "komaza",
+     "primaire": true
+    },
+    {
+     "label": "sasori's mother",
+     "autre": "sasori-s-mother",
+     "primaire": true
+    },
+    {
+     "label": "tomari",
+     "autre": "tomari",
+     "primaire": true
+    },
+    {
+     "label": "mukade (movie)",
+     "autre": "mukade-movie",
+     "primaire": true
+    },
+    {
+     "label": "gōza",
+     "autre": "goza",
+     "primaire": true
+    },
+    {
+     "label": "korobi",
+     "autre": "korobi",
+     "primaire": true
+    },
+    {
+     "label": "bunpuku",
+     "autre": "bunpuku",
+     "primaire": true
+    },
+    {
+     "label": "mikoshi",
+     "autre": "mikoshi",
+     "primaire": true
+    },
+    {
+     "label": "otokaze",
+     "autre": "otokaze",
+     "primaire": true
+    },
+    {
+     "label": "ryūsa",
+     "autre": "ryusa",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · team shira",
+     "autre": "team-shira",
+     "primaire": false
+    },
+    {
+     "label": "sen",
+     "autre": "sen",
+     "primaire": true
+    },
+    {
+     "label": "arashi umeya",
+     "autre": "arashi-umeya",
+     "primaire": true
+    },
+    {
+     "label": "sajō",
+     "autre": "sajo",
+     "primaire": true
+    },
+    {
+     "label": "tsuchino",
+     "autre": "tsuchino",
+     "primaire": true
+    },
+    {
+     "label": "ittetsu",
+     "autre": "ittetsu",
+     "primaire": true
+    },
+    {
+     "label": "kōji (suna)",
+     "autre": "koji-suna",
+     "primaire": true
+    },
+    {
+     "label": "komushi",
+     "autre": "komushi",
+     "primaire": true
+    },
+    {
+     "label": "ōtora",
+     "autre": "otora",
+     "primaire": true
+    },
+    {
+     "label": "daimaru",
+     "autre": "daimaru",
+     "primaire": true
+    },
+    {
+     "label": "saya",
+     "autre": "saya",
+     "primaire": true
+    },
+    {
+     "label": "shishio",
+     "autre": "shishio",
+     "primaire": true
+    },
+    {
+     "label": "allié · ryūsa",
+     "autre": "ryusa",
+     "primaire": false
+    },
+    {
+     "label": "hōichi",
+     "autre": "hoichi",
+     "primaire": true
+    },
+    {
+     "label": "yaoki",
+     "autre": "yaoki",
+     "primaire": true
+    },
+    {
+     "label": "satetsu",
+     "autre": "satetsu",
+     "primaire": true
+    },
+    {
+     "label": "shamon",
+     "autre": "shamon",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · kazekage rescue team",
+     "autre": "kazekage-rescue-team",
+     "primaire": false
+    },
+    {
+     "label": "reto",
+     "autre": "reto",
+     "primaire": true
+    },
+    {
+     "label": "sekka",
+     "autre": "sekka",
+     "primaire": true
+    },
+    {
+     "label": "monzaemon chikamatsu",
+     "autre": "monzaemon-chikamatsu",
+     "primaire": true
+    },
+    {
+     "label": "ryōkan",
+     "autre": "ryokan",
+     "primaire": true
+    },
+    {
+     "label": "sajin",
+     "autre": "sajin",
+     "primaire": true
+    },
+    {
+     "label": "kamatari",
+     "autre": "kamatari",
+     "primaire": true
+    },
+    {
+     "label": "kashike",
+     "autre": "kashike",
+     "primaire": true
+    },
+    {
+     "label": "yome",
+     "autre": "yome",
+     "primaire": true
+    },
+    {
+     "label": "mijin",
+     "autre": "mijin",
+     "primaire": true
+    },
+    {
+     "label": "mujin",
+     "autre": "mujin",
+     "primaire": true
+    },
+    {
+     "label": "jōseki",
+     "autre": "joseki",
+     "primaire": true
+    },
+    {
+     "label": "goji",
+     "autre": "goji",
+     "primaire": true
+    },
+    {
+     "label": "jiji",
+     "autre": "jiji",
+     "primaire": true
+    },
+    {
+     "label": "nejiri",
+     "autre": "nejiri",
+     "primaire": true
+    },
+    {
+     "label": "tsubusa",
+     "autre": "tsubusa",
+     "primaire": true
+    },
+    {
+     "label": "troisième kazekage",
+     "autre": "third-kazekage",
+     "primaire": true
+    },
+    {
+     "label": "suname",
+     "autre": "suname",
+     "primaire": true
+    },
+    {
+     "label": "allié · sajō",
+     "autre": "sajo",
+     "primaire": false
+    },
+    {
+     "label": "team goji leader",
+     "autre": "team-goji-leader",
+     "primaire": true
+    },
+    {
+     "label": "reki",
+     "autre": "reki",
+     "primaire": true
+    },
+    {
+     "label": "nonota",
+     "autre": "nonota",
+     "primaire": true
+    },
+    {
+     "label": "tessa",
+     "autre": "tessa",
+     "primaire": true
+    },
+    {
+     "label": "nae",
+     "autre": "nae",
+     "primaire": true
+    },
+    {
+     "label": "takamaru",
+     "autre": "takamaru",
+     "primaire": true
+    },
+    {
+     "label": "sajin (genin)",
+     "autre": "sajin-genin",
+     "primaire": true
+    },
+    {
+     "label": "datsuji",
+     "autre": "datsuji",
+     "primaire": true
+    },
+    {
+     "label": "yūra",
+     "autre": "yura",
+     "primaire": true
+    },
+    {
+     "label": "mamushi",
+     "autre": "mamushi",
+     "primaire": true
+    },
+    {
+     "label": "tobimaru",
+     "autre": "tobimaru",
+     "primaire": true
+    },
+    {
+     "label": "suna assassin captain",
+     "autre": "suna-assassin-captain",
+     "primaire": true
+    },
+    {
+     "label": "abiru",
+     "autre": "abiru",
+     "primaire": true
+    }
+   ]
+  },
+  {
+   "slug": "kirigakure",
+   "type": "place",
+   "etat": "ok",
+   "aretes": 75,
+   "vues": 31,
+   "primaires": 64,
+   "primairesVues": 23,
+   "autres": 11,
+   "autresVues": 8,
+   "autresDistinctsVrais": 11,
+   "compteurAffiche": 8,
+   "titres": [
+    {
+     "titre": "Autres liens",
+     "n": 8
+    }
+   ],
+   "restes": [],
+   "absentes": [
+    {
+     "label": "harusame",
+     "autre": "harusame",
+     "primaire": true
+    },
+    {
+     "label": "suiren (kiri)",
+     "autre": "suiren-kiri",
+     "primaire": true
+    },
+    {
+     "label": "suigetsu hōzuki",
+     "autre": "suigetsu-hozuki",
+     "primaire": true
+    },
+    {
+     "label": "allié · ruka",
+     "autre": "ruka",
+     "primaire": false
+    },
+    {
+     "label": "takanami senka",
+     "autre": "takanami-senka",
+     "primaire": true
+    },
+    {
+     "label": "misuno",
+     "autre": "misuno",
+     "primaire": true
+    },
+    {
+     "label": "nowaki",
+     "autre": "nowaki",
+     "primaire": true
+    },
+    {
+     "label": "sazanami senka",
+     "autre": "sazanami-senka",
+     "primaire": true
+    },
+    {
+     "label": "kamakiri ikeno",
+     "autre": "kamakiri-ikeno",
+     "primaire": true
+    },
+    {
+     "label": "karyū",
+     "autre": "karyu",
+     "primaire": true
+    },
+    {
+     "label": "troisième mizukage",
+     "autre": "third-mizukage",
+     "primaire": true
+    },
+    {
+     "label": "gonbee",
+     "autre": "gonbee",
+     "primaire": true
+    },
+    {
+     "label": "unmo samidare",
+     "autre": "unmo-samidare",
+     "primaire": true
+    },
+    {
+     "label": "anaguma",
+     "autre": "anaguma",
+     "primaire": true
+    },
+    {
+     "label": "shizuma hoshigaki",
+     "autre": "shizuma-hoshigaki",
+     "primaire": true
+    },
+    {
+     "label": "junsai",
+     "autre": "junsai",
+     "primaire": true
+    },
+    {
+     "label": "meizu",
+     "autre": "meizu",
+     "primaire": true
+    },
+    {
+     "label": "giant clam",
+     "autre": "giant-clam",
+     "primaire": true
+    },
+    {
+     "label": "gengetsu hōzuki",
+     "autre": "gengetsu-hozuki",
+     "primaire": true
+    },
+    {
+     "label": "kirisaki",
+     "autre": "kirisaki",
+     "primaire": true
+    },
+    {
+     "label": "jūzō biwa",
+     "autre": "juzo-biwa",
+     "primaire": true
+    },
+    {
+     "label": "kiri (ninja)",
+     "autre": "kiri-ninja",
+     "primaire": true
+    },
+    {
+     "label": "kajika",
+     "autre": "kajika",
+     "primaire": true
+    },
+    {
+     "label": "ao",
+     "autre": "ao",
+     "primaire": true
+    },
+    {
+     "label": "hassaku onomichi",
+     "autre": "hassaku-onomichi",
+     "primaire": true
+    },
+    {
+     "label": "chūkichi",
+     "autre": "chukichi",
+     "primaire": true
+    },
+    {
+     "label": "meizu",
+     "autre": "meizu",
+     "primaire": true
+    },
+    {
+     "label": "heki",
+     "autre": "heki",
+     "primaire": true
+    },
+    {
+     "label": "fuguki suikazan",
+     "autre": "fuguki-suikazan",
+     "primaire": true
+    },
+    {
+     "label": "kussaku",
+     "autre": "kussaku",
+     "primaire": true
+    },
+    {
+     "label": "mangetsu hōzuki",
+     "autre": "mangetsu-hozuki",
+     "primaire": true
+    },
+    {
+     "label": "genji",
+     "autre": "genji",
+     "primaire": true
+    },
+    {
+     "label": "gengo",
+     "autre": "gengo",
+     "primaire": true
+    },
+    {
+     "label": "jinpachi munashi",
+     "autre": "jinpachi-munashi",
+     "primaire": true
+    },
+    {
+     "label": "makinami senka",
+     "autre": "makinami-senka",
+     "primaire": true
+    },
+    {
+     "label": "allié · kagura karatachi",
+     "autre": "kagura-karatachi",
+     "primaire": false
+    },
+    {
+     "label": "tsurushi hachiya",
+     "autre": "tsurushi-hachiya",
+     "primaire": true
+    },
+    {
+     "label": "byakuren",
+     "autre": "byakuren",
+     "primaire": true
+    },
+    {
+     "label": "tetsu",
+     "autre": "tetsu",
+     "primaire": true
+    },
+    {
+     "label": "ichirōta oniyuzu",
+     "autre": "ichirota-oniyuzu",
+     "primaire": true
+    },
+    {
+     "label": "kyohō fuefuki",
+     "autre": "kyoho-fuefuki",
+     "primaire": true
+    },
+    {
+     "label": "miru",
+     "autre": "miru",
+     "primaire": true
+    },
+    {
+     "label": "ganryū",
+     "autre": "ganryu",
+     "primaire": true
+    },
+    {
+     "label": "famille · byakuren",
+     "autre": "byakuren",
+     "primaire": false
+    }
+   ]
+  },
+  {
+   "slug": "shinigami",
+   "type": "profession",
+   "etat": "ok",
+   "aretes": 62,
+   "vues": 24,
+   "primaires": 48,
+   "primairesVues": 12,
+   "autres": 14,
+   "autresVues": 12,
+   "autresDistinctsVrais": 14,
+   "compteurAffiche": 12,
+   "titres": [
+    {
+     "titre": "Exercé par",
+     "n": 48
+    },
+    {
+     "titre": "Autres liens",
+     "n": 12
+    }
+   ],
+   "restes": [],
+   "absentes": [
+    {
+     "label": "regroupe · zennosuke kurumadani",
+     "autre": "zennosuke-kurumadani",
+     "primaire": false
+    },
+    {
+     "label": "kakyou",
+     "autre": "kakyou",
+     "primaire": true
+    },
+    {
+     "label": "hiyosu",
+     "autre": "hiyosu",
+     "primaire": true
+    },
+    {
+     "label": "eikichirou saidou",
+     "autre": "eikichirou-saidou",
+     "primaire": true
+    },
+    {
+     "label": "ran'tao",
+     "autre": "ran-tao",
+     "primaire": true
+    },
+    {
+     "label": "zennosuke kurumadani",
+     "autre": "zennosuke-kurumadani",
+     "primaire": true
+    },
+    {
+     "label": "shin'etsu kisaragi",
+     "autre": "shin-etsu-kisaragi",
+     "primaire": true
+    },
+    {
+     "label": "heizou kasaki",
+     "autre": "heizou-kasaki",
+     "primaire": true
+    },
+    {
+     "label": "shinta seko",
+     "autre": "shinta-seko",
+     "primaire": true
+    },
+    {
+     "label": "shinobu eishima",
+     "autre": "shinobu-eishima",
+     "primaire": true
+    },
+    {
+     "label": "hachigen ushouda",
+     "autre": "hachigen-ushouda",
+     "primaire": true
+    },
+    {
+     "label": "tessai tsukabishi",
+     "autre": "tessai-tsukabishi",
+     "primaire": true
+    },
+    {
+     "label": "miyako shiba",
+     "autre": "miyako-shiba",
+     "primaire": true
+    },
+    {
+     "label": "regroupe · shunsui kyōraku",
+     "autre": "shunsui-kyoraku",
+     "primaire": false
+    },
+    {
+     "label": "makizou aramaki",
+     "autre": "makizou-aramaki",
+     "primaire": true
+    },
+    {
+     "label": "maki ichinose",
+     "autre": "maki-ichinose",
+     "primaire": true
+    },
+    {
+     "label": "toshimori umesada",
+     "autre": "toshimori-umesada",
+     "primaire": true
+    },
+    {
+     "label": "ginrei kuchiki",
+     "autre": "ginrei-kuchiki",
+     "primaire": true
+    },
+    {
+     "label": "yasochika iemura",
+     "autre": "yasochika-iemura",
+     "primaire": true
+    },
+    {
+     "label": "tatsufusa enjouji",
+     "autre": "tatsufusa-enjouji",
+     "primaire": true
+    },
+    {
+     "label": "inose",
+     "autre": "inose",
+     "primaire": true
+    },
+    {
+     "label": "goteitaishi",
+     "autre": "goteitaishi",
+     "primaire": true
+    },
+    {
+     "label": "makoto kibune",
+     "autre": "makoto-kibune",
+     "primaire": true
+    },
+    {
+     "label": "kiyone kotetsu",
+     "autre": "kiyone-kotetsu",
+     "primaire": true
+    },
+    {
+     "label": "love aikawa",
+     "autre": "love-aikawa",
+     "primaire": true
+    },
+    {
+     "label": "lisa yadoumaru",
+     "autre": "lisa-yadoumaru",
+     "primaire": true
+    },
+    {
+     "label": "rin tsubokura",
+     "autre": "rin-tsubokura",
+     "primaire": true
+    },
+    {
+     "label": "aida",
+     "autre": "aida",
+     "primaire": true
+    },
+    {
+     "label": "sugama",
+     "autre": "sugama",
+     "primaire": true
+    },
+    {
+     "label": "tadaoki sasakibe choujirou",
+     "autre": "tadaoki-sasakibe-choujirou",
+     "primaire": true
+    },
+    {
+     "label": "roujuurou otoribashi",
+     "autre": "roujuurou-otoribashi",
+     "primaire": true
+    },
+    {
+     "label": "akon",
+     "autre": "akon",
+     "primaire": true
+    },
+    {
+     "label": "niko kuna",
+     "autre": "niko-kuna",
+     "primaire": true
+    },
+    {
+     "label": "gunjou",
+     "autre": "gunjou",
+     "primaire": true
+    },
+    {
+     "label": "shuusuke amagai",
+     "autre": "shuusuke-amagai",
+     "primaire": true
+    },
+    {
+     "label": "ryuusei kenzaki",
+     "autre": "ryuusei-kenzaki",
+     "primaire": true
+    },
+    {
+     "label": "aoga",
+     "autre": "aoga",
+     "primaire": true
+    },
+    {
+     "label": "izaemon toudou",
+     "autre": "izaemon-toudou",
+     "primaire": true
+    }
+   ]
+  },
+  {
+   "slug": "hoshigakure",
+   "type": "place",
+   "etat": "ok",
+   "aretes": 11,
+   "vues": 10,
+   "primaires": 10,
+   "primairesVues": 10,
+   "autres": 1,
+   "autresVues": 0,
+   "autresDistinctsVrais": 1,
+   "compteurAffiche": null,
+   "titres": [
+    {
+     "titre": "Habité par",
+     "n": 10
+    }
+   ],
+   "restes": [],
+   "absentes": [
+    {
+     "label": "allié · hokuto",
+     "autre": "hokuto",
+     "primaire": false
+    }
+   ]
+  },
+  {
+   "slug": "iwagakure",
+   "type": "place",
+   "etat": "ok",
+   "aretes": 49,
+   "vues": 26,
+   "primaires": 43,
+   "primairesVues": 21,
+   "autres": 6,
+   "autresVues": 5,
+   "autresDistinctsVrais": 6,
+   "compteurAffiche": 5,
+   "titres": [
+    {
+     "titre": "Autres liens",
+     "n": 5
+    }
+   ],
+   "restes": [],
+   "absentes": [
+    {
+     "label": "erimaki sharo",
+     "autre": "erimaki-sharo",
+     "primaire": true
+    },
+    {
+     "label": "kokuyō",
+     "autre": "kokuyo",
+     "primaire": true
+    },
+    {
+     "label": "allié · sagan",
+     "autre": "sagan",
+     "primaire": false
+    },
+    {
+     "label": "tsubute futaba",
+     "autre": "tsubute-futaba",
+     "primaire": true
+    },
+    {
+     "label": "monga",
+     "autre": "monga",
+     "primaire": true
+    },
+    {
+     "label": "kurobachi",
+     "autre": "kurobachi",
+     "primaire": true
+    },
+    {
+     "label": "kakkō",
+     "autre": "kakko",
+     "primaire": true
+    },
+    {
+     "label": "ōnoki",
+     "autre": "onoki",
+     "primaire": true
+    },
+    {
+     "label": "gantetsu (iwagakure)",
+     "autre": "gantetsu-iwagakure",
+     "primaire": true
+    },
+    {
+     "label": "jibachi",
+     "autre": "jibachi",
+     "primaire": true
+    },
+    {
+     "label": "mahiru",
+     "autre": "mahiru",
+     "primaire": true
+    },
+    {
+     "label": "iwaji",
+     "autre": "iwaji",
+     "primaire": true
+    },
+    {
+     "label": "taiseki",
+     "autre": "taiseki",
+     "primaire": true
+    },
+    {
+     "label": "chōseki",
+     "autre": "choseki",
+     "primaire": true
+    },
+    {
+     "label": "iwakyō",
+     "autre": "iwakyo",
+     "primaire": true
+    },
+    {
+     "label": "rōshi",
+     "autre": "roshi",
+     "primaire": true
+    },
+    {
+     "label": "ittan",
+     "autre": "ittan",
+     "primaire": true
+    },
+    {
+     "label": "iwazō",
+     "autre": "iwazo",
+     "primaire": true
+    },
+    {
+     "label": "kozuchi",
+     "autre": "kozuchi",
+     "primaire": true
+    },
+    {
+     "label": "iwa doctor",
+     "autre": "iwa-doctor",
+     "primaire": true
+    },
+    {
+     "label": "gari",
+     "autre": "gari",
+     "primaire": true
+    },
+    {
+     "label": "sumashi",
+     "autre": "sumashi",
+     "primaire": true
+    },
+    {
+     "label": "sekki",
+     "autre": "sekki",
+     "primaire": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,266 @@
+{
+  "horodate": "2026-08-10T18:50:25.241Z",
+  "T1_detecteur_paragraphes": {
+    "attendu": 2,
+    "obtenu": 2,
+    "verdict": "ok"
+  },
+  "T2_paragraphes_dans_le_corpus": {
+    "fiches": 7698,
+    "avec_descFr": 7303,
+    "descFr_avec_double_saut_de_ligne": 0,
+    "descFr_avec_saut_simple": 1,
+    "descFr_avec_titre_wiki": 0,
+    "exemples_double_saut": [],
+    "lecture": "AUCUN descFr du corpus ne porte de paragraphe : la chaîne d’import les aplatit. Le 0 du recensement mesure la DONNÉE, pas le lecteur."
+  },
+  "T3_le_dossier_est_il_un_decoupage_du_descFr": {
+    "tirage": 200,
+    "section1_contenue_dans_descFr": 0,
+    "section1_hors_descFr": 191,
+    "fiches_a_dossier_sans_descFr": 9,
+    "mediane_descFr": 385,
+    "mediane_dossier": 2306,
+    "mediane_nb_sections": 4,
+    "exemples": [
+      {
+        "slug": "zanpakuto",
+        "dedans": false,
+        "descFr_len": 383,
+        "sections": 11,
+        "titres": [
+          "Histoire",
+          "Asauchi",
+          "Shinigami VS. Arrancar Zanpakutō",
+          "Pouvoirs Généraux",
+          "Vue d'ensemble",
+          "Entraînement au Zanpakutō",
+          "Jinzen",
+          "Communication & Personality"
+        ],
+        "section1_tete": "Le Zanpakutō, tel qu'il est utilisé par les Shinigami, a été conçu et inventé par Ōetsu Nimaiya de la Garde Ro",
+        "descFr_tete": "Le Zanpakutō est l'arme principale des Shinigami, un sabre-âme dont chaque lame est l'incarnation d'un esprit "
+      },
+      {
+        "slug": "nami",
+        "dedans": false,
+        "descFr_len": 1632,
+        "sections": 4,
+        "titres": [
+          "Apparence",
+          "Avant le Saut Temporel",
+          "Après le Saut Temporel",
+          "Non-Canon"
+        ],
+        "section1_tete": "Nami est une jeune femme mince de taille moyenne, avec des cheveux roux (orange) et des yeux marron. Elle a un",
+        "descFr_tete": "Âge : 18→20 Date de naissance : 3 juillet, Cancer Taille : 169 cm → 170 cm Mensurations : 95-55-85 → 98-58-88 "
+      },
+      {
+        "slug": "anaguma",
+        "dedans": false,
+        "descFr_len": 357,
+        "sections": 2,
+        "titres": [
+          "Nouvelle Ère",
+          "Arc du Jeu du Labyrinthe"
+        ],
+        "section1_tete": "Après avoir capturé Rokuro, Anaguma et son partenaire montent à bord du Train du Tonnerre avec leur prime. Ana",
+        "descFr_tete": "Anaguma est un shinobi de Kiri qui travaille aussi comme chasseur de primes. En tant que chasseur de primes, A"
+      },
+      {
+        "slug": "liberation-de-l-explosion-bakuton",
+        "dedans": false,
+        "descFr_len": 434,
+        "sections": 1,
+        "titres": [
+          "Formes"
+        ],
+        "section1_tete": "Deidara utilise la Libération de l'Explosion dans son Argile Explosive. Il infuse son argile avec du chakra ex",
+        "descFr_tete": "Kekkei genkai combinant la libération de terre et la libération d'électricité, conférant à l'utilisateur la ca"
+      },
+      {
+        "slug": "kurapika",
+        "dedans": false,
+        "descFr_len": 1561,
+        "sections": 7,
+        "titres": [
+          "Apparence",
+          "Origines",
+          "Arc de l'élection du 13ᵉ Président des Hunters",
+          "Équipement",
+          "Arc de Greed Island",
+          "Arc de l'Arène Céleste",
+          "Capacités et pouvoirs"
+        ],
+        "section1_tete": "Kurapika possède des cheveux blonds moyens et des yeux bruns, bien que dans l'adaptation de l'anime de 1999, s",
+        "descFr_tete": "Sexe : masculin. Âge : 17 ans (au début) ; 19 ans (actuel). Taille : 171 cm. Poids : 59 kg. Anniversaire : 4 a"
+      },
+      {
+        "slug": "taiko-uchiha",
+        "dedans": false,
+        "descFr_len": 150,
+        "sections": 2,
+        "titres": [
+          "Personnalité",
+          "Apparence"
+        ],
+        "section1_tete": "Taiko Uchiha croit que punir sévèrement les criminels et les villageois empêche la motivation pour de futurs c",
+        "descFr_tete": "C'était un personnage du roman de Jiraya dans le rêve de Tsukuyomi Infini de Tsunade. Première apparition dans"
+      }
+    ]
+  },
+  "sections_par_source": {
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)": 4107,
+    "openrouter/mistralai/mistral-small-24b-instruct-2501": 6279,
+    "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo": 6713,
+    "claude-haiku (finisseur) · initiald.fandom.com (Mitsubishi Lancer Evolution III GSR (CE9A), Kyoichi Sudo's Mitsubishi Lancer Evolution)": 3,
+    "mistral/mistral-large-latest": 1231,
+    "nvidia/nvidia/nemotron-3-super-120b-a12b": 84,
+    "claude-haiku (finisseur) · Usui Pass page - Fandom Initial D wiki": 2,
+    "deepinfra/mistralai/Mistral-Small-24B-Instruct-2501": 46,
+    "deepinfra/Qwen/Qwen3-32B": 54,
+    "claude-haiku (finisseur) · initiald.fandom.com/wiki/Initial_D_Arcade_Stage_Ver._2,initiald.fandom.com/wiki/Team_Emperor": 1,
+    "claude-haiku (finisseur) · Shinigami page - Fandom Death Note wiki": 10,
+    "claude-haiku-4-5 (blitz fenêtre 02/08 — traduit de la page Fandom, contre-vérifié)": 30,
+    "fusion FR/EN du 08/08 — contenu repris de la fiche « Summoning: Impure World Reincarnation » (traduit, contre-vérifié)": 2,
+    "connecteur-techniques-op (traduit de la page Fandom, contre-vérifié)": 120,
+    "claude-haiku (finisseur) · Mount Myōgi page - Fandom Initial D wiki": 1,
+    "claude-haiku (finisseur) · L (character)": 2,
+    "claude-haiku (finisseur) · initiald.fandom.com/wiki/Akina, initiald.fandom.com/wiki/Ryosuke_Takahashi, initiald.fandom.com/wiki/Sayuki": 2,
+    "claude-haiku (finisseur) · Shinigami": 1,
+    "claude-haiku (finisseur) · initiald.fandom.com/wiki/Sayuki, initiald.fandom.com/wiki/Beyond_Impact_Blue_Part_2, initiald.fandom.com/wiki/Mako_Sato": 1,
+    "anthropic/claude-haiku-4-5": 21,
+    "claude-haiku (finisseur) · deathnote.fandom.com/wiki/Yotsuba_Group": 1,
+    "claude-haiku-4-5 (blitz front-2b — traduit de la page Fandom, contre-vérifié)": 305,
+    "claude-haiku (finisseur) · Usui Pass": 3,
+    "claude-haiku (finisseur) · deathnote.fandom.com (chapters: Misunderstanding, Creation)": 2,
+    "claude-haiku (finisseur) · initiald.fandom.com (Keiichi Tsuchiya, Chapter 044)": 2,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis skypiea]": 3,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis village-de-shimotsuki]": 3,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis alabasta]": 2,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis enies-lobby]": 1,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis east-blue-one-piece]": 3,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis thriller-bark]": 3,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis little-garden]": 2,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis water-seven]": 4,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis ile-de-drum]": 2,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis dressrosa]": 3,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis loguetown]": 2,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis impel-down]": 2,
+    "openrouter/mistralai/mistral-small-24b-instruct-2501 [fusion doublon depuis gotei-13-bleach]": 1,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis weatheria]": 1,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis archipel-des-sabaody]": 2,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis chapeau-de-paille]": 8,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis zo]": 3,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis punk-hazard]": 4,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis pays-des-wa]": 5,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis erbaf]": 2,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis long-ring-long-land]": 1,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis reverse-mountain]": 1,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis royaume-de-prodence]": 1,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis baggy-s-delivery]": 1,
+    "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis baterilla]": 1
+  },
+  "titres_les_plus_frequents": [
+    [
+      "Apparence",
+      2112
+    ],
+    [
+      "Personnalité",
+      1885
+    ],
+    [
+      "Histoire",
+      1173
+    ],
+    [
+      "Capacités",
+      876
+    ],
+    [
+      "Anecdotes",
+      641
+    ],
+    [
+      "Capacités et pouvoirs",
+      575
+    ],
+    [
+      "Contexte",
+      357
+    ],
+    [
+      "Relations",
+      355
+    ],
+    [
+      "Intrigue",
+      344
+    ],
+    [
+      "Passé",
+      327
+    ],
+    [
+      "Biographie",
+      326
+    ],
+    [
+      "Apparitions dans les jeux vidéo",
+      303
+    ],
+    [
+      "Utilisation",
+      246
+    ],
+    [
+      "Partie II",
+      205
+    ],
+    [
+      "Dragon Ball Super",
+      169
+    ],
+    [
+      "Ninjutsu",
+      162
+    ],
+    [
+      "Partie I",
+      154
+    ],
+    [
+      "Pouvoirs et capacités",
+      151
+    ],
+    [
+      "Ennemis",
+      151
+    ],
+    [
+      "Nouvelle Ère",
+      141
+    ],
+    [
+      "Vue d'ensemble",
+      115
+    ],
+    [
+      "Saga du Pays de Wano",
+      115
+    ],
+    [
+      "Aperçu",
+      114
+    ],
+    [
+      "Dragon Ball Z",
+      111
+    ],
+    [
+      "Saga de Whole Cake Island",
+      93
+    ]
+  ]
+}

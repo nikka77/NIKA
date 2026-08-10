@@ -1,0 +1,1313 @@
+{
+ "chantier": "descente fine des visuels lourds du CDN du wiki",
+ "quand": "2026-08-10T21:32:25.412Z",
+ "rapport_source": "data/audits/visuels-lourds-2026-08-10T21-25-16-814Z.json",
+ "largeurs_fines": [
+  170,
+  160,
+  150,
+  140,
+  120,
+  100,
+  80,
+  60,
+  40
+ ],
+ "seuil_octets": 300000,
+ "aucune_ecriture": "aucune base, aucun fichier modifié",
+ "detail": [
+  {
+   "slug": "atk-bl-desgarron",
+   "name": "Desgarron",
+   "universe": "Bleach",
+   "url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest?cb=20160427172717&path-prefix=en",
+   "octets_en_base": 3493520,
+   "largeur_originale": 190,
+   "barreaux_grossiers": [
+    {
+     "largeur": "adresse en base",
+     "octets": 3493520,
+     "decodee": "190×143 webp",
+     "http": 200
+    },
+    {
+     "largeur": 1920,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1440,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1080,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 960,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 720,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 600,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 480,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 400,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 320,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 260,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 180,
+     "octets": 3009942,
+     "decodee": "180×135 webp",
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest/scale-to-width-down/180?cb=20160427172717&path-prefix=en"
+    }
+   ],
+   "barreaux_fins": [
+    {
+     "largeur": 170,
+     "octets": 2703816,
+     "decodee": "170×128 webp",
+     "images": 534,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest/scale-to-width-down/170?cb=20160427172717&path-prefix=en"
+    },
+    {
+     "largeur": 160,
+     "octets": 2472272,
+     "decodee": "160×120 webp",
+     "images": 534,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest/scale-to-width-down/160?cb=20160427172717&path-prefix=en"
+    },
+    {
+     "largeur": 150,
+     "octets": 2327872,
+     "decodee": "150×113 webp",
+     "images": 534,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest/scale-to-width-down/150?cb=20160427172717&path-prefix=en"
+    },
+    {
+     "largeur": 140,
+     "http": 504,
+     "url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest/scale-to-width-down/140?cb=20160427172717&path-prefix=en"
+    },
+    {
+     "largeur": 120,
+     "octets": 1687314,
+     "decodee": "120×90 webp",
+     "images": 534,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest/scale-to-width-down/120?cb=20160427172717&path-prefix=en"
+    },
+    {
+     "largeur": 100,
+     "octets": 1334492,
+     "decodee": "100×75 webp",
+     "images": 534,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest/scale-to-width-down/100?cb=20160427172717&path-prefix=en"
+    },
+    {
+     "largeur": 80,
+     "octets": 965288,
+     "decodee": "80×60 webp",
+     "images": 534,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest/scale-to-width-down/80?cb=20160427172717&path-prefix=en"
+    },
+    {
+     "largeur": 60,
+     "octets": 685056,
+     "decodee": "60×45 webp",
+     "images": 534,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest/scale-to-width-down/60?cb=20160427172717&path-prefix=en"
+    },
+    {
+     "largeur": 40,
+     "octets": 419008,
+     "decodee": "40×30 webp",
+     "images": 534,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/d/dc/Desgarr%C3%B3n.gif/revision/latest/scale-to-width-down/40?cb=20160427172717&path-prefix=en"
+    }
+   ],
+   "plus_leger_conforme": {
+    "largeur": 40,
+    "octets": 419008,
+    "decodee": "40×30 webp",
+    "images": 534
+   },
+   "sous_le_plafond": false
+  },
+  {
+   "slug": "atk-bl-higa-zekko",
+   "name": "Higa Zekko",
+   "universe": "Bleach",
+   "url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest?cb=20160304184000&path-prefix=en",
+   "octets_en_base": 3276224,
+   "largeur_originale": 190,
+   "barreaux_grossiers": [
+    {
+     "largeur": "adresse en base",
+     "octets": 3276224,
+     "decodee": "190×143 webp",
+     "http": 200
+    },
+    {
+     "largeur": 1920,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1440,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1080,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 960,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 720,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 600,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 480,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 400,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 320,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 260,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 180,
+     "octets": 2683300,
+     "decodee": "180×135 webp",
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest/scale-to-width-down/180?cb=20160304184000&path-prefix=en"
+    }
+   ],
+   "barreaux_fins": [
+    {
+     "largeur": 170,
+     "octets": 2404968,
+     "decodee": "170×128 webp",
+     "images": 450,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest/scale-to-width-down/170?cb=20160304184000&path-prefix=en"
+    },
+    {
+     "largeur": 160,
+     "octets": 2211904,
+     "decodee": "160×120 webp",
+     "images": 450,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest/scale-to-width-down/160?cb=20160304184000&path-prefix=en"
+    },
+    {
+     "largeur": 150,
+     "octets": 2074400,
+     "decodee": "150×113 webp",
+     "images": 450,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest/scale-to-width-down/150?cb=20160304184000&path-prefix=en"
+    },
+    {
+     "largeur": 140,
+     "http": 504,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest/scale-to-width-down/140?cb=20160304184000&path-prefix=en"
+    },
+    {
+     "largeur": 120,
+     "octets": 1516298,
+     "decodee": "120×90 webp",
+     "images": 450,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest/scale-to-width-down/120?cb=20160304184000&path-prefix=en"
+    },
+    {
+     "largeur": 100,
+     "octets": 1188188,
+     "decodee": "100×75 webp",
+     "images": 450,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest/scale-to-width-down/100?cb=20160304184000&path-prefix=en"
+    },
+    {
+     "largeur": 80,
+     "octets": 863758,
+     "decodee": "80×60 webp",
+     "images": 450,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest/scale-to-width-down/80?cb=20160304184000&path-prefix=en"
+    },
+    {
+     "largeur": 60,
+     "octets": 608962,
+     "decodee": "60×45 webp",
+     "images": 450,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest/scale-to-width-down/60?cb=20160304184000&path-prefix=en"
+    },
+    {
+     "largeur": 40,
+     "octets": 366036,
+     "decodee": "40×30 webp",
+     "images": 450,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/35/HigaZekk%C5%8D.gif/revision/latest/scale-to-width-down/40?cb=20160304184000&path-prefix=en"
+    }
+   ],
+   "plus_leger_conforme": {
+    "largeur": 40,
+    "octets": 366036,
+    "decodee": "40×30 webp",
+    "images": 450
+   },
+   "sous_le_plafond": false
+  },
+  {
+   "slug": "atk-bl-gran-rey-cero",
+   "name": "Gran Rey Cero",
+   "universe": "Bleach",
+   "url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest?cb=20160426182414&path-prefix=en",
+   "octets_en_base": 2813320,
+   "largeur_originale": 190,
+   "barreaux_grossiers": [
+    {
+     "largeur": "adresse en base",
+     "octets": 2813320,
+     "decodee": "190×143 webp",
+     "http": 200
+    },
+    {
+     "largeur": 1920,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1440,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1080,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 960,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 720,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 600,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 480,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 400,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 320,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 260,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 180,
+     "octets": 2308700,
+     "decodee": "180×135 webp",
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest/scale-to-width-down/180?cb=20160426182414&path-prefix=en"
+    }
+   ],
+   "barreaux_fins": [
+    {
+     "largeur": 170,
+     "octets": 2054950,
+     "decodee": "170×128 webp",
+     "images": 549,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest/scale-to-width-down/170?cb=20160426182414&path-prefix=en"
+    },
+    {
+     "largeur": 160,
+     "octets": 1882884,
+     "decodee": "160×120 webp",
+     "images": 549,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest/scale-to-width-down/160?cb=20160426182414&path-prefix=en"
+    },
+    {
+     "largeur": 150,
+     "octets": 1763776,
+     "decodee": "150×113 webp",
+     "images": 549,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest/scale-to-width-down/150?cb=20160426182414&path-prefix=en"
+    },
+    {
+     "largeur": 140,
+     "http": 504,
+     "url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest/scale-to-width-down/140?cb=20160426182414&path-prefix=en"
+    },
+    {
+     "largeur": 120,
+     "octets": 1274286,
+     "decodee": "120×90 webp",
+     "images": 549,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest/scale-to-width-down/120?cb=20160426182414&path-prefix=en"
+    },
+    {
+     "largeur": 100,
+     "octets": 999768,
+     "decodee": "100×75 webp",
+     "images": 549,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest/scale-to-width-down/100?cb=20160426182414&path-prefix=en"
+    },
+    {
+     "largeur": 80,
+     "octets": 722996,
+     "decodee": "80×60 webp",
+     "images": 549,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest/scale-to-width-down/80?cb=20160426182414&path-prefix=en"
+    },
+    {
+     "largeur": 60,
+     "octets": 520136,
+     "decodee": "60×45 webp",
+     "images": 549,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest/scale-to-width-down/60?cb=20160426182414&path-prefix=en"
+    },
+    {
+     "largeur": 40,
+     "octets": 325842,
+     "decodee": "40×30 webp",
+     "images": 547,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/2/24/GranRayCero.gif/revision/latest/scale-to-width-down/40?cb=20160426182414&path-prefix=en"
+    }
+   ],
+   "plus_leger_conforme": {
+    "largeur": 40,
+    "octets": 325842,
+    "decodee": "40×30 webp",
+    "images": 547
+   },
+   "sous_le_plafond": false
+  },
+  {
+   "slug": "atk-bl-kurohitsugi",
+   "name": "Kurohitsugi",
+   "universe": "Bleach",
+   "url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest?cb=20160304195411&path-prefix=en",
+   "octets_en_base": 2624846,
+   "largeur_originale": 190,
+   "barreaux_grossiers": [
+    {
+     "largeur": "adresse en base",
+     "octets": 2624846,
+     "decodee": "190×143 webp",
+     "http": 200
+    },
+    {
+     "largeur": 1920,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1440,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1080,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 960,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 720,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 600,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 480,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 400,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 320,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 260,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 180,
+     "octets": 2187122,
+     "decodee": "180×135 webp",
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest/scale-to-width-down/180?cb=20160304195411&path-prefix=en"
+    }
+   ],
+   "barreaux_fins": [
+    {
+     "largeur": 170,
+     "octets": 1973744,
+     "decodee": "170×128 webp",
+     "images": 399,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest/scale-to-width-down/170?cb=20160304195411&path-prefix=en"
+    },
+    {
+     "largeur": 160,
+     "octets": 1810292,
+     "decodee": "160×120 webp",
+     "images": 399,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest/scale-to-width-down/160?cb=20160304195411&path-prefix=en"
+    },
+    {
+     "largeur": 150,
+     "octets": 1700544,
+     "decodee": "150×113 webp",
+     "images": 399,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest/scale-to-width-down/150?cb=20160304195411&path-prefix=en"
+    },
+    {
+     "largeur": 140,
+     "http": 504,
+     "url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest/scale-to-width-down/140?cb=20160304195411&path-prefix=en"
+    },
+    {
+     "largeur": 120,
+     "octets": 1245164,
+     "decodee": "120×90 webp",
+     "images": 399,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest/scale-to-width-down/120?cb=20160304195411&path-prefix=en"
+    },
+    {
+     "largeur": 100,
+     "octets": 974938,
+     "decodee": "100×75 webp",
+     "images": 399,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest/scale-to-width-down/100?cb=20160304195411&path-prefix=en"
+    },
+    {
+     "largeur": 80,
+     "octets": 706028,
+     "decodee": "80×60 webp",
+     "images": 399,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest/scale-to-width-down/80?cb=20160304195411&path-prefix=en"
+    },
+    {
+     "largeur": 60,
+     "octets": 492730,
+     "decodee": "60×45 webp",
+     "images": 399,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest/scale-to-width-down/60?cb=20160304195411&path-prefix=en"
+    },
+    {
+     "largeur": 40,
+     "octets": 298960,
+     "decodee": "40×30 webp",
+     "images": 399,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/8/80/Kurohitsugi.gif/revision/latest/scale-to-width-down/40?cb=20160304195411&path-prefix=en"
+    }
+   ],
+   "plus_leger_conforme": {
+    "largeur": 40,
+    "octets": 298960,
+    "decodee": "40×30 webp",
+    "images": 399
+   },
+   "sous_le_plafond": true
+  },
+  {
+   "slug": "atk-bl-shunko",
+   "name": "Shunko",
+   "universe": "Bleach",
+   "url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest?cb=20170122063759&path-prefix=en",
+   "octets_en_base": 2496946,
+   "largeur_originale": 190,
+   "barreaux_grossiers": [
+    {
+     "largeur": "adresse en base",
+     "octets": 2496946,
+     "decodee": "190×143 webp",
+     "http": 200
+    },
+    {
+     "largeur": 1920,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1440,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1080,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 960,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 720,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 600,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 480,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 400,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 320,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 260,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 180,
+     "octets": 2210826,
+     "decodee": "180×135 webp",
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest/scale-to-width-down/180?cb=20170122063759&path-prefix=en"
+    }
+   ],
+   "barreaux_fins": [
+    {
+     "largeur": 170,
+     "octets": 2004556,
+     "decodee": "170×128 webp",
+     "images": 441,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest/scale-to-width-down/170?cb=20170122063759&path-prefix=en"
+    },
+    {
+     "largeur": 160,
+     "octets": 1869308,
+     "decodee": "160×120 webp",
+     "images": 441,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest/scale-to-width-down/160?cb=20170122063759&path-prefix=en"
+    },
+    {
+     "largeur": 150,
+     "octets": 1774282,
+     "decodee": "150×113 webp",
+     "images": 441,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest/scale-to-width-down/150?cb=20170122063759&path-prefix=en"
+    },
+    {
+     "largeur": 140,
+     "http": 504,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest/scale-to-width-down/140?cb=20170122063759&path-prefix=en"
+    },
+    {
+     "largeur": 120,
+     "octets": 1329926,
+     "decodee": "120×90 webp",
+     "images": 441,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest/scale-to-width-down/120?cb=20170122063759&path-prefix=en"
+    },
+    {
+     "largeur": 100,
+     "octets": 1059170,
+     "decodee": "100×75 webp",
+     "images": 441,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest/scale-to-width-down/100?cb=20170122063759&path-prefix=en"
+    },
+    {
+     "largeur": 80,
+     "octets": 771086,
+     "decodee": "80×60 webp",
+     "images": 441,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest/scale-to-width-down/80?cb=20170122063759&path-prefix=en"
+    },
+    {
+     "largeur": 60,
+     "octets": 539216,
+     "decodee": "60×45 webp",
+     "images": 441,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest/scale-to-width-down/60?cb=20170122063759&path-prefix=en"
+    },
+    {
+     "largeur": 40,
+     "octets": 325652,
+     "decodee": "40×30 webp",
+     "images": 441,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest/scale-to-width-down/40?cb=20170122063759&path-prefix=en"
+    }
+   ],
+   "plus_leger_conforme": {
+    "largeur": 40,
+    "octets": 325652,
+    "decodee": "40×30 webp",
+    "images": 441
+   },
+   "sous_le_plafond": false
+  },
+  {
+   "slug": "atk-bl-utsusemi",
+   "name": "Utsusemi",
+   "universe": "Bleach",
+   "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest?cb=20260805223647&path-prefix=fr",
+   "octets_en_base": 2183966,
+   "largeur_originale": 464,
+   "barreaux_grossiers": [
+    {
+     "largeur": "adresse en base",
+     "octets": 2183966,
+     "decodee": "464×260 webp",
+     "http": 200
+    },
+    {
+     "largeur": 1920,
+     "saute": "au-dessus de l’original (464 px)"
+    },
+    {
+     "largeur": 1440,
+     "saute": "au-dessus de l’original (464 px)"
+    },
+    {
+     "largeur": 1080,
+     "saute": "au-dessus de l’original (464 px)"
+    },
+    {
+     "largeur": 960,
+     "saute": "au-dessus de l’original (464 px)"
+    },
+    {
+     "largeur": 720,
+     "saute": "au-dessus de l’original (464 px)"
+    },
+    {
+     "largeur": 600,
+     "saute": "au-dessus de l’original (464 px)"
+    },
+    {
+     "largeur": 480,
+     "saute": "au-dessus de l’original (464 px)"
+    },
+    {
+     "largeur": 400,
+     "octets": 952510,
+     "decodee": "400×224 webp",
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/400?cb=20260805223647&path-prefix=fr"
+    },
+    {
+     "largeur": 320,
+     "octets": 658198,
+     "decodee": "320×179 webp",
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/320?cb=20260805223647&path-prefix=fr"
+    },
+    {
+     "largeur": 260,
+     "octets": 500298,
+     "decodee": "260×146 webp",
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/260?cb=20260805223647&path-prefix=fr"
+    },
+    {
+     "largeur": 180,
+     "octets": 321854,
+     "decodee": "180×101 webp",
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/180?cb=20260805223647&path-prefix=fr"
+    }
+   ],
+   "barreaux_fins": [
+    {
+     "largeur": 170,
+     "octets": 290458,
+     "decodee": "170×95 webp",
+     "images": 120,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/170?cb=20260805223647&path-prefix=fr"
+    },
+    {
+     "largeur": 160,
+     "octets": 273122,
+     "decodee": "160×90 webp",
+     "images": 120,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/160?cb=20260805223647&path-prefix=fr"
+    },
+    {
+     "largeur": 150,
+     "octets": 257160,
+     "decodee": "150×84 webp",
+     "images": 120,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/150?cb=20260805223647&path-prefix=fr"
+    },
+    {
+     "largeur": 140,
+     "octets": 230218,
+     "decodee": "140×78 webp",
+     "images": 120,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/140?cb=20260805223647&path-prefix=fr"
+    },
+    {
+     "largeur": 120,
+     "octets": 195884,
+     "decodee": "120×67 webp",
+     "images": 120,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/120?cb=20260805223647&path-prefix=fr"
+    },
+    {
+     "largeur": 100,
+     "octets": 155340,
+     "decodee": "100×56 webp",
+     "images": 120,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/100?cb=20260805223647&path-prefix=fr"
+    },
+    {
+     "largeur": 80,
+     "octets": 115062,
+     "decodee": "80×45 webp",
+     "images": 120,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/80?cb=20260805223647&path-prefix=fr"
+    },
+    {
+     "largeur": 60,
+     "octets": 83242,
+     "decodee": "60×34 webp",
+     "images": 120,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/60?cb=20260805223647&path-prefix=fr"
+    },
+    {
+     "largeur": 40,
+     "octets": 50358,
+     "decodee": "40×22 webp",
+     "images": 120,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/0/00/Utsusemi_.gif/revision/latest/scale-to-width-down/40?cb=20260805223647&path-prefix=fr"
+    }
+   ],
+   "plus_leger_conforme": {
+    "largeur": 40,
+    "octets": 50358,
+    "decodee": "40×22 webp",
+    "images": 120
+   },
+   "sous_le_plafond": true
+  },
+  {
+   "slug": "atk-bl-cero",
+   "name": "Cero",
+   "universe": "Bleach",
+   "url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest?cb=20250324112655&path-prefix=en",
+   "octets_en_base": 2004628,
+   "largeur_originale": 190,
+   "barreaux_grossiers": [
+    {
+     "largeur": "adresse en base",
+     "octets": 2004628,
+     "decodee": "190×143 webp",
+     "http": 200
+    },
+    {
+     "largeur": 1920,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1440,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1080,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 960,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 720,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 600,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 480,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 400,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 320,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 260,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 180,
+     "octets": 1827842,
+     "decodee": "180×135 webp",
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest/scale-to-width-down/180?cb=20250324112655&path-prefix=en"
+    }
+   ],
+   "barreaux_fins": [
+    {
+     "largeur": 170,
+     "octets": 1648198,
+     "decodee": "170×128 webp",
+     "images": 353,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest/scale-to-width-down/170?cb=20250324112655&path-prefix=en"
+    },
+    {
+     "largeur": 160,
+     "octets": 1503888,
+     "decodee": "160×120 webp",
+     "images": 353,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest/scale-to-width-down/160?cb=20250324112655&path-prefix=en"
+    },
+    {
+     "largeur": 150,
+     "octets": 1392714,
+     "decodee": "150×113 webp",
+     "images": 353,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest/scale-to-width-down/150?cb=20250324112655&path-prefix=en"
+    },
+    {
+     "largeur": 140,
+     "octets": 1241876,
+     "decodee": "140×105 webp",
+     "images": 353,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest/scale-to-width-down/140?cb=20250324112655&path-prefix=en"
+    },
+    {
+     "largeur": 120,
+     "octets": 988590,
+     "decodee": "120×90 webp",
+     "images": 353,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest/scale-to-width-down/120?cb=20250324112655&path-prefix=en"
+    },
+    {
+     "largeur": 100,
+     "octets": 758828,
+     "decodee": "100×75 webp",
+     "images": 353,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest/scale-to-width-down/100?cb=20250324112655&path-prefix=en"
+    },
+    {
+     "largeur": 80,
+     "octets": 537996,
+     "decodee": "80×60 webp",
+     "images": 353,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest/scale-to-width-down/80?cb=20250324112655&path-prefix=en"
+    },
+    {
+     "largeur": 60,
+     "octets": 364482,
+     "decodee": "60×45 webp",
+     "images": 353,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest/scale-to-width-down/60?cb=20250324112655&path-prefix=en"
+    },
+    {
+     "largeur": 40,
+     "octets": 213590,
+     "decodee": "40×30 webp",
+     "images": 353,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/b/bb/Cero.gif/revision/latest/scale-to-width-down/40?cb=20250324112655&path-prefix=en"
+    }
+   ],
+   "plus_leger_conforme": {
+    "largeur": 40,
+    "octets": 213590,
+    "decodee": "40×30 webp",
+    "images": 353
+   },
+   "sous_le_plafond": true
+  },
+  {
+   "slug": "kido",
+   "name": "Kidō",
+   "universe": "Bleach",
+   "url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest?cb=20160222153316&path-prefix=en",
+   "octets_en_base": 1938258,
+   "largeur_originale": 190,
+   "barreaux_grossiers": [
+    {
+     "largeur": "adresse en base",
+     "octets": 1938258,
+     "decodee": "190×143 webp",
+     "http": 200
+    },
+    {
+     "largeur": 1920,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1440,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1080,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 960,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 720,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 600,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 480,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 400,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 320,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 260,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 180,
+     "octets": 1690202,
+     "decodee": "180×135 webp",
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest/scale-to-width-down/180?cb=20160222153316&path-prefix=en"
+    }
+   ],
+   "barreaux_fins": [
+    {
+     "largeur": 170,
+     "octets": 1534736,
+     "decodee": "170×128 webp",
+     "images": 427,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest/scale-to-width-down/170?cb=20160222153316&path-prefix=en"
+    },
+    {
+     "largeur": 160,
+     "octets": 1423126,
+     "decodee": "160×120 webp",
+     "images": 427,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest/scale-to-width-down/160?cb=20160222153316&path-prefix=en"
+    },
+    {
+     "largeur": 150,
+     "octets": 1337672,
+     "decodee": "150×113 webp",
+     "images": 427,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest/scale-to-width-down/150?cb=20160222153316&path-prefix=en"
+    },
+    {
+     "largeur": 140,
+     "http": 504,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest/scale-to-width-down/140?cb=20160222153316&path-prefix=en"
+    },
+    {
+     "largeur": 120,
+     "octets": 981528,
+     "decodee": "120×90 webp",
+     "images": 427,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest/scale-to-width-down/120?cb=20160222153316&path-prefix=en"
+    },
+    {
+     "largeur": 100,
+     "octets": 778404,
+     "decodee": "100×75 webp",
+     "images": 427,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest/scale-to-width-down/100?cb=20160222153316&path-prefix=en"
+    },
+    {
+     "largeur": 80,
+     "octets": 571662,
+     "decodee": "80×60 webp",
+     "images": 427,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest/scale-to-width-down/80?cb=20160222153316&path-prefix=en"
+    },
+    {
+     "largeur": 60,
+     "octets": 409942,
+     "decodee": "60×45 webp",
+     "images": 427,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest/scale-to-width-down/60?cb=20160222153316&path-prefix=en"
+    },
+    {
+     "largeur": 40,
+     "octets": 251274,
+     "decodee": "40×30 webp",
+     "images": 427,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/9/98/BasicKid%C5%8D.gif/revision/latest/scale-to-width-down/40?cb=20160222153316&path-prefix=en"
+    }
+   ],
+   "plus_leger_conforme": {
+    "largeur": 40,
+    "octets": 251274,
+    "decodee": "40×30 webp",
+    "images": 427
+   },
+   "sous_le_plafond": true
+  },
+  {
+   "slug": "atk-bl-garra-de-la-pantera",
+   "name": "Garra de la Pantera",
+   "universe": "Bleach",
+   "url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest?cb=20160426192854&path-prefix=en",
+   "octets_en_base": 1753642,
+   "largeur_originale": 190,
+   "barreaux_grossiers": [
+    {
+     "largeur": "adresse en base",
+     "octets": 1753642,
+     "decodee": "190×143 webp",
+     "http": 200
+    },
+    {
+     "largeur": 1920,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1440,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 1080,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 960,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 720,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 600,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 480,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 400,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 320,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 260,
+     "saute": "au-dessus de l’original (190 px)"
+    },
+    {
+     "largeur": 180,
+     "octets": 1421098,
+     "decodee": "180×135 webp",
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest/scale-to-width-down/180?cb=20160426192854&path-prefix=en"
+    }
+   ],
+   "barreaux_fins": [
+    {
+     "largeur": 170,
+     "octets": 1279408,
+     "decodee": "170×128 webp",
+     "images": 283,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest/scale-to-width-down/170?cb=20160426192854&path-prefix=en"
+    },
+    {
+     "largeur": 160,
+     "octets": 1174110,
+     "decodee": "160×120 webp",
+     "images": 283,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest/scale-to-width-down/160?cb=20160426192854&path-prefix=en"
+    },
+    {
+     "largeur": 150,
+     "octets": 1106366,
+     "decodee": "150×113 webp",
+     "images": 283,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest/scale-to-width-down/150?cb=20160426192854&path-prefix=en"
+    },
+    {
+     "largeur": 140,
+     "octets": 985662,
+     "decodee": "140×105 webp",
+     "images": 283,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest/scale-to-width-down/140?cb=20160426192854&path-prefix=en"
+    },
+    {
+     "largeur": 120,
+     "octets": 809828,
+     "decodee": "120×90 webp",
+     "images": 283,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest/scale-to-width-down/120?cb=20160426192854&path-prefix=en"
+    },
+    {
+     "largeur": 100,
+     "octets": 641428,
+     "decodee": "100×75 webp",
+     "images": 283,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest/scale-to-width-down/100?cb=20160426192854&path-prefix=en"
+    },
+    {
+     "largeur": 80,
+     "octets": 463384,
+     "decodee": "80×60 webp",
+     "images": 283,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest/scale-to-width-down/80?cb=20160426192854&path-prefix=en"
+    },
+    {
+     "largeur": 60,
+     "octets": 324926,
+     "decodee": "60×45 webp",
+     "images": 283,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest/scale-to-width-down/60?cb=20160426192854&path-prefix=en"
+    },
+    {
+     "largeur": 40,
+     "octets": 196358,
+     "decodee": "40×30 webp",
+     "images": 283,
+     "conforme": true,
+     "url": "https://static.wikia.nocookie.net/bleach/images/3/3d/GarraDeLaPantera.gif/revision/latest/scale-to-width-down/40?cb=20160426192854&path-prefix=en"
+    }
+   ],
+   "plus_leger_conforme": {
+    "largeur": 40,
+    "octets": 196358,
+    "decodee": "40×30 webp",
+    "images": 283
+   },
+   "sous_le_plafond": true
+  }
+ ],
+ "encore_au_dessus_du_plafond": [
+  "atk-bl-desgarron",
+  "atk-bl-higa-zekko",
+  "atk-bl-gran-rey-cero",
+  "atk-bl-shunko"
+ ]
+}

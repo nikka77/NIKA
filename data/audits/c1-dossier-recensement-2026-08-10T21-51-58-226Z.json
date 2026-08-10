@@ -1,0 +1,404 @@
+{
+  "horodate": "2026-08-10T21:52:05.942Z",
+  "corpus": {
+    "fiches": 7697,
+    "sections": 21383,
+    "fiches_avec_dossier": 5694,
+    "fiches_sans_dossier": 2003
+  },
+  "forme_des_sections_existantes": {
+    "formes_idx": {
+      "numérique (2, 3.1…)": 21342,
+      "autre : fin-3": 4,
+      "autre : fin-1": 10,
+      "autre : fin-10": 1,
+      "autre : fin-2": 6,
+      "autre : T-1": 1,
+      "autre : fin-4": 2,
+      "demo-N": 17
+    },
+    "sans_titre": 0,
+    "mediane_caracteres_par_section": 620,
+    "mediane_caracteres_par_dossier": 1949,
+    "top_titres": [
+      [
+        "Apparence",
+        2366
+      ],
+      [
+        "Personnalité",
+        1972
+      ],
+      [
+        "Histoire",
+        1328
+      ],
+      [
+        "Anecdotes",
+        1042
+      ],
+      [
+        "Capacités",
+        882
+      ],
+      [
+        "Capacités et pouvoirs",
+        575
+      ],
+      [
+        "Passé",
+        365
+      ],
+      [
+        "Contexte",
+        362
+      ],
+      [
+        "Relations",
+        356
+      ],
+      [
+        "Intrigue",
+        344
+      ],
+      [
+        "Biographie",
+        330
+      ],
+      [
+        "Apparitions dans les jeux vidéo",
+        304
+      ],
+      [
+        "Utilisation",
+        281
+      ],
+      [
+        "Partie II",
+        207
+      ],
+      [
+        "Dragon Ball Super",
+        170
+      ],
+      [
+        "Ninjutsu",
+        162
+      ],
+      [
+        "Partie I",
+        156
+      ],
+      [
+        "Pouvoirs et capacités",
+        151
+      ],
+      [
+        "Ennemis",
+        151
+      ],
+      [
+        "Nouvelle Ère",
+        142
+      ],
+      [
+        "Futilités",
+        122
+      ],
+      [
+        "Vue d'ensemble",
+        118
+      ],
+      [
+        "Aperçu",
+        116
+      ],
+      [
+        "Saga du Pays de Wano",
+        115
+      ],
+      [
+        "Dragon Ball Z",
+        111
+      ],
+      [
+        "Techniques",
+        94
+      ],
+      [
+        "Saga de Whole Cake Island",
+        93
+      ],
+      [
+        "Usage",
+        91
+      ],
+      [
+        "Apparitions dans d'autres médias",
+        91
+      ],
+      [
+        "Famille",
+        86
+      ]
+    ],
+    "top_sources": [
+      [
+        "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Tu",
+        6713
+      ],
+      [
+        "openrouter/mistralai/mistral-small-24b-instruc",
+        6280
+      ],
+      [
+        "claude-haiku-4-5 (blitz fenêtre — traduit de l",
+        4167
+      ],
+      [
+        "mistral/mistral-large-latest",
+        1231
+      ],
+      [
+        "claude-haiku-4-5 (blitz front-2b — traduit de ",
+        305
+      ],
+      [
+        "wiki FR onepiece.fandom.com/fr — « Équipage de",
+        121
+      ],
+      [
+        "connecteur-techniques-op (traduit de la page F",
+        120
+      ],
+      [
+        "nvidia/nvidia/nemotron-3-super-120b-a12b",
+        84
+      ],
+      [
+        "deepinfra/Qwen/Qwen3-32B",
+        54
+      ],
+      [
+        "deepinfra/mistralai/Mistral-Small-24B-Instruct",
+        46
+      ],
+      [
+        "claude-haiku-4-5 (blitz fenêtre 02/08 — tradui",
+        30
+      ],
+      [
+        "anthropic/claude-haiku-4-5",
+        21
+      ],
+      [
+        "wiki FR onepiece.fandom.com/fr — « L'Équipage ",
+        20
+      ],
+      [
+        "wiki FR onepiece.fandom.com/fr — « Kinemon » (",
+        20
+      ],
+      [
+        "wiki FR bleach.fandom.com/fr — « Soi Fon » (CC",
+        20
+      ]
+    ]
+  },
+  "voie_fr": {
+    "sans_dossier_avec_url_wiki_fr_prouvee": 12,
+    "avec_dossier_et_url_wiki_fr": 58,
+    "par_univers": {
+      "Naruto": {
+        "sans_dossier": 1300,
+        "avec_url_fr": 6
+      },
+      "Bleach": {
+        "sans_dossier": 99,
+        "avec_url_fr": 1
+      },
+      "One Piece": {
+        "sans_dossier": 250,
+        "avec_url_fr": 4
+      },
+      "Dragon Ball": {
+        "sans_dossier": 286,
+        "avec_url_fr": 0
+      },
+      "Initial D": {
+        "sans_dossier": 2,
+        "avec_url_fr": 0
+      },
+      "Hunter x Hunter": {
+        "sans_dossier": 21,
+        "avec_url_fr": 0
+      },
+      "JoJo's Bizarre Adventure": {
+        "sans_dossier": 37,
+        "avec_url_fr": 0
+      },
+      "Death Note": {
+        "sans_dossier": 8,
+        "avec_url_fr": 1
+      }
+    },
+    "par_type": {
+      "artifact": {
+        "sans_dossier": 191,
+        "avec_url_fr": 5
+      },
+      "power": {
+        "sans_dossier": 1158,
+        "avec_url_fr": 3
+      },
+      "character": {
+        "sans_dossier": 301,
+        "avec_url_fr": 2
+      },
+      "status": {
+        "sans_dossier": 148,
+        "avec_url_fr": 1
+      },
+      "profession": {
+        "sans_dossier": 77,
+        "avec_url_fr": 0
+      },
+      "skill": {
+        "sans_dossier": 24,
+        "avec_url_fr": 0
+      },
+      "place": {
+        "sans_dossier": 104,
+        "avec_url_fr": 1
+      }
+    },
+    "echantillon": [
+      {
+        "slug": "beeswax-clone",
+        "name": "Beeswax Clone",
+        "type": "power",
+        "universe": "Naruto",
+        "url": "https://naruto.fandom.com/fr/wiki/Clone_de_Cire_d'Abeille"
+      },
+      {
+        "slug": "magnet-release-conserving-bee-twin-blades",
+        "name": "Magnet Release: Conserving Bee Twin Blades",
+        "type": "power",
+        "universe": "Naruto",
+        "url": "https://naruto.fandom.com/fr/wiki/Jiton_-_Shuriken_Magn%C3%A9tique"
+      },
+      {
+        "slug": "phillip",
+        "name": "Phillip",
+        "type": "character",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/Philip"
+      },
+      {
+        "slug": "ninja-monk",
+        "name": "Ninja monk",
+        "type": "status",
+        "universe": "Naruto",
+        "url": "https://naruto.fandom.com/fr/wiki/Moine_Ninja"
+      },
+      {
+        "slug": "bateau-epicerie-de-la-marine",
+        "name": "Bateau épicerie de la Marine",
+        "type": "artifact",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/Bateau_%C3%A9picerie_de_la_Marine"
+      },
+      {
+        "slug": "frauce-kingdom",
+        "name": "Royaume de Frauce",
+        "type": "place",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/Royaume_de_Frauce"
+      },
+      {
+        "slug": "parchemin-explosif",
+        "name": "Parchemin explosif",
+        "type": "artifact",
+        "universe": "Naruto",
+        "url": "https://naruto.fandom.com/fr/wiki/Parchemin_Explosif"
+      },
+      {
+        "slug": "sable",
+        "name": "Sable",
+        "type": "artifact",
+        "universe": "Naruto",
+        "url": "https://naruto.fandom.com/fr/wiki/Sable"
+      },
+      {
+        "slug": "zerhogie",
+        "name": "Zerhogie",
+        "type": "character",
+        "universe": "Death Note",
+        "url": "https://deathnote.fandom.com/fr/wiki/Zerhogie"
+      },
+      {
+        "slug": "atk-bl-tensa-zangetsu",
+        "name": "Tensa Zangetsu",
+        "type": "power",
+        "universe": "Bleach",
+        "url": "https://bleach.fandom.com/fr/wiki/Tensa_Zangetsu"
+      },
+      {
+        "slug": "navire-des-dragons-celestes",
+        "name": "Navire des dragons Célestes",
+        "type": "artifact",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/Navire_des_Dragons_C%C3%A9lestes"
+      },
+      {
+        "slug": "nunchaku",
+        "name": "Nunchaku",
+        "type": "artifact",
+        "universe": "Naruto",
+        "url": "https://naruto.fandom.com/fr/wiki/Nunchaku"
+      }
+    ]
+  },
+  "couverture_par_univers": {
+    "Naruto": {
+      "total": 3330,
+      "avec_dossier": 2030,
+      "taux": "61.0 %"
+    },
+    "One Piece": {
+      "total": 2273,
+      "avec_dossier": 2023,
+      "taux": "89.0 %"
+    },
+    "Bleach": {
+      "total": 382,
+      "avec_dossier": 283,
+      "taux": "74.1 %"
+    },
+    "Initial D": {
+      "total": 43,
+      "avec_dossier": 41,
+      "taux": "95.3 %"
+    },
+    "Dragon Ball": {
+      "total": 1137,
+      "avec_dossier": 851,
+      "taux": "74.8 %"
+    },
+    "JoJo's Bizarre Adventure": {
+      "total": 233,
+      "avec_dossier": 196,
+      "taux": "84.1 %"
+    },
+    "Hunter x Hunter": {
+      "total": 215,
+      "avec_dossier": 194,
+      "taux": "90.2 %"
+    },
+    "Death Note": {
+      "total": 84,
+      "avec_dossier": 76,
+      "taux": "90.5 %"
+    }
+  }
+}

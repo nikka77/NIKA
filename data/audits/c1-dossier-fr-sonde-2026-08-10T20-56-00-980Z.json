@@ -1,0 +1,656 @@
+{
+  "horodate": "2026-08-10T20:56:33.184Z",
+  "batterie_de_la_garde": [
+    {
+      "cas": "chatte/chat — le cas mesuré du démonstrateur",
+      "attendu": true,
+      "mord": true,
+      "ok": true,
+      "contradictions": [
+        {
+          "espece": "genre-oppose-sur-la-meme-tete",
+          "preuve_fiche": "Fukurokumaru est un chat summon de taille humaine au pelage blanc immaculé, portant un collier rouge.",
+          "preuve_section": "Fukurokumaru est une chatte blanche de taille humaine, au collier rouge orné d’une clochette dorée.",
+          "detail": "« null chat » (fiche) contre « null chatte » (section)"
+        }
+      ]
+    },
+    {
+      "cas": "nature — la fiche est un lieu, la section décrit un homme",
+      "attendu": true,
+      "mord": true,
+      "ok": true,
+      "contradictions": [
+        {
+          "espece": "natures-incompatibles",
+          "preuve_fiche": "Kibi est une région du Pays des Wa.",
+          "preuve_section": "Kibi est un ninja du village de Konoha qui participa à l’examen chûnin.",
+          "detail": "la fiche se définit comme lieu et la section comme personne"
+        },
+        {
+          "espece": "nature-contre-le-type-declare",
+          "preuve_fiche": "type = « place » (colonne de la base)",
+          "preuve_section": "Kibi est un ninja du village de Konoha qui participa à l’examen chûnin.",
+          "detail": "type place → nature attendue « lieu », la section définit « null ninja » (personne)"
+        }
+      ]
+    },
+    {
+      "cas": "témoin NÉGATIF — deux textes concordants ne doivent PAS être refusés",
+      "attendu": false,
+      "mord": false,
+      "ok": true,
+      "contradictions": []
+    },
+    {
+      "cas": "témoin NÉGATIF — deux définitions différentes mais compatibles",
+      "attendu": false,
+      "mord": false,
+      "ok": true,
+      "contradictions": []
+    },
+    {
+      "cas": "sexe déclaré contre la définition de la section",
+      "attendu": true,
+      "mord": true,
+      "ok": true,
+      "contradictions": [
+        {
+          "espece": "sexe-declare-contre-definition",
+          "preuve_fiche": "attributes.sex = « Male »",
+          "preuve_section": "Shinta est une femme d’un abord franc, qui dit aussitôt ce qu’elle pense.",
+          "detail": "sexe déclaré male, la section définit « null femme »"
+        }
+      ]
+    }
+  ],
+  "temoins_hote": {
+    "One Piece": {
+      "titre": "Monkey D. Luffy",
+      "repond": true,
+      "sections": 7
+    },
+    "Naruto": {
+      "titre": "Naruto Uzumaki",
+      "repond": true,
+      "sections": 92
+    },
+    "Bleach": {
+      "titre": "Ichigo Kurosaki",
+      "repond": true,
+      "sections": 33
+    },
+    "Dragon Ball": {
+      "titre": "Son Goku",
+      "repond": true,
+      "sections": 74
+    }
+  },
+  "population": {
+    "sans_dossier_univers_a_wiki_fr": 2848,
+    "echantillon": 20
+  },
+  "compte": {
+    "page sans prose exploitable": 2,
+    "candidat": 8,
+    "refus": 10
+  },
+  "rendement": "40.0 %",
+  "mediane_caracteres_des_candidats": 817,
+  "cas": [
+    {
+      "slug": "supervibrato-lightning-release-swords",
+      "name": "Supervibrato Lightning Release Swords",
+      "type": "artifact",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Lames Raiton à Haute Fréquence",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Lames_Raiton_%C3%A0_Haute_Fr%C3%A9quence",
+      "refus": null,
+      "descFr_len": 421,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 3,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "rurichiyo-kasumiouji",
+      "name": "Rurichiyo Kasumiouji",
+      "type": "character",
+      "universe": "Bleach",
+      "route": "langlink",
+      "titreFr": "Rurichiyo Kasumiōji",
+      "identite": "meme-nom",
+      "url": "https://bleach.fandom.com/fr/wiki/Rurichiyo_Kasumi%C5%8Dji",
+      "refus": null,
+      "descFr_len": 1023,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Apparence",
+          "car": 423
+        },
+        {
+          "idx": "2",
+          "titre": "Personnalité",
+          "car": 644
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 5,
+        "intertitres_declares": 5,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 2,
+      "caracteres": 1067,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Apparence",
+          "niveau": 2,
+          "ancre": "Apparence",
+          "texte": "Rurichiyo est une petite fille aux yeux verts et de longs cheveux blonds. Ses cheveux est freinée par un bandeau marron. Elle porte habituellement un kimono rose décoré par des motifs floraux. Au cours de sa première visite au monde des humains, elle porte un chapeau de style japonais qui couvre son visage et cache son pouvoir spirituel. Quand elle est dans son Gigai elle porte l'uniforme du lycée Karakura avec sa robe."
+        },
+        {
+          "idx": "2",
+          "titre": "Personnalité",
+          "niveau": 2,
+          "ancre": "Personnalité",
+          "texte": "Sa famille, selon Yoruichi Shihōin, est juste en dessous des quatre grandes familles nobles, commentant que leurs circonstances sont un peu \"spéciales\". Elle semble être un petit enfant avec une attitude typique d'une princesse, s'attendant à ce que ses exigences soient satisfaites rapidement, et quand elle est ignorée elle se met en colère. Même si elle est souvent égoïste, elle peut être sensible à la situation des autres, regrettant que beaucoup de gens aient eu des problèmes à cause d'elle. Kenryu note qu'elle est très têtue. Elle considère comme de son devoir de protéger ses fonctionnaires et qu'elle ne peut pas les laisser mourir."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "kimi",
+      "name": "Île Jaune d'Œuf",
+      "type": "place",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Île Jaune d'Œuf",
+      "identite": "titre-egal",
+      "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Jaune_d'%C5%92uf",
+      "refus": null,
+      "descFr_len": 230,
+      "sections_brutes": [
+        {
+          "idx": "2",
+          "titre": "Histoire",
+          "car": 353
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 6,
+        "intertitres_declares": 4,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 353,
+      "sections": [
+        {
+          "idx": "2",
+          "titre": "Histoire",
+          "niveau": 2,
+          "ancre": "Histoire",
+          "texte": "Il y a moins de 62 ans, l'Île est devenue une partie du territoire de Pirates de Big Mom également connu sous le nom de \"Totto Land\", et son apparence a été changée pour son look actuel en utilisant les pouvoirs du Soru Soru no Mi de Charlotte Linlin et du Kuku Kuku no Mi de Streusen.\n\nCharlotte Citron est alors nommée ministre en charge de cette île."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "katsuyu-immense-network-healing",
+      "name": "Katsuyu: Immense Network Healing",
+      "type": "power",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Katsuyu - Immense Réseau de Guérison",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Katsuyu_-_Immense_R%C3%A9seau_de_Gu%C3%A9rison",
+      "refus": null,
+      "descFr_len": 347,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Utilisation",
+          "car": 826
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 2,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 826,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Utilisation",
+          "niveau": 2,
+          "ancre": "Utilisation",
+          "texte": "Tout d'abord, Katsuyu divise son corps en plusieurs clones plus petits, puis chacun s'attache à une personne. L'invocateur de la limace canalise alors son chakra curatif à travers Katsuyu qui, à son tour, le transfère aux blessés, guérissant leurs blessures, restaurant leurs réserves d'endurance et de chakra.\n\nCette technique permet à l'utilisateur de guérir un grand nombre de personnes simultanément, indépendamment de la distance. En utilisant cette technique, l'utilisateur est lié à Katsuyu, comme montré lorsque Tsunade put communiquer directement avec la limace, ressentant ce que Katsuyu rencontrait sur le champ de bataille, par exemple sa réaction aux stimuli de Katsuyu trouvant Kakashi Hatake apparemment mort, et plus tard, quand elle dit à Chôji Akimichi que son père était encore en vie après une brève pause."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "scientifique",
+      "name": "Scientifique",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": "recherche-fr",
+      "titreFr": "Kôsuke (Scientifique)",
+      "identite": "meme-nom",
+      "url": "https://naruto.fandom.com/fr/wiki/K%C3%B4suke_(Scientifique)",
+      "refus": "titre enrichi non attesté (kosuke)",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "trunks-ssj2",
+      "name": "Trunks SSJ2",
+      "type": "skill",
+      "universe": "Dragon Ball",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "ino-shika-cho",
+      "name": "Ino–Shika–Chō",
+      "type": "status",
+      "universe": "Naruto",
+      "route": "recherche-fr",
+      "titreFr": "InoShikaChô",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/InoShikaCh%C3%B4",
+      "refus": null,
+      "descFr_len": 475,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Résumé",
+          "car": 562
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 4,
+        "intertitres_declares": 3,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 562,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Résumé",
+          "niveau": 2,
+          "ancre": "Résumé",
+          "texte": "Alors que l'Équipe Asuma discutaient de la prochaine guerre, ils rencontrent Kosuke Maruboshi qui leur rappelle le jour où ils l'avaient sauvé tandis qu'il était encore genin. De plus, Kosuke leur raconte son histoire lorsque leurs parents l'avaient sauvé durant l'Invasion de Konoha grâce à la Formation Ino-Shika-Chô. Un peu secoué par cette histoire, Kosuke leur rappelle qu'un grand shinobi ne le devenait pas en un jour. L'équipe décide alors de perfectionner leur propre formation, insistant sur le fait qu'ils vont progresser puisqu'ils ne sont pas seuls."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "navire-de-la-marine",
+      "name": "Navire de la Marine",
+      "type": "artifact",
+      "universe": "One Piece",
+      "route": "recherche-fr",
+      "titreFr": "Marine",
+      "identite": "meme-nom",
+      "url": "https://onepiece.fandom.com/fr/wiki/Marine",
+      "refus": "page plus générale — page plus générale que l'entité : « Marine » ne couvre pas « Navire de la Marine »",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "hopp",
+      "name": "Hopp",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 76,
+      "etat": "refus"
+    },
+    {
+      "slug": "cheese",
+      "name": "Île Fromage",
+      "type": "place",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Île Fromage",
+      "identite": "titre-egal",
+      "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Fromage",
+      "refus": null,
+      "descFr_len": 282,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Ville",
+          "car": 182
+        },
+        {
+          "idx": "2.1",
+          "titre": "Passé",
+          "car": 356
+        },
+        {
+          "idx": "2.2",
+          "titre": "Arc Whole Cake Island",
+          "car": 279
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 6,
+        "intertitres_declares": 4,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 3,
+      "caracteres": 817,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Ville",
+          "niveau": 2,
+          "ancre": "Ville",
+          "texte": "Cheese Town (チーズタウン Chīzu Taun) : Seule Cheese Town a été montrée, et on y voit des bâtiments faits avec du fromage et en forme de plats au fromage pour certains. Du lait en découle."
+        },
+        {
+          "idx": "2.1",
+          "titre": "Passé",
+          "niveau": 3,
+          "ancre": "Passé",
+          "texte": "Il y a moins de 62 ans, l'Île est devenue une partie du territoire de Pirates de Big Mom également connu sous le nom de \"Totto Land\", et son apparence a été changée pour son look actuel en utilisant les pouvoirs du Soru Soru no Mi de Charlotte Linlin et du Kuku Kuku no Mi de Streusen.\n\nCharlotte Mont d'Or est alors nommée ministre en charge de cette île."
+        },
+        {
+          "idx": "2.2",
+          "titre": "Arc Whole Cake Island",
+          "niveau": 3,
+          "ancre": "Arc_Whole_Cake_Island",
+          "texte": "Alors que l'équipe de récupération de Sanji suivait les instructions de Charlotte Pudding, ils passèrent près de l'Île Fromage en route vers Whole Cake Island.\n\nLe jour du mariage entre Sanji et Pudding, les citoyens de Cheese Town étaient impatients et heureux pour l'événement."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "evil-releasing-method",
+      "name": "Evil Releasing Method",
+      "type": "power",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Libération du Sceau Maléfique",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Lib%C3%A9ration_du_Sceau_Mal%C3%A9fique",
+      "refus": null,
+      "descFr_len": 301,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 1,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "gambler",
+      "name": "Gambler",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Zaji (parieur)",
+      "identite": null,
+      "url": "https://naruto.fandom.com/fr/wiki/Zaji_(parieur)",
+      "refus": "pont nu sans preuve de nom",
+      "descFr_len": 184,
+      "etat": "refus"
+    },
+    {
+      "slug": "isshiki-s-dojutsu",
+      "name": "Isshiki's Dōjutsu",
+      "type": "skill",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Kokugan",
+      "identite": null,
+      "url": "https://naruto.fandom.com/fr/wiki/Kokugan",
+      "refus": "pont nu sans preuve de nom",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "l-equipage-des-acumates",
+      "name": "L’équipage des Acumates",
+      "type": "status",
+      "universe": "One Piece",
+      "route": "recherche-fr",
+      "titreFr": "L'Équipage des Acumates",
+      "identite": "titre-egal",
+      "url": "https://onepiece.fandom.com/fr/wiki/L'%C3%89quipage_des_Acumates",
+      "refus": null,
+      "descFr_len": 374,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Aptitudes et compétences",
+          "car": 232
+        },
+        {
+          "idx": "2.1",
+          "titre": "Passé",
+          "car": 605
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 6,
+        "intertitres_declares": 5,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 2,
+      "caracteres": 837,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Aptitudes et compétences",
+          "niveau": 2,
+          "ancre": "Aptitudes_et_compétences",
+          "texte": "L'équipage est supposé être assez puissant en raison de la prime de leur capitaine, bien que Sentomaru a déclaré qu'il ne soient pas prêt pour aller dans le nouveau monde. On ne connaît pas la force des autres membres de l'équipage."
+        },
+        {
+          "idx": "2.1",
+          "titre": "Passé",
+          "niveau": 3,
+          "ancre": "Passé",
+          "texte": "À un certain moment de leur aventure, l'équipage a débarqué sur l'archipel des Sabaody. Cependant, leur capitaine, Dias a été capturé et vendu comme esclave à Saint Rosward sur cet archipel. Il a finalement tenté de s'évader, puis a voulu essayer d'enlever son collier. Seulement, ce-dernier a explosé ce qui rendu Dias inconscient. Peu après l'incident, il fut traîné par les soldats de la Marine et sûrement emprisonné.\n\nLe sort de l'équipage est inconnu en raison de la capture de leur capitaine, mais Sentomaru a noté que Dias n'a pas été préparé pour le Nouveau Monde en raison de son faible calibre."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "thunder-dial",
+      "name": "Thunder-Dial",
+      "type": "artifact",
+      "universe": "One Piece",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "sekka",
+      "name": "Sekka",
+      "type": "character",
+      "universe": "Naruto",
+      "route": "titre-exact",
+      "titreFr": "Sekka",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/Sekka",
+      "refus": null,
+      "descFr_len": 399,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Apparence",
+          "car": 245
+        },
+        {
+          "idx": "2",
+          "titre": "Compétences",
+          "car": 232
+        },
+        {
+          "idx": "3.1",
+          "titre": "Sauvetage du Kazekage",
+          "car": 298
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 5,
+        "intertitres_declares": 4,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 3,
+      "caracteres": 775,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Apparence",
+          "niveau": 2,
+          "ancre": "Apparence",
+          "texte": "Sekka a les yeux foncés et des sourcils épais. Il porte ce qui est apparemment l'uniforme standard des ninjas médecins de Suna qui implique une tunique rouge avec un poncho blanc qu'il porte avec le turban de standard Suna et le bandeau frontal."
+        },
+        {
+          "idx": "2",
+          "titre": "Compétences",
+          "niveau": 2,
+          "ancre": "Compétences",
+          "texte": "Sekka est un médecin talentueux qui aurait sauvé de nombreuses vies dans le passé, mais il était incapable de soigner Kankurô lorsqu'il avait été empoisonné par Sasori. En tant que médecin, il a un bon contrôle du chakra en général."
+        },
+        {
+          "idx": "3.1",
+          "titre": "Sauvetage du Kazekage",
+          "niveau": 3,
+          "ancre": "Sauvetage_du_Kazekage",
+          "texte": "Après que Kankurô fut récupéré dans le désert après avoir été empoisonné par Sasori, Sekka avec son élève Ryôkan avaient tenté de le soigner mais en vain. Il avait ensuite aidé Sakura Haruno qui réussit à extraire le poison et de créer l'antidote au poison aussi bien dans le traitement de Kankurô."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "mogaro-kingdom",
+      "name": "Royaume de Mogaro",
+      "type": "place",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Royaume de Mogalo",
+      "identite": "meme-nom",
+      "url": "https://onepiece.fandom.com/fr/wiki/Royaume_de_Mogalo",
+      "refus": null,
+      "descFr_len": 122,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Géographie",
+          "car": 187
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 6,
+        "intertitres_declares": 4,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 187,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Géographie",
+          "niveau": 2,
+          "ancre": "Géographie",
+          "texte": "On ne sait rien à propos de la géographie du royaume puisqu'il n'est jamais encore apparu jusqu'à présent. On sait uniquement qu'il s'agit d'un pays du Nouveau Monde, voisin de Dressrosa."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "atk-db-dragon-punch",
+      "name": "Dragon Punch",
+      "type": "power",
+      "universe": "Dragon Ball",
+      "route": "recherche-fr",
+      "titreFr": "Pinich",
+      "identite": "meme-nom",
+      "url": "https://dragonball.fandom.com/fr/wiki/Pinich",
+      "refus": "identité sur squelette phonétique seul — « Pinich » n'a aucun mot commun avec « Dragon Punch »",
+      "descFr_len": 391,
+      "etat": "refus"
+    },
+    {
+      "slug": "councillor",
+      "name": "Councillor",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 424,
+      "etat": "refus"
+    },
+    {
+      "slug": "goku-ssj2",
+      "name": "Goku SSJ2",
+      "type": "skill",
+      "universe": "Dragon Ball",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    }
+  ]
+}

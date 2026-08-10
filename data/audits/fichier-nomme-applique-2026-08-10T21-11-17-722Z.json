@@ -1,0 +1,957 @@
+{
+ "chantier": "application des visuels par fichier au nom de l’entité",
+ "passe_le": "2026-08-10T21:11:22.863Z",
+ "mode": "application",
+ "rapport_source": "data/audits/fichier-nomme-2026-08-10T20-50-56-934Z.json",
+ "relecture_a_l_oeil": "62 visuels téléchargés et regardés un par un le 10/08 ; 4 défauts (6,5 %) — deux devenus gardes mécaniques, deux exclus à la main",
+ "compte": {
+  "a-poser": 58,
+  "exclu-relecture": 3,
+  "refus-porteur": 1,
+  "posees": 58,
+  "deja_remplies_entre_temps": 0,
+  "echecs_ecriture": 0
+ },
+ "posees_detail": [
+  {
+   "slug": "oyakata-bune",
+   "name": "Oyakata Bune",
+   "type": "artifact",
+   "universe": "One Piece",
+   "fichier": "File:Oyakata Bune.png",
+   "preuve": "le wiki anglophone héberge « File:Oyakata Bune.png », employé par 1 article(s) dont « Foxy Pirates »",
+   "emploi": [
+    "Foxy Pirates"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/45/Oyakata_Bune.png/revision/latest/scale-to-width-down/720?cb=20240806025524",
+   "octets": 93448,
+   "dimensions_reelles": "720×612 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-gatling",
+   "name": "Gomu Gomu no Gatling",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Gomu Gomu no Gatling.png",
+   "preuve": "le wiki francophone héberge « Fichier:Gomu Gomu no Gatling.png », employé par 1 article(s) dont « Gomu Gomu no Mi/Techniques »",
+   "emploi": [
+    "Gomu Gomu no Mi/Techniques"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/9/99/Gomu_Gomu_no_Gatling.png/revision/latest/scale-to-width-down/720?cb=20170514163356&path-prefix=fr",
+   "octets": 221286,
+   "dimensions_reelles": "720×1044 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-elephant-gun",
+   "name": "Gomu Gomu no Elephant Gun",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Gomu Gomu no Elephant Gun.png",
+   "preuve": "le wiki anglophone héberge « File:Gomu Gomu no Elephant Gun.png », employé par 2 article(s) dont « Gomu Gomu no Mi/Gear 3 Techniques »",
+   "emploi": [
+    "Gomu Gomu no Mi/Gear 3 Techniques",
+    "Monkey D. Luffy/History/New World"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/65/Gomu_Gomu_no_Elephant_Gun.png/revision/latest/scale-to-width-down/720?cb=20241124021215",
+   "octets": 30170,
+   "dimensions_reelles": "720×405 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-red-hawk",
+   "name": "Gomu Gomu no Red Hawk",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Gomu Gomu no Red Hawk.png",
+   "preuve": "le wiki anglophone héberge « File:Gomu Gomu no Red Hawk.png », employé par 3 article(s) dont « Fish-Man Island Arc »",
+   "emploi": [
+    "Fish-Man Island Arc",
+    "Hody Jones",
+    "Monkey D. Luffy/History/New World"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/b/b2/Gomu_Gomu_no_Red_Hawk.png/revision/latest/scale-to-width-down/720?cb=20250316021511",
+   "octets": 67796,
+   "dimensions_reelles": "720×468 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-king-kong-gun",
+   "name": "Gomu Gomu no King Kong Gun",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Gomu Gomu no King Kong Gun.png",
+   "preuve": "le wiki anglophone héberge « File:Gomu Gomu no King Kong Gun.png », employé par 1 article(s) dont « Gomu Gomu no Mi/Gear 4 Techniques »",
+   "emploi": [
+    "Gomu Gomu no Mi/Gear 4 Techniques"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/4b/Gomu_Gomu_no_King_Kong_Gun.png/revision/latest/scale-to-width-down/720?cb=20160320044647",
+   "octets": 50288,
+   "dimensions_reelles": "720×579 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-gear-second",
+   "name": "Gear Second",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Gear Second Anime Infobox.png",
+   "preuve": "le wiki francophone héberge « Fichier:Gear Second Anime Infobox.png », employé par 3 article(s) dont « Gomu Gomu no Mi »",
+   "emploi": [
+    "Gomu Gomu no Mi",
+    "Monkey D. Luffy/Aptitudes et Compétences",
+    "Gomu Gomu no Mi/Gear Second Techniques"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/0/07/Gear_Second_Anime_Infobox.png/revision/latest/scale-to-width-down/720?cb=20200516162617&path-prefix=fr",
+   "octets": 47912,
+   "dimensions_reelles": "720×680 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-bazooka",
+   "name": "Gomu Gomu no Bazooka",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Gomu Gomu no Bazooka.png",
+   "preuve": "le wiki anglophone héberge « File:Gomu Gomu no Bazooka.png », employé par 1 article(s) dont « Gomu Gomu no Mi/Techniques »",
+   "emploi": [
+    "Gomu Gomu no Mi/Techniques"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/1/1a/Gomu_Gomu_no_Bazooka.png/revision/latest?cb=20230502144443",
+   "octets": 76912,
+   "dimensions_reelles": "704×528 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-gear-fourth",
+   "name": "Gear Fourth",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Gear Fourth Anime Infobox.png",
+   "preuve": "le wiki francophone héberge « Fichier:Gear Fourth Anime Infobox.png », employé par 5 article(s) dont « Gomu Gomu no Mi »",
+   "emploi": [
+    "Gomu Gomu no Mi",
+    "Monkey D. Luffy/Aptitudes et Compétences",
+    "Monkey D. Luffy/Histoire",
+    "Arc Dressrosa",
+    "Gomu Gomu no Mi/Gear Fourth Techniques"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/3/31/Gear_Fourth_Anime_Infobox.png/revision/latest?cb=20170707154748&path-prefix=fr",
+   "octets": 74430,
+   "dimensions_reelles": "580×585 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-oni-giri",
+   "name": "Oni Giri",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Oni Giri.png",
+   "preuve": "le wiki anglophone héberge « File:Oni Giri.png », employé par 2 article(s) dont « Three Sword Style »",
+   "emploi": [
+    "Three Sword Style",
+    "Roronoa Zoro/Abilities and Powers"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/8/8c/Oni_Giri.png/revision/latest?cb=20230202023603",
+   "octets": 94596,
+   "dimensions_reelles": "704×528 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-tora-gari",
+   "name": "Tora Gari",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Tora Gari.png",
+   "preuve": "le wiki anglophone héberge « File:Tora Gari.png », employé par 1 article(s) dont « Sham »",
+   "emploi": [
+    "Sham"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/5/55/Tora_Gari.png/revision/latest?cb=20250715225206",
+   "octets": 82782,
+   "dimensions_reelles": "704×528 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-gear-fifth",
+   "name": "Gear Fifth",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Gear Fifth Anime Infobox.png",
+   "preuve": "le wiki francophone héberge « Fichier:Gear Fifth Anime Infobox.png », employé par 5 article(s) dont « Gomu Gomu no Mi »",
+   "emploi": [
+    "Gomu Gomu no Mi",
+    "Monkey D. Luffy/Aptitudes et Compétences",
+    "Hito Hito no Mi (Classification)",
+    "Gomu Gomu no Mi/Gear Fifth Techniques",
+    "Éveil"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/3/32/Gear_Fifth_Anime_Infobox.png/revision/latest/scale-to-width-down/720?cb=20251102172913&path-prefix=fr",
+   "octets": 56526,
+   "dimensions_reelles": "720×540 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-shishi-sonson",
+   "name": "Shishi Sonson",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Shishi Sonson.png",
+   "preuve": "le wiki francophone héberge « Fichier:Shishi Sonson.png », employé par 1 article(s) dont « Santôryû/Îttoryû »",
+   "emploi": [
+    "Santôryû/Îttoryû"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/2/27/Shishi_Sonson.png/revision/latest/scale-to-width-down/720?cb=20180814175129&path-prefix=fr",
+   "octets": 29948,
+   "dimensions_reelles": "720×445 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-tatsumaki",
+   "name": "Tatsumaki",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Tatsumaki.png",
+   "preuve": "le wiki francophone héberge « Fichier:Tatsumaki.png », employé par 1 article(s) dont « Uo Uo no Mi, modèle Seiryu »",
+   "emploi": [
+    "Uo Uo no Mi, modèle Seiryu"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/a/a7/Tatsumaki.png/revision/latest/scale-to-width-down/720?cb=20220522213814&path-prefix=fr",
+   "octets": 28162,
+   "dimensions_reelles": "720×412 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-mouton-shot",
+   "name": "Mouton Shot",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Mouton shot.jpg",
+   "preuve": "le wiki francophone héberge « Fichier:Mouton shot.jpg », employé par 1 article(s) dont « Sanji/Aptitudes et Compétences »",
+   "emploi": [
+    "Sanji/Aptitudes et Compétences"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/2/28/Mouton_shot.jpg/revision/latest?cb=20240609084518&path-prefix=fr",
+   "octets": 18762,
+   "dimensions_reelles": "300×168 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-mirage-tempo",
+   "name": "Mirage Tempo",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Mirage Tempo.png",
+   "preuve": "le wiki anglophone héberge « File:Mirage Tempo.png », employé par 3 article(s) dont « Zala »",
+   "emploi": [
+    "Zala",
+    "Nami/History",
+    "Art of Weather/Clima-Tact"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/6b/Mirage_Tempo.png/revision/latest?cb=20230201161356",
+   "octets": 71234,
+   "dimensions_reelles": "704×528 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-thunder-lance-tempo",
+   "name": "Thunder Lance Tempo",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Thunder Lance Tempo.png",
+   "preuve": "le wiki anglophone héberge « File:Thunder Lance Tempo.png », employé par 3 article(s) dont « Enies Lobby Arc »",
+   "emploi": [
+    "Enies Lobby Arc",
+    "Kalifa",
+    "Art of Weather/Perfect Clima-Tact"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/45/Thunder_Lance_Tempo.png/revision/latest/scale-to-width-down/720?cb=20240721184007",
+   "octets": 66748,
+   "dimensions_reelles": "720×540 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-kaen-boshi",
+   "name": "Kaen Boshi",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Kaen Boshi.jpg",
+   "preuve": "le wiki francophone héberge « Fichier:Kaen Boshi.jpg », employé par 1 article(s) dont « Arsenal d'Usopp/Ginga Pachinko »",
+   "emploi": [
+    "Arsenal d'Usopp/Ginga Pachinko"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/4c/Kaen_Boshi.jpg/revision/latest?cb=20150219153819&path-prefix=fr",
+   "octets": 10064,
+   "dimensions_reelles": "220×180 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-guard-point",
+   "name": "Guard Point",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Guard Point.png",
+   "preuve": "le wiki anglophone héberge « File:Guard Point.png », employé par 1 article(s) dont « Hito Hito no Mi »",
+   "emploi": [
+    "Hito Hito no Mi"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/0/04/Guard_Point.png/revision/latest?cb=20240720173124",
+   "octets": 50396,
+   "dimensions_reelles": "501×473 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-arm-point",
+   "name": "Arm Point",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Arm Point.PNG",
+   "preuve": "le wiki anglophone héberge « File:Arm Point.PNG », employé par 1 article(s) dont « Hito Hito no Mi »",
+   "emploi": [
+    "Hito Hito no Mi"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/f/f0/Arm_Point.PNG/revision/latest?cb=20240720173518",
+   "octets": 77090,
+   "dimensions_reelles": "635×475 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-horn-point",
+   "name": "Horn Point",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Horn Point.png",
+   "preuve": "le wiki anglophone héberge « File:Horn Point.png », employé par 1 article(s) dont « Hito Hito no Mi »",
+   "emploi": [
+    "Hito Hito no Mi"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/c/cc/Horn_Point.png/revision/latest/scale-to-width-down/720?cb=20220721064703",
+   "octets": 54446,
+   "dimensions_reelles": "720×405 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-kung-fu-point",
+   "name": "Kung Fu Point",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Kung Fu Point.png",
+   "preuve": "le wiki francophone héberge « Fichier:Kung Fu Point.png », employé par 3 article(s) dont « Hito Hito no Mi »",
+   "emploi": [
+    "Hito Hito no Mi",
+    "Rumble Ball",
+    "Tony Tony Chopper/Aptitudes et Compétences"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/c/cf/Kung_Fu_Point.png/revision/latest?cb=20180702132045&path-prefix=fr",
+   "octets": 66082,
+   "dimensions_reelles": "533×674 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-clutch",
+   "name": "Clutch",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Clutch.jpg",
+   "preuve": "le wiki francophone héberge « Fichier:Clutch.jpg », employé par 1 article(s) dont « Dragons (Punk Hazard) »",
+   "emploi": [
+    "Dragons (Punk Hazard)"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/8/87/Clutch.jpg/revision/latest?cb=20130818110653&path-prefix=fr",
+   "octets": 26030,
+   "dimensions_reelles": "493×317 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-spider-net",
+   "name": "Spider Net",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Spider Net.png",
+   "preuve": "le wiki anglophone héberge « File:Spider Net.png », employé par 1 article(s) dont « Hana Hana no Mi »",
+   "emploi": [
+    "Hana Hana no Mi"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/d/d7/Spider_Net.png/revision/latest/scale-to-width-down/720?cb=20161221105637",
+   "octets": 74776,
+   "dimensions_reelles": "720×449 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-coup-de-vent",
+   "name": "Coup de Vent",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Coup de Vent.png",
+   "preuve": "le wiki anglophone héberge « File:Coup de Vent.png », employé par 1 article(s) dont « Battle Frankies/BF-36 »",
+   "emploi": [
+    "Battle Frankies/BF-36"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/8/8d/Coup_de_Vent.png/revision/latest/scale-to-width-down/720?cb=20230916172854",
+   "octets": 70480,
+   "dimensions_reelles": "720×474 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-demonio-fleur",
+   "name": "Demonio Fleur",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Demonio Fleur.png",
+   "preuve": "le wiki francophone héberge « Fichier:Demonio Fleur.png », employé par 2 article(s) dont « Hana Hana no Mi »",
+   "emploi": [
+    "Hana Hana no Mi",
+    "Religion dans le monde de One Piece"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/5/5e/Demonio_Fleur.png/revision/latest/scale-to-width-down/720?cb=20231008220236&path-prefix=fr",
+   "octets": 16294,
+   "dimensions_reelles": "720×405 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-hanauta-sancho-yahazu-giri",
+   "name": "Hanauta Sancho Yahazu Giri",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Hanauta Sancho Yahazu Giri.png",
+   "preuve": "le wiki anglophone héberge « File:Hanauta Sancho Yahazu Giri.png », employé par 4 article(s) dont « Swordsman »",
+   "emploi": [
+    "Swordsman",
+    "Tararan",
+    "Thriller Bark Arc",
+    "Soul Solid"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/49/Hanauta_Sancho_Yahazu_Giri.png/revision/latest/scale-to-width-down/720?cb=20250705112712",
+   "octets": 54824,
+   "dimensions_reelles": "720×405 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-buraikan",
+   "name": "Buraikan",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Buraikan.png",
+   "preuve": "le wiki anglophone héberge « File:Buraikan.png », employé par 3 article(s) dont « Fish-Man Karate »",
+   "emploi": [
+    "Fish-Man Karate",
+    "Jinbe/Abilities and Powers",
+    "Jinbe/History/During and After the Timeskip"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/1/1d/Buraikan.png/revision/latest/scale-to-width-down/720?cb=20240618214038",
+   "octets": 164026,
+   "dimensions_reelles": "720×925 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-onigawara-seiken",
+   "name": "Onigawara Seiken",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Onigawara Seiken.png",
+   "preuve": "le wiki anglophone héberge « File:Onigawara Seiken.png », employé par 4 article(s) dont « Fish-Man Karate »",
+   "emploi": [
+    "Fish-Man Karate",
+    "Jinbe/History/During and After the Timeskip",
+    "Wano Country Arc",
+    "Who's-Who"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/d/de/Onigawara_Seiken.png/revision/latest/scale-to-width-down/720?cb=20240618215100",
+   "octets": 163730,
+   "dimensions_reelles": "720×602 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-dai-enkai-entei",
+   "name": "Dai Enkai Entei",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Dai Enkai Entei.png",
+   "preuve": "le wiki anglophone héberge « File:Dai Enkai Entei.png », employé par 1 article(s) dont « Mera Mera no Mi »",
+   "emploi": [
+    "Mera Mera no Mi"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/9/9c/Dai_Enkai_Entei.png/revision/latest/scale-to-width-down/720?cb=20220811134738",
+   "octets": 29744,
+   "dimensions_reelles": "720×405 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-kyokaen",
+   "name": "Kyokaen",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Kyokaen.png",
+   "preuve": "le wiki anglophone héberge « File:Kyokaen.png », employé par 1 article(s) dont « Mera Mera no Mi »",
+   "emploi": [
+    "Mera Mera no Mi"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/b/b3/Kyokaen.png/revision/latest/scale-to-width-down/720?cb=20231122114831",
+   "octets": 21428,
+   "dimensions_reelles": "720×405 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-jujika",
+   "name": "Jujika",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Jujika.png",
+   "preuve": "le wiki anglophone héberge « File:Jujika.png », employé par 1 article(s) dont « Mera Mera no Mi »",
+   "emploi": [
+    "Mera Mera no Mi"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/9/93/Jujika.png/revision/latest/scale-to-width-down/720?cb=20231019004828",
+   "octets": 56436,
+   "dimensions_reelles": "720×547 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-gamma-knife",
+   "name": "Gamma Knife",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Gamma Knife.png",
+   "preuve": "le wiki anglophone héberge « File:Gamma Knife.png », employé par 1 article(s) dont « Dressrosa Arc »",
+   "emploi": [
+    "Dressrosa Arc"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/e/e0/Gamma_Knife.png/revision/latest/scale-to-width-down/720?cb=20151217104753",
+   "octets": 53988,
+   "dimensions_reelles": "720×582 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-injection-shot",
+   "name": "Injection Shot",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Injection Shot Manga.png",
+   "preuve": "le wiki francophone héberge « Fichier:Injection Shot Manga.png », employé par 2 article(s) dont « Ope Ope no Mi »",
+   "emploi": [
+    "Ope Ope no Mi",
+    "Trafalgar D. Water Law/Histoire"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/6c/Injection_Shot_Manga.png/revision/latest?cb=20201104220537&path-prefix=fr",
+   "octets": 201010,
+   "dimensions_reelles": "715×732 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-counter-shock",
+   "name": "Counter Shock",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Counter Shock.png",
+   "preuve": "le wiki anglophone héberge « File:Counter Shock.png », employé par 1 article(s) dont « Ope Ope no Mi »",
+   "emploi": [
+    "Ope Ope no Mi"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/5/5c/Counter_Shock.png/revision/latest/scale-to-width-down/720?cb=20231122113927",
+   "octets": 44526,
+   "dimensions_reelles": "720×407 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-puncture-wille",
+   "name": "Puncture Wille",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Puncture Wille.png",
+   "preuve": "le wiki anglophone héberge « File:Puncture Wille.png », employé par 2 article(s) dont « Ope Ope no Mi »",
+   "emploi": [
+    "Ope Ope no Mi",
+    "Kikoku"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/a/ac/Puncture_Wille.png/revision/latest/scale-to-width-down/720?cb=20230625024147",
+   "octets": 47634,
+   "dimensions_reelles": "720×405 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-kurouzu",
+   "name": "Kurouzu",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Kurouzu.png",
+   "preuve": "le wiki anglophone héberge « File:Kurouzu.png », employé par 1 article(s) dont « Yami Yami no Mi »",
+   "emploi": [
+    "Yami Yami no Mi"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/2/26/Kurouzu.png/revision/latest/scale-to-width-down/720?cb=20231222090529",
+   "octets": 30596,
+   "dimensions_reelles": "720×405 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-mochi-tsuki",
+   "name": "Mochi Tsuki",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Mochi Tsuki Anime.png",
+   "preuve": "le wiki francophone héberge « Fichier:Mochi Tsuki Anime.png », employé par 1 article(s) dont « Mochi Mochi no Mi »",
+   "emploi": [
+    "Mochi Mochi no Mi"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/3/3f/Mochi_Tsuki_Anime.png/revision/latest/scale-to-width-down/720?cb=20181021152636&path-prefix=fr",
+   "octets": 43038,
+   "dimensions_reelles": "720×468 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-liberation",
+   "name": "Liberation",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Liberation Manga.png",
+   "preuve": "le wiki francophone héberge « Fichier:Liberation Manga.png », employé par 1 article(s) dont « Yami Yami no Mi »",
+   "emploi": [
+    "Yami Yami no Mi"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/a/a5/Liberation_Manga.png/revision/latest/scale-to-width-down/720?cb=20201110082817&path-prefix=fr",
+   "octets": 161156,
+   "dimensions_reelles": "720×623 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-zan-giri-mochi",
+   "name": "Zan Giri Mochi",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "Fichier:Zan Giri Mochi Anime.png",
+   "preuve": "le wiki francophone héberge « Fichier:Zan Giri Mochi Anime.png », employé par 1 article(s) dont « Mochi Mochi no Mi »",
+   "emploi": [
+    "Mochi Mochi no Mi"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/0/07/Zan_Giri_Mochi_Anime.png/revision/latest?cb=20190129194047&path-prefix=fr",
+   "octets": 46038,
+   "dimensions_reelles": "690×690 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "gathering-of-the-snakes",
+   "name": "Gathering of the Snakes",
+   "type": "power",
+   "universe": "Naruto",
+   "fichier": "File:Gathering of the Snakes.PNG",
+   "preuve": "le wiki anglophone héberge « File:Gathering of the Snakes.PNG », employé par 1 article(s) dont « Snake Reconnection Technique »",
+   "emploi": [
+    "Snake Reconnection Technique"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/0/08/Gathering_of_the_Snakes.PNG/revision/latest/scale-to-width-down/720?cb=20160408013347",
+   "octets": 57164,
+   "dimensions_reelles": "720×554 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-bl-soo-zabimaru",
+   "name": "Soo Zabimaru",
+   "type": "power",
+   "universe": "Bleach",
+   "fichier": "Fichier:SOO-zabimaru.png",
+   "preuve": "le wiki francophone héberge « Fichier:SOO-zabimaru.png », employé par 1 article(s) dont « Renji Abarai »",
+   "emploi": [
+    "Renji Abarai"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/bleach/images/3/3d/SOO-zabimaru.png/revision/latest/scale-to-width-down/720?cb=20240918204450&path-prefix=fr",
+   "octets": 23036,
+   "dimensions_reelles": "720×467 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "adamantine-attacking-chains",
+   "name": "Adamantine Attacking Chains",
+   "type": "power",
+   "universe": "Naruto",
+   "fichier": "File:Adamantine Attacking Chains.png",
+   "preuve": "le wiki anglophone héberge « File:Adamantine Attacking Chains.png », employé par 1 article(s) dont « Karin »",
+   "emploi": [
+    "Karin"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/1/17/Adamantine_Attacking_Chains.png/revision/latest/scale-to-width-down/720?cb=20150528122704",
+   "octets": 44766,
+   "dimensions_reelles": "720×406 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-bl-los-lobos",
+   "name": "Los Lobos",
+   "type": "power",
+   "universe": "Bleach",
+   "fichier": "Fichier:Los Lobos.jpeg",
+   "preuve": "le wiki francophone héberge « Fichier:Los Lobos.jpeg », employé par 1 article(s) dont « Coyote Stark »",
+   "emploi": [
+    "Coyote Stark"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/bleach/images/e/eb/Los_Lobos.jpeg/revision/latest/scale-to-width-down/720?cb=20201016232918&path-prefix=fr",
+   "octets": 93064,
+   "dimensions_reelles": "720×1038 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "kogarashi",
+   "name": "kogarashi",
+   "type": "artifact",
+   "universe": "One Piece",
+   "fichier": "File:Kogarashi Portrait.png",
+   "preuve": "le wiki anglophone héberge « File:Kogarashi Portrait.png », employé par 1 article(s) dont « Famous Blade »",
+   "emploi": [
+    "Famous Blade"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/44/Kogarashi_Portrait.png/revision/latest?cb=20230623174128",
+   "octets": 38342,
+   "dimensions_reelles": "500×500 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "scalpel",
+   "name": "Scalpel",
+   "type": "artifact",
+   "universe": "Naruto",
+   "fichier": "File:Scalpel.png",
+   "preuve": "le wiki anglophone héberge « File:Scalpel.png », employé par 1 article(s) dont « A Shadow in Darkness: Danger Approaches Sasuke »",
+   "emploi": [
+    "A Shadow in Darkness: Danger Approaches Sasuke"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/2/2c/Scalpel.png/revision/latest/scale-to-width-down/720?cb=20150220171317",
+   "octets": 31182,
+   "dimensions_reelles": "720×544 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "ketsuryugan",
+   "name": "Ketsuryūgan",
+   "type": "skill",
+   "universe": "Naruto",
+   "fichier": "File:Ketsuryūgan.png",
+   "preuve": "le wiki anglophone héberge « File:Ketsuryūgan.png », employé par 2 article(s) dont « Chinoike Clan »",
+   "emploi": [
+    "Chinoike Clan",
+    "Chino"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/3/38/Ketsury%C5%ABgan.png/revision/latest/scale-to-width-down/720?cb=20161222182729",
+   "octets": 17814,
+   "dimensions_reelles": "720×404 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "team-two",
+   "name": "Team Two",
+   "type": "status",
+   "universe": "Naruto",
+   "fichier": "File:Team Two.PNG",
+   "preuve": "le wiki anglophone héberge « File:Team Two.PNG », employé par 2 article(s) dont « Kiba Inuzuka »",
+   "emploi": [
+    "Kiba Inuzuka",
+    "Yamato"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/5/55/Team_Two.PNG/revision/latest/scale-to-width-down/720?cb=20150816094347",
+   "octets": 34434,
+   "dimensions_reelles": "720×405 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "angel-island",
+   "name": "Angel Island",
+   "type": "place",
+   "universe": "One Piece",
+   "fichier": "Fichier:Angel Island Portrait.png",
+   "preuve": "le wiki francophone héberge « Fichier:Angel Island Portrait.png », employé par 1 article(s) dont « Lieux »",
+   "emploi": [
+    "Lieux"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/7/73/Angel_Island_Portrait.png/revision/latest?cb=20150411144048&path-prefix=fr",
+   "octets": 4778,
+   "dimensions_reelles": "120×120 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "team-hiruzen",
+   "name": "Team Hiruzen",
+   "type": "status",
+   "universe": "Naruto",
+   "fichier": "File:Team hiruzen.png",
+   "preuve": "le wiki anglophone héberge « File:Team hiruzen.png », employé par 4 article(s) dont « Tsunade »",
+   "emploi": [
+    "Tsunade",
+    "Jiraiya",
+    "Hiruzen Sarutobi",
+    "Sannin"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/3/30/Team_hiruzen.png/revision/latest/scale-to-width-down/720?cb=20240908012838",
+   "octets": 46590,
+   "dimensions_reelles": "720×540 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "gentle-step-spiralling-twin-lion-fists",
+   "name": "Gentle Step Spiralling Twin Lion Fists",
+   "type": "power",
+   "universe": "Naruto",
+   "fichier": "File:Gentle Step Spiralling Twin Lion Fists.png",
+   "preuve": "le wiki anglophone héberge « File:Gentle Step Spiralling Twin Lion Fists.png », employé par 1 article(s) dont « Gentle Wind Spiralling Twin Lion Fists: Snow White »",
+   "emploi": [
+    "Gentle Wind Spiralling Twin Lion Fists: Snow White"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/6/64/Gentle_Step_Spiralling_Twin_Lion_Fists.png/revision/latest/scale-to-width-down/720?cb=20150712201633",
+   "octets": 27324,
+   "dimensions_reelles": "720×405 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "team-jiraiya",
+   "name": "Team Jiraiya",
+   "type": "status",
+   "universe": "Naruto",
+   "fichier": "File:Team jiraiya.png",
+   "preuve": "le wiki anglophone héberge « File:Team jiraiya.png », employé par 3 article(s) dont « Jiraiya »",
+   "emploi": [
+    "Jiraiya",
+    "Minato Namikaze",
+    "Dekai"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/f/f6/Team_jiraiya.png/revision/latest/scale-to-width-down/720?cb=20240908011759",
+   "octets": 35286,
+   "dimensions_reelles": "720×540 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "l-equipage-des-pirates-a-la-moustache",
+   "name": "L’équipage des Pirates à la Moustache",
+   "type": "status",
+   "universe": "One Piece",
+   "fichier": "Fichier:L'Équipage des Pirates à la Moustache Anime Infobox.png",
+   "preuve": "le wiki francophone héberge « Fichier:L'Équipage des Pirates à la Moustache Anime Infobox.png », employé par 3 article(s) dont « Équipages Pirates »",
+   "emploi": [
+    "Équipages Pirates",
+    "Brief",
+    "L'Équipage des Pirates à la Moustache"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/0/0b/L%27%C3%89quipage_des_Pirates_%C3%A0_la_Moustache_Anime_Infobox.png/revision/latest/scale-to-width-down/720?cb=20190429093550&path-prefix=fr",
+   "octets": 78162,
+   "dimensions_reelles": "720×405 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "l-equipage-des-maquereaux",
+   "name": "L'Équipage des Maquereaux",
+   "type": "status",
+   "universe": "One Piece",
+   "fichier": "Fichier:L'Équipage des Maquereaux Manga Infobox.png",
+   "preuve": "le wiki francophone héberge « Fichier:L'Équipage des Maquereaux Manga Infobox.png », employé par 1 article(s) dont « Équipage des Maquereaux »",
+   "emploi": [
+    "Équipage des Maquereaux"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/c/cf/L%27%C3%89quipage_des_Maquereaux_Manga_Infobox.png/revision/latest?cb=20150723202024&path-prefix=fr",
+   "octets": 77076,
+   "dimensions_reelles": "553×478 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-bl-hakka-no-togame",
+   "name": "Hakka no Togame",
+   "type": "power",
+   "universe": "Bleach",
+   "fichier": "Fichier:Hakka no Togame.PNG",
+   "preuve": "le wiki francophone héberge « Fichier:Hakka no Togame.PNG », employé par 1 article(s) dont « Rukia Kuchiki »",
+   "emploi": [
+    "Rukia Kuchiki"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/bleach/images/3/3e/Hakka_no_Togame.PNG/revision/latest?cb=20230814103209&path-prefix=fr",
+   "octets": 93050,
+   "dimensions_reelles": "556×790 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "kaji-king-i-ii",
+   "name": "Kaji King I & II",
+   "type": "artifact",
+   "universe": "One Piece",
+   "fichier": "File:Kaji King I & II.png",
+   "preuve": "le wiki anglophone héberge « File:Kaji King I & II.png », employé par 1 article(s) dont « Foxy Pirates »",
+   "emploi": [
+    "Foxy Pirates"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/f/f9/Kaji_King_I_%26_II.png/revision/latest/scale-to-width-down/720?cb=20240806231136",
+   "octets": 60078,
+   "dimensions_reelles": "720×414 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "harem-no-tango",
+   "name": "Harem no Tango",
+   "type": "artifact",
+   "universe": "One Piece",
+   "fichier": "File:Harem no Tango.png",
+   "preuve": "le wiki anglophone héberge « File:Harem no Tango.png », employé par 1 article(s) dont « Foxy Pirates »",
+   "emploi": [
+    "Foxy Pirates"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/3/3b/Harem_no_Tango.png/revision/latest/scale-to-width-down/720?cb=20240806231120",
+   "octets": 87114,
+   "dimensions_reelles": "720×507 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "kani-crane",
+   "name": "Kani Crane",
+   "type": "artifact",
+   "universe": "One Piece",
+   "fichier": "File:Kani Crane.png",
+   "preuve": "le wiki anglophone héberge « File:Kani Crane.png », employé par 1 article(s) dont « Foxy Pirates »",
+   "emploi": [
+    "Foxy Pirates"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/6/68/Kani_Crane.png/revision/latest/scale-to-width-down/720?cb=20240806231127",
+   "octets": 53946,
+   "dimensions_reelles": "720×362 webp",
+   "largeur_posee": 720
+  },
+  {
+   "slug": "atk-op-party-table-kick-course",
+   "name": "Party Table Kick Course",
+   "type": "power",
+   "universe": "One Piece",
+   "fichier": "File:Party Table Kick Course.png",
+   "preuve": "le wiki anglophone héberge « File:Party Table Kick Course.png », employé par 1 article(s) dont « Black Leg Style »",
+   "emploi": [
+    "Black Leg Style"
+   ],
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/5/54/Party_Table_Kick_Course.png/revision/latest/scale-to-width-down/720?cb=20250806025908",
+   "octets": 59850,
+   "dimensions_reelles": "720×407 webp",
+   "largeur_posee": 720
+  }
+ ],
+ "refuses": [
+  {
+   "slug": "genkidama",
+   "name": "Genkidama",
+   "verdict": "exclu-relecture",
+   "pourquoi": "l’image est juste, mais la fiche double `atk-db-spirit-bomb` déjà illustrée ; aucune redirection ne le dit (« Genkidama » est missing sur dragonball.fandom.com) — illustrer un doublon le fait passer pour complet",
+   "fichier": "File:GenkiDama.jpg"
+  },
+  {
+   "slug": "sogyo-no-kotowari",
+   "name": "Sōgyo no Kotowari",
+   "verdict": "refus-porteur",
+   "pourquoi": "fiche de type « artifact » ; le fichier n’est employé que par des personnages de notre base (Jûshirô Ukitake) — c’est le portrait du porteur",
+   "fichier": "Fichier:Sogyo-no-Kotowari.png"
+  },
+  {
+   "slug": "claw-grime",
+   "name": "Claw Grime",
+   "verdict": "exclu-relecture",
+   "pourquoi": "notre fiche dit « technique de griffe des Inuzuka » ; les deux fichiers de ce nom sont employés par « Fission Beings » et « Ten-Tails (Kara) » et montrent des créatures qui se scindent — vu à l’œil",
+   "fichier": "File:Claw grime.png"
+  },
+  {
+   "slug": "fruits",
+   "name": "Fruits",
+   "verdict": "exclu-relecture",
+   "pourquoi": "notre fiche est une ÎLE de Totto Land ; File:Fruits.png (employé par « Foods ») est une corbeille de fruits — vu à l’œil",
+   "fichier": "File:Fruits.png"
+  }
+ ]
+}

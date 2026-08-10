@@ -97,12 +97,19 @@ const desaccordsVerdict = testables.filter((l) => l.verdict_sharp !== l.verdict_
 const trace = {
   chantier: "contrôle à l'écran de l'instrument de lisibilité",
   quand: new Date().toISOString(), trace_mesuree: TRACE, famille: FAMILLE,
-  methode: "Chromium décode l'image, la peint en `contain` sur #09152A, `getImageData` recalcule contraste maximal et couverture ; tolérance 0,35 sur le contraste et 6 points sur la couverture",
-  compte: { echantillon: ech.length, testables: testables.length, accords: testables.length - desaccords.length, desaccords: desaccords.length, taux_desaccord: testables.length ? +(desaccords.length / testables.length).toFixed(3) : null },
+  methode: "Chromium décode l'image, la peint en `contain` sur #09152A, `getImageData` recalcule contraste maximal et couverture ; tolérance 10 % relatif sur le contraste, 6 points sur la couverture, et comparaison du VERDICT recalculé",
+  compte: {
+    echantillon: ech.length, testables: testables.length,
+    accords_chiffres: testables.length - desaccords.length, desaccords_chiffres: desaccords.length,
+    taux_desaccord_chiffres: testables.length ? +(desaccords.length / testables.length).toFixed(3) : null,
+    accords_verdict: testables.length - desaccordsVerdict.length, desaccords_verdict: desaccordsVerdict.length,
+    taux_desaccord_verdict: testables.length ? +(desaccordsVerdict.length / testables.length).toFixed(3) : null,
+  },
   lignes,
 };
 await mkdir(AUDITS, { recursive: true });
 const nom = `${AUDITS}lisibilite-controle-ecran-${FAMILLE}-${HORO}.json`;
 await writeFile(nom, JSON.stringify(trace, null, 2));
-console.log(`${trace.compte.accords}/${trace.compte.testables} d'accord · ${desaccords.length} désaccords · trace → ${nom}`);
-for (const d of desaccords) console.log('  ✗', d.fiches?.[0], d.url?.slice(0, 90), `sharp ${d.sharp_contraste_max}/${d.sharp_couverture_1_5} · nav ${d.nav_contraste_max}/${d.nav_couverture_1_5}`);
+console.log(`chiffres ${trace.compte.accords_chiffres}/${trace.compte.testables} · verdicts ${trace.compte.accords_verdict}/${trace.compte.testables} · trace → ${nom}`);
+for (const d of desaccords) console.log('  ~', d.fiches?.[0], `sharp ${d.sharp_contraste_max}/${d.sharp_couverture_1_5} · nav ${d.nav_contraste_max}/${d.nav_couverture_1_5} · verdicts ${d.verdict_sharp} / ${d.verdict_navigateur}`);
+for (const d of desaccordsVerdict) console.log('  ✗ VERDICT', d.fiches?.[0], d.url?.slice(0, 90), `${d.verdict_sharp} → ${d.verdict_navigateur}`);

@@ -1,0 +1,893 @@
+{
+ "horodate": "2026-08-10T21:02:38.144Z",
+ "mode": "dry",
+ "lot": {
+  "de": 1,
+  "a": 40
+ },
+ "compte_du_lot": {
+  "page sans prose exploitable": 13,
+  "candidat": 12,
+  "refus": 15
+ },
+ "cas": [
+  {
+   "slug": "ninja-info-cards",
+   "id": "00075572-c186-4e27-885c-ac64f8df1069",
+   "name": "Ninja Info Cards",
+   "type": "artifact",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Carte d'Information Ninja",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Carte_d'Information_Ninja",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "marchen",
+   "id": "0016be8e-5aa2-49ac-ae48-b6b681c4cb1b",
+   "name": "Märchen",
+   "type": "artifact",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Märchen",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/M%C3%A4rchen",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 5,
+    "intertitres_declares": 3,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Apparence",
+     "texte": "Le Märchen est une barque en bois sans proue possédant cinq drapeaux pirates, probablement ayant appartenu à des pirates vaincus par Luffy."
+    },
+    {
+     "idx": "2",
+     "titre": "Histoire",
+     "texte": "Le Märchen est le premier bateau qu'utilise Luffy dans le One-Shot Romance Dawn Vol. 1. Il l'utilisa maintes fois pour quitter les lieux de combats où il a affronté des antagonistes."
+    }
+   ],
+   "caracteres": 321,
+   "source": "wiki FR onepiece.fandom.com/fr — « Märchen » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/M%C3%A4rchen — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "empty-cicada-shell-technique",
+   "id": "001aabe1-0ef4-4cf9-a291-7f31982783b6",
+   "name": "Empty Cicada Shell Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Mue de la Cigale",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Mue_de_la_Cigale",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "corpse-clone-technique",
+   "id": "0060e7e7-4061-402d-9ab2-e380f76c752c",
+   "name": "Corpse Clone Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Clonage de Cadavre",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Clonage_de_Cadavre",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "snake-mouth-bind",
+   "id": "006342ab-1131-4176-9a9d-5b8a678b7d48",
+   "name": "Snake Mouth Bind",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Entrailles du Serpent Géant",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Entrailles_du_Serpent_G%C3%A9ant",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "sode-no-shirayuki-bleach",
+   "id": "00643d0b-6d4d-4274-a5a9-ae758b8ceb07",
+   "name": "Sode no Shirayuki",
+   "type": "artifact",
+   "universe": "Bleach",
+   "route": "titre-exact",
+   "titreFr": "Sode no Shirayuki (Esprit Zanpakutō)",
+   "identite": "meme-nom",
+   "url": "https://bleach.fandom.com/fr/wiki/Sode_no_Shirayuki_(Esprit_Zanpakut%C5%8D)",
+   "refus": "parenthèse de désambiguïsation",
+   "etat": "refus"
+  },
+  {
+   "slug": "taji",
+   "id": "0070f218-0dd8-4cc6-b069-129c4f687991",
+   "name": "Taji",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Taji",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Taji",
+   "refus": "la page se range parmi les œuvres — Ébauches",
+   "etat": "refus"
+  },
+  {
+   "slug": "ice-release-tearing-dragon-fierce-tiger",
+   "id": "007b1d88-91e4-4803-92ca-2e9e4af1262b",
+   "name": "Ice Release: Tearing Dragon Fierce Tiger",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "hidden-rock-trap",
+   "id": "007d3635-2f31-4ec4-8575-fe96a745c723",
+   "name": "Hidden Rock Trap",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Piège de la Roche Cachée",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Pi%C3%A8ge_de_la_Roche_Cach%C3%A9e",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "blinding-wide-sand-formation-noise",
+   "id": "009307ea-6aa9-48ea-a13f-c56a1b495e46",
+   "name": "Blinding Wide Sand Formation: Noise",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Formation de Sable Aveuglant - Confusion",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Formation_de_Sable_Aveuglant_-_Confusion",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "konoha-council",
+   "id": "00931708-4e22-4361-81e9-333cbf4af609",
+   "name": "Konoha Council",
+   "type": "status",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "voleur",
+   "id": "009470da-866b-4d45-bfa9-b06c457a5e17",
+   "name": "Voleur",
+   "type": "profession",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "kuzuryuu",
+   "id": "0097d748-4337-4f8f-9b1c-e8696c73ff20",
+   "name": "Kuzuryuu",
+   "type": "character",
+   "universe": "Bleach",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "sensing-transmission",
+   "id": "00b047c0-b91f-4057-9ee7-bdb29a686252",
+   "name": "Sensing Transmission",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Transmission Sensitive",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Transmission_Sensitive",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "tsuzumi",
+   "id": "010126a6-4d2d-4459-a201-cd4eceb7afae",
+   "name": "Tsuzumi",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Tsuzumi",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Tsuzumi",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 5,
+    "intertitres_declares": 5,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Apparence",
+     "texte": "Tsuzumi a les cheveux courts et noirs ainsi que les yeux violets. Il a également de petits sourcils circulaires et une petite moustache."
+    },
+    {
+     "idx": "3.1",
+     "titre": "Mission d'escorte de Gantetsu",
+     "texte": "Tsuzumi supervisa la livraison de Gantetsu dans la capitale du Pays de la Forêt pour y être jugé en raison de ses crimes."
+    }
+   ],
+   "caracteres": 257,
+   "source": "wiki FR naruto.fandom.com/fr — « Tsuzumi » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Tsuzumi — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "super-ultra-big-ball-rasengan",
+   "id": "010e28b3-17ec-415d-8e47-2df949aa50ec",
+   "name": "Super-Ultra-Big Ball Rasengan",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Hyper Méga Orbe Tourbillonnant",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Hyper_M%C3%A9ga_Orbe_Tourbillonnant",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "tsujigirou-tooyama",
+   "id": "0127a21c-4dac-4fd9-94a8-87085e0ba681",
+   "name": "Tsujigirou Tooyama",
+   "type": "character",
+   "universe": "One Piece",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "mizukage",
+   "id": "01300cbc-7df6-4bf1-9de0-9530ac78225b",
+   "name": "Mizukage",
+   "type": "profession",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Mizukage",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Mizukage",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 10,
+    "intertitres_declares": 9,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Présentation",
+     "texte": "Le poste de Mizukage fut créé après la formation de Kiri par Byakuren, le fondateur du village, qui dans l'anime était le quatrième des cinq Kage à voir le jour. Le poste est occupé par la personne la plus forte du village, indépendamment de considérations telles que l'âge. Le bâtiment du Mizukage est le plus grand point de repère de Kiri, portant le kanji de Mizu (水, signifiant littéralement : Eau).\n\nTout au long de l'histoire, la parole du Mizukage influença toutes les questions politiques et militaires qui se posaient en rapport avec Kiri et ses habitants, chacun des quatre premiers dirigeants ayant vu son gouvernement principalement marqué par un fort secret, une politique interne stricte et une interaction limitée avec les autres villages. Il fallut attendre le règne du Cinquième Mizukage pour que la gouvernance traditionnelle de la position subisse une réforme qui rétablisse les relations diplomatiques avec les autres villages."
+    },
+    {
+     "idx": "2.1",
+     "titre": "Premier Mizukage",
+     "texte": "Le Premier Mizukage, Byakuren, est le fondateur du village de Kiri. Il participa à la première réunion des cinq Kage. Il s'énerva comme tous les autres Kage lorsque le Kazekage demanda 30% du prix qu'il paierait pour avoir les bijû que Hashirama vendait. Dans le feu de l'action, il mit en garde par une alliance possible avec les autres villages ninjas pour détruire le Pays du Vent, ce que contesta aussitôt le Premier Hokage."
+    },
+    {
+     "idx": "2.2",
+     "titre": "Deuxième Mizukage",
+     "texte": "Gengetsu Hôzuki était le Deuxième Mizukage, est ressuscité par la technique « Edo Tensei » de Kabuto Yakushi au même titre que le Troisième Raikage, le Quatrième Mizukage, le Deuxième Tsuchikage et le Quatrième Kazekage. Il possède un haut niveau de genjutsu, et il est capable d'invoquer une palourde géante. La nature de son chakra semble être le yin, qui représente l'imagination, d'où l'utilisation de genjutsu. Il utilise une technique qui crée un clone d'eau et d'huile qui grossit au fur et à mesure que l'eau se transforme en vapeur, puis il explose. Le vrai se cache puisque cette technique consomme beaucoup de chakra."
+    },
+    {
+     "idx": "2.3",
+     "titre": "Troisième Mizukage",
+     "texte": "Il fut invoqué par Hagoromo Ôtsutsuki avec tous les autres anciens Kage afin de ramener Naruto, Sasuke, Sakura et Kakashi et tous les bijû de la dimension de Kaguya. Lors de la première réunion des cinq Kage, à la fondation des villages Ninjas, il était le garde du corps du Premier Mizukage, mais n'est pas devenu le Deuxième Kage de son village, contrairement aux autres gardes du corps présents à la réunion."
+    },
+    {
+     "idx": "2.4",
+     "titre": "Quatrième Mizukage",
+     "texte": "Le Quatrième Mizukage, Yagura, était un homme assez jeune (Il dit à Naruto qu'il était plus vieux qu'on ne le pensait) avec une longue cicatrice partant sous l'œil gauche et se prolongeant sur sa joue. Il a fait régner un régime de terreur sur Kiri par la faute de Tobi qui le manipulait avec son Sharingan, la seule personne au courant étant Kisame. Jinchûriki de Sanbi, c'est lui qui imposa toutes les mesures ayant eu pour résultat de faire connaître son village comme le « village de la brume sanglante » (la seule de ces mesures connue étant les combats à mort entre élèves de l'Académie).\n\nC'est probablement contre lui qu'il y a eu une tentative de coup d'État de la part des Sept Épéistes de la Brume (appelés aussi Sept Ninjas Renégats de Kiri), tentative qui a échoué et forcé ces ninjas à devenir des nukenin (ninjas déserteurs) et à quitter le village. Certains de ceux-ci, ou leurs élèves, semblent avoir été réintégrés au village à la fin du régime de ce Mizukage.\n\nIl est connu pour avoir été capable d'acquérir un contrôle total sur son bijû et il peut utiliser les coraux grâce à Sanbi."
+    },
+    {
+     "idx": "2.5",
+     "titre": "Cinquième Mizukage",
+     "texte": "Meï Terumî est la Cinquième Mizukage du village de Kiri. C'est une femme aux cheveux longs châtains et aux yeux verts d'une trentaine d'années. Elle a un fort caractère et n'hésite pas à menacer ses propres hommes, lorsqu'elle croit entendre parler de mariage, d'engagement ou de relations amoureuses mais ne semble pas indifférente au charme de Sasuke Uchiwa allant jusqu'à éprouver de la douleur à l'idée de l'éliminer. Elle commença à le combattre mais fut interrompue par Zetsu.\n\nElle possède trois affinités élémentaires (eau, feu et terre), et deux natures élémentaires avancées : le Yôton et le Futton."
+    },
+    {
+     "idx": "2.6",
+     "titre": "Sixième Mizukage",
+     "texte": "Le Sixième Mizukage est Chôjûrô qui fut présent lors du conseil tenu des années après la guerre. Il manie une épée à deux mains, Hiramekarei."
+    }
+   ],
+   "caracteres": 4267,
+   "source": "wiki FR naruto.fandom.com/fr — « Mizukage » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Mizukage — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "dynamic-action",
+   "id": "0133683b-7897-4011-bddc-8cd2e0c81e19",
+   "name": "Dynamic Action",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Dynamic Action",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Dynamic_Action",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "atk-db-ki-sense",
+   "id": "014be454-c2f8-42d8-965a-fb9d9dba066f",
+   "name": "Ki Sense",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "leaf-whirlwind",
+   "id": "01534927-5e1e-4faa-87d2-f26fd4f17815",
+   "name": "Leaf Whirlwind",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Tornade de Konoha",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Tornade_de_Konoha",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 3,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "fils-d-acier",
+   "id": "015ce1cb-bb91-4631-b65f-a6ac734d4365",
+   "name": "Fils d'acier",
+   "type": "artifact",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "arrow",
+   "id": "01845262-de3f-4a85-af0a-e4340cdb15e1",
+   "name": "Arrow",
+   "type": "character",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Gardes Tsumegeri",
+   "identite": "redirection-declaree",
+   "url": "https://onepiece.fandom.com/fr/wiki/Gardes_Tsumegeri",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 10,
+    "intertitres_declares": 8,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Aptitudes et Compétences",
+     "texte": "Tous les membres sont vus portant une grande épée ou une hache, mais on ne connaît pas leur niveau au combat. Ils ont été les seuls capable de repousser les bras de Miss All-Sunday qui repoussaient tous les gardes du royaume."
+    },
+    {
+     "idx": "2",
+     "titre": "Histoire",
+     "texte": "Les gardes Tsumegeri sont apparus dans la cour du Palais d'Alubarna, peu de temps après que Crocodile ait expliqué son plan pour obtenir Pluton à Cobra, Vivi et Chaka. Ils ont exigé que Crocodile laisse le roi tranquille. Les gardes Tsumegeri deviennent plus forts grâce à l'Eau des Héros, brisant leurs bracelets tout en raidissant leurs muscles. Ils ont réussi à le frapper, mais il s'est changé en sable grâce à son pouvoir et n'a pas été affecté par l'attaque. C'est alors que l'effet secondaire de l'Eau des Héros prend effet, les tuant sur place un par un. Lorsque Crocodile se mit à rire et a commenté la stupidité de leurs actions, Chaka est devenu furieux et a attaqué lui-même Crocodile, sans succès."
+    }
+   ],
+   "caracteres": 935,
+   "source": "wiki FR onepiece.fandom.com/fr — « Gardes Tsumegeri » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Gardes_Tsumegeri — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "clan-sarutobi",
+   "id": "01867d85-923b-4460-878a-11618555ad88",
+   "name": "Clan Sarutobi",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Clan Sarutobi",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Clan_Sarutobi",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 3,
+    "intertitres_declares": 2,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Description",
+     "texte": "Il est à l'origine de plusieurs membres notables ayant accédé à des postes de hauts rangs, tel que Hokage, ou membre des Douze Ninjas Gardiens. Tous les membres connus semblent tous dévoués à la Volonté du Feu. Il fut l'un des premiers clans à rejoindre Konoha lors de sa création par les Senju et les Uchiwa.\n\nLes membres de ce clan semblent capables de maîtriser des techniques de haut rang, comme Hiruzen Sarutobi, Asuma Sarutobi et Konohamaru Sarutobi qui fut capable de maîtriser des techniques de rang A et B tels que le Multi Clonage et le Rasengan, malgré son jeune âge.\n\nPour renforcer l'unité entre les clans Akimichi, Nara et Yamanaka, il devint une tradition qu'un membre de ce clan devienne le maître des formations Ino-Shika-Chô se succédant à travers les générations, et qu'il leur offre des boucles d'oreilles quand ils prêtaient serment. Asuma Sarutobi fut notamment le maître de la dernière génération Ino-Shika-Chô.\n\nDe plus, nous pouvons remarquer que tous les membres du clan Sarutobi utilisent le Katon, montré lors du combo de l'Alliance Ninja contre Jûbi, tous les membres s'étant chargés de durcir la chaux avec leur Katon, ce qui montra une maîtrise héréditaire au sein du clan. Les membres connus utilisent le Katon comme Hiruzen Sarutobi le Katon - Embrasement Infernal du Dragon ou encore Asuma Sarutobi et Konohamaru Sarutobi qui l'ont montré en utilisant Katon - Nuées Ardentes."
+    }
+   ],
+   "caracteres": 1409,
+   "source": "wiki FR naruto.fandom.com/fr — « Clan Sarutobi » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Clan_Sarutobi — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "kiyoi-yotsuki",
+   "id": "0191de1f-782b-41c8-b7b4-ac5e2fbe85a4",
+   "name": "Kiyoi Yotsuki",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Kiyoi Yotsuki",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Kiyoi_Yotsuki",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 6,
+    "intertitres_declares": 5,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Personnalité",
+     "texte": "Kiyoi est très fidèle à son clan et à Kumo. Il préférerait garder le silence que vendre ses camarades, comme montré lors de l'attaque de Taka."
+    },
+    {
+     "idx": "2",
+     "titre": "Apparence",
+     "texte": "Kiyoi a les yeux foncés, les cheveux marron et une ligne de mâchoire bien visible. Il portait la tenue standard du shinobi de Kumo, y compris un bandeau frontal, un gilet de protection et des protège-tibias. Il a également une sangle noire sur le côté droit de sa tête."
+    },
+    {
+     "idx": "3.1",
+     "titre": "Invasion de Pain",
+     "texte": "En route pour trouver le jinchûriki de Hachibi, Killer B, Taka interrogea Kiyoi. Pour trouver l'emplacement de B, Sasuke Uchiwa utilisa son genjutsu pour le faire parler avec force."
+    }
+   ],
+   "caracteres": 592,
+   "source": "wiki FR naruto.fandom.com/fr — « Kiyoi Yotsuki » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Kiyoi_Yotsuki — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "twin-fangs-slash",
+   "id": "01a4eadc-459d-438a-96e3-41c85cc71a40",
+   "name": "Twin Fangs Slash",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Entaille des Crocs Jumeaux",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Entaille_des_Crocs_Jumeaux",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "lame-a-chakra-de-konoha",
+   "id": "01b1649b-1991-4b3e-9b16-00b358c2775a",
+   "name": "Lame à chakra de Konoha",
+   "type": "artifact",
+   "universe": "Naruto",
+   "route": "recherche-fr",
+   "titreFr": "Lame de Kunaï",
+   "identite": "meme-nom",
+   "url": "https://naruto.fandom.com/fr/wiki/Lame_de_Kuna%C3%AF",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 3,
+    "intertitres_declares": 2,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "takigakure",
+   "id": "01b6db96-5eb1-4bb9-8f14-7c02781246ff",
+   "name": "Takigakure",
+   "type": "place",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Taki",
+   "identite": "redirection-declaree",
+   "url": "https://naruto.fandom.com/fr/wiki/Taki",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 6,
+    "intertitres_declares": 5,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Histoire",
+     "texte": "Au moment de la formation du village, le village chargea Kakuzu d'assassiner Hashirama Senju, le premier Hokage. Face à la puissance de l'utilisateur du Mokuton, Kakuzu revint en échec. Malgré le grand danger auquel il a été confronté durant la mission, ce qui l'attendait lors son retour dans son village fut la stigmatisation et la punition sévère associées à l'échec de l'objectif. Le village imputa la faute au shinobi qui avait mis sa vie en jeu pour son village. Kakuzu en vint à tenir une haine violente envers Taki, et décida alors de s'échapper de son emprisonnement. Dans sa fuite du village, Kakuzu tua les anciens du village, prit leur cœur et s'enfuit, connaissant les techniques interdites les plus prisées du village.\n\nHashirama Senju offrit Nanabi au village comme un gage de paix, ce qui en fait le seul village en dehors des cinq grands villages à détenir un bijû. Ce bijû fut à un moment donné scellé dans Fû, qui fut finalement capturée par l'Akatsuki, et extrait, entraînant la mort de son jinchûriki. Dans l'anime, Deidara dit à Naruto que Fû avait été haïe et délaissée par son village, et que les citoyens étaient heureux qu'elle ait été capturée et tuée.\n\nDans l'anime, on voit que Taki est construit autour d'un grand arbre. Il a aussi une grande chute d'eau comme point de repère. Le village est reconnu pour être capable de produire l'Eau des Héros tous les cent ans, qui donne à celui qui la boit dix fois son niveau de chakra ordinaire ; cependant, la tension dû à son utilisation peut devenir fatale, semblable aux stéroïdes.\n\nAprès la déclaration de la Quatrième Grande Guerre Ninja par Tobi, Kabuto Yakushi assassina trois ninjas de Taki afin de tester son contrôle sur ses nouveaux pouvoirs hérités d'Orochimaru."
+    },
+    {
+     "idx": "2.1",
+     "titre": "Cachette de l'Eau des Héros",
+     "texte": "L'Eau des Héros est cachée dans une petite structure en forme de pavillon, située profondément dans les racines du grand arbre, au centre du village."
+    },
+    {
+     "idx": "2.2",
+     "titre": "Grottes de la cascade",
+     "texte": "Dans l'anime, pour accéder au village, il faut passer par un système de grottes sous-marines, sous la grande cascade. La sortie du système de grottes mène au grand lac au milieu de Taki."
+    },
+    {
+     "idx": "2.3",
+     "titre": "Résidence du chef du village",
+     "texte": "Dans l'anime, Shibuki, le chef du village, réside dans une petite cabane en bois, qui est construite près de quelques arbres, qui a un signe avec un kanji pour Taki (滝, signifiant littéralement : Cascade) au-dessus de l'entrée. L'intérieur semble plutôt spartiate, car il ne contient pas beaucoup d'espace ou de meubles nécessaires, comme une table ou des chaises. Le chef du village est plutôt assis sur une estrade surélevée au sol."
+    }
+   ],
+   "caracteres": 2515,
+   "source": "wiki FR naruto.fandom.com/fr — « Taki » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Taki — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "atk-db-fierce-combination-gohan",
+   "id": "01bb9931-0b47-4ea9-a37e-4a7e13a422a7",
+   "name": "Fierce Combination (Gohan)",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "hozuki",
+   "id": "01fb6c32-9d3a-459f-880f-7a85890be939",
+   "name": "Clan Hōzuki",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "recherche-fr",
+   "titreFr": "Suigetsu Hôzuki",
+   "identite": "slug-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Suigetsu_H%C3%B4zuki",
+   "refus": "titre enrichi non attesté (suigetsu)",
+   "etat": "refus"
+  },
+  {
+   "slug": "daimyo-seigneur",
+   "id": "01fd2058-2e12-404d-9922-1ed5ee4dbda8",
+   "name": "Daimyō (seigneur)",
+   "type": "status",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "katsuyu-immense-network-healing",
+   "id": "01fecf5c-6066-47e9-a2e7-8a0300249629",
+   "name": "Katsuyu: Immense Network Healing",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Katsuyu - Immense Réseau de Guérison",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Katsuyu_-_Immense_R%C3%A9seau_de_Gu%C3%A9rison",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Utilisation",
+     "texte": "Tout d'abord, Katsuyu divise son corps en plusieurs clones plus petits, puis chacun s'attache à une personne. L'invocateur de la limace canalise alors son chakra curatif à travers Katsuyu qui, à son tour, le transfère aux blessés, guérissant leurs blessures, restaurant leurs réserves d'endurance et de chakra.\n\nCette technique permet à l'utilisateur de guérir un grand nombre de personnes simultanément, indépendamment de la distance. En utilisant cette technique, l'utilisateur est lié à Katsuyu, comme montré lorsque Tsunade put communiquer directement avec la limace, ressentant ce que Katsuyu rencontrait sur le champ de bataille, par exemple sa réaction aux stimuli de Katsuyu trouvant Kakashi Hatake apparemment mort, et plus tard, quand elle dit à Chôji Akimichi que son père était encore en vie après une brève pause."
+    }
+   ],
+   "caracteres": 826,
+   "source": "wiki FR naruto.fandom.com/fr — « Katsuyu - Immense Réseau de Guérison » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Katsuyu_-_Immense_R%C3%A9seau_de_Gu%C3%A9rison — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "vanishing-rasengan",
+   "id": "0205cf6c-d9c0-4eb6-b105-e57a59adbe8b",
+   "name": "Vanishing Rasengan",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "new-seven-ninja-swordsmen",
+   "id": "0213e92a-c014-433a-9a75-2fdcf667d816",
+   "name": "New Seven Ninja Swordsmen",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Nouveaux Sept Épéistes de la Brume",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Nouveaux_Sept_%C3%89p%C3%A9istes_de_la_Brume",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Histoire",
+     "texte": "Pendant un moment, lors du règne du Sixième Mizukage, Shizuma Hoshigaki obtint le soutien de plusieurs personnes en lien avec le Daimyô de l'Eau pour lancer un coup d'État. Alors que Kagura avait la clé du coffre contenant les Sept Épées de la Brume, Shizuma accompagné de six personnes l'affronta à l'Académie de Kiri. Shizuma manipula Kagura pour que celui-ci rejoigne son groupe. Shizuma put récupérer la clé et ouvrit le coffre. Avec chaque membre prenant une épée, ils avaient bien l'intention de lancer une révolution mais après, furent stoppés par Boruto Uzumaki, Sarada Uchiwa, et Chôjûrô."
+    }
+   ],
+   "caracteres": 597,
+   "source": "wiki FR naruto.fandom.com/fr — « Nouveaux Sept Épéistes de la Brume » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Nouveaux_Sept_%C3%89p%C3%A9istes_de_la_Brume — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "vegeta-mega-instinc-evil",
+   "id": "0247af63-4170-4aa1-9338-e4a904e942f0",
+   "name": "Vegeta Mega Instinc Evil",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "fruit-glisse-glisse",
+   "id": "024ae104-61e1-4848-be91-a3574a509e23",
+   "name": "Fruit Glisse-Glisse",
+   "type": "power",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Sube Sube no Mi",
+   "identite": "redirection-declaree",
+   "url": "https://onepiece.fandom.com/fr/wiki/Sube_Sube_no_Mi",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 12,
+    "intertitres_declares": 9,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "2",
+     "titre": "Apparence",
+     "texte": "Le One Piece Magazine Vol. 10 affiche l'apparence du Sube Sube no Mi. Le fruit ressemble à une pêche rose complètement lisse et sans reliefs avec des motifs en forme de spirales formant à certains endroits un cœur et une tige dont la forme se retrouve chez la tige usuelle des fruits du démon."
+    },
+    {
+     "idx": "3.1",
+     "titre": "Forces",
+     "texte": "Ce fruit rend l'utilisateur immunisé contre les dommages causés par les armes, les projectiles, les combats au corps à corps et autres dangers dérivés d'objets solides, car ceux-ci glisseront simplement sur leur corps plus lisse au contact, l'utilisateur ne subissant aucun dommage apparent, quelle que soit la taille du projectile. Les pouvoirs du fruit s'étendent également à tous les objets ou vêtements qui se trouvent sur la personne de l'utilisateur ; Alvida a ainsi repoussé les débris de fontaine en portant son manteau.\n\nEn tant qu'effet secondaire du pouvoir du fruit, tout l'excès de graisse de l'utilisateur \"glisse\", lui conférant un physique beaucoup plus maigre. Malgré cela, l'utilisateur semble conserver toute sa force, car Alvida peut toujours manier sa masse de fer avec facilité. Cette perte de graisse semble être permanente, car Alvida n'est pas revenue à son apparence précédente au contact du Granit Marin, qui annule les effets des fruits du démon, car sa graisse avait déjà \"glissé\" hors de son corps.\n\nAlors que les pouvoirs du fruit rendent l'utilisateur littéralement intouchable, ils peuvent toujours être affectés par certaines choses. Par exemple, Smoker a pu retenir Alvida en créant de la fumée autour d'elle grâce à ses pouvoirs fumigènes. Bien que ses pouvoirs soient transférés à ses vêtements, elle semble être gênée par les chaussures, préférant plutôt patiner en utilisant la peau glissante de la plante de ses pieds nus.\n\nLes évènements suivants sont considérés comme étant Non-Canon et par conséquent ne font pas partie de l'histoire Canon.\n\nDans la série live-action, il est montré que des chaussures sont nécessaires pour permettre à l’utilisateur de rester immobile et droit sur le sol. S’il est pieds nus, même une légère force comme un éternuement peut le faire glisser et le projeter contre ce qui l’entoure."
+    },
+    {
+     "idx": "3.2",
+     "titre": "Faiblesses",
+     "texte": "Ce fruit ne semble pas avoir d'avantage offensif. Les faiblesses sont les mêmes que celles de tout utilisateur de fruit du démon."
+    },
+    {
+     "idx": "4",
+     "titre": "Usage",
+     "texte": "Le principal changement qu'a provoqué l'ingestion de ce fruit est le changement de corps d'Alvida. Elle a perdu tout excès de graisse dans son corps, la faisant passer d'obèse à mince, et a nettoyé son corps pour qu'il devienne tout lisse, faisant disparaître ses grains de rousseur. Elle devient ainsi beaucoup plus belle, sa peau ne peut être abîmée.\n\nAlvida utilise son fruit pour se défendre, car aucune attaque ne peut abîmer sa peau, ce qui rend les projectile inefficaces, glissant sur elle sans la blesser. Elle peut utiliser sa peau lisse pour glisser le long de rampes et se déplacer sans effort pour s'enfuir à grande vitesse, car les frottements du sol ne peuvent la ralentir."
+    },
+    {
+     "idx": "5",
+     "titre": "Histoire",
+     "texte": "Peu de temps après avoir été battue par Luffy, à l'âge de 25 ans, Alvida a trouvé le fruit et l'a mangé, puis a rencontré Baggy."
+    }
+   ],
+   "caracteres": 3095,
+   "source": "wiki FR onepiece.fandom.com/fr — « Sube Sube no Mi » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Sube_Sube_no_Mi — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "goshiki",
+   "id": "025d9422-31d7-407a-90e8-d9caf18f168e",
+   "name": "Goshiki",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Goshiki",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Goshiki",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 5,
+    "intertitres_declares": 4,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Apparence",
+     "texte": "Goshiki a de courts cheveux marron hérissés et des yeux noirs. Il porte une chemise verte à manches longues et une chemise à col de couleur vert clair en dessous."
+    },
+    {
+     "idx": "2.1",
+     "titre": "Recherche de Tsunade",
+     "texte": "Goshiki fut vu fuyant dans le Quartiers de Tanzaku après qu'Orochimaru détruisit le château de Tanzaku. Il prévint Naruto et Jiraya de ce qui s'était passé."
+    }
+   ],
+   "caracteres": 318,
+   "source": "wiki FR naruto.fandom.com/fr — « Goshiki » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Goshiki — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "dango",
+   "id": "0289bb93-37a3-4cff-809d-f7d230f8dfdd",
+   "name": "Dangō",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Dangô",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Dang%C3%B4",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 5,
+    "intertitres_declares": 4,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Apparence",
+     "texte": "Dangô a des cheveux courts de couleur marron et des yeux noirs. Il porte une paire de lunettes de forme circulaire ainsi que la tenue des conseillers du Daimyô et un chapeau sur lequel on peut distinguer le symbole du Pays du Feu."
+    },
+    {
+     "idx": "2.1",
+     "titre": "Sommet des Cinq Kage",
+     "texte": "Assis à côté du Daimyô du Pays du Feu, Dangô endossait le rôle de conseiller. Lors d'une réunion de crise suite à l'Invasion de Pain à Konoha, il déclara que toutes les ressources nécessaires à la reconstruction du village seraient fournies par le Pays."
+    }
+   ],
+   "caracteres": 483,
+   "source": "wiki FR naruto.fandom.com/fr — « Dangô » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Dang%C3%B4 — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "little-toe-attack",
+   "id": "02926923-bb9e-46a9-830f-c5afa36cfa4a",
+   "name": "Little Toe Attack",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Attaque du Petit Orteil",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Attaque_du_Petit_Orteil",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "mountains-graveyard",
+   "id": "02a60ba0-d90e-4eb3-a446-f9f5a08080c9",
+   "name": "Cimetière des Monts",
+   "type": "place",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  }
+ ]
+}

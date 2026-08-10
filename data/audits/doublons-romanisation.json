@@ -1,12 +1,28 @@
 {
  "chantier": "doublons de romanisation",
- "quand": "2026-08-09T12:40:25.096Z",
- "fiches": 7636,
- "groupes": 8,
- "fichesConcernees": 16,
+ "quand": "2026-08-10T21:01:49.952Z",
+ "fiches": 7697,
+ "groupes": 7,
+ "fichesConcernees": 14,
+ "dejaRefutes": 7,
+ "registre": {
+  "paires": 13,
+  "misAJour": "2026-08-10"
+ },
  "detail": [
   {
    "cle": "Naruto|character|kako",
+   "dejaRefute": {
+    "slugs": [
+     "kako",
+     "kakko"
+    ],
+    "univers": "Naruto",
+    "signal": "squelette de romanisation identique",
+    "verdict": "DEUX PERSONNES",
+    "preuve": "Réfuté par la vague du 09/08 et redocumenté dans l'en-tête de scripts/ops-fusionner-doublons.mjs. En base, deux fichiers image distincts (Kakō.png / Kakko.png) et deux résumés sans recouvrement.",
+    "quand": "2026-08-09"
+   },
    "fiches": [
     {
      "slug": "kako",
@@ -29,37 +45,25 @@
    ]
   },
   {
-   "cle": "Bleach|character|jushiro ukitake",
-   "fiches": [
-    {
-     "slug": "jushiro-ukitake",
-     "nom": "Jūshirō Ukitake",
-     "type": "character",
-     "universe": "Bleach",
-     "aretes": 8,
-     "image": true,
-     "resume": "Le capitaine tuberculeux le plus aimé du Seireitei, mentor de Rukia — un double zanpakutō et un secret divin."
-    },
-    {
-     "slug": "juushirou-ukitake",
-     "nom": "Juushirou Ukitake",
-     "type": "character",
-     "universe": "Bleach",
-     "aretes": 6,
-     "image": true,
-     "resume": "Anniversaire : 21 décembre. Taille : 187 cm. Poids : 72 kg. Grade : capitaine de la 13e division. Zanpakutō : "
-    }
-   ]
-  },
-  {
    "cle": "One Piece|character|scarlet",
+   "dejaRefute": {
+    "slugs": [
+     "scarlet",
+     "scarlett"
+    ],
+    "univers": "One Piece",
+    "signal": "squelette de romanisation identique",
+    "verdict": "DEUX PERSONNES",
+    "preuve": "Réfuté par la vague du 09/08 : chacun a son article de wiki. Scarlett est la mère de Rebecca et l'épouse de Kyros ; Scarlet est un personnage secondaire sans lien. Deux images MyAnimeList distinctes.",
+    "quand": "2026-08-09"
+   },
    "fiches": [
     {
      "slug": "scarlett",
      "nom": "Scarlett",
      "type": "character",
      "universe": "One Piece",
-     "aretes": 8,
+     "aretes": 9,
      "image": true,
      "resume": "Scarlett était la mère de Rebecca, l'épouse de Kyros, la sœur aînée de Viola et la fille de Riku Dold III. Ell"
     },
@@ -76,6 +80,17 @@
   },
   {
    "cle": "Naruto|character|shin",
+   "dejaRefute": {
+    "slugs": [
+     "shin",
+     "shiin"
+    ],
+    "univers": "Naruto",
+    "signal": "squelette de romanisation identique",
+    "verdict": "DEUX PERSONNES",
+    "preuve": "naruto.fandom.com « Shin » est l'orphelin de la Racine ; notre `shiin` se résume par « Shiin était le chef d'un groupe de bandits originaire du Pays des Rizières ». Deux fichiers image distincts (Shin_Revived.png / Shiin.png) et deux jeux de doubleurs (Takashi Kondō / Kazuhiro Nakata).",
+    "quand": "2026-08-10"
+   },
    "fiches": [
     {
      "slug": "shin",
@@ -99,6 +114,18 @@
   },
   {
    "cle": "Naruto|character|wind daimyo part i",
+   "dejaRefute": {
+    "slugs": [
+     "wind-daimyo-part-i",
+     "wind-daimyo-part-ii"
+    ],
+    "univers": "Naruto",
+    "signal": "squelette de romanisation identique",
+    "verdict": "DEUX PERSONNES",
+    "preuve": "Réfuté par la vague du 09/08 : deux portraits différents (Wind_Daimyō_(Part_I).png contre New_Wind_Daimyo.png) parce que ce sont deux hommes, l'un ayant remplacé l'autre.",
+    "defautRestant": "Les deux fiches portent le MÊME descFr (« Il est l'actuel daimyô du Pays du Vent, ayant remplacé l'ancien daimyô ») : le texte du successeur a été copié sur le prédécesseur.",
+    "quand": "2026-08-09"
+   },
    "fiches": [
     {
      "slug": "wind-daimyo-part-ii",
@@ -122,6 +149,16 @@
   },
   {
    "cle": "One Piece|character|mashikaku",
+   "dejaRefute": {
+    "slugs": [
+     "mashikaku",
+     "masshikaku"
+    ],
+    "univers": "One Piece",
+    "signal": "squelette de romanisation identique",
+    "verdict": "NON TRANCHÉ — deux images MyAnimeList distinctes (369200 / 413615) et deux résumés sans recouvrement, mais aucune source citée n'a été ouverte. Reste dans l'audit.",
+    "quand": "2026-08-10"
+   },
    "fiches": [
     {
      "slug": "mashikaku",
@@ -145,6 +182,17 @@
   },
   {
    "cle": "Naruto|character|j",
+   "dejaRefute": {
+    "slugs": [
+     "j",
+     "jj"
+    ],
+    "univers": "Naruto",
+    "signal": "squelette de romanisation identique",
+    "verdict": "DEUX PERSONNES",
+    "preuve": "Deux fichiers image distincts sur le wiki Naruto (J.png / J.J.png) et deux rôles sans rapport : « personnel de la prison de Hōzuki » contre « personnage mineur désigné par ses seules initiales ».",
+    "quand": "2026-08-10"
+   },
    "fiches": [
     {
      "slug": "j",
@@ -168,6 +216,17 @@
   },
   {
    "cle": "Dragon Ball|character|maron",
+   "dejaRefute": {
+    "slugs": [
+     "maron",
+     "marron"
+    ],
+    "univers": "Dragon Ball",
+    "signal": "squelette de romanisation identique",
+    "verdict": "DEUX PERSONNES",
+    "preuve": "Réfuté par la vague du 09/08 : Maron est l'ancienne petite amie de Krilin, Marron est sa fille avec C-18 (« Marron est la fille de Kuririn et de C-18 » dans notre propre résumé). Deux images MyAnimeList distinctes.",
+    "quand": "2026-08-09"
+   },
    "fiches": [
     {
      "slug": "maron",
@@ -185,7 +244,7 @@
      "universe": "Dragon Ball",
      "aretes": 1,
      "image": true,
-     "resume": "Personnage secondaire de Dragon Ball."
+     "resume": "Marron est la fille de Kuririn et de C-18."
     }
    ]
   }

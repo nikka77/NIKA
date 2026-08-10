@@ -1,0 +1,107 @@
+{
+  "chantier": "capture d'écran du cadre du visuel et remesure sur les pixels reçus",
+  "quand": "2026-08-10T14:40:57.981Z",
+  "base": "http://localhost:3000",
+  "etiquette": "avant",
+  "lignes": [
+    {
+      "slug": "clan-sarutobi",
+      "src": "https://static.wikia.nocookie.net/naruto/images/3/32/Sarutobi_Symbole.svg/revision/latest/scale-to-width-down/720?cb=20160620171638&path-prefix=fr",
+      "definition": "810×810",
+      "cadre": {
+        "x": 293,
+        "y": 325,
+        "width": 288,
+        "height": 288
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/clan-sarutobi-avant.png",
+      "mesure_capture": {
+        "contraste_max": 1.496,
+        "couverture_1_5": 0,
+        "couverture_2": 0,
+        "mediane": 1.06,
+        "verdict": "illisible"
+      }
+    },
+    {
+      "slug": "monzaemon-chikamatsu",
+      "src": "https://static.wikia.nocookie.net/naruto/images/a/a9/Monzaemon_Symbol.svg/revision/latest/scale-to-width-down/720?cb=20090510230648",
+      "definition": "810×810",
+      "cadre": {
+        "x": 72,
+        "y": 371,
+        "width": 729,
+        "height": 912
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/monzaemon-chikamatsu-avant.png",
+      "mesure_capture": {
+        "contraste_max": 1.496,
+        "couverture_1_5": 0,
+        "couverture_2": 0,
+        "mediane": 1.089,
+        "verdict": "illisible"
+      }
+    },
+    {
+      "slug": "four-symbols-seal",
+      "src": "https://static.wikia.nocookie.net/naruto/images/2/27/Four_Symbols_Seal.svg/revision/latest/scale-to-width-down/720?cb=20150510014907",
+      "definition": "809×809",
+      "cadre": {
+        "x": 72,
+        "y": 297,
+        "width": 560,
+        "height": 420
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/four-symbols-seal-avant.png",
+      "mesure_capture": {
+        "contraste_max": 1.496,
+        "couverture_1_5": 0,
+        "couverture_2": 0,
+        "mediane": 1.053,
+        "verdict": "illisible"
+      }
+    },
+    {
+      "slug": "izuno",
+      "erreur": "aucun visuel de plus de 200 px trouvé"
+    },
+    {
+      "slug": "calorie-control",
+      "src": "https://static.wikia.nocookie.net/naruto/images/6/6d/Akimichi_Symbol_old.svg/revision/latest/scale-to-width-down/720?cb=20090302085213",
+      "definition": "810×810",
+      "cadre": {
+        "x": 72,
+        "y": 297,
+        "width": 560,
+        "height": 420
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/calorie-control-avant.png",
+      "mesure_capture": {
+        "contraste_max": 1.496,
+        "couverture_1_5": 0,
+        "couverture_2": 0,
+        "mediane": 1.051,
+        "verdict": "illisible"
+      }
+    },
+    {
+      "slug": "eight-trigrams-sealing-style",
+      "src": "https://static.wikia.nocookie.net/naruto/images/2/27/Four_Symbols_Seal.svg/revision/latest/scale-to-width-down/720?cb=20150510014907",
+      "definition": "809×809",
+      "cadre": {
+        "x": 72,
+        "y": 362,
+        "width": 560,
+        "height": 420
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/eight-trigrams-sealing-style-avant.png",
+      "mesure_capture": {
+        "contraste_max": 1.496,
+        "couverture_1_5": 0,
+        "couverture_2": 0,
+        "mediane": 1.053,
+        "verdict": "illisible"
+      }
+    }
+  ]
+}

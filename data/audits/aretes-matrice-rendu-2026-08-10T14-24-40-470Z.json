@@ -1,0 +1,1177 @@
+{
+  "mesureLe": "2026-08-10T14:24:40.496Z",
+  "totalAretes": 16910,
+  "lignes": [
+    {
+      "gabarit": "CharacterZone",
+      "relation": "maitrise",
+      "sens": "sortant",
+      "typeAutre": "power",
+      "n": 4732,
+      "grappe": "Techniques (l.74)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "maitrise",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 3363,
+      "grappe": "Primaire/orbite (l.193)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "status",
+      "n": 2001,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 2001,
+      "grappe": "Puits/membres (l.55)",
+      "rendu": true
+    },
+    {
+      "gabarit": "FicheAttaque",
+      "relation": "maitrise",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 1559,
+      "grappe": "Maîtrisée par (page l.118)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "habite",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 1440,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "habite",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 1440,
+      "grappe": "Primaire/orbite (l.193)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "allie",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 1335,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "allie",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 1335,
+      "grappe": "Liens (l.120)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "ennemi",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 1334,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "ennemi",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 1334,
+      "grappe": "Liens (l.120)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 1198,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 1198,
+      "grappe": "Autres liens ← (l.177)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "famille",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 1050,
+      "grappe": "Famille (l.94)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "famille",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 1050,
+      "grappe": "Famille (l.94)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "possede",
+      "sens": "sortant",
+      "typeAutre": "artifact",
+      "n": 690,
+      "grappe": "Autres liens → (l.177)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "possede",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 690,
+      "grappe": "Primaire/orbite (l.193)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "exerce",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 618,
+      "grappe": "Primaire/orbite (l.193)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "exerce",
+      "sens": "sortant",
+      "typeAutre": "profession",
+      "n": 616,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 509,
+      "grappe": "Primaire/orbite (l.193)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 448,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "power",
+      "n": 289,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "power",
+      "n": 275,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "mentor",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 250,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "mentor",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 250,
+      "grappe": "Liens inversés (l.113)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "rival",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 192,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "rival",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 192,
+      "grappe": "Liens (l.120)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "maitrise",
+      "sens": "sortant",
+      "typeAutre": "skill",
+      "n": 185,
+      "grappe": "Techniques (l.74)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "maitrise",
+      "sens": "entrant",
+      "typeAutre": "status",
+      "n": 179,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "maitrise",
+      "sens": "sortant",
+      "typeAutre": "power",
+      "n": 173,
+      "grappe": "Autres liens → (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 125,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "famille",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 123,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "famille",
+      "sens": "entrant",
+      "typeAutre": "skill",
+      "n": 112,
+      "grappe": "Famille (l.94)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "status",
+      "n": 111,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "allie",
+      "sens": "sortant",
+      "typeAutre": "status",
+      "n": 106,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "allie",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 106,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "place",
+      "n": 100,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 90,
+      "grappe": "Autres liens → (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "status",
+      "n": 90,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "artifact",
+      "n": 83,
+      "grappe": "Arsenal (l.63)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "ennemi",
+      "sens": "sortant",
+      "typeAutre": "status",
+      "n": 79,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "ennemi",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 79,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "profession",
+      "n": 54,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "eleve",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 50,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "eleve",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 50,
+      "grappe": "Liens inversés (l.113)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "allie",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 39,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "artifact",
+      "n": 28,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "exerce",
+      "sens": "sortant",
+      "typeAutre": "status",
+      "n": 28,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "exerce",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 28,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "ennemi",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 19,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "allie",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 19,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "artifact",
+      "n": 19,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "place",
+      "n": 17,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "allie",
+      "sens": "sortant",
+      "typeAutre": "artifact",
+      "n": 16,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "possede",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 15,
+      "grappe": "Autres liens → (l.177)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "possede",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 15,
+      "grappe": "Autres liens ← (l.177)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "jumeau",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 12,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "jumeau",
+      "sens": "entrant",
+      "typeAutre": "place",
+      "n": 12,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "famille",
+      "sens": "sortant",
+      "typeAutre": "status",
+      "n": 11,
+      "grappe": "Famille (l.94)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "famille",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 11,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "ennemi",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 10,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "profession",
+      "n": 10,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "ange",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 10,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "ange",
+      "sens": "entrant",
+      "typeAutre": "place",
+      "n": 10,
+      "grappe": "Autres liens ← (l.177)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "dieu_destruction",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 8,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "dieu_destruction",
+      "sens": "entrant",
+      "typeAutre": "place",
+      "n": 8,
+      "grappe": "Autres liens ← (l.177)",
+      "rendu": true
+    },
+    {
+      "gabarit": "FicheAttaque",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "power",
+      "n": 8,
+      "grappe": null,
+      "rendu": false
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "kaio_shin",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 8,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "kaio_shin",
+      "sens": "entrant",
+      "typeAutre": "place",
+      "n": 8,
+      "grappe": "Autres liens ← (l.177)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "maitrise",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 7,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "maitrise",
+      "sens": "entrant",
+      "typeAutre": "skill",
+      "n": 7,
+      "grappe": "Autres liens ← (l.177)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "status",
+      "n": 7,
+      "grappe": "Autres liens → (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "status",
+      "n": 7,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "maitrise",
+      "sens": "sortant",
+      "typeAutre": "artifact",
+      "n": 5,
+      "grappe": "Techniques (l.74)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "famille",
+      "sens": "entrant",
+      "typeAutre": "profession",
+      "n": 5,
+      "grappe": "Famille (l.94)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "artifact",
+      "n": 5,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "habite",
+      "sens": "sortant",
+      "typeAutre": "status",
+      "n": 5,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "habite",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 5,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "power",
+      "n": 5,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "maitrise",
+      "sens": "sortant",
+      "typeAutre": "skill",
+      "n": 5,
+      "grappe": "Autres liens → (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "famille",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 4,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "possede",
+      "sens": "sortant",
+      "typeAutre": "artifact",
+      "n": 4,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "allie",
+      "sens": "sortant",
+      "typeAutre": "power",
+      "n": 4,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "ennemi",
+      "sens": "sortant",
+      "typeAutre": "skill",
+      "n": 4,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "profession",
+      "n": 4,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "famille",
+      "sens": "entrant",
+      "typeAutre": "artifact",
+      "n": 3,
+      "grappe": "Famille (l.94)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "maitrise",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 3,
+      "grappe": "Techniques (l.74)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "maitrise",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 3,
+      "grappe": "Autres liens ← (l.177)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "famille",
+      "sens": "entrant",
+      "typeAutre": "power",
+      "n": 3,
+      "grappe": "Famille (l.94)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "ennemi",
+      "sens": "sortant",
+      "typeAutre": "power",
+      "n": 3,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "possede",
+      "sens": "entrant",
+      "typeAutre": "profession",
+      "n": 3,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "skill",
+      "n": 3,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "skill",
+      "n": 3,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "FicheAttaque",
+      "relation": "habite",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 3,
+      "grappe": null,
+      "rendu": false
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "habite",
+      "sens": "entrant",
+      "typeAutre": "power",
+      "n": 3,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "habite",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 3,
+      "grappe": "Autres liens → (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "habite",
+      "sens": "entrant",
+      "typeAutre": "status",
+      "n": 3,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "skill",
+      "n": 2,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "habite",
+      "sens": "sortant",
+      "typeAutre": "status",
+      "n": 2,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "habite",
+      "sens": "entrant",
+      "typeAutre": "skill",
+      "n": 2,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "famille",
+      "sens": "sortant",
+      "typeAutre": "artifact",
+      "n": 2,
+      "grappe": "Famille (l.94)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "exerce",
+      "sens": "sortant",
+      "typeAutre": "status",
+      "n": 2,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "famille",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 2,
+      "grappe": "Famille (l.94)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "ennemi",
+      "sens": "sortant",
+      "typeAutre": "artifact",
+      "n": 2,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "mentor",
+      "sens": "sortant",
+      "typeAutre": "status",
+      "n": 2,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "mentor",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 2,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "power",
+      "n": 2,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "habite",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 2,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "maitrise",
+      "sens": "sortant",
+      "typeAutre": "skill",
+      "n": 2,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "maitrise",
+      "sens": "entrant",
+      "typeAutre": "power",
+      "n": 2,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "allie",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 2,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "exerce",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 2,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "habite",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 1,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "habite",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 1,
+      "grappe": "Autres liens ← (l.177)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "mentor",
+      "sens": "sortant",
+      "typeAutre": "place",
+      "n": 1,
+      "grappe": "Liens (l.109)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "mentor",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 1,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "exerce",
+      "sens": "entrant",
+      "typeAutre": "profession",
+      "n": 1,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "appartient",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 1,
+      "grappe": "Autres liens → (l.221)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "appartient",
+      "sens": "entrant",
+      "typeAutre": "artifact",
+      "n": 1,
+      "grappe": "Autres liens ← (l.177)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "habite",
+      "sens": "entrant",
+      "typeAutre": "place",
+      "n": 1,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "maitrise",
+      "sens": "sortant",
+      "typeAutre": "artifact",
+      "n": 1,
+      "grappe": "Autres liens → (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "habite",
+      "sens": "entrant",
+      "typeAutre": "artifact",
+      "n": 1,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "possede",
+      "sens": "entrant",
+      "typeAutre": "power",
+      "n": 1,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "possede",
+      "sens": "sortant",
+      "typeAutre": "artifact",
+      "n": 1,
+      "grappe": "Autres liens → (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "EntityZone",
+      "relation": "possede",
+      "sens": "entrant",
+      "typeAutre": "status",
+      "n": 1,
+      "grappe": "Autres liens ← (l.222)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "allie",
+      "sens": "entrant",
+      "typeAutre": "artifact",
+      "n": 1,
+      "grappe": "Liens (l.120)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "allie",
+      "sens": "entrant",
+      "typeAutre": "power",
+      "n": 1,
+      "grappe": "Liens (l.120)",
+      "rendu": true
+    },
+    {
+      "gabarit": "OrganizationZone",
+      "relation": "exerce",
+      "sens": "entrant",
+      "typeAutre": "skill",
+      "n": 1,
+      "grappe": "Autres liens ← (l.85)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "exerce",
+      "sens": "sortant",
+      "typeAutre": "character",
+      "n": 1,
+      "grappe": "Appartenances (l.149)",
+      "rendu": true
+    },
+    {
+      "gabarit": "CharacterZone",
+      "relation": "exerce",
+      "sens": "entrant",
+      "typeAutre": "character",
+      "n": 1,
+      "grappe": "Autres liens ← (l.177)",
+      "rendu": true
+    }
+  ],
+  "invisibles": []
+}

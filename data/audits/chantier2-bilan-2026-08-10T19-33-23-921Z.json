@@ -1,0 +1,205 @@
+{
+ "chantier": "EntityZone — les arêtes qu’un filtre par slug faisait disparaître",
+ "mesureLe": "2026-08-10T19:33:23.929Z",
+ "sondeLot": {
+  "avant": "chantier2-libelle-avant-2026-08-10T18-57-42-526Z.json",
+  "apres": "chantier2-libelle-apres-onze-2026-08-10T19-27-43-728Z.json"
+ },
+ "sondeMatrice": {
+  "avant": "chantier2-libelle-avant74-2026-08-10T19-12-24-387Z.json",
+  "apres": "chantier2-libelle-apres74-2026-08-10T19-30-10-750Z.json"
+ },
+ "matrice": {
+  "fichesSondees": 74,
+  "cellulesCouvertes": 44,
+  "demiAretesAvant": 2104,
+  "demiAretesApres": 2104,
+  "vuesAvant": 683,
+  "vuesApres": 693,
+  "compteursFauxAvant": 11,
+  "compteursFauxApres": 0,
+  "echecsAvant": 0,
+  "echecsApres": 0
+ },
+ "trousCombles": 21,
+ "devenuesVisiblesTotal": 12,
+ "repousseesTotal": 2,
+ "fiches": [
+  {
+   "slug": "takigakure",
+   "type": "place",
+   "compteurAvant": 1,
+   "compteurApres": 2,
+   "vraiNombre": 2,
+   "arretesRendues": 1,
+   "devenuesVisibles": [
+    "ennemi · kakuzu|kakuzu"
+   ],
+   "repousseesDerriereLeRepli": [],
+   "replisAvant": [],
+   "replisApres": []
+  },
+  {
+   "slug": "kumogakure",
+   "type": "place",
+   "compteurAvant": 8,
+   "compteurApres": 9,
+   "vraiNombre": 9,
+   "arretesRendues": 1,
+   "devenuesVisibles": [
+    "allié · yugito nii|yugito-nii"
+   ],
+   "repousseesDerriereLeRepli": [],
+   "replisAvant": [],
+   "replisApres": [
+    42
+   ]
+  },
+  {
+   "slug": "konohagakure",
+   "type": "place",
+   "compteurAvant": 57,
+   "compteurApres": 62,
+   "vraiNombre": 62,
+   "arretesRendues": 5,
+   "devenuesVisibles": [],
+   "repousseesDerriereLeRepli": [],
+   "replisAvant": [],
+   "replisApres": [
+    422,
+    50
+   ]
+  },
+  {
+   "slug": "otogakure",
+   "type": "place",
+   "compteurAvant": 8,
+   "compteurApres": 10,
+   "vraiNombre": 10,
+   "arretesRendues": 2,
+   "devenuesVisibles": [
+    "allié · zaku abumi|zaku-abumi",
+    "allié · rinji|rinji"
+   ],
+   "repousseesDerriereLeRepli": [],
+   "replisAvant": [],
+   "replisApres": [
+    15
+   ]
+  },
+  {
+   "slug": "amegakure",
+   "type": "place",
+   "compteurAvant": 9,
+   "compteurApres": 10,
+   "vraiNombre": 10,
+   "arretesRendues": 1,
+   "devenuesVisibles": [
+    "allié · shigure|shigure-naruto"
+   ],
+   "repousseesDerriereLeRepli": [],
+   "replisAvant": [],
+   "replisApres": [
+    11
+   ]
+  },
+  {
+   "slug": "ninja-medical",
+   "type": "profession",
+   "compteurAvant": 38,
+   "compteurApres": 40,
+   "vraiNombre": 40,
+   "arretesRendues": 2,
+   "devenuesVisibles": [
+    "regroupe · sakura haruno|sakura-haruno",
+    "regroupe · tsunade|tsunade"
+   ],
+   "repousseesDerriereLeRepli": [
+    "regroupe · kusushi|kusushi",
+    "regroupe · kiri (ninja)|kiri-ninja"
+   ],
+   "replisAvant": [],
+   "replisApres": [
+    28
+   ]
+  },
+  {
+   "slug": "sunagakure",
+   "type": "place",
+   "compteurAvant": 14,
+   "compteurApres": 16,
+   "vraiNombre": 16,
+   "arretesRendues": 2,
+   "devenuesVisibles": [],
+   "repousseesDerriereLeRepli": [],
+   "replisAvant": [],
+   "replisApres": [
+    58,
+    4
+   ]
+  },
+  {
+   "slug": "kirigakure",
+   "type": "place",
+   "compteurAvant": 8,
+   "compteurApres": 11,
+   "vraiNombre": 11,
+   "arretesRendues": 3,
+   "devenuesVisibles": [
+    "allié · ruka|ruka",
+    "allié · kagura karatachi|kagura-karatachi",
+    "famille · byakuren|byakuren"
+   ],
+   "repousseesDerriereLeRepli": [],
+   "replisAvant": [],
+   "replisApres": [
+    40
+   ]
+  },
+  {
+   "slug": "shinigami",
+   "type": "profession",
+   "compteurAvant": 12,
+   "compteurApres": 14,
+   "vraiNombre": 14,
+   "arretesRendues": 2,
+   "devenuesVisibles": [],
+   "repousseesDerriereLeRepli": [],
+   "replisAvant": [],
+   "replisApres": [
+    36,
+    2
+   ]
+  },
+  {
+   "slug": "hoshigakure",
+   "type": "place",
+   "compteurAvant": null,
+   "compteurApres": 1,
+   "vraiNombre": 1,
+   "arretesRendues": 1,
+   "devenuesVisibles": [
+    "allié · hokuto|hokuto"
+   ],
+   "repousseesDerriereLeRepli": [],
+   "replisAvant": [],
+   "replisApres": []
+  },
+  {
+   "slug": "iwagakure",
+   "type": "place",
+   "compteurAvant": 5,
+   "compteurApres": 6,
+   "vraiNombre": 6,
+   "arretesRendues": 1,
+   "devenuesVisibles": [
+    "allié · sagan|sagan"
+   ],
+   "repousseesDerriereLeRepli": [],
+   "replisAvant": [],
+   "replisApres": [
+    22
+   ]
+  }
+ ]
+}

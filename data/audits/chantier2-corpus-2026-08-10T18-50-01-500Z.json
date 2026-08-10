@@ -1,0 +1,594 @@
+{
+ "mesureLe": "2026-08-10T18:50:07.603Z",
+ "totalFiches": 7698,
+ "totalAretes": 17015,
+ "aretesOrphelines": 0,
+ "parGabarit": {
+  "EntityZone": 2652,
+  "CharacterZone": 4031,
+  "FicheAttaque": 659,
+  "OrganizationZone": 356
+ },
+ "populationEntityZone": 2652,
+ "demiAretesEntityZone": 8214,
+ "nbCellules": 44,
+ "lignes": [
+  {
+   "relation": "maitrise",
+   "sens": "entrant",
+   "typeAutre": "character",
+   "n": 3363,
+   "nPorteurs": 1676,
+   "exemples": [
+    "empty-cicada-shell-technique",
+    "fruit-de-la-force",
+    "corpse-clone-technique",
+    "snake-mouth-bind",
+    "blocking-technique-absorption-seal",
+    "ice-release-tearing-dragon-fierce-tiger"
+   ]
+  },
+  {
+   "relation": "habite",
+   "sens": "entrant",
+   "typeAutre": "character",
+   "n": 1454,
+   "nPorteurs": 145,
+   "exemples": [
+    "mont-kukuru",
+    "orange-town",
+    "land-of-the-moon",
+    "raijin-island",
+    "skypiea-lieu",
+    "ohara-lieu"
+   ]
+  },
+  {
+   "relation": "possede",
+   "sens": "entrant",
+   "typeAutre": "character",
+   "n": 690,
+   "nPorteurs": 213,
+   "exemples": [
+    "ninja-info-cards",
+    "lancer-evo3",
+    "fils-d-acier",
+    "lame-a-chakra-de-konoha",
+    "retractable-shield",
+    "gold-dust"
+   ]
+  },
+  {
+   "relation": "exerce",
+   "sens": "entrant",
+   "typeAutre": "character",
+   "n": 629,
+   "nPorteurs": 104,
+   "exemples": [
+    "voleur",
+    "mizukage",
+    "skypiea-lieu",
+    "pirate-captain",
+    "ninshu-follower",
+    "caretaker"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "entrant",
+   "typeAutre": "character",
+   "n": 509,
+   "nPorteurs": 96,
+   "exemples": [
+    "takigakure",
+    "orange-town",
+    "skypiea-lieu",
+    "ohara-lieu",
+    "kano-country",
+    "cactus-island"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "entrant",
+   "typeAutre": "power",
+   "n": 289,
+   "nPorteurs": 18,
+   "exemples": [
+    "konohagakure",
+    "otogakure",
+    "amegakure",
+    "liberation-du-vent-futon",
+    "liberation-de-l-eau-suiton",
+    "liberation-de-la-glace-hyoton"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "sortant",
+   "typeAutre": "power",
+   "n": 275,
+   "nPorteurs": 275,
+   "exemples": [
+    "fruit-de-la-force",
+    "gold-experience",
+    "fruit-du-ph-nix",
+    "fruit-glisse-glisse",
+    "fruit-du-volatile-version-aigle",
+    "c-moon"
+   ]
+  },
+  {
+   "relation": "maitrise",
+   "sens": "entrant",
+   "typeAutre": "status",
+   "n": 179,
+   "nPorteurs": 169,
+   "exemples": [
+    "sensing-transmission",
+    "butterfly-mode",
+    "space-time-technique-formula-underworld-turnover",
+    "front-lotus-eight-trigrams-palms-revolving-heaven",
+    "beeswax-clone",
+    "demonic-illusion-toad-confrontation-chant"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "sortant",
+   "typeAutre": "place",
+   "n": 155,
+   "nPorteurs": 155,
+   "exemples": [
+    "orange-town",
+    "fake-namek",
+    "san-faldo",
+    "risky-red-island",
+    "st-briss",
+    "karate-island"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "entrant",
+   "typeAutre": "place",
+   "n": 130,
+   "nPorteurs": 19,
+   "exemples": [
+    "univers-7",
+    "kumogakure",
+    "hueco-mundo",
+    "north-blue",
+    "water-seven-lieu",
+    "grand-line"
+   ]
+  },
+  {
+   "relation": "famille",
+   "sens": "sortant",
+   "typeAutre": "character",
+   "n": 123,
+   "nPorteurs": 14,
+   "exemples": [
+    "gogeta-ssj",
+    "trunks-ssj",
+    "gogeta-ssj4",
+    "majin-buu-gotenks",
+    "kiba-naruto",
+    "gotenks-ssj3"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "sortant",
+   "typeAutre": "status",
+   "n": 111,
+   "nPorteurs": 101,
+   "exemples": [
+    "marchen",
+    "santa-maria",
+    "fier-baril",
+    "navire-judiciaire",
+    "kimi",
+    "striker"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "entrant",
+   "typeAutre": "status",
+   "n": 92,
+   "nPorteurs": 15,
+   "exemples": [
+    "takigakure",
+    "kumogakure",
+    "konohagakure",
+    "water-seven-lieu",
+    "otogakure",
+    "amegakure"
+   ]
+  },
+  {
+   "relation": "allie",
+   "sens": "entrant",
+   "typeAutre": "character",
+   "n": 39,
+   "nPorteurs": 15,
+   "exemples": [
+    "univers-2",
+    "kumogakure",
+    "konohagakure",
+    "otogakure",
+    "amegakure",
+    "kiba-naruto"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "entrant",
+   "typeAutre": "artifact",
+   "n": 28,
+   "nPorteurs": 8,
+   "exemples": [
+    "skypiea-lieu",
+    "konohagakure",
+    "zanpakuto",
+    "fishman-island",
+    "kirigakure",
+    "baratie-one-piece"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "sortant",
+   "typeAutre": "artifact",
+   "n": 19,
+   "nPorteurs": 19,
+   "exemples": [
+    "sode-no-shirayuki-bleach",
+    "hyorinmaru",
+    "zangetsu-bleach",
+    "benihime",
+    "nasugasira",
+    "shinso"
+   ]
+  },
+  {
+   "relation": "ennemi",
+   "sens": "entrant",
+   "typeAutre": "character",
+   "n": 19,
+   "nPorteurs": 15,
+   "exemples": [
+    "takigakure",
+    "germa-kingdom",
+    "konohagakure",
+    "eight-tails",
+    "kiba-naruto",
+    "kirigakure"
+   ]
+  },
+  {
+   "relation": "jumeau",
+   "sens": "sortant",
+   "typeAutre": "place",
+   "n": 12,
+   "nPorteurs": 12,
+   "exemples": [
+    "univers-4",
+    "univers-7",
+    "univers-2",
+    "univers-5",
+    "univers-3",
+    "univers-6"
+   ]
+  },
+  {
+   "relation": "jumeau",
+   "sens": "entrant",
+   "typeAutre": "place",
+   "n": 12,
+   "nPorteurs": 12,
+   "exemples": [
+    "univers-4",
+    "univers-7",
+    "univers-2",
+    "univers-5",
+    "univers-3",
+    "univers-6"
+   ]
+  },
+  {
+   "relation": "ange",
+   "sens": "sortant",
+   "typeAutre": "character",
+   "n": 10,
+   "nPorteurs": 10,
+   "exemples": [
+    "univers-4",
+    "univers-7",
+    "univers-2",
+    "univers-5",
+    "univers-6",
+    "univers-1"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "entrant",
+   "typeAutre": "profession",
+   "n": 10,
+   "nPorteurs": 4,
+   "exemples": [
+    "konohagakure",
+    "amegakure",
+    "iwagakure",
+    "nadeshiko-village"
+   ]
+  },
+  {
+   "relation": "dieu_destruction",
+   "sens": "sortant",
+   "typeAutre": "character",
+   "n": 8,
+   "nPorteurs": 8,
+   "exemples": [
+    "univers-4",
+    "univers-7",
+    "univers-5",
+    "univers-6",
+    "univers-8",
+    "univers-10"
+   ]
+  },
+  {
+   "relation": "kaio_shin",
+   "sens": "sortant",
+   "typeAutre": "character",
+   "n": 8,
+   "nPorteurs": 8,
+   "exemples": [
+    "univers-2",
+    "univers-5",
+    "univers-3",
+    "univers-6",
+    "univers-8",
+    "univers-10"
+   ]
+  },
+  {
+   "relation": "maitrise",
+   "sens": "sortant",
+   "typeAutre": "character",
+   "n": 7,
+   "nPorteurs": 7,
+   "exemples": [
+    "gear-4-gear-fourth-snake-man",
+    "gear-3-gear-third",
+    "gear-4-gear-fourth-tank-man",
+    "gear-4-gear-fourth-bound-man",
+    "gear-5",
+    "gear-4-gear-fourth"
+   ]
+  },
+  {
+   "relation": "possede",
+   "sens": "sortant",
+   "typeAutre": "artifact",
+   "n": 4,
+   "nPorteurs": 3,
+   "exemples": [
+    "summoning-technique-kamatari",
+    "minister",
+    "katasuke-tono-s-assistant"
+   ]
+  },
+  {
+   "relation": "famille",
+   "sens": "entrant",
+   "typeAutre": "character",
+   "n": 4,
+   "nPorteurs": 3,
+   "exemples": [
+    "foosha-village",
+    "kiba-naruto",
+    "kirigakure"
+   ]
+  },
+  {
+   "relation": "habite",
+   "sens": "entrant",
+   "typeAutre": "status",
+   "n": 3,
+   "nPorteurs": 3,
+   "exemples": [
+    "univers-7",
+    "sadala",
+    "vegeta-planete"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "sortant",
+   "typeAutre": "skill",
+   "n": 3,
+   "nPorteurs": 3,
+   "exemples": [
+    "haki-des-rois",
+    "haki-de-l-observation",
+    "haki-de-l-armement"
+   ]
+  },
+  {
+   "relation": "habite",
+   "sens": "entrant",
+   "typeAutre": "power",
+   "n": 3,
+   "nPorteurs": 3,
+   "exemples": [
+    "grand-line",
+    "kuri",
+    "karakuri-island"
+   ]
+  },
+  {
+   "relation": "possede",
+   "sens": "entrant",
+   "typeAutre": "profession",
+   "n": 3,
+   "nPorteurs": 3,
+   "exemples": [
+    "gantelet-shinobi",
+    "jutsu-absorption-arm",
+    "shuigu"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "entrant",
+   "typeAutre": "skill",
+   "n": 3,
+   "nPorteurs": 1,
+   "exemples": [
+    "haki"
+   ]
+  },
+  {
+   "relation": "exerce",
+   "sens": "entrant",
+   "typeAutre": "status",
+   "n": 2,
+   "nPorteurs": 2,
+   "exemples": [
+    "pirate-captain",
+    "bounty-hunter"
+   ]
+  },
+  {
+   "relation": "maitrise",
+   "sens": "sortant",
+   "typeAutre": "skill",
+   "n": 2,
+   "nPorteurs": 2,
+   "exemples": [
+    "sakon",
+    "nagato-pain"
+   ]
+  },
+  {
+   "relation": "maitrise",
+   "sens": "entrant",
+   "typeAutre": "power",
+   "n": 2,
+   "nPorteurs": 2,
+   "exemples": [
+    "sakon-and-ukon-s-kekkei-genkai",
+    "rinnegan"
+   ]
+  },
+  {
+   "relation": "habite",
+   "sens": "sortant",
+   "typeAutre": "place",
+   "n": 2,
+   "nPorteurs": 2,
+   "exemples": [
+    "candy",
+    "zenny-one-piece"
+   ]
+  },
+  {
+   "relation": "habite",
+   "sens": "sortant",
+   "typeAutre": "status",
+   "n": 2,
+   "nPorteurs": 2,
+   "exemples": [
+    "trunks-ssj",
+    "vegeta-ssjb"
+   ]
+  },
+  {
+   "relation": "exerce",
+   "sens": "sortant",
+   "typeAutre": "status",
+   "n": 2,
+   "nPorteurs": 2,
+   "exemples": [
+    "trunks-ssj",
+    "astronomer"
+   ]
+  },
+  {
+   "relation": "allie",
+   "sens": "sortant",
+   "typeAutre": "character",
+   "n": 2,
+   "nPorteurs": 2,
+   "exemples": [
+    "kiba-naruto",
+    "nagato-pain"
+   ]
+  },
+  {
+   "relation": "possede",
+   "sens": "entrant",
+   "typeAutre": "power",
+   "n": 1,
+   "nPorteurs": 1,
+   "exemples": [
+    "kama"
+   ]
+  },
+  {
+   "relation": "mentor",
+   "sens": "entrant",
+   "typeAutre": "character",
+   "n": 1,
+   "nPorteurs": 1,
+   "exemples": [
+    "water-seven-lieu"
+   ]
+  },
+  {
+   "relation": "habite",
+   "sens": "entrant",
+   "typeAutre": "place",
+   "n": 1,
+   "nPorteurs": 1,
+   "exemples": [
+    "grand-line"
+   ]
+  },
+  {
+   "relation": "appartient",
+   "sens": "sortant",
+   "typeAutre": "character",
+   "n": 1,
+   "nPorteurs": 1,
+   "exemples": [
+    "arche-maxime"
+   ]
+  },
+  {
+   "relation": "possede",
+   "sens": "entrant",
+   "typeAutre": "status",
+   "n": 1,
+   "nPorteurs": 1,
+   "exemples": [
+    "yonta-maria"
+   ]
+  },
+  {
+   "relation": "habite",
+   "sens": "entrant",
+   "typeAutre": "artifact",
+   "n": 1,
+   "nPorteurs": 1,
+   "exemples": [
+    "goat-island"
+   ]
+  }
+ ]
+}

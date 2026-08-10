@@ -1,0 +1,661 @@
+{
+  "horodate": "2026-08-10T21:00:07.116Z",
+  "batterie_de_la_garde": [
+    {
+      "cas": "chatte/chat — le cas mesuré du démonstrateur",
+      "attendu": true,
+      "mord": true,
+      "ok": true,
+      "contradictions": [
+        {
+          "espece": "genre-oppose-sur-la-meme-tete",
+          "preuve_fiche": "Fukurokumaru est un chat summon de taille humaine au pelage blanc immaculé, portant un collier rouge.",
+          "preuve_section": "Fukurokumaru est une chatte blanche de taille humaine, au collier rouge orné d’une clochette dorée.",
+          "detail": "« null chat » (fiche) contre « null chatte » (section)"
+        }
+      ]
+    },
+    {
+      "cas": "nature — la fiche est un lieu, la section décrit un homme",
+      "attendu": true,
+      "mord": true,
+      "ok": true,
+      "contradictions": [
+        {
+          "espece": "natures-incompatibles",
+          "preuve_fiche": "Kibi est une région du Pays des Wa.",
+          "preuve_section": "Kibi est un ninja du village de Konoha qui participa à l’examen chûnin.",
+          "detail": "la fiche se définit comme lieu et la section comme personne"
+        },
+        {
+          "espece": "nature-contre-le-type-declare",
+          "preuve_fiche": "type = « place » (colonne de la base)",
+          "preuve_section": "Kibi est un ninja du village de Konoha qui participa à l’examen chûnin.",
+          "detail": "type place → nature attendue « lieu », la section définit « null ninja » (personne)"
+        }
+      ]
+    },
+    {
+      "cas": "témoin NÉGATIF — deux textes concordants ne doivent PAS être refusés",
+      "attendu": false,
+      "mord": false,
+      "ok": true,
+      "contradictions": []
+    },
+    {
+      "cas": "témoin NÉGATIF — deux définitions différentes mais compatibles",
+      "attendu": false,
+      "mord": false,
+      "ok": true,
+      "contradictions": []
+    },
+    {
+      "cas": "sexe déclaré contre la définition de la section",
+      "attendu": true,
+      "mord": true,
+      "ok": true,
+      "contradictions": [
+        {
+          "espece": "sexe-declare-contre-definition",
+          "preuve_fiche": "attributes.sex = « Male »",
+          "preuve_section": "Shinta est une femme d’un abord franc, qui dit aussitôt ce qu’elle pense.",
+          "detail": "sexe déclaré male, la section définit « null femme »"
+        }
+      ]
+    }
+  ],
+  "temoins_hote": {
+    "One Piece": {
+      "titre": "Monkey D. Luffy",
+      "repond": true,
+      "sections": 7
+    },
+    "Naruto": {
+      "titre": "Naruto Uzumaki",
+      "repond": true,
+      "sections": 92
+    },
+    "Bleach": {
+      "titre": "Ichigo Kurosaki",
+      "repond": true,
+      "sections": 33
+    },
+    "Dragon Ball": {
+      "titre": "Son Goku",
+      "repond": true,
+      "sections": 74
+    }
+  },
+  "population": {
+    "sans_dossier_univers_a_wiki_fr": 2848,
+    "echantillon": 20
+  },
+  "compte": {
+    "page sans prose exploitable": 5,
+    "candidat": 6,
+    "refus": 9
+  },
+  "rendement": "30.0 %",
+  "mediane_caracteres_des_candidats": 900,
+  "cas": [
+    {
+      "slug": "sealing-arm-braces",
+      "name": "Sealing Arm Braces",
+      "type": "artifact",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Bracelets de Scellement",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Bracelets_de_Scellement",
+      "refus": null,
+      "descFr_len": 337,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 0,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "kyuroku-wagarashi",
+      "name": "Kyūroku Wagarashi",
+      "type": "character",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Kyûroku Wagarashi",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/Ky%C3%BBroku_Wagarashi",
+      "refus": null,
+      "descFr_len": 544,
+      "sections_brutes": [
+        {
+          "idx": "2",
+          "titre": "Apparence",
+          "car": 158
+        },
+        {
+          "idx": "3.1",
+          "titre": "Pays du Thé",
+          "car": 317
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 4,
+        "intertitres_declares": 4,
+        "manques": []
+      },
+      "retirees_pour_redondance": [
+        {
+          "titre": "Apparence",
+          "motif": "3 mot(s) plein(s) neuf(s) — déjà dit par le texte servi"
+        }
+      ],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 317,
+      "sections": [
+        {
+          "idx": "3.1",
+          "titre": "Pays du Thé",
+          "niveau": 3,
+          "ancre": "Pays_du_Thé",
+          "texte": "Les membres de sa famille et le ministre du Daimyô du Thé avaient provoqué la famille Wasabi à une course. Kyûroku tenta par tous les moyens de gagner de façon déloyale en engageant notamment des ninjas pour mettre des bâtons dans les roues à ses rivaux mais le daimyô découvrit la supercherie et dissolut sa famille."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "calm-belt",
+      "name": "Calm Belt",
+      "type": "place",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Calm Belt",
+      "identite": "titre-egal",
+      "url": "https://onepiece.fandom.com/fr/wiki/Calm_Belt",
+      "refus": null,
+      "descFr_len": 86,
+      "sections_brutes": [
+        {
+          "idx": "2",
+          "titre": "Climat",
+          "car": 252
+        },
+        {
+          "idx": "4",
+          "titre": "Population animale",
+          "car": 253
+        },
+        {
+          "idx": "5",
+          "titre": "Nouvelles technologies de la Marine",
+          "car": 397
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 7,
+        "intertitres_declares": 6,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 3,
+      "caracteres": 902,
+      "sections": [
+        {
+          "idx": "2",
+          "titre": "Climat",
+          "niveau": 2,
+          "ancre": "Climat",
+          "texte": "La Calm Belt est connue pour la tranquillité de ses eaux, d'où son nom. En effet, aucun vent n'y souffle ce qui rend difficile la navigation. Paradoxalement, on y retrouve des îles dont le climat est fortement variable, allant jusqu'à avoir 48 saisons."
+        },
+        {
+          "idx": "4",
+          "titre": "Population animale",
+          "niveau": 2,
+          "ancre": "Population_animale",
+          "texte": "Les eaux de la Calm Belt abritent plusieurs monstres marins dont les plus puissants d'entre eux, les Rois des Mers. Il s'agit du lieu de refuge principal de ces derniers. D'autre part, certaines de ses îles abritent des animaux de diverses espèces dont:"
+        },
+        {
+          "idx": "5",
+          "titre": "Nouvelles technologies de la Marine",
+          "niveau": 2,
+          "ancre": "Nouvelles_technologies_de_la_Marine",
+          "texte": "Bien qu'il soit impossible pour un simple navire de naviguer sur cette mer, la Marine a trouvé un moyen de la sillonner en fabriquant les coques de leurs navires à l'aide du Granit Marin. Grâce à cette pierre, les Rois des Mers ne sentent pas la présence des bateaux. Cette astuce n'est pas infaillible car si ces derniers ne sentent pas la présence des bateaux, ils peuvent tout de même les voir."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "wood-release-tree-bind-flourishing-burial",
+      "name": "Wood Release: Tree Bind Flourishing Burial",
+      "type": "power",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Mokuton - Sépulture de Bois",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Mokuton_-_S%C3%A9pulture_de_Bois",
+      "refus": null,
+      "descFr_len": 224,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 1,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "ninja-medical",
+      "name": "Ninja médical",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 433,
+      "etat": "refus"
+    },
+    {
+      "slug": "gohan-ssj2",
+      "name": "Gohan SSJ2",
+      "type": "skill",
+      "universe": "Dragon Ball",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "hatake",
+      "name": "Clan Hatake",
+      "type": "status",
+      "universe": "Naruto",
+      "route": "titre-exact",
+      "titreFr": "Clan Hatake",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/Clan_Hatake",
+      "refus": null,
+      "descFr_len": 477,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 2,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "navire-cercueil",
+      "name": "Navire-Cercueil",
+      "type": "artifact",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Navire-Cercueil",
+      "identite": "titre-egal",
+      "url": "https://onepiece.fandom.com/fr/wiki/Navire-Cercueil",
+      "refus": null,
+      "descFr_len": 123,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Apparence",
+          "car": 262
+        },
+        {
+          "idx": "2",
+          "titre": "Compétences",
+          "car": 185
+        },
+        {
+          "idx": "3",
+          "titre": "Histoire",
+          "car": 523
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 7,
+        "intertitres_declares": 4,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 3,
+      "caracteres": 970,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Apparence",
+          "niveau": 2,
+          "ancre": "Apparence",
+          "texte": "Ce navire ressemble à un cercueil avec des bougies diffusant une lumière verte à chaque extrémité. Le navire est assez petit et ne peut contenir qu'une seule personne. Au centre, se trouve un mât qui ressemble à un crucifix, en-dessous duquel se trouve un siège."
+        },
+        {
+          "idx": "2",
+          "titre": "Compétences",
+          "niveau": 2,
+          "ancre": "Compétences",
+          "texte": "Cette embarcation n'a, à première vue, aucune solidité apparente mais Mihawk est capable de naviguer sur les mers de Grand Line avec elle, ce qui démontre ses compétences de navigateur."
+        },
+        {
+          "idx": "3",
+          "titre": "Histoire",
+          "niveau": 2,
+          "ancre": "Histoire",
+          "texte": "Il n'y a pas beaucoup d'informations sur la Barque Mortuaire. Elle apparaît pour la première fois durant l'Arc du Baratie, près du restaurant le Baratie, souvent situé près de Grand Line, alors que le dernier navire de l'armada de Don Krieg s'apprêtait à l'attaquer.\n\nPlus tard dans l'anime, Mihawk est vu sur son bateau en train de regarder les primes de Monkey D. Luffy et de Zoro Roronoa, sûrement sur Grand Line.\n\nLa localisation actuelle du bateau est inconnue bien qu'il se trouve sûrement sur l'île où réside Mihawk."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "komei",
+      "name": "Kōmei",
+      "type": "character",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Kômei",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/K%C3%B4mei",
+      "refus": null,
+      "descFr_len": 898,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Histoire",
+          "car": 158
+        },
+        {
+          "idx": "3",
+          "titre": "Apparence",
+          "car": 241
+        },
+        {
+          "idx": "4",
+          "titre": "Compétences",
+          "car": 133
+        },
+        {
+          "idx": "5.1",
+          "titre": "Pays des Oiseaux",
+          "car": 368
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 7,
+        "intertitres_declares": 7,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 4,
+      "caracteres": 900,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Histoire",
+          "niveau": 2,
+          "ancre": "Histoire",
+          "texte": "Kômei postula sa candidature au poste de daimyô du Pays des Oiseaux après que le précédent décéda, mais pour éviter un éventuel conflit, il ne fut pas choisi."
+        },
+        {
+          "idx": "3",
+          "titre": "Apparence",
+          "niveau": 2,
+          "ancre": "Apparence",
+          "texte": "Il a les yeux marron, les cheveux courts et noirs, ainsi qu'une moustache qui est reliée à ses cheveux. Il porte un petit chapeau blanc sur sa tête et un kimono blanc. Kômei a deux cicatrices sur son torse qui descendent jusqu'à son abdomen."
+        },
+        {
+          "idx": "4",
+          "titre": "Compétences",
+          "niveau": 2,
+          "ancre": "Compétences",
+          "texte": "Kômei est un adepte du kenjutsu et a des notions concernant les samouraïs comme lorsqu'il était sur le point de commettre un seppuku."
+        },
+        {
+          "idx": "5.1",
+          "titre": "Pays des Oiseaux",
+          "niveau": 3,
+          "ancre": "Pays_des_Oiseaux",
+          "texte": "Il était suspecté comme étant le Guerrier Maudit et arrêté, mais Naruto et ses amis réalisèrent qu'il était innocent. Naruto se déguisa alors en Guerrier Maudit et lui sauva la vie alors qu'il s’apprêtait à commettre un seppuku. Kômei aida par la suite les ninjas de Konoha à trouver la vérité concernant le Guerrier Maudit ainsi que sur la véritable identité de Sagi."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "belmod-planet",
+      "name": "Monde de Belmod",
+      "type": "place",
+      "universe": "Dragon Ball",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 740,
+      "etat": "refus"
+    },
+    {
+      "slug": "fruit-touffu-touffu",
+      "name": "Fruit Touffu-Touffu",
+      "type": "power",
+      "universe": "One Piece",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 372,
+      "etat": "refus"
+    },
+    {
+      "slug": "toad-elder",
+      "name": "Toad Elder",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "freezer-2nd-form",
+      "name": "Freezer 2nd Form",
+      "type": "skill",
+      "universe": "Dragon Ball",
+      "route": "recherche-fr",
+      "titreFr": "Freezer",
+      "identite": "meme-nom",
+      "url": "https://dragonball.fandom.com/fr/wiki/Freezer",
+      "refus": "la page se range parmi les œuvres — Ébauche",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "akagi-gang",
+      "name": "Akagi Gang",
+      "type": "status",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Famille Akagi",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Famille_Akagi",
+      "refus": null,
+      "descFr_len": 226,
+      "sections_brutes": [
+        {
+          "idx": "1.1",
+          "titre": "Recherche de Tsunade",
+          "car": 207
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 2,
+        "intertitres_declares": 2,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 207,
+      "sections": [
+        {
+          "idx": "1.1",
+          "titre": "Recherche de Tsunade",
+          "niveau": 3,
+          "ancre": "Recherche_de_Tsunade",
+          "texte": "Deux membres de cette famille, Bunzô et Senta, furent envoyés en mission pour que Tsunade paie ses dettes envers cette famille. Finalement, il s'avéra que Tsunade les avait déjà remboursées un an auparavant."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "lion-headed-kannon",
+      "name": "Lion-Headed Kannon",
+      "type": "artifact",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Kannon à Tête de Lion",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Kannon_%C3%A0_T%C3%AAte_de_Lion",
+      "refus": null,
+      "descFr_len": 476,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 2,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "matoryou-hime-tachi",
+      "name": "Matoryou Hime-tachi",
+      "type": "character",
+      "universe": "One Piece",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 231,
+      "etat": "refus"
+    },
+    {
+      "slug": "tanega",
+      "name": "Île Graine",
+      "type": "place",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Île Graine",
+      "identite": "titre-egal",
+      "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Graine",
+      "refus": null,
+      "descFr_len": 243,
+      "sections_brutes": [
+        {
+          "idx": "2",
+          "titre": "Histoire",
+          "car": 350
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 6,
+        "intertitres_declares": 4,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 350,
+      "sections": [
+        {
+          "idx": "2",
+          "titre": "Histoire",
+          "niveau": 2,
+          "ancre": "Histoire",
+          "texte": "Il y a moins de 62 ans, l'Île est devenue une partie du territoire de Pirates de Big Mom également connu sous le nom de \"Totto Land\", et son apparence a été changée pour son look actuel en utilisant les pouvoirs du Soru Soru no Mi de Charlotte Linlin et du Kuku Kuku no Mi de Streusen.\n\nCharlotte Kato est alors nommé ministre en charge de cette île."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "ostrich-rising-dragon-bullet",
+      "name": "Ostrich Rising Dragon Bullet",
+      "type": "power",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Uppercut Dragon de l'Autruche",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Uppercut_Dragon_de_l'Autruche",
+      "refus": null,
+      "descFr_len": 0,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 1,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "sasori-s-subordinate",
+      "name": "Sasori's subordinate",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "vegeta-mega-instinc-evil",
+      "name": "Vegeta Mega Instinc Evil",
+      "type": "skill",
+      "universe": "Dragon Ball",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    }
+  ]
+}

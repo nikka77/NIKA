@@ -1,0 +1,404 @@
+{
+  "horodate": "2026-08-10T20:41:33.474Z",
+  "corpus": {
+    "fiches": 7698,
+    "sections": 19101,
+    "fiches_avec_dossier": 4782,
+    "fiches_sans_dossier": 2916
+  },
+  "forme_des_sections_existantes": {
+    "formes_idx": {
+      "numérique (2, 3.1…)": 19060,
+      "autre : fin-3": 4,
+      "autre : fin-2": 7,
+      "autre : fin-1": 10,
+      "autre : fin-10": 1,
+      "autre : T-1": 1,
+      "autre : fin-4": 1,
+      "demo-N": 17
+    },
+    "sans_titre": 0,
+    "mediane_caracteres_par_section": 647,
+    "mediane_caracteres_par_dossier": 2343,
+    "top_titres": [
+      [
+        "Apparence",
+        2116
+      ],
+      [
+        "Personnalité",
+        1889
+      ],
+      [
+        "Histoire",
+        1173
+      ],
+      [
+        "Capacités",
+        879
+      ],
+      [
+        "Anecdotes",
+        641
+      ],
+      [
+        "Capacités et pouvoirs",
+        575
+      ],
+      [
+        "Contexte",
+        360
+      ],
+      [
+        "Relations",
+        355
+      ],
+      [
+        "Intrigue",
+        344
+      ],
+      [
+        "Passé",
+        327
+      ],
+      [
+        "Biographie",
+        326
+      ],
+      [
+        "Apparitions dans les jeux vidéo",
+        304
+      ],
+      [
+        "Utilisation",
+        246
+      ],
+      [
+        "Partie II",
+        206
+      ],
+      [
+        "Dragon Ball Super",
+        169
+      ],
+      [
+        "Ninjutsu",
+        162
+      ],
+      [
+        "Partie I",
+        154
+      ],
+      [
+        "Pouvoirs et capacités",
+        151
+      ],
+      [
+        "Ennemis",
+        151
+      ],
+      [
+        "Nouvelle Ère",
+        142
+      ],
+      [
+        "Vue d'ensemble",
+        115
+      ],
+      [
+        "Saga du Pays de Wano",
+        115
+      ],
+      [
+        "Aperçu",
+        114
+      ],
+      [
+        "Dragon Ball Z",
+        111
+      ],
+      [
+        "Saga de Whole Cake Island",
+        93
+      ],
+      [
+        "Apparitions dans d'autres médias",
+        91
+      ],
+      [
+        "Famille",
+        86
+      ],
+      [
+        "Capacités physiques",
+        84
+      ],
+      [
+        "Saga de la Guerre au Sommet",
+        82
+      ],
+      [
+        "Techniques et capacités spéciales",
+        79
+      ]
+    ],
+    "top_sources": [
+      [
+        "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Tu",
+        6713
+      ],
+      [
+        "openrouter/mistralai/mistral-small-24b-instruc",
+        6280
+      ],
+      [
+        "claude-haiku-4-5 (blitz fenêtre — traduit de l",
+        4167
+      ],
+      [
+        "mistral/mistral-large-latest",
+        1231
+      ],
+      [
+        "claude-haiku-4-5 (blitz front-2b — traduit de ",
+        305
+      ],
+      [
+        "connecteur-techniques-op (traduit de la page F",
+        120
+      ],
+      [
+        "nvidia/nvidia/nemotron-3-super-120b-a12b",
+        84
+      ],
+      [
+        "deepinfra/Qwen/Qwen3-32B",
+        54
+      ],
+      [
+        "deepinfra/mistralai/Mistral-Small-24B-Instruct",
+        46
+      ],
+      [
+        "claude-haiku-4-5 (blitz fenêtre 02/08 — tradui",
+        30
+      ],
+      [
+        "anthropic/claude-haiku-4-5",
+        21
+      ],
+      [
+        "chantier6 démonstrateur — traduit de https://n",
+        17
+      ],
+      [
+        "claude-haiku (finisseur) · Shinigami page - Fa",
+        10
+      ],
+      [
+        "claude-haiku (finisseur) · initiald.fandom.com",
+        9
+      ],
+      [
+        "claude-haiku (finisseur) · deathnote.fandom.co",
+        3
+      ]
+    ]
+  },
+  "voie_fr": {
+    "sans_dossier_avec_url_wiki_fr_prouvee": 45,
+    "avec_dossier_et_url_wiki_fr": 25,
+    "par_univers": {
+      "Naruto": {
+        "sans_dossier": 1911,
+        "avec_url_fr": 9
+      },
+      "One Piece": {
+        "sans_dossier": 493,
+        "avec_url_fr": 34
+      },
+      "Bleach": {
+        "sans_dossier": 111,
+        "avec_url_fr": 1
+      },
+      "Dragon Ball": {
+        "sans_dossier": 333,
+        "avec_url_fr": 0
+      },
+      "Initial D": {
+        "sans_dossier": 2,
+        "avec_url_fr": 0
+      },
+      "Hunter x Hunter": {
+        "sans_dossier": 21,
+        "avec_url_fr": 0
+      },
+      "JoJo's Bizarre Adventure": {
+        "sans_dossier": 37,
+        "avec_url_fr": 0
+      },
+      "Death Note": {
+        "sans_dossier": 8,
+        "avec_url_fr": 1
+      }
+    },
+    "par_type": {
+      "artifact": {
+        "sans_dossier": 256,
+        "avec_url_fr": 18
+      },
+      "power": {
+        "sans_dossier": 1531,
+        "avec_url_fr": 3
+      },
+      "character": {
+        "sans_dossier": 573,
+        "avec_url_fr": 2
+      },
+      "status": {
+        "sans_dossier": 253,
+        "avec_url_fr": 7
+      },
+      "profession": {
+        "sans_dossier": 85,
+        "avec_url_fr": 0
+      },
+      "place": {
+        "sans_dossier": 189,
+        "avec_url_fr": 15
+      },
+      "skill": {
+        "sans_dossier": 29,
+        "avec_url_fr": 0
+      }
+    },
+    "echantillon": [
+      {
+        "slug": "l-equipage-des-maquereaux",
+        "name": "L'Équipage des Maquereaux",
+        "type": "status",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/%C3%89quipage_des_Maquereaux"
+      },
+      {
+        "slug": "fier-baril",
+        "name": "Fier Baril",
+        "type": "artifact",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/Baril_Tiger"
+      },
+      {
+        "slug": "beeswax-clone",
+        "name": "Beeswax Clone",
+        "type": "power",
+        "universe": "Naruto",
+        "url": "https://naruto.fandom.com/fr/wiki/Clone_de_Cire_d'Abeille"
+      },
+      {
+        "slug": "kimi",
+        "name": "Île Jaune d'Œuf",
+        "type": "place",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Jaune_d'%C5%92uf"
+      },
+      {
+        "slug": "package",
+        "name": "Île Paquet",
+        "type": "place",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Paquet"
+      },
+      {
+        "slug": "loving",
+        "name": "Île Amour",
+        "type": "place",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Amour"
+      },
+      {
+        "slug": "sanshoku",
+        "name": "Île Tricolore",
+        "type": "place",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Tricolore"
+      },
+      {
+        "slug": "l-equipage-des-candys",
+        "name": "L’équipage des Candys",
+        "type": "status",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/%C3%89quipage_des_Candys"
+      },
+      {
+        "slug": "navire-de-pudding-pudding",
+        "name": "Navire de Pudding Pudding",
+        "type": "artifact",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/Navire_de_Pudding_Pudding"
+      },
+      {
+        "slug": "100-island",
+        "name": "Île 100 %",
+        "type": "place",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_100%25"
+      },
+      {
+        "slug": "potato-op",
+        "name": "Île Patate",
+        "type": "place",
+        "universe": "One Piece",
+        "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Patate"
+      },
+      {
+        "slug": "magnet-release-conserving-bee-twin-blades",
+        "name": "Magnet Release: Conserving Bee Twin Blades",
+        "type": "power",
+        "universe": "Naruto",
+        "url": "https://naruto.fandom.com/fr/wiki/Jiton_-_Shuriken_Magn%C3%A9tique"
+      }
+    ]
+  },
+  "couverture_par_univers": {
+    "Naruto": {
+      "total": 3330,
+      "avec_dossier": 1419,
+      "taux": "42.6 %"
+    },
+    "One Piece": {
+      "total": 2273,
+      "avec_dossier": 1780,
+      "taux": "78.3 %"
+    },
+    "Bleach": {
+      "total": 382,
+      "avec_dossier": 271,
+      "taux": "70.9 %"
+    },
+    "Initial D": {
+      "total": 44,
+      "avec_dossier": 42,
+      "taux": "95.5 %"
+    },
+    "Dragon Ball": {
+      "total": 1137,
+      "avec_dossier": 804,
+      "taux": "70.7 %"
+    },
+    "JoJo's Bizarre Adventure": {
+      "total": 233,
+      "avec_dossier": 196,
+      "taux": "84.1 %"
+    },
+    "Hunter x Hunter": {
+      "total": 215,
+      "avec_dossier": 194,
+      "taux": "90.2 %"
+    },
+    "Death Note": {
+      "total": 84,
+      "avec_dossier": 76,
+      "taux": "90.5 %"
+    }
+  }
+}

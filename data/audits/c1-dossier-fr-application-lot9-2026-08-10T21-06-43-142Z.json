@@ -1,0 +1,4223 @@
+{
+ "horodate": "2026-08-10T21:29:23.456Z",
+ "mode": "application",
+ "lot": {
+  "de": 1601,
+  "a": 1800
+ },
+ "compte_du_lot": {
+  "refus": 88,
+  "page sans prose exploitable": 53,
+  "candidat": 59
+ },
+ "cas": [
+  {
+   "slug": "sasumata",
+   "id": "8d0c8005-5701-43a1-8342-aef270c553ad",
+   "name": "Sasumata",
+   "type": "artifact",
+   "universe": "Naruto",
+   "route": "recherche-fr",
+   "titreFr": "Explosion du Sasumata",
+   "identite": "meme-nom",
+   "url": "https://naruto.fandom.com/fr/wiki/Explosion_du_Sasumata",
+   "refus": "titre enrichi non attesté (explosion)",
+   "etat": "refus"
+  },
+  {
+   "slug": "umikame",
+   "id": "8d1c45be-3f37-4595-a6c8-33d283069e3c",
+   "name": "Umikame",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "iburi",
+   "id": "8d291d53-9433-45d0-8442-a85effe9974a",
+   "name": "Clan Iburi",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Clan Iburi",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Clan_Iburi",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "haze-ninja-art-forbidden-technique-ephemeral-life",
+   "id": "8d5a3a6b-43fe-4a44-a964-4f96b603d96a",
+   "name": "Haze Ninja Art: Forbidden Technique: Ephemeral Life",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Ninpô de la Brume - Technique Interdite de l'Éphémère",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Ninp%C3%B4_de_la_Brume_-_Technique_Interdite_de_l'%C3%89ph%C3%A9m%C3%A8re",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "atk-db-chaotic-time-impact",
+   "id": "8d5c7778-0541-4507-bd46-61e28302dd2e",
+   "name": "Chaotic Time Impact",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "bubble-dome",
+   "id": "8d660d96-c5f7-4382-9c9f-aefa970aeeb8",
+   "name": "Bubble Dome",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Suiton - Technique de Bulles — Large Défense",
+   "identite": null,
+   "url": "https://naruto.fandom.com/fr/wiki/Suiton_-_Technique_de_Bulles_%E2%80%94_Large_D%C3%A9fense",
+   "refus": "pont nu sans preuve de nom",
+   "etat": "refus"
+  },
+  {
+   "slug": "chakra-lock-on",
+   "id": "8d711a07-36e7-4809-85ef-2a304d529cf8",
+   "name": "Chakra Lock-On",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Verrouillage de Chakra",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Verrouillage_de_Chakra",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "raimei",
+   "id": "8d796e52-02c6-4355-b527-9b8ba1b5bc43",
+   "name": "Raimei",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Raimei",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Raimei",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 5,
+    "intertitres_declares": 5,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Apparence",
+     "texte": "Raimei est un jeune individu ayant la peau claire ainsi que les cheveux bruns et hérissés. Il est vêtu d'une robe blanche, d'une ceinture violette nouée autour de la taille, un tissu enroulé autour de ses poignets et de ses chevilles, qui fait également office de maillot de corps, un pantalon bleu foncé et des sandales de shinobi."
+    }
+   ],
+   "caracteres": 332,
+   "source": "wiki FR naruto.fandom.com/fr — « Raimei » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Raimei — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "kazeshini",
+   "id": "8d80fd2b-05d2-4c82-8a1f-69c425d9e0bc",
+   "name": "Kazeshini",
+   "type": "character",
+   "universe": "Bleach",
+   "route": "titre-exact",
+   "titreFr": "Kazeshini (Esprit Zanpakutō)",
+   "identite": "meme-nom",
+   "url": "https://bleach.fandom.com/fr/wiki/Kazeshini_(Esprit_Zanpakut%C5%8D)",
+   "refus": "parenthèse de désambiguïsation",
+   "etat": "refus"
+  },
+  {
+   "slug": "atk-db-baked-sphere",
+   "id": "8d98a162-9ab6-4a98-9d5f-8591ba3ffdd9",
+   "name": "Baked Sphere",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "mohmoo",
+   "id": "8d9ce985-fe5e-439f-9834-015db0f31b72",
+   "name": "Mohmoo",
+   "type": "character",
+   "universe": "One Piece",
+   "route": "langlink",
+   "titreFr": "Meuh-Meuh",
+   "identite": null,
+   "url": "https://onepiece.fandom.com/fr/wiki/Meuh-Meuh",
+   "refus": "pont nu sans preuve de nom",
+   "etat": "refus"
+  },
+  {
+   "slug": "sogyo-no-kotowari",
+   "id": "8d9e6086-73b9-4ed7-bc37-f91dc8781f32",
+   "name": "Sōgyo no Kotowari",
+   "type": "artifact",
+   "universe": "Bleach",
+   "route": "titre-exact",
+   "titreFr": "Sōgyo no Kotowari (Esprit Zanpakutō)",
+   "identite": "meme-nom",
+   "url": "https://bleach.fandom.com/fr/wiki/S%C5%8Dgyo_no_Kotowari_(Esprit_Zanpakut%C5%8D)",
+   "refus": "la page se range parmi les œuvres — Ébauche",
+   "etat": "refus"
+  },
+  {
+   "slug": "wind-release-dust-cloud-technique",
+   "id": "8da0309a-b1d0-42a8-a581-048285bf9ee8",
+   "name": "Wind Release: Dust Cloud Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Fûton - Poussière de Vent",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/F%C3%BBton_-_Poussi%C3%A8re_de_Vent",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 3,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Fûjin (風塵), écrit avec les kanji pour le vent (風, Fû, Kaze) et la poussière (塵, Jin, Chiri), peut faire référence à trois choses dans le langage japonais : un nuage de poussière soufflé par le vent ; les affaires importunes, quotidiennes du monde de tous les jours ; et la guerre.\nFûjin (風神) est le dieu shintô du vent, dont on dit qu'il était présent à la création du monde, libérant les premiers vents de son sac."
+    }
+   ],
+   "caracteres": 415,
+   "source": "wiki FR naruto.fandom.com/fr — « Fûton - Poussière de Vent » (CC BY-SA) https://naruto.fandom.com/fr/wiki/F%C3%BBton_-_Poussi%C3%A8re_de_Vent — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "summoning-technique-shark",
+   "id": "8db572e0-340e-4c55-8546-f445cca2968d",
+   "name": "Summoning Technique (Shark)",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "shinigami-mask",
+   "id": "8dcc4c4e-6fdf-4041-bb7b-0f00f6fb5472",
+   "name": "Shinigami Mask",
+   "type": "artifact",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Masque Shinigami",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Masque_Shinigami",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "ice-release-frozen-capturing-field",
+   "id": "8de6a72c-5091-48da-a2c3-9b03622fcf79",
+   "name": "Ice Release: Frozen Capturing Field",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "iron-sand-wave",
+   "id": "8df0a24b-5b28-4f6b-b47c-6fbfe2da1fa0",
+   "name": "Iron Sand Wave",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "hatake",
+   "id": "8df25604-6251-46bc-945b-dfefe63bede7",
+   "name": "Clan Hatake",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Clan Hatake",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Clan_Hatake",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "« Hatake » (畑) signifie « terre agricole » et, peut-être fidèle à ce nom, le symbole de leur clan ressemble à un morceau de terre agricole découpé."
+    }
+   ],
+   "caracteres": 147,
+   "source": "wiki FR naruto.fandom.com/fr — « Clan Hatake » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Clan_Hatake — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "drilling-crimson-blade",
+   "id": "8df53aba-a262-4c5b-a8ed-b27e5a358707",
+   "name": "Drilling Crimson Blade",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "atk-db-selflessness-state",
+   "id": "8e3cbf5b-384f-4884-a407-a1ac41495ff6",
+   "name": "Selflessness State",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "yatogo-ryugen",
+   "id": "8e4e471a-82d4-44c9-b502-204a6a5e8da3",
+   "name": "Yatogo Ryūgen",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Yatogo Ryûgen",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Yatogo_Ry%C3%BBgen",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 5,
+    "intertitres_declares": 4,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Histoire",
+     "texte": "Lorsqu'il entendit que Sasuke Uchiwa avait éliminé le criminel recherché de tous, Itachi Uchiwa, il demanda si Sasuke serait récompensé pour cette action. Or, Sasuke se trouvait non loin de lui et l'écoutait secrètement, il était à deux doigts d'éliminer le chûnin ainsi que ses amis pour cette remarque, si Tobi ne l'avait pas arrêté à temps."
+    },
+    {
+     "idx": "3",
+     "titre": "Apparence",
+     "texte": "Yatogo a les cheveux noirs et courts qu'il attache avec un bandana bleu foncé ainsi que deux mèches tombent de part et d'autre de son visage et des yeux noirs. Il porte la tenue typique du ninja de Konoha, à savoir le gilet de protection et un bandeau frontal en forme de bandana."
+    }
+   ],
+   "caracteres": 623,
+   "source": "wiki FR naruto.fandom.com/fr — « Yatogo Ryûgen » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Yatogo_Ry%C3%BBgen — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "atk-db-beyond-god-instant-kamehameha",
+   "id": "8e68a530-9a26-4308-84b4-887d31648c13",
+   "name": "Beyond God Instant Kamehameha",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "bo-shadow-clone-technique",
+   "id": "8e73664a-ca5f-4417-914b-9c4cdf99b513",
+   "name": "Bō Shadow Clone Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "earth-release-underground-split",
+   "id": "8e7a8fe0-c5d0-4823-90b1-f13c933a605d",
+   "name": "Earth Release: Underground Split",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Doton - Technique de la Tranchée",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Doton_-_Technique_de_la_Tranch%C3%A9e",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "ink-mist-technique",
+   "id": "8eb2e2ff-9865-4194-af9b-6ed1584750c8",
+   "name": "Ink Mist Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Technique du Brouillard d'Encre",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Technique_du_Brouillard_d'Encre",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "memory-concealing-manipulative-sand-technique",
+   "id": "8ee28b5a-3f00-4583-8d54-8cf650449e45",
+   "name": "Memory-Concealing Manipulative Sand Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Technique du Sable - Manipulation de la Mémoire",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Technique_du_Sable_-_Manipulation_de_la_M%C3%A9moire",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "« Sennô », lorsqu'il est écrit « 洗脳 », signifie « lavage de cerveau ». Le premier kanji signifie lavage et le second signifie cerveau ou mémoire. Au nom de cette technique, le premier kanji fut remplacé par le kanji pour « dissimuler » ou « cacher », soulignant le fait que cette technique n'efface pas réellement les souvenirs, mais les dissimule simplement."
+    }
+   ],
+   "caracteres": 359,
+   "source": "wiki FR naruto.fandom.com/fr — « Technique du Sable - Manipulation de la Mémoire » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Technique_du_Sable_-_Manipulation_de_la_M%C3%A9moire — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "summoning-ibuse-poisoning",
+   "id": "8ef4269b-6620-40b2-8033-be4544a42e4e",
+   "name": "Summoning: Ibuse Poisoning",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Invocation - Empoisonnement d'Ibuse",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Invocation_-_Empoisonnement_d'Ibuse",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "sozu",
+   "id": "8f4c2bbf-edae-4f96-8b90-efa13a496233",
+   "name": "Sōzu",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Sôzu",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/S%C3%B4zu",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 6,
+    "intertitres_declares": 5,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Histoire",
+     "texte": "Sa tanière fit partie de nombreuses autres que Tsunade visita et il fit fortune grâce à sa malchance légendaire et connue de tous, argent qu'il dépense dans les différents quartiers de Tanzaku. Quand elle vint une autre fois dans cette même tanière, ses complices et lui furent fou de joie de pouvoir à nouveau s'enrichir grâce à elle."
+    },
+    {
+     "idx": "2",
+     "titre": "Personnalité",
+     "texte": "Sôzu aime beaucoup parier surtout quand il est en train de gagner, il fut d'ailleurs fou de joie quand la légendaire perdante entra dans sa tanière, sachant qu'elle allait perdre une fois de plus."
+    },
+    {
+     "idx": "3",
+     "titre": "Apparence",
+     "texte": "Il a des cheveux noirs courts, une barbe légère, des yeux noirs et porte un kimono ample et noir avec des bordures blanches."
+    },
+    {
+     "idx": "4.1",
+     "titre": "Recherche de Tsunade",
+     "texte": "Pendant que Jiraya était à la recherche de Tsunade, Sôzu l'entendit lorsqu'il demandait à tout ceux qu'il croise s'ils l'avaient vue et lui dit tout ce qu'il savait après que Jiraya l'eût invité à boire."
+    }
+   ],
+   "caracteres": 858,
+   "source": "wiki FR naruto.fandom.com/fr — « Sôzu » (CC BY-SA) https://naruto.fandom.com/fr/wiki/S%C3%B4zu — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "six-paths-yin-power",
+   "id": "8f509c23-aae9-46c6-8c0d-f725b3f684d1",
+   "name": "Six Paths Yin Power",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Pouvoir Yin de Rikudô",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Pouvoir_Yin_de_Rikud%C3%B4",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Contexte",
+     "texte": "En plus d'être composé de nature de chakra Yin, les applications réelles de ce pouvoir ne sont pas très bien comprises. Il est possible qu'il augmente d'autres capacités de l'utilisateur.\nComme l'affirma Zetsu Noir, il y a une résonance particulière entre les pouvoirs Yin et Yang du Rikudô, permettant aux détenteurs de sentir la présence de l'autre. Lorsque les pouvoirs Yin et Yang sont utilisés ensemble, ils peuvent sceller et transformer leur cible en noyau de la technique Astre de Rikudô. Lorsque Sasuke l'utilisa en conjonction avec le Pouvoir Yang de Rikudô de Naruto Uzumaki la marque sur sa main gauche disparut et retourna sur la main gauche de Hagoromo."
+    }
+   ],
+   "caracteres": 667,
+   "source": "wiki FR naruto.fandom.com/fr — « Pouvoir Yin de Rikudô » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Pouvoir_Yin_de_Rikud%C3%B4 — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "echolocation-technique",
+   "id": "8f69225d-b71d-4634-a11d-e93a9488474a",
+   "name": "Echolocation Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Détection par Écholocalisation",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/D%C3%A9tection_par_%C3%89cholocalisation",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "otama",
+   "id": "8f931f73-3176-4c5b-a293-7702e48797af",
+   "name": "Otama",
+   "type": "character",
+   "universe": "One Piece",
+   "route": "langlink",
+   "titreFr": "Kurozumi Tama",
+   "identite": null,
+   "url": "https://onepiece.fandom.com/fr/wiki/Kurozumi_Tama",
+   "refus": "pont nu sans preuve de nom",
+   "etat": "refus"
+  },
+  {
+   "slug": "oonaan",
+   "id": "8fa93c53-09ca-4127-9f77-56444c12c826",
+   "name": "Oonaan",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "gang-of-four",
+   "id": "8fbab65e-04ff-437c-9031-3dfa5311b4f6",
+   "name": "Gang of Four",
+   "type": "status",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "shion-s-bodyguard",
+   "id": "8fc86da0-1d69-423f-8240-dba2d04c0d66",
+   "name": "Shion's bodyguard",
+   "type": "profession",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "peacock-wisdom-queen",
+   "id": "8ff617aa-b5b1-4ce5-aeda-928c414d3bde",
+   "name": "Peacock Wisdom Queen",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "ink-clone-technique",
+   "id": "9023189e-9a60-49ac-beb9-db8bbc61e689",
+   "name": "Ink Clone Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Clone d'Encre",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Clone_d'Encre",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Formes",
+     "texte": "Les clones de Saï démontrèrent la capacité de communiquer mentalement avec lui.\nLes clones de Killer B, disponibles grâce à la capacité de produire de l'encre de Hachibi, peuvent utiliser des transformations partielles de Hachibi."
+    }
+   ],
+   "caracteres": 230,
+   "source": "wiki FR naruto.fandom.com/fr — « Clone d'Encre » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Clone_d'Encre — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "beast-tearing-gale-palm",
+   "id": "903544a2-808f-4d83-ae86-c2febdda0dfd",
+   "name": "Beast Tearing Gale Palm",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Onde Violente Bestiale",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Onde_Violente_Bestiale",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "kido-s-juinjutsu",
+   "id": "904c3ffa-a510-4501-9791-8cfec27c4457",
+   "name": "Kido's Juinjutsu",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "fruit-du-millet",
+   "id": "908d0a66-448a-40b4-8282-e591e98c835c",
+   "name": "Fruit du Millet",
+   "type": "power",
+   "universe": "One Piece",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "water-release-clear-mirror-still-water",
+   "id": "90932cd2-e291-4efe-bf1b-6e78f8a8b69e",
+   "name": "Water Release: Clear Mirror Still Water",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Suiton - Pureté Immaculée",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Suiton_-_Puret%C3%A9_Immacul%C3%A9e",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "ten-tails-fission",
+   "id": "909dae1b-f214-4793-a8a6-d641663f3df2",
+   "name": "Ten-Tails Fission",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Fission de Jûbi",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Fission_de_J%C3%BBbi",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "insect-webbing",
+   "id": "90a77bb9-666c-4d60-867b-9b9631fb712d",
+   "name": "Insect Webbing",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "obake",
+   "id": "90bb8ea3-e3dd-4f3b-997b-ce5c112a4d1b",
+   "name": "Obake",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "summoning-quintuple-rashomon",
+   "id": "90c5a61a-8d6c-47f1-977e-c0b7127e3447",
+   "name": "Summoning: Quintuple Rashōmon",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Invocation - Quintuple Rempart",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Invocation_-_Quintuple_Rempart",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "bretzel",
+   "id": "90dad0e4-24ed-4b50-9c04-4100406c79d6",
+   "name": "Bretzel",
+   "type": "artifact",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Bretzel",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/Bretzel",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 9,
+    "intertitres_declares": 6,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Description",
+     "texte": "C'est un long sabre avec une fine manche noire. Cracker dit qu'il est unique, mais il en possède plusieurs lorsqu'il combat Luffy, grâce au pouvoir du Bisu Bisu no Mi."
+    },
+    {
+     "idx": "2.1",
+     "titre": "Techniques",
+     "texte": "Roll Bretzel (ロールプレッツェル Rōru Purettseru) : Cracker fait tourner Bretzel et donne un coup linéaire à l'adversaire en l'imprégnant de Haki capable de repousser Luffy.\nDouble Roll Bretzel (ダブルロールプレッツェル, Daburu Rōru Purettseru) : Technique similaire à \"Roll Bretzel\" mais avec 2 répliques de Bretzel.\nHoney Bretzel (波動（ハニー）プレッツェル, Hanī Purettseru) : Avec Bretzel, Cracker assène un coup rectiligne vers l'adversaire.\nCrash Pretzel (クラッシュプレッツェル, Kurasshu Purettseru) : Une attaque uniquement vu dans l'anime, plus puissante que le \"Honey Bretzel\". Cracker charge son épée d'étincelles et fonce vers son adversaire."
+    },
+    {
+     "idx": "3.1",
+     "titre": "Arc Whole Cake Island",
+     "texte": "Charlotte Cracker s'introduit dans The Seducing Woods avec Bretzel pour tuer le groupe de Luffy ainsi que son beau-père Pound. Cracker engage ensuite un combat avec Luffy, et utilise son pouvoir pour multiplier son sabre et l'enduit de Haki."
+    },
+    {
+     "idx": "4",
+     "titre": "Futilités",
+     "texte": "Cette arme possède le nom du biscuit Bretzel, ce qui correspond au thème de l'équipage de Big Mom ainsi qu'à la Famille Charlotte."
+    }
+   ],
+   "caracteres": 1147,
+   "source": "wiki FR onepiece.fandom.com/fr — « Bretzel » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Bretzel — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "parchemin-explosif",
+   "id": "90fbb1eb-bd07-4b1a-aa65-aba5629393e3",
+   "name": "Parchemin explosif",
+   "type": "artifact",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Parchemin Explosif",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Parchemin_Explosif",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "short-vassal-500-hostages",
+   "id": "91056742-e1e2-42b4-9627-8d19292b6f82",
+   "name": "Short Vassal (500 Hostages)",
+   "type": "character",
+   "universe": "One Piece",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "kokushi",
+   "id": "910a8852-910d-46ea-91ee-b2ba57ea5988",
+   "name": "Kokushi",
+   "type": "character",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "endurance-curry-pirates",
+   "id": "911d1554-bbbe-464b-b145-2bf873cc5e11",
+   "name": "Endurance Curry Pirates",
+   "type": "status",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Endurance Curry Pirates",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/Endurance_Curry_Pirates",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 8,
+    "intertitres_declares": 6,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Jolly Roger",
+     "texte": "Le Jolly Roger des Endurance Curry Pirates présente deux os croisés et un crâne en colère avec une assiette de curry au sommet de sa tête.\nPlacé sur une base de drapeau noir, la moitié du curry n'est pas visible car il est lui-même noir."
+    },
+    {
+     "idx": "3",
+     "titre": "Force de l'équipage",
+     "texte": "La force globale des Pirates du Curry Endurance est inconnue, bien qu'ils aient été initialement conçus comme une équipe puissante pour affronter les lecteurs lors d'un concours du Weekly Shonen Jump. Lors de ce concours, leurs statistiques étaient de 90 en attaque, 0 en défense et 10 en vitesse, ce qui indique qu'ils possèdent de puissantes capacités offensives, mais pratiquement aucune capacité défensive."
+    },
+    {
+     "idx": "4.1",
+     "titre": "Arc EggHead",
+     "texte": "Les Endurance Curry Pirates ont écouté l'émission du Dr Vegapunk et se sont réjouis lorsque l'existence du One Piece a été mentionnée."
+    },
+    {
+     "idx": "5",
+     "titre": "Futilité",
+     "texte": "KKD, ou Kokonmusō Kaizoku Daikaisen (古今無双海賊大海戦?, signifiant littéralement « Grande bataille navale de pirates sans précédent dans l'histoire »), était un projet de participation des lecteurs de One Piece présenté dans Shonen Jump. Les lecteurs devaient soumettre des équipages de trois personnes avec 100 points de capacité attribués à chaque membre d'équipage dans trois catégories (attaque, défense, vitesse). Ces valeurs étaient ensuite saisies dans un ordinateur qui exécutait une simulation de bataille automatique. Sur les 5 296 équipes qui ont réussi les préliminaires, l'équipe gagnante était « Bakudan » (爆団, « Bomb Gang ») qui a reçu une illustration spéciale d'Eiichiro Oda dans le numéro 8 de Shonen Jump 2000, qui présentait l'équipage avec Luffy, Zoro et Nami. Cependant, Oda n'était pas satisfait de cette situation et créa un nouvel équipage de pirates pour affronter Bakudan, qui devint les Endurance Curry Pirates. Il conçut lui-même Hippie, puis demanda l'aide de Nobuhiro Watsuki et Hiroyuki Takei pour concevoir les deux autres membres de l'équipage. Bakudan remporta plus tard la bataille spéciale contre les Endurance Curry Pirates.\nOda confirme que l'Équipage pirate qui apparait au chapitre 1122 est bien le légendaire équipage pirate composait d'Oda lui-même, Nobuhiro Watsuki et Takei Hiroyuki. Cela date de plus de 25 ans."
+    }
+   ],
+   "caracteres": 2131,
+   "source": "wiki FR onepiece.fandom.com/fr — « Endurance Curry Pirates » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Endurance_Curry_Pirates — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "team-yurui",
+   "id": "911da7ad-7b8d-4652-aadc-a9ec5f0c0c28",
+   "name": "Team Yurui",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Équipe Yurui",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/%C3%89quipe_Yurui",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "ice-release-ice-breaking-sledgehammer",
+   "id": "9122a275-5feb-4611-85e8-2a883359bb40",
+   "name": "Ice Release: Ice-Breaking Sledgehammer",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Hyôton - Marteau Brise Glace",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Hy%C3%B4ton_-_Marteau_Brise_Glace",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "atk-db-eye-laser",
+   "id": "913d7353-45df-4fb7-af73-59d349c478ee",
+   "name": "Eye Laser",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "toroa-island",
+   "id": "9149ff8b-f0a5-43b9-b287-8c9687919de8",
+   "name": "Île de Toroa",
+   "type": "place",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Île de Toroa",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_de_Toroa",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 6,
+    "intertitres_declares": 4,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "2",
+     "titre": "Histoire",
+     "texte": "Il n'y a pas beaucoup d'informations concernant l'histoire de cette île, sauf qu'un pirate nommé Byron y est originaire; il était un descendant d'une longue lignée de musiciens. Il a finalement quitté son île et a voyagé sur Grand Line, où il a été capturé et vendu comme esclave aux Nobles Mondiaux."
+    }
+   ],
+   "caracteres": 300,
+   "source": "wiki FR onepiece.fandom.com/fr — « Île de Toroa » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/%C3%8Ele_de_Toroa — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "earth-release-bullet-rock-technique",
+   "id": "9162f7c8-5f38-4ffa-b914-a168cef04657",
+   "name": "Earth Release: Bullet Rock Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Doton - Balle de Roche",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Doton_-_Balle_de_Roche",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Selon la façon dont il est écrit, « dangan » peut signifier soit « balle, tir, obus » (弾丸), soit « précipice, falaise » (断岩)."
+    }
+   ],
+   "caracteres": 125,
+   "source": "wiki FR naruto.fandom.com/fr — « Doton - Balle de Roche » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Doton_-_Balle_de_Roche — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "wood-release-foo-dog-heads",
+   "id": "91641238-604d-4556-8bca-f1311318131a",
+   "name": "Wood Release: Foo Dog Heads",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Mokuton - Têtes de Lions Gardiens",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Mokuton_-_T%C3%AAtes_de_Lions_Gardiens",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "sage-art-storm-release-light-fang",
+   "id": "9187c053-f64d-440c-85a7-fbd2652a01ca",
+   "name": "Sage Art: Storm Release Light Fang",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Senpô - Ranton Crocs Incandescents",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Senp%C3%B4_-_Ranton_Crocs_Incandescents",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "self-cursing-seal",
+   "id": "91be8391-39f2-43e7-8660-a837c0e490ec",
+   "name": "Self-Cursing Seal",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Sceau Auto Maléfique",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Sceau_Auto_Mal%C3%A9fique",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Ce sceau peut-être un hexagramme. Il pourrait être soit l'hexagramme ䷞ (咸, Japonais : « kan », Chinois : « Xian »), qui peut être interprété comme « influence », ou ce pourrait être l'hexagramme ䷠ (遯, Japonais: « tonne », Chinois : « Dùn »), qui peut être interprété comme « dissimulation »."
+    }
+   ],
+   "caracteres": 291,
+   "source": "wiki FR naruto.fandom.com/fr — « Sceau Auto Maléfique » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Sceau_Auto_Mal%C3%A9fique — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "sakura-blizzard-technique",
+   "id": "91d0fe68-4518-442d-9bce-984e9381f1a6",
+   "name": "Sakura Blizzard Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "recherche-fr",
+   "titreFr": "Blizzard de Sakura",
+   "identite": "meme-nom",
+   "url": "https://naruto.fandom.com/fr/wiki/Blizzard_de_Sakura",
+   "refus": "la page se range parmi les œuvres — Ébauches",
+   "etat": "refus"
+  },
+  {
+   "slug": "okyo",
+   "id": "92091d38-5cf0-469e-99e7-8cb47295b2f2",
+   "name": "Okyō",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Okyô",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Oky%C3%B4",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 6,
+    "intertitres_declares": 5,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "2",
+     "titre": "Apparence",
+     "texte": "Okyô a de longs cheveux bruns clairs et lisses qui pendent un peu sur son visage et porte un maillot de bain de couleur verdâtre. Elle a la peau claire et un visage ordinaire. Elle a de grands yeux clairs et porte un rouge à lèvres rouge très fin."
+    },
+    {
+     "idx": "4",
+     "titre": "Anecdotes",
+     "texte": "Le kanji du nom d'Okyô signifie « capitale » (京), tandis que l'hiragana « O » (お) est généralement utilisé comme préfixe honorifique."
+    }
+   ],
+   "caracteres": 380,
+   "source": "wiki FR naruto.fandom.com/fr — « Okyô » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Oky%C3%B4 — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "atk-bl-nozarashi",
+   "id": "9211f776-917c-4d99-a1a5-eac52ed52257",
+   "name": "Nozarashi",
+   "type": "power",
+   "universe": "Bleach",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "jinnai-douko",
+   "id": "92476072-7372-4f31-9a7b-991883e552e3",
+   "name": "Jinnai Douko",
+   "type": "character",
+   "universe": "Bleach",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "kanoe",
+   "id": "9253d1fb-8855-4387-bd54-ecd22c6970e0",
+   "name": "Kanoe",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Kanoe",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Kanoe",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 5,
+    "intertitres_declares": 5,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Histoire",
+     "texte": "Pour éviter que Hiruzen redevienne Hokage, Danzô envoya Kanoe et neuf autres membres de la Racine l'assassiner. Déguisé en shinobi étranger, il affronta l'Anbu qui accompagnait sa cible, qui se révéla être Kakashi et qui fit ainsi échouer la mission."
+    },
+    {
+     "idx": "2",
+     "titre": "Personnalité",
+     "texte": "Kanoe est très fidèle à Danzô et il est prêt à faire tout ce qu'il lui demande. Il est extrêmement concentré au combat, comme quand il ne montra aucune émotion quand on lui dit d'assassiner Hiruzen."
+    },
+    {
+     "idx": "3",
+     "titre": "Apparence",
+     "texte": "Kanoe a les cheveux bruns courts, presque mi-longs. Il porte la tenue standard de l'Anbu et son masque a la forme d'un bec et des marques violettes."
+    },
+    {
+     "idx": "5",
+     "titre": "Anecdotes",
+     "texte": "« Kanoe » (庚) est le septième signe du calendrier chinois.\nLe nom de Kanoe fut révélé seulement dans les Settei des membres de la Racine publié par le Studio Pierrot."
+    }
+   ],
+   "caracteres": 762,
+   "source": "wiki FR naruto.fandom.com/fr — « Kanoe » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Kanoe — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "vegeta-ssj2",
+   "id": "92621f72-711c-4135-a56d-332cc15fd1da",
+   "name": "Vegeta SSJ2",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "route": "recherche-fr",
+   "titreFr": "Vegeta",
+   "identite": "meme-nom",
+   "url": "https://dragonball.fandom.com/fr/wiki/Vegeta",
+   "refus": "page plus générale — page plus générale que l'entité : « Vegeta » ne couvre pas « Vegeta SSJ2 »",
+   "etat": "refus"
+  },
+  {
+   "slug": "demonic-flute-illusionary-warriors-manipulating-melody",
+   "id": "9262caf7-9b7d-429a-859e-0bfd90762a0c",
+   "name": "Demonic Flute: Illusionary Warriors Manipulating Melody",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Flûte Démoniaque - Mélodie de Manipulation des Guerriers Illusoires",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Fl%C3%BBte_D%C3%A9moniaque_-_M%C3%A9lodie_de_Manipulation_des_Guerriers_Illusoires",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "lightning-tackle",
+   "id": "9267b08f-1f16-4f7f-a963-f6ee3d68694e",
+   "name": "Lightning Tackle",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "mouse-man",
+   "id": "929788d0-ad39-4531-a328-d522524e6453",
+   "name": "Mouse-Man",
+   "type": "character",
+   "universe": "One Piece",
+   "route": "recherche-fr",
+   "titreFr": "Mouseman",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/Mouseman",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 10,
+    "intertitres_declares": 7,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Apparence",
+     "texte": "Mouseman est un homme de taille moyenne au visage long. Il a les cheveux touffus, une fine barbe et une moustache. Il porte un gilet et une paire de lunettes de protection contre l'aviateur sur le front. Grâce à son fruit du démon, il a deux grandes oreilles de souris."
+    },
+    {
+     "idx": "2",
+     "titre": "Personnalité",
+     "texte": "Il semble fidèle à Kaido et au shogun. Il est assez arrogant. Il pense que les gens de classe inférieures doivent se soumettre à ceux qui ont un statut social plus élevé."
+    },
+    {
+     "idx": "4.1",
+     "titre": "Arc du pays des Wa",
+     "texte": "Mouseman a mangé avec Urashima dans un restaurant de la ville de Bakura. Urashima lui a parlé de ses relations avec O-Kiku. Mouseman lui a dit qu'avec son statut élevé, il pourrait détruire sa maison et la prendre de force pour épouse."
+    }
+   ],
+   "caracteres": 674,
+   "source": "wiki FR onepiece.fandom.com/fr — « Mouseman » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Mouseman — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "third-eye",
+   "id": "92bb2e85-c0ef-4ea6-87b1-e9ab92b4ba79",
+   "name": "Third Eye",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Troisième Œil",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Troisi%C3%A8me_%C5%92il",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Dans la culture Bouddhique et Hindouiste, le troisième œil est appelé jnana chakshu, l’œil de la connaissance, ou encore gyana chakshu, l'œil de la sagesse, et symbolise la connaissance de soi."
+    }
+   ],
+   "caracteres": 193,
+   "source": "wiki FR naruto.fandom.com/fr — « Troisième Œil » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Troisi%C3%A8me_%C5%92il — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "vikal",
+   "id": "92c7e187-74a9-4157-ae12-097210d3e39d",
+   "name": "Vikal",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "route": "titre-exact",
+   "titreFr": "Bikal",
+   "identite": "redirection-declaree",
+   "url": "https://dragonball.fandom.com/fr/wiki/Bikal",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 8,
+    "intertitres_declares": 7,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Caractéristiques et personnalité",
+     "texte": "Bikal est une extraterrestre à la peau grise pâle, des cheveux bleus pâles, des yeux d'une pupille dorée (violette lorsqu'elle combat). Elle est vêtue d'un justaucorps violet.\nBikal est très loyale envers ses coéquipiers, notamment envers Kakunsa qu'elle appelle \"Maîtresse Kakunsa\"."
+    },
+    {
+     "idx": "2.1.1",
+     "titre": "Saga de la Survie de l'Univers",
+     "texte": "Elle apparaît pour la première fois en compagnie des membres de la Team Univers 2 lorsque le Grand Prêtre présente les teams au tournoi du plus fort dans le Monde du Vide. Au tournoi, elle encourage les membres de son équipe, notamment les Boules de Feu Kamikaze pendant leur transformation. Lorsque Kakunsa est frappée par une attaque de C-17, Bikal s'est précipitée pour sauver sa coéquipière.\nC-17, voyant son avantage de pouvoir voler, a ciblé Bikal avec des vagues d'énergies et l'a assommé avant de l'envoyer dans les tribunes des spectateurs. Kakunsa, folle de rage après avoir vu sa coéquipière se faire éliminer, décide de la venger mais C-17 l'éliminera à son tour.\nPlus tard, elle encourage Roasie à sa lutte contre Son Goku.\nLorsque Jimizu est éliminé par Freezer, elle garde le corps blessé de Jimizu avec l'aide de ses coéquipiers éliminés, pendant que Per le soigne.\nPlus tard suite à la défaite de Zirloin, Zarbuto et Rabanra, l'univers 2 est condamné à la destruction. C'est alors qu'elle accepte son sort avec amour et amitié, puis cette-dernière est anéantie avec les habitants de son univers.\nElle sera plus tard ressuscité, grâce au vœu de C-17."
+    },
+    {
+     "idx": "3",
+     "titre": "Puissance",
+     "texte": "Bikal a été assez forte pour repousser C-17, mais il ne semble pas avoir subi de dommages. Lorsque C-17 s'est battu sérieusement, elle n'a pas été en mesure de lui tenir tête et a directement été envoyée dans les tribunes hors de l'arène."
+    }
+   ],
+   "caracteres": 1687,
+   "source": "wiki FR dragonball.fandom.com/fr — « Bikal » (CC BY-SA) https://dragonball.fandom.com/fr/wiki/Bikal — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "summoning-technique-hozuki-castle-s-ninken",
+   "id": "92e88e00-96e1-46b4-bb99-3e80b90112a3",
+   "name": "Summoning Technique (Hōzuki Castle's Ninken)",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "recherche-fr",
+   "titreFr": "Ninken",
+   "identite": "meme-nom",
+   "url": "https://naruto.fandom.com/fr/wiki/Ninken",
+   "refus": "page plus générale — page plus générale que l'entité : « Ninken » ne couvre pas « Summoning Technique (Hōzuki Castle's Ninken) »",
+   "etat": "refus"
+  },
+  {
+   "slug": "doctor",
+   "id": "9301d56b-fa9e-476b-bf62-a3fcef5fb8b3",
+   "name": "Doctor",
+   "type": "profession",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Docteur d'Iwa",
+   "identite": "meme-nom",
+   "url": "https://naruto.fandom.com/fr/wiki/Docteur_d'Iwa",
+   "refus": "identité sur squelette phonétique seul — « Docteur d'Iwa » n'a aucun mot commun avec « Doctor »",
+   "etat": "refus"
+  },
+  {
+   "slug": "yogengyo",
+   "id": "931e7bfe-2f4b-4412-bead-8e448af38702",
+   "name": "Yogengyo",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "flying-nail-mist-soaring",
+   "id": "933c2e14-1eba-4d14-a2df-56b6004acbe5",
+   "name": "Flying Nail Mist Soaring",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Ongle Brumeux Essorant Volant",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Ongle_Brumeux_Essorant_Volant",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "shadow-of-the-dancing-leaf",
+   "id": "93512f4b-c40e-4f90-bd88-ffcd7ff9fa66",
+   "name": "Shadow of the Dancing Leaf",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Ombre de la Feuille Morte",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Ombre_de_la_Feuille_Morte",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "chinoike",
+   "id": "9362a98c-112e-4801-a402-76dd7a5c10d2",
+   "name": "Clan Chinoike",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Clan Chinoike",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Clan_Chinoike",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 3,
+    "intertitres_declares": 3,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Histoire",
+     "texte": "Peu de temps après la création des villages cachés, le clan Chinoike devint célèbre pour leurs yeux rouges comme le sang qui, d'après les rumeurs, étaient réputés pour leur pouvoir hypnotique. En effet, il était impossible de détourner le regard après avoir croisé leurs yeux. À cette époque, le daimyô du Pays de la Foudre, fasciné par cette particularité du clan, pris pour seconde épouse une jeune femme du clan Chinoike. Quelques temps après leurs noces, le daimyô trouva mystérieusement la mort. Accablée par la tristesse et la jalousie, sa première femme accusa ouvertement le clan Chinoike d'avoir orchestré la mort de son bien-aimé. Beaucoup se rangèrent aux côtés de la première épouse, convaincus d'une manigance de la part des Chinoike afin de s'emparer du pouvoir. Ils furent donc chassés du pays par le clan Uchiwa, engagé par la première épouse afin de reclure les Chinoike le plus loin possible, ce qui conduisit à leur isolement dans la Vallée de l'Enfer, au Pays des Sources Chaudes. À cause de leur exil, l'existence du clan fut effacée des mémoires, à tel point que Yu déclara que le clan avait péri. En réalité, les Chinoike survécurent pendant de nombreuses années dans des conditions précaires, jusqu'à ce que la vie en communauté restreinte apporte son lot de conflits internes au sein du clan. Au final ils s'entretuèrent, ne laissant plus que deux survivants : En Oyashiro et sa fille, Chino. Étouffé par la honte et la culpabilité d'avoir tué son clan, l'homme décida de cacher sa véritable identité à sa fille, l'élevant en lui faisant croire qu'il l'avait recueillie lors d'un voyage aux Pays des Sources Chaudes et qu'elle était la dernière survivante de son clan.\nQuelques mois après le massacre du clan Chinoike, Hidan découvrit la Vallée de l'Enfer et rapporta au village de Yu qu'aucune trace de vie n'animait les lieux. Les dirigeants conclurent que les Chinoike s'étaient éteints et interdirent définitivement l'accès à cette vallée."
+    },
+    {
+     "idx": "2",
+     "titre": "Capacités",
+     "texte": "Les membres du clan Chinoike maniaient un dôjutsu appelé Ketsuryûgan, un œil rouge sang octroyant des capacités de genjutsu comparables au Sharingan. Sa puissance lui valut une grande reconnaissance et d'être comparé aux Trois Grands Dôjutsu.\nIls possèdent également la capacité de manipuler les liquides contenant du fer comme le sang ou l'eau chargée en fer se trouvant dans la Vallée de l'Enfer. Afin de pouvoir utiliser pleinement cette capacité, il est toutefois nécessaire que leur chakra entre en contact avec le liquide en question. C'est pourquoi, en général, Chino s'entaille les veines ; c'est une manière rapide afin que son sang serve de connexion entre son chakra et le fer qu'elle souhaite manier."
+    },
+    {
+     "idx": "3",
+     "titre": "Anecdotes",
+     "texte": "Dans l'anime, les discordes au sein des Chinoike concernent un désir de vengeance envers le clan Uchiwa qu'ils tiennent pour responsable de leur exil ; En Oyashiro décide donc d'assassiner ses pairs afin qu'ils ne mettent pas leurs plans à exécution."
+    }
+   ],
+   "caracteres": 2930,
+   "source": "wiki FR naruto.fandom.com/fr — « Clan Chinoike » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Clan_Chinoike — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "mind-body-transmission-technique",
+   "id": "937b28f0-d057-4923-a9c2-35752423ca74",
+   "name": "Mind Body Transmission Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Télépathie",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/T%C3%A9l%C3%A9pathie",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 3,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Utilisation",
+     "texte": "En l'utilisant, les Yamanaka peuvent servir comme intermédiaire quand une personne veut communiquer avec une autre, en étant en contact physique avec la personne qui veut transmettre un message. Le ninja du clan Yamanaka peut également communiquer simultanément avec plusieurs personnes et ces personnes peuvent communiquer entre elles.\nDe plus, cette technique peut également causer des dommages à son utilisateur parce que plus le nombre de personnes, la quantité de pensées, de sentiments et d'images avec lesquelles elle communique est grand plus il y a de risque sur son utilisateur, c'est pour cette raison que la durée de communication est plus courte. Quand Inoichi utilisa la technique pour communiquer avec tous les ninjas de l'Alliance Shinobi pendant plus de dix secondes, il eut des saignements de nez."
+    }
+   ],
+   "caracteres": 815,
+   "source": "wiki FR naruto.fandom.com/fr — « Télépathie » (CC BY-SA) https://naruto.fandom.com/fr/wiki/T%C3%A9l%C3%A9pathie — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "kaima-form",
+   "id": "93a1868b-716f-4aec-84b5-e9e55db95fd2",
+   "name": "Kaima Form",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Transformation en Kaima",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Transformation_en_Kaima",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 3,
+    "intertitres_declares": 3,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Développement",
+     "texte": "Isaribi a été l’un des premiers habitants du Pays de la Mer à avoir été enlevé pour les expériences et est devenu le seul prototype encore existant. Finalement, Orochimaru a annulé le projet par désintérêt, mais Amachi a réussi à le finaliser malgré l'abandon de son sponsor, en appliquant le processus sur lui-même.\nL'expérience a laissé des parties du corps d'Isaribi en permanence sur le tartre et Amachi a faussement promis qu'il pourrait la ramener à la normale, mais a avoué par la suite qu'il n'avait pas de traitement pour elle et avait au contraire planifié de la disséquer une fois qu'il avait fini de l'utiliser. Les agents envoyés par Konoha estiment que Tsunade sera en mesure d’annuler les modifications d’Isaribi."
+    },
+    {
+     "idx": "2",
+     "titre": "Utilisation",
+     "texte": "La transformation en Kaima (海魔, Signifiant littéralement : Démon de l'Océan) peut également changer la couleur des yeux de l'utilisateur, comme dans le cas d'Amachi. Cette forme leur donne les compétences de combat suprême dans l'eau, car ils peuvent se déplacer dans l'eau beaucoup plus rapidement que la normale, en plus de leur donner la possibilité de respirer sous l'eau. De plus, les écailles utilisées sous cette forme sont assez solide pour arrêter un kunai. Amachi démontre également qu'il peut tirer ses écailles comme une arme.\nAmachi avait l'intention d'utiliser les avantages de cette technique pour contrôler les voies navigables du monde, ce qui restreindrait toutes les activités de transport, permettant ainsi à Amachi de contrôler les industries commerciales, de la même manière que les fonctions de la Compagnie Gatô."
+    },
+    {
+     "idx": "3",
+     "titre": "Anecdotes",
+     "texte": "Kisame Hoshigaki a démontré divers traits similaires à ceux de la transformation en Kaima, malgré le fait de ne pas subir la chirurgie expérimentale, telle que la transformation (lors de la fusion avec Samehada), la nage libre à grande vitesse et même la respiration sous l’eau."
+    }
+   ],
+   "caracteres": 1842,
+   "source": "wiki FR naruto.fandom.com/fr — « Transformation en Kaima » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Transformation_en_Kaima — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "starch-syrup-gun",
+   "id": "93b359c3-a4d8-456c-b38f-63ab15a16b8f",
+   "name": "Starch Syrup Gun",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Canon à Grenadine",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Canon_%C3%A0_Grenadine",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 3,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Le mizuame est un édulcorant japonais obtenu par conversion de l'amidon en sucres. Il se présente sous la forme d'un liquide clair, épais et surtout collant. Il peut être traduit littéralement par « bonbon d'eau », ce qui souligne sa ressemblance avec l'eau et explique pourquoi il est utilisé dans une technique Suiton."
+    }
+   ],
+   "caracteres": 320,
+   "source": "wiki FR naruto.fandom.com/fr — « Canon à Grenadine » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Canon_%C3%A0_Grenadine — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "stan-maley",
+   "id": "93bf2da6-a74c-456c-82dd-a17d07266f37",
+   "name": "Stan Maley",
+   "type": "artifact",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Stan Maley",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/Stan_Maley",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 5,
+    "intertitres_declares": 3,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Apparence",
+     "texte": "Le Stan Maley avait des coques vertes avec une doublure brune, ainsi que des voiles de la Marine ordinaires. Il avait l'apparence d'un navire de la Marine normal, mais il est maintenant endommagé à cause de la tempête."
+    },
+    {
+     "idx": "2.1",
+     "titre": "Arc du G-8",
+     "texte": "Il est aperçu au sein d'un groupe de navires subissant quelques réglages avant de partir pour le QG de la Marine. On a presque refusé de les laisser rentrer parce que des pirates s'étaient introduits dans la base, mais lorsqu'ils ont dit qu'il y avait beaucoup de blessés à bord, la base a ouvert ses portes pour les faire soigner."
+    }
+   ],
+   "caracteres": 549,
+   "source": "wiki FR onepiece.fandom.com/fr — « Stan Maley » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Stan_Maley — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "three-sand-siblings",
+   "id": "93d6c10e-97ec-4e36-8b09-1f8522c1fce8",
+   "name": "Three Sand Siblings",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Fratrie du Sable",
+   "identite": null,
+   "url": "https://naruto.fandom.com/fr/wiki/Fratrie_du_Sable",
+   "refus": "pont nu sans preuve de nom",
+   "etat": "refus"
+  },
+  {
+   "slug": "banna",
+   "id": "93ea6179-1afc-49dc-bb03-79e6e0adfa10",
+   "name": "Banna",
+   "type": "place",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "smile-de-mouton",
+   "id": "93fa7c7f-d38d-47e6-963e-a41e88ca0ca8",
+   "name": "SMILE de mouton",
+   "type": "power",
+   "universe": "One Piece",
+   "route": "recherche-fr",
+   "titreFr": "SMILE",
+   "identite": "meme-nom",
+   "url": "https://onepiece.fandom.com/fr/wiki/SMILE",
+   "refus": "page plus générale — page plus générale que l'entité : « SMILE » ne couvre pas « SMILE de mouton »",
+   "etat": "refus"
+  },
+  {
+   "slug": "shadow-stroke",
+   "id": "940b3f7f-224a-4cf1-aaae-98ae7021deed",
+   "name": "Shadow Stroke",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Course d'Ombre",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Course_d'Ombre",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "byakuya-gang",
+   "id": "940d2ae3-a5be-46e8-8b17-647aae0b1d08",
+   "name": "Byakuya Gang",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Nuits Blanches",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Nuits_Blanches",
+   "refus": "la page se range parmi les œuvres — Ébauches",
+   "etat": "refus"
+  },
+  {
+   "slug": "wabisuke-bleach",
+   "id": "9457bad1-485a-4d31-96c8-8e81218b36db",
+   "name": "Wabisuke",
+   "type": "artifact",
+   "universe": "Bleach",
+   "route": "titre-exact",
+   "titreFr": "Wabisuke (Esprit Zanpakutō)",
+   "identite": "meme-nom",
+   "url": "https://bleach.fandom.com/fr/wiki/Wabisuke_(Esprit_Zanpakut%C5%8D)",
+   "refus": "parenthèse de désambiguïsation",
+   "etat": "refus"
+  },
+  {
+   "slug": "needle-hell",
+   "id": "9471470c-b2a1-4e62-8b25-23cc116039f8",
+   "name": "Needle Hell",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Aiguilles Infernales",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Aiguilles_Infernales",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Cette technique, ainsi que toute la scène du combat des trois sannin contre Hanzô, ont été retirés dans la version française de l'anime."
+    }
+   ],
+   "caracteres": 136,
+   "source": "wiki FR naruto.fandom.com/fr — « Aiguilles Infernales » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Aiguilles_Infernales — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "earth-release-rock-section-cane",
+   "id": "948616cf-996d-4c03-8879-2da27f3195d9",
+   "name": "Earth Release: Rock Section Cane",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Doton - Bâton de Roche",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Doton_-_B%C3%A2ton_de_Roche",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "gladiator-hera",
+   "id": "94a89e18-bb40-4e6d-bed1-ab3cc260c1ad",
+   "name": "Gladiator Hera",
+   "type": "character",
+   "universe": "One Piece",
+   "route": "langlink",
+   "titreFr": "Hera",
+   "identite": "meme-nom",
+   "url": "https://onepiece.fandom.com/fr/wiki/Hera",
+   "refus": "page plus générale — page plus générale que l'entité : « Hera » ne couvre pas « Gladiator Hera »",
+   "etat": "refus"
+  },
+  {
+   "slug": "wire-bind",
+   "id": "94aa2d46-fe26-4b5e-815b-d6ffb7f60c42",
+   "name": "Wire Bind",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Ligotage de Fils",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Ligotage_de_Fils",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "time-release-technique",
+   "id": "94bbf90f-38e3-4117-9e5d-f19e12a6c72d",
+   "name": "Time-Release Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Technique à Retardement",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Technique_%C3%A0_Retardement",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "logistical-support-and-medical-division",
+   "id": "9500e36e-f0ef-4fc5-bf56-672b89f9d5e5",
+   "name": "Logistical Support and Medical Division",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Unité d'Assistance Médicale",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Unit%C3%A9_d'Assistance_M%C3%A9dicale",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "epee-de-lespoir",
+   "id": "953f4e4a-7ca2-4967-904e-b48ba9251e70",
+   "name": "Épée de l'Espoir",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "shifting-body-technique",
+   "id": "954d3976-c852-47b7-9f4a-a8730018f331",
+   "name": "Shifting Body Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Technique de Déplacement du Corps",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Technique_de_D%C3%A9placement_du_Corps",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "chakra-hair-trap-technique",
+   "id": "95594913-0870-4822-99d7-22e39b2a9686",
+   "name": "Chakra Hair Trap Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Piège des Cheveux de Chakra",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Pi%C3%A8ge_des_Cheveux_de_Chakra",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Dans le jeu Naruto: Clash of Ninja Revolution 2, Ino utilisa une technique similaire mais en utilisant des pétales de roses à la place des cheveux.\nCette technique est similaire à la Manipulation des Ombres, les deux servent à piéger et immobiliser leur cible."
+    }
+   ],
+   "caracteres": 260,
+   "source": "wiki FR naruto.fandom.com/fr — « Piège des Cheveux de Chakra » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Pi%C3%A8ge_des_Cheveux_de_Chakra — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "takajo-torikai",
+   "id": "9564a6a8-652a-4d6d-9702-24f350398703",
+   "name": "Takajō Torikai",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Takajô Torikai",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Takaj%C3%B4_Torikai",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 6,
+    "intertitres_declares": 5,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "2",
+     "titre": "Apparence",
+     "texte": "Takajô a de petits yeux noirs, des cheveux blonds mi-longs sur lesquels il porte un bandana faisant office de bandeau frontal. Il porte également la tenue standard des ninjas de Konoha sans le gilet de protection."
+    },
+    {
+     "idx": "3.1",
+     "titre": "Sommet des Cinq Kage",
+     "texte": "Quelques temps après l'Invasion de Pain, il fut chargé, avec son équipe, du maintien de l'information à l'intérieur et à l'extérieur du village. Il fut triste lorsqu'il découvrit l'élection de Danzô comme prochain Hokage."
+    },
+    {
+     "idx": "4",
+     "titre": "Anecdotes",
+     "texte": "Le nom de famille de Takajô, « Torikai » (鳥飼), signifie « éleveur d'oiseaux », tandis que son prénom, lorsqu'il est écrit « 鉄扇 », signifie « fauconnier »."
+    }
+   ],
+   "caracteres": 588,
+   "source": "wiki FR naruto.fandom.com/fr — « Takajô Torikai » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Takaj%C3%B4_Torikai — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "eighty-gods-vacuum-attack",
+   "id": "956fb3eb-ece4-4dd4-ad81-fbf9d489ff7a",
+   "name": "Eighty Gods Vacuum Attack",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Attaque de Vide des Quatre-Vingt Dieux",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Attaque_de_Vide_des_Quatre-Vingt_Dieux",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 4,
+    "intertitres_declares": 2,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Utilisation",
+     "texte": "Par sa maîtrise du chakra, Kaguya charge du chakra dans sa paume, qu'elle peut soit libérer comme un barrage de poings, soit le manifester autour de ses bras pour attaquer avec. La technique est assez forte pour causer des ondes de choc massives lors de l'impact et même détruire le Corps Complet - Susanô du Chakra du Rikudô facilement. Quand elle est associée au Byakugan, elle a le potentiel de devenir la plus forte capacité offensive."
+    },
+    {
+     "idx": "2",
+     "titre": "Anecdotes",
+     "texte": "Le nom de cette technique peut trouver ses racines dans un conte folklorique japonais, connu comme le Lièvre d'Inaba. Dans cette histoire, Ôkuninushi et ses frères, qui représentaient quatre-vingt dieux, étaient tous des prétendants demandant la main de la Princesse Yagami d'Inaba, lui demandant par la même occasion en mariage."
+    }
+   ],
+   "caracteres": 768,
+   "source": "wiki FR naruto.fandom.com/fr — « Attaque de Vide des Quatre-Vingt Dieux » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Attaque_de_Vide_des_Quatre-Vingt_Dieux — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "atk-db-gamma-burst-flash",
+   "id": "959485d3-3aa2-4747-b449-522b8e036008",
+   "name": "Gamma Burst Flash",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": "titre-exact",
+   "titreFr": "Gamma Burst Flash",
+   "identite": "titre-egal",
+   "url": "https://dragonball.fandom.com/fr/wiki/Gamma_Burst_Flash",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "hurricane-thunderclap",
+   "id": "95a2780f-8e9a-4668-91d5-be1adbf87b0b",
+   "name": "Hurricane Thunderclap",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Formation de Barrière Destructive",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Formation_de_Barri%C3%A8re_Destructive",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "wind-release-shakujo-twister",
+   "id": "95b1e24e-1972-4c4f-b5a1-6e958e8d6927",
+   "name": "Wind Release: Shakujō Twister",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Fûton - Tornade de Shakujô",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/F%C3%BBton_-_Tornade_de_Shakuj%C3%B4",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "whac-a-mole-technique",
+   "id": "95b86ebb-443e-4dfb-b954-9719e756b535",
+   "name": "Whac-A-Mole Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Technique de la Taupe Giflée",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Technique_de_la_Taupe_Gifl%C3%A9e",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "mental-resistance-technique",
+   "id": "95bef486-e406-4cd2-b78d-771fa210a477",
+   "name": "Mental Resistance Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "recherche-fr",
+   "titreFr": "Résistance Mentale",
+   "identite": "meme-nom",
+   "url": "https://naruto.fandom.com/fr/wiki/R%C3%A9sistance_Mentale",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "nitro-fruit",
+   "id": "95eef09e-5560-4deb-abd8-30db9e9d6ef1",
+   "name": "Nitro-Fruit",
+   "type": "power",
+   "universe": "One Piece",
+   "route": "recherche-fr",
+   "titreFr": "Nitro",
+   "identite": "meme-nom",
+   "url": "https://onepiece.fandom.com/fr/wiki/Nitro",
+   "refus": "page plus générale — page plus générale que l'entité : « Nitro » ne couvre pas « Nitro-Fruit »",
+   "etat": "refus"
+  },
+  {
+   "slug": "cape-turban-piccolo",
+   "id": "95fba830-544b-4810-8e68-d66d26d0730b",
+   "name": "Cape & turban lestés de Piccolo",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "route": "recherche-fr",
+   "titreFr": "Piccolo",
+   "identite": "meme-nom",
+   "url": "https://dragonball.fandom.com/fr/wiki/Piccolo",
+   "refus": "page plus générale — page plus générale que l'entité : « Piccolo » ne couvre pas « Cape & turban lestés de Piccolo »",
+   "etat": "refus"
+  },
+  {
+   "slug": "wind-release-whirlwind-fist",
+   "id": "96005346-7021-4b1a-af11-0c04c75e5743",
+   "name": "Wind Release: Whirlwind Fist",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Fûton - Poing Tourbillon",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/F%C3%BBton_-_Poing_Tourbillon",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Dans Naruto Shippûden: Ultimate Ninja 5, Asuma frappe son adversaire avec une grande rafale de vent qui est imprégnée de flammes, rendant la technique plus destructrice."
+    }
+   ],
+   "caracteres": 169,
+   "source": "wiki FR naruto.fandom.com/fr — « Fûton - Poing Tourbillon » (CC BY-SA) https://naruto.fandom.com/fr/wiki/F%C3%BBton_-_Poing_Tourbillon — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "antlion-ninja-arts-ephemeral",
+   "id": "960e7b9d-c113-4c22-9c28-9317d0e8e121",
+   "name": "Antlion Ninja Arts: Ephemeral",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Ninpô Kagerô - Évanescence",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Ninp%C3%B4_Kager%C3%B4_-_%C3%89vanescence",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "aoneko",
+   "id": "961014d7-62de-4425-98da-4a08eec8b8f4",
+   "name": "Aoneko",
+   "type": "character",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "doto-s-three-man-team",
+   "id": "96590726-9621-44f1-b6f1-b9a4c933b1b6",
+   "name": "Dotō's Three-Man-Team",
+   "type": "status",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "atk-db-dragon-assault",
+   "id": "966b94c0-fd51-4444-9fc1-a18c5b6205e7",
+   "name": "Dragon Assault",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "jimei",
+   "id": "96887a7c-9a5b-45a3-b9e2-6e42735c7129",
+   "name": "Jimei",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Jimei",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Jimei",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 3,
+    "intertitres_declares": 2,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1.1",
+     "titre": "Examen Chûnin",
+     "texte": "Il fut attrapé en train de tricher cinq fois de suite lors de la première épreuve de l'Examen Chûnin ce qui le disqualifia ainsi que le reste de son équipe."
+    }
+   ],
+   "caracteres": 156,
+   "source": "wiki FR naruto.fandom.com/fr — « Jimei » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Jimei — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "earth-release-iron-fist-prison",
+   "id": "969e9031-8d74-4afd-a64f-5eee5ab7e44c",
+   "name": "Earth Release: Iron Fist Prison",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Doton - Prison de Fer",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Doton_-_Prison_de_Fer",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 3,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Durant la nuit que Ônoki et ses subordonnés ont passée avant la réunion des Kage, les murs de l'abri dans lequel ils sont restés ressemblaient beaucoup aux murs créés par cette technique , cependant il n'a pas été précisé si cette technique a réellement été utilisée pour créer l'abri ni même qui l'a utilisé."
+    }
+   ],
+   "caracteres": 309,
+   "source": "wiki FR naruto.fandom.com/fr — « Doton - Prison de Fer » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Doton_-_Prison_de_Fer — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "infiltration-and-reconnaissance-party",
+   "id": "96b3895a-25af-4715-8ce9-e1a6eb6b5bd2",
+   "name": "Infiltration and Reconnaissance Party",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Détachement d'Infiltration et de Reconnaissance",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/D%C3%A9tachement_d'Infiltration_et_de_Reconnaissance",
+   "refus": "la page se range parmi les œuvres — Ébauches",
+   "etat": "refus"
+  },
+  {
+   "slug": "fruit-du-tchou-tchou",
+   "id": "96fe26e0-69d5-4910-8d02-70714ccac83c",
+   "name": "Fruit du Tchou-Tchou",
+   "type": "power",
+   "universe": "One Piece",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "resonating-echo-drill",
+   "id": "982b826a-612e-488a-891c-7097ca38aaae",
+   "name": "Resonating Echo Drill",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Affection par Sons Perçants",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Affection_par_Sons_Per%C3%A7ants",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "toad-elder",
+   "id": "9831c7c1-507d-4aec-a9ec-7939b9be850f",
+   "name": "Toad Elder",
+   "type": "profession",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "atk-db-arrow-knee",
+   "id": "98789088-9150-4302-a35e-b4060b35a14f",
+   "name": "Arrow Knee",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "horn-breaking",
+   "id": "98790ad9-c5df-4c96-9a45-5d1fab26f96c",
+   "name": "Horn Breaking",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Estocade des Cornes",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Estocade_des_Cornes",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "cook-shinpachi",
+   "id": "9888b5e9-68eb-4ff6-9195-98d6f3666077",
+   "name": "Cook Shinpachi",
+   "type": "character",
+   "universe": "One Piece",
+   "route": "recherche-fr",
+   "titreFr": "Shinpachi",
+   "identite": "meme-nom",
+   "url": "https://onepiece.fandom.com/fr/wiki/Shinpachi",
+   "refus": "page plus générale — page plus générale que l'entité : « Shinpachi » ne couvre pas « Cook Shinpachi »",
+   "etat": "refus"
+  },
+  {
+   "slug": "atk-db-angry-blow",
+   "id": "98d828bc-8485-4922-ae86-21c879f46cd4",
+   "name": "Angry Blow",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "ile-navire",
+   "id": "98e1f727-52f9-45f3-9db3-4d51fa34a6b9",
+   "name": "Île Navire",
+   "type": "artifact",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Île Navire",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Navire",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 4,
+    "intertitres_declares": 3,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Apparence",
+     "texte": "Le bateau est une minuscule île flottante avec de hauts arbres comme mâts, sa base est faite de terre purement solide ainsi que de roche, le tout flottant dans les airs, avec le pont du bateau implanté dans la terre. Les voiles sont toutes de forme rectangulaire, de type Orientales, et son Jolly Roger sur la plus grande voile. On peut voir de longues rames sur les deux côtés du bateau, mais il n'est pas dit si les rames ont leur importance dans le déplacement du navire ou si c'est seulement le résultat de la capacité de Shiki. La proue est un lion oriental en or massif."
+    },
+    {
+     "idx": "2",
+     "titre": "Capacités",
+     "texte": "Le bateau tient en lévitation grâce aux pouvoirs du Fuwa Fuwa no Mi, le fruit de Shiki. En plus d'être le capitaine de l'équipage, Shiki tient également la barre en place de timonier, de plus, n'importe quel changement de trajectoire doit être informé par l'équipage à Shiki pour effectuer le changement de direction. Avec son pouvoir, le bateau a montré une facile manœuvrabilité, même en cas de météo difficile.\nLe navire dispose de navigateurs qualifiés ainsi que de météorologues va sa position aérienne, le bateau est très bien équipé, avec un baromètre ainsi qu'un Log Pose situé dans la salle de commandement. Cependant, l'équipage semble avoir des limites dans la navigation sur Grand Line, n'ayant pas réussi à détecter l'approche d'un cyclone alors que Nami l'avait déjà repéré.\nCe qui est arrivé au bateau après le passage du cyclone est inconnu, en effet, Shiki utilisera la forteresse de l'île flottante de Merveille comme base d'opération pour le reste de son plan ."
+    },
+    {
+     "idx": "3",
+     "titre": "Futilités",
+     "texte": "C'est le deuxième bateau de pirates qui à l'origine était une île, mais a été modifié pour devenir un bateau pirate; le premier étant Thriller Bark de Gecko Moria.\nC'est le deuxième bateau révélé qui utilise les pouvoirs d'un Fruit du Démon pour voler, le premier étant l'Arche Maxime d'Ener."
+    }
+   ],
+   "caracteres": 1848,
+   "source": "wiki FR onepiece.fandom.com/fr — « Île Navire » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Navire — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "atk-db-demon-cannon",
+   "id": "98e5a273-eb51-4d6e-9511-e0a5b9bbf17a",
+   "name": "Demon Cannon",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "momiji-tanzaku",
+   "id": "98f47df7-cbdc-45a1-9387-199e67d9b71f",
+   "name": "Momiji (Tanzaku)",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Momiji (Tanzaku)",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Momiji_(Tanzaku)",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 5,
+    "intertitres_declares": 4,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "2",
+     "titre": "Apparence",
+     "texte": "Momiji a de longs cheveux bleus lisses et les yeux brun clair, elle porte un haut mauve avec des bordures blanches-roses."
+    }
+   ],
+   "caracteres": 121,
+   "source": "wiki FR naruto.fandom.com/fr — « Momiji (Tanzaku) » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Momiji_(Tanzaku) — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "sand-stream",
+   "id": "98fa8633-d321-4711-a5de-4d77d48a72db",
+   "name": "Sand Stream",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "ninja-mercenaire",
+   "id": "994174ab-193b-4731-a8f0-fe453289fc89",
+   "name": "Ninja mercenaire",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Ninja Mercenaire",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Ninja_Mercenaire",
+   "refus": "la page se range parmi les œuvres — Ébauches",
+   "etat": "refus"
+  },
+  {
+   "slug": "shadow-mirror-body-changing-method",
+   "id": "997a9176-1a8e-421e-9abe-d994d242924f",
+   "name": "Shadow Mirror Body Changing Method",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Transformation du Miroir des Ombres",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Transformation_du_Miroir_des_Ombres",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Description",
+     "texte": "Pour utiliser cette technique, l'utilisateur doit configurer la zone par des symboles en forme de cercle. Après avoir effectué des signes incantatoires spécifique à cette technique tout en restant debout dans la zone prévu, la technique s'activera. Des rubans de lumière s'étendent de divers endroits sur le corps de l'utilisateur, les recouvrant complètement alors qu'ils transforment l'utilisateur en ce qu'il désire, y compris tous les éléments nécessaires tels que sa tenue. Seul, la voix de l'utilisateur ne change pas. Contrairement à une transformation régulière, cette variante est permanente, avec prétendument aucun moyen pour l'utilisateur de revenir à sa forme d'origine."
+    }
+   ],
+   "caracteres": 683,
+   "source": "wiki FR naruto.fandom.com/fr — « Transformation du Miroir des Ombres » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Transformation_du_Miroir_des_Ombres — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "erupting-propulsion-fist",
+   "id": "9980d337-85c2-4197-b6e6-91fa3416b1a1",
+   "name": "Erupting Propulsion Fist",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Absorption de Vapeur",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Absorption_de_Vapeur",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Bien que sans nom dans le manga et l'anime, cette technique a été nommée dans le jeu Naruto Shippûden: Ultimate Ninja Storm 3."
+    }
+   ],
+   "caracteres": 126,
+   "source": "wiki FR naruto.fandom.com/fr — « Absorption de Vapeur » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Absorption_de_Vapeur — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "atk-db-i-m-here-to-kill-you",
+   "id": "99936780-399e-4513-a8a4-8d4f478ca66e",
+   "name": "I'm Here to Kill You",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "liberation-du-magnetisme-jiton",
+   "id": "99a0db2c-7bf0-4426-a648-b42ce8db2948",
+   "name": "Libération du Magnétisme (Jiton)",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Jiton",
+   "identite": "meme-nom",
+   "url": "https://naruto.fandom.com/fr/wiki/Jiton",
+   "refus": "page plus générale — page plus générale que l'entité : « Jiton » ne couvre pas « Libération du Magnétisme (Jiton) »",
+   "etat": "refus"
+  },
+  {
+   "slug": "dorakiya",
+   "id": "99a259e4-3cc3-436b-b133-2cada64e5d86",
+   "name": "Dorakiya",
+   "type": "place",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "captain-of-the-konoha-military-police-force",
+   "id": "99b585b0-620e-4126-bb38-216a2cafc9fe",
+   "name": "Captain of the Konoha Military Police Force",
+   "type": "profession",
+   "universe": "Naruto",
+   "route": "recherche-fr",
+   "titreFr": "Konoha",
+   "identite": "meme-nom",
+   "url": "https://naruto.fandom.com/fr/wiki/Konoha",
+   "refus": "page plus générale — page plus générale que l'entité : « Konoha » ne couvre pas « Captain of the Konoha Military Police Force »",
+   "etat": "refus"
+  },
+  {
+   "slug": "typhoon-release-consecutive-bursting-strong-winds",
+   "id": "99ba57f4-f713-450d-8c6b-886ffea1a7f4",
+   "name": "Typhoon Release: Consecutive Bursting Strong Winds",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Taiton - Tempête du Cauchemar",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Taiton_-_Temp%C3%AAte_du_Cauchemar",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Utilisation",
+     "texte": "Après avoir exécuté les mudrâ nécessaires, il libère un vortex cyclonique qui peut être utilisé pour simplement limiter le champ de vision de son adversaire ou pour causer des gros dégâts aux alentours, fauchant tout se qui se trouve autour de lui. Avec de l'effort il peut accroître la portée et l'intensité du cyclone, étant capable de recouvrir une île entière."
+    }
+   ],
+   "caracteres": 364,
+   "source": "wiki FR naruto.fandom.com/fr — « Taiton - Tempête du Cauchemar » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Taiton_-_Temp%C3%AAte_du_Cauchemar — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "black-secret-technique-machine-one-shot",
+   "id": "99bb6060-1288-4207-a8d1-107f65e7b022",
+   "name": "Black Secret Technique Machine One Shot",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Technique de la Chambre Noire",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Technique_de_la_Chambre_Noire",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 2,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "2",
+     "titre": "Anecdotes",
+     "texte": "Le nom de cette technique est un jeu de mot sur un jouet japonais populaire, Kurohige Kiki Ippatsu (Français : Pic' Pirate), dans lequel le but est de mettre de petites épées en plastique dans un tonneau pour faire sauter le pirate au centre.\nCette technique est similaire à la chambre de torture du diable, un tour de magie où un magicien semble poignarder son assistant, enfermé dans une boîte avec des épées.\nLa traduction anglaise du nom de cette technique, Iron Maiden, fait référence à la vierge de fer, un appareil de torture semblable à un cercueil avec des pointes acérées qui tapissent l'intérieur. La victime est obligée de se tenir debout à l'intérieur jusqu'à ce qu'elle n'en puisse plus et qu'elle soit obligée de s'appuyer sur les pointes, ce qui entraîne une mort lente et douloureuse.\nDans Naruto: Ultimate Ninja Storm, Kuroari est empalé dans les airs, est projeté au sol, puis explose."
+    }
+   ],
+   "caracteres": 904,
+   "source": "wiki FR naruto.fandom.com/fr — « Technique de la Chambre Noire » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Technique_de_la_Chambre_Noire — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "sand-formation-shisa",
+   "id": "99c06459-b539-4cb2-8d9e-fe6d77080aa9",
+   "name": "Sand Formation: Shisa",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Défense de Sable - Lions Gardiens",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/D%C3%A9fense_de_Sable_-_Lions_Gardiens",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Le nom de cette technique fait référence au Shîsâ, une décoration traditionnelle des Ryukyuan, allant généralement par paires qui ressemblent à un croisement entre un lion et un chien présent dans la mythologie d'Okinawa."
+    }
+   ],
+   "caracteres": 221,
+   "source": "wiki FR naruto.fandom.com/fr — « Défense de Sable - Lions Gardiens » (CC BY-SA) https://naruto.fandom.com/fr/wiki/D%C3%A9fense_de_Sable_-_Lions_Gardiens — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "genjutsu-bell-sound-clone",
+   "id": "9a5885be-c7fa-4966-881e-30e788e3b5d5",
+   "name": "Genjutsu: Bell Sound Clone",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Genjutsu - Clone du Son de Cloche",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Genjutsu_-_Clone_du_Son_de_Cloche",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "ran-fuan",
+   "id": "9a89b982-7f65-45f8-bd80-aeedcf6e9fb2",
+   "name": "Ran Fuan",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "allied-mothers-force",
+   "id": "9a8d8894-6803-49d8-8da6-b56b725f3687",
+   "name": "Allied Mothers Force",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Force Alliée des Mères",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Force_Alli%C3%A9e_des_M%C3%A8res",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "atk-db-charged-ki-wave",
+   "id": "9a907c17-b391-4dfe-bef4-c750e47b7b17",
+   "name": "Charged Ki Wave",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "dread-lion",
+   "id": "9a94cb4f-5e6f-4ed7-ad69-ea3ada60eb2d",
+   "name": "Dread Lion",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Dread Lion",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Dread_Lion",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 4,
+    "intertitres_declares": 4,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Histoire",
+     "texte": "Il y a longtemps, quand Itachi et Sasuke étaient enfants, ils jouaient à un jeu qui consistait à chercher des chats pour compléter leur « Encyclopédie des Pattes ». Face aux deux frères, le lion s'est effondré et s'est mis à ce qui semblait être une supplication pour sauver sa vie."
+    },
+    {
+     "idx": "3",
+     "titre": "Apparence",
+     "texte": "Le Dread Lion est un lion gigantesque, de couleur beige, dont la crinière brune est coiffée en dreadlocks. Son empreinte de patte est immense, ce qui montre qu'il est bien plus grand qu'un lion ordinaire. Il a également un museau brun."
+    },
+    {
+     "idx": "4",
+     "titre": "Anecdotes",
+     "texte": "Ce personnage pourrait s'inspirer du Lion Poltron de Le Magicien d'Oz, car il ressemble au personnage tel qu'il est représenté dans la version cinématographique de 1939. Le Lion peureux semblait d'abord féroce, mais s'est ensuite effondré en une silhouette peureuse et gémissante lorsqu'il a été confronté à un danger."
+    }
+   ],
+   "caracteres": 835,
+   "source": "wiki FR naruto.fandom.com/fr — « Dread Lion » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Dread_Lion — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "chakra-shock-slash",
+   "id": "9a97b5ab-8a59-4082-8432-5d0a1958931c",
+   "name": "Chakra Shock Slash",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Entaille de Chakra",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Entaille_de_Chakra",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "fruit-du-poisson-version-dragon-azur",
+   "id": "9ae279af-937a-4229-86d4-9054a74ab6e9",
+   "name": "Fruit du Poisson, version Dragon azur",
+   "type": "power",
+   "universe": "One Piece",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "gold-and-silver-brothers",
+   "id": "9af1a99c-5a42-4813-93f8-75568393fb68",
+   "name": "Gold and Silver Brothers",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Frères d'Or et d'Argent",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Fr%C3%A8res_d'Or_et_d'Argent",
+   "refus": "la page se range parmi les œuvres — Ébauches",
+   "etat": "refus"
+  },
+  {
+   "slug": "kuween",
+   "id": "9af9da82-52c0-45bf-acd4-ed88302f0069",
+   "name": "Kuween",
+   "type": "character",
+   "universe": "One Piece",
+   "route": "langlink",
+   "titreFr": "Aspireine",
+   "identite": null,
+   "url": "https://onepiece.fandom.com/fr/wiki/Aspireine",
+   "refus": "pont nu sans preuve de nom",
+   "etat": "refus"
+  },
+  {
+   "slug": "kyuka-island",
+   "id": "9b051837-bce1-40e4-a376-81a657b544a7",
+   "name": "Île Kyuka",
+   "type": "place",
+   "universe": "One Piece",
+   "route": "slug",
+   "titreFr": "Kyuka Island",
+   "identite": "slug-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/Kyuka_Island",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 7,
+    "intertitres_declares": 5,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Géographie",
+     "texte": "L'île de Kyuka est une île tropicale avec quelques bâtiments, dont des hôtels. Au centre du lieu se trouve une montagne dont le sommet pousse un grand arbre en forme de parapluie avec des bâtiments dans sa couronne. L'architecture caractéristique de l'île comprend des balcons, des arches et des piscines."
+    },
+    {
+     "idx": "2",
+     "titre": "Présentation",
+     "texte": "C'est là que Mr. 3 et Mlle Goldenweek prennent leurs jours de congé quand ils ne sont pas en mission. Un hôtel avec une piscine géante est présent sur cette île.\nApparemment, de nombreux visiteurs viennent y séjourner. On la reconnait par son immense arbre central au sommet duquel repose un hôtel."
+    },
+    {
+     "idx": "3",
+     "titre": "Histoire",
+     "texte": "Elle apparaît pour la première fois lorsque Miss GoldenWeek et Mr. 3 reçoivent leur ordre de mission: supprimer Monkey D. Luffy et son équipage.\nC'est aussi sur cette île qu'atterrissement Miss GoldenWeek, Miss Valentine et Mr. 5 dans la Mini-Aventure : La nouvelle mission de Miss Goldenweek: Refonder Baroque Works.\nAprès avoir échappé au chaos d'Alabasta, Mr.3 fur arrêté par le capitaine de la Marine, Hina, sur Holiday Island, et fut envoyé à Impel Down."
+    },
+    {
+     "idx": "5",
+     "titre": "Futilités",
+     "texte": "Kyūka (休暇) veut dire vacances en japonais.\nUne publicité pour le complexe hôtelier de l'île de Kyuka a été incluse dans le numéro supplémentaire n° 1200 du Grand Times. Le complexe annonce qu'il distribue gratuitement des poses éternelles et dit aux gens de les contacter via leur numéro de téléphone 5540 (5540 ゴ ー ゴ ー シ マ, gō-gō-shi-ma?, un jeu de mots sur \"go, go island\")."
+    }
+   ],
+   "caracteres": 1438,
+   "source": "wiki FR onepiece.fandom.com/fr — « Kyuka Island » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Kyuka_Island — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "insect-jar-technique",
+   "id": "9b124e2c-8d38-4223-9d87-940cbc843457",
+   "name": "Insect Jar Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Technique du Mur d'Insectes",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Technique_du_Mur_d'Insectes",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "bounty-hunter",
+   "id": "9b192f8d-1119-43f0-848a-2000f7a43cad",
+   "name": "Chasseur de primes",
+   "type": "profession",
+   "universe": "One Piece",
+   "route": "langlink",
+   "titreFr": "Chasseur de Primes",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/Chasseur_de_Primes",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 6,
+    "intertitres_declares": 4,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Motivation(s)",
+     "texte": "Les raisons d'un Chasseur de Primes à exercer ce travail sont souvent mélangées :\nLe défi (cela offre un moyen de tester son niveau de compétence)"
+    },
+    {
+     "idx": "2",
+     "titre": "Méthode(s)",
+     "texte": "Les Chasseurs de Primes agissent aussi indépendamment des autres groupes et sont libres de se déplacer à leur guise dans le monde entier. Il y a différents procédés pour exercer ce travail :\nAlors qu'ils ne sont parfois pas mieux que les criminels eux-mêmes, ils sont autorisés à chasser ces-derniers du moment qu'ils n'enfreignent pas la loi en le faisant.\nCertains peuvent chasser en solo (comme Zoro auparavant), ce qui est souvent le cas.\nD'autres préfèrent chasser en duo/petit groupes (comme Yosaku et Johnny).\nOu encore en grande organisation (comme Baroque Works, les Rosy Life Riders)."
+    },
+    {
+     "idx": "3",
+     "titre": "Chasseurs de Primes connus",
+     "texte": "Les plus célèbres Chasseurs de Primes connus étaient Zoro Roronoa, dans East Blue, qui a exercé cette profession contre son gré pour des besoins monétaires, et qui l'a abandonné lorsqu'il a rejoint l'Équipage du Chapeau de Paille, ainsi que Daz Bones, qui possédait une réputation d'infâme \"assassin\" sur West Blue. Il a également cessé d'être Chasseur de Primes lorsqu'il a rejoint le Baroque Works, sous le nom de Mr. 1, où il a finalement lutté et perdu contre Zoro.\nApparemment, la majorité des agents du Baroque Works sont d'anciens Chasseurs de Primes, mais, à l'exception de Bones, ceux qui ont été Chasseurs de Primes et ceux qui ne l'ont pas été n'ont pas été différenciés, et il est donc impossible de dresser une liste des Chasseurs de Primes de l'organisation Baroque Works.\nL'Archipel Sabaody est connu pour la présence de deux gangs de Chasseurs de Primes : les Rosy Life Riders et les Hound Pets."
+    },
+    {
+     "idx": "4",
+     "titre": "Futilités",
+     "texte": "Robin fut traquée par la Marine et les Chasseurs de Primes au plus jeune âge connue, lorsqu'elle avait 8 ans.\nLes chasseurs de primes existent aussi dans la vraie vie. Aux États-Unis, on les appelle des chasseurs de primes et ils sont principalement utilisés pour rechercher des évadés sous caution. À l'époque, cependant, la chasse aux primes était telle qu'elle est décrite dans One Piece."
+    }
+   ],
+   "caracteres": 2042,
+   "source": "wiki FR onepiece.fandom.com/fr — « Chasseur de Primes » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Chasseur_de_Primes — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "atk-db-spread-shot-retreat",
+   "id": "9b1ecaf7-91c8-4a4f-a798-83d80e6a69d3",
+   "name": "Spread Shot Retreat",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "giant-corpse-crab",
+   "id": "9b24bd41-d3ae-4e6b-84ea-dddc1c3c540a",
+   "name": "Giant Corpse Crab",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Crabe Cadavre Géant",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Crabe_Cadavre_G%C3%A9ant",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 4,
+    "intertitres_declares": 4,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Histoire",
+     "texte": "Le Crabe Cadavre Géant attaqua et détruisit autrefois un navire, tuant tout l'équipage, y compris un jeune marin nommé Hishaku."
+    },
+    {
+     "idx": "2",
+     "titre": "Compétences",
+     "texte": "Le Crabe Cadavre Géant avait des pinces acérées comme des rasoirs, ainsi qu'une carapace extrêmement dure. Les bernacles qui recouvraient sa carapace pouvaient dévorer des êtres humains vivants. Il possédait des appendices semblables à des tentacules qui lui servaient à saisir ses proies."
+    },
+    {
+     "idx": "3.1",
+     "titre": "Excursion vers Kumo",
+     "texte": "Alors qu'ils faisaient route vers le Pays de la Foudre, Naruto, Aoba, Yamato et Gaï Maito tombèrent sur le navire détruit par le Crabe Cadavre Géant. Après avoir inspecté le navire et découvert le fantôme de Hishaku — l'esprit d'un des nombreux marins tués par le Crabe Cadavre Géant — les ninjas de Konoha l'aidèrent à se venger de celui-ci."
+    }
+   ],
+   "caracteres": 758,
+   "source": "wiki FR naruto.fandom.com/fr — « Crabe Cadavre Géant » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Crabe_Cadavre_G%C3%A9ant — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "ni-s-dogs",
+   "id": "9b2fff50-8710-496a-af2f-f2f38cd1907a",
+   "name": "Ni's Dogs",
+   "type": "character",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "scale-senbon",
+   "id": "9b48102a-c341-4fa3-9da3-22f2c452bf1a",
+   "name": "Scale Senbon",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Senbon d'Écaille",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Senbon_d'%C3%89caille",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "lightning-release-sixteen-pillar-bind",
+   "id": "9b6c9852-00f6-489a-a8c3-5b1982906059",
+   "name": "Lightning Release: Sixteen Pillar Bind",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Raiton - Étreinte des Seize Piliers",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Raiton_-_%C3%89treinte_des_Seize_Piliers",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "puppet-buzzsaw",
+   "id": "9b6e5f24-625c-4cbc-b296-6fe4646e57b1",
+   "name": "Puppet Buzzsaw",
+   "type": "artifact",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Scie Circulaire de Marionnette",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Scie_Circulaire_de_Marionnette",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "komaza",
+   "id": "9b8b1622-8938-4b4f-a2ba-8177d97081f0",
+   "name": "Komaza",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Komaza",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Komaza",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 4,
+    "intertitres_declares": 3,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Apparence",
+     "texte": "Komaza a les cheveux bruns, courts et hérissés et les yeux brun foncé. Il porte une chemise vert clair avec les manches retroussées, un pantalon brun et un brassard autour de sa main gauche."
+    },
+    {
+     "idx": "2.1",
+     "titre": "Examens Chûnin",
+     "texte": "Komaza fut pris en train de tricher cinq fois au cours de la première phase de l'Examen Chûnin, échouant ainsi au test. Quand il interrogea agressivement les surveillants sur exactement comment ils avaient pu surveiller tout le monde dans la salle d'examen, il fut été attaqué par Tonbo Tobitake qui lui dit de prendre leur force en tant que preuve."
+    }
+   ],
+   "caracteres": 539,
+   "source": "wiki FR naruto.fandom.com/fr — « Komaza » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Komaza — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "naraka-path",
+   "id": "9b921602-d2b5-44e9-8467-424a3cf739ad",
+   "name": "Naraka Path",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Jigokudô",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Jigokud%C3%B4",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Influences",
+     "texte": "Dans le bouddhisme, le monde Naraka, ou « monde des enfers », est une plan de renaissance, basé sur le Karma (actions du corps, de la parole et de l'esprit) construit dans sa ou ses vies précédentes. Il y a plusieurs Naraka, chacun contenant des êtres tourmentés jusqu'à ce que leurs Karma aient achevé un bilan complet et satisfaisant. Les êtres peuvent ensuite renaître dans un plan supérieur.\nLe Naraka est superficiellement similaire aux enfers ou au purgatoire chrétiens, bien qu'il y ait plusieurs différences significatives.\nAvant que les êtres soient envoyés dans le monde Naraka, le Rois des enfers, Yama, est le juge de la mort. La croyance veut que si on lui ment, il vous arrachera la langue."
+    }
+   ],
+   "caracteres": 704,
+   "source": "wiki FR naruto.fandom.com/fr — « Jigokudô » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Jigokud%C3%B4 — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "waitress",
+   "id": "9b98dd0d-f2fb-48da-a82f-314f1b9316fe",
+   "name": "Waitress",
+   "type": "profession",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "wind-release-great-wind-protective-wall",
+   "id": "9bb28ce5-2c03-4d06-aa21-db93451853ec",
+   "name": "Wind Release: Great Wind Protective Wall",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Fûton - Barrière Cyclonique",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/F%C3%BBton_-_Barri%C3%A8re_Cyclonique",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "explosive-clay-dolls",
+   "id": "9bc7cb24-6528-4fe6-a114-56855b41cbbb",
+   "name": "Explosive Clay Dolls",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Minions d'Argile Explosive",
+   "identite": null,
+   "url": "https://naruto.fandom.com/fr/wiki/Minions_d'Argile_Explosive",
+   "refus": "pont nu sans preuve de nom",
+   "etat": "refus"
+  },
+  {
+   "slug": "claw-grime",
+   "id": "9be3a864-c834-46e7-8380-fb3353a64884",
+   "name": "Claw Grime",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "atk-db-big-bang-ray",
+   "id": "9bf5374a-00bb-437c-891b-0bc10f85e417",
+   "name": "Big Bang Ray",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "king-baum",
+   "id": "9bf92f3a-7d24-4b02-9693-903eb83087cd",
+   "name": "King Baum",
+   "type": "character",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "King Baum",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/King_Baum",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 10,
+    "intertitres_declares": 8,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Apparence",
+     "texte": "Baum est un grand arbre Homie gris d'apparence assez effrayant. Il a le regard sévère et a de tout petits yeux jaunes, un long nez pointu avec une moustache et un vaste feuillage sombre. Il a également une longue langue et de grandes dents pointues. Il a des petits bras.\nPlus tard, il est revu sans le sommet de sa tête, ayant perdu la plupart de ses branches."
+    },
+    {
+     "idx": "2",
+     "titre": "Personnalité",
+     "texte": "Baum prend ses fonctions très au sérieux, affirmant que personne ne s'est jamais échappé des bois. Il est le seul Homie qui n'a pas peur de Charlotte Brûlée, ni de Charlotte Cracker.\nIl a la manie d'ajouter \" ju\" à la fin de ses phrases. Il est souvent vu avec la langue pendante.\nIl a par ailleurs une femme qu'il aime beaucoup."
+    },
+    {
+     "idx": "3",
+     "titre": "Aptitudes et Compétences",
+     "texte": "Étant le Roi de la Forêt de la Tentation, il a une grande autorité sur les Homies de la forêt. Sa force est inconnue, mais au vu de son statut et de sa taille, il doit être puissant. Sous son commandement, il n'y a pas un intrus connu qui ait été capable de quitter la foret vivant, ce qui témoigne de sa dangerosité.\nSa faiblesse est la même que tous les Homies : l'âme de Big Mom, généralement émanant de sa carte de vie. On verra qu'il est totalement subjuguée par Nami qui détiendra la carte, au point d'être contrôlé et de suivre les ordre de la pirate."
+    },
+    {
+     "idx": "4.1",
+     "titre": "Passé",
+     "texte": "King Baum est à l'origine un arbre tout à fait ordinaire. Il a, un jour, absorbé un morceau d'âme d'un habitant et est devenu un arbre gigantesque à l'attitude humaine. Il est par la suite devenu le roi de la Forêt de la Tentation. Sous son commandement, il n'y a pas un intrus connu qui ait été capable de quitter la foret vivant."
+    },
+    {
+     "idx": "4.2",
+     "titre": "Arc Whole Cake Island",
+     "texte": "King Baum apparaît dans la forêt en compagnie de Brûlée. Il affirme que personne ne s'est jamais échappé de la forêt. Alors que Nami et Pound s'enfuient, Brûlée lui demande ce qui lui arrive. Il s'excuse auprès d'elle et lui annonce que les Homies ne peuvent pas s'opposer à Nami, car ils ressentent la puissante âme de Big Mom à travers la Carte de vie de la pirate. Alors que Luffy et Cracker se battent, il veut fuir avec les autres Homies. Cependant, il porte Pound et Nami se trouve dans sa bouche.\nLa Chapeau de Paille, se trouvant dans sa bouche, l'empêche de bouger, lui faisant du chantage avec la Carte de vie qu'elle a en sa possession. Cette dernière lui demande de qui il a le plus peur, de Big Mom ou de son fils, mais l'arbre répond que c'est la navigatrice elle-même la plus effrayante. Plus tard, il aide celle-ci et Luffy à combattre leur adversaire sous les menaces de la jeune femme. Cracker le découvre et coupe le sommet de la tête de l'arbre pour le punir. Totalement impuissant, il est réprimandé par ce dernier, à propos du fait qu'il ne puisse pas agir contre les ennemis et il menace de rapporter cela à Mama. Cracker sera vaincu et à ce moment, le Homie rage de n'avoir rien pu faire. Nami l'oblige alors à la porter, ainsi que Luffy jusqu'au Château de Whole Cake, la prochaine destination des pirates. King Baum s'exécute et s'arrête quand il y a face à lui la Famille Vinsmoke, vers laquelle ses deux passagers se précipitent. Il assiste alors au combat du Chapeau de Paille contre son cuisinier qui refuse de partir avec eux en portant Nami sur sa tête jusqu'à ce qu'elle descende pour gifler le prince, en larmes.\nAprès le départ de Sanji avec sa famille, King Baum panique suite à l’apparition d'une tempête. Il informe Nami que Big Mom est en colère. Il observe plus tard l'armée enragée de Big Mom se dirigeant vers Luffy. Contraint d'être du côté des adversaire, il est attaqué par Amande qui fend son visage en disant qu'elle compte le tuer lentement et douloureusement. Le reste des pirates étant venu à bout de Luffy et Nami, on voit King Baum gisant au sol.\nLe lendemain, King Baum est ramené à la vie quand ses deux moitiés sont cousues ensemble, puis il a commencé à draguer un arbre femelle. Cependant, l'équipe de récupération de Sanji court dans sa direction et décide de monter sur sa tête, l'obligeant à les porter de nouveau puisque Nami possède toujours la carte de vie de Big Mom. Alors que les pirates de Big Mom les poursuivent, l'Impératrice elle-même arrive sur le dos de Zeus et, dans sa crise, compte les tuer pour avoir volé le gâteau. Il la fuit donc furieuse, avec Napoléon sous forme d'épée à la main. Baum pleure en la suppliant de l'épargner, disant qu'il agit contre sa volonté, sans effet. Nami le questionne sur la Dame Arbre, et il révèle qu'ils sont fiancés. Nami lui dit alors de se battre pour elle, ce qui lui redonne courage. En arrivant à la Forêt de la tentation, les homies le laissent passer et, tandis que les Chapeaux de Paille sont heureux de pouvoir s'enfuir, Zeus apparaît. Sous la panique, Baum répète qu'il agit contre sa volonté. Au même moment, Big Mom ordonne aux homies d'arrêter les Chapeaux de Paille, et il ignore son ordre en pensant à sa fiancée.\nIl fonce entre les arbres de la forêt, mais Prométhée l'appelle, lui disant que ses actes sont une forme de trahison envers Mama, avant de l'attaquer. Alors que les pirates esquivent l'attaque, King Baum est brûlé, et Big Mom passe dessus dans sa poursuite des Chapeaux de Paille."
+    },
+    {
+     "idx": "6",
+     "titre": "Futilités",
+     "texte": "Le tic verbal du King Baum \"-ju\" est le diminutif de \"jumoku\" qui veut dire \"arbre\" en japonais.\nLe nom de Baum peut provenir de L. Frank Baum, l'auteur du roman fantastique \"Le Magicien d'Oz\".\nKing Baum a été inspiré par l’Arbre Vieil Homme (Old Man Tree) du court-métrage de Disney Flowers and Trees de 1932. Ce qui correspond au thème des contes de fées de l'Équipage de Big Mom."
+    }
+   ],
+   "caracteres": 5480,
+   "source": "wiki FR onepiece.fandom.com/fr — « King Baum » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/King_Baum — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "piston-fist-style-one",
+   "id": "9c0d0fcd-4e21-490c-a54f-8ba786c3f18e",
+   "name": "Piston Fist: Style One",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Coup de Piston - Style Un",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Coup_de_Piston_-_Style_Un",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "kouzuki-family",
+   "id": "9c37e749-eee5-4f39-adb6-f693311df8e8",
+   "name": "Famille Kozuki",
+   "type": "status",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Famille Kozuki",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/Famille_Kozuki",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 6,
+    "intertitres_declares": 4,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Emblème",
+     "texte": "L'emblème de la famille Kozuki est une sorte d'oiseau avec un orbe brillant dans la poitrine et des ailes ouverts. Autour de l'oiseau, on voit un cercle avec des symboles sur les quatre côtés ordinaux.\nLes serviteurs de la famille Kozuki ont cet emblème tatoué sur leur corps (par exemple Kinemon sur le dos) afin de les reconnaître."
+    },
+    {
+     "idx": "2",
+     "titre": "Membres",
+     "texte": "Cinq membres de cette famille sont connus : l'ancien Shogun du Pays de Wa, Kozuki Sukiyaki, son fils l'ancien Daimyo de Kuri, Oden, la femme de ce dernier Toki et leurs enfants Momonosuke et Hiyori. Les seuls encore vivant sont Momonosuke et Hiyori.\nLa famille Kozuki a également plusieurs serviteurs nommés les Neuf Fourreaux Rouges : Kinemon, Kanjuro, Raizou, Denjiro, Kawamatsu, Kiku et Ashura Doji, tous habitant le Pays de Wa, ainsi que Inuarashi et Nekomamushi, membres de la Tribu des Minks et originaires de Zo, où ils sont retournés après la mort d'Oden.\nIzou faisait également partie des Fourreaux Rouges, qui étaient à l'époque 10. Au moment où Oden sortit du Pays des Wa, Izou le rejoignit pour l'empêcher de partir. Il embarqua alors sur le Moby Dick avec Edward Newgate et Oden en compagnie de Nekomamushi et Inuarashi. Lorsqu'Oden rejoignit l'Équipage des Pirates Roger, seul Izou resta sur le Moby Dick. Puis lorsque Gol D. Roger fit ses adieux à Oden, il prévoyait de revoir une dernière fois Barbe Blanche et Oden lui dit de faire passer le message qu'Izou pouvait rester avec Barbe Blanche et prendre soin de ce dernier. C'est ainsi qu'Izou quitta en quelque sorte par accident les Fourreaux Rouges.\nAshura Doji, après le saut de 20 ans dans le futur de Momonosuke, a pendant un temps refusé de se soumettre à ce dernier. En effet, il avait de la rancune envers lui et les autres Fourreaux Rouges car il considère qu'ils les ont abandonné durant 2 décennies et que rien de ce qu'ils feront ne changera cela. Malgré cela, il a finalement décidé de se rallier au clan Kozuki et de réintégrer le groupe des Fourreaux Rouges.\nDésormais, la famille Kozuki s'est alliée aux équipages du Chapeau de Paille et du Heart dans le but de vaincre Kurozumi Orochi, actuel Shogun du Pays de Wa, ainsi que son allié l'Empereur Kaidou et son équipage."
+    },
+    {
+     "idx": "3",
+     "titre": "Histoire",
+     "texte": "La lignée du clan des Kozuki serait, selon les dires de Nekomamushi, depuis des générations des tailleurs exceptionnels de pierres; en effet c'est ce même clan qui aurait il y a 800 ans construit les indestructibles Ponéglyphes. Ce savoir faire est transmis de génération en génération. C'est d'ailleurs pour cela qu'Oden a rejoint l'équipage de Roger pour leur dernier voyage.\nCe savoir faire s'est arrêté à Monomosuke, son père Oden ayant été exécuté par Kaidou et le Shogun du Pays de Wa.\nSelon Shimotsuki Yasuie, c'est grâce au clan Kozuki que le Pays des Wa était si beau : forêts, villages, rivières ainsi que la Capitale des fleurs. Ce n'est qu'à la suite de l'avènement de Kurozumi Orochi que l'état du pays s'est fortement dégradée par l'avidité de ce dernier.\nLes habitants de la Principauté de Momoko et la famille Kozuki forment une famille depuis bien longtemps."
+    },
+    {
+     "idx": "4",
+     "titre": "Futilités",
+     "texte": "Les 9 cercles dans l'emblème pourraient être une référence au clan Katakura, le cygne pourrait être une référence au clan Mori.\nKozuki (光月 Kōdzuki) signifie « lune de lumière », ou plutôt « clair de lune ».\nLe nom des Kozuki était initialement prononcé Kogetsu (光月（こうげつ）, Kōgetsu) dans la prépublication du chapitre 816, mais cela a été rectifié par la suite en Kozuki (光月（こうづき）, Kōdzuki), tant dans le chapitre 817 que dans le Tome 81."
+    }
+   ],
+   "caracteres": 3497,
+   "source": "wiki FR onepiece.fandom.com/fr — « Famille Kozuki » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Famille_Kozuki — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "earth-release-dust-storm",
+   "id": "9c52ff25-ff10-4ec8-a4b7-fa59b480206b",
+   "name": "Earth Release: Dust Storm",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "successive-shots-iron-sand-drizzle",
+   "id": "9c68a9cb-bd6e-47e0-96e7-dd2cc4717208",
+   "name": "Successive Shots Iron Sand Drizzle",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "c0",
+   "id": "9ca3eb9f-abe9-4494-b7f9-1c70793f106e",
+   "name": "C0",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "C0",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/C0",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "team-kabuto",
+   "id": "9cb0aebd-a9c3-4bb5-8e5d-a9a7df3f2359",
+   "name": "Team Kabuto",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Équipe Kabuto",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/%C3%89quipe_Kabuto",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Le nom de Kabuto, avec Yoroi et Misumi, constitue le trio casque—armure—épée.\nBien que les trois membres étaient des espions d'Orochimaru, on ne sait pas si le chef d'équipe l'était également. Cependant, il était un étudiant d'Orochimaru.\nTous les membres de cette équipe, y compris leur sensei, portaient une paire de lunettes."
+    }
+   ],
+   "caracteres": 328,
+   "source": "wiki FR naruto.fandom.com/fr — « Équipe Kabuto » (CC BY-SA) https://naruto.fandom.com/fr/wiki/%C3%89quipe_Kabuto — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "gyumao",
+   "id": "9cb8c8d4-c20d-49b3-ad9a-3ad1491a14b4",
+   "name": "Gyumao",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "route": "titre-exact",
+   "titreFr": "Gyumao",
+   "identite": "titre-egal",
+   "url": "https://dragonball.fandom.com/fr/wiki/Gyumao",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 4,
+    "intertitres_declares": 4,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Caractéristiques et personnalité",
+     "texte": "Il fut le compagnon de Son Gohan durant son entraînement.\nÀ la fin de ce dernier, celui-ci partit vivre sa vie et récolta bon nombre de trésors de valeurs durant ces aventures à travers le monde. Il fit construire un château au sommet d'une haute colline afin d'y amasser ces richesses, et finit par fonder une famille en épousant une femme qui lui donnera une fille, Chichi.\nLes richesses de Gyumao vont néanmoins finir par susciter la convoitise de nombreux brigands, voleurs et aventuriers présents dans la région qui vont tous se risquer à essayer de pénétrer dans son château. Ceci va considérablement changer la personnalité de Gyumao, qui devint de plus en plus agressif pour défendre ces biens, au point de tuer impitoyablement tout intrus pénétrant à proximité de ces terres, même si celui-ci n'était pas motivé par des intentions malveillantes. Celui-ci se parera d'un costume de guerrier portant un casque orné de deux gigantesques cornes, et brandissant une terrible hache géante capable de fendre la roche comme du beurre. Sa terrible réputation finira par couvrir des lieues au point que même des gens vivant très loin de chez lui entendront parler de lui.\nUn jour, un démon de feu vint quelques années avant le début de Dragon Ball incendier la montagne sur laquelle Gyumao avait construit sa demeure, alors que celui-ci était parti pique-niquer avec sa fille. Depuis un feu éternel entourait sa demeure (qui fait que l'endroit est appelé la montagne de feu), et empêchait quiconque d'y accéder."
+    },
+    {
+     "idx": "2.1",
+     "titre": "Saga des 7 Dragon Balls",
+     "texte": "Son Goku et Bulma se rendirent à la montagne de Feu pour récupérer le Dragon Ball se trouvant là bas. C'est à ce moment que Gyumao attaquera la bande à Goku, et remarquera que ce dernier dispose du nuage magique de son maître et du Nyoï Bo de son ancien camarade. Celui-ci expliqua alors à Son Goku qu'il fut le camarade de son grand père adoptif et l’élève de Kamé Sennin. Il lui demande alors d'aller chercher son vieux maître, dont il ignorait désormais son lieu de résidence, avec sa fille Chichi pour que ce dernier utilise ces pouvoirs pour éteindre le feu de sa montagne. Son Goku s'exécuta et ramena Kamé Sennin avec lui qui soufflera les flammes grâce à un Kamé Hamé Ha à puissance maximale. Cependant, l'attaque de Kamé Sennin était tellement puissante qu'elle détruisit aussi toute la montagne ainsi que le château. Kamé Sennin en profita pour faire remarquer à Gyumao, qu'il avait commis des actes très cruels envers les hommes. Gyumao se repentit et dès lors il devint bon."
+    },
+    {
+     "idx": "2.2",
+     "titre": "Saga du 23e Tenkaichi Budokai",
+     "texte": "Après le mariage de sa fille et de Son Goku, et surtout la naissance de Son Gohan, il changea radicalement. De guerrier bourru à l'aspect effrayant (maniant la hache et arborant un casque à cornes) il se changea en papa gâteau et grand-père attentionné. Il garda ce rôle le restant de la série, étant souvent auprès de Chichi dans les moments difficiles, mais ne jouera aucun rôle majeur au sein des affrontement opposant Son Goku et ses amis à leurs ennemis.\nDans le manga, on ne le voit pas combattre, mais dans l'anime, il participa brièvement à deux affrontements : le premier contre Son Goku enfant (qu'il domine totalement) alors que ce dernier cherchait à accéder à la Montagne de Feu et qui s'achèva par un arrêt du combat lorsque Gyumao se rendit compte de l'identité de son adversaire, et le second un an plus tard face à un détachement de l'armée du Red Ribon commandée par le capitaine Silver, venue dérober un Dragon Ball dont Gyumao était entré involontairement en possession. Ce combat vit la destruction des quelques chars de l'armée, mais se finit par la capture de Gyumao, piégé dans un filet."
+    }
+   ],
+   "caracteres": 3607,
+   "source": "wiki FR dragonball.fandom.com/fr — « Gyumao » (CC BY-SA) https://dragonball.fandom.com/fr/wiki/Gyumao — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "atk-bl-kendo",
+   "id": "9cbc6763-b689-4644-8d31-c4d7954dded6",
+   "name": "Kendo",
+   "type": "power",
+   "universe": "Bleach",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "univers-8",
+   "id": "9cda7edc-745b-4090-a03a-71d5bbb650a8",
+   "name": "Univers 8",
+   "type": "place",
+   "universe": "Dragon Ball",
+   "route": "titre-exact",
+   "titreFr": "Univers 8",
+   "identite": "titre-egal",
+   "url": "https://dragonball.fandom.com/fr/wiki/Univers_8",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 7,
+    "intertitres_declares": 5,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Caractéristiques",
+     "texte": "Son dieu de la destruction est Liquir, et son Kaïô Shin est Ilu.\nComme tous les univers, celui-ci est surveillé par les Kaïô Shins de cet univers, depuis la Planète Kaishin (Univers 8). Il est peuplé d'innombrables planètes.\nD'après le Grand Prêtre, cet univers est d'une qualité supérieure aux autres univers, il en va de même pour son univers jumeau, l'univers 5, ainsi que l'univers 1 et l'univers 12."
+    }
+   ],
+   "caracteres": 404,
+   "source": "wiki FR dragonball.fandom.com/fr — « Univers 8 » (CC BY-SA) https://dragonball.fandom.com/fr/wiki/Univers_8 — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "earth-release-drone",
+   "id": "9cda9578-896d-470f-84bd-28af51b3dfdd",
+   "name": "Earth Release: Drone",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Doton - Drone",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Doton_-_Drone",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Semblable à de nombreuses techniques de Kumo, le nom de cette technique est un mot anglais donnant un kanji qui correspond quelque peu à sa prononciation."
+    }
+   ],
+   "caracteres": 154,
+   "source": "wiki FR naruto.fandom.com/fr — « Doton - Drone » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Doton_-_Drone — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "drowning-water-blob-technique",
+   "id": "9cdb70ce-9216-4cd2-afbc-21d712144b40",
+   "name": "Drowning Water Blob Technique",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Technique de Bulle d'Eau Noyante",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Technique_de_Bulle_d'Eau_Noyante",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "fire-release-water-mist",
+   "id": "9ce602cd-e04d-4dcf-99e5-d65010a4edba",
+   "name": "Fire Release: Water Mist",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "marilyn",
+   "id": "9cf18114-852e-4a6b-8b36-353993baedc3",
+   "name": "Marilyn",
+   "type": "character",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Marilyn",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/Marilyn",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 7,
+    "intertitres_declares": 5,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Apparence",
+     "texte": "Marilyn est une femme plutôt grassouillette possédant des cheveux bruns foncés et bouclés. Une partie de ses cheveux forme des antennes comme les autres habitants des îles célestes. Elle porte une robe violette foncée avec une ceinture noire. Elle porte aussi du rouge à lèvres rouge foncé."
+    },
+    {
+     "idx": "2",
+     "titre": "Personnalité",
+     "texte": "Elle semble être une femme aimable et une personne qui n'hésite pas à s'amuser, puisque elle dansait avec Sanji lors de la fête pour célébrer la défaite d'Ener."
+    },
+    {
+     "idx": "3.2",
+     "titre": "Arc de Skypiéa",
+     "texte": "Lorsque l'Équipage du Chapeau de Paille ont vaincu Ener, ils ont organisé une fête. Marilyn y est allée et a célébré la victoire des Chapeaux de Paille. Elle a dansé avec Sanji en faisant la fête."
+    }
+   ],
+   "caracteres": 646,
+   "source": "wiki FR onepiece.fandom.com/fr — « Marilyn » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Marilyn — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "fire-sword",
+   "id": "9d1d462b-6ea1-440c-a21e-e0ee4479854d",
+   "name": "Fire Sword",
+   "type": "artifact",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Épée de Feu",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/%C3%89p%C3%A9e_de_Feu",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Lorsque Seimei revêtit l'Armure Infinie, cette épée était intégrée dans la tête de la partie frontale de l'armure par sa poignée."
+    }
+   ],
+   "caracteres": 129,
+   "source": "wiki FR naruto.fandom.com/fr — « Épée de Feu » (CC BY-SA) https://naruto.fandom.com/fr/wiki/%C3%89p%C3%A9e_de_Feu — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "levely",
+   "id": "9d2086a1-414c-4584-aef2-a565817ba123",
+   "name": "Levely",
+   "type": "status",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Levely",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/Levely",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 17,
+    "intertitres_declares": 15,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1.2",
+     "titre": "Description",
+     "texte": "Les réunions ont lieu tous les quatre ans et sont généralement effectuées à Marie Joie où rois et reines se réunissent pour discuter de questions majeures de ce monde. L'une des discussions qui semble revenir régulièrement durant ces réunions est celle traitant des Révolutionnaires menés par Monkey D. Dragon.\nLes pays participants sont soit ceux qui font partie du Gouvernement Mondial, soit des pays avec un accord spécial avec le Gouvernement Mondial. Le Royaume de Vodka a pu participer à certaines Levely grâce à la livraison de Kaidou à la Marine. Le Royaume de Germa, anciennement membre du Gouvernement Mondial, avait pu continuer à participer à la Levely, avant de perdre définitivement ce droit à la suite des événements de l'Arc Whole Cake Island.\nComme il s'agit d'une réunion où des chefs de nations discutent, des conflits peuvent naître et engendrer ainsi des guerres entre deux royaumes qui sont radicalement opposés sur une question abordée durant le Conseil. Par exemple, quand Wapol a délibérément frappé Nefertari Vivi pour se venger de son père, Cobra, après qu'il se soit opposé à Wapol durant la réunion. Cet incident aurait pu déclencher une guerre si Vivi n'avait pas masqué sa douleur."
+    },
+    {
+     "idx": "3",
+     "titre": "Avantages",
+     "texte": "En plus de pouvoir discuter des questions importantes, il y a des avantages pour ces pays. Les pays qui n'ont pas formé une alliance avec le Gouvernement Mondial ont limité l'immigration légale dans leur pays, comme dans le cas de l'île des Homme-Poissons, et sont par conséquent exposés à des mesures de rétorsions.\nIl y a aussi une question de confiance dans les relations entre les pays, ce qui ne peut se produire que si les pays non seulement assistent mais intègrent aussi la Rêverie."
+    },
+    {
+     "idx": "4",
+     "titre": "Membres Connus",
+     "texte": "Nefertari Cobra : Roi du Royaume d'Alabasta (Grand Line/Paradis)\nDalton : Roi du Royaume des Cerisiers (Grand Line/Paradis)\nWapol : Roi du L'Ile de Drum (Grand Line/Paradis) (anciennement) ; Roi du Royaume d'Evil Black Drum (South Blue) (actuellement)\nNeptune : Roi du Royaume Ryugu (Île des Hommes-Poissons)\nRiku Doldo III : Roi de Dressrosa (Grand Line/Nouveau Monde)\nSterry : Roi du Royaume de Goa (East Blue)\nElizabello II : Roi du Royaume de Prodence (Grand Line/Nouveau Monde\nRamen : Roi du Pays des Fleurs (West Blue)\nSeki : Roi du Royaume de Lulusia (Grand Line/Paradis)\nTea IV : Roi du Royaume d'Aegis (Grand Line)\nBan Dedessinée : Reine du Royaume de la Frauce (East Blue)\nMoqueca : Roi du Royaume Samba (South Blue)\nCezar : Roi du Royaume d'Ilisia (West Blue)\nChap : Roi du Royaume de Deul (North Blue)\nIwatobi : Roi du Royaume Whiteland (North Blue)"
+    },
+    {
+     "idx": "4.1",
+     "titre": "Anciens Membres",
+     "texte": "Wapol : Ancien roi du Royaume de Drum, il se désintéresse de tout ce qui n'est pas lié à son propre bien-être, faisant de lui un membre impopulaire. Il a perdu son poste quand il a été battu par Monkey D. Luffy, et fut donc destitué de force par ses sujets (qui le haïssaient), et est devenu par la suite PDG d'une grande entreprise de jouets après une concomitance d'événements. Cependant, il est maintenant roi d'un nouveau royaume, le Royaume-Drum Noir, qui a été reconnu par le Gouvernement Mondial suite au succès incroyable de son entreprise et du soutien qu'un Dragon Céleste lui a apporté.\nDoflamingo : Ancien roi du Royaume de Dressrosa, il a manipulé le roi Riku et tous les autres citoyens de Dressrosa. Il a aussi commencé son trafic d'armes et de SMILE dans un port souterrain situé en dessous du Colisée Corrida en faisant travailler des jouets (humains à la base mais transformé grâce au Fruit du Démon de Sugar) et des nains. Il a perdu toute crédibilité envers les citoyens grâce à Luffy et son équipage, et fut destitué de son poste quand il a été battu par celui-ci. Il fut ensuite capturé par la Marine.\nVinsmoke Judge : Roi du Royaume de Germa ; malgré le fait que ce Royaume n'est pas constitué de terres, les dirigeants ont le droit de participer à la Rêverie. Suite à sa tentative d'alliance avec Big Mom, ses relations avec le Gouvernement Mondial ont été rompues et son droit de participer à la Rêverie, révoqué."
+    },
+    {
+     "idx": "5.1",
+     "titre": "Passé",
+     "texte": "Il y a deux cent ans, le royaume de Ryugu rejoignit le Gouvernement Mondial qui lui accorda une place à la Rêverie.\nSeize ans avant le scénario actuel, la reine Otohime, dans le souci d'améliorer les relations entre humains et Homme-Poissons, proposa d'ouvrir l'île à l'extérieur. Elle fit part de cette volonté à son peuple et voulut discuter de ce sujet à la prochaine Rêverie, à la condition de recueillir suffisamment de signatures des citoyens.\nMais un an plus tard, avec l'incident de Marie Joie causé par Fisher Tiger (qui libéra les esclaves présents sur la Terre Sainte et la brûla avant de s'enfuir), le roi Neptune confia ses inquiétudes à ses sujets en affirmant que siéger à la prochaine Rêverie sera sûrement impossible.\nCinq ans plus tard, Otohime revint dans son pays avec un papier attestant du soutien d'un Noble Mondial pour ouvrir l'île à l'extérieur. La reine est alors plus confiante et s'investit plus dans la collecte de signatures en vue de la prochaine Rêverie.\nDeux ans plus tard, durant la Rêverie qui eut lieu (impliquant Thalassa Lucas, Nefertari Cobra et Wapol), Lucas souleva le problème des Révolutionnaires et notamment de Dragon, affirmant qu'il deviendrait une menace réelle dans 5 à 6 ans. Mais Wapol lui rétorque que cette affaire ne concerne pas son pays, ce qui lui valut une réprimande de la part de Cobra, lui reprochant son irresponsabilité.\nMais le roi de Drum, loin d'apprécier, frappa Nefertari Vivi, la fille de Cobra, au sortir de la réunion, furieux d'avoir été ainsi réprimandé. Mais Vivi ne répliqua pas et s'excusa simplement, ne voulant pas être la cause d'un conflit entre les deux pays."
+    },
+    {
+     "idx": "5.2",
+     "titre": "Arc Royaume de Drum",
+     "texte": "Lorsque Dalton, Usopp et Vivi discutent de Wapol, Vivi mentionne le fait d'avoir déjà rencontré Wapol lors d'un \"conseil réunissant de nombreux monarques\". Il pourrait s'agir ici de la première implication du concept de la Levely dans la trame de One Piece. Le nom de Levely ne sera mentionné pour la première fois que dans le flashback de Chopper et Hiluluk, au chapitre 142."
+    },
+    {
+     "idx": "5.3",
+     "titre": "Arc Tougato",
+     "texte": "Cette année, plus de 50 royaumes dirigés par des familles royales attendent avec impatience la Rêverie (qui va se dérouler dans les jours à venir). Parmi eux nous pouvons citer la famille Nefertari, Sterry et sa femme, Sally Entoilette, tous deux dirigeants du royaume de Goa, Wapol et sa femme Miss Univers, Dalton du royaume de Sakura (anciennement royaume de Drum), la famille Riku du royaume de Dressrosa, Elizabello II à la tête du Royaume de Prodence et le leader du Pays de Ka. Plusieurs de ces familles voyagent avec leur entourage, certains escortés par des Marines, d'autres préférant voyager par leurs propres moyens.\nLe Royaume de Ryugu va aussi participer à la Rêverie, voulant ouvrir une fois pour toute leur royaume à l'extérieur, puisque la liste de signatures (à l'initiative de la défunte Otohime) est complétée.\nNefertari Cobra quant à lui veut demander au Gouvernement plus de précisions sur l'implication de sa famille dans le Siècle Oublié et avoir plus d'informations sur les Ponéglyphes.\nMême s'ils ne dirigent pas de royaume terrestre, la Famille Vinsmoke, à la tête d'une Zone Maritime, conservent ses droits et privilèges royaux, ainsi que ceux leur permettant de participer à la Rêverie; bien qu'ils s'attendent à ne plus en jouir de par les actions qu'ils s'apprêtent à mener, l'alliance avec un Empereur étant strictement interdit par le Gouvernement Mondial."
+    },
+    {
+     "idx": "5.4",
+     "titre": "Arc Rêverie",
+     "texte": "Comme Vinsmoke Judge l'avait annoncé, son droit de participer à la Rêverie serait immédiatement révoqué si le Gouvernement Mondial découvrait sa tentative d'alliance avec Big Mom, ce qui a été révélé au monde grâce au journal de Morgans. Le GM a donc pris acte de cette intention et a donc rompu ses relations avec le roi. Alors que les familles royales se réunissaient à Mary Geoise, l'Armée Révolutionnaire a lancé son plan pour déclarer la guerre aux nobles du monde avec Sabo, Lindbergh, Karasu et Morley infiltrant la terre sainte.\nAffilié au Gouvernement Mondial depuis 200 ans, ce n'est seulement que la deuxième fois que le Royaume Ryugu participe à la Rêverie. Les familles royales se retrouvent dans le Château Pangea pour établir des liens, ce qui mènent les familles royales de pays impliqués avec Luffy à discuter de leur sauveur.\nLe Conseil des Rois commence dans une atmosphère très tendue et incertaine. En effet, Luffy a défait Big Mom (l'un des quatre Empereurs), Big Mom et Kaidou ont discuté par escargophone, un début de conflit démarre entre certaines familles royales et un Dragon Céleste, avant qu'un autre Dragon céleste (Saint Mjosgard), défendent le familles royales contre le premier de ses semblables (Saint Charlos). Les Doyens se méfient de la famille royale d'Alabasta qu'ils jugent comme des \"traîtres\". L'un des participants déclare que 7 jours ne seraient pas suffisants. Cela indique l'importance de la réunion de cette année.\nLa Levely commence alors, avec un nouveau président, Ham Burger, qui présidera la Réunion cette fois-ci."
+    },
+    {
+     "idx": "5.5",
+     "titre": "Arc Pays de Wa",
+     "texte": "Dracule Mihawk note en lisant un journal qu'un sujet intéressant a été abordé lors de la conférence mondiale.\nLors du quatrième jour de la Rêverie, les révolutionnaires ont combattu les amiraux Ryokugyu et Fujitora pour sauver Bartholomew Kuma. Du côté de l'assemblée des dirigeants, Riku et Cobra ont persuadé les autres rois de voter pour l'abolition du système des Sept Grands Corsaires."
+    },
+    {
+     "idx": "5.6",
+     "titre": "Arc de l'Île d'Egg Head",
+     "texte": "Lors de la Levely, Sabo ainsi que d'autres compagnons de l'Armée Révolutionnaire ont tenté de libérer Bartholomew Kuma. Après un combat intense avec les Amiraux Issho et Aramaki, Kuma est parvenu à être libéré. Durant la semaine de la Levely, le roi Nefertari Cobra a été demandé par les Cinq Doyens, le dispensant de participer au conseil. Ce même jour, Wapol manquait aussi à l'appel, ce qui inquiétait les autres dirigeants mondiaux. Sabo a, durant ce jour, réussi à infiltrer le château de Pangea, où il découvre Imu et son échange avec Cobra.\nUne fois la Levely terminée, les dirigeants du monde quittent Mary Geoise. Cependant, avec Vivi ayant disparu, Cobra étant déclaré mort assassiné, ainsi que Wapol et Sabo ayant découvert Imu, les conséquences de la Levely vont bien au-délà de l'abolition du système des Sept Grands Corsaires, comme montré dans l'arc précédent."
+    },
+    {
+     "idx": "6",
+     "titre": "Futilités",
+     "texte": "Il est possible que la Levely soit basée sur l'Organisation des Nations Unies, qui est également une assemblée pacifique composée de différentes nationalités du monde. Certains participants de la Levely ont l'air inspirés de pays du monde réel.\nTous les 4 ans (comme la Rêverie) il y a la coupe du Monde de Football qui est organisée. De nombreux pays y participent à cet évènement majeur & sportif.\nLe choix d'Abraham Lincoln comme président est en adéquation avec le meurtre du Roi Cobra car Lincoln est un dirigeant qui a été assassiné. D'ailleurs après la Rêverie, certains pays vont faire secession (Lulushia) comme l'élection de Lincoln a poussé certains états américains (appelés Confédérés) à s'opposer à d'autres états américains (appelés l'Union). Cela entraînera le conflit de la guerre de Sécession"
+    }
+   ],
+   "caracteres": 11049,
+   "source": "wiki FR onepiece.fandom.com/fr — « Levely » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Levely — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "tanto",
+   "id": "9d3b9c52-6860-4fc8-a55f-d7ea509ff659",
+   "name": "Tantō",
+   "type": "artifact",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Tantô",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Tant%C3%B4",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "alpha-planete",
+   "id": "9d4bf5be-acbe-44a3-b1a9-8180a386ff20",
+   "name": "Alpha",
+   "type": "place",
+   "universe": "Dragon Ball",
+   "route": "recherche-fr",
+   "titreFr": "Alpha N°1",
+   "identite": "meme-nom",
+   "url": "https://dragonball.fandom.com/fr/wiki/Alpha_N%C2%B01",
+   "refus": "la page se range parmi les œuvres — Ébauche",
+   "etat": "refus"
+  },
+  {
+   "slug": "archaeologist",
+   "id": "9d7117b2-86e1-4bfa-84bc-bbc7daf5131c",
+   "name": "Archéologue",
+   "type": "profession",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Archéologue",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/Arch%C3%A9ologue",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 8,
+    "intertitres_declares": 6,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Rôles et Fonctions",
+     "texte": "Les archéologues travaillent à découvrir des restes de civilisations perdues, généralement enfouies, et sont désireux de faire de nouvelles découvertes sur le passé. Les archéologues jouent un rôle important pour l'Histoire en rassemblant des informations sur le développement des pays, des gens, et des cultures.\nLes archéologues ne sont pas essentiels à un équipage de pirates, bien au contraire. Quand les pirates veulent généralement piller les richesses d'un pays, l'archéologue préfèrera les protéger. Pour cette raison, dans One Piece, très peu d'équipages ont un compagnon archéologue à leur bord. Cependant, ils peuvent être utiles, grâce à leur expérience, en retrouvant des trésors anciens. Par exemple, Robin a découvert la cloche dorée du peuple de Skypiea, chose qu'Ener a mis longtemps à découvrir."
+    },
+    {
+     "idx": "2",
+     "titre": "Censure du Siècle Oublié",
+     "texte": "Le Gouvernement Mondial ne se mêle généralement pas de l'archéologie. Toutefois, si un archéologue (ou n'importe quelle personne) recherche des informations sur le Siècle Oublié ou sur des Ponéglyphes, ils s'exposent à de très grandes sanctions, les menant généralement à des sentences de prison voire à la mort. Des sommes très élevées peuvent être mises sur leurs avis de recherche.\nL'île d'Ohara a toujours été vantée comme étant l'île où se réunissaient les plus célèbres archéologues du monde. L'Arbre de la Cognition rassemblait ainsi un grand nombre de recherches, et de livres uniques. Lorsque le Gouvernement Mondial a eu vent de leurs recherches sur le Siècle Oublié, il lança un Buster Call qui détruisit l'île ainsi que la majorité des archéologues qui s'y trouvaient, ne faisant aucune exception, même parmi les civils, tués en masse. Seule Nico Robin a survécu au Buster Call, aidée secrètement par Kuzan.\nLa plupart des peuples de One Piece ne semblent pas intéressés par le passé, ni par le Siècle Oublié, qui est généralement un sujet tabou. Les archéologues ne sont pas pour autant méprisés par la population, mais lorsqu'ils font des choses illicites, ils sont alors considérés par la majorité des populations comme des criminels.\nSuite à l'Incident d'Ohara, il semble qu'il n'y ait plus beaucoup d'archéologues dans le monde."
+    },
+    {
+     "idx": "3",
+     "titre": "Les Démons d'Ohara",
+     "texte": "Les Démons d'Ohara (オハラの悪魔達, Ohara no Akuma-tachi) étaient un groupe de chercheurs, contenant pour la plupart des archéologues, qui résidaient sur l'île d'Ohara dans West Blue. Le clan d'Ohara se consacrait à l'étude du passé, chose avec laquelle le Gouvernement Mondial est mal à l'aise, mais tolère, puis, des recherches secrètes furent lancées sur le Siècle Oublié, ainsi que sur le secret des Ponéglyphes. Ils furent surnommés \"Démons\" par le Gouvernement Mondial, lorsqu'il fut au courant de leurs recherches.\nLe clan Ohara est un clan très ancien, mais le nombre d'années depuis lequel ce clan existe est inconnu. L'Arbre de la Cognition d'Ohara, contenant la plus grande bibliothèque au monde, a plus de 5 000 ans, et a apparemment été planté par des habitants d'Ohara. On sait que les archéologues et les chercheurs y sont depuis au moins plus de 800 ans. La recherche sur le Siècle Oublié étant une infraction pénale grave fixée par le Gouvernement Mondial, ils s'exposaient à de très lourdes sanctions.\nLorsque Robin était âgée de seulement deux ans, sa mère, Olvia, et de nombreux autres archéologues d'Ohara ont organisé un voyage pour étudier les Ponéglyphes et tenter de percer les mystères du Siècle Oublié. Après six ans d'expédition, leur objectif a été découvert par la Marine, et tous les archéologues de l'expédition furent tués, mis à part Olvia. Les Marines furent au courant de ce qu'il se tramait à Ohara. Olvia a réussi à s'échapper avec l'aide de Sauro, pour mettre en garde ses citoyens, mais ce fut trop tard, et toute la population fut exterminée."
+    },
+    {
+     "idx": "3.1",
+     "titre": "Histoire",
+     "texte": "Après la découverte de Nico Olvia et de nombreux chercheurs en voyage de six ans, à la recherche de Ponéglyphes, le Gouvernement Mondial a conclu qu'il était trop risqué de permettre aux archéologues d'Ohara de poursuivre leurs recherches, et que leur existence même représentait un problème, et un Buster Call a finalement été décidé. Afin de préserver sa réputation, le Gouvernement Mondial a répandu une information selon laquelle tous les Archéologues seraient capturés, car ils tentaient de faire revivre les Armes Antiques : Pluton, Poséidon et Uranus dans un but néfaste. Les Archéologues d'Ohara ont donc eu un surnom : Les Démons d'Ohara, et le Monde fut contre eux.\nCette soudaine haine contre les archéologues conduit à une vie difficile pour Nico Robin, dernière survivante connue des Démons d'Ohara. Pour cette simple raison, une prime fut mise sur sa tête, et elle fut haï et crainte par presque tous ceux qu'elle rencontrait, et ceux qui l'accueillaient avaient tous comme but de toucher la prime sur sa tête, jusqu'à ce que Crocodile lui propose de rejoindre le Baroque Works. Pendant toute son enfance, elle fut surnommée L'enfant Démon en association avec les Démons d'Ohara ainsi qu'à son Fruit du Démon."
+    },
+    {
+     "idx": "5",
+     "titre": "Futilités",
+     "texte": "Bien que la présence de Robin dans l'Équipage du Chapeau de Paille puisse paraître bizarre, il n'était pas rare, dans le monde réel, qu'un équipage pirate ait un membre archéologue bien informé sur la valeur des articles tels que des bijoux, d'autres trésors, des cargaisons des marchands, ainsi que l'endroit d'où ils peuvent provenir. Ils procuraient également leur aide lors de cache de trésors. Lors de raids, d'attaques ennemies, les archéologues étaient d'une grande aide, car ils pouvaient savoir quels objets garder, ou cacher, quels objets étaient sans valeurs et pouvaient être jetés ou cédés, tout archéologue représentait dans ce cas une très précieuse aide pour n'importe quel équipage pirate.\nBien qu'il ne soit pas classifié comme archéologue, Marshall D. Teach a pour hobby d'étudier l'archéologie et ce serait même son métier s'il existait dans la vie réelle.\nRowing occupait le poste de « savant » des pirates de Roger, mais on ne sait pas si cela se traduisait par une quelconque expertise archéologique."
+    }
+   ],
+   "caracteres": 5980,
+   "source": "wiki FR onepiece.fandom.com/fr — « Archéologue » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Arch%C3%A9ologue — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "ankorodo-hiden-ninjutsu-mochi-release-infinite-dumplings",
+   "id": "9d77b726-1d92-4fab-ba69-7c5b19460c7d",
+   "name": "Ankorodō Hiden Ninjutsu: Mochi Release: Infinite Dumplings",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Jutsu Secret d'Ankorodô - Mochiton - Décuplement des Boules",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Jutsu_Secret_d'Ankorod%C3%B4_-_Mochiton_-_D%C3%A9cuplement_des_Boules",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "Cette technique nécessite apparemment une seconde méthode pour arrêter la croissance, mais le propriétaire de l'Ankorodô l'a oubliée, n'ayant pas utilisé le jutsu depuis des années."
+    }
+   ],
+   "caracteres": 181,
+   "source": "wiki FR naruto.fandom.com/fr — « Jutsu Secret d'Ankorodô - Mochiton - Décuplement des Boules » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Jutsu_Secret_d'Ankorod%C3%B4_-_Mochiton_-_D%C3%A9cuplement_des_Boules — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "basilisk",
+   "id": "9d77cd80-bcd4-4c19-b429-53d8fd95bb3a",
+   "name": "Basilisk",
+   "type": "character",
+   "universe": "One Piece",
+   "route": "langlink",
+   "titreFr": "Basilic",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://onepiece.fandom.com/fr/wiki/Basilic",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 10,
+    "intertitres_declares": 7,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Apparence",
+     "texte": "Le Basilic est une créature ressemblant à un poulet géant avec une tête reptilienne. Sa langue pend hors de sa gueule, ce qui lui donne un air loufoque."
+    },
+    {
+     "idx": "3",
+     "titre": "Aptitudes et Compétences",
+     "texte": "Le Basilic est très connu et craint des prisonniers du 2ème niveau. Tout ce dont on sait c'est qu'il est plus faible que le Sphinx. On peut supposer qu'il peut voler étant donner qu'il a des ailes même s'il n'en a pas la place à Impel Down."
+    },
+    {
+     "idx": "4.1",
+     "titre": "Arc Impel Down",
+     "texte": "Lorsque Monkey D. Luffy et Baggy infiltrèrent le 2ème niveau d'Impel Down, le Basilic les attaqua mais fut battu par le Gear Third de Luffy. Il s'écrasa sur le poste de garde du niveau 2.Il a dût être sérieusement blessé puisqu'il n'apparaît plus par la suite, même lorsque les prisonniers traversèrent le niveau 2 pour s'enfuir."
+    },
+    {
+     "idx": "6",
+     "titre": "Futilités",
+     "texte": "Le Basilic enfermé dans Impel Down est plus ressemblant à une créature nommée Cocatrix qu'au Basilic lui-même. Les deux créatures sont des mélanges entre deux espèces et la description faite tend plus vers celle du Cocatrix que celle du Basilic."
+    }
+   ],
+   "caracteres": 966,
+   "source": "wiki FR onepiece.fandom.com/fr — « Basilic » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Basilic — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "maen-nara",
+   "id": "9d862901-791b-4dcd-95e3-0151376748da",
+   "name": "Maen Nara",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Maen Nara",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Maen_Nara",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 6,
+    "intertitres_declares": 5,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Personnalité",
+     "texte": "Alors que ses traits de visage lui donnent un air dur, Maen est en réalité un individu au cœur tendre, qui aime regarder les cerfs que son clan a tendance à fréquenter dans la Fôret du Clan Nara."
+    },
+    {
+     "idx": "2",
+     "titre": "Apparence",
+     "texte": "Maen possède des yeux noirs et des cheveux noirs qu'il porte en queue de cheval. Il porte un bandeau frontal noir, la tenue standard des shinobi de Konoha et un gilet de protection."
+    },
+    {
+     "idx": "3",
+     "titre": "Compétences",
+     "texte": "Maen a une longue histoire de service militaire, et comme tous les membres de son clan il est capable de manipuler les ombres. Il montra des aptitudes avec la technique de Manipulation des Ombres, étant capable de retenir Jûbi pendant un court laps de temps avec l'aide d'autres membres du clan Nara."
+    }
+   ],
+   "caracteres": 676,
+   "source": "wiki FR naruto.fandom.com/fr — « Maen Nara » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Maen_Nara — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "heki",
+   "id": "9d9897f9-1e45-47ea-b9a2-35ee9fad2b7a",
+   "name": "Heki",
+   "type": "character",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Heki",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Heki",
+   "refus": "la page se range parmi les œuvres — Ébauches",
+   "etat": "refus"
+  },
+  {
+   "slug": "konoha-cryptanalysis-team",
+   "id": "9dd3b1b6-a460-4ed0-a4a3-29b45f37768c",
+   "name": "Konoha Cryptanalysis Team",
+   "type": "status",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Unité de Décryptage",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Unit%C3%A9_de_D%C3%A9cryptage",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "trunks-ssj2",
+   "id": "9de5de33-b363-4ec7-9598-5ee04dc09f0a",
+   "name": "Trunks SSJ2",
+   "type": "skill",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "esclave",
+   "id": "9df566a7-ff65-4c0a-be16-008b9a860032",
+   "name": "Esclave",
+   "type": "status",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Esclavage",
+   "identite": "redirection-declaree",
+   "url": "https://onepiece.fandom.com/fr/wiki/Esclavage",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 13,
+    "intertitres_declares": 11,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "La Pratique de l'Esclavage",
+     "texte": "Bien que l'esclavage ait été interdit par le Gouvernement Mondial il y a plus de 200 ans, il subsiste encore dans certains endroits dans le monde. Il est plus que probable que le Gouvernement Mondial reçoive des pots-de-vin pour fermer les yeux sur cette pratique. De plus, les acheteurs sont, le plus souvent, des Dragons Célestes. Ces derniers utilisent et traitent leurs esclaves comme des «animaux de compagnie» ou même pire des fois. Pour les marquer à vie comme étant inférieurs aux humains, les Dragons Célestes leur appose au fer rouge le symbole appelé \"La Griffe du Dragon volant\".\nBeaucoup d'esclaves étaient, avant de se faire vendre, des criminels. Certains ont des primes de plus de 50 000 000 et d'autres sont tout simplement prisés par les acheteurs en raison de leur espèce (Hommes-Poissons, Géants, Nains, etc...). En théorie, les esclaves que l'on trouve sur l'Archipel des Sabaody sont soit des criminels soit des habitants de nations non affiliées au Gouvernement Mondial."
+    },
+    {
+     "idx": "1.1",
+     "titre": "Propriétaires",
+     "texte": "Mis à part les Nobles Mondiaux, d'autres personnes peuvent également posséder des esclaves. En échange d'un pot-de-vin versé au Gouvernement Mondial, ils peuvent acheter des esclaves sans prendre le risque d'être arrêté. Majoritairement, les propriétaires d'esclaves utilisent ces derniers pour les tâches ingrates ou difficiles comme à Tequila Wolf où les esclaves doivent construire un pont, et ce, depuis 800 ans."
+    },
+    {
+     "idx": "1.2",
+     "titre": "Aide",
+     "texte": "Malheureusement, le fait que personne ne peut nuire à un Dragon Céleste ou leur tenir tête signifie que personne ne peut aider un esclave dans le besoin. Sinon, il encourrait une mort certaine (de part la venue d'un Amiral de la Marine). Mais certaines personnes courageuses, comme Fisher Tiger ou Monkey D. Luffy, ne sont guère intimidées par cette protection qu'ont les Dragons Célestes. Mis à part le \"Sabot du Dragon Enflammé\", les esclaves portent un collier explosif autour de leur cou. Si l'esclave tente de s'en débarrasser, ce collier explose en blessant grièvement ou même tuant l'esclave rebelle."
+    },
+    {
+     "idx": "1.3",
+     "titre": "Collier Explosif",
+     "texte": "Le collier explosif est un dispositif attaché autour du cou des esclaves. Ils sont reliés à une chaîne qui, si elle est cassée, entraîne l'explosion du collier. Leur but est de dissuader les esclaves de s'échapper, et seulement la clé du collier ou une personne hautement qualifiée est en mesure de le déverrouiller. Ce collier est apparu la première fois dans le Chapitre 497 et l'Épisode 391. Ce collier est vu sur Devil Dias.\nDans le même style, il existe un bracelet explosif typique de Whole Cake, qui explose si le détenu sort de l'île. Il a été mis sur Sanji mais on ne sait pas s'il est destiné aux esclaves."
+    },
+    {
+     "idx": "2",
+     "titre": "Localisation",
+     "texte": "L'Archipel Sabaody est un endroit où l'esclavage est pratiqué. L'autre emplacement connu est Tequila Wolf, où les esclaves étaient forcés de construire un pont qui aurait dû relier les îles d'East Blue. Il était en construction depuis plus de 700 ans, mais était encore inachevé en raison de l'ampleur du travail à réaliser. Nico Robin fut le dernier esclave à avoir été emmené là-bas (après avoir été propulsé par le Shichibukai Bartholomew Kuma). Elle ne fût esclave qu'un court temps, car elle a été ensuite libérée par les Révolutionnaires."
+    },
+    {
+     "idx": "3",
+     "titre": "Prix de départ au enchères",
+     "texte": "Le Capitaine Corsaire Don Quichotte Doflamingo était le propriétaire de la salle des ventes avant de la léguer à Disco. Pour masquer le fait que l'esclavage existe encore, sur la porte de la salle d'enchères a été marqué \"Bureau de sécurité publique de l'emploi\". Il y a une liste des prix de ventes selon le type d'esclave, et les prix de départ pour la vente de chaque race sont les suivants :"
+    },
+    {
+     "idx": "5",
+     "titre": "Histoire",
+     "texte": "On ne sait pas quand l'esclavage a commencé, mais il est présent depuis plus de sept cents ans, étant donné que les esclaves de Tequila Wolf ont commencé la construction du pont à cette période.\nBoa Hancock raconte à Luffy l'histoire de Fisher Tiger, qui a fait irruption à Marie-Joie et a libéré des centaines d'esclaves des Dragons Célestes. C'était un Homme-Poisson, race constamment persécutée, qui engagea beaucoup des siens afin de constituer le très célèbre équipage des Pirates du Soleil. Tiger a ensuite masqué les symboles des Dragons Célestes en les transformant en un symbole du Soleil. Avec ce symbole modifié, les Marines n'eurent plus aucun moyen de savoir qui était ancien esclave ou non."
+    },
+    {
+     "idx": "5.1",
+     "titre": "Événements Récents",
+     "texte": "Comme on le voit dans l'histoire de couverture de Nico Robin sur Tequila Wolf, l'Armée Révolutionnaire est arrivée et a libéré tous les esclaves, elle y compris."
+    },
+    {
+     "idx": "5.2",
+     "titre": "Après l'Ellipse",
+     "texte": "Après l'ellipse, la salle de vente aux enchères de Sabaody est désertée et son propriétaire, Disco, est maintenant un vagabond. Bien que cette salle soit fermée, le commerce des esclaves est toujours florissant comme en témoigne les intentions de Caribou d'enlever de jeunes sirènes pour les vendre, ​​ce qui implique que ce n'est pas la seule maison de vente aux enchères connue."
+    },
+    {
+     "idx": "6",
+     "titre": "Futilité",
+     "texte": "La traite des esclaves était une activité lucrative à l' âge d'or réel de la piraterie . Certains pirates, comme Sir John Hawkins , ont échangé ou acquis eux-mêmes des esclaves pour renforcer leurs gangs de pirates.\nDe même, les ventes aux enchères d'esclaves et les bazars existaient réellement, où les esclaves pouvaient être achetés, vendus ou échangés. Une partie historiquement bien connue de l'esclavage était le commerce des esclaves africains qui opérait entre l'Ancien et le Nouveau Monde. En Amérique, il a eu lieu principalement entre les XVIe et XIXe siècles et s'est étendu à de nombreux pays. Il fut officiellement interdit le 18 décembre 1865.\nDans la mine d'Udon sur Wano Kuni, des prisonniers tels que Luffy et Eustass Kid sont également contraints au travail forcé. Cependant, c'est plus dans le but de briser sa volonté."
+    }
+   ],
+   "caracteres": 5655,
+   "source": "wiki FR onepiece.fandom.com/fr — « Esclavage » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Esclavage — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "summoning-triple-rashomon",
+   "id": "9df6b913-9cf1-4fed-89c9-e6e77833e022",
+   "name": "Summoning: Triple Rashōmon",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Invocation - Triple Rempart",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Invocation_-_Triple_Rempart",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "atk-db-dragon-storm",
+   "id": "9e07eafe-3b88-4008-97e5-df4f8521a67d",
+   "name": "Dragon Storm",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "z-epee",
+   "id": "9e1e7276-360e-481e-b708-af3dc1bf5c07",
+   "name": "Z-Sword (Épée Zeta)",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "route": "recherche-fr",
+   "titreFr": "Z Sword",
+   "identite": "meme-nom",
+   "url": "https://dragonball.fandom.com/fr/wiki/Z_Sword",
+   "refus": "page plus générale — page plus générale que l'entité : « Z Sword » ne couvre pas « Z-Sword (Épée Zeta) »",
+   "etat": "refus"
+  },
+  {
+   "slug": "six-paths-ultra-big-ball-rasenshuriken",
+   "id": "9e23787c-42c5-4338-8d25-0f209e218208",
+   "name": "Six Paths: Ultra-Big Ball Rasenshuriken",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Rikudô - Orbe Shuriken Géant",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Rikud%C3%B4_-_Orbe_Shuriken_G%C3%A9ant",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "clone-spinning-heel-drop",
+   "id": "9e53c01e-ec7a-4685-832a-da7e01c95a04",
+   "name": "Clone Spinning Heel Drop",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Coup de Talon Retourné du Clone",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Coup_de_Talon_Retourn%C3%A9_du_Clone",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "milk",
+   "id": "9e669743-57aa-4f54-9eed-d71e351c5f7c",
+   "name": "Milk",
+   "type": "place",
+   "universe": "One Piece",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "cheese",
+   "id": "9e9a96b3-6a42-4ede-8234-b2c3ccc22b8e",
+   "name": "Île Fromage",
+   "type": "place",
+   "universe": "One Piece",
+   "route": "titre-exact",
+   "titreFr": "Île Fromage",
+   "identite": "titre-egal",
+   "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Fromage",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 6,
+    "intertitres_declares": 4,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Ville",
+     "texte": "Cheese Town (チーズタウン Chīzu Taun) : Seule Cheese Town a été montrée, et on y voit des bâtiments faits avec du fromage et en forme de plats au fromage pour certains. Du lait en découle."
+    },
+    {
+     "idx": "2.1",
+     "titre": "Passé",
+     "texte": "Il y a moins de 62 ans, l'Île est devenue une partie du territoire de Pirates de Big Mom également connu sous le nom de \"Totto Land\", et son apparence a été changée pour son look actuel en utilisant les pouvoirs du Soru Soru no Mi de Charlotte Linlin et du Kuku Kuku no Mi de Streusen.\nCharlotte Mont d'Or est alors nommée ministre en charge de cette île."
+    },
+    {
+     "idx": "2.2",
+     "titre": "Arc Whole Cake Island",
+     "texte": "Alors que l'équipe de récupération de Sanji suivait les instructions de Charlotte Pudding, ils passèrent près de l'Île Fromage en route vers Whole Cake Island.\nLe jour du mariage entre Sanji et Pudding, les citoyens de Cheese Town étaient impatients et heureux pour l'événement."
+    }
+   ],
+   "caracteres": 815,
+   "source": "wiki FR onepiece.fandom.com/fr — « Île Fromage » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Fromage — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "atk-db-buster-blade",
+   "id": "9ea33cb3-9585-44ed-add0-67d538d66fdb",
+   "name": "Buster Blade",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "armour-of-sand",
+   "id": "9eb88c46-d62d-4c6d-9fc5-807ff9f45be8",
+   "name": "Armour of Sand",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Armure de Sable",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Armure_de_Sable",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 2,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "master-of-the-hozuki-castle",
+   "id": "9ecee176-e25f-44e2-8e8d-da219b02a107",
+   "name": "Master of the Hōzuki Castle",
+   "type": "profession",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "sealing-tag",
+   "id": "9edd9898-65da-41f8-8c29-c36fa55cee47",
+   "name": "Sealing Tag",
+   "type": "artifact",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Parchemin de Scellement",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Parchemin_de_Scellement",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "parachute",
+   "id": "9ee1de6e-e623-44fb-b2c9-f2ff79a6050e",
+   "name": "Parachute",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "titre-exact",
+   "titreFr": "Parachute",
+   "identite": "titre-egal",
+   "url": "https://naruto.fandom.com/fr/wiki/Parachute",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 1,
+    "intertitres_declares": 1,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "candidat",
+   "sections": [
+    {
+     "idx": "1",
+     "titre": "Anecdotes",
+     "texte": "N'étant pas nommée dans le manga ni l'anime, cette technique tient son nom du jeu Naruto Shippûden: Ultimate Ninja Storm 2."
+    }
+   ],
+   "caracteres": 123,
+   "source": "wiki FR naruto.fandom.com/fr — « Parachute » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Parachute — texte extrait tel quel, non traduit, intertitres de la page source"
+  },
+  {
+   "slug": "atk-db-break-strike",
+   "id": "9ef71fa0-cd24-4bde-bc6b-62dea41e88b1",
+   "name": "Break Strike",
+   "type": "power",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "water-release-lotus-light-rupture",
+   "id": "9f0864c9-0be5-44f0-ad7b-a47d417e9bab",
+   "name": "Water Release: Lotus Light Rupture",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "piercing-showers",
+   "id": "9f10eac7-cc10-4a6a-b2a8-29b61152e6f7",
+   "name": "Piercing Showers",
+   "type": "power",
+   "universe": "Naruto",
+   "route": "langlink",
+   "titreFr": "Douche Perçante",
+   "identite": "pont-interlangue-symetrique",
+   "url": "https://naruto.fandom.com/fr/wiki/Douche_Per%C3%A7ante",
+   "refus": null,
+   "decoupe": {
+    "bornes_trouvees": 0,
+    "intertitres_declares": 0,
+    "manques": []
+   },
+   "retirees_pour_redondance": [],
+   "etat": "page sans prose exploitable"
+  },
+  {
+   "slug": "piepie",
+   "id": "9f21d7e8-91fa-423a-996c-3660408535c1",
+   "name": "Piepie",
+   "type": "place",
+   "universe": "One Piece",
+   "route": "langlink",
+   "titreFr": "Île Tourte",
+   "identite": null,
+   "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Tourte",
+   "refus": "pont nu sans preuve de nom",
+   "etat": "refus"
+  },
+  {
+   "slug": "dogi-ecole-tortue",
+   "id": "9f3e3bbf-8404-4314-8241-15bcb10ba9d1",
+   "name": "Dogi de l'École Tortue",
+   "type": "artifact",
+   "universe": "Dragon Ball",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  },
+  {
+   "slug": "summoning-technique-shinigami-toad",
+   "id": "9faa17f7-491c-426d-9457-3a484be398d7",
+   "name": "Summoning Technique (Shinigami, Toad)",
+   "type": "power",
+   "universe": "Naruto",
+   "route": null,
+   "titreFr": null,
+   "identite": null,
+   "url": null,
+   "refus": "sans page FR",
+   "etat": "refus"
+  }
+ ]
+}

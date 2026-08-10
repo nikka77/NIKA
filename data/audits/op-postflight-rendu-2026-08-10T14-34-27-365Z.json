@@ -1,0 +1,2440 @@
+{
+ "quand": "2026-08-10T14:36:17.399Z",
+ "base": "http://localhost:3000",
+ "traceLue": "data/audits/isolees-html-one-piece-trace-2026-08-10T14-28-33-637Z.json",
+ "ecritEnBase": false,
+ "fichesDesisolees": 87,
+ "pagesOuvertes": 87,
+ "seVoient": 87,
+ "muettes": 0,
+ "aretesTraceAbsentesDeLaBase": 0,
+ "resultats": [
+  {
+   "slug": "giberson",
+   "nom": "Giberson",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Underworld",
+     "versSlug": "underworld",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/giberson",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Underworld",
+     "versSlug": "underworld",
+     "versType": "status",
+     "chip": "Appartient à · Underworld",
+     "attendu": "Appartient à · Underworld"
+    }
+   ]
+  },
+  {
+   "slug": "kuraigana-island",
+   "nom": "Île Obscuria",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kuraigana-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  },
+  {
+   "slug": "uholisia",
+   "nom": "Uholisia",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Nihou Navy",
+     "versSlug": "niho-navy",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/uholisia",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Nihou Navy",
+     "versSlug": "niho-navy",
+     "versType": "status",
+     "chip": "Appartient à · Nihou Navy",
+     "attendu": "Appartient à · Nihou Navy"
+    }
+   ]
+  },
+  {
+   "slug": "ultraking",
+   "nom": "Ultraking",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Rain Dinners",
+     "versSlug": "rain-dinners",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/ultraking",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Rain Dinners",
+     "versSlug": "rain-dinners",
+     "versType": "status",
+     "chip": "Appartient à · Rain Dinners",
+     "attendu": "Appartient à · Rain Dinners"
+    }
+   ]
+  },
+  {
+   "slug": "furrari",
+   "nom": "Furrari",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status"
+    },
+    {
+     "relation": "habite",
+     "vers": "Royaume de Nagagutsu",
+     "versSlug": "nagagutsu-kingdom",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/furrari",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status",
+     "chip": "Appartient à · Levely",
+     "attendu": "Appartient à · Levely"
+    },
+    {
+     "relation": "habite",
+     "vers": "Royaume de Nagagutsu",
+     "versSlug": "nagagutsu-kingdom",
+     "versType": "place",
+     "chip": "Réside · Royaume de Nagagutsu",
+     "attendu": "Réside · Royaume de Nagagutsu"
+    }
+   ]
+  },
+  {
+   "slug": "quatres-empereurs",
+   "nom": "Quatres Empereurs",
+   "type": "status",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Trois Grands Pouvoirs",
+     "versSlug": "three-great-powers",
+     "versType": "status"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Capitaine pirate",
+     "versSlug": "pirate-captain",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/quatres-empereurs",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Trois Grands Pouvoirs",
+     "versSlug": "three-great-powers",
+     "versType": "status",
+     "chip": "Appartient à · Trois Grands Pouvoirs",
+     "attendu": "Appartient à · Trois Grands Pouvoirs"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Capitaine pirate",
+     "versSlug": "pirate-captain",
+     "versType": "profession",
+     "chip": "Exerce · Capitaine pirate",
+     "attendu": "Exerce · Capitaine pirate"
+    }
+   ]
+  },
+  {
+   "slug": "herb",
+   "nom": "Herb",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Shandias",
+     "versSlug": "shandia",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/herb",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Shandias",
+     "versSlug": "shandia",
+     "versType": "status",
+     "chip": "Appartient à · Shandias",
+     "attendu": "Appartient à · Shandias"
+    }
+   ]
+  },
+  {
+   "slug": "luigia",
+   "nom": "Luigia",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Little East Blue",
+     "versSlug": "little-east-blue",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/luigia",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Little East Blue",
+     "versSlug": "little-east-blue",
+     "versType": "place",
+     "chip": "Réside · Little East Blue",
+     "attendu": "Réside · Little East Blue"
+    }
+   ]
+  },
+  {
+   "slug": "fabre",
+   "nom": "Fabre",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Little East Blue",
+     "versSlug": "little-east-blue",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/fabre",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Little East Blue",
+     "versSlug": "little-east-blue",
+     "versType": "place",
+     "chip": "Réside · Little East Blue",
+     "attendu": "Réside · Little East Blue"
+    }
+   ]
+  },
+  {
+   "slug": "jigra",
+   "nom": "Jigra",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Underworld",
+     "versSlug": "underworld",
+     "versType": "status"
+    },
+    {
+     "relation": "appartient",
+     "vers": "Organ Dealing Assassination Group",
+     "versSlug": "organ-dealing-assassination-group",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/jigra",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Underworld",
+     "versSlug": "underworld",
+     "versType": "status",
+     "chip": "Appartient à · Underworld",
+     "attendu": "Appartient à · Underworld"
+    },
+    {
+     "relation": "appartient",
+     "vers": "Organ Dealing Assassination Group",
+     "versSlug": "organ-dealing-assassination-group",
+     "versType": "status",
+     "chip": "Appartient à · Organ Dealing Assassination Group",
+     "attendu": "Appartient à · Organ Dealing Assassination Group"
+    }
+   ]
+  },
+  {
+   "slug": "little-east-blue",
+   "nom": "Little East Blue",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/little-east-blue",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  },
+  {
+   "slug": "franky-family",
+   "nom": "Franky Family",
+   "type": "status",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Chasseur de primes",
+     "versSlug": "bounty-hunter",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/franky-family",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Appartient à · Water Seven",
+     "attendu": "Appartient à · Water Seven"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Chasseur de primes",
+     "versSlug": "bounty-hunter",
+     "versType": "profession",
+     "chip": "Exerce · Chasseur de primes",
+     "attendu": "Exerce · Chasseur de primes"
+    }
+   ]
+  },
+  {
+   "slug": "galley-la-company",
+   "nom": "Galley-La Company",
+   "type": "status",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/galley-la-company",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Water Seven",
+     "versSlug": "water-seven-lieu",
+     "versType": "place",
+     "chip": "Appartient à · Water Seven",
+     "attendu": "Appartient à · Water Seven"
+    }
+   ]
+  },
+  {
+   "slug": "beer-vi",
+   "nom": "Beer VI",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Royaume de Roshwan",
+     "versSlug": "roshwan-kingdom",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/beer-vi",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Royaume de Roshwan",
+     "versSlug": "roshwan-kingdom",
+     "versType": "place",
+     "chip": "Réside · Royaume de Roshwan",
+     "attendu": "Réside · Royaume de Roshwan"
+    }
+   ]
+  },
+  {
+   "slug": "otaka",
+   "nom": "Otaka",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Famille Hyogoro",
+     "versSlug": "hyougoro-family",
+     "versType": "status"
+    },
+    {
+     "relation": "habite",
+     "vers": "Capitale des Fleurs",
+     "versSlug": "flower-capital",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/otaka",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Famille Hyogoro",
+     "versSlug": "hyougoro-family",
+     "versType": "status",
+     "chip": "Appartient à · Famille Hyogoro",
+     "attendu": "Appartient à · Famille Hyogoro"
+    },
+    {
+     "relation": "habite",
+     "vers": "Capitale des Fleurs",
+     "versSlug": "flower-capital",
+     "versType": "place",
+     "chip": "Réside · Capitale des Fleurs",
+     "attendu": "Réside · Capitale des Fleurs"
+    }
+   ]
+  },
+  {
+   "slug": "loadestar-island",
+   "nom": "Île de Road Star",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/loadestar-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place",
+     "chip": "Appartient à · Nouveau Monde",
+     "attendu": "Appartient à · Nouveau Monde"
+    }
+   ]
+  },
+  {
+   "slug": "hareji",
+   "nom": "Hareji",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Alliance Ninja-Pirate-Mink-Samouraï",
+     "versSlug": "ninja-pirate-mink-samurai-alliance",
+     "versType": "status"
+    },
+    {
+     "relation": "habite",
+     "vers": "Capitale des Fleurs",
+     "versSlug": "flower-capital",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/hareji",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Alliance Ninja-Pirate-Mink-Samouraï",
+     "versSlug": "ninja-pirate-mink-samurai-alliance",
+     "versType": "status",
+     "chip": "Appartient à · Alliance Ninja-Pirate-Mink-Samouraï",
+     "attendu": "Appartient à · Alliance Ninja-Pirate-Mink-Samouraï"
+    },
+    {
+     "relation": "habite",
+     "vers": "Capitale des Fleurs",
+     "versSlug": "flower-capital",
+     "versType": "place",
+     "chip": "Réside · Capitale des Fleurs",
+     "attendu": "Réside · Capitale des Fleurs"
+    }
+   ]
+  },
+  {
+   "slug": "mendou",
+   "nom": "Mendou",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Little East Blue",
+     "versSlug": "little-east-blue",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/mendou",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Little East Blue",
+     "versSlug": "little-east-blue",
+     "versType": "place",
+     "chip": "Réside · Little East Blue",
+     "attendu": "Réside · Little East Blue"
+    }
+   ]
+  },
+  {
+   "slug": "risky-red-island",
+   "nom": "Île Risky Red",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/risky-red-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place",
+     "chip": "Appartient à · Nouveau Monde",
+     "attendu": "Appartient à · Nouveau Monde"
+    }
+   ]
+  },
+  {
+   "slug": "san-faldo",
+   "nom": "San Faldo",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/san-faldo",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  },
+  {
+   "slug": "mayushika",
+   "nom": "Mayushika",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Shandias",
+     "versSlug": "shandia",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/mayushika",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Shandias",
+     "versSlug": "shandia",
+     "versType": "status",
+     "chip": "Appartient à · Shandias",
+     "attendu": "Appartient à · Shandias"
+    }
+   ]
+  },
+  {
+   "slug": "mari",
+   "nom": "Mari",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/mari",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status",
+     "chip": "Appartient à · Levely",
+     "attendu": "Appartient à · Levely"
+    }
+   ]
+  },
+  {
+   "slug": "gram",
+   "nom": "Gram",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "exerce",
+     "vers": "Archéologue",
+     "versSlug": "archaeologist",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/gram",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "exerce",
+     "vers": "Archéologue",
+     "versSlug": "archaeologist",
+     "versType": "profession",
+     "chip": "Exerce · Archéologue",
+     "attendu": "Exerce · Archéologue"
+    }
+   ]
+  },
+  {
+   "slug": "moqueca",
+   "nom": "Moqueca",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/moqueca",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status",
+     "chip": "Appartient à · Levely",
+     "attendu": "Appartient à · Levely"
+    }
+   ]
+  },
+  {
+   "slug": "foodvalten-island",
+   "nom": "Île Foodvalten",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/foodvalten-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place",
+     "chip": "Appartient à · Nouveau Monde",
+     "attendu": "Appartient à · Nouveau Monde"
+    }
+   ]
+  },
+  {
+   "slug": "kyuka-island",
+   "nom": "Île Kyuka",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kyuka-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  },
+  {
+   "slug": "renaisse",
+   "nom": "Renaisse",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/renaisse",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  },
+  {
+   "slug": "winner-island",
+   "nom": "Île Winner",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/winner-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place",
+     "chip": "Appartient à · Nouveau Monde",
+     "attendu": "Appartient à · Nouveau Monde"
+    }
+   ]
+  },
+  {
+   "slug": "du-feld",
+   "nom": "Du Feld",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Underworld",
+     "versSlug": "underworld",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/du-feld",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Underworld",
+     "versSlug": "underworld",
+     "versType": "status",
+     "chip": "Appartient à · Underworld",
+     "attendu": "Appartient à · Underworld"
+    }
+   ]
+  },
+  {
+   "slug": "downs-island",
+   "nom": "Île Downs",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "North Blue",
+     "versSlug": "north-blue",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/downs-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "North Blue",
+     "versSlug": "north-blue",
+     "versType": "place",
+     "chip": "Appartient à · North Blue",
+     "attendu": "Appartient à · North Blue"
+    }
+   ]
+  },
+  {
+   "slug": "broc-coli-island",
+   "nom": "Île Broc Coli",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/broc-coli-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place",
+     "chip": "Appartient à · Nouveau Monde",
+     "attendu": "Appartient à · Nouveau Monde"
+    }
+   ]
+  },
+  {
+   "slug": "laugh-tale",
+   "nom": "Laugh Tale",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/laugh-tale",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place",
+     "chip": "Appartient à · Nouveau Monde",
+     "attendu": "Appartient à · Nouveau Monde"
+    }
+   ]
+  },
+  {
+   "slug": "mitsuboshi",
+   "nom": "Mitsuboshi",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "exerce",
+     "vers": "Cuisinier",
+     "versSlug": "cook",
+     "versType": "profession"
+    },
+    {
+     "relation": "habite",
+     "vers": "Little East Blue",
+     "versSlug": "little-east-blue",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/mitsuboshi",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "exerce",
+     "vers": "Cuisinier",
+     "versSlug": "cook",
+     "versType": "profession",
+     "chip": "Exerce · Cuisinier",
+     "attendu": "Exerce · Cuisinier"
+    },
+    {
+     "relation": "habite",
+     "vers": "Little East Blue",
+     "versSlug": "little-east-blue",
+     "versType": "place",
+     "chip": "Réside · Little East Blue",
+     "attendu": "Réside · Little East Blue"
+    }
+   ]
+  },
+  {
+   "slug": "morollon",
+   "nom": "Morollon",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Royaume de Tajine",
+     "versSlug": "tajine-kingdom",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/morollon",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Royaume de Tajine",
+     "versSlug": "tajine-kingdom",
+     "versType": "place",
+     "chip": "Réside · Royaume de Tajine",
+     "attendu": "Réside · Royaume de Tajine"
+    }
+   ]
+  },
+  {
+   "slug": "hippie",
+   "nom": "Hippie",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Endurance Curry Pirates",
+     "versSlug": "endurance-curry-pirates",
+     "versType": "status"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Capitaine pirate",
+     "versSlug": "pirate-captain",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/hippie",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Endurance Curry Pirates",
+     "versSlug": "endurance-curry-pirates",
+     "versType": "status",
+     "chip": "Appartient à · Endurance Curry Pirates",
+     "attendu": "Appartient à · Endurance Curry Pirates"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Capitaine pirate",
+     "versSlug": "pirate-captain",
+     "versType": "profession",
+     "chip": "Exerce · Capitaine pirate",
+     "attendu": "Exerce · Capitaine pirate"
+    }
+   ]
+  },
+  {
+   "slug": "ed",
+   "nom": "Ed",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Randolph Theater",
+     "versSlug": "randolph-theater",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/ed",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Randolph Theater",
+     "versSlug": "randolph-theater",
+     "versType": "status",
+     "chip": "Appartient à · Randolph Theater",
+     "attendu": "Appartient à · Randolph Theater"
+    }
+   ]
+  },
+  {
+   "slug": "nashi",
+   "nom": "Nashi",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/nashi",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status",
+     "chip": "Appartient à · Levely",
+     "attendu": "Appartient à · Levely"
+    }
+   ]
+  },
+  {
+   "slug": "drug-peclo",
+   "nom": "Drug Peclo",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Underworld",
+     "versSlug": "underworld",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/drug-peclo",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Underworld",
+     "versSlug": "underworld",
+     "versType": "status",
+     "chip": "Appartient à · Underworld",
+     "attendu": "Appartient à · Underworld"
+    }
+   ]
+  },
+  {
+   "slug": "harahettania",
+   "nom": "Harahettania",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/harahettania",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  },
+  {
+   "slug": "couran",
+   "nom": "Couran",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/couran",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status",
+     "chip": "Appartient à · Levely",
+     "attendu": "Appartient à · Levely"
+    }
+   ]
+  },
+  {
+   "slug": "reik",
+   "nom": "Reik",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Gouvernement de Ruluka",
+     "versSlug": "ruluka-government",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/reik",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Gouvernement de Ruluka",
+     "versSlug": "ruluka-government",
+     "versType": "status",
+     "chip": "Appartient à · Gouvernement de Ruluka",
+     "attendu": "Appartient à · Gouvernement de Ruluka"
+    }
+   ]
+  },
+  {
+   "slug": "seto",
+   "nom": "Seto",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Shandias",
+     "versSlug": "shandia",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/seto",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Shandias",
+     "versSlug": "shandia",
+     "versType": "status",
+     "chip": "Appartient à · Shandias",
+     "attendu": "Appartient à · Shandias"
+    }
+   ]
+  },
+  {
+   "slug": "shuutai",
+   "nom": "Shuutai",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "exerce",
+     "vers": "Cuisinier",
+     "versSlug": "cook",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/shuutai",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "exerce",
+     "vers": "Cuisinier",
+     "versSlug": "cook",
+     "versType": "profession",
+     "chip": "Exerce · Cuisinier",
+     "attendu": "Exerce · Cuisinier"
+    }
+   ]
+  },
+  {
+   "slug": "spoil",
+   "nom": "Spoil",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Association des Victimes de Thriller Bark",
+     "versSlug": "thriller-bark-victim-s-association",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/spoil",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Association des Victimes de Thriller Bark",
+     "versSlug": "thriller-bark-victim-s-association",
+     "versType": "status",
+     "chip": "Appartient à · Association des Victimes de Thriller Bark",
+     "attendu": "Appartient à · Association des Victimes de Thriller Bark"
+    }
+   ]
+  },
+  {
+   "slug": "ukkari-island",
+   "nom": "Île Ukkari",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/ukkari-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  },
+  {
+   "slug": "taco",
+   "nom": "Taco",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Royaume de Shishano",
+     "versSlug": "shishano-kingdom",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/taco",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Royaume de Shishano",
+     "versSlug": "shishano-kingdom",
+     "versType": "place",
+     "chip": "Réside · Royaume de Shishano",
+     "attendu": "Réside · Royaume de Shishano"
+    }
+   ]
+  },
+  {
+   "slug": "gally",
+   "nom": "Gally",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Gally Pirates",
+     "versSlug": "gally-pirates",
+     "versType": "status"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Capitaine pirate",
+     "versSlug": "pirate-captain",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/gally",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Gally Pirates",
+     "versSlug": "gally-pirates",
+     "versType": "status",
+     "chip": "Appartient à · Gally Pirates",
+     "attendu": "Appartient à · Gally Pirates"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Capitaine pirate",
+     "versSlug": "pirate-captain",
+     "versType": "profession",
+     "chip": "Exerce · Capitaine pirate",
+     "attendu": "Exerce · Capitaine pirate"
+    }
+   ]
+  },
+  {
+   "slug": "guarana",
+   "nom": "Guarana",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Guilde de Cidre",
+     "versSlug": "cidre-guild",
+     "versType": "status"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Officier",
+     "versSlug": "officer",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/guarana",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Guilde de Cidre",
+     "versSlug": "cidre-guild",
+     "versType": "status",
+     "chip": "Appartient à · Guilde de Cidre",
+     "attendu": "Appartient à · Guilde de Cidre"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Officier",
+     "versSlug": "officer",
+     "versType": "profession",
+     "chip": "Exerce · Officier",
+     "attendu": "Exerce · Officier"
+    }
+   ]
+  },
+  {
+   "slug": "chichilisia",
+   "nom": "Chichilisia",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Nihou Navy",
+     "versSlug": "niho-navy",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/chichilisia",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Nihou Navy",
+     "versSlug": "niho-navy",
+     "versType": "status",
+     "chip": "Appartient à · Nihou Navy",
+     "attendu": "Appartient à · Nihou Navy"
+    }
+   ]
+  },
+  {
+   "slug": "umit",
+   "nom": "Umit",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Underworld",
+     "versSlug": "underworld",
+     "versType": "status"
+    },
+    {
+     "relation": "appartient",
+     "vers": "Umit Shipping",
+     "versSlug": "umit-shipping",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/umit",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Underworld",
+     "versSlug": "underworld",
+     "versType": "status",
+     "chip": "Appartient à · Underworld",
+     "attendu": "Appartient à · Underworld"
+    },
+    {
+     "relation": "appartient",
+     "vers": "Umit Shipping",
+     "versSlug": "umit-shipping",
+     "versType": "status",
+     "chip": "Appartient à · Umit Shipping",
+     "attendu": "Appartient à · Umit Shipping"
+    }
+   ]
+  },
+  {
+   "slug": "samosa",
+   "nom": "Samosa",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/samosa",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status",
+     "chip": "Appartient à · Levely",
+     "attendu": "Appartient à · Levely"
+    }
+   ]
+  },
+  {
+   "slug": "rubeck-island",
+   "nom": "Île de Rubeck",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "North Blue",
+     "versSlug": "north-blue",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/rubeck-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "North Blue",
+     "versSlug": "north-blue",
+     "versType": "place",
+     "chip": "Appartient à · North Blue",
+     "attendu": "Appartient à · North Blue"
+    }
+   ]
+  },
+  {
+   "slug": "zombie-lola",
+   "nom": "Zombie Lola",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Thriller Bark Pirates",
+     "versSlug": "thriller-bark-pirates",
+     "versType": "status"
+    },
+    {
+     "relation": "appartient",
+     "vers": "Zombies",
+     "versSlug": "zombies",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/zombie-lola",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Thriller Bark Pirates",
+     "versSlug": "thriller-bark-pirates",
+     "versType": "status",
+     "chip": "Appartient à · Thriller Bark Pirates",
+     "attendu": "Appartient à · Thriller Bark Pirates"
+    },
+    {
+     "relation": "appartient",
+     "vers": "Zombies",
+     "versSlug": "zombies",
+     "versType": "status",
+     "chip": "Appartient à · Zombies",
+     "attendu": "Appartient à · Zombies"
+    }
+   ]
+  },
+  {
+   "slug": "jigorou",
+   "nom": "Jigorou",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Thriller Bark Pirates",
+     "versSlug": "thriller-bark-pirates",
+     "versType": "status"
+    },
+    {
+     "relation": "appartient",
+     "vers": "Zombies",
+     "versSlug": "zombies",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/jigorou",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Thriller Bark Pirates",
+     "versSlug": "thriller-bark-pirates",
+     "versType": "status",
+     "chip": "Appartient à · Thriller Bark Pirates",
+     "attendu": "Appartient à · Thriller Bark Pirates"
+    },
+    {
+     "relation": "appartient",
+     "vers": "Zombies",
+     "versSlug": "zombies",
+     "versType": "status",
+     "chip": "Appartient à · Zombies",
+     "attendu": "Appartient à · Zombies"
+    }
+   ]
+  },
+  {
+   "slug": "ile-de-mecha",
+   "nom": "Île de Mecha",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/ile-de-mecha",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  },
+  {
+   "slug": "iile-de-la-couronne",
+   "nom": "IÎle de la couronne",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/iile-de-la-couronne",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  },
+  {
+   "slug": "zangirimaru",
+   "nom": "Zangirimaru",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Alliance Ninja-Pirate-Mink-Samouraï",
+     "versSlug": "ninja-pirate-mink-samurai-alliance",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/zangirimaru",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Alliance Ninja-Pirate-Mink-Samouraï",
+     "versSlug": "ninja-pirate-mink-samurai-alliance",
+     "versType": "status",
+     "chip": "Appartient à · Alliance Ninja-Pirate-Mink-Samouraï",
+     "attendu": "Appartient à · Alliance Ninja-Pirate-Mink-Samouraï"
+    }
+   ]
+  },
+  {
+   "slug": "hocha",
+   "nom": "Hocha",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "exerce",
+     "vers": "Archéologue",
+     "versSlug": "archaeologist",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/hocha",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "exerce",
+     "vers": "Archéologue",
+     "versSlug": "archaeologist",
+     "versType": "profession",
+     "chip": "Exerce · Archéologue",
+     "attendu": "Exerce · Archéologue"
+    }
+   ]
+  },
+  {
+   "slug": "karate-island",
+   "nom": "Île du Karaté",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "South Blue",
+     "versSlug": "south-blue",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/karate-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "South Blue",
+     "versSlug": "south-blue",
+     "versType": "place",
+     "chip": "Appartient à · South Blue",
+     "attendu": "Appartient à · South Blue"
+    }
+   ]
+  },
+  {
+   "slug": "hou-one-piece",
+   "nom": "Hou",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Famille Nefertari",
+     "versSlug": "nefertari-family",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/hou-one-piece",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Famille Nefertari",
+     "versSlug": "nefertari-family",
+     "versType": "status",
+     "chip": "Appartient à · Famille Nefertari",
+     "attendu": "Appartient à · Famille Nefertari"
+    }
+   ]
+  },
+  {
+   "slug": "tamarisk",
+   "nom": "Tamarisk",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Alabasta",
+     "versSlug": "alabasta-lieu",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/tamarisk",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Alabasta",
+     "versSlug": "alabasta-lieu",
+     "versType": "place",
+     "chip": "Appartient à · Alabasta",
+     "attendu": "Appartient à · Alabasta"
+    }
+   ]
+  },
+  {
+   "slug": "applenine-island",
+   "nom": "Île d'Applenine",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/applenine-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place",
+     "chip": "Appartient à · Nouveau Monde",
+     "attendu": "Appartient à · Nouveau Monde"
+    }
+   ]
+  },
+  {
+   "slug": "banaro-island",
+   "nom": "Île Banaro",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/banaro-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  },
+  {
+   "slug": "musse",
+   "nom": "Musse",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Shandias",
+     "versSlug": "shandia",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/musse",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Shandias",
+     "versSlug": "shandia",
+     "versType": "status",
+     "chip": "Appartient à · Shandias",
+     "attendu": "Appartient à · Shandias"
+    }
+   ]
+  },
+  {
+   "slug": "phillip",
+   "nom": "Phillip",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Gouvernement de Ruluka",
+     "versSlug": "ruluka-government",
+     "versType": "status"
+    },
+    {
+     "relation": "appartient",
+     "vers": "Collection Party",
+     "versSlug": "collection-party",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/phillip",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Gouvernement de Ruluka",
+     "versSlug": "ruluka-government",
+     "versType": "status",
+     "chip": "Appartient à · Gouvernement de Ruluka",
+     "attendu": "Appartient à · Gouvernement de Ruluka"
+    },
+    {
+     "relation": "appartient",
+     "vers": "Collection Party",
+     "versSlug": "collection-party",
+     "versType": "status",
+     "chip": "Appartient à · Collection Party",
+     "attendu": "Appartient à · Collection Party"
+    }
+   ]
+  },
+  {
+   "slug": "rint",
+   "nom": "Rint",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "exerce",
+     "vers": "Archéologue",
+     "versSlug": "archaeologist",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/rint",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "exerce",
+     "vers": "Archéologue",
+     "versSlug": "archaeologist",
+     "versType": "profession",
+     "chip": "Exerce · Archéologue",
+     "attendu": "Exerce · Archéologue"
+    }
+   ]
+  },
+  {
+   "slug": "shandorian-chief",
+   "nom": "Shandorian Chief",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Shandias",
+     "versSlug": "shandia",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/shandorian-chief",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Shandias",
+     "versSlug": "shandia",
+     "versType": "status",
+     "chip": "Appartient à · Shandias",
+     "attendu": "Appartient à · Shandias"
+    }
+   ]
+  },
+  {
+   "slug": "tea-iv",
+   "nom": "Tea IV",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status"
+    },
+    {
+     "relation": "habite",
+     "vers": "Royaume d’Aegis",
+     "versSlug": "eigis-kingdom",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/tea-iv",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status",
+     "chip": "Appartient à · Levely",
+     "attendu": "Appartient à · Levely"
+    },
+    {
+     "relation": "habite",
+     "vers": "Royaume d’Aegis",
+     "versSlug": "eigis-kingdom",
+     "versType": "place",
+     "chip": "Réside · Royaume d’Aegis",
+     "attendu": "Réside · Royaume d’Aegis"
+    }
+   ]
+  },
+  {
+   "slug": "togare",
+   "nom": "Togare",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Coral Hill",
+     "versSlug": "coral-hill",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/togare",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Coral Hill",
+     "versSlug": "coral-hill",
+     "versType": "place",
+     "chip": "Réside · Coral Hill",
+     "attendu": "Réside · Coral Hill"
+    }
+   ]
+  },
+  {
+   "slug": "ile-d-asuka",
+   "nom": "Île d'Asuka",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/ile-d-asuka",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  },
+  {
+   "slug": "tritobu",
+   "nom": "Tritobu",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status"
+    },
+    {
+     "relation": "habite",
+     "vers": "Royaume de Nagagutsu",
+     "versSlug": "nagagutsu-kingdom",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/tritobu",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status",
+     "chip": "Appartient à · Levely",
+     "attendu": "Appartient à · Levely"
+    },
+    {
+     "relation": "habite",
+     "vers": "Royaume de Nagagutsu",
+     "versSlug": "nagagutsu-kingdom",
+     "versType": "place",
+     "chip": "Réside · Royaume de Nagagutsu",
+     "attendu": "Réside · Royaume de Nagagutsu"
+    }
+   ]
+  },
+  {
+   "slug": "mystoria-island",
+   "nom": "Île Mystoria",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/mystoria-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place",
+     "chip": "Appartient à · Nouveau Monde",
+     "attendu": "Appartient à · Nouveau Monde"
+    }
+   ]
+  },
+  {
+   "slug": "st-poplar",
+   "nom": "St Poplar",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/st-poplar",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  },
+  {
+   "slug": "rakesh",
+   "nom": "Rakesh",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "North Blue",
+     "versSlug": "north-blue",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/rakesh",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "North Blue",
+     "versSlug": "north-blue",
+     "versType": "place",
+     "chip": "Appartient à · North Blue",
+     "attendu": "Appartient à · North Blue"
+    }
+   ]
+  },
+  {
+   "slug": "reverse-mountain-lieu",
+   "nom": "Reverse Mountain",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Red Line",
+     "versSlug": "red-line",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/reverse-mountain-lieu",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Red Line",
+     "versSlug": "red-line",
+     "versType": "place",
+     "chip": "Appartient à · Red Line",
+     "attendu": "Appartient à · Red Line"
+    }
+   ]
+  },
+  {
+   "slug": "alice",
+   "nom": "Alice",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Galley-La Company",
+     "versSlug": "galley-la-company",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/alice",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Galley-La Company",
+     "versSlug": "galley-la-company",
+     "versType": "status",
+     "chip": "Appartient à · Galley-La Company",
+     "attendu": "Appartient à · Galley-La Company"
+    }
+   ]
+  },
+  {
+   "slug": "sphinx-island",
+   "nom": "Île Sphinx",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/sphinx-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Nouveau Monde",
+     "versSlug": "new-world",
+     "versType": "place",
+     "chip": "Appartient à · Nouveau Monde",
+     "attendu": "Appartient à · Nouveau Monde"
+    }
+   ]
+  },
+  {
+   "slug": "ginger",
+   "nom": "Ginger",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Guilde de Cidre",
+     "versSlug": "cidre-guild",
+     "versType": "status"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Officier",
+     "versSlug": "officer",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/ginger",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Guilde de Cidre",
+     "versSlug": "cidre-guild",
+     "versType": "status",
+     "chip": "Appartient à · Guilde de Cidre",
+     "attendu": "Appartient à · Guilde de Cidre"
+    },
+    {
+     "relation": "exerce",
+     "vers": "Officier",
+     "versSlug": "officer",
+     "versType": "profession",
+     "chip": "Exerce · Officier",
+     "attendu": "Exerce · Officier"
+    }
+   ]
+  },
+  {
+   "slug": "stroganoff",
+   "nom": "Stroganoff",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/stroganoff",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Levely",
+     "versSlug": "levely",
+     "versType": "status",
+     "chip": "Appartient à · Levely",
+     "attendu": "Appartient à · Levely"
+    }
+   ]
+  },
+  {
+   "slug": "topknot",
+   "nom": "Topknot",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "habite",
+     "vers": "Calm Belt",
+     "versSlug": "calm-belt",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/topknot",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "habite",
+     "vers": "Calm Belt",
+     "versSlug": "calm-belt",
+     "versType": "place",
+     "chip": "Réside · Calm Belt",
+     "attendu": "Réside · Calm Belt"
+    }
+   ]
+  },
+  {
+   "slug": "zadie",
+   "nom": "Zadie",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "exerce",
+     "vers": "Archéologue",
+     "versSlug": "archaeologist",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/zadie",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "exerce",
+     "vers": "Archéologue",
+     "versSlug": "archaeologist",
+     "versType": "profession",
+     "chip": "Exerce · Archéologue",
+     "attendu": "Exerce · Archéologue"
+    }
+   ]
+  },
+  {
+   "slug": "mocdonald",
+   "nom": "MocDonald",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Thriller Bark Pirates",
+     "versSlug": "thriller-bark-pirates",
+     "versType": "status"
+    },
+    {
+     "relation": "appartient",
+     "vers": "Zombies",
+     "versSlug": "zombies",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/mocdonald",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Thriller Bark Pirates",
+     "versSlug": "thriller-bark-pirates",
+     "versType": "status",
+     "chip": "Appartient à · Thriller Bark Pirates",
+     "attendu": "Appartient à · Thriller Bark Pirates"
+    },
+    {
+     "relation": "appartient",
+     "vers": "Zombies",
+     "versSlug": "zombies",
+     "versType": "status",
+     "chip": "Appartient à · Zombies",
+     "attendu": "Appartient à · Zombies"
+    }
+   ]
+  },
+  {
+   "slug": "jean-ango",
+   "nom": "Jean Ango",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "exerce",
+     "vers": "Tireur d’élite",
+     "versSlug": "sniper",
+     "versType": "profession"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/jean-ango",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "exerce",
+     "vers": "Tireur d’élite",
+     "versSlug": "sniper",
+     "versType": "profession",
+     "chip": "Exerce · Tireur d’élite",
+     "attendu": "Exerce · Tireur d’élite"
+    }
+   ]
+  },
+  {
+   "slug": "cidre",
+   "nom": "Cidre",
+   "type": "character",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Guilde de Cidre",
+     "versSlug": "cidre-guild",
+     "versType": "status"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/cidre",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Guilde de Cidre",
+     "versSlug": "cidre-guild",
+     "versType": "status",
+     "chip": "Appartient à · Guilde de Cidre",
+     "attendu": "Appartient à · Guilde de Cidre"
+    }
+   ]
+  },
+  {
+   "slug": "rusukaina",
+   "nom": "Ruskaina",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Calm Belt",
+     "versSlug": "calm-belt",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/rusukaina",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Calm Belt",
+     "versSlug": "calm-belt",
+     "versType": "place",
+     "chip": "Appartient à · Calm Belt",
+     "attendu": "Appartient à · Calm Belt"
+    }
+   ]
+  },
+  {
+   "slug": "kuen-village",
+   "nom": "Village de Kuen",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "North Blue",
+     "versSlug": "north-blue",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/kuen-village",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "North Blue",
+     "versSlug": "north-blue",
+     "versType": "place",
+     "chip": "Appartient à · North Blue",
+     "attendu": "Appartient à · North Blue"
+    }
+   ]
+  },
+  {
+   "slug": "nanimonai-island",
+   "nom": "Île Sans Rien",
+   "type": "place",
+   "arretes": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place"
+    }
+   ],
+   "url": "http://localhost:3000/learn/akasha/nanimonai-island",
+   "seVoit": true,
+   "detail": [
+    {
+     "relation": "appartient",
+     "vers": "Paradise",
+     "versSlug": "paradise",
+     "versType": "place",
+     "chip": "Appartient à · Paradise",
+     "attendu": "Appartient à · Paradise"
+    }
+   ]
+  }
+ ]
+}

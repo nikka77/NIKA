@@ -1,0 +1,357 @@
+{
+ "chantier": "application des visuels par fichier au nom de l’entité",
+ "pris_le": "2026-08-10T21:11:07.518Z",
+ "mode": "à blanc",
+ "rapport_source": "data/audits/fichier-nomme-2026-08-10T20-50-56-934Z.json",
+ "colonne": "image_url",
+ "avant": [
+  {
+   "slug": "oyakata-bune",
+   "name": "Oyakata Bune",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/4/45/Oyakata_Bune.png/revision/latest/scale-to-width-down/720?cb=20240806025524"
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-gatling",
+   "name": "Gomu Gomu no Gatling",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/9/99/Gomu_Gomu_no_Gatling.png/revision/latest/scale-to-width-down/720?cb=20170514163356&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-elephant-gun",
+   "name": "Gomu Gomu no Elephant Gun",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/6/65/Gomu_Gomu_no_Elephant_Gun.png/revision/latest/scale-to-width-down/720?cb=20241124021215"
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-red-hawk",
+   "name": "Gomu Gomu no Red Hawk",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/b/b2/Gomu_Gomu_no_Red_Hawk.png/revision/latest/scale-to-width-down/720?cb=20250316021511"
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-king-kong-gun",
+   "name": "Gomu Gomu no King Kong Gun",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/4/4b/Gomu_Gomu_no_King_Kong_Gun.png/revision/latest/scale-to-width-down/720?cb=20160320044647"
+  },
+  {
+   "slug": "atk-op-gear-second",
+   "name": "Gear Second",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/0/07/Gear_Second_Anime_Infobox.png/revision/latest/scale-to-width-down/720?cb=20200516162617&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-bazooka",
+   "name": "Gomu Gomu no Bazooka",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/1/1a/Gomu_Gomu_no_Bazooka.png/revision/latest?cb=20230502144443"
+  },
+  {
+   "slug": "atk-op-gear-fourth",
+   "name": "Gear Fourth",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/3/31/Gear_Fourth_Anime_Infobox.png/revision/latest?cb=20170707154748&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-oni-giri",
+   "name": "Oni Giri",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/8/8c/Oni_Giri.png/revision/latest?cb=20230202023603"
+  },
+  {
+   "slug": "atk-op-tora-gari",
+   "name": "Tora Gari",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/5/55/Tora_Gari.png/revision/latest?cb=20250715225206"
+  },
+  {
+   "slug": "atk-op-gear-fifth",
+   "name": "Gear Fifth",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/3/32/Gear_Fifth_Anime_Infobox.png/revision/latest/scale-to-width-down/720?cb=20251102172913&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-shishi-sonson",
+   "name": "Shishi Sonson",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/2/27/Shishi_Sonson.png/revision/latest/scale-to-width-down/720?cb=20180814175129&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-tatsumaki",
+   "name": "Tatsumaki",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/a/a7/Tatsumaki.png/revision/latest/scale-to-width-down/720?cb=20220522213814&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-mouton-shot",
+   "name": "Mouton Shot",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/2/28/Mouton_shot.jpg/revision/latest?cb=20240609084518&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-mirage-tempo",
+   "name": "Mirage Tempo",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/6/6b/Mirage_Tempo.png/revision/latest?cb=20230201161356"
+  },
+  {
+   "slug": "atk-op-thunder-lance-tempo",
+   "name": "Thunder Lance Tempo",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/4/45/Thunder_Lance_Tempo.png/revision/latest/scale-to-width-down/720?cb=20240721184007"
+  },
+  {
+   "slug": "atk-op-kaen-boshi",
+   "name": "Kaen Boshi",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/4/4c/Kaen_Boshi.jpg/revision/latest?cb=20150219153819&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-guard-point",
+   "name": "Guard Point",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/0/04/Guard_Point.png/revision/latest?cb=20240720173124"
+  },
+  {
+   "slug": "atk-op-arm-point",
+   "name": "Arm Point",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/f/f0/Arm_Point.PNG/revision/latest?cb=20240720173518"
+  },
+  {
+   "slug": "atk-op-horn-point",
+   "name": "Horn Point",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/c/cc/Horn_Point.png/revision/latest/scale-to-width-down/720?cb=20220721064703"
+  },
+  {
+   "slug": "atk-op-kung-fu-point",
+   "name": "Kung Fu Point",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/c/cf/Kung_Fu_Point.png/revision/latest?cb=20180702132045&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-clutch",
+   "name": "Clutch",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/8/87/Clutch.jpg/revision/latest?cb=20130818110653&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-spider-net",
+   "name": "Spider Net",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/d/d7/Spider_Net.png/revision/latest/scale-to-width-down/720?cb=20161221105637"
+  },
+  {
+   "slug": "atk-op-coup-de-vent",
+   "name": "Coup de Vent",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/8/8d/Coup_de_Vent.png/revision/latest/scale-to-width-down/720?cb=20230916172854"
+  },
+  {
+   "slug": "atk-op-demonio-fleur",
+   "name": "Demonio Fleur",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/5/5e/Demonio_Fleur.png/revision/latest/scale-to-width-down/720?cb=20231008220236&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-hanauta-sancho-yahazu-giri",
+   "name": "Hanauta Sancho Yahazu Giri",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/4/49/Hanauta_Sancho_Yahazu_Giri.png/revision/latest/scale-to-width-down/720?cb=20250705112712"
+  },
+  {
+   "slug": "atk-op-buraikan",
+   "name": "Buraikan",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/1/1d/Buraikan.png/revision/latest/scale-to-width-down/720?cb=20240618214038"
+  },
+  {
+   "slug": "atk-op-onigawara-seiken",
+   "name": "Onigawara Seiken",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/d/de/Onigawara_Seiken.png/revision/latest/scale-to-width-down/720?cb=20240618215100"
+  },
+  {
+   "slug": "atk-op-dai-enkai-entei",
+   "name": "Dai Enkai Entei",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/9/9c/Dai_Enkai_Entei.png/revision/latest/scale-to-width-down/720?cb=20220811134738"
+  },
+  {
+   "slug": "atk-op-kyokaen",
+   "name": "Kyokaen",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/b/b3/Kyokaen.png/revision/latest/scale-to-width-down/720?cb=20231122114831"
+  },
+  {
+   "slug": "atk-op-jujika",
+   "name": "Jujika",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/9/93/Jujika.png/revision/latest/scale-to-width-down/720?cb=20231019004828"
+  },
+  {
+   "slug": "atk-op-gamma-knife",
+   "name": "Gamma Knife",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/e/e0/Gamma_Knife.png/revision/latest/scale-to-width-down/720?cb=20151217104753"
+  },
+  {
+   "slug": "atk-op-injection-shot",
+   "name": "Injection Shot",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/6/6c/Injection_Shot_Manga.png/revision/latest?cb=20201104220537&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-counter-shock",
+   "name": "Counter Shock",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/5/5c/Counter_Shock.png/revision/latest/scale-to-width-down/720?cb=20231122113927"
+  },
+  {
+   "slug": "atk-op-puncture-wille",
+   "name": "Puncture Wille",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/a/ac/Puncture_Wille.png/revision/latest/scale-to-width-down/720?cb=20230625024147"
+  },
+  {
+   "slug": "atk-op-kurouzu",
+   "name": "Kurouzu",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/2/26/Kurouzu.png/revision/latest/scale-to-width-down/720?cb=20231222090529"
+  },
+  {
+   "slug": "atk-op-mochi-tsuki",
+   "name": "Mochi Tsuki",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/3/3f/Mochi_Tsuki_Anime.png/revision/latest/scale-to-width-down/720?cb=20181021152636&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-liberation",
+   "name": "Liberation",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/a/a5/Liberation_Manga.png/revision/latest/scale-to-width-down/720?cb=20201110082817&path-prefix=fr"
+  },
+  {
+   "slug": "atk-op-zan-giri-mochi",
+   "name": "Zan Giri Mochi",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/0/07/Zan_Giri_Mochi_Anime.png/revision/latest?cb=20190129194047&path-prefix=fr"
+  },
+  {
+   "slug": "gathering-of-the-snakes",
+   "name": "Gathering of the Snakes",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/naruto/images/0/08/Gathering_of_the_Snakes.PNG/revision/latest/scale-to-width-down/720?cb=20160408013347"
+  },
+  {
+   "slug": "atk-bl-soo-zabimaru",
+   "name": "Soo Zabimaru",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/bleach/images/3/3d/SOO-zabimaru.png/revision/latest/scale-to-width-down/720?cb=20240918204450&path-prefix=fr"
+  },
+  {
+   "slug": "adamantine-attacking-chains",
+   "name": "Adamantine Attacking Chains",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/naruto/images/1/17/Adamantine_Attacking_Chains.png/revision/latest/scale-to-width-down/720?cb=20150528122704"
+  },
+  {
+   "slug": "atk-bl-los-lobos",
+   "name": "Los Lobos",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/bleach/images/e/eb/Los_Lobos.jpeg/revision/latest/scale-to-width-down/720?cb=20201016232918&path-prefix=fr"
+  },
+  {
+   "slug": "kogarashi",
+   "name": "kogarashi",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/4/44/Kogarashi_Portrait.png/revision/latest?cb=20230623174128"
+  },
+  {
+   "slug": "scalpel",
+   "name": "Scalpel",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/naruto/images/2/2c/Scalpel.png/revision/latest/scale-to-width-down/720?cb=20150220171317"
+  },
+  {
+   "slug": "ketsuryugan",
+   "name": "Ketsuryūgan",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/naruto/images/3/38/Ketsury%C5%ABgan.png/revision/latest/scale-to-width-down/720?cb=20161222182729"
+  },
+  {
+   "slug": "team-two",
+   "name": "Team Two",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/naruto/images/5/55/Team_Two.PNG/revision/latest/scale-to-width-down/720?cb=20150816094347"
+  },
+  {
+   "slug": "angel-island",
+   "name": "Angel Island",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/7/73/Angel_Island_Portrait.png/revision/latest?cb=20150411144048&path-prefix=fr"
+  },
+  {
+   "slug": "team-hiruzen",
+   "name": "Team Hiruzen",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/naruto/images/3/30/Team_hiruzen.png/revision/latest/scale-to-width-down/720?cb=20240908012838"
+  },
+  {
+   "slug": "gentle-step-spiralling-twin-lion-fists",
+   "name": "Gentle Step Spiralling Twin Lion Fists",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/naruto/images/6/64/Gentle_Step_Spiralling_Twin_Lion_Fists.png/revision/latest/scale-to-width-down/720?cb=20150712201633"
+  },
+  {
+   "slug": "team-jiraiya",
+   "name": "Team Jiraiya",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/naruto/images/f/f6/Team_jiraiya.png/revision/latest/scale-to-width-down/720?cb=20240908011759"
+  },
+  {
+   "slug": "l-equipage-des-pirates-a-la-moustache",
+   "name": "L’équipage des Pirates à la Moustache",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/0/0b/L%27%C3%89quipage_des_Pirates_%C3%A0_la_Moustache_Anime_Infobox.png/revision/latest/scale-to-width-down/720?cb=20190429093550&path-prefix=fr"
+  },
+  {
+   "slug": "l-equipage-des-maquereaux",
+   "name": "L'Équipage des Maquereaux",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/c/cf/L%27%C3%89quipage_des_Maquereaux_Manga_Infobox.png/revision/latest?cb=20150723202024&path-prefix=fr"
+  },
+  {
+   "slug": "atk-bl-hakka-no-togame",
+   "name": "Hakka no Togame",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/bleach/images/3/3e/Hakka_no_Togame.PNG/revision/latest?cb=20230814103209&path-prefix=fr"
+  },
+  {
+   "slug": "kaji-king-i-ii",
+   "name": "Kaji King I & II",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/f/f9/Kaji_King_I_%26_II.png/revision/latest/scale-to-width-down/720?cb=20240806231136"
+  },
+  {
+   "slug": "harem-no-tango",
+   "name": "Harem no Tango",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/3/3b/Harem_no_Tango.png/revision/latest/scale-to-width-down/720?cb=20240806231120"
+  },
+  {
+   "slug": "kani-crane",
+   "name": "Kani Crane",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/6/68/Kani_Crane.png/revision/latest/scale-to-width-down/720?cb=20240806231127"
+  },
+  {
+   "slug": "atk-op-party-table-kick-course",
+   "name": "Party Table Kick Course",
+   "image_url_avant": null,
+   "image_url_visee": "https://static.wikia.nocookie.net/onepiece/images/5/54/Party_Table_Kick_Course.png/revision/latest/scale-to-width-down/720?cb=20250806025908"
+  }
+ ]
+}

@@ -1,28 +1,28 @@
 {
  "chantier": "état des lieux AKASHA",
- "quand": "2026-08-10T11:03:25.905Z",
- "total": 7654,
- "relations": 16769,
- "sections": 19084,
+ "quand": "2026-08-10T22:27:38.949Z",
+ "total": 7697,
+ "relations": 17071,
+ "sections": 21365,
  "global": {
-  "sansImage": 779,
-  "sansDescFr": 401,
-  "sansResume": 10,
-  "resumeRemplissage": 133,
-  "isolees": 783,
-  "sansDossier": 2878,
+  "sansImage": 692,
+  "sansDescFr": 395,
+  "sansResume": 17,
+  "resumeRemplissage": 122,
+  "isolees": 545,
+  "sansDossier": 2011,
   "descriptionRedondante": 5,
-  "descriptionAbsente": 7621
+  "descriptionAbsente": 7664
  },
  "parUnivers": {
   "Naruto": {
    "fiches": 3330,
-   "sansImage": 307,
-   "sansDescFr": 163,
-   "sansResume": 10,
+   "sansImage": 295,
+   "sansDescFr": 162,
+   "sansResume": 15,
    "resumeRemplissage": 1,
-   "sansDossier": 1917,
-   "isolees": 58,
+   "sansDossier": 1304,
+   "isolees": 39,
    "axes": [
     {
      "attr": "village",
@@ -41,21 +41,21 @@
     {
      "attr": "organization",
      "label": "Organisations",
-     "fiches": 225,
+     "fiches": 228,
      "valeurs": 42,
      "horsListe": 2
     },
     {
      "attr": "equipe",
      "label": "Équipes",
-     "fiches": 177,
-     "valeurs": 65,
-     "horsListe": 0
+     "fiches": 187,
+     "valeurs": 66,
+     "horsListe": 1
     },
     {
      "attr": "division",
      "label": "Divisions de la Guerre",
-     "fiches": 61,
+     "fiches": 66,
      "valeurs": 18,
      "horsListe": 0
     },
@@ -63,26 +63,26 @@
      "attr": "rank",
      "label": "Rangs ninja",
      "fiches": 473,
-     "valeurs": 11,
-     "horsListe": 3
+     "valeurs": 10,
+     "horsListe": 2
     },
     {
      "attr": "generation",
      "label": "Générations",
-     "fiches": 49,
+     "fiches": 51,
      "valeurs": 5,
      "horsListe": 0
     }
    ]
   },
   "One Piece": {
-   "fiches": 2229,
-   "sansImage": 366,
-   "sansDescFr": 163,
-   "sansResume": 0,
+   "fiches": 2273,
+   "sansImage": 294,
+   "sansDescFr": 157,
+   "sansResume": 2,
    "resumeRemplissage": 0,
-   "sansDossier": 449,
-   "isolees": 451,
+   "sansDossier": 253,
+   "isolees": 255,
    "axes": [
     {
      "attr": "faction",
@@ -94,21 +94,21 @@
     {
      "attr": "crew",
      "label": "Équipages",
-     "fiches": 358,
+     "fiches": 359,
      "valeurs": 41,
      "horsListe": 12
     },
     {
      "attr": "fruit_type",
      "label": "Types de Fruit du Démon",
-     "fiches": 279,
+     "fiches": 280,
      "valeurs": 7,
      "horsListe": 1
     },
     {
      "attr": "meito_grade",
      "label": "Grades de sabre (Meito)",
-     "fiches": 14,
+     "fiches": 15,
      "valeurs": 3,
      "horsListe": 0
     }
@@ -116,12 +116,12 @@
   },
   "Bleach": {
    "fiches": 382,
-   "sansImage": 59,
-   "sansDescFr": 13,
+   "sansImage": 56,
+   "sansDescFr": 15,
    "sansResume": 0,
    "resumeRemplissage": 0,
-   "sansDossier": 111,
-   "isolees": 42,
+   "sansDossier": 99,
+   "isolees": 40,
    "axes": [
     {
      "attr": "race",
@@ -147,13 +147,13 @@
    ]
   },
   "Initial D": {
-   "fiches": 44,
+   "fiches": 43,
    "sansImage": 2,
    "sansDescFr": 2,
    "sansResume": 0,
    "resumeRemplissage": 0,
    "sansDossier": 2,
-   "isolees": 5,
+   "isolees": 4,
    "axes": [
     {
      "attr": "affiliation",
@@ -174,11 +174,11 @@
   "Dragon Ball": {
    "fiches": 1137,
    "sansImage": 40,
-   "sansDescFr": 60,
+   "sansDescFr": 59,
    "sansResume": 0,
-   "resumeRemplissage": 132,
-   "sansDossier": 333,
-   "isolees": 146,
+   "resumeRemplissage": 121,
+   "sansDossier": 287,
+   "isolees": 127,
    "axes": [
     {
      "attr": "race",
@@ -203,7 +203,7 @@
    "sansResume": 0,
    "resumeRemplissage": 0,
    "sansDossier": 37,
-   "isolees": 49,
+   "isolees": 48,
    "axes": [
     {
      "attr": "partie",
@@ -254,37 +254,37 @@
  "parType": {
   "artifact": {
    "fiches": 400,
-   "sansImage": 99,
-   "isolees": 96
+   "sansImage": 87,
+   "isolees": 72
   },
   "character": {
    "fiches": 4031,
    "sansImage": 1,
-   "isolees": 534
+   "isolees": 387
   },
   "power": {
    "fiches": 2359,
-   "sansImage": 414,
-   "isolees": 13
+   "sansImage": 357,
+   "isolees": 7
   },
   "status": {
-   "fiches": 333,
-   "sansImage": 80,
-   "isolees": 42
+   "fiches": 356,
+   "sansImage": 68,
+   "isolees": 38
   },
   "profession": {
-   "fiches": 99,
+   "fiches": 105,
    "sansImage": 86,
    "isolees": 2
   },
   "place": {
-   "fiches": 352,
-   "sansImage": 83,
-   "isolees": 94
+   "fiches": 366,
+   "sansImage": 81,
+   "isolees": 37
   },
   "skill": {
    "fiches": 80,
-   "sansImage": 16,
+   "sansImage": 12,
    "isolees": 2
   }
  }

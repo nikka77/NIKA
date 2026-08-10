@@ -1,0 +1,178 @@
+{
+  "chantier": "largeur réelle du cadre du portrait par viewport",
+  "quand": "2026-08-10T15:05:00.625Z",
+  "base": "http://localhost:3000",
+  "viewports": [
+    390,
+    768,
+    1036,
+    1280,
+    1440,
+    1728,
+    1920
+  ],
+  "lignes": [
+    {
+      "slug": "son-goku",
+      "par_viewport": {
+        "390": {
+          "cadre_largeur": 313,
+          "cadre_hauteur": 392,
+          "ratio_cadre": 0.8,
+          "image_rendue": 311,
+          "definition": "870×1959"
+        },
+        "768": {
+          "cadre_largeur": 691,
+          "cadre_hauteur": 864,
+          "ratio_cadre": 0.8,
+          "image_rendue": 689,
+          "definition": "870×1959"
+        },
+        "1036": {
+          "cadre_largeur": 585,
+          "cadre_hauteur": 732,
+          "ratio_cadre": 0.8,
+          "image_rendue": 583,
+          "definition": "870×1959"
+        },
+        "1280": {
+          "cadre_largeur": 729,
+          "cadre_hauteur": 912,
+          "ratio_cadre": 0.8,
+          "image_rendue": 727,
+          "definition": "870×1959"
+        },
+        "1440": {
+          "cadre_largeur": 729,
+          "cadre_hauteur": 912,
+          "ratio_cadre": 0.8,
+          "image_rendue": 727,
+          "definition": "870×1959"
+        },
+        "1728": {
+          "cadre_largeur": 729,
+          "cadre_hauteur": 912,
+          "ratio_cadre": 0.8,
+          "image_rendue": 727,
+          "definition": "870×1959"
+        },
+        "1920": {
+          "cadre_largeur": 729,
+          "cadre_hauteur": 912,
+          "ratio_cadre": 0.8,
+          "image_rendue": 727,
+          "definition": "870×1959"
+        }
+      }
+    },
+    {
+      "slug": "officer",
+      "par_viewport": {
+        "390": {
+          "cadre_largeur": 313,
+          "cadre_hauteur": 235,
+          "ratio_cadre": 1.333,
+          "image_rendue": 311,
+          "definition": "1024×976"
+        },
+        "768": {
+          "cadre_largeur": 560,
+          "cadre_hauteur": 420,
+          "ratio_cadre": 1.333,
+          "image_rendue": 558,
+          "definition": "1024×976"
+        },
+        "1036": {
+          "cadre_largeur": 560,
+          "cadre_hauteur": 420,
+          "ratio_cadre": 1.333,
+          "image_rendue": 558,
+          "definition": "1024×976"
+        },
+        "1280": {
+          "cadre_largeur": 560,
+          "cadre_hauteur": 420,
+          "ratio_cadre": 1.333,
+          "image_rendue": 558,
+          "definition": "1024×976"
+        },
+        "1440": {
+          "cadre_largeur": 560,
+          "cadre_hauteur": 420,
+          "ratio_cadre": 1.333,
+          "image_rendue": 558,
+          "definition": "1024×976"
+        },
+        "1728": {
+          "cadre_largeur": 560,
+          "cadre_hauteur": 420,
+          "ratio_cadre": 1.333,
+          "image_rendue": 558,
+          "definition": "1024×976"
+        },
+        "1920": {
+          "cadre_largeur": 560,
+          "cadre_hauteur": 420,
+          "ratio_cadre": 1.333,
+          "image_rendue": 558,
+          "definition": "1024×976"
+        }
+      }
+    },
+    {
+      "slug": "clan-sarutobi",
+      "par_viewport": {
+        "390": {
+          "cadre_largeur": 288,
+          "cadre_hauteur": 288,
+          "ratio_cadre": 1,
+          "image_rendue": 286,
+          "definition": "512×512"
+        },
+        "768": {
+          "cadre_largeur": 288,
+          "cadre_hauteur": 288,
+          "ratio_cadre": 1,
+          "image_rendue": 286,
+          "definition": "512×512"
+        },
+        "1036": {
+          "cadre_largeur": 288,
+          "cadre_hauteur": 288,
+          "ratio_cadre": 1,
+          "image_rendue": 286,
+          "definition": "512×512"
+        },
+        "1280": {
+          "cadre_largeur": 288,
+          "cadre_hauteur": 288,
+          "ratio_cadre": 1,
+          "image_rendue": 286,
+          "definition": "512×512"
+        },
+        "1440": {
+          "cadre_largeur": 288,
+          "cadre_hauteur": 288,
+          "ratio_cadre": 1,
+          "image_rendue": 286,
+          "definition": "512×512"
+        },
+        "1728": {
+          "cadre_largeur": 288,
+          "cadre_hauteur": 288,
+          "ratio_cadre": 1,
+          "image_rendue": 286,
+          "definition": "512×512"
+        },
+        "1920": {
+          "cadre_largeur": 288,
+          "cadre_hauteur": 288,
+          "ratio_cadre": 1,
+          "image_rendue": 286,
+          "definition": "512×512"
+        }
+      }
+    }
+  ]
+}

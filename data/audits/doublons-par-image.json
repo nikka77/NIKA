@@ -1,12 +1,66 @@
 {
  "chantier": "doublons détectés par image partagée",
- "quand": "2026-08-10T12:27:42.980Z",
- "fiches": 7654,
- "avecImage": 6904,
+ "quand": "2026-08-10T21:11:32.400Z",
+ "fiches": 7697,
+ "avecImage": 7005,
  "groupes": 37,
- "fichesConcernees": 75,
- "typesMelanges": 19,
+ "fichesConcernees": 78,
+ "typesMelanges": 20,
+ "dejaRefutes": 0,
+ "registre": {
+  "paires": 13,
+  "misAJour": "2026-08-10"
+ },
  "detail": [
+  {
+   "image": "https://static.wikia.nocookie.net/onepiece/images/d/d5/NoPicAvailable.png",
+   "univers": [
+    "One Piece"
+   ],
+   "memeType": false,
+   "fiches": [
+    {
+     "slug": "niho-navy",
+     "nom": "Nihou Navy",
+     "type": "status",
+     "universe": "One Piece",
+     "aretes": 2,
+     "resume": "Flotte menée par Chichilisia, qui devait rejoindre la Happo Navy."
+    },
+    {
+     "slug": "nagagutsu-kingdom",
+     "nom": "Royaume de Nagagutsu",
+     "type": "place",
+     "universe": "One Piece",
+     "aretes": 2,
+     "resume": "Nation de l'East Blue affiliée au Gouvernement Mondial, gouvernée par le roi Furrari."
+    },
+    {
+     "slug": "roshwan-kingdom",
+     "nom": "Royaume de Roshwan",
+     "type": "place",
+     "universe": "One Piece",
+     "aretes": 1,
+     "resume": "Nation du South Blue, gouvernée par le roi Beer VI."
+    },
+    {
+     "slug": "tajine-kingdom",
+     "nom": "Royaume de Tajine",
+     "type": "place",
+     "universe": "One Piece",
+     "aretes": 1,
+     "resume": "Nation gouvernée par la reine Mororon."
+    },
+    {
+     "slug": "shishano-kingdom",
+     "nom": "Royaume de Shishano",
+     "type": "place",
+     "universe": "One Piece",
+     "aretes": 1,
+     "resume": "Nation gouvernée par le roi Tacos."
+    }
+   ]
+  },
   {
    "image": "https://static.wikia.nocookie.net/naruto/images/c/c6/Summoning_Beheading_Dance.png",
    "univers": [
@@ -20,7 +74,7 @@
      "type": "artifact",
      "universe": "Naruto",
      "aretes": 17,
-     "resume": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Tenten, Sasori et 9 autres."
+     "resume": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Tenten, Sasori…"
     },
     {
      "slug": "kamatari",
@@ -78,7 +132,7 @@
      "type": "status",
      "universe": "Naruto",
      "aretes": 10,
-     "resume": "Groupe de l'univers Naruto — réunit Ino Yamanaka, Inoichi Yamanaka, Mawashi Dokuraku et 5 autres."
+     "resume": "Groupe de l'univers Naruto — réunit Ino Yamanaka, Inoichi Yamanaka, Mawashi Dokuraku…"
     },
     {
      "slug": "mind-reading-amplification-machine",
@@ -86,7 +140,7 @@
      "type": "artifact",
      "universe": "Naruto",
      "aretes": 5,
-     "resume": "Arme / outil de l'univers Naruto — porté par Inoichi Yamanaka, Mawashi Dokuraku, Shimon Hijiri et 2 autres."
+     "resume": "Arme / outil de l'univers Naruto — porté par Inoichi Yamanaka, Mawashi Dokuraku, Shimon Hijiri…"
     }
    ]
   },
@@ -191,6 +245,31 @@
    ]
   },
   {
+   "image": "https://static.wikia.nocookie.net/naruto/images/8/8e/The_detection_division.PNG",
+   "univers": [
+    "Naruto"
+   ],
+   "memeType": false,
+   "fiches": [
+    {
+     "slug": "konoha-barrier-team",
+     "nom": "Konoha Barrier Team",
+     "type": "status",
+     "universe": "Naruto",
+     "aretes": 10,
+     "resume": "Groupe de l'univers Naruto — réunit Ino Yamanaka, Inojin Yamanaka, Kotetsu Hagane…"
+    },
+    {
+     "slug": "sensing-water-sphere",
+     "nom": "Sensing Water Sphere",
+     "type": "power",
+     "universe": "Naruto",
+     "aretes": 6,
+     "resume": "Technique de l'élément Eau créant une sphère liquide servant à détecter la présence et les mouvements des ennemis alento"
+    }
+   ]
+  },
+  {
    "image": "https://static.wikia.nocookie.net/naruto/images/b/b8/Bansai.png",
    "univers": [
     "Naruto"
@@ -223,45 +302,20 @@
    "memeType": false,
    "fiches": [
     {
+     "slug": "kabuto",
+     "nom": "Kabuto",
+     "type": "artifact",
+     "universe": "One Piece",
+     "aretes": 1,
+     "resume": "Coquillage-outil de Skypiea."
+    },
+    {
      "slug": "atk-op-kabuto",
      "nom": "Kabuto",
      "type": "power",
      "universe": "One Piece",
      "aretes": 1,
      "resume": "Attaque de One Piece — attaque signature."
-    },
-    {
-     "slug": "kabuto",
-     "nom": "Kabuto",
-     "type": "artifact",
-     "universe": "One Piece",
-     "aretes": 0,
-     "resume": "Coquillage-outil de Skypiea."
-    }
-   ]
-  },
-  {
-   "image": "https://static.wikia.nocookie.net/naruto/images/8/8e/The_detection_division.PNG",
-   "univers": [
-    "Naruto"
-   ],
-   "memeType": false,
-   "fiches": [
-    {
-     "slug": "konoha-barrier-team",
-     "nom": "Konoha Barrier Team",
-     "type": "status",
-     "universe": "Naruto",
-     "aretes": 10,
-     "resume": "Groupe de l'univers Naruto — réunit Ino Yamanaka, Inojin Yamanaka, Kotetsu Hagane et 4 autres."
-    },
-    {
-     "slug": "sensing-water-sphere",
-     "nom": "Sensing Water Sphere",
-     "type": "power",
-     "universe": "Naruto",
-     "aretes": 6,
-     "resume": "Technique de l'élément Eau créant une sphère liquide servant à détecter la présence et les mouvements des ennemis alento"
     }
    ]
   },
@@ -336,7 +390,7 @@
      "type": "artifact",
      "universe": "Naruto",
      "aretes": 21,
-     "resume": "Arme / outil de l'univers Naruto — porté par Buntan Kurosuki, Raiga Kurosuki, Ameyuri Ringo et 1 autre."
+     "resume": "Arme / outil de l'univers Naruto — porté par Buntan Kurosuki, Raiga Kurosuki, Ameyuri Ringo…"
     }
    ]
   },
@@ -348,20 +402,20 @@
    "memeType": false,
    "fiches": [
     {
+     "slug": "baratie-one-piece",
+     "nom": "Baratie",
+     "type": "artifact",
+     "universe": "One Piece",
+     "aretes": 4,
+     "resume": "Navire Restaurant de One Piece."
+    },
+    {
      "slug": "baratie-lieu",
      "nom": "Le Baratie",
      "type": "place",
      "universe": "One Piece",
      "aretes": 4,
      "resume": "Le restaurant flottant de Zeff où Sanji apprend la cuisine et rejoint l'équipage."
-    },
-    {
-     "slug": "baratie-one-piece",
-     "nom": "Baratie",
-     "type": "artifact",
-     "universe": "One Piece",
-     "aretes": 3,
-     "resume": "Navire Restaurant de One Piece."
     }
    ]
   },
@@ -448,20 +502,20 @@
    "memeType": false,
    "fiches": [
     {
+     "slug": "enma",
+     "nom": "Enma",
+     "type": "artifact",
+     "universe": "One Piece",
+     "aretes": 1,
+     "resume": "Enma est un katana avec une garde en forme de trèfle, identique à Ame no Habakiri à l'exception de la couleur."
+    },
+    {
      "slug": "atk-op-enma",
      "nom": "Enma",
      "type": "power",
      "universe": "One Piece",
      "aretes": 1,
      "resume": "Attaque de One Piece — attaque signature."
-    },
-    {
-     "slug": "enma",
-     "nom": "Enma",
-     "type": "artifact",
-     "universe": "One Piece",
-     "aretes": 0,
-     "resume": "Enma est un katana avec une garde en forme de trèfle, identique à Ame no Habakiri à l'exception de la couleur."
     }
    ]
   },
@@ -728,7 +782,7 @@
      "type": "power",
      "universe": "Naruto",
      "aretes": 11,
-     "resume": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Kurotsuchi, Son Gokū et 7 autres."
+     "resume": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Kurotsuchi, Son Gokū…"
     },
     {
      "slug": "flower-fruit-mountain",
@@ -766,32 +820,7 @@
    ]
   },
   {
-   "image": "https://static.wikia.nocookie.net/initiald/images/4/45/Usui.jpg",
-   "univers": [
-    "Initial D"
-   ],
-   "memeType": true,
-   "fiches": [
-    {
-     "slug": "col-usui",
-     "nom": "Col d’Usui",
-     "type": "place",
-     "universe": "Initial D",
-     "aretes": 2,
-     "resume": "Le circuit des Impact Blue : virages en C historiques, royaume de la Sileighty de Mako & Sayuki."
-    },
-    {
-     "slug": "mont-usui",
-     "nom": "Mont Usui",
-     "type": "place",
-     "universe": "Initial D",
-     "aretes": 0,
-     "resume": "Le col sinueux d'Impact Blue, réputé pour son enchaînement C-121 — le territoire de Mako et Sayuki."
-    }
-   ]
-  },
-  {
-   "image": "https://static.wikia.nocookie.net/naruto/images/2/27/Four_Symbols_Seal.svg",
+   "image": "/images/akasha/glyphes/four-symbols-seal.webp",
    "univers": [
     "Naruto"
    ],
@@ -853,7 +882,7 @@
      "type": "power",
      "universe": "Naruto",
      "aretes": 5,
-     "resume": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Kokuō, Han et 2 autres."
+     "resume": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Kokuō, Han…"
     },
     {
      "slug": "boil-release-skilled-mist-technique",

@@ -1,0 +1,68 @@
+{
+  "base": "http://localhost:3000",
+  "stamp": "2026-08-10T21-04-04-009Z",
+  "etiquette": "fixes",
+  "total": 4,
+  "resultats": [
+    {
+      "url": "/learn/akasha/ceci-nexiste-vraiment-pas-12345",
+      "status": 200,
+      "titre": "Entité introuvable — AKASHA",
+      "description": "Cette entrée n’existe pas (ou plus) dans le registre AKASHA.",
+      "ogTitle": "Entité introuvable — AKASHA",
+      "ogDescription": "Cette entrée n’existe pas (ou plus) dans le registre AKASHA.",
+      "ogImage": "http://localhost:3000/learn/akasha/ceci-nexiste-vraiment-pas-12345/opengraph-image?43326d34fc63bfaf",
+      "twTitle": "Entité introuvable — AKASHA",
+      "twDescription": "Cette entrée n’existe pas (ou plus) dans le registre AKASHA.",
+      "twCard": "summary",
+      "generique": false,
+      "lenDescription": 60,
+      "lenOgDescription": 60
+    },
+    {
+      "url": "/learn/akasha/c/nexiste-pas",
+      "status": 200,
+      "titre": "Collection introuvable — AKASHA",
+      "description": "Cette collection n’existe pas (ou plus) dans le registre AKASHA.",
+      "ogTitle": "Collection introuvable — AKASHA",
+      "ogDescription": "Cette collection n’existe pas (ou plus) dans le registre AKASHA.",
+      "ogImage": null,
+      "twTitle": "Collection introuvable — AKASHA",
+      "twDescription": "Cette collection n’existe pas (ou plus) dans le registre AKASHA.",
+      "twCard": "summary",
+      "generique": false,
+      "lenDescription": 64,
+      "lenOgDescription": 64
+    },
+    {
+      "url": "/learn/akasha",
+      "status": 200,
+      "titre": "AKASHA — Le registre de tout ce qui existe | NIKA LEARN",
+      "description": "Akasha : le registre universel NIKA. Personnages, lieux, artefacts, métiers, statuts, pouvoirs et compétences — réels ou imaginés, reliés entre eux.",
+      "ogTitle": "AKASHA — Le registre de tout ce qui existe",
+      "ogDescription": "Akasha : le registre universel NIKA. Personnages, lieux, artefacts, métiers, statuts, pouvoirs et compétences — réels ou imaginés, reliés entre eux.",
+      "ogImage": null,
+      "twTitle": "AKASHA — Le registre de tout ce qui existe",
+      "twDescription": "Akasha : le registre universel NIKA. Personnages, lieux, artefacts, métiers, statuts, pouvoirs et compétences — réels ou imaginés, reliés entre eux.",
+      "twCard": "summary_large_image",
+      "generique": false,
+      "lenDescription": 148,
+      "lenOgDescription": 148
+    },
+    {
+      "url": "/learn/akasha/naruto-uzumaki",
+      "status": 200,
+      "titre": "Naruto Uzumaki — Personnage | AKASHA",
+      "description": "D'un simple coup de queue, le Démon-Renard pouvait soulever des tsunamis et réduire des montagnes en miettes. Dans une tentative héroïque de sauver le…",
+      "ogTitle": "Naruto Uzumaki — Personnage · Naruto",
+      "ogDescription": "D'un simple coup de queue, le Démon-Renard pouvait soulever des tsunamis et réduire des montagnes en miettes. Dans une tentative héroïque de sauver le village de la destruction, le Quatrième Hokage,…",
+      "ogImage": "http://localhost:3000/learn/akasha/naruto-uzumaki/opengraph-image?43326d34fc63bfaf",
+      "twTitle": "Naruto Uzumaki — Personnage · Naruto",
+      "twDescription": "D'un simple coup de queue, le Démon-Renard pouvait soulever des tsunamis et réduire des montagnes en miettes. Dans une tentative héroïque de sauver le village de la destruction, le Quatrième Hokage,…",
+      "twCard": "summary_large_image",
+      "generique": false,
+      "lenDescription": 151,
+      "lenOgDescription": 199
+    }
+  ]
+}

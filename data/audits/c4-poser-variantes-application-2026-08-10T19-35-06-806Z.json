@@ -1,0 +1,84 @@
+{
+  "chantier": "chantier 4 — pose des variantes sans perte de pixel",
+  "quand": "2026-08-10T19:35:07.514Z",
+  "mode": "application",
+  "regle": "on ne pose que si la variante reste ≥ la plus grande largeur peinte × 2 (écran à rapport de pixels doublé), qu'elle est plus légère, qu'elle rend une vraie image à la largeur demandée et qu'elle garde le même nombre d'images. Aucun visuel supprimé, aucune case vidée.",
+  "journal": [
+    {
+      "slug": "akari-tatsushiro",
+      "avant": "https://static.wikia.nocookie.net/naruto/images/c/c5/Akari_Tatsushiro.png",
+      "apres": "https://static.wikia.nocookie.net/naruto/images/c/c5/Akari_Tatsushiro.png/revision/latest/scale-to-width-down/1920",
+      "largeur_peinte_css": 909,
+      "pixels_demandes_x2": 1818,
+      "largeur_variante": 1920,
+      "nom": "Akari Tatsushiro",
+      "type": "character",
+      "avant_mesure": {
+        "statut": 200,
+        "octets": 305386,
+        "definition": "1936×1452",
+        "images": 1
+      },
+      "apres_mesure": {
+        "statut": 200,
+        "octets": 210056,
+        "definition": "1920×1440",
+        "images": 1
+      },
+      "octets_economises": 95330,
+      "part_economisee": "31 %",
+      "controles": {
+        "variante_http_200": true,
+        "variante_vraie_image": true,
+        "largeur_conforme": true,
+        "au_moins_les_pixels_demandes": true,
+        "plus_legere": true,
+        "meme_nombre_d_images": true
+      },
+      "ecart_a_1818px": {
+        "psnr_db": 44.94,
+        "ecart_max_par_pixel": 46,
+        "taille_comparee": "1818×1364"
+      },
+      "retenue": true
+    },
+    {
+      "slug": "komame",
+      "avant": "https://static.wikia.nocookie.net/naruto/images/e/ed/Komame.png",
+      "apres": "https://static.wikia.nocookie.net/naruto/images/e/ed/Komame.png/revision/latest/scale-to-width-down/1920",
+      "largeur_peinte_css": 909,
+      "pixels_demandes_x2": 1818,
+      "largeur_variante": 1920,
+      "nom": "Komame",
+      "type": "character",
+      "avant_mesure": {
+        "statut": 200,
+        "octets": 304960,
+        "definition": "2832×2152",
+        "images": 1
+      },
+      "apres_mesure": {
+        "statut": 200,
+        "octets": 83934,
+        "definition": "1920×1459",
+        "images": 1
+      },
+      "octets_economises": 221026,
+      "part_economisee": "72 %",
+      "controles": {
+        "variante_http_200": true,
+        "variante_vraie_image": true,
+        "largeur_conforme": true,
+        "au_moins_les_pixels_demandes": true,
+        "plus_legere": true,
+        "meme_nombre_d_images": true
+      },
+      "ecart_a_1818px": {
+        "psnr_db": 47.93,
+        "ecart_max_par_pixel": 9,
+        "taille_comparee": "1818×1381"
+      },
+      "retenue": true
+    }
+  ]
+}

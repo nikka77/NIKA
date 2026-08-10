@@ -1,0 +1,65 @@
+{
+  "chantier": "capture d'écran du cadre du visuel et remesure sur les pixels reçus",
+  "quand": "2026-08-10T15:06:04.857Z",
+  "base": "http://localhost:3000",
+  "etiquette": "sombres",
+  "lignes": [
+    {
+      "slug": "gatekeeper",
+      "src": "https://static.wikia.nocookie.net/naruto/images/5/56/The_Gatekeeper_movie.png",
+      "definition": "1920×1080",
+      "cadre": {
+        "x": 72,
+        "y": 298,
+        "width": 729,
+        "height": 912
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/gatekeeper-sombres.png",
+      "mesure_capture": {
+        "contraste_max": 2.006,
+        "couverture_1_5": 0.0019,
+        "couverture_2": 0,
+        "mediane": 1.107,
+        "verdict": "illisible"
+      }
+    },
+    {
+      "slug": "poison-moth-genjutsu",
+      "src": "https://static.wikia.nocookie.net/naruto/images/0/04/Poison_Moth_Genjutsu_part_2.png/revision/latest/scale-to-width-down/720?cb=20160115105332",
+      "definition": "720×405",
+      "cadre": {
+        "x": 72,
+        "y": 362,
+        "width": 560,
+        "height": 420
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/poison-moth-genjutsu-sombres.png",
+      "mesure_capture": {
+        "contraste_max": 2.219,
+        "couverture_1_5": 0.0008,
+        "couverture_2": 0,
+        "mediane": 1.069,
+        "verdict": "illisible"
+      }
+    },
+    {
+      "slug": "hamura-otsutsuki-golem",
+      "src": "https://static.wikia.nocookie.net/naruto/images/b/be/Statue_of_the_%C5%8Ctsutsuki_Clan.png",
+      "definition": "1920×1080",
+      "cadre": {
+        "x": 72,
+        "y": 444,
+        "width": 729,
+        "height": 912
+      },
+      "capture": "/Users/macbookprom1pro/dev/NIKA/data/audits/captures-chantier3/hamura-otsutsuki-golem-sombres.png",
+      "mesure_capture": {
+        "contraste_max": 1.684,
+        "couverture_1_5": 0.0912,
+        "couverture_2": 0,
+        "mediane": 1.06,
+        "verdict": "illisible"
+      }
+    }
+  ]
+}

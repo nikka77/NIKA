@@ -1,0 +1,3377 @@
+{
+ "quand": "2026-08-10T19:42:58.222Z",
+ "tag": "apres-vague7",
+ "total": {
+  "fiches": 7698,
+  "aretes": 17071,
+  "isolees": 546
+ },
+ "parUnivers": {
+  "Naruto": {
+   "fiches": 3330,
+   "isolees": 39,
+   "parType": {
+    "character": 14,
+    "power": 7,
+    "status": 9,
+    "place": 6,
+    "artifact": 1,
+    "profession": 2
+   }
+  },
+  "Bleach": {
+   "fiches": 382,
+   "isolees": 40,
+   "parType": {
+    "character": 40
+   }
+  },
+  "Hunter x Hunter": {
+   "fiches": 215,
+   "isolees": 22,
+   "parType": {
+    "character": 21,
+    "status": 1
+   }
+  },
+  "JoJo's Bizarre Adventure": {
+   "fiches": 233,
+   "isolees": 48,
+   "parType": {
+    "character": 46,
+    "artifact": 1,
+    "place": 1
+   }
+  },
+  "Dragon Ball": {
+   "fiches": 1137,
+   "isolees": 127,
+   "parType": {
+    "character": 93,
+    "artifact": 28,
+    "skill": 2,
+    "place": 4
+   }
+  },
+  "One Piece": {
+   "fiches": 2273,
+   "isolees": 255,
+   "parType": {
+    "artifact": 42,
+    "status": 28,
+    "character": 159,
+    "place": 26
+   }
+  },
+  "Initial D": {
+   "fiches": 44,
+   "isolees": 5,
+   "parType": {
+    "character": 4,
+    "place": 1
+   }
+  },
+  "Death Note": {
+   "fiches": 84,
+   "isolees": 10,
+   "parType": {
+    "character": 10
+   }
+  }
+ },
+ "parNature": {
+  "appartient": 4454,
+  "maitrise": 5114,
+  "habite": 1474,
+  "exerce": 662,
+  "possede": 732,
+  "allie": 1482,
+  "ennemi": 1432,
+  "rival": 192,
+  "famille": 1188,
+  "jumeau": 12,
+  "ange": 10,
+  "kaio_shin": 8,
+  "dieu_destruction": 8,
+  "mentor": 253,
+  "eleve": 50
+ },
+ "listeIsolees": [
+  {
+   "slug": "class-representative",
+   "name": "Class Representative",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "angela",
+   "name": "Angela",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "gegetsuburi",
+   "name": "Gegetsuburi",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "koukichirou-takezoe",
+   "name": "Koukichirou Takezoe",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "lord-slug",
+   "name": "Lord Slug",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "gray-fly",
+   "name": "Gray Fly",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "eclair",
+   "name": "Eclair",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "tokoyaki-8",
+   "name": "Tokoyaki 8",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "mafuba-flacon",
+   "name": "Bidon du Mafûba",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "radar-dragon",
+   "name": "Radar du Dragon",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "veste-lestee",
+   "name": "Vêtements lestés",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "l-equipage-des-acumates",
+   "name": "L’équipage des Acumates",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "bateau-a-dials",
+   "name": "Bateau à Dials",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "enma-dai-ou",
+   "name": "Enma Dai-Ou",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "mermaid",
+   "name": "Mermaid",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "reiichi-oshima",
+   "name": "Reiichi Oshima",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "rabbit-gang-member-2",
+   "name": "Rabbit Gang Member 2",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "visio-dial",
+   "name": "Visio-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hydro-dial",
+   "name": "Hydro-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "tanmen",
+   "name": "Tanmen",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "jirasen",
+   "name": "Jirasen",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "korinto",
+   "name": "Korinto",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "misaomaru-kanonji",
+   "name": "Misaomaru Kanonji",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "brianne-de-chateau",
+   "name": "Brianne de Chateau",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "damon",
+   "name": "Damon",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "akemi",
+   "name": "Akemi",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "mahana-natsui",
+   "name": "Mahana Natsui",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "mikitaka-s-mother",
+   "name": "Mikitaka's Mother",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "tomoko-s-catcaller",
+   "name": "Tomoko's Catcaller",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "debu",
+   "name": "Debu",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "mousse",
+   "name": "Mousse",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "rabbit-gang-member-1",
+   "name": "Rabbit Gang Member 1",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "brovuda",
+   "name": "Brovuda",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "breath-dial",
+   "name": "Breath-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "spero-dial",
+   "name": "Spéro-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "yonka",
+   "name": "Yonka",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "eisen-dial",
+   "name": "Eisen-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-fleches-rouges",
+   "name": "L’équipage des Flèches Rouges",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "heat-dial",
+   "name": "Heat-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "flavor-dial",
+   "name": "Flavor-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "flash-dial",
+   "name": "Flash-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "flamme-dial",
+   "name": "Flamme-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "jet-dial",
+   "name": "Jet-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kamonegi",
+   "name": "Kamonegi",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "lampe-dial",
+   "name": "Lampe-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "reject-dia",
+   "name": "Reject-Dia",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "milky-dial",
+   "name": "Milky-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "impact-dial",
+   "name": "Impact-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "audio-dial",
+   "name": "Audio-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "diial-des-tenebres",
+   "name": "Diial des Ténèbres",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "thunder-dial",
+   "name": "Thunder-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "spirit-beast",
+   "name": "Spirit Beast",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "papa",
+   "name": "Papa",
+   "type": "character",
+   "universe": "Initial D"
+  },
+  {
+   "slug": "gozu-hunter-x-hunter",
+   "name": "Gozu",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "jet-shoes",
+   "name": "Jet Shoes",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "dressrosa-alliance-pirate",
+   "name": "Dressrosa / Alliance Pirate",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "sealing-technique-roen-kodon",
+   "name": "Sealing Technique: Rōen Kodon",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "saga-finale",
+   "name": "Saga Finale",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-de-bayan",
+   "name": "L’équipage de Bayan",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "giorno-s-mother",
+   "name": "Giorno's Mother",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "truck-driver",
+   "name": "Truck Driver",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "battle-franky",
+   "name": "Battle Franky",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "newkama-force-1",
+   "name": "Newkama Force #1",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kendiyo-haritsu",
+   "name": "Kendiyo Haritsu",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "imperfect-form",
+   "name": "Imperfect Form",
+   "type": "skill",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "kyuu",
+   "name": "Kyuu",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "minako-okura",
+   "name": "Minako Okura",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "suzumebachi",
+   "name": "Suzumebachi",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "semi-perfect-form",
+   "name": "Semi Perfect Form",
+   "type": "skill",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "speedwagon-foundation-agent",
+   "name": "Speedwagon Foundation Agent",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "zabimaru-male",
+   "name": "Zabimaru (Male)",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "orenami-fan-o",
+   "name": "Orenami Fan (O)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "bongou",
+   "name": "Bongou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "sorbet-jojo-s-bizarre-adventure",
+   "name": "Sorbet",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "gelato",
+   "name": "Gelato",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "cranberry",
+   "name": "Cranberry",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "senzu",
+   "name": "Haricots Senzu",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "dr-fishbonen",
+   "name": "Dr. Fishbonen",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kinto-un",
+   "name": "Nuage Magique (Kinto-un)",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "hongou",
+   "name": "Hongou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "potara",
+   "name": "Potaras (boucles de fusion)",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "no-0",
+   "name": "No. 0",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "staff-a",
+   "name": "Staff A",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "kogarashi",
+   "name": "kogarashi",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "brother-ortho",
+   "name": "Brother Ortho",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "banzaburou",
+   "name": "Banzaburou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "shin-jaiya",
+   "name": "Shin Jaiya",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "templo-movil-del-rey-de-todo",
+   "name": "Palais de Zeno",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "goen-jean",
+   "name": "Goen Jean",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "chou",
+   "name": "Chou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "heita-toujouin",
+   "name": "Heita Toujouin",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "pyro",
+   "name": "Pyro",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "sengi-guild-agent",
+   "name": "Sengi Guild Agent",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "rock-climber",
+   "name": "Rock Climber",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "kaba-shinshi",
+   "name": "Kaba Shinshi",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "eau-ultra-divine",
+   "name": "Eau Ultra Divine",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "hishita",
+   "name": "Hishita",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "axe-dial",
+   "name": "Axe-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kamijirou",
+   "name": "Kamijirou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "clan-sarutobi",
+   "name": "Clan Sarutobi",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "josuke-s-saviour",
+   "name": "Josuke's Saviour",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "ile-celeste",
+   "name": "Île Céleste",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "centipede-shoes-store-owner",
+   "name": "Centipede Shoes Store Owner",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "controle-dial",
+   "name": "Contrôle-Dial",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "mareyo-oomaeda",
+   "name": "Mareyo Oomaeda",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "king-500-hostages",
+   "name": "King (500 Hostages)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ashisogi-jizo",
+   "name": "Ashisogi Jizo",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "choco",
+   "name": "Choco",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "futoru",
+   "name": "Futoru",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kyoko",
+   "name": "Kyoko",
+   "type": "character",
+   "universe": "Death Note"
+  },
+  {
+   "slug": "satoru-nakae",
+   "name": "Satoru Nakae",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "boomerang-toujuu",
+   "name": "Boomerang Toujuu",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "father-nijimura",
+   "name": "Father Nijimura",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "chico",
+   "name": "Chico",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "erasa",
+   "name": "Erasa",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "shen",
+   "name": "Shen",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "speedwagon-foundation-ship-captain",
+   "name": "Speedwagon Foundation Ship Captain",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "idasamama",
+   "name": "Idasamama",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "reiko",
+   "name": "Reiko",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "newkama-force-4",
+   "name": "Newkama Force #4",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "yoshie",
+   "name": "Yoshie",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "orenami-fan-v",
+   "name": "Orenami Fan (V)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "mela-ghirga",
+   "name": "Mela Ghirga",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "abbacchio-s-partner",
+   "name": "Abbacchio's Partner",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "blackmailing-criminal",
+   "name": "Blackmailing Criminal",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "shuuku",
+   "name": "Shuuku",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "janemba",
+   "name": "Janemba",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "minami-no-kaioushin",
+   "name": "Minami no Kaioushin",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "alvida-pirate-s-tattoo",
+   "name": "Alvida Pirate (S Tattoo)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "father",
+   "name": "Father",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "monica-ultello",
+   "name": "Monica Ultello",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "detamaruka-shin",
+   "name": "Detamaruka Shin",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kita-no-kaioushin",
+   "name": "Kita no Kaioushin",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "giant-corpse-crab",
+   "name": "Giant Corpse Crab",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "chuu-lee",
+   "name": "Chuu Lee",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "l-equipage-des-pirates-yes",
+   "name": "L’équipage des Pirates Yes",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "unit-55-troop-leader",
+   "name": "Unit 55 Troop Leader",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "crepe",
+   "name": "Crepe",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "baton-magique",
+   "name": "Bâton Magique (Nyoi-bô)",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "z-epee",
+   "name": "Z-Sword (Épée Zeta)",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "this-article-is-a-stub-you-can-help-the-narutopedia-by-expanding-it-or-perhaps-you-could-contribute-to-the-discussion-on-the-topic",
+   "name": "This article is a stub. You can help the Narutopedia by expanding it, or perhaps you could contribute to the discussion on the topic.",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "boule-4-etoiles",
+   "name": "Boule à quatre étoiles",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "carl-darlingbin",
+   "name": "Carl Darlingbin",
+   "type": "character",
+   "universe": "Death Note"
+  },
+  {
+   "slug": "flevance-kingdom",
+   "name": "Royaume de Flevance",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "sky-arrows",
+   "name": "Sky-Arrows",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "guerre-au-sommet",
+   "name": "Guerre au Sommet",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "zerhogie",
+   "name": "Zerhogie",
+   "type": "character",
+   "universe": "Death Note"
+  },
+  {
+   "slug": "noppo",
+   "name": "Noppo",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "don-achino",
+   "name": "Don Achino",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "acrobatic-fuwas-1",
+   "name": "Acrobatic Fuwas #1",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "acrobatic-fuwas-3",
+   "name": "Acrobatic Fuwas #3",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "parasitic-destruction-insect-technique-rinkaichu",
+   "name": "Parasitic Destruction Insect Technique (Rinkaichū)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "urbain-san",
+   "name": "Urbain-san",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hisagomaru",
+   "name": "Hisagomaru",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "arrow",
+   "name": "Arrow",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "team-shu",
+   "name": "Team Shū",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "ryuha-armament-alliance",
+   "name": "Ryūha Armament Alliance",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "banbaji",
+   "name": "Banbaji",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "barto-club-s-grandma",
+   "name": "Barto Club's Grandma",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hypnotic-genjutsu-wild-beast-communication",
+   "name": "Hypnotic Genjutsu: Wild Beast Communication",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "bon-chari-seller",
+   "name": "Bon Chari Seller",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kamyu-s-fellow-boxer",
+   "name": "Kamyu's Fellow Boxer",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "zabo",
+   "name": "Zabo",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "zald",
+   "name": "Zald",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "koltopi-tounofmaill",
+   "name": "Koltopi Tounofmaill",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "bungou",
+   "name": "Bungou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "biscuits",
+   "name": "Biscuits",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kuroud",
+   "name": "Kuroud",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "masazo-kinoto",
+   "name": "Masazo Kinoto",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "epee-de-trunks",
+   "name": "Épée de Trunks (Brave Sword)",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "biyo-s-father",
+   "name": "Biyo's Father",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ichika",
+   "name": "Ichika",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "caramel",
+   "name": "Caramel",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "middle-school-player",
+   "name": "Middle School Player",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "mr-pork",
+   "name": "Mr.Pork",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "hirudegarn",
+   "name": "Hirudegarn",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "ice",
+   "name": "Ice",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "sharpner",
+   "name": "Sharpner",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "gu",
+   "name": "Gu",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "margarine",
+   "name": "Margarine",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "yuu-s-father",
+   "name": "Yuu's Father",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "yubashiri",
+   "name": "Yubashiri",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "staff-b",
+   "name": "Staff B",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "staff-c",
+   "name": "Staff C",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "mountains-graveyard",
+   "name": "Cimetière des Monts",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "rice-rice",
+   "name": "Rice Rice",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "black-cat-pirate-hammer",
+   "name": "Black Cat Pirate (Hammer)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kei-uehara",
+   "name": "Kei Uehara",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "coco-loo",
+   "name": "Coco Loo",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "tsunagorou",
+   "name": "Tsunagorou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "milk",
+   "name": "Milk",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "blind-boy",
+   "name": "Blind Boy",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "jilcol",
+   "name": "Jilcol",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "cell-games-announcer",
+   "name": "Cell Games Announcer",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "cook-shinpachi",
+   "name": "Cook Shinpachi",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "decalvan-brother-a",
+   "name": "Decalvan Brother (A)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "rosy-life-rider-headband",
+   "name": "Rosy Life Rider (Headband)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "dai-kaio",
+   "name": "Dai Kaio",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "shuku-village",
+   "name": "Shuku Village",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "karatachi",
+   "name": "Clan Karatachi",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "kamyu-s-fellow-wrestler",
+   "name": "Kamyu's Fellow Wrestler",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kanezenny",
+   "name": "Kanezenny",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "yuhi",
+   "name": "Clan Yūhi",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "tailed-beast-drug",
+   "name": "Tailed Beast Drug",
+   "type": "artifact",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "kojurou",
+   "name": "Kojurou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "jack-in-the-box",
+   "name": "Jack-in-the-Box",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "the-preecho",
+   "name": "The Preecho",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "noriko",
+   "name": "Noriko",
+   "type": "character",
+   "universe": "Death Note"
+  },
+  {
+   "slug": "gamisaras",
+   "name": "Gamisaras",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "pirate-au-foyer",
+   "name": "Pirate au foyer",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hidden-cloud-village",
+   "name": "Village caché des nuages",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "konbu",
+   "name": "Konbu",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "bruno-s-mother",
+   "name": "Bruno's Mother",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "pucci-island",
+   "name": "Île Pucci",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kamyu-s-fellow-swordsman",
+   "name": "Kamyu's Fellow Swordsman",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "karoni",
+   "name": "Karoni",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "lami-trafalgar",
+   "name": "Lami Trafalgar",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "whiteland-kingdom",
+   "name": "Royaume Whiteland",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "koku-ou",
+   "name": "Koku-Ou",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "cameo",
+   "name": "Cameo",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "bateaux-a-dials",
+   "name": "Bateaux à Dials",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "banker",
+   "name": "Banker",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "centaurea-kingdom",
+   "name": "Royaume de Centaurea",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "acrobatic-fuwas-4",
+   "name": "Acrobatic Fuwas #4",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "paramedic",
+   "name": "Paramedic",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "female-guard",
+   "name": "Female Guard",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "obake",
+   "name": "Obake",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "jolyne-s-mother",
+   "name": "Jolyne's Mother",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "tamao",
+   "name": "Tamao",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "lady-mary",
+   "name": "Lady Mary",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "shi-buta",
+   "name": "Shi-Buta",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "teacher",
+   "name": "Teacher",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "ishi-terrorists",
+   "name": "Ishi Terrorists",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "tsujigirou-tooyama",
+   "name": "Tsujigirou Tooyama",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-pirates-schneider",
+   "name": "L’équipage des Pirates Schneider",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "captain-of-the-ghost-ship",
+   "name": "Capitaine du navire fantôme",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "winter-island",
+   "name": "Île d'Hiver",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "yoshioka",
+   "name": "Yoshioka",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "buggy-ball-attendant",
+   "name": "Buggy Ball Attendant",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "other-world-budokai-announcer",
+   "name": "Other World Budokai Announcer",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "unique",
+   "name": "Unique",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "girl",
+   "name": "Girl",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "rom",
+   "name": "Rom",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "tenkaichi-budokai-announcer",
+   "name": "Tenkaichi Budokai Announcer",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "umikame",
+   "name": "Umikame",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "babaro",
+   "name": "Babaro",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "antique-shop-owner",
+   "name": "Antique Shop Owner",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "bisuke",
+   "name": "Bisuke",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "chuu-lee-s-mother",
+   "name": "Chuu Lee's Mother",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "cookie",
+   "name": "Cookie",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "lina",
+   "name": "Lina",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "donuts",
+   "name": "Donuts",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "grandma-hakkake",
+   "name": "Grandma Hakkake",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "ten-long-hyoga",
+   "name": "Ten Long Hyoga",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "kinkaku",
+   "name": "Kinkaku",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "shao-long-hyoga",
+   "name": "Shao Long Hyoga",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "jasmine",
+   "name": "Jasmine",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "look-out-of-the-lady-mary",
+   "name": "Look-out of the Lady Mary",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "stool",
+   "name": "Stool",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "milkman",
+   "name": "Milkman",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "panput",
+   "name": "Panput",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "oonaan",
+   "name": "Oonaan",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "suke-san",
+   "name": "Suke-san",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "marilyn",
+   "name": "Marilyn",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "bisshu",
+   "name": "Bisshu",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "zeri",
+   "name": "Zeri",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "linlin-s-mother",
+   "name": "Linlin's Mother",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "matoryou-hime-tachi",
+   "name": "Matoryou Hime-tachi",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "san-xing-long",
+   "name": "San Xing Long",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "si-xing-long",
+   "name": "Si Xing Long",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "acrobatic-fuwas-2",
+   "name": "Acrobatic Fuwas #2",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "aho-bird",
+   "name": "Aho Bird",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "goethe",
+   "name": "Goethe",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "notice-town",
+   "name": "Notice Town",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hou-ban-taichou",
+   "name": "Hou-ban Taichou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "tenchi-bridge",
+   "name": "Pont Tenchi",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "piepie",
+   "name": "Piepie",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "shantza",
+   "name": "Shantza",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "topping",
+   "name": "Topping",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kung-fu-dugong",
+   "name": "Kung Fu Dugong",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "epee-d-ohm",
+   "name": "Epée d'Ohm",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "chao",
+   "name": "Chao",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "l-equipage-de-diez-barrels",
+   "name": "L’équipage de Diez Barrels",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "pirate-moustachus",
+   "name": "Pirate Moustachus",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "seducing-woods",
+   "name": "Forêt de la Séduction",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fukurou",
+   "name": "Fukurou",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "minoru-kazeno",
+   "name": "Minoru Kazeno",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "newkama-force-2",
+   "name": "Newkama Force #2",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "shirauo",
+   "name": "Shirauo",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "announcer-ikkaku",
+   "name": "Announcer Ikkaku",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "giorno-s-stepfather",
+   "name": "Giorno's Stepfather",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "sister-ortho",
+   "name": "Sister Ortho",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "poripori",
+   "name": "Poripori",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "daiz",
+   "name": "Daiz",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "ohana",
+   "name": "Ohana",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "homing-s-wife",
+   "name": "Homing's Wife",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "terrorist",
+   "name": "Terrorist",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "mercenary-ninja",
+   "name": "Mercenary Ninja",
+   "type": "profession",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "yakigashi",
+   "name": "Yakigashi",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kagerou",
+   "name": "Kagerou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "oto",
+   "name": "Oto",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fleche-du-stand",
+   "name": "Flèche du Stand",
+   "type": "artifact",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "noko-op",
+   "name": "Noko",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "gasshu",
+   "name": "Gasshu",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "pastor-zombie",
+   "name": "Pastor Zombie",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "pastor-zombie-s-assistant",
+   "name": "Pastor Zombie's Assistant",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hiruko-shinobi",
+   "name": "Hiruko (shinobi)",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "disfigured-delinquent",
+   "name": "Disfigured Delinquent",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "castle-town",
+   "name": "Ville du Château",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "elderly-village",
+   "name": "Village des Aînés",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "church",
+   "name": "Église",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "anita",
+   "name": "Anita",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "paolo-bucciarati",
+   "name": "Paolo Bucciarati",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "valley-of-end",
+   "name": "Vallée de la Fin",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "baigon",
+   "name": "Baigon",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "lawyer",
+   "name": "Lawyer",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "bao",
+   "name": "Bao",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "race",
+   "name": "Race",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ginkaku",
+   "name": "Ginkaku",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "kazama-toshiaki",
+   "name": "Kazama Toshiaki",
+   "type": "character",
+   "universe": "Initial D"
+  },
+  {
+   "slug": "kawase-mitsuro",
+   "name": "Kawase Mitsuro",
+   "type": "character",
+   "universe": "Initial D"
+  },
+  {
+   "slug": "kido-s-juinjutsu",
+   "name": "Kido's Juinjutsu",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "red-hair-pirate-chain",
+   "name": "Red Hair Pirate (Chain)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ginzou-kaneboshi",
+   "name": "Ginzou Kaneboshi",
+   "type": "character",
+   "universe": "Death Note"
+  },
+  {
+   "slug": "man-x",
+   "name": "Man X",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "mrs-menini",
+   "name": "Mrs. Menini",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "ayame",
+   "name": "Ayame",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "itou-shiroba",
+   "name": "Itou Shiroba",
+   "type": "character",
+   "universe": "Death Note"
+  },
+  {
+   "slug": "hinagiku",
+   "name": "Hinagiku",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "le-caire",
+   "name": "Le Caire",
+   "type": "place",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "doran",
+   "name": "Doran",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "capsule-hoi-poi",
+   "name": "Capsule Hoi-Poi",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "doran-s-father",
+   "name": "Doran's Father",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "tegata-ringana",
+   "name": "Tegata Ringana",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "brahm",
+   "name": "Brahm",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "abi-s-mother",
+   "name": "Abi's Mother",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "daiji-hirasago",
+   "name": "Daiji Hirasago",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "rokuroshi-s-assistant",
+   "name": "Rokuroshi's' Assistant",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "pirate-captain-500-hostages",
+   "name": "Pirate Captain (500 Hostages)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "rosy-life-rider-blond",
+   "name": "Rosy Life Rider (Blond)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kempo-fighter",
+   "name": "Kempo Fighter",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "ishigakure",
+   "name": "Ishigakure",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "kiku",
+   "name": "Kiku",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "katopesla",
+   "name": "Katopesla",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "sanka",
+   "name": "Sanka",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "jibakurai",
+   "name": "Jibakurai",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "rittonto",
+   "name": "Rittonto",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "nameless-planet",
+   "name": "Planète Sans Nom",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "l-equipage-de-gasparde",
+   "name": "L’équipage de Gasparde",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "raiu",
+   "name": "Raiu",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "prison-planet",
+   "name": "Planète Prison",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "nika",
+   "name": "Nika",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "g-8-head-custodian",
+   "name": "G-8 Head Custodian",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "shopkeeper-hanji",
+   "name": "Shopkeeper Hanji",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "grandma-oharu",
+   "name": "Grandma Oharu",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "short-vassal-500-hostages",
+   "name": "Short Vassal (500 Hostages)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "school-nurse",
+   "name": "School Nurse",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "sind-s-father",
+   "name": "Sind's Father",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "sind",
+   "name": "Sind",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "cook-billy",
+   "name": "Cook Billy",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "torue",
+   "name": "Torue",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "damask",
+   "name": "Damask",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "dancer-on-the-lady-mary",
+   "name": "Dancer on the Lady Mary",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "deigorou",
+   "name": "Deigorou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "decalvan-brother-b",
+   "name": "Decalvan Brother (B)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "superhuman-domingos-1",
+   "name": "Superhuman Domingos #1",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "superhuman-domingos-3",
+   "name": "Superhuman Domingos #3",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "suu",
+   "name": "Suu",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "superhuman-domingos-2",
+   "name": "Superhuman Domingos #2",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "tall-vassal-500-hostages",
+   "name": "Tall Vassal (500 Hostages)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "dream-s-mother",
+   "name": "Dream's Mother",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "orbs-of-light",
+   "name": "Orbs of Light",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "jewel",
+   "name": "Jewel",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "tabuhachirou",
+   "name": "Tabuhachirou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "egana",
+   "name": "Egana",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "gingaou",
+   "name": "Gingaou",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "monnosuke-tsurue",
+   "name": "Monnosuke Tsurue",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "foxy-pirates-referee",
+   "name": "Foxy Pirates' Referee",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "bansho-sen",
+   "name": "Éventail Bashō (Bansho-sen)",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "parasitic-destruction-insect-technique-kochu",
+   "name": "Parasitic Destruction Insect Technique (Kochū)",
+   "type": "power",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "anneau-du-temps",
+   "name": "Anneau du Temps",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "metamo-ring",
+   "name": "Metamo-Ring",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "g-8-marine-officer-blond",
+   "name": "G-8 Marine Officer (Blond)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "yoshimoto",
+   "name": "Yoshimoto",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "graine-de-larbre-de-force",
+   "name": "Graine de l'Arbre de Force",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "vincent",
+   "name": "Vincent",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "shitemanna-ishigo",
+   "name": "Shitemanna Ishigo",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ocarina-de-tapion",
+   "name": "Ocarina de Tapion",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "furishirou-waruno",
+   "name": "Furishirou Waruno",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "epee-de-lespoir",
+   "name": "Épée de l'Espoir",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "dogi-ecole-tortue",
+   "name": "Dogi de l'École Tortue",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "cape-turban-piccolo",
+   "name": "Cape & turban lestés de Piccolo",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "l-equipage-des-pirates-a-la-moustache",
+   "name": "L’équipage des Pirates à la Moustache",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hyourinmaru",
+   "name": "Hyourinmaru",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "terumi",
+   "name": "Clan Terumī",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "sardinian-fortune-teller",
+   "name": "Sardinian Fortune Teller",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "lily",
+   "name": "Lily",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "kamyu",
+   "name": "Kamyu",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "taichi-miyamoto",
+   "name": "Taichi Miyamoto",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "newkama-force-5",
+   "name": "Newkama Force #5",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ceramic-village",
+   "name": "Ceramic Village",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "howling-wolf-village",
+   "name": "Howling Wolf Village",
+   "type": "place",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "juujirou",
+   "name": "Juujirou",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "machine-a-remonter-le-temps",
+   "name": "Machine à remonter le temps",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "la-lune",
+   "name": "La lune",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "dolphin",
+   "name": "Dolphin",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "nin",
+   "name": "Nin",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "gengorou-onabara",
+   "name": "Gengorou Onabara",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "hyota",
+   "name": "Hyota",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "ame-no-habakiri",
+   "name": "Ame no Habakiri",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kagetsu",
+   "name": "Clan Kagetsu",
+   "type": "status",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "kureyo-kairo",
+   "name": "Kureyo Kairo",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "sadatomo-saionji",
+   "name": "Sadatomo Saionji",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "goode",
+   "name": "Goode",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-du-capitaine-usopp",
+   "name": "L’équipage du Capitaine Usopp",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-tulipes",
+   "name": "L’équipage des Tulipes",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-asl",
+   "name": "L’équipage ASL",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-candys",
+   "name": "L’équipage des Candys",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-de-ganzack",
+   "name": "l’équipage de Ganzack",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-amigo",
+   "name": "L’équipage Amigo",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "isshi-1",
+   "name": "Isshi 1",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kirintauros",
+   "name": "Kirintauros",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "mitsuru-ishino",
+   "name": "Mitsuru Ishino",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "tsubaki",
+   "name": "Tsubaki",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "bretzel",
+   "name": "Bretzel",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "cookie-hunter-x-hunter",
+   "name": "Cookie",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "zabimaru-female",
+   "name": "Zabimaru (Female)",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "poperu",
+   "name": "Poperu",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "shun-ou",
+   "name": "Shun'ou",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "koala-zombie",
+   "name": "Koala Zombie",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "lemuria",
+   "name": "Lemuria",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "super-shen-long",
+   "name": "Super Shen Long",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "linlin-s-father",
+   "name": "Linlin's Father",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-des-pirates-treasure",
+   "name": "L’équipage des Pirates Treasure",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "piegero",
+   "name": "Piegero",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "200th-floor-receptionist",
+   "name": "200th Floor Receptionist",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "sedokan",
+   "name": "Sedokan",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "mayor-of-the-desert-village",
+   "name": "Mayor of the Desert Village",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "barrel",
+   "name": "Barrel",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "18th-fleet-gallery-head-chef",
+   "name": "18th Fleet Gallery Head Chef",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "sally-nantokanette",
+   "name": "Sally Nantokanette",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "katchin",
+   "name": "Katchin",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "osome",
+   "name": "Osome",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "orenami-fan-l",
+   "name": "Orenami Fan (L)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "oyame",
+   "name": "Oyame",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "freres-voleurs",
+   "name": "Frères Voleurs",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "pirate-des-fleches-rouges",
+   "name": "Pirate des flèches rouges",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "granolah",
+   "name": "Granolah",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "reuder",
+   "name": "Reuder",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "equipage-de-bigalo",
+   "name": "Equipage de Bigalo",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "equipage-de-pandaman",
+   "name": "Equipage de Pandaman",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "law-lami-s-father",
+   "name": "Law & Lami's Father",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "pudding",
+   "name": "Pudding",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "sanshita",
+   "name": "Sanshita",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "shepherd",
+   "name": "Shepherd",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "esta-s-boyfriend",
+   "name": "Esta's Boyfriend",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "saori",
+   "name": "Saori",
+   "type": "character",
+   "universe": "Initial D"
+  },
+  {
+   "slug": "gereta",
+   "name": "Gereta",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "tailor-zombie",
+   "name": "Tailor Zombie",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "tall-risky-brother",
+   "name": "Tall Risky Brother",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "tightrope-walking-funan-bros-ginger",
+   "name": "Tightrope Walking Funan Bros (Ginger)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "fanfan",
+   "name": "Fanfan",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "larry-conners",
+   "name": "Larry Conners",
+   "type": "character",
+   "universe": "Death Note"
+  },
+  {
+   "slug": "joe-bunny",
+   "name": "Joe Bunny",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hideki-ryuuga",
+   "name": "Hideki Ryuuga",
+   "type": "character",
+   "universe": "Death Note"
+  },
+  {
+   "slug": "yasunaga",
+   "name": "Yasunaga",
+   "type": "character",
+   "universe": "Death Note"
+  },
+  {
+   "slug": "sayo",
+   "name": "Sayo",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hobbit",
+   "name": "Hobbit",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "heita-momoyama",
+   "name": "Heita Momoyama",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "black",
+   "name": "Black",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "yonka-two",
+   "name": "Yonka Two",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "dr-flappe",
+   "name": "Dr. Flappe",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "colonel-silver",
+   "name": "Colonel Silver",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "zangya",
+   "name": "Zangya",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "butler",
+   "name": "Butler",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "dr-wheelo",
+   "name": "Docteur Wheelo",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "nikochan-s-servant",
+   "name": "Nikochan's Servant",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "angila",
+   "name": "Angila",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "big-runner",
+   "name": "Big Runner",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kanishitoru-sukoshiba",
+   "name": "Kanishitoru Sukoshiba",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "buggy-pirate-victim",
+   "name": "Buggy Pirate (Victim)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "web-panic",
+   "name": "Web Panic",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "tall-marley-brother",
+   "name": "Tall Marley Brother",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "trampire",
+   "name": "Trampire",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "bateau-de-pandaman",
+   "name": "Bateau de Pandaman",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "gran-tesoro",
+   "name": "Gran Tesoro",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "android-13",
+   "name": "C-13",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "nidai-kitetsu",
+   "name": "Nidai Kitetsu",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "dream",
+   "name": "Dream",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "shusui",
+   "name": "Shusui",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "gothic-newscaster",
+   "name": "Gothic Newscaster",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "kanzaburou-akudai",
+   "name": "Kanzaburou Akudai",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "examen-hunter",
+   "name": "Examen de Hunter",
+   "type": "status",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "lina-and-sayo-s-father",
+   "name": "Lina and Sayo's Father",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "farmer",
+   "name": "Farmer",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "shodai-kitetsu",
+   "name": "Shodai Kitetsu",
+   "type": "artifact",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "armure-saiyan",
+   "name": "Armure de combat Saiyan",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "supa",
+   "name": "Supa",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "riley-brother-2",
+   "name": "Riley Brother #2",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "kinoko-sarada",
+   "name": "Kinoko Sarada",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "newkama-force-6",
+   "name": "Newkama Force #6",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "gyoro",
+   "name": "Gyoro",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "hishaku",
+   "name": "Hishaku",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "vaisseau-capsule-corp",
+   "name": "Vaisseau Capsule Corp",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "margarita",
+   "name": "Margarita",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "mukkashimi-tower",
+   "name": "Mukkashimi Tower",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "referee",
+   "name": "Referee",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "dread-lion",
+   "name": "Dread Lion",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "riley-brother-1",
+   "name": "Riley Brother #1",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-du-on-air",
+   "name": "L’équipage du On-Air",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "short-marley-brother",
+   "name": "Short Marley Brother",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "dragon-balls-de-namek",
+   "name": "Dragon Balls de Namek",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "rotund-risky-brother",
+   "name": "Rotund Risky Brother",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "father-styx",
+   "name": "Father Styx",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "snake-way-guide",
+   "name": "Snake Way Guide",
+   "type": "character",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "g-8-sous-chef",
+   "name": "G-8 Sous Chef",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "l-equipage-de-zenny",
+   "name": "L’équipage de Zenny",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "g-8-marine-officer-gray",
+   "name": "G-8 Marine Officer (Gray)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "chintarou-giro",
+   "name": "Chintarou Giro",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "isono",
+   "name": "Isono",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "satoda",
+   "name": "Satoda",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "meno",
+   "name": "Menō",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "matthew",
+   "name": "Matthew",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  },
+  {
+   "slug": "esta",
+   "name": "Esta",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "newkama-force-3",
+   "name": "Newkama Force #3",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "vaisseau-attaque-saiyan",
+   "name": "Vaisseau d'attaque Saiyan",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "alvida-pirate-horned",
+   "name": "Alvida Pirate (Horned)",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "old-janitor",
+   "name": "Old Janitor",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "toyohiro-kanedaichi",
+   "name": "Toyohiro Kanedaichi",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "lady-tree",
+   "name": "Lady Tree",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "haru",
+   "name": "Haru",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "guren-prisoner",
+   "name": "Guren (prisoner)",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "genie",
+   "name": "Genie",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "hockera-achino",
+   "name": "Hockera Achino",
+   "type": "character",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "dragon-balls",
+   "name": "Dragon Balls",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "dragon-balls-etoile-noire",
+   "name": "Dragon Balls Étoile Noire",
+   "type": "artifact",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "kenji-yamashita",
+   "name": "Kenji Yamashita",
+   "type": "character",
+   "universe": "Bleach"
+  },
+  {
+   "slug": "l-equipage-des-pirates-trump",
+   "name": "L’équipage des Pirates Trump",
+   "type": "status",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "family-club-vendor",
+   "name": "Family Club Vendor",
+   "type": "character",
+   "universe": "JoJo's Bizarre Adventure"
+  },
+  {
+   "slug": "white-city",
+   "name": "Ville blanche",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "tonsuke",
+   "name": "Tonsuke",
+   "type": "character",
+   "universe": "Naruto"
+  },
+  {
+   "slug": "mont-usui",
+   "name": "Mont Usui",
+   "type": "place",
+   "universe": "Initial D"
+  },
+  {
+   "slug": "judo-island",
+   "name": "Île du Judo",
+   "type": "place",
+   "universe": "One Piece"
+  },
+  {
+   "slug": "light-s-teacher",
+   "name": "Light's Teacher",
+   "type": "character",
+   "universe": "Death Note"
+  },
+  {
+   "slug": "salle-esprit-temps",
+   "name": "Salle de l'Esprit et du Temps",
+   "type": "place",
+   "universe": "Dragon Ball"
+  },
+  {
+   "slug": "abe",
+   "name": "Abe",
+   "type": "character",
+   "universe": "Hunter x Hunter"
+  }
+ ]
+}

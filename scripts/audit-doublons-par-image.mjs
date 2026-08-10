@@ -27,9 +27,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { clientSite } from '../lib/ops/db.mjs';
+import { chargerNonDoublons } from '../lib/ops/non-doublons.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const db = clientSite();
+// 10/08/2026 — voir lib/ops/non-doublons.mjs : les paires déjà tranchées sont ANNOTÉES, pas
+// cachées. Un partage d'image reste un fait à lire même quand l'identité, elle, est réglée.
+const registre = chargerNonDoublons(ROOT);
 
 const pageAll = async (table, sel) => {
   const out = [];
@@ -71,6 +75,7 @@ const groupes = [...parImage.entries()]
     // Un groupe dont les fiches ne partagent NI le type NI l'univers mérite d'être lu en premier :
     // c'est là que se cachent les erreurs de classement (un lieu rangé en organisation, par ex.).
     memeType: new Set(g.map((e) => e.type)).size === 1,
+    dejaRefute: registre.verdict(g.map((e) => e.slug)) ?? undefined,
     fiches: g.map((e) => ({
       slug: e.slug, nom: e.name, type: e.type, universe: e.universe,
       aretes: degre.get(e.id) ?? 0,
@@ -85,6 +90,8 @@ const rapport = {
   groupes: groupes.length,
   fichesConcernees: groupes.reduce((n, g) => n + g.fiches.length, 0),
   typesMelanges: groupes.filter((g) => !g.memeType).length,
+  dejaRefutes: groupes.filter((g) => g.dejaRefute).length,
+  registre: { paires: registre.taille, misAJour: registre.misAJour },
   detail: groupes,
 };
 
@@ -93,8 +100,10 @@ fs.mkdirSync(path.dirname(sortie), { recursive: true });
 fs.writeFileSync(sortie, JSON.stringify(rapport, null, 1));
 
 console.log(`${rapport.avecImage} fiches avec image → ${groupes.length} groupe(s) partageant un visuel (${rapport.fichesConcernees} fiches)`);
-console.log(`dont ${rapport.typesMelanges} groupe(s) à TYPES MÉLANGÉS (à lire en premier)\n`);
+console.log(`dont ${rapport.typesMelanges} groupe(s) à TYPES MÉLANGÉS (à lire en premier)`);
+console.log(`registre des réfutations : ${registre.taille} paire(s) — ${rapport.dejaRefutes} groupe(s) ici DÉJÀ tranché(s)\n`);
 for (const g of groupes.slice(0, 12)) {
-  console.log(`${g.memeType ? ' ' : '⚠'} ${g.fiches.map((f) => `${f.slug}(${f.type},${f.aretes})`).join('  +  ')}`);
+  const marque = g.dejaRefute ? `  ⟵ DÉJÀ RÉFUTÉ : ${g.dejaRefute.verdict}` : '';
+  console.log(`${g.memeType ? ' ' : '⚠'} ${g.fiches.map((f) => `${f.slug}(${f.type},${f.aretes})`).join('  +  ')}${marque}`);
 }
 console.log(`\ntrace : ${path.relative(ROOT, sortie)}`);

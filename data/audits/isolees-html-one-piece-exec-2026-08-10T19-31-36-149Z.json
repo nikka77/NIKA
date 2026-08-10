@@ -1,0 +1,63 @@
+{
+ "quand": "2026-08-10T19:36:45.086Z",
+ "tentees": 27,
+ "ecrites": 27,
+ "erreurs": 0,
+ "avant": {
+  "aretes": 17044,
+  "isolees": 555,
+  "isoleesUnivers": 264
+ },
+ "apres": {
+  "aretes": 17071,
+  "isolees": 546,
+  "isoleesUnivers": 255
+ },
+ "fichesDesisolees": [
+  {
+   "name": "Jet-Board",
+   "slug": "jet-board",
+   "type": "artifact"
+  },
+  {
+   "name": "Iwatobi",
+   "slug": "iwatobi",
+   "type": "character"
+  },
+  {
+   "name": "Archipel Totto Land",
+   "slug": "totto-land",
+   "type": "place"
+  },
+  {
+   "name": "Famille Kozuki",
+   "slug": "kouzuki-family",
+   "type": "status"
+  },
+  {
+   "name": "Burn-Blade",
+   "slug": "burn-blade",
+   "type": "artifact"
+  },
+  {
+   "name": "Burn-Bazooka",
+   "slug": "burn-bazooka",
+   "type": "artifact"
+  },
+  {
+   "name": "Nouveau Marineford",
+   "slug": "new-marineford",
+   "type": "place"
+  },
+  {
+   "name": "Colline aux fleurs",
+   "slug": "flower-hill",
+   "type": "place"
+  },
+  {
+   "name": "Ballon Terminal",
+   "slug": "ballom-terminal",
+   "type": "place"
+  }
+ ]
+}

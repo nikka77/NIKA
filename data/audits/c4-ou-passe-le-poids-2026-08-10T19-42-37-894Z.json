@@ -1,0 +1,32 @@
+{
+  "chantier": "chantier 4 — octets réellement traversés et largeur peinte",
+  "quand": "2026-08-10T19:42:49.167Z",
+  "base": "http://localhost:3000",
+  "lignes": [
+    {
+      "slug": "atk-db-galick-gun",
+      "nom": "Galick Gun",
+      "type": "power",
+      "universe": "Dragon Ball",
+      "image_url": "https://static.wikia.nocookie.net/dragonball/images/7/78/Galick_Gun.png/revision/latest/scale-to-width-down/1024?cb=20260809153346",
+      "page": "http://localhost:3000/learn/akasha?search=Galick%20Gun",
+      "fiche": "http://localhost:3000/learn/akasha/atk-db-galick-gun",
+      "aperçu_ouvert": true,
+      "sur_la_fiche": [],
+      "plus_grande_sur_la_fiche": 0,
+      "balises_peignant_le_visuel": [],
+      "plus_grande_largeur_peinte": 0,
+      "tirages_reseau": [
+        {
+          "url": "https://static.wikia.nocookie.net/dragonball/images/7/78/Galick_Gun.png/revision/latest/scale-to-width-down/1024?cb=20260809153346",
+          "statut": 200,
+          "octets": 166412,
+          "type": "image/webp",
+          "depuis_le_cache": false
+        }
+      ],
+      "octets_traverses": 166412,
+      "passe_par_optimiseur_next": false
+    }
+  ]
+}

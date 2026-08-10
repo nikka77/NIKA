@@ -18,9 +18,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { clientSite } from '../lib/ops/db.mjs';
+import { chargerNonDoublons } from '../lib/ops/non-doublons.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const db = clientSite();
+// 10/08/2026 — les mêmes paires revenaient à chaque passage alors qu'elles avaient déjà été
+// réfutées sur pièces. Le registre les annote ; il n'en cache aucune.
+const registre = chargerNonDoublons(ROOT);
 
 /** Réduit une graphie latine du japonais à son squelette phonétique. */
 export function squelette(nom) {
@@ -69,6 +73,7 @@ const suspects = [...groupes.entries()]
   .filter(([, g]) => g.length > 1 && new Set(g.map((e) => e.name.toLowerCase())).size > 1)
   .map(([cle, g]) => ({
     cle,
+    dejaRefute: registre.verdict(g.map((e) => e.slug)) ?? undefined,
     fiches: g.map((e) => ({
       slug: e.slug, nom: e.name, type: e.type, universe: e.universe,
       aretes: degre.get(e.id) ?? 0, image: !!e.image_url,
@@ -81,14 +86,18 @@ const rapport = {
   chantier: 'doublons de romanisation', quand: new Date().toISOString(),
   fiches: entries.length, groupes: suspects.length,
   fichesConcernees: suspects.reduce((n, g) => n + g.fiches.length, 0),
+  dejaRefutes: suspects.filter((g) => g.dejaRefute).length,
+  registre: { paires: registre.taille, misAJour: registre.misAJour },
   detail: suspects,
 };
 const sortie = path.join(ROOT, 'data/audits/doublons-romanisation.json');
 fs.mkdirSync(path.dirname(sortie), { recursive: true });
 fs.writeFileSync(sortie, JSON.stringify(rapport, null, 1));
 
-console.log(`${entries.length} fiches → ${suspects.length} groupe(s) au squelette identique mais à la graphie différente\n`);
+console.log(`${entries.length} fiches → ${suspects.length} groupe(s) au squelette identique mais à la graphie différente`);
+console.log(`registre des réfutations : ${registre.taille} paire(s) — ${rapport.dejaRefutes} groupe(s) ici DÉJÀ tranché(s)\n`);
 for (const g of suspects.slice(0, 30)) {
-  console.log(`${g.fiches[0].universe.padEnd(12)} ${g.fiches.map((f) => `${f.nom} [${f.slug}] (${f.aretes})`).join('   ≟   ')}`);
+  const marque = g.dejaRefute ? `  ⟵ DÉJÀ RÉFUTÉ (${g.dejaRefute.quand}) : ${g.dejaRefute.verdict}` : '';
+  console.log(`${g.fiches[0].universe.padEnd(12)} ${g.fiches.map((f) => `${f.nom} [${f.slug}] (${f.aretes})`).join('   ≟   ')}${marque}`);
 }
 console.log(`\ntrace : ${path.relative(ROOT, sortie)}`);

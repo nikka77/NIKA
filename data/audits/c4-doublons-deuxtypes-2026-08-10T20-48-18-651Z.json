@@ -1,0 +1,736 @@
+{
+ "chantier": "chantier 4 — même nom, deux types (angle mort d'akasha-dedup)",
+ "quand": "2026-08-10T20:48:28.326Z",
+ "corpus": {
+  "fiches": 7698,
+  "aretes": 17071,
+  "sections": 19101
+ },
+ "paires": 26,
+ "avecMemeImage": 4,
+ "horsConventionAtk": 12,
+ "detail": [
+  {
+   "cle": "One Piece|thriller bark",
+   "memeImage": true,
+   "atk": false,
+   "fiches": [
+    {
+     "slug": "thriller-bark-lieu",
+     "nom": "Thriller Bark",
+     "type": "place",
+     "aretes": 9,
+     "sections": 10,
+     "image": "https://static.wikia.nocookie.net/onepiece/images/3/37/Thriller_Bark_Infobox.png",
+     "resume": "Le galion-île géant de Gecko Moria, hanté de zombies et voleur d'ombres.",
+     "descFr": "Ancienne île du West Blue transformée en navire géant, Thriller Bark est le repaire flottant de Gecko Moria, ancien Grand Corsaire. Dissimulée dans le Triangle de Florian, cette forteresse gothique ab"
+    },
+    {
+     "slug": "thriller-bark-one-piece",
+     "nom": "Thriller Bark",
+     "type": "artifact",
+     "aretes": 1,
+     "sections": 7,
+     "image": "https://static.wikia.nocookie.net/onepiece/images/3/37/Thriller_Bark_Infobox.png",
+     "resume": "Navire Pirate de One Piece.",
+     "descFr": "Le Thriller Bark est le plus grand navire du monde de One Piece, anciennement utilisé par les Thriller Bark Pirates, dirigé par le Warlord Gecko Moria. Transformé d'une île en navire pirate, il a déri"
+    }
+   ]
+  },
+  {
+   "cle": "Dragon Ball|super saiyan",
+   "memeImage": true,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "atk-db-super-saiyan",
+     "nom": "Super Saiyan",
+     "type": "power",
+     "aretes": 17,
+     "sections": 10,
+     "image": "https://static.wikia.nocookie.net/dragonball/images/c/c1/Super_Saiyan_Goku.png",
+     "resume": "Transformation légendaire des guerriers Saiyens, cheveux dorés et aura fulgurante, démultipliant force, vitesse et endurance.",
+     "descFr": "La transformation Super Saiyan est une forme avancée utilisée par les membres et les hybrides de la race Saiyan qui possèdent un nombre suffisant de cellules S. Elle est caractérisée par des cheveux d"
+    },
+    {
+     "slug": "super-saiyan",
+     "nom": "Super Saiyan",
+     "type": "skill",
+     "aretes": 7,
+     "sections": 11,
+     "image": "https://static.wikia.nocookie.net/dragonball/images/c/c1/Super_Saiyan_Goku.png",
+     "resume": "La transformation légendaire des Saiyans : cheveux d'or et puissance démultipliée, éveillée par la rage.",
+     "descFr": "Le Super Saiyan est une transformation avancée utilisée par les Saiyens et leurs hybrides possédant suffisamment de S-Cells, permettant une augmentation massive de la puissance et un changement d'appa"
+    }
+   ]
+  },
+  {
+   "cle": "One Piece|enma",
+   "memeImage": true,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "atk-op-enma",
+     "nom": "Enma",
+     "type": "power",
+     "aretes": 1,
+     "sections": 6,
+     "image": "https://static.wikia.nocookie.net/onepiece/images/f/f8/Enma_Infobox.png",
+     "resume": "Attaque de One Piece — attaque signature.",
+     "descFr": "Enma est une épée de grade supérieur forgée par Shimotsuki Kouzaburou, connue pour sa capacité à libérer une grande quantité d'Haki d'armement, ce qui la rend difficile à manier. Elle a été utilisée p"
+    },
+    {
+     "slug": "enma",
+     "nom": "Enma",
+     "type": "artifact",
+     "aretes": 1,
+     "sections": 4,
+     "image": "https://static.wikia.nocookie.net/onepiece/images/f/f8/Enma_Infobox.png",
+     "resume": "Enma est un katana avec une garde en forme de trèfle, identique à Ame no Habakiri à l'exception de la couleur.",
+     "descFr": "Enma est un katana avec une garde en forme de trèfle, identique à Ame no Habakiri à l'exception de la couleur. Son fourreau est entièrement mauve et est décoré de plusieurs fleurs dorées."
+    }
+   ]
+  },
+  {
+   "cle": "One Piece|kabuto",
+   "memeImage": true,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "atk-op-kabuto",
+     "nom": "Kabuto",
+     "type": "power",
+     "aretes": 1,
+     "sections": 3,
+     "image": "https://static.wikia.nocookie.net/onepiece/images/0/0e/Sogeking_Kabuto.png",
+     "resume": "Attaque de One Piece — attaque signature.",
+     "descFr": "Le Kabuto est une fronde géante conçue par Usopp, alimentée par des coquillages célestes récupérés à Skypiea. Son mécanisme stabilisé par cinq branches et amplifié par un Souffle-Dial confère à ses pr"
+    },
+    {
+     "slug": "kabuto",
+     "nom": "Kabuto",
+     "type": "artifact",
+     "aretes": 1,
+     "sections": 3,
+     "image": "https://static.wikia.nocookie.net/onepiece/images/0/0e/Sogeking_Kabuto.png",
+     "resume": "Coquillage-outil de Skypiea.",
+     "descFr": "Le Kabuto est un énorme lance-pierre actionné par des Dials, créé par Usopp avant son arrivée à Enies Lobby. Il est plusieurs fois plus puissant que son ancien lance-pierre, capable de tirer plus vite"
+    }
+   ]
+  },
+  {
+   "cle": "JoJo's Bizarre Adventure|foo fighter",
+   "memeImage": false,
+   "atk": false,
+   "fiches": [
+    {
+     "slug": "foo-fighters",
+     "nom": "Foo Fighters",
+     "type": "character",
+     "aretes": 9,
+     "sections": 6,
+     "image": "https://cdn.myanimelist.net/images/characters/13/494589.webp",
+     "resume": "Stand formé d'algues planctoniques prenant une apparence humaine, allié de Jolyne né du souvenir de la détenue disparue Atroe.",
+     "descFr": "Une masse de plancton dotée d'une conscience issue de l'un des disques de Stand de White Snake. Initialement ennemie de Jolyne, elle devient plus tard une alliée. Foo Fighters peut habiter des cadavre"
+    },
+    {
+     "slug": "foo-fighters-jojo-s-bizarre-adventure",
+     "nom": "Foo Fighters",
+     "type": "power",
+     "aretes": 2,
+     "sections": 7,
+     "image": "https://static.wikia.nocookie.net/jjba/images/4/4d/FooP.png",
+     "resume": "Colonie de plancton dotée d'une conscience qui contrôle un corps humain, se liquéfie et tire des projectiles d'eau à haute pression.",
+     "descFr": "Foo Fighters, surnommé F.F., est à la fois un Stand et son propre utilisateur dans Stone Ocean : une colonie de plancton organisée qui peut prendre l'apparence de la prisonnière Atroe ou se disperser "
+    }
+   ]
+  },
+  {
+   "cle": "One Piece|fruit",
+   "memeImage": false,
+   "atk": false,
+   "fiches": [
+    {
+     "slug": "fruit",
+     "nom": "Fruit",
+     "type": "power",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Fruit",
+     "descFr": ""
+    },
+    {
+     "slug": "fruits",
+     "nom": "Fruits",
+     "type": "place",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Île de Totto Land confiée à Charlotte Compote, ministre des Fruits, dont elle emprunte fidèlement les teintes et les saveurs sucrées.",
+     "descFr": "L'île Fruits, située dans le territoire de Totto Land, est l'une des 34 îles entourant l'île Whole Cake. Elle est dirigée par Charlotte Compote, ministre des Fruits, et est connue pour sa ville princi"
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|haineko",
+   "memeImage": false,
+   "atk": false,
+   "fiches": [
+    {
+     "slug": "haineko-bleach",
+     "nom": "Haineko",
+     "type": "artifact",
+     "aretes": 2,
+     "sections": 0,
+     "image": null,
+     "resume": "Le « chat de cendres » de Rangiku : la lame se disperse en cendres coupantes qui suivent la garde.",
+     "descFr": "Le zanpakutō de Rangiku se dissout en nuée de cendres tranchantes enveloppant son corps, moissonneuse silencieuse qui suit ses mouvements."
+    },
+    {
+     "slug": "haineko",
+     "nom": "Haineko",
+     "type": "character",
+     "aretes": 1,
+     "sections": 0,
+     "image": "https://cdn.myanimelist.net/images/characters/2/96962.webp",
+     "resume": "Haineko est l'esprit incarné du Zanpakutō de Rangiku Matsumoto, aperçu durant l'arc des Récits Inconnus des Zanpakutō. L'esprit de Haineko prend la forme d'une ",
+     "descFr": "Haineko est l'esprit incarné du Zanpakutō de Rangiku Matsumoto, aperçu durant l'arc des Récits Inconnus des Zanpakutō. L'esprit de Haineko prend la forme d'une femme-chat. D'aspect essentiellement hum"
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|kazeshini",
+   "memeImage": false,
+   "atk": false,
+   "fiches": [
+    {
+     "slug": "kazeshini",
+     "nom": "Kazeshini",
+     "type": "character",
+     "aretes": 1,
+     "sections": 0,
+     "image": "https://cdn.myanimelist.net/images/characters/10/63923.webp",
+     "resume": "Il est le Zanpakutō de Shūhei Hisagi sous forme physique. L'esprit de Kazeshini prend la forme d'un homme sombre qui ressemble presque à une ombre. Il a de long",
+     "descFr": "Il est le Zanpakutō de Shūhei Hisagi sous forme physique. L'esprit de Kazeshini prend la forme d'un homme sombre qui ressemble presque à une ombre. Il a de longs cheveux noirs et porte une arme sembla"
+    },
+    {
+     "slug": "kazeshini-bleach",
+     "nom": "Kazeshini",
+     "type": "artifact",
+     "aretes": 1,
+     "sections": 0,
+     "image": "https://static.wikia.nocookie.net/bleach/images/6/64/Kazeshini_Full_Body_%28ep260%29.png",
+     "resume": "La « mort du vent » de Hisagi : deux faux reliées par une chaîne — une arme qu’il redoute lui-même, faite pour moissonner la vie.",
+     "descFr": "Le Zanpakutō de Shūhei Hisagi : deux faux reliées par une chaîne tranchante qui fouette à distance. Une arme que son porteur redoute autant qu'il la maîtrise."
+    }
+   ]
+  },
+  {
+   "cle": "One Piece|noko",
+   "memeImage": false,
+   "atk": false,
+   "fiches": [
+    {
+     "slug": "noko",
+     "nom": "Noko",
+     "type": "character",
+     "aretes": 1,
+     "sections": 2,
+     "image": "https://cdn.myanimelist.net/images/characters/10/587974.webp",
+     "resume": "Personnage d'arrière-plan de One Piece dont l'identité exacte reste peu documentée dans le récit principal.",
+     "descFr": "Première apparition : épisode 220. Noko est un hippocampe qui vole les souvenirs des gens. C'est l'antagoniste principal du jeu vidéo One Piece: Ocean's Dream!, de son remake One Piece: Dragon Dream! "
+    },
+    {
+     "slug": "noko-op",
+     "nom": "Noko",
+     "type": "place",
+     "aretes": 0,
+     "sections": 2,
+     "image": "https://static.wikia.nocookie.net/onepiece/images/e/ef/Noko_Anime_Infobox.png",
+     "resume": "Une des îles de Totto Land, placée sous l’autorité de Charlotte Opera, ministre de la Crème fouettée dans l’empire de Big Mom.",
+     "descFr": ""
+    }
+   ]
+  },
+  {
+   "cle": "One Piece|sphinx",
+   "memeImage": false,
+   "atk": false,
+   "fiches": [
+    {
+     "slug": "sphinx",
+     "nom": "Sphinx",
+     "type": "character",
+     "aretes": 2,
+     "sections": 4,
+     "image": "https://cdn.myanimelist.net/images/characters/16/493146.webp",
+     "resume": "Sphinx désigne l'imposante statue abritant Punk Records, la base de données du docteur Vegapunk sur l'île d'Egghead.",
+     "descFr": "Sphinx géant qui sert de boss au Niveau 2 d'Impel Down, l'Enfer des Bêtes."
+    },
+    {
+     "slug": "sphinx-one-piece",
+     "nom": "Sphinx",
+     "type": "status",
+     "aretes": 2,
+     "sections": 4,
+     "image": "https://static.wikia.nocookie.net/onepiece/images/1/1a/Sphinx_Anime_Infobox.png",
+     "resume": "Équipage de pirates.",
+     "descFr": "Le Sphinx est un gigantesque sphinx qui sert de gardien de niveau 2 de la prison d'Impel Down, également connu sous le nom de Beast Hell. Il est une créature puissante avec un visage humain sombre et "
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|suzumebachi",
+   "memeImage": false,
+   "atk": false,
+   "fiches": [
+    {
+     "slug": "suzumebachi-bleach",
+     "nom": "Suzumebachi",
+     "type": "artifact",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Le « frelon » de Soi Fon : deux piqûres au même point — Nigeki Kessatsu, la mort en deux coups.",
+     "descFr": "Zanpakutō de Soi Fon, capitaine de la 2e Division du Gotei 13. Nommé d'après le frelon, son Shikai prend la forme de deux piqûres : deux coups au même point provoquent Nigeki Kessatsu, une mort instan"
+    },
+    {
+     "slug": "suzumebachi",
+     "nom": "Suzumebachi",
+     "type": "character",
+     "aretes": 0,
+     "sections": 0,
+     "image": "https://cdn.myanimelist.net/images/characters/8/68192.webp",
+     "resume": "Suzumebachi est l'esprit manifesté du Zanpakutō de Soifon, que l'on voit durant l'arc des Contes Inconnus du Zanpakutō.",
+     "descFr": "Suzumebachi est l'esprit manifesté du Zanpakutō de Soifon, que l'on voit durant l'arc des Contes Inconnus du Zanpakutō."
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|wabisuke",
+   "memeImage": false,
+   "atk": false,
+   "fiches": [
+    {
+     "slug": "wabisuke",
+     "nom": "Wabisuke",
+     "type": "character",
+     "aretes": 1,
+     "sections": 0,
+     "image": "https://cdn.myanimelist.net/images/characters/15/98856.webp",
+     "resume": "Le Zanpakutō d'Izuru Kira. L'esprit de Wabisuke prend la forme d'un homme émacié et torse nu. Il porte une grosse boule de métal sur l'épaule gauche et le Shika",
+     "descFr": "Le Zanpakutō d'Izuru Kira. L'esprit de Wabisuke prend la forme d'un homme émacié et torse nu. Il porte une grosse boule de métal sur l'épaule gauche et le Shikai d'Izuru dans la main droite. Son panta"
+    },
+    {
+     "slug": "wabisuke-bleach",
+     "nom": "Wabisuke",
+     "type": "artifact",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Le « pénitent » de Kira : chaque parade DOUBLE le poids de l’arme adverse, jusqu’à plier l’ennemi au sol — tête baissée pour l’exécution.",
+     "descFr": ""
+    }
+   ]
+  },
+  {
+   "cle": "JoJo's Bizarre Adventure|weather report",
+   "memeImage": false,
+   "atk": false,
+   "fiches": [
+    {
+     "slug": "weather-report",
+     "nom": "Weather Report",
+     "type": "character",
+     "aretes": 7,
+     "sections": 7,
+     "image": "https://cdn.myanimelist.net/images/characters/15/495419.webp",
+     "resume": "Détenu amnésique de Green Dolphin Street, en réalité nommé Wes Bluemarine, maîtrisant les phénomènes météorologiques grâce à son Stand éponyme.",
+     "descFr": "Présenté d'abord comme souffrant d'amnésie, Weather aida Jolyne à la demande d'Emporio. Distant et un peu naïf, il continue d'assister Jolyne et ses compagnons par la suite. Personnalité : Privé de se"
+    },
+    {
+     "slug": "weather-report-jojo-s-bizarre-adventure",
+     "nom": "Weather Report",
+     "type": "power",
+     "aretes": 4,
+     "sections": 10,
+     "image": "https://static.wikia.nocookie.net/jjba/images/4/42/WeatherRP.png",
+     "resume": "Contrôle totalement la météo (foudre, brouillard toxique, grêle, pluie de grenouilles) et, réveillé en Heavy Weather, projette un arc-en-ciel transformant les h",
+     "descFr": "Le Stand contrôlant intégralement la météo : foudre, grêle, brouillard toxique. Son éveil en Heavy Weather projette un arc-en-ciel transformant l'humanité en escargots."
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|zangetsu",
+   "memeImage": false,
+   "atk": false,
+   "fiches": [
+    {
+     "slug": "zangetsu",
+     "nom": "Zangetsu",
+     "type": "character",
+     "aretes": 1,
+     "sections": 0,
+     "image": "https://cdn.myanimelist.net/images/characters/10/33260.webp",
+     "resume": "Le Zanpakutō d'Ichigo se nomme Zangetsu (littéralement « lune tranchante »). L'esprit de Zangetsu ressemble à un homme de 30 à 40 ans, et Ichigo l'appelle « le ",
+     "descFr": "Le Zanpakutō d'Ichigo se nomme Zangetsu (littéralement « lune tranchante »). L'esprit de Zangetsu ressemble à un homme de 30 à 40 ans, et Ichigo l'appelle « le vieux » (ossan) en conséquence. Zangetsu"
+    },
+    {
+     "slug": "zangetsu-bleach",
+     "nom": "Zangetsu",
+     "type": "artifact",
+     "aretes": 1,
+     "sections": 0,
+     "image": "https://static.wikia.nocookie.net/bleach/images/c/cc/Ep39ZangetsuQuincy.png",
+     "resume": "La « lune tranchante » d’Ichigo : un couperet démesuré, un Getsuga Tenshō, et un Bankai qui condense la puissance en vitesse pure.",
+     "descFr": "La « lune tranchante » du Zanpakutō d'Ichigo Kurosaki : un couperet démesuré dont la libération génère le redoutable Getsuga Tenshō. Son Bankai concentre cette puissance décuplée en vitesse pure et en"
+    }
+   ]
+  },
+  {
+   "cle": "One Piece|zenny",
+   "memeImage": false,
+   "atk": false,
+   "fiches": [
+    {
+     "slug": "zenny",
+     "nom": "Zenny",
+     "type": "character",
+     "aretes": 3,
+     "sections": 5,
+     "image": "https://cdn.myanimelist.net/images/characters/16/51459.webp",
+     "resume": "Personnage secondaire dont le nom évoque une unité monétaire, sans détails biographiques précis établis dans le canon.",
+     "descFr": "Zenny est le vieil homme de l'Île des Chèvres. C'est un collecteur de dettes qui s'est retrouvé bloqué il y a 20 ans sur une île peuplée de chèvres et qui souffre d'une maladie mortelle ; il reçoit to"
+    },
+    {
+     "slug": "zenny-one-piece",
+     "nom": "Zenny",
+     "type": "artifact",
+     "aretes": 1,
+     "sections": 3,
+     "image": "https://static.wikia.nocookie.net/onepiece/images/9/9c/Zenny_Anime_Infobox.png",
+     "resume": "Navire Pirate de One Piece.",
+     "descFr": "Zenny, également connu sous le nom de Zenny le prêteur sur gages, est un vieil homme de Goat Island. Il est un collecteur de dettes qui a passé 20 ans sur une île peuplée de chèvres. Zenny a réalisé s"
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|ashisogi jizo",
+   "memeImage": false,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "atk-bl-ashisogi-jizo",
+     "nom": "Ashisogi Jizo",
+     "type": "power",
+     "aretes": 1,
+     "sections": 0,
+     "image": "https://static.wikia.nocookie.net/bleach/images/f/f0/NBFHMayuri_profile.png",
+     "resume": "Technique de Zanpakutō de Bleach — attaque signature.",
+     "descFr": "Ashisogi Jizō est le Shikai du Zanpakutō de Mayuri Kurotsuchi, capitaine de la 12e division du Gotei 13 et deuxième président de l'Institut de recherche des Shinigami. Cette technique incarne son appr"
+    },
+    {
+     "slug": "ashisogi-jizo",
+     "nom": "Ashisogi Jizo",
+     "type": "character",
+     "aretes": 0,
+     "sections": 0,
+     "image": "https://cdn.myanimelist.net/images/characters/13/160187.webp",
+     "resume": "Ashisogi Jizō est le Zanpakutō de Mayuri. Ksitigarbha est un bodhisattva qui veille sur les enfants et les enfers. Au Japon, où on le connaît sous le nom de Jiz",
+     "descFr": ""
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|benihime",
+   "memeImage": false,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "benihime",
+     "nom": "Benihime",
+     "type": "artifact",
+     "aretes": 2,
+     "sections": 0,
+     "image": null,
+     "resume": "La « princesse écarlate » d’Urahara : boucliers de sang, lames d’énergie et pièges — aussi retorse que son porteur.",
+     "descFr": "Le zanpakutō de Kisuke Urahara, ancien capitaine de la douzième division. Cette arme incarne une intelligence tactique redoutable, capable de créer des barrières de sang et des pièges d'énergie assort"
+    },
+    {
+     "slug": "atk-bl-benihime",
+     "nom": "Benihime",
+     "type": "power",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Technique de Zanpakutō de Bleach — attaque signature.",
+     "descFr": "Benihime est le Zanpakutō d'Urahara Kisuke : une canne-épée scellée que son maître décrit lui-même comme « pas très gentille ». Libérée, elle déploie des barrières de sang, des projectiles d'énergie e"
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|hyorinmaru",
+   "memeImage": false,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "hyorinmaru",
+     "nom": "Hyōrinmaru",
+     "type": "artifact",
+     "aretes": 2,
+     "sections": 0,
+     "image": null,
+     "resume": "Le dragon de glace de Hitsugaya : le zanpakutō de glace le plus puissant de la Soul Society, capable de geler le ciel.",
+     "descFr": "Hyōrinmaru est le Zanpakutō de Tōshirō Hitsugaya, capitaine de la 10e division. Ce dragon de glace vivant confère au porteur le contrôle absolu du froid et de la glace, capable de geler le ciel entier"
+    },
+    {
+     "slug": "atk-bl-hyorinmaru",
+     "nom": "Hyorinmaru",
+     "type": "power",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Technique de Zanpakutō de Bleach — attaque signature.",
+     "descFr": "La forme libérée du zanpakutō de Tōshirō Hitsugaya, capitaine de la dixième division. Cette technique incarne la puissance glaciale de celui qui la manie, manifeste en tant qu'arme de combat surnature"
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|katen kyokotsu",
+   "memeImage": false,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "katen-kyokotsu",
+     "nom": "Katen Kyōkotsu",
+     "type": "artifact",
+     "aretes": 3,
+     "sections": 0,
+     "image": null,
+     "resume": "La paire de lames de Kyōraku : elle rend RÉELS les jeux d’enfants — ombres, duels de couleurs… et le perdant meurt.",
+     "descFr": "Katen Kyōkotsu est le Zanpakuto de Shunsui Kyōraku, capitaine de la 8e Division. Ce Zanpakuto unique rend réels les jeux d'enfants — ses règles s'imposent aux combattants, transformant des danseurs de"
+    },
+    {
+     "slug": "atk-bl-katen-kyokotsu",
+     "nom": "Katen Kyokotsu",
+     "type": "power",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Technique de Zanpakutō de Bleach — attaque signature.",
+     "descFr": "Zanpakutō du capitaine Shunsui Kyōraku de la 8e Division. Sa particularité réside dans son Shikai qui matérialise les jeux d'enfants : les règles des jeux invoqués deviennent réelles et s'appliquent a"
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|kyoka suigetsu",
+   "memeImage": false,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "kyoka-suigetsu",
+     "nom": "Kyōka Suigetsu",
+     "type": "artifact",
+     "aretes": 2,
+     "sections": 0,
+     "image": null,
+     "resume": "L’« hypnose parfaite » d’Aizen : quiconque a vu sa libération une seule fois voit ses cinq sens réécrits à volonté.",
+     "descFr": "Zanpakutō de Sousuke Aizen, ancien capitaine de la 5e Division. Son pouvoir d'illusion totale permet à celui qui a vu son Shikai une seule fois de voir ses cinq sens complètement réécrits à la volonté"
+    },
+    {
+     "slug": "atk-bl-kyoka-suigetsu",
+     "nom": "Kyoka Suigetsu",
+     "type": "power",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Technique de Zanpakutō de Bleach — attaque signature.",
+     "descFr": "Le zanpakutō de Sousuke Aizen, capitaine de la cinquième division. Cette lame possède le pouvoir de contrôler complètement les sens de ceux qui la voient libérée, les plongeant dans une hypnose quasi "
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|minazuki",
+   "memeImage": false,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "atk-bl-minazuki",
+     "nom": "Minazuki",
+     "type": "power",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Technique de Zanpakutō de Bleach — attaque signature.",
+     "descFr": "Minazuki est le Zanpakutō de Retsu Unohana, capitaine de la 4e division du Gotei 13. Cet « arme de guérison » fonctionne comme un baume vivant : elle absorbe les plaies et la douleur, restaurant l'int"
+    },
+    {
+     "slug": "minazuki",
+     "nom": "Minazuki",
+     "type": "character",
+     "aretes": 1,
+     "sections": 0,
+     "image": "https://cdn.myanimelist.net/images/characters/2/208161.webp",
+     "resume": "Minazuki est l'esprit manifesté du Zanpakutō de Retsu Unohana, que l'on voit durant la Rébellion des Zanpakutō, exclusive à l'anime. L'esprit de Minazuki prend ",
+     "descFr": "Minazuki est l'esprit manifesté du Zanpakutō de Retsu Unohana, que l'on voit durant la Rébellion des Zanpakutō, exclusive à l'anime. L'esprit de Minazuki prend la forme d'une silhouette humanoïde élan"
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|nozarashi",
+   "memeImage": false,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "nozarashi",
+     "nom": "Nozarashi",
+     "type": "artifact",
+     "aretes": 2,
+     "sections": 0,
+     "image": null,
+     "resume": "La lame « délaissée » de Kenpachi : un couperet de brute qui tranche même les météores, longtemps sans nom faute d’être écoutée.",
+     "descFr": ""
+    },
+    {
+     "slug": "atk-bl-nozarashi",
+     "nom": "Nozarashi",
+     "type": "power",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Technique de Zanpakutō de Bleach — attaque signature.",
+     "descFr": ""
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|senbonzakura",
+   "memeImage": false,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "atk-bl-senbonzakura",
+     "nom": "Senbonzakura",
+     "type": "power",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Technique de Zanpakutō de Bleach — attaque signature.",
+     "descFr": "Zanpakutō de Byakuya Kuchiki, capitaine de la 6e Division du Gotei 13. Son Shikai dissout la lame en une tempête de pétales acérés, tandis que son Bankai, Senbonzakura Kageyoshi, transforme ces pétale"
+    },
+    {
+     "slug": "senbonzakura",
+     "nom": "Senbonzakura",
+     "type": "character",
+     "aretes": 1,
+     "sections": 0,
+     "image": "https://cdn.myanimelist.net/images/characters/6/114855.webp",
+     "resume": "Son apparence est celle d'un samouraï masqué en armure complète. Il a de longs cheveux brun foncé avec des accessoires argentés et porte sur le front un ornemen",
+     "descFr": "Son apparence est celle d'un samouraï masqué en armure complète. Il a de longs cheveux brun foncé avec des accessoires argentés et porte sur le front un ornement doré qui ressemble à une demi-fleur de"
+    },
+    {
+     "slug": "senbonzakura-bleach",
+     "nom": "Senbonzakura",
+     "type": "artifact",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Le zanpakutō de Byakuya se dissout en mille pétales-lames — le Bankai en fait une tempête rose mortelle.",
+     "descFr": ""
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|sode no shirayuki",
+   "memeImage": false,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "atk-bl-sode-no-shirayuki",
+     "nom": "Sode no Shirayuki",
+     "type": "power",
+     "aretes": 1,
+     "sections": 0,
+     "image": "https://static.wikia.nocookie.net/bleach/images/7/73/256Sode_no_Shirayuki_alt.png",
+     "resume": "Technique de Zanpakutō de Bleach — attaque signature.",
+     "descFr": "La « manche de neige blanche » du Zanpakutō de Rukia Kuchiki, l'une des plus belles lames de la Soul Society. Maîtresse de la glace et des danses mortelles, elle transforme son porteur en guerrière de"
+    },
+    {
+     "slug": "sode-no-shirayuki",
+     "nom": "Sode no Shirayuki",
+     "type": "character",
+     "aretes": 1,
+     "sections": 0,
+     "image": "https://cdn.myanimelist.net/images/characters/6/71519.webp",
+     "resume": "Elle est le Zanpakutō de Rukia Kuchiki sous forme physique. À la hauteur de son titre de plus beau Zanpakutō de la Soul Society, Sode no Shirayuki se manifeste ",
+     "descFr": "Elle est le Zanpakutō de Rukia Kuchiki sous forme physique. À la hauteur de son titre de plus beau Zanpakutō de la Soul Society, Sode no Shirayuki se manifeste sous les traits d'une belle femme vêtue "
+    },
+    {
+     "slug": "sode-no-shirayuki-bleach",
+     "nom": "Sode no Shirayuki",
+     "type": "artifact",
+     "aretes": 1,
+     "sections": 0,
+     "image": "https://static.wikia.nocookie.net/bleach/images/7/73/256Sode_no_Shirayuki_alt.png",
+     "resume": "La « manche de neige blanche » de Rukia : la plus belle lame de la Soul Society, blanche des ondulations à la garde, maîtresse des danses de glace.",
+     "descFr": "Sode no Shirayuki est le Zanpakutō de Rukia Kuchiki, une lame d'une grâce exceptionnelle capable de geler à volonté. Cet esprit de lame maîtrise les danses de glace complexes, libérant ses techniques "
+    }
+   ]
+  },
+  {
+   "cle": "Bleach|zabimaru",
+   "memeImage": false,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "zabimaru",
+     "nom": "Zabimaru",
+     "type": "artifact",
+     "aretes": 2,
+     "sections": 0,
+     "image": null,
+     "resume": "Le serpent-scie de Renji : une lame segmentée qui fouette à distance — et un Bankai squelette de serpent géant.",
+     "descFr": "Le Zanpakutō de Renji Abarai, lieutenant de la 6e Division sous le capitaine Byakuya Kuchiki. C'est une lame segmentée en forme de serpent qui peut se mouvoir à distance et s'utilise en attaque fouett"
+    },
+    {
+     "slug": "atk-bl-zabimaru",
+     "nom": "Zabimaru",
+     "type": "power",
+     "aretes": 1,
+     "sections": 0,
+     "image": null,
+     "resume": "Technique de Zanpakutō de Bleach — attaque signature.",
+     "descFr": ""
+    }
+   ]
+  },
+  {
+   "cle": "One Piece|impact dial",
+   "memeImage": false,
+   "atk": true,
+   "fiches": [
+    {
+     "slug": "atk-op-impact-dial",
+     "nom": "Impact Dial",
+     "type": "power",
+     "aretes": 1,
+     "sections": 2,
+     "image": null,
+     "resume": "Attaque de One Piece — attaque signature.",
+     "descFr": ""
+    },
+    {
+     "slug": "impact-dial",
+     "nom": "Impact-Dial",
+     "type": "artifact",
+     "aretes": 0,
+     "sections": 0,
+     "image": null,
+     "resume": "Coquillage-outil de Skypiea.",
+     "descFr": ""
+    }
+   ]
+  }
+ ]
+}

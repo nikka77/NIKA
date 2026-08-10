@@ -1,0 +1,413 @@
+{
+  "quand": "2026-08-10T14:16:23.202Z",
+  "base": "http://localhost:3000",
+  "n": 12,
+  "taux_erreur_replique": 0,
+  "ecarts": [],
+  "og_generique": 0,
+  "og_titre_porte_le_nom": 12,
+  "og_image_presente": 12,
+  "og_titres_distincts": 12,
+  "og_descriptions_distinctes": 12,
+  "valeurs_distinctes_twitter_card": [
+    "summary_large_image"
+  ],
+  "valeurs_distinctes_og_type": [
+    "article"
+  ],
+  "valeurs_distinctes_og_site_name": [
+    "AKASHA — le registre"
+  ],
+  "valeurs_distinctes_og_image_alt": [
+    "Carte AKASHA"
+  ],
+  "og_url_egale_canonical": 12,
+  "twitter_titre_egal_og": 12,
+  "canonical_ok": 12,
+  "lignes": [
+    {
+      "slug": "atk-bl-bankai-kannonbiraki-benihime-aratame",
+      "type": "power",
+      "universe": "Bleach",
+      "source": "summary",
+      "code": 200,
+      "attendu": {
+        "title": "Bankai Kannonbiraki Benihime Aratame — Pouvoir | AKASHA",
+        "description": "Bankai Kannonbiraki Benihime Aratame — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Kisuke Urahara.",
+        "ogDescription": "Bankai Kannonbiraki Benihime Aratame — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Kisuke Urahara."
+      },
+      "rendu": {
+        "title": "Bankai Kannonbiraki Benihime Aratame — Pouvoir | AKASHA",
+        "description": "Bankai Kannonbiraki Benihime Aratame — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Kisuke Urahara.",
+        "ogTitle": "Bankai Kannonbiraki Benihime Aratame — Pouvoir · Bleach",
+        "ogDescription": "Bankai Kannonbiraki Benihime Aratame — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Kisuke Urahara.",
+        "ogType": "article",
+        "ogUrl": "http://localhost:3000/learn/akasha/atk-bl-bankai-kannonbiraki-benihime-aratame",
+        "ogSiteName": "AKASHA — le registre",
+        "ogImageAlt": "Carte AKASHA",
+        "twCard": "summary_large_image",
+        "twTitle": "Bankai Kannonbiraki Benihime Aratame — Pouvoir · Bleach",
+        "twDescription": "Bankai Kannonbiraki Benihime Aratame — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Kisuke Urahara.",
+        "canonical": "http://localhost:3000/learn/akasha/atk-bl-bankai-kannonbiraki-benihime-aratame"
+      },
+      "ecart_title": false,
+      "ecart_description": false,
+      "ecart_og_description": false,
+      "og_generique": false,
+      "og_porte_le_nom": true,
+      "og_image": true
+    },
+    {
+      "slug": "atk-bl-cero",
+      "type": "power",
+      "universe": "Bleach",
+      "source": "summary",
+      "code": 200,
+      "attendu": {
+        "title": "Cero — Pouvoir | AKASHA",
+        "description": "Cero — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Nnoitra Gilga.",
+        "ogDescription": "Cero — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Nnoitra Gilga."
+      },
+      "rendu": {
+        "title": "Cero — Pouvoir | AKASHA",
+        "description": "Cero — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Nnoitra Gilga.",
+        "ogTitle": "Cero — Pouvoir · Bleach",
+        "ogDescription": "Cero — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Nnoitra Gilga.",
+        "ogType": "article",
+        "ogUrl": "http://localhost:3000/learn/akasha/atk-bl-cero",
+        "ogSiteName": "AKASHA — le registre",
+        "ogImageAlt": "Carte AKASHA",
+        "twCard": "summary_large_image",
+        "twTitle": "Cero — Pouvoir · Bleach",
+        "twDescription": "Cero — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Nnoitra Gilga.",
+        "canonical": "http://localhost:3000/learn/akasha/atk-bl-cero"
+      },
+      "ecart_title": false,
+      "ecart_description": false,
+      "ecart_og_description": false,
+      "og_generique": false,
+      "og_porte_le_nom": true,
+      "og_image": true
+    },
+    {
+      "slug": "atk-bl-desgarron",
+      "type": "power",
+      "universe": "Bleach",
+      "source": "summary",
+      "code": 200,
+      "attendu": {
+        "title": "Desgarron — Pouvoir | AKASHA",
+        "description": "Desgarron — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Grimmjow Jaegerjaquez.",
+        "ogDescription": "Desgarron — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Grimmjow Jaegerjaquez."
+      },
+      "rendu": {
+        "title": "Desgarron — Pouvoir | AKASHA",
+        "description": "Desgarron — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Grimmjow Jaegerjaquez.",
+        "ogTitle": "Desgarron — Pouvoir · Bleach",
+        "ogDescription": "Desgarron — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Grimmjow Jaegerjaquez.",
+        "ogType": "article",
+        "ogUrl": "http://localhost:3000/learn/akasha/atk-bl-desgarron",
+        "ogSiteName": "AKASHA — le registre",
+        "ogImageAlt": "Carte AKASHA",
+        "twCard": "summary_large_image",
+        "twTitle": "Desgarron — Pouvoir · Bleach",
+        "twDescription": "Desgarron — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Grimmjow Jaegerjaquez.",
+        "canonical": "http://localhost:3000/learn/akasha/atk-bl-desgarron"
+      },
+      "ecart_title": false,
+      "ecart_description": false,
+      "ecart_og_description": false,
+      "og_generique": false,
+      "og_porte_le_nom": true,
+      "og_image": true
+    },
+    {
+      "slug": "atk-bl-final-getsuga-tensho",
+      "type": "power",
+      "universe": "Bleach",
+      "source": "summary",
+      "code": 200,
+      "attendu": {
+        "title": "Final Getsuga Tensho — Pouvoir | AKASHA",
+        "description": "Final Getsuga Tensho — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Ichigo Kurosaki.",
+        "ogDescription": "Final Getsuga Tensho — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Ichigo Kurosaki."
+      },
+      "rendu": {
+        "title": "Final Getsuga Tensho — Pouvoir | AKASHA",
+        "description": "Final Getsuga Tensho — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Ichigo Kurosaki.",
+        "ogTitle": "Final Getsuga Tensho — Pouvoir · Bleach",
+        "ogDescription": "Final Getsuga Tensho — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Ichigo Kurosaki.",
+        "ogType": "article",
+        "ogUrl": "http://localhost:3000/learn/akasha/atk-bl-final-getsuga-tensho",
+        "ogSiteName": "AKASHA — le registre",
+        "ogImageAlt": "Carte AKASHA",
+        "twCard": "summary_large_image",
+        "twTitle": "Final Getsuga Tensho — Pouvoir · Bleach",
+        "twDescription": "Final Getsuga Tensho — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Ichigo Kurosaki.",
+        "canonical": "http://localhost:3000/learn/akasha/atk-bl-final-getsuga-tensho"
+      },
+      "ecart_title": false,
+      "ecart_description": false,
+      "ecart_og_description": false,
+      "og_generique": false,
+      "og_porte_le_nom": true,
+      "og_image": true
+    },
+    {
+      "slug": "atk-bl-flash-cry",
+      "type": "power",
+      "universe": "Bleach",
+      "source": "summary",
+      "code": 200,
+      "attendu": {
+        "title": "Flash Cry — Pouvoir | AKASHA",
+        "description": "Flash Cry — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Yoruichi Shihōin.",
+        "ogDescription": "Flash Cry — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Yoruichi Shihōin."
+      },
+      "rendu": {
+        "title": "Flash Cry — Pouvoir | AKASHA",
+        "description": "Flash Cry — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Yoruichi Shihōin.",
+        "ogTitle": "Flash Cry — Pouvoir · Bleach",
+        "ogDescription": "Flash Cry — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Yoruichi Shihōin.",
+        "ogType": "article",
+        "ogUrl": "http://localhost:3000/learn/akasha/atk-bl-flash-cry",
+        "ogSiteName": "AKASHA — le registre",
+        "ogImageAlt": "Carte AKASHA",
+        "twCard": "summary_large_image",
+        "twTitle": "Flash Cry — Pouvoir · Bleach",
+        "twDescription": "Flash Cry — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Yoruichi Shihōin.",
+        "canonical": "http://localhost:3000/learn/akasha/atk-bl-flash-cry"
+      },
+      "ecart_title": false,
+      "ecart_description": false,
+      "ecart_og_description": false,
+      "og_generique": false,
+      "og_porte_le_nom": true,
+      "og_image": true
+    },
+    {
+      "slug": "atk-bl-katen-kyokotsu",
+      "type": "power",
+      "universe": "Bleach",
+      "source": "summary",
+      "code": 200,
+      "attendu": {
+        "title": "Katen Kyokotsu — Pouvoir | AKASHA",
+        "description": "Katen Kyokotsu — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Shunsui Kyōraku.",
+        "ogDescription": "Katen Kyokotsu — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Shunsui Kyōraku."
+      },
+      "rendu": {
+        "title": "Katen Kyokotsu — Pouvoir | AKASHA",
+        "description": "Katen Kyokotsu — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Shunsui Kyōraku.",
+        "ogTitle": "Katen Kyokotsu — Pouvoir · Bleach",
+        "ogDescription": "Katen Kyokotsu — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Shunsui Kyōraku.",
+        "ogType": "article",
+        "ogUrl": "http://localhost:3000/learn/akasha/atk-bl-katen-kyokotsu",
+        "ogSiteName": "AKASHA — le registre",
+        "ogImageAlt": "Carte AKASHA",
+        "twCard": "summary_large_image",
+        "twTitle": "Katen Kyokotsu — Pouvoir · Bleach",
+        "twDescription": "Katen Kyokotsu — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Shunsui Kyōraku.",
+        "canonical": "http://localhost:3000/learn/akasha/atk-bl-katen-kyokotsu"
+      },
+      "ecart_title": false,
+      "ecart_description": false,
+      "ecart_og_description": false,
+      "og_generique": false,
+      "og_porte_le_nom": true,
+      "og_image": true
+    },
+    {
+      "slug": "atk-bl-kurohitsugi",
+      "type": "power",
+      "universe": "Bleach",
+      "source": "summary",
+      "code": 200,
+      "attendu": {
+        "title": "Kurohitsugi — Pouvoir | AKASHA",
+        "description": "Kurohitsugi — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Sōsuke Aizen.",
+        "ogDescription": "Kurohitsugi — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Sōsuke Aizen."
+      },
+      "rendu": {
+        "title": "Kurohitsugi — Pouvoir | AKASHA",
+        "description": "Kurohitsugi — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Sōsuke Aizen.",
+        "ogTitle": "Kurohitsugi — Pouvoir · Bleach",
+        "ogDescription": "Kurohitsugi — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Sōsuke Aizen.",
+        "ogType": "article",
+        "ogUrl": "http://localhost:3000/learn/akasha/atk-bl-kurohitsugi",
+        "ogSiteName": "AKASHA — le registre",
+        "ogImageAlt": "Carte AKASHA",
+        "twCard": "summary_large_image",
+        "twTitle": "Kurohitsugi — Pouvoir · Bleach",
+        "twDescription": "Kurohitsugi — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Sōsuke Aizen.",
+        "canonical": "http://localhost:3000/learn/akasha/atk-bl-kurohitsugi"
+      },
+      "ecart_title": false,
+      "ecart_description": false,
+      "ecart_og_description": false,
+      "og_generique": false,
+      "og_porte_le_nom": true,
+      "og_image": true
+    },
+    {
+      "slug": "atk-bl-suzumushi-tsuishiki-enma-korogi",
+      "type": "power",
+      "universe": "Bleach",
+      "source": "summary",
+      "code": 200,
+      "attendu": {
+        "title": "Suzumushi Tsuishiki Enma Korogi — Pouvoir | AKASHA",
+        "description": "Suzumushi Tsuishiki Enma Korogi — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Kaname Tousen.",
+        "ogDescription": "Suzumushi Tsuishiki Enma Korogi — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Kaname Tousen."
+      },
+      "rendu": {
+        "title": "Suzumushi Tsuishiki Enma Korogi — Pouvoir | AKASHA",
+        "description": "Suzumushi Tsuishiki Enma Korogi — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Kaname Tousen.",
+        "ogTitle": "Suzumushi Tsuishiki Enma Korogi — Pouvoir · Bleach",
+        "ogDescription": "Suzumushi Tsuishiki Enma Korogi — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Kaname Tousen.",
+        "ogType": "article",
+        "ogUrl": "http://localhost:3000/learn/akasha/atk-bl-suzumushi-tsuishiki-enma-korogi",
+        "ogSiteName": "AKASHA — le registre",
+        "ogImageAlt": "Carte AKASHA",
+        "twCard": "summary_large_image",
+        "twTitle": "Suzumushi Tsuishiki Enma Korogi — Pouvoir · Bleach",
+        "twDescription": "Suzumushi Tsuishiki Enma Korogi — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Kaname Tousen.",
+        "canonical": "http://localhost:3000/learn/akasha/atk-bl-suzumushi-tsuishiki-enma-korogi"
+      },
+      "ecart_title": false,
+      "ecart_description": false,
+      "ecart_og_description": false,
+      "og_generique": false,
+      "og_porte_le_nom": true,
+      "og_image": true
+    },
+    {
+      "slug": "atk-bl-zabimaru",
+      "type": "power",
+      "universe": "Bleach",
+      "source": "summary",
+      "code": 200,
+      "attendu": {
+        "title": "Zabimaru — Pouvoir | AKASHA",
+        "description": "Zabimaru — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Renji Abarai.",
+        "ogDescription": "Zabimaru — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Renji Abarai."
+      },
+      "rendu": {
+        "title": "Zabimaru — Pouvoir | AKASHA",
+        "description": "Zabimaru — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Renji Abarai.",
+        "ogTitle": "Zabimaru — Pouvoir · Bleach",
+        "ogDescription": "Zabimaru — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Renji Abarai.",
+        "ogType": "article",
+        "ogUrl": "http://localhost:3000/learn/akasha/atk-bl-zabimaru",
+        "ogSiteName": "AKASHA — le registre",
+        "ogImageAlt": "Carte AKASHA",
+        "twCard": "summary_large_image",
+        "twTitle": "Zabimaru — Pouvoir · Bleach",
+        "twDescription": "Zabimaru — Technique de Zanpakutō de Bleach — attaque signature. Maîtrisée par Renji Abarai.",
+        "canonical": "http://localhost:3000/learn/akasha/atk-bl-zabimaru"
+      },
+      "ecart_title": false,
+      "ecart_description": false,
+      "ecart_og_description": false,
+      "og_generique": false,
+      "og_porte_le_nom": true,
+      "og_image": true
+    },
+    {
+      "slug": "atk-op-gura-gura-no-mi-quake",
+      "type": "power",
+      "universe": "One Piece",
+      "source": "summary",
+      "code": 200,
+      "attendu": {
+        "title": "Gura Gura no Mi Quake — Pouvoir | AKASHA",
+        "description": "Gura Gura no Mi Quake — Attaque de One Piece — attaque signature. Maîtrisée par Edward Newgate · Barbe Blanche et Teach Marshall D..",
+        "ogDescription": "Gura Gura no Mi Quake — Attaque de One Piece — attaque signature. Maîtrisée par Edward Newgate · Barbe Blanche et Teach Marshall D.."
+      },
+      "rendu": {
+        "title": "Gura Gura no Mi Quake — Pouvoir | AKASHA",
+        "description": "Gura Gura no Mi Quake — Attaque de One Piece — attaque signature. Maîtrisée par Edward Newgate · Barbe Blanche et Teach Marshall D..",
+        "ogTitle": "Gura Gura no Mi Quake — Pouvoir · One Piece",
+        "ogDescription": "Gura Gura no Mi Quake — Attaque de One Piece — attaque signature. Maîtrisée par Edward Newgate · Barbe Blanche et Teach Marshall D..",
+        "ogType": "article",
+        "ogUrl": "http://localhost:3000/learn/akasha/atk-op-gura-gura-no-mi-quake",
+        "ogSiteName": "AKASHA — le registre",
+        "ogImageAlt": "Carte AKASHA",
+        "twCard": "summary_large_image",
+        "twTitle": "Gura Gura no Mi Quake — Pouvoir · One Piece",
+        "twDescription": "Gura Gura no Mi Quake — Attaque de One Piece — attaque signature. Maîtrisée par Edward Newgate · Barbe Blanche et Teach Marshall D..",
+        "canonical": "http://localhost:3000/learn/akasha/atk-op-gura-gura-no-mi-quake"
+      },
+      "ecart_title": false,
+      "ecart_description": false,
+      "ecart_og_description": false,
+      "og_generique": false,
+      "og_porte_le_nom": true,
+      "og_image": true
+    },
+    {
+      "slug": "atk-op-gura-gura-quake",
+      "type": "power",
+      "universe": "One Piece",
+      "source": "summary",
+      "code": 200,
+      "attendu": {
+        "title": "Gura Gura Quake — Pouvoir | AKASHA",
+        "description": "Gura Gura Quake — Attaque de One Piece — attaque signature. Maîtrisée par Teach Marshall D. et Edward Newgate · Barbe Blanche.",
+        "ogDescription": "Gura Gura Quake — Attaque de One Piece — attaque signature. Maîtrisée par Teach Marshall D. et Edward Newgate · Barbe Blanche."
+      },
+      "rendu": {
+        "title": "Gura Gura Quake — Pouvoir | AKASHA",
+        "description": "Gura Gura Quake — Attaque de One Piece — attaque signature. Maîtrisée par Teach Marshall D. et Edward Newgate · Barbe Blanche.",
+        "ogTitle": "Gura Gura Quake — Pouvoir · One Piece",
+        "ogDescription": "Gura Gura Quake — Attaque de One Piece — attaque signature. Maîtrisée par Teach Marshall D. et Edward Newgate · Barbe Blanche.",
+        "ogType": "article",
+        "ogUrl": "http://localhost:3000/learn/akasha/atk-op-gura-gura-quake",
+        "ogSiteName": "AKASHA — le registre",
+        "ogImageAlt": "Carte AKASHA",
+        "twCard": "summary_large_image",
+        "twTitle": "Gura Gura Quake — Pouvoir · One Piece",
+        "twDescription": "Gura Gura Quake — Attaque de One Piece — attaque signature. Maîtrisée par Teach Marshall D. et Edward Newgate · Barbe Blanche.",
+        "canonical": "http://localhost:3000/learn/akasha/atk-op-gura-gura-quake"
+      },
+      "ecart_title": false,
+      "ecart_description": false,
+      "ecart_og_description": false,
+      "og_generique": false,
+      "og_porte_le_nom": true,
+      "og_image": true
+    },
+    {
+      "slug": "atk-op-hiken",
+      "type": "power",
+      "universe": "One Piece",
+      "source": "summary",
+      "code": 200,
+      "attendu": {
+        "title": "Hiken — Pouvoir | AKASHA",
+        "description": "Hiken — Attaque de One Piece — attaque signature. Maîtrisée par Portgas D. Ace et Sabo.",
+        "ogDescription": "Hiken — Attaque de One Piece — attaque signature. Maîtrisée par Portgas D. Ace et Sabo."
+      },
+      "rendu": {
+        "title": "Hiken — Pouvoir | AKASHA",
+        "description": "Hiken — Attaque de One Piece — attaque signature. Maîtrisée par Portgas D. Ace et Sabo.",
+        "ogTitle": "Hiken — Pouvoir · One Piece",
+        "ogDescription": "Hiken — Attaque de One Piece — attaque signature. Maîtrisée par Portgas D. Ace et Sabo.",
+        "ogType": "article",
+        "ogUrl": "http://localhost:3000/learn/akasha/atk-op-hiken",
+        "ogSiteName": "AKASHA — le registre",
+        "ogImageAlt": "Carte AKASHA",
+        "twCard": "summary_large_image",
+        "twTitle": "Hiken — Pouvoir · One Piece",
+        "twDescription": "Hiken — Attaque de One Piece — attaque signature. Maîtrisée par Portgas D. Ace et Sabo.",
+        "canonical": "http://localhost:3000/learn/akasha/atk-op-hiken"
+      },
+      "ecart_title": false,
+      "ecart_description": false,
+      "ecart_og_description": false,
+      "og_generique": false,
+      "og_porte_le_nom": true,
+      "og_image": true
+    }
+  ]
+}

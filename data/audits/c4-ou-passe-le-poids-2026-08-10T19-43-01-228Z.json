@@ -1,0 +1,63 @@
+{
+  "chantier": "chantier 4 — octets réellement traversés et largeur peinte",
+  "quand": "2026-08-10T19:43:14.728Z",
+  "base": "http://localhost:3000",
+  "lignes": [
+    {
+      "slug": "north-blue",
+      "nom": "North Blue",
+      "type": "place",
+      "universe": "One Piece",
+      "image_url": "https://static.wikia.nocookie.net/onepiece/images/5/51/North_Blue_Anime_Infobox.png/revision/latest/scale-to-width-down/720?cb=20190206085409&path-prefix=fr",
+      "page": "http://localhost:3000/learn/akasha?search=North%20Blue",
+      "fiche": "http://localhost:3000/learn/akasha/north-blue",
+      "aperçu_ouvert": true,
+      "sur_la_fiche": [
+        {
+          "largeur_rendue": 698,
+          "decoratif": true
+        },
+        {
+          "largeur_rendue": 558,
+          "decoratif": false
+        }
+      ],
+      "plus_grande_sur_la_fiche": 558,
+      "balises_peignant_le_visuel": [
+        {
+          "largeur_rendue": 698,
+          "hauteur_rendue": 523,
+          "decoratif": true,
+          "naturelle": "720×405",
+          "complete": true
+        },
+        {
+          "largeur_rendue": 558,
+          "hauteur_rendue": 418,
+          "decoratif": false,
+          "naturelle": "720×405",
+          "complete": true
+        }
+      ],
+      "plus_grande_largeur_peinte": 698,
+      "tirages_reseau": [
+        {
+          "url": "https://static.wikia.nocookie.net/onepiece/images/5/51/North_Blue_Anime_Infobox.png/revision/latest/scale-to-width-down/720?cb=20190206085409&path-prefix=fr",
+          "statut": 200,
+          "octets": 50016,
+          "type": "image/webp",
+          "depuis_le_cache": false
+        },
+        {
+          "url": "https://static.wikia.nocookie.net/onepiece/images/5/51/North_Blue_Anime_Infobox.png/revision/latest/scale-to-width-down/720?cb=20190206085409&path-prefix=fr",
+          "statut": 200,
+          "octets": 50016,
+          "type": "image/webp",
+          "depuis_le_cache": false
+        }
+      ],
+      "octets_traverses": 100032,
+      "passe_par_optimiseur_next": false
+    }
+  ]
+}

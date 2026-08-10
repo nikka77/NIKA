@@ -1,0 +1,119 @@
+{
+  "chantier": "chantier 4 — octets réellement traversés et largeur peinte",
+  "quand": "2026-08-10T19:35:33.390Z",
+  "base": "http://localhost:3000",
+  "lignes": [
+    {
+      "slug": "akari-tatsushiro",
+      "nom": "Akari Tatsushiro",
+      "type": "character",
+      "universe": "Naruto",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/c/c5/Akari_Tatsushiro.png/revision/latest/scale-to-width-down/1920",
+      "page": "http://localhost:3000/learn/akasha?search=Akari%20Tatsushiro",
+      "fiche": "http://localhost:3000/learn/akasha/akari-tatsushiro",
+      "aperçu_ouvert": true,
+      "sur_la_fiche": [
+        {
+          "largeur_rendue": 909,
+          "decoratif": true
+        },
+        {
+          "largeur_rendue": 727,
+          "decoratif": false
+        }
+      ],
+      "plus_grande_sur_la_fiche": 727,
+      "balises_peignant_le_visuel": [
+        {
+          "largeur_rendue": 909,
+          "hauteur_rendue": 1137,
+          "decoratif": true,
+          "naturelle": "1920×1440",
+          "complete": true
+        },
+        {
+          "largeur_rendue": 727,
+          "hauteur_rendue": 910,
+          "decoratif": false,
+          "naturelle": "1920×1440",
+          "complete": true
+        }
+      ],
+      "plus_grande_largeur_peinte": 909,
+      "tirages_reseau": [
+        {
+          "url": "https://static.wikia.nocookie.net/naruto/images/c/c5/Akari_Tatsushiro.png/revision/latest/scale-to-width-down/1920",
+          "statut": 200,
+          "octets": 210056,
+          "type": "image/webp",
+          "depuis_le_cache": false
+        },
+        {
+          "url": "https://static.wikia.nocookie.net/naruto/images/c/c5/Akari_Tatsushiro.png/revision/latest/scale-to-width-down/1920",
+          "statut": 200,
+          "octets": 210056,
+          "type": "image/webp",
+          "depuis_le_cache": false
+        }
+      ],
+      "octets_traverses": 420112,
+      "passe_par_optimiseur_next": false
+    },
+    {
+      "slug": "komame",
+      "nom": "Komame",
+      "type": "character",
+      "universe": "Naruto",
+      "image_url": "https://static.wikia.nocookie.net/naruto/images/e/ed/Komame.png/revision/latest/scale-to-width-down/1920",
+      "page": "http://localhost:3000/learn/akasha?search=Komame",
+      "fiche": "http://localhost:3000/learn/akasha/komame",
+      "aperçu_ouvert": true,
+      "sur_la_fiche": [
+        {
+          "largeur_rendue": 909,
+          "decoratif": true
+        },
+        {
+          "largeur_rendue": 727,
+          "decoratif": false
+        }
+      ],
+      "plus_grande_sur_la_fiche": 727,
+      "balises_peignant_le_visuel": [
+        {
+          "largeur_rendue": 909,
+          "hauteur_rendue": 1137,
+          "decoratif": true,
+          "naturelle": "1920×1459",
+          "complete": true
+        },
+        {
+          "largeur_rendue": 727,
+          "hauteur_rendue": 910,
+          "decoratif": false,
+          "naturelle": "1920×1459",
+          "complete": true
+        }
+      ],
+      "plus_grande_largeur_peinte": 909,
+      "tirages_reseau": [
+        {
+          "url": "https://static.wikia.nocookie.net/naruto/images/e/ed/Komame.png/revision/latest/scale-to-width-down/1920",
+          "statut": 200,
+          "octets": 83934,
+          "type": "image/webp",
+          "depuis_le_cache": false
+        },
+        {
+          "url": "https://static.wikia.nocookie.net/naruto/images/e/ed/Komame.png/revision/latest/scale-to-width-down/1920",
+          "statut": 200,
+          "octets": 83934,
+          "type": "image/webp",
+          "depuis_le_cache": false
+        }
+      ],
+      "octets_traverses": 167868,
+      "passe_par_optimiseur_next": false
+    }
+  ]
+}

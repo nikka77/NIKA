@@ -1,0 +1,336 @@
+{
+  "chantier": "contrôle à l'écran de l'instrument de lisibilité",
+  "quand": "2026-08-10T14:07:45.356Z",
+  "trace_mesuree": "data/audits/lisibilite-visuels-avant-2026-08-10T14-03-12-923Z.json",
+  "famille": "presque illisible",
+  "methode": "Chromium décode l'image, la peint en `contain` sur #09152A, `getImageData` recalcule contraste maximal et couverture ; tolérance 10 % relatif sur le contraste, 6 points sur la couverture, et comparaison du VERDICT recalculé",
+  "compte": {
+    "echantillon": 20,
+    "testables": 19,
+    "accords_chiffres": 17,
+    "desaccords_chiffres": 2,
+    "taux_desaccord_chiffres": 0.105,
+    "accords_verdict": 19,
+    "desaccords_verdict": 0,
+    "taux_desaccord_verdict": 0
+  },
+  "lignes": [
+    {
+      "fiches": [
+        "earth-release-hiding-in-rock-technique"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/8/8f/Doton_Iwagakure_no_Jutsu.png/revision/latest/scale-to-width-down/720?cb=20210906161321",
+      "nav_contraste_max": 2.091,
+      "nav_couverture_1_5": 0.0256,
+      "nav_couverture_2": 0,
+      "nav_definition": "720×405",
+      "sharp_contraste_max": 2.082,
+      "sharp_couverture_1_5": 0.0278,
+      "sharp_couverture_2": 0,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "flying-thunder-god-guiding-thunder"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/4/41/Space-Time_Barrier.png/revision/latest/scale-to-width-down/720?cb=20150218014653",
+      "nav_contraste_max": 2.087,
+      "nav_couverture_1_5": 0.0458,
+      "nav_couverture_2": 0.0004,
+      "nav_definition": "720×407",
+      "sharp_contraste_max": 2.121,
+      "sharp_couverture_1_5": 0.0489,
+      "sharp_couverture_2": 0.0005,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "funari"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/8/85/Funari.png",
+      "nav_contraste_max": 2.306,
+      "nav_couverture_1_5": 0.0378,
+      "nav_couverture_2": 0.0017,
+      "nav_definition": "435×393",
+      "sharp_contraste_max": 2.369,
+      "sharp_couverture_1_5": 0.0382,
+      "sharp_couverture_2": 0.0018,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "sao"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/4/4d/Sa%C5%8D.png",
+      "nav_contraste_max": 2.418,
+      "nav_couverture_1_5": 0.1587,
+      "nav_couverture_2": 0.0017,
+      "nav_definition": "480×366",
+      "sharp_contraste_max": 2.431,
+      "sharp_couverture_1_5": 0.1606,
+      "sharp_couverture_2": 0.0017,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "hinokagutsuchi"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/e/e5/Hinokagutsuchi.png/revision/latest/scale-to-width-down/720?cb=20210722002717",
+      "nav_contraste_max": 2.739,
+      "nav_couverture_1_5": 0.0509,
+      "nav_couverture_2": 0.0065,
+      "nav_definition": "720×405",
+      "sharp_contraste_max": 2.776,
+      "sharp_couverture_1_5": 0.0539,
+      "sharp_couverture_2": 0.0069,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "transcription-seal-izanagi"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/b/b2/Transcription_Seal_Izanagi.png/revision/latest/scale-to-width-down/720?cb=20160526121239",
+      "nav_contraste_max": 2.898,
+      "nav_couverture_1_5": 0.1187,
+      "nav_couverture_2": 0.0281,
+      "nav_definition": "720×404",
+      "sharp_contraste_max": 2.879,
+      "sharp_couverture_1_5": 0.1229,
+      "sharp_couverture_2": 0.0292,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "sound-daimyo"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/7/7e/Sound_daimyo.png",
+      "nav_contraste_max": 2.876,
+      "nav_couverture_1_5": 0.1051,
+      "nav_couverture_2": 0.0245,
+      "nav_definition": "950×1080",
+      "sharp_contraste_max": 3.103,
+      "sharp_couverture_1_5": 0.1098,
+      "sharp_couverture_2": 0.0259,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "ile-d-asuka"
+      ],
+      "url": "https://static.wikia.nocookie.net/onepiece/images/d/d1/Asuka_Island_Infobox.png/revision/latest/scale-to-width-down/720?cb=20160530173853",
+      "nav_contraste_max": 3.727,
+      "nav_couverture_1_5": 0.0328,
+      "nav_couverture_2": 0.0092,
+      "nav_definition": "720×405",
+      "sharp_contraste_max": 3.651,
+      "sharp_couverture_1_5": 0.0344,
+      "sharp_couverture_2": 0.0093,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "hiramekarei"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/e/ef/Ch%C5%8Dj%C5%ABr%C5%8D_Wielding_Hiramekarei.png/revision/latest/scale-to-width-down/720?cb=20220213105741",
+      "nav_contraste_max": 4.109,
+      "nav_couverture_1_5": 0.0872,
+      "nav_couverture_2": 0.0129,
+      "nav_definition": "720×405",
+      "sharp_contraste_max": 4.016,
+      "sharp_couverture_1_5": 0.0914,
+      "sharp_couverture_2": 0.0136,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "aoda"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/9/99/Aoda.png",
+      "nav_contraste_max": 4.237,
+      "nav_couverture_1_5": 0.0234,
+      "nav_couverture_2": 0.005,
+      "nav_definition": "1920×1077",
+      "sharp_contraste_max": 4.371,
+      "sharp_couverture_1_5": 0.0244,
+      "sharp_couverture_2": 0.0056,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "fruit-du-plus-plus"
+      ],
+      "url": "https://static.wikia.nocookie.net/onepiece/images/d/d7/Moa_Moa_no_Mi_Anime_Infobox.png/revision/latest/scale-to-width-down/720?cb=20180713085316&path-prefix=fr",
+      "nav_contraste_max": 4.155,
+      "nav_couverture_1_5": 0.0076,
+      "nav_couverture_2": 0.0043,
+      "nav_definition": "720×464",
+      "sharp_contraste_max": 4.409,
+      "sharp_couverture_1_5": 0.0081,
+      "sharp_couverture_2": 0.0045,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "white-snake-possession"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/9/97/White_Snake_Possession.PNG/revision/latest/scale-to-width-down/720?cb=20100627190015",
+      "nav_contraste_max": 4.801,
+      "nav_couverture_1_5": 0.0832,
+      "nav_couverture_2": 0.0262,
+      "nav_definition": "720×405",
+      "sharp_contraste_max": 4.814,
+      "sharp_couverture_1_5": 0.0841,
+      "sharp_couverture_2": 0.0266,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "earth-release-mud-wolves"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/4/43/Mud_wolves.png/revision/latest/scale-to-width-down/720?cb=20151201040355",
+      "nav_contraste_max": 5.79,
+      "nav_couverture_1_5": 0.3676,
+      "nav_couverture_2": 0.0025,
+      "nav_definition": "720×405",
+      "sharp_contraste_max": 5.498,
+      "sharp_couverture_1_5": 0.3745,
+      "sharp_couverture_2": 0.0026,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "makyo-star"
+      ],
+      "url": "http://localhost:3000/images/akasha/db/planets/makyo-star.webp",
+      "erreur": "chargement refusé",
+      "sharp_contraste_max": 6.163,
+      "sharp_couverture_1_5": 0.0537,
+      "sharp_couverture_2": 0.0223,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": null,
+      "accord_chiffres": false
+    },
+    {
+      "fiches": [
+        "chakra-suppression-technique"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/d/d1/Chakra_Suppression_Technique.PNG/revision/latest/scale-to-width-down/720?cb=20141106044531",
+      "nav_contraste_max": 6.257,
+      "nav_couverture_1_5": 0.041,
+      "nav_couverture_2": 0.0278,
+      "nav_definition": "720×518",
+      "sharp_contraste_max": 6.4,
+      "sharp_couverture_1_5": 0.0412,
+      "sharp_couverture_2": 0.0289,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "coercion-sharingan"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/a/ab/Coercion_sharingan.png/revision/latest/scale-to-width-down/720?cb=20150124095514",
+      "nav_contraste_max": 5.901,
+      "nav_couverture_1_5": 0.0642,
+      "nav_couverture_2": 0.006,
+      "nav_definition": "720×406",
+      "sharp_contraste_max": 6.614,
+      "sharp_couverture_1_5": 0.0712,
+      "sharp_couverture_2": 0.0071,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": false
+    },
+    {
+      "fiches": [
+        "six-red-yang-formation"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/2/2a/Musekiy%C5%8Djin.png/revision/latest/scale-to-width-down/720?cb=20141002132305",
+      "nav_contraste_max": 8.582,
+      "nav_couverture_1_5": 0.1046,
+      "nav_couverture_2": 0.0145,
+      "nav_definition": "720×406",
+      "sharp_contraste_max": 8.923,
+      "sharp_couverture_1_5": 0.1098,
+      "sharp_couverture_2": 0.0164,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "wood-release-cutting-technique"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/6/6b/Cutting_Technique_1.png/revision/latest/scale-to-width-down/720?cb=20140116131720",
+      "nav_contraste_max": 9.178,
+      "nav_couverture_1_5": 0.0358,
+      "nav_couverture_2": 0.0222,
+      "nav_definition": "720×406",
+      "sharp_contraste_max": 9.293,
+      "sharp_couverture_1_5": 0.0383,
+      "sharp_couverture_2": 0.0221,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "ten-tails-kara"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/5/54/Kara%27s_Ten-Tails.png/revision/latest/scale-to-width-down/720?cb=20230221020927",
+      "nav_contraste_max": 11.607,
+      "nav_couverture_1_5": 0.296,
+      "nav_couverture_2": 0.0104,
+      "nav_definition": "720×405",
+      "sharp_contraste_max": 11.471,
+      "sharp_couverture_1_5": 0.3042,
+      "sharp_couverture_2": 0.0108,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": true
+    },
+    {
+      "fiches": [
+        "bringer-of-darkness-technique"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/8/8f/The_3rd_Caught_In_The_Infinite_Darkness.PNG/revision/latest/scale-to-width-down/720?cb=20240908043329",
+      "nav_contraste_max": 10.78,
+      "nav_couverture_1_5": 0.0428,
+      "nav_couverture_2": 0.0058,
+      "nav_definition": "720×540",
+      "sharp_contraste_max": 12.662,
+      "sharp_couverture_1_5": 0.048,
+      "sharp_couverture_2": 0.0061,
+      "verdict_sharp": "presque illisible",
+      "verdict_navigateur": "presque illisible",
+      "accord_chiffres": false
+    }
+  ]
+}

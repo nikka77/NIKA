@@ -43,16 +43,38 @@ const TYPE_LABEL = {
   status: 'Statut', power: 'Pouvoir', skill: 'Compétence',
 };
 
+// MODE : AVANT = réplique du code d'avant le correctif ; APRES = réplique du code d'après
+// (fait propre tiré des arêtes + borne à 165). `APRES=1 node …`
+const APRES = !!process.env.APRES;
+
+/** Fait propre tiré des arêtes — réplique de `faitPropre()` d'app/learn/akasha/[slug]/page.tsx. */
+function faitPropre(e, rin, rout) {
+  const cibles = (arr, kind) => [...new Set(arr.filter((r) => r.relation === kind).map((r) => r.name).filter(Boolean))];
+  if (e.type === 'power' || e.type === 'skill') {
+    const par = cibles(rin, 'maitrise');
+    if (par.length) return `Maîtrisée par ${par.slice(0, 2).join(' et ')}`;
+  }
+  for (const [rel, label] of [['appartient', 'Appartient à'], ['habite', 'Réside à'], ['exerce', 'Exerce']]) {
+    const n = cibles(rout, rel);
+    if (n.length) return `${label} ${n.slice(0, 2).join(' et ')}`;
+  }
+  return null;
+}
+
 /** Ce que generateMetadata rend AUJOURD'HUI. */
 function metaActuelle(e) {
   const label = TYPE_LABEL[e.type] ?? e.type;
   const title = `${e.name} — ${label} | AKASHA`;
-  const viaFlavor = flavorExcerpt(e.descFr, 155);
-  let description, source;
-  if (viaFlavor) { description = viaFlavor; source = 'descFr'; }
-  else if (e.summary) { description = `${e.name} — ${e.summary}`; source = 'summary'; }
-  else { description = `${e.name}, ${label.toLowerCase()} du registre AKASHA${e.universe ? ` (${e.universe})` : ''}.`; source = 'gabarit'; }
-  return { title, description, source };
+  const prose = flavorExcerpt(e.descFr, 155);
+  if (prose) return { title, description: prose, ogDescription: flavorExcerpt(e.descFr, 200), source: 'descFr' };
+  const source = e.summary ? 'summary' : 'gabarit';
+  const socle = e.summary
+    ? `${e.name} — ${e.summary}`
+    : `${e.name}, ${label.toLowerCase()} du registre AKASHA${e.universe ? ` (${e.universe})` : ''}.`;
+  if (!APRES) return { title, description: socle, ogDescription: socle, source };
+  const fait = faitPropre(e, e._in ?? [], e._out ?? []);
+  const repli = fait ? `${socle.replace(/[\s.·—-]+$/, '')}. ${fait}.` : socle;
+  return { title, description: clamp(repli, 165), ogDescription: clamp(repli, 200), source, fait };
 }
 
 /** Empreinte « à un nom près ».
@@ -98,6 +120,36 @@ async function lireTout() {
 
 const rows = await lireTout();
 
+// En mode APRES : charger les arêtes des SEULES fiches sans prose (celles dont le texte change).
+if (APRES) {
+  const db = clientSite();
+  const sansProse = rows.filter((e) => !flavorExcerpt(e.descFr, 155));
+  console.error(`  fiches sans prose (texte susceptible de changer) : ${sansProse.length}`);
+  const ids = new Map();
+  for (let i = 0; i < sansProse.length; i += 200) {
+    const lot = sansProse.slice(i, i + 200).map((e) => e.slug);
+    const { data, error } = await db.from('akasha_entries').select('id,slug').in('slug', lot);
+    if (error) throw new Error(error.message);
+    for (const r of data) ids.set(r.id, r.slug);
+  }
+  const bySlug = new Map(sansProse.map((e) => [e.slug, e]));
+  for (const e of sansProse) { e._in = []; e._out = []; }
+  const allIds = [...ids.keys()];
+  for (let i = 0; i < allIds.length; i += 150) {
+    const lot = allIds.slice(i, i + 150);
+    const [{ data: din, error: ein }, { data: dout, error: eout }] = await Promise.all([
+      db.from('akasha_relations').select('to_entry, relation, src:akasha_entries!akasha_relations_from_entry_fkey(name)').in('to_entry', lot),
+      db.from('akasha_relations').select('from_entry, relation, tgt:akasha_entries!akasha_relations_to_entry_fkey(name)').in('from_entry', lot),
+    ]);
+    if (ein) throw new Error(ein.message);
+    if (eout) throw new Error(eout.message);
+    for (const r of din) bySlug.get(ids.get(r.to_entry))?._in.push({ relation: r.relation, name: r.src?.name });
+    for (const r of dout) bySlug.get(ids.get(r.from_entry))?._out.push({ relation: r.relation, name: r.tgt?.name });
+    process.stderr.write(`\r  arêtes ${Math.min(i + 150, allIds.length)}/${allIds.length}`);
+  }
+  process.stderr.write('\n');
+}
+
 // compte exact indépendant (HEAD) pour prouver que la pagination n'a rien coupé
 const { count: total } = await clientSite().from('akasha_entries').select('slug', { count: 'exact', head: true });
 
@@ -114,7 +166,7 @@ for (const e of rows) {
   parEmpreinte.get(emp).push({ slug: e.slug, type: e.type, universe: e.universe, description: m.description });
   parExact.set(m.description, (parExact.get(m.description) ?? 0) + 1);
   parTitre.set(m.title, (parTitre.get(m.title) ?? 0) + 1);
-  fiches.push({ slug: e.slug, type: e.type, universe: e.universe, source: m.source, title: m.title, description: m.description, emp });
+  fiches.push({ slug: e.slug, type: e.type, universe: e.universe, source: m.source, title: m.title, description: m.description, ogDescription: m.ogDescription, fait: m.fait ?? null, emp });
 }
 
 const groupes = [...parEmpreinte.entries()]
@@ -126,6 +178,8 @@ const fichesDupliquees = groupes.reduce((s, g) => s + g.n, 0);
 const trace = {
   quand: new Date().toISOString(),
   script: 'scripts/akasha-meta-recensement.mjs',
+  mode: APRES ? 'APRES' : 'AVANT',
+  fiches_avec_fait_propre: fiches.filter((f) => f.fait).length,
   lecture: { lignes_paginees: rows.length, count_head_exact: total, coherent: rows.length === total },
   sources_de_la_description: parSource,
   duplication_stricte_chaine_identique: (() => {
@@ -146,7 +200,7 @@ const trace = {
 };
 
 const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-const p = `data/audits/meta-partage-recensement-${stamp}.json`;
+const p = `data/audits/meta-partage-recensement-${APRES ? 'apres' : 'avant'}-${stamp}.json`;
 writeFileSync(p, JSON.stringify({ ...trace, fiches }, null, 2));
 console.log(JSON.stringify(trace, null, 2));
 console.log('\nTRACE →', p);

@@ -24,6 +24,12 @@ const entries = await pagine('akasha_entries', 'id, slug, name, type, universe, 
 const rels = await pagine('akasha_relations', 'id, relation, from_entry, to_entry', 'arêtes');
 const parId = new Map(entries.map((e) => [e.id, e]));
 
+// AVANT/APRÈS dans le MÊME fichier, pour que les deux colonnes du tableau soient produites par la
+// même lecture du corpus et ne puissent pas diverger sur un décalage de mesure (le corpus bouge :
+// 16 910 arêtes ce matin contre 16 788 hier). `APRES=1` applique les grappes « Autres liens »
+// livrées ce jour dans CharacterZone et OrganizationZone.
+const APRES = process.env.APRES === '1';
+
 /** Le GABARIT qui rend une fiche — app/learn/akasha/[slug]/page.tsx, dans l'ordre des branches. */
 export function gabarit(e) {
   if (e.type === 'character') return 'CharacterZone';
@@ -43,21 +49,20 @@ function rendu(moi, autre, relation, entrant) {
       if (relation === 'maitrise') return 'Techniques (l.74)';
       if (relation === 'famille') return 'Famille (l.94)';
       if (['allie', 'mentor', 'eleve', 'ennemi', 'rival'].includes(relation)) return 'Liens (l.109)';
-      if (['appartient', 'habite', 'exerce'].includes(relation)) return 'Appartenances (l.148)';
-      return null; // possede, jumeau, ange, kaio_shin, dieu_destruction : AUCUNE grappe
+      if (['appartient', 'habite', 'exerce'].includes(relation)) return 'Appartenances (l.149)';
+      return APRES ? 'Autres liens → (l.177)' : null; // possede, jumeau, ange, kaio_shin, dieu_destruction
     }
     if (relation === 'famille') return 'Famille (l.94)';
     if (['mentor', 'eleve'].includes(relation)) return 'Liens inversés (l.113)';
     if (['allie', 'ennemi', 'rival'].includes(relation)) return 'Liens (l.120)';
-    return null; // appartient/habite/exerce/maitrise/possede ENTRANTS : rien
+    return APRES ? 'Autres liens ← (l.177)' : null; // appartient/habite/exerce/maitrise/possede ENTRANTS
   }
 
   if (g === 'OrganizationZone') {
-    // components/akasha/zone/OrganizationZone.tsx — NE LIT QUE relationsIn.
-    if (!entrant) return null; // AUCUNE arête sortante n'est lue
-    if (relation === 'appartient' && autre?.type === 'character') return 'Puits/membres (l.55)';
-    if (relation === 'appartient' && autre?.type === 'artifact') return 'Arsenal (l.63)';
-    return null;
+    // components/akasha/zone/OrganizationZone.tsx
+    if (entrant && relation === 'appartient' && autre?.type === 'character') return 'Puits/membres (l.55)';
+    if (entrant && relation === 'appartient' && autre?.type === 'artifact') return 'Arsenal (l.63)';
+    return APRES ? `Autres liens ${entrant ? '←' : '→'} (l.85)` : null;
   }
 
   if (g === 'FicheAttaque') {

@@ -1,0 +1,2362 @@
+{
+  "stamp": "2026-08-10T20-50-30-986Z",
+  "entries": 7698,
+  "relations": 17071,
+  "slugsDistincts": 7698,
+  "doublonsSlug": [],
+  "parUnivers": {
+    "Naruto": 3330,
+    "One Piece": 2273,
+    "Dragon Ball": 1137,
+    "Bleach": 382,
+    "JoJo's Bizarre Adventure": 233,
+    "Hunter x Hunter": 215,
+    "Death Note": 84,
+    "Initial D": 44
+  },
+  "parType": {
+    "character": 4031,
+    "power": 2359,
+    "artifact": 400,
+    "place": 367,
+    "status": 356,
+    "profession": 105,
+    "skill": 80
+  },
+  "top40Degre": [
+    {
+      "slug": "konohagakure",
+      "name": "Konohagakure",
+      "type": "place",
+      "universe": "Naruto",
+      "sortant": 0,
+      "entrant": 511
+    },
+    {
+      "slug": "son-goku",
+      "name": "Son Goku",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "sortant": 150,
+      "entrant": 110
+    },
+    {
+      "slug": "fruit-du-demon",
+      "name": "Fruit du Démon",
+      "type": "power",
+      "universe": "One Piece",
+      "sortant": 0,
+      "entrant": 221
+    },
+    {
+      "slug": "naruto-uzumaki",
+      "name": "Naruto Uzumaki",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 140,
+      "entrant": 72
+    },
+    {
+      "slug": "pirate",
+      "name": "Pirate",
+      "type": "profession",
+      "universe": "One Piece",
+      "sortant": 0,
+      "entrant": 200
+    },
+    {
+      "slug": "vegeta",
+      "name": "Vegeta",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "sortant": 132,
+      "entrant": 37
+    },
+    {
+      "slug": "freezer",
+      "name": "Freezer",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "sortant": 118,
+      "entrant": 26
+    },
+    {
+      "slug": "civil",
+      "name": "Civil",
+      "type": "status",
+      "universe": "One Piece",
+      "sortant": 0,
+      "entrant": 137
+    },
+    {
+      "slug": "sasuke-uchiha",
+      "name": "Sasuke Uchiha",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 106,
+      "entrant": 29
+    },
+    {
+      "slug": "son-gohan",
+      "name": "Son Gohan",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "sortant": 131,
+      "entrant": 3
+    },
+    {
+      "slug": "l-equipage-du-chapeau-de-paille",
+      "name": "L’équipage du Chapeau de Paille",
+      "type": "status",
+      "universe": "One Piece",
+      "sortant": 0,
+      "entrant": 130
+    },
+    {
+      "slug": "orochimaru",
+      "name": "Orochimaru",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 79,
+      "entrant": 49
+    },
+    {
+      "slug": "piccolo",
+      "name": "Piccolo",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "sortant": 105,
+      "entrant": 19
+    },
+    {
+      "slug": "kakashi-hatake",
+      "name": "Kakashi Hatake",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 88,
+      "entrant": 31
+    },
+    {
+      "slug": "grand-line",
+      "name": "Grand Line",
+      "type": "place",
+      "universe": "One Piece",
+      "sortant": 0,
+      "entrant": 116
+    },
+    {
+      "slug": "monkey-d-luffy",
+      "name": "Monkey D. Luffy",
+      "type": "character",
+      "universe": "One Piece",
+      "sortant": 25,
+      "entrant": 88
+    },
+    {
+      "slug": "cell",
+      "name": "Cell",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "sortant": 103,
+      "entrant": 4
+    },
+    {
+      "slug": "future-trunks",
+      "name": "Future Trunks",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "sortant": 93,
+      "entrant": 9
+    },
+    {
+      "slug": "l-equipage-de-big-mom",
+      "name": "L’équipage de Big Mom",
+      "type": "status",
+      "universe": "One Piece",
+      "sortant": 0,
+      "entrant": 99
+    },
+    {
+      "slug": "sunagakure",
+      "name": "Sunagakure",
+      "type": "place",
+      "universe": "Naruto",
+      "sortant": 0,
+      "entrant": 97
+    },
+    {
+      "slug": "soul-society",
+      "name": "Soul Society",
+      "type": "place",
+      "universe": "Bleach",
+      "sortant": 0,
+      "entrant": 96
+    },
+    {
+      "slug": "gaara",
+      "name": "Gaara",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 65,
+      "entrant": 29
+    },
+    {
+      "slug": "krillin",
+      "name": "Krillin",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "sortant": 74,
+      "entrant": 18
+    },
+    {
+      "slug": "marine",
+      "name": "Marine",
+      "type": "status",
+      "universe": "One Piece",
+      "sortant": 0,
+      "entrant": 92
+    },
+    {
+      "slug": "madara-uchiha",
+      "name": "Madara Uchiha",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 79,
+      "entrant": 12
+    },
+    {
+      "slug": "trunks",
+      "name": "Trunks",
+      "type": "character",
+      "universe": "Dragon Ball",
+      "sortant": 68,
+      "entrant": 19
+    },
+    {
+      "slug": "jiraiya",
+      "name": "Jiraiya",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 61,
+      "entrant": 23
+    },
+    {
+      "slug": "obito-uchiha",
+      "name": "Obito Uchiha",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 76,
+      "entrant": 7
+    },
+    {
+      "slug": "east-blue",
+      "name": "East Blue",
+      "type": "place",
+      "universe": "One Piece",
+      "sortant": 0,
+      "entrant": 81
+    },
+    {
+      "slug": "kirigakure",
+      "name": "Kirigakure",
+      "type": "place",
+      "universe": "Naruto",
+      "sortant": 0,
+      "entrant": 75
+    },
+    {
+      "slug": "kabuto-yakushi",
+      "name": "Kabuto Yakushi",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 66,
+      "entrant": 7
+    },
+    {
+      "slug": "kumogakure",
+      "name": "Kumogakure",
+      "type": "place",
+      "universe": "Naruto",
+      "sortant": 0,
+      "entrant": 72
+    },
+    {
+      "slug": "l-equipage-aux-cent-betes",
+      "name": "L’équipage aux Cent Bêtes",
+      "type": "status",
+      "universe": "One Piece",
+      "sortant": 0,
+      "entrant": 71
+    },
+    {
+      "slug": "itachi-uchiha",
+      "name": "Itachi Uchiha",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 47,
+      "entrant": 22
+    },
+    {
+      "slug": "boruto-uzumaki",
+      "name": "Boruto Uzumaki",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 45,
+      "entrant": 24
+    },
+    {
+      "slug": "ichigo-kurosaki",
+      "name": "Ichigo Kurosaki",
+      "type": "character",
+      "universe": "Bleach",
+      "sortant": 12,
+      "entrant": 56
+    },
+    {
+      "slug": "tenten",
+      "name": "Tenten",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 61,
+      "entrant": 6
+    },
+    {
+      "slug": "tsunade",
+      "name": "Tsunade",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 46,
+      "entrant": 17
+    },
+    {
+      "slug": "shinigami",
+      "name": "Shinigami",
+      "type": "profession",
+      "universe": "Bleach",
+      "sortant": 0,
+      "entrant": 62
+    },
+    {
+      "slug": "might-guy",
+      "name": "Might Guy",
+      "type": "character",
+      "universe": "Naruto",
+      "sortant": 46,
+      "entrant": 15
+    }
+  ],
+  "axes": {
+    "village": {
+      "Konohagakure": {
+        "total": 441,
+        "parUnivers": {
+          "Naruto": 441
+        }
+      },
+      "Otogakure": {
+        "total": 36,
+        "parUnivers": {
+          "Naruto": 36
+        }
+      },
+      "Sunagakure": {
+        "total": 80,
+        "parUnivers": {
+          "Naruto": 80
+        }
+      },
+      "Kumogakure": {
+        "total": 63,
+        "parUnivers": {
+          "Naruto": 63
+        }
+      },
+      "Kirigakure": {
+        "total": 62,
+        "parUnivers": {
+          "Naruto": 62
+        }
+      },
+      "Iwagakure": {
+        "total": 43,
+        "parUnivers": {
+          "Naruto": 43
+        }
+      },
+      "Amegakure": {
+        "total": 30,
+        "parUnivers": {
+          "Naruto": 30
+        }
+      },
+      "Takigakure": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      }
+    },
+    "equipe": {
+      "Team Komugi": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Shibire": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Ebisu": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Team 8": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "Two Great Sage Toads": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Team Dosu": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Hiruzen": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "Team Jiraiya": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Three Sand Siblings": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Minato": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Team Kakashi": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Ro": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Three Brothers": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team 15": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Team Chōza": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Infiltration and Reconnaissance Party": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Gang of Four": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Team Oboro": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Team 40": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team 10": {
+        "total": 5,
+        "parUnivers": {
+          "Naruto": 5
+        }
+      },
+      "Team Bandō": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Tobirama": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Team Orochimaru": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Team Ajisai": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Kazami": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Fū": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Four Ninja Animal Warriors": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team 5": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Team Shira": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Haze Quadruplets": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Honoured Siblings": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "Team Kabuto": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Dotō's Three-Man-Team": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Furido's 4-Man Team": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Legendary Stupid Brothers": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Eight-Tails Subduing Team": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Team Ganryū": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Shinki": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Three Ryūdōin Brothers": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Ameno": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team 2": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Hiruko's Team": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Four Celestial Symbols Men": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Ino–Shika–Chō": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Gold and Silver Brothers": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Escort Unit": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Team Guren": {
+        "total": 5,
+        "parUnivers": {
+          "Naruto": 5
+        }
+      },
+      "Team Samui": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Exploding-Till-You-Eat": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "A–B Combo": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Sealing Team": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Saya": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Sajin": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Demon Brothers": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Team Matsuri": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Suien": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Team 7": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Three Senka Brothers": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Shigure": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Yurui": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Goji": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Shirogane Three": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team Kajika": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Team 25": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Daimyō Protection Squad": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "Team Shisui": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      }
+    },
+    "rank": {
+      "Genin": {
+        "total": 115,
+        "parUnivers": {
+          "Naruto": 115
+        }
+      },
+      "Academy Student": {
+        "total": 55,
+        "parUnivers": {
+          "Naruto": 55
+        }
+      },
+      "Jōnin": {
+        "total": 120,
+        "parUnivers": {
+          "Naruto": 120
+        }
+      },
+      "Kage": {
+        "total": 28,
+        "parUnivers": {
+          "Naruto": 28
+        }
+      },
+      "Chūnin": {
+        "total": 74,
+        "parUnivers": {
+          "Naruto": 74
+        }
+      },
+      "Anbu": {
+        "total": 59,
+        "parUnivers": {
+          "Naruto": 59
+        }
+      },
+      "Tokubetsu Jōnin": {
+        "total": 19,
+        "parUnivers": {
+          "Naruto": 19
+        }
+      },
+      "Hybride Shinigami-Hollow": {
+        "total": 1,
+        "parUnivers": {
+          "Bleach": 1
+        }
+      },
+      "Sannin": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "Head Ninja": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "S-rank": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      }
+    },
+    "partie": {
+      "Partie 3": {
+        "total": 32,
+        "parUnivers": {
+          "JoJo's Bizarre Adventure": 32
+        }
+      },
+      "Partie 4": {
+        "total": 57,
+        "parUnivers": {
+          "JoJo's Bizarre Adventure": 57
+        }
+      },
+      "Partie 5": {
+        "total": 59,
+        "parUnivers": {
+          "JoJo's Bizarre Adventure": 59
+        }
+      },
+      "Partie 1-2": {
+        "total": 42,
+        "parUnivers": {
+          "JoJo's Bizarre Adventure": 42
+        }
+      },
+      "Partie 6": {
+        "total": 25,
+        "parUnivers": {
+          "JoJo's Bizarre Adventure": 25
+        }
+      },
+      "Partie 7": {
+        "total": 4,
+        "parUnivers": {
+          "JoJo's Bizarre Adventure": 4
+        }
+      },
+      "Partie 8": {
+        "total": 2,
+        "parUnivers": {
+          "JoJo's Bizarre Adventure": 2
+        }
+      }
+    },
+    "clan": {
+      "Sarutobi": {
+        "total": 6,
+        "parUnivers": {
+          "Naruto": 6
+        }
+      },
+      "Yamanaka": {
+        "total": 8,
+        "parUnivers": {
+          "Naruto": 8
+        }
+      },
+      "Senju": {
+        "total": 8,
+        "parUnivers": {
+          "Naruto": 8
+        }
+      },
+      "Kazekage": {
+        "total": 6,
+        "parUnivers": {
+          "Naruto": 6
+        }
+      },
+      "Uchiha": {
+        "total": 27,
+        "parUnivers": {
+          "Naruto": 27
+        }
+      },
+      "Hatake": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Uzumaki": {
+        "total": 12,
+        "parUnivers": {
+          "Naruto": 12
+        }
+      },
+      "Hyūga": {
+        "total": 12,
+        "parUnivers": {
+          "Naruto": 12
+        }
+      },
+      "Funato": {
+        "total": 11,
+        "parUnivers": {
+          "Naruto": 11
+        }
+      },
+      "Akimichi": {
+        "total": 11,
+        "parUnivers": {
+          "Naruto": 11
+        }
+      },
+      "Kagetsu Family": {
+        "total": 5,
+        "parUnivers": {
+          "Naruto": 5
+        }
+      },
+      "Tsuchigumo": {
+        "total": 7,
+        "parUnivers": {
+          "Naruto": 7
+        }
+      },
+      "Shiin": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Hoshigaki": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Onikuma": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "Hōzuki": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Fūma (Land of Sound)": {
+        "total": 7,
+        "parUnivers": {
+          "Naruto": 7
+        }
+      },
+      "Inuzuka": {
+        "total": 11,
+        "parUnivers": {
+          "Naruto": 11
+        }
+      },
+      "Tenrō": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Nara": {
+        "total": 10,
+        "parUnivers": {
+          "Naruto": 10
+        }
+      },
+      "Ōtsutsuki": {
+        "total": 15,
+        "parUnivers": {
+          "Naruto": 15
+        }
+      },
+      "Yuki": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Jūgo's": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Wagarashi Family": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Kaguya": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Wasabi Family": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Aburame": {
+        "total": 6,
+        "parUnivers": {
+          "Naruto": 6
+        }
+      },
+      "Iburi": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Izuno": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Kamizuru": {
+        "total": 8,
+        "parUnivers": {
+          "Naruto": 8
+        }
+      },
+      "Chinoike": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Amagiri": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Lee": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Kurama": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Ryū": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Yotsuki": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "Shirogane": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Fūma": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Hirasaka": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "Karatachi Family": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Yoimura": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Shimura": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "Rinha": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Kedōin": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "Yota's": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      }
+    },
+    "generation": {
+      "Génération de Kakashi": {
+        "total": 12,
+        "parUnivers": {
+          "Naruto": 12
+        }
+      },
+      "Sannin": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Konoha 11": {
+        "total": 16,
+        "parUnivers": {
+          "Naruto": 16
+        }
+      },
+      "Nouvelle ère": {
+        "total": 13,
+        "parUnivers": {
+          "Naruto": 13
+        }
+      },
+      "Fondateurs": {
+        "total": 7,
+        "parUnivers": {
+          "Naruto": 7
+        }
+      }
+    },
+    "faction": {
+      "Pirate": {
+        "total": 295,
+        "parUnivers": {
+          "One Piece": 295
+        }
+      },
+      "Civil": {
+        "total": 138,
+        "parUnivers": {
+          "One Piece": 138
+        }
+      },
+      "Marine": {
+        "total": 49,
+        "parUnivers": {
+          "One Piece": 49
+        }
+      },
+      "Gouvernement Mondial": {
+        "total": 24,
+        "parUnivers": {
+          "One Piece": 24
+        }
+      },
+      "Révolutionnaire": {
+        "total": 9,
+        "parUnivers": {
+          "One Piece": 9
+        }
+      }
+    },
+    "crew": {
+      "L’équipage du Roux": {
+        "total": 9,
+        "parUnivers": {
+          "One Piece": 9
+        }
+      },
+      "Armada du Chapeau de Paille": {
+        "total": 17,
+        "parUnivers": {
+          "One Piece": 17
+        }
+      },
+      "L’équipage de Barbe Noire": {
+        "total": 10,
+        "parUnivers": {
+          "One Piece": 10
+        }
+      },
+      "L’équipage des Pirates Roger": {
+        "total": 12,
+        "parUnivers": {
+          "One Piece": 12
+        }
+      },
+      "Néo Marine": {
+        "total": 3,
+        "parUnivers": {
+          "One Piece": 3
+        }
+      },
+      "L’équipage aux Cent Bêtes": {
+        "total": 46,
+        "parUnivers": {
+          "One Piece": 46
+        }
+      },
+      "Armée Révolutionnaire": {
+        "total": 8,
+        "parUnivers": {
+          "One Piece": 8
+        }
+      },
+      "L’équipage de Big Mom": {
+        "total": 66,
+        "parUnivers": {
+          "One Piece": 66
+        }
+      },
+      "L’équipage de Barbe Blanche": {
+        "total": 35,
+        "parUnivers": {
+          "One Piece": 35
+        }
+      },
+      "Anciens membres du Cipher Pol": {
+        "total": 5,
+        "parUnivers": {
+          "One Piece": 5
+        }
+      },
+      "Faux équipage du Chapeau de Paille": {
+        "total": 9,
+        "parUnivers": {
+          "One Piece": 9
+        }
+      },
+      "Marine": {
+        "total": 29,
+        "parUnivers": {
+          "One Piece": 29
+        }
+      },
+      "L’équipage de Thriller Bark": {
+        "total": 3,
+        "parUnivers": {
+          "One Piece": 3
+        }
+      },
+      "L’équipage de Don Quichotte": {
+        "total": 14,
+        "parUnivers": {
+          "One Piece": 14
+        }
+      },
+      "Cipher Pol": {
+        "total": 8,
+        "parUnivers": {
+          "One Piece": 8
+        }
+      },
+      "L’équipage des Nouveaux Hommes-Poissons": {
+        "total": 5,
+        "parUnivers": {
+          "One Piece": 5
+        }
+      },
+      "L’équipage de Kid": {
+        "total": 3,
+        "parUnivers": {
+          "One Piece": 3
+        }
+      },
+      "Anciens membres de la Marine": {
+        "total": 1,
+        "parUnivers": {
+          "One Piece": 1
+        }
+      },
+      "L’équipage du Lion d’Or": {
+        "total": 5,
+        "parUnivers": {
+          "One Piece": 5
+        }
+      },
+      "Royaume de Germa": {
+        "total": 6,
+        "parUnivers": {
+          "One Piece": 6
+        }
+      },
+      "L’équipage du Chapeau de Paille": {
+        "total": 14,
+        "parUnivers": {
+          "One Piece": 14
+        }
+      },
+      "L’équipage des Pirates Volants": {
+        "total": 1,
+        "parUnivers": {
+          "One Piece": 1
+        }
+      },
+      "L'équipage du Chapeau de Paille": {
+        "total": 2,
+        "parUnivers": {
+          "One Piece": 2
+        }
+      },
+      "L’équipage du Heart": {
+        "total": 5,
+        "parUnivers": {
+          "One Piece": 5
+        }
+      },
+      "L’équipage des Pirates Rocks": {
+        "total": 1,
+        "parUnivers": {
+          "One Piece": 1
+        }
+      },
+      "L’équipage des Pirates Kuja": {
+        "total": 4,
+        "parUnivers": {
+          "One Piece": 4
+        }
+      },
+      "L'équipage de Don Quichotte": {
+        "total": 3,
+        "parUnivers": {
+          "One Piece": 3
+        }
+      },
+      "L’équipage d’Arlong": {
+        "total": 2,
+        "parUnivers": {
+          "One Piece": 2
+        }
+      },
+      "L’équipage de Foxy": {
+        "total": 2,
+        "parUnivers": {
+          "One Piece": 2
+        }
+      },
+      "L’équipage du Bluejam": {
+        "total": 2,
+        "parUnivers": {
+          "One Piece": 2
+        }
+      },
+      "L’équipage des Moines Dépravés": {
+        "total": 1,
+        "parUnivers": {
+          "One Piece": 1
+        }
+      },
+      "World Economic Journal": {
+        "total": 1,
+        "parUnivers": {
+          "One Piece": 1
+        }
+      },
+      "L’équipage du Fire Tank": {
+        "total": 5,
+        "parUnivers": {
+          "One Piece": 5
+        }
+      },
+      "L'équipage de Thriller Bark": {
+        "total": 1,
+        "parUnivers": {
+          "One Piece": 1
+        }
+      },
+      "L’équipage du Chat Noir": {
+        "total": 3,
+        "parUnivers": {
+          "One Piece": 3
+        }
+      },
+      "L’équipage de Krieg": {
+        "total": 2,
+        "parUnivers": {
+          "One Piece": 2
+        }
+      },
+      "L’équipage des Pirates du Soleil": {
+        "total": 2,
+        "parUnivers": {
+          "One Piece": 2
+        }
+      },
+      "Buggy's Delivery": {
+        "total": 2,
+        "parUnivers": {
+          "One Piece": 2
+        }
+      },
+      "Anciens membres du Baroque Works": {
+        "total": 3,
+        "parUnivers": {
+          "One Piece": 3
+        }
+      },
+      "L'équipage des Pirates du Soleil": {
+        "total": 1,
+        "parUnivers": {
+          "One Piece": 1
+        }
+      },
+      "L'équipage de Buggy": {
+        "total": 1,
+        "parUnivers": {
+          "One Piece": 1
+        }
+      },
+      "L'équipage aux Cent Bêtes": {
+        "total": 1,
+        "parUnivers": {
+          "One Piece": 1
+        }
+      },
+      "L’équipage de Macro": {
+        "total": 1,
+        "parUnivers": {
+          "One Piece": 1
+        }
+      },
+      "L’équipage du Rumbar": {
+        "total": 1,
+        "parUnivers": {
+          "One Piece": 1
+        }
+      },
+      "Ligue des Primates": {
+        "total": 2,
+        "parUnivers": {
+          "One Piece": 2
+        }
+      },
+      "L’équipage de Caribou": {
+        "total": 2,
+        "parUnivers": {
+          "One Piece": 2
+        }
+      }
+    },
+    "division": {
+      "Third Division": {
+        "total": 9,
+        "parUnivers": {
+          "Naruto": 9
+        }
+      },
+      "Corps médical": {
+        "total": 9,
+        "parUnivers": {
+          "Naruto": 9
+        }
+      },
+      "Impure World Reincarnation Allied Forces": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "First Division": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Sensor Division": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "11ᵉ division": {
+        "total": 4,
+        "parUnivers": {
+          "Bleach": 4
+        }
+      },
+      "5ᵉ division": {
+        "total": 4,
+        "parUnivers": {
+          "Bleach": 4
+        }
+      },
+      "2ᵉ division": {
+        "total": 4,
+        "parUnivers": {
+          "Bleach": 4
+        }
+      },
+      "Fifth Division": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Allied Mothers Force": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Intelligence Division": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "12ᵉ division": {
+        "total": 6,
+        "parUnivers": {
+          "Bleach": 6
+        }
+      },
+      "10ᵉ division": {
+        "total": 3,
+        "parUnivers": {
+          "Bleach": 3
+        }
+      },
+      "Surprise Attack and Diversion Platoon": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "1ʳᵉ division": {
+        "total": 2,
+        "parUnivers": {
+          "Bleach": 2
+        }
+      },
+      "3ᵉ division": {
+        "total": 4,
+        "parUnivers": {
+          "Bleach": 4
+        }
+      },
+      "13ᵉ division": {
+        "total": 3,
+        "parUnivers": {
+          "Bleach": 3
+        }
+      },
+      "Force Shinobi Alliée": {
+        "total": 6,
+        "parUnivers": {
+          "Naruto": 6
+        }
+      },
+      "9ᵉ division": {
+        "total": 5,
+        "parUnivers": {
+          "Bleach": 5
+        }
+      },
+      "Logistical Support and Medical Division": {
+        "total": 5,
+        "parUnivers": {
+          "Naruto": 5
+        }
+      },
+      "Surprise Attack Division": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Second Division": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Twenty Platoons": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "Fourth Division": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "8ᵉ division": {
+        "total": 4,
+        "parUnivers": {
+          "Bleach": 4
+        }
+      },
+      "6ᵉ division": {
+        "total": 2,
+        "parUnivers": {
+          "Bleach": 2
+        }
+      },
+      "4ᵉ division": {
+        "total": 4,
+        "parUnivers": {
+          "Bleach": 4
+        }
+      },
+      "Counter-Terrorism Division": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      },
+      "Cypher Division": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "7ᵉ division": {
+        "total": 2,
+        "parUnivers": {
+          "Bleach": 2
+        }
+      },
+      "Explosion Corps": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      }
+    },
+    "organization": {
+      "Allied Shinobi Forces": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Akatsuki": {
+        "total": 38,
+        "parUnivers": {
+          "Naruto": 38
+        }
+      },
+      "Root": {
+        "total": 23,
+        "parUnivers": {
+          "Naruto": 23
+        }
+      },
+      "Hokage Guard Platoon": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Moya Triad": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Nouveaux Sept Épéistes de la Brume": {
+        "total": 7,
+        "parUnivers": {
+          "Naruto": 7
+        }
+      },
+      "Byakuya Gang": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Sept Épéistes de la Brume": {
+        "total": 9,
+        "parUnivers": {
+          "Naruto": 9
+        }
+      },
+      "Kara": {
+        "total": 20,
+        "parUnivers": {
+          "Naruto": 20
+        }
+      },
+      "Magaki Group": {
+        "total": 5,
+        "parUnivers": {
+          "Naruto": 5
+        }
+      },
+      "Konoha Barrier Team": {
+        "total": 6,
+        "parUnivers": {
+          "Naruto": 6
+        }
+      },
+      "Scientific Ninja Weapons Team": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Konoha Council": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Mujina Bandits": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Gatō Company": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Kumo Council": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Konoha Orphanage": {
+        "total": 5,
+        "parUnivers": {
+          "Naruto": 5
+        }
+      },
+      "Police militaire de Konoha": {
+        "total": 9,
+        "parUnivers": {
+          "Naruto": 9
+        }
+      },
+      "Leaf's Anbu": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Shinobazu": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Analysis Team": {
+        "total": 5,
+        "parUnivers": {
+          "Naruto": 5
+        }
+      },
+      "Haido's Knights": {
+        "total": 5,
+        "parUnivers": {
+          "Naruto": 5
+        }
+      },
+      "Jako's Gang": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Enlightened Ones": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Fire Temple": {
+        "total": 5,
+        "parUnivers": {
+          "Naruto": 5
+        }
+      },
+      "Wandering Ninja Clan": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Watari Ninja": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Sound Four": {
+        "total": 5,
+        "parUnivers": {
+          "Naruto": 5
+        }
+      },
+      "Douze Ninjas Gardiens": {
+        "total": 7,
+        "parUnivers": {
+          "Naruto": 7
+        }
+      },
+      "Lightning Group": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Suna Council": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Janin": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Konoha Torture and Interrogation Force": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Kumo Barrier Team": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Kumo Spectators": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Communications Team": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Akagi Gang": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Konoha Special Mission Platoon": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Ghost Army": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Konoha Cryptanalysis Team": {
+        "total": 4,
+        "parUnivers": {
+          "Naruto": 4
+        }
+      },
+      "Kurosuki Family": {
+        "total": 2,
+        "parUnivers": {
+          "Naruto": 2
+        }
+      },
+      "Konoha 11": {
+        "total": 1,
+        "parUnivers": {
+          "Naruto": 1
+        }
+      }
+    },
+    "race": {
+      "Shinigami": {
+        "total": 33,
+        "parUnivers": {
+          "Bleach": 33
+        }
+      },
+      "Bijū": {
+        "total": 3,
+        "parUnivers": {
+          "Naruto": 3
+        }
+      },
+      "Saiyan": {
+        "total": 31,
+        "parUnivers": {
+          "Dragon Ball": 31
+        }
+      },
+      "Namekian": {
+        "total": 10,
+        "parUnivers": {
+          "Dragon Ball": 10
+        }
+      },
+      "Frieza Race": {
+        "total": 6,
+        "parUnivers": {
+          "Dragon Ball": 6
+        }
+      },
+      "Fullbringer": {
+        "total": 7,
+        "parUnivers": {
+          "Bleach": 7
+        }
+      },
+      "Arrancar": {
+        "total": 22,
+        "parUnivers": {
+          "Bleach": 22
+        }
+      },
+      "Visored": {
+        "total": 9,
+        "parUnivers": {
+          "Bleach": 9
+        }
+      },
+      "Android": {
+        "total": 15,
+        "parUnivers": {
+          "Dragon Ball": 15
+        }
+      },
+      "Human": {
+        "total": 25,
+        "parUnivers": {
+          "Dragon Ball": 25
+        }
+      },
+      "Humain": {
+        "total": 12,
+        "parUnivers": {
+          "Bleach": 12
+        }
+      },
+      "Angel": {
+        "total": 13,
+        "parUnivers": {
+          "Dragon Ball": 13
+        }
+      },
+      "Quincy": {
+        "total": 3,
+        "parUnivers": {
+          "Bleach": 3
+        }
+      },
+      "Modified Soul": {
+        "total": 3,
+        "parUnivers": {
+          "Bleach": 3
+        }
+      },
+      "Majin": {
+        "total": 1,
+        "parUnivers": {
+          "Dragon Ball": 1
+        }
+      },
+      "Machine Mutant": {
+        "total": 1,
+        "parUnivers": {
+          "Dragon Ball": 1
+        }
+      },
+      "Soul": {
+        "total": 4,
+        "parUnivers": {
+          "Bleach": 4
+        }
+      },
+      "Turtle": {
+        "total": 1,
+        "parUnivers": {
+          "Dragon Ball": 1
+        }
+      },
+      "Alien": {
+        "total": 1,
+        "parUnivers": {
+          "Dragon Ball": 1
+        }
+      },
+      "Hollow": {
+        "total": 6,
+        "parUnivers": {
+          "Bleach": 6
+        }
+      },
+      "Zanpakutō Spirit": {
+        "total": 1,
+        "parUnivers": {
+          "Bleach": 1
+        }
+      },
+      "Glind": {
+        "total": 1,
+        "parUnivers": {
+          "Dragon Ball": 1
+        }
+      }
+    },
+    "monde": {
+      "Soul Society": {
+        "total": 66,
+        "parUnivers": {
+          "Bleach": 66
+        }
+      },
+      "Terre · Karakura": {
+        "total": 60,
+        "parUnivers": {
+          "Bleach": 60
+        }
+      },
+      "Hueco Mundo": {
+        "total": 43,
+        "parUnivers": {
+          "Bleach": 43
+        }
+      },
+      "Wandenreich": {
+        "total": 2,
+        "parUnivers": {
+          "Bleach": 2
+        }
+      }
+    },
+    "saga": {
+      "Saga Super": {
+        "total": 58,
+        "parUnivers": {
+          "Dragon Ball": 58
+        }
+      },
+      "Saga Namek": {
+        "total": 14,
+        "parUnivers": {
+          "Dragon Ball": 14
+        }
+      },
+      "Saga Saiyan": {
+        "total": 23,
+        "parUnivers": {
+          "Dragon Ball": 23
+        }
+      },
+      "Saga Buu": {
+        "total": 22,
+        "parUnivers": {
+          "Dragon Ball": 22
+        }
+      },
+      "Saga Cell": {
+        "total": 11,
+        "parUnivers": {
+          "Dragon Ball": 11
+        }
+      }
+    },
+    "meito_grade": {
+      "Ryo Wazamono": {
+        "total": 6,
+        "parUnivers": {
+          "One Piece": 6
+        }
+      },
+      "Ô Wazamono": {
+        "total": 5,
+        "parUnivers": {
+          "One Piece": 5
+        }
+      },
+      "Saijo Ô Wazamono": {
+        "total": 4,
+        "parUnivers": {
+          "One Piece": 4
+        }
+      }
+    },
+    "nen": {
+      "Transformation": {
+        "total": 7,
+        "parUnivers": {
+          "Hunter x Hunter": 7
+        }
+      },
+      "Renforcement": {
+        "total": 12,
+        "parUnivers": {
+          "Hunter x Hunter": 12
+        }
+      },
+      "Émission": {
+        "total": 9,
+        "parUnivers": {
+          "Hunter x Hunter": 9
+        }
+      },
+      "Manipulation": {
+        "total": 12,
+        "parUnivers": {
+          "Hunter x Hunter": 12
+        }
+      },
+      "Matérialisation": {
+        "total": 5,
+        "parUnivers": {
+          "Hunter x Hunter": 5
+        }
+      },
+      "Spécialisation": {
+        "total": 6,
+        "parUnivers": {
+          "Hunter x Hunter": 6
+        }
+      }
+    },
+    "fruit_type": {
+      "Zoan Mythique": {
+        "total": 18,
+        "parUnivers": {
+          "One Piece": 18
+        }
+      },
+      "Paramecia": {
+        "total": 163,
+        "parUnivers": {
+          "One Piece": 163
+        }
+      },
+      "Zoan": {
+        "total": 28,
+        "parUnivers": {
+          "One Piece": 28
+        }
+      },
+      "Logia": {
+        "total": 26,
+        "parUnivers": {
+          "One Piece": 26
+        }
+      },
+      "Clone": {
+        "total": 4,
+        "parUnivers": {
+          "One Piece": 4
+        }
+      },
+      "Smile": {
+        "total": 27,
+        "parUnivers": {
+          "One Piece": 27
+        }
+      },
+      "Zoan Antique": {
+        "total": 14,
+        "parUnivers": {
+          "One Piece": 14
+        }
+      }
+    },
+    "affiliation": {
+      "Akina SpeedStars": {
+        "total": 4,
+        "parUnivers": {
+          "Initial D": 4
+        }
+      },
+      "Myogi NightKids": {
+        "total": 5,
+        "parUnivers": {
+          "Initial D": 5
+        }
+      },
+      "Project D": {
+        "total": 6,
+        "parUnivers": {
+          "Initial D": 6
+        }
+      },
+      "Impact Blue": {
+        "total": 2,
+        "parUnivers": {
+          "Initial D": 2
+        }
+      },
+      "Team Emperor": {
+        "total": 1,
+        "parUnivers": {
+          "Initial D": 1
+        }
+      }
+    },
+    "col": {
+      "Mont Akina": {
+        "total": 7,
+        "parUnivers": {
+          "Initial D": 7
+        }
+      },
+      "Mont Myōgi": {
+        "total": 6,
+        "parUnivers": {
+          "Initial D": 6
+        }
+      },
+      "Mont Akagi": {
+        "total": 4,
+        "parUnivers": {
+          "Initial D": 4
+        }
+      },
+      "Col d’Usui": {
+        "total": 3,
+        "parUnivers": {
+          "Initial D": 3
+        }
+      },
+      "Irohazaka": {
+        "total": 3,
+        "parUnivers": {
+          "Initial D": 3
+        }
+      }
+    },
+    "camp": {
+      "Shinigami": {
+        "total": 7,
+        "parUnivers": {
+          "Death Note": 7
+        }
+      },
+      "Yotsuba": {
+        "total": 7,
+        "parUnivers": {
+          "Death Note": 7
+        }
+      },
+      "Cellule d’enquête": {
+        "total": 14,
+        "parUnivers": {
+          "Death Note": 14
+        }
+      },
+      "Wammy’s House": {
+        "total": 3,
+        "parUnivers": {
+          "Death Note": 3
+        }
+      },
+      "Kira": {
+        "total": 5,
+        "parUnivers": {
+          "Death Note": 5
+        }
+      },
+      "SPK": {
+        "total": 6,
+        "parUnivers": {
+          "Death Note": 6
+        }
+      }
+    }
+  }
+}

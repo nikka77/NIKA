@@ -1,0 +1,742 @@
+{
+  "horodate": "2026-08-10T21:04:25.058Z",
+  "batterie_de_la_garde": [
+    {
+      "cas": "chatte/chat — le cas mesuré du démonstrateur",
+      "attendu": true,
+      "mord": true,
+      "ok": true,
+      "contradictions": [
+        {
+          "espece": "genre-oppose-sur-la-meme-tete",
+          "preuve_fiche": "Fukurokumaru est un chat summon de taille humaine au pelage blanc immaculé, portant un collier rouge.",
+          "preuve_section": "Fukurokumaru est une chatte blanche de taille humaine, au collier rouge orné d’une clochette dorée.",
+          "detail": "« null chat » (fiche) contre « null chatte » (section)"
+        }
+      ]
+    },
+    {
+      "cas": "nature — la fiche est un lieu, la section décrit un homme",
+      "attendu": true,
+      "mord": true,
+      "ok": true,
+      "contradictions": [
+        {
+          "espece": "natures-incompatibles",
+          "preuve_fiche": "Kibi est une région du Pays des Wa.",
+          "preuve_section": "Kibi est un ninja du village de Konoha qui participa à l’examen chûnin.",
+          "detail": "la fiche se définit comme lieu et la section comme personne"
+        },
+        {
+          "espece": "nature-contre-le-type-declare",
+          "preuve_fiche": "type = « place » (colonne de la base)",
+          "preuve_section": "Kibi est un ninja du village de Konoha qui participa à l’examen chûnin.",
+          "detail": "type place → nature attendue « lieu », la section définit « null ninja » (personne)"
+        }
+      ]
+    },
+    {
+      "cas": "témoin NÉGATIF — deux textes concordants ne doivent PAS être refusés",
+      "attendu": false,
+      "mord": false,
+      "ok": true,
+      "contradictions": []
+    },
+    {
+      "cas": "témoin NÉGATIF — deux définitions différentes mais compatibles",
+      "attendu": false,
+      "mord": false,
+      "ok": true,
+      "contradictions": []
+    },
+    {
+      "cas": "sexe déclaré contre la définition de la section",
+      "attendu": true,
+      "mord": true,
+      "ok": true,
+      "contradictions": [
+        {
+          "espece": "sexe-declare-contre-definition",
+          "preuve_fiche": "attributes.sex = « Male »",
+          "preuve_section": "Shinta est une femme d’un abord franc, qui dit aussitôt ce qu’elle pense.",
+          "detail": "sexe déclaré male, la section définit « null femme »"
+        }
+      ]
+    }
+  ],
+  "temoins_hote": {
+    "One Piece": {
+      "titre": "Monkey D. Luffy",
+      "repond": true,
+      "sections": 7
+    },
+    "Naruto": {
+      "titre": "Naruto Uzumaki",
+      "repond": true,
+      "sections": 92
+    },
+    "Bleach": {
+      "titre": "Ichigo Kurosaki",
+      "repond": true,
+      "sections": 33
+    },
+    "Dragon Ball": {
+      "titre": "Son Goku",
+      "repond": true,
+      "sections": 74
+    }
+  },
+  "population": {
+    "sans_dossier_univers_a_wiki_fr": 2848,
+    "echantillon": 20
+  },
+  "compte": {
+    "refus": 10,
+    "page sans prose exploitable": 7,
+    "candidat": 3
+  },
+  "rendement": "15.0 %",
+  "mediane_caracteres_des_candidats": 253,
+  "cas": [
+    {
+      "slug": "eisen-dial",
+      "name": "Eisen-Dial",
+      "type": "artifact",
+      "universe": "One Piece",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "kokushi",
+      "name": "Kokushi",
+      "type": "character",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 57,
+      "etat": "refus"
+    },
+    {
+      "slug": "coral-hill",
+      "name": "Coral Hill",
+      "type": "place",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Coral Hill",
+      "identite": "titre-egal",
+      "url": "https://onepiece.fandom.com/fr/wiki/Coral_Hill",
+      "refus": null,
+      "descFr_len": 86,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 2,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "wood-release-advent-of-a-world-of-flowering-trees",
+      "name": "Wood Release: Advent of a World of Flowering Trees",
+      "type": "power",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Mokuton - Émergence Arborée",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Mokuton_-_%C3%89mergence_Arbor%C3%A9e",
+      "refus": null,
+      "descFr_len": 275,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 1,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "professeur-de-l-academie",
+      "name": "Professeur de l'Académie",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "trunks-ssj3",
+      "name": "Trunks SSJ3",
+      "type": "skill",
+      "universe": "Dragon Ball",
+      "route": "recherche-fr",
+      "titreFr": "Trunks",
+      "identite": "meme-nom",
+      "url": "https://dragonball.fandom.com/fr/wiki/Trunks",
+      "refus": "la page se range parmi les œuvres — Ébauche",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "gouvernement-mondial",
+      "name": "Gouvernement Mondial",
+      "type": "status",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Gouvernement Mondial",
+      "identite": "titre-egal",
+      "url": "https://onepiece.fandom.com/fr/wiki/Gouvernement_Mondial",
+      "refus": null,
+      "descFr_len": 925,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "À propos du Gouvernement Mondial",
+          "car": 5618
+        },
+        {
+          "idx": "1.1",
+          "titre": "Vue d'ensemble",
+          "car": 8601
+        },
+        {
+          "idx": "2",
+          "titre": "Culture",
+          "car": 455
+        },
+        {
+          "idx": "3.1",
+          "titre": "Le Siècle Manquant",
+          "car": 846
+        },
+        {
+          "idx": "3.2",
+          "titre": "Buster Call",
+          "car": 882
+        },
+        {
+          "idx": "3.3",
+          "titre": "Un pouvoir trop dangereux pour l'humanité",
+          "car": 315
+        },
+        {
+          "idx": "3.4",
+          "titre": "La Mission du Cipher Pol N°9 et la Conspiration de Spandam",
+          "car": 1155
+        },
+        {
+          "idx": "3.5",
+          "titre": "Une menace nommée Dragon",
+          "car": 319
+        },
+        {
+          "idx": "4.1",
+          "titre": "Passé",
+          "car": 381
+        },
+        {
+          "idx": "4.2",
+          "titre": "Arc Romance Down",
+          "car": 145
+        },
+        {
+          "idx": "4.3",
+          "titre": "Arc Baratie",
+          "car": 486
+        },
+        {
+          "idx": "4.4",
+          "titre": "Arc Arlong",
+          "car": 611
+        },
+        {
+          "idx": "4.5",
+          "titre": "Arc Royaume de Drum",
+          "car": 270
+        },
+        {
+          "idx": "4.6",
+          "titre": "Arc Alabasta",
+          "car": 1039
+        },
+        {
+          "idx": "4.7",
+          "titre": "Arc Jaya",
+          "car": 768
+        },
+        {
+          "idx": "4.8",
+          "titre": "Arc Davy Back Fight",
+          "car": 304
+        },
+        {
+          "idx": "4.9",
+          "titre": "Arc Water Seven",
+          "car": 406
+        },
+        {
+          "idx": "4.10",
+          "titre": "Arc Enies Lobby",
+          "car": 418
+        },
+        {
+          "idx": "4.11",
+          "titre": "Arc Post-Enies Lobby",
+          "car": 498
+        },
+        {
+          "idx": "4.12",
+          "titre": "Arc Thriller Bark",
+          "car": 412
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 41,
+        "intertitres_declares": 39,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 20,
+      "caracteres": 23929,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "À propos du Gouvernement Mondial",
+          "niveau": 2,
+          "ancre": "À_propos_du_Gouvernement_Mondial",
+          "texte": "Le Gouvernement Mondial est une association de plus de 170 pays unis, rassemblés sous la bannière de la Justice Absolue. Né d'une solidarité \"inflexible\", ce gigantesque réseau domine le monde en tant que puissance totale. À sa tête se trouve le tout-puissant Conseil des 5 Étoiles, aussi nommé Gorosei, considéré comme la plus grande instance politique du monde, qui a pour but de faire régner la \"paix\" par les lois qu'elle dicte à la population : administrer la loi et maintenir l'ordre, telles sont les deux missions du Conseil des cinq doyens.\nLes pays membres conservent leur autonomie, en ce sens que ils gèrent leurs affaires internes, bien que le gouvernement mondial se mêle parfois de ces dernières, mais coopèrent avec ce dernier dans le cadre des relations internationales. Leurs idéaux politiques sont méconnus et tout ce qu'ils font est considéré comme juste. Tout le monde n'approuve pas ce canon politique, ce qui est notamment le cas de Dragon, chef des révolutionnaires, qui est contre cette instance. Leur credo est la Justice Absolue. Leur siège se trouve sur la terre sainte de Marie-Joie. Ils semblent se soucier grandement des Trois Grandes Puissances, représentant l'équilibre du monde de par leur poids et force respectifs.\nLes nations qui sont affiliées au Gouvernement Mondial obtiennent également sa protection et peuvent être aidées et défendues par les Marines et le Cipher Pol. Cependant, les nations membres doivent payer une taxe aux Dragons Célestes, nommée le \"Tribut Céleste\". Ces paiements extravagants pèsent souvent sur les pays les plus pauvres, les habitants de l'île vers lesquels la famille Don Quichotte a déménagé mourant souvent de faim à cause de la perte de ressources. Le non-paiement semble être très conséquent, car les affiliés s'efforcent d'atteindre le quota malgré la pauvreté qui en résulte. Parfois, la participation à la Rêverie peut être garantie en échange de services avantageux pour le Gouvernement, le Royaume de Vodka ayant pu participer grâce à la livraison de Kaido, même si ce dernier à fini par s'enfuir. Selon Marco, l'incapacité de payer le tribut céleste est la raison la plus courante pour laquelle une nation ne rejoint pas le Gouvernement Mondial. Ces nations tombent souvent en ruine faute de la protection du Gouvernement Mondial, et la plupart des nations non affiliées ne parviennent à survivre qu'en devenant le territoire d'un empereur ou en étant suffisamment autosuffisantes pour se défendre, comme le pays des Wa, qui a ces deux formes de protection.\nÀ première vue, le gouvernement semble mondial pour maintenir la paix dans le monde afin qu'elle puisse profiter à tous. Par l'intermédiaire des Marines, ils poursuivent les criminels qui mettent en danger la vie d'innocents (et la paix en général), en assurant la protection des populations de chaque pays du monde adhérant au Gouvernement Mondial. Elle se porte garante des droits fondamentaux du citoyen et met souvent un terme à toute action politique qui semble contraire à leurs idéaux sans hésitations.\nLa réalité de ces actions est cependant inconnue de la plupart des citoyens (et de nombreux leaders mondiaux), du fait de leur caractère indicible, et souvent, malheureusement, basé sur la corruption ou reposant sur des motifs douteux. La plupart du temps, quand l'histoire les implique dans des agissements immoraux ou douteux, ils leur arrivent de cacher la vérité ou d'ignorer les droits des personnes dans le but de maintenir leur bonne image et de faire avancer leur objectif. Les personnes qui deviennent les ennemies du Gouvernement Mondial sont impitoyablement pourchassées et capturées. Le même sort attend ceux qui collaborent de près ou de loin avec des criminels, encourant dans le cas échéant le courroux du Gouvernement. Nico Robin, en particulier, a passé toute son enfance traquée par le Gouvernement Mondial.\nLes pays qui tentent de protéger des criminels sont souvent sujets à des mesures de rétorsion de la part du Gouvernement Mondial, bien que ces mesures ne soient pas encore bien définies. Même si la corruption est présente, un réel souci de stabilité mondiale est pourtant visible dans leur action globale, malgré le scepticisme de certains citoyens. Cette instance s'est octroyée l'aide des 7 Grands Corsaires, qui en échange de leur aide voient leurs crimes et dettes effacés, jouissant même d'une impunité quasi-totale, ce qui leur a permis de continuer leurs activités illégales.\nSengoku, apprenant la fuite hors de la prison de plusieurs criminels du niveau 6 d'Impel Down, fut d'ailleurs contre l'avis du Gouvernement Mondial de faire taire ces évasions, le Gouvernement ne voulant pas ébruiter cette affaire pour ne pas engendrer une panique monstre parmi les citoyens et garder leur image de gendarme du monde. Cela signifie en outre que les Marines ne peuvent délivrer les mandats nécessaires pour arrêter ces criminels, les laissant dans une position difficile dans laquelle la poursuite des criminels du niveau 6 implique une impossibilité d'émettre de nouvelles primes et informations les concernant.\nUne grande partie du Gouvernement Mondial semble être d'une nature sceptique et paranoïaque (du fait de leur responsabilité). Cependant, cette paranoïa, si forte fusse-t-elle, a joué en la faveur de Spandam, qui a pu \"manipuler\" le Conseil (pour servir ses intérêts).\nLe Gouvernement Mondial peut être décrit comme une instance totalitaire dans une certaine mesure, la preuve étant leurs efforts impressionnants pour s'assurer le maintien au pouvoir, impliquant même l'élimination de potentiels figures qui pourraient les concurrencer."
+        },
+        {
+          "idx": "1.1",
+          "titre": "Vue d'ensemble",
+          "niveau": 3,
+          "ancre": "Vue_d'ensemble",
+          "texte": "Le Gouvernement Mondial, une organisation politique royale qui est comparable à un empire et une superpuissance géopolitique, est dirigé par une institution de cinq personnes, des sages, nommée « Conseil des Cinq Doyens », qui a toute autorité, bien qu'intervenant peu dans le manga. Sous ce Conseil, on estime qu’environ cent soixante-dix pays font partie du Gouvernement. Les lois concernant le pouvoir politique que ce Conseil a décrétées nous montrent l'existence d'un système puissant ayant pour but la préservation de la paix mais également une perversion latente, où une partie de cette institution est totalement corrompue. Souvent, quand une situation dangereuse se profile, pour sauver les apparences, les dirigeants du Conseil décident d'appliquer des moyens radicaux afin de lâchement étouffer toute vérité dérangeante dans l'intérêt de maintenir leur autorité suprême et de poursuivre leur politique mondiale.\nLes Dragons Célestes sont des nobles puissants formant l'aristocratie royale de très haut rang (la Noblesse mondiale), étant les descendants des 20 rois qui bâtirent une gigantesque Organisation il y a 800 ans qui dirige aujourd'hui la planète et ont ainsi instauré un ordre mondial. Par la suite, dix-neuf des 20 familles royales fondatrices ont quitté leur pays d'origine pour s'installer sur la \"terre sainte de Marie-Joie\", confiant par conséquent la direction de leur pays à de nouveaux souverains. Ce statut est considéré comme \"sacré\" et en jouissent depuis 800 ans, ce qui leur permet de régner sur le monde et d'abuser largement de leur position en toute impunité. Ils sont dotés d'une fortune inestimable mais sont aussi réputés pour égocentrisme, égoïsme et cruauté, appliquant des pratiques et attitudes immorales telles que l'esclavage, le racisme ou l'eugénisme qu'ils revendiquent comme des droits légitimes.\nLeur égocentrisme est tel qu'ils portent des bulles de résine comme masque pour éviter de respirer selon eux l'air de la plèbe, méprisant sans vergogne toute personne n'appartenant à leur rang. Ils injectent d'ailleurs des tranquillisants aux esclaves et leur font porter en plus un collier explosif pour les empêcher de fuir. Ils bénéficient aussi de privilèges exorbitants (par exemple, la Marine envoie une expédition punitive menée par un Amiral en cas d'agression d'un Noble mondial) et d'une influence politique considérable, pouvant faire plier n'importe qui à leurs exigences et envies. La Marine doit ainsi tolérer les activités scandaleuses des Dragons Célestes comme l'esclavage, malgré l'interdiction de certaines lois officielles. Leur statut et importance est telle que le royaume de Goa n'a pas hésité à incendier un immense bidonville (résidents inclus) en vue de la visite de l'un des Nobles mondiaux dans leur royaume.\nQuelques fonctionnaires composent aussi l'Organisation de ce Gouvernement et occupent un rôle de conseiller.\nLe Gouvernement mondial organise aussi un Conseil des Rois appelé \"Rêverie\" entre les différents royaumes du monde tous les quatre ans dans la cité Marie-Joie. Les autres royaumes existants sont invités à siéger dans l'Organisation politique lors de cette assemblée mondiale. Ces réunions apportent aussi un soutien politique à ces pays de la part du Gouvernement mondial, qui ne supporte pas le rejet d'une invitation de la part d'un pays qui refuserait d'entrer dans cette alliance politique. Rejoindre l'Organisation signifie conserver une certaine souveraineté en échange d'une présence d'interventions de la Marine dans certains cas. Ils abordent bien sûr lors de ces réunions les problèmes internationaux comme la piraterie ou les révolutionnaires afin de prendre des dispositions de sécurité nécessaires.\nLa Marine est, quant à elle, le bras armé du Gouvernement Mondial. Elle suit une hiérarchie stricte, mais pourtant simple, car elle est calquée sur le monde militaire tel que nous le connaissons. Au sommet de la hiérarchie se trouve le Chef d'État Major des armées, l'Amiral Commandant, les Amiraux. Viennent ensuite les Vice-Amiraux, Contre-Amiraux, Colonels, Capitaines, Lieutenants, Sergent-Chefs, Sergents et Matelots (voir à cette effet les Grades de la Marine).\nElle suit aussi un code de conduite: « la Justice Absolue ». Sa mission est de protéger les populations des pirates, mais également de veiller aux intérêts du Gouvernement Mondial lorsqu'il s'agit de poursuivre les criminels en tout genre (ex: fugitifs ou renégats) qui violent les lois mais cela implique aussi les arrestations de civils accusés de crimes, c'est-à-dire tous ceux qui s'opposent en se rebellant à ce pouvoir politique. En effet, même ceux qui refusent purement et simplement de reconnaître cette autorité deviennent automatiquement des ennemis du Gouvernement car refuser sa tutelle est un considéré comme un délit. Toutefois, le principal problème dans la Marine est la diversité des conceptions de la Justice. Les membres du Gouvernement penchent soit pour une Justice morale soit pour une Justice absolue.\nLe Gouvernement est composé de plusieurs autres organismes affiliés outre la Marine :\nL’incessante lutte entre les pirates et la Marine a conduit cette dernière à fixer des primes sur la tête des pirates les plus recherchés. Ces dernières peuvent aller de quelques Berry à plus d'un milliard pour les pirates les plus dangereux. Cette notion de prime permet d’établir un certain rapport de force entre les pirates. L'instauration de ce système de primes est allée de pair avec l'arrivée de chasseurs de primes – des civils pourchassant les pirates pour obtenir l'argent de la prime. Certains lieux comme l’île de Whiskey Peak ou l’archipel Sabaody regorgent ce type de personnes; on peut aussi noter que c'était l'activité de Roronoa Zoro ou de Cutty Flam avant de devenir pirate.\nLe Gouvernement est souvent vu comme un régime totalitaire en ce sens qu'il ne lésine pas sur les moyens pour lutter contre les pirates ou tout autre opposant, recourant même à l'assassinat ou au génocide d'une population dans le cas d'Ohara. Ces moyens sont souvent utilisés par les membres corrompus de la Marine et du Cipher Pol. Leur système manifeste aussi une paranoïa et crainte d'une possible perdition de leur pouvoir, ne tolérant aucune opposition, utilisant des procédés peu scrupuleux pour éliminer ces rivaux: mensonge, manipulation, élimination (par l'envoi du CP9), censure et trahison ne sont que quelques exemples de ces procédés.\nIls considèrent cela comme un mal nécessaire pour préserver la paix dans le monde afin d'éviter à tout prix qu'un chaos ne s'installe, étant effrayés par les conséquences qui peuvent en découler et s'assurent ainsi une emprise sur les royaumes et les populations du monde. Mais leurs actions conduisent parfois à des dommages collatéraux (se traduisant par la mort d'innocents...). Ces agissements ont souvent mené des personnes à réagir avec dégoût et mépris à ces agissements, désobéissant à leur autorité. Le Gouvernement Mondial souhaiterait aussi posséder une des Armes Antiques pour mettre un point final à la grande vague de piraterie. Il a aussi des projets militaires qui se développent depuis des siècles comme la création d'une armée de soldats géants.\nDepuis deux ans, une nouvelle Rêverie s'organise de nouveau, le Gouvernement Mondial ayant déclaré à la Marine que des changements au sein de la Marine vont s'opérer dans les mois à venir. Cette restructuration est motivée par le souci de concurrencer l'autorité des Quatre Empereurs qui règnent en maître absolu sur les mers du Nouveau Monde. Mais récemment, avec l'avènement du nouvel Amiral en Chef Sakazuki (Akainu), la Marine a renforcé sa position dans cette partie de Grand Line grâce à des moyens militaires nouveaux et colossaux: de nouvelles armes innovantes, une intensité accrue des combats dans le Nouveau Monde et un nouveau Quartier Général qui a changé d'emplacement, avec pour finir un projet militaire à grande échelle visant à recruter de nouveaux Amiraux. Depuis le départ de Sengoku, de Monkey D. Garp et de Kuzan (Aokiji), la Marine a augmenté sa puissance offensive en intégrant deux nouveaux Amiraux: Fujitora et Ryokugyu.\nLes unités Cipher Pol, chargées de l’espionnage et du renseignement. Il y a huit groupes (allant du CP1 jusqu'au CP8), plus un neuvième (le CP9) et une unité succursale, le CP0, dont l'existence sont tenues secrète car obéissant aux plus hautes instances dirigeantes. Elles seront largement impliquées dans toute la saga Water Seven.\nLes juges d'Enies Lobby et les gardiens de la prison d'Impel Down.\nLa division scientifique, d’où viendrait le Docteur Vegapunk."
+        },
+        {
+          "idx": "2",
+          "titre": "Culture",
+          "niveau": 2,
+          "ancre": "Culture",
+          "texte": "Le Gouvernement Mondial a un thème religieux et saint dès lors que sa capitale, Marie-Joie, est connue sous le nom de \"la Terre Sainte\". Elle comprend le lieu de résidence du Conseil des 5 Étoiles, nommé le Sanctuaire. De plus, les Nobles qui y habitent ont le nom « Saint » comme nom de famille. Impel Down, la plus grande prison du monde, rattachée à Marie-Joie, semble être basée sur la \"Divine Comédie\" (l'enfer de Dante), qui est de canon catholique."
+        },
+        {
+          "idx": "3.1",
+          "titre": "Le Siècle Manquant",
+          "niveau": 3,
+          "ancre": "Le_Siècle_Manquant",
+          "texte": "On ne sait pas grand chose, voire presque rien, sur le sujet. Le professeur Clover d'Ohara a dévoilé une partie des résultats de ses recherches sur la quastion lors d'une conversation escargophonique avec le Conseil, mais fut abattu par Spandine sous ordre des Sages, l'archéologue en savait beaucoup trop. Tous ceux qui tentent de découvrir la vérité sur ce blanc dans l'histoire ont tous été tués par le Gouvernement, du coup personne, ou presque, n'ose chercher à savoir ce qui s'est réellement passé. On dit que pour découvrir cette partie de l'histoire, il faut savoir déchiffrer les Ponéglyphes. Le rêve de Nico Robin est d'ailleurs de trouver ce qui s'est passé pendant ce siècle. Nous savons également que Rayleigh sait, totalement ou en partie, ce qui s'est passé en réalité, ainsi que les autres membres de l'Équipage des Pirates Roger."
+        },
+        {
+          "idx": "3.2",
+          "titre": "Buster Call",
+          "niveau": 3,
+          "ancre": "Buster_Call",
+          "texte": "Le Buster Call est une attaque militaire considérée comme la plus puissante de la Marine. Seul un Amiral peut le déclencher, avec son escargophone doré. C'est une flotte constituée de 10 navires de guerre de la Marine qui sont tous commandés par 5 vice-amiraux, sans oublier l'Amiral qui déclenche l'attaque. C'est donc une force de frappe destructrice qui a pour mission de ravager une île entière (ses habitants compris) en quelques minutes. Suite au Buster Call d'Ohara qui a causé l'anéantissement total de l'île, il est devenu le pire cauchemar de Robin. Aokiji s'en servira notamment comme moyen de pression pour qu'elle se livre à la Marine, car jusqu'à présent chaque organisation dont elle a fait partie a été détruite et les membres arrêtés, sauf elle. Le Buster Call d'Enies Lobby sera causé accidentellement par Spandam, détruisant ainsi entièrement l'île de la Justice."
+        },
+        {
+          "idx": "3.3",
+          "titre": "Un pouvoir trop dangereux pour l'humanité",
+          "niveau": 3,
+          "ancre": "Un_pouvoir_trop_dangereux_pour_l'humanité",
+          "texte": "Avant la naissance de Sanji, soit il y a plus de vingt-et-un ans, le Gouvernement Mondial arrêta Vegapunk car il avait découvert, avec Vinsmoke Judge, comment créer artificiellement la vie et donc le Clonage. Le gouvernement considérait cet aboutissement d'une longue recherche comme trop dangereux pour l'humanité."
+        },
+        {
+          "idx": "3.4",
+          "titre": "La Mission du Cipher Pol N°9 et la Conspiration de Spandam",
+          "niveau": 3,
+          "ancre": "La_Mission_du_Cipher_Pol_N°9_et_la_Conspiration_de_Spandam",
+          "texte": "Le Conseil des 5 Étoiles avait chargé le commandant Spandam, chef du CP9, de récupérer les plans de Pluton, l'Arme Antique, afin de pouvoir mettre un terme à la vague de piraterie lancée par Gol D. Roger le jour de son exécution. Spandam arriva sur Water Seven afin de récupérer ces plans qu'il savait entre les mains de Tom, le légendaire constructeur de navires. Il pensa utiliser le fait que Tom ait construit l'Oro Jackson comme moyen de pression pour obtenir ces plans, mais le constructeur naval lui dît que le Gouvernement était déjà au courant depuis 14 ans; il se résigna à partir. N'ayant pas abandonné pour autant, il revint deux ou trois jours plus tard, le jour de l'acquittement de Tom. Ses hommes prirent le contrôle des Battle Frankys de Franky qui étaient entreposés dans le cimetière de navires, et les lancèrent contre le navire judiciaire où avait lieu le procès de Tom. Pour sauver Icebarg et Franky suspectés eux-aussi d'avoir attaqué le navire, il se sacrifia pour eux. Tom ayant déjà confié les plans à Icebarg, Spandam ne put les récupérer, après s'être, au passage, fait défiguré le visage par un Franky complètement hors de lui."
+        },
+        {
+          "idx": "3.5",
+          "titre": "Une menace nommée Dragon",
+          "niveau": 3,
+          "ancre": "Une_menace_nommée_Dragon",
+          "texte": "Il y a 6 ans, Monkey D. Dragon a commencé à éveiller la menace d'une rébellion contre le Gouvernement Mondial. Le Conseil des Rois eut lieu à ce moment-là pour discuter de ces actions. Six ans plus tard, un certain nombre de royaumes se sont ralliés à leur cause et cela affaiblit d'autant plus le Gouvernement Mondial."
+        },
+        {
+          "idx": "4.1",
+          "titre": "Passé",
+          "niveau": 3,
+          "ancre": "Passé",
+          "texte": "Il y a soixante-deux ans, le royaume d’Esperia, incapable de payer le Tribut Céleste exigé par le Gouvernement Mondial pour conserver son statut de nation affiliée, se vit proposer de fournir à la place des milliers d’esclaves à Mary Geoise. Cependant, le roi Louvain refusa cette offre. Deux mois plus tard, le Gouvernement Mondial et la Marine lancèrent une attaque contre l’île."
+        },
+        {
+          "idx": "4.2",
+          "titre": "Arc Romance Down",
+          "niveau": 3,
+          "ancre": "Arc_Romance_Down",
+          "texte": "Les soldats de la Marine laissèrent Luffy et Zoro libres pour les remercier d'avoir vaincu le Colonel Morgan qui tyrannisait ses propres soldats."
+        },
+        {
+          "idx": "4.3",
+          "titre": "Arc Baratie",
+          "niveau": 3,
+          "ancre": "Arc_Baratie",
+          "texte": "Le lieutenant de la Marine Fullbody tira un boulet sur le Vogue Merry que Luffy renvoya mais qui atterrit malencontreusement sur le Baratie. Plus tard, Fullbody se fera massacrer par Sanji car il avait gâché la soupe qu'il lui avait servie. Il transportait à bord de son navire le second de l'armada du terrible Capitaine Krieg : Gyn.\nAprès cet événement, le Capitaine Corsaire Mihawk, qui pourchassait Krieg, détruisit ce qui restait du galion de ce dernier puis affronta Roronoa Zoro."
+        },
+        {
+          "idx": "4.4",
+          "titre": "Arc Arlong",
+          "niveau": 3,
+          "ancre": "Arc_Arlong",
+          "texte": "Peu avant le dernier retour de Nami à Arlong Park, Arlong paya le colonel Nezumi afin qu'il trouve et prenne le trésor de Nami. Après la victoire de Monkey D Luffy face à Arlong, le Gouvernement Mondial le considéra comme un élément dangereux et lui donna une prime de 30 000 000. C'est surtout dû au fait que le colonel Nezumi fut furieux contre Luffy après qu'il se soit fait attaquer par Zoro et Nami après avoir tenté de s'attribuer tout le mérite de la défaite des hommes-poissons; et que pour se venger, il avertit le Quartier Général de la Marine de la présence d'un nouveau pirate extrêmement dangereux."
+        },
+        {
+          "idx": "4.5",
+          "titre": "Arc Royaume de Drum",
+          "niveau": 3,
+          "ancre": "Arc_Royaume_de_Drum",
+          "texte": "Après que Monkey D. Luffy ait repris le dessus lors de sa bataille contre Wapol, ce dernier lui expliqua que le royaume de Drum siège au gouvernement mondial et qu'en l'attaquant il commet un crime. Mais Luffy se contreficha de cette menace et le propulsa hors de l'île."
+        },
+        {
+          "idx": "4.6",
+          "titre": "Arc Alabasta",
+          "niveau": 3,
+          "ancre": "Arc_Alabasta",
+          "texte": "Après l'incident d'Alabasta, le Gouvernement Mondial décida de dire à tout le monde que le royaume a été sauvé par les soldats de la marine alors qu'eux-même savaient tout du complot de Crocodile. Ils décidèrent d'attribuer le mérite au colonel Smoker en lui offrant une promotion (devenant ainsi Contre-Amiral). Smoker, au courant de la vérité, refusa, au grand dam de ses supérieurs de la Marine qui insista. Mais il tint bon et leur répliqua sèchement qu'il ne voulait pas de cette promotion. Il fut tout de même nommé Contre-Amiral, ce qui eut le don de l'agacer au plus au point.\nCrocodile fut destitué de son titre de Grand Corsaire ainsi que de ses privilèges et fut incarcéré dans un pénitencier de la Marine, avant d'être transféré plus tard à Impel Down avec ses collaborateurs Mr. 1, Mr. 2 et Mr. 3.\nLe Gouvernement prit la défaite d'un Grand Corsaire très au sérieux et de ce fait, la prime sur la tête de Luffy monta à 100 000 000 et celle de Zoro fut mise à prix à 60 000 000 grâce à sa victoire contre Daz Bones alias Mr. 1."
+        },
+        {
+          "idx": "4.7",
+          "titre": "Arc Jaya",
+          "niveau": 3,
+          "ancre": "Arc_Jaya",
+          "texte": "Les hautes sphères du Gouvernement sont au bord de la panique en apprenant que Shanks souhaite entrer en contact avec Barbe Blanche, et chargent la Marine de faire en sorte que les deux Empereurs ne se rencontrent pas, craignant une possible alliance qui ferait d'eux une menace sans précédente. Il est également question lors d'une réunion gouvernementale de trouver un remplaçant à Crocodile afin d'éviter la fragilisation des Trois Grands Pouvoirs; réunion à laquelle les sept Capitaines Corsaires sont convoqués, mais dont trois seulement répondent à l'appel. Il s'agit de Bartholomew Kuma, Don Quichotte Doflamingo et de Mihawk. Laffitte s'invite à cette réunion et apparaît soudainement afin de proposer Barbe Noire comme candidat à la place vacante de Corsaire."
+        },
+        {
+          "idx": "4.8",
+          "titre": "Arc Davy Back Fight",
+          "niveau": 3,
+          "ancre": "Arc_Davy_Back_Fight",
+          "texte": "Le Quartier Général de la Marine commence à s'inquiéter lorsqu'il apprend que l'Amiral Aokiji est parti faire une balade à vélo. Ils contactent le Conseil des 5 Étoiles qui se plaignit du manque de sérieux de cet officier de la Marine, qui pourtant est un des hommes les plus puissants de l'organisation."
+        },
+        {
+          "idx": "4.9",
+          "titre": "Arc Water Seven",
+          "niveau": 3,
+          "ancre": "Arc_Water_Seven",
+          "texte": "Le CP9 capture Nico Robin et fait pression sur Icebarg afin de mettre la main sur les plans de Pluton. Ils reçoivent ensuite l'ordre d'assassiner le maire et de brûler le siège social de Galley-La Company afin d'éliminer toutes preuves de leur passage et de faire porter le chapeau à l'équipage de Luffy. Ils parviennent également à capturer Franky qui est en possession de ces fameux plans tant convoités."
+        },
+        {
+          "idx": "4.10",
+          "titre": "Arc Enies Lobby",
+          "niveau": 3,
+          "ancre": "Arc_Enies_Lobby",
+          "texte": "L'équipage de Luffy arrive sur l'île judiciaire afin de sauver Robin. Sur les lieux de l'attaque, Usopp se présente sous l'apparence du \"Sogeking\" et brûle le drapeau du Gouvernement Mondial sous l'ordre de Monkey D. Luffy, devant tous les soldats et agents du gouvernement. Ce geste est interprété comme une déclaration de guerre. Après la défaite du CP9, les pirates fuient l'île en proie à l'attaque du Buster Call."
+        },
+        {
+          "idx": "4.11",
+          "titre": "Arc Post-Enies Lobby",
+          "niveau": 3,
+          "ancre": "Arc_Post-Enies_Lobby",
+          "texte": "Après leur passage sur Enies Lobby, le Gouvernement considère l'équipage au Chapeau de Paille comme une très grande menace pour la stabilité du monde. Ils donnent une version censurée et altérée des événements au public, blâmant les pirates et les rendant responsables de la destruction totale de l'île. Après quoi, la prime de Luffy atteint les 300,000,000, celle de Zoro les 120,000,000 et celle de Robin les 80,000,000. Les autres membres de l'équipage reçoivent quant à eux leur première prime."
+        },
+        {
+          "idx": "4.12",
+          "titre": "Arc Thriller Bark",
+          "niveau": 3,
+          "ancre": "Arc_Thriller_Bark",
+          "texte": "Après l'incident de Banaro, Barbe Noire est nommé Capitaine Corsaire.\nL'un des Corsaires, Gecko Moria, contrôle l'île fantôme de Thriller Bark. Le Gouvernement Mondial, au courant de l'intention des pirates de se rendre sur l'île des Hommes-Poissons, envoie Bartholomew Kuma sur l'île après la défaite de Moria afin d'éradiquer tous ceux présents sur Thriller Bark, pour que la défaite du Corsaire reste secrète."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "flash-bomb",
+      "name": "Flash Bomb",
+      "type": "artifact",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Bombe Lumineuse",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Bombe_Lumineuse",
+      "refus": null,
+      "descFr_len": 493,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "car": 174
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 3,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 174,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Anecdotes",
+          "niveau": 2,
+          "ancre": "Anecdotes",
+          "texte": "Les bombes lumières sont des armes très appréciées du clan Nara, étant donné qu'ils peuvent les utiliser pour temporairement augmenter la taille et la portée de leurs ombres."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "senbonzakura",
+      "name": "Senbonzakura",
+      "type": "character",
+      "universe": "Bleach",
+      "route": "titre-exact",
+      "titreFr": "Senbonzakura (Esprit Zanpakutō)",
+      "identite": "meme-nom",
+      "url": "https://bleach.fandom.com/fr/wiki/Senbonzakura_(Esprit_Zanpakut%C5%8D)",
+      "refus": "parenthèse de désambiguïsation",
+      "descFr_len": 636,
+      "etat": "refus"
+    },
+    {
+      "slug": "new-world",
+      "name": "Nouveau Monde",
+      "type": "place",
+      "universe": "One Piece",
+      "route": "titre-exact",
+      "titreFr": "Grand Line/Nouveau Monde",
+      "identite": "meme-nom",
+      "url": "https://onepiece.fandom.com/fr/wiki/Grand_Line%2FNouveau_Monde",
+      "refus": "titre enrichi non attesté (grand, line)",
+      "descFr_len": 322,
+      "etat": "refus"
+    },
+    {
+      "slug": "sound-wave-technique",
+      "name": "Sound Wave Technique",
+      "type": "power",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Technique de la Vague de Son",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Technique_de_la_Vague_de_Son",
+      "refus": null,
+      "descFr_len": 417,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 0,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "hokage-s-assistant",
+      "name": "Hokage's Assistant",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "vegeta-ssj",
+      "name": "Vegeta SSJ",
+      "type": "skill",
+      "universe": "Dragon Ball",
+      "route": "recherche-fr",
+      "titreFr": "Vegeta",
+      "identite": "meme-nom",
+      "url": "https://dragonball.fandom.com/fr/wiki/Vegeta",
+      "refus": "page plus générale — page plus générale que l'entité : « Vegeta » ne couvre pas « Vegeta SSJ »",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "ninja-monk",
+      "name": "Ninja monk",
+      "type": "status",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Moine Ninja",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Moine_Ninja",
+      "refus": null,
+      "descFr_len": 426,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 1,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "scissor-pincers",
+      "name": "Scissor Pincers",
+      "type": "artifact",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Pinces Tranchantes",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Pinces_Tranchantes",
+      "refus": null,
+      "descFr_len": 349,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 0,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "riichi",
+      "name": "Riichi",
+      "type": "character",
+      "universe": "Naruto",
+      "route": "titre-exact",
+      "titreFr": "Riichi",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/Riichi",
+      "refus": null,
+      "descFr_len": 485,
+      "sections_brutes": [
+        {
+          "idx": "1",
+          "titre": "Apparence",
+          "car": 253
+        }
+      ],
+      "decoupe": {
+        "bornes_trouvees": 4,
+        "intertitres_declares": 3,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 1,
+      "caracteres": 253,
+      "sections": [
+        {
+          "idx": "1",
+          "titre": "Apparence",
+          "niveau": 2,
+          "ancre": "Apparence",
+          "texte": "Riichi a de longs cheveux bruns qu'il garde en queue de cheval et des petits yeux noirs. Il porte un grand chapeau vert aplati sur ​​sa tête. « Haku Hatsu Chun » (白発中), les noms des trois tuiles de dragons dans le jeu Mahjong, sont écrits sur son front."
+        }
+      ],
+      "etat": "candidat"
+    },
+    {
+      "slug": "land-of-sound",
+      "name": "Pays du Son",
+      "type": "place",
+      "universe": "Naruto",
+      "route": "titre-exact",
+      "titreFr": "Pays du Son",
+      "identite": "titre-egal",
+      "url": "https://naruto.fandom.com/fr/wiki/Pays_du_Son",
+      "refus": null,
+      "descFr_len": 457,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 2,
+        "intertitres_declares": 1,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "rupture",
+      "name": "Rupture",
+      "type": "power",
+      "universe": "Naruto",
+      "route": "langlink",
+      "titreFr": "Lacération",
+      "identite": "pont-interlangue-symetrique",
+      "url": "https://naruto.fandom.com/fr/wiki/Lac%C3%A9ration",
+      "refus": null,
+      "descFr_len": 164,
+      "sections_brutes": [],
+      "decoupe": {
+        "bornes_trouvees": 1,
+        "intertitres_declares": 0,
+        "manques": []
+      },
+      "retirees_pour_redondance": [],
+      "contradictions": [],
+      "retenues": 0,
+      "caracteres": 0,
+      "sections": [],
+      "etat": "page sans prose exploitable"
+    },
+    {
+      "slug": "accountant",
+      "name": "Accountant",
+      "type": "profession",
+      "universe": "Naruto",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    },
+    {
+      "slug": "semi-perfect-form",
+      "name": "Semi Perfect Form",
+      "type": "skill",
+      "universe": "Dragon Ball",
+      "route": null,
+      "titreFr": null,
+      "identite": null,
+      "url": null,
+      "refus": "sans page FR",
+      "descFr_len": 0,
+      "etat": "refus"
+    }
+  ]
+}
