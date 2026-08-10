@@ -69,6 +69,15 @@ const nextConfig = {
       { source: '/learn/akasha/ile-des-animaux-etranges', destination: '/learn/akasha/island-of-rare-animals', permanent: true },
       { source: '/learn/akasha/pays-des-wa', destination: '/learn/akasha/wano', permanent: true },
       { source: '/learn/akasha/zo', destination: '/learn/akasha/zou', permanent: true },
+      // 09/08/2026 — quatre fusions tranchées à la main (scripts/ops-fusionner-doublons.mjs,
+      // trace : data/audits/fusion-doublons-trace.json). Ces redirections MANQUAIENT au moment de
+      // la fusion : mesuré en prod le 10/08, /learn/akasha/pays-des-fleurs rendait un « introuvable »
+      // en HTTP 200. Supprimer une fiche sans reposer son adresse, c'est fabriquer un lien mort —
+      // la convention existait dix lignes plus haut, je ne l'ai pas suivie.
+      { source: '/learn/akasha/pays-des-fleurs', destination: '/learn/akasha/kano-country', permanent: true },
+      { source: '/learn/akasha/jet-skis', destination: '/learn/akasha/waver', permanent: true },
+      { source: '/learn/akasha/juushirou-ukitake', destination: '/learn/akasha/jushiro-ukitake', permanent: true },
+      { source: '/learn/akasha/shunsui-jirou-sakuranosuke-kyouraku', destination: '/learn/akasha/shunsui-kyoraku', permanent: true },
       // 08/08/2026 — LOT 3d, doublon de personnage Bleach fusionné (scripts/akasha-lot3d-corrections.mjs,
       // data/audits/lot3d-corrections-trace.json). Gotei 13/Nelliel étaient les deux dédoublonnages
       // demandés ; Gotei 13 l.54 ci-dessus était déjà fait, seul Nelliel restait.
