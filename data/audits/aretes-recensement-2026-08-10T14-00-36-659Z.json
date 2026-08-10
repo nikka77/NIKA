@@ -1,0 +1,502 @@
+{
+  "mesureLe": "2026-08-10T14:00:36.660Z",
+  "totalEntrees": 7654,
+  "totalAretes": 16910,
+  "orphelines": {
+    "from": 0,
+    "to": 0
+  },
+  "parNature": {
+    "maitrise": 5113,
+    "appartient": 4347,
+    "allie": 1482,
+    "habite": 1456,
+    "ennemi": 1432,
+    "famille": 1188,
+    "possede": 710,
+    "exerce": 649,
+    "mentor": 253,
+    "rival": 192,
+    "eleve": 50,
+    "jumeau": 12,
+    "ange": 10,
+    "dieu_destruction": 8,
+    "kaio_shin": 8
+  },
+  "croise": [
+    {
+      "relation": "maitrise",
+      "typeSource": "character",
+      "typeCible": "power",
+      "n": 4732
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "character",
+      "typeCible": "status",
+      "n": 2001
+    },
+    {
+      "relation": "habite",
+      "typeSource": "character",
+      "typeCible": "place",
+      "n": 1440
+    },
+    {
+      "relation": "allie",
+      "typeSource": "character",
+      "typeCible": "character",
+      "n": 1335
+    },
+    {
+      "relation": "ennemi",
+      "typeSource": "character",
+      "typeCible": "character",
+      "n": 1334
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "character",
+      "typeCible": "character",
+      "n": 1198
+    },
+    {
+      "relation": "famille",
+      "typeSource": "character",
+      "typeCible": "character",
+      "n": 1050
+    },
+    {
+      "relation": "possede",
+      "typeSource": "character",
+      "typeCible": "artifact",
+      "n": 690
+    },
+    {
+      "relation": "exerce",
+      "typeSource": "character",
+      "typeCible": "profession",
+      "n": 616
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "character",
+      "typeCible": "place",
+      "n": 448
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "power",
+      "typeCible": "power",
+      "n": 283
+    },
+    {
+      "relation": "mentor",
+      "typeSource": "character",
+      "typeCible": "character",
+      "n": 250
+    },
+    {
+      "relation": "rival",
+      "typeSource": "character",
+      "typeCible": "character",
+      "n": 192
+    },
+    {
+      "relation": "maitrise",
+      "typeSource": "character",
+      "typeCible": "skill",
+      "n": 185
+    },
+    {
+      "relation": "maitrise",
+      "typeSource": "status",
+      "typeCible": "power",
+      "n": 173
+    },
+    {
+      "relation": "famille",
+      "typeSource": "skill",
+      "typeCible": "character",
+      "n": 112
+    },
+    {
+      "relation": "allie",
+      "typeSource": "character",
+      "typeCible": "status",
+      "n": 106
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "place",
+      "typeCible": "place",
+      "n": 100
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "status",
+      "typeCible": "place",
+      "n": 90
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "artifact",
+      "typeCible": "status",
+      "n": 83
+    },
+    {
+      "relation": "ennemi",
+      "typeSource": "character",
+      "typeCible": "status",
+      "n": 79
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "character",
+      "typeCible": "profession",
+      "n": 54
+    },
+    {
+      "relation": "eleve",
+      "typeSource": "character",
+      "typeCible": "character",
+      "n": 50
+    },
+    {
+      "relation": "exerce",
+      "typeSource": "character",
+      "typeCible": "status",
+      "n": 28
+    },
+    {
+      "relation": "allie",
+      "typeSource": "character",
+      "typeCible": "place",
+      "n": 19
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "artifact",
+      "typeCible": "artifact",
+      "n": 19
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "place",
+      "typeCible": "status",
+      "n": 17
+    },
+    {
+      "relation": "allie",
+      "typeSource": "character",
+      "typeCible": "artifact",
+      "n": 16
+    },
+    {
+      "relation": "possede",
+      "typeSource": "character",
+      "typeCible": "character",
+      "n": 15
+    },
+    {
+      "relation": "jumeau",
+      "typeSource": "place",
+      "typeCible": "place",
+      "n": 12
+    },
+    {
+      "relation": "famille",
+      "typeSource": "character",
+      "typeCible": "status",
+      "n": 11
+    },
+    {
+      "relation": "ennemi",
+      "typeSource": "character",
+      "typeCible": "place",
+      "n": 10
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "profession",
+      "typeCible": "place",
+      "n": 10
+    },
+    {
+      "relation": "ange",
+      "typeSource": "place",
+      "typeCible": "character",
+      "n": 10
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "artifact",
+      "typeCible": "place",
+      "n": 9
+    },
+    {
+      "relation": "dieu_destruction",
+      "typeSource": "place",
+      "typeCible": "character",
+      "n": 8
+    },
+    {
+      "relation": "kaio_shin",
+      "typeSource": "place",
+      "typeCible": "character",
+      "n": 8
+    },
+    {
+      "relation": "maitrise",
+      "typeSource": "skill",
+      "typeCible": "character",
+      "n": 7
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "status",
+      "typeCible": "status",
+      "n": 7
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "power",
+      "typeCible": "place",
+      "n": 6
+    },
+    {
+      "relation": "maitrise",
+      "typeSource": "character",
+      "typeCible": "artifact",
+      "n": 5
+    },
+    {
+      "relation": "famille",
+      "typeSource": "profession",
+      "typeCible": "character",
+      "n": 5
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "character",
+      "typeCible": "artifact",
+      "n": 5
+    },
+    {
+      "relation": "habite",
+      "typeSource": "character",
+      "typeCible": "status",
+      "n": 5
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "power",
+      "typeCible": "status",
+      "n": 5
+    },
+    {
+      "relation": "maitrise",
+      "typeSource": "status",
+      "typeCible": "skill",
+      "n": 5
+    },
+    {
+      "relation": "allie",
+      "typeSource": "character",
+      "typeCible": "power",
+      "n": 4
+    },
+    {
+      "relation": "ennemi",
+      "typeSource": "character",
+      "typeCible": "skill",
+      "n": 4
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "profession",
+      "typeCible": "status",
+      "n": 4
+    },
+    {
+      "relation": "famille",
+      "typeSource": "artifact",
+      "typeCible": "character",
+      "n": 3
+    },
+    {
+      "relation": "maitrise",
+      "typeSource": "character",
+      "typeCible": "character",
+      "n": 3
+    },
+    {
+      "relation": "famille",
+      "typeSource": "power",
+      "typeCible": "character",
+      "n": 3
+    },
+    {
+      "relation": "ennemi",
+      "typeSource": "character",
+      "typeCible": "power",
+      "n": 3
+    },
+    {
+      "relation": "possede",
+      "typeSource": "profession",
+      "typeCible": "artifact",
+      "n": 3
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "skill",
+      "typeCible": "skill",
+      "n": 3
+    },
+    {
+      "relation": "habite",
+      "typeSource": "power",
+      "typeCible": "place",
+      "n": 3
+    },
+    {
+      "relation": "habite",
+      "typeSource": "status",
+      "typeCible": "place",
+      "n": 3
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "skill",
+      "typeCible": "status",
+      "n": 2
+    },
+    {
+      "relation": "habite",
+      "typeSource": "skill",
+      "typeCible": "status",
+      "n": 2
+    },
+    {
+      "relation": "famille",
+      "typeSource": "character",
+      "typeCible": "artifact",
+      "n": 2
+    },
+    {
+      "relation": "famille",
+      "typeSource": "character",
+      "typeCible": "place",
+      "n": 2
+    },
+    {
+      "relation": "ennemi",
+      "typeSource": "character",
+      "typeCible": "artifact",
+      "n": 2
+    },
+    {
+      "relation": "mentor",
+      "typeSource": "character",
+      "typeCible": "status",
+      "n": 2
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "character",
+      "typeCible": "power",
+      "n": 2
+    },
+    {
+      "relation": "maitrise",
+      "typeSource": "power",
+      "typeCible": "skill",
+      "n": 2
+    },
+    {
+      "relation": "exerce",
+      "typeSource": "character",
+      "typeCible": "place",
+      "n": 2
+    },
+    {
+      "relation": "habite",
+      "typeSource": "character",
+      "typeCible": "character",
+      "n": 1
+    },
+    {
+      "relation": "mentor",
+      "typeSource": "character",
+      "typeCible": "place",
+      "n": 1
+    },
+    {
+      "relation": "exerce",
+      "typeSource": "profession",
+      "typeCible": "status",
+      "n": 1
+    },
+    {
+      "relation": "appartient",
+      "typeSource": "artifact",
+      "typeCible": "character",
+      "n": 1
+    },
+    {
+      "relation": "habite",
+      "typeSource": "place",
+      "typeCible": "place",
+      "n": 1
+    },
+    {
+      "relation": "maitrise",
+      "typeSource": "status",
+      "typeCible": "artifact",
+      "n": 1
+    },
+    {
+      "relation": "habite",
+      "typeSource": "artifact",
+      "typeCible": "place",
+      "n": 1
+    },
+    {
+      "relation": "possede",
+      "typeSource": "power",
+      "typeCible": "artifact",
+      "n": 1
+    },
+    {
+      "relation": "possede",
+      "typeSource": "status",
+      "typeCible": "artifact",
+      "n": 1
+    },
+    {
+      "relation": "allie",
+      "typeSource": "artifact",
+      "typeCible": "character",
+      "n": 1
+    },
+    {
+      "relation": "allie",
+      "typeSource": "power",
+      "typeCible": "character",
+      "n": 1
+    },
+    {
+      "relation": "exerce",
+      "typeSource": "skill",
+      "typeCible": "status",
+      "n": 1
+    },
+    {
+      "relation": "exerce",
+      "typeSource": "character",
+      "typeCible": "character",
+      "n": 1
+    }
+  ]
+}

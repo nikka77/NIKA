@@ -1,0 +1,376 @@
+{
+  "chantier": "contrôle à l'écran de l'instrument de lisibilité",
+  "quand": "2026-08-10T14:06:59.365Z",
+  "trace_mesuree": "data/audits/lisibilite-visuels-avant-2026-08-10T14-03-12-923Z.json",
+  "famille": "tous",
+  "methode": "Chromium décode l'image, la peint en `contain` sur #09152A, `getImageData` recalcule contraste maximal et couverture ; tolérance 0,35 sur le contraste et 6 points sur la couverture",
+  "compte": {
+    "echantillon": 24,
+    "testables": 24,
+    "accords": 22,
+    "desaccords": 2,
+    "taux_desaccord": 0.083
+  },
+  "lignes": [
+    {
+      "fiches": [
+        "calorie-control"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/6/6d/Akimichi_Symbol_old.svg/revision/latest/scale-to-width-down/720?cb=20090302085213",
+      "nav_contraste_max": 1.152,
+      "nav_couverture_1_5": 0,
+      "nav_couverture_2": 0,
+      "nav_definition": "810×810",
+      "sharp_contraste_max": 1.152,
+      "sharp_couverture_1_5": 0,
+      "sharp_couverture_2": 0,
+      "verdict_sharp": "illisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "earth-release-mutability"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/c/c9/Earth_Release_Mutability.png/revision/latest/scale-to-width-down/720?cb=20160114170028",
+      "nav_contraste_max": 7.523,
+      "nav_couverture_1_5": 0.3831,
+      "nav_couverture_2": 0.1907,
+      "nav_definition": "720×405",
+      "sharp_contraste_max": 7.851,
+      "sharp_couverture_1_5": 0.3886,
+      "sharp_couverture_2": 0.1948,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "arm-growth-technique"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/2/21/Victor%27s_Arm_Jutsu.png/revision/latest/scale-to-width-down/720?cb=20241029003749",
+      "nav_contraste_max": 10.197,
+      "nav_couverture_1_5": 0.6975,
+      "nav_couverture_2": 0.3866,
+      "nav_definition": "720×587",
+      "sharp_contraste_max": 10.159,
+      "sharp_couverture_1_5": 0.7041,
+      "sharp_couverture_2": 0.3919,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "tailed-beast-eight-twists"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/7/74/Bij%C5%AB_Hachimaki.png/revision/latest/scale-to-width-down/720?cb=20130815161705",
+      "nav_contraste_max": 11.592,
+      "nav_couverture_1_5": 0.9911,
+      "nav_couverture_2": 0.9581,
+      "nav_definition": "720×406",
+      "sharp_contraste_max": 11.675,
+      "sharp_couverture_1_5": 0.9915,
+      "sharp_couverture_2": 0.9595,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "ban"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/10/103124.webp?s=29f9bc4b858eec5b1a38cf68035f02a7",
+      "nav_contraste_max": 12.815,
+      "nav_couverture_1_5": 0.3751,
+      "nav_couverture_2": 0.0983,
+      "nav_definition": "225×350",
+      "sharp_contraste_max": 13.058,
+      "sharp_couverture_1_5": 0.3819,
+      "sharp_couverture_2": 0.1027,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "mutually-multiplying-explosive-tags"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/8/80/Goj%C5%8D_Kibaku_Fuda_1.png/revision/latest/scale-to-width-down/720?cb=20140918125411",
+      "nav_contraste_max": 13.976,
+      "nav_couverture_1_5": 0.4086,
+      "nav_couverture_2": 0.2466,
+      "nav_definition": "720×406",
+      "sharp_contraste_max": 14,
+      "sharp_couverture_1_5": 0.4119,
+      "sharp_couverture_2": 0.247,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "fire-release-great-fire-annihilation"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/9/95/Katon_G%C5%8Dka_Mekkyaku.png/revision/latest/scale-to-width-down/720?cb=20130725121345",
+      "nav_contraste_max": 14.258,
+      "nav_couverture_1_5": 0.9735,
+      "nav_couverture_2": 0.9471,
+      "nav_definition": "720×407",
+      "sharp_contraste_max": 14.661,
+      "sharp_couverture_1_5": 0.9805,
+      "sharp_couverture_2": 0.9536,
+      "verdict_sharp": "lisible",
+      "accord": false
+    },
+    {
+      "fiches": [
+        "cloud-style-reverse-beheading"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/7/7a/Cloud_Style_Trechery.png/revision/latest/scale-to-width-down/720?cb=20150214200408",
+      "nav_contraste_max": 15.298,
+      "nav_couverture_1_5": 0.8022,
+      "nav_couverture_2": 0.6304,
+      "nav_definition": "720×407",
+      "sharp_contraste_max": 15.298,
+      "sharp_couverture_1_5": 0.8113,
+      "sharp_couverture_2": 0.6374,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "ririn"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/5/33287.webp?s=70d50db515831e2929a3abfbdaae62b8",
+      "nav_contraste_max": 15.918,
+      "nav_couverture_1_5": 0.961,
+      "nav_couverture_2": 0.6287,
+      "nav_definition": "225×350",
+      "sharp_contraste_max": 15.865,
+      "sharp_couverture_1_5": 0.9673,
+      "sharp_couverture_2": 0.6336,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "chukichi"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/1/19/Ch%C5%ABkichi_mugshot.png",
+      "nav_contraste_max": 15.447,
+      "nav_couverture_1_5": 0.5212,
+      "nav_couverture_2": 0.4026,
+      "nav_definition": "1440×1080",
+      "sharp_contraste_max": 16.3,
+      "sharp_couverture_1_5": 0.5249,
+      "sharp_couverture_2": 0.4056,
+      "verdict_sharp": "lisible",
+      "accord": false
+    },
+    {
+      "fiches": [
+        "wind-daimyo-part-ii"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/6/6d/New_Wind_Daimyo.png",
+      "nav_contraste_max": 16.592,
+      "nav_couverture_1_5": 0.9219,
+      "nav_couverture_2": 0.9057,
+      "nav_definition": "1147×734",
+      "sharp_contraste_max": 16.647,
+      "sharp_couverture_1_5": 0.9198,
+      "sharp_couverture_2": 0.9049,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "sazanka"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/6/6a/Sazanka.png",
+      "nav_contraste_max": 16.839,
+      "nav_couverture_1_5": 0.8915,
+      "nav_couverture_2": 0.8237,
+      "nav_definition": "1440×1080",
+      "sharp_contraste_max": 16.816,
+      "sharp_couverture_1_5": 0.8951,
+      "sharp_couverture_2": 0.8281,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "emina"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/c/c7/Emina.png",
+      "nav_contraste_max": 16.807,
+      "nav_couverture_1_5": 0.7709,
+      "nav_couverture_2": 0.6622,
+      "nav_definition": "765×779",
+      "sharp_contraste_max": 16.965,
+      "sharp_couverture_1_5": 0.7722,
+      "sharp_couverture_2": 0.6635,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "dorry"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/15/596880.webp?s=f6c840bf47c491d33797386601da637f",
+      "nav_contraste_max": 16.958,
+      "nav_couverture_1_5": 0.6326,
+      "nav_couverture_2": 0.4897,
+      "nav_definition": "450×700",
+      "sharp_contraste_max": 17.16,
+      "sharp_couverture_1_5": 0.6396,
+      "sharp_couverture_2": 0.4947,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "hitode"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/d/d2/Hitode.png",
+      "nav_contraste_max": 17.383,
+      "nav_couverture_1_5": 0.9262,
+      "nav_couverture_2": 0.8264,
+      "nav_definition": "1440×1080",
+      "sharp_contraste_max": 17.392,
+      "sharp_couverture_1_5": 0.9263,
+      "sharp_couverture_2": 0.8267,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "zium"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/3/357702.webp?s=b8f17b16a192a1b33e080cd22bcc602a",
+      "nav_contraste_max": 17.709,
+      "nav_couverture_1_5": 0.29,
+      "nav_couverture_2": 0.2487,
+      "nav_definition": "225×350",
+      "sharp_contraste_max": 17.612,
+      "sharp_couverture_1_5": 0.2921,
+      "sharp_couverture_2": 0.2507,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "atk-db-cyclone-jump"
+      ],
+      "url": "https://static.wikia.nocookie.net/dragonball/images/2/21/FighterZ_-_Cyclone_Jump.png/revision/latest?cb=20250114021908",
+      "nav_contraste_max": 17.618,
+      "nav_couverture_1_5": 0.9188,
+      "nav_couverture_2": 0.8482,
+      "nav_definition": "198×230",
+      "sharp_contraste_max": 17.799,
+      "sharp_couverture_1_5": 0.9182,
+      "sharp_couverture_2": 0.8483,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "gill-bastar"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/13/598208.webp?s=4dc23f3f4b22f7f223e6dbf5bbdbb45a",
+      "nav_contraste_max": 17.984,
+      "nav_couverture_1_5": 0.7426,
+      "nav_couverture_2": 0.7174,
+      "nav_definition": "225×350",
+      "sharp_contraste_max": 17.964,
+      "sharp_couverture_1_5": 0.7498,
+      "sharp_couverture_2": 0.7213,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "karin-kurosaki"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/7/158885.webp?s=f18b6557e88d81a1548dccae7a82a202",
+      "nav_contraste_max": 18.224,
+      "nav_couverture_1_5": 0.6845,
+      "nav_couverture_2": 0.6727,
+      "nav_definition": "225×350",
+      "sharp_contraste_max": 18.114,
+      "sharp_couverture_1_5": 0.6932,
+      "sharp_couverture_2": 0.6819,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "youth-full-power"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/7/77/Youth_Full_Power.png/revision/latest/scale-to-width-down/720?cb=20160626183613",
+      "nav_contraste_max": 18.115,
+      "nav_couverture_1_5": 0.8553,
+      "nav_couverture_2": 0.772,
+      "nav_definition": "720×540",
+      "sharp_contraste_max": 18.18,
+      "sharp_couverture_1_5": 0.8581,
+      "sharp_couverture_2": 0.7748,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "black-iron-fist"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/c/c3/Iron_Fist.png/revision/latest/scale-to-width-down/720?cb=20180607113706",
+      "nav_contraste_max": 18.061,
+      "nav_couverture_1_5": 0.7901,
+      "nav_couverture_2": 0.7533,
+      "nav_definition": "720×404",
+      "sharp_contraste_max": 18.224,
+      "sharp_couverture_1_5": 0.7925,
+      "sharp_couverture_2": 0.7537,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "goat-island"
+      ],
+      "url": "https://static.wikia.nocookie.net/onepiece/images/b/b9/Goat_Island_Infobox.png/revision/latest?cb=20250117030441",
+      "nav_contraste_max": 18.224,
+      "nav_couverture_1_5": 0.9803,
+      "nav_couverture_2": 0.974,
+      "nav_definition": "1078×685",
+      "sharp_contraste_max": 18.224,
+      "sharp_couverture_1_5": 0.9842,
+      "sharp_couverture_2": 0.976,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "lil-achino"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/15/152023.webp?s=6b4138a44c7a48578102fe12016787d5",
+      "nav_contraste_max": 18.224,
+      "nav_couverture_1_5": 0.9294,
+      "nav_couverture_2": 0.8846,
+      "nav_definition": "225×350",
+      "sharp_contraste_max": 18.224,
+      "sharp_couverture_1_5": 0.9428,
+      "sharp_couverture_2": 0.8973,
+      "verdict_sharp": "lisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "ryou-utagawa"
+      ],
+      "url": "https://cdn.myanimelist.net/images/characters/11/103070.webp?s=fbbf1b32531e914577bdab5859e38bc3",
+      "nav_contraste_max": 18.224,
+      "nav_couverture_1_5": 0.7377,
+      "nav_couverture_2": 0.6618,
+      "nav_definition": "225×350",
+      "sharp_contraste_max": 18.224,
+      "sharp_couverture_1_5": 0.7454,
+      "sharp_couverture_2": 0.6741,
+      "verdict_sharp": "lisible",
+      "accord": true
+    }
+  ]
+}

@@ -1,0 +1,3775 @@
+{
+  "mesureLe": "2026-08-10T14:00:58.054Z",
+  "totaux": {
+    "fiches": 7654,
+    "sections": 19084,
+    "aretes": 16910,
+    "univers": 8,
+    "types": [
+      "artifact",
+      "character",
+      "place",
+      "power",
+      "profession",
+      "skill",
+      "status"
+    ]
+  },
+  "A_equilibre": {
+    "matrice": {
+      "Bleach": {
+        "_total": 382,
+        "artifact": 18,
+        "character": 290,
+        "place": 4,
+        "power": 63,
+        "profession": 1,
+        "skill": 1,
+        "status": 5
+      },
+      "Death Note": {
+        "_total": 84,
+        "artifact": 1,
+        "character": 74,
+        "place": 2,
+        "power": 0,
+        "profession": 1,
+        "skill": 1,
+        "status": 5
+      },
+      "Dragon Ball": {
+        "_total": 1137,
+        "artifact": 30,
+        "character": 473,
+        "place": 83,
+        "power": 504,
+        "profession": 0,
+        "skill": 45,
+        "status": 2
+      },
+      "Hunter x Hunter": {
+        "_total": 215,
+        "artifact": 0,
+        "character": 203,
+        "place": 4,
+        "power": 0,
+        "profession": 1,
+        "skill": 2,
+        "status": 5
+      },
+      "Initial D": {
+        "_total": 44,
+        "artifact": 5,
+        "character": 26,
+        "place": 6,
+        "power": 0,
+        "profession": 1,
+        "skill": 1,
+        "status": 5
+      },
+      "JoJo's Bizarre Adventure": {
+        "_total": 233,
+        "artifact": 2,
+        "character": 179,
+        "place": 3,
+        "power": 44,
+        "profession": 0,
+        "skill": 1,
+        "status": 4
+      },
+      "Naruto": {
+        "_total": 3330,
+        "artifact": 190,
+        "character": 1337,
+        "place": 58,
+        "power": 1439,
+        "profession": 94,
+        "skill": 18,
+        "status": 194
+      },
+      "One Piece": {
+        "_total": 2229,
+        "artifact": 154,
+        "character": 1449,
+        "place": 192,
+        "power": 309,
+        "profession": 1,
+        "skill": 11,
+        "status": 113
+      }
+    },
+    "casesVides": [
+      {
+        "universe": "Death Note",
+        "type": "power",
+        "totalUnivers": 84
+      },
+      {
+        "universe": "Dragon Ball",
+        "type": "profession",
+        "totalUnivers": 1137
+      },
+      {
+        "universe": "Hunter x Hunter",
+        "type": "artifact",
+        "totalUnivers": 215
+      },
+      {
+        "universe": "Hunter x Hunter",
+        "type": "power",
+        "totalUnivers": 215
+      },
+      {
+        "universe": "Initial D",
+        "type": "power",
+        "totalUnivers": 44
+      },
+      {
+        "universe": "JoJo's Bizarre Adventure",
+        "type": "profession",
+        "totalUnivers": 233
+      }
+    ],
+    "categories": {
+      "Naruto": {
+        "Arme & outil": 190,
+        "Jutsu": 1408,
+        "Organisation": 145,
+        "Métier": 94,
+        "Clan": 31,
+        "Village": 23,
+        "Classification": 16,
+        "Lieu": 16,
+        "Pays": 19,
+        "Nature de chakra": 31,
+        "Kekkei genkai": 15,
+        "Titre & rang": 2,
+        "Dōjutsu": 3
+      },
+      "One Piece": {
+        "Navire": 99,
+        "Fruit du Démon": 211,
+        "Gear": 7,
+        "Équipage": 99,
+        "Lieu": 64,
+        "Attaque": 98,
+        "Relique": 34,
+        "Saga": 6,
+        "Arme & outil": 21,
+        "Organisation": 2,
+        "Haki": 4,
+        "Titre & rang": 2,
+        "Classification": 1,
+        "Métier": 1
+      },
+      "Initial D": {
+        "Voiture": 5,
+        "Lieu": 6,
+        "Écurie de course": 5,
+        "Métier": 1,
+        "Aptitude": 1
+      },
+      "Dragon Ball": {
+        "Attaque": 501,
+        "Transformation": 45,
+        "Personnage": 41,
+        "Planète": 68,
+        "Univers": 12,
+        "Relique": 30,
+        "Race & espèce": 1,
+        "Lieu": 3,
+        "Technique": 3,
+        "Organisation": 1
+      },
+      "Bleach": {
+        "Arme & outil": 17,
+        "Attaque": 60,
+        "Lieu": 3,
+        "Race & espèce": 2,
+        "Relique": 1,
+        "Organisation": 2,
+        "Aptitude": 1,
+        "Technique": 2,
+        "Métier": 1
+      },
+      "JoJo's Bizarre Adventure": {
+        "Stand": 44,
+        "Organisation": 2,
+        "Lieu": 3,
+        "Relique": 2,
+        "Aptitude": 1,
+        "Clan & lignée": 1,
+        "Race & espèce": 1
+      },
+      "Hunter x Hunter": {
+        "Lieu": 4,
+        "Organisation": 2,
+        "Clan & lignée": 1,
+        "Aptitude": 2,
+        "Titre & rang": 1,
+        "Race & espèce": 1,
+        "Métier": 1
+      },
+      "Death Note": {
+        "Lieu": 2,
+        "Relique": 1,
+        "Métier": 1,
+        "Organisation": 3,
+        "Titre & rang": 1,
+        "Race & espèce": 1,
+        "Aptitude": 1
+      }
+    }
+  },
+  "B_axes": [
+    {
+      "universe": "Naruto",
+      "slug": "naruto",
+      "attr": "village",
+      "label": "Villages",
+      "totalUnivers": 3330,
+      "porteurs": 756,
+      "tauxPorteurs": 22.7,
+      "valeursDeclarees": 8,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Konohagakure",
+          "l": "Konoha",
+          "n": 441
+        },
+        {
+          "v": "Sunagakure",
+          "l": "Suna",
+          "n": 80
+        },
+        {
+          "v": "Kirigakure",
+          "l": "Kiri",
+          "n": 62
+        },
+        {
+          "v": "Kumogakure",
+          "l": "Kumo",
+          "n": 63
+        },
+        {
+          "v": "Iwagakure",
+          "l": "Iwa",
+          "n": 43
+        },
+        {
+          "v": "Amegakure",
+          "l": "Ame",
+          "n": 30
+        },
+        {
+          "v": "Otogakure",
+          "l": "Oto",
+          "n": 36
+        },
+        {
+          "v": "Takigakure",
+          "l": "Taki",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "universe": "Naruto",
+      "slug": "naruto",
+      "attr": "clan",
+      "label": "Clans",
+      "totalUnivers": 3330,
+      "porteurs": 230,
+      "tauxPorteurs": 6.91,
+      "valeursDeclarees": 45,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Uchiha",
+          "l": "Uchiha",
+          "n": 27
+        },
+        {
+          "v": "Uzumaki",
+          "l": "Uzumaki",
+          "n": 12
+        },
+        {
+          "v": "Senju",
+          "l": "Senju",
+          "n": 8
+        },
+        {
+          "v": "Hyūga",
+          "l": "Hyūga",
+          "n": 12
+        },
+        {
+          "v": "Nara",
+          "l": "Nara",
+          "n": 10
+        },
+        {
+          "v": "Akimichi",
+          "l": "Akimichi",
+          "n": 11
+        },
+        {
+          "v": "Yamanaka",
+          "l": "Yamanaka",
+          "n": 8
+        },
+        {
+          "v": "Inuzuka",
+          "l": "Inuzuka",
+          "n": 11
+        },
+        {
+          "v": "Ōtsutsuki",
+          "l": "Ōtsutsuki",
+          "n": 15
+        },
+        {
+          "v": "Funato",
+          "l": "Funato",
+          "n": 11
+        },
+        {
+          "v": "Kamizuru",
+          "l": "Kamizuru",
+          "n": 8
+        },
+        {
+          "v": "Tsuchigumo",
+          "l": "Tsuchigumo",
+          "n": 7
+        },
+        {
+          "v": "Fūma (Land of Sound)",
+          "l": "Fūma (Land of Sound)",
+          "n": 7
+        },
+        {
+          "v": "Aburame",
+          "l": "Aburame",
+          "n": 6
+        },
+        {
+          "v": "Kagetsu Family",
+          "l": "Kagetsu Family",
+          "n": 5
+        },
+        {
+          "v": "Kazekage",
+          "l": "Kazekage",
+          "n": 6
+        },
+        {
+          "v": "Sarutobi",
+          "l": "Sarutobi",
+          "n": 6
+        },
+        {
+          "v": "Izuno",
+          "l": "Izuno",
+          "n": 4
+        },
+        {
+          "v": "Kurama",
+          "l": "Kurama",
+          "n": 4
+        },
+        {
+          "v": "Shirogane",
+          "l": "Shirogane",
+          "n": 4
+        },
+        {
+          "v": "Hōzuki",
+          "l": "Hōzuki",
+          "n": 3
+        },
+        {
+          "v": "Iburi",
+          "l": "Iburi",
+          "n": 3
+        },
+        {
+          "v": "Fūma",
+          "l": "Fūma",
+          "n": 3
+        },
+        {
+          "v": "Shiin",
+          "l": "Shiin",
+          "n": 2
+        },
+        {
+          "v": "Hoshigaki",
+          "l": "Hoshigaki",
+          "n": 2
+        },
+        {
+          "v": "Tenrō",
+          "l": "Tenrō",
+          "n": 2
+        },
+        {
+          "v": "Yuki",
+          "l": "Yuki",
+          "n": 2
+        },
+        {
+          "v": "Wagarashi Family",
+          "l": "Wagarashi Family",
+          "n": 2
+        },
+        {
+          "v": "Kaguya",
+          "l": "Kaguya",
+          "n": 2
+        },
+        {
+          "v": "Wasabi Family",
+          "l": "Wasabi Family",
+          "n": 2
+        },
+        {
+          "v": "Chinoike",
+          "l": "Chinoike",
+          "n": 3
+        },
+        {
+          "v": "Amagiri",
+          "l": "Amagiri",
+          "n": 2
+        },
+        {
+          "v": "Lee",
+          "l": "Clan Lee",
+          "n": 2
+        },
+        {
+          "v": "Ryū",
+          "l": "Clan Ryū",
+          "n": 2
+        },
+        {
+          "v": "Karatachi Family",
+          "l": "Karatachi Family",
+          "n": 2
+        },
+        {
+          "v": "Yoimura",
+          "l": "Yoimura",
+          "n": 2
+        },
+        {
+          "v": "Rinha",
+          "l": "Rinha",
+          "n": 2
+        },
+        {
+          "v": "Hatake",
+          "l": "Hatake",
+          "n": 2
+        },
+        {
+          "v": "Onikuma",
+          "l": "Onikuma",
+          "n": 1
+        },
+        {
+          "v": "Jūgo's",
+          "l": "Clan de Jūgo",
+          "n": 2
+        },
+        {
+          "v": "Yotsuki",
+          "l": "Yotsuki",
+          "n": 1
+        },
+        {
+          "v": "Hirasaka",
+          "l": "Hirasaka",
+          "n": 1
+        },
+        {
+          "v": "Shimura",
+          "l": "Shimura",
+          "n": 1
+        },
+        {
+          "v": "Kedōin",
+          "l": "Kedōin",
+          "n": 1
+        },
+        {
+          "v": "Yota's",
+          "l": "Clan de Yota",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "universe": "Naruto",
+      "slug": "naruto",
+      "attr": "organization",
+      "label": "Organisations",
+      "totalUnivers": 3330,
+      "porteurs": 227,
+      "tauxPorteurs": 6.82,
+      "valeursDeclarees": 41,
+      "valeursVides": [
+        {
+          "v": "Taka",
+          "l": "Taka",
+          "n": 0
+        }
+      ],
+      "valeurs": [
+        {
+          "v": "Akatsuki",
+          "l": "Akatsuki",
+          "n": 38
+        },
+        {
+          "v": "Taka",
+          "l": "Taka",
+          "n": 0
+        },
+        {
+          "v": "Kara",
+          "l": "Kara",
+          "n": 20
+        },
+        {
+          "v": "Root",
+          "l": "Racine",
+          "n": 23
+        },
+        {
+          "v": "Sound Four",
+          "l": "Quatuor du Son",
+          "n": 5
+        },
+        {
+          "v": "Sept Épéistes de la Brume",
+          "l": "Sept Épéistes de la Brume",
+          "n": 9
+        },
+        {
+          "v": "Nouveaux Sept Épéistes de la Brume",
+          "l": "Nouveaux Sept Épéistes de la Brume",
+          "n": 7
+        },
+        {
+          "v": "Douze Ninjas Gardiens",
+          "l": "Douze Ninjas Gardiens",
+          "n": 7
+        },
+        {
+          "v": "Police militaire de Konoha",
+          "l": "Police de Konoha",
+          "n": 9
+        },
+        {
+          "v": "Akagi Gang",
+          "l": "Akagi Gang",
+          "n": 2
+        },
+        {
+          "v": "Analysis Team",
+          "l": "Analysis Team",
+          "n": 5
+        },
+        {
+          "v": "Byakuya Gang",
+          "l": "Byakuya Gang",
+          "n": 3
+        },
+        {
+          "v": "Communications Team",
+          "l": "Communications Team",
+          "n": 2
+        },
+        {
+          "v": "Enlightened Ones",
+          "l": "Enlightened Ones",
+          "n": 3
+        },
+        {
+          "v": "Fire Temple",
+          "l": "Fire Temple",
+          "n": 5
+        },
+        {
+          "v": "Gatō Company",
+          "l": "Gatō Company",
+          "n": 4
+        },
+        {
+          "v": "Ghost Army",
+          "l": "Ghost Army",
+          "n": 2
+        },
+        {
+          "v": "Haido's Knights",
+          "l": "Haido's Knights",
+          "n": 5
+        },
+        {
+          "v": "Hokage Guard Platoon",
+          "l": "Hokage Guard Platoon",
+          "n": 3
+        },
+        {
+          "v": "Jako's Gang",
+          "l": "Jako's Gang",
+          "n": 2
+        },
+        {
+          "v": "Janin",
+          "l": "Janin",
+          "n": 3
+        },
+        {
+          "v": "Konoha Barrier Team",
+          "l": "Konoha Barrier Team",
+          "n": 6
+        },
+        {
+          "v": "Konoha Council",
+          "l": "Konoha Council",
+          "n": 3
+        },
+        {
+          "v": "Konoha Cryptanalysis Team",
+          "l": "Konoha Cryptanalysis Team",
+          "n": 3
+        },
+        {
+          "v": "Konoha Orphanage",
+          "l": "Konoha Orphanage",
+          "n": 5
+        },
+        {
+          "v": "Konoha Special Mission Platoon",
+          "l": "Konoha Special Mission Platoon",
+          "n": 2
+        },
+        {
+          "v": "Konoha Torture and Interrogation Force",
+          "l": "Konoha Torture and Interrogation Force",
+          "n": 3
+        },
+        {
+          "v": "Kumo Barrier Team",
+          "l": "Kumo Barrier Team",
+          "n": 2
+        },
+        {
+          "v": "Kumo Council",
+          "l": "Kumo Council",
+          "n": 2
+        },
+        {
+          "v": "Kumo Spectators",
+          "l": "Kumo Spectators",
+          "n": 2
+        },
+        {
+          "v": "Kurosuki Family",
+          "l": "Kurosuki Family",
+          "n": 2
+        },
+        {
+          "v": "Leaf's Anbu",
+          "l": "Leaf's Anbu",
+          "n": 3
+        },
+        {
+          "v": "Lightning Group",
+          "l": "Lightning Group",
+          "n": 3
+        },
+        {
+          "v": "Magaki Group",
+          "l": "Magaki Group",
+          "n": 5
+        },
+        {
+          "v": "Moya Triad",
+          "l": "Moya Triad",
+          "n": 3
+        },
+        {
+          "v": "Mujina Bandits",
+          "l": "Mujina Bandits",
+          "n": 3
+        },
+        {
+          "v": "Scientific Ninja Weapons Team",
+          "l": "Scientific Ninja Weapons Team",
+          "n": 4
+        },
+        {
+          "v": "Shinobazu",
+          "l": "Shinobazu",
+          "n": 4
+        },
+        {
+          "v": "Suna Council",
+          "l": "Suna Council",
+          "n": 4
+        },
+        {
+          "v": "Wandering Ninja Clan",
+          "l": "Wandering Ninja Clan",
+          "n": 3
+        },
+        {
+          "v": "Watari Ninja",
+          "l": "Watari Ninja",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "universe": "Naruto",
+      "slug": "naruto",
+      "attr": "equipe",
+      "label": "Équipes",
+      "totalUnivers": 3330,
+      "porteurs": 187,
+      "tauxPorteurs": 5.62,
+      "valeursDeclarees": 65,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "A–B Combo",
+          "l": "A–B Combo",
+          "n": 2
+        },
+        {
+          "v": "Daimyō Protection Squad",
+          "l": "Daimyō Protection Squad",
+          "n": 1
+        },
+        {
+          "v": "Demon Brothers",
+          "l": "Demon Brothers",
+          "n": 2
+        },
+        {
+          "v": "Dotō's Three-Man-Team",
+          "l": "Dotō's Three-Man-Team",
+          "n": 3
+        },
+        {
+          "v": "Eight-Tails Subduing Team",
+          "l": "Eight-Tails Subduing Team",
+          "n": 2
+        },
+        {
+          "v": "Escort Unit",
+          "l": "Escort Unit",
+          "n": 2
+        },
+        {
+          "v": "Exploding-Till-You-Eat",
+          "l": "Exploding-Till-You-Eat",
+          "n": 2
+        },
+        {
+          "v": "Four Celestial Symbols Men",
+          "l": "Four Celestial Symbols Men",
+          "n": 4
+        },
+        {
+          "v": "Four Ninja Animal Warriors",
+          "l": "Four Ninja Animal Warriors",
+          "n": 3
+        },
+        {
+          "v": "Furido's 4-Man Team",
+          "l": "Furido's 4-Man Team",
+          "n": 3
+        },
+        {
+          "v": "Gang of Four",
+          "l": "Gang of Four",
+          "n": 4
+        },
+        {
+          "v": "Gold and Silver Brothers",
+          "l": "Gold and Silver Brothers",
+          "n": 3
+        },
+        {
+          "v": "Haze Quadruplets",
+          "l": "Haze Quadruplets",
+          "n": 4
+        },
+        {
+          "v": "Hiruko's Team",
+          "l": "Hiruko's Team",
+          "n": 4
+        },
+        {
+          "v": "Honoured Siblings",
+          "l": "Honoured Siblings",
+          "n": 1
+        },
+        {
+          "v": "Infiltration and Reconnaissance Party",
+          "l": "Infiltration and Reconnaissance Party",
+          "n": 4
+        },
+        {
+          "v": "Ino–Shika–Chō",
+          "l": "Ino–Shika–Chō",
+          "n": 3
+        },
+        {
+          "v": "Legendary Stupid Brothers",
+          "l": "Legendary Stupid Brothers",
+          "n": 2
+        },
+        {
+          "v": "Sealing Team",
+          "l": "Sealing Team",
+          "n": 3
+        },
+        {
+          "v": "Shirogane Three",
+          "l": "Shirogane Three",
+          "n": 3
+        },
+        {
+          "v": "Team 10",
+          "l": "Team 10",
+          "n": 5
+        },
+        {
+          "v": "Team 15",
+          "l": "Team 15",
+          "n": 4
+        },
+        {
+          "v": "Team 2",
+          "l": "Team 2",
+          "n": 3
+        },
+        {
+          "v": "Team 25",
+          "l": "Team 25",
+          "n": 3
+        },
+        {
+          "v": "Team 40",
+          "l": "Team 40",
+          "n": 3
+        },
+        {
+          "v": "Team 5",
+          "l": "Team 5",
+          "n": 4
+        },
+        {
+          "v": "Team 7",
+          "l": "Team 7",
+          "n": 4
+        },
+        {
+          "v": "Team 8",
+          "l": "Team 8",
+          "n": 1
+        },
+        {
+          "v": "Team Ajisai",
+          "l": "Team Ajisai",
+          "n": 3
+        },
+        {
+          "v": "Team Ameno",
+          "l": "Team Ameno",
+          "n": 3
+        },
+        {
+          "v": "Team Bandō",
+          "l": "Team Bandō",
+          "n": 3
+        },
+        {
+          "v": "Team Chōza",
+          "l": "Team Chōza",
+          "n": 2
+        },
+        {
+          "v": "Team Dosu",
+          "l": "Team Dosu",
+          "n": 3
+        },
+        {
+          "v": "Team Ebisu",
+          "l": "Team Ebisu",
+          "n": 2
+        },
+        {
+          "v": "Team Fū",
+          "l": "Team Fū",
+          "n": 3
+        },
+        {
+          "v": "Team Ganryū",
+          "l": "Team Ganryū",
+          "n": 3
+        },
+        {
+          "v": "Team Goji",
+          "l": "Team Goji",
+          "n": 3
+        },
+        {
+          "v": "Team Guren",
+          "l": "Team Guren",
+          "n": 5
+        },
+        {
+          "v": "Team Hiruzen",
+          "l": "Team Hiruzen",
+          "n": 1
+        },
+        {
+          "v": "Team Jiraiya",
+          "l": "Team Jiraiya",
+          "n": 2
+        },
+        {
+          "v": "Team Kabuto",
+          "l": "Team Kabuto",
+          "n": 2
+        },
+        {
+          "v": "Team Kajika",
+          "l": "Team Kajika",
+          "n": 3
+        },
+        {
+          "v": "Team Kakashi",
+          "l": "Team Kakashi",
+          "n": 3
+        },
+        {
+          "v": "Team Kazami",
+          "l": "Team Kazami",
+          "n": 3
+        },
+        {
+          "v": "Team Komugi",
+          "l": "Team Komugi",
+          "n": 3
+        },
+        {
+          "v": "Team Matsuri",
+          "l": "Team Matsuri",
+          "n": 3
+        },
+        {
+          "v": "Team Minato",
+          "l": "Team Minato",
+          "n": 2
+        },
+        {
+          "v": "Team Oboro",
+          "l": "Team Oboro",
+          "n": 4
+        },
+        {
+          "v": "Team Orochimaru",
+          "l": "Team Orochimaru",
+          "n": 2
+        },
+        {
+          "v": "Team Ro",
+          "l": "Team Ro",
+          "n": 2
+        },
+        {
+          "v": "Team Sajin",
+          "l": "Team Sajin",
+          "n": 3
+        },
+        {
+          "v": "Team Samui",
+          "l": "Team Samui",
+          "n": 3
+        },
+        {
+          "v": "Team Saya",
+          "l": "Team Saya",
+          "n": 3
+        },
+        {
+          "v": "Team Shibire",
+          "l": "Team Shibire",
+          "n": 3
+        },
+        {
+          "v": "Team Shigure",
+          "l": "Team Shigure",
+          "n": 3
+        },
+        {
+          "v": "Team Shinki",
+          "l": "Team Shinki",
+          "n": 3
+        },
+        {
+          "v": "Team Shira",
+          "l": "Team Shira",
+          "n": 3
+        },
+        {
+          "v": "Team Suien",
+          "l": "Team Suien",
+          "n": 4
+        },
+        {
+          "v": "Team Tobirama",
+          "l": "Team Tobirama",
+          "n": 2
+        },
+        {
+          "v": "Team Yurui",
+          "l": "Team Yurui",
+          "n": 3
+        },
+        {
+          "v": "Three Brothers",
+          "l": "Three Brothers",
+          "n": 3
+        },
+        {
+          "v": "Three Ryūdōin Brothers",
+          "l": "Three Ryūdōin Brothers",
+          "n": 3
+        },
+        {
+          "v": "Three Sand Siblings",
+          "l": "Three Sand Siblings",
+          "n": 3
+        },
+        {
+          "v": "Three Senka Brothers",
+          "l": "Three Senka Brothers",
+          "n": 3
+        },
+        {
+          "v": "Two Great Sage Toads",
+          "l": "Two Great Sage Toads",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "universe": "Naruto",
+      "slug": "naruto",
+      "attr": "division",
+      "label": "Divisions de la Guerre",
+      "totalUnivers": 3330,
+      "porteurs": 66,
+      "tauxPorteurs": 1.98,
+      "valeursDeclarees": 18,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Allied Mothers Force",
+          "l": "Allied Mothers Force",
+          "n": 4
+        },
+        {
+          "v": "Corps médical",
+          "l": "Corps médical",
+          "n": 9
+        },
+        {
+          "v": "Counter-Terrorism Division",
+          "l": "Counter-Terrorism Division",
+          "n": 1
+        },
+        {
+          "v": "Cypher Division",
+          "l": "Cypher Division",
+          "n": 2
+        },
+        {
+          "v": "Explosion Corps",
+          "l": "Explosion Corps",
+          "n": 1
+        },
+        {
+          "v": "Fifth Division",
+          "l": "Fifth Division",
+          "n": 4
+        },
+        {
+          "v": "First Division",
+          "l": "First Division",
+          "n": 3
+        },
+        {
+          "v": "Force Shinobi Alliée",
+          "l": "Force Shinobi Alliée",
+          "n": 6
+        },
+        {
+          "v": "Fourth Division",
+          "l": "Fourth Division",
+          "n": 3
+        },
+        {
+          "v": "Impure World Reincarnation Allied Forces",
+          "l": "Impure World Reincarnation Allied Forces",
+          "n": 4
+        },
+        {
+          "v": "Intelligence Division",
+          "l": "Intelligence Division",
+          "n": 3
+        },
+        {
+          "v": "Logistical Support and Medical Division",
+          "l": "Logistical Support and Medical Division",
+          "n": 5
+        },
+        {
+          "v": "Second Division",
+          "l": "Second Division",
+          "n": 4
+        },
+        {
+          "v": "Sensor Division",
+          "l": "Sensor Division",
+          "n": 2
+        },
+        {
+          "v": "Surprise Attack Division",
+          "l": "Surprise Attack Division",
+          "n": 4
+        },
+        {
+          "v": "Surprise Attack and Diversion Platoon",
+          "l": "Surprise Attack and Diversion Platoon",
+          "n": 1
+        },
+        {
+          "v": "Third Division",
+          "l": "Third Division",
+          "n": 9
+        },
+        {
+          "v": "Twenty Platoons",
+          "l": "Twenty Platoons",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "universe": "Naruto",
+      "slug": "naruto",
+      "attr": "rank",
+      "label": "Rangs ninja",
+      "totalUnivers": 3330,
+      "porteurs": 473,
+      "tauxPorteurs": 14.2,
+      "valeursDeclarees": 8,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Academy Student",
+          "l": "Élève de l’Académie",
+          "n": 55
+        },
+        {
+          "v": "Genin",
+          "l": "Genin",
+          "n": 115
+        },
+        {
+          "v": "Chūnin",
+          "l": "Chūnin",
+          "n": 74
+        },
+        {
+          "v": "Tokubetsu Jōnin",
+          "l": "Jōnin spécial",
+          "n": 19
+        },
+        {
+          "v": "Jōnin",
+          "l": "Jōnin",
+          "n": 120
+        },
+        {
+          "v": "Head Ninja",
+          "l": "Chef des ninjas (Kumo)",
+          "n": 1
+        },
+        {
+          "v": "Anbu",
+          "l": "Anbu",
+          "n": 59
+        },
+        {
+          "v": "Kage",
+          "l": "Kage",
+          "n": 28
+        }
+      ]
+    },
+    {
+      "universe": "Naruto",
+      "slug": "naruto",
+      "attr": "generation",
+      "label": "Générations",
+      "totalUnivers": 3330,
+      "porteurs": 51,
+      "tauxPorteurs": 1.53,
+      "valeursDeclarees": 5,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Fondateurs",
+          "l": "Fondateurs",
+          "n": 7
+        },
+        {
+          "v": "Sannin",
+          "l": "Sannin",
+          "n": 3
+        },
+        {
+          "v": "Génération de Kakashi",
+          "l": "Génération de Kakashi",
+          "n": 12
+        },
+        {
+          "v": "Konoha 11",
+          "l": "Konoha 11",
+          "n": 16
+        },
+        {
+          "v": "Nouvelle ère",
+          "l": "Nouvelle ère",
+          "n": 13
+        }
+      ]
+    },
+    {
+      "universe": "One Piece",
+      "slug": "one-piece",
+      "attr": "faction",
+      "label": "Factions",
+      "totalUnivers": 2229,
+      "porteurs": 515,
+      "tauxPorteurs": 23.1,
+      "valeursDeclarees": 5,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Pirate",
+          "l": "Pirates",
+          "n": 295
+        },
+        {
+          "v": "Marine",
+          "l": "Marine",
+          "n": 49
+        },
+        {
+          "v": "Gouvernement Mondial",
+          "l": "Gouvernement Mondial",
+          "n": 24
+        },
+        {
+          "v": "Révolutionnaire",
+          "l": "Révolutionnaires",
+          "n": 9
+        },
+        {
+          "v": "Civil",
+          "l": "Civils",
+          "n": 138
+        }
+      ]
+    },
+    {
+      "universe": "One Piece",
+      "slug": "one-piece",
+      "attr": "crew",
+      "label": "Équipages",
+      "totalUnivers": 2229,
+      "porteurs": 359,
+      "tauxPorteurs": 16.11,
+      "valeursDeclarees": 29,
+      "valeursVides": [
+        {
+          "v": "L’équipage de Buggy",
+          "l": "L’équipage de Buggy",
+          "n": 0
+        }
+      ],
+      "valeurs": [
+        {
+          "v": "L’équipage du Chapeau de Paille",
+          "l": "Chapeau de Paille",
+          "n": 14
+        },
+        {
+          "v": "L’équipage de Big Mom",
+          "l": "Big Mom",
+          "n": 66
+        },
+        {
+          "v": "L’équipage aux Cent Bêtes",
+          "l": "Cent Bêtes (Kaido)",
+          "n": 46
+        },
+        {
+          "v": "L’équipage de Barbe Blanche",
+          "l": "Barbe Blanche",
+          "n": 35
+        },
+        {
+          "v": "L’équipage de Don Quichotte",
+          "l": "Don Quichotte",
+          "n": 14
+        },
+        {
+          "v": "L’équipage du Heart",
+          "l": "Heart (Law)",
+          "n": 5
+        },
+        {
+          "v": "L’équipage des Pirates Roger",
+          "l": "Pirates de Roger",
+          "n": 12
+        },
+        {
+          "v": "L’équipage de Barbe Noire",
+          "l": "L’équipage de Barbe Noire",
+          "n": 10
+        },
+        {
+          "v": "L’équipage du Roux",
+          "l": "L’équipage du Roux",
+          "n": 9
+        },
+        {
+          "v": "Faux équipage du Chapeau de Paille",
+          "l": "Faux équipage du Chapeau de Paille",
+          "n": 9
+        },
+        {
+          "v": "L’équipage des Nouveaux Hommes-Poissons",
+          "l": "L’équipage des Nouveaux Hommes-Poissons",
+          "n": 5
+        },
+        {
+          "v": "L’équipage du Lion d’Or",
+          "l": "L’équipage du Lion d’Or",
+          "n": 5
+        },
+        {
+          "v": "L’équipage de Thriller Bark",
+          "l": "L’équipage de Thriller Bark",
+          "n": 3
+        },
+        {
+          "v": "L’équipage des Pirates Kuja",
+          "l": "L’équipage des Pirates Kuja",
+          "n": 4
+        },
+        {
+          "v": "L’équipage du Fire Tank",
+          "l": "L’équipage du Fire Tank",
+          "n": 5
+        },
+        {
+          "v": "L’équipage de Kid",
+          "l": "L’équipage de Kid",
+          "n": 3
+        },
+        {
+          "v": "L’équipage de Foxy",
+          "l": "L’équipage de Foxy",
+          "n": 2
+        },
+        {
+          "v": "L’équipage du Chat Noir",
+          "l": "L’équipage du Chat Noir",
+          "n": 3
+        },
+        {
+          "v": "L’équipage d’Arlong",
+          "l": "L’équipage d’Arlong",
+          "n": 2
+        },
+        {
+          "v": "L’équipage du Bluejam",
+          "l": "L’équipage du Bluejam",
+          "n": 2
+        },
+        {
+          "v": "L’équipage de Krieg",
+          "l": "L’équipage de Krieg",
+          "n": 2
+        },
+        {
+          "v": "L’équipage des Pirates du Soleil",
+          "l": "L’équipage des Pirates du Soleil",
+          "n": 2
+        },
+        {
+          "v": "L’équipage de Caribou",
+          "l": "L’équipage de Caribou",
+          "n": 2
+        },
+        {
+          "v": "L’équipage des Pirates Volants",
+          "l": "L’équipage des Pirates Volants",
+          "n": 1
+        },
+        {
+          "v": "L’équipage des Pirates Rocks",
+          "l": "L’équipage des Pirates Rocks",
+          "n": 1
+        },
+        {
+          "v": "L’équipage des Moines Dépravés",
+          "l": "L’équipage des Moines Dépravés",
+          "n": 1
+        },
+        {
+          "v": "L’équipage de Buggy",
+          "l": "L’équipage de Buggy",
+          "n": 0
+        },
+        {
+          "v": "L’équipage du Rumbar",
+          "l": "L’équipage du Rumbar",
+          "n": 1
+        },
+        {
+          "v": "L’équipage de Macro",
+          "l": "L’équipage de Macro",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "universe": "One Piece",
+      "slug": "one-piece",
+      "attr": "fruit_type",
+      "label": "Types de Fruit du Démon",
+      "totalUnivers": 2229,
+      "porteurs": 280,
+      "tauxPorteurs": 12.56,
+      "valeursDeclarees": 6,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Paramecia",
+          "l": "Paramecia",
+          "n": 163
+        },
+        {
+          "v": "Logia",
+          "l": "Logia",
+          "n": 26
+        },
+        {
+          "v": "Zoan",
+          "l": "Zoan",
+          "n": 28
+        },
+        {
+          "v": "Zoan Antique",
+          "l": "Zoan Antique",
+          "n": 14
+        },
+        {
+          "v": "Zoan Mythique",
+          "l": "Zoan Mythique",
+          "n": 18
+        },
+        {
+          "v": "Smile",
+          "l": "SMILE (artificiel)",
+          "n": 27
+        }
+      ]
+    },
+    {
+      "universe": "One Piece",
+      "slug": "one-piece",
+      "attr": "meito_grade",
+      "label": "Grades de sabre (Meito)",
+      "totalUnivers": 2229,
+      "porteurs": 15,
+      "tauxPorteurs": 0.67,
+      "valeursDeclarees": 3,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Saijo Ô Wazamono",
+          "l": "Saijō Ō Wazamono (12 Suprêmes)",
+          "n": 4
+        },
+        {
+          "v": "Ô Wazamono",
+          "l": "Ō Wazamono (21 Grandes)",
+          "n": 5
+        },
+        {
+          "v": "Ryo Wazamono",
+          "l": "Ryō Wazamono (50 Bonnes)",
+          "n": 6
+        }
+      ]
+    },
+    {
+      "universe": "Dragon Ball",
+      "slug": "dragon-ball",
+      "attr": "race",
+      "label": "Races",
+      "totalUnivers": 1137,
+      "porteurs": 105,
+      "tauxPorteurs": 9.23,
+      "valeursDeclarees": 9,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Saiyan",
+          "l": "Saiyans",
+          "n": 31
+        },
+        {
+          "v": "Human",
+          "l": "Humains",
+          "n": 25
+        },
+        {
+          "v": "Namekian",
+          "l": "Nameks",
+          "n": 10
+        },
+        {
+          "v": "Android",
+          "l": "Androïdes",
+          "n": 15
+        },
+        {
+          "v": "Majin",
+          "l": "Majin",
+          "n": 1
+        },
+        {
+          "v": "Frieza Race",
+          "l": "Race de Freezer",
+          "n": 6
+        },
+        {
+          "v": "Angel",
+          "l": "Anges",
+          "n": 13
+        },
+        {
+          "v": "Machine Mutant",
+          "l": "Machine Mutants",
+          "n": 1
+        },
+        {
+          "v": "Glind",
+          "l": "Glinds (race des Kaiōshin)",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "universe": "Dragon Ball",
+      "slug": "dragon-ball",
+      "attr": "saga",
+      "label": "Sagas",
+      "totalUnivers": 1137,
+      "porteurs": 128,
+      "tauxPorteurs": 11.26,
+      "valeursDeclarees": 5,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Saga Saiyan",
+          "l": "Saga Saiyan",
+          "n": 23
+        },
+        {
+          "v": "Saga Namek",
+          "l": "Saga Namek",
+          "n": 14
+        },
+        {
+          "v": "Saga Cell",
+          "l": "Saga Cell",
+          "n": 11
+        },
+        {
+          "v": "Saga Buu",
+          "l": "Saga Buu",
+          "n": 22
+        },
+        {
+          "v": "Saga Super",
+          "l": "Saga Super",
+          "n": 58
+        }
+      ]
+    },
+    {
+      "universe": "Bleach",
+      "slug": "bleach",
+      "attr": "race",
+      "label": "Races spirituelles",
+      "totalUnivers": 382,
+      "porteurs": 100,
+      "tauxPorteurs": 26.18,
+      "valeursDeclarees": 10,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Shinigami",
+          "l": "Shinigami",
+          "n": 34
+        },
+        {
+          "v": "Hollow",
+          "l": "Hollow",
+          "n": 6
+        },
+        {
+          "v": "Arrancar",
+          "l": "Arrancar",
+          "n": 22
+        },
+        {
+          "v": "Quincy",
+          "l": "Quincy",
+          "n": 3
+        },
+        {
+          "v": "Humain",
+          "l": "Humains",
+          "n": 12
+        },
+        {
+          "v": "Fullbringer",
+          "l": "Fullbringer",
+          "n": 7
+        },
+        {
+          "v": "Visored",
+          "l": "Visored",
+          "n": 9
+        },
+        {
+          "v": "Soul",
+          "l": "Âmes",
+          "n": 3
+        },
+        {
+          "v": "Modified Soul",
+          "l": "Âmes modifiées",
+          "n": 3
+        },
+        {
+          "v": "Zanpakutō Spirit",
+          "l": "Esprits de Zanpakutō",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "universe": "Bleach",
+      "slug": "bleach",
+      "attr": "monde",
+      "label": "Mondes",
+      "totalUnivers": 382,
+      "porteurs": 171,
+      "tauxPorteurs": 44.76,
+      "valeursDeclarees": 4,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Soul Society",
+          "l": "Soul Society",
+          "n": 66
+        },
+        {
+          "v": "Terre · Karakura",
+          "l": "Terre · Karakura",
+          "n": 60
+        },
+        {
+          "v": "Hueco Mundo",
+          "l": "Hueco Mundo",
+          "n": 43
+        },
+        {
+          "v": "Wandenreich",
+          "l": "Wandenreich",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "universe": "Bleach",
+      "slug": "bleach",
+      "attr": "division",
+      "label": "Gotei 13",
+      "totalUnivers": 382,
+      "porteurs": 47,
+      "tauxPorteurs": 12.3,
+      "valeursDeclarees": 13,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "1ʳᵉ division",
+          "l": "1ʳᵉ division",
+          "n": 2
+        },
+        {
+          "v": "2ᵉ division",
+          "l": "2ᵉ division",
+          "n": 4
+        },
+        {
+          "v": "3ᵉ division",
+          "l": "3ᵉ division",
+          "n": 4
+        },
+        {
+          "v": "4ᵉ division",
+          "l": "4ᵉ division",
+          "n": 4
+        },
+        {
+          "v": "5ᵉ division",
+          "l": "5ᵉ division",
+          "n": 4
+        },
+        {
+          "v": "6ᵉ division",
+          "l": "6ᵉ division",
+          "n": 2
+        },
+        {
+          "v": "7ᵉ division",
+          "l": "7ᵉ division",
+          "n": 2
+        },
+        {
+          "v": "8ᵉ division",
+          "l": "8ᵉ division",
+          "n": 4
+        },
+        {
+          "v": "9ᵉ division",
+          "l": "9ᵉ division",
+          "n": 5
+        },
+        {
+          "v": "10ᵉ division",
+          "l": "10ᵉ division",
+          "n": 3
+        },
+        {
+          "v": "11ᵉ division",
+          "l": "11ᵉ division",
+          "n": 4
+        },
+        {
+          "v": "12ᵉ division",
+          "l": "12ᵉ division",
+          "n": 6
+        },
+        {
+          "v": "13ᵉ division",
+          "l": "13ᵉ division",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "universe": "Hunter x Hunter",
+      "slug": "hunter-x-hunter",
+      "attr": "nen",
+      "label": "Types de Nen",
+      "totalUnivers": 215,
+      "porteurs": 51,
+      "tauxPorteurs": 23.72,
+      "valeursDeclarees": 6,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Renforcement",
+          "l": "Renforcement",
+          "n": 12
+        },
+        {
+          "v": "Émission",
+          "l": "Émission",
+          "n": 9
+        },
+        {
+          "v": "Transformation",
+          "l": "Transformation",
+          "n": 7
+        },
+        {
+          "v": "Matérialisation",
+          "l": "Matérialisation",
+          "n": 5
+        },
+        {
+          "v": "Manipulation",
+          "l": "Manipulation",
+          "n": 12
+        },
+        {
+          "v": "Spécialisation",
+          "l": "Spécialisation",
+          "n": 6
+        }
+      ]
+    },
+    {
+      "universe": "JoJo's Bizarre Adventure",
+      "slug": "jojo",
+      "attr": "partie",
+      "label": "Parties",
+      "totalUnivers": 233,
+      "porteurs": 221,
+      "tauxPorteurs": 94.85,
+      "valeursDeclarees": 7,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Partie 1-2",
+          "l": "1-2 · Origines (Hamon)",
+          "n": 42
+        },
+        {
+          "v": "Partie 3",
+          "l": "3 · Stardust Crusaders",
+          "n": 32
+        },
+        {
+          "v": "Partie 4",
+          "l": "4 · Diamond is Unbreakable",
+          "n": 57
+        },
+        {
+          "v": "Partie 5",
+          "l": "5 · Golden Wind",
+          "n": 59
+        },
+        {
+          "v": "Partie 6",
+          "l": "6 · Stone Ocean",
+          "n": 25
+        },
+        {
+          "v": "Partie 7",
+          "l": "7 · Steel Ball Run",
+          "n": 4
+        },
+        {
+          "v": "Partie 8",
+          "l": "8 · JoJolion",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "universe": "Initial D",
+      "slug": "initial-d",
+      "attr": "affiliation",
+      "label": "Écuries",
+      "totalUnivers": 44,
+      "porteurs": 18,
+      "tauxPorteurs": 40.91,
+      "valeursDeclarees": 6,
+      "valeursVides": [
+        {
+          "v": "Akagi RedSuns",
+          "l": "Akagi RedSuns",
+          "n": 0
+        }
+      ],
+      "valeurs": [
+        {
+          "v": "Project D",
+          "l": "Project D",
+          "n": 6
+        },
+        {
+          "v": "Myogi NightKids",
+          "l": "Myogi NightKids",
+          "n": 5
+        },
+        {
+          "v": "Akina SpeedStars",
+          "l": "Akina SpeedStars",
+          "n": 4
+        },
+        {
+          "v": "Impact Blue",
+          "l": "Impact Blue",
+          "n": 2
+        },
+        {
+          "v": "Team Emperor",
+          "l": "Team Emperor",
+          "n": 1
+        },
+        {
+          "v": "Akagi RedSuns",
+          "l": "Akagi RedSuns",
+          "n": 0
+        }
+      ]
+    },
+    {
+      "universe": "Initial D",
+      "slug": "initial-d",
+      "attr": "col",
+      "label": "Cols",
+      "totalUnivers": 44,
+      "porteurs": 23,
+      "tauxPorteurs": 52.27,
+      "valeursDeclarees": 5,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Mont Akina",
+          "l": "Mont Akina",
+          "n": 7
+        },
+        {
+          "v": "Mont Akagi",
+          "l": "Mont Akagi",
+          "n": 4
+        },
+        {
+          "v": "Mont Myōgi",
+          "l": "Mont Myōgi",
+          "n": 6
+        },
+        {
+          "v": "Col d’Usui",
+          "l": "Col d’Usui",
+          "n": 3
+        },
+        {
+          "v": "Irohazaka",
+          "l": "Irohazaka",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "universe": "Death Note",
+      "slug": "death-note",
+      "attr": "camp",
+      "label": "Camps",
+      "totalUnivers": 84,
+      "porteurs": 42,
+      "tauxPorteurs": 50,
+      "valeursDeclarees": 6,
+      "valeursVides": [],
+      "valeurs": [
+        {
+          "v": "Kira",
+          "l": "Kira & alliés",
+          "n": 5
+        },
+        {
+          "v": "Cellule d’enquête",
+          "l": "L & la cellule d’enquête",
+          "n": 14
+        },
+        {
+          "v": "SPK",
+          "l": "SPK",
+          "n": 6
+        },
+        {
+          "v": "Wammy’s House",
+          "l": "Wammy’s House",
+          "n": 3
+        },
+        {
+          "v": "Yotsuba",
+          "l": "Yotsuba",
+          "n": 7
+        },
+        {
+          "v": "Shinigami",
+          "l": "Shinigami",
+          "n": 7
+        }
+      ]
+    }
+  ],
+  "C_doublonsContenu": {
+    "sections": {
+      "groupes": 32,
+      "fichesConcernees": 20,
+      "detail": [
+        {
+          "texte": "La création des fruits SMILE repose sur le SAD, une substance chimique synthétisée à partir des Facteurs de Lignée extraits d'animaux variés, dont seul Caesar Clown connaît la formule de production. Après sa fabrication sur Punk Hazard, le ",
+          "longueur": 944,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "smile-de-gazelle",
+              "nom": "SMILE de gazelle",
+              "universe": "One Piece",
+              "titre": "Production",
+              "idx": "2"
+            },
+            {
+              "slug": "smile-de-serpent",
+              "nom": "SMILE de serpent",
+              "universe": "One Piece",
+              "titre": "Production",
+              "idx": "2"
+            },
+            {
+              "slug": "smile-de-lion",
+              "nom": "SMILE de lion",
+              "universe": "One Piece",
+              "titre": "Production",
+              "idx": "2"
+            }
+          ]
+        },
+        {
+          "texte": "Les fruits SMILE confèrent à leur consommateur la capacité de se transformer partiellement ou totalement en animal, similaire aux fruits Zoan, en transmettant le Facteur de Lignée d'une créature réelle. Contrairement aux vrais fruits du Dia",
+          "longueur": 1135,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "smile-de-gazelle",
+              "nom": "SMILE de gazelle",
+              "universe": "One Piece",
+              "titre": "Attributs",
+              "idx": "3"
+            },
+            {
+              "slug": "smile-de-serpent",
+              "nom": "SMILE de serpent",
+              "universe": "One Piece",
+              "titre": "Attributs",
+              "idx": "3"
+            },
+            {
+              "slug": "smile-de-lion",
+              "nom": "SMILE de lion",
+              "universe": "One Piece",
+              "titre": "Attributs",
+              "idx": "3"
+            }
+          ]
+        },
+        {
+          "texte": "Contrairement aux vrais utilisateurs de Zoan qui peuvent se transformer intégralement en animal ou en forme hybride, les utilisateurs de SMILE ne peuvent généralement transformer que certaines parties de leur corps en parties animales. Ces ",
+          "longueur": 947,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "smile-de-gazelle",
+              "nom": "SMILE de gazelle",
+              "universe": "One Piece",
+              "titre": "Différences avec les Zoan naturels",
+              "idx": "4"
+            },
+            {
+              "slug": "smile-de-serpent",
+              "nom": "SMILE de serpent",
+              "universe": "One Piece",
+              "titre": "Différences avec les Zoan naturels",
+              "idx": "4"
+            },
+            {
+              "slug": "smile-de-lion",
+              "nom": "SMILE de lion",
+              "universe": "One Piece",
+              "titre": "Différences avec les Zoan naturels",
+              "idx": "4"
+            }
+          ]
+        },
+        {
+          "texte": "Les utilisateurs de SMILE ont démontré l'accès à des attributs d'une grande variété d'animaux, des mammifères aux reptiles en passant par les insectes et crustacés. Contrairement aux vrais fruits du Diable dont il n'existe qu'un seul exempl",
+          "longueur": 1082,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "smile-de-gazelle",
+              "nom": "SMILE de gazelle",
+              "universe": "One Piece",
+              "titre": "Types",
+              "idx": "5"
+            },
+            {
+              "slug": "smile-de-serpent",
+              "nom": "SMILE de serpent",
+              "universe": "One Piece",
+              "titre": "Types",
+              "idx": "5"
+            },
+            {
+              "slug": "smile-de-lion",
+              "nom": "SMILE de lion",
+              "universe": "One Piece",
+              "titre": "Types",
+              "idx": "5"
+            }
+          ]
+        },
+        {
+          "texte": "Les fruits SMILE ont été inventés il y a environ trois ans par le scientifique fou Caesar Clown, qui a développé une méthode pour créer des fruits Zoan artificiels en utilisant le SAD, une substance chimique de sa propre création. Travailla",
+          "longueur": 1040,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "smile-de-gazelle",
+              "nom": "SMILE de gazelle",
+              "universe": "One Piece",
+              "titre": "Histoire",
+              "idx": "8"
+            },
+            {
+              "slug": "smile-de-serpent",
+              "nom": "SMILE de serpent",
+              "universe": "One Piece",
+              "titre": "Histoire",
+              "idx": "8"
+            },
+            {
+              "slug": "smile-de-lion",
+              "nom": "SMILE de lion",
+              "universe": "One Piece",
+              "titre": "Histoire",
+              "idx": "8"
+            }
+          ]
+        },
+        {
+          "texte": "Les fruits SMILE ont été conçus par le scientifique déviant Caesar Clown il y a environ trois ans, mettant au point une méthode de création de fruits Zoan artificiels via une substance chimique appelée SAD qu'il seul maîtrise. Sous l'autori",
+          "longueur": 902,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "smile-de-gazelle",
+              "nom": "SMILE de gazelle",
+              "universe": "One Piece",
+              "titre": "Pirates des Bêtes",
+              "idx": "9"
+            },
+            {
+              "slug": "smile-de-serpent",
+              "nom": "SMILE de serpent",
+              "universe": "One Piece",
+              "titre": "Pirates des Bêtes",
+              "idx": "9"
+            },
+            {
+              "slug": "smile-de-lion",
+              "nom": "SMILE de lion",
+              "universe": "One Piece",
+              "titre": "Pirates des Bêtes",
+              "idx": "9"
+            }
+          ]
+        },
+        {
+          "texte": "La fabrication des SMILE requiert le SAD, une substance chimique créée en mélangeant les Facteurs de Lignage extraits de nombreux animaux, dont seul Caesar Clown possède le secret. Après sa production à Punk Hazard, le SAD a été transféré à",
+          "longueur": 894,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "smile-d-hippopotame",
+              "nom": "SMILE d'hippopotame",
+              "universe": "One Piece",
+              "titre": "Production",
+              "idx": "2"
+            },
+            {
+              "slug": "smile-de-l-elephant",
+              "nom": "SMILE de l'éléphant",
+              "universe": "One Piece",
+              "titre": "Production",
+              "idx": "2"
+            },
+            {
+              "slug": "smile-de-l-alpaga",
+              "nom": "SMILE de l'alpaga",
+              "universe": "One Piece",
+              "titre": "Production",
+              "idx": "2"
+            }
+          ]
+        },
+        {
+          "texte": "Les SMILE visent à accorder à leur consommateur le pouvoir de transformation animale, similaire à un Fruit du Démon de type Zoan naturel, en transmettant les Facteurs de Lignage d'un animal réel. Contrairement aux vrais Fruits du Démon au g",
+          "longueur": 860,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "smile-d-hippopotame",
+              "nom": "SMILE d'hippopotame",
+              "universe": "One Piece",
+              "titre": "Attributs",
+              "idx": "3"
+            },
+            {
+              "slug": "smile-de-l-elephant",
+              "nom": "SMILE de l'éléphant",
+              "universe": "One Piece",
+              "titre": "Attributs",
+              "idx": "3"
+            },
+            {
+              "slug": "smile-de-l-alpaga",
+              "nom": "SMILE de l'alpaga",
+              "universe": "One Piece",
+              "titre": "Attributs",
+              "idx": "3"
+            }
+          ]
+        },
+        {
+          "texte": "Contrairement aux Zoans naturels qui peuvent se transformer entièrement en animal ou prendre une forme hybride, les utilisateurs de SMILE peuvent transformer uniquement certaines parties de leur corps en parties animales. Les transformation",
+          "longueur": 868,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "smile-d-hippopotame",
+              "nom": "SMILE d'hippopotame",
+              "universe": "One Piece",
+              "titre": "Différences avec les Zoans naturels",
+              "idx": "4"
+            },
+            {
+              "slug": "smile-de-l-elephant",
+              "nom": "SMILE de l'éléphant",
+              "universe": "One Piece",
+              "titre": "Différences avec les Zoans naturels",
+              "idx": "4"
+            },
+            {
+              "slug": "smile-de-l-alpaga",
+              "nom": "SMILE de l'alpaga",
+              "universe": "One Piece",
+              "titre": "Différences avec les Zoans naturels",
+              "idx": "4"
+            }
+          ]
+        },
+        {
+          "texte": "Les utilisateurs de SMILE exhibent des attributs et des abilities d'une vaste variété d'animaux, des mammifères aux reptiles, insectes et crustacés. Contrairement aux vrais Fruits du Démon dont il n'existe qu'un seul exemplaire dans le mond",
+          "longueur": 724,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "smile-d-hippopotame",
+              "nom": "SMILE d'hippopotame",
+              "universe": "One Piece",
+              "titre": "Types",
+              "idx": "5"
+            },
+            {
+              "slug": "smile-de-l-elephant",
+              "nom": "SMILE de l'éléphant",
+              "universe": "One Piece",
+              "titre": "Types",
+              "idx": "5"
+            },
+            {
+              "slug": "smile-de-l-alpaga",
+              "nom": "SMILE de l'alpaga",
+              "universe": "One Piece",
+              "titre": "Types",
+              "idx": "5"
+            }
+          ]
+        },
+        {
+          "texte": "Les fruits SMILE ont été inventés il y a environ trois ans par le criminel fou scientifique Caesar Clown, dont la prime atteint 300 000 000 de berries. Travaillant sous le drapeau de Donquixote Doflamingo des Sept Guerriers du Gouvernement,",
+          "longueur": 831,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "smile-d-hippopotame",
+              "nom": "SMILE d'hippopotame",
+              "universe": "One Piece",
+              "titre": "Histoire",
+              "idx": "8"
+            },
+            {
+              "slug": "smile-de-l-elephant",
+              "nom": "SMILE de l'éléphant",
+              "universe": "One Piece",
+              "titre": "Histoire",
+              "idx": "8"
+            },
+            {
+              "slug": "smile-de-l-alpaga",
+              "nom": "SMILE de l'alpaga",
+              "universe": "One Piece",
+              "titre": "Histoire",
+              "idx": "8"
+            }
+          ]
+        },
+        {
+          "texte": "Les Pirates des Bêtes qui consommèrent les SMILE défectueux furent forcés à un bonheur permanent et devinrent connus sous le nom des Plaisirs. Les fruits défectueux maintiennent leurs effets secondaires même après consommation partielle, pe",
+          "longueur": 663,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "smile-d-hippopotame",
+              "nom": "SMILE d'hippopotame",
+              "universe": "One Piece",
+              "titre": "Pirates des Bêtes",
+              "idx": "9"
+            },
+            {
+              "slug": "smile-de-l-elephant",
+              "nom": "SMILE de l'éléphant",
+              "universe": "One Piece",
+              "titre": "Pirates des Bêtes",
+              "idx": "9"
+            },
+            {
+              "slug": "smile-de-l-alpaga",
+              "nom": "SMILE de l'alpaga",
+              "universe": "One Piece",
+              "titre": "Pirates des Bêtes",
+              "idx": "9"
+            }
+          ]
+        },
+        {
+          "texte": "Luffy enveloppe son bras de Armament Haki avant de se mordre l'avant-bras, puis insuffle une quantité prodigieuse d'air dans son corps en gonflant sa structure musculaire avec accent sur sa moitié supérieure. Le revêtement de Haki qui en ré",
+          "longueur": 793,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "gear-4-gear-fourth-snake-man",
+              "nom": "Gear 4 / Gear Fourth : Snake Man",
+              "universe": "One Piece",
+              "titre": "Vue d'ensemble",
+              "idx": "1"
+            },
+            {
+              "slug": "gear-4-gear-fourth-bound-man",
+              "nom": "Gear 4 / Gear Fourth : Bound Man",
+              "universe": "One Piece",
+              "titre": "Vue d'ensemble",
+              "idx": "1"
+            }
+          ]
+        },
+        {
+          "texte": "La première forme de Gear 4 est appelée Boundman, où les proportions de Luffy deviennent déformées et sphériques, avec ses bras, son torse supérieur et ses jambes enrobés de Armament Haki tandis que ses cheveux se dressent sur leur pointe. ",
+          "longueur": 628,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "gear-4-gear-fourth-snake-man",
+              "nom": "Gear 4 / Gear Fourth : Snake Man",
+              "universe": "One Piece",
+              "titre": "Formes",
+              "idx": "2"
+            },
+            {
+              "slug": "gear-4-gear-fourth-bound-man",
+              "nom": "Gear 4 / Gear Fourth : Bound Man",
+              "universe": "One Piece",
+              "titre": "Formes",
+              "idx": "2"
+            }
+          ]
+        },
+        {
+          "texte": "Grâce à un entraînement supplémentaire et à son Awakening, Luffy a développé un meilleur contrôle de Gear 4. Après son entraînement avec Hyougoro à Udon, il a appris à activer Gear 4 instantanément sans avoir besoin de souffler l'air, élimi",
+          "longueur": 646,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "gear-4-gear-fourth-snake-man",
+              "nom": "Gear 4 / Gear Fourth : Snake Man",
+              "universe": "One Piece",
+              "titre": "Amélioration",
+              "idx": "7"
+            },
+            {
+              "slug": "gear-4-gear-fourth-bound-man",
+              "nom": "Gear 4 / Gear Fourth : Bound Man",
+              "universe": "One Piece",
+              "titre": "Amélioration",
+              "idx": "7"
+            }
+          ]
+        },
+        {
+          "texte": "Luffy active Gear 4 en enrobant son bras de Armament Haki et en se mordant l'avant-bras, gonflant une grande quantité d'air qui se distribue dans tout son corps. En utilisant une combinaison de Armament Haki et de son corps en caoutchouc, L",
+          "longueur": 543,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "gear-4-gear-fourth-snake-man",
+              "nom": "Gear 4 / Gear Fourth : Snake Man",
+              "universe": "One Piece",
+              "titre": "Techniques",
+              "idx": "8"
+            },
+            {
+              "slug": "gear-4-gear-fourth-bound-man",
+              "nom": "Gear 4 / Gear Fourth : Bound Man",
+              "universe": "One Piece",
+              "titre": "Techniques",
+              "idx": "8"
+            }
+          ]
+        },
+        {
+          "texte": "La version Boundman de la technique Gomu Gomu no Bullet voit Luffy compresser son poing dans son avant-bras agrandi, qui ressemble au canon d'une véritable arme à feu, avant de voler vers son adversaire à grande vitesse et de tirer son poin",
+          "longueur": 694,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "gear-4-gear-fourth-snake-man",
+              "nom": "Gear 4 / Gear Fourth : Snake Man",
+              "universe": "One Piece",
+              "titre": "Boundman",
+              "idx": "9"
+            },
+            {
+              "slug": "gear-4-gear-fourth-bound-man",
+              "nom": "Gear 4 / Gear Fourth : Bound Man",
+              "universe": "One Piece",
+              "titre": "Boundman",
+              "idx": "9"
+            }
+          ]
+        },
+        {
+          "texte": "Une version plus rapide du Gomu Gomu no Culverin du Boundman, où Luffy compresse son poing et le libère en utilisant la technique Python pour changer la direction de son coup en fonction des actions de son adversaire. Son bras accélère cont",
+          "longueur": 633,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "gear-4-gear-fourth-snake-man",
+              "nom": "Gear 4 / Gear Fourth : Snake Man",
+              "universe": "One Piece",
+              "titre": "Snakeman",
+              "idx": "12"
+            },
+            {
+              "slug": "gear-4-gear-fourth-bound-man",
+              "nom": "Gear 4 / Gear Fourth : Bound Man",
+              "universe": "One Piece",
+              "titre": "Snakeman",
+              "idx": "12"
+            }
+          ]
+        },
+        {
+          "texte": "La première fois que Tankman a été affichée, Luffy avait consommé de prodigieuses quantités de biscuits et avait en conséquence grandi jusqu'à une taille énorme et gonflée, connue sous le nom de Tankman: Manpuku Version. Dans cette forme, L",
+          "longueur": 695,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "gear-4-gear-fourth-snake-man",
+              "nom": "Gear 4 / Gear Fourth : Snake Man",
+              "universe": "One Piece",
+              "titre": "Techniques situationnelles",
+              "idx": "14"
+            },
+            {
+              "slug": "gear-4-gear-fourth-bound-man",
+              "nom": "Gear 4 / Gear Fourth : Bound Man",
+              "universe": "One Piece",
+              "titre": "Techniques situationnelles",
+              "idx": "14"
+            }
+          ]
+        },
+        {
+          "texte": "La première fois que cette forme a été présentée, Luffy avait consommé des quantités considérables de biscuits et avait en conséquence grandi jusqu'à une taille énorme et gonflée. Dans cette forme, Luffy ressemble à un lutteur de sumo avec ",
+          "longueur": 676,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "gear-4-gear-fourth-snake-man",
+              "nom": "Gear 4 / Gear Fourth : Snake Man",
+              "universe": "One Piece",
+              "titre": "Tankman: Version Manpuku",
+              "idx": "15"
+            },
+            {
+              "slug": "gear-4-gear-fourth-bound-man",
+              "nom": "Gear 4 / Gear Fourth : Bound Man",
+              "universe": "One Piece",
+              "titre": "Tankman: Version Manpuku",
+              "idx": "15"
+            }
+          ]
+        },
+        {
+          "texte": "La base G-8 dispose d'un personnel diversifié incluant le Vice-amiral Jonathan en tant que commandant de base, le Lieutenant Drake et divers officiers mariniers. L'effectif comprend des unités de combat spécialisées comme les Marines du Ven",
+          "longueur": 519,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "g-8-marine-officer-gray",
+              "nom": "G-8 Marine Officer (Gray)",
+              "universe": "One Piece",
+              "titre": "Personnel Notable",
+              "idx": "2"
+            },
+            {
+              "slug": "g-8-marine-officer-blond",
+              "nom": "G-8 Marine Officer (Blond)",
+              "universe": "One Piece",
+              "titre": "Personnel Notable",
+              "idx": "2"
+            }
+          ]
+        },
+        {
+          "texte": "Peu est connu avec certitude sur les origines et vraie nature des Fruits du Démon. Le Dr Vegapunk a spéculé qu'ils représentent les possibilités d'évolution humaine, les différents pouvoirs incarnant les branches futures de l'humanité créée",
+          "longueur": 1101,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "fruit-de-l-amour",
+              "nom": "Fruit de l'amour",
+              "universe": "One Piece",
+              "titre": "Origines",
+              "idx": "2"
+            },
+            {
+              "slug": "fruit-du-sommeil",
+              "nom": "Fruit du Sommeil",
+              "universe": "One Piece",
+              "titre": "Origines",
+              "idx": "2"
+            }
+          ]
+        },
+        {
+          "texte": "Chaque Fruit du Démon a une apparence unique, le seul point commun étant leur peau distinctement striée en spirale. Certains ont des formes ordinaires ressemblant à des fruits courants, tandis que d'autres ont des formes inhabituelles reflé",
+          "longueur": 945,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "fruit-de-l-amour",
+              "nom": "Fruit de l'amour",
+              "universe": "One Piece",
+              "titre": "Apparence",
+              "idx": "3"
+            },
+            {
+              "slug": "fruit-du-sommeil",
+              "nom": "Fruit du Sommeil",
+              "universe": "One Piece",
+              "titre": "Apparence",
+              "idx": "3"
+            }
+          ]
+        },
+        {
+          "texte": "Les Fruits du Démon existent dans un cycle de réincarnation ; quand l'utilisateur d'un fruit meurt, son pouvoir se manifeste dans un nouveau Fruit du Démon dans une partie aléatoire du monde, prêt à doter un nouvel utilisateur. Au lieu de c",
+          "longueur": 954,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "fruit-de-l-amour",
+              "nom": "Fruit de l'amour",
+              "universe": "One Piece",
+              "titre": "Croissance",
+              "idx": "12"
+            },
+            {
+              "slug": "fruit-du-sommeil",
+              "nom": "Fruit du Sommeil",
+              "universe": "One Piece",
+              "titre": "Croissance",
+              "idx": "12"
+            }
+          ]
+        },
+        {
+          "texte": "Le Mochi Mochi no Mi est un fruit rond de couleur blanche crème avec le motif de tourbillon typique de tous les Fruits du Démon. Dans sa moitié inférieure, le fruit se rétrécit considérablement comme s'il était pincé, avant de s'élargir pou",
+          "longueur": 453,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "atk-op-power-mochi",
+              "nom": "Power Mochi",
+              "universe": "One Piece",
+              "titre": "Apparence",
+              "idx": "2"
+            },
+            {
+              "slug": "atk-op-zan-giri-mochi",
+              "nom": "Zan Giri Mochi",
+              "universe": "One Piece",
+              "titre": "Apparence",
+              "idx": "2"
+            }
+          ]
+        },
+        {
+          "texte": "À l'origine, en tant qu'escroc, Kamyu ne se souciait que de lui-même et de ses complices, et profitait de la générosité des habitants des villes locales. Cependant, après avoir affronté les « pirates malfaisants », il a réalisé l'importance",
+          "longueur": 467,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "kamyu-s-fellow-wrestler",
+              "nom": "Kamyu's Fellow Wrestler",
+              "universe": "One Piece",
+              "titre": "Personnalité",
+              "idx": "2"
+            },
+            {
+              "slug": "kamyu-s-fellow-swordsman",
+              "nom": "Kamyu's Fellow Swordsman",
+              "universe": "One Piece",
+              "titre": "Personnalité",
+              "idx": "2"
+            }
+          ]
+        },
+        {
+          "texte": "Presque rien n'est connu avec certitude concernant les véritables origines et la nature des Fruits du Démon, bien que Vegapunk ait théorisé qu'ils constituent une manifestation des branches possibles de l'évolution humaine, fruit de l'espoi",
+          "longueur": 947,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "fruit-de-la-passion",
+              "nom": "Fruit de la passion",
+              "universe": "One Piece",
+              "titre": "Origines",
+              "idx": "2"
+            },
+            {
+              "slug": "fruit-de-l-art",
+              "nom": "Fruit de l'Art",
+              "universe": "One Piece",
+              "titre": "Origines",
+              "idx": "2"
+            }
+          ]
+        },
+        {
+          "texte": "Chaque Fruit du Démon possède une apparence distincte caractérisée par une peau présentant un motif de spirales très reconnaissable, bien que les formes individuelles varient considérablement selon leurs pouvoirs respectifs. Certains Fruits",
+          "longueur": 1025,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "fruit-de-la-passion",
+              "nom": "Fruit de la passion",
+              "universe": "One Piece",
+              "titre": "Apparence",
+              "idx": "3"
+            },
+            {
+              "slug": "fruit-de-l-art",
+              "nom": "Fruit de l'Art",
+              "universe": "One Piece",
+              "titre": "Apparence",
+              "idx": "3"
+            }
+          ]
+        },
+        {
+          "texte": "Tous les Fruits du Démon se classent en trois catégories fondamentales selon la nature des pouvoirs qu'ils accordent : Paramecia, Zoan et Logia. Les Paramecia, type le plus courant, englobent les fruits octroyant une vaste variété de capaci",
+          "longueur": 977,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "fruit-de-la-passion",
+              "nom": "Fruit de la passion",
+              "universe": "One Piece",
+              "titre": "Types de Fruits du Démon",
+              "idx": "5"
+            },
+            {
+              "slug": "fruit-de-l-art",
+              "nom": "Fruit de l'Art",
+              "universe": "One Piece",
+              "titre": "Types de Fruits du Démon",
+              "idx": "5"
+            }
+          ]
+        },
+        {
+          "texte": "Les Fruits du Démon naturels existent dans un cycle de réincarnation perpétuel : quand l'utilisateur d'un Fruit meurt, son pouvoir renaît dans un nouveau Fruit du Démon qui apparaît dans une région aléatoire du monde, prêt à doter un nouvel",
+          "longueur": 1102,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "fruit-de-la-passion",
+              "nom": "Fruit de la passion",
+              "universe": "One Piece",
+              "titre": "Croissance",
+              "idx": "12"
+            },
+            {
+              "slug": "fruit-de-l-art",
+              "nom": "Fruit de l'Art",
+              "universe": "One Piece",
+              "titre": "Croissance",
+              "idx": "12"
+            }
+          ]
+        },
+        {
+          "texte": "Les Fruits du Démon naturels opèrent selon un cycle de réincarnation où le pouvoir d'un utilisateur décédé renaît dans un nouveau Fruit qui apparaît aléatoirement dans le monde, prêt à doter un nouveau porteur. Le pouvoir transforme simplem",
+          "longueur": 628,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "fruit-de-la-passion",
+              "nom": "Fruit de la passion",
+              "universe": "One Piece",
+              "titre": "Fruits du Démon naturels",
+              "idx": "13"
+            },
+            {
+              "slug": "fruit-de-l-art",
+              "nom": "Fruit de l'Art",
+              "universe": "One Piece",
+              "titre": "Fruits du Démon naturels",
+              "idx": "13"
+            }
+          ]
+        },
+        {
+          "texte": "Section contenant un tableau multilingue de paroles avec kanji japonais, romanisation Rōmaji et traduction anglaise, présentant le contenu lyrique d'une composition musicale liée à ce SMILE.",
+          "longueur": 190,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "smile-de-souris",
+              "nom": "SMILE de souris",
+              "universe": "One Piece",
+              "titre": "Paroles",
+              "idx": "1"
+            },
+            {
+              "slug": "smile-de-l-ecureuil-volant",
+              "nom": "SMILE de l'écureuil volant",
+              "universe": "One Piece",
+              "titre": "Paroles",
+              "idx": "1"
+            }
+          ]
+        }
+      ]
+    },
+    "descFr": {
+      "groupes": 17,
+      "fichesConcernees": 40,
+      "detail": [
+        {
+          "texte": "Première apparition : épisode 445. Les Six Forces Newkama sont un groupe de Newkama et d'anciens prisonniers de Newkama Land, au niveau 5,5.",
+          "longueur": 140,
+          "n": 6,
+          "membres": [
+            {
+              "slug": "newkama-force-1",
+              "nom": "Newkama Force #1",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "newkama-force-3",
+              "nom": "Newkama Force #3",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "newkama-force-4",
+              "nom": "Newkama Force #4",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "newkama-force-2",
+              "nom": "Newkama Force #2",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "newkama-force-6",
+              "nom": "Newkama Force #6",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "newkama-force-5",
+              "nom": "Newkama Force #5",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Première apparition : épisode 426. Le Fan-club Orenami est un club de fans qui idolâtrent Nami, formé de quatre garçons de Little East Blue.",
+          "longueur": 140,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "orenami-fan-l",
+              "nom": "Orenami Fan (L)",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "orenami-fan-v",
+              "nom": "Orenami Fan (V)",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "orenami-fan-o",
+              "nom": "Orenami Fan (O)",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Les Domingos Surhumains (WT100 : « Almighty Domingos ») sont un petit groupe de pirates de trois membres au sein de l'équipage de Buggy.",
+          "longueur": 136,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "superhuman-domingos-3",
+              "nom": "Superhuman Domingos #3",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "superhuman-domingos-2",
+              "nom": "Superhuman Domingos #2",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "superhuman-domingos-1",
+              "nom": "Superhuman Domingos #1",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Première apparition : épisode 460. Les frères Decalvan sont deux pirates renommés du Nouveau Monde qui s'allièrent à Barbe Blanche.",
+          "longueur": 131,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "decalvan-brother-b",
+              "nom": "Decalvan Brother (B)",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "decalvan-brother-a",
+              "nom": "Decalvan Brother (A)",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Il est l'actuel daimyô du Pays du Vent, ayant remplacé l'ancien daimyô du vent. Lors d'une réunion des daimyô des Cinq Grands Pays Ninjas, il fut le troisième des cinq daimyô à consentir à la formation officielle des Forces Ninjas de l'Alli",
+          "longueur": 325,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "wind-daimyo-part-ii",
+              "nom": "Wind Daimyō (Part II)",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "wind-daimyo-part-i",
+              "nom": "Wind Daimyō (Part I)",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Un membre du Gang des Lapins qui terrorise un village que traverse l'équipage du Dragon. Après avoir été battu, il est abandonné sur la Lune pour y piler du mochi.",
+          "longueur": 163,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "rabbit-gang-member-1",
+              "nom": "Rabbit Gang Member 1",
+              "universe": "Dragon Ball",
+              "type": "character"
+            },
+            {
+              "slug": "rabbit-gang-member-2",
+              "nom": "Rabbit Gang Member 2",
+              "universe": "Dragon Ball",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Comme les autres garçons du groupe, il est plutôt superficiel et considère Karin, la plus forte et la plus intelligente du groupe, comme leur chef.",
+          "longueur": 147,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "kei-uehara",
+              "nom": "Kei Uehara",
+              "universe": "Bleach",
+              "type": "character"
+            },
+            {
+              "slug": "heita-toujouin",
+              "nom": "Heita Toujouin",
+              "universe": "Bleach",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Première apparition : Épisode 50. Les Frères Riley, « Tueurs de Police », étaient un duo ou un trio de criminels installés à Logue Town. Dans les épisodes hors-série de Logue Town, Daddy Masterson amène deux Frères Riley inconscients, avec ",
+          "longueur": 466,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "riley-brother-1",
+              "nom": "Riley Brother #1",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "riley-brother-2",
+              "nom": "Riley Brother #2",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Oto et Kogarashi sont des katanas à la forme particulière : ils ont des tsuba (garde) en forme de croix (comme pour le Yubashiri), leurs poignets sont rouges, mais ils ont des lames d'estoc, droites et effilées à la pointe, et non recourbée",
+          "longueur": 384,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "kogarashi",
+              "nom": "kogarashi",
+              "universe": "One Piece",
+              "type": "artifact"
+            },
+            {
+              "slug": "oto",
+              "nom": "Oto",
+              "universe": "One Piece",
+              "type": "artifact"
+            }
+          ]
+        },
+        {
+          "texte": "Début : Épisode 317. Abi est une fille de Water Seven qui sollicita l'aide de Luffy et Chopper pour retrouver son animal de compagnie, Aobire, après sa disparition.",
+          "longueur": 164,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "abi-s-father",
+              "nom": "Abi's Father",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "abi-s-mother",
+              "nom": "Abi's Mother",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Race : Shinigami. Taille : 202 cm. Grade : capitaine de la 11e division. Proches : Yachiru Kusajishi (fille adoptive). Le prénom de Zaraki vient du district où il résidait autrefois, Zaraki, le 80e district de l'Allée nord du Rukongai. Le d",
+          "longueur": 1284,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "ken",
+              "nom": "Ken",
+              "universe": "Bleach",
+              "type": "character"
+            },
+            {
+              "slug": "kenpachi-zaraki",
+              "nom": "Kenpachi Zaraki",
+              "universe": "Bleach",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Shin'emon demanda l'aide de Konoha pour escorter une tasse à thé « inestimable », Kachoufuugetsu (Beauté de la Nature), jusqu'à une exposition. Lorsque Naruto et Kiba arrivèrent pour aider leur client à transporter la tasse, ils découvriren",
+          "longueur": 1127,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "shin",
+              "nom": "Shin",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "shin-emon",
+              "nom": "Shin'emon",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Première apparition : épisode 836. Quand elle était petite fille, Linlin admirait innocemment ses parents et croyait tout ce qu'ils lui disaient. À cause de son comportement incontrôlable, ses parents furent finalement contraints de l'aband",
+          "longueur": 887,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "linlin-s-mother",
+              "nom": "Linlin's Mother",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "linlin-s-father",
+              "nom": "Linlin's Father",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Koji Kashin est un « Inner » de l'organisation Kara, chargé du secteur situé aux confins du Pays du Feu. Koji Kashin est un clone de Jiraiya créé par Amado Sanzu dans le but de tuer Isshiki Ôtsutsuki.",
+          "longueur": 200,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "koji-kashin",
+              "nom": "Koji Kashin",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "koji",
+              "nom": "Kōji",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Udon est l'ami de Konohamaru et Moegi. Il fait partie de l'équipe de genin dirigée par Ebisu. Il semble avoir le nez perpétuellement qui coule et paraît très somnolent. Udon répète à plusieurs reprises qu'il adore les mathématiques, et on l",
+          "longueur": 448,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "udon-ise",
+              "nom": "Udon Ise",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "ise",
+              "nom": "Ise",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Première apparition : Épisode 386. Les Rosy Life Riders, autrefois appelés les Flying Fish Riders (トビウオライダーズ), étaient un gang de kidnappeurs opérant autour de l'archipel Sabaody. Chaque membre chevauche un poisson volant, d'où le nom du ga",
+          "longueur": 518,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "rosy-life-rider-blond",
+              "nom": "Rosy Life Rider (Blond)",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "rosy-life-rider-headband",
+              "nom": "Rosy Life Rider (Headband)",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Ashina Uzumaki était le chef du clan Uzumaki à l'époque de la fondation de Konoha. C'était un homme âgé qui pouvait encore livrer bataille même passé la soixantaine. Il était très fort en fûinjutsu et en kenjutsu.",
+          "longueur": 213,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "ashina",
+              "nom": "Ashina",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "ashina-uzumaki",
+              "nom": "Ashina Uzumaki",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": {
+      "groupes": 29,
+      "fichesConcernees": 65,
+      "detail": [
+        {
+          "texte": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha…",
+          "longueur": 98,
+          "n": 5,
+          "membres": [
+            {
+              "slug": "liberation-du-vent-futon",
+              "nom": "Libération du Vent (Fūton)",
+              "universe": "Naruto",
+              "type": "power"
+            },
+            {
+              "slug": "liberation-du-feu-katon",
+              "nom": "Libération du Feu (Katon)",
+              "universe": "Naruto",
+              "type": "power"
+            },
+            {
+              "slug": "liberation-de-l-eau-suiton",
+              "nom": "Libération de l'Eau (Suiton)",
+              "universe": "Naruto",
+              "type": "power"
+            },
+            {
+              "slug": "liberation-de-la-terre-doton",
+              "nom": "Libération de la Terre (Doton)",
+              "universe": "Naruto",
+              "type": "power"
+            },
+            {
+              "slug": "liberation-du-yin",
+              "nom": "Libération du Yin",
+              "universe": "Naruto",
+              "type": "power"
+            }
+          ]
+        },
+        {
+          "texte": "Personnage mineur de One Piece, apparu de manière ponctuelle et peu développé dans l'histoire.",
+          "longueur": 94,
+          "n": 4,
+          "membres": [
+            {
+              "slug": "milky",
+              "nom": "Milky",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "kimel",
+              "nom": "Kimel",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "judy",
+              "nom": "Judy",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "inuppe",
+              "nom": "Inuppe",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Arme / outil de l'univers Naruto — porté par Sasori, Kankurō.",
+          "longueur": 61,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "kuroari",
+              "nom": "Kuroari",
+              "universe": "Naruto",
+              "type": "artifact"
+            },
+            {
+              "slug": "karasu-naruto",
+              "nom": "Karasu",
+              "universe": "Naruto",
+              "type": "artifact"
+            },
+            {
+              "slug": "mother-and-father",
+              "nom": "Mother and Father",
+              "universe": "Naruto",
+              "type": "artifact"
+            }
+          ]
+        },
+        {
+          "texte": "Nature de chakra de l'univers Naruto — maîtrisée par Hiruko (missing-nin).",
+          "longueur": 74,
+          "n": 3,
+          "membres": [
+            {
+              "slug": "liberation-de-l-acier-koton",
+              "nom": "Libération de l'Acier (Kōton)",
+              "universe": "Naruto",
+              "type": "power"
+            },
+            {
+              "slug": "liberation-des-tenebres-meiton",
+              "nom": "Libération des Ténèbres (Meiton)",
+              "universe": "Naruto",
+              "type": "power"
+            },
+            {
+              "slug": "swift-release",
+              "nom": "Swift Release",
+              "universe": "Naruto",
+              "type": "power"
+            }
+          ]
+        },
+        {
+          "texte": "Personnage mineur de One Piece, apparu ponctuellement, sans détails biographiques marquants.",
+          "longueur": 92,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "jarul",
+              "nom": "Jarul",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "kinbo",
+              "nom": "Kinbo",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Personnage isolé de l'univers de One Piece, sans développement notable dans la trame principale.",
+          "longueur": 96,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "prodi",
+              "nom": "Prodi",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "minoruba",
+              "nom": "Minoruba",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Il est l'actuel daimyô du Pays du Vent, ayant remplacé l'ancien daimyô du vent. Lors d'une réunion des daimyô des Cinq Grands Pays Ninjas, il fut le troisième des cinq daimyô à consentir à la formation officielle des Forces Ninjas de l'Alli",
+          "longueur": 325,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "wind-daimyo-part-ii",
+              "nom": "Wind Daimyō (Part II)",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "wind-daimyo-part-i",
+              "nom": "Wind Daimyō (Part I)",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Arme / outil de l'univers Naruto — porté par Hagoromo Ōtsutsuki, Tenten, Darui…",
+          "longueur": 79,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "kohaku-no-johei",
+              "nom": "Kohaku no Jōhei",
+              "universe": "Naruto",
+              "type": "artifact"
+            },
+            {
+              "slug": "benihisago",
+              "nom": "Benihisago",
+              "universe": "Naruto",
+              "type": "artifact"
+            }
+          ]
+        },
+        {
+          "texte": "Arme / outil de l'univers Naruto — porté par Monzaemon Chikamatsu.",
+          "longueur": 66,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "lion-headed-kannon",
+              "nom": "Lion-Headed Kannon",
+              "universe": "Naruto",
+              "type": "artifact"
+            },
+            {
+              "slug": "chikamatsu-collection",
+              "nom": "Chikamatsu Collection",
+              "universe": "Naruto",
+              "type": "artifact"
+            }
+          ]
+        },
+        {
+          "texte": "Comme les autres garçons du groupe, il est plutôt superficiel et considère Karin, la plus forte et la plus intelligente du groupe, comme leur chef.",
+          "longueur": 147,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "kei-uehara",
+              "nom": "Kei Uehara",
+              "universe": "Bleach",
+              "type": "character"
+            },
+            {
+              "slug": "heita-toujouin",
+              "nom": "Heita Toujouin",
+              "universe": "Bleach",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Personnage secondaire croisé brièvement dans One Piece, dont le parcours n'est pas développé dans la série.",
+          "longueur": 107,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "clapp",
+              "nom": "Clapp",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "conney",
+              "nom": "Conney",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Personnage d'arrière-plan de One Piece, dont l'existence est attestée sans détails narratifs marquants.",
+          "longueur": 103,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "detamaruka-shin",
+              "nom": "Detamaruka Shin",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "pekkori",
+              "nom": "Pekkori",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Hibari Kamakura est une actrice de Konoha et la mère d'Osuka.",
+          "longueur": 61,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "hibari-naruto",
+              "nom": "Hibari",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "hibari-kamakura",
+              "nom": "Hibari Kamakura",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Personnage secondaire féminin apparu ponctuellement dans l'univers Naruto, sans rôle canonique majeur clairement établi.",
+          "longueur": 120,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "amayo",
+              "nom": "Amayo",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "aino",
+              "nom": "Aino",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Agente sous pseudonyme de l'organisation secrète Baroque Works, dirigée par Crocodile pendant l'arc Alabasta.",
+          "longueur": 109,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "miss-friday",
+              "nom": "Miss Friday",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "miss-catharine",
+              "nom": "Miss Catharine",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Oto et Kogarashi sont des katanas à la forme particulière : ils ont des tsuba (garde) en forme de croix (comme pour le Yubashiri), leurs poignets sont",
+          "longueur": 150,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "kogarashi",
+              "nom": "kogarashi",
+              "universe": "One Piece",
+              "type": "artifact"
+            },
+            {
+              "slug": "oto",
+              "nom": "Oto",
+              "universe": "One Piece",
+              "type": "artifact"
+            }
+          ]
+        },
+        {
+          "texte": "Univers au haut niveau mortel, exempté du Tournoi du Pouvoir.",
+          "longueur": 61,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "univers-5",
+              "nom": "Univers 5",
+              "universe": "Dragon Ball",
+              "type": "place"
+            },
+            {
+              "slug": "univers-8",
+              "nom": "Univers 8",
+              "universe": "Dragon Ball",
+              "type": "place"
+            }
+          ]
+        },
+        {
+          "texte": "Arme / outil de l'univers Naruto — porté par Mizore Fuyukuma.",
+          "longueur": 61,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "retractable-cable-arm",
+              "nom": "Retractable Cable Arm",
+              "universe": "Naruto",
+              "type": "artifact"
+            },
+            {
+              "slug": "snowboard",
+              "nom": "Snowboard",
+              "universe": "Naruto",
+              "type": "artifact"
+            }
+          ]
+        },
+        {
+          "texte": "Shin'emon demanda l'aide de Konoha pour escorter une tasse à thé « inestimable », Kachoufuugetsu (Beauté de la Nature), jusqu'à une exposition. Lorsque Naruto et Kiba arrivèrent pour aider leur client à transporter la tasse, ils découvriren",
+          "longueur": 1127,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "shin",
+              "nom": "Shin",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "shin-emon",
+              "nom": "Shin'emon",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Kakashi Hatake…",
+          "longueur": 99,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "liberation-du-yang",
+              "nom": "Libération du Yang",
+              "universe": "Naruto",
+              "type": "power"
+            },
+            {
+              "slug": "liberation-de-la-foudre-raiton",
+              "nom": "Libération de la Foudre (Raiton)",
+              "universe": "Naruto",
+              "type": "power"
+            }
+          ]
+        },
+        {
+          "texte": "Arme / outil de l'univers Naruto — porté par Disonasu, Dokku.",
+          "longueur": 61,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "ama-no-hoko",
+              "nom": "Ama no Hoko",
+              "universe": "Naruto",
+              "type": "artifact"
+            },
+            {
+              "slug": "saezuri",
+              "nom": "Saezuri",
+              "universe": "Naruto",
+              "type": "artifact"
+            }
+          ]
+        },
+        {
+          "texte": "Personnage dont le nom évoque la roche (iwa), apparu de façon secondaire dans un arc filler de l'anime Naruto.",
+          "longueur": 110,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "iwaji",
+              "nom": "Iwaji",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "iwakyo",
+              "nom": "Iwakyō",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Koji Kashin est un « Inner » de l'organisation Kara, chargé du secteur situé aux confins du Pays du Feu. Koji Kashin est un clone de Jiraiya créé par Amado Sanzu dans le but de tuer Isshiki Ôtsutsuki.",
+          "longueur": 200,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "koji-kashin",
+              "nom": "Koji Kashin",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "koji",
+              "nom": "Kōji",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Personnage secondaire dont l'apparition ponctuelle laisse peu d'éléments biographiques précis dans le canon.",
+          "longueur": 108,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "zaba",
+              "nom": "Zaba",
+              "universe": "One Piece",
+              "type": "character"
+            },
+            {
+              "slug": "jorul",
+              "nom": "Jorul",
+              "universe": "One Piece",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Misumi Tsurugi est un membre de l'équipe de genin de Kabuto.",
+          "longueur": 60,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "tsurugi",
+              "nom": "Tsurugi",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "misumi-tsurugi",
+              "nom": "Misumi Tsurugi",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Groupe de l'univers Naruto — réunit Chōji Akimichi, Ino Yamanaka, Shikamaru Nara…",
+          "longueur": 81,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "team-10",
+              "nom": "Team 10",
+              "universe": "Naruto",
+              "type": "status"
+            },
+            {
+              "slug": "twenty-platoons",
+              "nom": "Twenty Platoons",
+              "universe": "Naruto",
+              "type": "status"
+            }
+          ]
+        },
+        {
+          "texte": "Udon est l'ami de Konohamaru et Moegi. Il fait partie de l'équipe de genin dirigée par Ebisu. Il semble avoir le nez perpétuellement qui coule et paraît très somnolent. Udon répète à plusieurs reprises qu'il adore les mathématiques, et on l",
+          "longueur": 448,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "udon-ise",
+              "nom": "Udon Ise",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "ise",
+              "nom": "Ise",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Ashina Uzumaki était le chef du clan Uzumaki à l'époque de la fondation de Konoha. C'était un homme âgé qui pouvait encore livrer bataille même passé la soixantaine. Il était très fort en fûinjutsu et en kenjutsu.",
+          "longueur": 213,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "ashina",
+              "nom": "Ashina",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "ashina-uzumaki",
+              "nom": "Ashina Uzumaki",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        },
+        {
+          "texte": "Agari Kaisen est le chef du clan Kedôin et un vieil ami de Tsunade.",
+          "longueur": 67,
+          "n": 2,
+          "membres": [
+            {
+              "slug": "agari-kaisen",
+              "nom": "Agari Kaisen",
+              "universe": "Naruto",
+              "type": "character"
+            },
+            {
+              "slug": "agari",
+              "nom": "Agari",
+              "universe": "Naruto",
+              "type": "character"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "D_orphelins": {
+    "sections": 0,
+    "sectionsDetail": [],
+    "aretes": 0,
+    "aretesDetail": []
+  },
+  "E_slugs": {
+    "fautifs": [],
+    "doublons": []
+  }
+}

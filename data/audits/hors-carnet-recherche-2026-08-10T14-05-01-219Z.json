@@ -1,0 +1,347 @@
+{
+  "mesureLe": "2026-08-10T14:05:07.669Z",
+  "base": "http://localhost:3000",
+  "attentesMortes": [
+    "shadow-clone-technique",
+    "gomu-gomu-no-mi"
+  ],
+  "nCas": 22,
+  "nAbsents": 12,
+  "resultats": [
+    {
+      "q": "Naruto Uzumaki",
+      "classe": "nom exact",
+      "slugAttendu": "naruto-uzumaki",
+      "nomAttendu": "Naruto Uzumaki",
+      "romanAttendu": null,
+      "err": null,
+      "total": 36,
+      "nRendus": 25,
+      "rang": 3,
+      "verdict": "TROUVÉ rang 3",
+      "premiers": [
+        "Tomaru Minakura (tomaru-minakura)",
+        "Tsunami (tsunami)",
+        "Naruto Uzumaki (naruto-uzumaki)",
+        "Hinata Hyūga (hinata-hyuga)"
+      ]
+    },
+    {
+      "q": "Roronoa Zoro",
+      "classe": "nom exact",
+      "slugAttendu": "roronoa-zoro",
+      "nomAttendu": "Roronoa Zoro",
+      "romanAttendu": null,
+      "err": null,
+      "total": 26,
+      "nRendus": 23,
+      "rang": 9,
+      "verdict": "TROUVÉ rang 9",
+      "premiers": [
+        "Île Obscuria (kuraigana-island)",
+        "East Blue (east-blue)",
+        "Village de Shimotsuki (shimotsuki-village)",
+        "Whisky Peak (whisky-peak)"
+      ]
+    },
+    {
+      "q": "Kenpachi Zaraki",
+      "classe": "nom exact",
+      "slugAttendu": "kenpachi-zaraki",
+      "nomAttendu": "Kenpachi Zaraki",
+      "romanAttendu": null,
+      "err": null,
+      "total": 15,
+      "nRendus": 14,
+      "rang": 5,
+      "verdict": "TROUVÉ rang 5",
+      "premiers": [
+        "Yumichika Ayasegawa (yumichika-ayasegawa)",
+        "Grimmjow Jaegerjaquez (grimmjow)",
+        "Coyote Starrk (coyote-starrk)",
+        "Kaname Tousen (kaname-tousen)"
+      ]
+    },
+    {
+      "q": "Nico Robin",
+      "classe": "nom exact",
+      "slugAttendu": "nico-robin",
+      "nomAttendu": "Nico Robin",
+      "romanAttendu": null,
+      "err": null,
+      "total": 29,
+      "nRendus": 19,
+      "rang": null,
+      "verdict": "ABSENT",
+      "premiers": [
+        "Oran (oran)",
+        "Franky (franky)",
+        "Nigeratta (nigeratta)",
+        "Kanezenny (kanezenny)"
+      ]
+    },
+    {
+      "q": "Rasengan",
+      "classe": "nom exact",
+      "slugAttendu": "rasengan",
+      "nomAttendu": "Rasengan",
+      "romanAttendu": null,
+      "err": null,
+      "total": 36,
+      "nRendus": 24,
+      "rang": 1,
+      "verdict": "TROUVÉ 1er",
+      "premiers": [
+        "Rasengan (rasengan)",
+        "Raging Thunder (raging-thunder)",
+        "Guts Rasengan (guts-rasengan)",
+        "Gelel Rasengan (gelel-rasengan)"
+      ]
+    },
+    {
+      "q": "Zoro",
+      "classe": "nom partiel",
+      "slugAttendu": "roronoa-zoro",
+      "nomAttendu": "Roronoa Zoro",
+      "romanAttendu": null,
+      "err": null,
+      "total": 36,
+      "nRendus": 20,
+      "rang": 13,
+      "verdict": "TROUVÉ rang 13",
+      "premiers": [
+        "Île Obscuria (kuraigana-island)",
+        "East Blue (east-blue)",
+        "Village de Shimotsuki (shimotsuki-village)",
+        "Île Organ (organ-island)"
+      ]
+    },
+    {
+      "q": "Ace",
+      "classe": "nom partiel",
+      "slugAttendu": "portgas-d-ace",
+      "nomAttendu": "Portgas D. Ace",
+      "romanAttendu": null,
+      "err": null,
+      "total": 36,
+      "nRendus": 23,
+      "rang": null,
+      "verdict": "ABSENT",
+      "premiers": [
+        "Body Flicker Technique (body-flicker-technique)",
+        "Dimension Breaker (atk-db-dimension-breaker)",
+        "Fire Release Chakra Mode (fire-release-chakra-mode)",
+        "Evil Containment Wave (atk-db-evil-containment-wave)"
+      ]
+    },
+    {
+      "q": "Kakashi",
+      "classe": "nom partiel",
+      "slugAttendu": "kakashi-hatake",
+      "nomAttendu": "Kakashi Hatake",
+      "romanAttendu": null,
+      "err": null,
+      "total": 36,
+      "nRendus": 27,
+      "rang": 7,
+      "verdict": "TROUVÉ rang 7",
+      "premiers": [
+        "Elemental Puppets (elemental-puppets)",
+        "Sabre à chakra de lumière blanche (sabre-a-chakra-de-lumiere-blanche)",
+        "Lame à chakra (lame-a-chakra)",
+        "Makibishi (makibishi)"
+      ]
+    },
+    {
+      "q": "Uzumaki Naruto",
+      "classe": "ordre japonais",
+      "slugAttendu": "naruto-uzumaki",
+      "nomAttendu": "Naruto Uzumaki",
+      "romanAttendu": null,
+      "err": null,
+      "total": 1,
+      "nRendus": 1,
+      "rang": null,
+      "verdict": "ABSENT",
+      "premiers": [
+        "Shun (shun)"
+      ]
+    },
+    {
+      "q": "Jugo",
+      "classe": "accent absent (ū)",
+      "slugAttendu": "jugo",
+      "nomAttendu": "Jūgo",
+      "romanAttendu": null,
+      "err": null,
+      "total": 2,
+      "nRendus": 2,
+      "rang": null,
+      "verdict": "ABSENT",
+      "premiers": [
+        "Fukurou (fukurou-one-piece)",
+        "Fukurou (fukurou-one-piece)"
+      ]
+    },
+    {
+      "q": "Hozuki",
+      "classe": "accent absent (ō)",
+      "slugAttendu": "mangetsu-hozuki",
+      "nomAttendu": "Mangetsu Hōzuki",
+      "romanAttendu": null,
+      "err": null,
+      "total": 1,
+      "nRendus": 1,
+      "rang": null,
+      "verdict": "ABSENT",
+      "premiers": [
+        "Fire Release: Heavenly Prison (fire-release-heavenly-prison)"
+      ]
+    },
+    {
+      "q": "Jugo",
+      "classe": "accent absent (ū) — doublon volontaire",
+      "slugAttendu": "jugo",
+      "nomAttendu": "Jūgo",
+      "romanAttendu": null,
+      "err": null,
+      "total": 2,
+      "nRendus": 2,
+      "rang": null,
+      "verdict": "ABSENT",
+      "premiers": [
+        "Fukurou (fukurou-one-piece)",
+        "Fukurou (fukurou-one-piece)"
+      ]
+    },
+    {
+      "q": "Chôji",
+      "classe": "accent surnuméraire",
+      "slugAttendu": "choji-akimichi",
+      "nomAttendu": "Chōji Akimichi",
+      "romanAttendu": null,
+      "err": null,
+      "total": 4,
+      "nRendus": 4,
+      "rang": null,
+      "verdict": "ABSENT",
+      "premiers": [
+        "Asuma Sarutobi (asuma-sarutobi)",
+        "Tamao (tamao)",
+        "Isono (isono)",
+        "Isono (isono)"
+      ]
+    },
+    {
+      "q": "Buso-shoku",
+      "classe": "romanisation (roman_name)",
+      "slugAttendu": "haki-de-l-armement",
+      "nomAttendu": "Haki de l'Armement",
+      "romanAttendu": "Busō-shoku no Haki",
+      "err": null,
+      "total": 0,
+      "nRendus": 0,
+      "rang": null,
+      "verdict": "ABSENT",
+      "premiers": []
+    },
+    {
+      "q": "Busō-shoku no Haki",
+      "classe": "romanisation exacte",
+      "slugAttendu": "haki-de-l-armement",
+      "nomAttendu": "Haki de l'Armement",
+      "romanAttendu": "Busō-shoku no Haki",
+      "err": null,
+      "total": 0,
+      "nRendus": 0,
+      "rang": null,
+      "verdict": "ABSENT",
+      "premiers": []
+    },
+    {
+      "q": "Armament Haki",
+      "classe": "terme anglais",
+      "slugAttendu": "haki-de-l-armement",
+      "nomAttendu": "Haki de l'Armement",
+      "romanAttendu": "Busō-shoku no Haki",
+      "err": null,
+      "total": 8,
+      "nRendus": 8,
+      "rang": null,
+      "verdict": "ABSENT",
+      "premiers": [
+        "Ifrit Jambe (atk-op-ifrit-jambe)",
+        "Shigan (atk-op-shigan)",
+        "Kibin (kibin)",
+        "Gear 4 / Gear Fourth : Snake Man (gear-4-gear-fourth-snake-man)"
+      ]
+    },
+    {
+      "q": "Shadow Clone",
+      "classe": "terme anglais",
+      "slugAttendu": "shadow-clone-technique",
+      "verdict": "ATTENTE MORTE — slug absent du corpus"
+    },
+    {
+      "q": "Multiclonage",
+      "classe": "terme français",
+      "slugAttendu": "shadow-clone-technique",
+      "verdict": "ATTENTE MORTE — slug absent du corpus"
+    },
+    {
+      "q": "Sharingan",
+      "classe": "nom exact",
+      "slugAttendu": "sharingan",
+      "nomAttendu": "Sharingan",
+      "romanAttendu": null,
+      "err": null,
+      "total": 36,
+      "nRendus": 28,
+      "rang": 2,
+      "verdict": "TROUVÉ rang 2",
+      "premiers": [
+        "Clan Uchiha (uchiha)",
+        "Sharingan (sharingan)",
+        "Rinnegan (rinnegan)",
+        "Byakugan (byakugan)"
+      ]
+    },
+    {
+      "q": "Gomu Gomu",
+      "classe": "nom partiel japonais",
+      "slugAttendu": "gomu-gomu-no-mi",
+      "verdict": "ATTENTE MORTE — slug absent du corpus"
+    },
+    {
+      "q": "Fruit du Démon",
+      "classe": "nom français",
+      "slugAttendu": "fruit-du-demon",
+      "nomAttendu": "Fruit du Démon",
+      "romanAttendu": null,
+      "err": null,
+      "total": 36,
+      "nRendus": 21,
+      "rang": null,
+      "verdict": "ABSENT",
+      "premiers": [
+        "Ain (ain)",
+        "Sengoku (sengoku)",
+        "Bins (bins)",
+        "Tony Tony Chopper (tony-tony-chopper)"
+      ]
+    },
+    {
+      "q": "naruto-uzumaki",
+      "classe": "slug tapé tel quel",
+      "slugAttendu": "naruto-uzumaki",
+      "nomAttendu": "Naruto Uzumaki",
+      "romanAttendu": null,
+      "err": null,
+      "total": 0,
+      "nRendus": 0,
+      "rang": null,
+      "verdict": "ABSENT",
+      "premiers": []
+    }
+  ]
+}

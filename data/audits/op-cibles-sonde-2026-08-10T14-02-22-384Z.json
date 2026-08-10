@@ -1,0 +1,1474 @@
+{
+ "chantier": "mesurer les cibles One Piece manquantes avant de créer les fiches (vague 6)",
+ "quand": "2026-08-10T14:02:26.429Z",
+ "traceLue": "isolees-html-one-piece-trace-2026-08-10T13-18-05-781Z.json",
+ "etat": {
+  "fiches": 7654,
+  "aretes": 16910,
+  "isoleesTotales": 662,
+  "isoleesOnePiece": 366,
+  "fichesOnePiece": 2229,
+  "parTypeOnePiece": {
+   "character": 1449,
+   "artifact": 154,
+   "place": 192,
+   "status": 113,
+   "power": 309,
+   "skill": 11,
+   "profession": 1
+  },
+  "parTypeIsolees": {
+   "character": 215,
+   "artifact": 61,
+   "place": 59,
+   "status": 31
+  },
+  "professionsOnePiece": [
+   {
+    "slug": "pirate",
+    "name": "Pirate"
+   }
+  ]
+ },
+ "unionIsoleesSortables": [
+  "giberson",
+  "jigra",
+  "du-feld",
+  "drug-peclo",
+  "umit",
+  "kuraigana-island",
+  "san-faldo",
+  "kyuka-island",
+  "renaisse",
+  "ukkari-island",
+  "ile-de-mecha",
+  "iile-de-la-couronne",
+  "banaro-island",
+  "ile-d-asuka",
+  "st-poplar",
+  "nanimonai-island",
+  "otaka",
+  "hareji",
+  "uholisia",
+  "chichilisia",
+  "ultraking",
+  "furrari",
+  "mari",
+  "moqueca",
+  "nashi",
+  "couran",
+  "samosa",
+  "tea-iv",
+  "tritobu",
+  "stroganoff",
+  "quatres-empereurs",
+  "hippie",
+  "gally",
+  "herb",
+  "mayushika",
+  "seto",
+  "musse",
+  "shandorian-chief",
+  "luigia",
+  "fabre",
+  "mendou",
+  "mitsuboshi",
+  "downs-island",
+  "rubeck-island",
+  "rakesh",
+  "kuen-village",
+  "shuutai",
+  "ile-celeste",
+  "ballom-terminal",
+  "beer-vi",
+  "loadestar-island",
+  "risky-red-island",
+  "foodvalten-island",
+  "winner-island",
+  "broc-coli-island",
+  "laugh-tale",
+  "applenine-island",
+  "mystoria-island",
+  "sphinx-island",
+  "zangirimaru",
+  "caramel",
+  "gram",
+  "hocha",
+  "rint",
+  "zadie",
+  "guarana",
+  "ginger",
+  "jean-ango",
+  "cidre",
+  "morollon",
+  "ed",
+  "reik",
+  "phillip",
+  "tegata-ringana",
+  "hou-one-piece",
+  "spoil",
+  "taco",
+  "zombie-lola",
+  "jigorou",
+  "mocdonald",
+  "kamyu",
+  "karate-island",
+  "togare",
+  "big-runner",
+  "web-panic",
+  "gran-tesoro",
+  "reverse-mountain-lieu",
+  "alice",
+  "topknot",
+  "rusukaina"
+ ],
+ "cibles": [
+  {
+   "titre": "Paradise",
+   "titresDemandes": [
+    "Paradise"
+   ],
+   "liens": 11,
+   "champs": {
+    "region": 11
+   },
+   "gainIsoleesEncore": 11,
+   "typesDesSources": {
+    "place": 11
+   },
+   "sourcesEncoreIsolees": [
+    "Île Obscuria [place/kuraigana-island]",
+    "San Faldo [place/san-faldo]",
+    "Île Kyuka [place/kyuka-island]",
+    "Renaisse [place/renaisse]",
+    "Île Ukkari [place/ukkari-island]",
+    "Île de Mecha [place/ile-de-mecha]",
+    "IÎle de la couronne [place/iile-de-la-couronne]",
+    "Île Banaro [place/banaro-island]",
+    "Île d'Asuka [place/ile-d-asuka]",
+    "St Poplar [place/st-poplar]",
+    "Île Sans Rien [place/nanimonai-island]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "New World",
+   "titresDemandes": [
+    "New World"
+   ],
+   "liens": 11,
+   "champs": {
+    "region": 11
+   },
+   "gainIsoleesEncore": 9,
+   "typesDesSources": {
+    "place": 9
+   },
+   "sourcesEncoreIsolees": [
+    "Île de Road Star [place/loadestar-island]",
+    "Île Risky Red [place/risky-red-island]",
+    "Île Foodvalten [place/foodvalten-island]",
+    "Île Winner [place/winner-island]",
+    "Île Broc Coli [place/broc-coli-island]",
+    "Laugh Tale [place/laugh-tale]",
+    "Île d'Applenine [place/applenine-island]",
+    "Île Mystoria [place/mystoria-island]",
+    "Île Sphinx [place/sphinx-island]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Levely",
+   "titresDemandes": [
+    "Levely"
+   ],
+   "liens": 9,
+   "champs": {
+    "affiliation": 9
+   },
+   "gainIsoleesEncore": 9,
+   "typesDesSources": {
+    "character": 9
+   },
+   "sourcesEncoreIsolees": [
+    "Furrari [character/furrari]",
+    "Mari [character/mari]",
+    "Moqueca [character/moqueca]",
+    "Nashi [character/nashi]",
+    "Couran [character/couran]",
+    "Samosa [character/samosa]",
+    "Tea IV [character/tea-iv]",
+    "Tritobu [character/tritobu]",
+    "Stroganoff [character/stroganoff]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Shandia",
+   "titresDemandes": [
+    "Shandia"
+   ],
+   "liens": 6,
+   "champs": {
+    "affiliation": 5,
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 5,
+   "typesDesSources": {
+    "character": 5
+   },
+   "sourcesEncoreIsolees": [
+    "Herb [character/herb]",
+    "Mayushika [character/mayushika]",
+    "Seto [character/seto]",
+    "Musse [character/musse]",
+    "Shandorian Chief [character/shandorian-chief]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Underworld",
+   "titresDemandes": [
+    "Underworld"
+   ],
+   "liens": 5,
+   "champs": {
+    "affiliation": 5
+   },
+   "gainIsoleesEncore": 5,
+   "typesDesSources": {
+    "character": 5
+   },
+   "sourcesEncoreIsolees": [
+    "Giberson [character/giberson]",
+    "Jigra [character/jigra]",
+    "Du Feld [character/du-feld]",
+    "Drug Peclo [character/drug-peclo]",
+    "Umit [character/umit]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Archaeologist",
+   "titresDemandes": [
+    "Archaeologist"
+   ],
+   "liens": 8,
+   "champs": {
+    "affiliation": 4,
+    "occupation": 4
+   },
+   "gainIsoleesEncore": 4,
+   "typesDesSources": {
+    "character": 4
+   },
+   "sourcesEncoreIsolees": [
+    "Gram [character/gram]",
+    "Hocha [character/hocha]",
+    "Rint [character/rint]",
+    "Zadie [character/zadie]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Bounty Hunter",
+   "titresDemandes": [
+    "Bounty Hunter"
+   ],
+   "liens": 8,
+   "champs": {
+    "occupation": 8
+   },
+   "gainIsoleesEncore": 4,
+   "typesDesSources": {
+    "character": 4
+   },
+   "sourcesEncoreIsolees": [
+    "Guarana [character/guarana]",
+    "Ginger [character/ginger]",
+    "Jean Ango [character/jean-ango]",
+    "Cidre [character/cidre]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "North Blue",
+   "titresDemandes": [
+    "North Blue"
+   ],
+   "liens": 5,
+   "champs": {
+    "residence": 1,
+    "region": 4
+   },
+   "gainIsoleesEncore": 4,
+   "typesDesSources": {
+    "place": 4
+   },
+   "sourcesEncoreIsolees": [
+    "Île Downs [place/downs-island]",
+    "Île de Rubeck [place/rubeck-island]",
+    "Rakesh [place/rakesh]",
+    "Village de Kuen [place/kuen-village]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Little East Blue",
+   "titresDemandes": [
+    "Little East Blue"
+   ],
+   "liens": 4,
+   "champs": {
+    "residence": 4
+   },
+   "gainIsoleesEncore": 4,
+   "typesDesSources": {
+    "character": 4
+   },
+   "sourcesEncoreIsolees": [
+    "Luigia [character/luigia]",
+    "Fabre [character/fabre]",
+    "Mendou [character/mendou]",
+    "Mitsuboshi [character/mitsuboshi]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Pirate Captain",
+   "titresDemandes": [
+    "Pirate Captain"
+   ],
+   "liens": 5,
+   "champs": {
+    "occupation": 5
+   },
+   "gainIsoleesEncore": 3,
+   "typesDesSources": {
+    "status": 1,
+    "character": 2
+   },
+   "sourcesEncoreIsolees": [
+    "Quatres Empereurs [status/quatres-empereurs]",
+    "Hippie [character/hippie]",
+    "Gally [character/gally]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Cidre Guild",
+   "titresDemandes": [
+    "Cidre Guild"
+   ],
+   "liens": 3,
+   "champs": {
+    "affiliation": 3
+   },
+   "gainIsoleesEncore": 3,
+   "typesDesSources": {
+    "character": 3
+   },
+   "sourcesEncoreIsolees": [
+    "Guarana [character/guarana]",
+    "Ginger [character/ginger]",
+    "Cidre [character/cidre]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Thriller Bark Pirates",
+   "titresDemandes": [
+    "Thriller Bark Pirates"
+   ],
+   "liens": 3,
+   "champs": {
+    "affiliation": 3
+   },
+   "gainIsoleesEncore": 3,
+   "typesDesSources": {
+    "character": 3
+   },
+   "sourcesEncoreIsolees": [
+    "Zombie Lola [character/zombie-lola]",
+    "Jigorou [character/jigorou]",
+    "MocDonald [character/mocdonald]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Zombies",
+   "titresDemandes": [
+    "Zombies"
+   ],
+   "liens": 3,
+   "champs": {
+    "occupation": 3
+   },
+   "gainIsoleesEncore": 3,
+   "typesDesSources": {
+    "character": 3
+   },
+   "sourcesEncoreIsolees": [
+    "Zombie Lola [character/zombie-lola]",
+    "Jigorou [character/jigorou]",
+    "MocDonald [character/mocdonald]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Flower Capital",
+   "titresDemandes": [
+    "Flower Capital"
+   ],
+   "liens": 21,
+   "champs": {
+    "residence": 21
+   },
+   "gainIsoleesEncore": 2,
+   "typesDesSources": {
+    "character": 2
+   },
+   "sourcesEncoreIsolees": [
+    "Otaka [character/otaka]",
+    "Hareji [character/hareji]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Ninja-Pirate-Mink-Samurai Alliance",
+   "titresDemandes": [
+    "Ninja-Pirate-Mink-Samurai Alliance"
+   ],
+   "liens": 5,
+   "champs": {
+    "affiliation": 5
+   },
+   "gainIsoleesEncore": 2,
+   "typesDesSources": {
+    "character": 2
+   },
+   "sourcesEncoreIsolees": [
+    "Hareji [character/hareji]",
+    "Zangirimaru [character/zangirimaru]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Doctor",
+   "titresDemandes": [
+    "Doctor"
+   ],
+   "liens": 4,
+   "champs": {
+    "occupation": 4
+   },
+   "gainIsoleesEncore": 2,
+   "typesDesSources": {
+    "character": 2
+   },
+   "sourcesEncoreIsolees": [
+    "Tegata Ringana [character/tegata-ringana]",
+    "Hou [character/hou-one-piece]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Cook",
+   "titresDemandes": [
+    "Cook"
+   ],
+   "liens": 3,
+   "champs": {
+    "occupation": 3
+   },
+   "gainIsoleesEncore": 2,
+   "typesDesSources": {
+    "character": 2
+   },
+   "sourcesEncoreIsolees": [
+    "Mitsuboshi [character/mitsuboshi]",
+    "Shuutai [character/shuutai]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Niho Navy",
+   "titresDemandes": [
+    "Niho Navy"
+   ],
+   "liens": 2,
+   "champs": {
+    "affiliation": 1,
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 2,
+   "typesDesSources": {
+    "character": 2
+   },
+   "sourcesEncoreIsolees": [
+    "Uholisia [character/uholisia]",
+    "Chichilisia [character/chichilisia]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Nagagutsu Kingdom",
+   "titresDemandes": [
+    "Nagagutsu Kingdom"
+   ],
+   "liens": 2,
+   "champs": {
+    "residence": 2
+   },
+   "gainIsoleesEncore": 2,
+   "typesDesSources": {
+    "character": 2
+   },
+   "sourcesEncoreIsolees": [
+    "Furrari [character/furrari]",
+    "Tritobu [character/tritobu]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Sky Island",
+   "titresDemandes": [
+    "Sky Island"
+   ],
+   "liens": 2,
+   "champs": {
+    "region": 2
+   },
+   "gainIsoleesEncore": 2,
+   "typesDesSources": {
+    "status": 1,
+    "place": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Île Céleste [status/ile-celeste]",
+    "Ballon Terminal [place/ballom-terminal]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Ruluka Government",
+   "titresDemandes": [
+    "Ruluka Government"
+   ],
+   "liens": 2,
+   "champs": {
+    "affiliation": 2
+   },
+   "gainIsoleesEncore": 2,
+   "typesDesSources": {
+    "character": 2
+   },
+   "sourcesEncoreIsolees": [
+    "Reik [character/reik]",
+    "Phillip [character/phillip]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Officer",
+   "titresDemandes": [
+    "Officer"
+   ],
+   "liens": 2,
+   "champs": {
+    "occupation": 2
+   },
+   "gainIsoleesEncore": 2,
+   "typesDesSources": {
+    "character": 2
+   },
+   "sourcesEncoreIsolees": [
+    "Guarana [character/guarana]",
+    "Ginger [character/ginger]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Calm Belt",
+   "titresDemandes": [
+    "Calm Belt"
+   ],
+   "liens": 2,
+   "champs": {
+    "residence": 1,
+    "region": 1
+   },
+   "gainIsoleesEncore": 2,
+   "typesDesSources": {
+    "character": 1,
+    "place": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Topknot [character/topknot]",
+    "Ruskaina [place/rusukaina]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Thriller Bark Victim's Association",
+   "titresDemandes": [
+    "Thriller Bark Victim's Association"
+   ],
+   "liens": 2,
+   "champs": {
+    "affiliation": 1,
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Spoil [character/spoil]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Rain Dinners",
+   "titresDemandes": [
+    "Rain Dinners"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Ultraking [character/ultraking]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Three Great Powers",
+   "titresDemandes": [
+    "Three Great Powers"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "status": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Quatres Empereurs [status/quatres-empereurs]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Organ Dealing Assassination Group",
+   "titresDemandes": [
+    "Organ Dealing Assassination Group"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Jigra [character/jigra]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Roshwan Kingdom",
+   "titresDemandes": [
+    "Roshwan Kingdom"
+   ],
+   "liens": 1,
+   "champs": {
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Beer VI [character/beer-vi]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Hyougoro Family",
+   "titresDemandes": [
+    "Hyougoro Family"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Otaka [character/otaka]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Foods/Beverages",
+   "titresDemandes": [
+    "Foods/Beverages"
+   ],
+   "liens": 1,
+   "champs": {
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Caramel [character/caramel]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Tajine Kingdom",
+   "titresDemandes": [
+    "Tajine Kingdom"
+   ],
+   "liens": 1,
+   "champs": {
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Morollon [character/morollon]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Endurance Curry Pirates",
+   "titresDemandes": [
+    "Endurance Curry Pirates"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Hippie [character/hippie]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Randolph Theater",
+   "titresDemandes": [
+    "Randolph Theater"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Ed [character/ed]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Dynamo Team",
+   "titresDemandes": [
+    "Dynamo Team"
+   ],
+   "liens": 1,
+   "champs": {
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Reik [character/reik]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Shishano Kingdom",
+   "titresDemandes": [
+    "Shishano Kingdom"
+   ],
+   "liens": 1,
+   "champs": {
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Taco [character/taco]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Gally Pirates",
+   "titresDemandes": [
+    "Gally Pirates"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Gally [character/gally]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Admiral (Fleet Captain)",
+   "titresDemandes": [
+    "Admiral (Fleet Captain)"
+   ],
+   "liens": 1,
+   "champs": {
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Chichilisia [character/chichilisia]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Umit Shipping",
+   "titresDemandes": [
+    "Umit Shipping"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Umit [character/umit]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Ido",
+   "titresDemandes": [
+    "Ido"
+   ],
+   "liens": 1,
+   "champs": {
+    "residence": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Kamyu [character/kamyu]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "South Blue",
+   "titresDemandes": [
+    "South Blue"
+   ],
+   "liens": 1,
+   "champs": {
+    "region": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "place": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Île du Karaté [place/karate-island]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Nefertari Family",
+   "titresDemandes": [
+    "Nefertari Family"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Hou [character/hou-one-piece]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Collection Party",
+   "titresDemandes": [
+    "The Collection Party"
+   ],
+   "liens": 1,
+   "champs": {
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Phillip [character/phillip]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Eigis Kingdom",
+   "titresDemandes": [
+    "Eigis Kingdom"
+   ],
+   "liens": 1,
+   "champs": {
+    "residence": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Tea IV [character/tea-iv]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Coral Hill",
+   "titresDemandes": [
+    "Coral Hill"
+   ],
+   "liens": 1,
+   "champs": {
+    "residence": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Togare [character/togare]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Bobby (Non-Canon)",
+   "titresDemandes": [
+    "Bobby (Non-Canon)"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "artifact": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Big Runner [artifact/big-runner]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Pogo",
+   "titresDemandes": [
+    "Pogo"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "artifact": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Big Runner [artifact/big-runner]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Willy",
+   "titresDemandes": [
+    "Willy"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "artifact": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Web Panic [artifact/web-panic]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Carina",
+   "titresDemandes": [
+    "Carina"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "artifact": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Gran Tesoro [artifact/gran-tesoro]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Red Line",
+   "titresDemandes": [
+    "Red Line"
+   ],
+   "liens": 1,
+   "champs": {
+    "region": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "place": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Reverse Mountain [place/reverse-mountain-lieu]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Galley-La Company",
+   "titresDemandes": [
+    "Galley-La Company"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Alice [character/alice]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Poseidon",
+   "titresDemandes": [
+    "Poseidon"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Topknot [character/topknot]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Sniper",
+   "titresDemandes": [
+    "Sniper"
+   ],
+   "liens": 1,
+   "champs": {
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 1,
+   "typesDesSources": {
+    "character": 1
+   },
+   "sourcesEncoreIsolees": [
+    "Jean Ango [character/jean-ango]"
+   ],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Totto Land",
+   "titresDemandes": [
+    "Totto Land"
+   ],
+   "liens": 14,
+   "champs": {
+    "region": 14
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Kouzuki Family",
+   "titresDemandes": [
+    "Kouzuki Family"
+   ],
+   "liens": 5,
+   "champs": {
+    "affiliation": 5
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Samurai",
+   "titresDemandes": [
+    "Samurai"
+   ],
+   "liens": 5,
+   "champs": {
+    "occupation": 5
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Franky Family",
+   "titresDemandes": [
+    "Franky Family"
+   ],
+   "liens": 4,
+   "champs": {
+    "affiliation": 4
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Captain (Marine Rank)",
+   "titresDemandes": [
+    "Captain (Marine Rank)"
+   ],
+   "liens": 2,
+   "champs": {
+    "occupation": 2
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Marine Ranks",
+   "titresDemandes": [
+    "Marine Ranks"
+   ],
+   "liens": 2,
+   "champs": {
+    "occupation": 2
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Kyoshiro Family",
+   "titresDemandes": [
+    "Kyoshiro Family"
+   ],
+   "liens": 2,
+   "champs": {
+    "affiliation": 2
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "G-8",
+   "titresDemandes": [
+    "G-8"
+   ],
+   "liens": 2,
+   "champs": {
+    "affiliation": 1,
+    "residence": 1
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Shipwright",
+   "titresDemandes": [
+    "Shipwright"
+   ],
+   "liens": 2,
+   "champs": {
+    "occupation": 2
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "SWORD",
+   "titresDemandes": [
+    "SWORD"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Night Butterfly Pirates",
+   "titresDemandes": [
+    "Night Butterfly Pirates"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Charlotte Family",
+   "titresDemandes": [
+    "Charlotte Family"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Okama",
+   "titresDemandes": [
+    "Okama"
+   ],
+   "liens": 1,
+   "champs": {
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Navarone Island",
+   "titresDemandes": [
+    "Navarone Island"
+   ],
+   "liens": 1,
+   "champs": {
+    "residence": 1
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "WCI 31",
+   "titresDemandes": [
+    "WCI 31"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Social Club",
+   "titresDemandes": [
+    "Social Club"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Newspaper",
+   "titresDemandes": [
+    "Newspaper"
+   ],
+   "liens": 1,
+   "champs": {
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Animal Species/Water 7 Saga",
+   "titresDemandes": [
+    "Animal Species/Water 7 Saga"
+   ],
+   "liens": 1,
+   "champs": {
+    "occupation": 1
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  },
+  {
+   "titre": "Walrus School",
+   "titresDemandes": [
+    "Walrus School"
+   ],
+   "liens": 1,
+   "champs": {
+    "affiliation": 1
+   },
+   "gainIsoleesEncore": 0,
+   "typesDesSources": {},
+   "sourcesEncoreIsolees": [],
+   "dejaEnBase": [],
+   "parAliasCible": null
+  }
+ ]
+}

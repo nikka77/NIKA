@@ -1,0 +1,167 @@
+{
+  "chantier": "contrôle à l'écran de l'instrument de lisibilité",
+  "quand": "2026-08-10T14:06:46.421Z",
+  "trace_mesuree": "data/audits/lisibilite-visuels-avant-2026-08-10T14-03-12-923Z.json",
+  "famille": "illisible",
+  "methode": "Chromium décode l'image, la peint en `contain` sur #09152A, `getImageData` recalcule contraste maximal et couverture ; tolérance 0,35 sur le contraste et 6 points sur la couverture",
+  "compte": {
+    "echantillon": 10,
+    "testables": 10,
+    "accords": 10,
+    "desaccords": 0,
+    "taux_desaccord": 0
+  },
+  "lignes": [
+    {
+      "fiches": [
+        "calorie-control"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/6/6d/Akimichi_Symbol_old.svg/revision/latest/scale-to-width-down/720?cb=20090302085213",
+      "nav_contraste_max": 1.152,
+      "nav_couverture_1_5": 0,
+      "nav_couverture_2": 0,
+      "nav_definition": "810×810",
+      "sharp_contraste_max": 1.152,
+      "sharp_couverture_1_5": 0,
+      "sharp_couverture_2": 0,
+      "verdict_sharp": "illisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "clan-sarutobi"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/3/32/Sarutobi_Symbole.svg/revision/latest/scale-to-width-down/720?cb=20160620171638&path-prefix=fr",
+      "nav_contraste_max": 1.152,
+      "nav_couverture_1_5": 0,
+      "nav_couverture_2": 0,
+      "nav_definition": "810×810",
+      "sharp_contraste_max": 1.152,
+      "sharp_couverture_1_5": 0,
+      "sharp_couverture_2": 0,
+      "verdict_sharp": "illisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "eight-trigrams-sealing-style",
+        "four-symbols-seal"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/2/27/Four_Symbols_Seal.svg/revision/latest/scale-to-width-down/720?cb=20150510014907",
+      "nav_contraste_max": 1.152,
+      "nav_couverture_1_5": 0,
+      "nav_couverture_2": 0,
+      "nav_definition": "809×809",
+      "sharp_contraste_max": 1.152,
+      "sharp_couverture_1_5": 0,
+      "sharp_couverture_2": 0,
+      "verdict_sharp": "illisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "izuno"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/b/b4/Izuno_Symbole.svg/revision/latest/scale-to-width-down/720?cb=20211115213346&path-prefix=fr",
+      "nav_contraste_max": 1.152,
+      "nav_couverture_1_5": 0,
+      "nav_couverture_2": 0,
+      "nav_definition": "810×810",
+      "sharp_contraste_max": 1.152,
+      "sharp_couverture_1_5": 0,
+      "sharp_couverture_2": 0,
+      "verdict_sharp": "illisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "monzaemon-chikamatsu"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/a/a9/Monzaemon_Symbol.svg/revision/latest/scale-to-width-down/720?cb=20090510230648",
+      "nav_contraste_max": 1.152,
+      "nav_couverture_1_5": 0,
+      "nav_couverture_2": 0,
+      "nav_definition": "810×810",
+      "sharp_contraste_max": 1.152,
+      "sharp_couverture_1_5": 0,
+      "sharp_couverture_2": 0,
+      "verdict_sharp": "illisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "hamura-otsutsuki-golem"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/b/be/Statue_of_the_%C5%8Ctsutsuki_Clan.png",
+      "nav_contraste_max": 1.628,
+      "nav_couverture_1_5": 0.1693,
+      "nav_couverture_2": 0,
+      "nav_definition": "1920×1080",
+      "sharp_contraste_max": 1.653,
+      "sharp_couverture_1_5": 0.1825,
+      "sharp_couverture_2": 0,
+      "verdict_sharp": "illisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "summoning-crushing-toad-stomach"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/c/cb/Summoning_Crushing_Toad_Stomach.png/revision/latest/scale-to-width-down/720?cb=20150917042642",
+      "nav_contraste_max": 1.806,
+      "nav_couverture_1_5": 0.0659,
+      "nav_couverture_2": 0,
+      "nav_definition": "720×401",
+      "sharp_contraste_max": 1.706,
+      "sharp_couverture_1_5": 0.0752,
+      "sharp_couverture_2": 0,
+      "verdict_sharp": "illisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "gatekeeper"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/5/56/The_Gatekeeper_movie.png",
+      "nav_contraste_max": 1.809,
+      "nav_couverture_1_5": 0.0028,
+      "nav_couverture_2": 0,
+      "nav_definition": "1920×1080",
+      "sharp_contraste_max": 1.828,
+      "sharp_couverture_1_5": 0.003,
+      "sharp_couverture_2": 0,
+      "verdict_sharp": "illisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "poison-moth-genjutsu"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/0/04/Poison_Moth_Genjutsu_part_2.png/revision/latest/scale-to-width-down/720?cb=20160115105332",
+      "nav_contraste_max": 1.892,
+      "nav_couverture_1_5": 0.0009,
+      "nav_couverture_2": 0,
+      "nav_definition": "720×405",
+      "sharp_contraste_max": 1.917,
+      "sharp_couverture_1_5": 0.001,
+      "sharp_couverture_2": 0,
+      "verdict_sharp": "illisible",
+      "accord": true
+    },
+    {
+      "fiches": [
+        "bo-shadow-clone-technique"
+      ],
+      "url": "https://static.wikia.nocookie.net/naruto/images/e/e6/Bo_Shadow_Clone.png/revision/latest/scale-to-width-down/720?cb=20220119031415",
+      "nav_contraste_max": 1.934,
+      "nav_couverture_1_5": 0.0021,
+      "nav_couverture_2": 0,
+      "nav_definition": "720×404",
+      "sharp_contraste_max": 2.035,
+      "sharp_couverture_1_5": 0.0027,
+      "sharp_couverture_2": 0.0001,
+      "verdict_sharp": "illisible",
+      "accord": true
+    }
+  ]
+}

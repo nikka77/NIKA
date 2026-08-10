@@ -1105,7 +1105,22 @@ class SaturationError extends Error {
   constructor(cle) { super(`${cle} saturé (model busy)`); this.cle = cle; }
 }
 let quotaIndisponible = false;   // RPC absente (SQL pas encore appliqué) → on le dit UNE fois
-async function quotaReserver(cle, jetonsEstimes) {
+
+// RÉSERVE D'ARBITRAGE (10/08/2026). L'étage d'arbitrage a un MODÈLE FIXE INVIOLABLE — c'est une
+// décision du 02/08, après que Nemotron eut rendu des verdicts sous la signature de Claude. Il n'a
+// donc aucun couloir de repli. La PRODUCTION, elle, en a cinq, et claude-haiku ferme sa liste :
+// quand les quatre gratuits sont à sec, elle se rabat dessus et consomme le guichet du jour.
+//
+// Constaté ce soir : 2 118 lots d'arbitrage en file, ZÉRO traité depuis 48 heures, et le compteur
+// `anthropic/claude-haiku-4-5:jour` à 400/400. Le seul étage sans alternative se faisait manger son
+// budget par celui qui en a quatre. Ce n'est pas un manque de quota, c'est un ordre de service.
+//
+// On réserve donc la part haute du guichet quotidien à l'arbitrage : la production ne peut plus
+// dépasser PLAFOND_PRODUCTION_ANTHROPIC requêtes par jour, le reste n'est servi qu'à lui.
+const PLAFOND_PRODUCTION_ANTHROPIC = 100;
+const TYPES_ARBITRAGE = new Set(['arbitrage_claude', 'arbitrage_claude_lot']);
+
+async function quotaReserver(cle, jetonsEstimes, type = null) {
   const lim = LIMITES_FOURNISSEURS[cle] ?? LIMITES_FOURNISSEURS[String(cle).split('/')[0]];
   if (!lim || quotaIndisponible) return;
   // Guichet JOUR d'abord : attendre une fenêtre de 24 h n'a pas de sens — on échoue franchement
@@ -1115,7 +1130,10 @@ async function quotaReserver(cle, jetonsEstimes) {
       p_fournisseur: `${cle}:jour`,
       p_requetes: 1,
       p_jetons: lim.jetonsParJour ? Math.min(jetonsEstimes, lim.jetonsParJour) : 0,
-      p_limite_requetes: lim.parJour ?? 1_000_000,
+      // La production s'arrête au plafond réduit ; l'arbitrage garde le guichet entier.
+      p_limite_requetes: (String(cle).startsWith('anthropic/') && !TYPES_ARBITRAGE.has(type) && lim.parJour)
+        ? Math.min(lim.parJour, PLAFOND_PRODUCTION_ANTHROPIC)
+        : (lim.parJour ?? 1_000_000),
       // Pas de plafond de jetons/jour ⇒ limite « infinie », JAMAIS 1 : la colonne garde les
       // jetons accumulés d'un réglage précédent, et une limite à 1 refermerait le guichet
       // pour 24 h sur un compteur périmé (piège vécu le 01/08 : 19 218 jetons > 1).
@@ -1216,7 +1234,7 @@ async function appelOpenAICompat({ url, cle, modele, messages, type, schema }) {
     : url.includes('nvidia.com') ? 'nvidia' : url.includes('mistral.ai') ? 'mistral'
     : url.includes('openrouter.ai') ? 'openrouter' : url.includes('deepinfra.com') ? 'deepinfra'
     : url.includes('googleapis.com') ? 'gemini' : null;
-  await quotaReserver(fournisseur ? `${fournisseur}/${modele}` : null, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900);
+  await quotaReserver(fournisseur ? `${fournisseur}/${modele}` : null, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900, type);
   const modeJson = MODES_JSON[modele] ?? 'json_schema';
   let msgs = modeJson === 'json_object'
     ? [{ ...messages[0], content: `${messages[0].content}\n\nRéponds UNIQUEMENT par un objet JSON conforme à ce schéma (mêmes clés, mêmes types, AUCUN texte hors JSON, ne recopie pas le schéma) :\n${JSON.stringify(schema)}` }]
@@ -1389,7 +1407,7 @@ async function callModel(type, payload, modeleImpose) {
     // format n'est pas OpenAI-compatible, et le préambule statique passe en system AVEC
     // cache_control — facturé à 10 % dès le deuxième litige de la fenêtre.
     if (!process.env.ANTHROPIC_API_KEY) throw new Error('ANTHROPIC_API_KEY absente de .env.local');
-    await quotaReserver(`anthropic/${sansCouloir(model)}`, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + 700);
+    await quotaReserver(`anthropic/${sansCouloir(model)}`, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + 700, type);
     const [systeme, ...reste] = String(messages[0].content).split('\n===LITIGE===\n');
     const rA = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST', signal: AbortSignal.timeout(TIMEOUT_MS),
@@ -1479,7 +1497,7 @@ ${JSON.stringify(schema)}` },
     const { additionalProperties, ...gSchema } = schema;   // champ inconnu de l'API Gemini
     // Palier gratuit très serré (5 req/min sur gemini-flash-latest, mesuré le 26/07) : sans backoff,
     // un lot de 9 perd 5 tâches d'un coup. Gemini annonce son délai dans error.details[].retryDelay.
-    await quotaReserver(`gemini/${model.slice(7)}`, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900);
+    await quotaReserver(`gemini/${model.slice(7)}`, Math.ceil((messages[0]?.content?.length ?? 0) / 4) + (NUM_PREDICT[type] ?? 800) + 900, type);
     for (let essai = 1; ; essai++) {
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model.slice(7)}:generateContent`,
