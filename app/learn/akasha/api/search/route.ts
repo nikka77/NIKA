@@ -101,9 +101,13 @@ export async function GET(req: Request) {
     })),
   }));
 
-  // Pas de doublon : une fiche dont le NOM matche déjà n'a pas besoin de réapparaître en section.
-  const entriesParNom = new Set(results.filter((r) => r.name.toLowerCase().includes(q.toLowerCase())).map((r) => r.id));
-  const dossiers = sectionRows.length ? await sectionGroup(s, sectionRows, entriesParNom) : null;
+  // Pas de doublon : une fiche DÉJÀ AFFICHÉE plus haut n'a pas besoin de réapparaître en section.
+  // Le filtre ne retenait que celles dont le NOM matche — or une fiche peut être remontée par son
+  // texte (descFr, résumé) sans que son nom contienne la requête, et elle ressortait alors une
+  // seconde fois dans « Dossiers ». Le critère juste n'est pas « comment a-t-elle matché », c'est
+  // « est-elle déjà à l'écran ». Constaté le 10/08.
+  const dejaAffichees = new Set(results.map((r) => r.id));
+  const dossiers = sectionRows.length ? await sectionGroup(s, sectionRows, dejaAffichees) : null;
   if (dossiers) groups.push(dossiers);
 
   const total = results.length + (dossiers?.items.length ?? 0);

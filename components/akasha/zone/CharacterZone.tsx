@@ -10,6 +10,7 @@ import DatabookRadar, { type Stats } from '../DatabookRadar';
 import { familyLabel } from '../NarutoIcons';
 import { RARITY_META, universeMeta, universeWordmark, type AkashaEntryDetail } from '@/lib/akasha/types';
 import { ALLOWED_FILTER_ATTRS, universeHubSlug } from '@/lib/akasha/universe-taxonomy';
+import { autresAretes } from '@/lib/akasha/relation-labels';
 import { normalizeForms } from '@/lib/akasha/forms';
 import { ZoneProvider, useZone, type ZoneSelection } from './zone-context';
 import { CanalRegion, ChipLink } from './zone-ui';
@@ -124,6 +125,12 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
   // sur une liste DÉJÀ tronquée à 24 : il ne pouvait donc jamais annoncer plus de 24, quel qu'en
   // soit le nombre réel, et une fiche à 60 liens en promettait 24. Le total est vrai, la coupe est
   // dite, et le reste se lit dans le dossier — mais on n'annonce plus le plafond pour la mesure.
+  // Les deux tranches de la grappe « Techniques », calculées AVANT le rendu : c'est d'elles que se
+  // déduit le « + N autres », et non d'un plafond supposé.
+  const techniquesLieesRendues = Math.min(atkRels.length, 14);
+  const techniquesJutsuRendus = Math.max(0, 18 - techniquesLieesRendues);
+  const techniquesCachees = atkRels.length + jutsuPlain.length
+    - techniquesLieesRendues - Math.min(jutsuPlain.length, techniquesJutsuRendus);
   const liensTotal = liensTous.length;
   const liens = liensTous.slice(0, 24);
   const belong: { attr: string; label: string; value: string }[] = [];
@@ -145,11 +152,36 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
     appartient: 'Appartient à', habite: 'Réside', exerce: 'Exerce',
   };
   const dejaDit = new Set(belong.map((b) => b.value.toLowerCase()));
-  const appartenancesLiees = entry.relationsOut
+  const appartenancesToutes = entry.relationsOut
     .filter((r) => NATURES_APPARTENANCE[r.relation] && !dejaDit.has(r.target.name.toLowerCase()))
     .map((r) => ({ label: NATURES_APPARTENANCE[r.relation], name: r.target.name, slug: r.target.slug }))
-    .filter((x, i, tab) => tab.findIndex((y) => y.name === x.name) === i)
-    .slice(0, 12);
+    .filter((x, i, tab) => tab.findIndex((y) => y.name === x.name) === i);
+  // LA COUPE SE DIT (10/08/2026). Ce `slice(0, 12)` était MUET : le titre de la grappe ne porte pas
+  // de compteur, si bien qu'une fiche à 21 appartenances en montrait 12 sans un mot et que rien, à
+  // l'écran, ne distinguait « il n'y en a que 12 » de « on t'en cache 9 ». 8 fiches personnage sont
+  // dans ce cas (max 21, naruto-uzumaki) — même aveu que les grappes Techniques et Liens juste
+  // au-dessus, qui l'avaient déjà.
+  const appartenancesLiees = appartenancesToutes.slice(0, 12);
+
+  // ── LE RESTE DES ARÊTES (10/08/2026) — voir lib/akasha/relation-labels.ts, `autresAretes`.
+  // Les quatre grappes ci-dessus énuméraient les natures qu'elles acceptent ; tout ce qu'elles
+  // n'avaient pas prévu tombait dans le vide. Mesuré sur le corpus paginé (16 910 arêtes) :
+  // 1 957 demi-arêtes de fiches personnage n'étaient rendues par AUCUNE grappe, dont les 706
+  // `possede` SORTANTES — l'arsenal de Tenten (34 armes), les 11 lames de Kakashi, Kurama chez
+  // Naruto — et 1 234 `appartient` ENTRANTES : Aizen ne nommait aucun de ses 29 affiliés, Haku ne
+  // disait pas qu'il regroupe Zabuza alors que la fiche de Zabuza publie « Appartient à · Haku »
+  // depuis toujours. 909 fiches gagnent cette grappe.
+  // Le prédicat ci-dessous déclare ce que CETTE fiche montre DÉJÀ ailleurs ; `autresAretes` rend
+  // tout le reste, chaque chip sous le libellé de SON sens (« Possède · Kubikiribōchō » sortant,
+  // « Regroupe · Zabuza Momochi » entrant) — jamais le libellé sortant sur une arête entrante.
+  const dejaMontre = (relation: string, entrant: boolean) =>
+    entrant
+      ? relation === 'famille' || relation === 'mentor' || relation === 'eleve'
+        || relation === 'allie' || relation === 'ennemi' || relation === 'rival'
+      : relation === 'maitrise' || !!NATURES_LIENS[relation] || !!NATURES_APPARTENANCE[relation]
+        || relation === 'famille';
+  const autresTous = autresAretes(entry.relationsOut, entry.relationsIn, dejaMontre);
+  const autres = autresTous.slice(0, 12);
 
   const fStats = f.stats && typeof f.stats === 'object' ? (f.stats as Stats) : undefined;
   const favN = typeof a.favorites === 'number' ? (a.favorites as number) : null;
@@ -249,24 +281,26 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 26, marginTop: 26, maxWidth: 640 }}>
           {(atkRels.length > 0 || jutsuPlain.length > 0) && (
             <Grappe title={`Techniques · ${atkRels.length + jutsuPlain.length}`} accent={accent}>
-              {/* Le titre dit le total du graphe ; les chips s'arrêtent à 14 + un reliquat de
-                  jutsu. L'écart est ASSUMÉ et il est dit plus bas par « + N autres » — ce qui
-                  manquait, c'est justement de le dire (constat du 10/08 : une fiche à 105
-                  techniques en montrait 14 sans un mot). */}
+              {/* LE « + N AUTRES » SE COMPTE SUR CE QUI EST RENDU, pas sur un plafond supposé.
+                  Il disait `total - 18` en tenant pour acquis que 18 chips s'affichent toujours —
+                  faux dès que les techniques liées dépassent 14, puisqu'elles s'arrêtent là et que
+                  le reliquat de jutsu tombe alors à zéro. Sur une fiche à 20 liées et 0 jutsu :
+                  14 rendues, « + 2 autres » annoncés, 6 réellement cachées. Les deux tranches sont
+                  donc calculées d'abord, et l'aveu se déduit d'elles. */}
               {atkRels.slice(0, 14).map((r) => (
                 <ChipLink key={r.id} accent={accent} active={sel?.kind === 'technique' && sel.name === r.target.name}
                   onClick={() => select({ kind: 'technique', name: r.target.name, slug: r.target.slug, signature: r.target.is_signature === 'true' })}>
                   {r.target.is_signature === 'true' && <span aria-hidden style={{ color: accent }}>★ </span>}{r.target.name}
                 </ChipLink>
               ))}
-              {jutsuPlain.slice(0, Math.max(0, 18 - atkRels.length)).map((j) => (
+              {jutsuPlain.slice(0, techniquesJutsuRendus).map((j) => (
                 <ChipLink key={j} accent={accent} active={sel?.kind === 'technique' && sel.name === j}
                   onClick={() => select({ kind: 'technique', name: j })}>
                   {j}
                 </ChipLink>
               ))}
-              {atkRels.length + jutsuPlain.length > 18 && (
-                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', alignSelf: 'center' }}>+ {atkRels.length + jutsuPlain.length - 18} autres</span>
+              {techniquesCachees > 0 && (
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', alignSelf: 'center' }}>+ {techniquesCachees} autres</span>
               )}
             </Grappe>
           )}
@@ -313,6 +347,28 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
                   <span style={{ color: 'var(--td3)', fontWeight: 400 }}>{x.label} · </span>{x.name}
                 </ChipLink>
               ))}
+              {appartenancesToutes.length > appartenancesLiees.length && (
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', alignSelf: 'center' }}>+ {appartenancesToutes.length - appartenancesLiees.length} autres</span>
+              )}
+            </Grappe>
+          )}
+
+          {/* TOUT LE RESTE DU GRAPHE — la grappe qui ne peut pas laisser de trou. Elle vient en
+              DERNIER : les quatre grappes ci-dessus disent le plus lu (techniques, famille, liens,
+              appartenances) ; celle-ci ramasse ce qu'aucune d'elles n'a nommé, dans les deux sens.
+              Le compteur du titre est le TOTAL, jamais la longueur de la liste coupée. */}
+          {autres.length > 0 && (
+            <Grappe title={`Autres liens · ${autresTous.length}`} accent={accent}>
+              {autres.map((x) => (
+                <ChipLink key={`${x.target.slug}|${x.label}`} accent={accent}
+                  active={sel?.kind === 'famille' && sel.name === x.target.name && sel.rel === x.label}
+                  onClick={() => select({ kind: 'famille', rel: x.label, name: x.target.name, slug: x.target.slug })}>
+                  <span style={{ color: 'var(--td3)', fontWeight: 400 }}>{x.label} · </span>{x.target.name}
+                </ChipLink>
+              ))}
+              {autresTous.length > autres.length && (
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', alignSelf: 'center' }}>+ {autresTous.length - autres.length} autres</span>
+              )}
             </Grappe>
           )}
         </div>
@@ -367,9 +423,15 @@ function Canal({ entry, accent, f, fstr, fStats, sharedVoice }: {
   // Décision Dan 06/08 : seuls les databooks Naruto sont canon — hors Naruto, stats gardées
   // mais marquées « estimées » (aucune écriture en base, pur affichage).
   const statsEstimees = entry.universe !== 'Naruto';
+  // L'en-tête du canal dit la NATURE du lien sélectionné, pas le nom du `kind` technique.
+  // `kind:'famille'` sert de fourre-tout aux chips « Liens », « Appartenances » et « Autres liens » :
+  // annoncer « Canal · Famille » au-dessus de « Possède · Tantō » ou de « Regroupe · Zabuza » disait
+  // faux. Même lecture qu'EntityZone (`sel.kind === 'famille' ? sel.rel`), mais passée par
+  // `familyLabel` — ici `rel` peut être un code de databook (`father`, `older_sister`) que le
+  // panneau traduit déjà juste en dessous ; le brancher brut afficherait « FATHER ».
   const scope = sel === null ? 'Identité'
     : sel.kind === 'technique' ? 'Technique'
-    : sel.kind === 'famille' ? 'Famille'
+    : sel.kind === 'famille' ? familyLabel(sel.rel)
     : sel.kind === 'appartenance' ? sel.label
     : 'Forme';
 
