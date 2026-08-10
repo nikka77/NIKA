@@ -1,0 +1,1186 @@
+{
+ "quand": "2026-08-10T07:54:54.062Z",
+ "total": 7632,
+ "cles": {
+  "descFr": {
+   "n": 7178,
+   "formes": {
+    "string": 7178
+   },
+   "exemples": [
+    "Naruto·Sky Ninja Executive: \"Le Sky Ninja Executive est un ninja gradé du Pays du Ciel, dirigé par Mukade. Il se distingue par sa capacité à ne pas sous-estimer ses adv",
+    "Naruto·Inaho: \"Inaho est une genin de Konoha. Comme ses coéquipiers, elle a une confiance excessive dans les capacités de son équipe et les siennes, au po",
+    "Naruto·Body Flicker Technique: \"Technique fondamentale de déplacement permettant à un ninja de couvrir courtes ou longues distances à une vitesse quasi imperceptible. Aux "
+   ]
+  },
+  "descFrSource": {
+   "n": 4079,
+   "formes": {
+    "string": 4079
+   },
+   "exemples": [
+    "Naruto·Sky Ninja Executive: \"deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo\"",
+    "Naruto·Body Flicker Technique: \"claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)\"",
+    "Naruto·White Secret Technique Secret Art: Collection of Illusions: \"claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié)\""
+   ]
+  },
+  "voiceActors": {
+   "n": 3530,
+   "formes": {
+    "object": 3530
+   },
+   "exemples": [
+    "Naruto·Sky Ninja Executive: {\"en\":[],\"jp\":[\"Junichi Endō\"]}",
+    "Naruto·Inaho: {\"en\":[\"Colleen Villard\"],\"jp\":[\"Sakura Andō\"]}",
+    "Hunter x Hunter·Bendot: {\"en\":[\"Richard Epcar\"],\"jp\":[\"Masaki Aizawa\"]}"
+   ]
+  },
+  "category": {
+   "n": 3508,
+   "formes": {
+    "string": 3508
+   },
+   "exemples": [
+    "Naruto·Body Flicker Technique: \"Jutsu\"",
+    "Naruto·White Secret Technique Secret Art: Collection of Illusions: \"Jutsu\"",
+    "Naruto·Konohagakure: \"Village\""
+   ]
+  },
+  "descLang": {
+   "n": 3292,
+   "formes": {
+    "string": 3292
+   },
+   "exemples": [
+    "Naruto·Inaho: \"en\"",
+    "Hunter x Hunter·Bendot: \"en\"",
+    "Naruto·Shibire: \"en\""
+   ]
+  },
+  "descRaw": {
+   "n": 3287,
+   "formes": {
+    "string": 3287
+   },
+   "exemples": [
+    "Naruto·Inaho: \"Inaho is a genin from Konohagakure. Like her teammates, she is overconfident in her and her team's abilities to the point where she thought",
+    "Hunter x Hunter·Bendot: \"Bendot is a convict used by Lippo in the Trick Tower to test the examinees. His sentence is of 199 years. Nothing is known about Bendot, bu",
+    "Naruto·Shibire: \"Shibire is a Genin from Konohagakure. He and the rest of Team Shibire made it to the second phase of the Chūnin Exams. When they started to"
+   ]
+  },
+  "role": {
+   "n": 2678,
+   "formes": {
+    "string": 2678
+   },
+   "exemples": [
+    "Hunter x Hunter·Bendot: \"Personnage secondaire\"",
+    "JoJo's Bizarre Adventure·Enya Geil: \"Personnage secondaire\"",
+    "One Piece·Building Snake: \"Personnage secondaire\""
+   ]
+  },
+  "favorites": {
+   "n": 1966,
+   "formes": {
+    "number": 1966
+   },
+   "exemples": [
+    "Naruto·Shibire: 1",
+    "JoJo's Bizarre Adventure·Enya Geil: 3",
+    "Naruto·Moegi Kazamatsuri: 4"
+   ]
+  },
+  "element": {
+   "n": 1700,
+   "formes": {
+    "string": 1700
+   },
+   "exemples": [
+    "Naruto·Body Flicker Technique: \"Ninjutsu\"",
+    "Naruto·White Secret Technique Secret Art: Collection of Illusions: \"Genjutsu\"",
+    "Bleach·Getsuga Tenshō: \"Énergie tranchante\""
+   ]
+  },
+  "sex": {
+   "n": 1268,
+   "formes": {
+    "string": 1268
+   },
+   "exemples": [
+    "Naruto·Sky Ninja Executive: \"Male\"",
+    "Naruto·Inaho: \"Female\"",
+    "Naruto·Tomaru Minakura: \"Male\""
+   ]
+  },
+  "village": {
+   "n": 756,
+   "formes": {
+    "string": 756
+   },
+   "exemples": [
+    "Naruto·Inaho: \"Konohagakure\"",
+    "Naruto·Tomaru Minakura: \"Konohagakure\"",
+    "Naruto·Shibire: \"Konohagakure\""
+   ]
+  },
+  "discipline": {
+   "n": 749,
+   "formes": {
+    "string": 749
+   },
+   "exemples": [
+    "Dragon Ball·Aura of a God: \"Technique\"",
+    "Dragon Ball·Super Kamehameha: \"Technique\"",
+    "Dragon Ball·Arrow Knee: \"Technique\""
+   ]
+  },
+  "age": {
+   "n": 733,
+   "formes": {
+    "string": 733
+   },
+   "exemples": [
+    "Naruto·Inaho: \"22\"",
+    "Naruto·Tomaru Minakura: \"8\"",
+    "Naruto·Shibire: \"19\""
+   ]
+  },
+  "source": {
+   "n": 659,
+   "formes": {
+    "string": 659
+   },
+   "exemples": [
+    "Dragon Ball·Aura of a God: \"fandom\"",
+    "Dragon Ball·Super Kamehameha: \"fandom\"",
+    "Dragon Ball·Arrow Knee: \"fandom\""
+   ]
+  },
+  "faction": {
+   "n": 515,
+   "formes": {
+    "string": 515
+   },
+   "exemples": [
+    "One Piece·Building Snake: \"Pirate\"",
+    "One Piece·Giovanni: \"Civil\"",
+    "One Piece·Gerd: \"Pirate\""
+   ]
+  },
+  "rank": {
+   "n": 474,
+   "formes": {
+    "string": 474
+   },
+   "exemples": [
+    "Naruto·Inaho: \"Genin\"",
+    "Naruto·Tomaru Minakura: \"Academy Student\"",
+    "Naruto·Shibire: \"Genin\""
+   ]
+  },
+  "occupation": {
+   "n": 440,
+   "formes": {
+    "string": 421,
+    "tableau de chaînes": 19
+   },
+   "exemples": [
+    "One Piece·Building Snake: \"Lieutenant\"",
+    "One Piece·Giovanni: \"Unité des mousquetaires\"",
+    "One Piece·Gerd: \"Médecin\""
+   ]
+  },
+  "family": {
+   "n": 405,
+   "formes": {
+    "tableau d’objets": 405
+   },
+   "exemples": [
+    "Naruto·Tsunami: [{\"rel\":\"father\",\"name\":\"Tazuna\",\"slug\":\"tazuna\"},{\"rel\":\"son\",\"name\":\"Inari\",\"slug\":\"inari\"},{\"rel\":\"husband\",\"name\":\"Kaiza\",\"slug\":\"kaiza\"",
+    "Naruto·Kurenai Yūhi: [{\"rel\":\"father\",\"name\":\"Shinku Yūhi\",\"slug\":\"shinku-yuhi\"},{\"rel\":\"daughter\",\"name\":\"Mirai Sarutobi\",\"slug\":\"mirai-sarutobi\"},{\"rel\":\"spous",
+    "Naruto·Shima: [{\"rel\":\"husband\",\"name\":\"Fukasaku\",\"slug\":\"fukasaku\"}]"
+   ]
+  },
+  "material": {
+   "n": 384,
+   "formes": {
+    "string": 384
+   },
+   "exemples": [
+    "Naruto·Lame à chakra: \"Lame\"",
+    "Naruto·Kusarigama: \"Arme de mêlée\"",
+    "Naruto·Elemental Puppets: \"Outil ninja\""
+   ]
+  },
+  "roman_name": {
+   "n": 380,
+   "formes": {
+    "string": 380
+   },
+   "exemples": [
+    "One Piece·Victory Hunter: \"Bikutorī Hantā-gō\"",
+    "One Piece·Yamaoroshi: \"Yamaoroshi\"",
+    "One Piece·Navire-Cercueil: \"Hitsugi-bune\""
+   ]
+  },
+  "crew": {
+   "n": 358,
+   "formes": {
+    "string": 358
+   },
+   "exemples": [
+    "One Piece·Building Snake: \"L’équipage du Roux\"",
+    "One Piece·Gerd: \"Armada du Chapeau de Paille\"",
+    "One Piece·Ivankov Emporio: \"Armée Révolutionnaire\""
+   ]
+  },
+  "scope": {
+   "n": 331,
+   "formes": {
+    "string": 331
+   },
+   "exemples": [
+    "Naruto·Clan Uchiha: \"Clan\"",
+    "Naruto·Eight-Tails Subduing Team: \"Organisation\"",
+    "Naruto·Honoured Siblings: \"Organisation\""
+   ]
+  },
+  "region": {
+   "n": 308,
+   "formes": {
+    "string": 308
+   },
+   "exemples": [
+    "Naruto·Konohagakure: \"Pays du Feu\"",
+    "Bleach·Soul Society: \"Monde spirituel\"",
+    "Naruto·Iwagakure: \"Pays de la Terre\""
+   ]
+  },
+  "origin": {
+   "n": 283,
+   "formes": {
+    "string": 283
+   },
+   "exemples": [
+    "Naruto·Lame à chakra: \"Univers Naruto\"",
+    "Naruto·Kusarigama: \"Univers Naruto\"",
+    "Naruto·Elemental Puppets: \"Univers Naruto\""
+   ]
+  },
+  "fruit_type": {
+   "n": 279,
+   "formes": {
+    "string": 279
+   },
+   "exemples": [
+    "One Piece·Ivankov Emporio: \"Paramecia\"",
+    "One Piece·Yamato: \"Zoan Mythique\"",
+    "One Piece·Fruit Jeune-Jeune: \"Paramecia\""
+   ]
+  },
+  "clan": {
+   "n": 230,
+   "formes": {
+    "string": 230
+   },
+   "exemples": [
+    "Naruto·Kurenai Yūhi: \"Sarutobi\"",
+    "Naruto·Santa Yamanaka: \"Yamanaka\"",
+    "Naruto·Obito Uchiha: \"Uchiha\""
+   ]
+  },
+  "partie": {
+   "n": 221,
+   "formes": {
+    "string": 221
+   },
+   "exemples": [
+    "JoJo's Bizarre Adventure·Enya Geil: \"Partie 3\"",
+    "JoJo's Bizarre Adventure·Class Representative: \"Partie 4\"",
+    "JoJo's Bizarre Adventure·Notorious B.I.G: \"Partie 5\""
+   ]
+  },
+  "organization": {
+   "n": 221,
+   "formes": {
+    "string": 221
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: \"Akatsuki\"",
+    "Naruto·Itachi Uchiha: \"Akatsuki\"",
+    "Naruto·Sasuke Uchiha: \"Akatsuki\""
+   ]
+  },
+  "birthdate": {
+   "n": 216,
+   "formes": {
+    "string": 216
+   },
+   "exemples": [
+    "Naruto·Moegi Kazamatsuri: \"8 juin\"",
+    "Naruto·Tsunami: \"4 mai\"",
+    "Naruto·Kurenai Yūhi: \"11 juin\""
+   ]
+  },
+  "race": {
+   "n": 208,
+   "formes": {
+    "string": 208
+   },
+   "exemples": [
+    "Bleach·Yachiru Kusajishi: \"Shinigami\"",
+    "Naruto·Kurama (Bijū): \"Bijū\"",
+    "Dragon Ball·Kefla: \"Saiyan\""
+   ]
+  },
+  "equipe": {
+   "n": 189,
+   "formes": {
+    "string": 189
+   },
+   "exemples": [
+    "Naruto·Inaho: \"Team Komugi\"",
+    "Naruto·Shibire: \"Team Shibire\"",
+    "Naruto·Moegi Kazamatsuri: \"Team Ebisu\""
+   ]
+  },
+  "monde": {
+   "n": 171,
+   "formes": {
+    "string": 171
+   },
+   "exemples": [
+    "Bleach·Yachiru Kusajishi: \"Soul Society\"",
+    "Bleach·Miyako Shiba: \"Soul Society\"",
+    "Bleach·Yumichika Ayasegawa: \"Soul Society\""
+   ]
+  },
+  "is_signature": {
+   "n": 170,
+   "formes": {
+    "boolean": 170
+   },
+   "exemples": [
+    "Dragon Ball·Super Kamehameha: true",
+    "Dragon Ball·Death Beam: true",
+    "Bleach·Lanza del Relampago: true"
+   ]
+  },
+  "saga": {
+   "n": 128,
+   "formes": {
+    "string": 128
+   },
+   "exemples": [
+    "Dragon Ball·Hit: \"Saga Super\"",
+    "Dragon Ball·Kefla: \"Saga Super\"",
+    "Dragon Ball·Baby: \"Saga Super\""
+   ]
+  },
+  "fruit": {
+   "n": 113,
+   "formes": {
+    "string": 113
+   },
+   "exemples": [
+    "One Piece·Ivankov Emporio: \"Fruit des Hormones\"",
+    "One Piece·Doc Q: \"Fruit de la maladie\"",
+    "One Piece·Ain: \"Fruit Jeune-Jeune\""
+   ]
+  },
+  "division": {
+   "n": 108,
+   "formes": {
+    "string": 108
+   },
+   "exemples": [
+    "Naruto·Santa Yamanaka: \"Third Division\"",
+    "Naruto·Mitate: \"Corps médical\"",
+    "Naruto·Chūkaku: \"Impure World Reincarnation Allied Forces\""
+   ]
+  },
+  "bounty": {
+   "n": 101,
+   "formes": {
+    "string": 101
+   },
+   "exemples": [
+    "One Piece·Ivankov Emporio: \"100.000.000 Berrys\"",
+    "One Piece·Doc Q: \"72.000.000 Berrys\"",
+    "One Piece·Gladius: \"31.000.000 Berrys\""
+   ]
+  },
+  "boat_class": {
+   "n": 99,
+   "formes": {
+    "string": 99
+   },
+   "exemples": [
+    "One Piece·Victory Hunter: \"Navire Pirate\"",
+    "One Piece·Navire-Cercueil: \"Navire Pirate\"",
+    "One Piece·Ippou-Say: \"Navire Pirate\""
+   ]
+  },
+  "sector": {
+   "n": 99,
+   "formes": {
+    "string": 99
+   },
+   "exemples": [
+    "Naruto·Guard: \"Métier ninja\"",
+    "Naruto·Ninja médical: \"Médecine ninja\"",
+    "Naruto·Sasori's subordinate: \"Métier ninja\""
+   ]
+  },
+  "total_prime": {
+   "n": 81,
+   "formes": {
+    "string": 81
+   },
+   "exemples": [
+    "One Piece·L’équipage des Acumates: \"60.000.000 Berrys\"",
+    "One Piece·L’équipage des Spade: \"550.000.000 Berrys\"",
+    "One Piece·L’équipage des Flèches Rouges: \"1.000.000 Berrys\""
+   ]
+  },
+  "forms": {
+   "n": 78,
+   "formes": {
+    "tableau d’objets": 78
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: [{\"age\":\"13 ans\",\"arc\":\"Kakashi Gaiden · Troisième Grande Guerre\",\"rank\":\"Chūnin\",\"label\":\"Chūnin de l'équipe Minato\",\"stats\":{\"end\":2.5,\"fo",
+    "Naruto·Jiraiya: [{\"age\":\"50 ans\",\"arc\":\"Recherche de Tsunade\",\"rank\":\"Jōnin\",\"label\":\"Le Sannin galant\",\"height\":\"1,91 m\",\"weight\":\"87,5 kg\",\"caption\":\"50 a",
+    "Naruto·Tsunade: [{\"age\":\"51 ans\",\"arc\":\"À la recherche de Tsunade\",\"label\":\"La Sannin de retour\",\"height\":\"1,63 m\",\"weight\":\"48,9 kg\",\"caption\":\"51 ans · Sa"
+   ]
+  },
+  "nindo": {
+   "n": 64,
+   "formes": {
+    "string": 64
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: \"Ceux qui enfreignent les règles sont des moins que rien… mais ceux qui abandonnent leurs compagnons sont encore pires !\"",
+    "Naruto·Jiraiya: \"Un vrai shinobi est celui qui endure, quoi qu'on lui inflige… La seule chose qui compte, ce n'est pas le nombre de techniques : c'est d'avo",
+    "Naruto·Tsunade: \"La foi ! Mon grand-père, le Premier Hokage, a cru en vous et vous a confié le village. À votre tour de croire en ces enfants et de le leur "
+   ]
+  },
+  "nindoLabel": {
+   "n": 63,
+   "formes": {
+    "string": 63
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: \"Credo · transmis à Kakashi\"",
+    "Naruto·Jiraiya: \"Credo · ne jamais abandonner\"",
+    "Naruto·Tsunade: \"Credo · croire en la relève\""
+   ]
+  },
+  "bio": {
+   "n": 60,
+   "formes": {
+    "string": 60
+   },
+   "exemples": [
+    "Naruto·Konohagakure: \"Fondé à la fin de l'ère sanglante des Guerres Claniques par l'alliance du clan Senju de Hashirama et du clan Uchiha de Madara, Konohagakure",
+    "Bleach·Soul Society: \"La Soul Society est le monde où transitent les âmes : au centre, le Seireitei et ses treize divisions de Shinigami ; tout autour, l'immense",
+    "Naruto·Clan Uchiha: \"Descendants d'Indra, le fils aîné du Sage des Six Chemins, les Uchiha sont un clan de génies au chakra dévastateur, définis par le Sharinga"
+   ]
+  },
+  "descFrPurgee": {
+   "n": 54,
+   "formes": {
+    "string": 54
+   },
+   "exemples": [
+    "Naruto·Santa Yamanaka: \"balayage anti-corruption 03/08\"",
+    "One Piece·Mani: \"balayage anti-corruption 03/08\"",
+    "Dragon Ball·Zenou: \"balayage anti-corruption 03/08\""
+   ]
+  },
+  "affiliation": {
+   "n": 52,
+   "formes": {
+    "tableau de chaînes": 34,
+    "string": 18
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: [\"Konohagakure\",\"Akatsuki\",\"Kirigakure\"]",
+    "Naruto·Jiraiya: [\"Konohagakure\",\"Mont Myōboku\"]",
+    "Naruto·Tsunade: [\"Forces Shinobi Alliées\",\"Konohagakure\",\"Shikkotsu Forest\"]"
+   ]
+  },
+  "nen": {
+   "n": 51,
+   "formes": {
+    "string": 51
+   },
+   "exemples": [
+    "Hunter x Hunter·Machi Komachine: \"Transformation\"",
+    "Hunter x Hunter·Feitan: \"Transformation\"",
+    "Hunter x Hunter·Zushi: \"Renforcement\""
+   ]
+  },
+  "generation": {
+   "n": 49,
+   "formes": {
+    "string": 49
+   },
+   "exemples": [
+    "Naruto·Kurenai Yūhi: \"Génération de Kakashi\"",
+    "Naruto·Obito Uchiha: \"Génération de Kakashi\"",
+    "Naruto·Jiraiya: \"Sannin\""
+   ]
+  },
+  "trivia": {
+   "n": 47,
+   "formes": {
+    "tableau de chaînes": 47
+   },
+   "exemples": [
+    "Naruto·Konohagakure: [\"« Konohagakure » signifie littéralement « caché parmi les feuilles ». Son symbole, la feuille, orne le bandeau frontal de tous ses ninjas.",
+    "Naruto·Clan Uchiha: [\"Le Sharingan s'éveille sous le choc d'une émotion intense — le plus souvent la perte d'un proche.\",\"Le nom du clan vient de l'« uchiwa », ",
+    "Naruto·Sharingan: [\"Le Sharingan copie une technique en la « lisant » — mais ne peut reproduire un kekkei genkai ni ce qui dépasse le corps du porteur.\",\"Chaq"
+   ]
+  },
+  "camp": {
+   "n": 42,
+   "formes": {
+    "string": 42
+   },
+   "exemples": [
+    "Death Note·Rem: \"Shinigami\"",
+    "Death Note·Masahiko Kida: \"Yotsuba\"",
+    "Death Note·L: \"Cellule d’enquête\""
+   ]
+  },
+  "powerLevel": {
+   "n": 41,
+   "formes": {
+    "string": 41
+   },
+   "exemples": [
+    "Dragon Ball·Lord Slug: \"Super Namekien geant\"",
+    "Dragon Ball·C-21: \"Forme finale, puissance quasi divine\"",
+    "Dragon Ball·Meta-Cooler: \"Corps-machine regenerant du Big Gete Star\""
+   ]
+  },
+  "eras": {
+   "n": 37,
+   "formes": {
+    "tableau d’objets": 37
+   },
+   "exemples": [
+    "Naruto·Konohagakure: [{\"img\":\"/images/akasha/places/konoha-fondation.webp\",\"event\":\"Alliance Senju–Uchiha\",\"label\":\"Fondation\",\"leader\":\"Hashirama Senju · 1ᵉʳ Ho",
+    "Bleach·Soul Society: [{\"img\":\"/images/akasha/places/soul-society-fondation.webp\",\"event\":\"Création du Gotei 13\",\"label\":\"Fondation\",\"leader\":\"Genryūsai Yamamoto\"",
+    "Naruto·Clan Uchiha: [{\"img\":\"/images/akasha/status/uchiha-origines.webp\",\"event\":\"Naissance du clan\",\"label\":\"Origines\",\"leader\":\"Indra Ōtsutsuki\",\"period\":\"Âge"
+   ]
+  },
+  "quote": {
+   "n": 37,
+   "formes": {
+    "object": 37
+   },
+   "exemples": [
+    "Naruto·Konohagakure: {\"text\":\"Quand les feuilles dansent, le feu brûle. L'ombre du feu illumine le village.\",\"author\":\"Hiruzen Sarutobi · 3ᵉ Hokage\"}",
+    "Bleach·Soul Society: {\"text\":\"La Soul Society n'est pas le paradis. C'est une société — avec ses nobles, ses bas-fonds… et ses lames.\",\"author\":\"Rukia Kuchiki\"}",
+    "Naruto·Clan Uchiha: {\"text\":\"L'amour trop profond des Uchiha engendre une haine tout aussi profonde.\",\"author\":\"Tobirama Senju · 2ᵉ Hokage\"}"
+   ]
+  },
+  "facts": {
+   "n": 35,
+   "formes": {
+    "tableau d’objets": 35
+   },
+   "exemples": [
+    "Bleach·Soul Society: [{\"label\":\"Fondation\",\"value\":\"Il y a ~1 000 ans, par Genryūsai Yamamoto\"},{\"label\":\"Cœur\",\"value\":\"Le Seireitei — la cité fortifiée des Shi",
+    "Naruto·Clan Uchiha: [{\"label\":\"Kekkei Genkai\",\"value\":\"Sharingan — l'œil qui copie et hypnotise\"},{\"label\":\"Symbole\",\"value\":\"L'éventail uchiwa (rouge & blanc)\"",
+    "Naruto·Sharingan: [{\"label\":\"Discipline\",\"value\":\"Dōjutsu héréditaire du clan Uchiha\"},{\"label\":\"Éveil\",\"value\":\"Sous le choc d'une émotion intense\"},{\"label\""
+   ]
+  },
+  "kanji": {
+   "n": 30,
+   "formes": {
+    "string": 30
+   },
+   "exemples": [
+    "Naruto·Konohagakure: \"木ノ葉隠れの里\"",
+    "Bleach·Soul Society: \"尸魂界\"",
+    "Naruto·Clan Uchiha: \"うちは一族\""
+   ]
+  },
+  "abilities": {
+   "n": 27,
+   "formes": {
+    "tableau de chaînes": 27
+   },
+   "exemples": [
+    "Naruto·Clan Uchiha: [\"Sharingan\",\"Mangekyō Sharingan\",\"Amaterasu\",\"Tsukuyomi\",\"Susanoo\",\"Izanagi & Izanami\",\"Rinnegan (éveil ultime)\",\"Nature du Feu\"]",
+    "Naruto·Sharingan: [\"Copie de techniques\",\"Prédiction des mouvements\",\"Hypnose / Genjutsu\",\"Amaterasu (flammes noires)\",\"Tsukuyomi (illusion)\",\"Susanoo (avatar",
+    "Naruto·Rasengan: [\"Rasengan (base)\",\"Ōdama Rasengan (géant)\",\"Rasengan multiple\",\"Rasenshuriken\",\"Rasengan tourbillonnant\",\"Bijūdama Rasenshuriken\",\"Rasengan"
+   ]
+  },
+  "rosterLabel": {
+   "n": 26,
+   "formes": {
+    "string": 26
+   },
+   "exemples": [
+    "Naruto·Clan Uchiha: \"Membres\"",
+    "Naruto·Sharingan: \"Porteurs\"",
+    "Naruto·Rasengan: \"Maîtres\""
+   ]
+  },
+  "col": {
+   "n": 23,
+   "formes": {
+    "string": 23
+   },
+   "exemples": [
+    "Initial D·Kenji: \"Mont Akina\"",
+    "Initial D·Yuichi Tachibana: \"Mont Akina\"",
+    "Initial D·Takeshi Nakazato: \"Mont Myōgi\""
+   ]
+  },
+  "titles": {
+   "n": 22,
+   "formes": {
+    "tableau de chaînes": 22
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: [\"うちはオビトUchiha Obito\",\"tobi\",\"madara Uchiha\",\"masked Madara\",\"masked Man\",\"saviour\"]",
+    "Naruto·Itachi Uchiha: [\"Le génie du clan Uchiha\",\"Itachi de l'Illusion\",\"Le héros de l'ombre\"]",
+    "Naruto·Naruto Uzumaki: [\"Ninja hyperactif imprévisible n°1\",\"L'Enfant de la Prophétie\",\"Le Sauveur de ce monde\",\"Le Héros de Konoha\",\"Le Garçon aux miracles\",\"Le H"
+   ]
+  },
+  "gallery": {
+   "n": 22,
+   "formes": {
+    "tableau de chaînes": 22
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: [\"https://static.wikia.nocookie.net/naruto/images/4/4a/Obito_Uchiha.png\",\"https://static.wikia.nocookie.net/naruto/images/3/3c/Obito.png\"]",
+    "Naruto·Jiraiya: [\"https://static.wikia.nocookie.net/naruto/images/2/21/Profile_Jiraiya.png\"]",
+    "Naruto·Tsunade: [\"https://static.wikia.nocookie.net/naruto/images/b/b3/Tsunade_infobox2.png\"]"
+   ]
+  },
+  "import_source": {
+   "n": 22,
+   "formes": {
+    "number": 22
+   },
+   "exemples": [
+    "Bleach·Uryū Ishida: 3826",
+    "Initial D·Bunta Fujiwara: 122",
+    "One Piece·Usopp: 3028"
+   ]
+  },
+  "status": {
+   "n": 21,
+   "formes": {
+    "string": 21
+   },
+   "exemples": [
+    "Naruto·Konohagakure: \"Prospère\"",
+    "Naruto·Samehada: \"Active\"",
+    "Naruto·Itachi Uchiha: \"Décédé\""
+   ]
+  },
+  "natureType": {
+   "n": 21,
+   "formes": {
+    "tableau de chaînes": 21
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: [\"Fire Release\",\"Wind Release\",\"Lightning Release\",\"Earth Release\",\"Water Release\",\"Wood Release\",\"Yin Release\",\"Yang Release\",\"Yin–Yang Rel",
+    "Naruto·Jiraiya: [\"Fire Release\",\"Wind Release\",\"Earth Release\",\"Water Release\",\"Yin Release\",\"Yang Release\"]",
+    "Naruto·Tsunade: [\"Lightning Release\",\"Earth Release\",\"Water Release\",\"Fire Release\",\"Yin Release\",\"Yang Release\"]"
+   ]
+  },
+  "debut": {
+   "n": 20,
+   "formes": {
+    "string": 20
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: \"Naruto — chapitre 239\"",
+    "Naruto·Jiraiya: \"Naruto — chapitre 90\"",
+    "Naruto·Tsunade: \"Naruto — chapitre 139\""
+   ]
+  },
+  "height": {
+   "n": 20,
+   "formes": {
+    "string": 20
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: \"154.2cm\"",
+    "Naruto·Jiraiya: \"191.2cm\"",
+    "Naruto·Tsunade: \"163.1cm\""
+   ]
+  },
+  "weight": {
+   "n": 20,
+   "formes": {
+    "string": 20
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: \"44.5kg\"",
+    "Naruto·Jiraiya: \"87.5kg\"",
+    "Naruto·Tsunade: \"48.9kg\""
+   ]
+  },
+  "debutAll": {
+   "n": 20,
+   "formes": {
+    "object": 20
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: {\"ova\":\"Naruto: The Cross Roads\",\"game\":\"Naruto Shippūden: Ultimate Ninja Heroes 3\",\"anime\":\"Naruto Shippūden — épisode 32\",\"manga\":\"Naruto ",
+    "Naruto·Jiraiya: {\"ova\":\"Finally a clash! Jōnin vs. Genin!! Indiscriminate Grand Melee Tournament Meeting!!\",\"game\":\"Naruto: Ultimate Ninja 2\",\"anime\":\"Narut",
+    "Naruto·Tsunade: {\"ova\":\"Finally a clash! Jōnin vs. Genin!! Indiscriminate Grand Melee Tournament Meeting!!\",\"game\":\"Naruto: Ultimate Ninja 2\",\"anime\":\"Narut"
+   ]
+  },
+  "bloodType": {
+   "n": 20,
+   "formes": {
+    "string": 20
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: \"O\"",
+    "Naruto·Jiraiya: \"B\"",
+    "Naruto·Tsunade: \"B\""
+   ]
+  },
+  "sourceUrl": {
+   "n": 20,
+   "formes": {
+    "string": 20
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: \"https://naruto.fandom.com/wiki/Obito_Uchiha\"",
+    "Naruto·Jiraiya: \"https://naruto.fandom.com/wiki/Jiraiya\"",
+    "Naruto·Tsunade: \"https://naruto.fandom.com/wiki/Tsunade\""
+   ]
+  },
+  "villageSlug": {
+   "n": 20,
+   "formes": {
+    "string": 20
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: \"konohagakure\"",
+    "Naruto·Jiraiya: \"konohagakure\"",
+    "Naruto·Tsunade: \"konohagakure\""
+   ]
+  },
+  "quotes": {
+   "n": 19,
+   "formes": {
+    "tableau de chaînes": 19
+   },
+   "exemples": [
+    "Naruto·Itachi Uchiha: [\"Pardonne-moi, Sasuke… ce sera la dernière fois.\",\"Les hommes vivent prisonniers de leurs certitudes.\",\"Tu n'as pas besoin de me pardonner.",
+    "Naruto·Naruto Uzumaki: [\"Crois-le ! (Dattebayo !)\",\"Quand on protège quelque chose de vraiment précieux… on devient vraiment fort.\",\"Le vrai perdant, ce n'est pas ",
+    "Naruto·Sasuke Uchiha: [\"Mon rêve n'est pas un rêve : je vais restaurer mon clan, et tuer un certain homme.\",\"Tu es devenu mon meilleur ami… c'est pour ça que je d"
+   ]
+  },
+  "personality": {
+   "n": 19,
+   "formes": {
+    "string": 19
+   },
+   "exemples": [
+    "Naruto·Itachi Uchiha: \"Calme, doux et d'une intelligence terrifiante, Itachi est un pacifiste qui a porté les crimes les plus lourds. Tout chez lui est sacrifice ",
+    "Naruto·Naruto Uzumaki: \"Hyperactif, bruyant et impulsif, Naruto cache sous ses pitreries la blessure d'un enfant seul. Sa détermination ne faiblit jamais et son op",
+    "Naruto·Sasuke Uchiha: \"Froid, orgueilleux et solitaire, Sasuke enferme sa douleur derrière un mépris de façade. Sa quête de puissance l'a mené aux pires trahisons"
+   ]
+  },
+  "team": {
+   "n": 18,
+   "formes": {
+    "tableau de chaînes": 18
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: [\"Team Minato\"]",
+    "Naruto·Jiraiya: [\"Team Hiruzen\",\"Ame Orphans\",\"Team Jiraiya\"]",
+    "Naruto·Tsunade: [\"Team Hiruzen\"]"
+   ]
+  },
+  "tools": {
+   "n": 18,
+   "formes": {
+    "tableau de chaînes": 18
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: [\"Fūma Shuriken\",\"Gunbai\",\"Kusari\",\"Sword\",\"Sword of Nunoboko\"]",
+    "Naruto·Jiraiya: [\"Chakra-Suppressing Seal\",\"Fūma Shuriken\",\"Hidden Kunai Mechanism\",\"Stone Swords\"]",
+    "Naruto·Tsunade: [\"Antidote\",\"Mechanical Eight Trigrams Formation Drum\",\"Ninja Info Cards\",\"Poison\"]"
+   ]
+  },
+  "classification": {
+   "n": 17,
+   "formes": {
+    "tableau de chaînes": 17
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: [\"Jinchūriki\",\"Pseudo-Jinchūriki\",\"Déserteur (Nukenin)\",\"Rang S\",\"Type Capteur\"]",
+    "Naruto·Jiraiya: [\"Ermite (Sage)\",\"Sannin\"]",
+    "Naruto·Tsunade: [\"Ninja médical\",\"Sannin\"]"
+   ]
+  },
+  "meito_grade": {
+   "n": 14,
+   "formes": {
+    "string": 14
+   },
+   "exemples": [
+    "One Piece·Yamaoroshi: \"Ryo Wazamono\"",
+    "One Piece·Sandai Kitetsu: \"Ryo Wazamono\"",
+    "One Piece·Yubashiri: \"Ryo Wazamono\""
+   ]
+  },
+  "clanSlug": {
+   "n": 12,
+   "formes": {
+    "string": 12
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: \"uchiha\"",
+    "Naruto·Tsunade: \"senju\"",
+    "Naruto·Itachi Uchiha: \"uchiha\""
+   ]
+  },
+  "god": {
+   "n": 12,
+   "formes": {
+    "string": 12
+   },
+   "exemples": [
+    "Dragon Ball·Univers 4: \"Quitela\"",
+    "Dragon Ball·Univers 12: \"Geene\"",
+    "Dragon Ball·Univers 10: \"Rumsshi\""
+   ]
+  },
+  "kai": {
+   "n": 12,
+   "formes": {
+    "string": 12
+   },
+   "exemples": [
+    "Dragon Ball·Univers 4: \"Cae\"",
+    "Dragon Ball·Univers 12: \"Agu\"",
+    "Dragon Ball·Univers 10: \"Gowasu\""
+   ]
+  },
+  "twin": {
+   "n": 12,
+   "formes": {
+    "string": 12
+   },
+   "exemples": [
+    "Dragon Ball·Univers 4: \"Univers 9\"",
+    "Dragon Ball·Univers 12: \"Univers 1\"",
+    "Dragon Ball·Univers 10: \"Univers 3\""
+   ]
+  },
+  "angel": {
+   "n": 12,
+   "formes": {
+    "string": 12
+   },
+   "exemples": [
+    "Dragon Ball·Univers 4: \"Cognac\"",
+    "Dragon Ball·Univers 12: \"Martinu\"",
+    "Dragon Ball·Univers 10: \"Kusu\""
+   ]
+  },
+  "statLabels": {
+   "n": 12,
+   "formes": {
+    "object": 12
+   },
+   "exemples": [
+    "Dragon Ball·Son Goku: {\"end\":\"END\",\"for\":\"FOR\",\"gen\":\"AGI\",\"int\":\"INT\",\"nin\":\"PUI\",\"sce\":\"ESP\",\"tai\":\"TEC\",\"vit\":\"VIT\"}",
+    "Death Note·L: {\"end\":\"END\",\"for\":\"FOR\",\"gen\":\"AGI\",\"int\":\"INT\",\"nin\":\"PUI\",\"sce\":\"ESP\",\"tai\":\"TEC\",\"vit\":\"VIT\"}",
+    "One Piece·Monkey D. Luffy: {\"end\":\"END\",\"for\":\"FOR\",\"gen\":\"AGI\",\"int\":\"INT\",\"nin\":\"PUI\",\"sce\":\"ESP\",\"tai\":\"TEC\",\"vit\":\"VIT\"}"
+   ]
+  },
+  "kekkeiGenkai": {
+   "n": 9,
+   "formes": {
+    "tableau de chaînes": 9
+   },
+   "exemples": [
+    "Naruto·Obito Uchiha: [\"Sharingan\"]",
+    "Naruto·Gaara: [\"Magnet (Jiton)\"]",
+    "Naruto·Itachi Uchiha: [\"Sharingan\"]"
+   ]
+  },
+  "signature": {
+   "n": 9,
+   "formes": {
+    "tableau de chaînes": 9
+   },
+   "exemples": [
+    "Naruto·Jiraiya: [\"Rasengan\"]",
+    "Naruto·Itachi Uchiha: [\"Amaterasu\",\"Susanoo\"]",
+    "Naruto·Naruto Uzumaki: [\"Rasengan\",\"Multiclonage\",\"Bijūdama\"]"
+   ]
+  },
+  "blade_type": {
+   "n": 8,
+   "formes": {
+    "string": 8
+   },
+   "exemples": [
+    "One Piece·Shirauo: \"Nodachi\"",
+    "One Piece·Enma: \"Katana\"",
+    "One Piece·Raiu: \"Nodachi\""
+   ]
+  },
+  "descFrRetiree": {
+   "n": 6,
+   "formes": {
+    "string": 6
+   },
+   "exemples": [
+    "Naruto·Eternal Mangekyō Sharingan: \"04/08 contrôle de nature — décrit le Mangekyō de base, n explique jamais ce qui rend l Éternel éternel\"",
+    "Naruto·Chūnin Exams Assistant: \"04/08 contrôle de nature — décrit l examen chūnin et invente une « unité d élite » absente de la source\"",
+    "Naruto·Summoning Technique (Hōzuki Castle's Ninken): \"04/08 contrôle de nature — texte générique sur l invocation, pas un mot des ninken de la prison Hōzuki\""
+   ]
+  },
+  "squad": {
+   "n": 3,
+   "formes": {
+    "object": 3
+   },
+   "exemples": [
+    "Naruto·Naruto Uzumaki: {\"name\":\"Équipe 7 · Team Kakashi\",\"members\":[{\"rel\":\"Sensei\",\"name\":\"Kakashi Hatake\",\"slug\":\"kakashi-hatake\"},{\"rel\":\"Coéquipier\",\"name\":\"Sa",
+    "Naruto·Sasuke Uchiha: {\"name\":\"Équipe 7\",\"members\":[{\"rel\":\"Sensei\",\"name\":\"Kakashi Hatake\",\"slug\":\"kakashi-hatake\"},{\"rel\":\"Coéquipier\",\"name\":\"Naruto Uzumaki\",\"",
+    "Naruto·Kakashi Hatake: {\"name\":\"Équipe 7 (sensei)\",\"members\":[{\"rel\":\"Élève\",\"name\":\"Naruto Uzumaki\",\"slug\":\"naruto-uzumaki\"},{\"rel\":\"Élève\",\"name\":\"Sasuke Uchiha\""
+   ]
+  },
+  "purgeAudit": {
+   "n": 3,
+   "formes": {
+    "string": 3
+   },
+   "exemples": [
+    "Bleach·Reiichi Oshima: \"03/08 : sections et descFr décrivaient Dark Rukia (mauvaise page liée) — purgé, à re-produire avec garde d identité\"",
+    "Bleach·Orihime Inoue: \"04/08 audit de clôture : descFr non sourcée ou charabia — purgé, à re-produire\"",
+    "JoJo's Bizarre Adventure·Hol Horse: \"04/08 audit de clôture : descFr non sourcée ou charabia — purgé, à re-produire\""
+   ]
+  },
+  "sectionsSource": {
+   "n": 3,
+   "formes": {
+    "string": 3
+   },
+   "exemples": [
+    "Death Note·Yuri: \"deepinfra/Qwen/Qwen3-32B\"",
+    "Death Note·Détective: \"deepinfra/Qwen/Qwen3-32B\"",
+    "Death Note·Light's Teacher: \"deepinfra/Qwen/Qwen3-32B\""
+   ]
+  },
+  "descFrImpossible": {
+   "n": 2,
+   "formes": {
+    "string": 2
+   },
+   "exemples": [
+    "Naruto·Clan Yūhi: \"curé à la main le 05/08 : le clan Yūhi n a pas de page sur le wiki Naruto — « Yūhi Clan » redirige sur Kurenai Yūhi (dont l infobox donne d",
+    "Naruto·Inner  (Former): \"curé à la main le 05/08 : le rang « Inner » n a pas de page propre — il est décrit dans la page Kara. Un alias vers « Kara » ferait décrire"
+   ]
+  },
+  "cost": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Bleach·Getsuga Tenshō: \"Énergie spirituelle (reiatsu)\""
+   ]
+  },
+  "range": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Bleach·Getsuga Tenshō: \"Moyenne à longue\""
+   ]
+  },
+  "clans": {
+   "n": 1,
+   "formes": {
+    "tableau d’objets": 1
+   },
+   "exemples": [
+    "Naruto·Konohagakure: [{\"name\":\"Senju\",\"slug\":\"senju\"},{\"name\":\"Uchiha\",\"slug\":\"uchiha\"},{\"name\":\"Uzumaki\",\"slug\":\"uzumaki\"},{\"name\":\"Hyūga\",\"slug\":\"hyuga\"},{\"nam"
+   ]
+  },
+  "motto": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Naruto·Konohagakure: \"La Volonté du Feu\""
+   ]
+  },
+  "hokage": {
+   "n": 1,
+   "formes": {
+    "tableau d’objets": 1
+   },
+   "exemples": [
+    "Naruto·Konohagakure: [{\"n\":\"Iᵉʳ\",\"name\":\"Hashirama Senju\",\"note\":\"Fondateur · maître du Mokuton\",\"slug\":\"hashirama-senju\"},{\"n\":\"IIᵉ\",\"name\":\"Tobirama Senju\",\"no"
+   ]
+  },
+  "leader": {
+   "n": 1,
+   "formes": {
+    "object": 1
+   },
+   "exemples": [
+    "Naruto·Konohagakure: {\"name\":\"Naruto Uzumaki\",\"slug\":\"naruto-uzumaki\"}"
+   ]
+  },
+  "symbol": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Naruto·Konohagakure: \"La feuille\""
+   ]
+  },
+  "founded": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Naruto·Konohagakure: \"Fin de l'ère des Guerres Claniques\""
+   ]
+  },
+  "founders": {
+   "n": 1,
+   "formes": {
+    "tableau d’objets": 1
+   },
+   "exemples": [
+    "Naruto·Konohagakure: [{\"name\":\"Hashirama Senju\",\"slug\":\"hashirama-senju\"},{\"name\":\"Madara Uchiha\",\"slug\":\"madara-uchiha\"}]"
+   ]
+  },
+  "landmarks": {
+   "n": 1,
+   "formes": {
+    "tableau de chaînes": 1
+   },
+   "exemples": [
+    "Naruto·Konohagakure: [\"Monument des Hokage\",\"Tour de l'Hokage\",\"Académie des ninjas\",\"Forêt de la Mort (terrain 44)\",\"Ichiraku Ramen\",\"Terrain d'entraînement n°3"
+   ]
+  },
+  "population": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Naruto·Konohagakure: \"Plusieurs dizaines de milliers d'habitants\""
+   ]
+  },
+  "leaderTitle": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Naruto·Konohagakure: \"Septième Hokage\""
+   ]
+  },
+  "villageRank": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Naruto·Konohagakure: \"L'un des Cinq Grands Villages\""
+   ]
+  },
+  "type": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Naruto·Samehada: \"L'une des Sept Épées des Sept Épéistes de la Brume\""
+   ]
+  },
+  "bearer": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Naruto·Samehada: \"Kisame Hoshigaki\""
+   ]
+  },
+  "wielders": {
+   "n": 1,
+   "formes": {
+    "tableau d’objets": 1
+   },
+   "exemples": [
+    "Naruto·Samehada: [{\"name\":\"Fuguki Suikazan\",\"note\":\"Premier porteur connu · l'un des Sept Épéistes\"},{\"name\":\"Kisame Hoshigaki\",\"note\":\"Le porteur légendaire"
+   ]
+  },
+  "animations": {
+   "n": 1,
+   "formes": {
+    "tableau d’objets": 1
+   },
+   "exemples": [
+    "Naruto·Naruto Uzumaki: [{\"src\":\"/images/akasha/naruto/multiclonage-anim.webp\",\"label\":\"Multiclonage\"},{\"src\":\"/images/akasha/naruto/fuma-shuriken-anim.webp\",\"blend"
+   ]
+  },
+  "tailedBeast": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Naruto·Naruto Uzumaki: \"Kurama\""
+   ]
+  },
+  "resumeCorrige": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Naruto·Inner  (Former): \"résumé d origine remplacé le 05/08 : il décrivait Inner Sakura (technique de Sakura Haruno), pas le rang de Kara annoncé par le nom, le typ"
+   ]
+  },
+  "climate": {
+   "n": 1,
+   "formes": {
+    "string": 1
+   },
+   "exemples": [
+    "Bleach·Karakura: \"Tempéré\""
+   ]
+  },
+  "coordinates": {
+   "n": 1,
+   "formes": {
+    "object": 1
+   },
+   "exemples": [
+    "Bleach·Karakura: {\"lat\":35,\"lng\":139}"
+   ]
+  }
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "chantier": "épreuve des candidats images (collision avec l’existant + chargement réel)",
+ "quand": "2026-08-10T07:57:33.986Z",
+ "source": "data/audits/images-fandom-dry-2026-08-10.json",
+ "fiches_deja_illustrees": 6814,
+ "fichiers_distincts": 6776,
+ "candidats": 8,
+ "ok": 2,
+ "alertes": 6,
+ "rejets": 0,
+ "taux_erreur_pourcent": 75,
+ "detail": [
+  {
+   "slug": "ace",
+   "name": "Ace",
+   "universe": "One Piece",
+   "type": "artifact",
+   "titre_wiki": "Portgas D. Ace",
+   "preuve": "nom ≡ titre",
+   "via": "exact",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/4f/Portgas_D._Ace_Anime_Infobox.png/revision/latest/scale-to-width-down/431?cb=20240629132600",
+   "charge": true,
+   "dimensions_reelles": "431×720 webp",
+   "octets": 57370,
+   "motif_charge": null,
+   "collision_existant": [],
+   "verdict": "OK"
+  },
+  {
+   "slug": "ile-celeste",
+   "name": "Île Céleste",
+   "universe": "One Piece",
+   "type": "status",
+   "titre_wiki": "Skypiea",
+   "preuve": "alias curé → « Skypiea »",
+   "via": "alias-cure",
+   "image_url": "https://static.wikia.nocookie.net/onepiece/images/4/44/Skypiea_Infobox.png/revision/latest?cb=20240828012701",
+   "charge": true,
+   "dimensions_reelles": "704×528 webp",
+   "octets": 161544,
+   "motif_charge": null,
+   "collision_existant": [
+    "skypiea-lieu (Skypiea, One Piece)"
+   ],
+   "verdict": "ALERTE · fichier déjà porté par une autre fiche"
+  },
+  {
+   "slug": "adamantine-staff",
+   "name": "Adamantine Staff",
+   "universe": "Naruto",
+   "type": "artifact",
+   "titre_wiki": "Transformation: Adamantine Staff",
+   "preuve": "alias curé → « Transformation: Adamantine Staff »",
+   "via": "alias-cure",
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/d/de/Transformation_Adamantine_Staff.png/revision/latest/scale-to-width-down/720?cb=20240908035516",
+   "charge": true,
+   "dimensions_reelles": "720×540 webp",
+   "octets": 31494,
+   "motif_charge": null,
+   "collision_existant": [
+    "transformation-adamantine-staff (Transformation: Adamantine Staff, Naruto)"
+   ],
+   "verdict": "ALERTE · fichier déjà porté par une autre fiche"
+  },
+  {
+   "slug": "chikamatsu-collection",
+   "name": "Chikamatsu Collection",
+   "universe": "Naruto",
+   "type": "artifact",
+   "titre_wiki": "White Secret Technique: The Chikamatsu Collection of Ten Puppets",
+   "preuve": "alias curé → « White Secret Technique: The Chikamatsu Collection of Ten Puppets »",
+   "via": "alias-cure",
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/b/b5/White_Secret_Technique.png/revision/latest/scale-to-width-down/720?cb=20150222112114",
+   "charge": true,
+   "dimensions_reelles": "720×407 webp",
+   "octets": 58366,
+   "motif_charge": null,
+   "collision_existant": [
+    "white-secret-technique-the-chikamatsu-collection-of-ten-puppets (White Secret Technique: The Chikamatsu Collection of Ten Puppets, Naruto)"
+   ],
+   "verdict": "ALERTE · fichier déjà porté par une autre fiche"
+  },
+  {
+   "slug": "hundred-puppet-army",
+   "name": "Hundred Puppet Army",
+   "universe": "Naruto",
+   "type": "artifact",
+   "titre_wiki": "Red Secret Technique: Performance of a Hundred Puppets",
+   "preuve": "alias curé → « Red Secret Technique: Performance of a Hundred Puppets »",
+   "via": "alias-cure",
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/0/00/Aka_Higi_Hyakki_no_S%C5%8Den.jpg/revision/latest/scale-to-width-down/720?cb=20140420081042",
+   "charge": true,
+   "dimensions_reelles": "720×568 webp",
+   "octets": 142700,
+   "motif_charge": null,
+   "collision_existant": [
+    "red-secret-technique-performance-of-a-hundred-puppets (Red Secret Technique: Performance of a Hundred Puppets, Naruto)"
+   ],
+   "verdict": "ALERTE · fichier déjà porté par une autre fiche"
+  },
+  {
+   "slug": "mountains-graveyard",
+   "name": "Cimetière des Monts",
+   "universe": "Naruto",
+   "type": "place",
+   "titre_wiki": "Mountains' Graveyard",
+   "preuve": "alias curé → « Mountains' Graveyard »",
+   "via": "alias-cure",
+   "image_url": "https://static.wikia.nocookie.net/naruto/images/0/04/Demonic_Statue.png/revision/latest/scale-to-width-down/720?cb=20180404204651",
+   "charge": true,
+   "dimensions_reelles": "720×402 webp",
+   "octets": 28378,
+   "motif_charge": null,
+   "collision_existant": [],
+   "verdict": "OK"
+  },
+  {
+   "slug": "genkidama",
+   "name": "Genkidama",
+   "universe": "Dragon Ball",
+   "type": "power",
+   "titre_wiki": "Spirit Bomb",
+   "preuve": "alias curé → « Spirit Bomb »",
+   "via": "alias-cure",
+   "image_url": "https://static.wikia.nocookie.net/dragonball/images/5/53/Goku_DBZ_Ep_93_007.png/revision/latest/scale-to-width-down/340?cb=20171021004959",
+   "charge": true,
+   "dimensions_reelles": "340×720 webp",
+   "octets": 39460,
+   "motif_charge": null,
+   "collision_existant": [
+    "atk-db-spirit-bomb (Spirit Bomb, Dragon Ball)"
+   ],
+   "verdict": "ALERTE · fichier déjà porté par une autre fiche"
+  },
+  {
+   "slug": "atk-bl-flash-cry",
+   "name": "Flash Cry",
+   "universe": "Bleach",
+   "type": "power",
+   "titre_wiki": "Shunkō",
+   "preuve": "alias curé → « Shunkō »",
+   "via": "alias-cure",
+   "image_url": "https://static.wikia.nocookie.net/bleach/images/9/9c/Shunk%C5%8D.gif/revision/latest?cb=20170122063759&path-prefix=en",
+   "charge": true,
+   "dimensions_reelles": "190×143 webp",
+   "octets": 2496946,
+   "motif_charge": null,
+   "collision_existant": [
+    "atk-bl-shunko (Shunko, Bleach)"
+   ],
+   "verdict": "ALERTE · fichier déjà porté par une autre fiche"
+  }
+ ]
+}

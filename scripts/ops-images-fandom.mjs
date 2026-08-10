@@ -30,6 +30,21 @@
 // bruts (leçon #65). `--original` force l'original si un jour on veut le plein format ; les deux
 // URL sont de toute façon consignées dans la trace, la bascule ne coûte qu'une passe.
 //
+// ══════════════════ ⚠ MESURE DU 10/08 : NE PAS RELANCER EN ÉCRITURE TEL QUEL ══════════════════
+// Passé à blanc sur les 818 fiches sans visuel, ce script rend 8 candidats. Éprouvés un par un
+// (scripts/verifier-images-candidates.mjs), 7 sur 8 sont FAUX — 87,5 % :
+//   · 6 visent un fichier DÉJÀ porté par une fiche illustrée. Lecture faite, ce sont six vrais
+//     doublons de notre base (« Île Céleste » contre `skypiea-lieu`, « Genkidama » contre
+//     `atk-db-spirit-bomb`, « Flash Cry » contre `atk-bl-shunko`, et trois artefacts Naruto qui
+//     doublent leur propre technique). Les illustrer les ferait passer pour complets.
+//   · 1 est une USURPATION que les gardes d'ici ne voient pas : notre fiche `ace` est un SABRE
+//     (`type: artifact`) et « Ace » résout vers « Portgas D. Ace », le personnage — `sameEntityName`
+//     valide par inclusion des mots. C'est la classe exacte des quatre portraits du 09/08.
+// Il manque donc ici trois gardes, écrites et mesurées dans scripts/ops-images-fandom-fr.mjs :
+// collision avec l'existant, nature de la page (catégories), et concordance du nom de fichier avec
+// le titre. Tant qu'elles ne sont pas reportées ici, n'utiliser ce script qu'en `--dry`, et faire
+// passer ses candidats par verifier-images-candidates.mjs avant toute écriture.
+//
 // Usage :
 //   node --env-file=.env.local scripts/ops-images-fandom.mjs --dry
 //   node --env-file=.env.local scripts/ops-images-fandom.mjs --universe="Naruto" --limit=200
@@ -49,8 +64,13 @@ const LIMIT = Number(arg('limit', Infinity));
 const UNIVERSE = arg('universe');
 const TYPE = arg('type');
 const AUDITS = new URL('../data/audits/', import.meta.url).pathname;
-const TRACE = `${AUDITS}images-fandom-trace.json`;
-const RAPPORT = `${AUDITS}images-fandom.json`;
+// UN CHEMIN DIFFÉRENT PAR EXÉCUTION QUI ÉCRIT (règle de la maison). Sans `--suffixe`, ce script
+// écrasait `images-fandom-trace.json` à chaque passe : la passe One Piece du 08/08 aurait effacé
+// la preuve de ses 11 écritures dès la première relance. Le suffixe est libre (horodatage,
+// univers) et n'entre QUE dans le nom des deux fichiers de sortie.
+const SUFFIXE = arg('suffixe', '') ? `-${arg('suffixe')}` : '';
+const TRACE = `${AUDITS}images-fandom-trace${SUFFIXE}.json`;
+const RAPPORT = `${AUDITS}images-fandom${SUFFIXE}.json`;
 
 // Politesse : ~4 requêtes/seconde, un lot de 50 titres à chaque fois. L'inventaire entier tient
 // en ~150 requêtes, il n'y a aucune raison de bousculer Fandom pour gagner trente secondes.

@@ -228,6 +228,11 @@ export const getEntryBySlug = cache(async function getEntryBySlug(slug: string):
   const supabase = await createClient();
   if (!supabase) return null;
 
+  // `select('*')` : SEUL point du front qui charge la colonne `description` — et rien en aval ne la
+  // consomme. Elle est simplement sérialisée dans la charge RSC de chaque fiche, sans jamais être
+  // rendue (constaté sur /learn/akasha/vizard le 10/08/2026 : le texte n'est présent que dans le
+  // flight payload). Colonne morte, cf. lib/akasha/types.ts — ne pas la brancher, la retirer d'ici
+  // le jour où l'on remplacera `*` par une liste de colonnes explicite.
   const { data: entry } = await supabase
     .from('akasha_entries')
     .select('*')

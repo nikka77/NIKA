@@ -19,17 +19,27 @@ export const expertFor = (universe) =>
 /** axes renseignables par les agents, par univers */
 export const AXES = {
   'Naruto': {
-    village: ['Konohagakure', 'Sunagakure', 'Kirigakure', 'Kumogakure', 'Iwagakure', 'Amegakure', 'Otogakure'],
+    village: [
+      'Konohagakure', 'Sunagakure', 'Kirigakure', 'Kumogakure', 'Iwagakure', 'Amegakure', 'Otogakure',
+      'Takigakure'
+    ],
     // 08/08 : synchronisé sur lib/akasha/universe-taxonomy.ts après la curation des axes sales
     // (data/audits/curation-axes-sales.json) — l'axe `clan` est désormais 100% curé (45 valeurs).
-    clan: ['Uchiha', 'Uzumaki', 'Senju', 'Hyūga', 'Nara', 'Akimichi', 'Yamanaka', 'Inuzuka', 'Ōtsutsuki',
-      // ⚠ « Fūma » (générique) et « Fūma (Land of Sound) » sont DEUX clans canon distincts — ne jamais fusionner.
-      'Funato', 'Kamizuru', 'Tsuchigumo', 'Fūma (Land of Sound)', 'Aburame', 'Kagetsu Family', 'Kazekage',
-      'Sarutobi', 'Izuno', 'Kurama', 'Shirogane', 'Hōzuki', 'Iburi', 'Fūma', 'Shiin', 'Hoshigaki', 'Tenrō',
-      'Yuki', 'Wagarashi Family', 'Kaguya', 'Wasabi Family', 'Chinoike', 'Amagiri', 'Lee', 'Ryū',
-      'Karatachi Family', 'Yoimura', 'Rinha', 'Hatake', 'Onikuma', "Jūgo's", 'Yotsuki', 'Hirasaka',
-      'Shimura', 'Kedōin', "Yota's"],
-    rank: ['Academy Student', 'Genin', 'Chūnin', 'Tokubetsu Jōnin', 'Jōnin', 'Anbu', 'Kage'],
+    clan: [
+      'Uchiha', 'Uzumaki', 'Senju', 'Hyūga', 'Nara', 'Akimichi', 'Yamanaka', 'Inuzuka', 'Ōtsutsuki', 'Funato',
+      'Kamizuru', 'Tsuchigumo', 'Fūma (Land of Sound)', 'Aburame', 'Kagetsu Family', 'Kazekage', 'Sarutobi',
+      'Izuno', 'Kurama', 'Shirogane', 'Hōzuki', 'Iburi', 'Fūma', 'Shiin', 'Hoshigaki', 'Tenrō', 'Yuki',
+      'Wagarashi Family', 'Kaguya', 'Wasabi Family', 'Chinoike', 'Amagiri', 'Lee', 'Ryū', 'Karatachi Family',
+      'Yoimura', 'Rinha', 'Hatake', 'Onikuma', "Jūgo's", 'Yotsuki', 'Hirasaka', 'Shimura', 'Kedōin', "Yota's"
+    ],
+    // 10/08 (chantier 4) : « Head Ninja » ajouté — grade canon propre à Kumogakure, « a rank between
+    // jōnin and Kage » (https://naruto.fandom.com/wiki/Head_Ninja, Category:Ninja Ranks).
+    // Restent HORS de cet enum, volontairement : « Sannin » (une équipe, Category:Teams — l'axe
+    // `generation` la porte déjà), « S-rank » et « S-rank Missing-nin » (classification de danger du
+    // Bingo Book, une autre échelle). Cf. data/audits/axes-hors-liste-trace-2026-08-10T08-00-57-691Z.json.
+    rank: [
+      'Academy Student', 'Genin', 'Chūnin', 'Tokubetsu Jōnin', 'Jōnin', 'Head Ninja', 'Anbu', 'Kage'
+    ],
     // L20 (demande Dan) : dès que ~8 fiches porteront la même organisation, l'expert de
     // niche correspondant (« Expert Akatsuki ») naîtra tout seul au prochain scan.
     // 08/08 : complété aux 10 valeurs de lib/akasha/universe-taxonomy.ts (5 manquaient déjà avant
@@ -40,21 +50,21 @@ export const AXES = {
     // n'est pas une institution : `equipe` et `division` sont deux clés à part entière, et les
     // agents doivent pouvoir les produire — sinon l'usine réécrirait tout dans `organization`.
     organization: [
-      'Akagi Gang', 'Akatsuki', 'Analysis Team', 'Byakuya Gang', 'Communications Team', 'Douze Ninjas Gardiens',
-      'Enlightened Ones', 'Fire Temple', 'Gatō Company', 'Ghost Army', "Haido's Knights", 'Hokage Guard Platoon',
-      "Jako's Gang", 'Janin', 'Kara', 'Konoha Barrier Team', 'Konoha Council', 'Konoha Cryptanalysis Team',
-      'Konoha Orphanage', 'Konoha Special Mission Platoon', 'Konoha Torture and Interrogation Force',
-      'Kumo Barrier Team', 'Kumo Council', 'Kumo Spectators', 'Kurosuki Family', "Leaf's Anbu", 'Lightning Group',
-      'Magaki Group', 'Moya Triad', 'Mujina Bandits', 'Nouveaux Sept Épéistes de la Brume',
-      'Police militaire de Konoha', 'Root', 'Scientific Ninja Weapons Team', 'Sept Épéistes de la Brume',
-      'Shinobazu', 'Sound Four', 'Suna Council', 'Wandering Ninja Clan', 'Watari Ninja'
+      'Akatsuki', 'Taka', 'Kara', 'Root', 'Sound Four', 'Sept Épéistes de la Brume',
+      'Nouveaux Sept Épéistes de la Brume', 'Douze Ninjas Gardiens', 'Police militaire de Konoha', 'Akagi Gang',
+      'Analysis Team', 'Byakuya Gang', 'Communications Team', 'Enlightened Ones', 'Fire Temple', 'Gatō Company',
+      'Ghost Army', "Haido's Knights", 'Hokage Guard Platoon', "Jako's Gang", 'Janin', 'Konoha Barrier Team',
+      'Konoha Council', 'Konoha Cryptanalysis Team', 'Konoha Orphanage', 'Konoha Special Mission Platoon',
+      'Konoha Torture and Interrogation Force', 'Kumo Barrier Team', 'Kumo Council', 'Kumo Spectators',
+      'Kurosuki Family', "Leaf's Anbu", 'Lightning Group', 'Magaki Group', 'Moya Triad', 'Mujina Bandits',
+      'Scientific Ninja Weapons Team', 'Shinobazu', 'Suna Council', 'Wandering Ninja Clan', 'Watari Ninja'
     ],
     equipe: [
       'A–B Combo', 'Daimyō Protection Squad', 'Demon Brothers', "Dotō's Three-Man-Team",
       'Eight-Tails Subduing Team', 'Escort Unit', 'Exploding-Till-You-Eat', 'Four Celestial Symbols Men',
       'Four Ninja Animal Warriors', "Furido's 4-Man Team", 'Gang of Four', 'Gold and Silver Brothers',
       'Haze Quadruplets', "Hiruko's Team", 'Honoured Siblings', 'Infiltration and Reconnaissance Party',
-      'Ino–Shika–Chō', 'Konoha 11', 'Legendary Stupid Brothers', 'Sealing Team', 'Shirogane Three', 'Team 10',
+      'Ino–Shika–Chō', 'Legendary Stupid Brothers', 'Sealing Team', 'Shirogane Three', 'Team 10',
       'Team 15', 'Team 2', 'Team 25', 'Team 40', 'Team 5', 'Team 7', 'Team 8', 'Team Ajisai', 'Team Ameno',
       'Team Bandō', 'Team Chōza', 'Team Dosu', 'Team Ebisu', 'Team Fū', 'Team Ganryū', 'Team Goji', 'Team Guren',
       'Team Hiruzen', 'Team Jiraiya', 'Team Kabuto', 'Team Kajika', 'Team Kakashi', 'Team Kazami', 'Team Komugi',
@@ -70,45 +80,96 @@ export const AXES = {
       'Logistical Support and Medical Division', 'Second Division', 'Sensor Division', 'Surprise Attack Division',
       'Surprise Attack and Diversion Platoon', 'Third Division', 'Twenty Platoons'
     ],
+    generation: [
+      'Fondateurs', 'Sannin', 'Génération de Kakashi', 'Konoha 11', 'Nouvelle ère'
+    ],
+
   },
   'One Piece': {
-    faction: ['Pirate', 'Marine', 'Gouvernement Mondial', 'Révolutionnaire', 'Civil'],
+    faction: [
+      'Pirate', 'Marine', 'Gouvernement Mondial', 'Révolutionnaire', 'Civil'
+    ],
     // 08/08 : synchronisé sur lib/akasha/universe-taxonomy.ts après la curation des axes sales
     // (data/audits/curation-axes-sales.json) — « L’équipage des Maquereaux » retiré (mistraduction,
     // scindé en Macro / Pirates du Soleil), 22 valeurs ajoutées, l'axe passe à 76,3% curé
     // (273 fiches sur 358 — chiffre remesuré le 09/08, le 76,8 % d'origine était une coquille).
-    crew: ['L’équipage du Chapeau de Paille', 'L’équipage de Big Mom', 'L’équipage aux Cent Bêtes',
-      'L’équipage de Barbe Blanche', 'L’équipage de Don Quichotte', 'L’équipage du Heart', 'L’équipage des Pirates Roger',
-      'L’équipage de Barbe Noire', 'L’équipage du Roux', 'L’équipage du Lion d’Or', 'L’équipage de Krieg',
-      'L’équipage de Thriller Bark', 'L’équipage des Pirates Kuja', 'Faux équipage du Chapeau de Paille',
-      'L’équipage des Nouveaux Hommes-Poissons', 'L’équipage du Fire Tank', 'L’équipage de Kid',
+    crew: [
+      'L’équipage du Chapeau de Paille', 'L’équipage de Big Mom', 'L’équipage aux Cent Bêtes',
+      'L’équipage de Barbe Blanche', 'L’équipage de Don Quichotte', 'L’équipage du Heart',
+      'L’équipage des Pirates Roger', 'L’équipage de Barbe Noire', 'L’équipage du Roux',
+      'Faux équipage du Chapeau de Paille', 'L’équipage des Nouveaux Hommes-Poissons', 'L’équipage du Lion d’Or',
+      'L’équipage de Thriller Bark', 'L’équipage des Pirates Kuja', 'L’équipage du Fire Tank', 'L’équipage de Kid',
       'L’équipage de Foxy', 'L’équipage du Chat Noir', 'L’équipage d’Arlong', 'L’équipage du Bluejam',
-      'L’équipage des Pirates du Soleil', 'L’équipage de Caribou', 'L’équipage des Pirates Volants',
-      'L’équipage des Pirates Rocks', 'L’équipage des Moines Dépravés', 'L’équipage de Buggy',
-      'L’équipage du Rumbar', 'L’équipage de Macro'],
-    fruit_type: ['Paramecia', 'Logia', 'Zoan', 'Zoan Antique', 'Zoan Mythique', 'Smile'],
+      'L’équipage de Krieg', 'L’équipage des Pirates du Soleil', 'L’équipage de Caribou',
+      'L’équipage des Pirates Volants', 'L’équipage des Pirates Rocks', 'L’équipage des Moines Dépravés',
+      'L’équipage de Buggy', 'L’équipage du Rumbar', 'L’équipage de Macro'
+    ],
+    fruit_type: [
+      'Paramecia', 'Logia', 'Zoan', 'Zoan Antique', 'Zoan Mythique', 'Smile'
+    ],
+    meito_grade: [
+      'Saijo Ô Wazamono', 'Ô Wazamono', 'Ryo Wazamono'
+    ],
+
   },
   'Dragon Ball': {
-    race: ['Saiyan', 'Human', 'Namekian', 'Android', 'Majin', 'Frieza Race', 'Angel'],
-    saga: ['Saga Saiyan', 'Saga Namek', 'Saga Cell', 'Saga Buu', 'Saga Super'],
+    // 10/08 (chantier 4) : « Machine Mutant » et « Glind » ajoutés — deux pages Category:Races du
+    // wiki ({{Race Infobox2}}), confirmées par l'infobox de Giru et de Shin. « Glind » est le nom
+    // moderne (Daima ép. 3) des Shinjin / Core People : ce n'est pas une coquille, ne pas le purger.
+    // Restent dehors : « Alien » (redirection vers List of Races, fourre-tout) et « Turtle »
+    // (espèce animale, sous-grain de la race « Animal »).
+    race: [
+      'Saiyan', 'Human', 'Namekian', 'Android', 'Majin', 'Frieza Race', 'Angel', 'Machine Mutant', 'Glind'
+    ],
+    saga: [
+      'Saga Saiyan', 'Saga Namek', 'Saga Cell', 'Saga Buu', 'Saga Super'
+    ],
+
   },
   'Bleach': {
-    race: ['Shinigami', 'Hollow', 'Arrancar', 'Quincy', 'Humain', 'Fullbringer', 'Visored'],
-    division: ['1ʳᵉ division', '2ᵉ division', '3ᵉ division', '4ᵉ division', '5ᵉ division', '6ᵉ division',
-      '7ᵉ division', '8ᵉ division', '9ᵉ division', '10ᵉ division', '11ᵉ division', '12ᵉ division', '13ᵉ division'],
+    // 10/08 (chantier 4) : « Soul », « Modified Soul », « Zanpakutō Spirit » ajoutés — même gabarit
+    // wiki que les sept autres ({{Bleach Wiki:Racial Groups Template}} + Category:Races).
+    // ⚠ « Soul » (défunt du Rukongai) et « Humain » (vivant) sont DEUX races distinctes chez le wiki :
+    // ne jamais replier l'une sur l'autre.
+    race: [
+      'Shinigami', 'Hollow', 'Arrancar', 'Quincy', 'Humain', 'Fullbringer', 'Visored', 'Soul', 'Modified Soul',
+      'Zanpakutō Spirit'
+    ],
+    division: [
+      '1ʳᵉ division', '2ᵉ division', '3ᵉ division', '4ᵉ division', '5ᵉ division', '6ᵉ division', '7ᵉ division',
+      '8ᵉ division', '9ᵉ division', '10ᵉ division', '11ᵉ division', '12ᵉ division', '13ᵉ division'
+    ],
+    monde: [
+      'Soul Society', 'Terre · Karakura', 'Hueco Mundo', 'Wandenreich'
+    ],
+
   },
   'Hunter x Hunter': {
-    nen: ['Renforcement', 'Émission', 'Transformation', 'Matérialisation', 'Manipulation', 'Spécialisation'],
+    nen: [
+      'Renforcement', 'Émission', 'Transformation', 'Matérialisation', 'Manipulation', 'Spécialisation'
+    ],
+
   },
   "JoJo's Bizarre Adventure": {
-    partie: ['Partie 1-2', 'Partie 3', 'Partie 4', 'Partie 5', 'Partie 6', 'Partie 7', 'Partie 8'],
+    partie: [
+      'Partie 1-2', 'Partie 3', 'Partie 4', 'Partie 5', 'Partie 6', 'Partie 7', 'Partie 8'
+    ],
+
   },
   'Death Note': {
-    camp: ['Kira', 'Cellule d’enquête', 'SPK', 'Wammy’s House', 'Yotsuba', 'Shinigami'],
+    camp: [
+      'Kira', 'Cellule d’enquête', 'SPK', 'Wammy’s House', 'Yotsuba', 'Shinigami'
+    ],
+
   },
   'Initial D': {
-    affiliation: ['Project D', 'Akagi RedSuns', 'Myogi NightKids', 'Akina SpeedStars', 'Impact Blue', 'Team Emperor'],
-    col: ['Mont Akina', 'Mont Akagi', 'Mont Myōgi', 'Col d’Usui', 'Irohazaka'],
+    affiliation: [
+      'Project D', 'Myogi NightKids', 'Akina SpeedStars', 'Impact Blue', 'Team Emperor', 'Akagi RedSuns'
+    ],
+    col: [
+      'Mont Akina', 'Mont Akagi', 'Mont Myōgi', 'Col d’Usui', 'Irohazaka'
+    ],
+
   },
 };
 
@@ -158,6 +219,11 @@ const TRACES = {
   'Frieza Race': ['frieza', 'freeza'],
   Angel: ['angel'],
   'Academy Student': ['academy'],
+  // 10/08 (chantier 4). Sans trace déclarée, le repli `valueWords` retiendrait « ninja » pour
+  // « Head Ninja » — un mot présent dans quasi tout article Naruto, donc une preuve qui ne prouve
+  // rien. Et « Glind » est presque toujours nommé par son ancien nom dans les articles.
+  'Head Ninja': ['head ninja', 'shinobigashira'],
+  Glind: ['glind', 'core people', 'core person', 'shinjin', 'shin-jin'],
   Kage: ['kage', 'hokage', 'kazekage', 'mizukage', 'raikage', 'tsuchikage'],
   // Le TYPE de fruit n'est presque jamais dans la même phrase que le fruit lui-même :
   // on se contente de la preuve qu'un fruit existe, le type reste à l'appréciation du relecteur.

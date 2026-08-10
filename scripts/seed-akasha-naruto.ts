@@ -14,6 +14,16 @@ const raw = JSON.parse(readFileSync(join(process.cwd(), 'data/akasha-naruto.json
   relations: unknown[];
 };
 
+// LA COLONNE `description` NE PART PLUS EN BASE (10/08/2026).
+// Mesuré : elle est VIDE sur 7 599 des 7 632 fiches, alors que le schéma la présente comme le texte
+// long. Le texte long vit ailleurs — `attributes.descFr` et la table `akasha_sections`. Mais les
+// fichiers de build la portent encore sur 7 037 entrées : 6 592 recopient `summary` mot pour mot, et
+// les 445 restantes portent l'ancien remplissage (« Personnage secondaire de One Piece. ») pendant
+// que `summary`, lui, a été amélioré depuis. Aucune ne contient le texte que son nom promet.
+// Le prochain reseed aurait donc REMPLI une colonne morte de doublons et de texte périmé. On la
+// retire ICI, au goulot que tous les générateurs traversent, plutôt que dans chacun d'eux.
+const sansDescription = <T extends Record<string, unknown>>(e: T) => { const { description, ...reste } = e; return reste; };
+
 const entries = raw.entries.map((e, i) => {
   const parsed = akashaEntrySchema.safeParse(e);
   if (!parsed.success) {
@@ -48,7 +58,7 @@ async function main() {
   for (let i = 0; i < entries.length; i += CHUNK) {
     const { data: rows, error } = await sb
       .from('akasha_entries')
-      .upsert(entries.slice(i, i + CHUNK), { onConflict: 'slug' })
+      .upsert(entries.map(sansDescription).slice(i, i + CHUNK), { onConflict: 'slug' })
       .select('id, slug');
     if (error) {
       console.error(`✗ entries (lot ${Math.floor(i / CHUNK) + 1}):`, error.message);

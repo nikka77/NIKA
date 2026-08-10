@@ -83,6 +83,12 @@ const base = {
   is_fiction: z.boolean().default(true),
   universe: z.string().nullish(),
   summary: z.string().nullish(),
+  // ⚠ COLONNE MORTE, acceptée ici seulement pour ne pas casser les seeders historiques.
+  // NE RIEN Y ÉCRIRE dans un nouveau script : `description` n'est lue par AUCUN composant
+  // (vérifié au rendu le 10/08/2026) et vide sur 99,57 % des fiches. Le texte long va dans
+  // `attributes.descFr`, le dossier détaillé dans la table `akasha_sections`.
+  // C'est précisément ce champ qui a produit 6 959 doublons de `summary` purgés le 08/08 —
+  // et 5 nouveaux le jour même, par un seeder qui écrivait encore `description: summary`.
   description: z.string().nullish(),
   image_url: z.string().nullish(), // chemin local OU URL distante
   rarity: z.enum(AKASHA_RARITIES).nullish(),

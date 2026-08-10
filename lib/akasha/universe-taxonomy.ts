@@ -106,7 +106,6 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
           { v: 'Sound Four', l: 'Quatuor du Son', tint: '#8E44AD', badge: '🎵' },
           { v: 'Sept Épéistes de la Brume', tint: '#5A88B0', badge: '🗡️' },
           { v: 'Nouveaux Sept Épéistes de la Brume', tint: '#5A88B0', badge: '🗡️' },
-          { v: 'Konoha 11', tint: '#3FA35C', badge: '🍃' },
           { v: 'Douze Ninjas Gardiens', tint: '#B8912F', badge: '🛡️' },
           { v: 'Police militaire de Konoha', l: 'Police de Konoha', tint: '#4A5A7A', badge: '🚔' },
           { v: "Akagi Gang" },
@@ -165,7 +164,6 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
           { v: "Honoured Siblings" },
           { v: "Infiltration and Reconnaissance Party" },
           { v: "Ino–Shika–Chō" },
-          { v: "Konoha 11" },
           { v: "Legendary Stupid Brothers" },
           { v: "Sealing Team" },
           { v: "Shirogane Three" },
@@ -246,14 +244,23 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
         attr: 'rank', label: 'Rangs ninja', icon: '🎖️',
         values: [
           { v: 'Academy Student', l: 'Élève de l’Académie' }, { v: 'Genin' }, { v: 'Chūnin' },
-          { v: 'Tokubetsu Jōnin', l: 'Jōnin spécial' }, { v: 'Jōnin' }, { v: 'Anbu' }, { v: 'Kage' },
+          { v: 'Tokubetsu Jōnin', l: 'Jōnin spécial' }, { v: 'Jōnin' },
+          // 10/08 — CHANTIER 4 (valeurs hors liste) : grade CANON qui manquait, pas du bruit.
+          // « Head Ninja (忍頭 Shinobigashira) is a position in the shinobi system of Kumogakure.
+          //   It is a rank between jōnin and Kage, and unique to its own village. »
+          // https://naruto.fandom.com/wiki/Head_Ninja — Category:Ninja Ranks. D'où sa place ICI,
+          // entre Jōnin et Kage : l'ordre vient de la phrase source, pas d'un choix d'affichage.
+          // La surface bespoke /u/naruto/rangs continue de le tenir hors de son échelle, et c'est
+          // juste : elle rend la voie de promotion de KONOHA, or ce grade est propre à Kumo.
+          { v: 'Head Ninja', l: 'Chef des ninjas (Kumo)' },
+          { v: 'Anbu' }, { v: 'Kage' },
         ],
       },
       {
         attr: 'generation', label: 'Générations', genre: 'f', icon: '🧬',
         values: [
           { v: 'Fondateurs' }, { v: 'Sannin' }, { v: 'Génération de Kakashi' },
-          { v: 'Konoha 11' }, { v: 'Nouvelle ère' },
+          { v: 'Konoha 11', tint: '#3FA35C', badge: '🍃' }, { v: 'Nouvelle ère' },
         ],
       },
     ],
@@ -343,6 +350,16 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
           { v: 'Saiyan', l: 'Saiyans' }, { v: 'Human', l: 'Humains' }, { v: 'Namekian', l: 'Nameks' },
           { v: 'Android', l: 'Androïdes' }, { v: 'Majin' }, { v: 'Frieza Race', l: 'Race de Freezer' },
           { v: 'Angel', l: 'Anges' },
+          // 10/08 — CHANTIER 4 : deux races canon qui manquaient, chacune vérifiée sur une page
+          // Category:Races bâtie sur {{Race Infobox2}}, et confirmée par l'infobox du personnage.
+          // · « Machine Mutants (マシン ミュータント) are a race of artificial beings introduced in
+          //   Dragon Ball GT. » https://dragonball.fandom.com/wiki/Machine_Mutant (Giru : |Race= [[Machine Mutant]])
+          // · « Glind (グリンド人), also known as Core People (芯人 Shin-jin), are a race of beings […]
+          //   the true race all Kai and Supreme Kai come from. » https://dragonball.fandom.com/wiki/Glind
+          //   (Shin / Higashi no Kaiōshin : |Race = [[Glind]]). Nom relevé dans Dragon Ball Daima ép. 3 —
+          //   à ne PAS prendre pour une coquille de mining, c'est le nom moderne des Shinjin.
+          { v: 'Machine Mutant', l: 'Machine Mutants' },
+          { v: 'Glind', l: 'Glinds (race des Kaiōshin)' },
         ],
       },
       {
@@ -366,6 +383,22 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
         values: [
           { v: 'Shinigami' }, { v: 'Hollow' }, { v: 'Arrancar' }, { v: 'Quincy' },
           { v: 'Humain', l: 'Humains' }, { v: 'Fullbringer' }, { v: 'Visored' },
+          // 10/08 — CHANTIER 4 : trois races canon qui manquaient. Toutes trois portent sur le wiki
+          // le {{Bleach Wiki:Racial Groups Template}} et Category:Races, exactement comme les sept
+          // ci-dessus, et l'infobox de chaque fiche concernée le confirme (| race = [[…]]).
+          // · « Souls (魂魄 Konpaku) are spiritual beings that reside in the Rukongai area of Soul
+          //   Society and the spirits of dead humans in the World of the Living. »
+          //   https://bleach.fandom.com/wiki/Soul — DISTINCT de « Humain » : le wiki sépare le vivant
+          //   du défunt. Hisana Kuchiki, Ganju et Kūkaku Shiba.
+          // · « Modified Souls (改造魂魄 Kaizō Konpaku) […] are artificial souls designed to enhance
+          //   regular Human physiology. » https://bleach.fandom.com/wiki/Modified_Soul — Ririn, Noba, Nozomi.
+          // · « A Zanpakutō Spirit (斬魄刀の本体) is the spirit embodiment of a Zanpakutō. »
+          //   https://bleach.fandom.com/wiki/Zanpakutō_Spirit — Katen Kyōkotsu ; la page de l'ESPRIT,
+          //   à ne pas confondre avec celle du sabre ni avec Shunsui Kyōraku, vers qui la recherche
+          //   nue redirige (piège de désambiguïsation vérifié).
+          { v: 'Soul', l: 'Âmes' },
+          { v: 'Modified Soul', l: 'Âmes modifiées' },
+          { v: 'Zanpakutō Spirit', l: 'Esprits de Zanpakutō' },
         ],
       },
       {
@@ -454,6 +487,9 @@ export const UNIVERSE_TAXONOMY: UniverseTaxonomy[] = [
         values: [
           { v: 'Project D' }, { v: 'Myogi NightKids' },
           { v: 'Akina SpeedStars' }, { v: 'Impact Blue' }, { v: 'Team Emperor' },
+          // Équipe canon des frères Takahashi. Elle vivait dans le miroir des agents et nulle part
+          // ici : produisible par l'usine, filtrable par personne (constaté le 10/08).
+          { v: 'Akagi RedSuns' },
         ],
       },
       {

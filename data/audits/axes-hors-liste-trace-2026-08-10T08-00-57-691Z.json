@@ -1,0 +1,160 @@
+{
+ "chantier": "CHANTIER 4 — les 24 valeurs d'axe hors liste curée (10/08/2026)",
+ "genere_le": "2026-08-10T08:00:57.691Z",
+ "ecritures_en_base": 0,
+ "commentaire_ecritures": "AUCUNE écriture dans akasha_entries. Aucune des 24 valeurs n'est une VARIANTE DE GRAPHIE d'une valeur curée : le seul des trois traitements qui touche la base ne s'applique à aucun cas. Les 6 promotions sont des ajouts de CODE (lib/akasha/universe-taxonomy.ts + son miroir scripts/lib/akasha-axes.mjs), les 18 autres sont documentées ici comme bruit structurel et laissées intactes en base (règle ajout-seulement).",
+ "methode": {
+  "mesure": "scripts/audit-axes-hors-liste.mjs — lecture PAGINÉE (.range(d, d+999) en boucle) de toutes les fiches des 4 univers concernés, distinct + comptage sur attributes.<axe>, comparaison à la liste curée. Sortie brute : data/audits/axes-hors-liste-mesure-2026-08-10T07-52-14-949Z.json.",
+  "verification": "scripts/audit-hors-liste-sonde-wiki.mjs / -2 / -3 — api.php du wiki de l'univers (action=parse&redirects=1, prop=wikitext|categories ; action=query&list=categorymembers pour les catégories d'axe). Deux preuves exigées par promotion : (a) la page de la valeur appartient à la CATÉGORIE de l'axe sur le wiki (Ninja Ranks / Races), (b) au moins une fiche-personnage concernée porte cette valeur dans son champ Race/race. Les phrases-preuves sont recopiées ci-dessous.",
+  "taux_erreur": "Population = 24, ÉCHANTILLON = 24 (100 %) : chaque valeur a été sondée individuellement, aucune extrapolation. Contrôle de la règle 4 fait à l'envers, sur MON jugement : avant sondage j'avais une hypothèse écrite pour les 24 ; le wiki l'a contredite ou laissée indécidable dans 4 cas (Glind que je croyais inventé, Head Ninja que je croyais un simple titre, S-rank que je croyais absent de Category:Ninja Ranks, Turtle indécidable). Soit 4/24 = 16,7 % d'erreur si j'avais écrit de mémoire — au-dessus des 5 % tolérés, ce qui justifie que rien n'ait été posé sans URL."
+ },
+ "bilan": { "total": 24, "promues": 6, "variantes_renommees": 0, "bruit_documente": 18 },
+
+ "promues": [
+  {
+   "univers": "Naruto", "axe": "rank", "valeur": "Head Ninja", "libelle_fr": "Chef des ninjas (Kumo)", "nFiches": 1,
+   "fiches": ["head-ninja-of-kumogakure"],
+   "url": "https://naruto.fandom.com/wiki/Head_Ninja",
+   "preuve_categorie": "Category:Ninja Ranks (membres relevés : A-rank · Academy Student · Anbu · B-rank · C-rank · Chūnin · … · Head Ninja · … · Tokubetsu Jōnin)",
+   "preuve_phrase": "« Head Ninja (忍頭 Shinobigashira) is a position in the shinobi system of Kumogakure. It is a rank between jōnin and Kage, and unique to its own village. »",
+   "place": "inséré entre Jōnin et Kage — l'ordre est celui que la phrase-preuve donne, pas un choix d'affichage",
+   "note": "La surface bespoke /learn/akasha/u/naruto/rangs continue de le ranger HORS ÉCHELLE, et c'est cohérent : cette page rend la voie de promotion de KONOHA, or le wiki précise « unique to its own village ». Seule la justification y a été corrigée (elle disait « dans un film » — le Head Ninja de Kumo apparaît dans l'affaire Hyūga, source Rin no Sho p. 262 citée par le wiki)."
+  },
+  {
+   "univers": "Dragon Ball", "axe": "race", "valeur": "Machine Mutant", "libelle_fr": "Machine Mutants", "nFiches": 1,
+   "fiches": ["giru"],
+   "url": "https://dragonball.fandom.com/wiki/Machine_Mutant",
+   "preuve_categorie": "Categories: Races | Extraterrestrials | Machine_Mutants | Mutants — page bâtie sur {{Race Infobox2}}",
+   "preuve_phrase": "« Machine Mutants (マシン ミュータント) are a race of artificial beings introduced in Dragon Ball GT. »",
+   "preuve_fiche": "infobox de https://dragonball.fandom.com/wiki/Giru : |Race= [[Machine Mutant]]"
+  },
+  {
+   "univers": "Dragon Ball", "axe": "race", "valeur": "Glind", "libelle_fr": "Glinds (race des Kaiōshin)", "nFiches": 1,
+   "fiches": ["higashi-no-kaioshin"],
+   "url": "https://dragonball.fandom.com/wiki/Glind",
+   "preuve_categorie": "Categories: Races | Shinjin | Deities — page bâtie sur {{Race Infobox2}} ; figure aussi dans « List of Races » § Major races",
+   "preuve_phrase": "« Glind (グリンド人 Gurindo-jin), also known as Core People (芯人 Shin-jin), are a race of beings […] The Glind are the true race all Kai and Supreme Kai come from before being given their respective role. » (nom relevé dans Dragon Ball Daima ép. 3)",
+   "preuve_fiche": "infobox de https://dragonball.fandom.com/wiki/Shin (Higashi no Kaiōshin) : |Race = [[Glind]]",
+   "note": "Piège évité : « Glind » sonne comme une coquille de mining. C'en est une vraie race, le nom RÉCENT (Daima) de ce que les vieux guides appellent Shinjin / Core People. C'est le cas qui justifie la règle « vérifier avant de juger »."
+  },
+  {
+   "univers": "Bleach", "axe": "race", "valeur": "Soul", "libelle_fr": "Âmes", "nFiches": 3,
+   "fiches": ["hisana-kuchiki", "ganju-shiba", "kuukaku-shiba"],
+   "url": "https://bleach.fandom.com/wiki/Soul",
+   "preuve_categorie": "Categories: Important_Terms | Soul | Races | World_of_Bleach — page bâtie sur le {{Bleach Wiki:Racial Groups Template}}, le même gabarit que Shinigami/Hollow/Quincy déjà curés",
+   "preuve_phrase": "« Souls (魂魄 Konpaku) are spiritual beings that reside in the Rukongai area of Soul Society and the spirits of dead humans in the World of the Living. »",
+   "preuve_fiche": "infobox des trois fiches : Kūkaku Shiba | race = [[Soul]] ; Hisana Kuchiki | race = [[Soul]] ; Ganju Shiba | race = [[Soul]] (gabarit « Character Template (Soul Society Dweller) »)",
+   "note": "DISTINCT de « Humain » déjà curé : le wiki sépare Human (vivant, monde des vivants) et Soul (défunt, résident du Rukongai). Ne pas replier l'un sur l'autre."
+  },
+  {
+   "univers": "Bleach", "axe": "race", "valeur": "Modified Soul", "libelle_fr": "Âmes modifiées", "nFiches": 3,
+   "fiches": ["nova", "nozomi-kujo", "ririn"],
+   "url": "https://bleach.fandom.com/wiki/Modified_Soul",
+   "preuve_categorie": "Categories: Important_Terms | Modified_Soul | Races | Soul | Artificial_Soul — {{Bleach Wiki:Racial Groups Template}}",
+   "preuve_phrase": "« Modified Souls (改造魂魄 Kaizō Konpaku), more commonly referred to as Mod-Souls, are artificial souls designed to enhance regular Human physiology, making them capable of battling Hollows equally. »",
+   "preuve_fiche": "infobox des trois fiches : Ririn | race = [[Modified Soul]] ; Noba | race = [[Modified Soul]] ; Nozomi Kujō | race = [[Modified Soul]]"
+  },
+  {
+   "univers": "Bleach", "axe": "race", "valeur": "Zanpakutō Spirit", "libelle_fr": "Esprits de Zanpakutō", "nFiches": 1,
+   "fiches": ["katen-kyoukotsu"],
+   "url": "https://bleach.fandom.com/wiki/Zanpakut%C5%8D_Spirit",
+   "preuve_categorie": "Categories: Races | Zanpakutō_Spirit | Zanpakutō | Important_Terms | World_of_Bleach — {{Bleach Wiki:Racial Groups Template}}",
+   "preuve_phrase": "« A Zanpakutō Spirit (斬魄刀の本体 Zanpakutō no Hontai) is the spirit embodiment of a Zanpakutō. »",
+   "preuve_fiche": "https://bleach.fandom.com/wiki/Katen_Ky%C5%8Dkotsu_(Zanpakut%C5%8D_spirit) : |race = [[Zanpakutō Spirit]] — page DISTINCTE de « Katen Kyōkotsu » (le sabre) et de « Shunsui Kyōraku » (son maître), vers qui la recherche nue redirige. Piège de désambiguïsation vérifié, pas contourné."
+  }
+ ],
+
+ "variantes_de_graphie": [],
+ "commentaire_variantes": "AUCUNE. Vérifié valeur par valeur : aucune des 24 n'est la même entité qu'une valeur curée écrite autrement. Les paires qui s'en rapprochent (« Néo Marine » / « Marine », « Anciens membres du Cipher Pol » / « Cipher Pol », « S-rank Missing-nin » / « S-rank ») sont des paires de BRUIT — aucune des deux n'est curée, il n'y a pas de forme cible vers laquelle replier. Zéro UPDATE émis, donc zéro risque d'écraser le travail des chantiers parallèles sur `attributes`.",
+
+ "bruit_structurel": [
+  {
+   "univers": "One Piece", "axe": "crew", "nValeurs": 12, "nFiches": 85,
+   "statut": "RECONFIRMÉ — classement identique à data/audits/curation-axes-sales.json (08/08). Remesuré aujourd'hui : exactement les 12 mêmes valeurs, aucune n'a bougé. Rien à refaire, rien à défaire.",
+   "valeurs": [
+    { "v": "Marine", "n": 29, "nature": "FACTION — déjà couverte par l'axe `faction` curé (valeur « Marine »). Un militaire n'a pas d'équipage." },
+    { "v": "Armada du Chapeau de Paille", "n": 17, "nature": "ALLIANCE de 7 équipages (Straw Hat Grand Fleet) — le cas d'école cité par le carnet : une alliance rangée en équipage." },
+    { "v": "Armée Révolutionnaire", "n": 8, "nature": "FACTION politique — déjà couverte par `faction` (« Révolutionnaire »)." },
+    { "v": "Cipher Pol", "n": 8, "nature": "ORGANISATION de renseignement du Gouvernement Mondial ({{Organization Box}} sur le wiki, pas {{Crew Box}})." },
+    { "v": "Royaume de Germa", "n": 6, "nature": "NATION / armée (empire militaire Vinsmoke)." },
+    { "v": "Anciens membres du Cipher Pol", "n": 5, "nature": "MÉTA-TAG d'ancienneté posé sur une organisation — ce n'est même pas une entité, c'est un état d'appartenance passé." },
+    { "v": "Néo Marine", "n": 3, "nature": "ORGANISATION dissidente d'anciens Marines (Film Z) — même motif que Marine." },
+    { "v": "Anciens membres du Baroque Works", "n": 3, "nature": "MÉTA-TAG d'ancienneté sur une agence criminelle." },
+    { "v": "Buggy's Delivery", "n": 2, "nature": "SOCIÉTÉ de dépêche de mercenaires ({{Organization Box}}). Alvida et Cabaji sont par ailleurs de l'équipage de Buggy, mais l'écrire serait un changement de SENS, pas une normalisation de graphie — hors des trois traitements autorisés." },
+    { "v": "Ligue des Primates", "n": 2, "nature": "ALLIANCE de 2 équipages sous 3 capitaines (Saruyama Alliance) — même motif structurel que l'Armada." },
+    { "v": "Anciens membres de la Marine", "n": 1, "nature": "MÉTA-TAG d'ancienneté sur une faction." },
+    { "v": "World Economic Journal", "n": 1, "nature": "un JOURNAL (entreprise de presse) — mauvais champ de bout en bout." }
+   ],
+   "recommandation": "Trois natures distinctes dorment sous une seule clé : équipage, alliance d'équipages, organisation/faction. C'est le même défaut de modèle que l'axe `organization` de Naruto, scindé le 10/08 — un futur axe `alliance` (Armada, Ligue des Primates) réglerait 19 des 85 fiches. Pas fait ici : créer un axe n'est pas curer une liste."
+  },
+  {
+   "univers": "One Piece", "axe": "fruit_type", "nValeurs": 1, "nFiches": 4,
+   "valeurs": [
+    {
+     "v": "Clone", "n": 4,
+     "fiches": ["clone-du-fruit-du-barbotage", "clone-du-fruit-du-tailladant", "clone-du-fruit-de-la-passion", "clone-du-fruit-des-coussinets"],
+     "nature": "ORIGINE, pas TYPE. « Clone » dit comment le fruit a été fabriqué (réplique par facteur héréditaire, arme des Séraphins), pas à laquelle des trois familles il appartient. Sur le wiki, « Clone » n'est pas une page de fruit : elle redirige vers « Cloning » (Categories: Terms | Biology | Technology), tandis que les types vivent sous Category:Devil_Fruits.",
+     "url": "https://onepiece.fandom.com/wiki/Cloning",
+     "url_complement": "https://onepiece.fandom.com/wiki/Artificial_Devil_Fruit — « Artificial Devil Fruits are man-made replicas of naturally-existing Devil Fruits created by scientists by synthesizing or manipulating the Lineage Factor »",
+     "remede_prouve_non_applique": "Le champ `roman_name` de chacune des 4 fiches nomme le fruit d'origine, et les 4 sont des Paramecia (infobox |type= [[Paramecia]] relevée sur chaque page du wiki) : Mero Mero no Mi, Nikyu Nikyu no Mi, Sui Sui no Mi, Supā Supā no Mi. Poser fruit_type='Paramecia' sur ces 4 fiches est donc entièrement sourçable — mais c'est une SUBSTITUTION DE SENS, pas une normalisation de graphie : hors des trois traitements de ce chantier. Laissé à qui possède le contenu des fruits.",
+     "defaut_visible_constate": "« Clone » s'affiche AUJOURD'HUI comme une chip de l'axe « Types de Fruit du Démon » du hub One Piece (mécanique `extras` d'app/learn/akasha/u/[slug]/page.tsx:167 — toute valeur hors liste à ≥ 3 fiches devient chip si le quota de 14 le permet). Le carnet supposait l'inverse (« une valeur hors liste n'a pas de chip ») : c'est vrai sous 3 fiches ou quand les valeurs curées saturent le quota, faux ici. Non corrigé : la bonne correction est le remède ci-dessus, pas un masquage."
+    }
+   ]
+  },
+  {
+   "univers": "Naruto", "axe": "rank", "nValeurs": 3, "nFiches": 3,
+   "valeurs": [
+    {
+     "v": "Sannin", "n": 1, "fiche": "orochimaru",
+     "nature": "ÉQUIPE / titre collectif. Sur le wiki la page « Sannin » est bâtie sur {{Infobox/Naruto/Team}} et rangée en Category:Teams — pas en Category:Ninja Ranks.",
+     "url": "https://naruto.fandom.com/wiki/Sannin",
+     "preuve_phrase": "« The Sannin (伝説の三忍 Densetsu no Sannin, lit. Legendary Three Ninja) were three renowned ninja from Konohagakure, hailed as the greatest of their time. »",
+     "note": "La valeur existe déjà, correctement, dans NOTRE axe `generation` (chip « Sannin » vérifiée au hub). Son autre domicile légitime serait l'axe `equipe` né de la scission du 10/08."
+    },
+    {
+     "v": "S-rank", "n": 1, "fiche": "kisame-hoshigaki",
+     "nature": "CLASSIFICATION DE DANGER (Bingo Book) et de difficulté (missions, techniques) — une échelle PARALLÈLE, pas un grade de promotion.",
+     "url": "https://naruto.fandom.com/wiki/S-rank",
+     "preuve_phrase": "« S-rank is one of the six classifications. […] It is typically used when classifying techniques […] Missions can also be classified as S-rank […] “S-rank” is also a designation given to extremely powerful missing-nin, earning them a place in their village of origin's Bingo Book. »",
+     "franchise": "À CHARGE : le wiki range bien « S-rank » dans Category:Ninja Ranks (aux côtés de A-rank, B-rank, D-rank, « Missions », « Chūnin Exams »… — la catégorie est un fourre-tout). Le classement en bruit n'est donc pas « le wiki dit non », c'est : notre axe « Rangs ninja » est UNE ÉCHELLE ORDONNÉE (Académie → Kage, rendue telle quelle par la page /u/naruto/rangs) et S-rank appartient à une autre échelle. Mélanger les deux, c'est refaire l'erreur de l'axe `organization` réparée hier."
+    },
+    {
+     "v": "S-rank Missing-nin", "n": 1, "fiche": "kakuzu",
+     "nature": "même classification de danger que ci-dessus, agglutinée à un STATUT (déserteur). « Missing-nin » est en Category:Naruto_Terms, pas en Ninja Ranks.",
+     "url": "https://naruto.fandom.com/wiki/Missing-nin",
+     "preuve_phrase": "« Missing-nin (抜け忍 nukenin) are ninja who abandon their village with no intention of returning. […] missing-nin are listed in their village's Bingo Book to be killed on-sight. »"
+    }
+   ],
+   "note_commune": "Les 3 (plus Head Ninja, désormais promu) étaient DÉJÀ documentées comme « hors échelle » sur /learn/akasha/u/naruto/rangs (LOT 4a). Ce chantier confirme le classement pour ces 3 et n'en change aucun."
+  },
+  {
+   "univers": "Dragon Ball", "axe": "race", "nValeurs": 2, "nFiches": 2,
+   "valeurs": [
+    {
+     "v": "Alien", "n": 1, "fiche": "jaco-teirimentenpibosshi",
+     "nature": "FOURRE-TOUT générique, pas une race nommée. Sur le wiki, « Alien » n'est pas un article : c'est une REDIRECTION vers « List of Races » — et cette liste ne contient elle-même aucune entrée « Alien ». Le champ |Race = [[Alien]] de Jaco renvoie donc à l'index des races : la façon dont le wiki écrit « extraterrestre de race non nommée ».",
+     "url": "https://dragonball.fandom.com/wiki/List_of_Races",
+     "preuve": "action=parse&page=Alien&redirects=1 → title « List of Races » ; « This is a list of notable races which have appeared throughout the Dragon Ball series. »"
+    },
+    {
+     "v": "Turtle", "n": 1, "fiche": "umikame",
+     "nature": "SOUS-GRAIN : une espèce animale, pas une race de la taxonomie. La race canon est « Animal » ({{Race Infobox2}}, Category:Races) ; le champ du personnage écrit |Race= [[Animal#Turtle|Turtle]], c'est-à-dire une ANCRE dans la page Animal — et la section ===Turtle=== ainsi visée parle du personnage lui-même (« A Turtle is Master Roshi's friend and long-time companion »), pas d'une espèce décrite.",
+     "url": "https://dragonball.fandom.com/wiki/Animal",
+     "franchise": "Cas le moins net des 24. Ni promotion (mettre « Turtle » à côté de Saiyan et Namekian mélange deux grains), ni variante (« Turtle » → « Animal » est un changement de GRANULARITÉ, pas d'orthographe, et « Animal » n'est pas non plus dans la liste curée). Documenté plutôt que tranché à la va-vite ; si Dan veut la chip, le geste propre est : promouvoir « Animal » ET renommer la fiche — deux gestes, à décider ensemble."
+    }
+   ]
+  }
+ ],
+
+ "fichiers_touches": [
+  "lib/akasha/universe-taxonomy.ts — +6 valeurs (rank Naruto ×1, race Dragon Ball ×2, race Bleach ×3)",
+  "scripts/lib/akasha-axes.mjs — miroir des mêmes 6 valeurs (sans quoi les agents de l'usine ne peuvent pas les produire : l'enum du JSON Schema vient de là)",
+  "components/akasha/hub/BleachWorldsMap.tsx — les 3 races Bleach ajoutées aux mondes qui les hébergent, et les chips affichent enfin leur libellé FR (le composant câblait les races monde par monde : sans ça, la donnée était écrite mais pas livrée)",
+  "app/learn/akasha/u/naruto/rangs/page.tsx — une seule chaîne : la justification « hors échelle » de Head Ninja, qui affirmait à tort « dans un film »"
+ ],
+ "fichiers_non_touches": [
+  "aucune table Supabase",
+  "components/akasha/zone/**",
+  "app/learn/akasha/[slug]/**"
+ ]
+}

@@ -1,0 +1,988 @@
+{
+ "quand": "2026-08-10T08:00:53.742Z",
+ "parUnivers": {
+  "One Piece": {
+   "isolees": 539,
+   "sansPage": 254,
+   "sansInfobox": 21,
+   "sansChamp": 61,
+   "ciblesBrutes": 474,
+   "aretesCandidates": 138,
+   "isoleesSortables": 86,
+   "voies": {
+    "nom anglais direct": 76,
+    "ÉCHEC: cible personne refusée (Chouchou)": 1,
+    "ÉCHEC: cible personne refusée (Aunt)": 2,
+    "ÉCHEC: cible personne refusée (Yosaku)": 1,
+    "ÉCHEC: cible personne refusée (Johnny)": 1,
+    "ÉCHEC: cible personne refusée (Gild Tesoro)": 1,
+    "ÉCHEC: cible personne refusée (Egana)": 1,
+    "ÉCHEC: cible personne refusée (Henzo)": 1,
+    "rōmaji": 62,
+    "ÉCHEC: rōmaji": 281,
+    "ÉCHEC: aucune traduction": 46
+   },
+   "echantillon": [
+    {
+     "de": "Ipponume",
+     "deSlug": "ipponume",
+     "champ": "affiliation",
+     "titreWiki": "Loguetown",
+     "ancre": "Arms Shop",
+     "vers": "Loguetown",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Ipponume",
+     "deSlug": "ipponume",
+     "champ": "origin",
+     "titreWiki": "East Blue",
+     "ancre": null,
+     "vers": "East Blue",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Ipponume",
+     "deSlug": "ipponume",
+     "champ": "residence",
+     "titreWiki": "Loguetown",
+     "ancre": null,
+     "vers": "Loguetown",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Gismonda",
+     "deSlug": "gismonda",
+     "champ": "occupation",
+     "titreWiki": "Cipher Pol",
+     "ancre": null,
+     "vers": "Cipher Pol",
+     "versType": "status",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Yonka",
+     "deSlug": "yonka",
+     "champ": "origin",
+     "titreWiki": "Grand Line",
+     "ancre": null,
+     "vers": "Grand Line",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Hocker",
+     "deSlug": "hocker",
+     "champ": "origin",
+     "titreWiki": "East Blue",
+     "ancre": null,
+     "vers": "East Blue",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Hocker",
+     "deSlug": "hocker",
+     "champ": "origin",
+     "titreWiki": "Orange Town",
+     "ancre": null,
+     "vers": "Orange Town",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Hocker",
+     "deSlug": "hocker",
+     "champ": "residence",
+     "titreWiki": "Orange Town",
+     "ancre": null,
+     "vers": "Orange Town",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Harisenbon",
+     "deSlug": "harisenbon",
+     "champ": "occupation",
+     "titreWiki": "Pirate",
+     "ancre": null,
+     "vers": "Pirate",
+     "versType": "profession",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Harisenbon",
+     "deSlug": "harisenbon",
+     "champ": "origin",
+     "titreWiki": "Grand Line",
+     "ancre": null,
+     "vers": "Grand Line",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Ideaman",
+     "deSlug": "ideaman",
+     "champ": "occupation",
+     "titreWiki": "Pirate",
+     "ancre": null,
+     "vers": "Pirate",
+     "versType": "profession",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Ideaman",
+     "deSlug": "ideaman",
+     "champ": "origin",
+     "titreWiki": "East Blue",
+     "ancre": null,
+     "vers": "East Blue",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Jabari",
+     "deSlug": "jabari",
+     "champ": "occupation",
+     "titreWiki": "Cipher Pol",
+     "ancre": null,
+     "vers": "Cipher Pol",
+     "versType": "status",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Hatcha",
+     "deSlug": "hatcha",
+     "champ": "origin",
+     "titreWiki": "Grand Line",
+     "ancre": null,
+     "vers": "Grand Line",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Hatcha",
+     "deSlug": "hatcha",
+     "champ": "origin",
+     "titreWiki": "Punk Hazard",
+     "ancre": null,
+     "vers": "Punk Hazard",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Hip",
+     "deSlug": "hip",
+     "champ": "occupation",
+     "titreWiki": "Pirate",
+     "ancre": null,
+     "vers": "Pirate",
+     "versType": "profession",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Juubei",
+     "deSlug": "juubei",
+     "champ": "occupation",
+     "titreWiki": "Pirate",
+     "ancre": null,
+     "vers": "Pirate",
+     "versType": "profession",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Joseph",
+     "deSlug": "joseph",
+     "champ": "occupation",
+     "titreWiki": "Cipher Pol",
+     "ancre": null,
+     "vers": "Cipher Pol",
+     "versType": "status",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Junan",
+     "deSlug": "junan",
+     "champ": "origin",
+     "titreWiki": "Grand Line",
+     "ancre": null,
+     "vers": "Grand Line",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Kinoko",
+     "deSlug": "kinoko",
+     "champ": "occupation",
+     "titreWiki": "Pirate",
+     "ancre": null,
+     "vers": "Pirate",
+     "versType": "profession",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Ichika",
+     "deSlug": "ichika",
+     "champ": "origin",
+     "titreWiki": "Grand Line",
+     "ancre": null,
+     "vers": "Grand Line",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Totts",
+     "deSlug": "totts",
+     "champ": "occupation",
+     "titreWiki": "Pirate",
+     "ancre": null,
+     "vers": "Pirate",
+     "versType": "profession",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Totts",
+     "deSlug": "totts",
+     "champ": "residence",
+     "titreWiki": "Sorbet Kingdom",
+     "ancre": null,
+     "vers": "Royaume de Sorbet",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Ubau",
+     "deSlug": "ubau",
+     "champ": "occupation",
+     "titreWiki": "Skypiea",
+     "ancre": null,
+     "vers": "Skypiea",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Ubau",
+     "deSlug": "ubau",
+     "champ": "origin",
+     "titreWiki": "Skypiea",
+     "ancre": null,
+     "vers": "Skypiea",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Tamachibi",
+     "deSlug": "tamachibi",
+     "champ": "origin",
+     "titreWiki": "Grand Line",
+     "ancre": null,
+     "vers": "Grand Line",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Tamachibi",
+     "deSlug": "tamachibi",
+     "champ": "residence",
+     "titreWiki": "Drum Island",
+     "ancre": null,
+     "vers": "Île de Drum (Sakura)",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Part",
+     "deSlug": "part",
+     "champ": "occupation",
+     "titreWiki": "Pirate",
+     "ancre": null,
+     "vers": "Pirate",
+     "versType": "profession",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Part",
+     "deSlug": "part",
+     "champ": "residence",
+     "titreWiki": "Sorbet Kingdom",
+     "ancre": null,
+     "vers": "Royaume de Sorbet",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Jarul",
+     "deSlug": "jarul",
+     "champ": "origin",
+     "titreWiki": "Grand Line",
+     "ancre": null,
+     "vers": "Grand Line",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Mouse-Man",
+     "deSlug": "mouse-man",
+     "champ": "residence",
+     "titreWiki": "Kuri",
+     "ancre": null,
+     "vers": "Kuri",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Himuro",
+     "deSlug": "himuro",
+     "champ": "occupation",
+     "titreWiki": "Pirate",
+     "ancre": null,
+     "vers": "Pirate",
+     "versType": "profession",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Sanka",
+     "deSlug": "sanka",
+     "champ": "origin",
+     "titreWiki": "Grand Line",
+     "ancre": null,
+     "vers": "Grand Line",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Honner",
+     "deSlug": "honner",
+     "champ": "origin",
+     "titreWiki": "Lvneel Kingdom",
+     "ancre": null,
+     "vers": "Royaume de Lvneel",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Sicilian",
+     "deSlug": "sicilian",
+     "champ": "origin",
+     "titreWiki": "Grand Line",
+     "ancre": null,
+     "vers": "Grand Line",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Sicilian",
+     "deSlug": "sicilian",
+     "champ": "residence",
+     "titreWiki": "Zou",
+     "ancre": null,
+     "vers": "Zou",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Rokuroshi",
+     "deSlug": "rokuroshi",
+     "champ": "occupation",
+     "titreWiki": "Pirate",
+     "ancre": null,
+     "vers": "Pirate",
+     "versType": "profession",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Sister Anko",
+     "deSlug": "sister-anko",
+     "champ": "affiliation",
+     "titreWiki": "Baratie",
+     "ancre": null,
+     "vers": "Baratie",
+     "versType": "artifact",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Hiro Gomon",
+     "deSlug": "hiro-gomon",
+     "champ": "occupation",
+     "titreWiki": "Pirate",
+     "ancre": null,
+     "vers": "Pirate",
+     "versType": "profession",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Goo",
+     "deSlug": "goo",
+     "champ": "occupation",
+     "titreWiki": "Pirate",
+     "ancre": null,
+     "vers": "Pirate",
+     "versType": "profession",
+     "voie": "nom anglais direct"
+    }
+   ],
+   "echecs": [
+    {
+     "de": "Hocker",
+     "champ": "affiliation",
+     "titreWiki": "Chouchou",
+     "motif": "cible personne refusée (Chouchou)"
+    },
+    {
+     "de": "Yuya",
+     "champ": "affiliation",
+     "titreWiki": "Aunt",
+     "motif": "cible personne refusée (Aunt)"
+    },
+    {
+     "de": "Bounty Maru",
+     "champ": "affiliation",
+     "titreWiki": "Yosaku",
+     "motif": "cible personne refusée (Yosaku)"
+    },
+    {
+     "de": "Bounty Maru",
+     "champ": "affiliation",
+     "titreWiki": "Johnny",
+     "motif": "cible personne refusée (Johnny)"
+    },
+    {
+     "de": "Sho",
+     "champ": "affiliation",
+     "titreWiki": "Aunt",
+     "motif": "cible personne refusée (Aunt)"
+    },
+    {
+     "de": "Gran Tesoro",
+     "champ": "affiliation",
+     "titreWiki": "Gild Tesoro",
+     "motif": "cible personne refusée (Gild Tesoro)"
+    },
+    {
+     "de": "Margarita",
+     "champ": "affiliation",
+     "titreWiki": "Egana",
+     "motif": "cible personne refusée (Egana)"
+    },
+    {
+     "de": "H-1",
+     "champ": "affiliation",
+     "titreWiki": "Henzo",
+     "motif": "cible personne refusée (Henzo)"
+    },
+    {
+     "de": "Giberson",
+     "champ": "affiliation",
+     "titreWiki": "Underworld",
+     "motif": "rōmaji « Urashakai » sans fiche"
+    },
+    {
+     "de": "Mani",
+     "champ": "occupation",
+     "titreWiki": "Combatant",
+     "motif": "rōmaji « Sentō-in » sans fiche"
+    },
+    {
+     "de": "Mani",
+     "champ": "origin",
+     "titreWiki": "North Blue",
+     "motif": "rōmaji « Nōsu Burū » sans fiche"
+    },
+    {
+     "de": "Mani",
+     "champ": "origin",
+     "titreWiki": "Notice",
+     "motif": "rōmaji « Nōtisu » sans fiche"
+    },
+    {
+     "de": "Tokijiro",
+     "champ": "residence",
+     "titreWiki": "Wano Country",
+     "motif": "rōmaji « Wano Kuni » sans fiche"
+    },
+    {
+     "de": "Tokijiro",
+     "champ": "residence",
+     "titreWiki": "Flower Capital",
+     "motif": "rōmaji « Hana no Miyako » sans fiche"
+    },
+    {
+     "de": "Uholisia",
+     "champ": "affiliation",
+     "titreWiki": "Niho Navy",
+     "motif": "rōmaji « Nihō Suigun » sans fiche"
+    },
+    {
+     "de": "Gismonda",
+     "champ": "affiliation",
+     "titreWiki": "CP0",
+     "motif": "rōmaji « Shī-Pī-Zero » sans fiche"
+    },
+    {
+     "de": "Ultraking",
+     "champ": "affiliation",
+     "titreWiki": "Rain Dinners",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Jibuemon",
+     "champ": "affiliation",
+     "titreWiki": "Kouzuki Family",
+     "motif": "rōmaji « Kōzuki-ke » sans fiche"
+    },
+    {
+     "de": "Jibuemon",
+     "champ": "occupation",
+     "titreWiki": "Samurai",
+     "motif": "rōmaji « Samurai » sans fiche"
+    },
+    {
+     "de": "Jibuemon",
+     "champ": "residence",
+     "titreWiki": "Wano Country",
+     "motif": "rōmaji « Wano Kuni » sans fiche"
+    },
+    {
+     "de": "Furrari",
+     "champ": "affiliation",
+     "titreWiki": "Levely",
+     "motif": "rōmaji « Reverī » sans fiche"
+    },
+    {
+     "de": "Furrari",
+     "champ": "occupation",
+     "titreWiki": "King (Title)",
+     "motif": "rōmaji « Ōzoku » sans fiche"
+    },
+    {
+     "de": "Furrari",
+     "champ": "residence",
+     "titreWiki": "Nagagutsu Kingdom",
+     "motif": "rōmaji « Nagagutsu Ōkoku » sans fiche"
+    },
+    {
+     "de": "Konpira",
+     "champ": "occupation",
+     "titreWiki": "Vice Admiral",
+     "motif": "rōmaji « Chūjō » sans fiche"
+    },
+    {
+     "de": "Yonka",
+     "champ": "origin",
+     "titreWiki": "Ryugu Kingdom",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Yonka",
+     "champ": "residence",
+     "titreWiki": "Coral Hill",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Yonka",
+     "champ": "residence",
+     "titreWiki": "Mermaid Cove",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Genrin",
+     "champ": "residence",
+     "titreWiki": "Flower Capital",
+     "motif": "rōmaji « Hana no Miyako » sans fiche"
+    },
+    {
+     "de": "Genrin",
+     "champ": "residence",
+     "titreWiki": "Wano Country",
+     "motif": "rōmaji « Wano Kuni » sans fiche"
+    },
+    {
+     "de": "Herb",
+     "champ": "affiliation",
+     "titreWiki": "Shandia",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Harisenbon",
+     "champ": "affiliation",
+     "titreWiki": "New Fish-Man Pirates",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Harisenbon",
+     "champ": "origin",
+     "titreWiki": "Ryugu Kingdom",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Harisenbon",
+     "champ": "residence",
+     "titreWiki": "Fish-Man District",
+     "motif": "rōmaji « Gyojin-gai » sans fiche"
+    },
+    {
+     "de": "Iwatobi",
+     "champ": "affiliation",
+     "titreWiki": "Levely",
+     "motif": "rōmaji « Reverī » sans fiche"
+    },
+    {
+     "de": "Iwatobi",
+     "champ": "occupation",
+     "titreWiki": "King (Title)",
+     "motif": "rōmaji « Ōzoku » sans fiche"
+    },
+    {
+     "de": "Ideaman",
+     "champ": "affiliation",
+     "titreWiki": "Krieg Pirates",
+     "motif": "rōmaji « Kurīku Kaizokudan » sans fiche"
+    },
+    {
+     "de": "Ideaman",
+     "champ": "occupation",
+     "titreWiki": "Staff",
+     "motif": "rōmaji « Sanbō » sans fiche"
+    },
+    {
+     "de": "Ideaman",
+     "champ": "occupation",
+     "titreWiki": "Officer",
+     "motif": "rōmaji « Kanbu » sans fiche"
+    },
+    {
+     "de": "Luigia",
+     "champ": "residence",
+     "titreWiki": "Little East Blue",
+     "motif": "rōmaji « Ritoru Īsuto Burū » sans fiche"
+    },
+    {
+     "de": "Jabari",
+     "champ": "affiliation",
+     "titreWiki": "CP6",
+     "motif": "rōmaji « Saifā Pōru » sans fiche"
+    }
+   ]
+  },
+  "Dragon Ball": {
+   "isolees": 148,
+   "sansPage": 84,
+   "sansInfobox": 36,
+   "sansChamp": 13,
+   "ciblesBrutes": 25,
+   "aretesCandidates": 2,
+   "isoleesSortables": 1,
+   "voies": {
+    "nom anglais direct": 2,
+    "ÉCHEC: aucune traduction": 23
+   },
+   "echantillon": [
+    {
+     "de": "Pteranodon",
+     "deSlug": "pteranodon",
+     "champ": "Homeworld",
+     "titreWiki": "Earth",
+     "ancre": null,
+     "vers": "Terre",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    },
+    {
+     "de": "Pteranodon",
+     "deSlug": "pteranodon",
+     "champ": "Homeworld",
+     "titreWiki": "Sadala",
+     "ancre": null,
+     "vers": "Planète Sadala",
+     "versType": "place",
+     "voie": "nom anglais direct"
+    }
+   ],
+   "echecs": [
+    {
+     "de": "Jirasen",
+     "champ": "Occupation",
+     "titreWiki": "Martial Artist",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Jirasen",
+     "champ": "Allegiance",
+     "titreWiki": "Team Universe 10",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Cranberry",
+     "champ": "Allegiance",
+     "titreWiki": "Frieza Force",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Cranberry",
+     "champ": "Allegiance",
+     "titreWiki": "Moro Corps",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Yogengyo",
+     "champ": "Allegiance",
+     "titreWiki": "God of Destruction",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Jilcol",
+     "champ": "Occupation",
+     "titreWiki": "Martial Artist",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Jilcol",
+     "champ": "Allegiance",
+     "titreWiki": "Team Universe 10",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "The Preecho",
+     "champ": "Allegiance",
+     "titreWiki": "Team Universe 3",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Gamisaras",
+     "champ": "Allegiance",
+     "titreWiki": "Team Universe 4",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Obake",
+     "champ": "Homeworld",
+     "titreWiki": "Other World",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Kinkaku",
+     "champ": "Allegiance",
+     "titreWiki": "Daizenshuu 7",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Panput",
+     "champ": "Allegiance",
+     "titreWiki": "Vodka Gang",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Shantza",
+     "champ": "Allegiance",
+     "titreWiki": "Team Universe 4",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Ginkaku",
+     "champ": "Allegiance",
+     "titreWiki": "Daizenshuu 7",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Vermoud",
+     "champ": "Occupation",
+     "titreWiki": "Pride Troopers",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Vermoud",
+     "champ": "Occupation",
+     "titreWiki": "God of Destruction",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Vermoud",
+     "champ": "Allegiance",
+     "titreWiki": "Pride Troopers",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Vermoud",
+     "champ": "Allegiance",
+     "titreWiki": "Team Universe 11",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Dolphin",
+     "champ": "Homeworld",
+     "titreWiki": "List of Planets",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Minotia",
+     "champ": "Occupation",
+     "titreWiki": "Swordsman",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Minotia",
+     "champ": "Occupation",
+     "titreWiki": "Martial Artist",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Minotia",
+     "champ": "Allegiance",
+     "titreWiki": "Dragon Ball Heroes (team)",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Minotia",
+     "champ": "Allegiance",
+     "titreWiki": "Super Dragon Ball Heroes: World Mission",
+     "motif": "aucune traduction"
+    }
+   ]
+  },
+  "Naruto": {
+   "isolees": 117,
+   "sansPage": 21,
+   "sansInfobox": 58,
+   "sansChamp": 38,
+   "ciblesBrutes": 0,
+   "aretesCandidates": 0,
+   "isoleesSortables": 0,
+   "voies": {},
+   "echantillon": [],
+   "echecs": []
+  },
+  "Bleach": {
+   "isolees": 46,
+   "sansPage": 26,
+   "sansInfobox": 13,
+   "sansChamp": 4,
+   "ciblesBrutes": 3,
+   "aretesCandidates": 0,
+   "isoleesSortables": 0,
+   "voies": {
+    "ÉCHEC: aucune traduction": 3
+   },
+   "echantillon": [],
+   "echecs": [
+    {
+     "de": "Kei Uehara",
+     "champ": "race",
+     "titreWiki": "Human",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Torue",
+     "champ": "race",
+     "titreWiki": "Soul",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Satoda",
+     "champ": "race",
+     "titreWiki": "Human",
+     "motif": "aucune traduction"
+    }
+   ]
+  },
+  "JoJo's Bizarre Adventure": {
+   "isolees": 49,
+   "sansPage": 43,
+   "sansInfobox": 2,
+   "sansChamp": 4,
+   "ciblesBrutes": 0,
+   "aretesCandidates": 0,
+   "isoleesSortables": 0,
+   "voies": {},
+   "echantillon": [],
+   "echecs": []
+  },
+  "Hunter x Hunter": {
+   "isolees": 31,
+   "sansPage": 16,
+   "sansInfobox": 7,
+   "sansChamp": 5,
+   "ciblesBrutes": 6,
+   "aretesCandidates": 0,
+   "isoleesSortables": 0,
+   "voies": {
+    "ÉCHEC: aucune traduction": 4,
+    "ÉCHEC: rōmaji": 2
+   },
+   "echantillon": [],
+   "echecs": [
+    {
+     "de": "Cluck",
+     "champ": "affiliation",
+     "titreWiki": "Hunter Association",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Cluck",
+     "champ": "affiliation",
+     "titreWiki": "Zodiacs",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Cluck",
+     "champ": "occupation",
+     "titreWiki": "Hunter Association",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Cluck",
+     "champ": "occupation",
+     "titreWiki": "Zodiacs",
+     "motif": "aucune traduction"
+    },
+    {
+     "de": "Coco Loo",
+     "champ": "occupation",
+     "titreWiki": "Lamentation Tours",
+     "motif": "rōmaji « Gōkyū Kankō Basu » sans fiche"
+    },
+    {
+     "de": "Sedokan",
+     "champ": "affiliation",
+     "titreWiki": "Trick Tower",
+     "motif": "rōmaji « Torikku Tawā » sans fiche"
+    }
+   ]
+  },
+  "Death Note": {
+   "isolees": 11,
+   "sansPage": 8,
+   "sansInfobox": 0,
+   "sansChamp": 2,
+   "ciblesBrutes": 1,
+   "aretesCandidates": 0,
+   "isoleesSortables": 0,
+   "voies": {
+    "ÉCHEC: aucune traduction": 1
+   },
+   "echantillon": [],
+   "echecs": [
+    {
+     "de": "Kyoko",
+     "champ": "occupation",
+     "titreWiki": "To-Oh University",
+     "motif": "aucune traduction"
+    }
+   ]
+  },
+  "Initial D": {
+   "isolees": 10,
+   "sansPage": 7,
+   "sansInfobox": 1,
+   "sansChamp": 2,
+   "ciblesBrutes": 0,
+   "aretesCandidates": 0,
+   "isoleesSortables": 0,
+   "voies": {},
+   "echantillon": [],
+   "echecs": []
+  }
+ }
+}

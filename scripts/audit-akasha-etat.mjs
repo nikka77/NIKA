@@ -74,7 +74,11 @@ for (const t of [...new Set(entries.map((e) => e.type))]) {
   parType[t] = { fiches: lot.length, sansImage: lot.filter((e) => !e.image_url).length, isolees: lot.filter((e) => !(degre.get(e.id) ?? 0)).length };
 }
 
-// `description` doit porter le texte long ; mesurer combien de fois elle ne fait que redire `summary`.
+// `description` NE porte PAS le texte long, contrairement à ce que son nom laisse croire : c'est une
+// colonne morte, copie figée de `summary` au seed, lue par aucun composant (chantier 5, 10/08/2026 —
+// voir lib/akasha/types.ts). Le texte long est `attributes.descFr` + la table `akasha_sections`.
+// Les deux compteurs ci-dessous restent utiles comme VIGIE : si `descriptionRedondante` remonte,
+// c'est qu'un seeder s'est remis à écrire `description: summary`.
 const descRedondante = entries.filter((e) => e.description && e.summary && e.description.trim() === e.summary.trim()).length;
 const descAbsente = entries.filter((e) => !e.description?.trim()).length;
 

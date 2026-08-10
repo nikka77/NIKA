@@ -1,0 +1,19 @@
+{
+ "chantier": "poids des vignettes",
+ "quand": "2026-08-10T08:39:44.384Z",
+ "avant": "https://static.wikia.nocookie.net/bleach/images/3/39/Takaoni.png/revision/latest/scale-to-width-down/720?cb=20250916212111&path-prefix=fr",
+ "apres": "https://static.wikia.nocookie.net/bleach/images/3/39/Takaoni.png/revision/latest/scale-to-width-down/480?cb=20250916212111&path-prefix=fr",
+ "mesure": "617 Ko en 720 px → 13,8 Ko en 480 px (vérifié par téléchargement réel avant écriture)",
+ "nonTraites": [
+  {
+   "slug": "atk-bl-utsusemi",
+   "poids": "2,13 Mo",
+   "motif": "GIF animé — le CDN Fandom REFUSE de le redimensionner (scale-to-width-down rend 16 octets de texte). Laissé tel quel : le chargement est différé (loading=lazy) et supprimer une image juste pour son poids est une décision produit, pas une décision d’agent."
+  },
+  {
+   "slug": "atk-bl-kageoni",
+   "poids": "1,07 Mo",
+   "motif": "même cas"
+  }
+ ]
+}

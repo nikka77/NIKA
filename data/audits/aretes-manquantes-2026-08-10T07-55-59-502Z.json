@@ -1,0 +1,425 @@
+{
+ "quand": "2026-08-10T07:55:59.503Z",
+ "total": 7632,
+ "aretes": 16388,
+ "isolees": 951,
+ "precedents": {
+  "village": {
+   "habite": 753,
+   "allie": 14,
+   "appartient": 13,
+   "ennemi": 1,
+   "famille": 1
+  },
+  "equipe": {
+   "appartient": 188
+  },
+  "abilities": {
+   "maitrise": 2
+  },
+  "crew": {
+   "appartient": 320,
+   "allie": 5,
+   "mentor": 1
+  },
+  "division": {
+   "appartient": 61
+  },
+  "clan": {
+   "appartient": 68,
+   "exerce": 2,
+   "famille": 9
+  },
+  "organization": {
+   "appartient": 186,
+   "ennemi": 2
+  },
+  "affiliation": {
+   "habite": 24,
+   "appartient": 21
+  },
+  "villageSlug": {
+   "habite": 20,
+   "appartient": 1
+  },
+  "clanSlug": {
+   "appartient": 11
+  },
+  "team": {
+   "appartient": 46
+  },
+  "tools": {
+   "possede": 42
+  },
+  "kekkeiGenkai": {
+   "maitrise": 9
+  },
+  "classification": {
+   "appartient": 19,
+   "exerce": 2
+  },
+  "titles": {
+   "mentor": 1,
+   "appartient": 1
+  },
+  "generation": {
+   "appartient": 15
+  },
+  "signature": {
+   "maitrise": 14
+  },
+  "occupation": {
+   "appartient": 5,
+   "exerce": 12
+  },
+  "natureType": {
+   "maitrise": 1
+  },
+  "origin": {
+   "appartient": 73
+  },
+  "race": {
+   "appartient": 38,
+   "exerce": 10
+  },
+  "category": {
+   "appartient": 256
+  },
+  "element": {
+   "appartient": 42
+  },
+  "fruit": {
+   "maitrise": 113
+  },
+  "discipline": {
+   "appartient": 11
+  },
+  "region": {
+   "appartient": 92
+  },
+  "monde": {
+   "appartient": 32,
+   "habite": 66
+  },
+  "faction": {
+   "appartient": 38,
+   "exerce": 20,
+   "mentor": 1
+  },
+  "rank": {
+   "appartient": 2
+  },
+  "material": {
+   "appartient": 16
+  },
+  "camp": {
+   "appartient": 16,
+   "habite": 1
+  }
+ },
+ "bilan": {
+  "village": {
+   "resolubles": 756,
+   "dejaLa": 755,
+   "manquantes": 1,
+   "isoleesSauvees": 0
+  },
+  "clan": {
+   "resolubles": 182,
+   "dejaLa": 74,
+   "manquantes": 108,
+   "isoleesSauvees": 5
+  },
+  "organization": {
+   "resolubles": 190,
+   "dejaLa": 188,
+   "manquantes": 2,
+   "isoleesSauvees": 0
+  },
+  "equipe": {
+   "resolubles": 189,
+   "dejaLa": 188,
+   "manquantes": 1,
+   "isoleesSauvees": 0
+  },
+  "division": {
+   "resolubles": 61,
+   "dejaLa": 61,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "rank": {
+   "resolubles": 2,
+   "dejaLa": 2,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "generation": {
+   "resolubles": 19,
+   "dejaLa": 15,
+   "manquantes": 4,
+   "isoleesSauvees": 0
+  },
+  "faction": {
+   "resolubles": 506,
+   "dejaLa": 58,
+   "manquantes": 448,
+   "isoleesSauvees": 4
+  },
+  "crew": {
+   "resolubles": 343,
+   "dejaLa": 321,
+   "manquantes": 22,
+   "isoleesSauvees": 0
+  },
+  "race": {
+   "resolubles": 74,
+   "dejaLa": 47,
+   "manquantes": 27,
+   "isoleesSauvees": 0
+  },
+  "monde": {
+   "resolubles": 109,
+   "dejaLa": 67,
+   "manquantes": 42,
+   "isoleesSauvees": 1
+  },
+  "col": {
+   "resolubles": 18,
+   "dejaLa": 0,
+   "manquantes": 18,
+   "isoleesSauvees": 5
+  },
+  "camp": {
+   "resolubles": 21,
+   "dejaLa": 17,
+   "manquantes": 4,
+   "isoleesSauvees": 0
+  },
+  "category": {
+   "resolubles": 256,
+   "dejaLa": 256,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "element": {
+   "resolubles": 42,
+   "dejaLa": 42,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "region": {
+   "resolubles": 94,
+   "dejaLa": 92,
+   "manquantes": 2,
+   "isoleesSauvees": 2
+  },
+  "material": {
+   "resolubles": 16,
+   "dejaLa": 16,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "discipline": {
+   "resolubles": 11,
+   "dejaLa": 11,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "occupation": {
+   "resolubles": 12,
+   "dejaLa": 12,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "origin": {
+   "resolubles": 75,
+   "dejaLa": 73,
+   "manquantes": 2,
+   "isoleesSauvees": 1
+  },
+  "fruit": {
+   "resolubles": 113,
+   "dejaLa": 113,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "affiliation": {
+   "resolubles": 51,
+   "dejaLa": 43,
+   "manquantes": 8,
+   "isoleesSauvees": 0
+  },
+  "villageSlug": {
+   "resolubles": 20,
+   "dejaLa": 20,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "clanSlug": {
+   "resolubles": 12,
+   "dejaLa": 11,
+   "manquantes": 1,
+   "isoleesSauvees": 1
+  },
+  "team": {
+   "resolubles": 46,
+   "dejaLa": 46,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "tools": {
+   "resolubles": 43,
+   "dejaLa": 42,
+   "manquantes": 1,
+   "isoleesSauvees": 0
+  },
+  "abilities": {
+   "resolubles": 6,
+   "dejaLa": 2,
+   "manquantes": 4,
+   "isoleesSauvees": 0
+  },
+  "signature": {
+   "resolubles": 14,
+   "dejaLa": 14,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "natureType": {
+   "resolubles": 1,
+   "dejaLa": 1,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "kekkeiGenkai": {
+   "resolubles": 9,
+   "dejaLa": 9,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "classification": {
+   "resolubles": 19,
+   "dejaLa": 19,
+   "manquantes": 0,
+   "isoleesSauvees": 0
+  },
+  "titles": {
+   "resolubles": 3,
+   "dejaLa": 2,
+   "manquantes": 1,
+   "isoleesSauvees": 0
+  },
+  "family": {
+   "resolubles": 828,
+   "dejaLa": 267,
+   "manquantes": 561,
+   "isoleesSauvees": 2
+  }
+ },
+ "exemples": {
+  "village": [
+   "Naruto · Temari(character) --[village=Sunagakure]--> Sunagakure(place)"
+  ],
+  "clan": [
+   "Naruto · Santa Yamanaka(character) --[clan=Yamanaka]--> Clan Yamanaka(status)",
+   "Naruto · Kakashi Hatake(character) --[clan=Hatake]--> Clan Hatake(status) ⟵ISOLÉE",
+   "Naruto · Sakura Haruno(character) --[clan=Uchiha]--> Clan Uchiha(status)",
+   "Naruto · Tenma Funato(character) --[clan=Funato]--> Clan Funato(status)",
+   "Naruto · Kobuna(character) --[clan=Funato]--> Clan Funato(status)",
+   "Naruto · Seiren Funato(character) --[clan=Funato]--> Clan Funato(status)"
+  ],
+  "organization": [
+   "Naruto · Shisui Uchiha(character) --[organization=Police militaire de Konoha]--> Police militaire de Konoha(status)",
+   "Naruto · Kimimaro(character) --[organization=Sound Four]--> Sound Four(status)"
+  ],
+  "equipe": [
+   "Naruto · Kōji(character) --[equipe=Konoha 11]--> Konoha 11(status)"
+  ],
+  "generation": [
+   "Naruto · Gaara(character) --[generation=Konoha 11]--> Konoha 11(status)",
+   "Naruto · Sasuke Uchiha(character) --[generation=Konoha 11]--> Konoha 11(status)",
+   "Naruto · Temari(character) --[generation=Konoha 11]--> Konoha 11(status)",
+   "Naruto · Kankurō(character) --[generation=Konoha 11]--> Konoha 11(status)"
+  ],
+  "faction": [
+   "One Piece · Building Snake(character) --[faction=Pirate]--> Pirate(profession)",
+   "One Piece · Giovanni(character) --[faction=Civil]--> Civil(status) ⟵ISOLÉE",
+   "One Piece · Gerd(character) --[faction=Pirate]--> Pirate(profession)",
+   "One Piece · Okiku(character) --[faction=Civil]--> Civil(status) ⟵ISOLÉE",
+   "One Piece · Doc Q(character) --[faction=Pirate]--> Pirate(profession)",
+   "One Piece · Mr. Momora(character) --[faction=Pirate]--> Pirate(profession)"
+  ],
+  "crew": [
+   "One Piece · Yamato(character) --[crew=L’équipage aux Cent Bêtes]--> L’équipage aux Cent Bêtes(status)",
+   "One Piece · Roux Lucky(character) --[crew=L’équipage du Roux]--> L’équipage du Roux(status)",
+   "One Piece · Gol D. Roger(character) --[crew=L’équipage des Pirates Roger]--> L’équipage des Pirates Roger(status)",
+   "One Piece · Boa Hancock(character) --[crew=L’équipage des Pirates Kuja]--> L’équipage des Pirates Kuja(status)",
+   "One Piece · Nekomamushi(character) --[crew=L’équipage de Barbe Blanche]--> L’équipage de Barbe Blanche(status)",
+   "One Piece · Scarlet(character) --[crew=L’équipage du Lion d’Or]--> L’équipage du Lion d’Or(status)"
+  ],
+  "race": [
+   "Dragon Ball · Kefla(character) --[race=Saiyan]--> Saiyan(status)",
+   "Dragon Ball · Vegeta Jr.(character) --[race=Saiyan]--> Saiyan(status)",
+   "Bleach · Soi Fon(character) --[race=Shinigami]--> Shinigami(profession)",
+   "Dragon Ball · Gogeta(character) --[race=Saiyan]--> Saiyan(status)",
+   "Dragon Ball · Cabba(character) --[race=Saiyan]--> Saiyan(status)",
+   "Dragon Ball · King Vegeta(character) --[race=Saiyan]--> Saiyan(status)"
+  ],
+  "monde": [
+   "Bleach · Yachiru Kusajishi(character) --[monde=Soul Society]--> Soul Society(place)",
+   "Bleach · Yumichika Ayasegawa(character) --[monde=Soul Society]--> Soul Society(place)",
+   "Bleach · Nnoitra Gilga(character) --[monde=Hueco Mundo]--> Hueco Mundo(place)",
+   "Bleach · Soi Fon(character) --[monde=Soul Society]--> Soul Society(place)",
+   "Bleach · Kisuke Urahara(character) --[monde=Soul Society]--> Soul Society(place)",
+   "Bleach · Sōsuke Aizen(character) --[monde=Soul Society]--> Soul Society(place)"
+  ],
+  "col": [
+   "Initial D · Kenji(character) --[col=Mont Akina]--> Mont Akina(place) ⟵ISOLÉE",
+   "Initial D · Yuichi Tachibana(character) --[col=Mont Akina]--> Mont Akina(place) ⟵ISOLÉE",
+   "Initial D · Takeshi Nakazato(character) --[col=Mont Myōgi]--> Mont Myōgi(place) ⟵ISOLÉE",
+   "Initial D · Keisuke Takahashi(character) --[col=Mont Akagi]--> Mont Akagi(place) ⟵ISOLÉE",
+   "Initial D · Bunta Fujiwara(character) --[col=Mont Akina]--> Mont Akina(place) ⟵ISOLÉE",
+   "Initial D · Kenta Nakamura(character) --[col=Mont Akagi]--> Mont Akagi(place) ⟵ISOLÉE"
+  ],
+  "camp": [
+   "Death Note · Yonegoro Nusumi(character) --[camp=Kira]--> Kira(status)",
+   "Death Note · Stephen Loud(character) --[camp=SPK]--> SPK(status)",
+   "Death Note · Anthony Carter(character) --[camp=SPK]--> SPK(status)",
+   "Death Note · Halle Bullook(character) --[camp=SPK]--> SPK(status)"
+  ],
+  "region": [
+   "Dragon Ball · Banna(place) --[region=Univers 7]--> Univers 7(place) ⟵SOURCE ISOLÉE",
+   "Dragon Ball · Shamo(place) --[region=Univers 7]--> Univers 7(place) ⟵SOURCE ISOLÉE"
+  ],
+  "origin": [
+   "One Piece · Zenny(artifact) --[origin=L’équipage des Pirates du Sables]--> L’équipage des Pirates du Sables(status)",
+   "One Piece · Thriller Bark(artifact) --[origin=L’équipage du Rolling]--> L’équipage du Rolling(status) ⟵SOURCE ISOLÉE"
+  ],
+  "affiliation": [
+   "Naruto · Obito Uchiha(character) --[affiliation=Kirigakure]--> Kirigakure(place)",
+   "Naruto · Sasuke Uchiha(character) --[affiliation=Otogakure]--> Otogakure(place)",
+   "Naruto · Orochimaru(character) --[affiliation=Otogakure]--> Otogakure(place)",
+   "Bleach · Uryū Ishida(character) --[affiliation=Karakura]--> Karakura(place)",
+   "Bleach · Sōsuke Aizen(character) --[affiliation=Hueco Mundo]--> Hueco Mundo(place)",
+   "Initial D · Bunta Fujiwara(character) --[affiliation=Project D]--> Project D(status)"
+  ],
+  "clanSlug": [
+   "Naruto · Kakashi Hatake(character) --[clanSlug=hatake]--> Clan Hatake(status) ⟵ISOLÉE"
+  ],
+  "tools": [
+   "Naruto · Naruto Uzumaki(character) --[tools=Shuriken]--> Shuriken(artifact)"
+  ],
+  "abilities": [
+   "Naruto · Clan Uchiha(status) --[abilities=Amaterasu]--> Amaterasu(power)",
+   "Naruto · Clan Uchiha(status) --[abilities=Tsukuyomi]--> Tsukuyomi(power)",
+   "Naruto · Clan Uchiha(status) --[abilities=Susanoo]--> Susanoo(power)",
+   "Naruto · Rasengan(power) --[abilities=Mini-Rasenshuriken]--> Mini-Rasenshuriken(power)"
+  ],
+  "titles": [
+   "One Piece · Monkey D. Luffy(character) --[titles=Joy Boy]--> Joy Boy(character)"
+  ]
+ },
+ "isoleesSauvablesTotal": 20,
+ "litiges": {}
+}

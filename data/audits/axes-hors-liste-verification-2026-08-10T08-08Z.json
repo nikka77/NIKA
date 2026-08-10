@@ -1,0 +1,41 @@
+{
+ "chantier": "CHANTIER 4 — vérification de livraison (10/08/2026)",
+ "decision": "data/audits/axes-hors-liste-trace-2026-08-10T08-00-57-691Z.json",
+ "mesures": {
+  "avant": "data/audits/axes-hors-liste-mesure-2026-08-10T07-52-14-949Z.json",
+  "apres": "data/audits/axes-hors-liste-mesure-2026-08-10T08-05-31-458Z.json",
+  "commande_de_recompte": "node --env-file=.env.local scripts/audit-axes-hors-liste.mjs",
+  "valeurs_hors_liste": {
+   "One Piece.crew": { "avant": 12, "apres": 12, "note": "bruit reconfirmé, zéro geste" },
+   "One Piece.fruit_type": { "avant": 1, "apres": 1, "note": "bruit « Clone », remède prouvé mais hors mandat" },
+   "Naruto.rank": { "avant": 4, "apres": 3 },
+   "Dragon Ball.race": { "avant": 4, "apres": 2 },
+   "Bleach.race": { "avant": 3, "apres": 0, "note": "axe 100 % curé" },
+   "TOTAL": { "avant": 24, "apres": 18 }
+  },
+  "fiches_rendues_filtrables": 10,
+  "detail_10_fiches": "head-ninja-of-kumogakure (1) + giru (1) + higashi-no-kaioshin (1) + ganju-shiba/hisana-kuchiki/kuukaku-shiba (3) + nova/nozomi-kujo/ririn (3) + katen-kyoukotsu (1)"
+ },
+ "vu_sur_les_pages": {
+  "serveur": "http://localhost:3000 (serveur de dev déjà lancé)",
+  "hub_naruto": "rail « Rangs ninja » : 8 chips (7 avant) — « Chef des ninjas (Kumo) » apparaît entre Jōnin et Kage.",
+  "hub_dragon_ball": "rail « Races » : 9 chips (7 avant) — « Machine Mutants » et « Glinds (race des Kaiōshin) » apparaissent.",
+  "hub_bleach": "carte des quatre mondes : Soul Society porte désormais Shinigami 34 · Âmes 3 · Esprits de Zanpakutō 1 ; Terre · Karakura porte Humains 12 · Fullbringer 7 · Visored 9 · Âmes modifiées 3. Effet de bord voulu : les chips lisent enfin le libellé FR (« Humain » s'affichait au lieu de « Humains »).",
+  "hub_one_piece": "inchangé — « Clone » reste affiché comme chip de « Types de Fruit du Démon » (bruit connu, documenté, non masqué).",
+  "pages_d_axe": {
+   "/learn/akasha/u/naruto/rank/Head Ninja": "200 — titre « Chef des ninjas (Kumo) », 1 fiche : head-ninja-of-kumogakure",
+   "/learn/akasha/u/dragon-ball/race/Glind": "200 — titre « Glinds (race des Kaiōshin) », 1 fiche : higashi-no-kaioshin",
+   "/learn/akasha/u/dragon-ball/race/Machine Mutant": "200 — 1 fiche : giru",
+   "/learn/akasha/u/bleach/race/Soul": "200 — titre « Âmes », 3 fiches : ganju-shiba, hisana-kuchiki, kuukaku-shiba",
+   "/learn/akasha/u/bleach/race/Modified Soul": "200 — 3 fiches",
+   "/learn/akasha/u/bleach/race/Zanpakutō Spirit": "200 — titre « Esprits de Zanpakutō », 1 fiche : katen-kyoukotsu",
+   "/learn/akasha/u/naruto/rangs": "200 — les 4 fiches hors échelle sont toujours listées ; la justification de Head Ninja affiche bien la formulation sourcée."
+  }
+ },
+ "controles": {
+  "typescript": "npx tsc --noEmit — zéro erreur",
+  "miroir_agents": "scripts/lib/akasha-axes.mjs rechargé : rank Naruto 8 valeurs, race Dragon Ball 9, race Bleach 10 ; axesSchema('Bleach').properties.race.enum = 11 (10 + 'inconnu'). Les agents de l'usine peuvent désormais produire ces valeurs.",
+  "ecritures_supabase": "ZÉRO. Aucun .update/.upsert/.insert/.delete dans les scripts de ce chantier (vérifié par grep). La colonne `attributes` n'a pas été réécrite d'un octet — les chantiers parallèles ne risquent rien de celui-ci.",
+  "pagination": "toutes les lectures passent par une boucle .range(d, d+999) (scripts/audit-axes-hors-liste.mjs) ; totaux relus dans les fichiers de mesure eux-mêmes, pas de mémoire : One Piece 2229 fiches, Naruto 3308, Dragon Ball 1137, Bleach 382 — les trois premiers univers dépassent 1000, un select nu aurait donc menti sur chacun."
+ }
+}

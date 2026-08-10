@@ -11,11 +11,21 @@ import type { AxisView } from './HubSignature';
 const REALMS: { key: string; name: string; kanji: string; sub: string; races: string[]; grad: string; tint: string }[] = [
   {
     key: 'soul-society', name: 'Soul Society', kanji: '尸魂界', sub: 'Le monde des âmes — siège du Gotei 13',
-    races: ['Shinigami'], grad: 'linear-gradient(120deg, rgba(90,136,176,0.16), rgba(9,21,42,0.6))', tint: '#5A88B0',
+    // 10/08 (chantier 4) : « Soul » et « Zanpakutō Spirit » sont deux races canon du wiki
+    // (Category:Races) qui vivent ici — « Souls […] reside in the Rukongai area of Soul Society »
+    // (bleach.fandom.com/wiki/Soul ; les fiches Hisana Kuchiki, Ganju et Kūkaku Shiba portent le
+    // gabarit « Soul Society Dweller »), et l'esprit d'un zanpakutō est celui du sabre d'un
+    // shinigami du Seireitei (Katen Kyōkotsu, sabre de Shunsui Kyōraku). Sans cette ligne, la
+    // valeur ajoutée à la taxonomie resterait invisible : ce composant câble les races monde
+    // par monde, il ne lit pas la liste curée.
+    races: ['Shinigami', 'Soul', 'Zanpakutō Spirit'], grad: 'linear-gradient(120deg, rgba(90,136,176,0.16), rgba(9,21,42,0.6))', tint: '#5A88B0',
   },
   {
     key: 'terre', name: 'Terre · Karakura', kanji: '現世', sub: 'Le monde des vivants — carrefour des âmes',
-    races: ['Humain', 'Fullbringer', 'Visored'], grad: 'linear-gradient(120deg, rgba(235,229,214,0.07), rgba(9,21,42,0.55))', tint: '#EBE5D6',
+    // « Modified Souls […] are artificial souls designed to enhance regular Human physiology »
+    // (bleach.fandom.com/wiki/Modified_Soul) : des âmes artificielles glissées dans des gigai du
+    // monde des vivants — nos trois fiches (Ririn, Noba, Nozomi Kujō) opèrent à Karakura.
+    races: ['Humain', 'Fullbringer', 'Visored', 'Modified Soul'], grad: 'linear-gradient(120deg, rgba(235,229,214,0.07), rgba(9,21,42,0.55))', tint: '#EBE5D6',
   },
   {
     key: 'hueco-mundo', name: 'Hueco Mundo', kanji: '虚圏', sub: 'Le désert des Hollows — nuit éternelle',
@@ -30,6 +40,11 @@ export default function BleachWorldsMap({ raceAxis, divisionAxis, color }: {
 }) {
   const [goteiOpen, setGoteiOpen] = useState(false);
   const count = (race: string) => raceAxis?.chips.find((c) => c.v === race)?.count ?? 0;
+  // La chip affiche le LIBELLÉ FR de la taxonomie, pas la valeur brute stockée en base : les sept
+  // races d'origine se lisaient pareil dans les deux langues (« Shinigami », « Quincy »…), les
+  // trois ajoutées le 10/08 non (« Modified Soul » → « Âmes modifiées »). Le libellé est déjà dans
+  // les chips reçues (axisValueLabel côté serveur) — rien à recâbler, juste à le lire.
+  const label = (race: string) => raceAxis?.chips.find((c) => c.v === race)?.label ?? race;
   const raceHref = (race: string) => `/learn/akasha/u/bleach/race/${encodeURIComponent(race)}`;
 
   const RaceChips = ({ races, tint }: { races: string[]; tint: string }) => (
@@ -37,7 +52,7 @@ export default function BleachWorldsMap({ raceAxis, divisionAxis, color }: {
       {races.filter((r) => count(r) > 0).map((r) => (
         <Link key={r} href={raceHref(r)} className="ak-tab"
           style={{ display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', fontFamily: 'var(--fo)', fontSize: 12, fontWeight: 700, padding: '6px 12px', borderRadius: 10, border: `1px solid ${tint}44`, background: 'rgba(5,12,23,0.45)', color: 'var(--td2)' }}>
-          {r}
+          {label(r)}
           <span style={{ fontSize: 10, fontWeight: 800, color: tint, background: 'rgba(5,12,23,0.5)', borderRadius: 20, padding: '1px 7px', fontVariantNumeric: 'tabular-nums' }}>{count(r)}</span>
         </Link>
       ))}

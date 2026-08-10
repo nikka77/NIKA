@@ -92,7 +92,12 @@ const HORS_ECHELLE: { slug: string; rawRank: string; reason: string }[] = [
   {
     slug: 'head-ninja-of-kumogakure',
     rawRank: 'Head Ninja',
-    reason: 'une FONCTION locale (le shinobi en poste à la tête d’un village dans un film), pas un grade personnel transposable.',
+    // 10/08 (chantier 4) : justification corrigée. Elle disait « dans un film » — faux : le Head
+    // Ninja de Kumo apparaît dans l’affaire Hyūga, et le wiki en fait un vrai grade (« a rank
+    // between jōnin and Kage, and unique to its own village », Category:Ninja Ranks, source Rin no
+    // Sho p. 262). Il est donc désormais dans l’axe `rank` curé — mais il reste hors de CETTE
+    // échelle-ci, qui rend la voie de promotion de Konoha, pas celle de Kumogakure.
+    reason: 'un grade PROPRE À KUMOGAKURE — le wiki le situe entre jōnin et Kage, mais « unique à son village » : il ne se range pas dans la voie de promotion de Konoha rendue ici.',
   },
   {
     slug: 'kisame-hoshigaki',

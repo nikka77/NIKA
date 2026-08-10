@@ -24,6 +24,21 @@ export interface AkashaEntry {
   is_fiction: boolean;
   universe: string | null;
   summary: string | null;
+  /** ⚠ COLONNE MORTE — ne rien y brancher. Le nom ment : ce n'est PAS le texte long de la fiche.
+   *  C'était une copie figée de `summary` posée par les seeders à la création, jamais régénérée.
+   *  Mesuré le 10/08/2026 (data/audits/description-colonne-scan-2026-08-10T07-53-30-206Z.json) :
+   *  vide sur 7 599 fiches / 7 632 (99,57 %) ; sur les 33 restantes, 5 redisent `summary` mot pour
+   *  mot, 23 sont des gabarits fossiles (« Personnage secondaire de One Piece. »), 2 portent le
+   *  texte d'une AUTRE entité (bugs : `zerhogie`, `inner-former`), 3 seulement portent un vrai
+   *  texte — déjà couvert par `descFr`.
+   *  Le texte long réel vit dans `attributes.descFr` (7 178 fiches) et dans la table
+   *  `akasha_sections` (4 776 fiches). AUCUN composant ne lit ce champ : vérifié au rendu réel sur
+   *  http://localhost:3000/learn/akasha/vizard le 10/08/2026 — la fiche affiche `descFr` puis les
+   *  sections, et le texte de `description` n'apparaît nulle part (il ne voyage que dans la charge
+   *  RSC, à cause du `select('*')` de getEntryBySlug).
+   *  PIÈGE : sur /learn/akasha/getsuga-tensho un bloc intitulé « DESCRIPTION » s'affiche bel et
+   *  bien — c'est une ligne de `akasha_sections` (titre = « Description »), pas cette colonne. Les
+   *  deux textes sont différents ; ne pas conclure de l'un à l'autre. */
   description: string | null;
   image_url: string | null;
   attributes: Record<string, unknown>;

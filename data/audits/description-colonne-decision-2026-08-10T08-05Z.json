@@ -1,0 +1,130 @@
+{
+  "chantier": "chantier-5-colonne-description",
+  "quand": "2026-08-10T08:05:00.000Z",
+  "mandat": "Mesurer qui LIT akasha_entries.description, puis appliquer UNE décision : documenter la colonne pour ce qu'elle est, ou la remplir depuis la vraie source si un lecteur l'affiche. Ne pas supprimer la colonne.",
+  "ecritures_base_de_donnees": "AUCUNE. Ce chantier n'a écrit aucune ligne de akasha_entries. Les seules écritures sont des commentaires dans des fichiers du dépôt + un fichier SQL autonome non appliqué.",
+
+  "etape_1_qui_lit_la_colonne": {
+    "methode": "grep exhaustif de `.description` sur app/, lib/, components/, scripts/, types/ (hors node_modules et .next), puis lecture du rendu réel de deux fiches sur le serveur de dev.",
+    "verdict": "PERSONNE. Zéro composant du front ne lit akasha_entries.description.",
+    "seul_point_de_chargement": "lib/akasha/queries.ts, getEntryBySlug — `select('*')` charge la colonne mais rien en aval ne la consomme.",
+    "preuve_de_rendu": {
+      "page": "http://localhost:3000/learn/akasha/vizard",
+      "fiche_choisie_parce_que": "c'est l'une des 3 seules fiches dont la colonne description porte un vrai texte distinct — si elle s'affichait quelque part, c'est là qu'on la verrait",
+      "texte_de_la_colonne_description": "Les **Vizard** sont d'anciens Shinigami capables d'invoquer un masque de Hollow pour décupler leur puissance.",
+      "present_dans_le_html_livre": "OUI, mais UNIQUEMENT dans la charge RSC (flight payload) sérialisée par le Server Component — jamais dans le DOM rendu",
+      "ce_que_voit_reellement_le_lecteur": "le bloc de tête vient de attributes.descFr (« Les Visored sont d'anciens Shinigami de rang capitaine ou lieutenant… Hollowfication… »), suivi du dossier akasha_sections (PRÉSENTATION, HISTORIQUE, ARC TURN BACK THE PENDULUM, INTRIGUE, ARC DE LA SOUL SOCIETY, ARC ARRANCAR). Le texte de la colonne description n'apparaît nulle part à l'écran.",
+      "consequence": "La colonne est payée en egress Supabase et en octets de charge RSC sur CHAQUE fiche ouverte, pour zéro pixel affiché."
+    },
+    "piege_a_signaler": {
+      "page": "http://localhost:3000/learn/akasha/getsuga-tensho",
+      "constat": "un bloc intitulé « DESCRIPTION » s'affiche bien sur la fiche — de quoi croire que la colonne est rendue. Elle ne l'est pas.",
+      "verification_en_base": "akasha_sections id=1664, entry_id=184a3867-b3fb-41e6-a58d-fa4cee9cc06d, titre='Description', texte='Le Getsuga Tenshō est une technique de Zanpakutō qui, au moment de la frappe, absorbe et condense le Reiatsu…'",
+      "colonne_description_de_la_meme_fiche": "'Le **Getsuga Tenshō** condense le reiatsu sur le fil du zanpakutō puis le libère en une vague dévastatrice.\\n\\nSa portée et sa densité augmentent avec la maîtrise du porteur.'",
+      "conclusion": "deux textes différents. Le titre à l'écran vient de akasha_sections.titre, jamais de la colonne."
+    },
+    "faux_positifs_ecartes": [
+      "components/akasha/hub/OnePieceMap.tsx:284 — lit `selected.description` de OpwIsland/OpwPoi (données de carte statiques, lib/akasha/op-world-map.ts), aucun rapport avec la table",
+      "app/nfc/[slug]/[id]/page.tsx:94 — lit `entity.description` sur une ligne de la table `pros`, pas de akasha_entries",
+      "toutes les occurrences `description:` dans les objets Metadata Next.js — méta SEO, sans rapport"
+    ]
+  },
+
+  "etape_2_mesure": {
+    "script": "scripts/akasha-description-colonne-scan.mjs (lecture seule)",
+    "pagination": "range(d, d+999) en boucle jusqu'à page incomplète, sur akasha_entries ET akasha_sections",
+    "scan_brut": "data/audits/description-colonne-scan-2026-08-10T07-53-30-206Z.json",
+    "chiffres": {
+      "total_fiches": 7632,
+      "description_vide": 7599,
+      "description_non_nulle": 33,
+      "pourcentage_non_nulle": 0.43,
+      "fiches_avec_attributes_descFr": 7178,
+      "fiches_avec_dossier_akasha_sections": 4776
+    },
+    "classification": {
+      "methode": "règle mécanique PUIS relecture à la main des 33 lignes — 100 % de la population, très au-dessus des 20 cas exigés avant écriture",
+      "taux_erreur_de_la_regle_mecanique": "1 / 33 = 3,0 % (sous le seuil de 5 %). L'erreur : `shuku-village` classé « texte distinct » par la regex alors que c'est un gabarit (« Organisation de l'univers Naruto. ») — mais un gabarit dont le summary est VIDE, donc la description y est le SEUL texte de la fiche. Relecture manuelle = 0 ligne non vérifiée.",
+      "A_doublon_exact_de_summary": {
+        "compte": 5,
+        "slugs": ["civil", "clan-sarutobi", "gouvernement-mondial", "izuno", "kagetsu"],
+        "preuve": "description === summary, octet pour octet après normalisation des espaces",
+        "origine": "5 fiches créées le 08/08/2026 par le chantier parents-manquants, avec un seeder qui écrivait encore `description: summary` — le jour même où 6 959 doublons identiques étaient purgés"
+      },
+      "B_gabarit_fossile": {
+        "compte": 23,
+        "preuve": "la description est de la forme « <Type> de <Univers>. » — l'information qu'elle porte est déjà dans les colonnes `type` et `universe`. Exemple abdullah : description = « Personnage secondaire de One Piece. » vs summary = « Abdullah forme avec Jeet un duo de pirates reliés par une ceinture à la taille, participant au tournoi du Colisée de Corrida à Dressrosa. »",
+        "dont_summary_vide": ["shuku-village"],
+        "avertissement": "shuku-village a un summary VIDE : sa description (« Organisation de l'univers Naruto. ») est le seul texte de la fiche. Le rapport du 08/08 le rangeait dans le lot des 23 « à vider » — l'appliquer tel quel aurait effacé ce seul texte."
+      },
+      "C_bug_texte_d_une_autre_entite": {
+        "compte": 2,
+        "slugs": ["zerhogie", "inner-former"],
+        "detail_zerhogie": {
+          "univers": "Death Note",
+          "description_en_base": "Agent du FBI en poste au Japon, chargé de surveiller un cadre du groupe Yotsuba avant d'être tué avec ses collègues par Kyousuke Higuchi.",
+          "summary_en_base": "Dieu de la Mort de rang 5 au crochet spectaculaire et au casque de plumes, apparu dans le databook officiel (tome 13).",
+          "descFr_en_base": "Zerhogie est un Dieu de la Mort de rang 5, reconnaissable à l'énorme crochet qu'il porte à la main gauche et à son casque de plumes…",
+          "preuve": "summary ET descFr concordent (Shinigami) ; seule description parle d'un agent du FBI — c'est le texte d'une autre entité",
+          "ce_que_voit_le_lecteur": "rien d'anormal : http://localhost:3000/learn/akasha/zerhogie affiche le texte descFr correct. Le bug est LATENT, invisible à l'écran, mais transporté dans la charge RSC de la page."
+        },
+        "detail_inner_former": {
+          "univers": "Naruto",
+          "description_en_base": "Personnalité intérieure de Sakura Haruno donnant voix à ses pensées refoulées et à son agressivité, effacée après son évolution.",
+          "summary_en_base": "Rang supérieur de l'organisation secrète Kara : chaque Inner supervise une région donnée, porte un chiffre romain tatoué sur le visage et une cape noire à doublure colorée…",
+          "preuve": "deux entités homonymes distinctes (Inner Sakura vs les Inner de Kara) écrasées dans la même ligne ; la colonne description décrit l'une, summary l'autre",
+          "note": "descFr absent sur cette fiche — donc, contrairement à zerhogie, on ne peut pas trancher lequel des deux textes est le bon sans une source externe. Non tranché ici : ce serait de l'invention."
+        }
+      },
+      "D_vrai_texte_distinct": {
+        "compte": 3,
+        "slugs": ["getsuga-tensho", "karakura", "vizard"],
+        "particularite": "seules lignes en markdown (**gras**) de toute la colonne — rédaction NIKA, pas un import",
+        "deja_couvert_ailleurs": "les 3 ont un attributes.descFr qui couvre la même matière dans d'autres mots ; vizard et getsuga-tensho ont en plus un dossier akasha_sections"
+      }
+    }
+  },
+
+  "etape_3_decision": {
+    "choix": "DOCUMENTER — pas remplir.",
+    "pourquoi_pas_remplir": "« remplir depuis la vraie source » n'a de sens que si un lecteur l'affiche. Aucun ne l'affiche. Remplir 7 599 lignes reviendrait à recopier descFr dans une colonne que rien ne rend : du volume egress pur, et un deuxième exemplaire du même texte à maintenir.",
+    "pourquoi_pas_vider_les_28_lignes_de_bruit": "hors mandat (documenter ou remplir), et c'est une suppression de données. Prête à exécuter si Dan la demande — la règle et les listes exactes sont ci-dessous.",
+    "applique": [
+      "supabase/migrations/akasha_commentaire_description.sql — NOUVEAU fichier autonome, collable seul dans le SQL Editor, qui pose COMMENT ON COLUMN sur description, summary et attributes. Non appliqué (voir défaut ci-dessous).",
+      "supabase/migrations/akasha.sql — commentaire inline et COMMENT ON COLUMN réécrits avec les chiffres du 10/08 + avertissement que ce fichier n'est jamais rejoué",
+      "lib/akasha/types.ts — bloc de doc sur le champ `description` de l'interface AkashaEntry : c'est le point où l'autocomplétion propose le champ à tout développeur",
+      "lib/akasha/schema.ts — avertissement sur le champ zod `description` : c'est le point d'ENTRÉE des seeders, là d'où sont venus les 6 959 doublons",
+      "lib/akasha/queries.ts — commentaire sur le `select('*')` de getEntryBySlug, seul point qui charge la colonne",
+      "scripts/audit-akasha-etat.mjs — le commentaire qui répétait le mensonge (« description doit porter le texte long ») corrigé ; les deux compteurs restent en place comme vigie"
+    ],
+    "verification": "npx tsc --noEmit → 0 erreur ; http://localhost:3000/learn/akasha/vizard et /zerhogie rendus après modification, inchangés (ce ne sont que des commentaires)"
+  },
+
+  "defaut_principal_trouve": {
+    "titre": "La documentation posée le 08/08 n'a jamais atteint la base.",
+    "detail": "Le COMMENT ON COLUMN du 08/08 a été écrit à l'intérieur de supabase/migrations/akasha.sql, qui est le script de CRÉATION complet du registre (CREATE TABLE IF NOT EXISTS…). Personne ne rejoue ce script sur une base peuplée de 7 632 fiches. Le commentaire est donc mort-né : la base de production n'en porte aucune trace.",
+    "preuve": "OpenAPI PostgREST du projet (GET <projet>/rest/v1/ avec Accept: application/openapi+json, HTTP 200) : akasha_entries.description a `description: null`, et le balayage de TOUTES les tables du schéma renvoie 0 commentaire de colonne — le projet n'a jamais posé un seul COMMENT en base.",
+    "consequence": "Quiconque lit le schéma là où on le lit vraiment — Supabase Studio, `supabase gen types`, l'OpenAPI — voit toujours une colonne nue nommée `description` juste à côté de `summary`, et concevra autour de la mauvaise colonne. Exactement le coût que ce chantier devait éliminer.",
+    "reste_a_faire_par_un_humain": "coller supabase/migrations/akasha_commentaire_description.sql dans Supabase → SQL Editor → Run. Aucune donnée touchée, rejouable. La commande de vérification est en tête du fichier."
+  },
+
+  "proposition_non_executee_pret_a_lancer": {
+    "quoi": "vider (NULL) les 27 lignes de bruit de la colonne, pour ne laisser que ce qu'une suppression future ferait réellement perdre",
+    "lot_A": {
+      "compte": 5,
+      "regle": "description === summary octet pour octet — règle déjà validée et appliquée à 6 959 lignes le 08/08",
+      "risque": "nul, aucun jugement, summary conserve le texte",
+      "slugs": ["civil", "clan-sarutobi", "gouvernement-mondial", "izuno", "kagetsu"]
+    },
+    "lot_B": {
+      "compte": 22,
+      "regle": "description de la forme « <Type> de <Univers>. » ET summary non vide ET strictement plus long",
+      "risque": "faible — l'information de ces textes est déjà portée par les colonnes `type` et `universe`",
+      "exclusion_obligatoire": "shuku-village (summary vide : la description y est le seul texte)"
+    },
+    "a_ne_pas_toucher": ["getsuga-tensho", "karakura", "vizard", "zerhogie", "inner-former", "shuku-village"],
+    "effet_attendu": "33 lignes non nulles → 6, dont 3 vrais textes, 2 bugs et 1 orpheline. Une éventuelle suppression de colonne devient alors trivialement évaluable."
+  },
+
+  "recommandation_en_une_phrase": "Traiter `description` comme une colonne morte : la documenter en base (le fichier SQL est prêt, il reste à le lancer), interdire toute nouvelle écriture côté seeders, et ne la supprimer qu'après avoir déplacé les 3 seuls textes réels (getsuga-tensho, karakura, vizard) et tranché les 2 bugs (zerhogie, inner-former)."
+}

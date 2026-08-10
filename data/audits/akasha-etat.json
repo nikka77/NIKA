@@ -1,15 +1,15 @@
 {
  "chantier": "état des lieux AKASHA",
- "quand": "2026-08-10T07:49:03.553Z",
+ "quand": "2026-08-10T08:09:48.526Z",
  "total": 7632,
- "relations": 16388,
+ "relations": 16699,
  "sections": 19099,
  "global": {
-  "sansImage": 818,
+  "sansImage": 788,
   "sansDescFr": 454,
   "sansResume": 29,
-  "resumeRemplissage": 420,
-  "isolees": 951,
+  "resumeRemplissage": 289,
+  "isolees": 848,
   "sansDossier": 2862,
   "descriptionRedondante": 5,
   "descriptionAbsente": 7599
@@ -17,12 +17,12 @@
  "parUnivers": {
   "Naruto": {
    "fiches": 3308,
-   "sansImage": 305,
+   "sansImage": 302,
    "sansDescFr": 167,
    "sansResume": 29,
-   "resumeRemplissage": 6,
+   "resumeRemplissage": 2,
    "sansDossier": 1895,
-   "isolees": 117,
+   "isolees": 110,
    "axes": [
     {
      "attr": "village",
@@ -41,9 +41,9 @@
     {
      "attr": "organization",
      "label": "Organisations",
-     "fiches": 221,
-     "valeurs": 40,
-     "horsListe": 0
+     "fiches": 224,
+     "valeurs": 42,
+     "horsListe": 1
     },
     {
      "attr": "equipe",
@@ -64,7 +64,7 @@
      "label": "Rangs ninja",
      "fiches": 473,
      "valeurs": 11,
-     "horsListe": 4
+     "horsListe": 3
     },
     {
      "attr": "generation",
@@ -77,19 +77,19 @@
   },
   "Bleach": {
    "fiches": 382,
-   "sansImage": 63,
+   "sansImage": 59,
    "sansDescFr": 14,
    "sansResume": 0,
    "resumeRemplissage": 0,
    "sansDossier": 111,
-   "isolees": 46,
+   "isolees": 45,
    "axes": [
     {
      "attr": "race",
      "label": "Races spirituelles",
      "fiches": 100,
      "valeurs": 10,
-     "horsListe": 3
+     "horsListe": 0
     },
     {
      "attr": "monde",
@@ -130,7 +130,7 @@
    "sansImage": 6,
    "sansDescFr": 0,
    "sansResume": 0,
-   "resumeRemplissage": 1,
+   "resumeRemplissage": 0,
    "sansDossier": 37,
    "isolees": 49,
    "axes": [
@@ -148,16 +148,16 @@
    "sansImage": 40,
    "sansDescFr": 61,
    "sansResume": 0,
-   "resumeRemplissage": 410,
+   "resumeRemplissage": 285,
    "sansDossier": 333,
-   "isolees": 148,
+   "isolees": 146,
    "axes": [
     {
      "attr": "race",
      "label": "Races",
      "fiches": 105,
      "valeurs": 11,
-     "horsListe": 4
+     "horsListe": 2
     },
     {
      "attr": "saga",
@@ -170,12 +170,12 @@
   },
   "One Piece": {
    "fiches": 2229,
-   "sansImage": 401,
+   "sansImage": 378,
    "sansDescFr": 210,
    "sansResume": 0,
-   "resumeRemplissage": 3,
+   "resumeRemplissage": 2,
    "sansDossier": 455,
-   "isolees": 539,
+   "isolees": 451,
    "axes": [
     {
      "attr": "faction",
@@ -214,7 +214,7 @@
    "sansResume": 0,
    "resumeRemplissage": 0,
    "sansDossier": 2,
-   "isolees": 10,
+   "isolees": 5,
    "axes": [
     {
      "attr": "affiliation",
@@ -255,32 +255,32 @@
   "character": {
    "fiches": 4031,
    "sansImage": 0,
-   "isolees": 663
+   "isolees": 581
   },
   "power": {
    "fiches": 2359,
-   "sansImage": 418,
+   "sansImage": 414,
    "isolees": 30
   },
   "place": {
    "fiches": 333,
-   "sansImage": 83,
-   "isolees": 104
+   "sansImage": 77,
+   "isolees": 95
   },
   "status": {
    "fiches": 330,
-   "sansImage": 87,
-   "isolees": 51
+   "sansImage": 83,
+   "isolees": 42
   },
   "skill": {
    "fiches": 80,
-   "sansImage": 17,
+   "sansImage": 16,
    "isolees": 2
   },
   "artifact": {
    "fiches": 400,
-   "sansImage": 127,
-   "isolees": 99
+   "sansImage": 112,
+   "isolees": 96
   },
   "profession": {
    "fiches": 99,
