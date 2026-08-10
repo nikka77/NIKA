@@ -1,0 +1,968 @@
+{
+ "chantier": "descFr depuis le wiki francophone",
+ "mode": "dry",
+ "quand": "2026-08-10T10:09:49.294Z",
+ "temoins": {
+  "One Piece": {
+   "titre": "Monkey D. Luffy",
+   "repond": true,
+   "octets": 811817
+  },
+  "Naruto": {
+   "titre": "Naruto Uzumaki",
+   "repond": true,
+   "octets": 656822
+  },
+  "Bleach": {
+   "titre": "Ichigo Kurosaki",
+   "repond": true,
+   "octets": 187880
+  },
+  "Dragon Ball": {
+   "titre": "Son Goku",
+   "repond": true,
+   "octets": 680634
+  }
+ },
+ "corpus": 7632,
+ "sansDescFr": 454,
+ "cible": 60,
+ "compte": {
+  "sans-page-fr": 37,
+  "candidat": 16,
+  "chapeau-trop-court": 6,
+  "identite-refusee": 1
+ },
+ "disputees": [],
+ "cas": [
+  {
+   "slug": "voleur",
+   "name": "Voleur",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "dynamic-action",
+   "name": "Dynamic Action",
+   "universe": "Naruto",
+   "type": "power",
+   "route": "titre-exact",
+   "titreFr": "Dynamic Action",
+   "url": "https://naruto.fandom.com/fr/wiki/Dynamic_Action",
+   "redirections": [],
+   "sections": [],
+   "identite": "titre-egal",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 102,
+   "nommeSujet": false,
+   "etat": "candidat",
+   "descFr": "L'utilisateur saute vers l'adversaire et attaque avec une série de coups de poing et de coups de pied.",
+   "descFrSource": "wiki FR naruto.fandom.com/fr — « Dynamic Action » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Dynamic_Action"
+  },
+  {
+   "slug": "fils-d-acier",
+   "name": "Fils d'acier",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "vegeta-mega-instinc-evil",
+   "name": "Vegeta Mega Instinc Evil",
+   "universe": "Dragon Ball",
+   "type": "skill",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "mountains-graveyard",
+   "name": "Cimetière des Monts",
+   "universe": "Naruto",
+   "type": "place",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "seducing-woods",
+   "name": "Forêt de la Séduction",
+   "universe": "One Piece",
+   "type": "place",
+   "pontRefuse": "redirection de section côté EN (Seducing Woods → Whole Cake Island#Seducing Woods)",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "l-equipage-des-maquereaux",
+   "name": "L'Équipage des Maquereaux",
+   "universe": "One Piece",
+   "type": "status",
+   "route": "titre-exact",
+   "titreFr": "Équipage des Maquereaux",
+   "url": "https://onepiece.fandom.com/fr/wiki/%C3%89quipage_des_Maquereaux",
+   "redirections": [
+    {
+     "from": "L'Équipage des Maquereaux",
+     "to": "Équipage des Maquereaux"
+    }
+   ],
+   "sections": [
+    "Membres",
+    "Bateau",
+    "Forces de l’Équipage",
+    "Histoire",
+    "Passé",
+    "La Balade Sous-Marine d'Octy",
+    "Arc Archipel de Sabaody",
+    "Futilités",
+    "Références",
+    "Navigation du Site"
+   ],
+   "identite": "meme-nom",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 291,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "L'Équipage des Maquereaux (マクロ一味, Makuro Ichimi) fut un trio de 3 Hommes-Poissons esclavagistes qui étaient connus pour avoir tenté de kidnapper 31 fois la sirène Camie. Ils étaient autrefois amis avec Octo et leur chef Macro était membre de L'Équipage des Pirates du Soleil tout comme Octo.",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Équipage des Maquereaux » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/%C3%89quipage_des_Maquereaux"
+  },
+  {
+   "slug": "l-equipage-de-ganzack",
+   "name": "l’équipage de Ganzack",
+   "universe": "One Piece",
+   "type": "status",
+   "pontRefuse": "page plus générale que l'entité : « Ganzack » ne couvre pas « l’équipage de Ganzack »",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "santa-maria",
+   "name": "Santa Maria",
+   "universe": "One Piece",
+   "type": "artifact",
+   "route": "titre-exact",
+   "titreFr": "Santa Maria",
+   "url": "https://onepiece.fandom.com/fr/wiki/Santa_Maria",
+   "redirections": [],
+   "sections": [
+    "Apparence",
+    "Histoire",
+    "Arc Dressrosa",
+    "Futilités",
+    "Références",
+    "Navigation du Site"
+   ],
+   "identite": "titre-egal",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 152,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "Les Santa Maria sont des navires de la Flotte Yonte Maria. Il en existe 5, et ils sont plus importants que les Nita Maria mais moins que le Yonta Maria.",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Santa Maria » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Santa_Maria"
+  },
+  {
+   "slug": "atk-op-jujika",
+   "name": "Jujika",
+   "universe": "One Piece",
+   "type": "power",
+   "pontRefuse": "page d'œuvre ou de liste : « Episode 325 »",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "fier-baril",
+   "name": "Fier Baril",
+   "universe": "One Piece",
+   "type": "artifact",
+   "route": "titre-exact",
+   "titreFr": "Baril Tiger",
+   "url": "https://onepiece.fandom.com/fr/wiki/Baril_Tiger",
+   "redirections": [
+    {
+     "from": "Fier Baril",
+     "to": "Baril Tiger"
+    }
+   ],
+   "sections": [
+    "Apparence",
+    "Histoire",
+    "Différences Manga et Anime",
+    "Futilités",
+    "Références",
+    "Navigation du Site"
+   ],
+   "identite": "redirection-declaree",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 133,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "Le Baril Tiger (タルタイガー号, Tarutaigā-gō) est un petit navire utilisé par Nami, Usopp et Robin lors de la Donut Race du Davy Back Fight.",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Baril Tiger » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Baril_Tiger"
+  },
+  {
+   "slug": "sweet-city",
+   "name": "Sweet City",
+   "universe": "One Piece",
+   "type": "place",
+   "route": "titre-exact",
+   "titreFr": "Sweet City",
+   "url": "https://onepiece.fandom.com/fr/wiki/Sweet_City",
+   "redirections": [],
+   "sections": [
+    "Description",
+    "Château Whole Cake Island",
+    "Lac Abricot",
+    "Laboratoire",
+    "Histoire",
+    "Références",
+    "Navigation du site"
+   ],
+   "identite": "titre-egal",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 96,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "Sweet City est la capitale de l'Archipel Totto Land, se trouvant sur l'île de Whole Cake Island.",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Sweet City » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Sweet_City"
+  },
+  {
+   "slug": "jet-shoes",
+   "name": "Jet Shoes",
+   "universe": "One Piece",
+   "type": "artifact",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "massue",
+   "name": "Massue",
+   "universe": "Naruto",
+   "type": "artifact",
+   "route": "titre-exact",
+   "titreFr": "Massue",
+   "url": "https://naruto.fandom.com/fr/wiki/Massue",
+   "redirections": [],
+   "sections": [],
+   "identite": "titre-egal",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 0,
+   "nommeSujet": false,
+   "etat": "chapeau-trop-court",
+   "extrait": ""
+  },
+  {
+   "slug": "beeswax-clone",
+   "name": "Beeswax Clone",
+   "universe": "Naruto",
+   "type": "power",
+   "route": "langlink",
+   "titreFr": "Clone de Cire d'Abeille",
+   "pontEn": {
+    "titreEn": "Beeswax Clone",
+    "resolvedBy": "exact",
+    "titreFrDeclare": "Clone de Cire d'Abeille",
+    "retour": "Beeswax Clone"
+   },
+   "url": "https://naruto.fandom.com/fr/wiki/Clone_de_Cire_d'Abeille",
+   "redirections": [],
+   "sections": [],
+   "identite": "pont-interlangue",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 117,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "L'utilisateur crée un clone à partir de cire d'abeille, qui après avoir subit une attaque, retrouve sa forme liquide.",
+   "descFrSource": "wiki FR naruto.fandom.com/fr — « Clone de Cire d'Abeille » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Clone_de_Cire_d'Abeille"
+  },
+  {
+   "slug": "caretaker",
+   "name": "Caretaker",
+   "universe": "Naruto",
+   "type": "profession",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "wood-release-underground-roots-technique",
+   "name": "Wood Release: Underground Roots Technique",
+   "universe": "Naruto",
+   "type": "power",
+   "pontRefuse": "page plus générale que l'entité : « Wood Release » ne couvre pas « Wood Release: Underground Roots Technique »",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "visio-dial",
+   "name": "Visio-Dial",
+   "universe": "One Piece",
+   "type": "artifact",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "milkman",
+   "name": "Milkman",
+   "universe": "Dragon Ball",
+   "type": "character",
+   "pontRefuse": "infobox d'épisode ou de chapitre sous le titre « Milk Delivery »",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "kimi",
+   "name": "Île Jaune d'Œuf",
+   "universe": "One Piece",
+   "type": "place",
+   "route": "titre-exact",
+   "titreFr": "Île Jaune d'Œuf",
+   "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Jaune_d'%C5%92uf",
+   "redirections": [],
+   "sections": [
+    "Ville",
+    "Blanc d'Œuf Town",
+    "Histoire",
+    "Futilité",
+    "Références",
+    "Navigation du Site"
+   ],
+   "identite": "titre-egal",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 230,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "L'Île Jaune d'Œuf est une île située dans le Nouveau Monde, c'est l'une des 34 îles voisines de l'Archipel Totto Land, sous le commandement de Big Mom. Elle est dirigée par Charlotte Citron, la \"Ministre Œuf\" (卵大臣, Tamago daijin).",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Île Jaune d'Œuf » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Jaune_d'%C5%92uf"
+  },
+  {
+   "slug": "anbu-captain-former",
+   "name": "Anbu Captain  (Former)",
+   "universe": "Naruto",
+   "type": "profession",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "whip",
+   "name": "Whip",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "inner-former",
+   "name": "Inner  (Former)",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "kibi",
+   "name": "Kibi",
+   "universe": "One Piece",
+   "type": "place",
+   "route": "titre-exact",
+   "titreFr": "Kibi",
+   "url": "https://onepiece.fandom.com/fr/wiki/Kibi",
+   "redirections": [],
+   "sections": [
+    "Géographie",
+    "Port de Neko",
+    "Habitants",
+    "Histoire",
+    "Arc Wano Kuni",
+    "Futilité",
+    "Références",
+    "Navigation du Site"
+   ],
+   "identite": "titre-egal",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 35,
+   "nommeSujet": true,
+   "etat": "chapeau-trop-court",
+   "extrait": "Kibi est une région du Pays des Wa."
+  },
+  {
+   "slug": "clone-du-fruit-de-la-passion",
+   "name": "Clone du fruit de la passion",
+   "universe": "One Piece",
+   "type": "power",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "six-paths-chibaku-tensei",
+   "name": "Six Paths — Chibaku Tensei",
+   "universe": "Naruto",
+   "type": "power",
+   "route": "langlink",
+   "titreFr": "Astre de Rikudô",
+   "pontEn": {
+    "titreEn": "Six Paths — Chibaku Tensei",
+    "resolvedBy": "exact",
+    "titreFrDeclare": "Astre de Rikudô",
+    "retour": "Six Paths — Chibaku Tensei"
+   },
+   "url": "https://naruto.fandom.com/fr/wiki/Astre_de_Rikud%C3%B4",
+   "redirections": [],
+   "sections": [
+    "Utilisation",
+    "Histoire",
+    "Anecdotes",
+    "Références"
+   ],
+   "identite": "pont-interlangue",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 125,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "Le Rikudô - Chibaku Tensei est un fûinjutsu qui ne peut être utilisé que par ceux possédant le pouvoir Yin et Yang de Rikudô.",
+   "descFrSource": "wiki FR naruto.fandom.com/fr — « Astre de Rikudô » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Astre_de_Rikud%C3%B4"
+  },
+  {
+   "slug": "atk-db-golden-great-ape",
+   "name": "Golden Great Ape",
+   "universe": "Dragon Ball",
+   "type": "power",
+   "route": "langlink",
+   "titreFr": "Singe géant doré",
+   "pontEn": {
+    "titreEn": "Golden Great Ape",
+    "resolvedBy": "exact",
+    "titreFrDeclare": "Oozaru doré",
+    "retour": "Golden Great Ape"
+   },
+   "url": "https://dragonball.fandom.com/fr/wiki/Singe_g%C3%A9ant_dor%C3%A9",
+   "redirections": [
+    {
+     "from": "Oozaru doré",
+     "to": "Singe géant doré"
+    }
+   ],
+   "sections": [
+    "Apparence",
+    "Galerie",
+    "Navigation"
+   ],
+   "identite": "pont-interlangue",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 98,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "Le Singe géant doré (黄金大猿, Ōgon Ōzaru) est une transformation exclusive à la série Dragon Ball GT.",
+   "descFrSource": "wiki FR dragonball.fandom.com/fr — « Singe géant doré » (CC BY-SA) https://dragonball.fandom.com/fr/wiki/Singe_g%C3%A9ant_dor%C3%A9"
+  },
+  {
+   "slug": "atk-op-shima-yurai",
+   "name": "Shima Yurai",
+   "universe": "One Piece",
+   "type": "power",
+   "pontRefuse": "redirection de section côté EN (Shima Yurashi → Gura Gura no Mi#Techniques)",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "gohan-ssj2",
+   "name": "Gohan SSJ2",
+   "universe": "Dragon Ball",
+   "type": "skill",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "portail-spatio-temporel",
+   "name": "Portail spatio-temporel",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "deul-kingdom",
+   "name": "Royaume de Deul",
+   "universe": "One Piece",
+   "type": "place",
+   "route": "titre-exact",
+   "titreFr": "Royaume de Deul",
+   "url": "https://onepiece.fandom.com/fr/wiki/Royaume_de_Deul",
+   "redirections": [],
+   "sections": [
+    "Géographie",
+    "Histoire",
+    "Citoyens",
+    "Futilités",
+    "Références",
+    "Navigation du site"
+   ],
+   "identite": "titre-egal",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 152,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "Le Royaume de Deul (ドイル王国, Doiru Ōkoku) est un royaume faisant partie du Gouvernement Mondial et situé dans North Blue. Il est gouverné par le Roi Chap.",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Royaume de Deul » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Royaume_de_Deul"
+  },
+  {
+   "slug": "navire-de-nelson",
+   "name": "Navire de Nelson",
+   "universe": "One Piece",
+   "type": "artifact",
+   "route": "titre-exact",
+   "titreFr": "Navire de Nelson",
+   "url": "https://onepiece.fandom.com/fr/wiki/Navire_de_Nelson",
+   "redirections": [],
+   "sections": [
+    "Description",
+    "Histoire",
+    "Navigation du Site"
+   ],
+   "identite": "titre-egal",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 193,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "Le Navire de Nelson est un gigantesque Navire dont le nom nous est inconnu et utilisé par Nelson Royale et ses hommes. Il est détruit durant l'Arc Île du Navire de Guerre par Luffy et ses amis.",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Navire de Nelson » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Navire_de_Nelson"
+  },
+  {
+   "slug": "package",
+   "name": "Île Paquet",
+   "universe": "One Piece",
+   "type": "place",
+   "route": "titre-exact",
+   "titreFr": "Île Paquet",
+   "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Paquet",
+   "redirections": [],
+   "sections": [
+    "Ville",
+    "Shiwake Town",
+    "Histoire",
+    "Références",
+    "Navigation du site"
+   ],
+   "identite": "titre-egal",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 254,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "L'Île Paquet est une île située dans le Nouveau Monde, c'est l'une des 34 îles voisines de l'Archipel Totto Land, sous le commandement de Big Mom. Elle est dirigée par Charlotte Nusstorte, le Ministre de la Logistique (運（ウン）輸（ユ）大（ダイ）臣（ジン）, Un'yu-Daijin).",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Île Paquet » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Paquet"
+  },
+  {
+   "slug": "rapid-fire",
+   "name": "Rapid Fire",
+   "universe": "Naruto",
+   "type": "power",
+   "route": "langlink",
+   "titreFr": "Rafale de Pic",
+   "pontEn": {
+    "titreEn": "Rapid Fire",
+    "resolvedBy": "exact",
+    "titreFrDeclare": "Rafale de Pic",
+    "retour": "Rapid Fire"
+   },
+   "url": "https://naruto.fandom.com/fr/wiki/Rafale_de_Pic",
+   "redirections": [],
+   "sections": [],
+   "identite": "pont-interlangue",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 69,
+   "nommeSujet": false,
+   "etat": "chapeau-trop-court",
+   "extrait": "Kusune utilise Tsurukame afin de tirer une grande quantité de senbon."
+  },
+  {
+   "slug": "loving",
+   "name": "Île Amour",
+   "universe": "One Piece",
+   "type": "place",
+   "route": "titre-exact",
+   "titreFr": "Île Amour",
+   "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Amour",
+   "redirections": [],
+   "sections": [
+    "Ville",
+    "Love Town",
+    "Histoire",
+    "Passé",
+    "Futilités",
+    "Références",
+    "Navigation du Site"
+   ],
+   "identite": "titre-egal",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 183,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "L'Île Amour est l'une des 34 îles entourant Whole Cake Island et une des îles faisant partie de l'Archipel Totto Land. Elle est dirigée par Charlotte Corn Starch, la \"Ministre Amour\".",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Île Amour » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Amour"
+  },
+  {
+   "slug": "atk-bl-zabimaru",
+   "name": "Zabimaru",
+   "universe": "Bleach",
+   "type": "power",
+   "route": "titre-exact",
+   "titreFr": "Zabimaru (Esprit Zanpakutō)",
+   "url": "https://bleach.fandom.com/fr/wiki/Zabimaru_(Esprit_Zanpakut%C5%8D)",
+   "redirections": [
+    {
+     "from": "Zabimaru",
+     "to": "Zabimaru (Esprit Zanpakutō)"
+    }
+   ],
+   "sections": [
+    "<span>Cet article parle de l'esprit manifesté du Zanpakut</span>ō.<span> de Renji Abarai. Pour son Zanpakut</span>ō<span> et son aptitude, voir Zabimaru. </span>",
+    "<b>Zabimaru</b> (蛇尾丸) est l'esprit manifesté du Zanpakutō de Renji Abarai.",
+    "Apparence",
+    "<i>Remarque: Les événements qui se produisent dans la Rébellion de Zanpakutō ne sont que dans l'anime et ne constituent pas un matériel canon.</i>",
+    "Personnalité",
+    "<i>Remarque: Les événements qui se produisent dans la Rébellion des Zanpakutō ne sont que dans l'anime et ne constituent pas un matériel canon</i>.",
+    "Sypnosis",
+    "Arc de la Soul Society",
+    "Arc du Conte Inconnu des Zanpakutōs (Hors-Série)",
+    "<i>Remarque: Les événements qui se produisent dans cet arc ne sont que dans l'anime et ne constituent pas un matériel canon</i>."
+   ],
+   "identite": "meme-nom",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 0,
+   "nommeSujet": false,
+   "etat": "chapeau-trop-court",
+   "extrait": ""
+  },
+  {
+   "slug": "honey-spit-trap",
+   "name": "Honey Spit Trap",
+   "universe": "Naruto",
+   "type": "power",
+   "route": "langlink",
+   "titreFr": "Piège de Miel",
+   "pontEn": {
+    "titreEn": "Honey Spit Trap",
+    "resolvedBy": "exact",
+    "titreFrDeclare": "Piège de Miel",
+    "retour": "Honey Spit Trap"
+   },
+   "url": "https://naruto.fandom.com/fr/wiki/Pi%C3%A8ge_de_Miel",
+   "redirections": [],
+   "sections": [],
+   "identite": "pont-interlangue",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 148,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "Après avoir été invoquée par Suzumebachi, la Reine des Abeilles libère une grande quantité de miel sur sa cible pour l'emprisonner et l'immobiliser.",
+   "descFrSource": "wiki FR naruto.fandom.com/fr — « Piège de Miel » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Pi%C3%A8ge_de_Miel"
+  },
+  {
+   "slug": "sanshoku",
+   "name": "Île Tricolore",
+   "universe": "One Piece",
+   "type": "place",
+   "route": "titre-exact",
+   "titreFr": "Île Tricolore",
+   "url": "https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Tricolore",
+   "redirections": [],
+   "sections": [
+    "Ville",
+    "Mix Town",
+    "Histoire",
+    "Passé",
+    "Futilité",
+    "Références",
+    "Navigation du Site"
+   ],
+   "identite": "titre-egal",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 263,
+   "nommeSujet": true,
+   "etat": "candidat",
+   "descFr": "L'Île Tricolore est une île située dans le Nouveau Monde, c'est l'une des 34 îles voisines de Whole Cake Island, sous le commandement de Big Mom, formant l'Archipel Totto Land. Elle est dirigée par Charlotte Chiboust, le Ministre du Mélange (食器大臣, Shokki Daijin).",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Île Tricolore » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/%C3%8Ele_Tricolore"
+  },
+  {
+   "slug": "atk-op-red-roc",
+   "name": "Red Roc",
+   "universe": "One Piece",
+   "type": "power",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "mercenaire",
+   "name": "Mercenaire",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "mafuba-flacon",
+   "name": "Bidon du Mafûba",
+   "universe": "Dragon Ball",
+   "type": "artifact",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "gogeta-ssj",
+   "name": "Gogeta SSJ",
+   "universe": "Dragon Ball",
+   "type": "skill",
+   "pontRefuse": "page plus générale que l'entité : « Gogeta » ne couvre pas « Gogeta SSJ »",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "atk-op-franky-radical-hip",
+   "name": "Franky Radical Hip",
+   "universe": "One Piece",
+   "type": "power",
+   "pontRefuse": "page d'œuvre ou de liste : « Franky/Abilities and Powers »",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "l-equipage-des-candys",
+   "name": "L’équipage des Candys",
+   "universe": "One Piece",
+   "type": "status",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "exploding-sasumata-attack",
+   "name": "Exploding Sasumata Attack",
+   "universe": "Naruto",
+   "type": "power",
+   "route": "langlink",
+   "titreFr": "Explosion du Sasumata",
+   "pontEn": {
+    "titreEn": "Exploding Sasumata Attack",
+    "resolvedBy": "exact",
+    "titreFrDeclare": "Explosion du Sasumata",
+    "retour": "Exploding Sasumata Attack"
+   },
+   "url": "https://naruto.fandom.com/fr/wiki/Explosion_du_Sasumata",
+   "redirections": [],
+   "sections": [],
+   "identite": "pont-interlangue",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 87,
+   "nommeSujet": true,
+   "etat": "chapeau-trop-court",
+   "extrait": "Gamaken attaque l'adversaire en utilisant son Sasumata, ce qui provoque des explosions."
+  },
+  {
+   "slug": "freezer-3rd-form",
+   "name": "Freezer 3rd Form",
+   "universe": "Dragon Ball",
+   "type": "skill",
+   "pontRefuse": "infobox d'épisode ou de chapitre sous le titre « Freeza's Third Form »",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "atk-op-gomu-gomu-no-gatling",
+   "name": "Gomu Gomu no Gatling",
+   "universe": "One Piece",
+   "type": "power",
+   "pontRefuse": "page d'œuvre ou de liste : « Gomu Gomu no Mi/Techniques »",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "heat-dial",
+   "name": "Heat-Dial",
+   "universe": "One Piece",
+   "type": "artifact",
+   "pontRefuse": "redirection de section côté EN (Heat Dial → Dials#Heat Dial)",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "puppet-puppet-is-not-in-the-list-anbu-cooking-nin-daimyo-hunter-nin-jinchuriki-medical-nin-mercenary-ninja-missing-nin-ninja-monk-pseudo-jinchuriki-of-allowed-values-for-the-classification-property",
+   "name": "Puppet\"Puppet\" is not in the list (ANBU, Cooking-nin, Daimyō, Hunter-nin, Jinchūriki, Medical-nin, Mercenary Ninja, Missing-nin, Ninja monk, Pseudo-Jinchūriki, ...) of allowed values for the \"Classification\" property.",
+   "universe": "Naruto",
+   "type": "status",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "navire-de-pudding-pudding",
+   "name": "Navire de Pudding Pudding",
+   "universe": "One Piece",
+   "type": "artifact",
+   "route": "titre-exact",
+   "titreFr": "Navire de Pudding Pudding",
+   "url": "https://onepiece.fandom.com/fr/wiki/Navire_de_Pudding_Pudding",
+   "redirections": [],
+   "sections": [
+    "Apparence",
+    "Histoire",
+    "Références",
+    "Navigation sur le site"
+   ],
+   "identite": "titre-egal",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 58,
+   "nommeSujet": true,
+   "etat": "chapeau-trop-court",
+   "extrait": "Le Navire de Pudding Pudding était un navire de la Marine."
+  },
+  {
+   "slug": "ombrelle",
+   "name": "Ombrelle",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "flavor-dial",
+   "name": "Flavor-Dial",
+   "universe": "One Piece",
+   "type": "artifact",
+   "pontRefuse": "redirection de section côté EN (Flavor Dial → Dials#Flavor Dial)",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "ermite-sage",
+   "name": "Ermite (Sage)",
+   "universe": "Naruto",
+   "type": "status",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "atk-op-monster-point",
+   "name": "Monster Point",
+   "universe": "One Piece",
+   "type": "power",
+   "route": "titre-exact",
+   "titreFr": "Hito Hito no Mi",
+   "url": "https://onepiece.fandom.com/fr/wiki/Hito_Hito_no_Mi",
+   "redirections": [
+    {
+     "from": "Monster Point",
+     "to": "Hito Hito no Mi"
+    }
+   ],
+   "sections": [
+    "Étymologie",
+    "Apparence",
+    "Forces et Faiblesses",
+    "Usage",
+    "Transformations Normales",
+    "Walk Point",
+    "Brain Point",
+    "Heavy Point",
+    "Transformations Rumble Ball",
+    "Jumping Point"
+   ],
+   "identite": null,
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 254,
+   "nommeSujet": false,
+   "etat": "identite-refusee",
+   "extrait": "Ce fruit fut mangé par Tony Tony Chopper, le transformant en \"Humain à moitié renne\". Ce fruit est unique parmi les fruits du démon de type Zoan car il permet à Chopper de se trans"
+  },
+  {
+   "slug": "lampe-dial",
+   "name": "Lampe-Dial",
+   "universe": "One Piece",
+   "type": "artifact",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "reject-dia",
+   "name": "Reject-Dia",
+   "universe": "One Piece",
+   "type": "artifact",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "atk-op-puncture-wille",
+   "name": "Puncture Wille",
+   "universe": "One Piece",
+   "type": "power",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "super-perfect-form",
+   "name": "Super Perfect Form",
+   "universe": "Dragon Ball",
+   "type": "skill",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "chakra-threads",
+   "name": "Chakra Threads",
+   "universe": "Naruto",
+   "type": "power",
+   "route": "langlink",
+   "titreFr": "Marionnettisme",
+   "pontEn": {
+    "titreEn": "Puppet Technique",
+    "resolvedBy": "exact",
+    "titreFrDeclare": "Marionnettisme",
+    "retour": "Puppet Technique"
+   },
+   "url": "https://naruto.fandom.com/fr/wiki/Marionnettisme",
+   "redirections": [],
+   "sections": [
+    "Présentation",
+    "Styles connus",
+    "Références"
+   ],
+   "identite": "pont-interlangue",
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 179,
+   "nommeSujet": false,
+   "etat": "candidat",
+   "descFr": "Les Techniques de Marionnettiste (傀儡の術, Kugutsu no Jutsu) est au centre du style de combat d'un marionnettiste (傀儡使い, kugutsutsukai), grâce à laquelle il contrôle une marionnette.",
+   "descFrSource": "wiki FR naruto.fandom.com/fr — « Marionnettisme » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Marionnettisme"
+  },
+  {
+   "slug": "atk-op-divine-departure",
+   "name": "Divine Departure",
+   "universe": "One Piece",
+   "type": "power",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  }
+ ]
+}

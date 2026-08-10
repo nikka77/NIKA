@@ -1,0 +1,159 @@
+{
+ "chantier": "chantier 5 — inspection des défauts NON inscrits au carnet",
+ "quand": "2026-08-10T10:19:27.352Z",
+ "nature": "DIAGNOSTIC. Aucune écriture en base, aucun commit. Toutes les lectures Supabase paginées par 1000 avec .order('id').",
+ "socle": {
+  "fiches": 7632,
+  "aretes": 16731,
+  "sections": 19099,
+  "instantane": "scripts/audit-chantier5-dump.mjs"
+ },
+ "constats": [
+  {
+   "id": "A",
+   "titre": "818 fiches portent un titre en anglais brut",
+   "mesure": {
+    "fiches": 818,
+    "part": "10,7 %",
+    "naruto": 803,
+    "onePiece": 7,
+    "dragonBall": 8,
+    "parType": {
+     "power": 718,
+     "status": 71,
+     "character": 15,
+     "artifact": 7,
+     "profession": 5,
+     "skill": 2
+    }
+   },
+   "preuve": "20 fiches nommées « Libération de … (Suiton, Katon…) » contre 351 nommées « … Release … » — la même notion, dans le même univers, dans deux langues. Aucun des 818 noms ne contient un seul mot-outil français.",
+   "ou": "h1, <title>, libellé de carte, titre OpenGraph."
+  },
+  {
+   "id": "B",
+   "titre": "L'artefact « Kiba » porte la vie de Kiba Inuzuka",
+   "mesure": {
+    "aretes": 21,
+    "dontDuPersonnage": 17,
+    "dontDeLArme": 4
+   },
+   "preuve": "kiba-naruto (type artifact, « Arme & outil ») : → appartient konohagakure / team-8 / konoha-11 / inuzuka / bikochu-search-team / eight-man-squad / fifth-division / sasuke-recovery-team / team-two, → famille tsume-inuzuka / hana-inuzuka / tamaki, → allie akamaru, ← ennemi matsuri. Seules les 4 arêtes ← possede (Raiga, Ameyuri, Buntan, Mangetsu) sont celles du sabre. Son descFr et sa méta-description sont la biographie du personnage.",
+   "ou": "/learn/akasha/konoha-11 affiche « Arsenal & navires · 1 → Kiba » ; /learn/akasha/kiba-naruto titre « Kiba — Artefact » et décrit un membre du clan Inuzuka."
+  },
+  {
+   "id": "C",
+   "titre": "Le résumé et le graphe se contredisent sur la même page",
+   "mesure": {
+    "fiches": 28,
+    "grapheTronque": 11,
+    "liensManquants": 629
+   },
+   "preuve": "scripts/build-akasha-naruto.mjs l.989 borne les arêtes à 40 (`owners.slice(0, 40)`) ; l.991-993 calcule « et N autres » sur `rec.owners.size`, non borné. /learn/akasha/liberation-de-l-eau-suiton affiche « Maîtrisé par · 40 » au-dessus de « maîtrisée par …  et 150 autres ».",
+   "ou": "orbite + canal de la même fiche, et méta-description."
+  },
+  {
+   "id": "D",
+   "titre": "563 personnages portent une valeur d'axe que leur fiche n'affiche pas",
+   "mesure": {
+    "equipeNaruto": 177,
+    "mondeBleach": 171,
+    "sagaDragonBall": 128,
+    "fruitTypeOnePiece": 69,
+    "colInitialD": 18
+   },
+   "preuve": "BELONG_ATTRS de CharacterZone.tsx liste 12 attributs ; UNIVERSE_TAXONOMY en déclare 5 de plus. Rendu réel : « Soul Society » (sosuke-aizen), « Saga Buu » (pui-pui), « Team Chōza » (might-guy), « Paramecia » (monkey-d-luffy), « Mont Akina » (itsuki-takeuchi) sont dans la charge RSC et absents du texte visible — alors que division / race / affiliation, eux, s'affichent.",
+   "ou": "la grappe « Appartenances » de la fiche personnage."
+  },
+  {
+   "id": "E",
+   "titre": "15 sections de dossier pointent vers une fiche supprimée",
+   "mesure": {
+    "lignes": 15,
+    "fichesFantomes": 2
+   },
+   "preuve": "akasha_sections id 1157-1161 (entry_id 0f7ffcde…) et 3453-3462 (2ee26a98…). Recompté par le serveur : `.in('id', [...])` sur akasha_entries rend 0 ligne, `.in('entry_id', [...])` sur akasha_sections en rend 15. Or supabase/migrations/akasha_sections.sql déclare `references akasha_entries(id) on delete cascade` : la contrainte n'est pas en vigueur en production (le `create table if not exists` a trouvé la table déjà là).",
+   "ou": "nulle part — mais le total « 19 099 sections » du carnet en compte 15 mortes, et toute suppression future en laissera d'autres."
+  },
+  {
+   "id": "F",
+   "titre": "Quatre libellés anglais bruts publiés sur les 12 univers de Dragon Ball",
+   "mesure": {
+    "fiches": 12,
+    "cles": [
+     "god",
+     "kai",
+     "twin",
+     "angel"
+    ]
+   },
+   "preuve": "/learn/akasha/univers-7, bloc « Attributs » : « Région Univers · god Beerus · kai Shin · twin Univers 6 · angel Whis ». Les trois mêmes faits sont déjà rendus en français juste au-dessus, en relations : « Dieu de la destruction · Beerus », « Ange gardien · Whis », « Jumeau · Univers 6 ».",
+   "ou": "bloc « Attributs » d'EntityAttributes, 12 pages."
+  },
+  {
+   "id": "G",
+   "titre": "Sept lieux de One Piece résumés « Équipage de pirates. »",
+   "mesure": {
+    "fiches": 7
+   },
+   "preuve": "gran-tesero, royaume-malefique-de-black-drum, iile-de-la-couronne, ile-de-mecha, elegia, ile-d-asuka, la-lune — tous de type `place`, tous avec un descFr juste qui décrit bien un lieu. Même classe que « Pays des fleurs » (09/08), mais sur `place` et non `status`.",
+   "ou": "liste, recherche, et méta-description (la fiche, elle, affiche le descFr)."
+  },
+  {
+   "id": "H",
+   "titre": "Quatre fiches Naruto ont reçu le texte d'un homonyme",
+   "mesure": {
+    "fiches": 4
+   },
+   "preuve": "sabre (artifact) → texte d'une technique de la Pierre de Gelel ; lance (artifact) → « Ninjutsu de coopération… » ; kiba-naruto (artifact) → biographie de Kiba Inuzuka ; sakon (type power, catégorie Jutsu) → biographie du ninja Sakon. Les trois premiers portent descFrSource = « claude-haiku-4-5 (blitz fenêtre — rédigé depuis la page Fandom, contre-vérifié) » : le blitz a résolu le NOM sur le wiki sans regarder le TYPE de la fiche.",
+   "ou": "descFr affiché sur la fiche + méta-description."
+  },
+  {
+   "id": "I",
+   "titre": "Clés d'attributes qu'aucun gabarit n'affiche",
+   "mesure": {
+    "role": 2678,
+    "sex": 1268,
+    "occupation": 440,
+    "powerLevel": 41,
+    "titles": 22,
+    "natureType": 21,
+    "debut": 20,
+    "debutAll": 20,
+    "personality": 19,
+    "quotes": 19,
+    "team": 18,
+    "tools": 18,
+    "classification": 17,
+    "kekkeiGenkai": 9,
+    "gallery": 22
+   },
+   "preuve": "CharacterZone.tsx ne lit que 17 clés directes + 12 attributs d'appartenance ; EntityAttributes n'est monté ni sur `character` ni sur `status`. Contrôle au rendu : sosuke-aizen porte role = « Traître · seigneur de Las Noches », absent du texte visible de sa page. `sex` ne vaut que « Male » / « Female » — plus deux lignes où le wiki a fui : « File:Gender Other.svg Other », « File:Gender Various.svg Various »."
+  },
+  {
+   "id": "J",
+   "titre": "34 groupes / 80 fiches au descFr strictement identique",
+   "mesure": {
+    "groupes": 34,
+    "fiches": 80
+   },
+   "note": "Classe DÉJÀ documentée le 08/08 (38 groupes / 84 fiches) ; recomptée ici. La plupart sont légitimes (membres d'un même groupe partageant une page de wiki). Cas nouveaux à trancher : tsurugi ~ misumi-tsurugi (même nom, même texte, deux images différentes), shun ~ haruna-naruto, ise ~ udon-ise, ken ~ kenpachi-zaraki, abe (« Abe, alias Abengane ») ~ abengane."
+  },
+  {
+   "id": "K",
+   "titre": "La vitrine « Grimoire des Jutsu » pèse 3,0 Mo de HTML",
+   "mesure": {
+    "octets": 3028449
+   },
+   "preuve": "curl sur /learn/akasha/c/grimoire-jutsu : 3 028 449 octets, contre 528 582 pour fruits-du-demon et 204 899 pour le registre. Le cap à 1 500 est délibéré (commentaire de page.tsx) ; son coût, lui, n'a pas été mesuré."
+  }
+ ],
+ "plafonds": [
+  "ROUTES : 321 pages /u/<univers>/<axe>/<valeur> construites depuis les valeurs RÉELLEMENT en base + 40 slugs tirés au sort (graine 20260810) → 361/361 en HTTP 200 avec un <h1>. Aucune ne liste zéro fiche alors que la base en a. Aucune route morte.",
+  "URL : 6 743 adresses distinctes sondées (image_url 6 709, gallery 12, sourceUrl 20, forms.url 2) → 6 721 en 200. Une seule vraie disparition : la galerie de jiraiya (File:Profile Jiraiya.png — l'API du wiki répond « missing », ce n'est donc pas une adresse périmée). Les 20 autres sont des 403 de naruto.fandom.com sur `sourceUrl` : un blocage de robot, pas une disparition ; ce champ n'est de toute façon jamais affiché.",
+  "GRAPHE : 0 arête pendante, 0 arête réflexive, 0 doublon exact, 0 arête inter-univers. Les contraintes d'akasha_relations, elles, tiennent.",
+  "IDENTITÉ : 0 slug en double, 0 slug hors [a-z0-9-], 0 nom vide, 0 « [object Object] » en nom / résumé / descFr, 0 fiche sans univers, 0 univers sans taxonomie.",
+  "SECTIONS : le tri par idx est correct (lib/akasha/sections.ts `trier` découpe sur « . » et compare numériquement — « 2.10 » vient bien après « 2.9 »). 0 section sans titre, 0 section vide, 0 rang dupliqué.",
+  "NON MESURÉ : la justesse factuelle des 7 178 descFr (seules leurs contradictions de TYPE ont été sondées) ; la qualité des images (seul leur statut HTTP l'a été) ; les pages hors AKASHA."
+ ]
+}

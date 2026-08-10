@@ -87,7 +87,12 @@ for (const f of FUSIONS) {
         await s.from('akasha_sections').insert({ ...reste, entry_id: k.id });
       }
     }
-    // La suppression emporte en cascade ce qui resterait attaché (arêtes jetées, sections).
+    // La suppression emporte en cascade les ARÊTES (contrainte ON DELETE CASCADE), mais PAS les
+    // sections : `akasha_sections.entry_id` n'en a pas. Vérifié le 10/08, à mes dépens — les
+    // dossiers des deux capitaines Bleach absorbés sont restés en base, rattachés à des
+    // identifiants disparus : 15 lignes que plus personne ne pouvait ni lire ni atteindre.
+    // Le nettoyage est dans scripts/ops-reparer-vague3.mjs. Si ce script resert un jour :
+    // supprimer explicitement les sections du perdant qui n'ont pas été reprises.
     await s.from('akasha_entries').delete().eq('id', p.id);
     ligne.fait = true;
   }

@@ -1,0 +1,522 @@
+{
+ "chantier": "sonde wiki FR pour descFr",
+ "quand": "2026-08-10T09:59:21.911Z",
+ "temoins": {
+  "One Piece": {
+   "titre": "Monkey D. Luffy",
+   "repond": true,
+   "titreRendu": "Monkey D. Luffy",
+   "octets": 14081
+  },
+  "Naruto": {
+   "titre": "Naruto Uzumaki",
+   "repond": true,
+   "titreRendu": "Naruto Uzumaki",
+   "octets": 331058
+  },
+  "Bleach": {
+   "titre": "Ichigo Kurosaki",
+   "repond": true,
+   "titreRendu": "Ichigo Kurosaki",
+   "octets": 95967
+  },
+  "Dragon Ball": {
+   "titre": "Son Goku",
+   "repond": true,
+   "titreRendu": "Son Goku",
+   "octets": 148842
+  },
+  "Initial D": {
+   "titre": "Takumi Fujiwara",
+   "repond": false,
+   "titreRendu": null,
+   "octets": 0
+  }
+ },
+ "corpus": 7632,
+ "cible": 454,
+ "sonde": 40,
+ "compte": {
+  "sans-page-fr": 31,
+  "retenu": 6,
+  "chapeau-trop-court": 2,
+  "identite-refusee": 1
+ },
+ "disputees": [],
+ "cas": [
+  {
+   "slug": "voleur",
+   "name": "Voleur",
+   "universe": "Naruto",
+   "type": "profession",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "dynamic-action",
+   "name": "Dynamic Action",
+   "universe": "Naruto",
+   "type": "power",
+   "route": "titre-exact",
+   "titreFr": "Dynamic Action",
+   "redirections": [],
+   "sections": [],
+   "chapeauLong": 130,
+   "chapeau": "L'utilisateur saute vers l'adversaire et attaque avec une série de coups de poing et de coups de pied.\nCatégorie:Techniques de Gaï",
+   "identite": "titre-egal",
+   "fragment": null,
+   "oeuvre": null,
+   "plusGenerale": null,
+   "etat": "retenu"
+  },
+  {
+   "slug": "fils-d-acier",
+   "name": "Fils d'acier",
+   "universe": "Naruto",
+   "type": "artifact",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "vegeta-mega-instinc-evil",
+   "name": "Vegeta Mega Instinc Evil",
+   "universe": "Dragon Ball",
+   "type": "skill",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "mountains-graveyard",
+   "name": "Cimetière des Monts",
+   "universe": "Naruto",
+   "type": "place",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "seducing-woods",
+   "name": "Forêt de la Séduction",
+   "universe": "One Piece",
+   "type": "place",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "l-equipage-des-maquereaux",
+   "name": "L'Équipage des Maquereaux",
+   "universe": "One Piece",
+   "type": "status",
+   "route": "titre-exact",
+   "titreFr": "Équipage des Maquereaux",
+   "redirections": [
+    {
+     "from": "L'Équipage des Maquereaux",
+     "to": "Équipage des Maquereaux"
+    }
+   ],
+   "sections": [
+    "Membres",
+    "Bateau",
+    "Forces de l’Équipage",
+    "Histoire",
+    "Passé",
+    "La Balade Sous-Marine d'Octy",
+    "Arc Archipel de Sabaody",
+    "Futilités"
+   ],
+   "chapeauLong": 291,
+   "chapeau": "L'Équipage des Maquereaux (マクロ一味, Makuro Ichimi) fut un trio de 3 Hommes-Poissons esclavagistes qui étaient connus pour avoir tenté de kidnapper 31 fois la sirène Camie. Ils étaient autrefois amis avec Octo et leur chef Macro était membre de L'Équipage des Pirates du Soleil tout comme Octo.",
+   "identite": "meme-nom",
+   "fragment": null,
+   "oeuvre": null,
+   "plusGenerale": null,
+   "etat": "retenu"
+  },
+  {
+   "slug": "santa-maria",
+   "name": "Santa Maria",
+   "universe": "One Piece",
+   "type": "artifact",
+   "route": "titre-exact",
+   "titreFr": "Santa Maria",
+   "redirections": [],
+   "sections": [
+    "Apparence",
+    "Histoire",
+    "Arc Dressrosa",
+    "Futilités",
+    "Références",
+    "Navigation du Site"
+   ],
+   "chapeauLong": 152,
+   "chapeau": "Les Santa Maria sont des navires de la Flotte Yonte Maria. Il en existe 5, et ils sont plus importants que les Nita Maria mais moins que le Yonta Maria.",
+   "identite": "titre-egal",
+   "fragment": null,
+   "oeuvre": null,
+   "plusGenerale": null,
+   "etat": "retenu"
+  },
+  {
+   "slug": "atk-op-jujika",
+   "name": "Jujika",
+   "universe": "One Piece",
+   "type": "power",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "kazama-toshiaki",
+   "name": "Kazama Toshiaki",
+   "universe": "Initial D",
+   "type": "character",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "milkman",
+   "name": "Milkman",
+   "universe": "Dragon Ball",
+   "type": "character",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "atk-db-golden-great-ape",
+   "name": "Golden Great Ape",
+   "universe": "Dragon Ball",
+   "type": "power",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "atk-bl-zabimaru",
+   "name": "Zabimaru",
+   "universe": "Bleach",
+   "type": "power",
+   "route": "titre-exact",
+   "titreFr": "Zabimaru (Esprit Zanpakutō)",
+   "redirections": [
+    {
+     "from": "Zabimaru",
+     "to": "Zabimaru (Esprit Zanpakutō)"
+    }
+   ],
+   "sections": [
+    "<span>Cet article parle de l'esprit manifesté du Zanpakut</span>ō.<span> de Renji Abarai. Pour son Zanpakut</span>ō<span> et son aptitude, voir Zabimaru. </span>",
+    "<b>Zabimaru</b> (蛇尾丸) est l'esprit manifesté du Zanpakutō de Renji Abarai.",
+    "Apparence",
+    "<i>Remarque: Les événements qui se produisent dans la Rébellion de Zanpakutō ne sont que dans l'anime et ne constituent pas un matériel canon.</i>",
+    "Personnalité",
+    "<i>Remarque: Les événements qui se produisent dans la Rébellion des Zanpakutō ne sont que dans l'anime et ne constituent pas un matériel canon</i>.",
+    "Sypnosis",
+    "Arc de la Soul Society"
+   ],
+   "chapeauLong": 0,
+   "chapeau": "",
+   "identite": "meme-nom",
+   "fragment": null,
+   "oeuvre": null,
+   "plusGenerale": null,
+   "etat": "chapeau-trop-court"
+  },
+  {
+   "slug": "mafuba-flacon",
+   "name": "Bidon du Mafûba",
+   "universe": "Dragon Ball",
+   "type": "artifact",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "puppet-puppet-is-not-in-the-list-anbu-cooking-nin-daimyo-hunter-nin-jinchuriki-medical-nin-mercenary-ninja-missing-nin-ninja-monk-pseudo-jinchuriki-of-allowed-values-for-the-classification-property",
+   "name": "Puppet\"Puppet\" is not in the list (ANBU, Cooking-nin, Daimyō, Hunter-nin, Jinchūriki, Medical-nin, Mercenary Ninja, Missing-nin, Ninja monk, Pseudo-Jinchūriki, ...) of allowed values for the \"Classification\" property.",
+   "universe": "Naruto",
+   "type": "status",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "law-lami-s-father",
+   "name": "Law & Lami's Father",
+   "universe": "One Piece",
+   "type": "character",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "staff-a",
+   "name": "Staff A",
+   "universe": "Bleach",
+   "type": "character",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "shunpo",
+   "name": "Shunpo",
+   "universe": "Bleach",
+   "type": "skill",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "new-vegeta",
+   "name": "Nouvelle Vegeta",
+   "universe": "Dragon Ball",
+   "type": "place",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "nozarashi",
+   "name": "Nozarashi",
+   "universe": "Bleach",
+   "type": "artifact",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "eternal-mangekyo-sharingan",
+   "name": "Eternal Mangekyō Sharingan",
+   "universe": "Naruto",
+   "type": "skill",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "caretaker",
+   "name": "Caretaker",
+   "universe": "Naruto",
+   "type": "profession",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "beeswax-clone",
+   "name": "Beeswax Clone",
+   "universe": "Naruto",
+   "type": "power",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "massue",
+   "name": "Massue",
+   "universe": "Naruto",
+   "type": "artifact",
+   "route": "titre-exact",
+   "titreFr": "Massue",
+   "redirections": [],
+   "sections": [],
+   "chapeauLong": 0,
+   "chapeau": "",
+   "identite": "titre-egal",
+   "fragment": null,
+   "oeuvre": null,
+   "plusGenerale": null,
+   "etat": "chapeau-trop-court"
+  },
+  {
+   "slug": "gohan-ssj2",
+   "name": "Gohan SSJ2",
+   "universe": "Dragon Ball",
+   "type": "skill",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "daidai-village",
+   "name": "Daidai Village",
+   "universe": "Naruto",
+   "type": "place",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "sweet-city",
+   "name": "Sweet City",
+   "universe": "One Piece",
+   "type": "place",
+   "route": "titre-exact",
+   "titreFr": "Sweet City",
+   "redirections": [],
+   "sections": [
+    "Description",
+    "Château Whole Cake Island",
+    "Lac Abricot",
+    "Laboratoire",
+    "Histoire",
+    "Références",
+    "Navigation du site"
+   ],
+   "chapeauLong": 96,
+   "chapeau": "Sweet City est la capitale de l'Archipel Totto Land, se trouvant sur l'île de Whole Cake Island.",
+   "identite": "titre-egal",
+   "fragment": null,
+   "oeuvre": null,
+   "plusGenerale": null,
+   "etat": "retenu"
+  },
+  {
+   "slug": "l-equipage-de-ganzack",
+   "name": "l’équipage de Ganzack",
+   "universe": "One Piece",
+   "type": "status",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "fier-baril",
+   "name": "Fier Baril",
+   "universe": "One Piece",
+   "type": "artifact",
+   "route": "titre-exact",
+   "titreFr": "Baril Tiger",
+   "redirections": [
+    {
+     "from": "Fier Baril",
+     "to": "Baril Tiger"
+    }
+   ],
+   "sections": [
+    "Apparence",
+    "Histoire",
+    "Différences Manga et Anime",
+    "Futilités",
+    "Références",
+    "Navigation du Site"
+   ],
+   "chapeauLong": 133,
+   "chapeau": "Le Baril Tiger (タルタイガー号, Tarutaigā-gō) est un petit navire utilisé par Nami, Usopp et Robin lors de la Donut Race du Davy Back Fight.",
+   "identite": "aucune",
+   "fragment": null,
+   "oeuvre": null,
+   "plusGenerale": null,
+   "etat": "identite-refusee"
+  },
+  {
+   "slug": "clone-du-fruit-de-la-passion",
+   "name": "Clone du fruit de la passion",
+   "universe": "One Piece",
+   "type": "power",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "kawase-mitsuro",
+   "name": "Kawase Mitsuro",
+   "universe": "Initial D",
+   "type": "character",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "anton-the-great",
+   "name": "Anton the Great",
+   "universe": "Dragon Ball",
+   "type": "character",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "atk-db-psychic-move",
+   "name": "Psychic Move",
+   "universe": "Dragon Ball",
+   "type": "power",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "atk-bl-bankai-kannonbiraki-benihime-aratame",
+   "name": "Bankai Kannonbiraki Benihime Aratame",
+   "universe": "Bleach",
+   "type": "power",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "epee-de-lespoir",
+   "name": "Épée de l'Espoir",
+   "universe": "Dragon Ball",
+   "type": "artifact",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "ermite-sage",
+   "name": "Ermite (Sage)",
+   "universe": "Naruto",
+   "type": "status",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "phillip",
+   "name": "Phillip",
+   "universe": "One Piece",
+   "type": "character",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "boomerang-toujuu",
+   "name": "Boomerang Toujuu",
+   "universe": "Bleach",
+   "type": "character",
+   "route": null,
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "vegeta-planete",
+   "name": "Planète Vegeta",
+   "universe": "Dragon Ball",
+   "type": "place",
+   "route": "titre-exact",
+   "titreFr": "Planète Vegeta",
+   "redirections": [],
+   "sections": [
+    "Caractéristique",
+    "Histoire",
+    "Galerie",
+    "Navigations",
+    "Références"
+   ],
+   "chapeauLong": 109,
+   "chapeau": "La est la planète sur laquelle vivaient les Saiyans. C'est sur cette planète que sont nés Son Goku et Vegeta.",
+   "identite": "titre-egal",
+   "fragment": null,
+   "oeuvre": null,
+   "plusGenerale": null,
+   "etat": "retenu"
+  },
+  {
+   "slug": "wabisuke-bleach",
+   "name": "Wabisuke",
+   "universe": "Bleach",
+   "type": "artifact",
+   "route": "titre-exact",
+   "titreFr": "Wabisuke (Esprit Zanpakutō)",
+   "redirections": [
+    {
+     "from": "Wabisuke",
+     "to": "Wabisuke (Esprit Zanpakutō)"
+    }
+   ],
+   "sections": [
+    "Apparence",
+    "Personnalité",
+    "Sypnosis",
+    "Arc du Conte Inconnu des Zanpakutōs (Hors-Série)",
+    "Arc des Épées Bestiales (Hors-Séries)",
+    "Remarque"
+   ],
+   "chapeauLong": 1639,
+   "chapeau": "{| class=\"toccolours\" style=\"width: 22em; float: right; text-align: left; font-size: 90%\" cellspacing=\"2\"\n| style=\"font-size: 110%; background: #ccccff;\" align=\"center\" colspan=\"2\" | Wabisuke\n|-\n| style=\"\" align=\"center\" colspan=\"2\" | \n|- valign=\"top\"\n| style=\"\" | Français\n| style=\"width:15em;\" | Aide à l'Abandon\n|- valign=\"top\"\n| style=\"\" | Kanji\n| style=\"width:15em;\" | 侘助\n|-\n| style=\"font-size: 110%; background: #c",
+   "identite": "meme-nom",
+   "fragment": null,
+   "oeuvre": null,
+   "plusGenerale": null,
+   "etat": "retenu"
+  }
+ ]
+}

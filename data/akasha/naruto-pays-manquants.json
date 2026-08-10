@@ -1,0 +1,193 @@
+{
+ "chantier": "créer les fiches Naruto citées par des isolées mais absentes du corpus",
+ "quand": "2026-08-10",
+ "regleDeNom": "Nom = la forme FR « Pays … » la plus fréquente du corpus pour ce pays (tournure employée par 78 formes relevées contre 21 pour « Terre … », et la seule qui serve de valeur dans attributes.region). Aucune forme « Pays … » attestée → nom canon du wiki. Égalité → la forme qu'emploie la fiche qui cite le pays. Relevé : data/audits/pays-naruto-noms-fr-corpus.json",
+ "regleDeSlug": "slug = titre canonique du wiki slugifié. C'est lui qui fait tomber le lien d'infobox : norm('land-of-fire') === norm('Land of Fire'). Précédent du corpus : mountains-graveyard ← « Cimetière des Monts », valley-of-end ← « Vallée de la Fin ».",
+ "regleDeTexte": "summary et descFr sont la traduction fidèle de l'introduction de la page Fandom, phrase par phrase. Le paragraphe anglais d'origine est conservé dans la trace de collecte, en regard de chaque fiche.",
+ "regleDImage": "image_url = prop=pageimages, SAUF si le nom du fichier désigne une entité que le corpus possède déjà (portrait de personnage, village) : on laisse alors image_url vide plutôt que d'usurper un visuel.",
+ "fiches": [
+  {
+   "slug": "land-of-fire",
+   "type": "place",
+   "name": "Pays du Feu",
+   "nomPreuve": "« Pays du Feu » ×77 dans le corpus Naruto ; kiyoyasu-kagetsu (fiche citante) : « Kiyoyasu Kagetsu est un citoyen du Pays du Feu »",
+   "summary": "L'un des pays les plus vastes et les plus puissants, berceau de Konohagakure et des héros de la série.",
+   "descFr": "Le Pays du Feu est l'un des pays les plus vastes et les plus puissants de la série, et le foyer de ses personnages principaux. Il est gouverné par le Daimyō du Feu. C'est le premier pays à s'être doté d'un village caché, Konohagakure — une coutume que les autres pays ont adoptée à sa suite. Tourné vers l'élément du feu, il connaît un climat lumineux et chaud ; sans être le plus étendu, il abrite le plus grand des villages cachés. Il a connu des guerres contre le Pays de la Foudre, le Pays de la Terre et le Pays du Vent."
+  },
+  {
+   "slug": "land-of-redaku",
+   "type": "place",
+   "name": "Pays de Redaku",
+   "nomPreuve": "« Pays de Redaku » ×17 ; penjira (fiche citante) : « Penjira est un habitant du Pays de Redaku »",
+   "summary": "Petit pays lointain, mentionné pour la première fois dans Kakashi Retsuden.",
+   "descFr": "Le Pays de Redaku est un petit pays lointain, mentionné pour la première fois dans Kakashi Retsuden."
+  },
+  {
+   "slug": "land-of-waves",
+   "type": "place",
+   "name": "Pays des Vagues",
+   "nomPreuve": "« Pays des Vagues » ×38 (contre « Terre des Vagues » ×5) ; teguse (fiche citante) : « Teguse est un homme vivant dans le Pays des Vagues »",
+   "summary": "Nation insulaire sans village caché, longtemps étranglée par Gatō avant la mission de l'équipe 7.",
+   "descFr": "Le Pays des Vagues est une nation insulaire située près du Pays du Feu. Faute de village caché, il dépend de l'aide d'autres villages, comme Konohagakure. L'île — l'ancien Pays des Tourbillons — est parcourue de rivières et réputée pour ses mangroves. Prospère grâce au transport maritime, il fut ruiné par Gatō, qui en monopolisa le commerce ; le charpentier Tazuna entreprit alors la construction d'un pont vers le continent. La première vraie mission de l'équipe 7 s'y déroula : après la chute de Gatō, le pont fut achevé et le pays retrouva la prospérité."
+  },
+  {
+   "slug": "land-of-water",
+   "type": "place",
+   "name": "Pays de l'Eau",
+   "nomPreuve": "« Pays de l'Eau » ×37 (contre « Terre de l'Eau » ×4) ; kajiki (fiche citante) : « Kajiki est un maître charpentier naval du Pays de l'Eau »",
+   "summary": "Archipel brumeux gouverné par le Daimyō de l'Eau, longtemps ravagé par les guerres civiles.",
+   "descFr": "Le Pays de l'Eau, aussi appelé « Pays de la Brume », est composé de nombreuses îles ayant chacune ses traditions. Son climat est frais, ses îles souvent noyées de brume, et il est tourné vers l'élément de l'eau ; il est gouverné par le Daimyō de l'Eau. Resté à l'écart des affaires politiques, il fut longtemps ravagé par des guerres civiles où les clans porteurs d'un kekkei genkai furent tant employés qu'on finit par voir en eux des présages de guerre et de mort — d'où les purges qui poussèrent des clans comme les Yuki à se cacher."
+  },
+  {
+   "slug": "land-of-ancestors",
+   "type": "place",
+   "name": "Pays des Ancêtres",
+   "nomPreuve": "« Pays des Ancêtres » ×8 ; haori (fiche citante) : « Haori était un habitant du Pays des Ancêtres »",
+   "summary": "Petit pays disparu il y a plus d'un millénaire, d'où provenait l'Arbre Divin.",
+   "descFr": "Le Pays des Ancêtres était un petit pays qui existait plus d'un millénaire avant le début de la série. Fait de nombreux villages agricoles entourés de bois, il tirait ses ressources d'un immense lac et avait pour souverain l'empereur Tenji. C'est de là que provenait l'Arbre Divin. À l'arrivée de Kaguya Ōtsutsuki sur Terre, le pays était au bord de la guerre avec le Pays de Ça ; en consommant le fruit de chakra de l'Arbre Divin, Kaguya déclencha le Tsukuyomi Infini et y emprisonna tous ceux qu'il atteignit. Les montagnes qui entouraient l'Arbre Divin prirent alors le nom de « Pics du Trépas »."
+  },
+  {
+   "slug": "land-of-vegetables",
+   "type": "place",
+   "name": "Pays des Légumes",
+   "nomPreuve": "« Pays des Légumes » ×10 (contre « Terre des Légumes » ×3) ; momiji (fiche citante) : « Momiji est une jeune fille du Pays des Légumes »",
+   "summary": "Pays montagneux de l'arc de l'escorte des marchands, dont Haruna devint le daimyō.",
+   "descFr": "Le Pays des Légumes apparaît dans l'arc de l'escorte des marchands, dans l'anime Naruto d'origine. Situé dans une région montagneuse, il fut le théâtre d'une mission où Naruto, Chōji et Hinata escortèrent un petit convoi sans savoir qu'il abritait Haruna, la fille du daimyō du pays, en fuite devant un groupe de frères qui s'en étaient emparés par un coup d'État. Une fois ceux-ci écartés par les ninjas de Konoha, Haruna devint daimyō."
+  },
+  {
+   "slug": "land-of-forests",
+   "type": "place",
+   "name": "Pays des Forêts",
+   "nomPreuve": "« Pays des Forêts » ×2 ; tsuzumi (fiche citante) : « Tsuzumi est un capitaine de police du Pays des Forêts »",
+   "summary": "Pays si boisé que sa capitale n'est accessible que par la rivière.",
+   "descFr": "Le Pays des Forêts est un pays couvert de forêts, au point que sa capitale n'est accessible que par la rivière. Le groupe criminel Shinobazu y sévissait et avait pour repaire la Forêt de l'Égarement. Gantetsu, l'un de ses membres, capturé au col d'Ogi, devait être conduit à la capitale pour y être jugé, mais le navire fut attaqué par les Shinobazu ; aux côtés de Naruto Uzumaki, il aida finalement à les vaincre et fut laissé libre. Le pays ne semble pas posséder de ninjas, mais dispose d'une police entraînée au sabre."
+  },
+  {
+   "slug": "land-of-sound",
+   "type": "place",
+   "name": "Pays du Son",
+   "nomPreuve": "« Pays du Son » ×14, dont 2 comme valeur d'attributes.region (otogakure) ; le résumé de fuki-land-of-sound (fiche citante) porte « Localité du Pays du Son »",
+   "summary": "Pays voisin du Pays du Feu, jadis nommé Pays des Rizières, où Orochimaru fonda son village.",
+   "descFr": "Le Pays du Son est un pays voisin du Pays du Feu, récent sur la scène politique : il a longtemps porté le nom de Pays des Rizières. Dans l'anime, Orochimaru s'y infiltra et convainquit son daimyō de le laisser fonder son propre village de ninjas. Le pays aurait abrité quelques clans shinobi, dont les Fūma et les Shiin, décimés lors d'une guerre d'expansion voulue par le daimyō ; c'est parmi les survivants que Kimimaro recruta pour la cause d'Orochimaru."
+  },
+  {
+   "slug": "land-of-tea",
+   "type": "place",
+   "name": "Pays du Thé",
+   "nomPreuve": "« Pays du Thé » ×16 ; fukusuke-hikyakuya (fiche citante) : « la course du sanctuaire Todoroki au Pays du Thé »",
+   "summary": "Petit pays voisin du Pays du Feu, où s'affrontent les familles Wasabi et Wagarashi.",
+   "descFr": "Le Pays du Thé est un petit pays proche du Pays du Feu. L'équipe Kakashi y fut envoyée pour protéger Idate Morino lors de la course qui devait trancher la rivalité entre la famille Wasabi et la famille Wagarashi. Il compte deux îles distinctes au large de sa côte orientale, l'île de Nagi et l'île d'Ōza, où se déroula la course. On ignore s'il possède ses propres shinobi, les participants de la course ayant loué des ninjas étrangers pour leur protection ; son nom lui viendrait de ses maisons de thé."
+  },
+  {
+   "slug": "land-of-the-sea",
+   "type": "place",
+   "name": "Pays de la Mer",
+   "nomPreuve": "« Pays de la Mer » ×6 ; hitode (fiche citante) : « les cargaisons d'or que le Pays de la Mer envoie à Kiri »",
+   "summary": "Archipel peu prospère protégé par Kiri, où Orochimaru mena ses expériences interdites.",
+   "descFr": "Le Pays de la Mer est composé de plusieurs îles, dont Hahajima, la principale, entourée des îles Jirō, Tarō et de l'île du Démon. C'est sur l'île Jirō qu'Anko Mitarashi fut abandonnée après avoir servi de sujet d'expérience au Sceau Maudit du Ciel d'Orochimaru, avant d'être retrouvée par l'Anbu. Orochimaru y tenait une base et y menait des expériences interdites, poursuivies par l'un de ses subordonnés après son départ, ce qui valut au pays des attaques contre ses navires. Peu prospère, il dépend de Kirigakure pour sa protection."
+  },
+  {
+   "slug": "land-of-honey",
+   "type": "place",
+   "name": "Pays du Miel",
+   "nomPreuve": "« Pays du Miel » ×2 ; kayo (fiche citante) : « Kayo est l'épouse du daimyô du Pays du Miel »",
+   "summary": "Pays brièvement évoqué dans l'anime, dont on ne sait presque rien.",
+   "descFr": "Le Pays du Miel n'est que brièvement mentionné dans l'épisode 194 de l'anime Naruto ; on ne sait presque rien de ce pays."
+  },
+  {
+   "slug": "land-of-bean-jam",
+   "type": "place",
+   "name": "Pays de la Pâte de Haricot",
+   "nomPreuve": "« Pays de la Pâte de Haricot » ×2 ; kayo (fiche citante) : « Elle est originaire du Pays de la Pâte de Haricot »",
+   "summary": "Pays brièvement mentionné dans l'épisode 194 de l'anime Naruto.",
+   "descFr": "Le Pays de la Pâte de Haricot est un pays brièvement mentionné dans l'épisode 194 de l'anime Naruto."
+  },
+  {
+   "slug": "land-of-mountains",
+   "type": "place",
+   "name": "Pays des Montagnes",
+   "nomPreuve": "« Pays des Montagnes » ×1 ; giant-eagle (fiche citante) : « summon personnel de Gennō, originaire du Pays des Montagnes »",
+   "summary": "Pays où se trouvait le village de Kagerō, rayé de la carte trente ans avant la série.",
+   "descFr": "Le Pays des Montagnes est le pays où se trouvait le village de Kagerō. Ce village fut anéanti par un autre village une trentaine d'années avant le début de la série."
+  },
+  {
+   "slug": "land-of-the-moon",
+   "type": "place",
+   "name": "Pays de la Lune",
+   "nomPreuve": "« Pays de la Lune » ×12 ; korega (fiche citante) : « Korega était le capitaine de l'armée du Pays de la Lune »",
+   "summary": "Riche royaume insulaire en forme de croissant, au cœur du film Les Gardiens du Royaume du Croissant de Lune.",
+   "descFr": "Le Pays de la Lune est au centre du film Naruto : Les Gardiens du Royaume du Croissant de Lune. C'est une nation insulaire en forme de croissant de lune, située dans les mers du Sud, dont les gardes du royaume portent sabres, spathas et lances. Le royaume paraît très riche : le prince Michiru Tsuki dépensa un milliard rien que pour racheter un cirque qui lui plaisait."
+  },
+  {
+   "slug": "land-of-neck",
+   "type": "place",
+   "name": "Land of Neck",
+   "nomPreuve": "AUCUNE forme « Pays … » attestée dans le corpus pour ce pays (seul « Terre de Neck » ×1, tournure minoritaire) et la fiche citante shiromari n'en emploie aucune → nom canon du wiki, conformément à la règle",
+   "summary": "Pays dont la capitale fut détruite par une armée ennemie, vu dans l'épisode 194.",
+   "descFr": "Le Land of Neck apparaît dans l'épisode 194 de l'anime. Kōza Kubisaki en était le daimyō cinquante ans avant le début de la série. Dans l'anime, Naruto, Hinata et Kiba passent près de sa capitale, détruite par une armée ennemie."
+  },
+  {
+   "slug": "land-of-birds",
+   "type": "place",
+   "name": "Pays des Oiseaux",
+   "nomPreuve": "« Pays des Oiseaux » ×6 (contre « Terre des Oiseaux » ×3) ; komei (fiche citante) : « Kōmei est le stratège du Pays des Oiseaux »",
+   "summary": "Petit pays entre le Pays du Vent et le Pays de la Terre, hanté par la rumeur du Guerrier Maudit.",
+   "descFr": "Le Pays des Oiseaux est un petit pays situé entre le Pays du Vent et le Pays de la Terre. Dans l'anime, Naruto, Neji et Tenten y furent envoyés pour enquêter sur la rumeur d'un fantôme malveillant, le Guerrier Maudit, et pour protéger le daimyō Sagi ; ils découvrirent qu'un groupe de ninjas errants, les Watari Ninja, espérait s'emparer du pays par une conspiration complexe, et les défirent. Son nom lui vient du grand nombre d'oiseaux qui y migrent chaque année."
+  },
+  {
+   "slug": "land-of-that",
+   "type": "place",
+   "name": "Pays de Ça",
+   "nomPreuve": "égalité dans le corpus : « Pays de Ça » ×2, « Pays de Cela » ×2, « Terre de That » ×2 → départagé par la fiche citante shu-lord : « Shū est le fils du daimyō du Pays de Ça »",
+   "summary": "Vieux pays voisin du Pays du Feu, qui s'agrandissait en fabriquant de faux titres de propriété.",
+   "descFr": "Le Pays de Ça est un vieux pays voisin du Pays du Feu et du Pays des Rivières. Un millénaire avant le début de la série, il agrandissait régulièrement son territoire en falsifiant de vieux documents où la région convoitée apparaissait comme sienne, puis en menaçant de guerre le pays qui refusait de la céder. Sa tentative sur le Pays des Ancêtres fut arrêtée par le Tsukuyomi Infini de Kaguya Ōtsutsuki. Des siècles plus tard, il s'empara du territoire du Pays de Ceci grâce aux services de l'Akatsuki."
+  },
+  {
+   "slug": "land-of-lightning",
+   "type": "place",
+   "name": "Pays de la Foudre",
+   "nomPreuve": "« Pays de la Foudre » ×20, dont 2 comme valeur d'attributes.region — contre « Terre de l'Éclair » ×2 et « Pays de l'Éclair » ×1 ; la fiche citante tekkan emploie la forme minoritaire « Terre de l'Éclair », la règle retient la plus fréquente",
+   "summary": "Presqu'île montagneuse au nord-est du Pays du Feu, l'un des Cinq Grands Pays.",
+   "descFr": "Le Pays de la Foudre occupe une péninsule au nord-est du Pays du Feu et compte parmi les Cinq Grands Pays shinobi ; il est gouverné par le Daimyō de la Foudre. De vastes chaînes de montagnes en occupent le centre, dont les orages nombreux lui auraient donné son nom ; de là partent les rivières qui découpent un littoral très accidenté, d'une grande beauté. On y trouve de nombreuses sources chaudes, et un grand désert occupe sa frontière occidentale."
+  },
+  {
+   "slug": "land-of-woods",
+   "type": "place",
+   "name": "Pays des Bois",
+   "nomPreuve": "« Pays des Bois » ×1 ; kurozuka (fiche citante) : « l'un des derniers survivants du groupe Prajñā du Pays des Bois »",
+   "summary": "Pays qui abritait jadis le groupe Prajñā, une unité de l'Anbu.",
+   "descFr": "Le Pays des Bois abritait autrefois un groupe de l'Anbu appelé le groupe Prajñā."
+  },
+  {
+   "slug": "wagarashi-family",
+   "type": "status",
+   "name": "Clan Wagarashi",
+   "scope": "Clan",
+   "category": "Clan",
+   "gabarit": "Clan X",
+   "nomPreuve": "convention du corpus : les 30 fiches de clan Naruto sont nommées « Clan X », dont « Clan Kagetsu » dont la page du wiki s'intitule exactement de la même façon (« Kagetsu Family ») ; fukusuke-hikyakuya (fiche citante) : « coureur de la famille Wagarashi »",
+   "summary": "Clan du Pays du Thé, rival des Wasabi pour le contrôle du port de Degarashi.",
+   "descFr": "Le clan Wagarashi est un clan du Pays du Thé. Il est l'un des deux clans qui se disputent la possession du port de Degarashi."
+  },
+  {
+   "slug": "kanabun-gang",
+   "type": "status",
+   "name": "Kanabun Gang",
+   "scope": "Organisation",
+   "category": "Organisation",
+   "nomPreuve": "aucune forme FR attestée dans le corpus (la fiche citante kanabun n'en donne pas) → nom canon du wiki",
+   "summary": "Bande dirigée par son chef Kanabun, apparue dans Naruto Shippūden.",
+   "descFr": "Le Kanabun Gang est une bande dirigée par son chef, Kanabun. Elle apparaît pour la première fois dans l'épisode 181 de Naruto Shippūden."
+  },
+  {
+   "slug": "prajna-group",
+   "type": "status",
+   "name": "Groupe Prajñā",
+   "scope": "Organisation",
+   "category": "Organisation",
+   "nomPreuve": "kurozuka (fiche citante) : « l'un des derniers survivants du groupe Prajñā du Pays des Bois »",
+   "summary": "Régiment de l'Anbu du Pays des Bois.",
+   "descFr": "Le groupe Prajñā est un régiment de l'Anbu du Pays des Bois."
+  }
+ ]
+}

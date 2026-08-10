@@ -1,28 +1,28 @@
 {
  "chantier": "état des lieux AKASHA",
- "quand": "2026-08-10T09:52:17.488Z",
- "total": 7632,
- "relations": 16731,
- "sections": 19099,
+ "quand": "2026-08-10T11:03:25.905Z",
+ "total": 7654,
+ "relations": 16769,
+ "sections": 19084,
  "global": {
-  "sansImage": 772,
-  "sansDescFr": 454,
-  "sansResume": 29,
-  "resumeRemplissage": 289,
-  "isolees": 818,
-  "sansDossier": 2856,
+  "sansImage": 779,
+  "sansDescFr": 401,
+  "sansResume": 10,
+  "resumeRemplissage": 133,
+  "isolees": 783,
+  "sansDossier": 2878,
   "descriptionRedondante": 5,
-  "descriptionAbsente": 7599
+  "descriptionAbsente": 7621
  },
  "parUnivers": {
   "Naruto": {
-   "fiches": 3308,
-   "sansImage": 300,
-   "sansDescFr": 167,
-   "sansResume": 29,
-   "resumeRemplissage": 2,
-   "sansDossier": 1895,
-   "isolees": 93,
+   "fiches": 3330,
+   "sansImage": 307,
+   "sansDescFr": 163,
+   "sansResume": 10,
+   "resumeRemplissage": 1,
+   "sansDossier": 1917,
+   "isolees": 58,
    "axes": [
     {
      "attr": "village",
@@ -63,8 +63,8 @@
      "attr": "rank",
      "label": "Rangs ninja",
      "fiches": 473,
-     "valeurs": 10,
-     "horsListe": 2
+     "valeurs": 11,
+     "horsListe": 3
     },
     {
      "attr": "generation",
@@ -78,9 +78,9 @@
   "One Piece": {
    "fiches": 2229,
    "sansImage": 366,
-   "sansDescFr": 210,
+   "sansDescFr": 163,
    "sansResume": 0,
-   "resumeRemplissage": 2,
+   "resumeRemplissage": 0,
    "sansDossier": 449,
    "isolees": 451,
    "axes": [
@@ -117,7 +117,7 @@
   "Bleach": {
    "fiches": 382,
    "sansImage": 59,
-   "sansDescFr": 14,
+   "sansDescFr": 13,
    "sansResume": 0,
    "resumeRemplissage": 0,
    "sansDossier": 111,
@@ -174,9 +174,9 @@
   "Dragon Ball": {
    "fiches": 1137,
    "sansImage": 40,
-   "sansDescFr": 61,
+   "sansDescFr": 60,
    "sansResume": 0,
-   "resumeRemplissage": 285,
+   "resumeRemplissage": 132,
    "sansDossier": 333,
    "isolees": 146,
    "axes": [
@@ -260,7 +260,7 @@
   "character": {
    "fiches": 4031,
    "sansImage": 1,
-   "isolees": 569
+   "isolees": 534
   },
   "power": {
    "fiches": 2359,
@@ -268,8 +268,8 @@
    "isolees": 13
   },
   "status": {
-   "fiches": 330,
-   "sansImage": 78,
+   "fiches": 333,
+   "sansImage": 80,
    "isolees": 42
   },
   "profession": {
@@ -278,8 +278,8 @@
    "isolees": 2
   },
   "place": {
-   "fiches": 333,
-   "sansImage": 78,
+   "fiches": 352,
+   "sansImage": 83,
    "isolees": 94
   },
   "skill": {

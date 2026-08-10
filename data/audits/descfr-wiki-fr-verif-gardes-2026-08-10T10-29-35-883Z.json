@@ -1,0 +1,279 @@
+{
+ "chantier": "descFr depuis le wiki francophone",
+ "mode": "dry",
+ "quand": "2026-08-10T10:29:49.049Z",
+ "temoins": {
+  "One Piece": {
+   "titre": "Monkey D. Luffy",
+   "repond": true,
+   "octets": 811817
+  },
+  "Naruto": {
+   "titre": "Naruto Uzumaki",
+   "repond": true,
+   "octets": 656822
+  },
+  "Bleach": {
+   "titre": "Ichigo Kurosaki",
+   "repond": true,
+   "octets": 187880
+  },
+  "Dragon Ball": {
+   "titre": "Son Goku",
+   "repond": true,
+   "octets": 680634
+  }
+ },
+ "corpus": 7654,
+ "sansDescFr": 454,
+ "cible": 14,
+ "compte": {
+  "sans-page-fr": 8,
+  "candidat": 5,
+  "chapeau-trop-court": 1
+ },
+ "disputees": [],
+ "cas": [
+  {
+   "slug": "voleur",
+   "name": "Voleur",
+   "universe": "Naruto",
+   "type": "profession",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "dynamic-action",
+   "name": "Dynamic Action",
+   "universe": "Naruto",
+   "type": "power",
+   "route": "titre-exact",
+   "titreFr": "Dynamic Action",
+   "url": "https://naruto.fandom.com/fr/wiki/Dynamic_Action",
+   "redirections": [],
+   "sections": [],
+   "allerRetour": null,
+   "identite": "titre-egal",
+   "desambiguisation": false,
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 102,
+   "nommeSujet": false,
+   "nommeSonTitre": false,
+   "etat": "candidat",
+   "descFr": "L'utilisateur saute vers l'adversaire et attaque avec une série de coups de poing et de coups de pied.",
+   "descFrSource": "wiki FR naruto.fandom.com/fr — « Dynamic Action » (CC BY-SA) https://naruto.fandom.com/fr/wiki/Dynamic_Action"
+  },
+  {
+   "slug": "fils-d-acier",
+   "name": "Fils d'acier",
+   "universe": "Naruto",
+   "type": "artifact",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "vegeta-mega-instinc-evil",
+   "name": "Vegeta Mega Instinc Evil",
+   "universe": "Dragon Ball",
+   "type": "skill",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "mountains-graveyard",
+   "name": "Cimetière des Monts",
+   "universe": "Naruto",
+   "type": "place",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "seducing-woods",
+   "name": "Forêt de la Séduction",
+   "universe": "One Piece",
+   "type": "place",
+   "pontRefuse": "redirection de section côté EN (Seducing Woods → Whole Cake Island#Seducing Woods)",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "l-equipage-des-maquereaux",
+   "name": "L'Équipage des Maquereaux",
+   "universe": "One Piece",
+   "type": "status",
+   "route": "titre-exact",
+   "titreFr": "Équipage des Maquereaux",
+   "url": "https://onepiece.fandom.com/fr/wiki/%C3%89quipage_des_Maquereaux",
+   "redirections": [
+    {
+     "from": "L'Équipage des Maquereaux",
+     "to": "Équipage des Maquereaux"
+    }
+   ],
+   "sections": [
+    "Membres",
+    "Bateau",
+    "Forces de l’Équipage",
+    "Histoire",
+    "Passé",
+    "La Balade Sous-Marine d'Octy",
+    "Arc Archipel de Sabaody",
+    "Futilités",
+    "Références",
+    "Navigation du Site"
+   ],
+   "allerRetour": null,
+   "identite": "meme-nom",
+   "desambiguisation": false,
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 292,
+   "nommeSujet": true,
+   "nommeSonTitre": true,
+   "etat": "candidat",
+   "descFr": "L'Équipage des Maquereaux (マクロ一味, Makuro Ichimi ) fut un trio de 3 Hommes-Poissons esclavagistes qui étaient connus pour avoir tenté de kidnapper 31 fois la sirène Camie. Ils étaient autrefois amis avec Octo et leur chef Macro était membre de L'Équipage des Pirates du Soleil tout comme Octo.",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Équipage des Maquereaux » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/%C3%89quipage_des_Maquereaux"
+  },
+  {
+   "slug": "l-equipage-de-ganzack",
+   "name": "l’équipage de Ganzack",
+   "universe": "One Piece",
+   "type": "status",
+   "pontRefuse": "page plus générale que l'entité : « Ganzack » ne couvre pas « l’équipage de Ganzack »",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "santa-maria",
+   "name": "Santa Maria",
+   "universe": "One Piece",
+   "type": "artifact",
+   "route": "titre-exact",
+   "titreFr": "Santa Maria",
+   "url": "https://onepiece.fandom.com/fr/wiki/Santa_Maria",
+   "redirections": [],
+   "sections": [
+    "Apparence",
+    "Histoire",
+    "Arc Dressrosa",
+    "Futilités",
+    "Références",
+    "Navigation du Site"
+   ],
+   "allerRetour": null,
+   "identite": "titre-egal",
+   "desambiguisation": false,
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 152,
+   "nommeSujet": true,
+   "nommeSonTitre": true,
+   "etat": "candidat",
+   "descFr": "Les Santa Maria sont des navires de la Flotte Yonte Maria. Il en existe 5, et ils sont plus importants que les Nita Maria mais moins que le Yonta Maria.",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Santa Maria » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Santa_Maria"
+  },
+  {
+   "slug": "atk-op-jujika",
+   "name": "Jujika",
+   "universe": "One Piece",
+   "type": "power",
+   "pontRefuse": "page d'œuvre ou de liste : « Episode 325 »",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "fier-baril",
+   "name": "Fier Baril",
+   "universe": "One Piece",
+   "type": "artifact",
+   "route": "titre-exact",
+   "titreFr": "Baril Tiger",
+   "url": "https://onepiece.fandom.com/fr/wiki/Baril_Tiger",
+   "redirections": [
+    {
+     "from": "Fier Baril",
+     "to": "Baril Tiger"
+    }
+   ],
+   "sections": [
+    "Apparence",
+    "Histoire",
+    "Différences Manga et Anime",
+    "Futilités",
+    "Références",
+    "Navigation du Site"
+   ],
+   "allerRetour": null,
+   "identite": "redirection-declaree",
+   "desambiguisation": false,
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 134,
+   "nommeSujet": true,
+   "nommeSonTitre": true,
+   "etat": "candidat",
+   "descFr": "Le Baril Tiger (タルタイガー号, Tarutaigā-gō ) est un petit navire utilisé par Nami, Usopp et Robin lors de la Donut Race du Davy Back Fight.",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Baril Tiger » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Baril_Tiger"
+  },
+  {
+   "slug": "sweet-city",
+   "name": "Sweet City",
+   "universe": "One Piece",
+   "type": "place",
+   "route": "titre-exact",
+   "titreFr": "Sweet City",
+   "url": "https://onepiece.fandom.com/fr/wiki/Sweet_City",
+   "redirections": [],
+   "sections": [
+    "Description",
+    "Château Whole Cake Island",
+    "Lac Abricot",
+    "Laboratoire",
+    "Histoire",
+    "Références",
+    "Navigation du site"
+   ],
+   "allerRetour": null,
+   "identite": "titre-egal",
+   "desambiguisation": false,
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 96,
+   "nommeSujet": true,
+   "nommeSonTitre": true,
+   "etat": "candidat",
+   "descFr": "Sweet City est la capitale de l'Archipel Totto Land, se trouvant sur l'île de Whole Cake Island.",
+   "descFrSource": "wiki FR onepiece.fandom.com/fr — « Sweet City » (CC BY-SA) https://onepiece.fandom.com/fr/wiki/Sweet_City"
+  },
+  {
+   "slug": "jet-shoes",
+   "name": "Jet Shoes",
+   "universe": "One Piece",
+   "type": "artifact",
+   "pontRefuse": "identité EN non prouvée",
+   "etat": "sans-page-fr"
+  },
+  {
+   "slug": "massue",
+   "name": "Massue",
+   "universe": "Naruto",
+   "type": "artifact",
+   "route": "titre-exact",
+   "titreFr": "Massue",
+   "url": "https://naruto.fandom.com/fr/wiki/Massue",
+   "redirections": [],
+   "sections": [],
+   "allerRetour": null,
+   "identite": "titre-egal",
+   "desambiguisation": false,
+   "oeuvre": null,
+   "homonymie": false,
+   "plusGenerale": null,
+   "longueur": 0,
+   "nommeSujet": false,
+   "nommeSonTitre": false,
+   "etat": "chapeau-trop-court",
+   "extrait": ""
+  }
+ ]
+}

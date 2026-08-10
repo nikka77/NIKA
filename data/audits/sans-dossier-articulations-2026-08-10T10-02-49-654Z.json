@@ -1,0 +1,852 @@
+{
+ "chantier": "CHANTIER 4 — les fiches sans dossier, par les articulations AUTRES que la numérotation",
+ "quand": "2026-08-10T10:02:49.653Z",
+ "ecritEnBase": "RIEN.",
+ "recompte": {
+  "fichesPaginees": 7632,
+  "fichesServeur": 7632,
+  "sectionsPaginees": 19099,
+  "sectionsServeur": 19099,
+  "fichesAvecDossier": 4778,
+  "fichesSansDossier": 2856
+ },
+ "matiere": {
+  "distributionDesLongueursDescFr": {
+   "vide": 297,
+   "1-300": 1125,
+   "301-600": 1257,
+   "601-900": 125,
+   "901-1200": 31,
+   "1201-1600": 15,
+   "1601+": 6
+  },
+  "medianeDesLongueurs": 301,
+  "sansDossierEtDescFrSup900": 52,
+  "parUnivers": {
+   "Bleach": 16,
+   "Dragon Ball": 16,
+   "Naruto": 7,
+   "One Piece": 11,
+   "Death Note": 1,
+   "JoJo's Bizarre Adventure": 1
+  }
+ },
+ "anatomieDesSectionsExistantes": {
+  "lignes": 19099,
+  "fichesDotees": 4778,
+  "sectionsParDossierMediane": 4,
+  "longueurTexteMediane": 648,
+  "longueurDossierMediane": 2346,
+  "sansTitre": 0,
+  "formesDIdx": {
+   "entier": 19075,
+   "autre": 24
+  },
+  "sources": {
+   "deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo": 6718,
+   "openrouter/mistralai/mistral-small-24b-instruct-2501": 6289,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié)": 4107,
+   "mistral/mistral-large-latest": 1231,
+   "claude-haiku-4-5 (blitz front-2b — traduit de la page Fandom, contre-vérifié)": 305,
+   "connecteur-techniques-op (traduit de la page Fandom, contre-vérifié)": 120,
+   "nvidia/nvidia/nemotron-3-super-120b-a12b": 84,
+   "deepinfra/Qwen/Qwen3-32B": 54,
+   "deepinfra/mistralai/Mistral-Small-24B-Instruct-2501": 46,
+   "claude-haiku-4-5 (blitz fenêtre 02/08 — traduit de la page Fandom, contre-vérifié)": 30,
+   "anthropic/claude-haiku-4-5": 21,
+   "claude-haiku (finisseur) · Shinigami page - Fandom Death Note wiki": 10,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis chapeau-de-paille]": 8,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis pays-des-wa]": 5,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis water-seven]": 4,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis punk-hazard]": 4,
+   "claude-haiku (finisseur) · initiald.fandom.com (Mitsubishi Lancer Evolution III GSR (CE9A), Kyoichi Sudo's Mitsubishi Lancer Evolution)": 3,
+   "claude-haiku (finisseur) · Usui Pass": 3,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis skypiea]": 3,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis dressrosa]": 3,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis village-de-shimotsuki]": 3,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis east-blue-one-piece]": 3,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis thriller-bark]": 3,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis zo]": 3,
+   "claude-haiku (finisseur) · Usui Pass page - Fandom Initial D wiki": 2,
+   "fusion FR/EN du 08/08 — contenu repris de la fiche « Summoning: Impure World Reincarnation » (traduit, contre-vérifié)": 2,
+   "claude-haiku (finisseur) · L (character)": 2,
+   "claude-haiku (finisseur) · initiald.fandom.com/wiki/Akina, initiald.fandom.com/wiki/Ryosuke_Takahashi, initiald.fandom.com/wiki/Sayuki": 2,
+   "claude-haiku (finisseur) · deathnote.fandom.com (chapters: Misunderstanding, Creation)": 2,
+   "claude-haiku (finisseur) · initiald.fandom.com (Keiichi Tsuchiya, Chapter 044)": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis loguetown]": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis little-garden]": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis ile-de-drum]": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis alabasta]": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis impel-down]": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis erbaf]": 2,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis archipel-des-sabaody]": 2,
+   "claude-haiku (finisseur) · initiald.fandom.com/wiki/Initial_D_Arcade_Stage_Ver._2,initiald.fandom.com/wiki/Team_Emperor": 1,
+   "claude-haiku (finisseur) · Mount Myōgi page - Fandom Initial D wiki": 1,
+   "claude-haiku (finisseur) · Shinigami": 1,
+   "claude-haiku (finisseur) · initiald.fandom.com/wiki/Sayuki, initiald.fandom.com/wiki/Beyond_Impact_Blue_Part_2, initiald.fandom.com/wiki/Mako_Sato": 1,
+   "claude-haiku (finisseur) · deathnote.fandom.com/wiki/Yotsuba_Group": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis enies-lobby]": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis reverse-mountain]": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis long-ring-long-land]": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis weatheria]": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis royaume-de-prodence]": 1,
+   "openrouter/mistralai/mistral-small-24b-instruct-2501 [fusion doublon depuis gotei-13-bleach]": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis baggy-s-delivery]": 1,
+   "claude-haiku-4-5 (blitz fenêtre — traduit de la page Fandom, contre-vérifié) [fusion doublon depuis baterilla]": 1
+  },
+  "titresDistincts": 2531,
+  "titresLesPlusFrequents": [
+   {
+    "titre": "Apparence",
+    "n": 2114
+   },
+   {
+    "titre": "Personnalité",
+    "n": 1887
+   },
+   {
+    "titre": "Histoire",
+    "n": 1174
+   },
+   {
+    "titre": "Capacités",
+    "n": 876
+   },
+   {
+    "titre": "Anecdotes",
+    "n": 641
+   },
+   {
+    "titre": "Capacités et pouvoirs",
+    "n": 575
+   },
+   {
+    "titre": "Contexte",
+    "n": 357
+   },
+   {
+    "titre": "Relations",
+    "n": 355
+   },
+   {
+    "titre": "Intrigue",
+    "n": 345
+   },
+   {
+    "titre": "Passé",
+    "n": 327
+   },
+   {
+    "titre": "Biographie",
+    "n": 326
+   },
+   {
+    "titre": "Apparitions dans les jeux vidéo",
+    "n": 303
+   },
+   {
+    "titre": "Utilisation",
+    "n": 246
+   },
+   {
+    "titre": "Partie II",
+    "n": 205
+   },
+   {
+    "titre": "Dragon Ball Super",
+    "n": 169
+   },
+   {
+    "titre": "Ninjutsu",
+    "n": 162
+   },
+   {
+    "titre": "Partie I",
+    "n": 154
+   },
+   {
+    "titre": "Pouvoirs et capacités",
+    "n": 152
+   },
+   {
+    "titre": "Ennemis",
+    "n": 151
+   },
+   {
+    "titre": "Nouvelle Ère",
+    "n": 141
+   },
+   {
+    "titre": "Vue d'ensemble",
+    "n": 115
+   },
+   {
+    "titre": "Saga du Pays de Wano",
+    "n": 115
+   },
+   {
+    "titre": "Aperçu",
+    "n": 114
+   },
+   {
+    "titre": "Dragon Ball Z",
+    "n": 111
+   },
+   {
+    "titre": "Saga de Whole Cake Island",
+    "n": 93
+   },
+   {
+    "titre": "Apparitions dans d'autres médias",
+    "n": 91
+   },
+   {
+    "titre": "Famille",
+    "n": 86
+   },
+   {
+    "titre": "Capacités physiques",
+    "n": 84
+   },
+   {
+    "titre": "Saga de la Guerre au Sommet",
+    "n": 82
+   },
+   {
+    "titre": "Techniques et capacités spéciales",
+    "n": 79
+   },
+   {
+    "titre": "Armes",
+    "n": 77
+   },
+   {
+    "titre": "Super Dragon Ball Heroes",
+    "n": 76
+   },
+   {
+    "titre": "Différences entre l'anime et le manga",
+    "n": 75
+   },
+   {
+    "titre": "Saga de Dressrosa",
+    "n": 73
+   },
+   {
+    "titre": "Puissance",
+    "n": 72
+   },
+   {
+    "titre": "Apparitions cinématographiques",
+    "n": 72
+   },
+   {
+    "titre": "Techniques",
+    "n": 71
+   },
+   {
+    "titre": "Dragon Ball",
+    "n": 67
+   },
+   {
+    "titre": "Citations",
+    "n": 66
+   },
+   {
+    "titre": "Zanpakutō",
+    "n": 66
+   }
+  ]
+ },
+ "vocabulaireExtraitDuCorpus": [
+  "Apparence",
+  "Personnalité",
+  "Histoire",
+  "Capacités",
+  "Anecdotes",
+  "Capacités et pouvoirs",
+  "Contexte",
+  "Relations",
+  "Intrigue",
+  "Passé",
+  "Biographie",
+  "Apparitions dans les jeux vidéo",
+  "Utilisation",
+  "Partie II",
+  "Dragon Ball Super",
+  "Ninjutsu",
+  "Partie I",
+  "Pouvoirs et capacités",
+  "Ennemis",
+  "Nouvelle Ère",
+  "Vue d'ensemble",
+  "Saga du Pays de Wano",
+  "Aperçu",
+  "Dragon Ball Z",
+  "Saga de Whole Cake Island",
+  "Apparitions dans d'autres médias",
+  "Famille",
+  "Capacités physiques",
+  "Saga de la Guerre au Sommet",
+  "Techniques et capacités spéciales",
+  "Armes",
+  "Super Dragon Ball Heroes",
+  "Différences entre l'anime et le manga",
+  "Saga de Dressrosa",
+  "Puissance",
+  "Apparitions cinématographiques",
+  "Techniques",
+  "Dragon Ball",
+  "Citations",
+  "Zanpakutō"
+ ],
+ "articulations": {
+  "surLesSansDossierRiches": {
+   "fiches": 52,
+   "avecMarqueurInline": 4,
+   "avecSautDeLigne": 0,
+   "avecDoubleSaut": 0,
+   "avecNumerotation": 0,
+   "avecRuptureDeTemps": 14,
+   "avecDeuxRupturesOuPlus": 9
+  },
+  "surTousLesSansDossierAvecTexte": {
+   "fiches": 2559,
+   "avecMarqueurInline": 23,
+   "avecSautDeLigne": 0,
+   "avecDoubleSaut": 0,
+   "avecNumerotation": 0,
+   "avecRuptureDeTemps": 62,
+   "avecDeuxRupturesOuPlus": 21
+  },
+  "temoinFichesAvecDossierEtDescFrSup900": {
+   "fiches": 492,
+   "avecMarqueurInline": 57,
+   "avecSautDeLigne": 0,
+   "avecDoubleSaut": 0,
+   "avecNumerotation": 0,
+   "avecRuptureDeTemps": 190,
+   "avecDeuxRupturesOuPlus": 99
+  }
+ },
+ "exemplesDeMarqueurs": [
+  {
+   "slug": "ilforte-grantz",
+   "name": "Ilforte Grantz",
+   "type": "character",
+   "universe": "Bleach",
+   "longueur": 1685,
+   "marqueursInline": [
+    {
+     "libelle": "Histoire",
+     "position": 88,
+     "preuve": "Signe du zodiaque : Cancer Taille : 185 cm Poids : 67 kg I. Histoire Ilforte était un Menos de classe Gillian, des années avant qu'Aizen ne prenne le "
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 1,
+   "rupturesDeTemps": 1,
+   "preuvesDeTemps": [
+    "Après un temps de chasse et de prédation de Hollows, Ilforte et les autres réalisent que leur développement s'est arrêté après avoir mangé plus de 3 000 Hollows"
+   ]
+  },
+  {
+   "slug": "izaemon-toudou",
+   "name": "Izaemon Toudou",
+   "type": "character",
+   "universe": "Bleach",
+   "longueur": 1491,
+   "marqueursInline": [
+    {
+     "libelle": "Apparence",
+     "position": 132,
+     "preuve": " du Gotei 13 et servait sous son capitaine Kensei Muguruma. Apparence : Tōdō porte ses cheveux noirs en une haute queue de cheval et arbore une sorte "
+    },
+    {
+     "libelle": "Histoire",
+     "position": 452,
+     "preuve": "e qu'il porte par-dessus, avec un col montant jusqu'au cou. Histoire : arc « Turn Back the Pendulum ». Tōdō fut d'abord présenté lorsque Kensei Muguru"
+    },
+    {
+     "libelle": "Apparence",
+     "position": 132,
+     "preuve": " du Gotei 13 et servait sous son capitaine Kensei Muguruma. Apparence : Tōdō porte ses cheveux noirs en une haute queue de cheval et arbore une sorte "
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": []
+  },
+  {
+   "slug": "ruzaburou-enkougawa",
+   "name": "Ruzaburou Enkougawa",
+   "type": "character",
+   "universe": "Bleach",
+   "longueur": 988,
+   "marqueursInline": [
+    {
+     "libelle": "Aperçu",
+     "position": 166,
+     "preuve": "lusif à l'anime introduit durant la Conspiration Kasumiōji. Aperçu : C'est un homme silencieux et de forte carrure avec une petite crête (mohawk) en f"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": []
+  },
+  {
+   "slug": "soi-fon",
+   "name": "Soi Fon",
+   "type": "character",
+   "universe": "Bleach",
+   "longueur": 1578,
+   "marqueursInline": [
+    {
+     "libelle": "Zanpakutō",
+     "position": 216,
+     "preuve": "les ; « la Force de Répression » dans le doublage anglais). Zanpakutō : Suzumebachi. Commande du Shikai : « Jinteki Shakusetsu ». Bankai : Jakuhō Raik"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": []
+  }
+ ],
+ "vingtCasALire": [
+  {
+   "slug": "takigakure",
+   "name": "Takigakure",
+   "type": "place",
+   "universe": "Naruto",
+   "longueur": 508,
+   "marqueursInline": [
+    {
+     "libelle": "Son histoire",
+     "position": 359,
+     "preuve": ", Chōmei, scellé en Fū avant son extraction par l'Akatsuki. Son histoire est marquée par la trahison de Kakuzu, puni pour un échec missionnaire puis d"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Takigakure est un village shinobi situé dans un pays non nommé, reconnu pour sa résistance aux invasions et sa production cyclique d'Eau du Héros, un breuvage amplifiant temporairement le chakra au prix d'un risque mortel. Il abrite l'un des seuls démons à queues extérieurs aux cinq grandes nations, Chōmei, scellé en Fū avant son extraction par l'Akatsuki. Son histoire est marquée par la trahison de Kakuzu, puni pour un échec missionnaire puis devenu criminel après avoir massacré les anciens du village."
+  },
+  {
+   "slug": "jin-kaminari",
+   "name": "Jin Kaminari",
+   "type": "character",
+   "universe": "Naruto",
+   "longueur": 435,
+   "marqueursInline": [
+    {
+     "libelle": "Apparence",
+     "position": 181,
+     "preuve": "to Uzumaki au Septième Hokage dans la salle d'entraînement. Son apparence se distingue par une mèche sombre tombant sur son front et un bandana bleu p"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Genin de Konohagakure durant l'ère nouvelle, Jin Kaminari observe les combats avec intérêt, notamment celui opposant Boruto Uzumaki au Septième Hokage dans la salle d'entraînement. Son apparence se distingue par une mèche sombre tombant sur son front et un bandana bleu porté en serre-tête. Il remporte un concours de création de personnages organisé pour le manga *Boruto*, intégré officiellement au récit aux côtés d'autres lauréats."
+  },
+  {
+   "slug": "uzushiogakure",
+   "name": "Uzushiogakure",
+   "type": "place",
+   "universe": "Naruto",
+   "longueur": 437,
+   "marqueursInline": [
+    {
+     "libelle": "Ses capacités",
+     "position": 150,
+     "preuve": "eptionnelle de ses habitants et son expertise en fūinjutsu. Ses techniques, comme le Sceau des Quatre Symboles, lui valurent une renommée redoutée en "
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Uzushiogakure est le village shinobi du Pays des Tourbillons, réputé pour la longévité exceptionnelle de ses habitants et son expertise en fūinjutsu. Ses techniques, comme le Sceau des Quatre Symboles, lui valurent une renommée redoutée en temps de guerre, entraînant sa destruction par des villages rivaux avant l’exil de Kushina Uzumaki. Les survivants de sa chute se dispersèrent à travers le monde pour échapper à leurs persécuteurs."
+  },
+  {
+   "slug": "dai-kaioshin",
+   "name": "Dai Kaioshin",
+   "type": "character",
+   "universe": "Dragon Ball",
+   "longueur": 374,
+   "marqueursInline": [
+    {
+     "libelle": "Son histoire",
+     "position": 210,
+     "preuve": "sur l'univers tout entier avant que la série ne se déroule. Son histoire est racontée dans le flash-back du Kaiōshin de l'Est ; dans le manga, il n'ap"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Dai Kaiōshin (大界王神 ; litt. « Grand Dieu-Roi des Mondes »), ou Daikaioh dans le doublage FUNimation, est le plus élevé de tous les Kaiōshin et régnait sur l'univers tout entier avant que la série ne se déroule. Son histoire est racontée dans le flash-back du Kaiōshin de l'Est ; dans le manga, il n'apparaît que sur une seule case, mais l'anime développe davantage son passé."
+  },
+  {
+   "slug": "kohari-umino",
+   "name": "Kohari Umino",
+   "type": "character",
+   "universe": "Naruto",
+   "longueur": 535,
+   "marqueursInline": [
+    {
+     "libelle": "Famille",
+     "position": 80,
+     "preuve": " : décédée. Affiliation : Konohagakure. Rang ninja : Jônin. Famille : Iruka Umino (fils), Ikkaku Umino (époux). Kohari Umino était une kunoichi de Kon"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Âge : 45 ans. Statut : décédée. Affiliation : Konohagakure. Rang ninja : Jônin. Famille : Iruka Umino (fils), Ikkaku Umino (époux). Kohari Umino était une kunoichi de Konohagakure et la mère d'Iruka. Durant l'attaque du Démon-Renard à Neuf Queues, elle reçut une grave blessure au dos, que son fils Iruka remarqua, ce qui le poussa à vouloir rester pour la protéger. Malgré ses blessures, elle se souciait davantage du bien-être d'Iruka. Son nom et celui de son époux furent ajoutés à la Pierre Commémorative de Konoha après leur mort."
+  },
+  {
+   "slug": "hato",
+   "name": "Hāto",
+   "type": "character",
+   "universe": "Naruto",
+   "longueur": 510,
+   "marqueursInline": [
+    {
+     "libelle": "Apparence",
+     "position": 389,
+     "preuve": "echnique destructrice capable d'anéantir un village entier. Son apparence reflète son statut, avec une tenue grise ornée du symbole attestant de sa lé"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Hāto est un shinobi du village de Tsuchigumo et membre du clan éponyme, décédé avant les événements principaux de la série. Ancien disciple d'En no Gyōja, il transmet son savoir à son fils Shiranami, qui le surpassera avant de le tuer lors de la Troisième Guerre ninja mondiale. Gardien du kinjutsu de son clan, il maîtrise une technique destructrice capable d'anéantir un village entier. Son apparence reflète son statut, avec une tenue grise ornée du symbole attestant de sa légitimité à utiliser ce pouvoir."
+  },
+  {
+   "slug": "inomatsu",
+   "name": "Inomatsu",
+   "type": "character",
+   "universe": "Naruto",
+   "longueur": 422,
+   "marqueursInline": [
+    {
+     "libelle": "Apparence",
+     "position": 216,
+     "preuve": "l de son maître aux côtés des autres membres de son équipe. Son apparence se distingue par une chevelure noire longue, des yeux sombres et de légères "
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Inomatsu est un genin du Village caché de Konoha, âgé de vingt-trois ans lors de la seconde partie du récit. Ancien élève d'Asuma Sarutobi, il porte le deuil de son maître aux côtés des autres membres de son équipe. Son apparence se distingue par une chevelure noire longue, des yeux sombres et de légères marques sous les paupières. Il assiste aux funérailles d'Asuma vêtu de l'habit traditionnel de cérémonie du village."
+  },
+  {
+   "slug": "genji",
+   "name": "Genji",
+   "type": "character",
+   "universe": "Naruto",
+   "longueur": 680,
+   "marqueursInline": [
+    {
+     "libelle": "Contexte",
+     "position": 136,
+     "preuve": ". Première apparition anime : Naruto Shippuden épisode 199. Contexte : Genji a consacré une grande partie de sa vie au développement de Kiri. Il détie"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Genji est un Ancien de Kiri. Première apparition manga : Naruto chapitre 454. Première apparition anime : Naruto Shippuden épisode 199. Contexte : Genji a consacré une grande partie de sa vie au développement de Kiri. Il détient au sein du village une importance comparable à celle du Mizukage, et on sollicite ses conseils pour les affaires les plus cruciales du village, ce qui fait de lui, en substance, la loi de Kiri. Dans l'anime, lorsque Tsunade envoya une invitation à Kiri pour participer à l'examen chûnin co-organisé par Konoha et Suna, Genji suggéra à Kiri de ne pas y prendre part, suivant le conseil d'Ao de se concentrer plutôt sur les affaires internes du village."
+  },
+  {
+   "slug": "ilforte-grantz",
+   "name": "Ilforte Grantz",
+   "type": "character",
+   "universe": "Bleach",
+   "longueur": 1685,
+   "marqueursInline": [
+    {
+     "libelle": "Histoire",
+     "position": 88,
+     "preuve": "Signe du zodiaque : Cancer Taille : 185 cm Poids : 67 kg I. Histoire Ilforte était un Menos de classe Gillian, des années avant qu'Aizen ne prenne le "
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 1,
+   "rupturesDeTemps": 1,
+   "preuvesDeTemps": [
+    "Après un temps de chasse et de prédation de Hollows, Ilforte et les autres réalisent que leur développement s'est arrêté après avoir mangé plus de 3 000 Hollows"
+   ],
+   "texteEntier": "Date de naissance : 22 juin Signe du zodiaque : Cancer Taille : 185 cm Poids : 67 kg I. Histoire Ilforte était un Menos de classe Gillian, des années avant qu'Aizen ne prenne le contrôle de Las Noches et n'atteigne le Hueco Mundo avec le Hōgyoku. Ilforte faisait partie du groupe de Gillians avancés mené par Shawlong Kūfang et entraîné par Edrad Liones, Nakim et D-Roy ; outre lui-même, Ilforte forma un partenariat pour dévorer autant de Hollows que possible et progresser dans la classe des Menos Grande, afin d'éviter de rétrograder sur une simple échelle évolutive en tant que Gillians. Après un temps, ils trouvèrent un puissant Adjuchas nommé Grimmjow Jaegerjaquez, en forme de panthère, qui parvint à blesser D-Roy avant même que celui-ci puisse attaquer ; Shawlong, en tant que meneur, s'agenouilla devant Grimmjow (suivi par tous les autres) et lui demanda d'être leur roi, afin que sous sa direction ils atteignent la classe la plus puissante des Menos, les Vasto Lorde. Après un temps de chasse et de prédation de Hollows, Ilforte et les autres réalisent que leur développement s'est arrêté après avoir mangé plus de 3 000 Hollows ; tous le constatent, et Ilforte note qu'après le millième Hollow leur puissance a cessé d'augmenter, sauf pour Grimmjow qui ne semble pas prêt à s'arrêter et méprise les lâches. Shawlong demande alors qu'ils cessent de manger pour figer leur développement et ainsi éviter de rétrograder sur l'échelle évolutive ; Grimmjow accepta. II. Première apparition dans Bleach Ilforte Grantz est un Arrancar sarcastique et efféminé aux longs cheveux blonds. Ce qui reste de son masque de Hollow est au sommet de sa tête et ressemble à un heaume brisé."
+  },
+  {
+   "slug": "dokan",
+   "name": "Dokan",
+   "type": "character",
+   "universe": "Naruto",
+   "longueur": 322,
+   "marqueursInline": [
+    {
+     "libelle": "Capacités",
+     "position": 176,
+     "preuve": ". Première apparition anime : Naruto Shippuden épisode 452. Capacités : durant son passage à l'Académie, Dokan faisait preuve d'une grande puissance p"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Dokan est un genin de Konoha. Il était élève à l'Académie à l'époque où Itachi Uchiwa y effectuait sa première année. Première apparition anime : Naruto Shippuden épisode 452. Capacités : durant son passage à l'Académie, Dokan faisait preuve d'une grande puissance physique, capable de fracasser le sol d'un coup de poing."
+  },
+  {
+   "slug": "izaemon-toudou",
+   "name": "Izaemon Toudou",
+   "type": "character",
+   "universe": "Bleach",
+   "longueur": 1491,
+   "marqueursInline": [
+    {
+     "libelle": "Apparence",
+     "position": 132,
+     "preuve": " du Gotei 13 et servait sous son capitaine Kensei Muguruma. Apparence : Tōdō porte ses cheveux noirs en une haute queue de cheval et arbore une sorte "
+    },
+    {
+     "libelle": "Histoire",
+     "position": 452,
+     "preuve": "e qu'il porte par-dessus, avec un col montant jusqu'au cou. Histoire : arc « Turn Back the Pendulum ». Tōdō fut d'abord présenté lorsque Kensei Muguru"
+    },
+    {
+     "libelle": "Apparence",
+     "position": 132,
+     "preuve": " du Gotei 13 et servait sous son capitaine Kensei Muguruma. Apparence : Tōdō porte ses cheveux noirs en une haute queue de cheval et arbore une sorte "
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Izaemon Tōdō (藤堂 為左衛門, Tōdō Izaemon) était le 6e siège de la 9e Division du Gotei 13 et servait sous son capitaine Kensei Muguruma. Apparence : Tōdō porte ses cheveux noirs en une haute queue de cheval et arbore une sorte de couvre-chef. Il affiche généralement un air sérieux et s'habille comme les autres membres de la 9e Division, avec l'uniforme standard des Shinigami et une veste blanche qu'il porte par-dessus, avec un col montant jusqu'au cou. Histoire : arc « Turn Back the Pendulum ». Tōdō fut d'abord présenté lorsque Kensei Muguruma et d'autres officiers gradés de la 9e Division furent envoyés enquêter sur la disparition d'habitants du Rukongai. Lui et les autres membres de la 9e Division furent vus sauvant un jeune Shūhei Hisagi et ses amis d'un Hollow. Après la bataille, ils apprirent de Mashiro Kuna (absente durant le combat) qu'il manquait aussi des Shinigami. Kensei fit le lien entre le nombre de shihakushō vides trouvés par Kuna et le nombre de membres d'une avant-garde envoyée enquêter plus tôt. Réalisant la gravité de la situation, Kensei envoya Tōdō chercher un chercheur de la 12e Division pour enquêter sur la possibilité qu'un agent pathogène en soit la cause. Tōdō parvint à pénétrer dans le labo de la 12e Division et à faire assigner par le capitaine Urahara la lieutenante Hiyori pour aider. Plus tard dans la nuit, il revint au camp avec Kaname Tōsen, faisant remarquer son retard tandis que Shinobu Eishima et Tōsen montaient la garde à l'extérieur..."
+  },
+  {
+   "slug": "dread-lion",
+   "name": "Dread Lion",
+   "type": "character",
+   "universe": "Naruto",
+   "longueur": 467,
+   "marqueursInline": [
+    {
+     "libelle": "Apparence",
+     "position": 376,
+     "preuve": "ne robe fauve et une crinière brune stylisée en dreadlocks. Son apparence et son comportement ont été comparés à ceux du Lion peureux du Magicien d'Oz"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Le Dread Lion est un lion géant dont l'empreinte de patte a été collectée par Itachi et Sasuke Uchiha pour leur Encyclopédie des Pattes. Lorsqu'il a été confronté aux frères Uchiha, le lion a montré un comportement craintif, se laissant aller à des supplications. Il est décrit comme un lion de grande taille, avec une robe fauve et une crinière brune stylisée en dreadlocks. Son apparence et son comportement ont été comparés à ceux du Lion peureux du Magicien d'Oz."
+  },
+  {
+   "slug": "ashisogi-jizo",
+   "name": "Ashisogi Jizo",
+   "type": "character",
+   "universe": "Bleach",
+   "longueur": 617,
+   "marqueursInline": [
+    {
+     "libelle": "Apparence",
+     "position": 344,
+     "preuve": "siège de la 12e Division sous les ordres de Kisuke Urahara. Son apparence distinctive, marquée par un maquillage blanc et noir, et ses changements de "
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Mayuri Kurotsuchi est le capitaine de la 12e Division du Gotei 13 et le deuxième président de l'Institut de Recherche des Shinigamis. Il a pour lieutenant actuel Akon, après avoir été précédemment associé à Nemu Kurotsuchi, sa création artificielle. Mayuri a également servi comme 3e siège de la 12e Division sous les ordres de Kisuke Urahara. Son apparence distinctive, marquée par un maquillage blanc et noir, et ses changements de style vestimentaire reflètent ses différentes phases de recherche et de développement, notamment lors de son entrée dans le Hueco Mundo et après les invasions de l'Aizen et de Yhwach."
+  },
+  {
+   "slug": "fruits",
+   "name": "Fruits",
+   "type": "place",
+   "universe": "One Piece",
+   "longueur": 438,
+   "marqueursInline": [
+    {
+     "libelle": "Apparence",
+     "position": 253,
+     "preuve": " principale, Punch Town, nommée d'après la boisson fruitée. Son apparence actuelle a été façonnée par les pouvoirs des Devil Fruits de Charlotte Linli"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "L'île Fruits, située dans le territoire de Totto Land, est l'une des 34 îles entourant l'île Whole Cake. Elle est dirigée par Charlotte Compote, ministre des Fruits, et est connue pour sa ville principale, Punch Town, nommée d'après la boisson fruitée. Son apparence actuelle a été façonnée par les pouvoirs des Devil Fruits de Charlotte Linlin et Streusen, respectivement le Soru Soru no Mi et le Kuku Kuku no Mi, il y a moins de 63 ans."
+  },
+  {
+   "slug": "univers-10",
+   "name": "Univers 10",
+   "type": "place",
+   "universe": "Dragon Ball",
+   "longueur": 413,
+   "marqueursInline": [
+    {
+     "libelle": "Son histoire",
+     "position": 272,
+     "preuve": "rs aux physiques surdéveloppés, symbolisés par son emblème. Son histoire est marquée par la trahison de Zamasu, ancien apprenti de Gowasu, avant d’êtr"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "L’Univers 10, jumelé à l’Univers 3, abrite des mortels au huitième niveau de puissance parmi les douze univers. Dirigé par le dieu de la destruction Rumsshi et le Kaïō Shin Gowasu, il se distingue par ses guerriers aux physiques surdéveloppés, symbolisés par son emblème. Son histoire est marquée par la trahison de Zamasu, ancien apprenti de Gowasu, avant d’être anéanti puis restauré lors du Tournoi du Pouvoir."
+  },
+  {
+   "slug": "univers-12",
+   "name": "Univers 12",
+   "type": "place",
+   "universe": "Dragon Ball",
+   "longueur": 424,
+   "marqueursInline": [
+    {
+     "libelle": "Son histoire",
+     "position": 255,
+     "preuve": "ns et la race des Glind, ainsi que le Monde Sacré des Kaio. Son histoire est marquée par la création du premier calendrier alternatif, issu d’une mach"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "L’Univers 12, jumelé à l’Univers 1, se distingue par son niveau mortel exceptionnel, le deuxième plus élevé du multivers. Exempté de la destruction lors du Tournoi du Pouvoir, il abrite des humains et la race des Glind, ainsi que le Monde Sacré des Kaio. Son histoire est marquée par la création du premier calendrier alternatif, issu d’une machine à voyager dans le temps conçue par une civilisation avancée de cet univers."
+  },
+  {
+   "slug": "ruzaburou-enkougawa",
+   "name": "Ruzaburou Enkougawa",
+   "type": "character",
+   "universe": "Bleach",
+   "longueur": 988,
+   "marqueursInline": [
+    {
+     "libelle": "Aperçu",
+     "position": 166,
+     "preuve": "lusif à l'anime introduit durant la Conspiration Kasumiōji. Aperçu : C'est un homme silencieux et de forte carrure avec une petite crête (mohawk) en f"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Ruzaburō Enkōgawa (猿猴川流三郎, Enkōgawa Rusaburō), communément appelé Enryū (猿龍, Enryū), est un personnage exclusif à l'anime introduit durant la Conspiration Kasumiōji. Aperçu : C'est un homme silencieux et de forte carrure avec une petite crête (mohawk) en forme d'éclair. Il porte un léger sous-vêtement sous son uniforme de Shinigami, ainsi qu'une paire de lunettes de soleil. D'après le générique d'ouverture, il semblerait doté d'une force surhumaine. Comme Kenryū, il est un serviteur de Rurichiyo Kasumiōji. Il prend sur lui de punir quiconque il estime manquer de respect à leur princesse. Il est possible qu'il soit muet, car on ne l'a jamais vu parler, même pour demander à Kenryū où se trouve Rurichiyo (il utilise des gestes comiques pour le demander, que Kenryū parvient à comprendre) ou pour libérer son Zanpakutō. Cependant, lors de l'attaque d'Amagai contre Yamamoto, on l'entend avoir une voix très aiguë, et il est clair, à son rougissement, qu'il est complexé par sa voix."
+  },
+  {
+   "slug": "unmo-samidare",
+   "name": "Unmo Samidare",
+   "type": "character",
+   "universe": "Naruto",
+   "longueur": 544,
+   "marqueursInline": [
+    {
+     "libelle": "Ses capacités",
+     "position": 343,
+     "preuve": "eux, portant l'uniforme standard des shinobi de Kirigakure. Ses capacités exactes sont inconnues, mais Yamato a affirmé qu'il n'était pas facile à vai"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Unmo Samidare était un jōnin de Kirigakure connu pour son animosité envers Konohagakure. Il a été considéré comme une menace potentielle par Root, ce qui a conduit à l'envoi de Sai pour l'assassiner. Unmo était décrit comme un homme aux yeux ronds et aux marques sombres autour des yeux, portant l'uniforme standard des shinobi de Kirigakure. Ses capacités exactes sont inconnues, mais Yamato a affirmé qu'il n'était pas facile à vaincre. Unmo a été introduit dans le carnet de bingo de Sai, où son nom apparaissait en haut à gauche de la page."
+  },
+  {
+   "slug": "kashu",
+   "name": "Kashu",
+   "type": "artifact",
+   "universe": "One Piece",
+   "longueur": 410,
+   "marqueursInline": [
+    {
+     "libelle": "Apparence",
+     "position": 204,
+     "preuve": "ant d'être remportée par Tashigi des Marines après un duel. Son apparence est peu détaillée, seuls son blade et son fourreau étant visibles dans le ma"
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Kashu est une épée légendaire de grade Skillful Grade, l'une des 50 épées de ce niveau. Elle a appartenu à l'agent des Baroque Works, Mr. 11, avant d'être remportée par Tashigi des Marines après un duel. Son apparence est peu détaillée, seuls son blade et son fourreau étant visibles dans le manga et l'anime. Kashu est la deuxième épée célèbre à être récupérée par Tashigi après avoir été prise à un criminel."
+  },
+  {
+   "slug": "terai",
+   "name": "Terai",
+   "type": "character",
+   "universe": "Naruto",
+   "longueur": 484,
+   "marqueursInline": [
+    {
+     "libelle": "Ses capacités",
+     "position": 406,
+     "preuve": "marques ressemblant à des sourcils et un nez de chat rouge. Ses capacités sont considérées comme égales à celles de Fū Yamanaka et Torune."
+    }
+   ],
+   "sautsSimples": 0,
+   "sautsDoubles": 0,
+   "numerotation": 0,
+   "rupturesDeTemps": 0,
+   "preuvesDeTemps": [],
+   "texteEntier": "Terai est un ancien membre de la faction Root de Konohagakure, qui recevait directement les ordres de Danzō Shimura. En tant que membre de Root, il a probablement été formé pour perdre ses émotions afin de mieux accomplir les missions. Terai est un shinobi très loyal qui suit toutes les ordres donnés par Danzō. Il porte un masque Anbu avec des marques ressemblant à des sourcils et un nez de chat rouge. Ses capacités sont considérées comme égales à celles de Fū Yamanaka et Torune."
+  }
+ ],
+ "regleResserree": {
+  "critere": "au moins DEUX libellés du vocabulaire en forme de titre (deux-points ou numéro romain)",
+  "gisementProuve": [
+   {
+    "slug": "izaemon-toudou",
+    "universe": "Bleach",
+    "longueur": 1491,
+    "titres": [
+     "Apparence :",
+     "Histoire :"
+    ],
+    "infobox": false
+   }
+  ],
+  "fichesSansDossierAInfoboxAplatie": 5
+ }
+}
