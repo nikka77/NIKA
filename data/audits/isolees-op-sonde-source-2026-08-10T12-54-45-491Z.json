@@ -1,0 +1,5539 @@
+{
+ "chantier": "sonde préalable — versant SOURCE des isolées One Piece",
+ "quand": "2026-08-10T12:54:54.731Z",
+ "ecritEnBase": false,
+ "hote": "onepiece.fandom.com",
+ "mesure": {
+  "fiches": 7654,
+  "aretes": 16788,
+  "isolees": 764,
+  "parUnivers": {
+   "JoJo's Bizarre Adventure": 49,
+   "Dragon Ball": 146,
+   "Bleach": 42,
+   "One Piece": 451,
+   "Hunter x Hunter": 22,
+   "Naruto": 39,
+   "Initial D": 5,
+   "Death Note": 10
+  },
+  "lotUnivers": 451,
+  "parType": {
+   "character": 275,
+   "artifact": 64,
+   "place": 81,
+   "status": 31
+  }
+ },
+ "aliasCuresDisponibles": 313,
+ "isoleesCouvertesParCure": 67,
+ "avecRomanName": 51,
+ "versantSource": {
+  "parNom": 191,
+  "parCure": 62,
+  "parRoman": 0,
+  "fragmentSeul": 12,
+  "aucune": 186
+ },
+ "introuvables": [
+  {
+   "nom": "Île Obscuria",
+   "slug": "kuraigana-island",
+   "type": "place"
+  },
+  {
+   "nom": "Navire-Cercueil",
+   "slug": "navire-cercueil",
+   "type": "artifact"
+  },
+  {
+   "nom": "Tokoyaki 8",
+   "slug": "tokoyaki-8",
+   "type": "artifact"
+  },
+  {
+   "nom": "Visio-Dial",
+   "slug": "visio-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Hydro-Dial",
+   "slug": "hydro-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Breath-Dial",
+   "slug": "breath-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Spéro-Dial",
+   "slug": "spero-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Eisen-Dial",
+   "slug": "eisen-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Heat-Dial",
+   "slug": "heat-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Flavor-Dial",
+   "slug": "flavor-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Flash-Dial",
+   "slug": "flash-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Flamme-Dial",
+   "slug": "flamme-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Jet-Dial",
+   "slug": "jet-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Lampe-Dial",
+   "slug": "lampe-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Reject-Dia",
+   "slug": "reject-dia",
+   "type": "artifact"
+  },
+  {
+   "nom": "Milky-Dial",
+   "slug": "milky-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Impact-Dial",
+   "slug": "impact-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Audio-Dial",
+   "slug": "audio-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Diial des Ténèbres",
+   "slug": "diial-des-tenebres",
+   "type": "artifact"
+  },
+  {
+   "nom": "Thunder-Dial",
+   "slug": "thunder-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Jet-Board",
+   "slug": "jet-board",
+   "type": "artifact"
+  },
+  {
+   "nom": "Jet Shoes",
+   "slug": "jet-shoes",
+   "type": "artifact"
+  },
+  {
+   "nom": "Dressrosa / Alliance Pirate",
+   "slug": "dressrosa-alliance-pirate",
+   "type": "status"
+  },
+  {
+   "nom": "Saga Finale",
+   "slug": "saga-finale",
+   "type": "status"
+  },
+  {
+   "nom": "Île Jaune d'Œuf",
+   "slug": "kimi",
+   "type": "place"
+  },
+  {
+   "nom": "Île Patate",
+   "slug": "potato-op",
+   "type": "place"
+  },
+  {
+   "nom": "Newkama Force #1",
+   "slug": "newkama-force-1",
+   "type": "character"
+  },
+  {
+   "nom": "Kendiyo Haritsu",
+   "slug": "kendiyo-haritsu",
+   "type": "character"
+  },
+  {
+   "nom": "Orenami Fan (O)",
+   "slug": "orenami-fan-o",
+   "type": "character"
+  },
+  {
+   "nom": "Bongou",
+   "slug": "bongou",
+   "type": "character"
+  },
+  {
+   "nom": "Dr. Fishbonen",
+   "slug": "dr-fishbonen",
+   "type": "character"
+  },
+  {
+   "nom": "Hongou",
+   "slug": "hongou",
+   "type": "character"
+  },
+  {
+   "nom": "Abellon",
+   "slug": "abellon",
+   "type": "character"
+  },
+  {
+   "nom": "Banzaburou",
+   "slug": "banzaburou",
+   "type": "character"
+  },
+  {
+   "nom": "Goen Jean",
+   "slug": "goen-jean",
+   "type": "character"
+  },
+  {
+   "nom": "Chou",
+   "slug": "chou",
+   "type": "character"
+  },
+  {
+   "nom": "Kaba Shinshi",
+   "slug": "kaba-shinshi",
+   "type": "character"
+  },
+  {
+   "nom": "Axe-Dial",
+   "slug": "axe-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "Kamijirou",
+   "slug": "kamijirou",
+   "type": "character"
+  },
+  {
+   "nom": "Contrôle-Dial",
+   "slug": "controle-dial",
+   "type": "artifact"
+  },
+  {
+   "nom": "King (500 Hostages)",
+   "slug": "king-500-hostages",
+   "type": "character"
+  },
+  {
+   "nom": "Futoru",
+   "slug": "futoru",
+   "type": "place"
+  },
+  {
+   "nom": "Burn-Blade",
+   "slug": "burn-blade",
+   "type": "artifact"
+  },
+  {
+   "nom": "Newkama Force #4",
+   "slug": "newkama-force-4",
+   "type": "character"
+  },
+  {
+   "nom": "Orenami Fan (V)",
+   "slug": "orenami-fan-v",
+   "type": "character"
+  },
+  {
+   "nom": "Alvida Pirate (S Tattoo)",
+   "slug": "alvida-pirate-s-tattoo",
+   "type": "character"
+  },
+  {
+   "nom": "Detamaruka Shin",
+   "slug": "detamaruka-shin",
+   "type": "character"
+  },
+  {
+   "nom": "L’équipage des Pirates Yes",
+   "slug": "l-equipage-des-pirates-yes",
+   "type": "status"
+  },
+  {
+   "nom": "Unit 55 Troop Leader",
+   "slug": "unit-55-troop-leader",
+   "type": "character"
+  },
+  {
+   "nom": "Île de Road Star",
+   "slug": "loadestar-island",
+   "type": "place"
+  },
+  {
+   "nom": "Royaume de Flevance",
+   "slug": "flevance-kingdom",
+   "type": "place"
+  },
+  {
+   "nom": "Sky-Arrows",
+   "slug": "sky-arrows",
+   "type": "artifact"
+  },
+  {
+   "nom": "Acrobatic Fuwas #1",
+   "slug": "acrobatic-fuwas-1",
+   "type": "character"
+  },
+  {
+   "nom": "Urbain-san",
+   "slug": "urbain-san",
+   "type": "character"
+  },
+  {
+   "nom": "Burn-Bazooka",
+   "slug": "burn-bazooka",
+   "type": "artifact"
+  },
+  {
+   "nom": "Nouveau Marineford",
+   "slug": "new-marineford",
+   "type": "place"
+  },
+  {
+   "nom": "Banbaji",
+   "slug": "banbaji",
+   "type": "character"
+  },
+  {
+   "nom": "Barto Club's Grandma",
+   "slug": "barto-club-s-grandma",
+   "type": "character"
+  },
+  {
+   "nom": "Bon Chari Seller",
+   "slug": "bon-chari-seller",
+   "type": "character"
+  },
+  {
+   "nom": "Kamyu's Fellow Boxer",
+   "slug": "kamyu-s-fellow-boxer",
+   "type": "character"
+  },
+  {
+   "nom": "Bungou",
+   "slug": "bungou",
+   "type": "character"
+  },
+  {
+   "nom": "Biscuits",
+   "slug": "biscuits",
+   "type": "place"
+  },
+  {
+   "nom": "Biyo's Father",
+   "slug": "biyo-s-father",
+   "type": "character"
+  },
+  {
+   "nom": "Ice",
+   "slug": "ice",
+   "type": "place"
+  },
+  {
+   "nom": "Île 100 %",
+   "slug": "100-island",
+   "type": "place"
+  },
+  {
+   "nom": "Gu",
+   "slug": "gu",
+   "type": "character"
+  },
+  {
+   "nom": "Margarine",
+   "slug": "margarine",
+   "type": "place"
+  },
+  {
+   "nom": "Yuu's Father",
+   "slug": "yuu-s-father",
+   "type": "character"
+  },
+  {
+   "nom": "Île Gelée",
+   "slug": "jelly",
+   "type": "place"
+  },
+  {
+   "nom": "Black Cat Pirate (Hammer)",
+   "slug": "black-cat-pirate-hammer",
+   "type": "character"
+  },
+  {
+   "nom": "Tsunagorou",
+   "slug": "tsunagorou",
+   "type": "character"
+  },
+  {
+   "nom": "Milk",
+   "slug": "milk",
+   "type": "place"
+  },
+  {
+   "nom": "Cook Shinpachi",
+   "slug": "cook-shinpachi",
+   "type": "character"
+  },
+  {
+   "nom": "Decalvan Brother (A)",
+   "slug": "decalvan-brother-a",
+   "type": "character"
+  },
+  {
+   "nom": "Rosy Life Rider (Headband)",
+   "slug": "rosy-life-rider-headband",
+   "type": "character"
+  },
+  {
+   "nom": "Kamyu's Fellow Wrestler",
+   "slug": "kamyu-s-fellow-wrestler",
+   "type": "character"
+  },
+  {
+   "nom": "Kojurou",
+   "slug": "kojurou",
+   "type": "character"
+  },
+  {
+   "nom": "Jack-in-the-Box",
+   "slug": "jack-in-the-box",
+   "type": "character"
+  },
+  {
+   "nom": "Pirate au foyer",
+   "slug": "pirate-au-foyer",
+   "type": "status"
+  },
+  {
+   "nom": "Village caché des nuages",
+   "slug": "hidden-cloud-village",
+   "type": "place"
+  },
+  {
+   "nom": "Île Pucci",
+   "slug": "pucci-island",
+   "type": "place"
+  },
+  {
+   "nom": "Kamyu's Fellow Swordsman",
+   "slug": "kamyu-s-fellow-swordsman",
+   "type": "character"
+  },
+  {
+   "nom": "Lami Trafalgar",
+   "slug": "lami-trafalgar",
+   "type": "character"
+  },
+  {
+   "nom": "Royaume de Centaurea",
+   "slug": "centaurea-kingdom",
+   "type": "place"
+  },
+  {
+   "nom": "Colline aux fleurs",
+   "slug": "flower-hill",
+   "type": "place"
+  },
+  {
+   "nom": "Tsujigirou Tooyama",
+   "slug": "tsujigirou-tooyama",
+   "type": "character"
+  },
+  {
+   "nom": "L’équipage des Pirates Schneider",
+   "slug": "l-equipage-des-pirates-schneider",
+   "type": "status"
+  },
+  {
+   "nom": "Île d'Hiver",
+   "slug": "winter-island",
+   "type": "place"
+  },
+  {
+   "nom": "Buggy Ball Attendant",
+   "slug": "buggy-ball-attendant",
+   "type": "character"
+  },
+  {
+   "nom": "Unique",
+   "slug": "unique",
+   "type": "place"
+  },
+  {
+   "nom": "Look-out of the Lady Mary",
+   "slug": "look-out-of-the-lady-mary",
+   "type": "character"
+  },
+  {
+   "nom": "Linlin's Mother",
+   "slug": "linlin-s-mother",
+   "type": "character"
+  },
+  {
+   "nom": "Matoryou Hime-tachi",
+   "slug": "matoryou-hime-tachi",
+   "type": "character"
+  },
+  {
+   "nom": "Notice Town",
+   "slug": "notice-town",
+   "type": "place"
+  },
+  {
+   "nom": "Hou-ban Taichou",
+   "slug": "hou-ban-taichou",
+   "type": "character"
+  },
+  {
+   "nom": "Piepie",
+   "slug": "piepie",
+   "type": "place"
+  },
+  {
+   "nom": "Topping",
+   "slug": "topping",
+   "type": "place"
+  },
+  {
+   "nom": "Epée d'Ohm",
+   "slug": "epee-d-ohm",
+   "type": "artifact"
+  },
+  {
+   "nom": "L’équipage de Diez Barrels",
+   "slug": "l-equipage-de-diez-barrels",
+   "type": "status"
+  },
+  {
+   "nom": "Forêt de la Séduction",
+   "slug": "seducing-woods",
+   "type": "place"
+  },
+  {
+   "nom": "Newkama Force #2",
+   "slug": "newkama-force-2",
+   "type": "character"
+  },
+  {
+   "nom": "Announcer Ikkaku",
+   "slug": "announcer-ikkaku",
+   "type": "character"
+  },
+  {
+   "nom": "Poripori",
+   "slug": "poripori",
+   "type": "place"
+  },
+  {
+   "nom": "Ohana",
+   "slug": "ohana",
+   "type": "character"
+  },
+  {
+   "nom": "Homing's Wife",
+   "slug": "homing-s-wife",
+   "type": "character"
+  },
+  {
+   "nom": "Yakigashi",
+   "slug": "yakigashi",
+   "type": "place"
+  },
+  {
+   "nom": "Kagerou",
+   "slug": "kagerou",
+   "type": "character"
+  },
+  {
+   "nom": "Pastor Zombie",
+   "slug": "pastor-zombie",
+   "type": "character"
+  },
+  {
+   "nom": "Pastor Zombie's Assistant",
+   "slug": "pastor-zombie-s-assistant",
+   "type": "character"
+  },
+  {
+   "nom": "Ville du Château",
+   "slug": "castle-town",
+   "type": "place"
+  },
+  {
+   "nom": "Village des Aînés",
+   "slug": "elderly-village",
+   "type": "place"
+  },
+  {
+   "nom": "Église",
+   "slug": "church",
+   "type": "place"
+  },
+  {
+   "nom": "Red Hair Pirate (Chain)",
+   "slug": "red-hair-pirate-chain",
+   "type": "character"
+  },
+  {
+   "nom": "Doran's Father",
+   "slug": "doran-s-father",
+   "type": "character"
+  },
+  {
+   "nom": "Abi's Mother",
+   "slug": "abi-s-mother",
+   "type": "character"
+  },
+  {
+   "nom": "Rokuroshi's' Assistant",
+   "slug": "rokuroshi-s-assistant",
+   "type": "character"
+  },
+  {
+   "nom": "Pirate Captain (500 Hostages)",
+   "slug": "pirate-captain-500-hostages",
+   "type": "character"
+  },
+  {
+   "nom": "Rosy Life Rider (Blond)",
+   "slug": "rosy-life-rider-blond",
+   "type": "character"
+  },
+  {
+   "nom": "G-8 Head Custodian",
+   "slug": "g-8-head-custodian",
+   "type": "character"
+  },
+  {
+   "nom": "Shopkeeper Hanji",
+   "slug": "shopkeeper-hanji",
+   "type": "character"
+  },
+  {
+   "nom": "Short Vassal (500 Hostages)",
+   "slug": "short-vassal-500-hostages",
+   "type": "character"
+  },
+  {
+   "nom": "Sind's Father",
+   "slug": "sind-s-father",
+   "type": "character"
+  },
+  {
+   "nom": "Cook Billy",
+   "slug": "cook-billy",
+   "type": "character"
+  },
+  {
+   "nom": "Dancer on the Lady Mary",
+   "slug": "dancer-on-the-lady-mary",
+   "type": "character"
+  },
+  {
+   "nom": "Deigorou",
+   "slug": "deigorou",
+   "type": "character"
+  },
+  {
+   "nom": "Decalvan Brother (B)",
+   "slug": "decalvan-brother-b",
+   "type": "character"
+  },
+  {
+   "nom": "Superhuman Domingos #1",
+   "slug": "superhuman-domingos-1",
+   "type": "character"
+  },
+  {
+   "nom": "Superhuman Domingos #3",
+   "slug": "superhuman-domingos-3",
+   "type": "character"
+  },
+  {
+   "nom": "Tall Vassal (500 Hostages)",
+   "slug": "tall-vassal-500-hostages",
+   "type": "character"
+  },
+  {
+   "nom": "Dream's Mother",
+   "slug": "dream-s-mother",
+   "type": "character"
+  },
+  {
+   "nom": "Tabuhachirou",
+   "slug": "tabuhachirou",
+   "type": "character"
+  },
+  {
+   "nom": "Monnosuke Tsurue",
+   "slug": "monnosuke-tsurue",
+   "type": "character"
+  },
+  {
+   "nom": "Foxy Pirates' Referee",
+   "slug": "foxy-pirates-referee",
+   "type": "character"
+  },
+  {
+   "nom": "G-8 Marine Officer (Blond)",
+   "slug": "g-8-marine-officer-blond",
+   "type": "character"
+  },
+  {
+   "nom": "Shitemanna Ishigo",
+   "slug": "shitemanna-ishigo",
+   "type": "character"
+  },
+  {
+   "nom": "Furishirou Waruno",
+   "slug": "furishirou-waruno",
+   "type": "character"
+  },
+  {
+   "nom": "L’équipage des Pirates à la Moustache",
+   "slug": "l-equipage-des-pirates-a-la-moustache",
+   "type": "status"
+  },
+  {
+   "nom": "Newkama Force #5",
+   "slug": "newkama-force-5",
+   "type": "character"
+  },
+  {
+   "nom": "Juujirou",
+   "slug": "juujirou",
+   "type": "character"
+  },
+  {
+   "nom": "Kureyo Kairo",
+   "slug": "kureyo-kairo",
+   "type": "character"
+  },
+  {
+   "nom": "Goode",
+   "slug": "goode",
+   "type": "character"
+  },
+  {
+   "nom": "L’équipage du Capitaine Usopp",
+   "slug": "l-equipage-du-capitaine-usopp",
+   "type": "status"
+  },
+  {
+   "nom": "L’équipage ASL",
+   "slug": "l-equipage-asl",
+   "type": "status"
+  },
+  {
+   "nom": "L’équipage des Candys",
+   "slug": "l-equipage-des-candys",
+   "type": "status"
+  },
+  {
+   "nom": "l’équipage de Ganzack",
+   "slug": "l-equipage-de-ganzack",
+   "type": "status"
+  },
+  {
+   "nom": "L’équipage Amigo",
+   "slug": "l-equipage-amigo",
+   "type": "status"
+  },
+  {
+   "nom": "Isshi 1",
+   "slug": "isshi-1",
+   "type": "character"
+  },
+  {
+   "nom": "Koala Zombie",
+   "slug": "koala-zombie",
+   "type": "character"
+  },
+  {
+   "nom": "Linlin's Father",
+   "slug": "linlin-s-father",
+   "type": "character"
+  },
+  {
+   "nom": "L’équipage des Pirates Treasure",
+   "slug": "l-equipage-des-pirates-treasure",
+   "type": "status"
+  },
+  {
+   "nom": "Mayor of the Desert Village",
+   "slug": "mayor-of-the-desert-village",
+   "type": "character"
+  },
+  {
+   "nom": "18th Fleet Gallery Head Chef",
+   "slug": "18th-fleet-gallery-head-chef",
+   "type": "character"
+  },
+  {
+   "nom": "Sally Nantokanette",
+   "slug": "sally-nantokanette",
+   "type": "character"
+  },
+  {
+   "nom": "Orenami Fan (L)",
+   "slug": "orenami-fan-l",
+   "type": "character"
+  },
+  {
+   "nom": "Oyame",
+   "slug": "oyame",
+   "type": "character"
+  },
+  {
+   "nom": "Frères Voleurs",
+   "slug": "freres-voleurs",
+   "type": "status"
+  },
+  {
+   "nom": "Equipage de Bigalo",
+   "slug": "equipage-de-bigalo",
+   "type": "status"
+  },
+  {
+   "nom": "Equipage de Pandaman",
+   "slug": "equipage-de-pandaman",
+   "type": "status"
+  },
+  {
+   "nom": "Law & Lami's Father",
+   "slug": "law-lami-s-father",
+   "type": "character"
+  },
+  {
+   "nom": "Sanshita",
+   "slug": "sanshita",
+   "type": "character"
+  },
+  {
+   "nom": "Esta's Boyfriend",
+   "slug": "esta-s-boyfriend",
+   "type": "character"
+  },
+  {
+   "nom": "Tailor Zombie",
+   "slug": "tailor-zombie",
+   "type": "character"
+  },
+  {
+   "nom": "Tall Risky Brother",
+   "slug": "tall-risky-brother",
+   "type": "character"
+  },
+  {
+   "nom": "Tightrope Walking Funan Bros (Ginger)",
+   "slug": "tightrope-walking-funan-bros-ginger",
+   "type": "character"
+  },
+  {
+   "nom": "Joe Bunny",
+   "slug": "joe-bunny",
+   "type": "character"
+  },
+  {
+   "nom": "Hobbit",
+   "slug": "hobbit",
+   "type": "artifact"
+  },
+  {
+   "nom": "Kanishitoru Sukoshiba",
+   "slug": "kanishitoru-sukoshiba",
+   "type": "character"
+  },
+  {
+   "nom": "Buggy Pirate (Victim)",
+   "slug": "buggy-pirate-victim",
+   "type": "character"
+  },
+  {
+   "nom": "Tall Marley Brother",
+   "slug": "tall-marley-brother",
+   "type": "character"
+  },
+  {
+   "nom": "Bateau de Pandaman",
+   "slug": "bateau-de-pandaman",
+   "type": "artifact"
+  },
+  {
+   "nom": "Tête-de-Maquereau",
+   "slug": "tete-de-maquereau",
+   "type": "artifact"
+  },
+  {
+   "nom": "Kanzaburou Akudai",
+   "slug": "kanzaburou-akudai",
+   "type": "character"
+  },
+  {
+   "nom": "Lina and Sayo's Father",
+   "slug": "lina-and-sayo-s-father",
+   "type": "character"
+  },
+  {
+   "nom": "Riley Brother #2",
+   "slug": "riley-brother-2",
+   "type": "character"
+  },
+  {
+   "nom": "Newkama Force #6",
+   "slug": "newkama-force-6",
+   "type": "character"
+  },
+  {
+   "nom": "Riley Brother #1",
+   "slug": "riley-brother-1",
+   "type": "character"
+  },
+  {
+   "nom": "Short Marley Brother",
+   "slug": "short-marley-brother",
+   "type": "character"
+  },
+  {
+   "nom": "Rotund Risky Brother",
+   "slug": "rotund-risky-brother",
+   "type": "character"
+  },
+  {
+   "nom": "G-8 Sous Chef",
+   "slug": "g-8-sous-chef",
+   "type": "character"
+  },
+  {
+   "nom": "G-8 Marine Officer (Gray)",
+   "slug": "g-8-marine-officer-gray",
+   "type": "character"
+  },
+  {
+   "nom": "Chintarou Giro",
+   "slug": "chintarou-giro",
+   "type": "character"
+  },
+  {
+   "nom": "Newkama Force #3",
+   "slug": "newkama-force-3",
+   "type": "character"
+  },
+  {
+   "nom": "Alvida Pirate (Horned)",
+   "slug": "alvida-pirate-horned",
+   "type": "character"
+  },
+  {
+   "nom": "Hockera Achino",
+   "slug": "hockera-achino",
+   "type": "character"
+  },
+  {
+   "nom": "Ruskaina",
+   "slug": "rusukaina",
+   "type": "place"
+  },
+  {
+   "nom": "Village de Kuen",
+   "slug": "kuen-village",
+   "type": "place"
+  }
+ ],
+ "detail": [
+  {
+   "nom": "Giberson",
+   "slug": "giberson",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Giberson",
+     "titreRendu": "Giberson",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Yamaoroshi",
+   "slug": "yamaoroshi",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Yamaoroshi",
+     "titreRendu": "Yamaoroshi",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Obscuria",
+   "slug": "kuraigana-island",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Tokijiro",
+   "slug": "tokijiro",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Tokijiro",
+     "titreRendu": "Tokijiro",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Yuu",
+   "slug": "yuu",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Yu",
+     "titreRendu": "Yu",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Navire-Cercueil",
+   "slug": "navire-cercueil",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Uholisia",
+   "slug": "uholisia",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Uholisia",
+     "titreRendu": "Uholisia",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Tokoyaki 8",
+   "slug": "tokoyaki-8",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Sandai Kitetsu",
+   "slug": "sandai-kitetsu",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Sandai Kitetsu",
+     "titreRendu": "Sandai Kitetsu",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Ultraking",
+   "slug": "ultraking",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Ultraking",
+     "titreRendu": "Ultraking",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Jibuemon",
+   "slug": "jibuemon",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Jibuemon",
+     "titreRendu": "Jibuemon",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "L’équipage des Acumates",
+   "slug": "l-equipage-des-acumates",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Acumate Pirates",
+     "titreRendu": "Acumate Pirates",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Bateau à Dials",
+   "slug": "bateau-a-dials",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Dial Boat",
+     "titreRendu": "Dial Boat",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Visio-Dial",
+   "slug": "visio-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Hydro-Dial",
+   "slug": "hydro-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Pythagoras",
+   "slug": "pythagoras",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Pythagoras",
+     "titreRendu": "Vegapunk/Pythagoras",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Furrari",
+   "slug": "furrari",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Furrari",
+     "titreRendu": "Furrari",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Breath-Dial",
+   "slug": "breath-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Spéro-Dial",
+   "slug": "spero-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Konpira",
+   "slug": "konpira",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Konpira",
+     "titreRendu": "Gion",
+     "fragment": "Gion#Weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Yonka",
+   "slug": "yonka",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Yonka",
+     "titreRendu": "Medaka Mermaid Quintuplets",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Eisen-Dial",
+   "slug": "eisen-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "L’équipage des Flèches Rouges",
+   "slug": "l-equipage-des-fleches-rouges",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Red Arrows Pirates",
+     "titreRendu": "Red Arrows Pirates",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Heat-Dial",
+   "slug": "heat-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Flavor-Dial",
+   "slug": "flavor-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Flash-Dial",
+   "slug": "flash-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Flamme-Dial",
+   "slug": "flamme-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Jet-Dial",
+   "slug": "jet-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Kamonegi",
+   "slug": "kamonegi",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kamonegi",
+     "titreRendu": "Kamonegi",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Lampe-Dial",
+   "slug": "lampe-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Reject-Dia",
+   "slug": "reject-dia",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Milky-Dial",
+   "slug": "milky-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Impact-Dial",
+   "slug": "impact-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Audio-Dial",
+   "slug": "audio-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Diial des Ténèbres",
+   "slug": "diial-des-tenebres",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Thunder-Dial",
+   "slug": "thunder-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Jet-Board",
+   "slug": "jet-board",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Jet Shoes",
+   "slug": "jet-shoes",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Genrin",
+   "slug": "genrin",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Genrin",
+     "titreRendu": "Genrin",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Quatres Empereurs",
+   "slug": "quatres-empereurs",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Four Emperors",
+     "titreRendu": "Four Emperors",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Dressrosa / Alliance Pirate",
+   "slug": "dressrosa-alliance-pirate",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "Saga Finale",
+   "slug": "saga-finale",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "Herb",
+   "slug": "herb",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Herb",
+     "titreRendu": "Herb",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "L’équipage de Bayan",
+   "slug": "l-equipage-de-bayan",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Bayan Pirates",
+     "titreRendu": "Bayan Pirates",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Jaune d'Œuf",
+   "slug": "kimi",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Île Patate",
+   "slug": "potato-op",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Iwatobi",
+   "slug": "iwatobi",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Iwatobi",
+     "titreRendu": "Iwatobi",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Battle Franky",
+   "slug": "battle-franky",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Battle Franky",
+     "titreRendu": "Battle Frankies",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Newkama Force #1",
+   "slug": "newkama-force-1",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Kendiyo Haritsu",
+   "slug": "kendiyo-haritsu",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Luigia",
+   "slug": "luigia",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Luigia",
+     "titreRendu": "Luigia",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Orenami Fan (O)",
+   "slug": "orenami-fan-o",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Bongou",
+   "slug": "bongou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Fabre",
+   "slug": "fabre",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Fabre",
+     "titreRendu": "Fabre",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Jiro",
+   "slug": "jiro",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Jiro",
+     "titreRendu": "Jiro",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Dr. Fishbonen",
+   "slug": "dr-fishbonen",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Hongou",
+   "slug": "hongou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Jigra",
+   "slug": "jigra",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Jigra",
+     "titreRendu": "Jigra",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Abellon",
+   "slug": "abellon",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "kogarashi",
+   "slug": "kogarashi",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "kogarashi",
+     "titreRendu": "Oto and Kogarashi",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Jiron",
+   "slug": "jiron",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Jiron",
+     "titreRendu": "Jiron",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Banzaburou",
+   "slug": "banzaburou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Inoichibannosuke",
+   "slug": "inoichibannosuke",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Inoichibannosuke",
+     "titreRendu": "Inoichibannosuke",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Shin Jaiya",
+   "slug": "shin-jaiya",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Shin Jaiya",
+     "titreRendu": "Shin Jaiya",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Sennorikyuru",
+   "slug": "sennorikyuru",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Sennorikyuru",
+     "titreRendu": "Sennorikyuru",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Goen Jean",
+   "slug": "goen-jean",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Chou",
+   "slug": "chou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Yuya",
+   "slug": "yuya",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Yuya",
+     "titreRendu": "Yuya",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kaba Shinshi",
+   "slug": "kaba-shinshi",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Heat-Javelot",
+   "slug": "heat-javelot",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Heat Javelin",
+     "titreRendu": "Heat Javelin",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kobe",
+   "slug": "kobe",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kobe",
+     "titreRendu": "Kobe",
+     "fragment": null
+    },
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Koby",
+     "titreRendu": "Koby",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Axe-Dial",
+   "slug": "axe-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Kamijirou",
+   "slug": "kamijirou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Déca-Axe",
+   "slug": "deca-axe",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Ten-Fold Axe",
+     "titreRendu": "Ten-Fold Axe",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kabuto",
+   "slug": "kabuto",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kabuto",
+     "titreRendu": "Usopp Tactics/Kabuto",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Céleste",
+   "slug": "ile-celeste",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Skypiea",
+     "titreRendu": "Skypiea",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Contrôle-Dial",
+   "slug": "controle-dial",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Kinbo",
+   "slug": "kinbo",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kinbo",
+     "titreRendu": "Kinbo",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "King (500 Hostages)",
+   "slug": "king-500-hostages",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Futoru",
+   "slug": "futoru",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Burn-Blade",
+   "slug": "burn-blade",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Beer VI",
+   "slug": "beer-vi",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Beer VI",
+     "titreRendu": "Beer VI",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Newkama Force #4",
+   "slug": "newkama-force-4",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Orenami Fan (V)",
+   "slug": "orenami-fan-v",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Alvida Pirate (S Tattoo)",
+   "slug": "alvida-pirate-s-tattoo",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Noah",
+   "slug": "noah",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Noah",
+     "titreRendu": "Noah",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Otaka",
+   "slug": "otaka",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Otaka",
+     "titreRendu": "Taka",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Detamaruka Shin",
+   "slug": "detamaruka-shin",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "L’équipage des Pirates Yes",
+   "slug": "l-equipage-des-pirates-yes",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "Unit 55 Troop Leader",
+   "slug": "unit-55-troop-leader",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Kuni",
+   "slug": "kuni",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kuni",
+     "titreRendu": "Kuni",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île de Road Star",
+   "slug": "loadestar-island",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Hareji",
+   "slug": "hareji",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Hareji",
+     "titreRendu": "Hareji",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Royaume de Flevance",
+   "slug": "flevance-kingdom",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Sky-Arrows",
+   "slug": "sky-arrows",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Guerre au Sommet",
+   "slug": "guerre-au-sommet",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Summit War of Marineford",
+     "titreRendu": "Summit War of Marineford",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Mendou",
+   "slug": "mendou",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Mendou",
+     "titreRendu": "Mendo",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Don Achino",
+   "slug": "don-achino",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Don Achino",
+     "titreRendu": "Accino",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Acrobatic Fuwas #1",
+   "slug": "acrobatic-fuwas-1",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Acrobatic Fuwas #3",
+   "slug": "acrobatic-fuwas-3",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Acrobatic Fuwas #3",
+     "titreRendu": "Buggy Pirates",
+     "fragment": "Buggy Pirates#Acrobatic Fuwas"
+    }
+   ]
+  },
+  {
+   "nom": "Azuki",
+   "slug": "azuki",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Azuki",
+     "titreRendu": "Azuki",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Linaria",
+   "slug": "linaria",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Linaria",
+     "titreRendu": "Linaria",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Urbain-san",
+   "slug": "urbain-san",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Burn-Bazooka",
+   "slug": "burn-bazooka",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Nouveau Marineford",
+   "slug": "new-marineford",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Arrow",
+   "slug": "arrow",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Arrow",
+     "titreRendu": "Tsumegeri Guards",
+     "fragment": "Tsumegeri Guards#Arrow"
+    }
+   ]
+  },
+  {
+   "nom": "Île Risky Red",
+   "slug": "risky-red-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Risky Red Island",
+     "titreRendu": "Risky Red Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Banbaji",
+   "slug": "banbaji",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Île Graine",
+   "slug": "tanega",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Tanega Island",
+     "titreRendu": "Tanega Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Barto Club's Grandma",
+   "slug": "barto-club-s-grandma",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Bingo",
+   "slug": "bingo",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Bingo",
+     "titreRendu": "Bingo",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Amour",
+   "slug": "loving",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Loving Island",
+     "titreRendu": "Loving Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Bon Chari Seller",
+   "slug": "bon-chari-seller",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Kamyu's Fellow Boxer",
+   "slug": "kamyu-s-fellow-boxer",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Zabo",
+   "slug": "zabo",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Zabo",
+     "titreRendu": "Zabo",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Anba",
+   "slug": "anba",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Anba",
+     "titreRendu": "Anba",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Bounty Maru",
+   "slug": "bounty-maru",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Bounty Maru",
+     "titreRendu": "Bounty Maru",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "San Faldo",
+   "slug": "san-faldo",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "San Faldo",
+     "titreRendu": "San Faldo",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Bungou",
+   "slug": "bungou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Biscuits",
+   "slug": "biscuits",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Île Fromage",
+   "slug": "cheese",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Cheese Island",
+     "titreRendu": "Cheese Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Biyo's Father",
+   "slug": "biyo-s-father",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Ichika",
+   "slug": "ichika",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Ichika",
+     "titreRendu": "Medaka Mermaid Quintuplets",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Caramel",
+   "slug": "caramel",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Caramel",
+     "titreRendu": "Caramel",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Mayushika",
+   "slug": "mayushika",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Mayushika",
+     "titreRendu": "Mayushika",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Ice",
+   "slug": "ice",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Île 100 %",
+   "slug": "100-island",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Gu",
+   "slug": "gu",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Margarine",
+   "slug": "margarine",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Yuu's Father",
+   "slug": "yuu-s-father",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Yubashiri",
+   "slug": "yubashiri",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Yubashiri",
+     "titreRendu": "Yubashiri",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Mari",
+   "slug": "mari",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Mari",
+     "titreRendu": "Mari",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Gelée",
+   "slug": "jelly",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Rice Rice",
+   "slug": "rice-rice",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Rice Rice",
+     "titreRendu": "Rice Rice",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Black Cat Pirate (Hammer)",
+   "slug": "black-cat-pirate-hammer",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Gram",
+   "slug": "gram",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Gram",
+     "titreRendu": "Gram",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Tsunagorou",
+   "slug": "tsunagorou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Île Levure",
+   "slug": "kibo",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Kibo Island",
+     "titreRendu": "Kibo Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Milk",
+   "slug": "milk",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Île Yukiryu",
+   "slug": "yukiryu-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Yukiryu Island",
+     "titreRendu": "Yukiryu Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Moqueca",
+   "slug": "moqueca",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Moqueca",
+     "titreRendu": "Moqueca",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Cook Shinpachi",
+   "slug": "cook-shinpachi",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Decalvan Brother (A)",
+   "slug": "decalvan-brother-a",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Île Foodvalten",
+   "slug": "foodvalten-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Foodvalten",
+     "titreRendu": "Foodvalten",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Rosy Life Rider (Headband)",
+   "slug": "rosy-life-rider-headband",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Kamyu's Fellow Wrestler",
+   "slug": "kamyu-s-fellow-wrestler",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Kanezenny",
+   "slug": "kanezenny",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kanezenny",
+     "titreRendu": "Kanezenny",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Kyuka",
+   "slug": "kyuka-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Kyuka Island",
+     "titreRendu": "Kyuka Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Renaisse",
+   "slug": "renaisse",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Renaisse",
+     "titreRendu": "Renaisse",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Koito",
+   "slug": "koito",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Koito",
+     "titreRendu": "Koito",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kojurou",
+   "slug": "kojurou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Jack-in-the-Box",
+   "slug": "jack-in-the-box",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Pirate au foyer",
+   "slug": "pirate-au-foyer",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "Village caché des nuages",
+   "slug": "hidden-cloud-village",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Konbu",
+   "slug": "konbu",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Konbu",
+     "titreRendu": "Konbu",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Pucci",
+   "slug": "pucci-island",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Kamyu's Fellow Swordsman",
+   "slug": "kamyu-s-fellow-swordsman",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Footbianco",
+   "slug": "footbianco",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Footbianco",
+     "titreRendu": "Footbianco",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Lami Trafalgar",
+   "slug": "lami-trafalgar",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Royaume Whiteland",
+   "slug": "whiteland-kingdom",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Iwatobi",
+     "titreRendu": "Iwatobi",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Coffre",
+   "slug": "kinko",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Kinko Island",
+     "titreRendu": "Kinko Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Bateaux à Dials",
+   "slug": "bateaux-a-dials",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Dial Boat",
+     "titreRendu": "Dial Boat",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Winner",
+   "slug": "winner-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Winner Island",
+     "titreRendu": "Winner Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Royaume de Centaurea",
+   "slug": "centaurea-kingdom",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Acrobatic Fuwas #4",
+   "slug": "acrobatic-fuwas-4",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Acrobatic Fuwas #4",
+     "titreRendu": "Buggy Pirates",
+     "fragment": "Buggy Pirates#Acrobatic Fuwas"
+    }
+   ]
+  },
+  {
+   "nom": "Kop",
+   "slug": "kop",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kop",
+     "titreRendu": "Kop",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Du Feld",
+   "slug": "du-feld",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Du Feld",
+     "titreRendu": "Lu Feld",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Colline aux fleurs",
+   "slug": "flower-hill",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Île Downs",
+   "slug": "downs-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Downs",
+     "titreRendu": "Downs",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Lady Mary",
+   "slug": "lady-mary",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Lady Mary",
+     "titreRendu": "Lady Mary",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Broc Coli",
+   "slug": "broc-coli-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Broc Coli Island",
+     "titreRendu": "Broc Coli Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Tsujigirou Tooyama",
+   "slug": "tsujigirou-tooyama",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "L’équipage des Pirates Schneider",
+   "slug": "l-equipage-des-pirates-schneider",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "Île d'Hiver",
+   "slug": "winter-island",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Sutton",
+   "slug": "sutton",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Sutton",
+     "titreRendu": "Sutton",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Buggy Ball Attendant",
+   "slug": "buggy-ball-attendant",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Laugh Tale",
+   "slug": "laugh-tale",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Laugh Tale",
+     "titreRendu": "Laugh Tale",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Unique",
+   "slug": "unique",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Lina",
+   "slug": "lina",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Lina",
+     "titreRendu": "Lina",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Monder Charlotte",
+   "slug": "monder-charlotte",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Charlotte Mondée",
+     "titreRendu": "Charlotte Mondée",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Confiture",
+   "slug": "jam",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Jam Island",
+     "titreRendu": "Jam Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Look-out of the Lady Mary",
+   "slug": "look-out-of-the-lady-mary",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Stool",
+   "slug": "stool",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Stool",
+     "titreRendu": "Cocoa Weed",
+     "fragment": "Cocoa Weed#Stool"
+    }
+   ]
+  },
+  {
+   "nom": "Tibany",
+   "slug": "tibany",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Tibany",
+     "titreRendu": "Tibany",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Marilyn",
+   "slug": "marilyn",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Marilyn",
+     "titreRendu": "Marilyn",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Linlin's Mother",
+   "slug": "linlin-s-mother",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Matoryou Hime-tachi",
+   "slug": "matoryou-hime-tachi",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Acrobatic Fuwas #2",
+   "slug": "acrobatic-fuwas-2",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Acrobatic Fuwas #2",
+     "titreRendu": "Buggy Pirates",
+     "fragment": "Buggy Pirates#Acrobatic Fuwas"
+    }
+   ]
+  },
+  {
+   "nom": "Notice Town",
+   "slug": "notice-town",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Hou-ban Taichou",
+   "slug": "hou-ban-taichou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Mekao",
+   "slug": "mekao",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Mekao",
+     "titreRendu": "Mekao",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Mitsuboshi",
+   "slug": "mitsuboshi",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Mitsuboshi",
+     "titreRendu": "Mitsuboshi",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Piepie",
+   "slug": "piepie",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Topping",
+   "slug": "topping",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Morollon",
+   "slug": "morollon",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Morollon",
+     "titreRendu": "Mororon",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Hippie",
+   "slug": "hippie",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Hippie",
+     "titreRendu": "Hippie",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kung Fu Dugong",
+   "slug": "kung-fu-dugong",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kung Fu Dugong",
+     "titreRendu": "Animal Species/Arabasta Saga",
+     "fragment": "Animal Species/Arabasta Saga#Kung-Fu Dugongs"
+    }
+   ]
+  },
+  {
+   "nom": "Epée d'Ohm",
+   "slug": "epee-d-ohm",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "White Tiger",
+   "slug": "white-tiger",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "White Tiger",
+     "titreRendu": "White Tiger",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Ed",
+   "slug": "ed",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Ed",
+     "titreRendu": "Ed (Actor)",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "L’équipage de Diez Barrels",
+   "slug": "l-equipage-de-diez-barrels",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "Pirate Moustachus",
+   "slug": "pirate-moustachus",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Mustache Pirates",
+     "titreRendu": "Mustache Pirates",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Nashi",
+   "slug": "nashi",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Nashi",
+     "titreRendu": "Nashi",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Forêt de la Séduction",
+   "slug": "seducing-woods",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Sweet City",
+   "slug": "sweet-city",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Sweet City",
+     "titreRendu": "Whole Cake Island",
+     "fragment": "Whole Cake Island#Sweet City"
+    }
+   ]
+  },
+  {
+   "nom": "Minoru Kazeno",
+   "slug": "minoru-kazeno",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Minoru Kazeno",
+     "titreRendu": "Kazeno Minoru",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Newkama Force #2",
+   "slug": "newkama-force-2",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Shirauo",
+   "slug": "shirauo",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Shirauo",
+     "titreRendu": "Shirauo",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Announcer Ikkaku",
+   "slug": "announcer-ikkaku",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Fruits",
+   "slug": "fruits",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Fruits Island",
+     "titreRendu": "Fruits Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Poripori",
+   "slug": "poripori",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Ohana",
+   "slug": "ohana",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Homing's Wife",
+   "slug": "homing-s-wife",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Kamekichi",
+   "slug": "kamekichi",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kamekichi",
+     "titreRendu": "Kamekichi",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Yakigashi",
+   "slug": "yakigashi",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Kagerou",
+   "slug": "kagerou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Oto",
+   "slug": "oto",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Oto",
+     "titreRendu": "Oto and Kogarashi",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Chihaya",
+   "slug": "chihaya",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Chihaya",
+     "titreRendu": "Chihaya",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Noko",
+   "slug": "noko-op",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Noko",
+     "titreRendu": "Noko",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Ballon Terminal",
+   "slug": "ballom-terminal",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Ballon Terminal",
+     "titreRendu": "Ballon Terminal",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Drug Peclo",
+   "slug": "drug-peclo",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Drug Peclo",
+     "titreRendu": "Drug Peclo",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Harahettania",
+   "slug": "harahettania",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Harahettania",
+     "titreRendu": "Namakura Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Pastor Zombie",
+   "slug": "pastor-zombie",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Pastor Zombie's Assistant",
+   "slug": "pastor-zombie-s-assistant",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Ville du Château",
+   "slug": "castle-town",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Village des Aînés",
+   "slug": "elderly-village",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Couran",
+   "slug": "couran",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Couran",
+     "titreRendu": "Couran",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Église",
+   "slug": "church",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Enma",
+   "slug": "enma",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Enma",
+     "titreRendu": "Enma",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Bao",
+   "slug": "bao",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Bao",
+     "titreRendu": "Gyoro, Nin, and Bao",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Race",
+   "slug": "race",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Race",
+     "titreRendu": "Race",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Hidayu",
+   "slug": "hidayu",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Hidayu",
+     "titreRendu": "Hidayu",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Reik",
+   "slug": "reik",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Reik",
+     "titreRendu": "Lake",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Red Hair Pirate (Chain)",
+   "slug": "red-hair-pirate-chain",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Doran",
+   "slug": "doran",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Doran",
+     "titreRendu": "Doran",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Doran's Father",
+   "slug": "doran-s-father",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Tegata Ringana",
+   "slug": "tegata-ringana",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Tegata Ringana",
+     "titreRendu": "Tegata Ringana",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Brahm",
+   "slug": "brahm",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Brahm",
+     "titreRendu": "Tsumegeri Guards",
+     "fragment": "Tsumegeri Guards#Brahm"
+    }
+   ]
+  },
+  {
+   "nom": "Abi's Mother",
+   "slug": "abi-s-mother",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Rokuroshi's' Assistant",
+   "slug": "rokuroshi-s-assistant",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Pirate Captain (500 Hostages)",
+   "slug": "pirate-captain-500-hostages",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Rosy Life Rider (Blond)",
+   "slug": "rosy-life-rider-blond",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Sanka",
+   "slug": "sanka",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Sanka",
+     "titreRendu": "Medaka Mermaid Quintuplets",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Rittonto",
+   "slug": "rittonto",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Rittonto",
+     "titreRendu": "Rittonto",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Bouche",
+   "slug": "bouche",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Bouche",
+     "titreRendu": "Buche",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "L’équipage de Gasparde",
+   "slug": "l-equipage-de-gasparde",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Gasparde Pirates",
+     "titreRendu": "Gasparde Pirates",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Raiu",
+   "slug": "raiu",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Raiu",
+     "titreRendu": "Raiu",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Seto",
+   "slug": "seto",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Seto",
+     "titreRendu": "Seto",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Nika",
+   "slug": "nika",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Nika",
+     "titreRendu": "Nika",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "G-8 Head Custodian",
+   "slug": "g-8-head-custodian",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Shopkeeper Hanji",
+   "slug": "shopkeeper-hanji",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Short Vassal (500 Hostages)",
+   "slug": "short-vassal-500-hostages",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Shuutai",
+   "slug": "shuutai",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Shuutai",
+     "titreRendu": "Shutai",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Sind's Father",
+   "slug": "sind-s-father",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Sind",
+   "slug": "sind",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Sind",
+     "titreRendu": "Sind",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Cook Billy",
+   "slug": "cook-billy",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Spoil",
+   "slug": "spoil",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Spoil",
+     "titreRendu": "Spoil",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Dago",
+   "slug": "dago",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Dago",
+     "titreRendu": "Dago",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Damask",
+   "slug": "damask",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Damask",
+     "titreRendu": "Damask",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Dancer on the Lady Mary",
+   "slug": "dancer-on-the-lady-mary",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Deigorou",
+   "slug": "deigorou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Decalvan Brother (B)",
+   "slug": "decalvan-brother-b",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Île Ukkari",
+   "slug": "ukkari-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Ukkari Hot-Spring Island",
+     "titreRendu": "Ukkari Hot-Spring Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Superhuman Domingos #1",
+   "slug": "superhuman-domingos-1",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Superhuman Domingos #3",
+   "slug": "superhuman-domingos-3",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Suu",
+   "slug": "suu",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Suu",
+     "titreRendu": "Su",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Superhuman Domingos #2",
+   "slug": "superhuman-domingos-2",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Superhuman Domingos #2",
+     "titreRendu": "Buggy Pirates",
+     "fragment": "Buggy Pirates#Superhuman Domingos"
+    }
+   ]
+  },
+  {
+   "nom": "Taco",
+   "slug": "taco",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Taco",
+     "titreRendu": "Tacos",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Tall Vassal (500 Hostages)",
+   "slug": "tall-vassal-500-hostages",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Dream's Mother",
+   "slug": "dream-s-mother",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Gally",
+   "slug": "gally",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Gally",
+     "titreRendu": "Gally",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Tabuhachirou",
+   "slug": "tabuhachirou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Guarana",
+   "slug": "guarana",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Guarana",
+     "titreRendu": "Guarana",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Chichilisia",
+   "slug": "chichilisia",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Chichilisia",
+     "titreRendu": "Chichilisia",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Egana",
+   "slug": "egana",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Egana",
+     "titreRendu": "Egana",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Monnosuke Tsurue",
+   "slug": "monnosuke-tsurue",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Umit",
+   "slug": "umit",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Umit",
+     "titreRendu": "Umit",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Foxy Pirates' Referee",
+   "slug": "foxy-pirates-referee",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Fugar",
+   "slug": "fugar",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Fugar",
+     "titreRendu": "Fugar",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Gatherine",
+   "slug": "gatherine",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Gatherine",
+     "titreRendu": "Gatherine",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "G-8 Marine Officer (Blond)",
+   "slug": "g-8-marine-officer-blond",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Yoshimoto",
+   "slug": "yoshimoto",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Yoshimoto",
+     "titreRendu": "Yoshimoto",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Tricolore",
+   "slug": "sanshoku",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Sanshoku Island",
+     "titreRendu": "Sanshoku Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Vincent",
+   "slug": "vincent",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Vincent",
+     "titreRendu": "Vincent",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Shitemanna Ishigo",
+   "slug": "shitemanna-ishigo",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Furishirou Waruno",
+   "slug": "furishirou-waruno",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Ukon",
+   "slug": "ukon",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Ukon",
+     "titreRendu": "Ukon",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Hanko",
+   "slug": "hanko",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Hanko",
+     "titreRendu": "Han",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "L’équipage des Pirates à la Moustache",
+   "slug": "l-equipage-des-pirates-a-la-moustache",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "Île Scrap",
+   "slug": "scrap-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Scrap Island",
+     "titreRendu": "Scrap Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Moelleuse",
+   "slug": "funwari",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Funwari Island",
+     "titreRendu": "Funwari Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Iyan'eno Chinode",
+   "slug": "iyan-eno-chinode",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Iyan'eno Chinode",
+     "titreRendu": "Iyan'eno Chinode",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Ginnosuke",
+   "slug": "ginnosuke",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Ginnosuke",
+     "titreRendu": "Ginnosuke",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Samosa",
+   "slug": "samosa",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Samosa",
+     "titreRendu": "Samosa",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Hara",
+   "slug": "hara",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Hara",
+     "titreRendu": "Hara",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île de Rubeck",
+   "slug": "rubeck-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Rubeck Island",
+     "titreRendu": "Rubeck Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Zaba",
+   "slug": "zaba",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Zaba",
+     "titreRendu": "Zaba",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Zombie Lola",
+   "slug": "zombie-lola",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Zombie Lola",
+     "titreRendu": "Lola (Zombie)",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Namakura",
+   "slug": "namakura-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Namakura Island",
+     "titreRendu": "Namakura Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kamyu",
+   "slug": "kamyu",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kamyu",
+     "titreRendu": "Camus",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Jigorou",
+   "slug": "jigorou",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Jigorou",
+     "titreRendu": "Jigoro",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Newkama Force #5",
+   "slug": "newkama-force-5",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Juujirou",
+   "slug": "juujirou",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Île de Mecha",
+   "slug": "ile-de-mecha",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Mecha Island",
+     "titreRendu": "Mecha Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "IÎle de la couronne",
+   "slug": "iile-de-la-couronne",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "O-Kan Island",
+     "titreRendu": "O-Kan Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "La lune",
+   "slug": "la-lune",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Moon",
+     "titreRendu": "Moon",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Zangirimaru",
+   "slug": "zangirimaru",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Zangirimaru",
+     "titreRendu": "Zangirimaru",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Hocha",
+   "slug": "hocha",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Hocha",
+     "titreRendu": "Hocha",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île du Karaté",
+   "slug": "karate-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Karate Island",
+     "titreRendu": "Karate Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Nin",
+   "slug": "nin",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Nin",
+     "titreRendu": "Gyoro, Nin, and Bao",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Hou",
+   "slug": "hou-one-piece",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Ho",
+     "titreRendu": "Ho",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Humphrey",
+   "slug": "humphrey",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Humphrey",
+     "titreRendu": "Humphrey",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Hyota",
+   "slug": "hyota",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Hyota",
+     "titreRendu": "Tsumegeri Guards",
+     "fragment": "Tsumegeri Guards#Hyota"
+    }
+   ]
+  },
+  {
+   "nom": "Ame no Habakiri",
+   "slug": "ame-no-habakiri",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Ame no Habakiri",
+     "titreRendu": "Ame no Habakiri",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Acacia",
+   "slug": "acacia",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Acacia",
+     "titreRendu": "Acacia",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kureyo Kairo",
+   "slug": "kureyo-kairo",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Tamarisk",
+   "slug": "tamarisk",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Tamarisk",
+     "titreRendu": "Tamarisk",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île d'Applenine",
+   "slug": "applenine-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Applenine Island",
+     "titreRendu": "Applenine Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Goode",
+   "slug": "goode",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "L’équipage du Capitaine Usopp",
+   "slug": "l-equipage-du-capitaine-usopp",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "L’équipage des Tulipes",
+   "slug": "l-equipage-des-tulipes",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Tulip Pirates",
+     "titreRendu": "Tulip Pirates",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "L’équipage de Hawkins",
+   "slug": "l-equipage-de-hawkins",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Hawkins Pirates",
+     "titreRendu": "Hawkins Pirates",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "L’équipage ASL",
+   "slug": "l-equipage-asl",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "L’équipage des Candys",
+   "slug": "l-equipage-des-candys",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "l’équipage de Ganzack",
+   "slug": "l-equipage-de-ganzack",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "L’équipage Amigo",
+   "slug": "l-equipage-amigo",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "Inukai",
+   "slug": "inukai",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Inukai",
+     "titreRendu": "Inukai",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Pekkori",
+   "slug": "pekkori",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Pekkori",
+     "titreRendu": "Pekkori",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Isshi 1",
+   "slug": "isshi-1",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Jorge",
+   "slug": "jorge",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Jorge",
+     "titreRendu": "Jorge",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kirintauros",
+   "slug": "kirintauros",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kirintauros",
+     "titreRendu": "Kirintauros",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Banaro",
+   "slug": "banaro-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Banaro Island",
+     "titreRendu": "Banaro Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Bretzel",
+   "slug": "bretzel",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Pretzel",
+     "titreRendu": "Pretzel",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Koala Zombie",
+   "slug": "koala-zombie",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Flash-Guns",
+   "slug": "flash-guns",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Flash Gun",
+     "titreRendu": "Flash Gun",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Linlin's Father",
+   "slug": "linlin-s-father",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "L’équipage des Pirates Treasure",
+   "slug": "l-equipage-des-pirates-treasure",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "Mayor of the Desert Village",
+   "slug": "mayor-of-the-desert-village",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Barrel",
+   "slug": "barrel",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Barrel",
+     "titreRendu": "Tsumegeri Guards",
+     "fragment": "Tsumegeri Guards#Barrel"
+    }
+   ]
+  },
+  {
+   "nom": "18th Fleet Gallery Head Chef",
+   "slug": "18th-fleet-gallery-head-chef",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Moore",
+   "slug": "moore",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Moore",
+     "titreRendu": "Moore",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Mishoin Cashible",
+   "slug": "mishoin-cashible",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Mishoin Cashible",
+     "titreRendu": "Mishoin Cashible",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Dotaku",
+   "slug": "dotaku",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Dotaku",
+     "titreRendu": "Dotaku",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Musse",
+   "slug": "musse",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Musse",
+     "titreRendu": "Mousse",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Sally Nantokanette",
+   "slug": "sally-nantokanette",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Osome",
+   "slug": "osome",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Osome",
+     "titreRendu": "Some",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Orenami Fan (L)",
+   "slug": "orenami-fan-l",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Oyame",
+   "slug": "oyame",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Frères Voleurs",
+   "slug": "freres-voleurs",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "Phillip",
+   "slug": "phillip",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Phillip",
+     "titreRendu": "Flip",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Pirate des flèches rouges",
+   "slug": "pirate-des-fleches-rouges",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Red Arrows Pirates",
+     "titreRendu": "Red Arrows Pirates",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Reuder",
+   "slug": "reuder",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Reuder",
+     "titreRendu": "Royder",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Rint",
+   "slug": "rint",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Rint",
+     "titreRendu": "Rint",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Equipage de Bigalo",
+   "slug": "equipage-de-bigalo",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "Equipage de Pandaman",
+   "slug": "equipage-de-pandaman",
+   "type": "status",
+   "voies": []
+  },
+  {
+   "nom": "Law & Lami's Father",
+   "slug": "law-lami-s-father",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Sanshita",
+   "slug": "sanshita",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Shepherd",
+   "slug": "shepherd",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Shepherd",
+     "titreRendu": "Shepherd (Disambiguation)",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Esta's Boyfriend",
+   "slug": "esta-s-boyfriend",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Shandorian Chief",
+   "slug": "shandorian-chief",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Shandia Chief",
+     "titreRendu": "Shandia Chief",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Tailor Zombie",
+   "slug": "tailor-zombie",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Tall Risky Brother",
+   "slug": "tall-risky-brother",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Ange",
+   "slug": "ange",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Ange",
+     "titreRendu": "Ange",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Tate",
+   "slug": "tate",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Tate",
+     "titreRendu": "Tate",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Tea IV",
+   "slug": "tea-iv",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Tea IV",
+     "titreRendu": "Tea IV",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Suke",
+   "slug": "suke",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Suke",
+     "titreRendu": "Suke",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Rainbase",
+   "slug": "rainbase",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Rainbase",
+     "titreRendu": "Rainbase",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Tightrope Walking Funan Bros (Ginger)",
+   "slug": "tightrope-walking-funan-bros-ginger",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Togare",
+   "slug": "togare",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Togare",
+     "titreRendu": "Togare",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Joe Bunny",
+   "slug": "joe-bunny",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Île d'Asuka",
+   "slug": "ile-d-asuka",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Asuka Island",
+     "titreRendu": "Asuka Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Paquet",
+   "slug": "package",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Package Island",
+     "titreRendu": "Package Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Tritobu",
+   "slug": "tritobu",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Tritobu",
+     "titreRendu": "Tritobu",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île Blé",
+   "slug": "komugi-op",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Komugi Island",
+     "titreRendu": "Komugi Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Sayo",
+   "slug": "sayo",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Sayo",
+     "titreRendu": "Sayo",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kashu",
+   "slug": "kashu",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kashu",
+     "titreRendu": "Kashu",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Hobbit",
+   "slug": "hobbit",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Black",
+   "slug": "black",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Black",
+     "titreRendu": "Black (Disambiguation)",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Yonka Two",
+   "slug": "yonka-two",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Yonka Two",
+     "titreRendu": "Medaka Mermaid Quintuplets",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Happa Yamao",
+   "slug": "happa-yamao",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Happa Yamao",
+     "titreRendu": "Happa Yamao",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "L’équipage des Magnifiques Pirates",
+   "slug": "l-equipage-des-magnifiques-pirates",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Beautiful Pirates",
+     "titreRendu": "Beautiful Pirates",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Sho",
+   "slug": "sho",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Sho",
+     "titreRendu": "Sho",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kumagoro",
+   "slug": "kumagoro",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kumagoro",
+     "titreRendu": "Kumagoro",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Perfect Climat-Tact",
+   "slug": "perfect-climat-tact",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Art of Weather/Perfect Clima-Tact",
+     "titreRendu": "Art of Weather/Perfect Clima-Tact",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Big Runner",
+   "slug": "big-runner",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Big Runner",
+     "titreRendu": "Big Runner",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kanishitoru Sukoshiba",
+   "slug": "kanishitoru-sukoshiba",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Buggy Pirate (Victim)",
+   "slug": "buggy-pirate-victim",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Île Mystoria",
+   "slug": "mystoria-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Mystoria Island",
+     "titreRendu": "Mystoria Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Web Panic",
+   "slug": "web-panic",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Web Panic",
+     "titreRendu": "Web Panic",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Tall Marley Brother",
+   "slug": "tall-marley-brother",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Bateau de Pandaman",
+   "slug": "bateau-de-pandaman",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Tête-de-Maquereau",
+   "slug": "tete-de-maquereau",
+   "type": "artifact",
+   "voies": []
+  },
+  {
+   "nom": "Tomozo",
+   "slug": "tomozo",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Tomozo",
+     "titreRendu": "Tomozo",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Gran Tesoro",
+   "slug": "gran-tesoro",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Gran Tesoro",
+     "titreRendu": "Gran Tesoro",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Murakumogiri",
+   "slug": "murakumogiri",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Murakumogiri",
+     "titreRendu": "Murakumogiri",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île aux Noix",
+   "slug": "nuts",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Nuts Island",
+     "titreRendu": "Nuts Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Nidai Kitetsu",
+   "slug": "nidai-kitetsu",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Nidai Kitetsu",
+     "titreRendu": "Nidai Kitetsu",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Shigure",
+   "slug": "shigure",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Shigure",
+     "titreRendu": "Shigure",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "St Poplar",
+   "slug": "st-poplar",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "St Poplar",
+     "titreRendu": "St. Poplar",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kibin",
+   "slug": "kibin",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kibin",
+     "titreRendu": "Kibin",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Dream",
+   "slug": "dream",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Dream",
+     "titreRendu": "Dream",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Shusui",
+   "slug": "shusui",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Shusui",
+     "titreRendu": "Shusui",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kanzaburou Akudai",
+   "slug": "kanzaburou-akudai",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Rakesh",
+   "slug": "rakesh",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Rakesh",
+     "titreRendu": "Rakesh",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Reverse Mountain",
+   "slug": "reverse-mountain-lieu",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Reverse Mountain",
+     "titreRendu": "Reverse Mountain",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Lina and Sayo's Father",
+   "slug": "lina-and-sayo-s-father",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Alice",
+   "slug": "alice",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Alice",
+     "titreRendu": "Alice",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Shodai Kitetsu",
+   "slug": "shodai-kitetsu",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Shodai Kitetsu",
+     "titreRendu": "Shodai Kitetsu",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kyukyu",
+   "slug": "kyukyu",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kyukyu",
+     "titreRendu": "Kyukyu",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Riley Brother #2",
+   "slug": "riley-brother-2",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Île Sphinx",
+   "slug": "sphinx-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Sphinx (Location)",
+     "titreRendu": "Sphinx (Location)",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Mato",
+   "slug": "mato",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Mato",
+     "titreRendu": "Mato",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Newkama Force #6",
+   "slug": "newkama-force-6",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Gattenshochinosukeo",
+   "slug": "gattenshochinosukeo",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Gattenshochinosukeo",
+     "titreRendu": "Gattenshochinosukeo",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Ginger",
+   "slug": "ginger",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Ginger",
+     "titreRendu": "Ginger",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Gyoro",
+   "slug": "gyoro",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Gyoro",
+     "titreRendu": "Gyoro, Nin, and Bao",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Margarita",
+   "slug": "margarita",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Margarita",
+     "titreRendu": "Margarita",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kisegawa",
+   "slug": "kisegawa",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kisegawa",
+     "titreRendu": "Kisegawa",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Mukkashimi Tower",
+   "slug": "mukkashimi-tower",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Mukkashimi Tower",
+     "titreRendu": "Mukkashimi Tower",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "H-1",
+   "slug": "h-1",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "H-1",
+     "titreRendu": "H-1",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Rakuda",
+   "slug": "rakuda",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Rakuda",
+     "titreRendu": "Rakuda",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Stroganoff",
+   "slug": "stroganoff",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Stroganoff",
+     "titreRendu": "Stroganoff",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Riley Brother #1",
+   "slug": "riley-brother-1",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Topknot",
+   "slug": "topknot",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Topknot",
+     "titreRendu": "Topknot",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "L’équipage du On-Air",
+   "slug": "l-equipage-du-on-air",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "On Air Pirates",
+     "titreRendu": "On Air Pirates",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Short Marley Brother",
+   "slug": "short-marley-brother",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Rotund Risky Brother",
+   "slug": "rotund-risky-brother",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "G-8 Sous Chef",
+   "slug": "g-8-sous-chef",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Elumalu",
+   "slug": "elumalu",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Elumalu",
+     "titreRendu": "Erumalu",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kakukaku",
+   "slug": "kakukaku",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kakukaku",
+     "titreRendu": "Kakukaku",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Zadie",
+   "slug": "zadie",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Zadie",
+     "titreRendu": "Zadie",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Durandal",
+   "slug": "durandal",
+   "type": "artifact",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Durandal",
+     "titreRendu": "Durandal",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "L’équipage de Zenny",
+   "slug": "l-equipage-de-zenny",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Zenny Pirates",
+     "titreRendu": "Zenny Pirates",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "G-8 Marine Officer (Gray)",
+   "slug": "g-8-marine-officer-gray",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Chintarou Giro",
+   "slug": "chintarou-giro",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "MocDonald",
+   "slug": "mocdonald",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "MocDonald",
+     "titreRendu": "MocDonald",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Jean Ango",
+   "slug": "jean-ango",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Jean Ango",
+     "titreRendu": "Jean Ango",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Kakunoshin",
+   "slug": "kakunoshin",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Kakunoshin",
+     "titreRendu": "Kakunoshin",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Schollzo",
+   "slug": "schollzo",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Schollzo",
+     "titreRendu": "Schollzo",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Esta",
+   "slug": "esta",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Esta",
+     "titreRendu": "Esta",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Newkama Force #3",
+   "slug": "newkama-force-3",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Alvida Pirate (Horned)",
+   "slug": "alvida-pirate-horned",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Cidre",
+   "slug": "cidre",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Cidre",
+     "titreRendu": "Cidre",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Lady Tree",
+   "slug": "lady-tree",
+   "type": "character",
+   "voies": [
+    {
+     "voie": "nom",
+     "titreDemande": "Lady Tree",
+     "titreRendu": "Lady Tree",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Hockera Achino",
+   "slug": "hockera-achino",
+   "type": "character",
+   "voies": []
+  },
+  {
+   "nom": "Ruskaina",
+   "slug": "rusukaina",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Village de Kuen",
+   "slug": "kuen-village",
+   "type": "place",
+   "voies": []
+  },
+  {
+   "nom": "Île Sans Rien",
+   "slug": "nanimonai-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Nanimonai Island",
+     "titreRendu": "Nanimonai Island",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "L’équipage des Pirates Trump",
+   "slug": "l-equipage-des-pirates-trump",
+   "type": "status",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Trump Pirates",
+     "titreRendu": "Trump Pirates",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Ville blanche",
+   "slug": "white-city",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Flevance",
+     "titreRendu": "Flevance",
+     "fragment": null
+    }
+   ]
+  },
+  {
+   "nom": "Île du Judo",
+   "slug": "judo-island",
+   "type": "place",
+   "voies": [
+    {
+     "voie": "alias-cures",
+     "titreDemande": "Judo Island",
+     "titreRendu": "Judo Island",
+     "fragment": null
+    }
+   ]
+  }
+ ]
+}

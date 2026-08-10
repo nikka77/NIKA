@@ -1,0 +1,781 @@
+{
+ "chantier": "retirer les comptes figés des résumés",
+ "quand": "2026-08-10T12:54:23.474Z",
+ "write": false,
+ "corriges": [
+  {
+   "id": "d038e2a3-c294-433c-8b49-de2ca3d87e83",
+   "slug": "akatsuki",
+   "avant": "Organisation de l'univers Naruto — réunit Sasuke Uchiha, Madara Uchiha, Orochimaru et 34 autres.",
+   "apres": "Organisation de l'univers Naruto — réunit Sasuke Uchiha, Madara Uchiha, Orochimaru…"
+  },
+  {
+   "id": "9a8d8894-6803-49d8-8da6-b56b725f3687",
+   "slug": "allied-mothers-force",
+   "avant": "Groupe de l'univers Naruto — réunit Mebuki Haruno, Yoshino Nara, Chōji's Mother et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Mebuki Haruno, Yoshino Nara, Chōji's Mother…"
+  },
+  {
+   "id": "2c12cece-ed05-4ede-9dfa-a52a956d3737",
+   "slug": "ame-orphans",
+   "avant": "Groupe de l'univers Naruto — réunit Jiraiya, Konan, Nagato et 3 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Jiraiya, Konan, Nagato…"
+  },
+  {
+   "id": "d8d36c2f-9c92-4aaf-84bf-16351fe81c39",
+   "slug": "analysis-team",
+   "avant": "Groupe de l'univers Naruto — réunit Ino Yamanaka, Inoichi Yamanaka, Mawashi Dokuraku et 5 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Ino Yamanaka, Inoichi Yamanaka, Mawashi Dokuraku…"
+  },
+  {
+   "id": "05d60f46-9b55-4d42-8c70-c3b2d380c215",
+   "slug": "antidote",
+   "avant": "Arme / outil de l'univers Naruto — porté par Yamato, Tsunade, Sakura Haruno et 3 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Yamato, Tsunade, Sakura Haruno…"
+  },
+  {
+   "id": "33c96afd-eca9-4b29-83ef-1aaedec98679",
+   "slug": "arbalete",
+   "avant": "Arme / outil de l'univers Naruto — porté par Tenten, Mubi, Sumaru et 4 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Tenten, Mubi, Sumaru…"
+  },
+  {
+   "id": "8291a531-697c-45dc-b090-ba08ad4c8924",
+   "slug": "arc-et-fleches",
+   "avant": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Kakashi Hatake, Might Guy et 2 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Kakashi Hatake, Might Guy…"
+  },
+  {
+   "id": "7afb9368-35d2-4ef3-a2cd-f131c5e9db1e",
+   "slug": "baton-bo",
+   "avant": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Tenten, Kawaki et 14 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Tenten, Kawaki…"
+  },
+  {
+   "id": "430d67e4-dba3-4815-b7b1-585db36c2f0a",
+   "slug": "benihisago",
+   "avant": "Arme / outil de l'univers Naruto — porté par Hagoromo Ōtsutsuki, Tenten, Darui et 1 autre.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Hagoromo Ōtsutsuki, Tenten, Darui…"
+  },
+  {
+   "id": "0593e7c7-18a2-4e0d-8c05-3d413da95728",
+   "slug": "bikochu-search-team",
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Shino Aburame, Hinata Hyūga et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Shino Aburame, Hinata Hyūga…"
+  },
+  {
+   "id": "0b536a75-980b-4502-b80f-7803ce195126",
+   "slug": "blowpipe",
+   "avant": "Arme / outil de l'univers Naruto — porté par Kabuto Yakushi, Dōshu Goetsu, Ibiki Morino et 1 autre.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Kabuto Yakushi, Dōshu Goetsu, Ibiki Morino…"
+  },
+  {
+   "id": "e72a5a99-555b-4b3f-b9c7-8831c1e523b9",
+   "slug": "chaine-kusari",
+   "avant": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Obito Uchiha, Tenten et 6 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Obito Uchiha, Tenten…"
+  },
+  {
+   "id": "fcea2984-45c1-4a76-9786-6fd02babfa40",
+   "slug": "chakra-armour",
+   "avant": "Arme / outil de l'univers Naruto — porté par Nadare Rōga, Mizore Fuyukuma, Fubuki Kakuyoku et 1 autre.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Nadare Rōga, Mizore Fuyukuma, Fubuki Kakuyoku…"
+  },
+  {
+   "id": "78bdd956-88e2-4d16-94dc-971e6d6a7818",
+   "slug": "chakra-cannon",
+   "avant": "Arme / outil de l'univers Naruto — porté par Killer B, A (Fourth Raikage), Tenma Funato et 1 autre.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Killer B, A (Fourth Raikage), Tenma Funato…"
+  },
+  {
+   "id": "ed7ab07b-188a-4263-8bf8-1cb06972b714",
+   "slug": "chakra-transmission-communication-device",
+   "avant": "Arme / outil de l'univers Naruto — porté par Ino Yamanaka, Inoichi Yamanaka, Mifune et 1 autre.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Ino Yamanaka, Inoichi Yamanaka, Mifune…"
+  },
+  {
+   "id": "43699bb2-81f7-44e5-bcb4-67b14d749838",
+   "slug": "corps-medical",
+   "avant": "Groupe de l'univers Naruto — réunit Sakura Haruno, Kitō, Mogusa et 10 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Sakura Haruno, Kitō, Mogusa…"
+  },
+  {
+   "id": "dddb575d-af49-4c35-8d95-e9cacf90b1cc",
+   "slug": "daimyo-protection-squad",
+   "avant": "Groupe de l'univers Naruto — réunit Chōjūrō, Mei Terumī, Raidō Namiashi et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Chōjūrō, Mei Terumī, Raidō Namiashi…"
+  },
+  {
+   "id": "4e7e296b-5537-4b50-be81-79a1151ac6fa",
+   "slug": "douze-ninjas-gardiens",
+   "avant": "Groupe de l'univers Naruto — réunit Asuma Sarutobi, Kazuma, Chiriku et 4 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Asuma Sarutobi, Kazuma, Chiriku…"
+  },
+  {
+   "id": "09d79bab-50a4-4bd6-9845-c04f6954b5e1",
+   "slug": "eight-man-squad",
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Kakashi Hatake, Yamato et 6 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Kakashi Hatake, Yamato…"
+  },
+  {
+   "id": "fa4e7af1-7b7f-4f6b-8ecc-8b66b8eddb71",
+   "slug": "escort-unit",
+   "avant": "Groupe de l'univers Naruto — réunit Hiruzen Sarutobi, Tobirama Senju, Danzō Shimura et 4 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Hiruzen Sarutobi, Tobirama Senju, Danzō Shimura…"
+  },
+  {
+   "id": "41d3d170-1f52-4784-8a1f-3f7f93c3719c",
+   "slug": "fifth-division",
+   "avant": "Groupe de l'univers Naruto — réunit Shino Aburame, Ino Yamanaka, Kiba Inuzuka et 5 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Shino Aburame, Ino Yamanaka, Kiba Inuzuka…"
+  },
+  {
+   "id": "015ce1cb-bb91-4631-b65f-a6ac734d4365",
+   "slug": "fils-d-acier",
+   "avant": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Kakashi Hatake, Sarada Uchiha et 14 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Kakashi Hatake, Sarada Uchiha…"
+  },
+  {
+   "id": "0b9a6910-96f9-46c8-8e24-23982d16373c",
+   "slug": "first-division",
+   "avant": "Groupe de l'univers Naruto — réunit Tenten, Darui, Chōza Akimichi et 6 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Tenten, Darui, Chōza Akimichi…"
+  },
+  {
+   "id": "e864b55a-93fa-41c8-985c-7ef23250ed3f",
+   "slug": "flash-bomb",
+   "avant": "Arme / outil de l'univers Naruto — porté par Boruto Uzumaki, Sarada Uchiha, Shikamaru Nara et 4 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Boruto Uzumaki, Sarada Uchiha, Shikamaru Nara…"
+  },
+  {
+   "id": "627effe2-87fd-43c1-ac22-934a8609c115",
+   "slug": "force-shinobi-alliee",
+   "avant": "Organisation de l'univers Naruto — réunit Naruto Uzumaki, Kakashi Hatake, Gaara et 39 autres.",
+   "apres": "Organisation de l'univers Naruto — réunit Naruto Uzumaki, Kakashi Hatake, Gaara…"
+  },
+  {
+   "id": "1024b2d8-fea5-4b6c-b57b-dae3c598ea13",
+   "slug": "four-celestial-symbols-men",
+   "avant": "Groupe de l'univers Naruto — réunit Kujaku, Hōki (Takumi), Ryūgan et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Kujaku, Hōki (Takumi), Ryūgan…"
+  },
+  {
+   "id": "bd28c87c-1e3a-4de7-801d-9c2eeea1ecc7",
+   "slug": "fourth-division",
+   "avant": "Groupe de l'univers Naruto — réunit Gaara, Chōji Akimichi, Temari et 6 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Gaara, Chōji Akimichi, Temari…"
+  },
+  {
+   "id": "b08e514b-d1b7-4a77-8506-081c0be2737a",
+   "slug": "furido-s-4-man-team",
+   "avant": "Groupe de l'univers Naruto — réunit Fudō, Kazuma, Fuen et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Fudō, Kazuma, Fuen…"
+  },
+  {
+   "id": "8fbab65e-04ff-437c-9031-3dfa5311b4f6",
+   "slug": "gang-of-four",
+   "avant": "Groupe de l'univers Naruto — réunit Shizuku, Gitai, Setsuna et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Shizuku, Gitai, Setsuna…"
+  },
+  {
+   "id": "478e2921-1ee7-42b9-a3c0-54efbc198e61",
+   "slug": "gantelet-shinobi",
+   "avant": "Arme / outil de l'univers Naruto — porté par Konohamaru Sarutobi, Boruto Uzumaki, Victor et 6 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Konohamaru Sarutobi, Boruto Uzumaki, Victor…"
+  },
+  {
+   "id": "306b525b-cd19-4e47-be54-761c677b4bb7",
+   "slug": "gato-company",
+   "avant": "Groupe de l'univers Naruto — réunit Waraji, Zōri, Gatō et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Waraji, Zōri, Gatō…"
+  },
+  {
+   "id": "d9bbf772-8476-4894-bed3-987ee43a5b54",
+   "slug": "haido-s-knights",
+   "avant": "Groupe de l'univers Naruto — réunit Ranke, Haido, Kamira et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Ranke, Haido, Kamira…"
+  },
+  {
+   "id": "d0127b56-f73a-41c0-b15f-9e03991e0fed",
+   "slug": "hanabi-rescue-team",
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Sakura Haruno, Hinata Hyūga et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Sakura Haruno, Hinata Hyūga…"
+  },
+  {
+   "id": "04c125e0-8538-4a77-ae04-76e423581f6c",
+   "slug": "haze-quadruplets",
+   "avant": "Groupe de l'univers Naruto — réunit Asaka, Hiruga, Yoruga et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Asaka, Hiruga, Yoruga…"
+  },
+  {
+   "id": "635c19c7-1820-4820-8f8c-7a749a5ffb75",
+   "slug": "hiruko-s-team",
+   "avant": "Groupe de l'univers Naruto — réunit Ichi, Hiruko (missing-nin), Ni et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Ichi, Hiruko (missing-nin), Ni…"
+  },
+  {
+   "id": "74990302-6352-46e5-ae5c-16ef2acf09c9",
+   "slug": "impure-world-reincarnation-allied-forces",
+   "avant": "Groupe de l'univers Naruto — réunit Torune Aburame, Chūkaku, Daimaru et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Torune Aburame, Chūkaku, Daimaru…"
+  },
+  {
+   "id": "96b3895a-25af-4715-8ce9-e1a6eb6b5bd2",
+   "slug": "infiltration-and-reconnaissance-party",
+   "avant": "Groupe de l'univers Naruto — réunit Yamato, Sai, Anko Mitarashi et 4 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Yamato, Sai, Anko Mitarashi…"
+  },
+  {
+   "id": "ca4d7823-17cd-4a59-b244-6a6ac51a3c0a",
+   "slug": "jugo-s-clan-s-kekkei-genkai",
+   "avant": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Orochimaru, Kabuto Yakushi, Mitsuki et 1 autre.",
+   "apres": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Orochimaru, Kabuto Yakushi, Mitsuki…"
+  },
+  {
+   "id": "4996c844-685f-4389-b02c-2a484f74dfbd",
+   "slug": "kabutowari",
+   "avant": "Arme / outil de l'univers Naruto — porté par Mangetsu Hōzuki, Jinin Akebino, Kobanza et 1 autre.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Mangetsu Hōzuki, Jinin Akebino, Kobanza…"
+  },
+  {
+   "id": "2f1543f6-aac3-4466-b58d-db6007b2240c",
+   "slug": "kaima-capture-team",
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Shino Aburame, Ino Yamanaka et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Shino Aburame, Ino Yamanaka…"
+  },
+  {
+   "id": "2176af6b-b054-4ef5-a029-6fee914dc2e5",
+   "slug": "kama",
+   "avant": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Tenten, Sasori et 9 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Tenten, Sasori…"
+  },
+  {
+   "id": "18015a37-d4a8-4dab-bb05-4f92a32a8c13",
+   "slug": "kara",
+   "avant": "Organisation de l'univers Naruto — réunit Koji Kashin, Victor, Kawaki et 22 autres.",
+   "apres": "Organisation de l'univers Naruto — réunit Koji Kashin, Victor, Kawaki…"
+  },
+  {
+   "id": "a7267390-f94f-4575-8134-f0ce437f9f03",
+   "slug": "katar",
+   "avant": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Tenten, Kankurō et 2 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Tenten, Kankurō…"
+  },
+  {
+   "id": "55e4187f-5596-4361-a66f-ce3bcddd624f",
+   "slug": "kiba-naruto",
+   "avant": "Arme / outil de l'univers Naruto — porté par Buntan Kurosuki, Raiga Kurosuki, Ameyuri Ringo et 1 autre.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Buntan Kurosuki, Raiga Kurosuki, Ameyuri Ringo…"
+  },
+  {
+   "id": "1a908e6f-433f-49e9-bdf9-dfe84d7946cf",
+   "slug": "kohaku-no-johei",
+   "avant": "Arme / outil de l'univers Naruto — porté par Hagoromo Ōtsutsuki, Tenten, Darui et 3 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Hagoromo Ōtsutsuki, Tenten, Darui…"
+  },
+  {
+   "id": "3dd55e40-c5e7-49b6-a872-c8276621a3b2",
+   "slug": "kokinjo",
+   "avant": "Arme / outil de l'univers Naruto — porté par Hagoromo Ōtsutsuki, Tenten, Kinkaku et 1 autre.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Hagoromo Ōtsutsuki, Tenten, Kinkaku…"
+  },
+  {
+   "id": "d6013ebd-9363-4717-9d94-9312c3e80e1f",
+   "slug": "konoha-11",
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Rock Lee, Sakura Haruno et 10 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Rock Lee, Sakura Haruno…"
+  },
+  {
+   "id": "0776be62-99db-4a10-8c9f-8c616bdf5771",
+   "slug": "konoha-barrier-team",
+   "avant": "Groupe de l'univers Naruto — réunit Ino Yamanaka, Inojin Yamanaka, Kotetsu Hagane et 4 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Ino Yamanaka, Inojin Yamanaka, Kotetsu Hagane…"
+  },
+  {
+   "id": "e434a834-e5ca-4187-821b-41b73fb30be8",
+   "slug": "konoha-special-mission-platoon",
+   "avant": "Groupe de l'univers Naruto — réunit Shizune, Raidō Namiashi, Genma Shiranui et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Shizune, Raidō Namiashi, Genma Shiranui…"
+  },
+  {
+   "id": "e487405b-12ac-4650-bbb8-5c0c59fbe07d",
+   "slug": "kubikiribocho",
+   "avant": "Arme / outil de l'univers Naruto — porté par Kakashi Hatake, Suigetsu Hōzuki, Zabuza Momochi et 3 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Kakashi Hatake, Suigetsu Hōzuki, Zabuza Momochi…"
+  },
+  {
+   "id": "6ffb224c-1059-43db-a6d5-44e586f6702c",
+   "slug": "kunai-du-dieu-du-tonnerre-volant",
+   "avant": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Kakashi Hatake, Minato Namikaze et 1 autre.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Kakashi Hatake, Minato Namikaze…"
+  },
+  {
+   "id": "227b9091-93c8-4bda-8357-36c8dc025d3c",
+   "slug": "kusarigama",
+   "avant": "Arme / outil de l'univers Naruto — porté par Kakashi Hatake, Might Guy, Tenten et 4 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Kakashi Hatake, Might Guy, Tenten…"
+  },
+  {
+   "id": "93198800-8743-41c1-8117-bbe6fb9b3a5b",
+   "slug": "lame-a-chakra",
+   "avant": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Konohamaru Sarutobi, Boruto Uzumaki et 8 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Konohamaru Sarutobi, Boruto Uzumaki…"
+  },
+  {
+   "id": "01b1649b-1991-4b3e-9b16-00b358c2775a",
+   "slug": "lame-a-chakra-de-konoha",
+   "avant": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Yamato, Sakura Haruno et 2 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Yamato, Sakura Haruno…"
+  },
+  {
+   "id": "3c430e9c-075f-4f54-bc95-78ee2798f728",
+   "slug": "lance",
+   "avant": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Tenten, Chiriku et 4 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Tenten, Chiriku…"
+  },
+  {
+   "id": "52c2bd60-5600-4ed3-ba30-294d24786b8c",
+   "slug": "liberation-de-l-eau-suiton",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 37 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha…"
+  },
+  {
+   "id": "50ee09aa-80c8-42e1-9476-c31c5593848e",
+   "slug": "liberation-de-l-ebullition-futton",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Kokuō, Han et 2 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Kokuō, Han…"
+  },
+  {
+   "id": "f601ba34-3ccc-4fcd-afe1-3c085930db5f",
+   "slug": "liberation-de-la-foudre-raiton",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Kakashi Hatake et 37 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Kakashi Hatake…"
+  },
+  {
+   "id": "568aed6e-5586-43d2-a499-673eff5cbd2c",
+   "slug": "liberation-de-la-glace-hyoton",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Haku, Ryōgi, Nadare Rōga et 3 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Haku, Ryōgi, Nadare Rōga…"
+  },
+  {
+   "id": "7e9d8e3a-6fdc-4ae8-aaba-0ff7958bd6f3",
+   "slug": "liberation-de-la-lave-yoton",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Kurotsuchi, Son Gokū et 7 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Kurotsuchi, Son Gokū…"
+  },
+  {
+   "id": "fb1712dc-d5a0-4d5e-bc27-a242f6574ab1",
+   "slug": "liberation-de-la-poussiere-jinton",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Kū, Mū, Kakō et 1 autre.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Kū, Mū, Kakō…"
+  },
+  {
+   "id": "62f2f953-fc30-4aca-9a2c-8d7b1796e8c2",
+   "slug": "liberation-de-la-terre-doton",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 37 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha…"
+  },
+  {
+   "id": "b4dbff35-cfb7-40e0-b7f4-b2d100081dad",
+   "slug": "liberation-du-bois-mokuton",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Madara Uchiha, Orochimaru, Obito Uchiha et 13 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Madara Uchiha, Orochimaru, Obito Uchiha…"
+  },
+  {
+   "id": "4892c730-81b3-45ff-942a-a2fc48b0bcbb",
+   "slug": "liberation-du-feu-katon",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 37 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha…"
+  },
+  {
+   "id": "99a0db2c-7bf0-4426-a648-b42ce8db2948",
+   "slug": "liberation-du-magnetisme-jiton",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Gaara, Shinki et 4 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Gaara, Shinki…"
+  },
+  {
+   "id": "3ff07529-a0f8-4b11-939c-c868f1a0be2a",
+   "slug": "liberation-du-vent-futon",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 37 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha…"
+  },
+  {
+   "id": "5ebc8bc2-7c7a-4e63-9d34-ec741cd388df",
+   "slug": "liberation-du-yang",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Kakashi Hatake et 37 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Kakashi Hatake…"
+  },
+  {
+   "id": "adff9091-d010-44fc-a71c-ae7c48626e2f",
+   "slug": "liberation-du-yin",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 37 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha…"
+  },
+  {
+   "id": "641b013b-7962-455d-a19e-12d513eb1ea7",
+   "slug": "liberation-du-yin-yang",
+   "avant": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Obito Uchiha et 6 autres.",
+   "apres": "Nature de chakra de l'univers Naruto — maîtrisée par Naruto Uzumaki, Madara Uchiha, Obito Uchiha…"
+  },
+  {
+   "id": "9500e36e-f0ef-4fc5-bf56-672b89f9d5e5",
+   "slug": "logistical-support-and-medical-division",
+   "avant": "Groupe de l'univers Naruto — réunit Shizune, Yūgao Uzuki, Iō (medical-nin) et 4 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Shizune, Yūgao Uzuki, Iō (medical-nin)…"
+  },
+  {
+   "id": "a57aba37-0548-42b8-a193-a3a41b936478",
+   "slug": "magaki-group",
+   "avant": "Groupe de l'univers Naruto — réunit Nangō, Akaboshi, Benten et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Nangō, Akaboshi, Benten…"
+  },
+  {
+   "id": "c63179e7-314a-4803-b628-911b973ee798",
+   "slug": "mangekyo-sharingan",
+   "avant": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Kakashi Hatake, Obito Uchiha, Itachi Uchiha et 13 autres.",
+   "apres": "Aptitude héréditaire (kekkei genkai) de l'univers Naruto — portée par Kakashi Hatake, Obito Uchiha, Itachi Uchiha…"
+  },
+  {
+   "id": "069141d1-c9d4-41fa-9b60-9d02f9f9c101",
+   "slug": "massue",
+   "avant": "Arme / outil de l'univers Naruto — porté par Tenten, Yagura Karatachi, Banna et 1 autre.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Tenten, Yagura Karatachi, Banna…"
+  },
+  {
+   "id": "731a2a2d-1e4b-40f6-a340-ed7d3561844e",
+   "slug": "mind-reading-amplification-machine",
+   "avant": "Arme / outil de l'univers Naruto — porté par Inoichi Yamanaka, Mawashi Dokuraku, Shimon Hijiri et 2 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Inoichi Yamanaka, Mawashi Dokuraku, Shimon Hijiri…"
+  },
+  {
+   "id": "0213e92a-c014-433a-9a75-2fdcf667d816",
+   "slug": "new-seven-ninja-swordsmen",
+   "avant": "Groupe de l'univers Naruto — réunit Shizuma Hoshigaki, Buntan Kurosuki, Kagura Karatachi et 4 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Shizuma Hoshigaki, Buntan Kurosuki, Kagura Karatachi…"
+  },
+  {
+   "id": "1eee5807-699c-4654-b5e6-92c883b3e498",
+   "slug": "ombrelle",
+   "avant": "Arme / outil de l'univers Naruto — porté par Suiren, Fuyō, Aoi Rokushō et 4 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Suiren, Fuyō, Aoi Rokushō…"
+  },
+  {
+   "id": "90fbb1eb-bd07-4b1a-aa65-aba5629393e3",
+   "slug": "parchemin-explosif",
+   "avant": "Arme / outil de l'univers Naruto — porté par Tobirama Senju, Tenten, Shikamaru Nara et 9 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Tobirama Senju, Tenten, Shikamaru Nara…"
+  },
+  {
+   "id": "b1ce733b-bb17-4dbc-b0bb-4dee0f9bbc7c",
+   "slug": "pilule-de-rations-militaires",
+   "avant": "Arme / outil de l'univers Naruto — porté par Kabuto Yakushi, Itachi Uchiha, Rock Lee et 6 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Kabuto Yakushi, Itachi Uchiha, Rock Lee…"
+  },
+  {
+   "id": "b1c05a00-0b6d-41bd-9859-b20b65438302",
+   "slug": "poison",
+   "avant": "Arme / outil de l'univers Naruto — porté par Orochimaru, Kabuto Yakushi, Mitsuki et 24 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Orochimaru, Kabuto Yakushi, Mitsuki…"
+  },
+  {
+   "id": "aeaafe22-e096-45e7-8421-b4fcd90f0494",
+   "slug": "police-militaire-de-konoha",
+   "avant": "Groupe de l'univers Naruto — réunit Kiba Inuzuka, Fugaku Uchiha, Tekka Uchiha et 6 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Kiba Inuzuka, Fugaku Uchiha, Tekka Uchiha…"
+  },
+  {
+   "id": "14095119-c213-46da-902d-0fbf5accbd06",
+   "slug": "portail-spatio-temporel",
+   "avant": "Arme / outil de l'univers Naruto — porté par Victor, Boro, Code et 2 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Victor, Boro, Code…"
+  },
+  {
+   "id": "b947a416-62cf-4df2-8072-df620f547c28",
+   "slug": "racine-anbu",
+   "avant": "Organisation de l'univers Naruto — réunit Kakashi Hatake, Orochimaru, Kabuto Yakushi et 20 autres.",
+   "apres": "Organisation de l'univers Naruto — réunit Kakashi Hatake, Orochimaru, Kabuto Yakushi…"
+  },
+  {
+   "id": "a445759a-e2a1-4f28-b25a-873914eae51d",
+   "slug": "sable",
+   "avant": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Gaara, Shinki et 13 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Gaara, Shinki…"
+  },
+  {
+   "id": "4184d2f9-f078-430f-88d5-0ba80394f1f9",
+   "slug": "sabre",
+   "avant": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Madara Uchiha, Kakashi Hatake et 37 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Madara Uchiha, Kakashi Hatake…"
+  },
+  {
+   "id": "a333f485-1d4d-4c70-9acd-655322c385a7",
+   "slug": "sasuke-recovery-team",
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Chōji Akimichi, Kiba Inuzuka et 3 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Chōji Akimichi, Kiba Inuzuka…"
+  },
+  {
+   "id": "693bb97a-4b2b-47c2-89ea-fd6cb17abd87",
+   "slug": "scalpel",
+   "avant": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Ameno, Amachi et 5 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Sasuke Uchiha, Ameno, Amachi…"
+  },
+  {
+   "id": "2a4eb1a6-e6aa-4bf1-85e4-e67165011063",
+   "slug": "scientific-ninja-weapons-team",
+   "avant": "Groupe de l'univers Naruto — réunit Akita Inuzuka, Sumire Kakei, Amado Sanzu et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Akita Inuzuka, Sumire Kakei, Amado Sanzu…"
+  },
+  {
+   "id": "9edd9898-65da-41f8-8c29-c36fa55cee47",
+   "slug": "sealing-tag",
+   "avant": "Arme / outil de l'univers Naruto — porté par Gaara, Shino Aburame, Maki et 2 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Gaara, Shino Aburame, Maki…"
+  },
+  {
+   "id": "37286736-ee68-4427-994f-30bb79706ade",
+   "slug": "second-division",
+   "avant": "Groupe de l'univers Naruto — réunit Hinata Hyūga, Kurotsuchi, Neji Hyūga et 4 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Hinata Hyūga, Kurotsuchi, Neji Hyūga…"
+  },
+  {
+   "id": "4c68bdf5-2f03-4682-9b78-d57a9eef0f8b",
+   "slug": "senbon",
+   "avant": "Arme / outil de l'univers Naruto — porté par Kabuto Yakushi, Sakura Haruno, Tenten et 16 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Kabuto Yakushi, Sakura Haruno, Tenten…"
+  },
+  {
+   "id": "79df6438-7a6a-4d0b-958d-445b7f819e76",
+   "slug": "sept-epeistes-de-la-brume",
+   "avant": "Groupe de l'univers Naruto — réunit Kisame Hoshigaki, Zabuza Momochi, Raiga Kurosuki et 8 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Kisame Hoshigaki, Zabuza Momochi, Raiga Kurosuki…"
+  },
+  {
+   "id": "707a9b03-e32c-48cf-8710-eac272b32736",
+   "slug": "shakujo",
+   "avant": "Arme / outil de l'univers Naruto — porté par Hagoromo Ōtsutsuki, Asura Ōtsutsuki, Hamura Ōtsutsuki et 3 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Hagoromo Ōtsutsuki, Asura Ōtsutsuki, Hamura Ōtsutsuki…"
+  },
+  {
+   "id": "e9e832bc-9e99-4bc3-9ee7-03a7fbd16136",
+   "slug": "shichiseiken",
+   "avant": "Arme / outil de l'univers Naruto — porté par Hagoromo Ōtsutsuki, Darui, Kinkaku et 1 autre.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Hagoromo Ōtsutsuki, Darui, Kinkaku…"
+  },
+  {
+   "id": "69c9ffd0-928b-43a6-8140-eb41396fac1f",
+   "slug": "shinobazu",
+   "avant": "Groupe de l'univers Naruto — réunit Monju, Shura, Toki (Shinobazu) et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Monju, Shura, Toki (Shinobazu)…"
+  },
+  {
+   "id": "fb266051-021f-4d2f-9c2f-c2c61497d87c",
+   "slug": "shuriken-fuma",
+   "avant": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha et 13 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Sasuke Uchiha, Madara Uchiha…"
+  },
+  {
+   "id": "9d4dbaf7-d541-40f7-83bb-90883994690d",
+   "slug": "sound-four",
+   "avant": "Groupe de l'univers Naruto — réunit Sasuke Uchiha, Tayuya, Jirōbō et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Sasuke Uchiha, Tayuya, Jirōbō…"
+  },
+  {
+   "id": "39670808-2948-4c6f-9682-9eaf2c14ce53",
+   "slug": "star-guard-team",
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Rock Lee, Tenten et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Rock Lee, Tenten…"
+  },
+  {
+   "id": "9f21ad56-b5c9-43c3-bbfb-9e1589792af3",
+   "slug": "stone-of-gelel",
+   "avant": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Ranke, Haido et 4 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Naruto Uzumaki, Ranke, Haido…"
+  },
+  {
+   "id": "4db0da0a-27c8-4b9b-b860-5a51d939c83e",
+   "slug": "suna-council",
+   "avant": "Groupe de l'univers Naruto — réunit Baki, Ebizō, Gōza et 4 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Baki, Ebizō, Gōza…"
+  },
+  {
+   "id": "55c513c7-d15c-4874-af88-43584db4da1c",
+   "slug": "surprise-attack-and-diversion-platoon",
+   "avant": "Groupe de l'univers Naruto — réunit Deidara, Sasori, Chūkichi et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Deidara, Sasori, Chūkichi…"
+  },
+  {
+   "id": "8393bf70-38a4-4aae-b3fa-ce2133f0d7ed",
+   "slug": "surprise-attack-division",
+   "avant": "Groupe de l'univers Naruto — réunit Kankurō, Sai, Omoi et 5 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Kankurō, Sai, Omoi…"
+  },
+  {
+   "id": "5e960d01-6d54-4141-bed9-a29396722962",
+   "slug": "taka",
+   "avant": "Groupe de l'univers Naruto — réunit Sasuke Uchiha, Jūgo, Suigetsu Hōzuki et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Sasuke Uchiha, Jūgo, Suigetsu Hōzuki…"
+  },
+  {
+   "id": "9d3b9c52-6860-4fc8-a55f-d7ea509ff659",
+   "slug": "tanto",
+   "avant": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Kakashi Hatake, Itachi Uchiha et 38 autres.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Madara Uchiha, Kakashi Hatake, Itachi Uchiha…"
+  },
+  {
+   "id": "8cf88f50-1e1e-4ee6-9a82-1efe63df61e5",
+   "slug": "team-10",
+   "avant": "Groupe de l'univers Naruto — réunit Chōji Akimichi, Ino Yamanaka, Shikamaru Nara et 5 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Chōji Akimichi, Ino Yamanaka, Shikamaru Nara…"
+  },
+  {
+   "id": "13bc19c3-8d31-4e6a-9c43-a4e2f5acb119",
+   "slug": "team-15",
+   "avant": "Groupe de l'univers Naruto — réunit Tsubaki Kurogane, Namida Suzumeno, Hanabi Hyūga et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Tsubaki Kurogane, Namida Suzumeno, Hanabi Hyūga…"
+  },
+  {
+   "id": "aa074cbf-56dd-4ed7-8fac-82599639e3a9",
+   "slug": "team-25",
+   "avant": "Groupe de l'univers Naruto — réunit Sai, Hako Kuroi, Renga Kokubō et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Sai, Hako Kuroi, Renga Kokubō…"
+  },
+  {
+   "id": "090715c3-7cf3-45f3-b5db-16560fa79dfd",
+   "slug": "team-40",
+   "avant": "Groupe de l'univers Naruto — réunit Dōshu Goetsu, Ibiki Morino, Tsuru Itoi et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Dōshu Goetsu, Ibiki Morino, Tsuru Itoi…"
+  },
+  {
+   "id": "de7993b0-0f1d-41e4-ae5a-47c10294aa16",
+   "slug": "team-5",
+   "avant": "Groupe de l'univers Naruto — réunit Iwabee Yuino, Denki Kaminarimon, Udon Ise et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Iwabee Yuino, Denki Kaminarimon, Udon Ise…"
+  },
+  {
+   "id": "5f24c1d0-f0cb-4cb3-8917-0e651ff7ddd6",
+   "slug": "team-7",
+   "avant": "Groupe de l'univers Naruto — réunit Konohamaru Sarutobi, Mitsuki, Boruto Uzumaki et 3 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Konohamaru Sarutobi, Mitsuki, Boruto Uzumaki…"
+  },
+  {
+   "id": "47151ab9-55f2-4cf3-999e-8727cc6bcce8",
+   "slug": "team-8",
+   "avant": "Groupe de l'univers Naruto — réunit Shino Aburame, Hinata Hyūga, Kiba Inuzuka et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Shino Aburame, Hinata Hyūga, Kiba Inuzuka…"
+  },
+  {
+   "id": "84018d9e-333b-4bd8-8ef6-e3ad06e9e845",
+   "slug": "team-choza",
+   "avant": "Groupe de l'univers Naruto — réunit Might Guy, Chōza Akimichi, Ebisu et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Might Guy, Chōza Akimichi, Ebisu…"
+  },
+  {
+   "id": "aa0c155d-0046-4ecd-8633-d2eee31e1a92",
+   "slug": "team-dosu",
+   "avant": "Groupe de l'univers Naruto — réunit Orochimaru, Kin Tsuchi, Zaku Abumi et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Orochimaru, Kin Tsuchi, Zaku Abumi…"
+  },
+  {
+   "id": "1f775c04-acd5-4eeb-8899-635f4da725be",
+   "slug": "team-ebisu",
+   "avant": "Groupe de l'univers Naruto — réunit Konohamaru Sarutobi, Udon Ise, Moegi Kazamatsuri et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Konohamaru Sarutobi, Udon Ise, Moegi Kazamatsuri…"
+  },
+  {
+   "id": "d9175f6d-e679-4de5-a128-70fac744c666",
+   "slug": "team-guren",
+   "avant": "Groupe de l'univers Naruto — réunit Kigiri, Gozu, Nurari et 3 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Kigiri, Gozu, Nurari…"
+  },
+  {
+   "id": "a898831d-8ddb-43f8-b8a1-1ce2620fb4d7",
+   "slug": "team-guy",
+   "avant": "Groupe de l'univers Naruto — réunit Might Guy, Rock Lee, Tenten et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Might Guy, Rock Lee, Tenten…"
+  },
+  {
+   "id": "66089929-c5f5-4cd5-b40d-415c9ed1d396",
+   "slug": "team-hiruzen",
+   "avant": "Groupe de l'univers Naruto — réunit Orochimaru, Jiraiya, Tsunade et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Orochimaru, Jiraiya, Tsunade…"
+  },
+  {
+   "id": "9cb0aebd-a9c3-4bb5-8e5d-a9a7df3f2359",
+   "slug": "team-kabuto",
+   "avant": "Groupe de l'univers Naruto — réunit Kabuto Yakushi, Yoroi Akadō, Misumi Tsurugi et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Kabuto Yakushi, Yoroi Akadō, Misumi Tsurugi…"
+  },
+  {
+   "id": "fb70e34f-bd9e-44e5-9952-da26e9a702e5",
+   "slug": "team-kakashi",
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Sasuke Uchiha, Kakashi Hatake et 5 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Sasuke Uchiha, Kakashi Hatake…"
+  },
+  {
+   "id": "adce68a2-5bac-4f43-9498-dc55b2754c73",
+   "slug": "team-minato",
+   "avant": "Groupe de l'univers Naruto — réunit Kakashi Hatake, Obito Uchiha, Minato Namikaze et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Kakashi Hatake, Obito Uchiha, Minato Namikaze…"
+  },
+  {
+   "id": "7f86f6b1-67bd-4d0f-b592-bc92c2c21690",
+   "slug": "team-oboro",
+   "avant": "Groupe de l'univers Naruto — réunit Mubi, Aoi Rokushō, Kagari et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Mubi, Aoi Rokushō, Kagari…"
+  },
+  {
+   "id": "e987787a-2681-4b4d-8148-a9c9b4fe6d95",
+   "slug": "team-one",
+   "avant": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Kakashi Hatake, Shino Aburame et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Naruto Uzumaki, Kakashi Hatake, Shino Aburame…"
+  },
+  {
+   "id": "51daf66b-e003-42b8-92e6-491b35bc7994",
+   "slug": "team-ro",
+   "avant": "Groupe de l'univers Naruto — réunit Kakashi Hatake, Yamato, Itachi Uchiha et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Kakashi Hatake, Yamato, Itachi Uchiha…"
+  },
+  {
+   "id": "fc58a39f-c616-423e-8b99-9b022f160e1e",
+   "slug": "team-suien",
+   "avant": "Groupe de l'univers Naruto — réunit Suien, Murasame, Kirisame et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Suien, Murasame, Kirisame…"
+  },
+  {
+   "id": "debacfe7-d573-4bed-9488-eac72e965c4c",
+   "slug": "team-tobirama",
+   "avant": "Groupe de l'univers Naruto — réunit Hiruzen Sarutobi, Tobirama Senju, Koharu Utatane et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Hiruzen Sarutobi, Tobirama Senju, Koharu Utatane…"
+  },
+  {
+   "id": "366199cb-fa8d-4e5e-bb74-99ae1f9962fd",
+   "slug": "team-two",
+   "avant": "Groupe de l'univers Naruto — réunit Yamato, Rock Lee, Tenten et 2 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Yamato, Rock Lee, Tenten…"
+  },
+  {
+   "id": "0fde39f6-8736-4955-8081-3f7bf976a2de",
+   "slug": "third-division",
+   "avant": "Groupe de l'univers Naruto — réunit Kakashi Hatake, Might Guy, Rock Lee et 12 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Kakashi Hatake, Might Guy, Rock Lee…"
+  },
+  {
+   "id": "93d6c10e-97ec-4e36-8b09-1f8522c1fce8",
+   "slug": "three-sand-siblings",
+   "avant": "Groupe de l'univers Naruto — réunit Gaara, Temari, Kankurō et 1 autre.",
+   "apres": "Groupe de l'univers Naruto — réunit Gaara, Temari, Kankurō…"
+  },
+  {
+   "id": "abd67b68-3d2e-4df6-b9f6-d6da659137e0",
+   "slug": "tonfa",
+   "avant": "Arme / outil de l'univers Naruto — porté par Rock Lee, Tenten, Ruiga et 1 autre.",
+   "apres": "Arme / outil de l'univers Naruto — porté par Rock Lee, Tenten, Ruiga…"
+  },
+  {
+   "id": "a7f8978a-a990-438a-be36-12bf9ce55f1e",
+   "slug": "twenty-platoons",
+   "avant": "Groupe de l'univers Naruto — réunit Chōji Akimichi, Ino Yamanaka, Shikamaru Nara et 8 autres.",
+   "apres": "Groupe de l'univers Naruto — réunit Chōji Akimichi, Ino Yamanaka, Shikamaru Nara…"
+  }
+ ]
+}
