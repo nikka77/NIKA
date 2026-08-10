@@ -36,7 +36,7 @@ import { universeHubSlug, taxonomyByName, ALLOWED_FILTER_ATTRS } from '@/lib/aka
 import { registryHref } from '@/lib/akasha/href';
 import { normalizeForms } from '@/lib/akasha/forms';
 import { deriveShape, ORBIT_MIN_MEMBERS, type AkashaModule } from '@/lib/akasha/shape';
-import { libelle } from '@/lib/akasha/relation-labels';
+import { autresAretes } from '@/lib/akasha/relation-labels';
 import { ZoneProvider, useZone } from './zone-context';
 
 const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
@@ -56,7 +56,13 @@ const PRIMARY_RELATION: Partial<Record<AkashaType, { rels: string[]; label: stri
   skill: { rels: ['maitrise'], label: 'Maîtrisée par' },
   artifact: { rels: ['possede'], label: 'Possédé par' },
   profession: { rels: ['exerce'], label: 'Exercé par' },
-  place: { rels: ['habite', 'appartient'], label: 'Habité par' },
+  // `place` NE RAMASSE PLUS `appartient` (10/08/2026). Les deux natures étaient fondues sous le
+  // seul libellé « Habité par », si bien que 381 personnages rattachés à un lieu par `appartient`
+  // — Kakuzu et Takigakure, par exemple — s'y voyaient déclarés RÉSIDENTS. Le graphe dit
+  // « appartient », la page disait « habite » : c'est une affirmation que la donnée ne porte pas,
+  // le même défaut que les libellés inversés du 08/08. Les arêtes `appartient` retombent dans la
+  // grappe secondaire, qui passe par le dictionnaire directionnel et les nomme correctement.
+  place: { rels: ['habite'], label: 'Habité par' },
 };
 
 // Les deux dictionnaires directionnels (RELATION_LABELS, RELATION_LABELS_ENTRANT) et `libelle()`
@@ -217,14 +223,41 @@ function ZoneInner({ entry, axisNeighbors }: { entry: AkashaEntryDetail; axisNei
   const orbitRest = isOrbit ? primaryMembers.slice(9) : [];
 
   // Tout le reste des arêtes (dans les deux sens), hors ce qui est déjà montré en primaire/orbite.
-  const secondary: Lien[] = [
-    ...entry.relationsOut.map((r) => ({ label: libelle(r.relation, false), name: r.target.name, slug: r.target.slug })),
-    ...entry.relationsIn
-      .filter((r) => !(primaryRels.has(r.relation) && r.target.type === 'character'))
-      .map((r) => ({ label: libelle(r.relation, true), name: r.target.name, slug: r.target.slug })),
-  ]
-    .filter((l) => !primarySlugs.has(l.slug))
-    .filter((l, i, t) => t.findIndex((x) => x.name === l.name && x.label === l.label) === i);
+  //
+  // ⚠️ CE BLOC ÉTAIT LE TROU (chantier 2, 10/08/2026). Il portait un `.filter(!primarySlugs.has(slug))`
+  // qui se croyait un dédoublonnage et qui AMPUTAIT : dès qu'un slug entrait dans la grappe
+  // primaire, TOUTES ses autres arêtes vers cette fiche disparaissaient, quelle que soit leur
+  // nature. Mesuré page par page sur http://localhost:3000 — jamais depuis le code — 21 demi-arêtes
+  // muettes sur 11 fiches, et le compteur du titre les taisait avec elles : « Autres liens · 8 » sur
+  // `kirigakure` qui en porte 11, « · 57 » sur `konohagakure` qui en porte 62, et RIEN du tout sur
+  // `hoshigakure`, dont l'unique autre lien (Hokuto, allié) était le seul candidat à la grappe.
+  // Les natures perdues étaient précisément celles qu'on ne pouvait pas déduire de l'appartenance :
+  // 15 `allie`, 4 `appartient`, 1 `ennemi`, 1 `famille` — Kakuzu habite Takigakure ET en est
+  // l'ennemi ; la page ne disait que la première moitié.
+  //
+  // La matrice de la vague 6 avait conclu « EntityZone : 0 trou » en modélisant cette grappe comme
+  // « elle ramasse TOUT le reste » : c'était vrai de l'intention, faux du code. Une matrice écrite
+  // depuis la lecture du code est une hypothèse.
+  //
+  // Réparé par `autresAretes` (lib/akasha/relation-labels.ts), le lecteur que CharacterZone et
+  // OrganizationZone utilisent depuis le 10/08 : on déclare ce qui est DÉJÀ rendu, il rend tout le
+  // reste. Deux différences avec l'ancien filtre, et ce sont elles qui comblent :
+  //   · le prédicat porte sur (nature, sens, cible) et non sur le seul slug — la SECONDE arête vers
+  //     un membre déjà listé n'est plus confondue avec la première ;
+  //   · le dédoublonnage se fait par (slug, libellé) et non par (nom, libellé) : trois entités du
+  //     corpus s'appellent « Hina ». Mesuré aujourd'hui sur les 2 652 fiches de cette population :
+  //     0 collision de nom, donc 0 chip déplacée par ce second point — la garde vaut pour la
+  //     prochaine, pas pour aujourd'hui, et c'est bien pour ça qu'elle doit exister avant.
+  const secondary: Lien[] = autresAretes(
+    entry.relationsOut,
+    entry.relationsIn,
+    // Ce que cette fiche montre DÉJÀ ailleurs : les membres de la grappe primaire (ou du puits
+    // `orbit`, qui rend le MÊME ensemble) — c'est-à-dire les arêtes ENTRANTES d'une relation de
+    // `primary.rels` vers un personnage retenu. Rien d'autre : un oubli ici produit un doublon
+    // visible, jamais un silence.
+    (relation, entrant, target) =>
+      entrant && primaryRels.has(relation) && target.type === 'character' && primarySlugs.has(target.slug),
+  ).map((v) => ({ label: v.label, name: v.target.name, slug: v.target.slug }));
 
   // ── Rattachements (niveau 2) : valeurs d'axe peuplées, lues depuis la taxonomie RÉELLE de
   // l'univers (jamais une liste recopiée) — même source que `deriveShape`/`aUnAxePeuple`. ──
