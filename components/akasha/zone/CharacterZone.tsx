@@ -105,7 +105,7 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
   const NATURES_LIENS: Record<string, string> = {
     allie: 'Allié', mentor: 'Mentor', eleve: 'Élève', ennemi: 'Ennemi', rival: 'Rival',
   };
-  const liens = [
+  const liensTous = [
     ...entry.relationsOut.filter((r) => NATURES_LIENS[r.relation])
       .map((r) => ({ label: NATURES_LIENS[r.relation], name: r.target.name, slug: r.target.slug })),
     // Sens ENTRANT : les deux bouts sont résolus dans `target` (relationsIn porte l'autre
@@ -119,7 +119,13 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
     // sortante — sa page annonçait zéro allié et zéro ennemi.
     ...entry.relationsIn.filter((r) => r.relation === 'allie' || r.relation === 'ennemi' || r.relation === 'rival')
       .map((r) => ({ label: NATURES_LIENS[r.relation], name: r.target.name, slug: r.target.slug })),
-  ].filter((l, i, t) => t.findIndex((x) => x.name === l.name && x.label === l.label) === i).slice(0, 24);
+  ].filter((l, i, t) => t.findIndex((x) => x.name === l.name && x.label === l.label) === i);
+  // UN COMPTEUR SE CALCULE AVANT LA COUPE (10/08/2026). Le titre disait `Liens · ${liens.length}`
+  // sur une liste DÉJÀ tronquée à 24 : il ne pouvait donc jamais annoncer plus de 24, quel qu'en
+  // soit le nombre réel, et une fiche à 60 liens en promettait 24. Le total est vrai, la coupe est
+  // dite, et le reste se lit dans le dossier — mais on n'annonce plus le plafond pour la mesure.
+  const liensTotal = liensTous.length;
+  const liens = liensTous.slice(0, 24);
   const belong: { attr: string; label: string; value: string }[] = [];
   for (const [attr, label] of BELONG_ATTRS) {
     const v = str(a[attr]);
@@ -243,6 +249,10 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 26, marginTop: 26, maxWidth: 640 }}>
           {(atkRels.length > 0 || jutsuPlain.length > 0) && (
             <Grappe title={`Techniques · ${atkRels.length + jutsuPlain.length}`} accent={accent}>
+              {/* Le titre dit le total du graphe ; les chips s'arrêtent à 14 + un reliquat de
+                  jutsu. L'écart est ASSUMÉ et il est dit plus bas par « + N autres » — ce qui
+                  manquait, c'est justement de le dire (constat du 10/08 : une fiche à 105
+                  techniques en montrait 14 sans un mot). */}
               {atkRels.slice(0, 14).map((r) => (
                 <ChipLink key={r.id} accent={accent} active={sel?.kind === 'technique' && sel.name === r.target.name}
                   onClick={() => select({ kind: 'technique', name: r.target.name, slug: r.target.slug, signature: r.target.is_signature === 'true' })}>
@@ -275,13 +285,17 @@ function ZoneInner({ entry, popRank, sharedVoice }: { entry: AkashaEntryDetail; 
           )}
 
           {liens.length > 0 && (
-            <Grappe title={`Liens · ${liens.length}`} accent={accent}>
+            <Grappe title={`Liens · ${liensTotal}`} accent={accent}>
               {liens.map((l, i) => (
                 <ChipLink key={i} accent={accent} active={sel?.kind === 'famille' && sel.name === l.name}
                   onClick={() => select({ kind: 'famille', rel: l.label, name: l.name, slug: l.slug })}>
                   <span style={{ color: 'var(--td3)', fontWeight: 400 }}>{l.label} · </span>{l.name}
                 </ChipLink>
               ))}
+              {liensTotal > liens.length && (
+                // Même aveu que la grappe Techniques : la coupe se dit, elle ne se cache pas.
+                <span style={{ fontFamily: 'var(--fo)', fontSize: 11.5, color: 'var(--td3)', alignSelf: 'center' }}>+ {liensTotal - liens.length} autres</span>
+              )}
             </Grappe>
           )}
 
