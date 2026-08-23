@@ -1,8 +1,12 @@
 // lib/akasha/miroir-zone.test.ts — GARDE-FOU ANTI-DÉRIVE : après la vague C (23/08/2026, migration
-// en zones), le cœur garde 13 modules de lib/akasha EN DOUBLE avec le dépôt nika-akasha, parce que
+// en zones), le cœur garde 8 modules de lib/akasha EN DOUBLE avec le dépôt nika-akasha, parce que
 // 12 scripts de l'usine + app/sitemap.ts + app/api/ops/state + app/api/ops/audit les importent
 // encore localement (fermeture transitive établie par grep avant extraction — voir
-// tasks/migration-zones.md, section « Vague C »). Deux dérives de miroir ont déjà coûté cher cette
+// tasks/migration-zones.md, section « Vague C »). Le contre-vérificateur de la vague C a trouvé 5
+// modules gardés sans aucun importateur (collections, flavor, naruto-world, og-visuel, queries —
+// 1 400 lignes que seuls app/learn/akasha et components/akasha consommaient) : un fichier orphelin
+// ne fait pas échouer tsc, il faut compter ses importateurs un par un. Retirés. Deux dérives de
+// miroir ont déjà coûté cher cette
 // semaine (leçons du 08/08 et du 10/08, sur scripts/lib/akasha-axes.mjs) : ce test applique la
 // même discipline à CETTE duplication-là, avant qu'elle ne coûte un troisième incident.
 //
@@ -41,12 +45,7 @@ const RAW_BASE = 'https://raw.githubusercontent.com/nikka77/nika-akasha/main';
 
 // Fichiers dupliqués tels quels — AUCUNE divergence tolérée.
 const FICHIERS_IDENTIQUES = [
-  'lib/akasha/collections.ts',
   'lib/akasha/db-forms.ts',
-  'lib/akasha/flavor.ts',
-  'lib/akasha/naruto-world.ts',
-  'lib/akasha/og-visuel.ts',
-  'lib/akasha/queries.ts',
   'lib/akasha/relation-labels.ts',
   'lib/akasha/relations.ts',
   'lib/akasha/schema.ts',

@@ -76,7 +76,7 @@ Un morceau sort quand sa zone est déployée et vérifiée ; le cœur maigrit pa
 - Supprimés (`git rm`) : `app/learn/akasha/` (15 fichiers), `components/akasha/` (48 fichiers),
   `public/images/akasha/` (24 Mo). `public/jeux-proto` n'existait pas dans ce worktree (untracked
   uniquement dans l'autre working tree de `main` — rien à supprimer ici).
-- `lib/akasha/` : réduit de 24 à 15 fichiers (13 modules + `shape.test.ts` + `miroir-axes.test.ts`).
+- `lib/akasha/` : réduit de 24 à 15 fichiers (8 modules + `shape.test.ts` + `miroir-axes.test.ts`).
   Fermeture transitive établie par grep sur `scripts/*`, `app/sitemap.ts`, `app/api/ops/*` (pas
   seulement les 3 fichiers du cœur trouvés par la reconnaissance B0 — 51 scripts de l'usine
   importent aussi `lib/akasha`, jamais mesuré avant ce chantier). Gardés : `collections.ts`,
@@ -101,7 +101,7 @@ Un morceau sort quand sa zone est déployée et vérifiée ; le cœur maigrit pa
   ont désormais des EN-TÊTES différents (la zone documente la migration, pas le cœur) — fonctionnellement
   identiques (mêmes `AXES`/`UNIVERSE_SLUG`), mais plus au même chemin ni mot pour mot. Pas de test
   automatique dessus tant que la dépendance git n'est pas tranchée.
-- `lib/akasha/miroir-zone.test.ts` (nouveau) : compare OCTET PAR OCTET les 13 modules dupliqués
+- `lib/akasha/miroir-zone.test.ts` (nouveau) : compare OCTET PAR OCTET les 8 modules dupliqués
   (+ `shape.test.ts`) contre leur original dans `/Users/macbookprom1pro/dev/nika-akasha` (dépôt
   frère, present sur cette machine) ou GitHub en repli — jamais un faux vert si les deux sont
   injoignables (`t.skip` explicite). Une seule divergence tolérée et documentée en tête de fichier :
@@ -166,3 +166,12 @@ lui-même appelle de ses vœux.
 poids `.next/` (le serveur `next dev` de `main` tourne pour d'autres agents, consigne de ne pas y
 toucher) — seul le nombre de pages (499) était déjà connu. Le lien de partage Vercel expire le
 24/08 à 12h20 ; au-delà, la préview reste joignable pour qui a un accès `dan-2219cbfb` normal.
+
+### Correctif après contre-vérification (23/08, 15h40)
+
+Le contre-vérificateur a trouvé 5 modules gardés dans `lib/akasha` sans AUCUN importateur (collections,
+flavor, naruto-world, og-visuel, queries — ~1 400 lignes, consommés seulement par les dossiers supprimés).
+`tsc` ne voit pas un orphelin. Retirés ; `miroir-zone.test.ts` compare désormais 8 modules + shape.test.
+Il comptait aussi `types.ts` parmi les orphelins : faux, `schema.ts` et `shape.ts` l'importent. Fermeture
+finale de `lib/akasha` : db-forms, relation-labels, relations, schema, sections, shape, types,
+universe-taxonomy (+ 3 tests). Build : 176 pages, tsc 0, tests 51/51.
