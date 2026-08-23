@@ -175,3 +175,25 @@ flavor, naruto-world, og-visuel, queries — ~1 400 lignes, consommés seulement
 Il comptait aussi `types.ts` parmi les orphelins : faux, `schema.ts` et `shape.ts` l'importent. Fermeture
 finale de `lib/akasha` : db-forms, relation-labels, relations, schema, sections, shape, types,
 universe-taxonomy (+ 3 tests). Build : 176 pages, tsc 0, tests 51/51.
+
+## Après la fusion (23/08/2026, 15:49 → 17:00) — ce que la prod a révélé
+
+Fusion `zones` → `main` par push fast-forward (77aee621) sur ordre de Dan. Vague de vérification
+(6 éclaireurs navigateur + 3 sceptiques par constat) : 8 défauts confirmés, tous corrigés le jour même.
+
+| Défaut mesuré en prod | Cause | Correctif |
+|---|---|---|
+| ~220 requêtes RSC identiques à l'ouverture d'UNE fiche, 404 mis en cache sur les prefetch des jeux | Vercel réécrit une requête RSC en `.rsc`/`.prefetch.rsc`/`.segments/…` AVANT nos rewrites ; le cœur proxifiait le chemin suffixé vers la zone | cœur ecc6055f : 6 règles « sans suffixe » par zone avant la règle générique → 3 requêtes RSC par fiche |
+| 182 liens `/learn/akasha/learn/akasha/…` (404) sur le hub Naruto, 35 sur le registre | 9 constructeurs d'URL de `<Link>` gardaient le préfixe en dur | zone 3747d85 + test `prefixe-basepath.test.ts` |
+| og:image des fiches sans `/learn/akasha` → 404 sur tout partage | Next ne préfixe pas les images de métadonnées par fichier | zone 2bb387f : `metadataBase` = domaine + basePath + slash |
+| `/learn/akasha/random` renvoyait sur le host de la zone | URL bâtie sur `request.url` (host proxifié) | zone 2bb387f : `SITE_URL` |
+| Header de /jeux vers les hosts internes des zones ; /jeux sans canonical/og | `zoneHref` renvoyait `prod + basePath` ; aucune métadonnée | liant 72df3f3 (chemin relatif), jeux 4d20507 |
+| Titres génériques sur /tools/*, /faq (préexistant) | pages client sans `metadata` | cœur 127bbe92 : layouts serveur |
+| `proxy.ts` de la zone sur 100 % du trafic, et 404 sur `/learn/akasha/images/akasha/x` | proxy sans matcher, double préfixe sous basePath | zone a6f8ee7 (rewrite `basePath:false` vers l'URL absolue), cœur f151e666 |
+| Fiches AKASHA jamais en cache (no-store), 874 K invocations/mois | `cookies()` dans le client Supabase, pas de `generateStaticParams` | zone 08611e0 : client sans cookies, `[slug]` en ISR réel (HIT au 2ᵉ appel) |
+
+Restent dynamiques par nature (searchParams) : le registre filtré et les 295 pages d'axe avec sous-filtre.
+Le hub Naruto pèse > 1 Mo / ~90 ressources (préexistant). `NEXT_PUBLIC_APP_URL` n'existe qu'en
+Production sur les projets Vercel (les previews écrivent localhost dans robots/canonical).
+Décision toujours ouverte pour Dan : l'usine du cœur consomme-t-elle `nika-akasha` en dépendance git
+pour la taxonomie/le miroir d'axes (aujourd'hui : double maintenu, gardé par `miroir-zone.test.ts`) ?

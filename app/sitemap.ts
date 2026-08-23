@@ -20,7 +20,9 @@ export const revalidate = 86400; // 1 jour
 const STAY_THEMES = ['silo-bunker', 'maison-flottante', 'avion', 'sous-marin', 'grotte', 'maison-terre',
   'maison-hobbit', 'cabane-arbres', 'tiny-house', 'bambou', 'villa-bali', 'train-reconverti',
   'tour-observation', 'bulle-transparente', 'thematique', 'france', 'moulin-reconverti',
-  'grange-reconvertie', 'sous-eau', 'capsule-spatiale', 'grue-industrielle'];
+  'grange-reconvertie', 'sous-eau', 'capsule-spatiale', 'grue-industrielle',
+  // + le thème agrégé lié depuis /stay (hors THEME_META, rendu par repli) — répond 200, relu le 23/08.
+  'architecture-surrealiste'];
 
 const PAGES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
   { path: '/', priority: 1, changeFrequency: 'daily' },
