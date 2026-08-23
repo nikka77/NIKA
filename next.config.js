@@ -140,7 +140,10 @@ const nextConfig = {
       { source: '/jeux/:path*', destination: 'https://nika-jeux.vercel.app/jeux/:path*' },
       { source: '/learn/akasha', destination: 'https://nika-akasha.vercel.app/learn/akasha' },
       { source: '/learn/akasha/:path*', destination: 'https://nika-akasha.vercel.app/learn/akasha/:path*' },
-      { source: '/images/akasha/:path*', destination: 'https://nika-akasha.vercel.app/images/akasha/:path*' },
+      // Les images AKASHA vivent dans public/ de la zone, que Next sert TOUJOURS sous son basePath :
+      // on vise directement /learn/akasha/images/akasha/* (23/08, fin du proxy.ts de la zone, qui
+      // s'exécutait sur 100 % de ses requêtes pour ne réécrire que celles-ci).
+      { source: '/images/akasha/:path*', destination: 'https://nika-akasha.vercel.app/learn/akasha/images/akasha/:path*' },
     ];
   },
 };
