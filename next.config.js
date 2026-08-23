@@ -107,8 +107,35 @@ const nextConfig = {
   // et toujours antérieure — c'est ce qui garde les 48 redirections /learn/akasha/* sur le domaine
   // du cœur (Location sans host de zone) au lieu de les laisser rendre par le proxy de la zone.
   // Vérifié par curl -I des deux côtés le 23/08 (voir tasks/migration-zones.md, section Vague C).
+  //
+  // PIÈGE RSC DES ZONES (mesuré en prod le 23/08, jour de la fusion) : sur Vercel, une requête du
+  // routeur client Next (en-tête `RSC: 1`, plus `Next-Router-Prefetch` ou `Next-Router-Segment-
+  // Prefetch`) est réécrite EN INTERNE en `/chemin.rsc`, `/chemin.prefetch.rsc` ou
+  // `/chemin.segments/<segment>.segment.rsc` AVANT nos règles afterFiles. Le cœur proxifiait donc
+  // ce chemin suffixé vers la zone, qui ne le connaît pas (`sasuke-uchiha.prefetch.rsc` n'est pas un
+  // slug) → 404 mis en cache au CDN, et le routeur de la zone réessayait en boucle : ~220 requêtes
+  // identiques `/learn/akasha/u/naruto?_rsc=…` à l'ouverture d'UNE fiche, 3 erreurs console par
+  // jeu. Les règles « sans suffixe » ci-dessous passent AVANT les génériques (ordre du tableau) :
+  // le chemin repart propre vers la zone, les en-têtes RSC sont transmis tels quels par le proxy,
+  // et la zone refait sa propre résolution (.rsc/.prefetch.rsc/.segments) chez elle. Vérifié par
+  // curl avec ces en-têtes, à travers le cœur : 200 text/x-component, plus aucun 404.
   async rewrites() {
+    const ZONES = [
+      { prefixe: '/jeux', hote: 'https://nika-jeux.vercel.app' },
+      { prefixe: '/learn/akasha', hote: 'https://nika-akasha.vercel.app' },
+    ];
+    const sansSuffixeRsc = ZONES.flatMap(({ prefixe, hote }) => [
+      // racine de la zone : /learn/akasha.rsc, /learn/akasha.prefetch.rsc, /learn/akasha.segments/…
+      { source: `${prefixe}.prefetch.rsc`, destination: `${hote}${prefixe}` },
+      { source: `${prefixe}.rsc`, destination: `${hote}${prefixe}` },
+      { source: `${prefixe}.segments/:seg*`, destination: `${hote}${prefixe}` },
+      // pages de la zone
+      { source: `${prefixe}/:path*.prefetch.rsc`, destination: `${hote}${prefixe}/:path*` },
+      { source: `${prefixe}/:path*.rsc`, destination: `${hote}${prefixe}/:path*` },
+      { source: `${prefixe}/:path*.segments/:seg*`, destination: `${hote}${prefixe}/:path*` },
+    ]);
     return [
+      ...sansSuffixeRsc,
       { source: '/jeux', destination: 'https://nika-jeux.vercel.app/jeux' },
       { source: '/jeux/:path*', destination: 'https://nika-jeux.vercel.app/jeux/:path*' },
       { source: '/learn/akasha', destination: 'https://nika-akasha.vercel.app/learn/akasha' },
