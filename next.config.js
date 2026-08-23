@@ -96,6 +96,22 @@ const nextConfig = {
       { source: '/learn/akasha/nelliel-tu-oderschvank', destination: '/learn/akasha/nelliel', permanent: true },
     ];
   },
+  // Vague C (23/08/2026) — plan de migration en zones : /jeux et /learn/akasha sont désormais
+  // servis par des dépôts/déploiements Vercel séparés (nika-jeux, nika-akasha). Un tableau ici
+  // vaut « afterFiles » (doc Next.js) : ces règles ne jouent qu'après les fichiers statiques et
+  // pages du cœur, et donc de toute façon APRÈS redirects() ci-dessus, qui est une phase séparée
+  // et toujours antérieure — c'est ce qui garde les 48 redirections /learn/akasha/* sur le domaine
+  // du cœur (Location sans host de zone) au lieu de les laisser rendre par le proxy de la zone.
+  // Vérifié par curl -I des deux côtés le 23/08 (voir tasks/migration-zones.md, section Vague C).
+  async rewrites() {
+    return [
+      { source: '/jeux', destination: 'https://nika-jeux.vercel.app/jeux' },
+      { source: '/jeux/:path*', destination: 'https://nika-jeux.vercel.app/jeux/:path*' },
+      { source: '/learn/akasha', destination: 'https://nika-akasha.vercel.app/learn/akasha' },
+      { source: '/learn/akasha/:path*', destination: 'https://nika-akasha.vercel.app/learn/akasha/:path*' },
+      { source: '/images/akasha/:path*', destination: 'https://nika-akasha.vercel.app/images/akasha/:path*' },
+    ];
+  },
 };
 
 module.exports = nextConfig;

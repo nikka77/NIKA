@@ -133,8 +133,10 @@ export default async function LearnPage() {
       {/* ── CONTENU ───────────────────────────────────────────── */}
       <div id="cours" style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(2rem,4vw,3rem) 1.4rem clamp(3rem,7vw,5rem)' }}>
 
-        {/* AKASHA — registre universel */}
-        <Link href="/learn/akasha" className="dom-card akasha-card" style={{
+        {/* AKASHA — registre universel. Lien DUR (<a>, pas <Link>) : AKASHA est une zone séparée
+            (nika-akasha.vercel.app), servie ici via rewrite next.config.js — Link/prefetch de
+            Next.js n'a pas à traverser cette frontière de déploiement (règle migration-zones.md). */}
+        <a href="/learn/akasha" className="dom-card akasha-card" style={{
           display: 'flex', alignItems: 'center', gap: '1.1rem', flexWrap: 'wrap',
           marginBottom: '2.5rem', textDecoration: 'none',
           background: 'linear-gradient(120deg, rgba(123,92,240,0.16), rgba(123,92,240,0.04))',
@@ -148,7 +150,7 @@ export default async function LearnPage() {
             <p style={{ fontFamily: 'var(--fo)', fontSize: 13, color: 'var(--td2)', margin: '0.3rem 0 0' }}>Le registre de tout ce qui existe, réel ou imaginé — personnages, lieux, artefacts, pouvoirs…</p>
           </div>
           <span style={{ fontFamily: 'var(--fe)', fontSize: 14, fontWeight: 800, fontStyle: 'italic', textTransform: 'uppercase', color: ACCENT, whiteSpace: 'nowrap' }}>Explorer →</span>
-        </Link>
+        </a>
 
         {/* Disciplines */}
         <div style={{ marginBottom: '3rem' }}>
