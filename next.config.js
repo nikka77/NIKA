@@ -90,6 +90,10 @@ const nextConfig = {
       { source: '/learn/akasha/jet-skis', destination: '/learn/akasha/waver', permanent: true },
       { source: '/learn/akasha/juushirou-ukitake', destination: '/learn/akasha/jushiro-ukitake', permanent: true },
       { source: '/learn/akasha/shunsui-jirou-sakuranosuke-kyouraku', destination: '/learn/akasha/shunsui-kyoraku', permanent: true },
+      // 10/08/2026 — chantier 4, fusion « Mont Usui » → « Col Usui » (scripts/c4-fusionner-mont-usui.mjs).
+      // Restée non commitée dans le working tree jusqu'au 23/08 ; la zone nika-akasha la porte déjà,
+      // le cœur doit porter les MÊMES 48 (un 308 rendu ici reste sur le domaine du cœur).
+      { source: '/learn/akasha/mont-usui', destination: '/learn/akasha/col-usui', permanent: true },
       // 08/08/2026 — LOT 3d, doublon de personnage Bleach fusionné (scripts/akasha-lot3d-corrections.mjs,
       // data/audits/lot3d-corrections-trace.json). Gotei 13/Nelliel étaient les deux dédoublonnages
       // demandés ; Gotei 13 l.54 ci-dessus était déjà fait, seul Nelliel restait.
