@@ -5,8 +5,14 @@
 // condition est le seul morceau client nécessaire.
 import { usePathname } from 'next/navigation';
 
+/** Routes plein écran, sans l'habillage du site : la console /ops et les cartes phygitales /dan
+ *  (la page ouverte par un tap NFC est la carte, pas le site autour). */
+export function estHorsSite(pathname: string) {
+  return pathname.startsWith('/ops') || pathname === '/dan' || pathname.startsWith('/dan/');
+}
+
 export default function HorsOps({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() ?? '';
-  if (pathname.startsWith('/ops')) return null;
+  if (estHorsSite(pathname)) return null;
   return <>{children}</>;
 }

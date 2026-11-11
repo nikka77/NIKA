@@ -4,6 +4,7 @@ import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import HorsOps from '@/components/HorsOps';
+import HorsDan from '@/components/dan/HorsDan';
 import MapOverlay, { FloatMapBtn } from '@/components/MapOverlay';
 import BottomNav from '@/components/BottomNav';
 import ScrollProgress from '@/components/ScrollProgress';
@@ -41,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr" className={`${bebas.variable} ${exo2.variable} ${outfit.variable}`} style={{ scrollBehavior: 'smooth' }}>
       <body>
         <ScrollProgress />
-        <Nav />
+        <HorsDan><Nav /></HorsDan>
         {children}
         <HorsOps><Footer /></HorsOps>
         <MapOverlay />
