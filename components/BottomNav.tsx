@@ -3,6 +3,7 @@
 // Navigation par DOMAINES, paginée : page 1 = FOOD/AUTO/STAY/AZUR/RENT, page 2 = SERV/LEARN/SEC/NEWS.
 // Slide horizontal (swipe) + points indicateurs. Fixe, visible au scroll, sur toutes les pages (< 768px).
 // Les utilitaires (Accueil = logo, Carte = 🗺️, NIKO, Profil) restent dans le header.
+import { estHorsSite } from '@/components/HorsOps';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -15,7 +16,7 @@ export default function BottomNav() {
   const pathname = usePathname() ?? '';
   // La console /ops est un poste de travail, pas une page du site : la bulle recouvrait les
   // boutons ✓/× de review (68 px mesurés le 01/08) et chaque tap raté éjectait Dan vers /food.
-  if (pathname.startsWith('/ops')) return null;
+  if (estHorsSite(pathname)) return null;
   const router = useRouter();
   const heroActive = useHeroNav(s => s.activeDomain);
   const requestDomain = useHeroNav(s => s.requestDomain);

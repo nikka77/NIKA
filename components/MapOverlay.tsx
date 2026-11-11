@@ -1,4 +1,5 @@
 'use client';
+import { estHorsSite } from '@/components/HorsOps';
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useMapStore } from '@/lib/store';
@@ -146,7 +147,7 @@ export function FloatMapBtn() {
   const pathname = usePathname() ?? '';
   // Sur /ops, ce bouton flottant recouvrait le coin des cartes de review — la carte du site
   // n'a aucun usage sur un poste de pilotage (01/08).
-  if (pathname.startsWith('/ops')) return null;
+  if (estHorsSite(pathname)) return null;
   return (
     <button
       onClick={openMap}
