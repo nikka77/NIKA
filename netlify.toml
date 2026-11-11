@@ -1,0 +1,15 @@
+# netlify.toml — hébergement de NIKA sur Netlify (alternative à Vercel, 11/11/2026).
+# Netlify détecte Next.js tout seul et installe son runtime (OpenNext) : pas de plugin à ajouter.
+# Les variables d'environnement se saisissent dans l'interface Netlify, jamais ici (voir
+# .env.local.example pour la liste).
+
+[build]
+  # `.ops-venv` est un lien symbolique vers le Mac de Dan (outil local des scripts ops) : sur
+  # une machine de build Linux il pointe dans le vide et `next build` s'arrête net sur ENOENT.
+  # On le retire de la copie de build uniquement — le dépôt et le Mac n'y perdent rien.
+  command = "rm -f .ops-venv && npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"

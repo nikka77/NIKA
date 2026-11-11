@@ -16,7 +16,8 @@ const nextConfig = {
   // pour pointer vers le dossier qu'on lui donne. Après un build alternatif, restaurer les deux
   // (`git checkout -- next-env.d.ts tsconfig.json`) et supprimer le dossier — sinon TypeScript
   // cherche ses types de routes dans un répertoire qui n'existe plus, pour tout le monde.
-  distDir: process.env.NIKA_DIST_DIR ?? (process.env.VERCEL ? '.next' : '.next.nosync'),
+  // NETLIFY (11/11/2026) : même règle que Vercel, le runtime Next de Netlify attend `.next`.
+  distDir: process.env.NIKA_DIST_DIR ?? ((process.env.VERCEL || process.env.NETLIFY) ? '.next' : '.next.nosync'),
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: '*.supabase.co' },
@@ -119,10 +120,15 @@ const nextConfig = {
   // le chemin repart propre vers la zone, les en-têtes RSC sont transmis tels quels par le proxy,
   // et la zone refait sa propre résolution (.rsc/.prefetch.rsc/.segments) chez elle. Vérifié par
   // curl avec ces en-têtes, à travers le cœur : 200 text/x-component, plus aucun 404.
+  //
+  // HÔTES DES ZONES (11/11/2026) : réglables par variable d'environnement pour pouvoir héberger
+  // les zones ailleurs que sur Vercel (ex. Netlify). Sans variable, rien ne change.
   async rewrites() {
+    const JEUX = (process.env.NIKA_ZONE_JEUX_URL || 'https://nika-jeux.vercel.app').replace(/\/$/, '');
+    const AKASHA = (process.env.NIKA_ZONE_AKASHA_URL || 'https://nika-akasha.vercel.app').replace(/\/$/, '');
     const ZONES = [
-      { prefixe: '/jeux', hote: 'https://nika-jeux.vercel.app' },
-      { prefixe: '/learn/akasha', hote: 'https://nika-akasha.vercel.app' },
+      { prefixe: '/jeux', hote: JEUX },
+      { prefixe: '/learn/akasha', hote: AKASHA },
     ];
     const sansSuffixeRsc = ZONES.flatMap(({ prefixe, hote }) => [
       // racine de la zone : /learn/akasha.rsc, /learn/akasha.prefetch.rsc, /learn/akasha.segments/…
@@ -136,14 +142,14 @@ const nextConfig = {
     ]);
     return [
       ...sansSuffixeRsc,
-      { source: '/jeux', destination: 'https://nika-jeux.vercel.app/jeux' },
-      { source: '/jeux/:path*', destination: 'https://nika-jeux.vercel.app/jeux/:path*' },
-      { source: '/learn/akasha', destination: 'https://nika-akasha.vercel.app/learn/akasha' },
-      { source: '/learn/akasha/:path*', destination: 'https://nika-akasha.vercel.app/learn/akasha/:path*' },
+      { source: '/jeux', destination: `${JEUX}/jeux` },
+      { source: '/jeux/:path*', destination: `${JEUX}/jeux/:path*` },
+      { source: '/learn/akasha', destination: `${AKASHA}/learn/akasha` },
+      { source: '/learn/akasha/:path*', destination: `${AKASHA}/learn/akasha/:path*` },
       // Les images AKASHA vivent dans public/ de la zone, que Next sert TOUJOURS sous son basePath :
       // on vise directement /learn/akasha/images/akasha/* (23/08, fin du proxy.ts de la zone, qui
       // s'exécutait sur 100 % de ses requêtes pour ne réécrire que celles-ci).
-      { source: '/images/akasha/:path*', destination: 'https://nika-akasha.vercel.app/learn/akasha/images/akasha/:path*' },
+      { source: '/images/akasha/:path*', destination: `${AKASHA}/learn/akasha/images/akasha/:path*` },
     ];
   },
 };
